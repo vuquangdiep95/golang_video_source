@@ -1,0 +1,179 @@
+1
+00:00:12,620 --> 00:00:18,470
+Hello and welcome to the Golang programming language course in this session, we want to talk about
+
+2
+00:00:18,470 --> 00:00:20,600
+the others concurrency concept.
+
+3
+00:00:23,790 --> 00:00:25,200
+Closing a Shannon.
+
+4
+00:00:26,880 --> 00:00:31,170
+You can also close the channel with the help of close function.
+
+5
+00:00:32,190 --> 00:00:39,330
+This is an e-mail function and sets of flag, which indicates that no more value will send to this channel.
+
+6
+00:00:40,530 --> 00:00:42,750
+Now you can see the syntax.
+
+7
+00:00:45,290 --> 00:00:52,430
+You can honestly close the channel using four lanes loop here the receiver go routine can check the
+
+8
+00:00:52,430 --> 00:00:56,450
+channel is open or close with the help of the given syntax.
+
+9
+00:00:58,100 --> 00:01:06,290
+Here, if the value of okay is true, which means the channel is open, so read operations can be performed.
+
+10
+00:01:06,980 --> 00:01:13,730
+And if the value of eats falls, which means the channel is closed, so read operations are not going
+
+11
+00:01:13,730 --> 00:01:14,390
+to perform.
+
+12
+00:01:14,990 --> 00:01:21,440
+Now let's go to this school with program to illustrate how to close a channel using for close function
+
+13
+00:01:21,440 --> 00:01:22,610
+in range loop.
+
+14
+00:01:24,890 --> 00:01:35,000
+First, define the function that sends string value to channel, so we write farm send and create a
+
+15
+00:01:35,000 --> 00:01:39,380
+variable like C-H churn by the type as switch.
+
+16
+00:01:43,310 --> 00:01:53,720
+And defining the for loop, Ford defined the valley to like we call an equals zero the less than four
+
+17
+00:01:53,840 --> 00:01:55,880
+and v + +
+
+18
+00:01:58,720 --> 00:02:05,270
+c h channel operator, for example GO program.
+
+19
+00:02:05,270 --> 00:02:05,540
+And
+
+20
+00:02:09,920 --> 00:02:15,100
+now here close the Channel Close channel.
+
+21
+00:02:17,840 --> 00:02:21,020
+Now we go to main function and create a channel
+
+22
+00:02:23,630 --> 00:02:29,780
+defining variable like search calling equals tiny main function.
+
+23
+00:02:30,530 --> 00:02:32,180
+By the time is
+
+24
+00:02:35,450 --> 00:02:45,080
+now calling defined function as go routine, and since this variable as a channel variable goal setting
+
+25
+00:02:45,860 --> 00:02:54,620
+and Porsche's variable at arguement now create a full in regional value for.
+
+26
+00:02:59,090 --> 00:03:04,010
+Defined two variables like resolved and OK in fit channel data.
+
+27
+00:03:05,030 --> 00:03:07,820
+These are common.
+
+28
+00:03:08,060 --> 00:03:08,660
+OK.
+
+29
+00:03:09,230 --> 00:03:10,490
+Colin equals.
+
+30
+00:03:18,120 --> 00:03:25,470
+OK, then the value of orca is set to true means the channel is open and it can send or receive data
+
+31
+00:03:25,800 --> 00:03:30,060
+when the value of orca is set to false means, the channel is closed.
+
+32
+00:03:30,360 --> 00:03:52,170
+So right below statements for handling channel is not OK if the channel closed and said look and bridge.
+
+33
+00:03:56,140 --> 00:04:03,570
+And if program doesn't go to if a state, then so do not break and we right channel open the statement
+
+34
+00:04:03,580 --> 00:04:04,420
+FP
+
+35
+00:04:07,450 --> 00:04:21,700
+China, okay, and search for visa and or reformat the code, save the project and execute the program.
+
+36
+00:04:23,410 --> 00:04:27,730
+Go round dot backslash main dot gov.
+
+37
+00:04:29,950 --> 00:04:34,470
+Now we can see the output in the above program.
+
+38
+00:04:34,480 --> 00:04:41,200
+We created the same function the go routine that accept the channel and send four times goal programming
+
+39
+00:04:41,200 --> 00:04:42,160
+volume channel.
+
+40
+00:04:42,640 --> 00:04:48,520
+And after that, we use close function to close the channel, indicating that no more values can be
+
+41
+00:04:48,520 --> 00:04:54,880
+sent to the channel after it go to main function, create a channel and pass it to send function as
+
+42
+00:04:54,880 --> 00:05:02,530
+argument in Colin, go rotten in its race over the channel and read value of channel in order not to
+
+43
+00:05:02,530 --> 00:05:04,090
+prolong the time of decision.
+
+44
+00:05:04,270 --> 00:05:08,260
+We will finish it and we will continue the content in the next session.
+
+45
+00:05:08,440 --> 00:05:09,010
+Goodbye.

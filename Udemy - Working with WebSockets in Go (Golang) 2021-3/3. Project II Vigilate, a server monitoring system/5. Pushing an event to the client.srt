@@ -1,0 +1,447 @@
+1
+00:00:00,920 --> 00:00:07,940
+So let's try pushing an event from our application to our clients and we'll just make sure that everything's
+
+2
+00:00:07,940 --> 00:00:12,010
+set up correctly and we actually are, in fact, connected to our pusher server.
+
+3
+00:00:12,680 --> 00:00:18,320
+So I'm going to go to my roots file, which is in command web rootstock go.
+
+4
+00:00:18,530 --> 00:00:23,270
+And I'll just set up a test route right up here just before my actual pusher routes.
+
+5
+00:00:24,050 --> 00:00:32,600
+So much start get and we'll just use Pusha Dash test as the URL and we'll go to a handler that doesn't
+
+6
+00:00:32,600 --> 00:00:38,590
+exist yet but will create at the moment handlers repo and we'll just call it test pusher.
+
+7
+00:00:39,080 --> 00:00:39,520
+All right.
+
+8
+00:00:39,560 --> 00:00:40,550
+That doesn't exist.
+
+9
+00:00:40,910 --> 00:00:41,850
+So let's go creative.
+
+10
+00:00:42,560 --> 00:00:47,660
+So I'll go to my pusher's dog, go file and I'll create a new handler, which I'll call Funk.
+
+11
+00:00:48,200 --> 00:00:51,640
+And it has a receiver of Repo StarTalk DB Repo.
+
+12
+00:00:51,650 --> 00:00:57,260
+So we have access to the database if we ever need it, and we'll call it what I call it, an route's
+
+13
+00:00:58,220 --> 00:00:59,780
+pusher, test pusher.
+
+14
+00:01:00,500 --> 00:01:02,900
+So let's come back here and call it test pusher.
+
+15
+00:01:03,530 --> 00:01:06,230
+And because it's a handler, it has to take two arguments.
+
+16
+00:01:06,320 --> 00:01:08,210
+A response writer, which I'll call W.
+
+17
+00:01:10,440 --> 00:01:13,020
+And a pointer to a request, which I'll call our.
+
+18
+00:01:15,750 --> 00:01:22,750
+OK, so this exists now, so the error in my route should go away and it does good.
+
+19
+00:01:23,790 --> 00:01:28,060
+Now let's actually create the handler and have it send something to the client.
+
+20
+00:01:28,530 --> 00:01:32,340
+Now, the first thing I'm going to do is create a map and I'll call it data.
+
+21
+00:01:33,270 --> 00:01:34,830
+And it's a map of type.
+
+22
+00:01:34,870 --> 00:01:35,640
+Make a map.
+
+23
+00:01:37,170 --> 00:01:44,370
+Of string string, so the index is a string and the actual content of an entry in the map is also a
+
+24
+00:01:44,370 --> 00:01:51,750
+string, and I'll put a value in their data and I'll just call it message, which I actually have to
+
+25
+00:01:51,750 --> 00:01:55,500
+call it in this case equals anything I want.
+
+26
+00:01:55,530 --> 00:01:57,150
+Hello, world.
+
+27
+00:02:00,440 --> 00:02:07,130
+Now, all I want to do is push something using my WC client that I have set up in and it exists in my
+
+28
+00:02:07,130 --> 00:02:18,860
+application config, so error will check for an error equals and we'll call this repo dot app dot WC
+
+29
+00:02:18,860 --> 00:02:19,390
+client.
+
+30
+00:02:20,390 --> 00:02:25,220
+That's what I'm calling and I'm calling a method on this called Trigger and I'm going to trigger it
+
+31
+00:02:25,220 --> 00:02:25,940
+to a channel.
+
+32
+00:02:25,940 --> 00:02:29,830
+And we only have one channel which we call public channels, so I'll push it to that.
+
+33
+00:02:32,060 --> 00:02:38,180
+And the second argument it requires is an event name, which I'll just call test event.
+
+34
+00:02:40,520 --> 00:02:45,230
+And I'm pushing the payload of data, my map of string string and I'll check for an error.
+
+35
+00:02:45,620 --> 00:02:52,400
+If error is not equal to nil, then just log in log print line error.
+
+36
+00:02:53,050 --> 00:03:00,500
+OK, so I now have a test route one that I can use to try to push something to our client.
+
+37
+00:03:00,950 --> 00:03:07,610
+And of course back in my JavaScript Jagjit, we need to do something to listen for that particular event.
+
+38
+00:03:08,390 --> 00:03:14,600
+So right here we subscribe to the public channel and we put it in a variable called public channel.
+
+39
+00:03:15,060 --> 00:03:18,140
+So now we just look for events, public channel.
+
+40
+00:03:20,210 --> 00:03:22,130
+Bind, we're going to bind.
+
+41
+00:03:22,370 --> 00:03:23,090
+Try that again.
+
+42
+00:03:24,260 --> 00:03:34,360
+We're going to bind to test event, which matches exactly what I have in my pusher go file.
+
+43
+00:03:34,490 --> 00:03:35,950
+I'm pushing test event.
+
+44
+00:03:36,500 --> 00:03:37,700
+So back to our jass.
+
+45
+00:03:39,410 --> 00:03:41,330
+When you get that test event, what do you want to do?
+
+46
+00:03:41,450 --> 00:03:46,450
+Well, you want to execute this anonymous function looking for data.
+
+47
+00:03:46,460 --> 00:03:47,260
+What are we getting?
+
+48
+00:03:47,630 --> 00:03:55,550
+And all I'm going to do here is call this routine right down here success alert, which exists right
+
+49
+00:03:55,550 --> 00:03:58,190
+in my I think it's in my leg.
+
+50
+00:03:58,190 --> 00:04:00,650
+Let's find out it mean.
+
+51
+00:04:02,860 --> 00:04:10,960
+Where are my views are they're LaserJet, public, personal, jet abcess somewhere in here, I have
+
+52
+00:04:10,960 --> 00:04:17,560
+my will just find it the easy way back to my jet, find success alert that exists in.
+
+53
+00:04:17,770 --> 00:04:18,310
+Oh, yes.
+
+54
+00:04:18,310 --> 00:04:20,350
+And attention jazz, which I've included.
+
+55
+00:04:20,590 --> 00:04:22,390
+And all that does is fire a.e alert.
+
+56
+00:04:22,930 --> 00:04:27,730
+So I'll just call that success alert and I want to pass it.
+
+57
+00:04:28,000 --> 00:04:29,380
+DataDot message.
+
+58
+00:04:30,190 --> 00:04:36,970
+So my map is converted into an object I can access in JavaScript and I'm looking for a message which
+
+59
+00:04:36,970 --> 00:04:41,590
+I've pushed right here, data message so I should get Hello world.
+
+60
+00:04:41,590 --> 00:04:47,020
+If this all works the way it's supposed to now, I'll tell you right now, I was a little sloppy when
+
+61
+00:04:47,020 --> 00:04:49,900
+I put some some of the files up in the repository.
+
+62
+00:04:49,900 --> 00:04:53,320
+So there are some problems, but let's just try it and see what actually happens.
+
+63
+00:04:54,010 --> 00:05:01,030
+So I'll stop and start my IP to make sure it's running and I'll go back here and stop my application
+
+64
+00:05:01,060 --> 00:05:01,720
+and run it.
+
+65
+00:05:05,670 --> 00:05:09,000
+And it ran and it looks like everything should work.
+
+66
+00:05:09,180 --> 00:05:14,370
+I'm here on one window, and if I reload this, you can see that I'm actually if I look at my network,
+
+67
+00:05:14,640 --> 00:05:18,240
+it appears that I'm connecting to my local host four thousand one.
+
+68
+00:05:19,650 --> 00:05:26,490
+So let me open a new window and I'll drag this down so we can see both windows at the same time right
+
+69
+00:05:26,760 --> 00:05:29,070
+to here, so we can see everything.
+
+70
+00:05:30,120 --> 00:05:34,710
+And all I'll do is go to localhost 4000 test dash pusher.
+
+71
+00:05:36,060 --> 00:05:42,690
+And what should happen when I press return here is this should fire a request off to my pusher server
+
+72
+00:05:42,720 --> 00:05:48,910
+iPad and that should handle the request and send it to everyone who's listening to the public channel.
+
+73
+00:05:48,960 --> 00:05:49,800
+Let's see what happens.
+
+74
+00:05:50,710 --> 00:05:53,250
+So I push it and it says Page not found.
+
+75
+00:05:53,260 --> 00:05:54,960
+So let me find out what I got wrong there.
+
+76
+00:05:55,860 --> 00:05:57,390
+I didn't call it test pusher.
+
+77
+00:05:58,320 --> 00:05:59,700
+I called it pusher test.
+
+78
+00:05:59,850 --> 00:06:01,590
+OK, there's my first problem.
+
+79
+00:06:02,400 --> 00:06:03,210
+Let's try that again.
+
+80
+00:06:05,280 --> 00:06:12,360
+Push pusher test and nothing appears to have happened, and if I go look at the log file here, it says
+
+81
+00:06:12,360 --> 00:06:20,970
+Hope posting to localhost for Colon four three and it's trying to push to localhost four, four, three,
+
+82
+00:06:21,000 --> 00:06:27,090
+which doesn't exist and doesn't seem to make any sense, because if I look at my random S.H. file,
+
+83
+00:06:28,320 --> 00:06:36,160
+Rondout S.H. or run but bad in your case, it looks as though I'm pushing to I should be going to port
+
+84
+00:06:36,180 --> 00:06:37,080
+four thousand one.
+
+85
+00:06:37,380 --> 00:06:42,030
+But if you notice here, I forgot to put the slashes and that didn't work.
+
+86
+00:06:42,690 --> 00:06:44,490
+All right, so let's stop.
+
+87
+00:06:44,490 --> 00:06:48,320
+Our application started again and see if that fixes everything.
+
+88
+00:06:48,900 --> 00:06:55,470
+So back here to my Web browser, I'll reload this to make sure I've got the correct page or the latest
+
+89
+00:06:55,470 --> 00:06:56,430
+version of the page.
+
+90
+00:06:57,120 --> 00:07:00,510
+And I'll go back to this window and fire off pusher test.
+
+91
+00:07:01,290 --> 00:07:03,180
+And again, it still didn't seem to work.
+
+92
+00:07:03,180 --> 00:07:04,920
+So let's go back here and look at our log files.
+
+93
+00:07:05,310 --> 00:07:06,510
+Not authorized.
+
+94
+00:07:06,600 --> 00:07:07,820
+What did I get wrong?
+
+95
+00:07:08,640 --> 00:07:13,260
+Well, here I have Pusher your said to ABC one, two, three.
+
+96
+00:07:14,280 --> 00:07:19,830
+And in my EPA file suit I have my key is one ABC one, two, three.
+
+97
+00:07:20,280 --> 00:07:23,190
+Let's find my I can figure out why I'm out my key.
+
+98
+00:07:28,280 --> 00:07:29,690
+Is one, two, three ABC.
+
+99
+00:07:29,750 --> 00:07:36,590
+I got this backwards, so this should be ABC, one, two, three and this should be one, two, three
+
+100
+00:07:36,950 --> 00:07:37,730
+ABC.
+
+101
+00:07:38,390 --> 00:07:42,070
+So let's go stop our EPA server.
+
+102
+00:07:42,500 --> 00:07:43,020
+Try to.
+
+103
+00:07:45,490 --> 00:07:52,510
+And stop and start our application just to make sure, OK, and return a few times, go back to my Web
+
+104
+00:07:52,510 --> 00:07:54,580
+browser, reload this.
+
+105
+00:07:56,430 --> 00:08:03,540
+And try this one more time, and there it pushed the request off to the server, so now we have things
+
+106
+00:08:03,540 --> 00:08:11,190
+set up properly and make sure you've got your key and secret set the same in your epic config file and
+
+107
+00:08:11,190 --> 00:08:16,560
+your config Oyamel and in your startup script, either Renderos or run that.
+
+108
+00:08:16,920 --> 00:08:20,700
+And it seems as though we can now push things to our server.
+
+109
+00:08:21,300 --> 00:08:25,680
+So let's stop for this time around.
+
+110
+00:08:25,680 --> 00:08:31,110
+And in the next lecture we'll start doing some more useful things because our goal here is actually
+
+111
+00:08:31,110 --> 00:08:33,150
+to monitor remote hosts.
+
+112
+00:08:33,420 --> 00:08:36,470
+So we need to get that logic set up before we can do too much else.

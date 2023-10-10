@@ -1,0 +1,371 @@
+1
+00:00:11,820 --> 00:00:16,480
+Hello and welcome to the Go programming language course in the previous session.
+
+2
+00:00:16,500 --> 00:00:21,090
+We could define a connect function for communicating to database.
+
+3
+00:00:21,960 --> 00:00:28,050
+After we can connect to the database, we can perform crud operations by writing different functions.
+
+4
+00:00:28,980 --> 00:00:35,910
+First, you start by writing your query related to the creativity, a statement that using it, we can
+
+5
+00:00:35,910 --> 00:00:42,270
+create the table in the database automatically, so create the function to create a table.
+
+6
+00:00:43,470 --> 00:00:46,290
+For example, you name it, create table function.
+
+7
+00:00:47,460 --> 00:00:48,060
+Find,
+
+8
+00:00:50,880 --> 00:00:53,220
+create table.
+
+9
+00:00:58,490 --> 00:01:00,440
+Define an object variable
+
+10
+00:01:03,350 --> 00:01:05,420
+and say 3.9 or face.
+
+11
+00:01:18,250 --> 00:01:24,020
+This function is supposed to take in a straight instance from our site and convert it to a table in
+
+12
+00:01:24,020 --> 00:01:24,700
+the database.
+
+13
+00:01:24,940 --> 00:01:30,940
+But since we don't know which a start is going to be passed to this function in this package, it uses
+
+14
+00:01:30,940 --> 00:01:38,860
+ellipses as its function input parameter and receives the least of abstracts instance at the input parameter.
+
+15
+00:01:39,310 --> 00:01:44,920
+This feature enables us to send one or more awestruck ministers from outside of the package to this
+
+16
+00:01:44,920 --> 00:01:48,280
+function to create equivalent tables in the database.
+
+17
+00:01:49,240 --> 00:01:53,770
+Now, Colin Connect function for initializing minuscule data source name.
+
+18
+00:01:54,220 --> 00:01:57,760
+This function returns a DB object from gore and package.
+
+19
+00:01:57,910 --> 00:02:03,400
+This gives us access to the methods contained in the package to perform current operation.
+
+20
+00:02:03,670 --> 00:02:14,950
+So first, define a variable like DB call equals and in which connect function after creating a DB object
+
+21
+00:02:14,950 --> 00:02:16,120
+from core package.
+
+22
+00:02:16,510 --> 00:02:23,770
+The Invoke Artemis great function, it will automatically create the table based on given models.
+
+23
+00:02:24,370 --> 00:02:32,380
+This function accepts an instance of each stroke, as input parameter rate will only create tables,
+
+24
+00:02:32,560 --> 00:02:37,060
+missing columns and missing indexes and won't change existing columns.
+
+25
+00:02:37,060 --> 00:02:40,840
+Type or delete unused columns to protect your data.
+
+26
+00:02:41,110 --> 00:02:45,880
+So we write D.B. Dot also migrate.
+
+27
+00:02:48,050 --> 00:02:50,240
+And said object that ask parameter.
+
+28
+00:02:53,880 --> 00:03:01,100
+Now we could define the function to create the table automatically in database in this time, we create
+
+29
+00:03:01,110 --> 00:03:06,720
+a new package named Main and create find inside it named Main that cool.
+
+30
+00:03:07,500 --> 00:03:11,820
+And in this fine, we create the main function to execute queries.
+
+31
+00:03:12,060 --> 00:03:16,620
+So go to the project folder and create a new folder named Main.
+
+32
+00:03:21,810 --> 00:03:25,680
+And create a new file like Maine that go inside it.
+
+33
+00:03:30,390 --> 00:03:37,740
+First, right, package me and define main function, phone me.
+
+34
+00:03:41,000 --> 00:03:47,780
+Before we can access data in the MySchool database, we need to create a connection to the database.
+
+35
+00:03:48,260 --> 00:03:54,440
+Previously, we designed the method called Connect in the DB Tools package, which contains a method
+
+36
+00:03:54,440 --> 00:04:02,270
+called open from the go on in packages, which by taking two values of dialect or object and configuration,
+
+37
+00:04:02,480 --> 00:04:09,470
+creates a connection to the MySQL database and for parameter it uses from open function of MySchool
+
+38
+00:04:09,470 --> 00:04:12,740
+package data accept a data source name as parameter.
+
+39
+00:04:13,340 --> 00:04:19,850
+We also use the same data source name information inside a JSON file in the configuration package.
+
+40
+00:04:20,240 --> 00:04:27,860
+Now it's time to use the information our JSON file to connect to the database for using the JSON find
+
+41
+00:04:28,070 --> 00:04:33,500
+we calling open function from Always Package that opens the named file for reading.
+
+42
+00:04:33,890 --> 00:04:41,390
+If successful methods on the return find can be used for reading this function, accept file pass as
+
+43
+00:04:41,390 --> 00:04:47,810
+input parameter and returns to value first and object from file and the other and the object from error.
+
+44
+00:04:48,320 --> 00:04:59,450
+So first we define two variables like file and there are five comma error column equals and calling
+
+45
+00:04:59,450 --> 00:05:04,400
+open function from OS package OS start open.
+
+46
+00:05:06,230 --> 00:05:16,220
+And said Jason finally passed that input parameters, a string type currency creation, is the second
+
+47
+00:05:16,220 --> 00:05:17,490
+big dot.
+
+48
+00:05:17,810 --> 00:05:18,500
+Jason.
+
+49
+00:05:22,570 --> 00:05:24,640
+Check every status if there all.
+
+50
+00:05:28,280 --> 00:05:32,530
+The battle fatal error, but.
+
+51
+00:05:35,650 --> 00:05:45,640
+You know, we use Defer for closing the created foreign object, defer file that close.
+
+52
+00:05:50,420 --> 00:05:57,320
+Now, create this right on top of the main metal that contains valuables equivalent to the keys in the
+
+53
+00:05:57,320 --> 00:06:02,840
+JASON fine that are used to map those keys to their data types and go blank.
+
+54
+00:06:10,310 --> 00:06:17,000
+Thai Con Figuration District.
+
+55
+00:06:21,580 --> 00:06:35,620
+Define variable data source name and the type is a string and using JSON tech.
+
+56
+00:06:38,200 --> 00:06:45,580
+Jason Collins and said name for it.
+
+57
+00:06:46,450 --> 00:06:50,290
+Data source named.
+
+58
+00:06:53,510 --> 00:06:58,540
+Now go to the main function and create an object from configuration extract.
+
+59
+00:07:03,360 --> 00:07:10,470
+First, define a variable like Tom Cullen equals new configuration.
+
+60
+00:07:14,310 --> 00:07:22,020
+Now, using the new decoder function of the JSON package, we send the Jason fine to eat as parameter
+
+61
+00:07:22,020 --> 00:07:29,670
+after opening it and through the Decode Metal End reads the next JSON encoded value from its input and
+
+62
+00:07:29,670 --> 00:07:35,540
+restores it in the value pointer to object created from the configuration instructs.
+
+63
+00:07:36,000 --> 00:07:52,260
+So you're right, Jason Dart's new decoder and sit forward as arguements and calling d'école and set
+
+64
+00:07:52,260 --> 00:07:54,660
+comes as arguments for it.
+
+65
+00:07:57,010 --> 00:08:04,050
+Okay, this allowed us to assert the values inside the JSON file in the variables in the configuration
+
+66
+00:08:04,050 --> 00:08:04,680
+as struct.
+
+67
+00:08:05,100 --> 00:08:11,190
+Now it's time to call the DB initialize or method from DB tools package to connect to the database.
+
+68
+00:08:11,970 --> 00:08:19,080
+So we write DB tools and calling DB initialize our function.
+
+69
+00:08:19,230 --> 00:08:29,940
+DB initialize the function and set data source name from conf object that's arguement from the data
+
+70
+00:08:29,940 --> 00:08:31,290
+source name.
+
+71
+00:08:34,590 --> 00:08:41,940
+Each of the crop methods used the method called Connect to communicate with the database, so necessary
+
+72
+00:08:41,940 --> 00:08:46,320
+conditions for communication with my school database are provided.
+
+73
+00:08:46,680 --> 00:08:53,070
+Now it is time to call the available methods to perform current operations in DB tools patches.
+
+74
+00:08:54,270 --> 00:08:59,760
+In this case, before doing anything, they want to create a student tailored in-person database automatically
+
+75
+00:09:00,180 --> 00:09:03,690
+so you can create table function from DB Tools package.
+
+76
+00:09:04,140 --> 00:09:10,560
+But before creating a new table, we need to go into the MySQL database to see if there is a personal
+
+77
+00:09:10,560 --> 00:09:13,260
+schema inside the database or if does not exist.
+
+78
+00:09:13,260 --> 00:09:16,370
+It should be created for this purpose.
+
+79
+00:09:16,380 --> 00:09:20,040
+Inter to the MySQL database and in the left panel.
+
+80
+00:09:20,040 --> 00:09:23,910
+In the Navigator section, we will see the list of available schemas.
+
+81
+00:09:24,480 --> 00:09:31,350
+OK, now you see the person database is available, the go back to the Discord program and call the
+
+82
+00:09:31,350 --> 00:09:32,730
+Create Table function.
+
+83
+00:09:32,910 --> 00:09:39,060
+Twists are creating the student table automatically calling create table function for long DevTools
+
+84
+00:09:39,060 --> 00:09:51,750
+package DB tools, dot, create table and sit any stands of student ASRock and arguement Anderson Model
+
+85
+00:09:51,750 --> 00:09:52,890
+Dot Student
+
+86
+00:09:55,500 --> 00:10:01,530
+OK, reformat the code and save the projects and go to terminal and execute the program.
+
+87
+00:10:03,630 --> 00:10:09,420
+Go from Dot Package Slash Main and main dot go.
+
+88
+00:10:13,050 --> 00:10:15,990
+Now it's time go to the MySchool database.
+
+89
+00:10:16,170 --> 00:10:23,840
+Go to the Navigator and right click Press Refresh or open the person database and open the tables.
+
+90
+00:10:24,150 --> 00:10:30,720
+OK, now we see that is done correctly and we were able to create a student table automatically in the
+
+91
+00:10:30,720 --> 00:10:36,510
+MySQL database through our application in order not to prolong the time of decision.
+
+92
+00:10:36,660 --> 00:10:40,500
+We will finish it, then we will continue the content in the next session.
+
+93
+00:10:40,650 --> 00:10:41,190
+Goodbye.

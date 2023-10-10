@@ -1,0 +1,128 @@
+1
+00:00:00,970 --> 00:00:06,610
+So now that we have our SFB file system connected to celebrities, the next step is to go to our handlers
+
+2
+00:00:06,640 --> 00:00:07,780
+over in my app.
+
+3
+00:00:07,840 --> 00:00:09,040
+So let's open up the file.
+
+4
+00:00:09,070 --> 00:00:16,520
+My handlers don't go in the handlers folder in my app project and right here at the List F's file system.
+
+5
+00:00:16,540 --> 00:00:17,470
+That's when I'll start with.
+
+6
+00:00:17,470 --> 00:00:19,360
+It should be easy at this point.
+
+7
+00:00:20,500 --> 00:00:25,440
+If you scroll down in this function called List EFS, we have this switch statement.
+
+8
+00:00:25,450 --> 00:00:26,890
+We're switching on FS type.
+
+9
+00:00:27,190 --> 00:00:29,890
+And right now we're only trapping for the case material.
+
+10
+00:00:29,890 --> 00:00:34,300
+So I'll copy all of this, but not the closing curly bracket.
+
+11
+00:00:34,300 --> 00:00:38,470
+Or we'll have a syntax error and I'll paste it here and I'll just change it.
+
+12
+00:00:38,860 --> 00:00:47,650
+I'll make this one SFTP and I'll make this as FPP and this as well as FTP.
+
+13
+00:00:48,190 --> 00:00:54,550
+And since we're grabbing the key of ESDP from this map file systems, we're not going to cast it to
+
+14
+00:00:54,550 --> 00:01:00,730
+mean I'll Filesystem will cast it to FTP file system FTP.
+
+15
+00:01:01,660 --> 00:01:03,520
+And that should be all I have to do.
+
+16
+00:01:03,850 --> 00:01:09,550
+Except before we run this, it'll be useful to have a file in R.S.V.P. folder to make sure that things
+
+17
+00:01:09,550 --> 00:01:11,110
+work, so I'll go to my desktop.
+
+18
+00:01:12,440 --> 00:01:18,800
+And I'll put this file, it doesn't matter what the file is, but I put it inside the folder SFTP,
+
+19
+00:01:18,800 --> 00:01:23,510
+which is, of course, in my app DV data SFTP.
+
+20
+00:01:23,900 --> 00:01:24,890
+And that should do the trick.
+
+21
+00:01:25,520 --> 00:01:29,240
+So let's go back here to our I.D. and start our application.
+
+22
+00:01:29,920 --> 00:01:30,410
+Make start.
+
+23
+00:01:34,270 --> 00:01:36,310
+So it's running, so I switched my Web browser.
+
+24
+00:01:38,620 --> 00:01:45,160
+And I'll go to local host 4000 right there, and I'll go to filesystems and see if we got it right.
+
+25
+00:01:45,430 --> 00:01:48,070
+So let's make sure that Mineo still works.
+
+26
+00:01:49,180 --> 00:01:49,870
+It does.
+
+27
+00:01:50,290 --> 00:01:52,570
+Now let's look at SFTP.
+
+28
+00:01:54,950 --> 00:01:59,900
+And there it is, their source dog zip now delete doesn't work and uploading doesn't work.
+
+29
+00:02:00,200 --> 00:02:02,300
+But at this point, that's trivial.
+
+30
+00:02:02,330 --> 00:02:03,920
+We're basically using the same logic.
+
+31
+00:02:03,920 --> 00:02:05,780
+We're adding something to our switch statements.
+
+32
+00:02:06,470 --> 00:02:09,740
+So we'll get started on uploading a file in the next lecture.
+

@@ -1,0 +1,564 @@
+1
+00:00:00,720 --> 00:00:04,580
+OK jadi saya harap Anda berhasil dengan latihan ini, mari kita lanjutkan dengan solusi.
+
+2
+00:00:04,650 --> 00:00:12,180
+Saya membuka POTO kalkulator saya dan saya perlu Anda CRETON Anda RBC menyebutnya menemukan maksimum dalam atau mengambil
+
+3
+00:00:12,210 --> 00:00:21,510
+aliran menemukan permintaan maksimum tahunan mengembalikan aliran menemukan respons maksimum dan hal yang sangat keren tentang contoh ini adalah bahwa kita akan
+
+4
+00:00:21,510 --> 00:00:27,120
+melihat bahwa kami tidak harus mengirim respons setiap kali kami menerima pesan.
+
+5
+00:00:27,210 --> 00:00:28,080
+Jadi itu bagus.
+
+6
+00:00:28,080 --> 00:00:31,170
+Sekarang kita lanjutkan dan terapkan pesan-pesan ini.
+
+7
+00:00:31,290 --> 00:00:32,960
+Anda seharusnya sudah terbiasa sekarang.
+
+8
+00:00:33,300 --> 00:00:42,090
+Dan jadi itu akan mengambil contoh di teman saya maksimum permintaan nomor 32 angka sama dengan satu dan kemudian pesan
+
+9
+00:00:42,270 --> 00:00:50,290
+kembali menemukan respons maksimum kita akan memanggil nomor itu juga jadi 32 dan kita akan menyebutnya hanya nomor yang
+
+10
+00:00:50,290 --> 00:00:52,470
+kita akan memanggilnya maksimum.
+
+11
+00:00:53,190 --> 00:00:58,860
+Jadi yang terlihat sekarang akan menghasilkan SH dan menyalin kode penghasil kalkulator di
+
+12
+00:00:58,940 --> 00:01:00,890
+mana saja itu sempurna.
+
+13
+00:01:00,900 --> 00:01:02,990
+Jadi sekarang kita harus maju dan mengimplementasikan server.
+
+14
+00:01:03,180 --> 00:01:05,130
+Dan inilah bagian yang menyenangkan.
+
+15
+00:01:05,130 --> 00:01:07,460
+Jadi kita perlu mengimplementasikan fungsi itu.
+
+16
+00:01:07,470 --> 00:01:13,530
+Jadi untuk ini kita keluar dan mencoba mencari antarmuka server kami.
+
+17
+00:01:13,530 --> 00:01:14,290
+Kita mulai.
+
+18
+00:01:14,400 --> 00:01:16,870
+Kami harus menemukan fungsi maksimum di sini.
+
+19
+00:01:18,290 --> 00:01:20,420
+Jadi mari kita lanjutkan dan menerapkan yang itu.
+
+20
+00:01:20,510 --> 00:01:29,530
+Jadi akan mengatakan fungsi star server menemukan maksimum dan dibutuhkan aliran kalkulator.
+
+21
+00:01:29,540 --> 00:01:31,960
+PV melakukan ini tanpa bintang.
+
+22
+00:01:31,960 --> 00:01:41,220
+Sebenarnya setiap mengembalikan kesalahan yang terlihat saat ini saya harus mengimplementasikan fungsi itu.
+
+23
+00:01:41,410 --> 00:01:46,130
+Dan seperti sebelumnya kita harus berurusan dengan aliran itu sehingga kita akan menerima pesan dan sebagainya.
+
+24
+00:01:46,390 --> 00:01:51,730
+Jadi kita dapat memiliki jumlah maksimum sekarang dan itu sama dengan nol.
+
+25
+00:01:51,730 --> 00:01:59,060
+Kami hanya akan menginisialisasi sebagai 0 sebagai dalam 32 hanya untuk menghindari masalah dan akan diperbaiki.
+
+26
+00:01:59,080 --> 00:02:01,450
+Sekarang kita harus menerima pesan dari aliran itu.
+
+27
+00:02:01,480 --> 00:02:11,730
+Jadi untuk dan streaming yang menerima ini memberi kami permintaan dan kesalahan tidak ada Kami menerima pesan.
+
+28
+00:02:11,760 --> 00:02:22,440
+Kami melihat apakah pesannya baru atau tidak, dan pertama-tama, udaranya sama dengan itu dan jatuh, maka kami hanya
+
+29
+00:02:22,440 --> 00:02:31,040
+akan kembali tahu apakah kesalahannya adalah sesuatu di Portland dan akan menyukainya dan mengatakan udara
+
+30
+00:02:31,050 --> 00:02:33,810
+sambil membaca stream stream.
+
+31
+00:02:34,040 --> 00:02:38,790
+Jadi kita akan memiliki ini dan ini terlihat benar.
+
+32
+00:02:38,820 --> 00:02:41,780
+Dan kemudian kita juga harus mengembalikan udaranya.
+
+33
+00:02:41,820 --> 00:02:42,560
+Kita mulai.
+
+34
+00:02:42,720 --> 00:02:44,220
+Jadi itu terlihat bagus.
+
+35
+00:02:44,220 --> 00:02:49,250
+Dan akhirnya kalau-kalau kami menerima permintaan maka kami dapat mengekstraksi nomor dari permintaan
+
+36
+00:02:49,290 --> 00:02:52,430
+itu sehingga kami mengatakan permintaan yang mendapatkan nomor.
+
+37
+00:02:52,920 --> 00:02:55,030
+Dan sekarang ketika Anda membandingkannya dengan maksimum.
+
+38
+00:02:55,230 --> 00:03:01,320
+Jadi jika angkanya lebih besar dari maksimum maka apa yang terjadi.
+
+39
+00:03:01,320 --> 00:03:05,070
+Kita bisa melihatnya dan mengatakan OK maksimal.
+
+40
+00:03:05,070 --> 00:03:06,250
+Pertama-tama akan diperbarui.
+
+41
+00:03:06,320 --> 00:03:08,930
+Itu menjadi angka sebagai nilai baru.
+
+42
+00:03:09,120 --> 00:03:09,820
+BAIK.
+
+43
+00:03:10,230 --> 00:03:17,520
+Dan kami juga dapat mengirim pesan saat streaming jadi kami katakan Miss stream yang mengirim
+
+44
+00:03:17,520 --> 00:03:25,440
+dan kami buat untuk menemukan respons maksimum yang membutuhkan maksimum baru sama dengan maksimum dan itu terlihat bagus.
+
+45
+00:03:25,440 --> 00:03:33,120
+Jadi pada dasarnya setiap saat angkanya lebih tinggi dari maksimum kita mendapatkan maksimum dan kita mengirimkannya dan itu pada
+
+46
+00:03:33,120 --> 00:03:37,980
+dasarnya kita juga bisa melakukan penanganan kesalahan pada pesan kesalahan ini.
+
+47
+00:03:37,980 --> 00:03:40,660
+Jadi ayo kita lakukan juga.
+
+48
+00:03:40,770 --> 00:03:52,110
+Karena ini jadi kirim kesalahan kirim sama dengan ini dan kemudian kita dapat mengatakan jika kesalahan kirim tidak
+
+49
+00:03:52,140 --> 00:04:00,670
+sama dengan nol maka kami telah mengirim data pengiriman sumur kami ke klien.
+
+50
+00:04:02,080 --> 00:04:03,130
+Dan kita baik-baik saja.
+
+51
+00:04:03,400 --> 00:04:06,690
+Sehingga terlihat benar dan pada dasarnya angkanya kurang maksimal.
+
+52
+00:04:06,700 --> 00:04:10,220
+Maka kita tidak perlu menambahkan maksimum dan kita tidak ada hubungannya.
+
+53
+00:04:10,810 --> 00:04:12,920
+Jadi ini semua terlihat bagus dan benar.
+
+54
+00:04:12,940 --> 00:04:14,920
+Jadi itu dari server saya.
+
+55
+00:04:14,920 --> 00:04:18,000
+Sekarang mari kita pastikan itu benar-benar dikompilasi dengan menjalankannya.
+
+56
+00:04:18,190 --> 00:04:25,490
+Kita juga dapat memiliki fungsi cetak hanya untuk memastikan bahwa kita melihat bahwa ia dipanggil.
+
+57
+00:04:25,490 --> 00:04:34,990
+Jadi Pangeran L-N yang diterima menemukan RBC maksimum dan itu terlihat bagus.
+
+58
+00:04:35,160 --> 00:04:35,980
+BAIK.
+
+59
+00:04:36,570 --> 00:04:37,760
+Jadi ini sempurna.
+
+60
+00:04:37,770 --> 00:04:44,270
+Dan sekarang kita akan menjalankan server untuk menjalankan server kalkulator dan itu berjalan.
+
+61
+00:04:44,770 --> 00:04:47,800
+Dan sekarang kita dapat merawat klien yang merupakan bagian yang menyenangkan.
+
+62
+00:04:48,280 --> 00:04:50,270
+Jadi jenis yang ada di sini.
+
+63
+00:04:50,530 --> 00:04:57,850
+Jadi mari kita lanjutkan dan membuat fungsi yang disebut do oleh David Rimi.
+
+64
+00:04:58,100 --> 00:05:09,290
+Jadi lakukan dengan streaming hari dan saya harus pergi ke depan dan membuat fungsi itu jadi saya akan menyalin ini
+
+65
+00:05:10,550 --> 00:05:21,560
+dilakukan dengan streaming dan dibutuhkan klien yang tepat dan log harus mulai melakukan pencarian maksimum dengan Died streaming
+
+66
+00:05:21,580 --> 00:05:22,280
+RBOC.
+
+67
+00:05:22,630 --> 00:05:29,800
+Jadi sekarang kita harus benar-benar melakukan PC kita jadi lihat Dud's find maksimum dan konteksnya akan menjadi
+
+68
+00:05:30,610 --> 00:05:32,390
+latar belakang dan opsi.
+
+69
+00:05:32,650 --> 00:05:34,480
+Kami tidak membutuhkan itu.
+
+70
+00:05:34,480 --> 00:05:37,500
+Dan itu memberi kita aliran atau kesalahan.
+
+71
+00:05:37,990 --> 00:05:45,580
+Jadi sekarang dengan udara jika udaranya tidak sama dengan nil maka kita memiliki masalah
+
+72
+00:05:47,110 --> 00:06:00,060
+dan kita katakan log bahwa kesalahan fatal membuka aliran dan panggilan menemukan maksimum dan kita hanya akan menampilkan kesalahan itu atau kita memiliki aliran untuk
+
+73
+00:06:00,060 --> 00:06:01,260
+bekerja dengannya.
+
+74
+00:06:01,260 --> 00:06:04,100
+Jadi di sinilah kita akan membuat saluran.
+
+75
+00:06:04,130 --> 00:06:13,830
+Jadi, tunggu, lihat untuk menutup saluran sehingga akan mengatakan membuat saluran struct dan kami hanya akan memiliki destructs.
+
+76
+00:06:14,010 --> 00:06:22,720
+Jadi sekarang kita saluran kita harus pergi untuk membuat jadi kirim rutin pergi dan rutin terima.
+
+77
+00:06:23,310 --> 00:06:24,000
+Kedengarannya benar.
+
+78
+00:06:24,000 --> 00:06:36,600
+Jadi pergi funk dan kemudian pada akhirnya kita memohonnya dan kemudian satu lagi menciptakan phunk dan kemudian bangun dan pada
+
+79
+00:06:36,600 --> 00:06:40,420
+akhirnya kita bisa menunggu saluran.
+
+80
+00:06:40,560 --> 00:06:41,690
+Sempurna.
+
+81
+00:06:41,700 --> 00:06:46,730
+Jadi ini terlihat pada fungsi ini kita perlu mengirim rutin yang baik.
+
+82
+00:06:47,070 --> 00:06:51,030
+Jadi mereka hanya membuat sejumlah angka untuk dikirim.
+
+83
+00:06:51,090 --> 00:06:55,830
+Jadi kami akan mengirim nomor sebagai irisan dan 32.
+
+84
+00:06:56,180 --> 00:07:08,760
+Sekarang kita menemukan angka-angka ini selama tujuh hingga 18 atau 19 untuk enam dan kemudian 32.
+
+85
+00:07:09,670 --> 00:07:13,460
+Jadi angka-angka di sini maksimal 32 jelas.
+
+86
+00:07:13,760 --> 00:07:21,970
+Dan kita berharap melihat 4 7 1932 dikembalikan kepada kita jadi mari kita lihat sekarang kita harus
+
+87
+00:07:21,970 --> 00:07:29,690
+mengirim angka-angka ini jadi untuk bagian nomor dari kisaran angka-angka ini apa yang kita lakukan.
+
+88
+00:07:29,860 --> 00:07:36,730
+Kami melakukan streaming yang mengirim dan kemudian kami membuat permintaan pencarian maksimum.
+
+89
+00:07:37,300 --> 00:07:41,380
+Jadi ini membutuhkan nomor untuk dipanggil ke nomor itu.
+
+90
+00:07:41,530 --> 00:07:42,810
+Itu benar.
+
+91
+00:07:43,330 --> 00:07:48,570
+Dan kita juga bisa mengatasi kesalahan di sini, tetapi saya tidak akan melakukannya untuk itu.
+
+92
+00:07:48,580 --> 00:07:49,500
+Jadi ini terlihat bagus.
+
+93
+00:07:49,500 --> 00:07:54,910
+Dan ketika kita selesai kita bisa mengembalikan fungsi yang baik itu dan selesai.
+
+94
+00:07:54,910 --> 00:08:02,520
+Kita dapat melakukan streambed yang mengirim dekat untuk menunjukkan bahwa klien selesai melakukan streaming nomor.
+
+95
+00:08:02,770 --> 00:08:09,760
+Dan seperti biasa kita dapat melakukan sedikit tidur selama satu detik hanya untuk menunjukkan bahwa ini sebenarnya
+
+96
+00:08:09,760 --> 00:08:15,460
+waktu streaming milidetik akan mendapatkan pada akhir penerimaan rutinitas pergi saya kali ini.
+
+97
+00:08:15,490 --> 00:08:24,220
+Saya akan memuji album apakah aliran Dud menerima dan akan menerima sesuatu sehingga akan menerima tanggapan
+
+98
+00:08:24,580 --> 00:08:30,550
+atau udara dan kemudian kita akan berurusan dengan ahli waris.
+
+99
+00:08:30,580 --> 00:08:32,950
+Jika bidang yang saya harap sudah cukup.
+
+100
+00:08:32,980 --> 00:08:37,630
+Jadi itu berarti bahwa klien server melakukan streaming barang kembali ke klien.
+
+101
+00:08:38,050 --> 00:08:44,920
+Kami akan pecahkan ini dan karena kami pecahkan ini kami harus menutup saluran tunggu.
+
+102
+00:08:44,920 --> 00:08:53,170
+Jika udara tidak sama dengan IO untuk diketahui maka kita memiliki masalah besar.
+
+103
+00:08:53,170 --> 00:08:59,820
+Jadi kita akan membahas masalah penuh saat membaca server atau streaming klien dan mari kita
+
+104
+00:09:03,490 --> 00:09:05,710
+lanjutkan dan tampilkan ini.
+
+105
+00:09:05,740 --> 00:09:14,830
+Jadi kita akan memiliki udara di sini dan kita juga harus masuk begitu kita memiliki ping ini siap.
+
+106
+00:09:14,830 --> 00:09:22,530
+Sekarang kita memiliki hasil dan jadi kita akan mengatakan maksimum sama dengan hasil dot dapatkan maksimum.
+
+107
+00:09:22,570 --> 00:09:28,330
+Jadi kami baru saja menerima maksimum baru dan sekarang kami hanya dapat
+
+108
+00:09:28,330 --> 00:09:39,060
+mencetak fakta bahwa kami memang telah menerima maksimum baru sehingga mengosongkan cetak kiri menerima maksimum baru dan kami akan melanjutkan dan mencetak ini.
+
+109
+00:09:40,260 --> 00:09:44,120
+Dan di sini ia akan menampilkan maksimum baru.
+
+110
+00:09:44,190 --> 00:09:45,430
+Jadi ini terlihat benar.
+
+111
+00:09:45,450 --> 00:09:47,550
+Dan kemudian pada akhirnya ditutup.
+
+112
+00:09:47,550 --> 00:09:48,360
+Jadi ini terlihat bagus.
+
+113
+00:09:48,360 --> 00:09:54,890
+Pada dasarnya setiap kali kami menerima maksimum baru dari server, kami akan mencetaknya dan mengulanginya.
+
+114
+00:09:54,900 --> 00:09:56,470
+Jadi sepertinya ini akan berhasil.
+
+115
+00:09:56,550 --> 00:09:58,700
+Mari kita lihat.
+
+116
+00:09:59,360 --> 00:10:02,900
+Sekarang jika saya menjalankan klien kalkulator saya seperti
+
+117
+00:10:05,720 --> 00:10:09,400
+yang kita lihat menerima maksimum baru dari waktu ke waktu.
+
+118
+00:10:09,400 --> 00:10:16,260
+Jadi mari kita membuat pendataan yang lebih baik dan banyak baris baru yang dicetak.
+
+119
+00:10:16,280 --> 00:10:19,970
+Jadi, Anda hanya memiliki baris baru di sini.
+
+120
+00:10:21,290 --> 00:10:27,470
+Dan di sini, kapan pun kami mengirim nomor, saya ingin mencetaknya juga sehingga kami dapat mengatakan bahwa saya
+
+121
+00:10:27,530 --> 00:10:35,570
+telah melakukan pengiriman nomor sebelum kematian dan kami akan mengirim nomor yang kami kirim untuk membuat semuanya menjadi sangat jelas dan kami akan menambahkan baris
+
+122
+00:10:35,570 --> 00:10:35,920
+baru.
+
+123
+00:10:35,990 --> 00:10:36,260
+BAIK.
+
+124
+00:10:36,260 --> 00:10:38,060
+Jadi ini akan terlihat lebih baik.
+
+125
+00:10:38,060 --> 00:10:40,230
+Jadi mari kita lihat lagi dan jalankan ini.
+
+126
+00:10:40,580 --> 00:10:41,380
+Begitu sempurna.
+
+127
+00:10:41,480 --> 00:10:43,180
+Ini berfungsi seperti yang diharapkan.
+
+128
+00:10:43,610 --> 00:10:50,060
+Jadi seperti yang Anda lihat kami mengirim nomor empat dan kami menerima kekuatan maksimum yang diharapkan.
+
+129
+00:10:50,210 --> 00:10:54,710
+Kemudian dalam 7 dan lebih dari 4 sehingga kami menerima maksimum 7 baru.
+
+130
+00:10:54,710 --> 00:10:55,940
+Lalu kami mengatakan nomor dua.
+
+131
+00:10:55,950 --> 00:10:57,710
+Jadi tidak ada yang terjadi.
+
+132
+00:10:57,710 --> 00:11:01,210
+Kemudian kami mengatakan Nomor 19 dan menerima maksimum baru 19.
+
+133
+00:11:01,280 --> 00:11:03,550
+Kemudian nomor 6 itu tidak terjadi apa-apa.
+
+134
+00:11:03,560 --> 00:11:07,000
+Nomor 32 Kami menerima maksimum 32.
+
+135
+00:11:07,070 --> 00:11:10,790
+Jadi streaming hari ini benar-benar bekerja dengan baik dan maksimal.
+
+136
+00:11:10,790 --> 00:11:15,890
+Dan kami baru saja melihat contoh yang bagus di mana server tidak mengembalikan pesan setiap waktu.
+
+137
+00:11:15,890 --> 00:11:21,290
+Jadi itu membantu saya yang bekerja dengan sangat baik dan saya pikir itu adalah contoh yang sangat bagus
+
+138
+00:11:21,650 --> 00:11:26,570
+untuk menunjukkan kepada orang-orang bagaimana streaming dua arah dapat bekerja terutama ketika jumlah pesan yang dikirim dan
+
+139
+00:11:26,570 --> 00:11:27,950
+diterima tidak persis sama.
+
+140
+00:11:28,040 --> 00:11:29,930
+Tapi ini semua bekerja dengan sangat baik.
+
+141
+00:11:30,230 --> 00:11:34,180
+Dan saya harap Anda menyukainya dan itu adalah kuliah UNIX untuk beberapa konsep tingkat lanjut.
+

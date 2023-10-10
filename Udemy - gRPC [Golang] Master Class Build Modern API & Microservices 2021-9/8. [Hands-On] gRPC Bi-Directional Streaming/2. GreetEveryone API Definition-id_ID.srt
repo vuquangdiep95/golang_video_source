@@ -1,0 +1,84 @@
+1
+00:00:00,210 --> 00:00:06,370
+OK dalam kuliah ini kita akan melihat bagaimana mendefinisikan streaming dua arah menyapa semua orang.
+
+2
+00:00:06,630 --> 00:00:09,590
+Dan yang ini akan menerima banyak permintaan semua orang.
+
+3
+00:00:09,600 --> 00:00:11,550
+Jadi itu jenis yang bermimpi.
+
+4
+00:00:11,760 --> 00:00:14,730
+Dan kemudian itu akan mengembalikan banyak orang menyapa semua orang merespon.
+
+5
+00:00:14,730 --> 00:00:19,750
+Dan itu server yang mengalir kembali ke sana disebut bidirectional streaming.
+
+6
+00:00:19,770 --> 00:00:22,930
+Jadi mari kita lanjutkan dan mengimplementasikan protokol tetapi untuk pesan.
+
+7
+00:00:23,210 --> 00:00:23,540
+BAIK.
+
+8
+00:00:23,550 --> 00:00:29,470
+Jadi terbuka menyetujui protokol itu dan di sana saya akan menambahkan bi die.
+
+9
+00:00:29,470 --> 00:00:38,250
+Jadi bi directional streaming RBC disebut sapa semua orang dan dibutuhkan
+
+10
+00:00:39,150 --> 00:00:48,200
+aliran salam semua orang dan itu akan mengembalikan aliran salam setiap satu tanggapan.
+
+11
+00:00:49,140 --> 00:00:53,090
+Dan seperti yang Anda lihat dua arah cukup mudah untuk didefinisikan.
+
+12
+00:00:53,100 --> 00:00:57,410
+Kami hanya perlu memiliki streaming dan streaming kata kunci dua kali.
+
+13
+00:00:57,430 --> 00:00:59,420
+Sekarang mari kita lanjutkan dengan pesan.
+
+14
+00:00:59,560 --> 00:01:02,670
+Jadi permintaan sekitar membutuhkan salam.
+
+15
+00:01:02,750 --> 00:01:12,070
+Ini dari sebelumnya dan respons salam semua orang hanya akan menjadi apa yang kita miliki sebelum hasil string sama
+
+16
+00:01:12,130 --> 00:01:13,560
+dengan satu.
+
+17
+00:01:13,660 --> 00:01:15,100
+Sangat mudah.
+
+18
+00:01:15,100 --> 00:01:21,650
+Ini semua terlihat benar tetapi seperti biasa kita perlu memastikan bahwa file buffer protokol mengkompilasi.
+
+19
+00:01:21,760 --> 00:01:24,570
+Jadi mari kita lanjutkan dan menghasilkan beberapa kode.
+
+20
+00:01:25,000 --> 00:01:31,260
+Kode dihasilkan dan telah diperbarui di sini sehingga semuanya sempurna telah dihasilkan untuk kita.
+
+21
+00:01:31,330 --> 00:01:34,890
+Jadi sekarang kita siap mengimplementasikan server yang akan kita lakukan pada kuliah selanjutnya.
+

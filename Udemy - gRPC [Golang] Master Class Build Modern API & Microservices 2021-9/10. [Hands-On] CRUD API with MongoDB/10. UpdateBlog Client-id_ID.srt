@@ -1,0 +1,216 @@
+1
+00:00:00,470 --> 00:00:04,460
+OK jadi untuk klien yang ingin kami lakukan pada dasarnya adalah memperbarui blog.
+
+2
+00:00:04,540 --> 00:00:06,830
+Jadi kami akan melakukan pembaruan blog.
+
+3
+00:00:06,850 --> 00:00:12,180
+Dan yang ini hanya akan memperbarui blog yang kita tahu dan kita akan menambahkan bidang yang berbeda.
+
+4
+00:00:12,190 --> 00:00:18,250
+Jadi bagaimana kalau kita membuat blog baru jadi kita akan mengambil bidang ini disebut Blug dan kita
+
+5
+00:00:18,250 --> 00:00:26,370
+akan membuat blog baru jadi saya akan membuat di sini blog baru dan yang ini adalah penulis yang diubah dan blog pertama saya.
+
+6
+00:00:26,410 --> 00:00:36,390
+Mungkin sudah diedit jadi kita akan mengatakan sudah diedit dan kemudian isi blog pertamanya dengan beberapa tambahan yang mengagumkan.
+
+7
+00:00:36,920 --> 00:00:38,870
+Ok sekarang ITU masuk akal.
+
+8
+00:00:38,870 --> 00:00:41,330
+Jadi di sini kita punya blog baru dan belum digunakan.
+
+9
+00:00:41,420 --> 00:00:44,590
+Jadi tapi setidaknya kita mengubah judul dan isinya.
+
+10
+00:00:44,600 --> 00:00:49,240
+Satu hal yang kami lewatkan adalah ide bahwa LUGG karena ketika Anda mengatakan yang mana dalam
+
+11
+00:00:49,240 --> 00:00:54,710
+database kami ingin memperbarui dan jadi untuk ini kami hanya akan menggunakan variabel ID blog yang telah kami buat sebelumnya.
+
+12
+00:00:55,010 --> 00:01:00,380
+OK jadi sekarang kami memiliki blog baru dengan sebuah ide dan kami pergi untuk menggantinya dengan sangat
+
+13
+00:01:00,860 --> 00:01:06,760
+mudah, kami menggunakan klien dan kami melakukan pembaruan Blug PC kami dan di sini kami akan menggunakan konteks
+
+14
+00:01:07,370 --> 00:01:12,240
+kontekstual katakan latar belakang dan kemudian kami harus mengatakan kita harus menyampaikan permintaan Blug.
+
+15
+00:01:12,260 --> 00:01:18,800
+Jadi untuk ini sangat mudah, kita hanya akan membuat itu sejalan dan mengirimkan blog baru yang
+
+16
+00:01:18,800 --> 00:01:22,600
+telah kita buat keunggulan dan tidak perlu pilihan.
+
+17
+00:01:23,090 --> 00:01:24,730
+OK apa ini kembali.
+
+18
+00:01:24,770 --> 00:01:27,090
+Ini mengembalikan respons Blug pembaruan pada kesalahan.
+
+19
+00:01:27,080 --> 00:01:28,500
+Jadi mari kita mulai dengan ini.
+
+20
+00:01:28,790 --> 00:01:33,410
+Di sini kita bisa mengatakan perbarui respons atau perbarui sama dengan
+
+21
+00:01:36,240 --> 00:01:43,800
+ini dan kemudian kita akan memiliki Anda dengan kesalahan seperti yang kita lakukan seperti biasa jadi jika ada kesalahan.
+
+22
+00:01:43,830 --> 00:01:49,890
+Jadi jika tidak nol maka apa yang harus kita lakukan adalah mencetak apa yang terjadi dan mengatakan ada
+
+23
+00:01:49,890 --> 00:01:50,740
+yang salah.
+
+24
+00:01:51,500 --> 00:01:53,120
+Karena kita agak malas.
+
+25
+00:01:53,470 --> 00:01:58,930
+Jadi kita akan melihat itu terjadi saat memperbarui dan hasilnya.
+
+26
+00:01:58,930 --> 00:02:03,830
+Bagaimana kalau kita cetak saja juga jadi kita akan bilang aku suka yang dicetak.
+
+27
+00:02:04,330 --> 00:02:11,090
+Blug sudah dibaca lalu kita hanya akan mencetak isi blog yang sudah dibaca.
+
+28
+00:02:11,330 --> 00:02:13,330
+Jadi cukup mudah benar-benar mudah.
+
+29
+00:02:13,340 --> 00:02:15,400
+Tapi sekarang kami sudah mencetak semuanya.
+
+30
+00:02:15,400 --> 00:02:21,000
+Jadi sekarang jika kita sampai ke klien dan Treacher menjalankannya, mari kita mulai ulang server kita dengan jelas sehingga
+
+31
+00:02:21,000 --> 00:02:26,070
+kita memulai kembali keunggulan server kita dan kemudian kita mulai klien kita yang ada di sini.
+
+32
+00:02:26,340 --> 00:02:27,230
+Jadi mari kita lihat.
+
+33
+00:02:27,320 --> 00:02:34,520
+Yah server mendapatkannya menciptakan untuk membaca permintaan blok 1 permintaan pembaruan log dan kemudian di sisi klien sementara
+
+34
+00:02:34,860 --> 00:02:38,650
+log agak berantakan jadi mari kita lakukan sekali lagi.
+
+35
+00:02:38,660 --> 00:02:44,930
+Saya hanya akan menambahkan baris baru setiap kali karena saya lupa ini dan jelas hal-hal tidak terlihat
+
+36
+00:02:44,930 --> 00:02:45,630
+bagus.
+
+37
+00:02:46,720 --> 00:02:52,940
+Diperbarui Dan sekarang ini sudah cukup bagi kita untuk membaca kode kita dan mungkin melihat lug yang sedikit lebih baik.
+
+38
+00:02:53,420 --> 00:02:54,780
+Jadi ini terlihat sedikit lebih baik.
+
+39
+00:02:54,790 --> 00:03:00,020
+Jadi di sini kita memiliki Blug telah dibaca dan kita membaca blog dengan ide ini dan kemudian kita akan
+
+40
+00:03:00,020 --> 00:03:01,980
+memperbaruinya, kata Blug apa yang diperbarui.
+
+41
+00:03:02,020 --> 00:03:03,920
+Dan kemudian kita memiliki perubahan di sana.
+
+42
+00:03:04,030 --> 00:03:09,070
+Kami memiliki judul perubahan dan kami akan mengubah konten yang berfungsi dengan sangat baik langsung dari server.
+
+43
+00:03:09,070 --> 00:03:12,580
+Kami dapat memverifikasi bahwa semuanya adalah database yang hanya memeriksa Mago untuk menjadi UI.
+
+44
+00:03:12,580 --> 00:03:17,950
+Jadi jika saya menyegarkan blog saya bahwa kami telah menjalankan program kami beberapa kali, maka kami memiliki tujuh objek
+
+45
+00:03:17,950 --> 00:03:18,520
+di sana.
+
+46
+00:03:18,610 --> 00:03:23,260
+Jadi tahun pertama yang kami buat hanya untuk mengetahui apakah blok pertama dari log pertama di Blug pertama
+
+47
+00:03:23,260 --> 00:03:23,710
+saya.
+
+48
+00:03:23,860 --> 00:03:26,740
+Tetapi jika Anda melihat yang terakhir misalnya kita tahu itu telah diperbarui.
+
+49
+00:03:26,740 --> 00:03:30,270
+Jadi jika kita melihat yang satu ini sekarang ide-ide lain mengubah penulis.
+
+50
+00:03:30,390 --> 00:03:35,140
+Konten adalah konten yang diperbarui dan judulnya adalah judul yang diperbarui.
+
+51
+00:03:35,140 --> 00:03:40,210
+Jadi itu berarti ya memang pembaruan itu terjadi dalam TB Mongar dan kami mendapatkan persis apa yang
+
+52
+00:03:40,210 --> 00:03:42,660
+kami inginkan dari itu yang agak keren.
+
+53
+00:03:42,700 --> 00:03:44,880
+Jadi itu saja untuk pembaruan yang berfungsi dengan sangat baik.
+
+54
+00:03:45,070 --> 00:03:49,010
+Dan sekarang penghapusan akan cukup mudah digunakan untuk melakukannya di kuliah berikutnya.
+

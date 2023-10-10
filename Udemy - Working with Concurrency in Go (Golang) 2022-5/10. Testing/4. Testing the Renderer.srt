@@ -1,0 +1,727 @@
+1
+00:00:00,930 --> 00:00:05,720
+So the next thing I want to test is the file render doggo.
+
+2
+00:00:05,730 --> 00:00:11,550
+And if you scroll down in this, when you get to the part where we add default data, you'll see that
+
+3
+00:00:11,550 --> 00:00:15,090
+we're actually using the session right here in line 66.
+
+4
+00:00:15,390 --> 00:00:20,010
+We're testing to see if there's a value user somewhere in the session and if there is, we get it.
+
+5
+00:00:20,010 --> 00:00:24,120
+And if we don't, then we just populate the user with an empty user object.
+
+6
+00:00:24,180 --> 00:00:24,600
+Okay.
+
+7
+00:00:25,620 --> 00:00:31,680
+Now, the interesting thing about this is if I try to write a test for ad default data right now, I
+
+8
+00:00:31,680 --> 00:00:32,640
+can write it easily enough.
+
+9
+00:00:32,640 --> 00:00:34,050
+It's a very simple test, right?
+
+10
+00:00:34,500 --> 00:00:38,680
+The problem is it won't work and it won't work because we're accessing the session.
+
+11
+00:00:38,700 --> 00:00:44,070
+So what we need to do is to go back to setup, underscore Tesco and go to the very bottom of this file
+
+12
+00:00:44,850 --> 00:00:49,860
+and write a little function that will actually add session information to our request.
+
+13
+00:00:50,280 --> 00:00:56,070
+So it's a really easy function to write func and I'll just call it get ctcs forget context and it takes
+
+14
+00:00:56,410 --> 00:00:56,760
+Ari.
+
+15
+00:00:56,760 --> 00:01:02,430
+Q Is the variable I'm passing as a parameter and it's a type of pointer to HGTV dot request.
+
+16
+00:01:02,880 --> 00:01:03,240
+Okay.
+
+17
+00:01:03,870 --> 00:01:08,580
+And it returns the type context, dot context right there.
+
+18
+00:01:08,580 --> 00:01:10,200
+And hopefully they did the import for me.
+
+19
+00:01:10,230 --> 00:01:10,650
+It did.
+
+20
+00:01:11,970 --> 00:01:20,520
+And all we do is declare a variable KCTCS while checking for an error when we call test app, dot session
+
+21
+00:01:22,800 --> 00:01:29,100
+dot load and we hand it ari cue dot context.
+
+22
+00:01:29,220 --> 00:01:37,260
+The context from the requests we received as a parameter to this function and then we say are a hue
+
+23
+00:01:37,260 --> 00:01:47,070
+dot header dot yet and we're looking for a header named x x dash session with a capital S and a capital
+
+24
+00:01:47,070 --> 00:01:47,430
+x.
+
+25
+00:01:47,640 --> 00:01:48,000
+Okay.
+
+26
+00:01:48,900 --> 00:01:52,080
+And we'll check for an error if error is not equal to nil.
+
+27
+00:01:53,520 --> 00:01:55,410
+And I just going to log it logged on.
+
+28
+00:01:55,410 --> 00:01:56,130
+Print line.
+
+29
+00:01:56,550 --> 00:01:58,230
+Print line here.
+
+30
+00:01:58,770 --> 00:01:59,100
+Okay.
+
+31
+00:02:00,030 --> 00:02:01,970
+And then we returns UTX.
+
+32
+00:02:02,910 --> 00:02:10,770
+Now, this gives us a means of getting session information into and out of any request we pass it.
+
+33
+00:02:11,040 --> 00:02:12,600
+And that's all we have to do here.
+
+34
+00:02:12,870 --> 00:02:21,180
+Now, let's go back over here to CMT Web and create a new test file and I'll call it render underscore,
+
+35
+00:02:21,180 --> 00:02:22,270
+test go.
+
+36
+00:02:23,370 --> 00:02:29,500
+And that's in package main and it keeps doing mailer dumb charm for me.
+
+37
+00:02:29,520 --> 00:02:30,940
+I wish it wouldn't do that there.
+
+38
+00:02:31,710 --> 00:02:38,430
+And the first thing I'll test is that add default data function so func test and I'm going to call my
+
+39
+00:02:38,430 --> 00:02:45,210
+test config because it has a config as a receiver and it's add default data.
+
+40
+00:02:46,920 --> 00:02:47,210
+Okay.
+
+41
+00:02:48,780 --> 00:02:51,910
+And it didn't import testing for me, but that's no problem.
+
+42
+00:02:51,930 --> 00:02:53,220
+I'll simply do it myself.
+
+43
+00:02:54,420 --> 00:02:56,850
+Testing t there.
+
+44
+00:02:57,630 --> 00:03:02,250
+So it's import of that for me and I'll get rid of my extra parentheses and let's start writing the test.
+
+45
+00:03:03,090 --> 00:03:08,190
+Now to test this, if you go back over to Rendered Echo and you look at what this thing requires, it
+
+46
+00:03:08,190 --> 00:03:09,720
+requires a request.
+
+47
+00:03:09,870 --> 00:03:10,320
+Okay.
+
+48
+00:03:10,410 --> 00:03:12,840
+So we need to build a request for this.
+
+49
+00:03:12,870 --> 00:03:14,390
+So back to render underscore test.
+
+50
+00:03:14,400 --> 00:03:14,700
+Okay.
+
+51
+00:03:14,800 --> 00:03:15,690
+Let's build a request.
+
+52
+00:03:16,530 --> 00:03:21,960
+Murray queue and I'll ignore the second return parameter come from HTP.
+
+53
+00:03:22,080 --> 00:03:23,280
+And we just called new request.
+
+54
+00:03:24,120 --> 00:03:26,040
+And that requires some method to get it.
+
+55
+00:03:27,960 --> 00:03:29,680
+And it requires some path.
+
+56
+00:03:29,720 --> 00:03:33,720
+Doesn't matter what it is because we're not using it or we're not passing anything, anything else to
+
+57
+00:03:33,720 --> 00:03:33,810
+it.
+
+58
+00:03:33,810 --> 00:03:34,290
+So nil.
+
+59
+00:03:36,540 --> 00:03:40,700
+And now we need to add the session data to that request.
+
+60
+00:03:40,710 --> 00:03:47,190
+And now we say KCTCS is assigned the value of and we just call that function, get KCTCS and hand it
+
+61
+00:03:47,190 --> 00:03:47,730
+our issue.
+
+62
+00:03:48,630 --> 00:03:49,860
+So now we have a context.
+
+63
+00:03:50,190 --> 00:03:57,510
+Let's make our current request, our HQ now equal to our HQ with context in hand at KCTCS.
+
+64
+00:03:58,260 --> 00:04:01,980
+Now that request can accept session information.
+
+65
+00:04:01,980 --> 00:04:03,090
+I can put things into it.
+
+66
+00:04:03,090 --> 00:04:04,110
+I can take things out of it.
+
+67
+00:04:04,110 --> 00:04:05,940
+I can check it, check to see if they exist.
+
+68
+00:04:06,000 --> 00:04:12,210
+Okay, so let's test our add default data by putting a few things in the session.
+
+69
+00:04:12,480 --> 00:04:20,460
+And now I can just call test out dot session dot put in.
+
+70
+00:04:20,460 --> 00:04:21,390
+What should I look for.
+
+71
+00:04:21,390 --> 00:04:29,190
+Well over here in rendered ago you can see that I'm looking for slash warning error, that sort of thing.
+
+72
+00:04:29,190 --> 00:04:30,180
+So we'll test some of those.
+
+73
+00:04:31,140 --> 00:04:32,370
+Back over to render test.
+
+74
+00:04:33,180 --> 00:04:40,470
+We'll put in using the context and we'll just use Ctcs and we'll put in flash and we'll put in Flash
+
+75
+00:04:40,470 --> 00:04:43,950
+as the value or the value of that, and then I'll duplicate it twice.
+
+76
+00:04:44,950 --> 00:04:48,420
+I'll change this to warning in this two error.
+
+77
+00:04:50,190 --> 00:04:51,110
+In this two error,
+
+78
+00:04:54,240 --> 00:04:54,930
+then there's two warning.
+
+79
+00:04:55,800 --> 00:05:03,210
+Now let's make the value to assigned whatever comes back from test out.
+
+80
+00:05:04,810 --> 00:05:06,970
+That and default data.
+
+81
+00:05:07,330 --> 00:05:08,800
+And that requires two things.
+
+82
+00:05:08,830 --> 00:05:11,110
+It requires a template data or an empty one.
+
+83
+00:05:11,110 --> 00:05:17,770
+So I'll give it an empty pointer to template data, and that will satisfy the first parameter requirement.
+
+84
+00:05:18,070 --> 00:05:20,570
+And the second one is a request, a pointer to request.
+
+85
+00:05:20,630 --> 00:05:21,370
+I have one of those.
+
+86
+00:05:21,370 --> 00:05:30,820
+I just build it are a Q and now we'll say if these are tests TD Flash is not equal to flash.
+
+87
+00:05:31,540 --> 00:05:37,870
+Then key to error failed to get flash data.
+
+88
+00:05:39,950 --> 00:05:41,870
+And I copy this, paste it twice
+
+89
+00:05:44,930 --> 00:05:50,240
+and make this one morning and make that one morning over here.
+
+90
+00:05:50,240 --> 00:05:50,600
+I guess
+
+91
+00:05:53,780 --> 00:06:04,670
+make this one error and make this one error and this becomes error and this becomes flash.
+
+92
+00:06:06,050 --> 00:06:08,600
+Okay, let's just spread things out a little bit.
+
+93
+00:06:09,650 --> 00:06:10,730
+Let's try running that test.
+
+94
+00:06:10,850 --> 00:06:12,130
+So clear the screen.
+
+95
+00:06:12,140 --> 00:06:16,180
+I'm still in the CMD Web folder so I can see my test files right there.
+
+96
+00:06:16,190 --> 00:06:16,970
+There's render test.
+
+97
+00:06:16,970 --> 00:06:17,600
+Don't go.
+
+98
+00:06:18,080 --> 00:06:18,950
+Go test dot.
+
+99
+00:06:21,770 --> 00:06:27,200
+And a failed failed to get warning, data warning, warning.
+
+100
+00:06:29,210 --> 00:06:30,860
+Warning and this would have to be warning.
+
+101
+00:06:33,020 --> 00:06:33,270
+Again.
+
+102
+00:06:34,970 --> 00:06:35,210
+Go.
+
+103
+00:06:35,210 --> 00:06:36,950
+Test dot.
+
+104
+00:06:37,460 --> 00:06:38,630
+And it passed.
+
+105
+00:06:38,730 --> 00:06:39,080
+Okay.
+
+106
+00:06:39,110 --> 00:06:40,580
+So that was an easy enough one to do.
+
+107
+00:06:41,360 --> 00:06:43,790
+So we've tested adding default data.
+
+108
+00:06:44,030 --> 00:06:45,760
+Now let's test the next function.
+
+109
+00:06:45,800 --> 00:06:47,630
+So over here and rendered our go.
+
+110
+00:06:47,660 --> 00:06:49,910
+We have another one here called is authenticated.
+
+111
+00:06:50,030 --> 00:06:50,870
+Let's test that one.
+
+112
+00:06:51,830 --> 00:07:05,240
+So back to render tesco func test config is then to cated authenticated that again t pointer to testing
+
+113
+00:07:05,270 --> 00:07:08,350
+dot t and same idea.
+
+114
+00:07:08,360 --> 00:07:13,370
+I need to build the request with the context so I'll put these closer together so they don't take up
+
+115
+00:07:13,370 --> 00:07:14,930
+quite so much screen real estate.
+
+116
+00:07:15,470 --> 00:07:21,170
+And I'll copy all of those and I'll build a request and add the session information to it.
+
+117
+00:07:21,360 --> 00:07:32,420
+Okay, now we say Earth is assigned, the value of Test app is authenticated and I give that my request.
+
+118
+00:07:34,040 --> 00:07:40,640
+Now, in this case, if both is true and the test failed, as there should be nothing in that session
+
+119
+00:07:40,640 --> 00:07:48,890
+that says the user is authenticated, so te error returns true for authenticated
+
+120
+00:07:51,860 --> 00:07:54,170
+when it should be false.
+
+121
+00:07:57,040 --> 00:07:59,600
+Okay, so there's my first case.
+
+122
+00:07:59,690 --> 00:08:03,650
+Now my second case is we put a user ID in the session.
+
+123
+00:08:03,860 --> 00:08:16,250
+So test out dot session, try again session the put and I'll put in ctcs with user ID, which is what
+
+124
+00:08:16,250 --> 00:08:20,810
+I'm looking for in that is authenticated function and I put the value of one in there.
+
+125
+00:08:21,200 --> 00:08:21,460
+Okay.
+
+126
+00:08:22,160 --> 00:08:24,080
+And now I'll copy this and modify it.
+
+127
+00:08:24,560 --> 00:08:37,130
+So copy paste, get rid of the assignment operator and change that to if not returns false when it should
+
+128
+00:08:37,130 --> 00:08:37,550
+be true.
+
+129
+00:08:38,870 --> 00:08:39,950
+Let's run that test.
+
+130
+00:08:40,490 --> 00:08:41,930
+So go test dot.
+
+131
+00:08:43,880 --> 00:08:44,780
+And it passes.
+
+132
+00:08:45,080 --> 00:08:45,590
+Perfect.
+
+133
+00:08:46,160 --> 00:08:53,150
+Now, the last thing to try from our rendered Argo file is, of course, the actual render function.
+
+134
+00:08:53,270 --> 00:08:53,630
+Okay.
+
+135
+00:08:54,260 --> 00:09:00,380
+So the render function, if you recall, takes advantage of this variable path to templates and it specifies
+
+136
+00:09:00,380 --> 00:09:01,610
+it when we're in production.
+
+137
+00:09:01,610 --> 00:09:06,260
+When this is running, look at the root level of the application CMT Web templates.
+
+138
+00:09:06,560 --> 00:09:11,570
+We're going to change that value because when we when we run a test, we're not running it from the
+
+139
+00:09:11,570 --> 00:09:12,680
+root level of our project.
+
+140
+00:09:13,070 --> 00:09:15,350
+We're running it wherever that test happens to live.
+
+141
+00:09:15,440 --> 00:09:19,640
+So let's get started over here in render underscore Tesco.
+
+142
+00:09:20,210 --> 00:09:22,700
+Let's create a new function and we'll call this one.
+
+143
+00:09:22,790 --> 00:09:26,240
+Test config underscore render.
+
+144
+00:09:27,530 --> 00:09:34,040
+And again with T pointer to testing T and the first thing I'll do is say.
+
+145
+00:09:34,880 --> 00:09:40,870
+Path to templates is assign the value of the current directory slash template.
+
+146
+00:09:42,020 --> 00:09:42,320
+Okay.
+
+147
+00:09:43,370 --> 00:09:48,620
+Now we're going to be this time be needing both a request and a response.
+
+148
+00:09:48,830 --> 00:09:49,290
+I don't want to.
+
+149
+00:09:49,290 --> 00:09:50,510
+We use a real response.
+
+150
+00:09:50,750 --> 00:09:58,310
+So instead of create a variable called R called HTP test, right of the testing package dot.
+
+151
+00:10:00,000 --> 00:10:00,690
+New recorder.
+
+152
+00:10:01,470 --> 00:10:08,000
+Okay, that gives me something that satisfies the requirements for a request for a response.
+
+153
+00:10:08,820 --> 00:10:13,590
+Now, I also need a request, so I'll copy these three lines to make those requests.
+
+154
+00:10:14,550 --> 00:10:15,420
+To make the request.
+
+155
+00:10:15,660 --> 00:10:16,200
+There it is.
+
+156
+00:10:16,230 --> 00:10:18,480
+Now I have a request and I have a response.
+
+157
+00:10:18,930 --> 00:10:25,860
+Now I will call test app the render and we'll try rendering with a response.
+
+158
+00:10:26,130 --> 00:10:32,370
+So we use a response recorder with the request which we built by hand, and we'll render home dock page
+
+159
+00:10:32,370 --> 00:10:33,660
+to go HTML.
+
+160
+00:10:34,020 --> 00:10:34,370
+Okay.
+
+161
+00:10:35,380 --> 00:10:37,610
+And we also have to give it some kind of template, too.
+
+162
+00:10:37,620 --> 00:10:41,170
+So we'll give it an empty reference to template that.
+
+163
+00:10:42,840 --> 00:10:44,250
+And now what are we going to test?
+
+164
+00:10:44,280 --> 00:10:48,090
+We will test to see if our encode the response code.
+
+165
+00:10:48,540 --> 00:10:51,540
+If it's not equal to 200, then something went wrong.
+
+166
+00:10:51,660 --> 00:10:52,770
+So t don't error
+
+167
+00:10:55,320 --> 00:10:57,330
+failed to render page.
+
+168
+00:11:00,450 --> 00:11:03,750
+And this should be an equals operator, not an assignment operator.
+
+169
+00:11:04,500 --> 00:11:05,820
+Let's try that out and see if it works.
+
+170
+00:11:06,090 --> 00:11:08,010
+So clear the screen.
+
+171
+00:11:08,310 --> 00:11:08,730
+Go.
+
+172
+00:11:08,820 --> 00:11:10,080
+Test done.
+
+173
+00:11:12,660 --> 00:11:14,190
+And it passed.
+
+174
+00:11:14,760 --> 00:11:15,120
+Okay.
+
+175
+00:11:15,480 --> 00:11:18,570
+Now, there's obviously more things you could put into these tests.
+
+176
+00:11:18,570 --> 00:11:22,200
+You could test to see if there's a nonexistent template, that sort of thing.
+
+177
+00:11:22,380 --> 00:11:24,420
+But this is sufficient to get you started, I think.
+
+178
+00:11:25,050 --> 00:11:25,770
+So let's move on.
+
+179
+00:11:25,830 --> 00:11:31,290
+And what we'll do next is we'll start working on the data package to make things more testable because
+
+180
+00:11:31,290 --> 00:11:35,670
+the way it is right now, we actually need to have a database running to run unit tests, and that's
+
+181
+00:11:35,670 --> 00:11:36,090
+not good.
+
+182
+00:11:36,330 --> 00:11:38,700
+And fortunately, it's an easy enough change to make.

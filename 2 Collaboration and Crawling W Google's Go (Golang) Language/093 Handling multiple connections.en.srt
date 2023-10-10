@@ -1,0 +1,303 @@
+1
+00:00:00,270 --> 00:00:00,830
+Ngọt.
+
+2
+00:00:00,880 --> 00:00:05,500
+Hãy xem nó cũng xử lý nhiều kết nối như thế nào, chúng ta sẽ xem video này và có thể trả lời
+
+3
+00:00:06,880 --> 00:00:07,520
+Nó.
+
+4
+00:00:07,590 --> 00:00:14,820
+Vì vậy, tiếp theo tôi có máy chủ trò chuyện tổng thể sẽ có một phần kết nối để các kết nối
+
+5
+00:00:14,820 --> 00:00:19,830
+đây là tất cả mã kết nối khác ở đây với các kênh có thói quen tốt của riêng nó.
+
+6
+00:00:19,830 --> 00:00:25,300
+Vì vậy, máy chủ trò chuyện sẽ có một phần của tất cả các kết nối hiện đang được kết nối và có
+
+7
+00:00:25,300 --> 00:00:32,080
+Ngoài ra, tôi nghĩ rằng văn bản kết nối mới cho kết nối LoC là đồng bộ hóa văn bản mới đó.
+
+8
+00:00:32,110 --> 00:00:40,030
+Vì vậy, bất cứ khi nào tôi truy cập vào danh sách các kết nối mà tôi sẽ sử dụng, tôi sẽ đi qua ổ khóa này và thực hiện các thay đổi của mình và
+
+9
+00:00:40,030 --> 00:00:42,420
+sau đó mở khóa nó sau đó.
+
+10
+00:00:42,820 --> 00:00:49,960
+Vì vậy đi luôn nói kênh nhưng đôi khi bạn chỉ cần khóa cái cũ là kênh trước
+
+11
+00:00:49,990 --> 00:00:53,800
+một cách chia sẻ bộ nhớ như một phương tiện giao tiếp.
+
+12
+00:00:53,890 --> 00:00:55,800
+Đúng.
+
+13
+00:00:56,030 --> 00:01:02,790
+Ngoài ra, tôi có một kênh phát sóng lớn mà các kết nối sẽ gửi thông điệp của họ tới.
+
+14
+00:01:03,070 --> 00:01:08,630
+Và do đó, máy chủ trò chuyện này sẽ nhận tin nhắn trên kênh quảng bá và gửi chúng đến từng người trong số họ.
+
+15
+00:01:08,630 --> 00:01:13,430
+các kết nối và sau đó tôi có một kênh nhanh tương tự như một kết nối, mỗi kết nối có một kết nối riêng
+
+16
+00:01:13,430 --> 00:01:14,160
+kênh nhanh.
+
+17
+00:01:14,240 --> 00:01:22,940
+Tôi đã có một kênh máy chủ toàn cầu, đó là một suy nghĩ tốt và vì vậy tôi đã có máy chủ trò chuyện mới này
+
+18
+00:01:22,940 --> 00:01:25,570
+chức năng trả về máy chủ trò chuyện.
+
+19
+00:01:25,580 --> 00:01:31,220
+Nó tạo ra hai kênh mà tôi không cần bận tâm đến phần kết nối vì việc nối thêm sẽ
+
+20
+00:01:31,220 --> 00:01:37,100
+tạo điều đó nếu cần và bạn không bao giờ phải thực sự tạo văn bản tắt tiếng đồng bộ hóa với giá trị bằng 0
+
+21
+00:01:37,100 --> 00:01:45,570
+hợp lệ với nó nên tôi chỉ tạo hai kênh này. Tôi khởi động phương thức khởi động ở một cô gái khác.
+
+22
+00:01:45,570 --> 00:01:47,850
+thói quen và họ trả lại máy chủ trò chuyện.
+
+23
+00:01:47,850 --> 00:01:52,440
+Vì vậy, phương thức bắt đầu này về cơ bản là trình xử lý quảng bá.
+
+24
+00:01:52,590 --> 00:01:58,560
+Vì vậy, điều này sẽ thực hiện một vòng lặp mỗi lần lặp lại để kiểm tra xem có ở đó không nếu có tin nhắn đến
+
+25
+00:01:58,560 --> 00:01:59,700
+qua kênh quảng bá.
+
+26
+00:02:00,700 --> 00:02:06,610
+Khóa vòng khóa kết nối thông qua tất cả các kết nối và gửi tin nhắn cho mỗi kết nối trong đó
+
+27
+00:02:06,610 --> 00:02:12,040
+tôi sẽ thực hiện một thói quen khác để nó không khóa toàn bộ máy chủ
+
+28
+00:02:12,070 --> 00:02:21,740
+nếu một kết nối bị chậm và sau đó tôi mở khóa kết nối, tôi thích điều đó luân phiên nếu
+
+29
+00:02:21,770 --> 00:02:26,290
+thoát Kênh phải suy nghĩ kỹ hoặc nếu nó bị đóng, tôi có thể kết thúc vòng lặp này và đóng quy trình tập lệnh này
+
+30
+00:02:26,300 --> 00:02:33,310
+mà tôi đã có một chức năng đóng hữu ích ở đây để loại bỏ trừu tượng như vậy.
+
+31
+00:02:33,550 --> 00:02:35,560
+Vì vậy, để tắt mã này, bạn sẽ gọi lệnh đóng
+
+32
+00:02:39,240 --> 00:02:42,450
+vì vậy bên cạnh đó tôi cũng có chức năng trò chuyện này.
+
+33
+00:02:42,450 --> 00:02:48,750
+Đây là chức năng thực hiện nguyên mẫu luồng trò chuyện nguyên mẫu tin nhắn trò chuyện trả về luồng
+
+34
+00:02:48,750 --> 00:02:56,410
+tin nhắn trò chuyện để nó nhận được trong aa máy chủ trò chuyện trò chuyện là luồng và trả về lỗi.
+
+35
+00:02:56,480 --> 00:03:03,200
+Vì vậy, điều đầu tiên nó làm là nó tạo kết nối đó từ phía trên, nó đi qua khóa kết nối và
+
+36
+00:03:03,200 --> 00:03:08,970
+thêm kết nối ở bên trái vào phần kết nối mở khóa và sau đó gọi kết nối
+
+37
+00:03:08,970 --> 00:03:10,560
+nhận tin nhắn đến.
+
+38
+00:03:10,560 --> 00:03:16,680
+Đó là vòng lặp trong một kết nối nhận tin nhắn và nó cho phép nhận tin nhắn
+
+39
+00:03:16,680 --> 00:03:20,070
+kênh phát sóng để nó có thể phát lại máy chủ.
+
+40
+00:03:21,490 --> 00:03:25,630
+Khi bạn nhận được tin nhắn trả về có nghĩa là kênh đó.
+
+41
+00:03:25,650 --> 00:03:27,180
+Kết nối đó được thực hiện.
+
+42
+00:03:27,420 --> 00:03:35,250
+Và vì vậy, chúng tôi có thể khóa lại khóa kết nối và xem qua để cố gắng tìm kết nối của mình và xóa
+
+43
+00:03:35,250 --> 00:03:41,090
+nó khỏi danh sách các kết nối và sau đó mở khóa theo ngữ cảnh để các kết nối sẽ luôn là tất cả
+
+44
+00:03:41,090 --> 00:03:41,950
+các kết nối.
+
+45
+00:03:41,960 --> 00:03:43,790
+Khi bạn đến nơi tiền mặt đầu tiên.
+
+46
+00:03:43,790 --> 00:03:49,010
+Nó được thêm vào và sau đó khi kết nối đang đóng, nó sẽ xem qua và xóa kết nối đó khỏi
+
+47
+00:03:49,010 --> 00:03:54,700
+lát cắt của các kết nối.
+
+48
+00:03:54,760 --> 00:04:02,890
+Vì vậy, phần này đơn giản hơn một chút so với phần kết nối nhưng nó vẫn có nhiều quy trình và kênh Go
+
+49
+00:04:02,890 --> 00:04:03,370
+và như vậy.
+
+50
+00:04:03,370 --> 00:04:12,730
+Vì vậy, vâng, tôi biết có rất nhiều mảnh chuyển động theo đúng nghĩa đen trong cái đó ở dòng 111 khi bạn nhìn vào
+
+51
+00:04:12,850 --> 00:04:20,320
+hồ sơ ngôn ngữ định nghĩa giao diện hồ sơ không được biên dịch cái này nhưng cái tiếp theo bất cứ khi nào tôi thấy
+
+52
+00:04:20,320 --> 00:04:25,210
+giống như đó là một chức năng đảm nhận điều này và trả về quyền đó.
+
+53
+00:04:25,450 --> 00:04:25,870
+Đúng.
+
+54
+00:04:25,870 --> 00:04:35,080
+Và sau đó, nếu chúng ta nhìn vào dòng 111 thì đó là một hàm thực hiện và tôi không thấy kết quả trả về từ đó.
+
+55
+00:04:35,080 --> 00:04:36,440
+Vì vậy, hãy cho tôi biết một chút về điều đó.
+
+56
+00:04:36,550 --> 00:04:37,960
+Đó là nơi tôi có một câu hỏi.
+
+57
+00:04:37,960 --> 00:04:38,920
+Vậy là như thế nào.
+
+58
+00:04:38,930 --> 00:04:42,740
+Bất cứ khi nào bạn có một luồng dù vào hay ra.
+
+59
+00:04:42,760 --> 00:04:44,330
+Vâng trên một.
+
+60
+00:04:44,500 --> 00:04:51,800
+Trên một phương thức cụ thể trong giang hồ, nó sẽ thay đổi nó thành một đối số đầu vào ah duy nhất có
+
+61
+00:04:52,330 --> 00:04:53,980
+gửi và nhận ngay trên đó.
+
+62
+00:04:54,130 --> 00:04:55,730
+Được rồi được rồi.
+
+63
+00:04:55,870 --> 00:04:58,960
+Vì vậy, đó là hoàn thành giao diện.
+
+64
+00:04:59,020 --> 00:04:59,550
+Đúng.
+
+65
+00:04:59,590 --> 00:05:04,010
+Và được rồi, tôi hiểu rồi.
+
+66
+00:05:04,360 --> 00:05:06,350
+Đó là một chương trình hay.
+
+67
+00:05:06,350 --> 00:05:12,460
+Và sau đó, chức năng chính gần như là một bản sao dán từ máy chủ của chúng tôi từ trước khi nó nghe rất hay
+
+68
+00:05:12,470 --> 00:05:21,900
+máy chủ đăng ký và bắt đầu tìm kiếm nó rất hay Daniel bất cứ thứ gì bạn muốn thêm vào hai phần đó.
+
+69
+00:05:21,950 --> 00:05:24,680
+Chúng tôi đã xem xét điều này trong hai video.
+
+70
+00:05:25,070 --> 00:05:27,080
+Không, đó là chúng tôi muốn thể hiện nó.
+
+71
+00:05:27,830 --> 00:05:28,070
+Ồ vâng.
+
+72
+00:05:28,090 --> 00:05:30,430
+Hãy xem cách chạy nó trong phần tiếp theo trong video tiếp theo.
+
+73
+00:05:30,460 --> 00:05:30,680
+Phải.
+
+74
+00:05:30,830 --> 00:05:31,060
+Được rồi.
+
+75
+00:05:31,070 --> 00:05:34,790
+Vì vậy, chúng tôi sẽ lưu bất kỳ bình luận nào chúng tôi có và chạy nó cho video tiếp theo.
+
+76
+00:05:34,790 --> 00:05:35,620
+Hẹn gặp lại video tiếp theo.

@@ -1,0 +1,171 @@
+1
+00:00:13,900 --> 00:00:18,760
+Hello and welcome to the golden programming language course in this session.
+
+2
+00:00:18,790 --> 00:00:21,010
+We want to talk about Maps concept.
+
+3
+00:00:25,580 --> 00:00:27,050
+Maps and go blank.
+
+4
+00:00:29,140 --> 00:00:37,360
+And that is a data structure that provides you with an on older collection of key value pairs, mats
+
+5
+00:00:37,360 --> 00:00:44,770
+are also sometimes called associated arrays in the hash tables in Java or dictionaries in Python.
+
+6
+00:00:45,520 --> 00:00:54,100
+Maps are used to look up the value byte is associated key U.S. values into the map based on a key.
+
+7
+00:00:55,000 --> 00:01:01,030
+This rings of a map is its ability to retrieve data quickly based on the key.
+
+8
+00:01:01,540 --> 00:01:07,120
+It key warps like an index pointing to the value you associate with that key.
+
+9
+00:01:08,360 --> 00:01:15,640
+And that is implemented using a hash title, which is providing fast and loose run on the data element,
+
+10
+00:01:15,640 --> 00:01:19,420
+and you can easily retrieve a value by providing the key.
+
+11
+00:01:20,110 --> 00:01:27,430
+Maps are on ordered collections, and there is no way to predict the order in which the key value pairs
+
+12
+00:01:27,430 --> 00:01:28,420
+will be returned.
+
+13
+00:01:28,810 --> 00:01:32,320
+Every iteration over a map could return in a different order.
+
+14
+00:01:32,950 --> 00:01:35,650
+You can see maps in the following table.
+
+15
+00:01:38,000 --> 00:01:45,950
+She has to be distinct in the map value chain IQ industry case, you can access the key value pair of
+
+16
+00:01:45,950 --> 00:01:51,260
+a map using key key in a map acts like an index in an array.
+
+17
+00:01:56,240 --> 00:01:58,100
+Maps specification.
+
+18
+00:02:00,000 --> 00:02:04,230
+Go land mass is a collection of old dictators of key value.
+
+19
+00:02:04,470 --> 00:02:11,790
+It's widely used because it provides new crops and values that can retreat, update or delete with the
+
+20
+00:02:11,790 --> 00:02:12,710
+help of peace.
+
+21
+00:02:14,710 --> 00:02:19,810
+It is a reference to a hash table due to its reference time.
+
+22
+00:02:20,080 --> 00:02:24,910
+It is inexpensive to pass, for example, for a 64 bit machine.
+
+23
+00:02:25,150 --> 00:02:28,250
+It takes eight points and 42 Big Machine.
+
+24
+00:02:28,300 --> 00:02:30,730
+It takes four bites in maths.
+
+25
+00:02:30,730 --> 00:02:40,090
+The values are not unique like keys and can be of any type like in float 64 room S2 point to a reference
+
+26
+00:02:40,090 --> 00:02:42,010
+type, map type and etc..
+
+27
+00:02:43,630 --> 00:02:47,920
+In maps, you can only add value when the map is initialized.
+
+28
+00:02:47,950 --> 00:02:53,080
+If you try to add value in the uncivilised map, then the compiler will through any rule.
+
+29
+00:02:56,590 --> 00:02:58,810
+These are the Maps specification.
+
+30
+00:03:01,420 --> 00:03:08,350
+In the maps, a key must be unique and always in the type which is compatible using equal to operate
+
+31
+00:03:08,350 --> 00:03:12,310
+or or the Typekit support, not equal to operator.
+
+32
+00:03:12,700 --> 00:03:21,520
+So most of the built in time can be used as a key like an envelope, 64 room sitting comparable area
+
+33
+00:03:21,520 --> 00:03:29,410
+in structure pointer and said throw the data types luck slice and non-credible arrays and instruments
+
+34
+00:03:29,410 --> 00:03:32,440
+or custom data times which are not comparable.
+
+35
+00:03:32,590 --> 00:03:34,510
+Don't use as a map key.
+
+36
+00:03:37,280 --> 00:03:44,000
+The type of keys and type of values must be of the same time, different types of keys and values in
+
+37
+00:03:44,000 --> 00:03:45,950
+the same maps are not alone.
+
+38
+00:03:46,280 --> 00:03:49,280
+But the type of key and the type values can differ.
+
+39
+00:03:50,220 --> 00:03:57,840
+And the map is also known as a hash map hash stated unaltered map dictionary or associated array.
+
+40
+00:03:58,770 --> 00:03:59,160
+OK.
+
+41
+00:03:59,520 --> 00:04:05,220
+In order not to prolong the time of decision, we've been finished and we will continue the content
+
+42
+00:04:05,220 --> 00:04:06,270
+in the next session.
+
+43
+00:04:06,570 --> 00:04:07,170
+Goodbye.

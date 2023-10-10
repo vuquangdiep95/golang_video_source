@@ -1,0 +1,283 @@
+1
+00:00:00,830 --> 00:00:04,730
+So I hope you made it all right with the exercise, it shouldn't have been terribly challenging for
+
+2
+00:00:04,730 --> 00:00:09,950
+you, but I'm going to go through my solution, and your solution may not be identical to my solution.
+
+3
+00:00:09,950 --> 00:00:10,650
+And that's OK.
+
+4
+00:00:11,030 --> 00:00:17,540
+I have posted the code to my solution to this lecture under the course resources, as I always do.
+
+5
+00:00:18,320 --> 00:00:23,510
+So I go through what I did and I'm not going to make you watch me build it because this is relatively
+
+6
+00:00:23,510 --> 00:00:24,200
+straightforward.
+
+7
+00:00:24,210 --> 00:00:29,140
+So the very first thing I did is and I'm going to use the healthy services page as an example.
+
+8
+00:00:29,630 --> 00:00:33,740
+I removed a column, I removed the status column because that's not useful information.
+
+9
+00:00:33,740 --> 00:00:36,370
+You're only going to see status healthy for all of these.
+
+10
+00:00:36,380 --> 00:00:38,140
+And that just made things a little cleaner for me.
+
+11
+00:00:38,150 --> 00:00:39,810
+And if you left it in, that's fine.
+
+12
+00:00:40,850 --> 00:00:47,640
+So on the HTML for this page and I'll go back to my ID, this is the healthy page.
+
+13
+00:00:47,970 --> 00:00:54,830
+The first thing I did was to give the table and ID healthy table and I named all of my IDs for all four
+
+14
+00:00:54,830 --> 00:01:01,650
+of those tables using the actual status that's being pushed by my triggered event in the code.
+
+15
+00:01:01,970 --> 00:01:08,270
+So if it's the healthy table I'm dealing with, I'm using healthy Dasch table or pending Dasch table
+
+16
+00:01:08,270 --> 00:01:09,440
+problem Dasch table.
+
+17
+00:01:09,860 --> 00:01:11,840
+Just the first part of the ID exactly.
+
+18
+00:01:11,840 --> 00:01:14,070
+Matches the status of the service in question.
+
+19
+00:01:15,080 --> 00:01:16,610
+So the second thing I did.
+
+20
+00:01:18,340 --> 00:01:25,120
+Was for every row in this table, I gave it the idea of host Dasch service Dasch and the idea of the
+
+21
+00:01:25,120 --> 00:01:25,750
+host service.
+
+22
+00:01:25,750 --> 00:01:30,800
+So I have a means of addressing the specific service for a given table.
+
+23
+00:01:30,910 --> 00:01:31,960
+So I made that change.
+
+24
+00:01:33,130 --> 00:01:38,030
+And of course, I changed this three to this, four to three because I deleted a column.
+
+25
+00:01:38,050 --> 00:01:44,590
+So those are the only changes I made on each of the four tables for healthy pending problem and warning.
+
+26
+00:01:45,520 --> 00:01:48,190
+And then in my JavaScript, it's a little bit different.
+
+27
+00:01:48,400 --> 00:01:53,580
+And you may not have followed exactly the same logic that I did, but you probably got to the same place.
+
+28
+00:01:54,190 --> 00:01:56,020
+So the first thing I did was public channel.
+
+29
+00:01:56,200 --> 00:02:02,830
+I actually removed much of the logic from this binding to the public channel event and instead I created
+
+30
+00:02:02,830 --> 00:02:06,070
+two generic functions that I can use anywhere I need to.
+
+31
+00:02:06,070 --> 00:02:10,220
+So delete a whole service row and update a host service row.
+
+32
+00:02:10,660 --> 00:02:16,330
+So all I'm going to do is, rather than putting all of the logic right in this particular anonymous
+
+33
+00:02:16,330 --> 00:02:19,720
+function inside the bind to the host service status changed.
+
+34
+00:02:19,810 --> 00:02:21,150
+I simply call two functions.
+
+35
+00:02:21,460 --> 00:02:26,980
+So the first thing I call is delete, delete, host service row, which is this function right here.
+
+36
+00:02:27,760 --> 00:02:32,980
+And the first thing I check, of course, is does the element that I'm looking for, this particular
+
+37
+00:02:32,980 --> 00:02:34,120
+row exist?
+
+38
+00:02:34,120 --> 00:02:37,390
+And I use that double bang syntax that I've been using right along.
+
+39
+00:02:37,600 --> 00:02:44,110
+If it does exist, then get that row, get a reference to that row using host service ID, which is
+
+40
+00:02:44,110 --> 00:02:45,970
+the only parameter pass to this function.
+
+41
+00:02:46,330 --> 00:02:53,500
+And I delete that row and then I check to see if it was the last row that I need to add in a no services
+
+42
+00:02:53,500 --> 00:02:54,460
+row or no.
+
+43
+00:02:54,460 --> 00:02:56,560
+Yeah, no services row in that table.
+
+44
+00:02:57,310 --> 00:03:02,510
+So we don't know what table, we don't know what table might exist, so we have to check them all.
+
+45
+00:03:02,920 --> 00:03:08,620
+So rather than writing for functions, one for the healthy table, one for the pending morning and problem
+
+46
+00:03:08,620 --> 00:03:15,100
+and so forth, I just wrote a simple array and the contents of that array are the four possible statuses
+
+47
+00:03:15,100 --> 00:03:20,950
+that I'm going to look for so that I loop through that array each time and I check to see if that table
+
+48
+00:03:20,950 --> 00:03:21,350
+exists.
+
+49
+00:03:21,350 --> 00:03:24,700
+So I'm looking first of all, does the healthy table exist?
+
+50
+00:03:24,850 --> 00:03:30,610
+So I create a variable called let current table exists equal and this will be true or false.
+
+51
+00:03:30,790 --> 00:03:37,480
+Look to see if there's an element on the page that has the ID of, in the first case, healthy Dasch
+
+52
+00:03:37,480 --> 00:03:37,900
+table.
+
+53
+00:03:37,900 --> 00:03:42,130
+And if you find it, then let's get a reference to that table.
+
+54
+00:03:42,550 --> 00:03:46,890
+And if the number of rows in that table is exactly one, then we just have the heading room.
+
+55
+00:03:47,080 --> 00:03:52,210
+So I just put in a no service row and that updates the table in real time.
+
+56
+00:03:52,330 --> 00:03:55,750
+So that's the first call to delete post service row.
+
+57
+00:03:56,470 --> 00:04:02,470
+The second one is add a new one at a new row to the table if that exists and that calls this function
+
+58
+00:04:02,470 --> 00:04:07,350
+right down here, which follows logic almost identical to what we've been doing right along.
+
+59
+00:04:07,930 --> 00:04:14,290
+First of all, check to see if the data status and it would be in the case of going from healthy to
+
+60
+00:04:14,290 --> 00:04:16,990
+problem, it would look for problem Dasch table.
+
+61
+00:04:16,990 --> 00:04:23,440
+And if it finds it, get a reference to the table check to see if the HTML of that table contains the
+
+62
+00:04:23,440 --> 00:04:23,890
+text.
+
+63
+00:04:23,890 --> 00:04:26,470
+No services exactly like that.
+
+64
+00:04:26,860 --> 00:04:29,140
+And if it does, we have a no services row.
+
+65
+00:04:29,150 --> 00:04:34,930
+So we delete that and then we just insert the correct row or insert the new row and give it the proper
+
+66
+00:04:34,930 --> 00:04:37,990
+ID and our ID host service.
+
+67
+00:04:37,990 --> 00:04:46,030
+The host service ID exactly matches what I'm using right here in the Healthy Jett example.
+
+68
+00:04:47,170 --> 00:04:52,410
+And all I do is insert the necessary TDRS for that row and that's all that I did.
+
+69
+00:04:52,600 --> 00:04:56,200
+So hopefully you didn't have any problem with with this, but if you did, don't worry.
+
+70
+00:04:56,230 --> 00:05:02,950
+You can download the source code from the resources on this lecture and compare what I did with what
+
+71
+00:05:02,950 --> 00:05:03,340
+you did.

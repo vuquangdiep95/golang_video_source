@@ -1,0 +1,339 @@
+1
+00:00:00,800 --> 00:00:06,710
+So we have a form and we have a save button, but at the moment that save button doesn't work because
+
+2
+00:00:06,710 --> 00:00:08,870
+it's calling JavaScript that doesn't exist.
+
+3
+00:00:08,870 --> 00:00:12,830
+So you find the save button, which is right.
+
+4
+00:00:13,070 --> 00:00:13,640
+Where is it?
+
+5
+00:00:15,660 --> 00:00:23,160
+Here it is, we need two functions, save and close and VAO and both of those validate the form and
+
+6
+00:00:23,160 --> 00:00:28,170
+one will save the the form and take us back to the same page.
+
+7
+00:00:28,170 --> 00:00:29,510
+That's the saving continue.
+
+8
+00:00:29,880 --> 00:00:33,990
+And the other one is save and close, which will save the form and then take us somewhere else, presumably
+
+9
+00:00:33,990 --> 00:00:37,760
+back to the host's list list of hosts or something like that.
+
+10
+00:00:39,120 --> 00:00:41,590
+So let's create those Java scripts.
+
+11
+00:00:41,610 --> 00:00:47,310
+And just to save some time here on the Settings page, I already have two functions that seem to do
+
+12
+00:00:47,310 --> 00:00:48,330
+pretty much what I want.
+
+13
+00:00:48,330 --> 00:00:53,550
+So I'll copy those and I'll go back to the KOSTJA and I'll go down to the JavaScript section here,
+
+14
+00:00:53,550 --> 00:00:58,800
+the Block Jazz, and I'll put it in a script tag and I'll paste those two functions in.
+
+15
+00:01:00,060 --> 00:01:02,070
+And they're both colling settings form.
+
+16
+00:01:02,070 --> 00:01:03,930
+But that's not what we called our form.
+
+17
+00:01:03,930 --> 00:01:05,220
+We called our form.
+
+18
+00:01:05,220 --> 00:01:07,290
+I think it was host for the host form.
+
+19
+00:01:07,290 --> 00:01:08,940
+So let's just change that to host form.
+
+20
+00:01:12,380 --> 00:01:15,080
+And down here, host form.
+
+21
+00:01:16,280 --> 00:01:20,220
+And I'm not going to worry about this, check all tabs.
+
+22
+00:01:20,240 --> 00:01:22,400
+I'll leave that on there for right now, it's not going to hurt anything.
+
+23
+00:01:23,090 --> 00:01:29,280
+OK, so let's go back and reload this page and think about what we need to have as required items.
+
+24
+00:01:29,750 --> 00:01:34,610
+I definitely want to have a hostname as a required field, and I definitely want the canonical name
+
+25
+00:01:34,610 --> 00:01:36,080
+and I definitely want the URL.
+
+26
+00:01:36,230 --> 00:01:38,570
+Everything else should be optional.
+
+27
+00:01:38,570 --> 00:01:40,780
+Active by default will have some value.
+
+28
+00:01:40,790 --> 00:01:42,020
+So I don't need to worry about that.
+
+29
+00:01:42,380 --> 00:01:50,270
+So let's go back to our form and find those first three elements hostname and on the input I'll add
+
+30
+00:01:50,270 --> 00:02:00,410
+required and on the canonical name I will also add required and on the URL I will add required.
+
+31
+00:02:02,400 --> 00:02:08,000
+So hopefully when I come back here and reload this page and try to save and continue, for example.
+
+32
+00:02:09,600 --> 00:02:10,590
+Nothing happens.
+
+33
+00:02:10,710 --> 00:02:17,910
+Let's look at our JavaScript console and see what we have wrong console, document, get out of it by
+
+34
+00:02:17,910 --> 00:02:18,810
+ID is not.
+
+35
+00:02:18,810 --> 00:02:19,760
+And where is that?
+
+36
+00:02:19,770 --> 00:02:21,150
+That's on this line.
+
+37
+00:02:22,350 --> 00:02:27,690
+All right, so let's find out what we have wrong here, so we say.
+
+38
+00:02:29,690 --> 00:02:30,230
+Document.
+
+39
+00:02:30,260 --> 00:02:36,140
+Oh, yeah, we have to have an action, OK, so when we call Val, that will set a hidden field name
+
+40
+00:02:36,140 --> 00:02:37,810
+action to a value of zero.
+
+41
+00:02:38,330 --> 00:02:43,060
+And when we call save and close, it will look for a hidden field called action and send it to one.
+
+42
+00:02:43,430 --> 00:02:49,730
+So let's just add the hidden field and we can put that right up at the top here after our form tag.
+
+43
+00:02:49,730 --> 00:02:51,230
+And we need another hidden field here, too.
+
+44
+00:02:51,240 --> 00:02:54,140
+Now that I think about it, input type, people's hidden.
+
+45
+00:02:55,160 --> 00:03:05,540
+We need our action, which I'll put a value of one and the idea is action.
+
+46
+00:03:06,410 --> 00:03:18,200
+And then we need a series of CSR token as well, CSR, SRF token and the value will be equal to and
+
+47
+00:03:18,230 --> 00:03:23,990
+this comes from the information we're passing to every template CSR F token.
+
+48
+00:03:28,950 --> 00:03:37,110
+And it doesn't need an I.D., so let's try that again, go back to our console and it looks like buy.
+
+49
+00:03:37,470 --> 00:03:38,410
+What are all these errors?
+
+50
+00:03:38,430 --> 00:03:39,730
+Oh, I have that IP running.
+
+51
+00:03:39,780 --> 00:03:40,770
+Let's go start that.
+
+52
+00:03:44,480 --> 00:03:49,450
+Here to open our tab, open a new terminal window.
+
+53
+00:03:51,080 --> 00:03:58,640
+IP, and that should start it for us and I want to come back to my browser and clear the console, that
+
+54
+00:03:58,640 --> 00:03:59,630
+error should go away.
+
+55
+00:03:59,840 --> 00:04:05,480
+OK, let's reload the page to make sure I have everything current and try save and close.
+
+56
+00:04:06,350 --> 00:04:09,020
+And that says we have three required fields.
+
+57
+00:04:09,020 --> 00:04:09,460
+Perfect.
+
+58
+00:04:09,470 --> 00:04:11,930
+So that validation works the way that we want.
+
+59
+00:04:13,730 --> 00:04:16,130
+Now just everything works the way we expect it to.
+
+60
+00:04:16,160 --> 00:04:20,870
+Let's go back to our roots file and create a root and a handler to actually handle the post of this.
+
+61
+00:04:20,880 --> 00:04:21,850
+So this is our route.
+
+62
+00:04:21,860 --> 00:04:31,670
+So let's copy that, open our roots file and find the part where we are logged in and find the part
+
+63
+00:04:31,670 --> 00:04:33,470
+where we go to host right there.
+
+64
+00:04:33,980 --> 00:04:39,680
+So let's duplicate that line and changes to a post and that's fine.
+
+65
+00:04:40,040 --> 00:04:44,210
+So we'll just change this to post host, which is something that doesn't exist yet.
+
+66
+00:04:44,210 --> 00:04:45,620
+But we can actually try this.
+
+67
+00:04:46,610 --> 00:04:49,400
+We can come over here, copy this.
+
+68
+00:04:50,500 --> 00:04:59,140
+Paste it down there, name it to post host and change the comment to post host post host.
+
+69
+00:05:00,790 --> 00:05:10,570
+Handles posting of post for their so post hosts and all we want to do here right now, I'm just going
+
+70
+00:05:10,570 --> 00:05:11,650
+to comment this out.
+
+71
+00:05:12,610 --> 00:05:23,830
+Try that again, comment this out and I'll just write that we have actually posted will say w dot write
+
+72
+00:05:24,460 --> 00:05:25,720
+an array of bytes.
+
+73
+00:05:28,300 --> 00:05:29,430
+Posted to form.
+
+74
+00:05:30,700 --> 00:05:37,810
+OK, so let's stop our application, start our application and make sure this actually works.
+
+75
+00:05:38,680 --> 00:05:43,480
+So we'll go back to our form, reload this to make sure it's current, put some values in here, doesn't
+
+76
+00:05:43,480 --> 00:05:46,180
+matter what they are and say, save and close.
+
+77
+00:05:46,360 --> 00:05:47,620
+And it posted the form.
+
+78
+00:05:47,620 --> 00:05:48,120
+Perfect.
+
+79
+00:05:48,760 --> 00:05:52,540
+So now we have a means of actually handling information that's posted.
+
+80
+00:05:52,930 --> 00:05:58,810
+The other thing that we want to take into account here is that when I render this form, if it's a new
+
+81
+00:05:58,810 --> 00:06:00,310
+form, it should just be empty.
+
+82
+00:06:00,560 --> 00:06:08,170
+But I still should have some information posted to this page, because if it's not a new host for pulling
+
+83
+00:06:08,170 --> 00:06:13,420
+something from the database, I need to have the necessary information to populate this form with the
+
+84
+00:06:13,420 --> 00:06:17,950
+information that's in the database and also to populate the content of all of these tabs.
+
+85
+00:06:18,670 --> 00:06:23,050
+So let's take care of that and we'll take care of that in the next lecture.

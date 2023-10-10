@@ -1,0 +1,348 @@
+1
+00:00:01,660 --> 00:00:06,280
+So we want to try out our new mineral file system, and there's a few things we have to do before we
+
+2
+00:00:06,280 --> 00:00:07,150
+can actually get started.
+
+3
+00:00:07,300 --> 00:00:12,940
+And the first thing is to put some additional information into our dot on file.
+
+4
+00:00:13,510 --> 00:00:15,350
+And of course, that's in my app.
+
+5
+00:00:15,370 --> 00:00:21,670
+So let me open my app and find the dot on what we want to put in here.
+
+6
+00:00:21,670 --> 00:00:27,430
+And I'm going to put it right at the very bottom is this and I've got this copy and paste it to my clipboard
+
+7
+00:00:27,430 --> 00:00:29,410
+and I'll put a version of this up on the court.
+
+8
+00:00:29,560 --> 00:00:31,240
+Of course, resources for this lecture.
+
+9
+00:00:31,930 --> 00:00:39,820
+So I'm putting in entries, as you can see here for Amazon S3, buckets for Mineo, for SFTP and for
+
+10
+00:00:39,820 --> 00:00:40,360
+WebDAV.
+
+11
+00:00:40,360 --> 00:00:43,240
+And I'm leaving everything except for Mineo empty.
+
+12
+00:00:44,170 --> 00:00:49,810
+And the values I have in here are exactly the same as what you would be using, except I'm going to
+
+13
+00:00:49,810 --> 00:00:52,780
+change your mind eight thousand because I support, I'm listening to.
+
+14
+00:00:53,140 --> 00:00:57,430
+And you may be listening to nine thousand, but as I said earlier, I'm using forty nine thousand,
+
+15
+00:00:57,430 --> 00:00:59,350
+so I'm using eight thousand here instead.
+
+16
+00:01:00,070 --> 00:01:03,220
+So we have our root password and user.
+
+17
+00:01:03,220 --> 00:01:08,910
+We have don't use SSL and we have a region and the name of the bucket we're going to connect to.
+
+18
+00:01:08,920 --> 00:01:11,230
+And the one we created was called Test Bucket.
+
+19
+00:01:11,650 --> 00:01:16,960
+So we have that in our dorms, and now I need to go over to the celebrities package.
+
+20
+00:01:16,960 --> 00:01:23,740
+So I'm going to minimize my app and open up celebrities and go to the file celebrities.
+
+21
+00:01:23,740 --> 00:01:24,310
+Don't go.
+
+22
+00:01:25,580 --> 00:01:30,650
+And the very first thing I'm going to do and this is a decision I'm making, you may want to do it differently,
+
+23
+00:01:30,650 --> 00:01:36,770
+but I suggest you follow along as I'm going to add a field to the celebrity's tight right here at the
+
+24
+00:01:36,770 --> 00:01:42,110
+very end and I'm going to coal mine file systems like that.
+
+25
+00:01:42,950 --> 00:01:44,990
+And it will be of type.
+
+26
+00:01:46,270 --> 00:01:53,650
+Map with the key of string and the the content of a given entry will be of type interface.
+
+27
+00:01:53,920 --> 00:01:58,120
+OK, that's sufficient for our purposes right now so we can put anything we want in there.
+
+28
+00:02:00,130 --> 00:02:05,110
+So now I've added that type and of course, I need to populate that type with some useful information.
+
+29
+00:02:06,260 --> 00:02:13,490
+So what I'll do is scroll down to this function new and go to the very bottom, very near the bottom
+
+30
+00:02:13,490 --> 00:02:14,180
+in any case.
+
+31
+00:02:15,900 --> 00:02:21,930
+Down here, after I create the renderer, I'll put a call in here to a function that doesn't exist yet,
+
+32
+00:02:21,930 --> 00:02:23,370
+and we'll create that function in a minute.
+
+33
+00:02:24,000 --> 00:02:29,160
+So I'll say, see dot file systems that feel we just added that's going to be equal to.
+
+34
+00:02:30,290 --> 00:02:36,140
+The return value of C Dot create file systems, which takes no parameters.
+
+35
+00:02:36,260 --> 00:02:37,430
+Now that doesn't exist yet.
+
+36
+00:02:38,150 --> 00:02:45,500
+So let's go at it and I'll just go near the bottom of this file and put a new function, which I'll
+
+37
+00:02:45,500 --> 00:02:53,300
+call func with a receiver of c a pointer to scylaticus create file systems, and it takes no parameters
+
+38
+00:02:53,720 --> 00:02:58,970
+and it returns a map of string interface.
+
+39
+00:03:04,320 --> 00:03:15,120
+So I'll declare a variable file systems and that will be assigned the value of make a map of string
+
+40
+00:03:16,860 --> 00:03:17,460
+interface.
+
+41
+00:03:22,810 --> 00:03:28,270
+And now I want to go through all of the various values that we just added to our on file and decide
+
+42
+00:03:28,270 --> 00:03:31,630
+whether or not I should add an entry for that particular kind of file system.
+
+43
+00:03:31,810 --> 00:03:35,800
+And of course, the only one we care about right now is minimal.
+
+44
+00:03:35,980 --> 00:03:41,320
+So I'll just do a check if OS don't get on.
+
+45
+00:03:41,710 --> 00:03:46,990
+So we've already read our own file by this point, so I can check to see if there are values in the
+
+46
+00:03:46,990 --> 00:03:47,530
+environment.
+
+47
+00:03:48,370 --> 00:03:54,040
+And I'm looking for one of the things that I know is in my dot on file related to mine.
+
+48
+00:03:54,040 --> 00:03:55,150
+I own mine.
+
+49
+00:03:55,180 --> 00:03:57,460
+I o secret right?
+
+50
+00:03:59,450 --> 00:04:04,310
+If that's not equal to an empty string, which is what what it'll be if we haven't got any values in
+
+51
+00:04:04,310 --> 00:04:07,660
+there, then I'll put some things that I need in here.
+
+52
+00:04:07,670 --> 00:04:13,430
+And for simplicity, I'm going to say use SSL is a sign the value of false.
+
+53
+00:04:14,660 --> 00:04:17,930
+I don't check to see if it's set to true in the environment.
+
+54
+00:04:18,500 --> 00:04:24,410
+If strings start to lower just to make sure it's all in lowercase O's, don't get on.
+
+55
+00:04:24,920 --> 00:04:34,680
+And I'm looking for Mineo use SSL if that's exactly equal to true string.
+
+56
+00:04:34,700 --> 00:04:37,370
+True because we got string values when we pass our.
+
+57
+00:04:38,560 --> 00:04:39,820
+Our report on file.
+
+58
+00:04:40,000 --> 00:04:40,520
+Then I'll set.
+
+59
+00:04:40,540 --> 00:04:43,450
+Use us as hell equals a truth.
+
+60
+00:04:44,020 --> 00:04:45,170
+So it defaults to false.
+
+61
+00:04:45,250 --> 00:04:48,470
+But if true is the value that I find in the dot on.
+
+62
+00:04:48,520 --> 00:04:50,080
+Then it becomes true.
+
+63
+00:04:51,990 --> 00:04:57,600
+Now, after that if statement, let's create a variable called Mineo and that will be assigned the type
+
+64
+00:04:57,600 --> 00:05:00,630
+of Mineo file system.
+
+65
+00:05:03,030 --> 00:05:03,480
+Dot.
+
+66
+00:05:04,730 --> 00:05:10,760
+I mean, I know and we populate its fields, and those are our end point, which would be equal to us.
+
+67
+00:05:10,790 --> 00:05:11,530
+Don't get on.
+
+68
+00:05:12,860 --> 00:05:15,800
+And I'm looking for an end point right there.
+
+69
+00:05:18,550 --> 00:05:22,480
+So endpoint, the key will be equal to most dog get on.
+
+70
+00:05:23,230 --> 00:05:25,150
+And I'm looking for know, key.
+
+71
+00:05:30,360 --> 00:05:33,960
+The secret and that, of course, that's equal to us get on.
+
+72
+00:05:34,930 --> 00:05:36,840
+Meanwhile, secret right there.
+
+73
+00:05:39,830 --> 00:05:42,630
+Use SSL and that's equal to use SSL.
+
+74
+00:05:42,680 --> 00:05:51,200
+The variable we just dealt with in the previous lines, the region ost, I'd get on, you know, region.
+
+75
+00:05:53,890 --> 00:06:00,670
+And finally, the bucket and that's equal to oast, don't get off your bucket.
+
+76
+00:06:03,460 --> 00:06:04,630
+So now I've got that variable.
+
+77
+00:06:04,750 --> 00:06:12,100
+I'll just add it to my filesystems variable that I declared up on the line 384 file filesystems and
+
+78
+00:06:12,100 --> 00:06:13,600
+we're looking for Mineo.
+
+79
+00:06:13,960 --> 00:06:16,990
+I just picked that key because it seems to make the most sense.
+
+80
+00:06:17,500 --> 00:06:26,980
+That's a the value of I and down here, just before the end of this function, we return filesystems.
+
+81
+00:06:28,100 --> 00:06:31,790
+OK, so that will populate the new field.
+
+82
+00:06:32,970 --> 00:06:35,750
+Little back up here to the end of that function where we're doing it.
+
+83
+00:06:40,110 --> 00:06:46,440
+That will populate the field file systems in the type celebrities with the return value of this function.
+
+84
+00:06:46,560 --> 00:06:51,270
+And that gives me a really easy way of having as many file systems as I want.
+
+85
+00:06:51,480 --> 00:06:55,920
+All right now, I just have one, but we'll be adding three more as time goes on and I can just grab
+
+86
+00:06:55,920 --> 00:07:00,180
+them out of the map, cast them to the correct type and use them at will.
+
+87
+00:07:00,570 --> 00:07:02,730
+OK, so let's move on.
+

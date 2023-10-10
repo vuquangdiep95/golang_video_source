@@ -1,0 +1,239 @@
+1
+00:00:15,190 --> 00:00:20,890
+Hello and welcome to the golems programming language course in this session, we want to talk about
+
+2
+00:00:21,100 --> 00:00:22,240
+lysis concept.
+
+3
+00:00:26,460 --> 00:00:28,110
+As slices and go golden.
+
+4
+00:00:30,140 --> 00:00:38,130
+In goal language, Aslan's is more powerful, flexible and convenient that NRA and is a lightweight
+
+5
+00:00:38,130 --> 00:00:39,240
+data structure.
+
+6
+00:00:40,050 --> 00:00:45,420
+This life is a variable length cyclase, which has those elements of a similar time.
+
+7
+00:00:46,080 --> 00:00:50,550
+You are not alone twists or different type of elements in the same slice.
+
+8
+00:00:51,510 --> 00:00:55,590
+It's just like an array having an index value and length.
+
+9
+00:00:55,890 --> 00:00:58,590
+But the size of this line is reassigned.
+
+10
+00:00:58,920 --> 00:01:01,920
+They are not in fixed size, just like an array.
+
+11
+00:01:02,670 --> 00:01:07,500
+Internally, Aslan's and array are connected with each other.
+
+12
+00:01:08,020 --> 00:01:11,190
+S-line is a reference to an underlying array.
+
+13
+00:01:11,880 --> 00:01:15,300
+It is a to assess or duplicate elements in this life.
+
+14
+00:01:15,630 --> 00:01:22,680
+The first index position in this slice is always zero, and the last one will be lengths of a slice
+
+15
+00:01:22,680 --> 00:01:23,490
+minus one.
+
+16
+00:01:25,310 --> 00:01:34,250
+As Liz points to an underlying area and is internally represented by a slice Heather Onli area the size
+
+17
+00:01:34,250 --> 00:01:38,930
+of their nice is flexible and can be changed internally.
+
+18
+00:01:39,140 --> 00:01:41,780
+A slice is represented by three teams.
+
+19
+00:01:42,640 --> 00:01:44,480
+First pointers.
+
+20
+00:01:46,220 --> 00:01:56,010
+Pointer to the underlying rate, second length content, length of the underlying eye and capacity.
+
+21
+00:01:56,390 --> 00:02:02,210
+Total capacity, which is the maximum capacity to which the underlying area can expand.
+
+22
+00:02:05,420 --> 00:02:13,240
+Declaration and initialization as slices as slice is declared just like an array.
+
+23
+00:02:13,370 --> 00:02:20,840
+But it doesn't contain the size of their slice, so it can grow or shrink according to the requirements.
+
+24
+00:02:21,530 --> 00:02:24,680
+We can define it slices in several different ways.
+
+25
+00:02:26,240 --> 00:02:31,520
+Create a slice using estimates these are create a slice using an array.
+
+26
+00:02:31,850 --> 00:02:37,280
+Create a slice using already existing gas lines and create a slice using match function.
+
+27
+00:02:42,900 --> 00:02:51,720
+Create this slice using a slice, literally, you can create a slice using this nicely, try the creation
+
+28
+00:02:51,720 --> 00:02:59,280
+of a nicely thrall is just like an R-rated run, but with one difference you are not allowed to specify.
+
+29
+00:02:59,280 --> 00:03:05,220
+The size of this lies in this score basis, as shown in the below example.
+
+30
+00:03:05,400 --> 00:03:14,760
+The right hand side of this equation is this nice little run that my slice is square break is a string
+
+31
+00:03:15,030 --> 00:03:17,990
+and initialize the value like gene game.
+
+32
+00:03:18,000 --> 00:03:23,930
+I'd rather always remember when you create this slice using extremely.
+
+33
+00:03:24,540 --> 00:03:30,090
+Then it first create an airy and after death return this nice reference to it.
+
+34
+00:03:30,780 --> 00:03:33,880
+Now go to this code and do an example.
+
+35
+00:03:34,740 --> 00:03:47,960
+OK, first create a project folder like the slices and create a file like main that cool and create
+
+36
+00:03:47,970 --> 00:03:53,670
+package package main and create main function.
+
+37
+00:03:54,270 --> 00:03:55,770
+Find me
+
+38
+00:03:59,730 --> 00:04:03,030
+first creating this list by using the VAT keyboard.
+
+39
+00:04:03,030 --> 00:04:15,220
+For the example that is, Slice one equals square brackets without any links and tie for the example
+
+40
+00:04:15,220 --> 00:04:19,860
+a string and initialize value by Groove
+
+41
+00:04:22,320 --> 00:04:23,130
+Java
+
+42
+00:04:25,470 --> 00:04:33,030
+Seashore and third and the next line display.
+
+43
+00:04:33,030 --> 00:04:42,930
+This nice variable FP is nice long column and set the value to this last one.
+
+44
+00:04:46,570 --> 00:04:57,640
+Now creating a slice by using shorthand declaration, for example, a slice to call in equal.
+
+45
+00:04:58,820 --> 00:05:00,200
+Esquire brackets.
+
+46
+00:05:00,380 --> 00:05:11,330
+We don't define any lengths and define time for the example end and initialize value by one comma two,
+
+47
+00:05:11,960 --> 00:05:15,710
+three, four, five, six and seven.
+
+48
+00:05:16,370 --> 00:05:25,010
+Go to the next line and display these validated by the comment that simply dot print and it's nice to
+
+49
+00:05:26,060 --> 00:05:26,720
+call in
+
+50
+00:05:30,530 --> 00:05:32,170
+as lies too.
+
+51
+00:05:36,170 --> 00:05:45,320
+Now, in this case, we define to vary a bit first by the Vakil and second by the shorthand declaration
+
+52
+00:05:45,590 --> 00:05:48,260
+save the project and execute the code.
+
+53
+00:05:50,360 --> 00:05:58,340
+First, go to the project folder, see the slices and run the project.
+
+54
+00:06:00,800 --> 00:06:03,110
+Now we can see the output is nice.
+
+55
+00:06:03,110 --> 00:06:11,600
+One Go Jobar C-sharp Pen and it's like two one two three four five six seven.
+
+56
+00:06:12,350 --> 00:06:14,420
+We could define it slices by two ways.
+
+57
+00:06:14,420 --> 00:06:18,080
+First by accurate declaration and second shorthand declaration.
+
+58
+00:06:18,590 --> 00:06:24,080
+In order not to prolong the time of this session, we will finish it and we will continue the content
+
+59
+00:06:24,080 --> 00:06:25,160
+in the next session.
+
+60
+00:06:25,490 --> 00:06:26,060
+Goodbye.

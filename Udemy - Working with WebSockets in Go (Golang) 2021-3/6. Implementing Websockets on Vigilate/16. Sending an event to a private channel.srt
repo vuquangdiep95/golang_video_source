@@ -1,0 +1,395 @@
+1
+00:00:01,710 --> 00:00:07,560
+So far, all we've been doing is pushing events to a public channel that all authenticated users can
+
+2
+00:00:07,560 --> 00:00:13,740
+see, and we actually have the ability using this push her library and our push for compatible server
+
+3
+00:00:14,220 --> 00:00:18,840
+to send things to private channels and private channels can work anywhere you want.
+
+4
+00:00:18,870 --> 00:00:25,950
+So I'm looking at Jagjit right now and I'm going to create a new variable let private channel and I'm
+
+5
+00:00:25,950 --> 00:00:30,240
+going to write some code here to demonstrate how to send things to a private channel.
+
+6
+00:00:30,580 --> 00:00:35,490
+It's not really appropriate for our use case with this monitoring software, but I'll show you how it
+
+7
+00:00:35,490 --> 00:00:35,870
+works.
+
+8
+00:00:35,880 --> 00:00:36,840
+It's pretty straightforward.
+
+9
+00:00:37,560 --> 00:00:39,720
+That's going to be equal to, again, Pusher.
+
+10
+00:00:39,840 --> 00:00:46,200
+And we're going to subscribe and I want to subscribe to a private channel.
+
+11
+00:00:47,070 --> 00:00:52,290
+But what I want to do is subscribe to a private channel that is specific to this user.
+
+12
+00:00:52,300 --> 00:00:59,130
+In other words, something in the system, in our application pushes an event, but only one particular
+
+13
+00:00:59,130 --> 00:01:01,360
+user gets that event.
+
+14
+00:01:01,830 --> 00:01:06,360
+So what I subscribe to here, of course, is my user I.D. And where am I going to get that?
+
+15
+00:01:06,660 --> 00:01:10,340
+Well, if you look at Helper's, don't go in the starter code.
+
+16
+00:01:10,470 --> 00:01:13,860
+This is that line 76 of Helper's ago.
+
+17
+00:01:14,970 --> 00:01:16,650
+Actually add some default data.
+
+18
+00:01:17,010 --> 00:01:24,810
+And if I'm logged in, I store information about the user in the session or in the not in the session
+
+19
+00:01:24,810 --> 00:01:27,000
+in the data that's pushed to all templates.
+
+20
+00:01:27,150 --> 00:01:36,030
+So I have this, this TD user and I can access that anywhere in any template if I'm authenticated simply
+
+21
+00:01:36,030 --> 00:01:40,030
+by saying user ID because it's the user model.
+
+22
+00:01:40,680 --> 00:01:46,080
+So now I'm subscribing in effect to a private channel dash and then the user ID.
+
+23
+00:01:46,260 --> 00:01:52,530
+And one thing to be really cautious about when you're creating public channels, they must begin with
+
+24
+00:01:52,530 --> 00:01:53,490
+the word public.
+
+25
+00:01:53,880 --> 00:01:59,730
+When you're creating private channels, they must begin with the word private, all in lowercase, exactly
+
+26
+00:01:59,730 --> 00:02:01,350
+as I have it here in these two examples.
+
+27
+00:02:02,110 --> 00:02:07,560
+So now that I subscribe to this, let's actually listen to an event and I'm going to create an artificial
+
+28
+00:02:07,560 --> 00:02:10,920
+event that will send to this authenticated user.
+
+29
+00:02:10,950 --> 00:02:18,170
+OK, so I'll simply say private channel, dot bind and I will bind for an event called Private Message.
+
+30
+00:02:18,180 --> 00:02:24,480
+And again, this is an artificial event that I'm going to create and send with a little bit of sample
+
+31
+00:02:24,480 --> 00:02:24,830
+code.
+
+32
+00:02:25,260 --> 00:02:31,470
+And again, it's a function and it takes the data that's passed back to us by the server.
+
+33
+00:02:31,980 --> 00:02:37,800
+And all I'm going to do here is taking advantage of that little prompt JavaScript module, which I called
+
+34
+00:02:37,800 --> 00:02:38,430
+attention.
+
+35
+00:02:39,000 --> 00:02:40,140
+I'll just display an alert.
+
+36
+00:02:42,450 --> 00:02:47,790
+And I'll just populate two things, HTML, which I'll get from the data variable that's passed to this
+
+37
+00:02:47,790 --> 00:02:52,890
+anonymous function and sent by the application itself, which we'll get to momentarily, and we'll look
+
+38
+00:02:52,890 --> 00:02:59,100
+for a message and I'll give it an icon and I'll just call that success.
+
+39
+00:02:59,310 --> 00:03:04,710
+Doesn't matter what the icon is, I'm just showing how you can send things to a private channel.
+
+40
+00:03:05,280 --> 00:03:08,640
+So now I'm listening to that event, but we don't have anything that sends it yet.
+
+41
+00:03:08,640 --> 00:03:16,320
+So I'm going to go over to my push or go file and I'll just create a simple sample code right here and
+
+42
+00:03:16,320 --> 00:03:17,310
+I'll call it func.
+
+43
+00:03:17,340 --> 00:03:28,890
+It'll have the repo of Star DB repo and it's a handler and I'll call it send a private message and because
+
+44
+00:03:28,890 --> 00:03:34,020
+it's a handler requires a response writer and a pointer to a request.
+
+45
+00:03:37,710 --> 00:03:41,970
+And here I'm just going to build up and send a really simple message.
+
+46
+00:03:42,300 --> 00:03:45,570
+So I'll assume I'm going to get some variables from the URL.
+
+47
+00:03:45,570 --> 00:03:48,360
+So you are variables, things that are encoded as a get request.
+
+48
+00:03:48,360 --> 00:03:56,730
+And the first one will be MSgt, which is a message and I'll just get that from arguido dot query dot
+
+49
+00:03:56,730 --> 00:04:05,240
+get and I'll look for the key of MSG and then I need the user ID and I'll just call that ID and ID.
+
+50
+00:04:05,400 --> 00:04:09,040
+So now I have a message and the user id I want to send this to.
+
+51
+00:04:09,420 --> 00:04:15,630
+So let's build up a data variable which is a type map, string string and this is what we're going to
+
+52
+00:04:15,630 --> 00:04:24,030
+use to send to our pusher compatible server and data, I'll call it message is the key is equal to the
+
+53
+00:04:24,030 --> 00:04:29,400
+message that we grab from the URL and now I'll just trigger my my client and send it.
+
+54
+00:04:29,400 --> 00:04:33,150
+And I'm not going to bother doing anything else other than sending this over pusher's.
+
+55
+00:04:33,150 --> 00:04:35,700
+So when we actually call the URL, we'll get a blank screen.
+
+56
+00:04:35,700 --> 00:04:36,330
+But that's fine.
+
+57
+00:04:36,330 --> 00:04:39,090
+We just want to trigger the event, so I'll ignore the error.
+
+58
+00:04:39,690 --> 00:04:41,910
+And that's equal to app dot.
+
+59
+00:04:42,570 --> 00:04:43,170
+Try that again.
+
+60
+00:04:43,230 --> 00:04:51,660
+Repo dot app dot WC client dot trigger and I'll trigger two and I have to build up a string here.
+
+61
+00:04:51,660 --> 00:04:59,970
+So format as print f I'm going to trigger two private dash channel dash and then a string because I'm
+
+62
+00:04:59,970 --> 00:05:02,340
+getting the idea as a string and I'll just put it in there.
+
+63
+00:05:02,340 --> 00:05:07,500
+So that will send it to my case because I'm going to send it to user ID, one private dash channel dash
+
+64
+00:05:07,500 --> 00:05:07,860
+one.
+
+65
+00:05:08,970 --> 00:05:13,650
+The second key is our event, which is a private message.
+
+66
+00:05:14,670 --> 00:05:17,010
+That's what we're listening for in our Jagjit.
+
+67
+00:05:17,400 --> 00:05:18,740
+And the data is just the data.
+
+68
+00:05:19,080 --> 00:05:32,310
+OK, so I'll give this a comment and I'll just call it is sample code too for sending to private channel.
+
+69
+00:05:32,860 --> 00:05:35,430
+OK, now we need to put something in our roots.
+
+70
+00:05:35,730 --> 00:05:37,320
+I have a typo here somewhere.
+
+71
+00:05:40,670 --> 00:05:41,240
+Right here.
+
+72
+00:05:43,350 --> 00:05:44,250
+Make a map.
+
+73
+00:05:46,100 --> 00:05:48,150
+String, string, that's better.
+
+74
+00:05:49,280 --> 00:05:55,040
+Now let's open our roots file and just create a dummy route to send this to, so I'll put it in the
+
+75
+00:05:55,040 --> 00:06:01,940
+authenticated section and I'll make it the very first route and I'll call it a sample code for sending
+
+76
+00:06:01,940 --> 00:06:08,210
+to private channel and I'll just call it as a Getrude Muxtape get.
+
+77
+00:06:09,050 --> 00:06:17,960
+And the pattern will be slash admin is added by this code up here, then slash private message and that
+
+78
+00:06:17,960 --> 00:06:19,250
+will call handlers.
+
+79
+00:06:19,550 --> 00:06:23,480
+Repo dot send private message.
+
+80
+00:06:24,700 --> 00:06:32,070
+OK, so this is now ready to test, and again, it's going to be a really simple thing, so let me stop
+
+81
+00:06:32,080 --> 00:06:32,830
+my application.
+
+82
+00:06:36,850 --> 00:06:43,090
+Start my application, I'll go back and reload this page and I have to log in again for some reason,
+
+83
+00:06:43,420 --> 00:06:48,370
+admin at example, dot com password, remember me?
+
+84
+00:06:48,370 --> 00:06:48,990
+Log in.
+
+85
+00:06:49,380 --> 00:06:51,420
+OK, let's first of all, look at our JavaScript.
+
+86
+00:06:51,820 --> 00:06:56,230
+So I'm going to look at the source code and search for private channel.
+
+87
+00:06:57,340 --> 00:07:04,000
+And you can see here I'm actually binding to private dash channel dash one.
+
+88
+00:07:04,080 --> 00:07:06,490
+OK, so this is working now.
+
+89
+00:07:06,490 --> 00:07:13,450
+I'm going to open another browser window and make it smaller just so I can actually test this and I
+
+90
+00:07:13,450 --> 00:07:14,420
+am logged in already.
+
+91
+00:07:14,430 --> 00:07:18,220
+So let me go to localhost 4000, make sure I'm logged in.
+
+92
+00:07:18,220 --> 00:07:18,610
+I am.
+
+93
+00:07:19,060 --> 00:07:25,810
+And let's change that you url to and I'll change it to admin slash send.
+
+94
+00:07:27,260 --> 00:07:33,530
+Not just private message as thought it was private message, and I will give it some arguments, Ms.
+
+95
+00:07:33,530 --> 00:07:42,680
+G equals hello and I'll put a 20 in there just to encode a properly world ampersand ID equals one.
+
+96
+00:07:42,800 --> 00:07:47,660
+Now, let me drag this down so we can see the other screen return.
+
+97
+00:07:48,720 --> 00:07:54,560
+And there it is, and the only user that would get that message is the one that subscribe to private
+
+98
+00:07:54,960 --> 00:08:01,400
+channel DASH one, which because the user ID is unique among users, only this person would get it.
+
+99
+00:08:01,710 --> 00:08:04,910
+And that's all there is for sending private messages.

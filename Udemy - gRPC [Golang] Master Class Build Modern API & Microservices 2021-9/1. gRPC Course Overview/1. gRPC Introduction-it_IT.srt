@@ -1,0 +1,569 @@
+﻿1
+00:00:00,240 --> 00:00:02,660
+Ciao e benvenuto in questo corso, sono GOPAC.
+
+2
+00:00:02,940 --> 00:00:06,390
+Il mio nome è definito Merrick e sarò il tuo istruttore per questa classe.
+
+3
+00:00:06,390 --> 00:00:07,860
+Quindi prima l'introduzione al corso.
+
+4
+00:00:07,890 --> 00:00:11,380
+E voglio presentarti specificatamente a GOPAC.
+
+5
+00:00:11,490 --> 00:00:17,280
+Quindi il treno di oggi è quello di costruire micro servizi e l'hai sentito prima e i micro servizi
+
+6
+00:00:17,280 --> 00:00:21,260
+sono costruiti in diverse lingue e comprenderanno una funzione della tua attività.
+
+7
+00:00:21,420 --> 00:00:25,820
+Ad esempio, abbiamo un servizio di acquisto in cui gli acquisti degli utenti sono corretti.
+
+8
+00:00:25,860 --> 00:00:30,360
+Potrebbe essere collegato a un altro Microsoft Office scritto in un'altra lingua chiamata servizio di promozione.
+
+9
+00:00:30,360 --> 00:00:30,850
+OK.
+
+10
+00:00:31,080 --> 00:00:36,330
+Forse venderai qualcosa per $ 100 ma il servizio di promozione dice che in realtà non è in promozione.
+
+11
+00:00:36,330 --> 00:00:37,510
+Sono $ 80.
+
+12
+00:00:37,590 --> 00:00:41,040
+Quindi comprano i miei generi alimentari e la promozione delle nostre drogherie ci vanno.
+
+13
+00:00:41,430 --> 00:00:45,900
+Forse c'è anche un servizio di micro-service che ti porterà per servizio.
+
+14
+00:00:45,930 --> 00:00:46,160
+OK.
+
+15
+00:00:46,170 --> 00:00:49,970
+Perché dopo che un utente compra qualcosa e ha bisogno di essere consegnato, sono buoni.
+
+16
+00:00:50,280 --> 00:00:55,370
+E forse hai anche un servizio o un micro servizio che è collegato alla consegna del servizio di
+
+17
+00:00:55,380 --> 00:00:57,380
+acquisto e del micro servizio di promozione.
+
+18
+00:00:57,420 --> 00:01:02,220
+Quindi, tutto sommato, un sacco della mia spesa è in un sacco di lingue diverse
+
+19
+00:01:02,220 --> 00:01:04,190
+e devono parlare tra loro.
+
+20
+00:01:04,200 --> 00:01:09,600
+Ora questi microinterruttori quando si scambiano le informazioni devono concordare su molte cose di cui hanno bisogno
+
+21
+00:01:09,600 --> 00:01:16,110
+per concordare l'API per lo scambio di dati sui formati dei dati sui modelli di aria sul bilanciamento del carico e
+
+22
+00:01:16,110 --> 00:01:17,610
+su molte altre cose.
+
+23
+00:01:17,640 --> 00:01:22,260
+Una delle scelte molto popolari per la creazione di API e probabilmente ne hai sentito parlare se sei
+
+24
+00:01:22,290 --> 00:01:24,660
+in questo corso è di riposo o essere Jason.
+
+25
+00:01:24,920 --> 00:01:25,360
+OK.
+
+26
+00:01:25,530 --> 00:01:28,260
+Come un meccanismo più ampio.
+
+27
+00:01:28,260 --> 00:01:32,360
+Quindi in questo corso però non vedremo il riposo, ovviamente esploreremo GRB.
+
+28
+00:01:32,550 --> 00:01:36,540
+E c'è un'intera sezione su Wired europaeus ci riposo.
+
+29
+00:01:36,840 --> 00:01:40,490
+Quindi, costruendo un'API, voglio che tu dica che è molto difficile e probabilmente lo hai sperimentato.
+
+30
+00:01:40,500 --> 00:01:41,390
+Non è divertente.
+
+31
+00:01:41,600 --> 00:01:44,830
+Davvero interessante del modello di dati Joe e Jason non SML.
+
+32
+00:01:44,840 --> 00:01:46,410
+O vuoi qualcosa di binario.
+
+33
+00:01:46,710 --> 00:01:48,720
+Devi anche pensare agli endpoint.
+
+34
+00:01:48,810 --> 00:01:53,550
+Ad esempio, quando non si arresta l'API, un endpoint sembra avere questa API.
+
+35
+00:01:53,580 --> 00:01:56,610
+L'unico utente 2:59 post quattro cinque sei.
+
+36
+00:01:56,610 --> 00:01:58,090
+È piuttosto complicato.
+
+37
+00:01:58,410 --> 00:01:59,840
+E poi in altri post.
+
+38
+00:02:00,000 --> 00:02:03,150
+Quindi questa è un'altra API verbo, l'unico utente ti vuole tre post.
+
+39
+00:02:03,180 --> 00:02:04,780
+Quindi è anche abbastanza complicato.
+
+40
+00:02:05,280 --> 00:02:08,990
+Devi anche pensare a come invocarlo su come gestire gli errori.
+
+41
+00:02:09,450 --> 00:02:12,540
+L'API è nella zona quindi è davvero molto difficile.
+
+42
+00:02:12,590 --> 00:02:14,850
+Devi pensare all'efficienza della tua API.
+
+43
+00:02:14,850 --> 00:02:17,190
+Quanti dati ottengo da una chiamata.
+
+44
+00:02:17,190 --> 00:02:21,680
+Sono troppi dati o sono troppi dati, nel qual caso mi piacciono troppe chiamate API.
+
+45
+00:02:21,750 --> 00:02:23,150
+Quindi è necessario trovare il giusto equilibrio.
+
+46
+00:02:23,160 --> 00:02:24,690
+Che ne dici di latenza.
+
+47
+00:02:24,810 --> 00:02:27,680
+Che ne dici di scalabilità a 1000 client.
+
+48
+00:02:27,690 --> 00:02:33,640
+Sai come funziona il bilanciamento del carico e come funziona l'interoperabilità tra molte lingue.
+
+49
+00:02:33,780 --> 00:02:36,890
+Quindi non scappare, non voglio sovraccaricarti di concetti.
+
+50
+00:02:36,900 --> 00:02:40,060
+Voglio solo mostrarti che costruire un'API è complicato.
+
+51
+00:02:40,410 --> 00:02:45,320
+E infine possiamo aggiungere all'Oceano Atlantico il monitoraggio e la registrazione di troppe cose da fare bene.
+
+52
+00:02:45,330 --> 00:02:51,480
+Non ti piacerebbe che ci fosse qualche framework che risolvesse tutte le cose noiose e difficili e ti lasciasse solo
+
+53
+00:02:51,480 --> 00:02:52,480
+le cose divertenti.
+
+54
+00:02:52,740 --> 00:02:55,510
+Ebbene sì, questo quadro è GOPAC.
+
+55
+00:02:55,740 --> 00:03:01,880
+Quindi, che cos'è un'API nel suo nucleo e il nucleo di un'API è un contratto che dice di inviarmi questa richiesta
+
+56
+00:03:01,880 --> 00:03:03,370
+e io canterò questa risposta.
+
+57
+00:03:03,390 --> 00:03:04,260
+Facile.
+
+58
+00:03:04,260 --> 00:03:05,960
+Questo è ciò che dovrebbe essere un'API.
+
+59
+00:03:06,060 --> 00:03:12,090
+Riguarda i dati e nient'altro nel resto di questo corso allevierà tutto il resto che abbiamo visto prima delle
+
+60
+00:03:12,090 --> 00:03:15,290
+cose difficili per il framework del PC del lavoro.
+
+61
+00:03:16,220 --> 00:03:20,080
+Allora, qual è il tuo PC Cos'è questa cosa che risolve i nostri problemi.
+
+62
+00:03:20,240 --> 00:03:25,580
+Bene GOPAC è un framework libero e open source sviluppato da Google e con Square e altre
+
+63
+00:03:26,120 --> 00:03:31,320
+aziende e il tuo PC è ora parte delle fondazioni di fondazione cloud native NCF.
+
+64
+00:03:31,640 --> 00:03:35,380
+Anche un modo per cui anatra e cubani hanno bisogno, per esempio, fanno parte di questo progetto.
+
+65
+00:03:35,450 --> 00:03:41,260
+Quindi GOPAC è un progetto abbastanza importante al giorno d'oggi ad un livello elevato europaeus ci consente di definire le
+
+66
+00:03:41,260 --> 00:03:47,320
+richieste e le risposte per le chiamate del PC in modo da chiamate di procedura remota e gestisce tutto per te.
+
+67
+00:03:47,630 --> 00:03:53,630
+Inoltre, per un sacco di buzz words è moderno ed efficiente costruito su di esso dovrebbe
+
+68
+00:03:53,630 --> 00:03:55,270
+essere latenza troppo bassa.
+
+69
+00:03:55,290 --> 00:03:56,440
+Supporteranno lo streaming.
+
+70
+00:03:56,540 --> 00:04:01,190
+Saranno indipendenti dalla lingua e il mix è superiore al plug-in di autenticazione che rimbalza la registrazione e
+
+71
+00:04:01,190 --> 00:04:01,980
+il monitoraggio.
+
+72
+00:04:02,270 --> 00:04:06,690
+Così suona suoni fantastici come un quadro perfetto ed è davvero buono.
+
+73
+00:04:07,070 --> 00:04:08,560
+A proposito, che cos'è un gioco di ruolo.
+
+74
+00:04:08,570 --> 00:04:09,600
+Che cosa hai menzionato.
+
+75
+00:04:09,620 --> 00:04:15,320
+Il nostro PC RBC come ho detto è una chiamata di procedura remota nel codice cliente.
+
+76
+00:04:15,320 --> 00:04:20,140
+In sostanza sembra che stiamo chiamando una funzione direttamente sul server.
+
+77
+00:04:20,150 --> 00:04:21,860
+Quindi ecco il nostro codice server.
+
+78
+00:04:21,920 --> 00:04:23,370
+Pensa a qualsiasi lingua giusta.
+
+79
+00:04:23,510 --> 00:04:29,000
+Creeremo l'utente in modo che esista una funzione denominata creare utenti per creare utenti e quindi nel codice client
+
+80
+00:04:29,160 --> 00:04:34,200
+e sapere che la lingua avrà il nostro codice e tutti dicono che il server crea l'utente.
+
+81
+00:04:34,460 --> 00:04:40,250
+Quindi, come puoi vedere in giallo, l'utente di creazione è corrispondente Quindi sembra che sul codice del
+
+82
+00:04:40,250 --> 00:04:43,030
+client stiamo invocando direttamente una funzione sul server.
+
+83
+00:04:43,190 --> 00:04:45,230
+E questo è quello che si chiama R. P. seguito.
+
+84
+00:04:45,320 --> 00:04:48,300
+Quindi il nostro PC non è come stiamo invocando una funzione o un server.
+
+85
+00:04:48,350 --> 00:04:52,470
+C'è qualcosa che accade sulla rete, ma è proprio come appare nel nostro codice.
+
+86
+00:04:52,790 --> 00:04:54,860
+E questo è ciò che rende il nostro PC fantastico.
+
+87
+00:04:55,220 --> 00:04:57,350
+Quindi il nostro PC è un nuovo concetto.
+
+88
+00:04:57,350 --> 00:04:58,180
+No non lo è.
+
+89
+00:04:58,190 --> 00:04:59,630
+Non è un nuovo concetto.
+
+90
+00:04:59,630 --> 00:05:05,960
+Ci sono altri framework e linguaggi come CORBA che ha avuto questo prima, ma con il nostro PC è molto più
+
+91
+00:05:05,960 --> 00:05:06,910
+bello da gestire.
+
+92
+00:05:06,920 --> 00:05:11,750
+È implementato in modo molto pulito e ha anche molti problemi nei framework di molti
+
+93
+00:05:11,750 --> 00:05:12,630
+anni fa.
+
+94
+00:05:12,950 --> 00:05:14,600
+Quindi ecco un'immagine che vedrai molto.
+
+95
+00:05:14,600 --> 00:05:20,600
+Quando guardi il tuo PC proviene dai siti Web europei e possiamo vedere che, ad esempio, abbiamo un servizio
+
+96
+00:05:20,600 --> 00:05:26,690
+C ++ sul lato sinistro e abbiamo un client ruby e un client Android Jaba che parlano tutti al nostro
+
+97
+00:05:26,690 --> 00:05:29,860
+server RBC usando le richieste di protocollo e risposta.
+
+98
+00:05:29,870 --> 00:05:36,460
+Quindi, fondamentalmente, è lo stesso concetto prima che abbiamo generato il codice e possiamo inserire la nostra richiesta.
+
+99
+00:05:36,950 --> 00:05:38,090
+Quindi, come faccio a iniziare.
+
+100
+00:05:38,090 --> 00:05:43,160
+Perché proprio ora sto vendendo i tuoi sogni proprio al centro di esso sarà necessario
+
+101
+00:05:43,190 --> 00:05:50,450
+definire i messaggi e i servizi utilizzando i buffer di protocollo il resto del codice GOP verrà generato per noi e dovremo
+
+102
+00:05:50,450 --> 00:05:52,330
+solo implementare il nostro servizio.
+
+103
+00:05:52,400 --> 00:05:58,450
+Quindi GOPAC risolverà un sacco di problemi per noi e genererà una tonnellata di codice nel complesso quando scriviamo
+
+104
+00:05:58,490 --> 00:06:04,730
+un protocollo stupido che funzionerà per noi per più di 12 linguaggi server di programmazione e ci consentirà di utilizzare un
+
+105
+00:06:04,730 --> 00:06:07,970
+framework che uccide due milioni di RBC al secondo .
+
+106
+00:06:08,000 --> 00:06:11,800
+Quindi ecco cosa faremo in questo corso e questo è solo un ottimo servizio.
+
+107
+00:06:11,840 --> 00:06:15,600
+Quindi se segui il mio corso di protocollo buffer capirai davvero dove si trova.
+
+108
+00:06:15,650 --> 00:06:21,980
+Fondamentalmente abbiamo il nostro messaggio di saluto e inviamo una richiesta di benvenuto a cui è stata inviata una risposta di
+
+109
+00:06:21,980 --> 00:06:28,160
+saluto e in fondo abbiamo sempre un servizio di saluto che definisce RBC saluta che accetta una richiesta di saluto
+
+110
+00:06:28,190 --> 00:06:30,030
+e restituisce una grande risposta.
+
+111
+00:06:30,050 --> 00:06:34,730
+Questo è il nostro contratto IPY che è definito per salutare il nostro PC proprio qui.
+
+112
+00:06:34,820 --> 00:06:40,390
+Quindi andremo molto in profondità su come funziona e in che modo vengono definite le cose.
+
+113
+00:06:40,430 --> 00:06:47,140
+Ma voglio che tu dia una sbirciatina su come definire il nostro servizio PC nei buffer pro-tabacco.
+
+114
+00:06:47,300 --> 00:06:50,410
+Quindi, perché usiamo anche i buffer verticali in questo corso.
+
+115
+00:06:50,420 --> 00:06:51,760
+Quali buffer di protocollo.
+
+116
+00:06:51,800 --> 00:06:53,530
+Sono fondamentalmente indipendenti dal linguaggio.
+
+117
+00:06:53,810 --> 00:06:56,540
+Il codice può essere generato praticamente per qualsiasi lingua.
+
+118
+00:06:56,570 --> 00:07:00,830
+I dati sono binari ed efficientemente serializzati e vedremo questo in questo corso.
+
+119
+00:07:00,890 --> 00:07:03,550
+È molto comodo quando trasporti molti dati.
+
+120
+00:07:03,550 --> 00:07:10,130
+Quindi, nelle configurazioni di Big Data, ti consente anche di evolvere facilmente la tua API usando alcune regole.
+
+121
+00:07:10,130 --> 00:07:13,620
+Quindi, in generale, prima di fare questo corso dovresti sapere le basi.
+
+122
+00:07:13,640 --> 00:07:16,410
+Buffer ottici altrimenti andrai completamente perso.
+
+123
+00:07:16,450 --> 00:07:19,370
+OK, spero di averlo nel tuo bagaglio.
+
+124
+00:07:19,370 --> 00:07:20,200
+Muoviamoci.
+
+125
+00:07:20,450 --> 00:07:22,720
+Quindi questa è una introduzione piuttosto lunga.
+
+126
+00:07:22,730 --> 00:07:26,240
+Perché dovresti imparare i buffer di protocollo e GOPAC.
+
+127
+00:07:26,630 --> 00:07:30,560
+Bene molte aziende l'hanno abbracciata interamente nella produzione.
+
+128
+00:07:30,560 --> 00:07:34,920
+Stiamo parlando di Google per il loro servizio interno e servizi assonali come.
+
+129
+00:07:34,990 --> 00:07:41,620
+Quindi stiamo parlando di Netflix Square, che è uno dei primi contributori del sistema operativo principale a cui è stato
+
+130
+00:07:41,630 --> 00:07:42,890
+aggiunto ECD 3.
+
+131
+00:07:43,100 --> 00:07:45,110
+Scarafaggio D. B e così via.
+
+132
+00:07:45,380 --> 00:07:52,340
+Secondo me GOPAC è il futuro dell'API dei micro servizi e mobile per gli occhi di Sarabi e forse anche per le API
+
+133
+00:07:52,340 --> 00:07:52,900
+Web.
+
+134
+00:07:52,970 --> 00:07:53,520
+OK.
+
+135
+00:07:53,690 --> 00:07:56,570
+Tutto sommato è un quadro sorprendente da leggere per imparare.
+
+136
+00:07:56,570 --> 00:08:01,760
+Vorrei solo darti un assaggio e un'introduzione su di te sa cosa è risolvere quali
+
+137
+00:08:01,760 --> 00:08:02,540
+problemi risolti.
+
+138
+00:08:02,540 --> 00:08:03,640
+Come è rivoluzionario.
+
+139
+00:08:03,650 --> 00:08:05,930
+Chi lo usa e come è costruito.
+
+140
+00:08:06,050 --> 00:08:08,560
+Non preoccuparti, potrebbe essere travolgente in questo momento.
+
+141
+00:08:08,630 --> 00:08:14,430
+Ma in questo corso andremo passo dopo passo ad imparare come funziona il tuo PC e farlo correttamente.
+
+142
+00:08:14,570 --> 00:08:17,260
+Quindi spero che tu lo capisca e ti vedrà nella prossima lezione.
+
+

@@ -1,0 +1,227 @@
+1
+00:00:11,960 --> 00:00:17,210
+Hello and welcome to the golden programming language course in the previous session.
+
+2
+00:00:17,480 --> 00:00:19,850
+We could define a database layer.
+
+3
+00:00:20,210 --> 00:00:26,420
+And in this session, we want to establish the communication between geographies on the database.
+
+4
+00:00:26,810 --> 00:00:29,900
+Now it's time to design, to serve our part.
+
+5
+00:00:30,440 --> 00:00:41,090
+First, go to explore and create a project folder like name server create project on the server.
+
+6
+00:00:44,860 --> 00:00:47,800
+And crude often can't service controller.
+
+7
+00:00:50,180 --> 00:00:51,320
+Me fine.
+
+8
+00:00:53,860 --> 00:00:54,850
+Service
+
+9
+00:00:57,460 --> 00:01:01,000
+controller that grew.
+
+10
+00:01:05,220 --> 00:01:13,200
+Here, Yvonne, to implement different parts related to G.R. PC service, to be able to communicate
+
+11
+00:01:13,200 --> 00:01:15,030
+with the metals in the database.
+
+12
+00:01:15,540 --> 00:01:18,300
+Create distraught and inside it.
+
+13
+00:01:18,510 --> 00:01:23,820
+Recreate the field from the DB, initialize the racetrack of the DV tools package.
+
+14
+00:01:24,150 --> 00:01:30,540
+And in this way, we establish the connection between the database layer and G.R. PC layer.
+
+15
+00:01:30,870 --> 00:01:31,980
+So we right?
+
+16
+00:01:33,300 --> 00:01:49,440
+First package, Serbia and Tie sit a name for a strike like she are PC controller destruct
+
+17
+00:01:52,230 --> 00:02:06,090
+define a variable by the type of DB initial laser, for example DB connection from asterisk DB tools
+
+18
+00:02:07,800 --> 00:02:09,660
+DB initial laser.
+
+19
+00:02:11,190 --> 00:02:15,600
+We now have access to the components needed to use the database.
+
+20
+00:02:17,140 --> 00:02:23,470
+You need to initialize the connection fields so that you can use it to connect to the metals in the
+
+21
+00:02:23,470 --> 00:02:24,220
+database.
+
+22
+00:02:24,910 --> 00:02:29,740
+To do this, we need to calm the iconic metal from the DevTools package.
+
+23
+00:02:30,190 --> 00:02:36,730
+The return value of this metal is another object from the deep initialize restaurant, and using it,
+
+24
+00:02:37,090 --> 00:02:41,380
+we can set the TV connection, fill in the GRB controller extract.
+
+25
+00:02:41,840 --> 00:02:46,120
+Now we go to create the function and implements this.
+
+26
+00:02:46,270 --> 00:03:00,550
+So the right phone set the name for function like job is the service initialize our G, our PC server
+
+27
+00:03:02,500 --> 00:03:04,450
+initialize the.
+
+28
+00:03:08,530 --> 00:03:14,650
+And set to require parameters for using conic function to create a connection to the database first,
+
+29
+00:03:14,650 --> 00:03:30,690
+its driver name and second is data source name, driver name, history and data source name is Streak.
+
+30
+00:03:34,140 --> 00:03:41,580
+This function is supposed to return to values for us first anarchic from GOP controllers strike and
+
+31
+00:03:41,580 --> 00:03:43,750
+the other is an error object.
+
+32
+00:03:43,770 --> 00:03:46,170
+So we say the pointer of the controller
+
+33
+00:03:48,960 --> 00:03:54,270
+asterisk g, our PC controller.
+
+34
+00:03:55,310 --> 00:03:56,540
+And sit and a little.
+
+35
+00:03:59,930 --> 00:04:03,350
+Now go to implements the body of function.
+
+36
+00:04:05,120 --> 00:04:09,020
+It's time to call connect function from debate tools package.
+
+37
+00:04:09,050 --> 00:04:12,290
+First, define two variable life dividend a rule.
+
+38
+00:04:13,130 --> 00:04:20,000
+The B and rule calling equals the B tools that connect.
+
+39
+00:04:21,040 --> 00:04:22,840
+Sit driver name
+
+40
+00:04:25,810 --> 00:04:28,060
+and said it a source name.
+
+41
+00:04:31,970 --> 00:04:33,320
+Check our status.
+
+42
+00:04:35,060 --> 00:04:39,950
+If you're not equals, need
+
+43
+00:04:42,290 --> 00:04:46,850
+greater need and you're all.
+
+44
+00:04:52,000 --> 00:04:58,690
+And return and the object from G.P.S. controller is right and initialized, deep connection field of
+
+45
+00:04:58,690 --> 00:05:05,860
+eat by debris field created from Colin cunning function of DevTools package so we could initialize DB
+
+46
+00:05:05,870 --> 00:05:08,770
+connection field for using in this package.
+
+47
+00:05:08,770 --> 00:05:12,280
+So we'll be right return.
+
+48
+00:05:13,730 --> 00:05:14,690
+And for some.
+
+49
+00:05:17,470 --> 00:05:24,990
+Dear PC controller and initialize the.
+
+50
+00:05:26,290 --> 00:05:37,180
+Connection by theory and set the format the called and save the project.
+
+51
+00:05:38,050 --> 00:05:45,600
+Now we could create a function named G.P.S. server initialization if we call the G.R. PC server initialize
+
+52
+00:05:45,610 --> 00:05:49,690
+a function by initializing its input parameters.
+
+53
+00:05:49,930 --> 00:05:57,040
+We can initialize the DB connection field of the G.R. PC controller struct and using it, we will have
+
+54
+00:05:57,040 --> 00:06:03,370
+access to the database methods to prepare for the operation by G.R., PC, etc. In order not to prolong
+
+55
+00:06:03,370 --> 00:06:04,980
+the time of the session, we will finish.
+
+56
+00:06:05,010 --> 00:06:08,020
+She then will continue the content in the next session.
+
+57
+00:06:08,230 --> 00:06:08,680
+Goodbye.

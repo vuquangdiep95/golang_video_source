@@ -1,0 +1,255 @@
+1
+00:00:00,450 --> 00:00:02,160
+Bất cứ điều gì để nói trong một video khác.
+
+2
+00:00:02,160 --> 00:00:08,340
+Vì vậy, một điều tôi có nó giống như sự phản ánh giữa phản ứng so với phản ứng và vì vậy khi chúng ta thực hiện lý tưởng của mình
+
+3
+00:00:08,890 --> 00:00:11,710
+ngôn ngữ định nghĩa giao diện phản hồi của chúng tôi là chữ thường.
+
+4
+00:00:11,730 --> 00:00:13,360
+Nhưng đó là một ngôn ngữ khác.
+
+5
+00:00:13,500 --> 00:00:16,670
+Và khi nó được biên dịch bằng mã go, nó sẽ trở thành vốn.
+
+6
+00:00:16,680 --> 00:00:19,030
+Vì vậy, nó có thể được xuất khẩu ngay.
+
+7
+00:00:19,050 --> 00:00:26,490
+Và vì vậy, nếu chúng ta nhìn vào cấu trúc thực tế ở đây được tạo ra vốn phản hồi phản hồi R thì đó là
+
+8
+00:00:26,490 --> 00:00:28,920
+có thẻ ở đây pro ở trên.
+
+9
+00:00:29,010 --> 00:00:35,260
+Và nó có một phản hồi tên viết thường.
+
+10
+00:00:35,510 --> 00:00:41,670
+Và điều tiếp theo chỉ là thảo luận một chút về những gì chúng ta đang thực sự làm ở đây.
+
+11
+00:00:41,690 --> 00:00:47,170
+Và do đó, một thủ tục từ xa được gọi là ý tưởng đằng sau một thủ tục từ xa gọi ứng dụng khách của bạn.
+
+12
+00:00:47,280 --> 00:00:52,370
+Có một máy chủ, có một số phương thức chức năng thủ tục ở đây trên máy chủ.
+
+13
+00:00:52,580 --> 00:00:59,110
+Và ngay bây giờ trong lý tưởng của chúng tôi là trong ngôn ngữ định nghĩa của chúng tôi, chúng tôi đã nói rằng đối với khách hàng của mình, chúng tôi sẽ
+
+14
+00:00:59,110 --> 00:01:06,770
+để có một thủ tục từ xa có tên là Echo mà khách hàng này có thể gọi thủ tục này là phương thức hàm bất cứ điều gì
+
+15
+00:01:06,800 --> 00:01:10,130
+echo lên trên máy chủ và nó sẽ chạy.
+
+16
+00:01:10,130 --> 00:01:16,430
+Đây chỉ là một cách khác để tôi nghĩ về việc khách hàng yêu cầu máy chủ thực hiện điều gì đó
+
+17
+00:01:16,430 --> 00:01:17,350
+và gửi nó trở lại.
+
+18
+00:01:17,350 --> 00:01:17,940
+Phải.
+
+19
+00:01:18,050 --> 00:01:22,840
+Giống như nó giống như các thuật ngữ khác nhau để nói về bạn biết nếu chúng ta nói về điều này với
+
+20
+00:01:22,850 --> 00:01:26,210
+HP chúng tôi muốn nói điểm cuối và Jason trở lại.
+
+21
+00:01:26,680 --> 00:01:26,930
+Phải.
+
+22
+00:01:26,930 --> 00:01:35,330
+Nhưng ở đây chúng tôi đang nói rằng bạn biết một chức năng mà bạn biết RCC thường được ngụy trang như thể nó trông giống như
+
+23
+00:01:35,330 --> 00:01:36,850
+một chức năng thông thường.
+
+24
+00:01:36,950 --> 00:01:42,100
+Vì vậy, nếu bạn không biết rằng đây là một cuộc gọi thủ tục lỗi, bạn sẽ không nghĩ đó là.
+
+25
+00:01:42,110 --> 00:01:48,230
+Bạn chỉ thấy ồ, nó chỉ là một hàm echo nhận trong một ngữ cảnh và cấu trúc này nó trả về một số khác
+
+26
+00:01:48,230 --> 00:01:49,170
+cấu trúc.
+
+27
+00:01:49,250 --> 00:01:52,490
+Vì vậy, thực tế là nó thực sự đi qua một mạng ở giữa.
+
+28
+00:01:52,490 --> 00:01:56,640
+Điều này được ẩn từ mã từ coder ở đây.
+
+29
+00:01:56,730 --> 00:01:57,690
+ĐƯỢC RỒI.
+
+30
+00:01:57,800 --> 00:01:58,650
+Đối với khách hàng.
+
+31
+00:01:58,950 --> 00:02:01,970
+Vâng, nhưng rõ ràng các bạn đã thiết lập máy chủ để giải quyết vấn đề đó.
+
+32
+00:02:02,000 --> 00:02:02,880
+Đúng.
+
+33
+00:02:02,980 --> 00:02:03,290
+Được rồi.
+
+34
+00:02:06,590 --> 00:02:06,920
+Vâng.
+
+35
+00:02:06,950 --> 00:02:13,670
+Vì vậy, khi chúng tôi gọi E dot tại doanh trại tốt, chúng tôi có một khách hàng và gọi echo và Echo mới khả dụng vì
+
+36
+00:02:13,670 --> 00:02:17,920
+lý tưởng của chúng tôi bởi vì chúng tôi xác định rằng mã được tạo của chúng tôi.
+
+37
+00:02:18,220 --> 00:02:25,490
+Và khi nó gọi echo, thực ra bạn biết gọi nó trên máy khách trên máy chủ và sau đó nó sẽ gửi
+
+38
+00:02:25,490 --> 00:02:26,880
+trở lại phản ứng.
+
+39
+00:02:26,880 --> 00:02:27,410
+Vâng.
+
+40
+00:02:27,440 --> 00:02:27,990
+Huh.
+
+41
+00:02:28,010 --> 00:02:28,360
+Mát mẻ.
+
+42
+00:02:29,240 --> 00:02:29,740
+Được rồi.
+
+43
+00:02:29,750 --> 00:02:33,050
+Bất kỳ phản ánh nào khác mà bạn muốn thêm vào đó.
+
+44
+00:02:33,380 --> 00:02:36,100
+Vì vậy, đây là cơ bản nhất của GOPAC.
+
+45
+00:02:36,120 --> 00:02:39,500
+Anh ấy có nhiều tính năng bổ sung để thêm vào hàng đầu.
+
+46
+00:02:39,590 --> 00:02:46,200
+Vì vậy, để thiết lập bảo mật an toàn, bạn không cần phải sử dụng kết nối không an toàn này.
+
+47
+00:02:46,700 --> 00:02:51,590
+Truyền trực tuyến các yêu cầu và phản hồi khi bạn không có sẵn tất cả dữ liệu nhưng bạn sẽ nhận được một số dữ liệu ngay lập tức
+
+48
+00:02:51,590 --> 00:02:56,640
+bạn có thể vươn lên để đáp ứng luồng phản hồi đó và sau đó đưa ra nhiều phản hồi hơn sau đó.
+
+49
+00:02:56,690 --> 00:03:02,750
+Còn nhiều điều nữa về GOPAC nhưng điều cơ bản tuyệt đối chỉ là phản hồi yêu cầu và đó là cách bạn nhận được
+
+50
+00:03:02,750 --> 00:03:09,240
+nó được thiết lập và sau đó đây sẽ là thứ mà chúng tôi có thể sử dụng để đáp ứng bất kỳ loại dịch vụ nào.
+
+51
+00:03:09,260 --> 00:03:09,600
+Phải.
+
+52
+00:03:09,720 --> 00:03:17,780
+Có thể bạn biết trong quá khứ, chúng tôi có thể nghĩ đó là điểm cuối của máy chủ máy khách trong trạng thái nghỉ ngơi.
+
+53
+00:03:17,780 --> 00:03:21,330
+điểm cuối hoặc bất kỳ lỗi API nào trở lại.
+
+54
+00:03:21,350 --> 00:03:26,640
+Jason bạn biết và yêu cầu khách hàng giải quyết vấn đề đó và hiển thị kết quả.
+
+55
+00:03:26,960 --> 00:03:34,940
+Và ở đây, nó sẽ thay vì loại khung GOPAC mà bạn biết thực hiện các lệnh gọi hàm của nó
+
+56
+00:03:34,940 --> 00:03:39,890
+máy khách gọi hàm chức năng đó chạy trên máy khách thủ tục từ xa nó chạy trên máy chủ
+
+57
+00:03:39,890 --> 00:03:45,580
+thủ tục từ xa và sau đó dữ liệu trở lại mà khách hàng sử dụng.
+
+58
+00:03:46,010 --> 00:03:50,600
+Ưu điểm của GOPAC là nó nhanh hơn và an toàn hơn.
+
+59
+00:03:50,610 --> 00:03:56,720
+Nó nhỏ hơn và nhanh hơn và sau đó nó có các tính năng bổ sung ngoài những gì còn lại theo truyền thống
+
+60
+00:03:56,720 --> 00:03:58,670
+có.
+
+61
+00:03:58,820 --> 00:03:59,330
+Tốt.
+
+62
+00:03:59,330 --> 00:04:00,800
+Được rồi, cảm ơn.
+
+63
+00:04:00,880 --> 00:04:01,670
+Đó là thứ tốt.
+
+64
+00:04:01,670 --> 00:04:02,570
+Tôi thích cuộc thảo luận đó.

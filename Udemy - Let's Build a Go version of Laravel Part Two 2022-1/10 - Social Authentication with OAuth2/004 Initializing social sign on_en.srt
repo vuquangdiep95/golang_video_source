@@ -1,0 +1,448 @@
+1
+00:00:01,870 --> 00:00:07,600
+So let's get started updating some of our code to support social authentication or single sign on.
+
+2
+00:00:07,630 --> 00:00:14,170
+And I'm going to start by going over to my my art project, looking inside the Handler's folder and
+
+3
+00:00:14,170 --> 00:00:15,310
+bringing embossed handlers.
+
+4
+00:00:16,149 --> 00:00:22,040
+Now, if you'll recall one of the first things that we saw in that example application on Mark Bates
+
+5
+00:00:22,040 --> 00:00:26,300
+slash goth on GitHub is basically initializing social authentication.
+
+6
+00:00:26,320 --> 00:00:30,040
+He does so by calling the goth don't use provider's method.
+
+7
+00:00:30,340 --> 00:00:35,730
+So what I'm going to do is create a function here right at the end of off dash handler's dot go, a
+
+8
+00:00:35,770 --> 00:00:39,100
+function with receiver of h point and a handlers as normal.
+
+9
+00:00:40,120 --> 00:00:44,890
+And this is not going to be a handler, but it might use some information from the handlers package.
+
+10
+00:00:45,490 --> 00:00:49,090
+So what I'll do is name this one in it social off,
+
+11
+00:00:52,390 --> 00:00:56,620
+which seems like a reasonable name, and it's not going to take any parameters and it's not going to
+
+12
+00:00:56,620 --> 00:00:57,370
+return anything.
+
+13
+00:00:58,210 --> 00:01:02,590
+But what it's going to do is be called by other handlers that need social authentication.
+
+14
+00:01:03,250 --> 00:01:05,379
+So the first thing I'll do is declare a couple of variables.
+
+15
+00:01:05,980 --> 00:01:10,300
+One is called scope, and that will be the scope for connecting to, say, GitHub.
+
+16
+00:01:10,420 --> 00:01:10,780
+OK.
+
+17
+00:01:11,470 --> 00:01:18,130
+So when I make a request to GitHub saying I want to log in to this third party application, not GitHub,
+
+18
+00:01:18,130 --> 00:01:20,290
+but I want to use my GitHub credentials.
+
+19
+00:01:20,740 --> 00:01:25,950
+One of the things we have to send is what kind of information do you want from GitHub?
+
+20
+00:01:25,960 --> 00:01:29,530
+When you log log, these are in and you get to request all sorts of things.
+
+21
+00:01:30,220 --> 00:01:36,190
+So I could on GitHub, for example, say I want the user information and I want all that users repositories
+
+22
+00:01:36,190 --> 00:01:40,510
+or all that users stars, whatever it may be that in our case, we just want to log in.
+
+23
+00:01:40,540 --> 00:01:42,730
+We want to make this as simple as possible.
+
+24
+00:01:43,960 --> 00:01:49,360
+So I'll use the assignment operator and say, here are the things I want, and it goes to GitHub in
+
+25
+00:01:49,360 --> 00:01:51,460
+the form of a slice of strings.
+
+26
+00:01:52,180 --> 00:01:54,970
+So a slice of string and all I want is the user information.
+
+27
+00:01:55,060 --> 00:01:57,040
+OK, so that's all I'm going to use right now.
+
+28
+00:01:58,030 --> 00:02:03,520
+And later on, we'll have another one for Google, which I'll call GESCO or something like that.
+
+29
+00:02:03,700 --> 00:02:05,350
+We'll worry about that when we get to Google.
+
+30
+00:02:06,790 --> 00:02:13,210
+So right now, I need to tell the goth package what providers I want to use, and I do that by using
+
+31
+00:02:13,210 --> 00:02:19,540
+the goth package that we just installed a couple of lectures ago and I'm going to call use providers.
+
+32
+00:02:20,980 --> 00:02:26,240
+And that takes, as you can see in a little preview here in my I.D., any number of providers.
+
+33
+00:02:26,260 --> 00:02:28,720
+So I'll put it on multiple lines just so it's more readable.
+
+34
+00:02:28,900 --> 00:02:29,250
+OK.
+
+35
+00:02:32,050 --> 00:02:34,690
+And the only one I'm going to put in there right now is GitHub.
+
+36
+00:02:35,140 --> 00:02:38,730
+So GitHub dot and hopefully it'll show up.
+
+37
+00:02:38,740 --> 00:02:41,230
+It does a new GitHub provider.
+
+38
+00:02:41,620 --> 00:02:41,980
+OK.
+
+39
+00:02:42,070 --> 00:02:49,450
+So GitHub does new and that requires the GitHub key, the GitHub secret and our callback URL, plus
+
+40
+00:02:49,450 --> 00:02:50,980
+whatever scopes we're providing.
+
+41
+00:02:51,220 --> 00:02:56,050
+So for possible things more than for if you have more scopes that you want to offer, but we're only
+
+42
+00:02:56,050 --> 00:02:56,770
+going to offer one.
+
+43
+00:02:57,910 --> 00:03:02,630
+So I'm going to assume I'm going to get these things from my dot on file, which makes it really simple.
+
+44
+00:03:02,650 --> 00:03:09,430
+So OS don't get on and I'm going to call an entry that doesn't exist yet called GitHub underscore key.
+
+45
+00:03:09,760 --> 00:03:10,760
+That's my first parameter.
+
+46
+00:03:11,830 --> 00:03:21,070
+Then I'll put in OS, get on GitHub, underscore secret and my third one will be OS.
+
+47
+00:03:21,440 --> 00:03:27,250
+Don't get on and I'll look for GitHub underscore callback.
+
+48
+00:03:30,370 --> 00:03:34,900
+And my final parameter is just my scope.
+
+49
+00:03:35,230 --> 00:03:36,030
+All of my stops.
+
+50
+00:03:36,040 --> 00:03:37,630
+So scope, dot, dot, dot.
+
+51
+00:03:37,870 --> 00:03:41,530
+And it will read all the values for my scope and give it its trailing comma.
+
+52
+00:03:42,310 --> 00:03:43,060
+And we should be good.
+
+53
+00:03:43,600 --> 00:03:45,430
+So that sets up the providers.
+
+54
+00:03:45,700 --> 00:03:51,220
+OK, now when you're going through the associate authentication steps.
+
+55
+00:03:52,290 --> 00:03:53,250
+With golf.
+
+56
+00:03:53,580 --> 00:03:59,880
+It actually requires a cookie store, any kind of store will work, but by default it uses a gorilla
+
+57
+00:03:59,880 --> 00:04:00,570
+cookie store.
+
+58
+00:04:00,780 --> 00:04:08,100
+OK, so what I'm going to do is set up the necessary store for golf, so we're going to have a key.
+
+59
+00:04:08,730 --> 00:04:12,660
+And that's just some random key, and we can just use the one right in our own file.
+
+60
+00:04:13,110 --> 00:04:14,130
+Okay, don't get on.
+
+61
+00:04:14,520 --> 00:04:15,450
+And we're looking for key.
+
+62
+00:04:15,690 --> 00:04:17,010
+So that exists in there already.
+
+63
+00:04:17,250 --> 00:04:17,610
+OK?
+
+64
+00:04:18,810 --> 00:04:21,709
+And we have to set a maximum age for this cookie.
+
+65
+00:04:21,720 --> 00:04:26,640
+So I'll say Mac's age is assign the value of the number of seconds in a day.
+
+66
+00:04:26,670 --> 00:04:29,160
+Eighty six thousand four hundred times.
+
+67
+00:04:29,160 --> 00:04:30,240
+30 30 days.
+
+68
+00:04:31,970 --> 00:04:38,000
+And we also need to actually set up the Sessions new cookie store into a variable, so I'll create a
+
+69
+00:04:38,000 --> 00:04:45,500
+variable for store and that's a sign of the value of sessions, not new cookie store.
+
+70
+00:04:46,700 --> 00:04:47,600
+Wait, you didn't find.
+
+71
+00:04:47,630 --> 00:04:49,070
+Try that against Sessions.
+
+72
+00:04:52,060 --> 00:04:54,080
+I guess I have to go get guerrilla sessions.
+
+73
+00:04:54,130 --> 00:04:56,710
+I thought I did that, but apparently not so with the my app directory.
+
+74
+00:04:56,800 --> 00:04:57,430
+I'll just type.
+
+75
+00:04:57,460 --> 00:05:04,270
+Go get GitHub dot com slash guerrilla slash sessions.
+
+76
+00:05:06,050 --> 00:05:08,690
+In the map directory, so it goes and gets that perfect.
+
+77
+00:05:09,500 --> 00:05:11,450
+Now I should be able to import sessions.
+
+78
+00:05:12,320 --> 00:05:13,400
+Sessions dot.
+
+79
+00:05:15,180 --> 00:05:17,190
+New Cookie Store right there.
+
+80
+00:05:18,920 --> 00:05:20,990
+And that requires the slice of votes.
+
+81
+00:05:22,490 --> 00:05:25,380
+And we're just going to cast our key to a slice of votes.
+
+82
+00:05:25,740 --> 00:05:26,600
+And that gives me a story.
+
+83
+00:05:28,580 --> 00:05:33,740
+Then we said it's max age, Startraks age, and of course, that's max age, which we defined just a
+
+84
+00:05:33,740 --> 00:05:34,520
+couple of lines ago.
+
+85
+00:05:35,880 --> 00:05:42,030
+And options stock options will use the route path of her application, so it's good for the entire application.
+
+86
+00:05:42,480 --> 00:05:49,380
+Listed options dot HTP only we're going to set that to true, so it's not accessible from JavaScript
+
+87
+00:05:49,620 --> 00:05:53,070
+because it shouldn't be in the last one is secure.
+
+88
+00:05:53,460 --> 00:06:02,550
+Stock options dot secure and I'll that defaults for development equals false just to get it up and running
+
+89
+00:06:02,820 --> 00:06:03,510
+and in production.
+
+90
+00:06:03,510 --> 00:06:08,700
+Of course, you're going to have some variable that sets that to true when you're live and false when
+
+91
+00:06:08,700 --> 00:06:09,360
+you're in development.
+
+92
+00:06:09,720 --> 00:06:11,640
+But that's easy enough to implement.
+
+93
+00:06:12,090 --> 00:06:16,140
+So now we just tell Gothe and the key for this is Gothic.
+
+94
+00:06:16,560 --> 00:06:17,610
+Don't store.
+
+95
+00:06:19,450 --> 00:06:20,270
+Is equal to T.
+
+96
+00:06:22,880 --> 00:06:24,830
+And it looks like I have a typo here as well.
+
+97
+00:06:26,420 --> 00:06:29,870
+I don't know why I do that so often, but I do sometimes equals
+
+98
+00:06:33,590 --> 00:06:35,140
+and its options pass.
+
+99
+00:06:35,520 --> 00:06:36,560
+A really sloppy to that.
+
+100
+00:06:38,330 --> 00:06:38,750
+There we go.
+
+101
+00:06:39,200 --> 00:06:44,600
+So this session store, which is actually using a cookie, it only exists for the duration of the logging
+
+102
+00:06:44,600 --> 00:06:45,230
+process.
+
+103
+00:06:45,230 --> 00:06:48,920
+And that's not made abundantly clear in the documentation for Gothe.
+
+104
+00:06:49,640 --> 00:06:51,380
+But that's something you need to be aware of.
+
+105
+00:06:51,440 --> 00:06:56,180
+We need a session and we can use some other session, but this only needs to exist for the duration
+
+106
+00:06:56,180 --> 00:07:02,030
+of the time that the user is attempting to log into your site using Google or GitHub, or whatever it
+
+107
+00:07:02,030 --> 00:07:03,770
+may be, and then we don't care about it anymore.
+
+108
+00:07:03,830 --> 00:07:05,660
+So this is sufficient for our purposes.
+
+109
+00:07:06,680 --> 00:07:08,030
+So that's the first step.
+
+110
+00:07:08,390 --> 00:07:14,960
+The next step is actually to implement a handler which will call something like social login, which
+
+111
+00:07:14,960 --> 00:07:21,050
+will attempt to log the user in using some kind of social media account, and we'll get started on that
+
+112
+00:07:21,260 --> 00:07:22,130
+in the next lecture.
+

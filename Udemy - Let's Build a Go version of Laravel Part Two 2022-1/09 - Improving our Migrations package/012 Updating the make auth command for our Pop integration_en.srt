@@ -1,0 +1,376 @@
+1
+00:00:01,300 --> 00:00:03,350
+So far, we can create migrations.
+
+2
+00:00:03,370 --> 00:00:08,410
+We can run up and down migrations, and we can do a complete reset of the database, and that's really
+
+3
+00:00:08,410 --> 00:00:08,680
+good.
+
+4
+00:00:08,920 --> 00:00:12,220
+But there are other things that interact with the database that we have to take into account.
+
+5
+00:00:13,030 --> 00:00:20,800
+For example, here in my terminal, in the Myat project, if I type dot slash solicitous help, one
+
+6
+00:00:20,800 --> 00:00:23,300
+of the things we can do is here make off.
+
+7
+00:00:24,160 --> 00:00:29,350
+And that creates and runs migrations for the authentication tables and creates models in a little while.
+
+8
+00:00:29,560 --> 00:00:33,160
+And the second part where we're creating models and middleware is no problem.
+
+9
+00:00:33,790 --> 00:00:38,410
+It's this first part creating and running migrations for authentication tables that we have to take
+
+10
+00:00:38,410 --> 00:00:38,860
+care of.
+
+11
+00:00:40,030 --> 00:00:46,810
+So back in my code in the file may not go inside the CMD slash seelye folder.
+
+12
+00:00:47,620 --> 00:00:51,010
+The one we're looking for is the make command right here.
+
+13
+00:00:51,040 --> 00:00:53,510
+Case make and that calls do make.
+
+14
+00:00:53,530 --> 00:00:54,340
+So let's look at that.
+
+15
+00:00:55,660 --> 00:00:58,340
+And the one we want here is make off.
+
+16
+00:00:58,660 --> 00:01:03,040
+We can get rid of this competitive coat now, so that's gone.
+
+17
+00:01:03,280 --> 00:01:06,640
+So make off, so let's call that calls do off.
+
+18
+00:01:06,670 --> 00:01:07,510
+Let's have a look at that.
+
+19
+00:01:08,620 --> 00:01:14,560
+So the first thing that does right now, and to be clear, this still works, but it's calling functions
+
+20
+00:01:14,560 --> 00:01:15,520
+that we want to get rid of.
+
+21
+00:01:15,520 --> 00:01:19,450
+Eventually, the ones that use the Golang Migrate package.
+
+22
+00:01:19,570 --> 00:01:23,260
+So we want to update this code to work with our pop migrations.
+
+23
+00:01:23,800 --> 00:01:28,840
+We can still run these simple migrations, but we want to use the functions that we just wrote earlier
+
+24
+00:01:28,840 --> 00:01:29,590
+in this section.
+
+25
+00:01:30,490 --> 00:01:36,370
+So obviously, the first thing we want to do is to get a connection after our NEBE types variable asset.
+
+26
+00:01:36,760 --> 00:01:43,890
+So we'll do it just like we did before T.X and error or assign values by calling Cell, which is a celebrity's
+
+27
+00:01:43,900 --> 00:01:44,350
+package.
+
+28
+00:01:44,350 --> 00:01:49,870
+The variable pop connect right there and we check for an error.
+
+29
+00:01:51,220 --> 00:01:55,600
+If error is not equal to nil, then we'll just exec restore with the error.
+
+30
+00:01:57,360 --> 00:02:02,400
+OK, once we have our connection, of course, we want to defer closing to further tech stock closed
+
+31
+00:02:02,910 --> 00:02:03,900
+just like we did before.
+
+32
+00:02:04,290 --> 00:02:10,380
+And of course, the other thing we should do here is not let them run this command unless we check for
+
+33
+00:02:10,770 --> 00:02:13,650
+you, unless we call that function that ensures they had their database set up.
+
+34
+00:02:14,280 --> 00:02:17,850
+OK, so we've checked for the database to be configured.
+
+35
+00:02:18,060 --> 00:02:22,530
+We've got the database type in a variable DB type there in Line 14.
+
+36
+00:02:22,980 --> 00:02:26,850
+We've got our connection to the database and we're deferring closing that connection.
+
+37
+00:02:27,120 --> 00:02:29,820
+Now do we need this file name variable?
+
+38
+00:02:30,120 --> 00:02:37,320
+And what that's actually doing is building their migration name with time dot now dot Unix Micro is
+
+39
+00:02:37,320 --> 00:02:38,010
+the leading bit.
+
+40
+00:02:38,220 --> 00:02:44,100
+We actually don't need that anymore, and we don't need it because Pop puts its own little numeric sequence
+
+41
+00:02:44,100 --> 00:02:45,630
+at the start of each migration.
+
+42
+00:02:45,690 --> 00:02:47,540
+So I'll just comment this one out.
+
+43
+00:02:47,790 --> 00:02:48,810
+We don't need it at the moment.
+
+44
+00:02:50,130 --> 00:02:52,660
+And that means we probably don't need these, either.
+
+45
+00:02:52,710 --> 00:02:55,860
+So I'll comment, these ones are we can always bring them back if we need them.
+
+46
+00:02:56,730 --> 00:03:02,610
+What we do need to do now here online, 28, we're actually calling that function, we wrote in the
+
+47
+00:03:02,610 --> 00:03:07,410
+last course copy file from Template and that reads this from the file system.
+
+48
+00:03:07,450 --> 00:03:09,510
+OK, so let's have a look and see what that file is.
+
+49
+00:03:10,410 --> 00:03:11,550
+It's off tables.
+
+50
+00:03:11,820 --> 00:03:17,550
+DB Typekit SQL inside the Templates Migrations folder, something will open up this alert householder.
+
+51
+00:03:20,070 --> 00:03:24,900
+Seemed templates, migrations.
+
+52
+00:03:25,050 --> 00:03:29,220
+Let's see what's inside there off tables, Postgres, look at that.
+
+53
+00:03:29,490 --> 00:03:31,260
+So I'm connected to Postgres right now.
+
+54
+00:03:32,160 --> 00:03:38,130
+So this creates or replaces a function trigger set timestamp, which is great.
+
+55
+00:03:39,080 --> 00:03:44,840
+Then he drops the table users, if it exists, creates a user's table, does the same thing for remember
+
+56
+00:03:44,840 --> 00:03:48,530
+tokens and the same thing for the tokens table.
+
+57
+00:03:48,620 --> 00:03:50,150
+So this sequel should be perfect.
+
+58
+00:03:50,180 --> 00:03:51,230
+We should be able to use that.
+
+59
+00:03:51,860 --> 00:03:52,490
+That's good to know.
+
+60
+00:03:54,080 --> 00:03:57,860
+But instead of actually copying the file from one place to another.
+
+61
+00:03:58,130 --> 00:03:59,180
+What we need to do.
+
+62
+00:03:59,270 --> 00:04:00,440
+Let's comment this one out.
+
+63
+00:04:01,940 --> 00:04:04,040
+Let's instead just read that contents.
+
+64
+00:04:04,060 --> 00:04:08,240
+Read the contents of that file into the up migration as well.
+
+65
+00:04:08,240 --> 00:04:14,570
+Create a file or a variable called up bytes because it's a slice of bytes and I'll check for error and
+
+66
+00:04:14,570 --> 00:04:18,140
+those come from calling the template EF-S.
+
+67
+00:04:20,029 --> 00:04:27,020
+And we'll just read that file and the file we want to read is effectively this right here.
+
+68
+00:04:27,350 --> 00:04:32,990
+The same thing that we have here, so it's this I can copy this code and that's what I want to read.
+
+69
+00:04:36,440 --> 00:04:37,340
+And paste it in here.
+
+70
+00:04:39,560 --> 00:04:43,250
+And now I have the contents of that up migration stored as a slice of bytes.
+
+71
+00:04:43,760 --> 00:04:44,060
+OK.
+
+72
+00:04:45,230 --> 00:04:53,750
+Now are down, downvotes will be exactly this code right here, so let's just modify this to say downvotes
+
+73
+00:04:57,590 --> 00:05:02,570
+is a sign the value of let me get rid of the last part here that we don't need anymore.
+
+74
+00:05:07,310 --> 00:05:15,080
+So now we have our up and down migrations, both stored as a slice of bytes, which means all I need
+
+75
+00:05:15,080 --> 00:05:21,080
+to do to create those migrations now is to check for an error when I call from the solicitor's package.
+
+76
+00:05:22,260 --> 00:05:29,890
+That function we wrote called Create Pop Migration, and that requires the updates, which are updates.
+
+77
+00:05:30,630 --> 00:05:32,760
+The down boats which are down boats.
+
+78
+00:05:33,930 --> 00:05:35,120
+The migration name.
+
+79
+00:05:35,610 --> 00:05:36,690
+I can just call it off.
+
+80
+00:05:37,620 --> 00:05:41,130
+And the format should be simple because that's what we're passing.
+
+81
+00:05:41,130 --> 00:05:42,300
+It is actual sequel.
+
+82
+00:05:43,510 --> 00:05:44,740
+And I will check for an air again.
+
+83
+00:05:45,310 --> 00:05:51,910
+So a copy of this code and paste it here, and that should be good for that.
+
+84
+00:05:53,410 --> 00:05:54,910
+And now we want to run the migrations.
+
+85
+00:05:56,250 --> 00:06:01,680
+What I'm calling here is do migrate that function we wrote a long time ago.
+
+86
+00:06:02,190 --> 00:06:06,240
+What I'll do instead is just delete all of this or delete that line anyway.
+
+87
+00:06:07,110 --> 00:06:08,640
+I'll just run my migrations.
+
+88
+00:06:08,760 --> 00:06:12,240
+You just call the run pop migrations function that we wrote a while ago.
+
+89
+00:06:12,960 --> 00:06:20,760
+So error is equal to sell dog run pop migrations, and that just requires our connection pool, which
+
+90
+00:06:20,760 --> 00:06:23,430
+we created right at the beginning of this function.
+
+91
+00:06:23,880 --> 00:06:27,270
+And if it doesn't work, then it prints out in error and dies gracefully.
+
+92
+00:06:27,840 --> 00:06:32,910
+Nothing else should actually change here, so that in theory should work for us.
+
+93
+00:06:33,210 --> 00:06:33,540
+OK.
+
+94
+00:06:34,290 --> 00:06:38,160
+So we'll give this a try in the next lecture and see what we got wrong.
+

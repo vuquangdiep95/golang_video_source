@@ -1,0 +1,375 @@
+1
+00:00:00,900 --> 00:00:03,360
+So let's keep going with our dining philosophers problem.
+
+2
+00:00:03,360 --> 00:00:06,290
+And what I want to think about this time is the mutex.
+
+3
+00:00:06,300 --> 00:00:08,370
+We need to lock certain resources.
+
+4
+00:00:08,760 --> 00:00:14,160
+We know that we only have five forks and we also know that in order to be able to eat, a given philosopher
+
+5
+00:00:14,160 --> 00:00:16,230
+must be able to get both forks.
+
+6
+00:00:16,890 --> 00:00:21,750
+But before we do that, I have a spelling mistake here and it will bother me endlessly if I don't fix
+
+7
+00:00:21,750 --> 00:00:21,930
+it.
+
+8
+00:00:21,930 --> 00:00:30,480
+So let's change our two philosophers and copy and paste it here and paste it here.
+
+9
+00:00:30,480 --> 00:00:33,000
+And I may as well spell philosopher right here as well.
+
+10
+00:00:33,300 --> 00:00:36,870
+Okay, so let's think about the new taxes.
+
+11
+00:00:36,900 --> 00:00:42,480
+Now, I know that I have five philosophers in this slice of strings, and I know that I'm going to be
+
+12
+00:00:42,480 --> 00:00:45,120
+spawning one go routine for each philosopher.
+
+13
+00:00:45,750 --> 00:00:49,320
+And I have my weight group here and I'm waiting for it here and everything seems good.
+
+14
+00:00:49,470 --> 00:00:54,710
+But I do need to be able to pass, first of all, some information to the go routine, what philosopher
+
+15
+00:00:54,720 --> 00:00:55,410
+y dealing with.
+
+16
+00:00:56,040 --> 00:01:01,260
+And I'm also going to to be able to pass it to new taxes, one for the left fork and one for the right
+
+17
+00:01:01,260 --> 00:01:01,620
+fork.
+
+18
+00:01:02,130 --> 00:01:03,590
+So this is easy enough.
+
+19
+00:01:03,840 --> 00:01:05,490
+What a philosopher we going to pass.
+
+20
+00:01:05,490 --> 00:01:10,170
+Well, that will be philosophers at index.
+
+21
+00:01:10,170 --> 00:01:10,560
+All right.
+
+22
+00:01:11,020 --> 00:01:16,920
+Okay, so that will pass that parameter, which means up here, I have to be able to take that parameter.
+
+23
+00:01:17,250 --> 00:01:20,850
+So I'll just put it in philosopher and that will be of type string.
+
+24
+00:01:21,270 --> 00:01:23,460
+Okay, so that's the first thing I'm going to want to get.
+
+25
+00:01:23,910 --> 00:01:30,450
+I'm also going to want to get up here to New Texas and I'll call them just for the sake of simplicity,
+
+26
+00:01:30,840 --> 00:01:37,560
+dominant hand, which I have to spell, have dominant hand and other hand.
+
+27
+00:01:37,950 --> 00:01:42,480
+So for right and left and they're both going to be pointers to sync me mutex.
+
+28
+00:01:44,400 --> 00:01:46,620
+And of course that means I need to pass them here.
+
+29
+00:01:46,860 --> 00:01:49,080
+So where am I going to create those new taxes?
+
+30
+00:01:49,260 --> 00:01:54,450
+I suppose if I wanted to, I can create an array and put one new text for each fork, but that's going
+
+31
+00:01:54,450 --> 00:01:56,250
+to get complicated really quickly.
+
+32
+00:01:57,090 --> 00:01:58,950
+So instead, let's think about this.
+
+33
+00:01:58,980 --> 00:02:06,390
+Well, the first time through this, I'm going to want to be able to pass both the left fork and the
+
+34
+00:02:06,390 --> 00:02:07,050
+right fork.
+
+35
+00:02:07,260 --> 00:02:09,180
+Now I can create the right for that's easily done.
+
+36
+00:02:09,180 --> 00:02:10,530
+So let's do that one to start with.
+
+37
+00:02:10,530 --> 00:02:10,950
+Okay.
+
+38
+00:02:11,730 --> 00:02:22,620
+So inside of this for loop, I'll create a new tax for the right fork and I need it to be a pointer,
+
+39
+00:02:22,620 --> 00:02:23,610
+so I'll just say fork.
+
+40
+00:02:23,610 --> 00:02:23,970
+Right?
+
+41
+00:02:25,200 --> 00:02:26,400
+That's as good as a name as any.
+
+42
+00:02:26,850 --> 00:02:27,420
+That's a sign.
+
+43
+00:02:27,420 --> 00:02:32,220
+The value of a reference to the type synchrony tax right there.
+
+44
+00:02:32,580 --> 00:02:36,720
+Okay, so now I have the right for it, which means I can pass it right here.
+
+45
+00:02:37,110 --> 00:02:39,630
+So I'll pass fork.
+
+46
+00:02:39,630 --> 00:02:39,930
+Right.
+
+47
+00:02:43,050 --> 00:02:43,740
+Which I have to spell.
+
+48
+00:02:43,740 --> 00:02:43,950
+Right.
+
+49
+00:02:46,410 --> 00:02:47,220
+So that's easy enough.
+
+50
+00:02:47,700 --> 00:02:49,170
+But what about the other fork?
+
+51
+00:02:49,380 --> 00:02:54,390
+Well, when I go through this, if you think it through logically, every time I go through this loop.
+
+52
+00:02:55,430 --> 00:03:00,560
+The previous right fork, the one that's being created right here, that should actually be the left
+
+53
+00:03:00,560 --> 00:03:00,950
+fork.
+
+54
+00:03:01,280 --> 00:03:02,900
+So that's easy enough.
+
+55
+00:03:03,290 --> 00:03:06,620
+I can say fork left is equal to fork, right.
+
+56
+00:03:07,850 --> 00:03:13,250
+But the first time through, of course, I don't have a left fork, so maybe the place to create that
+
+57
+00:03:13,460 --> 00:03:14,750
+is outside the loop.
+
+58
+00:03:15,020 --> 00:03:21,050
+The very first mutex created is the one created before we start spawning go routines.
+
+59
+00:03:21,440 --> 00:03:22,730
+So I'll say fork left
+
+60
+00:03:25,430 --> 00:03:30,170
+is a sign the value of again a reference to sync the mutex.
+
+61
+00:03:32,130 --> 00:03:34,140
+And then I'm going to want to pass that here as well.
+
+62
+00:03:34,170 --> 00:03:40,200
+So I'll pass the left fork, first fork, left fork, left hand fork, right.
+
+63
+00:03:40,650 --> 00:03:47,080
+So that actually gives me a mutex and it will be the correct one for every single philosopher.
+
+64
+00:03:47,100 --> 00:03:51,960
+So the first time we go through this, I'm creating, the first time we start the program, I'm creating
+
+65
+00:03:51,960 --> 00:03:54,960
+my my left mutex fork left.
+
+66
+00:03:56,070 --> 00:04:00,330
+Then down here I create my right mutex, and then I pass both of those.
+
+67
+00:04:00,660 --> 00:04:03,090
+And then what was the right mutex?
+
+68
+00:04:03,210 --> 00:04:05,190
+Becomes the left mutex.
+
+69
+00:04:05,400 --> 00:04:06,360
+The next time through the loop.
+
+70
+00:04:06,570 --> 00:04:09,930
+And that will give me exactly the correct number of new taxes.
+
+71
+00:04:09,960 --> 00:04:10,380
+Okay.
+
+72
+00:04:11,400 --> 00:04:16,260
+Now, you might be saying to yourself, I thought you said you're never supposed to copy a mutex once
+
+73
+00:04:16,260 --> 00:04:16,830
+you create it.
+
+74
+00:04:16,950 --> 00:04:18,800
+And I seem to be doing that right here.
+
+75
+00:04:18,810 --> 00:04:23,940
+But remember, these are both pointers, so we're not copying a mutex.
+
+76
+00:04:23,940 --> 00:04:28,380
+We're making fork left equal to the pointer to an existing mutex.
+
+77
+00:04:28,380 --> 00:04:32,280
+So it points to the same location in memory and doesn't in fact copy it.
+
+78
+00:04:32,540 --> 00:04:37,950
+Okay, so we have those now up here in the dining problem.
+
+79
+00:04:38,250 --> 00:04:40,740
+Here's where we get to the heart of what we're trying to do.
+
+80
+00:04:41,370 --> 00:04:44,700
+So let's write some comments and we'll start working on them in the next lecture.
+
+81
+00:04:44,760 --> 00:04:46,230
+First thing I'm going to do is print a message.
+
+82
+00:04:47,820 --> 00:04:52,530
+I'm dealing with the philosopher, so I might print something like this philosopher is hungry.
+
+83
+00:04:52,680 --> 00:04:57,780
+Okay, then I'm going to want to lock both forks.
+
+84
+00:04:58,380 --> 00:04:58,740
+Okay.
+
+85
+00:04:58,740 --> 00:05:04,050
+So I want to attempt to get a lock or the left fork and the right fork, and this go routine will block
+
+86
+00:05:04,350 --> 00:05:06,990
+until it gets both of those locks.
+
+87
+00:05:07,020 --> 00:05:10,200
+Okay, so we'll just stop until I can get both locks.
+
+88
+00:05:11,670 --> 00:05:13,690
+Then we'll print out another message after that.
+
+89
+00:05:13,710 --> 00:05:22,770
+So we'll print out a message that the philosopher has both forks, print a message, and the messages
+
+90
+00:05:22,770 --> 00:05:27,420
+now would be something like philosopher, whatever is now eating and has both forks.
+
+91
+00:05:27,600 --> 00:05:28,890
+And we'll get to that in the next lecture.
+
+92
+00:05:30,180 --> 00:05:35,040
+And after that, we need to unlock the mute Texas.
+
+93
+00:05:36,420 --> 00:05:38,820
+Okay, so that's a good start.
+
+94
+00:05:39,150 --> 00:05:44,190
+In the next lecture, we'll start actually implementing the code that these comments refer to.

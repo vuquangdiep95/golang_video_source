@@ -1,0 +1,651 @@
+1
+00:00:00,790 --> 00:00:05,530
+So next, I want to make sure that this button is checked, if it's actually active in the database
+
+2
+00:00:05,950 --> 00:00:12,760
+and unchecked, if it's not checked in the database, and if you look at the host jet file right now,
+
+3
+00:00:13,960 --> 00:00:15,040
+we're hard coating this.
+
+4
+00:00:15,070 --> 00:00:21,430
+We're manually typing this table row right down to this table row and populating all of this by hand.
+
+5
+00:00:22,060 --> 00:00:29,050
+And yet, if you recall, if you look at our models and you look at the host model, we have hosted
+
+6
+00:00:29,050 --> 00:00:37,420
+services as a member in this model and hosted services actually has right here a service in its as a
+
+7
+00:00:37,420 --> 00:00:38,110
+member in it.
+
+8
+00:00:38,120 --> 00:00:46,300
+So we should be able to modify our get hosted by ID database method to actually populate this struct.
+
+9
+00:00:46,300 --> 00:00:50,450
+How services the site with a slice of strokes of type host service.
+
+10
+00:00:51,160 --> 00:00:52,020
+So let's do that.
+
+11
+00:00:52,030 --> 00:00:57,700
+And then if we do that rather than hard coding this, we can just loop through all of the host services
+
+12
+00:00:57,700 --> 00:00:59,080
+that are associated with the host.
+
+13
+00:00:59,080 --> 00:01:01,110
+We're already passing to this template.
+
+14
+00:01:01,930 --> 00:01:02,650
+So let's do that.
+
+15
+00:01:03,250 --> 00:01:07,780
+Let's go to our host postgrads and get hosted by ID is right here.
+
+16
+00:01:08,020 --> 00:01:10,180
+And the first thing we do is we just write a query.
+
+17
+00:01:10,180 --> 00:01:15,130
+We get the host, we populate all of this information, we check for an error and we return it.
+
+18
+00:01:15,310 --> 00:01:23,050
+Now, at this point, before we actually return it, let's get all services for host.
+
+19
+00:01:23,620 --> 00:01:26,400
+OK, so let's write a query query.
+
+20
+00:01:26,890 --> 00:01:32,020
+We already have a query, but we're just going to reuse that variable is equal to and we want to select
+
+21
+00:01:32,020 --> 00:01:32,490
+something.
+
+22
+00:01:32,500 --> 00:01:36,690
+So let's go look at the database and see what we're selecting that's over here.
+
+23
+00:01:36,700 --> 00:01:38,140
+And this is hosted services.
+
+24
+00:01:38,860 --> 00:01:45,850
+So we want to select Idy hosted service ID and host ID service ID.
+
+25
+00:01:47,740 --> 00:01:57,760
+Active schedule, no schedule unit, active schedule, no schedule unit.
+
+26
+00:02:03,760 --> 00:02:08,380
+Last check created an updated out in status last check.
+
+27
+00:02:10,720 --> 00:02:22,930
+Status created at an updated ad from Host Services where posted ID equals dollar sign one and we already
+
+28
+00:02:22,930 --> 00:02:24,610
+know our host I.D. We have it right here.
+
+29
+00:02:25,750 --> 00:02:30,740
+So now we can actually just get that from the database so we get a result.
+
+30
+00:02:30,760 --> 00:02:32,110
+I don't care about we get an error.
+
+31
+00:02:32,110 --> 00:02:42,490
+I do care about equals imdb dot query context, pass at the context, pass our query and passed it.
+
+32
+00:02:42,700 --> 00:02:45,790
+Host sorry h dot id.
+
+33
+00:02:47,280 --> 00:02:49,030
+Check for an error if error.
+
+34
+00:02:50,250 --> 00:03:01,920
+Try that again, if error is not equal to nil, we'll just return and return each error and along the
+
+35
+00:03:01,920 --> 00:03:04,680
+error logged up print line error.
+
+36
+00:03:05,820 --> 00:03:09,990
+And of course, we don't need to redefine this variable error because we already have an error.
+
+37
+00:03:09,990 --> 00:03:12,510
+So that takes care of that then.
+
+38
+00:03:12,510 --> 00:03:15,260
+Deferred action.
+
+39
+00:03:15,300 --> 00:03:16,020
+What does this return?
+
+40
+00:03:17,080 --> 00:03:23,970
+It returns rose in an hour, I do care about that, so that's Rose, Rose and error.
+
+41
+00:03:24,160 --> 00:03:33,460
+And now I do need to make this in a sign, defer, rose close, define a slice variable to hold all
+
+42
+00:03:33,460 --> 00:03:34,360
+this information.
+
+43
+00:03:34,360 --> 00:03:35,230
+So that would be.
+
+44
+00:03:38,350 --> 00:03:48,220
+VA services host services, which is a type of slice models, post service.
+
+45
+00:03:48,540 --> 00:03:52,720
+OK, we're going to modify this query in a minute because we also want to get some service information.
+
+46
+00:03:53,140 --> 00:03:55,270
+But let's just get this part done first, OK?
+
+47
+00:03:56,650 --> 00:04:04,510
+For Rose Dot next and will define a one variable called HHS.
+
+48
+00:04:04,720 --> 00:04:09,850
+So VA, HHS is of type models hosting service.
+
+49
+00:04:10,900 --> 00:04:13,820
+OK, and then we scan into erro.
+
+50
+00:04:13,840 --> 00:04:16,770
+Error is a sign the value of rose dots.
+
+51
+00:04:16,780 --> 00:04:19,690
+Can we scan that into the variable we just defined?
+
+52
+00:04:20,470 --> 00:04:25,240
+So into HHS, we want to put it and I'll duplicate that a few times and screw up.
+
+53
+00:04:26,200 --> 00:04:27,720
+So we're getting the idee, the whole study.
+
+54
+00:04:29,080 --> 00:04:29,500
+OK.
+
+55
+00:04:31,810 --> 00:04:33,900
+Then we're getting the service.
+
+56
+00:04:37,370 --> 00:04:42,500
+Then we're getting the active, and that's the part we need for the House page for sure.
+
+57
+00:04:43,370 --> 00:04:44,240
+Schedule no
+
+58
+00:04:46,940 --> 00:04:47,900
+schedule unit,
+
+59
+00:04:51,380 --> 00:04:52,250
+last check.
+
+60
+00:04:55,500 --> 00:04:56,340
+Status
+
+61
+00:04:58,770 --> 00:05:08,820
+created up and updated it, and it would be great if we could actually go back to our models, if we
+
+62
+00:05:08,820 --> 00:05:12,480
+could populate this part of the record to the surface.
+
+63
+00:05:12,480 --> 00:05:13,220
+And we can do that.
+
+64
+00:05:13,470 --> 00:05:20,880
+We just have to come back up here and we'll change this to a ID and put that in front of every variable
+
+65
+00:05:20,880 --> 00:05:22,230
+we're selecting initially.
+
+66
+00:05:25,390 --> 00:05:26,800
+And this will be an alias.
+
+67
+00:05:34,900 --> 00:05:46,040
+And I'll move this down to its own line, so, uh, I data from there anyway from house services, which
+
+68
+00:05:46,040 --> 00:05:54,710
+I will call HS and move this down here, I just format this whole thing in a slightly more attractive
+
+69
+00:05:54,710 --> 00:05:55,220
+fashion.
+
+70
+00:05:56,930 --> 00:05:57,770
+Got my commas.
+
+71
+00:05:57,770 --> 00:05:58,310
+I do.
+
+72
+00:05:58,340 --> 00:06:00,410
+OK, now we'll just left join.
+
+73
+00:06:03,830 --> 00:06:06,680
+Left Join Services airs on.
+
+74
+00:06:07,740 --> 00:06:10,670
+Estcourt ID equals HFS service.
+
+75
+00:06:11,700 --> 00:06:17,320
+Now we've joined that table, so there's nothing to stop us from populating this as well.
+
+76
+00:06:18,360 --> 00:06:19,890
+Let's see what's in the services table.
+
+77
+00:06:23,700 --> 00:06:25,830
+So we have already service name active.
+
+78
+00:06:36,120 --> 00:06:36,580
+Where am I?
+
+79
+00:06:37,850 --> 00:06:39,570
+I can't create it updated at.
+
+80
+00:06:50,040 --> 00:06:51,650
+OK, so created an updated.
+
+81
+00:06:51,670 --> 00:06:57,870
+OK, so now that I've got this in my query, I should be able to come down here and just say duplicator
+
+82
+00:06:57,990 --> 00:06:59,280
+change this to service.
+
+83
+00:07:01,970 --> 00:07:07,070
+ID and I'll duplicate that a few times, so we got the service name next.
+
+84
+00:07:09,620 --> 00:07:11,720
+Service, debt service name.
+
+85
+00:07:12,380 --> 00:07:13,340
+Get rid of the ID.
+
+86
+00:07:14,880 --> 00:07:23,300
+And after service name comes active and after active comes icon, and then created an updated.
+
+87
+00:07:29,030 --> 00:07:37,730
+OK, so we scan for that if there's an error, if error is not equal to nil, we'll say log the error
+
+88
+00:07:39,710 --> 00:07:42,010
+and return H and error.
+
+89
+00:07:43,370 --> 00:07:47,030
+Otherwise we'll append that to our slice, which we called home services.
+
+90
+00:07:48,710 --> 00:07:53,300
+So host services equals append host services.
+
+91
+00:07:53,300 --> 00:07:55,340
+And HFS is the very religious created.
+
+92
+00:07:56,000 --> 00:08:03,770
+And after this entire thing finishes, I just say HO services equals HO services.
+
+93
+00:08:04,700 --> 00:08:11,870
+So if we wrote this all correctly, we should, when we get the ID, have all of the services and all
+
+94
+00:08:11,870 --> 00:08:17,260
+of the all of the services and all of the services associated with a given host service.
+
+95
+00:08:18,410 --> 00:08:19,880
+So let's make sure this compiles.
+
+96
+00:08:23,550 --> 00:08:24,270
+It does.
+
+97
+00:08:24,590 --> 00:08:31,110
+And let's go back to our hosts file and I'm going to leave this here is a reference, but I'm going
+
+98
+00:08:31,110 --> 00:08:39,840
+to say instead range and I called my host host, not host services.
+
+99
+00:08:40,950 --> 00:08:46,200
+I'll just range through all the services, not only be one right now, but that's all we need.
+
+100
+00:08:46,920 --> 00:08:55,470
+And every time we're arranging through this, we want to go H.R. No tr td and then the service name,
+
+101
+00:08:55,470 --> 00:08:56,180
+which would be DOT.
+
+102
+00:08:57,150 --> 00:09:05,130
+Postal Service DOT, service name, I think that's what it is, let's make sure so hosted service right
+
+103
+00:09:05,130 --> 00:09:05,510
+here.
+
+104
+00:09:05,550 --> 00:09:08,010
+And that has a service and that has a service name.
+
+105
+00:09:08,010 --> 00:09:08,380
+Yes.
+
+106
+00:09:09,600 --> 00:09:11,100
+So that gives us our service name.
+
+107
+00:09:11,910 --> 00:09:15,090
+And then I'll just copy this entire part here, this TD.
+
+108
+00:09:16,230 --> 00:09:16,770
+Kopi.
+
+109
+00:09:18,360 --> 00:09:24,450
+And paste it in and modify it as necessary so this can now be commented out, I'll just put comments
+
+110
+00:09:24,450 --> 00:09:24,860
+around it.
+
+111
+00:09:27,450 --> 00:09:28,480
+Because I might need it back.
+
+112
+00:09:28,500 --> 00:09:28,980
+Who knows?
+
+113
+00:09:30,090 --> 00:09:35,580
+OK, so we have div class equals form check form switch.
+
+114
+00:09:35,600 --> 00:09:36,270
+That's correct.
+
+115
+00:09:36,270 --> 00:09:41,190
+Input, classic form check input value equals one, which can be anything.
+
+116
+00:09:41,190 --> 00:09:43,830
+We just need to make sure that it's actually checked when it's posted.
+
+117
+00:09:44,820 --> 00:09:48,780
+Type is a checkbox, ID is HTP service.
+
+118
+00:09:48,880 --> 00:09:51,210
+What I really need that not using it.
+
+119
+00:09:51,480 --> 00:09:55,970
+So I'm going to get rid of that data type is Torgau Service Data Service.
+
+120
+00:09:55,980 --> 00:09:58,650
+This would be the host service service.
+
+121
+00:09:59,340 --> 00:10:02,580
+So that's Dort post service.
+
+122
+00:10:04,980 --> 00:10:05,390
+Dot.
+
+123
+00:10:07,620 --> 00:10:10,030
+I'm going through her services, so it's just service side.
+
+124
+00:10:13,380 --> 00:10:21,090
+OK, data host ID is the host ID and I'm getting that from host services, I can just put host ID here
+
+125
+00:10:22,290 --> 00:10:24,330
+and that's called host ID, I think.
+
+126
+00:10:24,330 --> 00:10:32,370
+Let's make sure in models, host service host I.D. Service ID is Capital I, Capital D, Capital Cappotelli
+
+127
+00:10:32,370 --> 00:10:35,730
+Capital D name equals HTP.
+
+128
+00:10:36,360 --> 00:10:38,840
+And of course what do we have in our services.
+
+129
+00:10:38,850 --> 00:10:40,170
+Let's look at our services table.
+
+130
+00:10:42,740 --> 00:10:48,290
+So services content, it should be a service name, so that would be.
+
+131
+00:10:51,610 --> 00:10:55,720
+Service service name.
+
+132
+00:10:57,830 --> 00:11:02,470
+And this is not house service, it's service service.
+
+133
+00:11:03,620 --> 00:11:07,700
+So service service name, I think that's all right.
+
+134
+00:11:07,880 --> 00:11:08,910
+Let's see if we get that right.
+
+135
+00:11:08,930 --> 00:11:10,780
+I may have my syntax wrong here.
+
+136
+00:11:12,950 --> 00:11:16,760
+I often do when I'm working with a new templating service, but we'll find out.
+
+137
+00:11:16,880 --> 00:11:19,360
+OK, so let's just go reload this page and see what I got wrong.
+
+138
+00:11:21,220 --> 00:11:22,220
+Managed services.
+
+139
+00:11:22,600 --> 00:11:23,200
+There it is.
+
+140
+00:11:23,470 --> 00:11:30,370
+OK, so now we should be able to at this point put an if statement if and we're looking at the host
+
+141
+00:11:30,370 --> 00:11:40,420
+service and we want to know whether or not it's active, active equals one and closer if statement.
+
+142
+00:11:41,720 --> 00:11:43,040
+And we checked there.
+
+143
+00:11:43,940 --> 00:11:49,580
+All right, let's go back and reload this again and look at services and it's inactive.
+
+144
+00:11:49,580 --> 00:11:54,950
+And what's in the database for host services services reload at zero.
+
+145
+00:11:55,430 --> 00:11:56,330
+So let's check it.
+
+146
+00:11:57,150 --> 00:11:57,670
+Saved it.
+
+147
+00:11:57,680 --> 00:11:58,790
+Let's go to the overview.
+
+148
+00:11:59,310 --> 00:12:05,270
+Let's go back to Host's click on localhost and hopefully it'll be checked when I click on managed services
+
+149
+00:12:05,960 --> 00:12:07,440
+and it is perfect.
+
+150
+00:12:07,850 --> 00:12:11,300
+Now, the nice thing about this and I can go delete the comment section now.
+
+151
+00:12:11,900 --> 00:12:18,050
+The nice thing about this is I don't have to do any more work if I add a new service to the database,
+
+152
+00:12:18,080 --> 00:12:24,080
+not to this page anyway, because it will list all of the services that we're going to have in the database.
+
+153
+00:12:24,830 --> 00:12:27,580
+So that's this part done.
+
+154
+00:12:27,590 --> 00:12:33,500
+And next, now that I have this done next, I want to get this overview page listed properly run.
+
+155
+00:12:33,510 --> 00:12:37,490
+Just list my host and all of its services in this table.
+
+156
+00:12:37,760 --> 00:12:43,880
+And that's going to require a couple of changes, just like we did right here in our host postgrads
+
+157
+00:12:44,150 --> 00:12:44,630
+QOL.
+
+158
+00:12:45,320 --> 00:12:51,320
+When we did our getting of an individual host and got all of its health services, will we find our
+
+159
+00:12:51,320 --> 00:12:54,400
+all hosts, which is all hosts right here?
+
+160
+00:12:54,890 --> 00:12:59,750
+I probably want to get the same information there, or at least the services associated with a host
+
+161
+00:12:59,750 --> 00:13:02,900
+so I can display them on that overview page.
+
+162
+00:13:03,800 --> 00:13:06,530
+OK, that's enough for this time around in the next lecture.
+
+163
+00:13:06,530 --> 00:13:07,400
+We'll work on that.

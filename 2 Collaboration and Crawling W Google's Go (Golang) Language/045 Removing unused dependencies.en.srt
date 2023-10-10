@@ -1,0 +1,407 @@
+1
+00:00:00,240 --> 00:00:07,130
+Vì vậy, việc loại bỏ các phụ thuộc không sử dụng sẽ hơi phức tạp một chút vì chúng ta có các phụ thuộc đó
+
+2
+00:00:07,130 --> 00:00:08,600
+vẫn được sử dụng trong các thư mục khác.
+
+3
+00:00:08,600 --> 00:00:13,550
+Vì vậy, chúng tôi gần như phải tạo một repo khác và ném tất cả vào đó và sau đó xem qua toàn bộ
+
+4
+00:00:13,550 --> 00:00:14,060
+quá trình.
+
+5
+00:00:14,060 --> 00:00:15,170
+Vì vậy, chúng ta hãy làm điều đó.
+
+6
+00:00:15,170 --> 00:00:16,710
+Tôi sẽ dẫn phí bạn đã sẵn sàng.
+
+7
+00:00:16,720 --> 00:00:17,370
+ĐƯỢC RỒI.
+
+8
+00:00:17,390 --> 00:00:17,660
+Được rồi.
+
+9
+00:00:17,660 --> 00:00:23,720
+Vì vậy, đây là tất cả sự thận trọng ở đây và đây là tình huống vì chúng tôi muốn chỉ ra cách
+
+10
+00:00:23,720 --> 00:00:26,900
+để loại bỏ tất cả các phụ thuộc không sử dụng.
+
+11
+00:00:26,900 --> 00:00:30,020
+Và Daniel, bạn hiện có trên GitHub nếu bạn đẩy mọi thứ.
+
+12
+00:00:30,050 --> 00:00:31,170
+Đúng.
+
+13
+00:00:31,250 --> 00:00:37,660
+Và thế là anh ấy kéo vào bây giờ hãy lấy trạng thái và hãy nói thêm rằng đó là tác phẩm của tôi.
+
+14
+00:00:37,670 --> 00:00:38,050
+Tốt rồi.
+
+15
+00:00:38,060 --> 00:00:38,880
+Vì vậy, đó là tên của bạn.
+
+16
+00:00:38,900 --> 00:00:44,600
+Vì vậy, bạn không cần điều đó, vì vậy tôi sẽ kéo mọi thứ xuống và kéo lên hôm nay.
+
+17
+00:00:44,600 --> 00:00:49,300
+Và vì vậy nếu tôi làm điều đó, hãy đi Liz dash em all, list dash em all.
+
+18
+00:00:49,700 --> 00:00:57,070
+Tôi có thể thấy các phần phụ thuộc của chúng tôi và phiên bản cơ sở mã mới nhất của chúng tôi là 0 4 tại đây.
+
+19
+00:00:57,110 --> 00:01:07,160
+Và nếu chúng tôi nhìn vào Xin chào, tất cả chúng tôi đều Xin chào, chúng tôi chỉ nhập báo giá CIO phiên bản 3 và chúng tôi không còn
+
+20
+00:01:07,160 --> 00:01:11,540
+sử dụng phiên bản trích dẫn RCI một điểm năm hai.
+
+21
+00:01:11,720 --> 00:01:16,930
+Trong ví dụ này, nhưng bởi vì chúng tôi đang giữ nó trong một cấu trúc phân cấp, chúng tôi đang nói rằng hãy nhìn vào đây
+
+22
+00:01:16,940 --> 00:01:17,780
+bước đầu tiên.
+
+23
+00:01:17,780 --> 00:01:19,040
+Đây là bước tiếp theo đây.
+
+24
+00:01:19,100 --> 00:01:22,160
+Chúng tôi vẫn đang sử dụng các phiên bản khác đó trong các bước khác này.
+
+25
+00:01:22,160 --> 00:01:29,930
+Vì vậy, để minh họa đầy đủ cách bạn dọn dẹp cơ sở mã của mình, tôi sẽ tạo một kho lưu trữ trung tâm mới.
+
+26
+00:01:29,930 --> 00:01:33,050
+Tôi sẽ thực hiện một số bước ngay tại đây.
+
+27
+00:01:33,050 --> 00:01:37,820
+Nhận những gói mà tôi cần trong các bước trước đó.
+
+28
+00:01:37,820 --> 00:01:41,720
+Chuyển sang các bước sau và sau đó tôi sẽ không cần các gói trước đó nữa.
+
+29
+00:01:41,840 --> 00:01:48,250
+Và sau đó chúng tôi sẽ dọn dẹp tất cả theo cách bạn dọn dẹp tất cả là bạn chỉ cần làm gọn gàng và chỉnh sửa
+
+30
+00:01:48,260 --> 00:01:50,210
+tiêu đề lấy và kéo mọi thứ ra.
+
+31
+00:01:50,210 --> 00:01:51,800
+Vì vậy, chúng ta hãy nhìn vào đó ngay bây giờ.
+
+32
+00:01:51,830 --> 00:01:55,580
+Bởi vì khi tôi đi list dash bây giờ tôi không sao cả.
+
+33
+00:01:55,580 --> 00:01:57,310
+Đây là phụ thuộc của tôi.
+
+34
+00:01:57,410 --> 00:02:04,040
+Và sau đó chúng tôi sẽ chạy go mod clean và chúng tôi sẽ xem liệu có gì thay đổi giữa chúng không và vì vậy tôi
+
+35
+00:02:04,040 --> 00:02:11,600
+đi từ một hai ba bốn năm sáu thành một hai ba bốn năm sáu hoàn toàn giống nhau bởi vì những
+
+36
+00:02:11,600 --> 00:02:15,320
+phụ thuộc vẫn cần thiết trong các ví dụ trước đó.
+
+37
+00:02:15,320 --> 00:02:20,930
+Vì vậy, để thấy rằng hãy làm sạch từ thời điểm này trở đi trong video, có thể bạn đã có mọi thứ mình cần
+
+38
+00:02:20,930 --> 00:02:22,770
+từ video này là tuyệt vời.
+
+39
+00:02:22,850 --> 00:02:26,100
+Tất cả chỉ là đi sửa đổi gọn gàng.
+
+40
+00:02:26,120 --> 00:02:27,390
+Vì vậy, đó là những gì nó làm.
+
+41
+00:02:27,410 --> 00:02:32,740
+Nhưng để xem nó hoạt động như thế nào, chúng ta sẽ lướt nhanh qua các ví dụ trước đó một lần nữa.
+
+42
+00:02:32,750 --> 00:02:37,310
+Và bạn cũng sẽ thấy chỉ cần tạo một tài khoản trung tâm nhận tất cả những điều đó một lần nữa.
+
+43
+00:02:37,310 --> 00:02:41,760
+Vì vậy, tôi sẽ vào đây và tạo một tài khoản trung tâm mới, một kho lưu trữ mới.
+
+44
+00:02:41,760 --> 00:02:48,140
+Xin lỗi và kho lưu trữ mới mà tôi sẽ gọi nó là ví dụ về mô-đun.
+
+45
+00:02:48,140 --> 00:02:51,140
+Thực ra tôi vừa phát hiện ra rằng bạn có thể tạo một mỏ vàng ở đây.
+
+46
+00:02:51,240 --> 00:02:54,940
+Vì vậy, đối với Yeah, đó là Dublin.
+
+47
+00:02:55,050 --> 00:02:55,330
+Được rồi.
+
+48
+00:02:55,330 --> 00:02:56,260
+Hãy chắc chắn rằng bạn dẫn đầu.
+
+49
+00:02:56,260 --> 00:02:57,590
+Cho chúng tôi thấy những gì bạn khám phá.
+
+50
+00:02:57,610 --> 00:02:58,180
+Vì thế.
+
+51
+00:02:58,240 --> 00:03:07,030
+Vì vậy, những gì tôi đã làm là chạy go mod trong thư mục 0 4 với không gian tên đầy đủ bao gồm cả
+
+52
+00:03:07,030 --> 00:03:09,570
+sub các gói thư mục con.
+
+53
+00:03:09,820 --> 00:03:13,540
+Và do đó đã tạo ra một tệp go mod ở đây trong thư mục con này.
+
+54
+00:03:13,570 --> 00:03:20,350
+Vì vậy, cái này trong thư mục này bây giờ là một phụ bây giờ là một mô-đun trong và tự nó tách biệt với cái này đi mod bên ngoài
+
+55
+00:03:21,140 --> 00:03:22,330
+cái này, v.v. ngay từ đầu.
+
+56
+00:03:22,330 --> 00:03:25,470
+Vì vậy, nó theo dõi tất cả các thành phần phụ thuộc và mọi thứ thuộc về phần mềm.
+
+57
+00:03:25,470 --> 00:03:27,060
+Chỉ một thư mục này.
+
+58
+00:03:27,060 --> 00:03:30,370
+Và do đó, điều này có trích dẫn v 3 trong đó.
+
+59
+00:03:30,370 --> 00:03:35,890
+Vì vậy, nếu tôi cuộn mã lại, hãy cuộn yêu cầu trở lại với những gì Scott
+
+60
+00:03:39,100 --> 00:03:40,950
+Robert sẽ trở lại tòa án ngày hôm nay.
+
+61
+00:03:40,960 --> 00:03:41,470
+Đi.
+
+62
+00:03:41,940 --> 00:03:42,420
+Đi.
+
+63
+00:03:42,790 --> 00:03:43,390
+Bài kiểm tra
+
+64
+00:03:46,300 --> 00:03:47,530
+vì vậy vẫn còn nhiều việc phải làm.
+
+65
+00:03:47,570 --> 00:03:48,740
+Đi đi thôi.
+
+66
+00:03:48,770 --> 00:03:49,710
+Tôi đã nhận được điều đó.
+
+67
+00:03:49,730 --> 00:03:51,640
+Vì vậy, bạn đang đi theo cách này.
+
+68
+00:03:51,710 --> 00:03:56,400
+Ồ vậy cái này cũng bao gồm các phụ thuộc tab gián tiếp như văn bản và trình lấy mẫu.
+
+69
+00:03:56,840 --> 00:04:02,900
+Bạn có một điểm năm hai và ba điểm một không chính vá phụ.
+
+70
+00:04:02,930 --> 00:04:03,510
+Chuẩn rồi.
+
+71
+00:04:03,530 --> 00:04:13,330
+Vì vậy, bây giờ nếu tôi đọc được thì hãy nâng cấp cái này lên v 3, chỉ đi kiểm tra để đảm bảo rằng nó vẫn hoạt động
+
+72
+00:04:15,220 --> 00:04:16,150
+đi danh sách.
+
+73
+00:04:16,160 --> 00:04:18,620
+Dấu gạch ngang và tất cả để bạn có thể thấy những thứ đó.
+
+74
+00:04:18,650 --> 00:04:23,800
+Nó có tất cả các phụ thuộc bao gồm cả nó vẫn có cái này mặc dù cái này không còn được sử dụng ở bất cứ đâu.
+
+75
+00:04:23,870 --> 00:04:27,440
+Vì vậy, bây giờ có một go mod dọn sạch tất cả.
+
+76
+00:04:27,780 --> 00:04:31,830
+Vì vậy, bây giờ nếu tôi đi dấu gạch ngang này và tất cả phiên bản một không còn nữa.
+
+77
+00:04:31,850 --> 00:04:35,890
+Vâng thiên tài tuyệt vời.
+
+78
+00:04:35,990 --> 00:04:44,530
+Vì vậy, khi chúng ta đang thảo luận về video cuối cùng, bạn chuyển sang trích dẫn dấu gạch chéo RSCIO tối.
+
+79
+00:04:46,060 --> 00:04:47,240
+Là phiên bản này.
+
+80
+00:04:47,240 --> 00:04:47,700
+Đây là.
+
+81
+00:04:47,720 --> 00:04:48,580
+Không.
+
+82
+00:04:48,930 --> 00:04:50,890
+Đó vẫn là một phiên bản đẹp, tôi vẫn là phiên bản một.
+
+83
+00:04:50,930 --> 00:04:57,610
+Và vì vậy nếu tôi chỉ làm những gì nếu tôi chỉ trích dẫn thì đó vẫn là phiên bản tâm linh mà bạn trích dẫn chém
+
+84
+00:04:57,630 --> 00:05:01,320
+câu 3.
+
+85
+00:05:01,510 --> 00:05:02,160
+Hấp dẫn.
+
+86
+00:05:02,170 --> 00:05:02,520
+Được rồi.
+
+87
+00:05:02,590 --> 00:05:03,270
+Vì vậy, vâng.
+
+88
+00:05:03,280 --> 00:05:03,770
+Tốt để biết.
+
+89
+00:05:04,000 --> 00:05:04,700
+Vâng.
+
+90
+00:05:04,840 --> 00:05:05,040
+Được rồi.
+
+91
+00:05:05,050 --> 00:05:08,290
+Chà, tôi nghĩ điều đó đã đủ rõ ràng với việc đi mod gọn gàng.
+
+92
+00:05:08,320 --> 00:05:16,660
+Đó là mục đích của video để xem Argo lầy lội lầy lội hoạt động như thế nào để đi mod gọn gàng.
+
+93
+00:05:16,660 --> 00:05:18,940
+Ngoài ra còn có một tác dụng phụ nữa.
+
+94
+00:05:19,090 --> 00:05:26,350
+Nếu có một sự phụ thuộc chỉ yêu cầu hoạt động trên một hệ điều hành hoặc kiến ​​trúc cụ thể, hãy nói ở đó
+
+95
+00:05:26,380 --> 00:05:33,130
+một số gói nó chỉ được nhập trên Linux chẳng hạn, go mod thậm chí sẽ thêm nó vào tệp go mod
+
+96
+00:05:33,130 --> 00:05:39,350
+mặc dù tôi có thể đang ở trên windows và rất khác nhau, thực sự tải xuống và chạy nó, cảm ơn.
+
+97
+00:05:39,510 --> 00:05:44,670
+Vì vậy, nếu bạn đang sử dụng Windows, bạn hãy chạy mod gọn gàng và cần có thứ gì đó để chạy trên Linux.
+
+98
+00:05:44,670 --> 00:05:51,270
+Nó thêm vào cơ sở mã, nó thêm vào danh sách phụ thuộc của trò chơi và tệp và sau đó nếu có ai đó
+
+99
+00:05:51,270 --> 00:05:59,950
+để tải xuống các gói của bạn, mô-đun của bạn và chúng có trên Linux, sau đó có mọi thứ cần thiết.
+
+100
+00:06:00,180 --> 00:06:00,720
+Được rồi, mát mẻ.
+
+101
+00:06:02,740 --> 00:06:11,000
+Vì vậy, vâng, vì vậy hãy dọn dẹp ngăn nắp của tôi để có được danh sách phụ thuộc hoàn chỉnh nhỏ nhất cho tất cả các nền tảng.
+
+102
+00:06:11,020 --> 00:06:11,440
+Cảm ơn.

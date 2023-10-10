@@ -1,0 +1,196 @@
+1
+00:00:00,560 --> 00:00:07,040
+So this time around, we want to implement this function list for our WebDAV filesystems, and this
+
+2
+00:00:07,040 --> 00:00:12,380
+is really, really straightforward, and in fact, it's almost identical to the code we used back in
+
+3
+00:00:12,390 --> 00:00:15,410
+S&P with just a couple of minor changes.
+
+4
+00:00:15,530 --> 00:00:16,250
+Let's get started.
+
+5
+00:00:16,970 --> 00:00:22,070
+First thing I need to do, of course, is to get a client and that comes from don't get credentials.
+
+6
+00:00:23,740 --> 00:00:29,830
+Another way of a client, we can get a listing of all the files that exist in the directory stored in
+
+7
+00:00:29,830 --> 00:00:33,130
+the variable prefix, the one parameter passed to this function.
+
+8
+00:00:33,140 --> 00:00:37,390
+So files and I believe it returns an error.
+
+9
+00:00:37,480 --> 00:00:41,410
+Let's find out comes from client read dear.
+
+10
+00:00:43,150 --> 00:00:43,870
+And that returns.
+
+11
+00:00:43,870 --> 00:00:46,420
+Yes, file info and an error.
+
+12
+00:00:46,420 --> 00:00:50,620
+So read dear and we want to read the dear prefix that directory.
+
+13
+00:00:50,800 --> 00:00:55,010
+OK, so we'll check for an error if error is not equal to nil.
+
+14
+00:00:56,380 --> 00:01:01,720
+I'll return my listing, which is the slice of file systems listing, which would be empty at this point,
+
+15
+00:01:01,720 --> 00:01:02,500
+but it doesn't matter.
+
+16
+00:01:02,950 --> 00:01:04,330
+And we also return the error.
+
+17
+00:01:06,760 --> 00:01:10,130
+But if we get past that, we just range through the file same as before.
+
+18
+00:01:10,150 --> 00:01:10,960
+So for.
+
+19
+00:01:10,990 --> 00:01:15,130
+And as always, we don't care about the index, but we do care about the individual entry, which are
+
+20
+00:01:15,130 --> 00:01:15,850
+called file.
+
+21
+00:01:17,200 --> 00:01:19,750
+Those are populated by ringing through files.
+
+22
+00:01:21,650 --> 00:01:28,370
+And then we only want to take care of or consider files who don't begin with a dot as usual, so if
+
+23
+00:01:28,370 --> 00:01:37,910
+not strings that again, strings dart has prefix right there and our string is filed.
+
+24
+00:01:37,910 --> 00:01:40,950
+Our name and are prefix is just a dog.
+
+25
+00:01:41,750 --> 00:01:43,040
+So it doesn't start with that.
+
+26
+00:01:45,540 --> 00:01:48,110
+And I have a typo there somewhere I have put parentheses around it.
+
+27
+00:01:48,130 --> 00:01:50,350
+I was writing JavaScript just before this lecture.
+
+28
+00:01:50,950 --> 00:01:52,940
+Those parentheses are redundant can go.
+
+29
+00:01:52,960 --> 00:01:53,470
+That's better.
+
+30
+00:01:53,980 --> 00:01:56,440
+Now we calculate the size same as we do before.
+
+31
+00:01:56,470 --> 00:02:04,030
+B is assigned the value of casting to a float 64 the size of the file that we're currently looking at.
+
+32
+00:02:04,030 --> 00:02:08,860
+File that size and then kilobits is assign.
+
+33
+00:02:08,860 --> 00:02:18,970
+The value of bytes divided by 1024 and megabytes is assigned the value of kilobytes divided by one zero
+
+34
+00:02:18,970 --> 00:02:19,570
+two four.
+
+35
+00:02:20,410 --> 00:02:22,840
+And then we create our current item, which I'll call current.
+
+36
+00:02:23,500 --> 00:02:29,930
+It's assigned the type of file systems dot listing and we populates fields.
+
+37
+00:02:31,060 --> 00:02:34,840
+So last modified, that's going to be filed on my time.
+
+38
+00:02:36,040 --> 00:02:37,720
+I'm not doing these in any particular order.
+
+39
+00:02:37,870 --> 00:02:45,640
+Key, which is the file name, is filed out name and we want the size, which is megabytes MBIE.
+
+40
+00:02:46,420 --> 00:02:47,860
+And finally, is it a directory?
+
+41
+00:02:48,070 --> 00:02:50,680
+And we do have to take that into account with this file system.
+
+42
+00:02:50,680 --> 00:02:52,030
+So file that is dear.
+
+43
+00:02:53,600 --> 00:03:01,970
+Now we have our current so we append that to our slice listing is equal to append listing and current,
+
+44
+00:03:03,380 --> 00:03:05,480
+and then down here we return listing in nil.
+
+45
+00:03:05,570 --> 00:03:06,080
+And that's it.
+
+46
+00:03:06,110 --> 00:03:07,400
+That should take care of before us.
+
+47
+00:03:08,090 --> 00:03:11,060
+So that one's virtually identical to S&P.
+
+48
+00:03:11,300 --> 00:03:16,910
+And down here, we'll do the delete function next and a following that will do the get function, then
+
+49
+00:03:16,910 --> 00:03:17,600
+we'll try things out.
+

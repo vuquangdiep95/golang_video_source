@@ -1,0 +1,247 @@
+1
+00:00:00,390 --> 00:00:04,370
+So I suspect that most of you didn't have much difficulty with this challenge at all.
+
+2
+00:00:04,380 --> 00:00:09,300
+And I'll show you how I did it and also show you something that is not yet implementing this code.
+
+3
+00:00:09,720 --> 00:00:14,520
+But I suspect that some of you went most of the way through the problem but left one thing out.
+
+4
+00:00:14,520 --> 00:00:16,160
+And it's really easy to do that.
+
+5
+00:00:16,170 --> 00:00:19,230
+And that's, of course, the entire reason why I'm giving you this challenge.
+
+6
+00:00:20,070 --> 00:00:21,120
+So how did I tackle this?
+
+7
+00:00:21,390 --> 00:00:27,180
+Well, on line 28 in my code, I declared a new variable called Order Finished, which is just a slice
+
+8
+00:00:27,180 --> 00:00:30,990
+of strings, which of course is an empty slice of strings once I declare this variable.
+
+9
+00:00:31,890 --> 00:00:38,670
+Then down here in the dining problem, not inside this for loop, but after we're finished eating the
+
+10
+00:00:38,670 --> 00:00:44,720
+very end of this function I put in order finished equals append, order finished and philosopher.
+
+11
+00:00:44,730 --> 00:00:49,620
+In other words, I'm appending the philosopher's name to the slice of strings called order.
+
+12
+00:00:49,620 --> 00:00:49,980
+Finished.
+
+13
+00:00:50,310 --> 00:00:51,690
+That's seems simple enough.
+
+14
+00:00:52,590 --> 00:00:57,750
+Then, at the very end of the program, after the table is empty, I just put in some hyphens just to
+
+15
+00:00:57,750 --> 00:01:03,720
+separate things and I just used format print F and my format string is order finished with a placeholder
+
+16
+00:01:03,720 --> 00:01:05,280
+for a string, then a character.
+
+17
+00:01:05,370 --> 00:01:10,770
+I remembered it this time that I use the join method from the strings package, which is part of the
+
+18
+00:01:10,770 --> 00:01:16,830
+standard library to explode the order finished slice of strings into a whole bunch of strings separated
+
+19
+00:01:16,830 --> 00:01:18,150
+by a comma and a space.
+
+20
+00:01:18,300 --> 00:01:19,920
+So let's run a program.
+
+21
+00:01:21,060 --> 00:01:26,310
+And this is where I think some of you at least you probably just stopped because you open your terminal
+
+22
+00:01:26,700 --> 00:01:30,270
+and you said Go run dot and ran the program.
+
+23
+00:01:31,810 --> 00:01:32,650
+So far, so good.
+
+24
+00:01:32,860 --> 00:01:33,640
+People are hungry.
+
+25
+00:01:33,850 --> 00:01:34,510
+They're eating.
+
+26
+00:01:36,700 --> 00:01:37,720
+Some of them were thinking.
+
+27
+00:01:38,870 --> 00:01:39,950
+They're eating, thinking.
+
+28
+00:01:42,000 --> 00:01:45,180
+We'll give this a chance to finish and see what we get for our final string.
+
+29
+00:01:45,900 --> 00:01:47,460
+We had five philosophers eating.
+
+30
+00:01:47,820 --> 00:01:51,390
+We should have five people in that last message printed out.
+
+31
+00:01:55,920 --> 00:01:59,350
+Haskell, Aristotle, Locke, Plato, Socrates.
+
+32
+00:01:59,370 --> 00:02:01,350
+Everything seems perfect.
+
+33
+00:02:01,650 --> 00:02:04,110
+And of course, I suspect that some of you stopped here.
+
+34
+00:02:04,110 --> 00:02:05,160
+And if you did, don't feel bad.
+
+35
+00:02:05,160 --> 00:02:08,430
+If you're just getting your feet wet with concurrency, you're going to make mistakes.
+
+36
+00:02:08,460 --> 00:02:08,850
+Okay.
+
+37
+00:02:09,000 --> 00:02:10,770
+But there is a problem here.
+
+38
+00:02:11,460 --> 00:02:17,340
+And the problem is, once again, we have a potential race condition now because we have all these delays
+
+39
+00:02:17,340 --> 00:02:17,820
+in there.
+
+40
+00:02:17,820 --> 00:02:19,740
+And that's part of the reason why I put them in.
+
+41
+00:02:20,160 --> 00:02:23,910
+We don't actually see it when we run this program sometimes.
+
+42
+00:02:25,050 --> 00:02:31,980
+But the reality is that I have one go routine running for each of the philosophers in the background.
+
+43
+00:02:31,980 --> 00:02:38,100
+So there's five versions of this running concurrently at some point and they're all accessing order
+
+44
+00:02:38,100 --> 00:02:38,670
+finished.
+
+45
+00:02:38,730 --> 00:02:43,470
+And of course, what I need to do is to create a mutex for that, a lock and unlock line.
+
+46
+00:02:44,280 --> 00:02:46,620
+So let's go back up to the top of the program and fix it.
+
+47
+00:02:47,630 --> 00:02:53,520
+And what I'm going to declare here is a package level variable called order mutex, which is of type
+
+48
+00:02:53,880 --> 00:02:56,250
+sync of mutex right there.
+
+49
+00:02:56,640 --> 00:02:57,030
+Okay.
+
+50
+00:02:57,720 --> 00:02:58,950
+So sync up mutex.
+
+51
+00:02:58,950 --> 00:03:02,430
+And then down here, lock this.
+
+52
+00:03:03,570 --> 00:03:05,190
+So order mutex.
+
+53
+00:03:06,600 --> 00:03:07,380
+Don't lock
+
+54
+00:03:10,560 --> 00:03:14,610
+and order mutex to unlock.
+
+55
+00:03:15,210 --> 00:03:17,100
+And now my race condition is gone.
+
+56
+00:03:17,520 --> 00:03:20,520
+And if you forgot that particular step, don't feel bad at all.
+
+57
+00:03:21,100 --> 00:03:25,830
+You're not the only person to have an easily hidden race condition appear in their code.
+
+58
+00:03:26,160 --> 00:03:32,280
+And that's why when you're running any program that has multiple go routines, running concurrently,
+
+59
+00:03:32,280 --> 00:03:33,720
+it's good to get in the habit of typing.
+
+60
+00:03:33,720 --> 00:03:35,820
+Go, run, dash, race, dog.
+
+61
+00:03:36,120 --> 00:03:36,440
+Okay.
+
+62
+00:03:37,110 --> 00:03:41,310
+All right, so let's move on and write a test for our program.

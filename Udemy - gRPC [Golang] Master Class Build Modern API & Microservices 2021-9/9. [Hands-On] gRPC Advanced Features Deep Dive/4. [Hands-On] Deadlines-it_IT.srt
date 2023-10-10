@@ -1,0 +1,584 @@
+1
+00:00:00,310 --> 00:00:05,530
+OK, così in questa conferenza applicheremo le scadenze e quindi non siamo chiari come un nuovo pezzo d'arte
+
+2
+00:00:05,580 --> 00:00:06,850
+chiamato reach con scadenza.
+
+3
+00:00:07,230 --> 00:00:14,010
+E fondamentalmente gli finiremo i server la risposta verrà restituita solo dopo 3000 millisecondi e
+
+4
+00:00:14,010 --> 00:00:21,000
+questo server controllerà periodicamente se il cliente ha annullato la richiesta e ovviamente implementerà i client
+
+5
+00:00:21,000 --> 00:00:26,880
+per impostare una scadenza di 5000 millisecondi che dovrebbe effettuare la chiamata riuscito.
+
+6
+00:00:27,060 --> 00:00:30,550
+E un millisecondo dovremmo far fallire la chiamata.
+
+7
+00:00:30,750 --> 00:00:36,740
+Per fare questo, saluteremo Prado e implementeremo un'altra API.
+
+8
+00:00:36,750 --> 00:00:42,440
+Sarà uare e questo sarà chiamato attraverso quella linea.
+
+9
+00:00:42,570 --> 00:00:44,930
+Quindi verremo chiamati saluti con scadenza.
+
+10
+00:00:44,940 --> 00:00:48,020
+Quindi stiamo andando ad aggiungere con scadenza ovunque.
+
+11
+00:00:48,540 --> 00:00:52,690
+Quindi è d'accordo con quella richiesta di riga e il ritorno è d'accordo con quella risposta di linea.
+
+12
+00:00:52,710 --> 00:00:54,650
+Dobbiamo implementare questi messaggi.
+
+13
+00:00:54,870 --> 00:01:04,670
+Quindi vanno avanti e mandano un saluto proprio qui e sui risultati che possiamo.
+
+14
+00:01:04,680 --> 00:01:10,510
+Dovresti concordare che è stato fatto in risposta e restituire una stringa di conseguenza.
+
+15
+00:01:11,190 --> 00:01:11,800
+OK.
+
+16
+00:01:12,000 --> 00:01:13,370
+Quindi questo sembra buono.
+
+17
+00:01:13,710 --> 00:01:16,230
+E qui non dirà nulla.
+
+18
+00:01:16,230 --> 00:01:17,430
+Quindi eccolo qui.
+
+19
+00:01:17,460 --> 00:01:24,740
+Ora corriamo per generare che SH entri in linea solo per generare il codice per questo.
+
+20
+00:01:24,810 --> 00:01:27,410
+Quindi eseguiremo il codice proprio qui ed è in esecuzione.
+
+21
+00:01:27,600 --> 00:01:28,760
+Quindi è perfetto.
+
+22
+00:01:28,770 --> 00:01:30,590
+E il codice è stato generato.
+
+23
+00:01:30,750 --> 00:01:36,450
+Quindi no, effettivamente farò le cose all'indietro e inizierò con l'implementazione dei client.
+
+24
+00:01:36,450 --> 00:01:43,860
+Quindi qui inseriremo una chiamata urinaria con scadenza.
+
+25
+00:01:44,310 --> 00:01:45,710
+Va bene.
+
+26
+00:01:45,840 --> 00:01:51,390
+E mi limiterò a commentare il morso, quindi copierò l'intero blocco proprio qui
+
+27
+00:01:52,310 --> 00:01:53,400
+in fondo.
+
+28
+00:01:53,460 --> 00:02:03,240
+Non vedete con scadenza e così anche voi Ari con quella linea RBC e quindi qui creeremo un saluto con
+
+29
+00:02:03,350 --> 00:02:11,280
+le richieste di scadenza che accettano questo saluto e quindi la cosa veramente importante è nel
+
+30
+00:02:11,280 --> 00:02:12,240
+contesto.
+
+31
+00:02:12,660 --> 00:02:18,750
+Quindi, abbiamo un oggetto di contesto proprio qui e in questo momento stiamo vedendo l'equivalente di dire contesto
+
+32
+00:02:18,750 --> 00:02:23,230
+di sfondi in tutto Chinna ha rifiutato di chiamare saluti con scadenza.
+
+33
+00:02:23,790 --> 00:02:33,080
+E l'argomento sarà lo stesso dei contesti precedenti, quindi qui è praticamente equivalente a tutto ciò
+
+34
+00:02:33,080 --> 00:02:42,090
+che abbiamo fatto e nessun cambiamento è stato semplicemente estratto in questo stesso contesto contesto.
+
+35
+00:02:42,230 --> 00:02:46,920
+Ora la cosa davvero interessante è che c'è un modo per rendere questo contesto un po 'migliore.
+
+36
+00:02:46,970 --> 00:02:56,020
+Possiamo fare il contesto con timeout e devi specificare un contesto genitore e un time out.
+
+37
+00:02:56,060 --> 00:02:58,940
+Quindi il contesto genitore sarà di base.
+
+38
+00:02:58,940 --> 00:03:04,130
+Quindi dobbiamo effettivamente costruire in cima al contesto di sfondo e qui è possibile specificare una durata
+
+39
+00:03:04,130 --> 00:03:04,990
+del timeout.
+
+40
+00:03:05,150 --> 00:03:12,290
+E così per la prima volta imposteremo cinque volte quel tempo che è il secondo.
+
+41
+00:03:12,560 --> 00:03:14,670
+Quindi qui dormiamo per
+
+42
+00:03:20,460 --> 00:03:24,590
+cinque secondi e ciò che restituiamo come risultato è cancellato.
+
+43
+00:03:24,780 --> 00:03:26,860
+Quindi ora abbiamo oggetti migliori.
+
+44
+00:03:27,150 --> 00:03:33,570
+In realtà è contesto e Kinslow perché il contesto con il timeout del contesto acquista terreno in cinque secondi.
+
+45
+00:03:33,600 --> 00:03:36,300
+Quindi stiamo dicendo che siamo disposti ad aspettare per cinque secondi.
+
+46
+00:03:36,300 --> 00:03:38,450
+Ora quello che abbiamo oggi è che non importa cosa.
+
+47
+00:03:38,490 --> 00:03:42,550
+Al termine di questa funzione dovremmo rimandare la chiamata di annullamento.
+
+48
+00:03:42,550 --> 00:03:48,620
+Ciononostante, qualunque cosa accada ogni volta che questa funzione viene completata, chiameremo l'annullamento rimandandolo.
+
+49
+00:03:48,990 --> 00:03:53,100
+E ora fondamentalmente ciò che abbiamo implementato è un contesto.
+
+50
+00:03:53,100 --> 00:03:54,930
+Time out sulla nostra funzione.
+
+51
+00:03:55,030 --> 00:04:01,380
+E quindi se quel timeout temporale colpisce sostanzialmente questo tasso di errore qui avremo qualcosa di
+
+52
+00:04:01,380 --> 00:04:03,030
+veramente divertente da gestire.
+
+53
+00:04:03,030 --> 00:04:08,510
+Quindi dovremmo farlo esattamente come l'abbiamo fatto dalle anteprime del codice prodotto con la gestione degli errori.
+
+54
+00:04:08,790 --> 00:04:19,160
+Quindi dovremmo usare lo stato dalla nostra aria e sono fondamentalmente le aree di stato GAAP.
+
+55
+00:04:20,070 --> 00:04:30,210
+E va bene, perché così se Ok, ciò significa che è un GAAP, altrimenti possiamo semplicemente andare direttamente al nostro codice
+
+56
+00:04:30,300 --> 00:04:32,570
+prima e ottenere questo.
+
+57
+00:04:32,920 --> 00:04:37,600
+Ora possiamo andare avanti e guardare il codice dello stato.
+
+58
+00:04:37,920 --> 00:04:43,730
+Quindi possiamo dire se i codici di errore di stato hanno superato la scadenza.
+
+59
+00:04:44,430 --> 00:04:54,220
+Quindi questo è il punto in cui abbiamo Delany, così possiamo dire che abbiamo svuotato Prindle e che la
+
+60
+00:04:54,310 --> 00:04:57,850
+scadenza dei risultati è stata superata.
+
+61
+00:04:58,360 --> 00:05:07,690
+Bene, ci troviamo in una brutta zona negativa, quindi possiamo avere qualsiasi codice vuoto che prindlizzi
+
+62
+00:05:08,890 --> 00:05:15,240
+un errore imprevisto e stamperemo il messaggio di errore qui.
+
+63
+00:05:15,460 --> 00:05:17,770
+E in più faremo una stampa.
+
+64
+00:05:18,020 --> 00:05:18,250
+OK.
+
+65
+00:05:18,250 --> 00:05:19,340
+Quindi sembra corretto.
+
+66
+00:05:19,780 --> 00:05:23,540
+E avremo questo stato giusto qui per rendere le cose più chiare.
+
+67
+00:05:23,790 --> 00:05:24,250
+OK.
+
+68
+00:05:24,370 --> 00:05:31,950
+Quindi fondamentalmente qui nei nostri clienti abbiamo fissato una scadenza temporale di cinque secondi e ci differiamo di annullare.
+
+69
+00:05:32,140 --> 00:05:37,790
+In pratica, se riceviamo un errore da questa chiamata da una grande scadenza, esamineremo questo codice di area di stato,
+
+70
+00:05:37,810 --> 00:05:42,370
+assicurandoci che sia o meno una scadenza che è stata superata e se ciò significa che il
+
+71
+00:05:42,370 --> 00:05:45,490
+timeout è stato raggiunto e la scadenza è stato superato
+
+72
+00:05:46,150 --> 00:05:49,800
+Quindi ora possiamo fare qualcosa di grande e in realtà avere un impatto qui.
+
+73
+00:05:50,410 --> 00:05:51,460
+Come primi secondi.
+
+74
+00:05:51,490 --> 00:06:00,980
+Quindi avremo secondi e int come a posto e avremo solo i tuoi secondi il tempo in cui, in secondo luogo, la
+
+75
+00:06:01,000 --> 00:06:06,400
+cosa veramente positiva è che ora possiamo fare e non è felice.
+
+76
+00:06:08,200 --> 00:06:09,660
+Quindi è il momento della durata.
+
+77
+00:06:09,940 --> 00:06:19,120
+Quindi possiamo fare una durata proprio qui durata e passeremo e la durata proprio qui
+
+78
+00:06:21,160 --> 00:06:25,140
+o chiameremo chiameremo questi time okay.
+
+79
+00:06:25,490 --> 00:06:27,850
+Quindi ogni tanto riduci la scadenza.
+
+80
+00:06:27,890 --> 00:06:31,810
+Possiamo fare uno con una sola volta.
+
+81
+00:06:31,810 --> 00:06:33,090
+Questo è secondo.
+
+82
+00:06:33,490 --> 00:06:36,990
+E possiamo fare un altro con cinque secondi.
+
+83
+00:06:37,010 --> 00:06:37,280
+OK.
+
+84
+00:06:37,290 --> 00:06:47,620
+Quindi il primo dovrebbe essere completato e il secondo dovrebbe scadere perché il nostro codice server sarà di
+
+85
+00:06:47,620 --> 00:06:49,080
+3 secondi.
+
+86
+00:06:49,090 --> 00:06:50,440
+Quindi sembra corretto.
+
+87
+00:06:50,620 --> 00:06:57,460
+E adesso se vai avanti e implementa il server, allora andiamo al server e dobbiamo implementare
+
+88
+00:06:57,520 --> 00:07:00,580
+una funzione di grete con scadenza.
+
+89
+00:07:00,970 --> 00:07:03,020
+Quindi andiamo avanti e facciamo questo.
+
+90
+00:07:03,300 --> 00:07:07,410
+Abbiamo saluti con scadenza e fornisce un contesto.
+
+91
+00:07:07,480 --> 00:07:15,230
+E la cosa è concordata con le richieste di scadenza e i resi sono salutati con una scadenza.
+
+92
+00:07:15,370 --> 00:07:17,320
+Risposta OK.
+
+93
+00:07:17,350 --> 00:07:20,600
+Quindi è stata invocata la funzione di saluto con scadenza.
+
+94
+00:07:21,040 --> 00:07:27,020
+E qui faremo come funzionerà la piccola funzione per I.
+
+95
+00:07:27,250 --> 00:07:29,410
+Uguale a zero.
+
+96
+00:07:29,740 --> 00:07:46,300
+Meno che meno di 3 I plus in più, andremo a dormire per un po 'di tempo in quel momento e poi quando avremo finito
+
+97
+00:07:46,330 --> 00:07:48,580
+restituiremo i risultati.
+
+98
+00:07:48,820 --> 00:07:49,580
+OK.
+
+99
+00:07:49,840 --> 00:07:55,990
+Quindi ecco l'importante è che di solito mettiamo tre secondi e ogni volta che dormiamo.
+
+100
+00:07:55,990 --> 00:08:04,360
+Dovremmo anche controllare se la scadenza è stata cancellata o meno, quindi possiamo dire che se il
+
+101
+00:08:04,490 --> 00:08:15,900
+contesto che l'aria eguaglia il contesto che è stato cancellato, in pratica il cliente ha annullato la richiesta in modo da poterla archiviare e
+
+102
+00:08:15,940 --> 00:08:25,530
+possiamo fino a quel momento i client hanno annullato la richiesta e possiamo restituire un messaggio di errore per esempio
+
+103
+00:08:25,530 --> 00:08:30,580
+in modo che possiamo dire lo stato che è aria.
+
+104
+00:08:31,080 --> 00:08:36,860
+E qui abbiamo i codici di scadenza di Dud come hai fatto per esempio.
+
+105
+00:08:37,980 --> 00:08:45,190
+E come messaggio di errore possiamo dire che i clienti hanno annullato la richiesta.
+
+106
+00:08:45,340 --> 00:08:46,760
+Quindi è buono.
+
+107
+00:08:46,780 --> 00:08:52,300
+Quindi lo stiamo facendo solo assicurandoci che non ci siano cancellazioni è meglio che potremmo effettivamente annullare ciò che è
+
+108
+00:08:52,740 --> 00:08:53,490
+molto meglio.
+
+109
+00:08:53,500 --> 00:08:56,230
+Così possono cancellare l'eccellenza della richiesta eccellente.
+
+110
+00:08:56,320 --> 00:08:56,950
+E lui avrebbe dormito.
+
+111
+00:08:56,950 --> 00:09:01,420
+Quindi, in pratica, inizialmente mettiamo tre secondi in controllo, indipendentemente dal fatto che il cliente abbia
+
+112
+00:09:02,320 --> 00:09:06,690
+annullato la richiesta e, in tal caso, possiamo procedere e restituire effettivamente la risposta.
+
+113
+00:09:06,700 --> 00:09:13,090
+Quindi diremo che sono d'accordo con la risposta in linea con il risultato e restituisco questo.
+
+114
+00:09:13,120 --> 00:09:18,600
+Quindi qui useresti la scadenza in questo tipo di controllo se il contesto è stato cancellato o no.
+
+115
+00:09:18,760 --> 00:09:23,260
+Nel caso che tu faccia qualche operazione molto costosa e che tu possa semplicemente interromperla nel
+
+116
+00:09:23,260 --> 00:09:24,690
+mezzo mentre lo fai.
+
+117
+00:09:24,950 --> 00:09:25,530
+OK.
+
+118
+00:09:25,720 --> 00:09:27,280
+Diamo un'occhiata se questo funziona.
+
+119
+00:09:27,280 --> 00:09:27,890
+Facciamolo.
+
+120
+00:09:27,910 --> 00:09:42,140
+Quindi vai a gestire il nostro server concordato e vai a gestire i nostri clienti greci e quindi il primo è un RBC di scadenza e il secondo è
+
+121
+00:09:42,140 --> 00:09:49,460
+che è stata superata la scadenza in cui hai un panico che devo esaminare
+
+122
+00:09:49,820 --> 00:09:59,600
+ma entrambe le funzioni sono state eseguite quindi cerchiamo di dare un'occhiata e sembra che il cliente vada a 129.
+
+123
+00:09:59,630 --> 00:10:01,140
+Quindi eccolo qui.
+
+124
+00:10:01,160 --> 00:10:06,850
+Quindi, in pratica, dire di non riposare è nulla e quindi il risultato non esiste.
+
+125
+00:10:07,000 --> 00:10:09,530
+E questo è corretto nel caso avessimo degli errori.
+
+126
+00:10:09,530 --> 00:10:16,240
+Ovviamente abbiamo bisogno di tornare da questa funzione per non colpire mai la linea proprio qui.
+
+127
+00:10:16,550 --> 00:10:17,930
+Quindi sembra giusto.
+
+128
+00:10:17,960 --> 00:10:19,140
+Ops.
+
+129
+00:10:19,630 --> 00:10:20,990
+Sembra giusto.
+
+130
+00:10:21,050 --> 00:10:23,660
+E così ora siamo pronti a eseguire nuovamente il nostro codice.
+
+131
+00:10:23,660 --> 00:10:27,720
+Quindi andiamo avanti qui e eseguiamo il codice.
+
+132
+00:10:28,130 --> 00:10:33,490
+E così ora corriamo con la scadenza RBC e otteniamo una risposta nel primo caso.
+
+133
+00:10:33,500 --> 00:10:35,670
+Quindi è stata una risposta da grande scadenza.
+
+134
+00:10:35,690 --> 00:10:36,680
+Ciao Stefan.
+
+135
+00:10:37,010 --> 00:10:43,430
+E il secondo è il momento in cui un time out e il deadline sono stati superati e abbiamo appena imparato
+
+136
+00:10:43,430 --> 00:10:48,260
+come usare la deadline quindi la cosa veramente importante è che si basa su questo
+
+137
+00:10:48,260 --> 00:10:54,230
+turno sui codici di errore dello stato e anche che abbiamo costruito sul contesto aggiungendo timeout al contesto e
+
+138
+00:10:54,240 --> 00:10:55,610
+diversi account del contesto.
+
+139
+00:10:55,610 --> 00:11:00,290
+Quindi nel complesso può diventare piuttosto complicato, ma è abbastanza facile da leggere nel complesso.
+
+140
+00:11:00,290 --> 00:11:02,600
+Quindi assicurati di conoscere il tuo codice di errore di stato.
+
+141
+00:11:02,610 --> 00:11:07,880
+Certo che lo hai fatto e puoi iniziare ad avere delle scadenze davvero efficienti nel tuo codice e, in generale, ti
+
+142
+00:11:07,880 --> 00:11:13,160
+consigliamo vivamente di avere una scadenza su ogni RBC chiamato che stai facendo solo per assicurarti che il tuo tipo non
+
+143
+00:11:13,160 --> 00:11:17,690
+aspetti per sempre il client per il server per rispondere a qualcosa nel caso in cui il server
+
+144
+00:11:17,690 --> 00:11:18,780
+è davvero molto lento.
+
+145
+00:11:19,010 --> 00:11:20,640
+Quindi questo è tutto.
+
+146
+00:11:20,640 --> 00:11:23,180
+Spero che sia stato utile e poi ci vedremo nella prossima lezione.
+

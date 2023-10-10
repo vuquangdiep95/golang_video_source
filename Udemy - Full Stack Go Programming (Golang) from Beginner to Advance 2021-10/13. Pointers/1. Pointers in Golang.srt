@@ -1,0 +1,279 @@
+1
+00:00:02,120 --> 00:00:02,330
+And.
+
+2
+00:00:13,390 --> 00:00:18,510
+Hello and welcome to the Guoliang Programming Languages course in this session.
+
+3
+00:00:18,550 --> 00:00:21,370
+We want to talk about the pointers concept.
+
+4
+00:00:24,810 --> 00:00:33,600
+Pointers and go like pointers in go programming language is a variable, which is used to restore the
+
+5
+00:00:33,600 --> 00:00:40,950
+memory address of another value, even pointers and go blank is answer turned as the especial value
+
+6
+00:00:40,950 --> 00:00:41,280
+is.
+
+7
+00:00:42,280 --> 00:00:49,510
+The variables are used to store some data at a particular memory address in the system, the memory
+
+8
+00:00:49,510 --> 00:00:53,140
+address is always found in hexadecimal format
+
+9
+00:00:55,690 --> 00:01:00,010
+pointers and go are easy and fun to learn.
+
+10
+00:01:00,520 --> 00:01:07,390
+Some go programming tasks are performed more easily with pointers, and other tasks such as command
+
+11
+00:01:07,390 --> 00:01:15,010
+by reference cannot be careful without using pointers, so it becomes necessary to learn pointers to
+
+12
+00:01:15,010 --> 00:01:17,110
+become a perfect go programmer.
+
+13
+00:01:19,750 --> 00:01:26,620
+As you know, everybody debate is a memory location, and every memory location has its address defined,
+
+14
+00:01:26,800 --> 00:01:33,130
+which can be accessed using Ampersand Operator, which denotes an address in memory.
+
+15
+00:01:33,760 --> 00:01:38,380
+Consider the following example which will print the address of the variable defined.
+
+16
+00:01:46,510 --> 00:01:53,770
+A pointer is a special kind of variable, which is not only used to restore the memory addresses of
+
+17
+00:01:53,770 --> 00:02:01,330
+other variables, but it also points where the memory is located and through lines of veins to find
+
+18
+00:02:01,330 --> 00:02:03,940
+out the value is stored at the memory location.
+
+19
+00:02:04,630 --> 00:02:11,410
+It is generally termed as a special kind of variable because it is almost declared as a variable.
+
+20
+00:02:11,470 --> 00:02:15,790
+But with asterisk or d referencing operator.
+
+21
+00:02:24,510 --> 00:02:27,780
+Declaration and initialization of pointers.
+
+22
+00:02:29,250 --> 00:02:35,250
+There are two important operators which we will use in pointers first.
+
+23
+00:02:36,290 --> 00:02:43,800
+Operator Answer turned as the D referencing operator used to declare a pointer of any event and access.
+
+24
+00:02:43,800 --> 00:02:51,960
+The value is stored in the address and second ampersand operator termed as address operator use to return
+
+25
+00:02:52,040 --> 00:02:56,670
+the address of a very bad or to access the address of a variable to a pointer.
+
+26
+00:02:57,480 --> 00:03:09,150
+The general form of the pointer variable declaration is that Vatanen and Estar that type here type is
+
+27
+00:03:09,150 --> 00:03:10,890
+the pointers based type.
+
+28
+00:03:11,340 --> 00:03:17,040
+It must be a valid C data type and that name is the name of the pointer value.
+
+29
+00:03:17,040 --> 00:03:24,420
+But the asterisk you used to declare a pointer is the same asterisk that you use for multiplication.
+
+30
+00:03:24,720 --> 00:03:31,800
+However, in this statement, the asterisk is being used to designate a variable as a pointer.
+
+31
+00:03:33,240 --> 00:03:36,000
+Following are the valid pointer declaration.
+
+32
+00:03:37,290 --> 00:03:45,840
+The actual data type of the value of all pointer is whether integer float or otherwise is the same along
+
+33
+00:03:45,870 --> 00:03:49,590
+hexadecimal number that represents a memory address.
+
+34
+00:03:50,190 --> 00:03:57,240
+The only difference between pointers of different data types is the data type of the variable or constant
+
+35
+00:03:57,240 --> 00:03:59,010
+that the pointer points to.
+
+36
+00:03:59,790 --> 00:04:05,520
+Now go to Waskow and illustrate how to declare and initialize pointers.
+
+37
+00:04:09,100 --> 00:04:25,420
+First, create a project folder for the example pointer and create a fine like me girl package main
+
+38
+00:04:26,620 --> 00:04:30,610
+and create main function for me.
+
+39
+00:04:34,010 --> 00:04:43,360
+First, define an actual variable declaration where a heat equals wind.
+
+40
+00:04:44,630 --> 00:04:54,740
+And second, define pointer a variable declaration for the example that name of it P and Typekit asterisk
+
+41
+00:04:54,920 --> 00:05:10,610
+it now is to address of a variable in pointer variable p equals ampersand, a value now display address
+
+42
+00:05:10,610 --> 00:05:17,540
+of a value that if their address are a
+
+43
+00:05:20,150 --> 00:05:20,870
+variable
+
+44
+00:05:23,420 --> 00:05:26,840
+percent X launches.
+
+45
+00:05:27,380 --> 00:05:40,580
+I guess this and and said the address of a variable ampersand, a go to the next line and display address
+
+46
+00:05:40,580 --> 00:05:42,800
+that is stored and put into a variable.
+
+47
+00:05:43,580 --> 00:05:44,390
+If their
+
+48
+00:05:46,760 --> 00:05:55,040
+address is talked in P
+
+49
+00:05:58,400 --> 00:05:59,090
+value, two
+
+50
+00:06:02,870 --> 00:06:14,930
+percent x lowercase back is less and and set the value of the P at the code and save the project for
+
+51
+00:06:14,930 --> 00:06:18,260
+access the value of pointer using the asterisk.
+
+52
+00:06:18,710 --> 00:06:25,820
+This is the inferencing a pointer using asterisk operator B4 a pointer a variable to access the value
+
+53
+00:06:25,820 --> 00:06:29,900
+is stored at the variable at which is pointing now.
+
+54
+00:06:29,900 --> 00:06:36,020
+Display value of pointer value even by the following code if the
+
+55
+00:06:38,480 --> 00:06:47,180
+value of estar p value of a
+
+56
+00:06:49,940 --> 00:07:05,630
+percent d backslash and and set the S time p now reformat the code, save the project and execute the
+
+57
+00:07:05,630 --> 00:07:06,410
+program on 1st.
+
+58
+00:07:06,410 --> 00:07:16,340
+Go to the project folder, see the pointers and run the project by Go Wrong.
+
+59
+00:07:16,760 --> 00:07:21,410
+I guess let's make that go now.
+
+60
+00:07:21,410 --> 00:07:29,300
+We can see the output first with the address of a variable by the hexadecimal format and then address
+
+61
+00:07:29,300 --> 00:07:32,180
+is stored and p variable by the hexadecimal.
+
+62
+00:07:32,660 --> 00:07:42,650
+And third, we see value of SRP variable that is 20, then the above code is compiled and executed.
+
+63
+00:07:42,920 --> 00:07:45,440
+It produces the following result.
+
+64
+00:07:46,010 --> 00:07:54,530
+First, we could define an actual variable named a then defined that point to a name p and s address
+
+65
+00:07:54,530 --> 00:07:59,270
+of a variable in point of about even after each display.
+
+66
+00:07:59,270 --> 00:08:06,950
+As a result, actual variable by ampersand symbol and display pointer address by accessing P variable
+
+67
+00:08:07,100 --> 00:08:11,600
+and display value of pointer by accessing asterisk symbol.
+
+68
+00:08:11,690 --> 00:08:17,450
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+69
+00:08:17,450 --> 00:08:18,380
+the next session.
+
+70
+00:08:18,560 --> 00:08:19,070
+Goodbye.

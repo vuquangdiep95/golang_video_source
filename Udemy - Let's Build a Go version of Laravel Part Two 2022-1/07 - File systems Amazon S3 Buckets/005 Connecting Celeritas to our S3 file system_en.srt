@@ -1,0 +1,108 @@
+1
+00:00:01,950 --> 00:00:07,890
+So now that we have all the functions completed, our S3 file system, let's connect it to celebrities,
+
+2
+00:00:07,920 --> 00:00:09,140
+so I'm back in the files.
+
+3
+00:00:09,150 --> 00:00:15,120
+Larry Telesco at the root level of the Celebrity House project near the bottom of that file in the function
+
+4
+00:00:15,120 --> 00:00:16,830
+called Create File Systems.
+
+5
+00:00:16,950 --> 00:00:20,880
+And I'll put it right here after I declare the file system variable doesn't matter where it goes.
+
+6
+00:00:21,450 --> 00:00:27,270
+So once again, I'm going to check for the presence of a value in my thought on file to determine whether
+
+7
+00:00:27,270 --> 00:00:30,110
+or not to try to instantiate an S3 file system.
+
+8
+00:00:30,120 --> 00:00:37,050
+So if O's don't get on and I'm going to look for S3 key, that's as good as any.
+
+9
+00:00:37,710 --> 00:00:44,430
+So if that is not equal to an empty string, then I want to create this file system.
+
+10
+00:00:44,430 --> 00:00:51,720
+So I'll create a variable S3, and I'll make that equal to the type S3 file system, which it should
+
+11
+00:00:51,720 --> 00:00:54,570
+find for me S3 and populate its fields.
+
+12
+00:00:55,140 --> 00:00:56,910
+So we have the key, and that's OK.
+
+13
+00:00:57,030 --> 00:00:57,810
+Don't get on.
+
+14
+00:00:58,890 --> 00:01:03,270
+S3 underscore key right there.
+
+15
+00:01:03,810 --> 00:01:09,750
+I'll duplicate this, and the second field will be the secret like that.
+
+16
+00:01:10,680 --> 00:01:15,450
+And that's S3 secret duplicated again.
+
+17
+00:01:17,010 --> 00:01:21,240
+The next one is the region and that is S3 region
+
+18
+00:01:24,330 --> 00:01:25,380
+and duplicate that.
+
+19
+00:01:26,940 --> 00:01:34,740
+The next one is the end point, and that's S3 endpoint and the final one is the bucket.
+
+20
+00:01:36,480 --> 00:01:37,440
+What's the bucket name?
+
+21
+00:01:38,550 --> 00:01:39,930
+And that is S3 bucket.
+
+22
+00:01:44,820 --> 00:01:52,530
+And then I add that to my file system is a variable file systems at the key of S3, and that's equal
+
+23
+00:01:52,530 --> 00:01:53,100
+to S3.
+
+24
+00:01:55,770 --> 00:01:59,440
+OK, so that should take care of that.
+
+25
+00:01:59,460 --> 00:02:04,620
+And the next step, of course, is to actually go create a bucket somewhere out in a remote system and
+
+26
+00:02:04,620 --> 00:02:07,500
+then fill in the appropriate values in my own file.
+
+27
+00:02:07,500 --> 00:02:09,000
+And we'll do that in the next lecture.
+

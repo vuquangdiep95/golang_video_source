@@ -1,0 +1,131 @@
+1
+00:00:00,390 --> 00:00:07,620
+So when do dealing with concurrency and networking like this one helpful way to understand the code
+
+2
+00:00:07,650 --> 00:00:14,760
+is to try to see if you can follow the path of a mess of an action through the code across the multiple
+
+3
+00:00:14,760 --> 00:00:16,110
+devices to understand it.
+
+4
+00:00:16,890 --> 00:00:17,490
+So what.
+
+5
+00:00:17,480 --> 00:00:23,250
+What we need to have is when someone types in a message it comes in on this function and then eventually
+
+6
+00:00:23,250 --> 00:00:25,910
+on every computer it goes to this fine print line.
+
+7
+00:00:26,670 --> 00:00:31,730
+So but how does it get from this here to here is the question is climbs up.
+
+8
+00:00:31,870 --> 00:00:39,950
+So so so following the path is a nice way to kind of see how that works.
+
+9
+00:00:39,990 --> 00:00:41,640
+So the message comes in here.
+
+10
+00:00:41,760 --> 00:00:50,720
+Got message and it comes down in here the message gets sent out through the stream to the server so
+
+11
+00:00:50,730 --> 00:00:57,670
+over in the server that comes back in here.
+
+12
+00:00:57,730 --> 00:00:59,420
+This received message.
+
+13
+00:00:59,420 --> 00:01:05,790
+So on a connection through receives that's here's the message on the server what's best on the server
+
+14
+00:01:05,800 --> 00:01:14,930
+it comes down and gets sent out through this broadcast channel this broadcast channels other end is
+
+15
+00:01:14,940 --> 00:01:22,020
+here in chat server comes the message comes out the broadcast channel and then the server goes to all
+
+16
+00:01:22,020 --> 00:01:25,560
+the connections and for every connection it sends that message.
+
+17
+00:01:26,790 --> 00:01:27,250
+And so.
+
+18
+00:01:27,390 --> 00:01:33,110
+So now this the send is located up here connection.
+
+19
+00:01:33,180 --> 00:01:40,060
+This is just scrolled up a bit so it comes down here and it gets sent through to this send channel to
+
+20
+00:01:40,090 --> 00:01:41,010
+the send channel.
+
+21
+00:01:41,020 --> 00:01:45,150
+The other end of it is right here again in the connection.
+
+22
+00:01:45,150 --> 00:01:53,060
+So the message comes out here and gets sent through the actual connection so this then goes back to
+
+23
+00:01:53,060 --> 00:01:58,070
+the client up here the stream receives messages.
+
+24
+00:01:58,070 --> 00:02:06,750
+And now you get the message and it comes down and gets printed out a nice car I had so many questions
+
+25
+00:02:06,780 --> 00:02:10,090
+I don't even know if I want to jump into it.
+
+26
+00:02:10,590 --> 00:02:11,730
+Well done.
+
+27
+00:02:11,960 --> 00:02:14,840
+I'm not going to jump him to.
+
+28
+00:02:15,330 --> 00:02:15,630
+All right.
+
+29
+00:02:15,630 --> 00:02:19,210
+Anything you want to add to that now.
+
+30
+00:02:19,340 --> 00:02:19,900
+Good.
+
+31
+00:02:19,910 --> 00:02:26,410
+That's definitely code that's going to take even myself you know one of the we need the qualifier even
+
+32
+00:02:26,420 --> 00:02:30,230
+but that's kind of this can take myself a little bit of time to understand.
+
+33
+00:02:30,230 --> 00:02:32,360
+Thanks for that example Daniel really enjoyed it.

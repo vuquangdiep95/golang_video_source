@@ -1,0 +1,479 @@
+1
+00:00:15,170 --> 00:00:19,430
+Hello and welcome to the Go Line programming language course.
+
+2
+00:00:23,930 --> 00:00:30,440
+And introduction to Go Lanc Go is an Open-Source programming language.
+
+3
+00:00:31,400 --> 00:00:36,260
+It's a statically typed and produces compiled mixing code binaries.
+
+4
+00:00:37,640 --> 00:00:45,770
+Developers say that Google's goal language is the sea for a 21st century when it comes to syntax.
+
+5
+00:00:47,540 --> 00:00:55,340
+This meal programming language includes tooling that allows you to safely use memory, manage optics,
+
+6
+00:00:55,520 --> 00:01:00,500
+collect garbage and provide aesthetic typing along with concurrency.
+
+7
+00:01:02,560 --> 00:01:07,330
+Best features of GO programming language compiled.
+
+8
+00:01:08,420 --> 00:01:15,500
+Garbage collected, designed for multiple processors and easy to read quotes.
+
+9
+00:01:17,300 --> 00:01:23,960
+The main goal of creating GO was to combine the best features of other programming languages, such
+
+10
+00:01:23,960 --> 00:01:31,880
+as ease of use with state of the art productivity, high level efficiency, along with the static typing
+
+11
+00:01:32,480 --> 00:01:37,610
+and advanced performance for networking and the full use of multicore power.
+
+12
+00:01:37,730 --> 00:01:40,730
+You might want to know why gore is rising.
+
+13
+00:01:41,120 --> 00:01:48,590
+The reason is that Go has the same performance as C and is much easier to maintain that your wall as
+
+14
+00:01:48,590 --> 00:01:54,770
+we need no virtual machine, no warning or period and no jar, hell and so on.
+
+15
+00:01:56,470 --> 00:02:03,790
+Let's have a look at the other Gauland advantages that spanned less time and money to develop an app.
+
+16
+00:02:05,110 --> 00:02:12,310
+You don't need a huge take a stack if you are using go for your project, ask, create and then go language,
+
+17
+00:02:12,310 --> 00:02:18,250
+actually compile to native machine code and don't need any interpreter or virtual machine.
+
+18
+00:02:20,140 --> 00:02:27,250
+These are some means that GO apps will work faster and won't require the warming up, we have just mentioned
+
+19
+00:02:28,840 --> 00:02:31,330
+use go for a range of apps.
+
+20
+00:02:33,670 --> 00:02:38,200
+Go is a really flexible language able to solve a lot of problems.
+
+21
+00:02:38,740 --> 00:02:46,180
+You can use it for system and network programming, big data, machine learning, audio and video editing
+
+22
+00:02:46,180 --> 00:02:46,900
+and more.
+
+23
+00:02:52,910 --> 00:03:02,090
+Get more performance at a wider audience for your app similarly to C or C++.
+
+24
+00:03:02,300 --> 00:03:06,650
+Go is a compiled language and doesn't require any interpretation.
+
+25
+00:03:06,680 --> 00:03:15,080
+Correspondingly, the absence of an interpreter frees up power and gives a go build app way more performance,
+
+26
+00:03:15,290 --> 00:03:18,320
+which will surely be appreciated by users.
+
+27
+00:03:19,310 --> 00:03:24,500
+Moreover, God knows how to properly manage allocated memory.
+
+28
+00:03:25,130 --> 00:03:31,970
+More good news is that a Google based application is less demanding in terms of system requirements.
+
+29
+00:03:32,840 --> 00:03:38,750
+This is good for users with all their devices as they will get to enjoy your app too.
+
+30
+00:03:39,410 --> 00:03:43,610
+And with more people using your application, you will be getting more money.
+
+31
+00:03:51,820 --> 00:03:58,540
+Worry less about the app crashing, though, was created to use the full potential of multiple course.
+
+32
+00:03:58,930 --> 00:04:06,010
+Moreover, the language can properly use all the processor resources, so it's perfect for running an
+
+33
+00:04:06,010 --> 00:04:08,440
+app in the background as a single process.
+
+34
+00:04:08,920 --> 00:04:16,180
+This is possible thanks to go routines which are used instead of threats and require much less ram due
+
+35
+00:04:16,180 --> 00:04:18,250
+to their known system threat nature.
+
+36
+00:04:18,820 --> 00:04:23,560
+This is why the risk of a Go app crashing due to lack of memory is lower.
+
+37
+00:04:25,490 --> 00:04:30,470
+Is it a fine go developers for your project going is blowing up?
+
+38
+00:04:31,040 --> 00:04:37,910
+If you look at the 2018 developers survey by the Stack Overflow, you will see that go is one, the
+
+39
+00:04:37,910 --> 00:04:41,360
+top five most loved and most wanted languages.
+
+40
+00:04:42,140 --> 00:04:48,440
+More and more professionals are diving into the world of Go, according to recent research.
+
+41
+00:04:48,620 --> 00:04:55,190
+You can only define over one million six hundred and thirty three thousand GO developers on the market
+
+42
+00:04:55,190 --> 00:05:03,260
+in 2018, which is a 60 percent increase compared to 2017, according to the Google survey.
+
+43
+00:05:03,380 --> 00:05:07,790
+More and more contributors to go are coming from the go community.
+
+44
+00:05:07,910 --> 00:05:12,620
+This also means that there are more and more people becoming go professionals.
+
+45
+00:05:15,940 --> 00:05:18,970
+Developers can easily sample GO apps.
+
+46
+00:05:19,630 --> 00:05:26,770
+There is a serious advantage for those who aren't ready to hire a go expert for support and maintenance.
+
+47
+00:05:27,340 --> 00:05:32,200
+Go Court has clear and neat syntax and requires little effort to learn.
+
+48
+00:05:32,560 --> 00:05:39,520
+So developers, you already what we can learn all they need to within just a couple of days.
+
+49
+00:05:40,150 --> 00:05:44,020
+This will allow your developers to support your existing app.
+
+50
+00:05:47,840 --> 00:05:51,110
+What are the advantages of using go for your project?
+
+51
+00:05:52,040 --> 00:05:53,870
+Why is good language popular?
+
+52
+00:05:54,620 --> 00:05:58,850
+Besides the cute mascot, Go brings a whole set of advantages.
+
+53
+00:05:59,690 --> 00:06:05,660
+The language began rising almost as soon as it was released back in 2009.
+
+54
+00:06:06,560 --> 00:06:12,840
+It quickly a start, drifting from the number 65 language toward the top positions around the world.
+
+55
+00:06:13,400 --> 00:06:15,800
+Then Business Insider called gold.
+
+56
+00:06:15,800 --> 00:06:21,860
+The hottest programming language of 2016, according to the Thiel Index.
+
+57
+00:06:22,010 --> 00:06:26,810
+Goes rating went way up and a bit down in 2017.
+
+58
+00:06:26,960 --> 00:06:33,410
+But in 2018, it has continuously gone up, as shown in the graph below.
+
+59
+00:06:36,950 --> 00:06:37,610
+Rank.
+
+60
+00:06:40,470 --> 00:06:49,650
+These diagrams summarize the result of our December 2018 user survey, along with our commentary and
+
+61
+00:06:49,650 --> 00:06:50,310
+insights.
+
+62
+00:06:51,030 --> 00:06:58,020
+We are grateful to everyone who provided their feedback to the survey to help shape the future of go
+
+63
+00:06:58,020 --> 00:07:05,460
+like we asked about people's expertise and preference among programming languages.
+
+64
+00:07:06,210 --> 00:07:13,380
+Go ranked highest amount respondents first choices in both expertise and preference.
+
+65
+00:07:15,550 --> 00:07:22,540
+Expertise well, in this chart, based on statistics, we actually showed a ranking of programming languages
+
+66
+00:07:22,750 --> 00:07:24,340
+based on your expertise.
+
+67
+00:07:24,850 --> 00:07:33,370
+As you can see, go language is about 90 percent, Python 56 percent and Java 42 percent.
+
+68
+00:07:33,640 --> 00:07:43,210
+And finally, C++ 24 until five-person your specialty go languages is still top of the expert line diagram.
+
+69
+00:07:47,930 --> 00:07:56,210
+Preferences and the other diagram based on this statistic that show that the preferences of programming
+
+70
+00:07:56,210 --> 00:08:04,190
+languages, as you can see go language is about nine to three percent, Python fifty three percent and
+
+71
+00:08:04,190 --> 00:08:15,350
+Rust 90 percent and finally C++ 18 and B 11 percent GO is clearly attracting many programmers from dynamic
+
+72
+00:08:15,350 --> 00:08:16,100
+languages.
+
+73
+00:08:19,270 --> 00:08:27,630
+What projects can you use go for gore will definitely do the trick if you are planning to develop down
+
+74
+00:08:27,640 --> 00:08:29,710
+the line services for your application.
+
+75
+00:08:30,130 --> 00:08:34,690
+More than that, gore is good for scalable, high performance apps.
+
+76
+00:08:36,430 --> 00:08:43,750
+We list some apps and services that are enjoying the benefits of Google Cloud services as the creator
+
+77
+00:08:43,750 --> 00:08:44,290
+of Google.
+
+78
+00:08:44,320 --> 00:08:48,700
+Google is using the language to provide cloud infrastructure.
+
+79
+00:08:49,060 --> 00:08:54,190
+It offers top performance and its capability to the Google Cloud platform.
+
+80
+00:08:54,370 --> 00:09:00,130
+But there are even more well-known cloud businesses out there are using Google for the same reason,
+
+81
+00:09:00,140 --> 00:09:06,550
+such as Dropbox Turf for Kubernetes and Dutcher media platforms.
+
+82
+00:09:07,710 --> 00:09:16,380
+YouTube, SoundCloud and Netflix choose Go to fight with high loads on their sites, SoundCloud uses
+
+83
+00:09:16,380 --> 00:09:23,730
+this language for deploying some internal services within their complex projects on demand services.
+
+84
+00:09:24,180 --> 00:09:32,670
+The toxic giant over was looking to improve map processing speeds as people loaded geo fence look ups,
+
+85
+00:09:32,970 --> 00:09:37,050
+sending literally thousands of queries per second.
+
+86
+00:09:37,740 --> 00:09:38,400
+Go ahead!
+
+87
+00:09:38,430 --> 00:09:46,560
+Uber significantly reduce the timing of providing services to users, which was much appreciated by
+
+88
+00:09:46,560 --> 00:09:47,130
+users.
+
+89
+00:09:48,390 --> 00:09:54,240
+Aside from the services and products, Google provides key tooling for mobile app development.
+
+90
+00:09:54,630 --> 00:10:01,830
+This is why we will soon see even more examples of going mobile applications and propelling some other
+
+91
+00:10:01,830 --> 00:10:03,240
+industries as well.
+
+92
+00:10:03,450 --> 00:10:07,890
+Also, Go is still a relatively young programming language.
+
+93
+00:10:08,040 --> 00:10:17,340
+It has gained popularity among real business masters like Google, Netflix or Uber and others who use
+
+94
+00:10:17,340 --> 00:10:24,180
+Go to scale their products innovative high performance goals, quickly changing for a base, providing
+
+95
+00:10:24,180 --> 00:10:26,700
+more and more tools for mobile and web development.
+
+96
+00:10:26,830 --> 00:10:33,720
+And remarkably, decreasing the time and cost of app development and software news outlets.
+
+97
+00:10:33,990 --> 00:10:42,390
+Back in 2012, BBC started using goal language for backend development and some of the elements of their
+
+98
+00:10:42,390 --> 00:10:44,340
+internal analytics services.
+
+99
+00:10:46,800 --> 00:10:48,240
+Go Lang designers.
+
+100
+00:10:48,840 --> 00:10:55,530
+Google was produced in 2007 and launched in 2009 and introduced to the public.
+
+101
+00:10:56,760 --> 00:11:03,330
+Robert Creamer dropped Pike and Ken Thompson are Google's top three go programming language designers.
+
+102
+00:11:03,870 --> 00:11:10,110
+The trial started with the goal of creating a language similar to the C programming language that is
+
+103
+00:11:10,110 --> 00:11:16,920
+a part of a fool, as it is which eventually launched into the modern programming language, object
+
+104
+00:11:16,920 --> 00:11:19,800
+oriented pointer, his methods and etc..
+
+105
+00:11:20,100 --> 00:11:26,940
+And as a result, were able to launch a high performance, fast and efficient language to market and
+
+106
+00:11:26,940 --> 00:11:28,320
+introduce to the public.
+
+107
+00:11:31,860 --> 00:11:38,550
+Competition between five language by according benchmarks, well, a competition has been made between
+
+108
+00:11:38,550 --> 00:11:45,600
+the top five programming languages by benchmarks based on hardware and software amount, which the go
+
+109
+00:11:45,600 --> 00:11:53,150
+language is still at the top of the other languages in the table and occupies about 80 percent C-sharp.
+
+110
+00:11:53,160 --> 00:12:01,200
+Also 79 percent, not jazz, 74 percent Java 17 and Python six to eight percent.
+
+111
+00:12:01,500 --> 00:12:09,300
+And in hardware and software items such as memory, CPU, serialization, error handling and ET all
+
+112
+00:12:09,300 --> 00:12:11,200
+have been compared in escort.
+
+113
+00:12:14,340 --> 00:12:21,450
+The best ideas for Golang development, according to statistics conducted by Golang programming, was
+
+114
+00:12:21,660 --> 00:12:26,010
+the percentage of programming environments used for these language.
+
+115
+00:12:26,130 --> 00:12:29,520
+Ease is statistically expressed in this chart.
+
+116
+00:12:29,700 --> 00:12:35,940
+We can see the uses of each of the integrated development environments, so we see go land.
+
+117
+00:12:36,150 --> 00:12:39,990
+Top of the others by Terry five percent inverse code.
+
+118
+00:12:39,990 --> 00:12:42,810
+About twenty two percent and see the others.
+
+119
+00:12:45,670 --> 00:12:53,260
+And in the end, I hope you can communicate well with the go language and method is powerful and efficient
+
+120
+00:12:53,260 --> 00:12:57,250
+language and enjoy the word of the go programming language.

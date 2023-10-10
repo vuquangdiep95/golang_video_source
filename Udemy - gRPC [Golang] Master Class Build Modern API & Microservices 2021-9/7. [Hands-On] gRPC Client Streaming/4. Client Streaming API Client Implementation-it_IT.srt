@@ -1,0 +1,436 @@
+1
+00:00:00,210 --> 00:00:05,940
+OK, così in questa lezione andremo a dare una mano e implementeremo la richiesta di piano per il client di streaming RBC e
+
+2
+00:00:05,940 --> 00:00:07,780
+lo testeremo contro il server in esecuzione.
+
+3
+00:00:07,860 --> 00:00:09,150
+Andiamo avanti.
+
+4
+00:00:09,150 --> 00:00:14,400
+Quindi nel mio codice ho intenzione di andare in client andare e prepararsi a scrivere la nostra funzione.
+
+5
+00:00:14,700 --> 00:00:21,300
+Quindi, prima di fare lo streaming di scena, avremo lo streaming client e passeremo agli stessi clienti. Verrà
+
+6
+00:00:21,800 --> 00:00:23,280
+il nostro codice precedente.
+
+7
+00:00:23,400 --> 00:00:28,740
+E poi abbiamo bisogno di implementare quella funzione quindi andrò a copiare la firma per semplificare le cose.
+
+8
+00:00:29,370 --> 00:00:37,680
+Quindi dirò che la funzione esegue lo streaming client e ottengo i client e lo chiudo e dico iniziando
+
+9
+00:00:37,680 --> 00:00:41,670
+a fare lo streaming del client sul nostro PC.
+
+10
+00:00:42,020 --> 00:00:47,740
+OK, quindi ora se guardiamo il client stesso prima c'era un'enorme quantità di API.
+
+11
+00:00:48,090 --> 00:00:51,580
+E ora possiamo vedere i punti saluti a lungo.
+
+12
+00:00:51,720 --> 00:00:53,040
+Quindi è perfetto
+
+13
+00:00:53,100 --> 00:01:00,260
+Passa un contesto in modo da poter contestualizzare tale contesto e quindi possiamo chiamare alcune opzioni.
+
+14
+00:01:00,270 --> 00:01:06,430
+Quindi, come puoi vedere qui prima, quando abbiamo visto l'API Dot abbiamo dovuto passare la loro richiesta.
+
+15
+00:01:06,630 --> 00:01:10,630
+Ma ora, poiché si tratta di un flusso, in realtà non dobbiamo passare una richiesta.
+
+16
+00:01:10,790 --> 00:01:12,810
+Quindi abbiamo solo bisogno di passare il contesto.
+
+17
+00:01:12,810 --> 00:01:14,750
+Quindi, ecco lo sfondo del contesto.
+
+18
+00:01:15,210 --> 00:01:20,460
+Quindi ora diamo un'occhiata alle cose veramente interessanti che è ciò che fa questo ritorno.
+
+19
+00:01:20,460 --> 00:01:25,800
+Ciò restituisce un ottimo servizio insieme ai client in un flusso o un errore.
+
+20
+00:01:25,890 --> 00:01:32,780
+Quindi, facciamo solo questo tornare al nostro server il nostro codice cliente e dire che lo stream è uguale a questo.
+
+21
+00:01:32,850 --> 00:01:34,160
+Ora dobbiamo occuparci degli errori.
+
+22
+00:01:34,170 --> 00:01:38,730
+Quindi se l'errore non è zero, allora lo adoreremo.
+
+23
+00:01:38,880 --> 00:01:39,930
+Quindi LUGG fallisce.
+
+24
+00:01:41,820 --> 00:01:50,470
+Errore durante la chiamata a lungo saluta e passeremo il messaggio di errore.
+
+25
+00:01:50,540 --> 00:01:52,010
+Ormai sei abituato a questo.
+
+26
+00:01:52,280 --> 00:01:56,090
+Altrimenti abbiamo gli oggetti stream con cui possiamo iniziare a trattare.
+
+27
+00:01:56,090 --> 00:02:02,280
+Quindi se guardi Stream come puoi vedere ora abbiamo diverse chiamate API diverse.
+
+28
+00:02:02,390 --> 00:02:06,840
+Possiamo inviare ciò che è ciò che faremo e invieremo tutte le volte che vogliamo.
+
+29
+00:02:07,280 --> 00:02:13,190
+E quando avremo finito, possiamo chiudere e ricevere e chiudere e ricevere, in pratica, diciamo che abbiamo finito
+
+30
+00:02:13,190 --> 00:02:18,110
+con questo flusso e il server saprà che abbiamo finito con questo flusso e aspetteremo
+
+31
+00:02:18,110 --> 00:02:20,420
+di ricevere la risposta dal dal server.
+
+32
+00:02:20,420 --> 00:02:21,760
+Quindi questo è perfetto.
+
+33
+00:02:22,160 --> 00:02:27,350
+Quindi nella firma di invio Questa richiede una lunga richiesta di copertura.
+
+34
+00:02:27,410 --> 00:02:38,150
+Quindi, ciò che possiamo fare ora è solo creare le nostre richieste in modo che possiamo fare richieste uguali a una serie
+
+35
+00:02:38,150 --> 00:02:46,040
+di puntatori per salutare P. B. questa è una richiesta di saluto lungo e ora dobbiamo solo creare quell'array con tale intervallo.
+
+36
+00:02:46,040 --> 00:02:47,210
+Quindi eccoci qui.
+
+37
+00:02:47,240 --> 00:02:49,130
+Creiamo solo uno di loro.
+
+38
+00:02:49,250 --> 00:02:54,020
+Creeremo una richiesta più lunga che richiede un saluto ed è così eccezionale.
+
+39
+00:02:54,020 --> 00:02:58,080
+P. B. whoops proprio qui.
+
+40
+00:02:58,590 --> 00:03:00,120
+E questo richiede un grande P. B.
+
+41
+00:03:04,960 --> 00:03:17,710
+un saluto di tipo Greevy dot greeting che ha un nome di Stefan ok ma perché dice una slice e possiamo avere più di un altro
+
+42
+00:03:17,980 --> 00:03:23,320
+posso copiare questo codice più volte quindi diremo che ne avremo
+
+43
+00:03:23,320 --> 00:03:24,190
+cinque.
+
+44
+00:03:24,280 --> 00:03:25,570
+Bene divertiti.
+
+45
+00:03:25,990 --> 00:03:31,870
+John Lucy Mark e Piper.
+
+46
+00:03:32,320 --> 00:03:34,990
+OK, quindi abbiamo cinque persone proprio qui.
+
+47
+00:03:35,170 --> 00:03:39,630
+E in questa richiesta ora andremo a ripetere queste richieste e inviarle.
+
+48
+00:03:39,910 --> 00:03:44,150
+Quindi diciamo che per ogni richiesta in Rindge le
+
+49
+00:03:49,910 --> 00:03:54,990
+richieste con una S dove stiamo andando è lo stream che invia.
+
+50
+00:03:58,760 --> 00:04:03,180
+Richieste rec e questo funziona.
+
+51
+00:04:03,180 --> 00:04:13,460
+Quindi ora eseguiamo l'iterazione sulla nostra sezione e inviamo ciascun messaggio individualmente.
+
+52
+00:04:13,500 --> 00:04:17,430
+Quindi qui potresti sicuramente dormire se lo volessi.
+
+53
+00:04:17,430 --> 00:04:18,750
+Per esempio, possiamo dormire per esempio.
+
+54
+00:04:18,750 --> 00:04:21,780
+Moderazione per esempio 100 millisecondi.
+
+55
+00:04:21,780 --> 00:04:27,750
+Quindi possiamo dire 100 volte il millesimo di secondo e
+
+56
+00:04:27,820 --> 00:04:39,520
+poi far sembrare che stiamo mandando roba molto lentamente, quindi possiamo dire che possiamo anche trascinare alcune cose e dire che
+
+57
+00:04:39,720 --> 00:04:49,780
+è svuotata stampare Ellen che invierà stamperà f richieste di invio e poi passeremo semplicemente la richiesta qui.
+
+58
+00:04:49,970 --> 00:04:50,200
+OK.
+
+59
+00:04:50,210 --> 00:04:55,510
+Quindi stiamo dicendo quella richiesta e aggiungeremo una nuova riga alla fine.
+
+60
+00:04:55,570 --> 00:04:56,660
+Quindi sembra corretto.
+
+61
+00:04:56,830 --> 00:04:57,490
+E poi dormiamo.
+
+62
+00:04:57,520 --> 00:05:00,610
+E così quando abbiamo finito con l'invio di tutte queste richieste.
+
+63
+00:05:00,610 --> 00:05:10,420
+Quindi cinque di loro stavamo per chiudere i puntini del flusso e ricevere da vicino e ricevere.
+
+64
+00:05:10,420 --> 00:05:16,230
+Cosa fa questo in sostanza ha restituito una lunga risposta e un errore.
+
+65
+00:05:16,510 --> 00:05:24,960
+Andiamo avanti e con questo diremo che l'errore di risposta è uguale a queste cose.
+
+66
+00:05:24,970 --> 00:05:29,950
+Ora se l'aria non è conosciuta, abbiamo un grosso problema.
+
+67
+00:05:30,020 --> 00:05:40,300
+E così faremo prima di ricevere una risposta da grande e la passeremo.
+
+68
+00:05:40,580 --> 00:05:44,420
+Altrimenti abbiamo il risultato proprio qui e suoneremo solo il saluto.
+
+69
+00:05:44,420 --> 00:05:57,690
+Quindi diremo a NMT che stampano che la risposta a long riceve qualsiasi cosa riceviamo e passeremo la risposta e aggiungeremo
+
+70
+00:05:58,290 --> 00:06:00,240
+la vostra linea.
+
+71
+00:06:00,280 --> 00:06:01,750
+E quindi tutto sembra corretto.
+
+72
+00:06:02,060 --> 00:06:08,130
+Quindi, per riassumere, inizieremo a riprodurre lo streaming r b c creiamo un sacco di risposte.
+
+73
+00:06:08,490 --> 00:06:08,890
+OK.
+
+74
+00:06:08,900 --> 00:06:11,960
+Un mucchio di richieste mi dispiace in una fetta.
+
+75
+00:06:11,960 --> 00:06:18,350
+E poi creiamo il nostro stream usando quei lunghi tassi usando lo stream su cui invieremo i dati
+
+76
+00:06:18,890 --> 00:06:23,450
+e forse potremmo dormire dire ogni secondo per renderlo ancora più semplice.
+
+77
+00:06:23,930 --> 00:06:27,680
+E poi finalmente chiudi e ricevi e stampa il risultato che abbiamo ricevuto.
+
+78
+00:06:27,680 --> 00:06:29,140
+Quindi tutto sembra a posto.
+
+79
+00:06:29,360 --> 00:06:30,340
+Torniamo a questo codice.
+
+80
+00:06:30,350 --> 00:06:31,450
+Sì, è invocato.
+
+81
+00:06:31,520 --> 00:06:33,050
+Quindi penso che Ridge lo gestisca.
+
+82
+00:06:33,080 --> 00:06:34,550
+Quindi diamo un'occhiata.
+
+83
+00:06:34,630 --> 00:06:43,910
+Ora se vai a salutare saluta i clienti vanno come puoi vedere inviano richieste cinque richieste.
+
+84
+00:06:44,390 --> 00:06:46,950
+E poi quando è finito, riceviamo aiuto per definire.
+
+85
+00:06:46,970 --> 00:06:47,500
+Ciao John.
+
+86
+00:06:47,510 --> 00:06:48,080
+Ciao Lucy.
+
+87
+00:06:48,080 --> 00:06:48,500
+Ciao.
+
+88
+00:06:48,530 --> 00:06:49,850
+Ciao piper.
+
+89
+00:06:49,950 --> 00:06:51,570
+E quindi è quello che voglio che tu realizzi.
+
+90
+00:06:51,590 --> 00:06:58,490
+Abbiamo ricevuto i risultati solo quando sono stati inviati i cinque messaggi di saluto che i cinque oggetti erano stati inviati, ma la
+
+91
+00:06:59,090 --> 00:07:00,850
+funzione è stata invocata immediatamente.
+
+92
+00:07:00,860 --> 00:07:04,790
+Quindi puoi semplicemente eseguirlo di nuovo e basta guardare lo schermo superiore.
+
+93
+00:07:04,940 --> 00:07:10,220
+E come puoi vedere la funzione è in ritardo rispetto a ciò che viene invocato e una volta che
+
+94
+00:07:10,220 --> 00:07:12,550
+le cinque letture vengono inviate, otteniamo i risultati.
+
+95
+00:07:12,620 --> 00:07:14,590
+Quindi funziona davvero bene.
+
+96
+00:07:14,730 --> 00:07:19,910
+C'è solo una piccola nuova riga mancante nel server che ho intenzione di cambiare adesso.
+
+97
+00:07:19,910 --> 00:07:26,720
+La griglia così lunga è stata invocata con una richiesta di streaming.
+
+98
+00:07:26,970 --> 00:07:28,940
+Devo solo riavviare il mio server.
+
+99
+00:07:29,520 --> 00:07:30,530
+E qui andiamo.
+
+100
+00:07:30,930 --> 00:07:31,910
+Quindi ora funziona.
+
+101
+00:07:31,920 --> 00:07:32,820
+Quindi è tutto fantastico.
+
+102
+00:07:32,970 --> 00:07:35,120
+E puoi giocare con quello che voglio io.
+
+103
+00:07:35,120 --> 00:07:40,110
+Ti rendi conto che ora questa volta è il client che sta eseguendo il flusso verso il server e uno di
+
+104
+00:07:40,150 --> 00:07:42,660
+loro stabilisce la fine del file, quindi il server risponde.
+
+105
+00:07:42,660 --> 00:07:43,970
+Cosa dobbiamo ottenere.
+
+106
+00:07:43,980 --> 00:07:47,350
+Quindi, tutto sommato, sono molto contento dei risultati.
+
+107
+00:07:47,370 --> 00:07:50,740
+Spero che tu abbia gli stessi fini nella prossima lezione.
+
+108
+00:07:50,760 --> 00:07:53,660
+Stai per esercitarti e scrivere il tuo clan in streaming.
+
+109
+00:07:53,700 --> 00:07:54,860
+Quindi ti vedrò lì.
+

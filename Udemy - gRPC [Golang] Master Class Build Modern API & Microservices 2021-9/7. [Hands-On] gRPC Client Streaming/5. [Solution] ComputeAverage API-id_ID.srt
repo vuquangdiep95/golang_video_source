@@ -1,0 +1,504 @@
+1
+00:00:00,330 --> 00:00:06,720
+OK jadi saya harap Anda memiliki celah yang baik dalam membuat kalkulator ini menghitung permintaan rata-rata berfungsi.
+
+2
+00:00:07,090 --> 00:00:09,780
+Mari kita pergi dan memeriksanya dan melihat bagaimana kita bisa sampai di sini.
+
+3
+00:00:09,960 --> 00:00:16,440
+Jadi saya akan membuka kalkulator saya profil dan saya akan ke Ukraina Anda RBC dan RBC
+
+4
+00:00:16,800 --> 00:00:18,540
+ini disebut rata-rata komputasi.
+
+5
+00:00:18,540 --> 00:00:25,500
+Jadi ini adalah streaming client jadi kami menulis stream di tempat pertama dan
+
+6
+00:00:26,280 --> 00:00:32,310
+stream menghitung permintaan rata-rata dan mengembalikan hanya respon rata-rata komputasi.
+
+7
+00:00:32,850 --> 00:00:33,320
+BAIK.
+
+8
+00:00:33,390 --> 00:00:34,700
+Jadi ini sempurna.
+
+9
+00:00:34,740 --> 00:00:36,660
+Sekarang kita perlu mengimplementasikan pesan-pesan ini.
+
+10
+00:00:36,750 --> 00:00:43,240
+Jadi pesan pertama adalah permintaan dan permintaan itu sendiri akan menjadi nomor int 32.
+
+11
+00:00:43,440 --> 00:00:48,980
+Jadi kita dapat memanggil nomor satu ini dan ini adalah yang pertama.
+
+12
+00:00:49,020 --> 00:00:51,390
+Sekarang hasilnya sendiri adalah rata-rata.
+
+13
+00:00:51,420 --> 00:00:55,210
+Jadi kami dapat mengirim pesan menghitung tanggapan rata-rata.
+
+14
+00:00:55,590 --> 00:01:01,950
+Dan karena rata-rata akan menjadi seperti angka dengan koma, saya dapat mengatakan itu ganda dan saya
+
+15
+00:01:01,950 --> 00:01:06,050
+akan mengatakan rata-rata ganda sama dengan yang cukup mudah.
+
+16
+00:01:06,300 --> 00:01:08,790
+Jadi kalkulator saya terlihat bagus.
+
+17
+00:01:08,790 --> 00:01:14,310
+Sekarang saya dapat melanjutkan dan menghasilkan kode menggunakan perintah ini sehingga saya akan melanjutkan dan menghasilkan kode.
+
+18
+00:01:14,540 --> 00:01:19,240
+Ok ini selesai sekarang saya perlu mengimplementasikan server saya.
+
+19
+00:01:19,320 --> 00:01:20,980
+Jadi mari kita lanjutkan dan lakukan itu.
+
+20
+00:01:21,270 --> 00:01:25,930
+Jadi saya akan membuka kedua Perloul ini kalkulator kalkulator dan server yang pergi.
+
+21
+00:01:26,160 --> 00:01:27,170
+Kita mulai.
+
+22
+00:01:27,840 --> 00:01:29,140
+Jadi ini terlihat benar.
+
+23
+00:01:29,160 --> 00:01:33,120
+Jumlahnya diterapkan, dekomposisi bilangan prima diimplementasikan.
+
+24
+00:01:33,240 --> 00:01:38,550
+Saya perlu masuk ke sana dan menemukan server saya antarmuka server struct.
+
+25
+00:01:38,550 --> 00:01:43,000
+Di sini kita pergi dan saya akan mengambil baris ini dan menyalinnya di atas rata-rata komputasi.
+
+26
+00:01:43,410 --> 00:01:48,520
+Jadi pada fungsi saya yang membutuhkan server saya akan melakukan komputasi rata-rata.
+
+27
+00:01:48,810 --> 00:01:51,670
+Dan ini adalah aliran yang datang dari kalkulator saya.
+
+28
+00:01:51,670 --> 00:01:57,140
+P. B. apakah ini saya membuka fungsi saya dan sekarang saya perlu menerapkannya.
+
+29
+00:01:57,240 --> 00:02:00,100
+Seperti biasa kita dapat mencetak fakta bahwa itu telah dipanggil.
+
+30
+00:02:00,180 --> 00:02:09,690
+Jadi saya akan mengatakan itu menerima RBC rata-rata komputasi dan hanya ada di baris Anda dan sekarang kita lanjutkan dengan
+
+31
+00:02:09,690 --> 00:02:11,520
+implementasi yang sebenarnya.
+
+32
+00:02:11,520 --> 00:02:17,780
+Jadi sekarang pada dasarnya untuk menghitung rata-rata. Kita perlu memiliki dua hal ketika Anda memiliki
+
+33
+00:02:18,100 --> 00:02:22,720
+jumlah angka dalam nol 0 dan kita perlu memiliki jumlah angka.
+
+34
+00:02:22,830 --> 00:02:26,260
+Berapa banyak angka yang diterima dan juga diinisialisasi ini adalah nol.
+
+35
+00:02:26,700 --> 00:02:33,300
+Sekarang kita hanya perlu mengulangi aliran itu dan terus mendapatkan angka sejauh
+
+36
+00:02:33,300 --> 00:02:38,980
+ini dan kemudian kita mendapatkan aliran untuk menerima titik-titik aliran.
+
+37
+00:02:39,510 --> 00:02:42,820
+Dan ini akan menjadi permintaan dan kesalahan.
+
+38
+00:02:43,230 --> 00:02:50,230
+Kita dapat mulai menangani kasus kesalahan terlebih dahulu jika kesalahannya adalah saya semua itu dan
+
+39
+00:02:50,620 --> 00:02:55,900
+sebuah file kemudian akan mengatakan LUGG dots Fadal untuk akhir file.
+
+40
+00:02:55,900 --> 00:02:57,870
+Saya kehilangan akal dan file bagus.
+
+41
+00:02:58,060 --> 00:03:01,040
+Jadi jika Arafat baik kita harus mengirim hasilnya.
+
+42
+00:03:01,270 --> 00:03:06,470
+Jadi kita akan mengatakan kirim dan tutup dan kita perlu membuat dalam respon rata-rata menghitung.
+
+43
+00:03:06,520 --> 00:03:13,990
+Jadi untuk ini kita hanya akan melanjutkan dan membuatnya menghitung respon rata-rata dibutuhkan rata-rata sebagai float 64.
+
+44
+00:03:13,990 --> 00:03:20,470
+Jadi untuk ini kita hanya akan mengatakan rata-rata sama dengan jumlah dibagi dengan tidak dapat muncul.
+
+45
+00:03:21,130 --> 00:03:22,520
+Dan itu pada dasarnya rata-rata saya.
+
+46
+00:03:22,810 --> 00:03:23,870
+Itu tidak terlalu bahagia.
+
+47
+00:03:23,950 --> 00:03:26,260
+Jadi kita perlu membuatnya menjadi pelampung.
+
+48
+00:03:26,650 --> 00:03:27,930
+Jadi saya akan buat di sini.
+
+49
+00:03:28,000 --> 00:03:35,880
+Rata-rata sama dengan mengapung enam puluh empat dari beberapa didevaluasi oleh hitungan.
+
+50
+00:03:36,160 --> 00:03:37,060
+Dan itu seharusnya bagus.
+
+51
+00:03:37,090 --> 00:03:40,420
+Dan sekarang kita memiliki rata-rata di sini.
+
+52
+00:03:40,420 --> 00:03:47,130
+Jadi mari kita periksa lagi dan jika saya rata-rata saya kehilangan con dan katanya operator.
+
+53
+00:03:47,580 --> 00:03:53,520
+Jadi saya harap Anda mencoba ini sebagai float 64 dan sekarang semuanya akan beres.
+
+54
+00:03:53,860 --> 00:03:58,730
+Jadi sekarang kami telah mengirim kembali rata-rata Dan kami akan mengembalikan ini juga jika udara keluar.
+
+55
+00:03:58,840 --> 00:04:00,150
+Tapi kita belum selesai.
+
+56
+00:04:00,340 --> 00:04:10,780
+Jika udara saat ini adalah non-nil maka kami melakukan LUGG yang fatal jika mengatakan Err dengan baik membaca aliran klien
+
+57
+00:04:11,710 --> 00:04:14,260
+dan kami melewati kesalahan
+
+58
+00:04:18,460 --> 00:04:26,500
+dan kemudian Jika semuanya baik maka kita akan mengatakan jumlah plus sama jadi tambahan beberapa
+
+59
+00:04:26,980 --> 00:04:35,800
+atas permintaan mari kita dapatkan angka dan hitung dengan 1 sehingga kita bisa melakukan hitung tambah plus.
+
+60
+00:04:35,800 --> 00:04:37,860
+Jadi ini semua terlihat bagus.
+
+61
+00:04:37,900 --> 00:04:39,260
+Ada ketidakcocokan jenis.
+
+62
+00:04:39,260 --> 00:04:41,980
+Jadi itu masuk dan 32.
+
+63
+00:04:41,990 --> 00:04:46,860
+Jadi dalam hal ini saya akan melakukannya 32 dari 0.
+
+64
+00:04:47,400 --> 00:04:47,840
+Baik.
+
+65
+00:04:47,930 --> 00:04:49,020
+Semuanya terlihat bagus.
+
+66
+00:04:49,130 --> 00:04:52,720
+Jadi kami memiliki beberapa yang mendapatkan nomor dan menghitung plus plus plus.
+
+67
+00:04:52,730 --> 00:04:53,800
+Jadi itu sempurna.
+
+68
+00:04:54,050 --> 00:04:59,930
+Jadi sekarang mari kita meringkas kapan saja hasil penelitian kita menambah jumlah dan jumlah angka
+
+69
+00:04:59,930 --> 00:05:00,810
+yang diterima.
+
+70
+00:05:00,980 --> 00:05:05,660
+Dan kemudian ketika kita selesai kita menghitung rata-rata sebagai jumlah dibagi dengan jumlah.
+
+71
+00:05:05,960 --> 00:05:07,030
+Semua ini mengapung.
+
+72
+00:05:07,250 --> 00:05:09,350
+Dan akhirnya kita akan resave.
+
+73
+00:05:09,390 --> 00:05:14,260
+Kami akan mengirimkannya kembali hasilnya sebagai penutup dengan mengirimkan rata-rata dalam sebuah struct.
+
+74
+00:05:14,420 --> 00:05:16,250
+Jadi semuanya terlihat bagus.
+
+75
+00:05:16,250 --> 00:05:19,270
+Sekarang kita hanya perlu memvalidasi ini menggunakan klien.
+
+76
+00:05:19,280 --> 00:05:19,800
+Jadi itu bagus.
+
+77
+00:05:19,800 --> 00:05:30,140
+Menerapkan fungsi klien inclemency yang disebut Do client streaming see dan saya akan menyalin ini jadi lakukan
+
+78
+00:05:34,100 --> 00:05:35,330
+Klimt
+
+79
+00:05:38,410 --> 00:05:46,330
+streaming dan itu akan mengatakan itu mulai melakukan menghitung rata-rata klien streaming RBC.
+
+80
+00:05:46,420 --> 00:05:51,180
+Jadi sekarang mari kita pergi dan mengambil klien kami dan sekarang kami memiliki fungsi rata-rata komputasi.
+
+81
+00:05:51,280 --> 00:05:58,180
+Konteksnya masih latar belakang sehingga konteks dan latar belakang dan tidak ada pilihan yang diperlukan.
+
+82
+00:05:58,270 --> 00:06:02,050
+Kami mendapatkan kesalahan saat streaming karena hal ini.
+
+83
+00:06:02,080 --> 00:06:10,350
+Sekarang jika udaranya tidak sama dengan nihil maka kita harus mengirim pesan kepada lug yang
+
+84
+00:06:13,520 --> 00:06:17,910
+berakibat fatal saat membuka aliran dan akan mengirim
+
+85
+00:06:22,860 --> 00:06:24,740
+pesan kesalahan.
+
+86
+00:06:25,330 --> 00:06:30,090
+Kalau tidak, kami memiliki aliran dan kami dapat mulai melakukan beberapa hal keren termasuk beberapa
+
+87
+00:06:30,090 --> 00:06:34,870
+pengiriman yang dikirim akan mengambil permintaan rata-rata komputasi sehingga kami harus mengirim beberapa permintaan rata-rata komputasi.
+
+88
+00:06:34,870 --> 00:06:42,670
+Jadi misalnya kita dapat mengatakan untuk jadi hanya buat kisaran saja.
+
+89
+00:06:42,700 --> 00:06:57,960
+Jadi angka sama dengan array 32 dan mari kita ambil beberapa angka jadi 2 3 5 sembilan lima puluh empat dan dua puluh
+
+90
+00:06:57,960 --> 00:06:58,660
+tiga.
+
+91
+00:06:59,010 --> 00:06:59,970
+BAIK.
+
+92
+00:07:00,600 --> 00:07:13,940
+Dan itu akan mengirimkan ini untuk angka dalam kisaran angka maka kita akan melakukan streambed pengiriman itu dan kami telah Anda buat dan Anda
+
+93
+00:07:13,990 --> 00:07:16,270
+menghitung permintaan rata-rata.
+
+94
+00:07:16,530 --> 00:07:21,520
+Jadi ini adalah struct dan truk ini hanya mengambil angka dan 32.
+
+95
+00:07:21,540 --> 00:07:29,090
+Jadi mari kita lanjutkan dan katakan bahwa angka sama dengan angka.
+
+96
+00:07:29,120 --> 00:07:33,690
+Jadi mari kita lihat apa yang terjadi diharapkan muncul.
+
+97
+00:07:33,710 --> 00:07:42,860
+Jadi tentu saja untuk nomor yang ditetapkan untuk rentang nomor maka kami mengirim nomor bernomor yang sempurna.
+
+98
+00:07:42,910 --> 00:07:45,960
+Dan sekarang kita harus berurusan dengan hanya menutup aliran itu.
+
+99
+00:07:46,150 --> 00:07:53,770
+Jadi kita katakan streambed dari dekat dan menerima jenis kembali adalah respon rata-rata menghitung dan kesalahan.
+
+100
+00:07:54,430 --> 00:07:55,660
+Jadi
+
+101
+00:07:59,040 --> 00:08:05,510
+kita akan melanjutkan dan mengatakan kesalahan respons sama dengan ini.
+
+102
+00:08:05,600 --> 00:08:18,100
+Sekarang jika kesalahan tidak diketahui maka kita akan mencatatnya jadi catat F fatal itu saat menerima respons.
+
+103
+00:08:19,820 --> 00:08:22,300
+Dan kita akan melewati udara yang kita dapatkan.
+
+104
+00:08:22,550 --> 00:08:30,800
+Atau jika tidak tahu maka kita dapat mulai mencetak hasilnya dan kita dapat mengatakan f anti-pemotongan cetak f.
+
+105
+00:08:31,250 --> 00:08:36,400
+Rata-rata adalah dan kami melewati nilainya.
+
+106
+00:08:37,160 --> 00:08:43,090
+Jadi kami menghasilkan rata-rata atau bahkan lebih baik, dapatkan rata-rata.
+
+107
+00:08:43,370 --> 00:08:44,750
+Dan begitulah seharusnya.
+
+108
+00:08:44,750 --> 00:08:46,430
+Jadi mari kita lihat apakah semuanya berhasil.
+
+109
+00:08:46,460 --> 00:08:56,620
+Kami juga dapat membawa beberapa barang di sini sehingga kami dapat mengatakan FMG yang mencetak nomor pengiriman dan kemudian kami akan mengirimkan nomor
+
+110
+00:08:56,720 --> 00:09:01,630
+di sini yang kami kirim dan kami akan menambahkan baris baru.
+
+111
+00:09:02,120 --> 00:09:02,960
+BAIK.
+
+112
+00:09:03,140 --> 00:09:05,640
+Jadi semua ini terlihat bagus.
+
+113
+00:09:06,110 --> 00:09:09,170
+Mari kita coba dan lihat apakah itu berhasil.
+
+114
+00:09:09,210 --> 00:09:12,560
+Saya kembali dalam kode saya dan saya akan pergi berkeliling.
+
+115
+00:09:12,790 --> 00:09:17,590
+Saya akan menjalankan server kalkulator saya yang menjalankan keunggulan.
+
+116
+00:09:18,050 --> 00:09:22,540
+Dan di sini saya akan menjalankan klien kalkulator saya.
+
+117
+00:09:22,730 --> 00:09:23,930
+Mari kita lihat apakah itu berhasil.
+
+118
+00:09:24,320 --> 00:09:30,350
+Jadi kami mengirim nomor 3 5 9 ke 54 dan 23 dan kami kembali.
+
+119
+00:09:30,350 --> 00:09:32,620
+Rata-rata menjadi 18 pada 8.
+
+120
+00:09:32,900 --> 00:09:34,330
+Jadi itu benar-benar cepat.
+
+121
+00:09:34,580 --> 00:09:38,220
+Dan di sini di sisi layanan kami mengatakan menerima RBC rata-rata komputasi.
+
+122
+00:09:38,570 --> 00:09:40,520
+Jadi semuanya bekerja dengan sangat baik.
+
+123
+00:09:40,910 --> 00:09:45,320
+Anda dapat mengubah angka sebanyak yang Anda inginkan tetapi secara keseluruhan kami mendapatkan hasil yang kami
+
+124
+00:09:45,320 --> 00:09:47,050
+inginkan yang rata-rata dihitung dengan benar.
+
+125
+00:09:47,330 --> 00:09:48,740
+Jadi itu sangat membantu.
+
+126
+00:09:48,740 --> 00:09:53,180
+Semoga Anda menyukainya dan harap Anda mendapatkan hasil yang sama persis dan kami akan menemui Anda di kuliah berikutnya.
+

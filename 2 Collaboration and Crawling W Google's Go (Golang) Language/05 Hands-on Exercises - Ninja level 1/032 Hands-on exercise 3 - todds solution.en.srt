@@ -1,0 +1,603 @@
+1
+00:00:00,080 --> 00:00:03,150
+So now I'm going to give you my solution for hands on exercise.
+
+2
+00:00:03,150 --> 00:00:06,810
+Number three and I'm going back to my repo.
+
+3
+00:00:06,810 --> 00:00:13,100
+I have this dummy account Todd temp Todd McLeod going project.
+
+4
+00:00:13,110 --> 00:00:18,600
+So there's the original project which is goes to 11 go laying project.
+
+5
+00:00:18,600 --> 00:00:23,460
+Then I fork that under My Account temp Todd McCloud a different account and then I cloned it down to
+
+6
+00:00:23,460 --> 00:00:24,540
+my machine.
+
+7
+00:00:24,600 --> 00:00:30,170
+So on GitHub where I forked it you could see the temp Todd McCloud going project right there.
+
+8
+00:00:30,180 --> 00:00:37,260
+And right now in 0 2 hands on exercises 0 3 I only have this starter file which was already there.
+
+9
+00:00:37,350 --> 00:00:39,250
+I don't have Daniel's file.
+
+10
+00:00:39,300 --> 00:00:45,210
+We're going to look at Daniel's screen now and if you see here on Daniel's screen 0 0 2 hands on exercise
+
+11
+00:00:45,210 --> 00:00:52,320
+0 3 purpose he's got the goes to eleven purpose text started file but he doesn't and he also has the
+
+12
+00:00:52,530 --> 00:01:00,240
+lower dose purpose text file that's like a mouthful and and so I need to get that on mine and you've
+
+13
+00:01:00,240 --> 00:01:07,470
+already pushed that from your fork and your clone from your clone you committed it and you pushed it
+
+14
+00:01:07,470 --> 00:01:12,660
+to your fork and then from your fork you did pull requests in from goes to Levin as a collaborator you
+
+15
+00:01:12,660 --> 00:01:16,140
+merge that pull requests from your other account correct.
+
+16
+00:01:16,250 --> 00:01:16,620
+Yes.
+
+17
+00:01:16,620 --> 00:01:20,230
+And so now we're seeing that it goes to eleven going project.
+
+18
+00:01:20,460 --> 00:01:24,180
+And so I need to rebase my fork right.
+
+19
+00:01:24,180 --> 00:01:28,490
+So here's goes to 11 going project and then here's my temp GitHub file with a fork.
+
+20
+00:01:28,500 --> 00:01:34,620
+I need to rebase this fork because right here you could see I don't have Daniel's file and if I look
+
+21
+00:01:34,620 --> 00:01:37,020
+here on the terminal.
+
+22
+00:01:37,170 --> 00:01:38,420
+So I was looking at GitHub.
+
+23
+00:01:38,430 --> 00:01:42,390
+Now I'm going to look at the clone down to my term and my my computer.
+
+24
+00:01:42,390 --> 00:01:47,640
+If I look here on the terminal if I look at print working directory I mean going project 0 0 2 hands
+
+25
+00:01:47,640 --> 00:01:53,300
+on exercises 0 to humble so I'm gonna see these up out of that go into 0 3 and then do it.
+
+26
+00:01:53,310 --> 00:01:55,290
+L s L.A. see everything that's in there.
+
+27
+00:01:55,290 --> 00:02:03,690
+I don't have Daniel's files so I want to rebase my fork with what I fought from and to do that we have
+
+28
+00:02:03,690 --> 00:02:10,140
+that Stack Overflow article where it's get remote add upstream I've already done this.
+
+29
+00:02:10,170 --> 00:02:18,630
+So if I do get branch dash a I see all of my branches where I have master I've M.S. second and then
+
+30
+00:02:18,720 --> 00:02:25,290
+I have upstream master right here so I've already created this upstream that could be any name.
+
+31
+00:02:25,290 --> 00:02:28,380
+So now what I want to do is just get fetch upstream.
+
+32
+00:02:28,380 --> 00:02:31,580
+I want to make sure that I am on master anything.
+
+33
+00:02:31,610 --> 00:02:32,610
+I say that all correctly.
+
+34
+00:02:32,640 --> 00:02:33,040
+Yes.
+
+35
+00:02:33,070 --> 00:02:33,720
+Yeah.
+
+36
+00:02:33,750 --> 00:02:37,140
+So the first thing I'm going to do I'm just kind of a little bit the question that just arose for me
+
+37
+00:02:37,140 --> 00:02:41,910
+which is why I ask that is it's asking me to fetch the upstream before I'm a master.
+
+38
+00:02:41,970 --> 00:02:45,450
+I mean I just need to make sure rebase but these can be done in either order.
+
+39
+00:02:45,490 --> 00:02:45,980
+Correct.
+
+40
+00:02:45,990 --> 00:02:46,620
+That's correct.
+
+41
+00:02:46,650 --> 00:02:49,160
+OK so my mind just hiccup there for a second.
+
+42
+00:02:49,160 --> 00:02:50,370
+Like what am I doing that right.
+
+43
+00:02:50,790 --> 00:02:58,870
+So I'm going to do a get fetch upstream and hopefully this is all making a little bit of sense to you
+
+44
+00:02:58,870 --> 00:03:03,820
+or starting to familiarize you're starting familiarized with that and so get fetch upstream.
+
+45
+00:03:03,880 --> 00:03:09,550
+I find it helpful to also read through just to see what's happening here and you could see from get
+
+46
+00:03:09,550 --> 00:03:15,550
+hub dot com goes to Levin going project and if you remember in our notes we also added in some notes
+
+47
+00:03:15,550 --> 00:03:19,020
+here about get remote and get remote show origin.
+
+48
+00:03:19,180 --> 00:03:24,850
+And so that might be interesting get remote show origin if we look at that just to kind of refresh your
+
+49
+00:03:24,850 --> 00:03:25,390
+memory.
+
+50
+00:03:25,420 --> 00:03:28,850
+What we see there these are both from temp Todd McCloud.
+
+51
+00:03:28,960 --> 00:03:35,710
+We can also get remote show upstream and it is upstream just upstream.
+
+52
+00:03:35,710 --> 00:03:36,110
+Correct.
+
+53
+00:03:36,100 --> 00:03:37,840
+I don't have the master.
+
+54
+00:03:37,950 --> 00:03:43,750
+And then here you can see it's from goes to eleven and so that's kind of cool to see.
+
+55
+00:03:44,050 --> 00:03:49,690
+So I've done my get fetch and now I need to do my get checkout master.
+
+56
+00:03:49,840 --> 00:03:54,880
+So I want to make sure I'm a master so you can see how I get branches I'm actually on AMC seconds I'm
+
+57
+00:03:54,880 --> 00:04:02,620
+going to do get checkout master and then you can see I'm now on Master I've got the little Asterix there
+
+58
+00:04:02,620 --> 00:04:08,440
+plus the color coding of green and so with that I'm ready to get rebase upstream master you want to
+
+59
+00:04:08,440 --> 00:04:14,860
+pull first though just make sure you're up to date before you do rebasing emerging and once again you're
+
+60
+00:04:14,860 --> 00:04:22,330
+seeing the benefit of pair programming already up to date and then get re rebase upstream master get
+
+61
+00:04:22,330 --> 00:04:31,840
+rebase upstream master is all it good you go first rewinding had replay your work on top of it fast
+
+62
+00:04:31,840 --> 00:04:37,750
+forward master to upstream master and now if I take a look at where I'm at and I look at what's in there
+
+63
+00:04:38,170 --> 00:04:45,290
+I have or loaders or lower dose how do you say that we're all lured boost or a lord I've known that
+
+64
+00:04:45,310 --> 00:04:52,140
+oh this is a time to twister or Florida's his file and if I refresh here I'm not going to see I'm going
+
+65
+00:04:52,140 --> 00:04:57,130
+to do that the keyboard shortcut commands shift arcs I can't actually see the refresh thing and so if
+
+66
+00:04:57,130 --> 00:05:06,070
+I wanted to get this up to my temp Todd McLeod going project I have to do it get status and on branch
+
+67
+00:05:06,610 --> 00:05:11,950
+is ahead of master by form Kimmitt get pushed to publish your local commands get push
+
+68
+00:05:17,720 --> 00:05:24,570
+and now if I come back here and refresh I should see that so again go Lang goes to eleven going project
+
+69
+00:05:24,660 --> 00:05:31,470
+my fork temp Todd McCloud has a fork over here with going project and then my clone down here so I just
+
+70
+00:05:31,470 --> 00:05:41,100
+went from my clone up to my get hub temp Todd McCloud going project which is the fork so all that just
+
+71
+00:05:41,100 --> 00:05:48,960
+to get ready to do the third hands on exercise and the third hands on exercise is in 0 3 Create a branch
+
+72
+00:05:49,230 --> 00:05:56,520
+switch to the branch create a file purpose stage commit merge this to master on your fork and then create
+
+73
+00:05:56,520 --> 00:06:01,290
+a pull request from master on your forks I'm going to create this on a branch on my fork and emergent
+
+74
+00:06:01,650 --> 00:06:10,770
+to master on my fork and then merge it to goes to eleven from which I originally fought so to do that
+
+75
+00:06:10,830 --> 00:06:17,970
+I am now in print working directory 0 3 I'm going to nano and this file needs to be go well this is
+
+76
+00:06:17,970 --> 00:06:22,380
+going to be temp Todd McCloud because it's kind of where it's coming from.
+
+77
+00:06:22,530 --> 00:06:33,120
+Purpose t x t and I'm going to add in here live for others relationships are everything when you put
+
+78
+00:06:33,120 --> 00:06:39,720
+yourself second to the team you feel could choose pro social behavior
+
+79
+00:06:43,190 --> 00:06:58,450
+behavior not anti social behavior you were built to be a social animal have family and kids.
+
+80
+00:06:58,450 --> 00:07:01,600
+Your life will be great.
+
+81
+00:07:01,610 --> 00:07:05,440
+Nothing's giving my life more meaning than living for others.
+
+82
+00:07:05,440 --> 00:07:06,780
+True story.
+
+83
+00:07:06,850 --> 00:07:09,670
+All right so I have that file now I could do get.
+
+84
+00:07:09,790 --> 00:07:11,350
+But I didn't do it on a branch.
+
+85
+00:07:11,350 --> 00:07:18,320
+Get check out the Ashby and this branch name is going to be my purpose.
+
+86
+00:07:18,370 --> 00:07:19,720
+I did the same thing you did.
+
+87
+00:07:20,050 --> 00:07:23,980
+And now that I'm here both my branch and master has that file.
+
+88
+00:07:23,980 --> 00:07:25,890
+Except you never committed to master.
+
+89
+00:07:26,500 --> 00:07:28,930
+So let's see what we got here.
+
+90
+00:07:28,990 --> 00:07:34,750
+Is my purpose and get status and it's over here so now I could commit this interesting.
+
+91
+00:07:34,750 --> 00:07:40,300
+So if you have not state if you have not committed this to a particular branch yet your files will kind
+
+92
+00:07:40,300 --> 00:07:44,080
+of float with you as you check out between different branches.
+
+93
+00:07:44,380 --> 00:07:50,560
+Get check out will throw an error though if you if you modify a file that exists and it's different
+
+94
+00:07:50,560 --> 00:07:53,680
+between the branch and the original.
+
+95
+00:07:53,680 --> 00:07:59,200
+Like if you modified goes to eleven outright t it's been changed on your branch compared to Aster it'll
+
+96
+00:07:59,260 --> 00:08:00,610
+it'll tell you hey you've got.
+
+97
+00:08:00,610 --> 00:08:03,630
+I'm not sure how to change this but it is a new file site.
+
+98
+00:08:03,640 --> 00:08:07,360
+Where do you want to keep track that it's in it's indeterminate state.
+
+99
+00:08:07,490 --> 00:08:10,320
+It can just put it can just keep it with you as you move to the next file.
+
+100
+00:08:10,330 --> 00:08:15,250
+It takes a while to wrap your head around this entire thing gets very smart usually and will usually
+
+101
+00:08:15,250 --> 00:08:17,710
+just tell you okay can't do this here's why.
+
+102
+00:08:18,070 --> 00:08:22,610
+So Reed Reed gets error messages through usually good.
+
+103
+00:08:22,680 --> 00:08:33,010
+So now I'm going to add the file so get add and then get commit dash M and adds ninja level 0 1.
+
+104
+00:08:33,070 --> 00:08:36,230
+Exercise number 0 3 temp.
+
+105
+00:08:36,480 --> 00:08:38,930
+Todd McCloud purpose.
+
+106
+00:08:39,030 --> 00:08:42,970
+Text File temp Todd McCloud.
+
+107
+00:08:42,980 --> 00:08:45,800
+I guess we're all ultimately a little bit temporary aren't we.
+
+108
+00:08:46,970 --> 00:08:56,210
+We do not have ah ah life is a variable is for a defined period of time and now that I have that I could
+
+109
+00:08:56,210 --> 00:08:58,940
+do to get stats again and I'm on branch.
+
+110
+00:08:58,940 --> 00:09:04,390
+My purpose and so switched to the branch created a file stages file commit this file on emerge.
+
+111
+00:09:04,400 --> 00:09:10,400
+This branch to master branch on your fork provided descriptive comment message.
+
+112
+00:09:10,400 --> 00:09:20,360
+So now I'm going to merge this and so to do that get checkout master and then get merged branch to get
+
+113
+00:09:20,360 --> 00:09:24,810
+merge and I'm looking for my purpose.
+
+114
+00:09:24,940 --> 00:09:33,550
+I'm looking for my purpose in snagging merge that to my master and if I do get branch dash a I could
+
+115
+00:09:33,550 --> 00:09:35,620
+see that idea get status.
+
+116
+00:09:35,620 --> 00:09:42,120
+I could see that I'm ahead of some of my clone now I'm gonna push to temp Todd McCloud repo so I'm going
+
+117
+00:09:42,110 --> 00:09:53,350
+to do a get push for a master to get hub and now up here on my get hub temp Todd McCloud I hit refresh
+
+118
+00:09:53,380 --> 00:10:00,840
+command shift ah and you could see Tim Todd McCloud purpose and the next thing I want to do is do a
+
+119
+00:10:00,840 --> 00:10:09,190
+poor request and my poor request is temp Todd McCloud Galang compare master with goes to eleven going
+
+120
+00:10:09,190 --> 00:10:15,110
+project base master and if I look I've got temp Todd McCloud purpose and this is what it is I'm going
+
+121
+00:10:15,110 --> 00:10:23,710
+to create pull requests and that's a good description and thanks for this class having fun learning
+
+122
+00:10:24,310 --> 00:10:30,530
+a lot it's awesome and I mean that I am having fun I am learning a lot.
+
+123
+00:10:30,530 --> 00:10:31,820
+It is awesome.
+
+124
+00:10:31,820 --> 00:10:35,930
+I'm going to create my pull request and thank you Daniel for joining me on this.
+
+125
+00:10:35,930 --> 00:10:37,530
+It's fun and.
+
+126
+00:10:37,570 --> 00:10:38,810
+And so now that's there.
+
+127
+00:10:38,810 --> 00:10:46,520
+And if we switch over to Daniel's computer he can look at the poll requests and he could pull that poll
+
+128
+00:10:46,560 --> 00:10:48,960
+request and merge that
+
+129
+00:10:53,440 --> 00:10:54,000
+suite.
+
+130
+00:10:54,110 --> 00:10:57,790
+And then on my computer you can see that my poll request has been merged.
+
+131
+00:10:58,010 --> 00:10:59,620
+And that's the whole process.
+
+132
+00:10:59,610 --> 00:11:01,250
+Do you have anything to add to it.
+
+133
+00:11:01,280 --> 00:11:01,630
+No.
+
+134
+00:11:02,900 --> 00:11:11,800
+You do not actually need to update your repo in order to do to but to do the poll request in this case
+
+135
+00:11:11,800 --> 00:11:14,880
+it was a file that was not touched by anyone else at all.
+
+136
+00:11:14,880 --> 00:11:16,730
+It was a new file entirely.
+
+137
+00:11:16,730 --> 00:11:18,380
+And so he could.
+
+138
+00:11:18,500 --> 00:11:24,080
+Todd could have just made the file and done all this work without having to do the rebase and updating
+
+139
+00:11:24,080 --> 00:11:29,150
+his thing gets pretty good at merging files if need be and this case is a completely new file.
+
+140
+00:11:29,170 --> 00:11:36,850
+So the commit get would've been smart enough to just kind of merge it in as required but the updating
+
+141
+00:11:36,850 --> 00:11:43,000
+to the latest version will prevent will mean that you're taking on the burden of merging any conflicts
+
+142
+00:11:43,600 --> 00:11:49,630
+which makes it more likely that whoever is looking at the poll requests can see no conflicts.
+
+143
+00:11:49,630 --> 00:11:52,170
+That's a lot easier of a yes it's approved.
+
+144
+00:11:52,650 --> 00:11:56,980
+If there's conflicts the person who's looking at the poll requests usually isn't the one who wants to
+
+145
+00:11:57,610 --> 00:11:58,840
+figure out what's wrong.
+
+146
+00:11:58,960 --> 00:12:00,510
+They'll send it back to you and say fix us.
+
+147
+00:12:00,510 --> 00:12:03,280
+So there are conflicts.
+
+148
+00:12:03,280 --> 00:12:03,640
+All right.
+
+149
+00:12:03,730 --> 00:12:05,770
+That's a hands on exercise number three.
+
+150
+00:12:05,770 --> 00:12:06,670
+My solution.
+
+151
+00:12:06,700 --> 00:12:10,030
+See you in the next video where we have one more hands on exercise number four.

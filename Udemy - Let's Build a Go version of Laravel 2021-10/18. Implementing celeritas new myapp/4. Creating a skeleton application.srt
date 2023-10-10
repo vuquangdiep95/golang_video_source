@@ -1,0 +1,371 @@
+1
+00:00:01,180 --> 00:00:08,800
+So the next step in this process is to create a version of my app that will be basically an empty skeleton,
+
+2
+00:00:08,800 --> 00:00:11,950
+and the easiest way to do that is to do what I've already done.
+
+3
+00:00:12,400 --> 00:00:17,950
+First of all, backup your existing My App project, create a zip file from it, do whatever you need
+
+4
+00:00:17,950 --> 00:00:23,560
+to to make sure you don't lose the work you've done so far and then create a copy of this application
+
+5
+00:00:23,560 --> 00:00:24,610
+in a different folder.
+
+6
+00:00:24,610 --> 00:00:28,500
+I called mine bare BRT because it's a bare application.
+
+7
+00:00:28,550 --> 00:00:29,890
+I just stuck it on my desktop.
+
+8
+00:00:31,330 --> 00:00:35,560
+So once you've done that and please do, make sure you backup your existing code first.
+
+9
+00:00:35,890 --> 00:00:40,390
+Open it up in Visual Studio Code and you'll see that there's a bunch of errors and we don't care about
+
+10
+00:00:40,390 --> 00:00:42,290
+those because we're going to be deleting things.
+
+11
+00:00:42,310 --> 00:00:47,400
+And for example, if I open up the image, celebrities don't go file.
+
+12
+00:00:47,410 --> 00:00:49,440
+It says, I can't find that project.
+
+13
+00:00:49,450 --> 00:00:52,970
+I know because that project doesn't exist yet, and that's just fine by me.
+
+14
+00:00:52,990 --> 00:00:59,020
+So don't worry about that, but let's look at the things we want to get rid of, for example.
+
+15
+00:01:00,160 --> 00:01:05,590
+In my data folder, I have coverage out well, that doesn't need to be put there, so let's delete that.
+
+16
+00:01:06,130 --> 00:01:07,420
+So I'll move that to the trash.
+
+17
+00:01:08,550 --> 00:01:14,220
+I don't want the integration test, I don't want the models test, I don't want the remember token or
+
+18
+00:01:14,220 --> 00:01:20,820
+set up test or test go or token go or user ID go because in a bare application, none of those would
+
+19
+00:01:20,820 --> 00:01:21,320
+exist.
+
+20
+00:01:21,330 --> 00:01:22,320
+So let's delete those.
+
+21
+00:01:23,550 --> 00:01:24,360
+So those are gone.
+
+22
+00:01:25,790 --> 00:01:30,090
+Now let's open up models and see if yes, it's referring to things that don't belong there.
+
+23
+00:01:30,090 --> 00:01:31,230
+So let's delete those.
+
+24
+00:01:32,880 --> 00:01:39,000
+And down here, we'll delete these because we don't have it users or tokens, so those will be gone.
+
+25
+00:01:39,390 --> 00:01:42,600
+And I think that's all we have to worry about for that one so we can delete that.
+
+26
+00:01:44,800 --> 00:01:48,580
+And now let's open up handlers, so I don't want the off handlers.
+
+27
+00:01:48,730 --> 00:01:50,080
+Those can go for sure.
+
+28
+00:01:51,860 --> 00:01:52,970
+Convenience, don't go.
+
+29
+00:01:53,000 --> 00:01:53,720
+Let's look at that.
+
+30
+00:01:54,710 --> 00:01:58,310
+So, yeah, I'll leave all of those there because they're not going to hurt anything.
+
+31
+00:02:00,160 --> 00:02:02,960
+Get rid of the form veil handlers and the test handler.
+
+32
+00:02:02,980 --> 00:02:03,760
+Those can go.
+
+33
+00:02:07,340 --> 00:02:10,720
+And let's look in Handler's stock, go, do I want cash handlers?
+
+34
+00:02:11,750 --> 00:02:12,920
+No, I don't want those at all.
+
+35
+00:02:13,220 --> 00:02:13,580
+OK.
+
+36
+00:02:13,940 --> 00:02:21,290
+So those can be gone because we were just providing our users with the ability to use the cash.
+
+37
+00:02:21,470 --> 00:02:23,290
+We're not going to implement the cash for them.
+
+38
+00:02:23,300 --> 00:02:26,690
+We're going to give them the easy method of just using it if they want to.
+
+39
+00:02:27,440 --> 00:02:29,930
+Now let's look up Handler's dog, go and see what's in there.
+
+40
+00:02:31,770 --> 00:02:32,430
+So.
+
+41
+00:02:33,710 --> 00:02:34,760
+I do want a home page.
+
+42
+00:02:35,090 --> 00:02:41,000
+OK, so I'm going to leave that one alone, but I'll get rid of this comment that I did, and I don't
+
+43
+00:02:41,000 --> 00:02:41,780
+want anything else.
+
+44
+00:02:41,990 --> 00:02:48,020
+I can delete all of these because these were just things for us to work with as we were testing functionality.
+
+45
+00:02:48,410 --> 00:02:52,790
+So we're going to leave one handler home, OK, and we will make sure there's a home page for them to
+
+46
+00:02:52,790 --> 00:02:53,220
+look at.
+
+47
+00:02:53,240 --> 00:02:59,330
+So that takes care of the handlers folder and we can close that actually go back to the handlers folder.
+
+48
+00:02:59,330 --> 00:03:00,340
+I think I saw an error there.
+
+49
+00:03:01,490 --> 00:03:04,600
+Yeah, get rid of format because we're not using it there.
+
+50
+00:03:06,040 --> 00:03:07,310
+So let's close that.
+
+51
+00:03:07,670 --> 00:03:08,690
+Logs is fine.
+
+52
+00:03:08,690 --> 00:03:10,130
+It's empty mail.
+
+53
+00:03:10,130 --> 00:03:11,240
+What's inside of that?
+
+54
+00:03:11,270 --> 00:03:13,570
+Well, we want that to be completely empty.
+
+55
+00:03:13,580 --> 00:03:16,520
+We don't want a single template in there, so we'll delete all of those.
+
+56
+00:03:19,600 --> 00:03:22,420
+Migrations had better be empty, so I still eat that.
+
+57
+00:03:27,100 --> 00:03:29,480
+The temp is empty views.
+
+58
+00:03:30,060 --> 00:03:38,820
+I'm going to leave the layouts and I'll get rid of everything that's not home so that and that I'll
+
+59
+00:03:38,820 --> 00:03:43,680
+leave the home Typekit will delete all of those.
+
+60
+00:03:45,920 --> 00:03:51,860
+And let's open a home and get rid of this entire thing down here that says things to try so that can
+
+61
+00:03:51,860 --> 00:03:52,430
+go away.
+
+62
+00:03:54,100 --> 00:04:01,360
+And we'll get rid of this if it is authenticated, but so that can go away and the rest, that should
+
+63
+00:04:01,360 --> 00:04:01,780
+be fine.
+
+64
+00:04:02,080 --> 00:04:02,980
+So we'll close that.
+
+65
+00:04:05,460 --> 00:04:10,350
+The dot on the file aisle to lead entirely, because we're going to create that from our command line
+
+66
+00:04:10,350 --> 00:04:11,100
+application.
+
+67
+00:04:12,570 --> 00:04:15,630
+Let's make sure there's nothing inconvenience go that looks fine.
+
+68
+00:04:17,490 --> 00:04:18,990
+Coverage can go
+
+69
+00:04:22,200 --> 00:04:26,040
+and Docker compose picture anything in there that I need to change.
+
+70
+00:04:30,740 --> 00:04:31,610
+No, I think that's fine.
+
+71
+00:04:32,720 --> 00:04:35,330
+There's no password, you know, that we care about, except.
+
+72
+00:04:36,550 --> 00:04:38,920
+These ones and those are fine for development.
+
+73
+00:04:39,940 --> 00:04:40,960
+We can close that.
+
+74
+00:04:42,100 --> 00:04:43,780
+What about go dot Dontnod?
+
+75
+00:04:44,050 --> 00:04:44,920
+Well, let's open that up.
+
+76
+00:04:45,700 --> 00:04:47,680
+We definitely want to get rid of this bit.
+
+77
+00:04:48,010 --> 00:04:54,480
+Replace GitHub dot com whatever your URL is with a reference to a local folder named Celebrity.
+
+78
+00:04:54,590 --> 00:05:03,580
+So let's delete that, OK, and close that code to some that's going to be actually created when we
+
+79
+00:05:03,580 --> 00:05:04,990
+run, Goldman Tidies.
+
+80
+00:05:04,990 --> 00:05:06,700
+So I'll delete that as well.
+
+81
+00:05:11,100 --> 00:05:15,750
+And rootstock up, something's going to have to change there, so we don't need the mailer.
+
+82
+00:05:18,180 --> 00:05:24,390
+We'll leave that one alone and we'll just leave the route to the home page, and that's pretty much
+
+83
+00:05:24,390 --> 00:05:30,470
+it so we can go all the way down here and leave the static route and delete the rest of those.
+
+84
+00:05:30,480 --> 00:05:32,790
+And this should be a nice, clean file right now.
+
+85
+00:05:34,140 --> 00:05:41,060
+OK, so we can get rid of this and we can get rid of this because it is reused by roots.
+
+86
+00:05:41,070 --> 00:05:46,680
+I just deleted and that will show up properly when we're ready to work with this.
+
+87
+00:05:47,070 --> 00:05:49,920
+OK, so I think that clears this out pretty well.
+
+88
+00:05:49,950 --> 00:05:55,110
+Let's just make sure there's nothing in the in the public folder I images.
+
+89
+00:05:56,520 --> 00:05:57,660
+OK, that should be fine.
+
+90
+00:05:57,990 --> 00:05:59,880
+This is a good starting point.
+
+91
+00:06:00,480 --> 00:06:06,060
+OK, so the next step is to push this up to GitHub or your favorite git repository system.
+
+92
+00:06:06,300 --> 00:06:11,640
+I'm going to use GitHub because it's very easy to use free and extremely common in the go world.
+
+93
+00:06:11,970 --> 00:06:12,660
+So let's move on.

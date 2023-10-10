@@ -1,0 +1,367 @@
+1
+00:00:01,020 --> 00:00:06,840
+So reformist displaying properly now let's implement the post handler and put some server side validation
+
+2
+00:00:06,840 --> 00:00:12,690
+in there, so we'll create a function A. My roots file, even though it's commented out, h handlers,
+
+3
+00:00:13,350 --> 00:00:15,090
+we called it submit form.
+
+4
+00:00:16,140 --> 00:00:23,490
+So let's call it submit form Whv Typekit, our response writer and ah, as a pointer to HTTP request.
+
+5
+00:00:24,750 --> 00:00:33,450
+So in the go world, anytime you post to form, you call from the request form and you check for an
+
+6
+00:00:33,450 --> 00:00:33,810
+error.
+
+7
+00:00:33,930 --> 00:00:35,710
+If error is not equal to nil.
+
+8
+00:00:36,180 --> 00:00:39,060
+Then we'll just log it and return each app.
+
+9
+00:00:39,310 --> 00:00:46,380
+The error log dot print line the error and we'll just return because this is just the test route anyway.
+
+10
+00:00:46,630 --> 00:00:47,700
+There are test functionality.
+
+11
+00:00:47,700 --> 00:00:51,060
+It's not a fully featured web app, so we don't really care about that sort of thing.
+
+12
+00:00:51,900 --> 00:00:56,580
+Now, as I did before, in my roots file this time in I'm in a handler, but we're going to do the same
+
+13
+00:00:56,580 --> 00:00:56,900
+thing.
+
+14
+00:00:56,910 --> 00:01:05,130
+We'll create a validator and it will be assigned a value of each app validator and we had it nil.
+
+15
+00:01:06,360 --> 00:01:09,720
+So now we have a validator and let's set up our validation rules.
+
+16
+00:01:09,720 --> 00:01:14,680
+So we have on the form, we have three fields first name, last name and email.
+
+17
+00:01:14,700 --> 00:01:18,330
+Let's make them all required, validator required.
+
+18
+00:01:18,990 --> 00:01:23,220
+And we just handed the request and all the fields we want to be required.
+
+19
+00:01:23,880 --> 00:01:30,240
+First name, last name and email.
+
+20
+00:01:31,200 --> 00:01:32,010
+So that's one rule.
+
+21
+00:01:32,880 --> 00:01:35,970
+Let's put some other ones in just to be safe validator.
+
+22
+00:01:36,450 --> 00:01:37,470
+That is email.
+
+23
+00:01:38,670 --> 00:01:43,650
+In this case, I just handed email and I'm going to hand it our form.
+
+24
+00:01:44,190 --> 00:01:48,240
+Don't get email whatever was typed into the form, if anything.
+
+25
+00:01:49,710 --> 00:01:54,480
+And we'll also put in two more just because we can check one say validate or not check.
+
+26
+00:01:55,200 --> 00:01:56,850
+And we need a Boolean condition.
+
+27
+00:01:56,850 --> 00:01:58,380
+So we'll say art form.
+
+28
+00:01:58,380 --> 00:02:05,140
+Don't get, and I'll say, the first name, first name.
+
+29
+00:02:05,160 --> 00:02:08,680
+Make sure you name these fields are Typekit these field names correctly.
+
+30
+00:02:08,680 --> 00:02:13,110
+You're going to have an arrow that's hard to track down will make the length of that.
+
+31
+00:02:13,500 --> 00:02:14,640
+I put a letter in front of it
+
+32
+00:02:18,480 --> 00:02:19,470
+green to the moon.
+
+33
+00:02:19,680 --> 00:02:21,570
+It's got to be at least two characters.
+
+34
+00:02:21,600 --> 00:02:22,020
+OK.
+
+35
+00:02:22,710 --> 00:02:24,330
+And that's for first name.
+
+36
+00:02:24,960 --> 00:02:30,180
+And my error messages must be at least two characters.
+
+37
+00:02:32,990 --> 00:02:33,350
+OK.
+
+38
+00:02:33,420 --> 00:02:35,850
+And we'll duplicate that and do the same thing for last name.
+
+39
+00:02:42,570 --> 00:02:44,110
+So those are validation rules.
+
+40
+00:02:44,130 --> 00:02:49,050
+So let's do a check here, if not validator dot valid.
+
+41
+00:02:50,860 --> 00:02:57,780
+Then what I want to do is take them back to that form and populate the form fields with the values that
+
+42
+00:02:57,780 --> 00:03:02,040
+were in there before they submitted and display error messages, if any.
+
+43
+00:03:02,400 --> 00:03:09,270
+So we're going to create a reverse variable and that will be just like a knee in the handle of the displays.
+
+44
+00:03:09,270 --> 00:03:17,910
+The form make jetport VAR map and we'll add the validator to it versus set, and it has to be called
+
+45
+00:03:17,910 --> 00:03:20,820
+the same thing validator and that's equal to validator.
+
+46
+00:03:21,030 --> 00:03:27,330
+Now, Validator has the errors map populated with information and will create a user very user of type
+
+47
+00:03:27,330 --> 00:03:32,970
+data dot user and we'll populate its fields with whatever they typed in user type.
+
+48
+00:03:32,970 --> 00:03:36,750
+First name is equal to art form dot.
+
+49
+00:03:36,750 --> 00:03:48,270
+Get the first name and no duplicate that I make this last name and make this last name and email.
+
+50
+00:03:49,440 --> 00:03:53,160
+Email is email all lowercase.
+
+51
+00:03:54,840 --> 00:03:57,330
+And then I set the user in my verse.
+
+52
+00:03:57,360 --> 00:04:02,730
+So verse, dot set and call it user just like it did in the first handler.
+
+53
+00:04:03,270 --> 00:04:07,160
+And the value is user and I render the page.
+
+54
+00:04:07,170 --> 00:04:15,540
+If error is assigned, the value is assigned the value of each dot app dot render Typekit page.
+
+55
+00:04:18,690 --> 00:04:24,420
+And that requires W and R and the view, which is form.
+
+56
+00:04:26,240 --> 00:04:36,680
+And our data, which is verse, you know, and if the error is not equal to nil, then we'll just log
+
+57
+00:04:36,680 --> 00:04:37,360
+the error again.
+
+58
+00:04:37,430 --> 00:04:46,520
+HK app dot error log dot print line the error and I'll return.
+
+59
+00:04:48,530 --> 00:04:57,350
+But if we get past that, all I'm going to do is just say valid, so format dot f print w valid data,
+
+60
+00:05:00,530 --> 00:05:08,510
+OK, at this point, I should be able to go back to my roots file uncomment this and hopefully that
+
+61
+00:05:08,510 --> 00:05:09,140
+will show up.
+
+62
+00:05:10,100 --> 00:05:11,650
+Apparently, I called it post form here.
+
+63
+00:05:11,660 --> 00:05:13,070
+So let's go back to my handlers.
+
+64
+00:05:15,270 --> 00:05:16,610
+We call it post form there.
+
+65
+00:05:18,500 --> 00:05:18,830
+OK.
+
+66
+00:05:19,400 --> 00:05:20,630
+Make restart.
+
+67
+00:05:28,010 --> 00:05:29,030
+Go to my Web browser.
+
+68
+00:05:30,770 --> 00:05:32,080
+Go back to the home page.
+
+69
+00:05:32,930 --> 00:05:34,220
+Go to form validation.
+
+70
+00:05:34,640 --> 00:05:40,220
+Then let's try submitting the form with nothing in it and there and I have valid data, which means
+
+71
+00:05:40,220 --> 00:05:41,750
+I have a return in the wrong place.
+
+72
+00:05:41,750 --> 00:05:44,720
+So let's go back here to Visual Studio code.
+
+73
+00:05:45,560 --> 00:05:49,340
+Find that handler and say, Return here.
+
+74
+00:05:52,430 --> 00:05:53,240
+Let's try that again.
+
+75
+00:05:53,810 --> 00:05:54,650
+Make restart.
+
+76
+00:05:59,480 --> 00:06:00,080
+That's better.
+
+77
+00:06:00,380 --> 00:06:06,440
+And go back to our form here and go to the homepage and go to form validation and try submitting the
+
+78
+00:06:06,440 --> 00:06:06,740
+form.
+
+79
+00:06:07,550 --> 00:06:10,490
+Perfect doesn't say valid down here like I did a moment ago.
+
+80
+00:06:10,820 --> 00:06:18,740
+Now let's give it one character submit form and change the error message to must be at least two characters
+
+81
+00:06:18,740 --> 00:06:20,870
+and did repopulate that form field.
+
+82
+00:06:21,260 --> 00:06:24,380
+Let's go B and C submit form.
+
+83
+00:06:25,640 --> 00:06:27,020
+All three fields are there.
+
+84
+00:06:27,110 --> 00:06:31,640
+See at sea, which is still not a valid email address because it has to have a dot something at the
+
+85
+00:06:31,640 --> 00:06:31,960
+end.
+
+86
+00:06:31,970 --> 00:06:39,830
+I still should get an invalid email address and I do, and if I make this dot com, that error message
+
+87
+00:06:39,830 --> 00:06:42,120
+should go away and it does.
+
+88
+00:06:42,140 --> 00:06:47,210
+And if I make these two characters that should go away and it does, and if I make these two characters,
+
+89
+00:06:47,450 --> 00:06:52,290
+I should just see the word valid printed up here validator.
+
+90
+00:06:52,520 --> 00:06:55,850
+There were error that worked exactly as expected.
+
+91
+00:06:56,990 --> 00:06:59,540
+OK, that's enough for form validation.
+
+92
+00:06:59,660 --> 00:07:00,650
+Let's move on.

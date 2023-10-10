@@ -1,0 +1,256 @@
+1
+00:00:00,180 --> 00:00:04,980
+Jadi ada satu hal yang saya katakan di kursus di awal dan Anda menerima kata-kata saya begitu saja.
+
+2
+00:00:05,010 --> 00:00:07,670
+Saya mengatakan RPG dapat digunakan oleh bahasa apa pun.
+
+3
+00:00:07,800 --> 00:00:12,160
+Dan kemudian ada kemampuan juru bahasa antara semua bahasa.
+
+4
+00:00:12,180 --> 00:00:17,090
+Selama Anda menggunakan file buffer protokol yang sama dan memang benar itu benar.
+
+5
+00:00:17,370 --> 00:00:21,780
+Tapi saya ingin memberi Anda demo sekarang karena saya sudah menyelesaikan kursus ini di Garling dan saya sudah menyelesaikan
+
+6
+00:00:21,870 --> 00:00:22,830
+kursus ini di Jawa.
+
+7
+00:00:22,830 --> 00:00:26,210
+Jadi sekarang saya memiliki layanan yang sama diimplementasikan dalam dua bahasa.
+
+8
+00:00:26,280 --> 00:00:29,270
+Dan saya ingin menunjukkan kepada Anda bahwa mereka memang bekerja satu sama lain.
+
+9
+00:00:29,460 --> 00:00:34,520
+Jadi mari kita lanjutkan dengan demo cepat dan Anda akan melihat semuanya berfungsi seperti yang diharapkan.
+
+10
+00:00:34,530 --> 00:00:37,520
+Jadi ini adalah direktori kursus GOP SIGO yang lebih lengkap.
+
+11
+00:00:37,520 --> 00:00:43,980
+Jadi jika Anda melihat prototipe itu, Anda dapat melihat bahwa itu persis sama sehingga kita dapat melihat bahwa kita
+
+12
+00:00:44,040 --> 00:00:51,180
+memiliki semua RBOC yang sama semua nama pesan dan jenis pesan yang sama seperti yang saya lakukan dalam kursus Java
+
+13
+00:00:51,210 --> 00:00:51,890
+GOPAC.
+
+14
+00:00:52,050 --> 00:00:58,390
+Jadi jika Anda melihat Greta Greta Prato, kami melihat persis profil salam yang sama persis.
+
+15
+00:00:58,500 --> 00:01:04,770
+Jadi pada dasarnya karena penyedia rakus ini adalah sama, kami berharap memiliki interoperabilitas penuh
+
+16
+00:01:04,770 --> 00:01:05,670
+dalam bahasa.
+
+17
+00:01:05,880 --> 00:01:12,090
+Jadi yang ingin saya lakukan adalah menjalankan untuk menyapa server itu dan pergi dan kemudian jalankan klien melawannya dan pergi dan
+
+18
+00:01:12,090 --> 00:01:13,510
+juga jalankan klien Java.
+
+19
+00:01:13,680 --> 00:01:19,740
+Jadi mari kita lanjutkan dan saya akan membuat tab baru juga supaya Anda dapat melihat kedua hal itu terjadi pada
+
+20
+00:01:19,740 --> 00:01:20,940
+saat yang bersamaan.
+
+21
+00:01:20,940 --> 00:01:21,920
+Jadi begini.
+
+22
+00:01:21,960 --> 00:01:26,660
+Jadi di sini saya akan menjalankan server hebat saya.
+
+23
+00:01:26,700 --> 00:01:28,990
+Jadi ini adalah server go saya yang sedang berjalan sekarang.
+
+24
+00:01:29,300 --> 00:01:37,380
+Dan jika saya ingin menjalankan klien salam saya, saya akan pergi karena Anda dapat melihat semua jenis RBC akan berjalan.
+
+25
+00:01:37,380 --> 00:01:39,700
+Jadi kami akan membuat Anda Nare RBC.
+
+26
+00:01:39,720 --> 00:01:44,860
+Kami akan memiliki server streaming streaming dengan directional streaming.
+
+27
+00:01:44,970 --> 00:01:51,450
+Dan seperti yang bisa kita lihat sekarang semua permintaan ini berfungsi dan itu diharapkan karena dalam kursus kita
+
+28
+00:01:51,450 --> 00:01:52,870
+memprogramnya agar berfungsi.
+
+29
+00:01:52,890 --> 00:01:54,110
+Jadi tidak ada kejutan di sini.
+
+30
+00:01:54,120 --> 00:01:55,230
+Semuanya berfungsi.
+
+31
+00:01:55,350 --> 00:02:02,460
+Tetapi sekarang jika kita melanjutkan dalam kode Java dan menjalankan klien salam dan ini dari kursus Jether.
+
+32
+00:02:02,460 --> 00:02:05,640
+Jadi saya menjalankan salam klien ini dan melakukan hal yang persis sama.
+
+33
+00:02:05,660 --> 00:02:07,710
+Itu disebut jenis API.
+
+34
+00:02:08,040 --> 00:02:14,660
+Jadi kami melihat bahwa ya, di bagian kiri bawah ini, kami tahu saat ini kami melihat respons yang
+
+35
+00:02:14,670 --> 00:02:17,290
+dikirim oleh server Go ke klien Java.
+
+36
+00:02:17,520 --> 00:02:21,780
+Jadi ada di sini merespons klien Java saya dan semuanya berjalan dengan baik.
+
+37
+00:02:21,780 --> 00:02:29,770
+Jadi di sini kita baru saja membuktikan bahwa menjalankan server go sebenarnya bekerja melawan klien yang baik dan klien Jever
+
+38
+00:02:30,240 --> 00:02:31,550
+dan itu diharapkan.
+
+39
+00:02:31,850 --> 00:02:36,320
+Tetapi sekarang kita dapat menjalankan hal sebaliknya dan kita akan menjalankan server salam di Jawa.
+
+40
+00:02:36,540 --> 00:02:42,270
+Jadi sekarang Java akan menjadi server dan saya akan melanjutkan dan menjalankan klien salam saya terhadap
+
+41
+00:02:42,270 --> 00:02:43,020
+Java saya.
+
+42
+00:02:43,380 --> 00:02:49,020
+Dan seperti yang kita lihat masih berfungsi, kita masih mendapatkan tanggapan dari server Java saat ini
+
+43
+00:02:49,020 --> 00:02:50,310
+menggunakan go client.
+
+44
+00:02:50,310 --> 00:02:55,100
+Jadi sekali lagi itu hanya menunjukkan bahwa ada interoperabilitas dan semuanya berfungsi.
+
+45
+00:02:55,170 --> 00:03:01,500
+Tetapi saya juga dapat menjalankan klien salam saya di sini klien Java saya yang jelas akan bekerja melawan
+
+46
+00:03:01,500 --> 00:03:02,660
+server Java saya.
+
+47
+00:03:02,880 --> 00:03:05,270
+Jadi ya itu sangat luar biasa.
+
+48
+00:03:05,340 --> 00:03:07,940
+Tapi itu bukan hanya pergi dan Jever bekerja bersama.
+
+49
+00:03:08,070 --> 00:03:14,790
+Bahasa apa pun yang memiliki sumber yang sama akan menyapa profiler file buffer protokol yang sama dalam definisi
+
+50
+00:03:15,150 --> 00:03:16,490
+layanan yang sama.
+
+51
+00:03:16,680 --> 00:03:17,920
+Mereka akan saling bekerja.
+
+52
+00:03:18,060 --> 00:03:23,640
+Jadi Anda bisa menghasilkan kode dengan Python di C Sharp dalam segala hal dan mereka akan bekerja melawan
+
+53
+00:03:23,640 --> 00:03:24,910
+server go server Java.
+
+54
+00:03:24,960 --> 00:03:25,640
+Apa pun yang Anda inginkan.
+
+55
+00:03:25,640 --> 00:03:26,600
+Kombinasi apa pun.
+
+56
+00:03:26,910 --> 00:03:33,120
+Tetapi jika saya cukup keren untuk menunjukkan kepada kalian bagaimana dua kursus ini dapat berjalan bersama dan kita dapat mengimplementasikan
+
+57
+00:03:33,120 --> 00:03:37,630
+server dalam satu bahasa dan klien dalam bahasa lain dan semuanya akan berhasil.
+
+58
+00:03:37,950 --> 00:03:38,970
+Jadi saya harap Anda menyukainya.
+
+59
+00:03:39,030 --> 00:03:45,180
+Saya harap itu membawa banyak rasa seperti untuk Anda dan Anda seperti oh yeah itu masuk akal karena itulah yang
+
+60
+00:03:45,180 --> 00:03:46,570
+saya ingin Anda tunjukkan.
+
+61
+00:03:46,800 --> 00:03:53,250
+Ini adalah GOPAC tidak terikat pada semacam bahasa pemrograman hanya grit yang Prato default adalah
+
+62
+00:03:53,250 --> 00:03:56,100
+bit umum paling penting di sana.
+
+63
+00:03:56,310 --> 00:03:57,720
+Jadi itu sangat membantu.
+
+64
+00:03:57,720 --> 00:04:00,820
+Semoga Anda menikmati demo kecil ini dan itu adalah kuliah berikutnya.
+

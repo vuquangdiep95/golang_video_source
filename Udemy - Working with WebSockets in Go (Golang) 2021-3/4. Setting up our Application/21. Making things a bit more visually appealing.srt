@@ -1,0 +1,399 @@
+1
+00:00:01,080 --> 00:00:05,490
+So let's just clean things up and make them a little more attractive, and the first thing I want to
+
+2
+00:00:05,490 --> 00:00:11,100
+do is take care of this, I don't want this date, which is my default date, because I don't like dealing
+
+3
+00:00:11,100 --> 00:00:12,370
+with moles in the database.
+
+4
+00:00:12,720 --> 00:00:16,830
+I don't want that to show up unless there's actually been a check performed.
+
+5
+00:00:17,220 --> 00:00:22,140
+And once a check is performed, which we're going to get to very shortly, this will have a valid date
+
+6
+00:00:22,140 --> 00:00:22,920
+and time stamp.
+
+7
+00:00:22,930 --> 00:00:24,550
+Otherwise, I don't want to display anything.
+
+8
+00:00:24,810 --> 00:00:27,420
+So let's go back over to our code and I'll show you.
+
+9
+00:00:27,420 --> 00:00:32,990
+I have some helper functions in here, so I'm going to look, first of all, let's just go to the reads
+
+10
+00:00:33,010 --> 00:00:33,270
+file.
+
+11
+00:00:34,290 --> 00:00:37,040
+So in Route's, we'll find a place where we're displaying a page.
+
+12
+00:00:37,050 --> 00:00:43,710
+Here's a place where I'm displaying all healthy services and that calls this helper's render page and
+
+13
+00:00:43,710 --> 00:00:46,200
+render page right here is just a function.
+
+14
+00:00:46,560 --> 00:00:51,150
+But it does have this one little thing down here at the end that says ad template functions.
+
+15
+00:00:51,150 --> 00:00:51,960
+Well, let's look at that.
+
+16
+00:00:52,760 --> 00:00:54,390
+So ad template functions.
+
+17
+00:00:54,390 --> 00:00:58,080
+It's just at the top of the same file, which is template or in a file called template.
+
+18
+00:00:58,080 --> 00:00:58,740
+Dasch functions.
+
+19
+00:00:58,740 --> 00:01:05,340
+Dargo and I have three functions available to me human date, date from layout and date after year one.
+
+20
+00:01:05,460 --> 00:01:09,690
+Well, this means this is available to me in my in my all of my templates.
+
+21
+00:01:09,690 --> 00:01:10,910
+All of these three functions are.
+
+22
+00:01:11,490 --> 00:01:18,030
+So let's go back to the hosted chat and come down here where I'm displaying last check.
+
+23
+00:01:18,540 --> 00:01:24,030
+And let's just change this a little bit and see if I can get the syntax right in the first try.
+
+24
+00:01:24,750 --> 00:01:28,800
+If and the function is called date after year one.
+
+25
+00:01:29,460 --> 00:01:31,880
+And it takes one argument, which is time, not time.
+
+26
+00:01:32,370 --> 00:01:33,540
+So back to host yet.
+
+27
+00:01:33,930 --> 00:01:42,780
+If a date after year one and my time dot time is last check if it's after year one, then it's actually
+
+28
+00:01:42,780 --> 00:01:45,150
+been populated with meaningful information in the database.
+
+29
+00:01:45,630 --> 00:01:48,300
+So I want to do something if that takes place else.
+
+30
+00:01:49,410 --> 00:01:50,850
+I want to display something else.
+
+31
+00:01:52,080 --> 00:02:00,810
+And so I if I just do this, if I cut that out of there and if the date is after your one, then it
+
+32
+00:02:00,810 --> 00:02:01,380
+should render it.
+
+33
+00:02:01,380 --> 00:02:02,610
+So if I go back to my.
+
+34
+00:02:02,610 --> 00:02:03,570
+And what tab is this?
+
+35
+00:02:03,570 --> 00:02:04,710
+This is in the healthy tab.
+
+36
+00:02:04,710 --> 00:02:05,640
+That's not helpful at all.
+
+37
+00:02:06,120 --> 00:02:07,950
+Let's go down to spending.
+
+38
+00:02:09,760 --> 00:02:11,610
+And say the same thing.
+
+39
+00:02:12,230 --> 00:02:15,670
+So do this, Hoopes.
+
+40
+00:02:18,410 --> 00:02:22,580
+If data after your data, after year one, date after
+
+41
+00:02:25,070 --> 00:02:32,960
+year one, I think that's what I called it, date after year one, yet if data after year one and pass
+
+42
+00:02:32,960 --> 00:02:33,830
+it last check.
+
+43
+00:02:37,200 --> 00:02:39,300
+Then display the information.
+
+44
+00:02:41,420 --> 00:02:43,640
+And I'm going to do that.
+
+45
+00:02:43,670 --> 00:02:50,930
+I don't even need an alt statement, so now when I go load the host page right here and reload this
+
+46
+00:02:50,930 --> 00:02:53,480
+page and look at pending, that should be empty.
+
+47
+00:02:53,900 --> 00:02:55,130
+And it is OK.
+
+48
+00:02:55,520 --> 00:03:00,290
+But I don't actually want to display the date in that much information so I can actually take advantage
+
+49
+00:03:00,290 --> 00:03:08,030
+of this template function which says date after date from layout, and that takes a time and the layout
+
+50
+00:03:08,030 --> 00:03:10,330
+string and we just use the standard go layout string.
+
+51
+00:03:10,340 --> 00:03:17,420
+So back to host Jack and I can just say date from land because I want to call it a date from Las.
+
+52
+00:03:18,760 --> 00:03:25,150
+Data from layout, and it takes a time and then it takes the layout string, so we'll use the standard
+
+53
+00:03:25,150 --> 00:03:30,420
+twenty six zero one zero two and then 15 zero four.
+
+54
+00:03:32,380 --> 00:03:38,110
+And that will give me the correct date and time formatted in a way that makes sense to me in Canada.
+
+55
+00:03:38,110 --> 00:03:44,110
+If you like a different format, whatever format you want in your layout string, just using the standard
+
+56
+00:03:44,650 --> 00:03:48,820
+go date layout format and things will be good.
+
+57
+00:03:49,180 --> 00:03:54,190
+Now I could actually just either put an Alice in there as well just to make it a little more readable
+
+58
+00:03:54,190 --> 00:03:59,830
+if you wanted to, and say pending there.
+
+59
+00:04:00,310 --> 00:04:09,780
+So now if I come back here and reload this and I have a unclosed less parentheses and it's OK post three
+
+60
+00:04:09,790 --> 00:04:10,390
+19.
+
+61
+00:04:10,390 --> 00:04:12,250
+So I got a unclosed less right here.
+
+62
+00:04:12,330 --> 00:04:15,170
+Yes, let's try that again.
+
+63
+00:04:16,480 --> 00:04:18,370
+Now it should stay pending and it does.
+
+64
+00:04:18,430 --> 00:04:24,250
+OK, so this is the kind of information that will be changing using Web sockets in a little while.
+
+65
+00:04:24,490 --> 00:04:29,940
+But what I want to do next is to look at this bit right here.
+
+66
+00:04:30,550 --> 00:04:36,430
+I have, if you recall, in the database, if I go back to my database and look at the services, I
+
+67
+00:04:36,430 --> 00:04:39,550
+have this little icon and I'm not using that at all right now.
+
+68
+00:04:39,940 --> 00:04:41,760
+So let's see what we can put in there.
+
+69
+00:04:41,770 --> 00:04:43,990
+So I'm going to go to the font awesome site.
+
+70
+00:04:44,410 --> 00:04:47,530
+And this is where I'm I'm grabbing my free icons from.
+
+71
+00:04:47,530 --> 00:04:50,750
+And I have a paid version, but we're just going to use the free ones.
+
+72
+00:04:50,750 --> 00:04:55,780
+So let's go to icons and I'll just look for a server icon and there's one.
+
+73
+00:04:55,780 --> 00:04:57,400
+So these ones you have to pay for.
+
+74
+00:04:57,700 --> 00:04:58,560
+This one is free.
+
+75
+00:04:58,600 --> 00:04:59,680
+I'm going to use the free one.
+
+76
+00:05:00,160 --> 00:05:01,110
+How do I use this?
+
+77
+00:05:01,120 --> 00:05:08,080
+Start using this icon and the syntax is FASB dash f a dash server.
+
+78
+00:05:08,270 --> 00:05:15,700
+OK, so let's go back to our database and change this to f ASFA dash server and save that.
+
+79
+00:05:17,830 --> 00:05:23,650
+And go back here just to make things a little more visually appealing and where do I list the services?
+
+80
+00:05:23,650 --> 00:05:25,540
+So service is.
+
+81
+00:05:26,850 --> 00:05:27,370
+Right here.
+
+82
+00:05:27,930 --> 00:05:35,070
+So before that, before I displayed the service, I can actually mine the host jet file and I'm looking
+
+83
+00:05:35,070 --> 00:05:36,270
+at pending services.
+
+84
+00:05:38,240 --> 00:05:48,980
+Right here, just before the service name, let's put in a Spath class, equals service dog icon.
+
+85
+00:05:50,380 --> 00:05:51,100
+That might be it.
+
+86
+00:05:51,610 --> 00:05:52,320
+Let's find out.
+
+87
+00:05:54,010 --> 00:05:58,930
+That looks better, and then I have a little icon next to it, and that's purely for cosmetic purposes.
+
+88
+00:05:59,170 --> 00:06:02,710
+So every time I add a new service, I will add at least one more.
+
+89
+00:06:02,710 --> 00:06:07,060
+Before this, of course, is over, I'm going to give it a nice icon and you can use whatever icon set
+
+90
+00:06:07,060 --> 00:06:07,480
+you want.
+
+91
+00:06:07,660 --> 00:06:09,260
+But I think this is not a bad one.
+
+92
+00:06:09,820 --> 00:06:14,440
+So what I want to do next is to actually perform a check.
+
+93
+00:06:14,440 --> 00:06:19,120
+I want when I click on this and I'm going to add some success to give it a little pointer icon just
+
+94
+00:06:19,120 --> 00:06:19,870
+because I can.
+
+95
+00:06:20,470 --> 00:06:26,110
+I actually do want it to fire a request off and I want to get the response back and I'll use Ajax to
+
+96
+00:06:26,110 --> 00:06:28,510
+fire the request off and to handle the response.
+
+97
+00:06:29,440 --> 00:06:32,740
+So at least for right now, we'll change that as time goes on.
+
+98
+00:06:32,740 --> 00:06:34,070
+But I would just want to get this working.
+
+99
+00:06:34,090 --> 00:06:40,300
+So this means we need to write some code that will actually perform a check and we'll start that process
+
+100
+00:06:40,300 --> 00:06:41,800
+in the next lecture.

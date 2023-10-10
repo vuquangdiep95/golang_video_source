@@ -1,0 +1,1147 @@
+1
+00:00:01,100 --> 00:00:05,390
+So things are moving along pretty nicely right now, and we only have a few things left to do.
+
+2
+00:00:05,810 --> 00:00:11,570
+First of all, on the left hand side of my application, I have this page called Events, and currently
+
+3
+00:00:11,570 --> 00:00:12,620
+it doesn't do anything.
+
+4
+00:00:12,620 --> 00:00:14,510
+It's just generating an empty table.
+
+5
+00:00:14,510 --> 00:00:20,960
+And if you look at the handler for this, it's just generating a file and not doing anything at all.
+
+6
+00:00:20,960 --> 00:00:24,370
+It's just writing HTML to the screen and we want to fix this.
+
+7
+00:00:24,950 --> 00:00:30,410
+So this page should list all of the events in chronological order that took place.
+
+8
+00:00:30,410 --> 00:00:37,100
+So a host went down or a service went down or it came back up just so we can have a log of what took
+
+9
+00:00:37,100 --> 00:00:38,510
+place and when it took place.
+
+10
+00:00:39,230 --> 00:00:43,520
+And if we look at our database over in post go is my client.
+
+11
+00:00:43,520 --> 00:00:45,260
+I'm looking at the vigilante database.
+
+12
+00:00:45,620 --> 00:00:48,470
+There is nowhere to store events in here at all.
+
+13
+00:00:48,800 --> 00:00:51,740
+So we need to create a new table and I'll call mine events.
+
+14
+00:00:51,740 --> 00:00:58,220
+So I'll go back to my ID, open my terminal, stop my application and clear the screen and I'll just
+
+15
+00:00:58,220 --> 00:01:00,410
+generate a migration for this.
+
+16
+00:01:00,740 --> 00:01:07,490
+So to generate Fiz and I'll call this Create Events table.
+
+17
+00:01:10,250 --> 00:01:10,860
+Try that again.
+
+18
+00:01:10,910 --> 00:01:12,290
+I guess I left the E generate.
+
+19
+00:01:15,330 --> 00:01:15,900
+That's better.
+
+20
+00:01:16,550 --> 00:01:23,370
+OK, so this gives me two empty migration's right here, and I'll open the up one first and I will just
+
+21
+00:01:23,370 --> 00:01:26,610
+copy the code from an existing up right here.
+
+22
+00:01:27,150 --> 00:01:32,940
+Let's copy that just to say some typing and paste it into the up migration and make sure you get the
+
+23
+00:01:32,940 --> 00:01:35,390
+right migration and ends ended up phase.
+
+24
+00:01:36,600 --> 00:01:38,580
+So this will be a table called events.
+
+25
+00:01:39,090 --> 00:01:41,900
+And I'll just fix this before I forget.
+
+26
+00:01:41,940 --> 00:01:43,500
+This has to be events as well.
+
+27
+00:01:44,520 --> 00:01:46,770
+And I want an ID, that's for sure.
+
+28
+00:01:47,040 --> 00:01:52,980
+And I want a host ID or a host service ID, which will be an integer.
+
+29
+00:01:54,870 --> 00:01:56,010
+I'll give it no defaults.
+
+30
+00:01:58,980 --> 00:02:05,070
+And I want a host, Idy, which will also be an integer with no defaults.
+
+31
+00:02:08,300 --> 00:02:10,040
+Then I want the service name
+
+32
+00:02:12,680 --> 00:02:17,060
+like HTP, in our case, I want the hostname.
+
+33
+00:02:19,400 --> 00:02:20,540
+And what else do I want?
+
+34
+00:02:20,570 --> 00:02:25,620
+I want the message, what do we get back following the last test when something changed?
+
+35
+00:02:25,640 --> 00:02:27,740
+I'm going to make this a little bit longer, just in case.
+
+36
+00:02:27,740 --> 00:02:29,120
+I'll make it 512.
+
+37
+00:02:30,200 --> 00:02:36,110
+And that's all that I really need because created an updated that are added for me by Fiz.
+
+38
+00:02:36,110 --> 00:02:37,290
+So that should be the up.
+
+39
+00:02:37,580 --> 00:02:39,010
+Now let's get the down as well.
+
+40
+00:02:39,020 --> 00:02:44,840
+I'll just copy this to make sure I get it correct and I'll go to the down event for this one, our new
+
+41
+00:02:44,840 --> 00:02:47,780
+migration and change the table name to events.
+
+42
+00:02:48,320 --> 00:02:50,780
+All right, let's try running this migration.
+
+43
+00:02:51,170 --> 00:02:52,340
+Make sure you're in the right direction.
+
+44
+00:02:52,730 --> 00:02:57,400
+I am so to migrate and that should create the table for us.
+
+45
+00:02:57,410 --> 00:03:04,810
+So when I go back to my client, my database client, and reload this screen, I should have an event
+
+46
+00:03:04,820 --> 00:03:05,180
+table.
+
+47
+00:03:05,510 --> 00:03:06,200
+And there it is.
+
+48
+00:03:06,860 --> 00:03:08,410
+And that all looks correct.
+
+49
+00:03:08,420 --> 00:03:08,840
+Perfect.
+
+50
+00:03:09,550 --> 00:03:12,860
+OK, so now I've got the table created.
+
+51
+00:03:13,310 --> 00:03:17,540
+We need to write some database methods to insert and read from this database.
+
+52
+00:03:17,690 --> 00:03:21,230
+We don't need any updates because events are never going to be updated.
+
+53
+00:03:21,260 --> 00:03:23,020
+They're just going to be entered and read.
+
+54
+00:03:23,600 --> 00:03:34,370
+So let's go back to our code and find our internal repository DB repo and I'll just put it right in
+
+55
+00:03:34,370 --> 00:03:35,640
+the one we've been using right along.
+
+56
+00:03:36,140 --> 00:03:42,770
+So first of all, let's write an insert event func and this will have the receiver of Postgrads DB Repo
+
+57
+00:03:42,980 --> 00:03:49,280
+and I'll call it insert event and it will take an argument, a model that that doesn't exist yet.
+
+58
+00:03:49,280 --> 00:03:50,420
+But I'll create that in a moment.
+
+59
+00:03:50,990 --> 00:03:58,430
+I'll call it E models dot event and it doesn't return anything except an error potentially.
+
+60
+00:03:59,150 --> 00:04:08,120
+So before we go any further, let's go to our models and add an event type event is a struct.
+
+61
+00:04:08,870 --> 00:04:14,480
+It has an ID, which is an INT, it has a hosted service ID, which is an INT.
+
+62
+00:04:15,380 --> 00:04:17,540
+It has a host ID, which is an INT.
+
+63
+00:04:18,680 --> 00:04:23,330
+It has a service name, which is a string.
+
+64
+00:04:24,890 --> 00:04:27,560
+It has a hostname, which is a string.
+
+65
+00:04:28,790 --> 00:04:31,280
+It has a message which is a string.
+
+66
+00:04:32,670 --> 00:04:42,390
+And it has created that which is time, time and updated at which is time, not time.
+
+67
+00:04:43,470 --> 00:04:45,210
+OK, let's give this a comment.
+
+68
+00:04:48,140 --> 00:04:53,480
+Event model, that's enough for now, and I'll go back to host Postgres.
+
+69
+00:04:53,540 --> 00:05:01,670
+OK, so now that error goes away and as I always do, let me copy the contact stuff from the method
+
+70
+00:05:01,670 --> 00:05:08,270
+right above this one and paste it in there and write a query, first of all, to say return it nil just
+
+71
+00:05:08,270 --> 00:05:09,910
+so we can have that out of the way.
+
+72
+00:05:11,180 --> 00:05:14,390
+And my statement is assign the value of
+
+73
+00:05:17,120 --> 00:05:27,350
+insert into events and we don't need the ID, but we do need the host service ID, the host ID, the
+
+74
+00:05:27,350 --> 00:05:28,460
+service name.
+
+75
+00:05:30,030 --> 00:05:32,430
+The hostname and I'll go to the next line.
+
+76
+00:05:34,180 --> 00:05:48,130
+The message created at and updated at Values Dollar Sign one and how many are there, one, two, three,
+
+77
+00:05:48,130 --> 00:05:51,610
+four, five, six, seven dollar sign.
+
+78
+00:05:51,610 --> 00:05:52,810
+Two dollar sign.
+
+79
+00:05:54,310 --> 00:06:02,590
+Three dollar sign for dollar sign, five dollar signs, six dollar signs, seven, I don't care about
+
+80
+00:06:02,590 --> 00:06:06,250
+returning the idea or anything because I just want to insert this in the database.
+
+81
+00:06:07,300 --> 00:06:12,370
+So we're going to insert now so we don't care about the result.
+
+82
+00:06:13,160 --> 00:06:21,100
+We do care about the error is a sign the value of IMDB, not exact context, handed the context, handed
+
+83
+00:06:21,100 --> 00:06:25,060
+our statement, and then I'll put these on separate lines so they're more readable.
+
+84
+00:06:26,060 --> 00:06:34,090
+So the first argument is idot host service idee and I'll duplicate this a few times.
+
+85
+00:06:35,110 --> 00:06:42,340
+The second one is the host ID, the third one is service name.
+
+86
+00:06:43,510 --> 00:06:45,010
+The fourth one is hostname.
+
+87
+00:06:48,700 --> 00:06:54,010
+The fifth one is the actual message we're getting back as a result of the test where the state has changed.
+
+88
+00:06:55,860 --> 00:06:56,610
+And.
+
+89
+00:06:58,730 --> 00:07:06,620
+Time now and time now, now that we have everything we need here, let's go look at this.
+
+90
+00:07:06,620 --> 00:07:08,200
+First of all, let's just finish this up.
+
+91
+00:07:08,690 --> 00:07:09,710
+We'll check for the error.
+
+92
+00:07:10,130 --> 00:07:15,170
+If error is not equal to nil, return error, otherwise return nil.
+
+93
+00:07:15,300 --> 00:07:18,290
+OK, so that takes care of the insert event.
+
+94
+00:07:18,410 --> 00:07:23,750
+But let's make sure we have everything we need because I have a feeling I missed something inserts an
+
+95
+00:07:23,750 --> 00:07:26,120
+event into the database.
+
+96
+00:07:27,100 --> 00:07:33,050
+OK, so let's go back and look at that screen on our web app event type.
+
+97
+00:07:33,710 --> 00:07:35,360
+I don't think I have anywhere for that.
+
+98
+00:07:35,360 --> 00:07:39,200
+So let's go back and just run our migration down.
+
+99
+00:07:39,260 --> 00:07:41,300
+So to migrate down.
+
+100
+00:07:42,920 --> 00:07:50,120
+That should delete our event table and let's go back into our migration, which is right here, and
+
+101
+00:07:50,120 --> 00:07:51,590
+added event type in there as well.
+
+102
+00:07:51,620 --> 00:07:52,580
+We'll make that a string.
+
+103
+00:07:54,170 --> 00:07:58,490
+So we'll call this I'll put it right as the second thing to call them
+
+104
+00:08:01,580 --> 00:08:03,650
+event type has to be double quotes.
+
+105
+00:08:07,530 --> 00:08:08,850
+Which is a string
+
+106
+00:08:12,090 --> 00:08:18,960
+and it has no default, so we'll just put those like that close our parentheses and let's try writing
+
+107
+00:08:18,960 --> 00:08:23,070
+that migration again, so to migrate there.
+
+108
+00:08:24,350 --> 00:08:31,530
+Now we'll have to go fix our model and write here event type, which will be a string.
+
+109
+00:08:32,760 --> 00:08:36,060
+OK, and back to host up Postgres.
+
+110
+00:08:36,060 --> 00:08:44,850
+We want to insert event type as the third one, which means this goes to eight because we have a new
+
+111
+00:08:45,030 --> 00:08:48,900
+thing we're inserting here and idot event type.
+
+112
+00:08:49,990 --> 00:08:51,720
+OK, so that's our insert.
+
+113
+00:08:51,900 --> 00:08:52,970
+That should take care of that.
+
+114
+00:08:52,980 --> 00:08:53,390
+All right.
+
+115
+00:08:54,000 --> 00:09:00,210
+But we also need some means of getting all of the records that exist sorted properly.
+
+116
+00:09:00,420 --> 00:09:05,070
+So func M Postgrads DB Repo.
+
+117
+00:09:05,550 --> 00:09:13,140
+I'll just call this get all events and it takes no arguments and it returns a slice of models Daudt
+
+118
+00:09:13,140 --> 00:09:15,720
+event and potentially an error.
+
+119
+00:09:17,640 --> 00:09:25,020
+Copy the context stuff pasted in here and read our query queries.
+
+120
+00:09:25,020 --> 00:09:29,250
+Assign the value of select ID.
+
+121
+00:09:31,420 --> 00:09:38,860
+Postal Service ID now, event type, event type, Postal Service ID.
+
+122
+00:09:40,600 --> 00:09:50,050
+Hosted, so event type, host service, I'd host hosted service name, host name, and I'll go to the
+
+123
+00:09:50,050 --> 00:09:50,620
+next line.
+
+124
+00:09:53,900 --> 00:10:05,450
+Message created at an updated app from from events ordered by created.
+
+125
+00:10:07,640 --> 00:10:09,140
+OK, so that's our query.
+
+126
+00:10:10,850 --> 00:10:11,810
+Now let's execute it.
+
+127
+00:10:11,960 --> 00:10:19,310
+First of all, let's create a variable to store our results in VAR events is a type slice of models
+
+128
+00:10:19,610 --> 00:10:20,120
+event.
+
+129
+00:10:21,140 --> 00:10:25,220
+So we have rows potentially an error or assign the value of.
+
+130
+00:10:26,550 --> 00:10:37,290
+Magdeburg query context and at the context, handed our query check for an error, if error is not equal
+
+131
+00:10:37,290 --> 00:10:39,840
+to nil, then.
+
+132
+00:10:41,840 --> 00:10:43,970
+Return events and error.
+
+133
+00:10:47,050 --> 00:10:50,860
+Defer Roseburg close so we don't run into a memory leak.
+
+134
+00:10:52,600 --> 00:11:03,040
+And now for DOT next, we'll create a variable to store the current iteration of the row var e now EV
+
+135
+00:11:03,640 --> 00:11:05,680
+is of type models event.
+
+136
+00:11:09,370 --> 00:11:17,320
+And error is a sign the value of rose dot scam and I'll scan into the newly created variable ampersand
+
+137
+00:11:17,320 --> 00:11:20,280
+Eve ID and duplicate that a few times.
+
+138
+00:11:21,040 --> 00:11:23,670
+The second argument is event type.
+
+139
+00:11:24,550 --> 00:11:27,870
+The third argument is hosted service ID.
+
+140
+00:11:28,960 --> 00:11:30,990
+The fourth one is host ID.
+
+141
+00:11:32,800 --> 00:11:36,190
+The fifth one is the service name.
+
+142
+00:11:38,080 --> 00:11:39,730
+Next is Hostname.
+
+143
+00:11:43,480 --> 00:11:51,880
+After that comes message then created and updated at which will never change because you're never updating
+
+144
+00:11:51,880 --> 00:11:53,060
+this, but I'll grab it anyway.
+
+145
+00:11:53,770 --> 00:11:56,140
+OK, check for an error.
+
+146
+00:11:57,100 --> 00:12:08,020
+If error is not equal to nil, then return events and the error otherwise appended to the slice and
+
+147
+00:12:08,020 --> 00:12:14,110
+our variable is called events equals append events and Evvie.
+
+148
+00:12:15,520 --> 00:12:19,300
+And finally return events and nil.
+
+149
+00:12:19,900 --> 00:12:22,180
+OK, let's give this a comment.
+
+150
+00:12:26,250 --> 00:12:30,060
+Gets all events and copy signature.
+
+151
+00:12:32,820 --> 00:12:40,920
+And go to the repository and paste it in there and then go back again and get the other one we created
+
+152
+00:12:40,920 --> 00:12:42,240
+and copy its signature.
+
+153
+00:12:44,570 --> 00:12:47,870
+And go back to the repository and paste that in there.
+
+154
+00:12:48,050 --> 00:12:50,840
+OK, so now we have this information.
+
+155
+00:12:50,840 --> 00:12:52,400
+So let's go back to our roots file.
+
+156
+00:12:52,460 --> 00:12:57,200
+We have a means of getting this information and let's find out what the URL is to display that page
+
+157
+00:12:57,200 --> 00:12:58,850
+slash admin slash events.
+
+158
+00:12:58,850 --> 00:13:02,560
+So let's find that handler right here.
+
+159
+00:13:03,200 --> 00:13:04,380
+So it's just called events.
+
+160
+00:13:05,540 --> 00:13:08,030
+And here we want to get all the events.
+
+161
+00:13:08,030 --> 00:13:11,380
+And of course, we don't have any at the moment, but we can go get an empty slice.
+
+162
+00:13:11,930 --> 00:13:18,650
+So this will turn into a sign because we need to actually have it here.
+
+163
+00:13:20,500 --> 00:13:30,950
+There is a sign the value of repo dbag get all events right there if error is not equal to nil.
+
+164
+00:13:33,630 --> 00:13:39,810
+Actually, I need two arguments here, events, and er, that's better if er is not equal to nil, I'll
+
+165
+00:13:39,810 --> 00:13:45,300
+just log print, line the error and return and you'll do better.
+
+166
+00:13:45,300 --> 00:13:47,370
+Er checking in your production code, of course.
+
+167
+00:13:48,030 --> 00:13:58,620
+Now we need to have a data variable is a sign the value of make jet lag var map and data set events
+
+168
+00:13:59,160 --> 00:14:03,960
+and we'll just put in our events variable and pass that right here.
+
+169
+00:14:05,650 --> 00:14:06,040
+Data.
+
+170
+00:14:07,270 --> 00:14:13,240
+OK, so this should compile and run, let's make sure it does before we go any further, we'll run this.
+
+171
+00:14:16,040 --> 00:14:20,660
+OK, and let's go load that event's page just to make sure that things show up, even though there's
+
+172
+00:14:20,660 --> 00:14:25,010
+no data in there and we have an error and the error is syntax error.
+
+173
+00:14:25,610 --> 00:14:28,420
+So that's an error in our get all events.
+
+174
+00:14:28,430 --> 00:14:31,430
+I left a closing parentheses, which you undoubtedly noticed.
+
+175
+00:14:31,460 --> 00:14:34,520
+So let me go fix that, get all of that.
+
+176
+00:14:34,520 --> 00:14:38,420
+So insert into events this values this that one's OK.
+
+177
+00:14:39,230 --> 00:14:41,390
+Select ID event type.
+
+178
+00:14:41,540 --> 00:14:42,580
+Where did that come from.
+
+179
+00:14:43,520 --> 00:14:44,090
+That's better.
+
+180
+00:14:44,390 --> 00:14:47,420
+OK, so let's stop it and start it again.
+
+181
+00:14:51,750 --> 00:14:56,880
+And just reload this page and there it's displaying nothing because there's nothing to display, but
+
+182
+00:14:56,880 --> 00:14:59,270
+let's go fix that template before we go any further.
+
+183
+00:14:59,280 --> 00:15:07,410
+So the template is called let me hide this back to our handlers events jet.
+
+184
+00:15:07,410 --> 00:15:10,920
+So let's go find events dot jet right here.
+
+185
+00:15:13,050 --> 00:15:14,790
+And we're just going to put a range in here.
+
+186
+00:15:16,380 --> 00:15:21,480
+So I'll say if Lenn events is greater than zero.
+
+187
+00:15:24,070 --> 00:15:24,760
+ELT's.
+
+188
+00:15:26,550 --> 00:15:27,090
+And.
+
+189
+00:15:30,290 --> 00:15:35,120
+So if it's greater than zero, then we want to range through all the events, range events.
+
+190
+00:15:37,970 --> 00:15:45,510
+And and inside of that will have a table row and then some TDs, and the first one will be the event
+
+191
+00:15:45,530 --> 00:15:48,280
+type, which will be Daudt event type.
+
+192
+00:15:49,130 --> 00:15:54,880
+And I'll just duplicate this one, two, three, four more times, two, three, four.
+
+193
+00:15:57,170 --> 00:16:02,780
+So dot hostname, dot service name.
+
+194
+00:16:04,910 --> 00:16:08,510
+And then we're going to have a date and time will be.
+
+195
+00:16:11,980 --> 00:16:14,380
+Take from Lambe said, I called it, I can't remember.
+
+196
+00:16:16,160 --> 00:16:22,640
+I think it's called date from layout, and then we pass it the argument of created ad.
+
+197
+00:16:24,790 --> 00:16:31,720
+And we passed that the format that we want to use, which is two zero six zero one zero two three zero
+
+198
+00:16:31,720 --> 00:16:37,610
+four zero five p.m. and the event type is the last thing is the message.
+
+199
+00:16:38,630 --> 00:16:41,080
+OK, so that part should work.
+
+200
+00:16:41,290 --> 00:16:48,730
+If there's nothing in there, then just display tr td call span equals one, two, three, four, five.
+
+201
+00:16:50,140 --> 00:16:50,950
+No events.
+
+202
+00:16:51,970 --> 00:16:53,520
+OK, so that should compile.
+
+203
+00:16:53,530 --> 00:16:55,930
+If I get everything right now I think I'd look at that.
+
+204
+00:16:56,110 --> 00:16:57,420
+Good thing I noticed it there.
+
+205
+00:16:58,060 --> 00:16:58,840
+Let's try that.
+
+206
+00:16:59,110 --> 00:17:03,190
+Reload this and it should say no entries found events.
+
+207
+00:17:05,390 --> 00:17:11,570
+Unclosed less parentheses online, 45, line 45 right here.
+
+208
+00:17:12,650 --> 00:17:14,870
+Try that again, reload.
+
+209
+00:17:15,320 --> 00:17:16,670
+There it is, no events.
+
+210
+00:17:16,700 --> 00:17:18,410
+So it has no events in there whatsoever.
+
+211
+00:17:20,060 --> 00:17:21,910
+So now let's go and insert events.
+
+212
+00:17:21,950 --> 00:17:27,020
+Now, we have a method of doing that in the database, but where do we actually want to insert events?
+
+213
+00:17:27,050 --> 00:17:28,150
+Well, let's go back here.
+
+214
+00:17:28,610 --> 00:17:32,390
+We want to insert events any time the status changes.
+
+215
+00:17:32,780 --> 00:17:34,610
+So let's find out for perform checks.
+
+216
+00:17:34,850 --> 00:17:39,650
+Go right here and let's see where we do.
+
+217
+00:17:40,400 --> 00:17:41,860
+Events have changed.
+
+218
+00:17:41,870 --> 00:17:44,120
+Well, we want to do that, obviously, on test check.
+
+219
+00:17:44,120 --> 00:17:44,540
+No.
+
+220
+00:17:45,480 --> 00:17:46,500
+Not manual check.
+
+221
+00:17:46,530 --> 00:17:49,840
+We want to test service for host right there.
+
+222
+00:17:50,610 --> 00:17:57,420
+So here we test the service for the host, then we broadcast to clients if appropriate, if the status
+
+223
+00:17:57,420 --> 00:17:58,290
+has changed.
+
+224
+00:17:58,290 --> 00:18:04,470
+And it seems to me that this is obviously the place where we want to put in the fact that an event has
+
+225
+00:18:04,470 --> 00:18:05,280
+taken place.
+
+226
+00:18:06,150 --> 00:18:09,480
+So that's as simple as air is assigned.
+
+227
+00:18:09,480 --> 00:18:16,080
+The value of repo dbag insert an event and we have to put in an event.
+
+228
+00:18:16,620 --> 00:18:18,830
+So we'll build up that model right here.
+
+229
+00:18:20,100 --> 00:18:24,120
+The event is of type models event.
+
+230
+00:18:26,120 --> 00:18:34,970
+And it's event dot, actually, let's do it this way, it's a little easier event is a sign the value
+
+231
+00:18:34,970 --> 00:18:42,210
+of models dot event and we'll just say fill all fields and deleted because we're not using it.
+
+232
+00:18:43,460 --> 00:18:45,170
+OK, event type.
+
+233
+00:18:45,170 --> 00:18:46,490
+We'll have to figure out what that is in a minute.
+
+234
+00:18:46,490 --> 00:18:47,660
+I'll get back to that in a moment.
+
+235
+00:18:47,930 --> 00:18:49,120
+Hosted service ID.
+
+236
+00:18:49,160 --> 00:19:00,680
+Well, we have the host service idiots who ID Hoshide is idee service name is escort service DOT service
+
+237
+00:19:00,680 --> 00:19:01,040
+name.
+
+238
+00:19:02,360 --> 00:19:07,370
+Hostname is a dot hostname or we can get it from the host.
+
+239
+00:19:07,370 --> 00:19:09,360
+It doesn't matter the message.
+
+240
+00:19:09,500 --> 00:19:11,180
+So what is the message.
+
+241
+00:19:11,210 --> 00:19:15,140
+Well we get the message when we actually.
+
+242
+00:19:16,400 --> 00:19:19,250
+Via message, a new status, right, their message.
+
+243
+00:19:22,050 --> 00:19:28,170
+So message created and updated at our time dot now.
+
+244
+00:19:30,190 --> 00:19:37,810
+And time, not now, so the only thing we haven't dealt with here is the event type and what should
+
+245
+00:19:37,810 --> 00:19:38,410
+that be?
+
+246
+00:19:38,890 --> 00:19:42,210
+Well, I would think that it's nothing more than the new status.
+
+247
+00:19:42,490 --> 00:19:51,030
+So let's put in new status and that will be a problem, healthy pending warning, that sort of thing.
+
+248
+00:19:51,040 --> 00:19:52,590
+And that should take care of it for us.
+
+249
+00:19:53,530 --> 00:19:54,880
+So we have the area here.
+
+250
+00:19:54,890 --> 00:19:56,050
+Let's check for the error.
+
+251
+00:19:56,380 --> 00:20:00,700
+If error is not equal to nil, I'll just log there.
+
+252
+00:20:03,580 --> 00:20:07,480
+OK, so that will push in the new event.
+
+253
+00:20:07,720 --> 00:20:12,070
+OK, so I'm going to put a comment in here save event.
+
+254
+00:20:14,900 --> 00:20:23,300
+Now, let's stop our application, start our application and see if we can make this work, so I'll
+
+255
+00:20:23,300 --> 00:20:24,660
+go back to my overview.
+
+256
+00:20:25,250 --> 00:20:32,150
+Currently, I have one healthy service and all I should have to do is go back to my idy switched to
+
+257
+00:20:32,150 --> 00:20:36,350
+my Web server that I have running in the background and stop it and come back here.
+
+258
+00:20:36,380 --> 00:20:38,600
+And this should change in 10 seconds.
+
+259
+00:20:38,600 --> 00:20:41,390
+And I should see something in the schedules table so changed.
+
+260
+00:20:41,390 --> 00:20:42,320
+And I have a problem.
+
+261
+00:20:43,160 --> 00:20:44,210
+Not the schedule table.
+
+262
+00:20:44,210 --> 00:20:45,140
+The events table.
+
+263
+00:20:46,120 --> 00:20:48,400
+And I have no events, why not?
+
+264
+00:20:50,980 --> 00:20:59,050
+Syntax error at ordinaire message is I'm sloppy today, so we'll go fix that, and that would be in
+
+265
+00:20:59,050 --> 00:21:01,870
+the insert part in House Postgrads.
+
+266
+00:21:01,870 --> 00:21:02,830
+Hide this.
+
+267
+00:21:05,170 --> 00:21:06,430
+Insert into events.
+
+268
+00:21:07,680 --> 00:21:09,450
+Oh, yeah, I do that all the time.
+
+269
+00:21:09,480 --> 00:21:10,480
+Leave that comma out.
+
+270
+00:21:10,590 --> 00:21:12,170
+OK, so let's stop this.
+
+271
+00:21:12,810 --> 00:21:13,680
+Start this.
+
+272
+00:21:15,910 --> 00:21:23,740
+Go back to my my, uh, my Web browser, look at the overview page, and this time I'll start the Web
+
+273
+00:21:23,740 --> 00:21:28,830
+server to force the change in status and a reported healthy.
+
+274
+00:21:29,980 --> 00:21:33,640
+Now, if I go to the events page, I have a healthy perfect.
+
+275
+00:21:33,730 --> 00:21:36,610
+So now we have a means of displaying all of our events.
+
+276
+00:21:36,760 --> 00:21:44,440
+And I used a little plugin that gives a nice dynamic table and Padgett's when you get past 10 entries
+
+277
+00:21:44,680 --> 00:21:46,150
+and you can look at the source code for that.
+
+278
+00:21:46,150 --> 00:21:48,240
+I'm sure you're familiar with this sort of thing anyway.
+
+279
+00:21:48,730 --> 00:21:49,780
+So that one is done.
+
+280
+00:21:50,380 --> 00:21:55,840
+The next thing and this has been bothering me for some time is if we go back to the overview and we
+
+281
+00:21:55,840 --> 00:22:00,820
+look at the healthy services or any of these, that message is left empty.
+
+282
+00:22:01,270 --> 00:22:04,690
+And if you look in the database, there's actually nowhere to store that.
+
+283
+00:22:04,690 --> 00:22:09,820
+So let me bring up my my client and go to hosted services.
+
+284
+00:22:10,240 --> 00:22:12,790
+I have nowhere to put the last message in there.
+
+285
+00:22:12,790 --> 00:22:15,400
+I have last check, but I don't have last message.
+
+286
+00:22:15,670 --> 00:22:21,250
+So I'm going to add a column to the database and populate that and we'll take care of that in the next
+
+287
+00:22:21,250 --> 00:22:21,720
+election.

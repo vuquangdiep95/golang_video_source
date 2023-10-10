@@ -1,0 +1,699 @@
+1
+00:00:01,060 --> 00:00:07,120
+So we've created some JavaScript on our homepage, our chat page, that allows us to handle specific
+
+2
+00:00:07,120 --> 00:00:15,070
+responses from the server, and we also have a means of sending certain kinds of information to the
+
+3
+00:00:15,070 --> 00:00:15,530
+server.
+
+4
+00:00:16,000 --> 00:00:18,160
+So now we need to work on our handlers a little bit.
+
+5
+00:00:18,160 --> 00:00:23,890
+And what we need to do is to think about how we're going to handle our requests from the client to start
+
+6
+00:00:23,890 --> 00:00:24,100
+with.
+
+7
+00:00:24,490 --> 00:00:32,200
+So right now, we have just one handler, one handler specifically for our WebSocket standpoint.
+
+8
+00:00:32,710 --> 00:00:39,880
+And what I want to do is after someone connects, I want to throw them off to a good routine that'll
+
+9
+00:00:39,880 --> 00:00:41,040
+run forever.
+
+10
+00:00:41,350 --> 00:00:48,670
+And if it stops, it'll start itself back up and that will actually determine what we do with a particular
+
+11
+00:00:48,670 --> 00:00:50,130
+request from the client.
+
+12
+00:00:50,260 --> 00:00:53,740
+So I'm going to call that listen for W.S., for example.
+
+13
+00:00:54,910 --> 00:01:00,730
+And when I get a request, when when I get a payload coming in and the payload will be in this format
+
+14
+00:01:00,730 --> 00:01:07,510
+right here, I'll determine what I do based upon the action and I'll hand that off to another girl routine
+
+15
+00:01:07,840 --> 00:01:14,440
+that listens to a specific channel and does different things depending on the content of the payload.
+
+16
+00:01:14,470 --> 00:01:15,940
+So we're going to have to go routine's.
+
+17
+00:01:16,660 --> 00:01:21,370
+The other thing we need to worry about, of course, is one thing I need to keep track of is who's in
+
+18
+00:01:21,370 --> 00:01:24,910
+the chat room, because I need to know who I send messages to.
+
+19
+00:01:25,270 --> 00:01:31,240
+And I also need to be able to display the list of connected users on that page where it says who's online.
+
+20
+00:01:31,750 --> 00:01:34,710
+So let's create a couple of new variables right up here on the top.
+
+21
+00:01:34,720 --> 00:01:40,540
+I'm going to create a channel and I'm going to create a place to hold all of the connected users.
+
+22
+00:01:40,840 --> 00:01:47,350
+So we'll create a new variable via channel for Web server WebSocket channel, and that will be equal
+
+23
+00:01:47,350 --> 00:01:52,780
+to make Channe W.S. Payload.
+
+24
+00:01:55,560 --> 00:01:56,100
+Right here.
+
+25
+00:01:56,700 --> 00:02:02,310
+So this is a channel that will only accept things of type W.S. payload.
+
+26
+00:02:02,910 --> 00:02:07,230
+The other thing I could create is a new clients variable for our clients.
+
+27
+00:02:07,260 --> 00:02:09,540
+These are the connected clients and that will be a map.
+
+28
+00:02:09,930 --> 00:02:16,070
+Make a map of type website WebSocket connection, because that's how I keep track of them.
+
+29
+00:02:16,080 --> 00:02:19,290
+Everybody has their own WebSocket connection with a string in there.
+
+30
+00:02:19,710 --> 00:02:21,450
+OK, so two new variables.
+
+31
+00:02:21,450 --> 00:02:29,070
+I'm not using them yet, but let's go do something with them when someone connects to the server with
+
+32
+00:02:29,070 --> 00:02:30,160
+a WebSocket connection.
+
+33
+00:02:30,180 --> 00:02:33,290
+I'll add them to that map right down here.
+
+34
+00:02:33,450 --> 00:02:38,520
+I'll create a new variable icon and I'll make that of type WebSocket connection.
+
+35
+00:02:38,760 --> 00:02:42,030
+And inside of that I'll just put Con W.S..
+
+36
+00:02:45,690 --> 00:02:51,510
+And then I'll add that to the map clients, which is my map con, which is the variable I just created
+
+37
+00:02:51,960 --> 00:02:54,660
+and I'll just put nothing in there, doesn't have to have anything in it right now.
+
+38
+00:02:54,660 --> 00:02:56,840
+So I'm not going to put anything, any value in there.
+
+39
+00:02:56,850 --> 00:02:59,040
+I just want to have an entry in the map.
+
+40
+00:02:59,040 --> 00:03:00,900
+And that's sufficient for our purposes right now.
+
+41
+00:03:01,980 --> 00:03:04,460
+We'll be using that later on and it won't be an empty string.
+
+42
+00:03:04,590 --> 00:03:05,730
+So I've now added that.
+
+43
+00:03:05,730 --> 00:03:06,570
+Use it to the map.
+
+44
+00:03:07,590 --> 00:03:09,000
+What's the next thing I want to do?
+
+45
+00:03:09,030 --> 00:03:14,870
+Well, I actually want to take this these people away from this endpoint and put them over into a go
+
+46
+00:03:14,880 --> 00:03:15,300
+routine.
+
+47
+00:03:15,300 --> 00:03:19,290
+So let's create a new good routine and I'll call this funk.
+
+48
+00:03:19,830 --> 00:03:21,930
+Listen for us.
+
+49
+00:03:21,930 --> 00:03:26,250
+And it's going to take one argument and the argument will be a connection, which is a pointer to a
+
+50
+00:03:26,250 --> 00:03:27,240
+WebSocket connection.
+
+51
+00:03:28,140 --> 00:03:28,770
+Try that again.
+
+52
+00:03:30,090 --> 00:03:33,930
+WebSocket connection that doesn't return anything.
+
+53
+00:03:34,890 --> 00:03:41,190
+And inside of that, I want to make sure that if this go routine stops for whatever reason, it comes
+
+54
+00:03:41,190 --> 00:03:41,580
+back.
+
+55
+00:03:41,610 --> 00:03:45,960
+So I'll just say defer, in other words, when this function stops executing.
+
+56
+00:03:47,630 --> 00:03:54,110
+Will execute this function and of course, it has to have parentheses at the end inside, we'll just
+
+57
+00:03:54,110 --> 00:03:59,210
+say if our which is just a variable uncrating equals recovered.
+
+58
+00:03:59,570 --> 00:04:05,750
+So if you panic for some reason and our is not equal to nil, then logged print line.
+
+59
+00:04:06,970 --> 00:04:09,120
+And I'll just say error.
+
+60
+00:04:16,020 --> 00:04:18,060
+And formatted as print f.
+
+61
+00:04:19,990 --> 00:04:27,580
+And I'll just put the area in their present V and R, so this will recover us if we die.
+
+62
+00:04:27,790 --> 00:04:29,960
+Now, what do I want to do inside of this function?
+
+63
+00:04:29,980 --> 00:04:35,740
+Well, I'm not sure yet, but I know I'm going to get a payload periodically.
+
+64
+00:04:35,750 --> 00:04:44,980
+So let's create a variable via payload payload and we'll just say for and we'll just execute this forever
+
+65
+00:04:45,520 --> 00:04:48,650
+and we'll say error is assigned conduct rejoice.
+
+66
+00:04:48,670 --> 00:04:51,160
+In other words, no, not remote address.
+
+67
+00:04:52,120 --> 00:04:53,380
+Read, Jason.
+
+68
+00:04:53,800 --> 00:04:56,410
+And what we're going to read is into payload.
+
+69
+00:04:59,450 --> 00:05:08,240
+If error is not equal to nil, don't do anything, do nothing, because there's just no payload else.
+
+70
+00:05:14,700 --> 00:05:23,640
+If there is no error, then payload Darkon is equal to my pointer to con.
+
+71
+00:05:26,770 --> 00:05:28,500
+And send this off to my question.
+
+72
+00:05:33,340 --> 00:05:41,170
+OK, so I've got this function, I'm not doing anything with it, but up here in W.S. End Point, after
+
+73
+00:05:41,170 --> 00:05:44,380
+I've done all of these things, I'll just start this go routine.
+
+74
+00:05:44,770 --> 00:05:51,130
+Go listen for W.S., which I see I spelled wrong, and I should probably fix that right now.
+
+75
+00:05:52,420 --> 00:06:02,470
+That's better, and I'm going to pass it on a reference to Con, so somebody connects, we start this
+
+76
+00:06:02,470 --> 00:06:05,380
+go routine and it runs forever.
+
+77
+00:06:05,380 --> 00:06:07,300
+If it dies, it starts itself back up.
+
+78
+00:06:07,480 --> 00:06:12,400
+And all that it does is it listens for a payload.
+
+79
+00:06:12,640 --> 00:06:15,880
+And if it gets the payload, it sends it off to that channel on the channel.
+
+80
+00:06:15,880 --> 00:06:17,450
+Doesn't it doesn't it doesn't do anything.
+
+81
+00:06:17,770 --> 00:06:19,150
+We're not actually listening to it.
+
+82
+00:06:19,270 --> 00:06:21,400
+So let's create a new function down here.
+
+83
+00:06:23,920 --> 00:06:32,350
+Funk, listen to us channel, which will have to start at some point, and we'll do that in our main
+
+84
+00:06:32,590 --> 00:06:40,810
+function and inside of this, what we want to do is to create a variable fire response, which will
+
+85
+00:06:40,810 --> 00:06:42,440
+be WSJ in response.
+
+86
+00:06:42,460 --> 00:06:44,460
+This is what we're going to send back to the user.
+
+87
+00:06:44,470 --> 00:06:47,170
+That's the type that I specified right up here.
+
+88
+00:06:48,730 --> 00:06:49,910
+And I want to listen.
+
+89
+00:06:49,930 --> 00:06:53,170
+So first of all, we'll say create a variable.
+
+90
+00:06:53,200 --> 00:06:56,320
+I'll just call it E for event.
+
+91
+00:06:56,740 --> 00:06:59,380
+And that reads from WC.
+
+92
+00:07:00,640 --> 00:07:09,520
+OK, and then for, again, an infinite for loop that should be inside of here, actually try that again.
+
+93
+00:07:11,500 --> 00:07:12,820
+But right now, let's just make it easier.
+
+94
+00:07:13,000 --> 00:07:15,670
+Let's just say response equals.
+
+95
+00:07:19,400 --> 00:07:26,640
+Got here and a response, that message equals some message.
+
+96
+00:07:29,570 --> 00:07:30,320
+So we've got that.
+
+97
+00:07:30,390 --> 00:07:37,580
+OK, and is we get something from here, let's say.
+
+98
+00:07:39,550 --> 00:07:43,120
+Some message and action was.
+
+99
+00:07:44,750 --> 00:07:50,180
+And I'll put a percent s here, I just need to do something with that variable to get rid of the error
+
+100
+00:07:50,840 --> 00:07:52,880
+and I'll put idot action.
+
+101
+00:07:57,370 --> 00:08:00,260
+And we'll change this to a format of best print F.
+
+102
+00:08:02,510 --> 00:08:10,910
+There, OK, so I've now anytime I get a value from the channel, I'm creating and I'm using my response
+
+103
+00:08:10,910 --> 00:08:14,940
+variable that had cleared up here and I'm populating it with some with some information.
+
+104
+00:08:15,170 --> 00:08:20,770
+The last thing I need to do is I need to actually broadcast this information to all of the users.
+
+105
+00:08:21,420 --> 00:08:23,170
+I don't want to do that inside this for loop.
+
+106
+00:08:23,180 --> 00:08:29,300
+So instead we'll create another function func, which I'll call broadcast to all.
+
+107
+00:08:35,440 --> 00:08:41,110
+And it's going to take the argument of response, which we're going to pass it from this go routine
+
+108
+00:08:41,110 --> 00:08:44,400
+up here, and that's a type Jason response.
+
+109
+00:08:46,030 --> 00:08:49,360
+So from here, what I want to do is broadcast this to everyone.
+
+110
+00:08:49,370 --> 00:08:51,340
+I need a list of all of the clients.
+
+111
+00:08:51,340 --> 00:08:53,170
+And of course, we already defined that.
+
+112
+00:08:53,170 --> 00:09:00,820
+We have our map clients so I can sit for client is assigned the value of range clients.
+
+113
+00:09:02,200 --> 00:09:05,020
+And all I'm going to do here is say broadcast.
+
+114
+00:09:05,020 --> 00:09:09,050
+This error is equal to client DOT.
+
+115
+00:09:09,100 --> 00:09:09,850
+Right, Jason.
+
+116
+00:09:10,510 --> 00:09:11,650
+And I'm going to pass it.
+
+117
+00:09:11,930 --> 00:09:13,030
+My response.
+
+118
+00:09:14,990 --> 00:09:18,080
+And I'll check for an error if error is not equal to nil.
+
+119
+00:09:19,850 --> 00:09:20,750
+What do I want to do?
+
+120
+00:09:20,780 --> 00:09:26,690
+I'll just say log, print, line, websocket error.
+
+121
+00:09:27,150 --> 00:09:30,800
+But this usually means that someone has just left the page and they don't exist here anymore.
+
+122
+00:09:31,130 --> 00:09:38,630
+And then I'll just not do anything with the error equal to client close close their connection and remove
+
+123
+00:09:38,630 --> 00:09:39,380
+them from the map.
+
+124
+00:09:39,890 --> 00:09:42,270
+Delete clients client.
+
+125
+00:09:43,130 --> 00:09:50,720
+OK, broadcast all is now a function I can call from up here broadcast to all and we're putting in response.
+
+126
+00:09:52,000 --> 00:09:53,990
+OK, so let's go through this whole thing.
+
+127
+00:09:55,760 --> 00:09:57,430
+Somebody connects to our webpage.
+
+128
+00:09:57,440 --> 00:10:01,090
+We display the web page using our home function wherever that is right here.
+
+129
+00:10:01,820 --> 00:10:08,360
+And once they display that page, we actually automatically call W.S. and point to connect.
+
+130
+00:10:08,780 --> 00:10:13,010
+And once they connect, we listen for W.S., we start this go routine.
+
+131
+00:10:13,370 --> 00:10:19,760
+So everything they send us from that point on for this connection will be passed off to listen for W.S.
+
+132
+00:10:20,120 --> 00:10:23,090
+and it starts itself up if it dies, which is no problem.
+
+133
+00:10:23,600 --> 00:10:26,420
+And then we have this infinite loop, which just goes forever.
+
+134
+00:10:26,420 --> 00:10:33,170
+And every time it gets a request with a payload, in other words, we get a JSON post or JSON file from
+
+135
+00:10:33,170 --> 00:10:38,420
+our JavaScript client, then we do something with that payload.
+
+136
+00:10:38,420 --> 00:10:39,920
+We pass it into our channel.
+
+137
+00:10:39,920 --> 00:10:45,080
+And down here this listen to us go go routine, which hasn't started yet, but we'll get to that in
+
+138
+00:10:45,080 --> 00:10:45,500
+a moment.
+
+139
+00:10:45,950 --> 00:10:52,880
+All it's going to do is say every time we get a A payload from the channel we stored in the variable
+
+140
+00:10:52,880 --> 00:10:59,120
+E and we populate some of the members in our response variable and we broadcast to all and broadcast
+
+141
+00:10:59,120 --> 00:11:04,760
+all says for every client that you know about, send them this response.
+
+142
+00:11:05,180 --> 00:11:09,410
+And if we can't actually do that, if we get an error, it means we've lost that client.
+
+143
+00:11:09,410 --> 00:11:14,720
+So we just log the error, we close that connection for that particular client and we remove them from
+
+144
+00:11:14,720 --> 00:11:15,230
+the map.
+
+145
+00:11:15,240 --> 00:11:20,150
+So the last thing we should need to do here is to start this go routine, which I'm going to do right
+
+146
+00:11:20,150 --> 00:11:21,360
+in our main Dongo file.
+
+147
+00:11:21,980 --> 00:11:30,380
+All I'm going to do is say log, print, line, starting channel listener.
+
+148
+00:11:33,770 --> 00:11:38,680
+And I'll start it, and that's in the handler's package, so let's put handlers in front of it.
+
+149
+00:11:45,570 --> 00:11:51,630
+And get rid of this there, that does the import for me, so I should be able to at this point stop
+
+150
+00:11:51,630 --> 00:11:57,990
+my application if it's not running and say go run command Web Stargirl.
+
+151
+00:11:57,990 --> 00:12:02,180
+And again, if you're in Windows, you put a dot there, not a Stargell and Alfio.
+
+152
+00:12:02,370 --> 00:12:03,210
+So it should start.
+
+153
+00:12:03,960 --> 00:12:12,990
+And I should be able to go to my Web browser, open this up, reload it, and we get a message.
+
+154
+00:12:13,020 --> 00:12:13,560
+Look at that.
+
+155
+00:12:14,190 --> 00:12:19,190
+We have a response and the message is all the way down here.
+
+156
+00:12:19,380 --> 00:12:19,950
+Look at this.
+
+157
+00:12:19,950 --> 00:12:27,690
+We have our response from the we have a method or a field inside of this file called data.
+
+158
+00:12:27,690 --> 00:12:30,310
+And it looks like that's where my information went.
+
+159
+00:12:30,600 --> 00:12:33,960
+Now, it's hard to read because I'm not actually parsing this is adjacent file.
+
+160
+00:12:34,470 --> 00:12:37,680
+But if we actually do that, if we go back to our homepage.
+
+161
+00:12:39,530 --> 00:12:44,180
+And find the part where we get that message and instead of logging the message, let's pass it.
+
+162
+00:12:44,660 --> 00:12:50,870
+I'll say J let J equal Jason pass.
+
+163
+00:12:53,440 --> 00:12:58,930
+And I can't pass the message because it's not Jason, I need to pass message data and then we'll log
+
+164
+00:13:00,310 --> 00:13:01,480
+our console log.
+
+165
+00:13:05,560 --> 00:13:13,540
+Now, I called message dot data because if you look at this object, everything that is our job, our
+
+166
+00:13:13,540 --> 00:13:16,210
+Jason file is actually in data right here.
+
+167
+00:13:16,510 --> 00:13:18,540
+OK, so let's reload this page.
+
+168
+00:13:18,550 --> 00:13:20,280
+I'll clear the console, see if we got it right.
+
+169
+00:13:23,590 --> 00:13:24,550
+And there it is.
+
+170
+00:13:26,130 --> 00:13:30,720
+Action message, message type, that's it, so that's exactly what we want.
+
+171
+00:13:30,730 --> 00:13:36,400
+So now we have a means of passing information basically to every connected user.
+
+172
+00:13:37,620 --> 00:13:43,320
+So what we'll do in the next lecture or two is we'll make this a little smarter and not just broadcast
+
+173
+00:13:43,320 --> 00:13:43,950
+got here.
+
+174
+00:13:43,950 --> 00:13:51,630
+Some message in action was will actually vary our response based upon the kind of action we have in
+
+175
+00:13:51,630 --> 00:13:55,200
+our and our request that's passed to the client.

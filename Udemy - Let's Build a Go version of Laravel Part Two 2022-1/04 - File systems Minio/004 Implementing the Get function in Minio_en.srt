@@ -1,0 +1,212 @@
+1
+00:00:00,700 --> 00:00:06,430
+So we have one more function to implement in order to satisfy the interface necessary for our file systems,
+
+2
+00:00:06,430 --> 00:00:11,050
+and that is get and as I've said before, this is one you may not use very much.
+
+3
+00:00:11,050 --> 00:00:13,720
+But remember, you're not writing this for yourself, necessarily.
+
+4
+00:00:13,960 --> 00:00:16,270
+You're writing it for other people to use as well.
+
+5
+00:00:16,270 --> 00:00:21,760
+And there are situations where you may want, may need to get a file from the remote file system and
+
+6
+00:00:21,760 --> 00:00:23,260
+pull it down to the server.
+
+7
+00:00:23,530 --> 00:00:29,740
+Rarely will you do that for an end user, because most file systems have some means of getting a public
+
+8
+00:00:29,740 --> 00:00:31,240
+file built right into them.
+
+9
+00:00:31,570 --> 00:00:34,990
+But in any case, let's implement this functionality because it's not very difficult.
+
+10
+00:00:35,380 --> 00:00:42,940
+So func receiver and pointer to Dominico and this one's just called get, and it has destination as
+
+11
+00:00:42,940 --> 00:00:45,070
+its first parameter, which is just a string.
+
+12
+00:00:45,160 --> 00:00:47,860
+Where do you want to put it and what items do you want to get?
+
+13
+00:00:48,250 --> 00:00:51,220
+And of course, that is a very adequate parameter.
+
+14
+00:00:51,760 --> 00:00:54,640
+One or more strings, and it potentially returns in error.
+
+15
+00:00:55,150 --> 00:00:55,480
+OK.
+
+16
+00:00:56,890 --> 00:01:01,510
+So let's get the context, which I'll copy from right up here to say some typing and I'll need a client
+
+17
+00:01:01,510 --> 00:01:01,780
+too.
+
+18
+00:01:01,790 --> 00:01:05,690
+So I grabbed grab that at the same time and paste those in here.
+
+19
+00:01:05,710 --> 00:01:11,500
+So now I have my contacts to my client, and now we want to go through all of the items because we might
+
+20
+00:01:11,500 --> 00:01:12,850
+have more than one thing we're getting.
+
+21
+00:01:13,120 --> 00:01:13,750
+And go get them.
+
+22
+00:01:14,020 --> 00:01:19,750
+So that's a for loop for don't care about the index, do care about the current item is equal to range
+
+23
+00:01:20,110 --> 00:01:20,560
+items.
+
+24
+00:01:21,340 --> 00:01:27,160
+And that, of course, is a very, very idec parameter that we have at the end of our function signature.
+
+25
+00:01:27,820 --> 00:01:31,020
+So we'll check for an error and we'll call from our client.
+
+26
+00:01:31,030 --> 00:01:36,460
+And there are many ways of getting an object, but I'm going to use f get object, which is the simplest
+
+27
+00:01:36,520 --> 00:01:37,870
+and that requires the context.
+
+28
+00:01:38,260 --> 00:01:41,350
+It requires the bucket name and bucket from the receiver.
+
+29
+00:01:42,160 --> 00:01:47,680
+It requires the actual item to get which is, you know, the value of item on our current iteration
+
+30
+00:01:47,680 --> 00:01:48,220
+through the loop.
+
+31
+00:01:48,640 --> 00:01:50,080
+And then where do you want to put it?
+
+32
+00:01:50,200 --> 00:01:53,170
+Well, we want to put it in format as per def.
+
+33
+00:01:53,320 --> 00:01:55,240
+I'll use that and build my string this way.
+
+34
+00:01:55,870 --> 00:02:04,090
+In my format, string is percent percent as my substitutions or destination, which is a path name and
+
+35
+00:02:04,090 --> 00:02:05,290
+then the name of the file.
+
+36
+00:02:05,290 --> 00:02:08,270
+And of course, that's the actual base name of the file.
+
+37
+00:02:08,289 --> 00:02:15,430
+So once again, we'll use that ever so useful function path dot base and we want the base of item.
+
+38
+00:02:16,120 --> 00:02:16,540
+OK.
+
+39
+00:02:18,100 --> 00:02:23,620
+And the last one is Mineo get object options, which we can just leave empty, but we need to declare
+
+40
+00:02:23,620 --> 00:02:23,710
+it.
+
+41
+00:02:23,710 --> 00:02:30,400
+So Mineo Dot get object options and we'll just leave the curly braces empty.
+
+42
+00:02:30,820 --> 00:02:33,280
+OK, so that takes care of that part.
+
+43
+00:02:33,320 --> 00:02:39,370
+Now let's get on the next line and hit return and check for an error if error is not equal to nil.
+
+44
+00:02:40,750 --> 00:02:47,170
+Then we'll print it out format or print line error, and I'll return the error otherwise if everything
+
+45
+00:02:47,170 --> 00:02:48,250
+goes according to plan.
+
+46
+00:02:49,440 --> 00:02:50,940
+Outside of this for loop.
+
+47
+00:02:52,880 --> 00:02:53,810
+We could just return nil.
+
+48
+00:02:56,420 --> 00:03:01,370
+And that should take care of it, so now we have our get, we have our delete.
+
+49
+00:03:03,670 --> 00:03:05,980
+We have our list and we have her put.
+
+50
+00:03:06,280 --> 00:03:08,810
+And then we have her a little helper function for getting credentials.
+
+51
+00:03:08,830 --> 00:03:14,620
+So at this point, we satisfy the interface efforts, which means we can try this out.
+
+52
+00:03:14,950 --> 00:03:19,300
+Now we've got a couple of steps to take care of before we can actually do that, but we'll get started
+
+53
+00:03:19,300 --> 00:03:20,170
+in the next lecture.
+

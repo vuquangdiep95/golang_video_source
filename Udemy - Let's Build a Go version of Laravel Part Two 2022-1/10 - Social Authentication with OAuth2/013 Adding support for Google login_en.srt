@@ -1,0 +1,260 @@
+1
+00:00:01,450 --> 00:00:05,620
+So let's implement this similar sign on functionality for Google.
+
+2
+00:00:06,340 --> 00:00:09,500
+And you do that, of course, on the Google Cloud platform.
+
+3
+00:00:09,670 --> 00:00:10,750
+Let me go to the dashboard.
+
+4
+00:00:11,140 --> 00:00:16,660
+So if you don't have an account here, you can create one for free that just Google, the Google Cloud
+
+5
+00:00:17,350 --> 00:00:18,940
+platform and create an account.
+
+6
+00:00:19,390 --> 00:00:24,040
+And then, of course, you'll create a project I call mine blender because I haven't had to call it
+
+7
+00:00:24,040 --> 00:00:25,000
+something right here.
+
+8
+00:00:25,480 --> 00:00:27,640
+So create a new project if you don't have one.
+
+9
+00:00:28,240 --> 00:00:30,160
+And then, of course, you want to find the.
+
+10
+00:00:31,130 --> 00:00:34,070
+Both consent screen right here, OK?
+
+11
+00:00:34,640 --> 00:00:37,760
+And once you've got to the oath consent screen part.
+
+12
+00:00:39,510 --> 00:00:43,890
+You're going to want some credentials because without credentials, you can't actually do anything,
+
+13
+00:00:43,900 --> 00:00:49,230
+so over here on the left hand side, you'll see credentials, create some and you'll create some new
+
+14
+00:00:49,230 --> 00:00:49,800
+credentials.
+
+15
+00:00:49,830 --> 00:00:57,250
+Now I created some already and they're listed right here, and what you want are Oath 2.0 client IDs
+
+16
+00:00:57,270 --> 00:00:58,650
+and the one I want right here.
+
+17
+00:00:58,680 --> 00:00:59,430
+So I have this one.
+
+18
+00:01:00,960 --> 00:01:02,850
+And in here, you need to specify a few things.
+
+19
+00:01:03,390 --> 00:01:08,270
+And the way that Google handles things is a little bit different than the way that GitHub handles things.
+
+20
+00:01:08,340 --> 00:01:15,420
+So on GitHub, we're only allowed to have one callback URL or, as Google calls it, an authorized redirect
+
+21
+00:01:15,420 --> 00:01:15,870
+URL.
+
+22
+00:01:16,620 --> 00:01:21,330
+So of course, in development, you create one set of credentials for development and in production,
+
+23
+00:01:21,330 --> 00:01:27,180
+you just go to GitHub and create new credentials with a different callback URL, and you use that one
+
+24
+00:01:27,180 --> 00:01:27,780
+for production.
+
+25
+00:01:27,900 --> 00:01:34,740
+But Google allows you to have multiple you arise here, so you create one for a live site like this.
+
+26
+00:01:35,130 --> 00:01:36,930
+And one here like for development.
+
+27
+00:01:36,930 --> 00:01:38,220
+And this is the one we're going to use.
+
+28
+00:01:38,220 --> 00:01:43,560
+And I've already entered mine and you should enter something pretty much identical to what I have right
+
+29
+00:01:43,560 --> 00:01:43,890
+here.
+
+30
+00:01:44,160 --> 00:01:44,580
+OK.
+
+31
+00:01:45,360 --> 00:01:49,740
+And then up here you have your client ID and you have your client's secret.
+
+32
+00:01:49,980 --> 00:01:50,370
+OK.
+
+33
+00:01:50,670 --> 00:01:52,920
+And these are the things you're going to need to pay attention to.
+
+34
+00:01:53,580 --> 00:01:59,130
+Now there's no point in you trying to use this because I'm going to revoke this particular Client ID
+
+35
+00:01:59,340 --> 00:02:02,000
+and secret once this course is over.
+
+36
+00:02:02,040 --> 00:02:06,960
+Just go create your own mind will be useless to you in any case, because they won't exist by the time
+
+37
+00:02:06,960 --> 00:02:07,800
+you take this course.
+
+38
+00:02:08,430 --> 00:02:10,620
+But in any case, this is the information I need.
+
+39
+00:02:10,650 --> 00:02:13,710
+So I'm going to copy this big item here to start with.
+
+40
+00:02:15,550 --> 00:02:24,880
+Client ID and I'm going to switch back to my I.D. and I'm going to open my dot on the file and I'll
+
+41
+00:02:24,880 --> 00:02:26,380
+put three entries in here for Google.
+
+42
+00:02:26,890 --> 00:02:30,350
+Google underscore key will be equal to that value.
+
+43
+00:02:30,350 --> 00:02:30,490
+One.
+
+44
+00:02:30,490 --> 00:02:31,610
+Just copy, OK.
+
+45
+00:02:33,930 --> 00:02:41,640
+And Google underscore secret, let's go copy that and spark over here in my web browser.
+
+46
+00:02:41,850 --> 00:02:43,650
+The secret, I'll copy that value.
+
+47
+00:02:46,290 --> 00:02:47,180
+Paste it in here.
+
+48
+00:02:47,510 --> 00:02:50,510
+And get rid of the extra spaces, because that will mess things up.
+
+49
+00:02:52,760 --> 00:02:56,170
+And the last failure I need is Google underscore callback.
+
+50
+00:02:58,370 --> 00:03:07,280
+And that will be equal to a cheap, clean slash slash local host port, four thousand slash or slash
+
+51
+00:03:07,580 --> 00:03:09,860
+Google slash callback.
+
+52
+00:03:11,780 --> 00:03:15,410
+OK, so that gets the necessary values into our account.
+
+53
+00:03:15,620 --> 00:03:19,790
+And as I've said, I'll just say it again to avoid any potential confusion down the road.
+
+54
+00:03:20,360 --> 00:03:25,580
+Anything you see here next to GitHub qui secret and callback or Google key in secret?
+
+55
+00:03:26,150 --> 00:03:30,370
+These are my values, and they exist only while I'm creating this course.
+
+56
+00:03:30,380 --> 00:03:35,930
+And as soon as this course is over, I'm going to regenerate keys and have entirely new values and these
+
+57
+00:03:35,930 --> 00:03:36,850
+won't work anymore.
+
+58
+00:03:36,860 --> 00:03:39,950
+So don't try to use mine because it just won't work for you.
+
+59
+00:03:39,980 --> 00:03:43,910
+Initially, I said I was going to hide my GitHub secret, but after thinking it over.
+
+60
+00:03:44,090 --> 00:03:48,740
+That's actually not right because it undoubtedly appeared on the screen for a frame or two at some point
+
+61
+00:03:48,740 --> 00:03:52,540
+during this course, and it takes 10 seconds to generate new keys.
+
+62
+00:03:52,550 --> 00:03:53,690
+So I'm going to do that.
+
+63
+00:03:53,900 --> 00:03:54,260
+OK.
+
+64
+00:03:54,950 --> 00:03:55,250
+All right.
+
+65
+00:03:55,280 --> 00:03:59,130
+We'll move on and start modifying our code to support Google in the next.
+

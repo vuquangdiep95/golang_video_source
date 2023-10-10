@@ -1,0 +1,119 @@
+1
+00:00:00,900 --> 00:00:06,000
+In this section of the course, I want to turn her attention to another classic problem that you find
+
+2
+00:00:06,000 --> 00:00:10,230
+in the field of computer science, and it's one that's called the dining philosophers.
+
+3
+00:00:10,260 --> 00:00:12,570
+So let's have a look at what the problem is.
+
+4
+00:00:13,290 --> 00:00:18,240
+Well, like the last problem, this one was introduced by Dijkstra in 1965.
+
+5
+00:00:18,240 --> 00:00:21,300
+So it's been around for a while and it's been solved in many different ways.
+
+6
+00:00:21,450 --> 00:00:23,580
+And here's the basis of the problem.
+
+7
+00:00:24,300 --> 00:00:29,880
+Five philosophers live in a house together, and they always eat together, always at the same table,
+
+8
+00:00:29,880 --> 00:00:32,100
+and they always sit in the same place.
+
+9
+00:00:32,640 --> 00:00:34,290
+So that's one given.
+
+10
+00:00:35,280 --> 00:00:40,140
+The second thing is that they always eat a special kind of spaghetti, and this requires two forks.
+
+11
+00:00:40,650 --> 00:00:44,030
+You have to have two forks in order to be able to eat this spaghetti.
+
+12
+00:00:44,040 --> 00:00:45,720
+It's really thick or something like that.
+
+13
+00:00:45,750 --> 00:00:46,440
+It doesn't matter.
+
+14
+00:00:46,470 --> 00:00:48,270
+The point is, you have to have two forks.
+
+15
+00:00:48,750 --> 00:00:51,330
+Now there are two forks next to each plate.
+
+16
+00:00:52,140 --> 00:00:56,940
+But the way that they're arranged means that no two neighbors can be eating at the same time.
+
+17
+00:00:57,540 --> 00:01:02,790
+Now, the problem is, how do you write a program that ensures that no philosopher will starve?
+
+18
+00:01:03,270 --> 00:01:06,750
+Now, what will make this a little bit clearer is an illustration, a picture.
+
+19
+00:01:06,760 --> 00:01:08,520
+Let's see how the table is laid out.
+
+20
+00:01:09,000 --> 00:01:14,360
+So we have a round table, we have five plates, and every plate has two forks beside it.
+
+21
+00:01:14,790 --> 00:01:17,280
+But there are only five forks.
+
+22
+00:01:17,400 --> 00:01:19,950
+If we had one more, this wouldn't be much of an issue, but we don't.
+
+23
+00:01:19,980 --> 00:01:26,010
+So the problem is, if the philosopher in the lower left hand corner wants to eat, he has to get both
+
+24
+00:01:26,010 --> 00:01:28,800
+forks, but he's sharing a fork with his neighbor.
+
+25
+00:01:30,030 --> 00:01:35,580
+So it's a highly contrived problem, but it's an excellent example of the kind of problem where concurrency
+
+26
+00:01:35,820 --> 00:01:36,930
+is a good solution.
+
+27
+00:01:37,410 --> 00:01:42,270
+Now, in this section with the dining philosophers, we're going to go over not channels.
+
+28
+00:01:42,270 --> 00:01:43,950
+We're going to leave those to a later problem.
+
+29
+00:01:44,100 --> 00:01:50,910
+Instead, we'll solve this problem using the sink package with sink, dot, wait group and sink mutex.
+
+30
+00:01:51,100 --> 00:01:52,200
+Okay, let's get started.

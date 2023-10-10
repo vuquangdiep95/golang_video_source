@@ -1,0 +1,263 @@
+1
+00:00:00,930 --> 00:00:04,620
+So we've created our three handlers to test our new response types.
+
+2
+00:00:04,680 --> 00:00:10,110
+Let's create some links in the home jet template right here.
+
+3
+00:00:10,740 --> 00:00:16,440
+Let's also create the necessary roots in our roots file right here in my app project.
+
+4
+00:00:17,250 --> 00:00:19,050
+So I'll create the roots right here first.
+
+5
+00:00:19,770 --> 00:00:28,890
+So I'll say it again because I can do that now and I want to get slash JSON and that will go to aid
+
+6
+00:00:29,100 --> 00:00:32,730
+handlers, thought Jason.
+
+7
+00:00:33,870 --> 00:00:36,750
+I'll duplicate that and do one, for example.
+
+8
+00:00:38,550 --> 00:00:39,570
+And that would take us to.
+
+9
+00:00:41,250 --> 00:00:46,620
+Well, duplicate that and say, download dash file.
+
+10
+00:00:47,010 --> 00:00:49,230
+It takes us to download file.
+
+11
+00:00:49,800 --> 00:00:53,590
+OK, now let's go back to our HomeKit page and create some links there.
+
+12
+00:00:53,610 --> 00:00:55,030
+So I'll just duplicate this one.
+
+13
+00:00:56,390 --> 00:01:01,560
+Make that one, Jason, and I'll label it Jason response
+
+14
+00:01:04,950 --> 00:01:07,920
+and duplicate that and call it X email response.
+
+15
+00:01:10,610 --> 00:01:15,590
+And it goes to slash X amount, and I'll duplicate that and make this one.
+
+16
+00:01:16,160 --> 00:01:21,290
+Download Dash file and download file response.
+
+17
+00:01:24,880 --> 00:01:31,480
+OK, so let's open our terminal and type, make restart or start or whatever you need to do to get it
+
+18
+00:01:31,480 --> 00:01:31,750
+running.
+
+19
+00:01:36,810 --> 00:01:41,610
+And go to our Web browser and reload this page.
+
+20
+00:01:42,530 --> 00:01:46,290
+Now I should click on Jason Response and actually get some Jason sent back.
+
+21
+00:01:47,400 --> 00:01:48,070
+And there it is.
+
+22
+00:01:48,150 --> 00:01:54,570
+So Firefox, of course, gives you this representation, but I can look at the raw data and there it
+
+23
+00:01:54,570 --> 00:01:54,900
+is.
+
+24
+00:01:55,110 --> 00:01:56,440
+Absolutely perfect.
+
+25
+00:01:56,500 --> 00:01:59,910
+So let's go back and let's try an XML response.
+
+26
+00:02:01,500 --> 00:02:05,460
+And there it is now, let's view, source and make sure it's actually XML.
+
+27
+00:02:06,600 --> 00:02:07,440
+And it looks great.
+
+28
+00:02:07,450 --> 00:02:08,310
+So hobbies.
+
+29
+00:02:08,340 --> 00:02:10,920
+Now has hobby three hobby entries.
+
+30
+00:02:11,430 --> 00:02:13,110
+Children of the hobbies entry.
+
+31
+00:02:13,860 --> 00:02:18,840
+And let's go back and make sure we can actually download a file.
+
+32
+00:02:18,960 --> 00:02:21,810
+So this should download celebrities start JPEG.
+
+33
+00:02:23,060 --> 00:02:25,730
+OK, so it actually displayed it in the browser.
+
+34
+00:02:25,760 --> 00:02:32,540
+Now that may be a function of Firefox, so what I'm going to do is open up Chrome and see what it does
+
+35
+00:02:32,540 --> 00:02:38,390
+in Chrome, because Chrome Firefox sometimes tries to be ever so helpful and it becomes a little too
+
+36
+00:02:38,390 --> 00:02:39,560
+helpful in some cases.
+
+37
+00:02:41,480 --> 00:02:47,090
+So I will go to local host four thousand.
+
+38
+00:02:49,390 --> 00:02:50,770
+And see what this does here.
+
+39
+00:02:52,440 --> 00:02:56,760
+So it looks like we might have something wrong in our response for downloading a file.
+
+40
+00:02:56,850 --> 00:02:59,250
+I'm going to go verify that and make sure we have it right.
+
+41
+00:03:00,360 --> 00:03:03,990
+So handlers don't go and I'll hide my terminal.
+
+42
+00:03:06,140 --> 00:03:14,780
+Download file, so that takes me to celebrities, so let me switch to celebrities package and find the
+
+43
+00:03:14,780 --> 00:03:16,340
+download file response.
+
+44
+00:03:20,460 --> 00:03:24,610
+Yeah, in fact, I do have that wrong, so I'm not going to set ahead or type to this.
+
+45
+00:03:24,630 --> 00:03:29,220
+Instead, I want to set the header to content disposition, so let's try.
+
+46
+00:03:29,420 --> 00:03:32,220
+Just I'll just delete that file in a moment.
+
+47
+00:03:33,210 --> 00:03:36,990
+W dot header dot set.
+
+48
+00:03:37,740 --> 00:03:39,480
+I always get this one backwards for some reason.
+
+49
+00:03:40,080 --> 00:03:43,230
+Content disposition.
+
+50
+00:03:46,510 --> 00:03:53,170
+And format Sprint F and here that's where I want the rest of it, so I'll just copy this part here.
+
+51
+00:03:55,450 --> 00:03:57,820
+It's not content type, it's content disposition.
+
+52
+00:03:59,080 --> 00:04:00,260
+That was a silly mistake.
+
+53
+00:04:00,310 --> 00:04:07,480
+So let's delete that and go back to our other application and open our terminal and type make restart.
+
+54
+00:04:15,040 --> 00:04:17,800
+And switch back to Firefox and try it out again.
+
+55
+00:04:18,010 --> 00:04:20,920
+So back on screen, reload this page.
+
+56
+00:04:21,310 --> 00:04:22,900
+Download file response.
+
+57
+00:04:25,100 --> 00:04:31,520
+And this time, if I refresh this, it should download it good, so it actually served the cache response
+
+58
+00:04:31,520 --> 00:04:37,100
+first with the content type instead of a content disposition, but when I reload the page, it did the
+
+59
+00:04:37,100 --> 00:04:37,750
+correct thing.
+
+60
+00:04:37,760 --> 00:04:38,840
+It tries to download it.
+
+61
+00:04:39,290 --> 00:04:40,700
+So those all seem to work really well.
+
+62
+00:04:41,510 --> 00:04:41,940
+Perfect.
+
+63
+00:04:41,960 --> 00:04:46,640
+So before we leave this section, there's one more thing I want to add, and that is the convenience
+
+64
+00:04:46,640 --> 00:04:52,530
+method that you find in Laravel that allows us to encrypt or decrypt a file with a single command.
+
+65
+00:04:52,550 --> 00:04:57,290
+And we should add that functionality to our helpers as well, and we'll take care of that in the next
+
+66
+00:04:57,290 --> 00:04:57,710
+lecture.

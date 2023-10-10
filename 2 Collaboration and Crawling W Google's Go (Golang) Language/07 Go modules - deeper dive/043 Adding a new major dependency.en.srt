@@ -1,0 +1,199 @@
+1
+00:00:00,070 --> 00:00:04,290
+So now we're going to add a new major dependency and major dependency.
+
+2
+00:00:04,320 --> 00:00:07,650
+You know if you remember the the versioning.
+
+3
+00:00:07,800 --> 00:00:10,010
+We have major would be that one.
+
+4
+00:00:10,020 --> 00:00:10,880
+We have minor.
+
+5
+00:00:10,890 --> 00:00:12,500
+And then we have a patch.
+
+6
+00:00:12,540 --> 00:00:19,050
+And so with a new major version here like we have three versions of a package three major versions of
+
+7
+00:00:19,050 --> 00:00:20,060
+a package.
+
+8
+00:00:20,160 --> 00:00:21,910
+And this would be version one.
+
+9
+00:00:22,050 --> 00:00:27,370
+And then if his version two or version three or so on is going to be followed by a V to V Three.
+
+10
+00:00:27,540 --> 00:00:30,930
+And you could have one of each of these.
+
+11
+00:00:31,050 --> 00:00:35,790
+So you could have code from the first major version code from the second major version and code from
+
+12
+00:00:35,790 --> 00:00:44,850
+the third major version but you can have code from two like you know like major version one point six
+
+13
+00:00:44,850 --> 00:00:45,770
+and one point eight.
+
+14
+00:00:45,780 --> 00:00:49,630
+You can't have two minor versions or you can't have patches right.
+
+15
+00:00:49,680 --> 00:00:51,730
+One of each of these.
+
+16
+00:00:51,810 --> 00:00:57,750
+And so having one of each of those allows you to upgrade incrementally and upgrading incrementally means
+
+17
+00:00:57,750 --> 00:01:02,850
+that you know maybe you're using one version too came out well you could still use some of the code
+
+18
+00:01:02,850 --> 00:01:06,680
+from one you could still use some of the code and you could use some of the code from two.
+
+19
+00:01:06,720 --> 00:01:13,560
+And so here our code is going to change and we'll have our CIO quote and then we're gonna ask CIO quote
+
+20
+00:01:13,620 --> 00:01:19,380
+version 3 and we're going to import that with an alias of quote version 3 and we're going to be able
+
+21
+00:01:19,380 --> 00:01:28,570
+to call this proverb function and some proverb is pulling quote version 3 concurrency proverb and and
+
+22
+00:01:28,590 --> 00:01:36,030
+then that's coming from you know version 3 whereas this right here our CIO quote is bringing in this
+
+23
+00:01:36,030 --> 00:01:36,990
+one right here quote.
+
+24
+00:01:36,990 --> 00:01:37,790
+Hello.
+
+25
+00:01:37,800 --> 00:01:41,230
+So we're pulling from Version 1 and from version 3.
+
+26
+00:01:41,340 --> 00:01:46,680
+And so you could get different major versions and pull code from each which allows you to upgrade incrementally
+
+27
+00:01:46,680 --> 00:01:49,730
+and then we added a test for the proverb.
+
+28
+00:01:49,740 --> 00:01:53,580
+So that's the idea with the code and to see that in action.
+
+29
+00:01:53,670 --> 00:01:55,520
+Do you have something you'd like to add to that.
+
+30
+00:01:55,590 --> 00:01:58,110
+No to see that in action.
+
+31
+00:01:58,110 --> 00:02:04,080
+We've already created that code base here it's a 0 3 add a major dependency.
+
+32
+00:02:04,080 --> 00:02:09,120
+So I'm just going to navigate there on my terminal take a look at working directory see where I am and
+
+33
+00:02:09,120 --> 00:02:18,780
+go into S.D. 0 0 3 modules and then 0 3 add major dependency and then come back and do me just bring
+
+34
+00:02:18,780 --> 00:02:19,770
+this down a little bit.
+
+35
+00:02:19,800 --> 00:02:21,440
+So you could see the commands as I do.
+
+36
+00:02:21,710 --> 00:02:22,860
+Do you go test.
+
+37
+00:02:23,480 --> 00:02:29,370
+So I'm testing that code at all passes I could do a cat to see what's in my go mod file but I have to
+
+38
+00:02:29,370 --> 00:02:37,200
+come up a level and there and be right there and I could see now that I've got our AC quote version
+
+39
+00:02:37,200 --> 00:02:39,260
+one point five two.
+
+40
+00:02:39,510 --> 00:02:48,360
+And we also have our AC Io quote version 3 and that's the version three point one point zero and then
+
+41
+00:02:48,420 --> 00:02:56,610
+the one that we specifically specified in the previous video was our CIO sampler version one point three
+
+42
+00:02:56,700 --> 00:03:02,580
+point one which we still have here as one of our indirect dependencies.
+
+43
+00:03:02,580 --> 00:03:09,720
+And so that's doing the CATCo mod and we can also see all of those by doing goalless dash them all.
+
+44
+00:03:09,750 --> 00:03:16,800
+And also here's an interesting little notation that you could use if you wanted to see just are a C
+
+45
+00:03:16,890 --> 00:03:18,240
+Io quote right.
+
+46
+00:03:18,240 --> 00:03:27,880
+What are those that my module depends upon either directly or indirectly and it will show you OK.
+
+47
+00:03:27,910 --> 00:03:28,870
+Anything to say.
+
+48
+00:03:29,090 --> 00:03:32,400
+No no I got it all yes.
+
+49
+00:03:32,470 --> 00:03:32,850
+All right.
+
+50
+00:03:32,860 --> 00:03:36,160
+So that's that's adding a new major dependency.

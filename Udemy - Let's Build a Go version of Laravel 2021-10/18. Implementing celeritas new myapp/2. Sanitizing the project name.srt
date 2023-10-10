@@ -1,0 +1,163 @@
+1
+00:00:00,610 --> 00:00:05,800
+So let's get started, and we'll do the easy part first, sanitizing the application name.
+
+2
+00:00:06,340 --> 00:00:09,010
+The second step cloning the skeleton application.
+
+3
+00:00:09,040 --> 00:00:14,830
+Of course, that means we're going to have to backup our existing Maya project and strip it down to
+
+4
+00:00:15,040 --> 00:00:19,030
+just the bare essentials, and we'll take care of that in the next lecture.
+
+5
+00:00:19,060 --> 00:00:20,200
+Right now, let's do the easy one.
+
+6
+00:00:21,460 --> 00:00:27,160
+So what we need to do here is to check to see if what they've given us is like a you are l to say,
+
+7
+00:00:27,160 --> 00:00:30,100
+a GitHub repository, and if it's not that we can just move on.
+
+8
+00:00:30,130 --> 00:00:32,290
+But if it is, then we need to clean it up a little bit.
+
+9
+00:00:32,830 --> 00:00:40,090
+So what we can do here is just check to see for the existence of a slash if strings dart contains.
+
+10
+00:00:40,810 --> 00:00:42,610
+And we're looking for app name.
+
+11
+00:00:42,610 --> 00:00:48,310
+We're looking in app name or we're looking for that character, an unscripted question mark, the slash.
+
+12
+00:00:48,850 --> 00:00:51,030
+If that's the case, then we have to get rid of this.
+
+13
+00:00:51,040 --> 00:00:54,270
+We have to basically get the last part of the URL.
+
+14
+00:00:54,280 --> 00:01:02,410
+So if what they typed in was GitHub dot com slash TESOL or slash my app, then I just want the my part.
+
+15
+00:01:03,100 --> 00:01:06,130
+So we'll just split it on the character.
+
+16
+00:01:07,390 --> 00:01:11,830
+It's all we have to do is create a variable, and I'll call mine exploded because I'm exploding a string.
+
+17
+00:01:12,400 --> 00:01:15,400
+And we call strings dot split after.
+
+18
+00:01:17,790 --> 00:01:18,110
+All right.
+
+19
+00:01:18,800 --> 00:01:26,180
+And what that does, it has the help message says here it slices whatever string you pass it into all
+
+20
+00:01:26,180 --> 00:01:31,250
+sub strings after each instance of some separator and then it gives us a slice back.
+
+21
+00:01:31,280 --> 00:01:40,370
+So we're going to split after aptamer and the slash, and then we just grab the last element of this
+
+22
+00:01:40,370 --> 00:01:41,590
+slice that was given to us.
+
+23
+00:01:41,600 --> 00:01:51,770
+So now app name is now equal to exploded, and we want the length of exploded minus one because computers
+
+24
+00:01:51,770 --> 00:01:54,590
+start counting from zero, of course, and that's all we have to do.
+
+25
+00:01:54,770 --> 00:01:56,720
+So let's try it out and we'll just print out to the look.
+
+26
+00:01:57,350 --> 00:02:00,440
+We'll say Logcat print line
+
+27
+00:02:04,460 --> 00:02:07,280
+app name is and then the app name.
+
+28
+00:02:08,540 --> 00:02:11,060
+OK, so let's give this a try.
+
+29
+00:02:11,150 --> 00:02:13,030
+So I'm going to just do it the easy way.
+
+30
+00:02:13,040 --> 00:02:16,910
+I mean, my Celebrity Juice project, I'll say make build, underscore Seelye.
+
+31
+00:02:21,560 --> 00:02:26,180
+It's built it now that copy the binary over to my my art project, which is not a problem.
+
+32
+00:02:26,180 --> 00:02:33,080
+We'll just switch there, open a terminal window and Typekit slash celebrity's new and I'll say my app
+
+33
+00:02:33,360 --> 00:02:34,640
+and I should print out my app.
+
+34
+00:02:35,420 --> 00:02:37,430
+App name is my app now.
+
+35
+00:02:37,430 --> 00:02:39,320
+Celebrities new.
+
+36
+00:02:40,600 --> 00:02:49,180
+And I'll call it GitHub dot com slash TESOL or slash my other app and my app name is now my other app.
+
+37
+00:02:49,240 --> 00:02:50,020
+And that's all we need.
+
+38
+00:02:50,380 --> 00:02:54,190
+OK, because we're going to use that when we clone something from a repository.
+
+39
+00:02:55,450 --> 00:03:00,580
+So in the next lesson, we'll actually write the code to clone a non-existent repository because we'll
+
+40
+00:03:00,580 --> 00:03:06,280
+create a new repository after we get the git code written and then tried it all right to get code first
+
+41
+00:03:06,280 --> 00:03:07,360
+in the next lesson.

@@ -1,0 +1,128 @@
+1
+00:00:00,980 --> 00:00:07,070
+Quindi, benvenuti ai client di rifilatura del GOP in questa sezione, impareremo di più su come eseguire lo streaming questa volta,
+
+2
+00:00:07,080 --> 00:00:09,390
+direttamente dal client, come indica il nome.
+
+3
+00:00:09,630 --> 00:00:11,690
+Quindi, cosa viene richiesto, API di ritaglio.
+
+4
+00:00:12,000 --> 00:00:17,770
+Bene ancora una volta è un nuovo tipo di API che ha abilitato le cose anche all'utilizzo dello SCDP standard.
+
+5
+00:00:18,120 --> 00:00:19,930
+E così ecco come appare di nuovo.
+
+6
+00:00:20,190 --> 00:00:25,830
+Abbiamo il server client e il client invierà molti messaggi al server e riceverà una
+
+7
+00:00:25,830 --> 00:00:27,180
+risposta dal server.
+
+8
+00:00:27,420 --> 00:00:31,490
+Quindi la risposta inviata dal server può essere ricevuta in qualsiasi momento.
+
+9
+00:00:31,480 --> 00:00:36,400
+Non c'è alcuna garanzia che verrà inviato dopo aver ricevuto tutti i messaggi dai client.
+
+10
+00:00:36,480 --> 00:00:41,400
+Spetta davvero al server decidere quando vuole inviare una risposta ai client.
+
+11
+00:00:41,550 --> 00:00:42,990
+Quindi il paese ne è consapevole.
+
+12
+00:00:43,080 --> 00:00:47,100
+Ovviamente se progettate il vostro server per inviare solo una risposta agli addetti alle pulizie e tutto ciò
+
+13
+00:00:47,100 --> 00:00:47,870
+che è perfetto.
+
+14
+00:00:48,120 --> 00:00:50,410
+Quindi quando usi i client di rifilatura.
+
+15
+00:00:50,490 --> 00:00:53,470
+Beh, è adatto per quando i dati sono grandi.
+
+16
+00:00:53,520 --> 00:00:58,770
+Quindi quando continua e molti dati si trovano in un contesto di grandi quantità di dati come ad esempio il caricamento di qualcosa,
+
+17
+00:00:58,830 --> 00:00:59,930
+allora questo è sorprendente.
+
+18
+00:00:59,990 --> 00:01:05,490
+Inoltre, dovresti usarlo quando l'elaborazione del server per ciascun messaggio è piuttosto costosa e dovrebbe accadere come
+
+19
+00:01:05,550 --> 00:01:07,040
+dati relativi al declino.
+
+20
+00:01:07,200 --> 00:01:12,690
+Quindi, se devi elaborare 10000 messaggi, è meglio iniziare a elaborarli uno per uno non
+
+21
+00:01:12,690 --> 00:01:17,290
+appena possiamo inviarli 10000 alla volta elaborandoli tutti in una volta.
+
+22
+00:01:18,520 --> 00:01:23,020
+Infine c'è un caso d'uso quando il cliente ha bisogno di spingere i dati sul server senza
+
+23
+00:01:23,020 --> 00:01:24,800
+realmente aspettarsi una risposta dal server.
+
+24
+00:01:25,360 --> 00:01:28,720
+Quindi, come appare in particolari buffer.
+
+25
+00:01:28,720 --> 00:01:34,420
+Come per ogni richiesta di Darbyshire, abbiamo bisogno di definire un messaggio di richiesta e un messaggio di
+
+26
+00:01:34,420 --> 00:01:40,180
+risposta e quindi aggiungeremo le parole sogno sul lato client sul lato sinistro per impostare il tipo di streaming.
+
+27
+00:01:40,240 --> 00:01:41,130
+Abbastanza facile, giusto.
+
+28
+00:01:41,260 --> 00:01:44,280
+Quindi nella prossima lezione andremo avanti con una richiesta più lunga.
+
+29
+00:01:44,290 --> 00:01:49,540
+E come puoi vedere, dovremo implementare una risposta più lunga alla richiesta e poi dover eseguire lo stream delle parole
+
+30
+00:01:49,570 --> 00:01:50,870
+chiave per avviare tutto.
+
+31
+00:01:50,890 --> 00:01:51,750
+Tutto ok.
+
+32
+00:01:51,750 --> 00:01:52,780
+Quindi l'espettorato della CNN.
+

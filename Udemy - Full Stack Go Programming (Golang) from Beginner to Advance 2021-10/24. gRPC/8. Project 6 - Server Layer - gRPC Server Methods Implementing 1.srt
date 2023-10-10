@@ -1,0 +1,295 @@
+1
+00:00:11,870 --> 00:00:15,530
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:16,040 --> 00:00:22,820
+In the previous session, we could define the function name G.R. PC server initialize or to initialize
+
+3
+00:00:22,820 --> 00:00:30,290
+the DB connection field of the G.R. PC controller struct and using it in this session, it's time to
+
+4
+00:00:30,290 --> 00:00:32,570
+implement the Jarvis's server methods.
+
+5
+00:00:33,800 --> 00:00:40,490
+If you remember in our profile, we create messages and services related to G.R. PC.
+
+6
+00:00:40,970 --> 00:00:47,540
+Then we compiled our existing profile and created the equivalent profile in gold language.
+
+7
+00:00:48,380 --> 00:00:54,200
+Now it's time to implement the metals in the proto file and go blank in the JROTC series.
+
+8
+00:00:54,920 --> 00:01:00,290
+For this purpose, we go to define created from our compile profile.
+
+9
+00:01:00,890 --> 00:01:08,840
+So go to Project folder and go to a protocol folder and open a student on the RISCOS your PC that he
+
+10
+00:01:08,840 --> 00:01:12,320
+did not go okay.
+
+11
+00:01:13,460 --> 00:01:20,870
+These functions are located in the student service server interface and the open defined box by press
+
+12
+00:01:20,870 --> 00:01:24,710
+cards for F and type service server.
+
+13
+00:01:30,670 --> 00:01:39,040
+OK, now we can see two implemented functions in the port of fine carpet, these two functions and transfer
+
+14
+00:01:39,040 --> 00:01:42,400
+them to our G.P.S. service and implement them.
+
+15
+00:01:43,780 --> 00:01:45,010
+Copy these files.
+
+16
+00:01:48,330 --> 00:01:51,210
+And go to service controller.
+
+17
+00:02:00,780 --> 00:02:08,520
+One is the get a student by either method, which takes students either as a parameter and returns the
+
+18
+00:02:08,520 --> 00:02:10,710
+complete information of that student.
+
+19
+00:02:11,340 --> 00:02:19,110
+And another is they get the students by name, which receives name as the input parameter and fits all
+
+20
+00:02:19,110 --> 00:02:22,800
+the students whose names are equal to the input parameters.
+
+21
+00:02:23,580 --> 00:02:27,480
+Now go to implement this function for the jihadist control strike.
+
+22
+00:02:27,490 --> 00:02:33,090
+Let's start with the get the student by I.D. function, so we right fine
+
+23
+00:02:35,610 --> 00:02:44,280
+set a variable like server by the time GOPAC controller as implements the function server
+
+24
+00:02:47,460 --> 00:02:51,510
+and asterisk G.R. PC controller.
+
+25
+00:02:53,850 --> 00:03:01,710
+Get a student by idea and set a variable for context like context.
+
+26
+00:03:05,470 --> 00:03:13,780
+And set the value of a light idea to point the search by item message from protocol package IED.
+
+27
+00:03:19,200 --> 00:03:21,210
+And sits asterisk.
+
+28
+00:03:23,080 --> 00:03:24,700
+And that particular.
+
+29
+00:03:28,170 --> 00:03:29,490
+Oh, it's huge.
+
+30
+00:03:30,540 --> 00:03:31,030
+Why?
+
+31
+00:03:31,920 --> 00:03:38,670
+And set return times first is teasing this strike from political package that created in GOP support
+
+32
+00:03:38,670 --> 00:03:39,630
+to fine.
+
+33
+00:03:45,010 --> 00:03:57,770
+Asterisk, plural, to quote art students and said their hopes, their method was created.
+
+34
+00:03:57,790 --> 00:04:04,570
+Now we have to implement its body by calling the server object from the GOP controller a strong.
+
+35
+00:04:04,600 --> 00:04:11,410
+It has access to the DB connection field through which we can con the get a student by either the method
+
+36
+00:04:11,620 --> 00:04:16,360
+that accept an I.D. as input parameter and return to values.
+
+37
+00:04:16,600 --> 00:04:21,760
+First, the student information whose IDE is equal to the input from the third and second values.
+
+38
+00:04:21,760 --> 00:04:26,590
+And therefore so we defined two variables like a student
+
+39
+00:04:29,020 --> 00:04:40,390
+and error column equals set server, object server and call DB connection object, DB connection object.
+
+40
+00:04:42,460 --> 00:04:49,990
+And it will give the student based ID get the student base, i.e. the function and can't get I.D. function
+
+41
+00:04:50,170 --> 00:04:52,150
+from the service by either message.
+
+42
+00:04:52,150 --> 00:05:03,760
+By calling either variable i.e. did get idea kick error status if they're not equals, nil
+
+43
+00:05:07,030 --> 00:05:12,250
+return mean and error
+
+44
+00:05:15,070 --> 00:05:20,500
+and return values for this function student.
+
+45
+00:05:23,460 --> 00:05:25,320
+And need.
+
+46
+00:05:29,320 --> 00:05:35,830
+But we see that our method has an error and does not accept this student and return value.
+
+47
+00:05:36,970 --> 00:05:38,080
+The answer is all of us.
+
+48
+00:05:38,410 --> 00:05:46,510
+The reason for the error is that the return value of the select a student base I deem at all is a student
+
+49
+00:05:46,510 --> 00:05:47,770
+of the model package.
+
+50
+00:05:48,040 --> 00:05:56,440
+But the return value of the gift a student by either method is a student from the portal to PHI.
+
+51
+00:05:57,490 --> 00:06:03,940
+So we have to create the function to convert a model, a student to a pro to find a student.
+
+52
+00:06:04,120 --> 00:06:05,170
+So we write.
+
+53
+00:06:08,030 --> 00:06:08,840
+Fonts
+
+54
+00:06:11,870 --> 00:06:16,670
+convert to G PC.
+
+55
+00:06:17,660 --> 00:06:23,900
+The student sit a student from model package as input parameter.
+
+56
+00:06:24,710 --> 00:06:25,850
+A student
+
+57
+00:06:28,370 --> 00:06:32,810
+from model package model the student.
+
+58
+00:06:39,530 --> 00:06:49,740
+And sit a student as return tie from Portrait of My Soul, right, asterisk protocol.
+
+59
+00:06:53,360 --> 00:06:54,470
+The arts students
+
+60
+00:06:57,740 --> 00:07:04,610
+now return as student objects from protocol package and initialize it by the student values from model
+
+61
+00:07:04,610 --> 00:07:11,190
+pichay silver right, return ampersand protocol.
+
+62
+00:07:11,190 --> 00:07:28,730
+A student and initialize the field of this I.D. equals the student ID and name equals student's name
+
+63
+00:07:29,990 --> 00:07:37,820
+and age equals the student, but each reformat the code and saved the project.
+
+64
+00:07:38,600 --> 00:07:48,350
+So we were able to create the function to get an instance a student of the model package and convert
+
+65
+00:07:48,350 --> 00:07:52,220
+it to a student of p0.05.
+
+66
+00:07:53,750 --> 00:07:59,900
+Now go to the get a student by either method and use this function for convert the student instance.
+
+67
+00:08:01,070 --> 00:08:03,500
+So clear the error code.
+
+68
+00:08:07,040 --> 00:08:15,170
+And return Colin Koehler to jobs student function and set a student as input parameter for converter
+
+69
+00:08:15,170 --> 00:08:29,180
+protocol as students convert to a job as a student and sit as a student and sit near, reformat the
+
+70
+00:08:29,180 --> 00:08:38,600
+code and save the project and we don't have any or OK now we could implement get a student by either
+
+71
+00:08:38,600 --> 00:08:45,550
+method, which receives an idea as the input parameter and returns the student who has that idea.
+
+72
+00:08:45,650 --> 00:08:51,110
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+73
+00:08:51,110 --> 00:08:52,010
+the next session.
+
+74
+00:08:52,100 --> 00:08:52,700
+Goodbye.

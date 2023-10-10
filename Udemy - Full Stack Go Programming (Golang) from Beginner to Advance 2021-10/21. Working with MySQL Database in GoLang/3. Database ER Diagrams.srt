@@ -1,0 +1,275 @@
+1
+00:00:13,980 --> 00:00:20,130
+Hello and welcome to the Golang programming language course in the peregrine's session, we talked about
+
+2
+00:00:20,130 --> 00:00:25,830
+crowd operations, and in this session we want to talk about the others database concept.
+
+3
+00:00:31,060 --> 00:00:40,480
+E.R. Diagrams, E.R. Diagram is a visual representation of data that describes how data is related to
+
+4
+00:00:40,480 --> 00:00:41,110
+each other.
+
+5
+00:00:42,630 --> 00:00:50,910
+In E.R. model, we disintegrate data into entities, attributes and set up relationships between entities.
+
+6
+00:00:50,940 --> 00:00:59,190
+All this can be represented visually using the inner diagram, for example, in the below diagram.
+
+7
+00:00:59,400 --> 00:01:04,230
+Anyone can see and understand what the dark wrong wants to convey.
+
+8
+00:01:04,960 --> 00:01:09,840
+Developer develops that sign, whereas a visitor visits a website.
+
+9
+00:01:13,660 --> 00:01:23,800
+Components of air diagram, entity attributes, relationships and etc. form the components of E.R. diagram,
+
+10
+00:01:23,800 --> 00:01:29,020
+and there are defined symbols and shapes to represent each one of their.
+
+11
+00:01:30,350 --> 00:01:34,880
+Let's see how we can represent these in our yard diagram.
+
+12
+00:01:36,370 --> 00:01:46,390
+Entity Database Entity is a team, person, place, unit object or any item about which the data should
+
+13
+00:01:46,390 --> 00:01:51,910
+be captured and this stored in the form of properties, workflow and tables.
+
+14
+00:01:52,480 --> 00:01:56,200
+Simple, rectangular blocks represent an entity.
+
+15
+00:02:00,640 --> 00:02:10,480
+Relationships between entities weak and a strong home boss is used to set up relationships between two
+
+16
+00:02:10,480 --> 00:02:11,980
+or more entities.
+
+17
+00:02:13,340 --> 00:02:15,470
+Attributes for any entity.
+
+18
+00:02:17,620 --> 00:02:22,630
+Ellipse is used to represent attributes of any entity.
+
+19
+00:02:24,020 --> 00:02:25,940
+It is connected to the entity.
+
+20
+00:02:30,670 --> 00:02:31,930
+Which entity?
+
+21
+00:02:34,080 --> 00:02:39,360
+A weak entity is represented using double rectangular boxes.
+
+22
+00:02:40,140 --> 00:02:42,930
+It is generally connected to another entity.
+
+23
+00:02:44,040 --> 00:02:53,040
+Key attributes for any entity to represent a key attribute, the attribute name inside the ellipse is
+
+24
+00:02:53,040 --> 00:02:53,940
+underlined.
+
+25
+00:02:57,490 --> 00:03:05,620
+Derived attributes for any entity, the right attributes are those which are derived based on other
+
+26
+00:03:05,620 --> 00:03:06,340
+attributes.
+
+27
+00:03:06,640 --> 00:03:13,420
+For example, age can be derived from date of birth to represent a drive attribute.
+
+28
+00:03:13,460 --> 00:03:21,580
+Another dot ellipse is created inside the main ellipse multi value attribute for any entity.
+
+29
+00:03:22,120 --> 00:03:23,110
+Double ellipse.
+
+30
+00:03:23,260 --> 00:03:28,630
+One inside another represent the attribute, which can have multiple values.
+
+31
+00:03:33,080 --> 00:03:41,180
+Composite attribute for any entity, a composite attribute is the attribute, which also has attributes
+
+32
+00:03:42,020 --> 00:03:50,150
+you will see the address composite attribute, which contains other attributes like country, city estate
+
+33
+00:03:50,150 --> 00:03:51,380
+and a suite.
+
+34
+00:03:55,860 --> 00:04:04,860
+E.R., Model two relational model, as we all know, that E.R. model can be represented using E.R. diagrams,
+
+35
+00:04:05,100 --> 00:04:11,920
+which is a great way of designing and representing the database design in more of a flowchart form.
+
+36
+00:04:12,420 --> 00:04:20,610
+It is very convenient to design the database using the E.R. model by creating an E.R. diagram and literally
+
+37
+00:04:20,640 --> 00:04:25,140
+converting it into relational modern to design your table.
+
+38
+00:04:25,530 --> 00:04:32,160
+Not all the E.R. model constrains in components can be directly transformed into relational model,
+
+39
+00:04:32,370 --> 00:04:35,640
+but an approximate schema can be right.
+
+40
+00:04:36,030 --> 00:04:43,800
+So let's take a few examples of your diagrams and convert it into relational model schema, hence creating
+
+41
+00:04:43,800 --> 00:04:45,660
+tables in our DMs.
+
+42
+00:04:47,710 --> 00:04:49,480
+Entity becomes table.
+
+43
+00:04:50,660 --> 00:04:59,000
+Entity in your model is changed into tables, or we can say for every entity in our model, a table
+
+44
+00:04:59,000 --> 00:05:05,840
+is created in relational model and attributes of the entity gift converted to columns of the table,
+
+45
+00:05:05,960 --> 00:05:12,650
+and the primary key is specify for entity in the E.R. model will become the primary key for the table
+
+46
+00:05:12,680 --> 00:05:14,240
+in relational model.
+
+47
+00:05:18,180 --> 00:05:20,190
+Entity relationship model.
+
+48
+00:05:21,670 --> 00:05:29,440
+In this database, model, relationships are created by dividing object of interest into entity and
+
+49
+00:05:29,440 --> 00:05:32,290
+its characteristics into attributes.
+
+50
+00:05:34,110 --> 00:05:37,590
+Different entities are related using relationships.
+
+51
+00:05:38,920 --> 00:05:45,520
+E.R. models are designed to represent the relationships and to picture real form to make it easier for
+
+52
+00:05:45,520 --> 00:05:52,540
+different stakeholders to understand, this model is good to design the database, which can then be
+
+53
+00:05:52,540 --> 00:05:55,360
+turned into tables in relational model.
+
+54
+00:05:55,900 --> 00:06:03,220
+Let's take an example If we have to design a person database, the student will be an entity with attributes
+
+55
+00:06:03,220 --> 00:06:10,510
+i.e. the name, age and address as address is generally complex.
+
+56
+00:06:10,690 --> 00:06:16,810
+It can be another entity Venus Williams Street Name, PIN Code, S.T.A.R., cetera, and there will
+
+57
+00:06:16,810 --> 00:06:18,910
+be a relationship between then.
+
+58
+00:06:23,290 --> 00:06:24,610
+Relational model.
+
+59
+00:06:26,540 --> 00:06:34,040
+In this model, data is organized in two dimensional tables, and the relationship is maintained by
+
+60
+00:06:34,050 --> 00:06:35,600
+is touring a common field.
+
+61
+00:06:36,470 --> 00:06:45,620
+This model was introduced by EAF called in 1970, and since then it has been the most widely used database
+
+62
+00:06:45,620 --> 00:06:46,010
+model.
+
+63
+00:06:46,400 --> 00:06:50,400
+In fact, we can say the only database model used around the world.
+
+64
+00:06:51,230 --> 00:06:55,120
+The basic structure of data in the relational is table.
+
+65
+00:06:55,490 --> 00:07:01,190
+All the information related to a particular type is stored in rows of that table.
+
+66
+00:07:01,730 --> 00:07:06,800
+Hence, tables are often known as relations in relational model.
+
+67
+00:07:07,550 --> 00:07:15,170
+In the coming tutorials, we will learn how to design tables in order not to prolong the time of decision.
+
+68
+00:07:15,380 --> 00:07:19,520
+We will finish it and we will continue the content in the next session.
+
+69
+00:07:19,760 --> 00:07:20,270
+Goodbye.

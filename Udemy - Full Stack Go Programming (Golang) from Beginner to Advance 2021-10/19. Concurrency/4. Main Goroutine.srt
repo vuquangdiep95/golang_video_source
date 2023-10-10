@@ -1,0 +1,143 @@
+1
+00:00:13,030 --> 00:00:17,650
+Hello and welcome to the golden programming language course in this session.
+
+2
+00:00:17,680 --> 00:00:20,890
+We want to talk about the others concurrency concept.
+
+3
+00:00:23,160 --> 00:00:24,390
+Main goal, pretty.
+
+4
+00:00:26,240 --> 00:00:33,650
+The main function in the main package is the main goal written on go routines are started from the main
+
+5
+00:00:33,650 --> 00:00:34,340
+goal routine.
+
+6
+00:00:34,760 --> 00:00:39,080
+These go routines can then assault multiple on a regular routine and so on.
+
+7
+00:00:39,710 --> 00:00:43,280
+The main goal routine represents the main program.
+
+8
+00:00:43,700 --> 00:00:51,080
+Once it exists, then it means that the program has exited goal routines don't have parents or children.
+
+9
+00:00:51,710 --> 00:00:58,220
+When you start to go routines, it just executes alongside all other running goal routines.
+
+10
+00:00:58,820 --> 00:01:02,900
+Its goal routines exist only when its function returns.
+
+11
+00:01:03,530 --> 00:01:10,160
+The only exception to that is that old goal routines exceed when the main goal routine exists.
+
+12
+00:01:10,790 --> 00:01:17,450
+Now, let's go to this code program to demonstrate that goal routines don't have parents or children.
+
+13
+00:01:20,160 --> 00:01:32,700
+First defined two functions like Halo one and Halo two, Funk Halo one, and defining a statement like
+
+14
+00:01:32,700 --> 00:01:48,000
+FP and Go Routine one and define another function like Halo three, find and Low two and set to statement
+
+15
+00:01:48,010 --> 00:01:50,220
+for response like RFP
+
+16
+00:01:52,740 --> 00:01:56,730
+in the routine to
+
+17
+00:02:00,810 --> 00:02:05,970
+now call Halo to function in Halo one function as go routine.
+
+18
+00:02:06,420 --> 00:02:09,210
+So go to the Halo one function.
+
+19
+00:02:10,320 --> 00:02:13,980
+Go Halo two.
+
+20
+00:02:18,330 --> 00:02:27,690
+Now go to the main function and cognitive function is go routine, go to the main function and calling
+
+21
+00:02:27,690 --> 00:02:30,750
+Hello, one has gold.
+
+22
+00:02:34,020 --> 00:02:38,050
+Right, some other statements like AFP.
+
+23
+00:02:41,280 --> 00:02:41,790
+Hello.
+
+24
+00:02:44,460 --> 00:02:48,630
+And put sleep time like time to sleep
+
+25
+00:02:52,140 --> 00:02:59,250
+and set while my application time got sick.
+
+26
+00:03:02,310 --> 00:03:10,080
+And again, another message is go to the next line and if to, for example, goodbye.
+
+27
+00:03:13,830 --> 00:03:17,520
+Reformat the quote, save the process and execute the program.
+
+28
+00:03:18,540 --> 00:03:20,680
+Go round back.
+
+29
+00:03:20,920 --> 00:03:22,140
+Let me go
+
+30
+00:03:25,800 --> 00:03:27,740
+now we can see the output.
+
+31
+00:03:28,420 --> 00:03:36,030
+Hello, in-goal routine one, you can go routine two and goodbye in the above program, the first go
+
+32
+00:03:36,060 --> 00:03:43,590
+routine source and preens in go routine one and then exists the second goretti and then source and proteins
+
+33
+00:03:43,590 --> 00:03:51,210
+in go protein to its shows that go proteins don't have parents or children, and they exist as an independent
+
+34
+00:03:51,210 --> 00:03:54,930
+execution in order not to prolong the time of decision.
+
+35
+00:03:55,200 --> 00:04:00,800
+We will finish it and we will continue the content in the next session until next session.
+
+36
+00:04:00,810 --> 00:04:01,260
+Goodbye.

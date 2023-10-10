@@ -1,0 +1,1555 @@
+1
+00:00:00,840 --> 00:00:05,850
+So we have our Maler package working the way that it's supposed to, and we probably should write some
+
+2
+00:00:05,850 --> 00:00:07,290
+tests for it now.
+
+3
+00:00:07,320 --> 00:00:09,720
+Testing email can always be a bit of a challenge.
+
+4
+00:00:10,200 --> 00:00:16,890
+We could if we wanted to write tests that actually connect to an external mail server, and that would
+
+5
+00:00:16,890 --> 00:00:17,700
+work just fine.
+
+6
+00:00:17,820 --> 00:00:22,050
+But of course, introducing an external dependency like that is always a bit of a problem.
+
+7
+00:00:22,740 --> 00:00:27,210
+So what I'm going to do is very similar to what we did when we tested our data models.
+
+8
+00:00:27,690 --> 00:00:32,490
+I'm going to pull a Docker image, and the Docker image I'm going to pull is the one for mail hog,
+
+9
+00:00:32,490 --> 00:00:35,820
+and that will exist only for the duration of our tests.
+
+10
+00:00:36,450 --> 00:00:37,410
+And it's pretty straightforward.
+
+11
+00:00:37,860 --> 00:00:41,160
+But of course, the last time we wrote tests using darker.
+
+12
+00:00:41,190 --> 00:00:43,120
+We did that in our Myat project.
+
+13
+00:00:43,170 --> 00:00:50,220
+So you're going to want to open your terminal and go and get this go get GitHub dot com slash or slash
+
+14
+00:00:50,220 --> 00:00:55,740
+Docker test slash v3, and then you'll want to go and want to get V3 slash Docker.
+
+15
+00:00:56,010 --> 00:00:57,050
+So do those two things.
+
+16
+00:00:57,090 --> 00:00:59,760
+I've already done that, so there's no point in running those commands again.
+
+17
+00:01:00,480 --> 00:01:03,480
+And once you have those down, they'll be in your go on file.
+
+18
+00:01:03,600 --> 00:01:05,070
+So let's start writing some tests.
+
+19
+00:01:05,550 --> 00:01:08,910
+So in my mailer folder, first of all, I'll set up the testing environment.
+
+20
+00:01:09,420 --> 00:01:12,840
+I'll create a file called set up underscore test, thought go.
+
+21
+00:01:13,980 --> 00:01:18,510
+And I'm also going to well, let's give it this package declaration first, so it'll stop complaining.
+
+22
+00:01:18,540 --> 00:01:19,320
+Package Mailer.
+
+23
+00:01:20,490 --> 00:01:25,080
+OK, I'm also going to create a folder in here called test data.
+
+24
+00:01:26,130 --> 00:01:29,790
+And inside of that, I'll create a folder called mail.
+
+25
+00:01:30,300 --> 00:01:32,370
+And this is where we'll put our test email templates.
+
+26
+00:01:32,370 --> 00:01:35,010
+So I'll create two empty files new file.
+
+27
+00:01:35,010 --> 00:01:44,940
+I'll call one test HTML tempo and I'll create another one inside the mail folder a new file called Test
+
+28
+00:01:44,980 --> 00:01:50,820
+Dot Plain Template now just to get those same values in there.
+
+29
+00:01:50,850 --> 00:01:57,350
+I'll switch to my other project, my app, and find my templates.
+
+30
+00:01:57,360 --> 00:01:58,680
+Here's one for HTML.
+
+31
+00:01:58,680 --> 00:01:59,490
+I'll copy that.
+
+32
+00:01:59,580 --> 00:02:01,170
+Switch back to celebrities.
+
+33
+00:02:01,350 --> 00:02:03,140
+Go to test HTML.
+
+34
+00:02:03,240 --> 00:02:11,610
+Paste that, and then I'll switch over here to my my app and get test plain copy and open test plain
+
+35
+00:02:11,610 --> 00:02:13,650
+insularity and paste it in there.
+
+36
+00:02:14,250 --> 00:02:15,930
+Now we have some templates we can work with.
+
+37
+00:02:15,930 --> 00:02:16,830
+We read our tests.
+
+38
+00:02:17,610 --> 00:02:21,060
+So let's set up our environment and I'm back in setup underscore test.
+
+39
+00:02:21,060 --> 00:02:21,570
+Don't go.
+
+40
+00:02:21,720 --> 00:02:24,450
+And it's very similar to what we did when we tested our data models.
+
+41
+00:02:24,660 --> 00:02:32,910
+We'll create a variable called pool of type pointer or to Docker Test Pool, and I'll create another
+
+42
+00:02:32,910 --> 00:02:38,730
+one called resource, and it's a pointer to Docker Test Dart Resource.
+
+43
+00:02:41,130 --> 00:02:47,520
+And now I'll create another variable, which I'll call Miller, and it is equal to the type male and
+
+44
+00:02:47,520 --> 00:02:49,950
+I'll populate its fields with values that I want.
+
+45
+00:02:50,370 --> 00:02:53,430
+So it's domain will be, say, local host
+
+46
+00:02:56,550 --> 00:02:57,540
+and templates.
+
+47
+00:02:58,260 --> 00:03:04,290
+They're going to exist in dot slash test data, SGML those files we just created.
+
+48
+00:03:04,560 --> 00:03:04,890
+OK.
+
+49
+00:03:06,000 --> 00:03:08,250
+And we want to host, which will be local host
+
+50
+00:03:12,000 --> 00:03:12,870
+and for port.
+
+51
+00:03:14,160 --> 00:03:18,690
+I'm going to use Port one zero two six.
+
+52
+00:03:18,780 --> 00:03:21,580
+Now the default port are Male Horgos one zero two five.
+
+53
+00:03:21,600 --> 00:03:25,620
+But chances are some of you have that running already on your local machine.
+
+54
+00:03:25,620 --> 00:03:29,160
+So I'm just going to choose a different port and you choose whatever port works for you.
+
+55
+00:03:29,430 --> 00:03:30,570
+But 10:26 works.
+
+56
+00:03:30,570 --> 00:03:31,680
+In my case, OK?
+
+57
+00:03:32,760 --> 00:03:38,880
+Encryption was set to none because Male Hog doesn't use encryption from address.
+
+58
+00:03:39,090 --> 00:03:45,960
+It doesn't matter what it is, as long as it's in the form of an email me out here dot com will do from
+
+59
+00:03:45,960 --> 00:03:46,320
+name.
+
+60
+00:03:46,980 --> 00:03:52,530
+I'll make it Joe, just a string, and then we'll create our jobs channel.
+
+61
+00:03:53,160 --> 00:03:58,320
+Jobs will be equal to make Chan of type message.
+
+62
+00:03:59,990 --> 00:04:01,580
+I'll make it have one.
+
+63
+00:04:02,080 --> 00:04:09,440
+We only going to be doing one male at a time, so that's fine and results will be make Chan result.
+
+64
+00:04:10,340 --> 00:04:11,300
+And again, one.
+
+65
+00:04:12,620 --> 00:04:14,870
+So there's the three variables I'm going to need for sure.
+
+66
+00:04:15,170 --> 00:04:19,670
+OK, now we'll do my test main function funk test main to set things up.
+
+67
+00:04:20,240 --> 00:04:24,260
+And of course, that takes one parameter m a pointer to testing the M
+
+68
+00:04:27,200 --> 00:04:28,960
+and in here we'll get started.
+
+69
+00:04:28,970 --> 00:04:32,300
+So I'll create a variable called P and check for an error.
+
+70
+00:04:32,900 --> 00:04:40,610
+And that comes from Docker Test Dart New Pool Just like last time with nothing for a parameter empty
+
+71
+00:04:40,610 --> 00:04:46,040
+string, and I'll check for an error if error is not equal to nil.
+
+72
+00:04:46,190 --> 00:04:55,910
+Then I will just simply say it logged fatal could not connect to Docker, and I'll put the error in
+
+73
+00:04:55,910 --> 00:04:56,060
+there.
+
+74
+00:04:58,700 --> 00:05:03,320
+But assuming we got connected to Dr Docker, I'll just separate package level variable pool equal to
+
+75
+00:05:03,320 --> 00:05:03,540
+Pete.
+
+76
+00:05:04,430 --> 00:05:04,730
+OK.
+
+77
+00:05:07,090 --> 00:05:11,470
+Now, assess some options for the darker image that we want to pull and start up.
+
+78
+00:05:11,530 --> 00:05:19,840
+So UPS is equal to darker test run options, and we populate its fields as follows the repository.
+
+79
+00:05:23,560 --> 00:05:25,430
+And I think it important Docker test for me.
+
+80
+00:05:25,750 --> 00:05:26,350
+OK, did.
+
+81
+00:05:27,360 --> 00:05:31,560
+The repository is male hog slashing male hog.
+
+82
+00:05:34,900 --> 00:05:37,230
+The tag will be latest.
+
+83
+00:05:38,080 --> 00:05:44,710
+Just get the latest version of Doctor of Mail Home Environment Variables is a slice of strings.
+
+84
+00:05:49,850 --> 00:05:50,900
+Exposed parts
+
+85
+00:05:53,750 --> 00:05:56,390
+is equal to a slice of string.
+
+86
+00:05:57,830 --> 00:06:05,030
+And I want to expose one zero to five on the Docker image and eight zero to five, which is the web
+
+87
+00:06:05,030 --> 00:06:05,600
+interface.
+
+88
+00:06:05,900 --> 00:06:06,200
+OK.
+
+89
+00:06:09,470 --> 00:06:10,700
+And the port bindings
+
+90
+00:06:13,370 --> 00:06:21,530
+that will be a map of Docker dot port and then a slice of Docker port binding.
+
+91
+00:06:25,740 --> 00:06:33,090
+And the first one for ten twenty five that will be equal to host IP
+
+92
+00:06:35,640 --> 00:06:37,410
+0.0.0.0
+
+93
+00:06:39,570 --> 00:06:44,490
+and host port will be ten twenty six.
+
+94
+00:06:44,900 --> 00:06:47,460
+The one I'm going to listen on on my local host machine.
+
+95
+00:06:47,700 --> 00:06:48,900
+OK, not in the Docker image.
+
+96
+00:06:52,950 --> 00:06:55,740
+And the next one is 80, twenty five.
+
+97
+00:06:56,020 --> 00:07:03,330
+Yes, I want to connect to the web interface and that has a value of host IP
+
+98
+00:07:06,450 --> 00:07:08,040
+0.0.0.0.
+
+99
+00:07:08,160 --> 00:07:14,040
+All IP addresses and host port will be eight zero two six.
+
+100
+00:07:18,410 --> 00:07:23,160
+Yes, I want to not delete the Docker image at the end of our tests and look and see what's actually
+
+101
+00:07:23,160 --> 00:07:24,840
+in there and I'll put in my last comma.
+
+102
+00:07:25,710 --> 00:07:27,240
+And that takes care of port bindings.
+
+103
+00:07:27,480 --> 00:07:27,870
+OK.
+
+104
+00:07:28,980 --> 00:07:34,890
+And there's something missing here, comma and it didn't find Docker dot port.
+
+105
+00:07:34,980 --> 00:07:35,490
+Why not?
+
+106
+00:07:37,430 --> 00:07:42,230
+Darker right there, that the right one is not port.
+
+107
+00:07:49,400 --> 00:07:50,990
+So there's something wrong with my imports.
+
+108
+00:07:52,190 --> 00:08:00,710
+OK, so I have this one here should not be there and this one should be duplicated and have slashed
+
+109
+00:08:00,710 --> 00:08:01,580
+Docker after it.
+
+110
+00:08:02,960 --> 00:08:04,130
+Now let's go import those.
+
+111
+00:08:05,030 --> 00:08:11,010
+Go get GitHub dot com slash or slash Docker test slash need three.
+
+112
+00:08:11,150 --> 00:08:12,780
+I thought I had done this, but apparently not.
+
+113
+00:08:14,210 --> 00:08:19,550
+So it goes and gets it and probably ran Goldman tidy at some point and Docker just to be safe.
+
+114
+00:08:20,790 --> 00:08:22,890
+There and those arrows go away.
+
+115
+00:08:22,920 --> 00:08:23,310
+Perfect.
+
+116
+00:08:24,720 --> 00:08:26,100
+So now I have my option set up.
+
+117
+00:08:26,220 --> 00:08:32,100
+So the next step is to get a resource, so resource and potentially there come from.
+
+118
+00:08:32,620 --> 00:08:37,620
+Pool Dot run with options.
+
+119
+00:08:38,490 --> 00:08:45,090
+And I give it a reference to ops and we'll check for an error if error is not equal to nil.
+
+120
+00:08:46,430 --> 00:08:50,490
+Then I'll just logged up print line the error so I can see what it is.
+
+121
+00:08:51,960 --> 00:09:01,740
+And then I'll say ignore the return value, but call Pool Dot Purge resource and I will stop log that
+
+122
+00:09:01,800 --> 00:09:06,570
+fatal could not start resource.
+
+123
+00:09:06,930 --> 00:09:08,190
+So something went wrong with Docker.
+
+124
+00:09:08,250 --> 00:09:11,580
+That's no problem assuming we get past that.
+
+125
+00:09:12,180 --> 00:09:17,580
+Now, if you recall, at this point when we were testing our data models, we actually used that back
+
+126
+00:09:17,580 --> 00:09:20,750
+off functionality and said, Don't go until I can ping the database.
+
+127
+00:09:20,760 --> 00:09:25,080
+And unfortunately, we can't do that with male hog because there's nothing to ping.
+
+128
+00:09:25,710 --> 00:09:29,250
+So there's probably some fancy way to get around that.
+
+129
+00:09:29,250 --> 00:09:36,720
+But I'm just going to call Time Dot Sleep and I'll sleep for, say, two seconds, two times time dot
+
+130
+00:09:36,720 --> 00:09:37,170
+second.
+
+131
+00:09:39,480 --> 00:09:44,250
+You might have to go to three or four the first time you run this if you're on a slower machine.
+
+132
+00:09:44,250 --> 00:09:48,530
+But I'm running in a fairly elderly iMac at the moment, and two seconds does it for me.
+
+133
+00:09:48,540 --> 00:09:50,310
+So you'll probably be OK with two seconds.
+
+134
+00:09:50,910 --> 00:09:57,180
+OK, now the next thing you want to do is I'm going to want to start that listing for male channel because
+
+135
+00:09:57,180 --> 00:09:58,020
+we're going to be using that.
+
+136
+00:09:58,020 --> 00:10:03,780
+So I'll run go Miller Dot loosened format and that'll run in the background for the duration of our
+
+137
+00:10:03,780 --> 00:10:04,320
+tests.
+
+138
+00:10:05,040 --> 00:10:08,190
+Then I'll run the actual tests and get the response code.
+
+139
+00:10:08,200 --> 00:10:13,800
+So code is assigned the value of from our variable M run.
+
+140
+00:10:15,480 --> 00:10:18,580
+And then when we're done, we're going to want to purge the Docker image.
+
+141
+00:10:18,600 --> 00:10:20,370
+So we do that the same way we did before.
+
+142
+00:10:20,430 --> 00:10:32,010
+If errors assign the value of pool dot purge resource error is not equal to nil, then we'll just say
+
+143
+00:10:32,010 --> 00:10:33,630
+logged fatal f
+
+144
+00:10:36,390 --> 00:10:47,340
+could not purge resource percent s and whatever the errors, but too many quotation marks.
+
+145
+00:10:48,630 --> 00:10:49,080
+That's better.
+
+146
+00:10:51,360 --> 00:11:00,150
+And finally, after we run that check post exit with whatever the code is, not executable exit and
+
+147
+00:11:00,150 --> 00:11:05,550
+code, and that will stop the tests, everything exists and it will also kill this listing for mail
+
+148
+00:11:05,550 --> 00:11:06,570
+that's running in the background.
+
+149
+00:11:07,590 --> 00:11:08,940
+So there's are set up tests.
+
+150
+00:11:09,240 --> 00:11:12,990
+So if we get everything right there, I should actually set up our test properly.
+
+151
+00:11:13,020 --> 00:11:15,150
+Let's write one test and see how it works.
+
+152
+00:11:15,390 --> 00:11:24,960
+So inside of Mailer, we close this folder inside of Mailer or create a new file that I call mail underscore
+
+153
+00:11:24,960 --> 00:11:27,780
+test go and it's in Package Mailer.
+
+154
+00:11:29,730 --> 00:11:34,420
+And let's try testing sending a mail message and SMTP mail message.
+
+155
+00:11:34,450 --> 00:11:37,500
+OK, so I'll keep my first function func.
+
+156
+00:11:37,710 --> 00:11:39,570
+I'll call it test mail underscore.
+
+157
+00:11:40,170 --> 00:11:43,170
+Send SMTP message.
+
+158
+00:11:43,450 --> 00:11:48,630
+So we'll test that function and it takes, as usual, parameter T of type testing T.
+
+159
+00:11:50,940 --> 00:11:53,700
+And I probably should have let it do the auto import for me.
+
+160
+00:11:53,700 --> 00:11:55,520
+Testing Dot T.
+
+161
+00:11:56,790 --> 00:11:57,780
+It has no return vote.
+
+162
+00:12:00,330 --> 00:12:01,900
+So first thing I need is a message.
+
+163
+00:12:01,930 --> 00:12:02,790
+Let's create a message.
+
+164
+00:12:03,360 --> 00:12:07,770
+MSG is assigned the type of message and we populate some fields.
+
+165
+00:12:07,780 --> 00:12:11,550
+So we'll say from Is me hat here icon
+
+166
+00:12:14,490 --> 00:12:14,830
+anything.
+
+167
+00:12:14,830 --> 00:12:25,860
+This, in the form of an email address from name will be Joe to will be you at their dot com.
+
+168
+00:12:26,790 --> 00:12:35,370
+And that'll work fine with mail hug subject test template.
+
+169
+00:12:38,190 --> 00:12:42,790
+And of course, you remember that we put two templates in there, both starting with the word test.
+
+170
+00:12:42,840 --> 00:12:46,450
+So we use test and attachments.
+
+171
+00:12:46,470 --> 00:12:47,880
+Let's put an attachment here.
+
+172
+00:12:47,970 --> 00:12:54,300
+Attachment is a slice of string and I need to attach a file and one that I know is always going to be
+
+173
+00:12:54,300 --> 00:12:59,500
+available to me is right in the test data folder inside the mail folder.
+
+174
+00:12:59,520 --> 00:13:04,410
+One called test to mail it up to you, and that will actually add an attachment to the message.
+
+175
+00:13:05,190 --> 00:13:06,060
+So we have a message.
+
+176
+00:13:06,450 --> 00:13:13,590
+So let's check for an error and call mail or send SMTP message and hand it message.
+
+177
+00:13:15,690 --> 00:13:19,290
+If error is not equal to nil, then t the error.
+
+178
+00:13:20,550 --> 00:13:24,510
+And we'll just say here you can put whatever you want in there, but I'm going to run this test and
+
+179
+00:13:24,510 --> 00:13:25,290
+see what happens.
+
+180
+00:13:25,800 --> 00:13:26,790
+So I open my terminal.
+
+181
+00:13:27,540 --> 00:13:29,160
+I change into the mailer folder.
+
+182
+00:13:29,250 --> 00:13:30,480
+Make sure I'm in the right folder.
+
+183
+00:13:30,600 --> 00:13:33,360
+I am and I write, Go test dot.
+
+184
+00:13:36,650 --> 00:13:40,880
+And that should pull the Docker image, which I probably already had pulled and it passed.
+
+185
+00:13:41,000 --> 00:13:41,450
+Perfect.
+
+186
+00:13:41,630 --> 00:13:43,070
+So that seemed to work really well.
+
+187
+00:13:43,340 --> 00:13:52,370
+Now let's make sure let's go back to our setup test file and let's comment out these lines that actually
+
+188
+00:13:52,370 --> 00:13:57,650
+purged the resource, in other words, will leave the Docker image running and now run go test dot.
+
+189
+00:14:03,430 --> 00:14:04,180
+There it goes.
+
+190
+00:14:04,720 --> 00:14:13,660
+Now let's go to our Web browser and I'll go to Étudie Kogi local host port eight zero two six and that
+
+191
+00:14:13,660 --> 00:14:18,610
+should give me my web interface and it does, and there's my text message, so it worked exactly as
+
+192
+00:14:18,610 --> 00:14:19,630
+I expected it should.
+
+193
+00:14:19,720 --> 00:14:23,510
+OK, so let's go back and write some more tests, actually.
+
+194
+00:14:23,530 --> 00:14:24,610
+Let's go to Doctor first.
+
+195
+00:14:25,240 --> 00:14:29,470
+So Doctor is right here and bring up the dashboard.
+
+196
+00:14:30,160 --> 00:14:30,540
+There is.
+
+197
+00:14:31,510 --> 00:14:33,220
+And I'll delete this one entirely.
+
+198
+00:14:33,220 --> 00:14:33,790
+So that's there.
+
+199
+00:14:33,790 --> 00:14:36,490
+It's running, it's doing its thing, and I will trash it.
+
+200
+00:14:37,090 --> 00:14:45,400
+So now it's gone, and let's uncomment these lines and set up test just so we'll purge it after everything
+
+201
+00:14:45,700 --> 00:14:46,630
+is finished running.
+
+202
+00:14:47,470 --> 00:14:48,640
+And let's read our second test.
+
+203
+00:14:49,030 --> 00:14:52,150
+So this time, let's try testing, sending using a channel.
+
+204
+00:14:52,150 --> 00:14:55,030
+So I'll say func test mail.
+
+205
+00:14:56,700 --> 00:15:09,270
+Underscore send using Chan again with T Pointer to testing Dot T and the Senate using a channel.
+
+206
+00:15:09,300 --> 00:15:15,960
+We still need a message, so I'll grab the same message I have right here and paste it in there, and
+
+207
+00:15:15,960 --> 00:15:16,410
+that's fine.
+
+208
+00:15:17,550 --> 00:15:21,740
+And now I'll say mailer dot jobs variable we set up.
+
+209
+00:15:21,750 --> 00:15:22,640
+It's available to us.
+
+210
+00:15:22,650 --> 00:15:28,470
+We got it in our set up short test ago and I just send it MSG, OK?
+
+211
+00:15:29,310 --> 00:15:34,980
+And now we look for the result, which I'll call raise, and that's assigned a value that comes from
+
+212
+00:15:35,430 --> 00:15:36,570
+mailer results.
+
+213
+00:15:38,340 --> 00:15:44,760
+And I'll say, if resort error is not equal to nil, then something went wrong.
+
+214
+00:15:44,910 --> 00:15:46,620
+OK to error.
+
+215
+00:15:48,000 --> 00:15:52,380
+And I'll say errors dot new because I need to give it an error.
+
+216
+00:15:54,590 --> 00:15:56,930
+Failed to send over channel.
+
+217
+00:15:58,070 --> 00:16:00,680
+OK, so we should be able to run this test now.
+
+218
+00:16:00,920 --> 00:16:01,850
+I'll clear the screen.
+
+219
+00:16:01,940 --> 00:16:02,900
+Go Test Dot.
+
+220
+00:16:08,360 --> 00:16:09,740
+And I passed perfect.
+
+221
+00:16:11,520 --> 00:16:14,880
+Now, do we test everything we need to when sending to a channel?
+
+222
+00:16:15,000 --> 00:16:15,570
+No, we didn't.
+
+223
+00:16:15,840 --> 00:16:17,390
+Let's try this message.
+
+224
+00:16:17,400 --> 00:16:18,120
+Got two?
+
+225
+00:16:18,150 --> 00:16:24,570
+I'll set the two address to be a not an email address, not an email address.
+
+226
+00:16:25,020 --> 00:16:28,000
+And that should return an error when I fire it up.
+
+227
+00:16:28,020 --> 00:16:30,500
+So I'll just say mailed out jobs.
+
+228
+00:16:32,860 --> 00:16:36,760
+Yes, MSG, which now has an invalid to address.
+
+229
+00:16:36,810 --> 00:16:37,230
+OK.
+
+230
+00:16:37,860 --> 00:16:44,310
+And again, I'll look for a result result is equal to whatever comes from mail or dot results.
+
+231
+00:16:45,210 --> 00:16:51,700
+And I will say, if resort error is equal to nil, there should be an error and we didn't get one.
+
+232
+00:16:51,720 --> 00:17:07,830
+So we'll say to error errors dot new, no error received with invalid to address or whatever you want
+
+233
+00:17:07,830 --> 00:17:08,760
+to put for your message.
+
+234
+00:17:09,330 --> 00:17:10,360
+So that should work.
+
+235
+00:17:10,380 --> 00:17:11,940
+Let's run our tests here.
+
+236
+00:17:11,940 --> 00:17:15,540
+The screen go test dot.
+
+237
+00:17:20,060 --> 00:17:20,360
+Good.
+
+238
+00:17:21,680 --> 00:17:22,880
+And let's read our next test.
+
+239
+00:17:23,000 --> 00:17:25,080
+So we've sent using a SMTP.
+
+240
+00:17:25,100 --> 00:17:26,480
+We sent it over the channel.
+
+241
+00:17:27,500 --> 00:17:31,070
+We should test test sending it over an EPR.
+
+242
+00:17:31,340 --> 00:17:36,860
+But the reality is I don't want to connect to male gun or SendGrid or spark post, and in fact, there's
+
+243
+00:17:36,860 --> 00:17:43,910
+no real value in me testing sending email over any of those services because the package I'm using that
+
+244
+00:17:43,910 --> 00:17:49,850
+Ainsley Clark go mail package, he already has tests for all of those things, and I see no value whatsoever
+
+245
+00:17:50,240 --> 00:17:53,720
+in testing code that already has tests that pass.
+
+246
+00:17:53,840 --> 00:17:57,080
+So instead, we'll just test the things that we need to for our package.
+
+247
+00:17:57,830 --> 00:18:00,110
+So I'll say flunk, test mail.
+
+248
+00:18:02,160 --> 00:18:04,410
+Send using a part.
+
+249
+00:18:05,040 --> 00:18:05,430
+OK.
+
+250
+00:18:05,760 --> 00:18:12,060
+And again, T pointer to testing and I'll stroll up and give ourselves some room.
+
+251
+00:18:13,200 --> 00:18:20,700
+And again, I want the messages, so I'll copy the message I have from up here and paste it down here.
+
+252
+00:18:20,790 --> 00:18:23,940
+And you can make that a package a little variable if you want it to, but I'm not going to.
+
+253
+00:18:25,020 --> 00:18:31,140
+So from here, I can actually leave these ones out because we have something in our code that sets those
+
+254
+00:18:31,140 --> 00:18:33,450
+two values from in from name.
+
+255
+00:18:33,780 --> 00:18:34,860
+If they're not popular.
+
+256
+00:18:34,980 --> 00:18:43,830
+OK, so what I'm going to do here is, say, Mailer Dot April, because it's not going to use the API
+
+257
+00:18:44,220 --> 00:18:46,420
+unless we populate some values in there at all.
+
+258
+00:18:46,440 --> 00:18:50,280
+Going to populate in there are invalid things like unknown.
+
+259
+00:18:52,710 --> 00:18:58,590
+So I only want to test a situation where we don't have a valid API set up in our own file.
+
+260
+00:18:59,580 --> 00:19:03,480
+So I still need something in Mailers API key in there.
+
+261
+00:19:03,510 --> 00:19:10,680
+I'll just put ABC one two three and I also need a mailer dot API URL.
+
+262
+00:19:11,220 --> 00:19:19,380
+Just something that's a non-zero length string so I can put HD IPS code slash slash www.youtube.com.
+
+263
+00:19:20,070 --> 00:19:20,400
+OK.
+
+264
+00:19:22,640 --> 00:19:26,090
+And now I'll check for an error and call Miller.
+
+265
+00:19:26,510 --> 00:19:27,140
+Send.
+
+266
+00:19:28,770 --> 00:19:35,430
+Using a and I'll hand it message, and it requires a second parameter, which I'll just call unknown,
+
+267
+00:19:36,720 --> 00:19:39,030
+OK, something that should generate an error.
+
+268
+00:19:39,960 --> 00:19:43,410
+And I check to see if error is equal to nil.
+
+269
+00:19:43,440 --> 00:19:46,440
+Then something went wrong because I should have an error at this point.
+
+270
+00:19:46,620 --> 00:19:50,250
+I'll just put the error and I'll just put the error in there.
+
+271
+00:19:50,790 --> 00:19:51,150
+OK.
+
+272
+00:19:51,210 --> 00:19:59,280
+You can put whatever you want for a message, and after I'm done, I'm going to reset Mailer April to
+
+273
+00:19:59,280 --> 00:19:59,970
+an empty string.
+
+274
+00:20:00,200 --> 00:20:07,560
+Its default value and mailer API key equal to an empty string.
+
+275
+00:20:07,920 --> 00:20:11,070
+And back to mailer the API URL.
+
+276
+00:20:12,600 --> 00:20:14,130
+I'll make that an empty string as well.
+
+277
+00:20:14,490 --> 00:20:18,360
+OK, just to set it back to the same state it was before we run the test.
+
+278
+00:20:18,450 --> 00:20:21,120
+So let's run the test, you know, test out.
+
+279
+00:20:26,890 --> 00:20:27,440
+Perfect.
+
+280
+00:20:27,460 --> 00:20:28,270
+Everything passed.
+
+281
+00:20:29,680 --> 00:20:31,510
+OK, so that's send using API.
+
+282
+00:20:32,260 --> 00:20:37,930
+Now let's read another function, which I will call test mail.
+
+283
+00:20:40,480 --> 00:20:49,150
+And this time I'll test build HTML message with a pointer to testing dot tea.
+
+284
+00:20:51,100 --> 00:20:56,680
+Now, in reality, this has already been run from the tests that I ran above this, but I always write
+
+285
+00:20:56,680 --> 00:20:58,840
+a test for every single function that I can.
+
+286
+00:20:58,960 --> 00:21:02,800
+So again, I want a message, so I'll copy the one I have from up here at the very top one.
+
+287
+00:21:05,080 --> 00:21:06,150
+Paste it down in here.
+
+288
+00:21:06,160 --> 00:21:14,320
+So I have the from and from name set, and I'll simply ignore the first return value, but do check
+
+289
+00:21:14,320 --> 00:21:15,070
+for an error.
+
+290
+00:21:15,100 --> 00:21:19,960
+And all I have to do is call mailer dot build HTML message and handed the message.
+
+291
+00:21:20,860 --> 00:21:25,570
+And if the error is not equal to nil, then the error.
+
+292
+00:21:25,960 --> 00:21:28,870
+And I'll just put the error and you can put whatever message you want in there.
+
+293
+00:21:30,400 --> 00:21:31,270
+So that's that one.
+
+294
+00:21:31,640 --> 00:21:34,480
+Now, copy this whole thing and do the same thing.
+
+295
+00:21:34,480 --> 00:21:37,060
+But this time I'll call build plain message.
+
+296
+00:21:40,810 --> 00:21:46,600
+And here it's billed plain message, plain text message.
+
+297
+00:21:47,950 --> 00:21:50,230
+OK, and I run these tests again.
+
+298
+00:21:56,200 --> 00:22:00,430
+Everything passed, so the next function I want to test.
+
+299
+00:22:01,150 --> 00:22:07,260
+Let me hide my terminal here, the next function I want to test is actually mail send.
+
+300
+00:22:07,270 --> 00:22:19,150
+In other word, the send function so func test mail and I'm testing sent T pointer to testing T and
+
+301
+00:22:19,150 --> 00:22:21,100
+I'll get my message again so I can use this one.
+
+302
+00:22:23,860 --> 00:22:24,820
+I'll paste it in there.
+
+303
+00:22:26,500 --> 00:22:36,580
+And all I have to do is call error is a sign of the value of mailer not sent, and my error check will
+
+304
+00:22:36,580 --> 00:22:38,000
+be exactly the same as up here.
+
+305
+00:22:38,020 --> 00:22:40,380
+And again, you can put whatever you want in for a message there.
+
+306
+00:22:42,460 --> 00:22:43,150
+What's this?
+
+307
+00:22:43,480 --> 00:22:45,460
+It requires the parameter mzgee, of course.
+
+308
+00:22:46,810 --> 00:22:47,200
+That's correct.
+
+309
+00:22:48,550 --> 00:22:49,720
+So we test it that way.
+
+310
+00:22:50,110 --> 00:22:57,170
+And then again, we want to test because because we reset our values up here for mailer API.
+
+311
+00:22:57,190 --> 00:23:01,330
+API key in API URL, we set those to empty strings.
+
+312
+00:23:01,510 --> 00:23:05,680
+Therefore, we called Mailer send it used as SMTP email.
+
+313
+00:23:05,930 --> 00:23:10,790
+And of course, we want to do the same thing here down here that we did up there.
+
+314
+00:23:10,810 --> 00:23:17,440
+We want to reset those values to dummy values because I'm not testing SendGrid or Spark Post or Mail
+
+315
+00:23:17,440 --> 00:23:17,780
+Gun.
+
+316
+00:23:17,800 --> 00:23:25,240
+I'm just testing the the situation where calling send with invalid credentials in our own file that
+
+317
+00:23:25,240 --> 00:23:26,260
+should generate an error.
+
+318
+00:23:26,650 --> 00:23:34,540
+So all I have to do is set those values like I did here, run that test again, change the assignment
+
+319
+00:23:34,540 --> 00:23:43,660
+operator to an equals sign and check for error being equal to nil because we should have an error with
+
+320
+00:23:43,660 --> 00:23:44,830
+credentials like this.
+
+321
+00:23:44,950 --> 00:23:45,310
+OK.
+
+322
+00:23:46,370 --> 00:23:50,900
+And then again, we'll just copy the code where we set everything back to their default values right
+
+323
+00:23:50,900 --> 00:23:51,170
+here.
+
+324
+00:23:52,130 --> 00:23:55,000
+And again, this looks like redundant testing and it is.
+
+325
+00:23:55,010 --> 00:24:01,940
+But what I'm doing is testing each function individually, which in my experience is never a bad thing.
+
+326
+00:24:03,200 --> 00:24:08,900
+So that test sending the last thing I have to check is testing choose API.
+
+327
+00:24:09,020 --> 00:24:17,630
+So func test mail underscore, choose apart with the parameter of T pointer to testing dot t.
+
+328
+00:24:20,970 --> 00:24:22,100
+Let's give ourselves some room.
+
+329
+00:24:23,480 --> 00:24:30,140
+And we need a message again, so I'll be up and copy this message and paste this down here.
+
+330
+00:24:32,600 --> 00:24:35,590
+And we also need to set Mailer API to unknown.
+
+331
+00:24:35,600 --> 00:24:37,790
+So Mailer API
+
+332
+00:24:41,300 --> 00:24:42,320
+is equal to unknown.
+
+333
+00:24:42,500 --> 00:24:47,020
+Anything that's not spark posts and grid SMTP or mail gun.
+
+334
+00:24:47,030 --> 00:24:49,370
+So anything that's not that and that does the trick.
+
+335
+00:24:50,330 --> 00:24:57,800
+And we just call error is a sign the value of mail or choose API, and we hand it the message.
+
+336
+00:24:59,000 --> 00:25:05,570
+And if error is equal to nil, then something went wrong because we should get an error to air in the
+
+337
+00:25:05,570 --> 00:25:05,770
+air.
+
+338
+00:25:06,020 --> 00:25:08,090
+And again, you put whatever you want for a message in that.
+
+339
+00:25:08,120 --> 00:25:11,360
+So let's run our final set of tests and make sure they work.
+
+340
+00:25:17,560 --> 00:25:24,190
+And it failed, and it is Test Mail, send mail Tesco one to three right here.
+
+341
+00:25:24,520 --> 00:25:25,720
+And why did you fail?
+
+342
+00:25:26,140 --> 00:25:37,030
+Well, let's populate this with some actual values here, if you will say did not get an error when
+
+343
+00:25:37,030 --> 00:25:38,770
+we should have.
+
+344
+00:25:39,730 --> 00:25:42,880
+And then I'll put s and an error in there.
+
+345
+00:25:43,780 --> 00:25:44,760
+And that should be nil.
+
+346
+00:25:44,920 --> 00:25:45,520
+And it's not.
+
+347
+00:25:45,520 --> 00:25:48,550
+So let's run that test again and see what we're actually getting to make sure that's the one that's
+
+348
+00:25:48,550 --> 00:25:49,000
+failing.
+
+349
+00:25:50,170 --> 00:25:51,640
+And if it is, we'll go look at the code.
+
+350
+00:25:55,010 --> 00:25:55,790
+Here is nil.
+
+351
+00:25:55,880 --> 00:25:59,180
+OK, so I can get rid of this.
+
+352
+00:26:01,590 --> 00:26:02,460
+Get rid of this.
+
+353
+00:26:03,210 --> 00:26:05,840
+That is the one that's failing, so I'll make this back to error.
+
+354
+00:26:06,360 --> 00:26:09,660
+Now a slick mailer, send and see what it's giving us back.
+
+355
+00:26:12,320 --> 00:26:14,030
+So send returns an error.
+
+356
+00:26:17,900 --> 00:26:20,340
+It tries to send the SMTP message.
+
+357
+00:26:23,160 --> 00:26:28,740
+So we're checking to see if Napier's length is greater than zero in April, key is greater than zero
+
+358
+00:26:28,740 --> 00:26:29,770
+in April.
+
+359
+00:26:30,390 --> 00:26:32,370
+That's all greater than zero.
+
+360
+00:26:34,010 --> 00:26:35,660
+And it's not equal to SMTP.
+
+361
+00:26:35,930 --> 00:26:40,400
+That should be the case, so it should be calling EMD, choose a PR.
+
+362
+00:26:41,600 --> 00:26:42,740
+Let's try return.
+
+363
+00:26:43,460 --> 00:26:44,090
+That's better.
+
+364
+00:26:44,120 --> 00:26:45,200
+That's why that failed.
+
+365
+00:26:45,770 --> 00:26:48,860
+So let's go back to mail test and this is why we write tests, of course.
+
+366
+00:26:49,430 --> 00:26:50,390
+Let's go back here.
+
+367
+00:26:50,630 --> 00:26:50,960
+Good.
+
+368
+00:26:50,960 --> 00:26:51,620
+Everything's good.
+
+369
+00:26:51,620 --> 00:26:54,950
+Let's clear the screen and run our tests.
+
+370
+00:26:57,570 --> 00:26:58,780
+And this time it should pass.
+
+371
+00:27:00,470 --> 00:27:01,280
+And it does.
+
+372
+00:27:01,430 --> 00:27:01,850
+Perfect.
+
+373
+00:27:02,210 --> 00:27:03,270
+So let's look at our coverage.
+
+374
+00:27:03,770 --> 00:27:12,800
+And I'm going to type go test dash cover profile equals coverage out, which will run the tests and
+
+375
+00:27:12,800 --> 00:27:16,640
+put the results in a file called coverage out.
+
+376
+00:27:17,090 --> 00:27:24,710
+And then I'll run go tool cover and Dash HTML because I want it to open in a web browser and read the
+
+377
+00:27:24,710 --> 00:27:26,900
+data from coverage dot out.
+
+378
+00:27:27,770 --> 00:27:30,110
+And I should fire up a web browser and show me the coverage.
+
+379
+00:27:35,500 --> 00:27:40,300
+So we've got sixty two point seven percent, which is pretty good, because all I really want to test
+
+380
+00:27:40,450 --> 00:27:46,570
+are the things you see in green, so we can't test that without actually connecting to an API, which
+
+381
+00:27:46,570 --> 00:27:47,050
+is bad.
+
+382
+00:27:47,320 --> 00:27:48,190
+We don't want to do that.
+
+383
+00:27:48,470 --> 00:27:54,070
+I don't care about this stuff down here because I actually don't want to test, as I've said before.
+
+384
+00:27:54,310 --> 00:27:59,200
+Male gun or any of those services because all of those tests are already written in the package that
+
+385
+00:27:59,200 --> 00:27:59,800
+I've imported.
+
+386
+00:28:00,250 --> 00:28:02,110
+But everything else pretty good coverage.
+
+387
+00:28:02,260 --> 00:28:03,700
+So I'm pretty satisfied with this.
+
+388
+00:28:04,240 --> 00:28:04,570
+All right.
+
+389
+00:28:04,720 --> 00:28:05,350
+Let's move on.

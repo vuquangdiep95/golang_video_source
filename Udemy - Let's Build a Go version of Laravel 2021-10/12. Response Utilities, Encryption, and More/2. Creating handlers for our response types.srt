@@ -1,0 +1,355 @@
+1
+00:00:00,570 --> 00:00:05,910
+So let's try out some of our response types, and right now I'm in the the My App project and I'm looking
+
+2
+00:00:05,910 --> 00:00:10,530
+at the file handlers and go, which of course is inside the handlers directory.
+
+3
+00:00:11,040 --> 00:00:14,880
+And what I'm going to do is scroll down to the bottom and I'll just write my handlers first.
+
+4
+00:00:15,090 --> 00:00:20,640
+So I want to have from the homepage a link to something that just renders some JSON just to try out
+
+5
+00:00:20,640 --> 00:00:22,530
+our right JSON functionality.
+
+6
+00:00:23,550 --> 00:00:29,130
+So it could a handler func receiver a pointer to handlers and I'll call this one.
+
+7
+00:00:29,130 --> 00:00:31,110
+Oh, say just JSON like that.
+
+8
+00:00:31,380 --> 00:00:36,300
+And it requires a response writer and a point of true request.
+
+9
+00:00:40,920 --> 00:00:49,290
+What we'll do is just make a little variable with the appropriate JSON tags, populate its values and
+
+10
+00:00:49,290 --> 00:00:49,830
+then write it out.
+
+11
+00:00:50,070 --> 00:00:50,430
+OK.
+
+12
+00:00:50,550 --> 00:00:56,130
+So we'll create a ver, which I'll just call payload as I often do when I'm working with Jason and I
+
+13
+00:00:56,130 --> 00:01:05,460
+use a lowercase l and it's a struggle and it has these fields just ID, which is an ID 64 and in JSON,
+
+14
+00:01:05,580 --> 00:01:12,420
+I want to call that ID and it has another one called say name and it's a string.
+
+15
+00:01:12,810 --> 00:01:15,600
+And in Jason, I'll call that content
+
+16
+00:01:18,960 --> 00:01:19,770
+and then hobbies,
+
+17
+00:01:23,340 --> 00:01:24,180
+which I'll call.
+
+18
+00:01:25,390 --> 00:01:28,600
+In Jason Hobbes.
+
+19
+00:01:31,410 --> 00:01:33,790
+Well, let's make that a slice of strings, OK?
+
+20
+00:01:35,080 --> 00:01:40,840
+The slice of string, because you can have more than one hobby and names, it probably would be called
+
+21
+00:01:40,840 --> 00:01:42,520
+name, not me, not content.
+
+22
+00:01:42,940 --> 00:01:43,480
+It will be.
+
+23
+00:01:44,800 --> 00:01:46,750
+It makes sense, even though this is just test data.
+
+24
+00:01:46,900 --> 00:01:48,460
+Now let's populate this information.
+
+25
+00:01:48,470 --> 00:01:50,200
+So payload died.
+
+26
+00:01:50,920 --> 00:01:52,210
+I'll make that equal to say 10.
+
+27
+00:01:53,110 --> 00:01:57,010
+And payload dart name.
+
+28
+00:01:57,190 --> 00:02:04,720
+I'll make that equal to Jack Jones and payload dot hobbies.
+
+29
+00:02:05,590 --> 00:02:08,020
+I'll make that equal to a slice of string.
+
+30
+00:02:09,910 --> 00:02:11,380
+And we'll give Jack a few hobbies.
+
+31
+00:02:12,010 --> 00:02:18,430
+So we'll give him, say, karate and maybe tennis and maybe programming.
+
+32
+00:02:22,210 --> 00:02:25,580
+Now we just write this out using our right Jason function.
+
+33
+00:02:25,600 --> 00:02:29,410
+We already had that function, but we'll put a link to it on the home page anyway, so we'll check for
+
+34
+00:02:29,500 --> 00:02:29,770
+error.
+
+35
+00:02:29,860 --> 00:02:34,870
+That's a sign of the value of H2O app Dot, right, Jason.
+
+36
+00:02:35,110 --> 00:02:38,690
+And again, you could write a helper function for this in the convenience package if you want it to
+
+37
+00:02:38,710 --> 00:02:39,610
+the convenience file.
+
+38
+00:02:39,970 --> 00:02:47,470
+But I'll just do it this way and that just requires W HP Dot status, OK, which is a good one, and
+
+39
+00:02:47,470 --> 00:02:50,350
+the payload I check for an error.
+
+40
+00:02:51,010 --> 00:02:59,410
+If error is not equal to nil, then I'll just say each dot dot error log dot print line.
+
+41
+00:03:02,070 --> 00:03:05,700
+There, so that's our first one, that's pretty simple.
+
+42
+00:03:06,750 --> 00:03:08,850
+Now let's do one for X amount while we're at it.
+
+43
+00:03:09,120 --> 00:03:17,430
+So Funk and h pointed two handlers, and I'll just call this one x amount all caps.
+
+44
+00:03:18,090 --> 00:03:26,940
+And again, w h immediate response writer and our pointer to the GDP to request.
+
+45
+00:03:28,440 --> 00:03:29,670
+And here we'll do a similar thing.
+
+46
+00:03:30,720 --> 00:03:34,020
+But of course, the structure, for example, is a little bit different.
+
+47
+00:03:34,290 --> 00:03:35,340
+So I'll make a tip here.
+
+48
+00:03:35,720 --> 00:03:38,880
+Payload and it's a struggle.
+
+49
+00:03:39,840 --> 00:03:42,870
+And again, we'll give it an ID also and in sixty four.
+
+50
+00:03:45,130 --> 00:03:48,530
+And here in XML, I'll call that idea.
+
+51
+00:03:51,740 --> 00:03:57,350
+And name will be a string, and in XML, I'll call that name.
+
+52
+00:03:59,210 --> 00:04:00,380
+Here's a it's a little bit different.
+
+53
+00:04:01,310 --> 00:04:04,580
+I'll make hobbies also a slice of string.
+
+54
+00:04:05,870 --> 00:04:13,880
+But in XML, we'll make the hobbies and then a greater then sign and then hobby.
+
+55
+00:04:15,560 --> 00:04:17,120
+And of course, I'd close that quote.
+
+56
+00:04:18,650 --> 00:04:19,460
+So I have my tape.
+
+57
+00:04:19,700 --> 00:04:21,320
+Let's populate its values.
+
+58
+00:04:22,310 --> 00:04:30,800
+We actually need to declare a variable first of our payload of type payload there and payload i.e. is
+
+59
+00:04:30,800 --> 00:04:34,850
+equal to can again payload dot name.
+
+60
+00:04:35,750 --> 00:04:42,050
+We'll make that equal to John Smith and payload dot hobbies.
+
+61
+00:04:42,120 --> 00:04:43,250
+I'll just copy these ones.
+
+62
+00:04:44,330 --> 00:04:47,780
+What the copy savory typing them.
+
+63
+00:04:48,590 --> 00:04:48,860
+All right.
+
+64
+00:04:48,890 --> 00:04:53,750
+Now we have all the necessary values, so we just write X amount and it's almost the same as this.
+
+65
+00:04:53,930 --> 00:04:56,930
+I just copy and paste it down here.
+
+66
+00:04:57,170 --> 00:05:01,160
+But instead of calling, right, Jason, I'm going to call Right X amount.
+
+67
+00:05:01,550 --> 00:05:02,090
+Try that again.
+
+68
+00:05:03,340 --> 00:05:04,580
+Write X amount.
+
+69
+00:05:06,860 --> 00:05:07,960
+And that should work just fine.
+
+70
+00:05:07,970 --> 00:05:08,930
+Let's do one more.
+
+71
+00:05:08,960 --> 00:05:10,190
+Let's do our download one.
+
+72
+00:05:11,750 --> 00:05:12,680
+This one's really short.
+
+73
+00:05:13,130 --> 00:05:16,970
+First of all, do we have a file we can download or what's inside our public directory?
+
+74
+00:05:17,720 --> 00:05:21,090
+We have public images, and this alerts JPEG.
+
+75
+00:05:21,110 --> 00:05:21,530
+That'll work.
+
+76
+00:05:21,530 --> 00:05:21,800
+Fine.
+
+77
+00:05:22,010 --> 00:05:22,370
+OK.
+
+78
+00:05:22,790 --> 00:05:26,390
+So I'll create a function, and that's what I'll call.
+
+79
+00:05:26,750 --> 00:05:29,480
+Download file with W.H.
+
+80
+00:05:29,480 --> 00:05:35,810
+If you need a response writer and our pointer to HTTP request.
+
+81
+00:05:38,270 --> 00:05:45,610
+I can do this in one Line H Dot app Dot Ancestors' Receiver.
+
+82
+00:05:45,620 --> 00:05:56,570
+Of course, I left other H handlers H Dot app download file and I'll give it the information it needs.
+
+83
+00:05:56,570 --> 00:06:02,060
+And of course, what it needs is a path to that celerity file and the request and the response rate
+
+84
+00:06:02,300 --> 00:06:11,660
+in the reverse order w r and then the full path, which in my case will be dot slash public slash images
+
+85
+00:06:11,900 --> 00:06:17,570
+and then the file it, which is solara toss dot jpg.
+
+86
+00:06:20,240 --> 00:06:22,070
+And that should work.
+
+87
+00:06:22,370 --> 00:06:22,670
+All right.
+
+88
+00:06:22,670 --> 00:06:28,280
+In the next lecture, we'll go create links to all of these on the home dot git page and try them out
+
+89
+00:06:28,280 --> 00:06:30,170
+and make sure everything works the way that it should.

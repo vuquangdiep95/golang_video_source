@@ -1,0 +1,479 @@
+1
+00:00:00,300 --> 00:00:00,540
+Được rồi.
+
+2
+00:00:00,570 --> 00:00:02,200
+Vì vậy, giải pháp số hai.
+
+3
+00:00:02,220 --> 00:00:03,910
+Chúng ta hãy xem mã.
+
+4
+00:00:04,740 --> 00:00:09,160
+Vì vậy, giải pháp số hai thực sự bắt đầu rất giống với giải pháp số một.
+
+5
+00:00:09,180 --> 00:00:16,240
+Tôi có một trang web mà bạn không đổi, đó là nơi tôi sẽ thu thập thông tin.
+
+6
+00:00:16,440 --> 00:00:25,020
+Trong trường hợp này, đó là quá trình thu thập thông tin từ lệnh gọi API này từ Twitter thay vì đồng euro cho trang
+
+7
+00:00:26,780 --> 00:00:31,760
+do đó, URL U từ lệnh gọi API đã biến mất.
+
+8
+00:00:31,780 --> 00:00:37,080
+Tôi nghe nói trong cuộc trò chuyện này có những trang đó chỉ là trạng thái.
+
+9
+00:00:37,220 --> 00:00:38,570
+Vì vậy, chúng tôi đã có hai tập tin ở đây.
+
+10
+00:00:38,570 --> 00:00:42,130
+Chúng ta phải đi trực tiếp và cạo đi ăn.
+
+11
+00:00:42,170 --> 00:00:44,610
+Tôi muốn làm điều này đây là go collie của tôi.
+
+12
+00:00:44,630 --> 00:00:44,880
+ĐƯỢC RỒI.
+
+13
+00:00:44,900 --> 00:00:45,780
+Có đi gọi Chúa.
+
+14
+00:00:45,790 --> 00:00:46,100
+Đúng.
+
+15
+00:00:46,120 --> 00:00:47,180
+Đó là giải pháp đầu tiên.
+
+16
+00:00:47,180 --> 00:00:47,420
+Được rồi.
+
+17
+00:00:47,970 --> 00:00:49,630
+Vì vậy, hãy kết thúc trong một thứ hai.
+
+18
+00:00:49,650 --> 00:00:50,040
+Đúng.
+
+19
+00:00:50,090 --> 00:00:52,730
+Vì vậy, hãy bắt đầu cùng một thứ chung chung.
+
+20
+00:00:52,730 --> 00:00:54,310
+Đây là trang web mà tôi sẽ gọi.
+
+21
+00:00:54,380 --> 00:00:59,120
+Điều này giúp tôi dễ dàng thay đổi URL nếu tôi quyết định muốn bỏ qua một số cuộc trò chuyện khác vào một lúc nào đó.
+
+22
+00:00:59,120 --> 00:01:05,550
+điểm khác và sau đó tôi nhận được tweet bởi vì cái nhìn tổng thể của tôi cuối cùng mà tôi đang muốn có là
+
+23
+00:01:05,550 --> 00:01:06,600
+một lát tweet.
+
+24
+00:01:06,600 --> 00:01:13,450
+Vì vậy, có một cấu trúc tweet có cùng cấu trúc từ trên đây.
+
+25
+00:01:13,580 --> 00:01:15,890
+Vì vậy, nhưng sau đó tôi thực sự bắt đầu tìm hiểu về sự khác biệt.
+
+26
+00:01:15,950 --> 00:01:21,200
+Vì vậy, cái này đi thẳng vào go call và chỉ cạo cái này.
+
+27
+00:01:21,200 --> 00:01:24,190
+Thay vào đó, tôi phải tự làm rất nhiều thứ.
+
+28
+00:01:24,280 --> 00:01:31,630
+Vì vậy, những gì tôi tập hợp lại thực sự được tách ra thành một loạt các chức năng đã thực hiện công việc và trong này
+
+29
+00:01:31,630 --> 00:01:33,930
+một trong những bạn không làm.
+
+30
+00:01:34,420 --> 00:01:35,900
+Đi gọi bạn đã đi truy vấn.
+
+31
+00:01:35,920 --> 00:01:36,340
+Đúng.
+
+32
+00:01:36,340 --> 00:01:41,290
+Và cái này cuối cùng tôi sử dụng một thư viện có tên Go query để vượt qua.
+
+33
+00:01:42,030 --> 00:01:43,910
+Phản hồi từ.
+
+34
+00:01:43,990 --> 00:01:44,830
+Từ Twitter.
+
+35
+00:01:44,830 --> 00:01:51,240
+Các câu trả lời có các mục H2 e-mail mỗi e-mail.
+
+36
+00:01:51,540 --> 00:01:55,390
+Và vì vậy tôi đang sử dụng thư viện có tên Go query để vượt qua điều đó.
+
+37
+00:01:55,530 --> 00:01:55,990
+ĐƯỢC RỒI.
+
+38
+00:01:56,100 --> 00:02:04,440
+Vì vậy, truy vấn trong go về cơ bản là một thư viện tìm kiếm được xây dựng dựa trên gói đầu ra X HDMI từ gói mở rộng
+
+39
+00:02:04,740 --> 00:02:05,690
+thư viện.
+
+40
+00:02:05,700 --> 00:02:10,830
+Được rồi, bây giờ tôi đang định hướng nên tôi sẽ lưu các câu hỏi của mình và để bạn lái xe qua và sau đó tôi sẽ
+
+41
+00:02:10,920 --> 00:02:12,650
+cung cấp cho bạn câu hỏi của tôi trong video tiếp theo.
+
+42
+00:02:13,880 --> 00:02:14,440
+Vì thế.
+
+43
+00:02:14,620 --> 00:02:15,720
+Vì vậy, đi truy vấn điều.
+
+44
+00:02:15,750 --> 00:02:22,720
+Vì vậy, về cơ bản, tôi đã tổ chức mã của mình thành ba chức năng và chức năng chính.
+
+45
+00:02:23,130 --> 00:02:33,700
+Chức năng đầu tiên đưa ra một yêu cầu duy nhất đối với API này, chức năng cuối cùng thực hiện một yêu cầu duy nhất.
+
+46
+00:02:33,780 --> 00:02:41,280
+Chức năng thứ hai thực hiện tất cả các yêu cầu cần thiết để lấy tất cả các mục bằng chức năng đầu tiên và
+
+47
+00:02:41,280 --> 00:02:48,610
+sau đó chức năng thứ ba này thực sự chuyển email H2 của mục này thành các tweet để chức năng đầu tiên tạo một
+
+48
+00:02:48,610 --> 00:02:57,720
+yêu cầu nó lấy Max hiện tại phân tích vị trí của một tham số và nó sẽ trả về một cuộc hội thoại
+
+49
+00:02:57,720 --> 00:03:05,700
+phản hồi là cấu trúc này ở đây có ba giá trị đó từ phản hồi từ API
+
+50
+00:03:05,700 --> 00:03:11,690
+Tôi coi là thú vị và có khả năng hữu ích.
+
+51
+00:03:11,930 --> 00:03:12,500
+Vì thế.
+
+52
+00:03:12,600 --> 00:03:15,160
+Vì vậy, tôi chỉ nói hủy ở đây như một công tắc.
+
+53
+00:03:15,210 --> 00:03:21,340
+Sẽ là tôi có các thẻ Jason để khớp tên chính xác với Jason mà họ đang phản hồi
+
+54
+00:03:21,340 --> 00:03:22,040
+với.
+
+55
+00:03:22,480 --> 00:03:27,820
+Và tôi đang sử dụng các tên ngắn hơn một chút cho cách họ đề cập đến chúng trong mã của tôi cũng không thực sự quan trọng
+
+56
+00:03:27,820 --> 00:03:28,380
+nhiều.
+
+57
+00:03:28,390 --> 00:03:32,750
+Bạn có thể đặt tên cho những gì bạn muốn nghe.
+
+58
+00:03:33,180 --> 00:03:42,330
+Vì vậy, tôi đang sử dụng các giá trị cũ của bạn
+
+59
+00:03:42,330 --> 00:03:47,970
+tham số truy vấn và chúng tôi sẽ xử lý mọi thứ liên quan đến tham số truy vấn bao gồm mã hóa
+
+60
+00:03:47,970 --> 00:03:50,820
+nó để phù hợp với bạn đúng trong như vậy.
+
+61
+00:03:50,820 --> 00:03:57,930
+Vì vậy, hãy tạo một bản đồ chương trình trống và sau đó xem cái này ở tab tiêu đề ở đây cho yêu cầu này ở đó
+
+62
+00:03:57,930 --> 00:04:05,670
+are hoặc tab chương trình bạn có thể thấy có bốn tham số trong chuỗi truy vấn, ba tham số này giống nhau
+
+63
+00:04:06,030 --> 00:04:07,710
+mỗi khi tôi thực hiện cuộc gọi.
+
+64
+00:04:07,710 --> 00:04:14,480
+Vì vậy, tôi chỉ có ba cái đó ở đó và chúng chính xác như chúng đang được sử dụng trước đây.
+
+65
+00:04:14,760 --> 00:04:21,550
+Và tôi đã đặt cuộc thám hiểm tối đa thành tham số đầu vào vì điều đó có thể thay đổi mọi cuộc gọi và tôi
+
+66
+00:04:21,550 --> 00:04:26,710
+mạo hiểm đoán rằng có lẽ lần đầu tiên điều này xảy ra, bạn thực hiện cuộc gọi đến điểm cuối này, bạn
+
+67
+00:04:26,710 --> 00:04:32,080
+muốn có một vị trí tối đa của chuỗi trống mà cuối cùng đã hoạt động khi tôi dùng thử.
+
+68
+00:04:32,200 --> 00:04:40,990
+Vì vậy, đó là thử nghiệm và sai sót, họ vừa kết thúc lần thử đầu tiên nên bây giờ họ đã có xe đẩy đầy ắp.
+
+69
+00:04:40,990 --> 00:04:49,020
+Tôi cần tạo Tôi tạo toàn bộ đồng euro toàn bộ đồng euro là đồng euro có thể nhìn thấy ở đây và sau đó là một câu hỏi
+
+70
+00:04:49,020 --> 00:04:56,250
+đánh dấu để tách từ cơ sở thành tham số tạo và sau đó truy vấn truy vấn tham số được mã hóa
+
+71
+00:04:56,250 --> 00:04:59,310
+truy vấn tham số bao gồm các tham số được mã hóa.
+
+72
+00:04:59,580 --> 00:05:06,210
+Vì vậy, tôi đã có sản lượng cả năm để thực hiện yêu cầu thanh lịch này.
+
+73
+00:05:06,340 --> 00:05:10,520
+Hãy lấy toàn bộ Euro để thực hiện các yêu cầu gửi tới gói ACP từ thư viện tiêu chuẩn.
+
+74
+00:05:10,520 --> 00:05:15,810
+Bạn chỉ có thể đưa ra yêu cầu đến điểm cuối đó để nhận được phản hồi và báo lỗi.
+
+75
+00:05:15,820 --> 00:05:17,630
+Cần kiểm tra lỗi.
+
+76
+00:05:18,440 --> 00:05:22,340
+Và tôi đang thêm chi tiết hơn vào lỗi nếu có.
+
+77
+00:05:22,340 --> 00:05:28,380
+Vì vậy, tôi có thể biết thêm chi tiết về thông báo lỗi của mình nếu lỗi của tôi xảy ra khi tôi đang cố trò chuyện
+
+78
+00:05:28,380 --> 00:05:28,710
+dữ liệu
+
+79
+00:05:31,950 --> 00:05:38,720
+trì hoãn việc đóng phần nội dung của phản hồi đó bởi vì bạn luôn cần bất cứ khi nào bạn nhận được phản hồi
+
+80
+00:05:38,730 --> 00:05:39,610
+một yêu cầu HP.
+
+81
+00:05:39,630 --> 00:05:40,790
+Bạn cần phải đóng cơ thể.
+
+82
+00:05:40,870 --> 00:05:41,880
+Câu trả lời là.
+
+83
+00:05:42,030 --> 00:05:46,900
+Đi thẳng lên thư viện starin mỗi khi chúng tôi đến lớp.
+
+84
+00:05:46,920 --> 00:05:47,440
+Vâng.
+
+85
+00:05:47,670 --> 00:05:49,590
+Rất chuẩn.
+
+86
+00:05:49,590 --> 00:05:53,040
+Lỗi thực hiện yêu cầu trong thư viện hình cầu đang di chuyển chỉ là lỗi mạng.
+
+87
+00:05:53,060 --> 00:05:58,140
+Vì vậy, bạn cũng cần kiểm tra phản hồi mã trạng thái theo cách thủ công để tất cả các yêu cầu này luôn phản hồi
+
+88
+00:05:58,140 --> 00:05:59,000
+với hai trăm.
+
+89
+00:05:59,010 --> 00:06:00,100
+Vì vậy, tôi chỉ cần làm.
+
+90
+00:06:00,210 --> 00:06:02,170
+Kiểm tra nếu nó không ở trạng thái OK.
+
+91
+00:06:02,210 --> 00:06:09,390
+Hai trăm lỗi tạo ra một lỗi trả lại một lỗi và tôi hiển thị lỗi đó là lỗi khủng bố thực tế như thế nào
+
+92
+00:06:09,390 --> 00:06:16,470
+mã dạng số là gì và tôi sử dụng thư viện chuẩn văn bản trạng thái HB để chuyển đổi từ mã
+
+93
+00:06:16,500 --> 00:06:18,120
+đến chuỗi thực tế.
+
+94
+00:06:18,120 --> 00:06:19,520
+Điều đó tương đương với mã đó.
+
+95
+00:06:20,480 --> 00:06:23,580
+Vì vậy, hai trăm OK trên 400 đánh bại nhiệm vụ đó.
+
+96
+00:06:24,580 --> 00:06:28,810
+Vì vậy, theo cách đó, khi tôi nhận được thông báo lỗi, tôi có thể thấy kết quả thực sự của nó là gì.
+
+97
+00:06:28,990 --> 00:06:35,290
+Đó là phản hồi sau đó là phản hồi Tôi có phản hồi tại thời điểm này, mã nguồn là
+
+98
+00:06:35,290 --> 00:06:35,740
+Chính xác.
+
+99
+00:06:35,740 --> 00:06:45,310
+Sau thời điểm này và phản hồi được Jason mã hóa để quay lại tab phản hồi, mất một chút sẽ hát
+
+100
+00:06:45,320 --> 00:06:47,380
+và bài hát cho đến khi nó xuất hiện.
+
+101
+00:06:47,520 --> 00:06:48,820
+Vâng, nó vừa mới ra mắt.
+
+102
+00:06:49,610 --> 00:06:50,630
+Vì vậy, Jason.
+
+103
+00:06:50,660 --> 00:06:52,040
+Vậy đó là dữ liệu phản hồi của Jason.
+
+104
+00:06:52,070 --> 00:07:00,800
+Vì vậy, tôi tạo đối tượng phản hồi của mình và sử dụng bộ giải mã mới giải mã bộ giải mã Jason trên tiêu chuẩn đó một lần nữa
+
+105
+00:07:00,980 --> 00:07:03,910
+thêm chi tiết hơn vào thông báo lỗi của tôi xảy ra.
+
+106
+00:07:03,940 --> 00:07:07,390
+Và sau thời điểm này, tôi chỉ trả lời lại cuộc trò chuyện đó.
+
+107
+00:07:07,430 --> 00:07:13,190
+Vì vậy, hãy để video này chỉ phân tích phần giới thiệu và sau đó cũng phân tích cuộc trò chuyện
+
+108
+00:07:13,190 --> 00:07:17,220
+phản hồi và chúng tôi sẽ tiếp tục trong video tiếp theo, nơi chúng tôi xem xét các chức năng tiếp theo.
+
+109
+00:07:17,240 --> 00:07:21,300
+Nhưng phản hồi cuộc hội thoại lại cho thấy cấu trúc dữ liệu đó ở ngay đây.
+
+110
+00:07:21,410 --> 00:07:24,520
+Nó có vị trí mặt trăng càng nhiều và chữ T.
+
+111
+00:07:24,580 --> 00:07:28,050
+Chúng tôi đã có tất cả những gì mỗi đội L ở đó và sau đó chúng tôi sẽ làm gì đó với mỗi đội đó.
+
+112
+00:07:28,040 --> 00:07:28,720
+Được rồi.
+
+113
+00:07:29,210 --> 00:07:34,510
+Và chúng tôi có chúng ở đúng vị trí và hơn thế nữa mà chúng tôi có thể chuyển sang những thứ chúng tôi cần trong tương lai ở một nơi nào đó.
+
+114
+00:07:34,520 --> 00:07:34,870
+Đúng.
+
+115
+00:07:34,880 --> 00:07:35,510
+Đúng không.
+
+116
+00:07:35,510 --> 00:07:36,030
+Đúng.
+
+117
+00:07:36,080 --> 00:07:36,560
+Mát mẻ.
+
+118
+00:07:36,560 --> 00:07:36,830
+Được rồi.
+
+119
+00:07:36,860 --> 00:07:42,890
+Vì vậy, cái này đang xem xét chức năng phản hồi cuộc trò chuyện mà Daniel đã tạo để giải quyết vấn đề này.
+
+120
+00:07:43,020 --> 00:07:49,020
+Điều này tạo ra một yêu cầu Twitter API Vâng và sau đó chúng tôi sẽ chọn nó trong video tiếp theo.

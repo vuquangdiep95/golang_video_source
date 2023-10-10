@@ -1,0 +1,327 @@
+1
+00:00:00,280 --> 00:00:03,050
+Phòng vroom vroom.
+
+2
+00:00:05,010 --> 00:00:05,350
+Được rồi.
+
+3
+00:00:05,410 --> 00:00:10,390
+Vì vậy, ngay sau video này, chúng tôi sẽ chỉ cho bạn cách sử dụng các mô-đun mà chúng tôi sẽ thực hiện với go
+
+4
+00:00:10,390 --> 00:00:10,930
+mô-đun.
+
+5
+00:00:10,930 --> 00:00:17,560
+Nhưng tôi chỉ muốn cung cấp cho bạn một số nguồn tài liệu và một trong những nơi bạn có thể tìm kiếm.
+
+6
+00:00:17,560 --> 00:00:21,310
+Tài liệu mô-đun Go là trang blog của Ling.
+
+7
+00:00:21,460 --> 00:00:23,160
+Vì vậy, đó là một nguồn tài nguyên tuyệt vời.
+
+8
+00:00:23,170 --> 00:00:29,740
+Nếu bạn đến đó và sau đó vào mục lục blog, bạn sẽ tìm thấy các bài viết về các mô-đun, bạn có thể xem mô-đun Mir
+
+9
+00:00:29,740 --> 00:00:35,890
+và kiểm tra một số cơ sở dữ liệu đã khởi chạy và những thứ tương tự như vậy đang di chuyển sang các mô-đun rồi xuống đây bằng cách sử dụng go
+
+10
+00:00:35,890 --> 00:00:36,790
+mô-đun.
+
+11
+00:00:36,790 --> 00:00:41,680
+Vì vậy, rất nhiều chương trình giảng dạy mà chúng tôi sắp dạy cho bạn được xây dựng dựa trên việc sử dụng các mô-đun cờ vây ngay tại đây
+
+12
+00:00:41,680 --> 00:00:44,020
+bởi vì họ có những ví dụ xuất sắc.
+
+13
+00:00:44,020 --> 00:00:50,230
+Và chúng tôi nghĩ rằng nếu chúng tôi song song với bài đăng trên blog này thì sau này bạn có thể quay lại và tham khảo blog này
+
+14
+00:00:50,230 --> 00:00:55,390
+đăng và dễ dàng sắp xếp tổng hợp thông tin vì bạn đã tiếp xúc với nó.
+
+15
+00:00:55,420 --> 00:00:57,660
+Vì vậy, đó là một trong những tài nguyên cho tài liệu.
+
+16
+00:00:57,670 --> 00:01:00,880
+Một nguồn tài liệu khác là lệnh go.
+
+17
+00:01:01,090 --> 00:01:07,240
+Và một trong những cách bạn có thể tìm hiểu về điều đó là đến đây để làm điều đó chậm hơn một chút.
+
+18
+00:01:07,230 --> 00:01:13,930
+org, sau đó truy cập tài liệu rồi ra lệnh F để tìm kiếm trang và tôi đang tìm kiếm lệnh trên
+
+19
+00:01:13,930 --> 00:01:18,180
+và nếu tôi đi xuống, tôi sẽ thấy tài liệu lệnh.
+
+20
+00:01:18,310 --> 00:01:20,710
+Và đây là tài liệu cho các lệnh go khác nhau.
+
+21
+00:01:20,710 --> 00:01:21,760
+Tôi sẽ đi để đi.
+
+22
+00:01:21,770 --> 00:01:23,160
+Ra lệnh ngay tại đó.
+
+23
+00:01:23,320 --> 00:01:29,140
+Và nếu tôi ra lệnh cho F tìm một từ trên trang này và tìm kiếm mô-đun, bạn có thể thấy tất cả các từ khác nhau
+
+24
+00:01:29,140 --> 00:01:33,370
+nơi mô-đun mô-đun mô-đun hoặc nói về trên trang này.
+
+25
+00:01:33,370 --> 00:01:34,750
+Đó là tốt để biết về.
+
+26
+00:01:34,930 --> 00:01:40,960
+Và sau đó, tài nguyên cuối cùng tôi sẽ cung cấp cho bạn để làm tài liệu ở đây tại thiết bị đầu cuối nếu tôi gõ
+
+27
+00:01:40,960 --> 00:01:44,190
+go help Tôi nhận trợ giúp cho lệnh go.
+
+28
+00:01:44,200 --> 00:01:47,350
+Và đây là cách sử dụng.
+
+29
+00:01:47,350 --> 00:01:54,310
+Và do đó, việc sử dụng được thực hiện và sau đó chuyển vào lệnh và đối số và các lệnh là và ở đây khác
+
+30
+00:01:54,310 --> 00:01:56,650
+go các lệnh bao gồm go mod.
+
+31
+00:01:56,650 --> 00:01:58,420
+Vì vậy, chúng ta sẽ tìm hiểu về điều đó.
+
+32
+00:01:58,540 --> 00:02:04,800
+Ngoài ra, tôi có thể sử dụng lệnh go help để tìm kiếm trợ giúp về lệnh này hoặc bất kỳ lệnh nào trong số này.
+
+33
+00:02:04,810 --> 00:02:05,210
+Vì vậy, tôi có thể làm.
+
+34
+00:02:05,230 --> 00:02:07,040
+Đi giúp MO D.
+
+35
+00:02:07,300 --> 00:02:09,050
+Đi giúp IMO D.
+
+36
+00:02:09,310 --> 00:02:11,720
+Và điều này sẽ giúp tôi tiếp tục.
+
+37
+00:02:11,740 --> 00:02:13,330
+Đây là nơi tôi gõ đi giúp bất cứ ai.
+
+38
+00:02:13,330 --> 00:02:14,410
+Cái này sẽ giúp tôi.
+
+39
+00:02:14,410 --> 00:02:16,960
+Trên lệnh Go mod.
+
+40
+00:02:17,100 --> 00:02:22,690
+Vì vậy, tôi sẽ quay lại để giúp đỡ và xem phần còn lại của điều này và chúng tôi chỉ xem xét nội dung này
+
+41
+00:02:22,690 --> 00:02:22,990
+đây.
+
+42
+00:02:22,990 --> 00:02:29,260
+Go command the command are và có lệnh go mod và go help command để biết thông tin về
+
+43
+00:02:29,260 --> 00:02:32,140
+một lệnh và sau đó là các chủ đề trợ giúp bổ sung.
+
+44
+00:02:32,140 --> 00:02:38,680
+Và ở dưới đây, chúng tôi có những thứ mô-đun này ở đó và hãy vào chủ đề trợ giúp để biết thêm thông tin về chủ đề này
+
+45
+00:02:38,680 --> 00:02:44,860
+vậy bạn có thể truy cập các mô-đun trợ giúp không và bạn đã thấy điều đó trong video trước đó hoặc bất kỳ nội dung nào khác
+
+46
+00:02:44,860 --> 00:02:47,620
+liên quan đến các mô-đun và tôi có thể đọc về điều đó.
+
+47
+00:02:47,620 --> 00:02:53,140
+Ngoài ra còn có một chủ đề trợ giúp mod tốt cho một chút về chủ đề trợ giúp mod trên đó.
+
+48
+00:02:53,140 --> 00:03:00,130
+Vì vậy, có rất nhiều tài liệu mới ở đây xung quanh các mô-đun bởi vì nó không phải là một vấn đề nhỏ.
+
+49
+00:03:00,190 --> 00:03:02,020
+quản lý phụ thuộc tốt.
+
+50
+00:03:02,740 --> 00:03:04,590
+Vì vậy, đó là tài liệu.
+
+51
+00:03:04,600 --> 00:03:07,780
+Chỉ muốn chắc chắn rằng bạn có quyền truy cập vào nó.
+
+52
+00:03:07,780 --> 00:03:09,600
+Bất cứ điều gì bạn muốn thêm.
+
+53
+00:03:09,620 --> 00:03:10,400
+KHÔNG.
+
+54
+00:03:10,440 --> 00:03:10,810
+Không.
+
+55
+00:03:10,810 --> 00:03:15,070
+Tuy nhiên, có rất nhiều bài đăng trên blog về các mô-đun tốt bởi vì đó là một vấn đề lớn nên bạn
+
+56
+00:03:15,070 --> 00:03:20,920
+cũng có thể chỉ cần tìm kiếm các mô-đun go và bạn sẽ tìm thấy nhiều bài viết trung bình để giải thích cách sử dụng chúng
+
+57
+00:03:21,200 --> 00:03:23,040
+hoặc trong các sắc thái đằng sau nó nữa.
+
+58
+00:03:23,110 --> 00:03:24,910
+Nhưng sau những video này, bạn sẽ ổn thôi.
+
+59
+00:03:25,090 --> 00:03:25,880
+Đúng.
+
+60
+00:03:25,930 --> 00:03:32,090
+Và điều cuối cùng tôi sẽ nói ở đây là có một liên kết ở đây để lập phiên bản ngữ nghĩa.
+
+61
+00:03:32,260 --> 00:03:38,370
+Vì vậy, có một cách để tạo phiên bản phần mềm khi bạn nhìn vào các phiên bản, nó có ý nghĩa.
+
+62
+00:03:38,500 --> 00:03:43,120
+Và tôi tin rằng chúng ta sẽ nói thêm về điều này và nếu không chúng ta sẽ nói thêm về nó và nếu tôi không có
+
+63
+00:03:43,120 --> 00:03:48,310
+tìm hiểu sâu hơn OK, tìm hiểu sâu hơn, chúng tôi đi sâu vào việc lập phiên bản ngữ nghĩa để bạn có thể tìm hiểu về điều đó nhưng
+
+64
+00:03:48,310 --> 00:03:53,530
+có một liên kết ở đó để đọc về phiên bản ngữ nghĩa và sau đó cũng là một khái niệm thực sự quan trọng
+
+65
+00:03:53,530 --> 00:03:55,520
+cho tất cả điều này là khoảng cách tên.
+
+66
+00:03:55,540 --> 00:04:01,780
+Vì vậy, đây là một liên kết đến khoảng cách tên và khoảng cách tên chỉ có nghĩa là chúng tôi sử dụng tên để xác định mọi thứ
+
+67
+00:04:01,900 --> 00:04:02,700
+trong thế giới thực.
+
+68
+00:04:02,710 --> 00:04:04,110
+Đó là cách con người làm việc.
+
+69
+00:04:04,270 --> 00:04:08,270
+Và sau đó chúng tôi cũng sử dụng tên để xác định những thứ mà chúng tôi thực sự gọi chúng là định danh.
+
+70
+00:04:08,270 --> 00:04:10,940
+Đó là một từ khác mà chúng ta có thể sử dụng để chỉ chúng.
+
+71
+00:04:11,500 --> 00:04:18,220
+Bạn biết mã hóa và do đó, một không gian tên có nghĩa là giống như đây là cách mà chúng tôi có thể nói đây là nơi đây
+
+72
+00:04:18,220 --> 00:04:19,550
+công cụ cuộc sống.
+
+73
+00:04:19,690 --> 00:04:27,430
+Và vì vậy, bạn biết một không gian tên có thể giống như một tài khoản trung tâm lấy tên người dùng trung tâm dot com và sau đó repo.
+
+74
+00:04:27,430 --> 00:04:27,730
+Phải.
+
+75
+00:04:27,730 --> 00:04:32,260
+Đó là một không gian tên và điều đó sẽ không xung đột với không gian tên của bất kỳ ai khác.
+
+76
+00:04:32,260 --> 00:04:34,390
+Vì vậy, bạn có thể nhận được sự giúp đỡ.
+
+77
+00:04:34,510 --> 00:04:37,050
+Sử dụng tên của bạn khác với tên người dùng GitHub của Daniel.
+
+78
+00:04:37,060 --> 00:04:43,510
+Vì vậy, ngay cả khi tên repo của chúng tôi giống nhau, không gian tên tinh ranh get hub dot com tên người dùng tên repo sẽ diễn ra
+
+79
+00:04:43,510 --> 00:04:46,570
+để phân biệt R và R repo.
+
+80
+00:04:46,890 --> 00:04:55,510
+Và do đó, ý tưởng về khoảng cách tên mà mọi thứ có tên duy nhất cũng quan trọng quá quan trọng để sử dụng
+
+81
+00:04:55,510 --> 00:04:59,290
+gói và mô-đun và không có xung đột tên.
+
+82
+00:04:59,290 --> 00:05:04,650
+Vì vậy, đó là một chút về ký hiệu đi cho các mô-đun.

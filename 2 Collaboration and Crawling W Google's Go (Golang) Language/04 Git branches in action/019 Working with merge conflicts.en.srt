@@ -1,0 +1,483 @@
+1
+00:00:00,120 --> 00:00:02,010
+You have the theory of branches.
+
+2
+00:00:02,010 --> 00:00:02,480
+Why.
+
+3
+00:00:02,520 --> 00:00:02,790
+Why.
+
+4
+00:00:02,850 --> 00:00:05,210
+Well first kind of talked about why they're useful.
+
+5
+00:00:05,230 --> 00:00:10,800
+It's the idea of kind of like work on this bring it in work on this bringing in more branches as opposed
+
+6
+00:00:10,800 --> 00:00:18,360
+to less smaller changes as opposed to larger changes to branch merging and yeah we could even demonstrate
+
+7
+00:00:18,360 --> 00:00:20,670
+why just look what's working and master is bad.
+
+8
+00:00:20,670 --> 00:00:26,340
+You have a I make a change to tax and push it then you make a change without pull you make a change
+
+9
+00:00:26,400 --> 00:00:27,570
+in trying to push.
+
+10
+00:00:27,670 --> 00:00:29,850
+You can see the conflict that occurs.
+
+11
+00:00:29,850 --> 00:00:30,690
+Sure.
+
+12
+00:00:30,690 --> 00:00:30,960
+All right.
+
+13
+00:00:30,990 --> 00:00:38,760
+So now we're going to start exploring why branches are useful and this previous video that we just did
+
+14
+00:00:38,850 --> 00:00:41,040
+was cloning a public project.
+
+15
+00:00:41,040 --> 00:00:41,330
+Right.
+
+16
+00:00:41,340 --> 00:00:42,800
+Does Speedie media working.
+
+17
+00:00:42,820 --> 00:00:43,010
+Yeah.
+
+18
+00:00:43,020 --> 00:00:50,100
+And then we fought it and and now what we're gonna do is we're gonna both create changes to the same
+
+19
+00:00:50,100 --> 00:00:55,600
+repo without branches and we'll see how that could create some difficulties.
+
+20
+00:00:55,710 --> 00:01:02,700
+And so I'm going to start out and I'm going to go to my terminal and I'm inside right now going project
+
+21
+00:01:02,730 --> 00:01:10,110
+and inside there I've got that test t t and I'm gonna open that up and my editor.
+
+22
+00:01:10,310 --> 00:01:15,810
+So the Nano test text text text t text not text D.
+
+23
+00:01:16,350 --> 00:01:20,820
+And that's in here and then I'm going to add some change.
+
+24
+00:01:20,820 --> 00:01:24,880
+And so I just added that from Todd right.
+
+25
+00:01:24,880 --> 00:01:28,620
+Like that's what I've just added control X save it.
+
+26
+00:01:28,620 --> 00:01:29,220
+And.
+
+27
+00:01:29,640 --> 00:01:35,140
+And then well before I save it Daniel is gonna open it and he's also going to add something you could
+
+28
+00:01:35,140 --> 00:01:36,390
+see what mine looks like now.
+
+29
+00:01:36,390 --> 00:01:40,980
+Now we're gonna switch to Daniel's computer and he's going to open it and change the projects go for
+
+30
+00:01:40,980 --> 00:01:41,090
+it.
+
+31
+00:01:41,450 --> 00:01:41,710
+Okay.
+
+32
+00:01:41,720 --> 00:01:47,140
+I just real fast reclined under the goes to a loved one instead of B Ah the great.
+
+33
+00:01:47,240 --> 00:01:47,910
+That's awesome.
+
+34
+00:01:47,940 --> 00:01:49,350
+And I want the collaborator.
+
+35
+00:01:49,380 --> 00:01:56,890
+So I now I'm now set up as the collaborator or as as my account or Lord knows at which is a collaborator.
+
+36
+00:01:56,890 --> 00:02:01,750
+And so I can open up a text editor and
+
+37
+00:02:04,900 --> 00:02:12,910
+I can open that text file open that text file you see his doesn't have my changes yet I haven't pushed
+
+38
+00:02:12,910 --> 00:02:14,890
+him I haven't even saved him on my machine yet.
+
+39
+00:02:15,040 --> 00:02:15,830
+So go for it.
+
+40
+00:02:15,880 --> 00:02:16,630
+You're at your chain.
+
+41
+00:02:16,660 --> 00:02:19,000
+So I can say oh I want to fix that.
+
+42
+00:02:19,000 --> 00:02:20,050
+That was a mistake.
+
+43
+00:02:20,050 --> 00:02:23,440
+It should just be some text not some t text.
+
+44
+00:02:23,440 --> 00:02:31,090
+So if I save that and possibly add some additional stuff some more text and put your name after it.
+
+45
+00:02:31,110 --> 00:02:35,480
+We know that one's from me just so go and say it.
+
+46
+00:02:35,510 --> 00:02:36,860
+So it's safe now.
+
+47
+00:02:36,870 --> 00:02:46,170
+And so I've saved my life you push now and so hit it and push it I can get stats here get add that file
+
+48
+00:02:46,170 --> 00:02:46,990
+specifically.
+
+49
+00:02:47,010 --> 00:02:47,820
+That's another option.
+
+50
+00:02:47,820 --> 00:02:52,980
+Option is you can name the files you're adding but then you have to list all of them.
+
+51
+00:02:53,100 --> 00:03:01,550
+So it's no green it's modified it could get Mitt and fixed type O added
+
+52
+00:03:04,630 --> 00:03:08,750
+so if I get status again it's still it's still on my machine.
+
+53
+00:03:08,770 --> 00:03:11,770
+I've got that commit but it's not yet pushed yet.
+
+54
+00:03:11,800 --> 00:03:21,640
+So if I get push this change because it talks to get pushes that I can go now.
+
+55
+00:03:21,640 --> 00:03:26,060
+I can go here fresh the paid 21 seconds.
+
+56
+00:03:26,230 --> 00:03:26,920
+Oh my.
+
+57
+00:03:26,930 --> 00:03:30,290
+Midway through I can see some text at the T.
+
+58
+00:03:30,370 --> 00:03:36,190
+And it got right here and now I'm back in my file and I'm gonna save mine.
+
+59
+00:03:36,190 --> 00:03:41,160
+So I'm gonna file name to write as tech start to 60s and now minds save.
+
+60
+00:03:41,620 --> 00:03:48,970
+And if we look at my my file right you could see my file some t text and add some change from Todd.
+
+61
+00:03:48,970 --> 00:03:55,080
+There's nothing about Daniel's effects fix taking away that some t text and his lines not there obviously
+
+62
+00:03:55,090 --> 00:03:56,800
+just on my machine.
+
+63
+00:03:56,800 --> 00:04:07,030
+So I'm going to get add a dash a get commit dash and my boss is a blowhard no pride not a good command
+
+64
+00:04:07,060 --> 00:04:07,600
+message
+
+65
+00:04:10,060 --> 00:04:20,200
+adds a new line to text file and then get push and when I push it's going to say rejected failed to
+
+66
+00:04:20,200 --> 00:04:26,950
+push some raps to get updates rejected because remote teams work that you do not have locally this is
+
+67
+00:04:26,950 --> 00:04:31,780
+usually caused by another repository pushing to the same ref you may want to first integrate the remote
+
+68
+00:04:31,780 --> 00:04:38,590
+changes get pull before pushing again see know about passports and get push for details so what do you
+
+69
+00:04:38,590 --> 00:04:42,640
+recommend we do at this point follow those directions so it's good to get pulled do the get pulled is
+
+70
+00:04:42,640 --> 00:04:51,770
+the first step and so automatic merge failed fix conflicts and then commit the result so we have emerged
+
+71
+00:04:51,770 --> 00:04:56,780
+conflict text so so when you get pull sometimes get is able to figure it out.
+
+72
+00:04:56,900 --> 00:05:01,490
+So for example if I just deleted that T without adding more lines get would probably have figured it
+
+73
+00:05:01,490 --> 00:05:06,140
+out because I changed the line that he that his changes didn't effect and he changed lines that might
+
+74
+00:05:06,140 --> 00:05:11,540
+in effect it would've just been able to automatically merge it but because I added some things and he
+
+75
+00:05:11,540 --> 00:05:16,130
+added some lines at the bottom of the file get wasn't able to figure that out automatically.
+
+76
+00:05:16,130 --> 00:05:23,150
+So it tells him there's a there's a conflict in text 2016 and if he doesn't get status it will show
+
+77
+00:05:23,150 --> 00:05:27,430
+him that it's well it says both modified text at T T.
+
+78
+00:05:28,070 --> 00:05:32,240
+So now if he opens text out t t he can see the conflict.
+
+79
+00:05:32,240 --> 00:05:45,170
+So with that text so so you can see a get adds conflicts in this rather odd manner it has a bunch of
+
+80
+00:05:45,170 --> 00:05:49,910
+less than science and then what you're Kurt and then what it's called on your own machine.
+
+81
+00:05:49,940 --> 00:05:54,980
+So in this case head which usually means where you're currently working and then it's got some equal
+
+82
+00:05:54,980 --> 00:06:00,140
+signs in the energy and the bottom it's got a bunch of greater than signs and a commit number.
+
+83
+00:06:00,140 --> 00:06:03,260
+So this was years so so stuff here was so.
+
+84
+00:06:03,500 --> 00:06:04,230
+That's your comment.
+
+85
+00:06:04,240 --> 00:06:05,030
+No.
+
+86
+00:06:05,440 --> 00:06:06,110
+OK.
+
+87
+00:06:06,200 --> 00:06:09,730
+And then the head head is almost always what you've done yourself.
+
+88
+00:06:09,750 --> 00:06:14,520
+Yeah so to fix this I actually just start editing this file and save it right.
+
+89
+00:06:14,560 --> 00:06:21,000
+So get rid of that I bring this up I say get rid of that and then I come down here and I get rid of
+
+90
+00:06:21,000 --> 00:06:25,350
+this and and then I come down here and I get rid of that
+
+91
+00:06:29,050 --> 00:06:31,410
+and I'm like that's what we want the file to look like.
+
+92
+00:06:31,420 --> 00:06:39,070
+So I control X and then I hit y to save it and I hit enter and I do get status updates you get stat
+
+93
+00:06:39,070 --> 00:06:43,530
+it still says it's book both modified seeds you get seed you get add on that.
+
+94
+00:06:43,910 --> 00:06:48,170
+You add that file name or dash a.
+
+95
+00:06:48,350 --> 00:06:50,750
+Now if you get status it will say.
+
+96
+00:06:51,450 --> 00:06:56,430
+This is changes to be committed so you just get commit without a dash in without.
+
+97
+00:06:56,540 --> 00:06:57,250
+Okay.
+
+98
+00:06:57,500 --> 00:06:58,110
+Tell me why.
+
+99
+00:06:58,370 --> 00:07:04,520
+So when you get with this is creating a merge commit and then the merge commit has a default message
+
+100
+00:07:04,520 --> 00:07:05,200
+already.
+
+101
+00:07:05,360 --> 00:07:08,890
+So you can add the dash M and put it in the custom message for this merge commit.
+
+102
+00:07:08,900 --> 00:07:14,500
+But the default message is usually good for merge conflict fixing document.
+
+103
+00:07:14,660 --> 00:07:19,070
+So it will actually open your editor still but it's got the default message already so you can just
+
+104
+00:07:19,070 --> 00:07:19,880
+ex the editor.
+
+105
+00:07:19,910 --> 00:07:27,650
+So in this case it's a vim so I believe it's and you will exit you call and Q Yeah.
+
+106
+00:07:27,750 --> 00:07:34,710
+So now if you get yes now if you get statuses you can see that it gets that it shows it's been committed
+
+107
+00:07:34,710 --> 00:07:35,470
+and you push.
+
+108
+00:07:36,010 --> 00:07:43,060
+So that was kind of a laborious process where you have emerge conflict you have to open the file manually
+
+109
+00:07:43,060 --> 00:07:45,120
+fix it then you have to.
+
+110
+00:07:45,160 --> 00:07:45,910
+The hardest part.
+
+111
+00:07:45,910 --> 00:07:46,860
+Get out of them.
+
+112
+00:07:47,070 --> 00:07:47,940
+Yes.
+
+113
+00:07:48,300 --> 00:07:49,950
+You went them.
+
+114
+00:07:50,240 --> 00:07:51,480
+And then you push it.
+
+115
+00:07:51,500 --> 00:07:58,810
+So so back over at my machine now if I refresh this page I can now see this merge Chase merged page
+
+116
+00:07:59,180 --> 00:08:06,970
+4 file and add branches helps us avoid those conflicts and idea well we'll talk about the idea of branches
+
+117
+00:08:06,970 --> 00:08:12,490
+you want to do more branches than last and smaller commits as opposed to larger commands when you're
+
+118
+00:08:12,490 --> 00:08:17,080
+working with people that way you see what everybody is doing more frequently.
+
+119
+00:08:17,080 --> 00:08:17,930
+Correct yeah.
+
+120
+00:08:17,950 --> 00:08:20,100
+And less conflicts and less conflicts.
+
+121
+00:08:20,140 --> 00:08:21,540
+All right we'll do that next video.

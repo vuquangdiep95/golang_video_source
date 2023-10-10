@@ -1,0 +1,227 @@
+1
+00:00:00,760 --> 00:00:03,820
+So let's try to validate her and see how difficult that is to use.
+
+2
+00:00:03,850 --> 00:00:09,710
+Now I could and ultimately will build a web page that has a form on it and invalidation that way.
+
+3
+00:00:09,730 --> 00:00:13,660
+But I just want to make sure that things actually work as I think they should.
+
+4
+00:00:14,290 --> 00:00:19,750
+So here in the Maya project, I've just opened up the rootstock and go file, and I'm going to add some
+
+5
+00:00:19,750 --> 00:00:21,520
+validation logic to this route.
+
+6
+00:00:22,120 --> 00:00:25,480
+It's a get request to slash update user slash ID.
+
+7
+00:00:25,840 --> 00:00:29,260
+And if I look at my database, I have one user right here.
+
+8
+00:00:29,530 --> 00:00:33,820
+So in the user's table, have an ID, one with a first name, last name and all that sort of thing.
+
+9
+00:00:34,750 --> 00:00:40,930
+And what I'm going to do is just initialize a validator and run a check and make sure it works as expected.
+
+10
+00:00:41,110 --> 00:00:42,000
+So I can do that.
+
+11
+00:00:42,010 --> 00:00:46,750
+First of all, I have to make sure I don't run a government vendor, so I'm just going to say make restart
+
+12
+00:00:46,870 --> 00:00:50,320
+and that will build a binary and make sure it runs.
+
+13
+00:00:50,350 --> 00:00:51,130
+Go mod vendor.
+
+14
+00:00:51,130 --> 00:00:53,530
+And now I should have access to that validator package.
+
+15
+00:00:53,770 --> 00:00:56,140
+So let's see if we do so right here.
+
+16
+00:00:57,100 --> 00:01:02,230
+I, first of all, get my URL parameter, which will be one in my case, I get the user and I change
+
+17
+00:01:02,230 --> 00:01:05,740
+the user's last name and right here before I call the update.
+
+18
+00:01:06,430 --> 00:01:09,100
+I'm going to run some validation and it's as simple as this.
+
+19
+00:01:09,280 --> 00:01:11,380
+I'll create a variable, which I'll call.
+
+20
+00:01:12,730 --> 00:01:17,710
+Validator seems like a good name, and that's a sign the value of.
+
+21
+00:01:19,010 --> 00:01:27,320
+A$AP App Validator right there validator and a once a year old params, but I'll just hand Neil.
+
+22
+00:01:27,470 --> 00:01:28,460
+And that works just fine.
+
+23
+00:01:28,700 --> 00:01:35,000
+OK, so now I have this validators and now I can actually try something so I can say, for example.
+
+24
+00:01:36,800 --> 00:01:47,360
+Validator, don't check that kind of catch all useful utility, and that requires a few parameters,
+
+25
+00:01:47,360 --> 00:01:49,900
+and if you rolled her mouse over, it'll tell me exactly what they are.
+
+26
+00:01:49,910 --> 00:01:54,440
+So at once an OK, which is a condition to check, then a key, then some message.
+
+27
+00:01:54,500 --> 00:01:55,670
+OK, well, the OK easy.
+
+28
+00:01:56,270 --> 00:02:01,280
+I've set the length of last name to a random string of 10 characters, so let's put a condition that
+
+29
+00:02:01,280 --> 00:02:01,760
+will fail.
+
+30
+00:02:02,570 --> 00:02:08,750
+So Len of Say You, the last name is greater than 20.
+
+31
+00:02:09,020 --> 00:02:13,280
+I know that's going to fail and we're going to check the field last name, which doesn't matter.
+
+32
+00:02:13,280 --> 00:02:15,800
+We just want this to fail and we want an error message.
+
+33
+00:02:16,370 --> 00:02:21,910
+Last name must be 20 characters or more, which is very unusual.
+
+34
+00:02:21,920 --> 00:02:24,110
+You would never do this, but I want this to fail.
+
+35
+00:02:25,190 --> 00:02:32,930
+I know at this point I can say, if validator valid, then do something, otherwise do something else.
+
+36
+00:02:33,290 --> 00:02:38,750
+So what I'll do instead is say, if it's not valid, if we fail validation, then I'm going to print
+
+37
+00:02:38,750 --> 00:02:39,920
+out an error message, OK?
+
+38
+00:02:40,370 --> 00:02:50,210
+And what I'll print out is something as simple as format dot f print f print on W and just say failed
+
+39
+00:02:50,990 --> 00:02:51,680
+validation.
+
+40
+00:02:52,280 --> 00:02:54,250
+OK, and I'll return.
+
+41
+00:02:54,260 --> 00:02:55,160
+I don't want to go any further.
+
+42
+00:02:56,300 --> 00:03:01,700
+Otherwise, I want this update now in our situation, of course, this code will never execute, and
+
+43
+00:03:01,700 --> 00:03:02,200
+that's fine.
+
+44
+00:03:02,210 --> 00:03:04,700
+I just want to make sure the validator works the way that it's supposed to.
+
+45
+00:03:05,660 --> 00:03:06,800
+So I'll say make restart.
+
+46
+00:03:11,540 --> 00:03:14,570
+And I will go to the update user pass.
+
+47
+00:03:14,900 --> 00:03:22,880
+So get it back to my web browser and change this to slash update dash user and then one.
+
+48
+00:03:23,060 --> 00:03:27,410
+The one idea I have in the database, and if this works, I should get an error message printed the
+
+49
+00:03:27,410 --> 00:03:31,010
+screen failed validation and it failed validation.
+
+50
+00:03:31,100 --> 00:03:31,580
+Perfect.
+
+51
+00:03:32,570 --> 00:03:34,400
+So that looks pretty straightforward.
+
+52
+00:03:34,430 --> 00:03:38,900
+Now, obviously, I can call any of the functions that are available to me.
+
+53
+00:03:38,930 --> 00:03:43,490
+Some of them won't work because this is not actually a form post, but those are available any time
+
+54
+00:03:43,490 --> 00:03:44,840
+I need to validate data.
+
+55
+00:03:45,680 --> 00:03:51,850
+Now it would be it would be great if I could have default validation rules on individual data models.
+
+56
+00:03:51,890 --> 00:03:56,070
+And it turns out we can and will do that sort of thing in the next lecture.
+
+57
+00:03:56,090 --> 00:03:59,240
+We'll add some validation rules right to the user model.

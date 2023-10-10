@@ -1,0 +1,695 @@
+1
+00:00:00,600 --> 00:00:06,390
+Được rồi, chào mừng bạn đến với Bài tập số ba cho bài tập thực hành này, hãy thực hiện theo các bước sau
+
+2
+00:00:06,390 --> 00:00:15,300
+ngay tại đây về cơ bản bạn sẽ đếm từng từ giống như bạn đã thấy Daniel làm và để làm điều đó
+
+3
+00:00:15,300 --> 00:00:21,540
+tại mã mà bạn biết ở đây bạn có tiêu đề chỉ cần nhìn vào tiêu đề vì cũ hãy đọc nó nếu chúng tôi đi và
+
+4
+00:00:21,540 --> 00:00:27,030
+nhìn vào màu đỏ cũ, nó chỉ có những tiêu đề này ở đây, vì vậy hãy lấy từng tiêu đề này và đó là một chuỗi văn bản
+
+5
+00:00:27,060 --> 00:00:33,090
+và vì vậy bạn sẽ muốn chia chuỗi văn bản đó thành các từ mà bạn muốn thu thập tất cả những từ đó
+
+6
+00:00:33,090 --> 00:00:39,960
+những từ bạn muốn sử dụng bản đồ để đếm chúng và đảm bảo rằng bạn đi xuống thấp hơn để bạn cũng có thể thực hiện cả hai
+
+7
+00:00:39,960 --> 00:00:48,180
+những cái thấp hơn và sau đó khi bạn đã hoàn thành việc đó, có thể vượt qua bản đồ của bạn và lấy một cấu trúc và với cú đánh đó
+
+8
+00:00:48,180 --> 00:00:56,910
+để có 2 trường từ và đếm, sau đó tạo một lát của loại cấu trúc đó và sau đó là phạm vi của bạn
+
+9
+00:00:56,910 --> 00:01:04,200
+bản đồ và đặt một mục trong lát cắt đó cho mỗi từ để sau đó bạn có thể sử dụng lát cắt sắp xếp từ gói nguồn
+
+10
+00:01:04,540 --> 00:01:06,220
+tại sắp xếp hoặc sắp xếp.
+
+11
+00:01:06,330 --> 00:01:13,980
+Và đó là một loại gói sắp xếp để đảm bảo rằng tất cả đều chạy tốt nên việc tạm dừng video sẽ thay đổi
+
+12
+00:01:13,980 --> 00:01:19,320
+về thời điểm bạn hoàn thành video tích cực và sau đó quay lại và tôi sẽ cho bạn thấy giải pháp của mình
+
+13
+00:01:19,320 --> 00:01:21,000
+mà tôi sẽ làm ngay bây giờ.
+
+14
+00:01:21,000 --> 00:01:31,830
+Vì vậy, một điều cần chia sẻ là có sự khác biệt giữa giảng dạy như một nghề và chuyên nghiệp.
+
+15
+00:01:31,830 --> 00:01:37,770
+nhà phát triển, v.v. một nhà phát triển chuyên nghiệp, bạn thực sự đang ở trong đấu trường và bạn đang tạo một ứng dụng
+
+16
+00:01:38,250 --> 00:01:44,440
+và bạn đang lắc lư và sử dụng mã hàng ngày theo cách đó với tư cách là một giáo viên.
+
+17
+00:01:45,000 --> 00:01:49,920
+Bạn biết đấy, có một chương trình giảng dạy nhất định mà chúng tôi sẽ trải qua nếu chúng tôi biết những khái niệm mà chúng tôi dạy.
+
+18
+00:01:49,920 --> 00:01:52,970
+là nơi tôi tìm thấy chính mình và bộ kỹ năng của mình.
+
+19
+00:01:53,040 --> 00:02:00,170
+Và vì vậy đây chỉ là một chút tổn thương và tôi cảm thấy dễ bị tổn thương khi chia sẻ điều này và tôi cảm thấy một chút
+
+20
+00:02:00,180 --> 00:02:06,340
+hơi khiêm tốn vì tôi muốn có thể luyện tập và chiến đấu như ai đó trên đấu trường của họ hàng ngày
+
+21
+00:02:06,390 --> 00:02:12,240
+nhưng học viện không phải là đấu trường học thuật là rất nhiều thứ khác và có rất nhiều bộ kỹ năng
+
+22
+00:02:12,240 --> 00:02:17,980
+đi với nó nhưng nó không ở trong chiến hào trở thành một nhà phát triển chuyên nghiệp mỗi ngày.
+
+23
+00:02:18,030 --> 00:02:25,260
+Và vì vậy, khi nói đến việc dạy viết mã, tôi thực sự giỏi trong các lớp giới thiệu, đó là nơi mà tôi
+
+24
+00:02:25,260 --> 00:02:31,890
+sự nghiệp tôi đã dành thời gian của mình nhưng thực sự sử dụng nó và năng động đưa nó vào một ứng dụng
+
+25
+00:02:31,890 --> 00:02:34,890
+đó là một thế mạnh mà tôi hy vọng sẽ phát triển và lớn mạnh.
+
+26
+00:02:35,340 --> 00:02:44,670
+Và tôi đã làm việc trong khoảng thời gian cuối cùng để thành lập một công ty Web với Daniel và một vài người khác nên
+
+27
+00:02:44,670 --> 00:02:50,430
+Tôi có thể có nhiều thời gian hơn để viết mã nhưng cuối cùng lại làm tất cả những thứ khác và không nhận được bất kỳ mã nào vì
+
+28
+00:02:50,430 --> 00:02:52,190
+Tôi muốn có thêm trải nghiệm trong thế giới thực đó.
+
+29
+00:02:52,200 --> 00:02:55,080
+Nhưng sau đó có rất nhiều việc khác phải làm tôi đã không nhận được điều đó.
+
+30
+00:02:55,080 --> 00:03:04,320
+Và rồi bạn cũng biết rằng tất cả những điều đó chỉ để nói trước rằng tôi ước mình cũng trôi chảy như bạn như ai đó
+
+31
+00:03:04,320 --> 00:03:11,100
+ai đang ở trong đấu trường với điều này nhưng trong cuộc sống của tôi, tôi đã không tập trung vào sự nghiệp và thời gian của mình và
+
+32
+00:03:11,100 --> 00:03:11,820
+mọi thứ.
+
+33
+00:03:11,820 --> 00:03:17,970
+Vì vậy, điều này sẽ không bóng bẩy và trôi chảy như với Daniel, có thể bạn đã biết tất cả những điều đó nhưng ở đây
+
+34
+00:03:17,970 --> 00:03:21,510
+Tôi sẽ thử và nhập mã ngay.
+
+35
+00:03:21,540 --> 00:03:26,820
+Chúng tôi sẽ tập trung vào tiêu đề, nơi tiêu đề xuất hiện và chúng tôi có những câu chuyện mà chúng tôi nhận được
+
+36
+00:03:26,820 --> 00:03:30,180
+một lát vật phẩm và vì vậy vật phẩm là tất cả những thứ đó.
+
+37
+00:03:30,180 --> 00:03:36,030
+Và nếu chúng tôi tìm xem các câu chuyện đang được sử dụng ở đâu, tôi có thể thấy các câu chuyện đang được thêm vào nên chúng tôi
+
+38
+00:03:36,030 --> 00:03:42,090
+thu thập tất cả những câu chuyện của chúng tôi ở đó và những câu chuyện bên trong làm tiêu đề của tôi và sau đó chúng tôi đang in ở đây
+
+39
+00:03:42,090 --> 00:03:42,620
+tất cả chúng ra ngoài.
+
+40
+00:03:42,620 --> 00:03:47,550
+Chà, thay vì in chúng, tôi đã có tất cả những câu chuyện đó và tất cả những câu chuyện đó.
+
+41
+00:03:47,550 --> 00:03:51,360
+Đó là một cấu trúc Đó là một lát cắt của ngôi nhà nên tôi cần một phạm vi trên lát cắt này.
+
+42
+00:03:51,360 --> 00:03:56,430
+Và vì vậy nếu tôi sắp vượt qua một lát cắt, tôi sẽ sử dụng vòng lặp phạm vi và khi tôi vượt qua một lát cắt
+
+43
+00:03:56,460 --> 00:04:03,060
+Tôi sẽ lấy lại chỉ mục và các giá trị của mình. Tôi sẽ thực hiện để iv gọi một phạm vi bằng nhau và tôi sẽ
+
+44
+00:04:03,060 --> 00:04:11,820
+phạm vi trên phần của tôi về các mục được gọi là câu chuyện, một số phạm vi trong các câu chuyện và vì vậy đó là lần đầu tiên của tôi
+
+45
+00:04:11,820 --> 00:04:12,240
+bước chân.
+
+46
+00:04:12,780 --> 00:04:17,820
+Và tôi nhận được chỉ mục về giá trị của mình và vì vậy tôi sẽ không cần chỉ mục của mình. Tôi không nghĩ mình sẽ đặt
+
+47
+00:04:17,820 --> 00:04:21,510
+điều đó đi và tôi sẽ gọi đây là một câu chuyện.
+
+48
+00:04:21,630 --> 00:04:27,780
+Vì vậy, tôi xem qua các câu chuyện và tôi nhận lại một câu chuyện nên bây giờ tôi có câu chuyện của mình và bên trong câu chuyện của tôi có
+
+49
+00:04:27,780 --> 00:04:28,640
+tiêu đề.
+
+50
+00:04:28,800 --> 00:04:35,360
+Và vì vậy với tiêu đề, nó có tất cả các từ trong đó và vì vậy tôi sẽ muốn giảm tất cả các từ đó xuống
+
+51
+00:04:35,400 --> 00:04:40,980
+muốn tách nó ra và lấy tất cả các từ ra và sau đó tôi sẽ tách nó ra nếu tôi
+
+52
+00:04:40,980 --> 00:04:47,060
+đi vào Tôi xem tài liệu go doc và tra cứu split.
+
+53
+00:04:47,070 --> 00:04:50,340
+Vì vậy, đó là trong gói chuỗi.
+
+54
+00:04:50,340 --> 00:04:51,590
+Tôi đang làm tốt.
+
+55
+00:04:51,900 --> 00:04:55,770
+Chỉ cần đúng cách.
+
+56
+00:04:56,130 --> 00:05:02,560
+Chúng tôi đi đến đây, chúng tôi đã chia tách và chúng tôi hiểu rằng chúng tôi cần điều đó và chúng tôi lấy lại một đoạn chuỗi.
+
+57
+00:05:02,570 --> 00:05:04,400
+Vì vậy, chúng tôi sẽ lấy lại một lát chuỗi.
+
+58
+00:05:04,400 --> 00:05:10,630
+Vì vậy, tôi sẽ tiến hành chia nhỏ nó và cho từng thứ đó.
+
+59
+00:05:10,640 --> 00:05:11,620
+Nhưng rồi khi mình chia xa.
+
+60
+00:05:11,660 --> 00:05:14,960
+Từng cái từng cái Xem tôi chỉ làm mình lo lắng.
+
+61
+00:05:14,960 --> 00:05:21,110
+Bây giờ tôi nhận được một đoạn dây cung cấp cho tôi tất cả các từ của tôi và tôi sẽ thu thập chúng vào một bản đồ.
+
+62
+00:05:21,110 --> 00:05:26,520
+Và khi tôi chia nhỏ tất cả các từ của mình, tôi sẽ cần trải rộng phạm vi đó và sau đó đặt chúng vào
+
+63
+00:05:26,520 --> 00:05:27,210
+Bản đồ.
+
+64
+00:05:27,210 --> 00:05:28,010
+Vì vậy, nơi mỗi người trong số này.
+
+65
+00:05:28,010 --> 00:05:31,370
+Mỗi lần chúng tôi lặp lại, chúng tôi nhận được một câu chuyện cho mỗi câu chuyện.
+
+66
+00:05:31,370 --> 00:05:38,090
+Đây là những gì tôi muốn làm Tôi lấy lại một lát chuỗi và lát chuỗi đó sẽ bằng nhau
+
+67
+00:05:38,090 --> 00:05:40,530
+để dây không bị tách.
+
+68
+00:05:41,030 --> 00:05:45,890
+Và chúng tôi sẽ kể chuyện và đó là dấu phân cách của chúng tôi ngay tại đó.
+
+69
+00:05:45,890 --> 00:05:48,520
+Và do đó, điều đó sẽ trả lại cho chúng ta phần dây của chúng ta.
+
+70
+00:05:48,680 --> 00:05:48,980
+Phải.
+
+71
+00:05:48,980 --> 00:06:00,230
+Và chúng tôi cũng muốn tách tiêu đề trên đó và sau đó tôi cũng muốn biến chuỗi đó thành chuỗi thấp hơn
+
+72
+00:06:00,230 --> 00:06:02,790
+để hạ thấp.
+
+73
+00:06:02,830 --> 00:06:03,900
+Chúng ta đi thôi.
+
+74
+00:06:03,910 --> 00:06:10,700
+Và vì vậy tôi đã có tiêu đề của mình một loạt các câu chuyện Tôi có câu chuyện của mình và với tiêu đề câu chuyện của tôi, nó được đưa vào
+
+75
+00:06:10,700 --> 00:06:15,010
+ở đó tôi sẽ tìm ra điều đó ở đây trong một giây với tiêu đề câu chuyện của tôi Tôi sẽ tạo ra chuỗi đó
+
+76
+00:06:15,010 --> 00:06:24,990
+để hạ xuống và tôi sẽ đặt cái này ở đây và các dây để hạ xuống xung quanh cái này và sau đó phần tách của tôi cần phải
+
+77
+00:06:24,990 --> 00:06:27,480
+ở xung quanh điều đó có nghĩa là tôi không cần cái cuối cùng này.
+
+78
+00:06:27,480 --> 00:06:28,000
+Của bạn đi.
+
+79
+00:06:28,590 --> 00:06:35,060
+Và bây giờ tôi có một đoạn dây và vì vậy đoạn dây đó sẽ thực sự là lời của tôi.
+
+80
+00:06:35,060 --> 00:06:37,200
+Vì vậy, tôi sẽ gọi những từ này.
+
+81
+00:06:37,230 --> 00:06:38,710
+Vì vậy, họ là lời nói của tôi.
+
+82
+00:06:38,880 --> 00:06:42,840
+Và bây giờ với tất cả những lời của tôi từ đó, tôi muốn vượt qua điều đó.
+
+83
+00:06:42,840 --> 00:06:50,340
+Và vì vậy những từ cũng sẽ là một lát cắt trả lại cho tôi một lát cắt nên một lát dây tôi thích điều đó
+
+84
+00:06:51,020 --> 00:06:52,150
+cắt một chuỗi.
+
+85
+00:06:52,170 --> 00:06:56,230
+Vì vậy, bây giờ tôi sẽ vượt qua mức đó để có giá trị chỉ mục.
+
+86
+00:06:56,230 --> 00:06:57,570
+Dấu hai chấm bằng phạm vi.
+
+87
+00:06:57,570 --> 00:07:04,050
+Tôi biết tôi cần phải thay đổi những thứ đó và tôi sẽ vượt qua điều này và tôi sẽ gọi đây là một từ và
+
+88
+00:07:04,050 --> 00:07:06,600
+Tôi sẽ không sử dụng chỉ mục của mình ở đó.
+
+89
+00:07:06,600 --> 00:07:09,330
+Và với mỗi từ tôi sẽ thêm từ đó vào bản đồ.
+
+90
+00:07:09,330 --> 00:07:10,350
+Vì vậy, tôi cần bản đồ của tôi.
+
+91
+00:07:10,740 --> 00:07:20,180
+Vì vậy, tôi sẽ có một bản đồ tương đương với một bản đồ và khóa sẽ là một chuỗi và giá trị
+
+92
+00:07:20,210 --> 00:07:27,180
+sắp kết thúc và tôi sẽ tiếp tục và tạo ra nó ngay tại đó bắt đầu khởi tạo nó
+
+93
+00:07:27,180 --> 00:07:27,550
+Nó.
+
+94
+00:07:27,900 --> 00:07:32,010
+Và vì vậy đối với bản đồ của tôi ở đây, tôi muốn thêm từ này.
+
+95
+00:07:32,010 --> 00:07:37,010
+Nếu nó không có ở đó, nó sẽ tạo mục nhập và sau đó tôi sẽ tăng số đó.
+
+96
+00:07:37,020 --> 00:07:42,320
+Vì vậy, bây giờ tôi đã có lời hứa của mình về việc đưa vào bản đồ của mình và nó đang được tính.
+
+97
+00:07:42,330 --> 00:07:47,850
+Vì vậy, tôi sẽ xem xét logic của mình ở đây sắp xếp tất cả các câu chuyện của tôi, tôi nhận được một câu chuyện cho mỗi câu chuyện
+
+98
+00:07:47,850 --> 00:07:52,070
+truyện và lấy tiêu đề mình định làm down rồi mình sẽ tách ra.
+
+99
+00:07:52,110 --> 00:07:57,960
+Và sau đó điều đó sẽ mang lại cho tôi một đoạn từ và tôi sẽ vượt qua đoạn từ đó.
+
+100
+00:07:58,110 --> 00:08:02,630
+Và nó sẽ mang lại cho tôi Tôi đoán là tôi thích ý tưởng gọi đó là từ ngữ.
+
+101
+00:08:02,920 --> 00:08:03,210
+Phải.
+
+102
+00:08:03,240 --> 00:08:07,100
+Và sau đó tôi sẽ lấy một từ và sau đó với mỗi từ tôi sẽ thả từ đó vào bản đồ của mình.
+
+103
+00:08:07,110 --> 00:08:08,780
+Vì vậy, đó giống như bước một đối với tôi.
+
+104
+00:08:09,090 --> 00:08:15,590
+Và sau đó, bước tiếp theo là được. Tôi đã có bản đồ chứa đầy tất cả các từ của mình. Bây giờ tôi cần phải có một cấu trúc
+
+105
+00:08:15,600 --> 00:08:23,600
+vì vậy tôi có thể sắp xếp nó và cấu trúc đó sẽ là loại từ đếm số từ.
+
+106
+00:08:23,700 --> 00:08:30,360
+Và nó sẽ là một cấu trúc và tôi sẽ có hai trường, đó sẽ là từ sẽ là một chuỗi và
+
+107
+00:08:30,360 --> 00:08:36,210
+nó sẽ được đếm sẽ kết thúc và sau đó tôi sẽ cần phải đi trên bản đồ của mình.
+
+108
+00:08:36,210 --> 00:08:44,850
+Vì vậy, bản đồ có một khóa và giá trị và gọi một phạm vi bằng nhau trên bản đồ của tôi.
+
+109
+00:08:45,130 --> 00:08:52,220
+Và khi tôi đi qua bản đồ của mình, tôi muốn có một lát từ như vậy.
+
+110
+00:08:52,710 --> 00:08:59,700
+Và đó sẽ là một lát đếm từ một lát đếm từ và đó sẽ là một lát đếm từ
+
+111
+00:09:00,790 --> 00:09:14,140
+và không phải từ kép từ từ từ từ ngẫu nhiên và bây giờ điều đó được thiết lập khi tôi đi trên bản đồ của mình
+
+112
+00:09:15,350 --> 00:09:19,850
+Tôi sẽ thêm vào lát cắt đó vì vậy tôi sẽ thực hiện thêm
+
+113
+00:09:22,610 --> 00:09:27,100
+một lần nữa làm X WC X WC bằng nối thêm
+
+114
+00:09:29,930 --> 00:09:38,480
+X WC và những gì tôi sẽ thêm vào nó sẽ là tôi đang xem bản đồ của mình và tôi đang đưa ra
+
+115
+00:09:38,480 --> 00:09:45,320
+khóa và giá trị của tôi và vì vậy khóa của tôi, giá trị của tôi thực sự là từ và nó được tính.
+
+116
+00:09:45,500 --> 00:09:48,860
+Và vì vậy tôi chỉ đang tìm xem liệu tôi có sử dụng từ ở đó không.
+
+117
+00:09:48,950 --> 00:09:56,330
+Vì vậy, có lẽ tôi sẽ chỉ đi WC ​​và tôi nghĩ rằng tôi thích điều đó và sau đó X WC cũng có ý nghĩa, v.v.
+
+118
+00:09:56,330 --> 00:09:57,350
+Tôi sẽ ghim vào đó.
+
+119
+00:09:57,380 --> 00:10:05,870
+Bây giờ tôi sẽ tạo Tôi đã có số lượng từ loại của mình, nó sẽ là một số lượng từ và chúng tôi đang sử dụng will
+
+120
+00:10:05,870 --> 00:10:11,720
+bạn gọi đây là một nghĩa đen hỗn hợp ẩn danh không gán nó cho bất cứ thứ gì đúng là một nghĩa đen mà tôi có
+
+121
+00:10:11,720 --> 00:10:18,950
+nhập của tôi và sau đó là dấu ngoặc nhọn và nhập các giá trị và tôi cần từ của mình hoạt động và tôi cần tài khoản của mình
+
+122
+00:10:19,910 --> 00:10:21,640
+vì vậy nó làm cho tôi một chút.
+
+123
+00:10:22,530 --> 00:10:29,760
+Và vì vậy, tôi đã nhận được lời của mình và tôi đã đếm được và tôi đang thêm điều đó vào lát cắt của mình và bây giờ tôi
+
+124
+00:10:29,760 --> 00:10:30,970
+chỉ cần một loại đó.
+
+125
+00:10:31,260 --> 00:10:37,000
+Vì vậy, để sắp xếp tốt OK dawg và đi đến sắp xếp
+
+126
+00:10:40,070 --> 00:10:42,350
+và muối sẽ tìm kiếm miếng
+
+127
+00:10:44,910 --> 00:10:53,160
+và đã tìm kiếm lát cắt ở đây có bất kỳ loại nào, một lát cắt thuộc bất kỳ loại nào.
+
+128
+00:10:53,200 --> 00:10:59,520
+Và sau đó tôi cần một chức năng xử lý ít chức năng hơn và có một ví dụ ở đó nếu tôi muốn xem xét
+
+129
+00:10:59,520 --> 00:11:07,770
+tại đó và tôi chỉ muốn xem ít funk hơn ở ngay đó và nó sẽ quay trở lại, bạn biết đó là
+
+130
+00:11:07,770 --> 00:11:10,110
+ít hơn những gì.
+
+131
+00:11:10,170 --> 00:11:23,130
+Và vì vậy tôi cần phải làm điều đó để sắp xếp. Tôi cần lát muối chấm muối và lát sẽ là xwc và sau đó
+
+132
+00:11:23,190 --> 00:11:28,840
+kiểu sẽ là func và kiểu sẽ là I j.
+
+133
+00:11:28,960 --> 00:11:32,510
+Và và nắm lấy cánh cửa.
+
+134
+00:11:32,560 --> 00:11:39,150
+Ai đó vừa bước vào đó sẽ trả về một bool và đây là mã của hàm.
+
+135
+00:11:39,480 --> 00:11:46,710
+Tôi sẽ nói rằng nó mang theo gói đó và sau đó cho chức năng đó, tôi cần xwc và thực sự chúng tôi
+
+136
+00:11:46,710 --> 00:11:58,430
+hãy xem lát cắt tại vị trí chỉ mục này sẽ nhỏ hơn xw hãy xem lát cắt này tại vị trí chỉ mục đó.
+
+137
+00:11:58,440 --> 00:12:01,410
+Vì vậy, bây giờ tôi sẽ so sánh điều đó với tài liệu.
+
+138
+00:12:01,410 --> 00:12:15,230
+Ý tôi là bạn trả lại tiền lãi đó và chúng tôi có dấu chấm này, lát cắt đó và lát cắt đó đang sử dụng lát cắt đó và
+
+139
+00:12:15,650 --> 00:12:17,660
+trừ đi một lát đếm từ.
+
+140
+00:12:17,660 --> 00:12:27,390
+Vì vậy, tôi cần có dấu chấm lát cắt X WC của mình và nó sẽ là số đếm và xw CJ
+
+141
+00:12:27,490 --> 00:12:31,100
+Chấm đếm nó.
+
+142
+00:12:31,200 --> 00:12:34,860
+Không có đường màu đỏ không có đường màu đỏ là một điều tích cực.
+
+143
+00:12:34,860 --> 00:12:35,060
+Chuẩn rồi.
+
+144
+00:12:35,060 --> 00:12:41,000
+Vì vậy, trong trường hợp này, lỗi duy nhất là điều này sẽ gửi thứ tự đếm và bạn muốn có thứ tự tăng dần.
+
+145
+00:12:41,120 --> 00:12:44,410
+Vì vậy, trước tiên, bạn lớn hơn Yep c.
+
+146
+00:12:44,590 --> 00:12:53,430
+Vì vậy, nếu nếu nếu bạn gọi lại thì trả về true EIS sẽ đi trước J Yeah và tôi thích ví dụ về gọi lại này
+
+147
+00:12:53,460 --> 00:13:02,280
+nơi bạn biết lát cắt sắp xếp nào đang yêu cầu gọi lại mà tôi đã giải thích trước đây dưới dạng một chức năng bạn vượt qua
+
+148
+00:13:02,280 --> 00:13:08,400
+trong như một đối số và sau đó sắp xếp, chúng tôi sẽ sử dụng nó theo cách sắp xếp sẽ sử dụng nó khi nó sẽ chạy
+
+149
+00:13:08,400 --> 00:13:10,470
+chức năng này mã tôi đã cung cấp cho nó.
+
+150
+00:13:10,740 --> 00:13:12,330
+Và nó sẽ nhận lại một giá trị.
+
+151
+00:13:12,330 --> 00:13:17,230
+Đúng hay sai và dựa vào đó nó sẽ làm những gì nó làm khi sử dụng chức năng đó.
+
+152
+00:13:17,230 --> 00:13:17,480
+Được rồi.
+
+153
+00:13:17,490 --> 00:13:19,680
+Vì vậy, nó đang gọi lại hàm I'm past and.
+
+154
+00:13:19,680 --> 00:13:21,340
+Đó có phải là một cách tốt để giải thích nó.
+
+155
+00:13:21,980 --> 00:13:23,600
+Hừm.
+
+156
+00:13:23,650 --> 00:13:32,160
+Và bây giờ tôi đã sắp xếp xong mọi thứ, tôi có thể lướt qua WC cũ của mình và vì vậy tôi sẽ thấy một lát một từ
+
+157
+00:13:32,160 --> 00:13:45,030
+đếm và tôi không cần chỉ mục của mình nhưng tôi sẽ nhận được giá trị của mình và dấu hai chấm bằng phạm vi X WC và phông chữ in nằm
+
+158
+00:13:45,510 --> 00:13:57,480
+và tôi sẽ in ra từ dấu chấm giá trị của mình và cũng có thể khi đó số lượng dấu chấm giá trị sẽ có ý nghĩa với
+
+159
+00:13:57,480 --> 00:14:02,160
+của quận và hãy chạy nó và xem những gì chúng ta nhận được.
+
+160
+00:14:03,270 --> 00:14:03,720
+Được rồi.
+
+161
+00:14:03,820 --> 00:14:12,670
+Vì vậy, đây là giải pháp 0 3 và để chạy nó, tôi chỉ cần đưa ra giải pháp trước đó và nó đang chạy
+
+162
+00:14:12,670 --> 00:14:14,530
+tại 0 3 và chúng ta sẽ xem số lượng từ của chúng ta là bao nhiêu
+
+163
+00:14:18,810 --> 00:14:27,780
+Vì vậy, đó là hy vọng của tôi trong quá trình này tại sao điều này xảy ra mà bạn biết rằng sự hợp tác của nhiều bộ óc sẽ trở nên mạnh mẽ hơn
+
+164
+00:14:27,780 --> 00:14:35,310
+các giải pháp, mỗi chúng tôi mang đến một cái gì đó khi chúng tôi ghép nối chương trình và cả khi chúng tôi ghép nối dạy và
+
+165
+00:14:35,820 --> 00:14:42,870
+tôi hy vọng rằng trong sức mạnh tổng hợp đó, mỗi chúng ta có những thế mạnh khác nhau sẽ tạo ra
+
+166
+00:14:42,900 --> 00:14:48,540
+một khóa học mạnh mẽ hơn, nơi bạn có thể thấy những lĩnh vực mà mỗi chúng ta mạnh hơn ở những lĩnh vực mà mỗi người trong chúng ta
+
+167
+00:14:48,540 --> 00:14:54,960
+chúng tôi học hỏi và bổ sung cho nhau và sau đó điều đó hữu ích cho bạn khi tôi xem xét mọi thứ và tôi thích
+
+168
+00:14:54,960 --> 00:15:01,680
+wow điều đó hoàn toàn mới đối với tôi bạn biết đấy hay đặt ra câu hỏi bằng cách hy vọng hy vọng hy vọng tôi hy vọng
+
+169
+00:15:01,680 --> 00:15:03,710
+đó là hữu ích cho bạn.
+
+170
+00:15:03,720 --> 00:15:03,930
+Được rồi.
+
+171
+00:15:03,960 --> 00:15:07,560
+Vì vậy, đây là số lượng từ tại sao tôi nói với bạn nói lắp Tôi đã không nói lắp mãi mãi
+
+172
+00:15:13,760 --> 00:15:23,060
+đi ba ba mươi tám không ngạc nhiên đi Lãng chín mươi ba làm sao đứng đầu danh sách làm sao
+
+173
+00:15:23,060 --> 00:15:31,160
+Tôi làm thư viện gói mui xe của bạn, thật thú vị khi nhìn vào những từ đó, vì vậy đó là giải pháp của tôi
+
+174
+00:15:31,160 --> 00:15:33,620
+để thực hành Bài tập số ba, tôi hy vọng nó hữu ích.

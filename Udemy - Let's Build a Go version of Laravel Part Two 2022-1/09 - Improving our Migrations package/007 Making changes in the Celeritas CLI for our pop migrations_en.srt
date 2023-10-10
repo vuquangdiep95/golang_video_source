@@ -1,0 +1,576 @@
+1
+00:00:01,730 --> 00:00:07,250
+So now that we have the necessary functions all set up for pop migrations in this file migration start
+
+2
+00:00:07,250 --> 00:00:07,670
+go.
+
+3
+00:00:07,700 --> 00:00:12,680
+Let's turn our attention to the command line interface and see if we can get this working with pop migrations.
+
+4
+00:00:14,330 --> 00:00:22,070
+So what we'll do is go over to the Celerity folder, then the CMD folder, then the Seelye folder and
+
+5
+00:00:22,070 --> 00:00:23,100
+we'll look at mango.
+
+6
+00:00:23,850 --> 00:00:27,080
+And let's just figure out how this all works right now and what we're going to have to do.
+
+7
+00:00:27,250 --> 00:00:33,710
+So I'll bring up Mango, and here in the main function, we're looking for the part where you type,
+
+8
+00:00:33,920 --> 00:00:37,490
+make migration and then some kind of migration.
+
+9
+00:00:37,500 --> 00:00:41,300
+So that would be under the make right here in this case.
+
+10
+00:00:42,110 --> 00:00:44,230
+So we check to make sure that argument two exists.
+
+11
+00:00:44,240 --> 00:00:45,710
+If it doesn't, we jump out.
+
+12
+00:00:46,130 --> 00:00:47,450
+Otherwise, we go to do make.
+
+13
+00:00:47,510 --> 00:00:49,100
+So let's go over to the do make function.
+
+14
+00:00:49,820 --> 00:00:54,440
+So I click on that and that's in the file make don't go and we don't care about making a key.
+
+15
+00:00:54,450 --> 00:00:56,660
+We care about making a migration right here.
+
+16
+00:00:56,990 --> 00:01:03,620
+So it seems like the first thing we do is we check to see if there's a cell data type value.
+
+17
+00:01:03,890 --> 00:01:06,330
+We're actually not putting any error checking in there.
+
+18
+00:01:06,350 --> 00:01:07,940
+So we might want to put in a function here.
+
+19
+00:01:07,940 --> 00:01:17,390
+I'll just put in a to do comment to do make sure DB is set up and we'll take care of that a little bit
+
+20
+00:01:17,390 --> 00:01:19,160
+later on, but that'll remind us to do it.
+
+21
+00:01:19,400 --> 00:01:23,280
+So if they don't have a database set up, obviously they shouldn't be able to make a migration.
+
+22
+00:01:23,310 --> 00:01:28,070
+They you have to have your database configured in the dot on file before anything happens.
+
+23
+00:01:28,370 --> 00:01:28,700
+OK.
+
+24
+00:01:28,730 --> 00:01:30,020
+So something will happen there.
+
+25
+00:01:30,710 --> 00:01:33,410
+Then we check to make sure that they actually have a migration name.
+
+26
+00:01:33,680 --> 00:01:34,220
+Perfect.
+
+27
+00:01:34,580 --> 00:01:35,030
+OK.
+
+28
+00:01:35,660 --> 00:01:42,410
+So what we want to do here is we want to change the command from celebrities, make migration migration
+
+29
+00:01:42,410 --> 00:01:45,890
+name to actually also have a choice.
+
+30
+00:01:46,040 --> 00:01:51,190
+You should be able to make a PHE's migration, which of course, is a soda migration or a pop migration.
+
+31
+00:01:51,560 --> 00:01:55,790
+Or you should be able to make a sequel migration as we do now.
+
+32
+00:01:55,970 --> 00:02:02,990
+But there's no point at all in having two migrations packages installed in our code because Pop takes
+
+33
+00:02:02,990 --> 00:02:04,940
+care of other fees or sequel.
+
+34
+00:02:06,470 --> 00:02:12,170
+So what we can do here is maybe after we get all of this air checking done, wait out here.
+
+35
+00:02:12,170 --> 00:02:14,510
+We'll just put a bunch of blank lines in, so we knew where we are.
+
+36
+00:02:16,130 --> 00:02:24,530
+And what we can do here is, say, default to migration type of things.
+
+37
+00:02:24,890 --> 00:02:29,780
+But if they specify fees will use fees, if they specify signal that we'll use signal.
+
+38
+00:02:30,470 --> 00:02:32,990
+And then we have to decide what kind of migration are we doing?
+
+39
+00:02:33,200 --> 00:02:37,010
+So are we doing fees or sequel?
+
+40
+00:02:39,550 --> 00:02:47,440
+Now, if we're doing things, then we want to read a kind of default up and down template, right?
+
+41
+00:02:47,890 --> 00:02:57,880
+So we'll have an if statement, if sequel know if fears read default templates, otherwise use sequel.
+
+42
+00:02:58,970 --> 00:02:59,360
+OK.
+
+43
+00:03:00,320 --> 00:03:07,850
+And then we want to create the migrations up and down for either is or sequel.
+
+44
+00:03:08,660 --> 00:03:14,360
+Now this doesn't seem terribly complicated, but obviously we're going to want a couple of default templates
+
+45
+00:03:14,960 --> 00:03:16,360
+for phased migrations.
+
+46
+00:03:16,370 --> 00:03:18,200
+So let's go over to our Templates folder.
+
+47
+00:03:18,890 --> 00:03:23,630
+And of course, this is the read only file system that has all the templates we use to create things
+
+48
+00:03:23,630 --> 00:03:25,010
+using this command line tool.
+
+49
+00:03:25,400 --> 00:03:28,850
+And let's look inside the migrations folder and we'll create two files here.
+
+50
+00:03:29,060 --> 00:03:32,420
+So I'll create a new file, not a go file, just to file.
+
+51
+00:03:32,960 --> 00:03:44,960
+And I'll call this one say migration up fields and then I'll create another one the new file migration.
+
+52
+00:03:46,220 --> 00:03:50,160
+Underscored down the fence, so let's start with the up migration.
+
+53
+00:03:50,210 --> 00:03:54,470
+Now, if you look on the course resources for this lecture, you'll see a zip file that has what I'm
+
+54
+00:03:54,470 --> 00:03:58,560
+about to paste into this up file and also what I'm going to paste into the downfall.
+
+55
+00:03:59,120 --> 00:04:00,020
+And it's very simple.
+
+56
+00:04:00,080 --> 00:04:06,680
+We're going to just give a simple starter template for creating a table in fits, and that's often what
+
+57
+00:04:06,680 --> 00:04:07,270
+you have to do.
+
+58
+00:04:07,280 --> 00:04:11,000
+And if they don't want to use this, they can just delete it and put whatever they want in there instead.
+
+59
+00:04:11,510 --> 00:04:14,720
+And for the down migration, it's as simple as this.
+
+60
+00:04:15,020 --> 00:04:16,160
+Just dropping that table.
+
+61
+00:04:16,370 --> 00:04:21,230
+And again, this is the sort of thing that they'll modify for their specific needs.
+
+62
+00:04:21,230 --> 00:04:25,870
+The user will modify it for whatever they want to accomplish with their up and down migrations.
+
+63
+00:04:25,880 --> 00:04:27,590
+But now we have some something to work with.
+
+64
+00:04:27,590 --> 00:04:31,810
+So download the zip file with these simple migrations or just just type of man.
+
+65
+00:04:31,820 --> 00:04:36,890
+It's not very much text and make sure you have a file called migration underscored downed office and
+
+66
+00:04:36,890 --> 00:04:41,600
+a file called migration underscore update is inside the migration folder.
+
+67
+00:04:41,600 --> 00:04:44,660
+Inside the Templates folder seelye cmd right.
+
+68
+00:04:44,660 --> 00:04:45,180
+Insularity.
+
+69
+00:04:45,560 --> 00:04:47,750
+OK, let's go back to make Docker.
+
+70
+00:04:48,440 --> 00:04:54,080
+So what we can do here to default to a migration type of files is we can say we'll create a variable
+
+71
+00:04:54,080 --> 00:04:56,750
+migration type, assign the value of IS.
+
+72
+00:04:57,350 --> 00:05:04,580
+OK, so now we have a default and will declare two variables up and down both of type string.
+
+73
+00:05:04,970 --> 00:05:12,050
+And these will be our up and down migrations, which will hold fees content if it's for soda and it'll
+
+74
+00:05:12,050 --> 00:05:12,890
+just be SQL.
+
+75
+00:05:12,980 --> 00:05:13,850
+It's going to be simple.
+
+76
+00:05:14,870 --> 00:05:19,640
+Now we need to decide whether or not we're going to be using fears or sequel.
+
+77
+00:05:19,730 --> 00:05:21,950
+And of course, that means we're going to change the command.
+
+78
+00:05:21,980 --> 00:05:23,240
+It won't be any more.
+
+79
+00:05:23,480 --> 00:05:26,900
+Just celebrities make migration.
+
+80
+00:05:26,900 --> 00:05:30,980
+The migration name will also put another value in there and will default it.
+
+81
+00:05:30,980 --> 00:05:33,200
+If it doesn't exist, it will be fears.
+
+82
+00:05:34,040 --> 00:05:36,710
+And if it does exist, will choose whatever they passed.
+
+83
+00:05:36,800 --> 00:05:40,730
+So that will be ARG for our big three being the name of the migration.
+
+84
+00:05:40,970 --> 00:05:47,540
+So if ARG for which doesn't exist yet, but don't worry about that, if ARG four is equal to his
+
+85
+00:05:50,180 --> 00:05:58,250
+or ARG four is equal to an empty string or something, otherwise we'll do something else.
+
+86
+00:05:59,120 --> 00:06:01,100
+Now, where does ARG four come from?
+
+87
+00:06:01,340 --> 00:06:06,020
+Well, obviously run out to pass of this function, so go up to the function signature and just add
+
+88
+00:06:06,020 --> 00:06:06,530
+art form.
+
+89
+00:06:08,870 --> 00:06:11,420
+And of course, if we go back to mean, don't go.
+
+90
+00:06:13,670 --> 00:06:18,860
+We need to pass or for which we don't have yet, but we'll get it shortly.
+
+91
+00:06:19,340 --> 00:06:25,580
+Let's go right up to the top of this file and declare an urn for.
+
+92
+00:06:26,720 --> 00:06:32,930
+And go to validate input which actually produces this and have it send back another string, which will
+
+93
+00:06:32,930 --> 00:06:37,790
+be earned for and declare our four here.
+
+94
+00:06:38,720 --> 00:06:42,980
+And of course, these are just the command line parameters when somebody types in celebrities.
+
+95
+00:06:44,000 --> 00:06:46,930
+And we need to make sure that we actually have in our core here.
+
+96
+00:06:47,000 --> 00:06:48,200
+So let's copy this,
+
+97
+00:06:51,110 --> 00:06:51,860
+paste this.
+
+98
+00:06:53,470 --> 00:06:59,350
+You make this five, because celebrities is actually the command celebrities would be the first argument
+
+99
+00:06:59,560 --> 00:07:02,140
+and this becomes four or incrementing goes by one.
+
+100
+00:07:03,780 --> 00:07:05,040
+And make this art for.
+
+101
+00:07:08,260 --> 00:07:10,540
+And looks that I have an error here somewhere.
+
+102
+00:07:15,470 --> 00:07:15,940
+A comma.
+
+103
+00:07:18,030 --> 00:07:18,810
+That fixes that.
+
+104
+00:07:19,620 --> 00:07:22,620
+And down here, we'll just return another empty string if there's an error.
+
+105
+00:07:22,890 --> 00:07:30,000
+I'll take care of that problem and we'll return our four at the end of this.
+
+106
+00:07:30,270 --> 00:07:31,980
+OK, so now we have that taken care of.
+
+107
+00:07:33,130 --> 00:07:37,060
+So that should take care of the error of here when we make.
+
+108
+00:07:38,940 --> 00:07:39,690
+And it does.
+
+109
+00:07:40,010 --> 00:07:48,290
+OK, so let's go back to our make duco, and now we have our third floor and no errors with that problem.
+
+110
+00:07:48,390 --> 00:07:55,590
+So down here, if ERG four is equal to fizz or Argh four is empty, in other words, it wasn't specified,
+
+111
+00:07:55,830 --> 00:07:58,110
+then we want to create our up and down content.
+
+112
+00:07:58,260 --> 00:08:05,520
+So let's say up bytes and potentially an error which I'm going to ignore and you shouldn't.
+
+113
+00:08:05,520 --> 00:08:07,050
+But I will just to get this going.
+
+114
+00:08:07,500 --> 00:08:11,460
+We're going to read from the template fs, our template file system.
+
+115
+00:08:11,640 --> 00:08:15,300
+We're going to read the file and the file we want to read is the one we just created.
+
+116
+00:08:15,330 --> 00:08:21,450
+Templates, migrations, slash migration underscore up is.
+
+117
+00:08:22,480 --> 00:08:28,990
+Then I'll duplicate this and make this one downvotes, so it's reading the bytes from those files on
+
+118
+00:08:28,990 --> 00:08:30,250
+the read only file system.
+
+119
+00:08:30,340 --> 00:08:31,570
+And this becomes down.
+
+120
+00:08:33,640 --> 00:08:40,190
+So now I have those bites, and all I have to do is say up as equals a string of bites.
+
+121
+00:08:44,890 --> 00:08:48,130
+And down is equal to string Dumbo's.
+
+122
+00:08:49,600 --> 00:08:49,930
+OK.
+
+123
+00:08:50,620 --> 00:08:55,630
+And here I'll just say else, migration type is equal to school.
+
+124
+00:08:56,590 --> 00:09:03,010
+So if you specified school as your migration type, in other words, argument for is not theirs, then
+
+125
+00:09:03,010 --> 00:09:04,180
+what is going to be called the sequel?
+
+126
+00:09:05,980 --> 00:09:10,030
+OK, so we can delete this comment now, because we've taken care of that, and now we want to create
+
+127
+00:09:10,030 --> 00:09:17,110
+the migrations, and now we can finally call something we used or we wrote in our migrations don't go
+
+128
+00:09:17,110 --> 00:09:17,440
+far.
+
+129
+00:09:17,470 --> 00:09:18,310
+So we'll check for error.
+
+130
+00:09:19,030 --> 00:09:22,870
+And that's a sign the value of from sell the celebrity's variable.
+
+131
+00:09:23,350 --> 00:09:27,830
+We're going to call, create pop migration and we give it its necessary parameters.
+
+132
+00:09:27,850 --> 00:09:30,610
+So the first one is up, which has to be a slice of bite.
+
+133
+00:09:30,760 --> 00:09:37,540
+So we'll just cast up to a slice of bite then down, which is also a slice of bite and down.
+
+134
+00:09:40,330 --> 00:09:46,810
+And the next one is whatever argument three was the name of the migration three and migration type.
+
+135
+00:09:48,230 --> 00:09:48,550
+All right.
+
+136
+00:09:48,700 --> 00:09:50,890
+So we call that and we'll check for an error.
+
+137
+00:09:51,100 --> 00:09:52,450
+If error is not equal to nil.
+
+138
+00:09:53,920 --> 00:09:57,160
+Then we'll exit gracefully and we'll handle beer.
+
+139
+00:09:59,410 --> 00:10:04,330
+So in theory, that should actually work, which means we don't need any of this stuff, but I'm going
+
+140
+00:10:04,330 --> 00:10:06,160
+to comment that out rather than deleting it.
+
+141
+00:10:06,900 --> 00:10:10,180
+So I might have to go back and look at it again before I'm done.
+
+142
+00:10:10,960 --> 00:10:14,020
+So in theory, this should actually work.
+
+143
+00:10:14,050 --> 00:10:19,540
+Now, we haven't actually run a migration yet, but we should be able to actually run the code and generate
+
+144
+00:10:19,540 --> 00:10:23,470
+a PhysX migration, and we'll give that a try in the next election.
+

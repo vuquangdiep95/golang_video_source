@@ -1,0 +1,511 @@
+1
+00:00:00,330 --> 00:00:01,110
+So let's keep going.
+
+2
+00:00:01,290 --> 00:00:07,350
+So right now, so far in our mean God Go file in the My App project, we have nothing more than a simple
+
+3
+00:00:07,350 --> 00:00:13,950
+type application that has one member, which is of type celebrities don't celebrities and we call in
+
+4
+00:00:13,950 --> 00:00:15,600
+it application in our main function.
+
+5
+00:00:16,500 --> 00:00:22,200
+And all that that does is get our working directory and then create a celebrity's variable.
+
+6
+00:00:22,710 --> 00:00:29,760
+It's a reference to celebrities start celebrities here on Line 17 and then we call new and new all that
+
+7
+00:00:29,760 --> 00:00:30,510
+that does.
+
+8
+00:00:30,900 --> 00:00:37,440
+Over here in the celebrities package, new does nothing more than give us a list of folders we expect
+
+9
+00:00:37,440 --> 00:00:45,030
+to have available for a web application and assign the root path to a variable called path config of
+
+10
+00:00:45,030 --> 00:00:46,180
+type in a parts.
+
+11
+00:00:46,200 --> 00:00:47,160
+And then we call in it.
+
+12
+00:00:47,160 --> 00:00:49,340
+And all that it does is create those folders.
+
+13
+00:00:49,350 --> 00:00:50,400
+So let's keep going.
+
+14
+00:00:50,730 --> 00:00:54,210
+Well, obviously one of the things we want to do is to get our environment set up.
+
+15
+00:00:54,750 --> 00:00:59,720
+And if we follow the same model that Laravel uses, we'll have a dot on file.
+
+16
+00:00:59,730 --> 00:01:01,110
+So let's get started doing that.
+
+17
+00:01:01,560 --> 00:01:06,780
+So in this new function, after we create the folders right here, let's go a little bit further.
+
+18
+00:01:06,810 --> 00:01:09,960
+Let's make sure that a dot on file exists.
+
+19
+00:01:10,140 --> 00:01:11,070
+So we'll check for an error.
+
+20
+00:01:11,470 --> 00:01:14,370
+And that's going to be equal to a function that doesn't exist yet.
+
+21
+00:01:14,370 --> 00:01:17,970
+And I'm going to call it check dot on.
+
+22
+00:01:18,720 --> 00:01:22,270
+OK, and we'll pass it ridpath so it knows where to look.
+
+23
+00:01:22,290 --> 00:01:26,160
+And of course, that's the root path of our application, not of celebrities.
+
+24
+00:01:26,490 --> 00:01:27,360
+And we'll check for an error.
+
+25
+00:01:28,140 --> 00:01:32,220
+If error is not equal to nil, then we'll simply return the error.
+
+26
+00:01:33,540 --> 00:01:39,870
+Now let's come down here below this function, below the init function and create that checked on function.
+
+27
+00:01:40,620 --> 00:01:50,100
+Func with the receiver, see celebrities, check dconf and it will take a path which is a string and
+
+28
+00:01:50,100 --> 00:01:50,850
+that's a root path.
+
+29
+00:01:51,810 --> 00:01:58,020
+And all we'll do here is say error is assign the value of and we want to check to see if that file exists.
+
+30
+00:01:58,200 --> 00:02:02,520
+So see Dot and we have one already create dear.
+
+31
+00:02:02,520 --> 00:02:04,870
+If not exist, let's create a new one in a minute.
+
+32
+00:02:04,890 --> 00:02:06,870
+We'll name it right now and then we'll create it in a moment.
+
+33
+00:02:07,350 --> 00:02:12,000
+So we'll call C Dot and instead of calling, create dear, if not exists, because that doesn't exist,
+
+34
+00:02:12,000 --> 00:02:14,370
+we'll create a new function and we'll call it file.
+
+35
+00:02:16,930 --> 00:02:25,180
+If not exist, and I'll put an s on the end and that will be looking in and we'll just use the format
+
+36
+00:02:25,180 --> 00:02:26,470
+on this print package.
+
+37
+00:02:29,350 --> 00:02:34,270
+We'll be looking for percent s, which is a placeholder we're going to replace in a minute.
+
+38
+00:02:34,780 --> 00:02:39,340
+A file named dconf and in there will pass in path.
+
+39
+00:02:40,000 --> 00:02:45,010
+So that will look in the root level of our application to see if a file called port exists.
+
+40
+00:02:46,030 --> 00:02:47,530
+And if it doesn't, we'll return an error.
+
+41
+00:02:47,650 --> 00:02:49,270
+So we'll give a return type here.
+
+42
+00:02:50,470 --> 00:02:50,860
+Error?
+
+43
+00:02:55,230 --> 00:03:05,400
+And we'll see if there does not is not equal to nil return the error, otherwise return nil, said article
+
+44
+00:03:05,400 --> 00:03:07,680
+create this create file if not exists.
+
+45
+00:03:07,770 --> 00:03:12,690
+And of course, we'll put that in the same place that we expect to find things helpers dot com.
+
+46
+00:03:13,290 --> 00:03:14,340
+So we'll create that function.
+
+47
+00:03:14,940 --> 00:03:22,710
+Func see celebrities, give it the name, create file if not exists, and it will take one path, which
+
+48
+00:03:22,710 --> 00:03:25,410
+is a string and potentially return an error.
+
+49
+00:03:26,490 --> 00:03:27,610
+And this is really simple.
+
+50
+00:03:27,630 --> 00:03:35,760
+So Vir will ignore the first return value and error or assign the value of from the OS package.
+
+51
+00:03:35,820 --> 00:03:36,270
+Step.
+
+52
+00:03:37,480 --> 00:03:38,950
+And hopefully it will find it for me.
+
+53
+00:03:41,950 --> 00:03:42,560
+Apparently not.
+
+54
+00:03:42,580 --> 00:03:44,170
+We'll import it manually in a moment.
+
+55
+00:03:44,530 --> 00:03:46,270
+Osun state and path.
+
+56
+00:03:47,260 --> 00:03:49,240
+And of course, we can't use the assignment operator.
+
+57
+00:03:49,330 --> 00:03:50,470
+That's why it wasn't funny.
+
+58
+00:03:50,770 --> 00:03:51,280
+There we are.
+
+59
+00:03:54,040 --> 00:03:59,740
+And if O.C Dot is not exist with error.
+
+60
+00:04:03,800 --> 00:04:10,870
+I will say create a file variable with potentially an error are equal to lawyers, don't create path.
+
+61
+00:04:12,320 --> 00:04:15,830
+If error is not equal to nil, just return the error.
+
+62
+00:04:20,060 --> 00:04:22,130
+So we'll make sure we close it properly.
+
+63
+00:04:22,580 --> 00:04:23,630
+Defer func.
+
+64
+00:04:25,770 --> 00:04:33,570
+File and lots of type OS file a pointer to that we don't care about the return value and we'll make
+
+65
+00:04:33,570 --> 00:04:36,720
+it file doc close just to close to when we're done.
+
+66
+00:04:37,440 --> 00:04:40,290
+And of course, we have to pass file to that deferred function.
+
+67
+00:04:41,700 --> 00:04:44,280
+And when all that's done, we return nil.
+
+68
+00:04:46,140 --> 00:04:50,190
+So that will create an empty dot on file for us if it doesn't exist.
+
+69
+00:04:51,450 --> 00:04:55,560
+So back in celebrities, we have this create file, if not exist.
+
+70
+00:04:55,560 --> 00:04:56,340
+We've done that.
+
+71
+00:04:56,340 --> 00:04:56,970
+Perfect.
+
+72
+00:04:57,420 --> 00:05:01,740
+Now up here, of course, once it exists, we want to read it.
+
+73
+00:05:02,820 --> 00:05:07,050
+Even if it's an empty file, we want to read it because at some point we're going to populate that dot
+
+74
+00:05:07,050 --> 00:05:08,850
+on file with lots of information.
+
+75
+00:05:09,810 --> 00:05:13,580
+So the next step is to read the dot on file on.
+
+76
+00:05:14,550 --> 00:05:19,390
+Now we could if we wanted to create all the code necessary to read the dot on file.
+
+77
+00:05:19,410 --> 00:05:22,380
+Just reading in a text file, go through it one line at a time.
+
+78
+00:05:22,380 --> 00:05:23,700
+Set the environment variables.
+
+79
+00:05:24,300 --> 00:05:29,790
+Or we could take advantage of a well known and often used package, which I'll show you right here.
+
+80
+00:05:31,140 --> 00:05:40,290
+It's at GitHub dot com slash j o h o slash go dot arms and it is dead simple to use, so let's copy
+
+81
+00:05:40,290 --> 00:05:43,350
+the code to install it right here.
+
+82
+00:05:44,490 --> 00:05:45,480
+Go back to our ID.
+
+83
+00:05:47,250 --> 00:05:50,760
+Open a terminal window and go get that package.
+
+84
+00:05:51,030 --> 00:05:53,110
+So we'll go and get it there.
+
+85
+00:05:53,130 --> 00:05:54,300
+It's now available to us.
+
+86
+00:05:56,670 --> 00:06:00,690
+So let's read the dot on file and you can go through the documentation on your own, but it's really,
+
+87
+00:06:00,690 --> 00:06:01,350
+really simple.
+
+88
+00:06:01,530 --> 00:06:10,050
+All you have to do is check for error and call go dot on dot load and pass it the full path name to
+
+89
+00:06:10,050 --> 00:06:10,920
+the dot on file.
+
+90
+00:06:11,580 --> 00:06:19,200
+So I'll pass it Route Path, which is the route path of our application, plus Slashdot on and we'll
+
+91
+00:06:19,200 --> 00:06:22,950
+check for an error if error is not equal to nil, return the error.
+
+92
+00:06:25,460 --> 00:06:29,370
+Now that has already with that one line, plus the error check, of course.
+
+93
+00:06:29,610 --> 00:06:35,910
+Read the dot on file found all of the entries and put them into our environment, which is pretty straightforward.
+
+94
+00:06:36,060 --> 00:06:39,630
+OK, so of course, we probably should have a dot on file.
+
+95
+00:06:40,140 --> 00:06:42,270
+So let's go back to our other package.
+
+96
+00:06:44,580 --> 00:06:50,010
+My app and create a new file in here called Dot Arms.
+
+97
+00:06:51,180 --> 00:06:56,820
+OK, now if you go to the course resources for this lecture, you'll find a starter dot on file and
+
+98
+00:06:56,820 --> 00:07:00,700
+it has lots of entries you're not going to use for a little while, but it's a good starting point.
+
+99
+00:07:00,750 --> 00:07:02,640
+So I've already got mine copied to the clipboard.
+
+100
+00:07:02,970 --> 00:07:04,260
+Let me just paste it in here.
+
+101
+00:07:05,280 --> 00:07:05,940
+So there it is.
+
+102
+00:07:06,630 --> 00:07:10,320
+And as you can see, there's all kinds of comments here that tells you what these various entries are
+
+103
+00:07:10,320 --> 00:07:12,720
+for, but let's go through a few of them just to get started.
+
+104
+00:07:12,810 --> 00:07:19,380
+So the first thing on Line two is app underscore name, and that's just a string with no spaces.
+
+105
+00:07:19,590 --> 00:07:21,720
+The name for your application, a unique name.
+
+106
+00:07:22,680 --> 00:07:27,490
+And on line five we have debug which is either true or false when we're in development.
+
+107
+00:07:27,540 --> 00:07:29,390
+That'll be true when we're in production.
+
+108
+00:07:29,400 --> 00:07:30,360
+It will be false.
+
+109
+00:07:31,620 --> 00:07:34,920
+Line eight is what port will our application listen on?
+
+110
+00:07:34,920 --> 00:07:40,470
+And I'm going to use 4000 because that's an unprivileged port and you shouldn't have much difficulty
+
+111
+00:07:40,470 --> 00:07:41,130
+using that one.
+
+112
+00:07:42,330 --> 00:07:45,210
+111 is what is the name of the server.
+
+113
+00:07:45,390 --> 00:07:49,020
+So it's domain name or it's fully qualified domain name.
+
+114
+00:07:49,410 --> 00:07:53,940
+In my case, I'm going to use localhost because I'm in development line 14.
+
+115
+00:07:53,940 --> 00:07:59,610
+Should we insist that we use HTTPS, in other words, a secure connection and in development, I'm going
+
+116
+00:07:59,610 --> 00:08:00,480
+to set the defaults.
+
+117
+00:08:01,140 --> 00:08:07,250
+Then we have our database configuration and we're going to support Postgres or MySchool and then Redis.
+
+118
+00:08:07,260 --> 00:08:09,120
+We're going to be using Redis for various things.
+
+119
+00:08:09,120 --> 00:08:13,410
+So we specify the connection values for that, the cache.
+
+120
+00:08:13,410 --> 00:08:16,490
+We're going to be using a cache in this course and we use Redis for the cache.
+
+121
+00:08:16,890 --> 00:08:21,880
+Then the cookie settings, the session settings, the mail server settings, how we're going to render
+
+122
+00:08:21,880 --> 00:08:24,010
+our HTML and an encryption key.
+
+123
+00:08:24,030 --> 00:08:29,190
+And we're not going to get to a lot of this for quite some time, but this is a good starting point.
+
+124
+00:08:29,340 --> 00:08:35,140
+OK, so now that we have a dart on file, when we run our application, it'll create all of these folders.
+
+125
+00:08:35,160 --> 00:08:37,730
+It'll check to see if a dart on file exists.
+
+126
+00:08:37,740 --> 00:08:39,690
+If it doesn't, it'll create an empty one.
+
+127
+00:08:40,020 --> 00:08:45,990
+And then it reads all the values from that dot on file into environment variables for application.
+
+128
+00:08:46,140 --> 00:08:49,830
+So this is a good start will continue in the next lecture.

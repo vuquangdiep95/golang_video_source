@@ -1,0 +1,567 @@
+1
+00:00:00,240 --> 00:00:02,660
+Xin chào và chào mừng đến với khóa học này, tôi là GOPAC.
+
+2
+00:00:02,940 --> 00:00:06,390
+Tên tôi được xác định là Merrick và tôi sẽ là người hướng dẫn của bạn cho lớp học này.
+
+3
+00:00:06,390 --> 00:00:07,860
+Vì vậy, đầu tiên giới thiệu về khóa học.
+
+4
+00:00:07,890 --> 00:00:11,380
+Và tôi muốn giới thiệu cụ thể với bạn về GOPAC.
+
+5
+00:00:11,490 --> 00:00:17,280
+Vì vậy, bài học hôm nay là xây dựng các dịch vụ vi mô và bạn đã từng nghe về nó trước đây và các dịch vụ vi mô
+
+6
+00:00:17,280 --> 00:00:21,260
+chúng được xây dựng bằng một số ngôn ngữ và sẽ bao gồm một chức năng của doanh nghiệp bạn.
+
+7
+00:00:21,420 --> 00:00:25,820
+Ví dụ: chúng tôi có một dịch vụ mua sắm nơi người dùng mua hàng công bằng.
+
+8
+00:00:25,860 --> 00:00:30,360
+Nó có thể liên quan đến một Microsoft Office khác được viết bằng ngôn ngữ khác được gọi là dịch vụ khuyến mãi.
+
+9
+00:00:30,360 --> 00:00:30,850
+ĐƯỢC RỒI.
+
+10
+00:00:31,080 --> 00:00:36,330
+Có thể bạn sẽ bán thứ gì đó với giá 100 đô la nhưng dịch vụ quảng cáo nói rằng nó không thực sự được khuyến mãi.
+
+11
+00:00:36,330 --> 00:00:37,510
+Đó là 80 đô la.
+
+12
+00:00:37,590 --> 00:00:41,040
+Vì vậy, họ mua hàng tạp hóa của tôi và chương trình khuyến mãi hàng tạp hóa của chúng tôi đến đó.
+
+13
+00:00:41,430 --> 00:00:45,900
+Thậm chí có thể có một dịch vụ vi mô sẽ đưa bạn theo từng dịch vụ.
+
+14
+00:00:45,930 --> 00:00:46,160
+ĐƯỢC RỒI.
+
+15
+00:00:46,170 --> 00:00:49,970
+Bởi vì sau khi người dùng mua một thứ gì đó và nó cần được giao, thì họ vẫn ổn.
+
+16
+00:00:50,280 --> 00:00:55,370
+Và có thể bạn cũng có một dịch vụ hoặc một dịch vụ vi mô có liên quan đến việc cung cấp dịch vụ
+
+17
+00:00:55,380 --> 00:00:57,380
+mua và khuyến mãi vi dịch vụ.
+
+18
+00:00:57,420 --> 00:01:02,220
+Vì vậy, nhìn chung, rất nhiều giao dịch mua sắm của tôi bằng nhiều ngôn ngữ khác nhau
+
+19
+00:01:02,220 --> 00:01:04,190
+và họ phải nói chuyện với nhau.
+
+20
+00:01:04,200 --> 00:01:09,600
+Bây giờ các microswitch này khi trao đổi thông tin phải thống nhất với nhau về nhiều thứ chúng cần
+
+21
+00:01:09,600 --> 00:01:16,110
+để đồng ý về API trao đổi dữ liệu trên các định dạng dữ liệu mô hình aria cân bằng tải và
+
+22
+00:01:16,110 --> 00:01:17,610
+về nhiều thứ khác.
+
+23
+00:01:17,640 --> 00:01:22,260
+Một trong những lựa chọn rất phổ biến để xây dựng API và bạn có thể đã nghe nói về nó nếu bạn
+
+24
+00:01:22,290 --> 00:01:24,660
+trong khóa học này, đó là phần còn lại hoặc là Jason.
+
+25
+00:01:24,920 --> 00:01:25,360
+ĐƯỢC RỒI.
+
+26
+00:01:25,530 --> 00:01:28,260
+Là một cơ chế lớn hơn.
+
+27
+00:01:28,260 --> 00:01:32,360
+Vì vậy, trong khóa học này, mặc dù chúng ta sẽ không thấy phần còn lại, nhưng tất nhiên chúng ta sẽ khám phá GRB.
+
+28
+00:01:32,550 --> 00:01:36,540
+Và có cả một phần về phần còn lại của Wired europaeus.
+
+29
+00:01:36,840 --> 00:01:40,490
+Vì vậy, việc xây dựng một API, tôi muốn bạn nói rằng nó rất khó và chắc hẳn bạn đã từng trải qua.
+
+30
+00:01:40,500 --> 00:01:41,390
+Nó chẳng vui.
+
+31
+00:01:41,600 --> 00:01:44,830
+Thực sự thú vị về mô hình dữ liệu không phải SML của Joe và Jason.
+
+32
+00:01:44,840 --> 00:01:46,410
+Hay bạn muốn một cái gì đó nhị phân.
+
+33
+00:01:46,710 --> 00:01:48,720
+Bạn cũng cần suy nghĩ về các điểm cuối.
+
+34
+00:01:48,810 --> 00:01:53,550
+Ví dụ: khi bạn không dừng API, một điểm cuối sẽ xuất hiện API này.
+
+35
+00:01:53,580 --> 00:01:56,610
+Người dùng duy nhất 2:59 đăng bốn năm sáu.
+
+36
+00:01:56,610 --> 00:01:58,090
+Nó khá phức tạp.
+
+37
+00:01:58,410 --> 00:01:59,840
+Và sau đó trong các bài viết khác.
+
+38
+00:02:00,000 --> 00:02:03,150
+Vì vậy, đây là một api động từ khác, người dùng duy nhất muốn bạn có ba bài đăng.
+
+39
+00:02:03,180 --> 00:02:04,780
+Vì vậy, nó cũng khá phức tạp.
+
+40
+00:02:05,280 --> 00:02:08,990
+Bạn cũng cần suy nghĩ về cách gọi nó về cách xử lý lỗi.
+
+41
+00:02:09,450 --> 00:02:12,540
+API nằm trong khu vực nên nó thực sự rất khó.
+
+42
+00:02:12,590 --> 00:02:14,850
+Bạn phải suy nghĩ về hiệu quả của API của mình.
+
+43
+00:02:14,850 --> 00:02:17,190
+Tôi nhận được bao nhiêu dữ liệu từ một cuộc gọi.
+
+44
+00:02:17,190 --> 00:02:21,680
+Đó có phải là quá nhiều dữ liệu hay quá nhiều dữ liệu, trong trường hợp đó, tôi thích có quá nhiều lệnh gọi API.
+
+45
+00:02:21,750 --> 00:02:23,150
+Vì vậy, bạn cần tìm sự cân bằng phù hợp.
+
+46
+00:02:23,160 --> 00:02:24,690
+Làm thế nào về độ trễ.
+
+47
+00:02:24,810 --> 00:02:27,680
+Làm thế nào về khả năng mở rộng đến 1000 khách hàng.
+
+48
+00:02:27,690 --> 00:02:33,640
+Bạn biết cách cân bằng tải hoạt động và cách interop hoạt động giữa nhiều ngôn ngữ.
+
+49
+00:02:33,780 --> 00:02:36,890
+Vì vậy, đừng chạy trốn, tôi không muốn làm bạn quá tải với các khái niệm.
+
+50
+00:02:36,900 --> 00:02:40,060
+Tôi chỉ muốn cho bạn thấy rằng việc xây dựng một API rất phức tạp.
+
+51
+00:02:40,410 --> 00:02:45,320
+Và cuối cùng, chúng ta có thể thêm vào quá trình giám sát và ghi nhật ký Đại Tây Dương để làm tốt.
+
+52
+00:02:45,330 --> 00:02:51,480
+Bạn có muốn có một khuôn khổ nào đó sửa chữa tất cả những thứ nhàm chán và khó khăn và để bạn yên không
+
+53
+00:02:51,480 --> 00:02:52,480
+những thứ buồn cười.
+
+54
+00:02:52,740 --> 00:02:55,510
+Vâng, khuôn khổ này là GOPAC.
+
+55
+00:02:55,740 --> 00:03:01,880
+Vậy cốt lõi của API là gì và cốt lõi của API là một hợp đồng có nội dung gửi cho tôi yêu cầu này
+
+56
+00:03:01,880 --> 00:03:03,370
+và tôi sẽ hát câu trả lời này.
+
+57
+00:03:03,390 --> 00:03:04,260
+dễ dãi.
+
+58
+00:03:04,260 --> 00:03:05,960
+Đây là những gì một API nên có.
+
+59
+00:03:06,060 --> 00:03:12,090
+Đó là tất cả về dữ liệu và không có gì khác trong phần còn lại của khóa học này sẽ làm giảm bớt bất kỳ điều gì khác mà chúng ta đã thấy trước đây
+
+60
+00:03:12,090 --> 00:03:15,290
+công cụ cứng cho khuôn khổ máy tính làm việc.
+
+61
+00:03:16,220 --> 00:03:20,080
+Vậy PC của bạn là gì Điều này giải quyết vấn đề của chúng tôi là gì.
+
+62
+00:03:20,240 --> 00:03:25,580
+Chà, GOPAC là một khung nguồn mở và miễn phí được phát triển bởi Google và với Square và những người khác
+
+63
+00:03:26,120 --> 00:03:31,320
+các doanh nghiệp và PC của bạn hiện là một phần của nền tảng nền tảng gốc đám mây NCF.
+
+64
+00:03:31,640 --> 00:03:35,380
+Ví dụ, một cách mà Duck và người Cuba cần cũng là một phần của dự án này.
+
+65
+00:03:35,450 --> 00:03:41,260
+Vì vậy, GOPAC là một dự án khá quan trọng hiện nay ở cấp độ cao Europaeus cho phép chúng tôi xác định
+
+66
+00:03:41,260 --> 00:03:47,320
+yêu cầu và phản hồi cho các cuộc gọi PC đến các cuộc gọi thủ tục từ xa và xử lý mọi thứ cho bạn.
+
+67
+00:03:47,630 --> 00:03:53,630
+Ngoài ra, đối với nhiều từ buzz, nó hiện đại và hiệu quả được xây dựng trên đó.
+
+68
+00:03:53,630 --> 00:03:55,270
+có độ trễ quá thấp.
+
+69
+00:03:55,290 --> 00:03:56,440
+Họ sẽ hỗ trợ phát trực tuyến.
+
+70
+00:03:56,540 --> 00:04:01,190
+Chúng sẽ độc lập với ngôn ngữ và sự kết hợp vượt trội so với đăng ký trả lại plugin xác thực và
+
+71
+00:04:01,190 --> 00:04:01,980
+giám sát.
+
+72
+00:04:02,270 --> 00:04:06,690
+Vì vậy, vở kịch có âm thanh tuyệt vời như bức tranh hoàn hảo và nó thực sự hay.
+
+73
+00:04:07,070 --> 00:04:08,560
+Nhân tiện, game nhập vai là gì.
+
+74
+00:04:08,570 --> 00:04:09,600
+Bạn đã đề cập đến những gì.
+
+75
+00:04:09,620 --> 00:04:15,320
+PC RBC của chúng tôi như tôi đã nói là một cuộc gọi thủ tục từ xa trong mã máy khách.
+
+76
+00:04:15,320 --> 00:04:20,140
+Về bản chất, có vẻ như chúng ta đang gọi một chức năng trực tiếp trên máy chủ.
+
+77
+00:04:20,150 --> 00:04:21,860
+Vì vậy, đây là mã máy chủ của chúng tôi.
+
+78
+00:04:21,920 --> 00:04:23,370
+Hãy nghĩ về bất kỳ ngôn ngữ đúng.
+
+79
+00:04:23,510 --> 00:04:29,000
+Chúng tôi sẽ tạo người dùng để có một chức năng gọi là tạo người dùng để tạo người dùng và sau đó trong mã máy khách
+
+80
+00:04:29,160 --> 00:04:34,200
+và biết rằng ngôn ngữ sẽ có mã của chúng tôi và tất cả đều nói máy chủ tạo người dùng.
+
+81
+00:04:34,460 --> 00:04:40,250
+Vì vậy, như bạn có thể thấy màu vàng, người dùng tạo phù hợp. Vì vậy, có vẻ như trên mã del
+
+82
+00:04:40,250 --> 00:04:43,030
+client, chúng tôi đang gọi trực tiếp một chức năng trên máy chủ.
+
+83
+00:04:43,190 --> 00:04:45,230
+Và đây là thứ được gọi là RP bên dưới.
+
+84
+00:04:45,320 --> 00:04:48,300
+Vì vậy, PC của chúng tôi không giống như chúng tôi đang gọi một chức năng hoặc máy chủ.
+
+85
+00:04:48,350 --> 00:04:52,470
+Có điều gì đó đang xảy ra trên mạng, nhưng nó giống hệt như trong mã của chúng tôi.
+
+86
+00:04:52,790 --> 00:04:54,860
+Và đây là những gì làm cho PC của chúng tôi trở nên tuyệt vời.
+
+87
+00:04:55,220 --> 00:04:57,350
+Vì vậy, PC của chúng tôi là một khái niệm mới.
+
+88
+00:04:57,350 --> 00:04:58,180
+Không có nó không phải là.
+
+89
+00:04:58,190 --> 00:04:59,630
+Nó không phải là một khái niệm mới.
+
+90
+00:04:59,630 --> 00:05:05,960
+Có những khung và ngôn ngữ khác như CORBA đã có điều này trước đây, nhưng với PC của chúng tôi thì còn hơn thế nữa
+
+91
+00:05:05,960 --> 00:05:06,910
+tốt đẹp để xử lý.
+
+92
+00:05:06,920 --> 00:05:11,750
+Nó được triển khai rất rõ ràng và cũng có nhiều vấn đề trong nhiều khuôn khổ
+
+93
+00:05:11,750 --> 00:05:12,630
+Nhiều năm trước.
+
+94
+00:05:12,950 --> 00:05:14,600
+Vì vậy, đây là một hình ảnh mà bạn sẽ thấy rất nhiều.
+
+95
+00:05:14,600 --> 00:05:20,600
+Khi bạn nhìn vào PC của mình, nó đến từ các trang web Châu Âu và chúng tôi có thể thấy rằng, chẳng hạn, chúng tôi có một dịch vụ
+
+96
+00:05:20,600 --> 00:05:26,690
+C ++ ở phía bên trái và chúng tôi có ứng dụng khách ruby ​​​​và ứng dụng khách Android Jaba, tất cả đều nói chuyện với chúng tôi
+
+97
+00:05:26,690 --> 00:05:29,860
+Máy chủ RBC sử dụng các yêu cầu và phản hồi giao thức.
+
+98
+00:05:29,870 --> 00:05:36,460
+Vì vậy, về cơ bản, đó là cùng một khái niệm trước khi chúng tôi tạo mã và có thể nhập yêu cầu của mình.
+
+99
+00:05:36,950 --> 00:05:38,090
+Vì vậy, làm thế nào để tôi bắt đầu.
+
+100
+00:05:38,090 --> 00:05:43,160
+Bởi vì ngay bây giờ tôi đang bán những giấc mơ của bạn ngay giữa lúc nó sẽ cần thiết
+
+101
+00:05:43,190 --> 00:05:50,450
+xác định thông báo và dịch vụ bằng cách sử dụng bộ đệm giao thức, phần còn lại của mã GOP sẽ được tạo cho chúng tôi và chúng tôi sẽ phải
+
+102
+00:05:50,450 --> 00:05:52,330
+chỉ cần thực hiện dịch vụ của chúng tôi.
+
+103
+00:05:52,400 --> 00:05:58,450
+Vì vậy, GOPAC sẽ giải quyết rất nhiều vấn đề cho chúng tôi và tạo ra rất nhiều mã tổng thể khi chúng tôi viết
+
+104
+00:05:58,490 --> 00:06:04,730
+một giao thức câm sẽ hoạt động với chúng tôi đối với hơn 12 ngôn ngữ máy chủ lập trình và sẽ cho phép chúng tôi sử dụng một
+
+105
+00:06:04,730 --> 00:06:07,970
+khuôn khổ giết chết hai triệu hồng cầu mỗi giây.
+
+106
+00:06:08,000 --> 00:06:11,800
+Vì vậy, đây là những gì chúng tôi sẽ làm trong khóa học này và đó chỉ là dịch vụ tuyệt vời.
+
+107
+00:06:11,840 --> 00:06:15,600
+Vì vậy, nếu bạn tham gia khóa học giao thức đệm của tôi, bạn sẽ thực sự hiểu nó ở đâu.
+
+108
+00:06:15,650 --> 00:06:21,980
+Về cơ bản, chúng tôi có lời chào và gửi yêu cầu chào mừng đã được trả lời bởi
+
+109
+00:06:21,980 --> 00:06:28,160
+lời chào và về cơ bản, chúng tôi luôn có một dịch vụ lời chào xác định lời chào RBC chấp nhận yêu cầu lời chào
+
+110
+00:06:28,190 --> 00:06:30,030
+và trả về một phản ứng tuyệt vời.
+
+111
+00:06:30,050 --> 00:06:34,730
+Đây là hợp đồng IPY của chúng tôi được thiết lập để nói lời tạm biệt với PC của chúng tôi ngay tại đây.
+
+112
+00:06:34,820 --> 00:06:40,390
+Vì vậy, chúng ta sẽ đi thật sâu vào cách nó hoạt động và cách mọi thứ được định nghĩa.
+
+113
+00:06:40,430 --> 00:06:47,140
+Nhưng tôi muốn bạn xem qua cách chúng tôi xác định dịch vụ PC của mình trong bộ đệm ủng hộ thuốc lá.
+
+114
+00:06:47,300 --> 00:06:50,410
+Do đó, tại sao chúng tôi cũng sử dụng bộ đệm dọc trong khóa học này.
+
+115
+00:06:50,420 --> 00:06:51,760
+Bộ đệm giao thức nào.
+
+116
+00:06:51,800 --> 00:06:53,530
+Về cơ bản chúng không phụ thuộc vào ngôn ngữ.
+
+117
+00:06:53,810 --> 00:06:56,540
+Mã có thể được tạo cho hầu hết mọi ngôn ngữ.
+
+118
+00:06:56,570 --> 00:07:00,830
+Dữ liệu ở dạng nhị phân và được tuần tự hóa hiệu quả và chúng ta sẽ thấy điều này trong khóa học này.
+
+119
+00:07:00,890 --> 00:07:03,550
+Nó rất thuận tiện khi bạn mang theo nhiều dữ liệu.
+
+120
+00:07:03,550 --> 00:07:10,130
+Vì vậy, trong các thiết lập Dữ liệu lớn, nó cũng cho phép bạn dễ dàng phát triển API của mình bằng một số quy tắc.
+
+121
+00:07:10,130 --> 00:07:13,620
+Vì vậy, nói chung trước khi tham gia khóa học này, bạn nên biết những điều cơ bản.
+
+122
+00:07:13,640 --> 00:07:16,410
+Bộ đệm quang nếu không bạn sẽ bị mất hoàn toàn.
+
+123
+00:07:16,450 --> 00:07:19,370
+OK, tôi hy vọng bạn có nó trong hành lý của bạn.
+
+124
+00:07:19,370 --> 00:07:20,200
+túi nhựa.
+
+125
+00:07:20,450 --> 00:07:22,720
+Vì vậy, đây là một phần giới thiệu khá dài.
+
+126
+00:07:22,730 --> 00:07:26,240
+Tại sao bạn nên tìm hiểu bộ đệm giao thức và GOPAC.
+
+127
+00:07:26,630 --> 00:07:30,560
+Vâng, nhiều công ty đã chấp nhận nó hoàn toàn trong sản xuất.
+
+128
+00:07:30,560 --> 00:07:34,920
+Chúng tôi đang nói về Google cho dịch vụ nội bộ của họ và các dịch vụ trục như thế nào.
+
+129
+00:07:34,990 --> 00:07:41,620
+Vì vậy, chúng ta đang nói về Netflix Square, một trong những người đóng góp sớm nhất cho hệ điều hành chính
+
+130
+00:07:41,630 --> 00:07:42,890
+đã thêm ECD 3.
+
+131
+00:07:43,100 --> 00:07:45,110
+Gián D.B, v.v.
+
+132
+00:07:45,380 --> 00:07:52,340
+Theo tôi, GOPAC là tương lai của các dịch vụ vi mô và API di động trong mắt Sarabi và có thể cho cả API nữa
+
+133
+00:07:52,340 --> 00:07:52,900
+web.
+
+134
+00:07:52,970 --> 00:07:53,520
+ĐƯỢC RỒI.
+
+135
+00:07:53,690 --> 00:07:56,570
+Nói chung, đó là một bức tranh tuyệt vời để đọc để học hỏi.
+
+136
+00:07:56,570 --> 00:08:01,760
+Tôi chỉ muốn cung cấp cho bạn một hương vị và giới thiệu về bạn biết sửa chữa là gì
+
+137
+00:08:01,760 --> 00:08:02,540
+các vấn đề được giải quyết.
+
+138
+00:08:02,540 --> 00:08:03,640
+Nó mang tính cách mạng biết bao.
+
+139
+00:08:03,650 --> 00:08:05,930
+Ai sử dụng nó và làm thế nào nó được xây dựng.
+
+140
+00:08:06,050 --> 00:08:08,560
+Đừng lo lắng, nó có thể là quá sức ngay bây giờ.
+
+141
+00:08:08,630 --> 00:08:14,430
+Nhưng trong khóa học này, chúng ta sẽ từng bước tìm hiểu cách PC của bạn hoạt động và thực hiện nó một cách chính xác.
+
+142
+00:08:14,570 --> 00:08:17,260
+Vì vậy, tôi hy vọng bạn nhận được nó và hẹn gặp lại bạn trong bài học tiếp theo.

@@ -1,0 +1,223 @@
+1
+00:00:13,310 --> 00:00:19,460
+Hello and welcome to the go like programming languages course in this session, we want to talk about
+
+2
+00:00:19,460 --> 00:00:21,530
+the others concurrency concept.
+
+3
+00:00:25,570 --> 00:00:33,960
+How to create a go routine, you can create your own goal routine simply by using Google Keyboard as
+
+4
+00:00:33,970 --> 00:00:42,670
+a perfect seeing to the function or method car go land uses a special keyboard go for starting a go
+
+5
+00:00:42,670 --> 00:00:44,950
+routine to a start one.
+
+6
+00:00:44,950 --> 00:00:48,130
+Just edit go pure or before a function or method.
+
+7
+00:00:48,130 --> 00:00:50,120
+Call that function.
+
+8
+00:00:50,140 --> 00:00:53,980
+Our method will now be executed in the goal routine.
+
+9
+00:00:55,180 --> 00:01:00,970
+Let's understand the difference between normal running IT function and running it function as a goal
+
+10
+00:01:00,970 --> 00:01:01,360
+routine.
+
+11
+00:01:02,140 --> 00:01:08,290
+Normal running a function in the normal running of the function for the above scenario.
+
+12
+00:01:08,500 --> 00:01:14,140
+First statement one will be executed, then start function will be called.
+
+13
+00:01:14,380 --> 00:01:21,450
+And once this start function finishes, then the statement two will be executed once in running and
+
+14
+00:01:21,510 --> 00:01:24,760
+function as a goal routine for the above scenario.
+
+15
+00:01:25,060 --> 00:01:32,890
+First, a statement one will be executed, then functions start will be called as a goal routine, which
+
+16
+00:01:32,890 --> 00:01:35,380
+will execute asynchronously.
+
+17
+00:01:36,250 --> 00:01:39,410
+A statement to will be executed immediately.
+
+18
+00:01:39,820 --> 00:01:44,080
+It will not wait for a soft function to complete their start.
+
+19
+00:01:44,080 --> 00:01:50,620
+Function will be executed concurrently as a goal routine, while the rest of the program continues its
+
+20
+00:01:50,620 --> 00:01:51,490
+execution.
+
+21
+00:01:52,360 --> 00:01:59,230
+So basically, when calling a function as Security Council will return immediately, the execution will
+
+22
+00:01:59,230 --> 00:02:05,350
+continue from next long, while the go routine will be executed concurrently in the background.
+
+23
+00:02:05,950 --> 00:02:10,510
+Also note that any return value from the gore team will be ignored.
+
+24
+00:02:12,320 --> 00:02:16,700
+Now, let's go to the escort program to understand the above point.
+
+25
+00:02:20,050 --> 00:02:27,430
+First, define the function named display font display
+
+26
+00:02:30,910 --> 00:02:39,940
+and create a statement like print a message FP in go routine.
+
+27
+00:02:41,590 --> 00:02:45,700
+Now go to the main function and call the created function
+
+28
+00:02:48,880 --> 00:02:50,650
+go display.
+
+29
+00:02:53,160 --> 00:03:02,580
+And now some statements after invoking function, for the example, if the panel.
+
+30
+00:03:05,320 --> 00:03:08,680
+And if the good goodbye.
+
+31
+00:03:11,470 --> 00:03:11,850
+OK.
+
+32
+00:03:11,890 --> 00:03:17,980
+Reformat the call, said the project and execute the program go round.
+
+33
+00:03:18,340 --> 00:03:19,920
+I guess must mean that go.
+
+34
+00:03:22,870 --> 00:03:27,400
+Now we can see the output in edible program.
+
+35
+00:03:27,640 --> 00:03:33,580
+We used to go keyboard before a function called to start a good routine go display.
+
+36
+00:03:34,240 --> 00:03:40,840
+This syntax for calling a function will start a go routine, which will run the display function.
+
+37
+00:03:41,140 --> 00:03:48,220
+The program first print Hello, noticed that the line in which we print hello is after the goal or Tunisia
+
+38
+00:03:48,230 --> 00:03:48,760
+started.
+
+39
+00:03:49,030 --> 00:03:50,320
+But there is a problem.
+
+40
+00:03:50,920 --> 00:03:57,940
+It only displays the result of the normal function that does not display the result of core routine,
+
+41
+00:03:58,210 --> 00:04:03,460
+because when the new gore team executed, the gore routine can't return immediately.
+
+42
+00:04:04,120 --> 00:04:10,540
+The control does not wait for gore routine to complete their execution, just like normal functions.
+
+43
+00:04:10,840 --> 00:04:17,530
+They always move forward to the next line after the gore team call and ignores the value returned by
+
+44
+00:04:17,530 --> 00:04:18,280
+the gore team.
+
+45
+00:04:18,760 --> 00:04:22,060
+So to execute a gore routine properly.
+
+46
+00:04:22,210 --> 00:04:27,340
+We made some changes in our program and we then put a timeout.
+
+47
+00:04:27,890 --> 00:04:34,960
+The timeout is there so that the gore team gets its catch will be for the main gore team has to exist.
+
+48
+00:04:35,530 --> 00:04:41,140
+So after print hello message, the at a time out, a statement saw we write
+
+49
+00:04:44,020 --> 00:04:47,110
+Time doth sleep.
+
+50
+00:04:50,450 --> 00:04:57,800
+And sits one asterisk time dot second.
+
+51
+00:05:00,160 --> 00:05:04,870
+Reformat the code, save the project and execute the program again.
+
+52
+00:05:09,850 --> 00:05:15,610
+Now we can see the output halo in goal routine and goodbye.
+
+53
+00:05:15,640 --> 00:05:22,870
+Now we could define the goal routine and execute it, see gold in function invoked and output display.
+
+54
+00:05:23,440 --> 00:05:29,050
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+55
+00:05:29,050 --> 00:05:29,980
+the next session.
+
+56
+00:05:30,190 --> 00:05:30,730
+Goodbye.

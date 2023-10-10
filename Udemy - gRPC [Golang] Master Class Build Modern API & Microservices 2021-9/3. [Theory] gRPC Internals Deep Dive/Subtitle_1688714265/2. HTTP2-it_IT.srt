@@ -1,0 +1,555 @@
+1
+00:00:00,090 --> 00:00:05,820
+Vì vậy, bạn không thể bắt đầu học địa lý mà không hiểu rằng nó dựa trên một mà nên hai.
+
+2
+00:00:05,900 --> 00:00:12,880
+và nó phải là hai. Nó không chỉ là một từ thông dụng mới mà nó là một công nghệ mang tính cách mạng thực sự cải thiện giao tiếp trên internet.
+
+3
+00:00:12,900 --> 00:00:20,340
+Vì vậy, trước khi chúng tôi chuyển sang sự khác biệt giữa HTP và Edge 1.1, tôi thực sự muốn bạn hiểu trực quan nó là gì
+
+4
+00:00:20,580 --> 00:00:21,620
+Sự khác biệt.
+
+5
+00:00:21,660 --> 00:00:27,930
+Vì vậy, chúng tôi sẽ truy cập trang web này và so sánh hiệu suất với việc tải 100 hình ảnh cho HGP
+
+6
+00:00:28,020 --> 00:00:28,630
+ban đầu.
+
+7
+00:00:28,740 --> 00:00:31,240
+Bạn có thể vào máy tính xách tay của mình và thực hiện bản demo.
+
+8
+00:00:31,450 --> 00:00:36,410
+Nếu bạn có kết nối internet rất tốt, sự khác biệt với kết nối internet sẽ ít hơn nhưng không tốt bằng.
+
+9
+00:00:36,450 --> 00:00:39,570
+Vì vậy, chúng ta sẽ thấy rất rõ ràng rằng sự khác biệt là đáng kinh ngạc.
+
+10
+00:00:39,960 --> 00:00:44,550
+Được rồi, tôi đang ở trên trang web này và có nhiều trang web có cùng cách triển khai hiệu suất, nhưng
+
+11
+00:00:44,820 --> 00:00:50,540
+chúng ta không được tải quá nhiều hình ảnh ở bên trái và SCDP 1.1 được tải ở bên phải.
+
+12
+00:00:50,790 --> 00:00:55,920
+Bây giờ tôi sẽ nhấp để tải lại và bạn sẽ thấy sự khác biệt về tốc độ tải của HTP trên hình ảnh so với
+
+13
+00:00:55,920 --> 00:00:57,490
+một 1. 1 .
+
+14
+00:00:57,660 --> 00:00:59,970
+Một lần nữa tôi là một kết nối internet rất xấu.
+
+15
+00:00:59,970 --> 00:01:01,270
+Vì vậy, sự khác biệt sẽ khác nhau.
+
+16
+00:01:01,290 --> 00:01:03,330
+Nó sẽ rất ngạc nhiên.
+
+17
+00:01:03,450 --> 00:01:04,580
+Nhưng chúng ta hãy bắt đầu.
+
+18
+00:01:04,770 --> 00:01:11,500
+Vì vậy, tôi đã nhấp vào một bản tải lên mới và như bạn có thể thấy hình ảnh P2 tải rất nhanh OK.
+
+19
+00:01:11,580 --> 00:01:16,370
+Mặc dù để trở thành một điểm, một hình ảnh thực sự cần có thời gian, như bạn có thể thấy bên dưới bên phải.
+
+20
+00:01:16,650 --> 00:01:22,460
+Vì vậy, những gì bạn thực sự có thể hiểu từ đó là sạc một trăm giờ nhỏ.
+
+21
+00:01:22,460 --> 00:01:24,510
+Vì vậy, có hàng trăm lệnh gọi API.
+
+22
+00:01:24,630 --> 00:01:30,470
+Phải mất nhiều thời gian hơn để làm điều này trong HGP 1.1 so với HTP 2.
+
+23
+00:01:30,600 --> 00:01:32,710
+Vì vậy, bạn có thể làm bài kiểm tra bao nhiêu lần tùy thích.
+
+24
+00:01:32,730 --> 00:01:37,980
+Bạn cũng có thể kiểm tra thời gian nếu muốn, nhưng điều chúng tôi thực sự nhận thấy là ngay cả trên kết nối siêu kém của tôi
+
+25
+00:01:38,250 --> 00:01:42,930
+internet trên SCDP nhanh hơn nhiều so với 1.1.
+
+26
+00:01:43,080 --> 00:01:49,020
+Vì vậy, hãy nghĩ về các kết nối tốt hơn bằng cách sử dụng thiết bị di động hoặc thiết bị chậm hoặc tương tự.
+
+27
+00:01:49,180 --> 00:01:55,040
+Cải thiện đáng kể độ trễ và tốc độ tải của tin nhắn hoặc những tin nhắn sử dụng cùng một kết nối internet.
+
+28
+00:01:55,050 --> 00:01:55,470
+Phải.
+
+29
+00:01:55,710 --> 00:02:00,900
+Vì vậy, bạn sẽ rất hào hứng với việc sử dụng tiêu chuẩn này ngay bây giờ vì bạn đã thấy nó thực sự có thể trở nên tốt hơn như thế nào
+
+30
+00:02:00,900 --> 00:02:05,700
+nhà thiên văn biểu diễn, thì chúng ta sẽ biết nó là gì, nó hoạt động như thế nào và tại sao.
+
+31
+00:02:05,730 --> 00:02:10,650
+Bởi vì GRB coi Levitas là sự thật sẽ là tiêu chuẩn mới nhất cho truyền thông
+
+32
+00:02:11,010 --> 00:02:15,380
+Internet và theo thời gian, ngày càng có nhiều trang sẽ được sử dụng để trở thành hai đối một.
+
+33
+00:02:15,600 --> 00:02:16,180
+Được rồi.
+
+34
+00:02:16,350 --> 00:02:22,500
+Vì vậy, trước khi xem xét SD B2, chúng ta hãy lùi lại một bước và hiểu cách hoạt động của hầu hết các trang web ngày nay,
+
+35
+00:02:22,500 --> 00:02:24,520
+đó thực sự là một yêu cầu.
+
+36
+00:02:24,570 --> 00:02:28,110
+Vì vậy, đây không phải là một cuộc thảo luận kỹ thuật cao siêu.
+
+37
+00:02:28,110 --> 00:02:28,600
+ĐƯỢC RỒI.
+
+38
+00:02:28,770 --> 00:02:33,270
+Nhưng chỉ để cung cấp cho bạn một ý tưởng chung và một số phím tắt để hiểu sự khác biệt.
+
+39
+00:02:33,390 --> 00:02:41,910
+Vì vậy, HGP 1.1 đã được phát hành vào năm 1997, cách đây rất lâu và nó đã hoạt động trong nhiều năm, nhưng
+
+40
+00:02:41,910 --> 00:02:46,120
+Internet đã thay đổi và phát triển trong khi tiêu chuẩn chưa bao giờ thay đổi.
+
+41
+00:02:46,140 --> 00:02:52,500
+Vậy nó hoạt động như thế nào với HTP để mở kết nối GCP mới tới máy chủ theo mọi yêu cầu e
+
+42
+00:02:52,500 --> 00:02:53,530
+Cái này đắt quá.
+
+43
+00:02:53,640 --> 00:02:58,890
+Nó cũng không nén các tiêu đề để các tiêu đề trong yêu cầu HTP là văn bản thuần túy.
+
+44
+00:02:58,890 --> 00:03:00,950
+Chúng không được nén trên mạng.
+
+45
+00:03:01,050 --> 00:03:05,700
+Nó cũng hoạt động chỉ với một cơ chế phản hồi yêu cầu, do đó không cần đẩy máy chủ.
+
+46
+00:03:05,700 --> 00:03:11,850
+Về cơ bản, bạn đến máy chủ và nói Hãy cho tôi 100 ít cho bức ảnh và nói Helge đây là
+
+47
+00:03:11,850 --> 00:03:13,410
+thẻ đó cho bạn.
+
+48
+00:03:13,410 --> 00:03:21,690
+Vì vậy, HGP ban đầu bao gồm hai nhận xét có thể hỏi Canton's, chẳng hạn như đưa tôi trang web này hoặc đưa tôi
+
+49
+00:03:21,870 --> 00:03:25,030
+bức ảnh này và đăng để gửi Canton.
+
+50
+00:03:25,110 --> 00:03:26,250
+Dưới đây là một số nội dung.
+
+51
+00:03:26,340 --> 00:03:26,950
+ĐƯỢC RỒI.
+
+52
+00:03:26,970 --> 00:03:31,890
+Theo thời gian, một số động từ đã được thêm vào bản vá mới được dẫn dắt, v.v.
+
+53
+00:03:31,950 --> 00:03:35,970
+Nhưng ban đầu nó đã được nhận và đặt ngay bây giờ.
+
+54
+00:03:35,970 --> 00:03:42,810
+Ngày nay, khi bạn truy cập một trang web, trung bình có khoảng 80 nội dung được tải và nội dung có thể là bất kỳ nội dung nào.
+
+55
+00:03:42,810 --> 00:03:43,350
+Cái gì.
+
+56
+00:03:43,350 --> 00:03:47,210
+Có thể là HDMI othera cho biết hình ảnh, v.v.
+
+57
+00:03:47,250 --> 00:03:52,880
+Vì vậy, các tiêu đề sẽ được gửi cùng với mọi yêu cầu và như chúng tôi đã nói, các tiêu đề có kích thước trung bình.
+
+58
+00:03:53,040 --> 00:03:58,750
+Vì vậy, 80 lần bạn sẽ phải gửi cùng một tiêu đề sẽ có nhiều băng thông cho mỗi yêu cầu từ
+
+59
+00:03:58,830 --> 00:04:02,310
+yêu cầu, mỗi trong số 80 yêu cầu sẽ mở một kết nối TZP mới.
+
+60
+00:04:02,370 --> 00:04:07,740
+Một lần nữa, dường như độ trễ và tất cả hiệu quả này thực sự giảm dần.
+
+61
+00:04:07,740 --> 00:04:08,550
+Hai điều.
+
+62
+00:04:08,550 --> 00:04:12,000
+Độ trễ số 1 số hai kích thước gói mạng.
+
+63
+00:04:12,060 --> 00:04:13,010
+Vì vậy, hãy nhìn vào nó.
+
+64
+00:04:13,050 --> 00:04:18,540
+Chúng tôi có các máy khách trong máy chủ AGP của chúng tôi và nó sẽ gửi các yêu cầu đầu tiên chẳng hạn.
+
+65
+00:04:18,540 --> 00:04:25,560
+Đưa cho tôi trang AGM Alpha và nó nói OK, tôi sẽ cung cấp cho bạn trang MFL và đó là kết nối TCAP ở đầu trang
+
+66
+00:04:25,830 --> 00:04:28,300
+mà một số tiêu đề có thể đã được hoán đổi.
+
+67
+00:04:28,320 --> 00:04:31,330
+Bây giờ, các tiêu đề tương tự sẽ được hoán đổi theo yêu cầu thứ hai của bạn, chẳng hạn.
+
+68
+00:04:31,440 --> 00:04:33,180
+Này, đưa cho tôi tập tin USS này.
+
+69
+00:04:33,300 --> 00:04:33,610
+ĐƯỢC RỒI.
+
+70
+00:04:33,610 --> 00:04:36,270
+Dịch vụ vẫn ổn trên kết nối TZP mới này.
+
+71
+00:04:36,300 --> 00:04:38,760
+Đây là tập tin USS, v.v.
+
+72
+00:04:38,910 --> 00:04:39,780
+Tám mươi lần.
+
+73
+00:04:39,900 --> 00:04:41,170
+Vì vậy, nó hoạt động ngày hôm nay.
+
+74
+00:04:41,280 --> 00:04:46,770
+Tất cả đều hoạt động tốt nhưng chậm và đó là những gì chúng tôi thấy ở phía bên phải trong hình ảnh demo.
+
+75
+00:04:47,200 --> 00:04:49,710
+Bây giờ HGP để làm thế nào nó khác nhau.
+
+76
+00:04:49,710 --> 00:04:50,880
+Làm thế nào nó hoạt động.
+
+77
+00:04:51,240 --> 00:04:53,570
+Chà, HTP 2 khá gần đây.
+
+78
+00:04:53,580 --> 00:04:59,910
+Nó được phát hành vào năm 2015 nhưng đã được thử nghiệm trong nhiều năm vì lần đầu tiên Google có
+
+79
+00:05:00,020 --> 00:05:06,920
+đã phát triển tiêu chuẩn được gọi là nhanh vì nhiệm vụ của Google là làm cho Internet hoạt động tốt hơn và
+
+80
+00:05:07,040 --> 00:05:12,470
+tốc độ mà nó có thể trở thành như vậy để hỗ trợ ghép kênh và ghép kênh.
+
+81
+00:05:12,530 --> 00:05:19,040
+Điều này có nghĩa là máy chủ và máy khách cũng có thể gửi tin nhắn song song với cùng một kết nối TCAP
+
+82
+00:05:19,230 --> 00:05:20,470
+Thật đáng kinh ngạc.
+
+83
+00:05:20,480 --> 00:05:22,070
+Điều này sẽ làm giảm đáng kể độ trễ.
+
+84
+00:05:22,070 --> 00:05:25,720
+Chúng tôi không cần phải có các kết nối chống ngu ngốc trên mọi lệnh gọi API.
+
+85
+00:05:25,740 --> 00:05:32,660
+Ngoài ra, trong thực tế, cần hỗ trợ máy chủ để đẩy chúng vào máy chủ đó, máy chủ này cũng có thể gửi nhiều tin nhắn từ một yêu cầu
+
+86
+00:05:33,020 --> 00:05:37,130
+đối với khách hàng, khách hàng không cần yêu cầu thêm dữ liệu.
+
+87
+00:05:37,310 --> 00:05:41,670
+Nó chỉ có thể đợi máy chủ đẩy dữ liệu trực tiếp đến nó khi nó sẵn sàng.
+
+88
+00:05:41,930 --> 00:05:45,800
+Vì vậy, thật ngạc nhiên vì bây giờ chúng tôi cũng có thể tránh một số yêu cầu.
+
+89
+00:05:45,830 --> 00:05:51,320
+Và nếu bạn trò chuyện và chỉ lấy dữ liệu chính xác khi nó xảy ra, bạn sẽ tiết kiệm được rất nhiều chuyến đi khứ hồi
+
+90
+00:05:51,320 --> 00:05:53,150
+và cải thiện độ trễ.
+
+91
+00:05:53,210 --> 00:06:00,310
+Giờ đây, SCDP cũng hỗ trợ nén Headrick, vì vậy tất cả 24 tiêu đề được gửi trong mọi yêu cầu mà bạn thực hiện
+
+92
+00:06:00,310 --> 00:06:03,510
+để truy cập trên một số trang web ngẫu nhiên có thể là máy tính bảng.
+
+93
+00:06:03,560 --> 00:06:07,820
+Và đối với họ, bị áp bức có nghĩa là tiết kiệm rất nhiều băng thông mạng.
+
+94
+00:06:07,970 --> 00:06:12,450
+Và do đó, các gói sẽ nhỏ hơn và dữ liệu của bạn sẽ di chuyển về phía trước và chạy nhanh hơn.
+
+95
+00:06:13,130 --> 00:06:16,690
+Vì vậy, HTP 2 cũng là nhị phân.
+
+96
+00:06:16,820 --> 00:06:18,380
+OK, đó là một sự khác biệt lớn.
+
+97
+00:06:18,380 --> 00:06:22,900
+Điều này có nghĩa là nó phải là một văn bản sử dụng văn bản và giúp việc gỡ lỗi dễ dàng hơn.
+
+98
+00:06:22,940 --> 00:06:28,900
+Việc truyền dữ liệu qua mạng không hiệu quả lắm và có thể là do nó ở dạng nhị phân.
+
+99
+00:06:28,910 --> 00:06:35,280
+Điều này có nghĩa là Bộ đệm giao thức, một giao thức nhị phân, là đối sánh cực kỳ hiệu quả với HTB
+
+100
+00:06:35,420 --> 00:06:39,650
+để đáp ứng bất kỳ giao thức nhị phân nào và cả cho HTP của EPD.
+
+101
+00:06:39,650 --> 00:06:48,230
+Vì vậy, cuối cùng HTP để bảo mật SSL theo mặc định sẽ được ít nhất một trình duyệt yêu cầu.
+
+102
+00:06:48,470 --> 00:06:50,480
+Vâng, anh bạn, nếu bạn có thể, bạn thực sự là hai trang web.
+
+103
+00:06:50,480 --> 00:06:50,960
+ĐƯỢC RỒI.
+
+104
+00:06:51,050 --> 00:06:54,680
+Vì vậy, ngày nay bảo mật và mã hóa thực sự quan trọng.
+
+105
+00:06:54,770 --> 00:06:57,510
+Và theo tiêu chuẩn mới này, anh ấy là công dân hạng nhất.
+
+106
+00:06:57,590 --> 00:07:00,220
+SSL sẽ được khuyến nghị theo mặc định.
+
+107
+00:07:01,200 --> 00:07:04,330
+Vì vậy, làm thế nào nó hoạt động trong một trang tính mà bây giờ bạn sử dụng cùng một sơ đồ.
+
+108
+00:07:04,440 --> 00:07:11,750
+Khách hàng của chúng tôi nói: này, hãy thiết lập kết nối với máy chủ và nó sẽ luôn mở và đây sẽ là một hành động
+
+109
+00:07:11,850 --> 00:07:13,760
+nó sẽ không đóng lại.
+
+110
+00:07:14,010 --> 00:07:20,200
+Anh ấy sẽ gửi một yêu cầu và nói rằng này, hãy đưa cho tôi tất cả những bức ảnh tạo nên những bức ảnh lớn nhất mà chúng ta từng thấy trên bức ảnh này
+
+111
+00:07:20,200 --> 00:07:20,980
+trang mạng.
+
+112
+00:07:21,000 --> 00:07:22,470
+Vì vậy, nói với tôi này, đưa cho tôi một cái gì đó.
+
+113
+00:07:22,710 --> 00:07:25,150
+Và máy chủ nói OK, đây là ô đầu tiên.
+
+114
+00:07:25,230 --> 00:07:25,770
+ĐƯỢC RỒI.
+
+115
+00:07:25,850 --> 00:07:27,220
+Đây là gạch thứ hai.
+
+116
+00:07:27,240 --> 00:07:27,730
+ĐƯỢC RỒI.
+
+117
+00:07:27,800 --> 00:07:29,180
+Đây là một thẻ thứ ba.
+
+118
+00:07:29,220 --> 00:07:32,820
+Và như bạn thấy, khách hàng chưa bao giờ yêu cầu thẻ thứ hai từ thẻ thứ ba.
+
+119
+00:07:32,820 --> 00:07:38,510
+Nó chỉ thực hiện một yêu cầu và máy chủ bắt đầu đẩy trực tiếp hơn tới các máy khách.
+
+120
+00:07:38,660 --> 00:07:40,260
+Và nó thật tuyệt vời.
+
+121
+00:07:40,260 --> 00:07:45,170
+Điều này là do chúng tôi có một kết nối duy nhất và đã giảm số chuyến khứ hồi.
+
+122
+00:07:45,300 --> 00:07:47,460
+Vì vậy, hãy nhớ sơ đồ đó trong đầu của bạn.
+
+123
+00:07:47,730 --> 00:07:51,950
+Vậy tại sao chúng tôi thậm chí còn lo lắng về SCDP?
+
+124
+00:07:52,080 --> 00:07:53,790
+Thôi thì bớt nói nhiều.
+
+125
+00:07:53,850 --> 00:07:55,150
+Nó là một giao thức hiệu quả hơn.
+
+126
+00:07:55,170 --> 00:07:57,280
+Sẽ có ít băng thông được sử dụng hơn.
+
+127
+00:07:57,360 --> 00:07:59,920
+Độ trễ sẽ được giảm một cách tinh tế.
+
+128
+00:07:59,970 --> 00:08:02,790
+Vì vậy, các cuộc gọi của bạn sẽ siêu nhanh trên mạng.
+
+129
+00:08:02,790 --> 00:08:09,390
+Nó có bảo mật tốt hơn vì SSL theo mặc định cũng là nguyên thủy trên mạng
+
+130
+00:08:09,390 --> 00:08:13,930
+bạn nhận được tất cả những cải tiến này miễn phí bằng cách sử dụng khung GRB.
+
+131
+00:08:13,950 --> 00:08:15,450
+Không có cách nào xung quanh nó.
+
+132
+00:08:15,610 --> 00:08:19,720
+GOPAC cũng sử dụng SGP cho một đội quân như GGP.
+
+133
+00:08:19,860 --> 00:08:21,160
+Và đó là điều tuyệt vời cho bạn.
+
+134
+00:08:21,160 --> 00:08:26,970
+Điều này có nghĩa là ngay sau khi bạn sử dụng khung GEORGIS để triển khai API, bạn sẽ nhận được tất cả những cải tiến này.
+
+135
+00:08:27,140 --> 00:08:28,040
+từ các đề án.
+
+136
+00:08:28,170 --> 00:08:31,590
+Vì vậy, chúng tôi rất vui vì khuôn khổ này mang tính cách mạng.
+
+137
+00:08:31,590 --> 00:08:37,500
+Nó làm cho SGP trở nên dễ sử dụng, đó là lý do tại sao tôi muốn dành thời gian để xác định sự khác biệt giữa
+
+138
+00:08:37,530 --> 00:08:40,970
+điểm 1 và điểm 1 1 và hiển thị các cải tiến về hiệu suất.
+
+139
+00:08:41,190 --> 00:08:46,050
+Vì vậy, bây giờ chúng ta đã ở đó, tôi sẽ gặp bạn trong bài học tiếp theo để nói sâu hơn một chút về GOPAC.

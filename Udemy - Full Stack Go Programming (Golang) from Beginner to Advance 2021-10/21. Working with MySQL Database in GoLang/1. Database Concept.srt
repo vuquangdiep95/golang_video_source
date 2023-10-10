@@ -1,0 +1,283 @@
+1
+00:00:13,250 --> 00:00:17,770
+Hello and welcome to the golden programming language course in this session.
+
+2
+00:00:17,780 --> 00:00:20,330
+We want to talk about database concept.
+
+3
+00:00:24,460 --> 00:00:25,480
+What is data?
+
+4
+00:00:27,580 --> 00:00:34,720
+Data is nothing but information that is collected in various formats, such as numbers, text, media
+
+5
+00:00:34,720 --> 00:00:43,060
+and others in the context of computing, data can be converted into a binary digital form that enables
+
+6
+00:00:43,060 --> 00:00:46,900
+flexibility to be moved around and processed efficiently.
+
+7
+00:00:48,690 --> 00:00:55,020
+The term data can be used either as singular or plural from time to time.
+
+8
+00:00:55,320 --> 00:00:57,690
+We come across the term raw data.
+
+9
+00:00:57,990 --> 00:01:06,930
+It is nothing but data in its most basic digital format, as data grew potentiality over the years.
+
+10
+00:01:07,200 --> 00:01:10,740
+The units of data measurement continue to grow as well.
+
+11
+00:01:11,310 --> 00:01:18,540
+Databases, database management systems or VMS and relational database management systems.
+
+12
+00:01:18,540 --> 00:01:23,310
+Or are they business quickly rounds to organize all these data?
+
+13
+00:01:27,580 --> 00:01:29,020
+What is data this?
+
+14
+00:01:30,840 --> 00:01:38,460
+The database is a systematic or organized collection of related information that is this stored in such
+
+15
+00:01:38,460 --> 00:01:43,260
+a way that it can be easily accessed, retrieved, managed and off date.
+
+16
+00:01:44,190 --> 00:01:46,170
+It is where all data is stored.
+
+17
+00:01:46,290 --> 00:01:53,250
+Very much like a library that houses a wide range of books from different genders, think of data as
+
+18
+00:01:53,250 --> 00:01:55,920
+books in a database.
+
+19
+00:01:56,100 --> 00:02:00,960
+You can organize the data in rows and columns in the form of a table.
+
+20
+00:02:01,410 --> 00:02:08,190
+Indexing the data makes it easy to find and retrieve the gain as and when required.
+
+21
+00:02:09,190 --> 00:02:16,450
+Many of its sights on the World Wide Web on engaged with the help of databases to create a database
+
+22
+00:02:16,450 --> 00:02:23,380
+so that the data is accessible to users through only one set of software programs, database handlers
+
+23
+00:02:23,380 --> 00:02:31,690
+are used more obscure, obscure server MongoDB, Oracle database, post-career school informatics,
+
+24
+00:02:31,900 --> 00:02:36,190
+seabass and etc. are all examples of different databases.
+
+25
+00:02:36,550 --> 00:02:40,450
+These modern databases are managed by the IBM's.
+
+26
+00:02:40,780 --> 00:02:47,740
+The Structure Query language or eschew it as it is more widely known, is used to operate on the data
+
+27
+00:02:47,740 --> 00:02:48,640
+in the database.
+
+28
+00:02:49,180 --> 00:02:53,590
+A database is typically represented by a cylindrical structure.
+
+29
+00:02:58,970 --> 00:03:00,650
+Database languages.
+
+30
+00:03:02,410 --> 00:03:09,100
+A deepness pill was appropriate language to use it to help quell databases and updates.
+
+31
+00:03:09,910 --> 00:03:13,540
+It essentially creates and maintains the database.
+
+32
+00:03:14,140 --> 00:03:23,290
+Some examples of database language are Stuart ORADUR, DBAs, A. Access Sports, Bryan, etc. Database
+
+33
+00:03:23,290 --> 00:03:31,270
+languages are commonly divided into data definition, language or detailed data control language or
+
+34
+00:03:31,270 --> 00:03:40,630
+DCA data manipulation, language or email and transaction control language or TCO data definition.
+
+35
+00:03:40,630 --> 00:03:49,570
+Language, or DDL, has defined data and the relationship to the other data types and creates databases,
+
+36
+00:03:49,570 --> 00:03:59,860
+finds tables and data dictionaries within databases, data control language or DC, and controls access
+
+37
+00:03:59,860 --> 00:04:01,420
+to data and the database.
+
+38
+00:04:02,490 --> 00:04:10,410
+Data manipulation, language or DNA, supports basic data manipulation operations like allowing the
+
+39
+00:04:10,410 --> 00:04:15,630
+user to insert, retrieve updates and delete data from the database.
+
+40
+00:04:16,880 --> 00:04:25,100
+And transaction control language, or C, manages changes in the database made by the DMR, the statement.
+
+41
+00:04:30,830 --> 00:04:32,600
+Types of databases.
+
+42
+00:04:34,660 --> 00:04:40,690
+There are various types of databases used for storing different varieties of data.
+
+43
+00:04:41,940 --> 00:04:48,660
+Relational databases, it is the most efficient way to access the structured information.
+
+44
+00:04:49,020 --> 00:04:55,860
+The data is organized into a set of tables that has columns and rules object oriented database.
+
+45
+00:04:56,430 --> 00:05:02,340
+Here, the data is represented in the form of object as in object oriented programming.
+
+46
+00:05:04,620 --> 00:05:10,590
+Distributed database It has two or more files located in different places.
+
+47
+00:05:10,950 --> 00:05:18,030
+The database may be in the same physical location on multiple computers or is scattered over different
+
+48
+00:05:18,030 --> 00:05:18,750
+networks.
+
+49
+00:05:19,650 --> 00:05:21,180
+No Escuela database.
+
+50
+00:05:22,360 --> 00:05:28,840
+Noel Stewart is a no relational database that contains on a structured and semi unstructured data.
+
+51
+00:05:29,590 --> 00:05:36,310
+It rose in popularity as web applications came to be commonly used and became more complex.
+
+52
+00:05:37,060 --> 00:05:46,120
+Graph database It installs data in the form of entities and the relationships between then centralization
+
+53
+00:05:46,120 --> 00:05:54,190
+database CPB DB is located, is taught and maintained in a single centralized location, for example,
+
+54
+00:05:54,340 --> 00:06:03,280
+a mainframe computer or desktop or server CPU operational database, also known as Old TCP or online
+
+55
+00:06:03,280 --> 00:06:05,470
+transactional processing database.
+
+56
+00:06:05,830 --> 00:06:12,550
+It is designed to create or update big amounts of data, and this sort transactions performed by multiple
+
+57
+00:06:12,550 --> 00:06:16,180
+users in real time data warehouses.
+
+58
+00:06:16,600 --> 00:06:19,030
+It is a central repository for data.
+
+59
+00:06:19,210 --> 00:06:27,460
+It holds current and historical data in a single location for analytical reporting throughout the enterprise.
+
+60
+00:06:28,180 --> 00:06:30,100
+Advantages of databases.
+
+61
+00:06:30,970 --> 00:06:32,800
+Minimum data redundancy.
+
+62
+00:06:33,220 --> 00:06:34,990
+Improved data security.
+
+63
+00:06:35,260 --> 00:06:37,000
+Increased consistency.
+
+64
+00:06:37,330 --> 00:06:38,830
+Lower updating errors.
+
+65
+00:06:39,250 --> 00:06:41,560
+Reduced cost of data entry.
+
+66
+00:06:41,560 --> 00:06:43,680
+Data storage and data retrieval.
+
+67
+00:06:44,500 --> 00:06:47,800
+Improved data access using haast and courier languages.
+
+68
+00:06:48,010 --> 00:06:52,540
+And higher data integrity from application programs.
+
+69
+00:06:53,650 --> 00:06:59,200
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+70
+00:06:59,200 --> 00:07:00,190
+the next session.
+
+71
+00:07:00,490 --> 00:07:01,060
+Goodbye.

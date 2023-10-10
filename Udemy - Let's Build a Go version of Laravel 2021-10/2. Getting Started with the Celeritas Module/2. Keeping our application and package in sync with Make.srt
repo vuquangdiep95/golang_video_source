@@ -1,0 +1,267 @@
+1
+00:00:01,380 --> 00:00:08,940
+So as you can see, after a very long time, my application realized that test funk too does in fact
+
+2
+00:00:08,940 --> 00:00:13,950
+exist in the celebrity's package, but that's going to be really irritating if I have to wait a long
+
+3
+00:00:13,950 --> 00:00:15,420
+time for errors to go away.
+
+4
+00:00:15,600 --> 00:00:17,040
+So let's make things a little bit simpler.
+
+5
+00:00:17,610 --> 00:00:21,210
+So right now, I'm in the My App project and I'm going to go to the terminal.
+
+6
+00:00:21,220 --> 00:00:24,090
+I'm going to type go mod vendor.
+
+7
+00:00:24,600 --> 00:00:31,770
+And what this will do is instead of fetching the repositories I'm using and just putting them where
+
+8
+00:00:31,770 --> 00:00:34,600
+it normally does, instead it will create a vendor folder.
+
+9
+00:00:34,620 --> 00:00:35,520
+So I'll put it return.
+
+10
+00:00:36,870 --> 00:00:43,250
+And if you look up here, we have a vendor folder now and inside of that it has a GitHub dot com folder.
+
+11
+00:00:43,260 --> 00:00:47,970
+And inside of that, there's one called Tischler, and there's this alerts package imported locally.
+
+12
+00:00:48,660 --> 00:00:53,670
+So what it's doing is keeping your local copy of everything that I'm building right here.
+
+13
+00:00:53,790 --> 00:00:55,770
+So things should be much faster.
+
+14
+00:00:55,770 --> 00:00:56,520
+So let's try it out.
+
+15
+00:00:56,700 --> 00:01:05,460
+Let's go back to the celebrities application and add a new function funk test funk three and it will
+
+16
+00:01:05,460 --> 00:01:09,240
+take two aunts and be it, and it will return in it.
+
+17
+00:01:09,390 --> 00:01:14,130
+This time, I'll return the product of those two eight times be OK.
+
+18
+00:01:15,240 --> 00:01:25,500
+So if I go back here now and type go mod vendor in the terminal again in my app go mod vendor, I should
+
+19
+00:01:25,500 --> 00:01:31,620
+go and get the new version of that, which means I should be able to come up here and type result equals
+
+20
+00:01:31,980 --> 00:01:32,840
+celebrities.
+
+21
+00:01:32,880 --> 00:01:33,500
+And there it is.
+
+22
+00:01:33,510 --> 00:01:38,430
+Test Funk three and it takes two things say two and two and I'll print them out.
+
+23
+00:01:38,550 --> 00:01:41,840
+Format dot print line result.
+
+24
+00:01:42,720 --> 00:01:50,010
+And if I run this now, go run dot, everything should work as expected and that is much better.
+
+25
+00:01:50,190 --> 00:01:54,840
+It means that I don't have to worry about errors hanging around in my code that aren't actually errors,
+
+26
+00:01:54,850 --> 00:01:56,370
+and that would get confusing in a hurry.
+
+27
+00:01:57,300 --> 00:02:00,090
+But it's kind of a pain to have to type go on vendor.
+
+28
+00:02:00,090 --> 00:02:03,780
+Every time I make a change to the celebrity's file, I want to run my code.
+
+29
+00:02:04,020 --> 00:02:06,000
+So instead, let's use a make file.
+
+30
+00:02:06,720 --> 00:02:10,920
+Now, if you look at the course resources for this lecture, you'll see two files you can download.
+
+31
+00:02:10,950 --> 00:02:16,050
+One is called Make Files Dot Mac, and if you're on a Macintosh or on Linux, that's the one you want.
+
+32
+00:02:16,260 --> 00:02:20,040
+Otherwise, there's one called Makefile Windows, and that's the one you want.
+
+33
+00:02:20,040 --> 00:02:25,410
+If you happen to be on windows, download that and open it up in your favorite text editor and copy
+
+34
+00:02:25,410 --> 00:02:33,270
+the contents and then create a new file at the root level of the My App directory called Make File with
+
+35
+00:02:33,270 --> 00:02:35,070
+a capital M. All one word.
+
+36
+00:02:35,550 --> 00:02:41,520
+OK, now I've already got a copy of that on my clipboard, so let me paste it in and I'll be showing
+
+37
+00:02:41,520 --> 00:02:46,040
+you the one for my Mac or Linux machine, but it's almost identical.
+
+38
+00:02:46,040 --> 00:02:48,090
+All the change you're going to have to make is very, very simple.
+
+39
+00:02:48,750 --> 00:02:55,950
+So this is the make file, and as you can see, it has these commands build, run, clean test, start
+
+40
+00:02:56,100 --> 00:02:58,890
+stop and then finally restart down here.
+
+41
+00:02:59,880 --> 00:03:04,050
+And the only change you're going to have to make is what you want to name the binary right here in line
+
+42
+00:03:04,050 --> 00:03:04,340
+one.
+
+43
+00:03:04,350 --> 00:03:06,630
+So I'm calling mine celerity app.
+
+44
+00:03:06,750 --> 00:03:11,250
+Now, if you're on windows, you might want to put you probably want to put Dot EMC at the end.
+
+45
+00:03:11,610 --> 00:03:13,590
+Otherwise, Windows might not run it for you.
+
+46
+00:03:14,190 --> 00:03:17,010
+But I'm on a Mac, so I'll just leave it as celerity desktop app.
+
+47
+00:03:17,880 --> 00:03:24,420
+And as you can see, when I say make run, if I type make run on the command line at the root level
+
+48
+00:03:24,420 --> 00:03:25,770
+of my project, it will run.
+
+49
+00:03:25,770 --> 00:03:28,470
+This puts on Line nine and it says Run.
+
+50
+00:03:28,470 --> 00:03:30,190
+But before you do that, run build.
+
+51
+00:03:30,210 --> 00:03:33,810
+So it goes up to build and right there it calls go on vendor for me.
+
+52
+00:03:34,020 --> 00:03:39,270
+OK, then it echoes some text, builds the binary and it's going to build binary name.
+
+53
+00:03:39,270 --> 00:03:44,580
+In my case, Solaris House app and then run will say, OK, start that up in the background.
+
+54
+00:03:44,670 --> 00:03:45,110
+So let's try.
+
+55
+00:03:45,510 --> 00:03:50,430
+So open the terminal window and it's going to run an exit because it's just printing to the terminal.
+
+56
+00:03:50,430 --> 00:03:51,210
+But this should work.
+
+57
+00:03:52,500 --> 00:03:53,460
+Make run.
+
+58
+00:03:55,030 --> 00:03:55,570
+It builds it.
+
+59
+00:03:55,780 --> 00:03:56,530
+And there it goes.
+
+60
+00:03:56,680 --> 00:03:57,790
+And that worked beautifully.
+
+61
+00:03:57,850 --> 00:03:59,230
+And of course, it's exit it now.
+
+62
+00:04:00,040 --> 00:04:03,400
+So things will be much simpler with this Makefile.
+
+63
+00:04:03,400 --> 00:04:05,500
+Over time, we'll be able to run our tests.
+
+64
+00:04:05,590 --> 00:04:08,770
+Know, obviously we don't have any tests at the moment, but we'll be able to do that.
+
+65
+00:04:08,770 --> 00:04:14,650
+We'll be able to start our applications, start, stop our application and life will be ever so much
+
+66
+00:04:14,650 --> 00:04:15,220
+simpler.
+
+67
+00:04:15,700 --> 00:04:17,050
+All right, let's move on.

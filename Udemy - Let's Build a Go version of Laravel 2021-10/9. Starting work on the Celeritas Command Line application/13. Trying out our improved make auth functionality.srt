@@ -1,0 +1,279 @@
+1
+00:00:01,250 --> 00:00:04,700
+So we're just about ready to try the new make out functionality.
+
+2
+00:00:04,880 --> 00:00:09,770
+And before we do that, I did have one typographical error, which I'm sure you noticed over here in
+
+3
+00:00:09,770 --> 00:00:13,820
+the middleware folder inside of the Templates folder in CMD Seelye.
+
+4
+00:00:14,210 --> 00:00:17,780
+I have t.x t at the end of this instead of dark text.
+
+5
+00:00:18,020 --> 00:00:18,810
+So let's fix that.
+
+6
+00:00:18,830 --> 00:00:20,930
+Otherwise, we're just going to have a an error.
+
+7
+00:00:21,650 --> 00:00:23,330
+So that becomes dark text.
+
+8
+00:00:24,140 --> 00:00:31,400
+OK, now let's go down to our terminal and let's make build, underscore Seelye to build the new binary
+
+9
+00:00:31,490 --> 00:00:32,980
+and copy it where it has to go.
+
+10
+00:00:32,990 --> 00:00:33,650
+And that's done.
+
+11
+00:00:34,340 --> 00:00:39,800
+And now let's switch over to my app, and let's make sure we get rid of the things that we don't want
+
+12
+00:00:39,800 --> 00:00:40,130
+here.
+
+13
+00:00:40,220 --> 00:00:41,600
+So I don't want models.
+
+14
+00:00:41,990 --> 00:00:43,010
+No, I do want models.
+
+15
+00:00:43,010 --> 00:00:43,540
+Don't go.
+
+16
+00:00:43,880 --> 00:00:48,560
+I don't want token, don't go or user don't go in the data directory and you might want to just move
+
+17
+00:00:48,560 --> 00:00:49,160
+those somewhere.
+
+18
+00:00:49,170 --> 00:00:52,880
+But I have lots of copies, so I'm going to delete those moved to trash.
+
+19
+00:00:54,470 --> 00:00:57,110
+I want to make sure my middleware folder is almost empty.
+
+20
+00:00:57,110 --> 00:01:00,030
+It doesn't have both token or off go.
+
+21
+00:01:00,050 --> 00:01:04,040
+So let's delete those and I'm going to get errors because I, my other code, is referring to things
+
+22
+00:01:04,040 --> 00:01:05,060
+that no longer exist.
+
+23
+00:01:05,060 --> 00:01:08,000
+But that's OK in my migrations.
+
+24
+00:01:08,000 --> 00:01:11,090
+I want to make sure there's nothing in here, so delete those.
+
+25
+00:01:15,280 --> 00:01:21,430
+And now I want to go to my database and make sure that my tables are all gone.
+
+26
+00:01:21,880 --> 00:01:29,860
+So back to post Taco and I mean, toss in the celebrity stalker salacious, select all of these tables
+
+27
+00:01:32,650 --> 00:01:33,700
+and delete them.
+
+28
+00:01:33,700 --> 00:01:36,160
+Cascaded delete.
+
+29
+00:01:37,420 --> 00:01:37,870
+And they're gone.
+
+30
+00:01:38,680 --> 00:01:45,850
+So at this point, I should be able to Typekit slash celebrities in the makeup project make off.
+
+31
+00:01:48,090 --> 00:01:48,720
+And it finished.
+
+32
+00:01:48,960 --> 00:01:54,810
+OK, so let's make sure everything is there, we have our this should be the same because I didn't change,
+
+33
+00:01:54,810 --> 00:01:58,650
+so user don't go, that's fine in the data directory token.
+
+34
+00:01:58,650 --> 00:02:04,780
+Don't go, that's fine in the data directory and in my middleware, I now have off token.
+
+35
+00:02:04,800 --> 00:02:06,030
+Let's make sure it's the right one.
+
+36
+00:02:06,480 --> 00:02:09,030
+It is, and I have off.
+
+37
+00:02:09,030 --> 00:02:09,540
+Don't go.
+
+38
+00:02:09,870 --> 00:02:10,760
+And that's correct, too.
+
+39
+00:02:11,460 --> 00:02:11,770
+OK.
+
+40
+00:02:11,790 --> 00:02:13,470
+Is there anything else we should add there?
+
+41
+00:02:13,710 --> 00:02:20,210
+Because if you think it through when they actually run, make off, we're not telling them anything.
+
+42
+00:02:20,220 --> 00:02:25,110
+We're not telling them what we did and we're not telling them things like, for example, you probably
+
+43
+00:02:25,110 --> 00:02:30,480
+want to go to your models dog go folder and add these two lines right here because we don't want to
+
+44
+00:02:30,480 --> 00:02:31,590
+do that programmatically.
+
+45
+00:02:31,600 --> 00:02:37,050
+We probably could, but the chance of messing up somebody's existing code is too high, and I'd rather
+
+46
+00:02:37,050 --> 00:02:40,440
+just tell the users, you know, this is kind of your responsibility.
+
+47
+00:02:40,440 --> 00:02:46,080
+If you want to have access to the users and tokens in the model struct, just go add them, add them
+
+48
+00:02:46,080 --> 00:02:48,990
+there and of course, add them down here as well.
+
+49
+00:02:49,590 --> 00:02:56,160
+So let's go back to our celebrities project and let's find that often go, which isn't the middleware
+
+50
+00:02:56,160 --> 00:03:01,290
+in this case, is the commander installs the authentication tables and all of those things.
+
+51
+00:03:01,890 --> 00:03:03,410
+Let's just put some messages here.
+
+52
+00:03:03,420 --> 00:03:10,570
+I'll put color yellow just so it's visible, and I'll put a, you know, as a string a couple of spaces,
+
+53
+00:03:10,570 --> 00:03:21,540
+then a hyphen, then users tokens and remember tokens, migrations created and executed.
+
+54
+00:03:22,110 --> 00:03:27,420
+Just let them know that we've built the necessary tables in the database and executed and on duplicate
+
+55
+00:03:27,420 --> 00:03:27,690
+that.
+
+56
+00:03:28,620 --> 00:03:31,410
+And I'll also I'll change this message to.
+
+57
+00:03:33,820 --> 00:03:36,760
+User and token models created.
+
+58
+00:03:39,160 --> 00:03:46,580
+I don't duplicate that and change this one to off middleware created.
+
+59
+00:03:49,070 --> 00:03:54,460
+Then I'll just give them a blank line colored yellow and a blank line, and I'll duplicate that one
+
+60
+00:03:54,460 --> 00:03:56,770
+more time and I'll put the reminder here.
+
+61
+00:03:57,400 --> 00:04:07,000
+Don't forget to add user and token models in data slash models.
+
+62
+00:04:07,270 --> 00:04:08,010
+Don't go.
+
+63
+00:04:09,520 --> 00:04:23,080
+And to add appropriate middleware to your roots, and I'll put an exclamation there.
+
+64
+00:04:23,260 --> 00:04:24,490
+That's just a little friendlier.
+
+65
+00:04:24,730 --> 00:04:25,090
+OK.
+
+66
+00:04:25,870 --> 00:04:27,250
+So that seems to work pretty well.
+
+67
+00:04:27,370 --> 00:04:30,880
+Now, obviously, there's more we can do with our command line tool.
+
+68
+00:04:31,240 --> 00:04:39,520
+For example, we can automate creating an empty or a stub model file or a stub middleware file or a
+
+69
+00:04:39,520 --> 00:04:40,540
+stub handler.
+
+70
+00:04:41,020 --> 00:04:44,470
+So let's get started on doing those things in the next couple of lectures.

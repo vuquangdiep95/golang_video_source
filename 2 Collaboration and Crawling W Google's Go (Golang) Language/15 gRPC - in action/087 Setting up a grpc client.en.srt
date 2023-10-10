@@ -1,0 +1,243 @@
+1
+00:00:00,150 --> 00:00:03,370
+So next step is to create a client for this.
+
+2
+00:00:03,410 --> 00:00:10,920
+And so I'm just gonna create a go client or quick and easy bit and perhaps later perhaps later we'll
+
+3
+00:00:10,920 --> 00:00:13,650
+show how to get it set up so it works with a web browser.
+
+4
+00:00:14,850 --> 00:00:21,790
+So in this case though I've created 8 and 0 3 client which is a copy of the 0 1 Proto.
+
+5
+00:00:21,900 --> 00:00:30,120
+So it just has the echo folder with the profile and the PDB the generated code and so I'm going to create
+
+6
+00:00:30,150 --> 00:00:36,770
+a I may not go 0 3 holds what 0 2 held right.
+
+7
+00:00:36,820 --> 00:00:42,160
+0 1 0 0 2 has the server so I don't use the serve and the clients haven't got it yet.
+
+8
+00:00:42,200 --> 00:00:45,160
+So copying off just the prototype.
+
+9
+00:00:45,290 --> 00:00:47,270
+The protocol buffer no prototype.
+
+10
+00:00:47,800 --> 00:00:53,280
+So this is package mean it's got func mean so.
+
+11
+00:00:53,610 --> 00:00:55,470
+So that's all pretty normal.
+
+12
+00:00:55,470 --> 00:00:56,870
+So what you need to do.
+
+13
+00:00:56,970 --> 00:00:59,050
+I gotta get outta there.
+
+14
+00:01:00,300 --> 00:01:06,630
+So first thing you're gonna need to do is you're gonna need to make a connection to the server so you.
+
+15
+00:01:06,710 --> 00:01:08,000
+So you're gonna need a connection.
+
+16
+00:01:09,280 --> 00:01:15,960
+And so you do this with G R P C dot dial and you're gonna import G.P.S. real fast
+
+17
+00:01:25,130 --> 00:01:27,450
+so GOP speed dial to create a connection.
+
+18
+00:01:27,490 --> 00:01:31,630
+So Gypsy dial takes in where you're connecting to.
+
+19
+00:01:31,630 --> 00:01:40,840
+So in this case I'm connecting to my own local host server at Port 880 and it takes an additional arguments.
+
+20
+00:01:40,900 --> 00:01:50,350
+So one of those additional arguments that we're going to need is g or P.C. dot with insecure this this
+
+21
+00:01:50,350 --> 00:01:57,150
+tells GOPAC that your connections not secured through teal s or any other security protocol expected.
+
+22
+00:01:57,160 --> 00:01:58,740
+Don't worry about it.
+
+23
+00:01:58,870 --> 00:02:03,050
+And now as you discovered that how a trade it out without it.
+
+24
+00:02:03,070 --> 00:02:08,110
+And GOPAC actually just printed out a message saying exactly that there's no security.
+
+25
+00:02:08,110 --> 00:02:12,580
+If you intend this add this to your dial function nice.
+
+26
+00:02:13,240 --> 00:02:17,030
+So the usual if error not equal nil.
+
+27
+00:02:17,230 --> 00:02:20,810
+I'm just panicking on errors here because I don't have any other response.
+
+28
+00:02:22,410 --> 00:02:29,950
+Normally you'd log with them and do something but for demonstration purposes panicking works.
+
+29
+00:02:30,000 --> 00:02:33,820
+So whenever you got a connection you're gonna need it for closing that connection.
+
+30
+00:02:34,860 --> 00:02:37,030
+So deferred closing the connection.
+
+31
+00:02:37,050 --> 00:02:40,410
+So when Maine ends we'll close the connection to the server.
+
+32
+00:02:40,410 --> 00:02:41,910
+Then you need to.
+
+33
+00:02:42,630 --> 00:02:46,290
+We're going to need to import our echo generated echo code.
+
+34
+00:02:46,350 --> 00:02:54,100
+I'm just gonna go back to the server copy that import line and change it from 0 to server to 0 3.
+
+35
+00:02:54,190 --> 00:02:54,610
+Client
+
+36
+00:02:58,540 --> 00:03:06,610
+now ex to echo and their echo has one of the generated echo functions is new Echo server client.
+
+37
+00:03:06,840 --> 00:03:08,830
+This takes in a G.P.S. connection.
+
+38
+00:03:08,920 --> 00:03:10,520
+It returns an echo server client.
+
+39
+00:03:10,660 --> 00:03:12,640
+So we've got that connection.
+
+40
+00:03:12,640 --> 00:03:20,900
+This gives us our echo client and so our echo client has our echo function.
+
+41
+00:03:20,900 --> 00:03:22,670
+Just as we defined in the protocol
+
+42
+00:03:25,590 --> 00:03:32,100
+so with the Echo function it takes in a context an echo request and optionally some gypsy call options
+
+43
+00:03:32,160 --> 00:03:34,820
+which most the time you shouldn't need.
+
+44
+00:03:35,040 --> 00:03:37,900
+And it will return an echo response and an error.
+
+45
+00:03:37,920 --> 00:03:40,590
+So we need to pass in a context.
+
+46
+00:03:40,980 --> 00:03:43,950
+So we're going to if we need a context we're gonna need to create have one.
+
+47
+00:03:43,950 --> 00:03:48,180
+So since we don't have one already we can create one with context dot background
+
+48
+00:03:50,860 --> 00:03:52,720
+Mitre import conflict context
+
+49
+00:03:56,390 --> 00:04:04,650
+to get the context and we need to make Senator echo requests so echo echo request echo request has a
+
+50
+00:04:04,650 --> 00:04:06,020
+message.
+
+51
+00:04:06,150 --> 00:04:10,960
+So let's just say hello world.
+
+52
+00:04:11,060 --> 00:04:16,140
+This will send back a response and an error.
+
+53
+00:04:16,360 --> 00:04:17,050
+Check our error
+
+54
+00:04:20,090 --> 00:04:21,390
+and now we've got a response.
+
+55
+00:04:21,410 --> 00:04:29,320
+So our response has bunch of private stuff from four protocol buffer.
+
+56
+00:04:29,380 --> 00:04:36,370
+But most importantly it's got response which is as we defined in our profile an echo response as response
+
+57
+00:04:38,400 --> 00:04:48,400
+so let's just print that print line got from server response that response and import jumped because
+
+58
+00:04:48,400 --> 00:04:53,010
+we're using it.
+
+59
+00:04:53,070 --> 00:05:06,030
+So now I have the server running at port 80 80 so if I go here I got 0 3 client and I go run mean go.
+
+60
+00:05:06,290 --> 00:05:14,290
+This should make that connection and called the excise to go from server might echo well done.
+
+61
+00:05:14,750 --> 00:05:18,190
+Como see in the next video.

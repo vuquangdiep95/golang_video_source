@@ -1,0 +1,351 @@
+1
+00:00:01,540 --> 00:00:06,460
+So in this project, we're going to be using Postgres as a database.
+
+2
+00:00:06,670 --> 00:00:10,570
+We're going to be using Redis as a store for our session information.
+
+3
+00:00:10,570 --> 00:00:15,280
+And we're also going to require some kind of mail server, a dummy mail server that will capture mail
+
+4
+00:00:15,280 --> 00:00:15,730
+for us.
+
+5
+00:00:15,790 --> 00:00:19,480
+And I want to use Docker for that and I really encourage you to do so as well.
+
+6
+00:00:20,410 --> 00:00:24,410
+I've had a number of people say to me, Don't Docker, slow my system down.
+
+7
+00:00:24,430 --> 00:00:25,380
+It never has.
+
+8
+00:00:25,420 --> 00:00:31,060
+As I said a couple of times, I'm running this on a seven year old Mac and Docker works just fine.
+
+9
+00:00:31,840 --> 00:00:33,190
+So I encourage you to do that.
+
+10
+00:00:33,190 --> 00:00:33,370
+Now.
+
+11
+00:00:33,370 --> 00:00:38,610
+If you want to install Redis locally and you want to install Postgres locally and so on and so forth,
+
+12
+00:00:38,620 --> 00:00:39,700
+you feel free to do so.
+
+13
+00:00:39,710 --> 00:00:41,750
+But I really encourage you to give Docker a try.
+
+14
+00:00:41,770 --> 00:00:45,430
+It works really well and it is not that resource intensive.
+
+15
+00:00:46,000 --> 00:00:50,620
+So to make that happen, what I'm going to do is have you go to the course resources for this lecture
+
+16
+00:00:50,620 --> 00:00:55,270
+and you see a file there called Docker Dash, composed with a small dot zip.
+
+17
+00:00:55,960 --> 00:01:01,620
+Download that file, unzip it and put it as I have at the root level of my project.
+
+18
+00:01:01,630 --> 00:01:08,500
+So right beside the cmd folder, right beside go to AdMob, go to mod, there's my file, docker compose,
+
+19
+00:01:08,920 --> 00:01:09,820
+let's give it a look.
+
+20
+00:01:09,820 --> 00:01:13,690
+And then just in case you don't have Docker installed, I'll show you where to go and get that.
+
+21
+00:01:15,010 --> 00:01:21,430
+So this is a very simple Docker compose and what this allows me to do is to start what you see here,
+
+22
+00:01:21,460 --> 00:01:23,380
+three services Postgres.
+
+23
+00:01:23,380 --> 00:01:29,680
+So Postgres 14.2 is the version I'm going to use for this course Redis And I'm just using the latest
+
+24
+00:01:29,680 --> 00:01:30,400
+version of Redis.
+
+25
+00:01:30,400 --> 00:01:32,620
+It doesn't really matter, but the latest one will do the trick.
+
+26
+00:01:32,980 --> 00:01:38,200
+And then Mail Hog, which is an unfortunate name, but this is a dummy mail server and it allows us
+
+27
+00:01:38,200 --> 00:01:44,350
+to send the email without actually sending email mail home, captures it, and it offers a web interface
+
+28
+00:01:44,350 --> 00:01:45,970
+where we can go and look at our email.
+
+29
+00:01:46,690 --> 00:01:47,860
+So we'll start this in a minute.
+
+30
+00:01:48,220 --> 00:01:53,410
+But if you don't have Docker installed, also one of the course resources for this lecture, you'll
+
+31
+00:01:53,410 --> 00:01:55,960
+see a link to this Web page right here.
+
+32
+00:01:56,980 --> 00:01:59,680
+And these are the instructions for a mac.
+
+33
+00:01:59,680 --> 00:02:04,480
+But as you can see on the left hand side, there's instructions for windows and there's also instructions
+
+34
+00:02:04,480 --> 00:02:05,660
+for Linux.
+
+35
+00:02:05,700 --> 00:02:06,090
+Okay.
+
+36
+00:02:06,130 --> 00:02:09,010
+So so it doesn't matter what operating system you're on.
+
+37
+00:02:09,040 --> 00:02:10,720
+The instructions are pretty simple.
+
+38
+00:02:11,410 --> 00:02:14,320
+Now, just a word of caution about the version for Mac.
+
+39
+00:02:14,590 --> 00:02:19,240
+If you're on an older Mac, like like I am with an intel chip, this is the one you want.
+
+40
+00:02:19,300 --> 00:02:25,870
+If you're on a mac with one of Apple's own chips, the M1 or the M1, ultra or one of those, then you
+
+41
+00:02:25,870 --> 00:02:26,530
+want this one.
+
+42
+00:02:26,560 --> 00:02:27,580
+Make sure you get the right one.
+
+43
+00:02:27,940 --> 00:02:28,970
+So install that.
+
+44
+00:02:28,990 --> 00:02:33,190
+So once you have that installed, let's go back to our I.D. and I'll bring it up.
+
+45
+00:02:33,430 --> 00:02:41,590
+Now, as you can see here on line 16 of my doctor compose y email, I'm saying have a volume stored
+
+46
+00:02:41,590 --> 00:02:44,080
+the data for Postgres in the current directory.
+
+47
+00:02:44,090 --> 00:02:45,400
+That's what the dot means then.
+
+48
+00:02:45,520 --> 00:02:48,820
+Then in a folder called DB Data, they're in a folder called Postgres.
+
+49
+00:02:49,720 --> 00:02:52,190
+Now, in a lot of cases, Docker will create that for you.
+
+50
+00:02:52,210 --> 00:02:56,860
+But I'm not an optimist, so I'm going to create a new folder at the root level of my project called
+
+51
+00:02:57,400 --> 00:03:02,530
+DV Dash Data, and inside of that I will create two folders.
+
+52
+00:03:03,520 --> 00:03:06,640
+The first one is for Postgres and it's just called Postgres.
+
+53
+00:03:07,510 --> 00:03:11,110
+And the second one is a new folder for Redis.
+
+54
+00:03:11,500 --> 00:03:11,790
+Okay.
+
+55
+00:03:12,700 --> 00:03:18,970
+Now, once I've done that, I can open my terminal and clear my screen and type docker dash, compose
+
+56
+00:03:19,270 --> 00:03:20,470
+up, dash de.
+
+57
+00:03:20,740 --> 00:03:25,330
+Okay, now the dash de will run this in the background and I'm going to do that.
+
+58
+00:03:25,330 --> 00:03:26,800
+So here, return.
+
+59
+00:03:27,340 --> 00:03:30,640
+And what'll happen is it creates and starts all of these.
+
+60
+00:03:30,670 --> 00:03:35,260
+Now they're starting right now and you can see it created all of these files for Postgres and there's
+
+61
+00:03:35,260 --> 00:03:36,790
+probably some for Redis as well.
+
+62
+00:03:37,780 --> 00:03:39,310
+Not yet, but it'll get there eventually.
+
+63
+00:03:39,370 --> 00:03:39,700
+Okay.
+
+64
+00:03:40,960 --> 00:03:44,970
+So I'm going to hide that and I'm going to go to on a mac.
+
+65
+00:03:44,980 --> 00:03:48,070
+I just go to the little Docker icon like this on Windows.
+
+66
+00:03:48,070 --> 00:03:50,470
+It's in your system tray and I'll bring up the dashboard.
+
+67
+00:03:53,030 --> 00:03:59,960
+And I click on containers and then I expand this final project and I'll click on, say, the Postgres.
+
+68
+00:03:59,960 --> 00:04:05,870
+And it takes a while the very first time it starts it because it has to initialize the database.
+
+69
+00:04:05,930 --> 00:04:11,510
+And what it's doing is not just initializing an empty database store and it seems to be finished here.
+
+70
+00:04:12,050 --> 00:04:18,440
+Back over in my Docker compose, it's actually creating a database called concurrency and you access
+
+71
+00:04:18,440 --> 00:04:22,460
+it using this username Postgres and this password, which is just password.
+
+72
+00:04:22,560 --> 00:04:22,940
+Okay.
+
+73
+00:04:23,270 --> 00:04:25,340
+So that creates all of that for us.
+
+74
+00:04:26,270 --> 00:04:30,500
+Now once that's up and running, you're going to want to get your favorite database client as well.
+
+75
+00:04:30,500 --> 00:04:34,490
+And I recommend you use this one and I'll put a link through this in the course resources as well.
+
+76
+00:04:34,850 --> 00:04:39,580
+It's called Beekeeper Studio, and there are versions for Mac and there are versions for Windows.
+
+77
+00:04:39,590 --> 00:04:44,720
+You can just click on the download button up here and it will take you to the one appropriate for your
+
+78
+00:04:44,720 --> 00:04:45,560
+operating system.
+
+79
+00:04:45,560 --> 00:04:48,050
+And as you can see, it supports Windows, Mac and Linux.
+
+80
+00:04:48,440 --> 00:04:52,970
+So if you don't have a Postgres client and this is one means of just connecting to the database and
+
+81
+00:04:52,970 --> 00:04:54,950
+looking at it so we don't have to use the command line.
+
+82
+00:04:55,850 --> 00:04:59,210
+And it's really easy to use and it's free and I think there's some paid version of it.
+
+83
+00:04:59,210 --> 00:04:59,510
+I'm not.
+
+84
+00:04:59,510 --> 00:05:00,710
+Yeah, the ultimate edition.
+
+85
+00:05:00,710 --> 00:05:05,000
+But you want the community edition right here because it's free and it will do the trick for us.
+
+86
+00:05:05,870 --> 00:05:11,510
+So get Docker installed, bring up Docker, compose, let it run for a while to make sure the database
+
+87
+00:05:11,510 --> 00:05:16,060
+is initialized and download Beekeeper studio if you need a client.
+
+88
+00:05:16,130 --> 00:05:17,990
+Okay, let's move on.

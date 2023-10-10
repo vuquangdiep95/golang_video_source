@@ -1,0 +1,215 @@
+1
+00:00:00,180 --> 00:00:00,420
+All right.
+
+2
+00:00:00,450 --> 00:00:07,820
+So now we're going to see how to delete branches and annual shows how do I see it.
+
+3
+00:00:07,860 --> 00:00:11,760
+So once you've got branches merge you probably want to clean them up so you get branch.
+
+4
+00:00:11,760 --> 00:00:16,920
+You can see detailed dog and dog are still there even though they've been merged into master.
+
+5
+00:00:16,920 --> 00:00:18,080
+So do eat a branch.
+
+6
+00:00:18,100 --> 00:00:25,890
+It's got branch dash D for delete in the name of the branch that do eat a branch dog.
+
+7
+00:00:26,670 --> 00:00:30,540
+However this only deletes it on your own machine.
+
+8
+00:00:30,540 --> 00:00:38,720
+So if I get branch dash a remote origin still has the dog and pushing does not affect this at all if
+
+9
+00:00:38,720 --> 00:00:40,550
+I push says everything's already up to date.
+
+10
+00:00:40,580 --> 00:00:50,480
+If I pull everything still up to date get branch dash a still shows get hub still has dog.
+
+11
+00:00:51,440 --> 00:00:57,500
+So if you go to your repo and you hit the branches on GitHub you can go into.
+
+12
+00:00:57,530 --> 00:00:59,660
+You can see the dog branch and you can delete it.
+
+13
+00:00:59,660 --> 00:01:04,840
+There is delete it on github.
+
+14
+00:01:04,910 --> 00:01:16,320
+Now if I can get pull and already update still but and if I get branch dash a it still sees dog now
+
+15
+00:01:16,350 --> 00:01:22,830
+the reason for this is just that get is caching that it's it's it's that it saw that there was a branch
+
+16
+00:01:22,830 --> 00:01:28,640
+called dog at one point in time so it still keeps that around even though it's not actually there anymore.
+
+17
+00:01:28,680 --> 00:01:34,320
+So what you need to do to do that is get remote rune origin.
+
+18
+00:01:34,470 --> 00:01:37,890
+This was yes.
+
+19
+00:01:37,920 --> 00:01:40,660
+So you get remote prune origin.
+
+20
+00:01:40,660 --> 00:01:48,580
+This tells get to good to check origin and prune out any branches that we've got cached that origin
+
+21
+00:01:48,580 --> 00:01:49,820
+no longer has.
+
+22
+00:01:49,870 --> 00:01:56,290
+So you can see it says pruned origin dog and if you get branch dash egg and see it no longer has dog
+
+23
+00:01:56,570 --> 00:02:00,080
+tags so and you can do this in the or other order too.
+
+24
+00:02:00,090 --> 00:02:02,080
+I can delete detail dog
+
+25
+00:02:05,110 --> 00:02:09,650
+and if I get remote prune Orange says detail dog is gone.
+
+26
+00:02:09,680 --> 00:02:12,950
+Get branch dash a It Gets gone here.
+
+27
+00:02:12,970 --> 00:02:19,750
+But I still have my local copy so I need to eat my local copy as well detailed
+
+28
+00:02:23,330 --> 00:02:25,960
+branch.
+
+29
+00:02:25,980 --> 00:02:27,150
+Now I'm all cleaned up.
+
+30
+00:02:27,150 --> 00:02:35,830
+We just have mastered now we've got master local and then we have our remote origin master origin HEAD.
+
+31
+00:02:35,940 --> 00:02:39,700
+SO head is just basically the default where we're currently at.
+
+32
+00:02:39,720 --> 00:02:45,660
+So remote origin is that currently which is at Master head is that master that's pointing it's almost
+
+33
+00:02:45,660 --> 00:02:49,350
+like an alias for origin master the madam or master.
+
+34
+00:02:49,350 --> 00:02:49,880
+Yes.
+
+35
+00:02:50,050 --> 00:02:51,210
+Okay great.
+
+36
+00:02:51,210 --> 00:02:52,010
+That was awesome.
+
+37
+00:02:52,020 --> 00:02:54,150
+I really liked seeing the leading branches so yeah.
+
+38
+00:02:54,160 --> 00:03:00,380
+Todd still has his copies of those two branches as or you never got detailed dog so you don't even.
+
+39
+00:03:00,400 --> 00:03:00,550
+Yeah.
+
+40
+00:03:00,570 --> 00:03:09,420
+Let's take a look and let's clean me up so get branch books get branch DSA DSA and I am on dogs I need
+
+41
+00:03:09,420 --> 00:03:19,320
+to do get check out master and and then get branch Dash and I use my arrow keys to cycle through commands
+
+42
+00:03:19,320 --> 00:03:26,610
+they're previously done commands and then I'm gonna do a get branch dash D and get rid of dog shape
+
+43
+00:03:26,630 --> 00:03:32,560
+poll first see what happens when you pull if you it doesn't work matter too much.
+
+44
+00:03:32,730 --> 00:03:39,840
+One thing to note though is if you do a branch delete where it does not know that it's been merged because
+
+45
+00:03:39,840 --> 00:03:44,270
+you haven't pulled yet for example get we'll give you a warning so.
+
+46
+00:03:44,370 --> 00:03:49,530
+So if you tried to delete dog before pulling so your computer doesn't know that dogs emerged yet get
+
+47
+00:03:49,530 --> 00:03:53,500
+will warn you and give you the command to force it to be deleted anyway.
+
+48
+00:03:53,800 --> 00:03:58,780
+Which I believe is just capital the avoid I remember.
+
+49
+00:03:58,800 --> 00:04:08,930
+So now I've gotten rid of dog and I want to do my get remote remote print origin to see if anything
+
+50
+00:04:08,930 --> 00:04:15,140
+can be cleaned up and I got rid of a remote origin dog so I'm all good to go to.
+
+51
+00:04:15,310 --> 00:04:18,030
+That's the leading branches the guy thing you want to add to that.
+
+52
+00:04:18,770 --> 00:04:19,690
+That's right.
+
+53
+00:04:19,860 --> 00:04:21,130
+Tweet branches.
+
+54
+00:04:21,260 --> 00:04:21,650
+Good stuff.

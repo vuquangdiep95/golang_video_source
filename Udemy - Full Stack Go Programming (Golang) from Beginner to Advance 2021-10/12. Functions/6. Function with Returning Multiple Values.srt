@@ -1,0 +1,163 @@
+1
+00:00:13,600 --> 00:00:19,840
+Hello and welcome to the and programming language course in the previous session, we talked about functions
+
+2
+00:00:19,840 --> 00:00:24,820
+as values in this session, we want to talk about the authors functions concept.
+
+3
+00:00:29,350 --> 00:00:31,300
+Returning multiple values.
+
+4
+00:00:32,950 --> 00:00:40,480
+In go language, you are allowed to return multiple values from a function using the return, a statement
+
+5
+00:00:40,960 --> 00:00:43,210
+or in other rules in function.
+
+6
+00:00:43,390 --> 00:00:47,090
+A single written a statement can return multiple values.
+
+7
+00:00:47,770 --> 00:00:54,400
+The type of the return values is similar to the type of the parameter defined in the parameter release.
+
+8
+00:00:55,880 --> 00:00:58,100
+Now you can see the scene techs.
+
+9
+00:01:00,360 --> 00:01:09,360
+Function, nay, it is the name of the function parameter release, it contains the name and the type
+
+10
+00:01:09,360 --> 00:01:11,190
+of the function parameters.
+
+11
+00:01:13,510 --> 00:01:22,300
+Return type list, it's optional, and it contains the types of the values that function returns, if
+
+12
+00:01:22,300 --> 00:01:28,600
+you are using visa and type in your function, then it necessary to use a written statement in your
+
+13
+00:01:28,600 --> 00:01:29,290
+function.
+
+14
+00:01:33,890 --> 00:01:35,120
+Return values.
+
+15
+00:01:37,040 --> 00:01:45,190
+The function can have one or more returned values assume there is a function, some underscored a veggie
+
+16
+00:01:45,410 --> 00:01:49,160
+that returns to values, song and average.
+
+17
+00:01:49,670 --> 00:01:57,280
+Note that when retaining multiple values, the retained value time has to be enclosed within parenthesis.
+
+18
+00:01:58,400 --> 00:02:01,370
+You can see some pattern for this case.
+
+19
+00:02:03,680 --> 00:02:08,750
+As a convention, a role is returned as the last argument in a function.
+
+20
+00:02:09,470 --> 00:02:16,730
+You can see the sample for this case and collecting multiple returned values in the column function
+
+21
+00:02:17,420 --> 00:02:19,090
+like following Sampat.
+
+22
+00:02:20,430 --> 00:02:26,250
+Now, go to this good program to illustrate how to use return multiple values.
+
+23
+00:02:27,810 --> 00:02:36,090
+In this case, we want to calculate rectangular area and perimeter by function, first, create function
+
+24
+00:02:36,270 --> 00:02:39,000
+for this purpose by the following code.
+
+25
+00:02:42,420 --> 00:02:57,750
+Right angle, for the example, w Typekit is it and age type of it, is it w an age as parameters by
+
+26
+00:02:57,750 --> 00:03:06,980
+aid type and set to type as return types and time on it?
+
+27
+00:03:09,720 --> 00:03:25,890
+First calculate rectangle perimeter for the example three metre column equals tool multiplication W
+
+28
+00:03:26,250 --> 00:03:38,490
+Class H and calculate rectangle area and in the next line area, calling equals W multiplication hich
+
+29
+00:03:39,120 --> 00:03:49,140
+now return area and perimeter or variable return area and perimeter.
+
+30
+00:03:50,610 --> 00:03:58,470
+Now create a main function for invoked the rectangle function, so go to the main function and first
+
+31
+00:04:00,000 --> 00:04:09,870
+creating local variable definition, then initialization than a comma b type of Disney's teens.
+
+32
+00:04:11,590 --> 00:04:20,170
+Now calling rectangle function and set return values in two very but a and B as perimeter and area of
+
+33
+00:04:20,170 --> 00:04:31,540
+rectangle a comma B equals invoke Reagan definition rectangle and set the variables.
+
+34
+00:04:32,520 --> 00:04:51,240
+For example, 20 and 30 now Display Valley, then go to the next line if P area and a go to the next
+
+35
+00:04:51,240 --> 00:04:53,760
+line, the perimeter.
+
+36
+00:04:58,840 --> 00:05:06,130
+And said the reform at the call and save the project and execute the program.
+
+37
+00:05:10,720 --> 00:05:17,110
+Now we can see the output area is 600 and perimeter is 100.
+
+38
+00:05:18,070 --> 00:05:25,660
+In the following example, we have a rectangle function that takes two parameters, computes the breakdown
+
+39
+00:05:25,660 --> 00:05:33,600
+the perimeter and area, and returns on the two values in order not to prolong the time of decision,
+
+40
+00:05:33,610 --> 00:05:37,840
+we finish it and we will continue the content in the next session.
+
+41
+00:05:38,020 --> 00:05:38,590
+Goodbye.

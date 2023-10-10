@@ -1,0 +1,327 @@
+1
+00:00:00,280 --> 00:00:03,050
+Room vroom vroom.
+
+2
+00:00:05,010 --> 00:00:05,350
+All right.
+
+3
+00:00:05,410 --> 00:00:10,390
+So right after this video we're going to show you how to use modules we're going to get going with go
+
+4
+00:00:10,390 --> 00:00:10,930
+modules.
+
+5
+00:00:10,930 --> 00:00:17,560
+But I just want to give you some documentation resources and one of the places you can look for.
+
+6
+00:00:17,560 --> 00:00:21,310
+Go modules documentation is the go to Ling blog.
+
+7
+00:00:21,460 --> 00:00:23,160
+So that's a great resource.
+
+8
+00:00:23,170 --> 00:00:29,740
+If you go there and then go to the blog index you'll find articles on modules you could see module Mir
+
+9
+00:00:29,740 --> 00:00:35,890
+and check some database launched and stuff like that migrating to modules and then down here using go
+
+10
+00:00:35,890 --> 00:00:36,790
+modules.
+
+11
+00:00:36,790 --> 00:00:41,680
+So a lot of the curriculum we're going to teach you is built off of using go modules right here just
+
+12
+00:00:41,680 --> 00:00:44,020
+because they have excellent examples.
+
+13
+00:00:44,020 --> 00:00:50,230
+And we thought if we paralleled this blog post you'd be able to later come back and reference this blog
+
+14
+00:00:50,230 --> 00:00:55,390
+post and easily sort of synthesize the information because you've been exposed to it.
+
+15
+00:00:55,420 --> 00:00:57,660
+So that's one of the resources for documentation.
+
+16
+00:00:57,670 --> 00:01:00,880
+Another resource for documentation is the go command.
+
+17
+00:01:01,090 --> 00:01:07,240
+And one of the ways you can learn about that is coming here to do that a little bit slower going dot
+
+18
+00:01:07,230 --> 00:01:13,930
+org then go to documents and then command F to search the page and I'm searching for command on the
+
+19
+00:01:13,930 --> 00:01:18,180
+page and if I come down I see command documentation.
+
+20
+00:01:18,310 --> 00:01:20,710
+And so here's documentation for different go commands.
+
+21
+00:01:20,710 --> 00:01:21,760
+I'm going to go to the go.
+
+22
+00:01:21,770 --> 00:01:23,160
+Command right there.
+
+23
+00:01:23,320 --> 00:01:29,140
+And if I command F to find a word on this page and search for module you could see all the different
+
+24
+00:01:29,140 --> 00:01:33,370
+places modules modules module or talked about on this page.
+
+25
+00:01:33,370 --> 00:01:34,750
+That's good to know about.
+
+26
+00:01:34,930 --> 00:01:40,960
+And then the last resource I'm going to give you for documentation is here at the terminal if I type
+
+27
+00:01:40,960 --> 00:01:44,190
+go help I get help for the go command.
+
+28
+00:01:44,200 --> 00:01:47,350
+And here are here's the usage.
+
+29
+00:01:47,350 --> 00:01:54,310
+And so the usage is go and then pass in the command and arguments and the commands are and here a different
+
+30
+00:01:54,310 --> 00:01:56,650
+go commands including go mod.
+
+31
+00:01:56,650 --> 00:01:58,420
+So we're gonna learn about that.
+
+32
+00:01:58,540 --> 00:02:04,800
+And plus I could use go help command to search for help on this command or any of these commands.
+
+33
+00:02:04,810 --> 00:02:05,210
+So I could do.
+
+34
+00:02:05,230 --> 00:02:07,040
+Go help M O D.
+
+35
+00:02:07,300 --> 00:02:09,050
+Go help IMO D.
+
+36
+00:02:09,310 --> 00:02:11,720
+And this is going to give me help on.
+
+37
+00:02:11,740 --> 00:02:13,330
+This is where I typing go help anybody.
+
+38
+00:02:13,330 --> 00:02:14,410
+This is gonna give me help.
+
+39
+00:02:14,410 --> 00:02:16,960
+On the Go mod command.
+
+40
+00:02:17,100 --> 00:02:22,690
+So I'm going to go back to go help and take a look at the rest of this and we just looked at this stuff
+
+41
+00:02:22,690 --> 00:02:22,990
+here.
+
+42
+00:02:22,990 --> 00:02:29,260
+Go command the commands are and there's the go mod command and go help command for information about
+
+43
+00:02:29,260 --> 00:02:32,140
+a command and then additional help topics.
+
+44
+00:02:32,140 --> 00:02:38,680
+And down here we have these module things there and go help topic for more information on this topic
+
+45
+00:02:38,680 --> 00:02:44,860
+so could you go help modules and you already saw that in a previous video or any of those other things
+
+46
+00:02:44,860 --> 00:02:47,620
+related to modules and I could read about that.
+
+47
+00:02:47,620 --> 00:02:53,140
+There is also a good up mod help topic to a little bit of to mod help topic up there.
+
+48
+00:02:53,140 --> 00:03:00,130
+So there's there's a lot of new documentation here around modules because it's not a small deal to have
+
+49
+00:03:00,190 --> 00:03:02,020
+good dependency management.
+
+50
+00:03:02,740 --> 00:03:04,590
+So that's the documentation.
+
+51
+00:03:04,600 --> 00:03:07,780
+Just want to make sure that you have access to it.
+
+52
+00:03:07,780 --> 00:03:09,600
+Anything you'd like to add.
+
+53
+00:03:09,620 --> 00:03:10,400
+No.
+
+54
+00:03:10,440 --> 00:03:10,810
+Nope.
+
+55
+00:03:10,810 --> 00:03:15,070
+There's there's a lot of blog posts about good modules though because it was such a big deal so you
+
+56
+00:03:15,070 --> 00:03:20,920
+can also just search go modules and you'll find plenty of medium articles to explain how to use them
+
+57
+00:03:21,200 --> 00:03:23,040
+or in the nuances behind it too.
+
+58
+00:03:23,110 --> 00:03:24,910
+But after these videos you should be fine.
+
+59
+00:03:25,090 --> 00:03:25,880
+Yes.
+
+60
+00:03:25,930 --> 00:03:32,090
+And last thing I'm going to say here is there's a link here for semantic versioning.
+
+61
+00:03:32,260 --> 00:03:38,370
+So there's a way to do software versioning where when you look at the versions it has meaning.
+
+62
+00:03:38,500 --> 00:03:43,120
+And I believe we talk about this further and if not we will talk about it further and if I don't have
+
+63
+00:03:43,120 --> 00:03:48,310
+a deeper dive OK deeper dive we go into semantic version versioning so you can learn about that but
+
+64
+00:03:48,310 --> 00:03:53,530
+there's a link there to read about semantic versioning and then also a concept that's really important
+
+65
+00:03:53,530 --> 00:03:55,520
+to all of this is name spacing.
+
+66
+00:03:55,540 --> 00:04:01,780
+So here is a link to name spacing and so name spacing just means that we use names to identify things
+
+67
+00:04:01,900 --> 00:04:02,700
+in the real world.
+
+68
+00:04:02,710 --> 00:04:04,110
+That's how humans work.
+
+69
+00:04:04,270 --> 00:04:08,270
+And then we also use names to identify things we actually call them identifiers.
+
+70
+00:04:08,270 --> 00:04:10,940
+It's another word we can use to refer to them.
+
+71
+00:04:11,500 --> 00:04:18,220
+You know encoding and so a namespace means that like here is a way that we could say this is where this
+
+72
+00:04:18,220 --> 00:04:19,550
+stuff lives.
+
+73
+00:04:19,690 --> 00:04:27,430
+And so you know one namespace might be like a get hub account get hub dot com user name and then repo.
+
+74
+00:04:27,430 --> 00:04:27,730
+Right.
+
+75
+00:04:27,730 --> 00:04:32,260
+That's a namespace and that's not going to conflict with anybody else's namespace.
+
+76
+00:04:32,260 --> 00:04:34,390
+So you might get help.
+
+77
+00:04:34,510 --> 00:04:37,050
+Use your name is different than Daniel's GitHub user name.
+
+78
+00:04:37,060 --> 00:04:43,510
+So even if our repo names are the same the namespace dick get hub dot com username repo name is going
+
+79
+00:04:43,510 --> 00:04:46,570
+to differentiate R and R repos.
+
+80
+00:04:46,890 --> 00:04:55,510
+And so this idea of name spacing that things have unique names is also important too important to using
+
+81
+00:04:55,510 --> 00:04:59,290
+packages and modules and not having the names conflict.
+
+82
+00:04:59,290 --> 00:05:04,650
+So that's that's a little bit about go notation for modules.

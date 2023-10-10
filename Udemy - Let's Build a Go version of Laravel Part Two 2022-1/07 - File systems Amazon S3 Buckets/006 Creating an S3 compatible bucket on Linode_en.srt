@@ -1,0 +1,276 @@
+1
+00:00:01,140 --> 00:00:07,170
+So in order to test out our Amazon S3 bucket compatible file system, I need to create something now
+
+2
+00:00:07,170 --> 00:00:12,090
+I could use minimal because it is by default, an Amazon S3 compatible server.
+
+3
+00:00:12,750 --> 00:00:19,620
+But honestly, I've never had much luck trying to use straight Amazon code with Mineo, and that's largely
+
+4
+00:00:19,620 --> 00:00:21,120
+because I didn't put much effort into it.
+
+5
+00:00:21,540 --> 00:00:25,020
+I like to use the correct driver for the correct file system.
+
+6
+00:00:25,650 --> 00:00:28,980
+So what I'll do is create a bucket online note.
+
+7
+00:00:29,070 --> 00:00:30,840
+Now you can do it on digital oceans.
+
+8
+00:00:30,840 --> 00:00:37,230
+You can do it on Amazon if you want to, or any provider that gives a compatible S3 bucket compatible
+
+9
+00:00:37,230 --> 00:00:37,890
+file system.
+
+10
+00:00:38,010 --> 00:00:40,140
+So online mode, it's pretty straightforward.
+
+11
+00:00:40,170 --> 00:00:47,550
+I've logged in and this is what I see when I log in and it's just that lynda.com line ODI dot com and
+
+12
+00:00:47,550 --> 00:00:49,380
+you can create an account there if you want to.
+
+13
+00:00:49,380 --> 00:00:55,530
+But you might have to spend real money, typically very often at least know offers a $100 credit for
+
+14
+00:00:55,530 --> 00:00:56,390
+new sign ups.
+
+15
+00:00:56,400 --> 00:01:01,140
+So you can use that and then just cancel your account after the fact if you want to, or you can just
+
+16
+00:01:01,140 --> 00:01:05,129
+follow along and try this when you actually need to connect to a remote filesystem.
+
+17
+00:01:05,760 --> 00:01:09,990
+But in any case, Lenard calls their S3 buckets object storage.
+
+18
+00:01:10,290 --> 00:01:12,120
+Digital ocean calls them spaces.
+
+19
+00:01:12,450 --> 00:01:15,660
+Amazon calls them S3 buckets, but other object storage.
+
+20
+00:01:16,710 --> 00:01:21,130
+And as you can see, I have quite a few buckets already, but I'll create a new bucket.
+
+21
+00:01:21,150 --> 00:01:28,470
+OK, which I will call over here, celebrities and I'm going to select my region.
+
+22
+00:01:29,310 --> 00:01:34,590
+And what I'm going to choose is Newark, New Jersey, which is relatively close to where I am physically
+
+23
+00:01:34,590 --> 00:01:35,040
+located.
+
+24
+00:01:35,400 --> 00:01:35,770
+OK.
+
+25
+00:01:36,300 --> 00:01:37,080
+And I'll create the bucket.
+
+26
+00:01:39,440 --> 00:01:44,810
+So that creates a new bucket called celebrities, which I'll see somewhere along here.
+
+27
+00:01:46,090 --> 00:01:46,600
+Right there.
+
+28
+00:01:46,720 --> 00:01:50,830
+OK, so it's created now I'll click on celebrities just to see what we have.
+
+29
+00:01:51,670 --> 00:01:53,860
+And you can see that there are no files here right now.
+
+30
+00:01:53,980 --> 00:01:55,360
+And I can look at access.
+
+31
+00:01:56,580 --> 00:02:01,950
+And I'm going to leave this private or I can leave it authenticated, read public, read public read,
+
+32
+00:02:01,950 --> 00:02:02,220
+right?
+
+33
+00:02:02,400 --> 00:02:04,410
+I'll make my public read OK.
+
+34
+00:02:04,890 --> 00:02:09,169
+And I'll also leave cause enabled to turn on and share for sale.
+
+35
+00:02:09,180 --> 00:02:10,690
+Tell us, let's see what this is.
+
+36
+00:02:10,710 --> 00:02:16,680
+I could put my own certificate in there, but I'll use the default TLS certificate, which is fine.
+
+37
+00:02:16,770 --> 00:02:21,180
+OK, so there we are for that.
+
+38
+00:02:21,210 --> 00:02:23,100
+Now, if I go back to object storage.
+
+39
+00:02:25,510 --> 00:02:32,530
+I need to create access to it, so I'll click on Access Keys up here and I'll generate an access key
+
+40
+00:02:33,760 --> 00:02:36,060
+and I will call this one celebrities.
+
+41
+00:02:36,410 --> 00:02:38,940
+OK, and I'll just leave everything turned on.
+
+42
+00:02:38,950 --> 00:02:41,080
+I'm not going to give it limited access at all.
+
+43
+00:02:41,530 --> 00:02:43,150
+So I'll create the access key.
+
+44
+00:02:47,470 --> 00:02:52,750
+Now, at this point, don't close this window until you copy this information, so I'm going to copy
+
+45
+00:02:52,750 --> 00:02:59,410
+this first one called Access Key, and I will switch over to my I.D. and I'm going to open the door
+
+46
+00:02:59,410 --> 00:03:01,180
+on the file in my app.
+
+47
+00:03:01,600 --> 00:03:08,740
+And here we have a key for streets or paste that in there, and I'm going to revoke this after I finish
+
+48
+00:03:08,740 --> 00:03:09,700
+recording the course.
+
+49
+00:03:09,700 --> 00:03:16,330
+So don't bother trying to use mine and I'll copy the secret key and I'll go back to my I.D. and I'll
+
+50
+00:03:16,330 --> 00:03:21,490
+paste the secret in there now because I chose New Jersey.
+
+51
+00:03:21,520 --> 00:03:27,190
+I'm going to put U.S. Dash East Dash one in there as my region.
+
+52
+00:03:27,280 --> 00:03:30,850
+And if you create yours in a different region, of course, you'll have to put a different region in
+
+53
+00:03:30,850 --> 00:03:31,020
+there.
+
+54
+00:03:31,030 --> 00:03:33,520
+And if you get the region wrong, you won't be able to connect at all.
+
+55
+00:03:34,360 --> 00:03:39,610
+And my end point for this, it's pretty easy for a with us Dash East Dash one, whatever your region
+
+56
+00:03:39,610 --> 00:03:44,830
+is, dot lynn odd objects dot com.
+
+57
+00:03:45,720 --> 00:03:48,260
+And my bucket name, I call celebrities.
+
+58
+00:03:49,650 --> 00:03:51,360
+I make sure you get all of this right.
+
+59
+00:03:51,510 --> 00:03:56,910
+Because one of the most frustrating things is doing something like reversing this secret in the key
+
+60
+00:03:57,180 --> 00:04:04,070
+or misspelling the endpoint or leaving an extra character in or out of the bucket name.
+
+61
+00:04:04,080 --> 00:04:05,790
+So make sure you get all of that right.
+
+62
+00:04:05,880 --> 00:04:06,240
+OK.
+
+63
+00:04:06,870 --> 00:04:13,440
+And I can go back here now to my web browser and closes and I'm all set.
+
+64
+00:04:13,710 --> 00:04:14,160
+OK.
+
+65
+00:04:15,370 --> 00:04:18,760
+So there's my celebrity key, and I'm all set.
+
+66
+00:04:18,790 --> 00:04:22,060
+And if I ever want to revoke that key, I just revoke it right here.
+
+67
+00:04:22,330 --> 00:04:27,340
+OK, so now that we have celebrities hooked up to our file system and we've created a bucket we can
+
+68
+00:04:27,340 --> 00:04:31,450
+access, it's time to go, update our handlers and then finally try things out.
+
+69
+00:04:31,600 --> 00:04:34,030
+So we'll get started on that in the next lecture.
+

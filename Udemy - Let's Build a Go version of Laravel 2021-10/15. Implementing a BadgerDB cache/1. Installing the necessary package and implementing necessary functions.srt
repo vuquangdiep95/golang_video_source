@@ -1,0 +1,1335 @@
+1
+00:00:01,060 --> 00:00:05,800
+So in this section of the course, we want to implement a second kind of cash, we already have a red
+
+2
+00:00:05,800 --> 00:00:11,080
+is cash, but this time I want to implement a badger cash and we'll get started on that in a moment.
+
+3
+00:00:11,080 --> 00:00:14,440
+But before we go too much further, there's a couple of things I want to clean up.
+
+4
+00:00:15,100 --> 00:00:21,160
+And right now, I'm in the My App project and I'm looking at the file models and go inside the data
+
+5
+00:00:21,160 --> 00:00:24,040
+directory and right here in the new function.
+
+6
+00:00:24,070 --> 00:00:28,480
+This works right now for us, but it won't work in a certain situation.
+
+7
+00:00:29,140 --> 00:00:34,780
+Ultimately, when we complete our command line application and we have that functionality that says
+
+8
+00:00:35,170 --> 00:00:40,420
+celebrity's new and then some project name, we want to install a project that doesn't have a database
+
+9
+00:00:40,420 --> 00:00:44,080
+hooked up that doesn't have a cache specified that has the default cookie session.
+
+10
+00:00:44,590 --> 00:00:49,930
+In other words, the bare minimum and we want users to specify things on their own and the way that
+
+11
+00:00:49,930 --> 00:00:54,310
+we have this right now, it just won't work, and it's because of what we have here in the new function.
+
+12
+00:00:54,670 --> 00:01:02,140
+We have this statement if OS get on data that database type is equal to MySQL or MariaDB, then we initialize
+
+13
+00:01:02,140 --> 00:01:04,060
+upar with the MySchool driver.
+
+14
+00:01:04,090 --> 00:01:06,160
+Otherwise, we do it with the Postgres driver.
+
+15
+00:01:06,160 --> 00:01:10,780
+And of course, if you don't have a Postgres database, the application actually won't start.
+
+16
+00:01:11,620 --> 00:01:13,030
+So let's make this a little simpler.
+
+17
+00:01:13,660 --> 00:01:17,860
+Let's make it a switch statement switch and we'll switch on OAC.
+
+18
+00:01:17,860 --> 00:01:18,730
+Don't get on.
+
+19
+00:01:20,080 --> 00:01:21,910
+And again, we're looking for database type
+
+20
+00:01:25,750 --> 00:01:32,620
+and we'll have our first case be either MySQL or MariaDB.
+
+21
+00:01:33,970 --> 00:01:41,950
+And in that case, then we'll do the upper minus on my actual news or copy this and paste it right here.
+
+22
+00:01:43,000 --> 00:01:48,340
+And our second case will be Postgres or PostgreSQL.
+
+23
+00:01:51,850 --> 00:01:53,950
+And again, for that one, we'll take this driver
+
+24
+00:01:56,770 --> 00:01:58,030
+and paste this right in here.
+
+25
+00:01:59,970 --> 00:02:02,400
+And then we'll have a default case that does nothing,
+
+26
+00:02:05,460 --> 00:02:08,730
+which we don't actually require, but I like to make my code is readable as possible.
+
+27
+00:02:10,050 --> 00:02:18,060
+So now if we delete this if statement that will work when they start up the application with no database
+
+28
+00:02:18,060 --> 00:02:21,890
+specified in their dot on file, it just won't initialize the upper.
+
+29
+00:02:21,900 --> 00:02:23,280
+It'll just leave it set to nil.
+
+30
+00:02:23,280 --> 00:02:24,970
+And that's perfect for our purposes.
+
+31
+00:02:25,050 --> 00:02:26,760
+So that's the first thing I wanted to clean up.
+
+32
+00:02:27,390 --> 00:02:32,580
+And the second thing is inside the handlers folder insert in the file convenience, don't go.
+
+33
+00:02:32,730 --> 00:02:34,410
+And it's just a naming thing here.
+
+34
+00:02:34,410 --> 00:02:36,780
+I copied and pasted Decrypt from Encrypt.
+
+35
+00:02:37,200 --> 00:02:40,860
+And of course, we want this to be decrypted and it's just a name.
+
+36
+00:02:40,860 --> 00:02:46,140
+So let's change that to decrypt it and change our return value.
+
+37
+00:02:48,240 --> 00:02:49,230
+And that's a little bit better.
+
+38
+00:02:49,680 --> 00:02:58,200
+OK, now let's get started with our Badger cash, so I'll create a new file over in my celebrity's project.
+
+39
+00:02:58,320 --> 00:03:03,720
+Let's go there and I'll close these two because we don't need them right now inside cash.
+
+40
+00:03:03,840 --> 00:03:10,110
+I'll create a new file, which I'll call Badger, vide your dash or underscore cash taco.
+
+41
+00:03:11,220 --> 00:03:16,590
+And of course, it has the package cash now in order to make this work.
+
+42
+00:03:16,590 --> 00:03:25,110
+Of course, because in our Cash Dog Go file, we have at the very top this interface cash.
+
+43
+00:03:25,200 --> 00:03:30,420
+All we have to do is basically implement all of these functions for Badger.
+
+44
+00:03:30,660 --> 00:03:31,020
+OK.
+
+45
+00:03:31,680 --> 00:03:34,920
+So before we do that, of course, we have to install the necessary driver.
+
+46
+00:03:35,040 --> 00:03:42,900
+So let me go over to my web browser and I'm looking at the GitHub repo for Badger and the there's a
+
+47
+00:03:42,900 --> 00:03:44,910
+link to this in the course resources for the page.
+
+48
+00:03:45,390 --> 00:03:50,460
+Badger is a very, very simple, and it's well tested and reused a great deal.
+
+49
+00:03:51,510 --> 00:03:56,280
+It's a an embeddable, persistent key value database written in Go.
+
+50
+00:03:56,280 --> 00:04:01,950
+And the great thing about it is we can embed it right in our package and not require an external database
+
+51
+00:04:01,950 --> 00:04:02,640
+for a cache.
+
+52
+00:04:02,680 --> 00:04:04,950
+Now, Badger is very fast and it works really well.
+
+53
+00:04:04,950 --> 00:04:09,150
+And of course, there are many other ones we could use which are just as good and maybe even better.
+
+54
+00:04:09,690 --> 00:04:15,570
+But for our purposes, we just want to learn how to implement more than one type of cache, so we need
+
+55
+00:04:15,570 --> 00:04:16,350
+to install this.
+
+56
+00:04:16,800 --> 00:04:18,420
+So let's copy this.
+
+57
+00:04:18,900 --> 00:04:24,960
+And as usual, if version four is out, stick with version three for this course and upgrade to version
+
+58
+00:04:24,960 --> 00:04:30,540
+four after the fact, because version four, according to semantic versioning, is not compatible with
+
+59
+00:04:30,540 --> 00:04:31,200
+version three.
+
+60
+00:04:31,380 --> 00:04:33,880
+So everything we try to do probably won't work.
+
+61
+00:04:33,900 --> 00:04:41,460
+So let's just be safe and copy this and go back to our IEEE and open a terminal window and paste in
+
+62
+00:04:41,460 --> 00:04:44,370
+the command in our celebrities project and go get that.
+
+63
+00:04:45,120 --> 00:04:48,420
+And of course, it kept a dollar sign in there for some reason, so we'll get rid of that.
+
+64
+00:04:50,870 --> 00:04:51,380
+That's better.
+
+65
+00:04:54,730 --> 00:04:56,350
+So goes and gets Badger for us.
+
+66
+00:05:01,730 --> 00:05:04,640
+And it's added to our Goldman file, and now we can use it.
+
+67
+00:05:06,140 --> 00:05:11,510
+So the very first thing we're going to have to do in our Badger Cash and Badger underscore cashed out
+
+68
+00:05:11,510 --> 00:05:17,270
+go file inside the cash directory instead of a tape, and the tape will be called not surprisingly,
+
+69
+00:05:17,270 --> 00:05:18,800
+badger cash.
+
+70
+00:05:19,160 --> 00:05:25,190
+And it's just a struct, and it has the same sorts of things we had for our other cash type reddish
+
+71
+00:05:25,190 --> 00:05:25,580
+cash.
+
+72
+00:05:25,790 --> 00:05:32,420
+It has a con, but in this case it's a type pointer to badger the the package we just installed and
+
+73
+00:05:32,420 --> 00:05:40,880
+we'll get the right one version three DB and it also has the prefix, which is a string.
+
+74
+00:05:42,170 --> 00:05:48,980
+OK, so we have the type and now we just have to implement, has and get and set and all of those things.
+
+75
+00:05:49,100 --> 00:05:55,160
+So to make things a little bit simpler, what I'm going to do is open up, cashed out and go and copy.
+
+76
+00:05:56,530 --> 00:05:57,460
+All of the functions.
+
+77
+00:05:58,780 --> 00:05:59,710
+So has.
+
+78
+00:06:00,610 --> 00:06:05,710
+We don't need in code because we're going to be calling that existing function right from Badger, so
+
+79
+00:06:05,710 --> 00:06:13,090
+I'll go back to Badger Cash and paste this in and change its type to magic hash.
+
+80
+00:06:13,660 --> 00:06:14,020
+OK.
+
+81
+00:06:14,290 --> 00:06:15,360
+And all of this is error.
+
+82
+00:06:15,370 --> 00:06:16,450
+So don't worry about that.
+
+83
+00:06:16,450 --> 00:06:17,320
+We'll fix that in a minute.
+
+84
+00:06:17,350 --> 00:06:23,380
+Let's just go back to Cash Dog, go and copy the remaining functions, and we'll just change their receivers
+
+85
+00:06:23,380 --> 00:06:26,650
+to the appropriate type and then implement the actual individual functions.
+
+86
+00:06:28,870 --> 00:06:31,360
+So we need everything up to and including empty.
+
+87
+00:06:31,370 --> 00:06:41,500
+So I'll copy those and go back to badger cash and paste those in and change the receivers to badger
+
+88
+00:06:41,500 --> 00:06:41,950
+cash.
+
+89
+00:06:42,850 --> 00:06:51,310
+For all of this, and I'll delete the contents of each function and write them as necessary to use Badger.
+
+90
+00:06:55,060 --> 00:06:56,740
+I think this is the last one here.
+
+91
+00:06:56,800 --> 00:06:57,220
+Perfect.
+
+92
+00:06:57,760 --> 00:07:05,960
+So let's get rid of this, all of this inside of empty and all of this inside of here.
+
+93
+00:07:07,090 --> 00:07:09,610
+And she will keep the return gnome because it needs that.
+
+94
+00:07:13,060 --> 00:07:15,190
+And we'll do the same thing for forget.
+
+95
+00:07:21,820 --> 00:07:24,910
+And here, set in the empty.
+
+96
+00:07:29,100 --> 00:07:37,110
+And here that'll throw us in error until we specify item, but that's fine and has.
+
+97
+00:07:39,390 --> 00:07:44,130
+OK, so now all we have to do is to implement each of these functions.
+
+98
+00:07:44,610 --> 00:07:49,680
+So the first one is really simple and you can read the documentation to badger at your convenience.
+
+99
+00:07:50,190 --> 00:07:58,170
+But I'm also going to do one more thing I'm going to do copy all of this and do a search which is here
+
+100
+00:07:58,170 --> 00:07:58,680
+somewhere.
+
+101
+00:07:59,730 --> 00:08:10,980
+Find and replace and I'll replace the receiver c badger cache with the receiver b badger cache, which
+
+102
+00:08:10,980 --> 00:08:18,740
+I just like better and will replace all the badger starts with the B sort of receiver means it will
+
+103
+00:08:18,740 --> 00:08:20,760
+be a lowercase B and that will be really simple.
+
+104
+00:08:20,790 --> 00:08:26,040
+So what we're going to do, first of all, is implement the has function and in Badger it's really simple.
+
+105
+00:08:26,160 --> 00:08:28,110
+We're going to ignore the first return parameter.
+
+106
+00:08:28,140 --> 00:08:35,880
+We are going to check for an error and we call Vidot get STR, which are received here.
+
+107
+00:08:35,880 --> 00:08:38,850
+And we don't need to worry about prefixes here, even though it's included in here.
+
+108
+00:08:38,880 --> 00:08:40,890
+I just want to make this tape match the other type.
+
+109
+00:08:40,950 --> 00:08:41,310
+OK.
+
+110
+00:08:42,480 --> 00:08:45,150
+So we have a we try to get it.
+
+111
+00:08:45,270 --> 00:08:56,280
+And if we can't get it, we say if error is not equal to nil, then return false and will ignore the
+
+112
+00:08:56,280 --> 00:08:58,230
+error because we're not going to do anything with it.
+
+113
+00:08:58,710 --> 00:08:59,700
+It just doesn't exist.
+
+114
+00:08:59,700 --> 00:09:00,250
+That's all.
+
+115
+00:09:00,270 --> 00:09:01,260
+And here it will return.
+
+116
+00:09:01,260 --> 00:09:01,890
+True and nil.
+
+117
+00:09:02,550 --> 00:09:02,790
+All right.
+
+118
+00:09:02,820 --> 00:09:07,890
+We've now implemented has for the Badger cache, that was easy now in the second one.
+
+119
+00:09:08,040 --> 00:09:10,080
+Yet again, it's not very difficult.
+
+120
+00:09:10,560 --> 00:09:14,410
+We have our key in the form of a string and we don't need to append a prefix to it.
+
+121
+00:09:14,430 --> 00:09:17,910
+You can if you want to, but it doesn't actually do anything of value, so I wouldn't bother.
+
+122
+00:09:18,660 --> 00:09:19,740
+So we'll try ver.
+
+123
+00:09:20,100 --> 00:09:27,840
+We'll create a variable ver from cache and that is of type a slice of bytes, slice of byte.
+
+124
+00:09:29,940 --> 00:09:31,060
+And now we try to get it.
+
+125
+00:09:31,080 --> 00:09:37,140
+And here's the syntax for running badger transactions because everything in Badger is effectively a
+
+126
+00:09:37,140 --> 00:09:37,800
+transaction.
+
+127
+00:09:38,340 --> 00:09:47,400
+We check for an error and we call from a receiver b dickon dot view, verify, check.
+
+128
+00:09:47,400 --> 00:09:50,940
+Some view that's better.
+
+129
+00:09:52,050 --> 00:09:58,340
+And in here we have an embedded function func, and we need a parameter for that which is transaction.
+
+130
+00:09:58,370 --> 00:10:00,240
+I'll call it text and for transaction.
+
+131
+00:10:00,240 --> 00:10:04,800
+It is a type a pointer to badger text in right there.
+
+132
+00:10:06,920 --> 00:10:08,510
+And it potentially returns an error.
+
+133
+00:10:10,160 --> 00:10:11,540
+And the body of that function.
+
+134
+00:10:13,480 --> 00:10:16,310
+That should be funk Texan
+
+135
+00:10:18,870 --> 00:10:21,220
+techs and pointer to Badger Texan.
+
+136
+00:10:21,240 --> 00:10:21,780
+That's better.
+
+137
+00:10:24,310 --> 00:10:29,290
+And here we want to get an item, so I'll call it item.
+
+138
+00:10:30,010 --> 00:10:31,510
+And again, we're checking for an error.
+
+139
+00:10:31,690 --> 00:10:34,600
+And that's assigned the value of from Texm.
+
+140
+00:10:36,700 --> 00:10:42,040
+Yeah, and the parameter requires is a slice of bite.
+
+141
+00:10:44,500 --> 00:10:50,980
+And we just took a steer that was passed right to this function and we checked for an error if error
+
+142
+00:10:50,980 --> 00:10:51,970
+is not equal to nil.
+
+143
+00:10:52,840 --> 00:10:55,150
+And we just say return the error.
+
+144
+00:10:58,900 --> 00:11:00,310
+Otherwise we have the item.
+
+145
+00:11:00,400 --> 00:11:04,420
+So we'll say error is equal to item value.
+
+146
+00:11:05,200 --> 00:11:08,890
+And again, it takes an embedded function and we'll see this a lot in Bachir, but you get used to the
+
+147
+00:11:08,890 --> 00:11:09,940
+syntax pretty quickly.
+
+148
+00:11:10,480 --> 00:11:12,370
+Again, it takes an embedded function.
+
+149
+00:11:14,970 --> 00:11:17,790
+And it takes one parameter value, a slice of bytes,
+
+150
+00:11:20,970 --> 00:11:22,290
+and it potentially returns in error.
+
+151
+00:11:25,050 --> 00:11:26,970
+And now will you take that variable?
+
+152
+00:11:26,970 --> 00:11:33,870
+We declared up on Line 19 from cash that will now be equal to append.
+
+153
+00:11:36,890 --> 00:11:42,230
+A slice of bite, that's the type, all the values we get in there.
+
+154
+00:11:42,500 --> 00:11:43,000
+Dot Dot.
+
+155
+00:11:45,440 --> 00:11:46,220
+And return nil.
+
+156
+00:11:48,680 --> 00:11:49,730
+And we check for the error.
+
+157
+00:11:49,910 --> 00:11:58,310
+If error is not equal to nil, then return the error, otherwise return nil.
+
+158
+00:11:59,300 --> 00:12:05,300
+So what we've done in here is we tried to get a value from the cache and got all of the bytes that matched
+
+159
+00:12:05,300 --> 00:12:09,800
+that in the cache and appended them to from cache, which is itself a slice of bytes.
+
+160
+00:12:11,180 --> 00:12:17,000
+And down here, of course, after we get through this, we check for an error for the overall transaction.
+
+161
+00:12:17,600 --> 00:12:23,600
+If error is not equal to nil, return nil, return nil.
+
+162
+00:12:23,600 --> 00:12:24,140
+And the error?
+
+163
+00:12:27,020 --> 00:12:27,500
+That's better.
+
+164
+00:12:30,010 --> 00:12:34,540
+But if we do have a value in there, that slice of bytes, we now have to decode them and we'll just
+
+165
+00:12:34,540 --> 00:12:36,070
+declare a variable decoded.
+
+166
+00:12:38,560 --> 00:12:44,440
+And we check for error and their assigned values by calling that function D code that we wrote over
+
+167
+00:12:44,440 --> 00:12:48,820
+in the red is cash, but it doesn't have a receiver, so it's available anywhere in this package.
+
+168
+00:12:49,940 --> 00:12:52,810
+And we convert our from cash to a string.
+
+169
+00:12:56,630 --> 00:12:59,840
+We check for an error if error is not equal to nil.
+
+170
+00:13:01,220 --> 00:13:13,460
+Then we return nil and the error otherwise item is now assigned the value of decoded and string.
+
+171
+00:13:16,230 --> 00:13:22,530
+And we return the item, so that should, in theory, be the completed version of our get function.
+
+172
+00:13:22,750 --> 00:13:24,510
+Let's go down to set and take care of that one.
+
+173
+00:13:27,630 --> 00:13:33,620
+So again, the basic logic here is fairly simple we have to serialized an object and put it into Badger
+
+174
+00:13:33,630 --> 00:13:35,820
+with an optional expires in seconds.
+
+175
+00:13:36,060 --> 00:13:38,610
+That's the basic functionality we have to do.
+
+176
+00:13:39,090 --> 00:13:42,330
+So we'll create an entry of type entry.
+
+177
+00:13:42,480 --> 00:13:46,170
+Entry is assigned the value of an empty entry.
+
+178
+00:13:50,870 --> 00:13:52,250
+And will set entry.
+
+179
+00:13:54,770 --> 00:14:02,160
+SDR equal to whatever we received as value in this cult of this function.
+
+180
+00:14:03,120 --> 00:14:07,890
+And now we encode it encoded in error or assign the value of ENCODE.
+
+181
+00:14:08,220 --> 00:14:10,020
+And we want to encode entry.
+
+182
+00:14:12,210 --> 00:14:16,440
+And if there's an error, we return the error.
+
+183
+00:14:17,610 --> 00:14:18,240
+Try that again.
+
+184
+00:14:21,150 --> 00:14:22,290
+Otherwise, we can keep going.
+
+185
+00:14:23,550 --> 00:14:25,560
+Here's what we check for the expiry.
+
+186
+00:14:25,650 --> 00:14:30,270
+If the line of expires is greater than zero and there is an expiry.
+
+187
+00:14:31,290 --> 00:14:32,970
+Otherwise, there is no expiry.
+
+188
+00:14:33,270 --> 00:14:34,710
+So let's do the first case here.
+
+189
+00:14:34,920 --> 00:14:36,300
+Something is going to expire.
+
+190
+00:14:37,800 --> 00:14:44,640
+So here we call error, or we set the value of error equal to from our receiver b we call con.
+
+191
+00:14:47,250 --> 00:14:54,300
+And we want the method update, as usual, that takes an inline function with this one parameter called
+
+192
+00:14:54,300 --> 00:15:02,280
+T.X and of type pointer to badger 40 percent or dart transaction, and it potentially returns in error.
+
+193
+00:15:03,840 --> 00:15:05,280
+And it's pretty simple to do this.
+
+194
+00:15:05,280 --> 00:15:12,960
+We say E, which is just a variable I'm calling or creating right now for entry is Badger Dot new entry
+
+195
+00:15:13,530 --> 00:15:14,850
+and we fill in its parameters.
+
+196
+00:15:15,150 --> 00:15:22,410
+The first one is a slice of byte and we want to get it using our key SDR, which we received as a call
+
+197
+00:15:22,410 --> 00:15:24,240
+to this and encoded.
+
+198
+00:15:25,050 --> 00:15:26,220
+That's what we're putting in there.
+
+199
+00:15:26,880 --> 00:15:33,030
+And now we call with time to life, and that will be time.
+
+200
+00:15:33,330 --> 00:15:38,430
+Second time's timed dot duration.
+
+201
+00:15:40,790 --> 00:15:43,280
+Expires the first entry.
+
+202
+00:15:45,630 --> 00:15:51,930
+And air is equal to 10 said entry in our entries.
+
+203
+00:15:54,120 --> 00:15:56,540
+And we returned the error, which might be no.
+
+204
+00:15:56,580 --> 00:15:59,700
+Hopefully it will be otherwise.
+
+205
+00:16:00,120 --> 00:16:01,140
+It's very similar.
+
+206
+00:16:02,610 --> 00:16:12,060
+We just copy this entire thing pasted in here and get rid of the with total part.
+
+207
+00:16:15,390 --> 00:16:17,910
+And everything else should be pretty much the same.
+
+208
+00:16:18,990 --> 00:16:25,110
+So we now have a get in a set and a has let's move on to forget and forget is pretty short.
+
+209
+00:16:27,540 --> 00:16:33,150
+All we do is check for an error when we call Beacon Update.
+
+210
+00:16:33,300 --> 00:16:39,370
+Same as before with an inline function funk texm of type pointer to Badger.
+
+211
+00:16:41,640 --> 00:16:43,140
+And that potentially returns an error
+
+212
+00:16:45,930 --> 00:16:53,200
+and we say error is assigned the value of 10 delete and we delete.
+
+213
+00:16:53,220 --> 00:16:54,840
+We have to put it into a slice of bytes
+
+214
+00:16:57,760 --> 00:17:01,860
+just here and we say, say, return error.
+
+215
+00:17:06,780 --> 00:17:13,380
+And outside of this function, we return the error so we get rid of this return.
+
+216
+00:17:13,380 --> 00:17:13,770
+Nil.
+
+217
+00:17:15,720 --> 00:17:16,950
+And that should take care of forget.
+
+218
+00:17:19,270 --> 00:17:20,350
+Now empty by match.
+
+219
+00:17:20,620 --> 00:17:22,300
+I'm going to leave for a moment, OK?
+
+220
+00:17:23,350 --> 00:17:24,050
+And empty.
+
+221
+00:17:24,070 --> 00:17:29,140
+I'm going to leave for a moment, and instead I'm going to come down here and write another function
+
+222
+00:17:29,410 --> 00:17:30,520
+just to help her function.
+
+223
+00:17:30,940 --> 00:17:35,500
+And what it will do is drop entries that have either no prefix your.
+
+224
+00:17:35,500 --> 00:17:39,340
+Your key, in other words, is empty or which begin with a given prefix.
+
+225
+00:17:39,610 --> 00:17:45,550
+In other words, your key is not empty, and I'm going to call this function, which will not be exported
+
+226
+00:17:46,360 --> 00:17:48,520
+from empty and empty by match.
+
+227
+00:17:48,730 --> 00:17:51,820
+So I'll call this one func with a receiver.
+
+228
+00:17:51,850 --> 00:17:54,670
+Be a pointer to badger cash.
+
+229
+00:17:55,900 --> 00:18:04,330
+I'm going to call it empty by match with a lowercase, and it will take one argument one parameter SDR,
+
+230
+00:18:04,330 --> 00:18:07,150
+which is a string, and it will potentially return an error.
+
+231
+00:18:07,570 --> 00:18:07,870
+OK.
+
+232
+00:18:09,500 --> 00:18:13,690
+This one is fairly lengthy and it will look complex, but it's really not.
+
+233
+00:18:13,690 --> 00:18:16,180
+It's just a little irritating the way we have to write this.
+
+234
+00:18:16,270 --> 00:18:25,000
+OK, so the first thing I'll do is search the entire badger cache for the keys that we have to delete.
+
+235
+00:18:25,210 --> 00:18:26,910
+OK, so create a variable.
+
+236
+00:18:26,920 --> 00:18:32,560
+I'm going to call it delete keys, and that will be assigned the value of a function.
+
+237
+00:18:33,190 --> 00:18:44,770
+Keys four delete will be the parameter it receives, and it's a slice of a slice of byte and it potentially
+
+238
+00:18:44,770 --> 00:18:45,430
+returns an error.
+
+239
+00:18:47,890 --> 00:18:55,000
+So this is a bit of a recursive function, will say if error is assigned the value of bitcoin.
+
+240
+00:18:56,260 --> 00:18:57,670
+Update as usual.
+
+241
+00:18:58,450 --> 00:19:06,430
+And this is going to take again an embedded function funk with the parameter of text and a pointer to
+
+242
+00:19:06,430 --> 00:19:11,920
+badger dot text, and it will potentially return in error.
+
+243
+00:19:14,470 --> 00:19:16,570
+And in here, we're going to have a little for loop.
+
+244
+00:19:16,690 --> 00:19:21,220
+So we'll say for we don't care about the index, but we do care about the key there.
+
+245
+00:19:21,220 --> 00:19:31,900
+Assign the value of range through keys for delete, and we'll say if error is assigned the value of
+
+246
+00:19:31,900 --> 00:19:33,310
+text and delete.
+
+247
+00:19:35,530 --> 00:19:39,460
+And what we want to delete, of course, is our key.
+
+248
+00:19:42,910 --> 00:19:44,410
+And if the air is not equal to nil,
+
+249
+00:19:47,980 --> 00:19:49,000
+then we'll return there.
+
+250
+00:19:51,610 --> 00:19:55,510
+So there's our for loop and we'll return Neal if we get past that.
+
+251
+00:19:57,430 --> 00:20:00,790
+And then after the if statement, we'll just put a semicolon.
+
+252
+00:20:02,960 --> 00:20:07,970
+There is not equal to nil return the error.
+
+253
+00:20:09,200 --> 00:20:12,240
+And then finally, if we get past all that, we return nil.
+
+254
+00:20:14,030 --> 00:20:20,510
+So that's our first thing or delete keys, which is basically a function now to make things speedier.
+
+255
+00:20:20,810 --> 00:20:26,180
+I'm going to say collect size, and this will just be a variable that determines how much of the cache
+
+256
+00:20:26,180 --> 00:20:27,760
+we should handle at any given time.
+
+257
+00:20:27,770 --> 00:20:33,380
+I want it to be fast, so I'm going to set it to one zero zero zero zero zero.
+
+258
+00:20:33,740 --> 00:20:34,100
+OK.
+
+259
+00:20:34,790 --> 00:20:36,350
+And we'll be using that variable right here.
+
+260
+00:20:36,560 --> 00:20:42,770
+Here's where we say error is assign the value of and again beacon dot view.
+
+261
+00:20:46,020 --> 00:20:54,240
+And we want to have it in an inline function, funk T.X end of tape Badger Dot Texan.
+
+262
+00:20:57,170 --> 00:21:01,310
+And it potentially returns an error and will create some options.
+
+263
+00:21:01,760 --> 00:21:05,690
+UPS, which you need for for this particular operation in Badger.
+
+264
+00:21:06,290 --> 00:21:11,480
+So my variable is called ops, and I was going to use the default iterator option straight from Badger
+
+265
+00:21:12,290 --> 00:21:15,200
+Badger Dot default iterator options.
+
+266
+00:21:15,290 --> 00:21:20,810
+OK, so I'm going to be iterating through things and I'm just telling Badger just do it the way it normally
+
+267
+00:21:20,810 --> 00:21:21,110
+would.
+
+268
+00:21:21,980 --> 00:21:26,920
+But I'll specify a couple of additional parameters to the Badger default options.
+
+269
+00:21:26,930 --> 00:21:32,540
+So I'll say ops, and it has a number of things we can we can check for here.
+
+270
+00:21:32,870 --> 00:21:35,720
+I'll say all versions and mechanical defaults, OK?
+
+271
+00:21:36,710 --> 00:21:39,650
+And you can read about that right in the Badger documentation.
+
+272
+00:21:40,280 --> 00:21:45,380
+The second thing I'm going to set is upstart pre prefect values, and I'll pretty much values, not
+
+273
+00:21:45,380 --> 00:21:46,880
+XYZ values.
+
+274
+00:21:47,270 --> 00:21:50,350
+And again, I'll set the defaults, OK, because we're deleting things here.
+
+275
+00:21:50,360 --> 00:21:51,440
+We don't really care about that.
+
+276
+00:21:52,400 --> 00:21:59,060
+And our iterator will be assigned the value of TSM, which are received as a parameter to this anonymous
+
+277
+00:21:59,060 --> 00:21:59,510
+function.
+
+278
+00:22:00,020 --> 00:22:03,170
+New iterator with the options, now we have an interior.
+
+279
+00:22:04,280 --> 00:22:05,480
+Scroll up and give us some room.
+
+280
+00:22:06,800 --> 00:22:13,190
+So now we're going to declare a new variable called keys for delete, and that will be assigned the
+
+281
+00:22:13,190 --> 00:22:14,600
+value of using make.
+
+282
+00:22:15,620 --> 00:22:24,860
+We're going to make a slice of a slice of byte b y t zero and collect size.
+
+283
+00:22:25,670 --> 00:22:27,170
+That's how big to make it OK.
+
+284
+00:22:28,970 --> 00:22:37,490
+And we'll say a second variable keys collected is assigned the value of zero, and now we'll use our
+
+285
+00:22:37,490 --> 00:22:39,530
+iterator for it.
+
+286
+00:22:39,530 --> 00:22:42,650
+Don't seek it is an iterator we're seeking.
+
+287
+00:22:43,370 --> 00:22:46,910
+And the first parameter is a slice of bytes
+
+288
+00:22:49,820 --> 00:22:55,160
+and we want to steer the parameter that was passed to this function, which might be an empty string
+
+289
+00:22:55,160 --> 00:22:55,790
+in this case.
+
+290
+00:22:56,630 --> 00:23:04,880
+And then we'll put a semicolon and then iterator validate valid for valid for prefix right there, just
+
+291
+00:23:04,880 --> 00:23:06,310
+straight out of the iterator itself.
+
+292
+00:23:06,320 --> 00:23:09,650
+It's a method available to us and it requires a parameter.
+
+293
+00:23:09,740 --> 00:23:14,000
+So we're going to give it again a slice of byte and SDR.
+
+294
+00:23:14,870 --> 00:23:16,160
+And then the third one is it.
+
+295
+00:23:16,360 --> 00:23:23,060
+Up next, go through the entire list and we'll assign a variable key will declare one key, which is
+
+296
+00:23:23,060 --> 00:23:28,850
+assign the value of it to item and we have to call key copy.
+
+297
+00:23:30,350 --> 00:23:34,880
+And this is a syntax that Badger requires, and we can give it nil for its parameter.
+
+298
+00:23:34,910 --> 00:23:35,300
+OK.
+
+299
+00:23:36,290 --> 00:23:44,480
+And then we want keys for delete is going to be equal to append keys for delete, and we're appending
+
+300
+00:23:44,720 --> 00:23:51,670
+cheat and we increment keys collected by one keys collected plus plus.
+
+301
+00:23:53,870 --> 00:24:01,220
+And here's a case you have to check for if your keys collected it, keys collected is equal to collect
+
+302
+00:24:01,220 --> 00:24:01,880
+size.
+
+303
+00:24:02,150 --> 00:24:08,630
+In other words, we've hit the 100000 limit we specified in line 115 and we'll just delete them all.
+
+304
+00:24:08,900 --> 00:24:15,890
+So we'll say if error is a sign, the value of delete keys because we don't want to go more than 100000
+
+305
+00:24:15,890 --> 00:24:19,460
+items at a time and we'll never hit that 100000 is a safe number.
+
+306
+00:24:20,690 --> 00:24:28,280
+So delete keys keys four delete error is not equal to nil, then return the error.
+
+307
+00:24:31,160 --> 00:24:39,740
+Otherwise, once we get past that, we check to see if keys collected is greater than zero.
+
+308
+00:24:40,370 --> 00:24:46,280
+Then again, we do the same sort of thing we just did right here, so I can copy this or paste it here.
+
+309
+00:24:47,690 --> 00:24:52,310
+So all that this line here these lines are here is just to ensure that we're not trying to delete more
+
+310
+00:24:52,310 --> 00:24:56,750
+than 100000 items at a time, because that might take a little bit of time and we're not going to hit
+
+311
+00:24:56,750 --> 00:24:57,290
+that ever.
+
+312
+00:24:57,290 --> 00:24:59,860
+But it's always good to put this kind of logic in here.
+
+313
+00:24:59,870 --> 00:25:05,960
+You never assume that the best case scenario is going to happen, but once we get past this, we just
+
+314
+00:25:05,960 --> 00:25:07,370
+delete everything this greater than zero.
+
+315
+00:25:07,640 --> 00:25:11,720
+OK, so that should be outside of the four statement I have in the wrong spot.
+
+316
+00:25:14,240 --> 00:25:14,930
+I was sloppy.
+
+317
+00:25:15,800 --> 00:25:17,030
+We don't want to do that every time.
+
+318
+00:25:17,060 --> 00:25:17,510
+Here we are.
+
+319
+00:25:17,780 --> 00:25:18,290
+That's better.
+
+320
+00:25:19,280 --> 00:25:24,350
+So once we get outside of that for a loop, we're going to have 100000 or fewer items to delete.
+
+321
+00:25:24,350 --> 00:25:25,330
+So we just delete them all.
+
+322
+00:25:26,180 --> 00:25:28,820
+And here we return.
+
+323
+00:25:28,820 --> 00:25:29,180
+Nil.
+
+324
+00:25:29,630 --> 00:25:31,250
+Inside of these this statement
+
+325
+00:25:34,850 --> 00:25:38,240
+and below that we return
+
+326
+00:25:42,470 --> 00:25:44,630
+Earth, which hopefully will be nil at this point.
+
+327
+00:25:44,840 --> 00:25:48,350
+OK, so that is our empty by match function.
+
+328
+00:25:48,680 --> 00:25:56,570
+And now up here, where we have empty by match, we're going to say return VDOT empty by.
+
+329
+00:25:57,620 --> 00:26:03,770
+With whatever we received as a parameter call to this function and here in empty, we do exactly the
+
+330
+00:26:03,770 --> 00:26:04,550
+same thing.
+
+331
+00:26:04,690 --> 00:26:08,420
+But now we return the empty by match with an empty string.
+
+332
+00:26:08,810 --> 00:26:13,460
+Delete everything in the cache and that should take care of it.
+
+333
+00:26:13,490 --> 00:26:19,160
+Now we have some typos or something in there, but we'll try this in the next lecture simply by writing
+
+334
+00:26:19,160 --> 00:26:19,820
+some tests.

@@ -1,0 +1,307 @@
+1
+00:00:01,430 --> 00:00:06,410
+So now we want to actually update the system preference, any system preference, and this is going
+
+2
+00:00:06,410 --> 00:00:12,590
+to be a lot easier than I thought because apparently we already wrote this function, this database
+
+3
+00:00:12,590 --> 00:00:16,000
+function, set system pref, which does exactly what we want.
+
+4
+00:00:16,010 --> 00:00:19,130
+It'll delete it if it exists and then insert it if it doesn't.
+
+5
+00:00:19,400 --> 00:00:22,430
+Now we can write an update function, but this isn't going to change a great deal.
+
+6
+00:00:23,090 --> 00:00:29,200
+And I don't think we'll hit the billions of the the IDE limit of some billion records.
+
+7
+00:00:29,210 --> 00:00:31,880
+So I think we're OK so we can go back to our handlers.
+
+8
+00:00:32,630 --> 00:00:38,510
+And here, just after we declare and set default values for this message, we can say error is assigned
+
+9
+00:00:38,510 --> 00:00:39,500
+the value of.
+
+10
+00:00:40,380 --> 00:00:47,940
+Repo debe set system prev and the parents name is a name which will have to get in the second and the
+
+11
+00:00:47,940 --> 00:00:49,540
+preference value is value.
+
+12
+00:00:50,160 --> 00:00:58,780
+So let's grab those values from here so we can just say pref name is assign the value of our dot, our
+
+13
+00:00:59,010 --> 00:01:00,780
+post form dot yet.
+
+14
+00:01:01,200 --> 00:01:06,130
+And what we want is what do we call that in our JavaScript and make sure we get that right.
+
+15
+00:01:07,020 --> 00:01:09,630
+So update system pref name and value.
+
+16
+00:01:09,630 --> 00:01:12,810
+Underscore CREF name.
+
+17
+00:01:15,890 --> 00:01:17,030
+And prep value
+
+18
+00:01:20,330 --> 00:01:28,730
+is a sign the value of our post from target prep value, if there's an error, if error is not equal
+
+19
+00:01:28,730 --> 00:01:39,560
+to nil, then respawn OK equals false and respect message is equal to error.
+
+20
+00:01:40,880 --> 00:01:43,670
+I think a error on error that will get it for us.
+
+21
+00:01:43,940 --> 00:01:46,060
+OK, so that should take care of it.
+
+22
+00:01:46,400 --> 00:01:48,650
+So let's give this a try.
+
+23
+00:01:48,650 --> 00:01:52,010
+So I'll start my application and start my application.
+
+24
+00:01:55,250 --> 00:01:59,360
+And we'll go to the database and look and see what it's set to right now, so monitoring live is currently
+
+25
+00:01:59,360 --> 00:01:59,960
+set to one.
+
+26
+00:02:00,680 --> 00:02:03,770
+And if I go back to my Web browser and reload this.
+
+27
+00:02:04,690 --> 00:02:08,290
+And turn it off and say, yes, I want it off.
+
+28
+00:02:08,470 --> 00:02:13,680
+I got a two hundred, OK, which set back, sent back OK is true with no message.
+
+29
+00:02:14,020 --> 00:02:15,370
+And if I go to the database.
+
+30
+00:02:17,360 --> 00:02:20,090
+The preferences now set to three No.
+
+31
+00:02:20,240 --> 00:02:25,430
+There it is, monitoring lives down here, so desirable because it has a higher I.D., it appears lower
+
+32
+00:02:25,430 --> 00:02:26,030
+on the screen.
+
+33
+00:02:26,870 --> 00:02:30,210
+So that should take care of it for us.
+
+34
+00:02:30,260 --> 00:02:36,110
+Now, if you really don't like that incremented ID, it's not that difficult to do fix that.
+
+35
+00:02:36,110 --> 00:02:38,750
+We can actually go back to our preferences.
+
+36
+00:02:38,750 --> 00:02:40,820
+And I'm going to do that because this irritates me right now.
+
+37
+00:02:41,300 --> 00:02:50,030
+I can actually copy this entire function pasted here and just call this update system pref.
+
+38
+00:02:53,830 --> 00:03:00,970
+Which is actually nicer, so we can just get rid of this and say query is assigned, so we'll just fix
+
+39
+00:03:00,970 --> 00:03:03,220
+this query and it's pretty straightforward.
+
+40
+00:03:03,220 --> 00:03:08,380
+We just say update preferences set.
+
+41
+00:03:08,590 --> 00:03:14,320
+And what's the name of the column preference equal to dollar sign one.
+
+42
+00:03:14,740 --> 00:03:16,570
+And then we'll do the updated as well.
+
+43
+00:03:17,590 --> 00:03:20,170
+Updated and equal to or something to where.
+
+44
+00:03:20,860 --> 00:03:27,340
+And the name column is called name name equals Dollar Sign three and we'll pass in the update.
+
+45
+00:03:27,340 --> 00:03:35,520
+Preferences set preference equal to and that will be the value updated at equal to time Don.
+
+46
+00:03:35,520 --> 00:03:36,010
+Now.
+
+47
+00:03:37,590 --> 00:03:45,420
+And the last one is where the name is equal to name, and I should do it for us now if I copy this signature.
+
+48
+00:03:47,260 --> 00:03:54,040
+And go to my repository and add that into, say, preferences up here.
+
+49
+00:03:55,500 --> 00:03:59,490
+We could use that one as well, but this is just may as well put it in there, it's not going to hurt
+
+50
+00:03:59,500 --> 00:03:59,870
+anything.
+
+51
+00:04:00,810 --> 00:04:04,380
+Go back to preferences and make sure this is all correct.
+
+52
+00:04:04,390 --> 00:04:05,220
+It is.
+
+53
+00:04:05,220 --> 00:04:12,180
+And go to our handlers and change this to update system, pref, pref name, press value.
+
+54
+00:04:12,180 --> 00:04:14,450
+And what I'm calling is name and value.
+
+55
+00:04:14,490 --> 00:04:15,280
+So that should work.
+
+56
+00:04:15,350 --> 00:04:17,610
+OK, so let's go back to her handlers.
+
+57
+00:04:17,620 --> 00:04:18,720
+Make sure that's correct.
+
+58
+00:04:19,260 --> 00:04:20,640
+Will stop our application.
+
+59
+00:04:20,640 --> 00:04:21,840
+Start our application.
+
+60
+00:04:24,180 --> 00:04:28,480
+And go reload the browser page, look at the database.
+
+61
+00:04:29,400 --> 00:04:34,950
+So right now, Monitoring Live has the idea of five and that should go to one and it is five when I
+
+62
+00:04:34,950 --> 00:04:35,490
+do this.
+
+63
+00:04:35,490 --> 00:04:36,270
+So let's try that.
+
+64
+00:04:37,350 --> 00:04:38,310
+I think this is cleaner.
+
+65
+00:04:38,310 --> 00:04:39,380
+I'll turn it back on.
+
+66
+00:04:41,460 --> 00:04:42,210
+Come here.
+
+67
+00:04:44,420 --> 00:04:45,680
+Reload the database.
+
+68
+00:04:47,520 --> 00:04:50,620
+And it did stay to ninety five and it got a preference of one.
+
+69
+00:04:51,330 --> 00:04:52,470
+So that's exactly what I wanted.
+
+70
+00:04:52,920 --> 00:04:57,870
+Now there may be some cleanup required at the end because I'm not entirely sure we need all of these
+
+71
+00:04:57,870 --> 00:04:58,740
+database methods.
+
+72
+00:04:58,740 --> 00:05:02,520
+But for our purposes, we just want to get to the point where we can play with WebSocket a little bit
+
+73
+00:05:02,520 --> 00:05:02,810
+more.
+
+74
+00:05:02,940 --> 00:05:05,640
+So I'm satisfied with this for the moment.
+
+75
+00:05:06,600 --> 00:05:06,960
+All right.
+
+76
+00:05:06,960 --> 00:05:13,590
+The next step is to actually go and turn our monitoring schedule on and off, and we'll take care of
+
+77
+00:05:13,590 --> 00:05:15,150
+that in the next lecture or two.

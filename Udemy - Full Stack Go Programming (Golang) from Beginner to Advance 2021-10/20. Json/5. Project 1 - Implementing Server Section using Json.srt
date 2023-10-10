@@ -1,0 +1,215 @@
+1
+00:00:11,760 --> 00:00:16,590
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:16,830 --> 00:00:23,380
+We want to create a simple project based on which they created Server listens to the requests of the
+
+3
+00:00:23,620 --> 00:00:25,740
+BBC in response to it.
+
+4
+00:00:26,100 --> 00:00:29,970
+And we use Jason for a part of its implementation.
+
+5
+00:00:31,620 --> 00:00:35,760
+It's time to go to this school program to implement this project.
+
+6
+00:00:37,470 --> 00:00:40,020
+First, define the project name like Jason
+
+7
+00:00:44,940 --> 00:00:48,420
+now created Jason five for in-store port.
+
+8
+00:00:48,750 --> 00:00:59,580
+For the example, we named it config the Jason and set a server port inside its new five config the
+
+9
+00:01:00,120 --> 00:01:00,570
+JS.
+
+10
+00:01:07,520 --> 00:01:21,340
+First, create a key like server, port and set value for this key, for example, localhost column
+
+11
+00:01:21,530 --> 00:01:34,080
+885 save the conflict Jason Farnon close it so we could create a JSON file for, say, to report address.
+
+12
+00:01:35,480 --> 00:01:44,210
+Now create the folder, for example, named it web and create the file like micro that go inside it.
+
+13
+00:01:45,740 --> 00:01:57,860
+Create a folder like that and create a file like my actual wet set package.
+
+14
+00:02:00,830 --> 00:02:08,510
+In this case, we create a method called run that that listens to the server based on the received address.
+
+15
+00:02:08,870 --> 00:02:21,380
+This method is supposed to listen to Esta Typekit request so right from wrong where and set a variable
+
+16
+00:02:21,380 --> 00:02:26,510
+like addressed by the type estrange and address a string
+
+17
+00:02:29,420 --> 00:02:31,190
+to implement this function.
+
+18
+00:02:31,220 --> 00:02:44,150
+We use the handle font function of the H-2B package, so we write each TB dot handle performs this function.
+
+19
+00:02:44,360 --> 00:02:49,230
+Access to arguements first the string pattern and second a handler.
+
+20
+00:02:49,630 --> 00:02:50,810
+What what is handler?
+
+21
+00:02:51,230 --> 00:02:55,940
+A handler is an object implementing the Typekit handler interface.
+
+22
+00:02:56,480 --> 00:03:03,730
+A common way to write a handler is by using the Estep handler func adopter on functions with the appropriate
+
+23
+00:03:03,730 --> 00:03:08,570
+that signature functions serving as handlers.
+
+24
+00:03:08,570 --> 00:03:15,770
+Take it to the response writer and issue the prerequisite is arguements the response writer is used
+
+25
+00:03:15,770 --> 00:03:18,020
+to feel in the HDP response.
+
+26
+00:03:18,440 --> 00:03:21,350
+Now you want to write a handler function.
+
+27
+00:03:22,040 --> 00:03:28,270
+So go out of this function and define a new function for handler form.
+
+28
+00:03:29,600 --> 00:03:33,170
+For example, a root handler
+
+29
+00:03:35,630 --> 00:03:37,640
+set two variables for this.
+
+30
+00:03:38,540 --> 00:03:45,650
+First, the other new by the type be Dot's response writer.
+
+31
+00:03:46,340 --> 00:03:53,480
+And second, for the example, are by the time asterisk HDP dot request.
+
+32
+00:03:56,420 --> 00:04:05,480
+Now we want to display our IP, so we write f m t dot f print f.
+
+33
+00:04:09,150 --> 00:04:14,760
+First, it's an optic as writer, so we put that on you, and that's a message.
+
+34
+00:04:16,340 --> 00:04:23,770
+Welcome your IP is personal.
+
+35
+00:04:23,930 --> 00:04:35,870
+It's like a sledgehammer and sits remote areas from request by our Dot Remote Address Remote address
+
+36
+00:04:35,870 --> 00:04:42,710
+allows keep servers and other software to record the network address that send the request.
+
+37
+00:04:43,430 --> 00:04:49,420
+Now we could create a handler, so we should register it in handler font functions.
+
+38
+00:04:50,450 --> 00:04:55,970
+Now, go to handle Frank again and register our handlers on server roads.
+
+39
+00:04:56,150 --> 00:05:04,040
+Using the HTP Dot Handle Function Convenience function, it sets up the default rotor in the net HDTV
+
+40
+00:05:04,040 --> 00:05:07,010
+package and takes the function is an argument.
+
+41
+00:05:07,580 --> 00:05:12,710
+So go to the rainville and implement handler function.
+
+42
+00:05:14,870 --> 00:05:25,580
+This it is less at root and Sid Handler function put route handler.
+
+43
+00:05:26,990 --> 00:05:33,380
+Finally, we call the liaison and serve function from SD package with the port in Handler,
+
+44
+00:05:36,950 --> 00:05:43,940
+HDTV, Dot, Lisa and Serve Sit.
+
+45
+00:05:45,860 --> 00:05:46,720
+Address
+
+46
+00:05:49,300 --> 00:05:50,500
+and need.
+
+47
+00:05:53,090 --> 00:06:01,730
+Listen and serve function lessons on the TCP network address and then can't serve with Hamler to handle
+
+48
+00:06:01,730 --> 00:06:03,880
+requests on incoming connections.
+
+49
+00:06:04,780 --> 00:06:07,390
+This function accept two parameters.
+
+50
+00:06:07,570 --> 00:06:14,770
+First address in second handler the handlers, typically Neil and Neil, tells it to use the default
+
+51
+00:06:14,770 --> 00:06:15,340
+rotor.
+
+52
+00:06:15,490 --> 00:06:24,430
+We have just set up OK, we were able to implement a server part in order not to prolong the time decision.
+
+53
+00:06:24,580 --> 00:06:28,300
+We will finish it and we will continue the content in the next session.
+
+54
+00:06:28,450 --> 00:06:28,990
+Goodbye.

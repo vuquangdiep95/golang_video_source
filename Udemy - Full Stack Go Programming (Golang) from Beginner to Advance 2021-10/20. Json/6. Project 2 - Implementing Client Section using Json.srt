@@ -1,0 +1,183 @@
+1
+00:00:11,920 --> 00:00:16,580
+Hello and welcome to the golden programming language course in the pit of your session.
+
+2
+00:00:16,600 --> 00:00:23,830
+We were able to implement a server part and in this session, we want to go to main function and use
+
+3
+00:00:23,830 --> 00:00:25,600
+from created server.
+
+4
+00:00:26,020 --> 00:00:30,730
+OK, now go to Project Explorer and create a main file.
+
+5
+00:00:31,810 --> 00:00:43,080
+You mean the go set package main and define main function.
+
+6
+00:00:46,570 --> 00:00:54,310
+But before main function, first we create an equivalent extract for the JS on file created at the beginning
+
+7
+00:00:54,310 --> 00:01:00,460
+of the project so that we can map that JSON file to the Golang equivalent data.
+
+8
+00:01:02,320 --> 00:01:04,330
+So the right time
+
+9
+00:01:07,870 --> 00:01:23,650
+configuration is to define a variable like server port by the time a string and set JSON tak
+
+10
+00:01:26,170 --> 00:01:27,970
+jason color.
+
+11
+00:01:30,550 --> 00:01:31,900
+Server for
+
+12
+00:01:34,540 --> 00:01:40,840
+now, go to the main function and open JSON file by the open function from OS package
+
+13
+00:01:44,200 --> 00:01:55,300
+first defined to variable file and call an equal and calling open function from worse package and set
+
+14
+00:01:55,570 --> 00:01:59,110
+config dot JSON file an argument for it.
+
+15
+00:02:00,310 --> 00:02:10,120
+Config dot js open function opens the named fine for reading if successful methods on the return file
+
+16
+00:02:10,120 --> 00:02:11,530
+can be used for reading.
+
+17
+00:02:11,680 --> 00:02:17,440
+If there is an error, it will be of type Astrid's pass or now we check error status.
+
+18
+00:02:18,430 --> 00:02:25,750
+If error, you like the fatal error that.
+
+19
+00:02:29,350 --> 00:02:29,610
+Yeah.
+
+20
+00:02:32,950 --> 00:02:42,130
+Now we create an object from configuration, obstruct, define a variable like con calling equals new
+
+21
+00:02:44,710 --> 00:02:45,610
+configuration.
+
+22
+00:02:52,400 --> 00:03:01,460
+From Jason Package, the call new decoder and Sid Fine as arguments to it then called function insists
+
+23
+00:03:01,460 --> 00:03:12,200
+common variable as empty in their face value, but first define a variable like error equals Jason Dodd's
+
+24
+00:03:12,680 --> 00:03:16,120
+new decoder set.
+
+25
+00:03:16,190 --> 00:03:24,290
+Fire this argument and call decode and Sid confess argument for it.
+
+26
+00:03:25,550 --> 00:03:32,960
+In this case, the good function reads the next JSON encoded value from its input and installs it in
+
+27
+00:03:32,960 --> 00:03:37,160
+the value pointer to buy conf now check error status.
+
+28
+00:03:37,580 --> 00:03:46,320
+If error like that fatal error darts error.
+
+29
+00:03:50,900 --> 00:03:58,130
+Now call drums that metal from the VVIP package and pass the port silver value to it as an argument
+
+30
+00:03:58,760 --> 00:04:06,890
+before calling Fonctionnent first set a message FP wrong, sir.
+
+31
+00:04:11,300 --> 00:04:23,240
+Now cutting function with dart from there and sit set report as arguments to it by the carve object.
+
+32
+00:04:25,460 --> 00:04:32,330
+Reformat the court, save the project and execute the program, see the Jason
+
+33
+00:04:34,820 --> 00:04:36,440
+go wrong.
+
+34
+00:04:36,680 --> 00:04:37,730
+Dot backslash.
+
+35
+00:04:38,330 --> 00:04:39,020
+That's cool.
+
+36
+00:04:41,710 --> 00:04:49,600
+OK, now we can see server is running in this time we go to browser and enter defined address in JSON
+
+37
+00:04:49,600 --> 00:04:57,640
+file and we will see the server response go to the browser, enter a defined address in JSON.
+
+38
+00:04:57,640 --> 00:05:07,330
+Find in browser you are at low quarter past column 885 and press enter.
+
+39
+00:05:07,900 --> 00:05:08,410
+OK.
+
+40
+00:05:08,800 --> 00:05:11,020
+We can see the server response.
+
+41
+00:05:12,370 --> 00:05:16,120
+We could create a single server and send requests to it.
+
+42
+00:05:16,120 --> 00:05:21,100
+And for this purpose, we use Jason Phi and they got into coding data.
+
+43
+00:05:21,340 --> 00:05:25,420
+And in this project, we could use from JSON implementation.
+
+44
+00:05:26,470 --> 00:05:28,380
+We have reached the end of this session.
+
+45
+00:05:28,390 --> 00:05:32,210
+I hope you have taken full advantage of decision until next session.
+
+46
+00:05:32,230 --> 00:05:32,860
+Good bye.

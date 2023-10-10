@@ -1,0 +1,1475 @@
+1
+00:00:00,570 --> 00:00:05,220
+So, as promised, let's have a quick look at how you test handlers, and I'm not going to test all
+
+2
+00:00:05,220 --> 00:00:11,430
+of the handlers in this lecture, but I will do a couple, one that just displays a page and one that
+
+3
+00:00:11,430 --> 00:00:13,290
+actually handles a form post.
+
+4
+00:00:13,620 --> 00:00:15,810
+And those are these two routes right here.
+
+5
+00:00:15,820 --> 00:00:20,730
+I'm looking at my routes files, so I'll test the login screen and posting to the login screen.
+
+6
+00:00:21,270 --> 00:00:26,310
+And there's a couple of things you need to do to make this take place, because we don't want in our
+
+7
+00:00:26,310 --> 00:00:29,900
+tests to actually run a real database in the background.
+
+8
+00:00:29,910 --> 00:00:33,850
+We want to have a dummy database and we want to have complete control over that.
+
+9
+00:00:34,260 --> 00:00:40,500
+So what I've done and this is a fairly time consuming process, so I just did it and will show it to
+
+10
+00:00:40,500 --> 00:00:42,630
+you is in my repository.
+
+11
+00:00:42,780 --> 00:00:50,970
+I created a new file called Test Dash Repco, and that file has every single database function that
+
+12
+00:00:50,970 --> 00:00:52,850
+exists in our postgrads repo.
+
+13
+00:00:53,280 --> 00:00:57,770
+So I just duplicated them all, but I changed them to make them as simple as I possibly could.
+
+14
+00:00:57,780 --> 00:01:04,630
+For example, all users returns a slice of pointers to model user and a potentially an error.
+
+15
+00:01:04,710 --> 00:01:10,800
+So I just created an empty variable and returned that and Nhill and I did exactly that for every single
+
+16
+00:01:10,800 --> 00:01:11,300
+function.
+
+17
+00:01:11,640 --> 00:01:15,060
+So just return the bare minimum to get this to work.
+
+18
+00:01:15,510 --> 00:01:21,060
+And the other change in the test repo is that I'm not using the receiver of Postgrads DB repo.
+
+19
+00:01:21,300 --> 00:01:28,620
+I'm using the receiver of a pointer to test DB repo and you'll find that in the DB profile.
+
+20
+00:01:28,620 --> 00:01:29,940
+That's the other change that I made.
+
+21
+00:01:29,950 --> 00:01:34,920
+So I'm not going to force you to watch me type all of this stuff out because it's fairly time consuming
+
+22
+00:01:34,920 --> 00:01:38,260
+and not terribly difficult in DB Repo.
+
+23
+00:01:38,670 --> 00:01:45,480
+We have a new struct, a new type of struct named test DB repo and we have a new function, new testing
+
+24
+00:01:45,480 --> 00:01:45,890
+repo.
+
+25
+00:01:46,230 --> 00:01:48,780
+So those are the only changes I made for the database.
+
+26
+00:01:48,850 --> 00:01:54,240
+OK, so now we actually want to start building the tests and the tests are pretty straightforward.
+
+27
+00:01:54,600 --> 00:02:00,660
+But as is the case in pretty much any programming language and certainly Engo, you need to establish
+
+28
+00:02:00,930 --> 00:02:05,340
+the environment in which you're going to conduct testing and then go.
+
+29
+00:02:05,340 --> 00:02:08,580
+We do that by and I'm doing this in the internal folder.
+
+30
+00:02:08,580 --> 00:02:15,750
+In the handler's folder, I'm creating a new file, a new go file called Setup Underscore Testico.
+
+31
+00:02:16,020 --> 00:02:19,740
+And that is exactly what it has to be named.
+
+32
+00:02:20,280 --> 00:02:26,670
+So what we're going to do in this file is almost exactly let me go back to our main package and go to
+
+33
+00:02:26,670 --> 00:02:31,020
+the main dutko, almost exactly what we do in this function setup app.
+
+34
+00:02:31,080 --> 00:02:32,100
+So let's have a look at that.
+
+35
+00:02:32,640 --> 00:02:36,450
+Now, I don't care about reading flags because we're not going to be reading flags, but much of the
+
+36
+00:02:36,450 --> 00:02:42,240
+rest of what we see in here, I have to to some extent duplicate and I need to set up the environment
+
+37
+00:02:42,240 --> 00:02:45,020
+enough that I can actually run the appropriate handlers.
+
+38
+00:02:45,300 --> 00:02:49,910
+So let's go back to set up tests are set up test go and start working here.
+
+39
+00:02:49,920 --> 00:02:53,820
+So the first thing I need is a session and I'm going to give it a name, a new name I could use the
+
+40
+00:02:53,820 --> 00:02:55,710
+one that's already in the package called Session.
+
+41
+00:02:56,040 --> 00:03:02,490
+But I like to keep things clean, so I'll create a variable called test session and it's of type six
+
+42
+00:03:02,770 --> 00:03:03,630
+session manager.
+
+43
+00:03:03,660 --> 00:03:07,950
+And that's exactly the same type of the variable session in our main package.
+
+44
+00:03:08,040 --> 00:03:14,820
+OK, so set that up now because I'm running setup test, I'm going to have a function which will be
+
+45
+00:03:14,820 --> 00:03:21,900
+named Tessmann, OK, and it takes a parameter and I'm going to call the name M, but it's a type testing
+
+46
+00:03:22,650 --> 00:03:23,010
+M.
+
+47
+00:03:25,760 --> 00:03:26,180
+OK.
+
+48
+00:03:26,630 --> 00:03:32,060
+And inside of here, I'll start by using that test session variable I just created, because one of
+
+49
+00:03:32,090 --> 00:03:36,610
+the first things I do in setup Dash Apptio is actually set up the session.
+
+50
+00:03:36,680 --> 00:03:45,350
+So test session is equal to exact new because I'm using Alex Edwards, ESCs session manager and I'll
+
+51
+00:03:45,350 --> 00:03:47,150
+give it a lifetime test session.
+
+52
+00:03:48,410 --> 00:03:54,410
+Lifetime is equal to 24 times time dort hour, which is more than long enough for our purposes.
+
+53
+00:03:54,410 --> 00:03:56,960
+I can make it a few seconds, but I'll just make it 24 hours.
+
+54
+00:03:57,710 --> 00:04:00,900
+We'll make the Kushkaki persist test session dout.
+
+55
+00:04:02,200 --> 00:04:13,810
+Test session cookie persist equals true, and I will make the I have to set the same site attribute
+
+56
+00:04:13,810 --> 00:04:22,670
+on the cookie, so test session that cookie, same site and I'll make that equal to the constant HDB.
+
+57
+00:04:22,690 --> 00:04:24,910
+That same site lacks mode.
+
+58
+00:04:26,820 --> 00:04:34,240
+And I don't want these cookies to be secure for our testing purposes, test session, the cookie DOT's
+
+59
+00:04:34,260 --> 00:04:34,920
+secure.
+
+60
+00:04:37,780 --> 00:04:38,590
+Equals false.
+
+61
+00:04:38,900 --> 00:04:44,980
+OK, so that defines our session now in our application, we're actually using a postgrads store, but
+
+62
+00:04:44,980 --> 00:04:49,600
+here you can use a cookie store because I just need the cookie in the session to exist for the duration
+
+63
+00:04:49,600 --> 00:04:50,320
+of the tests.
+
+64
+00:04:50,890 --> 00:04:55,750
+We also need a mail queue, which we're not going to use, but I'll set it up because we might do this
+
+65
+00:04:55,750 --> 00:04:56,650
+later in testing.
+
+66
+00:04:56,680 --> 00:04:57,370
+Try that again.
+
+67
+00:05:00,010 --> 00:05:01,390
+Male Hugh.
+
+68
+00:05:04,610 --> 00:05:11,140
+Is a sign the value of make Channe Channel data, adult male data or male job, not male data.
+
+69
+00:05:12,230 --> 00:05:18,040
+And this is, again, just copying straight out of the setup test function or set up app function,
+
+70
+00:05:18,050 --> 00:05:20,120
+and I'll give it a limit of five.
+
+71
+00:05:20,450 --> 00:05:25,610
+OK, and now we'll define our config and I'll just create a variable.
+
+72
+00:05:25,610 --> 00:05:33,470
+A is a sign the value of config app config and I'll put in the bare minimum, I'll put in a DB which
+
+73
+00:05:33,470 --> 00:05:41,570
+will just be a pointer to a type of driver DB just so I can satisfy the requirements and that's never
+
+74
+00:05:41,570 --> 00:05:42,470
+going to get used.
+
+75
+00:05:43,690 --> 00:05:46,390
+The session will be our test session.
+
+76
+00:05:48,630 --> 00:05:53,550
+Which we just to find up here in production is going to be called a false.
+
+77
+00:05:55,750 --> 00:05:58,150
+The domain will just be localhost.
+
+78
+00:06:01,430 --> 00:06:06,290
+And the male Q, which we're not using, but we would for subsequent tests, will be male Q.
+
+79
+00:06:08,670 --> 00:06:16,020
+And that should be enough for that senator to define that variable, A, I'll take the package variable
+
+80
+00:06:16,020 --> 00:06:20,070
+app which already exists and make that a reference to it.
+
+81
+00:06:20,140 --> 00:06:21,360
+So we have it in the correct type.
+
+82
+00:06:21,810 --> 00:06:24,600
+We also need a preference map, even though I'm not going to use it.
+
+83
+00:06:24,760 --> 00:06:32,580
+I will say preference map is assign the value of make a map, string, string.
+
+84
+00:06:33,710 --> 00:06:36,540
+I'm just doing that so I can stick the preference map in the app.
+
+85
+00:06:36,540 --> 00:06:40,170
+And if you ever needed to populate it with information, you could do so in your tests.
+
+86
+00:06:40,500 --> 00:06:42,660
+And if we set it up now, it's out of the way.
+
+87
+00:06:43,140 --> 00:06:47,280
+App dot preference map is equal to preference map.
+
+88
+00:06:49,200 --> 00:06:51,870
+I also need a push or client, which I'm not using for this test.
+
+89
+00:06:51,870 --> 00:06:58,860
+But again, I may as well set it up as client is a sign the value of pusher dot client.
+
+90
+00:07:02,150 --> 00:07:05,690
+And we'll give it an app ID, too many quotes there.
+
+91
+00:07:07,390 --> 00:07:16,480
+Try that again, APD will make it one the same as we did before, our secret will make exactly what
+
+92
+00:07:16,480 --> 00:07:17,170
+we had before.
+
+93
+00:07:17,200 --> 00:07:23,740
+One, two, three, ABC and the key ABC.
+
+94
+00:07:23,980 --> 00:07:24,980
+One, two, three.
+
+95
+00:07:26,410 --> 00:07:29,050
+And we also need secure, which I'll set to false.
+
+96
+00:07:32,330 --> 00:07:37,700
+And host, which will be localhost four thousand one.
+
+97
+00:07:38,520 --> 00:07:44,330
+OK, so we have our clients set up, let's add that to our map, to our config.
+
+98
+00:07:45,280 --> 00:07:48,170
+W.S. client is equal to W.S. client.
+
+99
+00:07:50,780 --> 00:07:58,100
+And there's a few more things we need to set up, we actually need a monitor map, which is a sign the
+
+100
+00:07:58,100 --> 00:08:03,560
+value of make a map into and that one is a Kronborg entry.
+
+101
+00:08:04,610 --> 00:08:08,510
+And again, we're not using it, but we might for subsequent tests, we might as well set it up right
+
+102
+00:08:08,510 --> 00:08:11,060
+now and set out in our app config.
+
+103
+00:08:18,640 --> 00:08:24,460
+And we also need to get the actual Chron stuff and just to save some typing, I'll go over to set up
+
+104
+00:08:24,520 --> 00:08:27,070
+app and I'll see if I can find all of that.
+
+105
+00:08:28,530 --> 00:08:34,620
+Right here, we need this stuff, so I'll copy that, and this is just the scheduler, so I'm copying
+
+106
+00:08:34,620 --> 00:08:40,800
+the local zone down to Aptos scheduler, equal scheduler, and I'll paste that right into my setup test.
+
+107
+00:08:41,260 --> 00:08:46,860
+Now we need to create a repository, and I'm not going to create a repository the way that we did in
+
+108
+00:08:46,860 --> 00:08:49,230
+the last time because I don't want a true database repository.
+
+109
+00:08:49,230 --> 00:08:52,240
+Instead, we'll take advantage of that new test handlers.
+
+110
+00:08:53,160 --> 00:08:57,550
+So in order to make the repository, we're actually going to have to have a new function.
+
+111
+00:08:57,570 --> 00:09:05,190
+So if you go back to set up app, for example, and we go back to the main, which is right here, let's
+
+112
+00:09:05,190 --> 00:09:06,300
+see if I can find that.
+
+113
+00:09:08,840 --> 00:09:12,500
+Now, it's not in there must be an set up app, just let me look for repo.
+
+114
+00:09:15,100 --> 00:09:22,840
+There it is, so here in setup app at line 106 in mine, I actually create a repository by calling new
+
+115
+00:09:22,840 --> 00:09:26,440
+postgrads handlers on in the handler's package.
+
+116
+00:09:26,950 --> 00:09:33,520
+But instead of test, I don't want to do that because I don't actually want to have a true database
+
+117
+00:09:33,520 --> 00:09:33,760
+running.
+
+118
+00:09:33,790 --> 00:09:38,230
+So what I'm going to do is create a function outside of the function we've been working on in setup
+
+119
+00:09:38,230 --> 00:09:38,650
+test.
+
+120
+00:09:39,010 --> 00:09:42,250
+And I'm going to call it new test handlers.
+
+121
+00:09:45,360 --> 00:09:52,470
+And it will take a parameter, a of type pointer to configure app config, and that's it.
+
+122
+00:09:52,800 --> 00:09:59,010
+Now, in the other case, back in set up app, the new postgrads handlers actually takes two parameters.
+
+123
+00:09:59,040 --> 00:10:04,020
+The database driver, which we don't care about in our case, but we do care about the app config.
+
+124
+00:10:04,050 --> 00:10:09,390
+So the function I'm creating right now, new test handlers is almost identical to this one, but it
+
+125
+00:10:09,390 --> 00:10:11,160
+doesn't have that argument for the database.
+
+126
+00:10:11,160 --> 00:10:16,370
+So let's go back to setup test and finish writing our new test handler's function.
+
+127
+00:10:17,070 --> 00:10:21,570
+So it's going to return a pointer to DB repo, just like the postgrads one does.
+
+128
+00:10:22,290 --> 00:10:32,370
+And we will return ampersand DB repo and will populate the app, the app part of it, which we're going
+
+129
+00:10:32,370 --> 00:10:40,380
+to use with a the parameter we're receiving and the DB will be a instead of going to the actual Postgres
+
+130
+00:10:40,380 --> 00:10:42,270
+database will call that function.
+
+131
+00:10:42,270 --> 00:10:49,560
+DB Repo, new testing, DB Repo, our new testing repo and it just takes one parameter.
+
+132
+00:10:49,610 --> 00:10:53,760
+Hey so now that I have this function available I can actually call it.
+
+133
+00:10:55,270 --> 00:11:02,980
+So up here, back in our test main function, I will say repo is a sign the value of new test handlers.
+
+134
+00:11:05,150 --> 00:11:06,650
+And just pass it, my app.
+
+135
+00:11:09,290 --> 00:11:16,160
+So now that I have that repo, I can actually call new handlers, just as we do back and set up app
+
+136
+00:11:16,160 --> 00:11:20,530
+here, we call handlers, new handlers that's in set up app, which is in the main package.
+
+137
+00:11:20,540 --> 00:11:25,850
+So I have to prepend the package name over here and set up test because I'm duplicating this environment.
+
+138
+00:11:26,330 --> 00:11:32,750
+I simply pass new handlers, the repo I just created, which has a dummy database and my app variable.
+
+139
+00:11:34,630 --> 00:11:36,580
+And the last thing I think I need to set up.
+
+140
+00:11:36,940 --> 00:11:38,620
+Well, there's actually two things they need to set up.
+
+141
+00:11:39,010 --> 00:11:42,840
+One is called is to actually set up the helpers.
+
+142
+00:11:42,850 --> 00:11:49,330
+And again, now that I have this this new repository, my new app variable with the correct repo, I
+
+143
+00:11:49,330 --> 00:11:50,470
+can just say helper's.
+
+144
+00:11:52,370 --> 00:11:53,300
+New Helper's.
+
+145
+00:11:54,630 --> 00:11:55,570
+And pass it, my app.
+
+146
+00:11:56,580 --> 00:12:01,620
+Now, there's one thing I need to put at the end here before I forget, whenever you have a test main
+
+147
+00:12:01,620 --> 00:12:08,670
+function, as I do in my setup, underscore testing, go file, you have to call OS X, which seems
+
+148
+00:12:08,670 --> 00:12:15,240
+strange, but os x it, and then you have to pass the parameter emerg run, which will actually run
+
+149
+00:12:15,240 --> 00:12:18,760
+the tests just before this, this function exits.
+
+150
+00:12:19,800 --> 00:12:23,850
+So there's one more thing we need to take care of here, and it's something you might not have thought
+
+151
+00:12:23,850 --> 00:12:26,220
+of because it's not immediately obvious.
+
+152
+00:12:26,370 --> 00:12:29,490
+And that is when we're rendering a page in our application.
+
+153
+00:12:29,490 --> 00:12:35,550
+We're actually calling a function in this folder Helper's and it's inside the Helper's Digo file.
+
+154
+00:12:35,880 --> 00:12:42,690
+And in this file helpers, Doug, we have this variable views and that's used when we actually render
+
+155
+00:12:42,690 --> 00:12:45,810
+our page views of type jet new set.
+
+156
+00:12:45,820 --> 00:12:47,010
+So it's the new set type.
+
+157
+00:12:47,160 --> 00:12:52,080
+And inside of that we have a hard coded value that points to our views folder where we have all our
+
+158
+00:12:52,320 --> 00:12:52,890
+templates.
+
+159
+00:12:53,610 --> 00:12:59,850
+And the problem is when we run our tests, that path name is not correct because we're not actually
+
+160
+00:12:59,850 --> 00:13:02,750
+running the tests from the root level of our application.
+
+161
+00:13:02,760 --> 00:13:06,710
+We're running them from inside the internal folder and inside the handler's folder.
+
+162
+00:13:07,110 --> 00:13:11,460
+So to get around that, I'm going to do what I usually do and that's just create a function, a mutator
+
+163
+00:13:11,460 --> 00:13:15,340
+that allows me to overwrite the value of this variable if I ever need to.
+
+164
+00:13:15,750 --> 00:13:17,130
+So I will call it func.
+
+165
+00:13:19,960 --> 00:13:27,490
+SEPP views, and it will take one argument path, which is of type string, and it will return nothing.
+
+166
+00:13:28,840 --> 00:13:38,380
+And all I do is copy this, paste it into here and get rid of this part var because I'm overriding an
+
+167
+00:13:38,380 --> 00:13:43,120
+existing variable and I'll replace this with path.
+
+168
+00:13:44,200 --> 00:13:46,230
+Now I have this set views function available.
+
+169
+00:13:46,480 --> 00:13:47,350
+Let's give it a comment.
+
+170
+00:13:50,540 --> 00:13:57,050
+Set views sets the views variable for testing.
+
+171
+00:13:58,170 --> 00:14:08,160
+OK, now, back in my set up test, after I call my helpers function, I can actually just say helpers
+
+172
+00:14:08,710 --> 00:14:16,230
+set views and give it the correct path, which would be the current directory slash up one directory,
+
+173
+00:14:16,230 --> 00:14:22,560
+which gets me outside of the handler's folder and into the internals folder, slash up one directory,
+
+174
+00:14:22,560 --> 00:14:25,800
+which gets me to the root level of the application and then the views folder.
+
+175
+00:14:26,250 --> 00:14:33,000
+OK, so now we've got our setup test ready to go and we're ready to actually write some tests.
+
+176
+00:14:34,340 --> 00:14:39,080
+Sorry, but I had to take a break to get some caffeine to get through the rest of this lecture, which
+
+177
+00:14:39,080 --> 00:14:41,330
+is turning out to be a little bit longer than I anticipated.
+
+178
+00:14:41,330 --> 00:14:42,980
+But this is important content.
+
+179
+00:14:43,610 --> 00:14:45,650
+So we're ready to start writing some tests.
+
+180
+00:14:45,680 --> 00:14:48,380
+So I'm going to go to my handler's folder and I'll create a new file.
+
+181
+00:14:49,310 --> 00:14:53,450
+And I will call it handler's underscore test go.
+
+182
+00:14:53,450 --> 00:14:55,730
+And it has to end in underscore Testico.
+
+183
+00:14:57,110 --> 00:15:01,100
+So I'm going to write some tests that will test only two things.
+
+184
+00:15:01,100 --> 00:15:03,830
+And if I look at the roots file, here are the two I'm going to test.
+
+185
+00:15:03,860 --> 00:15:10,160
+I'm going to test the login screen displaying the login screen and actually handing the post, which
+
+186
+00:15:10,160 --> 00:15:13,580
+of course tests these two handlers, login screen and login.
+
+187
+00:15:14,130 --> 00:15:17,720
+I'm going to write what many people do and go and I do all the time.
+
+188
+00:15:17,990 --> 00:15:22,970
+I'll write table tests so I can very easily run a number of tests using the same function.
+
+189
+00:15:23,540 --> 00:15:30,230
+So to do that, I'm going to create variable and I'll call the variable login tests and it will be a
+
+190
+00:15:30,230 --> 00:15:31,790
+slice of Starbucks.
+
+191
+00:15:33,140 --> 00:15:36,800
+And let's describe the contents of each of the entries in the slice.
+
+192
+00:15:36,830 --> 00:15:41,570
+I'm going to have a name which is just for me, it's the name of the test I'm going to run and that's
+
+193
+00:15:41,570 --> 00:15:42,020
+a string.
+
+194
+00:15:42,590 --> 00:15:45,110
+I will have the URL, which again is a string.
+
+195
+00:15:46,130 --> 00:15:49,700
+I will have the method which will be either get or post.
+
+196
+00:15:49,700 --> 00:15:50,630
+So that's a string.
+
+197
+00:15:52,880 --> 00:15:59,780
+Then I will have the posted data, and that will be any time I'm running a test that requires an HTTP
+
+198
+00:15:59,780 --> 00:16:05,450
+post, I need to post some data and that will be of type URL values, which is a built in type, as
+
+199
+00:16:05,450 --> 00:16:05,810
+you know.
+
+200
+00:16:07,580 --> 00:16:16,820
+And then I'm going to have the expected response code, for example, 200 for HTP status, OK, or 303
+
+201
+00:16:16,820 --> 00:16:20,100
+for status C other and that will be of type empt.
+
+202
+00:16:20,570 --> 00:16:26,810
+OK, so those are my members or what I'm going to have in each entry in the slice now less populated
+
+203
+00:16:26,840 --> 00:16:28,650
+with each of our tests and I'll do two.
+
+204
+00:16:29,210 --> 00:16:33,770
+So the first one will be the test that just displays the login screen.
+
+205
+00:16:33,770 --> 00:16:37,580
+So I'll open new parentheses and I'll put it on multiple lines.
+
+206
+00:16:37,580 --> 00:16:38,270
+So it's readable.
+
+207
+00:16:38,780 --> 00:16:42,290
+The name, which is for my purposes, is just login screen.
+
+208
+00:16:44,490 --> 00:16:50,840
+The euro and the euro for displaying the login screen in our case is just the root level of our application,
+
+209
+00:16:51,780 --> 00:16:55,320
+the method in this case will be get because I'm not posting anything.
+
+210
+00:16:56,100 --> 00:17:02,220
+Therefore, I can skip the next entry posted data and my expected response code will be 200.
+
+211
+00:17:02,220 --> 00:17:07,900
+But I'll use the constant built into the package HDP status, OK, which just makes it more readable.
+
+212
+00:17:07,950 --> 00:17:09,060
+So that's our first test.
+
+213
+00:17:10,350 --> 00:17:16,680
+Our second test will will be the one that actually posts information to that form on the login screen.
+
+214
+00:17:17,160 --> 00:17:24,630
+So name I'll call it login screen, post the URL once again.
+
+215
+00:17:24,630 --> 00:17:27,270
+That's just slash the method.
+
+216
+00:17:27,270 --> 00:17:32,790
+In this case it will be post and this one does have some euro value.
+
+217
+00:17:32,790 --> 00:17:39,030
+So I need posted data and that will be of type you URL values and I'll just populate what people actually
+
+218
+00:17:39,030 --> 00:17:40,560
+enter onto that form.
+
+219
+00:17:40,980 --> 00:17:45,720
+And if you recall, there's a field called email and it's value.
+
+220
+00:17:45,720 --> 00:17:50,280
+It has to be in curly braces because you can actually have more than one value for a form post, for
+
+221
+00:17:50,280 --> 00:17:52,650
+example, a bunch of checkboxes.
+
+222
+00:17:52,650 --> 00:17:54,000
+But in this case we just have one.
+
+223
+00:17:54,000 --> 00:17:56,580
+So I'll put me at here.
+
+224
+00:17:56,580 --> 00:17:59,430
+Dotcom, it doesn't matter what it is, as long as there's a value.
+
+225
+00:17:59,790 --> 00:18:04,020
+And then I'll duplicate this line and my second value is actually password.
+
+226
+00:18:05,100 --> 00:18:06,570
+And for that I can put anything.
+
+227
+00:18:06,570 --> 00:18:07,830
+So I'll just put password.
+
+228
+00:18:10,320 --> 00:18:18,990
+And finally, what's my my expected response code in this case, it's status C other and if you look
+
+229
+00:18:18,990 --> 00:18:23,700
+at the at the actual handler, you'll see that that's exactly what we're looking for.
+
+230
+00:18:23,730 --> 00:18:25,340
+So those are my test cases.
+
+231
+00:18:25,830 --> 00:18:31,620
+Now I'm going to write a function function and I'll just call it test login screen.
+
+232
+00:18:33,630 --> 00:18:41,370
+And because we're in the testing package, it takes a parameter T of type points to testing dog T and
+
+233
+00:18:41,370 --> 00:18:43,980
+let's write the actual tests themselves.
+
+234
+00:18:44,010 --> 00:18:49,680
+So what I'll do because I'm running table tests is range through all the tests for I don't care about
+
+235
+00:18:49,680 --> 00:18:52,320
+the index and I'll call the individual entries.
+
+236
+00:18:52,320 --> 00:18:56,520
+E is assign the value of range through log-in tests.
+
+237
+00:18:59,400 --> 00:19:05,460
+Now, what we need to do, first of all, is to build request, just as you would have in a Web browser,
+
+238
+00:19:05,460 --> 00:19:11,670
+so somebody in a Web browser hits a page and issues a request to a page that sends a request to the
+
+239
+00:19:11,670 --> 00:19:12,040
+server.
+
+240
+00:19:12,060 --> 00:19:17,520
+So let's build a request request and I'll ignore the second parameter is assigned the value of right
+
+241
+00:19:17,520 --> 00:19:26,080
+from the TTP package we're going to call new request and the method will be IDOT method.
+
+242
+00:19:26,640 --> 00:19:32,010
+OK, now this after the method, what are we calling URL?
+
+243
+00:19:32,370 --> 00:19:33,270
+That's our URL.
+
+244
+00:19:33,600 --> 00:19:36,930
+And I'm not passing in any case any anything in any data.
+
+245
+00:19:36,930 --> 00:19:38,310
+In the first case, no body.
+
+246
+00:19:38,310 --> 00:19:40,020
+So I'm not posting a Jason request.
+
+247
+00:19:40,020 --> 00:19:42,210
+I'm not posting you are values.
+
+248
+00:19:42,750 --> 00:19:48,450
+But of course we have one that requires no posted values and we have one that does.
+
+249
+00:19:48,480 --> 00:19:50,640
+So let's surround this whole thing in an if statement.
+
+250
+00:19:50,760 --> 00:20:00,900
+If Eatock method is equal to get, then do this, otherwise do this.
+
+251
+00:20:01,170 --> 00:20:03,470
+So we'll handle the get requests first.
+
+252
+00:20:03,480 --> 00:20:06,210
+Our first case just testing, displaying the login screen.
+
+253
+00:20:08,010 --> 00:20:13,260
+Now, the next thing we want to do is create a response are is going to be a variable and I'm not going
+
+254
+00:20:13,260 --> 00:20:15,450
+to create a true HTP response.
+
+255
+00:20:15,460 --> 00:20:23,240
+Instead, I'll create from the HTP test package a new recorder and then actually gives me something.
+
+256
+00:20:23,250 --> 00:20:28,320
+If you look at its signature, it gives me a response recorder and a response recorder satisfies the
+
+257
+00:20:28,320 --> 00:20:32,060
+interface requirements for an HTTP response writer.
+
+258
+00:20:32,070 --> 00:20:36,570
+So we can use that as our response and link between these two things.
+
+259
+00:20:36,970 --> 00:20:38,520
+There's something else I need to do.
+
+260
+00:20:38,520 --> 00:20:45,810
+I need to actually add the ability to manage a session to our code, because if we actually go back
+
+261
+00:20:45,810 --> 00:20:51,650
+to our roots file and look, for example, at the login screen, so we'll go to the login screen method,
+
+262
+00:20:52,110 --> 00:20:54,480
+this actually immediately checks the session.
+
+263
+00:20:54,720 --> 00:21:01,290
+Now, back in our setup test, we built up a session, but we actually need to add that information
+
+264
+00:21:01,290 --> 00:21:05,550
+to the request we just generated right, right here.
+
+265
+00:21:06,120 --> 00:21:08,220
+So we made this request.
+
+266
+00:21:08,220 --> 00:21:09,410
+We have a request now.
+
+267
+00:21:09,420 --> 00:21:14,370
+We actually need to add some session data to it so we can actually use the session in our handler that
+
+268
+00:21:14,370 --> 00:21:15,240
+we're trying to test.
+
+269
+00:21:15,840 --> 00:21:19,980
+So I'm going to add that method in my setup test.
+
+270
+00:21:20,130 --> 00:21:20,820
+So let me go here.
+
+271
+00:21:22,330 --> 00:21:26,590
+And right at the very bottom, just before test new handlers, I'm going to write a funk, which I'll
+
+272
+00:21:26,590 --> 00:21:34,810
+call get X for context and it will take as a parameter a request, which is a pointer to HTTP request,
+
+273
+00:21:35,650 --> 00:21:39,160
+and it will return a context, that context.
+
+274
+00:21:40,300 --> 00:21:47,110
+OK, and this is a very simple function, I'm just going to create a new variable called Sirtex and
+
+275
+00:21:47,590 --> 00:21:54,540
+potentially an error that's assigned the value of from the test session variable we made in our setup
+
+276
+00:21:54,730 --> 00:22:02,950
+underscore test go file I will load, which is a built in method using the context from this request
+
+277
+00:22:03,070 --> 00:22:04,690
+request context.
+
+278
+00:22:06,010 --> 00:22:07,150
+That's the first parameter.
+
+279
+00:22:07,690 --> 00:22:17,650
+And I'll get the header request dot header doget and I'm looking for exactly like this X dash session.
+
+280
+00:22:19,430 --> 00:22:20,950
+So that gets me the information.
+
+281
+00:22:20,950 --> 00:22:23,470
+I need to be able to use the session and I'll check for an error.
+
+282
+00:22:23,500 --> 00:22:30,160
+If error is not equal to nil, I'll just log it logged up print line error and all I do now is return.
+
+283
+00:22:32,590 --> 00:22:38,560
+OK, so that gives me a method of getting the necessary information into our request.
+
+284
+00:22:40,150 --> 00:22:43,240
+Hands back a context that I can add back into a request.
+
+285
+00:22:43,270 --> 00:22:44,980
+So let's go back to our handlers test.
+
+286
+00:22:45,340 --> 00:22:49,330
+And in between request and response here, I'll simply call that function.
+
+287
+00:22:50,980 --> 00:22:59,490
+Cortex is assigned get context, and I handed the request we just made, and then I add that context
+
+288
+00:22:59,490 --> 00:23:01,280
+back into the request.
+
+289
+00:23:01,290 --> 00:23:02,670
+So request equals.
+
+290
+00:23:03,920 --> 00:23:05,990
+Request with context.
+
+291
+00:23:07,790 --> 00:23:14,240
+OK, so now we've got our request, we've added the necessary information for the session and we have
+
+292
+00:23:14,240 --> 00:23:20,540
+a response writer, a response recorder, actually, so let's get our handler.
+
+293
+00:23:20,660 --> 00:23:26,900
+Now, the thing is, what I want to do here is I want to call a method that's available to us that requires
+
+294
+00:23:26,900 --> 00:23:29,660
+an HTTP dog handler funk.
+
+295
+00:23:29,990 --> 00:23:34,160
+So I need to actually create a new variable, which I'll call handler is assigned.
+
+296
+00:23:34,160 --> 00:23:43,340
+The value of Al I'm going to do is cast my handler to an HTP handler func HGP dog handler func and make
+
+297
+00:23:43,340 --> 00:23:44,600
+sure you don't choose this one.
+
+298
+00:23:44,690 --> 00:23:51,650
+You need the one with the AH and I'm going to call the handler that displays the login screen, which
+
+299
+00:23:51,650 --> 00:23:54,950
+happens to be in my case, repo login screen.
+
+300
+00:23:56,690 --> 00:24:03,500
+Now that I have this handler, I can actually call the handler itself with the response recorder as
+
+301
+00:24:03,500 --> 00:24:10,670
+my response writer and the request so handler because it's been cast to an HDB handler func.
+
+302
+00:24:11,120 --> 00:24:19,610
+I have this method serve HTP and I hand it out and request and all I do at this point is test to see
+
+303
+00:24:19,880 --> 00:24:22,620
+if the response code I get back is the correct one.
+
+304
+00:24:22,970 --> 00:24:30,620
+So if our code is not equal to what my expected code is, my expected response code, if I'm not getting
+
+305
+00:24:30,620 --> 00:24:35,810
+back in this case and a 200 status, OK, then I have an error.
+
+306
+00:24:35,810 --> 00:24:37,730
+So I'll just write an error tag error.
+
+307
+00:24:38,840 --> 00:24:45,860
+I'll use it on error actually, and I'll put in percent s, which will be the name of this expected
+
+308
+00:24:45,860 --> 00:24:48,350
+percent D, which is the response code.
+
+309
+00:24:48,350 --> 00:24:54,710
+I expected to get back but got percent D and now I put in my substitutions for those placeholders idot
+
+310
+00:24:54,710 --> 00:25:01,280
+name and my expected is idot expected response code and when I got back is Irda code.
+
+311
+00:25:02,510 --> 00:25:05,270
+OK, so now I should be able to run this test.
+
+312
+00:25:05,300 --> 00:25:06,260
+Let's give it a try.
+
+313
+00:25:08,410 --> 00:25:12,880
+I'm in the correct directory, so go test dot.
+
+314
+00:25:16,120 --> 00:25:16,910
+And it passed.
+
+315
+00:25:16,960 --> 00:25:17,590
+That's great.
+
+316
+00:25:17,620 --> 00:25:22,500
+OK, so now let's handle the other case where I'm actually testing a post request.
+
+317
+00:25:22,930 --> 00:25:24,770
+The logic is very, very similar.
+
+318
+00:25:25,330 --> 00:25:27,280
+We still need to create this request.
+
+319
+00:25:27,280 --> 00:25:29,920
+So I'll just copy this line and modify it as necessary.
+
+320
+00:25:30,100 --> 00:25:32,800
+Actually, we need these lines as well and we need this line.
+
+321
+00:25:33,220 --> 00:25:37,510
+So we copy all of these and paste them in here and I'll just modify them.
+
+322
+00:25:37,870 --> 00:25:41,620
+In this case, we're not passing nothing in the body of the request.
+
+323
+00:25:41,620 --> 00:25:42,910
+We're actually posting data.
+
+324
+00:25:43,240 --> 00:25:51,130
+So we'll get rid of the Nhill and we'll substitute strings, that new reader, and we'll put in IDOT
+
+325
+00:25:51,130 --> 00:25:53,800
+posted data and will encode that.
+
+326
+00:25:54,220 --> 00:26:00,790
+And all this does is it takes are you rld up values and turns it into the format that's necessary to
+
+327
+00:26:00,790 --> 00:26:03,670
+satisfy the request for new request.
+
+328
+00:26:03,700 --> 00:26:06,970
+As you can see, it requires a method which is a string.
+
+329
+00:26:06,970 --> 00:26:07,630
+Are you Earl.
+
+330
+00:26:07,630 --> 00:26:10,150
+Which is a string and the body which is an IO reader.
+
+331
+00:26:10,160 --> 00:26:15,430
+So we just converted our posted data into an eye, a reader that gives me the request.
+
+332
+00:26:15,970 --> 00:26:18,090
+We still need to get the context for the session.
+
+333
+00:26:18,110 --> 00:26:21,250
+So we do that and we still need to create a response recorder.
+
+334
+00:26:21,550 --> 00:26:24,610
+And after this, we need to do pretty much what we did before.
+
+335
+00:26:24,620 --> 00:26:33,460
+So let me copy all of this these lines and get it pointed to the correct handler, which is not login
+
+336
+00:26:33,460 --> 00:26:37,810
+screen in this case, if you look at the actual routes, it links to log in.
+
+337
+00:26:38,670 --> 00:26:41,290
+OK, so that should run our second test.
+
+338
+00:26:41,380 --> 00:26:42,520
+So let's try this.
+
+339
+00:26:42,520 --> 00:26:49,750
+Let's come up here, open our terminal, clear the screen and go test.
+
+340
+00:26:50,110 --> 00:26:53,320
+This time I'll put Dash V for verbose and run it.
+
+341
+00:26:54,980 --> 00:27:02,750
+And there it is that actually passed the test, so those are our two test cases that I want to handle
+
+342
+00:27:02,900 --> 00:27:04,060
+for testing handlers.
+
+343
+00:27:04,940 --> 00:27:07,870
+Now, obviously, there's a few more things you might want to do right now.
+
+344
+00:27:08,000 --> 00:27:12,350
+I'm just passing this dummy data like me out here, dotcom and password.
+
+345
+00:27:12,560 --> 00:27:19,400
+And because we're actually using and if I look in my repository, we're using this test DB repo right
+
+346
+00:27:19,400 --> 00:27:19,820
+here.
+
+347
+00:27:20,600 --> 00:27:25,760
+The method that's being called when we post to our login screen is authenticate and all I'm doing is
+
+348
+00:27:25,760 --> 00:27:27,940
+returning a one and nothing and nil.
+
+349
+00:27:27,950 --> 00:27:30,860
+So it's not actually testing whether or not a login would work.
+
+350
+00:27:31,310 --> 00:27:33,380
+If you want to do that, you have two options.
+
+351
+00:27:34,010 --> 00:27:39,440
+One is to actually modify your test to use a real database, which is not great because we're testing
+
+352
+00:27:39,440 --> 00:27:41,180
+the handler, not the database.
+
+353
+00:27:41,810 --> 00:27:48,110
+A better solution would be to use these to pass parameters, email and test password and just put in
+
+354
+00:27:48,140 --> 00:27:49,100
+something like this.
+
+355
+00:27:49,850 --> 00:28:01,130
+If email is equal to admin at example, dot com and test password.
+
+356
+00:28:03,700 --> 00:28:10,630
+Is equal to password, then I'll put comments here, return valid login
+
+357
+00:28:14,020 --> 00:28:21,660
+ELT's, return invalid login so we would actually not need the statement here.
+
+358
+00:28:21,670 --> 00:28:24,130
+We could just get rid of this altogether and delete this line.
+
+359
+00:28:24,130 --> 00:28:30,220
+But you get the concept, so you use the data you're passing to your your Stubbe database methods to
+
+360
+00:28:30,220 --> 00:28:32,380
+determine what kind of response you send back.
+
+361
+00:28:32,510 --> 00:28:33,660
+Now, I'm not going to bother doing that.
+
+362
+00:28:33,670 --> 00:28:37,720
+I'll leave that as an exercise for you and I'll just put this back exactly as it was.
+
+363
+00:28:38,530 --> 00:28:41,050
+So there is how you test handlers.
+
+364
+00:28:41,050 --> 00:28:44,890
+And I was just a review and I intended this lecture to be much shorter than it actually turned out to
+
+365
+00:28:44,890 --> 00:28:45,130
+be.
+
+366
+00:28:45,310 --> 00:28:46,120
+But there you go.
+
+367
+00:28:46,150 --> 00:28:52,450
+This is an important thing to do and to know how to do so in the next lecture will look at how we're
+
+368
+00:28:52,450 --> 00:28:55,020
+going to test our WebSocket handlers.
+
+369
+00:28:55,030 --> 00:28:57,370
+And again, I'll just do one as an example.

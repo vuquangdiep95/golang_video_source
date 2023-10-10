@@ -1,0 +1,184 @@
+1
+00:00:00,780 --> 00:00:04,380
+Before we go too much further, let's just make sure that everything works.
+
+2
+00:00:04,530 --> 00:00:10,560
+So I'm going to start up Visual Studio code right here, and I will say open a workspace.
+
+3
+00:00:12,480 --> 00:00:20,280
+From a vial, and I'll find my workspace, which is inside my desktop folder right here, workspace,
+
+4
+00:00:20,520 --> 00:00:21,000
+that one.
+
+5
+00:00:23,140 --> 00:00:23,920
+So we have it open.
+
+6
+00:00:24,310 --> 00:00:29,170
+And the first thing I want to do is I want to make sure that it actually works, so opened my terminal,
+
+7
+00:00:29,440 --> 00:00:32,740
+make sure I'm inside the My App folder and I am.
+
+8
+00:00:33,130 --> 00:00:34,300
+And I'll just take make start.
+
+9
+00:00:37,980 --> 00:00:40,620
+OK, so it started it on Port 4000.
+
+10
+00:00:41,280 --> 00:00:49,730
+Let's go to our Web browser and make sure we can actually hit that file so localhost four thousand perfect.
+
+11
+00:00:49,740 --> 00:00:50,430
+So it works.
+
+12
+00:00:51,450 --> 00:00:53,100
+Now let's stop the application.
+
+13
+00:00:53,550 --> 00:00:54,300
+Make stop.
+
+14
+00:00:57,690 --> 00:01:03,180
+And let's make sure that if we make a change here in celebrities, that it's reflected when we use that
+
+15
+00:01:03,180 --> 00:01:09,150
+change in my app, and we can do that by going to the celebrity folder and creating a new folder inside
+
+16
+00:01:09,150 --> 00:01:15,630
+of that cold test folder and inside of that look pretty good file.
+
+17
+00:01:16,640 --> 00:01:18,150
+And I'll just call it test, go go.
+
+18
+00:01:19,500 --> 00:01:21,540
+And the package is test folder.
+
+19
+00:01:21,690 --> 00:01:25,410
+And I'll just create a handler here, func test handler.
+
+20
+00:01:27,060 --> 00:01:33,960
+And it takes the standard two arguments for any handler, a response writer, which I'll call W Response
+
+21
+00:01:33,960 --> 00:01:42,330
+Writer and a pointer to a request which I'll call our HIPAA request and I'll just write some text to
+
+22
+00:01:42,330 --> 00:01:47,320
+the browser window so you don't write as a slice of bytes.
+
+23
+00:01:49,290 --> 00:01:50,070
+It works.
+
+24
+00:01:50,640 --> 00:01:51,090
+That's enough.
+
+25
+00:01:52,020 --> 00:01:53,850
+OK, so that exists now.
+
+26
+00:01:53,850 --> 00:02:00,450
+If I go to the Roots Dog Go file inside of my app right here and I add a test route.
+
+27
+00:02:00,450 --> 00:02:05,100
+Read like this a dog get test route.
+
+28
+00:02:06,630 --> 00:02:12,810
+And I want that to point to the new package called Test Folder inside of celebrities.
+
+29
+00:02:12,990 --> 00:02:19,890
+So I should be able to just to go test folder dot test handler.
+
+30
+00:02:21,900 --> 00:02:22,260
+OK?
+
+31
+00:02:23,070 --> 00:02:24,990
+And it looks like it worked really quickly for me.
+
+32
+00:02:25,000 --> 00:02:29,820
+Sometimes there's a few seconds of delay, but down here in my terminal now I should be able to able
+
+33
+00:02:29,820 --> 00:02:31,260
+to type make start.
+
+34
+00:02:35,290 --> 00:02:39,700
+And it's now running, and I can go back to my web browser and try going to this route.
+
+35
+00:02:40,690 --> 00:02:46,240
+So I switch back to Firefox and I'll click on my user over and paste that to the end of it.
+
+36
+00:02:47,230 --> 00:02:54,250
+And it works great that is ever so much faster than the old way of doing it, the way I was forced to
+
+37
+00:02:54,250 --> 00:02:56,920
+do it in the previous section of this course.
+
+38
+00:02:57,190 --> 00:02:58,810
+So that'll make our lives a lot easier.
+
+39
+00:02:59,080 --> 00:03:05,470
+OK, so now that we know that everything works, let's get rid of this test route and get rid of this
+
+40
+00:03:05,470 --> 00:03:06,280
+test package.
+
+41
+00:03:07,960 --> 00:03:11,770
+Delete that and move to trash.
+
+42
+00:03:12,430 --> 00:03:14,770
+And we're good to go and I I'll stop the application.
+
+43
+00:03:14,770 --> 00:03:15,490
+Make stop.
+
+44
+00:03:16,090 --> 00:03:16,570
+All right.
+
+45
+00:03:16,600 --> 00:03:23,080
+Let's go do some actual work on our project and we'll get started with file systems in the next section
+
+46
+00:03:23,080 --> 00:03:23,740
+of this course.
+

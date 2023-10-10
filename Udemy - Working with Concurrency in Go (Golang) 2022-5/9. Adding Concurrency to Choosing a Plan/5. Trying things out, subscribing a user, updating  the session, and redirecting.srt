@@ -1,0 +1,799 @@
+1
+00:00:00,750 --> 00:00:01,200
+All right.
+
+2
+00:00:01,200 --> 00:00:06,000
+We've written quite a bit of code since the last time we tried this, but let's fire up our application
+
+3
+00:00:06,000 --> 00:00:07,020
+and give it a try.
+
+4
+00:00:07,350 --> 00:00:13,410
+So I'll open my terminal window and I already have Docker running, so I'll type make start and that
+
+5
+00:00:13,410 --> 00:00:14,700
+should build it hopefully.
+
+6
+00:00:15,120 --> 00:00:16,800
+And it did and it started it up.
+
+7
+00:00:17,610 --> 00:00:20,280
+So let's go back over to our web browser and give this a try.
+
+8
+00:00:20,820 --> 00:00:26,730
+So I'll go to local host and that's so far so good.
+
+9
+00:00:26,730 --> 00:00:27,630
+I need to log in.
+
+10
+00:00:27,630 --> 00:00:32,790
+So let's log in as admin app example dot com with the password.
+
+11
+00:00:33,270 --> 00:00:35,880
+Very secret and I'll log in.
+
+12
+00:00:38,180 --> 00:00:44,270
+And now if I go to plans, I already have a plan I subscribed to some time ago when I manually entered
+
+13
+00:00:44,270 --> 00:00:45,710
+that information into the database.
+
+14
+00:00:46,190 --> 00:00:48,290
+But let's switch from bronze to silver.
+
+15
+00:00:48,320 --> 00:00:50,550
+Now, of course, it's not going to save the changes.
+
+16
+00:00:50,570 --> 00:00:56,180
+We haven't done that bit yet, but hopefully it will fire off two emails, one very quickly with an
+
+17
+00:00:56,180 --> 00:01:01,100
+invoice, a rather simplistic invoice, and then another one a few seconds later, because we put that
+
+18
+00:01:01,100 --> 00:01:06,560
+artificial delay in the should give me a manual and that manual should have my name and the name of
+
+19
+00:01:06,560 --> 00:01:08,630
+the plan put on the front page.
+
+20
+00:01:08,780 --> 00:01:09,680
+Let's see if it works.
+
+21
+00:01:09,860 --> 00:01:13,070
+So I'll click select and click subscribe.
+
+22
+00:01:13,220 --> 00:01:14,600
+So far, so good.
+
+23
+00:01:15,110 --> 00:01:18,320
+Let's go over to Mail Hog and there's my invoice.
+
+24
+00:01:18,710 --> 00:01:19,940
+Then there is my manual.
+
+25
+00:01:20,480 --> 00:01:24,110
+So my invoice looks like this with no dollar amounts in there.
+
+26
+00:01:24,110 --> 00:01:25,310
+So something's wrong with that.
+
+27
+00:01:25,340 --> 00:01:26,360
+We'll have to fix that.
+
+28
+00:01:27,140 --> 00:01:29,420
+And let's go back and try the manual.
+
+29
+00:01:30,300 --> 00:01:31,670
+My manual is attached.
+
+30
+00:01:31,680 --> 00:01:38,580
+If I go to the mine midterm here I should see a PDF and it's named a manual PDF and if I download that
+
+31
+00:01:39,870 --> 00:01:41,340
+then we have something missing there.
+
+32
+00:01:41,340 --> 00:01:43,440
+But at least it generated a manual.
+
+33
+00:01:43,440 --> 00:01:47,940
+So we're missing something in here and we're missing the invoice amount in the plan.
+
+34
+00:01:48,360 --> 00:01:52,110
+So let's go back to our code and see if we can find those two things.
+
+35
+00:01:52,500 --> 00:02:00,450
+Okay, so back to our code and we'll switch to the handlers right there.
+
+36
+00:02:01,200 --> 00:02:05,100
+And the first thing is it's not printing the amount on the invoice.
+
+37
+00:02:05,190 --> 00:02:08,520
+So let's see where we get that invoice.
+
+38
+00:02:08,520 --> 00:02:11,400
+An error is after and invoice, user and plan.
+
+39
+00:02:11,400 --> 00:02:12,870
+Do we actually have the plan?
+
+40
+00:02:13,740 --> 00:02:16,920
+So plan I.D., query, get I.D..
+
+41
+00:02:17,070 --> 00:02:22,050
+We should be passing an ID as a parameter with the plan ID after it.
+
+42
+00:02:22,080 --> 00:02:24,420
+Let's go look at the templates.
+
+43
+00:02:25,790 --> 00:02:30,470
+And find plans and make sure we're actually doing that.
+
+44
+00:02:30,830 --> 00:02:31,870
+Slash Members.
+
+45
+00:02:31,880 --> 00:02:33,140
+Slash Subscribe.
+
+46
+00:02:33,260 --> 00:02:35,810
+Question Mark idea equals that so far so good.
+
+47
+00:02:35,810 --> 00:02:36,500
+So ex.
+
+48
+00:02:37,130 --> 00:02:41,480
+And up here we're calling select plan with the ID and the plan name.
+
+49
+00:02:41,520 --> 00:02:43,530
+I'm not seeing anything there immediately.
+
+50
+00:02:43,550 --> 00:02:48,650
+Let's just go put a comment or a log in our handlers see what we're getting wrong here.
+
+51
+00:02:49,280 --> 00:02:52,280
+So let's put a log dot print line,
+
+52
+00:02:57,050 --> 00:03:03,350
+plan I.D. with plan ID and let's actually check for an error here.
+
+53
+00:03:03,500 --> 00:03:06,380
+Every time I say to myself, Yeah, I'm not going to bother checking for an error.
+
+54
+00:03:06,380 --> 00:03:09,470
+I always regret it later on, or I often do.
+
+55
+00:03:09,480 --> 00:03:14,420
+If error is not equal to nil, then.
+
+56
+00:03:15,780 --> 00:03:19,710
+After an error log dot print line
+
+57
+00:03:22,500 --> 00:03:26,850
+error getting plan with the error.
+
+58
+00:03:27,360 --> 00:03:28,980
+Okay, let's restart this and try that again.
+
+59
+00:03:29,610 --> 00:03:30,840
+So make restart.
+
+60
+00:03:31,170 --> 00:03:32,730
+There's one good thing we got this.
+
+61
+00:03:32,730 --> 00:03:37,440
+Some customer error passed to our centralized error handling channel.
+
+62
+00:03:37,440 --> 00:03:37,980
+So that's great.
+
+63
+00:03:38,280 --> 00:03:39,980
+But we still need to get these other things working.
+
+64
+00:03:39,990 --> 00:03:41,610
+So let's try this restarted.
+
+65
+00:03:42,390 --> 00:03:46,020
+Come back over to my web browser and I'll just choose a different plan.
+
+66
+00:03:46,560 --> 00:03:49,200
+So select this one again.
+
+67
+00:03:49,740 --> 00:03:50,370
+Subscribe.
+
+68
+00:03:51,640 --> 00:03:51,970
+Okay.
+
+69
+00:03:51,970 --> 00:03:52,780
+So we subscribed.
+
+70
+00:03:52,810 --> 00:03:53,920
+Let's go look at the error log.
+
+71
+00:03:55,300 --> 00:03:57,370
+We got plan I.D. and no error, so we know.
+
+72
+00:03:57,370 --> 00:03:57,940
+That's right.
+
+73
+00:03:59,050 --> 00:04:00,070
+So let's get rid of this.
+
+74
+00:04:01,930 --> 00:04:03,100
+No problem with that.
+
+75
+00:04:04,870 --> 00:04:05,500
+And his plan.
+
+76
+00:04:05,500 --> 00:04:07,000
+I'd put that in there.
+
+77
+00:04:10,580 --> 00:04:11,870
+So we're getting the plan.
+
+78
+00:04:15,010 --> 00:04:17,380
+Then we're getting the user from the database.
+
+79
+00:04:21,300 --> 00:04:23,370
+So here we're getting the invoice.
+
+80
+00:04:24,000 --> 00:04:25,810
+Let's see what that's doing down here.
+
+81
+00:04:25,830 --> 00:04:27,720
+Let's find that get invoice function.
+
+82
+00:04:30,580 --> 00:04:30,880
+It's.
+
+83
+00:04:32,780 --> 00:04:37,790
+And we'll say log line for after after info.
+
+84
+00:04:37,790 --> 00:04:39,110
+Log the line.
+
+85
+00:04:43,610 --> 00:04:47,710
+Amount is in the we'll go with plan the plan amount format it.
+
+86
+00:04:50,920 --> 00:04:53,830
+Let's run that again make restart.
+
+87
+00:04:56,160 --> 00:04:58,380
+An imported and not used law.
+
+88
+00:04:58,400 --> 00:04:59,330
+So we'll just save this.
+
+89
+00:04:59,330 --> 00:05:00,380
+That should fix that.
+
+90
+00:05:02,580 --> 00:05:04,920
+And restart this again and should compile.
+
+91
+00:05:05,230 --> 00:05:13,500
+Let's go back over here and choose the silver plan again and see if we actually get the currency amount.
+
+92
+00:05:13,620 --> 00:05:14,760
+Amount is nothing.
+
+93
+00:05:14,850 --> 00:05:16,710
+Okay, so there's something wrong with that.
+
+94
+00:05:17,100 --> 00:05:19,110
+Now let's figure out what that is.
+
+95
+00:05:19,620 --> 00:05:21,390
+We're actually getting the plan.
+
+96
+00:05:23,850 --> 00:05:25,440
+Up here when we call.
+
+97
+00:05:28,990 --> 00:05:30,910
+Top models to plan to get one.
+
+98
+00:05:31,330 --> 00:05:34,060
+Okay, so let's find that and see what's wrong with that one.
+
+99
+00:05:35,420 --> 00:05:37,690
+Oh, I'm actually not populating that field.
+
+100
+00:05:37,810 --> 00:05:38,710
+That would do it.
+
+101
+00:05:39,710 --> 00:05:51,770
+So people come in here and say, plan that plan I'm out formatted as equal to I'm out for display.
+
+102
+00:05:53,190 --> 00:05:54,180
+And that should take care of that.
+
+103
+00:05:54,450 --> 00:06:00,900
+So let's restart this make restart actually on that field in the type for plan.
+
+104
+00:06:00,900 --> 00:06:02,940
+But I never populated it in that function.
+
+105
+00:06:03,210 --> 00:06:04,260
+That's an easy mistake to make.
+
+106
+00:06:05,460 --> 00:06:06,810
+So we've restarted.
+
+107
+00:06:07,530 --> 00:06:08,640
+Let's select it again.
+
+108
+00:06:09,330 --> 00:06:10,170
+Subscribe.
+
+109
+00:06:10,440 --> 00:06:13,680
+Go back here, look at our console and we have $20.
+
+110
+00:06:14,070 --> 00:06:20,100
+So now when I go to my mail hog and look at the most recent invoice right here, $20.
+
+111
+00:06:20,130 --> 00:06:20,520
+Perfect.
+
+112
+00:06:20,880 --> 00:06:21,250
+Okay.
+
+113
+00:06:21,270 --> 00:06:22,260
+And what was the other problem?
+
+114
+00:06:22,320 --> 00:06:23,610
+So let's go back to the inbox.
+
+115
+00:06:24,090 --> 00:06:25,070
+Look at the manual.
+
+116
+00:06:26,220 --> 00:06:31,920
+Look at the mime, look at the application PDF, and we're missing something from the name there.
+
+117
+00:06:31,950 --> 00:06:37,230
+Okay, so let's go back to our code and find out where we're generating that string.
+
+118
+00:06:38,850 --> 00:06:44,550
+So I'll hide this in our handlers generating the manual.
+
+119
+00:06:46,950 --> 00:06:54,450
+It's not calls generate manual down here and I never put it put the actual substitution for this and
+
+120
+00:06:54,450 --> 00:06:57,930
+that should be from plan dot planning.
+
+121
+00:06:59,550 --> 00:07:01,290
+Okay, that should be it.
+
+122
+00:07:01,530 --> 00:07:03,420
+Let's try to restart this one more time.
+
+123
+00:07:06,080 --> 00:07:07,640
+So the web server is running.
+
+124
+00:07:08,360 --> 00:07:16,970
+Let's go back to Mail Hog and delete all the messages and we'll select silver one more time.
+
+125
+00:07:17,480 --> 00:07:18,260
+Subscribe.
+
+126
+00:07:19,870 --> 00:07:21,430
+And I will go watch Mail Hog.
+
+127
+00:07:23,630 --> 00:07:25,040
+And there's my manual.
+
+128
+00:07:26,810 --> 00:07:29,750
+And let's look at the source or the mine for that.
+
+129
+00:07:32,460 --> 00:07:33,240
+Admin user.
+
+130
+00:07:33,240 --> 00:07:33,660
+Silver.
+
+131
+00:07:33,780 --> 00:07:34,490
+Silver Plan.
+
+132
+00:07:34,500 --> 00:07:35,070
+User Guide.
+
+133
+00:07:35,100 --> 00:07:35,340
+Okay.
+
+134
+00:07:35,340 --> 00:07:36,120
+So little works.
+
+135
+00:07:36,780 --> 00:07:42,510
+So now now that I know that works, let's go over and actually subscribe a user to a plan.
+
+136
+00:07:42,930 --> 00:07:44,070
+And that's actually pretty easy.
+
+137
+00:07:44,340 --> 00:07:46,740
+So we'll subscribe user to a plan.
+
+138
+00:07:49,170 --> 00:07:55,140
+All I have to do now is say error is equal to and I'll call from app dot models.
+
+139
+00:07:58,790 --> 00:08:08,660
+Dot plan dot subscribing user to plan, and that requires a user and a pointer to a plan for the value
+
+140
+00:08:08,660 --> 00:08:09,230
+of the plan.
+
+141
+00:08:09,230 --> 00:08:10,720
+I'm taking it out of the pointer there.
+
+142
+00:08:10,770 --> 00:08:11,150
+Okay.
+
+143
+00:08:11,780 --> 00:08:12,620
+And we'll check for an error.
+
+144
+00:08:12,800 --> 00:08:18,890
+If error is not equal to nil, then I'll just copy some error checking up here.
+
+145
+00:08:22,500 --> 00:08:23,400
+This is fine.
+
+146
+00:08:23,500 --> 00:08:24,390
+We'll copy that.
+
+147
+00:08:26,760 --> 00:08:29,880
+Paste this down here and say error,
+
+148
+00:08:33,720 --> 00:08:36,960
+error, subscribing to plan.
+
+149
+00:08:37,950 --> 00:08:44,790
+And we're going to take them back to the slash numbers slash plan page, and that should be enough for
+
+150
+00:08:44,790 --> 00:08:45,180
+that one.
+
+151
+00:08:45,330 --> 00:08:52,380
+Now, we have subscribed this user to the plan, but remember, we have a user in the session and the
+
+152
+00:08:52,380 --> 00:08:56,310
+user in the session actually is still subscribed to the old plan.
+
+153
+00:08:56,310 --> 00:08:59,140
+If they changed one or two, no plan if they didn't have one.
+
+154
+00:08:59,160 --> 00:09:03,660
+So what I need to do next is to update the user in the session and we can do that pretty easily.
+
+155
+00:09:03,930 --> 00:09:10,230
+We just need to get a fresh copy from the database so you an error are assigned values by calling app
+
+156
+00:09:10,230 --> 00:09:16,080
+dot models dot user don't get one and we hand it the user ID and that's user ID.
+
+157
+00:09:16,620 --> 00:09:19,560
+The ID in the session hasn't changed and that's where we're getting user ID.
+
+158
+00:09:19,860 --> 00:09:20,240
+Okay.
+
+159
+00:09:20,880 --> 00:09:31,290
+So we'll copy this, paste this here for error, check error, getting user from database and get rid
+
+160
+00:09:31,290 --> 00:09:32,550
+of the two plan part.
+
+161
+00:09:34,020 --> 00:09:41,520
+Now that we have the new user, we just update it in session after session that put using marked context.
+
+162
+00:09:42,630 --> 00:09:46,260
+We're looking for user and we're going to put in youth.
+
+163
+00:09:47,040 --> 00:09:47,370
+Okay?
+
+164
+00:09:48,300 --> 00:09:49,620
+And in theory, this should all work.
+
+165
+00:09:49,770 --> 00:09:52,200
+So let's restart our application, make restart.
+
+166
+00:09:57,430 --> 00:10:03,340
+You can go back to my web browser and I'll get back to Mail Hog and delete all messages.
+
+167
+00:10:05,410 --> 00:10:06,160
+In this time.
+
+168
+00:10:06,220 --> 00:10:08,620
+Let me just reload this page to make sure everything is current.
+
+169
+00:10:08,920 --> 00:10:10,420
+I currently have the bronze plan.
+
+170
+00:10:10,450 --> 00:10:15,520
+When I click this, it should subscribe me to the silver plan and when this page refreshes.
+
+171
+00:10:16,770 --> 00:10:20,010
+This should say current plan and this should be a select button.
+
+172
+00:10:21,210 --> 00:10:22,140
+Let's see if it works.
+
+173
+00:10:23,260 --> 00:10:25,450
+And it works perfect.
+
+174
+00:10:26,170 --> 00:10:30,400
+Okay, so that's enough for this time around.
+
+175
+00:10:30,610 --> 00:10:36,130
+So in this section, we've managed to take a slightly more real world application and apply concurrency
+
+176
+00:10:36,130 --> 00:10:36,430
+to it.
+
+177
+00:10:36,880 --> 00:10:44,080
+And you might have noticed over here in the Handler that I'm actually firing off two separate go routines
+
+178
+00:10:44,080 --> 00:10:47,500
+and each of them fires off yet another go routine when it sends email.
+
+179
+00:10:47,890 --> 00:10:53,590
+Now, you might have been asking yourself, why didn't you just put all of this and all of this into
+
+180
+00:10:53,590 --> 00:10:54,770
+the same go routine?
+
+181
+00:10:54,790 --> 00:10:56,020
+And there's a simple reason for that.
+
+182
+00:10:57,010 --> 00:11:02,380
+This way, generating an invoice and generating a manual, they both run concurrently.
+
+183
+00:11:03,010 --> 00:11:05,260
+If I lost them together, they would run sequentially.
+
+184
+00:11:05,290 --> 00:11:09,400
+First of all, I would generate an invoice, and when that was done, then it would generate a manual.
+
+185
+00:11:09,910 --> 00:11:15,010
+Now, in our case, it's very fast to produce both both of the invoice and the manual, because, you
+
+186
+00:11:15,010 --> 00:11:20,140
+know, this is simplistic code and it's just an exercise to show you how how to make things run concurrently.
+
+187
+00:11:20,800 --> 00:11:25,150
+But in the real world, it might take a couple of seconds to do an invoice or a couple of seconds or
+
+188
+00:11:25,150 --> 00:11:28,330
+even more if it's a very complex PDF to generate a manual.
+
+189
+00:11:28,360 --> 00:11:35,230
+Let's say you're producing a manual for an API and you want all of the examples in the API to have code
+
+190
+00:11:35,230 --> 00:11:38,250
+that exactly reflects what that user would use.
+
+191
+00:11:38,260 --> 00:11:41,410
+So they're API key, all of that sort of thing.
+
+192
+00:11:42,100 --> 00:11:44,530
+Well, it can take quite a while to produce a PDF like that.
+
+193
+00:11:44,650 --> 00:11:47,650
+So this way I have them running at the same time.
+
+194
+00:11:47,740 --> 00:11:53,920
+Now the only situation where I couldn't do that is if I needed some information from the first go routine
+
+195
+00:11:54,880 --> 00:11:57,070
+in order to make the second go routine run.
+
+196
+00:11:57,310 --> 00:12:03,550
+But in this case, all I need is the user and the plan for both the manual and the invoice.
+
+197
+00:12:03,580 --> 00:12:06,490
+So there's no problem having these to run at the same time.
+
+198
+00:12:07,120 --> 00:12:07,480
+All right.
+
+199
+00:12:07,510 --> 00:12:08,890
+That's enough for this time around.
+
+200
+00:12:08,920 --> 00:12:10,690
+Let's move on to the next section.

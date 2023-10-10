@@ -1,0 +1,211 @@
+1
+00:00:01,330 --> 00:00:06,370
+So it's time to start working with the database and what we're going to do is install a database and
+
+2
+00:00:06,370 --> 00:00:10,970
+the one I'm recommending and the one I'll be using throughout the remainder of this course is Postgres.
+
+3
+00:00:11,110 --> 00:00:14,440
+There are other ones, of course, but postgrads is the one I'm going to work with.
+
+4
+00:00:15,170 --> 00:00:20,470
+And what we're going to do is install this, install a graphical client that allows us to connect to
+
+5
+00:00:20,470 --> 00:00:27,010
+it and we'll figure out how databases work before we actually get to the steps where we hook our application
+
+6
+00:00:27,010 --> 00:00:31,140
+up to postgrads and start persisting our data in that way.
+
+7
+00:00:32,140 --> 00:00:41,980
+So the install for postgrads is found at this early PostgreSQL Duggie download, and we're going to
+
+8
+00:00:41,980 --> 00:00:45,390
+do it slightly differently depending on whether you're on Windows or Mac.
+
+9
+00:00:45,850 --> 00:00:46,840
+We'll start with windows.
+
+10
+00:00:46,870 --> 00:00:52,510
+If you're on windows, click on the Windows button and what you're going to do is click download the
+
+11
+00:00:52,510 --> 00:00:57,820
+installer right here and that will take you to a page that shows all the various downloads.
+
+12
+00:00:58,150 --> 00:01:05,830
+And assuming you're on a Windows 64 bit system, which most of you probably are because 32 bit systems
+
+13
+00:01:05,830 --> 00:01:10,840
+are getting really old, download this version at the time I record this, it's thirteen point one.
+
+14
+00:01:10,840 --> 00:01:13,110
+Download that and run the installer.
+
+15
+00:01:13,450 --> 00:01:18,340
+Now, when you run the installer, when you get to the second or third step of the installer, it's
+
+16
+00:01:18,340 --> 00:01:25,090
+going to ask you, first of all, ask you to set postgrads, say yes, then step to choose a directory.
+
+17
+00:01:25,270 --> 00:01:26,880
+Just choose the default directory.
+
+18
+00:01:27,340 --> 00:01:30,400
+Step three is going to say select components.
+
+19
+00:01:30,790 --> 00:01:35,050
+And I strongly recommend you leave postgrads server installed.
+
+20
+00:01:35,050 --> 00:01:35,980
+You have to have that.
+
+21
+00:01:35,980 --> 00:01:37,090
+That'll be the first option.
+
+22
+00:01:37,450 --> 00:01:41,530
+The second option is called PJI admin for uncheck that.
+
+23
+00:01:41,530 --> 00:01:44,080
+And I want to suggest you uncheck that for a simple reason.
+
+24
+00:01:44,470 --> 00:01:50,770
+That is a client that isn't installed as part of the process that actually allows you to connect to
+
+25
+00:01:50,770 --> 00:01:54,330
+your database through a Web browser and manage the content that way.
+
+26
+00:01:54,340 --> 00:02:00,400
+So it's a graphical user interface that installs a server on your machine and allows you to connect
+
+27
+00:02:00,400 --> 00:02:03,160
+to your local installation of the database through Web browser.
+
+28
+00:02:03,610 --> 00:02:09,790
+The problem with that is every time I have tried to use that, it has grabbed all the system resources
+
+29
+00:02:09,790 --> 00:02:10,960
+from my computer.
+
+30
+00:02:10,990 --> 00:02:15,580
+Are there my Windows machine or my Mac machine to the point where things become unresponsive.
+
+31
+00:02:15,580 --> 00:02:22,930
+So I strongly recommend you don't install PJI admin for but leave everything else check to the postgrads
+
+32
+00:02:22,930 --> 00:02:27,610
+server, the command line tools and leave two of them unchecked.
+
+33
+00:02:27,610 --> 00:02:30,370
+PJI had been for and don't bother with Stack Builder.
+
+34
+00:02:30,370 --> 00:02:32,500
+That's of no value to us for this course.
+
+35
+00:02:33,280 --> 00:02:39,070
+So you're only going to have two things checked when you install on Windows Postgrads Server and command
+
+36
+00:02:39,070 --> 00:02:40,780
+line tools and then install it.
+
+37
+00:02:42,010 --> 00:02:45,240
+Now if you're on a Mac, it's a little easier.
+
+38
+00:02:45,340 --> 00:02:47,710
+So we're going to go back here to packages.
+
+39
+00:02:47,710 --> 00:02:50,620
+This is where we started off on the download page.
+
+40
+00:02:50,860 --> 00:02:53,860
+Choose Mac OS and scroll down.
+
+41
+00:02:54,130 --> 00:03:00,880
+Scroll down to this part PostgreSQL app, download this application and it's really, really easy.
+
+42
+00:03:00,970 --> 00:03:05,590
+It's just an application that you when you run it, you use double click on it to start it.
+
+43
+00:03:05,830 --> 00:03:10,780
+Your server is running and when you quit out of it, your server shuts down and you can't get any simpler
+
+44
+00:03:10,780 --> 00:03:11,260
+than that.
+
+45
+00:03:11,860 --> 00:03:15,730
+So that's how you install the database server on your local machine.
+
+46
+00:03:16,360 --> 00:03:21,310
+Then in order to connect to that server using a graphical user interface, we're going to go to this
+
+47
+00:03:21,310 --> 00:03:24,280
+place de Beever DB ver community.
+
+48
+00:03:24,290 --> 00:03:31,840
+So it's called DB Beavertail Slash Download and download the community edition.
+
+49
+00:03:31,840 --> 00:03:37,930
+So for Windows there's a 64 64 bit installer and for Mac here's the installer or the DMG.
+
+50
+00:03:37,960 --> 00:03:44,200
+Use whichever version you want, but install that and once you do, you'll be all set, will be able
+
+51
+00:03:44,200 --> 00:03:48,040
+to connect to our local machine and will be able to start doing things.
+
+52
+00:03:48,040 --> 00:03:53,410
+So get those things installed and when you're done, come back and we'll move on to the next lecture
+
+53
+00:03:53,410 --> 00:03:55,900
+and start playing with the actual database.

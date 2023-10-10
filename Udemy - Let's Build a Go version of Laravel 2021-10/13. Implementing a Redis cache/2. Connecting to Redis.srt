@@ -1,0 +1,775 @@
+1
+00:00:01,320 --> 00:00:06,270
+Before we can do anything useful with Revis and our cash, we naturally have to connect to the right
+
+2
+00:00:06,270 --> 00:00:10,140
+a server and of course, we're going to do that in the Celebrity House package because we don't want
+
+3
+00:00:10,140 --> 00:00:15,450
+to make our end users go through all of this kind of effort to create a connection pool and so forth.
+
+4
+00:00:16,470 --> 00:00:23,040
+So in this hilarious project, insularity Housego, we have this type config and in there we're storing
+
+5
+00:00:23,040 --> 00:00:29,280
+things like our database configuration, our cookie configuration, and we actually want to store also
+
+6
+00:00:29,280 --> 00:00:31,020
+a Redis configuration in there.
+
+7
+00:00:31,560 --> 00:00:36,960
+Now this database config, for example, exists over in type start go.
+
+8
+00:00:37,170 --> 00:00:43,530
+So what I'm going to do is in Typekit go, I'm going to create another type and I'll call that.
+
+9
+00:00:45,570 --> 00:00:51,810
+Read config measures to strike, and it will hold the information we need to connect to Redis, so we'll
+
+10
+00:00:51,810 --> 00:00:54,150
+need a host, which is a type of type string.
+
+11
+00:00:54,960 --> 00:00:56,460
+We might need a password.
+
+12
+00:00:57,840 --> 00:00:59,640
+Certainly not in development, but in production.
+
+13
+00:00:59,640 --> 00:01:00,510
+You probably will.
+
+14
+00:01:00,930 --> 00:01:05,870
+And that will also be a string and will also put in prefix.
+
+15
+00:01:05,880 --> 00:01:11,310
+And that's the prefix we use to make sure that values we throw in the cache, don't conflict with some
+
+16
+00:01:11,310 --> 00:01:13,290
+other application that might be using Redis.
+
+17
+00:01:13,680 --> 00:01:14,970
+So that also will be a string.
+
+18
+00:01:16,230 --> 00:01:16,530
+OK.
+
+19
+00:01:16,800 --> 00:01:18,240
+So I'll save that for a minute.
+
+20
+00:01:18,690 --> 00:01:19,430
+And now we have.
+
+21
+00:01:19,440 --> 00:01:22,500
+I read his config, which isn't being used, but it will be momentarily.
+
+22
+00:01:22,590 --> 00:01:23,940
+Let's go back to celebrities.
+
+23
+00:01:23,940 --> 00:01:29,190
+Don't go and in our config, let's add that type redis config.
+
+24
+00:01:32,260 --> 00:01:38,470
+Which I'll just call read actually of type reddish config, and let's say that.
+
+25
+00:01:39,970 --> 00:01:43,210
+Now let's get down to the part where we actually populate that configuration.
+
+26
+00:01:43,690 --> 00:01:44,320
+Stay right here.
+
+27
+00:01:46,090 --> 00:01:49,090
+So here's where we read all of the information into our config.
+
+28
+00:01:49,270 --> 00:01:58,690
+And all we have to do here is, say, writers, and that will be of type reddish config and we populate
+
+29
+00:01:58,690 --> 00:01:59,230
+his values.
+
+30
+00:02:00,010 --> 00:02:02,800
+So host, we get that from our on file.
+
+31
+00:02:02,980 --> 00:02:09,880
+And if you look over in the My App application and you look at the icons right here, this is where
+
+32
+00:02:09,880 --> 00:02:11,710
+we're getting all the necessary information.
+
+33
+00:02:11,860 --> 00:02:15,250
+OK, so right from our dot on and we have that at this point.
+
+34
+00:02:15,280 --> 00:02:24,490
+So back in celebrities, we can say OS don't get on and the host is going to be is underscore host
+
+35
+00:02:28,210 --> 00:02:31,510
+and the password is OS.
+
+36
+00:02:31,510 --> 00:02:35,920
+Don't get on, read underscore password.
+
+37
+00:02:40,120 --> 00:02:46,210
+And the last thing we want is the prefix prefix and that is OS.
+
+38
+00:02:46,210 --> 00:02:50,410
+Don't get on regice underscore prefix.
+
+39
+00:02:52,960 --> 00:02:55,800
+So now we have this information in our configuration.
+
+40
+00:02:55,810 --> 00:02:58,390
+So the next step and maybe a comma here.
+
+41
+00:03:00,700 --> 00:03:04,720
+So the next step is actually to find a place to connect erectus, so I'm going to scroll all the way
+
+42
+00:03:04,720 --> 00:03:07,360
+down and I'll put it right here in its own function.
+
+43
+00:03:07,540 --> 00:03:07,930
+OK.
+
+44
+00:03:09,350 --> 00:03:14,030
+So this will be a function we call to get our connection cool, and it will be a function with the receiver
+
+45
+00:03:14,030 --> 00:03:19,070
+of sea, a point which is hilarious and I'm not going to export it because I'm only use it within this
+
+46
+00:03:19,070 --> 00:03:19,610
+package.
+
+47
+00:03:19,730 --> 00:03:26,120
+I'll call it create reddish cool, and it doesn't take any parameters, but it returns a pointer to
+
+48
+00:03:26,120 --> 00:03:31,430
+Reddit's dot pool right there from the radical package.
+
+49
+00:03:33,260 --> 00:03:42,170
+So we'll just have this function return, and we'll return a reference to a horrendous dark pool and
+
+50
+00:03:42,170 --> 00:03:43,830
+we populate its necessary values.
+
+51
+00:03:43,940 --> 00:03:47,180
+So how long should a connection remain idle max idle?
+
+52
+00:03:47,210 --> 00:03:48,170
+We'll make that 50.
+
+53
+00:03:48,230 --> 00:03:51,260
+That's a good number and say Max active.
+
+54
+00:03:51,470 --> 00:03:54,200
+What's the maximum number of active connections we can have?
+
+55
+00:03:54,230 --> 00:03:55,430
+And I'll make it ten thousand.
+
+56
+00:03:57,900 --> 00:04:00,200
+Which seems like a big number, but it's not for ratings.
+
+57
+00:04:00,810 --> 00:04:09,600
+And we'll give it an idle timeout and that will be equal to say 240 seconds times timed second.
+
+58
+00:04:12,460 --> 00:04:18,780
+And we also need a dial member or field, and that's going to be a function which returns a reddish
+
+59
+00:04:18,790 --> 00:04:19,750
+scone.
+
+60
+00:04:22,540 --> 00:04:23,450
+And potentially in error.
+
+61
+00:04:25,990 --> 00:04:30,070
+So we'll have that return red asked Dial.
+
+62
+00:04:31,480 --> 00:04:33,250
+And this is what actually makes the connection.
+
+63
+00:04:34,060 --> 00:04:37,690
+TCP is our format TCP like that.
+
+64
+00:04:39,600 --> 00:04:46,860
+And then on the next line will use from our config cedo config readies dot host.
+
+65
+00:04:48,730 --> 00:04:55,610
+And we might have a password, so we'll put in their red escort dial password, and if it's empty,
+
+66
+00:04:55,610 --> 00:04:58,630
+it doesn't matter and it's empty in my case, but it will still work.
+
+67
+00:04:59,380 --> 00:05:04,000
+We're going to dial password c dot config dot readies password.
+
+68
+00:05:06,540 --> 00:05:10,440
+And we need a comment now after that happens.
+
+69
+00:05:10,680 --> 00:05:12,030
+We're also going to test it.
+
+70
+00:05:12,390 --> 00:05:19,230
+So we'll say test on borrow, and that also is a function and inline function, and it takes our connection
+
+71
+00:05:19,410 --> 00:05:28,310
+con of type register.com and it takes also a parameter for T time dot time.
+
+72
+00:05:28,560 --> 00:05:29,430
+That's all that that is.
+
+73
+00:05:29,850 --> 00:05:31,920
+And it potentially returns in error, returns in error.
+
+74
+00:05:33,330 --> 00:05:36,780
+Now, I don't care about the first return value from the function I'm about to call.
+
+75
+00:05:37,110 --> 00:05:42,960
+But I do care about an error that, oh, I'm going to do is say con dot do and just ping the server.
+
+76
+00:05:43,800 --> 00:05:45,300
+And if there's an error, we'll get an error.
+
+77
+00:05:45,330 --> 00:05:47,940
+So return it return error.
+
+78
+00:05:51,960 --> 00:05:57,150
+And I don't need a comma here, and I should take care of that.
+
+79
+00:05:57,840 --> 00:06:02,850
+So this will be a function we can use to call and create a connection to readers.
+
+80
+00:06:03,180 --> 00:06:10,320
+Now I'm also want to create another function here, just like we did when we create to other parts of
+
+81
+00:06:10,320 --> 00:06:13,050
+our application, like creating a renderer, for example.
+
+82
+00:06:13,590 --> 00:06:17,640
+I'll throw creating a client read cash into its own function.
+
+83
+00:06:17,820 --> 00:06:18,150
+OK.
+
+84
+00:06:18,750 --> 00:06:25,710
+So I create a function here, called with the receiver of C pointer to celebrities, not config celebrities.
+
+85
+00:06:26,590 --> 00:06:27,660
+I'm going to call this one.
+
+86
+00:06:27,900 --> 00:06:29,250
+Create client.
+
+87
+00:06:29,640 --> 00:06:30,840
+Read his cache.
+
+88
+00:06:31,260 --> 00:06:31,620
+OK.
+
+89
+00:06:32,100 --> 00:06:36,240
+And it takes no parameters, but it returns a pointer to the cache type.
+
+90
+00:06:36,270 --> 00:06:45,150
+We made a while ago that read this cache there, and this is really simple.
+
+91
+00:06:47,210 --> 00:06:49,400
+Why is it not finding cash right at cash?
+
+92
+00:06:51,190 --> 00:06:52,090
+Let's try that again.
+
+93
+00:06:55,050 --> 00:06:59,720
+She seems to have trouble importing, that's no problem.
+
+94
+00:06:59,740 --> 00:07:00,370
+I'll import it.
+
+95
+00:07:02,380 --> 00:07:05,110
+Let's just duplicate this line and put cash in there.
+
+96
+00:07:07,140 --> 00:07:09,550
+There now, we come back down here.
+
+97
+00:07:09,570 --> 00:07:15,630
+Hopefully the air will go away and it did OK, so to create a client ready cash.
+
+98
+00:07:15,900 --> 00:07:21,330
+I'm going to just say my cash client is assigned the value of cash.
+
+99
+00:07:21,330 --> 00:07:27,990
+Dot readies his cash and we'll populate its fields and its fields are the con.
+
+100
+00:07:29,250 --> 00:07:30,090
+And that's going to be.
+
+101
+00:07:30,120 --> 00:07:35,130
+Now we're going to call that create us Pool C Dot create, write us pool that gives you my connection
+
+102
+00:07:35,130 --> 00:07:35,490
+pool.
+
+103
+00:07:36,660 --> 00:07:44,400
+And the prefix just comes from C dot config dot redis dot prefix.
+
+104
+00:07:46,560 --> 00:07:52,320
+And we return that return and it has to be in the form of a reference, of course.
+
+105
+00:07:54,000 --> 00:07:54,620
+Cash client.
+
+106
+00:07:56,730 --> 00:08:01,200
+OK, so now we have a means of creating a Reuters pool of creating our cash client.
+
+107
+00:08:01,530 --> 00:08:07,320
+The next step, of course, is to decide if we need to create a client, read as cash or open a collection
+
+108
+00:08:07,320 --> 00:08:12,960
+to read at all, because in some cases people will be using this application, but they're on the entries
+
+109
+00:08:12,960 --> 00:08:14,080
+for Redish will be empty.
+
+110
+00:08:14,100 --> 00:08:15,030
+They're not using Redis.
+
+111
+00:08:15,480 --> 00:08:17,100
+So let's go way up here.
+
+112
+00:08:18,030 --> 00:08:23,340
+Let's scroll up to the point just before where we create all of our conflicts.
+
+113
+00:08:23,370 --> 00:08:24,000
+See right here.
+
+114
+00:08:24,240 --> 00:08:28,950
+OK, so just like here, we're checking to see if a database type is empty.
+
+115
+00:08:28,950 --> 00:08:31,420
+If it's not, then we try to connect to the database.
+
+116
+00:08:31,440 --> 00:08:33,330
+We do the same thing for Redis right here.
+
+117
+00:08:33,810 --> 00:08:36,890
+So we'll say if asked, get on.
+
+118
+00:08:37,170 --> 00:08:37,440
+Yes.
+
+119
+00:08:37,980 --> 00:08:46,710
+And in this case, we're going to look for cash because if you look over in our dart on file, we have
+
+120
+00:08:46,710 --> 00:08:49,590
+here cash and I set mine to release.
+
+121
+00:08:49,590 --> 00:08:52,690
+It was might be empty in yours, but it will be ready shortly.
+
+122
+00:08:52,710 --> 00:08:52,960
+OK.
+
+123
+00:08:53,010 --> 00:08:55,050
+If it's not, you might want to change it to read this right now.
+
+124
+00:08:55,290 --> 00:09:02,640
+But if this is empty and we're not using Redis, so we'll say if 0s and get all cash is equal to Redis,
+
+125
+00:09:03,270 --> 00:09:04,350
+then we want to use Redis.
+
+126
+00:09:04,590 --> 00:09:04,950
+OK.
+
+127
+00:09:05,610 --> 00:09:17,130
+So in here, we just say my Redis cache or whatever you want to call it is assign the value of C, not
+
+128
+00:09:17,460 --> 00:09:19,830
+create client Redis cache.
+
+129
+00:09:20,970 --> 00:09:23,790
+And then we say struct cache, which doesn't exist yet.
+
+130
+00:09:23,790 --> 00:09:28,440
+We'll be adding that at the moment is equal to my Redis cache.
+
+131
+00:09:29,100 --> 00:09:34,830
+Now this court cache, of course, comes from celerity, so we need to come way up to the top here to
+
+132
+00:09:34,830 --> 00:09:36,480
+celebrities and just add a cache.
+
+133
+00:09:37,710 --> 00:09:42,780
+And we're not adding the type of Redis cache because we're going to support more than one kind of cache
+
+134
+00:09:43,050 --> 00:09:43,570
+instead.
+
+135
+00:09:43,590 --> 00:09:46,740
+We'll use that interface cache cashed out cached.
+
+136
+00:09:47,550 --> 00:09:55,420
+And if I save that and scroll all the way down here, we see that there's still an error here.
+
+137
+00:09:55,440 --> 00:10:01,380
+And of course, this is simply because we haven't created or implemented all of the methods necessary,
+
+138
+00:10:01,380 --> 00:10:04,560
+all of the functions necessary to support the cache type.
+
+139
+00:10:04,680 --> 00:10:11,340
+So if we go back to our cash, for example, cache doggo, in order to satisfy this interface cache,
+
+140
+00:10:11,340 --> 00:10:15,150
+we have to have a has a get set of forget an empty buy match and empty.
+
+141
+00:10:15,180 --> 00:10:18,630
+Well, we can put stuff methods in here for right now just to make that air go away.
+
+142
+00:10:19,200 --> 00:10:24,000
+So we need a func get, which takes a string.
+
+143
+00:10:24,810 --> 00:10:31,350
+So I'll just call it start string that has to return an interface in an error.
+
+144
+00:10:31,800 --> 00:10:32,970
+So interface
+
+145
+00:10:36,870 --> 00:10:37,470
+an error.
+
+146
+00:10:38,490 --> 00:10:48,390
+And it has to have the receiver of Redis cache, of course, see British cache and we just have this
+
+147
+00:10:49,350 --> 00:10:52,380
+return anything and nil.
+
+148
+00:10:53,280 --> 00:10:55,230
+OK, so that's a stub method.
+
+149
+00:10:55,380 --> 00:10:56,130
+Let's do some more.
+
+150
+00:10:56,430 --> 00:10:57,450
+We need a set.
+
+151
+00:10:57,510 --> 00:11:06,390
+So we'll just copy this whole thing and paste it here and call it set and set has to take a string and
+
+152
+00:11:06,390 --> 00:11:07,710
+interface in an it.
+
+153
+00:11:08,130 --> 00:11:19,630
+So a string and we'll call data interface, and it also has to have a one or more INTs.
+
+154
+00:11:19,650 --> 00:11:22,440
+So we'll call it whatever status or no.
+
+155
+00:11:24,720 --> 00:11:25,760
+Dot dot dot int.
+
+156
+00:11:26,670 --> 00:11:27,000
+OK.
+
+157
+00:11:27,690 --> 00:11:29,640
+And astroturfing return interface is an error.
+
+158
+00:11:29,640 --> 00:11:30,480
+So there's two.
+
+159
+00:11:31,140 --> 00:11:32,820
+The next one is forget to string.
+
+160
+00:11:32,820 --> 00:11:33,770
+It returns an error.
+
+161
+00:11:33,780 --> 00:11:37,200
+So func see where it is cache.
+
+162
+00:11:38,460 --> 00:11:39,630
+And it's called forget.
+
+163
+00:11:39,780 --> 00:11:44,280
+It takes one string starter string and it returns an error.
+
+164
+00:11:44,280 --> 00:11:49,380
+And we'll just have that return nil for now, just so we can get this thing to compile and we need an
+
+165
+00:11:49,380 --> 00:11:51,000
+empty by match and an empty.
+
+166
+00:11:51,420 --> 00:11:53,270
+So and they both return an error.
+
+167
+00:11:53,280 --> 00:11:54,300
+So I'll just copy this.
+
+168
+00:11:56,940 --> 00:11:59,340
+That will be empty by match that will be empty
+
+169
+00:12:02,370 --> 00:12:02,910
+and empty.
+
+170
+00:12:02,910 --> 00:12:04,230
+Takes no parameters.
+
+171
+00:12:05,790 --> 00:12:14,640
+An empty buy match takes a string and returns potentially an error, so we can just call this one empty
+
+172
+00:12:14,640 --> 00:12:15,300
+by match.
+
+173
+00:12:17,020 --> 00:12:23,130
+And when we do that, we still have an error here anyway to save.
+
+174
+00:12:24,600 --> 00:12:28,890
+We go back to celebrities and my red is cash.
+
+175
+00:12:29,160 --> 00:12:30,060
+Let's see here now.
+
+176
+00:12:30,240 --> 00:12:33,840
+Can I use my red as cash as cash, not cash value to sign it wrong?
+
+177
+00:12:33,870 --> 00:12:40,860
+Type four Methods set have func string data interface to your Int want func string interface int.
+
+178
+00:12:41,310 --> 00:12:42,720
+So something wrong with set?
+
+179
+00:12:42,750 --> 00:12:43,500
+No problem.
+
+180
+00:12:44,280 --> 00:12:50,520
+So set takes a string and an interface.
+
+181
+00:12:52,730 --> 00:12:54,800
+And an end and it returns an error.
+
+182
+00:12:55,040 --> 00:12:55,700
+Here's the problem.
+
+183
+00:12:56,160 --> 00:13:01,490
+OK, get rid of that and get rid of that and just return nil.
+
+184
+00:13:07,100 --> 00:13:10,960
+All right, now, if we go back to slur toss, that error is gone.
+
+185
+00:13:12,100 --> 00:13:16,540
+OK, so we're almost ready to try connecting to Rita's.
+
+186
+00:13:16,840 --> 00:13:19,720
+We have our cash type added to the celebrities.
+
+187
+00:13:20,530 --> 00:13:22,800
+So up here, we've added our cash type.
+
+188
+00:13:22,810 --> 00:13:23,320
+That's good.
+
+189
+00:13:24,640 --> 00:13:32,370
+Then down here, we decide whether or not we have to connect to read this at all.
+
+190
+00:13:32,380 --> 00:13:37,750
+If we do, then we create a client, read his cash and populate that field, and we have the two functions
+
+191
+00:13:37,750 --> 00:13:39,670
+necessary to make this thing work.
+
+192
+00:13:39,970 --> 00:13:46,750
+So if all goes well, we should be able to start building and working with the actual functions in the
+
+193
+00:13:46,750 --> 00:13:47,460
+cache type.
+
+194
+00:13:47,470 --> 00:13:51,520
+So we'll get started making the cash functions actually useful in the next election.

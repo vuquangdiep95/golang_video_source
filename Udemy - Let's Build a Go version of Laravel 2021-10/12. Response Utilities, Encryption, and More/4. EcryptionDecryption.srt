@@ -1,0 +1,683 @@
+1
+00:00:01,090 --> 00:00:06,010
+So there are lots of situations when you're working on a Web application when you need to encrypt something.
+
+2
+00:00:06,340 --> 00:00:13,450
+Let's say you're putting personal information in a database and you, like me are justifiably paranoid.
+
+3
+00:00:13,870 --> 00:00:18,400
+So you think, Well, I'm going to put this sensitive information in the database, and I know the database
+
+4
+00:00:18,400 --> 00:00:23,530
+is on its own server and it's behind an application firewall and a couple of packet filtering firewalls.
+
+5
+00:00:23,890 --> 00:00:30,640
+And the only access to it is physical or through a known IP address and an SSL certificate or a PKI
+
+6
+00:00:30,640 --> 00:00:31,390
+or something like that.
+
+7
+00:00:31,420 --> 00:00:36,640
+Whatever the case may be, but you still say, I'm going to put this information in the database, but
+
+8
+00:00:36,640 --> 00:00:41,410
+I'm going to encrypt it before I write it to the database and decrypt it when I pull it out.
+
+9
+00:00:41,590 --> 00:00:46,450
+There's lots of situations where you want to do this, and as you may know, Laravel makes that really
+
+10
+00:00:46,450 --> 00:00:46,880
+easy.
+
+11
+00:00:46,900 --> 00:00:53,000
+It's just calling a function encrypt and a function decrypt, and we can do a similar thing in celebrities.
+
+12
+00:00:53,110 --> 00:00:57,880
+So I'm back in the celebrity's package and I have the file helpers dot and go open.
+
+13
+00:00:58,490 --> 00:01:03,700
+And what I'm going to do is go to the very bottom of this file and create a a tape.
+
+14
+00:01:03,820 --> 00:01:09,670
+And I'm also going to create a couple of functions, one called encrypt and one called Decrypt.
+
+15
+00:01:09,940 --> 00:01:16,390
+OK, so I'll, first of all, create a type and I'm going to call the Typekit encryption, and it's
+
+16
+00:01:16,390 --> 00:01:23,950
+just a struct, and it only has one field and that field is key and it holds or is of the type a slice
+
+17
+00:01:23,950 --> 00:01:24,400
+of byte.
+
+18
+00:01:24,650 --> 00:01:29,860
+OK, and that will be the key we use to encrypt and decrypt all of our information.
+
+19
+00:01:30,700 --> 00:01:35,070
+Now create a function here, and the function is not going to have the receiver of see celebrities.
+
+20
+00:01:35,110 --> 00:01:38,590
+It's going to have the receiver of E a pointer to the type encryption.
+
+21
+00:01:39,190 --> 00:01:42,280
+So these are methods available on the type encryption.
+
+22
+00:01:42,880 --> 00:01:48,850
+And not surprisingly, the first one is going to be called encrypt, and it will take one parameter,
+
+23
+00:01:48,850 --> 00:01:56,410
+which I'll just call text a string and it will turn back or return a string and potentially an error.
+
+24
+00:01:56,860 --> 00:01:57,220
+OK.
+
+25
+00:01:58,270 --> 00:02:04,630
+And then I'll just duplicate this just to save some time and paste this here, and I'll call this one.
+
+26
+00:02:04,990 --> 00:02:08,560
+As you might have guessed, Decrypt not did encrypt Decrypt.
+
+27
+00:02:08,710 --> 00:02:09,190
+That's better.
+
+28
+00:02:09,880 --> 00:02:12,460
+And I'll call the parameter for that one, not text.
+
+29
+00:02:12,520 --> 00:02:14,800
+I'll call it crypto test.
+
+30
+00:02:16,810 --> 00:02:18,100
+So let's take care of this one.
+
+31
+00:02:18,100 --> 00:02:19,560
+First encrypt.
+
+32
+00:02:19,670 --> 00:02:21,910
+Let's give ourselves some screen real estate.
+
+33
+00:02:23,260 --> 00:02:28,420
+This is going to take a string, any string of any size, and it's going to encrypt it.
+
+34
+00:02:28,420 --> 00:02:35,950
+And then it's going to base 64 encoded so we can work with it and return that base 64 encoded encrypted
+
+35
+00:02:36,100 --> 00:02:36,520
+string.
+
+36
+00:02:36,880 --> 00:02:37,240
+OK.
+
+37
+00:02:37,870 --> 00:02:45,100
+So the first thing I'll do is declare a variable plaintext plain text and that will be assigned the
+
+38
+00:02:45,100 --> 00:02:50,260
+value of a slice of bytes text.
+
+39
+00:02:50,500 --> 00:02:54,670
+So we're converting what we get as a parameter to this function to a slice of bytes, and that's what
+
+40
+00:02:54,670 --> 00:02:58,270
+I need to work with, with when I'm when I'm working with the encryption packages.
+
+41
+00:02:59,950 --> 00:03:05,590
+Now I'm going to declare another variable called block, which is what we're going to use as part of
+
+42
+00:03:05,590 --> 00:03:08,020
+the encryption process, and I'll check for an error.
+
+43
+00:03:08,410 --> 00:03:13,570
+And then I'm going to call from the AEC package, which is available to us in crypto as part of the
+
+44
+00:03:13,570 --> 00:03:14,410
+standard library.
+
+45
+00:03:15,550 --> 00:03:18,620
+And from that, I'm going to call Lucifer.
+
+46
+00:03:19,660 --> 00:03:27,220
+And that is going to it requires some kind of encryption key, and it should be an easy key either 16,
+
+47
+00:03:27,220 --> 00:03:30,250
+24 or 32 bytes in length.
+
+48
+00:03:30,460 --> 00:03:30,880
+OK.
+
+49
+00:03:31,360 --> 00:03:33,730
+So I'm going to call Idukki now.
+
+50
+00:03:33,730 --> 00:03:34,570
+We don't have that yet.
+
+51
+00:03:34,630 --> 00:03:35,260
+Don't worry about it.
+
+52
+00:03:35,270 --> 00:03:36,490
+We're going to get it before too long.
+
+53
+00:03:36,550 --> 00:03:36,830
+OK?
+
+54
+00:03:36,850 --> 00:03:38,650
+We're going to have to have some value in there.
+
+55
+00:03:40,330 --> 00:03:44,170
+We don't get an error here because we're pointing to the receiver for this function.
+
+56
+00:03:44,170 --> 00:03:48,580
+But of course, when we instantiate this or when we try to encrypt or decrypt something, we need to
+
+57
+00:03:48,580 --> 00:03:49,150
+pass it.
+
+58
+00:03:49,390 --> 00:03:56,400
+A key and the key used to encrypt something must be exactly the same key used to decrypt something.
+
+59
+00:03:56,410 --> 00:03:57,730
+So we're going to have to get that somewhere.
+
+60
+00:03:57,740 --> 00:04:02,410
+And as you might guess, we're probably going to put that in the dart on file and make it available
+
+61
+00:04:02,410 --> 00:04:02,740
+to us.
+
+62
+00:04:03,580 --> 00:04:05,770
+So now I'll check for an error.
+
+63
+00:04:06,070 --> 00:04:07,510
+If error is not equal to nil.
+
+64
+00:04:08,800 --> 00:04:11,440
+Then I'll return an empty string and the error.
+
+65
+00:04:12,970 --> 00:04:19,150
+Otherwise, if we get past that now, I'm going to declare another variable called Cipher Mississippi
+
+66
+00:04:19,150 --> 00:04:21,310
+HDR Cipher text.
+
+67
+00:04:22,060 --> 00:04:22,450
+OK.
+
+68
+00:04:23,050 --> 00:04:27,430
+And that's going to be assigned the value of calling the make function.
+
+69
+00:04:27,970 --> 00:04:38,320
+I'm going to make a slice of byte is my first parameter and then I want it to be eight e s dot block
+
+70
+00:04:38,320 --> 00:04:38,920
+size.
+
+71
+00:04:39,190 --> 00:04:46,810
+That's a constant right out of the S package, plus the length of plain text that slice of bytes I created
+
+72
+00:04:46,810 --> 00:04:47,920
+up on Line 59.
+
+73
+00:04:48,790 --> 00:04:52,630
+So that creates the data structure we're going to use for our encryption.
+
+74
+00:04:53,290 --> 00:04:58,840
+OK, now next, I'm going to declare yet another variable called I've.
+
+75
+00:04:59,370 --> 00:05:05,150
+For some reason, crypto people always use Ivy for this variable team, and someday when I have the
+
+76
+00:05:05,150 --> 00:05:07,310
+time, I'm going to look it up and see what it stands for.
+
+77
+00:05:07,340 --> 00:05:08,030
+But not today.
+
+78
+00:05:08,900 --> 00:05:14,120
+So that's going to be a sign the value of ciphertext safe for text.
+
+79
+00:05:14,330 --> 00:05:15,560
+And we only want a part of it.
+
+80
+00:05:15,740 --> 00:05:22,640
+So we're going to put Colin Ace blocksize, and that gives me the part of that cipher text, which is
+
+81
+00:05:22,640 --> 00:05:29,270
+spelled wrong cipher text that gets me the part of that data structure that I want to work with.
+
+82
+00:05:29,330 --> 00:05:29,720
+OK.
+
+83
+00:05:30,620 --> 00:05:35,480
+And now I'm going to say if I'm going to ignore the first return value, but I am going to check for
+
+84
+00:05:35,480 --> 00:05:41,160
+an error error that's assigned the value of from the i o package.
+
+85
+00:05:41,180 --> 00:05:47,000
+Again, part of the standard library and I want read full read full right there.
+
+86
+00:05:48,980 --> 00:05:55,070
+And to make this encryption good, I'm going to call from the Rand package, which again is part of
+
+87
+00:05:55,070 --> 00:05:59,990
+the standard library ran dot reader and the second parameter is Ivy.
+
+88
+00:06:00,410 --> 00:06:07,370
+And then if the error is not equal to nil return, as you might expect an empty string and a message
+
+89
+00:06:07,370 --> 00:06:08,450
+saying whatever went wrong.
+
+90
+00:06:08,780 --> 00:06:16,610
+OK, now yet another variable, this one I'm going to call stream and I'm going to call Cipher CIPA
+
+91
+00:06:16,640 --> 00:06:19,460
+HDR, which is this one right here.
+
+92
+00:06:19,460 --> 00:06:29,240
+Crypto cipher from the crypto package Cipher Dot and the function name is a new c f be encrypted.
+
+93
+00:06:29,270 --> 00:06:31,800
+Now there's a bunch to choose from, so make sure you get the right one.
+
+94
+00:06:31,820 --> 00:06:37,100
+It's CSFB encrypted and I just hand it block and I've.
+
+95
+00:06:39,500 --> 00:06:45,530
+And now I'm going to say Stream Dot X o r key string right there.
+
+96
+00:06:45,830 --> 00:06:50,430
+And as you can see, it gives you a description, what it does here, how the encryption works.
+
+97
+00:06:50,450 --> 00:06:58,310
+So we're going to call that and we're going to hand it cipher text and in square brackets, the first
+
+98
+00:06:58,310 --> 00:07:03,200
+part of that data structure a block size column.
+
+99
+00:07:03,710 --> 00:07:04,160
+OK.
+
+100
+00:07:05,060 --> 00:07:06,980
+And then outside of the square brackets.
+
+101
+00:07:06,980 --> 00:07:12,800
+But before the closing parentheses, plain text and cipher text has to be spelled right.
+
+102
+00:07:14,210 --> 00:07:15,320
+Ciphertext, right?
+
+103
+00:07:16,430 --> 00:07:18,290
+And finally, we take that result.
+
+104
+00:07:18,470 --> 00:07:25,220
+What we get there and we return a base 64 encoded version of it, so we'll return and we're going to
+
+105
+00:07:25,220 --> 00:07:28,390
+use the base 64 package encoding base64.
+
+106
+00:07:30,500 --> 00:07:31,580
+You are all encoding.
+
+107
+00:07:33,200 --> 00:07:44,590
+And we want to encode to string cipher text and no error, so that return statement takes our data,
+
+108
+00:07:44,600 --> 00:07:49,070
+our cipher text in base64 encodes it encodes it to a string.
+
+109
+00:07:49,070 --> 00:07:53,000
+Make sure that you are all safe and sends it back and we return no error.
+
+110
+00:07:53,690 --> 00:07:59,690
+So that was a fair bit of logic, but it's actually pretty simple to encrypt and decrypt things and
+
+111
+00:07:59,690 --> 00:08:01,520
+go, it's got a great crypto package.
+
+112
+00:08:02,150 --> 00:08:05,960
+Now, it's not much use to encrypt something if you don't have a means of decrypting it.
+
+113
+00:08:06,500 --> 00:08:11,390
+So it's about the same amount of code and basically we're following the same process, but in reverse.
+
+114
+00:08:12,260 --> 00:08:18,560
+So we're going to declare, first of all, a variable called cipher text, cipher text, and we're going
+
+115
+00:08:18,560 --> 00:08:19,940
+to ignore the second parameter.
+
+116
+00:08:20,330 --> 00:08:25,070
+And those will be as a sign that's assigned its value from the base64 package.
+
+117
+00:08:25,910 --> 00:08:35,900
+And we want to call you are encoding base64 dot, the URL encoding, but this time we want to decode
+
+118
+00:08:35,930 --> 00:08:36,350
+a string.
+
+119
+00:08:37,010 --> 00:08:37,430
+OK.
+
+120
+00:08:37,460 --> 00:08:40,520
+And what we want is what was passed to this function.
+
+121
+00:08:41,000 --> 00:08:41,960
+Crypto text.
+
+122
+00:08:44,300 --> 00:08:45,980
+So now we have a variable called ciphertext.
+
+123
+00:08:46,790 --> 00:08:52,730
+Next, we'll get block and error again, calling a Saucony cipher.
+
+124
+00:08:53,270 --> 00:08:57,950
+And we want to use as its parameter the key, which we have to set up yet.
+
+125
+00:08:57,980 --> 00:08:58,580
+But we'll get there.
+
+126
+00:08:58,940 --> 00:08:59,660
+We'll check for an error.
+
+127
+00:09:00,230 --> 00:09:08,630
+If error is not equal to nil, return an empty string and the error yourself, some more room.
+
+128
+00:09:10,220 --> 00:09:15,540
+So the next step is to make sure that the cipher text is of the correct length.
+
+129
+00:09:15,560 --> 00:09:18,410
+So we'll check if Len Cipher text.
+
+130
+00:09:20,350 --> 00:09:28,930
+Is less than a block size, and we're going to return an empty string in the air because this can't
+
+131
+00:09:28,930 --> 00:09:29,600
+be decrypted.
+
+132
+00:09:29,620 --> 00:09:30,640
+It's not the right length.
+
+133
+00:09:30,940 --> 00:09:33,220
+OK, so just a simple sanity check.
+
+134
+00:09:34,420 --> 00:09:39,310
+Once again, we'll get an I.V. and someday I'll find out why we're using I.V. for that variable name
+
+135
+00:09:40,000 --> 00:09:44,830
+cipher text, and we want to get a part of that.
+
+136
+00:09:44,860 --> 00:09:51,760
+So colon and the part at the end that is of length, a block size that constant from the U.S. Library.
+
+137
+00:09:52,360 --> 00:10:01,390
+And in this case, cipher text is now equal to cipher text escort block size.
+
+138
+00:10:02,170 --> 00:10:05,410
+OK, so now we're almost to the point where we can work with this.
+
+139
+00:10:05,440 --> 00:10:06,040
+Now we do.
+
+140
+00:10:06,040 --> 00:10:19,000
+The decryption stream is a sign the value of cipher dot new CFB Decryptor CFB make sure you get the
+
+141
+00:10:19,000 --> 00:10:21,580
+right one CFB decryptor, OK.
+
+142
+00:10:23,170 --> 00:10:25,870
+And we just had that block and.
+
+143
+00:10:28,420 --> 00:10:33,640
+And now stream Dot X for key stream once again.
+
+144
+00:10:35,830 --> 00:10:38,050
+And we had that cipher text.
+
+145
+00:10:40,570 --> 00:10:44,500
+Then we handed cipher text again, which might seem odd, but that's the way you decrypt things.
+
+146
+00:10:45,160 --> 00:10:47,740
+Cipher text at least A.
+
+147
+00:10:48,130 --> 00:10:49,420
+S encryption and decryption.
+
+148
+00:10:50,170 --> 00:10:54,250
+And now we just return and we'll just format this in the correct format we want.
+
+149
+00:10:54,260 --> 00:10:55,960
+We want it to be in the form of a string.
+
+150
+00:10:55,960 --> 00:11:06,880
+So I'll just use a format as print f and my format string is percent s lowercase s and my substitution
+
+151
+00:11:06,880 --> 00:11:13,150
+is cipher text and the second return value is nil, because at this point, everything should have gone
+
+152
+00:11:13,150 --> 00:11:15,180
+right, except that I have a mistake here somewhere.
+
+153
+00:11:16,220 --> 00:11:17,150
+I left, Colonel.
+
+154
+00:11:18,680 --> 00:11:20,840
+Yeah, that's a little better.
+
+155
+00:11:20,870 --> 00:11:24,380
+We want the first part of that data structure, so we're going to return this.
+
+156
+00:11:24,410 --> 00:11:28,780
+Now it's giving me a helpful warning, saying this argument's underlying type is a slice of bytes.
+
+157
+00:11:28,790 --> 00:11:30,260
+You use simple conversion.
+
+158
+00:11:30,410 --> 00:11:32,510
+All right, we'll do that then fine.
+
+159
+00:11:32,990 --> 00:11:36,890
+If it makes you happier, string.
+
+160
+00:11:38,480 --> 00:11:40,100
+OK, it is less programming.
+
+161
+00:11:40,100 --> 00:11:44,480
+So I'm going to side with the code on this one, but I'm so used to using the format package.
+
+162
+00:11:44,480 --> 00:11:46,670
+Sometimes muscle memory kicks in.
+
+163
+00:11:48,110 --> 00:11:53,810
+OK, so that was a fair bit of typing, but now we have the three things we need to be able to start
+
+164
+00:11:53,810 --> 00:11:54,950
+the encryption process.
+
+165
+00:11:54,950 --> 00:11:56,720
+We have the type encryption.
+
+166
+00:11:56,900 --> 00:12:01,820
+We have a method on that type or a function on that type to encrypt something and a function on that
+
+167
+00:12:01,820 --> 00:12:03,080
+type to decrypt something.
+
+168
+00:12:03,440 --> 00:12:09,980
+So the next step is to figure out how we populate the field key in the type encryption before we can
+
+169
+00:12:09,980 --> 00:12:14,280
+actually do it, because without that, we're not going to have anything to work with at all.
+
+170
+00:12:14,300 --> 00:12:20,660
+We'll have no means of actually successfully calling either encrypt or decrypt, and we'll get started
+
+171
+00:12:20,660 --> 00:12:21,980
+on that in the next election.

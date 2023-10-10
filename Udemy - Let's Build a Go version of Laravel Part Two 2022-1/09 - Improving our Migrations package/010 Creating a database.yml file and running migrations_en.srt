@@ -1,0 +1,360 @@
+1
+00:00:01,569 --> 00:00:07,030
+So at this point, we can now create pop compatible migrations, but of course, those migrations aren't
+
+2
+00:00:07,030 --> 00:00:09,250
+terribly useful if we can't run them.
+
+3
+00:00:09,490 --> 00:00:10,450
+And right now we can't.
+
+4
+00:00:10,960 --> 00:00:18,040
+So let's get started resolving this issue, and I'm going to start by going to the my app project celerity
+
+5
+00:00:18,040 --> 00:00:20,240
+us here and I'll create that database.
+
+6
+00:00:20,470 --> 00:00:23,960
+Why HTML file inside the config folder that PUP needs?
+
+7
+00:00:24,010 --> 00:00:26,950
+So I'll create a new directory at the root level of my app.
+
+8
+00:00:27,520 --> 00:00:33,760
+So a new directory called config all lowercase and just seal in effigy.
+
+9
+00:00:34,660 --> 00:00:36,670
+And inside of that, I'll create a new file.
+
+10
+00:00:38,390 --> 00:00:42,950
+Not to go file, it's a file named database requirement.
+
+11
+00:00:44,300 --> 00:00:45,260
+A Yamal file.
+
+12
+00:00:45,380 --> 00:00:45,710
+OK.
+
+13
+00:00:46,520 --> 00:00:51,710
+And if you go to the course resources for this lecture, you will see a file you can download and the
+
+14
+00:00:51,710 --> 00:00:52,370
+contents of it.
+
+15
+00:00:52,370 --> 00:00:52,880
+Are this?
+
+16
+00:00:53,030 --> 00:00:54,440
+And you can download it if you want to.
+
+17
+00:00:54,440 --> 00:00:55,730
+But it's not very much typing.
+
+18
+00:00:55,730 --> 00:01:02,180
+But if you do type it, make sure you get the indentations from line three to line nine exactly as they
+
+19
+00:01:02,180 --> 00:01:02,750
+are here.
+
+20
+00:01:02,900 --> 00:01:03,230
+OK.
+
+21
+00:01:03,800 --> 00:01:06,660
+And the values in here just describe my connection to a database.
+
+22
+00:01:06,680 --> 00:01:10,370
+Now, in my case, I'm using Postgres with the database name celebrities.
+
+23
+00:01:10,580 --> 00:01:12,290
+The username Postgres.
+
+24
+00:01:12,290 --> 00:01:14,060
+The password password, so on and so forth.
+
+25
+00:01:14,540 --> 00:01:20,060
+And of course, these have to match exactly what's in this file Docker compose.
+
+26
+00:01:20,540 --> 00:01:26,480
+So here I have Postgres and password insularity passport five four three two and those correspond exactly
+
+27
+00:01:26,480 --> 00:01:28,100
+to what's in here or nothing will work.
+
+28
+00:01:28,310 --> 00:01:28,700
+OK.
+
+29
+00:01:29,570 --> 00:01:30,320
+So I've created that.
+
+30
+00:01:30,530 --> 00:01:31,370
+That's very useful.
+
+31
+00:01:31,940 --> 00:01:37,640
+So the next step is to go back to celebrities and to look at our CMG folder.
+
+32
+00:01:38,390 --> 00:01:39,590
+The Seelye folder.
+
+33
+00:01:39,620 --> 00:01:43,130
+And let's start with Mongo and figure out how we run migrations.
+
+34
+00:01:43,970 --> 00:01:49,340
+So in my case, in the main function, it's this switch state that takes argument number one, whatever
+
+35
+00:01:49,340 --> 00:01:52,370
+comes after the word celebrities on the command line.
+
+36
+00:01:52,820 --> 00:01:57,410
+And of course, the one I want is right here, migrate, and that calls a function do migrate.
+
+37
+00:01:57,590 --> 00:01:58,390
+So let's bring that up.
+
+38
+00:02:00,420 --> 00:02:06,960
+And in here right now, we're calling a function called get DCIM to build our connection string in the
+
+39
+00:02:06,960 --> 00:02:12,630
+format that is expected by going migrate the package we're not going to be using by the time we're done,
+
+40
+00:02:12,750 --> 00:02:13,860
+so I'm not going to need that anymore.
+
+41
+00:02:13,890 --> 00:02:21,510
+So a comment that I thought what we do need and here I'll open up the migration and go file, which
+
+42
+00:02:21,510 --> 00:02:23,640
+is right here at the root level of salary costs.
+
+43
+00:02:24,390 --> 00:02:25,920
+We do need our connection.
+
+44
+00:02:26,700 --> 00:02:31,620
+So that means we're going to have to be able to call Pop Connect or just do this right in the code itself
+
+45
+00:02:31,620 --> 00:02:32,600
+in our other file.
+
+46
+00:02:32,610 --> 00:02:36,600
+But I'll call this, which means I probably should have exported this to start with.
+
+47
+00:02:36,960 --> 00:02:37,890
+So now it's export it.
+
+48
+00:02:38,400 --> 00:02:43,440
+So let's go back to our migrate to go file inside the Seelye folder, and let's get a connection.
+
+49
+00:02:43,590 --> 00:02:50,070
+So I'll get a text, a transaction, which is what they call it in the pop world, potentially an error
+
+50
+00:02:50,310 --> 00:02:55,470
+when I call sell dot pop connect right there.
+
+51
+00:02:55,830 --> 00:02:56,190
+OK.
+
+52
+00:02:56,730 --> 00:02:59,550
+And we'll check for an error if error is not equal to nil.
+
+53
+00:03:01,410 --> 00:03:04,660
+Then we'll exit gracefully with the error, OK?
+
+54
+00:03:04,680 --> 00:03:08,580
+And the other thing we should do here is check our database connection.
+
+55
+00:03:08,590 --> 00:03:09,840
+So check for DB.
+
+56
+00:03:09,880 --> 00:03:16,620
+So let's put that right before this check for DB, because you shouldn't be able to run migrations if
+
+57
+00:03:16,620 --> 00:03:18,160
+you don't have your database configured.
+
+58
+00:03:18,180 --> 00:03:22,260
+So now I have my my transaction might connection to my Postgres database.
+
+59
+00:03:23,630 --> 00:03:27,620
+Now, the other thing we'll want to do here, of course, is close that connection when we're done with
+
+60
+00:03:27,620 --> 00:03:31,300
+it, so we'll say defer tax Duclos.
+
+61
+00:03:31,880 --> 00:03:37,070
+So when this dysfunction exits, then we'll close our connection to the database, and that's always
+
+62
+00:03:37,070 --> 00:03:37,520
+a good thing.
+
+63
+00:03:38,750 --> 00:03:44,700
+Now down here at the moment when we runner up migrations, we're calling this so a comment that out
+
+64
+00:03:45,170 --> 00:03:49,460
+because we're not going to be using that because we don't run our pop migrations that way.
+
+65
+00:03:49,580 --> 00:03:54,860
+Instead, we'll call this function over here, which is run pop migrations.
+
+66
+00:03:55,550 --> 00:03:59,240
+So back over here, all right now, it's just a matter of doing.
+
+67
+00:03:59,240 --> 00:04:04,820
+This error is a sign the value of cell run pop migrations.
+
+68
+00:04:04,970 --> 00:04:08,480
+And we ended our connections and nothing else changes.
+
+69
+00:04:08,870 --> 00:04:10,670
+Now what about down migrations?
+
+70
+00:04:10,910 --> 00:04:15,020
+Well, right now we had an all command here, and I'm going to comment all of this.
+
+71
+00:04:15,530 --> 00:04:16,640
+I'll delete it momentarily.
+
+72
+00:04:16,640 --> 00:04:17,899
+I was going to leave it there for a moment.
+
+73
+00:04:20,209 --> 00:04:25,250
+All we do for our down migrations is, say, if our three is equal to all,
+
+74
+00:04:28,430 --> 00:04:32,120
+then do something, otherwise do something else.
+
+75
+00:04:32,960 --> 00:04:36,710
+And of course, if you're trying to run all migrations, then we'll say error.
+
+76
+00:04:36,710 --> 00:04:44,030
+It's assign the value of from the cell package port migration down with the transactions.
+
+77
+00:04:44,210 --> 00:04:45,350
+And we had it minus one.
+
+78
+00:04:46,560 --> 00:04:49,380
+And I'll get my error check here, so I'll copy this line
+
+79
+00:04:52,020 --> 00:05:01,200
+pasted in here, and then I'll copy the whole thing just to save some typing pasted in here and instead
+
+80
+00:05:01,200 --> 00:05:03,360
+of handing it minus one, I just had it one.
+
+81
+00:05:03,750 --> 00:05:08,660
+OK, now you could simplify that code and have fewer lines, but I think this is really readable.
+
+82
+00:05:08,670 --> 00:05:14,210
+So want to get rid of this comment that I line here and I'll get rid of these commented out lines?
+
+83
+00:05:14,280 --> 00:05:15,390
+We don't need those anymore.
+
+84
+00:05:16,490 --> 00:05:18,410
+And my last case is reset.
+
+85
+00:05:18,920 --> 00:05:23,720
+And really, to make things simpler, I'll just delete all of this and just say error is a sign the
+
+86
+00:05:23,720 --> 00:05:37,310
+value of cell dot, pup migrate, reset and its transaction and copy this Eric error code and paste
+
+87
+00:05:37,310 --> 00:05:41,090
+it in there and nothing else should change.
+
+88
+00:05:41,210 --> 00:05:45,740
+So this is really straightforward at this point, and it's actually less code that we had before as
+
+89
+00:05:45,740 --> 00:05:46,040
+well.
+
+90
+00:05:46,850 --> 00:05:51,470
+So in the next lecture, we'll actually give this a try and see how it works.
+

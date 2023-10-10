@@ -1,0 +1,71 @@
+1
+00:00:01,360 --> 00:00:08,410
+So one of the things we need is a local server with a local service to monitor and I mean, I suppose
+
+2
+00:00:08,410 --> 00:00:12,700
+we could just try to monitor Google and hope that it goes down to see when things go wrong.
+
+3
+00:00:12,700 --> 00:00:13,670
+But that might take a while.
+
+4
+00:00:14,350 --> 00:00:20,560
+So instead, we've already entered a host on our application called Localhost, and it listens on port
+
+5
+00:00:20,560 --> 00:00:22,870
+eighty eighty for an HTTP service.
+
+6
+00:00:23,260 --> 00:00:29,560
+So the simplest way to make this work is just to compile this very, very short program that listens
+
+7
+00:00:29,560 --> 00:00:33,280
+on Port 80 and returns Hello World.
+
+8
+00:00:33,290 --> 00:00:34,340
+And that's all that it does.
+
+9
+00:00:34,600 --> 00:00:36,580
+So this is a very short program.
+
+10
+00:00:36,790 --> 00:00:42,190
+I've actually added to this full source code for this to the course resources for this page.
+
+11
+00:00:42,580 --> 00:00:50,620
+And once you have it, you can just run it by saying, you know, go run Dudko.
+
+12
+00:00:51,250 --> 00:00:53,020
+And that will listen on Port AT&amp;T.
+
+13
+00:00:53,080 --> 00:00:54,030
+And that's what it does.
+
+14
+00:00:54,040 --> 00:00:55,590
+It's now listening on Port AT&amp;T.
+
+15
+00:00:55,600 --> 00:01:06,520
+So if I go to my favorite Web browser and try to go to HTP Collins localhost AT&amp;T, it actually returns
+
+16
+00:01:06,520 --> 00:01:07,180
+Hello World.
+
+17
+00:01:07,180 --> 00:01:13,090
+So we can start that and stop it as necessary to make sure that services are being monitored properly.
+
+18
+00:01:13,090 --> 00:01:15,340
+And we'll start doing that in the next lecture.

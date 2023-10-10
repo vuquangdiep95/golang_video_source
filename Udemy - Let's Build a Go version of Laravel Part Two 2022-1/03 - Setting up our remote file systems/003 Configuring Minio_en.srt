@@ -1,0 +1,172 @@
+1
+00:00:01,950 --> 00:00:07,020
+So before we can use Mineo, we need to set a few things up, and fortunately, it's really, really
+
+2
+00:00:07,020 --> 00:00:07,530
+easy.
+
+3
+00:00:07,710 --> 00:00:12,210
+So right here in my Docker compose, don't why HTML file in the Mineo section?
+
+4
+00:00:12,960 --> 00:00:19,200
+If you look under environment, I have the route user's username set to route and the route user's password
+
+5
+00:00:19,200 --> 00:00:21,960
+set to password, which is fine for a local development.
+
+6
+00:00:21,960 --> 00:00:23,880
+But of course, you'd never do that in production.
+
+7
+00:00:24,840 --> 00:00:27,360
+So Mineo, let's go over to our web browser.
+
+8
+00:00:27,960 --> 00:00:32,689
+And first of all, this is the link to the Mineo web page.
+
+9
+00:00:32,700 --> 00:00:33,600
+And it's pretty easy.
+
+10
+00:00:33,600 --> 00:00:35,340
+It's min dot i o.
+
+11
+00:00:35,730 --> 00:00:40,290
+And there's all kinds of documentation, all sorts of things you can look at here and you can buy services
+
+12
+00:00:40,290 --> 00:00:41,130
+for them if you wish.
+
+13
+00:00:41,130 --> 00:00:42,330
+But of course, we're not doing that.
+
+14
+00:00:42,930 --> 00:00:46,220
+We're actually going to just open a new tab in our web browser.
+
+15
+00:00:46,230 --> 00:00:52,680
+And if I go back to my Docker compose, don't why email, which is right here, you'll see that I'm
+
+16
+00:00:52,680 --> 00:00:54,510
+looking at listening to two parts.
+
+17
+00:00:54,630 --> 00:00:59,680
+And of course, here in the port section, what's on the left side is my host machine.
+
+18
+00:00:59,700 --> 00:01:01,770
+In other words, my computer I'm working on.
+
+19
+00:01:02,400 --> 00:01:07,020
+And what's on the right side is the port that it's listening to on the back end in the Docker image,
+
+20
+00:01:07,470 --> 00:01:10,810
+and I want to connect to this port nine zero zero one.
+
+21
+00:01:10,830 --> 00:01:18,570
+So back in my web browser, I'll simply go to local host code nine zero zero one and that takes me to
+
+22
+00:01:18,570 --> 00:01:19,640
+a login screen.
+
+23
+00:01:19,650 --> 00:01:26,610
+And here I put my username root and my password, which is password, and I'll log in.
+
+24
+00:01:28,270 --> 00:01:29,620
+And the first thing I'm going to do.
+
+25
+00:01:29,650 --> 00:01:31,750
+There's all kinds of things you can do here.
+
+26
+00:01:31,870 --> 00:01:35,220
+You can configure almost anything you want setting up policies.
+
+27
+00:01:35,230 --> 00:01:36,550
+I am policies.
+
+28
+00:01:37,720 --> 00:01:40,600
+All I want to do right now is create a bucket.
+
+29
+00:01:40,930 --> 00:01:46,270
+And I'm going to create a new bucket, which I will call not a very inventive name, but it will suit
+
+30
+00:01:46,270 --> 00:01:47,050
+my purposes.
+
+31
+00:01:47,350 --> 00:01:49,300
+Test bucket all one word.
+
+32
+00:01:49,750 --> 00:01:52,660
+And I'm going to leave versioning off object blocking off.
+
+33
+00:01:52,660 --> 00:01:53,600
+Quota off.
+
+34
+00:01:53,650 --> 00:01:55,750
+We're just going to take the defaults, OK?
+
+35
+00:01:56,470 --> 00:02:00,430
+And of course, I can't make these changes because I'm using a single desk setup.
+
+36
+00:02:00,520 --> 00:02:06,550
+One of the nice things about Mineo is I can actually install it on multiple machines in the same data
+
+37
+00:02:06,550 --> 00:02:09,449
+center and share the disks.
+
+38
+00:02:09,460 --> 00:02:14,960
+And that makes sure that my information, my data is available even if one of the servers goes down.
+
+39
+00:02:14,980 --> 00:02:16,810
+So I'll say this now.
+
+40
+00:02:16,810 --> 00:02:22,030
+I've created something I can connect to and we'll take care of actually connecting to it later on.
+
+41
+00:02:22,060 --> 00:02:23,500
+Right now, we just want to set it up.
+
+42
+00:02:23,950 --> 00:02:25,220
+OK, so that one's done.
+
+43
+00:02:25,270 --> 00:02:29,260
+Next, we have to set up our FTP and we'll do that in the next lecture.
+

@@ -1,0 +1,483 @@
+1
+00:00:01,100 --> 00:00:01,610
+Okay.
+
+2
+00:00:01,790 --> 00:00:07,610
+So this time around we need to work on is this handler subscribe to plan and this is the one that fires
+
+3
+00:00:07,610 --> 00:00:11,870
+when someone clicks on the select button next to a plan on the plans page.
+
+4
+00:00:12,800 --> 00:00:16,310
+And my first comment says get the idea of the plan that is chosen.
+
+5
+00:00:16,310 --> 00:00:19,430
+But if you think it through, that's not really the first thing I have to do.
+
+6
+00:00:19,610 --> 00:00:24,380
+I actually have to do the same thing I do down here in choose subscription, which is to make sure that
+
+7
+00:00:24,380 --> 00:00:25,430
+the user's authenticated.
+
+8
+00:00:25,970 --> 00:00:31,250
+Now, I could copy this and paste this up here and that would work fine, but I'm doing this twice now.
+
+9
+00:00:31,730 --> 00:00:37,040
+It might be simpler to go back to middleware, this file over here, middleware ago and just write a
+
+10
+00:00:37,040 --> 00:00:41,210
+little bit of middleware and then we can apply that middleware to any route we want to protect.
+
+11
+00:00:41,570 --> 00:00:43,070
+And it's very, very simple to do.
+
+12
+00:00:43,070 --> 00:00:48,620
+So I would declare a function with the receiver of app pointer to config, not channel config.
+
+13
+00:00:49,490 --> 00:00:55,580
+And I'll just call this one off and it's middleware so it takes a parameter next HTP dot handler.
+
+14
+00:00:57,340 --> 00:00:59,650
+And it returns and htp to our handler.
+
+15
+00:01:00,880 --> 00:01:01,240
+Okay.
+
+16
+00:01:02,260 --> 00:01:07,150
+Now, what I'm going to do is I need access because of what I want to do is check the session to see
+
+17
+00:01:07,150 --> 00:01:10,270
+if that off I.D. key exists in the session.
+
+18
+00:01:10,300 --> 00:01:11,170
+So do make that happen.
+
+19
+00:01:11,500 --> 00:01:14,020
+I need to return an HGTV dot.
+
+20
+00:01:14,020 --> 00:01:14,620
+Handler.
+
+21
+00:01:14,620 --> 00:01:16,660
+Funk handler.
+
+22
+00:01:17,530 --> 00:01:18,640
+Funk right there.
+
+23
+00:01:20,660 --> 00:01:27,500
+And then give it a function with with the response writer because I need access to some of this stuff
+
+24
+00:01:28,130 --> 00:01:31,580
+and the request request.
+
+25
+00:01:32,330 --> 00:01:32,650
+Okay.
+
+26
+00:01:33,260 --> 00:01:36,980
+And inside of this, I can do the session check if not.
+
+27
+00:01:37,310 --> 00:01:40,020
+And from the receiver app session.
+
+28
+00:01:41,540 --> 00:01:47,000
+Dot exists and we need to give it the context, which is why I had to wrap everything in this return
+
+29
+00:01:47,000 --> 00:01:47,450
+statement.
+
+30
+00:01:48,570 --> 00:01:55,620
+Asked context and I'm looking for a user ID like that and that doesn't exist unless redirect the user
+
+31
+00:01:56,220 --> 00:01:59,520
+after session got put their spell session.
+
+32
+00:01:59,520 --> 00:02:01,350
+Right got put.
+
+33
+00:02:02,400 --> 00:02:10,140
+And we're going to put using our act context and we'll put an error message log in first.
+
+34
+00:02:12,750 --> 00:02:14,100
+So that's in the session now.
+
+35
+00:02:14,280 --> 00:02:24,890
+Now we just do a redirect, htp dot redirect with W and our to the login page and say you repeat on
+
+36
+00:02:24,910 --> 00:02:34,410
+status temporary redirect and we return otherwise outside of this if statement, we just go to the next
+
+37
+00:02:34,410 --> 00:02:34,890
+in the chain.
+
+38
+00:02:34,890 --> 00:02:38,310
+If any next dot serve HDP with w inter.
+
+39
+00:02:39,300 --> 00:02:42,900
+Okay, so we have this middleware now let's go use it.
+
+40
+00:02:42,900 --> 00:02:49,500
+So go to our routes file and what I'll do is create another function below this one that I'll mount
+
+41
+00:02:49,500 --> 00:02:52,380
+as its own router func app pointer to config.
+
+42
+00:02:53,760 --> 00:03:00,240
+And I'll call this one authorizer and it takes no arguments, but it returns an HGTV dot handler.
+
+43
+00:03:02,880 --> 00:03:05,130
+And inside of here I'll say create a new router.
+
+44
+00:03:05,280 --> 00:03:06,720
+Max is key.
+
+45
+00:03:06,720 --> 00:03:08,820
+Assign the value of key dot new router.
+
+46
+00:03:12,910 --> 00:03:19,270
+And for this particular router, I'll use the authentication middleware maxed out use and it's capped
+
+47
+00:03:19,480 --> 00:03:19,900
+off.
+
+48
+00:03:22,690 --> 00:03:25,920
+And now I put in the rights that I want and of course that's these two.
+
+49
+00:03:25,930 --> 00:03:27,100
+So let's get these out of here.
+
+50
+00:03:28,060 --> 00:03:29,810
+We'll have to make one more change after this.
+
+51
+00:03:31,390 --> 00:03:36,570
+And I'll paste these right here, and then I'll return Mark's.
+
+52
+00:03:37,740 --> 00:03:43,860
+And then up here just before the return statement, I'll say muck stock mount and mount that river and
+
+53
+00:03:43,860 --> 00:03:46,500
+what to mount, but it has to have a prefix.
+
+54
+00:03:46,500 --> 00:03:47,910
+So I call it slash members.
+
+55
+00:03:48,240 --> 00:03:52,150
+Only members can see these pages and we use apt author.
+
+56
+00:03:53,490 --> 00:03:53,820
+Okay.
+
+57
+00:03:54,420 --> 00:03:59,880
+That means that the URL slash plans is now slash members slash plants.
+
+58
+00:03:59,940 --> 00:04:01,680
+So let's go fix that in the name of BR.
+
+59
+00:04:02,490 --> 00:04:04,020
+So now burn up herschel.
+
+60
+00:04:04,020 --> 00:04:05,000
+Don't go HTML.
+
+61
+00:04:05,310 --> 00:04:09,030
+We just change this to slash members slash plans.
+
+62
+00:04:09,930 --> 00:04:13,260
+And the other thing is going to have to change of course is on the plans page.
+
+63
+00:04:14,010 --> 00:04:19,990
+Our location dot trip here in the JavaScript section at the bottom of plans dot page dot html.
+
+64
+00:04:20,040 --> 00:04:24,090
+This becomes slash members slash subscribe.
+
+65
+00:04:24,870 --> 00:04:25,290
+Okay.
+
+66
+00:04:25,590 --> 00:04:27,240
+So I think that is a little cleaner.
+
+67
+00:04:27,330 --> 00:04:31,020
+Now we can put any route that you have to be authenticated for in its own router.
+
+68
+00:04:31,770 --> 00:04:32,050
+Okay.
+
+69
+00:04:32,070 --> 00:04:33,300
+And then a couple of ways to do this.
+
+70
+00:04:33,300 --> 00:04:33,960
+But this works.
+
+71
+00:04:35,100 --> 00:04:36,810
+Now let's go back to our handlers.
+
+72
+00:04:37,560 --> 00:04:42,720
+That means here in show subscription, I can just remove this entirely because that's all handled by
+
+73
+00:04:42,720 --> 00:04:43,410
+the middleware now.
+
+74
+00:04:44,130 --> 00:04:44,490
+Okay.
+
+75
+00:04:45,600 --> 00:04:49,800
+And up here, I don't need to do anything to make sure that this is actually secure, that you have
+
+76
+00:04:49,800 --> 00:04:53,340
+to be authenticated to see it, because that's all taken care of by the middleware.
+
+77
+00:04:54,210 --> 00:04:57,120
+So let's get started with the first three of these things.
+
+78
+00:04:57,150 --> 00:04:57,540
+Okay.
+
+79
+00:04:57,600 --> 00:05:01,800
+Now, when we finished this code in this lecture, we won't be able to compile it because we'll have
+
+80
+00:05:01,800 --> 00:05:03,000
+variables we haven't used.
+
+81
+00:05:03,000 --> 00:05:05,490
+But we'll we'll take care of that in subsequent lectures.
+
+82
+00:05:05,580 --> 00:05:08,850
+So, number one, let's get the ID of the plan that is to be chosen.
+
+83
+00:05:09,540 --> 00:05:10,890
+And of course, that's trivial.
+
+84
+00:05:11,160 --> 00:05:18,810
+We'll say it is a sign the value of our URL, the query don't get.
+
+85
+00:05:19,530 --> 00:05:20,730
+And I want to get it.
+
+86
+00:05:23,960 --> 00:05:24,410
+Like that.
+
+87
+00:05:25,520 --> 00:05:28,940
+And of course, I want to use that ID to look up the plan in the database.
+
+88
+00:05:28,970 --> 00:05:33,130
+So let's convert it to an integer plan ID and I'll ignore the error.
+
+89
+00:05:33,140 --> 00:05:40,010
+And you probably shouldn't, but I'm going to assign the value of from the start conf package alpha
+
+90
+00:05:40,010 --> 00:05:41,900
+to integer a2.
+
+91
+00:05:41,900 --> 00:05:43,610
+Ah, and we can do it.
+
+92
+00:05:43,970 --> 00:05:46,910
+So now I have the plan B, I want to get the plan from the database.
+
+93
+00:05:46,970 --> 00:05:47,840
+I know how to do that.
+
+94
+00:05:47,840 --> 00:05:48,470
+That's trivial.
+
+95
+00:05:48,470 --> 00:05:54,350
+Now plan an error come from calling app dot models.
+
+96
+00:05:56,730 --> 00:06:00,750
+The plan don't get won by ID and that's plan I.D..
+
+97
+00:06:01,710 --> 00:06:01,980
+Okay.
+
+98
+00:06:02,040 --> 00:06:02,850
+Now I have the plan.
+
+99
+00:06:02,880 --> 00:06:05,910
+We'll check for an error if error is not equal to nil.
+
+100
+00:06:06,120 --> 00:06:10,740
+Then I'll just copy what we have up here and change it as necessary.
+
+101
+00:06:12,210 --> 00:06:15,390
+Paste that in there and just say unable to find plan.
+
+102
+00:06:18,090 --> 00:06:18,420
+Okay.
+
+103
+00:06:19,540 --> 00:06:24,370
+And we're going to go back to the slash members slash plant.
+
+104
+00:06:26,080 --> 00:06:26,350
+Okay.
+
+105
+00:06:26,560 --> 00:06:27,520
+Now I have the plan.
+
+106
+00:06:28,030 --> 00:06:31,150
+So let's get the user from the session and that's pretty easy as well.
+
+107
+00:06:32,020 --> 00:06:38,470
+User and OC come from calling app dot session dot.
+
+108
+00:06:39,680 --> 00:06:42,890
+Get using icon text.
+
+109
+00:06:43,400 --> 00:06:47,630
+The key I want is user and I'm going to cast it to a data user.
+
+110
+00:06:48,710 --> 00:06:49,040
+Okay.
+
+111
+00:06:49,700 --> 00:06:51,110
+If not, okay.
+
+112
+00:06:53,300 --> 00:06:59,360
+Now we can't get the user from the session, so we'll just copy this and paste this.
+
+113
+00:06:59,570 --> 00:07:02,540
+And this time I'll take them to the login page because if I can't get the user.
+
+114
+00:07:02,570 --> 00:07:03,980
+Chances are they're not logged in.
+
+115
+00:07:05,950 --> 00:07:13,840
+And we'll just say log that again, log in first with an exclamation mark and get rid of the period.
+
+116
+00:07:14,240 --> 00:07:14,500
+Okay.
+
+117
+00:07:14,500 --> 00:07:18,490
+So now I have the plan, ID the plan and the user.
+
+118
+00:07:19,600 --> 00:07:25,960
+So as I said, we can't compile the code right now, but we've got the first three things done and we've
+
+119
+00:07:25,960 --> 00:07:30,730
+simplified protecting pages to ensure that users users are authenticated before they can see it.
+
+120
+00:07:31,060 --> 00:07:35,350
+So in the next lecture, we'll move on to generating an invoice and sending an email.
+
+121
+00:07:35,480 --> 00:07:37,780
+Okay, so let's move on.

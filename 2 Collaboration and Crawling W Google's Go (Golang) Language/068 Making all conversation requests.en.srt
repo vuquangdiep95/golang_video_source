@@ -1,0 +1,491 @@
+1
+00:00:00,240 --> 00:00:06,570
+Vì vậy, chức năng tiếp theo là lấy tất cả các phần hội thoại vì nó cần thực hiện nhiều yêu cầu
+
+2
+00:00:06,570 --> 00:00:08,510
+để có được toàn bộ cuộc trò chuyện.
+
+3
+00:00:08,580 --> 00:00:14,070
+Vì vậy, tôi có chức năng thực hiện một yêu cầu duy nhất sẽ nhận được nhiều phản hồi.
+
+4
+00:00:14,370 --> 00:00:21,210
+Tôi nghĩ rằng quá trình thử và sai đã xác định rằng đó là khoảng chín tweet mỗi lần nhưng điều đó không nhất thiết
+
+5
+00:00:21,210 --> 00:00:22,470
+đảm bảo.
+
+6
+00:00:22,470 --> 00:00:29,090
+Vì vậy, tôi muốn lấy tất cả chúng, vì vậy tôi đã thực hiện chức năng này để có cuộc hội thoại về cơ bản gọi
+
+7
+00:00:29,100 --> 00:00:33,030
+thực hiện yêu cầu hội thoại nhiều lần cho đến khi tôi có tất cả thông tin tôi cần.
+
+8
+00:00:35,580 --> 00:00:42,750
+Vì vậy, thứ vị trí bạc hà vị trí Max được tạo một biến gọi là mã tiếp tục để quản lý
+
+9
+00:00:42,750 --> 00:00:45,780
+bởi vì về cơ bản đó là những gì nó được.
+
+10
+00:00:45,780 --> 00:00:51,050
+Đó là mã mà Twitter cung cấp cho tôi để tiếp tục yêu cầu thêm phần hội thoại.
+
+11
+00:00:51,150 --> 00:00:54,560
+Vì vậy, tôi chỉ gọi nó là mã tiếp tục.
+
+12
+00:00:54,590 --> 00:01:00,860
+Về cơ bản, đây là điều vị trí đúc tiền ở vị trí tối đa và sau đó, điều tôi đang muốn thực hiện là tôi chỉ muốn
+
+13
+00:01:00,860 --> 00:01:05,750
+các mục H2 gửi email qua tất cả các mục khác để làm là loại chi tiết để có thêm thông tin.
+
+14
+00:01:05,870 --> 00:01:09,920
+Nhưng cái tôi thực sự quan tâm là các mục email H2 là một chuỗi.
+
+15
+00:01:09,920 --> 00:01:15,450
+Vì vậy, tôi đang tìm cách thực sự trả lại chỉ là một phần của tất cả các mục H2 email mà tôi nhận được.
+
+16
+00:01:15,540 --> 00:01:16,100
+Vì thế.
+
+17
+00:01:16,310 --> 00:01:18,660
+Vì vậy, đó là loại phản ứng của tôi và đó là.
+
+18
+00:01:18,680 --> 00:01:23,180
+Và vì vậy tôi tạo ở đây các tin nhắn là một lát chuỗi.
+
+19
+00:01:23,540 --> 00:01:27,340
+Vì vậy, số 0 trong chỉ mục có thể là số 0 đầu tiên tôi đưa ra yêu cầu.
+
+20
+00:01:27,360 --> 00:01:31,940
+Tiếp theo sẽ là item khoe lần 2 và làm chỉ số nhiệm vụ lần 3
+
+21
+00:01:31,940 --> 00:01:33,780
+thực hiện các mục yêu cầu mỗi lần ra ngoài.
+
+22
+00:01:34,350 --> 00:01:38,990
+Vì vậy, đó là những gì tin nhắn sẽ là mục là danh sách tất cả các mục mà HG biết.
+
+23
+00:01:39,190 --> 00:01:47,780
+Vâng và sau đó tôi vô hạn cho vòng lặp mãi mãi cho đến khi bị hỏng trong mỗi lần qua vòng lặp rất
+
+24
+00:01:47,780 --> 00:01:53,330
+điều đầu tiên tôi làm là tôi gọi yêu cầu hội thoại của mình bằng mã tiếp tục bắt đầu trống
+
+25
+00:01:53,330 --> 00:01:55,160
+sợi dây.
+
+26
+00:01:55,160 --> 00:02:00,900
+Và do đó, điều đó sẽ thực hiện một yêu cầu và điều đó sẽ trả lại cho tôi phản hồi cuộc trò chuyện này.
+
+27
+00:02:00,950 --> 00:02:01,370
+cấu trúc
+
+28
+00:02:04,120 --> 00:02:09,070
+và nếu có một số loại lỗi, tôi sẽ thêm thông tin bổ sung vào lỗi và họ sẽ trả lại thông tin đó
+
+29
+00:02:09,070 --> 00:02:15,010
+chuẩn bị ra khỏi vòng lặp for vô hạn và ra khỏi chức năng sao lưu để gọi chức năng này sau khi tôi đã
+
+30
+00:02:15,010 --> 00:02:22,680
+đã nhận được phản hồi Tôi có thể sử dụng phản hồi cho email H là email phân loại thành từng mục trong cấu trúc dữ liệu.
+
+31
+00:02:23,530 --> 00:02:30,120
+Đội H l Nó giống như các mục ht mail từ Jason vì vậy tôi chỉ có thể thêm nó vào các tin nhắn.
+
+32
+00:02:30,120 --> 00:02:39,640
+Cắt lát sau đó nếu không có thì không còn nữa, tôi có thể thoát ra khỏi vòng lặp vô hạn và đi đến chỉ
+
+33
+00:02:39,640 --> 00:02:46,140
+trả lại tất cả những tin nhắn mà tôi đã tìm thấy nếu có thêm tôi cập nhật biến mã tiếp tục của mình với
+
+34
+00:02:47,370 --> 00:02:52,770
+với những gì Twitter cho biết vị trí chính và những con rô-bốt đảm nhận Steve đã nói rằng hãy đợi một giây
+
+35
+00:02:52,770 --> 00:02:53,710
+giữa mỗi yêu cầu.
+
+36
+00:02:53,730 --> 00:02:58,710
+Vì vậy, tôi chỉ nói thời gian ngủ thời gian giây để đợi một giây trước khi nó quay trở lại đầu trang.
+
+37
+00:02:58,710 --> 00:02:59,280
+vòng lặp for
+
+38
+00:03:02,500 --> 00:03:04,080
+điều đó thật tuyệt vời.
+
+39
+00:03:04,910 --> 00:03:06,330
+Tôi đang ghi chép.
+
+40
+00:03:06,330 --> 00:03:11,420
+Nó không nắm bắt được tất cả những điều đó nhưng về cơ bản vẫn tiếp tục viết mã nên tôi sẽ nhắc lại một chút
+
+41
+00:03:11,420 --> 00:03:17,300
+ở đây và đọc qua nó và bạn giúp tôi đảm bảo rằng tôi đã lấy nó, bạn không thể mã rõ ràng được đặt thành
+
+42
+00:03:17,300 --> 00:03:20,230
+một chuỗi trống và nhận cuộc trò chuyện.
+
+43
+00:03:20,270 --> 00:03:27,280
+Bắt đầu ở đầu mất trong mất trong đó trả về một lát chuỗi và một lỗi trong mã tiếp tục.
+
+44
+00:03:27,350 --> 00:03:32,720
+Chuỗi và tin nhắn trống sẽ là nơi bạn lưu trữ tất cả e-mail của mình và đó sẽ chỉ là một phần của
+
+45
+00:03:32,720 --> 00:03:33,800
+dây.
+
+46
+00:03:33,800 --> 00:03:37,330
+Và sau đó bạn thực hiện các yêu cầu hội thoại và bạn đang chuyển mã tiếp tục.
+
+47
+00:03:37,340 --> 00:03:43,580
+Vì vậy, nếu bạn nhìn vào chữ ký, hãy thực hiện yêu cầu hội thoại ở trên, nó đang muốn vị trí tối đa của bạn và
+
+48
+00:03:43,580 --> 00:03:50,050
+những gì chúng tôi là những gì chúng tôi đã thấy là vị trí Tối đa đó khi chúng tôi đang xem API Twitter, mức tối đa đó là
+
+49
+00:03:50,050 --> 00:03:52,210
+những người đàn ông họ đã trả lại.
+
+50
+00:03:52,210 --> 00:03:59,160
+Tôi đang ở vị trí và chúng tôi gọi và chúng tôi sử dụng vị trí đó làm vị trí Max để anh ấy quay lại và sau đó vào vị trí và sau đó
+
+51
+00:03:59,160 --> 00:04:00,890
+bạn gọi nó là Vị trí tối đa.
+
+52
+00:04:00,930 --> 00:04:02,280
+Vậy ở vị trí MAX là gì.
+
+53
+00:04:02,380 --> 00:04:06,130
+Và sau đó Vị trí tối đa là thứ bạn nhận được mà bạn gọi đó là nhiệm vụ Tối đa khi bạn trả lại.
+
+54
+00:04:06,220 --> 00:04:12,940
+OK, vì vậy có lẽ họ nghĩ về điều đó một cách logic như vị trí Max là điểm bắt đầu.
+
+55
+00:04:12,940 --> 00:04:15,480
+Đó là cách họ nghĩ về nó một cách hợp lý.
+
+56
+00:04:15,570 --> 00:04:23,760
+Có lẽ tôi sẽ thêm một trăm tweet và họ đã trả lại vị trí của đàn ông và điều đó trở thành của chúng tôi
+
+57
+00:04:23,760 --> 00:04:24,270
+tối đa
+
+58
+00:04:24,330 --> 00:04:25,230
+Vâng.
+
+59
+00:04:25,380 --> 00:04:25,960
+Vâng.
+
+60
+00:04:26,190 --> 00:04:27,120
+Đó chỉ là ném.
+
+61
+00:04:27,120 --> 00:04:28,500
+Điều đó sẽ làm tôi bối rối.
+
+62
+00:04:28,690 --> 00:04:29,200
+Đúng.
+
+63
+00:04:29,220 --> 00:04:30,620
+Vẫn bối rối.
+
+64
+00:04:31,110 --> 00:04:36,750
+Nhưng bạn đang chuyển mã tiếp tục và mã tiếp tục mà bạn đang chuyển và cuộn lại
+
+65
+00:04:36,750 --> 00:04:44,340
+đến chức năng yêu cầu thực hiện hội thoại là Vị trí tối đa kết thúc ở đơn vị truy vấn
+
+66
+00:04:44,400 --> 00:04:48,840
+và đó là trong tham số để chỉ nói rằng đây là nơi chúng ta bắt đầu từ thời điểm này trở đi.
+
+67
+00:04:49,230 --> 00:04:49,680
+Và bạn.
+
+68
+00:04:49,710 --> 00:04:51,170
+Đó là nơi bạn đã đoán.
+
+69
+00:04:51,300 --> 00:04:52,640
+Bạn mạo hiểm đoán.
+
+70
+00:04:52,650 --> 00:04:54,040
+Tôi thích cụm từ mà bạn sử dụng.
+
+71
+00:04:54,040 --> 00:05:01,080
+Anh ta mạo hiểm khí của dải dây rỗng và sau đó bạn nhận được phản hồi từ một yêu cầu trò chuyện
+
+72
+00:05:01,140 --> 00:05:06,570
+và phản hồi đó làm cho yêu cầu hội thoại trả về phản hồi có lỗi và phản hồi là toàn bộ
+
+73
+00:05:06,570 --> 00:05:14,740
+cấu trúc dữ liệu mà bạn đã tạo ở trên, đó là phản hồi cuộc trò chuyện, sau đó là nhiều hơn nữa và sau đó h
+
+74
+00:05:14,740 --> 00:05:17,620
+t Mal và Co.
+
+75
+00:05:17,640 --> 00:05:18,270
+Được rồi, tốt.
+
+76
+00:05:18,300 --> 00:05:25,060
+Sau đó, nhiều hơn nữa và từng nhóm ra ngoài và sau đó đó là phản hồi của bạn và sau đó bạn ghim tin nhắn của mình
+
+77
+00:05:25,060 --> 00:05:27,470
+bạn trả lời từng nữ thẳng về phía trước.
+
+78
+00:05:27,690 --> 00:05:34,820
+Và nếu không còn gì nữa, bạn đã hoàn thành vòng lặp for này và sau đó tiếp tục viết mã như vị trí người đàn ông phản hồi
+
+79
+00:05:34,830 --> 00:05:39,940
+và điều đó trở thành mức tối đa của bạn mà bạn vượt qua và thứ mà Twitter sử dụng.
+
+80
+00:05:40,500 --> 00:05:45,930
+Và sau đó chỉ trong tuần thứ hai vì họ yêu cầu robot của họ làm điều đó vì điều đó
+
+81
+00:05:45,930 --> 00:05:49,250
+đã đủ dễ dàng để thực hiện và được tôn trọng.
+
+82
+00:05:49,850 --> 00:05:55,710
+Và vì vậy, điều tôi vừa làm ở đó cũng là điều mà tôi thấy mình thường làm Khi mọi người giải thích mã
+
+83
+00:05:55,710 --> 00:06:03,180
+với tôi, đặc biệt nếu đó là mã mà tôi không sao, tôi không chỉ nắm bắt nó ngay lập tức như tôi có
+
+84
+00:06:03,180 --> 00:06:03,340
+ĐẾN.
+
+85
+00:06:03,360 --> 00:06:09,180
+Ai đó sẽ nói chuyện về nó và sau đó tôi phải nói chuyện lại với họ và đại loại như làm cho
+
+86
+00:06:09,180 --> 00:06:15,840
+chắc chắn rằng tôi đang nghe chính xác và vì vậy tôi đang chia sẻ rằng tôi đã vô tình làm điều đó bởi vì nó
+
+87
+00:06:15,840 --> 00:06:18,720
+giống như tôi muốn đảm bảo rằng tôi hiểu điều này và sau đó có thể đưa tôi đi qua nó.
+
+88
+00:06:18,730 --> 00:06:24,480
+Tôi sẽ giúp bạn hiểu nó nhưng điều đó không chỉ có giá trị với bạn mà còn có thể có giá trị
+
+89
+00:06:24,780 --> 00:06:31,470
+để bạn thấy cách tôi hiểu mã và vì vậy bạn có thể sử dụng nó như một công cụ học tập.
+
+90
+00:06:31,470 --> 00:06:38,520
+Vì vậy, một phần công việc của tôi với tư cách là một giáo viên là không chỉ mang đến cho bạn thông tin mà còn giúp bạn học
+
+91
+00:06:38,520 --> 00:06:42,080
+làm thế nào để tìm hiểu thông tin đó quá thường xuyên trong học viện.
+
+92
+00:06:42,090 --> 00:06:44,790
+Họ chỉ cung cấp thông tin đúng và mong bạn tìm hiểu nó.
+
+93
+00:06:44,790 --> 00:06:46,800
+Họ không bao giờ chỉ cho bạn cách học.
+
+94
+00:06:46,950 --> 00:06:51,150
+Và vì vậy tôi muốn bạn cũng biết cách học hiệu quả và đây là một kỹ thuật mà tôi sử dụng để giúp
+
+95
+00:06:51,150 --> 00:06:51,840
+tôi học.
+
+96
+00:06:52,020 --> 00:06:53,610
+Và vì vậy những gì bạn có thể làm.
+
+97
+00:06:53,750 --> 00:06:57,900
+Đây là điều bạn có thể làm là bạn đang tham gia khóa học này khi bạn nghe thấy những điều như
+
+98
+00:06:57,900 --> 00:06:59,880
+rằng sau khi bạn xem nó.
+
+99
+00:06:59,910 --> 00:07:01,800
+Bạn có thể dừng video.
+
+100
+00:07:01,860 --> 00:07:06,810
+Bạn có thể xem mã và sau đó bạn có thể giải thích mã đó cho chính mình để đảm bảo rằng bạn đã hiểu.
+
+101
+00:07:06,900 --> 00:07:09,290
+Và khi làm điều đó giống như nói to điều đó theo đúng nghĩa đen.
+
+102
+00:07:09,300 --> 00:07:12,110
+Họ gọi nó là gỡ lỗi vịt cao su đúng không.
+
+103
+00:07:12,150 --> 00:07:18,240
+Nhưng bạn biết đấy, bạn có thể nói chuyện với chai nước của mình, con chó của bạn, màn hình máy tính của bạn nhưng chỉ cần nói to lên
+
+104
+00:07:18,720 --> 00:07:24,780
+và nói qua và sau đó điều đó thu hút các phần khác nhau của bộ não khi bạn diễn đạt bằng lời
+
+105
+00:07:24,840 --> 00:07:28,470
+não của bạn đang sử dụng các khu vực khác nhau khi bạn nghe những từ mà bạn đã nói.
+
+106
+00:07:28,470 --> 00:07:33,780
+Bộ não của bạn đang sử dụng các khu vực khác nhau và điều đó giúp bạn biết rằng mình đang thực sự vận dụng nó.
+
+107
+00:07:33,810 --> 00:07:40,110
+Vì vậy, điều đó sẽ hữu ích và thật tệ khi tài liệu đó giúp bạn hiểu mã này nhanh hơn để học nhanh hơn
+
+108
+00:07:40,120 --> 00:07:42,340
+bạn sẽ nhớ nó lâu hơn.
+
+109
+00:07:42,570 --> 00:07:44,510
+Vì vậy, đó là thứ giúp bạn học mã.
+
+110
+00:07:44,550 --> 00:07:45,480
+Được rồi.
+
+111
+00:07:45,490 --> 00:07:49,950
+Bởi vì mục tiêu của chúng ta ở đây không chỉ giống như Này, hãy nhìn vào đoạn mã tuyệt vời này.
+
+112
+00:07:49,950 --> 00:07:51,260
+Chúng ta thật tuyệt vời.
+
+113
+00:07:51,270 --> 00:07:54,850
+Mục tiêu của chúng tôi ở đây là để bạn đạt được các kỹ năng.
+
+114
+00:07:54,990 --> 00:07:56,590
+Và đó là tất cả những gì về điều này.
+
+115
+00:07:56,640 --> 00:07:57,230
+Được rồi.
+
+116
+00:07:57,420 --> 00:08:03,760
+Đó là một cuộc trò chuyện thú vị và cuộc trò chuyện tiếp theo mà chúng ta sẽ thực hiện cuộc trò chuyện này đang thực sự trôi qua
+
+117
+00:08:03,760 --> 00:08:05,780
+người đó đi qua người đàn ông trở lại.
+
+118
+00:08:05,880 --> 00:08:06,960
+Điều này là đẹp.
+
+119
+00:08:06,960 --> 00:08:08,160
+Tôi yêu những gì bạn tạo ra.
+
+120
+00:08:08,160 --> 00:08:09,350
+Được rồi, chúng ta sẽ thấy trong cuộc họp tiếp theo.
+
+121
+00:08:09,360 --> 00:08:10,250
+Bất cứ điều gì bạn muốn thêm.
+
+122
+00:08:10,290 --> 00:08:10,980
+KHÔNG.
+
+123
+00:08:10,980 --> 00:08:11,790
+Xem trong video tiếp theo.

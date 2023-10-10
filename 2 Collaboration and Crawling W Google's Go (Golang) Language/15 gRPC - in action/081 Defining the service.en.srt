@@ -1,0 +1,383 @@
+1
+00:00:00,270 --> 00:00:00,550
+All right.
+
+2
+00:00:00,580 --> 00:00:01,410
+So welcome back.
+
+3
+00:00:01,410 --> 00:00:11,430
+And I'm excited to learn more about jihad P.C. with you and Daniel has done the lead legwork on figuring
+
+4
+00:00:11,430 --> 00:00:15,150
+G.P.S. out and putting together some examples.
+
+5
+00:00:15,150 --> 00:00:20,310
+So he's going to lead the charge here in sharing information about jihad P.C. and shown us how to get
+
+6
+00:00:20,310 --> 00:00:25,530
+things set up in just an hour brief conversations before we started this video.
+
+7
+00:00:25,560 --> 00:00:26,690
+Sounds like some good work.
+
+8
+00:00:26,700 --> 00:00:33,720
+He did some good work and the examples that are on GOP Web site one you've already seen how they're
+
+9
+00:00:33,720 --> 00:00:36,110
+not applicable to go modules.
+
+10
+00:00:36,300 --> 00:00:45,330
+And so it's nice yesterday Daniel to see you know how to get G.P.S. installed so that we can use it
+
+11
+00:00:45,690 --> 00:00:51,240
+using go modules and I made notes for you in the course outline how to do that.
+
+12
+00:00:51,240 --> 00:00:56,010
+And so as Daniel goes through and shares with us some examples we're going to see some examples with
+
+13
+00:00:56,010 --> 00:01:00,050
+using G.P.S. and you know understand them.
+
+14
+00:01:00,060 --> 00:01:06,480
+My job's going to be to ask questions and to clarify and to take notes and sort of make sure that the
+
+15
+00:01:06,480 --> 00:01:13,980
+process is all really well documented and solidified step one step two step three for you for me for
+
+16
+00:01:13,980 --> 00:01:18,270
+everybody when we need to look back and see area what do we do to get that running that's going to be
+
+17
+00:01:18,270 --> 00:01:19,240
+my job.
+
+18
+00:01:19,240 --> 00:01:24,120
+So Daniel thanks for your legwork on this and looking forward to seeing more about GOPAC What do you
+
+19
+00:01:24,120 --> 00:01:25,280
+got for us.
+
+20
+00:01:25,320 --> 00:01:25,670
+All right.
+
+21
+00:01:25,710 --> 00:01:32,520
+So so yeah I created in 0 1 prototype folder inside our GOPAC folder.
+
+22
+00:01:32,720 --> 00:01:35,610
+And so this will be where we'll do our first steps.
+
+23
+00:01:36,390 --> 00:01:43,230
+So inside this 0 1 prototype folder I'm creating an echo folder because I figure that first thing we're
+
+24
+00:01:43,230 --> 00:01:45,200
+going to do is create an echo server.
+
+25
+00:01:45,210 --> 00:01:50,950
+It will just repeat wherever you ask it or wherever you tell it right back to you.
+
+26
+00:01:50,970 --> 00:01:51,200
+Yeah.
+
+27
+00:01:51,240 --> 00:01:54,540
+So an echo service kind of like hello world with servers.
+
+28
+00:01:54,530 --> 00:01:54,990
+Right.
+
+29
+00:01:55,020 --> 00:02:01,110
+And we get one server to talk to one computer to talk to another computer so maybe a client to talk
+
+30
+00:02:01,110 --> 00:02:02,240
+to a server.
+
+31
+00:02:02,310 --> 00:02:04,080
+And is this what we're gonna do.
+
+32
+00:02:04,110 --> 00:02:04,790
+Yes.
+
+33
+00:02:04,980 --> 00:02:05,420
+So.
+
+34
+00:02:05,450 --> 00:02:07,460
+So I'm going to create an echo server first.
+
+35
+00:02:07,470 --> 00:02:14,040
+So I create the 0 1 protocol is where our projects in and inside there have got a sub folder called
+
+36
+00:02:14,070 --> 00:02:16,230
+Echo an inside echo.
+
+37
+00:02:16,260 --> 00:02:26,740
+I'm going to create a file and I'm just going to call this file Echo Dot proto So the DOT Pro is the
+
+38
+00:02:26,740 --> 00:02:33,730
+file format for protocol buffer the protocol buffer domain specific language.
+
+39
+00:02:33,910 --> 00:02:42,010
+And so in this file we'll describe a protocol about her messages and the G RBC service that will be
+
+40
+00:02:42,010 --> 00:02:51,290
+using those messages with so very first thing in a dot profile will be what version of proto a Protocol
+
+41
+00:02:51,290 --> 00:02:52,550
+Buffers you're going to be using.
+
+42
+00:02:52,550 --> 00:03:03,140
+So that so you'd find that with the sin the sin tax man syntax equals double quote proto three is the
+
+43
+00:03:03,140 --> 00:03:03,750
+latest one.
+
+44
+00:03:03,760 --> 00:03:11,920
+Now if you skip this one a semicolon if you skip this Protocol Buffers will Potosi will default proto
+
+45
+00:03:12,040 --> 00:03:21,110
+two proto three is the current recommended protocol buffer version to use and so it's taking this the
+
+46
+00:03:21,110 --> 00:03:27,260
+top of your dot profile will tell Potosi that you're using proto three C in three.
+
+47
+00:03:27,920 --> 00:03:32,930
+So after that you can define either your service or your messages.
+
+48
+00:03:32,930 --> 00:03:35,310
+So I'm going to find the service first.
+
+49
+00:03:35,360 --> 00:03:41,240
+So the service was gonna call it echo server.
+
+50
+00:03:41,620 --> 00:03:50,090
+It's just defined just like this say serve it I yes you say service you give it a name and then curly
+
+51
+00:03:50,090 --> 00:03:51,270
+braces.
+
+52
+00:03:51,390 --> 00:03:56,390
+So inside here you can define methods that can be used.
+
+53
+00:03:56,390 --> 00:04:02,360
+So you'd find a method by saying our P.C. and then you define the name of this method.
+
+54
+00:04:02,360 --> 00:04:07,540
+So I'm going to call it echo in parentheses you put in any parameters.
+
+55
+00:04:07,590 --> 00:04:13,130
+So this particular echo thing takes in an echo request which I have not defined yet.
+
+56
+00:04:14,320 --> 00:04:26,280
+And then it returns in parentheses and echo loops echo response and then empty curly braces.
+
+57
+00:04:26,300 --> 00:04:29,150
+And so this defines an echo server.
+
+58
+00:04:29,240 --> 00:04:30,840
+We'll have a command echo.
+
+59
+00:04:30,890 --> 00:04:35,590
+We'll have a method echo that takes that echo request and returns an echo response.
+
+60
+00:04:35,610 --> 00:04:38,230
+What's the RBC remove C.J..
+
+61
+00:04:38,370 --> 00:04:41,410
+That's just like a little signature keyword.
+
+62
+00:04:41,760 --> 00:04:42,080
+Yeah.
+
+63
+00:04:42,110 --> 00:04:43,360
+That you kind of like.
+
+64
+00:04:43,430 --> 00:04:43,660
+Yeah.
+
+65
+00:04:43,690 --> 00:04:43,940
+All right.
+
+66
+00:04:44,140 --> 00:04:44,470
+Yeah.
+
+67
+00:04:44,500 --> 00:04:46,700
+So a funk might have a function.
+
+68
+00:04:46,850 --> 00:04:47,700
+Yes.
+
+69
+00:04:47,870 --> 00:04:48,710
+Exactly.
+
+70
+00:04:49,400 --> 00:04:53,270
+So once you got this you've got to define what Echo requests an echo response are.
+
+71
+00:04:53,270 --> 00:04:57,160
+So those are both protocol buffer messages.
+
+72
+00:04:57,290 --> 00:05:06,740
+So to find them with message echo request curly brace and then you can fill in this body with what is
+
+73
+00:05:06,740 --> 00:05:07,750
+an echo request.
+
+74
+00:05:07,790 --> 00:05:14,730
+So an echo request I will say is a string with a message in it and then you put equals one.
+
+75
+00:05:15,500 --> 00:05:25,250
+If you have multiple things in here like you want to say a message and signed or sent by you put two
+
+76
+00:05:25,250 --> 00:05:26,210
+there.
+
+77
+00:05:26,210 --> 00:05:32,000
+So these numbers just have to be unique and you should not reuse a number even if you delete.
+
+78
+00:05:32,060 --> 00:05:38,130
+If I delete send by if I add nothing new later I should make sure not to put it to again.
+
+79
+00:05:38,140 --> 00:05:40,900
+Almost makes me think of a key field in a database.
+
+80
+00:05:40,910 --> 00:05:44,050
+They're using these internally somehow to identify.
+
+81
+00:05:44,120 --> 00:05:45,180
+Yes.
+
+82
+00:05:46,070 --> 00:05:50,170
+So that's echo request is just a message an echo response.
+
+83
+00:05:50,180 --> 00:05:55,610
+I think we'll probably be just about the same thing except it will be string response.
+
+84
+00:05:55,830 --> 00:05:59,510
+One called right.
+
+85
+00:05:59,520 --> 00:06:03,270
+And so this will be our complete Echo Dot Proto.
+
+86
+00:06:03,310 --> 00:06:10,480
+This defines an echo server an echo server has an echo command that takes an echo request and returns
+
+87
+00:06:10,500 --> 00:06:11,520
+echo response.
+
+88
+00:06:11,560 --> 00:06:15,640
+And these are what Echo requests and echo response are awesome.
+
+89
+00:06:15,650 --> 00:06:22,400
+So just in the desire to keep videos short this is kind of a good thing just getting the first chunk
+
+90
+00:06:22,400 --> 00:06:24,000
+of code written.
+
+91
+00:06:24,020 --> 00:06:29,090
+Do you have anything or you want one to add to this more or is this a good stopping to focus is a good
+
+92
+00:06:29,090 --> 00:06:29,420
+topic.
+
+93
+00:06:29,540 --> 00:06:30,080
+Okay great.
+
+94
+00:06:30,110 --> 00:06:34,640
+So in the next video what are we going to take a gander at actually turning this into code.
+
+95
+00:06:34,730 --> 00:06:36,590
+That sounds good.
+
+96
+00:06:36,590 --> 00:06:37,460
+See you the next video.

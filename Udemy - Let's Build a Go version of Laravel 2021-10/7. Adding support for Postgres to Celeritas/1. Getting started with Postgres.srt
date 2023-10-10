@@ -1,0 +1,371 @@
+1
+00:00:01,300 --> 00:00:05,890
+In this section of the course, we're going to begin connecting celebrities to a database, and we're
+
+2
+00:00:05,890 --> 00:00:12,130
+going to support two databases in this course Postgres and MariaDB, which is a drop in replacement
+
+3
+00:00:12,130 --> 00:00:14,350
+for MySchool, and we're going to start with Postgres.
+
+4
+00:00:14,860 --> 00:00:18,640
+So we're going to need a driver, obviously, to connect to Postgres.
+
+5
+00:00:18,640 --> 00:00:20,980
+And in the go world, we go to my web browser.
+
+6
+00:00:21,910 --> 00:00:25,900
+There are two this one Jack C slash PDX.
+
+7
+00:00:26,440 --> 00:00:31,780
+And this is a native postscript driver that actually supports Postgres only connections.
+
+8
+00:00:31,780 --> 00:00:35,820
+And it also supports the database SQL interface.
+
+9
+00:00:35,830 --> 00:00:40,000
+And that's the one we're going to use because I want to make my code as portable as possible.
+
+10
+00:00:40,900 --> 00:00:48,190
+The other one is over here Lib P Q, and for a very long time, this was the go to driver anytime you
+
+11
+00:00:48,190 --> 00:00:51,430
+wanted to connect a go program to a Postgres database.
+
+12
+00:00:52,000 --> 00:00:53,740
+But if you actually go down here.
+
+13
+00:00:54,620 --> 00:00:59,120
+And read the status, it says this package is currently in maintenance mode, which means blah blah
+
+14
+00:00:59,120 --> 00:01:02,420
+blah blah, and then we recommend using PDX.
+
+15
+00:01:02,450 --> 00:01:06,290
+So finally, that debate over which driver to use appears to be settled.
+
+16
+00:01:06,800 --> 00:01:08,030
+So we'll be using this one.
+
+17
+00:01:08,610 --> 00:01:13,340
+Jack CPG And there's a link to this in the course resources for this lecture, so you can go read the
+
+18
+00:01:13,340 --> 00:01:15,260
+documentation at your convenience.
+
+19
+00:01:15,740 --> 00:01:16,460
+But let's get started.
+
+20
+00:01:16,640 --> 00:01:21,230
+Back to our I.D. and I'm going to switch to the celebrity's package.
+
+21
+00:01:22,070 --> 00:01:23,570
+That's the project I'm going to work on.
+
+22
+00:01:24,380 --> 00:01:30,410
+And the first thing I'll do is create a file at the root level of this project called Driver Doggo.
+
+23
+00:01:31,160 --> 00:01:33,530
+And here's where we'll open our connection to the database.
+
+24
+00:01:33,950 --> 00:01:36,760
+So obviously it needs a package declaration package.
+
+25
+00:01:36,770 --> 00:01:40,600
+Main climate again, package celebrities.
+
+26
+00:01:41,060 --> 00:01:43,100
+I at least I'm consistent in this mistake.
+
+27
+00:01:43,400 --> 00:01:44,280
+Celebrities?
+
+28
+00:01:44,450 --> 00:01:44,990
+That's better.
+
+29
+00:01:45,320 --> 00:01:45,680
+OK.
+
+30
+00:01:47,120 --> 00:01:52,040
+Integrate function and it will have the receiver of Pointer to select us.
+
+31
+00:01:52,790 --> 00:01:57,890
+And I'll call this open DB because that's what we're going to do is open a connection to the database
+
+32
+00:01:58,280 --> 00:02:05,000
+and it will take two parameters DB type, and that's going to be Postgres to start with and DSM, the
+
+33
+00:02:05,000 --> 00:02:07,470
+data source the string to connect to the database.
+
+34
+00:02:07,490 --> 00:02:12,440
+So both of these are strings and it's going to return, potentially hopefully going to return a pointer
+
+35
+00:02:12,440 --> 00:02:17,540
+to SQL DB and also let we do the import their cycle.
+
+36
+00:02:17,540 --> 00:02:20,510
+Dart PD lets you do the import.
+
+37
+00:02:20,540 --> 00:02:23,660
+For me, it did, and also potentially an error.
+
+38
+00:02:27,450 --> 00:02:29,640
+So this is pretty straightforward.
+
+39
+00:02:29,760 --> 00:02:36,120
+And remember, we're going to be reading the database type from the dot com file, and we're telling
+
+40
+00:02:36,120 --> 00:02:41,040
+people to specify either Michael or MariaDB or Postgres.
+
+41
+00:02:41,490 --> 00:02:47,700
+And of course, people will think of the Postgres database as being Postgres, but we actually need
+
+42
+00:02:47,700 --> 00:02:50,910
+the connection string or the DB type of P.G. X.
+
+43
+00:02:50,910 --> 00:02:52,410
+So we'll just do a simple if statement.
+
+44
+00:02:53,070 --> 00:03:05,700
+If GB Typekit is equal to Postgres or DV type is equal to PostgreSQL because you can never trust people
+
+45
+00:03:05,700 --> 00:03:11,430
+to type what they need to type DB Typekit the change to TJX, because that's what we need to connect
+
+46
+00:03:11,430 --> 00:03:15,340
+to Postgres now in order to open a connection.
+
+47
+00:03:15,360 --> 00:03:22,220
+One of the very first things we're going to have to do is install some packages to support PKG X, so
+
+48
+00:03:22,230 --> 00:03:23,220
+fortunately, it's pretty easy.
+
+49
+00:03:24,090 --> 00:03:29,790
+So I'm going to open my terminal window and this is right in the documentation for this package for
+
+50
+00:03:30,000 --> 00:03:32,080
+Jack C slash PDX.
+
+51
+00:03:32,880 --> 00:03:42,960
+We want to go get GitHub dot com slash Jack C slash pg con.
+
+52
+00:03:43,320 --> 00:03:43,890
+So let's go get.
+
+53
+00:03:48,290 --> 00:03:50,570
+And of course, I left the CIA, so let's try that again.
+
+54
+00:03:50,750 --> 00:03:52,370
+Jack CPG can't.
+
+55
+00:03:54,410 --> 00:03:57,320
+That's better, and we'll clear the screen as the first one we need.
+
+56
+00:03:57,800 --> 00:04:03,590
+We also want to go get GitHub dot com slash Jack C slash.
+
+57
+00:04:03,980 --> 00:04:07,760
+And we want PG X slash v four and a v five is out.
+
+58
+00:04:08,150 --> 00:04:13,280
+Please use V for for this course and you can upgrade to V five after the fact or V six or whatever it
+
+59
+00:04:13,280 --> 00:04:13,610
+is.
+
+60
+00:04:13,880 --> 00:04:14,630
+Let's go get that.
+
+61
+00:04:17,220 --> 00:04:17,580
+OK.
+
+62
+00:04:17,970 --> 00:04:25,110
+And then I'm going to hit the up arrow and put slash Steve B because we're going is the standard libraries
+
+63
+00:04:25,110 --> 00:04:27,000
+sequel driver and we need this package.
+
+64
+00:04:29,080 --> 00:04:30,850
+There are now those are all there.
+
+65
+00:04:30,880 --> 00:04:35,410
+So let's go up to our top of our file and I'll close the terminal window.
+
+66
+00:04:36,310 --> 00:04:37,390
+I need to import those.
+
+67
+00:04:37,480 --> 00:04:40,170
+I need to import them, even if I don't use them explicitly.
+
+68
+00:04:40,180 --> 00:04:41,980
+So I'll wrap this whole thing in parentheses.
+
+69
+00:04:47,110 --> 00:04:53,080
+And I'll add the following lines GitHub with an underscore to start with the blank identifier, which
+
+70
+00:04:53,080 --> 00:04:58,510
+says, Yeah, I'm not going to use this explicitly in this package or in this file, but import it anyway.
+
+71
+00:04:59,470 --> 00:05:02,380
+GitHub dot com slash Jack C slash.
+
+72
+00:05:04,020 --> 00:05:04,980
+PG Kong.
+
+73
+00:05:05,970 --> 00:05:06,360
+OK.
+
+74
+00:05:06,780 --> 00:05:14,400
+And then I'll duplicate that and get rid of the PG con part and make it PG X slash before they're going,
+
+75
+00:05:14,400 --> 00:05:19,900
+I'll duplicate that again and I'll add to the end of that slash STD, Libby.
+
+76
+00:05:20,580 --> 00:05:23,880
+OK, so now those are all available to me and I need them right here.
+
+77
+00:05:24,840 --> 00:05:32,370
+So what I'm going to do is use the standard Go Sequel Driver and get a database connection, DV comma
+
+78
+00:05:32,700 --> 00:05:38,040
+error or assign the value of and we're going to call sequel the sequel package open.
+
+79
+00:05:38,460 --> 00:05:43,110
+And we're going to open DB type, which in our case will be PG for now.
+
+80
+00:05:43,380 --> 00:05:50,400
+And whatever the connection string is, DSN OK, and we'll check for an error if error is not equal
+
+81
+00:05:50,400 --> 00:05:50,880
+to nil.
+
+82
+00:05:53,610 --> 00:05:54,690
+We'll return nil.
+
+83
+00:05:55,050 --> 00:05:57,860
+And the error says otherwise.
+
+84
+00:05:58,530 --> 00:06:01,610
+Let's try pinging this to make sure it actually connects to the database.
+
+85
+00:06:01,620 --> 00:06:04,440
+So air is now equal to DB Dot Ping.
+
+86
+00:06:05,920 --> 00:06:11,430
+And again, we'll check for errors when we copy this and I'll paste it in there.
+
+87
+00:06:12,180 --> 00:06:16,550
+And if all that worked and it will, eventually we'll return our pool of connections.
+
+88
+00:06:16,560 --> 00:06:17,640
+Give them nil.
+
+89
+00:06:18,180 --> 00:06:26,970
+OK, so the next step, and it's not a difficult one, is to actually go back to the main dgo or the
+
+90
+00:06:26,970 --> 00:06:33,540
+celebrity star go file and build a connection string based upon the values that are specified in the
+
+91
+00:06:33,540 --> 00:06:34,680
+dot on file.
+
+92
+00:06:34,980 --> 00:06:40,170
+And of course, the dot on file is in our My App project, and we'll get started on that in the next
+
+93
+00:06:40,170 --> 00:06:40,530
+election.

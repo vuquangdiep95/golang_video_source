@@ -1,0 +1,152 @@
+1
+00:00:00,210 --> 00:00:03,740
+OK, quindi ora parliamo di un concetto molto importante di scadenze.
+
+2
+00:00:03,740 --> 00:00:08,730
+Pertanto, le scadenze consentono sostanzialmente ai tuoi clienti JPC di specificare per quanto tempo sono disposti ad
+
+3
+00:00:08,730 --> 00:00:15,150
+aspettare, per quanto tempo possono attendere il completamento di un IPC prima che il problema venga risolto con la scadenza aerea superata.
+
+4
+00:00:15,360 --> 00:00:20,610
+Ciò significa che ogni volta che i tuoi clienti dicono OK, voglio le informazioni entro un secondo e se non
+
+5
+00:00:20,610 --> 00:00:23,430
+ce l'ho, non mi preoccupo di inviare la tua risposta.
+
+6
+00:00:23,430 --> 00:00:24,440
+Hai fissato una scadenza.
+
+7
+00:00:24,570 --> 00:00:30,830
+Pertanto, la documentazione RBC consiglia di impostare una scadenza per ogni singola chiamata RBOC
+
+8
+00:00:30,880 --> 00:00:31,980
+eseguita dall'utente.
+
+9
+00:00:32,010 --> 00:00:36,140
+Ti dà davvero un limite superiore alla durata di ciascun RBC.
+
+10
+00:00:36,140 --> 00:00:36,410
+OK.
+
+11
+00:00:36,420 --> 00:00:42,110
+Quindi è molto importante che tu stabilisca una scadenza per tutti i tipi di chiamate impegnate, quindi sarai come OK come
+
+12
+00:00:42,630 --> 00:00:45,600
+faccio a impostare la scadenza come vuoi che io dica.
+
+13
+00:00:45,810 --> 00:00:48,140
+L'impostazione di una scadenza è davvero a te.
+
+14
+00:00:48,300 --> 00:00:50,930
+Quanto a lungo ritieni che la tua API debba essere completata.
+
+15
+00:00:50,990 --> 00:00:56,190
+OK qual è il numero di M-L di tempo che non avrai prima di riprovare o prima di fallire.
+
+16
+00:00:56,190 --> 00:00:56,760
+OK.
+
+17
+00:00:56,910 --> 00:01:02,870
+Di solito se si tratta di una piccola API 100 millisecondi 500 la seconda di secondo se sei davvero molto lento.
+
+18
+00:01:03,020 --> 00:01:04,610
+OK, questa è una buona scadenza.
+
+19
+00:01:04,830 --> 00:01:07,720
+Se è una lunga chiamata API forse cinque minuti.
+
+20
+00:01:07,860 --> 00:01:08,320
+OK.
+
+21
+00:01:08,430 --> 00:01:11,700
+Ma dipende da te scegliere la scadenza che vuoi.
+
+22
+00:01:11,700 --> 00:01:17,700
+Quindi il server dovrebbe controllare se una scadenza ha superato e annullare il lavoro che sta facendo se la
+
+23
+00:01:17,700 --> 00:01:18,980
+scadenza è stata superata.
+
+24
+00:01:18,990 --> 00:01:23,880
+Ad esempio se il mio server morto sta facendo un lavoro molto costoso OK e il client dice che hai 1
+
+25
+00:01:23,880 --> 00:01:29,240
+minuto se dopo 1 minuto il mio lavoro molto costoso non viene fatto sul server, dovrei semplicemente cancellare il mio lavoro e
+
+26
+00:01:29,250 --> 00:01:29,970
+altri client.
+
+27
+00:01:29,970 --> 00:01:31,820
+Scusa non ho potuto farlo in 1 minuti.
+
+28
+00:01:32,190 --> 00:01:37,490
+Quindi c'è un blog incredibile che ti consiglio di leggere in profondità, che si trova sul blog GOPAC.
+
+29
+00:01:37,620 --> 00:01:43,770
+Quindi il link è sulla conferenza e il suo blog è slittato e le scadenze e in realtà ti dà una buona comprensione
+
+30
+00:01:43,770 --> 00:01:44,860
+delle scadenze complessive.
+
+31
+00:01:45,120 --> 00:01:49,880
+Quindi, si prega di notare che le scadenze sono diffuse in tutta Europa è lui chiede un cambiamento.
+
+32
+00:01:50,130 --> 00:01:58,230
+Ciò significa che se A del tuo cliente chiama il server GAAP B che chiama GOPAC C, la scadenza viene passata per tutto il
+
+33
+00:01:58,260 --> 00:01:58,920
+tempo.
+
+34
+00:01:59,070 --> 00:02:02,650
+Lungo tutta la catena va bene così lei sarà a conoscenza della scadenza dei clienti.
+
+35
+00:02:02,730 --> 00:02:08,010
+A Questo è molto importante perché il tuo PC verrà realmente cambiato in tutti i tuoi micro servizi
+
+36
+00:02:08,010 --> 00:02:12,480
+e tutti dovranno essere consapevoli delle scadenze per assicurarsi che non facciano inutili lavori.
+
+37
+00:02:12,600 --> 00:02:13,150
+OK.
+
+38
+00:02:13,380 --> 00:02:17,460
+Quindi non dimenticare di vedere Blug e userò la prossima lezione per alcune mani.
+

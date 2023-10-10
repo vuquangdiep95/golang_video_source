@@ -1,0 +1,375 @@
+1
+00:00:00,480 --> 00:00:02,680
+So I'd like to keep all of this.
+
+2
+00:00:03,150 --> 00:00:08,670
+It's kind of like I don't know my OCD of being a teacher I like to try to keep my curriculum very modular
+
+3
+00:00:08,670 --> 00:00:16,140
+eyes and very consumable I call it the 38 Special where each section you break you break your your course
+
+4
+00:00:16,200 --> 00:00:23,110
+into sections and each section should have three day videos in each video should be three to eight minutes.
+
+5
+00:00:23,280 --> 00:00:31,130
+And so we just did a little bit of diving into get ahead and so I just made that it's own section.
+
+6
+00:00:31,130 --> 00:00:35,310
+Those are the videos we just went through and I just creating a new section here where we're gonna go
+
+7
+00:00:35,310 --> 00:00:42,170
+through the crawl and this is an overview of solution number one that Daniel created.
+
+8
+00:00:42,180 --> 00:00:48,000
+So he's going to walk us through that and he's just going to talk through what he is thinking this is
+
+9
+00:00:48,000 --> 00:00:49,050
+gonna go fast.
+
+10
+00:00:49,530 --> 00:00:54,240
+It's like the convertible ride through the countryside where you know we're just pointing it out Hey
+
+11
+00:00:54,240 --> 00:00:55,940
+look at that bar in there.
+
+12
+00:00:55,950 --> 00:01:00,690
+There's a park over there is that nice and see the river down there and you might be like Wait I want
+
+13
+00:01:00,690 --> 00:01:08,550
+to explore that river more and and so this is just to familiarize yourself familiarize you with the
+
+14
+00:01:08,580 --> 00:01:14,760
+terrain of his solution and then we'll come back and do longer stops at each of those points if you
+
+15
+00:01:14,760 --> 00:01:20,620
+want to you know check them out more with us so you can understand them a little bit more.
+
+16
+00:01:20,640 --> 00:01:22,830
+So this is an overview of solution number one.
+
+17
+00:01:22,830 --> 00:01:23,880
+Take it away Daniel.
+
+18
+00:01:23,930 --> 00:01:24,350
+Right.
+
+19
+00:01:24,470 --> 00:01:31,070
+So so my solution number one was to directly scrape the each team out.
+
+20
+00:01:31,200 --> 00:01:35,460
+So when thinking to crawl data on any given Web site.
+
+21
+00:01:35,460 --> 00:01:39,750
+So in this case we want to crawl all we want to get all the tweets in this conversation
+
+22
+00:01:42,360 --> 00:01:48,860
+with the the root the name the Twitter handle and be in the tweet itself.
+
+23
+00:01:48,860 --> 00:01:54,450
+That's that's basically all we were looking looking to get although we could also pull more data.
+
+24
+00:01:54,450 --> 00:01:59,730
+First thing to think whenever you go for something like this is is there an API that they provide that
+
+25
+00:01:59,730 --> 00:02:00,800
+can get this information.
+
+26
+00:02:00,810 --> 00:02:03,780
+So is there any Twitter API.
+
+27
+00:02:03,780 --> 00:02:07,710
+And yes there is a Twitter API.
+
+28
+00:02:07,710 --> 00:02:10,830
+No it does not actually help in this circumstance.
+
+29
+00:02:10,830 --> 00:02:15,190
+They don't actually have stuff to get all the replies to a tweet.
+
+30
+00:02:16,180 --> 00:02:19,840
+So in this case the API does not work out.
+
+31
+00:02:20,110 --> 00:02:21,660
+Oftentimes there is an API.
+
+32
+00:02:21,670 --> 00:02:28,410
+And so you can use the API that they provide and follow their instructions and it works out this case
+
+33
+00:02:28,420 --> 00:02:29,600
+that did not work.
+
+34
+00:02:29,620 --> 00:02:30,690
+That surprises me.
+
+35
+00:02:30,780 --> 00:02:32,970
+Yeah you have to buy it.
+
+36
+00:02:33,070 --> 00:02:37,240
+They only let some of their API is they have a limited number of calls.
+
+37
+00:02:37,240 --> 00:02:37,570
+Yeah.
+
+38
+00:02:37,600 --> 00:02:42,340
+And you have to know the exact I.D. numbers and you've got a limited amount you can call it day and
+
+39
+00:02:42,340 --> 00:02:46,520
+they've got a faster pace one but only works like the last seven days.
+
+40
+00:02:46,840 --> 00:02:48,450
+And so it's it's there.
+
+41
+00:02:48,550 --> 00:02:51,740
+Twitter's API is actually rather confusing amongst API.
+
+42
+00:02:52,030 --> 00:02:55,480
+I've looked at several and Twitter's is one of the more confusing ones.
+
+43
+00:02:55,480 --> 00:03:00,580
+So but overall they don't have an API that helps for what we're trying to do which is get all the replies
+
+44
+00:03:00,580 --> 00:03:08,110
+to a particular tweet so second option is to crawl the team out your Web browser needs these shemale
+
+45
+00:03:08,190 --> 00:03:09,420
+to actually draw the page.
+
+46
+00:03:09,420 --> 00:03:17,070
+So it's got all the information so you can your program can go through that A.T.M. and find everything
+
+47
+00:03:17,070 --> 00:03:17,970
+you're looking for.
+
+48
+00:03:17,970 --> 00:03:21,780
+I think this is brilliant because it's like all the data's already being sent to you.
+
+49
+00:03:21,930 --> 00:03:22,890
+Yeah exactly.
+
+50
+00:03:23,100 --> 00:03:25,430
+Thank you for sending it to me let me do something with it.
+
+51
+00:03:25,810 --> 00:03:26,100
+So.
+
+52
+00:03:26,170 --> 00:03:27,020
+So step one.
+
+53
+00:03:27,420 --> 00:03:34,110
+So my first actual attempt at a crawler just examines the e-mail to find the data I want.
+
+54
+00:03:34,110 --> 00:03:43,680
+This should be your second resort because a lot of web crawler usually doesn't respect a web page the
+
+55
+00:03:43,680 --> 00:03:45,220
+way a human does.
+
+56
+00:03:45,360 --> 00:03:50,280
+It will go way faster than a human would go through a site and go to many many pages and could overload
+
+57
+00:03:50,280 --> 00:03:51,360
+servers.
+
+58
+00:03:51,390 --> 00:03:57,040
+So you want to be careful in calling each e-mail to respect the server you're going to.
+
+59
+00:03:57,480 --> 00:04:07,230
+And most servers will have a little file just at the Domain at slash robots Dot T X T go to just about
+
+60
+00:04:07,230 --> 00:04:16,170
+any domain and we'll have this have a file here which basically defines what this Web site considers
+
+61
+00:04:16,170 --> 00:04:19,890
+respectful as far as crawling and so in this case.
+
+62
+00:04:19,910 --> 00:04:24,170
+Twitter's got a lot of list of what you or else you're allowed to access what the crawler.
+
+63
+00:04:24,180 --> 00:04:27,050
+Which ones you're not allowed to access.
+
+64
+00:04:27,660 --> 00:04:32,460
+If you go down to the bottom it's got a little list here saying don't make more than one requests per
+
+65
+00:04:32,460 --> 00:04:36,680
+second or wait wait one second between each request.
+
+66
+00:04:37,080 --> 00:04:43,050
+So just kind of general rules to follow that Twitter considers reasonable for a caller to respect to
+
+67
+00:04:43,050 --> 00:04:47,720
+keep their service working well for humans which is what the sites mean the for.
+
+68
+00:04:48,030 --> 00:04:52,340
+Quick quick disclaimer we're not attorneys this is not legal a legal advice.
+
+69
+00:04:52,340 --> 00:05:00,440
+So if you get yourself into hot water this is what we're going to show in court right here.
+
+70
+00:05:00,460 --> 00:05:01,460
+All right.
+
+71
+00:05:02,260 --> 00:05:06,710
+So yes do be careful some sites don't like you crawling at all.
+
+72
+00:05:07,110 --> 00:05:08,860
+Yes you should check that out period.
+
+73
+00:05:08,920 --> 00:05:11,360
+Well I don't know what the legal ramifications are.
+
+74
+00:05:12,550 --> 00:05:20,160
+You know violating terms of use and things like that lawyers don't always need valid reasons for launching
+
+75
+00:05:20,160 --> 00:05:20,940
+lawsuits.
+
+76
+00:05:21,690 --> 00:05:24,390
+Just know that at least in America.
+
+77
+00:05:25,340 --> 00:05:25,800
+So.
+
+78
+00:05:25,930 --> 00:05:32,730
+So Twitter's got a nice to grow robustly cheeks tea which is actually fairly generous for some sites
+
+79
+00:05:32,730 --> 00:05:34,240
+like this and so.
+
+80
+00:05:34,250 --> 00:05:35,080
+So I think you're OK.
+
+81
+00:05:35,100 --> 00:05:36,720
+So long as you respect that it should be OK.
+
+82
+00:05:36,730 --> 00:05:38,680
+Just call the team out.
+
+83
+00:05:38,730 --> 00:05:47,520
+So for a go there is a framework called Callie which makes crawling a shemale extremely simple and easy
+
+84
+00:05:48,030 --> 00:05:53,910
+and it automatically respects robots that takes so far.
+
+85
+00:05:53,950 --> 00:05:54,610
+That's awesome.
+
+86
+00:05:54,610 --> 00:05:57,430
+Don't even have to do anything if the site's got a robot that takes t..
+
+87
+00:05:57,430 --> 00:05:59,890
+Callie will obey what it says.
+
+88
+00:05:59,890 --> 00:06:02,550
+Yes this is super good to know about.
+
+89
+00:06:03,130 --> 00:06:13,030
+And in the in the desire to modular ize the course I am going to suggest that this is a good place to
+
+90
+00:06:13,030 --> 00:06:19,600
+end the first video just introducing Callie Yeah and and we'll rename overview of solution number one
+
+91
+00:06:21,150 --> 00:06:26,240
+or introduction introduction and I will introducing Callie but introducing.
+
+92
+00:06:26,260 --> 00:06:27,650
+We'll figure out the name of this video.
+
+93
+00:06:27,820 --> 00:06:28,940
+But we'll see the next video.
+
+94
+00:06:28,950 --> 00:06:31,210
+That's what we continue to see the next video.

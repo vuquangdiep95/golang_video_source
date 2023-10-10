@@ -1,0 +1,575 @@
+1
+00:00:00,530 --> 00:00:08,360
+Vì vậy, video mà Daniel nghĩ ra đang tiến gần đến việc bò.
+
+2
+00:00:08,360 --> 00:00:10,120
+Đó là những gì chúng tôi gọi là video cuối cùng.
+
+3
+00:00:10,160 --> 00:00:14,630
+Và bây giờ chúng ta sẽ tiến về phía trước và bạn đã hiểu điều đó trong đề cương khóa học của mình.
+
+4
+00:00:14,630 --> 00:00:16,110
+Bạn có một liên kết để đi học đại học.
+
+5
+00:00:16,160 --> 00:00:18,200
+Hãy kiểm tra một số chi tiết.
+
+6
+00:00:18,210 --> 00:00:27,080
+Yeah so go Carly là một thư viện go khá hay dành cho bất kỳ loại nhện cào đang bò nào.
+
+7
+00:00:27,080 --> 00:00:32,180
+muốn gọi đi qua e-mail từ một số trang Web theo chương trình.
+
+8
+00:00:32,580 --> 00:00:33,610
+Vì thế.
+
+9
+00:00:33,790 --> 00:00:43,030
+Vì vậy, bất cứ khi nào tôi sử dụng một thư viện mới, điều tôi sẽ làm là tìm kiếm các ví dụ và gọi cho anh ấy
+
+10
+00:00:43,030 --> 00:00:48,690
+có rất nhiều ví dụ về một số ghi nhật ký nâng cao cơ bản song song.
+
+11
+00:00:48,880 --> 00:00:55,340
+Vì vậy, tôi sẽ chỉ tìm một thứ có vẻ giống như những gì tôi đang làm.
+
+12
+00:00:55,730 --> 00:00:58,730
+Và nó thật đẹp.
+
+13
+00:00:58,750 --> 00:01:01,990
+Vì vậy, đây giống như thu thập dữ liệu Reddit thu thập dữ liệu Reddit cho một số dữ liệu.
+
+14
+00:01:01,990 --> 00:01:06,610
+Vì vậy, cái này có lẽ rất giống với thứ tôi đang tìm kiếm, nó nhận được một danh sách dữ liệu từ Reddit
+
+15
+00:01:06,790 --> 00:01:12,010
+thích các bài đăng và tìm dữ liệu phụ riêng lẻ để tìm giống như kẻ vũ phu đối với nó trong tiêu đề, v.v.
+
+16
+00:01:12,010 --> 00:01:13,990
+Điều này rất giống với những gì tôi đang cố gắng làm.
+
+17
+00:01:13,990 --> 00:01:20,380
+Đó là danh sách dữ liệu danh sách những thứ mà nó đang cố tìm dữ liệu trong danh sách nên đây là danh sách
+
+18
+00:01:20,380 --> 00:01:24,970
+ví dụ tốt để tham khảo loại nói chung bạn nên làm theo thứ tự nào.
+
+19
+00:01:24,970 --> 00:01:30,340
+Và sau đó go doc là một thứ khác mà tôi muốn tiếp tục mở trong khi làm việc với thư viện để tôi có thể
+
+20
+00:01:30,340 --> 00:01:32,530
+thực sự xem tất cả các tùy chọn là gì.
+
+21
+00:01:33,160 --> 00:01:39,840
+Vì vậy, hãy gọi cho tôi điều đầu tiên trong ví dụ Reddit này là gọi một nhà sưu tập mới.
+
+22
+00:01:39,850 --> 00:01:40,570
+Vì vậy, OK.
+
+23
+00:01:40,570 --> 00:01:47,510
+Vì vậy, tôi đi tìm cách cập bến cho trình thu thập mới. trình thu thập mới nhận các tham số này, nó trả về một trình thu thập.
+
+24
+00:01:47,600 --> 00:01:48,050
+Vì vậy, OK.
+
+25
+00:01:48,070 --> 00:01:49,270
+tùy chọn thu thập là gì.
+
+26
+00:01:49,440 --> 00:01:49,670
+ĐƯỢC RỒI.
+
+27
+00:01:49,690 --> 00:01:53,890
+Đây là một loạt những thứ mà bây giờ tôi có thể nghĩ đến khi tôi làm một nhà sưu tập.
+
+28
+00:01:54,790 --> 00:02:01,270
+Vì vậy, trong trường hợp này đối với việc cạo Twitter, tôi thực sự không cần bất kỳ tùy chọn nào nên tôi chỉ có thể
+
+29
+00:02:01,270 --> 00:02:09,340
+nói OK, hãy tạo bộ sưu tập khi bạn đã có bộ sưu tập, bạn sẽ cần dữ liệu để thực sự biết bạn đang làm gì
+
+30
+00:02:09,340 --> 00:02:10,300
+thực sự sẽ được ghi lại.
+
+31
+00:02:10,300 --> 00:02:14,880
+Vì vậy, tôi đang tìm kiếm một danh sách các thông tin.
+
+32
+00:02:14,920 --> 00:02:20,260
+Có, anh ấy đã tạo một cấu trúc dữ liệu để chứa các thông tin khác nhau mà bạn muốn lấy ra các thông tin khác nhau
+
+33
+00:02:20,260 --> 00:02:21,640
+thông tin chúng tôi muốn rút ra.
+
+34
+00:02:21,640 --> 00:02:26,070
+Nếu bạn quay lại tweet ở đó, chúng tôi đã nói Được rồi, hãy rút tên ra.
+
+35
+00:02:26,280 --> 00:02:31,510
+Và vì vậy, bạn có thể thấy có rất nhiều Todd McCloud ở trên cùng khi bạn cuộn xuống, bạn sẽ thấy thích và trường học và
+
+36
+00:02:31,540 --> 00:02:36,310
+một bộ đệm Kosh và Hockney.
+
+37
+00:02:36,310 --> 00:02:36,610
+Phải.
+
+38
+00:02:36,610 --> 00:02:40,510
+Vì vậy, bạn kéo tên và sau đó là tên người dùng và sau đó là những gì họ đề xuất.
+
+39
+00:02:40,540 --> 00:02:42,380
+Vì vậy, bạn sẽ kéo tất cả những thứ đó ra.
+
+40
+00:02:42,400 --> 00:02:46,560
+Vì vậy, đặt tên cho thông báo tên người dùng và đó là trong cấu trúc dữ liệu.
+
+41
+00:02:46,690 --> 00:02:49,720
+Vì vậy, chúng tôi có một sự hủy diệt mà chúng tôi sẽ có một phần trong số đó bởi vì sẽ có nhiều
+
+42
+00:02:49,720 --> 00:02:55,540
+tin nhắn đặt tên đẹp của các biến.
+
+43
+00:02:55,830 --> 00:03:02,490
+Vì vậy, rất rõ ràng rằng đó là điểm của một tên biến tự động hoàn thành ngày nay là đủ tốt để bạn
+
+44
+00:03:02,490 --> 00:03:05,950
+luôn muốn các biến của bạn rõ ràng.
+
+45
+00:03:06,400 --> 00:03:14,440
+Vì vậy, khi bạn nhận được tin nhắn, Cawley nói rằng điều đó hoạt động bằng cách bạn tạo người thu tiền và bạn tính điểm người thu tiền
+
+46
+00:03:14,440 --> 00:03:16,510
+mà bạn quan tâm.
+
+47
+00:03:16,510 --> 00:03:19,220
+Vì vậy, với điều trên e-mail, bạn có thể nói với nó.
+
+48
+00:03:19,240 --> 00:03:23,250
+Tôi quan tâm đến mọi thứ với lớp này được gọi là chức năng này hoặc thời gian.
+
+49
+00:03:23,260 --> 00:03:26,960
+Clip này được gọi là chức năng này.
+
+50
+00:03:27,280 --> 00:03:31,050
+Ngoài ra còn có theo yêu cầu mỗi khi nó chuyển sang một trang mới được gọi là chức năng này.
+
+51
+00:03:31,090 --> 00:03:37,410
+Có rất nhiều thứ khác nhau nên nếu tôi đến với tôi, tôi đi bác sĩ, bạn có thể xem xét lỗi trên một người chuyển giới
+
+52
+00:03:37,420 --> 00:03:44,410
+trên một chương trình tách ra theo yêu cầu khi phản hồi trên cạo trên X ngay bây giờ ngoại trừ rất nhiều thứ.
+
+53
+00:03:44,410 --> 00:03:51,400
+Vì vậy, trong trường hợp của tôi, tôi quan tâm đến bất cứ khi nào tôi nhìn thấy lớp tweet mà tôi đã tìm thấy ở đây.
+
+54
+00:03:51,430 --> 00:03:58,570
+Nếu tôi mở các công cụ dành cho nhà phát triển của mình và tôi nhấp vào nút nhỏ này ở bên cạnh Trình kiểm tra thì bây giờ tôi có thể di chuột
+
+55
+00:03:58,570 --> 00:04:08,710
+về mọi thứ và tôi có thể xem thông tin tôi tìm thấy ngay tại đây. Tôi có thể xem toàn bộ tweet và nếu tôi có thể
+
+56
+00:04:08,710 --> 00:04:16,210
+ở đó bây giờ tôi có thể thấy dưới đây và một trong các lớp là tweet và nó hiển thị trên từng lớp.
+
+57
+00:04:16,210 --> 00:04:20,280
+Nếu tôi nhấp vào mạng nếu tôi chuyển sang trang tiếp theo thì đó cũng là tweet của lớp.
+
+58
+00:04:20,350 --> 00:04:23,310
+Vì vậy, một lớp chung họ có thể tìm thấy cho mọi thứ.
+
+59
+00:04:23,420 --> 00:04:23,740
+Vì vậy, vâng.
+
+60
+00:04:23,740 --> 00:04:28,930
+Vì vậy, thứ bạn đang tìm kiếm là thứ thực sự độc đáo đối với khối dữ liệu bạn muốn
+
+61
+00:04:28,930 --> 00:04:29,890
+để lấy.
+
+62
+00:04:30,130 --> 00:04:30,620
+Và.
+
+63
+00:04:30,640 --> 00:04:33,300
+Nhưng nhưng có thể lặp lại cho mỗi biểu đồ.
+
+64
+00:04:33,310 --> 00:04:33,610
+Phải.
+
+65
+00:04:33,610 --> 00:04:35,550
+Vì vậy, nó giống như thông qua tất cả các mã được gửi.
+
+66
+00:04:35,550 --> 00:04:39,770
+Bạn đang thấy rằng những khối riêng lẻ đó và tất cả những thứ đó và tất cả mã.
+
+67
+00:04:39,910 --> 00:04:40,160
+Vâng.
+
+68
+00:04:40,180 --> 00:04:40,540
+Vì thế.
+
+69
+00:04:40,570 --> 00:04:41,340
+Vì vậy, tôi đang nói với bạn.
+
+70
+00:04:41,350 --> 00:04:44,100
+Vì vậy, ở đây tôi chỉ nói với Callie rằng tôi muốn quan tâm.
+
+71
+00:04:44,110 --> 00:04:46,420
+Tôi muốn mỗi khi có một tweet của lớp.
+
+72
+00:04:46,420 --> 00:04:49,450
+Và do đó, điều này chỉ sử dụng các bộ chọn CSF tiêu chuẩn.
+
+73
+00:04:49,450 --> 00:04:57,120
+Vì vậy, nếu bạn xem nếu bạn biết C, hãy đánh giá đây chỉ là bộ chọn CSF hoặc nếu g JS của bạn là bộ chọn truy vấn.
+
+74
+00:04:57,120 --> 00:05:00,870
+Vì vậy, dấu chấm có nghĩa là lớp và sau đó là tên lớp.
+
+75
+00:05:00,880 --> 00:05:07,430
+Vì vậy, mỗi lần mỗi lần gọi, anh ta tìm thấy một dấu chấm tweet, nó sẽ gọi chức năng này ở đây.
+
+76
+00:05:07,810 --> 00:05:11,040
+Và hàm này sẽ nhận phần tử đó.
+
+77
+00:05:11,620 --> 00:05:19,950
+Vì vậy, trong trường hợp này, nó là một div nên đây sẽ là một div mọi lúc và vì vậy mỗi khi tôi tìm thấy một dấu chấm tweet, tôi sẽ
+
+78
+00:05:19,950 --> 00:05:27,840
+thêm một tin nhắn mới vào danh sách tin nhắn của tôi bằng cách nối thêm và tạo một tweet mới, đặt tên và thành phần
+
+79
+00:05:27,840 --> 00:05:33,390
+có một văn bản con mà bạn có thể sử dụng để lấy văn bản từ một mục phụ được chọn.
+
+80
+00:05:33,450 --> 00:05:34,920
+Vì vậy, chúng tôi tốt đẹp.
+
+81
+00:05:34,920 --> 00:05:39,230
+Vì vậy, trong một tweet e chấm văn bản con và tôi có thể đặt vào một bộ chọn khác.
+
+82
+00:05:39,240 --> 00:05:45,240
+Vì vậy, tên đầy đủ của nhóm tài khoản và tên người dùng tài khoản chỉ tình cờ tìm thấy tên và tên người dùng và
+
+83
+00:05:45,240 --> 00:05:50,310
+sau đó tin nhắn là chương trình văn bản tweet hiển thị lại một trong số đó trên Twitter để chúng tôi có thể thấy điều đó.
+
+84
+00:05:50,910 --> 00:05:51,210
+Vâng.
+
+85
+00:05:51,240 --> 00:05:58,920
+Vì vậy, tôi sẽ làm như vậy ở đây là uh nó có văn bản tweet.
+
+86
+00:05:58,960 --> 00:06:01,740
+Vâng, nó sẽ là một văn bản lớp học và sau đó hiển thị lại trên mã.
+
+87
+00:06:02,080 --> 00:06:04,200
+Vì vậy, văn bản tweet.
+
+88
+00:06:04,200 --> 00:06:04,760
+Được rồi.
+
+89
+00:06:05,040 --> 00:06:05,750
+Vì vậy, một điều.
+
+90
+00:06:05,760 --> 00:06:06,030
+KHÔNG.
+
+91
+00:06:06,030 --> 00:06:11,180
+Tôi đã có tên tài khoản riêng biệt này và sau đó bên trong tài khoản tên đầy đủ đó.
+
+92
+00:06:11,550 --> 00:06:20,700
+Bên trong tên người dùng đó vì ngay tại đây, nơi nó nói đang trả lời câu trả lời cụ thể này có
+
+93
+00:06:20,700 --> 00:06:27,330
+tên lớp của tên người dùng giống với tên này, đây là điều tôi thực sự quan tâm là người dùng
+
+94
+00:06:27,330 --> 00:06:28,040
+tên.
+
+95
+00:06:28,170 --> 00:06:28,750
+Và vì vậy bạn.
+
+96
+00:06:28,880 --> 00:06:29,080
+Vì thế.
+
+97
+00:06:29,090 --> 00:06:33,830
+Vì vậy, để làm cho nó cụ thể hơn, tôi thấy tên người dùng này luôn là tên người dùng mà tôi thực sự quan tâm
+
+98
+00:06:33,830 --> 00:06:41,320
+in luôn nằm trong thẻ liên kết với thẻ đó luôn nằm trong a.
+
+99
+00:06:41,430 --> 00:06:44,360
+Thẻ neo với nhóm dấu gạch ngang tài khoản dưới dạng lớp.
+
+100
+00:06:44,370 --> 00:06:46,780
+Chỉ cần đi qua tài khoản dấu gạch ngang của Jess.
+
+101
+00:06:46,860 --> 00:06:49,960
+Nhóm Không có bàn tài khoản nhóm tài khoản nhóm.
+
+102
+00:06:50,040 --> 00:06:50,560
+Vì thế.
+
+103
+00:06:50,580 --> 00:06:56,460
+Vì vậy, tôi đang tìm kiếm bốn tên người dùng cụ thể là tôi cần tên người dùng của nhóm tài khoản chứ không chỉ
+
+104
+00:06:56,490 --> 00:06:58,810
+bất kỳ tên người dùng chung nào trong tweet của tôi.
+
+105
+00:06:58,950 --> 00:07:04,020
+Vì vậy, tôi đã phát hiện ra điều đó bằng cách chạy trực tiếp vào mã của mình, nó đột nhiên bắt đầu nói với tôi rằng hãy nhập iCloud
+
+106
+00:07:04,050 --> 00:07:07,340
+cho từng người một vì tất cả họ đều đang trả lời Todd McLeod.
+
+107
+00:07:07,500 --> 00:07:12,920
+Và thế là tôi quay lưng lại HC với email H và.
+
+108
+00:07:13,050 --> 00:07:15,300
+OK đây là một đây là một duy nhất.
+
+109
+00:07:15,300 --> 00:07:21,030
+Đây là một lớp phổ biến cho tên người dùng cụ thể mà tôi đang tìm kiếm.
+
+110
+00:07:21,090 --> 00:07:26,610
+Vì vậy, bây giờ sau khi gửi thư HT, tôi đã nói với Callie rằng tôi sẽ làm điều này mỗi khi có tweet.
+
+111
+00:07:27,030 --> 00:07:31,130
+Vì vậy, mỗi khi tôi tweet, nó sẽ thêm một tin nhắn mới vào tin nhắn.
+
+112
+00:07:31,200 --> 00:07:40,040
+Sau đó, tôi bảo Callie truy cập trang web mà tôi đã liệt kê ở đây chỉ là một hằng số và nó chỉ là URL
+
+113
+00:07:40,040 --> 00:07:45,540
+mà bạn muốn thu thập dữ liệu để bắt đầu với Vì vậy, trong trường hợp này, chỉ điều này.
+
+114
+00:07:46,700 --> 00:07:53,230
+Một khi bảo Callie đến thăm Callie thực ra chỉ là đi theo thói quen để tăng tốc độ ghé thăm để bạn thấy điều đó
+
+115
+00:07:53,240 --> 00:07:59,870
+đợi để nói đợi cho đến khi Callie cạo xong để nó bắt đầu khi bạn bảo đến thăm.
+
+116
+00:07:59,870 --> 00:08:01,790
+Bây giờ bạn muốn đợi nó hoàn thành.
+
+117
+00:08:02,090 --> 00:08:07,700
+Và vì vậy điều này không tệ ở đây bởi vì nó chỉ truy cập một trang nhưng nếu bạn ở trong mỗi nhóm thì tôi đã
+
+118
+00:08:07,700 --> 00:08:12,200
+tìm kiếm như một thẻ neo và sau đó truy cập từ đó đến một số trang khác và từ đó đến một số
+
+119
+00:08:12,200 --> 00:08:13,130
+trang khác.
+
+120
+00:08:13,280 --> 00:08:14,170
+Nó rất quan trọng.
+
+121
+00:08:14,180 --> 00:08:17,070
+Bạn cần phải chờ đợi.
+
+122
+00:08:17,600 --> 00:08:20,220
+Vì vậy, Callie tại thời điểm này sẽ gọi là anh ấy đã hoàn thành.
+
+123
+00:08:20,270 --> 00:08:27,450
+Callie sẽ đưa ra yêu cầu cho robot bắt đầu từ 60 tuổi sẽ thấy các yêu cầu của Twitter
+
+124
+00:08:27,470 --> 00:08:33,300
+và các rô bốt điều chỉnh T và nó sẽ tuân theo các chương trình của bạn tôn trọng các rô bốt mà T.
+
+125
+00:08:33,320 --> 00:08:38,000
+Đầu tiên, trong trường hợp này, trong trường hợp này không thực sự quan trọng.
+
+126
+00:08:38,000 --> 00:08:44,330
+Trang tôi đã cố truy cập được cho phép trong quy tắc att và tôi chỉ truy cập một trang nên thực tế tôi không
+
+127
+00:08:44,330 --> 00:08:47,320
+tạo ra bất kỳ sự khác biệt nào nhưng nó đã nhìn vào số lượng robot lên tới 60.
+
+128
+00:08:47,850 --> 00:08:53,420
+Nếu đó là một công việc thu thập thông tin lớn hơn đòi hỏi phải truy cập nhiều trang thì đó sẽ là một điều gì đó
+
+129
+00:08:53,600 --> 00:08:55,060
+thực sự tốt đẹp.
+
+130
+00:08:55,070 --> 00:08:59,630
+Đó là một tính năng thực sự hay của Callie và video này hơi dài.
+
+131
+00:08:59,630 --> 00:09:03,670
+Vì vậy, có lẽ tôi rất dễ dãi và dày đặc mặc dù chúng tôi gần như đã hoàn thành đúng.
+
+132
+00:09:03,670 --> 00:09:04,000
+Vâng.
+
+133
+00:09:04,030 --> 00:09:10,970
+Vì vậy, hãy xem bước tiếp theo của chúng tôi là tôi đã nhận được tin nhắn chứa đầy tất cả các tweet nên tôi chỉ là Jason sắp xếp nó bằng cách sử dụng
+
+134
+00:09:11,450 --> 00:09:18,500
+Marshall thụt lề 2 vào Marshall ở dạng có các dòng và tab mới để dễ đọc hơn và tôi
+
+135
+00:09:18,500 --> 00:09:21,050
+chỉ và sau đó tôi chỉ cần in nó ra bảng điều khiển của mình.
+
+136
+00:09:21,380 --> 00:09:24,040
+Và tôi cũng đang chỉ ra tôi đã nhận được bao nhiêu tweet.
+
+137
+00:09:24,260 --> 00:09:32,860
+Vì vậy, nếu tôi thực sự chạy thật nhanh, hãy chạy đi, tôi sẽ gửi yêu cầu tới Twitter, nó sẽ bắt đầu
+
+138
+00:09:32,860 --> 00:09:37,800
+kiểm tra tất cả H nó sẽ kiểm tra tất cả email nó sẽ phun ra nó tìm thấy 19 tweet.
+
+139
+00:09:37,800 --> 00:09:39,300
+Mát mẻ.
+
+140
+00:09:39,460 --> 00:09:40,290
+Điều đó thật tuyệt vời.
+
+141
+00:09:40,290 --> 00:09:40,710
+Vâng.
+
+142
+00:09:40,890 --> 00:09:42,380
+Tôi yêu giải pháp của bạn.
+
+143
+00:09:42,380 --> 00:09:42,720
+Vâng.
+
+144
+00:09:42,790 --> 00:09:47,240
+Bạn làm rất tốt trong video tiếp theo, chúng ta sẽ khám phá điều này nhiều hơn một chút.

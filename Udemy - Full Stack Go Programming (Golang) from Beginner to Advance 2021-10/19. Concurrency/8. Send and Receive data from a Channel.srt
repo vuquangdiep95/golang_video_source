@@ -1,0 +1,247 @@
+1
+00:00:12,960 --> 00:00:19,470
+Hello and welcome to the godowns programming language course in this session, we want to talk about
+
+2
+00:00:19,470 --> 00:00:21,570
+the others concurrency concept.
+
+3
+00:00:26,580 --> 00:00:29,400
+Send and receive data from it, Shannon.
+
+4
+00:00:30,720 --> 00:00:38,550
+Ingo Language Channel works with two principal operations one is sending and another one is receiving
+
+5
+00:00:38,970 --> 00:00:47,280
+both the operations, collectively known as communication and the direction of channel operator, indicates
+
+6
+00:00:47,400 --> 00:00:51,370
+whether the data is received or sent in the channel.
+
+7
+00:00:51,540 --> 00:00:56,130
+The sand and receive Operation Block until another side is not ready.
+
+8
+00:00:56,140 --> 00:01:03,540
+By default, it allows go routine to synchronize with each other without explicit locks or conditioned
+
+9
+00:01:03,540 --> 00:01:06,180
+variables sent operation.
+
+10
+00:01:08,490 --> 00:01:15,630
+The Senate operation is used to send data from one go routine for another go routine with the help of
+
+11
+00:01:15,630 --> 00:01:16,200
+a chairman.
+
+12
+00:01:16,620 --> 00:01:24,900
+Values like Ain't Float 64 and Bull can safe and easy to Santeria channel because they are copied,
+
+13
+00:01:25,050 --> 00:01:30,060
+so there is no risk of accidental concurrent access of the same value.
+
+14
+00:01:31,020 --> 00:01:38,890
+Similarly, strings are also safe to transfer because they are immutable both for sending pointers or
+
+15
+00:01:38,890 --> 00:01:46,190
+a reference like a slice map and etc. through a channel are not safe because the value of pointer over
+
+16
+00:01:46,320 --> 00:01:52,230
+things may change by sending gore rooting or by the receiving go rating at the same time.
+
+17
+00:01:52,600 --> 00:01:54,630
+The result is unpredicted.
+
+18
+00:01:54,900 --> 00:02:01,290
+So when you use pointers or references in the channel, you must make sure that you can only access
+
+19
+00:02:01,470 --> 00:02:03,420
+by one go routine at a time.
+
+20
+00:02:04,590 --> 00:02:08,880
+Now you can see the syntax there.
+
+21
+00:02:08,880 --> 00:02:15,180
+Bauer's statement indicates that the data means element sent to the channel with the help of the channel
+
+22
+00:02:15,180 --> 00:02:15,810
+operator
+
+23
+00:02:18,330 --> 00:02:19,410
+receive operation.
+
+24
+00:02:21,800 --> 00:02:27,230
+The receive operation is used to receive the data sent by the ST operator.
+
+25
+00:02:27,830 --> 00:02:29,990
+Now you can see the syntax.
+
+26
+00:02:31,010 --> 00:02:36,110
+The Obama's statement indicates that the element receives data from the channel.
+
+27
+00:02:36,410 --> 00:02:43,130
+If the result of the received a statement is not going to use is also valid, the statement you can
+
+28
+00:02:43,130 --> 00:02:46,040
+answer right or receive a statement as below.
+
+29
+00:02:46,670 --> 00:02:49,160
+Receive Operator Channel name.
+
+30
+00:02:50,730 --> 00:02:55,830
+Now, let's go to the school program to illustrate, send and receive operation.
+
+31
+00:02:58,220 --> 00:03:03,350
+First, define a function that sent an integer value to a channel.
+
+32
+00:03:03,500 --> 00:03:05,600
+In sum, it by another value.
+
+33
+00:03:07,340 --> 00:03:16,580
+So define fine sand set a variable like C-H Chan y, the Typekit
+
+34
+00:03:19,430 --> 00:03:27,740
+C-H send operator and for example, 50, and we defined a function that received the channel and some
+
+35
+00:03:27,740 --> 00:03:29,480
+channel value by another value.
+
+36
+00:03:29,600 --> 00:03:32,090
+For example, we defined find.
+
+37
+00:03:33,980 --> 00:03:34,790
+Receive.
+
+38
+00:03:39,510 --> 00:03:43,170
+Sea urchin pointed at tie ins
+
+39
+00:03:46,710 --> 00:03:50,970
+and preen total of 200 value by channel value, so be right.
+
+40
+00:03:51,220 --> 00:03:51,870
+If the
+
+41
+00:03:55,080 --> 00:03:59,460
+200 plus receive operator, see each,
+
+42
+00:04:02,310 --> 00:04:06,630
+now go to main function and call these two go routines.
+
+43
+00:04:09,240 --> 00:04:20,160
+First, write the message as being of main function words if the taught main function.
+
+44
+00:04:23,810 --> 00:04:31,610
+And now creating a channel by make function, for example, defining variable voices, calling equals
+
+45
+00:04:31,610 --> 00:04:33,800
+and calling make function.
+
+46
+00:04:34,960 --> 00:04:50,650
+And said Chan, and end time now sending money to channel by inbox and function, go send and pass CHF
+
+47
+00:04:50,650 --> 00:04:51,430
+argument.
+
+48
+00:04:55,140 --> 00:05:01,620
+And receiving value of channel by increasing function, go receive.
+
+49
+00:05:03,240 --> 00:05:10,230
+And posterior argument sit as the prime time got its lead
+
+50
+00:05:14,250 --> 00:05:24,450
+time darts for second multiplication in hundreds and now write a message as end of main function watch
+
+51
+00:05:25,230 --> 00:05:25,920
+FP
+
+52
+00:05:28,470 --> 00:05:38,190
+and of the named Punch P format the court, save the person, execute the program.
+
+53
+00:05:38,220 --> 00:05:40,220
+Go run that back.
+
+54
+00:05:40,230 --> 00:05:46,830
+Is this mean that go now we can see the output in our program.
+
+55
+00:05:46,860 --> 00:05:54,330
+We created the channel named C-H, whose data time is eons, which means that it can only transport
+
+56
+00:05:54,330 --> 00:05:55,470
+data off type.
+
+57
+00:05:55,470 --> 00:06:01,020
+Integer function, send and receive are started as a go routine.
+
+58
+00:06:01,530 --> 00:06:03,480
+We are sending data to the channel.
+
+59
+00:06:03,480 --> 00:06:11,130
+Searching single routine and receiving data from C is in the received go routine in order not to prolong
+
+60
+00:06:11,130 --> 00:06:12,210
+the time of decision.
+
+61
+00:06:12,420 --> 00:06:16,170
+We will finish it and we will continue the content in the next session.
+
+62
+00:06:16,260 --> 00:06:16,740
+Goodbye.

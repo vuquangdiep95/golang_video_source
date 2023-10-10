@@ -1,0 +1,1047 @@
+1
+00:00:01,250 --> 00:00:02,340
+So let's keep going.
+
+2
+00:00:02,360 --> 00:00:05,750
+And right now, we're almost finished our test main function.
+
+3
+00:00:05,780 --> 00:00:07,910
+But of course, we need to create some tables.
+
+4
+00:00:08,600 --> 00:00:14,330
+So I'm assuming that and I'm looking right now at integration, underscore Tesco in the function test
+
+5
+00:00:14,330 --> 00:00:16,890
+main at the very end of this function.
+
+6
+00:00:16,910 --> 00:00:24,170
+By the time I get here to line 82, I'm going to assume and I think safely that our Docker images started
+
+7
+00:00:24,470 --> 00:00:27,710
+that Postgres has started and it's ready to accept connections.
+
+8
+00:00:28,250 --> 00:00:32,020
+So we need to create some tables and of course, we can use that same school.
+
+9
+00:00:32,030 --> 00:00:38,420
+We use just a couple of lectures ago, but I'm going to put it in its own function funk create tables
+
+10
+00:00:38,570 --> 00:00:40,310
+just because I can collapse it really easily.
+
+11
+00:00:40,310 --> 00:00:48,620
+That and it will take one parameter DB a pointer to sequel DB, SQL DB, and it returns potentially
+
+12
+00:00:48,620 --> 00:00:48,980
+an error.
+
+13
+00:00:50,180 --> 00:00:51,260
+And it's pretty straightforward.
+
+14
+00:00:51,440 --> 00:00:55,730
+So I've already copied to my clipboard the contents of that SQL file.
+
+15
+00:00:55,730 --> 00:01:01,790
+I gave you to download a couple of lectures ago, so a credit variable called for statement and I'll
+
+16
+00:01:01,790 --> 00:01:02,750
+use back ticks.
+
+17
+00:01:02,750 --> 00:01:05,590
+And inside of that, I will paste that simple file.
+
+18
+00:01:05,840 --> 00:01:11,050
+OK, so there's our variable, but of course we need to execute that SQL now.
+
+19
+00:01:11,060 --> 00:01:14,990
+And it's really simple underscore because I don't care about the return value, but I do care about
+
+20
+00:01:14,990 --> 00:01:15,500
+the error.
+
+21
+00:01:17,030 --> 00:01:19,760
+That's a sign the value of DB, the parameter.
+
+22
+00:01:19,760 --> 00:01:21,200
+We accept it in this function.
+
+23
+00:01:21,500 --> 00:01:22,310
+Dot exec.
+
+24
+00:01:23,390 --> 00:01:27,050
+And we're going to exec this TMT and we'll check for an error.
+
+25
+00:01:27,350 --> 00:01:33,090
+The error is not equal to nil, then return the error, otherwise return nil.
+
+26
+00:01:34,850 --> 00:01:35,070
+All right.
+
+27
+00:01:35,480 --> 00:01:41,240
+And I stuck this in its own function, largely because I can now collapse this and make it much smaller.
+
+28
+00:01:42,050 --> 00:01:47,000
+And of course, you could read that signal from a file if you wanted to, but I don't see any real value
+
+29
+00:01:47,000 --> 00:01:47,330
+in that.
+
+30
+00:01:48,020 --> 00:02:00,740
+So now online 81, I can't return and just call error equals, create tables and hand it to DB our connection
+
+31
+00:02:00,740 --> 00:02:03,320
+pool for our Docker image and we check for an error.
+
+32
+00:02:03,590 --> 00:02:07,880
+If error is not equal to nil, then we'll log dot.
+
+33
+00:02:09,550 --> 00:02:10,270
+Fatal, if.
+
+34
+00:02:13,580 --> 00:02:18,070
+Error creating tables and print out the error.
+
+35
+00:02:18,750 --> 00:02:24,020
+That's near, and it stops at that point because we can't run any tests with our tables.
+
+36
+00:02:25,730 --> 00:02:31,550
+Now the last thing I'm going to do here is create my mark or assign my model's variable the value of
+
+37
+00:02:31,880 --> 00:02:33,390
+new test.
+
+38
+00:02:35,000 --> 00:02:37,490
+I need that to run my tests in the code below.
+
+39
+00:02:38,600 --> 00:02:44,920
+And I'm also going to create a variable called code, which is the return code we get from calling AMD
+
+40
+00:02:45,140 --> 00:02:46,790
+run running all our tests.
+
+41
+00:02:47,030 --> 00:02:47,420
+OK.
+
+42
+00:02:49,370 --> 00:02:53,570
+And down here, we're going to put something else between these two lines in a bit buffering now I'm
+
+43
+00:02:53,570 --> 00:02:59,340
+just going to say os x it os x it, that's code.
+
+44
+00:03:00,980 --> 00:03:01,370
+OK.
+
+45
+00:03:01,640 --> 00:03:05,000
+So at this point, if I run this, it should pull the Docker image.
+
+46
+00:03:05,330 --> 00:03:07,070
+Wait for Postgres to be ready.
+
+47
+00:03:07,820 --> 00:03:08,420
+Execute.
+
+48
+00:03:08,420 --> 00:03:11,000
+Create tables and create all of our necessary tables.
+
+49
+00:03:11,000 --> 00:03:12,410
+And life should be good.
+
+50
+00:03:13,070 --> 00:03:19,220
+So let's come down here after this func create tables and just write a really simple test, one that
+
+51
+00:03:19,220 --> 00:03:22,610
+we don't even need an integration test for, but one that we can at least run.
+
+52
+00:03:23,420 --> 00:03:28,070
+Funk Test User Underscore Table.
+
+53
+00:03:28,820 --> 00:03:33,290
+We're going to call that function that just returns the string users, in my case.
+
+54
+00:03:34,940 --> 00:03:38,330
+So of course, it takes one parameter t a pointer to testing data.
+
+55
+00:03:40,220 --> 00:03:50,810
+And all we have to say is s, which is a string is assign the value of models dart users dot table.
+
+56
+00:03:53,190 --> 00:03:58,770
+And we checked to make sure we get the appropriate value back if SE is not equal to users of the string,
+
+57
+00:03:58,770 --> 00:04:05,670
+then T2 error and will print out wrong table name return.
+
+58
+00:04:10,180 --> 00:04:10,480
+Yes.
+
+59
+00:04:11,440 --> 00:04:19,110
+OK, so now I actually want to try running this test just to make sure everything works the way that
+
+60
+00:04:19,110 --> 00:04:19,740
+it's supposed to.
+
+61
+00:04:19,890 --> 00:04:26,310
+So this is the point when I go right back to the top of my file and on the very first line, I put a
+
+62
+00:04:26,310 --> 00:04:29,730
+comment go call and build integration.
+
+63
+00:04:30,090 --> 00:04:33,300
+And I'm also going to put a comment here that reminds me how to run these tests.
+
+64
+00:04:33,930 --> 00:04:39,840
+Run tests with this command and the command is actually go test dot.
+
+65
+00:04:40,380 --> 00:04:48,780
+Then two hyphens, tags, integration and I'm going to put dash dash count equals one as well, so it
+
+66
+00:04:48,780 --> 00:04:50,190
+doesn't crash any tests.
+
+67
+00:04:52,860 --> 00:04:53,850
+So let's give this a try.
+
+68
+00:04:54,120 --> 00:04:55,470
+I will copy this command.
+
+69
+00:04:58,580 --> 00:05:00,050
+I will open my terminal window.
+
+70
+00:05:01,220 --> 00:05:07,100
+I'm going to switch to my Doctor desktop as well just to see what's running right now, so I have no
+
+71
+00:05:07,100 --> 00:05:08,870
+Docker containers running at all.
+
+72
+00:05:09,560 --> 00:05:11,840
+So let's come down here to our terminal.
+
+73
+00:05:12,140 --> 00:05:16,790
+Paste in that command and hey, return and see if everything works the way that we think it's going
+
+74
+00:05:16,790 --> 00:05:17,030
+to.
+
+75
+00:05:21,330 --> 00:05:27,630
+And it takes a little while because it's got to pull the Docker image and start the database, but hopefully
+
+76
+00:05:27,780 --> 00:05:28,950
+this will actually work.
+
+77
+00:05:39,370 --> 00:05:41,710
+So you can see that I have a Docker container running.
+
+78
+00:05:45,000 --> 00:05:49,530
+Which is good, and it's Postgres thirteen point four, which is what it's supposed to be.
+
+79
+00:05:53,230 --> 00:05:57,610
+It rather looks like I made a mistake in that backup function, but I'll give it a few more seconds.
+
+80
+00:06:01,490 --> 00:06:04,650
+Could not connect to darker reached retry deadline.
+
+81
+00:06:04,670 --> 00:06:09,530
+OK, so there's something wrong with my retry function or with the way I've populated the information
+
+82
+00:06:09,860 --> 00:06:10,670
+in my database.
+
+83
+00:06:10,730 --> 00:06:12,290
+Let's see if we can figure out what's going on.
+
+84
+00:06:14,210 --> 00:06:22,760
+So my database information is local host Postgres Secret Celebrity has underscore Test fifty four thirty
+
+85
+00:06:22,760 --> 00:06:27,800
+five and then I have host port user password DB name SSL mode.
+
+86
+00:06:27,800 --> 00:06:31,790
+The rest of it is just hard coded, so it's only these things and they come in the order of host port,
+
+87
+00:06:31,790 --> 00:06:33,230
+user password and dinner.
+
+88
+00:06:34,610 --> 00:06:35,630
+So let's get down here.
+
+89
+00:06:37,140 --> 00:06:41,730
+Postgres user is user post-cruise, password is password.
+
+90
+00:06:42,720 --> 00:06:45,090
+Postgres DB is D.B. name.
+
+91
+00:06:46,540 --> 00:06:47,050
+OK.
+
+92
+00:06:47,770 --> 00:06:54,640
+I'm exposing Port five, four, three two, and it should bind to host Port Port.
+
+93
+00:06:56,370 --> 00:07:00,030
+So the options all look OK, let's try to retry code.
+
+94
+00:07:01,070 --> 00:07:03,350
+Let's just add a log file here.
+
+95
+00:07:03,920 --> 00:07:10,250
+So Tea Party, log dot, print line your
+
+96
+00:07:13,330 --> 00:07:20,090
+error and we can at least watch that error message and see if any useful information comes out of that.
+
+97
+00:07:20,210 --> 00:07:22,460
+So let's go back to DR.
+
+98
+00:07:24,090 --> 00:07:25,920
+Let's get that container is gone.
+
+99
+00:07:25,970 --> 00:07:30,360
+Good analyst, tremendous again and watch the longer file.
+
+100
+00:07:30,510 --> 00:07:40,230
+So this time I'll say go test Dash V and I'll make this bigger so I can actually have room to see any
+
+101
+00:07:40,230 --> 00:07:41,580
+error messages that come there.
+
+102
+00:07:41,580 --> 00:07:42,480
+So clear the screen.
+
+103
+00:07:43,170 --> 00:07:44,100
+Run that command again.
+
+104
+00:07:49,640 --> 00:07:52,550
+Unknown driver PGS forgotten important.
+
+105
+00:07:52,560 --> 00:07:53,630
+Well, that makes sense.
+
+106
+00:07:53,660 --> 00:07:54,960
+OK, so let's stop this.
+
+107
+00:07:55,670 --> 00:07:56,240
+Hide that.
+
+108
+00:07:57,920 --> 00:08:02,900
+Go back and kill that Docker image if it's still running, it is kill that and remove it.
+
+109
+00:08:04,500 --> 00:08:06,920
+I'll go back up to the top where we have our imports.
+
+110
+00:08:07,190 --> 00:08:09,230
+And of course, this makes perfect sense.
+
+111
+00:08:09,260 --> 00:08:12,470
+We're testing Postgres and we've imported database SQL.
+
+112
+00:08:12,980 --> 00:08:19,040
+But at no point did we import the necessary things for Jack C's connection or Jack C's package, so
+
+113
+00:08:19,040 --> 00:08:23,120
+I'll use the blank identifier and say GitHub.
+
+114
+00:08:26,780 --> 00:08:32,240
+Dot com slash Jack C slash, and the first one I want is PG Con.
+
+115
+00:08:33,470 --> 00:08:43,790
+And I'll duplicate that line and get rid of PG Con and put in PG X version for duplicate that line and
+
+116
+00:08:43,790 --> 00:08:46,940
+add s t d l d to that.
+
+117
+00:08:47,300 --> 00:08:48,800
+OK, let's try that again.
+
+118
+00:08:49,070 --> 00:08:50,450
+STD IP.
+
+119
+00:08:52,220 --> 00:08:54,230
+So I open my terminal window.
+
+120
+00:08:54,710 --> 00:08:57,620
+Clear the screen and try this one more time.
+
+121
+00:08:59,600 --> 00:09:02,730
+Cannot find packaged dart in, so I've got a tape of somewhere.
+
+122
+00:09:02,750 --> 00:09:03,290
+Of course.
+
+123
+00:09:04,590 --> 00:09:05,670
+As I often do.
+
+124
+00:09:07,850 --> 00:09:11,530
+Jack, see, Jack, see, see.
+
+125
+00:09:12,350 --> 00:09:16,730
+Third time's the charm, so clear the terminal and run this again.
+
+126
+00:09:18,980 --> 00:09:22,190
+Cannot find package in Test August 16.
+
+127
+00:09:22,550 --> 00:09:24,260
+OK, maybe the fourth time is the charm.
+
+128
+00:09:24,710 --> 00:09:25,430
+16.
+
+129
+00:09:27,770 --> 00:09:31,070
+P g con, my typing is very bad today.
+
+130
+00:09:31,820 --> 00:09:32,650
+One more time.
+
+131
+00:09:33,440 --> 00:09:37,280
+Clear the screen up and run the tests.
+
+132
+00:09:40,760 --> 00:09:47,000
+So it should be pulling our darker image right now, and we have run, pass, run, pass, everything
+
+133
+00:09:47,000 --> 00:09:48,380
+past, OK?
+
+134
+00:09:48,800 --> 00:09:51,980
+And those messages from Upper are to be expected.
+
+135
+00:09:52,310 --> 00:09:55,820
+That's just some of their debugging code, and they can be safely ignored.
+
+136
+00:09:56,750 --> 00:09:58,700
+So our test actually works perfect.
+
+137
+00:09:58,730 --> 00:10:03,740
+We haven't done anything with the database yet, so let's go down here except create tables.
+
+138
+00:10:05,210 --> 00:10:07,130
+Let's see if our Docker image is still running.
+
+139
+00:10:08,180 --> 00:10:08,780
+It is.
+
+140
+00:10:09,110 --> 00:10:13,290
+So I should be able to connect to this Docker image and have a look at it.
+
+141
+00:10:13,400 --> 00:10:14,030
+Let's try that.
+
+142
+00:10:14,600 --> 00:10:20,060
+So open up my client and make sure those tables are actually there and I'll create a new connection
+
+143
+00:10:20,690 --> 00:10:28,070
+and I'll add a new favorite and I'll call this one test docker and the host is local host.
+
+144
+00:10:28,070 --> 00:10:30,620
+The port is five four three five.
+
+145
+00:10:30,770 --> 00:10:31,840
+That's what we specify.
+
+146
+00:10:31,910 --> 00:10:34,820
+The user name is Postgres, and the password is secret.
+
+147
+00:10:35,540 --> 00:10:38,330
+And I'll leave the database empty, so let's try connecting to that.
+
+148
+00:10:39,110 --> 00:10:39,800
+We connected.
+
+149
+00:10:39,950 --> 00:10:41,750
+Let's see if the celebrities test.
+
+150
+00:10:41,750 --> 00:10:42,650
+It does exist.
+
+151
+00:10:43,760 --> 00:10:45,020
+And that should have our tables in it.
+
+152
+00:10:45,740 --> 00:10:46,520
+And it does.
+
+153
+00:10:46,610 --> 00:10:47,180
+Perfect.
+
+154
+00:10:47,420 --> 00:10:47,960
+OK.
+
+155
+00:10:47,990 --> 00:10:49,910
+So that I know actually works.
+
+156
+00:10:50,720 --> 00:10:55,650
+Now let's go back here and delete that Docker image entirely.
+
+157
+00:10:56,810 --> 00:10:57,470
+Remove it.
+
+158
+00:10:58,670 --> 00:11:06,830
+And at the very end of my test, main function after I declare code, but before I call OS X it, let's
+
+159
+00:11:06,830 --> 00:11:08,290
+clean up our acreage.
+
+160
+00:11:08,720 --> 00:11:10,640
+They don't want that running after the test finish.
+
+161
+00:11:11,330 --> 00:11:14,420
+So we'll put a simple statement here that gets rid of it if error.
+
+162
+00:11:14,660 --> 00:11:17,070
+And that's a sign of the value from pool.
+
+163
+00:11:17,390 --> 00:11:18,410
+Don't purge.
+
+164
+00:11:20,090 --> 00:11:22,970
+And at this point, I want to purge resource.
+
+165
+00:11:23,510 --> 00:11:27,800
+And as you can see, now that I have mine go build tags at the top, it's not doing autocomplete for
+
+166
+00:11:27,800 --> 00:11:30,380
+me, but I think we'll be able to manage from this point on.
+
+167
+00:11:32,120 --> 00:11:33,860
+And error is not equal to nil.
+
+168
+00:11:35,180 --> 00:11:49,700
+Then I want to log double fatal f could not purge resource and the error per se on the air, and that
+
+169
+00:11:49,700 --> 00:11:55,550
+should clean up our Docker image, stop it and remove it after we're done running our tests.
+
+170
+00:11:55,670 --> 00:12:01,460
+So now let's write a real test, a real integration test, something that does more than just call test
+
+171
+00:12:01,460 --> 00:12:02,180
+user table.
+
+172
+00:12:03,020 --> 00:12:04,360
+So let's try the insert function.
+
+173
+00:12:04,370 --> 00:12:09,990
+So I'll recreate a function, and I recall it to test user underscore insert.
+
+174
+00:12:11,030 --> 00:12:12,080
+And again, it's a test.
+
+175
+00:12:12,080 --> 00:12:15,170
+So T pointer to testing dot t.
+
+176
+00:12:17,350 --> 00:12:22,540
+And what I want to do here is to try to insert that dummy user we created in the last lecture, so we
+
+177
+00:12:22,540 --> 00:12:24,970
+should be getting back an I.D. in the form of an ant.
+
+178
+00:12:25,210 --> 00:12:32,200
+We should not be getting an error and we're going to call models, dot users dot insert and I'll insert
+
+179
+00:12:32,200 --> 00:12:35,530
+dummy user logic for an error.
+
+180
+00:12:35,710 --> 00:12:40,780
+If the error is not equal to nil, then Typekit error.
+
+181
+00:12:42,130 --> 00:12:51,790
+My error is failed to insert user, followed by the error, and I should also check to make sure that
+
+182
+00:12:51,790 --> 00:12:53,920
+my I.D. is not equal to zero.
+
+183
+00:12:54,370 --> 00:13:00,370
+So if ID is equal to zero and something went wrong, we should be getting one back.
+
+184
+00:13:03,130 --> 00:13:03,530
+Error.
+
+185
+00:13:07,250 --> 00:13:09,470
+Zero returned as I'd.
+
+186
+00:13:11,150 --> 00:13:13,490
+After insert.
+
+187
+00:13:14,270 --> 00:13:15,950
+OK, let's try running that test.
+
+188
+00:13:16,130 --> 00:13:18,470
+So open my terminal window, clear the screen.
+
+189
+00:13:18,940 --> 00:13:22,490
+I'll get rid of the V this time because I only want to see if there's an error.
+
+190
+00:13:23,330 --> 00:13:25,310
+So Dash V is now gone and I'll run that.
+
+191
+00:13:25,910 --> 00:13:27,650
+And again, it should pull the Docker image.
+
+192
+00:13:27,860 --> 00:13:32,150
+And this is why we separate integration and unit tests because integration tests can take a while.
+
+193
+00:13:34,220 --> 00:13:34,730
+There it is.
+
+194
+00:13:35,120 --> 00:13:36,110
+OK, let's try.
+
+195
+00:13:36,620 --> 00:13:42,860
+Go test cover, dot tags, integration.
+
+196
+00:13:42,920 --> 00:13:44,030
+See what our coverage is now.
+
+197
+00:13:53,300 --> 00:13:54,620
+So we're at ten point eight percent.
+
+198
+00:13:54,770 --> 00:13:55,370
+We're getting there.
+
+199
+00:13:56,210 --> 00:13:57,410
+Let's try another test.
+
+200
+00:13:57,440 --> 00:14:02,420
+So now we've inserted a user, we know at this point that there's a user with an idea of one in the
+
+201
+00:14:02,420 --> 00:14:03,080
+database.
+
+202
+00:14:03,980 --> 00:14:05,270
+Let's try getting a user.
+
+203
+00:14:05,280 --> 00:14:08,360
+So funk test, the user underscore.
+
+204
+00:14:08,360 --> 00:14:13,520
+Get going again t pointer to testing T, and this was pretty straightforward.
+
+205
+00:14:14,240 --> 00:14:18,320
+We should be able to say you for user error for error there.
+
+206
+00:14:18,320 --> 00:14:24,980
+Assign values from models users don't get and I'm getting it and that should be in there.
+
+207
+00:14:25,700 --> 00:14:34,190
+So if error is not equal to nil, then thedoor error failed to get user error.
+
+208
+00:14:36,600 --> 00:14:38,790
+And that will make sure that user actually exists.
+
+209
+00:14:39,390 --> 00:14:43,320
+If you do, it is equal to zero.
+
+210
+00:14:43,770 --> 00:14:47,460
+If the ID field of the return user model zero, something went wrong.
+
+211
+00:14:47,880 --> 00:15:00,180
+T2 error ID of returned user is zero and the error, so we'll run that one in a minute.
+
+212
+00:15:00,300 --> 00:15:04,170
+We may as well just really quickly try to test get all.
+
+213
+00:15:05,010 --> 00:15:06,060
+And that's pretty much the same.
+
+214
+00:15:06,060 --> 00:15:15,260
+So I can copy this and modified copy paste and we'll make this get old and we'll get rid of the parameter.
+
+215
+00:15:17,510 --> 00:15:19,040
+And make that get all.
+
+216
+00:15:22,860 --> 00:15:24,780
+And all we have to do here is get rid of this.
+
+217
+00:15:26,730 --> 00:15:32,010
+And if the error is not equal to nil, you ignore the return value, which is checking for an error.
+
+218
+00:15:33,450 --> 00:15:34,230
+That should run.
+
+219
+00:15:34,260 --> 00:15:35,670
+So let's try running these tests.
+
+220
+00:15:36,710 --> 00:15:39,750
+I'll clear the terminal and run.
+
+221
+00:15:39,780 --> 00:15:41,550
+Go Test Dash cover.
+
+222
+00:15:43,720 --> 00:15:45,760
+Check our coverage and make sure there's no failures.
+
+223
+00:15:50,880 --> 00:15:53,760
+So we've gone from ten point eight to twenty one point six.
+
+224
+00:15:54,190 --> 00:15:54,810
+It's getting better.
+
+225
+00:15:55,740 --> 00:15:56,430
+Let's keep going.
+
+226
+00:15:57,460 --> 00:16:06,490
+So let's try getting a user by email, so I'll copy this one and paste it down here, and it's it's
+
+227
+00:16:06,490 --> 00:16:15,820
+called get by email, and in this point, I want to change this to get by email and that should return,
+
+228
+00:16:16,630 --> 00:16:19,660
+or it should accept as its parameter and email address.
+
+229
+00:16:19,720 --> 00:16:21,520
+And we used me out here talking.
+
+230
+00:16:21,940 --> 00:16:22,330
+OK.
+
+231
+00:16:24,280 --> 00:16:25,660
+And that should be simple enough.
+
+232
+00:16:26,890 --> 00:16:28,280
+Let's try running this test.
+
+233
+00:16:30,760 --> 00:16:32,710
+So we're at twenty one point six a moment ago.
+
+234
+00:16:36,950 --> 00:16:39,170
+And now we're at twenty eight point six with no failures.
+
+235
+00:16:39,230 --> 00:16:39,680
+Perfect.
+
+236
+00:16:40,850 --> 00:16:45,280
+So we've managed to insert a user and to get a user and to get all users.
+
+237
+00:16:45,290 --> 00:16:48,750
+And of course, we want to test updating a user as well.
+
+238
+00:16:48,800 --> 00:16:50,630
+And this is a little more code, but not much.
+
+239
+00:16:50,690 --> 00:17:03,300
+So funk and I will call it test user underscore update and T pointer to testing talked when parentheses,
+
+240
+00:17:03,300 --> 00:17:07,340
+sir and give yourself some room.
+
+241
+00:17:08,090 --> 00:17:09,860
+So first of all, we'll get a user.
+
+242
+00:17:09,950 --> 00:17:13,900
+You and Aaron are assigned the value of models.
+
+243
+00:17:14,240 --> 00:17:19,130
+Users don't get by ID one if error is not equal to nil.
+
+244
+00:17:19,820 --> 00:17:23,900
+I'll just copy this one and paste it here.
+
+245
+00:17:26,000 --> 00:17:32,540
+So now we have a user and we can update the users, so let's change the last name you last name is equal
+
+246
+00:17:32,540 --> 00:17:32,990
+to Smith.
+
+247
+00:17:33,770 --> 00:17:34,080
+OK.
+
+248
+00:17:34,100 --> 00:17:39,800
+It was guy a minute ago and I will say error is equal to Utah update.
+
+249
+00:17:39,980 --> 00:17:44,210
+And we handed a pointer to you and we paced for error.
+
+250
+00:17:44,210 --> 00:17:46,910
+Check failed to update user.
+
+251
+00:17:49,380 --> 00:17:51,510
+And now, just to make sure it actually worked.
+
+252
+00:17:52,200 --> 00:17:59,610
+Let's go get the user again, so we'll copy this, paste it down here, get rid of the assignment operator.
+
+253
+00:18:00,700 --> 00:18:06,730
+And failed to get users fine and now was checked to make sure that the last name is actually Smith.
+
+254
+00:18:07,120 --> 00:18:17,440
+If you don't, last name is not equal to Smith exactly as we typed it above and ticker error and in
+
+255
+00:18:17,440 --> 00:18:21,580
+here we can just put last name not updated in database.
+
+256
+00:18:22,540 --> 00:18:24,010
+OK, let's run that test.
+
+257
+00:18:25,720 --> 00:18:27,820
+So we were at twenty eight point six.
+
+258
+00:18:27,910 --> 00:18:30,370
+Let's see where we get now and make sure we get everything right.
+
+259
+00:18:36,860 --> 00:18:38,060
+Thirty one point nine.
+
+260
+00:18:38,090 --> 00:18:38,870
+We're getting there.
+
+261
+00:18:39,350 --> 00:18:44,660
+OK, this lecture starting to get a bit long, so we'll pick up pick it up in the next lecture and continue
+
+262
+00:18:44,660 --> 00:18:48,800
+writing tests for both user and token data models.

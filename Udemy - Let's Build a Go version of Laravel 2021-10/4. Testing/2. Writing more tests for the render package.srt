@@ -1,0 +1,523 @@
+1
+00:00:01,010 --> 00:00:05,300
+So let's keep running tests, but let's make our life a little bit easier.
+
+2
+00:00:05,330 --> 00:00:08,610
+It can be really difficult to make sure you have good test coverage.
+
+3
+00:00:08,630 --> 00:00:15,770
+I mean, you can, as I do here in the command prompt, right now I'm in the rental directory.
+
+4
+00:00:15,770 --> 00:00:22,190
+I can type go test, cover, dash, cover dot and that will tell me the percentage of that particular
+
+5
+00:00:22,190 --> 00:00:23,150
+file that's covered.
+
+6
+00:00:23,390 --> 00:00:25,760
+Right now, it's sixty five point five percent of statements.
+
+7
+00:00:26,810 --> 00:00:31,940
+But which sixty five point five percent of statements and I can figure it out, of course, but let's
+
+8
+00:00:31,940 --> 00:00:32,870
+make her life easier.
+
+9
+00:00:33,410 --> 00:00:39,590
+I'm going to go over to the root level of my celebrity house project and create a new file with a capital
+
+10
+00:00:39,590 --> 00:00:45,650
+m make file all one word and you'll find a copy of this in the course resources for this lecture.
+
+11
+00:00:45,650 --> 00:00:52,340
+But I have a copy copied in to my clipboard, so let me paste it really simple, and I'm going to delete
+
+12
+00:00:52,340 --> 00:00:52,910
+this one.
+
+13
+00:00:53,110 --> 00:00:54,380
+Leave it there, still going to hurt anything.
+
+14
+00:00:54,410 --> 00:00:59,120
+Eventually, we're going to be building a command line interface, a little command line project.
+
+15
+00:00:59,330 --> 00:01:00,380
+We're not doing that yet.
+
+16
+00:01:00,650 --> 00:01:03,160
+So that can just be ignored right now.
+
+17
+00:01:03,170 --> 00:01:04,430
+We just run that command.
+
+18
+00:01:04,880 --> 00:01:08,190
+These are the ones we care about test cover and coverage.
+
+19
+00:01:08,210 --> 00:01:13,310
+OK, so now that I've created that make file and you can download a copy from the course resources for
+
+20
+00:01:13,320 --> 00:01:17,270
+this lecture, if I go back to my command prompt and go up one level.
+
+21
+00:01:17,270 --> 00:01:19,640
+So I'm at the root level of the celebrity project.
+
+22
+00:01:19,880 --> 00:01:25,160
+Now I can type my test and it will run all of the tests for the entire project.
+
+23
+00:01:25,200 --> 00:01:27,110
+And of course, there's only one to worry about.
+
+24
+00:01:27,890 --> 00:01:36,260
+But I can also type make cover and that will open up my browser and show me the coverage for all of
+
+25
+00:01:36,260 --> 00:01:38,180
+the files that I have to test for.
+
+26
+00:01:38,210 --> 00:01:40,880
+Right now there's only one, and it shows me a hard look.
+
+27
+00:01:40,880 --> 00:01:45,050
+Here you have this is all the green stuff is being tested.
+
+28
+00:01:45,050 --> 00:01:45,830
+The red is not.
+
+29
+00:01:46,130 --> 00:01:50,270
+And you can see that's much clearer for the sorts of things that are being tested.
+
+30
+00:01:51,020 --> 00:01:51,380
+Perfect.
+
+31
+00:01:51,390 --> 00:01:52,280
+So let's close that.
+
+32
+00:01:52,310 --> 00:01:53,750
+That will make our life a little bit easier.
+
+33
+00:01:53,960 --> 00:01:58,190
+And let's go back to our code and continue reading some tests.
+
+34
+00:01:58,370 --> 00:02:06,350
+OK, so right now, if I go back to my render test, render underscore test, not go, I'm only testing
+
+35
+00:02:06,350 --> 00:02:07,240
+the page function.
+
+36
+00:02:07,250 --> 00:02:08,950
+So let's write some more here.
+
+37
+00:02:08,960 --> 00:02:13,400
+And you notice that it actually executed and tested some of both of the rest of them.
+
+38
+00:02:13,700 --> 00:02:16,130
+But let's be explicit in our tests.
+
+39
+00:02:17,150 --> 00:02:23,990
+So, for example, right now, we're testing situation where we do have a file called homecourt page
+
+40
+00:02:24,290 --> 00:02:25,190
+template.
+
+41
+00:02:25,850 --> 00:02:31,040
+So let's read another test copy this or just extend this test.
+
+42
+00:02:31,040 --> 00:02:34,970
+Really paste that here, and I'll make it go for a non-existent file.
+
+43
+00:02:35,720 --> 00:02:36,420
+No file.
+
+44
+00:02:37,250 --> 00:02:42,860
+And in this case, if the error is equal to nil, if it doesn't throw back in error, then this test
+
+45
+00:02:42,860 --> 00:02:43,460
+should fail.
+
+46
+00:02:44,060 --> 00:02:48,950
+So we'll see error rendering non existent.
+
+47
+00:02:50,880 --> 00:02:57,570
+Template and then me do the same thing down here, we can copy this whole thing and paste it down here.
+
+48
+00:02:59,910 --> 00:03:02,310
+And again, we don't need to make any changes.
+
+49
+00:03:02,310 --> 00:03:05,700
+We can just put the word jet template here so we know what the error is.
+
+50
+00:03:05,910 --> 00:03:11,040
+And now if I type make a cover just so I can see what's covered now.
+
+51
+00:03:12,720 --> 00:03:18,930
+Up Pops, my Web browser, and now you can see if we come down here, it actually is testing this line,
+
+52
+00:03:18,930 --> 00:03:23,580
+for example, is returning an error when it can't pass a non-existent template and the same thing down
+
+53
+00:03:23,580 --> 00:03:24,430
+here with Jet.
+
+54
+00:03:24,450 --> 00:03:28,930
+OK, so that makes things a little better, but I still am not really happy with this.
+
+55
+00:03:28,950 --> 00:03:33,930
+I want to have explicit tests for all of my functions, so I'm going to come down here below this one
+
+56
+00:03:34,800 --> 00:03:37,380
+and I will write another test funk test
+
+57
+00:03:39,840 --> 00:03:40,440
+render.
+
+58
+00:03:41,490 --> 00:03:43,020
+And I'm going to test render.
+
+59
+00:03:44,660 --> 00:03:45,060
+Go ahead.
+
+60
+00:03:45,950 --> 00:03:49,450
+This we have to go page function, key point or two testing DOT.
+
+61
+00:03:51,470 --> 00:03:52,750
+And this is pretty straightforward.
+
+62
+00:03:52,760 --> 00:04:04,250
+I can just say W as a son in the value of HTP test that new recorder and R and potentially an error
+
+63
+00:04:05,510 --> 00:04:08,150
+are assigned the value of http dot.
+
+64
+00:04:08,420 --> 00:04:18,350
+New request My method is get any URL email if error is not equal to nil.
+
+65
+00:04:19,340 --> 00:04:21,860
+Then just log there or fire off a T error.
+
+66
+00:04:25,100 --> 00:04:32,240
+And I can just save a little bit of time by coming up here and copying all of this and coming down here.
+
+67
+00:04:32,450 --> 00:04:37,970
+And I know this is a redundant test in one sense, but I am a belt and suspenders kind of guy when it
+
+68
+00:04:37,970 --> 00:04:38,960
+comes to testing.
+
+69
+00:04:38,960 --> 00:04:42,340
+I want to make sure I test very thoroughly, not 100 percent coverage.
+
+70
+00:04:42,350 --> 00:04:47,600
+I'm not one of the purists that has to test every edge case, but the vast majority of them.
+
+71
+00:04:47,930 --> 00:04:49,340
+And that should be sufficient for that one.
+
+72
+00:04:49,610 --> 00:04:51,170
+And now I can copy this whole thing.
+
+73
+00:04:52,990 --> 00:05:04,690
+Come down here, taste it again and say, test, render jet page, OK and down here, I don't need the
+
+74
+00:05:04,960 --> 00:05:06,940
+I need this to be set to jet.
+
+75
+00:05:07,210 --> 00:05:10,720
+Doesn't matter what route path is, but everything else should be the same.
+
+76
+00:05:10,960 --> 00:05:17,410
+So if I go into my render directory and say, go test the dot, give me a verbose test.
+
+77
+00:05:18,190 --> 00:05:19,720
+Everything past perfect.
+
+78
+00:05:20,780 --> 00:05:25,040
+OK, now there are a few more things we should probably take into account.
+
+79
+00:05:25,130 --> 00:05:31,130
+Let me just open up that channel again and go up to the root level of the Celebrity Directory and Typekit
+
+80
+00:05:31,130 --> 00:05:35,000
+make cover and this is where tests become very, very helpful.
+
+81
+00:05:35,390 --> 00:05:39,800
+So down here, at no point do I call return nil.
+
+82
+00:05:40,100 --> 00:05:40,550
+OK.
+
+83
+00:05:41,420 --> 00:05:47,810
+And that's because I'm not actually looking for the situation where renderers not to set to some useful
+
+84
+00:05:47,810 --> 00:05:48,260
+value.
+
+85
+00:05:48,590 --> 00:05:50,840
+Clearly, that is the potential for grief.
+
+86
+00:05:51,320 --> 00:05:52,580
+How can I address that?
+
+87
+00:05:52,640 --> 00:05:53,720
+Well, let's close this.
+
+88
+00:05:53,730 --> 00:06:01,670
+What I want to do is go back to page, not to the test necessarily, but go to render find that page
+
+89
+00:06:01,670 --> 00:06:08,390
+function and down here, let's put a default case in default.
+
+90
+00:06:09,740 --> 00:06:10,670
+I don't do anything.
+
+91
+00:06:10,760 --> 00:06:11,180
+OK?
+
+92
+00:06:11,570 --> 00:06:17,900
+Instead, instead of returning nil here, the only time this code will ever get called is if I don't
+
+93
+00:06:17,900 --> 00:06:22,730
+have my rendering choice set to go or git because nothing happens with the default.
+
+94
+00:06:22,850 --> 00:06:33,710
+So at this point, I can say return errors don't, you know, rendering engine specified or whatever
+
+95
+00:06:33,710 --> 00:06:34,640
+you want the error to be.
+
+96
+00:06:34,970 --> 00:06:37,810
+OK, so let's test for this now.
+
+97
+00:06:37,820 --> 00:06:44,540
+Let's go back to our render test and let's say, well, we'll go up to our render page here.
+
+98
+00:06:45,500 --> 00:06:54,170
+And the very end of this file, I can say test renderer dot renderer is equal to an empty string or
+
+99
+00:06:54,170 --> 00:06:56,780
+fish, anything other than go and jet.
+
+100
+00:06:56,810 --> 00:06:57,230
+OK.
+
+101
+00:06:57,980 --> 00:06:59,090
+And now I can do this again.
+
+102
+00:06:59,180 --> 00:07:03,110
+I can say, Copy this, paste it in here.
+
+103
+00:07:03,470 --> 00:07:06,170
+Make sure it doesn't have an invalid template name.
+
+104
+00:07:06,410 --> 00:07:08,270
+Home exists, so we'll go with that.
+
+105
+00:07:08,600 --> 00:07:10,490
+So we're testing our render page with home.
+
+106
+00:07:10,780 --> 00:07:15,700
+So this should now have a different result.
+
+107
+00:07:15,770 --> 00:07:17,510
+Let's type go test dashboard.
+
+108
+00:07:19,990 --> 00:07:24,670
+And I'm in the wrong directory, see the render go test Dash v Dot.
+
+109
+00:07:27,500 --> 00:07:30,830
+Everything passed, and that's because air is equal to nil.
+
+110
+00:07:31,670 --> 00:07:33,200
+So is that the result that we want?
+
+111
+00:07:33,980 --> 00:07:35,990
+Well, let's go back here and look at rendered out go again.
+
+112
+00:07:36,020 --> 00:07:36,650
+Figure this out.
+
+113
+00:07:37,580 --> 00:07:42,320
+So we come into page we we switch on the value of renderer.
+
+114
+00:07:42,350 --> 00:07:44,090
+If we have go, we do this.
+
+115
+00:07:44,090 --> 00:07:45,620
+If we have jet, we do this.
+
+116
+00:07:45,620 --> 00:07:51,290
+If we have nothing, then it just falls through and says return errors and no rendering engine specified.
+
+117
+00:07:52,340 --> 00:07:56,510
+So back at our render test, let's figure out exactly what we want to do here.
+
+118
+00:07:56,930 --> 00:07:59,450
+We set our test renderers, renders and nothing.
+
+119
+00:07:59,450 --> 00:08:05,810
+So that default case should be the one that's executed and we expect error and error to be returned.
+
+120
+00:08:06,410 --> 00:08:16,310
+So at this point, we do want to say error is equal to nil and we want to say no error returned
+
+121
+00:08:18,830 --> 00:08:21,110
+while rendering non-existent.
+
+122
+00:08:23,960 --> 00:08:31,550
+With with invalid renderer specified, that seems to make the most sense.
+
+123
+00:08:31,580 --> 00:08:39,020
+OK, now let's clear a terminal and go up to the celebrities package and type make cover and see if
+
+124
+00:08:39,020 --> 00:08:43,670
+that final line in the page template or page function is actually covered.
+
+125
+00:08:44,510 --> 00:08:45,400
+And it is.
+
+126
+00:08:45,410 --> 00:08:48,200
+So we have 100 percent coverage for that function, right?
+
+127
+00:08:48,440 --> 00:08:52,160
+OK, now clearly there's some other things we want to test here.
+
+128
+00:08:52,160 --> 00:08:55,610
+At some point, we want to handle passing data to the template.
+
+129
+00:08:55,610 --> 00:08:59,870
+We want to handle passing data to jet templates and all that sort of thing.
+
+130
+00:09:00,220 --> 00:09:04,730
+We haven't actually tried doing any of that yet, so we'll come back to this in a bit.
+
+131
+00:09:05,240 --> 00:09:08,090
+But that's sufficient to get us started with testing in any case.

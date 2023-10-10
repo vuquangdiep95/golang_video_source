@@ -1,0 +1,635 @@
+1
+00:00:01,900 --> 00:00:08,020
+So this time around, I want to increase the speed of our renderer, particularly our jet template render.
+
+2
+00:00:08,440 --> 00:00:14,200
+And right now, I'm in the Celebrity House project and I'm looking at the celebrities go file and I'm
+
+3
+00:00:14,200 --> 00:00:20,740
+around the line one hundred and forty seven where I declare that variable views of type jet dot news
+
+4
+00:00:20,740 --> 00:00:21,070
+site.
+
+5
+00:00:21,580 --> 00:00:25,120
+And if you recall, I added this line jet in development mode.
+
+6
+00:00:25,660 --> 00:00:30,010
+And what that does, of course, is it allows us to work on templates without having to restart our
+
+7
+00:00:30,010 --> 00:00:33,310
+application every time we make a change to a jet template.
+
+8
+00:00:33,880 --> 00:00:39,910
+So if the application is started and I change some text on a template, I can just reload the page in
+
+9
+00:00:39,910 --> 00:00:41,450
+a web browser and it shows right up.
+
+10
+00:00:42,040 --> 00:00:46,200
+Now, if that was disabled, what would happen is it would read all of the templates.
+
+11
+00:00:46,210 --> 00:00:51,250
+Each time a template is accessed, it reads that template and saves it in memory, and it just keeps
+
+12
+00:00:51,250 --> 00:00:53,590
+it there forever so I can make all the changes.
+
+13
+00:00:53,590 --> 00:00:59,050
+I wanted to a template, but until I recompile my application or rerun my application, I would never
+
+14
+00:00:59,050 --> 00:01:01,930
+see the changes and that's irritating when you're in development.
+
+15
+00:01:02,800 --> 00:01:07,450
+But what that also means is it takes longer to render the templates because it has to read it off the
+
+16
+00:01:07,450 --> 00:01:10,750
+file system every time, pass it, do all sorts of things with it.
+
+17
+00:01:11,260 --> 00:01:16,270
+And that actually puts more stress on the garbage collector for GO as well because we're putting things
+
+18
+00:01:16,270 --> 00:01:22,540
+into memory, and every time a page is loaded, little bits of memory get set and they have to be cleaned
+
+19
+00:01:22,540 --> 00:01:23,620
+up by the garbage collector.
+
+20
+00:01:23,770 --> 00:01:25,390
+And that just slows things down.
+
+21
+00:01:25,600 --> 00:01:28,870
+And that's no good, OK for development, but not for production.
+
+22
+00:01:29,470 --> 00:01:34,180
+And let's see just how much of an impact this has on how long it takes for things to load.
+
+23
+00:01:34,960 --> 00:01:39,040
+So with this hilarious project, I'm going to create a little utility function that will measure the
+
+24
+00:01:39,040 --> 00:01:43,540
+time that it takes for any particular function to execute.
+
+25
+00:01:43,630 --> 00:01:44,500
+So create a new file.
+
+26
+00:01:44,620 --> 00:01:47,880
+I'm going to put it in its own file and I'll call it utils.
+
+27
+00:01:47,920 --> 00:01:48,610
+Don't go.
+
+28
+00:01:49,510 --> 00:01:52,140
+It doesn't matter what I call it, but I'm going to call utils dot go.
+
+29
+00:01:52,690 --> 00:01:54,640
+And of course, that's in packaged celebrities.
+
+30
+00:01:55,540 --> 00:01:59,920
+And I'll create one function here with a receiver of C, a pointer to celebrities.
+
+31
+00:02:00,190 --> 00:02:01,960
+And I'll call it load time.
+
+32
+00:02:02,170 --> 00:02:02,560
+OK.
+
+33
+00:02:03,130 --> 00:02:10,360
+And it takes one parameter which I'll call start, and it's a type time dot time right there.
+
+34
+00:02:10,570 --> 00:02:12,040
+And that should do the import for me.
+
+35
+00:02:12,050 --> 00:02:12,640
+And it did.
+
+36
+00:02:13,450 --> 00:02:15,040
+And it doesn't return anything.
+
+37
+00:02:15,520 --> 00:02:15,840
+OK.
+
+38
+00:02:17,560 --> 00:02:23,920
+So what I'm going to do is declare a variable called elapsed and that's assigned the value of time dot
+
+39
+00:02:23,920 --> 00:02:26,110
+since start.
+
+40
+00:02:27,130 --> 00:02:31,960
+We're just doing a subtraction here from one time subtracting one time from another time to get the
+
+41
+00:02:31,960 --> 00:02:33,280
+time elapsed.
+
+42
+00:02:34,550 --> 00:02:40,070
+And now I need to get the name of the function that called this function because we're going to put
+
+43
+00:02:40,070 --> 00:02:46,250
+load time into another function and we're going to prepend the word, defer to it so we won't execute
+
+44
+00:02:46,250 --> 00:02:51,770
+until the calling function actually finishes, OK, and that allows us to figure out how long that function
+
+45
+00:02:51,770 --> 00:02:52,310
+took to run.
+
+46
+00:02:53,150 --> 00:02:59,600
+So I'm going to declare a variable called PC for program color and the function I'm going to call from.
+
+47
+00:02:59,600 --> 00:03:03,740
+The runtime package actually returns for things, but I don't care about the next three, so I'll use
+
+48
+00:03:03,740 --> 00:03:08,820
+the blank identifier and we're going to use the runtime package, which is part of the standard library.
+
+49
+00:03:08,840 --> 00:03:14,180
+And we're going to call from that color and give it the required parameter one.
+
+50
+00:03:14,210 --> 00:03:16,220
+Just give me the one level of color.
+
+51
+00:03:16,370 --> 00:03:19,430
+OK, so now I have an elapsed than I have on a PC.
+
+52
+00:03:20,300 --> 00:03:24,440
+Now I want to learn more about the function that actually called this one.
+
+53
+00:03:24,560 --> 00:03:24,990
+OK.
+
+54
+00:03:25,010 --> 00:03:29,150
+So I'll call this func OBJ doesn't matter what I call it, I just need a name for the function.
+
+55
+00:03:29,660 --> 00:03:31,070
+That's all I'm trying to get out of this.
+
+56
+00:03:31,940 --> 00:03:39,170
+And again, I'll call the runtime package, and this time I will call func for P C, which gives me
+
+57
+00:03:39,170 --> 00:03:43,640
+the function that actually called this, and I can get the name out of that, and I handed the program
+
+58
+00:03:43,640 --> 00:03:44,000
+color.
+
+59
+00:03:45,620 --> 00:03:51,230
+And now we'll create a regular expression that allows me to extract the name from the calling function.
+
+60
+00:03:51,770 --> 00:03:55,120
+And it's a little complicated, complex, the rejects, but don't worry about it, just Typekit it.
+
+61
+00:03:56,090 --> 00:03:57,950
+So we'll call this one runtime.
+
+62
+00:03:57,950 --> 00:04:01,820
+-- just the name I'm choosing.
+
+63
+00:04:02,070 --> 00:04:02,780
+That's a sign.
+
+64
+00:04:02,780 --> 00:04:11,990
+The value of Reg X, which is right in the standard library, rejects P, so rejects P Dot must compile
+
+65
+00:04:12,650 --> 00:04:14,770
+and reject strings are always hard to read.
+
+66
+00:04:14,780 --> 00:04:20,810
+I'm going to put them in back, Tex, so I don't have to escape things with quotes and the first character
+
+67
+00:04:20,810 --> 00:04:25,430
+is a carrot, then a dart, then an asterisk, then a slash.
+
+68
+00:04:25,430 --> 00:04:26,900
+And get this right or it won't work.
+
+69
+00:04:27,020 --> 00:04:28,090
+You'll still get values.
+
+70
+00:04:28,100 --> 00:04:29,540
+It just won't be what you're looking for.
+
+71
+00:04:29,840 --> 00:04:31,610
+So slash then dot.
+
+72
+00:04:31,910 --> 00:04:36,140
+Then in parentheses dot start close the parentheses.
+
+73
+00:04:37,790 --> 00:04:38,990
+And then a dollar sign.
+
+74
+00:04:39,680 --> 00:04:40,010
+OK.
+
+75
+00:04:40,040 --> 00:04:41,240
+So make sure you type that right.
+
+76
+00:04:42,350 --> 00:04:44,150
+So there's my rejects must compile.
+
+77
+00:04:44,630 --> 00:04:46,970
+And next, I'll get the name of my function.
+
+78
+00:04:47,090 --> 00:04:54,950
+Finally, by calling runtime funk dot, replace all string.
+
+79
+00:04:56,060 --> 00:04:57,080
+And I'm going to pass it.
+
+80
+00:04:57,080 --> 00:05:01,190
+First of all, funk obj and get the name of that again.
+
+81
+00:05:01,190 --> 00:05:08,240
+Funk object name, comma and then in quotation marks dollar sign one.
+
+82
+00:05:08,900 --> 00:05:09,230
+OK.
+
+83
+00:05:09,440 --> 00:05:13,190
+And finally, I can print something to the console, which is all I really want to do in this function
+
+84
+00:05:13,190 --> 00:05:13,580
+anyway.
+
+85
+00:05:13,670 --> 00:05:14,030
+OK.
+
+86
+00:05:15,390 --> 00:05:20,550
+So what I'm going to put in there when I'm going to print is see dot info, log dot print line.
+
+87
+00:05:22,620 --> 00:05:25,740
+And I'll just print out I'll use format to death.
+
+88
+00:05:26,010 --> 00:05:27,780
+I know I can do it a different way, but this works.
+
+89
+00:05:28,500 --> 00:05:37,800
+My format string is load time column and then a string took and then another string, and my replacements
+
+90
+00:05:37,800 --> 00:05:41,340
+for those two s's are name and elapsed.
+
+91
+00:05:42,990 --> 00:05:50,040
+OK, so now I have this function, and once I switch to my other application, I'll do a Gomaa vendor
+
+92
+00:05:51,540 --> 00:05:56,760
+to make sure that it knows about the function I just added from the celebrity's package, and I'm looking
+
+93
+00:05:56,760 --> 00:06:01,800
+in the Handler's doggo file, which of course, is inside the Hemmer's folder.
+
+94
+00:06:02,010 --> 00:06:06,570
+OK, now what I'm going to do is right here in the home function, I'm going to put this in.
+
+95
+00:06:06,570 --> 00:06:07,680
+I'm going to use that function.
+
+96
+00:06:07,680 --> 00:06:14,910
+We just used defer and I'll go to H Dot app dot load time, right?
+
+97
+00:06:14,920 --> 00:06:17,430
+That and I'll just handed timed right now.
+
+98
+00:06:18,660 --> 00:06:19,000
+OK?
+
+99
+00:06:19,020 --> 00:06:22,290
+And I did the import of time for me, so life is good.
+
+100
+00:06:22,620 --> 00:06:25,630
+Hopefully, that arrow will go away in a minute because it's actually up there.
+
+101
+00:06:25,650 --> 00:06:26,030
+It did.
+
+102
+00:06:26,310 --> 00:06:28,950
+OK, so now restart my application.
+
+103
+00:06:29,250 --> 00:06:29,970
+Make a restart.
+
+104
+00:06:31,500 --> 00:06:32,280
+So that stops.
+
+105
+00:06:32,280 --> 00:06:33,300
+It builds it.
+
+106
+00:06:37,790 --> 00:06:41,960
+And now I'm going to go to my Web browser and just load the whole homepage a couple of times and see
+
+107
+00:06:41,960 --> 00:06:46,580
+how long it takes when we have jet in development mode turned on.
+
+108
+00:06:46,850 --> 00:06:50,540
+So reload once, twice, three times.
+
+109
+00:06:50,810 --> 00:06:54,290
+And if I go back now and look at my console, I can see right here.
+
+110
+00:06:54,290 --> 00:06:59,420
+It took eight hundred and fourteen mutes to Trinity four 320.
+
+111
+00:06:59,540 --> 00:07:03,240
+OK, now eight hundred and fourteen, and then a two hundred and eighty four, then three twenty.
+
+112
+00:07:03,260 --> 00:07:05,050
+So a wide range.
+
+113
+00:07:05,060 --> 00:07:05,990
+But those are the numbers.
+
+114
+00:07:06,530 --> 00:07:08,990
+Now let's switch back to celebrities.
+
+115
+00:07:09,680 --> 00:07:10,830
+Go back to celebrities.
+
+116
+00:07:10,850 --> 00:07:12,200
+Don't go in.
+
+117
+00:07:12,200 --> 00:07:13,030
+Let's comment.
+
+118
+00:07:13,040 --> 00:07:17,360
+Jet in development mode out in me where we declare the verb use.
+
+119
+00:07:17,420 --> 00:07:19,040
+So that's commented out now.
+
+120
+00:07:19,940 --> 00:07:24,460
+Now we'll switch back to my other application and I'll restart my app.
+
+121
+00:07:24,470 --> 00:07:25,580
+Make restart.
+
+122
+00:07:27,740 --> 00:07:31,310
+I remember there were 14 two hundred and eighty four and three hundred and twenty.
+
+123
+00:07:33,360 --> 00:07:34,920
+Which seems pretty fast, really.
+
+124
+00:07:35,790 --> 00:07:40,890
+Now I'll go back to my Web browser and I'll reload the page three more times once.
+
+125
+00:07:42,050 --> 00:07:42,530
+Twice.
+
+126
+00:07:43,660 --> 00:07:44,260
+Three times.
+
+127
+00:07:44,500 --> 00:07:46,810
+And it looked about the same amount of time to me.
+
+128
+00:07:46,840 --> 00:07:53,350
+I can't see any difference when you look in the console instead of 800 and some of the very first time
+
+129
+00:07:53,350 --> 00:07:58,030
+it took seven hundred and eighty two because it passed it once then is stored it in memory in every
+
+130
+00:07:58,030 --> 00:07:58,520
+request.
+
+131
+00:07:58,540 --> 00:08:00,190
+After that, look how much it drops down.
+
+132
+00:08:00,550 --> 00:08:09,130
+Forty seven seventeen, it becomes a lot faster and it's also not cluttering up memory and forcing the
+
+133
+00:08:09,130 --> 00:08:10,930
+garbage collector to work really hard.
+
+134
+00:08:11,620 --> 00:08:19,000
+So what I want to do somehow is to go back to celebrities and basically say when I'm in development
+
+135
+00:08:19,000 --> 00:08:22,390
+mode, when I'm working as a developer, I want this to be there.
+
+136
+00:08:22,450 --> 00:08:24,940
+But when I'm not, I don't want it to be there.
+
+137
+00:08:25,180 --> 00:08:27,010
+And of course, that's pretty easy.
+
+138
+00:08:27,340 --> 00:08:32,170
+We have right in our own file something that's called debug.
+
+139
+00:08:32,830 --> 00:08:39,880
+So we populated the celebrities type with a variable called debug, which is true or false.
+
+140
+00:08:40,060 --> 00:08:51,100
+So all I really need to do is this if sea dog debug right there, then do one thing else do something
+
+141
+00:08:51,100 --> 00:08:51,520
+else.
+
+142
+00:08:51,880 --> 00:08:59,050
+And of course, if I'm in debug mode, I want to cut this out of here, actually, and do that, I want
+
+143
+00:08:59,050 --> 00:08:59,830
+all of this.
+
+144
+00:09:00,850 --> 00:09:05,720
+Cut all of these, so we're I'm declaring The View's variable and then setting secret views.
+
+145
+00:09:05,740 --> 00:09:06,550
+I'll cut that one out.
+
+146
+00:09:07,240 --> 00:09:10,870
+I'll paste one in here and I'll paste one in here.
+
+147
+00:09:12,040 --> 00:09:15,490
+Now, if if I'm in debug mode, I don't want that comment at all.
+
+148
+00:09:15,820 --> 00:09:16,650
+I want that there.
+
+149
+00:09:16,660 --> 00:09:22,180
+But if I am in production mode, I'm not in debug otherwise and I don't want it there, so I'll just
+
+150
+00:09:22,180 --> 00:09:23,860
+delete that line entirely.
+
+151
+00:09:25,180 --> 00:09:25,480
+All right.
+
+152
+00:09:26,470 --> 00:09:28,240
+Now let's go back to our other application.
+
+153
+00:09:29,260 --> 00:09:29,830
+My app.
+
+154
+00:09:30,010 --> 00:09:36,070
+And let's look at our data on file and make sure that debug is set to true.
+
+155
+00:09:36,100 --> 00:09:42,190
+It is, but in production, I'll set that defaults and I'm not going to be reloading the jet templates
+
+156
+00:09:42,190 --> 00:09:45,980
+from disk every time I turn around and cluttering up memory.
+
+157
+00:09:46,000 --> 00:09:51,370
+Instead, they'll just be read and passed once and then stored in memory until the next time the application
+
+158
+00:09:51,370 --> 00:09:51,960
+restarts.
+
+159
+00:09:52,030 --> 00:09:54,130
+And that is far more efficient.

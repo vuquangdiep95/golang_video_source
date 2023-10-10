@@ -1,0 +1,348 @@
+1
+00:00:00,080 --> 00:00:04,590
+Case dan kuliah ini kita akan membahas dan mengimplementasikan rencana yang disebut RBC atau API
+
+2
+00:00:05,070 --> 00:00:08,870
+pemangkasan server dan kami akan mengujinya terhadap server yang sedang berjalan.
+
+3
+00:00:08,910 --> 00:00:12,110
+Jadi itu akan menggunakan hal-hal serupa yang pernah kita lihat sebelumnya.
+
+4
+00:00:12,120 --> 00:00:13,340
+Anda akan melihatnya sangat mudah dilakukan.
+
+5
+00:00:13,530 --> 00:00:14,880
+Baiklah, mari kita mulai.
+
+6
+00:00:14,880 --> 00:00:21,660
+Jadi saya berada dalam kode saya dan saya akan pergi ke klien saya yang pergi sekarang dan apa
+
+7
+00:00:21,730 --> 00:00:29,390
+yang harus saya lakukan pada dasarnya adalah ketika Anda mengkritik fungsi panggilan itu melakukan streaming server dan saya akan melewati klien.
+
+8
+00:00:29,490 --> 00:00:31,060
+Jadi saya perlu mengimplementasikan fungsi itu.
+
+9
+00:00:31,530 --> 00:00:33,870
+Jadi implementasikan tepat di bawah yang satu ini.
+
+10
+00:00:34,260 --> 00:00:41,130
+Saya akan mengatakan fungsi melakukan streaming server dan input akan menjadi klien layanan hebat saya.
+
+11
+00:00:42,030 --> 00:00:43,560
+OK itu semua terlihat benar.
+
+12
+00:00:43,910 --> 00:00:46,130
+Dan sekarang saya dapat melanjutkan dan mengimplementasikan fungsi itu.
+
+13
+00:00:46,500 --> 00:00:52,320
+Jadi apa yang perlu kita lakukan di sini pada dasarnya adalah mencetak sesuatu ketika kita memulai
+
+14
+00:00:52,320 --> 00:00:55,640
+dan mengatakan bahwa kita akan melakukan RBC server streaming.
+
+15
+00:00:55,640 --> 00:00:56,270
+Baik.
+
+16
+00:00:56,670 --> 00:01:03,930
+Jadi sekarang jika kita melihat klien kita dan kita melakukan itu ada fungsi yang disebut salam berkali-kali dan jika kita
+
+17
+00:01:03,930 --> 00:01:06,960
+mendapatkan banyak kali dibutuhkan konteks sebagai input.
+
+18
+00:01:06,990 --> 00:01:09,860
+Jadi kita bisa melakukan konteks itulah latar belakangnya.
+
+19
+00:01:09,900 --> 00:01:10,910
+Sama seperti sebelumnya.
+
+20
+00:01:11,190 --> 00:01:15,610
+Dan kemudian dibutuhkan banyak sekali permintaan yang harus kita buat beberapa opsi.
+
+21
+00:01:16,020 --> 00:01:20,750
+Jadi yang akan saya lakukan adalah membuat grup itu berkali-kali meminta.
+
+22
+00:01:21,180 --> 00:01:25,220
+Jadi mari kita lanjutkan dan buat permintaan ini jadi saya akan menyebutnya
+
+23
+00:01:25,410 --> 00:01:34,200
+Jadi Anda membuatnya seperti sebelum kita melakukan pointer ke grid TV dan kemudian kita melakukan permintaan berkali-kali dan
+
+24
+00:01:35,640 --> 00:01:37,610
+kemudian kami memberikan salam.
+
+25
+00:01:38,310 --> 00:01:46,070
+Dan untuk ini kita perlu membuat salam jadi kita lakukan dan sapa P. B. salam dan kemudian kami
+
+26
+00:01:46,070 --> 00:01:53,480
+memasukkan nama depan Stefan dan nama belakang masih nama belakang yang sama.
+
+27
+00:01:53,820 --> 00:01:54,490
+BAIK.
+
+28
+00:01:55,100 --> 00:01:58,490
+Jadi ini terlihat bagus di sudut mana pun Anda membutuhkannya.
+
+29
+00:01:59,000 --> 00:02:02,260
+Dan sekarang kita dapat menjalankan grup berkali-kali dengan permintaan.
+
+30
+00:02:02,270 --> 00:02:07,740
+Jadi apa kembalinya dia jika kita melalui fungsi server ini adalah klien adalah sebuah antarmuka
+
+31
+00:02:07,740 --> 00:02:14,190
+dan baru saja berhenti berkali-kali dan kembalinya adalah hal-hal yang benar dengan layanan hebat pada ini dapatkan klien
+
+32
+00:02:14,190 --> 00:02:17,890
+berkali-kali dan itu aliran kami kembali dan kami memiliki kesalahan.
+
+33
+00:02:17,900 --> 00:02:19,520
+Jadi mari kita lanjutkan dan lakukan ini.
+
+34
+00:02:19,550 --> 00:02:31,590
+Kami kembali ke klien kami dan mengatakan hasilnya sama dan saya akan menyebutnya Stream di sini.
+
+35
+00:02:31,810 --> 00:02:35,790
+Jadi aliran hasil sama dengan ini.
+
+36
+00:02:35,800 --> 00:02:45,820
+Sekarang kita perlu berurusan dengan kesalahan jadi jika kesalahan tidak nol maka kita hanya akan mengatakan mencatat kesalahan fatal itu.
+
+37
+00:02:45,850 --> 00:02:56,740
+Server yang memanggil dengan baik, streaming berkali-kali sibuk, dan kami hanya akan men-debug ini juga akan
+
+38
+00:02:57,180 --> 00:03:01,320
+lewat di udara OK juga.
+
+39
+00:03:01,410 --> 00:03:03,790
+Jika kita baik, kita harus berurusan dengan kamar kecil ini.
+
+40
+00:03:03,810 --> 00:03:11,790
+Jadi seperti yang Anda duga, toilet berisi fungsi penerimaan. Fungsi penerima ini seperti yang Anda lihat
+
+41
+00:03:11,790 --> 00:03:15,870
+di sini mengembalikan respons berkali-kali atau kesalahan.
+
+42
+00:03:15,870 --> 00:03:20,280
+Jadi di sinilah dia agak sulit karena kita harus mengatasi kesalahan ini dan kita akan lihat
+
+43
+00:03:20,280 --> 00:03:21,140
+apa artinya.
+
+44
+00:03:21,150 --> 00:03:23,160
+Jadi mari kita pergi ke depan dan sampai ke klien.
+
+45
+00:03:23,430 --> 00:03:23,940
+Jadi kita akan mengatakannya.
+
+46
+00:03:23,970 --> 00:03:29,030
+Pesan udara sama dengan ini.
+
+47
+00:03:29,050 --> 00:03:31,430
+Jadi pada dasarnya fungsi resee ini ada di sini.
+
+48
+00:03:31,540 --> 00:03:37,920
+Itu bisa dipanggil sebanyak mungkin ketika aliran ditutup Anda akan menerima IOU tetapi
+
+49
+00:03:37,930 --> 00:03:39,610
+akhir kesalahan file.
+
+50
+00:03:39,850 --> 00:03:46,120
+Jadi yang perlu kita lakukan adalah memulai perulangan untuk menangani sebanyak mungkin pesan dan kita melakukan ini sekarang
+
+51
+00:03:46,120 --> 00:03:48,580
+kita dapat mulai menanganinya dan mengirim pesan.
+
+52
+00:03:48,590 --> 00:03:57,420
+Jadi jika udaranya benar-benar sama dengan Io dan sebuah file yang berarti bahwa kita telah mencapai ujung aliran
+
+53
+00:03:57,680 --> 00:04:00,550
+karena klien server menutup aliran.
+
+54
+00:04:00,550 --> 00:04:02,590
+Jadi dalam hal ini kita akan istirahat saja.
+
+55
+00:04:02,860 --> 00:04:04,800
+Kami hanya akan mematahkan for loop.
+
+56
+00:04:04,870 --> 00:04:10,570
+Sekarang jika kesalahannya adalah sesuatu tetapi itu tidak sampai kita memiliki masalah besar.
+
+57
+00:04:10,570 --> 00:04:19,000
+Jadi kita hanya akan mencatatnya dan mengatakan kesalahan saat membaca streaming dan kemudian kita hanya akan mengudara di sini.
+
+58
+00:04:21,110 --> 00:04:22,280
+Sempurna.
+
+59
+00:04:22,280 --> 00:04:28,970
+Dan kemudian jika semuanya baik-baik saja sekarang pesan kami di sini adalah F-Type menyambut banyak tanggapan waktu sehingga kami bisa
+
+60
+00:04:29,120 --> 00:04:29,920
+mendapatkan hasil.
+
+61
+00:04:29,960 --> 00:04:31,660
+Dan itulah hasil yang sebenarnya kita butuhkan.
+
+62
+00:04:32,000 --> 00:04:34,210
+Dan untuk tujuan itu kita hanya akan mencatatnya.
+
+63
+00:04:34,340 --> 00:04:40,090
+Jadi kita akan mengatakan respon lug nuts Prince f dari Yunani.
+
+64
+00:04:40,250 --> 00:04:45,180
+Banyak kali dan kami hanya akan melewati hasilnya.
+
+65
+00:04:45,200 --> 00:04:47,540
+Kami baru saja tiba.
+
+66
+00:04:47,540 --> 00:04:48,990
+Jadi ini terlihat benar.
+
+67
+00:04:49,010 --> 00:04:55,460
+Jadi pada dasarnya kami membuat permintaan kemudian dari itu kami menempatkan ke P. kami S. panggil dan kami mendapatkan aliran
+
+68
+00:04:55,460 --> 00:05:01,580
+hasil dari itu dan kemudian pada aliran yang untuk mengulang berulang-ulang sampai kami mencapai akhir file.
+
+69
+00:05:01,850 --> 00:05:05,450
+Dan di sini saya hanya mencetak pesan tetapi jelas Anda akan melakukan sesuatu yang sedikit lebih berguna
+
+70
+00:05:05,450 --> 00:05:06,320
+dalam skenario kehidupan nyata.
+
+71
+00:05:06,710 --> 00:05:09,610
+Jadi ini menurut saya sempurna.
+
+72
+00:05:09,740 --> 00:05:13,500
+Dan saya akan berkomentar di kamus karena kita tidak perlu melakukannya lagi.
+
+73
+00:05:13,820 --> 00:05:15,500
+Dan kami siap menjalankan klien.
+
+74
+00:05:15,710 --> 00:05:25,270
+Jadi server berjalan dan sekarang kita bisa pergi ke belakang dan mengatakan Go run menyambut klien klien.
+
+75
+00:05:25,340 --> 00:05:26,350
+Jadi mari kita lihat.
+
+76
+00:05:26,660 --> 00:05:32,120
+Dan ketika saya baru saja menjalankan fungsi seperti yang dapat kita lihat di layanan sebagai fungsi berkali-kali besar
+
+77
+00:05:32,120 --> 00:05:36,850
+dipanggil dengan ucapan Stefansson Meric dan di bagian bawah kita dapat melihat bahwa pesan mengalir.
+
+78
+00:05:37,070 --> 00:05:41,160
+Jadi jika Anda belum melihat lagi, saya hanya akan mematikan layar dan menjalankan ini lagi.
+
+79
+00:05:41,230 --> 00:05:44,900
+Dan seperti yang Anda lihat sebagai nomor 1 0 1 2 3 dan seterusnya.
+
+80
+00:05:44,900 --> 00:05:45,870
+Jadi ini adalah pemotongan.
+
+81
+00:05:45,870 --> 00:05:49,370
+Ini penundaan satu detik karena saya menyebabkan penundaan.
+
+82
+00:05:49,760 --> 00:05:53,570
+Tapi itu pada dasarnya menunjukkan kekuatan streaming di sini.
+
+83
+00:05:53,750 --> 00:05:55,840
+Dan jujur saja itu luar biasa.
+
+84
+00:05:56,000 --> 00:05:59,050
+Jadi ini untuk klien streaming dan server.
+
+85
+00:05:59,330 --> 00:06:03,970
+Secara keseluruhan Anda hanya perlu membiasakan diri dengan konsep aliran ini atau mengirim atau menerima fungsi.
+
+86
+00:06:04,070 --> 00:06:04,860
+Tapi kabar baik.
+
+87
+00:06:04,880 --> 00:06:08,900
+Anda akan dapat berlatih karena Anda memiliki latihan segera dan ekspektasi.
+

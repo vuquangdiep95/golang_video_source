@@ -1,0 +1,975 @@
+1
+00:00:01,020 --> 00:00:05,670
+So now that we have this scheduled table showing up properly, we will actually want to do something
+
+2
+00:00:05,670 --> 00:00:10,460
+with it using Web sockets in JavaScript and so on and so forth and things like this.
+
+3
+00:00:10,470 --> 00:00:15,480
+So, for example, I have monitoring running right now and I have one thing being monitored, so I have
+
+4
+00:00:15,480 --> 00:00:16,980
+one entry and my schedule table.
+
+5
+00:00:17,250 --> 00:00:21,030
+And I want, first of all, a safe return monitoring off like this.
+
+6
+00:00:21,750 --> 00:00:25,980
+Well, of course, this should go back to an empty table with just a message saying that there's no
+
+7
+00:00:25,980 --> 00:00:26,970
+scheduled checks here.
+
+8
+00:00:27,120 --> 00:00:34,200
+And when I turn it back on, it should add all of the entries one at a time as they're actually added
+
+9
+00:00:34,200 --> 00:00:34,890
+to the schedule.
+
+10
+00:00:34,900 --> 00:00:36,450
+And of course, we just have one row.
+
+11
+00:00:36,480 --> 00:00:38,100
+So one thing will get entered.
+
+12
+00:00:38,880 --> 00:00:45,660
+And then as the schedule runs this this previous and next date and time stamp, that should be updated
+
+13
+00:00:45,660 --> 00:00:46,340
+in real time.
+
+14
+00:00:46,890 --> 00:00:54,480
+And if I went, for example, over to the overview page and looked at my host and turned off a service,
+
+15
+00:00:54,720 --> 00:00:57,830
+that individual service should be removed from that table.
+
+16
+00:00:58,590 --> 00:00:59,820
+Well, let's start with the easy one.
+
+17
+00:01:00,000 --> 00:01:06,780
+Let's modify the code so that when scheduling is turned off like this, that this becomes an empty table.
+
+18
+00:01:07,050 --> 00:01:08,170
+And that's pretty straightforward.
+
+19
+00:01:08,220 --> 00:01:10,620
+So let's go over to our idea.
+
+20
+00:01:11,310 --> 00:01:18,060
+And I'm looking at Jast Jet, and we already have an event we're listening to called App Stopping.
+
+21
+00:01:18,450 --> 00:01:24,840
+And this seems a logical place to actually remove all of the entries from that table and populated with
+
+22
+00:01:24,840 --> 00:01:27,240
+the no scheduled checks text.
+
+23
+00:01:27,270 --> 00:01:27,960
+So let's do that.
+
+24
+00:01:28,500 --> 00:01:35,300
+So first of all, we need to make sure that that element, which has the name of the idea of scheduled
+
+25
+00:01:35,700 --> 00:01:37,620
+table, exists on the page.
+
+26
+00:01:37,620 --> 00:01:39,570
+And we'll just check for that like we have right along.
+
+27
+00:01:39,900 --> 00:01:51,210
+Let scheduled table exists, equal bang bang document, get element by ID and I'm looking for schedule
+
+28
+00:01:52,350 --> 00:01:58,040
+table like that if scheduled table exists.
+
+29
+00:01:59,880 --> 00:02:02,360
+So if it does exist, then get a reference to it.
+
+30
+00:02:03,270 --> 00:02:11,340
+Let's schedule table equal document, get element by ID and again schedule table.
+
+31
+00:02:13,050 --> 00:02:17,940
+So now we have a reference to it and we just delete all of the rows and that's pretty simple.
+
+32
+00:02:18,240 --> 00:02:23,190
+We just say schedule table dot t bodies.
+
+33
+00:02:26,840 --> 00:02:30,170
+Zero Interreg tml.
+
+34
+00:02:32,690 --> 00:02:38,360
+Equals nothing, so that empties it out, but of course, we don't want to empty it out entirely.
+
+35
+00:02:38,630 --> 00:02:43,550
+We also want to put a road in there that says there are no scheduled checks.
+
+36
+00:02:43,580 --> 00:02:44,270
+So let's do that.
+
+37
+00:02:45,290 --> 00:02:53,240
+Let neuro equal schedule table dot t bodies.
+
+38
+00:02:55,910 --> 00:02:56,540
+Zero.
+
+39
+00:02:58,660 --> 00:03:05,170
+Insert a row and again, we need to use minus one because we don't want it to appear above the heading
+
+40
+00:03:05,170 --> 00:03:05,680
+of the table.
+
+41
+00:03:07,590 --> 00:03:12,150
+Let new cell equal neuro.
+
+42
+00:03:14,600 --> 00:03:28,070
+Insert herself at position zero and new cell set, it's attribute call span to be equal to five.
+
+43
+00:03:31,670 --> 00:03:32,600
+And so.
+
+44
+00:03:35,110 --> 00:03:45,340
+In our e-mail equals no scheduled checks, and I'm going to type it exactly like that because later
+
+45
+00:03:45,340 --> 00:03:50,740
+on I'll check to see if that text exists anywhere in the table and that determines whether or not I
+
+46
+00:03:50,740 --> 00:03:53,020
+have to delete the no scheduled checks.
+
+47
+00:03:54,130 --> 00:03:57,610
+So that should be, in theory, all that we have to do now to be sure.
+
+48
+00:03:57,640 --> 00:03:59,740
+I'm going to stop my application, turn it on.
+
+49
+00:04:03,890 --> 00:04:07,640
+It's running so hard this go back to my browser window.
+
+50
+00:04:07,790 --> 00:04:14,480
+I'll refresh this page to make sure that everything is current and I'll say turn monitoring on the monitor
+
+51
+00:04:14,480 --> 00:04:15,190
+is off right now.
+
+52
+00:04:15,200 --> 00:04:15,980
+So let's turn it on.
+
+53
+00:04:19,210 --> 00:04:23,830
+Let's refresh the page and let's delete the content from this page.
+
+54
+00:04:26,770 --> 00:04:27,340
+And it worked.
+
+55
+00:04:27,550 --> 00:04:28,690
+OK, so that was easy.
+
+56
+00:04:29,050 --> 00:04:31,930
+So we've now got that part working as well.
+
+57
+00:04:32,020 --> 00:04:39,600
+The other thing we have to do is to go back to our idee and look for perform checks, go.
+
+58
+00:04:39,610 --> 00:04:42,820
+So let's open that, perform checks don't go.
+
+59
+00:04:43,090 --> 00:04:49,590
+And let's find the test service for host, which is where is that right here.
+
+60
+00:04:49,600 --> 00:04:50,710
+Test service for host.
+
+61
+00:04:51,460 --> 00:04:56,980
+What I'm going to do here is right before this to do send email to clients.
+
+62
+00:04:57,490 --> 00:04:58,960
+I'm going to put another event in here.
+
+63
+00:04:59,170 --> 00:05:05,500
+One I'm going to do is I'm going to broadcast a schedule changed event because once I test a service
+
+64
+00:05:05,500 --> 00:05:08,650
+for a host, the schedule will have changed.
+
+65
+00:05:08,680 --> 00:05:14,330
+We'll have executed a scheduled item and then we'll schedule a new one.
+
+66
+00:05:14,440 --> 00:05:23,540
+So here I want to broadcast schedule changed event, and that's pretty straightforward.
+
+67
+00:05:23,830 --> 00:05:24,610
+So how do we do that?
+
+68
+00:05:24,640 --> 00:05:29,740
+Well, first of all, because of the way that I store dates in the database and I don't like null dates,
+
+69
+00:05:29,740 --> 00:05:33,160
+I'm going to have to define that year one very variable again.
+
+70
+00:05:33,160 --> 00:05:41,530
+So I'll just say you're one is assigned the value of time date and I'm going to make the year zero zero
+
+71
+00:05:41,530 --> 00:05:47,440
+zero one, the month one, the day one, then zero zero zero one.
+
+72
+00:05:47,560 --> 00:05:52,480
+And I'll just make it time UTC and that gives me a date I can check against.
+
+73
+00:05:52,480 --> 00:05:58,270
+OK, and because I'm going to be pushing an event over WebSocket, I need to create a date.
+
+74
+00:05:58,270 --> 00:06:03,400
+A variable data is assigned the value of make a map string string.
+
+75
+00:06:05,380 --> 00:06:12,100
+And in that data variable, I want to put in the information about the event that just ran the host
+
+76
+00:06:12,100 --> 00:06:14,170
+service that I'm testing and I want to broadcast.
+
+77
+00:06:14,170 --> 00:06:15,910
+The schedule has changed.
+
+78
+00:06:16,570 --> 00:06:26,240
+So let's put some data in their data and we need the host service ID that's going to be equal to Stoveken
+
+79
+00:06:27,130 --> 00:06:34,330
+I to a and it's just Housetop ID because I already have the host service very variable defined in this
+
+80
+00:06:34,330 --> 00:06:35,100
+particular method.
+
+81
+00:06:36,370 --> 00:06:43,300
+Now I need the service data service ID and I may not use that, but as I always tend to do, I'll push
+
+82
+00:06:43,300 --> 00:06:45,640
+as much information as I might need in the future.
+
+83
+00:06:46,210 --> 00:06:50,820
+Sterkel into a and this one is an escort service ID.
+
+84
+00:06:52,840 --> 00:07:02,500
+And I'll also add the whole study data host I'd stirred into a whole host ID.
+
+85
+00:07:05,350 --> 00:07:13,390
+And here's where I'm going to use my your one variable, so I'm going to write an if statement if Abduh
+
+86
+00:07:13,390 --> 00:07:21,160
+scheduler dot entry from repo dot app dot monitor map.
+
+87
+00:07:22,990 --> 00:07:30,490
+And I'm going to look at the key hosted service dog ID dog next, which is a method built into the scheduler,
+
+88
+00:07:31,060 --> 00:07:33,430
+is after year one.
+
+89
+00:07:35,440 --> 00:07:44,470
+So if there's a value in the scheduler for this entry and its next run is after year one, in other
+
+90
+00:07:44,470 --> 00:07:47,320
+words, it's something in the future, then it's a valid date.
+
+91
+00:07:47,740 --> 00:07:49,530
+Then I'll populate data.
+
+92
+00:07:50,860 --> 00:07:58,510
+Next run, which are going to be using on the schedule table is equal to repo dot app, dot scheduler,
+
+93
+00:07:59,320 --> 00:08:00,250
+dot entry.
+
+94
+00:08:04,450 --> 00:08:13,280
+And I'm looking for repo dot app, dot, monitor, map, and the key once again is dot ID, our host
+
+95
+00:08:13,300 --> 00:08:14,170
+service ID.
+
+96
+00:08:16,850 --> 00:08:22,450
+Next, and that gets me the time to time, and I will just format it as a string and my layout will
+
+97
+00:08:22,450 --> 00:08:23,590
+be our standard layout.
+
+98
+00:08:24,010 --> 00:08:32,470
+2006 zero one zero two three zero four zero five.
+
+99
+00:08:34,230 --> 00:08:42,630
+P.M. And that will give you the date in the correct format, but if it's not after your one else, it's
+
+100
+00:08:42,630 --> 00:08:43,760
+not really been scheduled yet.
+
+101
+00:08:43,770 --> 00:08:51,390
+So I'll just put data next run is equal depending a string.
+
+102
+00:08:55,130 --> 00:09:01,710
+OK, so we have that few other things we need DataDot our data Lastra.
+
+103
+00:09:02,900 --> 00:09:10,670
+Well, that's really the current time so we can just say equals time dot now and call the format and
+
+104
+00:09:10,670 --> 00:09:14,480
+I'll just copy what we did appear to save all that typing copy.
+
+105
+00:09:16,360 --> 00:09:16,770
+Paste.
+
+106
+00:09:17,720 --> 00:09:21,070
+OK, so that gives us her last run, it just ran this instant.
+
+107
+00:09:21,100 --> 00:09:25,060
+So this is valid data host.
+
+108
+00:09:25,780 --> 00:09:32,800
+The hostname is equal to a chest of hostname data service.
+
+109
+00:09:33,970 --> 00:09:39,670
+I want to know the service and that's equal to start service dot service name.
+
+110
+00:09:41,950 --> 00:09:47,590
+Data schedule, because we need to display that on that table and that's just going to be formatted
+
+111
+00:09:47,590 --> 00:10:00,520
+as a string, so we'll just format it as a string format, as print F at every and it's a an int and
+
+112
+00:10:00,520 --> 00:10:10,600
+a string replaced with a start schedule number and start schedule unit and that will give it to us in
+
+113
+00:10:10,600 --> 00:10:11,440
+the correct format.
+
+114
+00:10:13,390 --> 00:10:16,900
+Next, we want the status which we may not use, but it's not going to hurt to pass it.
+
+115
+00:10:16,900 --> 00:10:25,180
+And status is equal to our new status in this case because we've just checked for the status of this
+
+116
+00:10:25,180 --> 00:10:27,850
+host and restoring that value in the variable.
+
+117
+00:10:28,180 --> 00:10:37,150
+New news status data icon is equal to escort service dot icon.
+
+118
+00:10:38,860 --> 00:10:40,810
+OK, so we've got all that populated.
+
+119
+00:10:40,990 --> 00:10:47,140
+Let's broadcast the message repo dot broadcast message and we're going to broadcast to the public channel.
+
+120
+00:10:50,470 --> 00:10:57,340
+And we're going to broadcast a schedule changed event and we're going to pass it data.
+
+121
+00:10:59,280 --> 00:11:06,960
+So what we need to do next is to go to James Jet and actually listen for that event, so let's just
+
+122
+00:11:06,960 --> 00:11:08,590
+make sure everything is wired up properly.
+
+123
+00:11:08,610 --> 00:11:17,220
+Let's put an event in here and I'll put it right here, an event listener, public channel bind.
+
+124
+00:11:17,700 --> 00:11:19,760
+And I'm going to listen for the event.
+
+125
+00:11:19,770 --> 00:11:25,140
+We're just pushed pushed from our code schedule, changed event.
+
+126
+00:11:25,920 --> 00:11:29,150
+And that will be an anonymous function that takes some data.
+
+127
+00:11:30,630 --> 00:11:33,420
+And right now, let's just say console, dot log.
+
+128
+00:11:37,370 --> 00:11:44,150
+Got change event, and we'll get rid of this in a minute if it works, so let's stop our application,
+
+129
+00:11:44,500 --> 00:11:50,810
+start our application, go back to our browser, make sure the JavaScript console is open.
+
+130
+00:11:50,810 --> 00:11:51,710
+And it is.
+
+131
+00:11:52,340 --> 00:11:59,050
+And I will turn this off, reload the page just to make sure everything is current.
+
+132
+00:11:59,480 --> 00:12:02,600
+I will turn the schedule on and I got a change of heart.
+
+133
+00:12:02,600 --> 00:12:02,960
+Good.
+
+134
+00:12:03,740 --> 00:12:04,700
+So I know that works.
+
+135
+00:12:04,710 --> 00:12:08,440
+So let's go back and fix this JavaScript to do more than just print to the console.
+
+136
+00:12:09,350 --> 00:12:10,820
+So here and just check.
+
+137
+00:12:10,820 --> 00:12:12,220
+Let's find that again.
+
+138
+00:12:12,230 --> 00:12:15,230
+Get rid of this, this little console log because that's not useful.
+
+139
+00:12:15,620 --> 00:12:16,850
+And what do we want to do here?
+
+140
+00:12:16,910 --> 00:12:23,480
+Well, first of all, we want to make sure that when this event fires, we only care if the user happens
+
+141
+00:12:23,480 --> 00:12:24,920
+to be on the schedule page.
+
+142
+00:12:25,160 --> 00:12:27,830
+So once again, we can just covid this right here.
+
+143
+00:12:29,120 --> 00:12:33,740
+We can say let's schedule table exists, copy that, paste it in here.
+
+144
+00:12:33,980 --> 00:12:35,760
+And then again, we're going to have an if statement.
+
+145
+00:12:35,760 --> 00:12:41,180
+So I should have copied the whole thing, but I'll just copy this in here, paste it and delete all
+
+146
+00:12:41,180 --> 00:12:43,500
+of this content and think about what we're going to do.
+
+147
+00:12:43,970 --> 00:12:49,400
+So if the schedule has changed, the first thing we need to do is to get a reference to the table.
+
+148
+00:12:49,400 --> 00:12:52,970
+So I'll undo what I just deleted and keep that reference to the table.
+
+149
+00:12:53,430 --> 00:13:06,470
+OK, now we have to check to see if the table contains no scheduled checks, which means it has the
+
+150
+00:13:06,470 --> 00:13:08,690
+row that says there are no scheduled check.
+
+151
+00:13:08,700 --> 00:13:12,680
+So let's see if it has that left table content.
+
+152
+00:13:15,070 --> 00:13:20,110
+Equal scheduled table dot in our e-mail.
+
+153
+00:13:23,130 --> 00:13:37,500
+If table content includes no scheduled checks, which I have to spell right or won't work, then we
+
+154
+00:13:37,500 --> 00:13:40,620
+have one row in that table that has no scheduled checks.
+
+155
+00:13:40,620 --> 00:13:41,790
+So we have to delete it.
+
+156
+00:13:42,540 --> 00:13:47,340
+So we'll just say let RO count equal table.
+
+157
+00:13:49,390 --> 00:14:01,420
+Scheduled table, dot rose, dot length and loop through that for let are equal row count minus one
+
+158
+00:14:01,420 --> 00:14:05,890
+because we don't want to get rid of the top row of the table is greater than zero because we only want
+
+159
+00:14:05,890 --> 00:14:08,650
+to affect one row on the table ie minus minus.
+
+160
+00:14:10,570 --> 00:14:15,100
+And we'll delete that row schedule table dot delete row.
+
+161
+00:14:16,720 --> 00:14:18,050
+All right.
+
+162
+00:14:19,570 --> 00:14:22,170
+OK, so that's the first thing we have to do.
+
+163
+00:14:22,240 --> 00:14:28,930
+The next things we want to do is to delete the existing row for the host service schedule, check for
+
+164
+00:14:28,930 --> 00:14:30,310
+the host service that just ran.
+
+165
+00:14:30,640 --> 00:14:33,820
+So delete existing row.
+
+166
+00:14:37,880 --> 00:14:44,960
+Let Rowe exists equal, bang, bang, we're checking to see if that Rowe actually exists, document
+
+167
+00:14:45,200 --> 00:14:55,970
+doget element by ID and what we're looking for is named Schedule Dasch plus data host service IDY.
+
+168
+00:14:57,170 --> 00:15:03,830
+Because if you look at the scheduled OzJet page, every time we have a row in this table, it uses the
+
+169
+00:15:03,830 --> 00:15:06,530
+idea of schedule dash the host service ID.
+
+170
+00:15:08,420 --> 00:15:12,800
+So that will tell us if it exists, if Roe exists.
+
+171
+00:15:16,790 --> 00:15:30,080
+Then let RO equal document get element by ID schedule Dasch plus data DOT Postal Service I.T. that gets
+
+172
+00:15:30,080 --> 00:15:35,660
+is a reference to the ROE and Rodon parent node dot remove child.
+
+173
+00:15:37,370 --> 00:15:40,400
+Roe, which is how we deleted Roe from a table in JavaScript.
+
+174
+00:15:40,430 --> 00:15:41,970
+OK, so that Roe is now gone.
+
+175
+00:15:42,680 --> 00:15:50,900
+Next, we need to create a new Roe, let new Roe equal schedule table dot t bodies.
+
+176
+00:15:53,130 --> 00:15:58,620
+Index of zero, insert row and again, minus one.
+
+177
+00:16:00,500 --> 00:16:07,310
+So that creates a new row now we just put all of our attributes and TDs in there, so let's set an attribute
+
+178
+00:16:07,310 --> 00:16:09,770
+first neuro dot.
+
+179
+00:16:10,840 --> 00:16:21,070
+Set attribute and the attribute is ID and the value is going to be scheduled, Dasch plus data DOT host
+
+180
+00:16:21,250 --> 00:16:22,270
+service ID.
+
+181
+00:16:22,970 --> 00:16:27,520
+OK, so we've got to roll the row has the appropriate ID.
+
+182
+00:16:27,520 --> 00:16:29,620
+Let's just create some cells and put them in there.
+
+183
+00:16:30,730 --> 00:16:43,180
+Let new cell equal new row dot insert a cell apposition zero, which is our first one and that is the
+
+184
+00:16:43,180 --> 00:16:43,840
+hostname.
+
+185
+00:16:44,200 --> 00:16:46,150
+We'll create some new text, a new text node.
+
+186
+00:16:48,750 --> 00:16:52,110
+Let new text, equal document.
+
+187
+00:16:56,110 --> 00:17:05,140
+Create text node and we'll create a text node that has the value of data, host the hostname and new
+
+188
+00:17:05,140 --> 00:17:05,560
+cell.
+
+189
+00:17:08,490 --> 00:17:17,630
+A Penn child, new text, so there's our first our second TD new cell.
+
+190
+00:17:18,890 --> 00:17:19,550
+Equals.
+
+191
+00:17:21,330 --> 00:17:22,080
+New row.
+
+192
+00:17:24,260 --> 00:17:31,700
+Insert a cell apposition, one that we can just copy this because it'll save some typing, so I'll copy
+
+193
+00:17:31,700 --> 00:17:32,200
+this.
+
+194
+00:17:32,720 --> 00:17:35,590
+I don't need to let part paste that in there.
+
+195
+00:17:36,110 --> 00:17:41,390
+And this one, the second value in there is actually the service data service.
+
+196
+00:17:42,950 --> 00:17:47,360
+And I'll copy this whole thing pasted here.
+
+197
+00:17:47,360 --> 00:17:48,740
+Give it the index of two.
+
+198
+00:17:50,210 --> 00:17:51,470
+And this one is the schedule.
+
+199
+00:17:55,510 --> 00:18:01,810
+And the third one is last run, and that's a position three.
+
+200
+00:18:04,450 --> 00:18:10,720
+Now, the fourth one is the next run, so I need to actually check well, first of all, I can copy
+
+201
+00:18:10,720 --> 00:18:20,110
+this part and paste it in here and put it in the correct position for me and do a check if DataDot next
+
+202
+00:18:20,110 --> 00:18:20,410
+run.
+
+203
+00:18:22,240 --> 00:18:23,230
+If that's undefined.
+
+204
+00:18:23,560 --> 00:18:24,550
+If that's equal.
+
+205
+00:18:24,550 --> 00:18:25,420
+Exactly.
+
+206
+00:18:27,760 --> 00:18:31,620
+To undefined, just in case we don't have a validate in there.
+
+207
+00:18:33,040 --> 00:18:43,150
+I'll just put in new text equals document dot create text node and I'll put it in here pending.
+
+208
+00:18:45,520 --> 00:18:52,600
+Because chances are if we get our information pushed out before the event is actually scheduled, lame,
+
+209
+00:18:52,600 --> 00:18:54,090
+we may not have a valid date in there.
+
+210
+00:18:54,100 --> 00:18:55,780
+And I just want to trap for all the cases.
+
+211
+00:18:56,230 --> 00:18:58,540
+But if we do have to validate, let's use that instead.
+
+212
+00:18:58,660 --> 00:19:01,150
+ELT's new text.
+
+213
+00:19:04,230 --> 00:19:14,400
+Equals data, dot, document, dot, create text node, and I want data dot next run, and if we have
+
+214
+00:19:14,400 --> 00:19:16,030
+the data, it's already in the correct format.
+
+215
+00:19:16,050 --> 00:19:16,830
+So there we go.
+
+216
+00:19:17,370 --> 00:19:21,000
+And now we just append that to the appropriate cell.
+
+217
+00:19:21,210 --> 00:19:24,810
+New cell, a Penn child.
+
+218
+00:19:25,990 --> 00:19:26,740
+New text.
+
+219
+00:19:30,480 --> 00:19:34,410
+And this should be correct.
+
+220
+00:19:34,810 --> 00:19:40,710
+OK, so let's stop our application, start our application just to make sure everything is current,
+
+221
+00:19:41,460 --> 00:19:44,240
+go back to a Web browser, reload this page.
+
+222
+00:19:44,490 --> 00:19:45,870
+We have one value in there.
+
+223
+00:19:46,200 --> 00:19:49,080
+And now I turn it off and it should go away.
+
+224
+00:19:49,260 --> 00:19:50,070
+And it does.
+
+225
+00:19:52,630 --> 00:19:58,870
+And I want to turn it back on in the next 10 seconds, I should see my one event show up in this table.
+
+226
+00:20:00,770 --> 00:20:05,690
+And that was pretty fast, I must have been right at the 10 seconds and if we keep watching, this should
+
+227
+00:20:05,690 --> 00:20:07,430
+change after 10 seconds.
+
+228
+00:20:09,200 --> 00:20:11,870
+And it did so that all works correctly.
+
+229
+00:20:12,560 --> 00:20:18,880
+All right, the next step is to deal with situations where if you come to my overview page, well,
+
+230
+00:20:18,890 --> 00:20:22,940
+actually, let's go back to the schedule page and I'll close this JavaScript witness so we have a little
+
+231
+00:20:22,940 --> 00:20:23,380
+more room.
+
+232
+00:20:23,810 --> 00:20:26,240
+So I'm looking at the schedule page in one tab.
+
+233
+00:20:26,240 --> 00:20:34,130
+But if I go to the House page in another tab and go to localhost and find IT services and turn this
+
+234
+00:20:34,130 --> 00:20:37,400
+service off, it's done that.
+
+235
+00:20:37,730 --> 00:20:43,460
+But if I go back to this screen, this still shows that that service is going to be checked and that
+
+236
+00:20:43,460 --> 00:20:48,020
+will never update because it's actually been taken out of the schedule or will be taken out of the schedule
+
+237
+00:20:48,020 --> 00:20:48,930
+by the time we're done.
+
+238
+00:20:49,400 --> 00:20:56,900
+So I want this when I actually click on this service and turn it on and off, I need to either add it
+
+239
+00:20:56,900 --> 00:21:03,200
+to the schedule if I'm setting it to active and fire off the necessary request to change the schedule
+
+240
+00:21:03,200 --> 00:21:04,250
+on the schedule page.
+
+241
+00:21:04,490 --> 00:21:10,760
+And if I turn it off, I want to remove it from the schedule page and actually remove it from the schedule,
+
+242
+00:21:10,760 --> 00:21:16,790
+because right now this will turn it off in the database, but it has no effect on our schedule that's
+
+243
+00:21:16,790 --> 00:21:17,750
+running in the background.
+
+244
+00:21:17,990 --> 00:21:21,350
+So we have to take care of that and we'll do that in the next lecture.

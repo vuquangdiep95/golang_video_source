@@ -1,0 +1,339 @@
+1
+00:00:01,050 --> 00:00:08,340
+OK, so right now we have just the markup for this and as I said last time, right now, if I look at
+
+2
+00:00:08,340 --> 00:00:14,070
+my database and I go over here to my database client, I have one host in the database with an idea
+
+3
+00:00:14,070 --> 00:00:16,560
+of one, but I have no home services.
+
+4
+00:00:17,100 --> 00:00:23,550
+And while I could write the necessary code to add a record if it doesn't exist for HTP in house services,
+
+5
+00:00:24,000 --> 00:00:31,080
+I think it's cleaner and simpler to actually add the services and mark them as inactive at the point
+
+6
+00:00:31,080 --> 00:00:31,840
+of entry.
+
+7
+00:00:32,340 --> 00:00:38,790
+So what I'm going to do is go back to my database and go back to my house table and just delete this
+
+8
+00:00:38,790 --> 00:00:41,440
+post entirely and save changes.
+
+9
+00:00:41,490 --> 00:00:42,560
+So now there's no host.
+
+10
+00:00:42,570 --> 00:00:44,800
+So if I go to hosts, there's nothing in there.
+
+11
+00:00:45,300 --> 00:00:50,790
+So let's go back to our code and modify that insert method, which is insert host in host, underscore
+
+12
+00:00:50,790 --> 00:00:52,650
+PostgreSQL ago.
+
+13
+00:00:54,030 --> 00:01:01,380
+And before I return the ID, I'm going to add host services and set to inactive.
+
+14
+00:01:02,370 --> 00:01:09,210
+So we need a statement which will be assigned the value of and I'll just do this with back takes on
+
+15
+00:01:09,210 --> 00:01:15,230
+multiple lines, insert into host services and what I want to insert in there.
+
+16
+00:01:15,240 --> 00:01:18,950
+Let's go look at the structure of that host services structure.
+
+17
+00:01:19,950 --> 00:01:27,510
+I want to insert hosted service died inactive, so host ID, service ID and active.
+
+18
+00:01:28,860 --> 00:01:39,330
+I also want to insert schedule number and schedule unit schedule no better spell right schedule unit
+
+19
+00:01:39,330 --> 00:01:43,230
+comma and then last check.
+
+20
+00:01:43,230 --> 00:01:47,710
+I'll leave out a let that stay as null created an updated ut.
+
+21
+00:01:47,730 --> 00:01:49,440
+I will definitely do and status.
+
+22
+00:01:49,440 --> 00:01:51,980
+I will definitely definitely definitely do so.
+
+23
+00:01:51,990 --> 00:01:57,060
+Status created at updated at values.
+
+24
+00:01:57,600 --> 00:02:02,760
+And the first thing is my host ID and I'll be getting that from this new ID variable we have right here.
+
+25
+00:02:04,020 --> 00:02:10,680
+The next one is my service ID, which is just one, that is the one that I have in my database.
+
+26
+00:02:10,680 --> 00:02:17,700
+Now, just as an aside, when I actually inserted my services and if I look at the content the first
+
+27
+00:02:17,700 --> 00:02:20,520
+time around, it had to because I must have been playing with this table.
+
+28
+00:02:20,520 --> 00:02:21,060
+At some point.
+
+29
+00:02:21,570 --> 00:02:26,640
+You need to make sure that the one service you have in your services table has an idea of one.
+
+30
+00:02:26,640 --> 00:02:29,310
+So if necessary, go and change that just to be safe.
+
+31
+00:02:29,340 --> 00:02:29,650
+Krab.
+
+32
+00:02:30,570 --> 00:02:36,390
+So service I.T. active is going to be set to zero because I want it to be inactive by default schedule.
+
+33
+00:02:36,390 --> 00:02:37,950
+No, I believe that's an end.
+
+34
+00:02:37,950 --> 00:02:44,110
+But let's make sure structure schedule number is an integer and schedule unit as character.
+
+35
+00:02:44,110 --> 00:02:46,680
+Very so a number.
+
+36
+00:02:46,710 --> 00:02:50,550
+I'll make it three minutes schedule unit.
+
+37
+00:02:50,550 --> 00:02:56,730
+That's minutes for M and four minutes then status which will be pending because that's a character very
+
+38
+00:02:57,270 --> 00:02:59,550
+column created and updated.
+
+39
+00:02:59,570 --> 00:03:05,370
+I'll just do dollars on two in dollar sign three and I'll use the built in time package to get the current
+
+40
+00:03:05,370 --> 00:03:06,060
+timestamp.
+
+41
+00:03:06,900 --> 00:03:09,030
+So let's make sure we have this right.
+
+42
+00:03:09,030 --> 00:03:16,080
+Insert into host services, host ID, service ID, active schedule, no schedule unit status created
+
+43
+00:03:16,080 --> 00:03:16,890
+at updated UT.
+
+44
+00:03:17,400 --> 00:03:22,350
+So that is one, two, three, four, five, six, seven, eight.
+
+45
+00:03:22,350 --> 00:03:23,100
+I look at that right.
+
+46
+00:03:23,250 --> 00:03:26,580
+One, two, three, four, five, six, seven, eight.
+
+47
+00:03:27,240 --> 00:03:30,270
+One, two, three, four, five, six, seven, eight.
+
+48
+00:03:30,270 --> 00:03:32,280
+OK, so that's our statement.
+
+49
+00:03:32,920 --> 00:03:34,320
+Let's execute that statement.
+
+50
+00:03:35,970 --> 00:03:37,620
+We get a result that I don't care about.
+
+51
+00:03:37,620 --> 00:03:44,190
+An error that I do is assign the value of my DB context, pass it the context.
+
+52
+00:03:44,490 --> 00:03:48,570
+My first value will be the idea of my host, which is stored in the variable new ID.
+
+53
+00:03:49,260 --> 00:03:54,300
+My second value is time now and my third value is time now.
+
+54
+00:03:56,130 --> 00:03:57,630
+OK, let's check for an error.
+
+55
+00:03:57,630 --> 00:04:05,400
+If error is not equal to nil, will return a new ID and the error.
+
+56
+00:04:06,030 --> 00:04:09,480
+OK, so that new ID.
+
+57
+00:04:10,670 --> 00:04:11,710
+Context new.
+
+58
+00:04:12,260 --> 00:04:15,080
+What's to say you cannot use military type as type string?
+
+59
+00:04:17,220 --> 00:04:21,840
+Oh, yeah, I'm going to put my Creary in there, CMT, that's better.
+
+60
+00:04:21,870 --> 00:04:24,470
+OK, so that should take care of it.
+
+61
+00:04:24,720 --> 00:04:31,140
+So I need to start my application, start my application and go at a new host.
+
+62
+00:04:32,430 --> 00:04:33,840
+So I'll say new host.
+
+63
+00:04:34,290 --> 00:04:36,150
+And again, I'll use the same thing I did last time.
+
+64
+00:04:36,150 --> 00:04:45,560
+Localhost localhost you url is HDB localhost 880 IP addresses one two seven zero zero one.
+
+65
+00:04:45,570 --> 00:04:47,010
+Don't care about IP version six.
+
+66
+00:04:47,010 --> 00:04:54,270
+It's in New Brunswick and the operating system is Mac os x and I will make it active and hopefully if
+
+67
+00:04:54,270 --> 00:05:00,780
+I save this, ok, changes are saved and if I look at the host services table, I should now have one
+
+68
+00:05:00,780 --> 00:05:04,860
+service in their content refresh and I do.
+
+69
+00:05:05,100 --> 00:05:06,960
+And the service idea is one perfect.
+
+70
+00:05:07,540 --> 00:05:11,940
+OK, so now we have that information in there by default, which is much cleaner.
+
+71
+00:05:11,940 --> 00:05:17,430
+Now if we had a second service, we would have to of course, come in here and add the second service.
+
+72
+00:05:17,910 --> 00:05:23,310
+If I had multiple services, what I would actually do is query the services table and then loop through
+
+73
+00:05:23,310 --> 00:05:29,970
+the results of that and add one inactive service for each of the services available into my host services
+
+74
+00:05:29,970 --> 00:05:30,270
+table.
+
+75
+00:05:30,270 --> 00:05:33,660
+But we just have one and this will suffice for our purposes at the moment.
+
+76
+00:05:34,620 --> 00:05:35,940
+So what's the next step?
+
+77
+00:05:35,940 --> 00:05:44,130
+The next step is to go back here and modify this so that when I toggle this, it somehow updates the
+
+78
+00:05:44,130 --> 00:05:44,580
+database.
+
+79
+00:05:44,580 --> 00:05:47,430
+And I think the cleanest way to do that is with Ajax.
+
+80
+00:05:47,670 --> 00:05:49,530
+So you don't have a save button, nothing like that.
+
+81
+00:05:49,530 --> 00:05:50,760
+You just toggle the switch.
+
+82
+00:05:51,090 --> 00:05:55,920
+It makes the change behind the scenes and then pops a little alert here that says, hey, the service
+
+83
+00:05:55,920 --> 00:06:00,510
+has been added and made active or whatever it is, we'll give some kind of success message for turning
+
+84
+00:06:00,510 --> 00:06:01,860
+it on and turning it off.
+
+85
+00:06:02,580 --> 00:06:05,250
+And we'll take care of that in the next lecture.

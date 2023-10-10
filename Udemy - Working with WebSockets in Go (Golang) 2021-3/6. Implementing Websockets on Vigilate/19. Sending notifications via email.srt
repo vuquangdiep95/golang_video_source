@@ -1,0 +1,863 @@
+1
+00:00:01,300 --> 00:00:06,610
+So now that we have male hogge installed, at least I'm using male hug, you can use whatever system
+
+2
+00:00:06,610 --> 00:00:07,780
+you want to trap female.
+
+3
+00:00:08,200 --> 00:00:10,680
+We need to make some changes to our application.
+
+4
+00:00:10,690 --> 00:00:14,710
+So right now I'm looking at the settings page, which I get to by clicking on settings.
+
+5
+00:00:15,160 --> 00:00:17,640
+And before I do anything, let's go look at the database.
+
+6
+00:00:18,190 --> 00:00:23,170
+So in the database on my vigilante database, I'm looking at the preferences table and right now there
+
+7
+00:00:23,170 --> 00:00:25,000
+are only three things in there.
+
+8
+00:00:25,450 --> 00:00:29,980
+So weather monitoring is live, the check interval unit and the check interval amount.
+
+9
+00:00:30,770 --> 00:00:35,560
+When I go back here to my settings, first of all, you have to put a irlam, so I'll put the URL of
+
+10
+00:00:35,560 --> 00:00:37,460
+my application in here.
+
+11
+00:00:37,480 --> 00:00:39,940
+We're not doing anything with that, but it needs to be in there.
+
+12
+00:00:39,940 --> 00:00:45,240
+And I figure if we're going to make this a production application at some point, you might use that.
+
+13
+00:00:45,250 --> 00:00:46,000
+So I put it in there.
+
+14
+00:00:46,600 --> 00:00:52,150
+Then on the second tab, a notifications, I'll say I want to receive messages by email and I'll put
+
+15
+00:00:52,150 --> 00:00:52,960
+my name in here.
+
+16
+00:00:53,050 --> 00:00:59,440
+And since I'm using a dummy dummy server, I can use whatever I want and I'll leave text message empty.
+
+17
+00:00:59,680 --> 00:01:05,760
+And then for mail server settings because I'm using mail hog localhost is my SMTP server.
+
+18
+00:01:06,340 --> 00:01:08,350
+The port is ten twenty five.
+
+19
+00:01:08,890 --> 00:01:11,800
+The mail is sent from and again this is just a dummy thing.
+
+20
+00:01:11,800 --> 00:01:17,380
+Alerts that example dot com alerts that example.
+
+21
+00:01:17,380 --> 00:01:20,920
+Dot com and mail hug doesn't require a username or a password.
+
+22
+00:01:21,430 --> 00:01:24,220
+So I'll save this and I'll save and continue.
+
+23
+00:01:24,700 --> 00:01:27,820
+And I want to go back and look at the preferences table and reload it.
+
+24
+00:01:28,000 --> 00:01:32,340
+We have a lot more things in here and we'll be using some of these in this lecture.
+
+25
+00:01:33,550 --> 00:01:35,110
+So now we have that set up.
+
+26
+00:01:35,110 --> 00:01:38,020
+So it's possible to send email from our application.
+
+27
+00:01:38,560 --> 00:01:40,270
+But of course, we're not actually doing that yet.
+
+28
+00:01:40,390 --> 00:01:48,940
+So if we go back to our source code, you'll notice under Internal and the Helpers package, I have
+
+29
+00:01:48,940 --> 00:01:55,630
+a file called sendmail dot com, and that's a little tiny helper function that we can use to send email
+
+30
+00:01:55,630 --> 00:01:57,370
+from anywhere in our application.
+
+31
+00:01:58,210 --> 00:02:03,220
+And it grabs default information like the we can actually get rid of this entirely.
+
+32
+00:02:03,220 --> 00:02:03,610
+So we don't.
+
+33
+00:02:03,730 --> 00:02:11,380
+I copied this code for sending emails from from another application and we do need to make some changes
+
+34
+00:02:11,380 --> 00:02:11,650
+to it.
+
+35
+00:02:11,650 --> 00:02:18,520
+But this is our simple function and all it does is pass something to our our app variable, which I
+
+36
+00:02:18,520 --> 00:02:23,800
+said in the helper's package to a channel which I called MailChimp, and we pass a job in there.
+
+37
+00:02:23,800 --> 00:02:30,700
+And the job is of type channel data mail job, which we get right from here, channel data, mail data.
+
+38
+00:02:31,480 --> 00:02:37,180
+And this again I copied from an existing project has way more information, way more members than we
+
+39
+00:02:37,180 --> 00:02:38,140
+actually need in this.
+
+40
+00:02:38,140 --> 00:02:39,760
+But it's not going to hurt anything to leave it there.
+
+41
+00:02:41,290 --> 00:02:42,850
+And under command web.
+
+42
+00:02:42,850 --> 00:02:45,010
+We have jobs, Dasch Dutko.
+
+43
+00:02:45,400 --> 00:02:47,070
+And here's where we need to make some changes.
+
+44
+00:02:47,110 --> 00:02:48,820
+This is a really common pattern.
+
+45
+00:02:48,970 --> 00:02:54,030
+I actually got it from the guerrilla group, the people that made guerrilla websocket.
+
+46
+00:02:54,640 --> 00:02:55,360
+That's the pattern.
+
+47
+00:02:55,570 --> 00:03:01,650
+And all it does is make sure that we can handle a high volume of things coming into our mail chart.
+
+48
+00:03:02,320 --> 00:03:08,860
+So since this application might be monitoring 100 servers with ten services each, for example, we
+
+49
+00:03:08,860 --> 00:03:10,660
+could potentially be sending a lot of email.
+
+50
+00:03:10,660 --> 00:03:16,210
+So rather than just doing a simple kind of send mail I could find in a tutorial online, I thought I'd
+
+51
+00:03:16,210 --> 00:03:18,160
+put some production quality code in here for you.
+
+52
+00:03:18,670 --> 00:03:24,910
+The part we need to change the very bottom, the part that says process, mail, Q job.
+
+53
+00:03:24,910 --> 00:03:29,080
+And we need to make some changes here because I'm using things that don't exist in this application.
+
+54
+00:03:29,080 --> 00:03:33,160
+For example, this was taken from an application that didn't use jet templates.
+
+55
+00:03:33,520 --> 00:03:34,960
+It used goaland templates.
+
+56
+00:03:35,410 --> 00:03:39,370
+And this function expects to find a template cache, which we don't have.
+
+57
+00:03:39,370 --> 00:03:46,050
+So you can delete all of this everything right from the beginning of this function down to this return,
+
+58
+00:03:46,060 --> 00:03:48,190
+closing parentheses or closing brace.
+
+59
+00:03:48,190 --> 00:03:51,460
+So delete that, then scroll on down.
+
+60
+00:03:52,450 --> 00:04:00,100
+And just below the data struct right here, this data struct, just below that, we need to add some
+
+61
+00:04:00,100 --> 00:04:06,520
+code and we need to add some code that tells this function where to find a standard goaland template.
+
+62
+00:04:06,970 --> 00:04:15,100
+So I'll create a variable called pads and it's assigned the value of a slice of string and we'll have
+
+63
+00:04:15,100 --> 00:04:21,490
+one string in there pointing to a file that doesn't exist yet, mailed a template and we'll make that
+
+64
+00:04:21,490 --> 00:04:22,570
+in a minute, so don't worry about it.
+
+65
+00:04:23,260 --> 00:04:24,460
+So that gives me a variable.
+
+66
+00:04:24,580 --> 00:04:27,640
+Now I need to actually pass that template.
+
+67
+00:04:27,640 --> 00:04:36,880
+So t just a variable name I'm choosing is assigned template dot must and then template new.
+
+68
+00:04:38,310 --> 00:04:40,250
+And we want to get mailed today.
+
+69
+00:04:40,770 --> 00:04:48,650
+That's the name of the template we're going to be using and then dot persse files and pass in pads,
+
+70
+00:04:48,660 --> 00:04:52,390
+dot, dot, dot, all of the values that we find in this string, OK?
+
+71
+00:04:53,560 --> 00:04:58,140
+And I just use this because you might have more mail templates you want to use and make them all available
+
+72
+00:04:58,140 --> 00:05:00,160
+to your particular application.
+
+73
+00:05:00,870 --> 00:05:04,250
+So now that we've passed that, everything else should stay pretty much the same.
+
+74
+00:05:04,650 --> 00:05:09,840
+And as you can see here, there's a lot of code we're not actually using, but it's set up.
+
+75
+00:05:09,840 --> 00:05:13,330
+So you can use this with very few changes in production.
+
+76
+00:05:13,980 --> 00:05:15,360
+So we've done that part.
+
+77
+00:05:15,510 --> 00:05:18,380
+The next question is where do we send email?
+
+78
+00:05:19,290 --> 00:05:26,880
+So we left ourselves a to do comment here in performed dash checks ago and the Tudou says send email
+
+79
+00:05:26,880 --> 00:05:28,340
+or SMS if appropriate.
+
+80
+00:05:29,010 --> 00:05:33,420
+So obviously the only time we want to send notifications is for background checks.
+
+81
+00:05:33,420 --> 00:05:38,790
+When people test a service manually, they're going to get the necessary feedback right on the screen.
+
+82
+00:05:38,790 --> 00:05:42,960
+So we don't want to give them feedback on the screen and then send them an email and then send them
+
+83
+00:05:42,960 --> 00:05:44,500
+a text that just gets irritating.
+
+84
+00:05:44,970 --> 00:05:49,410
+So we'll just do it here in this function, which is called test service for hosts.
+
+85
+00:05:49,410 --> 00:05:53,310
+And this is the one that runs as part of our schedule in the background.
+
+86
+00:05:53,730 --> 00:05:55,590
+And that's where we want to send alerts.
+
+87
+00:05:56,250 --> 00:06:01,890
+And we already have this broadcast to clients, if appropriate, that checks the new status against
+
+88
+00:06:01,890 --> 00:06:03,110
+the old status.
+
+89
+00:06:03,360 --> 00:06:09,000
+And this this if statement seems to be the logical place to send email or SMS.
+
+90
+00:06:09,690 --> 00:06:18,500
+So we'll cut this comment out of here and I will paste it right here, get rid of the two do and the
+
+91
+00:06:18,510 --> 00:06:22,740
+Sims part and just give myself another Tudou to do.
+
+92
+00:06:23,490 --> 00:06:28,920
+Send SMS if appropriate approach Pritt.
+
+93
+00:06:29,730 --> 00:06:33,340
+OK, under what situations do we want to send email.
+
+94
+00:06:34,140 --> 00:06:35,310
+What if you think it through.
+
+95
+00:06:35,740 --> 00:06:36,600
+There's only.
+
+96
+00:06:37,660 --> 00:06:46,620
+One situation, and that is where the status has changed and the old status was not pending because
+
+97
+00:06:46,640 --> 00:06:49,150
+it was a pending service, you can just watch it.
+
+98
+00:06:49,450 --> 00:06:50,620
+So I'm going to make that decision.
+
+99
+00:06:50,620 --> 00:06:58,840
+I'll say, first of all, if in our preference map, repo app preference, map the preference and I'll
+
+100
+00:06:58,840 --> 00:07:00,760
+go look at this database table again.
+
+101
+00:07:00,790 --> 00:07:04,530
+The preference that says notify via email is equal to one.
+
+102
+00:07:04,540 --> 00:07:05,850
+And remember, that's a string.
+
+103
+00:07:06,550 --> 00:07:18,010
+So if notified via email is equal to one as a string, then I know I want to receive notifications via
+
+104
+00:07:18,010 --> 00:07:18,430
+email.
+
+105
+00:07:18,940 --> 00:07:25,240
+And the second thing I'll check is to make sure that we're not having an old status of pending FHA status,
+
+106
+00:07:27,490 --> 00:07:34,660
+which is our old status, if that is not equal to pending, because I don't want to get alerted every
+
+107
+00:07:34,660 --> 00:07:39,910
+time the first healthy check shows up, I just want to know when there's problems or when something
+
+108
+00:07:39,910 --> 00:07:41,970
+comes back from a problem state.
+
+109
+00:07:43,090 --> 00:07:44,730
+So here's where we want to send email.
+
+110
+00:07:44,980 --> 00:07:51,550
+So go back to our sendmail function, send dash mail, go in the helpers package that expects to find
+
+111
+00:07:51,550 --> 00:07:54,730
+something of channel data, dot mail data type.
+
+112
+00:07:54,730 --> 00:07:55,720
+So let's create one of those.
+
+113
+00:07:56,950 --> 00:07:59,590
+So I'll create the variable and I'll call it mom for mail.
+
+114
+00:07:59,590 --> 00:08:02,740
+Message is of type channel data.
+
+115
+00:08:06,450 --> 00:08:15,750
+Mail data, and in that, I'll put in only two things to name who's going to get this, the name of
+
+116
+00:08:15,750 --> 00:08:20,790
+the person who's receiving it, and we get that from repoll app preference map.
+
+117
+00:08:21,270 --> 00:08:24,090
+And again, if you look over in the in the preferences table.
+
+118
+00:08:25,360 --> 00:08:34,690
+Here you'll see that I have my name and it's notify, underscore name, notify, underscore name and
+
+119
+00:08:34,690 --> 00:08:35,640
+I'll duplicate that.
+
+120
+00:08:36,280 --> 00:08:43,450
+And the second thing I want to specify is to address and that is, again, back in our database, we
+
+121
+00:08:43,450 --> 00:08:46,660
+can find my email, notify underscore email.
+
+122
+00:08:50,080 --> 00:08:51,820
+Notify, underscore email.
+
+123
+00:08:52,210 --> 00:08:54,200
+OK, so I've made this variable.
+
+124
+00:08:54,730 --> 00:08:58,120
+Now I want to populate one more part of that mail data object.
+
+125
+00:08:58,120 --> 00:09:03,100
+And the only part I'm interested in for this course, and I'll look at it, is this content, which
+
+126
+00:09:03,100 --> 00:09:04,870
+is of type template HTML.
+
+127
+00:09:05,770 --> 00:09:08,050
+But I'm going to have different kind of content.
+
+128
+00:09:08,080 --> 00:09:13,870
+I shall do the subject to I'll have different kind of kinds of content and a different subject based
+
+129
+00:09:13,870 --> 00:09:16,500
+upon what the value of new statuses.
+
+130
+00:09:16,510 --> 00:09:22,580
+And remember, we get our message and new status when we run our check for the service http.
+
+131
+00:09:23,470 --> 00:09:31,060
+So let's go down here and just do an if statement if new status is equal to healthy.
+
+132
+00:09:34,150 --> 00:09:42,790
+They don't have a certain subject and a certain piece of content else, if new status is equal to and
+
+133
+00:09:42,790 --> 00:09:49,960
+the second one will be problem, I'll have a different subject and a different piece of content else.
+
+134
+00:09:49,960 --> 00:09:56,710
+If new status is equal to warning, we don't have any warnings right now.
+
+135
+00:09:56,710 --> 00:10:00,270
+So I can leave that empty for the moment and come back in populated if necessary.
+
+136
+00:10:01,090 --> 00:10:02,260
+So let's do the healthy one.
+
+137
+00:10:02,470 --> 00:10:05,230
+First of all, I want to get a subject, my subject.
+
+138
+00:10:08,590 --> 00:10:17,260
+Is equal to format or Sprint F and my subject will be really simple, healthy in all caps.
+
+139
+00:10:18,280 --> 00:10:21,340
+Service percent s on percent s.
+
+140
+00:10:22,260 --> 00:10:27,780
+And that's all I need for the subject, and I'll replace those placeholders with the service name,
+
+141
+00:10:27,810 --> 00:10:33,000
+age, service, service name and the host name on hostname.
+
+142
+00:10:34,020 --> 00:10:43,260
+OK, so let's copy that and paste it here and just changes to problem in all caps.
+
+143
+00:10:45,090 --> 00:10:50,190
+OK, now let's build up our message and these are going to be really, really simple messages in really
+
+144
+00:10:50,190 --> 00:10:52,910
+plain looking emails.
+
+145
+00:10:52,950 --> 00:10:54,620
+I'm not going to put any formatting in there at all.
+
+146
+00:10:54,630 --> 00:10:57,510
+You can do that to your heart's content if you so desire.
+
+147
+00:10:58,590 --> 00:11:01,760
+So much content can't be a string.
+
+148
+00:11:02,220 --> 00:11:08,700
+It has to be of type template HTML, but we can cast it to that template HTML.
+
+149
+00:11:09,840 --> 00:11:16,540
+And inside of that I'll have a format dot print f statement and just make it as simple as I can.
+
+150
+00:11:16,650 --> 00:11:21,870
+So I'll say service percent s on percent.
+
+151
+00:11:21,870 --> 00:11:26,920
+S reported healthy status and that's all I need.
+
+152
+00:11:27,150 --> 00:11:29,510
+OK, or maybe I can put the message in there too.
+
+153
+00:11:30,240 --> 00:11:33,150
+So let's wrap this whole thing in a paragraph tag.
+
+154
+00:11:39,920 --> 00:11:43,550
+And change these quotes to back ticks so I can go to the second line.
+
+155
+00:11:48,020 --> 00:11:54,590
+An extra back there that's better and on the next line, I'll just put in my placeholders or another
+
+156
+00:11:54,590 --> 00:11:59,770
+paragraph of text P and I'll just say healthy status reported.
+
+157
+00:11:59,810 --> 00:12:02,390
+I'll make it strong, healthy.
+
+158
+00:12:04,950 --> 00:12:06,090
+Our message received
+
+159
+00:12:09,420 --> 00:12:17,970
+percent, yes, and close that paragraph tag and put in my three placeholders, which are escort service,
+
+160
+00:12:18,330 --> 00:12:22,950
+that service name has on hostname and the message we got.
+
+161
+00:12:23,540 --> 00:12:30,450
+OK, so that can be copied and we'll modify it for the second one for our problem status.
+
+162
+00:12:32,610 --> 00:12:38,790
+And I'll paste it in there and I'll say, instead of reported healthy status, a reported problem
+
+163
+00:12:41,640 --> 00:12:45,030
+and on the second line, everything else should be the same.
+
+164
+00:12:45,340 --> 00:12:49,680
+OK, and I'll leave this one empty because we don't have any warnings right now and we'll come back
+
+165
+00:12:49,720 --> 00:12:50,790
+and do that if necessary.
+
+166
+00:12:51,960 --> 00:12:55,850
+So now we've built up our message and all we need to do is send the email.
+
+167
+00:12:56,220 --> 00:13:01,470
+And that's as simple as helpers don't send mail and we pass it.
+
+168
+00:13:01,510 --> 00:13:06,360
+Emam Our mail message, which is of type channel data dot mail did.
+
+169
+00:13:07,410 --> 00:13:14,100
+So the last thing we need to do is to go over to our views folder and create that new file that we expect
+
+170
+00:13:14,100 --> 00:13:14,660
+to find.
+
+171
+00:13:14,670 --> 00:13:22,500
+So I'll create a new file and it's got to be called mailed template for template and I'll just use my
+
+172
+00:13:22,500 --> 00:13:29,090
+built in Emet function HTML five to quickly put in an HTML template.
+
+173
+00:13:29,880 --> 00:13:31,080
+It doesn't need a title.
+
+174
+00:13:31,530 --> 00:13:32,730
+I'll ignore all of this.
+
+175
+00:13:32,730 --> 00:13:35,490
+It should be fine for our purposes and inside the body.
+
+176
+00:13:35,490 --> 00:13:37,860
+I just have a have to have a place to put content.
+
+177
+00:13:39,580 --> 00:13:46,150
+All right, now, let's see if this works, let's stop our application, start our application.
+
+178
+00:13:49,080 --> 00:13:54,000
+Go back and look and see what the status of things currently are, so we have one healthy service,
+
+179
+00:13:54,000 --> 00:13:56,220
+which means I have my Web server running in the background.
+
+180
+00:13:56,490 --> 00:13:56,940
+So let's go.
+
+181
+00:13:56,940 --> 00:13:57,540
+Stop that.
+
+182
+00:13:58,470 --> 00:14:00,240
+There's my Web server or stop it.
+
+183
+00:14:00,770 --> 00:14:02,010
+Go back and watch this.
+
+184
+00:14:06,730 --> 00:14:08,890
+That should switch to problem, and it did.
+
+185
+00:14:09,430 --> 00:14:14,890
+Let's go look at our log file in our application, invalid syntax in male command.
+
+186
+00:14:14,920 --> 00:14:16,780
+So I got a problem there somewhere.
+
+187
+00:14:17,260 --> 00:14:18,720
+Let's see what we have wrong.
+
+188
+00:14:21,310 --> 00:14:23,170
+It must be and perform checks.
+
+189
+00:14:26,630 --> 00:14:30,020
+To name is notify, name to address is notify email.
+
+190
+00:14:32,620 --> 00:14:39,130
+And then we send it, so we go to Sendmail, the Frum stuff, you remember I deleted that a while ago.
+
+191
+00:14:39,170 --> 00:14:40,180
+Let's just undo that.
+
+192
+00:14:41,590 --> 00:14:47,350
+You can't send it without a valid sender and receiver or sender name and send her email.
+
+193
+00:14:47,410 --> 00:14:47,710
+All right.
+
+194
+00:14:47,800 --> 00:14:48,690
+Let's stop this.
+
+195
+00:14:49,150 --> 00:14:49,840
+Run it again.
+
+196
+00:14:53,290 --> 00:14:55,550
+Go back, look at our services.
+
+197
+00:14:56,320 --> 00:14:59,130
+We should have one problem, let's make that problem go away.
+
+198
+00:15:00,100 --> 00:15:04,540
+So I'll switch to my Web server, my test web server, start that back up.
+
+199
+00:15:05,200 --> 00:15:06,790
+Go watch my application.
+
+200
+00:15:12,700 --> 00:15:17,530
+And it reports healthy and let's look at our log file and hopefully there'll be no error messages in
+
+201
+00:15:17,530 --> 00:15:19,030
+their email sent.
+
+202
+00:15:19,210 --> 00:15:19,720
+Perfect.
+
+203
+00:15:20,140 --> 00:15:27,790
+And I already have mail hog running, so I should have an alert and I do service HTP on localhost report
+
+204
+00:15:27,790 --> 00:15:28,650
+of healthy status.
+
+205
+00:15:28,660 --> 00:15:29,890
+It's got the correct subject.
+
+206
+00:15:30,400 --> 00:15:33,070
+Now let's make that a problem again.
+
+207
+00:15:33,070 --> 00:15:38,920
+So I'll go back to the inbox here and I'll delete the messages so I don't have to figure out which one
+
+208
+00:15:38,920 --> 00:15:39,790
+is the most recent.
+
+209
+00:15:40,840 --> 00:15:44,910
+And I'll stop my web server go back and watch this again.
+
+210
+00:15:46,720 --> 00:15:48,730
+This should switch to problem and it does.
+
+211
+00:15:48,730 --> 00:15:54,130
+And we should have a new email message that says problem service HTP on localhost er connecting.
+
+212
+00:15:54,440 --> 00:16:00,010
+OK, so now we can send emails and you can make whatever changes you want to the HTML template.
+
+213
+00:16:00,010 --> 00:16:06,490
+You can make it more attractive if you wish to, but for our purposes we just want to send emails.
+
+214
+00:16:07,180 --> 00:16:13,120
+So in the next lecture we'll take care of this bit, we'll go to our settings and specify that we want
+
+215
+00:16:13,120 --> 00:16:15,160
+to receive SMS messages.
+
+216
+00:16:15,380 --> 00:16:17,740
+OK, so we'll take care of that in the next lecture.

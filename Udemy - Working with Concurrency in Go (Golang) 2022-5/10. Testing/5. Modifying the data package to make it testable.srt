@@ -1,0 +1,839 @@
+1
+00:00:00,760 --> 00:00:05,740
+So this time around, I want to make some changes to the data package just to make it easier to write
+
+2
+00:00:05,740 --> 00:00:08,680
+unit tests for things like our pages that were display.
+
+3
+00:00:09,250 --> 00:00:11,860
+Now the reason I'm doing this, if you open up Main, don't go.
+
+4
+00:00:12,850 --> 00:00:17,380
+And we go to the top where we have our config being set up.
+
+5
+00:00:17,890 --> 00:00:23,830
+What we do, we populate the field models in the variable app of type config.
+
+6
+00:00:23,920 --> 00:00:28,990
+We're actually calling this function data new and we're handing it a pool of database connections.
+
+7
+00:00:29,740 --> 00:00:31,350
+Now we do that for a very simple reason.
+
+8
+00:00:31,360 --> 00:00:38,920
+If we look at the new function in data, it actually allows us to give this DB variable a pool of connections
+
+9
+00:00:38,920 --> 00:00:43,690
+to the database and then the actual models, user and plan and so forth.
+
+10
+00:00:43,960 --> 00:00:47,590
+Well, user in plan, those are the only two they actually connect to the database.
+
+11
+00:00:48,670 --> 00:00:49,780
+And that's a bit of a problem.
+
+12
+00:00:49,930 --> 00:00:56,770
+That means if I want to run my unit tests, then what I have to do is to actually have a database running.
+
+13
+00:00:56,800 --> 00:01:00,070
+I might spin up a Docker image with a known version of the database.
+
+14
+00:01:00,070 --> 00:01:03,160
+I might just start a local database before I run the tests.
+
+15
+00:01:03,760 --> 00:01:05,840
+But that's actually not a good way to do things.
+
+16
+00:01:05,860 --> 00:01:08,170
+And fortunately, it's really easy to fix this.
+
+17
+00:01:09,010 --> 00:01:10,900
+Let's close models ago.
+
+18
+00:01:10,900 --> 00:01:13,140
+Go and over in the data folder.
+
+19
+00:01:13,150 --> 00:01:17,170
+What I'm going to do is create a new file and I'll call it interfaces.
+
+20
+00:01:17,170 --> 00:01:19,330
+Interfaces, dot go.
+
+21
+00:01:19,600 --> 00:01:19,990
+Okay.
+
+22
+00:01:20,500 --> 00:01:22,900
+And this is in packaged data which I have to spell.
+
+23
+00:01:22,900 --> 00:01:23,170
+Right.
+
+24
+00:01:24,700 --> 00:01:32,200
+I'm going to create two interfaces, one type, I'll call it user interface and it's an interface.
+
+25
+00:01:33,100 --> 00:01:33,460
+Okay.
+
+26
+00:01:34,240 --> 00:01:42,280
+And I'll create another one type, not surprisingly, plan interface, which is also an interface.
+
+27
+00:01:43,750 --> 00:01:50,650
+And of course, in go, in order to satisfy an interface, all you have to do is to implement all of
+
+28
+00:01:50,650 --> 00:01:53,300
+the functions that are attached to that interface.
+
+29
+00:01:53,320 --> 00:01:59,560
+And if we look at user, don't go here while we have all these functions we have get all which takes
+
+30
+00:01:59,560 --> 00:02:04,750
+no parameters and returns these things we have get my email and so on and so forth.
+
+31
+00:02:04,930 --> 00:02:06,160
+So let's go back to interfaces.
+
+32
+00:02:06,160 --> 00:02:06,790
+Don't go.
+
+33
+00:02:07,180 --> 00:02:10,450
+And I have in front of me a sheet of paper with a list of all these function names.
+
+34
+00:02:11,050 --> 00:02:12,570
+Get all is the first one.
+
+35
+00:02:12,580 --> 00:02:19,510
+It takes no parameters and returns a slice of pointer to the user and potentially an error.
+
+36
+00:02:19,750 --> 00:02:20,590
+That's the first one.
+
+37
+00:02:21,160 --> 00:02:29,110
+Then I have get by email and that requires email, which is a string and it returns a pointer to a user
+
+38
+00:02:29,360 --> 00:02:31,810
+that again, user and potentially an error.
+
+39
+00:02:32,890 --> 00:02:36,310
+And then I have get one, which is pretty much the same.
+
+40
+00:02:36,310 --> 00:02:44,280
+So I'll copy this and paste that here and change this to event.
+
+41
+00:02:44,860 --> 00:02:45,340
+Okay.
+
+42
+00:02:47,120 --> 00:02:51,350
+Then I have update which takes no parameters and potentially returns an error.
+
+43
+00:02:51,980 --> 00:02:56,030
+I have delete, which takes no parameters and potentially returns an error.
+
+44
+00:02:56,810 --> 00:03:05,990
+I have delete my ID, try again delete my ID, which takes ID and potentially returns an error.
+
+45
+00:03:07,730 --> 00:03:15,500
+I have insert which takes user of type of user and returns an interest in an error.
+
+46
+00:03:17,780 --> 00:03:25,820
+I have reset password which takes the password which is a string and potentially returns an error.
+
+47
+00:03:26,480 --> 00:03:35,420
+And the last one that I have is password matches right there and that takes plaintext, which is a string
+
+48
+00:03:36,890 --> 00:03:38,870
+and returns bool and error.
+
+49
+00:03:40,100 --> 00:03:43,130
+And those are all the functions which I have to spell interface.
+
+50
+00:03:43,130 --> 00:03:43,430
+Right.
+
+51
+00:03:44,060 --> 00:03:47,990
+Those are all the functions that are used by the type user.
+
+52
+00:03:48,140 --> 00:03:55,060
+Now I've got an interface and by default the user type now satisfies this interface because it has all
+
+53
+00:03:55,080 --> 00:03:57,110
+these methods exactly the same.
+
+54
+00:03:57,140 --> 00:03:59,660
+Unless I have a typo, which is always a distinct possibility.
+
+55
+00:04:00,590 --> 00:04:08,180
+Let's do the same thing for a plan that has get all that text nothing as parameters but returns a slice
+
+56
+00:04:08,180 --> 00:04:11,090
+of pointers to plan and potentially an error.
+
+57
+00:04:12,530 --> 00:04:20,990
+We have get one which takes an idea of type integer and returns a pointer to a plan and potentially
+
+58
+00:04:20,990 --> 00:04:21,380
+an error.
+
+59
+00:04:23,140 --> 00:04:25,360
+We have subscribe user to plan.
+
+60
+00:04:25,930 --> 00:04:37,270
+Subscribe user to plan which takes user of type user and plan of type plan and it returns an error.
+
+61
+00:04:39,580 --> 00:04:47,260
+And we also have a mount for display which takes nothing in return to store.
+
+62
+00:04:48,710 --> 00:04:49,060
+Okay.
+
+63
+00:04:49,090 --> 00:04:54,070
+Now, unless I have a typographical error, these interfaces are now acceptable.
+
+64
+00:04:54,310 --> 00:04:54,970
+They're complete.
+
+65
+00:04:55,480 --> 00:05:02,150
+So let's find out by going to models ago and will change what's here.
+
+66
+00:05:02,170 --> 00:05:05,080
+The type user in models to be instead.
+
+67
+00:05:05,500 --> 00:05:06,400
+User interface.
+
+68
+00:05:07,270 --> 00:05:07,720
+Okay.
+
+69
+00:05:08,440 --> 00:05:12,370
+And we'll change this one plan to be plan interface.
+
+70
+00:05:13,360 --> 00:05:19,660
+Now I immediately have two errors and the error is because probably tells me here might at the end.
+
+71
+00:05:21,250 --> 00:05:28,750
+Cannot use user literal value of type user as the interface user does not implement user interface user
+
+72
+00:05:28,750 --> 00:05:30,610
+method delete has pointer receiver.
+
+73
+00:05:31,060 --> 00:05:33,100
+Well, that's just because we have a pointer receiver.
+
+74
+00:05:33,430 --> 00:05:38,700
+So who changes to a reference error goes away and hopefully we get everything right with plan.
+
+75
+00:05:38,710 --> 00:05:41,140
+We change this to a reference and that goes away.
+
+76
+00:05:41,650 --> 00:05:48,040
+And now with that one change, it becomes possible to modify the data package.
+
+77
+00:05:48,310 --> 00:05:53,940
+So we can have something, have things that satisfy the user interface and the plan interface.
+
+78
+00:05:53,980 --> 00:05:56,090
+They don't actually talk to the database.
+
+79
+00:05:56,110 --> 00:05:56,550
+Okay.
+
+80
+00:05:56,950 --> 00:05:59,200
+And that will make things ever so much easier.
+
+81
+00:05:59,890 --> 00:06:05,290
+So to make that happen, what we're going to have to do is I'll just do it this way in the data folder.
+
+82
+00:06:05,770 --> 00:06:12,760
+I'll create a new file, which I'll call test dash models that go.
+
+83
+00:06:13,540 --> 00:06:13,900
+Okay.
+
+84
+00:06:14,560 --> 00:06:15,730
+And again, it's still in package.
+
+85
+00:06:16,930 --> 00:06:23,980
+And we'll give this one new function instead of using the new function, which is part of the data package.
+
+86
+00:06:24,310 --> 00:06:26,530
+We'll create a new function called testing.
+
+87
+00:06:27,190 --> 00:06:27,450
+Okay.
+
+88
+00:06:27,490 --> 00:06:34,240
+There's many ways to do this, but this will do the trick and it will have to accept a DV cool, which
+
+89
+00:06:34,240 --> 00:06:42,280
+is a pointer to SQL DB because it's a pointer we can pass that nil and it returns models.
+
+90
+00:06:43,090 --> 00:06:43,510
+Okay.
+
+91
+00:06:44,020 --> 00:06:48,400
+So DV pool will still be equal to DV pool.
+
+92
+00:06:49,780 --> 00:06:50,180
+Okay.
+
+93
+00:06:50,200 --> 00:06:51,830
+And that's the package level variable.
+
+94
+00:06:51,970 --> 00:06:52,790
+It's actually db.
+
+95
+00:06:52,810 --> 00:06:53,740
+It's not DV pool.
+
+96
+00:06:53,800 --> 00:06:55,510
+DB is equal to DB pool.
+
+97
+00:06:55,720 --> 00:06:58,240
+It makes no sense to have one variable equal to itself.
+
+98
+00:06:58,990 --> 00:07:04,780
+But if you recall over in models star go, we have this variable DV, which is a pointer to SQL DB.
+
+99
+00:07:05,050 --> 00:07:09,530
+So back in test models, we're just setting that to whatever this receives and we'll pass it nil.
+
+100
+00:07:09,550 --> 00:07:11,080
+So it'll make DV equals or nil.
+
+101
+00:07:11,290 --> 00:07:13,420
+We're not going to use it for the tests anyway, but there you go.
+
+102
+00:07:14,830 --> 00:07:16,030
+Now we return.
+
+103
+00:07:16,590 --> 00:07:18,670
+In this case, we're still going to return models.
+
+104
+00:07:19,030 --> 00:07:19,350
+Okay.
+
+105
+00:07:19,690 --> 00:07:23,740
+But we're not going to return user type and plan type.
+
+106
+00:07:23,950 --> 00:07:26,860
+Instead, we'll create two new types.
+
+107
+00:07:26,980 --> 00:07:28,270
+So let's go back over two models.
+
+108
+00:07:28,270 --> 00:07:30,280
+Don't go not model stock.
+
+109
+00:07:30,400 --> 00:07:32,020
+Let's go to say user doc.
+
+110
+00:07:32,020 --> 00:07:41,340
+Go and let's go to the very top and get this user type and copy it and go back over to test model stock.
+
+111
+00:07:41,350 --> 00:07:47,560
+Go and paste this here and rename it to user test.
+
+112
+00:07:48,130 --> 00:07:48,490
+Okay.
+
+113
+00:07:49,000 --> 00:07:55,390
+And we have to import time, so let's do that time, dot time right there.
+
+114
+00:07:55,540 --> 00:07:56,150
+That does it.
+
+115
+00:07:56,170 --> 00:07:56,560
+Okay.
+
+116
+00:07:57,790 --> 00:07:59,110
+So now we have this tape.
+
+117
+00:07:59,350 --> 00:08:05,200
+And what we're going to have to do, of course, is to create one function for each of the ones in this
+
+118
+00:08:05,200 --> 00:08:05,650
+list.
+
+119
+00:08:05,680 --> 00:08:11,140
+The interfaces will have to create functions, all of these, but none of them will touch the database.
+
+120
+00:08:11,200 --> 00:08:11,430
+Okay.
+
+121
+00:08:12,070 --> 00:08:13,480
+So let's get started with that.
+
+122
+00:08:14,780 --> 00:08:17,060
+We'll do user and then we'll do plan in the next lecture.
+
+123
+00:08:18,280 --> 00:08:25,270
+So simplest thing to do is I'm going to open up user Darko and I'm going to copy every one of the user
+
+124
+00:08:25,270 --> 00:08:26,650
+functions right here.
+
+125
+00:08:30,210 --> 00:08:33,280
+All the way down to password matches.
+
+126
+00:08:33,300 --> 00:08:33,780
+Copy.
+
+127
+00:08:34,620 --> 00:08:39,810
+Then I'll go to test dash models and after my type user test, I'll paste.
+
+128
+00:08:40,170 --> 00:08:40,550
+Okay.
+
+129
+00:08:40,560 --> 00:08:45,140
+Now we have lots and lots of errors and that's easy enough to fix the errors.
+
+130
+00:08:45,150 --> 00:08:49,800
+By and large, apart from imports, most of which will go away when I make these functions very, very
+
+131
+00:08:49,800 --> 00:08:54,000
+stupid by removing most of their functionality, it's the receiver.
+
+132
+00:08:54,090 --> 00:08:54,380
+Okay.
+
+133
+00:08:54,450 --> 00:08:57,040
+We already have a get all on the type user.
+
+134
+00:08:57,060 --> 00:08:59,700
+So let's see how we get search and replace.
+
+135
+00:08:59,730 --> 00:09:00,810
+I believe it's over here.
+
+136
+00:09:01,230 --> 00:09:09,720
+So we're going to search in this file for you pointer to user and we're going to replace it with you
+
+137
+00:09:09,750 --> 00:09:11,880
+pointer to user test.
+
+138
+00:09:12,070 --> 00:09:12,630
+Like that.
+
+139
+00:09:12,750 --> 00:09:13,160
+Okay.
+
+140
+00:09:13,950 --> 00:09:16,590
+And I should be able to replace all somehow here.
+
+141
+00:09:17,200 --> 00:09:17,910
+What does I do?
+
+142
+00:09:19,880 --> 00:09:20,480
+Replace.
+
+143
+00:09:22,120 --> 00:09:22,570
+Perfect.
+
+144
+00:09:24,970 --> 00:09:28,630
+Well, it looks like it replaced them in both test dash models.
+
+145
+00:09:32,350 --> 00:09:33,610
+And in user accounts.
+
+146
+00:09:33,610 --> 00:09:35,040
+Apparently I didn't do what I thought it did.
+
+147
+00:09:35,050 --> 00:09:35,470
+So.
+
+148
+00:09:39,330 --> 00:09:48,420
+Let's try replacing here in user go will do the opposite so will replace you pointer to user test with
+
+149
+00:09:49,230 --> 00:09:55,710
+you pointer to user and what does this do that does that one this should do all of the.
+
+150
+00:09:56,840 --> 00:09:57,230
+Perfect.
+
+151
+00:09:57,530 --> 00:10:01,250
+So that fixes that one and it fixes this one.
+
+152
+00:10:01,340 --> 00:10:01,730
+Okay.
+
+153
+00:10:01,880 --> 00:10:05,990
+You can tell I don't use Visual Studio code as frequently as I use Go Land.
+
+154
+00:10:07,010 --> 00:10:10,100
+In any case, we managed to recover from that disaster.
+
+155
+00:10:10,880 --> 00:10:16,650
+So the next step is to make this as simple as I possibly can.
+
+156
+00:10:16,670 --> 00:10:21,530
+So what I'm going to do is just get everything out of this like that.
+
+157
+00:10:21,980 --> 00:10:22,490
+Okay.
+
+158
+00:10:24,070 --> 00:10:30,940
+And I'll create a simple user so I'll create an empty or a variable var users, which is a type slice
+
+159
+00:10:30,940 --> 00:10:34,210
+of a pointer to user, which is what we have to return.
+
+160
+00:10:35,710 --> 00:10:37,810
+And then I'll populate that with one user.
+
+161
+00:10:37,810 --> 00:10:49,180
+So I'll make a user assigned the value of the type user, and I'll put it and say ID one and I'll put
+
+162
+00:10:49,180 --> 00:10:56,440
+in email admin example dot com and I'll put in firstname
+
+163
+00:10:59,080 --> 00:11:04,750
+admin and then lastname admin.
+
+164
+00:11:05,000 --> 00:11:09,700
+It doesn't really matter what it is as long as I have something in there and then I'll have password.
+
+165
+00:11:11,260 --> 00:11:12,430
+I'll make that ABC.
+
+166
+00:11:13,390 --> 00:11:22,240
+Not a very good password, but this is test data and then active one is admin one.
+
+167
+00:11:22,720 --> 00:11:37,000
+Get rid of the extra comma and created a is time dot now and updated app is time now and down here I'll
+
+168
+00:11:37,000 --> 00:11:38,350
+just append that to my slice.
+
+169
+00:11:38,710 --> 00:11:45,730
+So right after I define this type, I'll say users equals append users.
+
+170
+00:11:47,220 --> 00:11:50,270
+In a reference to a user there.
+
+171
+00:11:50,430 --> 00:11:54,330
+Now this function get all doesn't touch the database at all.
+
+172
+00:11:55,050 --> 00:11:58,830
+And of course we have to do the same thing for every other function.
+
+173
+00:11:58,920 --> 00:12:04,410
+Now the next couple use a user, so I'll copy this one and I'll go to get my email.
+
+174
+00:12:04,980 --> 00:12:08,700
+I'll remove all of this information way down to here.
+
+175
+00:12:10,650 --> 00:12:12,540
+Scroll up so I can see what's going on.
+
+176
+00:12:13,170 --> 00:12:18,330
+Create a new variable called user where it's done and I'll do the same thing for this one.
+
+177
+00:12:19,750 --> 00:12:25,600
+Delete everything out of this except for the return statement and paste in user.
+
+178
+00:12:27,460 --> 00:12:30,270
+No, I'm not actually using the parameters here, but it doesn't matter.
+
+179
+00:12:30,280 --> 00:12:33,190
+I just want to create a function that returns the correct types.
+
+180
+00:12:34,030 --> 00:12:34,570
+Update.
+
+181
+00:12:35,530 --> 00:12:38,170
+Update just has to return nil.
+
+182
+00:12:38,920 --> 00:12:40,160
+Just don't report an error.
+
+183
+00:12:40,180 --> 00:12:40,630
+That's it.
+
+184
+00:12:41,290 --> 00:12:47,440
+The same thing for delete and the same thing for delete by id,
+
+185
+00:12:50,290 --> 00:12:52,740
+insert returns and into an error list.
+
+186
+00:12:52,750 --> 00:12:53,290
+No problem.
+
+187
+00:12:53,410 --> 00:13:00,610
+I'll just delete everything except for the return statements and I'll return say the number two and
+
+188
+00:13:00,610 --> 00:13:00,910
+no.
+
+189
+00:13:03,230 --> 00:13:06,890
+Reset password that's just returning nil for an error.
+
+190
+00:13:08,510 --> 00:13:09,290
+So that one's done.
+
+191
+00:13:10,130 --> 00:13:12,410
+And the last one returns a bullet in error.
+
+192
+00:13:12,450 --> 00:13:14,780
+So I'll delete everything and just return.
+
+193
+00:13:14,780 --> 00:13:15,410
+True and nil.
+
+194
+00:13:17,480 --> 00:13:17,840
+Now.
+
+195
+00:13:19,250 --> 00:13:26,030
+Now I have a version of the user that has no problems whatsoever except that I need to save so it gets
+
+196
+00:13:26,030 --> 00:13:28,520
+rid of all these imports that it's not using anymore.
+
+197
+00:13:28,850 --> 00:13:29,300
+Okay.
+
+198
+00:13:29,900 --> 00:13:32,000
+Then I can actually simplified even a bit more.
+
+199
+00:13:32,030 --> 00:13:33,080
+Get by email.
+
+200
+00:13:33,110 --> 00:13:36,230
+Returns a pointer to a user id nil and get one.
+
+201
+00:13:36,230 --> 00:13:37,700
+Does exactly the same thing.
+
+202
+00:13:38,180 --> 00:13:46,060
+So all I have to do in this one to get rid of that is just say return, get by email and it pass it
+
+203
+00:13:46,070 --> 00:13:46,640
+into string.
+
+204
+00:13:46,940 --> 00:13:48,710
+Okay, that does the trick.
+
+205
+00:13:49,970 --> 00:13:55,910
+So now in get one is called, it'll call, get by email with an empty string and that returns dummy
+
+206
+00:13:55,910 --> 00:13:56,210
+data.
+
+207
+00:13:56,520 --> 00:13:56,810
+Okay.
+
+208
+00:13:56,900 --> 00:14:01,760
+So now we have a version of our users that doesn't touch the database.
+
+209
+00:14:01,760 --> 00:14:06,230
+And the next thing to do is to do exactly the same thing with the plan, and we'll do that in the next
+
+210
+00:14:06,230 --> 00:14:06,620
+lecture.

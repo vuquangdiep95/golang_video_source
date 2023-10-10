@@ -1,0 +1,636 @@
+1
+00:00:00,180 --> 00:00:04,280
+OK selanjutnya kita akan berurusan dengan API baca blog.
+
+2
+00:00:04,290 --> 00:00:06,980
+Jadi mari kita lanjutkan dan tambahkan RPG.
+
+3
+00:00:07,890 --> 00:00:15,070
+Dan ini akan disebut blog read jadi saya akan melakukan Blug dan apa yang kita dapatkan adalah permintaan read
+
+4
+00:00:15,090 --> 00:00:17,810
+like dan return adalah respon replug.
+
+5
+00:00:17,820 --> 00:00:21,250
+Sekarang ada kemungkinan bahwa permintaan replug ini tidak berfungsi dengan baik.
+
+6
+00:00:21,450 --> 00:00:28,690
+Jadi yang harus kita katakan adalah bahwa dengan cara kita kembali tidak ditemukan jika tidak ditemukan.
+
+7
+00:00:28,920 --> 00:00:30,050
+Masuk akal.
+
+8
+00:00:30,060 --> 00:00:36,120
+Jika kita tidak menemukan blog karena kadang-kadang kita akan meminta ID yang salah maka kita harus mengembalikan kode
+
+9
+00:00:36,120 --> 00:00:40,200
+kesalahan yang disebut tidak ditemukan tetapi permintaan akan memberi kita tanggapan.
+
+10
+00:00:40,200 --> 00:00:43,170
+Jadi di sini mari kita lanjutkan dan membuat beberapa pesan.
+
+11
+00:00:43,170 --> 00:00:45,330
+Jadi buat permintaan baca blog.
+
+12
+00:00:45,450 --> 00:00:46,610
+Dan apa yang kita inginkan dari sana.
+
+13
+00:00:46,630 --> 00:00:53,300
+Yah mungkin kita hanya ingin ID blog string ID garis bawah Blug sama dengan satu.
+
+14
+00:00:53,400 --> 00:00:54,900
+Dan itulah yang kita dapatkan darinya.
+
+15
+00:00:55,140 --> 00:01:02,910
+Dan mungkin respons Blug baca yang kita inginkan darinya akan menjadi Blug itu sendiri yang masuk akal karena kami
+
+16
+00:01:03,360 --> 00:01:09,560
+meminta ID Blug dan kami ingin konten yang memblokir blognya sama dengan satu ekson OK.
+
+17
+00:01:09,570 --> 00:01:11,060
+Jadi ini cukup bagus.
+
+18
+00:01:11,070 --> 00:01:13,530
+Sekarang kita harus maju dan menghasilkan kode kita.
+
+19
+00:01:13,530 --> 00:01:18,720
+Jadi ayo pergi dan lakukan itu sekarang di antarmuka baris perintah kami yang ada di sini.
+
+20
+00:01:19,150 --> 00:01:19,560
+BAIK.
+
+21
+00:01:19,570 --> 00:01:26,610
+Bisa saja telah dihasilkan dan sekarang kita dapat melanjutkan ke langkah berikutnya dan pada dasarnya mengimplementasikan server kami.
+
+22
+00:01:27,180 --> 00:01:31,940
+Jadi fungsi yang harus diimplementasikan adalah membaca Blug dan untuk ini untuk mengetahui persis tanda
+
+23
+00:01:32,210 --> 00:01:37,760
+tangan fungsi mari kita pergi lagi ke layanan blog kami dan di sini adalah fungsi blok baca yang ditambahkan.
+
+24
+00:01:37,920 --> 00:01:40,540
+Jadi saya salin dan tempel ini di sini.
+
+25
+00:01:40,590 --> 00:01:48,300
+Dan seperti sebelumnya akan membuat fungsi pada server yang disebut Read Blug dan kita akan memiliki konteksnya.
+
+26
+00:01:48,420 --> 00:01:50,630
+Yah itu disebut CTX.
+
+27
+00:01:51,510 --> 00:01:58,220
+Dan kemudian permintaan Blug baca akan disebut REC dan akan Blug membaca permintaan blaw.
+
+28
+00:01:58,230 --> 00:02:01,870
+Dan akhirnya untuk respon juga prefix diblokir.
+
+29
+00:02:02,400 --> 00:02:04,820
+OK, mari kita terapkan fungsi ini sekarang.
+
+30
+00:02:04,960 --> 00:02:10,470
+Dan ternyata tidak terlalu sulit untuk jujur karena membaca Blug sebenarnya cukup
+
+31
+00:02:10,470 --> 00:02:11,310
+mudah.
+
+32
+00:02:11,490 --> 00:02:16,770
+Satu hal yang akan sulit adalah berurusan dengan kasus kesalahan kalau-kalau ada yang salah kalau-kalau kita tidak
+
+33
+00:02:17,130 --> 00:02:21,280
+dapat menemukan blog atau kita tidak dapat mengurai ID dan hal-hal semacam itu.
+
+34
+00:02:21,300 --> 00:02:23,140
+Jadi bagaimana kalau kita lakukan ini dengan benar.
+
+35
+00:02:23,430 --> 00:02:31,310
+Yah energi Blug sama dengan permintaan yang mendapatkan ID Blug.
+
+36
+00:02:31,370 --> 00:02:31,550
+Baiklah.
+
+37
+00:02:31,550 --> 00:02:32,840
+Itu awal yang bagus.
+
+38
+00:02:32,840 --> 00:02:36,030
+Sekarang Blug perlu dikonversi ke ID objek.
+
+39
+00:02:36,380 --> 00:02:40,420
+Jika Anda ingat dari sebelumnya kami menyimpulkan jenis ID sebagai ID objek.
+
+40
+00:02:40,820 --> 00:02:43,460
+Jadi ID objek hanya tipe B pada.
+
+41
+00:02:43,490 --> 00:02:47,060
+Jadi ada cara bagi kita untuk membuat ID objek saat bepergian.
+
+42
+00:02:47,480 --> 00:02:55,790
+Jadi yang kita lakukan adalah mengatakan ID kita akan sama dengan dan akan ada kesalahan kalau-kalau
+
+43
+00:02:55,790 --> 00:03:01,480
+gagal id objek dari Hex dan kemudian kita Besen blog.
+
+44
+00:03:01,850 --> 00:03:09,630
+Jadi sebelum kami memiliki dua hex Jadi ketika kami melakukan dot Hex yang memberi kami ide sebagai string sebagai heksadesimal.
+
+45
+00:03:09,950 --> 00:03:15,050
+Dan sekarang jelas ada dari hecks di mana kita bisa melewati apa pun yang kita inginkan.
+
+46
+00:03:15,050 --> 00:03:19,700
+Jadi ID buku tidak memiliki titik dua karena merupakan variabel baru.
+
+47
+00:03:19,730 --> 00:03:20,810
+BAIK.
+
+48
+00:03:22,170 --> 00:03:27,860
+Jadi dia harus menjadi Blug Id hanya senang atau tidak apa-apa.
+
+49
+00:03:27,930 --> 00:03:28,470
+Luar biasa.
+
+50
+00:03:28,730 --> 00:03:36,140
+Jadi sekarang kita punya ide dan pada dasarnya kita menyimpulkan dan membuat objek id objek dari representasi heksadesimal yang
+
+51
+00:03:36,140 --> 00:03:40,250
+disebut Blog ID dan ini memberikan ID atau kesalahan.
+
+52
+00:03:40,550 --> 00:03:42,110
+Jadi ini cukup bagus.
+
+53
+00:03:42,110 --> 00:03:44,110
+Sekarang yang harus kita lakukan adalah mengatasi kesalahan itu.
+
+54
+00:03:44,120 --> 00:03:50,780
+Jadi jika kesalahan tidak tahu apa yang bisa terjadi dengan baik, ternyata jika kita mendapatkan kesalahan dari
+
+55
+00:03:50,870 --> 00:03:55,400
+fungsi ini, itu berarti apa yang kita lewati bukanlah string heksadesimal.
+
+56
+00:03:55,520 --> 00:03:57,110
+Itu yang dikatakan hari ini Mangu menjadi.
+
+57
+00:03:57,440 --> 00:04:01,190
+Jadi dalam hal ini klien tidak mengirimi kami sesuatu yang benar.
+
+58
+00:04:01,310 --> 00:04:10,540
+Jadi kita akan mengatakan status bahwa sebelum dan kode itu sendiri dibuat karena itu argumen yang valid.
+
+59
+00:04:10,940 --> 00:04:15,780
+Argumen tidak valid karena klien tidak mengirim argumen yang benar.
+
+60
+00:04:15,830 --> 00:04:18,650
+Itu mengirimi kami sesuatu yang salah yang tidak bisa kami uraikan.
+
+61
+00:04:18,770 --> 00:04:28,740
+Dan kemudian dalam hal pesan kesalahan karena kami ingin bersikap ramah kami akan mengatakan Sprint f tidak dapat ID
+
+62
+00:04:28,980 --> 00:04:33,850
+bagian dan kemudian biaya harus datang penelepon pada akhirnya.
+
+63
+00:04:33,880 --> 00:04:37,060
+Dan di sini kita mulai, kita sudah berurusan dengan amnestik itu.
+
+64
+00:04:37,120 --> 00:04:40,590
+Sekarang mari kita terus maju dan melihat apa yang terjadi.
+
+65
+00:04:40,720 --> 00:04:47,500
+Sekarang kita memiliki objek dan sekarang kita perlu mengambil objek dari Heebee yang baik mengenai data yang
+
+66
+00:04:47,500 --> 00:04:48,150
+sesuai.
+
+67
+00:04:48,430 --> 00:04:54,940
+Jadi saya akan melakukan data dan pada dasarnya saya akan membuat struktur kosong atau
+
+68
+00:04:54,940 --> 00:05:03,300
+membuat struct kosong saya akan membuat beberapa data dan itu akan menjadi pointer dari item blog dan akan mengosongkannya.
+
+69
+00:05:03,470 --> 00:05:08,300
+Dan pada dasarnya data yang akan dibaca itu akan dimasukkan ke dalam data itu.
+
+70
+00:05:08,470 --> 00:05:10,570
+Sepertinya saya kehilangan sesuatu di sini.
+
+71
+00:05:10,660 --> 00:05:12,170
+Ya saya jelas hilang.
+
+72
+00:05:12,310 --> 00:05:14,370
+Dan orangtua ini.
+
+73
+00:05:14,380 --> 00:05:20,830
+Dan omong-omong di sini saya hanya akan mengatakan di bagian paling atas kita hanya akan menambahkan fakta bahwa kita memiliki permintaan
+
+74
+00:05:20,830 --> 00:05:21,550
+Blug baca.
+
+75
+00:05:21,640 --> 00:05:22,030
+BAIK.
+
+76
+00:05:22,120 --> 00:05:23,030
+Luar biasa.
+
+77
+00:05:23,500 --> 00:05:28,010
+Jadi itu dipanggil turun dan jadi kami memiliki struct kosong
+
+78
+00:05:28,760 --> 00:05:35,040
+ini dan kami pada dasarnya harus mengisi fungsinya karena akan dipanggil Lihat yang menemukan satu.
+
+79
+00:05:35,190 --> 00:05:40,900
+Dan sehingga tidak melihat koleksi itu yang menemukan satu dan menemukan satu pada dasarnya akan menemukan dokumen untuk
+
+80
+00:05:40,900 --> 00:05:41,480
+kita.
+
+81
+00:05:41,530 --> 00:05:44,270
+Kita harus melewati konteks sehingga akan menjadi konteks.
+
+82
+00:05:44,270 --> 00:05:46,930
+Latar belakang itu seperti sebelumnya.
+
+83
+00:05:47,170 --> 00:05:53,210
+Pokoknya jika Anda melewatkan filter dan beberapa opsi opsi yang tidak kita butuhkan dan filter itu adalah sesuatu yang baru.
+
+84
+00:05:53,440 --> 00:05:58,330
+Jadi jika kita melihat dokumentasi atau menemukan yang kita lihat bahwa filter adalah antarmuka dan antarmuka entri, jadi kita harus mencari
+
+85
+00:05:58,330 --> 00:06:01,680
+tahu apa yang Anda masukkan ke sana dan butuh beberapa saat untuk mengetahuinya.
+
+86
+00:06:01,990 --> 00:06:09,340
+Tetapi dikatakan OK pada dasarnya Anda memberikan dokumen yang ditransfer seperti basis dan B beberapa dokumen dan ini akan menyaring apa
+
+87
+00:06:09,340 --> 00:06:13,400
+yang kami butuhkan di Magdi menjadi dan mengembalikan ini kepada Anda.
+
+88
+00:06:13,540 --> 00:06:18,660
+Jadi filter hanyalah satu hal yang dapat mengambil banyak waktu untuk memperbaikinya.
+
+89
+00:06:18,670 --> 00:06:22,790
+Jadi ini untuk Anda berdasarkan dokumen baru.
+
+90
+00:06:23,260 --> 00:06:26,740
+Dan ini berasal dari dokumentasi sebenarnya jika Anda melihat dokumentasi Anda dapat membolak-baliknya
+
+91
+00:06:26,740 --> 00:06:28,590
+dan Anda akan melihat cara kerjanya.
+
+92
+00:06:28,870 --> 00:06:33,220
+Dan kemudian kita akan melakukan lagu yang Anda lihat objek itu.
+
+93
+00:06:35,150 --> 00:06:41,320
+Id menggarisbawahi ID dan kemudian ID itu sendiri yang baru saja kita uraikan.
+
+94
+00:06:41,320 --> 00:06:44,460
+Jadi saya jelaskan saja baris kode itu karena itu bisa sangat rumit.
+
+95
+00:06:44,590 --> 00:06:48,440
+Filter harus didasarkan pada dokumen yang akan menjadi beberapa dokumen baru.
+
+96
+00:06:48,670 --> 00:06:50,550
+Dan pada dasarnya Anda lulus dalam kondisi.
+
+97
+00:06:50,860 --> 00:06:58,480
+Dan di sini kita katakan kita ingin id objek dengan nama bidang garis bawah ID sama dengan ID yang baru
+
+98
+00:06:58,540 --> 00:07:02,490
+saja kita simpulkan dari apa yang diteruskan dari permintaan.
+
+99
+00:07:02,560 --> 00:07:04,260
+Dan jadi ini pada dasarnya adalah pernyataan di mana.
+
+100
+00:07:04,270 --> 00:07:04,810
+Baik.
+
+101
+00:07:04,840 --> 00:07:06,180
+Sangat sangat sederhana.
+
+102
+00:07:06,580 --> 00:07:11,480
+Jadi yang kita lakukan sekarang adalah kita dapat menyaring dan mengumpulkan secara pribadi dan tidak menemukannya.
+
+103
+00:07:11,710 --> 00:07:15,190
+Sekarang mari kita cari satu dan lihat apa yang terjadi di sana.
+
+104
+00:07:15,190 --> 00:07:21,850
+Jadi kita akan gulir ke bawah dan melihat itu mengembalikan hasil dokumen yang masuk akal.
+
+105
+00:07:21,850 --> 00:07:25,990
+Jadi mari kita pergi dan melihat hasil dokumen sehingga kita akan
+
+106
+00:07:31,340 --> 00:07:33,870
+mengatakan hasil sama dengan ini OK.
+
+107
+00:07:34,220 --> 00:07:35,280
+Tidak, ini bukan pizza.
+
+108
+00:07:35,330 --> 00:07:39,310
+Konteks latar belakang yang tidak ditentukan untuk beberapa alasan.
+
+109
+00:07:39,390 --> 00:07:43,340
+Dan ternyata ya memang saya baru saja membuat kesalahan ketik itu kembali dengan Anda.
+
+110
+00:07:43,680 --> 00:07:44,680
+BAIK.
+
+111
+00:07:44,730 --> 00:07:52,110
+Jadi kami memiliki hasil ini dan hasilnya adalah tipe hasil dokumen dan tipe ini mengandung kesalahan atau
+
+112
+00:07:52,200 --> 00:07:53,010
+kursor.
+
+113
+00:07:53,010 --> 00:07:54,980
+Dan banyak metode di dalamnya.
+
+114
+00:07:55,380 --> 00:08:02,280
+Jadi cara yang tepat untuk melakukan sesuatu sekarang adalah dengan melakukan rest dot de-code dan Anda harus melewati sebuah antarmuka
+
+115
+00:08:02,280 --> 00:08:05,160
+dan antarmuka adalah data yang dibuat dari sebelumnya.
+
+116
+00:08:05,160 --> 00:08:11,610
+Jadi pada dasarnya kita akan mendekode semua hasil ke dalam data tersebut, Phooka, fungsi dekode.
+
+117
+00:08:11,760 --> 00:08:15,560
+Di sini dikatakan bahwa kode akan berusaha untuk men-decode dokumen pertama menjadi V.
+
+118
+00:08:15,600 --> 00:08:18,130
+Jadi yang kami lewati adalah ada kesalahan.
+
+119
+00:08:18,270 --> 00:08:20,330
+Itu akan dikembalikan akan dikembalikan.
+
+120
+00:08:20,430 --> 00:08:23,760
+Dan jika tidak ada dokumen maka tidak ada dokumen yang dikembalikan.
+
+121
+00:08:23,760 --> 00:08:26,780
+Jadi pada dasarnya ini dapat mengembalikan kesalahan sendiri.
+
+122
+00:08:26,790 --> 00:08:29,990
+Jadi mari kita kembali ke server kita dan kita harus berurusan dengan kesalahan itu.
+
+123
+00:08:30,030 --> 00:08:41,140
+Untuk ini kita hanya akan melakukan satu baris jika dengan kesalahan jika kesalahan karena ini maka kita harus melakukan udara sama dengan tidak sama dengan
+
+124
+00:08:41,230 --> 00:08:41,820
+tidak.
+
+125
+00:08:41,840 --> 00:08:47,180
+Jadi ini saya akan memeriksa apakah kesalahannya Anda harus tahu ini adalah sintaks singkatan.
+
+126
+00:08:47,530 --> 00:08:56,130
+Mereka akan berkata OK Will akan mengembalikan kesalahan kepada Anda, Anda melihat klien dan status f akan menjadi.
+
+127
+00:08:56,290 --> 00:09:00,220
+Yah kami belum menemukan dokumen menulis kode tetapi tidak ditemukan.
+
+128
+00:09:00,490 --> 00:09:02,960
+Dan kemudian pesan kesalahan itu sendiri.
+
+129
+00:09:03,010 --> 00:09:16,790
+Yah kita bisa mengatakan cetak anti-pemotongan jika tidak dapat menemukan LUGG dengan ID tertentu seperti itu.
+
+130
+00:09:16,910 --> 00:09:17,470
+BAIK.
+
+131
+00:09:17,790 --> 00:09:23,520
+Sepertinya kesalahan yang dikembalikan tidak dapat ditemukan dan jadi mungkin saya juga akan melampirkan
+
+132
+00:09:24,180 --> 00:09:25,560
+pesan dari Mangieri.
+
+133
+00:09:25,620 --> 00:09:28,340
+Di sini kita pergi dan kami akan menambahkan komentar di akhir.
+
+134
+00:09:28,590 --> 00:09:29,310
+Jadi ini sempurna.
+
+135
+00:09:29,310 --> 00:09:33,510
+Kami mengatakan hei, lihat itu dan aku akan selalu melewatkan parameter itu.
+
+136
+00:09:33,540 --> 00:09:34,250
+Itu bagian dari ini.
+
+137
+00:09:34,260 --> 00:09:34,510
+BAIK.
+
+138
+00:09:34,530 --> 00:09:37,510
+Kami katakan di sini jika kami tidak dapat memecahkan kode data.
+
+139
+00:09:37,710 --> 00:09:38,790
+Sesuatu telah salah.
+
+140
+00:09:38,970 --> 00:09:44,430
+Jadi harus ada objek yang tidak ditemukan karena kami mencoba menemukan satu fungsi dalam hal ini saya akan
+
+141
+00:09:44,430 --> 00:09:48,190
+mengembalikan kesalahan yang tidak ditemukan kepada Anda dan kemudian kami baik-baik saja.
+
+142
+00:09:48,360 --> 00:09:55,230
+Sekarang kita seandainya semuanya berfungsi sehingga jika kode ini tidak dipanggil maka kita pada dasarnya telah membaca
+
+143
+00:09:55,230 --> 00:09:58,750
+data dan mengubahnya menjadi data item blog kita.
+
+144
+00:09:59,100 --> 00:10:07,160
+Jadi yang bisa kita lakukan adalah tidak mengembalikan jawaban jadi kita harus mengembalikan Blug PV yang membaca respons Blug.
+
+145
+00:10:07,650 --> 00:10:15,260
+Dan yang dibutuhkan adalah sebuah blog yang harus disimpulkan dari data ini.
+
+146
+00:10:15,530 --> 00:10:23,960
+Jadi jika kita melihatnya dengan baik bersama Anda dan Blug P. B. titik dan Blug dan buka.
+
+147
+00:10:24,060 --> 00:10:25,880
+Dan sekarang kita harus mengembalikan data.
+
+148
+00:10:25,920 --> 00:10:35,760
+Jadi ID akan disebut data yang ID ID penulis akan disebut data dari id konten berasal
+
+149
+00:10:36,420 --> 00:10:42,230
+dari data konten dan judul berasal dari data.
+
+150
+00:10:42,420 --> 00:10:47,870
+Judul ini terlihat bagus kita di pelatihan dan datang dan kita mulai.
+
+151
+00:10:48,150 --> 00:10:50,070
+Jelas saya selalu salah ketika saya melakukan hal-hal ini.
+
+152
+00:10:50,070 --> 00:10:57,440
+Ini bukan Neal ini ini paku dan ini tidak berfungsi karena data ID itu akan menjadi cangkul dan
+
+153
+00:10:57,440 --> 00:11:04,580
+oh ID objek ID jadi Anda harus melakukan X untuk mendapatkan representasi heksadesimal dan hanya itu untuk
+
+154
+00:11:04,580 --> 00:11:05,210
+server.
+
+155
+00:11:05,260 --> 00:11:06,750
+Atau baca respons Blug.
+
+156
+00:11:06,770 --> 00:11:13,020
+Jadi kita harus bisa meluncurkan server kita hanya untuk memastikan bahwa semuanya sudah terkompilasi dengan baik.
+
+157
+00:11:13,280 --> 00:11:14,870
+Dan ya server kami dimulai.
+
+158
+00:11:14,870 --> 00:11:19,130
+Jadi sekarang kita harus membaca macam-macam di kuliah berikutnya hanya untuk memastikan bahwa kita bisa membaca blog SOSINA
+
+159
+00:11:19,160 --> 00:11:19,800
+kuliah berikutnya.
+

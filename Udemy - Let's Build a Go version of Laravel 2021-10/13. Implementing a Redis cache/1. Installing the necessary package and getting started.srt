@@ -1,0 +1,659 @@
+1
+00:00:01,260 --> 00:00:07,080
+So in this section of the course, we're going to build the first of two different caching architectures
+
+2
+00:00:07,080 --> 00:00:11,600
+for our celebrity house project, and a cache is incredibly useful.
+
+3
+00:00:11,610 --> 00:00:17,070
+It's a storage system which could be a memory based cache.
+
+4
+00:00:17,070 --> 00:00:19,600
+It could be a database, it could be any kind of cache you want.
+
+5
+00:00:19,620 --> 00:00:21,180
+There are many, many to choose from.
+
+6
+00:00:22,080 --> 00:00:27,030
+But in this section, we're going to create a cache using Redis, and you might have been asking yourself
+
+7
+00:00:27,030 --> 00:00:29,850
+if you look at that composer file for Docker.
+
+8
+00:00:30,270 --> 00:00:31,770
+Why does he have Redis in there?
+
+9
+00:00:31,770 --> 00:00:34,770
+And you probably skipped ahead in the syllabus and saw what we're talking about.
+
+10
+00:00:34,780 --> 00:00:40,770
+And of course, now is when we start to use it, because Redis is a great, incredibly fast, memory
+
+11
+00:00:40,770 --> 00:00:42,540
+based cache caching system.
+
+12
+00:00:43,080 --> 00:00:44,850
+It's a key value store is what it really is.
+
+13
+00:00:45,150 --> 00:00:51,260
+We're going to use it as a cache, and it periodically writes the contents of its storage of its cash
+
+14
+00:00:51,270 --> 00:00:53,630
+or of its Redis database to disk.
+
+15
+00:00:53,640 --> 00:00:54,630
+So you don't lose things.
+
+16
+00:00:54,630 --> 00:00:58,800
+Or at least if you have a sudden power outage or whatever, you're not going to lose very much.
+
+17
+00:00:58,800 --> 00:01:01,140
+You'll at least have it written to disk on a regular basis.
+
+18
+00:01:02,100 --> 00:01:05,460
+So, of course, to use this caching system, we're going to build.
+
+19
+00:01:05,460 --> 00:01:07,710
+We need a driver that connects to us.
+
+20
+00:01:08,010 --> 00:01:12,270
+So we're going to use the one that is basically the standard in the go world.
+
+21
+00:01:12,780 --> 00:01:20,250
+And it's called it's a GitHub dot com slash go module slash redi-go, which is a great name and it's
+
+22
+00:01:20,250 --> 00:01:21,510
+really, really easy to install.
+
+23
+00:01:21,510 --> 00:01:22,230
+So let's do that.
+
+24
+00:01:22,230 --> 00:01:28,470
+Let's come down here and copy the installation string and go back to our celebrities project and make
+
+25
+00:01:28,470 --> 00:01:30,420
+sure it is the celebrity's project you're in.
+
+26
+00:01:30,840 --> 00:01:36,480
+Open your terminal and I'm going to clear the screen and paste that and go get command right in there
+
+27
+00:01:37,200 --> 00:01:38,490
+and that will go and get it.
+
+28
+00:01:38,670 --> 00:01:42,300
+Copy the necessary reference to the Go Mod file, and now we can use it.
+
+29
+00:01:43,350 --> 00:01:48,670
+So we're going to build the cache as its own package with insularity.
+
+30
+00:01:49,080 --> 00:01:53,610
+So I'm going to hide the CMT folder or close it, and I'm going to create a new directory right at the
+
+31
+00:01:53,610 --> 00:01:55,500
+root level of the celebrity's project.
+
+32
+00:01:55,530 --> 00:01:58,380
+And not surprisingly, I am going to call it cache.
+
+33
+00:01:59,910 --> 00:02:06,270
+And inside of that, we'll create the very first file in this and it's going to be called, you guessed
+
+34
+00:02:06,270 --> 00:02:10,260
+it, Kasuga package cache.
+
+35
+00:02:11,580 --> 00:02:17,760
+And the very first thing I'm going to do is declare an interface because we're going to build a Redis
+
+36
+00:02:17,760 --> 00:02:19,070
+cache in this section.
+
+37
+00:02:19,080 --> 00:02:26,100
+And later on, we're going to build another cache that uses this interface that stores it to not introduce.
+
+38
+00:02:26,100 --> 00:02:29,850
+We're not going to require a server at all, and we're not going to do it the way that they do in the
+
+39
+00:02:29,850 --> 00:02:32,730
+Laravel world, which is a file based cache.
+
+40
+00:02:33,270 --> 00:02:37,800
+We're going to use an embedded database called Badger, and we'll get to that in a while.
+
+41
+00:02:37,830 --> 00:02:39,220
+But right now we're worried about race.
+
+42
+00:02:39,240 --> 00:02:44,310
+So let's define our type and this type is an interface, and I'm going to call it cache.
+
+43
+00:02:44,640 --> 00:02:45,630
+It's an interface.
+
+44
+00:02:46,080 --> 00:02:53,580
+And all we do and here is list all of the functions that something must implement in order to satisfy
+
+45
+00:02:53,580 --> 00:02:54,320
+this interface.
+
+46
+00:02:54,330 --> 00:02:58,890
+And of course, this is Go's interface system, which I think is incredibly simple.
+
+47
+00:02:58,920 --> 00:02:59,440
+I love it.
+
+48
+00:02:59,460 --> 00:03:03,880
+It's vastly superior, I think, to Java, but that is a personal preference.
+
+49
+00:03:03,900 --> 00:03:05,850
+You may disagree with me, and that's just fine.
+
+50
+00:03:06,720 --> 00:03:08,820
+So we're going to have to have something called has.
+
+51
+00:03:09,120 --> 00:03:11,430
+Does my cache have some string?
+
+52
+00:03:11,640 --> 00:03:12,120
+OK.
+
+53
+00:03:12,150 --> 00:03:15,820
+And it will return a Boolean and potentially an error.
+
+54
+00:03:15,840 --> 00:03:17,490
+So that's a function we're going to have to have.
+
+55
+00:03:18,150 --> 00:03:21,900
+And it's also going to have to have get get something from the cache string.
+
+56
+00:03:21,940 --> 00:03:23,340
+That'll be the key to look for.
+
+57
+00:03:23,910 --> 00:03:27,240
+And that can be and it will return something.
+
+58
+00:03:27,360 --> 00:03:28,500
+We don't know what it's going to be.
+
+59
+00:03:28,510 --> 00:03:34,080
+So we'll just call it interface because you can store anything in a cache and potentially in error.
+
+60
+00:03:34,680 --> 00:03:40,950
+That's the second thing we're going to have to have set to set something in the cache string will be
+
+61
+00:03:40,950 --> 00:03:41,400
+the key.
+
+62
+00:03:42,420 --> 00:03:46,440
+The what we want to store in there is going to be an interface again because we don't know what is going
+
+63
+00:03:46,440 --> 00:03:46,650
+to be.
+
+64
+00:03:46,650 --> 00:03:52,220
+It can be literally anything and dot dot dot hint.
+
+65
+00:03:52,800 --> 00:03:56,970
+And this is where we're going to put the expiry for a cache because we can put something in the cache
+
+66
+00:03:56,970 --> 00:04:02,670
+and say this is only good for 60 seconds or this is good for eighty six thousand four hundred seconds,
+
+67
+00:04:02,670 --> 00:04:03,880
+which is a really long time.
+
+68
+00:04:03,900 --> 00:04:04,320
+Look it up.
+
+69
+00:04:05,160 --> 00:04:11,070
+But whatever the case may be, if we want to, we can optionally specify an expiry for something.
+
+70
+00:04:11,070 --> 00:04:15,420
+We set the cache and all this is going to return is an error or nil if there is no error.
+
+71
+00:04:16,200 --> 00:04:18,180
+So has get and set.
+
+72
+00:04:18,600 --> 00:04:23,880
+We're also going to want forget, get it out of the cache and just forget my key, whatever you named
+
+73
+00:04:23,880 --> 00:04:27,030
+it, when you threw it in there, and that just returns potentially in error.
+
+74
+00:04:27,840 --> 00:04:32,250
+And finally, empty by match.
+
+75
+00:04:33,030 --> 00:04:38,190
+This is where we can forget everything in the cache by some pattern.
+
+76
+00:04:38,220 --> 00:04:41,880
+Say everything that starts with the letter A. or whatever the case may be.
+
+77
+00:04:42,210 --> 00:04:48,150
+That's an easy one to have and are useful, and that will take one parameter string and returns an error.
+
+78
+00:04:49,290 --> 00:04:49,920
+Potentially.
+
+79
+00:04:50,430 --> 00:04:52,110
+And then just empty everything in the cash.
+
+80
+00:04:52,680 --> 00:04:55,620
+And that takes no parameters and it returns an error, potentially.
+
+81
+00:04:56,190 --> 00:04:57,300
+So that's our interface.
+
+82
+00:04:57,990 --> 00:05:03,420
+Now, of course, what we're going to have to do is to actually implement all of that functionality
+
+83
+00:05:03,570 --> 00:05:04,170
+in Redis.
+
+84
+00:05:04,440 --> 00:05:05,400
+And it's not that difficult.
+
+85
+00:05:05,640 --> 00:05:09,030
+We'll start with one function right now and we'll move on in the next lecture.
+
+86
+00:05:09,900 --> 00:05:15,810
+So the first thing I'm going to have to do before I actually start writing the has get set and so on
+
+87
+00:05:15,810 --> 00:05:16,350
+functions.
+
+88
+00:05:16,710 --> 00:05:22,350
+So I'm going to need a couple of types and the first one is a type called Redis cache.
+
+89
+00:05:23,160 --> 00:05:24,910
+OK, because that's what we're working on this time.
+
+90
+00:05:24,930 --> 00:05:27,720
+It's just a struct and it has a couple of members.
+
+91
+00:05:28,020 --> 00:05:30,630
+First of all, what's our connection to Reddit's Redis?
+
+92
+00:05:30,750 --> 00:05:38,370
+So I'll call that con, and that's actually a dot or a pointer to readies the package we just imported
+
+93
+00:05:38,370 --> 00:05:39,270
+a little while ago.
+
+94
+00:05:39,480 --> 00:05:40,590
+And that's it right there.
+
+95
+00:05:42,600 --> 00:05:44,130
+Pool a pool of connections.
+
+96
+00:05:44,220 --> 00:05:44,580
+OK.
+
+97
+00:05:45,420 --> 00:05:50,610
+And the second thing I'm going to put in there and this is purely for safety as a prefix, something
+
+98
+00:05:50,610 --> 00:05:56,340
+I'm going to I don't care what you call the various keys you use to store values in the cache.
+
+99
+00:05:56,670 --> 00:06:04,350
+I'm going to prefix them with something unique because the reality is you might have two or more applications
+
+100
+00:06:04,770 --> 00:06:11,280
+using Redis and they both have the cash and you put one in there called temp ID.
+
+101
+00:06:11,790 --> 00:06:15,020
+And then the other application puts one in there called temp ID.
+
+102
+00:06:15,810 --> 00:06:19,470
+You delete it from one by using the Forget function, and it's gone from both.
+
+103
+00:06:19,590 --> 00:06:22,920
+But if we give them a unique prefix, that problem goes away.
+
+104
+00:06:23,210 --> 00:06:23,970
+That's just a string.
+
+105
+00:06:24,360 --> 00:06:24,690
+OK.
+
+106
+00:06:25,590 --> 00:06:26,580
+So there's my first type.
+
+107
+00:06:27,150 --> 00:06:29,890
+My second type is what am I going to put in the cache?
+
+108
+00:06:29,910 --> 00:06:34,860
+Well, I'm going to call those entry for cache entry, and that's going to be nothing more than a map
+
+109
+00:06:34,860 --> 00:06:40,200
+that holds values so we can serialism because before we throw something in the cache, we might have,
+
+110
+00:06:40,200 --> 00:06:45,510
+well, we are going to serialize it in every case just so we can store it there, pull it back out and
+
+111
+00:06:45,510 --> 00:06:48,270
+then we answer, realize it, which is a really straightforward process.
+
+112
+00:06:48,720 --> 00:06:56,610
+So this is nothing more than a map with a key of string and a value of interface like that.
+
+113
+00:06:57,510 --> 00:07:04,560
+Now let's create nothing more than a simple check to see if a given key exists in our Redis cache.
+
+114
+00:07:04,590 --> 00:07:06,360
+In other words, the hash hash function.
+
+115
+00:07:06,390 --> 00:07:08,820
+We can't try it until we get a connection and all that sort of thing.
+
+116
+00:07:08,970 --> 00:07:12,060
+But we can write the first function just to get a sense for how this is going to work.
+
+117
+00:07:12,750 --> 00:07:17,430
+It's nothing more than a function with a receiver of I don't want to call it C for cash.
+
+118
+00:07:17,460 --> 00:07:23,220
+A pointer to read his cache and the function has to be called has as.
+
+119
+00:07:23,400 --> 00:07:28,380
+In order to satisfy that portion of the interface, it has to take one argument, which I'll call is
+
+120
+00:07:28,380 --> 00:07:33,630
+TR of type string, and it has to return the Boolean and potentially an error.
+
+121
+00:07:35,250 --> 00:07:35,550
+OK.
+
+122
+00:07:36,750 --> 00:07:43,140
+So to make this work, what we're going to do, first of all, is take that value, steer the key that
+
+123
+00:07:43,140 --> 00:07:47,100
+I'm looking for, and I'm going to prepend my prefix to it like this.
+
+124
+00:07:47,580 --> 00:07:55,110
+So I'll say key is assigned the value of format as print f and I'll give it my format string and it
+
+125
+00:07:55,110 --> 00:07:58,890
+will be a string followed by a colon, followed by another string.
+
+126
+00:07:59,820 --> 00:08:03,000
+And my substitutions are c dot prefix.
+
+127
+00:08:03,160 --> 00:08:08,190
+What my unique prefix that I'm going to have for this application and the string that was passed.
+
+128
+00:08:08,580 --> 00:08:10,170
+So that's really the key.
+
+129
+00:08:10,170 --> 00:08:11,810
+I'm looking forward to the end user.
+
+130
+00:08:11,820 --> 00:08:17,670
+They think they're looking for whatever they pass me, but I'm going to look for my prefix, followed
+
+131
+00:08:17,670 --> 00:08:21,120
+by a colon, followed by whatever they gave me, just for safety.
+
+132
+00:08:21,360 --> 00:08:21,720
+OK.
+
+133
+00:08:22,890 --> 00:08:24,060
+And then I'll get a connection.
+
+134
+00:08:24,330 --> 00:08:27,740
+Con is assigned second.
+
+135
+00:08:27,870 --> 00:08:29,100
+That's the connection pool.
+
+136
+00:08:29,100 --> 00:08:30,900
+The Reds connection cool again.
+
+137
+00:08:31,650 --> 00:08:32,940
+So I get one and get a connection.
+
+138
+00:08:33,660 --> 00:08:39,000
+And then I say, defer conduct close because I'm going to close that connection and hand it back to
+
+139
+00:08:39,000 --> 00:08:40,470
+the pool when I'm finished with it.
+
+140
+00:08:41,640 --> 00:08:42,930
+And now I do the actual work.
+
+141
+00:08:43,170 --> 00:08:43,710
+OK.
+
+142
+00:08:44,370 --> 00:08:50,130
+And error are assigned the value of red asked BOOL, which is built right into the redi-go package.
+
+143
+00:08:50,490 --> 00:08:55,770
+And I say use the connection con and execute this command do.
+
+144
+00:08:56,040 --> 00:09:01,680
+And then I execute the Reds command, which is just exists in all caps like that.
+
+145
+00:09:02,640 --> 00:09:06,090
+And the second parameter is the key that I'm looking for.
+
+146
+00:09:06,510 --> 00:09:06,840
+OK.
+
+147
+00:09:08,280 --> 00:09:11,520
+And of course, I have to check for an error if error is not equal to nil.
+
+148
+00:09:12,210 --> 00:09:18,570
+Then I'll return false and the error.
+
+149
+00:09:20,190 --> 00:09:23,250
+Otherwise I return return.
+
+150
+00:09:23,490 --> 00:09:25,760
+OK, which will be either true or false.
+
+151
+00:09:25,770 --> 00:09:31,140
+True, if I can find that key in the cache, false of the can't and nil.
+
+152
+00:09:32,340 --> 00:09:36,360
+So as you can see, it's actually not that difficult to work with refs.
+
+153
+00:09:36,630 --> 00:09:40,890
+Now, if you happen to be familiar with Redis and you're used to working with it in the command line,
+
+154
+00:09:40,890 --> 00:09:42,150
+you're going to have no problem at all.
+
+155
+00:09:42,690 --> 00:09:48,270
+But even if you don't, the commands we're going to be using over time are really, really simple.
+
+156
+00:09:48,270 --> 00:09:48,810
+And they're actually.
+
+157
+00:09:48,980 --> 00:09:53,970
+Readable, as readable as one might expect from a key value database, which is not that readable,
+
+158
+00:09:54,270 --> 00:09:55,710
+but not that bad.
+
+159
+00:09:56,490 --> 00:09:57,870
+OK, this is a good start.
+
+160
+00:09:58,590 --> 00:10:03,140
+Now we're going to have to implement get set, forget empty by match and empty.
+
+161
+00:10:03,240 --> 00:10:06,780
+And we're also going to have to get our collection pool if it exists.
+
+162
+00:10:06,990 --> 00:10:10,740
+And that means populating some values in the dot on file.
+
+163
+00:10:10,830 --> 00:10:13,140
+On the other application in my app.
+
+164
+00:10:13,650 --> 00:10:18,540
+And it also means connecting to Redis insularity itself.
+
+165
+00:10:18,630 --> 00:10:21,390
+So we'll get started on all of that in the next lecture.

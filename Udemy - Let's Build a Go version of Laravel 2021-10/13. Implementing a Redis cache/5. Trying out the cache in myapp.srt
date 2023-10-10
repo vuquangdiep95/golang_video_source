@@ -1,0 +1,719 @@
+1
+00:00:01,380 --> 00:00:05,730
+So we have our functions written for our cash, and we've written the tests for our cash, and it's
+
+2
+00:00:05,730 --> 00:00:08,100
+pretty much time to try this out on the front end.
+
+3
+00:00:09,000 --> 00:00:13,890
+And what we're going to do is we're going to create a page standard jet template that gives us a bunch
+
+4
+00:00:13,890 --> 00:00:19,490
+of methods of putting something into the cash, modifying its content, checking to see if it exists,
+
+5
+00:00:19,500 --> 00:00:22,860
+deleting it, all the core things that we've implemented.
+
+6
+00:00:23,820 --> 00:00:29,010
+And of course, we're going to write this as a single page, and the JavaScript on that page will call
+
+7
+00:00:29,010 --> 00:00:33,450
+various handlers on my app that interact with the cash.
+
+8
+00:00:33,950 --> 00:00:36,930
+Now we're going to be calling them using JavaScript fetch.
+
+9
+00:00:37,470 --> 00:00:43,720
+And one of the things that will make this ever so much easier is if we write a function in Securitas
+
+10
+00:00:43,830 --> 00:00:47,150
+that allows us not just to write Jason, but also to read Jason.
+
+11
+00:00:47,160 --> 00:00:47,970
+And that's pretty easy.
+
+12
+00:00:48,480 --> 00:00:52,050
+So I'm still on my salary test package and I'm going to open up.
+
+13
+00:00:53,330 --> 00:00:55,010
+My response utils right here.
+
+14
+00:00:55,400 --> 00:00:59,370
+OK, now if you recall, we already have one here called Right, Jason.
+
+15
+00:00:59,450 --> 00:01:03,080
+Let's add one just before it called read Jason so funk.
+
+16
+00:01:03,290 --> 00:01:05,630
+See a pointer to celebrities.
+
+17
+00:01:09,020 --> 00:01:16,790
+And we'll call it read Jason, and it will require the request, the response, some data.
+
+18
+00:01:17,090 --> 00:01:17,570
+That's it.
+
+19
+00:01:17,600 --> 00:01:28,970
+So let's start with the response HTP response writer, our pointer to that request and some kind of
+
+20
+00:01:28,970 --> 00:01:35,450
+data in the form of an interface so we can put whatever we want in there and it will potentially return
+
+21
+00:01:35,450 --> 00:01:35,840
+an error.
+
+22
+00:01:37,070 --> 00:01:37,430
+OK.
+
+23
+00:01:40,240 --> 00:01:44,410
+So we're going to, first of all, put a sanity check in here and I'm going to hardcoded, you can do
+
+24
+00:01:44,410 --> 00:01:45,240
+whatever you want here.
+
+25
+00:01:45,250 --> 00:01:52,750
+I want to make sure that the maximum number of bytes I get max bytes is a sign the value of one zero
+
+26
+00:01:52,750 --> 00:01:58,390
+four eight five seven six or one megabyte one megabyte.
+
+27
+00:01:59,140 --> 00:02:03,640
+I don't want anything more than a MEG coming as a JSON request that should be more than enough room.
+
+28
+00:02:04,090 --> 00:02:04,480
+OK.
+
+29
+00:02:05,480 --> 00:02:12,940
+And I I'm going to get the request body and body equals HDP Dot.
+
+30
+00:02:13,160 --> 00:02:22,370
+Max Bites Reader W and our body and 64 because it has to be in 64 megabytes.
+
+31
+00:02:23,540 --> 00:02:30,380
+OK, so that's just a way of reading no more than one megabyte of the request body that will create
+
+32
+00:02:30,380 --> 00:02:32,570
+a decoder deck.
+
+33
+00:02:33,680 --> 00:02:39,230
+And it's a sign the value of Jason Dud new decoder and I'm going to decode our body.
+
+34
+00:02:41,650 --> 00:02:47,780
+And now a check for an error when I try to decode Dekker, decode it.
+
+35
+00:02:51,410 --> 00:02:56,150
+If error is not equal to nil and return error
+
+36
+00:02:59,420 --> 00:03:06,110
+otherwise, the only thing I want to check right now is that we only allow one entry in the JSON file
+
+37
+00:03:06,230 --> 00:03:09,020
+just to avoid any potential nefarious users.
+
+38
+00:03:09,470 --> 00:03:16,160
+So again, a check for an error and that's equal to the decode and we're going to decode.
+
+39
+00:03:17,870 --> 00:03:19,910
+Into a reference to struct.
+
+40
+00:03:21,460 --> 00:03:25,600
+And then two sets of curly braces just to make sure there's only one value in there.
+
+41
+00:03:26,090 --> 00:03:32,190
+We'll check for an error if error is not equal to and in this case, it's not nil.
+
+42
+00:03:32,200 --> 00:03:33,610
+We're looking for iReport.
+
+43
+00:03:33,970 --> 00:03:35,170
+End of file.
+
+44
+00:03:37,970 --> 00:03:40,460
+Then we'll return errors.
+
+45
+00:03:40,480 --> 00:03:41,240
+Don't know.
+
+46
+00:03:42,410 --> 00:03:50,570
+And just give them a message, body must only have a single Jason value, and that's sufficient.
+
+47
+00:03:50,930 --> 00:03:52,650
+And I didn't import errors for me.
+
+48
+00:03:53,000 --> 00:03:54,380
+So let's import errors.
+
+49
+00:04:01,540 --> 00:04:05,230
+OK, now, if all of that passes, then we return nil.
+
+50
+00:04:06,580 --> 00:04:12,580
+OK, so this is now available to us to read Jason Arbitrary Jason, and that's going to be extremely
+
+51
+00:04:12,580 --> 00:04:13,180
+convenient.
+
+52
+00:04:13,510 --> 00:04:15,160
+So that's all done now.
+
+53
+00:04:15,190 --> 00:04:18,070
+Let's switch over to our map project and try these things out.
+
+54
+00:04:19,150 --> 00:04:25,120
+So the first thing I'm going to do is open my terminal and I will type go mod vendor just to get the
+
+55
+00:04:25,120 --> 00:04:29,650
+latest version of celebrities into the vendor directory so I can work with it without seeing errors
+
+56
+00:04:29,650 --> 00:04:30,160
+in my ID.
+
+57
+00:04:30,520 --> 00:04:31,030
+And that's done.
+
+58
+00:04:31,930 --> 00:04:37,570
+The second thing you need to do is to open up the dot on file and make sure that your settings are correct.
+
+59
+00:04:38,200 --> 00:04:45,040
+So look for the reddest config section and you'll see that it's there in line 25 on my code and in my
+
+60
+00:04:45,040 --> 00:04:52,290
+case, I have line twenty six Redis underscore host set to local host column sixty three eighty and
+
+61
+00:04:52,300 --> 00:04:57,130
+I speak as I have another copy of Redis for another project running on my system, so I had to use a
+
+62
+00:04:57,130 --> 00:04:57,750
+different port.
+
+63
+00:04:57,760 --> 00:05:04,570
+Yours should almost certainly read six three seven nine and you have no password use whatever you want
+
+64
+00:05:04,570 --> 00:05:11,230
+for a prefix, celebrities will work just fine, and the only other thing to worry about right now is
+
+65
+00:05:11,230 --> 00:05:15,430
+to ensure that cache is set to release on Line 31, in my case.
+
+66
+00:05:16,780 --> 00:05:24,730
+Now on the course resources for this lecture, you will find a file called Cache Dot Jet, so download
+
+67
+00:05:24,730 --> 00:05:27,640
+that file and you're going to put it right in your views directory.
+
+68
+00:05:27,640 --> 00:05:32,890
+So I don't have one in there right now, but I do have the contents of that file copy to my clipboard,
+
+69
+00:05:32,890 --> 00:05:35,020
+so I'll create a file called Cache Dot Git.
+
+70
+00:05:36,550 --> 00:05:41,460
+I'll simply paste the value of my clipboard right into there, and this is what the file is.
+
+71
+00:05:41,470 --> 00:05:42,940
+It's a standard template.
+
+72
+00:05:42,940 --> 00:05:44,200
+Just like we've used before.
+
+73
+00:05:44,800 --> 00:05:49,210
+It extends based on jet, which I better fix right now.
+
+74
+00:05:49,870 --> 00:05:50,740
+Based on jet.
+
+75
+00:05:51,580 --> 00:05:57,160
+It's named Cache and it has a form and the form doesn't submit anything because we're going to do everything
+
+76
+00:05:57,160 --> 00:05:58,990
+using JavaScript, as I said earlier.
+
+77
+00:05:59,140 --> 00:06:04,330
+So here are a bunch of form fields that allow us to put something in the cache to get something from
+
+78
+00:06:04,330 --> 00:06:09,910
+the cache, to delete something from the cache and to empty the entire cache and some buttons for each
+
+79
+00:06:09,910 --> 00:06:10,720
+of those actions.
+
+80
+00:06:11,380 --> 00:06:18,130
+And down here at the bottom, we have our JavaScript and the very first part let's see CSS, RF, Eq.
+
+81
+00:06:18,520 --> 00:06:22,120
+and then it gets a value from the meta tags at the top of the page.
+
+82
+00:06:22,450 --> 00:06:24,730
+We're not using that yet, but we will later on.
+
+83
+00:06:24,760 --> 00:06:26,260
+So you may as well leave that there.
+
+84
+00:06:26,890 --> 00:06:32,800
+Then I just get a reference to various buttons and divs on the screen, and then I have a bunch of event
+
+85
+00:06:32,800 --> 00:06:34,150
+listeners that listen for clicks.
+
+86
+00:06:34,360 --> 00:06:41,290
+So when you click, for example, on the Save button, it down here on Line eight calls a fetch statement
+
+87
+00:06:41,290 --> 00:06:46,930
+that calls a root that doesn't exist yet, which points to a handler that doesn't exist yet, and it
+
+88
+00:06:46,930 --> 00:06:51,100
+does the necessary cache operations and gives some feedback.
+
+89
+00:06:51,220 --> 00:06:51,550
+OK.
+
+90
+00:06:52,150 --> 00:06:55,990
+So get that in the right place inside The View's folder in my app.
+
+91
+00:06:56,020 --> 00:06:57,970
+Make sure it's named cached git.
+
+92
+00:06:58,720 --> 00:07:02,780
+And my next step is to go to my handler folder and I'm going to create a new file.
+
+93
+00:07:02,800 --> 00:07:06,880
+I'll put these handlers all in their own file, so I'm going to call this cache.
+
+94
+00:07:06,880 --> 00:07:09,340
+Dash handlers dot go.
+
+95
+00:07:11,160 --> 00:07:14,880
+And of course, that's in package handlers and lures.
+
+96
+00:07:15,930 --> 00:07:20,670
+And we're going to have some handlers here, sort of the first is create some stub handlers, so I'll
+
+97
+00:07:20,670 --> 00:07:23,820
+create a function with the receiver of a pointer to handlers
+
+98
+00:07:28,230 --> 00:07:31,980
+and I'll call this one save in cash.
+
+99
+00:07:33,150 --> 00:07:34,290
+And it's a handler.
+
+100
+00:07:34,300 --> 00:07:44,490
+So it has to have a response writer and a pointer to request or as a pointer to the request.
+
+101
+00:07:47,430 --> 00:07:51,420
+And now I'm just going to copy this and paste one stub for each of the handlers.
+
+102
+00:07:51,420 --> 00:07:52,490
+We're going to have to write.
+
+103
+00:07:52,500 --> 00:07:53,710
+So we have saving cash.
+
+104
+00:07:54,750 --> 00:07:56,790
+We're going to have get from cash.
+
+105
+00:08:01,420 --> 00:08:03,400
+We're going to have delete from cash,
+
+106
+00:08:09,880 --> 00:08:11,860
+and we're going to have to have empty cash.
+
+107
+00:08:14,760 --> 00:08:16,440
+So I'll call that empty cash.
+
+108
+00:08:21,350 --> 00:08:31,010
+And of course, we're going to have 10 one to display the cash rich, so funk each handlers show cash
+
+109
+00:08:31,220 --> 00:08:39,530
+age probably not the best title, but it'll suffice for our purposes today and hours upon request.
+
+110
+00:08:40,820 --> 00:08:43,310
+OK, so those are stub handlers now.
+
+111
+00:08:43,610 --> 00:08:45,050
+The first one show the cash.
+
+112
+00:08:45,410 --> 00:08:46,160
+That's pretty easy.
+
+113
+00:08:46,160 --> 00:08:51,680
+So we can just open up any of our other handlers and find one that renders something so right at the
+
+114
+00:08:51,680 --> 00:08:52,460
+top here.
+
+115
+00:08:52,790 --> 00:08:53,810
+Let's just go with this.
+
+116
+00:08:53,870 --> 00:08:54,500
+Copy that.
+
+117
+00:08:56,030 --> 00:09:04,280
+Go back to our cash handlers and paste that right in here and make sure it shows the cash template.
+
+118
+00:09:05,030 --> 00:09:05,750
+So that should be great.
+
+119
+00:09:05,960 --> 00:09:10,100
+OK, so let's start with the save in cash.
+
+120
+00:09:10,620 --> 00:09:12,170
+Now as I sit.
+
+121
+00:09:13,190 --> 00:09:15,680
+This handler doesn't actually show a Web page.
+
+122
+00:09:15,800 --> 00:09:21,740
+This handler gets called by JavaScript fetch utility and it reads some JSON file and does something
+
+123
+00:09:21,740 --> 00:09:22,010
+with it.
+
+124
+00:09:22,190 --> 00:09:26,600
+So I'm going to assume that we're going to get Jason in this format or create a variable, which I'll
+
+125
+00:09:26,600 --> 00:09:27,620
+call user input.
+
+126
+00:09:29,090 --> 00:09:32,690
+It's just a struct, and it has the following fields.
+
+127
+00:09:32,960 --> 00:09:39,380
+It has name which is a string and then JSON that's called right now.
+
+128
+00:09:39,380 --> 00:09:40,340
+Duplicate that twice.
+
+129
+00:09:41,360 --> 00:09:42,590
+The second one is the value.
+
+130
+00:09:44,540 --> 00:09:46,820
+And of course, in JSON, I call that value.
+
+131
+00:09:47,690 --> 00:09:50,450
+And the last one, we're not using it, but we will get there eventually.
+
+132
+00:09:50,450 --> 00:09:58,130
+CSR, because you want to verify that CSC SRF tokens are valid just to avoid cross-site request forgery
+
+133
+00:09:58,130 --> 00:10:02,630
+attacks, and this is called see SRF token in JavaScript.
+
+134
+00:10:02,780 --> 00:10:03,140
+OK.
+
+135
+00:10:04,850 --> 00:10:09,200
+Here is where I'm going to use that read JSON function we just wrote a few minutes ago.
+
+136
+00:10:09,770 --> 00:10:14,600
+So I'll check for an error and a sign that the value of from H.
+
+137
+00:10:14,990 --> 00:10:22,610
+We're going to go to app and we want to read JSON, and that requires the response writer the request,
+
+138
+00:10:23,090 --> 00:10:24,050
+and I'm going to pass it.
+
+139
+00:10:24,230 --> 00:10:28,430
+Since it's the interface, I can pass anything, including a pointer to user input.
+
+140
+00:10:29,090 --> 00:10:29,450
+OK.
+
+141
+00:10:30,350 --> 00:10:31,220
+And I'll check for an error.
+
+142
+00:10:32,060 --> 00:10:34,880
+Say if error is not equal to nil.
+
+143
+00:10:35,510 --> 00:10:37,940
+I'll just say a short error.
+
+144
+00:10:38,180 --> 00:10:40,820
+500 internal server error.
+
+145
+00:10:41,010 --> 00:10:41,300
+OK.
+
+146
+00:10:41,810 --> 00:10:44,880
+And that requires a W and.
+
+147
+00:10:46,370 --> 00:10:47,420
+I think that's all it requires.
+
+148
+00:10:47,780 --> 00:10:49,570
+Yep, looks good at this point.
+
+149
+00:10:49,580 --> 00:10:51,290
+We'll just return because we can't go any further.
+
+150
+00:10:52,010 --> 00:10:57,080
+But assuming we can pass that, Jason into our user input variable, read it in there.
+
+151
+00:10:57,170 --> 00:11:05,450
+OK, now we actually want to set a value in the cache, and that should be pretty easy at this point.
+
+152
+00:11:05,570 --> 00:11:10,480
+I should be able to call IRR is equal to a Dot app.
+
+153
+00:11:11,260 --> 00:11:12,020
+No H.
+
+154
+00:11:12,910 --> 00:11:15,800
+App, not creator, if not exist.
+
+155
+00:11:18,620 --> 00:11:19,670
+Dark cash.
+
+156
+00:11:22,640 --> 00:11:28,220
+That set, and that only requires two parameters, the key and the value.
+
+157
+00:11:28,250 --> 00:11:37,040
+Well, the key is user input, not name, and the value is user input value.
+
+158
+00:11:38,360 --> 00:11:38,710
+OK.
+
+159
+00:11:39,560 --> 00:11:40,550
+And we'll check for an error.
+
+160
+00:11:40,730 --> 00:11:41,760
+Again, I'm just going to do this.
+
+161
+00:11:41,810 --> 00:11:43,280
+This is sufficient for our purposes.
+
+162
+00:11:46,400 --> 00:11:49,280
+So at that point, I should have set the value in the cash.
+
+163
+00:11:49,430 --> 00:11:51,260
+And now I want to write some Jason.
+
+164
+00:11:51,270 --> 00:11:54,740
+So I'll create another variable and I'll call this one rest for a response.
+
+165
+00:11:54,860 --> 00:11:59,660
+And it's just a struct, and it has two two fields error, which is a Boolean.
+
+166
+00:11:59,990 --> 00:12:00,800
+And in JSON,
+
+167
+00:12:03,890 --> 00:12:04,970
+I'll call that error
+
+168
+00:12:07,730 --> 00:12:09,980
+and the message will be a string.
+
+169
+00:12:10,460 --> 00:12:13,040
+And in Jason, I'll call that message
+
+170
+00:12:15,740 --> 00:12:17,350
+and I'll populate that field.
+
+171
+00:12:17,360 --> 00:12:25,640
+Report error equals false because there is no error and respect message equals, say, saved in cash.
+
+172
+00:12:27,710 --> 00:12:31,860
+And now I just write that Jason out, and we can do that using silver tops.
+
+173
+00:12:31,880 --> 00:12:33,470
+And in this case, I'll just ignore the error.
+
+174
+00:12:34,100 --> 00:12:37,840
+And that's going to be equal to each dot app dot.
+
+175
+00:12:38,810 --> 00:12:39,470
+Right, Jason.
+
+176
+00:12:40,100 --> 00:12:47,720
+And that requires the following parameters w what to write to HP Typekit status created seems valid
+
+177
+00:12:47,720 --> 00:12:54,710
+in this case because I created something in the cache, plus my response, and that should do the trick.
+
+178
+00:12:55,460 --> 00:13:00,260
+Now the next step, of course, is to do this similar thing for get from cache, delete from cache and
+
+179
+00:13:00,260 --> 00:13:00,830
+empty cache.
+
+180
+00:13:00,840 --> 00:13:05,270
+But this is starting to be a pretty long lecture, so we'll move on to that in the next one.

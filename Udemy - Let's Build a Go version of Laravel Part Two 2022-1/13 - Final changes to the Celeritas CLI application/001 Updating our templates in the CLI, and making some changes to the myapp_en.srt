@@ -1,0 +1,492 @@
+1
+00:00:01,000 --> 00:00:06,820
+So now that we have most of the code changes done, insularity us and my app, it's time to update a
+
+2
+00:00:06,820 --> 00:00:07,590
+couple of things.
+
+3
+00:00:07,630 --> 00:00:13,540
+And the two things we need to update our first of all, these skeleton git repository when we create
+
+4
+00:00:13,540 --> 00:00:17,530
+a new application using celebrities new whatever your project name is.
+
+5
+00:00:17,920 --> 00:00:24,010
+It goes and grabs a gift repository, clones it and then makes changes to it using the Seelye automatically.
+
+6
+00:00:24,550 --> 00:00:29,860
+So we'll have to make changes to the skeleton get repository, which in my case just means updating
+
+7
+00:00:29,860 --> 00:00:33,100
+my app and pushing a version of that to my get repository.
+
+8
+00:00:33,640 --> 00:00:38,110
+The second thing we need to do is to make some minor changes to the command line application itself.
+
+9
+00:00:38,230 --> 00:00:40,270
+So we'll get started with that right now.
+
+10
+00:00:41,020 --> 00:00:44,020
+So first thing I want to do is look at my app.
+
+11
+00:00:44,290 --> 00:00:49,390
+Now there are some things that are not on the get repository that will be there automatically as soon
+
+12
+00:00:49,390 --> 00:00:50,360
+as I commit and push them.
+
+13
+00:00:50,410 --> 00:00:54,350
+For example, we have this config folder that has database dot.
+
+14
+00:00:54,370 --> 00:00:54,610
+Why?
+
+15
+00:00:55,660 --> 00:01:01,380
+And of course, that's used by our version of soda that we've encoded right into our project.
+
+16
+00:01:01,450 --> 00:01:05,920
+So we'll want to put an empty version of that up, and that's easy enough in the same way.
+
+17
+00:01:05,980 --> 00:01:11,440
+If we look in the handlers folder, we have this handlers underscore test go.
+
+18
+00:01:11,620 --> 00:01:16,210
+And I don't want to put all of these tests here because that was just for our purposes as we were making
+
+19
+00:01:16,210 --> 00:01:18,340
+sure that things work the way that they're supposed to.
+
+20
+00:01:19,360 --> 00:01:23,950
+Now you could, of course, just comment about certain tests and leave them as examples, and that would
+
+21
+00:01:23,950 --> 00:01:25,160
+be extremely helpful.
+
+22
+00:01:25,180 --> 00:01:29,350
+But typically, if you're going to write something like this for other people to use, you would actually
+
+23
+00:01:29,350 --> 00:01:31,000
+write some real documentation.
+
+24
+00:01:31,060 --> 00:01:34,060
+And I'm not going to do that, or at least I'm not going to do that while you watch me.
+
+25
+00:01:34,070 --> 00:01:38,800
+I'm not going to record a lecture with me writing documentation, but it's something you may wish to
+
+26
+00:01:38,800 --> 00:01:39,040
+do.
+
+27
+00:01:39,580 --> 00:01:45,940
+So what I'll do for our purposes is just leave the one test that I know will always be there, and that's
+
+28
+00:01:45,940 --> 00:01:48,610
+the home page test, and I'll just get rid of the rest of them.
+
+29
+00:01:48,700 --> 00:01:52,060
+So I'll select these and delete those.
+
+30
+00:01:52,480 --> 00:01:52,840
+OK?
+
+31
+00:01:54,400 --> 00:01:59,770
+And if there's anything else here that needs to be pushed to the git repository, it'll just happen.
+
+32
+00:01:59,980 --> 00:02:00,310
+OK.
+
+33
+00:02:01,060 --> 00:02:07,720
+So if we go back to our celebrities project now and we look in the CMT folder and then see a lie and
+
+34
+00:02:07,720 --> 00:02:14,290
+then the Templates folder, these are the files that are used when we automatically execute some command
+
+35
+00:02:14,500 --> 00:02:16,210
+that the end user enters.
+
+36
+00:02:16,810 --> 00:02:18,820
+We use these as files that we copy.
+
+37
+00:02:19,030 --> 00:02:22,150
+So the first one, of course, is inside these templates folder.
+
+38
+00:02:23,110 --> 00:02:24,860
+We have the data folder.
+
+39
+00:02:24,880 --> 00:02:27,520
+We didn't change anything with that, so that should be fun.
+
+40
+00:02:27,760 --> 00:02:28,210
+OK?
+
+41
+00:02:28,840 --> 00:02:33,150
+The handler's folder of handlers go that might have changed.
+
+42
+00:02:33,160 --> 00:02:38,590
+I'm not sure, and I'm not an optimist, and it's easy enough to come down here to handlers in the my
+
+43
+00:02:38,600 --> 00:02:38,890
+app.
+
+44
+00:02:39,550 --> 00:02:47,650
+Open up handlers don't go select all copy closes and then open up the template off handlers go down.
+
+45
+00:02:49,210 --> 00:02:51,490
+Delete what's in there and paste in the new version.
+
+46
+00:02:51,880 --> 00:02:52,910
+I know that's going to work now.
+
+47
+00:02:52,930 --> 00:02:55,060
+And yes, we did have some changes, so that's good.
+
+48
+00:02:55,060 --> 00:02:55,600
+That's good.
+
+49
+00:02:56,880 --> 00:02:58,110
+Handlers don't go.
+
+50
+00:02:59,040 --> 00:03:03,400
+Let's see what's in there, so we just have this right now that shouldn't change at all.
+
+51
+00:03:03,420 --> 00:03:05,490
+That's when you create a new stub handler.
+
+52
+00:03:05,580 --> 00:03:06,240
+So that's fine.
+
+53
+00:03:07,380 --> 00:03:10,170
+We didn't make any changes to males, so that should be fine.
+
+54
+00:03:10,200 --> 00:03:11,190
+What about middleware?
+
+55
+00:03:11,340 --> 00:03:14,040
+Well, again, there's three files here off.
+
+56
+00:03:14,040 --> 00:03:15,480
+Don't go off token.
+
+57
+00:03:15,660 --> 00:03:17,310
+Don't go and remember ICO.
+
+58
+00:03:17,640 --> 00:03:27,270
+I'm not an optimist, so I'll open up middleware in my app, open ASCO, select all copy and then open
+
+59
+00:03:27,660 --> 00:03:33,660
+off and go here the text file paste in the new version, just to be sure.
+
+60
+00:03:35,040 --> 00:03:37,350
+Next is a token.
+
+61
+00:03:38,070 --> 00:03:42,650
+Select All copy and open up of Dash token.
+
+62
+00:03:42,870 --> 00:03:44,760
+Go select all paste.
+
+63
+00:03:46,350 --> 00:03:47,430
+And finally, remember.
+
+64
+00:03:48,390 --> 00:03:49,230
+So let's remember.
+
+65
+00:03:49,230 --> 00:03:50,100
+Don't go right here.
+
+66
+00:03:51,000 --> 00:03:52,050
+Select All Copy.
+
+67
+00:03:56,640 --> 00:04:05,080
+And remember that no select paste and I should do it for those ones migrations.
+
+68
+00:04:05,430 --> 00:04:06,720
+Anything change in there?
+
+69
+00:04:07,590 --> 00:04:08,880
+I don't think so.
+
+70
+00:04:09,150 --> 00:04:12,750
+We'll find out if I've missed something when we actually try this views.
+
+71
+00:04:13,320 --> 00:04:16,529
+So we have log in the jet that might have changed as it did.
+
+72
+00:04:16,529 --> 00:04:20,279
+I believe let's go down to our views in my app.
+
+73
+00:04:21,870 --> 00:04:24,930
+Right here and open up, log in.
+
+74
+00:04:26,820 --> 00:04:30,870
+So that includes the logging with GitHub, logging with Google Play Music with those in there.
+
+75
+00:04:31,740 --> 00:04:32,820
+So I copy that.
+
+76
+00:04:34,620 --> 00:04:37,140
+Close all of those and open up.
+
+77
+00:04:37,410 --> 00:04:37,980
+Log in.
+
+78
+00:04:39,210 --> 00:04:40,620
+Select All Paste.
+
+79
+00:04:41,520 --> 00:04:41,820
+OK.
+
+80
+00:04:42,150 --> 00:04:43,200
+That should take care of that.
+
+81
+00:04:45,110 --> 00:04:51,350
+Next is the dot on the file, and that's definitely changed, so I'll open up the dot on file here in
+
+82
+00:04:51,350 --> 00:04:52,010
+my app.
+
+83
+00:04:53,690 --> 00:04:54,860
+Select Go and Copy.
+
+84
+00:04:55,460 --> 00:05:02,420
+And if I look at the template on which is called on site, it actually uses dollar sign and then in
+
+85
+00:05:02,420 --> 00:05:12,470
+curly braces and underscore name and is here on line two here for the red as prefix on line 29 and down
+
+86
+00:05:12,470 --> 00:05:13,730
+here in line thirty five.
+
+87
+00:05:13,760 --> 00:05:16,820
+Those three places, so I'll select all and paste.
+
+88
+00:05:17,750 --> 00:05:22,880
+Now I'll get rid of the things that don't belong in there so I can leave at the very bottom with these
+
+89
+00:05:22,880 --> 00:05:23,120
+three.
+
+90
+00:05:23,120 --> 00:05:25,310
+For Google, I get rid of this secret.
+
+91
+00:05:26,150 --> 00:05:29,660
+You don't want to put that in there by default, and I'll get rid of the key.
+
+92
+00:05:32,440 --> 00:05:34,450
+And I'll get rid of the secret for GitHub.
+
+93
+00:05:36,490 --> 00:05:37,590
+And get rid of the key.
+
+94
+00:05:40,300 --> 00:05:41,320
+That's fine.
+
+95
+00:05:45,830 --> 00:05:50,360
+And I should probably leave these empty as well, because some people may not use WebDAV.
+
+96
+00:05:52,370 --> 00:05:53,510
+Or SFP
+
+97
+00:05:56,450 --> 00:05:57,500
+or Mineo?
+
+98
+00:06:06,920 --> 00:06:09,020
+And the same thing for three.
+
+99
+00:06:11,650 --> 00:06:16,630
+You don't want to be putting this kind of information in a public repository at all, ever.
+
+100
+00:06:18,700 --> 00:06:19,360
+So those are gone.
+
+101
+00:06:19,960 --> 00:06:23,410
+The encryption key leave that empty.
+
+102
+00:06:30,350 --> 00:06:33,140
+You better spell settings, right, since I'm here anyway, but.
+
+103
+00:06:39,200 --> 00:06:43,820
+And, of course, this stuff I can leave empty as well, because not everyone will be using the database
+
+104
+00:06:43,820 --> 00:06:44,120
+at all.
+
+105
+00:06:49,450 --> 00:06:50,900
+Now, let's fix my app.
+
+106
+00:06:50,950 --> 00:06:54,040
+That should be Dollar Sun app.
+
+107
+00:06:56,490 --> 00:07:05,670
+Underscore name and close that and copy this, and we want it for us, prefix.
+
+108
+00:07:08,090 --> 00:07:10,340
+And we want it for cookie name.
+
+109
+00:07:11,490 --> 00:07:14,180
+OK, now let's say it's something that should be it for that one.
+
+110
+00:07:15,830 --> 00:07:18,200
+So the next one is go on, go on.
+
+111
+00:07:19,160 --> 00:07:21,800
+And of course, that has app name up here as well.
+
+112
+00:07:21,950 --> 00:07:25,290
+So let's open the other one, because that's definitely changed.
+
+113
+00:07:25,370 --> 00:07:32,390
+We'll find God in my app and I'll select everything from go one point one seven all the way down to
+
+114
+00:07:32,390 --> 00:07:33,050
+the bottom here.
+
+115
+00:07:34,220 --> 00:07:39,560
+Like that, you know, replace this from here.
+
+116
+00:07:43,370 --> 00:07:44,240
+All the way down to here.
+
+117
+00:07:46,730 --> 00:07:48,470
+So hopefully that will be correct.
+
+118
+00:07:48,650 --> 00:07:49,820
+We'll find out when we try it.
+
+119
+00:07:51,140 --> 00:07:56,160
+Now, I don't immediately see anything else that has to change here in the Templates folder.
+
+120
+00:07:56,180 --> 00:08:02,540
+So the next step is to go make whatever changes are required in our command line application and to
+
+121
+00:08:02,540 --> 00:08:09,260
+push our skeleton app up to our repository, which means deleting some things before we do that.
+
+122
+00:08:09,740 --> 00:08:10,700
+And let me try this out.
+
+123
+00:08:10,910 --> 00:08:13,040
+So we'll get started on that in the next election.
+

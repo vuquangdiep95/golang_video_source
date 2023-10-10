@@ -1,0 +1,200 @@
+1
+00:00:03,300 --> 00:00:09,220
+So the last thing I want to take care of with respect to SFTP is just so clean up to this get function.
+
+2
+00:00:09,240 --> 00:00:12,390
+And I deliberately left this function the way that you see it right now.
+
+3
+00:00:12,420 --> 00:00:18,330
+Just so I'd have an opportunity to talk about resource leaks that don't show up for a long time.
+
+4
+00:00:18,600 --> 00:00:25,320
+If you recall, what the get function does is it allows us to go to the remote SFB server and pull one
+
+5
+00:00:25,320 --> 00:00:30,960
+or more files down to the server, to the server where a web application lives, which is something
+
+6
+00:00:30,960 --> 00:00:35,430
+you're not going to have to do very often, but you do sometimes, and it's convenient to have this
+
+7
+00:00:35,430 --> 00:00:35,880
+function.
+
+8
+00:00:36,510 --> 00:00:41,070
+And if you actually look at this function in detail and you may already have noticed this, and if you
+
+9
+00:00:41,070 --> 00:00:46,650
+did good for you, there actually is the potential for one or more resource leaks.
+
+10
+00:00:46,830 --> 00:00:48,750
+For a couple of reasons to start with.
+
+11
+00:00:49,470 --> 00:00:54,240
+I'm ranging through here in line 127 right down to the line 153.
+
+12
+00:00:54,480 --> 00:01:00,930
+I'm ranging through items which we receive as one or more strings as the final parameters in the call
+
+13
+00:01:00,930 --> 00:01:07,620
+to the get function and my I.D. and probably yours also gives you this kind of warning.
+
+14
+00:01:08,160 --> 00:01:13,620
+Possible resource leak defer is called in the for loop, and that can be a problem.
+
+15
+00:01:13,770 --> 00:01:20,040
+And the other thing you might have noticed is down here, we open the source file, but we never actually
+
+16
+00:01:20,040 --> 00:01:20,550
+close it.
+
+17
+00:01:21,060 --> 00:01:26,760
+And the fact is, if you don't use this, get function very often, this is a resource leak that you
+
+18
+00:01:26,760 --> 00:01:29,280
+might not see for a very long time.
+
+19
+00:01:29,400 --> 00:01:34,470
+In other words, it's a problem in our code base that is really, well hidden.
+
+20
+00:01:34,500 --> 00:01:38,460
+We're not going to see it for a long time, possibly months, maybe even years.
+
+21
+00:01:39,000 --> 00:01:40,650
+But fortunately, it's pretty easy to fix.
+
+22
+00:01:41,070 --> 00:01:48,570
+So to start with, what I'm going to do is take the contents of this for loop and wrap everything between
+
+23
+00:01:48,570 --> 00:01:52,890
+Line 127 and Line 155 in a function.
+
+24
+00:01:53,430 --> 00:01:57,780
+So we'll look for an error because my function and I'll just use an inline function.
+
+25
+00:01:59,530 --> 00:02:06,880
+Which returns an error, I'll get rid of this closing parentheses and come away down here and close
+
+26
+00:02:06,880 --> 00:02:12,280
+it off and then give it the double parentheses that it requires.
+
+27
+00:02:13,540 --> 00:02:17,680
+And then we'll say return nil to get rid of the error that shows up now.
+
+28
+00:02:20,410 --> 00:02:25,300
+And now all I have to do is say, if error is not equal to nil,
+
+29
+00:02:28,450 --> 00:02:29,200
+return the error.
+
+30
+00:02:31,840 --> 00:02:35,950
+And the last step here is I'll get rid of this long because we don't need that anymore.
+
+31
+00:02:36,220 --> 00:02:39,550
+And I'll get rid of the bikes because we don't need that anymore and we never actually used it.
+
+32
+00:02:39,550 --> 00:02:40,330
+But that doesn't matter
+
+33
+00:02:43,060 --> 00:02:50,830
+is after I create this source file, I come down here and say, Defer source file, I'll close.
+
+34
+00:02:53,890 --> 00:03:00,610
+Now these two defers are really not in the loop as far as they're they're concerned.
+
+35
+00:03:00,640 --> 00:03:02,690
+That's why we don't have a warning for defer here.
+
+36
+00:03:02,710 --> 00:03:06,520
+We do have a warning on clothes that says this actually throws an error, but I don't care about that.
+
+37
+00:03:06,910 --> 00:03:09,100
+And almost nobody does in my experience.
+
+38
+00:03:09,760 --> 00:03:17,470
+But the important thing to note is because I wrap the entire contents of this for loop in its own function,
+
+39
+00:03:17,470 --> 00:03:18,760
+which returns in error.
+
+40
+00:03:18,910 --> 00:03:25,600
+I only have to check for error down here at the end of the four loop, and that takes care of the possible
+
+41
+00:03:25,600 --> 00:03:27,190
+resource leaks that you would have.
+
+42
+00:03:27,340 --> 00:03:32,950
+The nice thing about the first statement is it will always execute as soon as the function that it exists
+
+43
+00:03:32,950 --> 00:03:34,360
+in finishes.
+
+44
+00:03:34,480 --> 00:03:40,630
+And in this case, that's this function is inline function, not the overall function.
+
+45
+00:03:40,840 --> 00:03:41,190
+Yeah.
+
+46
+00:03:41,350 --> 00:03:42,970
+So that solves that problem.
+
+47
+00:03:43,040 --> 00:03:44,310
+And that's just a bit of housekeeping.
+
+48
+00:03:44,320 --> 00:03:48,940
+And I deliberately left that until the end of this section because because this is the sort of thing
+
+49
+00:03:48,940 --> 00:03:50,260
+you might run into now and again.
+
+50
+00:03:51,410 --> 00:03:53,990
+All right, let's move on to our next file system.
+

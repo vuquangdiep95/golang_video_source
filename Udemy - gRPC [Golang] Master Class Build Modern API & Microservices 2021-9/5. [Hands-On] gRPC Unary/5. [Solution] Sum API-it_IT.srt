@@ -1,0 +1,492 @@
+1
+00:00:00,330 --> 00:00:05,840
+Ok così come questo esercizio perché mi permette di mettere tutto insieme e spero che tu sia riuscito
+
+2
+00:00:05,840 --> 00:00:06,780
+a farlo.
+
+3
+00:00:06,780 --> 00:00:12,790
+Quindi iniziamo con una calcolatrice e creando che alcune richieste un tipo di risposta di RBC.
+
+4
+00:00:12,810 --> 00:00:19,050
+Quindi la prima cosa che voglio fare è creare una calcolatrice P. B. cartella e ho
+
+5
+00:00:19,140 --> 00:00:25,010
+intenzione di creare un client calcolatrice e creerò anche un server calcolatrice.
+
+6
+00:00:25,790 --> 00:00:26,150
+OK.
+
+7
+00:00:26,190 --> 00:00:31,770
+Quindi una volta che avremo queste cose sul loro calcolatore, OPB creerò un nuovo file e lo
+
+8
+00:00:31,780 --> 00:00:33,220
+chiamerò calcolato a Prato.
+
+9
+00:00:33,360 --> 00:00:38,550
+Ora la sintassi è uguale a due o tre.
+
+10
+00:00:39,390 --> 00:00:40,300
+OK.
+
+11
+00:00:40,890 --> 00:00:49,560
+E il pacchetto stesso si chiamerà calcolatore ma come opzione per andare pacchetto si
+
+12
+00:00:49,560 --> 00:00:54,000
+chiamerà calcolatrice P. B ..
+
+13
+00:00:54,010 --> 00:00:56,510
+Ora dobbiamo definire un gruppo di messaggi.
+
+14
+00:00:56,550 --> 00:00:57,210
+OK.
+
+15
+00:00:57,400 --> 00:01:01,060
+Quindi il primo messaggio che dobbiamo definire è se alcune richieste.
+
+16
+00:01:01,060 --> 00:01:04,160
+Quindi c'è qualche richiesta in quanto possiamo vedere due numeri di testo.
+
+17
+00:01:04,180 --> 00:01:14,760
+Quindi nel 32 il primo numero equivale a 1 e nel 32 il secondo numero è uguale a 2.
+
+18
+00:01:15,310 --> 00:01:25,840
+Quindi, prima resa nel secondo campo e poi restituirà una risposta in somma e in 32 alcuni risultati come nome completo
+
+19
+00:01:25,860 --> 00:01:28,150
+è uguale a 1.
+
+20
+00:01:28,150 --> 00:01:29,420
+Quindi questo sembra buono.
+
+21
+00:01:29,770 --> 00:01:39,010
+E ora abbiamo bisogno di creare il nostro servizio di calcolatrice di servizio in modo che il servizio di calcolatrice
+
+22
+00:01:39,050 --> 00:01:48,470
+di servizio e al suo interno sia un RBC che non soddisferà alcuni che ci richiede una richiesta e restituisce una risposta.
+
+23
+00:01:49,970 --> 00:01:51,360
+Quindi tutto sembra a posto.
+
+24
+00:01:51,560 --> 00:01:53,500
+Come puoi vedere il numero il nome è un po '.
+
+25
+00:01:53,510 --> 00:01:56,250
+E quindi abbiamo qualche richiesta e qualche risposta.
+
+26
+00:01:56,630 --> 00:01:59,570
+Quindi il protocollo con il suo file sembra corretto.
+
+27
+00:01:59,570 --> 00:02:01,320
+Spero tu sia la stessa cosa
+
+28
+00:02:01,400 --> 00:02:04,060
+Ora dobbiamo andare avanti e generare un codice per questo.
+
+29
+00:02:04,460 --> 00:02:08,440
+Quindi sono pigro quindi ho intenzione di copiare questo e capire la cosa giusta.
+
+30
+00:02:08,440 --> 00:02:15,230
+Quindi è una calcolatrice calcolatrice calcolatrice fotovoltaica che Prato.
+
+31
+00:02:15,260 --> 00:02:22,000
+Quindi lasciami copiare l'intera riga nella riga di comando e vedere se ha funzionato bene.
+
+32
+00:02:22,010 --> 00:02:22,850
+Sembra aver funzionato.
+
+33
+00:02:22,850 --> 00:02:28,220
+Quindi ora abbiamo una calcolatrice che le persone vanno e tutto questo codice è stato generato per noi.
+
+34
+00:02:28,220 --> 00:02:31,550
+Sembra molto simile al codice che abbiamo generato prima.
+
+35
+00:02:31,630 --> 00:02:34,800
+Quindi ora possiamo andare avanti e creare un server e un client.
+
+36
+00:02:35,170 --> 00:02:36,430
+Quindi sono molto pigro.
+
+37
+00:02:36,490 --> 00:02:41,670
+Ho intenzione di copiare queste cose e cambiare mentre andiamo.
+
+38
+00:02:42,220 --> 00:02:44,830
+Quindi il server sembra corretto qui.
+
+39
+00:02:44,830 --> 00:02:46,600
+Ho intenzione di cancellare questo.
+
+40
+00:02:46,600 --> 00:02:56,480
+Quindi dobbiamo eliminare anche questo, quindi abbiamo un server calcolatrice come se ciò che stampiamo quando si apre.
+
+41
+00:02:56,820 --> 00:02:59,150
+Stiamo per ascoltare su una porta diversa.
+
+42
+00:02:59,250 --> 00:03:01,170
+In realtà possiamo inviare un fax qui con lei se ne ho uno.
+
+43
+00:03:01,200 --> 00:03:02,550
+Va bene.
+
+44
+00:03:02,550 --> 00:03:03,810
+E siamo solo un server di notizie.
+
+45
+00:03:04,110 --> 00:03:12,630
+E quindi quello che dobbiamo chiamare qui non è il saluto P. B. ma calcolatrice P. B. e la funzione è quel registro.
+
+46
+00:03:12,630 --> 00:03:13,810
+Quindi vediamo cosa è.
+
+47
+00:03:13,830 --> 00:03:14,630
+Registrati Quindi
+
+48
+00:03:18,030 --> 00:03:23,820
+a volte avrai problemi dove non ha importanza dal punto di vista medico quindi per questo fai
+
+49
+00:03:23,850 --> 00:03:28,600
+clic su alt e inserisci importazioni e puoi importare nel percorso completo proprio qui.
+
+50
+00:03:28,620 --> 00:03:36,600
+Quindi ora registriamo il server di servizio calcolatori e passiamo una S e poi passiamo il server.
+
+51
+00:03:36,600 --> 00:03:37,760
+Proprio come prima.
+
+52
+00:03:38,220 --> 00:03:43,100
+Quindi ora questo server proprio qui abbiamo bisogno dei tuoi strumenti sono la nostra interfaccia.
+
+53
+00:03:43,620 --> 00:03:53,830
+Quindi se andiamo alla calcolatrice o andiamo a dare un'occhiata al server stesso del servizio, ci servirà una certa funzione.
+
+54
+00:03:53,970 --> 00:03:58,280
+Quindi andiamo avanti e digitiamo alcune funzioni.
+
+55
+00:03:58,340 --> 00:04:05,510
+Quindi andare avanti e dire la funzione su un puntatore al mio server la funzione somma.
+
+56
+00:04:05,510 --> 00:04:09,230
+E quindi, ovviamente, la necessità di nominare gli argomenti, quindi questo è il contesto.
+
+57
+00:04:09,260 --> 00:04:10,940
+Questa è la mia richiesta
+
+58
+00:04:11,420 --> 00:04:17,860
+E quindi il tipo non sarà felice finché non diciamo la calcolatrice P. B. ma qualche richiesta e calcolatrice
+
+59
+00:04:17,870 --> 00:04:20,240
+P. B. ad una risposta.
+
+60
+00:04:20,240 --> 00:04:22,060
+Quindi questo sembra buono.
+
+61
+00:04:22,130 --> 00:04:25,120
+Il contesto non è definito, quindi dobbiamo importarlo.
+
+62
+00:04:25,370 --> 00:04:29,150
+Quindi il contesto è ora definito e tutto sembra corretto.
+
+63
+00:04:29,150 --> 00:04:31,960
+OK, quindi andiamo avanti e implementiamo quella funzione.
+
+64
+00:04:32,390 --> 00:04:35,100
+Quindi il primo numero è
+
+65
+00:04:35,150 --> 00:04:38,890
+Quindi diremo il primo numero uguale.
+
+66
+00:04:38,930 --> 00:04:46,350
+Ma il primo numero il secondo numero è il secondo numero.
+
+67
+00:04:46,640 --> 00:04:52,370
+E questo è solo un po 'ovvio ma volevo solo sottolineare che estraiamo il primo numero
+
+68
+00:04:52,370 --> 00:04:54,950
+e il secondo numero dalla richiesta.
+
+69
+00:04:54,950 --> 00:05:06,880
+Quindi questo sembra buono dal modo in cui possiamo dire che la stampa anti-dote ha ricevuto alcuni RBC e passeremo solo ciò
+
+70
+00:05:06,880 --> 00:05:10,570
+che è stato passato nella richiesta.
+
+71
+00:05:10,610 --> 00:05:12,040
+Quindi questo sembra buono.
+
+72
+00:05:12,080 --> 00:05:13,500
+Ora facciamo i risultati.
+
+73
+00:05:13,940 --> 00:05:23,010
+Quindi i risultati che sono effettivamente la somma sono fondamentalmente il primo numero più il secondo numero.
+
+74
+00:05:23,510 --> 00:05:25,850
+E ora dobbiamo solo restituirlo.
+
+75
+00:05:25,850 --> 00:05:32,080
+Quindi creeremo alcuni oggetti risposta in modo che la risposta sia uguale a.
+
+76
+00:05:32,870 --> 00:05:41,120
+E calcolatrice P. B. ottenuto qualche risposta e qualche struttura di risposta stessa ci porta dei risultati.
+
+77
+00:05:41,150 --> 00:05:46,100
+Quindi quando crei qualche risultato adesso ed è un int 32 che già possiede.
+
+78
+00:05:46,250 --> 00:05:51,280
+Quindi questo è prefetto alcuni risultati e passiamo nello stesso oggetto.
+
+79
+00:05:51,290 --> 00:05:58,420
+Quindi tutto sembra a posto e abbiamo dovuto presentarci e di restituirlo come risultato.
+
+80
+00:05:58,990 --> 00:06:01,790
+E questo sembra che la somma sia implementata.
+
+81
+00:06:01,790 --> 00:06:02,900
+Quindi sembra corretto.
+
+82
+00:06:02,930 --> 00:06:10,540
+Ora non è ancora felice qui perché il server non è un'espressione, devo solo creare la mia struttura.
+
+83
+00:06:10,640 --> 00:06:12,680
+OK, quindi ora sembra buono.
+
+84
+00:06:12,860 --> 00:06:16,730
+Quindi il server è stato creato Posso andare avanti e lanciarlo.
+
+85
+00:06:17,090 --> 00:06:31,290
+Quindi possiamo dire go go go run calcolatrice calcolatrice server server per andare e il server è in esecuzione, quindi è
+
+86
+00:06:31,290 --> 00:06:32,030
+perfetto.
+
+87
+00:06:32,140 --> 00:06:35,090
+E poi possiamo andare avanti con il cliente stesso.
+
+88
+00:06:35,460 --> 00:06:43,620
+Quindi di nuovo sono pigro, quindi vado avanti e copio questo client qui e lo incollo e vediamo
+
+89
+00:06:43,620 --> 00:06:44,670
+cosa abbiamo.
+
+90
+00:06:44,670 --> 00:06:47,120
+Ho intenzione di rimuovere ciò di cui non ho bisogno.
+
+91
+00:06:47,130 --> 00:06:52,070
+Quindi questo è un client calcolatrice.
+
+92
+00:06:52,080 --> 00:06:53,580
+Si connetterà alla porta.
+
+93
+00:06:53,610 --> 00:06:54,640
+È perfetto.
+
+94
+00:06:55,020 --> 00:07:03,790
+E avrà bisogno della calcolatrice P. B. e il servizio creerà un nuovo client di servizi di
+
+95
+00:07:03,790 --> 00:07:07,840
+calcolatrice che prende la media CC di connessione e faremo una chiamata con un canarino.
+
+96
+00:07:07,840 --> 00:07:11,060
+Quindi perfetto sarebbe appena passato.
+
+97
+00:07:11,050 --> 00:07:14,370
+Ho calcolato P. B. giusto qui.
+
+98
+00:07:14,710 --> 00:07:22,570
+E quindi inizieremo a fare una somma, Nare RBC, ora ho bisogno che tu crei una richiesta
+
+99
+00:07:22,600 --> 00:07:31,990
+estiva, quindi diciamo e calcoliamo P. B. sono alcune richieste e questo prende il numero come input.
+
+100
+00:07:32,260 --> 00:07:38,940
+Quindi, per esempio, possiamo dire che il primo numero è il numero 5 e il secondo numero è il numero 40.
+
+101
+00:07:38,950 --> 00:07:40,980
+Quindi la somma è 45.
+
+102
+00:07:41,550 --> 00:07:45,120
+Sembra corretto, quindi possiamo dire i punti del cliente.
+
+103
+00:07:45,250 --> 00:07:46,760
+Quindi non è un ottimo client di servizio.
+
+104
+00:07:46,760 --> 00:07:53,450
+Ora è un client di servizi di calcolatrice e la funzione stessa è un po '.
+
+105
+00:07:53,890 --> 00:07:57,100
+E possiamo usare lo stesso contesto di prima che è lo sfondo.
+
+106
+00:07:57,550 --> 00:08:06,170
+Quindi permettimi di pulire questo e la richiesta stessa è REC e possiamo chiamare alcuni RBC
+
+107
+00:08:06,170 --> 00:08:12,160
+e la risposta dalla somma stessa verrà richiesta alcuni risultati.
+
+108
+00:08:12,290 --> 00:08:12,740
+OK.
+
+109
+00:08:12,770 --> 00:08:14,110
+Quindi sembra tutto corretto.
+
+110
+00:08:14,180 --> 00:08:18,630
+Ora, in pratica, hai appena modificato il codice molto rapidamente per adattarlo.
+
+111
+00:08:18,650 --> 00:08:25,440
+Ma ora andremo a sommare il numero 4 5 e 40 e speriamo di ottenere la risposta giusta.
+
+112
+00:08:25,490 --> 00:08:30,970
+Quindi andiamo avanti ed eseguiamo i client della calcolatrice.
+
+113
+00:08:31,120 --> 00:08:33,490
+E come puoi vedere sta iniziando a fare qualche RBC.
+
+114
+00:08:33,610 --> 00:08:39,460
+E la risposta dalla somma è 45, che è il numero corretto e quello che riceviamo è qualche RBC di cinque
+
+115
+00:08:39,460 --> 00:08:40,280
+e quaranta.
+
+116
+00:08:40,660 --> 00:08:41,770
+Quindi sembra fantastico.
+
+117
+00:08:41,770 --> 00:08:43,210
+Questo sembra tutto corretto.
+
+118
+00:08:43,210 --> 00:08:46,130
+Ho appena notato che ho anche bisogno di aggiungere una nuova linea qui.
+
+119
+00:08:46,400 --> 00:08:49,120
+Ma diciamo che abbiamo implementato e spero che tu abbia gli stessi risultati.
+
+120
+00:08:49,120 --> 00:08:55,290
+Abbiamo implementato un servizio di calcolatrice che al momento funziona in modo molto semplice.
+
+121
+00:08:55,540 --> 00:09:00,820
+Ma nella prossima sezione vedremo esattamente di cosa si tratta perché inizia a portare
+
+122
+00:09:00,820 --> 00:09:03,250
+alcune funzionalità di streaming al mix.
+
+123
+00:09:03,370 --> 00:09:05,940
+Quindi spero che tu sia eccitato e ti vedrò nella prossima lezione.
+

@@ -1,0 +1,347 @@
+1
+00:00:13,440 --> 00:00:16,950
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:17,370 --> 00:00:23,050
+In the previous session, we talked about some concepts of PC and indecision.
+
+3
+00:00:23,070 --> 00:00:26,340
+We want to talk about the others G.R. PC concepts.
+
+4
+00:00:29,110 --> 00:00:30,670
+Defining services.
+
+5
+00:00:32,510 --> 00:00:40,090
+In G.R. PC, a client application can directly call a method on a server application on a different
+
+6
+00:00:40,090 --> 00:00:47,380
+machine as if it were local project, making it easier for you to create distributed applications and
+
+7
+00:00:47,380 --> 00:00:48,160
+services.
+
+8
+00:00:49,390 --> 00:00:57,340
+As in many are, peace assistant G.R. PC is based around the idea of defining a service specifying the
+
+9
+00:00:57,340 --> 00:01:02,590
+methods that can be called remotely with their parameters and return types.
+
+10
+00:01:04,230 --> 00:01:11,070
+On the server side, the server implements these interface and runs a G.R. PC server to handle client
+
+11
+00:01:11,070 --> 00:01:11,520
+cards.
+
+12
+00:01:13,460 --> 00:01:20,900
+On the client side, the client has this to refer to as just the client in some languages that provides
+
+13
+00:01:20,900 --> 00:01:22,910
+the same methods as a server.
+
+14
+00:01:24,650 --> 00:01:32,750
+Do your PC clients and servers can roam and talk to each other in a variety of environments, from servers
+
+15
+00:01:32,750 --> 00:01:39,320
+inside Google to your own desktop and can be written in any of your PCs supported languages?
+
+16
+00:01:40,250 --> 00:01:46,730
+So, for example, you can easily create the GOP server in Java with clients in gold, python or ruby.
+
+17
+00:01:47,900 --> 00:01:55,070
+In addition, the latest Google API will have a G.R. PC version of during their faces, letting you
+
+18
+00:01:55,280 --> 00:01:58,760
+easily build Google functionality into your applications.
+
+19
+00:02:03,110 --> 00:02:04,820
+Defying that protocol fine.
+
+20
+00:02:06,450 --> 00:02:14,340
+By default, G.R. PC uses protocol buffers, Google's major open source mechanism for serializing a
+
+21
+00:02:14,350 --> 00:02:15,370
+structured data.
+
+22
+00:02:15,900 --> 00:02:22,530
+The first step then working the protocol buffers is to define the structure for the data you want to
+
+23
+00:02:22,530 --> 00:02:24,450
+serialized into a port of fire.
+
+24
+00:02:24,810 --> 00:02:29,700
+This is an ordinary text file with a dot proto extension protocol.
+
+25
+00:02:29,700 --> 00:02:38,040
+Buffer data is a structure, as messages for each message is a small, logical record of information
+
+26
+00:02:38,190 --> 00:02:42,060
+containing a series of name value pairs called feeds.
+
+27
+00:02:42,720 --> 00:02:48,630
+Here is a simple example message a student message search.
+
+28
+00:02:49,230 --> 00:02:52,710
+Then, once you have a PC, find your data structures.
+
+29
+00:02:52,920 --> 00:03:00,690
+You use the protocol buffer compiler portable to generate data, access classes in your preferred languages
+
+30
+00:03:00,870 --> 00:03:02,550
+from your reported definition.
+
+31
+00:03:03,630 --> 00:03:11,580
+These provide simple accessories for each field like name and set name, as well as methods to serialize
+
+32
+00:03:11,580 --> 00:03:14,400
+past the Hulu structure to from robots.
+
+33
+00:03:16,100 --> 00:03:22,580
+So, for instance, if you'd chosen languages, go land, grind the compiler and the example above will
+
+34
+00:03:22,590 --> 00:03:24,500
+generate a class called the student.
+
+35
+00:03:25,070 --> 00:03:32,150
+You can then use this class in your application to populate, serialize and retrieve student protocol
+
+36
+00:03:32,160 --> 00:03:33,230
+buffer messages.
+
+37
+00:03:34,580 --> 00:03:41,790
+You defined job services in all in report to find with RBC method parameters and reason tolerance is
+
+38
+00:03:41,870 --> 00:03:44,180
+specified as a protocol for messages.
+
+39
+00:03:44,540 --> 00:03:50,300
+For the example, we can create another message like search for the parameter as request.
+
+40
+00:03:50,750 --> 00:03:54,280
+Now you can create a service for your PC.
+
+41
+00:03:54,680 --> 00:04:00,830
+So right service, a student service and right your job, your senior thoughts.
+
+42
+00:04:01,190 --> 00:04:04,670
+Then you define RTC methods inside your service.
+
+43
+00:04:04,670 --> 00:04:08,480
+Definition is specifying the request and response times.
+
+44
+00:04:13,090 --> 00:04:14,830
+G.R. Pieces Service told.
+
+45
+00:04:17,020 --> 00:04:20,020
+It lets you define four kinds of service method.
+
+46
+00:04:21,280 --> 00:04:28,210
+A simple RTC where the client sends a request to the server using the S2 and waits for a response to
+
+47
+00:04:28,210 --> 00:04:28,900
+come back.
+
+48
+00:04:29,170 --> 00:04:31,630
+Just like a normal function.
+
+49
+00:04:31,910 --> 00:04:35,110
+Com Now you can see the syntax.
+
+50
+00:04:38,600 --> 00:04:46,370
+A server side is threatening our PC, where the client sends a request to the server and gets a stream
+
+51
+00:04:46,370 --> 00:04:48,740
+to read a sequence of message back.
+
+52
+00:04:49,460 --> 00:04:54,050
+The client reads from the returned stream until there are no more messages.
+
+53
+00:04:54,470 --> 00:04:57,920
+Results are estranged rather than return at once.
+
+54
+00:04:58,670 --> 00:05:00,740
+Now you can see the syntax.
+
+55
+00:05:03,990 --> 00:05:06,330
+A client site is training RTC.
+
+56
+00:05:07,230 --> 00:05:14,820
+Then the client writes a sequence of messages and sends them to the server again using a provided stream.
+
+57
+00:05:15,210 --> 00:05:22,320
+Once the client has finished writing the messages, it Vespas the server to read them out and returns
+
+58
+00:05:22,320 --> 00:05:23,340
+its response.
+
+59
+00:05:23,760 --> 00:05:29,030
+You specify a client side the streaming method by placing the estranged keyboard before the request.
+
+60
+00:05:29,040 --> 00:05:38,070
+Type a bi directional streaming RTC where both sides send the sequence of messages using a read virus
+
+61
+00:05:38,070 --> 00:05:38,350
+stream.
+
+62
+00:05:38,820 --> 00:05:46,440
+The two extremes operate independently so clients and servers can read and write in whatever order they
+
+63
+00:05:46,440 --> 00:05:46,920
+like.
+
+64
+00:05:47,100 --> 00:05:53,940
+For example, the server could wait for receive all the client messages before writing its responses,
+
+65
+00:05:54,390 --> 00:06:01,800
+or it could alternately read a message, then write a message or some other combination of reads and
+
+66
+00:06:01,800 --> 00:06:02,280
+writes.
+
+67
+00:06:02,550 --> 00:06:05,730
+The order of messages in each student is preserved.
+
+68
+00:06:06,690 --> 00:06:13,590
+US specify this type of method by placing the Edstrom keyboard before both the request and the response.
+
+69
+00:06:18,100 --> 00:06:20,830
+Create a method for G.R. PC service.
+
+70
+00:06:21,550 --> 00:06:24,340
+Now we define the method for our service.
+
+71
+00:06:25,060 --> 00:06:28,870
+Now you can see the syntax for student service.
+
+72
+00:06:29,140 --> 00:06:36,220
+DARPA uses Pro with a special DARPA plugin to generate quote from your approach of fine.
+
+73
+00:06:36,670 --> 00:06:43,930
+You get generated DARPA, the client and server code, as well as regular protocol Boffa code for populating,
+
+74
+00:06:43,930 --> 00:06:47,020
+serializing and retrieving your message types.
+
+75
+00:06:47,890 --> 00:06:55,300
+So we designed a method inside the G.R. PC service that is supposed to return a student based on its
+
+76
+00:06:55,300 --> 00:06:56,620
+build of a student.
+
+77
+00:06:58,140 --> 00:07:05,340
+It's not very that within the service, the input parameter and the region and value are both of the
+
+78
+00:07:05,340 --> 00:07:13,530
+message type this that profile exposes our student service, which features a solitary get to student
+
+79
+00:07:13,530 --> 00:07:19,230
+function, which can be caused by any job decline written in any language.
+
+80
+00:07:20,510 --> 00:07:28,430
+These dark portal definitions are typically share across clients of all shapes and sizes so that they
+
+81
+00:07:28,430 --> 00:07:31,940
+can generate their own code to talk to our job, etc..
+
+82
+00:07:33,450 --> 00:07:39,480
+You can generate the go in specific G.R. PC code using the Pontotoc tool in two ways.
+
+83
+00:07:39,750 --> 00:07:44,540
+You can see the syntax after executing advanced comment.
+
+84
+00:07:44,840 --> 00:07:52,080
+You'll see this will have generated A-student Dot PBE Dot Go Fine, which will contain generated code
+
+85
+00:07:52,080 --> 00:07:58,630
+for us to easily call within our code in order not to prolong the time of decision to be finished,
+
+86
+00:07:58,710 --> 00:08:01,680
+and we will continue the content in the next session.
+
+87
+00:08:01,860 --> 00:08:02,430
+Goodbye.

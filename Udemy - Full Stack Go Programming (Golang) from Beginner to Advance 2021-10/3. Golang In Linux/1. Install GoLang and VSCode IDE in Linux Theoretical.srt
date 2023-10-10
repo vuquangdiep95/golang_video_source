@@ -1,0 +1,371 @@
+1
+00:00:13,160 --> 00:00:19,490
+Hello and welcome to the golden programming language course in the previous session, we talked about
+
+2
+00:00:19,490 --> 00:00:27,370
+installing, go learning and preparing this code idea in Windows operating system and indecision.
+
+3
+00:00:27,620 --> 00:00:34,610
+You want to talk about the installing Go Lang and repainting this good idea in Linux operating system.
+
+4
+00:00:37,610 --> 00:00:41,060
+How to install Golang in Linux system.
+
+5
+00:00:42,710 --> 00:00:51,500
+First, go to go blank dot org slash deal and download the latest version of Google Lang in an archive,
+
+6
+00:00:51,500 --> 00:00:54,620
+find using Debian you get comment as follows.
+
+7
+00:00:57,630 --> 00:01:02,260
+Now select Go Lang version based by operating system.
+
+8
+00:01:03,210 --> 00:01:08,730
+If our OS is 64 bit select Go Lang 64 bit version.
+
+9
+00:01:09,000 --> 00:01:14,610
+And if it is 32 bit, we select Go Lang version 32 bit.
+
+10
+00:01:18,010 --> 00:01:27,370
+Next, check the integrity of the tarpon by verifying the SHA 256 checks, some of the are qualified
+
+11
+00:01:27,610 --> 00:01:36,550
+using the South comment as below where the flag dash is used to specify the algorithm to be used.
+
+12
+00:01:37,660 --> 00:01:49,030
+Samson Dash, a 256 Go Lang Dart part Dart Cheez-It To show that the contents of the downloaded are
+
+13
+00:01:49,030 --> 00:01:53,440
+confie are the exact copy provided on the Go Lang website.
+
+14
+00:01:53,740 --> 00:02:02,500
+The 256 bit hash value generated from the comment about as seen in the output should be the same as
+
+15
+00:02:02,500 --> 00:02:05,650
+the provided lounge with the download link.
+
+16
+00:02:05,980 --> 00:02:09,100
+If that is the case, proceed to the next step.
+
+17
+00:02:09,100 --> 00:02:12,820
+Otherwise download the new tar ball and run the check again.
+
+18
+00:02:16,250 --> 00:02:24,170
+Then extract the tar archive, find into RSS, use the restless local directory using the comment below.
+
+19
+00:02:24,740 --> 00:02:38,780
+Sudo tar dash c uppercase SS user SS Local Dash IX visit f go lang dot tar dot gz where Dash C upper
+
+20
+00:02:39,140 --> 00:02:41,690
+is specifies the destination directory.
+
+21
+00:02:43,680 --> 00:02:51,510
+First set up your go watch space by creating a directory home, go on their projects, which is the
+
+22
+00:02:51,510 --> 00:02:53,340
+root of your workspace space.
+
+23
+00:02:55,430 --> 00:03:04,220
+The focus phase is made of three directors, namely being which will contain go executable binaries
+
+24
+00:03:04,580 --> 00:03:12,080
+S4C, which will store your source vine and pcgg, which will store package objects.
+
+25
+00:03:12,590 --> 00:03:22,790
+Therefore, create about directories as follows and call the Air Dash P home slash go on the project.
+
+26
+00:03:23,220 --> 00:03:33,350
+Slash open and close calibrations and between input been comma s or C and comma pcgg m code.
+
+27
+00:03:33,350 --> 00:03:37,280
+The air means make directory and second c.
+
+28
+00:03:37,280 --> 00:03:46,550
+The whole S lets go on their projects, see the means change directory and to else means least files
+
+29
+00:03:46,550 --> 00:03:47,990
+and directories.
+
+30
+00:03:52,490 --> 00:03:59,840
+Now it's time to execute, go like the rest of Linux programs without specifying its absolute patterns,
+
+31
+00:04:00,680 --> 00:04:07,310
+its installation directory must be installed as one of the Valley of Pad Environment variables.
+
+32
+00:04:09,170 --> 00:04:17,210
+Now at such user, it's local as Let's Go West has been to the path environment variable by inserting
+
+33
+00:04:17,210 --> 00:04:26,510
+the line below in your research ethics fine, fine for a system wide installation or home Slashdot profile
+
+34
+00:04:26,510 --> 00:04:31,970
+or home Slashdot bash online profile two user a specific installation.
+
+35
+00:04:34,200 --> 00:04:41,760
+Using your preferred ED weapon, the appropriated user profile fired as per your distribution and at
+
+36
+00:04:41,760 --> 00:04:42,900
+the line below.
+
+37
+00:04:43,110 --> 00:04:45,630
+So save the file and exit it.
+
+38
+00:04:46,920 --> 00:04:52,560
+Export pact equals pact columnists use it as such, local estimates go as this been.
+
+39
+00:04:53,910 --> 00:05:02,840
+And then set the values of go pat and go bingo environment variables in your user profile find to point
+
+40
+00:05:02,840 --> 00:05:05,100
+to your space directory.
+
+41
+00:05:06,100 --> 00:05:15,310
+Export go pack equals home IST, let's go on the line projects and export go being equals.
+
+42
+00:05:15,550 --> 00:05:17,680
+Go pack it slash beam.
+
+43
+00:05:21,150 --> 00:05:27,350
+If you install Golang in a custom directory other than the default path means it's less user, it's
+
+44
+00:05:27,360 --> 00:05:27,990
+less local.
+
+45
+00:05:28,350 --> 00:05:33,570
+You must specify that directory as the venue of the Go Route variable.
+
+46
+00:05:34,320 --> 00:05:42,540
+For example, if you have installed Go Lang in the home directory at the lines below to your home Slashdot
+
+47
+00:05:42,540 --> 00:05:53,770
+profile or home, a Slashdot bash underline profile file export go root equals home slash, go and export.
+
+48
+00:05:53,790 --> 00:05:56,100
+Pack equals pack column.
+
+49
+00:05:56,100 --> 00:05:57,720
+Go to the slash mean.
+
+50
+00:05:59,780 --> 00:06:07,580
+The final step on the decision is to effect the changes made to the user profile in the current Précision,
+
+51
+00:06:08,750 --> 00:06:20,360
+so right souls home don't bash online profile and execute or source home if Slashdot profile.
+
+52
+00:06:25,620 --> 00:06:33,420
+Very fine go blank installation around the comments below to view your go version and environment,
+
+53
+00:06:34,230 --> 00:06:39,800
+go version to see the version of Go Lag and Go Ms.
+
+54
+00:06:40,200 --> 00:06:42,270
+To see the go your environment.
+
+55
+00:06:47,250 --> 00:06:54,630
+Type the following command to display use age information for the GO tool, which many schools source
+
+56
+00:06:54,630 --> 00:06:57,120
+code go help.
+
+57
+00:06:59,480 --> 00:07:05,580
+To test if your go installation is water chaotically, right, is small, go.
+
+58
+00:07:05,600 --> 00:07:15,350
+Hanawalt program save the fine in-home go on the line project saucier slash hello directory on your
+
+59
+00:07:15,350 --> 00:07:24,110
+go lang source files must be and with the Don't Go extension, begin by creating the Hello Project directory
+
+60
+00:07:24,110 --> 00:07:24,860
+on their home.
+
+61
+00:07:24,860 --> 00:07:35,960
+Go on the line project as Slash CRC, so we right in the air dash p home go on the line projects r sirc
+
+62
+00:07:36,110 --> 00:07:45,500
+slash hello, then use your favorite editor to create the Hello Dot Go find in the Halo Directory in
+
+63
+00:07:45,500 --> 00:07:57,380
+this example we used from VM, so write the I Home must go on the line projects s less SIRC as such.
+
+64
+00:07:57,410 --> 00:07:58,600
+Hello s nash.
+
+65
+00:07:58,610 --> 00:08:00,020
+Hello dot goo.
+
+66
+00:08:03,120 --> 00:08:05,920
+Now go to create a sample.
+
+67
+00:08:06,420 --> 00:08:11,130
+Add the lines below in the fine, save it and exit it.
+
+68
+00:08:13,220 --> 00:08:21,650
+Now compiling the program evolve as using go in, install and run, it's so full compiled, we use go
+
+69
+00:08:21,680 --> 00:08:27,410
+in a town, come in and run the program we use Go Run.
+
+70
+00:08:29,300 --> 00:08:37,040
+If you see the message, hello, welcome to the Golang programming in Linux, so your installation is
+
+71
+00:08:37,040 --> 00:08:38,440
+working correctly.
+
+72
+00:08:40,670 --> 00:08:44,720
+Install visual studio code on Debian and open to.
+
+73
+00:08:46,220 --> 00:08:53,750
+The most preferred method of installing visual studio code on Debian based systems is by enabling the
+
+74
+00:08:53,750 --> 00:09:00,800
+voice code repository and installing the Visual Studio could package using the app package manager.
+
+75
+00:09:01,220 --> 00:09:05,240
+So we use the command, so the app update.
+
+76
+00:09:07,180 --> 00:09:18,610
+Once updated, proceed in install dependency required by executing the command sudo apt install software,
+
+77
+00:09:18,610 --> 00:09:24,640
+Dash Properties, Dash Common APT Dash Transport, Dash STPs.
+
+78
+00:09:27,200 --> 00:09:29,930
+Next, using the devil you get command.
+
+79
+00:09:30,200 --> 00:09:35,300
+Download the repository and import Microsoft's GPG key as shown.
+
+80
+00:09:38,960 --> 00:09:47,120
+Once you have enabled the repository, update the system and installed visual studio code by running
+
+81
+00:09:47,120 --> 00:09:54,500
+the comment, so do APT Update and sudo APT install code.
+
+82
+00:09:55,820 --> 00:10:00,170
+Due to its size, the installation takes approximately five minutes.
+
+83
+00:10:00,530 --> 00:10:07,460
+Once installed, use the application manager to search Visual Studio code and launch it as shown.
+
+84
+00:10:11,200 --> 00:10:17,320
+Install vs code extensions after the installation launch vehicle.
+
+85
+00:10:18,900 --> 00:10:28,230
+Then opened a St. John's marketplace by the council plus shift plus x chalky and search go and install
+
+86
+00:10:28,260 --> 00:10:28,650
+it.
+
+87
+00:10:32,220 --> 00:10:36,600
+Now it's time to install up the tools for do this.
+
+88
+00:10:36,870 --> 00:10:44,460
+Open the comment palette by the Control Plus Sheathed Plus piece key and around the Go column install
+
+89
+00:10:44,460 --> 00:10:47,550
+update tools common after ex-security.
+
+90
+00:10:47,820 --> 00:10:53,190
+You can see go extensions listed here, selling all and install them.
+
+91
+00:10:55,870 --> 00:11:01,630
+In order not to prolong the time of decision, we will finish it and we will continue to contend in
+
+92
+00:11:01,630 --> 00:11:02,500
+the next session.
+
+93
+00:11:02,710 --> 00:11:03,280
+Goodbye.

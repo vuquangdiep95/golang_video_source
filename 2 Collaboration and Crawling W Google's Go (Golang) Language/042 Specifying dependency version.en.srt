@@ -1,0 +1,551 @@
+1
+00:00:00,210 --> 00:00:06,000
+Vì vậy, một trong những điểm chính của video trước là chúng ta đã thấy cách theo mặc định, nó sẽ gỡ xuống bản mới nhất
+
+2
+00:00:06,000 --> 00:00:12,280
+phiên bản của gói và chúng tôi biết rằng các gói được đặt tên cách nhau theo phiên bản chính của chúng.
+
+3
+00:00:12,280 --> 00:00:17,650
+Vì vậy, mọi thứ trên Phiên bản 1, ví dụ: Phiên bản 2 phiên bản 3 phiên bản 4.
+
+4
+00:00:17,770 --> 00:00:19,890
+Nó sẽ có khoảng cách tên riêng.
+
+5
+00:00:20,070 --> 00:00:25,590
+Và vì vậy, khi bạn nói điều gì đó như go get go lay that hoặc chuyển tiếp dấu gạch chéo xuất dấu gạch chéo văn bản tương đương
+
+6
+00:00:25,590 --> 00:00:28,010
+để nói hãy lấy cái đó ra mới nhất.
+
+7
+00:00:28,020 --> 00:00:34,410
+Và do đó, việc thêm phần này vào thẻ cho phép bạn chỉ định phiên bản là thẻ mặc định mà nó có phiên bản mới nhất
+
+8
+00:00:34,470 --> 00:00:36,370
+của bản phát hành chính.
+
+9
+00:00:36,420 --> 00:00:42,420
+Và trong video này, chúng ta sẽ xem cách chỉ định bạn có thể chỉ định phiên bản phụ thuộc bằng cách sử dụng ứng dụng like
+
+10
+00:00:42,600 --> 00:00:46,470
+và thêm và nói phiên bản một chấm ba chấm một.
+
+11
+00:00:46,470 --> 00:00:48,410
+Vì vậy, chúng ta sẽ xem làm thế nào để làm điều đó ở đây.
+
+12
+00:00:48,420 --> 00:00:53,040
+Vì vậy, điều đầu tiên tôi sẽ làm là tôi sẽ đi tới thiết bị đầu cuối của mình và tôi sẽ thực hiện go list dash
+
+13
+00:00:53,510 --> 00:00:59,070
+all và nó sẽ liệt kê tất cả các phụ thuộc trực tiếp và gián tiếp của tôi.
+
+14
+00:00:59,070 --> 00:01:06,030
+Và khi chúng tôi bắt đầu điều này, chúng tôi đã nói rằng chúng tôi muốn đưa vào báo giá và phiên bản AC Io của chúng tôi một điểm
+
+15
+00:01:06,030 --> 00:01:09,110
+năm điểm hai là những gì đã được đưa vào.
+
+16
+00:01:09,240 --> 00:01:16,670
+Và sau đó, như một phần trong đó, chúng tôi cũng đã đưa vào phiên bản lấy mẫu Io hạt giống của mình một điểm ba điểm
+
+17
+00:01:16,790 --> 00:01:18,690
+một sự phụ thuộc gián tiếp.
+
+18
+00:01:19,020 --> 00:01:25,530
+Vì vậy, nếu chúng ta xem xét sự phụ thuộc này mà chúng ta đã yêu cầu sự phụ thuộc trực tiếp này nếu chúng ta xem xét
+
+19
+00:01:25,530 --> 00:01:28,370
+điều này chúng ta có thể đạt được một số hiểu biết sâu sắc và một số nội dung thú vị.
+
+20
+00:01:28,380 --> 00:01:34,380
+Vì vậy, tôi sẽ đi đến go dark dawg go dark dawg và tôi sẽ tìm kiếm hạt giống của chúng ta ở phía trước
+
+21
+00:01:34,380 --> 00:01:40,470
+dấu gạch chéo vì đó là cái tôi đã mang vào và nó hiển thị gói này và ở đây tôi có thể nhấp vào
+
+22
+00:01:40,470 --> 00:01:46,890
+ngay tại đó và họ sẽ đưa tôi đến trung tâm và lấy trung tâm. Tôi có thể đến các bản phát hành và sau đó nó phát hành
+
+23
+00:01:46,890 --> 00:01:51,300
+Tôi có thể thấy các phiên bản khác nhau mà chúng tôi đã đưa vào một điểm năm điểm hai để tôi có thể nhấp vào phiên bản nhỏ này
+
+24
+00:01:51,300 --> 00:01:57,900
+băm ngay tại đây và điều đó đưa tôi đến một nhận xét nơi tôi có thể xem các tệp đó bằng cách nhấp vào duyệt qua
+
+25
+00:01:58,470 --> 00:02:04,170
+và vì vậy khi tôi xem phiên bản một điểm năm điểm hai và tôi xem tệp MoD, tệp mô-đun trên
+
+26
+00:02:04,170 --> 00:02:09,310
+cái này nó nói nó yêu cầu phiên bản lấy mẫu Io hạt giống RSA một điểm 3.0.
+
+27
+00:02:09,390 --> 00:02:14,230
+Vì vậy, điều đó trở thành một sự phụ thuộc gián tiếp vì đây là một sự phụ thuộc trực tiếp của tôi.
+
+28
+00:02:14,370 --> 00:02:20,040
+Và vì cái này có cái kia như một sự phụ thuộc nên điều này trở thành một sự phụ thuộc gián tiếp đối với tôi.
+
+29
+00:02:20,040 --> 00:02:26,430
+Và trong đó một điểm ba chấm o có lẽ chúng tôi muốn thử tải phiên bản mới nhất của phiên bản đó để chúng tôi có thể
+
+30
+00:02:26,430 --> 00:02:29,410
+đi xem các phiên bản khác nhau của phiên bản đó ngay bây giờ.
+
+31
+00:02:29,520 --> 00:02:33,180
+Và một trong những cách chúng ta có thể thấy là chúng ta có thể đến lấy trung tâm và chúng ta có thể tra cứu nó.
+
+32
+00:02:33,250 --> 00:02:35,640
+Chúng ta có thể bắt đầu lúc trời tối.
+
+33
+00:02:35,640 --> 00:02:44,010
+Và vì vậy, chúng tôi sẽ tìm đường đến bộ lấy mẫu của họ, sau đó đi đến trung tâm và tại trung tâm, chúng ta có thể xem xét
+
+34
+00:02:44,010 --> 00:02:45,810
+các bản phát hành khác nhau.
+
+35
+00:02:45,810 --> 00:02:49,490
+Và vì vậy ngay bây giờ tôi đang phát hành phiên bản một điểm ba điểm 0.
+
+36
+00:02:49,590 --> 00:02:51,840
+Ngoài ra còn có một điểm chín chín điểm chín chín.
+
+37
+00:02:51,840 --> 00:02:54,740
+Và cũng là một điểm ba điểm một.
+
+38
+00:02:54,840 --> 00:02:59,430
+Và vì vậy chúng tôi có một vài phiên bản khác, vì vậy nếu tôi yêu cầu nó tải phiên bản mới nhất, chúng tôi có thể xem những gì
+
+39
+00:02:59,430 --> 00:03:01,530
+xảy ra với cơ sở mã của chúng tôi.
+
+40
+00:03:01,530 --> 00:03:09,450
+Vì vậy, ngay bây giờ tôi đang tham gia dự án Girling và tôi sẽ chuyển CDE thành 0 3 và sau đó tôi sẽ chuyển sang
+
+41
+00:03:09,450 --> 00:03:18,720
+xem vào 0 2 thêm phần phụ thuộc và nếu chúng ta xem mã đó trong 0 2 thì thêm phần phụ thuộc vào mã đó
+
+42
+00:03:18,720 --> 00:03:26,330
+chúng tôi có ở đó chúng tôi đang sử dụng trích dẫn Xin chào trích dẫn Io hạt giống của chúng tôi và khi chúng tôi chạy, hãy kiểm tra điều đó.
+
+43
+00:03:26,340 --> 00:03:30,450
+Vì vậy, hãy chắc chắn rằng tôi đang ở 0 2 Tôi sẽ đi kiểm tra vào 0 2.
+
+44
+00:03:30,450 --> 00:03:31,790
+Mọi thứ đều hoạt động tốt.
+
+45
+00:03:31,950 --> 00:03:38,090
+Tôi chỉ muốn cho bạn thấy mọi thứ vẫn hoạt động tốt vì bây giờ tôi sẽ sử dụng mã này ở đây.
+
+46
+00:03:38,140 --> 00:03:42,690
+bộ lấy mẫu âm thanh hạt giống của chúng tôi và nó sẽ được tải theo mặc định.
+
+47
+00:03:42,810 --> 00:03:45,750
+Phiên bản mới nhất giống như tôi có phiên bản mới nhất ở đây.
+
+48
+00:03:45,750 --> 00:03:46,480
+Phải.
+
+49
+00:03:46,560 --> 00:03:52,590
+Và vì vậy tôi có thể làm điều đó với bản mới nhất hoặc tôi có thể làm điều đó mà không cần I'm going to do it just for fun.
+
+50
+00:03:52,590 --> 00:03:54,620
+Xem những gì xảy ra chỉ để chứng minh quan điểm.
+
+51
+00:03:55,010 --> 00:03:59,310
+Và vì vậy, nó sẽ có phiên bản mới nhất, điều đó có nghĩa là nó sẽ xem xét các bản phát hành
+
+52
+00:03:59,310 --> 00:04:02,990
+phiên bản mới nhất sẽ là một điểm chín chín chín chín.
+
+53
+00:04:03,030 --> 00:04:05,460
+Vì vậy, tôi sẽ nhấn làm điều đó.
+
+54
+00:04:05,460 --> 00:04:06,350
+Nó sẽ làm điều đó.
+
+55
+00:04:06,420 --> 00:04:10,210
+Và nếu tôi gạch ngang danh sách đi, tôi là Dashiell gạch ngang tất cả.
+
+56
+00:04:10,320 --> 00:04:13,440
+Bây giờ tôi có phiên bản một điểm chín chín chín chín.
+
+57
+00:04:13,470 --> 00:04:23,880
+Và bây giờ nếu tôi thực hiện bài kiểm tra của mình giống như tôi đã nâng cấp sự phụ thuộc của mình vào sự phụ thuộc gián tiếp của mình và nó đã phá vỡ mã.
+
+58
+00:04:24,180 --> 00:04:33,390
+Vì vậy, bây giờ tôi có thể chỉ định một phụ thuộc chính xác và có thể nếu tôi quay lại từ 1 9 9 2 1 3 1 thì nó sẽ hoạt động.
+
+59
+00:04:33,390 --> 00:04:36,150
+Và để làm điều đó, tôi sẽ sử dụng cái này ngay tại đây.
+
+60
+00:04:36,150 --> 00:04:36,870
+Đi lấy.
+
+61
+00:04:36,870 --> 00:04:40,170
+Và sau đó ở phiên bản một điểm ba điểm một.
+
+62
+00:04:40,230 --> 00:04:46,100
+Vì vậy, tôi sẽ chạy nó và nó đưa ra một phiên bản khác.
+
+63
+00:04:46,110 --> 00:04:51,410
+Và bây giờ nếu tôi liệt kê các phiên bản của mình, tôi có phiên bản một điểm ba điểm một.
+
+64
+00:04:51,540 --> 00:04:55,330
+Và nếu tôi làm bài kiểm tra của mình thì bài kiểm tra của tôi sẽ vượt qua.
+
+65
+00:04:55,350 --> 00:05:00,600
+Vì vậy, ban đầu tôi bắt đầu không phải với một điểm ba điểm một mà tôi bắt đầu với một điểm ba điểm
+
+66
+00:05:00,690 --> 00:05:03,370
+không tôi đã đi đến mới nhất.
+
+67
+00:05:03,390 --> 00:05:07,020
+Bằng cách đó, hãy lấy bản mới nhất.
+
+68
+00:05:07,080 --> 00:05:07,350
+Phải.
+
+69
+00:05:07,350 --> 00:05:13,320
+Và theo mặc định, tôi chỉ có thể có bản mới nhất của nó theo mặc định, tôi chỉ cần đặt nó vào và nó sẽ bị gỡ xuống
+
+70
+00:05:13,320 --> 00:05:18,850
+phiên bản mới nhất và sau đó khi nó không hoạt động thì nó bị lỗi.
+
+71
+00:05:18,860 --> 00:05:22,830
+Tôi đã nói Này, hãy lấy phiên bản một điểm ba điểm một.
+
+72
+00:05:22,830 --> 00:05:25,080
+Hãy xem nếu nó hoạt động và tôi đã nhận được điều đó.
+
+73
+00:05:25,080 --> 00:05:26,280
+Và sau đó nó đã vượt qua bài kiểm tra của tôi.
+
+74
+00:05:26,280 --> 00:05:31,800
+Vì vậy, tôi đã kết thúc tại một điểm ba điểm một và tôi đã bắt đầu tại một điểm ba điểm không nhưng điểm chính
+
+75
+00:05:31,800 --> 00:05:36,930
+điều mà bạn đang lấy đi từ video này là bạn có thể chỉ định một phiên bản chính xác phiên bản một điểm
+
+76
+00:05:36,930 --> 00:05:44,490
+ba điểm một và điều quan trọng khác mà bạn đang rút ra từ video này là tôi sẽ đi đến đâu hoặc bất cứ nơi nào
+
+77
+00:05:44,490 --> 00:05:49,260
+bạn đang nhận các mô-đun của mình, các gói mã của bạn từ đó và bạn có thể xem các phiên bản khác nhau
+
+78
+00:05:49,290 --> 00:05:55,020
+nếu mô-đun đó gói đó tôi đang sử dụng gói mô-đun thay thế cho nhau.
+
+79
+00:05:55,050 --> 00:05:55,250
+Phải.
+
+80
+00:05:55,260 --> 00:05:55,730
+Tôi cần nó.
+
+81
+00:05:55,740 --> 00:06:00,870
+Chúng tôi cần tải phân rã thuật ngữ mà chúng tôi sẽ thực hiện trong video này nhưng bạn có thể thực hiện.
+
+82
+00:06:00,870 --> 00:06:05,060
+Hãy để tôi kết thúc điểm này và tiếp tục và nếu nó được thực hiện tốt, bạn có thể xem các phiên bản khác nhau
+
+83
+00:06:05,090 --> 00:06:06,530
+bạn có thể thấy những gì bạn đang nhận được.
+
+84
+00:06:06,570 --> 00:06:11,370
+Tôi hy vọng điều này đang trở nên rõ ràng, nó chắc chắn trở nên rõ ràng hơn đối với tôi, đây là lãnh thổ mới hơn cho
+
+85
+00:06:11,370 --> 00:06:19,350
+mô-đun của tôi là mới và vì vậy thật tuyệt khi có thể tìm ra điều này với một người bạn khác để giúp tôi học
+
+86
+00:06:19,350 --> 00:06:26,730
+nó cũng vậy và trong một số điểm nổi bật đối với tôi vào thời điểm này là điều quan trọng
+
+87
+00:06:26,730 --> 00:06:34,490
+giống như các số phiên bản chính sẽ là của riêng bạn, vì vậy bạn biết từ V đến v ba v cho đến hết
+
+88
+00:06:34,500 --> 00:06:35,810
+bốn nó kết thúc bằng những cái đó.
+
+89
+00:06:35,820 --> 00:06:37,730
+Đó là một trong những bài học chính.
+
+90
+00:06:37,740 --> 00:06:43,680
+Một điểm nổi bật chính khác là có thể xem tất cả các phụ thuộc trực tiếp và phụ thuộc trực tiếp của bạn với go list
+
+91
+00:06:43,710 --> 00:06:45,920
+tiêu diệt tất cả.
+
+92
+00:06:46,050 --> 00:06:53,190
+Và một điều thú vị khác là có thể chỉ định bằng dấu chấm này với ứng dụng này, phiên bản bạn đang sử dụng
+
+93
+00:06:53,190 --> 00:06:56,480
+đưa vào và xem những phiên bản nào có sẵn khi bạn xem repo.
+
+94
+00:06:56,890 --> 00:07:02,490
+Vì vậy, một điều nữa cần lưu ý là ứng dụng mà bạn có thể đặt số phiên bản, bạn cũng có thể đặt tên của
+
+95
+00:07:02,490 --> 00:07:03,630
+một chi nhánh.
+
+96
+00:07:03,690 --> 00:07:09,000
+Vì vậy, nếu người đó có nhiều mã hơn, họ đã đẩy nhưng họ chưa gắn thẻ đó với số phiên bản cụ thể.
+
+97
+00:07:09,000 --> 00:07:15,150
+Nhưng bạn vẫn muốn nhận được những thứ mới nhất mà bạn có thể làm tại Master để có được cam kết mới nhất tuyệt đối trên
+
+98
+00:07:15,150 --> 00:07:18,250
+Master mặc dù thực tế là có sẵn các phiên bản.
+
+99
+00:07:18,250 --> 00:07:18,900
+ừm ừm.
+
+100
+00:07:18,910 --> 00:07:26,890
+Rất vui và bây giờ chúng ta hãy phân tích thuật ngữ giữa mô-đun và gói.
+
+101
+00:07:27,050 --> 00:07:35,500
+Vì vậy, một mô-đun thường được căn chỉnh 1-1 với một repo trung tâm để một repo GitHub phải có một mô-đun.
+
+102
+00:07:35,510 --> 00:07:41,240
+Đó là cách tốt nhất và sau đó một repo get have có thể có một số gói và ở đó chúng tôi có thể có gói
+
+103
+00:07:41,240 --> 00:07:46,420
+Xin chào gói báo giá gói chuỗi gói in bất kỳ gói nào.
+
+104
+00:07:46,670 --> 00:07:51,890
+Và đó có phải là cách tốt nhất để có trong một gói cho repo.
+
+105
+00:07:51,890 --> 00:07:56,560
+Điều đó có vẻ giống như nếu bạn đang cố gắng kiếm thứ gì đó cho mọi người sử dụng, có thể là một ý tưởng hay.
+
+106
+00:07:56,570 --> 00:07:56,900
+Phải.
+
+107
+00:07:56,900 --> 00:07:59,300
+Giống như nếu chúng ta nhìn vào điều này nó phụ thuộc.
+
+108
+00:07:59,300 --> 00:08:05,780
+Bạn gần như có thể coi các gói trong các gói phụ hơn là repos là những điểm cụ thể hơn về những gì bạn đang làm.
+
+109
+00:08:05,780 --> 00:08:06,170
+đang làm.
+
+110
+00:08:06,500 --> 00:08:12,560
+Vì vậy, ví dụ, repo sọc để truy cập API sọc.
+
+111
+00:08:12,680 --> 00:08:17,410
+Họ đã có gói cấp cao nhất chứa chuyến bay mã chung kết nối các API đó.
+
+112
+00:08:17,630 --> 00:08:26,090
+Nhưng sau đó, họ có các gói phụ để thanh toán hoặc tiết kiệm thẻ tín dụng hoặc tính phí mọi người nghĩ hàng tháng.
+
+113
+00:08:26,090 --> 00:08:28,370
+Vì vậy, tất cả đều liên quan đến việc kết nối với API.
+
+114
+00:08:28,400 --> 00:08:33,920
+Nhưng sau đó, cụ thể hơn, bạn có thể cần một gói phụ có nhiều thứ hơn tập trung vào
+
+115
+00:08:33,970 --> 00:08:35,900
+phần cụ thể này của API.
+
+116
+00:08:36,530 --> 00:08:36,940
+Được rồi.
+
+117
+00:08:36,980 --> 00:08:44,660
+Vì vậy, thuật ngữ định hướng được đưa ra là một mô-đun có thể có nhiều gói và để thực hành tốt nhất
+
+118
+00:08:44,750 --> 00:08:49,930
+điều đó không nhất thiết có nghĩa là một mô-đun cần có một gói mà chỉ là bất kỳ gói nào có ý nghĩa.
+
+119
+00:08:50,420 --> 00:08:50,970
+Được rồi.
+
+120
+00:08:51,080 --> 00:08:51,680
+Được rồi, tốt.
+
+121
+00:08:51,680 --> 00:08:56,960
+Vì vậy, đó là phiên bản tiếp theo chỉ định một phiên bản phụ thuộc cụ thể.
+
+122
+00:08:56,960 --> 00:08:58,520
+Bất kỳ suy nghĩ khác.
+
+123
+00:08:58,940 --> 00:09:05,510
+Chỉ tại email 1 9 9 9 9 này, số phiên bản khá vô lý và hầu hết chỉ ở đó để loại
+
+124
+00:09:05,510 --> 00:09:11,210
+chứng minh rằng phiên bản có số phiên bản đủ cao cho phần trình diễn này.
+
+125
+00:09:11,210 --> 00:09:18,380
+Mọi người mắc lỗi các phiên bản nhỏ và bản vá được cho là tương thích ngược nhưng đôi khi
+
+126
+00:09:18,380 --> 00:09:19,270
+họ không phải.
+
+127
+00:09:19,370 --> 00:09:20,030
+Như bạn có thể thấy.
+
+128
+00:09:20,510 --> 00:09:23,460
+Vì vậy, đây là lỗi người dùng.
+
+129
+00:09:23,960 --> 00:09:30,140
+Nếu bạn tìm thấy một cái gì đó như thế này, hãy truy cập repo của họ, chuyển đến tab vấn đề của họ và báo cáo cho họ biết về
+
+130
+00:09:30,140 --> 00:09:30,250
+Nó.
+
+131
+00:09:30,260 --> 00:09:32,330
+Đó là một vấn đề.
+
+132
+00:09:32,540 --> 00:09:40,070
+Và sau đó quay lại sử dụng số phiên bản thanh hoặc một ứng dụng cụ thể hoặc ứng dụng chính nếu bạn cần và và
+
+133
+00:09:40,070 --> 00:09:42,920
+có được mã của riêng bạn để tốt đến một vị trí tốt.
+
+134
+00:09:43,160 --> 00:09:46,960
+Sử dụng các bài kiểm tra của bạn đi, các bài kiểm tra rất quan trọng vì họ muốn bạn nhanh chóng.
+
+135
+00:09:47,000 --> 00:09:53,400
+Họ cho phép chúng tôi nhanh chóng và dễ dàng xác định có vấn đề với phiên bản này.
+
+136
+00:09:53,400 --> 00:09:53,660
+thêm vào.
+
+137
+00:09:53,670 --> 00:09:54,690
+Cảm ơn.
+
+138
+00:09:54,750 --> 00:09:55,650
+Xem video tiếp theo.

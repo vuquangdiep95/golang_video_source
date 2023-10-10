@@ -1,0 +1,364 @@
+1
+00:00:00,490 --> 00:00:06,870
+OK jadi di honzon ini kita akan meningkatkan dan panggilan klien untuk RBC kemih kami dan kami akan mengujinya terhadap
+
+2
+00:00:06,870 --> 00:00:08,420
+server yang sedang berjalan.
+
+3
+00:00:08,760 --> 00:00:13,460
+Jadi sebenarnya sesuatu yang ingin saya lakukan adalah fungsi Negrete setiap kali dipanggil.
+
+4
+00:00:13,500 --> 00:00:15,130
+Saya ingin menunjukkan sedikit Lugg.
+
+5
+00:00:15,150 --> 00:00:24,910
+Jadi saya akan melakukan print off dan kemudian kita akan mengatakan fungsi hebat dipanggil dengan persentase V dan kita hanya akan meneruskannya dalam permintaan jadi di sini
+
+6
+00:00:24,910 --> 00:00:30,090
+setiap kali fungsi hebat dipanggil setidaknya kita akan melihatnya di log dan kita akan
+
+7
+00:00:30,090 --> 00:00:33,440
+lebih masuk akal ketika Anda akan belajar GOPAC.
+
+8
+00:00:33,660 --> 00:00:35,940
+OK jadi mari kita ke klien.
+
+9
+00:00:36,300 --> 00:00:40,560
+Dan untuk klien sekarang kita harus pergi dan memanggil semuanya dengan benar.
+
+10
+00:00:40,890 --> 00:00:44,160
+Jadi di sini klien dibuat di portal yang sama sebelumnya.
+
+11
+00:00:44,310 --> 00:00:46,040
+Dan sekarang kami memiliki layanan hebat Klan.
+
+12
+00:00:46,140 --> 00:00:49,400
+Tetapi sekarang kita tidak membutuhkan ini lagi.
+
+13
+00:00:49,530 --> 00:00:54,430
+Jika kita melihat bahwa ada fungsi sapaan yang dapat kita mulai memohon.
+
+14
+00:00:54,510 --> 00:00:55,830
+Dan itu luar biasa.
+
+15
+00:00:55,830 --> 00:00:56,960
+Jadi itu fungsi yang bagus.
+
+16
+00:00:56,970 --> 00:01:00,910
+Dan itu dihasilkan secara otomatis oleh Palosi.
+
+17
+00:01:00,960 --> 00:01:04,890
+Jadi, jika Anda setuju dengan PBT, Anda dapat melihat bahwa ada fungsi hebat
+
+18
+00:01:04,890 --> 00:01:06,720
+yang secara otomatis dibuat untuk kami.
+
+19
+00:01:06,720 --> 00:01:12,200
+Jadi fungsi hebat ini mengambil konteks mengambil permintaan dan mengambil banyak opsi.
+
+20
+00:01:12,300 --> 00:01:12,860
+BAIK.
+
+21
+00:01:13,230 --> 00:01:19,320
+Jadi untuk konteksnya cukup mudah di mana kita akan lakukan adalah kita akan mengatakan
+
+22
+00:01:22,060 --> 00:01:26,160
+contex bahwa latar belakang itu OK dan kita
+
+23
+00:01:30,030 --> 00:01:36,310
+akan mengatakan ini dan kemudian permintaannya adalah permintaan yang bagus jadi kita harus membuatnya.
+
+24
+00:01:36,450 --> 00:01:38,250
+Jadi untuk ini kami
+
+25
+00:01:41,330 --> 00:01:45,900
+akan mengatakan permintaan dan kami akan terus membuat permintaan kami jadi katakan persen.
+
+26
+00:01:46,220 --> 00:01:48,730
+Permintaan besar tapi bagus.
+
+27
+00:01:49,280 --> 00:01:53,820
+Dan ini membutuhkan nama depan dan nama belakang jadi kami akan mengatakan nama depan.
+
+28
+00:01:53,990 --> 00:01:54,680
+Stefan
+
+29
+00:01:57,510 --> 00:02:00,400
+dan nama belakang mereka Meric.
+
+30
+00:02:00,420 --> 00:02:05,910
+Jadi, jika Anda tidak yakin tentang jenis bidang yang Anda butuhkan, Anda sudah mendapatkan permintaan salam dan benar-benar salam
+
+31
+00:02:05,970 --> 00:02:06,810
+pengguna akhir.
+
+32
+00:02:06,840 --> 00:02:08,400
+Saya benar-benar salah.
+
+33
+00:02:08,400 --> 00:02:12,510
+Jadi salam itu sendiri memiliki nama depan dan nama belakang.
+
+34
+00:02:12,510 --> 00:02:14,620
+Jadi mari kita lanjutkan dan periksa nama depan dan belakang.
+
+35
+00:02:14,620 --> 00:02:26,440
+Jadi saya perlu membuat di klien saya yang pergi salam ketik dan sapa untuk sapa P. B. itu salam dan kemudian saya
+
+36
+00:02:27,010 --> 00:02:33,780
+menambahkan hal-hal ini dalam OK jadi ini jauh lebih baik.
+
+37
+00:02:34,020 --> 00:02:39,330
+Jadi sekarang kami memiliki permintaan yang luar biasa dan kami akan memberi salam dan teks
+
+38
+00:02:40,200 --> 00:02:46,650
+salam nama depan dan nama belakang jadi kami meneruskannya di sini Rick dan kami tidak akan menggunakan opsi panggilan.
+
+39
+00:02:46,650 --> 00:02:50,970
+Sejauh ini keseluruhan ini mengembalikan sesuatu.
+
+40
+00:02:50,970 --> 00:02:55,090
+Jadi apa yang mengembalikannya mengembalikan respons yang bagus dan kesalahan.
+
+41
+00:02:55,110 --> 00:02:58,310
+Jadi mari kita lanjutkan dan ketik itu.
+
+42
+00:02:58,440 --> 00:03:06,450
+Jadi saya akan pergi dan mengatakan respon sama dengan hal-hal ini maka kita perlu berurusan dengan udara itu sendiri.
+
+43
+00:03:06,450 --> 00:03:12,890
+Jadi jika mereka tidak sama dengan nol maka kita akan mencatatnya.
+
+44
+00:03:12,880 --> 00:03:20,080
+Jadi kita katakan keluar kesalahan fatal saat memanggil grete
+
+45
+00:03:22,740 --> 00:03:23,750
+RBC.
+
+46
+00:03:24,060 --> 00:03:31,020
+Dan jadi kami hanya akan mencetak persentase V dan Bhasin kesalahan itu sendiri.
+
+47
+00:03:31,300 --> 00:03:31,920
+BAIK.
+
+48
+00:03:32,270 --> 00:03:45,740
+Dan kemudian sebagai tanggapan maka akan Anda membawa kacang misalnya Pangeran f tanggapan dari hebat dan kita akan melihat respons itu
+
+49
+00:03:45,810 --> 00:03:46,880
+sendiri.
+
+50
+00:03:46,880 --> 00:03:48,190
+Jadi di sini kita mulai.
+
+51
+00:03:48,410 --> 00:03:50,180
+Dan jawabannya akan menjadi.
+
+52
+00:03:50,180 --> 00:03:51,900
+RAZ OKE.
+
+53
+00:03:51,950 --> 00:03:55,350
+Hasil itu misalnya.
+
+54
+00:03:55,680 --> 00:03:59,630
+Jadi ini akan mencetak kisi itu sendiri dan itu luar biasa.
+
+55
+00:03:59,630 --> 00:04:05,360
+Jadi kisi-kisi sisa telinga seperti yang Anda lihat jenis sisanya adalah hasil yang bisa kita dapatkan langsung
+
+56
+00:04:05,360 --> 00:04:08,230
+dari struct karena jenisnya adalah respons yang hebat.
+
+57
+00:04:08,330 --> 00:04:09,520
+Jadi itu cukup mudah.
+
+58
+00:04:09,740 --> 00:04:14,450
+Dan sekarang karena saya suka menyimpan kode saya sedikit modularisasi dan karena itu akan tumbuh dari waktu ke
+
+59
+00:04:14,720 --> 00:04:16,330
+waktu saya akan memanggil fungsi.
+
+60
+00:04:16,460 --> 00:04:17,970
+Apakah anda khawatir
+
+61
+00:04:18,680 --> 00:04:22,310
+Dan itu akan melakukan semua hal di sini.
+
+62
+00:04:23,080 --> 00:04:23,490
+BAIK.
+
+63
+00:04:23,520 --> 00:04:31,260
+Dan itu membutuhkan input dan input yang dibutuhkan adalah degreaser klien adalah klien sehingga saya bisa melihat
+
+64
+00:04:31,580 --> 00:04:38,240
+melihat titik-titik kotak menyapa klien layanan dan saya bisa melakukan Anda, Noori lihat.
+
+65
+00:04:38,630 --> 00:04:44,050
+Jadi yang saya lakukan hanyalah saya ingin mengisolasi fungsi kenari supaya saya bisa memahaminya nanti.
+
+66
+00:04:44,060 --> 00:04:47,450
+Jadi di sini kita pergi sehingga kita juga bisa mencatat sesuatu di sini.
+
+67
+00:04:47,450 --> 00:04:58,480
+Jadi jika printer anti-luka dan mulai melakukan Anda membawa RBC dan hanya itu.
+
+68
+00:04:58,580 --> 00:05:05,210
+Jadi kami memiliki fungsi ini dan kami memiliki koneksi dan kami melakukan hal-hal yang ditolak Inari.
+
+69
+00:05:05,240 --> 00:05:07,340
+Jadi itu terdengar sangat bagus dan sangat mudah.
+
+70
+00:05:07,340 --> 00:05:08,700
+Sekarang mari kita pergi dan mengujinya.
+
+71
+00:05:08,720 --> 00:05:10,700
+Semuanya berfungsi seperti yang diharapkan.
+
+72
+00:05:10,700 --> 00:05:14,620
+Jadi server kami sedang berjalan tetapi saya akan me-restart itu.
+
+73
+00:05:14,840 --> 00:05:21,940
+Dan sekarang saya akan menjalankan klien saya di bagian bawah dan seperti yang kita lihat saya kira Halo saya klien mulai
+
+74
+00:05:21,940 --> 00:05:25,520
+melakukan b c dan kemudian saya mendapat respons dari keserakahan.
+
+75
+00:05:25,660 --> 00:05:26,580
+Halo Stefan.
+
+76
+00:05:26,770 --> 00:05:27,560
+Itu luar biasa.
+
+77
+00:05:27,820 --> 00:05:32,600
+Dan kemudian di atas kita dapat melihat server itu sendiri mencatat apa yang terjadi.
+
+78
+00:05:32,620 --> 00:05:38,050
+Jadi katanya buat fungsi dipanggil dengan salam didefinisikan sebagai nama depan dan sebagai nama belakang dan
+
+79
+00:05:38,650 --> 00:05:40,060
+input sudah benar.
+
+80
+00:05:40,090 --> 00:05:41,500
+Jadi itu cukup mudah.
+
+81
+00:05:41,500 --> 00:05:46,720
+Kami memiliki server dan klien dan kemudian melakukan sesuatu yang sangat sederhana yang hanya
+
+82
+00:05:46,770 --> 00:05:53,810
+Anda Neriah meminta tanggapan dan itu sangat cepat sehingga Anda dapat menjalankannya lagi dan semuanya berfungsi seperti yang diharapkan.
+
+83
+00:05:53,860 --> 00:05:58,390
+Mungkin ketika Anda menambahkan baris baru untuk kebutuhan Anda menambahkan baris baru untuk bagian ini.
+
+84
+00:05:58,420 --> 00:05:59,770
+Jadi mari kita lanjutkan ke sini.
+
+85
+00:05:59,860 --> 00:06:06,870
+Dan dalam log server saya hanya perlu menambahkan baris baru di sini.
+
+86
+00:06:07,010 --> 00:06:07,570
+BAIK.
+
+87
+00:06:07,680 --> 00:06:09,150
+Jadi ini semua benar.
+
+88
+00:06:09,150 --> 00:06:10,050
+Semoga Anda menyukai kuliah ini.
+
+89
+00:06:10,050 --> 00:06:14,100
+Bagaimana hal itu masuk akal dalam kuliah berikutnya Anda harus melanjutkan dan berlatih
+
+90
+00:06:14,100 --> 00:06:14,520
+sendiri.
+
+91
+00:06:14,730 --> 00:06:15,780
+Jadi, Anda tahu kuliah selanjutnya.
+

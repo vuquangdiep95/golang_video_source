@@ -1,0 +1,1211 @@
+1
+00:00:01,860 --> 00:00:07,780
+So let's keep working on our brand like functionality and actually working with our models.
+
+2
+00:00:07,800 --> 00:00:13,230
+And right now, I'm looking at the Postgres client that I use, which is postcode for a Mac, and I
+
+3
+00:00:13,230 --> 00:00:17,730
+want to replace our kind of dummy user table with something more useful.
+
+4
+00:00:17,910 --> 00:00:22,530
+And in the course resource of this lecture, you'll see a file called User's Skill.
+
+5
+00:00:23,070 --> 00:00:28,740
+Now I'm going to ask you to download that and copy the contents of that file to your clipboard, then
+
+6
+00:00:28,740 --> 00:00:34,530
+go to your database client, whatever it may be, and connect to celebrities and bring up the part where
+
+7
+00:00:34,530 --> 00:00:35,720
+you can look at sequel.
+
+8
+00:00:35,840 --> 00:00:38,450
+But that's an empty SQL query.
+
+9
+00:00:38,650 --> 00:00:41,610
+What I'm going to do is paste the contents of that.
+
+10
+00:00:41,610 --> 00:00:48,450
+Users don't SQL file right in there, and as you can see here, what it will do is drop the table users.
+
+11
+00:00:48,450 --> 00:00:54,510
+If it exists, that it will create a user's table, then it will create a remember token's table, which
+
+12
+00:00:54,510 --> 00:00:55,680
+we use for authentication.
+
+13
+00:00:56,250 --> 00:01:00,900
+And also it will create a token's table which will use for API authentication.
+
+14
+00:01:00,960 --> 00:01:01,320
+OK.
+
+15
+00:01:01,890 --> 00:01:04,350
+So once you have it in there, execute that statement.
+
+16
+00:01:04,440 --> 00:01:05,780
+So I'll execute the whole thing.
+
+17
+00:01:05,790 --> 00:01:08,880
+I'm going to select it all just to be safe and execute the selection.
+
+18
+00:01:10,030 --> 00:01:15,130
+And when it finishes, I should have over here when I reload this or refresh this, I should have a
+
+19
+00:01:15,130 --> 00:01:18,610
+user's table, a token's table and remember token's table perfect.
+
+20
+00:01:19,000 --> 00:01:22,030
+So now we have some place to put data and we can actually work with it.
+
+21
+00:01:23,050 --> 00:01:30,700
+Now I'm going to go back to my I.D. and I'm going to make sure I'm in the My App package, and I'm sure
+
+22
+00:01:30,700 --> 00:01:31,510
+you realize this.
+
+23
+00:01:31,510 --> 00:01:37,450
+But all of the things we're working on for much of this section rush are going to build in my app.
+
+24
+00:01:37,600 --> 00:01:41,170
+But over time, those will become part of the Celerity package.
+
+25
+00:01:41,710 --> 00:01:45,250
+So we'll move things that need to be moved over to this larger test package.
+
+26
+00:01:45,460 --> 00:01:48,520
+We're actually going to take some things like the SQL file you just ran.
+
+27
+00:01:48,790 --> 00:01:54,460
+And we're going to build a command line utility that allows us to create a complete authentication system
+
+28
+00:01:54,460 --> 00:01:58,360
+with one command from the command line, but it'll be a while before we get there.
+
+29
+00:01:58,660 --> 00:02:06,780
+In the interim, let's go back to our data directory and let's create a new file in here called user
+
+30
+00:02:06,810 --> 00:02:07,300
+ago.
+
+31
+00:02:07,900 --> 00:02:09,160
+So I'm going to go singular.
+
+32
+00:02:09,430 --> 00:02:15,880
+The model user corresponds to the database table called users plural, and that's the convention I'm
+
+33
+00:02:15,880 --> 00:02:20,140
+going to use, and we'll make sure it's possible to override that convention because sometimes you have
+
+34
+00:02:20,140 --> 00:02:25,570
+to do that sort of thing, particularly if you're trying to migrate an old database to a newer web framework.
+
+35
+00:02:26,350 --> 00:02:30,460
+So I've created that user file and I'll give it its package decoration package data.
+
+36
+00:02:31,390 --> 00:02:40,390
+And inside of this, I'll begin by describing in a struct the database fields and matching them to data
+
+37
+00:02:40,390 --> 00:02:44,280
+I can use can go so simple type user with a capital u.
+
+38
+00:02:44,500 --> 00:02:49,990
+I'm going to be exporting this and it's a script and it has.
+
+39
+00:02:50,260 --> 00:02:56,890
+The first thing it has is an ID field of Typekit, and I need to add this so that upar can work with
+
+40
+00:02:56,890 --> 00:02:57,040
+it.
+
+41
+00:02:57,580 --> 00:03:00,480
+A descriptive description in tactics like this.
+
+42
+00:03:00,490 --> 00:03:05,320
+And if you've never used the back key before, it's the one on my keyboard just below the escape key
+
+43
+00:03:05,320 --> 00:03:11,290
+in the top left and you describe the matching that should take place to upper.
+
+44
+00:03:11,620 --> 00:03:20,320
+I have to say column and then in quotation marks ID, comma omit empty, OK, and then close that.
+
+45
+00:03:20,820 --> 00:03:28,990
+And that's saying to upper anytime somebody uses the type user, the field I.D., which is a capital
+
+46
+00:03:28,990 --> 00:03:33,270
+I Capital D that matches the Field ID in the database.
+
+47
+00:03:33,280 --> 00:03:36,610
+And if it's empty, just leave it out if you're actually trying to work with it.
+
+48
+00:03:36,700 --> 00:03:41,010
+OK, so let's make sure that we have something for all of our fields.
+
+49
+00:03:41,020 --> 00:03:47,230
+We have a first name, which is a string, and in the database, I'm going to call that first underscore
+
+50
+00:03:47,230 --> 00:03:47,640
+name.
+
+51
+00:03:47,650 --> 00:03:49,390
+And if you look at your database, that's how I named it.
+
+52
+00:03:49,570 --> 00:03:52,270
+Then I'll duplicate this and make that lasting
+
+53
+00:03:54,910 --> 00:03:59,170
+and in the database that is called, not surprisingly, the last underscore name.
+
+54
+00:04:00,490 --> 00:04:06,330
+And then I'll duplicate it again and make this one email, which I have to spell right email.
+
+55
+00:04:06,580 --> 00:04:08,530
+And then the database is just called email.
+
+56
+00:04:09,220 --> 00:04:16,600
+OK, and then I'll duplicate that again or go to the next line and say, active is user active or not?
+
+57
+00:04:17,290 --> 00:04:22,660
+That's just in it and in the database that is called active user active.
+
+58
+00:04:25,030 --> 00:04:25,390
+OK.
+
+59
+00:04:26,800 --> 00:04:31,870
+So you can see it's not necessary to have an absolute correspondence between what your name, your field
+
+60
+00:04:31,870 --> 00:04:33,730
+here and what you call it in the database.
+
+61
+00:04:33,760 --> 00:04:34,120
+OK.
+
+62
+00:04:34,960 --> 00:04:35,450
+So active.
+
+63
+00:04:35,470 --> 00:04:36,340
+Then you have password
+
+64
+00:04:39,040 --> 00:04:41,890
+and that is a string, and it's not going to be the real password.
+
+65
+00:04:41,920 --> 00:04:45,520
+It'll be a hash of the password, but I'm sure you guessed that already.
+
+66
+00:04:46,000 --> 00:04:51,580
+But in the database, I call the password and then I'll have created at.
+
+67
+00:04:55,100 --> 00:05:05,230
+Which is time, time and in the database that's called DV created duplicate that I make this updated.
+
+68
+00:05:08,660 --> 00:05:14,840
+And in the database, I call the updated that I'm going to put another one here.
+
+69
+00:05:14,900 --> 00:05:15,380
+OK?
+
+70
+00:05:15,410 --> 00:05:18,240
+And it's going to cause an error for a bit, but don't worry about that.
+
+71
+00:05:18,260 --> 00:05:22,730
+It's a token and it's a type token, and this is what causes the error.
+
+72
+00:05:22,820 --> 00:05:26,810
+So don't have that type described yet, but we will before too long in the database.
+
+73
+00:05:27,110 --> 00:05:32,240
+I'm going to put a dash in quotation marks that says, Ignore that that does not exist.
+
+74
+00:05:32,420 --> 00:05:32,750
+OK.
+
+75
+00:05:34,130 --> 00:05:42,950
+So there's my user type, and I'm going to now create another type, another file in my data directory
+
+76
+00:05:42,950 --> 00:05:46,080
+called not surprisingly, token doggo.
+
+77
+00:05:47,000 --> 00:05:49,520
+And this will have the package declaration of data.
+
+78
+00:05:50,570 --> 00:05:54,950
+And in that, I'm going to have a type called token, which is a strapped.
+
+79
+00:05:56,960 --> 00:06:02,990
+OK, so now when I go back to user, error goes away so I can save this to format it and go back the
+
+80
+00:06:02,990 --> 00:06:03,500
+token.
+
+81
+00:06:05,220 --> 00:06:06,780
+Analysts describe its fields.
+
+82
+00:06:06,900 --> 00:06:11,850
+OK, so the ID is in it and in the database.
+
+83
+00:06:12,960 --> 00:06:18,990
+I'm going to call it Heidi, and then because I'm going to be using tokens largely with API authentication.
+
+84
+00:06:19,690 --> 00:06:23,980
+I mean, so Phil, this bit as well in Jason, this will be called I.D..
+
+85
+00:06:25,140 --> 00:06:26,190
+So that's my first field.
+
+86
+00:06:26,280 --> 00:06:29,820
+My second one is user ID, and that'll be an integer.
+
+87
+00:06:30,570 --> 00:06:34,620
+And in the database that would be called user underscore ID.
+
+88
+00:06:35,670 --> 00:06:37,470
+And Jason, I'll call it the same thing.
+
+89
+00:06:37,890 --> 00:06:43,890
+User underscore I.D. and then I'll have first name, which is a string.
+
+90
+00:06:44,430 --> 00:06:49,370
+And in the database, I'm going to call that first underscore name and adjacent.
+
+91
+00:06:49,470 --> 00:06:51,570
+I'll call that first underscore name.
+
+92
+00:06:54,010 --> 00:06:58,510
+Then I will have their email address, which is true, and you can probably guess what comes next.
+
+93
+00:06:58,780 --> 00:07:01,210
+D.B. Cohen Email.
+
+94
+00:07:02,080 --> 00:07:05,320
+And Jason Cohen email in quotation marks.
+
+95
+00:07:07,130 --> 00:07:09,050
+Then I'll have plain text.
+
+96
+00:07:09,310 --> 00:07:14,540
+OK, that's what we're going to store plain text tokens and that'll be a string and that doesn't exist
+
+97
+00:07:14,540 --> 00:07:15,280
+in the database.
+
+98
+00:07:15,290 --> 00:07:18,920
+So I'll put D.B. Colon on a dash that says, ignore that.
+
+99
+00:07:19,370 --> 00:07:24,470
+But in Jason, I do have to have that because that's how be passing a token to a user when they do API
+
+100
+00:07:24,470 --> 00:07:25,160
+authentication.
+
+101
+00:07:25,950 --> 00:07:26,270
+OK.
+
+102
+00:07:29,090 --> 00:07:32,780
+And then I'll have hash, and this is a slice of bytes.
+
+103
+00:07:32,990 --> 00:07:33,350
+OK.
+
+104
+00:07:34,100 --> 00:07:39,140
+And in the database, we do store that and we store it as a token hash
+
+105
+00:07:42,110 --> 00:07:42,890
+and Jason.
+
+106
+00:07:43,280 --> 00:07:44,450
+I'm not going to pass that at all.
+
+107
+00:07:44,750 --> 00:07:48,800
+So I'll the colon and then quotation marks around the dash.
+
+108
+00:07:50,120 --> 00:07:54,020
+Then I'll have created an updated out, so I'm going to go copy that was from user to save a little
+
+109
+00:07:54,020 --> 00:07:54,740
+bit of time.
+
+110
+00:07:54,960 --> 00:08:00,790
+So copy those who back the token and paste them in and then I need to import time.
+
+111
+00:08:00,800 --> 00:08:02,300
+So I didn't really save that much time.
+
+112
+00:08:02,950 --> 00:08:05,400
+Time got time there.
+
+113
+00:08:05,580 --> 00:08:11,260
+That does my import and it should be updated at.
+
+114
+00:08:11,660 --> 00:08:15,440
+Good thing, I know it's not here that would cause me grief down the road, which means I need to fix
+
+115
+00:08:15,440 --> 00:08:15,530
+it.
+
+116
+00:08:15,530 --> 00:08:19,460
+A user as well at their there.
+
+117
+00:08:21,320 --> 00:08:25,730
+So now I have created updated and the last thing I need for a token, of course, is tokens don't last
+
+118
+00:08:25,730 --> 00:08:34,970
+forever, expire at some point, so expires and that will be timed on time and in the database.
+
+119
+00:08:35,120 --> 00:08:35,960
+I'll call that.
+
+120
+00:08:37,730 --> 00:08:42,740
+Expires and in Jason, I'll call that expires.
+
+121
+00:08:44,540 --> 00:08:44,860
+OK.
+
+122
+00:08:45,380 --> 00:08:50,840
+I also need to do the Jason Typekit for created out and updated out Jason created.
+
+123
+00:08:53,240 --> 00:08:56,580
+And here they're here.
+
+124
+00:08:57,380 --> 00:09:00,860
+Jason created.
+
+125
+00:09:01,790 --> 00:09:06,650
+OK, so there's that type and we have created an updated up.
+
+126
+00:09:06,860 --> 00:09:08,480
+And what's why is it?
+
+127
+00:09:08,480 --> 00:09:09,620
+Give me a warning here.
+
+128
+00:09:11,550 --> 00:09:13,290
+Now they're updated.
+
+129
+00:09:15,960 --> 00:09:16,540
+That's better.
+
+130
+00:09:16,590 --> 00:09:18,360
+IEDs are so helpful.
+
+131
+00:09:19,610 --> 00:09:22,850
+OK, so I have a type for token and I have a type for user.
+
+132
+00:09:22,940 --> 00:09:24,590
+Now obviously this isn't enough.
+
+133
+00:09:24,980 --> 00:09:31,500
+This just describes how the data in this struct is mapped to the data in the database.
+
+134
+00:09:31,520 --> 00:09:32,940
+And of course, we need to do more than that.
+
+135
+00:09:32,960 --> 00:09:39,230
+And one of the things you often have to do is if you're working with legacy data, for example, your
+
+136
+00:09:39,230 --> 00:09:44,510
+user's table might not be called users, you might be called customers or something like that.
+
+137
+00:09:44,520 --> 00:09:48,500
+But anyway, you need some means of overwriting in the convention.
+
+138
+00:09:48,500 --> 00:09:55,850
+That I'm following is the same convention that Upper DB follows, and that is the single type user maps
+
+139
+00:09:55,850 --> 00:09:59,990
+to the plural ized version of that users in the database.
+
+140
+00:10:00,020 --> 00:10:01,760
+And you need some means of overwriting that.
+
+141
+00:10:01,760 --> 00:10:02,960
+So let's do that really quickly.
+
+142
+00:10:03,590 --> 00:10:10,220
+So in user, don't go out of function and it's going to have the receiver of you a pointer to that type,
+
+143
+00:10:10,220 --> 00:10:14,240
+which means that this function is available any time you have the type user.
+
+144
+00:10:14,660 --> 00:10:17,660
+And this is what's going to make working with the database ever so much easier.
+
+145
+00:10:18,470 --> 00:10:20,070
+I'm just going to call this function table.
+
+146
+00:10:20,360 --> 00:10:22,430
+It takes no arguments and it returns a string.
+
+147
+00:10:24,770 --> 00:10:27,320
+And all I'm going to do is, say, return users.
+
+148
+00:10:27,590 --> 00:10:33,800
+Now, any time I need to refer to the table, which corresponds to user my type user.
+
+149
+00:10:34,100 --> 00:10:34,870
+I can override it.
+
+150
+00:10:34,880 --> 00:10:40,840
+So if my table is actually called customers, I just change this to customers in the table function,
+
+151
+00:10:40,850 --> 00:10:42,020
+and that makes things a lot easier.
+
+152
+00:10:42,920 --> 00:10:45,800
+Now let's try something really simple.
+
+153
+00:10:45,810 --> 00:10:49,160
+Let's say I want to get all of the users from the database.
+
+154
+00:10:49,640 --> 00:10:53,990
+Now, if you take another courses from me, you might be familiar with me creating a package called
+
+155
+00:10:53,990 --> 00:10:57,940
+database or something like that and then just writing some school and getting it directly.
+
+156
+00:10:57,950 --> 00:11:02,510
+And we're taking a slightly different approach in this course, and that is to make as much of our database
+
+157
+00:11:02,510 --> 00:11:05,720
+interaction as possible tied to individual models.
+
+158
+00:11:05,930 --> 00:11:07,490
+So let's try an example here.
+
+159
+00:11:08,030 --> 00:11:11,120
+We'll say thank you pointer to type user.
+
+160
+00:11:11,630 --> 00:11:13,150
+I'll just call this get all.
+
+161
+00:11:13,610 --> 00:11:13,970
+OK.
+
+162
+00:11:14,510 --> 00:11:16,790
+And it has some condition now.
+
+163
+00:11:16,790 --> 00:11:26,390
+That condition is where we begin to use upper condition and that type is up dot condition.
+
+164
+00:11:26,690 --> 00:11:34,730
+Now, where is up up doesn't exist, but I'm about to add it manually and I'm going to give it the alias
+
+165
+00:11:35,240 --> 00:11:37,070
+up here in my import statements.
+
+166
+00:11:37,070 --> 00:11:39,380
+So I'll wrap this whole thing in quotation marks.
+
+167
+00:11:39,920 --> 00:11:40,240
+OK.
+
+168
+00:11:41,570 --> 00:11:49,820
+And then because I want it to be as readable as possible, I will import up, which is actually GitHub
+
+169
+00:11:50,930 --> 00:11:58,790
+dot com slash upper with two PS slash db slash the four.
+
+170
+00:11:59,210 --> 00:12:01,070
+What the OK.
+
+171
+00:12:01,100 --> 00:12:03,950
+And now down here I have up condition.
+
+172
+00:12:05,930 --> 00:12:07,790
+And that actually should be up second.
+
+173
+00:12:08,480 --> 00:12:10,250
+I knew that that was sloppy.
+
+174
+00:12:11,300 --> 00:12:14,660
+So we'll be passing a condition to this function.
+
+175
+00:12:14,810 --> 00:12:15,410
+Get off.
+
+176
+00:12:15,650 --> 00:12:15,970
+OK.
+
+177
+00:12:17,020 --> 00:12:21,280
+So here is how we interact with our database, and of course, we need to return something.
+
+178
+00:12:21,370 --> 00:12:25,780
+What I'm going to return is not surprisingly, because this is the get all function on the users, a
+
+179
+00:12:25,780 --> 00:12:29,470
+slice of a pointer to user,
+
+180
+00:12:33,280 --> 00:12:35,690
+and I'm also potentially going to return an error.
+
+181
+00:12:36,700 --> 00:12:39,160
+So how do I query the database using upper?
+
+182
+00:12:39,740 --> 00:12:40,690
+Well, it's pretty straightforward.
+
+183
+00:12:40,870 --> 00:12:47,460
+The very first thing you have to do is upper refers to things that are stored in the database as collections.
+
+184
+00:12:47,470 --> 00:12:49,100
+So I'm going to follow their naming convention.
+
+185
+00:12:49,520 --> 00:12:50,470
+Call this a collection.
+
+186
+00:12:51,370 --> 00:12:52,160
+That's my variable.
+
+187
+00:12:52,180 --> 00:12:56,380
+A collection is assigned the value of Upper Dot collection.
+
+188
+00:12:57,280 --> 00:13:00,730
+Now I could if I wanted to just put users like that and that would work fine.
+
+189
+00:13:00,970 --> 00:13:02,710
+But we have this function table.
+
+190
+00:13:02,920 --> 00:13:05,570
+They actually returns the actual name of the table here.
+
+191
+00:13:05,590 --> 00:13:07,300
+So why don't we take advantage of that instead?
+
+192
+00:13:09,620 --> 00:13:12,890
+You don't table now that gives me a collection.
+
+193
+00:13:13,280 --> 00:13:13,610
+OK.
+
+194
+00:13:13,760 --> 00:13:16,040
+That's a reference to a certain bit of the database.
+
+195
+00:13:16,100 --> 00:13:21,710
+Now I need a place to store the information and give her a chance overall, which will be a slice of
+
+196
+00:13:22,280 --> 00:13:24,250
+pointers to users.
+
+197
+00:13:26,570 --> 00:13:34,430
+And now this is as simple as saying my results, which I call wrens, are assigned the value of collection,
+
+198
+00:13:34,550 --> 00:13:35,900
+which I declare their on line.
+
+199
+00:13:35,900 --> 00:13:36,620
+Twenty six.
+
+200
+00:13:36,950 --> 00:13:41,810
+Dot find using whatever condition was passed as a parameter to this function.
+
+201
+00:13:42,690 --> 00:13:43,880
+OK, that gives me a result.
+
+202
+00:13:44,390 --> 00:13:51,610
+And now I'll try to use that result by saying I'll check for error is assign the value of RTÉ's the
+
+203
+00:13:51,620 --> 00:13:56,780
+all and read the results into the all variable I declared online.
+
+204
+00:13:56,780 --> 00:13:57,620
+Twenty eight.
+
+205
+00:13:58,460 --> 00:13:59,240
+That's pretty simple.
+
+206
+00:13:59,450 --> 00:14:05,600
+OK, now I don't need to specify the fields that I want everything that's matched using those DB colon
+
+207
+00:14:05,600 --> 00:14:10,820
+tags back in the user struct that's all handled by Upor, which is remarkably convenient.
+
+208
+00:14:11,630 --> 00:14:19,250
+So if there's an error, if error is not equal to nil, then I'll return nil and the error.
+
+209
+00:14:20,750 --> 00:14:23,360
+Otherwise, I'll say return all.
+
+210
+00:14:24,080 --> 00:14:27,530
+And no, and that's all that I have to do.
+
+211
+00:14:28,310 --> 00:14:33,410
+So for people that like working with our MS, this is remarkably user friendly.
+
+212
+00:14:33,620 --> 00:14:35,360
+OK, now we can do a get all function.
+
+213
+00:14:36,170 --> 00:14:37,910
+We can also do things like, well, what else?
+
+214
+00:14:37,910 --> 00:14:42,680
+What are the other things you need to do quite regularly with users?
+
+215
+00:14:42,950 --> 00:14:44,990
+Well, maybe you need to look them up by email.
+
+216
+00:14:44,990 --> 00:14:46,370
+So let's create a function that does that.
+
+217
+00:14:46,940 --> 00:14:49,250
+Thank you, user.
+
+218
+00:14:49,280 --> 00:14:50,630
+So it's tied to the user model.
+
+219
+00:14:51,290 --> 00:14:58,040
+Get by, you know, and we're going to take one value here, which is email of type string, and we're
+
+220
+00:14:58,040 --> 00:15:04,520
+going to return potentially a pointer to a user if we can find it and potentially an error if we can't
+
+221
+00:15:04,520 --> 00:15:05,570
+or if something goes wrong.
+
+222
+00:15:06,170 --> 00:15:08,180
+So once again, how do we make this work?
+
+223
+00:15:08,450 --> 00:15:13,070
+Pretty much the same as we did in the last one, we'll say for the user, which is a place to store
+
+224
+00:15:13,100 --> 00:15:13,590
+the user.
+
+225
+00:15:13,730 --> 00:15:15,860
+It's a type user.
+
+226
+00:15:16,130 --> 00:15:20,100
+So there's there's a we're going to store our data and we get a collection.
+
+227
+00:15:20,580 --> 00:15:27,590
+A collection is assigned the value of our collection and we're again going to use that table to get
+
+228
+00:15:27,590 --> 00:15:28,460
+the correct cabling.
+
+229
+00:15:29,510 --> 00:15:36,340
+Then we get a result and we say on our collection, call find and we're going to specify our condition.
+
+230
+00:15:36,350 --> 00:15:38,330
+And here's the first time we've used in our poor condition.
+
+231
+00:15:38,330 --> 00:15:39,200
+But it's really simple.
+
+232
+00:15:39,200 --> 00:15:48,950
+We just set up dot com and then in curly brackets, we want email equals and a comma or a colon.
+
+233
+00:15:49,700 --> 00:15:51,930
+And then, you know, the parameter was passed to this function.
+
+234
+00:15:51,950 --> 00:15:58,760
+So we're going to find all records in the database where email is equal to the email supplied to this
+
+235
+00:15:58,760 --> 00:15:59,150
+function.
+
+236
+00:15:59,510 --> 00:15:59,900
+OK.
+
+237
+00:16:01,370 --> 00:16:06,770
+And now I'm only expecting to find one user by email because that's the way we typically store things
+
+238
+00:16:06,770 --> 00:16:07,640
+in user tables.
+
+239
+00:16:08,030 --> 00:16:11,570
+So we'll say error is assign the value of from the results.
+
+240
+00:16:11,900 --> 00:16:20,030
+Give me one only one and read into the user the variable I declared right up on line 40.
+
+241
+00:16:20,390 --> 00:16:20,750
+OK.
+
+242
+00:16:20,810 --> 00:16:21,620
+And we'll check for an error.
+
+243
+00:16:22,310 --> 00:16:26,450
+If error is not equal to nil, return nil in the error.
+
+244
+00:16:29,730 --> 00:16:36,420
+Otherwise we can do something as simple as return, ampersand the user and know.
+
+245
+00:16:37,110 --> 00:16:39,420
+And that gives me a pointer to user and new error.
+
+246
+00:16:40,260 --> 00:16:44,790
+Now the only thing missing here, of course, is that there are situations where you actually want to
+
+247
+00:16:44,790 --> 00:16:48,970
+get the user by email and get any tokens that are associated with that user.
+
+248
+00:16:49,110 --> 00:16:53,160
+We can prove that we can just put some more Upper Darby logic right here.
+
+249
+00:16:53,670 --> 00:16:58,620
+So we'll declare a variable ver token of type token, which we define just a few minutes ago.
+
+250
+00:16:59,400 --> 00:17:01,530
+And now we'll make a collection this time.
+
+251
+00:17:01,770 --> 00:17:04,080
+Try that in the next line collection.
+
+252
+00:17:04,110 --> 00:17:11,640
+Now it's equal to so I'm overwriting the value of collection with Upper Dot Collection, and I'm going
+
+253
+00:17:11,640 --> 00:17:14,580
+to call a variable or a function that I may not have written yet.
+
+254
+00:17:14,820 --> 00:17:20,130
+So it'll be a token dot table like that.
+
+255
+00:17:20,310 --> 00:17:21,270
+Apparently, I didn't write it.
+
+256
+00:17:21,420 --> 00:17:22,770
+So let's go write that right now.
+
+257
+00:17:22,800 --> 00:17:32,100
+I'll just copy this from user doggo and go over to token Darko pasted in there and make this point to
+
+258
+00:17:32,100 --> 00:17:35,730
+say teh token.
+
+259
+00:17:37,360 --> 00:17:40,800
+Make it return tokens, because that's what it's called in the database.
+
+260
+00:17:41,010 --> 00:17:42,150
+And I want to go back to user.
+
+261
+00:17:42,450 --> 00:17:43,380
+This is all taken care of.
+
+262
+00:17:44,160 --> 00:17:49,350
+So I have now got my collection, so I'll say result is equal to.
+
+263
+00:17:49,350 --> 00:17:56,010
+I don't need the assignment as I already have a variable rez is equal to on my collection, which now
+
+264
+00:17:56,010 --> 00:17:57,390
+points to the tokens table.
+
+265
+00:17:58,830 --> 00:18:04,920
+I want to find with the condition abscond in curly brackets.
+
+266
+00:18:05,250 --> 00:18:07,980
+User underscore ID, which has to be in quotes.
+
+267
+00:18:08,100 --> 00:18:09,090
+User underscore ID.
+
+268
+00:18:10,940 --> 00:18:14,720
+And you don't need to put the equals sign, it's assumed, but I'd like to make it readable, so I'll
+
+269
+00:18:14,720 --> 00:18:15,470
+put that there.
+
+270
+00:18:16,370 --> 00:18:19,790
+Then column the user ID.
+
+271
+00:18:21,950 --> 00:18:25,030
+And because it's a token, I want to make sure the token hasn't expired.
+
+272
+00:18:25,040 --> 00:18:30,230
+So we'll say expiry is less than.
+
+273
+00:18:30,820 --> 00:18:32,830
+Then column time.
+
+274
+00:18:33,030 --> 00:18:33,290
+Now.
+
+275
+00:18:35,510 --> 00:18:40,280
+Now, I might potentially get more than one token back, so I'll just make sure I get the most recent
+
+276
+00:18:40,280 --> 00:18:46,120
+one order by created at descending.
+
+277
+00:18:47,360 --> 00:18:50,300
+And that should give me the most recent token, if any.
+
+278
+00:18:50,570 --> 00:18:55,400
+OK, so air is now equal to resort one.
+
+279
+00:18:55,790 --> 00:19:02,480
+And I'm going to read that into token and I'll check for an error and I'll just copy and paste this
+
+280
+00:19:03,230 --> 00:19:04,880
+and modify it as necessary.
+
+281
+00:19:05,160 --> 00:19:05,510
+OK?
+
+282
+00:19:05,630 --> 00:19:10,670
+Because we do need to modify this because the error might be, you know, I can't find the token for
+
+283
+00:19:10,670 --> 00:19:13,120
+this user, but you've already found a valid user.
+
+284
+00:19:13,130 --> 00:19:14,930
+So in this case will change it.
+
+285
+00:19:14,930 --> 00:19:20,990
+A little bit will make it a little bit more useful because I don't want a return error if I've actually
+
+286
+00:19:20,990 --> 00:19:23,420
+found the user, but that user happens to have no tokens.
+
+287
+00:19:23,420 --> 00:19:30,050
+So instead, I'll say if error is not equal to here from the upper package error new record.
+
+288
+00:19:33,700 --> 00:19:41,890
+And the air is not equal to again from the upper package or no more rows in that situation.
+
+289
+00:19:42,310 --> 00:19:48,310
+I want to return Neal and error because if the air is no, there's no record matching or there's no
+
+290
+00:19:48,310 --> 00:19:49,390
+more rows of matching.
+
+291
+00:19:49,690 --> 00:19:51,020
+But I do have a valid user.
+
+292
+00:19:51,040 --> 00:19:52,570
+I want to return that valid user.
+
+293
+00:19:52,720 --> 00:19:56,560
+So I put my error check and then I put a more detailed error check.
+
+294
+00:19:56,620 --> 00:19:57,000
+OK.
+
+295
+00:19:59,090 --> 00:20:04,310
+And assuming I actually get that, I can just say the user token is equal to token.
+
+296
+00:20:04,760 --> 00:20:08,210
+And if I didn't find a token, it's an empty token verb declared right here.
+
+297
+00:20:08,210 --> 00:20:10,010
+It has the default values, nothing in it.
+
+298
+00:20:10,340 --> 00:20:13,790
+But if I did find the token, then it's a valid token and our return that.
+
+299
+00:20:14,420 --> 00:20:19,220
+Now these are only two of the various functions we're going to have associated with our user table.
+
+300
+00:20:20,030 --> 00:20:24,680
+But this lecture is getting pretty long, so I'll end it here and we'll pick it up in the next one.
+
+301
+00:20:24,830 --> 00:20:27,860
+Hopefully, you can see that for people that like working with our MS.
+
+302
+00:20:28,190 --> 00:20:33,340
+This becomes remarkably useful and very easy to work with and actually has a lot more functionality
+
+303
+00:20:33,350 --> 00:20:35,450
+that will be exploring in the coming lectures.

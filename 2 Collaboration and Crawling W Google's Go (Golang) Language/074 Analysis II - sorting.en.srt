@@ -1,0 +1,231 @@
+1
+00:00:00,330 --> 00:00:00,630
+Được rồi.
+
+2
+00:00:00,690 --> 00:00:01,450
+Bây giờ chúng ta sẽ đi.
+
+3
+00:00:01,470 --> 00:00:01,940
+Lấy làm tiếc.
+
+4
+00:00:02,110 --> 00:00:02,420
+Đúng.
+
+5
+00:00:02,430 --> 00:00:03,740
+Bây giờ chúng ta sẽ sắp xếp câu chuyện.
+
+6
+00:00:04,140 --> 00:00:07,020
+Vì vậy, chúng tôi đã nhận được thông tin trên thực tế, chúng tôi đã có một phần thông tin từ.
+
+7
+00:00:07,020 --> 00:00:09,690
+Mỗi người có một từ và nó được tính.
+
+8
+00:00:09,690 --> 00:00:12,370
+Nhưng bây giờ chúng ta muốn sắp xếp nó theo thứ tự giảm dần.
+
+9
+00:00:12,390 --> 00:00:20,710
+Chúng tôi muốn từ info zero trở thành từ xuất hiện phổ biến nhất theo cách đó chúng tôi có thể dễ dàng
+
+10
+00:00:20,710 --> 00:00:22,930
+nhìn vào nó và đọc các giá trị.
+
+11
+00:00:23,140 --> 00:00:28,310
+Vì vậy, loại lát cắt lấy một lát một lát làm đối số đầu tiên của nó.
+
+12
+00:00:28,690 --> 00:00:34,360
+Và đối số thứ hai mà nó đưa vào là một hàm rõ ràng là một hàm ẩn danh đối với hàm đó
+
+13
+00:00:34,360 --> 00:00:37,820
+nó chuyển sang số nguyên.
+
+14
+00:00:38,050 --> 00:00:39,210
+tôi và j.
+
+15
+00:00:39,340 --> 00:00:41,200
+Nó trả về một boolean.
+
+16
+00:00:41,200 --> 00:00:43,200
+Chức năng này là một ít boolean.
+
+17
+00:00:43,390 --> 00:00:54,460
+Điều bạn đang cố gắng làm ở đây là bạn sẽ trả về true nếu với chỉ số I nhỏ hơn chỉ số J và
+
+18
+00:00:54,520 --> 00:01:04,250
+vì vậy và sau đó bất cứ thứ gì ít hơn sẽ trở thành sớm hơn trong lát cắt khi nó được sắp xếp như vậy bởi vì chúng tôi
+
+19
+00:01:04,250 --> 00:01:07,750
+muốn những thứ trước đó trong lát là những thứ có tài khoản lớn hơn.
+
+20
+00:01:07,850 --> 00:01:10,850
+Điều đó có nghĩa là chúng tôi muốn nói đúng nếu số lượng cao hơn
+
+21
+00:01:13,680 --> 00:01:14,430
+Vì thế.
+
+22
+00:01:14,460 --> 00:01:24,940
+Vì vậy, trong trường hợp này, rất nhiều lợi nhuận với số lượng dấu chấm i lớn hơn với số lượng dấu chấm J vì chúng tôi muốn
+
+23
+00:01:24,950 --> 00:01:35,860
+giá trị cao hơn sẽ ít hơn và do đó, gần với điểm bắt đầu của lát cắt bẩn thỉu sau thời điểm này
+
+24
+00:01:35,860 --> 00:01:44,160
+chúng ta có thể quay lại với và đó bây giờ là một phần thông tin từ được sắp xếp và tôi mong muốn được xem
+
+25
+00:01:44,160 --> 00:01:44,790
+kết quả.
+
+26
+00:01:45,420 --> 00:01:47,580
+Vì vậy, chức năng này thực sự trở nên phức tạp.
+
+27
+00:01:47,580 --> 00:01:52,320
+Vì vậy, nếu tôi có thời gian, có lẽ tôi sẽ chia nó thành một vài chức năng nhỏ hơn như một đến
+
+28
+00:01:52,320 --> 00:02:00,070
+thực hiện việc đếm một chuyển đổi thành cái này thành một lát cắt được sắp xếp nhưng hiện tại loại công việc này nói rằng nó được nói
+
+29
+00:02:02,020 --> 00:02:06,450
+vì vậy bây giờ chúng ta thực sự có thể gọi đây là Đếm từ nó lấy tất cả các tweet
+
+30
+00:02:11,940 --> 00:02:16,620
+và nó trả lại thanh kiếm cho các ứng cử viên
+
+31
+00:02:20,240 --> 00:02:26,420
+và không trả về lỗi của bất cứ thứ gì, nó sẽ luôn hoạt động không có lỗi trả về, vì vậy đừng bận tâm kiểm tra
+
+32
+00:02:26,420 --> 00:02:27,050
+cái đó.
+
+33
+00:02:27,170 --> 00:02:28,500
+Bây giờ chúng ta chỉ cần in nó.
+
+34
+00:02:28,520 --> 00:02:41,840
+Vì vậy, tôi sẽ vượt qua các số lượng khác nhau và mỗi lần tôi sẽ in print f yeah
+
+35
+00:02:43,050 --> 00:02:56,790
+Tôi định nói từ dấu hai chấm, số đếm Dòng mới là từ và đếm ngay bây giờ nếu tôi quay lại
+
+36
+00:02:56,850 --> 00:03:00,600
+đang chạy cái này
+
+37
+00:03:03,600 --> 00:03:05,390
+ân sủng thứ hai nơi tôi đang nói
+
+38
+00:03:10,460 --> 00:03:19,820
+rất nhiều từ mà chúng ta nên có một lần nếu bạn cuộn ngược trở lại ô trên cùng và đến bốn từ đó
+
+39
+00:03:19,820 --> 00:03:28,370
+để được mong đợi tốt đẹp ở đó tôm GPS chín lần ở đây bạn thấy những đám mây đám mây lớn đó là dự án lớn
+
+40
+00:03:29,240 --> 00:03:38,910
+rất nhiều bạn muốn nhìn thấy bạn con chó của nhân loại Bác sĩ vĩ đại của bố như dịch vụ ghép tạng thương mại điện tử
+
+41
+00:03:38,920 --> 00:03:44,960
+nỗi kinh hoàng còn lại vâng, điều đó thực sự thú vị khi xem xét.
+
+42
+00:03:44,990 --> 00:03:46,010
+Nhìn kìa.
+
+43
+00:03:46,010 --> 00:03:51,890
+Hãy xem điều này rất cơ bản chỉ là đếm từ thôi, ý tôi là có rất nhiều thứ mà bạn có thể hợp nhất
+
+44
+00:03:51,890 --> 00:04:01,430
+một số từ với nhau như tôi biết tôi đã thấy ở gần cuối cùng có một cái có một cái GPS
+
+45
+00:04:01,930 --> 00:04:07,650
+lifeform gators vâng, các cổng châu Âu có thể được hợp nhất với PCI của bạn cho các mục đích
+
+46
+00:04:07,650 --> 00:04:15,930
+về dự án sẽ thực hiện nhưng vì vậy nó rất chung chung về số lượng nhưng ý tôi là điều đó mang lại cho chúng tôi một ý tưởng hay
+
+47
+00:04:15,930 --> 00:04:18,630
+về những gì cần hướng tới cho những gì sẽ xây dựng tiếp theo.
+
+48
+00:04:18,630 --> 00:04:19,330
+Điều đó thực sự tuyệt vời.
+
+49
+00:04:19,860 --> 00:04:21,150
+Làm tốt.
+
+50
+00:04:21,150 --> 00:04:22,370
+Bạn muốn thêm gì vào nữa không.
+
+51
+00:04:23,940 --> 00:04:27,870
+Tôi sẽ quay lại vấn đề này và như tôi đã nói, hãy chia công việc này thành hai chức năng.
+
+52
+00:04:27,940 --> 00:04:33,650
+Nếu tôi muốn viết mã đúng cách hơn Vâng, tôi sẽ nói thêm rằng tôi nghĩ bạn thật tuyệt vời.
+
+53
+00:04:33,930 --> 00:04:38,350
+Và đó là một niềm vui thực sự khi xem bạn viết mã đó.
+
+54
+00:04:38,370 --> 00:04:40,040
+Rất đẹp.
+
+55
+00:04:40,050 --> 00:04:40,360
+Được rồi.
+
+56
+00:04:40,410 --> 00:04:42,840
+Hẹn gặp lại bạn trong phần tiếp theo.
+
+57
+00:04:42,840 --> 00:04:45,420
+Video tiếp theo, phần tiếp theo, chúng ta sẽ tìm hiểu điều đó sẽ xảy ra.
+
+58
+00:04:45,420 --> 00:04:46,390
+Chúng tôi sẽ gặp bạn ở đó.

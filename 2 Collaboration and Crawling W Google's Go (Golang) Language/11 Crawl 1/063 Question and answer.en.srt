@@ -1,0 +1,399 @@
+1
+00:00:00,270 --> 00:00:06,240
+So now we're just gonna ask Daniel a couple of questions about his solution and my first question that
+
+2
+00:00:06,240 --> 00:00:13,050
+came up when I was watching him present that was the CSA as class names like I'd expect there online
+
+3
+00:00:13,250 --> 00:00:20,670
+twenty five twenty six and twenty seven that like it would be able to find like if you're looking like
+
+4
+00:00:20,700 --> 00:00:27,090
+if you're going through the tax and you're looking for like tweet tax write it's looking through the
+
+5
+00:00:27,540 --> 00:00:36,240
+going from tweet to tweet Yeah it's looking through the year you're your attribute is class and its
+
+6
+00:00:36,240 --> 00:00:39,290
+value is set to tweet text.
+
+7
+00:00:39,390 --> 00:00:40,190
+I say that right.
+
+8
+00:00:40,200 --> 00:00:41,360
+I haven't done it yet.
+
+9
+00:00:41,770 --> 00:00:43,270
+So classes it's all right.
+
+10
+00:00:43,320 --> 00:00:45,480
+One of the classes in the list of classes.
+
+11
+00:00:45,480 --> 00:00:45,830
+Yeah.
+
+12
+00:00:45,850 --> 00:00:53,460
+So so yeah their span is your tag classes that tribute and in the value values the entire list is the
+
+13
+00:00:53,770 --> 00:00:54,660
+is an entire list.
+
+14
+00:00:54,660 --> 00:00:57,200
+But within that list you have tweet text.
+
+15
+00:00:57,320 --> 00:00:58,430
+There's one user name.
+
+16
+00:00:58,470 --> 00:00:59,090
+So yeah.
+
+17
+00:00:59,100 --> 00:01:00,540
+For that one's usernames.
+
+18
+00:01:00,560 --> 00:01:01,650
+You stay there.
+
+19
+00:01:01,650 --> 00:01:01,850
+All right.
+
+20
+00:01:01,860 --> 00:01:07,230
+So there's tweet tech so it found tweet text in there and then for user name I would I would kind of
+
+21
+00:01:07,230 --> 00:01:14,760
+expect this to look at like okay inside user name I almost need to I almost need to put in user name
+
+22
+00:01:14,760 --> 00:01:17,870
+space you dashed or like maybe just put in all of that.
+
+23
+00:01:17,910 --> 00:01:22,800
+You will find that like it's a little surprising to me to see that it did the CSF specificity.
+
+24
+00:01:22,800 --> 00:01:24,720
+That's the best way I have to explain it.
+
+25
+00:01:24,750 --> 00:01:29,940
+So where you have like the nested stuff as a selector like this is out CSF selectors work.
+
+26
+00:01:30,020 --> 00:01:31,470
+You say this is a child.
+
+27
+00:01:31,940 --> 00:01:32,260
+Yeah.
+
+28
+00:01:32,290 --> 00:01:35,490
+I didn't use the child select subsets so that interest in that.
+
+29
+00:01:35,490 --> 00:01:40,800
+So what I'm doing is actually the child parent child thing I'm saying account name.
+
+30
+00:01:40,920 --> 00:01:47,540
+I'm looking for full a class full name and one of the parents has a class of account group.
+
+31
+00:01:47,940 --> 00:01:54,600
+So what Todd is seeking up is instead of I could use her name and then I could also do dot you'd Aster
+
+32
+00:01:55,260 --> 00:01:59,830
+because that's in there but is actually respecting that CSF.
+
+33
+00:01:59,840 --> 00:02:04,670
+So this this would add more specificity but what I'm not looking for is I'm not trying to disintegrate
+
+34
+00:02:04,680 --> 00:02:09,660
+between some CSX overwriting some other C assess what seat with it.
+
+35
+00:02:09,900 --> 00:02:11,970
+I'm just trying to find all user names.
+
+36
+00:02:12,000 --> 00:02:17,580
+Yeah but I don't want the user names that are out here in the message itself.
+
+37
+00:02:19,280 --> 00:02:22,090
+So that it may have its own.
+
+38
+00:02:22,340 --> 00:02:25,850
+If I inspect to this particular user name it might be the same.
+
+39
+00:02:25,880 --> 00:02:27,440
+I think it's got you there as well.
+
+40
+00:02:27,500 --> 00:02:28,230
+So yeah.
+
+41
+00:02:29,480 --> 00:02:37,120
+So just one thing I had noted though was that the top bar on every single tweet was account group.
+
+42
+00:02:37,490 --> 00:02:37,820
+Yeah.
+
+43
+00:02:37,850 --> 00:02:43,920
+And so that was something unique I could use to kind of narrow in on user name the particular username
+
+44
+00:02:43,980 --> 00:02:44,700
+I was looking for.
+
+45
+00:02:45,060 --> 00:02:45,840
+Yeah.
+
+46
+00:02:46,020 --> 00:02:46,950
+So that surprised me.
+
+47
+00:02:46,950 --> 00:02:55,050
+Where did that's in the documentation of how Cawley works that it does that that it's it's documentation
+
+48
+00:02:55,530 --> 00:03:02,490
+on a shemale it's looking for a go query selector which was.
+
+49
+00:03:02,490 --> 00:03:02,970
+This one.
+
+50
+00:03:03,220 --> 00:03:04,620
+Yeah.
+
+51
+00:03:10,440 --> 00:03:13,270
+And so go query when I went to it
+
+52
+00:03:16,840 --> 00:03:18,640
+CSF selector library.
+
+53
+00:03:18,670 --> 00:03:18,970
+Yeah.
+
+54
+00:03:18,980 --> 00:03:22,590
+And so it's the C is s select your library syntax why it's close.
+
+55
+00:03:22,590 --> 00:03:23,480
+Possible query.
+
+56
+00:03:23,910 --> 00:03:32,790
+OK that's interesting and then my next question was just a reflection on.
+
+57
+00:03:32,800 --> 00:03:35,340
+But like wow college is free.
+
+58
+00:03:35,490 --> 00:03:39,270
+That's a really well put together.
+
+59
+00:03:39,580 --> 00:03:42,870
+I think we use the word use the word library right.
+
+60
+00:03:42,880 --> 00:03:46,150
+But you can also Yes and it's an open source project.
+
+61
+00:03:46,150 --> 00:03:47,010
+Yeah.
+
+62
+00:03:47,260 --> 00:03:51,280
+And so for a terminology like first that that you know it's open source.
+
+63
+00:03:51,300 --> 00:03:55,960
+So so if you go over here you can actually see the license fee what you use.
+
+64
+00:03:55,960 --> 00:03:58,360
+This is what you have to obey to use it.
+
+65
+00:03:58,360 --> 00:04:06,720
+Nice and you know a question to which hundreds stars Nice to see which is this says Callie says you're
+
+66
+00:04:06,720 --> 00:04:08,510
+allowed to use it for just about whatever.
+
+67
+00:04:08,520 --> 00:04:12,170
+Just don't try to trademark it.
+
+68
+00:04:12,420 --> 00:04:13,970
+The creators aren't liable.
+
+69
+00:04:14,010 --> 00:04:15,270
+They don't give any warrant.
+
+70
+00:04:15,500 --> 00:04:17,270
+Yeah that's nice.
+
+71
+00:04:17,260 --> 00:04:19,000
+I like that summary.
+
+72
+00:04:20,600 --> 00:04:26,210
+I forget the other thing I was going to say and the next question was did this did this get all the
+
+73
+00:04:26,210 --> 00:04:27,970
+tweets because it pulled down 19.
+
+74
+00:04:27,980 --> 00:04:32,150
+But it seemed like there's a lot more so in this case.
+
+75
+00:04:32,150 --> 00:04:32,980
+No it did not.
+
+76
+00:04:32,990 --> 00:04:37,570
+And that's because Twitter does not actually give you all of the tweets immediately.
+
+77
+00:04:37,640 --> 00:04:44,060
+When I scroll down to the very bottom of the page you see it loads more infinite scrolling Kazan and
+
+78
+00:04:45,080 --> 00:04:46,160
+and so to do that.
+
+79
+00:04:46,160 --> 00:04:48,710
+That's what you did with solution number two.
+
+80
+00:04:48,720 --> 00:04:52,310
+So my second solution was me solved that.
+
+81
+00:04:52,560 --> 00:04:54,940
+We'll see that in the.
+
+82
+00:04:55,340 --> 00:04:59,170
+Coming up at some point we might go through this in a little bit more.
+
+83
+00:04:59,300 --> 00:05:03,420
+But do you have anything else you want to add any other reflections on.
+
+84
+00:05:03,420 --> 00:05:09,620
+No that's our colleagues Callie's very nice and I recommend you use it if you're using go and try to
+
+85
+00:05:09,620 --> 00:05:10,600
+make it crawl.
+
+86
+00:05:11,090 --> 00:05:18,860
+Do you want one of the things I like about you Sally that felt felt for her.
+
+87
+00:05:19,700 --> 00:05:23,180
+But like when I ask you if you have anything more you say no.
+
+88
+00:05:23,180 --> 00:05:27,590
+And then very often you're like however check this out.
+
+89
+00:05:28,130 --> 00:05:31,330
+I like that are something often more comes.
+
+90
+00:05:31,460 --> 00:05:32,660
+That's cool.
+
+91
+00:05:32,660 --> 00:05:33,120
+All right.
+
+92
+00:05:33,170 --> 00:05:34,310
+So that's that's it.
+
+93
+00:05:34,370 --> 00:05:35,360
+Anything else.
+
+94
+00:05:35,480 --> 00:05:38,140
+This time for real now you do the same for real.
+
+95
+00:05:38,150 --> 00:05:38,450
+All right.
+
+96
+00:05:38,450 --> 00:05:40,040
+See the next video it's five o'clock.
+
+97
+00:05:40,070 --> 00:05:43,310
+So we're gonna head home and then we'll be back tomorrow.
+
+98
+00:05:43,820 --> 00:05:44,130
+Yeah.
+
+99
+00:05:44,180 --> 00:05:45,980
+We'll be back tomorrow to do some more.
+
+100
+00:05:45,980 --> 00:05:46,430
+See you then.

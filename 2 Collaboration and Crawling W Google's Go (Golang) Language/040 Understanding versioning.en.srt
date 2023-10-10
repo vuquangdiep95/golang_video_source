@@ -1,0 +1,211 @@
+1
+00:00:00,090 --> 00:00:04,110
+Vì vậy, để hiểu các mô-đun và chúng ta sẽ chuyển sang phần mới ở đây và tôi chỉ chia nhỏ các phần này
+
+2
+00:00:04,110 --> 00:00:09,840
+lên để mỗi phần không có quá nhiều video nhưng phần tiếp theo ở đây là tìm hiểu sâu hơn về các mô-đun
+
+3
+00:00:10,320 --> 00:00:12,680
+và điều quan trọng là phải hiểu lập phiên bản.
+
+4
+00:00:12,930 --> 00:00:18,370
+Và do đó, tiêu chuẩn cho việc tạo phiên bản được gọi là phiên bản ngữ nghĩa và có một liên kết đến nó ngay tại đây.
+
+5
+00:00:18,370 --> 00:00:23,550
+Vì vậy, bạn có thể nhấp vào liên kết đó và bạn có thể tìm hiểu mọi thứ bạn muốn biết về phiên bản phiên bản ngữ nghĩa
+
+6
+00:00:23,550 --> 00:00:28,950
+và tất cả các loại ngôn ngữ khác nhau nhưng phiên bản ngữ nghĩa bạn có thể thấy ngay cả điều này có ba số
+
+7
+00:00:28,950 --> 00:00:30,680
+ở đây cách nhau bởi dấu chấm.
+
+8
+00:00:30,780 --> 00:00:33,400
+Và vì vậy số đầu tiên này là phiên bản chính.
+
+9
+00:00:33,400 --> 00:00:38,550
+Số thứ hai là phiên bản nhỏ và số thứ ba là bản vá và tôi đã phác thảo tất cả những điều này
+
+10
+00:00:38,550 --> 00:00:38,870
+đây.
+
+11
+00:00:38,870 --> 00:00:44,130
+Vì vậy, ví dụ bạn có 0 1 2 phiên bản chính là 0.
+
+12
+00:00:44,160 --> 00:00:46,730
+Phiên bản phụ là 1 bản vá là 2.
+
+13
+00:00:46,770 --> 00:00:52,970
+Sự khác biệt của 3 bản vá nhỏ chính là những thay đổi ngược không tương thích với nó.
+
+14
+00:00:53,130 --> 00:00:55,620
+Và vì vậy có thể tên của một chức năng đã thay đổi.
+
+15
+00:00:55,620 --> 00:01:00,020
+Và vì vậy, bất kỳ ai đã sử dụng chức năng đó trong phiên bản chính trước đó.
+
+16
+00:01:00,120 --> 00:01:03,090
+Bây giờ họ cần có một tên mới và mã của họ sẽ bị phá vỡ.
+
+17
+00:01:03,090 --> 00:01:08,430
+Nếu họ bắt đầu sử dụng phiên bản chính mới này và vì vậy họ sẽ phải trải qua và đổi tên
+
+18
+00:01:08,430 --> 00:01:12,570
+chức năng trong mã của họ dựa trên tiếp tục sử dụng phiên bản chính tiếp theo.
+
+19
+00:01:12,570 --> 00:01:17,760
+Vì vậy, có những thay đổi không tương thích ngược và chúng ta sẽ thấy ví dụ minh họa đó xuất hiện và
+
+20
+00:01:17,760 --> 00:01:23,940
+sau đó một thay đổi nhỏ là các thay đổi tương thích ngược được thêm vào và sau đó một bản vá chỉ tương thích ngược
+
+21
+00:01:23,940 --> 00:01:25,440
+Sửa lỗi.
+
+22
+00:01:25,440 --> 00:01:32,340
+Và vì vậy bạn biết rằng bạn có thể thấy số bản vá này tăng lên và sau đó bạn có thể thấy những thay đổi nhỏ đang
+
+23
+00:01:32,340 --> 00:01:33,870
+được thêm vào các phiên bản nhỏ.
+
+24
+00:01:33,900 --> 00:01:35,390
+Số tăng lên và sau đó là số này.
+
+25
+00:01:35,520 --> 00:01:37,440
+Nhưng đó là cách phiên bản ngữ nghĩa hoạt động.
+
+26
+00:01:37,560 --> 00:01:42,050
+Điều gì xảy ra nếu chúng ta thức dậy như chín giờ trước, bạn đến 13.
+
+27
+00:01:42,080 --> 00:01:42,580
+Vâng.
+
+28
+00:01:42,680 --> 00:01:44,190
+Nó không đi đến mười một.
+
+29
+00:01:44,220 --> 00:01:46,220
+Bạn có thể biến nó thành C muốn nó.
+
+30
+00:01:46,680 --> 00:01:49,180
+Trong đó không chỉ nó không chỉ có một chữ số.
+
+31
+00:01:49,230 --> 00:01:50,790
+Vì vậy, ở đó bạn có thể nhận được hai.
+
+32
+00:01:50,790 --> 00:01:54,890
+Bạn có thể có phiên bản một điểm hai trăm năm mươi bảy điểm ba mươi sáu.
+
+33
+00:01:54,930 --> 00:02:00,180
+Nếu bạn muốn mặc dù tôi thắc mắc bạn đã làm việc trong dự án này được bao lâu nếu bạn nhận được vị thành niên
+
+34
+00:02:00,180 --> 00:02:06,390
+phiên bản và cao, sau đó nếu chúng tôi xem liệu chúng tôi có đang dựa vào sự phụ thuộc hay không, tôi có một câu hỏi nhỏ ở đây
+
+35
+00:02:06,390 --> 00:02:12,210
+để thảo luận và giả sử nó phụ thuộc vào phiên bản chính 1 và chuyển sang phiên bản chính 2 thì nên làm gì
+
+36
+00:02:12,210 --> 00:02:18,420
+chúng tôi làm vào thời điểm đó, chúng tôi thấy ồ, có một phiên bản chính mới của mã này, nó không tự động chuyển sang các mô-đun
+
+37
+00:02:18,420 --> 00:02:24,690
+không tự động bắt đầu sử dụng phiên bản để vẫn sẽ nhập bất kỳ thứ gì chúng tôi đã chỉ định cụ thể
+
+38
+00:02:24,780 --> 00:02:26,910
+hoặc mới nhất của điều đó.
+
+39
+00:02:26,910 --> 00:02:27,470
+Chính xác.
+
+40
+00:02:27,480 --> 00:02:30,000
+Cung cấp cho chúng tôi bản mới nhất của bản phát hành chính đó.
+
+41
+00:02:30,150 --> 00:02:35,520
+Nhưng nếu chúng tôi thấy phiên bản chính thứ hai ra mắt, tôi đoán điều chúng tôi muốn làm là tìm ra đâu là
+
+42
+00:02:35,520 --> 00:02:42,120
+các thay đổi không tương thích ngược giữa phiên bản chính 2 này và phiên bản chính trước đó và sau đó
+
+43
+00:02:42,120 --> 00:02:46,740
+tìm ra những gì chúng ta cần làm với cơ sở mã của mình để làm cho nó có thể sử dụng phiên bản chính tiếp theo
+
+44
+00:02:46,740 --> 00:02:50,340
+nếu chúng ta muốn tiến về phía trước để chúng ta có được quá trình suy nghĩ đúng đắn.
+
+45
+00:02:50,370 --> 00:02:50,670
+Vâng.
+
+46
+00:02:50,700 --> 00:02:54,940
+Vì vậy, về tổng thể, ý tưởng là dành cho một bản vá và có lẽ cả các phiên bản nhỏ.
+
+47
+00:02:55,050 --> 00:03:00,300
+Bạn thực sự có thể có một hệ thống tự động nâng cấp các phiên bản trong hệ thống của mình giống như
+
+48
+00:03:00,300 --> 00:03:04,500
+có máy lai hàng tuần cứ tự động ngó qua xem có cập nhật được không
+
+49
+00:03:04,820 --> 00:03:10,160
+nếu bạn đã thiết lập thử nghiệm đúng cách để anh ấy có thể xác nhận rằng nó không bị hỏng với phiên bản chính.
+
+50
+00:03:10,170 --> 00:03:13,410
+Có lẽ nó sẽ cần sự can thiệp của con người để làm điều đó.
+
+51
+00:03:13,410 --> 00:03:14,910
+Tuyệt vời.
+
+52
+00:03:15,520 --> 00:03:15,840
+Được rồi.
+
+53
+00:03:15,940 --> 00:03:18,070
+Vì vậy, đó là sự hiểu biết về phiên bản.

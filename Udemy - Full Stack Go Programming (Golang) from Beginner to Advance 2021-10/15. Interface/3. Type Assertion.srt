@@ -1,0 +1,319 @@
+1
+00:00:13,850 --> 00:00:17,120
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:17,480 --> 00:00:23,360
+In the previous session, we talked about A. In their face time and in this session, we want to talk
+
+3
+00:00:23,360 --> 00:00:25,670
+about the others interface concept.
+
+4
+00:00:29,800 --> 00:00:37,660
+Access underlying variable of interface down the line variable can be accessed in two ways.
+
+5
+00:00:38,950 --> 00:00:44,350
+First type assertion and second type switch.
+
+6
+00:00:46,080 --> 00:00:53,640
+Type assertion provides a way to access the underlying variable inside the inner face value of the interface
+
+7
+00:00:53,880 --> 00:01:01,950
+by asserting the correct type of underlying value and types, which enables us to do above time assertion
+
+8
+00:01:01,950 --> 00:01:02,670
+in serious.
+
+9
+00:01:06,110 --> 00:01:07,490
+Type assertions.
+
+10
+00:01:10,060 --> 00:01:18,910
+In Go language type assertion is an operation applied to the value of the interface or in other wars,
+
+11
+00:01:19,030 --> 00:01:23,590
+time assertion is a process to extract the values of the interface.
+
+12
+00:01:25,060 --> 00:01:27,400
+Now you can see the syntax.
+
+13
+00:01:29,300 --> 00:01:37,160
+Here is the value of the expression of the interface and tee off her case is the type also known as
+
+14
+00:01:37,190 --> 00:01:38,390
+assault type.
+
+15
+00:01:41,150 --> 00:01:48,500
+The time assertion is used to check that the dynamic time of its operation will match the asserted type
+
+16
+00:01:48,500 --> 00:01:49,130
+or not.
+
+17
+00:01:50,660 --> 00:01:58,610
+If the tea is of concrete time, then the type assertion checks the given dynamic time of a is equal
+
+18
+00:01:58,610 --> 00:02:00,250
+to the tea here.
+
+19
+00:02:00,260 --> 00:02:05,750
+If the checking process is successfully, then the type assertion returns the dynamic value of a.
+
+20
+00:02:07,020 --> 00:02:10,970
+Or if the checking fails, then the operation will panics.
+
+21
+00:02:11,450 --> 00:02:18,350
+If the tea is of any interface time, then the time assertion checks the given dynamic time of a satisfying
+
+22
+00:02:18,620 --> 00:02:19,160
+tea.
+
+23
+00:02:19,430 --> 00:02:24,470
+Here, if the checking process successfully, then the dynamic value is not extracted.
+
+24
+00:02:25,460 --> 00:02:31,220
+Now let's go to Vet School program to illustrate how to use the time ASUSTOR.
+
+25
+00:02:33,980 --> 00:02:39,110
+First, define a function that accept the parameter as an empty interface.
+
+26
+00:02:41,510 --> 00:02:51,080
+For example, a funk display, a medieval as an interface.
+
+27
+00:02:56,380 --> 00:03:04,210
+Now, extracting the value of a and different type of a valuable for the example, in this case, visit
+
+28
+00:03:04,220 --> 00:03:15,930
+Eastern Time for a better value column equals a don't walk in and close Frances's and define.
+
+29
+00:03:16,960 --> 00:03:31,180
+This stream now display the value if p value, O'Connor says, value, the value will now go to main
+
+30
+00:03:31,180 --> 00:03:36,820
+function and involve the display function and plus the arguments as extreme to it.
+
+31
+00:03:41,310 --> 00:03:47,730
+First, define a string variable and initialize it that result.
+
+32
+00:03:49,530 --> 00:04:00,180
+He called and said, well, you go through your own language.
+
+33
+00:04:01,800 --> 00:04:14,390
+Now called the display function and send the result of a tweet display who said there isn't real reform
+
+34
+00:04:14,400 --> 00:04:17,700
+at the code, save the project and execute the program.
+
+35
+00:04:20,120 --> 00:04:22,640
+Now we can see the output value.
+
+36
+00:04:23,120 --> 00:04:25,340
+Colin, go programming language.
+
+37
+00:04:26,030 --> 00:04:33,500
+First, they define the function that accept a parameter as an empty interface and assign a string time
+
+38
+00:04:33,500 --> 00:04:33,890
+to it.
+
+39
+00:04:34,070 --> 00:04:39,920
+Then come the function and post a string value as argument to it and see the result.
+
+40
+00:04:40,430 --> 00:04:48,470
+In this example, if we change the value type of value variable from string to E., then the program
+
+41
+00:04:48,470 --> 00:04:49,010
+punch.
+
+42
+00:04:50,210 --> 00:04:52,070
+Now check this problem.
+
+43
+00:04:53,060 --> 00:04:58,190
+We change the value of result into an integer for the example.
+
+44
+00:04:58,190 --> 00:05:04,220
+123 save the project and execute the program again.
+
+45
+00:05:06,480 --> 00:05:08,430
+Now we can see the arrows.
+
+46
+00:05:08,820 --> 00:05:11,610
+So we want to overcome this problem.
+
+47
+00:05:11,730 --> 00:05:13,890
+First to the last quote.
+
+48
+00:05:20,160 --> 00:05:22,800
+Save the project and read it right?
+
+49
+00:05:24,330 --> 00:05:32,190
+First, define a function that accept an argument as an empty interface, a game for the example on
+
+50
+00:05:34,470 --> 00:05:39,780
+display set variable A. as A. Interface
+
+51
+00:05:44,580 --> 00:05:46,080
+go to the body.
+
+52
+00:05:46,420 --> 00:05:51,630
+OK, now extracting the value of a and different type of a value.
+
+53
+00:05:51,750 --> 00:06:00,960
+For the example, in this case, we set extreme time for a variable and assign it to two variables like
+
+54
+00:06:00,960 --> 00:06:05,040
+value and value comma.
+
+55
+00:06:05,520 --> 00:06:13,090
+OK column equals a don't open and close parenthesis and set a string as a tie.
+
+56
+00:06:13,470 --> 00:06:15,150
+Now display the value.
+
+57
+00:06:16,810 --> 00:06:23,610
+If if when you call in person.
+
+58
+00:06:24,190 --> 00:06:24,820
+The.
+
+59
+00:06:29,240 --> 00:06:46,500
+Status is percent v and calm here and sets venue and Oak Valley event here.
+
+60
+00:06:46,520 --> 00:06:53,600
+If the time of the day is equal to that string, then the venue contains the dynamic venue of the A
+
+61
+00:06:54,080 --> 00:06:56,340
+and okay will set to true.
+
+62
+00:06:57,290 --> 00:07:05,420
+And if the time of the air is not equal to a string, then auto is set to false and the venue contains
+
+63
+00:07:05,420 --> 00:07:08,960
+zero venue and the program does not punch.
+
+64
+00:07:09,980 --> 00:07:15,680
+Now go to main function and invoke the display function and post the arguments to eat.
+
+65
+00:07:16,700 --> 00:07:20,150
+First, define issuing variable and initialize each line.
+
+66
+00:07:20,360 --> 00:07:33,830
+Result equals go through your own language and call the display function and sent the result variable
+
+67
+00:07:33,830 --> 00:07:34,370
+to eat.
+
+68
+00:07:34,610 --> 00:07:39,170
+Display city resolved by data OK.
+
+69
+00:07:39,770 --> 00:07:43,730
+And second, define an integer variable and initialize it.
+
+70
+00:07:43,740 --> 00:07:51,860
+Go to the next line that results two equals.
+
+71
+00:07:51,860 --> 00:08:00,500
+Follow the example one hundred and twenty three and call display function and sent the result to variable
+
+72
+00:08:00,530 --> 00:08:09,110
+to eat, display and set the result variable to reformat the code.
+
+73
+00:08:09,320 --> 00:08:12,350
+Save the project and execute the program.
+
+74
+00:08:15,500 --> 00:08:24,050
+Now we can see the output value for string is go programming language and its titles, its true and
+
+75
+00:08:24,050 --> 00:08:28,040
+value for integer is zero and the phantoms is false.
+
+76
+00:08:28,880 --> 00:08:35,390
+In this case, for the extreme time, watching variable contains through value and for the entire time,
+
+77
+00:08:35,390 --> 00:08:40,040
+watching variable contains false value, and it does not given at all.
+
+78
+00:08:40,610 --> 00:08:46,040
+In order not to prolong the time of decision, we would finish it and we will continue the content in
+
+79
+00:08:46,040 --> 00:08:46,970
+the next session.
+
+80
+00:08:47,070 --> 00:08:47,570
+Goodbye.

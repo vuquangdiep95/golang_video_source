@@ -1,0 +1,295 @@
+1
+00:00:11,630 --> 00:00:15,050
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:15,470 --> 00:00:22,670
+In the previous session, we could define channels for chat application, and now it's time to design
+
+3
+00:00:22,670 --> 00:00:25,880
+and implement methods for the channels created.
+
+4
+00:00:26,780 --> 00:00:34,490
+First, you want to create a method for adding a client, so define the middle name like register clients.
+
+5
+00:00:36,590 --> 00:00:40,690
+Because these methods are related to the config restaurant.
+
+6
+00:00:41,000 --> 00:00:56,060
+We define a receiver for them, so we'll be right fine set the receiver config pointer off config and
+
+7
+00:00:56,060 --> 00:00:57,620
+set a name, for example.
+
+8
+00:00:57,650 --> 00:00:58,550
+Register.
+
+9
+00:00:59,650 --> 00:01:00,310
+Client.
+
+10
+00:01:05,100 --> 00:01:14,160
+These metal accept a connection as input parameter playing by the time pulling trough.
+
+11
+00:01:14,640 --> 00:01:16,410
+We have such a connection.
+
+12
+00:01:23,680 --> 00:01:31,270
+Now he wants to implement the body of method, this method is supposed to end the current connection
+
+13
+00:01:31,270 --> 00:01:33,460
+as a client to the client's map.
+
+14
+00:01:34,060 --> 00:01:36,760
+So we write config
+
+15
+00:01:39,490 --> 00:01:40,840
+that clients
+
+16
+00:01:43,510 --> 00:01:51,670
+now that content connection IP as the key for the map for access, the IP of the client recording agreement
+
+17
+00:01:51,670 --> 00:01:53,290
+at this function.
+
+18
+00:01:53,800 --> 00:02:00,430
+So the right client got removed.
+
+19
+00:02:04,020 --> 00:02:06,100
+Address dots is.
+
+20
+00:02:11,090 --> 00:02:16,520
+And initialize it by the client equals client.
+
+21
+00:02:20,710 --> 00:02:25,870
+For display, the list of claims we can use from pain and function.
+
+22
+00:02:26,120 --> 00:02:26,740
+FP
+
+23
+00:02:30,100 --> 00:02:30,940
+clients.
+
+24
+00:02:34,260 --> 00:02:45,540
+Country that claims now we can see the IP of each client.
+
+25
+00:02:46,020 --> 00:02:49,680
+We could define the method for add a new client and class map.
+
+26
+00:02:50,340 --> 00:02:57,540
+Now we want to create a method for removing the client, so define the method name like remove clients.
+
+27
+00:02:59,250 --> 00:02:59,850
+Fine.
+
+28
+00:03:02,930 --> 00:03:06,500
+Set a precedent, for example, config.
+
+29
+00:03:08,720 --> 00:03:15,590
+By the time Poitras kind of set a name, for example, Reno.
+
+30
+00:03:17,040 --> 00:03:17,940
+Client,
+
+31
+00:03:20,790 --> 00:03:32,760
+despite the fact that the connection is input parameter, client, web socket, the connection.
+
+32
+00:03:38,350 --> 00:03:44,830
+Now he wants to implement the body of method, this method is supposed to remove the connection of the
+
+33
+00:03:44,830 --> 00:03:52,330
+client from the client's map for this purpose, declining delete function, the delete built in function
+
+34
+00:03:52,360 --> 00:03:56,230
+delete as the element with the specified key from the map.
+
+35
+00:03:56,980 --> 00:04:03,400
+This function acts that two parameters first the map collection and second, the key of the element
+
+36
+00:04:03,460 --> 00:04:05,350
+to be removed from the map.
+
+37
+00:04:05,680 --> 00:04:07,870
+So calling delete function.
+
+38
+00:04:10,690 --> 00:04:24,670
+Said clients map as arguments feek dot clients and sit IP of client as key argument clients start remote.
+
+39
+00:04:28,090 --> 00:04:29,900
+Address Dot estranged.
+
+40
+00:04:34,100 --> 00:04:41,210
+Now we can see the list of clients after a dirty move by the Colleen and Function FP
+
+41
+00:04:44,180 --> 00:04:45,170
+clients.
+
+42
+00:04:51,360 --> 00:05:01,530
+And calling conflict that class now, we could define the method for removing the client from our client's
+
+43
+00:05:01,530 --> 00:05:01,860
+map.
+
+44
+00:05:03,240 --> 00:05:09,360
+Now it's time to design the method whose job is to transfer data from the server to the class.
+
+45
+00:05:09,960 --> 00:05:13,050
+So define the method name like Message Data's
+
+46
+00:05:16,890 --> 00:05:25,980
+fine set a receiver, for example Palm Beach from comfiest strong
+
+47
+00:05:29,520 --> 00:05:31,860
+message dataset.
+
+48
+00:05:35,970 --> 00:05:42,840
+This method accept an object from message extract as input parameter, for example, research by the
+
+49
+00:05:42,840 --> 00:05:44,750
+typed message S3.
+
+50
+00:05:51,460 --> 00:05:57,770
+The job of this method is to call the clients in the client's mapped election and send it, these are
+
+51
+00:05:57,770 --> 00:05:59,800
+a message to the whole clients.
+
+52
+00:06:00,280 --> 00:06:03,470
+So we use the range loop to iterate the clients.
+
+53
+00:06:03,790 --> 00:06:09,700
+So we write full on the word score.
+
+54
+00:06:10,120 --> 00:06:17,380
+Comma defined a variable like client column equals range.
+
+55
+00:06:18,610 --> 00:06:24,160
+We want to iterate lists of clients so calling class map from configure struct config.
+
+56
+00:06:25,870 --> 00:06:26,950
+But clients,
+
+57
+00:06:29,980 --> 00:06:35,020
+now we want to send the message to each client to do these videos from Jason Cadec.
+
+58
+00:06:35,470 --> 00:06:42,220
+Jason is a codec to send or receive JSON data in a frame from an VIPs get connection.
+
+59
+00:06:42,790 --> 00:06:47,740
+So from which to get packages, putting JSON and invoking send method.
+
+60
+00:06:49,030 --> 00:06:51,360
+This function returns and or object.
+
+61
+00:06:51,370 --> 00:06:53,800
+So first, define and error variable.
+
+62
+00:06:54,100 --> 00:07:00,340
+Error column equals this wicked dot JCR
+
+63
+00:07:03,670 --> 00:07:06,160
+dot send function.
+
+64
+00:07:06,970 --> 00:07:09,460
+This method acts the two parameters.
+
+65
+00:07:09,910 --> 00:07:11,220
+First, the connection.
+
+66
+00:07:11,230 --> 00:07:12,940
+So we set client.
+
+67
+00:07:15,970 --> 00:07:18,010
+And second is an object.
+
+68
+00:07:18,310 --> 00:07:22,330
+In this case, our argument is a object from messages struct.
+
+69
+00:07:22,660 --> 00:07:24,730
+So we send message.
+
+70
+00:07:28,020 --> 00:07:29,700
+Now, check status or
+
+71
+00:07:34,800 --> 00:07:47,970
+if it or not, equals need Lott, the fatal error don't now we could define a method for send data from
+
+72
+00:07:47,970 --> 00:07:52,000
+Syria to clients in order not to prolong the time of decision.
+
+73
+00:07:52,020 --> 00:07:55,770
+We will finish it and we will continue the content in the next session.
+
+74
+00:07:55,890 --> 00:07:56,460
+Goodbye.

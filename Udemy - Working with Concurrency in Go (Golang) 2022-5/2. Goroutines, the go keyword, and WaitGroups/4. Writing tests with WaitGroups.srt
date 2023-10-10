@@ -1,0 +1,451 @@
+1
+00:00:00,860 --> 00:00:06,170
+So we're coming along in our consideration of Sinking Weight Group and just as a review, it's very
+
+2
+00:00:06,170 --> 00:00:06,940
+simple to use.
+
+3
+00:00:06,980 --> 00:00:09,200
+It's the easiest way to deal with concurrency.
+
+4
+00:00:10,010 --> 00:00:12,890
+Not always the best way, but definitely the easiest.
+
+5
+00:00:13,370 --> 00:00:16,580
+So all I did was declare a variable of type sink weight group.
+
+6
+00:00:16,910 --> 00:00:23,600
+I added the number nine to it, which is the length of the slice of string words every time I call a
+
+7
+00:00:23,600 --> 00:00:29,690
+go routine that I want to wait for in the on actual go routine I call defer awake report done and then
+
+8
+00:00:29,690 --> 00:00:31,880
+I wait down here and it's as simple as that.
+
+9
+00:00:32,570 --> 00:00:35,960
+But what happens if somehow I get the wrong number in here?
+
+10
+00:00:36,050 --> 00:00:39,770
+Let's say I get I want to know 1212 is bigger than nine.
+
+11
+00:00:40,400 --> 00:00:46,880
+Now, logically, if I were to run this program, you might think that since I only have, I'm only
+
+12
+00:00:46,880 --> 00:00:52,970
+spawning nine go routines, one for each of these words and I'm waiting for 12 that my program just
+
+13
+00:00:52,970 --> 00:00:54,890
+stops here and waits forever.
+
+14
+00:00:55,070 --> 00:00:56,570
+But it won't actually.
+
+15
+00:00:56,570 --> 00:01:01,670
+If I run this go run dot, you'll see that I get an error fatal error.
+
+16
+00:01:01,670 --> 00:01:06,740
+All go routines are asleep deadlock and that is an easy error to run into.
+
+17
+00:01:06,740 --> 00:01:12,650
+And that's one of the reasons why you almost never use a hardcoded value like 12 as I did there, because
+
+18
+00:01:12,650 --> 00:01:13,610
+that's a bit of a problem.
+
+19
+00:01:13,640 --> 00:01:13,990
+Okay.
+
+20
+00:01:14,060 --> 00:01:19,850
+So I'm going to change that back to Len of words just so that things will work as expected.
+
+21
+00:01:19,850 --> 00:01:23,210
+And now when I run it, it'll do exactly what I expect.
+
+22
+00:01:23,510 --> 00:01:23,870
+Okay.
+
+23
+00:01:25,400 --> 00:01:29,270
+Now you're also at some point going to want to test to go routine that you have to wait for.
+
+24
+00:01:29,270 --> 00:01:32,390
+And I'm sure you can figure this out on your own, but I thought I can go through it quickly.
+
+25
+00:01:32,480 --> 00:01:32,840
+Okay.
+
+26
+00:01:33,320 --> 00:01:36,740
+So I'm going to write a test for this function, print something.
+
+27
+00:01:36,740 --> 00:01:41,510
+So I'll create a new file which I'll call main underscore test.
+
+28
+00:01:41,510 --> 00:01:47,930
+Don't go and it's in package main and I'll write one test just for that function.
+
+29
+00:01:48,050 --> 00:01:54,470
+So I'll write a funk and I'll call it test, underscore, print something and it takes one parameter
+
+30
+00:01:54,470 --> 00:02:01,880
+t a pointer to testing T and that did the import for me and we'll write this test.
+
+31
+00:02:02,750 --> 00:02:09,890
+Now I'm testing a function that prints something to the console and there's a little bit of magic you
+
+32
+00:02:09,890 --> 00:02:11,930
+have to implement in order to do that easily.
+
+33
+00:02:11,960 --> 00:02:13,340
+Fortunately, it's not that difficult.
+
+34
+00:02:13,490 --> 00:02:20,600
+First of all, when I run my program, it's printing it to O's dot steady or you T standard.
+
+35
+00:02:20,930 --> 00:02:27,230
+Okay, so what I'm going to do is create a variable char call STD or T and it's assigned the current
+
+36
+00:02:27,230 --> 00:02:29,630
+value of STD or UTI.
+
+37
+00:02:30,470 --> 00:02:34,550
+I'm just saving what standard out is before I run my test.
+
+38
+00:02:34,730 --> 00:02:39,230
+So I'll set it back to that when I'm finished and now I'm going to create my own standard out.
+
+39
+00:02:40,070 --> 00:02:44,270
+So I do that by getting a variable ah for read w for right.
+
+40
+00:02:44,510 --> 00:02:47,750
+And I'll ignore the third return parameter which isn't important to me.
+
+41
+00:02:48,230 --> 00:02:50,990
+And that comes from the built in Oscar type.
+
+42
+00:02:51,620 --> 00:02:51,950
+Okay.
+
+43
+00:02:53,020 --> 00:02:58,300
+So once I have that now, I'll set OSD standard out to this right pipe.
+
+44
+00:02:58,750 --> 00:03:02,860
+So I say, okay, STB out right from the standard library.
+
+45
+00:03:03,340 --> 00:03:06,640
+I'm changing that to be equal to w that's what I'm gonna write to.
+
+46
+00:03:07,000 --> 00:03:07,370
+Okay.
+
+47
+00:03:09,060 --> 00:03:14,760
+Now, since I want to test this function over here, print something.
+
+48
+00:03:15,180 --> 00:03:16,740
+It's expecting to have a weight group.
+
+49
+00:03:16,770 --> 00:03:17,610
+So I need a weight group.
+
+50
+00:03:17,970 --> 00:03:18,600
+That's no problem.
+
+51
+00:03:18,610 --> 00:03:19,230
+I'll create one.
+
+52
+00:03:20,750 --> 00:03:22,160
+Via WG.
+
+53
+00:03:22,340 --> 00:03:24,440
+Of sync weight group type.
+
+54
+00:03:25,640 --> 00:03:27,020
+Okay, now I have a variable.
+
+55
+00:03:27,890 --> 00:03:29,600
+Now I'll add one to it.
+
+56
+00:03:29,750 --> 00:03:34,370
+And in this case I can add the number one because this is a test and I know I'm only running one thing
+
+57
+00:03:35,060 --> 00:03:41,090
+wg to add one now I just call the function I want to test.
+
+58
+00:03:41,360 --> 00:03:43,220
+Go print something.
+
+59
+00:03:44,990 --> 00:03:47,300
+And I handed some text that I wanted to print.
+
+60
+00:03:47,330 --> 00:03:48,590
+See another Greek letter?
+
+61
+00:03:48,590 --> 00:03:49,220
+Epsilon.
+
+62
+00:03:49,820 --> 00:03:51,530
+And a reference to my weight group.
+
+63
+00:03:51,710 --> 00:03:53,890
+Remember, you never hand weight groups around.
+
+64
+00:03:53,930 --> 00:03:56,150
+You always hand pointers to weight groups around.
+
+65
+00:03:56,240 --> 00:03:57,440
+It's much safer.
+
+66
+00:03:58,670 --> 00:03:59,960
+So that executes the function.
+
+67
+00:04:00,470 --> 00:04:01,520
+Now I have to wait.
+
+68
+00:04:01,760 --> 00:04:02,750
+WG Don't wait.
+
+69
+00:04:05,270 --> 00:04:09,920
+Once that function print something runs, it has that defer statement in there.
+
+70
+00:04:09,950 --> 00:04:11,970
+So we'll wait until that's deferred.
+
+71
+00:04:11,990 --> 00:04:16,790
+In other words, we wait till this is finished running in the background as its own go routine and now
+
+72
+00:04:16,790 --> 00:04:17,600
+we close our pipe.
+
+73
+00:04:17,720 --> 00:04:21,590
+W So I'll ignore the error when I called WQ close.
+
+74
+00:04:23,000 --> 00:04:23,240
+Okay.
+
+75
+00:04:24,710 --> 00:04:28,290
+Now I want to get the results from that test.
+
+76
+00:04:28,310 --> 00:04:32,660
+In other words, I saved what was being written in my own variable.
+
+77
+00:04:32,840 --> 00:04:40,370
+And I want to get something out of that and turn it into a string so I'll get the result in a variable
+
+78
+00:04:40,370 --> 00:04:41,060
+called result.
+
+79
+00:04:44,080 --> 00:04:47,880
+And I'll ignore the second return parameter when I call I.
+
+80
+00:04:47,890 --> 00:04:48,320
+Okay.
+
+81
+00:04:48,370 --> 00:04:48,880
+Read all.
+
+82
+00:04:50,740 --> 00:04:53,680
+And if you're using an older version of Go, you'd have to use IOU.
+
+83
+00:04:53,680 --> 00:04:57,730
+Tilde read all, but hopefully you have the latest version installed because that's been deprecated.
+
+84
+00:04:58,480 --> 00:05:03,910
+So I'm going to read all her and that's the variable up here from line 13.
+
+85
+00:05:03,940 --> 00:05:04,420
+Okay.
+
+86
+00:05:06,670 --> 00:05:07,780
+I turn that into a string.
+
+87
+00:05:08,260 --> 00:05:16,090
+Output is a sign the value of casting result to a string.
+
+88
+00:05:17,110 --> 00:05:17,460
+Okay.
+
+89
+00:05:18,630 --> 00:05:26,370
+And now that I have my output and I finish with that, what I can do is say ost study out my variable
+
+90
+00:05:26,490 --> 00:05:33,950
+over wrote back up on line 14 that's now equal to the one that I saved online 11 STD.
+
+91
+00:05:34,710 --> 00:05:39,350
+I have to set things back as they were before the test ran and now I perform the test.
+
+92
+00:05:39,360 --> 00:05:50,520
+So I'll say if not from the strings package strings dot contains and I want to look at output and I'm
+
+93
+00:05:50,520 --> 00:05:52,230
+looking for epsilon.
+
+94
+00:05:52,980 --> 00:05:54,780
+If that's not there then something went wrong.
+
+95
+00:05:55,290 --> 00:05:57,840
+So I can say t dot rf
+
+96
+00:06:01,140 --> 00:06:09,570
+expected to find epsilon but it is not there and I can run my test.
+
+97
+00:06:10,050 --> 00:06:11,220
+So I'll clear the screen.
+
+98
+00:06:11,730 --> 00:06:12,480
+Go test.
+
+99
+00:06:12,480 --> 00:06:12,810
+Done.
+
+100
+00:06:15,130 --> 00:06:16,450
+And I misspelled Epsilon.
+
+101
+00:06:16,540 --> 00:06:17,380
+That's why it failed.
+
+102
+00:06:18,880 --> 00:06:22,150
+So let's copy it and paste it in here.
+
+103
+00:06:23,650 --> 00:06:24,430
+We said it worked.
+
+104
+00:06:25,330 --> 00:06:26,170
+Let's try it again.
+
+105
+00:06:26,260 --> 00:06:29,200
+Go test dot and it passes.
+
+106
+00:06:29,260 --> 00:06:30,700
+No problem at all.
+
+107
+00:06:31,330 --> 00:06:36,140
+So the key thing to remember is I'm expecting that goto routine to run in the background.
+
+108
+00:06:36,160 --> 00:06:39,190
+So when I write my test for it, I run it in the background.
+
+109
+00:06:39,190 --> 00:06:42,790
+And that, I think is an important point to keep in mind when you're writing tests.
+
+110
+00:06:43,360 --> 00:06:47,680
+So as you can see, when we're writing console applications like this, it's a bit tricky to capture
+
+111
+00:06:47,680 --> 00:06:48,370
+the output.
+
+112
+00:06:48,640 --> 00:06:50,860
+So I can test it, but it's not that difficult.
+
+113
+00:06:51,370 --> 00:06:52,660
+Okay, let's move on.

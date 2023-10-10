@@ -1,0 +1,195 @@
+1
+00:00:00,270 --> 00:00:04,930
+So two things for me that kind of came up as questions as protocol.
+
+2
+00:00:05,010 --> 00:00:05,910
+Buffer I think.
+
+3
+00:00:05,910 --> 00:00:07,220
+JASON Yes.
+
+4
+00:00:07,230 --> 00:00:08,580
+Does that get good association.
+
+5
+00:00:08,670 --> 00:00:09,050
+Yes.
+
+6
+00:00:09,330 --> 00:00:12,530
+And the other one is.
+
+7
+00:00:12,780 --> 00:00:17,550
+You know I think it'd be good just to have a little bit of a discussion of package name versus folder
+
+8
+00:00:17,550 --> 00:00:20,630
+name cause folder name could be totally different than package name.
+
+9
+00:00:21,120 --> 00:00:24,690
+And you could even have one folder with many different packages in it.
+
+10
+00:00:24,690 --> 00:00:25,320
+Correct.
+
+11
+00:00:25,840 --> 00:00:30,350
+Well I know all go files within a single folder must have the same po.
+
+12
+00:00:30,900 --> 00:00:34,860
+Oh go will actually give you an error or if you've got a different package name amongst go files in
+
+13
+00:00:34,860 --> 00:00:38,080
+a folder so you can have some folders underneath that with different package.
+
+14
+00:00:38,120 --> 00:00:38,660
+OK.
+
+15
+00:00:38,960 --> 00:00:39,480
+OK.
+
+16
+00:00:39,810 --> 00:00:40,110
+Okay.
+
+17
+00:00:40,110 --> 00:00:40,920
+That's right.
+
+18
+00:00:40,950 --> 00:00:41,880
+That's it.
+
+19
+00:00:41,880 --> 00:00:42,870
+And.
+
+20
+00:00:44,460 --> 00:00:47,280
+And just as you would go to there.
+
+21
+00:00:47,860 --> 00:00:48,280
+Okay.
+
+22
+00:00:48,330 --> 00:00:48,930
+So you just.
+
+23
+00:00:48,990 --> 00:00:50,510
+That is actually the folder name.
+
+24
+00:00:51,530 --> 00:00:56,340
+And it's just a best practice to have your folder name match your package name.
+
+25
+00:00:56,370 --> 00:00:56,760
+Yes.
+
+26
+00:00:56,760 --> 00:01:04,170
+Because when you import import by default you normally you can either define the package name manually
+
+27
+00:01:04,170 --> 00:01:07,830
+how what you're going to call it or it's based on the tax shame and what you're importing.
+
+28
+00:01:07,860 --> 00:01:11,640
+And so if that just matches the last one of the folder name that's easy for people to remember when
+
+29
+00:01:11,640 --> 00:01:14,460
+they're importing say all that again that went past me.
+
+30
+00:01:14,460 --> 00:01:17,010
+So it's like when I'm importing this stuff this proto thing.
+
+31
+00:01:17,070 --> 00:01:18,030
+Yeah.
+
+32
+00:01:18,300 --> 00:01:22,190
+If it grabs it from the older which is the same deal.
+
+33
+00:01:22,200 --> 00:01:25,250
+So it's actually whatever the package they list is.
+
+34
+00:01:25,250 --> 00:01:32,300
+So if that matches the folder path that's easy to remember yeah yeah but where does it get.
+
+35
+00:01:32,300 --> 00:01:34,040
+That has an alias there.
+
+36
+00:01:34,070 --> 00:01:36,620
+So in this case it's got legal aliens in them.
+
+37
+00:01:36,680 --> 00:01:37,070
+Right.
+
+38
+00:01:37,070 --> 00:01:42,460
+And if you don't have the alias it call you call it from the package name not the folder name but then
+
+39
+00:01:42,470 --> 00:01:45,530
+it's easy to associate if you have your folder or package.
+
+40
+00:01:45,530 --> 00:01:46,720
+So it's best practice.
+
+41
+00:01:46,760 --> 00:01:47,130
+Yes.
+
+42
+00:01:47,130 --> 00:01:48,500
+Temp folder named to package.
+
+43
+00:01:48,590 --> 00:01:48,820
+OK.
+
+44
+00:01:48,830 --> 00:01:51,210
+That's a that's a nice clarification.
+
+45
+00:01:51,590 --> 00:01:52,910
+I hope that that helps.
+
+46
+00:01:52,910 --> 00:01:59,000
+Those are my two reflections on Daniel's previous video compiling the service and the next video.
+
+47
+00:01:59,010 --> 00:02:01,690
+We've got some special planned for you.
+
+48
+00:02:01,700 --> 00:02:06,390
+I'm not sure what it is but I'm looking forward to seeing it.
+
+49
+00:02:06,740 --> 00:02:07,610
+See the next video.

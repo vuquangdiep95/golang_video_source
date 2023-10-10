@@ -1,0 +1,204 @@
+1
+00:00:02,280 --> 00:00:07,920
+So in order to implement pop migrations or soda migrations or phased migrations, whatever you want
+
+2
+00:00:07,920 --> 00:00:14,310
+to call them, we're going to do that by starting with this file migrations don't go in this hilarious
+
+3
+00:00:14,310 --> 00:00:21,030
+project and we already have migrate up, migrate down all all these functions that work really well
+
+4
+00:00:21,030 --> 00:00:22,230
+with this package.
+
+5
+00:00:22,270 --> 00:00:25,770
+Golang Migrate, Slash Migrate, and we're using version four.
+
+6
+00:00:26,770 --> 00:00:31,150
+And I could simply modify these to make them work with soda instead.
+
+7
+00:00:31,240 --> 00:00:37,690
+But what I'll do is actually write new methods that are specific to the package would need to impart.
+
+8
+00:00:38,020 --> 00:00:43,030
+Now the package, we're going to import one that gives us the migration functionality we're looking
+
+9
+00:00:43,030 --> 00:00:51,100
+for is found here on GitHub dot com slash go buffalo slash pork, and you have some helpful documentation
+
+10
+00:00:51,100 --> 00:00:52,240
+down here, OK?
+
+11
+00:00:52,660 --> 00:00:55,350
+The documentation here is really not helpful.
+
+12
+00:00:55,360 --> 00:00:57,460
+That tells me how to write migrations and so forth.
+
+13
+00:00:58,090 --> 00:01:02,250
+So we actually have to dig through the source code to figure out how to implement this.
+
+14
+00:01:02,260 --> 00:01:03,910
+But fortunately, it's not that difficult.
+
+15
+00:01:04,090 --> 00:01:12,010
+But the first step is actually to go back to our ideas, to open a terminal, to clear the screen.
+
+16
+00:01:12,640 --> 00:01:15,100
+Make sure I'm in the correct folder.
+
+17
+00:01:15,100 --> 00:01:19,780
+Celebrities us because we want to import this in the celebrity's project and type.
+
+18
+00:01:19,780 --> 00:01:28,060
+Go get and then paste in that URL, GitHub dot com slash go buffalo slash pup and that will go and get
+
+19
+00:01:28,060 --> 00:01:28,630
+it for us.
+
+20
+00:01:43,090 --> 00:01:43,720
+And there it is.
+
+21
+00:01:44,620 --> 00:01:46,000
+So now we can actually use this.
+
+22
+00:01:46,900 --> 00:01:51,790
+So the very first thing I'm going to work on here is I'll go to the top of the file and I'm going to
+
+23
+00:01:51,790 --> 00:01:57,250
+leave all of these methods here that use the Golang Migrate Slash Migrate package.
+
+24
+00:01:57,520 --> 00:02:00,640
+I'll leave them there as a reference, and I'll start by writing something.
+
+25
+00:02:00,640 --> 00:02:02,050
+I'm going to have to use a fair bit.
+
+26
+00:02:02,290 --> 00:02:08,259
+It's a function with this receiver of C pointer to celebrities, and I'm going to call this function
+
+27
+00:02:08,259 --> 00:02:09,600
+and it's not exported.
+
+28
+00:02:09,610 --> 00:02:10,810
+It's Pop Connect.
+
+29
+00:02:11,140 --> 00:02:13,160
+This is how we connect to the database.
+
+30
+00:02:13,180 --> 00:02:13,570
+OK.
+
+31
+00:02:14,380 --> 00:02:19,090
+And that's going to return a pointer to from the pop package.
+
+32
+00:02:19,090 --> 00:02:25,180
+We just installed pop dot connection and potentially a return error as well.
+
+33
+00:02:25,870 --> 00:02:26,200
+OK.
+
+34
+00:02:27,460 --> 00:02:33,070
+So we're going to call a method pop dot connect and we'll get back our transaction.
+
+35
+00:02:33,190 --> 00:02:38,350
+That's how they refer to it in their documentation, such as it is potentially an error when we call
+
+36
+00:02:38,350 --> 00:02:39,880
+Pop Dot Connect
+
+37
+00:02:43,540 --> 00:02:45,880
+and I'm going to use the key development.
+
+38
+00:02:47,230 --> 00:02:55,300
+If you take out my other courses, you're aware that the database why HTML file for pop or soda or fizz
+
+39
+00:02:55,300 --> 00:03:00,030
+or whatever you want to call it, it actually allows you to specify a particular kind of connection.
+
+40
+00:03:00,040 --> 00:03:01,750
+And I'm just going to default to development.
+
+41
+00:03:01,870 --> 00:03:02,230
+OK?
+
+42
+00:03:02,260 --> 00:03:04,660
+To make things as simple as I possibly can.
+
+43
+00:03:05,530 --> 00:03:06,430
+So I'll check for an error.
+
+44
+00:03:06,820 --> 00:03:08,230
+If error is not equal to nil.
+
+45
+00:03:10,000 --> 00:03:12,790
+Then I'll return nil and the error.
+
+46
+00:03:14,620 --> 00:03:18,220
+Otherwise, I'll return my transaction and nil.
+
+47
+00:03:19,100 --> 00:03:25,960
+OK, now we'll be using this pop connect function as we write the various methods to create migrations,
+
+48
+00:03:25,960 --> 00:03:28,080
+to run migrations and all that sort of thing.
+
+49
+00:03:28,090 --> 00:03:29,480
+But this is enough to get us started.
+
+50
+00:03:29,560 --> 00:03:36,160
+So in the next lecture, we'll actually write the function that creates up and down pop migrations.
+
+51
+00:03:36,340 --> 00:03:36,670
+OK.
+

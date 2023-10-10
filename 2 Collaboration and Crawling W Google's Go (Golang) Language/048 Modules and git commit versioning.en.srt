@@ -1,0 +1,231 @@
+1
+00:00:00,090 --> 00:00:03,810
+Vì vậy, bây giờ chúng ta sẽ xem xét các mô-đun và nhận phiên bản nhận xét, sau đó chúng ta sẽ xem xét
+
+2
+00:00:03,810 --> 00:00:09,390
+tại nhận các nhánh và thay thế đường dẫn mô-đun, sau đó chúng tôi sẽ thực hiện các lệnh xem xét và loại đánh giá
+
+3
+00:00:09,420 --> 00:00:11,500
+mọi thứ chúng tôi đã học được cho đến nay.
+
+4
+00:00:11,500 --> 00:00:17,160
+Và Daniel có một số thông tin ở đây để chia sẻ với chúng tôi về các mô-đun và nhận phiên bản cam kết.
+
+5
+00:00:17,160 --> 00:00:20,580
+Tôi rất mong được tự học nó và xem nó là gì.
+
+6
+00:00:20,640 --> 00:00:21,350
+Vì thế.
+
+7
+00:00:21,480 --> 00:00:31,410
+Vì vậy, bạn có thể tự hỏi liệu bạn đã xem trang phát hành này trên github để biết báo giá RC và tất cả những thứ khác chưa
+
+8
+00:00:32,250 --> 00:00:37,620
+get tất cả các mô-đun khác cũng sẽ có bản phát hành với số phiên bản.
+
+9
+00:00:37,620 --> 00:00:46,780
+Làm thế nào để bạn làm cho dự án của riêng bạn bằng cách đi tới dự án đang diễn ra này và tìm kiếm vì các bản phát hành của bạn để
+
+10
+00:00:46,780 --> 00:00:52,360
+làm điều đó là nó tuân theo thuế, vì vậy đây chỉ là một phần của chính bộ công cụ.
+
+11
+00:00:52,360 --> 00:00:56,870
+Vì vậy, nếu tôi bị gắn thẻ, họ sẽ nói rằng chúng tôi không có thuế trên hệ thống của mình.
+
+12
+00:00:57,250 --> 00:00:59,380
+Vì vậy, hãy để tôi đảm bảo thật nhanh.
+
+13
+00:00:59,380 --> 00:01:01,230
+Tôi đang ở nhánh chính.
+
+14
+00:01:01,300 --> 00:01:06,000
+Tôi cập nhật nên để tạo một thẻ thực sự rất đơn giản.
+
+15
+00:01:06,010 --> 00:01:08,860
+Nó chỉ đơn giản là lấy thẻ và tên thẻ.
+
+16
+00:01:08,950 --> 00:01:16,480
+Vì vậy, những gì chúng tôi đã có cho đến nay là thẻ get chỉ là thứ bạn đang gắn thẻ cho một cam kết cụ thể của mình
+
+17
+00:01:16,480 --> 00:01:17,740
+với số tiền cụ thể này.
+
+18
+00:01:17,820 --> 00:01:18,090
+ĐƯỢC RỒI.
+
+19
+00:01:18,120 --> 00:01:18,350
+Vâng.
+
+20
+00:01:18,370 --> 00:01:18,670
+Vì thế.
+
+21
+00:01:18,670 --> 00:01:24,190
+Vì vậy, được gắn thẻ chỉ cho phép bạn gắn thẻ một cam kết cụ thể với tên cơ bản có thể được sử dụng trong
+
+22
+00:01:24,190 --> 00:01:32,000
+trong tương lai, để tạo thẻ get, bạn chỉ cần lấy thẻ và sau đó là tên của thẻ.
+
+23
+00:01:32,020 --> 00:01:36,940
+Vì vậy, đối với các mô-đun, các thẻ của bạn phải tuân theo phiên bản ngữ nghĩa.
+
+24
+00:01:36,940 --> 00:01:45,790
+Vì vậy, đối với trường hợp này, chúng tôi có thể nói đây là cam kết cụ thể ở đây với ví dụ về mô-đun go để hoàn thành
+
+25
+00:01:46,330 --> 00:01:53,260
+chúng ta có thể gọi phiên bản này là 0 điểm 1.0 hay.
+
+26
+00:01:53,360 --> 00:01:57,480
+Vì vậy, điều đó tạo ra các thẻ nhận ngay bây giờ và bạn nhận được thẻ ở đó.
+
+27
+00:01:57,530 --> 00:02:03,830
+Tuy nhiên, tôi không thể đẩy nó theo mặc định chỉ để đẩy nó không hoạt động.
+
+28
+00:02:03,980 --> 00:02:11,780
+Chà, thay vào đó, bạn phải làm là bạn có thể sử dụng get push origin và sau đó là tên thẻ.
+
+29
+00:02:11,790 --> 00:02:12,950
+Không điểm một điểm.
+
+30
+00:02:13,670 --> 00:02:21,860
+Vì vậy, điều này sẽ hoạt động để đẩy một thẻ cụ thể. Ngoài ra, bạn có thể lấy các thẻ dấu gạch ngang đẩy để đẩy
+
+31
+00:02:21,950 --> 00:02:31,960
+tất cả các thẻ, đó là những gì tôi sẽ làm ở đây.
+
+32
+00:02:31,970 --> 00:02:40,280
+Vì vậy, bây giờ bạn có thể thấy nó cho biết thẻ mới v 1 0 1 0 được đẩy và nếu tôi quay lại trang Trung tâm và làm mới
+
+33
+00:02:40,280 --> 00:02:47,360
+trang bây giờ nói rằng có một bản phát hành nếu tôi nhấp vào đó bây giờ tôi có thể thấy phiên bản hiện có sẵn
+
+34
+00:02:48,120 --> 00:02:55,430
+thẻ phiên bản, vì vậy tôi sẽ ghi chú các lệnh nhỏ ở đây và bang hội đầu tiên bạn có thể thấy là tạo
+
+35
+00:02:55,430 --> 00:03:01,470
+một thẻ và chúng tôi nhận được tên thẻ thẻ và sau đó chúng tôi hiển thị để hiển thị thẻ cho bất kỳ thẻ hiện tại nào bạn đã cung cấp
+
+36
+00:03:01,470 --> 00:03:01,750
+là.
+
+37
+00:03:01,770 --> 00:03:09,870
+Vì vậy, nhận các thẻ hiển thị danh sách tất cả các thẻ có thể nhận các nhánh đuôi màu nâu hiển thị danh sách tất cả các thẻ và
+
+38
+00:03:09,870 --> 00:03:15,720
+chúng ta hãy gắn thẻ cho họ để đẩy một thẻ, chúng ta có thể lấy nguồn gốc và tên thẻ hoặc chúng ta có thể thực hiện
+
+39
+00:03:15,750 --> 00:03:17,580
+thẻ băm đích là được rồi.
+
+40
+00:03:17,800 --> 00:03:18,050
+Thật sự.
+
+41
+00:03:18,220 --> 00:03:18,470
+Đúng.
+
+42
+00:03:18,470 --> 00:03:19,850
+Đây là hashtag dấu gạch ngang.
+
+43
+00:03:19,860 --> 00:03:20,550
+Đúng.
+
+44
+00:03:20,550 --> 00:03:21,600
+Được rồi, tốt.
+
+45
+00:03:21,600 --> 00:03:26,190
+Bất kỳ dấu gạch ngang dấu gạch ngang lệnh nào khác có thẻ net bên trong đó.
+
+46
+00:03:26,420 --> 00:03:27,270
+Và.
+
+47
+00:03:28,180 --> 00:03:34,500
+Và vì vậy, bất cứ khi nào chúng tôi sẵn sàng chuyển sang một bản vá nhỏ lớn, chúng tôi chỉ cần thêm thẻ đó và sau đó thẻ đó bắt đầu
+
+48
+00:03:34,610 --> 00:03:38,030
+ở đó, thẻ đó hiện được gắn với bất kỳ ủy ban nào mà bạn hiện đang tham gia.
+
+49
+00:03:38,040 --> 00:03:41,830
+Vì vậy, hãy chắc chắn rằng bạn đang ở đúng nhánh thật tuyệt vời.
+
+50
+00:03:42,000 --> 00:03:47,900
+Và nếu có những điều mà chúng tôi đang cam kết cùng một lúc, chúng tôi sẽ thực hiện tất cả những điều đó bằng cách thúc đẩy.
+
+51
+00:03:47,960 --> 00:03:53,690
+Các thẻ dấu gạch ngang vì chúng sẽ thực hiện thao tác đẩy và sau đó cũng bao gồm các thẻ mà các thẻ mà nó cho biết tất cả các thẻ mang lại
+
+52
+00:03:53,690 --> 00:03:59,430
+nó trên tất cả các văn bản, bạn phải liệt kê số lượng bằng kỹ thuật get push origin Tuyệt vời.
+
+53
+00:03:59,490 --> 00:04:05,730
+Vì vậy, đó là một mô-đun và nhận phiên bản cam kết và sau đó, điều này cho phép chúng tôi bắt đầu thêm các phiên bản
+
+54
+00:04:05,730 --> 00:04:12,330
+vào mô-đun của chúng tôi để những người khác có thể sau đó sử dụng các mô-đun nhập một trong các phiên bản của chúng tôi hoặc
+
+55
+00:04:12,330 --> 00:04:16,150
+phiên bản mới nhất thay vì chỉ cam kết ngẫu nhiên.
+
+56
+00:04:16,170 --> 00:04:18,030
+Đó là thời điểm ít nhất.
+
+57
+00:04:18,150 --> 00:04:20,280
+Bạn có bất cứ điều gì bạn muốn thêm vào này.
+
+58
+00:04:20,340 --> 00:04:20,640
+KHÔNG.

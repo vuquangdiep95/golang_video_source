@@ -1,0 +1,752 @@
+1
+00:00:00,090 --> 00:00:03,020
+OK jadi mari kita lanjutkan dan menerapkan kode area kami.
+
+2
+00:00:03,180 --> 00:00:08,660
+Jadi untuk ini kita akan menerapkan akar kuadrat API dan akar kuadrat karena Anda dapat menebak akan
+
+3
+00:00:08,670 --> 00:00:10,490
+menghitung akar kuadrat dari angka.
+
+4
+00:00:10,860 --> 00:00:15,610
+Jadi kita akan membuat RBC dan kita akan mengimplementasikan server itu dengan header dan tautan.
+
+5
+00:00:15,960 --> 00:00:18,080
+Dan kemudian kapan arus akan melenceng.
+
+6
+00:00:18,240 --> 00:00:19,880
+Jadi mari kita mulai.
+
+7
+00:00:20,220 --> 00:00:23,110
+Jadi hal pertama yang ingin Anda lakukan adalah membuat Anda diperhitungkan.
+
+8
+00:00:23,580 --> 00:00:28,710
+Dan di sana kita akan membuat RBC baru dan kita akan menyebutnya akar kuadrat.
+
+9
+00:00:28,770 --> 00:00:30,890
+Ini akan mengambil permintaan root kuadrat.
+
+10
+00:00:31,680 --> 00:00:36,760
+Pengembalian tahunan pada respons akar kuadrat.
+
+11
+00:00:36,780 --> 00:00:41,340
+Jadi ini adalah kemih sehingga tidak perlu untuk streaming dan Anda mengalirkan kata kunci.
+
+12
+00:00:41,370 --> 00:00:47,330
+Sekarang kita hanya perlu membuat hal-hal ini sehingga kita akan mengatakan permintaan kotak pesan pada dasarnya
+
+13
+00:00:47,380 --> 00:00:51,440
+untuk diperluas dalam 32 angka dan ini sama dengan satu.
+
+14
+00:00:51,570 --> 00:00:54,820
+Dan kemudian jika kita mengambil respon nomor akar kuadrat.
+
+15
+00:00:54,840 --> 00:00:57,350
+Jadi mari kita lanjutkan dengan ini.
+
+16
+00:00:57,590 --> 00:01:07,870
+Pesannya ada di sini kita akan mengambil akar angka ganda yang akan mewakili akar kuadrat dari
+
+17
+00:01:07,870 --> 00:01:09,610
+angka itu.
+
+18
+00:01:09,610 --> 00:01:16,620
+Jadi kodenya terlihat OK mari kita hasilkan PV yang dihitung dan berfungsi.
+
+19
+00:01:16,960 --> 00:01:21,370
+Jadi satu hal yang ingin Anda lakukan biasanya ketika Anda mendapatkan kesalahan adalah mendokumentasikan jenis kesalahan
+
+20
+00:01:21,370 --> 00:01:22,330
+yang sedang dilemparkan.
+
+21
+00:01:22,330 --> 00:01:26,260
+Dan itu sangat penting karena Anda ingin kode Anda dapat dibaca dan Anda ingin
+
+22
+00:01:26,260 --> 00:01:28,770
+orang memahami apa yang mereka harapkan dari kesalahan.
+
+23
+00:01:28,810 --> 00:01:39,270
+Jadi mari kita lanjutkan dengan ini dan mengatakan kesalahan penanganan komputer ini akan membuat pengecualian jika angka
+
+24
+00:01:41,190 --> 00:01:51,460
+Senat ini negatif karena kita tidak dapat menghitung akar kuadrat dari angka negatif kesalahan yang dikirim
+
+25
+00:01:51,490 --> 00:01:56,260
+adalah dari jenis argumen yang tidak valid.
+
+26
+00:01:57,160 --> 00:01:59,730
+Jadi kita akan melihat bagaimana Anda membuat argumen yang tidak valid itu.
+
+27
+00:01:59,740 --> 00:02:05,780
+Tetapi sekarang seseorang yang menulis dan membaca kode ini mengerti bahwa dia bisa mendapatkan argumen yang tidak valid.
+
+28
+00:02:06,510 --> 00:02:07,740
+OK jadi itu terlihat bagus.
+
+29
+00:02:08,480 --> 00:02:11,250
+Dan sekarang kita bisa pergi ke server keluar.
+
+30
+00:02:11,840 --> 00:02:15,120
+Jadi, inservice yang berjalan kita perlu mengimplementasikan fungsi baru itu.
+
+31
+00:02:15,590 --> 00:02:17,760
+Jadi mari kita lanjutkan dan ini dia.
+
+32
+00:02:17,990 --> 00:02:21,900
+Akar kuadrat Mari kita pergi ke depan dan menerapkan ini.
+
+33
+00:02:22,100 --> 00:02:29,700
+Kami pergi ke server dan kami akan menambahkan fungsi fungsi ini di server saya.
+
+34
+00:02:29,810 --> 00:02:37,490
+Akar kuadrat Saya hanya akan menutup ini berasal dari konteks jadi saya hanya akan mengatakan ini adalah CTX konteks saya.
+
+35
+00:02:37,610 --> 00:02:39,810
+Dan di sini kita mendapat permintaan.
+
+36
+00:02:39,810 --> 00:02:49,860
+Jadi permintaan jenis kalkulator P. B. itu permintaan aneh dan mengembalikan kalkulator P. B. melakukan respons kueri.
+
+37
+00:02:50,420 --> 00:02:51,810
+Dan saya membuka kurung saya.
+
+38
+00:02:51,930 --> 00:02:53,700
+OK ini terlihat bagus.
+
+39
+00:02:53,870 --> 00:02:56,860
+Jadi sekarang kita harus mengimplementasikan kodenya.
+
+40
+00:02:56,860 --> 00:02:59,230
+Jadi kita perlu melihat nomor yang masuk.
+
+41
+00:02:59,240 --> 00:03:06,030
+Jadi, jika Anda melihat nomor yang kita katakan permintaan yang mendapatkan nomor sebelum itu kita akan mencatat fakta bahwa
+
+42
+00:03:06,050 --> 00:03:08,210
+kita berada dalam fungsi ini.
+
+43
+00:03:08,270 --> 00:03:15,020
+Jadi saya akan mengatakan saya menerima kotak dengan RBC dan jadi kita katakan OK di sini adalah nomor yang kita dapatkan nomornya dan sekarang
+
+44
+00:03:15,020 --> 00:03:17,350
+kita hanya perlu menjalankan pernyataan IF sederhana.
+
+45
+00:03:17,510 --> 00:03:21,250
+Jika angkanya kurang dari nol maka kita punya masalah besar kan.
+
+46
+00:03:21,260 --> 00:03:24,250
+Jadi bagaimana kita menangani kesalahan ini akan kembali.
+
+47
+00:03:24,590 --> 00:03:29,990
+Dan di sini adalah trik yang Anda lihat ketika Anda mengembalikan respons dan kesalahan.
+
+48
+00:03:29,990 --> 00:03:32,790
+Dalam kasus kami, jawabannya adalah TIDAK.
+
+49
+00:03:33,290 --> 00:03:39,680
+Nah kesalahan itu sendiri adalah tipe status dot dan ketika masing-masing panah kanan kita katakan kesalahan F dan
+
+50
+00:03:39,680 --> 00:03:40,820
+buka analisis mereka.
+
+51
+00:03:40,820 --> 00:03:43,730
+Sekarang Anda dapat melihat ada status tidak terdefinisi sehingga saya dapat mengimpornya.
+
+52
+00:03:43,760 --> 00:03:48,710
+Dan kita perlu mengimpor Google gulling yang memangkas status DRP Schuessler.
+
+53
+00:03:48,710 --> 00:03:54,570
+Jadi, jika Anda pergi ke bagian paling atas Anda dapat melihat bahwa itu telah diimpor OK.
+
+54
+00:03:54,600 --> 00:03:58,810
+Dan sekarang di udara kita dapat memiliki kode dan string.
+
+55
+00:03:58,810 --> 00:03:59,850
+Jadi mari kita punya kode.
+
+56
+00:03:59,850 --> 00:04:07,140
+Pertama-tama kode yang ingin kita lakukan adalah mengatakan kode memulai argumen yang tidak valid dan yang pada dasarnya mengatakan bahwa fungsi kita
+
+57
+00:04:07,200 --> 00:04:09,190
+adalah argumen yang tidak valid.
+
+58
+00:04:09,510 --> 00:04:13,720
+Dan sekarang kita menambahkan baris baru sehingga kita dapat menentukan apa yang salah dengan kesalahan tersebut.
+
+59
+00:04:13,920 --> 00:04:19,180
+Jadi kami katakan menerima angka negatif.
+
+60
+00:04:19,290 --> 00:04:19,890
+BAIK.
+
+61
+00:04:20,130 --> 00:04:27,900
+Dan kita dapat melakukan f anti-pemotongan cetak F untuk melakukan beberapa string dalam kaitannya menerima angka negatif dan kita hanya akan
+
+62
+00:04:27,900 --> 00:04:28,590
+meneruskannya.
+
+63
+00:04:28,590 --> 00:04:33,210
+Jumlah yang kami terima di sini dan itu terlihat bagus.
+
+64
+00:04:33,210 --> 00:04:36,860
+Jadi di sini pada dasarnya kode dengan cara sekali lagi diimpor.
+
+65
+00:04:36,860 --> 00:04:41,550
+Jadi jika Anda pergi ke bagian paling atas kita dapat melihat bahwa kita memiliki status europaeus dan
+
+66
+00:04:41,550 --> 00:04:42,660
+europaeus Eco telah diimpor.
+
+67
+00:04:43,320 --> 00:04:49,620
+Dan apa yang terjadi di sini adalah bahwa sebaliknya kita mengembalikan Neal yang merupakan nilai balik dan kemudian udara yang
+
+68
+00:04:49,680 --> 00:04:55,170
+mengatakan kepada kita bahwa jika kita memberikan kode argumen tidak valid di sini dan juga pesan kesalahan
+
+69
+00:04:55,170 --> 00:04:56,190
+yang bagus.
+
+70
+00:04:56,190 --> 00:05:01,740
+Jadi, Anda dapat melihat di sini di komentar ini kami mengatakan bahwa kami akan mendapatkan jenis kesalahan argumen yang
+
+71
+00:05:01,740 --> 00:05:02,400
+tidak valid.
+
+72
+00:05:02,850 --> 00:05:04,060
+Jadi itu terlihat bagus.
+
+73
+00:05:04,200 --> 00:05:10,710
+Dan jelas jika jumlahnya lebih dari nol maka kita benar-benar dapat mengembalikan hal yang baik sehingga kita
+
+74
+00:05:11,520 --> 00:05:14,030
+dapat kembali dan menghitung titik-titik PV.
+
+75
+00:05:14,460 --> 00:05:21,700
+Respons akar kuadrat itu membutuhkan sejumlah akar.
+
+76
+00:05:21,750 --> 00:05:22,160
+BAIK.
+
+77
+00:05:22,170 --> 00:05:23,610
+Dan untuk ini kita bisa melakukan matematika.
+
+78
+00:05:23,640 --> 00:05:26,580
+Itu akar kuadrat kuadrat.
+
+79
+00:05:26,890 --> 00:05:31,420
+Dan kita dapat mengambil angka apa saja yang akan mengatakan angka dan itu terlihat bagus.
+
+80
+00:05:31,420 --> 00:05:34,200
+Dan kemudian kita perlu mendefinisikan kesalahan sehingga kita mengembalikan nol.
+
+81
+00:05:34,660 --> 00:05:35,980
+Jadi begitulah.
+
+82
+00:05:35,980 --> 00:05:41,410
+Kami sudah menanganinya dan datang ke sini dan di sini tidak senang, jadi mari kita lihat.
+
+83
+00:05:41,410 --> 00:05:48,370
+Root kuadrat dapat menggunakan angka kita hanya bisa menggunakan float 64 sehingga Anda mengapung 64.
+
+84
+00:05:49,730 --> 00:05:50,490
+Dan Selamat Hari.
+
+85
+00:05:50,620 --> 00:05:55,540
+OK jadi sekarang kita memiliki fungsi bahwa jika angka tersebut null mengembalikan kesalahan.
+
+86
+00:05:55,540 --> 00:05:58,280
+Dan jika angka tersebut positif maka pengembalian adalah akar kuadrat.
+
+87
+00:05:58,570 --> 00:06:00,190
+Jadi itu saja untuk perubahan server.
+
+88
+00:06:00,190 --> 00:06:03,340
+Dan seperti yang Anda lihat, ia mencatat kode yang sedikit lebih banyak dari sebelumnya.
+
+89
+00:06:03,360 --> 00:06:09,610
+Tapi itu bagus karena sekarang kita dapat mulai mengembalikan beberapa kode kesalahan dan hal-hal seperti ini.
+
+90
+00:06:09,640 --> 00:06:19,630
+Dan jika kita pergi ke klien kita di sini kita dapat melihat dan benar-benar memanggil kode kesalahan
+
+91
+00:06:19,630 --> 00:06:25,420
+jenis hal melakukan narasi kesalahan dan kita akan lihat.
+
+92
+00:06:25,510 --> 00:06:35,770
+Jadi ada kesepakatan dengan ini jadi saya hanya akan menyalin blok ini di sini di bagian paling bawah melakukan kesalahan yang Anda bawa itu
+
+93
+00:06:37,200 --> 00:06:37,950
+benar.
+
+94
+00:06:37,970 --> 00:06:43,270
+Dan kemudian kita mulai melakukan RBC akar kuadrat.
+
+95
+00:06:43,430 --> 00:06:49,280
+Jadi sekarang kita akan melakukan dua hal untuk melakukan panggilan yang benar dan kita akan melakukan panggilan udara.
+
+96
+00:06:49,730 --> 00:06:51,400
+Jadi mari kita lakukan panggilan yang benar.
+
+97
+00:06:51,890 --> 00:07:01,010
+Jadi hal pertama yang ingin kita lakukan adalah mengatakan konteks seedpods akar kuadrat latar belakang itu.
+
+98
+00:07:01,400 --> 00:07:04,040
+Dan di sini kita memiliki permintaan root kuadrat yang harus kita buat.
+
+99
+00:07:04,040 --> 00:07:12,470
+Jadi kita membuat permintaan kuadrat kita yang mengambil argumen nomor dan kita bisa mengatakan untuk sekarang nomornya
+
+100
+00:07:12,470 --> 00:07:15,930
+mari kita lihat apakah itu bahagia.
+
+101
+00:07:16,190 --> 00:07:16,480
+Iya.
+
+102
+00:07:16,500 --> 00:07:20,640
+Jadi angka ini diberi nomor 10 untuk menghitung akar kuadrat dari 10.
+
+103
+00:07:20,640 --> 00:07:26,940
+Sekarang jika kita melihat ini, tipe pengembaliannya adalah x kuadrat itu merespons kesalahan.
+
+104
+00:07:26,970 --> 00:07:28,100
+Jadi mari kita ikuti saja.
+
+105
+00:07:28,110 --> 00:07:36,300
+Kita dapat mengatakan kesalahan respons root kuadrat sehingga kesalahan respons sama dengan ini.
+
+106
+00:07:36,360 --> 00:07:41,640
+Dan di sini kita dapat mulai menangani beberapa kesalahan tetapi secara lebih mendalam lebih dalam.
+
+107
+00:07:41,640 --> 00:07:43,260
+Jadi mari kita lakukan.
+
+108
+00:07:43,260 --> 00:07:48,890
+Jika udaranya tidak ada, maka kita bisa mulai berurusan dengan kesalahan kita.
+
+109
+00:07:49,020 --> 00:07:58,070
+Jadi mari kita hadapi itu dan katakan OK kita bisa melakukan status jadi kita harus mengubahnya menjadi
+
+110
+00:07:58,070 --> 00:08:03,080
+status sehingga kita bisa mengatakan status dari kesalahan.
+
+111
+00:08:03,090 --> 00:08:09,500
+Jadi kita harus mengimpor ini, jadi saya hanya akan melanjutkan dan mengimpor status europaeus jadi dari kesalahan
+
+112
+00:08:09,500 --> 00:08:14,040
+dan Anda meneruskan kesalahan itu sendiri dan itu kembali karena tidak.
+
+113
+00:08:14,060 --> 00:08:14,810
+BAIK.
+
+114
+00:08:14,840 --> 00:08:17,010
+Jadi mari kita membahas hal-hal ini.
+
+115
+00:08:17,150 --> 00:08:19,620
+Kami memiliki kesalahan respons dan.
+
+116
+00:08:19,730 --> 00:08:20,960
+BAIK.
+
+117
+00:08:21,260 --> 00:08:22,860
+Jadi pada dasarnya ini.
+
+118
+00:08:22,880 --> 00:08:25,920
+OK di sini sangat penting.
+
+119
+00:08:25,960 --> 00:08:26,720
+BAIK.
+
+120
+00:08:27,020 --> 00:08:34,090
+Itu artinya udara sebenarnya dari RBC.
+
+121
+00:08:34,420 --> 00:08:36,620
+Jadi kesalahan pengguna.
+
+122
+00:08:36,640 --> 00:08:39,760
+Jadi ini hal-hal yang baru saja kita lewati.
+
+123
+00:08:39,880 --> 00:08:45,750
+Tetapi jika tidak apa-apa lagi jika tidak baik maka pada dasarnya itu adalah kesalahan yang lebih besar.
+
+124
+00:08:45,760 --> 00:08:53,170
+Ini jenis kerangka kesalahan sehingga kita bisa melakukan Lagat mereka akan kesalahan besar.
+
+125
+00:08:54,660 --> 00:09:01,330
+Memanggil root kuadrat dan kemudian kita meneruskan kesalahan di sini.
+
+126
+00:09:01,710 --> 00:09:06,870
+Tetapi sekarang jika tidak apa-apa, kita dapat benar-benar melihat kesalahan respons ini dan mendapatkan beberapa kode sehingga kita dapat
+
+127
+00:09:06,870 --> 00:09:15,300
+mengatakan misalnya kita dapat melakukan f anti-cuts print L. N. kesalahan respon pesan itu.
+
+128
+00:09:15,420 --> 00:09:16,620
+Dan di sini kita mendapatkan pesannya.
+
+129
+00:09:16,920 --> 00:09:20,610
+Tapi kita juga bisa melakukan tanggapan terhadap pangeran Jihad.
+
+130
+00:09:20,610 --> 00:09:28,010
+Kode airds dan bahkan lebih baik kita bahkan dapat melakukan pernyataan if dalam
+
+131
+00:09:28,260 --> 00:09:38,220
+kode ini sehingga kita dapat mengatakan jika kode kesalahan respons sama dengan kode yang memunculkan argumen maka kita
+
+132
+00:09:38,250 --> 00:09:48,670
+dapat menangani kesalahan ini dan mengatakan cheetah FM cetak Ellen yang kita kirim mungkin mengirim angka negatif karenanya kesalahan.
+
+133
+00:09:48,920 --> 00:09:50,050
+Jadi ini sangat penting.
+
+134
+00:09:50,060 --> 00:09:57,290
+Pada dasarnya ini mengubah kesalahan menjadi pesan kesalahan ramah PC dan kode tetapi hanya jika kesalahan
+
+135
+00:09:57,350 --> 00:09:58,810
+ini sebenarnya GAAP.
+
+136
+00:09:59,180 --> 00:10:03,720
+Jika tidak, Anda akan mendapatkan OK sebagai salah dan Anda bisa membuang ini sebagai kesalahan normal.
+
+137
+00:10:04,160 --> 00:10:05,120
+Jadi ini terlihat benar.
+
+138
+00:10:05,120 --> 00:10:10,610
+Dan akhirnya jika kita mendapatkan hasilnya kembali
+
+139
+00:10:10,820 --> 00:10:23,940
+dengan hasil yang dapat kita katakan f kosongkan itu dicetak maka cetak f hasil akar kuadrat angka sama dengan ini.
+
+140
+00:10:23,960 --> 00:10:31,960
+Jadi di sini saya hanya akan mengekstraksi nomor abstrak sebagai variabel menjadi sama dengan 10 sehingga kita dapat
+
+141
+00:10:32,960 --> 00:10:40,770
+menggunakannya di sini dan di sini saya akan mengatakan angka dan hasilnya tidak mendapatkan nomor root.
+
+142
+00:10:40,780 --> 00:10:42,050
+Jadi ini terlihat benar.
+
+143
+00:10:42,300 --> 00:10:44,930
+Jadi kita benar-benar akan menguji kedua kasus penggunaan.
+
+144
+00:10:45,040 --> 00:10:50,320
+Jadi kita perlu memiliki ini sebagai otoritas sementara agar bisa berfungsi.
+
+145
+00:10:51,560 --> 00:10:52,070
+BAIK.
+
+146
+00:10:52,250 --> 00:10:53,510
+Jadi ini terlihat benar.
+
+147
+00:10:53,570 --> 00:11:00,180
+Dan pada dasarnya fungsi ini saya bahkan dapat mengekstraknya sebagai fungsi rendah.
+
+148
+00:11:00,570 --> 00:11:02,570
+Jadi saya akan mengatakan phunk
+
+149
+00:11:05,870 --> 00:11:06,850
+do.
+
+150
+00:11:07,380 --> 00:11:14,940
+Jadi kami akan mengatakan phunk melakukan panggilan kami dan kami akan mengambil klien layanan kalkulator dan kami
+
+151
+00:11:19,300 --> 00:11:21,360
+juga memiliki nomor begitu.
+
+152
+00:11:21,550 --> 00:11:30,610
+Dan sebagai int 32 sebagai input dan di sini kita hanya akan hadir dan kita hanya akan meneruskannya.
+
+153
+00:11:30,620 --> 00:11:40,690
+Jadi sekarang kita dapat memanggil fungsi ini dua kali sehingga kita dapat mengatakan do recall di mana angka itu adalah C dan angka
+
+154
+00:11:40,690 --> 00:11:42,040
+10 untuk memulai.
+
+155
+00:11:42,250 --> 00:11:45,900
+Jadi ini panggilan yang benar di sini.
+
+156
+00:11:45,940 --> 00:11:47,190
+Ini adalah kode kesalahan.
+
+157
+00:11:47,200 --> 00:11:53,710
+Jadi kita akan melakukan panggilan dengan C dan minus 2 yang sama.
+
+158
+00:11:53,770 --> 00:11:57,460
+Jadi mari kita lihat apakah itu berhasil sudah siap.
+
+159
+00:11:57,460 --> 00:11:59,470
+Saya telah mengomentari semuanya.
+
+160
+00:11:59,590 --> 00:12:01,000
+Jadi siap menjalankan kalkulator.
+
+161
+00:12:01,000 --> 00:12:07,250
+Jadi mari kita jalankan server kalkulator dan sedang berjalan.
+
+162
+00:12:07,270 --> 00:12:13,120
+Sekarang mari kita jalankan klien kalkulator dan itu berfungsi.
+
+163
+00:12:13,120 --> 00:12:17,040
+Jadi yang pertama adalah kita mulai melakukan root akar kuadrat Inari RBC.
+
+164
+00:12:17,410 --> 00:12:25,330
+Dan hasil dari akar kuadrat dari 10 adalah tiga 116 dan kemudian kami benar-benar mengirim Kami benar-benar lupa
+
+165
+00:12:25,330 --> 00:12:28,550
+untuk memiliki baris baru di mana-mana.
+
+166
+00:12:28,550 --> 00:12:33,020
+Jadi mari kita tambahkan baris baru di mana pun kita butuhkan di sini.
+
+167
+00:12:33,320 --> 00:12:36,110
+Jadi mari kita jalankan lagi sehingga Anda bisa melihat lebih baik.
+
+168
+00:12:36,110 --> 00:12:38,850
+Jadi akar kuadrat dari sepuluh adalah tiga 116.
+
+169
+00:12:38,900 --> 00:12:45,930
+Kemudian kita kita benar-benar mengirim angka negatif dan kita mendapatkannya argumen tidak valid dan kita ketinggalan kita mungkin mengirim
+
+170
+00:12:45,930 --> 00:12:49,510
+angka negatif dan kita harus mengembalikan fungsi itu juga.
+
+171
+00:12:49,510 --> 00:12:53,010
+Jadi untuk tidak menampilkan baris ini jadi jelas ini salah
+
+172
+00:12:53,850 --> 00:12:58,030
+Kembalikan fungsi itu di sini dan kami akan mengembalikan fungsi itu di sini.
+
+173
+00:12:58,050 --> 00:12:59,490
+Jadi ini terlihat benar.
+
+174
+00:12:59,550 --> 00:13:04,870
+Dan di sini untuk membuatnya sangat jelas, saya akan mengatakan pesan kesalahan dari server
+
+175
+00:13:10,620 --> 00:13:12,440
+dan saya harus menjelaskannya.
+
+176
+00:13:12,570 --> 00:13:24,510
+Terakhir kali dengan dialog Anda.
+
+177
+00:13:24,640 --> 00:13:25,120
+Kita mulai.
+
+178
+00:13:25,120 --> 00:13:27,870
+Jadi kita katakan bahwa menyemprotkan 10 adalah 3. 6.
+
+179
+00:13:27,910 --> 00:13:31,270
+Dan ketika kami menerima pesan kesalahan kami mengatakan pesan kesalahan dari server.
+
+180
+00:13:31,660 --> 00:13:37,110
+Server berkata Kami menerima angka negatif maka kami bisa mendapatkan argumen jenis kode yang tidak valid dan kami
+
+181
+00:13:37,160 --> 00:13:39,190
+pasang kami mungkin mengirim angka negatif.
+
+182
+00:13:39,190 --> 00:13:43,890
+Jadi ini semua terlihat bagus dan kami dapat melakukan penanganan udara yang sangat keren di seluruh klien dan server kami.
+
+183
+00:13:44,050 --> 00:13:49,170
+Tetapi hal yang benar-benar baik tentang hal itu adalah bahwa kode kesalahan adalah jenis kode yang bisa Anda gunakan.
+
+184
+00:13:49,200 --> 00:13:52,300
+Bisa jadi argumen tidak valid di mana kita bisa melihat beberapa di antaranya.
+
+185
+00:13:52,330 --> 00:13:53,060
+Persis.
+
+186
+00:13:53,200 --> 00:13:57,150
+Jadi itu membuat kembali bekerja dengan API jadi lebih mudah.
+
+187
+00:13:57,160 --> 00:14:01,390
+Jadi saya harap itu membantu dan berharap Anda dapat memiliki rambut yang sangat bagus dan tautan dalam kode Anda dan saya
+
+188
+00:14:01,390 --> 00:14:02,710
+akan melihat Anda di kuliah berikutnya.
+

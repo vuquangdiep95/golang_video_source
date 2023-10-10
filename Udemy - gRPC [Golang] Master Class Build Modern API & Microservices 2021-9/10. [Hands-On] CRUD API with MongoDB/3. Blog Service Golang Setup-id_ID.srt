@@ -1,0 +1,528 @@
+1
+00:00:00,220 --> 00:00:05,740
+OK siapa yang akan mengatur proyek kami untuk memiliki layanan bludging untuk digunakan di antara TV yang bagus.
+
+2
+00:00:05,900 --> 00:00:09,080
+Jadi untuk ini saya hanya akan melakukan sedikit pengaturan seperti yang kami lakukan sebelumnya.
+
+3
+00:00:09,210 --> 00:00:15,140
+Jadi itu menciptakan direktori Blug dan di bawah direktori itu saya hanya akan menyalin apa yang saya lakukan untuk kalkulator.
+
+4
+00:00:15,390 --> 00:00:21,690
+Jadi akan ada klien blog maka juga akan ada server blog.
+
+5
+00:00:21,960 --> 00:00:24,290
+Dan akhirnya akan ada blog P. B ..
+
+6
+00:00:24,540 --> 00:00:27,930
+Jadi kecuali semua pohon saya sedikit berantakan.
+
+7
+00:00:27,930 --> 00:00:28,320
+Tidak apa-apa.
+
+8
+00:00:28,320 --> 00:00:29,970
+Saya hanya akan mengembalikannya.
+
+9
+00:00:29,970 --> 00:00:30,760
+Kita mulai.
+
+10
+00:00:31,080 --> 00:00:31,370
+BAIK.
+
+11
+00:00:31,410 --> 00:00:40,770
+Sekarang dalam setiap keluarga sebenarnya menciptakan beberapa klien sehingga klien yang pergi dan di sini akan menjadi server dog go.
+
+12
+00:00:40,770 --> 00:00:48,030
+Dan akhirnya untuk Blug P. B. itu akan Blug Protel itu dan akan membuat plug itu dalam dua detik.
+
+13
+00:00:48,420 --> 00:00:50,190
+OK jadi itu untuk sekarang.
+
+14
+00:00:50,190 --> 00:00:54,300
+Sekarang kita hanya perlu membuat semua kode di masing-masing hal ini.
+
+15
+00:00:54,300 --> 00:00:56,780
+Jadi mari kita mulai dengan pro-audio karena ini lebih menarik.
+
+16
+00:00:56,790 --> 00:01:00,300
+Jadi sintaks akan dipanggil menjadi dua atau tiga.
+
+17
+00:01:00,750 --> 00:01:01,520
+BAIK.
+
+18
+00:01:01,920 --> 00:01:07,490
+Dan selanjutnya kita harus membuat pesan blog kita sehingga kita akan mengatakan bahwa kita berada dalam paket Blug.
+
+19
+00:01:07,980 --> 00:01:14,930
+Dan sebagai opsi untuk paket yang bagus, itu akan sama dengan Blug P. B. sangat baik seperti sebelumnya.
+
+20
+00:01:14,990 --> 00:01:21,450
+Sekarang kita bisa Grinchy membuat pesan Blug dan itu akan memiliki ID yang dapat Anda menyajikan ID dalam
+
+21
+00:01:21,450 --> 00:01:28,860
+database maka kita akan memiliki ID penulis yang akan menjadi ID kami yang lain dalam sesuatu yang baru saja kita buat.
+
+22
+00:01:28,860 --> 00:01:31,200
+Jadi siapa penulis blog pada dasarnya.
+
+23
+00:01:31,740 --> 00:01:36,660
+Sekarang blog kami adalah judul jadi kami hanya akan menjadi string dan juga memiliki konten.
+
+24
+00:01:36,870 --> 00:01:39,930
+Jadi ini akan menjadi string juga jadi sangat sederhana semua string.
+
+25
+00:01:40,050 --> 00:01:45,660
+Dalam sebuah blog dan kami akhirnya harus membuat layanan, kami akan menyebutnya layanan blog.
+
+26
+00:01:46,170 --> 00:01:50,850
+Dan untuk saat ini akan menjadi kosong karena kita hanya mengatur semuanya dan
+
+27
+00:01:50,850 --> 00:01:58,380
+memastikan kita dapat menghasilkan beberapa kode sehingga kita dapat menghasilkan data yang dapat kita salin ini dan hanya mengubah baris itu
+
+28
+00:01:58,380 --> 00:02:02,550
+untuk menghasilkan beberapa kode sehingga seperti PV Genggam Protel itu.
+
+29
+00:02:02,670 --> 00:02:03,660
+Dan ini dia.
+
+30
+00:02:03,660 --> 00:02:10,500
+Jadi yang harus saya lakukan sekarang adalah menjalankan baris kode ini jadi saya hanya akan menyalin dan menempelnya dan catatan kami
+
+31
+00:02:10,500 --> 00:02:11,300
+telah dihasilkan.
+
+32
+00:02:11,340 --> 00:02:17,460
+Jika kita kembali ke kode kita, kita dapat melihat bahwa blog itu P. B. file go dibuat dengan sempurna.
+
+33
+00:02:17,460 --> 00:02:21,190
+Dan itu hanya berisi semua kode yang dihasilkan yang kita miliki untuk sebuah blog.
+
+34
+00:02:21,530 --> 00:02:22,870
+Oke bagus sekali.
+
+35
+00:02:22,890 --> 00:02:29,430
+Jadi sekarang bagaimana kalau kita menjaga kode server sehingga kode server kita akan sama persis seperti yang
+
+36
+00:02:29,430 --> 00:02:30,810
+kita lakukan sebelumnya.
+
+37
+00:02:30,810 --> 00:02:33,930
+Jadi kami hanya akan menyalin dan menempelkan banyak dari server kalkulator.
+
+38
+00:02:34,140 --> 00:02:37,710
+Tapi kali ini saya ingin Anda benar-benar mematikan aplikasi kami.
+
+39
+00:02:37,890 --> 00:02:39,720
+Jadi mari kita mulai dengan melakukan ini.
+
+40
+00:02:39,750 --> 00:02:46,670
+Jadi yang akan saya lakukan adalah saya akan memiliki paket utama dan kemudian saya akan memiliki fungsi utama.
+
+41
+00:02:47,190 --> 00:02:47,840
+BAIK.
+
+42
+00:02:48,210 --> 00:02:53,220
+Sekarang fungsi utama ini akan melakukan banyak hal yang akan disalin dari server kalkulator.
+
+43
+00:02:53,220 --> 00:02:56,010
+Jadi itu hanya dari server yang bagus akan lebih sederhana.
+
+44
+00:02:56,000 --> 00:03:02,510
+Begitu hebatnya server sehingga untuk pergi dan jadi jika saya gulir sampai ke bawah di sini adalah fungsi utama kami.
+
+45
+00:03:02,520 --> 00:03:06,940
+Jadi saya akan langsung menyalin semua ini dan melihat apa yang bisa kita hapus dan ubah.
+
+46
+00:03:06,960 --> 00:03:08,400
+Jadi mari kita pergi ke Buxar.
+
+47
+00:03:08,400 --> 00:03:09,270
+Kita mulai.
+
+48
+00:03:09,300 --> 00:03:15,770
+Jadi kita akan mengatakan bahwa ini adalah layanan Blug dimulai.
+
+49
+00:03:15,960 --> 00:03:18,410
+Kami akan terus memalukan 051 Anda.
+
+50
+00:03:18,470 --> 00:03:21,150
+Jadi ada banyak yang hilang yang penting melihatnya.
+
+51
+00:03:21,180 --> 00:03:25,580
+Masukkan Saya dapat menambahkan impor yang hilang sehingga saya akan melakukan ini sekarang.
+
+52
+00:03:25,590 --> 00:03:29,670
+Jadi sekarang kita memiliki fungsi ini.
+
+53
+00:03:29,670 --> 00:03:32,820
+Jadi di sini opsi jerkish akan kosong.
+
+54
+00:03:32,820 --> 00:03:34,870
+Kami tidak akan menggunakan ini.
+
+55
+00:03:34,980 --> 00:03:40,820
+Jadi dalam hal ini saya hanya akan menghapus semua ini dan opsi ini akan kosong.
+
+56
+00:03:40,830 --> 00:03:45,070
+Saya harus mengimpor GOPAC yang saya lakukan sekarang.
+
+57
+00:03:45,370 --> 00:03:52,550
+Dan sekarang kita harus melakukan alih-alih Anda harus melakukan Blug di PBT Anda mendaftarkan layanan yang kami butuhkan.
+
+58
+00:03:52,620 --> 00:03:54,910
+Kita juga perlu mendefinisikan struct server.
+
+59
+00:03:55,050 --> 00:04:00,490
+Jadi saya hanya akan melakukan ketik struct server yang ada di sini.
+
+60
+00:04:00,520 --> 00:04:07,430
+Mereka menemukan struktur layanan yang saat ini kosong yang berfungsi dengan baik.
+
+61
+00:04:07,500 --> 00:04:11,840
+Dan akhirnya kita harus mendaftar dari Blug.
+
+62
+00:04:11,850 --> 00:04:17,800
+Jadi saya akan melakukan Blug PV dot register.
+
+63
+00:04:19,890 --> 00:04:22,770
+Server layanan blug.
+
+64
+00:04:22,830 --> 00:04:28,470
+Jadi ini nama fungsinya dan saya harus mengimpor darah P. B. Saya dapat menghapus Greevy P. B. dari sini
+
+65
+00:04:28,470 --> 00:04:31,230
+dari impor dan jadi jika saya menyimpan ini.
+
+66
+00:04:31,230 --> 00:04:34,420
+Kami pada dasarnya memiliki server untuk memulai.
+
+67
+00:04:34,440 --> 00:04:39,630
+Jadi sekarang satu hal yang saya suka dalam hal ini adalah bahwa hal-hal server tidak benar-benar anggun ketika
+
+68
+00:04:39,630 --> 00:04:41,390
+kami memulai kode kami dari sebelumnya.
+
+69
+00:04:41,430 --> 00:04:44,510
+Itu tidak benar-benar melakukan hal-hal baik dalam hal berhenti.
+
+70
+00:04:44,520 --> 00:04:46,250
+Sekarang ada cara untuk melakukan sesuatu dengan lebih baik.
+
+71
+00:04:46,260 --> 00:04:49,950
+Jadi inilah yang ingin saya tunjukkan kepada Anda saat ini karena kami melakukannya sekali karena saya ingin
+
+72
+00:04:49,950 --> 00:04:51,860
+menunjukkan kepada Anda cara mengatur server dengan benar.
+
+73
+00:04:51,930 --> 00:04:59,850
+Jadi dalam hal ini apa yang harus kita lakukan pada dasarnya adalah mengatur hook sebuah shutdown hook dan jadi ini pada dasarnya
+
+74
+00:04:59,850 --> 00:05:05,580
+ketika kita memulai server kita akan melakukan ini dalam fungsi go dan kemudian ketika kita mengatur
+
+75
+00:05:05,880 --> 00:05:12,780
+kode kita akan melakukannya sebagai sinyal interupsi sehingga seperti itulah yang akan saya lakukan adalah bahwa saya akan melakukan
+
+76
+00:05:12,780 --> 00:05:17,840
+server mulai bagian ini di mana kita mulai server akan melakukan fungsi go.
+
+77
+00:05:17,850 --> 00:05:25,500
+Jadi apakah ini rutin pergi di sini dan saya hanya akan menempatkan ini di sini dan kami hanya akan
+
+78
+00:05:25,500 --> 00:05:30,450
+mencetak beberapa kode yang akan mengatakan FMS bahwa Pangeran Allen memulai server.
+
+79
+00:05:31,240 --> 00:05:34,170
+Jadi di sini kita mulai server dan fungsi yang baik dan kita harus memanggil fungsi yang baik itu.
+
+80
+00:05:34,170 --> 00:05:35,910
+Jadi orang tua ini di akhir.
+
+81
+00:05:35,950 --> 00:05:36,540
+BAIK.
+
+82
+00:05:36,790 --> 00:05:38,250
+Sekarang fungsi ini telah dipanggil.
+
+83
+00:05:38,450 --> 00:05:41,150
+Jadi kita perlu memblokir sesuatu.
+
+84
+00:05:41,400 --> 00:05:43,350
+Jadi ada cara untuk melakukan ini.
+
+85
+00:05:43,360 --> 00:05:47,410
+Itu disebut Make dan saluran disebut kita sinyal itu.
+
+86
+00:05:47,980 --> 00:05:52,290
+Dan ini pada dasarnya memotong ketika Anda melakukan ini mencegat kontrol-C.
+
+87
+00:05:52,300 --> 00:05:58,170
+Jadi di sini, bobot untuk kontrol melihat dua jalan keluar.
+
+88
+00:05:58,410 --> 00:06:03,290
+Jadi ini adalah barang spesifik yang baik tetapi pada dasarnya akan memastikan bahwa kita dapat mencegat sesuatu dengan benar.
+
+89
+00:06:03,510 --> 00:06:09,540
+Sehingga kami memberi tahu sinyal dan kami melewati saluran yang dibuat dan sinyal yang ingin Anda
+
+90
+00:06:10,050 --> 00:06:12,710
+lakukan adalah interupsi yang merupakan kontrol-C.
+
+91
+00:06:12,750 --> 00:06:13,830
+Sekarang
+
+92
+00:06:17,610 --> 00:06:21,090
+kita akan memblokir sampai sinyal diterima.
+
+93
+00:06:21,690 --> 00:06:26,390
+Jadi untuk ini kita akan beruntung menggunakan kode ini di sini.
+
+94
+00:06:26,400 --> 00:06:34,120
+Jadi di sini kita memblokir di saluran sekarang ketika kita memiliki ini kita mungkin dapat mengatur server sehingga
+
+95
+00:06:34,120 --> 00:06:42,220
+kita dapat menjalankan beberapa kode seperti Pangeran L-N dan kita akan mengatakan OK menghentikan server di sini kita mungkin bisa
+
+96
+00:06:42,330 --> 00:06:43,680
+disebut berhenti Ascot.
+
+97
+00:06:44,440 --> 00:06:49,380
+Kemudian kita dapat memiliki beberapa kode untuk berhenti membayar pendengar dan di
+
+98
+00:06:52,300 --> 00:06:55,650
+sini kita dapat mengatakan daftar yang dekat.
+
+99
+00:06:56,050 --> 00:07:01,360
+Jadi kami hanya menutup pendengar karena lebih akurat.
+
+100
+00:07:01,420 --> 00:07:09,310
+Dan akhirnya ketika kita selesai dengan program kita, kita hanya bisa mengatakan Princella anti-dote dan akhir program jadi ini sedikit lebih
+
+101
+00:07:09,320 --> 00:07:13,910
+Graceville karena sekarang kita benar-benar menutup segala sesuatu yang terjadi dalam kode
+
+102
+00:07:13,910 --> 00:07:14,710
+kita.
+
+103
+00:07:15,020 --> 00:07:18,540
+Jadi itulah alasan mengapa saya melakukan ini sekarang adalah melihat dan melihat apakah itu berhasil.
+
+104
+00:07:18,740 --> 00:07:23,060
+Jadi apa yang akan saya lakukan saya akan kembali ke kode saya di sini dan saya akan berkeliling.
+
+105
+00:07:23,060 --> 00:07:25,960
+Blug Blug server.
+
+106
+00:07:26,260 --> 00:07:30,820
+Saya akan pergi sehingga Anda dapat melihat server memulai kontrol federal apa pun.
+
+107
+00:07:30,990 --> 00:07:35,510
+Sekarang kita bisa menghentikan server yang menutup pendengar dan akhir program yang menurut saya
+
+108
+00:07:35,540 --> 00:07:36,860
+sedikit lebih bersih.
+
+109
+00:07:36,860 --> 00:07:43,820
+Jadi ini untuk pengaturan server Go dan sekarang hal terakhir yang ingin saya tunjukkan kepada Anda adalah bahwa kita dapat mengatur tingkat log untuk
+
+110
+00:07:43,820 --> 00:07:48,110
+sesuatu yang sedikit berbeda kalau-kalau kita mendapatkan kesalahan dan itu adalah trik kecil yang saya
+
+111
+00:07:48,110 --> 00:07:49,120
+pelajari baru-baru ini.
+
+112
+00:07:49,330 --> 00:07:51,700
+Jadi Anda dapat melakukan lug yang mengatur bendera.
+
+113
+00:07:52,160 --> 00:07:54,580
+Itu L sebagai bendera digi.
+
+114
+00:07:54,980 --> 00:07:58,190
+Dan kemudian Anda memiliki pipa Lagat.
+
+115
+00:07:58,320 --> 00:07:59,550
+File pendek.
+
+116
+00:07:59,570 --> 00:08:09,820
+Jadi alasan kita melakukan ini adalah bahwa pada dasarnya jika kita crash kode kita mendapatkan nama file dan nomor baris.
+
+117
+00:08:09,860 --> 00:08:14,240
+Jadi ini tepat sehingga jika kita menghancurkan sesuatu dan kita memiliki cinta yang fatal
+
+118
+00:08:14,240 --> 00:08:18,200
+dan sesuatu tidak berfungsi dan Anda hanya akan tahu di mana masalahnya.
+
+119
+00:08:18,200 --> 00:08:20,450
+Jadi mari kita tes cepat untuk menunjukkan apa yang saya maksud.
+
+120
+00:08:20,450 --> 00:08:24,850
+Jadi sekarang kita akan menjalankan server go ini sekali dan berfungsi.
+
+121
+00:08:24,950 --> 00:08:31,170
+Tetapi jika saya mulai menjalankan lagi di tab lain sekarang itu akan crash jelas karena jika ada kesalahan besar
+
+122
+00:08:31,220 --> 00:08:32,890
+alamat sudah tidak digunakan.
+
+123
+00:08:33,050 --> 00:08:35,100
+Tapi kali ini Anda melihat level log.
+
+124
+00:08:35,120 --> 00:08:38,010
+Beri saya waktu tetapi juga masalah dengan server itu.
+
+125
+00:08:38,030 --> 00:08:39,910
+Saya akan pergi baris 25.
+
+126
+00:08:40,310 --> 00:08:43,590
+Dan ini adalah baris di sini yang saya bisa debug.
+
+127
+00:08:43,610 --> 00:08:46,800
+Sekarang saya tahu di mana masalahnya dan ini cukup mudah untuk jujur.
+
+128
+00:08:46,800 --> 00:08:49,910
+Saya hanya akan menggunakannya kalau-kalau ada beberapa kesalahan di masa depan.
+
+129
+00:08:49,910 --> 00:08:55,370
+Kami hanya dapat menggunakan baris kode kecil ini di sini untuk memastikan bahwa kami melakukan intersepsi dan mengetahui di mana
+
+130
+00:08:55,370 --> 00:08:56,490
+kode itu mogok.
+
+131
+00:08:56,660 --> 00:08:59,220
+Jadi misalkan kita tidak akan menggunakan tab kedua dengan jelas.
+
+132
+00:08:59,480 --> 00:09:02,870
+Jadi di sini server mulai dan saya akan melihat Anda di kuliah berikutnya.
+

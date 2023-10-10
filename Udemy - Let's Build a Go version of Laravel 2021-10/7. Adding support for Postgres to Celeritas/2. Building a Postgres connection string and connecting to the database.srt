@@ -1,0 +1,579 @@
+1
+00:00:01,220 --> 00:00:06,340
+So now that we have our driver don't go file set up and we have a means of connecting to the database,
+
+2
+00:00:06,350 --> 00:00:11,300
+the next step is to actually build that connection string that allows us to connect to Postgres.
+
+3
+00:00:12,170 --> 00:00:17,420
+So the very first thing I'm going to do is in type, don't go in the celebrities package.
+
+4
+00:00:17,420 --> 00:00:18,830
+I'm going to create a couple of new types.
+
+5
+00:00:19,280 --> 00:00:24,890
+So I'll create a very simple one called and it's not exported database config, and we'll put this in
+
+6
+00:00:24,890 --> 00:00:25,730
+our config struct.
+
+7
+00:00:26,330 --> 00:00:29,450
+It will be a struct that it only has a couple of members.
+
+8
+00:00:29,750 --> 00:00:37,070
+So DSM, which is a string, will be our connection string and also the database.
+
+9
+00:00:37,460 --> 00:00:39,680
+What database we're going to connect to, which is a string?
+
+10
+00:00:40,580 --> 00:00:40,940
+OK.
+
+11
+00:00:41,000 --> 00:00:46,970
+So there's one, and we're also going to create another type and this one will be exported because it
+
+12
+00:00:46,970 --> 00:00:50,300
+might be useful to our end users who are using celebrities.
+
+13
+00:00:50,330 --> 00:00:55,280
+So we'll call it database with a Capital D, and it's a struct, and it only has a couple of members
+
+14
+00:00:55,280 --> 00:00:55,730
+as well.
+
+15
+00:00:56,600 --> 00:01:03,500
+So it will have the database type, which is a string Postgres, MariaDB, MySchool, whatever.
+
+16
+00:01:04,040 --> 00:01:06,710
+And then our connection pool, which we're going to get back from.
+
+17
+00:01:06,710 --> 00:01:07,640
+Driver, don't go.
+
+18
+00:01:07,850 --> 00:01:10,520
+And it's a pointer to SQL DB.
+
+19
+00:01:11,300 --> 00:01:11,640
+OK.
+
+20
+00:01:11,660 --> 00:01:14,900
+So those are the two types now that they're created.
+
+21
+00:01:15,230 --> 00:01:16,100
+They're available to me.
+
+22
+00:01:16,130 --> 00:01:22,720
+So let's go back to celebrities and we'll add it right here after session in the celebrities type.
+
+23
+00:01:22,730 --> 00:01:24,170
+So it's available to her and users.
+
+24
+00:01:24,320 --> 00:01:29,210
+And I'm going to call it Debbie, and it's a type database which we just added to our system.
+
+25
+00:01:29,300 --> 00:01:29,660
+OK.
+
+26
+00:01:31,280 --> 00:01:37,250
+And down in config here, I'll add another one for our configuration.
+
+27
+00:01:37,510 --> 00:01:42,170
+So we have this if we ever need it, and it will just call it database with a lowercase D because it's
+
+28
+00:01:42,170 --> 00:01:45,980
+not going to be exported and it's a type database config.
+
+29
+00:01:46,490 --> 00:01:46,820
+OK.
+
+30
+00:01:46,910 --> 00:01:47,780
+So let's say this.
+
+31
+00:01:48,500 --> 00:01:51,050
+So now we have a place to put this information.
+
+32
+00:01:51,680 --> 00:01:55,580
+So the next thing we need to worry about is how do we build that connection string?
+
+33
+00:01:56,330 --> 00:01:59,450
+So I'm going to do that way down at the bottom of this file.
+
+34
+00:01:59,570 --> 00:02:05,810
+I'll create a function that actually gets the information from our dot on file and builds a DSM.
+
+35
+00:02:05,900 --> 00:02:14,750
+And I'll call it func with the receiver of C Pointer to celebrities, and I'll call it build DSM.
+
+36
+00:02:16,670 --> 00:02:18,800
+And it takes no parameters, but returns a string.
+
+37
+00:02:19,580 --> 00:02:19,910
+OK.
+
+38
+00:02:20,930 --> 00:02:27,470
+So let's create a variable DSM IV type string, and that's where we'll store the final ready to go connection
+
+39
+00:02:27,470 --> 00:02:27,860
+string.
+
+40
+00:02:28,490 --> 00:02:33,140
+And we'll make a simple switch statement here because ultimately we're going to support more than just
+
+41
+00:02:33,140 --> 00:02:33,850
+one database.
+
+42
+00:02:33,860 --> 00:02:35,470
+So we'll switch on OAC.
+
+43
+00:02:35,480 --> 00:02:36,470
+Don't get on.
+
+44
+00:02:37,850 --> 00:02:42,140
+And this is from the dart on file database type.
+
+45
+00:02:44,690 --> 00:02:47,210
+And our first case will be Postgres,
+
+46
+00:02:50,270 --> 00:02:54,740
+and we may as well make sure that it could be PostgreSQL like this as well.
+
+47
+00:02:57,050 --> 00:02:57,410
+OK.
+
+48
+00:02:58,730 --> 00:03:02,060
+And there we're actually going to build our DSM.
+
+49
+00:03:02,090 --> 00:03:04,130
+So let's get started.
+
+50
+00:03:04,850 --> 00:03:12,950
+So our DSN will be equal to and we'll use format as print f and have a format string.
+
+51
+00:03:13,040 --> 00:03:17,780
+And the format string used by Jack C slash peg X is pretty straightforward.
+
+52
+00:03:18,350 --> 00:03:28,040
+Host equals some string value port equals some string value user equals some string value DB name,
+
+53
+00:03:28,970 --> 00:03:29,840
+which I had a spell right.
+
+54
+00:03:30,080 --> 00:03:32,360
+TBE name is equal to a string.
+
+55
+00:03:33,680 --> 00:03:38,630
+SSL mode is equal to a string and I'm going to put it in time.
+
+56
+00:03:38,630 --> 00:03:46,850
+Zone is equal to UTC just as a default, and I'll also add a connect timeout of five seconds.
+
+57
+00:03:47,270 --> 00:03:48,650
+OK, so five.
+
+58
+00:03:49,730 --> 00:03:54,680
+And then we replace all of those placeholders with values from our own.
+
+59
+00:03:54,830 --> 00:03:58,520
+So the first one would be the database host, and that's just O'Scanlon.
+
+60
+00:03:59,690 --> 00:04:03,650
+And in the dot on file, it's called database underscore host.
+
+61
+00:04:05,030 --> 00:04:06,140
+I will duplicate that.
+
+62
+00:04:06,620 --> 00:04:13,790
+Our second value has to be the port and that is database port and duplicate that.
+
+63
+00:04:14,660 --> 00:04:26,630
+The next one is database user and duplicate that and the next one is the database name leaving password
+
+64
+00:04:26,630 --> 00:04:27,600
+out for a reason.
+
+65
+00:04:27,620 --> 00:04:28,820
+You'll see that momentarily.
+
+66
+00:04:28,830 --> 00:04:32,900
+So database name and then database SSL mode
+
+67
+00:04:36,650 --> 00:04:41,810
+like that, and it has to be exactly the way it's written in the dot on file, of course.
+
+68
+00:04:42,380 --> 00:04:44,270
+So that will build a connection string.
+
+69
+00:04:44,300 --> 00:04:50,540
+Now this builds a connection string with no password, and that's the default for some installations
+
+70
+00:04:50,540 --> 00:04:52,220
+of Postgres, and we need to support that.
+
+71
+00:04:52,520 --> 00:05:00,530
+So after we finished building that connection, string was simply put in if statement him if OS.
+
+72
+00:05:00,680 --> 00:05:01,390
+Might get on.
+
+73
+00:05:03,920 --> 00:05:12,920
+And we're looking for a database underscore pass, if that's equal to or not equal to an empty string,
+
+74
+00:05:12,950 --> 00:05:15,350
+then the user is in fact specified a password.
+
+75
+00:05:15,770 --> 00:05:19,010
+So we'll just add the appropriate value to the connection string.
+
+76
+00:05:19,220 --> 00:05:27,590
+DSN is equal to format as print out in our format string is percent s, which will be our existing DSN
+
+77
+00:05:28,250 --> 00:05:35,030
+and then password equals per se and we simply replace those two placeholders with DSM and OS.
+
+78
+00:05:35,030 --> 00:05:40,340
+Don't get on database pass.
+
+79
+00:05:41,330 --> 00:05:46,520
+OK, now technically we only have one thing here.
+
+80
+00:05:46,600 --> 00:05:50,950
+I'm going to put a default in just because it looks good and I like that.
+
+81
+00:05:50,960 --> 00:05:54,650
+And of course, we can decide what to do with the default at some point.
+
+82
+00:05:55,190 --> 00:06:02,540
+And down here we say return DSM DSM, which I seem to have trouble typing.
+
+83
+00:06:03,140 --> 00:06:06,850
+OK, so now we have a means of building our DSM.
+
+84
+00:06:06,860 --> 00:06:13,880
+And of course, I made the variable here because DSN will be different for MariaDB or my Esquibel or
+
+85
+00:06:13,880 --> 00:06:15,740
+whatever databases you want to support.
+
+86
+00:06:16,910 --> 00:06:19,940
+So now that we have this available to us, let's use it.
+
+87
+00:06:20,480 --> 00:06:23,990
+So let's go back up to the top and.
+
+88
+00:06:25,760 --> 00:06:31,610
+After we create our lagers and before we begin populating our celerity variable, let's connect to the
+
+89
+00:06:31,610 --> 00:06:32,120
+database.
+
+90
+00:06:32,270 --> 00:06:39,260
+So connect to the database and of course, there's only certain situations we want to do that.
+
+91
+00:06:39,410 --> 00:06:43,150
+So the easiest test is to say if OAC don't get on
+
+92
+00:06:45,680 --> 00:06:52,550
+database type, that's not equal to nothing, it's not equal to an empty string.
+
+93
+00:06:52,580 --> 00:06:57,530
+Then I want to connect it to the database so we can do it as easily as this now.
+
+94
+00:06:57,620 --> 00:07:05,270
+DB, which will be my connection, pool and error, are assigned the value of seed open DB.
+
+95
+00:07:06,440 --> 00:07:15,230
+That's the drive in the driver dgo file and we handed OAC don't get on database type, which will be
+
+96
+00:07:15,230 --> 00:07:19,150
+Postgres or piggybacks in our case, and then we need our connection string.
+
+97
+00:07:19,160 --> 00:07:22,910
+So what we have to put in here is now see on build DSM.
+
+98
+00:07:23,720 --> 00:07:26,180
+We check for error with error is not equal to nil.
+
+99
+00:07:28,100 --> 00:07:29,000
+Then what do I want to do?
+
+100
+00:07:29,330 --> 00:07:33,590
+Well, I actually want to put the arrow, so I'll say air log dot print line.
+
+101
+00:07:33,740 --> 00:07:37,910
+And I can do that because airlines already defined and I'll print out just the error.
+
+102
+00:07:38,990 --> 00:07:43,480
+And at that point, I want to stop because if you can't connect to your database, you have big problems.
+
+103
+00:07:43,490 --> 00:07:46,730
+I'll say, OK, Scott, exit one.
+
+104
+00:07:48,410 --> 00:07:49,250
+So we've exit it.
+
+105
+00:07:49,520 --> 00:07:52,940
+But if we get past that now, I can say, see that DB.
+
+106
+00:07:53,690 --> 00:07:58,820
+In other words, that database type, which is now a field within our celebrities type that's going
+
+107
+00:07:58,820 --> 00:08:06,350
+to be equal to the type database that will fill in its fields database type.
+
+108
+00:08:07,100 --> 00:08:08,350
+And that's equal to us.
+
+109
+00:08:08,360 --> 00:08:12,200
+Don't get on database
+
+110
+00:08:14,720 --> 00:08:15,140
+type.
+
+111
+00:08:15,770 --> 00:08:16,490
+Check out a spell, right?
+
+112
+00:08:18,140 --> 00:08:19,100
+And its connection cool.
+
+113
+00:08:20,330 --> 00:08:22,820
+Its pool is equal to DB.
+
+114
+00:08:24,590 --> 00:08:26,990
+So let's see if this works.
+
+115
+00:08:27,020 --> 00:08:33,590
+First of all, let's switch back to silver toss or switch back to my app and make sure the dot on file
+
+116
+00:08:33,590 --> 00:08:34,790
+has some values in there.
+
+117
+00:08:34,850 --> 00:08:36,950
+So first of all, I'll look at my.
+
+118
+00:08:38,100 --> 00:08:42,810
+Dawn, which is right here, and I'll also look at how close the terminal.
+
+119
+00:08:44,310 --> 00:08:48,690
+I will also look at my Docker compose right here.
+
+120
+00:08:49,440 --> 00:08:51,960
+So in Docker compose, I'm expecting database.
+
+121
+00:08:52,920 --> 00:08:58,140
+I'm expecting the Postgres database to be on port five four three two to have the user Postgres, the
+
+122
+00:08:58,140 --> 00:09:01,770
+password password and the Postgres database of celebrities.
+
+123
+00:09:02,250 --> 00:09:02,610
+Perfect.
+
+124
+00:09:02,970 --> 00:09:10,320
+What's in my daughter on file in my Darren file, I have Postgres localhost port five four three three.
+
+125
+00:09:10,350 --> 00:09:11,940
+I'll make that five four three two.
+
+126
+00:09:12,930 --> 00:09:18,390
+The database is Postgres, the password is password and the database name is hilarious and I have my
+
+127
+00:09:18,480 --> 00:09:20,790
+database SSL mode set up properly.
+
+128
+00:09:20,970 --> 00:09:21,360
+Perfect.
+
+129
+00:09:22,020 --> 00:09:28,100
+So let's make sure that our database is running Docker compose, and I'll just say up.
+
+130
+00:09:29,580 --> 00:09:32,760
+I want to make sure it's actually ready before I try to run this thing.
+
+131
+00:09:43,790 --> 00:09:45,170
+So it looks like everything is up and running.
+
+132
+00:09:45,470 --> 00:09:54,770
+OK, so now I'll open a new terminal window by clicking the plus sign here and I will say make start
+
+133
+00:09:56,120 --> 00:09:57,170
+and see if there's any errors.
+
+134
+00:10:00,360 --> 00:10:05,880
+So does it go on vendor, it pulls down all of our changes, it built it and it started up and I still
+
+135
+00:10:05,880 --> 00:10:09,240
+have session load called stored in the middleware there, so I should get rid of that sometime.
+
+136
+00:10:09,540 --> 00:10:13,170
+But it started up with audio errors, so it seems like we're connected.
+
+137
+00:10:13,590 --> 00:10:15,450
+But of course, we haven't actually tried anything yet.
+
+138
+00:10:15,750 --> 00:10:20,370
+So in the next lecture, we'll try doing some simple things with the database just to make sure it's
+
+139
+00:10:20,370 --> 00:10:21,540
+behaving the way that it should.
+
+140
+00:10:21,960 --> 00:10:24,210
+And of course, there's one more thing to worry about.
+
+141
+00:10:25,080 --> 00:10:29,610
+We didn't actually close the database connections at any time, and that's really not polite.
+
+142
+00:10:29,790 --> 00:10:33,900
+Of course, it will still work if this application stops, if I stop it right now.
+
+143
+00:10:35,340 --> 00:10:40,920
+Eventually, those connections will timeout and Postgres will close them, but it's nicer to close those
+
+144
+00:10:40,920 --> 00:10:42,010
+things explicitly.
+
+145
+00:10:42,030 --> 00:10:44,490
+So we'll take care of that as well in the next election.

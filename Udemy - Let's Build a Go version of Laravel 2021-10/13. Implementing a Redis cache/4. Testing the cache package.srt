@@ -1,0 +1,1039 @@
+1
+00:00:01,470 --> 00:00:07,530
+So in order to make sure that everything works in our red is cash package, the easiest thing to do
+
+2
+00:00:07,530 --> 00:00:09,870
+at this point, I think, is to write some tests.
+
+3
+00:00:10,050 --> 00:00:14,640
+Now if we're going to be testing this, you might think that we need to read a server and we absolutely
+
+4
+00:00:14,640 --> 00:00:15,250
+could do that.
+
+5
+00:00:15,270 --> 00:00:20,820
+We could follow the same sort of approach we did when we were testing our database functionality by
+
+6
+00:00:20,820 --> 00:00:25,080
+spinning up inappropriate, appropriate Docker image and running tests against a temporary version of
+
+7
+00:00:25,080 --> 00:00:28,110
+Docker that only exists for the life of the tests themselves.
+
+8
+00:00:29,520 --> 00:00:32,700
+But in this case, we actually have an option to go to my Web browser.
+
+9
+00:00:33,480 --> 00:00:37,360
+There's a really good package and it's I should link to right from the Redi-go page.
+
+10
+00:00:37,380 --> 00:00:44,700
+It's it's called Alice Bob Mini it, and it creates a miniature version of Redis specifically for unit
+
+11
+00:00:44,700 --> 00:00:46,560
+testing, and that's the one I'm going to use.
+
+12
+00:00:47,010 --> 00:00:50,160
+So we'll scroll down here and find the installation bit.
+
+13
+00:00:52,470 --> 00:00:55,170
+Looks like this is what we want right here, so let's copy that.
+
+14
+00:00:56,640 --> 00:00:58,800
+Just everything in between the parentheses.
+
+15
+00:00:58,980 --> 00:00:59,430
+OK.
+
+16
+00:01:00,600 --> 00:01:06,090
+And go back to her I.D. and we'll open our terminal window in the Celebrity House project.
+
+17
+00:01:06,180 --> 00:01:07,530
+I'll clear the screen and type.
+
+18
+00:01:07,560 --> 00:01:10,290
+Go get and then paste that URL and just copied.
+
+19
+00:01:10,290 --> 00:01:12,180
+And again, it's slash v2.
+
+20
+00:01:12,210 --> 00:01:19,230
+Please stick with V2 if a later version is out by the time you take this course, so it goes and gets
+
+21
+00:01:19,230 --> 00:01:21,120
+for us mini readies.
+
+22
+00:01:25,020 --> 00:01:25,590
+And there it is.
+
+23
+00:01:25,620 --> 00:01:26,340
+It's all installed.
+
+24
+00:01:26,970 --> 00:01:30,030
+So now I can actually start writing some tests.
+
+25
+00:01:30,570 --> 00:01:35,670
+And as is the case for most of our tests inside the cash project, I'm going to create a new file called
+
+26
+00:01:36,000 --> 00:01:37,980
+set up underscore test.
+
+27
+00:01:37,980 --> 00:01:38,520
+Don't go.
+
+28
+00:01:39,910 --> 00:01:42,040
+And it will, of course, be package cash.
+
+29
+00:01:43,540 --> 00:01:45,790
+And this is where we'll set up our testing environment.
+
+30
+00:01:46,180 --> 00:01:47,530
+So I'm going to create a variable.
+
+31
+00:01:47,740 --> 00:01:50,230
+I'll call the variable ver test.
+
+32
+00:01:50,410 --> 00:02:00,010
+Red is cash and it's a type release cash, and then I'll carry the function test me to set things up.
+
+33
+00:02:00,430 --> 00:02:04,750
+And it takes one parameter and a pointer to testing them.
+
+34
+00:02:05,800 --> 00:02:06,490
+Try that again.
+
+35
+00:02:07,540 --> 00:02:09,130
+Test ing dot.
+
+36
+00:02:09,790 --> 00:02:11,230
+Yeah, that's better.
+
+37
+00:02:11,940 --> 00:02:14,080
+Make sure didn't import anything extra for me.
+
+38
+00:02:14,080 --> 00:02:14,770
+No, it did not.
+
+39
+00:02:15,670 --> 00:02:21,820
+So in here, what I'm going to do is start up a fake, in-memory ready server using that mini.
+
+40
+00:02:21,820 --> 00:02:22,590
+Read this package.
+
+41
+00:02:22,600 --> 00:02:23,380
+We just import it.
+
+42
+00:02:23,890 --> 00:02:27,820
+And that's really simple, and you can see the documentation right in the home page, but it's trivial.
+
+43
+00:02:28,420 --> 00:02:35,470
+So X is my variable error is what I'm checking for, and I will just call Mini Redis.
+
+44
+00:02:36,100 --> 00:02:36,880
+Hopefully it'll will find it.
+
+45
+00:02:36,880 --> 00:02:40,120
+For me, it did not run.
+
+46
+00:02:42,270 --> 00:02:47,070
+And if air is not equal to nil, then I will say panic.
+
+47
+00:02:47,430 --> 00:02:52,500
+We'll just die because something went wrong, and I don't want to run any tests at this point.
+
+48
+00:02:53,340 --> 00:03:01,260
+Otherwise, we'll defer Skelos and now we'll create a retest pool, which I'm going to need to run these
+
+49
+00:03:01,260 --> 00:03:01,840
+tests.
+
+50
+00:03:01,860 --> 00:03:09,810
+So Poole is assigned the value of preschool, and we follow the same kind of logic we did before.
+
+51
+00:03:10,860 --> 00:03:19,050
+Max idle, we'll make that 50 max active and I'll make this a thousand.
+
+52
+00:03:19,110 --> 00:03:21,630
+That's enough for running our test for for sure.
+
+53
+00:03:22,260 --> 00:03:25,700
+Not an idle timeout again, 240 times timed out.
+
+54
+00:03:25,710 --> 00:03:28,800
+Second, just like we did when we set up our live writers pool.
+
+55
+00:03:29,760 --> 00:03:30,330
+And then we're done.
+
+56
+00:03:31,380 --> 00:03:35,400
+And this is simply a function and dialogue has to have a colon after it.
+
+57
+00:03:35,400 --> 00:03:35,940
+Of course,
+
+58
+00:03:38,910 --> 00:03:40,950
+it's a function and it returns.
+
+59
+00:03:40,950 --> 00:03:44,820
+Read Scone and potentially an error.
+
+60
+00:03:47,130 --> 00:03:54,900
+And in here, we just return readies dial and we just hand it TCP
+
+61
+00:03:57,480 --> 00:03:57,940
+IP.
+
+62
+00:04:00,900 --> 00:04:03,090
+And here's where we call start address.
+
+63
+00:04:03,710 --> 00:04:10,390
+And that gives us the address of our temporary in-memory Redish server, and we need a comma here.
+
+64
+00:04:16,130 --> 00:04:20,780
+Now, test readies cash that variable we declare a little while ago.
+
+65
+00:04:21,350 --> 00:04:30,560
+Its connection is now equal to a reference to Pool, which we just got back up on Line 21 and test red
+
+66
+00:04:30,560 --> 00:04:35,690
+as cash dot prefix will be equal to say test dash alerts.
+
+67
+00:04:35,720 --> 00:04:42,020
+It doesn't matter, but that's something I know I'm not going to use anywhere else and will say Defer
+
+68
+00:04:42,860 --> 00:04:44,240
+test readies cash
+
+69
+00:04:46,820 --> 00:04:49,860
+icon that close.
+
+70
+00:04:52,280 --> 00:04:55,010
+Now I just run my tests on exit.
+
+71
+00:04:57,140 --> 00:05:02,870
+And we want to run as its prefix, and it didn't import the US package for me.
+
+72
+00:05:02,870 --> 00:05:06,400
+So I'll just go put it in that myself here OS.
+
+73
+00:05:07,340 --> 00:05:07,640
+OK.
+
+74
+00:05:07,670 --> 00:05:08,960
+That's our set up of tests.
+
+75
+00:05:09,000 --> 00:05:13,070
+Now let's create a test, so I'll create a new file inside the cash folder.
+
+76
+00:05:14,410 --> 00:05:17,830
+And I will call it cash underscore test, don't go.
+
+77
+00:05:19,400 --> 00:05:22,860
+And his package cash, and we'll write some tests.
+
+78
+00:05:23,630 --> 00:05:27,500
+So let's just do one right now for the cash has bit.
+
+79
+00:05:27,620 --> 00:05:33,470
+OK, so we're ready to function funk test cash heads.
+
+80
+00:05:35,770 --> 00:05:40,600
+And its test readies cash, hers is using sensible naming convention.
+
+81
+00:05:42,940 --> 00:05:47,290
+And that takes one parameter t a pointer to testing that T.
+
+82
+00:05:51,270 --> 00:05:56,410
+And what we'll do, first of all, is make sure that there's no value cold food in the cash itself,
+
+83
+00:05:56,460 --> 00:05:57,390
+so we'll check for an error.
+
+84
+00:05:57,510 --> 00:06:00,180
+And that's assuming the value of hauling test.
+
+85
+00:06:00,180 --> 00:06:03,980
+Red is cash and we want forget.
+
+86
+00:06:04,600 --> 00:06:07,860
+And we're going to forget food just to make sure there's no value called food in there.
+
+87
+00:06:08,550 --> 00:06:14,700
+If error is not equal to nil, then we'll say to error there.
+
+88
+00:06:15,600 --> 00:06:17,730
+So we know there's no value called food in there.
+
+89
+00:06:17,730 --> 00:06:23,160
+So we'll just say in cash a variable, I'm declaring in cash in error.
+
+90
+00:06:23,730 --> 00:06:30,240
+Her son, the value of and we'll call test red red at cash has and will hand hand it the key.
+
+91
+00:06:30,240 --> 00:06:31,510
+We're looking for food.
+
+92
+00:06:31,590 --> 00:06:33,590
+One we know is not in there, OK?
+
+93
+00:06:34,230 --> 00:06:38,910
+And again, we checked for an error, so I'll copy this and paste this.
+
+94
+00:06:40,920 --> 00:06:42,630
+And now we test the results.
+
+95
+00:06:44,720 --> 00:06:58,250
+If in cash, then Tina Error, who found in cash and it shouldn't be there or whatever you want the
+
+96
+00:06:58,250 --> 00:06:59,060
+error message to be.
+
+97
+00:06:59,300 --> 00:07:02,730
+OK, so let's just try running the test and see what happens.
+
+98
+00:07:02,750 --> 00:07:07,490
+So I'll open my terminal window, clear the screen, make sure I'm in the house project and then go
+
+99
+00:07:07,490 --> 00:07:10,700
+into the cash flow and I'll say, Go test done.
+
+100
+00:07:16,610 --> 00:07:18,510
+And they passed, so that's a good sign.
+
+101
+00:07:20,690 --> 00:07:27,230
+But we've really only tested part of the functionality, and I will say error is equal to test retest
+
+102
+00:07:27,710 --> 00:07:28,280
+cash.
+
+103
+00:07:31,280 --> 00:07:37,670
+Dot set, and I want to set the value or the key of food, and I'll put butter in there.
+
+104
+00:07:38,160 --> 00:07:40,250
+Doesn't matter what it is, as long as it has some value.
+
+105
+00:07:40,850 --> 00:07:42,110
+And again, we'll check for an error.
+
+106
+00:07:42,590 --> 00:07:45,830
+So a copy this and paste it here.
+
+107
+00:07:47,270 --> 00:07:54,650
+And now, once again, we'll come up here and say in cash and error, and I'll copy this and change
+
+108
+00:07:54,650 --> 00:07:57,230
+the operator, the assignment operator, to an equal sign.
+
+109
+00:07:59,060 --> 00:08:00,000
+Get rid of that error.
+
+110
+00:08:00,740 --> 00:08:02,060
+And now we'll copy this.
+
+111
+00:08:04,310 --> 00:08:08,660
+And paste it here and say, if not in cash.
+
+112
+00:08:09,110 --> 00:08:17,090
+In other words, it can't find it fu not found in cash, but it should be there.
+
+113
+00:08:20,090 --> 00:08:21,600
+OK, let's try running that test.
+
+114
+00:08:21,620 --> 00:08:24,320
+So clear my terminal window and go test.
+
+115
+00:08:26,590 --> 00:08:36,160
+So in effect, right now, I'm pretty much sure that forget has and set all work, but all right, test
+
+116
+00:08:36,160 --> 00:08:41,560
+for them to be specific, just individual tests, because I'd like to have as much coverage and be absolutely
+
+117
+00:08:41,560 --> 00:08:43,990
+certain that things are behaving as they should.
+
+118
+00:08:44,830 --> 00:08:48,550
+So I'll scroll down and close the terminal window and let's test our next function.
+
+119
+00:08:50,650 --> 00:09:00,070
+So here we want to test cash, get so funk test and I'm getting I want to call it red as cash red is
+
+120
+00:09:00,070 --> 00:09:05,890
+cash get and parameter of T point or two testing dirty.
+
+121
+00:09:08,770 --> 00:09:12,940
+And here I'll say I'm going to set foo and bar in the red is cash.
+
+122
+00:09:12,940 --> 00:09:19,660
+So I'll I already did that right here, so I'll copy this and paste it here and make that an assignment
+
+123
+00:09:19,660 --> 00:09:20,230
+operator.
+
+124
+00:09:22,360 --> 00:09:27,910
+So I've just tried to put the value of bar in the cash with the key of food.
+
+125
+00:09:28,630 --> 00:09:31,690
+So I'll now say X, which is the fair value.
+
+126
+00:09:31,690 --> 00:09:39,280
+I'm going to get back in error or assign the value of test, retest cash, get and looking for the key
+
+127
+00:09:39,280 --> 00:09:42,450
+of food, and I'll check for an error.
+
+128
+00:09:42,460 --> 00:09:46,870
+So a copy and paste and now I do my test.
+
+129
+00:09:47,500 --> 00:09:54,790
+If X is not equal to bar, then T error and all I have to say is.
+
+130
+00:09:56,400 --> 00:10:06,990
+Did not get correct value from cash, and let's try running that test so clear the screen go goats don't.
+
+131
+00:10:09,620 --> 00:10:10,730
+Past perfect.
+
+132
+00:10:12,320 --> 00:10:16,640
+OK, so that gives me get now, let's try forget, even though I'm pretty sure that works at this point,
+
+133
+00:10:16,640 --> 00:10:18,320
+I'm still going to write a test for it.
+
+134
+00:10:19,040 --> 00:10:22,460
+So funk test red is cash.
+
+135
+00:10:25,070 --> 00:10:27,880
+Forget testing.
+
+136
+00:10:28,640 --> 00:10:32,600
+No T points or two to testing dirty.
+
+137
+00:10:33,380 --> 00:10:36,170
+And let's get some room here to work with.
+
+138
+00:10:36,620 --> 00:10:37,910
+So I'll set a value in there.
+
+139
+00:10:37,910 --> 00:10:44,900
+So a copy this code, I'll use a different value this time, so I'll set alpha to beta.
+
+140
+00:10:47,120 --> 00:10:50,630
+So that puts a value in the cash and I'll try for getting it.
+
+141
+00:10:51,920 --> 00:10:55,490
+There is equal to test release cash.
+
+142
+00:10:55,880 --> 00:10:58,450
+Don't forget c h e.
+
+143
+00:10:58,460 --> 00:11:01,580
+Don't forget and I want to forget alpha.
+
+144
+00:11:03,440 --> 00:11:09,620
+And again, I want to check for an error and paste this here and now.
+
+145
+00:11:09,830 --> 00:11:19,790
+I'll try to see if it's in the cash in cash and error or assign a value of test red as cash has and
+
+146
+00:11:19,790 --> 00:11:23,930
+will look for alpha paste in my error.
+
+147
+00:11:23,930 --> 00:11:27,260
+Check and do my test in cash.
+
+148
+00:11:27,920 --> 00:11:28,700
+It shouldn't be there.
+
+149
+00:11:29,690 --> 00:11:36,740
+If in cash that's equal to true, then will arrow to error
+
+150
+00:11:40,070 --> 00:11:45,170
+alpha found in cash and it should not be there.
+
+151
+00:11:45,710 --> 00:11:46,610
+Let's try that test.
+
+152
+00:11:47,690 --> 00:11:51,710
+And you noticed that every time I write or update a test, I run them.
+
+153
+00:11:51,800 --> 00:11:55,130
+It just helps me keep track of what's working and what's not.
+
+154
+00:11:55,250 --> 00:11:56,570
+So far, so good.
+
+155
+00:11:56,600 --> 00:11:59,150
+OK, let's just check our coverage right now and see what that's like.
+
+156
+00:11:59,750 --> 00:12:02,390
+So go Test, Dash, Cover Dot.
+
+157
+00:12:04,880 --> 00:12:06,950
+And we're at forty eight point four percent of statements.
+
+158
+00:12:07,040 --> 00:12:09,290
+Not bad, we are getting there, but we're not done.
+
+159
+00:12:09,320 --> 00:12:10,310
+We have more things to test.
+
+160
+00:12:11,060 --> 00:12:11,930
+So that was forget.
+
+161
+00:12:12,500 --> 00:12:23,660
+Let's try empty funk test retest cash underscore empty T pointer to testing dirty.
+
+162
+00:12:26,090 --> 00:12:27,400
+And what am I going to do first of all?
+
+163
+00:12:27,410 --> 00:12:29,180
+Well, I'm going to put something in there.
+
+164
+00:12:29,360 --> 00:12:37,130
+I can just use this, so we'll set that value and paste it in there and then we'll call.
+
+165
+00:12:37,370 --> 00:12:43,520
+Empty air is equal to test red as cash dark, empty and we'll check for an error.
+
+166
+00:12:45,260 --> 00:12:46,550
+Copy and paste.
+
+167
+00:12:50,720 --> 00:12:57,350
+And we'll do her in cash check, so I'll copy all of this, and I should be able to use that with almost
+
+168
+00:12:57,350 --> 00:13:00,210
+no change, so we could alpha in there.
+
+169
+00:13:00,230 --> 00:13:01,190
+We emptied the cash.
+
+170
+00:13:01,190 --> 00:13:02,120
+We look for alpha.
+
+171
+00:13:02,300 --> 00:13:03,410
+Absolutely perfect.
+
+172
+00:13:03,560 --> 00:13:07,670
+Let's try running that go test dot.
+
+173
+00:13:10,890 --> 00:13:15,510
+And it says Alpha is found in the cache, but it shouldn't be there, so it looks like empty does in
+
+174
+00:13:15,510 --> 00:13:16,860
+fact not work.
+
+175
+00:13:17,490 --> 00:13:18,780
+So let's just try reading this again.
+
+176
+00:13:19,380 --> 00:13:21,240
+Go Test, be done.
+
+177
+00:13:22,590 --> 00:13:23,880
+And this is why we write tests.
+
+178
+00:13:24,300 --> 00:13:26,750
+Alpha found in cash and it should not be there.
+
+179
+00:13:26,760 --> 00:13:28,650
+So empty is not doing what it's supposed to do.
+
+180
+00:13:29,100 --> 00:13:33,450
+So let's go back to our cash functionality and find that empty bit.
+
+181
+00:13:37,360 --> 00:13:44,080
+There's set there's forget there's empty by match, there's empty, so I'm getting my keys.
+
+182
+00:13:44,200 --> 00:13:48,880
+I'm looking for the prefix of percent Escola.
+
+183
+00:13:51,090 --> 00:13:53,070
+So let's try something really simple.
+
+184
+00:13:53,340 --> 00:13:56,520
+Let's assume that it has something to do with the prefix.
+
+185
+00:13:56,640 --> 00:13:56,970
+OK.
+
+186
+00:13:58,420 --> 00:14:07,720
+So I'm going to actually comment that line out and replace it with ignore the first returned value,
+
+187
+00:14:07,930 --> 00:14:08,920
+try an error.
+
+188
+00:14:10,080 --> 00:14:14,910
+And that is a sign the value of here, I'm actually going to call directly.
+
+189
+00:14:15,930 --> 00:14:25,830
+Con dot do, and I want to say Deo and I'll put X there because I have a feeling that the prefix is
+
+190
+00:14:25,830 --> 00:14:26,790
+being added twice.
+
+191
+00:14:26,820 --> 00:14:28,440
+Let's just see if this does the trick.
+
+192
+00:14:28,470 --> 00:14:30,720
+OK, so back to our terminal.
+
+193
+00:14:31,650 --> 00:14:32,490
+Clear the screen.
+
+194
+00:14:35,130 --> 00:14:40,260
+And run that test again, and I put the Dash V flag on there just to get a verbose response.
+
+195
+00:14:43,590 --> 00:14:46,170
+And everything passed, so that's exactly what it is.
+
+196
+00:14:46,620 --> 00:14:54,960
+So that means, of course, that I can delete this line and copy this line and go back up here to where
+
+197
+00:14:54,960 --> 00:15:00,540
+I'm emptying by match and did the same thing here because we'll have exactly the same problem if we
+
+198
+00:15:00,540 --> 00:15:01,110
+don't do that.
+
+199
+00:15:01,650 --> 00:15:05,430
+So back to cash test and let's try empty by match.
+
+200
+00:15:05,880 --> 00:15:16,800
+So funk test retest cash underscore empty or match with a parameter of T pointer to testing dirty.
+
+201
+00:15:18,390 --> 00:15:22,260
+Give ourselves some room so it'll be similar to the one we just did.
+
+202
+00:15:22,260 --> 00:15:24,390
+So I'll do this little bit right here, OK?
+
+203
+00:15:24,630 --> 00:15:27,060
+Copy that and paste it.
+
+204
+00:15:27,210 --> 00:15:33,090
+So we're putting an alpha with a value of, we'll say, food just to make it a little different.
+
+205
+00:15:33,930 --> 00:15:36,030
+And then we'll set another one.
+
+206
+00:15:36,030 --> 00:15:43,050
+So we'll copy this and paste it in there and call it Alpha two and get rid of the assignment operator
+
+207
+00:15:43,950 --> 00:15:46,890
+or Alpha two and make that an equal sign.
+
+208
+00:15:47,790 --> 00:15:48,180
+OK.
+
+209
+00:15:48,780 --> 00:15:50,460
+And now we'll call empty by match.
+
+210
+00:15:52,380 --> 00:15:56,580
+Actually, before we call Empty Match, I'm going to put something else in the cache, so I'll copy
+
+211
+00:15:56,580 --> 00:16:01,170
+this something that doesn't start with the letter X and I'll call this beta.
+
+212
+00:16:02,130 --> 00:16:08,130
+OK, now I'll call empty by match because I want to make sure it only deletes the things that actually
+
+213
+00:16:08,130 --> 00:16:08,520
+match.
+
+214
+00:16:09,120 --> 00:16:17,400
+So errors assign the value of test cache, test retest cache dot empty by match, and that requires
+
+215
+00:16:17,400 --> 00:16:18,030
+a parameter.
+
+216
+00:16:18,030 --> 00:16:18,810
+And one I'll put in.
+
+217
+00:16:18,810 --> 00:16:26,070
+There, of course, is alpha, and I'll check for an error and paste that here.
+
+218
+00:16:27,670 --> 00:16:32,170
+And they'll do my checks, so I'll copy this in cash logic that we have here.
+
+219
+00:16:32,440 --> 00:16:32,790
+OK?
+
+220
+00:16:36,750 --> 00:16:41,730
+And the error message in a piece was right here.
+
+221
+00:16:42,690 --> 00:16:45,810
+So what I'm looking for is to see, does it have alpha?
+
+222
+00:16:45,840 --> 00:16:47,760
+If it does, then it shouldn't be there.
+
+223
+00:16:48,390 --> 00:16:56,430
+And then again, I'll copy this and look for Alpha two or change this to an equal sign instead of an
+
+224
+00:16:56,430 --> 00:17:02,670
+assignment operator and look for Alpha two and change the error message, then I'll copy this whole
+
+225
+00:17:02,670 --> 00:17:05,280
+thing in what should still be in.
+
+226
+00:17:05,280 --> 00:17:08,340
+There is something called beta, so I'll paste that in.
+
+227
+00:17:11,800 --> 00:17:20,680
+Look for better and if not in cash, we want data not found in cash.
+
+228
+00:17:21,280 --> 00:17:22,660
+And it should be there.
+
+229
+00:17:24,040 --> 00:17:26,290
+OK, let's try that and see how it's working.
+
+230
+00:17:27,550 --> 00:17:29,080
+Go Test Dash v Dot.
+
+231
+00:17:31,960 --> 00:17:32,800
+Everything passed.
+
+232
+00:17:32,860 --> 00:17:35,830
+Let's get our coverage go test cover, don't.
+
+233
+00:17:38,090 --> 00:17:41,870
+And we have eighty two point four percent of statements tested.
+
+234
+00:17:42,290 --> 00:17:45,890
+So the last things we need the test, of course, are encode and decode, I think.
+
+235
+00:17:46,100 --> 00:17:49,370
+So let's write those tests, even if they're not the last things, we definitely want them.
+
+236
+00:17:49,850 --> 00:18:01,030
+So we'll say funk, test, encode, decode, and that's T per point of view testing dot t.
+
+237
+00:18:01,040 --> 00:18:03,290
+And we'll just write simple tests for those, and they're really easy.
+
+238
+00:18:03,770 --> 00:18:08,780
+So we'll make an entry and a sign of the value of a blank entry like that.
+
+239
+00:18:11,570 --> 00:18:17,330
+And then we'll say entry foo because this is a map equals.
+
+240
+00:18:17,900 --> 00:18:20,870
+And it's a map string interface so we can put anything there.
+
+241
+00:18:20,870 --> 00:18:28,520
+So Bar will do the trick and we'll say bytes an error or assign a value of encode entry and we'll check
+
+242
+00:18:28,520 --> 00:18:34,970
+for an error if error is not equal to nil, then teed up error error
+
+243
+00:18:38,150 --> 00:18:39,530
+and then we'll say nothing.
+
+244
+00:18:39,530 --> 00:18:42,470
+And error is assigned the value of decode.
+
+245
+00:18:45,260 --> 00:18:47,900
+And we're looking for string bytes
+
+246
+00:18:50,660 --> 00:18:51,560
+and we'll check for an error.
+
+247
+00:18:55,850 --> 00:19:01,070
+And pasted in there and looks like I have a tape of similar entries or has already been defined.
+
+248
+00:19:01,100 --> 00:19:01,760
+I think that's it.
+
+249
+00:19:02,150 --> 00:19:02,390
+Yeah.
+
+250
+00:19:04,130 --> 00:19:05,810
+OK, let's try running the test now.
+
+251
+00:19:05,990 --> 00:19:13,490
+So we're we're trying to create a blank entry populating the map that it requires with food, key food
+
+252
+00:19:13,490 --> 00:19:16,280
+value, br encoding it into bytes.
+
+253
+00:19:16,520 --> 00:19:19,430
+And then we're putting those bytes into a string and decoding them.
+
+254
+00:19:19,550 --> 00:19:19,850
+OK.
+
+255
+00:19:19,880 --> 00:19:21,320
+Let's just try that and see how it works.
+
+256
+00:19:22,910 --> 00:19:23,170
+Go.
+
+257
+00:19:23,300 --> 00:19:24,290
+Test done.
+
+258
+00:19:27,140 --> 00:19:31,670
+Everything passed, so at this point, I think I have enough coverage that I can go and try writing
+
+259
+00:19:31,670 --> 00:19:38,660
+an actual web page back in my app that demonstrates the functionality of the caching package, and we'll
+
+260
+00:19:38,660 --> 00:19:39,920
+do that in the next lecture.

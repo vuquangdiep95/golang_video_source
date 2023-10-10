@@ -1,0 +1,371 @@
+1
+00:00:00,080 --> 00:00:01,980
+Vì vậy, bây giờ chúng tôi đang chuyển sang một số phần mới.
+
+2
+00:00:01,980 --> 00:00:08,610
+Kính của tôi sắp rơi khỏi đầu và chúng tôi vừa hoàn thành bài tập tay này và chúng tôi sẽ đi
+
+3
+00:00:08,610 --> 00:00:15,200
+để xem xét các mô-đun cờ vây và do đó, các mô-đun cờ vây thực sự là một thay đổi khá lớn đối với ngôn ngữ lập trình cờ vây.
+
+4
+00:00:15,390 --> 00:00:17,660
+Và một trong những điều tuyệt vời về cờ vây.
+
+5
+00:00:17,670 --> 00:00:23,690
+Gần đây tôi có một học sinh. Tôi đã tạo một khóa học. Khóa học trực tuyến đầu tiên của tôi cách đây vài năm.
+
+6
+00:00:23,700 --> 00:00:27,460
+giống như Này, những video này vẫn ở đây và bạn đang tham gia khóa học trực tuyến liệu chúng có còn phù hợp không.
+
+7
+00:00:27,510 --> 00:00:28,030
+Và tôi giống như Vâng.
+
+8
+00:00:28,050 --> 00:00:29,100
+Chúng hoàn toàn có liên quan.
+
+9
+00:00:29,100 --> 00:00:31,170
+Đó là lý do tại sao nó diễn ra tuyệt vời.
+
+10
+00:00:31,170 --> 00:00:32,900
+Nó không thay đổi nhiều lắm.
+
+11
+00:00:32,910 --> 00:00:39,840
+Họ thực sự đảm bảo rằng thiết kế của ngôn ngữ được xây dựng vững chắc ngay từ đầu và bởi vì
+
+12
+00:00:39,840 --> 00:00:44,690
+trong đó họ đã thêm các thay đổi gia tăng nhưng thực sự không có bất kỳ thay đổi lớn đáng kể nào.
+
+13
+00:00:44,850 --> 00:00:50,670
+Kiến trúc ban đầu của ngôn ngữ được xây dựng vững chắc bởi những thiên tài được xây dựng bởi những ngôi sao sáng trong máy tính
+
+14
+00:00:50,670 --> 00:00:51,420
+khoa học.
+
+15
+00:00:51,420 --> 00:00:52,310
+KEN THOMPSON Rob.
+
+16
+00:00:52,560 --> 00:00:54,910
+Rob Pike và Robert Gregg đúng mùa hè.
+
+17
+00:00:54,960 --> 00:01:01,680
+Một số người đã tạo ra C Unix UTF 8 nền tảng của khoa học máy tính giờ đã tạo ra ngôn ngữ này
+
+18
+00:01:01,710 --> 00:01:05,640
+được tạo ra tại một trong những công ty kỹ thuật viền mềm tốt nhất từng tồn tại.
+
+19
+00:01:05,630 --> 00:01:10,950
+Google vì vậy ngôn ngữ nguy hiểm được xây dựng thực sự tốt không thay đổi nhiều nhưng một trong những điều
+
+20
+00:01:10,950 --> 00:01:16,830
+đã thay đổi và đây có lẽ là thay đổi quan trọng nhất trong ngôn ngữ mà chúng ta đã từng sử dụng
+
+21
+00:01:16,830 --> 00:01:25,020
+có một thứ gọi là không gian làm việc Go được gắn với biến môi trường đường dẫn đi của bạn và do đó
+
+22
+00:01:25,020 --> 00:01:31,050
+đi biến môi trường đường dẫn nếu bạn đến từ bạn biết nếu bạn đã lập trình và đi trước thời điểm này
+
+23
+00:01:31,050 --> 00:01:34,410
+biến môi trường đường dẫn đi đã xác định không gian làm việc của bạn.
+
+24
+00:01:34,470 --> 00:01:39,030
+Và chúng tôi khuyên bạn chỉ nên có một không gian làm việc và trong không gian làm việc đó, anh ấy có một thư mục bin mà bạn
+
+25
+00:01:39,030 --> 00:01:44,640
+có một thư mục gói và sau đó bạn có một thư mục nguồn và sau đó bên trong thư mục nguồn đó, bạn có
+
+26
+00:01:44,640 --> 00:01:50,270
+khoảng cách tên thường liên quan đến một số tên người dùng miền và có thể là một repo.
+
+27
+00:01:50,270 --> 00:01:55,020
+Và đó là cách bạn đặt tên cho các mã khác nhau trong các gói khác nhau.
+
+28
+00:01:55,020 --> 00:02:00,120
+Chà, một trong những thay đổi lớn với ngôn ngữ là họ cần một cách hiệu quả hơn để thực hiện gói
+
+29
+00:02:00,120 --> 00:02:03,750
+quản lý hoặc quản lý phụ thuộc bất cứ điều gì bạn muốn gọi nó.
+
+30
+00:02:03,840 --> 00:02:08,550
+Và chúng ta sẽ tìm hiểu tất cả các chi tiết về quản lý phụ thuộc quản lý gói là gì và
+
+31
+00:02:08,550 --> 00:02:12,860
+thuật ngữ và chúng tôi sẽ hướng dẫn bạn từ tất cả các chi tiết.
+
+32
+00:02:12,960 --> 00:02:18,990
+Đây chỉ là phần giới thiệu về mô-đun go và mô-đun go thực sự rất đơn giản trong thực tế.
+
+33
+00:02:19,080 --> 00:02:20,850
+Tuy nhiên có rất nhiều chiều sâu cho nó.
+
+34
+00:02:20,880 --> 00:02:22,650
+Vì vậy, chúng tôi muốn cho bạn thấy chiều sâu đó.
+
+35
+00:02:22,650 --> 00:02:28,740
+Cho bạn thấy sức mạnh và nếu bạn đang sử dụng một số phần mềm quản lý phụ thuộc phiên bản khác của phần mềm SOC
+
+36
+00:02:28,950 --> 00:02:33,530
+như lướt đi hay là nó đi sâu hay sâu vì nó được gọi là dat.
+
+37
+00:02:33,570 --> 00:02:33,860
+Vâng.
+
+38
+00:02:33,900 --> 00:02:39,450
+Chắc chắn nếu bạn đang sử dụng thứ gì đó khác, đôi khi anh ấy sẽ tự động làm khá tốt công việc của bạn
+
+39
+00:02:39,450 --> 00:02:46,440
+biết bạn sẽ là một công việc hoàn hảo tự động đi các mô-đun sẽ chuyển đổi các gói quản lý khác nếu
+
+40
+00:02:46,440 --> 00:02:54,810
+bạn đang sử dụng nó cho các mô-đun go và do đó, các mô-đun go là một cách mới để quản lý không gian làm việc của bạn.
+
+41
+00:02:54,810 --> 00:03:01,180
+có thể có nhiều không gian làm việc và quản lý mã của bạn cũng như các phần phụ thuộc của bạn, vì vậy nó thực sự dễ dàng trong
+
+42
+00:03:01,170 --> 00:03:02,570
+thực hành nhưng với rất nhiều chiều sâu.
+
+43
+00:03:02,580 --> 00:03:08,010
+Vì vậy, khi chúng ta xem qua tất cả các tài liệu này, bạn sẽ có một sự hiểu biết tuyệt vời về việc làm
+
+44
+00:03:08,010 --> 00:03:15,000
+quản lý gói bằng mô-đun go và tất cả đều được tích hợp sẵn và có rất nhiều tính năng thực sự thú vị
+
+45
+00:03:15,000 --> 00:03:16,440
+và các tính năng bảo mật.
+
+46
+00:03:16,530 --> 00:03:22,290
+Vì vậy, bạn sẽ tránh những thứ như thỏa thuận NPM JavaScript mà họ có, cái được gọi là
+
+47
+00:03:22,350 --> 00:03:28,470
+rời khỏi phần đệm bên trái đó, như bạn biết, hàng triệu người đang dựa vào một sự phụ thuộc nhỏ này
+
+48
+00:03:28,470 --> 00:03:32,080
+và giống như người đó kéo nó giống như mã ở mọi nơi đều bị lỗi.
+
+49
+00:03:32,250 --> 00:03:32,620
+Phải.
+
+50
+00:03:32,650 --> 00:03:34,410
+Vì vậy, nó khá tuyệt.
+
+51
+00:03:34,410 --> 00:03:36,030
+Vì vậy, đây chỉ là một chút tổng quan.
+
+52
+00:03:36,030 --> 00:03:37,320
+Đây là phần giới thiệu.
+
+53
+00:03:37,440 --> 00:03:42,030
+Chúng tôi có ba phần mà chúng tôi sẽ xem xét, chúng tôi có phần giới thiệu mô-đun go ngay bây giờ chúng tôi đang ở
+
+54
+00:03:42,030 --> 00:03:47,280
+video tổng quan và sau đó chúng ta sẽ tìm hiểu sâu hơn về các mô-đun và sau đó chúng ta sẽ có một
+
+55
+00:03:47,280 --> 00:03:48,000
+đi mô-đun.
+
+56
+00:03:48,000 --> 00:03:52,710
+Điều cần biết và chúng ta sẽ tìm hiểu quản lý gói là gì nếu bạn chưa quen với quản lý gói
+
+57
+00:03:52,920 --> 00:03:57,810
+chúng ta sẽ thảo luận về điều đó và khám phá quản lý gói là gì vì tôi nhớ tại thời điểm này
+
+58
+00:03:57,810 --> 00:04:04,780
+ràng buộc tại một thời điểm trong cuộc đời tôi, nơi tôi giống như quản lý gói.
+
+59
+00:04:04,890 --> 00:04:09,930
+Và bạn sẽ đọc một số tài liệu, một trong những điều tôi thích làm giống như bạn biết, hãy bắt đầu
+
+60
+00:04:09,930 --> 00:04:13,870
+nguồn thông tin chính xác về tất cả những gì chúng tôi sẽ cung cấp cho bạn tài nguyên
+
+61
+00:04:13,870 --> 00:04:20,790
+để làm điều đó, chúng ta sẽ tạo một mô-đun mới, chúng ta sẽ tìm hiểu về go mod và nhận repos và thêm
+
+62
+00:04:20,790 --> 00:04:26,310
+một sự phụ thuộc và đảm bảo an ninh được cung cấp bởi các mô-đun go và chúng ta sẽ tìm hiểu tất cả về
+
+63
+00:04:26,310 --> 00:04:31,620
+hiểu phiên bản và nâng cấp các phụ thuộc nhỏ và chỉ định các phiên bản phụ thuộc và thêm
+
+64
+00:04:31,620 --> 00:04:36,360
+một phụ thuộc chính mới và nâng cấp phụ thuộc chính và loại bỏ các phụ thuộc không sử dụng, sau đó chúng ta sẽ
+
+65
+00:04:36,360 --> 00:04:41,370
+để xem điều chuyển đổi tự động này mà tôi vừa nói đến nếu bạn đang sử dụng DAP
+
+66
+00:04:41,490 --> 00:04:47,400
+hoặc lướt hoặc những thứ khác chúng ta sẽ tìm hiểu về một thứ gọi là mô-đun Mir và các mô-đun và nhận cam kết
+
+67
+00:04:47,400 --> 00:04:51,890
+lập phiên bản và nhận các nhánh thay thế đường dẫn mô-đun và họ sẽ xem xét tất cả các lệnh đó.
+
+68
+00:04:51,990 --> 00:04:52,860
+Vì vậy, đó là những gì phổ biến.
+
+69
+00:04:52,860 --> 00:04:59,280
+Hôm nay là thứ Sáu vào sáng sớm muộn hơn, lúc đó là 11:00 sáng Thứ Sáu và Daniel và tôi đều
+
+70
+00:04:59,280 --> 00:05:05,790
+thực sự cam kết cung cấp cho bạn một lý do tuyệt vời vì vậy chúng tôi cam kết đây là những gì chúng tôi đang làm với thời gian của mình
+
+71
+00:05:06,570 --> 00:05:08,810
+và chúng tôi đã nghiên cứu điều này.
+
+72
+00:05:09,030 --> 00:05:10,070
+Chúng tôi chỉ chi tiêu rất nhiều.
+
+73
+00:05:10,120 --> 00:05:14,820
+Bạn biết đấy, tôi đã dành vài ngày qua để thực sự tìm hiểu về các mô-đun cờ vây để tôi có thể thực sự hiểu
+
+74
+00:05:14,820 --> 00:05:15,250
+Nó.
+
+75
+00:05:15,420 --> 00:05:20,190
+Và Daniel đã có rất nhiều bài tập tuyệt vời và học tập rất tuyệt vời và nó cũng có rất nhiều bài tập thực tế tuyệt vời
+
+76
+00:05:20,190 --> 00:05:22,140
+kinh nghiệm sử dụng mô-đun go.
+
+77
+00:05:22,140 --> 00:05:29,370
+Vì vậy, chúng tôi thực sự vui mừng được cung cấp thông tin này, tài liệu này, khóa học này cho bạn để bạn
+
+78
+00:05:29,370 --> 00:05:39,290
+được trang bị tốt nhất để tiếp tục cuộc hành trình của bạn với mã hóa để tạo kho lưu trữ dự án mã tốt nhất
+
+79
+00:05:39,300 --> 00:05:40,200
+khả thi.
+
+80
+00:05:40,390 --> 00:05:41,580
+Đó là phần giới thiệu.
+
+81
+00:05:41,610 --> 00:05:43,310
+Bạn bất cứ điều gì bạn muốn thêm.
+
+82
+00:05:43,800 --> 00:05:53,130
+Vì vậy, các mô-đun go là một thay đổi lớn so với go path nhưng go path vẫn tồn tại trong go go 1.0 đảm bảo tôi
+
+83
+00:05:53,130 --> 00:05:59,130
+tin sẽ có nghĩa là đi đường dẫn sẽ luôn tồn tại ở dạng này hay dạng khác chỉ trong trường hợp bạn muốn sử dụng old
+
+84
+00:05:59,280 --> 00:06:03,410
+mã cũ hoặc hướng dẫn cũ, vì vậy go modules là cách làm việc mới.
+
+85
+00:06:03,420 --> 00:06:08,640
+Đó là cách được khuyến nghị để thực hiện mọi thứ, con đường sẽ vẫn tồn tại nếu bạn phụ thuộc vào nó.
+
+86
+00:06:10,510 --> 00:06:15,310
+Đó là lý do tại sao việc dạy và lập trình theo cặp thật tuyệt vời bởi vì khi bạn có nhiều tư duy, bạn sẽ trở nên giỏi hơn
+
+87
+00:06:15,310 --> 00:06:16,070
+các giải pháp.
+
+88
+00:06:16,210 --> 00:06:24,250
+Và đó không phải là tôi và tôi mà là nhiều người ở NY, nhiều tâm trí thường dẫn đến những giải pháp tốt hơn.
+
+89
+00:06:24,250 --> 00:06:25,210
+Quan điểm khác nhau.
+
+90
+00:06:25,240 --> 00:06:27,900
+Vâng, điều đó thực sự quan trọng.
+
+91
+00:06:28,060 --> 00:06:28,330
+Được rồi.
+
+92
+00:06:28,360 --> 00:06:30,070
+Vì vậy, bất cứ điều gì khác.
+
+93
+00:06:30,700 --> 00:06:35,350
+Chúng ta sẽ xem trong video tiếp theo, nơi chúng ta sẽ bắt đầu thảo luận về quản lý gói.

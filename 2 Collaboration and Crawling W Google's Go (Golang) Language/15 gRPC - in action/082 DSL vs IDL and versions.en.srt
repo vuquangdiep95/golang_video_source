@@ -1,0 +1,159 @@
+1
+00:00:00,300 --> 00:00:04,740
+OK so in this video we're going to take a look at compiling the service.
+
+2
+00:00:04,770 --> 00:00:11,220
+And before Daniel jumps in and shows that I just wanted to share a little bit of information from my
+
+3
+00:00:11,220 --> 00:00:14,310
+reading which admittedly has been limited.
+
+4
+00:00:14,310 --> 00:00:21,030
+But here if you go to GOPAC dot I Io docs and guides what is GOPAC.
+
+5
+00:00:21,060 --> 00:00:22,880
+This is a nice little document to read through.
+
+6
+00:00:22,880 --> 00:00:29,310
+Just gives you introduction GOPAC but you can kind of see here you have clients communicating with the
+
+7
+00:00:29,310 --> 00:00:31,930
+server like that picture right there.
+
+8
+00:00:32,020 --> 00:00:33,190
+OK.
+
+9
+00:00:33,300 --> 00:00:35,520
+Clients communicate with a server.
+
+10
+00:00:35,560 --> 00:00:35,770
+Right.
+
+11
+00:00:35,790 --> 00:00:41,940
+But it has a little bit more information in there and you could see here defining a service very similar
+
+12
+00:00:41,940 --> 00:00:45,250
+to what we just set up and then down at the bottom.
+
+13
+00:00:45,390 --> 00:00:50,550
+The information about proto 2 versus proto 3 you know the universal principle of life.
+
+14
+00:00:50,550 --> 00:00:54,140
+Try to use the most recent version you all right.
+
+15
+00:00:54,180 --> 00:00:58,170
+So just you know whenever you watch this video maybe you came across this.
+
+16
+00:00:58,230 --> 00:01:03,210
+You're an archaeologist investigating the civilization of humans that lived for a while and you're like
+
+17
+00:01:03,240 --> 00:01:05,600
+Hey let's get this thing running.
+
+18
+00:01:05,760 --> 00:01:10,530
+Whatever is the most recent version in the land in which you come from where you are used the most recent
+
+19
+00:01:10,530 --> 00:01:15,740
+version and then I just want to point out one thing about DSL versus ITIL.
+
+20
+00:01:15,810 --> 00:01:23,190
+And so Daniel just casually said oh it's a DSL and if you haven't been exposed to DSL what a DSL is
+
+21
+00:01:23,190 --> 00:01:27,150
+before you might think maybe that's like some sort of Internet service.
+
+22
+00:01:27,810 --> 00:01:34,000
+But in DSL domain specific language is that what it stands for.
+
+23
+00:01:34,060 --> 00:01:35,080
+Yes.
+
+24
+00:01:35,490 --> 00:01:39,820
+And so it's language to help you write code automatically.
+
+25
+00:01:39,900 --> 00:01:41,940
+And so in go there's go.
+
+26
+00:01:42,030 --> 00:01:48,720
+Which Daniels had a ton of experience with and has a lot of value.
+
+27
+00:01:48,750 --> 00:01:50,490
+So you might want to check out go.
+
+28
+00:01:50,700 --> 00:01:57,930
+If you're into go and go OK is a DSL if you'd learn a different language which is the downside.
+
+29
+00:01:58,020 --> 00:02:02,810
+But then once you learn that language it automatically will generate code for you.
+
+30
+00:02:03,130 --> 00:02:07,050
+And that could be a benefit and then a DSL.
+
+31
+00:02:07,050 --> 00:02:13,770
+He used the word DSL but in the documentation for proto they talk about it in our interface definition
+
+32
+00:02:13,770 --> 00:02:14,520
+language.
+
+33
+00:02:14,700 --> 00:02:21,480
+And so if you do a little research between an ideal and ideal interface definition language and in DSL
+
+34
+00:02:21,900 --> 00:02:24,880
+it's kind of like tomato versus tomato.
+
+35
+00:02:25,170 --> 00:02:26,190
+They're pretty similar.
+
+36
+00:02:26,190 --> 00:02:29,360
+So that's what a DSL or ideal is.
+
+37
+00:02:29,400 --> 00:02:35,730
+And and you know that's also yeah just a little bit of information about that.
+
+38
+00:02:35,730 --> 00:02:40,890
+So I'm going to leave this as its own video I'm just going to make this Todd's commentary actually I
+
+39
+00:02:40,890 --> 00:02:48,340
+really like keeping video short and in the next video we're going to take a look at compiling the service
+
+40
+00:02:48,360 --> 00:02:49,230
+see the next video.

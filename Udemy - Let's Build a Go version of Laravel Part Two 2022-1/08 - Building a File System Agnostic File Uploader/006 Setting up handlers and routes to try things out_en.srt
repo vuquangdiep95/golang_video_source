@@ -1,0 +1,328 @@
+1
+00:00:02,130 --> 00:00:04,689
+So I think we have our uploader pretty much where we want it.
+
+2
+00:00:04,710 --> 00:00:08,320
+There might be a few changes required, but we should be relatively close.
+
+3
+00:00:08,370 --> 00:00:09,300
+So let's give it a try.
+
+4
+00:00:10,280 --> 00:00:16,670
+If you open the course resources for this lecture, you'll see a file you can download called Celebrities
+
+5
+00:00:16,670 --> 00:00:24,380
+Dash Upload, Dot Jet Dot Zip, download that file, unzip it and put it inside The View's directory
+
+6
+00:00:25,130 --> 00:00:26,960
+of your My App project.
+
+7
+00:00:27,350 --> 00:00:34,220
+It's a very simple file, so it's very similar to the one that we were using for the Choose Your File
+
+8
+00:00:34,220 --> 00:00:34,970
+system and upload.
+
+9
+00:00:35,000 --> 00:00:36,980
+But this one doesn't actually specify.
+
+10
+00:00:36,980 --> 00:00:39,980
+It doesn't have a dropdown list that lets you choose your file system.
+
+11
+00:00:40,520 --> 00:00:45,650
+So this will be the actions slash, upload and we'll have a handler that displays this page.
+
+12
+00:00:45,650 --> 00:00:53,930
+And then the handler that uses our new upload feature will be the post version of this this URL.
+
+13
+00:00:54,200 --> 00:01:00,260
+So get we'll just display the form and post will actually process the upload data, so get that in the
+
+14
+00:01:00,260 --> 00:01:00,980
+correct folder.
+
+15
+00:01:02,070 --> 00:01:10,470
+And then we'll go to our handlers file, which is right here and a lot of handlers and we'll put this
+
+16
+00:01:10,500 --> 00:01:11,430
+say near the top.
+
+17
+00:01:11,850 --> 00:01:17,760
+So to start with, I'll put it right after the home handler, a funk with the receiver of pointer to
+
+18
+00:01:17,760 --> 00:01:23,280
+handlers, and I'll call this one celebrity toss upload.
+
+19
+00:01:23,580 --> 00:01:24,510
+That's as good a name as any.
+
+20
+00:01:24,720 --> 00:01:26,460
+And it requires a response writer
+
+21
+00:01:29,190 --> 00:01:30,720
+and a pointer to a request.
+
+22
+00:01:33,420 --> 00:01:33,750
+OK.
+
+23
+00:01:34,200 --> 00:01:35,220
+And this is dead simple.
+
+24
+00:01:35,490 --> 00:01:42,360
+We're just going to have an error variable and we'll call each dot render and we'll give it W and R.
+
+25
+00:01:42,360 --> 00:01:49,530
+And the file we want to render is called Celebrities Dash Upload, and we're not handing it any data
+
+26
+00:01:49,530 --> 00:01:49,920
+at all.
+
+27
+00:01:50,130 --> 00:01:54,780
+So it's dead simple and we just had an error check if error is not equal to nil.
+
+28
+00:01:55,260 --> 00:01:58,530
+Then I'll print it out after error logs.
+
+29
+00:01:58,530 --> 00:01:59,880
+Print line here.
+
+30
+00:02:00,210 --> 00:02:00,500
+OK.
+
+31
+00:02:00,570 --> 00:02:04,230
+So that's the one that will display the page, and that's not interesting at all.
+
+32
+00:02:05,460 --> 00:02:13,050
+But a more interesting one is this one func h pointer to handlers, and we'll call this post celebrities
+
+33
+00:02:14,790 --> 00:02:15,270
+upload
+
+34
+00:02:18,270 --> 00:02:24,360
+and again w HDP, the response writer and our pointer to HDP Dot request.
+
+35
+00:02:25,950 --> 00:02:28,470
+So what we want to do here is very, very simple.
+
+36
+00:02:28,710 --> 00:02:30,930
+We want to call error.
+
+37
+00:02:31,590 --> 00:02:36,790
+We're going to check for an error when we call H Dot App Dot Upload File.
+
+38
+00:02:37,590 --> 00:02:39,960
+And that requires the request.
+
+39
+00:02:40,350 --> 00:02:47,700
+It requires the destination string, which can be just an empty string like that and it requires the
+
+40
+00:02:47,700 --> 00:02:49,140
+name of the field.
+
+41
+00:02:49,200 --> 00:02:55,440
+Now if you go look at that celerity upload jet, the name of that field is actually form file, so I'll
+
+42
+00:02:55,440 --> 00:02:56,010
+copy that.
+
+43
+00:02:57,480 --> 00:02:58,380
+Paste it in here.
+
+44
+00:03:01,520 --> 00:03:03,920
+And it requires a pointer to a file system.
+
+45
+00:03:03,980 --> 00:03:06,860
+Now I just could just do this if I wanted to put Neal in there.
+
+46
+00:03:07,340 --> 00:03:11,990
+And that would be fine, and that would upload it to the local server, to our actually remote server
+
+47
+00:03:11,990 --> 00:03:12,650
+in production.
+
+48
+00:03:12,650 --> 00:03:14,930
+But you get the idea so would upload it to the temple.
+
+49
+00:03:15,560 --> 00:03:25,850
+But I want to upload this one to say my a reference to a short app S3 like that.
+
+50
+00:03:26,300 --> 00:03:28,880
+And that should put it on my Amazon file system.
+
+51
+00:03:29,150 --> 00:03:34,610
+OK, now that will do the upload, but of course, we're going to check for the error if error is not
+
+52
+00:03:34,610 --> 00:03:39,350
+equal to nil, and in this case, I'm going to include an else as well.
+
+53
+00:03:39,710 --> 00:03:40,070
+OK.
+
+54
+00:03:40,100 --> 00:03:46,070
+So if the error is not equal to nil, then I'll say print out the error, file each dot dot error,
+
+55
+00:03:46,070 --> 00:03:55,460
+log dot print line the error and then I'll say H Dot app dot session dot put.
+
+56
+00:03:55,790 --> 00:04:02,300
+I'm going to put an error message in the session and that requires urgent context and it requires some
+
+57
+00:04:02,300 --> 00:04:02,720
+name.
+
+58
+00:04:02,840 --> 00:04:08,000
+This will be error, so we'll show up at the top of the page appropriately and the error aired out here.
+
+59
+00:04:09,610 --> 00:04:12,500
+OK, belts, everything went right.
+
+60
+00:04:12,890 --> 00:04:17,089
+So all I'm going to do here is put a success message in each app.
+
+61
+00:04:17,420 --> 00:04:26,570
+The session Typekit put up context and the name of this will be flash, so it shows up at the top of
+
+62
+00:04:26,570 --> 00:04:27,200
+the screen.
+
+63
+00:04:27,320 --> 00:04:31,100
+And that's because there's logic in that template.
+
+64
+00:04:31,130 --> 00:04:36,200
+Celebrities upload jet that displays the message, but I'm sure you figure that out by now, and I'll
+
+65
+00:04:36,200 --> 00:04:39,980
+just say, upload, OK.
+
+66
+00:04:41,090 --> 00:04:43,460
+And of course, at the very end, I want to redirect them somewhere.
+
+67
+00:04:43,490 --> 00:04:45,590
+So I'll take them back to the same page they were on.
+
+68
+00:04:45,870 --> 00:04:46,880
+Repeat on redirect.
+
+69
+00:04:48,820 --> 00:04:52,520
+And that requires an hour and some path name.
+
+70
+00:04:52,540 --> 00:04:58,600
+I'm going to use slash upload, which is dead simple with some status issue report status, see?
+
+71
+00:04:59,470 --> 00:05:01,360
+OK, there we are.
+
+72
+00:05:01,570 --> 00:05:05,230
+So now we have her two handlers, so let's go to our roots and hook those up.
+
+73
+00:05:06,370 --> 00:05:14,260
+So I'll put it right here after the home Page Eight Get in my path will be slash upload and my handler
+
+74
+00:05:14,260 --> 00:05:16,120
+is a dog handlers.
+
+75
+00:05:17,490 --> 00:05:23,200
+The celebrities upload and I'll duplicate this changes to post.
+
+76
+00:05:25,510 --> 00:05:33,910
+And this would be post celebrities upload now if everything went according to plan, we should be able
+
+77
+00:05:33,910 --> 00:05:41,350
+to stop our application, start our application, go to localhost 4000 local host code and 4000 slash
+
+78
+00:05:41,380 --> 00:05:44,260
+upload and see the form and upload something.
+
+79
+00:05:44,710 --> 00:05:50,590
+And because I specified here in my handler that I want to upload to the S3 file system right there,
+
+80
+00:05:51,280 --> 00:05:55,570
+then it should show up on my Amazon S3 bucket, which of course, is on OneNote.
+
+81
+00:05:55,570 --> 00:05:56,710
+But same difference.
+
+82
+00:05:57,250 --> 00:05:59,170
+So we'll give that a try in the next lecture.
+

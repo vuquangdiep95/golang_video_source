@@ -1,0 +1,1147 @@
+1
+00:00:01,160 --> 00:00:07,850
+So what we want to do in this section of the course is to implement the ability to send email asynchronously
+
+2
+00:00:07,850 --> 00:00:09,620
+or in the background through a go routine.
+
+3
+00:00:09,620 --> 00:00:12,080
+And obviously that means we need to be able to send email.
+
+4
+00:00:12,710 --> 00:00:17,690
+So let's set up a really simple file that actually allows us to send email.
+
+5
+00:00:17,810 --> 00:00:18,140
+Okay.
+
+6
+00:00:18,740 --> 00:00:26,180
+So in the CND slash Web folder, let's create a new file, which I'll call mail or don't go
+
+7
+00:00:29,150 --> 00:00:31,590
+and let's go make this in package main.
+
+8
+00:00:31,760 --> 00:00:37,670
+Just to get rid of the error, let's go and get a few things that we're going to have to have in order
+
+9
+00:00:37,670 --> 00:00:38,510
+to send email.
+
+10
+00:00:38,750 --> 00:00:42,710
+Now, we could do everything just using the standard library, but there's a couple of packages I want
+
+11
+00:00:42,710 --> 00:00:46,490
+to install that will just make sending email a little less painful.
+
+12
+00:00:47,240 --> 00:00:55,280
+So for the root level of my project, I will go and get first of all, your hub dot com slash v a in
+
+13
+00:00:55,280 --> 00:01:00,650
+in g 8 to 2 slash go dash pre mailer.
+
+14
+00:01:01,550 --> 00:01:02,720
+Agree Mailer.
+
+15
+00:01:04,010 --> 00:01:10,730
+And all this does is inline cascading style sheets just to make email more more compatible with the
+
+16
+00:01:10,730 --> 00:01:14,240
+various email clients out there when you're sending HTML formatted email.
+
+17
+00:01:14,430 --> 00:01:14,780
+Okay.
+
+18
+00:01:14,810 --> 00:01:19,640
+So that's just a convenience package and now we'll go and get an actual mail package.
+
+19
+00:01:19,970 --> 00:01:29,510
+GitHub dot com slash x hit slash go dash simple dash mail slash v2 and please use v2.
+
+20
+00:01:29,540 --> 00:01:29,930
+Okay.
+
+21
+00:01:30,290 --> 00:01:34,280
+Even if V3 is out, so that goes and gets the necessary packages.
+
+22
+00:01:35,180 --> 00:01:41,630
+Now let's set up our necessary code to send email and we'll get it working so we can just send email,
+
+23
+00:01:41,630 --> 00:01:46,580
+you know, synchronously during regular program execution and then after the fact we'll make it run
+
+24
+00:01:46,580 --> 00:01:47,270
+in the background.
+
+25
+00:01:47,450 --> 00:01:47,750
+Okay.
+
+26
+00:01:48,830 --> 00:01:51,820
+So first thing I'll do is set up a type for mail, okay?
+
+27
+00:01:52,220 --> 00:01:54,890
+And this will be describing the actual mail server.
+
+28
+00:01:55,370 --> 00:02:02,600
+So it's a struct and we're going to use domain is the first first field in this and it's just a string.
+
+29
+00:02:02,780 --> 00:02:08,660
+And of course locally that'll be local host But in production you're going to tie your email to a specific
+
+30
+00:02:08,660 --> 00:02:11,660
+domain and then what mail host are we using?
+
+31
+00:02:11,780 --> 00:02:16,430
+And that's a string again and what port is the mail server listening on?
+
+32
+00:02:16,430 --> 00:02:17,330
+And that's just an end.
+
+33
+00:02:18,500 --> 00:02:26,900
+And does it require a username to log into the mail server to send the email string and a password string?
+
+34
+00:02:28,670 --> 00:02:31,970
+And is the email server encrypted encryption?
+
+35
+00:02:32,690 --> 00:02:35,930
+And it almost certainly is in production, but in development it won't be.
+
+36
+00:02:37,940 --> 00:02:41,660
+Who is the default from address string.
+
+37
+00:02:41,660 --> 00:02:43,940
+When you send email it has to come from someone.
+
+38
+00:02:44,510 --> 00:02:45,980
+And what's the default from?
+
+39
+00:02:45,980 --> 00:02:46,940
+Name again?
+
+40
+00:02:46,940 --> 00:02:47,420
+A string.
+
+41
+00:02:49,280 --> 00:02:50,540
+And then we're going to have a wait group.
+
+42
+00:02:50,930 --> 00:02:53,930
+We're not going to use that right away, but we will be using it before too long.
+
+43
+00:02:53,930 --> 00:02:54,980
+So we'll just call it wait.
+
+44
+00:02:55,610 --> 00:02:58,760
+And it's a pointer to sync Don't Wait group.
+
+45
+00:02:59,600 --> 00:03:00,950
+And that did the import for me.
+
+46
+00:03:01,970 --> 00:03:05,360
+And now we're going to have two channels and we're not going to be using these right away, but we'll
+
+47
+00:03:05,360 --> 00:03:06,650
+be using them before too long.
+
+48
+00:03:06,740 --> 00:03:07,030
+Okay.
+
+49
+00:03:07,100 --> 00:03:09,080
+So we'll call the first one a Mailer channel.
+
+50
+00:03:10,460 --> 00:03:13,580
+That's where we're going to send any email we want sent in the background.
+
+51
+00:03:13,580 --> 00:03:16,100
+And that's a channel that takes the type of message.
+
+52
+00:03:16,820 --> 00:03:17,130
+Okay.
+
+53
+00:03:18,350 --> 00:03:20,720
+And message doesn't exist yet, but it will momentarily.
+
+54
+00:03:21,200 --> 00:03:25,490
+And Chan, if there's any error sending email, we'll send it to this channel.
+
+55
+00:03:25,670 --> 00:03:27,080
+Chan of type error.
+
+56
+00:03:29,210 --> 00:03:35,300
+And finally, when you're done and want to stop, things will just have a done chan, which is a chain
+
+57
+00:03:35,300 --> 00:03:35,730
+of type.
+
+58
+00:03:36,710 --> 00:03:37,010
+Okay.
+
+59
+00:03:37,940 --> 00:03:41,000
+So we'll save this and now we'll go set up the message type.
+
+60
+00:03:41,120 --> 00:03:47,210
+So that type describes the actual mail server and here's one that describes an actual message and it's
+
+61
+00:03:47,210 --> 00:03:52,460
+a struct and it has from as the first field that's just a string.
+
+62
+00:03:52,490 --> 00:04:01,400
+In case you want to override the default from name and address from name will be a string to to whom
+
+63
+00:04:01,400 --> 00:04:01,970
+is it going?
+
+64
+00:04:02,120 --> 00:04:02,900
+That's a string.
+
+65
+00:04:03,380 --> 00:04:09,410
+And this will hold the email address we're sending to what's the subject of the email message again?
+
+66
+00:04:09,410 --> 00:04:09,860
+A string.
+
+67
+00:04:11,630 --> 00:04:13,070
+Are there any attachments?
+
+68
+00:04:13,550 --> 00:04:16,010
+And we'll make that a slice of string.
+
+69
+00:04:16,010 --> 00:04:20,270
+And that will be the full path name to any file we want to attach to the email message.
+
+70
+00:04:20,510 --> 00:04:22,430
+And we can have more than one because it's a slice.
+
+71
+00:04:24,990 --> 00:04:28,260
+Data, which will actually be the body of the message.
+
+72
+00:04:28,410 --> 00:04:30,420
+And it's a type I'm going to put any in there.
+
+73
+00:04:30,460 --> 00:04:30,810
+Okay.
+
+74
+00:04:31,620 --> 00:04:36,750
+And if you're not using go 1.18 or later, you'll have to put interface with curly brackets.
+
+75
+00:04:38,800 --> 00:04:39,550
+Data map.
+
+76
+00:04:39,730 --> 00:04:44,650
+Just a way, a convenient way of getting data to the actual template will be rendering as a type of
+
+77
+00:04:44,650 --> 00:04:45,760
+map string.
+
+78
+00:04:45,880 --> 00:04:46,840
+And again, any.
+
+79
+00:04:51,740 --> 00:04:56,450
+And lastly, what template do you want to use to render this?
+
+80
+00:04:57,230 --> 00:04:57,980
+And that's a string.
+
+81
+00:04:58,460 --> 00:04:58,770
+Okay.
+
+82
+00:04:58,940 --> 00:05:00,260
+So we'll save this to format it.
+
+83
+00:05:00,800 --> 00:05:01,880
+Now, there's are two types.
+
+84
+00:05:02,960 --> 00:05:04,400
+Now, let's put a comment here.
+
+85
+00:05:04,460 --> 00:05:04,790
+Okay.
+
+86
+00:05:05,150 --> 00:05:14,240
+What we're going to have at some point is a function to listen for messages on the Maler channel.
+
+87
+00:05:14,390 --> 00:05:15,980
+We're going to have to have one of those later on.
+
+88
+00:05:16,040 --> 00:05:17,720
+But we'll just put a comment there for right now.
+
+89
+00:05:18,560 --> 00:05:24,020
+Then we'll have a function with a receiver of M a pointer to the mail type, not map mail type.
+
+90
+00:05:24,020 --> 00:05:24,830
+We just set up.
+
+91
+00:05:25,550 --> 00:05:28,130
+And that's just going to be one called send mail.
+
+92
+00:05:28,250 --> 00:05:30,230
+And that will allow us to send an email message.
+
+93
+00:05:30,230 --> 00:05:32,520
+And that will take as one one of its parameters.
+
+94
+00:05:32,580 --> 00:05:36,920
+MSG of type message, that second type we just defined.
+
+95
+00:05:37,700 --> 00:05:42,500
+And then we'll also take the error channel, which is a channel error.
+
+96
+00:05:43,490 --> 00:05:43,820
+Okay.
+
+97
+00:05:44,810 --> 00:05:48,620
+Now, what do we want to do in this actual function?
+
+98
+00:05:48,980 --> 00:05:52,850
+Well, to start with, we'll check to see if they specified a custom template.
+
+99
+00:05:52,970 --> 00:05:55,790
+So we'll say if msgid a template.
+
+100
+00:05:56,750 --> 00:06:00,530
+If that's equal to an empty string, then we'll use the default template.
+
+101
+00:06:00,530 --> 00:06:05,900
+And if you look over here in the templates folder, we have two that begin with the word mail.
+
+102
+00:06:05,930 --> 00:06:11,840
+One is mailed HTML to go each HTML and one is mailed up plain go to good HTML.
+
+103
+00:06:12,530 --> 00:06:17,330
+Now, obviously, when we send email, we don't want to send a plain text email as the only means of
+
+104
+00:06:17,330 --> 00:06:18,800
+communicating with our customers.
+
+105
+00:06:19,400 --> 00:06:21,620
+So we'll actually send it in two formats.
+
+106
+00:06:21,980 --> 00:06:28,190
+One plain text, which is visible to any email client anywhere on the planet, and one that is actually
+
+107
+00:06:28,190 --> 00:06:30,170
+going to be used by the vast majority of them.
+
+108
+00:06:30,500 --> 00:06:32,750
+A nicely formatted HTML message.
+
+109
+00:06:33,170 --> 00:06:39,020
+So if they don't specify if we're sending email to this function and it doesn't specify anything in
+
+110
+00:06:39,020 --> 00:06:41,870
+the message template, then we'll just use the default one.
+
+111
+00:06:42,080 --> 00:06:48,260
+And all we have to do is say message dot template is equal to mail because that will capture both mail,
+
+112
+00:06:48,620 --> 00:06:51,290
+HTML, Deutsch HTML and the plain text message.
+
+113
+00:06:51,440 --> 00:06:51,740
+Okay.
+
+114
+00:06:51,860 --> 00:06:53,090
+That's the first thing we'll check.
+
+115
+00:06:54,320 --> 00:06:59,030
+The second thing, did we specify a custom from address in this message?
+
+116
+00:06:59,090 --> 00:06:59,540
+If
+
+117
+00:07:02,370 --> 00:07:07,340
+MSG from is equal to an empty string, then we'll use the default.
+
+118
+00:07:07,340 --> 00:07:12,080
+One message to off from is equal to right from the receiver.
+
+119
+00:07:12,080 --> 00:07:14,060
+M dot from address.
+
+120
+00:07:16,600 --> 00:07:17,860
+And the same thing with the name.
+
+121
+00:07:18,220 --> 00:07:25,210
+If messaged from name is equal to an empty string, then message
+
+122
+00:07:28,000 --> 00:07:31,990
+from name is equal to.
+
+123
+00:07:33,110 --> 00:07:35,140
+Import from me.
+
+124
+00:07:36,520 --> 00:07:37,010
+Right there.
+
+125
+00:07:37,500 --> 00:07:37,810
+Okay.
+
+126
+00:07:37,850 --> 00:07:39,320
+So that takes care of the defaults.
+
+127
+00:07:42,110 --> 00:07:47,660
+Now, what we're going to do is send information to these two templates.
+
+128
+00:07:47,660 --> 00:07:49,790
+And if you look at the plaintext one, for example.
+
+129
+00:07:50,790 --> 00:07:51,630
+It's really simple.
+
+130
+00:07:51,870 --> 00:07:58,440
+What we're doing is having one define with the name body and we're putting the value message in there.
+
+131
+00:07:58,440 --> 00:08:02,730
+In other words, data that's passed to this template and we do the same thing in go each time out.
+
+132
+00:08:03,630 --> 00:08:08,460
+The only thing that's dynamic in this particular template is on line 19, which is dot message.
+
+133
+00:08:08,560 --> 00:08:09,900
+So let's close both of these.
+
+134
+00:08:11,640 --> 00:08:15,450
+That means we need to pass data to this template.
+
+135
+00:08:15,690 --> 00:08:23,250
+So let's define a variable data, and that's going to be a sign the value of a map of string.
+
+136
+00:08:24,060 --> 00:08:24,690
+That's the key.
+
+137
+00:08:24,690 --> 00:08:32,220
+We look things up with an any and then we'll populate one value in that map with the name message,
+
+138
+00:08:32,220 --> 00:08:34,350
+which is what the template is going to be looking for.
+
+139
+00:08:34,890 --> 00:08:40,260
+And the value of that is going to be MSG, dot, data, whatever we got as a call to this function.
+
+140
+00:08:40,440 --> 00:08:40,830
+Okay.
+
+141
+00:08:41,610 --> 00:08:48,570
+And then we set a MSG data map right there to be equal to data.
+
+142
+00:08:49,110 --> 00:08:50,310
+That map we just created.
+
+143
+00:08:51,270 --> 00:08:55,580
+Now, the next thing we want to do is to actually build two versions of the message.
+
+144
+00:08:55,620 --> 00:09:01,020
+So we want to build each HTML mail, and then we want to build plane mail.
+
+145
+00:09:01,200 --> 00:09:02,070
+Plain text mail.
+
+146
+00:09:03,120 --> 00:09:03,450
+Okay.
+
+147
+00:09:03,930 --> 00:09:08,610
+Now, I can do that right in this function, but what I'm going to do is actually break that out into
+
+148
+00:09:08,610 --> 00:09:10,080
+its own function, each one of these.
+
+149
+00:09:10,260 --> 00:09:10,480
+Okay.
+
+150
+00:09:10,530 --> 00:09:13,560
+So I'll call a function that doesn't exist yet, which I often do.
+
+151
+00:09:15,090 --> 00:09:20,820
+So I'll declare a variable formatted message while checking for an error.
+
+152
+00:09:20,880 --> 00:09:29,640
+When I call from M the receiver there is going to be in a moment a function called build each HTML message
+
+153
+00:09:30,420 --> 00:09:32,640
+and it just takes a MSG as a parameter.
+
+154
+00:09:32,760 --> 00:09:33,180
+Okay.
+
+155
+00:09:33,480 --> 00:09:42,330
+And then I'll copy this whole thing and paste it here and change the name to plain message.
+
+156
+00:09:43,920 --> 00:09:47,370
+And I'll change this to build plain message.
+
+157
+00:09:47,910 --> 00:09:49,320
+Plain text message.
+
+158
+00:09:49,560 --> 00:09:49,920
+Okay.
+
+159
+00:09:50,730 --> 00:09:52,350
+And of course, I should check for errors.
+
+160
+00:09:53,070 --> 00:09:57,010
+So I'll say if error is not equal to nil.
+
+161
+00:09:57,870 --> 00:10:03,540
+What I'm going to do at this point is actually send this to the channel that I received as a second
+
+162
+00:10:03,540 --> 00:10:05,280
+parameter to the code of this function.
+
+163
+00:10:05,790 --> 00:10:09,750
+I'll send error channel whatever the error was.
+
+164
+00:10:10,710 --> 00:10:11,010
+Okay.
+
+165
+00:10:11,290 --> 00:10:14,910
+And I'll copy this and paste it here.
+
+166
+00:10:17,070 --> 00:10:21,570
+And down below this, I'll just create stub functions that I'll fill it in moment.
+
+167
+00:10:21,630 --> 00:10:30,390
+So I'll set func with receiver of m pointer to to mail and I call the first one build to mail message
+
+168
+00:10:30,540 --> 00:10:38,760
+and it will take one parameter MSG of type message and it returns a string in an error.
+
+169
+00:10:39,750 --> 00:10:40,080
+Okay.
+
+170
+00:10:41,010 --> 00:10:43,490
+And then I'll have this for the moment.
+
+171
+00:10:43,510 --> 00:10:47,390
+Return an empty string and nil, and we'll fix this up in a minute.
+
+172
+00:10:47,410 --> 00:10:48,360
+This is just a stub.
+
+173
+00:10:48,440 --> 00:10:55,990
+So then I'll copy this whole thing and paste it beneath it and call this one build plain text message.
+
+174
+00:10:58,960 --> 00:10:59,290
+Okay.
+
+175
+00:11:00,100 --> 00:11:05,440
+So we'll fill we'll fill these things out in a minute, but let's go back up to our send mail function.
+
+176
+00:11:05,560 --> 00:11:09,700
+And after I make the call to those two functions, I just created stubs.
+
+177
+00:11:09,700 --> 00:11:16,180
+For now I need to create an SMTP client something in my code that will connect to the mail server.
+
+178
+00:11:16,270 --> 00:11:17,380
+So I'll call that server.
+
+179
+00:11:18,070 --> 00:11:23,740
+And that's a sign the value of from the mail package we just installed a little while ago.
+
+180
+00:11:23,740 --> 00:11:27,100
+And I may have to go do this import import in a moment, but we'll find out.
+
+181
+00:11:27,550 --> 00:11:29,560
+I want a new SMTP client.
+
+182
+00:11:29,590 --> 00:11:30,820
+No, they found it for me.
+
+183
+00:11:32,670 --> 00:11:36,480
+Now let's go up to the top and make sure that imported the correct package.
+
+184
+00:11:37,320 --> 00:11:39,120
+And it needs to be av2, I think.
+
+185
+00:11:40,650 --> 00:11:41,010
+Okay.
+
+186
+00:11:41,280 --> 00:11:44,520
+I must have imported it before it was actually versioned at version two.
+
+187
+00:11:45,060 --> 00:11:48,840
+So I have this server variable now and I would just set some values on it.
+
+188
+00:11:48,870 --> 00:11:50,340
+So what is the server host?
+
+189
+00:11:50,520 --> 00:11:51,600
+Server to host.
+
+190
+00:11:52,080 --> 00:11:52,740
+Try that again.
+
+191
+00:11:52,800 --> 00:11:53,310
+Host.
+
+192
+00:11:53,970 --> 00:11:55,680
+Is equal to import host.
+
+193
+00:11:57,870 --> 00:12:04,410
+And server port is equal to import port and server.
+
+194
+00:12:04,410 --> 00:12:11,310
+Port username is equal to import username and server password is equal to my password.
+
+195
+00:12:11,570 --> 00:12:16,140
+And again, I'm just putting in all the information that's necessary to connect to an actual server.
+
+196
+00:12:17,880 --> 00:12:22,740
+Now the next one is server dot encryption, server dot encryption.
+
+197
+00:12:23,910 --> 00:12:29,640
+And if you actually go look at the package, the mail or package we installed, you'll discover that
+
+198
+00:12:29,640 --> 00:12:32,190
+it has it supports various kinds of encryption.
+
+199
+00:12:32,220 --> 00:12:39,280
+But I don't know right now what server this actual code is going to be connecting to, what mail server.
+
+200
+00:12:39,300 --> 00:12:42,310
+So what I'm going to do is scroll down below all of this.
+
+201
+00:12:42,330 --> 00:12:44,950
+I'll just leave that as it is for right now.
+
+202
+00:12:45,180 --> 00:12:47,040
+Will finish line 74 in a moment.
+
+203
+00:12:47,460 --> 00:12:52,200
+I want to write another function that will allow me to get the encryption method for a particular server
+
+204
+00:12:52,200 --> 00:12:57,690
+because there are certain constants we have to use with this mail or package and it's really easy func
+
+205
+00:12:57,690 --> 00:13:04,110
+receiver of imported a mail mail and we'll call this get encryption.
+
+206
+00:13:04,950 --> 00:13:05,340
+Okay.
+
+207
+00:13:05,400 --> 00:13:11,880
+And it's going to take one parameter E for encryption, which is a string, and it's going to return
+
+208
+00:13:12,240 --> 00:13:16,470
+from the mail package, the encryption type, which comes as a constant.
+
+209
+00:13:16,860 --> 00:13:24,210
+And all we have to do is type of switch, statement, switch on E and the first case will be the string
+
+210
+00:13:24,210 --> 00:13:24,870
+kills.
+
+211
+00:13:25,410 --> 00:13:32,240
+If that's what it specified, then we'll return from the mail package encryption start.
+
+212
+00:13:32,280 --> 00:13:33,690
+Tell us right there.
+
+213
+00:13:33,870 --> 00:13:34,260
+Okay.
+
+214
+00:13:35,730 --> 00:13:45,570
+But if the case happens to be SSL, then we'll return from the mail package, encryption, SSL, TLS.
+
+215
+00:13:46,170 --> 00:13:47,210
+And again, that's the right one.
+
+216
+00:13:47,220 --> 00:13:47,700
+Yes, it is.
+
+217
+00:13:47,700 --> 00:13:48,090
+Okay.
+
+218
+00:13:49,140 --> 00:13:57,810
+And if the case is none, which is what we'll be using in development, then we'll return mail dot encryption
+
+219
+00:13:59,040 --> 00:14:04,560
+right there and we'll put it in a default case just to capture the most, most common ones.
+
+220
+00:14:04,590 --> 00:14:10,770
+If nothing is specified, then we'll return mail dot encryption start TLS.
+
+221
+00:14:10,830 --> 00:14:12,660
+That's far and away the most common one.
+
+222
+00:14:12,750 --> 00:14:14,040
+So now I have to get encryption.
+
+223
+00:14:14,190 --> 00:14:20,370
+And what I can do is back up here on line 74 and my code that will be equal to m dot and get encryption
+
+224
+00:14:20,640 --> 00:14:24,180
+and will hand it m dot encryption as the parameter.
+
+225
+00:14:24,330 --> 00:14:24,720
+Okay.
+
+226
+00:14:24,750 --> 00:14:29,130
+And that sets up the encryption and just a few more servers to keep alive.
+
+227
+00:14:29,160 --> 00:14:31,770
+Do I want to keep my connection to the mail server a lot?
+
+228
+00:14:31,790 --> 00:14:35,610
+Well, we're not going to be sending mail every second, so I'll say false.
+
+229
+00:14:36,090 --> 00:14:36,390
+Okay.
+
+230
+00:14:37,530 --> 00:14:41,610
+And server disconnect timer.
+
+231
+00:14:41,880 --> 00:14:42,600
+We'll just set that.
+
+232
+00:14:42,600 --> 00:14:43,680
+There's something logical.
+
+233
+00:14:43,680 --> 00:14:46,170
+This should be running in the background, so we'll give it 10 seconds.
+
+234
+00:14:46,560 --> 00:14:48,120
+Ten times time dot second.
+
+235
+00:14:49,730 --> 00:14:52,340
+And we'll do the same thing for server.
+
+236
+00:14:52,340 --> 00:14:54,940
+Send time out right here.
+
+237
+00:14:59,120 --> 00:14:59,450
+Okay.
+
+238
+00:15:00,470 --> 00:15:03,590
+So that describes everything I need to connect to that server.
+
+239
+00:15:03,620 --> 00:15:10,940
+Now let's create the client, SMTP client, which is a variable I'm declaring right now and potentially
+
+240
+00:15:10,940 --> 00:15:16,820
+an error come from calling server that variable which is created to connect.
+
+241
+00:15:17,570 --> 00:15:23,150
+And if we get an error, if error is not equal to nil, once again, we'll just send that to the error
+
+242
+00:15:23,150 --> 00:15:23,540
+chat.
+
+243
+00:15:23,580 --> 00:15:24,890
+I missed an equal sign there.
+
+244
+00:15:26,420 --> 00:15:28,220
+We'll send that error to the error chat.
+
+245
+00:15:28,400 --> 00:15:28,790
+Okay.
+
+246
+00:15:28,850 --> 00:15:32,300
+So error can get whatever the error is.
+
+247
+00:15:34,100 --> 00:15:34,490
+Okay.
+
+248
+00:15:34,910 --> 00:15:36,320
+So let's go beyond this now.
+
+249
+00:15:37,860 --> 00:15:42,930
+And let's create an email message using the information that we received in that variable MSG.
+
+250
+00:15:43,150 --> 00:15:49,860
+Well, call this email and it comes from the mail package, not new MSG.
+
+251
+00:15:50,880 --> 00:15:51,210
+Okay.
+
+252
+00:15:52,140 --> 00:15:53,640
+And we'll set the from information.
+
+253
+00:15:54,570 --> 00:16:06,040
+So email dot set from and that will be set to msg dot from and then a dot and then it will say add two.
+
+254
+00:16:07,140 --> 00:16:08,790
+So we're going to add it to address to this.
+
+255
+00:16:08,790 --> 00:16:10,590
+And of course, that's MSG data.
+
+256
+00:16:12,120 --> 00:16:14,940
+And then we'll set the subject, set subject.
+
+257
+00:16:17,150 --> 00:16:19,340
+And that will be a major subject.
+
+258
+00:16:23,410 --> 00:16:28,630
+So that gives me an empty e-mail message with the correct to and from information in the subject set.
+
+259
+00:16:28,630 --> 00:16:29,920
+But we still have to put it in the body.
+
+260
+00:16:30,400 --> 00:16:32,110
+So email, dot, set body.
+
+261
+00:16:34,000 --> 00:16:37,690
+And by default, the body of our message will be the plain text.
+
+262
+00:16:37,720 --> 00:16:43,600
+So we'll use mailed out text plain to describe the kind of content we're adding, and that's just a
+
+263
+00:16:43,600 --> 00:16:45,010
+constant return of that package.
+
+264
+00:16:45,280 --> 00:16:53,560
+And then we put in plain message and then to get the HTML format in their email dot and alternative.
+
+265
+00:16:54,580 --> 00:16:56,860
+And that's the type mail from the mail package.
+
+266
+00:16:57,250 --> 00:17:01,960
+Text, HTML, and we put our formatted message in.
+
+267
+00:17:03,430 --> 00:17:03,760
+Okay.
+
+268
+00:17:03,820 --> 00:17:07,270
+So now we have an SMP client, we have an e-mail message all set up.
+
+269
+00:17:07,390 --> 00:17:09,160
+We've connected to our mail server.
+
+270
+00:17:09,700 --> 00:17:13,570
+The next step before we actually send this is to check if there's any attachments.
+
+271
+00:17:14,230 --> 00:17:22,030
+And we do that by saying if the length of MSG dot attachments is greater than zero, then we need to
+
+272
+00:17:22,030 --> 00:17:22,920
+add the attachments.
+
+273
+00:17:22,930 --> 00:17:27,610
+So we just range through that slice for we don't care about the index, we do care about the current
+
+274
+00:17:27,610 --> 00:17:34,390
+thing, which I'll call X comes from range through MSG, dot attachments.
+
+275
+00:17:35,590 --> 00:17:38,530
+And each time we arrange through that, through this we just add an attachment.
+
+276
+00:17:38,530 --> 00:17:43,870
+And that's as easy as saying email and attachment and attachment right there.
+
+277
+00:17:44,110 --> 00:17:47,890
+And we're adding X, which is the variable I declared right there in line 92.
+
+278
+00:17:48,670 --> 00:17:51,010
+So now we have our attachments, we have everything all set.
+
+279
+00:17:51,010 --> 00:17:52,930
+Let's try sending the email.
+
+280
+00:17:53,050 --> 00:17:55,540
+And we do that by saying error is equal to.
+
+281
+00:17:58,320 --> 00:18:03,670
+Email that sent and we had it sent to the client as a parameter.
+
+282
+00:18:03,690 --> 00:18:04,800
+That's how we're sending it.
+
+283
+00:18:05,100 --> 00:18:06,490
+And once again, we do an error check.
+
+284
+00:18:06,510 --> 00:18:10,800
+So I'll copy this and paste this right below that.
+
+285
+00:18:13,580 --> 00:18:14,030
+Okay.
+
+286
+00:18:14,030 --> 00:18:20,360
+So the last thing to do is to actually build the HTML message and build a plain text message.
+
+287
+00:18:20,480 --> 00:18:25,100
+But this lecture's getting fairly long, so we'll pick that up in the next lecture.

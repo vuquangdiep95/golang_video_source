@@ -1,0 +1,247 @@
+1
+00:00:11,860 --> 00:00:16,810
+Hello and welcome to the golden programming language course in the previous session.
+
+2
+00:00:17,110 --> 00:00:24,040
+We were able to implement the silver layer, and in this session we want to implement the client layer.
+
+3
+00:00:25,090 --> 00:00:36,780
+So go to Package Expeller and go to website, get folder and create a folder name like Cloudflare Client
+
+4
+00:00:37,810 --> 00:00:41,830
+Layer and inside it.
+
+5
+00:00:41,920 --> 00:00:47,830
+Create the file name like client that go layer.
+
+6
+00:00:48,760 --> 00:00:49,180
+Go
+
+7
+00:00:51,850 --> 00:00:54,580
+now, set the package name package.
+
+8
+00:00:55,030 --> 00:00:55,690
+Main.
+
+9
+00:00:57,970 --> 00:01:06,520
+OK, in this file, we have to do the things related to setting up the client and client needs to connect
+
+10
+00:01:06,520 --> 00:01:07,270
+to the server.
+
+11
+00:01:07,600 --> 00:01:16,210
+So define a main method if the first client must communicate with the server.
+
+12
+00:01:16,660 --> 00:01:21,430
+To do this, we call the dial function from the vets to get package.
+
+13
+00:01:22,090 --> 00:01:26,440
+The function opens a new client connection to a verb subject.
+
+14
+00:01:27,100 --> 00:01:34,770
+This function accepts through our unions and return to values first, connection and second and then
+
+15
+00:01:34,780 --> 00:01:35,030
+all.
+
+16
+00:01:35,410 --> 00:01:42,760
+So first define to variable like connection and error connection comma error.
+
+17
+00:01:42,790 --> 00:01:46,360
+Column equals that suggests.
+
+18
+00:01:49,660 --> 00:01:50,590
+Don't go off.
+
+19
+00:01:57,530 --> 00:02:06,530
+First argument is a silver address that in this case, it is localhost and we defined a 85 port for
+
+20
+00:02:06,530 --> 00:02:14,630
+it when we use events to get our protocol is not issued DP type, but it is a double US type.
+
+21
+00:02:15,080 --> 00:02:27,680
+So we write double quotation marks the Avenue S Column S slash 127.0.0.1 as localhost
+
+22
+00:02:30,260 --> 00:02:34,370
+column 885 as Port No.
+
+23
+00:02:36,980 --> 00:02:40,700
+The second argument is specifies the time of port.
+
+24
+00:02:40,700 --> 00:02:46,610
+Of course, this argument is set when the type of protocol is not as specified in the address.
+
+25
+00:02:47,300 --> 00:02:52,910
+And since we specified the time of port going into your head, we no longer need to set this argument.
+
+26
+00:02:53,720 --> 00:02:56,030
+So set a double quotation marks.
+
+27
+00:03:02,090 --> 00:03:11,030
+And third, human requires us to have an origin where we send the IP class as the origin to the function.
+
+28
+00:03:11,210 --> 00:03:18,050
+So we have to implement a method to create the IP client, for example, create the function named like
+
+29
+00:03:18,050 --> 00:03:22,700
+create IP, create IP.
+
+30
+00:03:26,540 --> 00:03:30,920
+So go out of this function and implement the create IP method.
+
+31
+00:03:34,040 --> 00:03:44,000
+This function suppose to return estimated value values so we define farm, create IP and return type
+
+32
+00:03:44,000 --> 00:03:45,080
+is estranged.
+
+33
+00:03:49,130 --> 00:03:54,110
+Now you should create an IEP, since IEP consists of four parts.
+
+34
+00:03:54,290 --> 00:03:58,160
+We need to create a four element at eight by the end type.
+
+35
+00:03:58,370 --> 00:04:07,010
+So we write that IEP for by the Typekit.
+
+36
+00:04:08,630 --> 00:04:17,600
+Now we want to initialize daddy for do this using end end function from the Randt package, we assign
+
+37
+00:04:17,600 --> 00:04:24,380
+the random number between zero and two hundred and fifty six to each of the three cells created.
+
+38
+00:04:24,980 --> 00:04:28,700
+We do this through a follow up to number of the adding members.
+
+39
+00:04:29,030 --> 00:04:33,860
+It is for forces to set the ADI, so we write for
+
+40
+00:04:36,980 --> 00:04:42,290
+I call an equals zero I less than
+
+41
+00:04:44,840 --> 00:04:51,770
+lenn of array and I + +.
+
+42
+00:04:52,970 --> 00:04:58,760
+In order for the generated number not to be the same, he is the seat function from the and package
+
+43
+00:04:59,360 --> 00:05:07,190
+seat function uses the provided seat value to initialize the default source to a deterministic estate
+
+44
+00:05:08,030 --> 00:05:11,660
+and Connie now function of time packaged as argument for it.
+
+45
+00:05:11,930 --> 00:05:16,850
+So the ride ran don't seat
+
+46
+00:05:19,940 --> 00:05:25,040
+and calling now function from time package time.
+
+47
+00:05:25,790 --> 00:05:31,910
+Don't now, don't you need now.
+
+48
+00:05:36,720 --> 00:05:37,750
+Now, right.
+
+49
+00:05:37,770 --> 00:05:54,210
+IP index AI equals cunning int in function of Rand Packer's Rand Darts end in fonctionne and set two
+
+50
+00:05:54,210 --> 00:05:57,390
+hundred and fifty six as argument for it.
+
+51
+00:05:57,690 --> 00:05:59,610
+Two hundred and fifty six.
+
+52
+00:06:02,670 --> 00:06:12,350
+Now we create and return IP using the Sprint F function from the FMD package, so we right return T
+
+53
+00:06:12,360 --> 00:06:15,090
+dot a screen test.
+
+54
+00:06:21,670 --> 00:06:22,420
+TTP.
+
+55
+00:06:23,260 --> 00:06:25,720
+Column ss ss.
+
+56
+00:06:25,930 --> 00:06:30,930
+Person to person, to person to person.
+
+57
+00:06:31,740 --> 00:06:31,990
+The
+
+58
+00:06:36,210 --> 00:06:48,640
+Ansip IPA adding elements as all human for this method IPA Index zero for First Element IP Index, one
+
+59
+00:06:48,640 --> 00:06:59,710
+for second variable IP Index, two for Third Element and IP Index today for Forced Element.
+
+60
+00:07:01,330 --> 00:07:07,570
+Now we could define create IP function in order not to prolong the time of the session.
+
+61
+00:07:07,570 --> 00:07:11,260
+We will finish it and we will continue the content in the next session.
+
+62
+00:07:11,380 --> 00:07:11,950
+Goodbye.

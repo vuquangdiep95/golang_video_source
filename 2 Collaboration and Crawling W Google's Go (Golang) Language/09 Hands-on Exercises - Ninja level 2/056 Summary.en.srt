@@ -1,0 +1,479 @@
+1
+00:00:00,300 --> 00:00:06,690
+That's a really powerful skill that we just acquired like understanding dependency management package
+
+2
+00:00:06,690 --> 00:00:09,190
+management having package management.
+
+3
+00:00:09,190 --> 00:00:11,910
+That's not going to go ghost on you.
+
+4
+00:00:11,910 --> 00:00:12,320
+Right.
+
+5
+00:00:12,320 --> 00:00:14,080
+Like with NPM.
+
+6
+00:00:14,220 --> 00:00:16,700
+You were like I don't know that code used to be there.
+
+7
+00:00:16,700 --> 00:00:18,540
+The guy turned off his computer it's gone.
+
+8
+00:00:18,930 --> 00:00:21,940
+And like half of the universe stops working for an hour.
+
+9
+00:00:22,140 --> 00:00:29,490
+Because they have the module Mir which is a proxy and that proxy is storing everything and by the way
+
+10
+00:00:29,490 --> 00:00:35,310
+if you don't want stuff stored there you've got to go private variable which you could set for modules
+
+11
+00:00:35,310 --> 00:00:41,850
+that you create and then use go modules instead of your go path the old way the workspace then package
+
+12
+00:00:41,850 --> 00:00:45,030
+source folder right in the name spacing under source.
+
+13
+00:00:45,030 --> 00:00:52,260
+We learned about name spacing you now use modules instead of that and with modules anywhere on your
+
+14
+00:00:52,260 --> 00:00:56,360
+computer you just say hey this is a module and you set the namespace.
+
+15
+00:00:56,370 --> 00:01:01,050
+You set the namespace so that namespace is whatever you want it to be.
+
+16
+00:01:01,050 --> 00:01:07,500
+I use that goofy you to Mickey Mouse Donald Duck and Daphne or whatever it was or you know it's best
+
+17
+00:01:07,500 --> 00:01:14,070
+to connect it was something on the web so that we're if you want other people to access your code so
+
+18
+00:01:14,070 --> 00:01:19,370
+that when your code is up there you know it's stored or just so that you know where it's stored.
+
+19
+00:01:19,380 --> 00:01:27,250
+If it's private write your modules connected at this storage location so domain and then whatever else.
+
+20
+00:01:27,360 --> 00:01:33,660
+And so we learn that and we also learn how to create a module that could be access and used by you or
+
+21
+00:01:33,690 --> 00:01:40,470
+anybody and and connecting that to get hub and then pushing it up there and adding a version so that
+
+22
+00:01:40,470 --> 00:01:45,650
+you can now increment your versions and we learned about versioning major minor in Patch.
+
+23
+00:01:45,750 --> 00:01:51,570
+And so how you add those numbers and where and when you would major breaks backwards compatibility minor
+
+24
+00:01:51,570 --> 00:01:56,240
+does not you know it's backwards compatible and patches backwards compatible.
+
+25
+00:01:56,370 --> 00:02:02,670
+What else do we learn in that some some good stuff how to eat how to upgrade from you can have multiple
+
+26
+00:02:02,670 --> 00:02:07,800
+versions of a packet of a module at the same time so incremental upgrades
+
+27
+00:02:10,440 --> 00:02:11,200
+and what else.
+
+28
+00:02:11,200 --> 00:02:12,380
+Anything else.
+
+29
+00:02:12,780 --> 00:02:17,220
+In the end all the various tag the tag stuff text that's the useful even if you're not intending it
+
+30
+00:02:17,220 --> 00:02:25,850
+to be used by others just as kind of a this is a you would tag a version that you consider working so
+
+31
+00:02:25,880 --> 00:02:30,720
+you may have like three commits before you put it another tag because your code was not fully functional
+
+32
+00:02:30,720 --> 00:02:35,480
+during those other two minutes in the middle and then the third version.
+
+33
+00:02:35,480 --> 00:02:37,730
+Third mate Nico it's all functional out attack.
+
+34
+00:02:37,740 --> 00:02:43,560
+There is now version one point two.
+
+35
+00:02:43,590 --> 00:02:44,730
+All right Suzanne good stuff.
+
+36
+00:02:44,730 --> 00:02:49,890
+I hope you enjoyed that and we're gonna sit back and reflect over the weekend on what to teach you next.
+
+37
+00:02:50,040 --> 00:02:57,480
+I know that curl is something that is potentially on our horizon as well as some of the items down here
+
+38
+00:02:58,410 --> 00:03:01,700
+context package continuous integration build pipeline.
+
+39
+00:03:01,770 --> 00:03:03,390
+I don't know if that's going to fit into this.
+
+40
+00:03:03,390 --> 00:03:04,500
+What we're doing.
+
+41
+00:03:05,150 --> 00:03:11,430
+You know just a note there to talk about documentation and that's not so much going to fit in but interfaces
+
+42
+00:03:11,430 --> 00:03:20,160
+and middleware and testing and benchmarking and then also creating some sort of monolithic application
+
+43
+00:03:20,190 --> 00:03:25,680
+but this entire process up to this point has kind of surprised me it took longer than I thought.
+
+44
+00:03:25,710 --> 00:03:32,850
+So this might end up being a course in and of itself pretty close just like some damn fundamental skills
+
+45
+00:03:33,180 --> 00:03:37,560
+and we might do the monolith course in another one because in the past my courses have all been really
+
+46
+00:03:37,560 --> 00:03:42,780
+long and so I'm trying to break those up into the six to eight hour range so we'll edit this all up
+
+47
+00:03:43,230 --> 00:03:44,880
+and we'll see where we are at.
+
+48
+00:03:44,920 --> 00:03:51,690
+And and then we might have a second course instead of making this one monolithic course after that.
+
+49
+00:03:51,690 --> 00:03:52,130
+All right.
+
+50
+00:03:52,200 --> 00:03:57,180
+You have anything you want to say or add before we 442 we did pretty good we got 18 minutes left before
+
+51
+00:03:57,180 --> 00:03:58,140
+we head out for the weekend.
+
+52
+00:03:58,140 --> 00:04:01,680
+Anything else you want to add any personal anecdotes.
+
+53
+00:04:01,680 --> 00:04:05,030
+So it's just personal anecdotes from this point for now.
+
+54
+00:04:05,390 --> 00:04:07,140
+No.
+
+55
+00:04:07,890 --> 00:04:13,480
+Let me see if I have any personal anecdotes so I was thinking of.
+
+56
+00:04:13,960 --> 00:04:20,410
+I had one idea for software in the middle of night last night and in business there is this thing called
+
+57
+00:04:20,410 --> 00:04:26,130
+the Hawthorne effect I think that's what it's called Hawthorne effect Yeah.
+
+58
+00:04:26,160 --> 00:04:32,220
+Ricky and they study type of reactive in which individuals modify an aspect to their behavior in response
+
+59
+00:04:32,220 --> 00:04:39,660
+to the awareness that being observed and so they study back in the day people on the factory floor it
+
+60
+00:04:39,660 --> 00:04:45,420
+scientists come in academics and they said we're gonna study how you all are working and how the level
+
+61
+00:04:45,510 --> 00:04:48,630
+light in the factory affects your performance.
+
+62
+00:04:48,630 --> 00:04:52,200
+And so they turned up the light they made it really bright and productivity went up and they said that's
+
+63
+00:04:52,200 --> 00:04:53,250
+interesting.
+
+64
+00:04:53,250 --> 00:04:56,560
+And then they turned down the light and they made it darker than it was normally.
+
+65
+00:04:56,640 --> 00:04:59,640
+And productivity went up even higher and they're confused.
+
+66
+00:04:59,700 --> 00:05:02,650
+And then what they realized was the light had nothing to do with it.
+
+67
+00:05:02,650 --> 00:05:04,500
+Well they're as bright or dim.
+
+68
+00:05:04,500 --> 00:05:07,850
+And what mattered was whether or not the individuals were being observed.
+
+69
+00:05:07,950 --> 00:05:12,100
+And so with the Hawthorne effect and also with this idea of reflection.
+
+70
+00:05:12,120 --> 00:05:18,750
+So if we reflect upon who we are and what we're doing at work I had an idea for like some software that
+
+71
+00:05:18,750 --> 00:05:25,260
+would allow employees to sort of like get hub log what they do every day.
+
+72
+00:05:25,380 --> 00:05:30,480
+And so that would track there'd be a system that would track kind of like before you went to lunch.
+
+73
+00:05:30,480 --> 00:05:32,790
+Here's what I did from 8:00 to noon.
+
+74
+00:05:32,790 --> 00:05:35,700
+And then after you came back you know before he left for the day.
+
+75
+00:05:35,700 --> 00:05:41,010
+Here's what I did from 1 to 5 met and made these contacts I have these leads here are the phone numbers
+
+76
+00:05:41,010 --> 00:05:45,060
+the emails had a conversation with this person to a log all of your activity.
+
+77
+00:05:45,300 --> 00:05:51,990
+So it's basically like get hub but for people who are in sales or people who are you know I don't know
+
+78
+00:05:51,990 --> 00:05:53,790
+what else is there engineering and sales
+
+79
+00:05:56,580 --> 00:06:01,260
+you know whatever your position is you'd be logging your activity for the day and then you could run
+
+80
+00:06:01,380 --> 00:06:05,530
+a email against all of that to try to find efficiencies.
+
+81
+00:06:05,880 --> 00:06:10,820
+And also most importantly I could try to bring cohesion to the organization.
+
+82
+00:06:10,830 --> 00:06:15,810
+So the organization would know what it knows more effectively know what it knows.
+
+83
+00:06:15,810 --> 00:06:17,690
+And because you'd see who's doing what.
+
+84
+00:06:17,700 --> 00:06:24,440
+But then also people would feel like whatever they're doing there they're not having a quarterly evaluation
+
+85
+00:06:24,440 --> 00:06:29,840
+and not having an annual or every in academia I get evaluated every three years that's it.
+
+86
+00:06:30,090 --> 00:06:30,390
+Right.
+
+87
+00:06:30,390 --> 00:06:35,780
+It's like every four hours somebody might be looking their people up above in the machine learning to
+
+88
+00:06:35,780 --> 00:06:38,750
+be looking at what they've done over the last four hours.
+
+89
+00:06:39,060 --> 00:06:43,500
+And so with that sense of OK I got to be on point.
+
+90
+00:06:43,500 --> 00:06:48,030
+It could lead to increased productivity might just make everybody stressed out at work.
+
+91
+00:06:48,210 --> 00:06:54,240
+You know the guy who's studied efficiency see I'm actually going to google that.
+
+92
+00:06:54,290 --> 00:06:57,780
+The big guy who's studied efficiency
+
+93
+00:07:00,150 --> 00:07:03,100
+Frank Buck is crazy idea that Google would bring that up.
+
+94
+00:07:03,150 --> 00:07:09,900
+Frank Buck American author and pioneer time motion study right father and central figure I don't know
+
+95
+00:07:09,900 --> 00:07:13,940
+what Cheaper By The Dozen is but he was an efficiency expert.
+
+96
+00:07:13,940 --> 00:07:16,740
+I wonder if there's the shovel story in here.
+
+97
+00:07:17,130 --> 00:07:24,090
+So time efficient see shovels story.
+
+98
+00:07:24,180 --> 00:07:25,100
+Let's see.
+
+99
+00:07:25,530 --> 00:07:27,300
+Frederick Winslow Taylor.
+
+100
+00:07:27,300 --> 00:07:28,560
+That's it.
+
+101
+00:07:28,560 --> 00:07:31,830
+So wasn't this guy is Frederick Winslow Taylor.
+
+102
+00:07:31,860 --> 00:07:37,020
+So this guy Frederick Winslow Taylor studied how can people be more efficient.
+
+103
+00:07:37,030 --> 00:07:46,080
+And he would time them with a stopwatch and he just stressed everybody out and and and so he did this
+
+104
+00:07:46,080 --> 00:07:50,480
+with all of his kids and and and I think this is true.
+
+105
+00:07:50,490 --> 00:07:51,850
+Kids suicide.
+
+106
+00:07:52,320 --> 00:07:53,970
+All these kids killed themselves.
+
+107
+00:07:53,970 --> 00:07:56,850
+They're like this is too intense.
+
+108
+00:07:58,820 --> 00:08:00,310
+There were a decade after that.
+
+109
+00:08:00,310 --> 00:08:00,690
+I don't.
+
+110
+00:08:01,070 --> 00:08:09,090
+So that might just be that might be what do they call those cultural myths.
+
+111
+00:08:09,100 --> 00:08:11,020
+We're really onto a personal anecdote.
+
+112
+00:08:11,050 --> 00:08:14,100
+What do they call those cultural myths there.
+
+113
+00:08:14,150 --> 00:08:18,160
+There is a movie you probably know.
+
+114
+00:08:18,160 --> 00:08:23,440
+What is it cultural Miss.
+
+115
+00:08:23,520 --> 00:08:23,940
+I don't know.
+
+116
+00:08:24,030 --> 00:08:27,420
+So anyhow maybe it's just one of those cultural myths and it's not actually true.
+
+117
+00:08:27,420 --> 00:08:27,880
+All right.
+
+118
+00:08:27,880 --> 00:08:32,160
+A little bit of a personal anecdote and just some interesting information about efficiency but that
+
+119
+00:08:32,160 --> 00:08:40,970
+was the idea that came to me last night for some software could be interesting might be a light bill.
+
+120
+00:08:41,000 --> 00:08:42,410
+See you in the next video.

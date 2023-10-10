@@ -1,0 +1,199 @@
+1
+00:00:00,920 --> 00:00:01,120
+OK.
+
+2
+00:00:14,250 --> 00:00:20,550
+Hello and welcome to the goal and programming language course in the previous session, we talked about
+
+3
+00:00:20,550 --> 00:00:21,900
+if a skin function.
+
+4
+00:00:22,260 --> 00:00:27,450
+And in this session, we want to talk about the other half empty package concept.
+
+5
+00:00:31,050 --> 00:00:32,880
+If it's going to function.
+
+6
+00:00:35,350 --> 00:00:43,390
+The first kind of function in go language is carries the specified text read from Io dot reader and
+
+7
+00:00:43,390 --> 00:00:50,770
+then source the successive space separated values into successive humans as determined by the format.
+
+8
+00:00:51,190 --> 00:00:55,930
+Here are new lines in the input most match new lines in the format.
+
+9
+00:00:57,170 --> 00:01:00,400
+If of works similar to it, the skin.
+
+10
+00:01:00,820 --> 00:01:08,080
+The only difference is that if this kind of reads from reader in the specified format, rather than
+
+11
+00:01:08,080 --> 00:01:09,880
+following the default format, you.
+
+12
+00:01:11,920 --> 00:01:19,420
+The match case is sensitive, who walks the spaces and new lines and hands, the argument is true and
+
+13
+00:01:19,420 --> 00:01:21,880
+takes the string must match entirely.
+
+14
+00:01:22,510 --> 00:01:26,440
+Moreover, this function is defined under the empty package.
+
+15
+00:01:26,620 --> 00:01:31,390
+Here you need to import this empty package in order to use this function.
+
+16
+00:01:32,230 --> 00:01:35,590
+Now you can see the syntax parameters.
+
+17
+00:01:36,130 --> 00:01:40,660
+This function accepts three parameters which are illustrated below.
+
+18
+00:01:42,350 --> 00:01:53,210
+Our time is I owed the reader this parameter contains this can specify takes format assigning this parameter
+
+19
+00:01:53,210 --> 00:01:56,140
+contains different formats for receiving the elements.
+
+20
+00:01:56,900 --> 00:02:05,060
+A TV that interface this parameter is the specified variable for each element and returns value.
+
+21
+00:02:05,180 --> 00:02:08,660
+It returns the number of items successfully pass.
+
+22
+00:02:10,380 --> 00:02:16,800
+Now, let's go to a school with program to illustrate the uses of FSG and the function.
+
+23
+00:02:18,870 --> 00:02:21,570
+First declaring some type of variables.
+
+24
+00:02:21,960 --> 00:02:39,600
+I mean, it's strange that h in that mark float 32 and that these exit four is
+
+25
+00:02:43,200 --> 00:02:51,120
+now calling the new leader function to specify some type of text variable to skin contains the scan
+
+26
+00:02:51,120 --> 00:02:59,250
+tastes, so skin radiated collagen equals from this drinks package.
+
+27
+00:03:00,930 --> 00:03:02,760
+Select new reader function
+
+28
+00:03:06,060 --> 00:03:19,380
+and set value like Robert, 35, for age ninety point fifty four more and through for the ease exit.
+
+29
+00:03:20,190 --> 00:03:24,150
+Now calling the foreskin function to receive this scan takes.
+
+30
+00:03:24,420 --> 00:03:32,400
+So first, define two variable like number and your calling equals from the Affinity Package.
+
+31
+00:03:32,610 --> 00:03:34,710
+Select FC function
+
+32
+00:03:37,860 --> 00:03:38,290
+here.
+
+33
+00:03:38,320 --> 00:03:48,210
+Set I ordered reader in this case is Eskin variable Lescure and set Estyn formatting for defined variables
+
+34
+00:03:49,230 --> 00:03:50,100
+per cent.
+
+35
+00:03:50,100 --> 00:04:00,140
+Yes for name person B four eight person, F for Mark and person, P for ease, exit and set variables
+
+36
+00:04:00,900 --> 00:04:15,900
+and person name and Anderson age and Anderson March and Ampersand is exit.
+
+37
+00:04:21,000 --> 00:04:26,160
+If the above functional returns and there are 10 below statement will be executed.
+
+38
+00:04:26,190 --> 00:04:36,450
+E e are not equal to mean if n t don't def fiend
+
+39
+00:04:39,090 --> 00:04:54,210
+from OS Estero or s package that this t raw and set value for skin color person v backslash end and
+
+40
+00:04:54,210 --> 00:04:55,980
+set a rule value
+
+41
+00:04:59,490 --> 00:05:04,310
+now printing each type of a scanned text number of items successfully.
+
+42
+00:05:04,320 --> 00:05:11,550
+A scan FP number of elements.
+
+43
+00:05:15,020 --> 00:05:20,060
+Sits no and sit the other variables.
+
+44
+00:05:20,480 --> 00:05:33,320
+Name, age, Mark and his exit now reformat the cool, save the project and execute the program.
+
+45
+00:05:34,850 --> 00:05:43,580
+Now we can see the output number of elements is full and value for name is Robert and 35 for age and
+
+46
+00:05:43,580 --> 00:05:48,770
+ninety point fifty for Mark and two value for his assets.
+
+47
+00:05:49,340 --> 00:05:56,570
+Now we you're able to get the variable value from using FSC on a function and Princeton in order not
+
+48
+00:05:56,570 --> 00:05:58,070
+to prolong the time of decision.
+
+49
+00:05:58,220 --> 00:06:02,180
+We will finish it and we will continue the content in the next session.
+
+50
+00:06:02,450 --> 00:06:02,990
+Goodbye.

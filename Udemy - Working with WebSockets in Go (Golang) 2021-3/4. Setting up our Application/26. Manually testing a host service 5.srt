@@ -1,0 +1,507 @@
+1
+00:00:00,670 --> 00:00:06,430
+So we need to write a more general function to update any of the fields in our host services table,
+
+2
+00:00:06,790 --> 00:00:10,000
+so I'm in my host underscore PostgreSQL go file.
+
+3
+00:00:10,210 --> 00:00:14,800
+And as I said last time, we already have one that updates a host service, but it just updates the
+
+4
+00:00:14,800 --> 00:00:15,640
+active status.
+
+5
+00:00:15,640 --> 00:00:23,080
+But I can use that as a starting point by copying and pasting it and just changing the name to update
+
+6
+00:00:23,230 --> 00:00:33,380
+post service and fix the comment, updates the post service updates, a host service and the host service.
+
+7
+00:00:33,430 --> 00:00:36,430
+Now it's a EHO service in the database.
+
+8
+00:00:38,910 --> 00:00:45,810
+And we're not going to take three cents, we will take a IHSS, which is a type model host service,
+
+9
+00:00:46,470 --> 00:00:48,300
+and will return an error, if any.
+
+10
+00:00:48,990 --> 00:00:50,680
+So all that's going to change here.
+
+11
+00:00:50,790 --> 00:00:52,640
+Let's just delete this part time.
+
+12
+00:00:54,080 --> 00:01:01,040
+And I'll just update this query, so we want to update his services and I'll have it in and we want
+
+13
+00:01:01,040 --> 00:01:05,600
+to set not just active, we'll fix those in a moment.
+
+14
+00:01:07,100 --> 00:01:07,820
+Where?
+
+15
+00:01:09,980 --> 00:01:15,110
+Host where ID equals and get I don't know what the dollar sign is going to be, so I'll just leave it
+
+16
+00:01:15,110 --> 00:01:15,890
+empty for a moment.
+
+17
+00:01:16,730 --> 00:01:18,260
+OK, so we want to set.
+
+18
+00:01:19,610 --> 00:01:21,710
+And get rid of this, I up with the set up there.
+
+19
+00:01:24,590 --> 00:01:29,180
+And we're going to fix what fields or update what fields, I'm going to put them all in there because
+
+20
+00:01:29,180 --> 00:01:32,730
+I may use this same method at some point later or in the future.
+
+21
+00:01:33,350 --> 00:01:34,490
+So let's go to post Toco.
+
+22
+00:01:34,820 --> 00:01:36,680
+We have Idy Hoshide inservice.
+
+23
+00:01:36,920 --> 00:01:39,770
+We don't care about IDs or host IDs, service ideate active.
+
+24
+00:01:40,220 --> 00:01:51,770
+So host I.D. equals dollar sign one service ID equals dollar sign to active equals dollar sign three.
+
+25
+00:01:52,170 --> 00:01:53,120
+I'll go to the next line.
+
+26
+00:01:57,050 --> 00:02:05,750
+After activity of schedule number and schedule unit schedule number equals dollar sign for schedule
+
+27
+00:02:05,750 --> 00:02:08,030
+unit equals dollar sign five.
+
+28
+00:02:09,380 --> 00:02:11,000
+Then last check and status.
+
+29
+00:02:15,200 --> 00:02:27,110
+Last check equals dollar sign, six status equals dollar sign seven and updated X equals dollar sign
+
+30
+00:02:27,110 --> 00:02:27,500
+eight.
+
+31
+00:02:30,450 --> 00:02:38,670
+Which makes this night so let's just fix our query or exit context statement to say we want to get this
+
+32
+00:02:38,670 --> 00:02:42,420
+from HFS dot and the first one is posted.
+
+33
+00:02:44,260 --> 00:02:49,810
+Now, duplicate this a few times, service ID active.
+
+34
+00:02:52,000 --> 00:02:53,050
+Schedule No.
+
+35
+00:02:56,020 --> 00:03:00,540
+Schedule unit and duplicate that again and again and again.
+
+36
+00:03:03,030 --> 00:03:03,960
+Last check.
+
+37
+00:03:06,120 --> 00:03:07,050
+Status.
+
+38
+00:03:09,300 --> 00:03:17,940
+And update it up and the last thing is ID and make sure that everything's going correct here, perfect.
+
+39
+00:03:18,120 --> 00:03:23,520
+OK, now we could, of course, just get rid of this method altogether and use this one instead, and
+
+40
+00:03:23,520 --> 00:03:24,510
+it would work just fine.
+
+41
+00:03:24,570 --> 00:03:26,550
+But this isn't hurting anything, so I'll leave that there.
+
+42
+00:03:26,730 --> 00:03:33,390
+So I'll copy the signature of this method or this function and put it in my repository, paste it in
+
+43
+00:03:33,390 --> 00:03:36,870
+here and I'll go back to my perform checks.
+
+44
+00:03:37,260 --> 00:03:42,270
+And this is the point right here where I want to update the whole service in the database with status
+
+45
+00:03:42,270 --> 00:03:43,710
+if changed and last check.
+
+46
+00:03:44,340 --> 00:03:47,250
+And as you know, we already have the hoster service.
+
+47
+00:03:47,250 --> 00:03:52,590
+We grabbed it right here and we already have the new status and we know the time that it's going to
+
+48
+00:03:52,590 --> 00:03:53,040
+change.
+
+49
+00:03:53,040 --> 00:03:54,300
+It's just time now.
+
+50
+00:03:54,690 --> 00:03:59,850
+So I can simply say dot status equals new status.
+
+51
+00:04:01,200 --> 00:04:02,250
+Just set that value.
+
+52
+00:04:02,610 --> 00:04:10,110
+HSA updated at equals time now because this is when we're doing it and call this new function error
+
+53
+00:04:10,110 --> 00:04:19,170
+as a sign the value of repo DB update host service right here and hand it my HS because I just overwritten
+
+54
+00:04:19,170 --> 00:04:23,520
+the values I pulled from the database with this information and just check for an error.
+
+55
+00:04:23,670 --> 00:04:29,090
+So I'll copy this and paste it right here and that should do it.
+
+56
+00:04:29,100 --> 00:04:31,200
+So let's stop our database or application.
+
+57
+00:04:31,200 --> 00:04:32,100
+I guess mine's not running.
+
+58
+00:04:32,100 --> 00:04:32,730
+I'll clear it.
+
+59
+00:04:32,820 --> 00:04:34,050
+I'll run my application.
+
+60
+00:04:36,480 --> 00:04:42,540
+And this should work and what should happen when I go back to my Web browser and reload this page and
+
+61
+00:04:42,540 --> 00:04:48,980
+I guess I have to log in again, so I'll organize it mean at example, dot com with the password of
+
+62
+00:04:48,990 --> 00:04:53,970
+password and save that or login.
+
+63
+00:04:54,900 --> 00:05:02,970
+So now when I go to my hosts and I go to my problems or pending when I check now, it should update
+
+64
+00:05:02,970 --> 00:05:03,920
+everything in the database.
+
+65
+00:05:03,930 --> 00:05:05,310
+Now I'll get a message up here.
+
+66
+00:05:05,320 --> 00:05:06,840
+Nothing else will change on the screen.
+
+67
+00:05:07,200 --> 00:05:12,460
+But when I go back to overview, I should see a problem service here and no pending service here.
+
+68
+00:05:12,510 --> 00:05:13,480
+Let's see if we got it right.
+
+69
+00:05:14,340 --> 00:05:15,150
+So pending.
+
+70
+00:05:18,200 --> 00:05:22,460
+And it says air connecting and nothing else changed on this page, and that's OK, because I'm going
+
+71
+00:05:22,460 --> 00:05:26,330
+to change the contents of this page using Web sockets in a little while.
+
+72
+00:05:26,840 --> 00:05:32,840
+But I should be able to go to overview and see that now I have a problem service and now I have no pending
+
+73
+00:05:32,840 --> 00:05:33,460
+services.
+
+74
+00:05:33,470 --> 00:05:37,640
+And when I go to localhost and I look at spending, it should be gone.
+
+75
+00:05:37,670 --> 00:05:38,450
+And it is.
+
+76
+00:05:38,600 --> 00:05:40,910
+And if I look at problems, it's here now.
+
+77
+00:05:40,910 --> 00:05:42,590
+And this is exactly what I want.
+
+78
+00:05:42,600 --> 00:05:46,220
+Now, I have some things to clean up on this screen and these other two tabs as well.
+
+79
+00:05:46,700 --> 00:05:48,770
+I need to format the date properly.
+
+80
+00:05:49,070 --> 00:05:51,050
+And actually my last check.
+
+81
+00:05:51,620 --> 00:05:52,730
+Let's go look at the database.
+
+82
+00:05:53,750 --> 00:05:54,580
+Last check.
+
+83
+00:05:54,590 --> 00:05:55,700
+Oh, because I did an update.
+
+84
+00:05:55,700 --> 00:05:56,300
+Last check.
+
+85
+00:05:56,300 --> 00:05:56,930
+That was silly.
+
+86
+00:05:57,800 --> 00:05:58,760
+Let me go back here.
+
+87
+00:05:59,300 --> 00:06:02,140
+I make these mistakes all the time and so will you.
+
+88
+00:06:02,720 --> 00:06:05,330
+So I need to go back to my form check.
+
+89
+00:06:05,810 --> 00:06:10,790
+And here it's not just updated at its last check.
+
+90
+00:06:11,000 --> 00:06:12,950
+That's equal to time now as well.
+
+91
+00:06:13,040 --> 00:06:14,210
+You notice that, didn't you?
+
+92
+00:06:14,210 --> 00:06:15,810
+And you're laughing at me right now, aren't you?
+
+93
+00:06:15,890 --> 00:06:16,520
+That's OK.
+
+94
+00:06:16,520 --> 00:06:17,720
+I've been left up for.
+
+95
+00:06:18,260 --> 00:06:19,760
+So let's stop this, start this.
+
+96
+00:06:20,390 --> 00:06:24,960
+And I should be able to get that field update just by doing the check on the same screens.
+
+97
+00:06:24,990 --> 00:06:29,240
+Let me reload the page, go to problems, check now and again.
+
+98
+00:06:29,450 --> 00:06:33,740
+It didn't change on this page because I'm going to do that using Web sockets.
+
+99
+00:06:34,160 --> 00:06:40,130
+But if I reload this page, last check should now have the correct value in it, and it does.
+
+100
+00:06:40,640 --> 00:06:45,140
+So we need to format the this page a little bit better and we can do that really quickly right now.
+
+101
+00:06:45,140 --> 00:06:50,420
+And I'll do one tab and you can do the rest at your leisure because it's fairly straightforward.
+
+102
+00:06:50,690 --> 00:06:59,240
+Let's go to Chad and I'll hide my menu, split my screen just so I can see things a little better.
+
+103
+00:06:59,360 --> 00:07:03,110
+I'll find the pending part, which is right here.
+
+104
+00:07:03,110 --> 00:07:05,450
+And this is the kind of change I want to make in problems.
+
+105
+00:07:05,480 --> 00:07:06,650
+So let's go to problems.
+
+106
+00:07:08,740 --> 00:07:11,240
+This is just so I can see things a little more easily.
+
+107
+00:07:11,440 --> 00:07:13,640
+I do this all the time and you probably do, too.
+
+108
+00:07:14,530 --> 00:07:17,910
+So this is going to have the badge secondary.
+
+109
+00:07:17,920 --> 00:07:27,460
+It's also going to have the pointer class and let's copy these and replace that in that is last check
+
+110
+00:07:27,490 --> 00:07:31,060
+so I can delete this and paste it in there.
+
+111
+00:07:35,070 --> 00:07:37,950
+OK, and I think that's it for that.
+
+112
+00:07:40,830 --> 00:07:46,410
+Now I have the service icon, so let's get the service icon, copy that, and that goes before the service
+
+113
+00:07:46,410 --> 00:07:46,670
+name.
+
+114
+00:07:47,160 --> 00:07:51,470
+And I want to come back here and reload this page and look at problems there.
+
+115
+00:07:51,510 --> 00:07:52,690
+That all looks a little bit better.
+
+116
+00:07:52,710 --> 00:07:54,270
+Still don't have a message here right now.
+
+117
+00:07:54,270 --> 00:07:59,400
+And I may drop this column altogether because it's not terribly useful information at the moment.
+
+118
+00:08:00,000 --> 00:08:02,520
+But when I first started doing it, I thought maybe I'll have a message.
+
+119
+00:08:02,670 --> 00:08:08,010
+I'm not sure that it's going to make it to the very last version of this code, but I'll leave it there
+
+120
+00:08:08,010 --> 00:08:08,540
+for the moment.
+
+121
+00:08:08,730 --> 00:08:14,400
+So you'll probably want to do the same thing, just kind of take the same content and also put it in
+
+122
+00:08:14,400 --> 00:08:19,560
+the warning services and put it in the healthy services modified as necessary.
+
+123
+00:08:19,800 --> 00:08:21,410
+And I'll leave that as an exercise for you.
+
+124
+00:08:21,420 --> 00:08:25,800
+I'll do it myself after a record this lecture, and it'll be available to you on the source code for
+
+125
+00:08:25,800 --> 00:08:26,370
+this lecture.
+
+126
+00:08:26,820 --> 00:08:31,230
+But it's pretty straightforward and I don't think you need to watch me making those changes.
+
+127
+00:08:31,860 --> 00:08:34,560
+OK, so we'll pick it up in the next lecture.

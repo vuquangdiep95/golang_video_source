@@ -1,0 +1,219 @@
+1
+00:00:01,340 --> 00:00:03,650
+So right now our program has a bit of a problem.
+
+2
+00:00:03,890 --> 00:00:10,430
+These two calls to update message on line 20 and 21 are both running at the same time.
+
+3
+00:00:10,460 --> 00:00:14,120
+They're concurrent and we have no idea which one is going to finish first.
+
+4
+00:00:14,660 --> 00:00:20,230
+And both of them, as you can see here, access the package level, variable MSG.
+
+5
+00:00:20,780 --> 00:00:24,770
+And because we're not sure which call to update message is going to finish first.
+
+6
+00:00:24,770 --> 00:00:29,660
+We have no idea what the value of MSG is going to be by the time our program terminates.
+
+7
+00:00:30,140 --> 00:00:34,900
+So we need to fix that and fortunately GO makes it remarkably easy to do so.
+
+8
+00:00:35,860 --> 00:00:37,900
+We're going to use something else from the sink package.
+
+9
+00:00:37,930 --> 00:00:41,830
+Right now we're using sink weight group and now we're going to use a mutex.
+
+10
+00:00:42,520 --> 00:00:47,020
+Now, I'm not going to make that a package level variable because I want to stress the importance of
+
+11
+00:00:47,020 --> 00:00:50,200
+not copying a mutex once it's been created.
+
+12
+00:00:50,320 --> 00:00:56,440
+So instead, I'll put it right here in the main function right after I populate Mzgee with Hello World.
+
+13
+00:00:56,800 --> 00:01:03,370
+Let's create a variable which I'll call mutex and it's of type synchro mutex.
+
+14
+00:01:03,820 --> 00:01:04,150
+Okay.
+
+15
+00:01:05,170 --> 00:01:12,040
+Now I'm going to modify update message to receive async mutex but is going to receive it and I'll just
+
+16
+00:01:12,040 --> 00:01:13,240
+call it M4 for mutex.
+
+17
+00:01:13,240 --> 00:01:16,150
+It's going to receive it as a pointer and this is important.
+
+18
+00:01:16,690 --> 00:01:18,250
+Sync Dot mutex.
+
+19
+00:01:18,520 --> 00:01:18,910
+Okay.
+
+20
+00:01:19,630 --> 00:01:28,150
+Now down here, I'll call both of these these update message lines, I'll add a reference to the attacks.
+
+21
+00:01:29,170 --> 00:01:29,530
+Okay.
+
+22
+00:01:29,530 --> 00:01:32,590
+So I'll copy this and paste it here.
+
+23
+00:01:33,400 --> 00:01:33,790
+Okay.
+
+24
+00:01:33,790 --> 00:01:39,370
+So now we have the mutex being passed to update message and again we're passing it as a pointer because
+
+25
+00:01:39,370 --> 00:01:45,700
+you don't want to copy a mutex once it's been created or it just won't work in up here.
+
+26
+00:01:45,700 --> 00:01:46,450
+I'll just use it.
+
+27
+00:01:46,870 --> 00:01:48,520
+So how does it work now?
+
+28
+00:01:48,590 --> 00:01:50,230
+It's dead simple here.
+
+29
+00:01:50,260 --> 00:01:57,310
+Before I write to the variable MSG, that package level variable I just call import lock.
+
+30
+00:01:57,850 --> 00:02:02,020
+So now I have exclusive access to MSG.
+
+31
+00:02:02,050 --> 00:02:05,110
+Nobody else can change its value until I'm done with it.
+
+32
+00:02:05,560 --> 00:02:10,420
+And once I'm done with it, not surprisingly, I call import unlock.
+
+33
+00:02:10,900 --> 00:02:11,260
+Okay.
+
+34
+00:02:11,470 --> 00:02:13,990
+And that's all there is to a new text.
+
+35
+00:02:14,080 --> 00:02:17,020
+Well, there's actually a bit more to it, but we'll get to that later on.
+
+36
+00:02:17,230 --> 00:02:19,960
+But you can see how easy it is to use a new text.
+
+37
+00:02:20,500 --> 00:02:25,750
+So let's run our program one more time and I'll leave the dash race in there.
+
+38
+00:02:25,750 --> 00:02:32,320
+And again, I'm not sure what the result is going to be because I haven't actually waited for one particular
+
+39
+00:02:32,320 --> 00:02:34,840
+go routine to finish before the other one does.
+
+40
+00:02:34,840 --> 00:02:37,060
+So it might be university, it might be cosmos.
+
+41
+00:02:37,420 --> 00:02:41,590
+But the important thing here is that I'm accessing data safely.
+
+42
+00:02:41,590 --> 00:02:44,560
+This is what's called a thread safe operation.
+
+43
+00:02:44,620 --> 00:02:49,390
+Okay, so I run it and it says, Hello, Cosmos, I run it again.
+
+44
+00:02:49,450 --> 00:02:50,710
+It says, Hello Cosmos.
+
+45
+00:02:50,710 --> 00:02:52,930
+Third time this time it changed the universe.
+
+46
+00:02:52,930 --> 00:02:56,740
+But that's okay because I'm accessing the data safely.
+
+47
+00:02:56,920 --> 00:02:58,720
+There is no race condition.
+
+48
+00:02:58,900 --> 00:03:02,080
+Okay, now this is a really simple example.
+
+49
+00:03:02,530 --> 00:03:05,830
+Let's move on and try a slightly more complex example.
+
+50
+00:03:05,860 --> 00:03:06,230
+Okay?
+
+51
+00:03:06,250 --> 00:03:09,850
+And again, this is to illustrate how mutex is work it.
+
+52
+00:03:09,850 --> 00:03:16,390
+It's also to illustrate how important it is to test for race conditions when you're accessing data from
+
+53
+00:03:16,390 --> 00:03:20,830
+a go routine, running in the background, running concurrently with something else, you really have
+
+54
+00:03:20,830 --> 00:03:23,260
+to get in the habit of testing for race conditions.
+
+55
+00:03:23,500 --> 00:03:24,520
+Okay, let's move on.

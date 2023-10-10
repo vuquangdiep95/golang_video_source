@@ -1,0 +1,363 @@
+1
+00:00:13,970 --> 00:00:18,240
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:18,260 --> 00:00:21,200
+We want to continue the variable concept.
+
+3
+00:00:26,310 --> 00:00:29,940
+Go variables, declaration and initialization.
+
+4
+00:00:33,140 --> 00:00:39,920
+In the last session, we said a debt in gold language warrior bills are created in two different ways.
+
+5
+00:00:40,400 --> 00:00:46,280
+The first method using via keyboard and the second method through short variable declaration.
+
+6
+00:00:47,150 --> 00:00:52,760
+In this session, we want to examine the types of variables in the village school environments.
+
+7
+00:00:53,330 --> 00:01:00,440
+First, we will start with the bad keyboard method and examine the different modes of creating a variable.
+
+8
+00:01:01,490 --> 00:01:05,840
+So open the village and create the sample project.
+
+9
+00:01:10,300 --> 00:01:17,260
+Go to Project Explorer, create a folder name, for example, variables.
+
+10
+00:01:20,160 --> 00:01:32,310
+And create a fight inside it, like Maine does not go first, define the package name package Maine
+
+11
+00:01:32,730 --> 00:01:37,530
+and define a main function, find me.
+
+12
+00:01:41,010 --> 00:01:48,930
+Incorporate any language when a project is executed, the compiler first reads and executes the main
+
+13
+00:01:48,930 --> 00:01:55,320
+function and main function is this talking point of the project and goal language?
+
+14
+00:01:56,640 --> 00:02:00,150
+Now it's time to define the types of variables.
+
+15
+00:02:00,660 --> 00:02:09,170
+First, we examine the different cases of variable definition by that keyword first case in the vast
+
+16
+00:02:09,180 --> 00:02:09,750
+syntax.
+
+17
+00:02:09,960 --> 00:02:17,040
+Either type or equals the expression can remove, but not both can remove in the declaration of the
+
+18
+00:02:17,040 --> 00:02:17,610
+variable.
+
+19
+00:02:19,170 --> 00:02:22,680
+So first, consider the case where the type is deleted.
+
+20
+00:02:23,490 --> 00:02:30,150
+If the type is removed, then the time of the variable is determined by the value initialized in the
+
+21
+00:02:30,150 --> 00:02:30,750
+expression.
+
+22
+00:02:32,370 --> 00:02:34,770
+Now let's do an example for this case.
+
+23
+00:02:35,640 --> 00:02:41,880
+First, define three variables that declared and initialized without the explicit type.
+
+24
+00:02:42,330 --> 00:02:50,190
+For example, VAR variable one equals 100.
+
+25
+00:02:51,150 --> 00:03:01,920
+This variable doesn't have any type, but initialize a 100 value 100 value type is integer, so the
+
+26
+00:03:01,920 --> 00:03:04,770
+type of variable one should be integer.
+
+27
+00:03:05,370 --> 00:03:10,740
+Go to the next line and define another variable, for example, VAR variable.
+
+28
+00:03:11,590 --> 00:03:19,570
+Two equals the initialized this variable by a string value.
+
+29
+00:03:20,310 --> 00:03:25,320
+Go through Koranic language
+
+30
+00:03:28,590 --> 00:03:30,450
+and go to the next line.
+
+31
+00:03:30,810 --> 00:03:41,040
+That variable three equals seven hundred and fifty point three hundred and forty five.
+
+32
+00:03:42,510 --> 00:03:53,130
+Variable three light another variable doesn't have any type and the initialize eight by 750 point 345.
+
+33
+00:03:53,610 --> 00:04:00,570
+So this variable gets fellow type to itself for display and print variables.
+
+34
+00:04:00,870 --> 00:04:04,530
+We use the print f function from the empty package.
+
+35
+00:04:05,490 --> 00:04:14,190
+The print f method consists of two parts the first part which specifies the text and data type.
+
+36
+00:04:14,430 --> 00:04:18,870
+And the second part, which is separated from the first part by a comma.
+
+37
+00:04:19,050 --> 00:04:23,190
+We enter the name of the variable used now.
+
+38
+00:04:23,220 --> 00:04:24,540
+Display the value above.
+
+39
+00:04:25,020 --> 00:04:31,560
+So do the following if 20 dots print f.
+
+40
+00:04:36,180 --> 00:04:44,940
+For the first part, we write the value of variable.
+
+41
+00:04:46,920 --> 00:04:57,030
+One is here we use from the conversing character or formatted string.
+
+42
+00:04:57,840 --> 00:05:06,240
+The printed familiar function uses person character as a placeholder when that person is encountered.
+
+43
+00:05:06,540 --> 00:05:11,250
+Print ever reads the characters following the person to determine what to do.
+
+44
+00:05:11,970 --> 00:05:21,180
+For example, a person is take the next argument and print it as a street or person to take the next
+
+45
+00:05:21,180 --> 00:05:24,630
+argument and print it at an integer value.
+
+46
+00:05:25,500 --> 00:05:34,950
+So for the variable one, we set per cent d because the type of that variable is integer and go to the
+
+47
+00:05:34,950 --> 00:05:39,870
+next part and set name of that very big variable.
+
+48
+00:05:40,620 --> 00:05:41,010
+One.
+
+49
+00:05:43,380 --> 00:05:48,900
+Go to the next line and print type of the variable.
+
+50
+00:05:49,410 --> 00:06:06,210
+So we write F.A. down print f the type of variable one equals or column.
+
+51
+00:06:07,140 --> 00:06:14,880
+In this case, we said person t all per case for format is sitting or condition characters for display
+
+52
+00:06:14,880 --> 00:06:16,350
+a type of a variable.
+
+53
+00:06:16,650 --> 00:06:25,830
+So we write and T uppercase and set a variable variable one.
+
+54
+00:06:27,270 --> 00:06:35,110
+So we could display value and type of the variable by the Person D in person.
+
+55
+00:06:35,310 --> 00:06:39,130
+T we use from Person D, character B.
+
+56
+00:06:39,190 --> 00:06:48,640
+Because the vanity Bill Van has an integer value, so go to the next line and display values and types
+
+57
+00:06:48,640 --> 00:06:50,590
+of variable two and variable three.
+
+58
+00:06:50,980 --> 00:07:11,700
+So right again, F.A. don't paint if the value of variable to color variable too has a string value.
+
+59
+00:07:11,710 --> 00:07:21,340
+So we said percent s lowercase as format asking for this variable and go to the next part and said.
+
+60
+00:07:23,030 --> 00:07:34,610
+Many about to go to the next line and display type of disparity, even if empty dot print f did tie
+
+61
+00:07:35,270 --> 00:07:41,990
+all variables to color.
+
+62
+00:07:43,040 --> 00:07:51,230
+We use from person to operate a case as formatted string for this variable, so sit variable.
+
+63
+00:07:53,090 --> 00:07:53,420
+To.
+
+64
+00:07:54,670 --> 00:08:01,320
+And go to the next line and display value and type of variable to the you right?
+
+65
+00:08:01,350 --> 00:08:07,090
+F.A. got printers in first fiction.
+
+66
+00:08:07,320 --> 00:08:09,790
+Write the value.
+
+67
+00:08:11,610 --> 00:08:23,190
+Of Variable three column, because the initialize the variable three by a float value, so we use from
+
+68
+00:08:23,190 --> 00:08:32,970
+percent f lowercase as conversion character or a string for person f, and in the next session, we
+
+69
+00:08:32,970 --> 00:08:40,440
+set name of the value of one variable three and go to the next line and display type of this variable
+
+70
+00:08:40,740 --> 00:08:43,020
+F.A. dot print f.
+
+71
+00:08:44,940 --> 00:08:57,750
+The type of value the three color person t uppercase because we want to display the type of a variable
+
+72
+00:08:57,750 --> 00:09:05,970
+we use from person T uppercase and go to the next section, insert name of Variable Y did in three.
+
+73
+00:09:06,690 --> 00:09:07,080
+Okay.
+
+74
+00:09:07,460 --> 00:09:12,030
+Reformat the call, save the project and execute the program.
+
+75
+00:09:12,240 --> 00:09:16,940
+First, go to a terminal, go to a project folder.
+
+76
+00:09:17,070 --> 00:09:26,820
+See the variables clear screen and execute program by the comment.
+
+77
+00:09:26,820 --> 00:09:31,790
+Go run dot Manchester's main dot go.
+
+78
+00:09:33,150 --> 00:09:42,300
+Now we can see the output, what the values are printed consecutively on the lines to be able to print
+
+79
+00:09:42,300 --> 00:09:44,460
+its value on a separate line.
+
+80
+00:09:44,490 --> 00:09:51,420
+We use batches and as a control character so that we can print each value on the new line.
+
+81
+00:09:52,200 --> 00:09:57,810
+So we put backslash and in the end of the first section of each display.
+
+82
+00:09:58,620 --> 00:10:02,430
+So we said backslash and.
+
+83
+00:10:17,440 --> 00:10:22,360
+Save the project and go to terminal and execute again.
+
+84
+00:10:24,880 --> 00:10:33,700
+Now we can see each value display in separate line, for example, the value of a variable one is 100
+
+85
+00:10:33,700 --> 00:10:37,300
+in type of it is integer value or variable.
+
+86
+00:10:37,300 --> 00:10:45,100
+Two is go programming language and type of it is string and value of variable threes is seven hundred
+
+87
+00:10:45,100 --> 00:10:53,890
+and fifty point three hundred and forty five, and type of it is float sixty four in future chapters.
+
+88
+00:10:54,110 --> 00:11:01,060
+We will talk in detail about the data types and the various printing methods of the F.A. package.
+
+89
+00:11:01,300 --> 00:11:06,640
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+90
+00:11:06,640 --> 00:11:07,540
+the next session.
+
+91
+00:11:07,750 --> 00:11:08,320
+Goodbye.

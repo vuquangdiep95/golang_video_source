@@ -1,0 +1,371 @@
+1
+00:00:12,270 --> 00:00:17,610
+Hello and welcome to the Golden Age programming language course in the previous session.
+
+2
+00:00:17,640 --> 00:00:21,450
+We could define iconic method for connection to the database.
+
+3
+00:00:21,630 --> 00:00:27,510
+And in this session, we want to create another functions to perform craft operations.
+
+4
+00:00:29,500 --> 00:00:36,580
+First, the assault by writing the quiz related to the select statement, so create a function to select
+
+5
+00:00:36,580 --> 00:00:40,900
+all the students records and return as students, Eric.
+
+6
+00:00:41,110 --> 00:00:43,240
+So we write funk,
+
+7
+00:00:46,000 --> 00:00:53,870
+select all students and return tie.
+
+8
+00:00:55,350 --> 00:01:00,610
+Array of model got a student?
+
+9
+00:01:05,000 --> 00:01:11,180
+Now calling connect function for initializing my school driver, my name and datasource name, this
+
+10
+00:01:11,180 --> 00:01:15,140
+function returns a DBI object from a school package.
+
+11
+00:01:15,350 --> 00:01:20,780
+This gives us access to metals contained in the package to perform crud operations.
+
+12
+00:01:21,350 --> 00:01:28,390
+So define a variable like DB calling equals and invoking chronic function.
+
+13
+00:01:31,150 --> 00:01:38,860
+After creating a deep object, the Invoke query method that it executes a query that acts it is cruel
+
+14
+00:01:38,860 --> 00:01:44,060
+curious statement as string parameter and returns rolled and over objects.
+
+15
+00:01:44,320 --> 00:01:55,060
+So first, define two variables like roles and erode column equals the B dot query.
+
+16
+00:01:56,710 --> 00:02:00,850
+In this case, we want to see all the students in the student table.
+
+17
+00:02:01,120 --> 00:02:03,520
+So we should use select query statement.
+
+18
+00:02:04,390 --> 00:02:07,600
+So we write Select Query has a string parameter.
+
+19
+00:02:08,350 --> 00:02:14,110
+Select a star for the student.
+
+20
+00:02:17,670 --> 00:02:21,060
+Go to the next line check earner status, if at all.
+
+21
+00:02:22,390 --> 00:02:33,010
+Like the fat on the road, how we use the ether for clothing to create a DB object.
+
+22
+00:02:34,230 --> 00:02:37,090
+Ether DB don't close.
+
+23
+00:02:39,070 --> 00:02:46,090
+We create the least of a student strike to add to each new student that is read from the database,
+
+24
+00:02:46,090 --> 00:02:53,350
+from the student table and at the end of fetching data from the database, the student list is displayed
+
+25
+00:02:53,350 --> 00:02:55,360
+by the method return value.
+
+26
+00:02:55,660 --> 00:02:56,320
+So do you find it?
+
+27
+00:02:56,320 --> 00:02:56,560
+Very.
+
+28
+00:02:56,560 --> 00:03:00,280
+It is like a students column equals
+
+29
+00:03:03,460 --> 00:03:04,630
+model dots.
+
+30
+00:03:05,800 --> 00:03:06,430
+Students
+
+31
+00:03:09,160 --> 00:03:16,420
+now put the return value of the query inside a up to access each of the rows by the next function.
+
+32
+00:03:16,690 --> 00:03:22,510
+So we write for those dots next.
+
+33
+00:03:27,570 --> 00:03:32,190
+Next, fashion prepares the next results are all for reading with this method.
+
+34
+00:03:32,610 --> 00:03:41,580
+If returns to an success or false, if there is no mixed result draw or and it all happened while preparing
+
+35
+00:03:41,580 --> 00:03:44,520
+it, so create an object from a student.
+
+36
+00:03:44,520 --> 00:03:53,790
+This rock is student calling it cool modern art student.
+
+37
+00:03:56,370 --> 00:04:04,470
+And calling it method on Rove's resolve to it recalls one by one, the skin crawl is the Collins in
+
+38
+00:04:04,470 --> 00:04:08,250
+the car and throw into the values pointed at by destination.
+
+39
+00:04:08,880 --> 00:04:16,190
+The number of values in this nation must be the same as a number of the Collins in defined an enormous
+
+40
+00:04:16,210 --> 00:04:22,440
+debate and in scan function at all equals roles not scanned.
+
+41
+00:04:24,820 --> 00:04:29,670
+Is Student Ideas Pointer Anderson, Student Dot.
+
+42
+00:04:31,270 --> 00:04:43,990
+IED said a student named Ampersand Student dropped name and set a student age as pointer and her son,
+
+43
+00:04:44,080 --> 00:04:54,220
+Student Dot H scanned Converse columns read from the database into the following come and go types and
+
+44
+00:04:54,220 --> 00:04:57,540
+especial type provided by the astute package.
+
+45
+00:04:57,940 --> 00:05:10,060
+So check your status if they're not equals mean like dots, fatal error, dot arrow and continue.
+
+46
+00:05:14,820 --> 00:05:22,420
+I will be at each readers record that contains a student to the list of students by the app in function.
+
+47
+00:05:23,110 --> 00:05:24,070
+Students.
+
+48
+00:05:25,790 --> 00:05:32,810
+Equals app and function as students, as students
+
+49
+00:05:35,600 --> 00:05:41,660
+now will return as student and return values of function, return as students.
+
+50
+00:05:42,530 --> 00:05:48,500
+Now we could define the function and select all the students that fit all the students of a student
+
+51
+00:05:48,500 --> 00:05:51,800
+table in person database by the select the statement.
+
+52
+00:05:52,400 --> 00:05:55,010
+Now we want to create another select function.
+
+53
+00:05:55,670 --> 00:05:58,890
+In this case, we want to fit a student body condition.
+
+54
+00:05:58,910 --> 00:06:03,990
+Otherwise, we create a query by a very close for this sandpit.
+
+55
+00:06:04,010 --> 00:06:10,850
+We want to define the function that returns a student base, a student name, first define the function,
+
+56
+00:06:10,850 --> 00:06:13,580
+then select a student based name.
+
+57
+00:06:13,790 --> 00:06:19,460
+The packs it and is string as name and return a student based that name value.
+
+58
+00:06:20,580 --> 00:06:27,720
+So, right, find select a student
+
+59
+00:06:30,630 --> 00:06:44,340
+based name and set a name as a parameter by the time string named as string and return value is modeled
+
+60
+00:06:44,340 --> 00:06:45,470
+after students.
+
+61
+00:06:49,260 --> 00:06:55,110
+Now cutting clinic function for initializing my school driver, so define a variable like TV calling
+
+62
+00:06:55,110 --> 00:06:56,910
+equals panicked
+
+63
+00:06:59,430 --> 00:07:01,470
+after creating a deep object.
+
+64
+00:07:01,590 --> 00:07:09,780
+The invoked 20 year old method that it executes a query that is expected to return at most Marvel query
+
+65
+00:07:09,780 --> 00:07:13,530
+role method always returns and non mean value.
+
+66
+00:07:14,070 --> 00:07:24,530
+So defined roles variable and Colin quitted role method roles column equals VB don't query role.
+
+67
+00:07:25,380 --> 00:07:32,430
+In this case, we want to select a student in a student table by based on the given name, and we should
+
+68
+00:07:32,460 --> 00:07:34,260
+use Select Query Statement.
+
+69
+00:07:34,290 --> 00:07:38,580
+We are very close, and so writes the a query as a string parameter.
+
+70
+00:07:39,900 --> 00:07:43,920
+Select a star from.
+
+71
+00:07:45,090 --> 00:07:49,740
+A student and said very condition based name where.
+
+72
+00:07:51,900 --> 00:07:55,690
+Name instead of name value.
+
+73
+00:07:55,950 --> 00:08:01,020
+Put a question mark equals question mark.
+
+74
+00:08:01,170 --> 00:08:06,630
+And as a second parameter, we received the name value from the inside the method.
+
+75
+00:08:06,840 --> 00:08:08,990
+So we right name.
+
+76
+00:08:10,680 --> 00:08:18,570
+Use differ for closing the creator TBE object, the ether db dot low.
+
+77
+00:08:22,050 --> 00:08:28,650
+Now we create an object from a student who struck the student card and equals model dot.
+
+78
+00:08:30,180 --> 00:08:31,080
+A student.
+
+79
+00:08:32,840 --> 00:08:40,700
+And Corning is gunmetal on the rolls, results right record defined an incredible animal, skin functions
+
+80
+00:08:40,700 --> 00:08:44,120
+to be right, erode calling equal roles.
+
+81
+00:08:44,150 --> 00:08:58,170
+Thoughts can set a student i.d.s pointer, ampersand, student I.D. and a student name, anthracite
+
+82
+00:08:58,970 --> 00:09:06,950
+student name and age ampersand student Dot H.
+
+83
+00:09:08,030 --> 00:09:15,380
+S can collars columns read from the database into the coming do times and the spatial type white the
+
+84
+00:09:15,380 --> 00:09:16,670
+misspelled pages.
+
+85
+00:09:17,150 --> 00:09:21,020
+So first check entry status, if at all not equal.
+
+86
+00:09:21,030 --> 00:09:30,890
+Is Neil like don't at all dot her or now return a student as return value off function.
+
+87
+00:09:31,400 --> 00:09:38,720
+If the student is not available, the normal value will be returned with the seller name return per
+
+88
+00:09:38,720 --> 00:09:39,410
+student.
+
+89
+00:09:40,400 --> 00:09:43,700
+OK, now we could define a functioning select.
+
+90
+00:09:43,700 --> 00:09:50,300
+A student based name that reads her is student of a student table in person database by the cynic.
+
+91
+00:09:50,300 --> 00:09:55,880
+The statement based name value in order not to prolong the time of decision.
+
+92
+00:09:56,210 --> 00:09:59,990
+Will finish it, and we will continue the content in the next session.
+
+93
+00:10:00,170 --> 00:10:00,710
+Goodbye.

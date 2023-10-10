@@ -1,0 +1,283 @@
+1
+00:00:00,570 --> 00:00:05,370
+So the last thing we want to do here is, as this comment says, is print out the ending message.
+
+2
+00:00:05,400 --> 00:00:10,980
+And of course, this has nothing to do with concurrency other than the fact that I am absolutely certain
+
+3
+00:00:11,310 --> 00:00:17,850
+this code will never execute until my producer is done producing and my consumer is done consuming.
+
+4
+00:00:18,000 --> 00:00:18,880
+But we may as well do it.
+
+5
+00:00:18,900 --> 00:00:19,740
+It'll just take a moment.
+
+6
+00:00:20,370 --> 00:00:26,010
+So I'll print out Color Dot Cyan and I'll put in, say done for the day.
+
+7
+00:00:26,790 --> 00:00:27,210
+Okay.
+
+8
+00:00:27,570 --> 00:00:28,140
+With that.
+
+9
+00:00:28,590 --> 00:00:29,790
+And then I'll duplicate that.
+
+10
+00:00:29,790 --> 00:00:34,240
+And just to make it a little more attractive, I'll replace the first line with a whole bunch of hyphens.
+
+11
+00:00:34,320 --> 00:00:35,340
+I started with hyphens.
+
+12
+00:00:35,340 --> 00:00:37,120
+I may as well close off with them as well.
+
+13
+00:00:37,950 --> 00:00:41,700
+So I have the done for the day message and let's print out our summary.
+
+14
+00:00:41,790 --> 00:00:46,020
+So color dot cyan and then a format string.
+
+15
+00:00:46,470 --> 00:01:00,450
+We made percent d pizzas but failed to make percent D with a total DA with percent d attempts in total.
+
+16
+00:01:01,350 --> 00:01:05,040
+And then my substitutions are pizzas made right there.
+
+17
+00:01:06,480 --> 00:01:08,430
+Pizzas failed right there.
+
+18
+00:01:09,450 --> 00:01:10,740
+And then, of course, total.
+
+19
+00:01:11,760 --> 00:01:12,060
+Okay.
+
+20
+00:01:12,270 --> 00:01:16,980
+So we have that and we may as well also put in a little message indicating just how the day went.
+
+21
+00:01:17,160 --> 00:01:22,320
+So we used a switch statement which looks suspiciously like a select statement, but is not.
+
+22
+00:01:22,350 --> 00:01:25,200
+Remember, select statements are only useful for channels.
+
+23
+00:01:25,770 --> 00:01:30,870
+So Case would just say, first of all, the case pizza's failed right there.
+
+24
+00:01:31,500 --> 00:01:33,780
+If it's greater than nine, then you had an awful day.
+
+25
+00:01:33,960 --> 00:01:43,290
+So we'll print out color dot red and we'll say it was an awful day.
+
+26
+00:01:45,210 --> 00:01:46,320
+And then we'll have another case.
+
+27
+00:01:46,950 --> 00:01:52,980
+Chase And this time pizza's failed is greater than or equal to six.
+
+28
+00:01:53,250 --> 00:01:55,590
+That's a good cutoff point, I think.
+
+29
+00:01:55,590 --> 00:01:56,580
+And we'll say color.
+
+30
+00:01:56,580 --> 00:01:59,030
+Don't read it again.
+
+31
+00:01:59,040 --> 00:01:59,820
+Cut it out, red.
+
+32
+00:02:00,930 --> 00:02:02,280
+It was not
+
+33
+00:02:05,040 --> 00:02:06,030
+a very good day.
+
+34
+00:02:06,660 --> 00:02:07,230
+Da da da.
+
+35
+00:02:08,670 --> 00:02:15,630
+And just a couple more case in this time will say pizza's failed is greater than or equal to four.
+
+36
+00:02:18,420 --> 00:02:20,160
+And we'll just say color dot yellow.
+
+37
+00:02:23,790 --> 00:02:33,510
+It was an okay day to do it, and case pizza's failed.
+
+38
+00:02:36,720 --> 00:02:39,060
+This time, we'll say, is greater than or equal to two.
+
+39
+00:02:40,110 --> 00:02:41,700
+These guys don't have very good standards.
+
+40
+00:02:42,420 --> 00:02:43,350
+Color yellow.
+
+41
+00:02:45,510 --> 00:02:48,270
+It was a pretty good day.
+
+42
+00:02:48,990 --> 00:02:50,340
+And then our default case.
+
+43
+00:02:53,940 --> 00:02:55,230
+And that is colored out green.
+
+44
+00:02:57,990 --> 00:03:00,240
+It was a great day.
+
+45
+00:03:00,690 --> 00:03:01,080
+Okay.
+
+46
+00:03:01,320 --> 00:03:06,900
+So with that little bit of change, let's run this again and make sure our message is print out as they
+
+47
+00:03:06,900 --> 00:03:07,290
+should.
+
+48
+00:03:12,450 --> 00:03:18,850
+One of the things I want to point out to you here is we just created a solution to the producer consumer
+
+49
+00:03:18,850 --> 00:03:22,180
+problem with concurrently running go routines.
+
+50
+00:03:22,180 --> 00:03:27,010
+And at no point did we even use a weight group or a sink mutex.
+
+51
+00:03:27,580 --> 00:03:32,090
+Now, to be clear, you could solve this problem using weight groups and sync up mutex as well.
+
+52
+00:03:32,110 --> 00:03:37,660
+There are many, many ways to solve this problem, but it's pretty important that you become familiar
+
+53
+00:03:37,660 --> 00:03:41,800
+with the use of channels, and I would encourage you to go through this code.
+
+54
+00:03:41,830 --> 00:03:46,360
+Just read it through, figure out how things are working, what's sending data to a channel?
+
+55
+00:03:46,370 --> 00:03:48,130
+Where do I get data from a channel?
+
+56
+00:03:48,430 --> 00:03:54,400
+Make sure you have that down cold and it will make the remainder of this course ever so much easier.
+
+57
+00:03:54,760 --> 00:03:55,360
+But here we are.
+
+58
+00:03:55,390 --> 00:03:56,770
+We're done making pizzas.
+
+59
+00:03:57,100 --> 00:03:58,110
+We're done for the day.
+
+60
+00:03:58,120 --> 00:04:01,450
+We made five pizzas but failed to make five with ten attempts in total.
+
+61
+00:04:02,050 --> 00:04:06,370
+And here this pizza shop thinks that a 50% success rate is an okay day.
+
+62
+00:04:06,580 --> 00:04:08,650
+So as I said, they don't have very good standards.
+
+63
+00:04:09,250 --> 00:04:09,640
+All right.
+
+64
+00:04:09,700 --> 00:04:14,590
+Let's move on and try looking at another classic problem from computer science.
+
+65
+00:04:15,130 --> 00:04:18,670
+And it's called the the dining philosophers problem.
+
+66
+00:04:18,670 --> 00:04:19,600
+And it's a lot of fun.
+
+67
+00:04:19,660 --> 00:04:24,280
+Now, to be clear, we're going to go through a couple of these classic examples, and they're going
+
+68
+00:04:24,280 --> 00:04:29,050
+to help you get used to the things you need to be familiar with in order to work with concurrent programming
+
+69
+00:04:29,050 --> 00:04:34,380
+the way that you should, and then will apply it to something that's closer to a real world situation.
+
+70
+00:04:34,390 --> 00:04:35,690
+And that's how we'll finish the course.
+
+71
+00:04:35,950 --> 00:04:37,420
+But we have a little ways to go yet.

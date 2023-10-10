@@ -1,0 +1,143 @@
+1
+00:00:01,180 --> 00:00:07,230
+I just have a little aside here, as I was recording this course, the rudder were using GOCE.
+
+2
+00:00:07,570 --> 00:00:13,540
+If you go to that website or go to the GitHub repository and scroll down, you will see that we now
+
+3
+00:00:13,540 --> 00:00:14,880
+have semantic versioning.
+
+4
+00:00:15,370 --> 00:00:20,410
+So he's actually changed the way that we import this, which means that we probably should update our
+
+5
+00:00:20,410 --> 00:00:22,860
+dependency to use the new version.
+
+6
+00:00:23,350 --> 00:00:26,540
+So I'm going to copy the entire install thing here.
+
+7
+00:00:26,540 --> 00:00:32,080
+And not the only change from the last time we did this was slash V5 has been added to the install you
+
+8
+00:00:32,080 --> 00:00:39,160
+URL and I'll go back to my ID and I should caution you that my ID is going to try to be helpful and
+
+9
+00:00:39,160 --> 00:00:42,240
+it will make updating this just a little tricky, but not too bad.
+
+10
+00:00:42,640 --> 00:00:48,790
+So I'm going to go get that dependency and it adds it and then I'll go to everywhere that I'm using
+
+11
+00:00:48,790 --> 00:00:51,610
+this and I'm using it for sure in my file.
+
+12
+00:00:52,450 --> 00:01:00,460
+And all I really need to do is to come up here and change this, to slash V5 and hopefully it won't
+
+13
+00:01:00,460 --> 00:01:03,160
+do what it often does and try to import things for me.
+
+14
+00:01:03,430 --> 00:01:04,990
+OK, so it seemed to work that time.
+
+15
+00:01:05,500 --> 00:01:07,480
+Now let's find out where else we're using this.
+
+16
+00:01:07,480 --> 00:01:12,790
+I'm going to begin a search in here by saying find in files and I'm looking at my command web folder
+
+17
+00:01:12,790 --> 00:01:18,700
+and I'll look for cheap and it finds it only in my rootstock go.
+
+18
+00:01:18,700 --> 00:01:19,150
+Perfect.
+
+19
+00:01:19,320 --> 00:01:25,450
+OK, so now I know it's also being used in my handlers to get parameters, so I'll find in files, cheat
+
+20
+00:01:25,810 --> 00:01:27,490
+and I'll open this in the find window.
+
+21
+00:01:27,790 --> 00:01:30,540
+And the first place that's using it is my handlers don't go.
+
+22
+00:01:30,550 --> 00:01:36,640
+So let me go to that and scroll to the top and change the import to the five.
+
+23
+00:01:39,220 --> 00:01:40,850
+OK, that worked.
+
+24
+00:01:41,260 --> 00:01:42,220
+Where else do we have it?
+
+25
+00:01:42,400 --> 00:01:48,010
+So we had in our handler stock, we also have it and perform checks Dargo So let's open that up and
+
+26
+00:01:48,010 --> 00:01:52,360
+scroll to the top and change that to V5.
+
+27
+00:01:53,620 --> 00:01:57,280
+And if there are no errors and there are not, then that should work.
+
+28
+00:01:57,940 --> 00:02:04,930
+So the only other change here, if I look at my go mod file, I actually have two versions of CZI installed
+
+29
+00:02:04,930 --> 00:02:07,120
+right here and I don't need both of those now.
+
+30
+00:02:07,120 --> 00:02:11,380
+I could manually delete this, but the proper way to do it, of course, is to just make sure you're
+
+31
+00:02:11,380 --> 00:02:14,980
+in the level of your project and type go mod tidy.
+
+32
+00:02:16,370 --> 00:02:20,730
+And that should and it did it got rid of the old one, and that's all there is to it.
+
+33
+00:02:20,960 --> 00:02:26,630
+So now we've updated our dependency to use the correct new version that supports semantic versioning.
+
+34
+00:02:27,080 --> 00:02:28,730
+And that's just a little aside.
+
+35
+00:02:28,730 --> 00:02:33,620
+And I like to keep things up to date whenever possible, so I'll commit and push this to my repository.
+
+36
+00:02:35,630 --> 00:02:37,280
+And let's move on.

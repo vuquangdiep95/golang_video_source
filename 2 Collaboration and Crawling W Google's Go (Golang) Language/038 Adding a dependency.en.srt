@@ -1,0 +1,515 @@
+1
+00:00:00,090 --> 00:00:03,840
+Vì vậy, điều tiếp theo chúng tôi sẽ làm là chúng tôi sẽ thêm một phụ thuộc và chỉ để neo neo bạn
+
+2
+00:00:03,840 --> 00:00:04,660
+trong đề cương môn học.
+
+3
+00:00:04,670 --> 00:00:05,640
+Đây là nơi chúng ta đang ở.
+
+4
+00:00:05,640 --> 00:00:09,330
+Chúng tôi đang thêm một phần phụ thuộc và mã mà chúng tôi sẽ thêm vào.
+
+5
+00:00:09,330 --> 00:00:11,940
+Xin chào đi và xin chào Tesco.
+
+6
+00:00:11,940 --> 00:00:18,010
+Bây giờ chúng ta sẽ lấy một gói và đó là dấu gạch chéo chuyển tiếp RS C dot IO.
+
+7
+00:00:18,150 --> 00:00:25,440
+Và nếu bạn đi và bạn tìm kiếm điều đó trực tuyến để xem điều gì sẽ xảy ra, điều bạn sẽ tìm thấy là báo giá trọn gói của nó
+
+8
+00:00:25,470 --> 00:00:26,790
+ở đây và để nhập nó.
+
+9
+00:00:26,790 --> 00:00:30,010
+Chúng tôi cần một trích dẫn gạch chéo về phía trước của CIO.
+
+10
+00:00:30,040 --> 00:00:36,810
+Đây là trong go dock có tài liệu về thư viện chuẩn và các gói của bên thứ ba từ các gói khác
+
+11
+00:00:36,810 --> 00:00:37,800
+mọi người.
+
+12
+00:00:37,800 --> 00:00:41,920
+Vì vậy, chúng tôi sẽ nhập gói này và chúng tôi sẽ chạy func Hello.
+
+13
+00:00:41,940 --> 00:00:43,050
+Ngay chỗ này.
+
+14
+00:00:43,050 --> 00:00:44,270
+Và đó là những gì chúng tôi đã thêm vào.
+
+15
+00:00:44,280 --> 00:00:50,320
+Chúng tôi đã thay đổi mã của mình để bao gồm câu trả lời Hello trả về một chuỗi và nhập gói này.
+
+16
+00:00:50,580 --> 00:00:57,360
+Vì vậy, bây giờ tôi có điều đó trong trình chỉnh sửa của mình ngay tại đây vào năm 0 2 khi thêm phần phụ thuộc mà chúng tôi đã thêm vào tệp này và tôi có thể
+
+17
+00:00:57,360 --> 00:01:06,010
+đi tới thiết bị đầu cuối của tôi và thiết bị đầu cuối của tôi Tôi sẽ xem thư mục nào tôi đang ở và CD và 2 0 0 3 0 2 và.
+
+18
+00:01:06,350 --> 00:01:08,910
+Và sau đó tôi sẽ làm một bài kiểm tra cờ vây.
+
+19
+00:01:08,930 --> 00:01:14,850
+Và khi tôi chạy chương trình này, chúng ta sẽ thấy tất cả các phần phụ thuộc nên lần đầu tiên bạn thêm phần phụ thuộc
+
+20
+00:01:15,270 --> 00:01:19,940
+và trên máy cục bộ của bạn, nó cần ra ngoài và lấy mã đó và mang mã trở lại.
+
+21
+00:01:20,040 --> 00:01:22,110
+Bạn sẽ thấy quá trình đó xảy ra.
+
+22
+00:01:22,230 --> 00:01:29,240
+Và do đó, trình soạn thảo của bạn đã làm điều đó khi bạn mở tệp Oh, trình soạn thảo của tôi đã tự động làm điều đó cho tôi khi tôi
+
+23
+00:01:29,720 --> 00:01:30,690
+đã mở tệp lên.
+
+24
+00:01:30,710 --> 00:01:33,770
+Vâng, tôi nhận thấy để đi đến một số hiển thị trong của bạn như tôi có tất cả.
+
+25
+00:01:33,770 --> 00:01:38,900
+Đôi khi những thứ này diễn ra ở chế độ nền để xem điều gì sẽ xảy ra nếu biên tập viên của tôi không hoàn thành
+
+26
+00:01:38,900 --> 00:01:43,850
+điều đó đối với tôi sẽ tìm thấy trích dẫn RCI không tải xuống đã tải xuống và tất cả những thứ đó.
+
+27
+00:01:43,850 --> 00:01:50,090
+Và vì vậy, những gì nó đang làm khi nó làm như vậy là nếu bạn nhập thư viện gói chưa được theo dõi bởi
+
+28
+00:01:50,090 --> 00:01:55,710
+go module theo mặc định go thêm nó vào go mod bằng phiên bản mới nhất.
+
+29
+00:01:55,760 --> 00:02:03,410
+Vì vậy, phiên bản mới nhất của bất kỳ gói nào bạn muốn sử dụng được xác định là thẻ mới nhất ổn định
+
+30
+00:02:03,590 --> 00:02:10,070
+phiên bản phát hành thẻ laser hoặc phiên bản mới nhất được gắn thẻ của Liên Hợp Quốc để nó có phiên bản mới nhất và bạn có thể thấy
+
+31
+00:02:10,070 --> 00:02:15,130
+phiên bản của RSA trích dẫn bằng cách rút tiền ra bản mod hoặc mở nó lên.
+
+32
+00:02:15,170 --> 00:02:22,480
+Vì vậy, nếu tôi mở nó ra đây, đây là bản mod của tôi, bạn có thể thấy tôi hiện đang yêu cầu trích dẫn RACIO phiên bản một
+
+33
+00:02:22,480 --> 00:02:24,210
+điểm năm điểm hai.
+
+34
+00:02:24,690 --> 00:02:28,140
+Và đó là phiên bản mới nhất của tôi.
+
+35
+00:02:28,280 --> 00:02:30,850
+Và cũng có hai loại phụ thuộc.
+
+36
+00:02:30,950 --> 00:02:31,160
+Phải.
+
+37
+00:02:31,160 --> 00:02:35,770
+Vì vậy, chỉ các phụ thuộc trực tiếp được ghi lại và chuyển sang chế độ phụ thuộc trực tiếp.
+
+38
+00:02:35,770 --> 00:02:41,780
+Đây là sự phụ thuộc trực tiếp nhưng cũng có thể có sự phụ thuộc gián tiếp, vì vậy CIO có dấu gạch chéo lên phía trước
+
+39
+00:02:41,780 --> 00:02:50,630
+quote có thể đang sử dụng các gói khác và để xem các phụ thuộc trực tiếp và gián tiếp đó.
+
+40
+00:02:50,640 --> 00:02:57,080
+Vì vậy, chỉ cần phân biệt sự khác biệt giữa các phụ thuộc trực tiếp và gián tiếp, chúng tôi sử dụng go list dash
+
+41
+00:02:57,130 --> 00:02:59,210
+M về phía trước chém tất cả.
+
+42
+00:02:59,210 --> 00:03:08,840
+Và vì vậy nếu tôi đưa nó lên và bạn hãy liệt kê gạch ngang M go list dash jam all Tôi nghĩ rằng tôi sẽ tiến lên gạch chéo tất cả
+
+43
+00:03:08,870 --> 00:03:16,640
+nhưng hãy lướt qua tất cả, chúng ta có thể thấy tất cả các phần phụ thuộc của tôi và vì vậy đây là phần phụ thuộc trực tiếp của tôi, đây là phần phụ thuộc của tôi
+
+44
+00:03:16,670 --> 00:03:20,800
+phụ thuộc gián tiếp khác phụ thuộc gián tiếp là ngay tại đây.
+
+45
+00:03:20,810 --> 00:03:25,790
+Vì vậy, tôi có tất cả những phụ thuộc đó cho dự án của mình và bạn đang xem xét thứ gì đó có bất cứ thứ gì bạn
+
+46
+00:03:25,790 --> 00:03:32,000
+muốn thêm vào đó hoặc bất cứ điều gì bạn muốn hiển thị, tôi tin rằng các phụ thuộc gián tiếp sẽ nằm trong
+
+47
+00:03:32,000 --> 00:03:39,950
+mod của bạn nếu đó là nếu bạn đang trải qua quá trình tương thích với một mô-đun không phải là một trích dẫn C có
+
+48
+00:03:39,950 --> 00:03:48,610
+một mô-đun go Tôi đang cố gắng tìm cách quay lại đúng phiên bản khi ra khỏi đây, đó là một
+
+49
+00:03:49,490 --> 00:03:54,800
+một điểm năm điểm hai một năm hai đó là chữ C này
+
+50
+00:03:58,660 --> 00:04:02,730
+giấy phép số C cho D cho vv ..
+
+51
+00:04:02,800 --> 00:04:13,890
+Vì vậy, nếu tôi đến MITs và tìm kiếm C hoặc D ngay bây giờ thì nó sẽ ra bằng bài kiểm tra của bạn mà tôi thấy
+
+52
+00:04:13,890 --> 00:04:21,680
+mã tại thời điểm này trong get repo, nó phải chuyển sang chế độ mod và bạn có thể thấy nó phụ thuộc vào chính nó.
+
+53
+00:04:21,690 --> 00:04:24,140
+Vì vậy, đây là sự phụ thuộc gián tiếp của bạn vào bộ lấy mẫu.
+
+54
+00:04:24,180 --> 00:04:25,710
+Vâng.
+
+55
+00:04:26,070 --> 00:04:27,170
+Vì vậy, lý do duy nhất.
+
+56
+00:04:27,180 --> 00:04:34,930
+Vì vậy, điều này không hiển thị trong go mod của bạn vì nó được liệt kê là SO của tôi nếu bạn đang nhập một số bản vá
+
+57
+00:04:34,950 --> 00:04:37,190
+đó chưa phải là mô-đun.
+
+58
+00:04:37,400 --> 00:04:40,160
+mod đi của bạn sẽ bao gồm các phụ thuộc gián tiếp vào
+
+59
+00:04:43,600 --> 00:04:44,340
+Tôi bối rối.
+
+60
+00:04:44,490 --> 00:04:45,170
+Lại.
+
+61
+00:04:45,370 --> 00:04:52,380
+Vì vậy, vì trích dẫn RC là mô-đun go, mô-đun go của bạn không phải liệt kê các phụ thuộc gián tiếp
+
+62
+00:04:52,680 --> 00:04:58,780
+bởi vì trích dẫn RC đã có sự phụ thuộc của nó có các phụ thuộc được liệt kê trong tâm trí của chính nó.
+
+63
+00:04:58,800 --> 00:04:59,480
+Ồ đúng rồi.
+
+64
+00:04:59,550 --> 00:05:03,290
+Vì vậy, nếu bạn nhập một số gói, hãy chưa chuyển sang mô-đun.
+
+65
+00:05:03,300 --> 00:05:07,100
+Vâng, mô-đun của bạn cũng sẽ chịu trách nhiệm nhận các phụ thuộc gián tiếp của nó.
+
+66
+00:05:07,110 --> 00:05:07,830
+Tôi hiểu rồi.
+
+67
+00:05:08,130 --> 00:05:08,330
+Được rồi.
+
+68
+00:05:08,400 --> 00:05:15,720
+Vì vậy, kể từ khi gói này sử dụng các mô-đun go, nó có tệp mod go dot riêng và bạn có thể xem tại đây
+
+69
+00:05:15,720 --> 00:05:17,810
+rằng các phụ thuộc của gói này.
+
+70
+00:05:17,820 --> 00:05:19,900
+Đây là trên máy tính của Daniel.
+
+71
+00:05:20,190 --> 00:05:23,440
+Bạn biết các phụ thuộc là mô-đun là của chúng tôi.
+
+72
+00:05:23,480 --> 00:05:31,950
+Xem trích dẫn dấu gạch chéo về phía trước của Io và sự phụ thuộc của nó là bộ lấy mẫu dấu gạch chéo về phía trước đi-ốt RISC và đó là một điểm
+
+73
+00:05:31,950 --> 00:05:36,200
+ba và khi tôi mang AC Io của chúng tôi đến báo giá cuối cùng của nó.
+
+74
+00:05:36,210 --> 00:05:41,170
+Vì vậy, đó là phiên bản tôi đã đưa vào phiên bản một điểm năm điểm hai của họ và chúng ta có thể xem xét điều đó
+
+75
+00:05:41,170 --> 00:05:45,600
+và thứ hai, sự phụ thuộc trực tiếp của họ là sự phụ thuộc gián tiếp của tôi.
+
+76
+00:05:45,610 --> 00:05:45,890
+Phải.
+
+77
+00:05:45,900 --> 00:05:49,740
+Vì vậy, đi kèm với cái này là các phụ thuộc của cái là cái này.
+
+78
+00:05:49,740 --> 00:05:50,580
+Điều đó rất trực tiếp.
+
+79
+00:05:50,580 --> 00:05:51,630
+Có phải đó là những gì bạn đang cố gắng để nói.
+
+80
+00:05:51,660 --> 00:05:51,990
+Vâng.
+
+81
+00:05:52,020 --> 00:05:52,380
+Hiểu rồi.
+
+82
+00:05:52,680 --> 00:05:52,930
+Vâng.
+
+83
+00:05:52,940 --> 00:05:53,310
+Vì thế.
+
+84
+00:05:53,460 --> 00:05:54,130
+Vì vậy, nó không chắc chắn.
+
+85
+00:05:54,160 --> 00:05:56,790
+Vì vậy, nhưng sự phụ thuộc gián tiếp không hiển thị trong công việc của bạn.
+
+86
+00:05:56,820 --> 00:06:02,670
+Ôi Chúa ơi, dự án sẽ tiếp tục và tiếp tục bởi vì nó đã được liệt kê trong bản mod này.
+
+87
+00:06:02,700 --> 00:06:07,050
+Vâng, nhưng để xem chúng tôi hãy liệt kê tất cả.
+
+88
+00:06:07,050 --> 00:06:11,790
+Thực hiện lệnh này ngay tại đây và điều đó sẽ hiển thị chúng cho tôi và sau đó.
+
+89
+00:06:12,330 --> 00:06:17,880
+Vì vậy, nhưng nếu bạn đã nhập một số gói thì đó không phải là bản mod mà bạn thấy, bạn sẽ thấy các phụ thuộc gián tiếp của chúng
+
+90
+00:06:17,910 --> 00:06:23,040
+trong tâm trí bạn bởi vì họ phải bạn đã xem một số bản mod cho dù đó là của bạn hay cho đến khi anh ấy tạo ra một số
+
+91
+00:06:23,040 --> 00:06:29,580
+cái khác và sau đó quay lại nơi chúng tôi đã xem các phiên bản và chúng tôi có thể thấy rằng đây là phiên bản một điểm
+
+92
+00:06:29,580 --> 00:06:38,910
+bản phát hành năm điểm hai và phiên bản một điểm năm điểm hai là CD C cho D cho 2 3 6 đó là
+
+93
+00:06:38,910 --> 00:06:46,860
+cái đó và vì vậy đó là cùng một phiên bản mà tôi đã tải xuống và phiên bản mới nhất đúng không
+
+94
+00:06:46,860 --> 00:06:54,670
+tự động xuất hiện là có mới nhất vì danh sách phụ thuộc mà câu lệnh nhập của bạn là
+
+95
+00:06:54,720 --> 00:07:01,300
+không nói rằng bạn cần phiên bản v2, vì vậy hãy cố gắng tìm phiên bản phát hành ổn định mới nhất.
+
+96
+00:07:01,380 --> 00:07:01,960
+Vì vậy, điều này đã đi.
+
+97
+00:07:02,010 --> 00:07:04,470
+Vì vậy, những cái này là V2 mà chúng tôi đã nói rằng chúng tôi muốn.
+
+98
+00:07:04,470 --> 00:07:09,660
+Mình không nói phiên bản Fuck nên mặc định là phiên bản 1 nên nó không có cái này nó không có cái này
+
+99
+00:07:09,660 --> 00:07:12,750
+một vì đây là phiên bản phát hành trước của một số loại.
+
+100
+00:07:12,750 --> 00:07:17,520
+Nó không nhận được cái này vì phiên bản này không phải là số phiên bản phù hợp.
+
+101
+00:07:17,520 --> 00:07:23,700
+Vì vậy, nó có được điều này bởi vì một phiên bản ổn định mới nhất được gắn thẻ đúng cách và chúng ta sẽ tìm hiểu cách
+
+102
+00:07:23,700 --> 00:07:31,080
+chỉ định chính xác phiên bản bạn muốn nhưng theo mặc định, nó cung cấp cho bạn phiên bản mới nhất trừ khi bạn
+
+103
+00:07:31,080 --> 00:07:33,900
+chỉ định phiên bản chính xác mà bạn muốn theo mặc định.
+
+104
+00:07:33,900 --> 00:07:39,510
+Được rồi, điều đó hơi ngạc nhiên với tôi vì khi tôi đọc tài liệu nếu bạn nhập
+
+105
+00:07:39,510 --> 00:07:45,300
+một thư viện gói theo chế độ ăn kiêng được theo dõi bởi go mod theo mặc định, hãy thêm nó vào go mod bằng phiên bản mới nhất.
+
+106
+00:07:45,300 --> 00:07:51,300
+Tôi nghĩ phiên bản mới nhất là 3.0 1.0 nhưng nó chỉ là phiên bản mới nhất dựa trên một máy chủ để nó hoạt động
+
+107
+00:07:51,300 --> 00:07:52,090
+dựa trên trọng lượng.
+
+108
+00:07:52,150 --> 00:07:58,320
+Vì vậy, với các mô-đun go, phiên bản chính, số đầu tiên là một phần của đường dẫn đầu vào.
+
+109
+00:07:58,590 --> 00:08:01,070
+Vì vậy, bởi vì bạn không có số phiên bản trong lần nhập của mình.
+
+110
+00:08:01,170 --> 00:08:02,280
+Nó đi cho phiên bản 1.
+
+111
+00:08:02,320 --> 00:08:02,860
+Tôi hiểu rồi.
+
+112
+00:08:02,880 --> 00:08:10,380
+Điều đó hợp lý vì vậy lý do nó là phiên bản 1 và chúng ta sẽ thấy điều này là do bạn có thể chỉ định phiên bản
+
+113
+00:08:10,440 --> 00:08:15,300
+số 4 phiên bản 2 hoặc cao hơn nhưng sau đó trở thành một phần của đường dẫn nhập.
+
+114
+00:08:15,300 --> 00:08:25,370
+Và do đó, trong mã của tôi, đường dẫn nhập của tôi là dấu gạch chéo chuyển tiếp RISC dot Io và nó không phải dấu gạch chéo nước ngoài
+
+115
+00:08:25,380 --> 00:08:33,240
+trích dẫn hai phiên bản sẽ là phiên bản 2 hoặc v 3 phiên bản 3 theo mặc định sẽ cung cấp cho tôi phiên bản mới nhất
+
+116
+00:08:33,240 --> 00:08:34,480
+để nghe phiên bản 3.
+
+117
+00:08:34,560 --> 00:08:39,840
+Tôi chỉ đang làm điều đó nói rằng đó là phiên bản 1 và nó sẽ mang lại cho tôi phiên bản mới nhất vì tôi đã không làm
+
+118
+00:08:39,840 --> 00:08:40,520
+chỉ định nó ở đó.
+
+119
+00:08:40,530 --> 00:08:40,950
+Chính xác.
+
+120
+00:08:40,950 --> 00:08:41,840
+Chính xác.
+
+121
+00:08:41,850 --> 00:08:42,230
+Mát mẻ.
+
+122
+00:08:42,240 --> 00:08:43,320
+Chúng tôi đang tìm ra điều này.
+
+123
+00:08:43,350 --> 00:08:46,080
+Vì vậy, đó là thêm một phụ thuộc.
+
+124
+00:08:46,110 --> 00:08:52,530
+Và một lần nữa, điều đó song song với bài viết này và vì vậy chúng tôi chỉ lướt qua và cho bạn thấy những gì
+
+125
+00:08:52,530 --> 00:08:57,800
+họ đang chỉ cho bạn ở đây và phần tiếp theo chúng ta sẽ xem cách đảm bảo an ninh nhưng hãy đi một chút
+
+126
+00:08:57,810 --> 00:09:00,800
+và chúng ta sẽ xem điều gì sẽ xảy ra, một số là chúng ta sẽ tìm hiểu một chút về điều đó.
+
+127
+00:09:00,880 --> 00:09:03,350
+Bạn có bất cứ điều gì bạn muốn thêm vào video này.
+
+128
+00:09:03,640 --> 00:09:05,340
+Tôi không tin như vậy.
+
+129
+00:09:05,340 --> 00:09:06,240
+Xem video tiếp theo.

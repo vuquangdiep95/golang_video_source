@@ -1,0 +1,231 @@
+1
+00:00:00,410 --> 00:00:05,700
+Vì vậy, bây giờ chúng ta sẽ xem xét một số lệnh mà chúng ta đã xem qua
+
+2
+00:00:05,700 --> 00:00:10,620
+phần này và sau đó chúng ta sẽ chuyển sang một số bài tập thực hành và tôi rất mong chờ những bài tập đó
+
+3
+00:00:10,620 --> 00:00:16,470
+thực hành các bài tập vì tôi thích giải quyết những thách thức và vấn đề trong bản thân nhưng những mệnh lệnh
+
+4
+00:00:16,470 --> 00:00:23,970
+chúng tôi đã trải qua quá trình điều chỉnh mạng và do đó, hiện đại, đó là cách bạn tạo một mô-đun go và bạn
+
+5
+00:00:23,970 --> 00:00:29,430
+muốn làm điều đó trong thư mục gốc của bạn, các thư mục đã đọc của bạn nếu bạn đang làm việc với nó hoặc nếu bạn đang sử dụng
+
+6
+00:00:29,430 --> 00:00:34,920
+hiểu rằng nó sẽ là nơi bạn bị tấn công và nhận được thư mục trống, thư mục chứa tất cả các thư mục khác
+
+7
+00:00:34,920 --> 00:00:42,930
+các thư mục trong dự án của bạn hợp nhất hoặc chuyển đổi hoặc bắt nguồn từ hoặc dưới cấu trúc cây.
+
+8
+00:00:42,960 --> 00:00:46,320
+Vì vậy, đi hiện đại NÓ TẠO Mô-đun đi.
+
+9
+00:00:46,320 --> 00:00:48,840
+Bạn có bất cứ điều gì để nói thêm về đi hiện đại.
+
+10
+00:00:48,840 --> 00:00:51,020
+Nó cũng cung cấp cho bạn tệp go mod của bạn.
+
+11
+00:00:51,030 --> 00:00:51,340
+Chuẩn rồi.
+
+12
+00:00:51,380 --> 00:00:51,600
+Vâng.
+
+13
+00:00:51,600 --> 00:00:51,940
+Cố lên.
+
+14
+00:00:51,940 --> 00:00:53,620
+Và nó tạo ra chúng trên tập tin.
+
+15
+00:00:53,790 --> 00:00:57,620
+Bạn phải tự đặt tên cho không gian tên trừ khi nó có thể tìm ra nó dựa trên.
+
+16
+00:00:57,630 --> 00:01:04,000
+Bởi vì nếu bạn đang di chuyển để tìm ra nó, vì vậy hãy thêm không gian tên của bạn vào đó chẳng hạn
+
+17
+00:01:04,000 --> 00:01:11,860
+dấu gạch chéo chuyển tiếp dot com xin chào hoặc nhận trung tâm dấu gạch chéo chuyển tiếp dot com tên người dùng chuyển đến repo dấu gạch chéo chuyển tiếp Levin
+
+18
+00:01:11,860 --> 00:01:16,960
+tên để bất kể không gian tên của bạn là gì nếu bạn đang đi trên con đường của mình, nó sẽ tìm ra không gian tên
+
+19
+00:01:17,270 --> 00:01:17,720
+con đường.
+
+20
+00:01:17,790 --> 00:01:23,750
+Vì vậy, bạn có nó trong trường hợp đó nhưng trong hầu hết các trường hợp, bạn sẽ cần đặt nó ở đó và sau đó xây dựng
+
+21
+00:01:23,750 --> 00:01:29,620
+và đi kiểm tra các lệnh xây dựng gói khác, thêm các phụ thuộc mới để chuyển sang mod khi cần và sau đó
+
+22
+00:01:29,620 --> 00:01:35,380
+chúng ta có thể xem go mod có gì bằng cách mở nó lên hoặc mang theo nó hoặc chúng ta có thể liệt kê tất cả các mô-đun hiện tại
+
+23
+00:01:35,380 --> 00:01:36,400
+phụ thuộc.
+
+24
+00:01:36,580 --> 00:01:39,830
+Đó sẽ là những phụ thuộc trực tiếp và gián tiếp.
+
+25
+00:01:39,880 --> 00:01:41,460
+Vì vậy, chúng tôi đã học được đó là gì.
+
+26
+00:01:41,920 --> 00:01:47,920
+Và chúng tôi đã thực sự học được khá nhiều về tất cả những điều này về xu hướng trực tiếp quản lý gói
+
+27
+00:01:47,950 --> 00:01:55,780
+và các phụ thuộc gián tiếp và đi mô-đun và theo dõi gói nào và chỉ định gói nào
+
+28
+00:01:56,200 --> 00:02:05,390
+bạn có thể lấy tên gói và bạn cũng có thể thêm vào số mà bạn biết với phiên bản hoặc mới nhất.
+
+29
+00:02:05,530 --> 00:02:08,480
+Vì vậy, đó không phải là R mà là đóng.
+
+30
+00:02:08,480 --> 00:02:13,570
+Vì vậy, có một số ví dụ bên dưới nơi nó nói rằng hãy đi lấy gói hàng và họ sẽ mang đến
+
+31
+00:02:13,570 --> 00:02:14,050
+muộn nhất.
+
+32
+00:02:14,050 --> 00:02:20,350
+Bạn có thể thêm phụ nữ nếu bạn muốn hoặc bạn có thể chỉ định một phiên bản chính xác và sau đó chuyển sang chế độ xóa gọn gàng
+
+33
+00:02:20,350 --> 00:02:28,390
+bất kỳ phần phụ thuộc không sử dụng nào và thêm phần phụ thuộc cho các nền tảng khác như Daniel đã chỉ ra trước đó
+
+34
+00:02:28,870 --> 00:02:34,060
+và sau đó chúng tôi có tên gói tài liệu nơi chúng tôi có thể xem tài liệu về gói.
+
+35
+00:02:34,240 --> 00:02:38,720
+Bất cứ điều gì bạn muốn thêm vào tất cả những điều đó, chúng tôi sẽ bỏ đi bất cứ điều gì.
+
+36
+00:02:39,360 --> 00:02:46,450
+Chỉ khi bạn muốn đưa vào một cái gì đó về thẻ thay thế đã thêm hoặc thẻ get, vâng, đó là
+
+37
+00:02:46,560 --> 00:02:47,370
+thật tốt bụng.
+
+38
+00:02:47,450 --> 00:02:48,530
+Họ là loại ưa thích ở đây.
+
+39
+00:02:48,680 --> 00:02:48,960
+Vâng.
+
+40
+00:02:49,020 --> 00:02:53,360
+Thẻ get được thêm vào là thẻ nhập get quan trọng và nó khá dễ dàng.
+
+41
+00:02:53,390 --> 00:02:59,290
+Nhưng vâng, hãy bắt đầu thay thế thay thế là nâng cao.
+
+42
+00:02:59,320 --> 00:03:03,910
+Vâng, hãy tìm kiếm nó khi bạn cần một thẻ tốt và sau đó chúng tôi có tên thẻ phù hợp.
+
+43
+00:03:03,920 --> 00:03:04,830
+Vâng.
+
+44
+00:03:05,100 --> 00:03:06,960
+Và vì vậy những lệnh đó đều ở ngay đó.
+
+45
+00:03:06,970 --> 00:03:12,250
+Tạo thẻ Chia sẻ danh sách thẻ Tôi đoán chúng ta sẽ chỉ liệt kê từng thẻ ngay tại đây.
+
+46
+00:03:12,360 --> 00:03:13,720
+Điều đó tốt để xảy ra ở dưới đó.
+
+47
+00:03:13,780 --> 00:03:14,550
+Vì vậy chúng tôi có.
+
+48
+00:03:15,090 --> 00:03:19,240
+Vì vậy, chúng tôi sẽ chỉ đặt chúng dưới các thẻ tag.
+
+49
+00:03:19,380 --> 00:03:20,010
+Hãy làm điều đó.
+
+50
+00:03:20,030 --> 00:03:27,200
+Thẻ màu đen và chúng tôi sẽ có các lệnh ngay tại đó vì tất cả chúng đều liên quan đến cùng một giao dịch và
+
+51
+00:03:27,200 --> 00:03:28,130
+chúng tôi sẽ làm cho những màu đỏ.
+
+52
+00:03:28,160 --> 00:03:32,150
+Tôi sẽ làm cho những màu đỏ đó vào thời gian của riêng tôi nhưng đó là.
+
+53
+00:03:32,330 --> 00:03:34,040
+Đó là những lệnh mà chúng ta đã học được qua việc này.
+
+54
+00:03:34,040 --> 00:03:39,680
+Tôi nghĩ rằng thật tiện lợi khi có tất cả các lệnh đó ở đó và chỉ cần nhắc nhở bản thân rằng mọi thứ chúng ta
+
+55
+00:03:39,680 --> 00:03:44,330
+đã học được rằng nó thực sự bắt nguồn từ việc sử dụng các lệnh này.
+
+56
+00:03:44,330 --> 00:03:45,910
+Vì vậy, được rồi.
+
+57
+00:03:45,920 --> 00:03:47,520
+Còn gì nữa không.
+
+58
+00:03:48,390 --> 00:03:51,260
+Chúng tôi sẽ gặp bạn trong các video tiếp theo với các bài tập thực hành.

@@ -1,0 +1,427 @@
+1
+00:00:01,310 --> 00:00:04,250
+So we've written all the code that should execute migrations.
+
+2
+00:00:04,280 --> 00:00:05,600
+Let's give it a try.
+
+3
+00:00:05,630 --> 00:00:10,730
+So I'm still in this alert house project and I have a terminal window open, so I'll make sure I'm at
+
+4
+00:00:10,730 --> 00:00:12,620
+the root level of my celebrity house project.
+
+5
+00:00:12,620 --> 00:00:13,190
+I am.
+
+6
+00:00:13,460 --> 00:00:18,500
+So now I can run, make, build, underscore seal art and that will build a new version of the command
+
+7
+00:00:18,500 --> 00:00:21,290
+line executable and copy it to this project.
+
+8
+00:00:22,010 --> 00:00:22,550
+My app.
+
+9
+00:00:23,450 --> 00:00:25,210
+So I have a new version of silver here.
+
+10
+00:00:25,250 --> 00:00:28,310
+So let's just look at how things are before we try anything.
+
+11
+00:00:28,370 --> 00:00:33,260
+Right now, I have nothing in my migrations folder and I'm connected to my database and make sure you
+
+12
+00:00:33,260 --> 00:00:37,100
+have your Docker images running before you do the next step or nothing will work.
+
+13
+00:00:38,030 --> 00:00:42,850
+And I'm looking at my celebrity's database in the Docker image, and right now I just have three tables
+
+14
+00:00:42,860 --> 00:00:44,480
+the ones that we created last time around.
+
+15
+00:00:44,780 --> 00:00:51,890
+So I'm going to generate a migration dot slash celebrities and it's make migration and it requires a
+
+16
+00:00:51,890 --> 00:00:54,170
+name, but just leave the name out and see what happens.
+
+17
+00:00:55,400 --> 00:00:57,850
+Error you must give your migration a name perfect.
+
+18
+00:00:57,860 --> 00:01:02,180
+So happy apparel, and I'll call this one test and that should.
+
+19
+00:01:02,180 --> 00:01:04,400
+And it did create an app migration.
+
+20
+00:01:04,400 --> 00:01:09,470
+So let's open that and of course, is not going to do anything if we try to run this until we uncomment
+
+21
+00:01:09,470 --> 00:01:09,980
+this bit.
+
+22
+00:01:10,130 --> 00:01:16,930
+So one comment that I'll leave these ones here commented, But I'll uncomment this.
+
+23
+00:01:16,940 --> 00:01:21,350
+I don't have to because I already have this trigger, but it should create or replace it.
+
+24
+00:01:22,040 --> 00:01:24,290
+And finally, I'll create the trigger.
+
+25
+00:01:25,040 --> 00:01:30,740
+So these lines, from 10 to 16 create or replace the function trigger set timestamp.
+
+26
+00:01:31,160 --> 00:01:35,450
+And this one assigns a trigger to this table using this function.
+
+27
+00:01:35,690 --> 00:01:36,030
+OK.
+
+28
+00:01:37,160 --> 00:01:41,570
+So we also want to, of course, uncomment are down migration.
+
+29
+00:01:41,570 --> 00:01:42,820
+So I'll uncomment that
+
+30
+00:01:45,560 --> 00:01:46,040
+perfect.
+
+31
+00:01:46,880 --> 00:01:48,710
+Now I should be able to come down here.
+
+32
+00:01:49,040 --> 00:01:54,230
+Clear the screen and type dot slash celebrities migrate up.
+
+33
+00:01:55,750 --> 00:01:57,070
+And it says it ran.
+
+34
+00:01:57,100 --> 00:01:58,960
+Let's go look at the database and make sure that it did.
+
+35
+00:01:59,410 --> 00:02:00,940
+So back to my database client.
+
+36
+00:02:01,600 --> 00:02:04,750
+I'll refresh it and look, it created some table.
+
+37
+00:02:04,780 --> 00:02:06,280
+Let's make sure it has the right columns.
+
+38
+00:02:06,820 --> 00:02:14,770
+So the structure of that is ID of integer, which is a sequence some field, which is a marker 255 and
+
+39
+00:02:14,770 --> 00:02:15,790
+are two time stamps.
+
+40
+00:02:15,910 --> 00:02:16,390
+Perfect.
+
+41
+00:02:16,870 --> 00:02:21,370
+So now we'll go back to the top level of this database, and you notice it also created this schema
+
+42
+00:02:21,370 --> 00:02:26,910
+migration's table, which if it doesn't exist the first time the tool is run, it creates that for us.
+
+43
+00:02:26,920 --> 00:02:31,840
+And that's what keeps track of which migrations have been run and which ones have not, and so on and
+
+44
+00:02:31,840 --> 00:02:32,290
+so forth.
+
+45
+00:02:33,130 --> 00:02:35,020
+Let's try running the down migration.
+
+46
+00:02:35,380 --> 00:02:36,190
+Migrate down.
+
+47
+00:02:37,510 --> 00:02:38,560
+And it says it finished.
+
+48
+00:02:39,280 --> 00:02:44,670
+So let's go back and look, refresh this and it's gone.
+
+49
+00:02:44,680 --> 00:02:48,010
+But it did leave the schema migrations table, which it should, of course.
+
+50
+00:02:48,160 --> 00:02:50,530
+OK, so that all seems to work pretty well.
+
+51
+00:02:51,490 --> 00:02:56,620
+Now, of course, there's one thing I need to do if I go back here and just type in the terminal in
+
+52
+00:02:56,620 --> 00:03:04,480
+my Maya project dot slash celebrities and hit return, it prints out the help, but it actually doesn't
+
+53
+00:03:04,480 --> 00:03:07,210
+put our migrate commands or anything else in there.
+
+54
+00:03:07,210 --> 00:03:08,260
+So let's go fix that.
+
+55
+00:03:08,830 --> 00:03:15,490
+Let's go back to our celebrities project, and let's find out where that show help exists.
+
+56
+00:03:15,670 --> 00:03:17,710
+So right now, show help.
+
+57
+00:03:17,740 --> 00:03:18,310
+There it is.
+
+58
+00:03:19,600 --> 00:03:20,020
+Command.
+
+59
+00:03:20,020 --> 00:03:21,850
+Click on that or control.
+
+60
+00:03:21,850 --> 00:03:24,880
+Click if you're in windows to see where that function exists.
+
+61
+00:03:25,750 --> 00:03:28,690
+So it exists in my mind, I'd go, Oh, I'm going to get it out of there.
+
+62
+00:03:29,110 --> 00:03:30,100
+I don't want it to be there.
+
+63
+00:03:30,900 --> 00:03:32,530
+So cut that out of there.
+
+64
+00:03:33,100 --> 00:03:35,290
+And instead, I'll put it in my helper smile.
+
+65
+00:03:35,590 --> 00:03:36,920
+I think that's a better place for it.
+
+66
+00:03:36,970 --> 00:03:38,590
+So I'll put it right at the bottom of that file.
+
+67
+00:03:39,670 --> 00:03:40,800
+And now let's updating.
+
+68
+00:03:40,810 --> 00:03:43,120
+And of course, we need to update color use color.
+
+69
+00:03:43,120 --> 00:03:45,990
+So see if it'll do the auto import for me.
+
+70
+00:03:46,000 --> 00:03:47,380
+Colored yellow?
+
+71
+00:03:48,130 --> 00:03:48,550
+Perfect.
+
+72
+00:03:48,640 --> 00:03:52,420
+That should fix the import, and I'll just delete the extraneous code.
+
+73
+00:03:53,770 --> 00:03:57,910
+And back in Maine, let's make sure that color is not being used anywhere else.
+
+74
+00:03:58,930 --> 00:03:59,650
+It so that's fine.
+
+75
+00:04:00,400 --> 00:04:02,210
+OK, so back to my helper stuck up.
+
+76
+00:04:02,230 --> 00:04:03,850
+Let's update our help file.
+
+77
+00:04:03,940 --> 00:04:06,820
+First of all, I'll put a blank line in there because it just looks bad.
+
+78
+00:04:07,510 --> 00:04:12,520
+So we're now going to add the command, migration and space over.
+
+79
+00:04:12,520 --> 00:04:16,000
+I'm not going to use tabs because they often don't work when you're working with console, but it's
+
+80
+00:04:16,000 --> 00:04:16,480
+up to you.
+
+81
+00:04:17,050 --> 00:04:26,740
+And I'll say migrate runs all of the migrations that have not been run previously
+
+82
+00:04:29,140 --> 00:04:31,840
+and I'll say migrate down
+
+83
+00:04:34,840 --> 00:04:39,310
+runs, reverses the most previous.
+
+84
+00:04:41,070 --> 00:04:50,160
+Our most recent, most recent migration, and we can try to migrate reset, which we haven't tried yet,
+
+85
+00:04:50,160 --> 00:04:51,360
+but we'll do it before too long.
+
+86
+00:04:51,780 --> 00:05:04,020
+This one runs all down migrations in reverse order and then all up migrations.
+
+87
+00:05:04,680 --> 00:05:05,060
+OK.
+
+88
+00:05:06,710 --> 00:05:16,490
+And we also should say make the migration name and we better space this over, or it will be very attractive.
+
+89
+00:05:31,690 --> 00:05:40,720
+And here will say creates two new up and down migrations in the migrations
+
+90
+00:05:45,520 --> 00:05:46,000
+folder.
+
+91
+00:05:47,120 --> 00:05:48,190
+I think that's it for now.
+
+92
+00:05:48,370 --> 00:05:52,690
+So we'll save this and I'll just rebuild the seal I.
+
+93
+00:05:55,320 --> 00:05:56,670
+Then I'll switch to my app.
+
+94
+00:05:57,180 --> 00:06:02,060
+Clear the terminal console and just run celebrities.
+
+95
+00:06:03,940 --> 00:06:08,140
+And we still have that Air Command required twice, but I can live with that for now, we'll clean that
+
+96
+00:06:08,140 --> 00:06:08,710
+up later on.
+
+97
+00:06:09,070 --> 00:06:15,730
+The help file at least seems to be useful, and let's try that slash celebrity's version application
+
+98
+00:06:15,730 --> 00:06:17,070
+version 1.0 point 0.0.
+
+99
+00:06:17,070 --> 00:06:17,680
+Oh, perfect.
+
+100
+00:06:18,340 --> 00:06:19,600
+So this seems to work really well.
+
+101
+00:06:19,780 --> 00:06:26,860
+Now let's take advantage of the code we've written and actually create a new command make off.
+
+102
+00:06:27,460 --> 00:06:34,240
+And what that would will do is copy all of the necessary files from our command line, from our read
+
+103
+00:06:34,240 --> 00:06:42,190
+only file system in our command command line application over to the appropriate location in the My
+
+104
+00:06:42,190 --> 00:06:48,430
+App application, and it will also create and run migrations to create these tables, the ones that
+
+105
+00:06:48,430 --> 00:06:51,520
+we did by hand right over here.
+
+106
+00:06:53,170 --> 00:06:57,760
+So remember, tokens, tokens and users will automatically create all of that.
+
+107
+00:06:57,910 --> 00:07:01,780
+Now that might take a couple of steps, but we'll get started on it in the next lecture.

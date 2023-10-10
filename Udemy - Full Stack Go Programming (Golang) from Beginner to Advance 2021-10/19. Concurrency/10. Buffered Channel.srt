@@ -1,0 +1,199 @@
+1
+00:00:12,800 --> 00:00:18,890
+Hello and welcome to the goal and programming language course in this session, we want to talk about
+
+2
+00:00:18,890 --> 00:00:21,020
+the authors concurrency concept.
+
+3
+00:00:25,630 --> 00:00:27,760
+Beaufort Channel and Go Lake.
+
+4
+00:00:29,040 --> 00:00:37,590
+Channels can be defined as a pipes using which go routines communicate similar to water flows from one
+
+5
+00:00:37,590 --> 00:00:39,330
+end to another in the pipe.
+
+6
+00:00:39,750 --> 00:00:45,330
+Data can be sent from one end and received from the other and using channels.
+
+7
+00:00:46,140 --> 00:00:55,400
+By default, channels are on buffer, which states that they will only accept sense if there is a corresponding
+
+8
+00:00:55,400 --> 00:00:58,230
+greasy which are ready to receive the sand value.
+
+9
+00:00:58,950 --> 00:01:05,460
+Both our channels allow us to accept a limited number of values without a corresponding receiver for
+
+10
+00:01:05,460 --> 00:01:06,390
+those values.
+
+11
+00:01:07,050 --> 00:01:13,620
+It is possible to create a channel with a buffer buffer channel or are blocked only when the buffer
+
+12
+00:01:13,620 --> 00:01:14,280
+is full.
+
+13
+00:01:15,480 --> 00:01:20,910
+Similarly, switching from a buffer channel are blocked only when the buffer will be empty.
+
+14
+00:01:21,960 --> 00:01:28,820
+Buffer channels can be created by passing an additional capacity parameter to the make function, which
+
+15
+00:01:28,840 --> 00:01:31,230
+specifies the size of the buffer.
+
+16
+00:01:31,860 --> 00:01:40,860
+Now you can see the same tax chan defined channel time and capacity as specifies the size of the buffer
+
+17
+00:01:41,760 --> 00:01:42,220
+here.
+
+18
+00:01:42,450 --> 00:01:48,300
+Capacity is about syntax should be greater than zero for the channel to have a buffer.
+
+19
+00:01:48,840 --> 00:01:55,740
+The capacity for an unbar for channel is 0y defined enhance its army the capacity parameter.
+
+20
+00:01:56,920 --> 00:02:02,110
+Now, let's go to this school with program to illustrate on Buffer and Beaufort, China.
+
+21
+00:02:04,650 --> 00:02:12,000
+First, define the channel by make function, for example, define a variable like search calling equals
+
+22
+00:02:12,390 --> 00:02:17,570
+make and channel by the time S3.
+
+23
+00:02:20,360 --> 00:02:30,560
+Sin Daytimes is trying to create a channel switch channel operator forcing and set a variable like go
+
+24
+00:02:33,140 --> 00:02:37,550
+now, receive send data off the channel and put into a string variable.
+
+25
+00:02:38,090 --> 00:02:45,980
+For example, define a variable like age column equals channel operator search.
+
+26
+00:02:47,940 --> 00:02:51,510
+So print message, variable value FP.
+
+27
+00:02:54,490 --> 00:02:55,210
+Message.
+
+28
+00:02:58,140 --> 00:03:06,360
+Reformat the quote, safe deposit and execute the courier go from the bank is less me, that's cool.
+
+29
+00:03:08,790 --> 00:03:17,610
+OK, now we can see the output fatal error of all go routines are athlete dead luck.
+
+30
+00:03:18,570 --> 00:03:25,260
+In this case, this code will produce a dead lunch because it tries to send and receive data from channel
+
+31
+00:03:25,260 --> 00:03:31,500
+servers within the same goal routine, which is made since channel operations are blocking the goal
+
+32
+00:03:31,500 --> 00:03:31,920
+routine.
+
+33
+00:03:32,100 --> 00:03:39,390
+The main goal routine stops at S.H. forever since it's blocked, and it would never reach the line.
+
+34
+00:03:39,390 --> 00:03:42,690
+Message column equals channel operator search.
+
+35
+00:03:42,900 --> 00:03:47,490
+The simple workaround for this problem is to use a buffer chairman.
+
+36
+00:03:47,850 --> 00:03:54,820
+The buffer channel will not be go with him unless it is put, so be bound to defined buffer channel
+
+37
+00:03:54,840 --> 00:03:58,110
+by the make function and set buffer capacity.
+
+38
+00:03:58,650 --> 00:04:01,320
+Now go to main function and change.
+
+39
+00:04:01,320 --> 00:04:09,090
+Make function to buffer channel for the example, at one end buffer capacity as a second argument.
+
+40
+00:04:09,450 --> 00:04:14,580
+Come on and sit one, so execute program again.
+
+41
+00:04:18,920 --> 00:04:26,840
+Now we can see the output go like in this example, we make the Beaufort channel the size equal to one.
+
+42
+00:04:26,900 --> 00:04:34,160
+The channel can hold one data and will not block main function so that we can proceed to the line.
+
+43
+00:04:34,400 --> 00:04:37,320
+Mrs. Carlin equals channel operator.
+
+44
+00:04:38,120 --> 00:04:43,970
+However, if we try to spend more than one data through this channel before we receive data from it,
+
+45
+00:04:44,180 --> 00:04:46,100
+that large will happen again.
+
+46
+00:04:46,310 --> 00:04:52,370
+Because the size of the disparate channel is only one exam in this case, and changes send data to more
+
+47
+00:04:52,370 --> 00:04:54,350
+than 40 example at another.
+
+48
+00:04:54,350 --> 00:04:58,280
+Send data in order not to prolong the time of decision.
+
+49
+00:04:58,400 --> 00:05:02,540
+We will finish it and we will continue the content in the next session.
+
+50
+00:05:02,750 --> 00:05:03,320
+Goodbye.

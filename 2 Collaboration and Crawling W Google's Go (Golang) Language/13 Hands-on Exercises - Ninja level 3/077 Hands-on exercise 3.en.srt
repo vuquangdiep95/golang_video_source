@@ -1,0 +1,695 @@
+1
+00:00:00,600 --> 00:00:06,390
+All right welcome to hands on Exercise number three for this hands on exercise go through these steps
+
+2
+00:00:06,390 --> 00:00:15,300
+right here basically you're gonna count up each of the words like you saw Daniel do and to do that look
+
+3
+00:00:15,300 --> 00:00:21,540
+at in the code just you know here you've got title just look at title because old read it if we go and
+
+4
+00:00:21,540 --> 00:00:27,030
+look at old red it just has these titles here so get each of these titles and it's a string of text
+
+5
+00:00:27,060 --> 00:00:33,090
+and so you're going to want to split that string of text into words you want to collect all of those
+
+6
+00:00:33,090 --> 00:00:39,960
+words you want to use a map to count them and make sure you go to lower so you could also do the two
+
+7
+00:00:39,960 --> 00:00:48,180
+lower ones and then once you've done that maybe range over your map and get a struct and with that struck
+
+8
+00:00:48,180 --> 00:00:56,910
+to have 2 fields word and count and then create a slice of that type of struct and then range of your
+
+9
+00:00:56,910 --> 00:01:04,200
+map and put an entry in that slice for each word so then you could use sort slice from the source package
+
+10
+00:01:04,540 --> 00:01:06,220
+at sort or sorts.
+
+11
+00:01:06,330 --> 00:01:13,980
+And it's sort of a sort package to to make sure that it all runs well so pauses video goes take a swing
+
+12
+00:01:13,980 --> 00:01:19,320
+about when you're all done on positive video and then come on back and I'm going to show you my solution
+
+13
+00:01:19,320 --> 00:01:21,000
+which I'm going to do right now.
+
+14
+00:01:21,000 --> 00:01:31,830
+So one thing to share is that there's a difference between teaching as a profession and being a professional
+
+15
+00:01:31,830 --> 00:01:37,770
+developer and so on a professional developer you're actually in the arena and you're creating an applications
+
+16
+00:01:38,250 --> 00:01:44,440
+and you're swinging and using code every day in that way as a teacher.
+
+17
+00:01:45,000 --> 00:01:49,920
+You know there's a set curriculum which we go through if we know those concepts we teach that which
+
+18
+00:01:49,920 --> 00:01:52,970
+is where I find myself and my skill set.
+
+19
+00:01:53,040 --> 00:02:00,170
+And so this is just a little bit of vulnerability and I feel vulnerable sharing this and I feel a little
+
+20
+00:02:00,180 --> 00:02:06,340
+bit humble because I'd like to be able to practice and fight like somebody who's in their arena everyday
+
+21
+00:02:06,390 --> 00:02:12,240
+but academia is not the arena academia is a lot of other things and there's a lot of skill sets that
+
+22
+00:02:12,240 --> 00:02:17,980
+go with it but it's not being in the trenches being a professional developer every day.
+
+23
+00:02:18,030 --> 00:02:25,260
+And so when it comes to teaching coding I'm really good at the intro classes that's kind of where my
+
+24
+00:02:25,260 --> 00:02:31,890
+career I've spent my time but in actually taking that and dynamically putting that into an application
+
+25
+00:02:31,890 --> 00:02:34,890
+that's a strength I hope to develop and grow.
+
+26
+00:02:35,340 --> 00:02:44,670
+And I've been working on that last bit of time started a Web company with Daniel and a few others so
+
+27
+00:02:44,670 --> 00:02:50,430
+I could have more time to code but ended up doing all the other stuff and not getting any coding because
+
+28
+00:02:50,430 --> 00:02:52,190
+I wanted more of that real world experience.
+
+29
+00:02:52,200 --> 00:02:55,080
+But then there's so many other things to do I didn't get that.
+
+30
+00:02:55,080 --> 00:03:04,320
+And then also you know that all that all that to just preface that I wish I was as fluid as you as somebody
+
+31
+00:03:04,320 --> 00:03:11,100
+who's in the arena with this but in my life I haven't had that focus with my career and my time and
+
+32
+00:03:11,100 --> 00:03:11,820
+everything.
+
+33
+00:03:11,820 --> 00:03:17,970
+So this isn't going to be a slick and as fluid as with Daniel maybe you already know all that but here
+
+34
+00:03:17,970 --> 00:03:21,510
+I'm going to take a swing at it and enter code right.
+
+35
+00:03:21,540 --> 00:03:26,820
+We're going to focus on title that's where the title comes out and we have stories where we're getting
+
+36
+00:03:26,820 --> 00:03:30,180
+a slice of items and so the item is all that stuff.
+
+37
+00:03:30,180 --> 00:03:36,030
+And if we look to see where stories are being used right I could see stories are being appended so we're
+
+38
+00:03:36,030 --> 00:03:42,090
+collecting all of our stories there and inside stories as my title and then down here we're printing
+
+39
+00:03:42,090 --> 00:03:42,620
+them all out.
+
+40
+00:03:42,620 --> 00:03:47,550
+Well instead of printing them I've got all those stories and all those stories.
+
+41
+00:03:47,550 --> 00:03:51,360
+It's a struct It's a slice of home so I need a range over this slice.
+
+42
+00:03:51,360 --> 00:03:56,430
+And so if I'm going to range over a slice I'm going to use the range loop and when I range over a slice
+
+43
+00:03:56,460 --> 00:04:03,060
+I'm going to get back my index and my values I'm going to do for i v call an equal range and I'm going
+
+44
+00:04:03,060 --> 00:04:11,820
+to range over my slice of items called stories some ranging over stories and and so that's my first
+
+45
+00:04:11,820 --> 00:04:12,240
+step.
+
+46
+00:04:12,780 --> 00:04:17,820
+And I get my index of my value and so I'm not going to need my index I don't think I'm going to put
+
+47
+00:04:17,820 --> 00:04:21,510
+that away and I'm going to call this one a story.
+
+48
+00:04:21,630 --> 00:04:27,780
+So I range over stories and I get back a story so now I have my story and inside my story there is the
+
+49
+00:04:27,780 --> 00:04:28,640
+title.
+
+50
+00:04:28,800 --> 00:04:35,360
+And so with the title it has all the words in there and so I'm going to want to make that all to lower
+
+51
+00:04:35,400 --> 00:04:40,980
+want to split that and get all the words out and then and then that's going to when I split it if I
+
+52
+00:04:40,980 --> 00:04:47,060
+go in I look at the documentation go doc and look up split.
+
+53
+00:04:47,070 --> 00:04:50,340
+So that's in the strings package.
+
+54
+00:04:50,340 --> 00:04:51,590
+I'm doing great.
+
+55
+00:04:51,900 --> 00:04:55,770
+Just way right.
+
+56
+00:04:56,130 --> 00:05:02,560
+We go to this we've got a split and we get we need that and we get back a slice of string.
+
+57
+00:05:02,570 --> 00:05:04,400
+So we're gonna get back a slice of string.
+
+58
+00:05:04,400 --> 00:05:10,630
+So I'm going to go for a splitting that up and for each of those.
+
+59
+00:05:10,640 --> 00:05:11,620
+But then when I split.
+
+60
+00:05:11,660 --> 00:05:14,960
+Each to each of those See I just made myself nervous.
+
+61
+00:05:14,960 --> 00:05:21,110
+Now I get a slice of string gives me all of my words and I'm going to collect those into a map.
+
+62
+00:05:21,110 --> 00:05:26,520
+And when I split up all of my words I'm going to need to range over that slice and then put them into
+
+63
+00:05:26,520 --> 00:05:27,210
+a map.
+
+64
+00:05:27,210 --> 00:05:28,010
+So where each of these.
+
+65
+00:05:28,010 --> 00:05:31,370
+Each time we loop we get a story for each story.
+
+66
+00:05:31,370 --> 00:05:38,090
+This is what I want to do I get back a slice of string and that slice of string is going to be equal
+
+67
+00:05:38,090 --> 00:05:40,530
+to strings not split.
+
+68
+00:05:41,030 --> 00:05:45,890
+And we're going to do story and that's our separator right there.
+
+69
+00:05:45,890 --> 00:05:48,520
+And so that will give us back our slice of strings.
+
+70
+00:05:48,680 --> 00:05:48,980
+Right.
+
+71
+00:05:48,980 --> 00:06:00,230
+And we also want to split the title on that and then I also want to make that strings to lower strings
+
+72
+00:06:00,230 --> 00:06:02,790
+to lower.
+
+73
+00:06:02,830 --> 00:06:03,900
+There we go.
+
+74
+00:06:03,910 --> 00:06:10,700
+And so I've got my title a range of stories I get my my story and with my story title it's thrown in
+
+75
+00:06:10,700 --> 00:06:15,010
+there I'm going to figure that out here in a second with my story title I'm going to make that strings
+
+76
+00:06:15,010 --> 00:06:24,990
+to lower and I'm gonna put this here and strings to lower just around this and then my split needs to
+
+77
+00:06:24,990 --> 00:06:27,480
+be around that which means I don't need this last one.
+
+78
+00:06:27,480 --> 00:06:28,000
+There you go.
+
+79
+00:06:28,590 --> 00:06:35,060
+And now I get a slice of strings and so that slice of strings is going to be my words actually.
+
+80
+00:06:35,060 --> 00:06:37,200
+So I'm going to call this words.
+
+81
+00:06:37,230 --> 00:06:38,710
+So they're my words.
+
+82
+00:06:38,880 --> 00:06:42,840
+And now with all of my words from that I want to range over that.
+
+83
+00:06:42,840 --> 00:06:50,340
+And so the words is is also going to be a slice gives me back a slice so a slice of string I like that
+
+84
+00:06:51,020 --> 00:06:52,150
+slice a string.
+
+85
+00:06:52,170 --> 00:06:56,230
+So now I'm going to range over that so for index value.
+
+86
+00:06:56,230 --> 00:06:57,570
+Colon equals range.
+
+87
+00:06:57,570 --> 00:07:04,050
+I know I need to change those and I'm going to range over this and I'm going to call this a word and
+
+88
+00:07:04,050 --> 00:07:06,600
+I'm not going to use my index there.
+
+89
+00:07:06,600 --> 00:07:09,330
+And so for each word I'm going to add that to a map.
+
+90
+00:07:09,330 --> 00:07:10,350
+So I need my map.
+
+91
+00:07:10,740 --> 00:07:20,180
+So I'm going to have a map that's going to be equal to a map and the key will be a string and the value
+
+92
+00:07:20,210 --> 00:07:27,180
+is going to be an end and I'm going to just go ahead and create that right there initiate it initialize
+
+93
+00:07:27,180 --> 00:07:27,550
+it.
+
+94
+00:07:27,900 --> 00:07:32,010
+And so for my map here I want to add in the word.
+
+95
+00:07:32,010 --> 00:07:37,010
+If it's not there it will create the entry and then I'm going to increment that.
+
+96
+00:07:37,020 --> 00:07:42,320
+So now I've got my my word getting putting to my map and it's being counted.
+
+97
+00:07:42,330 --> 00:07:47,850
+So I'm just going to go through my logic here arrange over all of my stories I get a story for each
+
+98
+00:07:47,850 --> 00:07:52,070
+story and take the title I'm going to make it to lower and then I'm going to split it.
+
+99
+00:07:52,110 --> 00:07:57,960
+And then that's going to give me a slice of words and I'm going to range over that slice of words.
+
+100
+00:07:58,110 --> 00:08:02,630
+And it's going to give me I guess I like the idea of that being called words.
+
+101
+00:08:02,920 --> 00:08:03,210
+Right.
+
+102
+00:08:03,240 --> 00:08:07,100
+And then I'm going to get a word and then for each word I'm going to drop that into my map.
+
+103
+00:08:07,110 --> 00:08:08,780
+So that's like step one for me.
+
+104
+00:08:09,090 --> 00:08:15,590
+And then the next step is okay I've got my map full of all of my words I now need to have a structure
+
+105
+00:08:15,600 --> 00:08:23,600
+so I could sort that and that structure is going to be type word counts word count.
+
+106
+00:08:23,700 --> 00:08:30,360
+And it will be a struct and I'm going to have two fields it'll be the word which will be a string and
+
+107
+00:08:30,360 --> 00:08:36,210
+it will be count which will be an end and then I'm going to need to range over my map.
+
+108
+00:08:36,210 --> 00:08:44,850
+So maps have a key and value and call an equal range over my map.
+
+109
+00:08:45,130 --> 00:08:52,220
+And as I range over my map I then want to have a slice of words so slice of words.
+
+110
+00:08:52,710 --> 00:08:59,700
+And that's going to be slice of word count slice a word count and that's gonna be a slice of word count
+
+111
+00:09:00,790 --> 00:09:14,140
+and not double word word word word random word and then now that that is set up as I range over my map
+
+112
+00:09:15,350 --> 00:09:19,850
+I'm going to add to that slice so I'm going to do append
+
+113
+00:09:22,610 --> 00:09:27,100
+again do X WC X WC is equal to append
+
+114
+00:09:29,930 --> 00:09:38,480
+X WC and what I'm going to append to it is going to be I'm ranging over my map and I'm giving out my
+
+115
+00:09:38,480 --> 00:09:45,320
+key and my value and so my key my value are actually the word and it's that count.
+
+116
+00:09:45,500 --> 00:09:48,860
+And so I'm just looking to see if I used word up there.
+
+117
+00:09:48,950 --> 00:09:56,330
+So maybe I'll just go at WC and I think I kind of like that and then X WC kind of makes sense and so
+
+118
+00:09:56,330 --> 00:09:57,350
+I'm gonna pin to that.
+
+119
+00:09:57,380 --> 00:10:05,870
+I'm going to now create I've got my type word counts it's going to be a word count and we're using would
+
+120
+00:10:05,870 --> 00:10:11,720
+you call this an anonymous composite literal not assigning it to anything right was a literal I've got
+
+121
+00:10:11,720 --> 00:10:18,950
+my type and then curly braces and put in the values and I need my word that works and I need my account
+
+122
+00:10:19,910 --> 00:10:21,640
+so it makes me a little bit.
+
+123
+00:10:22,530 --> 00:10:29,760
+And so there I've got my word and I've got my count and and I'm appending that to my slice and now I
+
+124
+00:10:29,760 --> 00:10:30,970
+just need a sort that.
+
+125
+00:10:31,260 --> 00:10:37,000
+So to sort good OK dawg and go to sort
+
+126
+00:10:40,070 --> 00:10:42,350
+and salt is going to have sought slice
+
+127
+00:10:44,910 --> 00:10:53,160
+and got sought slice here which takes in any any type a slice of any type.
+
+128
+00:10:53,200 --> 00:10:59,520
+And then I need a function of less function deal and there's an example there if I want to take a gander
+
+129
+00:10:59,520 --> 00:11:07,770
+at it and I'm just looking to see the the less funk is right there and it's return you know which is
+
+130
+00:11:07,770 --> 00:11:10,110
+less than what.
+
+131
+00:11:10,170 --> 00:11:23,130
+And so I need to do that to sort I need salt dot salt slice and the slice is going to be x w c and then
+
+132
+00:11:23,190 --> 00:11:28,840
+the type is going to be func and it's gonna be I j.
+
+133
+00:11:28,960 --> 00:11:32,510
+And and grab the door.
+
+134
+00:11:32,560 --> 00:11:39,150
+Somebody just walked in it returns a bool and here's the code for the function.
+
+135
+00:11:39,480 --> 00:11:46,710
+I'm gonna say that it brings in that package and then for that function I need x w c and actually we
+
+136
+00:11:46,710 --> 00:11:58,430
+see the slice at this index position is going to be less than x w see this at that index position.
+
+137
+00:11:58,440 --> 00:12:01,410
+So I'm just gonna compare that now to the documentation.
+
+138
+00:12:01,410 --> 00:12:15,230
+I mean you return that return and we have this dot that that slice and that that was using that and
+
+139
+00:12:15,650 --> 00:12:17,660
+minus a slice of word count.
+
+140
+00:12:17,660 --> 00:12:27,390
+So I need to have my X WC slice dot and it's going to be the count and x w C. J.
+
+141
+00:12:27,490 --> 00:12:31,100
+Dot count it.
+
+142
+00:12:31,200 --> 00:12:34,860
+There's no red lines no red lines as a positive thing.
+
+143
+00:12:34,860 --> 00:12:35,060
+Yep.
+
+144
+00:12:35,060 --> 00:12:41,000
+So in this case the only error is this will be sending count order and you want decent increment orders.
+
+145
+00:12:41,120 --> 00:12:44,410
+So first you're the greater than Yep c.
+
+146
+00:12:44,590 --> 00:12:53,430
+So if if if you're callback returns true EIS goes before J Yeah and I like this example of a callback
+
+147
+00:12:53,460 --> 00:13:02,280
+where you know what sort slice is asking for a callback I've explained before as a function you pass
+
+148
+00:13:02,280 --> 00:13:08,400
+in as an argument and then sort we'll use that in the way sorts going to use that as it's going to run
+
+149
+00:13:08,400 --> 00:13:10,470
+this function the code I gave it.
+
+150
+00:13:10,740 --> 00:13:12,330
+And it will get a value back.
+
+151
+00:13:12,330 --> 00:13:17,230
+True or false and based on that it will do what it does it's using that function.
+
+152
+00:13:17,230 --> 00:13:17,480
+All right.
+
+153
+00:13:17,490 --> 00:13:19,680
+So it's calling back to the function I'm past and.
+
+154
+00:13:19,680 --> 00:13:21,340
+Is that a good way to explain it.
+
+155
+00:13:21,980 --> 00:13:23,600
+Hmm.
+
+156
+00:13:23,650 --> 00:13:32,160
+And and now that I've got everything sorted I could range over my ex WC and so w sees a slice a word
+
+157
+00:13:32,160 --> 00:13:45,030
+count and I don't need my index but I will get my value and colon equals range X WC and font print lying
+
+158
+00:13:45,510 --> 00:13:57,480
+and I'm going to print out my value dot word and also maybe then value dot count would make sense with
+
+159
+00:13:57,480 --> 00:14:02,160
+the county's and let's run it and see what we get.
+
+160
+00:14:03,270 --> 00:14:03,720
+All right.
+
+161
+00:14:03,820 --> 00:14:12,670
+So this is at 0 3 solution and to run it I could just bring up this previous thing and it's running
+
+162
+00:14:12,670 --> 00:14:14,530
+at 0 3 and we'll see what our word count is
+
+163
+00:14:18,810 --> 00:14:27,780
+so it's my hope in this process why this runs that you know collaborating many minds make stronger better
+
+164
+00:14:27,780 --> 00:14:35,310
+solutions we each bring something to the table when we pair program and also when we pair teach and
+
+165
+00:14:35,820 --> 00:14:42,870
+it's my hope that in that synergy of strengths each of us having different strengths that it will create
+
+166
+00:14:42,900 --> 00:14:48,540
+a more robust course where you get to see areas where each of us are stronger in areas where each of
+
+167
+00:14:48,540 --> 00:14:54,960
+us learn and complement each other and and then that's useful to you as I go through stuff and I'm like
+
+168
+00:14:54,960 --> 00:15:01,680
+wow that's totally new to me you know or raise questions come out by hopeful of hopeful hope I'm hopeful
+
+169
+00:15:01,680 --> 00:15:03,710
+that's useful to you.
+
+170
+00:15:03,720 --> 00:15:03,930
+All right.
+
+171
+00:15:03,960 --> 00:15:07,560
+So here are word counts why I tell you stuttered I haven't stuttered in forever
+
+172
+00:15:13,760 --> 00:15:23,060
+go three thirty eight not surprising go Lang is ninety three how right at the top of the list how do
+
+173
+00:15:23,060 --> 00:15:31,160
+I do the package library your hood it's interesting to look at those words all right so that's my solution
+
+174
+00:15:31,160 --> 00:15:33,620
+for hands on Exercise number three I hope it was helpful.

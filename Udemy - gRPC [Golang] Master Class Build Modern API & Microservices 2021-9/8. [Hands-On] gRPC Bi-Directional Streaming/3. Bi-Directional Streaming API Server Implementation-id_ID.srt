@@ -1,0 +1,336 @@
+1
+00:00:00,300 --> 00:00:04,460
+Jadi kita akan mengimplementasikan server dengan directionals trimming API.
+
+2
+00:00:04,800 --> 00:00:09,590
+Tapi kali ini kita akan menanggapi setiap pesan yang dikirim penurunan.
+
+3
+00:00:09,750 --> 00:00:14,570
+Tetapi hanya sebuah catatan yang tidak harus kita tutup saja arus kapan saja kita mau.
+
+4
+00:00:14,640 --> 00:00:19,640
+Jadi server pada akhirnya memutuskan kapan pun itu dilakukan streaming ke klien dan menerima dari klien.
+
+5
+00:00:19,740 --> 00:00:20,140
+BAIK.
+
+6
+00:00:20,340 --> 00:00:24,780
+Tetapi dalam contoh ini kita akan menjaga hal-hal mudah dan sederhana dan akan menanggapi setiap pesan yang datang
+
+7
+00:00:25,370 --> 00:00:29,140
+dalam contoh ini juga kita tidak akan menggunakan rutinitas yang baik dalam fungsi kita.
+
+8
+00:00:29,370 --> 00:00:35,370
+Tetapi ketika kami melakukannya, klien akan menggunakan rutinitas yang baik, rutinitas yang baik, pada dasarnya menunjukkan bagaimana
+
+9
+00:00:35,370 --> 00:00:38,640
+kami dapat membuat utas berbeda melakukan banyak hal sekaligus.
+
+10
+00:00:38,640 --> 00:00:40,410
+Jadi mari kita lanjutkan.
+
+11
+00:00:40,410 --> 00:00:45,450
+Jadi saya akan membuka salam P. B. file dan server saya tidak padam.
+
+12
+00:00:45,840 --> 00:00:46,830
+BAIK.
+
+13
+00:00:46,830 --> 00:00:49,870
+Jadi seperti yang bisa Anda tebak, kita perlu menerapkan satu fungsi lagi.
+
+14
+00:00:49,980 --> 00:00:52,160
+Jadi mari kita cari nama fungsi di sini.
+
+15
+00:00:52,200 --> 00:00:57,340
+Jika kita mencari jika kita mencari apa yang kita cari sebelum dia adalah antarmuka nya.
+
+16
+00:00:57,660 --> 00:00:59,260
+Yang terakhir adalah pemotongan hari.
+
+17
+00:00:59,280 --> 00:01:00,290
+Sapa semuanya.
+
+18
+00:01:00,420 --> 00:01:09,640
+Jadi mari kita salin ini dan buat fungsi di sini di server kami yang disebut sapa semua orang dan memiliki aliran karena memerlukan
+
+19
+00:01:09,930 --> 00:01:14,180
+input dari jenis grid P. B ..
+
+20
+00:01:14,400 --> 00:01:16,390
+Itu layanan hebat untuk semua orang.
+
+21
+00:01:16,680 --> 00:01:20,760
+Dan kami memiliki fungsi kami dengan kurung kurawal.
+
+22
+00:01:21,060 --> 00:01:26,860
+Jadi ini terlihat benar karena Anda dapat melihat definisi hampir sama seperti sebelumnya.
+
+23
+00:01:26,880 --> 00:01:30,940
+Kami juga memiliki aliran sebelumnya dan kami memiliki aliran di sini tapi kali ini aliran ini.
+
+24
+00:01:31,050 --> 00:01:38,160
+Jika Anda melihat fungsi aliran ada mengirim dan menerima sedangkan sebelumnya jika kita melihat sebelum sebelum
+
+25
+00:01:38,670 --> 00:01:42,890
+hanya ada menerima dan akhirnya mengirim dan menutup.
+
+26
+00:01:43,140 --> 00:01:47,880
+Jadi ini sangat cocok untuk kita karena sekarang kita dapat mengirim banyak waktu dan menerima berkali-kali.
+
+27
+00:01:48,240 --> 00:01:53,220
+Jadi pertama-tama kita mencetak beberapa log dari fakta bahwa kita telah dipanggil.
+
+28
+00:01:53,220 --> 00:01:55,350
+Jadi oke dengan permintaan pemangkasan ini.
+
+29
+00:01:55,800 --> 00:02:00,080
+Jadi apa yang ingin kita lakukan pada dasarnya adalah melihat aliran ini beralih dari Stream klien.
+
+30
+00:02:00,150 --> 00:02:03,950
+Dan setiap kali kami menerima pesan dari klien akan membalasnya.
+
+31
+00:02:04,020 --> 00:02:07,500
+Jadi mari kita hadapi ini sehingga kita bisa lakukan.
+
+32
+00:02:07,950 --> 00:02:14,600
+Dan pertama-tama kami menerima pesan dari arus sehingga kami katakan menerima seperti yang Anda harapkan
+
+33
+00:02:15,120 --> 00:02:17,870
+kami menerima permintaan atau kesalahan.
+
+34
+00:02:17,990 --> 00:02:22,400
+Jadi kita dapat mengatakan jika udaranya sama dengan itu dan jatuh.
+
+35
+00:02:22,460 --> 00:02:29,360
+Jadi pada dasarnya klien telah melakukan streaming, kami hanya dapat mengembalikan nol karena kami selesai dengan fungsi kami dan kami
+
+36
+00:02:29,810 --> 00:02:31,530
+seharusnya mengembalikannya ke sana.
+
+37
+00:02:31,780 --> 00:02:32,010
+BAIK.
+
+38
+00:02:32,030 --> 00:02:42,430
+Sekarang jika udaranya tidak sama dengan nihil maka ketika Anda melihat masalah ini sehingga lug yang fatal f dan kami dapat mengembalikan
+
+39
+00:02:42,430 --> 00:02:49,780
+kesalahan sehingga kami dapat mengatakan apa yang terjadi adalah bahwa ada kesalahan saat membaca
+
+40
+00:02:49,780 --> 00:02:50,830
+Streaming klien.
+
+41
+00:02:51,700 --> 00:02:55,070
+Dan inilah arus dan kemudian kita lewat di udara.
+
+42
+00:02:55,330 --> 00:03:00,220
+Dan sebenarnya saya baru menyadari sesuatu yang bisa mengembalikan suasana di sini karena ada kesalahan besar
+
+43
+00:03:00,220 --> 00:03:01,860
+pada jam di sisi pembaca.
+
+44
+00:03:02,050 --> 00:03:07,010
+Dan ini adalah sesuatu yang bisa dimasukkan juga dalam kode sebelum ada kesalahan.
+
+45
+00:03:07,090 --> 00:03:10,740
+Dan itu terjadi bahwa kita bisa mengembalikan udara sepenuhnya.
+
+46
+00:03:10,840 --> 00:03:15,400
+Sebagai fungsi pengembalian, Lagi pula itu tidak benar-benar mengubah perilaku.
+
+47
+00:03:15,910 --> 00:03:17,200
+Jadi ini bagus.
+
+48
+00:03:17,410 --> 00:03:18,870
+Dan sekarang kami punya permintaan.
+
+49
+00:03:19,010 --> 00:03:22,990
+Dan permintaan itu pada dasarnya berisi salam.
+
+50
+00:03:23,020 --> 00:03:25,460
+Kami mendapatkan tim Anda mendapatkan nama depan.
+
+51
+00:03:25,600 --> 00:03:28,300
+Itu memberi kita nama depan.
+
+52
+00:03:29,460 --> 00:03:38,150
+Dan sekarang kita dapat mengembalikan hasil yang hello Plus Plus hal pertama.
+
+53
+00:03:38,340 --> 00:03:40,320
+Jadi ini terlihat bagus.
+
+54
+00:03:40,760 --> 00:03:45,570
+Ini adalah titik misi dan kemudian kita harus berurusan dengan hasil
+
+55
+00:03:45,570 --> 00:03:50,400
+itu sehingga kita harus mengirimnya kembali sehingga kita dapat melakukan streaming yang mengirim.
+
+56
+00:03:50,790 --> 00:03:54,630
+Dan ketika Anda mengirim salam, semua orang meminta tanggapan.
+
+57
+00:03:54,630 --> 00:03:56,940
+Jadi kita akan membuat struktur itu sekarang.
+
+58
+00:03:57,360 --> 00:04:00,000
+Dan ini hasilnya sebagai hasilnya.
+
+59
+00:04:00,000 --> 00:04:01,320
+Dan sama seperti sebelumnya.
+
+60
+00:04:01,360 --> 00:04:04,120
+Anda harus melihat fungsi kirim. Saya yakin ini mengembalikan kesalahan.
+
+61
+00:04:04,230 --> 00:04:12,300
+Jadi kalau-kalau ada kesalahan sehingga kami bisa melakukan yang sama dengan kami dan kalau-kalau ada kesalahan lagi saya tidak melakukan ini sebelumnya, tapi kami akan
+
+62
+00:04:12,300 --> 00:04:16,290
+melakukannya sekarang untuk menunjukkan kepada Anda bagaimana melakukan sesuatu dengan sempurna.
+
+63
+00:04:16,770 --> 00:04:25,250
+Tetapi jika ada kesalahan kita bisa mengatakan kesalahan saat mengirim data ke klien.
+
+64
+00:04:25,820 --> 00:04:26,380
+BAIK.
+
+65
+00:04:26,490 --> 00:04:30,450
+Dan kami akan melewati kesalahan dan kemudian kami juga akan mengembalikan kesalahan itu.
+
+66
+00:04:30,930 --> 00:04:32,270
+Ok, itu terlihat bagus.
+
+67
+00:04:32,580 --> 00:04:35,550
+Dan beberapa hal tidak bahagia jadi mari kita lihat.
+
+68
+00:04:35,580 --> 00:04:39,340
+Tidak ada variabel baru di sisi kiri 0.
+
+69
+00:04:39,420 --> 00:04:44,510
+Jadi kita bisa melakukan apa yang bisa kita lakukan.
+
+70
+00:04:45,450 --> 00:04:50,950
+Kirim dia memanggil ini dan sekarang lebih baik.
+
+71
+00:04:51,130 --> 00:04:51,580
+BAIK.
+
+72
+00:04:51,670 --> 00:04:53,110
+Kita harus mengganti namanya saja.
+
+73
+00:04:53,470 --> 00:04:54,970
+Jadi tolong kirim udara.
+
+74
+00:04:55,020 --> 00:04:58,480
+Kami akan membawanya dan pada dasarnya mengembalikannya secara keseluruhan.
+
+75
+00:04:58,510 --> 00:05:00,090
+Jadi ini semua terlihat benar.
+
+76
+00:05:00,100 --> 00:05:04,700
+Jadi pada dasarnya setiap kali kami menerima pesan, kami akan mengirimkan hasilnya.
+
+77
+00:05:04,840 --> 00:05:09,190
+Dan ketika kita memiliki akhir file maka ketika kita memiliki akhir aliran di mana kita tidak tahu
+
+78
+00:05:09,190 --> 00:05:10,180
+dan kita selesai.
+
+79
+00:05:10,240 --> 00:05:11,770
+Jadi itu terlihat bagus.
+
+80
+00:05:11,770 --> 00:05:17,170
+Sekarang mari kita lanjutkan dan melihat apakah server mengkompilasi jadi kita akan pergi dan jalankan dan
+
+81
+00:05:17,170 --> 00:05:19,780
+kita akan menjalankan server dan halo dunia.
+
+82
+00:05:19,800 --> 00:05:20,490
+Itu dimulai.
+
+83
+00:05:20,500 --> 00:05:22,050
+Jadi ini sempurna.
+
+84
+00:05:22,120 --> 00:05:25,300
+Jadi sekarang kita siap untuk melanjutkan dan mengimplementasikan kode klien.
+

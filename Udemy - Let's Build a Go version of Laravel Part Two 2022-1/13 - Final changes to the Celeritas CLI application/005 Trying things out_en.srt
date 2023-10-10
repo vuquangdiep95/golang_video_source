@@ -1,0 +1,340 @@
+1
+00:00:01,650 --> 00:00:06,660
+So we know that our new application starts properly, and now we want to try a few things out, and
+
+2
+00:00:06,660 --> 00:00:11,130
+I'm not going to try every single thing, but I'll try a few just to make sure that things are working
+
+3
+00:00:11,130 --> 00:00:14,700
+as expected and leave the remainder as an exercise for you.
+
+4
+00:00:15,390 --> 00:00:18,620
+So to start with, let's make sure our application is not running.
+
+5
+00:00:18,930 --> 00:00:20,730
+Make stall perfect.
+
+6
+00:00:21,540 --> 00:00:25,930
+Now I want to test, say, make off and maybe the cash.
+
+7
+00:00:26,790 --> 00:00:27,490
+So to do that?
+
+8
+00:00:27,510 --> 00:00:32,850
+Of course, I have to set up my database first, so I'll go to config and then database start why email
+
+9
+00:00:33,300 --> 00:00:37,560
+and I'll put in the things that I find right here in Docker compose.
+
+10
+00:00:38,870 --> 00:00:41,030
+So by default, we're using post-cruise.
+
+11
+00:00:41,630 --> 00:00:53,420
+And there's the information, so let's fill that it dialect Postgres database Solara tops user Postgres
+
+12
+00:00:54,020 --> 00:01:02,630
+password, password host use, local host and port use five four three two.
+
+13
+00:01:02,840 --> 00:01:03,260
+Perfect.
+
+14
+00:01:04,129 --> 00:01:08,840
+Now let's do the same thing in our dart on file right here.
+
+15
+00:01:09,170 --> 00:01:11,240
+We'll find a database database.
+
+16
+00:01:11,240 --> 00:01:17,600
+Typekit Postgres host is a local host port is five four three two.
+
+17
+00:01:18,260 --> 00:01:20,420
+Database user is Postgres.
+
+18
+00:01:21,320 --> 00:01:24,880
+The password is password celerity.
+
+19
+00:01:24,890 --> 00:01:27,710
+US is the database name and we use disable.
+
+20
+00:01:28,700 --> 00:01:32,000
+OK, now I have that setup while we're at it.
+
+21
+00:01:32,120 --> 00:01:36,050
+Before we go any further, let's just set up a cache and we'll use Badger.
+
+22
+00:01:36,950 --> 00:01:40,970
+OK, and I won't bother setting anything else up at this point.
+
+23
+00:01:41,150 --> 00:01:41,910
+Let's try this out.
+
+24
+00:01:41,990 --> 00:01:48,030
+So first of all, I need to start Docker so Docker compose of the dashboard.
+
+25
+00:01:49,340 --> 00:01:50,420
+Now, word of caution.
+
+26
+00:01:50,660 --> 00:01:56,290
+It can take a couple of minutes for this to run the very first time you run a new Docker instance,
+
+27
+00:01:56,300 --> 00:01:59,690
+and I ran it just before this lecture, so mine should be going now.
+
+28
+00:02:00,500 --> 00:02:04,550
+So I should be able to take, make start and have this work.
+
+29
+00:02:07,090 --> 00:02:10,660
+And no, it hasn't started up yet, so I was a little ambitious.
+
+30
+00:02:17,170 --> 00:02:17,680
+There it is.
+
+31
+00:02:17,890 --> 00:02:18,670
+Now it's running.
+
+32
+00:02:19,300 --> 00:02:22,250
+So let's make sure it's still it is still up and running.
+
+33
+00:02:22,270 --> 00:02:25,480
+I just go to my web browser and reload this page.
+
+34
+00:02:26,110 --> 00:02:26,620
+Perfect.
+
+35
+00:02:27,100 --> 00:02:28,840
+So that's all running as it should be.
+
+36
+00:02:29,410 --> 00:02:32,770
+Now let's try this.
+
+37
+00:02:33,400 --> 00:02:37,960
+I have my latest build of celebrities in this folder, so let's try putting the server in maintenance
+
+38
+00:02:37,960 --> 00:02:40,900
+mode that slashed celebrities down.
+
+39
+00:02:42,620 --> 00:02:49,310
+And I go back to my Web browser and reload this, and it says Page not found, so we left something
+
+40
+00:02:49,310 --> 00:02:49,610
+out.
+
+41
+00:02:50,270 --> 00:02:51,290
+Let's see what that was.
+
+42
+00:02:52,310 --> 00:02:54,680
+I believe it was probably.
+
+43
+00:02:55,600 --> 00:02:56,950
+In the public folder.
+
+44
+00:02:57,250 --> 00:02:57,580
+Yeah.
+
+45
+00:02:57,790 --> 00:03:04,090
+I don't have the default server is under maintenance in there, so I'll have to copy that over and post
+
+46
+00:03:04,090 --> 00:03:07,480
+it up on the Skeleton Celebrity's application.
+
+47
+00:03:07,480 --> 00:03:08,470
+But that's simple enough.
+
+48
+00:03:08,650 --> 00:03:09,070
+At least it.
+
+49
+00:03:09,140 --> 00:03:10,900
+It did take it into maintenance mode.
+
+50
+00:03:10,910 --> 00:03:18,040
+So now I should be able to say dot slash Celerio, toss up and come back here and reload this, and
+
+51
+00:03:18,040 --> 00:03:18,820
+it should be live again.
+
+52
+00:03:18,940 --> 00:03:19,810
+That worked perfectly.
+
+53
+00:03:20,410 --> 00:03:22,450
+So let's see what else we have got.
+
+54
+00:03:22,450 --> 00:03:24,200
+Slash the Loretta's health.
+
+55
+00:03:25,600 --> 00:03:26,770
+Let's try this one.
+
+56
+00:03:26,860 --> 00:03:28,030
+Make off.
+
+57
+00:03:28,270 --> 00:03:29,830
+So that's flush.
+
+58
+00:03:30,580 --> 00:03:34,270
+Celebrities make off.
+
+59
+00:03:34,540 --> 00:03:40,450
+And that should hopefully create and run the migrations for the authentication tables and create the
+
+60
+00:03:40,450 --> 00:03:41,530
+models and middleware.
+
+61
+00:03:41,650 --> 00:03:42,520
+Let's see if that works.
+
+62
+00:03:46,660 --> 00:03:48,640
+OK, so it looks like it created it.
+
+63
+00:03:48,730 --> 00:03:50,980
+Let's make sure the necessary files are there.
+
+64
+00:03:52,600 --> 00:03:56,260
+So views, yeah, it put those views there, perfect.
+
+65
+00:03:56,980 --> 00:03:58,300
+And it has.
+
+66
+00:03:59,880 --> 00:04:03,150
+Under middleware, we should have our off middleware, and we do.
+
+67
+00:04:03,690 --> 00:04:10,050
+And then under models or data, it should have models don't go and I should have remember token and
+
+68
+00:04:10,050 --> 00:04:11,850
+user and it does perfect.
+
+69
+00:04:12,090 --> 00:04:14,310
+Well, that all seemed to work as expected.
+
+70
+00:04:15,270 --> 00:04:19,560
+So as I said, I'm not going to go through all of the necessary functionality for this.
+
+71
+00:04:20,130 --> 00:04:24,710
+I'm reasonably sure that most of it works and I will test it after this lecture is over.
+
+72
+00:04:24,720 --> 00:04:26,640
+And if I missed anything, I'll put it up there.
+
+73
+00:04:27,450 --> 00:04:34,260
+But the only thing I'm going to worry about right now is copying over a sample file in the public folder
+
+74
+00:04:35,130 --> 00:04:37,710
+that's displayed when maintenance mode is alive.
+
+75
+00:04:37,740 --> 00:04:41,880
+And all I have to do for that is put it up on my skeleton application's GitHub repository.
+
+76
+00:04:42,510 --> 00:04:44,370
+And that should take care of it.
+
+77
+00:04:44,640 --> 00:04:51,450
+So at the end of the day, we now have an application that allows us to develop data database functionality
+
+78
+00:04:51,450 --> 00:04:52,260
+very quickly.
+
+79
+00:04:52,260 --> 00:04:54,120
+Full authentication is in place.
+
+80
+00:04:54,600 --> 00:04:58,110
+We have API routes in and standard web routes.
+
+81
+00:04:58,440 --> 00:05:01,810
+We have support for various different file systems.
+
+82
+00:05:01,830 --> 00:05:06,370
+We have a generic file uploader that will upload to any file system that we support.
+
+83
+00:05:06,390 --> 00:05:14,040
+We have caching, we have sessions, we have a lot of the functionality that you need in order to develop
+
+84
+00:05:14,370 --> 00:05:16,710
+a sophisticated, modern web application.
+
+85
+00:05:16,800 --> 00:05:18,870
+And I think that's an excellent start.
+

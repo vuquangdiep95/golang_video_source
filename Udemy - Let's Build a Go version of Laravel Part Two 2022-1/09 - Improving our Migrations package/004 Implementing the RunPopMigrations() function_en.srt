@@ -1,0 +1,148 @@
+1
+00:00:01,480 --> 00:00:05,950
+So this time around, we want to write a function that will actually run our pop migrations.
+
+2
+00:00:06,070 --> 00:00:10,690
+So far we have this non-oil exported pop connect function, which we haven't called yet, and we're
+
+3
+00:00:10,690 --> 00:00:12,310
+not going to call it in this file.
+
+4
+00:00:12,310 --> 00:00:16,000
+Probably we're almost certainly going to call it from the command line application.
+
+5
+00:00:16,059 --> 00:00:23,170
+But we need it at some point and we have this one that creates up and down migrations at the applications
+
+6
+00:00:23,170 --> 00:00:25,930
+root folder level in a folder called migrations.
+
+7
+00:00:26,970 --> 00:00:29,510
+Now we want one that runs them, so function.
+
+8
+00:00:29,950 --> 00:00:31,660
+See Pointer to celebrities.
+
+9
+00:00:31,680 --> 00:00:33,570
+That's the receiver and we'll call this one.
+
+10
+00:00:33,960 --> 00:00:43,680
+Say run pop migrations and it's going to require just a connection T.X of type pop dot correction.
+
+11
+00:00:44,850 --> 00:00:48,970
+Now, obviously, we're going to get that from this function up here, pop connect.
+
+12
+00:00:48,990 --> 00:00:52,530
+But we don't want to get it right in this, this actual file.
+
+13
+00:00:52,540 --> 00:00:53,810
+We want to do that in the Seelye.
+
+14
+00:00:53,880 --> 00:00:55,490
+We get to the Seelye, you'll see why.
+
+15
+00:00:56,280 --> 00:00:57,570
+And this potentially returns an error.
+
+16
+00:00:58,170 --> 00:00:58,470
+OK.
+
+17
+00:00:59,340 --> 00:01:01,250
+And again, we need the migration path.
+
+18
+00:01:01,260 --> 00:01:05,099
+So just copy this code and paste it right here.
+
+19
+00:01:06,000 --> 00:01:06,630
+So we need that.
+
+20
+00:01:07,560 --> 00:01:13,020
+Then we're going to run something called Pop Dot New File my grater.
+
+21
+00:01:13,140 --> 00:01:16,350
+So we're going to get a variable file migration, which I'll call form for.
+
+22
+00:01:16,350 --> 00:01:23,730
+Follow my reader and we're going to check for an error when we call Pop Dot New File Migratory and we
+
+23
+00:01:23,730 --> 00:01:25,350
+pass it migration path.
+
+24
+00:01:25,680 --> 00:01:29,130
+And our connection to the database T x and we check for Fonarow.
+
+25
+00:01:29,850 --> 00:01:34,980
+If error is not equal to nil, memories from the error return here and we're done.
+
+26
+00:01:35,010 --> 00:01:35,900
+We can't go any further.
+
+27
+00:01:37,080 --> 00:01:41,640
+But assuming we get past that now, we can actually run those migrations.
+
+28
+00:01:41,850 --> 00:01:48,520
+And that's as simple as calling or calling are passing a potential error into this variable R firmed
+
+29
+00:01:48,780 --> 00:01:49,090
+up.
+
+30
+00:01:49,410 --> 00:01:50,760
+We're going to run the up migrations.
+
+31
+00:01:50,820 --> 00:01:51,150
+OK?
+
+32
+00:01:51,870 --> 00:01:54,630
+And we checked for an error once again, so I'll copy and paste this code.
+
+33
+00:01:57,560 --> 00:02:00,770
+Right there was that worked, we just return now.
+
+34
+00:02:01,940 --> 00:02:03,980
+So pretty straightforward, actually.
+
+35
+00:02:04,010 --> 00:02:09,889
+So this is how we'll run any migrations that we generate using create port migration, how we run the
+
+36
+00:02:09,889 --> 00:02:11,300
+up migrations in any case.
+
+37
+00:02:12,320 --> 00:02:18,170
+So let's move on to the next one, which will be migrating down something you do a lot during development.
+

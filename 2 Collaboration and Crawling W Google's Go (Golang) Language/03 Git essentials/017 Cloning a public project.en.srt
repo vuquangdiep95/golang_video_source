@@ -1,0 +1,447 @@
+1
+00:00:00,210 --> 00:00:04,510
+So do we want to for the first bit demonstrate why branches are a good idea.
+
+2
+00:00:04,560 --> 00:00:08,910
+Having us both make commit and try to push like both of us try to change this text.
+
+3
+00:00:08,990 --> 00:00:09,420
+Yeah.
+
+4
+00:00:09,600 --> 00:00:09,830
+Yeah.
+
+5
+00:00:10,210 --> 00:00:12,930
+So that's good on your screen recorder's gone.
+
+6
+00:00:13,050 --> 00:00:14,120
+Yes.
+
+7
+00:00:14,130 --> 00:00:18,840
+I'm just going to say that stuff like a pilot my screen records go on this go on and we're recording
+
+8
+00:00:18,840 --> 00:00:22,210
+audio recording video recording all that.
+
+9
+00:00:22,360 --> 00:00:23,470
+Just a moment.
+
+10
+00:00:24,060 --> 00:00:25,410
+Yeah sure.
+
+11
+00:00:25,500 --> 00:00:25,770
+Yeah.
+
+12
+00:00:25,830 --> 00:00:28,680
+That's got the red record gone all right.
+
+13
+00:00:28,710 --> 00:00:33,890
+So another great thing about pair programming pair teaching is that Daniel just had a suggestion and
+
+14
+00:00:33,890 --> 00:00:40,550
+in the sentiment that effort the vein providing too much information rather than not enough.
+
+15
+00:00:41,160 --> 00:00:45,070
+True to what I said in the last video we're going to do something in this video.
+
+16
+00:00:45,070 --> 00:00:47,940
+And Daniel suggestion was to show how you clone.
+
+17
+00:00:48,000 --> 00:00:52,770
+So we're going to see that how somebody else clones it as a collaborator or anybody could clone it the
+
+18
+00:00:52,770 --> 00:00:53,460
+way you're to do.
+
+19
+00:00:53,550 --> 00:00:54,030
+Yes.
+
+20
+00:00:54,030 --> 00:00:55,100
+All right let's do it.
+
+21
+00:00:55,110 --> 00:00:55,320
+Yeah.
+
+22
+00:00:55,410 --> 00:00:55,860
+So.
+
+23
+00:00:56,120 --> 00:01:02,280
+So I can just go to the project which I can if I know the full year old project that's there or from
+
+24
+00:01:02,280 --> 00:01:09,750
+the email from last time or I can just go to get hubcap and you can search for a repo so I can just
+
+25
+00:01:09,750 --> 00:01:21,680
+search for it goes to goes to 11:00 if I can spell slash going project I think my goes to Levin is with
+
+26
+00:01:21,680 --> 00:01:22,490
+bashes.
+
+27
+00:01:22,520 --> 00:01:22,990
+There we go.
+
+28
+00:01:23,000 --> 00:01:23,880
+No it's not.
+
+29
+00:01:24,350 --> 00:01:24,850
+Surprise me.
+
+30
+00:01:25,250 --> 00:01:30,560
+So that goes straight to it culturally if you are a collaborator for something it will show up over
+
+31
+00:01:30,560 --> 00:01:35,720
+here that's your list of your repositories so you can hit show more if you want to see all the repositories
+
+32
+00:01:35,720 --> 00:01:44,750
+that you have access to so either way once you are on the project page again if you're not a collaborator
+
+33
+00:01:44,810 --> 00:01:51,890
+you can fork it whether you are a collaborator or not if you can access the page you can hit close and
+
+34
+00:01:51,890 --> 00:01:58,430
+you can close that sage or if you're not using a sage there's HP s version but a sage is usually better.
+
+35
+00:01:58,430 --> 00:01:59,750
+Anybody could fork it too.
+
+36
+00:01:59,780 --> 00:02:04,790
+You don't have to collaborate correct and forking it would then make it a repo.
+
+37
+00:02:04,790 --> 00:02:07,060
+That is exactly like this one.
+
+38
+00:02:07,070 --> 00:02:08,210
+But under your account.
+
+39
+00:02:08,210 --> 00:02:08,570
+Correct.
+
+40
+00:02:08,600 --> 00:02:08,900
+So.
+
+41
+00:02:08,920 --> 00:02:12,530
+So if I hit a fork here I would now have an oral auto slash going project.
+
+42
+00:02:12,530 --> 00:02:13,200
+Yeah.
+
+43
+00:02:13,340 --> 00:02:18,350
+Copy and then anybody can also clone this contract.
+
+44
+00:02:18,380 --> 00:02:20,420
+Yeah bring it down to the machine because it's public.
+
+45
+00:02:20,420 --> 00:02:21,020
+Yes.
+
+46
+00:02:21,040 --> 00:02:21,180
+Right.
+
+47
+00:02:21,200 --> 00:02:24,050
+So once they clone it I can get the clone button here.
+
+48
+00:02:24,200 --> 00:02:25,720
+They've got a couple different options.
+
+49
+00:02:25,750 --> 00:02:27,620
+But what you want is the cloning.
+
+50
+00:02:27,700 --> 00:02:28,520
+You are all here.
+
+51
+00:02:28,520 --> 00:02:30,740
+So I want the sage cloning.
+
+52
+00:02:30,750 --> 00:02:36,830
+I can spent to copy it or I can click this and it controls see either one works and then I can go to
+
+53
+00:02:36,830 --> 00:02:44,900
+my command prompt and I'll just do it on my desktop get cloned and then I put that you are all and that
+
+54
+00:02:44,900 --> 00:02:52,030
+clones it onto my own machine and and this is one because I cloned it through this particular clone
+
+55
+00:02:52,030 --> 00:02:52,420
+button.
+
+56
+00:02:52,430 --> 00:02:56,200
+It is cloned off of it goes to eleven going project.
+
+57
+00:02:56,360 --> 00:03:04,310
+If you are forking it you will be cloning off you off of your fork not the original project whatever
+
+58
+00:03:04,310 --> 00:03:06,230
+you clone off of that's what you're.
+
+59
+00:03:06,290 --> 00:03:08,030
+That's what you're by default.
+
+60
+00:03:08,060 --> 00:03:10,130
+That is what you will try to push back to you.
+
+61
+00:03:10,370 --> 00:03:13,000
+And if you do if you're not a collaborator or pushes will fail
+
+62
+00:03:16,590 --> 00:03:20,340
+so that's just adjusting the volume if you see me do stuff like that.
+
+63
+00:03:21,530 --> 00:03:22,270
+So so.
+
+64
+00:03:22,340 --> 00:03:25,130
+So if I was not a collaborator I could clone like this.
+
+65
+00:03:25,310 --> 00:03:31,010
+But then if I tried to write back to this repository the when I do get push it would give me an error
+
+66
+00:03:31,010 --> 00:03:32,540
+message and it wouldn't actually go through.
+
+67
+00:03:33,470 --> 00:03:36,190
+So instead what I would do in that case is that I would fork it.
+
+68
+00:03:36,440 --> 00:03:38,350
+I would clone that I do my work there.
+
+69
+00:03:38,390 --> 00:03:44,750
+And I could push to my fork and then I could come back to and try to request that my changes get pulled
+
+70
+00:03:44,750 --> 00:03:47,720
+back to the original repository.
+
+71
+00:03:47,720 --> 00:03:49,750
+So let me just make sure I understand this.
+
+72
+00:03:50,030 --> 00:03:57,670
+And we have goes to Levin going project and let's say that I am James Bond.
+
+73
+00:03:58,940 --> 00:04:04,700
+I've got my James Bond github account and I'm really realizing the power of coding that this entire
+
+74
+00:04:04,700 --> 00:04:08,080
+thing and run around guns and dynamite fistfight with people.
+
+75
+00:04:08,080 --> 00:04:09,910
+It's not the way to make things happen in the world.
+
+76
+00:04:09,920 --> 00:04:17,630
+You really want to be powerful you've got to be a coder so that I can then go to goes to Levin and go
+
+77
+00:04:17,710 --> 00:04:20,620
+and project you're actually looking to see some he's got James Bond account.
+
+78
+00:04:20,630 --> 00:04:21,110
+That's great.
+
+79
+00:04:21,710 --> 00:04:23,700
+I think somebody has to grab that username.
+
+80
+00:04:23,750 --> 00:04:27,670
+It's already taken one and that makes sense.
+
+81
+00:04:28,250 --> 00:04:30,560
+And then if I clone my.
+
+82
+00:04:30,560 --> 00:04:36,650
+That goes to Levin Go line project if I make changes to that I can tell to make changes locally.
+
+83
+00:04:36,650 --> 00:04:41,810
+But then you know there's no way for me to save those changes on GitHub because unless I'm submitting
+
+84
+00:04:41,810 --> 00:04:46,520
+it to goes to Levin whereas if I fork it it's going to be under my account I can make all the changes
+
+85
+00:04:46,520 --> 00:04:48,990
+I want I could submit it to my account.
+
+86
+00:04:49,080 --> 00:04:49,410
+Right.
+
+87
+00:04:49,470 --> 00:04:53,750
+So all add files work on files as you go through the project with a fork.
+
+88
+00:04:53,750 --> 00:05:00,590
+You could do this and then send all those up to your fort Go Go line project under your account name
+
+89
+00:05:01,070 --> 00:05:05,030
+and then if you ever create something that you want to add to the goes to Levin you could select that
+
+90
+00:05:05,030 --> 00:05:11,090
+one thing you can make a pull request so I've made 10 things I'm keeping under my username my repo my
+
+91
+00:05:11,090 --> 00:05:12,570
+fork of it 10 things.
+
+92
+00:05:12,590 --> 00:05:15,260
+But then I'm like oh I want to send seven and add that to the project.
+
+93
+00:05:15,290 --> 00:05:17,000
+I could do a pull request.
+
+94
+00:05:17,080 --> 00:05:19,970
+I want to know the poor request does not go by the command.
+
+95
+00:05:19,980 --> 00:05:24,230
+It goes by the branch which is what we'll be getting into next.
+
+96
+00:05:24,710 --> 00:05:29,630
+So if you make 10 changes on the main branch you can make a pull request have that branch merged into
+
+97
+00:05:29,630 --> 00:05:30,420
+the original.
+
+98
+00:05:30,430 --> 00:05:31,150
+Okay.
+
+99
+00:05:31,430 --> 00:05:34,710
+So and that's and that includes all the changes that you've made on that bridge.
+
+100
+00:05:35,000 --> 00:05:39,920
+So to get that version I was talking about we really need to be able to use branches.
+
+101
+00:05:39,980 --> 00:05:42,070
+And then I'll make branches as I'm doing stuff.
+
+102
+00:05:42,080 --> 00:05:47,930
+And then if one on one of those branches and like this would be good for everybody's to see I could
+
+103
+00:05:47,930 --> 00:05:49,310
+smell that one branch.
+
+104
+00:05:49,830 --> 00:05:53,590
+I like that anything more.
+
+105
+00:05:53,880 --> 00:05:54,430
+No.
+
+106
+00:05:54,460 --> 00:05:57,770
+So I now have I now have it set up on my.
+
+107
+00:05:57,920 --> 00:06:03,900
+I've now closed it on my system so I couldn't have a go link project which on windows you don't have
+
+108
+00:06:03,970 --> 00:06:08,020
+lets you use DIY R for direct for directory.
+
+109
+00:06:08,020 --> 00:06:11,040
+And so I've got that text that text on my system.
+
+110
+00:06:11,100 --> 00:06:11,670
+Awesome.
+
+111
+00:06:11,670 --> 00:06:11,940
+All right.
+
+112
+00:06:12,030 --> 00:06:14,010
+So in the next video we'll start working with branches.

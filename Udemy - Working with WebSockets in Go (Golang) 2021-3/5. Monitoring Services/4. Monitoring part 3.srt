@@ -1,0 +1,975 @@
+1
+00:00:01,520 --> 00:00:05,960
+So we know that we're getting all the host services we want to monitor, and that's good so I can get
+
+2
+00:00:05,960 --> 00:00:07,910
+rid of these log print lines here.
+
+3
+00:00:08,000 --> 00:00:10,970
+I don't need that one anymore and I don't need that one anymore.
+
+4
+00:00:11,000 --> 00:00:12,160
+I do need this range.
+
+5
+00:00:12,210 --> 00:00:17,240
+I'm going to move this comment up above this for Loop because that's we're arranging it through things.
+
+6
+00:00:17,780 --> 00:00:21,020
+And what we want to do inside of here is all this stuff.
+
+7
+00:00:21,020 --> 00:00:26,990
+So I'll get rid of this and replace this with that, OK, and format things.
+
+8
+00:00:28,100 --> 00:00:35,090
+So according to this, the next thing I want to do is to get the service, the schedule unit and number,
+
+9
+00:00:35,090 --> 00:00:36,090
+which is pretty straightforward.
+
+10
+00:00:36,530 --> 00:00:44,600
+Now, if we go back over to the GitHub repository for Quraan and we click on this, refer to the documentation
+
+11
+00:00:44,600 --> 00:00:46,810
+right here that will take me to this page.
+
+12
+00:00:46,820 --> 00:00:48,980
+And if you scroll down a little bit, you'll see the usage.
+
+13
+00:00:48,990 --> 00:00:56,210
+It's not far down and it shows how you actually add functions to the schedule to whatever you want to
+
+14
+00:00:56,210 --> 00:01:02,510
+run so you can use the same syntax you would if you're familiar with Chron on Linux or Unix or a Mac,
+
+15
+00:01:02,510 --> 00:01:03,050
+for that matter.
+
+16
+00:01:03,650 --> 00:01:09,170
+Or you can use the shorthand hourly or every one hour, 30 minutes, and you can add the manually to
+
+17
+00:01:09,170 --> 00:01:12,410
+a running Chron as well, which we're going to do at some point very soon.
+
+18
+00:01:12,980 --> 00:01:15,310
+And we can also look at entries in that list.
+
+19
+00:01:15,320 --> 00:01:19,400
+And finally, we know how to stop our schedule if we want to, and we know how to start it as well.
+
+20
+00:01:19,410 --> 00:01:20,270
+It's a start.
+
+21
+00:01:20,270 --> 00:01:23,020
+We did that already in the last lecture.
+
+22
+00:01:23,570 --> 00:01:26,640
+So let's go back here and see how we're going to do this.
+
+23
+00:01:26,660 --> 00:01:28,340
+Well, I want to get the schedule unit and.
+
+24
+00:01:28,340 --> 00:01:34,730
+No, but I actually want to use that as a string because again, everything here is added as a string.
+
+25
+00:01:34,730 --> 00:01:36,840
+So so let's create a string.
+
+26
+00:01:36,920 --> 00:01:40,760
+I'll just call it over for schedule, and that's a type string.
+
+27
+00:01:41,810 --> 00:01:48,380
+And then I will look at the schedule unit and build the string, the schedule unit and the schedule
+
+28
+00:01:48,380 --> 00:01:50,070
+number and build it as necessary.
+
+29
+00:01:50,390 --> 00:01:57,920
+Now, back in our database, just to remind us, if we look at the hosted services table, we have schedule
+
+30
+00:01:57,920 --> 00:02:04,160
+number, which is an entry and schedule unit, which is a string, and we put 3M to monitor every three
+
+31
+00:02:04,160 --> 00:02:04,520
+minutes.
+
+32
+00:02:05,690 --> 00:02:07,390
+But I might want to put days in there.
+
+33
+00:02:07,460 --> 00:02:09,350
+OK, so that would probably be D.
+
+34
+00:02:09,770 --> 00:02:12,050
+So what I'm going to do is just say if.
+
+35
+00:02:13,330 --> 00:02:14,920
+Extorts scheduled unit.
+
+36
+00:02:16,670 --> 00:02:23,300
+Is equal two days, D, four days and do something, otherwise do something else, and I'm going to
+
+37
+00:02:23,300 --> 00:02:29,390
+build my string here that we'll use to add a unit of work to our schedule, to add the service we want
+
+38
+00:02:29,400 --> 00:02:31,000
+to monitor to our schedule.
+
+39
+00:02:31,580 --> 00:02:35,240
+So I'll simply say is equal to formatters productive.
+
+40
+00:02:36,620 --> 00:02:43,460
+And I'm going to say, first of all, if it's days I'll just say at every percent D percent s, which
+
+41
+00:02:43,460 --> 00:02:53,030
+will be our placeholders and are placeholders, our exact schedule number times twenty four, because
+
+42
+00:02:53,030 --> 00:02:53,870
+there will be days.
+
+43
+00:02:56,350 --> 00:03:04,120
+And hours, OK, so if I put one day, this will change it to 24 hours, which is pretty straightforward,
+
+44
+00:03:04,930 --> 00:03:06,820
+otherwise even simpler.
+
+45
+00:03:06,850 --> 00:03:10,870
+C.H. is a sign, the value of format that is pretty rough.
+
+46
+00:03:12,070 --> 00:03:17,110
+And I'll say at every percent D percent s just like I did before.
+
+47
+00:03:17,410 --> 00:03:22,600
+But now I'll just put in the schedule number in the schedule unit Eckstut schedule no, not multiply
+
+48
+00:03:22,600 --> 00:03:24,820
+by anything and extorts schedule unit.
+
+49
+00:03:26,620 --> 00:03:27,620
+So now I have my strength.
+
+50
+00:03:28,000 --> 00:03:35,080
+OK, so I've got my string to add things in there correctly, so now I'm just going to create a job
+
+51
+00:03:35,350 --> 00:03:37,720
+and we already have that job to find right up here.
+
+52
+00:03:37,780 --> 00:03:39,480
+It just holds a hose service, Heidi.
+
+53
+00:03:40,150 --> 00:03:45,370
+So I'll say va jay job, jadot hose service.
+
+54
+00:03:45,370 --> 00:03:47,230
+It is equal to try that again.
+
+55
+00:03:50,930 --> 00:03:52,110
+I guess I missed the air.
+
+56
+00:03:52,520 --> 00:03:58,370
+There we go for our job and Jadot service, Heidi.
+
+57
+00:04:01,290 --> 00:04:05,430
+Is equal to X, don't hide because that's a whole service.
+
+58
+00:04:05,910 --> 00:04:10,260
+So now I've created my unit of work and I want to have the job.
+
+59
+00:04:10,270 --> 00:04:14,400
+So if you go back and look the documentation again, it's really straightforward to add a job.
+
+60
+00:04:14,640 --> 00:04:15,680
+You add it like this.
+
+61
+00:04:15,990 --> 00:04:27,000
+OK, so I can just call my scheduler, which is app dot scheduler, Dot Ajam and job, and I'm going
+
+62
+00:04:27,000 --> 00:04:32,960
+to add my unit of my schedule, which is a C.H. and my unit of work, which is my job right now.
+
+63
+00:04:33,000 --> 00:04:33,750
+That's great.
+
+64
+00:04:34,020 --> 00:04:37,500
+And that's great for scheduling something and a work.
+
+65
+00:04:37,500 --> 00:04:42,000
+But what if I want to remove this from the schedule or modify an entry in the schedule?
+
+66
+00:04:42,300 --> 00:04:45,030
+Well, it turns out that at job, if you look at the the.
+
+67
+00:04:46,670 --> 00:04:52,460
+Signature it it returns an entry ID and an error, so I'm going to get that entry because I'm going
+
+68
+00:04:52,460 --> 00:04:59,780
+to use it and I'll call that schedule ID potentially an error are assigned the value of get that and
+
+69
+00:04:59,780 --> 00:05:05,090
+I'll check for a log if error are for an error, if error is not equal to nil.
+
+70
+00:05:05,120 --> 00:05:06,560
+And I'll just log on the error.
+
+71
+00:05:07,550 --> 00:05:08,660
+So I just want to get this running.
+
+72
+00:05:13,010 --> 00:05:14,050
+Now, I've got that schedule.
+
+73
+00:05:14,720 --> 00:05:16,700
+What am I going to do with that schedule?
+
+74
+00:05:17,360 --> 00:05:18,290
+It's pretty straightforward.
+
+75
+00:05:19,150 --> 00:05:26,570
+If you go over to our config file, which is in our internal folder in config, I have an entry in here
+
+76
+00:05:26,570 --> 00:05:35,410
+called Monitor Map, and it's a map of it with a Chron entry ID as the contents of a two entries.
+
+77
+00:05:35,480 --> 00:05:37,910
+We look at it by an end and we get a current entry.
+
+78
+00:05:38,240 --> 00:05:42,830
+So let me go back to start monitoring and actually add that to our monitor map.
+
+79
+00:05:43,190 --> 00:05:45,320
+So I'll say app monitor map.
+
+80
+00:05:46,920 --> 00:05:53,550
+And the idea going to look it up for look it up by is our host service, it's extra ID and it will be
+
+81
+00:05:53,550 --> 00:05:55,080
+equal to schedule.
+
+82
+00:05:57,070 --> 00:06:02,180
+And because maps are immutable, any time I make an entry to that map, it's available everywhere.
+
+83
+00:06:02,800 --> 00:06:06,640
+So I've now added that ID to the schedule, to the monitor map.
+
+84
+00:06:06,640 --> 00:06:07,720
+So I'm going to put a comment here.
+
+85
+00:06:09,490 --> 00:06:10,530
+Actually, I have it right here.
+
+86
+00:06:11,860 --> 00:06:12,970
+I'll take that comment.
+
+87
+00:06:14,080 --> 00:06:14,530
+Cut it.
+
+88
+00:06:16,120 --> 00:06:22,080
+Paste it here and take this comment, cut and paste it here just so things are in the right order.
+
+89
+00:06:22,930 --> 00:06:24,400
+So I've now saved that.
+
+90
+00:06:25,840 --> 00:06:31,480
+To my monitor map, and that will allow me to start it or stop it as required, the next thing I want
+
+91
+00:06:31,480 --> 00:06:36,240
+to do is to broadcast the fact that this has been scheduled to all of our connected clients.
+
+92
+00:06:36,250 --> 00:06:41,640
+Now, you might at some point have been asking yourself, why are you sending this to WebSocket?
+
+93
+00:06:41,950 --> 00:06:45,760
+Because the only time this appears to run is when the application starts.
+
+94
+00:06:46,060 --> 00:06:50,620
+Presumably while the application is starting, there are no connected one Web clients.
+
+95
+00:06:51,010 --> 00:06:53,300
+And that's not entirely accurate.
+
+96
+00:06:53,320 --> 00:06:57,490
+I have my application running right now, so let me go to localhost four thousand.
+
+97
+00:06:58,570 --> 00:06:59,910
+We're going to have this toggle switch.
+
+98
+00:06:59,920 --> 00:07:05,140
+It's going to be possible to start and stop our entire schedule just by toggling this.
+
+99
+00:07:05,470 --> 00:07:10,450
+And when that happens, when I turn it off, if I'm looking at something like this, for example, our
+
+100
+00:07:10,450 --> 00:07:17,830
+problems or our settings in other settings, our schedule, I want this to update whenever I click this.
+
+101
+00:07:18,070 --> 00:07:23,530
+In other words, the only time we're not going to be just starting this, our monitor map, our monitoring
+
+102
+00:07:23,530 --> 00:07:29,340
+schedule at the application start, we may start it and stop it at any time.
+
+103
+00:07:29,350 --> 00:07:30,940
+That's why I'm putting this stuff in here.
+
+104
+00:07:31,570 --> 00:07:37,270
+So let's go back here and broadcast the fact that website broadcast over WebSocket is the fact that
+
+105
+00:07:37,270 --> 00:07:38,560
+the service is scheduled.
+
+106
+00:07:39,490 --> 00:07:44,950
+So we do that again by creating a data and this will be an internal data.
+
+107
+00:07:45,280 --> 00:07:46,780
+So maybe I'll call it payload.
+
+108
+00:07:47,230 --> 00:07:53,560
+Payload is assigned the value of make map, string, string.
+
+109
+00:07:53,560 --> 00:07:57,820
+And this is the same kind of variable that we have way up here.
+
+110
+00:07:57,850 --> 00:07:58,420
+This data.
+
+111
+00:07:58,420 --> 00:07:59,770
+I just don't want to reuse that one.
+
+112
+00:07:59,790 --> 00:08:00,790
+I don't like doing that.
+
+113
+00:08:00,790 --> 00:08:05,410
+I don't like variable shadowing or the possibility of running into a variable shadowing error.
+
+114
+00:08:05,410 --> 00:08:06,250
+So I'll give it a new name.
+
+115
+00:08:07,140 --> 00:08:12,890
+So I've created that and payload message, I'm putting an entry in there.
+
+116
+00:08:15,910 --> 00:08:20,090
+Is equal to scheduling, OK?
+
+117
+00:08:20,200 --> 00:08:23,560
+It doesn't matter what it is, I'm just putting some value in there and data.
+
+118
+00:08:23,590 --> 00:08:26,740
+I'm going to put in also the host service side.
+
+119
+00:08:27,070 --> 00:08:30,190
+So I'm going to be sending a message and I want to tell.
+
+120
+00:08:31,200 --> 00:08:35,320
+All connected clients, what this scheduling event is tied to.
+
+121
+00:08:35,430 --> 00:08:41,280
+So I'm putting in hosted service it and that will be assigned the value of or get the value of Sterkel
+
+122
+00:08:41,520 --> 00:08:44,670
+into a Eckstut ID.
+
+123
+00:08:44,760 --> 00:08:49,740
+So I'm converting an event to a string because my map only holds strings.
+
+124
+00:08:49,740 --> 00:08:51,230
+So I've put some more data in there.
+
+125
+00:08:52,590 --> 00:08:57,990
+And the other thing I'm going to do here now, and this is because if you recall when I was putting
+
+126
+00:08:58,520 --> 00:09:04,860
+date time or timestamp variables into the database, I don't like dealing with Nulls Engo, so I tend
+
+127
+00:09:04,860 --> 00:09:13,410
+to go with the whole if it has a value after the 1st of January at midnight the year one, then it's
+
+128
+00:09:13,410 --> 00:09:14,140
+a valid date.
+
+129
+00:09:14,160 --> 00:09:17,850
+Otherwise it doesn't was going to create a new variable here called year one.
+
+130
+00:09:20,120 --> 00:09:27,920
+Time to date and I'm going to set it to the year one and I'll put it any time after the year one, 11,
+
+131
+00:09:27,920 --> 00:09:31,790
+17, 20, 30 for 58.
+
+132
+00:09:32,980 --> 00:09:38,390
+And then some number say six five one three eight seven.
+
+133
+00:09:38,410 --> 00:09:42,610
+I'm just putting a date that's after my my start date and put it three seven at the end of it.
+
+134
+00:09:42,610 --> 00:09:44,870
+Why not timed out UTC?
+
+135
+00:09:45,580 --> 00:09:48,850
+So I've now created a year one variable, which I'm going to put a capital.
+
+136
+00:09:48,850 --> 00:09:49,330
+Oh there.
+
+137
+00:09:49,330 --> 00:09:51,730
+Just because that's how you're supposed to name variables and go.
+
+138
+00:09:52,980 --> 00:09:57,060
+So if created that, and I'll say if app dot scheduler.
+
+139
+00:09:58,870 --> 00:10:01,330
+Entry, single entry.
+
+140
+00:10:05,430 --> 00:10:11,160
+App monitoring map, because I might already have a monitoring map, I might have started and stopped
+
+141
+00:10:11,160 --> 00:10:17,760
+this at some point for the current host host service ID next.
+
+142
+00:10:19,550 --> 00:10:20,660
+Is after.
+
+143
+00:10:22,290 --> 00:10:22,980
+You're one.
+
+144
+00:10:24,910 --> 00:10:30,850
+The next time this event is going to run has already taken place, so it's been set, so it has a value
+
+145
+00:10:30,850 --> 00:10:37,830
+after year one, then data next run, which we may or may not use, but I'm going to put it in there.
+
+146
+00:10:37,840 --> 00:10:38,940
+When is this scheduled?
+
+147
+00:10:38,950 --> 00:10:45,280
+When is this event next scheduled to run its equal to abduct scheduler entry?
+
+148
+00:10:47,600 --> 00:10:48,200
+Singular.
+
+149
+00:10:51,470 --> 00:10:52,700
+Dot monitor map.
+
+150
+00:10:55,530 --> 00:10:56,640
+Extort idee.
+
+151
+00:10:59,260 --> 00:11:10,810
+Dot next dot format, and I'll put it in the standard go date formatting and syntax 2006 zero one zero
+
+152
+00:11:10,810 --> 00:11:17,110
+two three zero four zero five and then P.M., which will be A.M. If it's actually the ATM.
+
+153
+00:11:18,460 --> 00:11:25,300
+Otherwise, if that's the case data next run our data next run.
+
+154
+00:11:26,650 --> 00:11:30,640
+When is this next scheduled to run the sequel to just a string pending.
+
+155
+00:11:32,650 --> 00:11:38,290
+So all I'm doing there, when you start this at the first time we start the application, it will always
+
+156
+00:11:38,290 --> 00:11:39,970
+be pending, it will always be this case.
+
+157
+00:11:39,970 --> 00:11:45,430
+But if we've stopped the schedule and restarted it while the application is running, then there may
+
+158
+00:11:45,430 --> 00:11:50,850
+have there may be a next run date already set in our in our monitoring map.
+
+159
+00:11:51,280 --> 00:11:55,780
+So in that case, I'll actually grab what's in there and pass that as part of my payload.
+
+160
+00:11:56,350 --> 00:12:03,910
+Few other things I'm going to put in their data, say host for the hostname is assigned the value of
+
+161
+00:12:03,910 --> 00:12:04,850
+Eckstut hostname.
+
+162
+00:12:05,230 --> 00:12:09,310
+This is just information and passing, which I may or may not use, but passing a little bit too much
+
+163
+00:12:09,310 --> 00:12:10,350
+is going to hurt things at all.
+
+164
+00:12:11,080 --> 00:12:17,950
+Data service I'm definitely going to use is equal to escort service DOT service name.
+
+165
+00:12:18,400 --> 00:12:20,770
+So I'm passing this hostname and the service name.
+
+166
+00:12:21,280 --> 00:12:27,310
+And the other thing that I want to have in there as well is is it possible that this has run at some
+
+167
+00:12:27,310 --> 00:12:28,130
+point in the past?
+
+168
+00:12:28,150 --> 00:12:32,350
+Well, I know what that's going to be, so I can actually grab that from my last check.
+
+169
+00:12:32,350 --> 00:12:38,530
+So all I have to do is to make sure that if X last check, which is right in the database, if that's
+
+170
+00:12:38,530 --> 00:12:39,190
+after.
+
+171
+00:12:40,200 --> 00:12:47,130
+Year one, the variable I defined right up here, then it has run a schedule check at some point in
+
+172
+00:12:47,130 --> 00:12:53,700
+the past, so I'll say data and I'll call this last run because the other one is called Next Run is
+
+173
+00:12:53,700 --> 00:12:57,120
+equal to extort last check dot format.
+
+174
+00:12:57,390 --> 00:12:59,460
+And again, we use this same format strength.
+
+175
+00:12:59,470 --> 00:13:00,570
+So I'll just copy this.
+
+176
+00:13:02,710 --> 00:13:03,700
+And pasted in here.
+
+177
+00:13:06,220 --> 00:13:16,030
+Else, if there is no value after year one in there, then data last run is once again I'll just put
+
+178
+00:13:16,030 --> 00:13:16,630
+penning in there.
+
+179
+00:13:16,660 --> 00:13:20,470
+You put whatever you want, but I'm using it the same as what I have above spending.
+
+180
+00:13:22,160 --> 00:13:24,020
+So it's never run a schedule check.
+
+181
+00:13:24,400 --> 00:13:31,880
+OK, so that's their the last thing I want to do is to put in the actual schedule, which I don't know
+
+182
+00:13:31,880 --> 00:13:34,310
+if I'm going to use that or not, but I have that information now.
+
+183
+00:13:34,310 --> 00:13:41,630
+I may as well stick it in their data schedule is equal to and it's just a string.
+
+184
+00:13:41,630 --> 00:13:43,280
+So we use format as per of.
+
+185
+00:13:47,290 --> 00:13:52,210
+And it will be at every percent, D.
+
+186
+00:13:52,240 --> 00:13:58,720
+Percent s and in there will put extorts schedule number, the next on schedule unit.
+
+187
+00:14:01,000 --> 00:14:06,490
+So I've now populated my payload variable, which I see I started calling data again, so I better fix
+
+188
+00:14:06,490 --> 00:14:15,340
+that payload, payload, payload, payload, payload, payload.
+
+189
+00:14:15,340 --> 00:14:16,900
+That would have been a pain to find.
+
+190
+00:14:16,900 --> 00:14:19,120
+I had not noticed it right now, so I'm glad that I did.
+
+191
+00:14:20,380 --> 00:14:25,510
+So I have my payload variable up all populated with all the necessary information, so I just trigger
+
+192
+00:14:25,510 --> 00:14:26,080
+my web plan.
+
+193
+00:14:26,080 --> 00:14:34,960
+Account error equals Apte, W.S., WebSocket client trigger and I'm going to trigger again to the public
+
+194
+00:14:34,960 --> 00:14:35,350
+channel.
+
+195
+00:14:38,360 --> 00:14:47,390
+And I'm going to trigger the event, say, next run event amount of passive data and I'll check for
+
+196
+00:14:47,390 --> 00:14:47,720
+an error.
+
+197
+00:14:48,290 --> 00:14:57,320
+And again, I'll just copy this simple error check and then I'm going to copy this whole thing and send
+
+198
+00:14:57,320 --> 00:14:58,280
+another event.
+
+199
+00:14:58,550 --> 00:15:00,680
+So next one event is the first one.
+
+200
+00:15:01,160 --> 00:15:07,610
+And I will also send in another event that I'm just going to call schedule changed event.
+
+201
+00:15:07,940 --> 00:15:13,760
+Now, we're not doing anything with this right now, but right now, when I run this the very first
+
+202
+00:15:13,760 --> 00:15:20,260
+time it runs or any time it runs, it's going to trigger a trigger, a a data object.
+
+203
+00:15:20,270 --> 00:15:25,040
+It's going to pass a WebSocket event that says to the public channel the app is starting.
+
+204
+00:15:25,670 --> 00:15:29,990
+Then as I go through all the services here, I'll be sending to events.
+
+205
+00:15:30,260 --> 00:15:36,500
+And the first one I'm going to send is a next run event for a particular piece of data, hosted service
+
+206
+00:15:36,500 --> 00:15:41,120
+ID, and that has some information that I'll do something with in JavaScript on the client side.
+
+207
+00:15:41,360 --> 00:15:46,220
+And I'm also sending a schedule changed event to the public channel and I'll do something with that
+
+208
+00:15:46,220 --> 00:15:47,340
+on the client side.
+
+209
+00:15:48,410 --> 00:15:55,880
+So when this runs the very first time, every connected client should be pushed three WebSocket events.
+
+210
+00:15:55,910 --> 00:15:57,530
+The first one is the app is starting.
+
+211
+00:15:57,530 --> 00:16:02,540
+The second one is that there's a next run event for a particular hosted service ID.
+
+212
+00:16:02,930 --> 00:16:08,690
+And the last one is that there's a schedule changed event for a particular host ID and that should do
+
+213
+00:16:08,690 --> 00:16:08,810
+it.
+
+214
+00:16:09,350 --> 00:16:11,840
+That should get us up and running.
+
+215
+00:16:12,200 --> 00:16:13,520
+So let's make sure this compiles.
+
+216
+00:16:13,880 --> 00:16:15,680
+We'll stop this started.
+
+217
+00:16:19,050 --> 00:16:24,780
+And I have an error here means start monitoring what is this assignment to entry and no map.
+
+218
+00:16:24,780 --> 00:16:25,950
+So I made a mistake somewhere.
+
+219
+00:16:26,070 --> 00:16:28,110
+Where was that airline assignment?
+
+220
+00:16:28,140 --> 00:16:32,160
+Entry in MAP and it says line fifty six.
+
+221
+00:16:32,160 --> 00:16:36,050
+Let's have a look at that Apte up monitor map the Exide.
+
+222
+00:16:36,090 --> 00:16:38,970
+OK, back in our set up Apte go.
+
+223
+00:16:39,390 --> 00:16:42,150
+I better actually declare that map.
+
+224
+00:16:42,600 --> 00:16:46,650
+So let's create here after our app client.
+
+225
+00:16:47,010 --> 00:16:50,490
+Let's say monitor map.
+
+226
+00:16:52,980 --> 00:16:58,920
+Monitor map is a sign the value of make a map and what type is that?
+
+227
+00:17:01,480 --> 00:17:08,290
+A string and a an entry ID, so let's copy that and an intern there, so we'll copy that, paste that
+
+228
+00:17:08,290 --> 00:17:13,000
+in there and say ECG monitor map is equal to monitor map.
+
+229
+00:17:13,420 --> 00:17:13,840
+All right.
+
+230
+00:17:14,620 --> 00:17:16,120
+You can assign to a new map.
+
+231
+00:17:16,120 --> 00:17:17,190
+So let's try that again.
+
+232
+00:17:17,200 --> 00:17:17,680
+Run.
+
+233
+00:17:19,120 --> 00:17:20,440
+And it's running perfect.
+
+234
+00:17:20,990 --> 00:17:25,600
+OK, so everything seems to be working at this point, and we're not sure until we actually write some
+
+235
+00:17:25,600 --> 00:17:29,290
+JavaScript on the client side to see that we're receiving those events.
+
+236
+00:17:29,620 --> 00:17:32,410
+So we'll start that process in the next lecture.
+
+237
+00:17:33,640 --> 00:17:38,590
+But before we get to the next lecture, I'm sure you noticed this, but for some reason I seem determined
+
+238
+00:17:38,590 --> 00:17:43,280
+to use this variable data instead of the one I actually declared called payload.
+
+239
+00:17:43,630 --> 00:17:52,450
+So here in start monitoring, go on at the very end of the range, both times that I trigger my my WebSocket
+
+240
+00:17:52,450 --> 00:17:58,030
+client, change that third parameter from data to payload, make sure it compiles.
+
+241
+00:17:58,030 --> 00:17:58,840
+I'm sure it will.
+
+242
+00:18:01,180 --> 00:18:01,670
+All right.
+
+243
+00:18:01,780 --> 00:18:06,010
+Clearly, I need more coffee, so I believe I shall drink some coffee before we move on to the next
+
+244
+00:18:06,010 --> 00:18:06,430
+lecture.

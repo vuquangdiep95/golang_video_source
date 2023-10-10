@@ -1,0 +1,167 @@
+1
+00:00:12,660 --> 00:00:17,580
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:17,610 --> 00:00:20,940
+We want to talk about the others concurrency concept.
+
+3
+00:00:24,010 --> 00:00:24,610
+Channels.
+
+4
+00:00:26,640 --> 00:00:33,870
+Gore provides a mechanism called a channel that is used to share data between GO routines, a channel
+
+5
+00:00:33,870 --> 00:00:38,310
+as a medium through which the Gore team communicates with another gore routine.
+
+6
+00:00:38,520 --> 00:00:42,810
+And this communication is like free or in other wars.
+
+7
+00:00:42,990 --> 00:00:49,470
+A channel is a technique which allows to let one go routine to send data to another goal routine.
+
+8
+00:00:50,370 --> 00:00:57,930
+By default, channel is bi directional means the go routines can send or receive data through the same
+
+9
+00:00:57,930 --> 00:01:00,810
+channel as shown in the below image.
+
+10
+00:01:01,710 --> 00:01:08,850
+When you execute a concurrent activity as a go routine, a resource or data needs to be shared between
+
+11
+00:01:08,850 --> 00:01:09,660
+goal routines.
+
+12
+00:01:10,590 --> 00:01:18,300
+Channels act as a pipe between the go routines and provide a mechanism that guarantees a synchronous
+
+13
+00:01:18,300 --> 00:01:18,990
+exchange.
+
+14
+00:01:20,100 --> 00:01:24,780
+Data time need to be specified at the time of declaration of the channel.
+
+15
+00:01:25,440 --> 00:01:33,660
+We can share values and pointers off built in named extract reference types that are passed around on
+
+16
+00:01:33,660 --> 00:01:34,230
+channels.
+
+17
+00:01:34,710 --> 00:01:42,420
+Only one goal routine has access to a data item at any given time, so data races cannot take you.
+
+18
+00:01:46,800 --> 00:01:48,150
+Creating a channel.
+
+19
+00:01:49,510 --> 00:01:57,880
+In language at Channel is created using Chen Keyboard, and it can only transfer data of the same time
+
+20
+00:01:58,150 --> 00:02:03,130
+different types of data are not allowed it to transport from the same channel.
+
+21
+00:02:03,910 --> 00:02:06,100
+Now you can see the syntax.
+
+22
+00:02:06,790 --> 00:02:12,460
+You can also create the channel using make function using a shorthand declaration.
+
+23
+00:02:12,970 --> 00:02:16,510
+Now you can see the syntax of make function.
+
+24
+00:02:18,040 --> 00:02:22,930
+Now let's go to this school and bring it on to illustrate how to create the channel
+
+25
+00:02:26,200 --> 00:02:30,820
+first, creating a channel using that keyboard by the integer type.
+
+26
+00:02:31,810 --> 00:02:37,600
+So we write that name for the channel, for example, Chan and Wong
+
+27
+00:02:40,180 --> 00:02:41,770
+and Chen Keyboard.
+
+28
+00:02:42,220 --> 00:02:43,660
+By the time it's
+
+29
+00:02:46,720 --> 00:02:59,470
+now print value and type of defined channel FP Chan one value column and said Channel one.
+
+30
+00:03:01,790 --> 00:03:12,890
+Go to the next line and print channel one, type f f channel long time
+
+31
+00:03:16,100 --> 00:03:21,350
+per cent T often case channel long value.
+
+32
+00:03:23,770 --> 00:03:32,940
+Now creating a channel using make function, so define embedded above like channel to Channel two,
+
+33
+00:03:32,950 --> 00:03:42,070
+column equals, make function and sit churn and type is eight.
+
+34
+00:03:45,040 --> 00:03:48,670
+And again, print values and type of defined channel.
+
+35
+00:03:48,730 --> 00:03:57,640
+So copies to these lines and change these for this value to China to.
+
+36
+00:04:05,850 --> 00:04:15,800
+Reformat the code, save the project and execute the program, go round the package main.
+
+37
+00:04:15,990 --> 00:04:16,710
+That's cool.
+
+38
+00:04:17,910 --> 00:04:19,740
+Now we can see the output.
+
+39
+00:04:20,040 --> 00:04:27,300
+We could define channel via two methods first by Chan key vote and second by make function and could
+
+40
+00:04:27,300 --> 00:04:32,640
+see value and type off those channels in order not to prolong the time of decision.
+
+41
+00:04:32,820 --> 00:04:36,630
+We will finish, then we will continue the content in the next session.
+
+42
+00:04:36,690 --> 00:04:37,230
+Goodbye.

@@ -1,0 +1,619 @@
+1
+00:00:01,470 --> 00:00:07,380
+So now that we have our token functions set up, let's get started testing, but before we do that,
+
+2
+00:00:07,380 --> 00:00:12,840
+there's just one thing I'm really not happy with in the authenticate token function found in token.
+
+3
+00:00:12,840 --> 00:00:18,050
+Don't go in the data directory in the Myat project, and it's just something that's not really clear.
+
+4
+00:00:18,060 --> 00:00:19,250
+It works just fine.
+
+5
+00:00:19,260 --> 00:00:26,130
+I think I won't know for sure until I write the tests, but here in line 171, I'm declaring, I'm calling
+
+6
+00:00:26,130 --> 00:00:33,180
+get my token on the receiver T and storing the value in T, which is our receiver and it works, but
+
+7
+00:00:33,180 --> 00:00:34,400
+that's inconsistent.
+
+8
+00:00:34,410 --> 00:00:37,140
+We haven't been doing that sort of thing in any of these functions.
+
+9
+00:00:37,560 --> 00:00:44,610
+So what I'm going to do instead is call thatcan for token, and I'll copy that and I will put that down
+
+10
+00:00:44,610 --> 00:00:45,250
+here.
+
+11
+00:00:45,360 --> 00:00:52,530
+I'll call Tandoh expires, and the rest of that should be fine.
+
+12
+00:00:52,950 --> 00:00:53,310
+OK.
+
+13
+00:00:53,640 --> 00:00:57,840
+I'm just a little clean up, and it's not critical, but I like to be consistent whenever I can.
+
+14
+00:00:58,320 --> 00:01:03,210
+So let's get started writing some tests, and the first thing I'll do is create a file, a new file
+
+15
+00:01:03,210 --> 00:01:08,370
+in the data directory in my app and I'll call it models underscore test done go.
+
+16
+00:01:09,210 --> 00:01:10,650
+And I'll give it the package model's
+
+17
+00:01:13,260 --> 00:01:18,840
+package data actually error and I'll create another file in here.
+
+18
+00:01:19,560 --> 00:01:25,650
+New file called set up underscore Tesco, and we're not going to do much with that, but we might in
+
+19
+00:01:25,650 --> 00:01:27,730
+the future, so we may as well set it up right now.
+
+20
+00:01:27,750 --> 00:01:30,210
+We'll get that it's packaged like a declaration as well.
+
+21
+00:01:32,670 --> 00:01:36,570
+Now in setup test set up underscore test start go.
+
+22
+00:01:36,900 --> 00:01:40,530
+I'm going to because we're going to be writing integration tests before too long.
+
+23
+00:01:40,920 --> 00:01:43,200
+I'm going to put the first line of this file.
+
+24
+00:01:43,200 --> 00:01:44,550
+I'm going to put a build tag there.
+
+25
+00:01:44,670 --> 00:01:47,550
+Go build, go colon, build space.
+
+26
+00:01:47,550 --> 00:01:54,600
+And I call it unit because this will run four unit tests and only four unit tests and four hour integration
+
+27
+00:01:54,600 --> 00:01:59,730
+test, which will be getting to before too long, will actually have a different build tag for that
+
+28
+00:01:59,730 --> 00:02:01,980
+will use go build integration.
+
+29
+00:02:02,220 --> 00:02:03,890
+OK, now this one is dead simple.
+
+30
+00:02:03,900 --> 00:02:12,840
+We're not going to do anything except have a function called test main as usual, and that will have
+
+31
+00:02:12,840 --> 00:02:18,450
+as its parameter m a pointer to testing dot m and hopefully that did the import.
+
+32
+00:02:18,450 --> 00:02:25,470
+For me, it did OK and we'll have to run go on vendor in a minute, but right now, let's get this going
+
+33
+00:02:25,470 --> 00:02:25,930
+first.
+
+34
+00:02:25,950 --> 00:02:29,990
+OS x it and we'll call em up.
+
+35
+00:02:30,270 --> 00:02:30,650
+Run.
+
+36
+00:02:31,860 --> 00:02:32,220
+OK.
+
+37
+00:02:32,340 --> 00:02:35,670
+So that's just going to run our tests, but we might need this at some point in the future.
+
+38
+00:02:35,760 --> 00:02:38,010
+Now I do have an error here.
+
+39
+00:02:38,040 --> 00:02:42,710
+Can't import this because I need to open my terminal and type go mode vendor.
+
+40
+00:02:45,880 --> 00:02:47,440
+And that should make that go away.
+
+41
+00:02:50,150 --> 00:02:51,080
+So let's save this.
+
+42
+00:02:52,200 --> 00:02:54,320
+That error should go away any time now.
+
+43
+00:02:55,610 --> 00:02:58,670
+I'll just wait for that to disappear, I'm sure it will before too long.
+
+44
+00:02:59,270 --> 00:03:04,130
+So let's go to models underscore Tesco, and this one will be pretty simple, too.
+
+45
+00:03:04,250 --> 00:03:07,790
+We're just going to test the model style, so create function funk.
+
+46
+00:03:08,690 --> 00:03:14,120
+Test New will test the new function inside of the model's package of the data package, and it takes
+
+47
+00:03:14,120 --> 00:03:24,050
+one parameter T measure to testing T and in part for testing were tier and it went away in models test
+
+48
+00:03:24,050 --> 00:03:25,420
+being set up just as well.
+
+49
+00:03:25,430 --> 00:03:27,560
+So we're so testing it now.
+
+50
+00:03:27,560 --> 00:03:28,640
+This is really simple.
+
+51
+00:03:28,670 --> 00:03:32,510
+Now what I want to do, if you look at the new function in models, don't go.
+
+52
+00:03:32,540 --> 00:03:33,320
+It's pretty simple.
+
+53
+00:03:33,920 --> 00:03:35,600
+So here's the new function.
+
+54
+00:03:36,230 --> 00:03:41,630
+It takes one parameter a pointer to SQL DB, and it returns the models, and it makes a decision based
+
+55
+00:03:41,630 --> 00:03:43,370
+upon the environment.
+
+56
+00:03:43,370 --> 00:03:45,640
+Variable data database underscore type.
+
+57
+00:03:45,650 --> 00:03:46,500
+So that's pretty simple.
+
+58
+00:03:46,520 --> 00:03:51,920
+So let's go back to our models, underscore test and figure out how we're going to call this.
+
+59
+00:03:52,430 --> 00:03:57,530
+Now here's a situation when I'm running a unit test, I don't really want a live database.
+
+60
+00:03:57,540 --> 00:03:59,840
+I don't mind a live database for integration tests.
+
+61
+00:04:00,350 --> 00:04:04,520
+So what I'm going to do is go down to my terminal and import a new package.
+
+62
+00:04:04,880 --> 00:04:08,400
+So clear the screen and type go get.
+
+63
+00:04:08,420 --> 00:04:18,830
+And this is from GitHub icon gift hub, dot com slash and then all in all, caps data hyphen dodgy slash
+
+64
+00:04:19,460 --> 00:04:24,290
+go dash, SQL, MLC, SQL mock.
+
+65
+00:04:24,560 --> 00:04:30,680
+And this is a really simple package that allows us to mock a database so we can run unit tests without
+
+66
+00:04:30,680 --> 00:04:31,790
+having a live one.
+
+67
+00:04:32,120 --> 00:04:37,370
+So I've imported that, and let's go up here and use it, so I'll create a connection pool.
+
+68
+00:04:37,640 --> 00:04:42,770
+I'll call it fake DB because it is a fake database, and I'll ignore the second parameter and I'll ignore
+
+69
+00:04:42,770 --> 00:04:51,200
+the third return parameter, and I'll call by a site using the assignment operator SQL Mock Dot New.
+
+70
+00:04:51,770 --> 00:04:56,390
+And that probably will give me an error until I come down here and say Go mod vendor.
+
+71
+00:04:59,010 --> 00:05:04,260
+And come back up here and let's just try retyping sequel marked out new and see if it finds it this
+
+72
+00:05:04,260 --> 00:05:05,790
+time sequel mark.
+
+73
+00:05:06,030 --> 00:05:07,490
+Try that again, Mark.
+
+74
+00:05:08,580 --> 00:05:08,960
+Dot.
+
+75
+00:05:10,320 --> 00:05:11,840
+Hasn't found it yet, but it will eventually.
+
+76
+00:05:11,990 --> 00:05:18,770
+OK, so we'll just import it manually for now, just to get it working, the computer seems to be running
+
+77
+00:05:18,770 --> 00:05:19,670
+a bit slower than I.
+
+78
+00:05:23,400 --> 00:05:28,420
+So we'll wrap that whole thing in parentheses and just import
+
+79
+00:05:31,660 --> 00:05:33,760
+from here GitHub
+
+80
+00:05:36,430 --> 00:05:45,570
+dot com slash data Dash Dogs Go Dash sequel mark.
+
+81
+00:05:46,630 --> 00:05:51,040
+OK, so actually get fixed up at some point in the not too distant future.
+
+82
+00:05:51,310 --> 00:05:59,500
+I've created this fake DB and of course, I want to defer fake caught up to 50 vehicles.
+
+83
+00:06:05,800 --> 00:06:12,190
+So let's go down here now and set an environment variable, so ignore the return parameter and say equals
+
+84
+00:06:12,190 --> 00:06:14,930
+OS dot set on.
+
+85
+00:06:15,220 --> 00:06:16,300
+And also the database type.
+
+86
+00:06:16,510 --> 00:06:22,120
+So I'll set database underscore type, which is something that the new function expects to find.
+
+87
+00:06:22,330 --> 00:06:23,560
+And I'll set it to Postgres
+
+88
+00:06:26,470 --> 00:06:30,520
+and now I'll create a variable, which I'm going to call em for models.
+
+89
+00:06:31,000 --> 00:06:35,830
+And that's a sign the value of just new and I'll hand it fictive.
+
+90
+00:06:38,800 --> 00:06:44,920
+So I have my M variable, and now I'll do an if statement if format sprint s.
+
+91
+00:06:47,890 --> 00:06:53,980
+And the comparison I'm making here is pretty straightforward one percent to try that again, percent
+
+92
+00:06:53,980 --> 00:07:00,950
+t the type of M if it's not equal to and it should be equal to data models.
+
+93
+00:07:03,370 --> 00:07:14,080
+And I have an error tita error and I'll just say wrong type and I'll put in format dot print f if I'm
+
+94
+00:07:14,090 --> 00:07:17,560
+content, the type that I got, which is percent T.
+
+95
+00:07:19,810 --> 00:07:20,980
+OK, so there's the first one.
+
+96
+00:07:20,980 --> 00:07:22,570
+So that test test the first case.
+
+97
+00:07:22,780 --> 00:07:29,950
+Oh, just duplicate this whole thing and do it for minus two well and just modify it as necessary.
+
+98
+00:07:29,980 --> 00:07:31,800
+So this becomes an equal operator.
+
+99
+00:07:32,560 --> 00:07:33,880
+This becomes my ask.
+
+100
+00:07:33,880 --> 00:07:34,360
+You will.
+
+101
+00:07:35,660 --> 00:07:37,940
+And everything else should be the same.
+
+102
+00:07:38,120 --> 00:07:46,310
+OK, so let's try running that, let's type go test, get into the directory CD data go test.
+
+103
+00:07:48,530 --> 00:07:48,810
+Got.
+
+104
+00:07:51,990 --> 00:07:52,590
+And it passed.
+
+105
+00:07:52,830 --> 00:07:56,800
+Let's try coverage, go test, dash, cover dot.
+
+106
+00:07:57,360 --> 00:08:02,850
+Let's see what percentage of the models we have tested here and is pretty small 2.7 percent and that's
+
+107
+00:08:02,850 --> 00:08:09,160
+not at all surprising because we're not running any tests at all on token doggo or user account.
+
+108
+00:08:09,180 --> 00:08:13,610
+And in fact, we're not even testing one more thing that we should be that we can test very easily.
+
+109
+00:08:13,620 --> 00:08:14,610
+And that's over here.
+
+110
+00:08:15,180 --> 00:08:16,230
+Get Insert.
+
+111
+00:08:16,680 --> 00:08:17,960
+So let's try to test for that.
+
+112
+00:08:17,970 --> 00:08:21,240
+That's pretty simple back in here.
+
+113
+00:08:21,930 --> 00:08:31,920
+We'll try to function funk test, get insert ID, I.D. And again, it takes one parameter T of a point
+
+114
+00:08:31,920 --> 00:08:33,510
+or two testing dot.
+
+115
+00:08:36,030 --> 00:08:36,990
+And this is pretty simple.
+
+116
+00:08:37,020 --> 00:08:40,690
+I'll create a variable, which I'll call ID of type DB2.
+
+117
+00:08:40,710 --> 00:08:43,920
+And it should do the import for me here if it doesn't know how to do it manually.
+
+118
+00:08:44,420 --> 00:08:45,320
+Dot ID.
+
+119
+00:08:46,200 --> 00:08:50,850
+And it didn't need to be doing bad imports today, so we'll just do that manually.
+
+120
+00:08:50,940 --> 00:08:51,900
+We'll put it right in here.
+
+121
+00:08:53,580 --> 00:09:04,230
+DB2 is a reference to her an alias to GitHub dot com slash upper slash db slash v4.
+
+122
+00:09:06,090 --> 00:09:06,390
+OK.
+
+123
+00:09:06,500 --> 00:09:07,410
+There that's better.
+
+124
+00:09:07,770 --> 00:09:15,410
+So now we have our idea of the correct type, and let's just put a value on it is equal to sixty four.
+
+125
+00:09:17,040 --> 00:09:17,910
+And the value is one.
+
+126
+00:09:18,270 --> 00:09:21,420
+So we'll just cast that integer to an int sixty four.
+
+127
+00:09:22,650 --> 00:09:23,790
+And now we'll say returned.
+
+128
+00:09:23,790 --> 00:09:26,700
+It is assign the value of it.
+
+129
+00:09:26,700 --> 00:09:29,220
+We'll call get insert ID and hand it.
+
+130
+00:09:30,870 --> 00:09:37,740
+And I will run a test if format dot print f and then we'll just check the type.
+
+131
+00:09:40,090 --> 00:09:43,690
+Of percent tea and we put in returned it.
+
+132
+00:09:44,200 --> 00:09:45,550
+If it's not equal to.
+
+133
+00:09:48,760 --> 00:09:52,300
+And then Tina Air.
+
+134
+00:09:54,670 --> 00:09:56,350
+Wrong type returned.
+
+135
+00:10:00,290 --> 00:10:06,800
+And now we'll say ID equals one, just add it and we'll do exactly the same thing, so I'll copy this,
+
+136
+00:10:09,020 --> 00:10:11,210
+paste it here and this will handle the other case.
+
+137
+00:10:12,140 --> 00:10:13,580
+This becomes an equals sign.
+
+138
+00:10:14,330 --> 00:10:17,900
+Wrong type returned and that's all we really, really have to worry about.
+
+139
+00:10:17,930 --> 00:10:22,430
+So the first case handles what we get back from Postgres, which is in in sixty four.
+
+140
+00:10:22,700 --> 00:10:27,980
+And the second case handles what we get back from a b or minus MySchool, and that's just in it.
+
+141
+00:10:28,670 --> 00:10:34,910
+So now if I come down here and run these tests again and put a dash cover as the flag, which gets slightly
+
+142
+00:10:34,910 --> 00:10:35,570
+higher, no.
+
+143
+00:10:35,960 --> 00:10:38,390
+And both tests should pass four point nine percent.
+
+144
+00:10:38,480 --> 00:10:38,870
+Perfect.
+
+145
+00:10:39,770 --> 00:10:45,830
+OK, those were the easy tests, and that gives us basically 100 percent coverage of the models.
+
+146
+00:10:45,920 --> 00:10:47,210
+Don't go file.
+
+147
+00:10:47,450 --> 00:10:54,860
+Now we need to do the harder ones, the integration tests for tokens, token not go, and users don't
+
+148
+00:10:54,860 --> 00:10:56,060
+go or user account.
+
+149
+00:10:56,690 --> 00:10:59,630
+Now those will take a little bit more work because we need to.
+
+150
+00:10:59,630 --> 00:11:07,450
+As I said a couple of lectures ago, we need to spin up a new container, a Docker image that runs an
+
+151
+00:11:07,460 --> 00:11:09,130
+empty Postgres database.
+
+152
+00:11:09,140 --> 00:11:12,380
+Then we populate that database with no table structures.
+
+153
+00:11:12,800 --> 00:11:16,700
+And then we run our tests, and when we're finished, we get rid of that Docker container.
+
+154
+00:11:16,730 --> 00:11:21,740
+So it takes a little bit of work, but it's absolutely worth the effort and we'll get started on that
+
+155
+00:11:21,950 --> 00:11:22,910
+in the next lecture.

@@ -1,0 +1,280 @@
+1
+00:00:01,150 --> 00:00:03,820
+So we have this helpful function, take screenshot.
+
+2
+00:00:03,850 --> 00:00:09,310
+Let's give it a try, and I'll do that by going over to handlers, underscore Tesco, which of course
+
+3
+00:00:09,310 --> 00:00:11,860
+is in the Map project in the handlers folder.
+
+4
+00:00:12,280 --> 00:00:15,070
+And I'll just add another check here in the test home function.
+
+5
+00:00:15,220 --> 00:00:20,110
+Right now, all I'm doing is checking the response status code if it's not equal to 200 when there's
+
+6
+00:00:20,110 --> 00:00:20,530
+an error.
+
+7
+00:00:21,370 --> 00:00:27,490
+So what I'll do instead, or in addition to this, is to grab the entire text that I'm getting back
+
+8
+00:00:27,490 --> 00:00:31,720
+as part of the response and check to see if a certain string exists in there.
+
+9
+00:00:31,720 --> 00:00:33,510
+If it doesn't, we'll throw an error.
+
+10
+00:00:33,520 --> 00:00:35,800
+And of course, I'll pick a string that I know is not there.
+
+11
+00:00:36,490 --> 00:00:40,750
+So I'll declare a variable body text and I'll check for an error when I call.
+
+12
+00:00:40,790 --> 00:00:49,210
+I'll read All right there and I read rest on body, and that comes back as a slice of bytes or a bunch
+
+13
+00:00:49,210 --> 00:00:49,660
+of bytes.
+
+14
+00:00:50,170 --> 00:00:51,000
+We'll check for an error.
+
+15
+00:00:51,010 --> 00:00:56,710
+If error is not equal to nil, then just not fatal with the error.
+
+16
+00:00:57,680 --> 00:01:05,560
+But once I get past that, here's where I can do my little check, if not strings dot contains.
+
+17
+00:01:06,910 --> 00:01:12,490
+So let's convert body text, which is a bunch of bytes into a string string body text.
+
+18
+00:01:14,110 --> 00:01:18,450
+So that's what we're searching and we're looking for this text submarine.
+
+19
+00:01:18,460 --> 00:01:19,720
+I know that's not in there.
+
+20
+00:01:22,180 --> 00:01:26,500
+So if that doesn't exist, let's take a screenshot cell dot screenshot.
+
+21
+00:01:27,580 --> 00:01:31,930
+Take screenshot right there, and we need to pass it a URL.
+
+22
+00:01:32,170 --> 00:01:39,610
+So that's T-S done URL plus a slash, which might not be necessary, but I'll put it in there the name
+
+23
+00:01:39,610 --> 00:01:44,470
+of the test, home test and some screen dimensions.
+
+24
+00:01:45,190 --> 00:01:48,400
+I'll go with 1500 and 1000.
+
+25
+00:01:49,450 --> 00:01:51,610
+And of course, we need an error to error.
+
+26
+00:01:52,990 --> 00:01:56,310
+And I'll just say we did not find submarine.
+
+27
+00:01:57,370 --> 00:01:59,050
+And of course, you could put whatever you want there.
+
+28
+00:01:59,950 --> 00:02:06,250
+OK, let's run this test, so I'll open my terminal and clear the screen.
+
+29
+00:02:06,970 --> 00:02:08,590
+Make sure I'm in the right folder.
+
+30
+00:02:08,590 --> 00:02:11,230
+So I'll go up one level and over to my app.
+
+31
+00:02:11,230 --> 00:02:17,620
+And then in the handlers that'll run the test and go will probably tell me I have to go get my salary
+
+32
+00:02:17,620 --> 00:02:19,210
+to this project, but that's no problem.
+
+33
+00:02:19,390 --> 00:02:20,530
+Go test dot.
+
+34
+00:02:21,910 --> 00:02:25,780
+And it says, Go get some laptops, so I'll copy this.
+
+35
+00:02:29,310 --> 00:02:32,350
+The pasted in here to get the new function.
+
+36
+00:02:39,140 --> 00:02:42,150
+Clear the screen and try it again, go test dot.
+
+37
+00:02:42,260 --> 00:02:45,110
+And it should fail, and it will also give me a warning, I expect.
+
+38
+00:02:47,240 --> 00:02:54,190
+Now that warning you see there us handshake error that's going to show up every time a test fails and
+
+39
+00:02:54,200 --> 00:02:58,070
+screenshot is taken simply because it's an unsigned certificate.
+
+40
+00:02:58,880 --> 00:03:00,740
+Now it didn't find submarine.
+
+41
+00:03:00,770 --> 00:03:02,400
+Let's see if we have our screenshot.
+
+42
+00:03:02,450 --> 00:03:04,040
+So in the screenshots folder.
+
+43
+00:03:05,140 --> 00:03:06,230
+There is a file.
+
+44
+00:03:06,260 --> 00:03:07,310
+Let's double click on it.
+
+45
+00:03:08,410 --> 00:03:09,110
+And there it is.
+
+46
+00:03:09,190 --> 00:03:15,310
+It's a screenshot, but you'll notice that the image shows up as a broken icon and that's easy to fix,
+
+47
+00:03:15,310 --> 00:03:16,840
+and it was an oversight on my part.
+
+48
+00:03:17,870 --> 00:03:21,550
+If we go back to set up test, don't go, let me hide the terminal.
+
+49
+00:03:24,410 --> 00:03:30,880
+Right here, when we're getting the roots right here, we need to tell our router where the static assets
+
+50
+00:03:30,880 --> 00:03:31,060
+are.
+
+51
+00:03:31,540 --> 00:03:33,400
+And of course, that's very similar to what's in the roots.
+
+52
+00:03:33,670 --> 00:03:38,440
+So let's just open the roots file, grab the static roots right here.
+
+53
+00:03:39,470 --> 00:03:40,100
+Copy them.
+
+54
+00:03:41,480 --> 00:03:43,340
+Go back to set up test.
+
+55
+00:03:43,670 --> 00:03:51,680
+Don't go paste those in there and modify this to say go up one level to the public directory.
+
+56
+00:03:52,100 --> 00:03:54,780
+And of course, we need to change this to be MUX.
+
+57
+00:03:56,830 --> 00:04:04,130
+OK, so now I'll delete this home test screenshot that I have from the last time I ran the test.
+
+58
+00:04:04,670 --> 00:04:05,840
+Reopen my terminal.
+
+59
+00:04:05,900 --> 00:04:06,860
+Clear the screen.
+
+60
+00:04:07,220 --> 00:04:08,240
+Run the tests.
+
+61
+00:04:08,240 --> 00:04:11,030
+I should get an error and I should get a screenshot as well.
+
+62
+00:04:13,620 --> 00:04:14,520
+And there's the error.
+
+63
+00:04:15,230 --> 00:04:16,560
+Now let's look at our screenshot.
+
+64
+00:04:19,820 --> 00:04:20,570
+There it is.
+
+65
+00:04:21,110 --> 00:04:25,670
+There is the image as expected, and that seems to work perfectly.
+
+66
+00:04:26,360 --> 00:04:30,890
+So that seems to work pretty well, and it will be very useful when you're running browser tests and
+
+67
+00:04:30,890 --> 00:04:34,310
+just want to get a visual feedback as to what might be going wrong.
+
+68
+00:04:35,300 --> 00:04:35,640
+OK.
+
+69
+00:04:35,660 --> 00:04:40,490
+In the next lecture, we'll just write one or two more helper functions in the alertness package just
+
+70
+00:04:40,490 --> 00:04:42,500
+to make testing even easier.
+

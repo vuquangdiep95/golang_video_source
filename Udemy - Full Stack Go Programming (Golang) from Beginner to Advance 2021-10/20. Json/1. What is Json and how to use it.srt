@@ -1,0 +1,175 @@
+1
+00:00:12,850 --> 00:00:17,620
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:17,650 --> 00:00:20,050
+We want to talk about Jason concept.
+
+3
+00:00:24,470 --> 00:00:25,880
+Data exchange.
+
+4
+00:00:27,790 --> 00:00:32,050
+Then you start a project which interacts with the outer world.
+
+5
+00:00:32,290 --> 00:00:36,760
+It requires data exchange to make a project successful.
+
+6
+00:00:36,790 --> 00:00:39,550
+This interaction must be simple and efficient.
+
+7
+00:00:40,420 --> 00:00:48,010
+Data exchange is the process of taking data structured on the source Eskimo and transforming it into
+
+8
+00:00:48,010 --> 00:00:49,840
+data structures on a target.
+
+9
+00:00:49,840 --> 00:00:55,360
+This schema so that the target data is an accurate representation of the source data.
+
+10
+00:00:56,020 --> 00:01:02,740
+In simple terms, convert the data in the form at which the receiver understands there are many data
+
+11
+00:01:02,740 --> 00:01:08,770
+exchange formats like X-Men, Jason Ashjian and et cetera.
+
+12
+00:01:09,040 --> 00:01:14,230
+Among all, JSON has become ubiquitous for web applications.
+
+13
+00:01:17,180 --> 00:01:18,440
+What is Jason?
+
+14
+00:01:20,190 --> 00:01:27,570
+Jason, or JavaScript object notation is a lightweight format that is used for data interchanging.
+
+15
+00:01:27,990 --> 00:01:36,180
+It is based on the subset of JavaScript language and object isn't on older set of name and value pers.
+
+16
+00:01:36,960 --> 00:01:43,140
+It is mostly used for communication between backhands and JavaScript programs running in the browser,
+
+17
+00:01:43,380 --> 00:01:47,130
+but it is used in another kind of application as bill.
+
+18
+00:01:48,990 --> 00:01:51,630
+Now you can see an example of Jason.
+
+19
+00:01:56,320 --> 00:01:58,450
+Hard to use, Jason in Guoliang.
+
+20
+00:01:59,710 --> 00:02:07,630
+Golang Pearl Wines, multiple encoding and decoding APIs to brought with JSON, including from built
+
+21
+00:02:07,650 --> 00:02:16,360
+in in custom data points using the encoding JSON package data times, the default global and data times
+
+22
+00:02:16,360 --> 00:02:25,630
+for decoding and encoding J songs are as follows mode for Jason Boleyn's Int and load for JSON numbers.
+
+23
+00:02:26,470 --> 00:02:36,820
+Listening for JSON strings mean for JSON non value array as JSON array and map or restaurant as JSON
+
+24
+00:02:36,940 --> 00:02:37,600
+object.
+
+25
+00:02:40,720 --> 00:02:50,050
+Pass, Jason in Golden, Jason, is JavaScript object notation and goal and cannot use it in its original
+
+26
+00:02:50,050 --> 00:02:59,050
+format for this go and has provided an encoding JSON package in the standard library in goal language.
+
+27
+00:02:59,200 --> 00:03:07,330
+We use Extract to represent Jason, for example, in goal, and we create this right by the following
+
+28
+00:03:07,330 --> 00:03:07,780
+code.
+
+29
+00:03:07,990 --> 00:03:15,400
+You can see it light type employee extract, and in JSON, we create by the following code.
+
+30
+00:03:15,790 --> 00:03:17,790
+Now you can see these Sampat.
+
+31
+00:03:23,450 --> 00:03:30,680
+So we will use anchored in Jason Package to convert Jason into asteroid and asteroid into Jason.
+
+32
+00:03:31,100 --> 00:03:42,650
+For this, we will use two functions motion or encode convert golonka struct into JSON formats on Marshon,
+
+33
+00:03:42,980 --> 00:03:46,880
+or they could convert JSON into gold struct.
+
+34
+00:03:47,270 --> 00:03:55,730
+It is more like mapping the parameters, then conversion only data structures that can be represented
+
+35
+00:03:55,730 --> 00:03:57,950
+as valid JSON will be encoded.
+
+36
+00:03:58,520 --> 00:04:04,040
+JSON objects only support strings as keys to encode a go map type.
+
+37
+00:04:04,040 --> 00:04:10,640
+It must be of before map by the key type is read only the exported fields.
+
+38
+00:04:11,420 --> 00:04:16,970
+Those that begin with an uppercase letter of the airstrike can be encoded in JSON.
+
+39
+00:04:17,660 --> 00:04:20,960
+Cyclic data structures are not supported.
+
+40
+00:04:21,230 --> 00:04:29,060
+They will cause more side to go into an infinite loop, and pointers will be encoded as the values they
+
+41
+00:04:29,060 --> 00:04:30,680
+point to or not.
+
+42
+00:04:30,720 --> 00:04:36,310
+If the pointer is needed in order not to prolong the time of decision, we will finish.
+
+43
+00:04:36,440 --> 00:04:40,080
+Then we will continue the content in the next session until next.
+
+44
+00:04:40,100 --> 00:04:40,970
+Mission goodbye.

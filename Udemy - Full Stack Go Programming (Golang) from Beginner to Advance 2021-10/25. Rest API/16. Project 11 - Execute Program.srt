@@ -1,0 +1,363 @@
+1
+00:00:11,620 --> 00:00:17,860
+Hello and welcome to the Goldens programming language course in the previous session, we were able
+
+2
+00:00:17,860 --> 00:00:23,920
+to make the configuration related to the server and set it up in this session.
+
+3
+00:00:24,130 --> 00:00:28,930
+The intent to send several rest end points from the client to the server.
+
+4
+00:00:30,350 --> 00:00:33,080
+To do these views, Postman's software.
+
+5
+00:00:34,170 --> 00:00:41,760
+But before do it, we should run the main method of the project by calling the main method the seven
+
+6
+00:00:41,760 --> 00:00:42,600
+is a starter.
+
+7
+00:00:42,840 --> 00:00:50,790
+And in the mode of listening to different requests to respond appropriately so first round the main
+
+8
+00:00:50,790 --> 00:00:54,720
+function go from.
+
+9
+00:00:54,810 --> 00:01:03,530
+There are two batches listening that go now server is running on the local on port 880.
+
+10
+00:01:04,320 --> 00:01:11,240
+Postman is an API development tool which helps to build, test and modify APIs.
+
+11
+00:01:11,760 --> 00:01:17,760
+Almost any functionality that could be needed by any developer is encapsulated in this tool.
+
+12
+00:01:18,450 --> 00:01:26,640
+It has the ability to make various types of HTP requests like it paused PWD patch saving environments
+
+13
+00:01:26,640 --> 00:01:31,440
+for later use, converting to API to code for various languages.
+
+14
+00:01:32,920 --> 00:01:39,820
+Before running to APIs inside Postman's software, he first entered the MySQL database and checked the
+
+15
+00:01:39,820 --> 00:01:42,430
+lists of student in person schema.
+
+16
+00:01:44,650 --> 00:01:46,840
+Go to the person schema.
+
+17
+00:01:48,970 --> 00:01:52,150
+Go to the tables and go to a student table.
+
+18
+00:01:52,150 --> 00:01:54,220
+Right click on it and select Ruth.
+
+19
+00:01:56,140 --> 00:02:00,510
+Now we can see we have five records here, John.
+
+20
+00:02:00,520 --> 00:02:07,110
+Linda, Jack, David and Mary now go to Restaurant five and check the created a.
+
+21
+00:02:09,220 --> 00:02:10,880
+Go to risk config.
+
+22
+00:02:11,910 --> 00:02:16,900
+OK, here we have created four different API one to select.
+
+23
+00:02:16,900 --> 00:02:20,680
+All this didn't want to select a student based on the name.
+
+24
+00:02:21,100 --> 00:02:25,210
+Want to create a new student and want to update the student information.
+
+25
+00:02:25,960 --> 00:02:32,260
+So in the Post Man program, we can use these four APIs as client side requests.
+
+26
+00:02:34,510 --> 00:02:38,530
+It's time to go to the postman to execute our rest API.
+
+27
+00:02:39,940 --> 00:02:43,530
+Click on the plus side and enter our request.
+
+28
+00:02:43,540 --> 00:02:48,580
+You are in text, then then select your metal, then execute the API.
+
+29
+00:02:49,330 --> 00:02:53,020
+Suppose we want to see first the list of all the students.
+
+30
+00:02:53,470 --> 00:02:58,150
+To do this, we need to call the API for selecting all the student.
+
+31
+00:02:58,750 --> 00:03:03,220
+So first click on the plus side and in text field.
+
+32
+00:03:03,670 --> 00:03:09,850
+We write our rest API for select all the students we write low crime.
+
+33
+00:03:09,970 --> 00:03:20,590
+Horst Köhler 880 is less rest, less API and is less the students.
+
+34
+00:03:22,030 --> 00:03:28,360
+Then the method defined for this API is gittes, so select get method from methods drop down.
+
+35
+00:03:28,540 --> 00:03:34,630
+By default, here is gittes and now send the request frontline. into the server.
+
+36
+00:03:38,320 --> 00:03:49,320
+Now we can see the output, we see all the students of student table by calling Rest API I one John
+
+37
+00:03:49,750 --> 00:03:54,760
+age 45 five, named Linda I the eight named Jack.
+
+38
+00:03:54,940 --> 00:03:59,410
+I did nine named David and I did 10 name Mary.
+
+39
+00:04:02,710 --> 00:04:10,360
+Do this again for another request in this case, you want to see a student base its name to do this.
+
+40
+00:04:10,600 --> 00:04:14,410
+We need to call the API for select a student based name.
+
+41
+00:04:14,800 --> 00:04:30,520
+So we write localhost call and 880 if this risk slash API slash student and slash its name, for example,
+
+42
+00:04:30,880 --> 00:04:31,330
+which
+
+43
+00:04:34,300 --> 00:04:37,780
+the method is get and press send button.
+
+44
+00:04:39,520 --> 00:04:47,710
+Now we can see the information of the Jack, a student I.D. eight named Jack and age 25.
+
+45
+00:04:48,610 --> 00:04:51,070
+Do this again for other requests.
+
+46
+00:04:51,700 --> 00:04:57,170
+In this case, we want to save in the Student two database to do this.
+
+47
+00:04:57,190 --> 00:05:03,550
+We need to call the API for save students, so click on the plus sign right?
+
+48
+00:05:03,550 --> 00:05:09,090
+Localhost Column 80 18.
+
+49
+00:05:09,730 --> 00:05:11,010
+Yes, less serious.
+
+50
+00:05:11,380 --> 00:05:17,260
+Less API and business is still there.
+
+51
+00:05:17,950 --> 00:05:19,540
+Is less at.
+
+52
+00:05:22,860 --> 00:05:25,950
+Select the body, tap below where to enter the API.
+
+53
+00:05:27,540 --> 00:05:34,140
+Then select the RO option and change its value from tax to Jason.
+
+54
+00:05:36,780 --> 00:05:45,030
+Now enter the information of the student in JSON format in the box below and send it to the server so
+
+55
+00:05:45,030 --> 00:05:49,410
+political process and initialize a student field between them.
+
+56
+00:05:50,100 --> 00:05:54,720
+Note that the idea value will be added automatically to the database.
+
+57
+00:05:55,740 --> 00:05:59,100
+So, for example, Killebrew says
+
+58
+00:06:02,550 --> 00:06:03,210
+me
+
+59
+00:06:05,990 --> 00:06:09,420
+the right came
+
+60
+00:06:12,390 --> 00:06:20,470
+and set a comma go to the next line, and for age we set, for example.
+
+61
+00:06:21,210 --> 00:06:22,710
+Thirty three.
+
+62
+00:06:24,840 --> 00:06:36,030
+And the method defined for this API is post, so select post method from Method dropdown post and send
+
+63
+00:06:36,030 --> 00:06:38,400
+the request front line to their server.
+
+64
+00:06:39,390 --> 00:06:47,100
+Now, go to the database and select all the students again ran the query again.
+
+65
+00:06:49,050 --> 00:06:51,360
+Now we can see the output.
+
+66
+00:06:51,810 --> 00:06:55,380
+We see that IMU, a student, has been added to the list.
+
+67
+00:06:56,440 --> 00:07:00,540
+13 name team and age 33.
+
+68
+00:07:02,560 --> 00:07:08,350
+Do this again for other requests now, go to the postman and continue,
+
+69
+00:07:11,650 --> 00:07:17,560
+in this case, we want to update and N'existe a student database to do this.
+
+70
+00:07:17,590 --> 00:07:29,190
+We need to calm the API for Update is student, so we write localhost column 88, a server IP address
+
+71
+00:07:29,230 --> 00:07:32,320
+that's raised as much API as Part Perfect's.
+
+72
+00:07:33,940 --> 00:07:37,660
+It's not a student, it's less added as Pat.
+
+73
+00:07:38,380 --> 00:07:43,030
+Now we want to update a student debt we inserted in the previous calling API.
+
+74
+00:07:43,270 --> 00:07:54,700
+So go to a database and see its I.D. The idea of the Kinney's 13 go to the post, meaning continuing.
+
+75
+00:07:59,790 --> 00:08:00,870
+We write.
+
+76
+00:08:02,970 --> 00:08:03,680
+I.D.
+
+77
+00:08:06,420 --> 00:08:08,910
+Caller 13.
+
+78
+00:08:09,930 --> 00:08:14,160
+And we want to change the name of it to Tom.
+
+79
+00:08:17,960 --> 00:08:24,950
+And the method defined for this API is so Celek post method from Methods dropdown and send the request
+
+80
+00:08:24,950 --> 00:08:26,810
+from Client into the server.
+
+81
+00:08:29,540 --> 00:08:33,680
+OK, now go to database and select all the students again.
+
+82
+00:08:35,030 --> 00:08:42,620
+Here we have I do 13 by the name Jean and age 30 to execute the query again.
+
+83
+00:08:43,430 --> 00:08:45,200
+Now we can see the idea.
+
+84
+00:08:45,200 --> 00:08:49,610
+13 name change to tome and age 33.
+
+85
+00:08:50,720 --> 00:08:51,110
+OK.
+
+86
+00:08:51,620 --> 00:08:58,070
+In this session, we were able to establish communication between the client and the server to rest
+
+87
+00:08:58,070 --> 00:09:05,780
+API, either able to connect to the database, fetch the information inside the data and add a new record
+
+88
+00:09:05,780 --> 00:09:08,690
+to eat and edit the record in the table.
+
+89
+00:09:09,650 --> 00:09:11,510
+We have reached the end of this session.
+
+90
+00:09:11,690 --> 00:09:16,160
+I hope you have take full advantage of this session onto the next session.
+
+91
+00:09:16,190 --> 00:09:16,790
+Goodbye.

@@ -1,0 +1,587 @@
+1
+00:00:00,920 --> 00:00:06,650
+So we're working on the dining problem function, the one that's going to be spawned as one go routine
+
+2
+00:00:06,650 --> 00:00:09,050
+for each of the philosophers who are trying to eat.
+
+3
+00:00:09,680 --> 00:00:15,010
+And so far, we have we receive our philosopher as a string, and that's just the name of the philosopher.
+
+4
+00:00:15,020 --> 00:00:18,440
+So if it's index zero, it'll be Plato, so on and so forth.
+
+5
+00:00:18,890 --> 00:00:23,260
+And then we have two Mew Texas, one for the dominant hand and one for the other hand.
+
+6
+00:00:23,270 --> 00:00:24,660
+And let's change the name of those.
+
+7
+00:00:24,740 --> 00:00:33,170
+Let's call this one left hand or left fork and right fork, just because I have difficulty typing the
+
+8
+00:00:33,170 --> 00:00:34,790
+word dominant for whatever reason.
+
+9
+00:00:35,480 --> 00:00:38,000
+Okay, so first thing I want to do is to print out a message.
+
+10
+00:00:38,630 --> 00:00:41,990
+Now, every time I print a message, I'm going to want to pause a little bit again.
+
+11
+00:00:41,990 --> 00:00:44,600
+I don't want this screen to zip by at Lightspeed.
+
+12
+00:00:45,020 --> 00:00:48,590
+So what I'm going to do because I'm going to write a test for this later on is I'm going to come back
+
+13
+00:00:48,590 --> 00:00:56,870
+up here to our variables and I'll create a variable and I'll call it sleep time for sleep time.
+
+14
+00:00:57,380 --> 00:00:59,810
+And that's going to be equal to one.
+
+15
+00:00:59,810 --> 00:01:05,270
+Time's timed out second and the only reason I'm doing this and it didn't import time for me, so let's
+
+16
+00:01:05,270 --> 00:01:11,150
+try that again timed out second that the only reason I'm doing this is when I write a test I can just
+
+17
+00:01:11,150 --> 00:01:13,850
+set this variable to zero so it doesn't pause at all.
+
+18
+00:01:14,060 --> 00:01:15,710
+But in any case, let's print a message.
+
+19
+00:01:15,830 --> 00:01:21,710
+Now, what's the first message that should be printed out as soon as this go routine fires, as soon
+
+20
+00:01:21,710 --> 00:01:25,310
+as it's sent off in the background and it executes well, I think I'm just going to say.
+
+21
+00:01:26,550 --> 00:01:27,080
+Format.
+
+22
+00:01:27,300 --> 00:01:27,900
+Print line.
+
+23
+00:01:29,730 --> 00:01:34,860
+And I'll put in philosopher the name of the philosopher and then is hungry.
+
+24
+00:01:35,100 --> 00:01:37,710
+Now he's seated, seated at the table.
+
+25
+00:01:37,830 --> 00:01:39,720
+So somebody sat at the table.
+
+26
+00:01:39,810 --> 00:01:40,170
+Okay.
+
+27
+00:01:40,710 --> 00:01:41,760
+And then I'll sleep.
+
+28
+00:01:42,210 --> 00:01:47,070
+And all I have to do now is say, time out, sleep, and I'm going to sleep.
+
+29
+00:01:47,280 --> 00:01:47,820
+Sleep time.
+
+30
+00:01:48,840 --> 00:01:50,970
+Okay, so it'll be 1/2 when I run this program.
+
+31
+00:01:51,600 --> 00:01:53,400
+So that's the very first thing I'm going to do.
+
+32
+00:01:54,690 --> 00:01:56,580
+Then we say Lock both forks.
+
+33
+00:01:56,700 --> 00:01:58,410
+Well, let's make it a little more interesting.
+
+34
+00:01:58,440 --> 00:02:00,930
+I don't want this to execute, you know, really, really quickly.
+
+35
+00:02:00,960 --> 00:02:05,370
+Let's make sure that each philosopher eats at least three times.
+
+36
+00:02:05,430 --> 00:02:05,820
+Okay.
+
+37
+00:02:05,940 --> 00:02:09,450
+So up here, I can declare a constant and I'll just put constants,
+
+38
+00:02:13,350 --> 00:02:15,390
+and my constant will be constant.
+
+39
+00:02:16,590 --> 00:02:17,130
+Hunger.
+
+40
+00:02:17,580 --> 00:02:21,010
+How many times is the philosopher going to get hungry?
+
+41
+00:02:21,030 --> 00:02:22,980
+And I'm going to assume they're going to eat three times.
+
+42
+00:02:23,060 --> 00:02:25,650
+Okay, so we have this constant now.
+
+43
+00:02:25,650 --> 00:02:27,300
+Now back down in our dining problem.
+
+44
+00:02:28,350 --> 00:02:35,040
+I need to lock both forks, but I need to do it once for each time that this philosopher gets hungry.
+
+45
+00:02:35,340 --> 00:02:43,860
+Okay, so let's just do a simple for loop for and we'll say index II is assigned the value of hunger.
+
+46
+00:02:45,570 --> 00:02:45,960
+All right.
+
+47
+00:02:45,960 --> 00:02:48,990
+Is greater than zero, and each time through will decrement.
+
+48
+00:02:49,350 --> 00:02:50,400
+All right, one time.
+
+49
+00:02:50,550 --> 00:02:50,880
+Okay.
+
+50
+00:02:51,690 --> 00:03:02,820
+And I'll move this curly bracket down to here and tab all this in, and now we can get started on this.
+
+51
+00:03:02,830 --> 00:03:11,010
+So let's pretend other message here, let's say format or print line and I'll say philosopher
+
+52
+00:03:13,500 --> 00:03:14,130
+is hungry.
+
+53
+00:03:16,560 --> 00:03:18,990
+Okay, and I'll sleep again.
+
+54
+00:03:20,430 --> 00:03:24,570
+Time, dot, sleep, sleep time.
+
+55
+00:03:27,060 --> 00:03:29,520
+Now I try to get a lock on both forks.
+
+56
+00:03:29,730 --> 00:03:31,080
+So we'll do the first one.
+
+57
+00:03:31,110 --> 00:03:33,750
+Say left fork, dot lock.
+
+58
+00:03:34,710 --> 00:03:37,320
+And again, this go routine will stop.
+
+59
+00:03:37,320 --> 00:03:41,160
+At this point, it will block until it can get a lock for the left fork.
+
+60
+00:03:41,370 --> 00:03:41,640
+Okay.
+
+61
+00:03:42,420 --> 00:03:44,460
+And of course, we have to do the same thing for the other one.
+
+62
+00:03:44,460 --> 00:03:48,750
+But after we get that fork, print out a message format of print if.
+
+63
+00:03:50,910 --> 00:03:54,030
+So we'll tab things in a little bit just so it's easier to read.
+
+64
+00:03:54,420 --> 00:03:56,290
+Then we'll put the philosophers name.
+
+65
+00:03:56,310 --> 00:03:56,820
+Okay.
+
+66
+00:03:57,090 --> 00:04:02,550
+And then we'll say picked up the fork to his right.
+
+67
+00:04:04,470 --> 00:04:07,440
+And our substitution for that is just, of course, philosopher.
+
+68
+00:04:09,060 --> 00:04:10,020
+So we have that message.
+
+69
+00:04:10,260 --> 00:04:15,690
+Now we'll duplicate this whole thing and do the same thing for the other fork.
+
+70
+00:04:15,990 --> 00:04:17,620
+But this time, it's right for clock.
+
+71
+00:04:20,430 --> 00:04:21,690
+Right fork, lock.
+
+72
+00:04:22,080 --> 00:04:24,600
+Picked up the fork to his left.
+
+73
+00:04:25,560 --> 00:04:27,120
+And I have left here and right here.
+
+74
+00:04:27,120 --> 00:04:28,140
+I don't know where that came from.
+
+75
+00:04:30,000 --> 00:04:33,030
+Left and right.
+
+76
+00:04:33,450 --> 00:04:34,260
+That makes more sense.
+
+77
+00:04:34,500 --> 00:04:37,050
+Okay, so we've picked up two forks at this point.
+
+78
+00:04:37,260 --> 00:04:38,520
+We've printed out the message.
+
+79
+00:04:38,790 --> 00:04:41,910
+So now our go our go routine continues on.
+
+80
+00:04:42,510 --> 00:04:45,460
+And here's where the next comment needs to get populated.
+
+81
+00:04:45,480 --> 00:04:50,100
+So all we need to say now is right here.
+
+82
+00:04:51,090 --> 00:04:52,290
+Format dot print line
+
+83
+00:04:55,590 --> 00:05:00,750
+philosopher has both forks and is eating.
+
+84
+00:05:03,090 --> 00:05:06,150
+Okay, so we eat now.
+
+85
+00:05:06,420 --> 00:05:10,380
+We want to rest here for a little bit while he's eating and give him some time to finish that spaghetti.
+
+86
+00:05:10,390 --> 00:05:12,030
+So we'll say time to sleep.
+
+87
+00:05:13,890 --> 00:05:16,230
+And this time I'll define another variable up here.
+
+88
+00:05:16,290 --> 00:05:21,240
+So we'll make this one ver e to time equals.
+
+89
+00:05:21,330 --> 00:05:22,800
+And how long should he have to eat?
+
+90
+00:05:22,800 --> 00:05:24,000
+Say, 3 seconds.
+
+91
+00:05:24,780 --> 00:05:25,840
+Three times.
+
+92
+00:05:25,860 --> 00:05:26,910
+Time got second.
+
+93
+00:05:27,330 --> 00:05:28,560
+And again, that's just so.
+
+94
+00:05:28,560 --> 00:05:30,930
+When I write the tests, I can set this to zero.
+
+95
+00:05:30,960 --> 00:05:31,180
+Okay.
+
+96
+00:05:32,010 --> 00:05:33,510
+And we'll make this one each time.
+
+97
+00:05:36,480 --> 00:05:37,770
+So the philosopher's eating.
+
+98
+00:05:38,070 --> 00:05:41,580
+And after he's done, of course, he's going to put the forks down.
+
+99
+00:05:41,790 --> 00:05:43,530
+So we need to unlock the new taxes.
+
+100
+00:05:43,710 --> 00:05:52,920
+And all we need to say here is right fork, unlock, left fork, unlock, and print out a message.
+
+101
+00:05:53,870 --> 00:05:55,910
+So format, print F
+
+102
+00:05:59,220 --> 00:06:01,970
+and we'll put a tab.
+
+103
+00:06:01,970 --> 00:06:04,940
+And again and we'll say percent ask for the philosophers name.
+
+104
+00:06:05,420 --> 00:06:17,060
+Put down the fork on his right and the substitution is philosopher and we'll duplicate that and make
+
+105
+00:06:17,060 --> 00:06:17,840
+this one left.
+
+106
+00:06:21,150 --> 00:06:26,550
+And just to make things a little more readable, let's take this cut it out of here and paste it in
+
+107
+00:06:26,550 --> 00:06:29,040
+front of that one and get rid of this blank line.
+
+108
+00:06:29,250 --> 00:06:30,990
+And that way it seems to make more sense.
+
+109
+00:06:31,230 --> 00:06:35,060
+You unlock the right fork, print the message, you unlock the left fork, print the message.
+
+110
+00:06:35,140 --> 00:06:35,380
+Okay.
+
+111
+00:06:35,400 --> 00:06:36,120
+It doesn't really matter.
+
+112
+00:06:36,120 --> 00:06:37,890
+It would run so fast, but I just like it better.
+
+113
+00:06:38,970 --> 00:06:39,670
+And then we'll pass.
+
+114
+00:06:41,130 --> 00:06:41,690
+Time dot.
+
+115
+00:06:41,700 --> 00:06:42,090
+Sleep.
+
+116
+00:06:42,750 --> 00:06:43,290
+Sleep time.
+
+117
+00:06:45,870 --> 00:06:46,290
+Okay.
+
+118
+00:06:47,730 --> 00:06:55,980
+So what happens once we finish this big for loop, which will run for hunger times and constant the
+
+119
+00:06:55,980 --> 00:06:59,550
+constant hunger is set to three well after we get inside of that.
+
+120
+00:07:00,210 --> 00:07:05,880
+Of course, at this point, the philosopher's actually done eating and that philosopher can get up and
+
+121
+00:07:05,880 --> 00:07:06,480
+leave the table.
+
+122
+00:07:06,480 --> 00:07:09,960
+So it lets print out a message, print out, done message.
+
+123
+00:07:11,880 --> 00:07:16,740
+So we'll say format dog, print line
+
+124
+00:07:19,200 --> 00:07:27,060
+philosopher is satisfied and then we'll let him pause for a minute.
+
+125
+00:07:27,060 --> 00:07:28,310
+Don't want to rush him of the door.
+
+126
+00:07:28,950 --> 00:07:30,450
+So time to sleep.
+
+127
+00:07:31,530 --> 00:07:32,220
+Sleep time.
+
+128
+00:07:35,180 --> 00:07:40,250
+And the last thing to do here, of course, is to let us know that this particular philosopher has left
+
+129
+00:07:40,250 --> 00:07:40,700
+the table.
+
+130
+00:07:40,730 --> 00:07:49,850
+So we'll put formatted print, long print line, and the philosophers name has left the table.
+
+131
+00:07:50,120 --> 00:07:57,410
+And at this point we should have locked both forks three times, unlocked both forks three times, and
+
+132
+00:07:57,410 --> 00:07:58,730
+of course, eaten three times.
+
+133
+00:07:59,180 --> 00:08:04,370
+Okay, so let's go back down to our main function and see what we have left out of this.
+
+134
+00:08:05,270 --> 00:08:07,760
+What we need to print our introductory message.
+
+135
+00:08:07,760 --> 00:08:09,950
+So let's say format the print line
+
+136
+00:08:14,090 --> 00:08:16,790
+and we'll just put the dining philosophy.
+
+137
+00:08:16,800 --> 00:08:26,060
+So first problem like that and then I'll duplicated and underline it by using hyphens just so it's nice
+
+138
+00:08:26,060 --> 00:08:26,570
+and readable.
+
+139
+00:08:33,400 --> 00:08:33,880
+Here we go.
+
+140
+00:08:34,630 --> 00:08:36,100
+And now down here.
+
+141
+00:08:36,580 --> 00:08:37,600
+After the weight group.
+
+142
+00:08:39,060 --> 00:08:40,470
+Let's print out a closing message.
+
+143
+00:08:40,470 --> 00:08:49,590
+So format or print line once again and we'll say the table is empty and that's enough.
+
+144
+00:08:50,550 --> 00:08:55,080
+Okay, so so in theory, at this point, this should work.
+
+145
+00:08:55,110 --> 00:09:00,060
+So in the next lecture, we'll run it, make sure that everything works as expected, and then we'll
+
+146
+00:09:00,060 --> 00:09:01,740
+try to complicate the issue a little bit.
+
+147
+00:09:01,870 --> 00:09:03,030
+Okay, so let's move on.

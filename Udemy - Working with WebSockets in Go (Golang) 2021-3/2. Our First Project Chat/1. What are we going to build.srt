@@ -1,0 +1,83 @@
+1
+00:00:01,140 --> 00:00:06,840
+So in this section of the course, what we're going to build is a very simple chat application built
+
+2
+00:00:06,840 --> 00:00:11,940
+using go is the back end and WebSocket to to actually send the messages back and forth.
+
+3
+00:00:12,240 --> 00:00:16,440
+So on the left hand side of the screen, you can see there is no user currently logged in.
+
+4
+00:00:16,860 --> 00:00:21,810
+And there's one person online, Bernie and Bernie is over here on the right hand side.
+
+5
+00:00:22,230 --> 00:00:28,470
+But if Fred joins you, notice how it automatically populated Fred down here and it pushed it over here.
+
+6
+00:00:28,470 --> 00:00:29,910
+And that's done using Web sockets.
+
+7
+00:00:30,300 --> 00:00:34,890
+And the Web sockets package we're going to use is guerrilla web sockets.
+
+8
+00:00:35,100 --> 00:00:36,640
+And it's a very easy one to use.
+
+9
+00:00:36,660 --> 00:00:39,600
+So this is a very simple way to get our feet wet with WebSocket.
+
+10
+00:00:39,660 --> 00:00:42,600
+Now, this is not a fully functional Web application.
+
+11
+00:00:43,050 --> 00:00:48,240
+There is, for example, no database behind the users and so forth, and there's no login page, and
+
+12
+00:00:48,240 --> 00:00:48,730
+that's OK.
+
+13
+00:00:49,110 --> 00:00:53,970
+The second project, what we're doing in this course is a fully functional Web application with all
+
+14
+00:00:53,970 --> 00:00:59,310
+the nuts and bolts and all the pieces we need to to actually do something a little more sophisticated
+
+15
+00:00:59,310 --> 00:01:00,320
+than a simple chat.
+
+16
+00:01:00,330 --> 00:01:03,130
+But this is a perfect way of getting our feet wet.
+
+17
+00:01:03,150 --> 00:01:07,260
+So if I send a message from Fred to Bernie, hello, Bernie.
+
+18
+00:01:08,280 --> 00:01:15,390
+It appears and if I change the name here from Fred to Frederick, it changes it down here and it instantly
+
+19
+00:01:15,390 --> 00:01:16,320
+pushes it over here.
+
+20
+00:01:16,470 --> 00:01:23,010
+And this shows you just how fast and interactive you can make your Web applications by using Web sockets.
+
+21
+00:01:23,280 --> 00:01:24,060
+So let's get started.

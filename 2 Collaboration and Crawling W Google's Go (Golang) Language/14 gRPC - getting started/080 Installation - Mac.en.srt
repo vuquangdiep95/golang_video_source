@@ -1,0 +1,623 @@
+1
+00:00:00,210 --> 00:00:06,920
+Okay so now when Daniel was doing all of that I noticed I started to glaze over.
+
+2
+00:00:07,380 --> 00:00:11,340
+And that's why at the end of that video I was like wait I got to go through that again with you and
+
+3
+00:00:11,340 --> 00:00:16,350
+I wanted to get some notes and so I put together some notes here and then we're gonna get my system
+
+4
+00:00:16,350 --> 00:00:21,860
+set up just so you could see that installation and so will I will call this installation.
+
+5
+00:00:21,870 --> 00:00:26,670
+Just keep Mac and so you saw a window on the last one.
+
+6
+00:00:26,880 --> 00:00:30,390
+And now you're going to see it on the windows.
+
+7
+00:00:30,390 --> 00:00:33,410
+It's called Windows and you're going to see it on Mac.
+
+8
+00:00:33,770 --> 00:00:39,150
+And so the steps there if you take a look at those steps the first step was to go to the Web site and
+
+9
+00:00:39,150 --> 00:00:45,750
+then go to a quick start go and and then install the pro CE program and the Potosi compiler is used
+
+10
+00:00:45,750 --> 00:00:51,320
+to generate the G.P.S. service code and then we take the executable from Proto.
+
+11
+00:00:51,330 --> 00:00:57,660
+So I did all of that open it up came down zip file and I got this here and then inside this bin folder
+
+12
+00:00:57,660 --> 00:01:04,640
+we got proto see into this proto C has to be found by my computer when my computer looks for executable
+
+13
+00:01:05,160 --> 00:01:14,790
+and the environment variable upon which to which my computer looks for executable is the path environment
+
+14
+00:01:14,790 --> 00:01:19,890
+variable and so I just want to make sure that this proto C is discoverable somewhere on my path.
+
+15
+00:01:20,310 --> 00:01:28,650
+And so if I go to my terminal and I echo dolor path it will show me my path very long so I can look
+
+16
+00:01:28,650 --> 00:01:33,330
+through here at all the places set and I could put it in some location and add that location here if
+
+17
+00:01:33,330 --> 00:01:39,780
+I wanted to my path variable or I could just use a location that is already existing and so I think
+
+18
+00:01:39,780 --> 00:01:45,780
+I'll take my privacy and put it in user local bands I'm just going to copy that and and then I need
+
+19
+00:01:45,780 --> 00:01:48,280
+to move it from this location to there.
+
+20
+00:01:48,330 --> 00:01:57,030
+And so right now I am actually in No not that location singing chat change documents change direct directory
+
+21
+00:01:57,030 --> 00:02:06,510
+to documents and then inside documents it is proto C and and then inside proto C it has been and then
+
+22
+00:02:06,510 --> 00:02:13,050
+now inside of there I'm going to move that and I'm going to move proto C and I'm going to move it to
+
+23
+00:02:13,050 --> 00:02:13,980
+this location.
+
+24
+00:02:13,980 --> 00:02:15,120
+Is that all look right to you.
+
+25
+00:02:15,270 --> 00:02:15,710
+Yes.
+
+26
+00:02:16,050 --> 00:02:22,290
+And I'm gonna hit enter and if I see to that location and then doing allows I could see I've got proto
+
+27
+00:02:22,290 --> 00:02:23,460
+C in there.
+
+28
+00:02:23,460 --> 00:02:25,030
+So that's good.
+
+29
+00:02:25,050 --> 00:02:30,600
+And that was the next step on the processes to take the executable from proto C stored in some location
+
+30
+00:02:30,600 --> 00:02:33,330
+at that location on your path environment variable.
+
+31
+00:02:33,340 --> 00:02:35,000
+And that was all that.
+
+32
+00:02:35,160 --> 00:02:40,870
+After that we need to import this this package right here.
+
+33
+00:02:40,870 --> 00:02:48,840
+Get icon going above proto see Django and using go modules create a file like this in your project and
+
+34
+00:02:48,840 --> 00:02:50,460
+Daniel's already created that file.
+
+35
+00:02:50,490 --> 00:02:55,280
+But before I pull that code down I'm going to go here and take a look some below.
+
+36
+00:02:55,290 --> 00:02:57,990
+And beneath that I don't have that in here yet.
+
+37
+00:02:58,060 --> 00:03:05,570
+There's nothing in there about GitHub dot.com going proto above GitHub dot com going above.
+
+38
+00:03:05,580 --> 00:03:08,350
+I don't have anything in there.
+
+39
+00:03:08,770 --> 00:03:10,260
+I don't have that in there yet.
+
+40
+00:03:10,260 --> 00:03:14,800
+So next thing I'm in do is just on my terminal and get myself current with Daniel.
+
+41
+00:03:14,910 --> 00:03:21,430
+So I need to see these back to documents and then inside see documents go into the go project and do
+
+42
+00:03:21,600 --> 00:03:29,080
+get status and and I'm your branch is behind or G.M. by one committee can be fast forwarded get pulled
+
+43
+00:03:29,100 --> 00:03:29,580
+update.
+
+44
+00:03:29,610 --> 00:03:41,020
+So do I get full and then do I get status again and get add Dash 8 add my homework and get commit dash
+
+45
+00:03:41,110 --> 00:03:47,030
+and and I'm gonna change it this time I'm doing great.
+
+46
+00:03:47,560 --> 00:03:52,210
+Often I tell students You're doing great as encouragement I'm giving myself a little encouragement after
+
+47
+00:03:52,210 --> 00:03:59,850
+my homework and then I'm gonna push that up and and so that should all be good.
+
+48
+00:03:59,850 --> 00:04:07,470
+Now get status and and now when I take a look here I should have Daniel's code down here and then there's
+
+49
+00:04:07,710 --> 00:04:13,520
+five GOPAC and in G.P.S. we have tools and then we have this right there.
+
+50
+00:04:13,530 --> 00:04:22,980
+And now if I look at my go mod that is still not shown going proto but for it there genius I love it.
+
+51
+00:04:23,050 --> 00:04:26,370
+And so now that we have that file right here.
+
+52
+00:04:26,380 --> 00:04:33,690
+So it's bringing that n confirm this is in go mod and now I want to run go and stall is that's correct
+
+53
+00:04:33,710 --> 00:04:34,570
+at this step.
+
+54
+00:04:34,930 --> 00:04:37,360
+So go install is the next step.
+
+55
+00:04:37,360 --> 00:04:43,660
+And this is going to actually bring the code down so that it's on my computer right now it just says
+
+56
+00:04:43,660 --> 00:04:47,950
+go get it if it's used or we're not using it anywhere so it hasn't gone and gotten that right.
+
+57
+00:04:48,000 --> 00:04:48,620
+Yes.
+
+58
+00:04:48,760 --> 00:04:51,080
+So but first thing takes you go being set.
+
+59
+00:04:51,640 --> 00:04:54,180
+Oh that has to be done first.
+
+60
+00:04:54,220 --> 00:04:54,500
+All right.
+
+61
+00:04:54,520 --> 00:05:02,080
+So I want to set my my go been to environment variable to something and go Benz one word.
+
+62
+00:05:02,080 --> 00:05:02,460
+Right.
+
+63
+00:05:02,500 --> 00:05:03,060
+Yes two.
+
+64
+00:05:03,070 --> 00:05:03,990
+There you go.
+
+65
+00:05:04,000 --> 00:05:06,090
+So we'll go take a look at.
+
+66
+00:05:06,090 --> 00:05:09,350
+Back to my nano.
+
+67
+00:05:09,700 --> 00:05:17,380
+Well we could do first of all go in B and so might go Ben is currently not set to anything and now I'm
+
+68
+00:05:17,380 --> 00:05:20,210
+going to nano dot bash.
+
+69
+00:05:20,230 --> 00:05:25,670
+And by the way I'm in kind of my user folder and then inside there on a Mac.
+
+70
+00:05:25,690 --> 00:05:32,770
+I've got my bash profile and that's where I set environment variables and so I'm going to now nano my
+
+71
+00:05:32,770 --> 00:05:42,420
+dot bash profile and and then and here I can just copy this basically export go.
+
+72
+00:05:42,420 --> 00:05:46,580
+Ben is equal to forward slash users.
+
+73
+00:05:46,870 --> 00:05:54,870
+And we had a little discussion about where should I set my Go Ben to with go modules and just to kind
+
+74
+00:05:54,870 --> 00:06:00,430
+of document that so you could hear a little bit of that discussion modules is kind of a new way to do
+
+75
+00:06:00,430 --> 00:06:01,110
+things.
+
+76
+00:06:01,120 --> 00:06:07,480
+And that's giving you your name spacing and that's giving you your package management and versioning.
+
+77
+00:06:08,050 --> 00:06:12,910
+But then we have the go work in the go path right to go past set your go workspace.
+
+78
+00:06:12,910 --> 00:06:16,160
+That's the old way and in the go workspace.
+
+79
+00:06:16,150 --> 00:06:18,280
+You had your Ben package source folders.
+
+80
+00:06:18,280 --> 00:06:22,120
+So my head those are kind of two separate things like oh I don't want to do anything in that area anymore.
+
+81
+00:06:22,120 --> 00:06:27,090
+That's the old way where I have my go path and then we talked about it in your account.
+
+82
+00:06:27,090 --> 00:06:31,380
+No it's fine it's there use it's your go folder you've got a pen folder in it.
+
+83
+00:06:31,480 --> 00:06:31,790
+Right.
+
+84
+00:06:31,790 --> 00:06:33,310
+Set your go Ben to that.
+
+85
+00:06:33,310 --> 00:06:36,100
+And so it could still use that folder is no big deal.
+
+86
+00:06:36,100 --> 00:06:42,070
+Would that have any complications if I had legacy code and I did want to like suddenly use my go path
+
+87
+00:06:42,070 --> 00:06:45,540
+workspace to that place should be not your bin folder it should be fine.
+
+88
+00:06:45,560 --> 00:06:49,630
+Have been folder files get overwritten fairly often and whenever you whenever you grab something new
+
+89
+00:06:49,630 --> 00:06:50,960
+that inexcusable.
+
+90
+00:06:51,100 --> 00:06:54,150
+So a pair programming does that all look good to you.
+
+91
+00:06:54,220 --> 00:06:55,240
+Yes.
+
+92
+00:06:55,240 --> 00:07:03,820
+And I think the only other thing that I would check is to actually confirm will confirm that afterwards.
+
+93
+00:07:03,820 --> 00:07:11,830
+So now I'm just going to exit and hit yes and hit enter and now I need to restart my terminal for that
+
+94
+00:07:11,830 --> 00:07:13,240
+to take effect.
+
+95
+00:07:13,240 --> 00:07:16,620
+That's the easiest way that I've found to do it and I could do go in V.
+
+96
+00:07:16,630 --> 00:07:21,420
+And now my go Ben is set to that location.
+
+97
+00:07:21,650 --> 00:07:29,080
+I just want to make sure that that location exists calm fairly confident does.
+
+98
+00:07:29,600 --> 00:07:31,550
+But to do that I'll copy this
+
+99
+00:07:34,690 --> 00:07:40,790
+and then just CV there yeah we're all good if I go up a level and allies.
+
+100
+00:07:40,830 --> 00:07:42,830
+That's my workspace.
+
+101
+00:07:43,170 --> 00:07:44,430
+And that is.
+
+102
+00:07:44,430 --> 00:07:44,840
+Yeah.
+
+103
+00:07:44,910 --> 00:07:46,060
+Good.
+
+104
+00:07:46,110 --> 00:07:46,470
+All right.
+
+105
+00:07:46,560 --> 00:07:53,560
+And so that's just a convenient location that's on your path that go right to yeah.
+
+106
+00:07:53,760 --> 00:07:56,180
+So it will install binaries there.
+
+107
+00:07:56,310 --> 00:07:56,560
+Yep.
+
+108
+00:07:56,590 --> 00:08:01,520
+So so now you're go install knows a little notes where she put that executable that it builds.
+
+109
+00:08:01,590 --> 00:08:04,250
+So if we actually take a look at what's in there right now
+
+110
+00:08:07,040 --> 00:08:13,880
+we've got those and when I do my go install and get that proto buff proto see Django which is this code
+
+111
+00:08:14,300 --> 00:08:18,230
+which is all proto see Django Reinhardt see Django process Django.
+
+112
+00:08:18,290 --> 00:08:20,850
+We're just getting this proto see Django.
+
+113
+00:08:21,030 --> 00:08:23,370
+And yeah.
+
+114
+00:08:23,510 --> 00:08:30,200
+So now and I do this install I should see that set into my then folder count load package cannot find
+
+115
+00:08:30,200 --> 00:08:32,440
+I don't need my H TTP.
+
+116
+00:08:32,630 --> 00:08:34,060
+You need to make sure your part.
+
+117
+00:08:34,100 --> 00:08:37,960
+You need to make sure you're in your go module folder.
+
+118
+00:08:38,160 --> 00:08:42,710
+So just because you want to make sure that you install it at the version that go mod is low key it has
+
+119
+00:08:42,710 --> 00:08:49,820
+pinned checks on you to go see CV documents and then googling project.
+
+120
+00:08:49,820 --> 00:08:50,120
+Yeah.
+
+121
+00:08:50,280 --> 00:08:54,230
+And then now and they should just get a job right.
+
+122
+00:08:54,540 --> 00:09:09,230
+Yeah just get a now let's look at the and now we could switch back to here and we can to save a keystroke.
+
+123
+00:09:09,700 --> 00:09:10,120
+Do that.
+
+124
+00:09:10,120 --> 00:09:12,660
+Now we have privacy jingo in the bin folder there.
+
+125
+00:09:12,670 --> 00:09:13,140
+Yep.
+
+126
+00:09:13,380 --> 00:09:13,910
+And.
+
+127
+00:09:13,950 --> 00:09:16,390
+And now just go mod tidy.
+
+128
+00:09:16,480 --> 00:09:22,930
+That's just to make sure that that that go on tidy is to make sure that your that privacy chain goes
+
+129
+00:09:22,930 --> 00:09:25,800
+in your co mod before before you install.
+
+130
+00:09:25,870 --> 00:09:27,950
+So so confirm this.
+
+131
+00:09:27,970 --> 00:09:29,470
+If it's not there do come on.
+
+132
+00:09:29,480 --> 00:09:32,080
+Tidy.
+
+133
+00:09:32,260 --> 00:09:33,550
+See that all again.
+
+134
+00:09:33,560 --> 00:09:36,810
+So so so use the wrong location should be a dot must be moved to.
+
+135
+00:09:36,970 --> 00:09:39,490
+So it should be moved up to right here.
+
+136
+00:09:39,490 --> 00:09:39,820
+Yes.
+
+137
+00:09:39,840 --> 00:09:40,110
+So.
+
+138
+00:09:40,220 --> 00:09:41,540
+So if it's if.
+
+139
+00:09:41,620 --> 00:09:46,210
+You need to make sure that privacy chain goes and you go mod that go my title is how you make how you
+
+140
+00:09:46,210 --> 00:09:50,940
+put it into that good mod if it has not yet been put there.
+
+141
+00:09:51,340 --> 00:09:55,660
+Because the two mines just automatically show that like you know modify it or put it in Yeah if it's
+
+142
+00:09:55,660 --> 00:09:56,860
+not there.
+
+143
+00:09:56,920 --> 00:09:57,320
+All right.
+
+144
+00:09:57,340 --> 00:10:09,550
+And a seedy CV documents going go project and go mod Heidi unnecessary at this point but hey did a little
+
+145
+00:10:09,550 --> 00:10:12,250
+bit of stuff.
+
+146
+00:10:12,300 --> 00:10:13,150
+All right.
+
+147
+00:10:13,290 --> 00:10:17,590
+So that's that's good that's getting it installed on a Mac.
+
+148
+00:10:17,620 --> 00:10:22,130
+I hope that was helpful to you and I hope those notes were helpful.
+
+149
+00:10:22,140 --> 00:10:28,730
+And we will see you tomorrow I'm going to go home and do some serious G.P.S. reading tonight.
+
+150
+00:10:28,740 --> 00:10:31,260
+So I have some things to add to the conversation tomorrow.
+
+151
+00:10:31,260 --> 00:10:32,370
+Daniel thank you.
+
+152
+00:10:32,370 --> 00:10:33,380
+It's a pleasure.
+
+153
+00:10:33,560 --> 00:10:39,330
+I appreciate doing this with you and learning with you and pair programming and teaching it's totally
+
+154
+00:10:39,910 --> 00:10:43,080
+it's it's really beneficial process you know.
+
+155
+00:10:43,080 --> 00:10:44,280
+Appreciate it.
+
+156
+00:10:44,280 --> 00:10:50,990
+See you all in the next video which for us will be to morrow anything you want add Sia.

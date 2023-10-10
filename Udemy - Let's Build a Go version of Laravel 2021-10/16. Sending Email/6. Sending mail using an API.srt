@@ -1,0 +1,255 @@
+1
+00:00:01,070 --> 00:00:06,110
+So let's try sending some email using an API, and as I suggested last time around, I will be using
+
+2
+00:00:06,110 --> 00:00:08,030
+Mail Gun because I have an account there.
+
+3
+00:00:08,240 --> 00:00:12,610
+And again, you may want to try this out and if so, feel free to do it.
+
+4
+00:00:12,620 --> 00:00:17,270
+But if you do so, bear in mind that you're probably going to have to pay a little bit of money to male
+
+5
+00:00:17,270 --> 00:00:22,310
+gun or SendGrid or Spark Post or whichever service you choose to try it.
+
+6
+00:00:23,030 --> 00:00:24,670
+But in any case, I'm going to use Milka.
+
+7
+00:00:24,860 --> 00:00:30,650
+Now, obviously, when I send through a mail gun, it's not going to wind up in my mail hog or my test
+
+8
+00:00:30,650 --> 00:00:31,490
+email server.
+
+9
+00:00:31,640 --> 00:00:39,050
+So instead of having to use a real email address and I'm going to use info at the really incom that
+
+10
+00:00:39,050 --> 00:00:44,840
+happens to be the domain or one of the domains that I have live on mail gun and I'm going to send it
+
+11
+00:00:44,840 --> 00:00:45,890
+to myself.
+
+12
+00:00:46,160 --> 00:00:47,960
+So I'll send it to my Gmail account
+
+13
+00:00:51,440 --> 00:00:56,180
+and I'll say test subject sent using an API.
+
+14
+00:00:56,630 --> 00:00:58,280
+OK, my template is still test.
+
+15
+00:00:58,280 --> 00:00:59,660
+Everything else stays the same.
+
+16
+00:01:00,710 --> 00:01:08,720
+Now what I can do is comment this one out, uncomment this one and send it to the channel.
+
+17
+00:01:09,320 --> 00:01:16,070
+And once I go and make the appropriate changes my own file, it will by default send it using an API.
+
+18
+00:01:16,190 --> 00:01:21,230
+Because remember when we set up our mail package, we actually checked to see if there are values in
+
+19
+00:01:21,230 --> 00:01:26,960
+the appropriate entries in the data on file for an API and if they are, if they exist, that's how
+
+20
+00:01:26,960 --> 00:01:27,650
+we send them out.
+
+21
+00:01:27,920 --> 00:01:33,300
+So I should have to make no other changes here, but I do have to make a change in my dance.
+
+22
+00:01:34,220 --> 00:01:39,910
+And you'll notice right here we have our email settings and I have this entry SMTP from.
+
+23
+00:01:39,920 --> 00:01:41,960
+And it turns out that's not what I'm using.
+
+24
+00:01:42,020 --> 00:01:43,550
+So you can delete that entirely.
+
+25
+00:01:44,660 --> 00:01:49,970
+What we have instead is from name and from address and the other one that I didn't bother putting in
+
+26
+00:01:49,980 --> 00:01:55,190
+last time around because when we're using a real mail server was mail, underscored domain.
+
+27
+00:01:55,190 --> 00:01:56,870
+But it turns out we actually need that.
+
+28
+00:01:56,900 --> 00:01:57,290
+OK.
+
+29
+00:01:58,100 --> 00:02:00,620
+So those changes have to be made.
+
+30
+00:02:01,100 --> 00:02:06,200
+And the other thing you're going to want to do is to populate these values.
+
+31
+00:02:06,290 --> 00:02:11,000
+Now I set mine up for Mail Gun and don't bother trying to use this key because I'm going to regenerate
+
+32
+00:02:11,000 --> 00:02:13,730
+it as soon as this lecture is over, so it'll be a different one.
+
+33
+00:02:14,390 --> 00:02:20,510
+Now these values, of course, these two mail key and mailer you Earl, they're specific to whatever
+
+34
+00:02:20,960 --> 00:02:24,380
+API service you're using, for example, on Mail Gun.
+
+35
+00:02:24,980 --> 00:02:31,430
+I use this URL because I set up my account in North America, but if I did it in Asia or my mail is
+
+36
+00:02:31,430 --> 00:02:36,290
+being sent from Asia, it's a different you are and different providers have different URLs, but just
+
+37
+00:02:36,290 --> 00:02:39,200
+consult their documentation to find out the one appropriate for you.
+
+38
+00:02:40,220 --> 00:02:46,550
+Now that I've made these changes OK, and I set the domain here to what I use on Mail Gun, and it's
+
+39
+00:02:46,550 --> 00:02:48,650
+not the bare domain name for Mail Gun.
+
+40
+00:02:49,160 --> 00:02:54,560
+I happen to use Imgur really incom because I wanted to use Mail Gun for sending, but have a different
+
+41
+00:02:54,560 --> 00:02:55,810
+server for receiving.
+
+42
+00:02:55,820 --> 00:03:00,470
+So whatever your value is for the domain setting for mail gun, if that's the one you're using, make
+
+43
+00:03:00,470 --> 00:03:01,670
+sure you duplicate it there.
+
+44
+00:03:01,670 --> 00:03:03,570
+Exactly well, this just won't work.
+
+45
+00:03:05,060 --> 00:03:12,800
+So now I should be able to open my terminal and say, make restart the one that's happening.
+
+46
+00:03:12,800 --> 00:03:16,600
+I'm going to switch to my web browser and look at the log file for Mail Go.
+
+47
+00:03:18,980 --> 00:03:25,820
+So you can see right here in this log file that the most recent set one was at 20 21 09 29.
+
+48
+00:03:25,850 --> 00:03:28,850
+Other words, September the 29th at 12:25.
+
+49
+00:03:28,910 --> 00:03:36,620
+OK, now I'm going to switch back to my other browser window and I'm looking at localhost column 4000
+
+50
+00:03:37,070 --> 00:03:43,550
+Test Dash Mail, and if I just click Return here, hit return, it should send that message.
+
+51
+00:03:43,760 --> 00:03:45,740
+So let's go back and look at our log file.
+
+52
+00:03:48,350 --> 00:03:49,580
+And I'll refresh this.
+
+53
+00:03:55,620 --> 00:03:58,680
+And there it is, 14, 29, it actually sent it.
+
+54
+00:03:58,860 --> 00:03:59,730
+It was delivered.
+
+55
+00:04:00,300 --> 00:04:03,210
+So that seems to work really well.
+
+56
+00:04:03,420 --> 00:04:03,810
+OK.
+
+57
+00:04:04,650 --> 00:04:06,090
+And that was relatively painless.
+
+58
+00:04:06,390 --> 00:04:10,320
+Now there's one other thing I want to do, and we'll take care of that in the next lecture.
+
+59
+00:04:11,700 --> 00:04:13,620
+And it has to do with these mail templates.
+
+60
+00:04:13,890 --> 00:04:19,920
+It seems to me that if you're sending e-mail, it might be really convenient if we were to add an option
+
+61
+00:04:19,920 --> 00:04:22,590
+to our celebrity voice command line application.
+
+62
+00:04:22,590 --> 00:04:28,320
+That said, you know, make mail with some name and it automatically generates two stub templates.
+
+63
+00:04:28,710 --> 00:04:33,600
+Read in the appropriate folder for the application, and I want you to save our users some time.
+
+64
+00:04:33,930 --> 00:04:36,990
+So we'll take care of that, and it's really easy in the next election.

@@ -1,0 +1,343 @@
+1
+00:00:01,310 --> 00:00:03,530
+So welcome to working with concurrency and go.
+
+2
+00:00:03,650 --> 00:00:09,770
+In this course we're going to cover just how effective and how useful the programming language known
+
+3
+00:00:09,770 --> 00:00:12,590
+as GO is at writing concurrent programs.
+
+4
+00:00:12,590 --> 00:00:17,150
+And we're going to have a look at why and when you should use concurrency and when you shouldn't.
+
+5
+00:00:17,210 --> 00:00:23,780
+Okay, now go has a very different approach to concurrency than most other programming languages, and
+
+6
+00:00:23,780 --> 00:00:29,690
+it's summed up by this statement, which was produced by the authors of Go Don't Communicate by sharing
+
+7
+00:00:29,690 --> 00:00:32,330
+memory, share memory by communicating.
+
+8
+00:00:32,630 --> 00:00:35,990
+And of course, this begs the question who's communicating?
+
+9
+00:00:35,990 --> 00:00:36,860
+What's going on here?
+
+10
+00:00:36,860 --> 00:00:38,090
+Who's talking to whom?
+
+11
+00:00:38,840 --> 00:00:44,270
+Well, Ingo, it's remarkably easy to fire something off so that it runs in the background.
+
+12
+00:00:44,330 --> 00:00:48,230
+So say you're writing a program and you have two functions and you want them to run at the same time
+
+13
+00:00:48,680 --> 00:00:54,470
+to make that happen, you just type the word, go before the call to those functions and suddenly they're
+
+14
+00:00:54,470 --> 00:00:56,630
+running concurrently in the background.
+
+15
+00:00:57,500 --> 00:01:00,770
+But once you fire something off into the background, how do you talk to it?
+
+16
+00:01:01,010 --> 00:01:02,960
+Well, there's a number of ways of talking to it.
+
+17
+00:01:02,960 --> 00:01:04,400
+You can use primitives.
+
+18
+00:01:04,790 --> 00:01:10,550
+And this comes from something called the sync package in go standard library, where you can lock something,
+
+19
+00:01:10,550 --> 00:01:14,360
+you can say, I'm using this, nobody else can touch this until I'm done with it.
+
+20
+00:01:14,960 --> 00:01:21,110
+Or you can say Once I'm done this program, I'm going to tell something called a wake group that I'm
+
+21
+00:01:21,110 --> 00:01:22,820
+finished so you can do it that way.
+
+22
+00:01:23,090 --> 00:01:29,690
+Or and this is the more common way and the more useful way and I think the more productive way in go.
+
+23
+00:01:29,720 --> 00:01:34,610
+You can have go routines, talk to one another using something called channels, and we'll be covering
+
+24
+00:01:34,610 --> 00:01:37,730
+channels extensively as this course goes on.
+
+25
+00:01:38,840 --> 00:01:44,840
+Now, if you were to take that statement and break it down into, you know, longer sentences that make
+
+26
+00:01:44,840 --> 00:01:51,620
+more sense, you might restate it this way don't over engineer your program by using shared memory and
+
+27
+00:01:51,620 --> 00:01:58,370
+complicated synchronization primitives instead use message passing between go routines so that variables
+
+28
+00:01:58,370 --> 00:02:00,590
+and data can be used in the appropriate sequence.
+
+29
+00:02:01,730 --> 00:02:06,320
+And I think, you know, this is a bit wordy, but it makes things, I think a little bit clearer.
+
+30
+00:02:06,470 --> 00:02:12,620
+Don't just lock memory or say to someone, Hey, I'm using this, you can't use it.
+
+31
+00:02:12,620 --> 00:02:17,840
+Instead, just pass data around using channels and channels, as far as I know, are pretty much unique
+
+32
+00:02:17,840 --> 00:02:22,670
+to go and they're incredibly useful and we'll be covering those in detail as time goes on.
+
+33
+00:02:23,750 --> 00:02:28,340
+Now, another thing to bear in mind, a golden rule for concurrency.
+
+34
+00:02:28,340 --> 00:02:30,320
+If you don't need it, don't use it.
+
+35
+00:02:30,980 --> 00:02:35,630
+Concurrent programming is error prone, even go, which makes it easier.
+
+36
+00:02:35,720 --> 00:02:38,030
+It doesn't make it easy, it just makes it easier.
+
+37
+00:02:38,810 --> 00:02:44,030
+And when you're running concurrent programs, it's remarkably easy to introduce a problem that you might
+
+38
+00:02:44,030 --> 00:02:47,960
+not see for months or in some cases, even years.
+
+39
+00:02:47,960 --> 00:02:50,750
+Okay, so if you don't need concurrency, just don't use it.
+
+40
+00:02:51,440 --> 00:02:56,270
+So in other words, keep your application's complexity as simple as you possibly can.
+
+41
+00:02:56,300 --> 00:02:57,770
+Keep things to a minimum.
+
+42
+00:02:58,310 --> 00:03:00,170
+It's easier to write this kind of code.
+
+43
+00:03:00,170 --> 00:03:05,060
+It's easier to understand this kind of code, and it's easier to maintain this kind of code.
+
+44
+00:03:05,480 --> 00:03:10,130
+But having said that, there are lots of situations when concurrency just makes sense.
+
+45
+00:03:10,970 --> 00:03:12,530
+Now, what are we going to cover in this course?
+
+46
+00:03:12,530 --> 00:03:15,800
+We're going to start by looking at the basic types in the sink package.
+
+47
+00:03:16,160 --> 00:03:22,520
+Those would be mutex is sometimes called semaphores and weight groups, and we'll go through three classic
+
+48
+00:03:22,520 --> 00:03:23,990
+computer science problems.
+
+49
+00:03:24,200 --> 00:03:29,030
+And here's what will have a detailed look at channels in the Sleeping Barbara problem, which I'll get
+
+50
+00:03:29,030 --> 00:03:29,810
+to momentarily.
+
+51
+00:03:30,290 --> 00:03:33,080
+So we're going to look at the producer consumer problem.
+
+52
+00:03:33,080 --> 00:03:39,170
+We're going to write a simple text based program that takes the problem of something that's being produced.
+
+53
+00:03:39,170 --> 00:03:44,420
+In this case, we're going to be a pizzeria and something that's being consumed, people placing orders
+
+54
+00:03:44,420 --> 00:03:48,110
+for pizzas and we're going to solve concurrency problems.
+
+55
+00:03:48,110 --> 00:03:54,050
+Using that example, we'll also have a look at the dining philosopher problem, which is a lot of fun,
+
+56
+00:03:54,440 --> 00:03:57,230
+and I'll go through that in detail when we get to that part of the course.
+
+57
+00:03:57,230 --> 00:03:59,690
+But it's a really interesting problem.
+
+58
+00:04:00,140 --> 00:04:02,090
+That's a bit of a challenge to solve.
+
+59
+00:04:02,840 --> 00:04:06,740
+And the last classic problem we're going to look at is the sleeping barber problem.
+
+60
+00:04:06,800 --> 00:04:12,320
+Again, this one is a lot of fun and all three of these are highly contrived examples, exactly what
+
+61
+00:04:12,320 --> 00:04:18,020
+you would find in a first year computer science course, but the classics for a reason.
+
+62
+00:04:19,070 --> 00:04:24,860
+These kinds of problems give students excellent exposure to the problems you find in concurrent programming,
+
+63
+00:04:24,860 --> 00:04:30,530
+and they also force students to figure out the most efficient means of solving these problems.
+
+64
+00:04:31,340 --> 00:04:36,890
+So once you've gone through these three problems with me, you'll have a solid understanding of when
+
+65
+00:04:36,890 --> 00:04:43,070
+and where to use mutex, when and where to use weight groups and when and where to use channels and
+
+66
+00:04:43,070 --> 00:04:47,840
+the different kinds of channels and so forth that you have at your disposal in go.
+
+67
+00:04:48,830 --> 00:04:53,330
+Now, once we're finished those three problems, we're also going to have a look at a more real world
+
+68
+00:04:53,330 --> 00:04:54,020
+scenario.
+
+69
+00:04:54,380 --> 00:04:59,340
+And this is where we build a subset of some larger imaginary service.
+
+70
+00:05:00,750 --> 00:05:06,840
+So in this service, consumers have the ability to register, to create an account, to have that account
+
+71
+00:05:07,230 --> 00:05:12,660
+verified through email, and then they can buy one of a series of available subscriptions.
+
+72
+00:05:12,660 --> 00:05:16,080
+And I'm calling those and this isn't terribly original, but here you go.
+
+73
+00:05:16,470 --> 00:05:19,170
+Bronze, silver and gold packages.
+
+74
+00:05:19,590 --> 00:05:24,810
+Now, once they buy these packages, one of these packages, we're going to generate an invoice, we're
+
+75
+00:05:24,810 --> 00:05:30,360
+going to send an email and we're going to generate a PDF manual, a customized PDF manual that we'll
+
+76
+00:05:30,360 --> 00:05:31,380
+send to that user.
+
+77
+00:05:31,740 --> 00:05:33,300
+Now, the invoice will be dead simple.
+
+78
+00:05:33,300 --> 00:05:37,440
+The manual will be dead simple because those things aren't important for what we're trying to cover
+
+79
+00:05:37,440 --> 00:05:38,130
+in this course.
+
+80
+00:05:38,460 --> 00:05:43,980
+What's important is we're going to do those things concurrently, and we'll also figure out how to write
+
+81
+00:05:43,980 --> 00:05:48,120
+tests for concurrent programs, which is absolutely critical.
+
+82
+00:05:48,130 --> 00:05:53,190
+Any time you're writing concurrent programming, just because it's so easy to introduce an error and
+
+83
+00:05:53,190 --> 00:05:54,900
+not be aware that you've done so.
+
+84
+00:05:55,500 --> 00:05:55,800
+All right.
+
+85
+00:05:55,800 --> 00:05:56,850
+This will be a lot of fun.
+
+86
+00:05:56,880 --> 00:05:58,080
+Let's get started.

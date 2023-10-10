@@ -1,0 +1,388 @@
+1
+00:00:01,380 --> 00:00:07,230
+So now that we've added these four fields to our celebrity type and populated them in the Create File
+
+2
+00:00:07,230 --> 00:00:08,090
+Systems function.
+
+3
+00:00:08,130 --> 00:00:10,830
+Let's get started with the uploading code itself.
+
+4
+00:00:11,340 --> 00:00:18,660
+So I will go to the root level of the silver project and create a new file, which I will call upload
+
+5
+00:00:18,660 --> 00:00:19,260
+dgo.
+
+6
+00:00:24,270 --> 00:00:30,330
+OK, so my I.D. added my package declaration, which is perfect and what I'm going to do here is define
+
+7
+00:00:30,330 --> 00:00:34,860
+a function with a receiver of C type type pointer to celebrities.
+
+8
+00:00:35,970 --> 00:00:43,320
+And I'll just call it upload file, which I better spell right now in terms of parameters.
+
+9
+00:00:43,410 --> 00:00:47,520
+We're going to get the uploaded file from the request, so we'll need the request, which I'll call
+
+10
+00:00:47,520 --> 00:00:51,810
+our pointer to repeat that request and we'll pass that rate from the handler.
+
+11
+00:00:52,680 --> 00:00:57,390
+We're also going to need a destination string, which I didn't think about when I was kind of mocking
+
+12
+00:00:57,390 --> 00:00:58,290
+up with this function.
+
+13
+00:00:58,290 --> 00:01:01,980
+Signature might look like, where do you want to put it on the remote file system or the local file
+
+14
+00:01:01,980 --> 00:01:02,400
+system?
+
+15
+00:01:02,400 --> 00:01:05,610
+So destination, which would be a string?
+
+16
+00:01:06,120 --> 00:01:09,930
+We also need the name of the field to look for in the request.
+
+17
+00:01:10,050 --> 00:01:12,780
+So that rule, which is called field, both of those are string.
+
+18
+00:01:14,030 --> 00:01:19,700
+And finally, we want a file system now, you might think that you would want to pass, say, a pointer
+
+19
+00:01:19,700 --> 00:01:24,470
+to a file system dot face like that.
+
+20
+00:01:24,950 --> 00:01:29,060
+And you know, that doesn't generate any errors, but it won't work.
+
+21
+00:01:29,090 --> 00:01:34,670
+Remember, this is an interface and an interface doesn't care if it receives a pointer or if it receives
+
+22
+00:01:34,670 --> 00:01:35,600
+a concrete type.
+
+23
+00:01:35,750 --> 00:01:38,180
+So don't put the asterisk in front of that.
+
+24
+00:01:38,330 --> 00:01:39,920
+And that's a pretty common mistake.
+
+25
+00:01:40,550 --> 00:01:42,500
+And this function will potentially return an error.
+
+26
+00:01:42,850 --> 00:01:43,140
+OK.
+
+27
+00:01:43,200 --> 00:01:47,330
+So that's going to be my first function, and I'll return Neal here just so I don't have any compiler
+
+28
+00:01:47,330 --> 00:01:47,720
+errors.
+
+29
+00:01:49,460 --> 00:01:53,720
+And I'm also going to want to extract the file and save it in the temp directory.
+
+30
+00:01:53,780 --> 00:01:58,930
+Now, if you recall, we already have a function that does exactly that makeover in the Maya package,
+
+31
+00:01:58,980 --> 00:02:06,560
+let's find the handlers and find the get upload file system or get file to upload right there.
+
+32
+00:02:07,610 --> 00:02:08,570
+So all I'm going to do.
+
+33
+00:02:09,870 --> 00:02:12,780
+Is copping this entire function from my handlers.
+
+34
+00:02:13,320 --> 00:02:22,250
+Go back to upload, go paste it in here and give this the receiver of C pointer to slap us with that.
+
+35
+00:02:22,650 --> 00:02:28,980
+OK, so that's something that we'll just take the request, which will we'll call this function, get
+
+36
+00:02:28,980 --> 00:02:32,510
+file to upload from this function, upload file.
+
+37
+00:02:32,520 --> 00:02:35,980
+This one's not exported, so it's internal to the celebrity's package.
+
+38
+00:02:36,000 --> 00:02:37,630
+This is the one that people will call.
+
+39
+00:02:37,770 --> 00:02:44,280
+OK, so very first thing we'll do back up here and upload file is get the file name the full path to
+
+40
+00:02:44,280 --> 00:02:44,940
+the file name.
+
+41
+00:02:44,940 --> 00:02:47,070
+We want to move to some kind of file system.
+
+42
+00:02:47,280 --> 00:02:55,200
+So finally, and we'll check for an error, and those come from calling C Dot get file to upload, and
+
+43
+00:02:55,200 --> 00:02:58,920
+that requires the request and it requires the field name, which we called field.
+
+44
+00:02:59,730 --> 00:03:00,030
+OK.
+
+45
+00:03:03,060 --> 00:03:06,720
+And for some reason, they made this a response, right when it's supposed to be a request, that's
+
+46
+00:03:06,720 --> 00:03:07,050
+better.
+
+47
+00:03:08,070 --> 00:03:10,770
+And we'll check for an air if air is not equal to nil.
+
+48
+00:03:11,160 --> 00:03:17,520
+And I'll just use my error logging built right into celebrities, see the error log dot print line the
+
+49
+00:03:17,520 --> 00:03:19,860
+error and I'll return the error.
+
+50
+00:03:20,760 --> 00:03:26,190
+OK, but if I get past that now, I have the full path name of the file system.
+
+51
+00:03:27,270 --> 00:03:32,310
+Now when we call this function, we might be uploading to mean.
+
+52
+00:03:32,940 --> 00:03:39,600
+We might be uploading to an S3 bucket or we might be uploading to the local file system on the server.
+
+53
+00:03:40,290 --> 00:03:46,080
+So what I'm going to assume right now is that when I populate this last parameter in the call to this
+
+54
+00:03:46,080 --> 00:03:50,940
+function, I'm actually going to pass a pointer to the file system if I'm using a remote file system,
+
+55
+00:03:52,290 --> 00:03:57,010
+or I'll pass nil if I'm uploading to the local file system on the server.
+
+56
+00:03:57,030 --> 00:04:03,180
+And the reason I'm using pointers is if my last parameter is in fact a pointer, then I can pass nil.
+
+57
+00:04:03,270 --> 00:04:05,400
+If it's not a pointer, then I can't pass nil.
+
+58
+00:04:05,970 --> 00:04:11,670
+And we'll just be simpler if we check to see if S is equal to nil, which is exactly what we're going
+
+59
+00:04:11,670 --> 00:04:12,360
+to do right now.
+
+60
+00:04:12,870 --> 00:04:16,950
+So we'll say if FS is not equal to nil, then I'll do something.
+
+61
+00:04:17,850 --> 00:04:19,950
+Otherwise, I'll do something else.
+
+62
+00:04:20,190 --> 00:04:23,130
+So what am I going to do if FS is not equal to nil?
+
+63
+00:04:23,190 --> 00:04:28,290
+Well, that means I'm uploading to a remote file system, and that becomes as simple as this will check
+
+64
+00:04:28,290 --> 00:04:32,160
+for an error and will use EFS, which because it's not nil.
+
+65
+00:04:32,160 --> 00:04:37,950
+I know it's a pointer to a remote file system and I just call the method and I'm putting file name,
+
+66
+00:04:38,880 --> 00:04:45,870
+which I got right there on line 12 and I'm putting it in destination like that and we just check for
+
+67
+00:04:45,870 --> 00:04:46,170
+an error.
+
+68
+00:04:46,710 --> 00:04:51,990
+So I'll just copy this error checking code right here and paste it in here.
+
+69
+00:04:53,880 --> 00:04:56,880
+Now what if F's is nil?
+
+70
+00:04:56,880 --> 00:04:58,610
+That means I still want to upload the file.
+
+71
+00:04:58,620 --> 00:05:04,380
+I just want to put it somewhere on the server, and that's just OS Dot rename built right into the standard
+
+72
+00:05:04,380 --> 00:05:04,800
+library.
+
+73
+00:05:04,860 --> 00:05:07,740
+So error is equal to OS rename.
+
+74
+00:05:10,410 --> 00:05:15,210
+And I'm going to rename file name by that again name.
+
+75
+00:05:16,860 --> 00:05:21,480
+To a new destination, so format Typekit Sprint.
+
+76
+00:05:22,650 --> 00:05:29,310
+I'm going to put it in a particular location and when I'm going to put it in, of course, is destination
+
+77
+00:05:29,610 --> 00:05:34,380
+and path to base again, base it.
+
+78
+00:05:38,300 --> 00:05:44,060
+So that gives me my look, so rename actually just takes it from the temp folder, which is where we're
+
+79
+00:05:44,060 --> 00:05:48,470
+storing uploaded files and puts it wherever it needs to be on the local file system.
+
+80
+00:05:48,620 --> 00:05:51,830
+And again, we just check for an error so I can paste in my error checking code.
+
+81
+00:05:52,580 --> 00:05:55,640
+And that should be it, literally.
+
+82
+00:05:56,780 --> 00:05:59,780
+So if we come down here, let's make sure we have this one correct.
+
+83
+00:05:59,960 --> 00:06:03,470
+Right now, this is taking a field name that's taking a field name.
+
+84
+00:06:03,470 --> 00:06:05,080
+We're putting it in the temp directory.
+
+85
+00:06:05,090 --> 00:06:06,890
+Everything seems fine.
+
+86
+00:06:07,880 --> 00:06:10,550
+So that is pretty straightforward, but we're not done yet.
+
+87
+00:06:10,790 --> 00:06:13,100
+I actually want to put more logic in here.
+
+88
+00:06:14,330 --> 00:06:15,200
+For example.
+
+89
+00:06:16,070 --> 00:06:20,660
+I don't want a hard code, things like maximum size of uploaded files.
+
+90
+00:06:21,080 --> 00:06:23,990
+And I also should do a little bit of security checking.
+
+91
+00:06:24,020 --> 00:06:27,230
+Maybe it would be nice to limit upload spy file type.
+
+92
+00:06:27,350 --> 00:06:32,510
+We could go by extension, but I've seen far too many situations where someone uploads a file named
+
+93
+00:06:33,380 --> 00:06:38,430
+picture jpg, and it's actually some kind of script with the wrong extension.
+
+94
+00:06:38,450 --> 00:06:43,220
+So we're going to want to check for mime type, and we're also going to want to check for the maximum
+
+95
+00:06:43,520 --> 00:06:44,360
+file size.
+
+96
+00:06:44,360 --> 00:06:49,220
+We're allowing to be uploaded to our server and we'll get started on that sort of thing in the next
+
+97
+00:06:49,220 --> 00:06:49,640
+lecture.
+

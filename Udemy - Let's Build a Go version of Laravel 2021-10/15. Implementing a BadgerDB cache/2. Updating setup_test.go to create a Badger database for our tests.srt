@@ -1,0 +1,203 @@
+1
+00:00:01,080 --> 00:00:06,330
+So we seem to have implemented all the necessary functions for our badger cash, so let's test it out.
+
+2
+00:00:06,600 --> 00:00:13,740
+Let's create a new folder inside the cash folder because we need somewhere to put our Badger database
+
+3
+00:00:13,740 --> 00:00:13,860
+in.
+
+4
+00:00:13,860 --> 00:00:18,780
+It writes it to discuss or create a new folder called test data.
+
+5
+00:00:20,610 --> 00:00:22,770
+And of course, that's ignored by the Go compiler.
+
+6
+00:00:22,920 --> 00:00:26,080
+And inside of that, I'll create a new folder called temp temp.
+
+7
+00:00:27,060 --> 00:00:29,520
+And that's where I'll put my Test Badger database.
+
+8
+00:00:29,700 --> 00:00:35,370
+And of course, to make that happen, I need to update set up tests inside of the cache folder.
+
+9
+00:00:36,000 --> 00:00:37,920
+Now, right now, what we have is a very, very simple.
+
+10
+00:00:38,040 --> 00:00:44,880
+So after the defer of closing the Redis cache, let's put some more code in here.
+
+11
+00:00:44,910 --> 00:00:49,260
+And what I'll do, first of all, is when I start the tests, I want to make sure that any badger database
+
+12
+00:00:49,260 --> 00:00:51,270
+that exists test database is gone.
+
+13
+00:00:52,110 --> 00:01:00,030
+So I'll just call OS removal, which will delete a folder and all of its contents if it happens to exist
+
+14
+00:01:00,030 --> 00:01:02,190
+and not delete from the current directory.
+
+15
+00:01:02,190 --> 00:01:07,410
+Slashed test data slash temp and I will delete the badger cache entirely.
+
+16
+00:01:07,620 --> 00:01:10,350
+Actually, I'll put Slash Badger after it there.
+
+17
+00:01:10,960 --> 00:01:15,420
+That way, the temp folder will still be there and I won't have to recreate it, so that deletes it
+
+18
+00:01:15,420 --> 00:01:16,080
+if it exists.
+
+19
+00:01:16,080 --> 00:01:19,470
+And of course, the first time we run the test, it won't be there and that does not matter.
+
+20
+00:01:19,950 --> 00:01:25,920
+And now we need to create a badger cash cache, create a Badger database.
+
+21
+00:01:27,120 --> 00:01:31,520
+And it's pretty simple if they ignore the first response, but I do want to check for an error.
+
+22
+00:01:31,560 --> 00:01:43,950
+Those are assigned values from the West STAT and I want to create dot slash dot slash test data slash
+
+23
+00:01:44,280 --> 00:01:46,110
+Tempe just to make sure that exists.
+
+24
+00:01:47,100 --> 00:01:55,920
+And then OS Dart is not exist with an error and we'll create the necessary folders.
+
+25
+00:01:56,850 --> 00:02:07,020
+Errors is assign the value of OCR McDeere and we want to make dot slash test data, slash Tempe with
+
+26
+00:02:07,020 --> 00:02:12,150
+some mode and I'll just put zero seven five five and that's perfect for our purposes.
+
+27
+00:02:13,350 --> 00:02:16,440
+If error is not equal to nil, then I'll just log fatal.
+
+28
+00:02:16,620 --> 00:02:17,580
+Logged on fatal.
+
+29
+00:02:17,580 --> 00:02:21,150
+If I can't write to the file system, then the disk is full or something bad has happened.
+
+30
+00:02:21,150 --> 00:02:22,530
+But whatever it is, I want to stop.
+
+31
+00:02:23,520 --> 00:02:28,080
+So that creates the necessary folder and now I'll make a badger folder.
+
+32
+00:02:28,890 --> 00:02:41,100
+So I'll just say error equals OS Dart McDeere and I want to make it in dot slash test data slash temp
+
+33
+00:02:41,100 --> 00:02:49,110
+slash badger again, zero seven five five is perfect, and we'll check for an error.
+
+34
+00:02:49,110 --> 00:02:54,570
+If error is not equal to nil, then I got an equal sign.
+
+35
+00:02:58,760 --> 00:02:59,990
+Again, log fatal error.
+
+36
+00:03:03,590 --> 00:03:10,970
+But if we get past that, we have the necessary folders now all created Badger Database DB and nothing
+
+37
+00:03:11,180 --> 00:03:11,750
+will ignore.
+
+38
+00:03:11,750 --> 00:03:16,790
+The error is a sign the value of from the Badger package not open.
+
+39
+00:03:17,750 --> 00:03:22,970
+And this will create the database if it doesn't exist, so are created with Badger Dart default options.
+
+40
+00:03:25,050 --> 00:03:30,400
+And I'm going to create it, of course, in dot slash test data slash temp slash badger.
+
+41
+00:03:33,000 --> 00:03:36,440
+Now I also need to create a test by badger cash.
+
+42
+00:03:36,450 --> 00:03:43,770
+So up here at the very top of the file we're at right after I declare my British cash, I'll say our
+
+43
+00:03:44,250 --> 00:03:51,240
+test badger cash is a type badger cash, and that's the one we use for our tests.
+
+44
+00:03:52,110 --> 00:03:59,490
+So down here, after I've created the database call, I really have to do is say Test Badger Cash dot
+
+45
+00:03:59,730 --> 00:04:05,290
+com is equal to the DB we just created and you can put the prefix in there too, if you want to.
+
+46
+00:04:05,310 --> 00:04:08,790
+We're not using it, so I'll leave it at and that should be enough.
+
+47
+00:04:09,390 --> 00:04:16,530
+Now, just as a note, when we're using a badger cash in production, we do need to run a periodic cleanup
+
+48
+00:04:16,530 --> 00:04:17,190
+task on it.
+
+49
+00:04:17,250 --> 00:04:20,310
+But we'll take care of that when we connect to Badger because it's really simple.
+
+50
+00:04:21,150 --> 00:04:23,420
+So we've created the necessary set up test.
+
+51
+00:04:23,430 --> 00:04:28,230
+The next step is to write the actual test themselves, and we'll do that in the next lecture.

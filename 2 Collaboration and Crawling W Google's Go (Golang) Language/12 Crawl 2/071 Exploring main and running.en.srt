@@ -1,0 +1,239 @@
+1
+00:00:00,240 --> 00:00:00,770
+OK.
+
+2
+00:00:00,870 --> 00:00:02,050
+Let's see main.
+
+3
+00:00:02,070 --> 00:00:07,630
+And where it all comes together and then also run it and see you see the results.
+
+4
+00:00:07,640 --> 00:00:08,540
+Yeah.
+
+5
+00:00:09,330 --> 00:00:16,680
+So func main in a function like this where or in a program like this where you've got well-defined functions
+
+6
+00:00:16,740 --> 00:00:22,520
+with easy meanings main often becomes just hooking the multi yet.
+
+7
+00:00:23,160 --> 00:00:25,870
+And so that's exactly what this mean is it.
+
+8
+00:00:26,970 --> 00:00:32,270
+It calls get conversation to get all the convert to get the whole conversation.
+
+9
+00:00:32,310 --> 00:00:38,160
+That's that second function that I've got after this I've got the slice of strings.
+
+10
+00:00:38,160 --> 00:00:43,230
+First is the response I'm going to need to get all the tweets here.
+
+11
+00:00:43,260 --> 00:00:50,820
+So I create the tweets variable and then I arrange over all those h t strings in the for loop.
+
+12
+00:00:51,020 --> 00:00:58,130
+And each time through I call pass h t email to pull out all the tweets from that particular chunk of
+
+13
+00:00:58,140 --> 00:00:59,230
+HMO.
+
+14
+00:01:00,080 --> 00:01:08,540
+And then after that I append all those tweets into the bigger tweets slice and I'm using the dot dot
+
+15
+00:01:08,540 --> 00:01:15,590
+dot very attic to expand out this slice of tweets into this append periodic function so that I can put
+
+16
+00:01:15,590 --> 00:01:17,180
+this slice into this slice
+
+17
+00:01:21,340 --> 00:01:28,450
+so once that S is for loops done I now have a complete slice of all the tweets in this tweets variable
+
+18
+00:01:29,080 --> 00:01:34,720
+and so in this case I'm just going to use Jason Marshall indent to put it into Jason format in it with
+
+19
+00:01:35,110 --> 00:01:42,210
+enough whitespace to be more readable and I print out printed all that Jason out and then I must get
+
+20
+00:01:42,200 --> 00:01:42,600
+a printout.
+
+21
+00:01:42,610 --> 00:01:47,920
+How many tweets I eventually came up so awesome.
+
+22
+00:01:47,950 --> 00:01:53,860
+So if I run this go run script go it's going to take a little bit because it's gotta wait a second between
+
+23
+00:01:53,860 --> 00:02:00,910
+each call Twitter so it takes longer than call which is only making one call overall then it's done.
+
+24
+00:02:00,910 --> 00:02:08,080
+I now have 60 tweets and if I look at here my bottom ones see ICD automation server they go back to
+
+25
+00:02:08,080 --> 00:02:12,640
+Twitter and scrolling all the way down past it.
+
+26
+00:02:12,850 --> 00:02:22,350
+They want to do that scrolling all the way down past all the infinite scrolls spacebar is a nice way
+
+27
+00:02:22,350 --> 00:02:24,920
+to do that you know that depends on the page.
+
+28
+00:02:24,930 --> 00:02:28,530
+I don't want her typing in inbox true.
+
+29
+00:02:28,650 --> 00:02:31,760
+So the very bottom would see ICD automation server.
+
+30
+00:02:31,830 --> 00:02:33,560
+So that's after all the scroll.
+
+31
+00:02:33,570 --> 00:02:37,930
+Oh that's awesome well done.
+
+32
+00:02:38,060 --> 00:02:40,120
+Let's jump back to the code for a second.
+
+33
+00:02:41,110 --> 00:02:46,060
+You anything more you want to say there is room for expansion on this.
+
+34
+00:02:46,130 --> 00:02:52,430
+If I look here some of these replies have replies to them themselves that are not actually being pulled
+
+35
+00:02:52,430 --> 00:02:53,720
+in.
+
+36
+00:02:54,200 --> 00:02:55,160
+Try to find one
+
+37
+00:03:03,140 --> 00:03:06,540
+like here you've got another comment here and it's got its own reply underneath it.
+
+38
+00:03:06,570 --> 00:03:06,870
+Yeah.
+
+39
+00:03:07,110 --> 00:03:10,840
+So that's not being pulled in but that's not being pulled in from here either.
+
+40
+00:03:10,860 --> 00:03:17,820
+So but getting into that would then require much more complicated code to then follow that pathway down
+
+41
+00:03:18,450 --> 00:03:23,550
+and it seems reasonable not just to get kind of what was showing up on this main list here.
+
+42
+00:03:23,610 --> 00:03:27,200
+So that's all I ended up making nice.
+
+43
+00:03:27,200 --> 00:03:33,530
+So just so I'm going to do my little talk through get conversation gives you that get conversation scroll
+
+44
+00:03:33,530 --> 00:03:34,940
+back up to that slice of string.
+
+45
+00:03:34,940 --> 00:03:35,420
+There we go.
+
+46
+00:03:36,020 --> 00:03:46,190
+And and the slice of string on get conversation is going to be all the tweets everything right.
+
+47
+00:03:46,270 --> 00:03:49,640
+Yeah well the L.A. Daily amount and then we range over all that.
+
+48
+00:03:49,640 --> 00:03:53,550
+There we go in passing the message and we get past that.
+
+49
+00:03:53,560 --> 00:04:00,440
+We get that and we're going to pin that to our slice of tweet and and then we get all of our tweets
+
+50
+00:04:00,530 --> 00:04:04,880
+and then we're just going to put them to Jason and then we get a bite slice.
+
+51
+00:04:04,880 --> 00:04:09,410
+We turn that into a string so that we could print it nicely and then we see the length.
+
+52
+00:04:09,500 --> 00:04:09,860
+Yes.
+
+53
+00:04:09,870 --> 00:04:12,960
+That's all straight for awesome.
+
+54
+00:04:12,980 --> 00:04:14,630
+That's really well done.
+
+55
+00:04:14,630 --> 00:04:15,680
+It's fun to see.
+
+56
+00:04:15,770 --> 00:04:19,010
+And we got a little bit more for you in the next couple of videos.
+
+57
+00:04:19,310 --> 00:04:21,980
+Anything more to say about this.
+
+58
+00:04:21,980 --> 00:04:24,770
+For reals this time of year.
+
+59
+00:04:25,340 --> 00:04:25,750
+All right.
+
+60
+00:04:25,820 --> 00:04:26,680
+See the next video.

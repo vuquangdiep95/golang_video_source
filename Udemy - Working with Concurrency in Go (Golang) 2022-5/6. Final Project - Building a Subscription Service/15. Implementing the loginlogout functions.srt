@@ -1,0 +1,955 @@
+1
+00:00:01,590 --> 00:00:02,000
+Okay.
+
+2
+00:00:02,010 --> 00:00:05,310
+Now that we can interact with the database, let's go back to handlers.
+
+3
+00:00:05,310 --> 00:00:05,610
+Okay?
+
+4
+00:00:05,610 --> 00:00:11,820
+Go in the CMD slash web folder and let's implement the logic to log something in, or at least most
+
+5
+00:00:11,820 --> 00:00:12,030
+of it.
+
+6
+00:00:12,270 --> 00:00:12,630
+Okay.
+
+7
+00:00:12,750 --> 00:00:17,970
+So this function is actually called when someone goes to this page, log in.
+
+8
+00:00:18,180 --> 00:00:18,610
+Okay.
+
+9
+00:00:18,660 --> 00:00:22,200
+And we're passing email, address and password and that's it.
+
+10
+00:00:22,830 --> 00:00:23,760
+So back over here.
+
+11
+00:00:24,210 --> 00:00:29,340
+What's going to happen is will attempt to log the user in, if we can, will put some information in
+
+12
+00:00:29,340 --> 00:00:31,920
+the session and redirect the user to a different page.
+
+13
+00:00:32,010 --> 00:00:34,530
+And if we can't, we'll take them back to this page with an error.
+
+14
+00:00:34,850 --> 00:00:35,100
+Okay.
+
+15
+00:00:35,460 --> 00:00:41,520
+So any time you're logging someone in or logging someone out, it's always a good idea to renew the
+
+16
+00:00:41,520 --> 00:00:43,290
+token that's stored in the session.
+
+17
+00:00:43,650 --> 00:00:47,310
+And fortunately, Alex Edwards X package makes that trivial.
+
+18
+00:00:47,430 --> 00:00:51,950
+So I'm going to ignore the response when I call from the app.
+
+19
+00:00:52,020 --> 00:00:59,310
+The variable that we go is part of the receiver dot session, dot renew token, and that just requires
+
+20
+00:00:59,310 --> 00:01:01,230
+the context context.
+
+21
+00:01:01,530 --> 00:01:05,430
+Okay, now the session token is renewed and we're going to try to log the user in.
+
+22
+00:01:06,210 --> 00:01:08,070
+So we're getting a post request to this.
+
+23
+00:01:08,070 --> 00:01:15,510
+So of course the standard thing you do is pass form post, and we do that by saying error is a sign
+
+24
+00:01:15,510 --> 00:01:18,750
+the value of from the request will pass the form.
+
+25
+00:01:20,100 --> 00:01:30,180
+If there's an error, it's not equal to nil, then we'll just abort error log dot, print line dot error.
+
+26
+00:01:30,360 --> 00:01:34,830
+And of course you'll do something more sophisticated in a production application.
+
+27
+00:01:34,830 --> 00:01:38,190
+Maybe take them back to that screen with an error message, whatever the case may be.
+
+28
+00:01:38,280 --> 00:01:43,200
+But we're just focused on getting this working so we can learn about concurrency, so we get past that,
+
+29
+00:01:43,200 --> 00:01:44,400
+which we always do.
+
+30
+00:01:45,960 --> 00:01:53,700
+Now we'll get the email and password from forum post, and that's easy email, which is the variable
+
+31
+00:01:53,700 --> 00:01:54,810
+I'm declaring right now.
+
+32
+00:01:54,930 --> 00:02:03,330
+A string is equal to our dot form dot get and if you look at the form the HTML, I need that particular
+
+33
+00:02:03,330 --> 00:02:11,220
+input email and we'll duplicate this and we'll call this one password are not from not get I called
+
+34
+00:02:11,220 --> 00:02:13,290
+that one password on the form.
+
+35
+00:02:13,650 --> 00:02:15,420
+So now I have the user credentials.
+
+36
+00:02:16,440 --> 00:02:21,300
+Now I try to get the user from the database by email address.
+
+37
+00:02:21,300 --> 00:02:24,300
+And now that we have those database functions implemented, it's simple.
+
+38
+00:02:24,630 --> 00:02:28,830
+I'll declare a available user while checking for an error when I call.
+
+39
+00:02:29,250 --> 00:02:36,990
+And here I will go to app dot models, dot user dot, get my email and that did the import for me.
+
+40
+00:02:37,110 --> 00:02:38,010
+So we're good to go.
+
+41
+00:02:39,590 --> 00:02:43,940
+And of course I pass email as a parameter to that function and I'll check for an error.
+
+42
+00:02:44,150 --> 00:02:51,860
+So I'll say if error is not equal to nil this time, I'll say after session I'm going to put something
+
+43
+00:02:51,860 --> 00:02:54,110
+in the session dot put.
+
+44
+00:02:54,770 --> 00:02:57,650
+And that requires the context are not context.
+
+45
+00:02:59,000 --> 00:03:08,090
+And I'm going to put it in with the key error and the value will be just invalid credentials or whatever
+
+46
+00:03:08,090 --> 00:03:08,390
+you want.
+
+47
+00:03:08,570 --> 00:03:09,890
+Okay, so I put that in there.
+
+48
+00:03:10,940 --> 00:03:15,650
+So that's stored in the session now and I'll redirect the user, take them back to the log in, page
+
+49
+00:03:16,130 --> 00:03:20,790
+htp, dot redirect and we'll go here to the homepage.
+
+50
+00:03:20,960 --> 00:03:22,310
+No, we're not going to go to the home page.
+
+51
+00:03:22,310 --> 00:03:23,540
+We're going to go to the login page.
+
+52
+00:03:23,690 --> 00:03:24,170
+That's better.
+
+53
+00:03:25,940 --> 00:03:27,140
+And we give them a status.
+
+54
+00:03:27,140 --> 00:03:28,600
+ACB dot status.
+
+55
+00:03:28,610 --> 00:03:30,560
+See other is fine, that'll get us going.
+
+56
+00:03:30,860 --> 00:03:31,190
+Okay.
+
+57
+00:03:32,180 --> 00:03:33,920
+And actually I missed two parameters.
+
+58
+00:03:34,520 --> 00:03:36,560
+I don't know why I've written this a million times.
+
+59
+00:03:37,040 --> 00:03:39,590
+The response writer, the request, where are we going?
+
+60
+00:03:39,590 --> 00:03:40,550
+And the status.
+
+61
+00:03:40,550 --> 00:03:42,260
+That's better and we just return.
+
+62
+00:03:42,350 --> 00:03:43,340
+We don't want to go any further.
+
+63
+00:03:43,730 --> 00:03:48,970
+Okay, so we return, which I eventually will spell, right?
+
+64
+00:03:50,450 --> 00:03:52,850
+Once we get past that, I found the user.
+
+65
+00:03:52,880 --> 00:03:54,230
+But let's validate the password.
+
+66
+00:03:54,230 --> 00:03:55,490
+So we'll check the password.
+
+67
+00:03:56,270 --> 00:04:01,940
+And that's as simple as calling valid password, which is just a variable name I'm choosing right now
+
+68
+00:04:02,900 --> 00:04:03,830
+valid password.
+
+69
+00:04:03,830 --> 00:04:09,980
+And again, an error comes from calling and now I call the method on that user type for the variable
+
+70
+00:04:09,980 --> 00:04:11,690
+I just got on line 26.
+
+71
+00:04:11,690 --> 00:04:15,260
+So user dot password matches right there.
+
+72
+00:04:15,890 --> 00:04:19,130
+And that requires one password, the user supplied password.
+
+73
+00:04:19,760 --> 00:04:21,980
+So that will take the password the user gives us.
+
+74
+00:04:22,430 --> 00:04:26,600
+Compare the hash that we have in the database with the password that supplied.
+
+75
+00:04:26,690 --> 00:04:29,540
+If they match valid password is true.
+
+76
+00:04:29,690 --> 00:04:32,390
+If they do not, then the user entered the wrong password.
+
+77
+00:04:32,600 --> 00:04:32,950
+Okay.
+
+78
+00:04:34,220 --> 00:04:35,660
+So we'll check for error here.
+
+79
+00:04:36,020 --> 00:04:40,070
+If error is not equal to nil that I'll do pretty much the same thing I did last time.
+
+80
+00:04:40,070 --> 00:04:45,080
+I'll just copy all of this, put it in here and that's sufficient.
+
+81
+00:04:45,080 --> 00:04:49,130
+I'm not going to give them any more information than invalid credentials because I don't want to give
+
+82
+00:04:49,130 --> 00:04:50,300
+too much information away.
+
+83
+00:04:51,320 --> 00:04:57,080
+Now we check to say if it's not a valid password, then they supplied the wrong password.
+
+84
+00:04:57,290 --> 00:04:57,650
+Okay.
+
+85
+00:04:58,400 --> 00:05:02,240
+And all we're going to say here is pretty much the same thing pasted in there.
+
+86
+00:05:03,110 --> 00:05:05,090
+And that will take care of it once again.
+
+87
+00:05:05,540 --> 00:05:08,030
+Don't give away too much information and log into screens.
+
+88
+00:05:08,120 --> 00:05:09,920
+Just let people know you can't log in.
+
+89
+00:05:10,700 --> 00:05:14,420
+But if I get past all of this, we've actually logged this user in.
+
+90
+00:05:14,690 --> 00:05:15,080
+So.
+
+91
+00:05:15,440 --> 00:05:15,980
+Okay.
+
+92
+00:05:16,490 --> 00:05:17,780
+So logged user.
+
+93
+00:05:18,040 --> 00:05:18,290
+Yep.
+
+94
+00:05:19,040 --> 00:05:20,360
+And how do we log a user in?
+
+95
+00:05:20,390 --> 00:05:21,890
+We just put something in the session.
+
+96
+00:05:22,340 --> 00:05:24,440
+What I'm going to put in is app dot session.
+
+97
+00:05:26,030 --> 00:05:26,630
+Try that again.
+
+98
+00:05:27,620 --> 00:05:29,420
+Session dot put.
+
+99
+00:05:31,100 --> 00:05:34,610
+And I'm going to put in using the context aka context.
+
+100
+00:05:35,840 --> 00:05:42,440
+And if you recall, user ID is what I'm going to put in when someone is actually logged in user ID,
+
+101
+00:05:43,130 --> 00:05:44,120
+that's what we're putting in there.
+
+102
+00:05:44,220 --> 00:05:44,510
+Okay.
+
+103
+00:05:44,660 --> 00:05:50,810
+So now that exists and now I can check to see if someone is authenticated in that render default data
+
+104
+00:05:50,810 --> 00:05:55,700
+bit or add default data function in the render page, render echo.
+
+105
+00:05:57,200 --> 00:06:01,430
+And I'm also going to put in app dot session because I might need it put.
+
+106
+00:06:02,000 --> 00:06:08,060
+And again with irked context, I'm going to put in the user, the whole user model that I got back that's
+
+107
+00:06:08,060 --> 00:06:08,630
+just user.
+
+108
+00:06:09,230 --> 00:06:14,930
+Now in order to make that happen, what I need to do is to go back to Domain DONGO And I have to register
+
+109
+00:06:14,930 --> 00:06:16,820
+that type when I start the session.
+
+110
+00:06:16,820 --> 00:06:19,680
+So let's find the bit where we make the session right here.
+
+111
+00:06:20,900 --> 00:06:24,380
+You can't just put something in the session willy nilly, as one says.
+
+112
+00:06:24,380 --> 00:06:27,440
+Instead, you actually have to add, you have to register it.
+
+113
+00:06:27,830 --> 00:06:29,360
+And fortunately, that's a one liner.
+
+114
+00:06:29,510 --> 00:06:36,020
+We just say garb, which is part of the standard library register, and we're going to register data
+
+115
+00:06:36,020 --> 00:06:40,520
+dot user and we have to put the empty or the curly brackets in like that.
+
+116
+00:06:40,880 --> 00:06:42,710
+Now I can store that in the session.
+
+117
+00:06:43,940 --> 00:06:48,050
+If I don't do that, the application will still compile and it'll still run.
+
+118
+00:06:48,170 --> 00:06:52,880
+But the moment someone tries to log in and does so successfully, you'll get an error saying I can't
+
+119
+00:06:52,880 --> 00:06:55,010
+store this in the session, don't know about the type.
+
+120
+00:06:55,160 --> 00:06:59,690
+And that's one of the features, if you will, of a strongly typed language.
+
+121
+00:06:59,750 --> 00:07:00,620
+Now back to handlers.
+
+122
+00:07:00,620 --> 00:07:03,470
+Docker, redirect the user.
+
+123
+00:07:03,710 --> 00:07:09,260
+Anytime you have a successful forum post, you want to redirect somewhere else so they don't accidentally
+
+124
+00:07:09,260 --> 00:07:10,400
+submit the form twice.
+
+125
+00:07:10,440 --> 00:07:10,730
+Okay.
+
+126
+00:07:11,420 --> 00:07:13,550
+So htp on redirect.
+
+127
+00:07:14,090 --> 00:07:19,070
+And this time I'll remember to put in w an hour, but I'll just take them to the home page and I'll
+
+128
+00:07:19,070 --> 00:07:26,180
+say export dot status C other and the only other thing I'll do.
+
+129
+00:07:26,210 --> 00:07:28,810
+You may also try out the session here.
+
+130
+00:07:28,820 --> 00:07:29,060
+Okay.
+
+131
+00:07:29,070 --> 00:07:31,250
+What I'm going to put in here is after session.
+
+132
+00:07:31,580 --> 00:07:32,090
+Try that again.
+
+133
+00:07:32,090 --> 00:07:32,810
+It's not a comment.
+
+134
+00:07:32,990 --> 00:07:34,010
+I'll put something in the session.
+
+135
+00:07:34,010 --> 00:07:38,420
+Just a welcome message or a successful log in message after session.
+
+136
+00:07:39,380 --> 00:07:47,300
+Dot put and I'll use my flash once so aka context and remember that flash and warning an error that
+
+137
+00:07:47,300 --> 00:07:48,770
+we have an ad default data.
+
+138
+00:07:48,800 --> 00:07:49,450
+We're going to try that.
+
+139
+00:07:49,450 --> 00:07:54,740
+It will put it in a flash message and I'll just put successful log in.
+
+140
+00:07:56,330 --> 00:07:59,660
+Okay, so let's try this out.
+
+141
+00:08:00,020 --> 00:08:02,900
+Let's reset our application, make restart.
+
+142
+00:08:06,350 --> 00:08:08,780
+And we'll go back to our Web browser and just make sure we get it.
+
+143
+00:08:08,780 --> 00:08:09,170
+All right.
+
+144
+00:08:09,260 --> 00:08:09,510
+Okay.
+
+145
+00:08:09,560 --> 00:08:15,020
+So I reload the page to make sure this is current and we have one user in the database and that is admin
+
+146
+00:08:15,020 --> 00:08:16,760
+at example dot com.
+
+147
+00:08:17,120 --> 00:08:17,450
+Okay.
+
+148
+00:08:17,480 --> 00:08:24,700
+And the password for that user is v e r y s e c r e t very secret.
+
+149
+00:08:24,710 --> 00:08:26,660
+All one word, all lowercase.
+
+150
+00:08:26,780 --> 00:08:27,710
+And I'll try logging in.
+
+151
+00:08:29,270 --> 00:08:29,840
+And it worked.
+
+152
+00:08:29,990 --> 00:08:32,660
+So we say we see the message successful.
+
+153
+00:08:32,660 --> 00:08:33,230
+Log in.
+
+154
+00:08:33,590 --> 00:08:39,070
+But if I reload this page, that should be gone because that's pulled out of the session using session
+
+155
+00:08:39,080 --> 00:08:39,740
+dot pop.
+
+156
+00:08:39,740 --> 00:08:44,480
+So it takes it out of the session, stores it in a variable that I can use and then immediately removes
+
+157
+00:08:44,480 --> 00:08:45,260
+it from the session.
+
+158
+00:08:45,260 --> 00:08:46,850
+So it's gone.
+
+159
+00:08:46,910 --> 00:08:47,330
+Perfect.
+
+160
+00:08:48,080 --> 00:08:52,670
+Now we have this logout button and if I click on that, we're going to get an empty screen because that's
+
+161
+00:08:52,670 --> 00:08:53,540
+a stub handler.
+
+162
+00:08:53,570 --> 00:08:54,860
+So let's go implement log out.
+
+163
+00:08:54,950 --> 00:08:55,970
+That one's really easy.
+
+164
+00:08:56,810 --> 00:09:01,520
+So I'll close my terminal and find the log out handler, wherever that is.
+
+165
+00:09:02,620 --> 00:09:05,350
+So home page, log in, page post log in, page.
+
+166
+00:09:05,360 --> 00:09:05,950
+There's log in.
+
+167
+00:09:06,430 --> 00:09:06,770
+Okay.
+
+168
+00:09:07,180 --> 00:09:11,620
+Logging out is as simple as once again destroying the session.
+
+169
+00:09:12,070 --> 00:09:14,530
+So clean up session.
+
+170
+00:09:14,710 --> 00:09:17,110
+So the first thing I'll do is just delete the session entirely.
+
+171
+00:09:17,110 --> 00:09:21,820
+So I'll ignore the error when I call app dot session dot destroy.
+
+172
+00:09:23,050 --> 00:09:25,960
+And this destroys the user session, but it needs the context.
+
+173
+00:09:26,140 --> 00:09:32,080
+So there's the contact and once they've logged out again, it's always good practice to renew the session
+
+174
+00:09:32,080 --> 00:09:38,440
+token app dot session dot renew token again with the context art context.
+
+175
+00:09:41,230 --> 00:09:42,430
+And now I just redirect.
+
+176
+00:09:42,610 --> 00:09:49,000
+So each endpoint redirect and we'll redirect using W and R to the homepage.
+
+177
+00:09:49,000 --> 00:09:50,110
+Now to the logging screen.
+
+178
+00:09:50,110 --> 00:09:54,760
+That's a good place to take them once they've logged out and achieved a status C other.
+
+179
+00:09:55,660 --> 00:09:59,350
+Okay, so let's restart the application make restart.
+
+180
+00:10:00,900 --> 00:10:06,990
+And because my session was stored in Redis, when I go back to my web browser, I should still be able
+
+181
+00:10:06,990 --> 00:10:11,430
+to go to any page like a home page and reload this.
+
+182
+00:10:11,430 --> 00:10:12,450
+And I'm still logged in.
+
+183
+00:10:13,350 --> 00:10:15,030
+And now you can see log out.
+
+184
+00:10:15,210 --> 00:10:16,980
+So let's click on log out and see if it works.
+
+185
+00:10:17,940 --> 00:10:18,550
+And we're do.
+
+186
+00:10:18,930 --> 00:10:24,690
+Now you notice that the log in link reappears here and the log out link disappeared there.
+
+187
+00:10:25,110 --> 00:10:26,280
+And I'm sure you're aware of this.
+
+188
+00:10:26,640 --> 00:10:34,440
+But if you go over here and look in CMT Web templates and find the nav bar right here, I'm just making
+
+189
+00:10:34,440 --> 00:10:35,200
+a little decision.
+
+190
+00:10:35,760 --> 00:10:42,180
+Remember, we added toward the default data that's passed to every single template this authenticated
+
+191
+00:10:42,390 --> 00:10:43,350
+and it's a boolean.
+
+192
+00:10:43,350 --> 00:10:47,010
+It's true when the user is logged in and false when the user is logged out.
+
+193
+00:10:47,340 --> 00:10:52,500
+So I just if you're not logged in, you see the register page, the link to it.
+
+194
+00:10:53,250 --> 00:10:56,640
+If you're if you are logged in, you see the log out link.
+
+195
+00:10:56,910 --> 00:10:59,460
+If you are not logged in, you see the log in link.
+
+196
+00:11:00,180 --> 00:11:05,670
+And the same idea happens with those alerts that appear at the top of the screen that comes from alert
+
+197
+00:11:05,670 --> 00:11:07,470
+stop partial logo each time out.
+
+198
+00:11:08,370 --> 00:11:14,520
+So we check to see if the data called flash dot flash, which is passed to every single page.
+
+199
+00:11:14,610 --> 00:11:16,180
+If that's not an equal string.
+
+200
+00:11:16,320 --> 00:11:21,360
+I just use bootstrap and display this with the class of alerts access.
+
+201
+00:11:21,360 --> 00:11:22,020
+So it's green.
+
+202
+00:11:22,440 --> 00:11:28,020
+If there's an error, I do the same thing, but I make it red and show what's ever in the error variable.
+
+203
+00:11:28,440 --> 00:11:34,830
+And then warning is just an alert warning with whatever's in the dot warning variable that every single
+
+204
+00:11:34,830 --> 00:11:35,730
+template gets.
+
+205
+00:11:35,760 --> 00:11:36,120
+Okay.
+
+206
+00:11:36,810 --> 00:11:37,110
+All right.
+
+207
+00:11:37,110 --> 00:11:39,300
+So now we can log in and we can log out.
+
+208
+00:11:39,750 --> 00:11:43,770
+Let's think about what we're going to do in these other handlers, because here's where we're finally
+
+209
+00:11:43,770 --> 00:11:45,300
+going to get to some concurrency.
+
+210
+00:11:45,780 --> 00:11:50,340
+Now, the Register page, it can stay pretty much the same, but once someone registers, let's just
+
+211
+00:11:50,340 --> 00:11:52,230
+wait some comments to see what we're going to do.
+
+212
+00:11:52,770 --> 00:11:54,630
+The first thing we're going to do is create a user.
+
+213
+00:11:55,500 --> 00:11:55,850
+Okay.
+
+214
+00:11:56,040 --> 00:11:57,060
+And that doesn't take long.
+
+215
+00:11:57,690 --> 00:12:04,410
+Then we want to send an activation email and that's what we'll start on next, is sending email concurrently
+
+216
+00:12:04,410 --> 00:12:09,690
+in the background because sending email can be expensive, not in terms of money or not just in terms
+
+217
+00:12:09,690 --> 00:12:14,370
+of money, depending how much you send, but in terms of processing time and a delay, I don't want
+
+218
+00:12:14,370 --> 00:12:16,110
+to sit there waiting.
+
+219
+00:12:16,230 --> 00:12:22,800
+After I've created the user while I connect to a slow mail server and maybe four or five or 10 seconds
+
+220
+00:12:22,800 --> 00:12:26,040
+go by before the email sent, I just wanted to fire off in the background.
+
+221
+00:12:26,160 --> 00:12:26,490
+Okay.
+
+222
+00:12:27,180 --> 00:12:34,980
+So send an activation email and then we want to subscribe the user to an account.
+
+223
+00:12:36,050 --> 00:12:36,310
+Okay.
+
+224
+00:12:36,450 --> 00:12:38,670
+And that's just inserting one row in the database.
+
+225
+00:12:39,060 --> 00:12:44,880
+And I don't want to do anything else with this function until I actually get this function called.
+
+226
+00:12:45,300 --> 00:12:47,310
+So we'll send them an email with a link in it.
+
+227
+00:12:47,550 --> 00:12:50,880
+They're going to click that link and it will call this handler.
+
+228
+00:12:51,330 --> 00:12:53,010
+And here's where I want to do some more things.
+
+229
+00:12:53,490 --> 00:12:58,470
+So I'm going to want to say validate the URL to make sure that it's not just randomly generated by somebody
+
+230
+00:12:58,470 --> 00:12:58,750
+else.
+
+231
+00:12:58,780 --> 00:13:01,380
+I want to have some kind of secure link in the email.
+
+232
+00:13:01,980 --> 00:13:06,360
+Then I want to generate an invoice which might go it as an email.
+
+233
+00:13:08,100 --> 00:13:12,670
+Then I'm going to want to send an email with attachments.
+
+234
+00:13:12,900 --> 00:13:18,990
+I want to assume that whatever service this person is subscribing to, that they need some kind of documentation.
+
+235
+00:13:18,990 --> 00:13:24,270
+So if they get the bronze plan, I'll send the bronze documentation and the gold they'll get the gold
+
+236
+00:13:24,330 --> 00:13:32,520
+gold documentation and probably go as a customized PDF and we'll get to that later on and finally send
+
+237
+00:13:32,520 --> 00:13:38,040
+an email with a with the invoice attached.
+
+238
+00:13:39,450 --> 00:13:45,270
+Now we're going to do these things and these things using concurrency.
+
+239
+00:13:45,270 --> 00:13:50,610
+And of course it'll take a while before we get there, but we'll get started in the next section.

@@ -1,0 +1,231 @@
+1
+00:00:12,770 --> 00:00:18,080
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:18,110 --> 00:00:21,260
+We want to talk about rest APIs concept.
+
+3
+00:00:24,830 --> 00:00:26,150
+What is API?
+
+4
+00:00:28,060 --> 00:00:36,100
+Application programming interface, or API, is a software interface that allows two applications to
+
+5
+00:00:36,100 --> 00:00:40,120
+interact with each other without any user intervention.
+
+6
+00:00:41,620 --> 00:00:45,850
+API is a collection of software functions and procedures.
+
+7
+00:00:46,450 --> 00:00:53,020
+In simple terms, API means a software code that can be accessed or executed.
+
+8
+00:00:54,280 --> 00:01:01,810
+API is defined as a code that held two different softwares to communicate and exchange data with each
+
+9
+00:01:01,810 --> 00:01:02,200
+other.
+
+10
+00:01:04,330 --> 00:01:11,110
+It offers products or services to communicate with other products and services without having to know
+
+11
+00:01:11,110 --> 00:01:12,760
+how they are implemented.
+
+12
+00:01:14,590 --> 00:01:20,440
+What it actually means is it exposes functionality without exposing internals.
+
+13
+00:01:21,190 --> 00:01:27,610
+If you're programming the language that supports running functions or methods, you would totally understand
+
+14
+00:01:27,610 --> 00:01:28,930
+what I am talking about.
+
+15
+00:01:29,230 --> 00:01:35,920
+In fact, it can be said that using different API, two different machines with different operating
+
+16
+00:01:35,920 --> 00:01:39,910
+systems can communicate with each other without any dependency.
+
+17
+00:01:40,240 --> 00:01:47,530
+An API could be a function, you wrote, or to function from a library or a method from a framework
+
+18
+00:01:47,530 --> 00:01:49,450
+or a sticky end point.
+
+19
+00:01:54,300 --> 00:01:55,860
+API voting.
+
+20
+00:01:57,700 --> 00:01:59,920
+Let's see how API works.
+
+21
+00:02:00,310 --> 00:02:04,840
+We use a simple daily life example to understand the concept of API.
+
+22
+00:02:05,590 --> 00:02:13,690
+Imagine you want to go to a restaurant in order your favorite food first welcomes to you, gives you
+
+23
+00:02:13,690 --> 00:02:17,320
+a menu card and you will provide personalize it order.
+
+24
+00:02:17,800 --> 00:02:21,010
+After some time, you will get your order from the waiter.
+
+25
+00:02:22,150 --> 00:02:30,290
+However, it is not that simple as it looks, as there is some process that happens in between here.
+
+26
+00:02:30,310 --> 00:02:33,610
+The waiter plays an important part, as you will.
+
+27
+00:02:33,610 --> 00:02:40,240
+Neither go to the kitchen to collect your order, nor will you tell the kitchen staff what you want
+
+28
+00:02:40,450 --> 00:02:42,250
+all this done by the waiter.
+
+29
+00:02:46,830 --> 00:02:54,360
+API answer does the same by taking your request and just like the vendor, tell the system what you
+
+30
+00:02:54,360 --> 00:03:02,550
+want and give a response back to you, a request is sent from client to server in the form of VIP or
+
+31
+00:03:02,550 --> 00:03:09,470
+as if Typekit or post or puth or delete request after death.
+
+32
+00:03:09,660 --> 00:03:17,610
+A response comes back from server in the form of a resource which can be anything like Estima example,
+
+33
+00:03:17,850 --> 00:03:19,440
+image or JSON.
+
+34
+00:03:20,100 --> 00:03:25,620
+But now JSON is the most popular format being used in web services.
+
+35
+00:03:26,850 --> 00:03:33,930
+Application programming interfaces consist of technical specification, pointing to data exchange option
+
+36
+00:03:33,930 --> 00:03:35,130
+between applications.
+
+37
+00:03:37,050 --> 00:03:43,440
+The applications communicate to a user interface following a process written application that needs
+
+38
+00:03:43,440 --> 00:03:51,390
+the functionality of the other application, calling the applications API and specifying how the functionality
+
+39
+00:03:51,410 --> 00:03:52,530
+should be provided.
+
+40
+00:03:53,730 --> 00:04:00,840
+Assuming the request is authorized, the target application and receiving the request returns the functionality.
+
+41
+00:04:04,820 --> 00:04:06,680
+Why would we need an API?
+
+42
+00:04:06,920 --> 00:04:16,880
+Here are some reason for using API application programming interface acronym API has two different softwares
+
+43
+00:04:17,060 --> 00:04:20,420
+to communicate and exchange data with each other.
+
+44
+00:04:21,530 --> 00:04:26,870
+It helps you to emit content from inside or application more efficiently.
+
+45
+00:04:28,040 --> 00:04:29,990
+APIs can access app.
+
+46
+00:04:31,610 --> 00:04:35,000
+The delivery of services and information is more flexible.
+
+47
+00:04:35,600 --> 00:04:38,690
+Content generated can be Pompey's automatically.
+
+48
+00:04:39,530 --> 00:04:46,940
+It allows the user or a company to customize the continent's services, which they use the most in software
+
+49
+00:04:46,940 --> 00:04:52,130
+needs to change over time and APIs health plan Typekit pay changes.
+
+50
+00:04:56,970 --> 00:04:58,800
+Features of API.
+
+51
+00:04:59,640 --> 00:05:02,490
+Here are some important features of API.
+
+52
+00:05:03,270 --> 00:05:07,140
+It offers a valuable service data function.
+
+53
+00:05:07,860 --> 00:05:10,240
+It helps you to plan a business model.
+
+54
+00:05:10,770 --> 00:05:12,540
+Simple, flexible.
+
+55
+00:05:12,630 --> 00:05:15,900
+Quickly adapted, managed and measured.
+
+56
+00:05:17,010 --> 00:05:23,460
+And offers good developer support in order not to prolong the time off decision.
+
+57
+00:05:23,640 --> 00:05:27,690
+We will finish it and we will continue the content in the next session.
+
+58
+00:05:27,910 --> 00:05:28,440
+Goodbye.

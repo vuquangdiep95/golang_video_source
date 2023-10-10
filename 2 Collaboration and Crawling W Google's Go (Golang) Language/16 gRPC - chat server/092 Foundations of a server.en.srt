@@ -1,0 +1,367 @@
+1
+00:00:00,240 --> 00:00:00,510
+All right.
+
+2
+00:00:00,540 --> 00:00:06,930
+So next up after the client comes the server which in this case in this particular program is the more
+
+3
+00:00:06,930 --> 00:00:08,940
+complicated one.
+
+4
+00:00:08,970 --> 00:00:15,960
+So for a chat program the server has to receive a message from any connection and then send that message
+
+5
+00:00:15,960 --> 00:00:18,640
+back out to every connection.
+
+6
+00:00:18,750 --> 00:00:24,500
+And the problem is each connection is running on its own go routine.
+
+7
+00:00:24,510 --> 00:00:29,070
+It's a separate threat of execution they're all happening simultaneously.
+
+8
+00:00:29,070 --> 00:00:33,200
+And so to get that message that you're receiving from one connection you then have to be and should
+
+9
+00:00:33,210 --> 00:00:40,830
+get over to each other go routine so they can send it because you could only be sending from the GOP
+
+10
+00:00:40,830 --> 00:00:47,710
+see connections or streams are not threads safe to send multiple messages at once.
+
+11
+00:00:48,540 --> 00:00:53,400
+And that can be found if you actually go to the go dock for jihad you see
+
+12
+00:00:59,620 --> 00:01:00,640
+and you find
+
+13
+00:01:03,740 --> 00:01:08,430
+server streams it mentions under send message.
+
+14
+00:01:08,520 --> 00:01:10,850
+This to have a good routine calling send message.
+
+15
+00:01:10,880 --> 00:01:14,210
+And another go in calling receive message on the same street at the same time.
+
+16
+00:01:14,240 --> 00:01:19,150
+But it's not safe to call send message on the same stream in different Gerges.
+
+17
+00:01:19,230 --> 00:01:25,700
+How did you come across the I was looking up whenever I'm thinking go routines and I know I'm going
+
+18
+00:01:25,700 --> 00:01:27,720
+to have multiple go routines talking to the same thing.
+
+19
+00:01:27,740 --> 00:01:33,520
+I often check the docs to see if they have if they mention safety go routine and threat safety.
+
+20
+00:01:33,540 --> 00:01:34,400
+Thanks.
+
+21
+00:01:34,770 --> 00:01:40,250
+So so because every connection in a G.P.S. server is its own go routine.
+
+22
+00:01:40,250 --> 00:01:43,680
+I wanted to make sure to see and so I found this.
+
+23
+00:01:43,770 --> 00:01:48,020
+And so I knew I had to had to set up the thread safety myself.
+
+24
+00:01:49,870 --> 00:01:57,940
+And so what I did was I made a connection struct and the connection struct hell holds one connection.
+
+25
+00:01:57,940 --> 00:02:02,530
+That's the Chat chat server thing with the send and receive methods.
+
+26
+00:02:03,100 --> 00:02:08,650
+And it has a send channel and equip channel.
+
+27
+00:02:08,650 --> 00:02:13,900
+And when you create a connection with this new connection which takes in that stream
+
+28
+00:02:16,780 --> 00:02:24,520
+this will create the connection with two new channels and it will start this call the start method in
+
+29
+00:02:24,520 --> 00:02:27,450
+another go routine and then return it.
+
+30
+00:02:28,480 --> 00:02:34,330
+This is mostly so that you can now have this nice send method on this chart on this connection where
+
+31
+00:02:34,330 --> 00:02:42,100
+you can pass in a chat message and this will send the message through the send channel to the actual
+
+32
+00:02:42,250 --> 00:02:51,700
+to the start area where it will actually be sent along that connection and in a thread safe way and
+
+33
+00:02:51,700 --> 00:02:59,810
+this will also ignore any panics in case send gets closed because the connection got closed.
+
+34
+00:03:00,310 --> 00:03:08,240
+This particular send method will ignore the panic for trying to send on a closed channel so this way
+
+35
+00:03:08,240 --> 00:03:14,780
+you can now see the connection send and it will send the message and it doesn't matter go routines or
+
+36
+00:03:14,780 --> 00:03:20,090
+anything it will it will happen thread safe because all things that the only thing that will actually
+
+37
+00:03:20,090 --> 00:03:26,510
+send along the connection is this start method in its own go routine which you can which only send messages
+
+38
+00:03:26,510 --> 00:03:27,980
+along it through this channel
+
+39
+00:03:30,750 --> 00:03:35,550
+so this start message is just looping forever every time he gets a message from the to send channel
+
+40
+00:03:35,670 --> 00:03:40,770
+it sends it along a connection if it ever gets anything on the quick channel or quick channel closes
+
+41
+00:03:41,580 --> 00:03:44,150
+it ends the loop and exits the governor team.
+
+42
+00:03:44,940 --> 00:03:49,620
+So that's why you've got this nice we've got a nice close method here which I'm having a return in error
+
+43
+00:03:49,650 --> 00:03:54,720
+just to match other closed methods out there like all the IO close with it's you know it's always new
+
+44
+00:03:56,040 --> 00:03:57,520
+and this just closes that quick.
+
+45
+00:03:57,630 --> 00:03:59,430
+The close the quick channel so that way.
+
+46
+00:03:59,430 --> 00:04:01,710
+This will close and it goes the scent chain.
+
+47
+00:04:03,570 --> 00:04:05,520
+So connection will be close this close method.
+
+48
+00:04:05,620 --> 00:04:11,200
+So essentially no closed which which causes this to panic and recovers anything it's kind of trying
+
+49
+00:04:11,200 --> 00:04:12,490
+to send.
+
+50
+00:04:12,490 --> 00:04:22,570
+We'll move on and discover team will exit and then finally there's a get messages function which will
+
+51
+00:04:22,570 --> 00:04:23,540
+loop forever.
+
+52
+00:04:23,560 --> 00:04:27,460
+This is just receiving a chat message from this connection.
+
+53
+00:04:27,700 --> 00:04:35,080
+If there's an end to file close it there's any other error close it and turn the air.
+
+54
+00:04:35,170 --> 00:04:37,270
+What's got this message though.
+
+55
+00:04:37,840 --> 00:04:40,820
+You need to send it to all the connections.
+
+56
+00:04:40,840 --> 00:04:46,450
+And so this get messages function takes in a broadcast channel.
+
+57
+00:04:46,480 --> 00:04:52,900
+This is just a channel that you're only allowed to send on for chat messages and some other code elsewhere.
+
+58
+00:04:52,900 --> 00:04:59,480
+We'll be responsible for making sure that gets out to every send method for all the connections so this
+
+59
+00:04:59,620 --> 00:05:03,260
+message receives a message and then it sends a chat.
+
+60
+00:05:03,270 --> 00:05:09,690
+It sends the message through to the broadcast and I'm doing this in a good routine so that if the other
+
+61
+00:05:09,690 --> 00:05:12,740
+end of broadcast is not yet ready it will.
+
+62
+00:05:13,110 --> 00:05:15,180
+It can still start receiving the next message.
+
+63
+00:05:15,180 --> 00:05:18,680
+Well while this go routine waits.
+
+64
+00:05:19,710 --> 00:05:25,490
+But to make it end early there's that that quick channel that we use up here for the start.
+
+65
+00:05:25,500 --> 00:05:31,520
+So I I use select and it either sends to the broadcast or when quick closes.
+
+66
+00:05:31,530 --> 00:05:36,150
+So if it close connection closes we don't have a bunch of dangling go routines trying to send along
+
+67
+00:05:36,150 --> 00:05:38,170
+to broadcasting.
+
+68
+00:05:38,190 --> 00:05:38,690
+You're right.
+
+69
+00:05:38,700 --> 00:05:40,070
+This is meaty.
+
+70
+00:05:40,110 --> 00:05:40,910
+This is me.
+
+71
+00:05:40,920 --> 00:05:42,630
+He like it so me I'm just like.
+
+72
+00:05:42,630 --> 00:05:43,510
+Explain it.
+
+73
+00:05:43,530 --> 00:05:45,840
+Any questions I have I'm saving.
+
+74
+00:05:46,040 --> 00:05:46,930
+So.
+
+75
+00:05:47,200 --> 00:05:49,820
+So that's a connection a single connection.
+
+76
+00:05:49,830 --> 00:05:54,580
+It's got the actual connection through the stream.
+
+77
+00:05:54,580 --> 00:05:59,960
+It's got to send channel which is used to send from this send method to this start method.
+
+78
+00:05:59,980 --> 00:06:00,640
+That's Indigo.
+
+79
+00:06:00,760 --> 00:06:06,400
+That's in a separate go routine and it's got this get messages loop which receives messages and sends
+
+80
+00:06:06,400 --> 00:06:08,230
+it out through a broadcast channel
+
+81
+00:06:11,460 --> 00:06:13,230
+almost near a diagram to track all that.
+
+82
+00:06:13,260 --> 00:06:14,220
+Yes somewhat.
+
+83
+00:06:14,250 --> 00:06:19,440
+Yes go routines and channels can get that way very easily feel like we've gotten back to spaghetti code.
+
+84
+00:06:19,470 --> 00:06:27,190
+It's was way more organized in structure in my head just has to learn to work with that.
+
+85
+00:06:27,210 --> 00:06:31,910
+So I'm not I haven't spent a lot of time working to cover teams and then so that's the first top of
+
+86
+00:06:31,910 --> 00:06:34,050
+the part of the code is are more code down below.
+
+87
+00:06:34,230 --> 00:06:36,860
+So after this you're just the first introduction.
+
+88
+00:06:36,900 --> 00:06:38,400
+This is a single connection.
+
+89
+00:06:38,400 --> 00:06:38,670
+OK.
+
+90
+00:06:38,700 --> 00:06:40,560
+So yes it's a good starting point for.
+
+91
+00:06:40,560 --> 00:06:48,780
+And we'll see we'll see the next ones in in in the next video which we will see you in right now.
+
+92
+00:06:48,780 --> 00:06:49,170
+Hopefully.

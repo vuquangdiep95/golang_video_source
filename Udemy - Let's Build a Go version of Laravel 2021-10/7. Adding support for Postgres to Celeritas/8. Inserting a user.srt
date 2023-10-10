@@ -1,0 +1,327 @@
+1
+00:00:01,020 --> 00:00:03,990
+So now that we have this user model, let's take advantage of it.
+
+2
+00:00:04,500 --> 00:00:08,910
+And there's a couple of things we have to do before we can actually do anything, but they're not that
+
+3
+00:00:08,910 --> 00:00:09,420
+difficult.
+
+4
+00:00:10,170 --> 00:00:14,090
+So to start with, I want to go over to my models, don't go file.
+
+5
+00:00:14,100 --> 00:00:16,260
+And again, I'm still in the my app package.
+
+6
+00:00:16,890 --> 00:00:20,380
+And in here we have this type models with a comment.
+
+7
+00:00:20,400 --> 00:00:25,560
+Any models inserted here and in the new function are easily accessible throughout the entire application.
+
+8
+00:00:25,680 --> 00:00:33,300
+Well, let's put some in here, so I'll put in a field called users of type user and I'll put in another
+
+9
+00:00:33,300 --> 00:00:40,350
+one called tokens of type token and down here, where I return models in the new function.
+
+10
+00:00:40,710 --> 00:00:41,700
+I'll just add those.
+
+11
+00:00:42,240 --> 00:00:46,020
+So I'll say users is now equal to user.
+
+12
+00:00:47,220 --> 00:00:47,670
+What's that?
+
+13
+00:00:47,850 --> 00:00:54,510
+The new user and tokens is equal to token like that?
+
+14
+00:00:55,380 --> 00:00:58,050
+OK, now of course, I have to use this.
+
+15
+00:00:58,320 --> 00:01:08,910
+So let's go back to our main Don file and here in type application, I'm going to add a new field to
+
+16
+00:01:08,910 --> 00:01:09,630
+the application.
+
+17
+00:01:09,850 --> 00:01:16,980
+Well, that is not surprisingly going to be called models, and it's a type data dot models.
+
+18
+00:01:17,820 --> 00:01:18,180
+OK.
+
+19
+00:01:18,810 --> 00:01:22,470
+So I've added that now in the in it application function.
+
+20
+00:01:22,770 --> 00:01:31,020
+I can come down here and just before I return the app, all I have to do is say App Dot models is equal
+
+21
+00:01:31,020 --> 00:01:33,420
+to data dot new.
+
+22
+00:01:33,570 --> 00:01:40,290
+I'm calling that new function now and I'll hand it my database pool, which I have in App Dot, app,
+
+23
+00:01:41,100 --> 00:01:44,730
+dot TV pool and then initializes my models.
+
+24
+00:01:45,930 --> 00:01:53,520
+So that means I now have access to the user type and all of its associated functions anywhere I need
+
+25
+00:01:53,520 --> 00:01:54,000
+to have them.
+
+26
+00:01:55,170 --> 00:01:58,740
+So let's go back and try this out and we'll try it really quickly in the roots file.
+
+27
+00:01:58,980 --> 00:02:05,990
+So we're going to put a new test route right here, so I'll have it as a get request data app.
+
+28
+00:02:06,000 --> 00:02:08,700
+Don't routes render routes?
+
+29
+00:02:08,910 --> 00:02:15,180
+Don't, and I'll call this one create dash and user, and I'll inline the function.
+
+30
+00:02:15,720 --> 00:02:26,250
+Func Whv Response Sportswriter are as a pointer to a checkpoint request, and in there the first thing
+
+31
+00:02:26,250 --> 00:02:31,840
+I'll do is I'll create a variable you, which will be of type data dot user.
+
+32
+00:02:33,110 --> 00:02:34,890
+I'll just populate some information in there.
+
+33
+00:02:35,250 --> 00:02:41,370
+So I need first name and I'll make that my name and I need a last name, so I'll duplicate this.
+
+34
+00:02:43,320 --> 00:02:43,890
+Try that again.
+
+35
+00:02:44,640 --> 00:02:46,110
+Last name solver
+
+36
+00:02:49,440 --> 00:02:58,650
+and I need an email, so I'll say email me at here dot com and I need it to be active or not.
+
+37
+00:02:58,670 --> 00:03:04,830
+So I'll make it one to make this an active user and a password, and I'll just make that password.
+
+38
+00:03:05,790 --> 00:03:06,150
+OK.
+
+39
+00:03:07,540 --> 00:03:14,230
+So now that I've declared that I can actually do things like this, it will be the newly inserted ID
+
+40
+00:03:14,620 --> 00:03:17,110
+when we insert this into the database and check for an error.
+
+41
+00:03:18,190 --> 00:03:29,770
+And now it's as simple as calling a dot models, dot user users dot insert and I insert you.
+
+42
+00:03:30,670 --> 00:03:32,950
+And that should, in theory, insert it now.
+
+43
+00:03:32,950 --> 00:03:35,470
+If it doesn't, let's make sure we find out why.
+
+44
+00:03:36,040 --> 00:03:42,000
+If error is not equal to nil, so we might have mistakes in that code, we'll say any Dot app dot error
+
+45
+00:03:42,010 --> 00:03:47,710
+log print line the error and we'll just return.
+
+46
+00:03:48,160 --> 00:03:50,080
+So we'll get a blank screen, which is fine.
+
+47
+00:03:50,770 --> 00:03:55,810
+But if it worked, I should be able to call format dot f print separate f.
+
+48
+00:03:56,740 --> 00:03:59,400
+My format string will lead my W first.
+
+49
+00:03:59,410 --> 00:04:06,400
+My response writer and my format string will be percent de colon percent us and in there I'll put.
+
+50
+00:04:07,630 --> 00:04:09,100
+And I'll put in as well.
+
+51
+00:04:09,100 --> 00:04:11,080
+Say You dot first name.
+
+52
+00:04:11,920 --> 00:04:17,410
+OK, so that should print out the ID in my database and then my first name.
+
+53
+00:04:17,470 --> 00:04:18,620
+Trevor, in my case.
+
+54
+00:04:18,640 --> 00:04:19,000
+OK.
+
+55
+00:04:20,050 --> 00:04:25,300
+So before we do that, of course, we need to make sure that our database is running.
+
+56
+00:04:25,420 --> 00:04:30,550
+So in case it's not, I'll say Docker compose.
+
+57
+00:04:32,440 --> 00:04:35,470
+And that should start everything up for me and I could use my make file.
+
+58
+00:04:35,470 --> 00:04:39,400
+But this works as well, and I don't want it to run in the background because I don't want to try anything
+
+59
+00:04:39,400 --> 00:04:41,860
+until I know that it's actually running the database.
+
+60
+00:04:41,860 --> 00:04:42,250
+That is.
+
+61
+00:04:43,860 --> 00:04:49,770
+So that looks good, seems to be starting now, so I'll go to my database client postcode and I will
+
+62
+00:04:49,770 --> 00:04:51,300
+connect to Celebrity Stalker.
+
+63
+00:04:52,230 --> 00:04:53,940
+And it should connect and it did.
+
+64
+00:04:54,660 --> 00:05:01,470
+And if I look in the user's table, that should be empty and it is now open a new terminal window.
+
+65
+00:05:06,240 --> 00:05:09,060
+And I'll type may start to get my application going.
+
+66
+00:05:11,210 --> 00:05:13,340
+And we have an undefined format error.
+
+67
+00:05:15,110 --> 00:05:16,100
+Where is that?
+
+68
+00:05:17,180 --> 00:05:19,670
+All right, here, we didn't get an import for the format statement.
+
+69
+00:05:19,670 --> 00:05:20,510
+That's no big deal.
+
+70
+00:05:20,930 --> 00:05:24,560
+We'll just go import format FMD.
+
+71
+00:05:25,520 --> 00:05:26,330
+I do that all the time.
+
+72
+00:05:28,160 --> 00:05:30,320
+So now we'll try clearing the screen, make start.
+
+73
+00:05:36,420 --> 00:05:36,690
+OK.
+
+74
+00:05:36,750 --> 00:05:38,400
+So it started, so let's go to our web browser.
+
+75
+00:05:39,030 --> 00:05:42,570
+First of all, as make sure everything is still working by going to localhost four thousand.
+
+76
+00:05:42,800 --> 00:05:43,380
+And there it is.
+
+77
+00:05:43,980 --> 00:05:49,320
+Let's go to local who's 4000 slash create dash user and see if we got it right.
+
+78
+00:05:50,970 --> 00:05:57,390
+One and Trevor, let me go back to my database and look in the table user's table, so that would be
+
+79
+00:05:57,390 --> 00:05:59,670
+under post to go refresh.
+
+80
+00:06:00,540 --> 00:06:01,280
+And there it is.
+
+81
+00:06:01,320 --> 00:06:07,200
+I have successfully inserted a user, all right, in the next lecture, we'll get started testing all
+
+82
+00:06:07,200 --> 00:06:10,380
+of the functionality we've just added just to make sure it all works.

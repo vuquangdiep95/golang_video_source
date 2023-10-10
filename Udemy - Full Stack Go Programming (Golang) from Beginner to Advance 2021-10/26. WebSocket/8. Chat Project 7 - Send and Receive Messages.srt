@@ -1,0 +1,399 @@
+1
+00:00:11,610 --> 00:00:16,950
+Hello and welcome to the Gold Anchor Academy language course in the previous session.
+
+2
+00:00:17,400 --> 00:00:23,940
+We could define create IP function, and in this session we want to create another function.
+
+3
+00:00:24,960 --> 00:00:29,610
+The main metal in the client should be contains two functions.
+
+4
+00:00:30,240 --> 00:00:36,510
+First, the function for receiving message and second, the function for sending a message.
+
+5
+00:00:37,740 --> 00:00:46,140
+Now we go to implement the receive message function for do this create a new function name like receive
+
+6
+00:00:46,140 --> 00:00:46,710
+message.
+
+7
+00:00:47,010 --> 00:00:50,550
+So we right fine.
+
+8
+00:00:54,530 --> 00:00:55,430
+Receive
+
+9
+00:00:58,550 --> 00:00:59,300
+message.
+
+10
+00:01:03,670 --> 00:01:10,450
+This function, except it parameters, point of VIPs to get connection, so set the variable light connection
+
+11
+00:01:12,790 --> 00:01:16,330
+by the time point of that circuit connection.
+
+12
+00:01:20,340 --> 00:01:21,380
+That connects.
+
+13
+00:01:25,490 --> 00:01:31,730
+We use infinite loop, therefore our function is always ready to receive the message.
+
+14
+00:01:32,240 --> 00:01:34,010
+So right for
+
+15
+00:01:37,280 --> 00:01:45,350
+now, given to receive a message from client to do these views from Jason Cadec, Jason is a codec to
+
+16
+00:01:45,350 --> 00:01:49,790
+send or receive JSON data in a frame from events to get the conviction.
+
+17
+00:01:50,600 --> 00:01:57,860
+So from that, to get package calling Jason and invoking receive method, this method returns and it
+
+18
+00:01:57,860 --> 00:02:02,680
+also defined invariant and like of a roll calling equals.
+
+19
+00:02:03,640 --> 00:02:04,550
+We have two kids.
+
+20
+00:02:08,840 --> 00:02:09,590
+Jason?
+
+21
+00:02:13,230 --> 00:02:19,200
+Dont receive this method, accept two parameters.
+
+22
+00:02:19,500 --> 00:02:22,830
+First, the clinics in Seoul visit connection.
+
+23
+00:02:26,410 --> 00:02:34,000
+And another object is needed, a second parameter to be able to put the received data inside it after
+
+24
+00:02:34,000 --> 00:02:34,990
+the serializing.
+
+25
+00:02:35,410 --> 00:02:38,410
+So we are using in messages to object here.
+
+26
+00:02:38,470 --> 00:02:44,500
+Therefore, first define an object from messages throughout and pass it as pointer the function.
+
+27
+00:02:45,730 --> 00:02:58,450
+So define a variable like VAR message from messages that I've could package that message.
+
+28
+00:03:01,360 --> 00:03:07,000
+And set this very in a second argument for reserve function.
+
+29
+00:03:09,380 --> 00:03:18,730
+OK, now implements erode status, if at all not equals, Neal.
+
+30
+00:03:19,520 --> 00:03:38,600
+Lock the Fattore and set the message at all and receive state talent and said, I don't message if there
+
+31
+00:03:38,600 --> 00:03:39,320
+is an error.
+
+32
+00:03:39,350 --> 00:03:42,980
+The program should not be stopped and should continue to work.
+
+33
+00:03:42,990 --> 00:03:48,200
+So use continue command and go to the next line and continue.
+
+34
+00:03:51,310 --> 00:03:58,030
+And if there is no, it will print the message, so be right, if the
+
+35
+00:04:01,690 --> 00:04:13,000
+message is and said message got subject.
+
+36
+00:04:14,390 --> 00:04:18,320
+We were able to implement the receive message function.
+
+37
+00:04:19,160 --> 00:04:24,980
+Now we can the created function inside the main method as a separate go routine.
+
+38
+00:04:25,160 --> 00:04:27,290
+So go to main function.
+
+39
+00:04:32,380 --> 00:04:41,020
+And calling receive message as a good routine, but before you check every state, if they're not equals
+
+40
+00:04:41,020 --> 00:04:46,990
+mean, the log dots fatal error dot at all.
+
+41
+00:04:47,590 --> 00:04:56,980
+And now receive my state as the gold routine go routine receive message and that connection as argument
+
+42
+00:04:56,980 --> 00:04:58,740
+for connection.
+
+43
+00:04:59,530 --> 00:05:05,200
+So top of calling this off message function to make sure our connection is closed after this event is
+
+44
+00:05:05,200 --> 00:05:05,530
+done.
+
+45
+00:05:05,530 --> 00:05:08,800
+A close connection by the common deeper connection close.
+
+46
+00:05:11,160 --> 00:05:16,860
+So, right, defer connection that close.
+
+47
+00:05:18,300 --> 00:05:25,800
+Now we go to implement the send message for do these create a new function named like send message?
+
+48
+00:05:26,130 --> 00:05:38,070
+So go after to receive message promotion and create another function like fine send message.
+
+49
+00:05:40,590 --> 00:05:44,340
+This function, I accept the parameterized Paul introverts to get the connection.
+
+50
+00:05:44,970 --> 00:05:52,560
+So set a variable like connection by the time point of that connection.
+
+51
+00:05:59,200 --> 00:05:59,500
+OK.
+
+52
+00:06:01,720 --> 00:06:08,740
+To get the value from the standard input we use, the newest cannot function from both I or package
+
+53
+00:06:09,760 --> 00:06:11,350
+and create a scanner.
+
+54
+00:06:11,710 --> 00:06:15,280
+This function returns and munis cannot read from a reader.
+
+55
+00:06:15,310 --> 00:06:28,780
+So first, define a variable like a scanner scanner column e calls from both or package calling new
+
+56
+00:06:28,790 --> 00:06:31,090
+scanner function new scanner.
+
+57
+00:06:33,190 --> 00:06:42,070
+Set a standard input from always packaged as argument for the sponsor if the event is open fires pointing
+
+58
+00:06:42,070 --> 00:06:43,820
+to the standard input.
+
+59
+00:06:43,870 --> 00:06:51,940
+So the right OS got tested, I had to retain information in this scanner.
+
+60
+00:06:52,180 --> 00:07:00,430
+We need a for loop and this volume is activated when the user has sent information via input a standard,
+
+61
+00:07:00,640 --> 00:07:04,060
+and we do this by invoking the scan function.
+
+62
+00:07:04,810 --> 00:07:06,790
+So go to the next line.
+
+63
+00:07:10,530 --> 00:07:12,780
+Full scanner
+
+64
+00:07:15,810 --> 00:07:17,790
+calling a scan function.
+
+65
+00:07:22,380 --> 00:07:29,820
+If the user enters information inside based on their input, the program infers the full loop and this
+
+66
+00:07:29,820 --> 00:07:37,170
+can function is called and reads the information in the scanner and we get it scanner data by calling
+
+67
+00:07:37,200 --> 00:07:38,250
+text function.
+
+68
+00:07:38,490 --> 00:07:41,100
+So first, define the value of a like text
+
+69
+00:07:43,980 --> 00:07:45,040
+text column.
+
+70
+00:07:45,190 --> 00:07:50,820
+He equals scanner dart text.
+
+71
+00:07:54,010 --> 00:08:00,070
+Now we send the receive data inside that takes very able to the server via adjacent formats.
+
+72
+00:08:00,580 --> 00:08:10,150
+We do this by calling Send Metal France wicket package sent metal access to parameters first the connection.
+
+73
+00:08:10,180 --> 00:08:11,680
+Second is an object.
+
+74
+00:08:12,190 --> 00:08:16,360
+In this case, our argument is an object from messages struct.
+
+75
+00:08:17,050 --> 00:08:23,110
+So before cutting send function, we create the message variable and initialize the subject field of
+
+76
+00:08:23,110 --> 00:08:26,020
+message is struck by the text field value.
+
+77
+00:08:26,230 --> 00:08:28,960
+So we write message.
+
+78
+00:08:32,900 --> 00:08:35,060
+Calling equal socket.
+
+79
+00:08:37,060 --> 00:08:38,470
+Dot mrJ
+
+80
+00:08:41,470 --> 00:08:46,230
+and initialise subject by text Lalibela.
+
+81
+00:08:48,610 --> 00:08:52,990
+Oh, here we named Test, we changed it to text.
+
+82
+00:08:54,890 --> 00:09:04,280
+OK, now calling same function, this function returns and enter object, so we define an error value
+
+83
+00:09:04,420 --> 00:09:11,890
+in error column equals left sutured dot jason
+
+84
+00:09:14,380 --> 00:09:26,470
+dot 7th function and sip connection as a first argument connection and sip message a second argument
+
+85
+00:09:27,610 --> 00:09:28,330
+message.
+
+86
+00:09:30,130 --> 00:09:30,970
+Now check it out.
+
+87
+00:09:30,980 --> 00:09:36,910
+A status, if add or not, means display on the roof.
+
+88
+00:09:37,110 --> 00:09:37,780
+If be.
+
+89
+00:09:41,040 --> 00:09:48,570
+Error in send data and set error valid
+
+90
+00:09:51,630 --> 00:09:56,130
+if there is an error, the program should not be stopped and should continue to work.
+
+91
+00:09:56,140 --> 00:10:01,320
+So use continue command, go to the next line and continue.
+
+92
+00:10:04,470 --> 00:10:04,800
+OK.
+
+93
+00:10:06,180 --> 00:10:09,900
+We were able to implement the decent message function.
+
+94
+00:10:10,110 --> 00:10:13,770
+Now we called the created function inside the main metal.
+
+95
+00:10:14,490 --> 00:10:16,260
+So go to main method.
+
+96
+00:10:19,160 --> 00:10:28,990
+And right, the function send a message and that connection is argument for it.
+
+97
+00:10:31,430 --> 00:10:34,070
+Before that, they called Save the Project.
+
+98
+00:10:34,880 --> 00:10:41,870
+In this case, we could implement the client line in order not to prolong the time of decision.
+
+99
+00:10:41,990 --> 00:10:46,100
+We will finish it and we will continue the content in the next session.
+
+100
+00:10:46,250 --> 00:10:46,810
+Goodbye.

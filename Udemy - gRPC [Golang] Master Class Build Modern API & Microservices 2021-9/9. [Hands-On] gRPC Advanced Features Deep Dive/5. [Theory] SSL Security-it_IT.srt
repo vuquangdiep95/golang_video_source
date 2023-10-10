@@ -1,0 +1,368 @@
+1
+00:00:00,280 --> 00:00:03,780
+Benvenuti a questa lezione sulla crittografia SSL e GOPAC.
+
+2
+00:00:03,780 --> 00:00:10,130
+Quindi, in pratica in GOPAC tutte le chiamate quando si distribuisce un'app in produzione dovrebbero essere crittografate.
+
+3
+00:00:10,470 --> 00:00:13,720
+E questo è un valore predefinito anche per questo.
+
+4
+00:00:13,860 --> 00:00:21,000
+Pertanto GOPAC rispetta il fatto che per crittografare le chiamate è necessario generare certificati SSL perché SSL consente sostanzialmente la
+
+5
+00:00:21,000 --> 00:00:23,600
+sicurezza della comunicazione o la crittografia.
+
+6
+00:00:23,820 --> 00:00:28,800
+E per rispondere a loro tra i tuoi clienti e il tuo server assicurandoti che nessun router nel mezzo
+
+7
+00:00:29,040 --> 00:00:32,040
+possa eseguire un attacco e si chiami l'uomo nel mezzo dell'attacco.
+
+8
+00:00:32,310 --> 00:00:37,840
+Ma prima di arrivarci, voglio che tu capisca come funziona tutto questo se sai come funziona.
+
+9
+00:00:37,890 --> 00:00:39,460
+Puoi semplicemente saltare questa lezione.
+
+10
+00:00:39,510 --> 00:00:41,490
+Ma la cosa deve essere interessante per te.
+
+11
+00:00:41,640 --> 00:00:43,650
+Quindi, perché abbiamo bisogno anche di crittografia.
+
+12
+00:00:43,650 --> 00:00:45,640
+Qual è il grosso problema a riguardo.
+
+13
+00:00:45,720 --> 00:00:51,000
+Fondamentalmente quando comunichi su Internet i tuoi dati saranno visibili da tutti i server che trasferiscono
+
+14
+00:00:51,000 --> 00:00:52,050
+i tuoi pacchetti.
+
+15
+00:00:52,050 --> 00:00:56,260
+Quindi, ad esempio, dire di averti nei siti Web come i gadget DDP.
+
+16
+00:00:56,550 --> 00:00:59,880
+Adesso mandi il tuo sito web il tuo nome utente e la tua password.
+
+17
+00:01:00,000 --> 00:01:00,680
+OK.
+
+18
+00:01:01,050 --> 00:01:05,430
+In pratica qualsiasi router su Internet può intercettare quel nome utente e password.
+
+19
+00:01:05,490 --> 00:01:06,460
+E questo è molto brutto.
+
+20
+00:01:06,630 --> 00:01:07,140
+OK.
+
+21
+00:01:07,230 --> 00:01:10,810
+Questo è il motivo per cui non devi accedere al sito Web che è SCDP.
+
+22
+00:01:11,310 --> 00:01:13,420
+Quindi fondamentalmente è un testo semplice.
+
+23
+00:01:13,650 --> 00:01:17,700
+Ma ora quando i dati sono sensibili, cosa possiamo fare?
+
+24
+00:01:17,970 --> 00:01:21,930
+Bene, possiamo usare SSL per consentire ai clienti e cercare e strisciare i pacchetti.
+
+25
+00:01:21,930 --> 00:01:23,090
+Che aspetto ha?
+
+26
+00:01:23,160 --> 00:01:28,770
+Ora abbiamo SSL e abbiamo i nostri client Gypsy che comunicano con un server Jarkesy con
+
+27
+00:01:28,770 --> 00:01:33,500
+nome utente e password e per prima cosa cripteremo quel messaggio usando SSL.
+
+28
+00:01:33,510 --> 00:01:39,630
+Così ora questo messaggio diventa o messaggio ed è crittografato in modo che nessuno possa decrittografarlo praticamente tranne
+
+29
+00:01:39,720 --> 00:01:41,010
+il server RBC.
+
+30
+00:01:41,400 --> 00:01:44,590
+Quindi inviamo il messaggio crittografato direttamente al server GOP.
+
+31
+00:01:44,850 --> 00:01:50,190
+Lo riceve e poi decodifica SSL e trova ma a causa del nome e della password.
+
+32
+00:01:50,370 --> 00:01:55,720
+Quindi la crittografia è un concetto abbastanza semplice per capire che la sua implementazione è un po 'più complicata.
+
+33
+00:01:56,130 --> 00:02:02,190
+Quindi fondamentalmente un altro modo di SSL è che i server dei clan possono scambiare dati in modo sicuro ei router non
+
+34
+00:02:02,190 --> 00:02:03,990
+possono visualizzare il contenuto dei pacchetti.
+
+35
+00:02:04,020 --> 00:02:09,450
+Quindi, ora che stiamo trasferendo i pacchetti arancioni attraverso Internet, il router può vedere solo parole senza
+
+36
+00:02:09,570 --> 00:02:13,200
+senso e non può capire cosa significa perché non può decrittografarlo.
+
+37
+00:02:13,590 --> 00:02:15,410
+Quindi, come funziona?
+
+38
+00:02:15,420 --> 00:02:18,670
+Come viene impostato SSL e come funziona davvero.
+
+39
+00:02:19,110 --> 00:02:21,100
+Quindi dicci OK.
+
+40
+00:02:21,390 --> 00:02:29,240
+Il successore SSL, ma i due nomi sono effettivamente utilizzati allo stesso modo e quindi è utilizzato per crittografare le connessioni.
+
+41
+00:02:29,550 --> 00:02:32,310
+Quindi dì che hai un computer e parli con Google. com.
+
+42
+00:02:32,640 --> 00:02:36,810
+Quando ti connetti a google. com sarai connesso su SCDP s OK.
+
+43
+00:02:36,840 --> 00:02:38,370
+E questa è una serratura verde.
+
+44
+00:02:38,400 --> 00:02:41,010
+Quindi il mezzo è basato sul certificato SSL.
+
+45
+00:02:41,010 --> 00:02:44,380
+E quindi ci sono due modi per usare SSL e europaeus che puoi usare entrambi.
+
+46
+00:02:44,490 --> 00:02:49,440
+Il primo è quello con verifica che è la crittografia in cui il browser verifica il server
+
+47
+00:02:49,990 --> 00:02:54,260
+Web e l'altro modo è una sorta di verifica che richiede l'autenticazione SSL.
+
+48
+00:02:54,270 --> 00:02:57,110
+Quindi in questo corso vedremo solo la crittografia.
+
+49
+00:02:57,360 --> 00:03:00,090
+È fuori dalla portata di Jarkesy.
+
+50
+00:03:00,630 --> 00:03:02,540
+Quindi ora che aspetto ha questo set up.
+
+51
+00:03:02,580 --> 00:03:03,410
+OK.
+
+52
+00:03:03,660 --> 00:03:05,610
+Quindi ecco la configurazione attuale.
+
+53
+00:03:05,700 --> 00:03:08,510
+Abbiamo un client on o PC in un server GOP.
+
+54
+00:03:08,850 --> 00:03:17,190
+E il server GOP è ad esempio il tuo esempio di API che abbiamo prima bisogno di impostare i certificati.
+
+55
+00:03:17,190 --> 00:03:23,490
+Quindi per questo abbiamo bisogno di creare un'autorità di certificazione in modo che il ticket o 30 possa essere pubblico se si desidera
+
+56
+00:03:23,490 --> 00:03:24,430
+assegnare il pubblico.
+
+57
+00:03:24,550 --> 00:03:26,930
+Sei come il mio esempio di API.
+
+58
+00:03:27,260 --> 00:03:31,710
+Oppure puoi avere un'autorizzazione di ticket privata se ad esempio disponi di un sacco di
+
+59
+00:03:31,710 --> 00:03:36,130
+risorse interne o nel qual caso devi creare o mantenere tale autorità di certificazione.
+
+60
+00:03:36,150 --> 00:03:40,040
+Ora il server deve creare ciò che viene chiamato una chiave privata.
+
+61
+00:03:40,290 --> 00:03:40,970
+OK.
+
+62
+00:03:41,310 --> 00:03:43,990
+Usando la chiave privata genererà una sorta di richieste di ticket.
+
+63
+00:03:44,160 --> 00:03:48,980
+E fondamentalmente chiederà il tipo di autorità hey per favore firma la mia richiesta di certificato.
+
+64
+00:03:49,170 --> 00:03:55,110
+Voglio provare che io sono la mia API, ad esempio alcune delle autorità tipiche esaminano la richiesta e
+
+65
+00:03:55,110 --> 00:03:59,290
+dice OK, firmerò per te e restituirà i certificati di segno.
+
+66
+00:03:59,610 --> 00:04:04,150
+Quindi il server sul lato server per la configurazione abbiamo ricevuto il server CRT.
+
+67
+00:04:04,400 --> 00:04:06,910
+È il certificato che è stato firmato da questo ancora.
+
+68
+00:04:07,170 --> 00:04:12,270
+Quindi sul lato server dobbiamo avere una chiave privata e assegnare i certificati.
+
+69
+00:04:12,270 --> 00:04:12,980
+OK.
+
+70
+00:04:13,340 --> 00:04:17,850
+Ora sul lato client cosa dobbiamo avere quando si ha il certificato di
+
+71
+00:04:17,880 --> 00:04:24,290
+fiducia dall'autorità di certificazione per questo genere di cose che l'autorità di solito rilascia un certificato pubblico root della CA.
+
+72
+00:04:24,480 --> 00:04:24,760
+OK.
+
+73
+00:04:24,780 --> 00:04:30,360
+E la pubblicità che ottiene è ciò che gli utenti di Clinton si fidano dell'uso del set up per acquisire
+
+74
+00:04:30,360 --> 00:04:36,450
+il codice e così sulla ricerca si usano sia la chiave privata che i certificati dei segni e il clone per usare i
+
+75
+00:04:36,450 --> 00:04:37,320
+certificati di root.
+
+76
+00:04:37,530 --> 00:04:43,150
+E ora fondamentalmente il client e il server dovrebbero essere in grado di fare ciò che viene chiamato handshake SSL.
+
+77
+00:04:43,500 --> 00:04:48,260
+Quindi durante l'handshake il server invierà al client il segno in quanto è anche difficile.
+
+78
+00:04:48,510 --> 00:04:52,230
+I client Jersey lo verificheranno come una sorta di biglietto dal server.
+
+79
+00:04:52,560 --> 00:04:58,050
+E poi, una volta che saranno felici, saranno una comunicazione crittografata SSL sicura tra il client e
+
+80
+00:04:58,050 --> 00:04:58,900
+il server.
+
+81
+00:04:59,310 --> 00:05:03,370
+Quindi forse ti piace oh mio Dio, è così complicato.
+
+82
+00:05:03,440 --> 00:05:05,330
+Quindi cosa dobbiamo fare.
+
+83
+00:05:05,330 --> 00:05:11,370
+In realtà, configuriamo il server PM come parte del servizio e quest'anno si radicano e quindi genereremo tutto.
+
+84
+00:05:11,810 --> 00:05:15,500
+Ma l'attuale handshake SSL lo fa apposta per noi.
+
+85
+00:05:15,500 --> 00:05:17,200
+Quindi niente di cui preoccuparsi.
+
+86
+00:05:17,270 --> 00:05:20,580
+E la buona notizia è che se il set up è sbagliato le cose non funzioneranno.
+
+87
+00:05:20,630 --> 00:05:22,700
+Quindi se le cose funzionano il tuo set up è corretto.
+
+88
+00:05:22,820 --> 00:05:24,230
+Questo è l'accordo con la sicurezza.
+
+89
+00:05:24,500 --> 00:05:28,550
+Quindi voglio solo darti una chiara immagine per scattare una schermata se vuoi avere
+
+90
+00:05:28,550 --> 00:05:33,950
+una chiara idea di cosa è necessario e come funziona SSL nella prossima bambina per generare i certificati e
+
+91
+00:05:34,130 --> 00:05:37,010
+farli usare dal nostro server e i nostri clienti.
+
+92
+00:05:37,010 --> 00:05:38,010
+Quindi non ti aspetti.
+

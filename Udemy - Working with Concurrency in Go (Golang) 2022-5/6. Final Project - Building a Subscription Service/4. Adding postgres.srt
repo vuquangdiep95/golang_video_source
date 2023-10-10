@@ -1,0 +1,467 @@
+1
+00:00:01,020 --> 00:00:06,060
+So at this point we should have Docker installed in, we should have our Docker images up and running.
+
+2
+00:00:06,150 --> 00:00:13,200
+So if you recall in the last lecture I ran Docker, compose up a dash D and bring it down.
+
+3
+00:00:13,230 --> 00:00:17,160
+And I'm not going to do it right now and I'm sure you know this, but to bring it down, it's just Docker
+
+4
+00:00:17,160 --> 00:00:20,040
+Dash compose down and that will bring it down.
+
+5
+00:00:20,160 --> 00:00:21,240
+But I want it up right now.
+
+6
+00:00:22,140 --> 00:00:25,590
+So the next step is to set up the database.
+
+7
+00:00:25,710 --> 00:00:27,720
+So back over and mainboard go.
+
+8
+00:00:28,230 --> 00:00:30,030
+We want to connect to the database.
+
+9
+00:00:30,690 --> 00:00:35,980
+But before I do that, let's make sure that we can actually connect to the database using Beekeeper.
+
+10
+00:00:36,000 --> 00:00:43,650
+So I'll bring a beekeeper and I'll select a connection type of Postgres and all the information I need
+
+11
+00:00:43,650 --> 00:00:46,860
+to fill out here is right here in Docker Compose.
+
+12
+00:00:47,580 --> 00:00:52,980
+There's my user, there's my password, there's my database, and I'm connecting to the local host on
+
+13
+00:00:52,980 --> 00:00:53,700
+this port.
+
+14
+00:00:53,940 --> 00:00:54,930
+Five, four, three, two.
+
+15
+00:00:55,890 --> 00:00:58,710
+So I'll leave it as Postgres.
+
+16
+00:00:59,280 --> 00:01:01,350
+Local host five four, three, two.
+
+17
+00:01:01,500 --> 00:01:05,520
+User is postgres password is password.
+
+18
+00:01:07,110 --> 00:01:11,160
+My default database is named concurrency and I'll test my connection.
+
+19
+00:01:12,120 --> 00:01:13,830
+Okay, so we can connect.
+
+20
+00:01:13,830 --> 00:01:14,550
+I got connection.
+
+21
+00:01:14,550 --> 00:01:17,850
+Looks good down here and that's all I need to worry about right now for that.
+
+22
+00:01:19,140 --> 00:01:23,160
+So now let's go back to mean don't go and start connecting to the database.
+
+23
+00:01:24,310 --> 00:01:28,900
+Now I could write all the code right in my main function, but I think it would be cleaner to put it
+
+24
+00:01:28,900 --> 00:01:29,770
+in its own function.
+
+25
+00:01:29,770 --> 00:01:33,040
+So I'll refer to a function that doesn't exist yet in it.
+
+26
+00:01:33,070 --> 00:01:40,810
+DB Okay, then I'll come down here outside of the main function and create a new func called DB.
+
+27
+00:01:41,830 --> 00:01:47,380
+It takes no parameters and it's going to return a pointer to sequel.
+
+28
+00:01:47,680 --> 00:01:49,330
+DB like that.
+
+29
+00:01:49,780 --> 00:01:50,170
+Okay.
+
+30
+00:01:51,640 --> 00:01:57,520
+So this is a pretty simple function, but I'm going to have this function actually call another function
+
+31
+00:01:57,520 --> 00:02:01,780
+just so I can try to connect to the database repeatedly if necessary.
+
+32
+00:02:01,870 --> 00:02:02,230
+Okay.
+
+33
+00:02:02,710 --> 00:02:05,080
+Not necessary to do this, but I think it's a little cleaner.
+
+34
+00:02:05,140 --> 00:02:11,440
+So I'll declare a variable con and that comes from calling yet another function that doesn't exist yet
+
+35
+00:02:11,950 --> 00:02:13,150
+connect to.
+
+36
+00:02:13,270 --> 00:02:19,840
+DB Okay, and I'll check to see if it's succeeded by checking to see if con is nil.
+
+37
+00:02:20,110 --> 00:02:25,960
+If con is equal to nil, then we have something that we really can't resolve right now.
+
+38
+00:02:25,960 --> 00:02:33,280
+So I'll just logged out panic and I'll just say can't connect to database.
+
+39
+00:02:36,580 --> 00:02:36,940
+Okay.
+
+40
+00:02:37,030 --> 00:02:42,790
+And the actual connection finally will take place in a function called connect to DB.
+
+41
+00:02:44,560 --> 00:02:49,040
+It takes no parameters and it returns a pointer to sequel dot db.
+
+42
+00:02:49,960 --> 00:02:57,610
+Okay, now what I'm going to do is try to connect to the database some fixed number of times, and if
+
+43
+00:02:57,610 --> 00:03:00,910
+I can't do it after that many tries, then will just die.
+
+44
+00:03:01,070 --> 00:03:02,590
+Okay, so we'll set a variable.
+
+45
+00:03:02,590 --> 00:03:05,560
+Account's assigned the value of zero.
+
+46
+00:03:06,600 --> 00:03:11,640
+And then we'll connect to the database and I'll assume that I'm going to get my connection string as
+
+47
+00:03:11,640 --> 00:03:12,840
+an environment variable.
+
+48
+00:03:12,840 --> 00:03:15,360
+So I'll get my DSN my connection string.
+
+49
+00:03:15,840 --> 00:03:18,630
+It comes from The O.C. What's The O.C. package?
+
+50
+00:03:18,630 --> 00:03:19,770
+Right in the standard library.
+
+51
+00:03:19,890 --> 00:03:24,690
+We'll get an environment variable and I'll call that environment variable.
+
+52
+00:03:24,720 --> 00:03:33,210
+DSN So now I have my count set to zero, I have my connection string and I'll just start falling inside
+
+53
+00:03:33,210 --> 00:03:33,600
+of that.
+
+54
+00:03:33,900 --> 00:03:43,410
+I'll say connection and error come from calling open DB which doesn't exist yet, but it will in a minute.
+
+55
+00:03:43,620 --> 00:03:54,690
+DSN Okay, so let's go down here and write that open DB function func open DB and that takes DSN, which
+
+56
+00:03:54,690 --> 00:03:55,290
+is a string.
+
+57
+00:03:56,460 --> 00:03:58,020
+And this will return two things.
+
+58
+00:03:58,650 --> 00:04:00,990
+Hopefully it'll return a pointer to a sequel.
+
+59
+00:04:00,990 --> 00:04:04,230
+DB Our connection pool and potentially it returns an error.
+
+60
+00:04:05,670 --> 00:04:10,260
+Now this might seem like a lot of functions, but this is just a way for me to keep things really clean
+
+61
+00:04:10,260 --> 00:04:13,470
+and make sure that I have multiple attempts to connect to the database.
+
+62
+00:04:13,980 --> 00:04:14,970
+And this one's really simple.
+
+63
+00:04:15,540 --> 00:04:19,350
+So we're going to declare a variable DB while checking for an error.
+
+64
+00:04:19,350 --> 00:04:25,680
+When I call from the cycle package, which is part of the standard library open and I'm going to open
+
+65
+00:04:25,680 --> 00:04:29,460
+the type PG X and then work until I import some things at the top.
+
+66
+00:04:29,460 --> 00:04:32,010
+And we'll do that in a moment and I can add my connection.
+
+67
+00:04:32,010 --> 00:04:33,930
+String DSN okay.
+
+68
+00:04:34,950 --> 00:04:37,560
+If error is not equal to nil.
+
+69
+00:04:39,340 --> 00:04:41,830
+Then we'll return nil in the air.
+
+70
+00:04:43,390 --> 00:04:49,240
+And then just to be safe, we'll say error is now equal to if we get past that, we have a connection
+
+71
+00:04:49,600 --> 00:04:50,350
+connection pool.
+
+72
+00:04:51,040 --> 00:04:53,860
+But just to be safe, I'll say air equals v dot ping.
+
+73
+00:04:54,040 --> 00:04:55,240
+I'll try to ping the database.
+
+74
+00:04:55,600 --> 00:04:58,030
+And again, if we have an error, we'll return it.
+
+75
+00:04:58,030 --> 00:04:59,200
+So I'll copy this code.
+
+76
+00:05:01,550 --> 00:05:02,540
+And paste it here.
+
+77
+00:05:03,830 --> 00:05:06,980
+And if we get past that, we just return DB and nil.
+
+78
+00:05:08,030 --> 00:05:13,340
+And up here I see I misspelled DSN up here.
+
+79
+00:05:13,370 --> 00:05:19,640
+After I check for that connection will say if error is not equal to nil, then we don't have a connection
+
+80
+00:05:19,640 --> 00:05:19,820
+yet.
+
+81
+00:05:19,820 --> 00:05:21,160
+But I don't want to give up just yet.
+
+82
+00:05:21,170 --> 00:05:32,450
+So I'll just say logged off print line postgres not yet ready to die otherwise.
+
+83
+00:05:33,740 --> 00:05:35,060
+Else we didn't connect.
+
+84
+00:05:35,270 --> 00:05:43,190
+So we'll say logged out print line connected to database will return our connection.
+
+85
+00:05:43,880 --> 00:05:46,130
+Return connection.
+
+86
+00:05:50,210 --> 00:05:53,480
+Now if we have that error, we don't want to stop at this point.
+
+87
+00:05:53,510 --> 00:05:55,050
+We want to try a few more times.
+
+88
+00:05:55,050 --> 00:06:01,340
+So I'll say if counts is greater than ten, if count is bigger than ten, if we can't connect intense
+
+89
+00:06:01,370 --> 00:06:02,780
+tries, then something went wrong.
+
+90
+00:06:02,780 --> 00:06:03,860
+So we'll just return nil.
+
+91
+00:06:07,960 --> 00:06:15,520
+Otherwise we'll say logged out print line, backing off for 1/2,
+
+92
+00:06:18,370 --> 00:06:22,750
+timed out sleep and we're going to sleep one time timed out second.
+
+93
+00:06:23,020 --> 00:06:27,190
+10 seconds should be enough time to connect to the database and we'll just say continue.
+
+94
+00:06:29,350 --> 00:06:33,520
+So there there is the code that we can use to connect to the database.
+
+95
+00:06:34,060 --> 00:06:41,020
+Now, we still have some work to do because although if we look at the top of our file up here, it's
+
+96
+00:06:41,020 --> 00:06:42,400
+imported database sequel.
+
+97
+00:06:42,760 --> 00:06:45,040
+That's just the standard library cycle driver.
+
+98
+00:06:45,050 --> 00:06:50,890
+So we have to import a few more things and we'll use the blank identifier saying even though this package
+
+99
+00:06:50,890 --> 00:06:54,220
+isn't directly used in the code, we still need to have it.
+
+100
+00:06:54,640 --> 00:07:00,790
+So we'll put it in GitHub dot com slash jack c slash pkg com.
+
+101
+00:07:03,850 --> 00:07:11,740
+And again we'll use GitHub dot com slash check C slash pkg x slash v4.
+
+102
+00:07:12,400 --> 00:07:18,250
+Then we'll duplicate that line and we'll add slash STD Libbi at the end.
+
+103
+00:07:18,520 --> 00:07:18,910
+Okay.
+
+104
+00:07:20,540 --> 00:07:24,090
+So at this point, we can now try to connect to the database.
+
+105
+00:07:24,110 --> 00:07:26,420
+So we'll put a variable here like this.
+
+106
+00:07:26,570 --> 00:07:32,750
+DV is assigned a value of any DB and just to get it to compile are picking the database right here.
+
+107
+00:07:32,780 --> 00:07:35,090
+So db up ping.
+
+108
+00:07:35,690 --> 00:07:36,050
+Okay.
+
+109
+00:07:37,310 --> 00:07:42,740
+Now at this point, I should be able to open my terminal, my, my back end docker images are running
+
+110
+00:07:42,920 --> 00:07:44,360
+and I should be able to run this program.
+
+111
+00:07:44,360 --> 00:07:47,330
+But of course I need a DSN now.
+
+112
+00:07:47,330 --> 00:07:52,910
+We could, if we wanted to, actually just set an environment variable and run the program.
+
+113
+00:07:53,060 --> 00:07:59,270
+But I think this is the point where we should start using, make sure you install that way back in the
+
+114
+00:07:59,270 --> 00:08:01,850
+first section and it's going to make our lives a lot easier.
+
+115
+00:08:02,300 --> 00:08:06,920
+So in the next lecture we'll set up a Makefile and we'll try running this and see if we can actually
+
+116
+00:08:06,920 --> 00:08:07,970
+connect to the database.
+
+117
+00:08:08,630 --> 00:08:10,100
+All right, let's move on.

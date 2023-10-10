@@ -1,0 +1,211 @@
+1
+00:00:12,460 --> 00:00:18,550
+Hello and welcome to the Golang programming languages course in the previous session, we talked about
+
+2
+00:00:18,550 --> 00:00:20,920
+rest, API and indecision.
+
+3
+00:00:21,040 --> 00:00:23,350
+You want to talk about the other concept?
+
+4
+00:00:26,230 --> 00:00:28,090
+API endpoints.
+
+5
+00:00:29,440 --> 00:00:41,050
+This is what API endpoints look like, STPs, Colin, yes, let's get this w w w dot soft dot com slash
+
+6
+00:00:41,050 --> 00:00:50,170
+go lang S3's go ask the search question mark w equals http and type equals commerce.
+
+7
+00:00:51,160 --> 00:01:01,330
+This you it can be broken into this past that you can see in the below table protocol how the browser
+
+8
+00:01:01,540 --> 00:01:11,320
+or client should communicate with the server subdomain subdivision of the main domain domain.
+
+9
+00:01:12,160 --> 00:01:20,470
+Unique Marie-France to identify web site on the Internet Port Port on the server the application is
+
+10
+00:01:20,470 --> 00:01:25,000
+running on by default is eight, so most cases we don't see it.
+
+11
+00:01:25,330 --> 00:01:30,460
+Pat Pat parameters in the rest API represent resources.
+
+12
+00:01:30,970 --> 00:01:40,350
+Query queries are key value pairs of information used mostly for filtering purposes headers.
+
+13
+00:01:40,840 --> 00:01:48,550
+This was not part of the union itself, but Heather is a part of network components sent by the client
+
+14
+00:01:48,550 --> 00:01:52,000
+or the server based on who sends it.
+
+15
+00:01:52,180 --> 00:01:56,830
+There are two kinds of header request header and response header.
+
+16
+00:01:57,790 --> 00:02:05,560
+Body, you can add extra information to both the request to the server and the response from the server.
+
+17
+00:02:06,940 --> 00:02:13,840
+The response time, usually, Jason, or similar now a days, it's mostly Jason.
+
+18
+00:02:17,830 --> 00:02:28,700
+Rest API with go blank, if you're writing this API, why should you choose go like it's compiled?
+
+19
+00:02:28,750 --> 00:02:30,820
+So you get a small miners?
+
+20
+00:02:32,010 --> 00:02:32,790
+It's fast.
+
+21
+00:02:33,090 --> 00:02:40,410
+Slower dance C or C++ or ROS, but faster than most other programming languages.
+
+22
+00:02:41,010 --> 00:02:47,820
+It is simple to understand, and it works really well in the microservices world for a reason number
+
+23
+00:02:47,820 --> 00:02:54,090
+one in this training course to implement restful API in the go programming language.
+
+24
+00:02:54,450 --> 00:02:56,730
+We use the guerrilla marks tools.
+
+25
+00:02:57,600 --> 00:03:05,550
+Guerrilla Mass Guerrilla is a web toolkit for the go programming language, and guerrilla marks is a
+
+26
+00:03:05,550 --> 00:03:09,900
+powerful you are a Rotarian dispatcher package.
+
+27
+00:03:09,900 --> 00:03:17,850
+Guerrilla Mox implements the reckless rotor and dispatcher for matching incoming requests to their respective
+
+28
+00:03:17,850 --> 00:03:18,540
+handler.
+
+29
+00:03:19,330 --> 00:03:22,740
+HDTV package built in metals are grids.
+
+30
+00:03:23,340 --> 00:03:29,910
+We can ride a server with no external libraries, but knit in HTP package has limitations.
+
+31
+00:03:30,480 --> 00:03:37,860
+This is a very popular library that works very well in my package and helps us to feel less do something
+
+32
+00:03:37,860 --> 00:03:39,720
+that is a related API.
+
+33
+00:03:40,710 --> 00:03:45,300
+There is no direct way to handle pet parameters, just like Rick was metals.
+
+34
+00:03:45,420 --> 00:03:48,300
+We have to handle packing query parameters manner.
+
+35
+00:03:49,080 --> 00:03:57,720
+Gorilla Mods is a very popular library that works really well and helps us a few things that makes API
+
+36
+00:03:57,720 --> 00:03:58,620
+building a breeze.
+
+37
+00:03:58,950 --> 00:04:02,850
+The name Marks's stands for entity to request multiple search.
+
+38
+00:04:03,870 --> 00:04:09,950
+Installation Guerrilla Marks Ron, go get pointing to a package, for example, for in sol guerrilla
+
+39
+00:04:09,950 --> 00:04:10,310
+marks.
+
+40
+00:04:10,340 --> 00:04:12,560
+Run below command in turn.
+
+41
+00:04:16,200 --> 00:04:18,060
+The main feature for.
+
+42
+00:04:19,150 --> 00:04:26,530
+It implements the type of handler interface, so it is compatible with the standard S2 to be served,
+
+43
+00:04:26,530 --> 00:04:31,720
+mocks requests can be matched based on your host pad.
+
+44
+00:04:31,930 --> 00:04:40,350
+Pat Perfect's Eskimos hearing query values, estimates or using cost emitters you are of costs.
+
+45
+00:04:40,620 --> 00:04:46,540
+Pass in query values can have variables with an optional regular expression.
+
+46
+00:04:47,380 --> 00:04:55,510
+Registered users can be billed or reserved, which helps maintaining references to resources and roads
+
+47
+00:04:55,630 --> 00:04:57,910
+can be used as supporters.
+
+48
+00:04:58,360 --> 00:05:02,470
+This dirt roads are only test if the patterns road matches.
+
+49
+00:05:02,830 --> 00:05:09,550
+It is useful to define groups of roads that are common conditions like a horse, a passport, office
+
+50
+00:05:09,700 --> 00:05:11,980
+or other repeated attributes.
+
+51
+00:05:12,340 --> 00:05:18,610
+As a bonus, this optimize request matching in order not to prolong the time of decision.
+
+52
+00:05:18,760 --> 00:05:22,810
+We will finish it and we will continue the campaign in the next session.
+
+53
+00:05:23,020 --> 00:05:23,500
+Goodbye.

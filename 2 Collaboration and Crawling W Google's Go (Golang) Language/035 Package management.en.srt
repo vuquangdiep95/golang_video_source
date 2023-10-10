@@ -1,0 +1,563 @@
+1
+00:00:00,090 --> 00:00:07,360
+Vì vậy, bây giờ chúng ta đang ở trong video tiếp theo và thật tuyệt vời khi chúng ta chuyển từ video này sang video tiếp theo.
+
+2
+00:00:07,650 --> 00:00:11,910
+Và xin lỗi, chỉ cần cố gắng giữ cho nó vui vẻ quản lý gói.
+
+3
+00:00:11,910 --> 00:00:16,580
+Chúng ta sẽ nói về quản lý gói, vậy quản lý gói có ý nghĩa gì đối với bạn.
+
+4
+00:00:16,590 --> 00:00:21,600
+Làm thế nào bạn sẽ mô tả quản lý gói ai đó chưa bao giờ quen thuộc với khái niệm này.
+
+5
+00:00:21,790 --> 00:00:29,120
+Vì vậy, tôi sẽ xem xét việc quản lý gói như trong Bạn có một gói gồm một số mã có thể hữu ích trong
+
+6
+00:00:29,130 --> 00:00:36,450
+quản lý gói là cách bạn tổ chức cho thú cưng các gói khác nhau cần thiết để cấp cho bạn
+
+7
+00:00:36,450 --> 00:00:37,700
+chương trình.
+
+8
+00:00:37,710 --> 00:00:39,150
+Vì vậy, nếu bạn đang thực hiện.
+
+9
+00:00:39,150 --> 00:00:45,600
+Nếu bạn đang tạo một chương trình thì có thể bạn có các gói mã khác do người khác tạo.
+
+10
+00:00:45,600 --> 00:00:52,310
+Và làm thế nào để bạn kiểm tra tổ chức nó theo cách có thể lặp lại.
+
+11
+00:00:52,310 --> 00:00:56,480
+Bạn muốn đảm bảo rằng bạn luôn có thể nhận được cùng một gói mỗi lần.
+
+12
+00:00:56,950 --> 00:01:03,000
+Nhưng bạn cũng có thể không muốn sao chép mã vì điều đó chỉ có nghĩa là mã bổ sung mà bạn phải
+
+13
+00:01:03,000 --> 00:01:04,590
+theo dõi bản thân.
+
+14
+00:01:04,620 --> 00:01:10,950
+Bạn muốn có người ban đầu đã tạo mã cho gói để tiếp tục làm việc với nó mà không cần phải
+
+15
+00:01:11,460 --> 00:01:16,400
+về cơ bản, hãy sở hữu các gói khác này để tự làm.
+
+16
+00:01:16,560 --> 00:01:22,970
+Vì vậy, quản lý gói thường được gắn rất chặt chẽ với quản lý phụ thuộc.
+
+17
+00:01:22,970 --> 00:01:29,910
+Đó là mã của bạn cần gì để chạy trong các gói khác và cách bạn quản lý tổ chức đó
+
+18
+00:01:29,910 --> 00:01:37,710
+Tôi thích sự khác biệt mà bạn vừa thực hiện giữa các gói và phần phụ thuộc bởi vì có một sự khác biệt tinh tế
+
+19
+00:01:37,710 --> 00:01:38,910
+phân biệt ở đó.
+
+20
+00:01:39,210 --> 00:01:49,950
+Và vì vậy các gói như ban đầu khi mọi người bắt đầu viết phần mềm, họ chỉ có một tài liệu lớn
+
+21
+00:01:49,980 --> 00:01:54,060
+với mã và có các câu lệnh và điều đó thực sự khó khăn.
+
+22
+00:01:54,220 --> 00:01:58,680
+Và nó đã trở thành một trong những cách được mô tả giống như mã spaghetti.
+
+23
+00:01:58,680 --> 00:02:04,800
+Và do đó, một trong những chủ đề lớn trong sự phát triển của công nghệ phần mềm và thiết kế phần mềm là
+
+24
+00:02:04,800 --> 00:02:11,190
+mã tăng mô-đun và vì vậy bạn mô-đun hóa mã ize thay vì chỉ có một tệp lớn với một loạt
+
+25
+00:02:11,190 --> 00:02:18,150
+mã mà bạn biết đó là một tệp và có rất nhiều mã bạn chia mã đó thành nhiều phần.
+
+26
+00:02:18,150 --> 00:02:23,100
+Và vì vậy, chúng tôi chia mã thành nhiều phần và những phần đó có thể là một hàm.
+
+27
+00:02:23,100 --> 00:02:28,450
+Vì vậy, đây là một hàm mà bạn biết có thể lấy văn bản và biến nó thành chữ in hoa.
+
+28
+00:02:28,590 --> 00:02:33,960
+Và đó là một đoạn mã hoặc có thể có một hoặc nhiều đoạn mã.
+
+29
+00:02:33,990 --> 00:02:39,780
+Bạn biết một phần khác mà chúng ta có thể có là biến mọi thứ liên quan đến làm việc với chuỗi thành như
+
+30
+00:02:39,870 --> 00:02:41,330
+một gói lớn.
+
+31
+00:02:41,490 --> 00:02:43,560
+Và tên đó có thể được gọi là một gói.
+
+32
+00:02:43,560 --> 00:02:44,790
+Nó có thể được gọi là một mô-đun.
+
+33
+00:02:44,790 --> 00:02:47,310
+Nó có thể được gọi là một thư viện.
+
+34
+00:02:47,310 --> 00:02:52,060
+Tên đó giống như đây là tập hợp các mã có liên quan với nhau.
+
+35
+00:02:52,080 --> 00:02:57,900
+Và như vậy việc đầu tiên chỉ cần hiểu gói từ đó là bạn đã biết hoặc hay có thể gọi là
+
+36
+00:02:57,900 --> 00:03:03,660
+mô-đun hoặc được gọi là thư viện, đó chỉ là một loạt các loại mã được gói lại với nhau có thể hữu ích.
+
+37
+00:03:03,660 --> 00:03:09,690
+Và thông thường nếu nó được tổ chức tốt xung quanh một chủ đề nào đó, một mục đích nào đó thì một
+
+38
+00:03:09,690 --> 00:03:16,950
+đóng gói một thư viện một mô-đun để làm việc với các chuỗi một gói một mô-đun một thư viện để làm việc với in ấn
+
+39
+00:03:16,980 --> 00:03:18,430
+bất kể nó có thể là gì.
+
+40
+00:03:18,480 --> 00:03:20,370
+Và đó là gói.
+
+41
+00:03:20,370 --> 00:03:25,440
+Sau đó, khi bạn tạo phần mềm khi bạn tạo phần mềm, bạn có thể lấy phần mềm của mình và chia nhỏ nó
+
+42
+00:03:25,440 --> 00:03:26,650
+vào các gói này.
+
+43
+00:03:26,730 --> 00:03:31,260
+Vì vậy, bạn có các gói khác nhau hoạt động cùng nhau để thực hiện những gì bạn muốn phần mềm của mình thực hiện.
+
+44
+00:03:31,380 --> 00:03:36,570
+Và thay vì tự mình viết tất cả những gói nhỏ đó, bạn có thể ra ngoài và tìm ai đó đã viết
+
+45
+00:03:36,570 --> 00:03:41,340
+một đoạn mã cho bạn, họ đã có một số gói làm được điều gì đó và sau đó bạn có thể mang theo
+
+46
+00:03:41,340 --> 00:03:45,420
+mã đó vào dự án phần mềm của bạn và sử dụng nó.
+
+47
+00:03:45,540 --> 00:03:51,680
+Cấp phép và mọi thứ cho phép và do đó mã của bạn trở nên phụ thuộc vào tất cả các gói này.
+
+48
+00:03:51,780 --> 00:03:58,980
+Chúng là những phần phụ thuộc mà dự án phần mềm của bạn phụ thuộc có những phần phụ thuộc này phụ thuộc vào những phần phụ thuộc này
+
+49
+00:03:58,980 --> 00:04:02,660
+các gói các gói bạn đã viết các gói người khác đã viết.
+
+50
+00:04:03,060 --> 00:04:09,470
+Và bây giờ điều gì sẽ xảy ra nếu bạn biết gói mà người khác đã viết, họ nâng cấp gói đó để họ thực hiện một số thay đổi.
+
+51
+00:04:09,470 --> 00:04:12,540
+Xin lỗi, tôi cứ đưa tay ra trước mặt bạn để chứng minh.
+
+52
+00:04:12,540 --> 00:04:13,220
+Họ nâng cấp nó.
+
+53
+00:04:13,230 --> 00:04:18,360
+Vì vậy, đó là sự hiểu biết của tôi về các gói và phần phụ thuộc, bạn có bất kỳ thứ gì mà bạn sẽ thêm vào không
+
+54
+00:04:18,360 --> 00:04:20,200
+cái đó.
+
+55
+00:04:20,950 --> 00:04:21,790
+Lấy làm tiếc.
+
+56
+00:04:21,840 --> 00:04:25,310
+Hai gói thư viện mô-đun.
+
+57
+00:04:25,360 --> 00:04:32,430
+Khái niệm của họ có nghĩa giống nhau nhưng các ngôn ngữ khác nhau có thể sử dụng các từ riêng lẻ để cụ thể hơn
+
+58
+00:04:32,430 --> 00:04:33,790
+các cuộc họp chi tiết.
+
+59
+00:04:33,870 --> 00:04:37,490
+Vì vậy, go thực sự có sự khác biệt giữa gói và mô-đun.
+
+60
+00:04:37,500 --> 00:04:37,920
+Cảm ơn.
+
+61
+00:04:37,920 --> 00:04:41,010
+Mặc dù nói chung khái niệm của họ là như nhau.
+
+62
+00:04:41,440 --> 00:04:41,640
+Vâng.
+
+63
+00:04:41,730 --> 00:04:42,180
+Cảm ơn.
+
+64
+00:04:43,310 --> 00:04:43,620
+Vâng.
+
+65
+00:04:43,660 --> 00:04:46,550
+Vì vậy, những từ đó đều khá giống nhau và có thể hoán đổi cho nhau.
+
+66
+00:04:46,710 --> 00:04:52,650
+Và bởi vì điều đó một lần nữa thay đổi phác thảo của chúng tôi ở đây và loại bỏ các mô-đun từ những thế giới này có cùng
+
+67
+00:04:52,650 --> 00:05:00,300
+ý nghĩa và rời khỏi thư viện gói và mã của người khác nhóm mã của người khác của riêng bạn
+
+68
+00:05:00,330 --> 00:05:04,480
+nhóm mã của người khác và nhóm mã của riêng bạn.
+
+69
+00:05:04,500 --> 00:05:09,610
+Tôi nghĩ rằng tôi sẽ thêm chúng vào nhóm mã của riêng bạn.
+
+70
+00:05:09,810 --> 00:05:14,570
+Chúng tôi muốn nói gì khác về các gói.
+
+71
+00:05:14,570 --> 00:05:17,000
+Bất cứ điều gì khác để nói về quản lý gói.
+
+72
+00:05:17,000 --> 00:05:19,850
+Tôi có một số thứ cần đọc trước khi bắt đầu đọc nó.
+
+73
+00:05:19,890 --> 00:05:21,650
+Không đặc biệt.
+
+74
+00:05:21,650 --> 00:05:27,800
+Vì vậy, điều này xảy ra nếu bạn truy cập vào thiết bị đầu cuối của mình và nhập go help rồi nhập các mô-đun bởi vì
+
+75
+00:05:27,800 --> 00:05:34,100
+chúng ta sẽ tìm hiểu về các mô-đun, đây là tài liệu về cách cuộn qua các lệnh của tôi
+
+76
+00:05:35,270 --> 00:05:40,670
+tài liệu về các mô-đun và vì vậy đây là một nguồn tài liệu cho các mô-đun và xem xét các tài liệu khác
+
+77
+00:05:40,670 --> 00:05:43,630
+nguồn khi chúng tôi đi qua những gì chúng tôi đã vạch ra ở đây cho bạn.
+
+78
+00:05:43,760 --> 00:05:49,370
+Nhưng đây là một mô tả về nó mà tôi đặt ở đây mà tôi thực sự thích mô tả này.
+
+79
+00:05:49,370 --> 00:05:53,480
+Vì vậy, một mô-đun là một tập hợp các gói Go.
+
+80
+00:05:53,510 --> 00:06:00,200
+Vì vậy, có sự khác biệt đó Daniel chỉ làm cho các mô-đun là đơn vị trao đổi mã nguồn và
+
+81
+00:06:00,200 --> 00:06:01,160
+phiên bản.
+
+82
+00:06:01,160 --> 00:06:06,920
+Vì vậy, trao đổi có nghĩa là đây là mã có thể là cách tôi giải thích được sử dụng giữa các dự án
+
+83
+00:06:06,920 --> 00:06:08,150
+hoặc giữa mọi người với nhau.
+
+84
+00:06:08,150 --> 00:06:13,180
+Nó có thể được sử dụng thay thế cho nhau và việc tạo phiên bản giống như mã.
+
+85
+00:06:13,190 --> 00:06:18,320
+Chúng tôi sẽ có các phiên bản khác nhau mà bạn sử dụng lệnh go có hỗ trợ trực tiếp để làm việc với các mô-đun
+
+86
+00:06:18,320 --> 00:06:24,890
+bao gồm ghi lại và giải quyết các phụ thuộc trên các mô-đun khác, các mô-đun thay thế đường đi cũ dựa trên
+
+87
+00:06:24,890 --> 00:06:30,110
+cách tiếp cận chỉ định tệp nguồn nào được sử dụng trong một bản dựng được xây dựng nhất định và đường dẫn đi vẫn hoạt động như
+
+88
+00:06:30,110 --> 00:06:32,410
+chúng ta đã thảo luận trong video trước.
+
+89
+00:06:32,410 --> 00:06:38,030
+Có một lưu ý thực sự quan trọng ở đây mà tôi nghĩ là rất hay và có một bài báo đã viết
+
+90
+00:06:38,030 --> 00:06:43,380
+của Rusk Cox và bài viết này được gọi là vấn đề phụ thuộc phần mềm của chúng tôi.
+
+91
+00:06:43,460 --> 00:06:48,530
+Và do đó, một trong những điều chính thực sự nổi bật đối với tôi từ sự sụt giảm đáng tiếc liên quan đến đây
+
+92
+00:06:48,530 --> 00:06:54,320
+là bất cứ lúc nào bạn đang sử dụng mã của người khác, bạn sẽ đưa ai đó viết mã vào dự án phần mềm của bạn
+
+93
+00:06:54,740 --> 00:07:00,170
+và bạn Điều đó giống như đưa ai đó vào nhà của bạn, bạn cần cảm thấy thoải mái với con người của mình
+
+94
+00:07:00,170 --> 00:07:07,460
+mời vào một nơi cần có ý thức bảo mật và để bạn biết tính chính xác của mã của họ
+
+95
+00:07:07,490 --> 00:07:12,710
+các vấn đề bảo mật xung quanh việc sử dụng mã của người khác và sau đó là các vấn đề về cấp phép là một số
+
+96
+00:07:12,710 --> 00:07:17,300
+các vấn đề bạn muốn nghĩ đến khi sử dụng mã của bất kỳ ai hoặc bất kỳ mã nào của người khác.
+
+97
+00:07:17,300 --> 00:07:23,450
+Điều này áp dụng cho tất cả các phụ thuộc, không chỉ các mô-đun đi mà còn là điều đáng suy nghĩ.
+
+98
+00:07:23,600 --> 00:07:29,470
+Và trong video trước, chúng tôi đã đề cập hoặc đề cập ngắn gọn về trình quản lý gói nút.
+
+99
+00:07:29,630 --> 00:07:37,820
+Vì vậy, NPM của trình quản lý gói nút dành cho nút nút javascript dành cho cách các gói được quản lý quản lý với
+
+100
+00:07:37,820 --> 00:07:42,020
+Nút JavaScript và với NPM, có câu chuyện về phần đệm bên trái.
+
+101
+00:07:42,080 --> 00:07:43,190
+Vì vậy, những gì đã xảy ra với điều đó.
+
+102
+00:07:43,250 --> 00:07:45,380
+Chúng tôi đã không chia sẻ toàn bộ câu chuyện đó.
+
+103
+00:07:45,410 --> 00:07:51,430
+Ai đó đã tạo ra phòng thí nghiệm này có ý tưởng này, có một chức năng bàn phím bên trái, nó rất nhỏ.
+
+104
+00:07:51,430 --> 00:07:56,460
+Tôi nghĩ rằng nó chỉ giống như năm dòng mã, nó là một gói rất nhỏ, là một chức năng duy nhất trong
+
+105
+00:07:56,460 --> 00:08:04,050
+nó sẽ đệm Pad có khoảng trống ở bên trái để viết một dòng văn bản.
+
+106
+00:08:05,420 --> 00:08:10,580
+Nó là một phần phụ thuộc rất nhỏ nhưng nó được sử dụng bởi các phần phụ thuộc khác.
+
+107
+00:08:10,580 --> 00:08:14,780
+Gói này, một số gói khác sẽ phụ thuộc vào phần đệm bên trái và trong một số gói khác sẽ phụ thuộc vào
+
+108
+00:08:14,780 --> 00:08:16,720
+điều đó và trong một số gói khác phụ thuộc vào điều đó.
+
+109
+00:08:17,090 --> 00:08:23,360
+Và sau đó, bản thân bạn có thể chưa bao giờ thực sự sử dụng bàn phím bên trái trong gói của mình nhưng bạn có thể sử dụng thứ gì đó
+
+110
+00:08:23,360 --> 00:08:27,070
+other mà sau đó phụ thuộc gián tiếp vào phần đệm bên trái.
+
+111
+00:08:27,200 --> 00:08:34,700
+Và vì vậy, tại một số thời điểm, người tạo ra bàn phím bên trái đã gặp một số vấn đề và vì vậy anh ấy đột ngột rút tất cả mã này đi
+
+112
+00:08:35,330 --> 00:08:45,290
+toàn bộ vũ trụ gói nút về cơ bản đều sụp đổ vì phần đệm bên trái là một phần phụ thuộc cốt lõi sâu sắc như vậy
+
+113
+00:08:45,290 --> 00:08:52,130
+đối với rất nhiều gói khác, về cơ bản, toàn bộ chuỗi phụ thuộc là một tỷ lệ rất lớn
+
+114
+00:08:52,250 --> 00:08:57,980
+trong số tất cả các gói gần như chết vì chúng không thể đến được phần đệm bên trái.
+
+115
+00:08:58,670 --> 00:09:06,410
+Và do đó, đã có một sự hoảng loạn khá lớn cho đến khi cuối cùng ai đó đã có một bản sao cục bộ của left pad và tải lên lại
+
+116
+00:09:06,410 --> 00:09:12,590
+bàn phím bên trái và ghi chú NPM mọi người có thể buộc nó trở lại vào cùng một vị trí mà tất cả các phần phụ thuộc khác
+
+117
+00:09:12,590 --> 00:09:13,820
+có thể tìm thấy nó.
+
+118
+00:09:14,030 --> 00:09:20,930
+Và vì vậy, nó chỉ là một điều quan trọng bởi vì tất cả các gói này phụ thuộc vào bàn phím bên trái và người tạo
+
+119
+00:09:21,020 --> 00:09:27,540
+miếng đệm bên trái chỉ cần kéo lên có thể và sau đó là một trong những thứ gọn gàng để chúng tôi cũng
+
+120
+00:09:27,540 --> 00:09:29,690
+sẽ nói về sự phụ thuộc trực tiếp và gián tiếp.
+
+121
+00:09:29,700 --> 00:09:35,310
+Vì vậy, bạn có thể có sự phụ thuộc trực tiếp tùy thuộc vào đoạn mã này nhưng đoạn mã đó
+
+122
+00:09:35,340 --> 00:09:41,280
+gói mà bạn đang sử dụng cũng có thể có các phụ thuộc của riêng bạn, sau đó trở thành các phụ thuộc gián tiếp
+
+123
+00:09:41,280 --> 00:09:42,420
+cho dự án của bạn.
+
+124
+00:09:42,450 --> 00:09:47,940
+Và giống như bàn phím bên trái, sự phụ thuộc gián tiếp của nhiều người đã biến mất và sau đó tất cả các dự án này
+
+125
+00:09:47,940 --> 00:09:49,920
+vừa ngừng hoạt động.
+
+126
+00:09:49,920 --> 00:09:53,280
+Làm thế nào để đi đi có một cách để đi xung quanh đó.
+
+127
+00:09:53,280 --> 00:09:53,590
+Phải.
+
+128
+00:09:53,630 --> 00:10:01,500
+Và phần nào vẫn còn sự phụ thuộc trực tiếp và gián tiếp và như vậy sẽ có một proxy để thử
+
+129
+00:10:01,500 --> 00:10:05,130
+để ngăn các sự cố biến mất với các gói được đóng gói.
+
+130
+00:10:05,130 --> 00:10:13,060
+Chắc chắn là có những bản sao mã của loại mã gốc biến mất.
+
+131
+00:10:13,070 --> 00:10:16,290
+Và ở đây nó phụ thuộc vào nó vẫn có thể truy cập vào một bản sao của nó.
+
+132
+00:10:16,710 --> 00:10:17,000
+Vâng.
+
+133
+00:10:17,040 --> 00:10:18,870
+Vì vậy, đó là tốt đẹp.
+
+134
+00:10:19,150 --> 00:10:23,850
+Và điều cuối cùng chúng tôi có ở đây trong video này là một lưu ý vì các mô-đun thường là một đối với một repo
+
+135
+00:10:23,880 --> 00:10:27,450
+rằng có nhiều cách để đưa nhiều mô-đun vào một repo.
+
+136
+00:10:27,450 --> 00:10:32,070
+Vì vậy, thông thường bạn có một repo ở đâu đó và sau đó bạn sẽ trở thành một mô-đun.
+
+137
+00:10:32,100 --> 00:10:33,760
+Vì vậy, đó sẽ có thể truy cập được.
+
+138
+00:10:33,760 --> 00:10:35,490
+Bạn có bất cứ điều gì bạn muốn nói về điều đó.
+
+139
+00:10:35,850 --> 00:10:36,660
+KHÔNG.
+
+140
+00:10:36,660 --> 00:10:38,010
+Được rồi tuyệt vời.
+
+141
+00:10:38,010 --> 00:10:40,770
+Vì vậy, đó là một chút về quản lý gói.

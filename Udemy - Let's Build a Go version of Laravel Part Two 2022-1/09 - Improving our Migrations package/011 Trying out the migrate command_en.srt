@@ -1,0 +1,160 @@
+1
+00:00:01,140 --> 00:00:02,250
+So let's give this a try.
+
+2
+00:00:02,580 --> 00:00:08,940
+And right now, I have my darker images is running, my Dr. Campos is running up, so I'm able to connect
+
+3
+00:00:08,940 --> 00:00:12,930
+to my celebrity's database and I am connected right here, as you can see.
+
+4
+00:00:13,740 --> 00:00:18,970
+So this is my favorite Postgres client, and I'm looking at the celebrity's database and it has no tables.
+
+5
+00:00:19,020 --> 00:00:22,400
+It's completely empty, but it exists and it's running and that's critical.
+
+6
+00:00:22,410 --> 00:00:23,910
+Or what I'm doing next won't work.
+
+7
+00:00:24,120 --> 00:00:29,640
+So let's go back to my I.D. and the first thing I have to do, obviously is in the celebrity folder
+
+8
+00:00:29,640 --> 00:00:31,290
+on the command line in terminal.
+
+9
+00:00:31,620 --> 00:00:37,830
+I need to run, make, build, underscore Seelye, to build a new version of the executable and put
+
+10
+00:00:37,830 --> 00:00:39,060
+it in my app folder.
+
+11
+00:00:39,660 --> 00:00:43,110
+Then I switch over to my other tab, where I'm in the My App folder.
+
+12
+00:00:43,200 --> 00:00:48,330
+And let's make a migration so that celebrities make migration.
+
+13
+00:00:48,390 --> 00:00:52,080
+And I'll call it test, OK, and I should make these migrations up and down.
+
+14
+00:00:52,650 --> 00:00:59,430
+And in my group, my migrations folder, I now have an app migration, and when I run my migrate command,
+
+15
+00:00:59,430 --> 00:01:02,690
+it should create a table named some table with two columns.
+
+16
+00:01:02,700 --> 00:01:06,000
+Well, it'll have more than two, but it will have it in some column, at least.
+
+17
+00:01:06,270 --> 00:01:09,120
+So let's try that celebrities migrate.
+
+18
+00:01:12,270 --> 00:01:13,180
+Well, that's encouraging.
+
+19
+00:01:13,230 --> 00:01:18,210
+It seemed to run, so let's switch to our database client and refresh this.
+
+20
+00:01:18,540 --> 00:01:22,680
+And there is the schema migration tables, which is automatically created by pop.
+
+21
+00:01:23,100 --> 00:01:24,150
+And here's some cable.
+
+22
+00:01:24,210 --> 00:01:29,760
+Now, if I look at it, it has the ID and the some call up, some column color, which is really hard
+
+23
+00:01:29,760 --> 00:01:34,320
+to say, and it automatically adds the created and updated out columns as well.
+
+24
+00:01:34,500 --> 00:01:34,920
+Perfect.
+
+25
+00:01:34,980 --> 00:01:35,730
+So let's go back.
+
+26
+00:01:35,910 --> 00:01:42,180
+So we're not looking at the table and I'll try migrating down that celebrities migrate down.
+
+27
+00:01:43,950 --> 00:01:44,980
+And that seemed to work.
+
+28
+00:01:45,000 --> 00:01:49,880
+So let's go back and look at our database refresh, and I should still have this schema migration table,
+
+29
+00:01:49,890 --> 00:01:51,270
+but this one should be gone.
+
+30
+00:01:52,200 --> 00:01:54,600
+And it is, so let's migrate back up again.
+
+31
+00:01:58,090 --> 00:02:00,690
+And now it should be back there when I come back here.
+
+32
+00:02:00,840 --> 00:02:02,380
+I should see that some table.
+
+33
+00:02:02,400 --> 00:02:02,850
+I do.
+
+34
+00:02:04,420 --> 00:02:06,880
+And let's try that.
+
+35
+00:02:07,230 --> 00:02:10,289
+Celebrities migrate reset.
+
+36
+00:02:13,390 --> 00:02:19,210
+And everything should be back where it was, we should have reset our database in effect, and it's
+
+37
+00:02:19,210 --> 00:02:19,840
+perfect.
+
+38
+00:02:20,080 --> 00:02:23,320
+I accidentally open the catalog, but that all seems to work really well.
+
+39
+00:02:23,890 --> 00:02:29,710
+So time to move on and just to make sure that other things like make us continue to work the way they're
+
+40
+00:02:29,710 --> 00:02:32,650
+supposed to and we'll get started on that in the next election.
+

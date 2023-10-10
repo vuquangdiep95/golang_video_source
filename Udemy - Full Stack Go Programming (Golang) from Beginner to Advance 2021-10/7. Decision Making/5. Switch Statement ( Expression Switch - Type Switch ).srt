@@ -1,0 +1,339 @@
+1
+00:00:13,380 --> 00:00:19,500
+Hello and welcome to go dang programming language course in that part of your session, we talked about
+
+2
+00:00:19,500 --> 00:00:24,300
+Eve as if else statement and indecision.
+
+3
+00:00:24,330 --> 00:00:27,810
+We want to talk about the author's decision making consent.
+
+4
+00:00:31,470 --> 00:00:37,970
+So it's a statement as such, a statement is a multiday branch statement.
+
+5
+00:00:38,750 --> 00:00:46,040
+It provides an efficient way to transfer the execution to different parts of the code based on the value
+
+6
+00:00:46,040 --> 00:00:56,780
+also called case of the expression GO language support two types of seizure statements first, expressions
+
+7
+00:00:56,780 --> 00:01:06,500
+to each and second type such expressions, which is similar to such a statement in C or C++ or Java
+
+8
+00:01:06,500 --> 00:01:07,100
+language.
+
+9
+00:01:07,550 --> 00:01:14,870
+It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+10
+00:01:15,680 --> 00:01:17,720
+Now you can see the syntax.
+
+11
+00:01:19,160 --> 00:01:23,600
+Let's go to this school and illustrate how to use such a statement.
+
+12
+00:01:30,890 --> 00:01:37,640
+In this example, we want to assign a number to each day of the week and implement it through the expression
+
+13
+00:01:37,640 --> 00:01:38,150
+search.
+
+14
+00:01:38,720 --> 00:01:41,690
+First, define a variable like today.
+
+15
+00:01:41,900 --> 00:01:48,200
+So we write that today by the tight end and initialize it by two.
+
+16
+00:01:49,430 --> 00:01:52,490
+Now write the switch case on the two day variable.
+
+17
+00:01:52,670 --> 00:02:00,860
+So we write to each week and close Kelly races and define Chase.
+
+18
+00:02:01,160 --> 00:02:04,550
+For example, for the first case, we assign one menu for two.
+
+19
+00:02:04,550 --> 00:02:05,270
+They vary a bit.
+
+20
+00:02:06,590 --> 00:02:12,740
+So we write Chase today equal equal one column.
+
+21
+00:02:13,800 --> 00:02:17,110
+And in this case, it is a statement for this case, for example.
+
+22
+00:02:17,130 --> 00:02:21,930
+AFP two day is Monday.
+
+23
+00:02:23,250 --> 00:02:29,520
+Go to the next line and define and other cases, for example, in chase today.
+
+24
+00:02:30,540 --> 00:02:33,780
+Equal equals to Colin.
+
+25
+00:02:33,780 --> 00:02:34,920
+Go to the next line.
+
+26
+00:02:34,920 --> 00:02:36,590
+And so their statement FP.
+
+27
+00:02:37,610 --> 00:02:40,640
+Tuesday is Tuesday.
+
+28
+00:02:43,070 --> 00:02:44,360
+Go to the next line.
+
+29
+00:02:44,460 --> 00:02:45,750
+Define another case.
+
+30
+00:02:45,900 --> 00:02:47,600
+Case today.
+
+31
+00:02:48,410 --> 00:02:55,040
+Equal, Equal three, Colin said this statement for this case, for example FP.
+
+32
+00:02:56,470 --> 00:02:59,860
+Tuesday is Wednesday.
+
+33
+00:03:03,470 --> 00:03:13,430
+And go to the next line and define another case, for example, shares today equal equals four column
+
+34
+00:03:13,430 --> 00:03:16,910
+call to the next line and set a statement for this case.
+
+35
+00:03:17,130 --> 00:03:21,990
+50 Today is Thursday.
+
+36
+00:03:25,610 --> 00:03:26,470
+Case.
+
+37
+00:03:27,430 --> 00:03:34,270
+Today he calls five column FP.
+
+38
+00:03:35,920 --> 00:03:38,800
+Tuesday is Friday.
+
+39
+00:03:41,730 --> 00:03:43,290
+And case.
+
+40
+00:03:44,740 --> 00:03:45,550
+To the.
+
+41
+00:03:46,930 --> 00:03:54,760
+Equals six Column V said in a statement like today is Saturday.
+
+42
+00:03:58,960 --> 00:04:04,720
+And case today equal equals seven.
+
+43
+00:04:06,400 --> 00:04:08,320
+So be right, FP.
+
+44
+00:04:09,660 --> 00:04:12,540
+Today is Sunday.
+
+45
+00:04:14,680 --> 00:04:23,530
+Change and go to the next line and define a default based solely right default and cities statement
+
+46
+00:04:23,530 --> 00:04:32,470
+for it, for example, FP value for today is in.
+
+47
+00:04:34,630 --> 00:04:35,010
+OK.
+
+48
+00:04:35,150 --> 00:04:40,120
+Reformat the cord, save the project and execute the program.
+
+49
+00:04:40,690 --> 00:04:47,260
+Now go to terminal and run the program where they can't go wrong, but I guess this man that go?
+
+50
+00:04:49,470 --> 00:04:56,250
+Now we can see the output today is Tuesday because we are sunk to value to two day variables, so compiler
+
+51
+00:04:56,250 --> 00:05:02,340
+executed the case that two day assigned by two value and the returns, the two day is Tuesday.
+
+52
+00:05:03,180 --> 00:05:10,540
+Now go to his lies and continue types, which tied switch is used.
+
+53
+00:05:10,540 --> 00:05:13,680
+Then you want to compare types in this search.
+
+54
+00:05:13,920 --> 00:05:19,650
+They chase contains the types which is going to compare with the tie present in the search expiration.
+
+55
+00:05:20,340 --> 00:05:22,260
+Now you can see the syntax.
+
+56
+00:05:23,460 --> 00:05:27,960
+Let's go to this school curriculum and illustrate how to use types which.
+
+57
+00:05:30,810 --> 00:05:34,290
+First, define an empty interface that has industry value.
+
+58
+00:05:34,620 --> 00:05:42,660
+So you write that define a and like value by the tight end to interface
+
+59
+00:05:45,210 --> 00:05:54,740
+and initialize it by a string value, for example, go through or any language.
+
+60
+00:05:58,890 --> 00:06:07,650
+Now, go to the next line and define a switch case to find out the interface type, so the right switch
+
+61
+00:06:11,050 --> 00:06:14,100
+you find a variable like a column equals.
+
+62
+00:06:15,240 --> 00:06:22,580
+Value door, open and close parenthesis and sit tight for it,
+
+63
+00:06:25,590 --> 00:06:27,330
+open and close curly braces.
+
+64
+00:06:28,110 --> 00:06:30,780
+Now define Chasez to check the condition.
+
+65
+00:06:30,840 --> 00:06:32,640
+In this case, we put date or time.
+
+66
+00:06:32,820 --> 00:06:45,300
+For example, if time is an integer, so be right case in 64 case in 64 colour and set a statement for
+
+67
+00:06:45,300 --> 00:06:47,430
+this case, for example FP.
+
+68
+00:06:48,360 --> 00:06:55,130
+Time is integer column and set variable.
+
+69
+00:06:55,140 --> 00:06:59,640
+A go to the next line and define and other cases.
+
+70
+00:06:59,820 --> 00:07:08,190
+For example, type of floating point numbers override case floats 64 column and said a statement for
+
+71
+00:07:08,190 --> 00:07:09,390
+this case if FP.
+
+72
+00:07:10,870 --> 00:07:21,400
+Typekit is Lord Colin and said Set had a go to the next time and defined as string tied, for example,
+
+73
+00:07:21,400 --> 00:07:35,700
+case history, Colin and said a statement for this case, F.P. time is history, colour and said value
+
+74
+00:07:35,710 --> 00:07:40,420
+than a F-Type is other than these three.
+
+75
+00:07:40,450 --> 00:07:48,370
+We define default keyboard, so go to the next line and define default keyboard Colin and said a statement
+
+76
+00:07:48,370 --> 00:07:50,230
+for this FP.
+
+77
+00:07:51,130 --> 00:07:59,390
+Time is on reformat the code, save the project and execute the program.
+
+78
+00:07:59,410 --> 00:08:02,530
+Now, go to turn on and run the program by the command.
+
+79
+00:08:02,530 --> 00:08:04,370
+Go run thought back.
+
+80
+00:08:04,370 --> 00:08:05,920
+Does this mean that go?
+
+81
+00:08:08,300 --> 00:08:16,600
+Now we can see the output type is strong and values go programming language because we initialize antinori
+
+82
+00:08:16,610 --> 00:08:20,750
+face value by issuing tide, so extreme case has returned for us.
+
+83
+00:08:21,320 --> 00:08:22,930
+We have reached the end of decision.
+
+84
+00:08:22,940 --> 00:08:25,910
+I hope you take full advantage of this session until next session.
+
+85
+00:08:25,910 --> 00:08:26,390
+Goodbye.

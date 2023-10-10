@@ -1,0 +1,295 @@
+1
+00:00:12,210 --> 00:00:19,330
+Hello and welcome to the Golang programming language course in the Pentagon session.
+
+2
+00:00:19,350 --> 00:00:27,510
+We could define Mark's server, and in this session we want to create the website, get home for the
+
+3
+00:00:27,870 --> 00:00:30,660
+and function in the mock survey created.
+
+4
+00:00:31,020 --> 00:00:34,470
+We said to Rhonda, Let's look at the root of the project.
+
+5
+00:00:34,770 --> 00:00:39,720
+We need to create the function for the vets to get to be able to manage the request.
+
+6
+00:00:40,260 --> 00:00:47,160
+Therefore, we create the function name like vets who get handler, so define
+
+7
+00:00:51,060 --> 00:00:51,690
+fun
+
+8
+00:00:55,020 --> 00:00:58,530
+with some handler.
+
+9
+00:01:04,030 --> 00:01:06,640
+Dysfunction accepts two parameters.
+
+10
+00:01:07,060 --> 00:01:10,420
+First, the connection from point of let's get the connection.
+
+11
+00:01:10,840 --> 00:01:12,550
+So we said connection.
+
+12
+00:01:16,170 --> 00:01:21,620
+As pointed of that's occurred, connection
+
+13
+00:01:25,170 --> 00:01:32,180
+and second parameter is another object from the config extract of snooker player because we want to
+
+14
+00:01:32,190 --> 00:01:35,340
+a thought we circuit method of config Astra.
+
+15
+00:01:35,670 --> 00:01:42,940
+So we said config from pointer off sutured.
+
+16
+00:01:48,450 --> 00:01:49,270
+Afghan week.
+
+17
+00:01:50,970 --> 00:01:53,490
+First, we start created circuit.
+
+18
+00:01:54,150 --> 00:02:01,710
+We do this by combining one circuit method from circuit package because it runs circuit method is running
+
+19
+00:02:01,710 --> 00:02:08,100
+in the background of the program and examines the channels the call to dismantle it must be executed
+
+20
+00:02:08,100 --> 00:02:09,900
+in a separate go routine.
+
+21
+00:02:10,350 --> 00:02:20,730
+So here I go, Colin Rustica function from config package config.
+
+22
+00:02:21,240 --> 00:02:22,980
+Don't run, Sujit.
+
+23
+00:02:27,860 --> 00:02:35,210
+Now, first client enters the program, we have to add this client to the list of clients, which we
+
+24
+00:02:35,210 --> 00:02:43,250
+do through the registered client channel, so we write from config.
+
+25
+00:02:48,220 --> 00:02:57,340
+The call registered client raises the client and that connection to the China
+
+26
+00:03:00,190 --> 00:03:02,110
+connection to the track.
+
+27
+00:03:03,280 --> 00:03:07,180
+Now we could add a new client to the list of clients.
+
+28
+00:03:08,140 --> 00:03:11,560
+This server now has to wait and listen.
+
+29
+00:03:11,710 --> 00:03:17,740
+Whether a message comes to eat from the client or not, if a message is sent from the client to the
+
+30
+00:03:17,740 --> 00:03:26,140
+server server receives and this realizes it and then sends it to other clients for do this first define
+
+31
+00:03:26,140 --> 00:03:27,670
+an infinite loop.
+
+32
+00:03:28,600 --> 00:03:29,260
+For
+
+33
+00:03:32,560 --> 00:03:37,690
+now, we want to reset the message from client to do these views from Jason Kotick.
+
+34
+00:03:38,290 --> 00:03:44,050
+Jason is according to send or receive JSON data in a frame from that a connection.
+
+35
+00:03:44,740 --> 00:03:49,840
+So from let's get package calling JSON and invoke it Greece's method.
+
+36
+00:03:50,620 --> 00:03:54,750
+This method returns, and it also defines a variable like error.
+
+37
+00:03:56,200 --> 00:03:58,060
+Calling equals that's occurred.
+
+38
+00:04:02,140 --> 00:04:03,750
+Dot, Jason
+
+39
+00:04:07,020 --> 00:04:07,510
+Dot.
+
+40
+00:04:08,130 --> 00:04:08,940
+Receive.
+
+41
+00:04:13,080 --> 00:04:15,010
+This method accept two parameters.
+
+42
+00:04:15,030 --> 00:04:17,790
+First, the connection, so we said connection
+
+43
+00:04:21,420 --> 00:04:28,440
+and another object is needed a second parameter to be able to put the received data inside it after
+
+44
+00:04:28,440 --> 00:04:29,520
+the serializing.
+
+45
+00:04:30,090 --> 00:04:32,820
+So we are using a message, a sort of object here.
+
+46
+00:04:32,940 --> 00:04:38,970
+Therefore, first define the object from messages throughout and pass it as pointer to function.
+
+47
+00:04:39,270 --> 00:04:42,270
+So first, define a variable like
+
+48
+00:04:45,240 --> 00:04:49,130
+that message from messages.
+
+49
+00:04:49,140 --> 00:04:51,300
+Drop off, switch a package.
+
+50
+00:04:53,490 --> 00:05:00,810
+And now sit as pointer to the function and person message.
+
+51
+00:05:05,540 --> 00:05:16,460
+Now implements at all stages, if at all not equals need, if the calling recieve method returns an
+
+52
+00:05:16,460 --> 00:05:22,940
+error of value, we must remove the client from the list of the clients to do this call to remove Client
+
+53
+00:05:22,940 --> 00:05:27,830
+Channon from the convict package and send the current client to eat.
+
+54
+00:05:28,040 --> 00:05:36,830
+So we tried Con Fiqh do not remove client and CIT connection to channel
+
+55
+00:05:40,430 --> 00:05:41,090
+connection.
+
+56
+00:05:42,080 --> 00:05:49,960
+In this case, the server should not to stop and continue to work, so use the Continue Command continue.
+
+57
+00:05:51,530 --> 00:05:56,750
+Now, if there is no error, the received message should be sent to each client.
+
+58
+00:05:56,960 --> 00:06:02,060
+Do this by sending message to message data channel of config package.
+
+59
+00:06:02,240 --> 00:06:03,260
+So be right.
+
+60
+00:06:06,270 --> 00:06:20,490
+Config dot message data and sent to Channon message, reformat the code and save the project.
+
+61
+00:06:21,510 --> 00:06:25,320
+We were able to implement a handler for red sutured.
+
+62
+00:06:25,590 --> 00:06:32,430
+Now it's time to introduce the created function as handler into red Sujit to do this.
+
+63
+00:06:32,610 --> 00:06:38,070
+Enter the main method and call the created method inside the vets the cat handler.
+
+64
+00:06:38,550 --> 00:06:39,870
+Go to main the tool.
+
+65
+00:06:46,760 --> 00:06:55,010
+Now, calling that secret handler function for first argument, he said connection.
+
+66
+00:07:00,320 --> 00:07:06,970
+And for second argument, first, we define an object from configures drive by calling nuclear-free
+
+67
+00:07:06,980 --> 00:07:09,290
+constructor from circuit package.
+
+68
+00:07:10,010 --> 00:07:20,030
+So first, define a variable like config column equals and calling new config constructor frames to
+
+69
+00:07:20,030 --> 00:07:21,200
+create package.
+
+70
+00:07:21,290 --> 00:07:31,350
+So the new feat now set config variable, a second argument for which ticket handler can't.
+
+71
+00:07:33,890 --> 00:07:34,190
+OK.
+
+72
+00:07:34,460 --> 00:07:41,990
+We were able to implement the server layer in order not to prolong the time of decision, even finish,
+
+73
+00:07:42,230 --> 00:07:45,350
+and we will continue the content in the next session.
+
+74
+00:07:45,530 --> 00:07:46,100
+Goodbye.

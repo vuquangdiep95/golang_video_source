@@ -1,0 +1,100 @@
+1
+00:00:00,140 --> 00:00:06,240
+Concentrandoci su questa lezione, analizzeremo questa API lunga di grandi dimensioni del client di rifilatura e, in pratica, più a lungo
+
+2
+00:00:06,370 --> 00:00:11,030
+richiederà una richiesta molto più lunga in ciascuna di queste richieste all'interno di un saluto.
+
+3
+00:00:11,190 --> 00:00:17,100
+E quando tutte le richieste di saluto sono ricevute, restituirà una risposta di saluto lungo che conterrà una
+
+4
+00:00:17,100 --> 00:00:18,260
+stringa di risultati.
+
+5
+00:00:18,270 --> 00:00:24,230
+Quindi l'idea è che ora il client debba inviare molte molte richieste al server.
+
+6
+00:00:24,270 --> 00:00:26,820
+E poi quando è fatto il server restituirà una risposta.
+
+7
+00:00:26,820 --> 00:00:28,740
+E questo lo rende un client di streaming.
+
+8
+00:00:28,770 --> 00:00:35,890
+Quindi andiamo avanti e implementiamo questo buffer di protocollo in modo che grete Prato metterà a punto quel file.
+
+9
+00:00:35,910 --> 00:00:43,890
+Quindi, quello che vogliamo fare è avere i client in streaming e ora l'RBC è
+
+10
+00:00:43,890 --> 00:00:50,510
+chiamato Long, quindi richiederà più tempo e riceverà una risposta più lunga.
+
+11
+00:00:50,610 --> 00:00:57,540
+Ma poiché si tratta di client in streaming Bene, potresti aver notato che avrei dovuto aggiungere la parola chiave stream
+
+12
+00:00:57,540 --> 00:00:57,940
+qui.
+
+13
+00:00:58,170 --> 00:01:03,480
+Quindi, quando era lo streaming server, il flusso era alla fine e quando il client di streaming lo
+
+14
+00:01:03,480 --> 00:01:04,670
+streaming è all'inizio.
+
+15
+00:01:04,740 --> 00:01:10,710
+Quindi questo è tutto ciò che serve per definire un flusso client RBC stream ovviamente.
+
+16
+00:01:10,800 --> 00:01:17,070
+Ora dobbiamo definire questo messaggio di richiesta di saluto lungo e questo conterrà solo un saluto.
+
+17
+00:01:17,070 --> 00:01:23,520
+Quindi dì chiamate di benvenuto 1 e dobbiamo anche definire un messaggio di risposta di Greed's lungo e
+
+18
+00:01:23,520 --> 00:01:27,880
+questo manterrà solo contiene una stringa di risultati uguale a uno.
+
+19
+00:01:28,010 --> 00:01:33,480
+OK, quindi questo è tutto ciò che dobbiamo fare per generare tutto questo sembra corretto.
+
+20
+00:01:33,480 --> 00:01:40,440
+Così ora possiamo generare quel SH E stiamo andando a eseguire la prima riga di codice e si completa con
+
+21
+00:01:40,440 --> 00:01:40,980
+successo.
+
+22
+00:01:41,010 --> 00:01:45,850
+E come possiamo vedere l'ottimo PBT fa è stato modificato e abbiamo qualche nuovo codice qui.
+
+23
+00:01:46,050 --> 00:01:46,920
+Quindi questo è perfetto.
+
+24
+00:01:46,920 --> 00:01:49,300
+Siamo pronti per implementare nel server.
+
+25
+00:01:49,410 --> 00:01:50,750
+Quindi ti vedrò nella prossima lezione.
+

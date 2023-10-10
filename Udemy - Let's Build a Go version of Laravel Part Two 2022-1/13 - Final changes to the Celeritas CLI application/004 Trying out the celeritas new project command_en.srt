@@ -1,0 +1,128 @@
+1
+00:00:00,570 --> 00:00:05,850
+So I've pushed all of the changes to my skeleton app and to this celebrity application, both up to
+
+2
+00:00:05,850 --> 00:00:08,940
+the git repositories on GitHub, so make sure you do that.
+
+3
+00:00:09,720 --> 00:00:11,320
+And now I want to test things out.
+
+4
+00:00:11,370 --> 00:00:17,100
+So in the celebrities project, I'll open a terminal window and I'll build the new executable, and
+
+5
+00:00:17,100 --> 00:00:19,080
+all I have to do is type, make, build.
+
+6
+00:00:19,230 --> 00:00:22,770
+And that should build the executable into the folder named Dist.
+
+7
+00:00:22,890 --> 00:00:25,650
+So if I do with lastest, there it is.
+
+8
+00:00:26,640 --> 00:00:32,330
+What I do now is I'll copy that executable to my desktop and you can copy it wherever you want.
+
+9
+00:00:32,700 --> 00:00:39,020
+But I need to copy the actual file dist celebrities and of course, in windows that celebrities don't
+
+10
+00:00:39,330 --> 00:00:40,560
+see or something like that.
+
+11
+00:00:40,680 --> 00:00:42,360
+And I'll copy it to the desktop.
+
+12
+00:00:42,450 --> 00:00:46,530
+You can copy to whatever folder you want, but I know there's nothing up there on my desktop, so I
+
+13
+00:00:46,530 --> 00:00:47,070
+can do that.
+
+14
+00:00:47,880 --> 00:00:56,640
+Now I'll move to my desktop CD desktop and I'll create a new application, a new celerity application
+
+15
+00:00:56,640 --> 00:01:00,480
+by typing dot slash celebrities like that.
+
+16
+00:01:01,440 --> 00:01:04,470
+And of course, in windows, you just type to start.
+
+17
+00:01:05,340 --> 00:01:11,340
+And I'll say new, and I'll call this Test app, and that should create a new folder named Test app.
+
+18
+00:01:11,490 --> 00:01:12,000
+And it did.
+
+19
+00:01:12,330 --> 00:01:14,190
+OK, so now let's open that up.
+
+20
+00:01:15,090 --> 00:01:17,640
+So I'll go to the file menu and open up.
+
+21
+00:01:21,460 --> 00:01:26,830
+From my desktop, I want test up, so I open that folder and open it.
+
+22
+00:01:27,970 --> 00:01:32,020
+And I open it in a new window, and there it is.
+
+23
+00:01:32,320 --> 00:01:35,480
+Now let's open a terminal window and see if it works.
+
+24
+00:01:35,560 --> 00:01:38,380
+Oh, I should have to do at this point is say, make start.
+
+25
+00:01:45,000 --> 00:01:46,770
+So it's running, that's a good sign.
+
+26
+00:01:46,800 --> 00:01:49,380
+Let's go over to our Web browser and see if it works.
+
+27
+00:01:49,590 --> 00:01:52,710
+I'll open a new tab and go to local host 4000.
+
+28
+00:01:53,310 --> 00:01:56,400
+And it seems to work exactly as it should.
+
+29
+00:01:57,630 --> 00:02:01,840
+Now we haven't tried any of this new functionality, and we'll do that in the next few lectures.
+
+30
+00:02:01,860 --> 00:02:08,340
+But so far it seems like my celebrities command on application is doing exactly what it should.
+
+31
+00:02:09,030 --> 00:02:13,260
+All right, let's take a little bit of time and just test out some of the functionality and make sure
+
+32
+00:02:13,260 --> 00:02:15,210
+that everything works the way that it should.
+

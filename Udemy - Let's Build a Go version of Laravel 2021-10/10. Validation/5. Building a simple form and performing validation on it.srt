@@ -1,0 +1,495 @@
+1
+00:00:01,740 --> 00:00:07,620
+So let's try building a simple form and use the validation rules and tools that we have at our disposal
+
+2
+00:00:07,620 --> 00:00:07,820
+now.
+
+3
+00:00:08,460 --> 00:00:14,910
+So in the course resources for this lecture, you will find a file you can download called Formed Object
+
+4
+00:00:15,510 --> 00:00:19,730
+and put it here in the My App project, right in The View's directory.
+
+5
+00:00:19,740 --> 00:00:23,570
+So I'm going to create a new file called Form Objets.
+
+6
+00:00:24,450 --> 00:00:29,600
+And I've already copied the contents of this form to my clipboard, so I'll paste it in.
+
+7
+00:00:29,610 --> 00:00:34,980
+You get it in there in whatever way works for you, and you will notice that there are a couple of bugs
+
+8
+00:00:34,980 --> 00:00:37,710
+in the jet plug in for this.
+
+9
+00:00:37,710 --> 00:00:43,920
+But I think I can make those go away just by changing the wrapper for this to a single quote.
+
+10
+00:00:44,220 --> 00:00:46,560
+And that would end right here.
+
+11
+00:00:48,000 --> 00:00:48,960
+Yeah, that looks better.
+
+12
+00:00:49,110 --> 00:00:52,050
+So I'm going to change it this way and I'll change it on the file.
+
+13
+00:00:55,430 --> 00:00:56,450
+Here as well.
+
+14
+00:00:57,320 --> 00:00:58,850
+OK, so now those errors go away.
+
+15
+00:00:59,270 --> 00:01:00,710
+So this is a pretty simple form.
+
+16
+00:01:01,040 --> 00:01:02,480
+Third place is right here.
+
+17
+00:01:05,870 --> 00:01:10,850
+There, the jet plug in got confused and thought there were too many double quotes all over the place.
+
+18
+00:01:10,860 --> 00:01:16,760
+Changing the quotes for the actual class attribute for each of the three inputs makes the air go away.
+
+19
+00:01:17,660 --> 00:01:19,960
+OK, very simple layout.
+
+20
+00:01:19,970 --> 00:01:23,740
+It extends based jet and I give it the browser title of form.
+
+21
+00:01:23,750 --> 00:01:26,840
+It has no custom CSS, but I need to put that block in there.
+
+22
+00:01:26,840 --> 00:01:29,760
+Otherwise it won't compile and it page content.
+
+23
+00:01:29,780 --> 00:01:31,460
+I have a simple form now.
+
+24
+00:01:31,460 --> 00:01:36,860
+It's virtually a simple bootstrap form with a couple of additions.
+
+25
+00:01:37,610 --> 00:01:38,990
+Let me draw those to your attention.
+
+26
+00:01:39,770 --> 00:01:44,900
+The first one is here in the value and it has a first name and last name and an email field.
+
+27
+00:01:45,290 --> 00:01:50,480
+In the first name field, for example, I have the values set to user dot first name.
+
+28
+00:01:50,570 --> 00:01:55,220
+And as you might expect, I'll be passing a user model as data to this template.
+
+29
+00:01:56,220 --> 00:01:59,110
+And then I have here in the class, a simple decision.
+
+30
+00:01:59,130 --> 00:02:04,800
+One of the nice things about the jet plug in the jet templating engine is that it allows us to use the
+
+31
+00:02:04,800 --> 00:02:05,860
+is set.
+
+32
+00:02:05,880 --> 00:02:11,370
+We can check to see if a variable is set, if it is, do something, otherwise do something else and
+
+33
+00:02:11,370 --> 00:02:12,840
+it comes in the form of a ternary here.
+
+34
+00:02:13,080 --> 00:02:16,150
+So is set validator errors first name.
+
+35
+00:02:16,170 --> 00:02:21,000
+So you can see I'm also going to be passing the validator as an object or as data to this template.
+
+36
+00:02:21,690 --> 00:02:29,250
+If the errors, which is a map string string, if the Errors Map Index first name is set, then display
+
+37
+00:02:29,250 --> 00:02:32,180
+is invalid because there's an error associated with this field.
+
+38
+00:02:32,190 --> 00:02:38,760
+So I'll be adding the class is invalid to this input and that's bootstraps validation classes.
+
+39
+00:02:38,850 --> 00:02:39,960
+Otherwise don't add anything.
+
+40
+00:02:40,510 --> 00:02:43,570
+I do exactly the same thing for all three of these fields.
+
+41
+00:02:43,860 --> 00:02:48,360
+And that's the only difference, apart from the invalid feedback which I'll talk about in a second.
+
+42
+00:02:48,720 --> 00:02:53,820
+The only difference between a regular bootstrap input and the kind that I'm using here in this template.
+
+43
+00:02:54,720 --> 00:02:57,800
+And of course, we also want to display error messages, if any.
+
+44
+00:02:57,810 --> 00:03:04,830
+So each of the three fields first name, last name and email also has a div class equals invalid feedback.
+
+45
+00:03:05,070 --> 00:03:06,270
+And again, I use my ternary.
+
+46
+00:03:06,270 --> 00:03:07,530
+My is set as a.
+
+47
+00:03:08,550 --> 00:03:11,190
+If there's an errors in the first name field this time.
+
+48
+00:03:11,520 --> 00:03:14,970
+Display the contents of the validator errors map.
+
+49
+00:03:15,150 --> 00:03:18,180
+So display the error message right here unless otherwise displayed nothing.
+
+50
+00:03:18,930 --> 00:03:20,430
+So very simple template.
+
+51
+00:03:21,090 --> 00:03:23,400
+And I'll let you review that at your leisure and play with it.
+
+52
+00:03:23,820 --> 00:03:26,160
+But we also, of course, need some handlers.
+
+53
+00:03:26,310 --> 00:03:30,570
+So inside of my handlers folder, let's create some handlers.
+
+54
+00:03:30,900 --> 00:03:36,600
+I'll put them in their own file so they're easy to find our common form for our dash.
+
+55
+00:03:36,600 --> 00:03:38,640
+They'll dash handlers don't go.
+
+56
+00:03:38,850 --> 00:03:42,990
+You can call it whatever you want, but form validation handlers make sense or form ball handlers.
+
+57
+00:03:43,860 --> 00:03:48,750
+And of course, this is in package handlers and we're going to need two handlers one to display the
+
+58
+00:03:48,750 --> 00:03:53,400
+form, which is easy and one to submit the form and validate the data.
+
+59
+00:03:53,560 --> 00:03:55,320
+OK, so let's do the display first.
+
+60
+00:03:55,740 --> 00:03:56,640
+So we'll say func.
+
+61
+00:03:57,710 --> 00:04:03,800
+And it has a receiver, of course, a pointer to handlers, and I'll call this form, call whatever
+
+62
+00:04:03,800 --> 00:04:04,130
+you want.
+
+63
+00:04:04,190 --> 00:04:12,560
+This is going to display my form and it takes a W of a type H-He response writer and ah, as a pointer
+
+64
+00:04:12,560 --> 00:04:15,260
+to actually beat up request W4.
+
+65
+00:04:15,260 --> 00:04:18,350
+Write an hour for read or request.
+
+66
+00:04:19,580 --> 00:04:24,590
+So verse, first thing I want to do is declare a variable called verse, and this is straight out of
+
+67
+00:04:24,590 --> 00:04:25,890
+the documentation.
+
+68
+00:04:25,910 --> 00:04:29,390
+If I want to pass data to a jet variable, I think we've done this already.
+
+69
+00:04:29,900 --> 00:04:33,200
+I just say make jet verb.
+
+70
+00:04:34,100 --> 00:04:35,690
+And that should do the import for me.
+
+71
+00:04:36,500 --> 00:04:37,040
+And it did.
+
+72
+00:04:37,340 --> 00:04:38,900
+OK, so now we have this verse.
+
+73
+00:04:39,530 --> 00:04:43,250
+And what I'm going to say is validator creating a validator.
+
+74
+00:04:43,580 --> 00:04:46,010
+That's a sign of the value of each app.
+
+75
+00:04:46,190 --> 00:04:52,700
+And because the app has a function called validator from the version validator, I can use that and
+
+76
+00:04:52,700 --> 00:04:53,480
+I'll just pass it now.
+
+77
+00:04:54,260 --> 00:04:56,000
+So default value is nil.
+
+78
+00:04:56,150 --> 00:05:00,160
+Nothing in that validator, and I will set two pieces of data.
+
+79
+00:05:00,170 --> 00:05:01,910
+I want to be available to my template.
+
+80
+00:05:01,940 --> 00:05:03,080
+The first one is validator.
+
+81
+00:05:03,140 --> 00:05:12,050
+So first set and the key I'm going to use to find it in the template is validator and the value is validator.
+
+82
+00:05:12,530 --> 00:05:15,980
+So I'm passing that and also VARs Dot set.
+
+83
+00:05:16,580 --> 00:05:22,970
+And that's what I'll call user, and it will be an empty user model data dot user with, of course,
+
+84
+00:05:22,970 --> 00:05:25,430
+the two curly brackets so we can pass that.
+
+85
+00:05:27,090 --> 00:05:33,900
+Now, I just render my template, so I'll say error is a sign of the value of H Dot app Dot render.
+
+86
+00:05:34,470 --> 00:05:41,520
+And I'm going to render I have to pass it W and R and the name of the template.
+
+87
+00:05:41,940 --> 00:05:43,860
+In my case, it's called formed yet.
+
+88
+00:05:43,860 --> 00:05:49,800
+So I put forth the variables I want to pass and I'm not passing data in the fourth parameter for one
+
+89
+00:05:49,800 --> 00:05:51,210
+two three fifth parameter.
+
+90
+00:05:51,810 --> 00:05:53,940
+My counting is off today and I'll just check Verner.
+
+91
+00:05:54,180 --> 00:05:55,770
+So H Typekit render.
+
+92
+00:05:55,770 --> 00:05:56,730
+What is it saying here?
+
+93
+00:05:58,060 --> 00:06:03,850
+Cannot call non-functioning pitch right there, rendered up page.
+
+94
+00:06:06,430 --> 00:06:14,070
+Now a check for an error, if error is not equal to nil, then we'll just write it to the Error H Dot
+
+95
+00:06:14,170 --> 00:06:19,180
+app dot error log scribbling, whatever the error is.
+
+96
+00:06:22,240 --> 00:06:25,060
+OK, so that's enough to show the picture.
+
+97
+00:06:25,120 --> 00:06:26,110
+Let's make sure that works.
+
+98
+00:06:26,320 --> 00:06:27,940
+So let's go to our roots file.
+
+99
+00:06:31,460 --> 00:06:36,440
+And I'll just add a root say right before all these test routes right here, and we'll link to it on
+
+100
+00:06:36,440 --> 00:06:37,640
+our homepage as well.
+
+101
+00:06:38,540 --> 00:06:45,930
+So we'll say a dot app, dot routes, not routes, rendered routes, dot get and I'll make this one
+
+102
+00:06:45,970 --> 00:06:49,900
+signal and that will call a dot handler's platform.
+
+103
+00:06:51,140 --> 00:06:54,950
+OK, and I'm going to create the second one and comment it up because we'll need it in a minute.
+
+104
+00:06:55,340 --> 00:07:03,290
+We'll make that a post that goes to post form, and I will comment it out so we can compile this.
+
+105
+00:07:04,010 --> 00:07:05,180
+So now I have a route to that.
+
+106
+00:07:05,270 --> 00:07:08,150
+Let's open our homepage and my route is form.
+
+107
+00:07:08,780 --> 00:07:12,500
+So let's open our homepage, which is home dot job.
+
+108
+00:07:12,980 --> 00:07:17,330
+And we'll just add one right here form validation, I'll call it,
+
+109
+00:07:20,660 --> 00:07:22,370
+and it goes to slash four.
+
+110
+00:07:25,280 --> 00:07:26,990
+OK, let's reset our application.
+
+111
+00:07:27,590 --> 00:07:30,950
+Make restart just to make sure that form shows up.
+
+112
+00:07:34,200 --> 00:07:38,490
+And let's go back to our web browser and try reloading this page.
+
+113
+00:07:39,540 --> 00:07:40,830
+OK, so the link shut up.
+
+114
+00:07:41,130 --> 00:07:41,730
+Does it work?
+
+115
+00:07:42,750 --> 00:07:43,230
+There it is.
+
+116
+00:07:43,320 --> 00:07:45,300
+So we have a basic form right here.
+
+117
+00:07:46,170 --> 00:07:51,570
+Now you will also notice if we go back and look at that form page form on jet.
+
+118
+00:07:51,930 --> 00:07:55,860
+One of the things I put at the very top was no validate.
+
+119
+00:07:55,950 --> 00:07:58,550
+I turned off browser validation and I did not.
+
+120
+00:07:58,560 --> 00:08:04,400
+At the bottom of this file enable the standard bootstrap client side validation.
+
+121
+00:08:04,410 --> 00:08:10,530
+So I only want to use server side validation using the validation logic we implemented over the last
+
+122
+00:08:10,530 --> 00:08:11,250
+few lectures.
+
+123
+00:08:12,030 --> 00:08:13,320
+So we have the form up there.
+
+124
+00:08:13,620 --> 00:08:20,250
+In the next lecture, let's create that post form handler and do some actual server side validation.

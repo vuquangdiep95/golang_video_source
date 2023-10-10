@@ -1,0 +1,683 @@
+1
+00:00:01,960 --> 00:00:09,040
+So we're working on getting our schedule to monitor specific services on specific hosts working, and
+
+2
+00:00:09,370 --> 00:00:10,360
+we left it off right.
+
+3
+00:00:10,360 --> 00:00:15,220
+Here's where we start monitoring only if monitoring live is equal to one.
+
+4
+00:00:15,250 --> 00:00:23,170
+So before we forget, let's go over to our database and look at the vigilante database, which is right
+
+5
+00:00:23,170 --> 00:00:28,660
+here, and just go to our preferences and we'll be doing this differently later on.
+
+6
+00:00:28,660 --> 00:00:31,050
+But right now, I'm just going to manually change that to a one.
+
+7
+00:00:31,570 --> 00:00:36,850
+And the reason I'm going to do that is when you look at this code, our start monitoring function doesn't
+
+8
+00:00:36,850 --> 00:00:39,250
+do anything unless monitoring live is set to one.
+
+9
+00:00:39,280 --> 00:00:40,360
+So I've made that change.
+
+10
+00:00:40,780 --> 00:00:44,370
+And I'm also going to make sure that I have IP running and I do.
+
+11
+00:00:44,380 --> 00:00:44,950
+Perfect.
+
+12
+00:00:44,970 --> 00:00:49,030
+OK, so let's continue getting things set up.
+
+13
+00:00:50,240 --> 00:00:55,240
+Now, you might notice right here at the very top of this start dash monitoring Digo file, which is
+
+14
+00:00:55,240 --> 00:00:57,310
+inside our command web folder.
+
+15
+00:00:58,330 --> 00:01:01,450
+I have this function run and it doesn't do anything at the moment.
+
+16
+00:01:01,450 --> 00:01:02,550
+It's just an empty function.
+
+17
+00:01:03,250 --> 00:01:08,380
+So just to get things moving along so we can actually get it started and start testing things, I'm
+
+18
+00:01:08,380 --> 00:01:09,340
+going to create a function.
+
+19
+00:01:09,340 --> 00:01:13,210
+I'm going to go over to my perform checks echo.
+
+20
+00:01:13,780 --> 00:01:20,200
+And inside of this I'm going to create a new function and I'll put it near the top just right about
+
+21
+00:01:20,200 --> 00:01:23,680
+here, just after I define my type JSON rasp.
+
+22
+00:01:23,680 --> 00:01:25,590
+And you can put it wherever you want, but I like it here.
+
+23
+00:01:26,110 --> 00:01:30,880
+I'll create a new function, which I'll call schedule check function and it'll have the receiver of
+
+24
+00:01:30,880 --> 00:01:39,400
+Repo DB repo and I'll just call it scheduled check and it will take one parameter and I'll call it host
+
+25
+00:01:39,400 --> 00:01:41,590
+service ID because that's what it is.
+
+26
+00:01:41,740 --> 00:01:47,890
+It's an end and it doesn't return anything and that will at some point actually perform our checks.
+
+27
+00:01:47,890 --> 00:01:52,630
+But right now I just have it empty and we'll come back and populated with some logic a bit later on.
+
+28
+00:01:52,630 --> 00:01:53,650
+So I'll give it a comment.
+
+29
+00:01:54,250 --> 00:02:03,900
+And this performs a scheduled check on a host service by idee.
+
+30
+00:02:04,180 --> 00:02:06,190
+OK, so I'll copy that.
+
+31
+00:02:06,400 --> 00:02:13,060
+That function name, go back to my start monitoring and inside of here I'll simply call that repo dot
+
+32
+00:02:13,840 --> 00:02:18,120
+and I'll pass in Jadot post service ID as the parameter.
+
+33
+00:02:19,690 --> 00:02:25,240
+So that's going to take a job using a receiver is how it gets it and it will actually perform that schedule
+
+34
+00:02:25,240 --> 00:02:25,560
+check.
+
+35
+00:02:25,570 --> 00:02:26,740
+And right now it doesn't do anything.
+
+36
+00:02:26,740 --> 00:02:28,480
+But at least I have the logic set up.
+
+37
+00:02:28,480 --> 00:02:35,260
+It's all wired together so I can call it now down here in these start monitoring bit.
+
+38
+00:02:37,670 --> 00:02:43,880
+I've created a map of type string string and I've called it data, and this is the payload that will
+
+39
+00:02:43,910 --> 00:02:48,990
+be sent to all connected clients over WebSocket using Pusha or IP in our case.
+
+40
+00:02:50,450 --> 00:02:52,430
+So that's what the data variable is.
+
+41
+00:02:52,560 --> 00:02:57,770
+And what I've done here is put in one thing, the message and I've just said started and I can actually
+
+42
+00:02:57,770 --> 00:03:00,770
+make this a little little easier monitoring.
+
+43
+00:03:04,410 --> 00:03:11,430
+Is starting OK, so that's just the message that's going to be pushed, all the clients now for the
+
+44
+00:03:11,430 --> 00:03:15,700
+very first time in quite a while, let's actually push something over WebSocket.
+
+45
+00:03:15,720 --> 00:03:21,840
+And since I'm in the main package, I actually have access to the app variable, which means I can use
+
+46
+00:03:21,840 --> 00:03:24,720
+the client, which is a member of the app variable.
+
+47
+00:03:25,020 --> 00:03:26,010
+So I'll check for an error.
+
+48
+00:03:26,130 --> 00:03:33,600
+There is a sign of the value of app client trigger and we did this once before and this has to be triggered
+
+49
+00:03:33,600 --> 00:03:39,000
+to a specific channel, which I'll call the public channel because I want everyone who's online right
+
+50
+00:03:39,000 --> 00:03:40,620
+now in our app to see this.
+
+51
+00:03:42,760 --> 00:03:48,900
+It has to have a label and I'll call this app Dash Starting, which nobody sees, but we're going to
+
+52
+00:03:48,900 --> 00:03:53,580
+using JavaScript on the client and I just pass at the data that I've created already and I'll check
+
+53
+00:03:53,580 --> 00:03:56,040
+for an error if error is not equal to nil.
+
+54
+00:03:56,040 --> 00:03:59,610
+And all I'm going to do here is log print line error.
+
+55
+00:04:00,090 --> 00:04:06,210
+OK, and then we'll take this comment from right here and put it where it belongs.
+
+56
+00:04:08,270 --> 00:04:14,720
+Right here and get rid of them to do, because that's done now, it's actually triggering it and pushing
+
+57
+00:04:14,720 --> 00:04:15,920
+it to all the connected clients.
+
+58
+00:04:15,950 --> 00:04:19,350
+Now, we're not listening for that in the JavaScript yet, but we'll get to that before too long.
+
+59
+00:04:20,180 --> 00:04:25,340
+So the next thing we want to do is actually to get a list of all the services that we want to monitor,
+
+60
+00:04:25,880 --> 00:04:27,530
+which means we need a database query.
+
+61
+00:04:28,130 --> 00:04:32,690
+So I'll write the code first, then I'll go add the database query right afterwards.
+
+62
+00:04:33,050 --> 00:04:40,160
+So I'll say services to monitor, which is just a variable I'm creating potentially an error are assigned
+
+63
+00:04:40,160 --> 00:04:41,210
+the value of.
+
+64
+00:04:41,210 --> 00:04:48,230
+And this, this function I'm about to call doesn't exist yet, but it will in a moment repo db dot get
+
+65
+00:04:48,440 --> 00:04:54,390
+services to monitor and it won't take any parameters.
+
+66
+00:04:54,410 --> 00:05:00,590
+And again, we're just going to be checking for an error and printing it out so this doesn't exist yet.
+
+67
+00:05:00,590 --> 00:05:01,550
+Let's go create it.
+
+68
+00:05:01,560 --> 00:05:07,400
+So I'll go over to my host, underscore postgrads file and I'll create a new function func and it will
+
+69
+00:05:07,400 --> 00:05:15,350
+take a receiver of M of type postgrads DB repo and I'm calling this get services to monitor.
+
+70
+00:05:16,670 --> 00:05:23,750
+It doesn't take any parameters, but it will return a slice of models that host service and potentially
+
+71
+00:05:23,750 --> 00:05:24,050
+their.
+
+72
+00:05:26,050 --> 00:05:33,550
+OK, now, because I always make mistakes when I type out the context logic, I'm going to copy that
+
+73
+00:05:33,760 --> 00:05:35,770
+and paste it in as I always do.
+
+74
+00:05:36,280 --> 00:05:39,120
+And then we're going to need a query which will write in a minute.
+
+75
+00:05:41,500 --> 00:05:46,750
+And after we have our query, we wrap it up with a sign operator improperly.
+
+76
+00:05:49,000 --> 00:05:58,060
+Will execute that by looking getting our rose and potentially an error, and that will come from Magdeburg
+
+77
+00:05:58,060 --> 00:06:05,230
+query context behind it, our context, will it our query and we'll check for an error.
+
+78
+00:06:05,770 --> 00:06:11,350
+If error is not equal to nil log print line error.
+
+79
+00:06:12,820 --> 00:06:15,100
+And we need a variable to hold all this information.
+
+80
+00:06:15,100 --> 00:06:25,210
+So we'll create a new variable where services is of type slice of models, dot host service will defer
+
+81
+00:06:25,240 --> 00:06:35,160
+our rose dot close and then four rows dot next and we'll create a variable to hold our individual host
+
+82
+00:06:35,170 --> 00:06:45,580
+service H which is of type so far H models dot host service and then we will check for an error while
+
+83
+00:06:45,580 --> 00:06:46,660
+we scan.
+
+84
+00:06:48,200 --> 00:06:52,100
+Our rose or try that again, rose Tascam.
+
+85
+00:06:56,070 --> 00:06:58,230
+And we'll have some entries in here in a minute.
+
+86
+00:06:58,290 --> 00:07:01,060
+OK, so let's go get a query written before we go any further.
+
+87
+00:07:01,110 --> 00:07:08,820
+Now, when we're looking for host services, and I'm pretty sure that here, this query will almost
+
+88
+00:07:09,330 --> 00:07:11,090
+we'll do almost exactly what we want.
+
+89
+00:07:11,250 --> 00:07:13,020
+So I'm going to copy that as my starting point.
+
+90
+00:07:13,380 --> 00:07:19,740
+I'm going to go over to my Idy or to my database client, and I'll just paste that query in there and
+
+91
+00:07:19,740 --> 00:07:21,080
+see what that's going to give us.
+
+92
+00:07:21,090 --> 00:07:26,190
+If I execute that, that gets me all of my host services and it's almost enough information.
+
+93
+00:07:27,270 --> 00:07:29,040
+So I'm going to get my host services.
+
+94
+00:07:29,080 --> 00:07:31,590
+I'll get the host service ID, the host side of the service.
+
+95
+00:07:31,590 --> 00:07:32,310
+Pretty perfect.
+
+96
+00:07:32,340 --> 00:07:41,430
+OK, I probably I might want the host name as well, so I'm going to put a left join hosts h on each
+
+97
+00:07:41,490 --> 00:07:49,230
+dot id equals HS host ID so that joins the host table and I'm also going to grab the hostname.
+
+98
+00:07:49,230 --> 00:07:51,540
+So the host name.
+
+99
+00:07:53,100 --> 00:07:55,680
+OK, now is there anything else I want to change here.
+
+100
+00:07:55,890 --> 00:07:59,400
+Do I want to monitor services or hosts that are not active.
+
+101
+00:07:59,400 --> 00:08:00,360
+No I do not.
+
+102
+00:08:00,360 --> 00:08:09,450
+So I'll just add where each active equals one and active equals one.
+
+103
+00:08:10,710 --> 00:08:14,160
+I don't care what order they come in because I'm just going to be adding this to a schedule.
+
+104
+00:08:14,730 --> 00:08:16,050
+So let's make sure this works.
+
+105
+00:08:16,440 --> 00:08:17,190
+It does.
+
+106
+00:08:17,580 --> 00:08:19,320
+Let's copy this entire query.
+
+107
+00:08:19,650 --> 00:08:23,490
+Go back to our code and paste that right in here.
+
+108
+00:08:25,370 --> 00:08:28,940
+OK, and I'll just format this a little bit better.
+
+109
+00:08:35,320 --> 00:08:36,400
+Just to make it more readable.
+
+110
+00:08:38,140 --> 00:08:44,590
+And tab this over, and that should get us all the information we need, which means we can now scan
+
+111
+00:08:44,590 --> 00:08:45,730
+this into our room.
+
+112
+00:08:46,210 --> 00:08:50,620
+So we're scanning this new A variable H and the first thing we're getting is the ID.
+
+113
+00:08:50,770 --> 00:08:56,170
+And then I'll duplicate this a few times and then we're getting the host ID.
+
+114
+00:08:58,820 --> 00:09:00,530
+Then we're getting the service idee.
+
+115
+00:09:03,510 --> 00:09:07,280
+Then we're getting the active, which will always be one, but I'm going to get it anyway.
+
+116
+00:09:09,220 --> 00:09:10,480
+Then the schedule No.
+
+117
+00:09:13,790 --> 00:09:23,030
+And I'll duplicate this again a few times, and we're just getting the schedule unit, then we're getting
+
+118
+00:09:23,030 --> 00:09:23,960
+the last check.
+
+119
+00:09:28,870 --> 00:09:38,080
+Then we're getting the status and duplicate that a few more times than the created at the updated at
+
+120
+00:09:40,600 --> 00:09:45,660
+the SCD, that's a service ID, so services.
+
+121
+00:09:45,820 --> 00:09:53,440
+So we service the ID, then the service name.
+
+122
+00:09:57,900 --> 00:10:02,340
+Then whether it's active, then it's Eikon.
+
+123
+00:10:04,280 --> 00:10:09,410
+Created an updated that and hostname icon has a capital R.
+
+124
+00:10:11,820 --> 00:10:12,630
+Created a.
+
+125
+00:10:14,660 --> 00:10:19,700
+Updated and finally on hostname.
+
+126
+00:10:21,440 --> 00:10:30,350
+OK, so we checked for an error, if error is not equal to nil, then I'll logged our print line, the
+
+127
+00:10:30,350 --> 00:10:32,810
+error and I'll return.
+
+128
+00:10:35,330 --> 00:10:36,020
+What did I call that?
+
+129
+00:10:36,020 --> 00:10:50,750
+Services return services and the error otherwise appended to the slice and so say services equals append
+
+130
+00:10:50,870 --> 00:10:51,940
+services.
+
+131
+00:10:52,490 --> 00:11:01,610
+And I called this variable H and then down here return services and no.
+
+132
+00:11:02,180 --> 00:11:03,590
+And I think I have a typo up here.
+
+133
+00:11:03,620 --> 00:11:05,750
+Yes I do seatbacks.
+
+134
+00:11:07,980 --> 00:11:15,840
+All right, so that all seems to be correct, so let's copy the signature for this, put it in our repository
+
+135
+00:11:15,840 --> 00:11:23,000
+so we have access to it, go back to our start monitoring and now we have services to monitor.
+
+136
+00:11:23,070 --> 00:11:27,230
+Now, at this point, I just want to print things out to make sure they're working.
+
+137
+00:11:27,240 --> 00:11:29,910
+So I will just range through services tomorrow.
+
+138
+00:11:29,940 --> 00:11:38,460
+So first of all, I'll say logged print line length of services to monitor just to make sure I have
+
+139
+00:11:38,460 --> 00:11:39,180
+some values in.
+
+140
+00:11:39,180 --> 00:11:40,050
+There is.
+
+141
+00:11:40,380 --> 00:11:41,610
+And I'll say Lynn.
+
+142
+00:11:41,610 --> 00:11:42,750
+Services to monitor.
+
+143
+00:11:44,250 --> 00:11:48,780
+OK, so let's just see if we can get all of this to run the way that it's supposed to.
+
+144
+00:11:49,410 --> 00:11:57,750
+So just as a reminder, before we run this, make sure you have your your IP running and now we'll we
+
+145
+00:11:57,750 --> 00:12:00,260
+need to actually call this before it's going to do anything.
+
+146
+00:12:00,270 --> 00:12:03,920
+So let's go back to our set up app and go.
+
+147
+00:12:04,620 --> 00:12:08,400
+And at this point right here, what do I want to do?
+
+148
+00:12:08,400 --> 00:12:09,950
+I've added it to my scheduler.
+
+149
+00:12:10,290 --> 00:12:17,280
+I'll start it by saying app dot scheduler dot start, which will actually start the scheduler.
+
+150
+00:12:18,180 --> 00:12:24,840
+Then I want to actually call that start monitoring function, so I'll just start monitoring.
+
+151
+00:12:25,290 --> 00:12:30,420
+OK, now let's go over there to start monitoring, make sure this is actually going to run.
+
+152
+00:12:30,420 --> 00:12:34,590
+So I'll just put a log in here logged print line and I'll put a bunch of stars in it so I can see it
+
+153
+00:12:36,600 --> 00:12:37,290
+starting.
+
+154
+00:12:38,710 --> 00:12:39,280
+Monitored.
+
+155
+00:12:41,680 --> 00:12:46,540
+So that actually should work if we unless we've made some type of somewhere, so let's make sure where
+
+156
+00:12:46,540 --> 00:12:48,310
+this is going to work, I'll run this.
+
+157
+00:12:52,740 --> 00:12:59,280
+So it says starting monitor length of services to monitor is one perfect, so it looks like it actually
+
+158
+00:12:59,280 --> 00:13:01,630
+worked for us, but let's make sure we've got the right service in there.
+
+159
+00:13:01,650 --> 00:13:08,580
+Let's put a few more things out just to make sure for underscore X is a sign the value of range services
+
+160
+00:13:08,580 --> 00:13:10,740
+to monitor and I'll just print some stuff out.
+
+161
+00:13:11,010 --> 00:13:20,580
+Logged up print line service to monitor on and I'll put in the hostname, which is X dot hostname is
+
+162
+00:13:20,940 --> 00:13:23,610
+X dot service dot service name.
+
+163
+00:13:24,450 --> 00:13:28,380
+OK, let's just make sure it's actually monitoring the ones that we want and I'll put a couple of stars
+
+164
+00:13:28,380 --> 00:13:32,300
+in front of it so I can see it stop my application.
+
+165
+00:13:32,310 --> 00:13:34,440
+Cleared the screen and run the application.
+
+166
+00:13:37,340 --> 00:13:42,410
+Service to monitor on localhost is TDP perfect, so we're getting closer.
+
+167
+00:13:42,560 --> 00:13:48,080
+OK, so we'll pick this up in the next lecture and actually start adding services to our monitoring
+
+168
+00:13:48,080 --> 00:13:52,760
+map and making sure that we have access to them after they've been added to the schedule.
+
+169
+00:13:53,570 --> 00:13:58,640
+Because one of the things we're going to want to be able to do is to start or stop a service without
+
+170
+00:13:58,640 --> 00:14:01,310
+stopping the entire schedule and starting it again.
+
+171
+00:14:01,850 --> 00:14:03,980
+And we'll start that in the next lecture.

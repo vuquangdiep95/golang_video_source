@@ -1,0 +1,1563 @@
+1
+00:00:02,240 --> 00:00:06,440
+So things are starting to look good with his schedule page, and it appears that everything functions
+
+2
+00:00:06,440 --> 00:00:10,130
+the way we want to so far, but we did leave one little thing out.
+
+3
+00:00:10,220 --> 00:00:15,320
+So if you'll notice, I'm looking at the schedule page right now and have monitoring turned on and everything
+
+4
+00:00:15,320 --> 00:00:15,950
+seems OK.
+
+5
+00:00:16,100 --> 00:00:20,030
+And if I turn monitoring off, everything still seems OK.
+
+6
+00:00:20,330 --> 00:00:27,320
+But cosmetically, we left one thing out with monitoring of if I refresh this page, the no scheduled
+
+7
+00:00:27,320 --> 00:00:29,650
+checks line doesn't show up and that bothers me.
+
+8
+00:00:29,660 --> 00:00:30,740
+So let's go put that in there.
+
+9
+00:00:30,770 --> 00:00:31,640
+It'll just take a moment.
+
+10
+00:00:32,420 --> 00:00:36,050
+So I'll go back to my I.D. and I'm looking at scheduled jet.
+
+11
+00:00:36,050 --> 00:00:39,890
+And all we have to do here is check for the length of the items variable.
+
+12
+00:00:40,340 --> 00:00:45,890
+So I'll put an if statement in if Leane items is greater than zero.
+
+13
+00:00:48,350 --> 00:00:50,510
+Then do this, so let me indent this.
+
+14
+00:00:54,090 --> 00:00:55,080
+And then at the bottom.
+
+15
+00:00:57,140 --> 00:01:05,780
+Else we'll just put an empty row with a one TD and a the appropriate call spanning their tier TD call
+
+16
+00:01:05,780 --> 00:01:07,730
+span equals five.
+
+17
+00:01:10,600 --> 00:01:17,290
+No scheduled checks and closed the if statement.
+
+18
+00:01:19,710 --> 00:01:21,720
+And and that should take care of it.
+
+19
+00:01:22,550 --> 00:01:24,230
+Let me get the TSA where it belongs, though.
+
+20
+00:01:27,130 --> 00:01:27,850
+That looks better.
+
+21
+00:01:28,870 --> 00:01:30,790
+OK, so let's verify this works.
+
+22
+00:01:32,820 --> 00:01:41,280
+I'll save it and go back to my browser and reload this page perfect and let's turn it on good and let's
+
+23
+00:01:41,280 --> 00:01:45,810
+turn it off good and reload the page.
+
+24
+00:01:46,620 --> 00:01:47,100
+Perfect.
+
+25
+00:01:47,690 --> 00:01:50,730
+OK, so now we want to move on to this part.
+
+26
+00:01:51,210 --> 00:01:59,070
+When I'm looking at a host and looking at IT services, when I turn this service off, whether scheduling,
+
+27
+00:01:59,220 --> 00:02:05,160
+let's say scheduling is on, when I turn this service off right now, this works.
+
+28
+00:02:05,880 --> 00:02:11,610
+It changes the appropriate field in the appropriate role in the database, but it doesn't actually remove
+
+29
+00:02:11,610 --> 00:02:14,400
+this this service from our schedule.
+
+30
+00:02:14,710 --> 00:02:20,460
+And when I turn it back on it again, it updates the database, but it doesn't actually make any changes
+
+31
+00:02:20,460 --> 00:02:24,090
+whatsoever to the schedule that's running in the background.
+
+32
+00:02:24,090 --> 00:02:25,110
+And we need to fix that.
+
+33
+00:02:25,240 --> 00:02:30,010
+So let's go back to our ID and let's look at perform checks.
+
+34
+00:02:30,010 --> 00:02:30,660
+Don't go.
+
+35
+00:02:30,960 --> 00:02:35,430
+And what I'm looking for is the test service for host right here.
+
+36
+00:02:36,870 --> 00:02:39,080
+So we need to make some changes to this.
+
+37
+00:02:39,480 --> 00:02:47,310
+So this code runs after a host service is tested and what we're doing here, right down here.
+
+38
+00:02:48,330 --> 00:02:53,850
+So from this part on, when we say broadcast schedule changed event and that's what I want to do.
+
+39
+00:02:54,150 --> 00:03:01,020
+I want to broadcast that his schedule has changed not just when a service is tested, but also when
+
+40
+00:03:01,020 --> 00:03:03,330
+we turn a host service on or off.
+
+41
+00:03:03,660 --> 00:03:10,530
+So what I'm going to do is create a new method down here and I will put it right here and I will call
+
+42
+00:03:10,530 --> 00:03:15,510
+it func and it will have our repo receiver.
+
+43
+00:03:18,810 --> 00:03:27,670
+I would call it push schedule changed event, and it will take two parameters, which will be a models
+
+44
+00:03:28,200 --> 00:03:34,080
+hosted service, and it will also take new status, which is going to be a string.
+
+45
+00:03:36,530 --> 00:03:44,970
+What I'm going to do is move all of this code out of here, so I'll grab this stuff.
+
+46
+00:03:47,490 --> 00:03:51,780
+And I'll cut it right out of here and put it down on this new function.
+
+47
+00:03:52,380 --> 00:03:53,910
+OK, so we'll clean this up in a minute.
+
+48
+00:03:54,510 --> 00:03:55,740
+Let's go back up here.
+
+49
+00:03:56,340 --> 00:04:00,720
+And all we need to do at this point is simply call that method repo.
+
+50
+00:04:04,210 --> 00:04:08,860
+Push, schedule, changed event and pass it house and our new status.
+
+51
+00:04:09,940 --> 00:04:16,480
+OK, so now that I've moved this out of here and actually put it in its own function, I can call it
+
+52
+00:04:16,480 --> 00:04:22,510
+from anywhere, and that will allow us to call this method when needed, when turning a host service
+
+53
+00:04:22,510 --> 00:04:23,600
+on or off.
+
+54
+00:04:24,040 --> 00:04:28,570
+So the question is, where do we want to call this from when we're turning a host service on or off?
+
+55
+00:04:28,680 --> 00:04:32,630
+Well, let's go look at our routes file and we'll figure out what method we need to end this to.
+
+56
+00:04:33,070 --> 00:04:39,760
+So let me open up routes, routes go and let's find the part where we turn a service on or off.
+
+57
+00:04:39,760 --> 00:04:40,480
+And it's right here.
+
+58
+00:04:40,930 --> 00:04:46,540
+We're making a post request to slash admin slash hosts that slash Tuggle service.
+
+59
+00:04:46,540 --> 00:04:51,250
+And that brings up Tuggle service for host, which is inside our handlers.
+
+60
+00:04:52,630 --> 00:04:55,750
+So let's write some comments here and figure out what we want to do.
+
+61
+00:04:56,530 --> 00:05:02,080
+So right here, after we update the database and before we send the JSON, we need to do a couple of
+
+62
+00:05:02,080 --> 00:05:02,370
+things.
+
+63
+00:05:02,370 --> 00:05:03,570
+So I'll put some comments in.
+
+64
+00:05:04,120 --> 00:05:05,770
+We need to, first of all, broadcast.
+
+65
+00:05:06,160 --> 00:05:14,530
+So we're going to broadcast over Web sockets that the service status has changed and then we want to
+
+66
+00:05:14,530 --> 00:05:19,180
+either add or remove post service from the schedule.
+
+67
+00:05:19,870 --> 00:05:21,250
+And that's basically an if statement.
+
+68
+00:05:21,250 --> 00:05:25,240
+So we're saying if active, because that's what we're getting right up here.
+
+69
+00:05:25,750 --> 00:05:32,560
+If active is equal to one, then we want to add to schedule.
+
+70
+00:05:34,140 --> 00:05:37,740
+Otherwise, we want to remove from schedule.
+
+71
+00:05:38,400 --> 00:05:42,370
+OK, so we don't have any methods that allow us to do that easily right now.
+
+72
+00:05:42,540 --> 00:05:46,970
+We'll have to either add the host service to the schedule or remove it from the schedule.
+
+73
+00:05:47,670 --> 00:05:52,350
+What we're going to do, of course, is we're only going to broadcast that it's been added to the schedule
+
+74
+00:05:52,620 --> 00:05:57,600
+or removed from the schedule if the monitoring is actually running, because if it's not running, it
+
+75
+00:05:57,600 --> 00:05:58,410
+doesn't really matter.
+
+76
+00:05:58,950 --> 00:06:01,190
+But we'll take care of that in the methods themselves.
+
+77
+00:06:02,220 --> 00:06:07,340
+So in order to do a broadcast, we need to have both the host service and the host.
+
+78
+00:06:07,350 --> 00:06:09,030
+So let's get that information.
+
+79
+00:06:09,030 --> 00:06:12,330
+So right up here after broadcast, let's get the host service.
+
+80
+00:06:12,450 --> 00:06:18,930
+And I won't bother checking for an error because that's something I'll leave as an exercise for you.
+
+81
+00:06:19,380 --> 00:06:23,070
+But I'll call Repo DB and then I want to get the host service.
+
+82
+00:06:23,220 --> 00:06:25,860
+But do I have the host service ID?
+
+83
+00:06:25,860 --> 00:06:26,760
+At this point?
+
+84
+00:06:27,120 --> 00:06:33,360
+What I have is the host ID and the service ID and I can't get that without actually adding a method.
+
+85
+00:06:33,360 --> 00:06:36,690
+So I'm going to name this method right now and I'll give it a nice long name.
+
+86
+00:06:37,170 --> 00:06:38,760
+Get post service.
+
+87
+00:06:40,560 --> 00:06:47,580
+By hosting ID, service ID, because those are the two pieces of information I have and I'll just pass
+
+88
+00:06:47,580 --> 00:06:50,740
+it post ID and service ID.
+
+89
+00:06:51,540 --> 00:06:54,030
+Now, this method doesn't exist yet, so let's go create that.
+
+90
+00:06:54,030 --> 00:06:57,930
+So I'll go over to host underscore postgrads and the very bottom.
+
+91
+00:06:58,200 --> 00:07:05,280
+I'll put it in a new function func which will have the receiver of a pointer to postgrads DB B repo
+
+92
+00:07:05,970 --> 00:07:07,110
+and that's the name.
+
+93
+00:07:07,200 --> 00:07:10,370
+And it's going to take as let's make sure I'm getting this right.
+
+94
+00:07:10,740 --> 00:07:18,720
+I said host ID and then service ID, so host ID and service ID, both of which are INS.
+
+95
+00:07:19,230 --> 00:07:20,400
+And what does it return.
+
+96
+00:07:20,400 --> 00:07:23,940
+It returns a model's.
+
+97
+00:07:26,480 --> 00:07:30,170
+Model, host, service and potentially an error.
+
+98
+00:07:31,020 --> 00:07:40,100
+OK, so as I always do, I'm going to scroll up and find my contacts code, copy that and pasted in
+
+99
+00:07:40,100 --> 00:07:42,470
+here and write my query.
+
+100
+00:07:45,940 --> 00:07:47,480
+And the query is nothing special.
+
+101
+00:07:48,010 --> 00:07:49,880
+It's very similar to what we've done before.
+
+102
+00:07:49,930 --> 00:07:59,330
+I am going to select the host service ID, the host service host and the host service service.
+
+103
+00:08:01,450 --> 00:08:02,740
+Whether or not it's active.
+
+104
+00:08:04,550 --> 00:08:05,750
+The schedule, no.
+
+105
+00:08:09,570 --> 00:08:10,740
+The schedule unit.
+
+106
+00:08:18,510 --> 00:08:19,650
+The last check.
+
+107
+00:08:23,900 --> 00:08:24,770
+The status.
+
+108
+00:08:26,780 --> 00:08:37,010
+The created at the updated at and then I'll join the services table and get the service ID again, even
+
+109
+00:08:37,010 --> 00:08:45,260
+though I don't need it, the service name, whether or not the service is active, it's Ikon.
+
+110
+00:08:46,370 --> 00:08:50,680
+It's created at and it's updated at.
+
+111
+00:08:51,140 --> 00:08:59,900
+And finally I'll join the host table and get the hostname and I'm going to get that from host services.
+
+112
+00:08:59,930 --> 00:09:13,190
+HHS left join services s on start service ID equals Estcourt ID and I'll join the host table.
+
+113
+00:09:16,350 --> 00:09:29,820
+Hosts H on HSN, hosts underscore ID equals ID and my where clause hs dot host ID equals dollar sign
+
+114
+00:09:29,820 --> 00:09:36,060
+one and H.S. dot service ID equals dollar sign to.
+
+115
+00:09:39,320 --> 00:09:48,620
+OK, now I'll create a variable to store a result in var his models post service and I'll just do my
+
+116
+00:09:48,620 --> 00:09:48,980
+query.
+
+117
+00:09:49,250 --> 00:09:58,760
+Row is assigned the value of Magdeburg query row context, handed the context and the query and our
+
+118
+00:09:58,760 --> 00:10:10,400
+host ID and our service ID and we'll check for an error and scan the results in Rodust scan and we'll
+
+119
+00:10:10,400 --> 00:10:13,690
+scan them into our newly created a variable.
+
+120
+00:10:14,030 --> 00:10:17,570
+So we're getting the ID and I'll duplicate this a few times.
+
+121
+00:10:19,550 --> 00:10:20,810
+Then we get the host ID.
+
+122
+00:10:23,870 --> 00:10:25,090
+And the service idee.
+
+123
+00:10:28,150 --> 00:10:32,740
+An active and scheduled number.
+
+124
+00:10:34,900 --> 00:10:36,040
+And schedule unit.
+
+125
+00:10:40,220 --> 00:10:42,980
+Last check and a few more duplications.
+
+126
+00:10:45,120 --> 00:10:58,400
+Step status created at Updated, and now we're into the service table, so service dot, ID and duplicate
+
+127
+00:10:58,400 --> 00:11:01,920
+had a couple of times then service name.
+
+128
+00:11:04,560 --> 00:11:08,730
+Service active service Eikon.
+
+129
+00:11:10,950 --> 00:11:20,940
+Service created at the service, updated at and finally the hostname that we added a while ago.
+
+130
+00:11:23,130 --> 00:11:23,730
+Hostname.
+
+131
+00:11:25,450 --> 00:11:26,470
+And we'll check for another.
+
+132
+00:11:30,370 --> 00:11:35,620
+If error is not equal to nil, we'll just return and the error.
+
+133
+00:11:38,690 --> 00:11:40,220
+Otherwise, we return.
+
+134
+00:11:40,530 --> 00:11:41,260
+Yes and no.
+
+135
+00:11:42,260 --> 00:11:43,480
+So let's give this a comment.
+
+136
+00:11:48,100 --> 00:11:55,770
+Gets a host service by host and service Idi Amin copy its signature.
+
+137
+00:11:58,010 --> 00:12:06,620
+And open our repository and just put this right in here, now, we can get back to our handlers and
+
+138
+00:12:06,650 --> 00:12:07,830
+that air should go away.
+
+139
+00:12:07,880 --> 00:12:09,160
+So now we have the host service.
+
+140
+00:12:09,590 --> 00:12:14,660
+The other thing we need to call our broadcast is actually the host and we can get that easily enough
+
+141
+00:12:14,660 --> 00:12:15,270
+host.
+
+142
+00:12:15,290 --> 00:12:22,640
+And again, I'll ignore the error and you shouldn't is equal to report dbag get hosted by ID and put
+
+143
+00:12:22,640 --> 00:12:23,570
+in our host ID.
+
+144
+00:12:24,780 --> 00:12:31,160
+OK, so now that we have both of these things, we can actually use them to broadcast as necessary.
+
+145
+00:12:31,700 --> 00:12:38,240
+So let's go up here or down here to our if statement and if active is equal to one, let's do it right
+
+146
+00:12:38,240 --> 00:12:39,050
+here to start with.
+
+147
+00:12:39,380 --> 00:12:41,290
+So we'll say repo.
+
+148
+00:12:41,420 --> 00:12:43,040
+And now I want to push this.
+
+149
+00:12:43,460 --> 00:12:49,550
+I want to push the schedule change event so I can say push schedule change to that and give it to us
+
+150
+00:12:49,970 --> 00:12:53,330
+now because we're pushing this right now and the schedule hasn't run.
+
+151
+00:12:53,360 --> 00:12:54,680
+Our status is just pending.
+
+152
+00:12:55,310 --> 00:12:59,890
+OK, so that pushes our schedule change event and let's go see what that does.
+
+153
+00:13:00,470 --> 00:13:02,330
+So we just copied and pasted this code.
+
+154
+00:13:02,330 --> 00:13:03,680
+Let's make sure this is all right.
+
+155
+00:13:03,680 --> 00:13:07,130
+So we're broadcasting this information and.
+
+156
+00:13:09,450 --> 00:13:12,390
+This all looks correct, so that's a good start.
+
+157
+00:13:12,420 --> 00:13:15,300
+So we're not pushing that event now.
+
+158
+00:13:15,300 --> 00:13:18,900
+The other thing we want to do, and it looks like I have an error here somewhere, where is that?
+
+159
+00:13:19,910 --> 00:13:22,400
+H unused variable H.
+
+160
+00:13:22,440 --> 00:13:27,110
+OK, I'm not using that right now, but I'm going to use it in a moment, so we're going to need that
+
+161
+00:13:27,110 --> 00:13:31,190
+because we need to broadcast as well the fact that the status has changed.
+
+162
+00:13:31,350 --> 00:13:35,000
+So let's go back to our perform checks right here.
+
+163
+00:13:35,240 --> 00:13:42,350
+And just like I extracted the information from here to a new function, I'm also going to grab all of
+
+164
+00:13:42,350 --> 00:13:44,540
+this information, all of this code.
+
+165
+00:13:44,870 --> 00:13:50,840
+I'm going to grab this out of here and I'm going to come down right here, right after this function
+
+166
+00:13:50,840 --> 00:13:51,710
+and create a new one.
+
+167
+00:13:51,800 --> 00:14:00,170
+And I will call this and it'll have the receiver of Repo DB Repo and I'm going to call this push status
+
+168
+00:14:00,320 --> 00:14:01,610
+changed event.
+
+169
+00:14:02,510 --> 00:14:09,800
+That way, I don't have to have duplicated code and for parameters, this will have a H, which is of
+
+170
+00:14:09,800 --> 00:14:19,050
+type models that host it will also have the host service of type models, host service.
+
+171
+00:14:20,270 --> 00:14:27,080
+And finally, it will take a new status, which is a string, and it doesn't return anything.
+
+172
+00:14:28,500 --> 00:14:36,120
+And let me paste that code in there and come back up here and inside this if statement, we just call
+
+173
+00:14:36,120 --> 00:14:40,350
+the function we just created, repo push status changed.
+
+174
+00:14:41,720 --> 00:14:51,020
+And give it our host and our host service and our new status, so now that this exists as its own function,
+
+175
+00:14:51,650 --> 00:14:53,660
+we can call that in our handlers.
+
+176
+00:14:55,430 --> 00:15:03,920
+So just as we pushed a schedule changed event, we can also call repo dot, push status, changed event
+
+177
+00:15:04,640 --> 00:15:07,880
+and give it our host and our host service.
+
+178
+00:15:08,510 --> 00:15:10,140
+And again, the status is just pending.
+
+179
+00:15:11,630 --> 00:15:16,050
+So now we've pushed the fact that the schedule has changed and we've pushed the fact that the status
+
+180
+00:15:16,050 --> 00:15:16,760
+has changed.
+
+181
+00:15:17,150 --> 00:15:18,980
+Is there anything else we need to do here?
+
+182
+00:15:19,010 --> 00:15:21,890
+Yes, we need to add it to the monitor map.
+
+183
+00:15:22,280 --> 00:15:27,440
+And that's the part that, again, I'll just call a function and then go right the function repo and
+
+184
+00:15:27,440 --> 00:15:33,530
+I'll call one add to monitor map and pass it to host service.
+
+185
+00:15:34,070 --> 00:15:36,080
+And that doesn't exist yet, but it will in a moment.
+
+186
+00:15:36,080 --> 00:15:41,060
+And here all I have to do is say repo remove from monitor map.
+
+187
+00:15:44,300 --> 00:15:45,740
+Now let's go create these functions.
+
+188
+00:15:45,740 --> 00:15:49,850
+So I'll go put them in my perform checks file again and I'll just put them at the very bottom.
+
+189
+00:15:50,750 --> 00:15:52,070
+So let's create two functions.
+
+190
+00:15:52,880 --> 00:16:02,480
+Func with the receiver repo of DB Repo and to monitor map and it takes HS, which is a model host service.
+
+191
+00:16:05,850 --> 00:16:12,240
+And I'll just copy this and paste it here and call this remove from monitor map.
+
+192
+00:16:16,270 --> 00:16:20,980
+OK, so let's do the ad one first, and this is really straightforward, but again, we don't want to
+
+193
+00:16:20,980 --> 00:16:25,080
+make any changes to the monitor map unless monitoring is live.
+
+194
+00:16:25,090 --> 00:16:26,530
+So let's put a little if statement in there.
+
+195
+00:16:27,370 --> 00:16:36,370
+If repoll dot app, dot preference map and I'm looking for monitoring Dasch live.
+
+196
+00:16:36,520 --> 00:16:44,040
+Now, underscore Leive if that's equal to one and do this otherwise don't do anything else.
+
+197
+00:16:44,050 --> 00:16:45,130
+So I'll just copy this.
+
+198
+00:16:46,680 --> 00:16:51,900
+And paste it down here, so if monitoring is not live and this function is called, nothing happens,
+
+199
+00:16:52,920 --> 00:16:55,140
+but if it is live, what do I want to do?
+
+200
+00:16:55,170 --> 00:16:59,400
+Well, I want to do the same sort of thing I did when we started up our monitoring in the first place.
+
+201
+00:16:59,430 --> 00:17:04,590
+I want to create a variable which I'll call J of type job, which we've defined right in this package.
+
+202
+00:17:05,370 --> 00:17:12,600
+And then I want to make JS hosting service ID equal to the host service that's passed to us, its ID
+
+203
+00:17:13,980 --> 00:17:15,150
+and then I want to schedule this.
+
+204
+00:17:15,390 --> 00:17:23,610
+So I'm getting back a schedule ID, which is an it potentially an error that's assigned the value of
+
+205
+00:17:23,730 --> 00:17:25,290
+repo app.
+
+206
+00:17:25,500 --> 00:17:33,270
+I call my scheduler and I just add a job and what I'm adding is again it needs to be, it needs to have
+
+207
+00:17:33,270 --> 00:17:39,720
+a few parameters and we'll build the first one using 14. Sprint F.
+
+208
+00:17:43,210 --> 00:17:50,500
+And I'm just going to use the syntax that our scheduler expects at every present day for an eight percent
+
+209
+00:17:50,500 --> 00:17:59,230
+is for a string and then substitute from home service our schedule number and then from host service,
+
+210
+00:17:59,230 --> 00:18:00,370
+our schedule unit.
+
+211
+00:18:02,480 --> 00:18:04,870
+And the last parameter is just the job, J.
+
+212
+00:18:05,510 --> 00:18:06,970
+OK, so that will schedule it.
+
+213
+00:18:07,850 --> 00:18:09,740
+And again, I should probably check for an error.
+
+214
+00:18:10,010 --> 00:18:17,630
+I'll say if error is is not equal to nil, I'll just log the error log print line error and I'll return.
+
+215
+00:18:18,290 --> 00:18:23,750
+And of course, in your own code, you could perform whatever logic is appropriate for your case.
+
+216
+00:18:23,970 --> 00:18:30,110
+Otherwise, we just add this to our monitor map, repo dot app, dot monitor map.
+
+217
+00:18:30,590 --> 00:18:39,380
+And I'm going to add in the key of ID for our host service ID and that's equal to the new schedule ID.
+
+218
+00:18:39,380 --> 00:18:40,190
+We just got back.
+
+219
+00:18:40,370 --> 00:18:41,940
+So that's now added to our map.
+
+220
+00:18:42,530 --> 00:18:47,510
+Now let's broadcast the fact that this has taken place so we'll create a data variable, our payload
+
+221
+00:18:47,690 --> 00:18:55,100
+that's assigned the value of make map, string, string and as usual, I'll put all the information
+
+222
+00:18:55,100 --> 00:18:56,390
+I think I might need in there.
+
+223
+00:18:56,390 --> 00:18:58,790
+So I'll give it a message, even though I'm not using it right now.
+
+224
+00:19:01,010 --> 00:19:02,900
+And the message is just scheduling.
+
+225
+00:19:05,440 --> 00:19:08,560
+And I'm going to duplicate this a couple of times just to save some typing.
+
+226
+00:19:09,700 --> 00:19:11,830
+The second thing I'll put in there is the host service.
+
+227
+00:19:11,830 --> 00:19:17,860
+I'd host service ID and that's going to be equal to I need to convert it to a string.
+
+228
+00:19:17,860 --> 00:19:20,580
+So I'll say Sterkel and.
+
+229
+00:19:22,700 --> 00:19:32,210
+Eye to eye, and I'm going to pass in the House service ID, the next thing I want is the next run and
+
+230
+00:19:32,210 --> 00:19:36,290
+that's just going to be a string and I'm just going to put pending because we just added it.
+
+231
+00:19:36,290 --> 00:19:37,280
+So it hasn't run yet.
+
+232
+00:19:38,510 --> 00:19:47,780
+The service data service, it's just the service name is equal to escort service, not service name.
+
+233
+00:19:49,450 --> 00:19:55,780
+The hostname data host is equal to hostname.
+
+234
+00:19:58,460 --> 00:20:10,640
+The last run data, last run, I'll make that equal to Høst at last check dot format and pass in our
+
+235
+00:20:10,640 --> 00:20:19,190
+standard formatting string twenty six zero one zero two and then three column zero for Colon zero five
+
+236
+00:20:19,880 --> 00:20:25,460
+pm to give it a nice human readable format and data schedule.
+
+237
+00:20:29,330 --> 00:20:31,350
+Well, that's just what we used up above.
+
+238
+00:20:32,240 --> 00:20:35,360
+That's simply the format as print bit here.
+
+239
+00:20:35,360 --> 00:20:36,380
+So let's copy that.
+
+240
+00:20:38,360 --> 00:20:47,060
+And paste it right here and I broadcast this report, broadcast message, and the channel is the public
+
+241
+00:20:47,060 --> 00:20:51,680
+channel and the event is schedule changed event.
+
+242
+00:20:55,900 --> 00:20:57,460
+And the payload is our data.
+
+243
+00:20:58,870 --> 00:21:03,260
+All right, so that will add it to the monitor map now removing it from the monitor map.
+
+244
+00:21:03,700 --> 00:21:04,680
+That's really straightforward.
+
+245
+00:21:05,350 --> 00:21:08,170
+That's simply calling our scheduler.
+
+246
+00:21:10,320 --> 00:21:14,940
+Repo app, DOT scheduler.
+
+247
+00:21:16,030 --> 00:21:25,150
+And calling remove and we're going to remove the parameter it takes is a repo app, dot monitor map.
+
+248
+00:21:26,880 --> 00:21:29,240
+And then the key is Edek.
+
+249
+00:21:31,780 --> 00:21:37,330
+So that removes it from there and now we'll just broadcast the fact that this has changed, so we'll
+
+250
+00:21:37,330 --> 00:21:44,800
+just say may create a data variable again, data is a sign the value of make the map, string, string.
+
+251
+00:21:46,090 --> 00:22:00,550
+And all I want to push here is data post service ID is a sign the value of Østergaard eye to a.
+
+252
+00:22:02,850 --> 00:22:12,490
+He ID and then broadcast that, and I'll just copy this line pasted in here, and that should take care
+
+253
+00:22:12,490 --> 00:22:12,730
+of it.
+
+254
+00:22:12,730 --> 00:22:13,990
+So it's clean this up a little bit.
+
+255
+00:22:14,330 --> 00:22:15,110
+That looks better.
+
+256
+00:22:16,030 --> 00:22:17,680
+Let's make sure everything compiles.
+
+257
+00:22:22,340 --> 00:22:22,730
+Good.
+
+258
+00:22:22,910 --> 00:22:29,360
+OK, so everything compiles, so now we have this schedule changed where we need to ingest.
+
+259
+00:22:31,680 --> 00:22:32,590
+I actually got that wrong.
+
+260
+00:22:33,150 --> 00:22:39,720
+It's not schedule changed event here for this last one, it's schedule item, dash removed event.
+
+261
+00:22:39,810 --> 00:22:41,310
+That's all that I want to push there.
+
+262
+00:22:41,370 --> 00:22:42,550
+I'm glad I caught that right now.
+
+263
+00:22:42,570 --> 00:22:44,880
+I would have been looking that for that for half an hour.
+
+264
+00:22:45,420 --> 00:22:50,430
+OK, so now we need to make some changes to our Jagjit file.
+
+265
+00:22:51,210 --> 00:22:56,600
+So let's go over to our Jagjit and up here just before the schedule changed event.
+
+266
+00:22:56,610 --> 00:23:00,210
+Let's Vinda the schedule removed event, the one that I almost left out.
+
+267
+00:23:00,630 --> 00:23:12,420
+So in our public channel we want to bind to schedule item removed event and that will again be an anonymous
+
+268
+00:23:12,420 --> 00:23:13,680
+function that takes some data.
+
+269
+00:23:14,970 --> 00:23:16,770
+And let me make sure I've got that name right.
+
+270
+00:23:16,780 --> 00:23:19,560
+Schedule, dash item, dash, remove, dash event.
+
+271
+00:23:19,560 --> 00:23:24,960
+Let's go back to perform Chekist schedule dash item, dash removed event or dash event.
+
+272
+00:23:24,960 --> 00:23:25,440
+Perfect.
+
+273
+00:23:25,620 --> 00:23:31,320
+OK, so inside of this we're going to do the same sort of thing we did in every other case.
+
+274
+00:23:31,830 --> 00:23:38,850
+We want this to fire any time an item is removed from the schedule, but we only want the code inside
+
+275
+00:23:38,850 --> 00:23:40,620
+the anonymous function to execute.
+
+276
+00:23:40,620 --> 00:23:45,270
+If there is an item on the page that has an ID that we check for.
+
+277
+00:23:45,870 --> 00:23:56,580
+So let's just look for let ro exists equal bang bang document douget element by ID and I'm looking for
+
+278
+00:23:56,580 --> 00:24:04,650
+a role on our schedule table which will have the ID of Schedule Dasch plus our host service ID, which
+
+279
+00:24:04,650 --> 00:24:08,430
+we're getting in from our data variable hosting service ID.
+
+280
+00:24:08,970 --> 00:24:10,290
+If that exists.
+
+281
+00:24:10,290 --> 00:24:13,560
+If Roe exists, I want to get rid of it.
+
+282
+00:24:16,250 --> 00:24:18,980
+So let's get a reference to it, so I copied this code.
+
+283
+00:24:22,560 --> 00:24:30,180
+And say, let Roe equal paste, that will get me a reference to the ROE, and now we use our standard
+
+284
+00:24:30,180 --> 00:24:38,990
+Java JavaScript syntax for removing a row from a table row, parent node, dot remove child row.
+
+285
+00:24:39,870 --> 00:24:40,870
+So that will get rid of it.
+
+286
+00:24:42,180 --> 00:24:51,570
+Now we need to again check to see if we need to add a no scheduled
+
+287
+00:24:54,030 --> 00:24:54,570
+checks.
+
+288
+00:24:56,430 --> 00:25:01,530
+And since we only have one actual hosted service, we're checking this will definitely fire.
+
+289
+00:25:01,860 --> 00:25:07,410
+So if we get a reference to the table, let current table equal.
+
+290
+00:25:09,860 --> 00:25:10,490
+Document.
+
+291
+00:25:14,350 --> 00:25:18,070
+Get owned by ID, and we called that schedule Dasch table.
+
+292
+00:25:22,350 --> 00:25:28,710
+And I know this is going to exist inside of this if statement, because if it didn't, the role that
+
+293
+00:25:28,710 --> 00:25:31,820
+we were looking for in the first place would not it would not have existed.
+
+294
+00:25:31,860 --> 00:25:33,090
+This would have returned false.
+
+295
+00:25:33,090 --> 00:25:35,010
+And this this code would never execute.
+
+296
+00:25:35,580 --> 00:25:41,850
+So now we say if current table rose.
+
+297
+00:25:44,130 --> 00:25:44,670
+Length.
+
+298
+00:25:45,930 --> 00:25:50,100
+Is equal exactly to one in that case, we need to add a new.
+
+299
+00:25:50,820 --> 00:26:03,510
+So we'll create a row, let new row equal current table Dorte bodies at index zero, insert a row and
+
+300
+00:26:03,510 --> 00:26:06,060
+give it the key of minus or give it the parameter of minus one.
+
+301
+00:26:06,870 --> 00:26:08,010
+And then we create a cell.
+
+302
+00:26:08,130 --> 00:26:16,350
+Let new cell equal new row insert a cell at position zero.
+
+303
+00:26:18,420 --> 00:26:23,910
+And new cell door inner HTML is equal to.
+
+304
+00:26:25,990 --> 00:26:37,300
+No scheduled checks, lower case C, and before that, I have to give it an attribute, new cell set
+
+305
+00:26:37,300 --> 00:26:42,550
+attribute and I want to set call span equal to five.
+
+306
+00:26:44,440 --> 00:26:44,850
+All right.
+
+307
+00:26:45,370 --> 00:26:47,170
+So that should actually work.
+
+308
+00:26:47,230 --> 00:26:48,040
+So let's try this.
+
+309
+00:26:48,340 --> 00:26:51,700
+Let's stop our application, just to be sure.
+
+310
+00:26:51,910 --> 00:26:53,350
+Compiler application.
+
+311
+00:26:55,530 --> 00:27:02,340
+Hide this, go back to a Web browser, and what I'm going to do is make sure we're monitoring, I'll
+
+312
+00:27:02,340 --> 00:27:03,330
+go to the schedule.
+
+313
+00:27:03,630 --> 00:27:04,110
+Perfect.
+
+314
+00:27:04,110 --> 00:27:05,670
+That's showing up now.
+
+315
+00:27:05,670 --> 00:27:11,250
+I'm going to leave this tab open, open a new tab, but I'm going to go to the host house page when
+
+316
+00:27:11,250 --> 00:27:11,780
+I do that.
+
+317
+00:27:12,090 --> 00:27:16,050
+So this should still be running in the background, listening for events.
+
+318
+00:27:16,350 --> 00:27:21,990
+And I'll go to localhost and I'll go to managed services and I'm going to open the JavaScript console
+
+319
+00:27:21,990 --> 00:27:23,340
+just to look for any errors.
+
+320
+00:27:23,340 --> 00:27:26,130
+And actually, I'll open the JavaScript console on this tab as well.
+
+321
+00:27:27,120 --> 00:27:32,520
+Now, when I make this inactive, what should happen is it should make all the necessary changes in
+
+322
+00:27:32,520 --> 00:27:33,200
+the database.
+
+323
+00:27:33,630 --> 00:27:40,860
+It should remove it from our schedule and then it should update this table by removing this row and
+
+324
+00:27:40,860 --> 00:27:42,470
+putting in a no scheduled checks.
+
+325
+00:27:42,520 --> 00:27:44,310
+So let's see what we got wrong, if anything.
+
+326
+00:27:45,680 --> 00:27:52,220
+OK, so those changes were saved, no JavaScript errors over here and over here, it says no scheduled
+
+327
+00:27:52,220 --> 00:27:52,730
+checks.
+
+328
+00:27:53,150 --> 00:27:53,750
+Perfect.
+
+329
+00:27:55,500 --> 00:27:58,170
+Now, let's go back here and turn this on.
+
+330
+00:28:00,150 --> 00:28:06,090
+OK, I got a message I got another message here and this updated in real time, let's watch it to make
+
+331
+00:28:06,090 --> 00:28:08,060
+sure it was actually added to the schedule.
+
+332
+00:28:12,840 --> 00:28:14,340
+No, that didn't seem to fire.
+
+333
+00:28:14,370 --> 00:28:15,810
+Let's go back and find out why.
+
+334
+00:28:16,800 --> 00:28:22,320
+So I'm fairly certain it has to be somewhere in this method and to monitor map, so let's see what we
+
+335
+00:28:22,320 --> 00:28:23,310
+have wrong here.
+
+336
+00:28:23,960 --> 00:28:28,600
+Aha, you can't use an ampersand because the syntax is actually an 8th sign.
+
+337
+00:28:28,620 --> 00:28:29,040
+All right.
+
+338
+00:28:29,460 --> 00:28:30,540
+So let's look at that.
+
+339
+00:28:30,540 --> 00:28:34,860
+And there's exactly the error zeros, ampersand, every it should have been at every.
+
+340
+00:28:35,130 --> 00:28:36,540
+So let's stop that.
+
+341
+00:28:36,870 --> 00:28:37,650
+Run this again.
+
+342
+00:28:40,960 --> 00:28:43,130
+Go back to our our Web browser.
+
+343
+00:28:44,260 --> 00:28:52,780
+Let's clear the console, make sure monitoring is on and it is OK, reload everything and look at our
+
+344
+00:28:52,780 --> 00:28:54,130
+managed services page.
+
+345
+00:28:54,130 --> 00:28:57,260
+And over here, I'll refresh refresh our schedule page.
+
+346
+00:28:57,280 --> 00:29:01,270
+OK, so that has one entry in there right now and it just updated.
+
+347
+00:29:01,270 --> 00:29:03,050
+So I know everything is going as it should.
+
+348
+00:29:03,430 --> 00:29:05,190
+Now I turn this off.
+
+349
+00:29:06,460 --> 00:29:07,450
+This should be empty.
+
+350
+00:29:07,480 --> 00:29:08,200
+Perfect.
+
+351
+00:29:08,530 --> 00:29:11,440
+Now I turn it back on and go back here.
+
+352
+00:29:11,440 --> 00:29:14,520
+And this pending should change within 10 seconds.
+
+353
+00:29:19,860 --> 00:29:22,830
+And it does OK, so that seems to be working properly.
+
+354
+00:29:23,580 --> 00:29:27,560
+There's only one more thing I want to take care of and it's just a little oversight on my part.
+
+355
+00:29:27,570 --> 00:29:30,750
+So right now, everything seems to be working properly.
+
+356
+00:29:30,750 --> 00:29:34,800
+And if I turn monitoring off on this page, the schedule goes as it should.
+
+357
+00:29:34,950 --> 00:29:37,550
+And if I turn it back on, it goes as it should.
+
+358
+00:29:37,980 --> 00:29:42,650
+But let me show you something on this page and I'll close the JavaScript console.
+
+359
+00:29:42,660 --> 00:29:48,300
+So in this tab, I'm looking at my house page and it says monitoring is on and on this tab.
+
+360
+00:29:48,300 --> 00:29:51,120
+I'm looking at the schedule page and it says monitoring is on.
+
+361
+00:29:51,150 --> 00:29:52,150
+Let me turn this one off.
+
+362
+00:29:53,880 --> 00:29:54,470
+Perfect.
+
+363
+00:29:54,480 --> 00:29:56,310
+But let me go back to the other tab.
+
+364
+00:29:56,460 --> 00:30:01,890
+It still shows that monitoring is on, even though it isn't and everything will work properly.
+
+365
+00:30:02,130 --> 00:30:05,730
+But this is a simple cosmetic change that will take us two seconds to fix.
+
+366
+00:30:06,210 --> 00:30:11,890
+So let me go back to my Edem and let me look at the layout jet file right here.
+
+367
+00:30:12,420 --> 00:30:17,700
+So this code right here is the toggle and it has an idea of monitoring live.
+
+368
+00:30:17,970 --> 00:30:24,450
+And if I go to my Jagjit jet and look, I already have two events that bind to the applications, monitoring,
+
+369
+00:30:24,450 --> 00:30:25,850
+starting and stopping.
+
+370
+00:30:26,100 --> 00:30:29,190
+So all I have to do here is add a little bit of JavaScript code.
+
+371
+00:30:29,190 --> 00:30:30,060
+Very, very simple.
+
+372
+00:30:30,480 --> 00:30:34,650
+First thing I'll do when monitoring is turned on, I will let toggle.
+
+373
+00:30:35,280 --> 00:30:41,460
+And that's just a variable name I'm choosing equal a reference to document doget element by ID and I'm
+
+374
+00:30:41,460 --> 00:30:42,960
+looking for monitoring live.
+
+375
+00:30:43,680 --> 00:30:47,730
+So I have that and I'm just going to make sure that it gets checked.
+
+376
+00:30:48,060 --> 00:30:50,790
+Toggle checked equals true.
+
+377
+00:30:53,760 --> 00:31:01,830
+And I'll just copy these two lines of code and I'll paste them in the app stopping event that we're
+
+378
+00:31:01,830 --> 00:31:02,480
+listening to.
+
+379
+00:31:02,910 --> 00:31:12,530
+So when we get this event app stopping will set the checkmark to false go back here, reload this page
+
+380
+00:31:12,690 --> 00:31:16,860
+monitoring is off, reload this page monitoring is off.
+
+381
+00:31:16,980 --> 00:31:21,960
+Now, I'll turn it on and look at the other tab and it should be turned on.
+
+382
+00:31:21,960 --> 00:31:22,590
+And it is.
+
+383
+00:31:22,590 --> 00:31:27,930
+And I'll turn it off here in this tab and go back to the other tab.
+
+384
+00:31:27,930 --> 00:31:29,010
+And it should be off.
+
+385
+00:31:29,010 --> 00:31:29,670
+And it is.
+
+386
+00:31:29,760 --> 00:31:31,200
+And that's all there is to it.
+
+387
+00:31:31,690 --> 00:31:32,070
+All right.
+
+388
+00:31:32,070 --> 00:31:35,070
+We're getting much closer to having this is a useful application.
+
+389
+00:31:35,070 --> 00:31:36,420
+We have a few more things to do.
+
+390
+00:31:36,420 --> 00:31:41,490
+And eventually I want to add a couple of more services to monitor and we'll get started on that in the
+
+391
+00:31:41,490 --> 00:31:42,210
+next lecture.

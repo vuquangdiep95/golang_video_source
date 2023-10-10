@@ -1,0 +1,303 @@
+1
+00:00:00,630 --> 00:00:06,720
+So now what we're going to do is we're just going to demonstrate that once more like my code is a little
+
+2
+00:00:06,720 --> 00:00:07,800
+bit ahead of last.
+
+3
+00:00:07,800 --> 00:00:12,220
+Check out the last sorry buy codes a little bit ahead the last commit.
+
+4
+00:00:12,450 --> 00:00:17,560
+And so I'm going to check this file out and just bring it back to where it was here.
+
+5
+00:00:17,730 --> 00:00:19,590
+And so I'm going to bring this down here.
+
+6
+00:00:19,590 --> 00:00:25,040
+Copy that and come down to my terminal and get checkout dash dash.
+
+7
+00:00:25,080 --> 00:00:30,090
+And then that entire file that path and this is where it's tree ish right.
+
+8
+00:00:30,090 --> 00:00:37,230
+Like here is the location that no treat tree issues to commit is some commit value according to gifts
+
+9
+00:00:37,350 --> 00:00:43,440
+like length how how we defines stuff a tree ish is a commit OK.
+
+10
+00:00:43,440 --> 00:00:50,400
+I think you have directory tree but now when I do the get check out if I do might get status everything's
+
+11
+00:00:50,400 --> 00:00:56,800
+up to date because I rolled it back to I rolled that one file back to where it was at this point.
+
+12
+00:00:56,820 --> 00:01:01,090
+Back to had and if I look here that comment is gone.
+
+13
+00:01:01,110 --> 00:01:03,940
+So it's get checked out in action.
+
+14
+00:01:04,020 --> 00:01:05,770
+What else do you want to say about that.
+
+15
+00:01:05,940 --> 00:01:08,190
+Your head can be freely moved.
+
+16
+00:01:08,310 --> 00:01:13,890
+So right now head is pointing to master for Todd but he could just as easily do the get check out to
+
+17
+00:01:13,890 --> 00:01:17,330
+a branch and now his head to be over at that branch.
+
+18
+00:01:17,340 --> 00:01:21,310
+Another thing you could do is you can get check out a commit number.
+
+19
+00:01:21,310 --> 00:01:26,350
+So all the permits that show up with the gate log.
+
+20
+00:01:27,130 --> 00:01:32,490
+I could take a one of these commit numbers say I want to go back to this previous commit before they
+
+21
+00:01:32,490 --> 00:01:41,470
+get ignore I could copy that and get check out that commit no and this will give me a nice big warning
+
+22
+00:01:41,470 --> 00:01:44,230
+about how you are in a detached head state.
+
+23
+00:01:44,230 --> 00:01:49,090
+You can look around make experimental changes and commit them discard any commits you make in this state
+
+24
+00:01:49,090 --> 00:01:54,910
+without impacting any branches but if you actually want to retain the cadets you have to create a new
+
+25
+00:01:54,910 --> 00:01:55,390
+branch
+
+26
+00:01:58,710 --> 00:02:00,890
+so if you wanted to you could go back to.
+
+27
+00:02:00,920 --> 00:02:08,080
+So right now I do the get logged and I could see my head is here and it's not pointing to master so
+
+28
+00:02:08,180 --> 00:02:09,770
+that's where you're currently working.
+
+29
+00:02:09,770 --> 00:02:10,570
+Yes.
+
+30
+00:02:10,760 --> 00:02:15,540
+And you can create a branch off of that change and stuff submerge it back up further off line.
+
+31
+00:02:15,590 --> 00:02:21,140
+So so now I could create a branch off at this point if I wished with the get check dashboard.
+
+32
+00:02:21,170 --> 00:02:30,210
+Just like normal Mork often though you will do a get check out to a particular tag name too.
+
+33
+00:02:30,330 --> 00:02:37,040
+I could do it get checked out from this tag so previous head position was at this commit with this commit
+
+34
+00:02:37,040 --> 00:02:43,460
+message head is now at this commit with this message if I do get log see my head is now in here with
+
+35
+00:02:43,460 --> 00:02:48,000
+this tag and whereas the top log Oh it doesn't you don't see it.
+
+36
+00:02:48,120 --> 00:02:48,390
+Yeah.
+
+37
+00:02:48,390 --> 00:02:49,390
+You see this your lawyer there.
+
+38
+00:02:49,510 --> 00:02:49,890
+Yes.
+
+39
+00:02:49,920 --> 00:02:51,010
+Like the top.
+
+40
+00:02:51,200 --> 00:02:51,430
+Yeah.
+
+41
+00:02:51,450 --> 00:02:52,400
+Three four four.
+
+42
+00:02:52,450 --> 00:02:54,230
+So how do you get back up to the top.
+
+43
+00:02:54,240 --> 00:03:00,960
+So now see I can just do get branch to see again here it also says head is here the star and it's green.
+
+44
+00:03:01,050 --> 00:03:01,930
+It's not at Master.
+
+45
+00:03:01,950 --> 00:03:07,670
+So I can just get checkout back to master and now I get log shows.
+
+46
+00:03:07,670 --> 00:03:08,440
+My head is set now.
+
+47
+00:03:08,480 --> 00:03:08,720
+All right.
+
+48
+00:03:08,720 --> 00:03:13,070
+So it's almost it creates its own branch when you move your head to a different one kind of except you
+
+49
+00:03:13,070 --> 00:03:19,160
+can't really you you can you can go you can move your head back or to a tag and you can make commits
+
+50
+00:03:19,310 --> 00:03:20,630
+and you step with them.
+
+51
+00:03:20,640 --> 00:03:24,170
+But as soon as you go away from that point go back to master something.
+
+52
+00:03:24,170 --> 00:03:24,350
+Yeah.
+
+53
+00:03:24,360 --> 00:03:26,770
+You can't really get back to those committees anymore you don't.
+
+54
+00:03:26,990 --> 00:03:28,300
+You don't know how to.
+
+55
+00:03:28,310 --> 00:03:30,230
+There's nothing labeling that content anymore.
+
+56
+00:03:30,230 --> 00:03:30,530
+Yeah.
+
+57
+00:03:30,800 --> 00:03:35,330
+So you know if you but if you go back to another thing and then you create a branch off that point you
+
+58
+00:03:35,330 --> 00:03:40,850
+now have a name to that to your work off that point and then you should merge that back in the master
+
+59
+00:03:40,850 --> 00:03:41,360
+if you want it.
+
+60
+00:03:41,540 --> 00:03:42,710
+Yes OK.
+
+61
+00:03:43,010 --> 00:03:49,310
+So if you wanted to kind grab something from an old code base an old comment that would be how you do
+
+62
+00:03:49,310 --> 00:03:49,400
+it.
+
+63
+00:03:49,510 --> 00:03:49,940
+Yeah.
+
+64
+00:03:50,090 --> 00:03:50,720
+And then bring it.
+
+65
+00:03:50,760 --> 00:03:54,560
+Yes let's go get that thing we threw away we actually needed that or commits ago.
+
+66
+00:03:54,560 --> 00:03:54,990
+Yeah.
+
+67
+00:03:55,000 --> 00:04:00,910
+You come back there and come back there grab the file create a branch and emerge back to master.
+
+68
+00:04:00,950 --> 00:04:01,490
+Interesting.
+
+69
+00:04:01,970 --> 00:04:02,630
+All right.
+
+70
+00:04:02,630 --> 00:04:04,070
+I hope that was helpful.
+
+71
+00:04:04,070 --> 00:04:05,790
+Anything more you want to add.
+
+72
+00:04:05,800 --> 00:04:06,650
+No.
+
+73
+00:04:06,680 --> 00:04:09,510
+Is it me or is it getting a little bit hot in here.
+
+74
+00:04:10,430 --> 00:04:11,780
+I think you're doing all right.
+
+75
+00:04:11,930 --> 00:04:12,680
+All right.
+
+76
+00:04:12,890 --> 00:04:13,790
+See in the next video.

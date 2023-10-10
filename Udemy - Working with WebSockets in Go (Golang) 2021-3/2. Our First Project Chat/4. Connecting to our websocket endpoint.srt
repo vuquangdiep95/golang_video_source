@@ -1,0 +1,383 @@
+1
+00:00:00,680 --> 00:00:06,050
+So right now, we have an application with two routes, one that goes to the homepage and all that does
+
+2
+00:00:06,050 --> 00:00:11,390
+is it just takes the template home jet and writes that to the screen.
+
+3
+00:00:11,390 --> 00:00:13,030
+And the template looks like this.
+
+4
+00:00:13,040 --> 00:00:16,970
+It's just HTML and it renders this way in the Web browser.
+
+5
+00:00:17,150 --> 00:00:18,280
+This is the home page.
+
+6
+00:00:18,650 --> 00:00:20,390
+And of course, we're going to improve this over time.
+
+7
+00:00:20,630 --> 00:00:26,900
+And as you may have noticed, all this is is HTML, even though I'm passing homecourt jet through the
+
+8
+00:00:26,900 --> 00:00:32,690
+jet template engine to render HTML, I'm not actually taking advantage of Jet and that's OK.
+
+9
+00:00:32,720 --> 00:00:35,210
+We're going to take advantage of it later on in the course.
+
+10
+00:00:35,210 --> 00:00:37,060
+So it makes sense to set it up right now.
+
+11
+00:00:37,730 --> 00:00:42,680
+And the other route we have is our end point and that takes us here.
+
+12
+00:00:42,890 --> 00:00:48,650
+And all that does is take a standard connection from a Web browser and upgraded to a WebSocket connection
+
+13
+00:00:48,740 --> 00:00:50,390
+and send back a Jason response.
+
+14
+00:00:50,870 --> 00:00:57,590
+So our task right now is to go to our home dot jet and add some JavaScript that actually connects to
+
+15
+00:00:58,130 --> 00:00:59,060
+our endpoint.
+
+16
+00:00:59,360 --> 00:01:01,860
+And then we want to verify that we've actually got that connection.
+
+17
+00:01:01,880 --> 00:01:02,630
+So let's get started.
+
+18
+00:01:03,200 --> 00:01:06,530
+So I'm going to add a script tag just before the closing body tag.
+
+19
+00:01:06,530 --> 00:01:10,790
+And inside of that, I'm going to declare a variable and I'll call it socket because it's a WebSocket
+
+20
+00:01:10,790 --> 00:01:11,300
+connection.
+
+21
+00:01:11,670 --> 00:01:14,950
+And right now I'm going to set it to null so it has no value whatsoever.
+
+22
+00:01:14,960 --> 00:01:21,320
+So I've just declared it so that I can access that variable from other functions in the JavaScript for
+
+23
+00:01:21,320 --> 00:01:21,870
+this page.
+
+24
+00:01:22,490 --> 00:01:28,840
+So what I want to do is I want to wait until the document is loaded and then connect to my WebSocket.
+
+25
+00:01:28,940 --> 00:01:33,110
+So let's do that one at an event listener document.
+
+26
+00:01:34,360 --> 00:01:41,230
+At Event Listener and we'll look for dumb content loaded, in other words, when everything is loaded
+
+27
+00:01:41,230 --> 00:01:47,590
+in the page will execute this function and all I'm going to do is take that variable socket and make
+
+28
+00:01:47,590 --> 00:01:48,580
+it equal to.
+
+29
+00:01:49,660 --> 00:01:51,100
+What a new websocket.
+
+30
+00:01:53,790 --> 00:02:02,370
+And I'll pass it a path and I'll pass it Collins just like a Web page starts with HTP or https colon
+
+31
+00:02:02,370 --> 00:02:04,080
+slash slash WebSocket.
+
+32
+00:02:04,410 --> 00:02:08,850
+Use the WC for an unencrypted connection, which we're going to use and development.
+
+33
+00:02:09,120 --> 00:02:12,420
+But in production we would use for a secure connection.
+
+34
+00:02:12,450 --> 00:02:14,880
+But we're just in development right now, so this will work just fine.
+
+35
+00:02:15,270 --> 00:02:20,250
+And I'll connect to my local machine, which is one two seven zero zero one the Lookback address, which
+
+36
+00:02:20,250 --> 00:02:21,750
+is always the local machine.
+
+37
+00:02:22,110 --> 00:02:23,520
+And I'm going to go to port eighty eighty.
+
+38
+00:02:23,910 --> 00:02:27,560
+That's the port we're listening on and our path is W.S..
+
+39
+00:02:28,170 --> 00:02:31,600
+So once that's connected, what are we going to do?
+
+40
+00:02:31,620 --> 00:02:35,220
+Well, we can actually call some methods on our socket.
+
+41
+00:02:36,030 --> 00:02:41,880
+Our socket has a few things built in, so we'll call socket, which I better still right on open.
+
+42
+00:02:43,620 --> 00:02:45,870
+And inside of that, what do I want to do?
+
+43
+00:02:45,920 --> 00:02:47,700
+I'll make that do it this way equals.
+
+44
+00:02:51,610 --> 00:02:54,190
+It's a nicer syntax I like that syntax for.
+
+45
+00:02:55,510 --> 00:03:00,100
+Calling methods on objects, and I'll just say council log.
+
+46
+00:03:04,140 --> 00:03:09,130
+Successfully connected, that's all due for right now just to see if that works.
+
+47
+00:03:09,150 --> 00:03:11,310
+OK, so let's stop our application.
+
+48
+00:03:11,310 --> 00:03:13,800
+If it's running, let's run our application.
+
+49
+00:03:15,270 --> 00:03:21,690
+And let's go back to our webpage and I'll open my JavaScript terminal window and reload it and see what
+
+50
+00:03:21,690 --> 00:03:24,130
+happens successfully connected.
+
+51
+00:03:24,420 --> 00:03:25,740
+Absolutely perfect.
+
+52
+00:03:25,770 --> 00:03:29,690
+Let's go over and look at the log for our application client connected to End Point.
+
+53
+00:03:29,880 --> 00:03:32,700
+So there we've actually connected to our endpoint.
+
+54
+00:03:33,520 --> 00:03:40,300
+Now, that's enough JavaScript for this time around, but since we've got that's that home open anyway,
+
+55
+00:03:40,300 --> 00:03:41,590
+let's make that a little bit better.
+
+56
+00:03:41,950 --> 00:03:48,520
+I'm going to go to bootstrap and I'm going to use bootstrap five point zero point zero dash beta one,
+
+57
+00:03:48,520 --> 00:03:49,600
+which is the current release.
+
+58
+00:03:49,600 --> 00:03:55,240
+When I'm recording this, and to be honest with you, I would never use a beta version in production.
+
+59
+00:03:55,240 --> 00:04:00,040
+But we may as well get our feet wet with this right now because it won't be too long before we have
+
+60
+00:04:00,040 --> 00:04:01,730
+bootstrap five available to us.
+
+61
+00:04:01,750 --> 00:04:04,710
+Now, if you like foundation or something else, feel free to use that.
+
+62
+00:04:04,720 --> 00:04:07,290
+I'm just using bootstrap because it's extremely common.
+
+63
+00:04:07,300 --> 00:04:10,120
+A lot of people are familiar with it and it's easy to work with.
+
+64
+00:04:10,390 --> 00:04:11,140
+So let's get started.
+
+65
+00:04:11,260 --> 00:04:16,780
+I'm going to copy this success into my home jet right up here.
+
+66
+00:04:18,530 --> 00:04:24,350
+And format that so it looks a little bit better and I'll grab the JavaScript too, because I may as
+
+67
+00:04:24,350 --> 00:04:30,470
+well get that, I don't know if I'm going to use it or not, but it's not going to hurt to have it available
+
+68
+00:04:30,470 --> 00:04:31,140
+to us.
+
+69
+00:04:31,160 --> 00:04:32,350
+And again, I'll format that.
+
+70
+00:04:33,620 --> 00:04:37,070
+And since we've created that, we may as well go.
+
+71
+00:04:37,610 --> 00:04:40,250
+Div class equals container.
+
+72
+00:04:41,720 --> 00:04:43,850
+Div class equals row.
+
+73
+00:04:47,370 --> 00:04:55,040
+And div class equals call, and then I'll just take this H1 tag and put it in here.
+
+74
+00:04:56,330 --> 00:04:57,320
+And get rid of this.
+
+75
+00:04:59,030 --> 00:05:05,420
+All right, let's format that it's good and let's just reload the page and see if it actually got put
+
+76
+00:05:05,420 --> 00:05:08,540
+in properly, it did a little close to the top of the page.
+
+77
+00:05:08,960 --> 00:05:12,110
+So I'll put to class equals MTC three.
+
+78
+00:05:12,410 --> 00:05:14,090
+That'll move the margin down three.
+
+79
+00:05:14,120 --> 00:05:15,320
+And that looks a little bit better.
+
+80
+00:05:15,950 --> 00:05:20,690
+And I'll put a horizontal rule underneath that and I'll create a new row.
+
+81
+00:05:24,630 --> 00:05:30,090
+And this time I'm going to put in two columns, div class equals call MMD eight.
+
+82
+00:05:32,530 --> 00:05:37,930
+And down here, div class equals call me for.
+
+83
+00:05:39,570 --> 00:05:49,110
+And I'll put an H three in here that says chat and an H three in here for who's online and you can see
+
+84
+00:05:49,110 --> 00:05:49,960
+where I'm going with this.
+
+85
+00:05:50,640 --> 00:05:55,350
+So what's going to happen is we're going to create a chat application and there'll be some things up
+
+86
+00:05:55,350 --> 00:05:58,440
+here that you can type your message in to and specify username.
+
+87
+00:05:58,770 --> 00:06:01,350
+And then you'll have the actual chat showing up over here.
+
+88
+00:06:01,710 --> 00:06:04,590
+And then who's online will be the list of connected users.
+
+89
+00:06:04,890 --> 00:06:11,580
+And the goal here is that whenever somebody comes online, we'll use Web sockets to refresh the list
+
+90
+00:06:11,580 --> 00:06:12,870
+of users over here.
+
+91
+00:06:13,050 --> 00:06:18,480
+And whenever somebody posts a message, whether it's the user of this page or some other user will see
+
+92
+00:06:18,480 --> 00:06:20,640
+the chat reflected up here in real time.
+
+93
+00:06:20,940 --> 00:06:23,540
+And we're going to do all of that using what's WebSocket.
+
+94
+00:06:23,850 --> 00:06:27,630
+So this is just to get the layout started and get us moving along a little bit.
+
+95
+00:06:27,840 --> 00:06:29,370
+And that's enough for this time around.
+
+96
+00:06:29,370 --> 00:06:33,660
+In the next lecture, we'll move on with some more functionality with Web sites.

@@ -1,0 +1,100 @@
+1
+00:00:01,160 --> 00:00:07,070
+So as I said last time, it appears that the logging out using Gothic, that the logo for Google actually
+
+2
+00:00:07,070 --> 00:00:07,700
+logs are set.
+
+3
+00:00:07,790 --> 00:00:11,560
+But it just appears that way, and I am not an optimist.
+
+4
+00:00:11,570 --> 00:00:13,370
+I always air on the side of caution.
+
+5
+00:00:14,180 --> 00:00:17,660
+So here are not handlers go in the function social logout.
+
+6
+00:00:18,230 --> 00:00:22,520
+I'm going to go all the way down to the case for Google, and I'll implement it, and it's just a very
+
+7
+00:00:22,520 --> 00:00:23,750
+few lines of code.
+
+8
+00:00:24,350 --> 00:00:28,160
+So the first thing I need to do is to get the token from the session, and I can just copy this code
+
+9
+00:00:28,160 --> 00:00:28,970
+from up here.
+
+10
+00:00:29,000 --> 00:00:30,110
+So I'll copy this.
+
+11
+00:00:33,910 --> 00:00:40,600
+From the case for GitHub and pasted here, now I have the token, and literally logging out of Google
+
+12
+00:00:40,630 --> 00:00:48,100
+manually is as simple as ignoring the return value, checking for an error and calling HDP right from
+
+13
+00:00:48,100 --> 00:00:51,730
+the standard library post form right there.
+
+14
+00:00:52,060 --> 00:00:53,440
+And that requires a URL.
+
+15
+00:00:54,220 --> 00:01:03,880
+So we'll use formatting as printout and the format string is GPS colon slash slash accounts dot Google,
+
+16
+00:01:04,780 --> 00:01:05,680
+which I got to spell right?
+
+17
+00:01:06,550 --> 00:01:17,740
+Dot com slash oh slash oh off to slash revoke with a question mark and a placeholder and a substitution
+
+18
+00:01:17,740 --> 00:01:19,300
+for that placeholder is the token.
+
+19
+00:01:20,350 --> 00:01:20,650
+OK.
+
+20
+00:01:21,970 --> 00:01:26,920
+And we pass nil as a second parameter like that, and that should do it for us there.
+
+21
+00:01:26,950 --> 00:01:27,910
+Now let's check for an error.
+
+22
+00:01:29,200 --> 00:01:37,660
+If error is not equal to nil, then we'll just say H Dot App Dialog Dot Print Line and we'll print out
+
+23
+00:01:38,950 --> 00:01:48,310
+error logging out of Google and we'll follow the arrow and that should take care of it.
+
+24
+00:01:48,700 --> 00:01:55,990
+OK, now as far as I can tell, this should absolutely work, so we'll give it a try in the next lecture
+
+25
+00:01:55,990 --> 00:01:56,860
+and then move on.
+

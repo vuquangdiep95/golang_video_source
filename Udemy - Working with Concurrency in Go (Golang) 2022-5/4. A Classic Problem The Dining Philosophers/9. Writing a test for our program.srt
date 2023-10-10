@@ -1,0 +1,395 @@
+1
+00:00:00,810 --> 00:00:04,620
+So as a last step in this section, let's write a simple test for our program.
+
+2
+00:00:04,650 --> 00:00:06,030
+And this is dead simple.
+
+3
+00:00:06,180 --> 00:00:11,100
+I'll create a new file called, not surprisingly, main underscore Tesco.
+
+4
+00:00:11,610 --> 00:00:13,200
+And this is in package main.
+
+5
+00:00:13,380 --> 00:00:14,550
+Package main.
+
+6
+00:00:15,480 --> 00:00:15,780
+Okay.
+
+7
+00:00:15,900 --> 00:00:21,630
+And we'll declare one function here func and I'll call it test underscore main with a parameter T,
+
+8
+00:00:21,630 --> 00:00:24,900
+which is a pointer to testing T there.
+
+9
+00:00:26,220 --> 00:00:27,760
+So how are we going to do this?
+
+10
+00:00:27,780 --> 00:00:32,190
+Well, if you recall, I set up some variables and package level variables over here.
+
+11
+00:00:32,580 --> 00:00:35,390
+So sleep time, eat time and think time.
+
+12
+00:00:35,400 --> 00:00:37,830
+And I'm going to set those all to be zero.
+
+13
+00:00:37,830 --> 00:00:39,720
+So the test will run very, very quickly.
+
+14
+00:00:39,990 --> 00:00:47,190
+So we'll say eat time is equal to zero times timed out, second to get it in the right type.
+
+15
+00:00:47,400 --> 00:00:47,820
+Okay.
+
+16
+00:00:48,660 --> 00:00:50,610
+And we'll do the same thing with think time.
+
+17
+00:00:51,420 --> 00:00:51,960
+Try that again.
+
+18
+00:00:51,960 --> 00:00:54,630
+Think time is equal to zero times.
+
+19
+00:00:54,630 --> 00:01:00,930
+Time to second and finally sleep time is equal to zero eight.
+
+20
+00:01:01,890 --> 00:01:02,520
+Try that again.
+
+21
+00:01:02,640 --> 00:01:05,100
+Zero times the time dot second.
+
+22
+00:01:06,330 --> 00:01:06,660
+Okay.
+
+23
+00:01:06,900 --> 00:01:08,340
+So I set those to be zero.
+
+24
+00:01:08,340 --> 00:01:13,060
+So the program should run very quickly and I could do it just like this.
+
+25
+00:01:13,080 --> 00:01:17,430
+And in fact, some of you, if you did write a test, a good for you, if you did before you finish
+
+26
+00:01:17,430 --> 00:01:21,750
+the challenge, you might just run main and then you just check to make sure.
+
+27
+00:01:22,140 --> 00:01:27,000
+A really simple test if the length of and it would be order finished.
+
+28
+00:01:27,060 --> 00:01:32,550
+The length of that is not equal to five and that again not equal to five.
+
+29
+00:01:33,000 --> 00:01:36,150
+Then we have an error because you should have five things in that slice.
+
+30
+00:01:36,690 --> 00:01:48,240
+So what we can say is t dot error wrong number of entries in slice or whatever you want.
+
+31
+00:01:48,440 --> 00:01:48,660
+Okay.
+
+32
+00:01:49,170 --> 00:01:55,510
+So if I run the program like this and I clear the screen, just say go test dot.
+
+33
+00:01:57,820 --> 00:01:58,420
+It passes.
+
+34
+00:01:58,630 --> 00:01:58,990
+Okay.
+
+35
+00:01:59,650 --> 00:02:00,910
+Now, here's an interesting thing.
+
+36
+00:02:01,030 --> 00:02:03,270
+I want to make sure this works many, many times.
+
+37
+00:02:03,340 --> 00:02:04,830
+So I might do it like this.
+
+38
+00:02:04,840 --> 00:02:09,820
+Just so let's run the program 100 times for I is assign the value of zero.
+
+39
+00:02:10,660 --> 00:02:12,490
+I is less than 100.
+
+40
+00:02:13,030 --> 00:02:21,010
+I plus plus I'm going to run this test 100 times, which means I have to close my parentheses here,
+
+41
+00:02:21,010 --> 00:02:23,500
+my my curly brackets and format everything.
+
+42
+00:02:24,220 --> 00:02:28,930
+And before I go through the next iteration, I have to make my slice of strings empty again.
+
+43
+00:02:28,930 --> 00:02:34,840
+So order finished is equal to just a slice of strings and empty one.
+
+44
+00:02:35,530 --> 00:02:35,920
+Okay.
+
+45
+00:02:36,340 --> 00:02:37,630
+And run the program again.
+
+46
+00:02:37,660 --> 00:02:38,440
+Go test it.
+
+47
+00:02:40,790 --> 00:02:45,290
+And then I closed the terminal and put this coal to Main exactly where it should be.
+
+48
+00:02:45,290 --> 00:02:45,920
+Right here.
+
+49
+00:02:48,500 --> 00:02:49,370
+Cut that out of there.
+
+50
+00:02:49,790 --> 00:02:52,370
+That was sloppy and cold.
+
+51
+00:02:52,370 --> 00:02:57,170
+Mean here were supposed to be cold and clear the screen and run the test again.
+
+52
+00:02:57,710 --> 00:02:58,290
+This should pass.
+
+53
+00:02:58,610 --> 00:02:59,150
+And it did.
+
+54
+00:02:59,240 --> 00:03:00,050
+No problem.
+
+55
+00:03:01,250 --> 00:03:08,720
+But an interesting thing about this, of course, is if I go back to Main go and I comment about this
+
+56
+00:03:08,720 --> 00:03:14,960
+mutex, order mutex and I come down here and commit these to order, mutex is lock.
+
+57
+00:03:15,710 --> 00:03:16,020
+Okay.
+
+58
+00:03:16,400 --> 00:03:17,300
+Lock and unlock.
+
+59
+00:03:17,960 --> 00:03:19,280
+And go back to my test.
+
+60
+00:03:19,280 --> 00:03:23,450
+And here's an illustration of just how easy it is to miss a race condition.
+
+61
+00:03:23,990 --> 00:03:30,260
+And I comment on this line and I comment at the closing race bracket or parentheses for it.
+
+62
+00:03:30,290 --> 00:03:30,710
+Okay.
+
+63
+00:03:31,040 --> 00:03:32,870
+And run the test just once.
+
+64
+00:03:33,050 --> 00:03:34,040
+Go test dot.
+
+65
+00:03:34,400 --> 00:03:35,350
+It might pass.
+
+66
+00:03:35,390 --> 00:03:36,040
+And it did.
+
+67
+00:03:36,050 --> 00:03:36,830
+And I want it again.
+
+68
+00:03:37,130 --> 00:03:38,090
+And it might past.
+
+69
+00:03:38,630 --> 00:03:38,930
+Okay.
+
+70
+00:03:38,960 --> 00:03:40,790
+Now it's caching at this time, so that doesn't help.
+
+71
+00:03:41,210 --> 00:03:48,140
+But if I uncomment this and run the test 100 times, I'm going to bet it's going to fail at least once.
+
+72
+00:03:49,980 --> 00:03:50,640
+And it didn't.
+
+73
+00:03:51,600 --> 00:03:52,890
+Let's make it a thousand times.
+
+74
+00:03:55,650 --> 00:03:56,430
+We're on it again.
+
+75
+00:04:02,210 --> 00:04:02,490
+Okay.
+
+76
+00:04:04,550 --> 00:04:05,390
+And it failed.
+
+77
+00:04:05,570 --> 00:04:05,870
+Okay?
+
+78
+00:04:05,930 --> 00:04:07,670
+And it failed in several places, actually.
+
+79
+00:04:07,670 --> 00:04:13,100
+And it failed because that race condition only shows up once in a while.
+
+80
+00:04:13,130 --> 00:04:13,550
+Okay.
+
+81
+00:04:13,550 --> 00:04:20,240
+So I'm going to put this back like it was back to 100 and go back over here and undo my changes.
+
+82
+00:04:20,240 --> 00:04:23,030
+So undo that, undo that and undo that.
+
+83
+00:04:23,210 --> 00:04:25,250
+And things are back to where they should be.
+
+84
+00:04:25,250 --> 00:04:30,230
+So now if I run the test one more time, it should pass as cache this time.
+
+85
+00:04:30,230 --> 00:04:33,590
+But it even if I clear the cache, that test will pass.
+
+86
+00:04:34,280 --> 00:04:40,910
+And that's just to demonstrate how I could actually add something to my code as I did last time around.
+
+87
+00:04:40,910 --> 00:04:48,380
+I added that order that everyone finishes not think about having to implement a new text, write a test
+
+88
+00:04:48,380 --> 00:04:50,120
+that just runs the code once.
+
+89
+00:04:50,510 --> 00:04:55,190
+And when I run the code it seems to run perfectly, and when I run the test it seems to run perfectly
+
+90
+00:04:55,190 --> 00:04:59,630
+unless I use that dash race or run the test many, many times.
+
+91
+00:04:59,720 --> 00:05:02,360
+So something to be absolutely careful about.
+
+92
+00:05:02,360 --> 00:05:05,120
+Race conditions can be really hard to spot.
+
+93
+00:05:05,270 --> 00:05:09,980
+So get in the habit of running your code with that dash race flag and get in the habit of doing the
+
+94
+00:05:09,980 --> 00:05:11,840
+same thing when you run your tests.
+
+95
+00:05:11,960 --> 00:05:15,920
+Okay, let's move on in the next section to another classic problem.
+
+96
+00:05:16,130 --> 00:05:19,700
+And this one we're going to solve just using channels.
+
+97
+00:05:19,910 --> 00:05:22,460
+We're not going to have any weight groups or any new taxes.
+
+98
+00:05:22,460 --> 00:05:24,470
+We're going to do everything with channels.
+
+99
+00:05:24,470 --> 00:05:27,380
+And it's called the Sleeping Barbara problem and it's a lot of fun.

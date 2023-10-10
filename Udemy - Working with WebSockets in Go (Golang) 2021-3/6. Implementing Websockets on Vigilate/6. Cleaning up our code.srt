@@ -1,0 +1,343 @@
+1
+00:00:01,890 --> 00:00:07,170
+So we have our host service status count updating in real time on the overview page, and that's great.
+
+2
+00:00:07,530 --> 00:00:13,920
+And what we want to do next is to in the hosts, we don't just want to change the status count right
+
+3
+00:00:13,920 --> 00:00:14,160
+now.
+
+4
+00:00:14,160 --> 00:00:17,070
+I have one entry under the problems tab.
+
+5
+00:00:17,610 --> 00:00:24,780
+And when this status changes, when, for example, the Web server comes back up, I want this entry
+
+6
+00:00:24,780 --> 00:00:30,030
+in this table to disappear and I want it to be moved over here to healthy.
+
+7
+00:00:30,030 --> 00:00:34,560
+And I probably want some kind of little alert up here just to notify people that the state is this changed,
+
+8
+00:00:34,560 --> 00:00:35,760
+that the service came back up.
+
+9
+00:00:37,290 --> 00:00:44,910
+But before we do that, if we go back to our performed checks, don't go file this code under scheduled
+
+10
+00:00:44,910 --> 00:00:47,340
+check is starting to look pretty ugly.
+
+11
+00:00:48,240 --> 00:00:51,830
+We're doing a lot of things in here that we don't actually need to do in here.
+
+12
+00:00:52,290 --> 00:00:58,590
+So this is the method that is called when our scheduled schedule in the background fires off a request
+
+13
+00:00:58,590 --> 00:00:59,530
+to check a service.
+
+14
+00:00:59,880 --> 00:01:05,130
+So right now, every 10 seconds, once this is running, it checks the status of this for a particular
+
+15
+00:01:05,290 --> 00:01:06,060
+service ID.
+
+16
+00:01:06,060 --> 00:01:07,380
+And we just have one right now.
+
+17
+00:01:08,760 --> 00:01:10,950
+It goes and gets the host service.
+
+18
+00:01:10,950 --> 00:01:12,270
+We need to keep doing that.
+
+19
+00:01:12,480 --> 00:01:14,430
+Then it goes and gets the host by ID.
+
+20
+00:01:14,430 --> 00:01:15,780
+We need to keep doing that.
+
+21
+00:01:15,870 --> 00:01:18,150
+Then it tests the service and that's great.
+
+22
+00:01:18,360 --> 00:01:19,650
+We absolutely want to do that.
+
+23
+00:01:20,340 --> 00:01:26,100
+But all this code from about here right down to the end of this method doesn't belong here.
+
+24
+00:01:26,520 --> 00:01:30,480
+We probably should move that to its own method just to keep things a little bit cleaner.
+
+25
+00:01:31,050 --> 00:01:34,980
+So what I'm going to do is come down here just below this and create a new function.
+
+26
+00:01:34,980 --> 00:01:36,120
+And I will call this.
+
+27
+00:01:36,120 --> 00:01:36,930
+It's a function.
+
+28
+00:01:36,930 --> 00:01:49,860
+It has to have the repo of DB repo and I'll call this update host service status count and it will take
+
+29
+00:01:49,860 --> 00:01:50,790
+a few parameters.
+
+30
+00:01:51,000 --> 00:01:54,030
+We might need the host in the host service, so I'll put those in there for now.
+
+31
+00:01:54,030 --> 00:02:03,630
+H which is a type model start host host service which is of type models, dot post service and I'll
+
+32
+00:02:03,630 --> 00:02:04,800
+pass in two more things.
+
+33
+00:02:04,800 --> 00:02:11,430
+I'll pass in the new status and I'll pass in a message both of type string.
+
+34
+00:02:12,150 --> 00:02:13,470
+And this doesn't return anything.
+
+35
+00:02:13,590 --> 00:02:18,960
+And what I want to do in here effectively is pretty much everything from about.
+
+36
+00:02:22,360 --> 00:02:29,230
+This point on, so I'm going to cut that in here and then I'm going to paste it down here and we'll
+
+37
+00:02:29,230 --> 00:02:30,230
+fix these errors in a minute.
+
+38
+00:02:30,250 --> 00:02:32,500
+Let's go up here right now and see what we're going to do.
+
+39
+00:02:33,280 --> 00:02:36,940
+I'm getting a new status and a message, and I'm getting an error because I'm not doing anything with
+
+40
+00:02:36,940 --> 00:02:37,420
+message.
+
+41
+00:02:37,420 --> 00:02:43,360
+And I have this whole service service status changed, equal defaults, and I don't need that anymore.
+
+42
+00:02:43,390 --> 00:02:44,170
+So I'm going to get rid of it.
+
+43
+00:02:44,530 --> 00:02:48,910
+All I really want to check is does my new status match my old status?
+
+44
+00:02:48,910 --> 00:02:51,670
+And if it doesn't, then I don't want to set a variable.
+
+45
+00:02:51,700 --> 00:02:53,320
+Let's just call that method we just created.
+
+46
+00:02:54,010 --> 00:03:03,070
+So we'll call repo update host service status count and pass it the host and the host service and our
+
+47
+00:03:03,070 --> 00:03:05,080
+new status and our message.
+
+48
+00:03:05,110 --> 00:03:05,740
+Try that again.
+
+49
+00:03:08,400 --> 00:03:10,500
+New status and our message.
+
+50
+00:03:13,420 --> 00:03:15,430
+OK, so that fires that off.
+
+51
+00:03:15,610 --> 00:03:19,540
+Now let's get down to this method, we just created this part.
+
+52
+00:03:19,990 --> 00:03:23,370
+If the host or if we're broadcasting a message, I'm going to get rid of that.
+
+53
+00:03:23,380 --> 00:03:25,960
+I'm just going to comment today because we're not going to do that here.
+
+54
+00:03:26,440 --> 00:03:29,080
+And I'll leave it there as a reminder to go back and fix it later.
+
+55
+00:03:30,790 --> 00:03:32,200
+The next thing we want to do.
+
+56
+00:03:34,340 --> 00:03:38,900
+Is to update the host service record in the database with status, which will have changed.
+
+57
+00:03:39,980 --> 00:03:41,600
+And we'll just change the comment to.
+
+58
+00:03:42,870 --> 00:03:49,200
+And last check, because this is this method will only get cold if the host service status has changed
+
+59
+00:03:49,200 --> 00:03:50,280
+since the last check.
+
+60
+00:03:50,280 --> 00:03:53,610
+So we know this is going to fire, so we don't need to do that check at all.
+
+61
+00:03:55,470 --> 00:03:58,170
+And now we'll update the host service.
+
+62
+00:03:58,510 --> 00:04:04,020
+And then again, we don't need the if here so we can get rid of this because this will only get cold
+
+63
+00:04:04,020 --> 00:04:05,340
+if the status has changed.
+
+64
+00:04:07,360 --> 00:04:12,910
+And let's move this back over to here, OK, that looks a little bit cleaner.
+
+65
+00:04:17,060 --> 00:04:21,800
+So let's think about this for a minute, if this whole service status has changed and it has because
+
+66
+00:04:21,800 --> 00:04:26,870
+we're in here, we want to broadcast our clients now, do we want to do that in this method?
+
+67
+00:04:26,900 --> 00:04:27,940
+We actually don't.
+
+68
+00:04:28,070 --> 00:04:28,990
+Not at all.
+
+69
+00:04:30,290 --> 00:04:36,290
+So instead, where's the logical place to broadcast that the host service status has changed?
+
+70
+00:04:36,290 --> 00:04:42,110
+And this is the kind of event we're going to use to change, for example, this information back in
+
+71
+00:04:42,110 --> 00:04:46,970
+my Web browser from the problems tab to the healthy tab.
+
+72
+00:04:47,420 --> 00:04:49,160
+That's the event we want to broadcast.
+
+73
+00:04:49,160 --> 00:04:51,110
+And where's the logical place to do that?
+
+74
+00:04:52,810 --> 00:04:58,670
+Well, let's go up here when we call test service for host from scheduled check.
+
+75
+00:04:58,720 --> 00:05:02,660
+This is the method that actually tests the service and that gets us down here.
+
+76
+00:05:03,070 --> 00:05:10,270
+So at this point, if the status has changed, then we want to broadcast everything to the client.
+
+77
+00:05:11,330 --> 00:05:19,270
+So let's put it to do message in here to do broadcast to clients if appropriate.
+
+78
+00:05:25,890 --> 00:05:31,020
+OK, so I think that's the logical place to send this off, because this is the point when we're doing
+
+79
+00:05:31,020 --> 00:05:36,360
+the test service for host, we already know the old host service status because that's passed in right
+
+80
+00:05:36,360 --> 00:05:36,690
+here.
+
+81
+00:05:37,770 --> 00:05:39,780
+And we can simply do a check at this point.
+
+82
+00:05:39,780 --> 00:05:42,630
+We do the we get our new status set right here.
+
+83
+00:05:42,630 --> 00:05:47,970
+At this point, we can test new status against the existing status and broadcast the message to the
+
+84
+00:05:47,970 --> 00:05:48,470
+clients.
+
+85
+00:05:48,600 --> 00:05:49,640
+I think that makes sense.
+
+86
+00:05:49,770 --> 00:05:52,320
+So we'll get started on that in the next lecture.

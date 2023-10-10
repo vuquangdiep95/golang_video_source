@@ -1,0 +1,348 @@
+1
+00:00:00,080 --> 00:00:04,590
+Caso e questa lezione ci occuperemo di implementare il piano chiamato RBC o API di
+
+2
+00:00:05,070 --> 00:00:08,870
+rifilatura del server e lo testeremo contro il server in esecuzione.
+
+3
+00:00:08,910 --> 00:00:12,110
+Quindi userà alcune delle cose simili che abbiamo visto prima.
+
+4
+00:00:12,120 --> 00:00:13,340
+Vedrai che è abbastanza facile da fare.
+
+5
+00:00:13,530 --> 00:00:14,880
+Bene, iniziamo.
+
+6
+00:00:14,880 --> 00:00:21,660
+Quindi sono nel mio codice e andrò dai miei clienti che vanno adesso e quello
+
+7
+00:00:21,730 --> 00:00:29,390
+che devo fare è fondamentalmente quando la funzione critica chiama lo streaming del server e io passerò nei client.
+
+8
+00:00:29,490 --> 00:00:31,060
+Quindi ho bisogno di implementare quella funzione.
+
+9
+00:00:31,530 --> 00:00:33,870
+Quindi implementalo proprio sotto questo.
+
+10
+00:00:34,260 --> 00:00:41,130
+Dirò che la funzione fa in streaming i server e gli input saranno i miei grandi clienti del servizio.
+
+11
+00:00:42,030 --> 00:00:43,560
+OK, tutto sembra corretto.
+
+12
+00:00:43,910 --> 00:00:46,130
+E ora posso andare avanti e attuare quella funzione.
+
+13
+00:00:46,500 --> 00:00:52,320
+Quindi quello che dobbiamo fare qui è di stampare qualcosa quando iniziamo e diciamo
+
+14
+00:00:52,320 --> 00:00:55,640
+che faremo un server RBC in streaming.
+
+15
+00:00:55,640 --> 00:00:56,270
+Destra.
+
+16
+00:00:56,670 --> 00:01:03,930
+Quindi ora se guardiamo i nostri clienti e facciamo ciò, esiste una funzione chiamata greet molte volte e se otteniamo
+
+17
+00:01:03,930 --> 00:01:06,960
+molte volte prende un contesto come input.
+
+18
+00:01:06,990 --> 00:01:09,860
+Quindi possiamo fare il contesto che è lo sfondo.
+
+19
+00:01:09,900 --> 00:01:10,910
+Proprio come prima.
+
+20
+00:01:11,190 --> 00:01:15,610
+E poi ci vogliono molte volte richieste che dobbiamo creare alcune opzioni.
+
+21
+00:01:16,020 --> 00:01:20,750
+Quindi quello che sto per fare è creare quel gruppo più volte richieste in.
+
+22
+00:01:21,180 --> 00:01:25,220
+Quindi andiamo avanti e creiamo questa richiesta quindi la chiamerò.
+
+23
+00:01:25,410 --> 00:01:34,200
+E così lo crei come prima facciamo un puntatore alla griglia TV e poi salutiamo molte volte le richieste e
+
+24
+00:01:35,640 --> 00:01:37,610
+poi presentiamo un saluto.
+
+25
+00:01:38,310 --> 00:01:46,070
+E per questo abbiamo bisogno di istanziare un saluto così facciamo e salutiamo P. B. saluto e poi
+
+26
+00:01:46,070 --> 00:01:53,480
+passiamo nel nome Stefan e il cognome è sempre lo stesso cognome.
+
+27
+00:01:53,820 --> 00:01:54,490
+OK.
+
+28
+00:01:55,100 --> 00:01:58,490
+Quindi questo sembra tutto a posto, ovunque tu ne abbia bisogno.
+
+29
+00:01:59,000 --> 00:02:02,260
+E ora possiamo eseguire il gruppo più volte con una richiesta.
+
+30
+00:02:02,270 --> 00:02:07,740
+Quindi, cosa fa il suo ritorno se passiamo attraverso questo server di funzioni è client è un'interfaccia e
+
+31
+00:02:07,740 --> 00:02:14,190
+ha appena smesso molte volte e il ritorno è vero cose con un ottimo servizio su questo ottenere molte volte i
+
+32
+00:02:14,190 --> 00:02:17,890
+client e questo è il nostro flusso e abbiamo un errore.
+
+33
+00:02:17,900 --> 00:02:19,520
+Quindi andiamo avanti e facciamo questo.
+
+34
+00:02:19,550 --> 00:02:31,590
+Torniamo ai nostri clienti e diciamo che i risultati sono uguali e che chiamerò Stream proprio qui.
+
+35
+00:02:31,810 --> 00:02:35,790
+Quindi il flusso dei risultati è uguale a questo.
+
+36
+00:02:35,800 --> 00:02:45,820
+Ora abbiamo bisogno di gestire gli errori, quindi se l'errore non è zero, diremo semplicemente che l'errore è irreversibile.
+
+37
+00:02:45,850 --> 00:02:56,740
+I server che chiamano molto bene lo streaming moltissime volte sono occupati e faremo il debug
+
+38
+00:02:57,180 --> 00:03:01,320
+anche in questo caso passeremo nell'aria.
+
+39
+00:03:01,410 --> 00:03:03,790
+Se siamo bravi dobbiamo occuparci di questo bagno.
+
+40
+00:03:03,810 --> 00:03:11,790
+Quindi, come avrai intuito, il bagno contiene una funzione di ricezione. Questa funzione di ricezione, come puoi vedere
+
+41
+00:03:11,790 --> 00:03:15,870
+qui, restituisce molte volte una risposta o un errore.
+
+42
+00:03:15,870 --> 00:03:20,280
+Quindi è qui che diventa un po 'complicato perché dobbiamo affrontare questo errore e vedremo
+
+43
+00:03:20,280 --> 00:03:21,140
+cosa significa.
+
+44
+00:03:21,150 --> 00:03:23,160
+Andiamo avanti e arriviamo ai clienti.
+
+45
+00:03:23,430 --> 00:03:23,940
+Quindi diremo.
+
+46
+00:03:23,970 --> 00:03:29,030
+L'aria del messaggio è uguale a questo.
+
+47
+00:03:29,050 --> 00:03:31,430
+Quindi praticamente questa funzione di resee proprio qui.
+
+48
+00:03:31,540 --> 00:03:37,920
+Può essere richiamato tutte le volte che possibile quando lo stream è chiuso, riceverai un IOU ma un
+
+49
+00:03:37,930 --> 00:03:39,610
+errore di fine file.
+
+50
+00:03:39,850 --> 00:03:46,120
+Quindi, quello che dobbiamo fare è avviare un ciclo di for per gestire il maggior numero di messaggi possibile e farlo ora possiamo
+
+51
+00:03:46,120 --> 00:03:48,580
+iniziare a occuparci di esso e del messaggio.
+
+52
+00:03:48,590 --> 00:03:57,420
+Quindi se l'aria è effettivamente uguale a Io e un file significa che abbiamo raggiunto la fine del flusso a causa del
+
+53
+00:03:57,680 --> 00:04:00,550
+client, il server ha chiuso il flusso.
+
+54
+00:04:00,550 --> 00:04:02,590
+Quindi in questo caso ci spezzeremo.
+
+55
+00:04:02,860 --> 00:04:04,800
+Ci limiteremo a interrompere il ciclo for.
+
+56
+00:04:04,870 --> 00:04:10,570
+Ora se l'errore è tutto tranne che così non è fino ad allora abbiamo un grosso problema.
+
+57
+00:04:10,570 --> 00:04:19,000
+Quindi lo registreremo e diremo errore durante la lettura del flusso e poi passeremo semplicemente in aria proprio qui.
+
+58
+00:04:21,110 --> 00:04:22,280
+Perfect.
+
+59
+00:04:22,280 --> 00:04:28,970
+E poi se tutto va bene ora il nostro messaggio proprio qui è F-Type salutare molti tempi di risposta in modo da poter
+
+60
+00:04:29,120 --> 00:04:29,920
+ottenere risultati.
+
+61
+00:04:29,960 --> 00:04:31,660
+E questo è il risultato di cui abbiamo effettivamente bisogno.
+
+62
+00:04:32,000 --> 00:04:34,210
+E per quello scopo lo registreremo.
+
+63
+00:04:34,340 --> 00:04:40,090
+Quindi diremo allegra la risposta di Prince f dalla Grecia.
+
+64
+00:04:40,250 --> 00:04:45,180
+Molte volte e passeremo il risultato.
+
+65
+00:04:45,200 --> 00:04:47,540
+Siamo appena arrivati qui.
+
+66
+00:04:47,540 --> 00:04:48,990
+Quindi sembra tutto corretto.
+
+67
+00:04:49,010 --> 00:04:55,460
+Quindi, in pratica, creiamo la richiesta, quindi ne usiamo la nostra P. S. chiama e otteniamo un flusso di risultati
+
+68
+00:04:55,460 --> 00:05:01,580
+fuori da esso e poi su quel flusso che va ripetutamente in loop fino a raggiungere la fine del file.
+
+69
+00:05:01,850 --> 00:05:05,450
+E qui sto semplicemente stampando il messaggio ma ovviamente avresti fatto qualcosa di un po 'più utile in uno
+
+70
+00:05:05,450 --> 00:05:06,320
+scenario di vita reale.
+
+71
+00:05:06,710 --> 00:05:09,610
+Quindi questo è perfetto secondo me.
+
+72
+00:05:09,740 --> 00:05:13,500
+E ho intenzione di commentare il dizionario perché non abbiamo bisogno di farlo di nuovo.
+
+73
+00:05:13,820 --> 00:05:15,500
+E siamo pronti a gestire i clienti.
+
+74
+00:05:15,710 --> 00:05:25,270
+Quindi il server è in esecuzione e ora possiamo andare indietro e dire che Go run saluta il client del client.
+
+75
+00:05:25,340 --> 00:05:26,350
+Quindi diamo un'occhiata.
+
+76
+00:05:26,660 --> 00:05:32,120
+E come ho appena richiamato la funzione come possiamo vedere nel servizio tante volte è stata invocata la funzione
+
+77
+00:05:32,120 --> 00:05:36,850
+con il saluto Stefansson Meric e in fondo possiamo vedere che i messaggi sono in streaming.
+
+78
+00:05:37,070 --> 00:05:41,160
+Quindi, se non hai guardato di nuovo, ucciderò lo schermo e ricomincio.
+
+79
+00:05:41,230 --> 00:05:44,900
+E come puoi vedere è il numero 1 0 1 2 3 e così via.
+
+80
+00:05:44,900 --> 00:05:45,870
+Quindi è il taglio.
+
+81
+00:05:45,870 --> 00:05:49,370
+È un ritardo di un secondo perché ho indotto un ritardo.
+
+82
+00:05:49,760 --> 00:05:53,570
+Ma questo dimostra fondamentalmente il potere dello streaming proprio qui.
+
+83
+00:05:53,750 --> 00:05:55,840
+E questo è davvero fantastico per essere onesti.
+
+84
+00:05:56,000 --> 00:05:59,050
+Quindi questo è per lo streaming di client e server.
+
+85
+00:05:59,330 --> 00:06:03,970
+Nel complesso, è necessario abituarsi a utilizzare questo concetto di stream o inviare o ricevere funzioni.
+
+86
+00:06:04,070 --> 00:06:04,860
+Ma buone notizie.
+
+87
+00:06:04,880 --> 00:06:08,900
+Sarai in grado di esercitarti perché hai un esercizio in arrivo così presto e l'espettorazione.
+

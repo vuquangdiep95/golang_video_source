@@ -1,0 +1,643 @@
+1
+00:00:01,750 --> 00:00:07,180
+So this time around, we want to create some middleware that will be installed automatically in the
+
+2
+00:00:07,180 --> 00:00:11,260
+project when someone types celebrities make off.
+
+3
+00:00:11,410 --> 00:00:14,460
+And before we do that, let's just update this help file.
+
+4
+00:00:14,470 --> 00:00:15,490
+So this is in helpers.
+
+5
+00:00:15,490 --> 00:00:22,420
+Don't go in the CMT Seelye folder of the Celebrity House project, and I'll just put make off and write
+
+6
+00:00:22,420 --> 00:00:23,350
+the help file for it.
+
+7
+00:00:24,100 --> 00:00:34,420
+And that will say something like Oh creates and runs migrations for users table.
+
+8
+00:00:35,200 --> 00:00:40,860
+I'll just put authentication tables, authentication tables and creates.
+
+9
+00:00:41,200 --> 00:00:47,530
+It creates models and middleware, and you can say whatever you want, but that's in my help file now.
+
+10
+00:00:48,820 --> 00:00:55,270
+So let me go back now to our My App project and get started writing some simple middleware.
+
+11
+00:00:55,720 --> 00:01:01,180
+OK, I'm going to write the application middleware here in my app first because it's easier to do it
+
+12
+00:01:01,180 --> 00:01:01,540
+that way.
+
+13
+00:01:02,080 --> 00:01:06,210
+So I'll create a new file in middleware and I will call this one off, Darko.
+
+14
+00:01:08,410 --> 00:01:10,930
+And of course, its package is middleware.
+
+15
+00:01:13,110 --> 00:01:16,410
+Middleware right there, and it's very simple.
+
+16
+00:01:16,890 --> 00:01:20,140
+So we'll create a functional standard middleware, and this is dead simple.
+
+17
+00:01:20,160 --> 00:01:27,720
+I'll give it the receiver of M a pointer to middleware, which doesn't exist yet, but we'll take care
+
+18
+00:01:27,720 --> 00:01:33,000
+of that before too long and we'll make this an off middleware and it takes a handler.
+
+19
+00:01:34,040 --> 00:01:38,390
+An issue to be handler alcohol next, which almost everybody does when they're writing middleware and
+
+20
+00:01:38,390 --> 00:01:41,720
+go and it returns and dog handler.
+
+21
+00:01:44,510 --> 00:01:55,100
+OK, so I'm going to return an HDP dot handle, funk handle or funk right there.
+
+22
+00:01:56,210 --> 00:02:05,030
+And that will be a an inline function funk WHDH response record because I need access to that and our
+
+23
+00:02:05,030 --> 00:02:06,890
+pointer to HTTP request.
+
+24
+00:02:10,440 --> 00:02:16,770
+And I'll say, if not and here I'll be getting some errors from my compiler or from the IDC because
+
+25
+00:02:16,770 --> 00:02:21,360
+I'm referring to things that don't exist on the M receiver yet, but we'll take care of that in a moment.
+
+26
+00:02:21,960 --> 00:02:26,550
+AMD after session Dot exists.
+
+27
+00:02:28,210 --> 00:02:30,340
+And I'm looking for context
+
+28
+00:02:35,470 --> 00:02:39,670
+inside of that, I'm looking for user ID, which we use for authentication.
+
+29
+00:02:39,850 --> 00:02:45,430
+So if that exists in this session that doesn't exist in the session, then we'll just run deep error
+
+30
+00:02:47,950 --> 00:02:49,030
+and we'll handle it.
+
+31
+00:02:49,150 --> 00:02:55,480
+The response writer and dot status text will be for everyone.
+
+32
+00:02:57,670 --> 00:03:00,550
+We're going to return HGTV Dot status unauthorized?
+
+33
+00:03:01,210 --> 00:03:02,160
+No, not accepted.
+
+34
+00:03:02,190 --> 00:03:03,310
+That's the opposite of what we want.
+
+35
+00:03:03,640 --> 00:03:04,420
+Unauthorized.
+
+36
+00:03:04,720 --> 00:03:05,260
+That's better.
+
+37
+00:03:05,530 --> 00:03:12,460
+OK, so that's our middleware, so we better create this type middleware.
+
+38
+00:03:12,610 --> 00:03:22,400
+So I'll just create a new file in here called Middleware Darko in my little EWR package middleware.
+
+39
+00:03:27,880 --> 00:03:36,130
+I'm a carrier type called middleware, and it's going to be a struct and it's going to have as its members,
+
+40
+00:03:36,160 --> 00:03:41,500
+not surprisingly, app because we're going to want a reference to our celebrities type celebrities,
+
+41
+00:03:41,830 --> 00:03:43,420
+not celebrities.
+
+42
+00:03:44,800 --> 00:03:49,300
+And we'll also have models, data dump models because we might need those.
+
+43
+00:03:49,390 --> 00:03:49,840
+OK.
+
+44
+00:03:50,380 --> 00:03:52,810
+So hopefully the imports for me, it did.
+
+45
+00:03:53,080 --> 00:03:53,650
+Perfect.
+
+46
+00:03:54,010 --> 00:03:57,330
+So in order to use this course, we're going to have to make a change to in.
+
+47
+00:03:57,340 --> 00:03:58,230
+It's hilarious.
+
+48
+00:03:58,270 --> 00:03:59,800
+And this should be old hat for you now.
+
+49
+00:03:59,800 --> 00:04:01,690
+It's pretty much the same thing we did before.
+
+50
+00:04:02,200 --> 00:04:11,050
+So say right here after I named the app my name or my app, what I'm going to do here is just create
+
+51
+00:04:11,050 --> 00:04:19,000
+a variable called my middleware, and that will be assigned the value of a reference to from the middleware
+
+52
+00:04:19,000 --> 00:04:21,010
+package middleware.
+
+53
+00:04:22,270 --> 00:04:23,410
+And hopefully it's this one.
+
+54
+00:04:23,510 --> 00:04:26,290
+Yep, middleware, Typekit middleware.
+
+55
+00:04:27,280 --> 00:04:32,140
+And I'll populate app with.
+
+56
+00:04:32,140 --> 00:04:34,720
+So that's what I called it.
+
+57
+00:04:34,990 --> 00:04:35,380
+So.
+
+58
+00:04:35,800 --> 00:04:37,930
+So we have this and not doing anything with it yet.
+
+59
+00:04:38,410 --> 00:04:42,640
+So let's go down here now and in our application.
+
+60
+00:04:43,060 --> 00:04:45,070
+Let's add another type in here and I'll type it in.
+
+61
+00:04:45,070 --> 00:04:46,690
+Then Go added left after the fact.
+
+62
+00:04:47,500 --> 00:04:51,190
+Middleware like I already added it, middleware will be my middleware.
+
+63
+00:04:53,260 --> 00:04:53,680
+That's great.
+
+64
+00:04:55,060 --> 00:04:57,370
+And it sure seems not to be working.
+
+65
+00:04:57,760 --> 00:04:59,800
+Field middleware instruct little unknown.
+
+66
+00:04:59,810 --> 00:05:08,290
+I didn't think I had it, so I took a look at application and what I middleware here, and that will
+
+67
+00:05:08,290 --> 00:05:13,310
+be a type a pointer to middleware middleware.
+
+68
+00:05:15,700 --> 00:05:19,680
+Now, if I go back to any celebrities, that error should be gone, but I'm not quite done.
+
+69
+00:05:19,690 --> 00:05:23,290
+I have one more thing to do here after I have my models created.
+
+70
+00:05:23,470 --> 00:05:26,020
+I need to add that to my middleware as well because I might need them there.
+
+71
+00:05:26,020 --> 00:05:32,830
+So I'll just say I support middleware that models and that's going to be equal to app models.
+
+72
+00:05:34,630 --> 00:05:40,680
+OK, so that should take care of all of the errors in our off dart go file the middleware.
+
+73
+00:05:40,690 --> 00:05:41,170
+And it did.
+
+74
+00:05:42,010 --> 00:05:44,970
+But of course, this is only authentication, web based authentication.
+
+75
+00:05:44,980 --> 00:05:48,700
+We also need API based authentication, so that's easy enough.
+
+76
+00:05:49,240 --> 00:05:55,480
+We'll create another file in middleware called off dash token.
+
+77
+00:05:55,600 --> 00:05:56,200
+That's a great name.
+
+78
+00:05:56,890 --> 00:05:57,160
+Go.
+
+79
+00:05:59,110 --> 00:06:00,640
+And of course, it's in package middleware
+
+80
+00:06:04,120 --> 00:06:06,370
+and it's very similar to the previous one.
+
+81
+00:06:06,370 --> 00:06:13,930
+So we'll have a func with a receiver of AM, a pointer to middleware, and we'll call this one off token.
+
+82
+00:06:15,160 --> 00:06:23,410
+And it takes next as a parameter of type AGP dot handler and it returns HTP dot handler.
+
+83
+00:06:25,210 --> 00:06:27,660
+And again, we're going to wrap inside of this.
+
+84
+00:06:27,670 --> 00:06:35,560
+We're going to have a return, which is itself an HGTV, dot handler, funk and Lawler funk right there.
+
+85
+00:06:36,130 --> 00:06:43,990
+And we'll inline the function w HGTV out response writer and a pointer to response rare and a pointer
+
+86
+00:06:43,990 --> 00:06:46,930
+to our was a pointer to endpoint request.
+
+87
+00:06:48,670 --> 00:06:49,900
+And it's very simple once again.
+
+88
+00:06:49,930 --> 00:06:56,470
+So we don't care about the return value, but we do care about checking for an error when we call EM
+
+89
+00:06:56,590 --> 00:07:00,670
+Dart models DOT token tokens right there.
+
+90
+00:07:01,420 --> 00:07:08,470
+Don't authenticate token, and all that requires is that our our pointer to an HTP request, which we
+
+91
+00:07:08,470 --> 00:07:09,100
+called error.
+
+92
+00:07:10,090 --> 00:07:17,980
+So if error is not equal to nil, then I'm going to create a variable called payload, which is a struct
+
+93
+00:07:17,980 --> 00:07:21,520
+VAR payload struct right here.
+
+94
+00:07:22,030 --> 00:07:27,430
+And it's going to have an error as one field, which is a Boolean and in JSON, which is.
+
+95
+00:07:27,640 --> 00:07:34,180
+Be sending back in a moment, I'll call it error, and it's going to have another field called message,
+
+96
+00:07:34,420 --> 00:07:35,450
+which is a string.
+
+97
+00:07:36,130 --> 00:07:43,390
+And in Jason, I'll call that message and then I'll set the values for that payload error.
+
+98
+00:07:43,930 --> 00:07:55,450
+It's going to be equal to true and payload dot message will be equal to invalid authentication credentials,
+
+99
+00:07:56,860 --> 00:07:59,590
+credentials that like I spelled out, right?
+
+100
+00:08:01,180 --> 00:08:07,450
+And now I don't care about the response, but I'll call from my receiver and I will go to app and I'll
+
+101
+00:08:07,450 --> 00:08:09,790
+simply say, right, Jason.
+
+102
+00:08:12,640 --> 00:08:16,420
+Now that doesn't exist because we haven't worked with Jason at all.
+
+103
+00:08:16,900 --> 00:08:20,080
+But just bear with me for a minute will finish writing this command.
+
+104
+00:08:20,110 --> 00:08:23,680
+Then we'll go and write Jason to celebrities itself.
+
+105
+00:08:23,770 --> 00:08:33,550
+OK, so that's going to take a response writer as an argument, a status which is HTP status unauthorized
+
+106
+00:08:34,540 --> 00:08:35,410
+and the payload.
+
+107
+00:08:36,200 --> 00:08:39,070
+OK, now let's make this error go away.
+
+108
+00:08:39,190 --> 00:08:46,180
+So we need to go back to celebrities and I'm going to create a new file at the root level of celebrities.
+
+109
+00:08:46,180 --> 00:08:50,830
+And I'll just click right click down here and say New file, and we'll be adding to this in a in a few
+
+110
+00:08:50,830 --> 00:08:51,320
+lectures.
+
+111
+00:08:51,340 --> 00:08:53,120
+I'm going to call it response utils.
+
+112
+00:08:53,140 --> 00:08:53,740
+Don't go.
+
+113
+00:08:54,460 --> 00:08:59,500
+These are utilities I can call whenever I need to give some kind of response package to Alatas.
+
+114
+00:08:59,680 --> 00:09:02,410
+And the one we want right now is called right, Jason.
+
+115
+00:09:02,500 --> 00:09:07,030
+So it's just a function with the receiver of C pointer to celebrities.
+
+116
+00:09:07,120 --> 00:09:09,580
+So that'll make the error go away once we're finished here.
+
+117
+00:09:10,030 --> 00:09:10,990
+And this is right, Jason.
+
+118
+00:09:11,530 --> 00:09:15,010
+Like that and it takes a pitot response writer.
+
+119
+00:09:16,810 --> 00:09:23,200
+It requires a status issue to be status, which is in it, some kind of data, whatever you want to
+
+120
+00:09:23,200 --> 00:09:24,610
+convert into Jason.
+
+121
+00:09:24,610 --> 00:09:25,780
+And we don't know what it's going to be.
+
+122
+00:09:25,780 --> 00:09:30,130
+So we'll just call it an interface, which is the only way you can do it and go until generic show up.
+
+123
+00:09:31,090 --> 00:09:39,460
+And optionally, we might have some headers, which will be a very attic reference to type H2 e dot
+
+124
+00:09:39,460 --> 00:09:40,240
+header case.
+
+125
+00:09:40,240 --> 00:09:43,870
+I need to add custom headers to this because I don't know what's going to be calling this, and it returns
+
+126
+00:09:43,870 --> 00:09:45,400
+an error, potentially.
+
+127
+00:09:46,600 --> 00:09:51,040
+This is a really simple, would you say, declare a variable out check for an error?
+
+128
+00:09:51,460 --> 00:09:56,680
+And what we're going to do is, say Jason from the Jason package and I'll say mercial in debt just because
+
+129
+00:09:56,680 --> 00:09:58,120
+it's very readable in production.
+
+130
+00:09:58,120 --> 00:10:02,590
+I would just use Marshall, but I'm in development right now and I can change this after the fact.
+
+131
+00:10:03,730 --> 00:10:09,850
+And I'm going to marshall data with no prefix, but I'm going to indent things using one tab and that
+
+132
+00:10:09,850 --> 00:10:11,650
+will give me nicely formatted JSON.
+
+133
+00:10:11,890 --> 00:10:17,590
+So we'll say if error is not equal to nil will return the error in case we can't go any further.
+
+134
+00:10:17,890 --> 00:10:23,350
+Otherwise, we'll check for headers to see if they've been included because you can have zero or more
+
+135
+00:10:23,350 --> 00:10:25,990
+headers as the final parameter in this function call.
+
+136
+00:10:26,620 --> 00:10:33,010
+If the length of headers which I have to spell right is greater than zero, then we'll just say four
+
+137
+00:10:33,010 --> 00:10:40,360
+key and value are assigned the value of or assigned values by ranging through headers.
+
+138
+00:10:42,130 --> 00:10:42,670
+Zero.
+
+139
+00:10:43,570 --> 00:10:43,900
+OK.
+
+140
+00:10:44,500 --> 00:10:49,450
+We're only going to be looking for one header and we'll call on W.
+
+141
+00:10:49,450 --> 00:11:00,790
+Our response writer header index key is equal to value and that should assign a header to the request
+
+142
+00:11:01,270 --> 00:11:02,080
+or to the response.
+
+143
+00:11:02,710 --> 00:11:05,020
+And we also need to tell it that Jason is coming back.
+
+144
+00:11:05,020 --> 00:11:19,660
+So Dot Header Dot set up and we're going to set a content content type two application slash JSON.
+
+145
+00:11:21,550 --> 00:11:31,540
+And finally, W Dot, Right, had her status, which we received as a parameter to the call to this
+
+146
+00:11:31,540 --> 00:11:31,990
+function.
+
+147
+00:11:32,410 --> 00:11:34,690
+And now we don't care about the first return value.
+
+148
+00:11:34,770 --> 00:11:36,100
+We do care about the error.
+
+149
+00:11:36,640 --> 00:11:39,690
+Those come from W Dot right out.
+
+150
+00:11:40,510 --> 00:11:48,040
+And once again, we have an error check which will paste here and we'll say return nil.
+
+151
+00:11:49,180 --> 00:11:51,180
+OK, so that's now available to us.
+
+152
+00:11:51,220 --> 00:11:57,290
+So when I switch back here, I still can't see it because I have to open my terminal and say Go mode
+
+153
+00:11:57,320 --> 00:11:57,790
+vendor.
+
+154
+00:11:58,330 --> 00:12:00,070
+And eventually this should catch up to me.
+
+155
+00:12:00,700 --> 00:12:01,510
+So here we are.
+
+156
+00:12:02,950 --> 00:12:07,000
+And it'll take a little while for that thing to go away, except that there is actually an error there,
+
+157
+00:12:07,000 --> 00:12:08,710
+which is probably why it's showing up that way.
+
+158
+00:12:11,740 --> 00:12:13,060
+And I misspelled Jason.
+
+159
+00:12:13,960 --> 00:12:20,830
+So it's right, Jason, like that, so that takes care of our middleware are two kinds of middleware
+
+160
+00:12:20,830 --> 00:12:22,660
+we want to install automatically.
+
+161
+00:12:22,750 --> 00:12:28,030
+And this lecture is getting a bit long, so we'll take care of installing those in the next lecture.

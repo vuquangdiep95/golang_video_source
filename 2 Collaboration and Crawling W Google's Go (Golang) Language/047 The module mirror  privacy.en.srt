@@ -1,0 +1,379 @@
+1
+00:00:00,090 --> 00:00:06,090
+Vì vậy, bây giờ chúng ta sẽ nói về phương tiện mô-đun và quyền riêng tư và điều may mắn cho bạn và cho tôi.
+
+2
+00:00:06,120 --> 00:00:10,080
+Daniel là một người ủng hộ quyền riêng tư lớn còn tôi thì không.
+
+3
+00:00:10,170 --> 00:00:16,380
+Số lượng cá nhân tập trung cao độ vào ý thức bảo mật sẽ lưu ý đến điều đó.
+
+4
+00:00:16,380 --> 00:00:20,120
+Tôi không biết nếu đó là tất cả ngữ pháp nói đúng cách.
+
+5
+00:00:20,280 --> 00:00:24,740
+Nhưng Daniel rất quan tâm đến quyền riêng tư và bảo mật.
+
+6
+00:00:24,930 --> 00:00:30,150
+Và đó là một điều tuyệt vời vì bạn muốn đảm bảo rằng mã bạn viết mạnh mẽ và
+
+7
+00:00:30,150 --> 00:00:34,770
+không bị hỏng hoặc bạn không vô tình đặt những thứ mà bạn không muốn ra khỏi đó.
+
+8
+00:00:34,770 --> 00:00:40,430
+Và mô-đun đơn thuần và quyền riêng tư, hai điều chúng ta sẽ tìm hiểu trong video này.
+
+9
+00:00:40,740 --> 00:00:50,020
+Nhưng mô-đun Mir về cơ bản là một proxy của tất cả các gói được cung cấp công khai để chúng
+
+10
+00:00:50,040 --> 00:00:51,900
+tất cả luôn có sẵn.
+
+11
+00:00:52,040 --> 00:00:59,430
+Và nếu có một gói hàng ở đâu đó mà mọi người đang nhận và vị trí đó bị hỏng như đã xảy ra
+
+12
+00:00:59,430 --> 00:01:02,360
+với pad bên trái của trình quản lý gói nút.
+
+13
+00:01:02,360 --> 00:01:02,920
+Phải.
+
+14
+00:01:03,030 --> 00:01:08,930
+Mọi người đang sử dụng bàn phím bên trái và sau đó bàn phím bên trái không thể truy cập được và tôi nhớ đó là câu chuyện chính xác.
+
+15
+00:01:09,190 --> 00:01:12,450
+Và sau đó bạn biết hàng tấn mã của mọi người đã bị hỏng.
+
+16
+00:01:12,450 --> 00:01:19,260
+Và do đó, với proxy này, tất cả các gói có sẵn công khai đó cũng sẽ được lưu vào bộ đệm cũng được lưu trữ
+
+17
+00:01:19,710 --> 00:01:21,150
+qua proxy này.
+
+18
+00:01:21,210 --> 00:01:24,630
+Proxy là một trong những từ mà tôi luôn hiểu proxy nghĩa là gì.
+
+19
+00:01:24,690 --> 00:01:30,630
+Và nó đại diện cho người khác quyền đại diện cho người khác, đặc biệt là trong
+
+20
+00:01:30,630 --> 00:01:35,160
+biểu quyết một con số có thể được sử dụng để biểu thị giá trị của một thứ gì đó trong một phép tính.
+
+21
+00:01:35,220 --> 00:01:41,280
+Vì vậy, máy chủ proxy hoặc vị trí proxy chỉ là một vị trí khác của một thứ khác.
+
+22
+00:01:41,280 --> 00:01:44,100
+Đó có phải là sự hiểu biết của tôi về một proxy.
+
+23
+00:01:44,100 --> 00:01:51,480
+Vì vậy, mô-đun Mir này là một máy chủ proxy cho tất cả các mô-đun có sẵn công khai để chúng luôn
+
+24
+00:01:51,480 --> 00:01:58,260
+có thể truy cập được, bạn không cần phải dựa vào một anh chàng nào đó trong máy tính để xe của mẹ anh ta bị tắt và anh ta
+
+25
+00:01:58,260 --> 00:02:03,450
+mất quyền truy cập vào mã mà bạn cần giống như mọi thứ có sẵn công khai cũng sẽ có trong mô-đun này
+
+26
+00:02:03,450 --> 00:02:06,790
+Mir and go được xây dựng với tính bảo mật.
+
+27
+00:02:06,900 --> 00:02:12,660
+Vì vậy, có một video ngay tại đây mà bạn có thể xem cũng như bài viết này sẽ được đăng trên blog ngay tại đây
+
+28
+00:02:12,660 --> 00:02:18,570
+mà bạn có thể đọc nói về điều đó nhưng đó là điều đầu tiên cần rút ra từ video này là
+
+29
+00:02:18,570 --> 00:02:26,250
+ý tưởng này là có máy tính này chứa tất cả các gói bạn biết được cung cấp công khai
+
+30
+00:02:26,610 --> 00:02:29,280
+cũng đang được đưa vào máy tính này.
+
+31
+00:02:29,280 --> 00:02:34,140
+Và sau đó điều đó dẫn đến một vấn đề về quyền riêng tư vì nếu bạn không muốn mã của mình vô tình
+
+32
+00:02:34,140 --> 00:02:36,400
+được đưa ra công khai cho mọi người.
+
+33
+00:02:36,450 --> 00:02:40,470
+Vì vậy, Daniel sẽ nói chuyện với điều đó một chút và chia sẻ bất kỳ suy nghĩ nào về những gì chúng tôi đã có.
+
+34
+00:02:40,640 --> 00:02:41,620
+Vâng tôi nghĩ thế.
+
+35
+00:02:41,720 --> 00:02:48,870
+Vì vậy, bạn đã có Mir the Mir có sẵn, nó được bật theo mặc định cho phiên bản 113 trở lên mà bạn thực sự có
+
+36
+00:02:48,870 --> 00:02:55,810
+một biến môi trường chuyển sang proxy liệt kê proxy mà bạn đang kết nối với IS.
+
+37
+00:02:55,920 --> 00:02:57,390
+VÌ VẬY BẠN CÓ THỂ XEM proxy SCO NÀY.
+
+38
+00:02:57,450 --> 00:03:02,630
+Vì vậy, proxy của bạn trên danh sách biến được phân tách bằng dấu phẩy những gì nó nên thử.
+
+39
+00:03:02,640 --> 00:03:10,370
+Vì vậy, điều đầu tiên nó thử là thử proxy trước, sau đó thử kết nối trực tiếp đến vị trí ban đầu
+
+40
+00:03:10,370 --> 00:03:12,030
+nơi đặt mô-đun.
+
+41
+00:03:12,220 --> 00:03:20,040
+Vì vậy, bạn sẽ chỉ đạo proxy mà Mir đang hoạt động có sẵn để bạn sử dụng.
+
+42
+00:03:20,040 --> 00:03:24,890
+Vì vậy, nếu bạn muốn tải xuống và đặt nó trên hệ thống của riêng mình nếu bạn giống như một công ty hoặc thứ gì đó mà bạn
+
+43
+00:03:24,890 --> 00:03:30,110
+cũng có thể làm như vậy và sau đó bạn chỉ cần điều chỉnh proxy đi của mình để trỏ đến Mir cá nhân của riêng bạn thay vì
+
+44
+00:03:30,110 --> 00:03:37,270
+đối với hầu hết mọi người, một chiếc đi chung cho hầu hết mọi người mặc dù chỉ một chiếc đi chung là hoạt động tốt.
+
+45
+00:03:37,310 --> 00:03:43,760
+Bây giờ, nhược điểm của proxy là nếu bạn có kho lưu trữ riêng tư thì proxy không thể thực sự truy cập chúng.
+
+46
+00:03:43,760 --> 00:03:48,860
+Và vì vậy bạn không thể trả lại qua proxy cho họ.
+
+47
+00:03:48,950 --> 00:03:53,510
+Vì vậy, để tránh điều đó, giờ đây đã có một biến môi trường mới dành cho những người đã gọi là chuyển sang chế độ riêng tư.
+
+48
+00:03:53,540 --> 00:04:00,320
+Vì vậy, nếu bạn có các kho lưu trữ riêng tư như đây là một kho lưu trữ riêng tư và bạn biết như tôi có nó trên github
+
+49
+00:04:00,320 --> 00:04:04,810
+nó thuộc repo riêng tư, tôi không muốn điều đó kết thúc trên proxy.
+
+50
+00:04:04,910 --> 00:04:10,240
+Proxy có tự động biết không xem repo gab riêng của tôi hay tôi phải đặt cờ này.
+
+51
+00:04:10,250 --> 00:04:11,720
+Tôi không hoàn toàn chắc chắn.
+
+52
+00:04:11,720 --> 00:04:16,940
+Tôi nghĩ rằng proxy riêng tư thực sự không thể truy cập được vì nó không phải là riêng tư.
+
+53
+00:04:16,940 --> 00:04:18,110
+Vâng, bạn là bạn riêng tư.
+
+54
+00:04:18,110 --> 00:04:18,410
+Vâng.
+
+55
+00:04:18,530 --> 00:04:24,170
+Khi bạn đang thực hiện trực tiếp, nó có thể sử dụng cây xô thơm hoặc kết nối HP của bạn để kết nối với nó và lấy
+
+56
+00:04:24,170 --> 00:04:25,030
+repo riêng của bạn.
+
+57
+00:04:25,280 --> 00:04:30,760
+Nhưng proxy không có quyền truy cập vào khóa riêng SDH của bạn và do đó, nó không thể làm điều đó.
+
+58
+00:04:30,760 --> 00:04:32,000
+ĐƯỢC RỒI.
+
+59
+00:04:32,390 --> 00:04:39,080
+Vì vậy, nhưng để nói với bạn rằng đừng bận tâm thử nó là biến môi trường riêng tư, vì vậy mà
+
+60
+00:04:39,080 --> 00:04:39,410
+Một.
+
+61
+00:04:40,070 --> 00:04:40,990
+Phải.
+
+62
+00:04:41,960 --> 00:04:48,810
+Điều mà tôi thực sự không có bất kỳ giá trị nào nhưng có một chủ đề trợ giúp về mô-đun này ở chế độ riêng tư.
+
+63
+00:04:49,010 --> 00:04:56,060
+Vì vậy, nếu bạn truy cập mô-đun trợ giúp riêng tư, sẽ có một lượng lớn thông tin bắt đầu từ đây
+
+64
+00:04:56,060 --> 00:05:06,920
+xuống về cách giữ mã riêng tư đúng cách và vì vậy chuyển sang chế độ riêng tư là biến môi trường dễ dàng.
+
+65
+00:05:06,920 --> 00:05:17,100
+Nếu bạn chỉ đặt chế độ riêng tư của mình thành một số giá trị, chẳng hạn như nếu tôi muốn nói rằng tôi bị trung tâm hoặc dùng quá liều
+
+66
+00:05:17,440 --> 00:05:22,410
+và tôi có một số repo riêng repo riêng.
+
+67
+00:05:23,110 --> 00:05:28,180
+Bây giờ nếu tôi vào chế độ riêng tư, tôi có thể thấy nó ở đó.
+
+68
+00:05:28,180 --> 00:05:35,590
+Và vì vậy, bây giờ bất cứ khi nào tôi có một mô-đun đi mô-đun đi mô-đun tìm mô-đun này, nó sẽ
+
+69
+00:05:35,590 --> 00:05:41,890
+bỏ qua nó từ proxy, nó sẽ cố gắng thực hiện trực tiếp từ máy của tôi, nó sẽ không lưu vào bộ nhớ cache trong bất kỳ
+
+70
+00:05:41,890 --> 00:05:49,640
+bằng mọi cách nó không thể, nó sẽ cố gắng giữ nó chỉ cho thiết bị của riêng tôi.
+
+71
+00:05:50,080 --> 00:05:56,710
+Vì vậy, bạn cũng có thể sử dụng dấu hoa thị, vì vậy nếu bạn thực sự có quyền truy cập như tôi sẽ có tổ chức trung tâm
+
+72
+00:05:59,280 --> 00:06:07,120
+ví dụ như nếu tôi có quyền truy cập vào toàn bộ như Hub Group, đó là nhóm riêng tư và đó là
+
+73
+00:06:07,120 --> 00:06:09,370
+có một loạt các repo trong đó tôi có thể sử dụng dấu hoa thị.
+
+74
+00:06:09,370 --> 00:06:15,560
+Vì vậy, bây giờ mọi thứ trong nhóm đó giờ cũng ở chế độ riêng tư.
+
+75
+00:06:16,110 --> 00:06:22,180
+Hoặc cũng sẽ bị bỏ qua proxy khi thử proxy cho việc này.
+
+76
+00:06:22,210 --> 00:06:28,170
+Vì vậy, như tôi đã nói, tôi khá chắc chắn rằng proxy thực sự không thể truy cập mã riêng tư mà không có quyền truy cập riêng tư
+
+77
+00:06:28,180 --> 00:06:34,420
+bạn vẫn sẽ nói với proxy rằng bởi vì có một repo tồn tại tại URL của bạn mà bạn
+
+78
+00:06:34,420 --> 00:06:35,830
+có lẽ không muốn làm.
+
+79
+00:06:35,950 --> 00:06:40,750
+Và tất nhiên, bạn đang mất thời gian vì mỗi khi nó cố gắng thông qua proxy, hãy gọi cho
+
+80
+00:06:40,750 --> 00:06:46,460
+proxy trước khi thử kết nối trực tiếp nếu nó không ở chế độ riêng tư.
+
+81
+00:06:46,480 --> 00:06:46,710
+Được rồi.
+
+82
+00:06:46,730 --> 00:06:54,530
+Vì vậy, hai điều rút ra từ video này là một trong số đó là dịch vụ cực kỳ tuyệt vời giúp giữ tất cả các gói
+
+83
+00:06:54,530 --> 00:07:03,740
+các gói có sẵn công khai và nó được gọi là mô-đun Mir và nó là proxy cho mọi thứ
+
+84
+00:07:03,740 --> 00:07:06,170
+được lưu trữ ngoài đó ở bất kỳ vị trí nào.
+
+85
+00:07:06,680 --> 00:07:11,430
+Và nếu bạn có nội dung trong một kho lưu trữ riêng thì nó sẽ không được nhìn thấy.
+
+86
+00:07:11,600 --> 00:07:18,200
+Nhưng cũng tốt nếu bạn chỉ định rõ ràng nếu bạn có thứ gì đó mà bạn không muốn kết thúc trên mô-đun
+
+87
+00:07:18,200 --> 00:07:24,470
+chỉ cần đặt để xem xét biến riêng tư này và đặt biến đó mà bạn xếp chồng biến đó.
+
+88
+00:07:24,530 --> 00:07:24,730
+Vâng.
+
+89
+00:07:24,740 --> 00:07:31,700
+Thực ra có một lưu ý nhỏ ở đây là private có thể bị người khác lợi dụng bởi các công cụ khác chẳng hạn
+
+90
+00:07:31,730 --> 00:07:37,400
+nếu bạn có một trình chỉnh sửa làm cho các gói có thể nhấp được liên kết tới một trang go doc thì nó có thể xem ở chế độ riêng tư
+
+91
+00:07:37,400 --> 00:07:42,400
+để xem gói cụ thể đó có công khai hay không và nếu gói đó không công khai thì gói đó có riêng tư hay không.
+
+92
+00:07:42,440 --> 00:07:46,160
+Không có trang nào tốt, thậm chí không cần bận tâm đến việc cố gắng kiếm sống tại Nice.
+
+93
+00:07:46,730 --> 00:07:52,340
+Vì vậy, nói chung, chuyển sang chế độ riêng tư là một điều tốt để đề phòng trường hợp một số công cụ khác sử dụng mẹo này.
+
+94
+00:07:52,340 --> 00:07:52,580
+Được rồi.
+
+95
+00:07:52,610 --> 00:07:55,040
+Vì vậy, đó là mô hình mà chúng tôi đang ở chế độ riêng tư.

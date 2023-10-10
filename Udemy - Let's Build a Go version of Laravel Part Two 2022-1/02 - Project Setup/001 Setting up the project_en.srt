@@ -1,0 +1,308 @@
+1
+00:00:01,359 --> 00:00:04,450
+So before we can do much coding, we need to set up our project.
+
+2
+00:00:04,720 --> 00:00:09,820
+And if you look at the course resources for this lecture, you'll see a file called Source Dot Zip.
+
+3
+00:00:10,450 --> 00:00:15,190
+Download that and then create a new folder somewhere on your machine.
+
+4
+00:00:15,280 --> 00:00:17,980
+It doesn't matter where you put it, as long as you can find it easily.
+
+5
+00:00:18,550 --> 00:00:26,160
+I created a folder called Cell Dash Dev and then extract the contents of that zip file into that folder,
+
+6
+00:00:26,170 --> 00:00:31,210
+and you should wind up with a folder named something like Cel Dash Dev your overall folder.
+
+7
+00:00:31,450 --> 00:00:33,730
+And inside of that, you have a folder called celebrities.
+
+8
+00:00:34,930 --> 00:00:41,020
+Now, if you did the first part of this, this creating a go version of Laravel, you probably already
+
+9
+00:00:41,020 --> 00:00:43,390
+have some source code that you could use if you wanted to.
+
+10
+00:00:43,660 --> 00:00:48,910
+But I encourage you to use Source Dot Zip, download that and use it instead.
+
+11
+00:00:49,270 --> 00:00:53,950
+And then you can apply whatever changes you want to your own code as you go along or after you're finished
+
+12
+00:00:53,950 --> 00:00:54,850
+this course or whatever.
+
+13
+00:00:55,030 --> 00:00:58,790
+But it will be simpler for everyone if we're all starting from the same place.
+
+14
+00:00:58,810 --> 00:01:00,220
+So I encourage you to do that.
+
+15
+00:01:00,760 --> 00:01:06,280
+And once you've done it, once you have an overall project folder and inside of that folder, name celebrities
+
+16
+00:01:06,280 --> 00:01:11,350
+with all the appropriate source code in there and start up visual studio code or whatever your favorite
+
+17
+00:01:11,350 --> 00:01:15,370
+editor is, and open that folder the celebrities folder.
+
+18
+00:01:15,370 --> 00:01:22,530
+So I'll open from my desktop or find my cell dash dev and open celebrities.
+
+19
+00:01:22,900 --> 00:01:23,270
+OK.
+
+20
+00:01:23,320 --> 00:01:25,900
+And I'll open it now.
+
+21
+00:01:26,200 --> 00:01:31,060
+This is the code as it existed at the end of part one of this course.
+
+22
+00:01:31,540 --> 00:01:39,910
+So if you look for example at the make file right here down here on Line 18, this is how we build the
+
+23
+00:01:39,910 --> 00:01:45,820
+celebrity's executable and we're going to do that in just a moment, but I need to make one change first.
+
+24
+00:01:45,970 --> 00:01:52,330
+So if you go to the CMT Seelye folder and find the new Dot Go file and open that.
+
+25
+00:01:52,930 --> 00:01:55,420
+This is the line right here that I want to change.
+
+26
+00:01:55,630 --> 00:02:03,280
+When I did the first half of this course, I used C to get the necessary skeleton's hilarious application
+
+27
+00:02:03,280 --> 00:02:07,390
+repository, and I'm going to change that to use TDPs instead.
+
+28
+00:02:08,350 --> 00:02:16,780
+So what I'm going to do is just duplicate this line, comment the first one out and change the URL to
+
+29
+00:02:16,780 --> 00:02:17,470
+this.
+
+30
+00:02:17,470 --> 00:02:18,970
+I have a copy to my clipboard.
+
+31
+00:02:19,720 --> 00:02:21,620
+We're using HTTPS instead.
+
+32
+00:02:21,640 --> 00:02:27,490
+And as you can see, the URL is pretty, pretty similar, but it's HTP s colon slash slash GitHub dot
+
+33
+00:02:27,490 --> 00:02:32,290
+com slash t Solr slash celebrities dash app dot get.
+
+34
+00:02:32,560 --> 00:02:32,950
+OK.
+
+35
+00:02:33,100 --> 00:02:34,690
+So that's the first change I want to make.
+
+36
+00:02:35,800 --> 00:02:40,480
+Now, once that's done, I'm going to go to my terminal window and I'll just type make build.
+
+37
+00:02:41,350 --> 00:02:46,450
+And this will build a new version of the celebrity's application inside the this directory.
+
+38
+00:02:46,600 --> 00:02:52,210
+So now if I go inside the this directory, I can type dot slash celebrities.
+
+39
+00:02:52,210 --> 00:02:57,340
+And if you're on windows, it'll have Dot X at the end, of course, new and I'm going to create an
+
+40
+00:02:57,340 --> 00:03:02,530
+application folder called my app and please use the name my app for now.
+
+41
+00:03:03,970 --> 00:03:07,360
+This will clone the repository and everything is ready to go.
+
+42
+00:03:07,660 --> 00:03:11,890
+OK, so now I have a new application inside that folder.
+
+43
+00:03:11,920 --> 00:03:19,750
+So over here, if I go back to my finder or my desktop inside of celebrities inside of the dist, I
+
+44
+00:03:19,750 --> 00:03:25,000
+have a new folder called my app, and I want that to exist beside this hilarious folder.
+
+45
+00:03:25,240 --> 00:03:34,010
+So from the command line, I can just say move my app up one level that gets me inside the celebrity
+
+46
+00:03:34,190 --> 00:03:38,560
+folder, then up another level which gets me beside the celebrities folder, I think.
+
+47
+00:03:38,650 --> 00:03:39,220
+Let's find out.
+
+48
+00:03:39,970 --> 00:03:42,540
+So I'll go up to levels and do an else.
+
+49
+00:03:42,550 --> 00:03:43,870
+And there they are.
+
+50
+00:03:44,740 --> 00:03:45,850
+Now we're not quite done.
+
+51
+00:03:46,600 --> 00:03:50,110
+Let's close this window entirely or just create a new window that'll do the trick.
+
+52
+00:03:51,400 --> 00:03:53,470
+And let's open that celebrity's folder.
+
+53
+00:03:53,650 --> 00:03:55,450
+So I will make this window bigger.
+
+54
+00:03:56,500 --> 00:04:02,800
+What we're going to do here is create a new workspace in a minute and I'll open that my app folder I
+
+55
+00:04:02,800 --> 00:04:03,430
+just created.
+
+56
+00:04:03,700 --> 00:04:08,920
+So on my desktop, inside a cell, dev my app, I'm going to open this.
+
+57
+00:04:10,910 --> 00:04:16,459
+And then I'm going to open go dark mode, and I want to add the replace line that we used last time
+
+58
+00:04:16,459 --> 00:04:16,839
+around.
+
+59
+00:04:17,329 --> 00:04:25,040
+So at the very bottom of this file, I'll simply add a line that tells Go, we're going to replace GitHub
+
+60
+00:04:25,640 --> 00:04:29,840
+dot com slash t Solr slash celebrity's
+
+61
+00:04:32,210 --> 00:04:38,840
+version zero point zero point zero, which I don't think matters, but I was at it with dot dot slash
+
+62
+00:04:39,110 --> 00:04:47,450
+celebrities and say that, OK, now I'm going to close this window and close this window and create
+
+63
+00:04:47,450 --> 00:04:48,230
+a new window.
+
+64
+00:04:51,110 --> 00:04:53,750
+And then I will say add a folder to a workspace.
+
+65
+00:04:53,780 --> 00:04:58,070
+Now I'll add those two folders that we just created on my desktop.
+
+66
+00:04:59,780 --> 00:05:00,620
+Cell Dev.
+
+67
+00:05:00,980 --> 00:05:07,420
+I'm going to add celebrities and I'm also going to add another folder to the workspace.
+
+68
+00:05:09,570 --> 00:05:17,130
+Which is my app that now if I look at my files, you'll see I have my app here.
+
+69
+00:05:17,270 --> 00:05:18,540
+I have celebrities there.
+
+70
+00:05:19,110 --> 00:05:28,020
+And now I will save everything as a workspace safe workspace as and I'll put that at the root level
+
+71
+00:05:28,290 --> 00:05:31,020
+of my cell dev folder, which I'll call just workspace.
+
+72
+00:05:32,400 --> 00:05:38,430
+OK, now that we've done this, it will make it much easier for us to work on our project because I'll
+
+73
+00:05:38,430 --> 00:05:44,670
+be able to make changes in celebrities and have them reflected very quickly, much faster than last
+
+74
+00:05:44,670 --> 00:05:45,180
+time around.
+
+75
+00:05:45,180 --> 00:05:49,160
+Because the last time I tried this, when I recorded the first half of this course, this didn't work.
+
+76
+00:05:49,170 --> 00:05:54,330
+But it appears to now, OK, so we have our workspace set up.
+
+77
+00:05:54,600 --> 00:05:55,500
+Let's move on.
+

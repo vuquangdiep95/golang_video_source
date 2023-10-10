@@ -1,0 +1,436 @@
+1
+00:00:00,210 --> 00:00:05,940
+OK jadi dalam kuliah ini kita akan membahas dan mengimplementasikan panggilan rencana untuk streaming client RBC dan kita akan
+
+2
+00:00:05,940 --> 00:00:07,780
+mengujinya terhadap server yang sedang berjalan.
+
+3
+00:00:07,860 --> 00:00:09,150
+Ayo maju.
+
+4
+00:00:09,150 --> 00:00:14,400
+Jadi dalam kode saya, saya akan masuk ke klien pergi dan bersiap-siap untuk menulis fungsi kami.
+
+5
+00:00:14,700 --> 00:00:21,300
+Jadi sebelum kita melakukan adegan streaming yang telah kita lakukan streaming klien dan kita akan melewati klien yang sama saya akan datang dan
+
+6
+00:00:21,800 --> 00:00:23,280
+keluar kode kita sebelumnya.
+
+7
+00:00:23,400 --> 00:00:28,740
+Dan kemudian kita perlu mengimplementasikan fungsi itu jadi saya akan pergi dan menyalin tanda tangan untuk mempermudah.
+
+8
+00:00:29,370 --> 00:00:37,680
+Jadi saya akan mengatakan fungsi melakukan streaming klien dan saya mendapatkan klien dan saya menutupnya dan saya
+
+9
+00:00:37,680 --> 00:00:41,670
+katakan mulai melakukan streaming klien PC kami.
+
+10
+00:00:42,020 --> 00:00:47,740
+OK jadi sekarang kita jika Anda melihat klien itu sendiri sebelum ada banyak kali API.
+
+11
+00:00:48,090 --> 00:00:51,580
+Dan sekarang kita bisa melihat titik-titik salam panjang.
+
+12
+00:00:51,720 --> 00:00:53,040
+Jadi itu sempurna.
+
+13
+00:00:53,100 --> 00:01:00,260
+Lewati konteks sehingga kita bisa melakukan konteks latar belakang itu dan kemudian kita bisa memanggil beberapa opsi.
+
+14
+00:01:00,270 --> 00:01:06,430
+Jadi seperti yang Anda lihat di sini sebelum saat itulah kami melihat Dot API, kami harus menyampaikan permintaan mereka.
+
+15
+00:01:06,630 --> 00:01:10,630
+Tetapi sekarang karena ini adalah aliran, kita sebenarnya tidak harus melewati permintaan.
+
+16
+00:01:10,790 --> 00:01:12,810
+Jadi kita hanya perlu melewati konteksnya.
+
+17
+00:01:12,810 --> 00:01:14,750
+Jadi, inilah latar belakang konteksnya.
+
+18
+00:01:15,210 --> 00:01:20,460
+Jadi sekarang mari kita lihat hal-hal yang sangat menarik sebenarnya yang mengembalikan ini.
+
+19
+00:01:20,460 --> 00:01:25,800
+Ini mengembalikan layanan hebat bersama dengan klien ke dalam aliran atau kesalahan.
+
+20
+00:01:25,890 --> 00:01:32,780
+Jadi mari kita lakukan ini kembali ke server kami kode klien kami dan katakan stream sama dengan ini.
+
+21
+00:01:32,850 --> 00:01:34,160
+Sekarang kita perlu mengatasi kesalahan.
+
+22
+00:01:34,170 --> 00:01:38,730
+Jadi jika kesalahannya tidak nol maka kita akan menyukainya.
+
+23
+00:01:38,880 --> 00:01:39,930
+Jadi LUGG gagal.
+
+24
+00:01:41,820 --> 00:01:50,470
+Kesalahan saat memanggil salam panjang dan kami akan mengirimkan pesan kesalahan.
+
+25
+00:01:50,540 --> 00:01:52,010
+Sekarang Anda sudah terbiasa dengan ini.
+
+26
+00:01:52,280 --> 00:01:56,090
+Kalau tidak, kita memiliki objek streaming yang dapat kita mulai berurusan.
+
+27
+00:01:56,090 --> 00:02:02,280
+Jadi jika Anda melihat Stream seperti yang Anda lihat sekarang, kami memiliki berbagai panggilan API yang berbeda.
+
+28
+00:02:02,390 --> 00:02:06,840
+Kita dapat mengirim apa yang akan kita lakukan dan kita akan mengirim sebanyak yang kita inginkan.
+
+29
+00:02:07,280 --> 00:02:13,190
+Dan kemudian ketika kita selesai kita bisa menutup dan menerima dan menutup dan menerima pada dasarnya akan mengatakan kita sudah selesai
+
+30
+00:02:13,190 --> 00:02:18,110
+dengan aliran ini dan server akan tahu bahwa kita sudah selesai dengan aliran ini dan kami akan
+
+31
+00:02:18,110 --> 00:02:20,420
+menunggu untuk menerima tanggapan dari dari server.
+
+32
+00:02:20,420 --> 00:02:21,760
+Jadi ini sempurna.
+
+33
+00:02:22,160 --> 00:02:27,350
+Jadi dalam mengirim tanda tangan, ini membutuhkan permintaan jangka panjang.
+
+34
+00:02:27,410 --> 00:02:38,150
+Jadi yang bisa kita lakukan sekarang hanyalah membuat permintaan kita sehingga kita bisa melakukan permintaan sama dengan array
+
+35
+00:02:38,150 --> 00:02:46,040
+pointer untuk menyambut P. B. itu permintaan salam panjang dan sekarang kita hanya perlu membuat array yang rentang slice.
+
+36
+00:02:46,040 --> 00:02:47,210
+Jadi di sini kita mulai.
+
+37
+00:02:47,240 --> 00:02:49,130
+Mari kita buat salah satunya saja.
+
+38
+00:02:49,250 --> 00:02:54,020
+Kami akan membuat permintaan lebih lama yang membutuhkan salam dan itu sangat bagus.
+
+39
+00:02:54,020 --> 00:02:58,080
+P. B. whoops di sini.
+
+40
+00:02:58,590 --> 00:03:00,120
+Dan ini membutuhkan P. besar B.
+
+41
+00:03:04,960 --> 00:03:17,710
+salam jenis Greevy dot sapaan yang memiliki nama depan Stefan ok tapi karena mengatakan irisan dan kita bisa memiliki banyak yang saya dapat menyalin kode ini
+
+42
+00:03:17,980 --> 00:03:23,320
+beberapa kali sehingga kita akan mengatakan kita akan memiliki lima dari
+
+43
+00:03:23,320 --> 00:03:24,190
+mereka.
+
+44
+00:03:24,280 --> 00:03:25,570
+Kami akan bersenang-senang.
+
+45
+00:03:25,990 --> 00:03:31,870
+John Lucy Mark dan Piper.
+
+46
+00:03:32,320 --> 00:03:34,990
+OK jadi kami punya lima orang di sini.
+
+47
+00:03:35,170 --> 00:03:39,630
+Dan dalam permintaan ini sekarang kita akan mengulangi permintaan ini dan mengirimkannya.
+
+48
+00:03:39,910 --> 00:03:44,150
+Jadi kami katakan untuk untuk setiap permintaan dalam permintaan
+
+49
+00:03:49,910 --> 00:03:54,990
+Rindge dengan S di mana kita akan lakukan adalah aliran yang mengirim.
+
+50
+00:03:58,760 --> 00:04:03,180
+Permintaan rec dan itu berfungsi.
+
+51
+00:04:03,180 --> 00:04:13,460
+Jadi sekarang kita beralih pada slice kita dan mengirim setiap pesan satu per satu.
+
+52
+00:04:13,500 --> 00:04:17,430
+Jadi di sini Anda pasti bisa tidur jika Anda mau.
+
+53
+00:04:17,430 --> 00:04:18,750
+Kita bisa tidur misalnya dulu.
+
+54
+00:04:18,750 --> 00:04:21,780
+Moderasi misalnya 100 milidetik.
+
+55
+00:04:21,780 --> 00:04:27,750
+Jadi kita dapat mengatakan 100 kali waktu mili detik dan kemudian
+
+56
+00:04:27,820 --> 00:04:39,520
+membuatnya tampak seperti kita mengirimkan barang dengan sangat lambat sehingga kita dapat mengatakan kita bahkan dapat membawa beberapa barang dan mengatakan itu
+
+57
+00:04:39,720 --> 00:04:49,780
+dikosongkan cetak Ellen mengirimkannya akankah Anda mencetak untuk mengirim permintaan dan kemudian kami hanya akan meneruskan permintaan di sini.
+
+58
+00:04:49,970 --> 00:04:50,200
+BAIK.
+
+59
+00:04:50,210 --> 00:04:55,510
+Jadi kami mengatakan permintaan itu dan kami akan menambahkan baris baru di akhir.
+
+60
+00:04:55,570 --> 00:04:56,660
+Jadi ini terlihat benar.
+
+61
+00:04:56,830 --> 00:04:57,490
+Lalu kita tidur.
+
+62
+00:04:57,520 --> 00:05:00,610
+Dan ketika kita selesai dengan semua permintaan ini dikirim.
+
+63
+00:05:00,610 --> 00:05:10,420
+Jadi lima dari mereka kami akan melakukan titik-titik aliran dekat dan menerima dekat dan menerima.
+
+64
+00:05:10,420 --> 00:05:16,230
+Apa yang dilakukannya ini pada dasarnya mengembalikan respons panjang dan kesalahan.
+
+65
+00:05:16,510 --> 00:05:24,960
+Jadi mari kita lanjutkan dan dengan ini akan mengatakan kesalahan respons sama dengan hal-hal ini.
+
+66
+00:05:24,970 --> 00:05:29,950
+Sekarang jika udaranya tidak tahu maka kita punya masalah besar.
+
+67
+00:05:30,020 --> 00:05:40,300
+Dan jadi kami akan melakukan beberapa saat menerima tanggapan dari hebat dan kami hanya akan meneruskannya.
+
+68
+00:05:40,580 --> 00:05:44,420
+Kalau tidak, kita punya hasilnya di sini dan kita hanya akan memainkan salam.
+
+69
+00:05:44,420 --> 00:05:57,690
+Jadi kami akan mengatakan NMT yang mencetak respons panjang itu menjadi apa pun yang kami terima dan kami akan melewati respons itu dan kami akan menambahkan
+
+70
+00:05:58,290 --> 00:06:00,240
+di baris Anda.
+
+71
+00:06:00,280 --> 00:06:01,750
+Dan ini semua terlihat benar.
+
+72
+00:06:02,060 --> 00:06:08,130
+Jadi hanya untuk meringkas kita akan mulai memainkan streaming rb c kita membuat banyak tanggapan.
+
+73
+00:06:08,490 --> 00:06:08,890
+BAIK.
+
+74
+00:06:08,900 --> 00:06:11,960
+Sekelompok permintaan maaf dalam satu irisan.
+
+75
+00:06:11,960 --> 00:06:18,350
+Dan kemudian kami membuat streaming kami menggunakan tarif lama menggunakan stream kami akan mengirimkan data ke sana dan
+
+76
+00:06:18,890 --> 00:06:23,450
+kami mungkin bisa tidur katakan setiap satu detik untuk membuatnya lebih sederhana.
+
+77
+00:06:23,930 --> 00:06:27,680
+Dan akhirnya tutup dan terima dan cetak hasil yang kami terima.
+
+78
+00:06:27,680 --> 00:06:29,140
+Jadi ini semua terlihat bagus.
+
+79
+00:06:29,360 --> 00:06:30,340
+Mari kita kembali ke kode ini.
+
+80
+00:06:30,350 --> 00:06:31,450
+Ya itu dipanggil.
+
+81
+00:06:31,520 --> 00:06:33,050
+Jadi saya pikir Ridge menjalankannya.
+
+82
+00:06:33,080 --> 00:06:34,550
+Jadi mari kita periksa.
+
+83
+00:06:34,630 --> 00:06:43,910
+Sekarang jika Anda menjalankan salam, salam klien seperti pergi karena Anda dapat melihatnya mengirim permintaan lima permintaan.
+
+84
+00:06:44,390 --> 00:06:46,950
+Dan kemudian ketika itu selesai kami menerima bantuan menentukan.
+
+85
+00:06:46,970 --> 00:06:47,500
+Halo John.
+
+86
+00:06:47,510 --> 00:06:48,080
+Halo Lucy.
+
+87
+00:06:48,080 --> 00:06:48,500
+Halo.
+
+88
+00:06:48,530 --> 00:06:49,850
+Halo piper.
+
+89
+00:06:49,950 --> 00:06:51,570
+Dan itulah yang saya ingin Anda sadari.
+
+90
+00:06:51,590 --> 00:06:58,490
+Kami hanya menerima hasilnya ketika lima salam dikirim, lima objek sedang dikirim tetapi
+
+91
+00:06:59,090 --> 00:07:00,850
+fungsinya dipanggil segera.
+
+92
+00:07:00,860 --> 00:07:04,790
+Jadi Anda bisa menjalankannya lagi dan lihat saja layar paling atas.
+
+93
+00:07:04,940 --> 00:07:10,220
+Dan seperti yang Anda lihat, fungsi tertinggal tepat dari apa yang dipanggil dan setelah lima
+
+94
+00:07:10,220 --> 00:07:12,550
+bacaan dikirim, maka kami mendapatkan hasilnya.
+
+95
+00:07:12,620 --> 00:07:14,590
+Jadi itu bekerja dengan sangat baik.
+
+96
+00:07:14,730 --> 00:07:19,910
+Hanya ada satu baris kecil baru yang hilang di server yang akan saya ubah sekarang.
+
+97
+00:07:19,910 --> 00:07:26,720
+Jadi kisi-kisi yang panjang dipanggil dengan permintaan streaming.
+
+98
+00:07:26,970 --> 00:07:28,940
+Saya hanya perlu me-restart server saya.
+
+99
+00:07:29,520 --> 00:07:30,530
+Dan di sini kita mulai.
+
+100
+00:07:30,930 --> 00:07:31,910
+Jadi sekarang berhasil.
+
+101
+00:07:31,920 --> 00:07:32,820
+Jadi ini semua luar biasa.
+
+102
+00:07:32,970 --> 00:07:35,120
+Dan Anda dapat bermain dengan itu yang saya inginkan untuk Anda.
+
+103
+00:07:35,120 --> 00:07:40,110
+Anda menyadari bahwa sekarang ini klienlah yang melakukan streaming ke server dan serverlah yang
+
+104
+00:07:40,150 --> 00:07:42,660
+menemukan file yang terakhir kemudian server merespons.
+
+105
+00:07:42,660 --> 00:07:43,970
+Apa yang kita butuhkan.
+
+106
+00:07:43,980 --> 00:07:47,350
+Jadi semuanya bekerja sangat senang dengan hasilnya.
+
+107
+00:07:47,370 --> 00:07:50,740
+Semoga Anda mendapatkan tujuan yang sama di kuliah berikutnya.
+
+108
+00:07:50,760 --> 00:07:53,660
+Anda akan berlatih dan menulis streaming klan Anda sendiri.
+
+109
+00:07:53,700 --> 00:07:54,860
+Jadi saya akan melihat Anda di sana.
+

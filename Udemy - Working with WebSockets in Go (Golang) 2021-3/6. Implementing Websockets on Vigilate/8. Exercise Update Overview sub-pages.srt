@@ -1,0 +1,107 @@
+1
+00:00:01,050 --> 00:00:06,850
+So I thought I'd go over the goals for this exercise in a little more detail before you get started.
+
+2
+00:00:07,260 --> 00:00:13,580
+So I'm on the overview page of our site and I'm talking about the pages behind these four boxes.
+
+3
+00:00:13,590 --> 00:00:20,070
+So, for example, I have the healthy services and right now I have one healthy service and I want to
+
+4
+00:00:20,070 --> 00:00:27,340
+write code or I want you to write code such that when we receive the appropriate event, if this hosted
+
+5
+00:00:27,390 --> 00:00:35,220
+service HDP has changed from healthy to some other state, then it gets removed from this table and
+
+6
+00:00:35,220 --> 00:00:37,300
+gets added automatically to another table.
+
+7
+00:00:37,830 --> 00:00:44,690
+So if I happen to be looking at, for example, this table, I have no warning services right now.
+
+8
+00:00:44,700 --> 00:00:46,090
+Well, we don't have any warning services.
+
+9
+00:00:46,110 --> 00:00:47,900
+Let's go to the problem services instead.
+
+10
+00:00:48,390 --> 00:00:50,470
+I have no problem services right now.
+
+11
+00:00:50,640 --> 00:00:55,740
+Now, let's assume I'm looking at this page and the service goes down.
+
+12
+00:00:56,220 --> 00:00:58,940
+Well, this page should get updated in real time.
+
+13
+00:00:59,010 --> 00:01:04,260
+So you're going to have to, first of all, push the property event and have a listener for that event
+
+14
+00:01:04,260 --> 00:01:06,990
+in your JavaScript binding to the public channel.
+
+15
+00:01:07,770 --> 00:01:15,750
+And if this service changes to a problem state, in my case, then you look at this table, which means
+
+16
+00:01:15,750 --> 00:01:18,420
+you have to have some means of addressing this table.
+
+17
+00:01:18,900 --> 00:01:23,820
+You check to see if it has the no service row, if that's the only thing in there, you need to remove
+
+18
+00:01:23,820 --> 00:01:27,680
+that and then you add the appropriate role for the new problem service.
+
+19
+00:01:27,720 --> 00:01:30,710
+So that's the goal for this particular exercise.
+
+20
+00:01:31,200 --> 00:01:32,760
+So you shouldn't have any trouble with it.
+
+21
+00:01:32,760 --> 00:01:33,810
+And if you do, don't worry.
+
+22
+00:01:33,810 --> 00:01:39,480
+In the next lecture, I'll show you what I've done and post the code with the appropriate solution to
+
+23
+00:01:39,480 --> 00:01:41,080
+the resources for that page.
+
+24
+00:01:41,400 --> 00:01:42,110
+So good luck.
+
+25
+00:01:42,120 --> 00:01:42,960
+Give it a try.
+
+26
+00:01:43,050 --> 00:01:47,220
+It's important that you actually try to do things on your own and don't just watch somebody else.
+
+27
+00:01:47,550 --> 00:01:49,790
+And I'm sure you won't have any problems at all.

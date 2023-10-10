@@ -1,0 +1,476 @@
+1
+00:00:01,320 --> 00:00:06,990
+So this time around, what I want to do is to write a helper function in this whole art house project
+
+2
+00:00:07,020 --> 00:00:14,370
+that I can call from my tests in whatever test I'm writing in my my app, for example, and just grab
+
+3
+00:00:14,370 --> 00:00:15,570
+a screenshot.
+
+4
+00:00:15,660 --> 00:00:20,220
+And fortunately, it's really easy to do so using the rod package.
+
+5
+00:00:20,520 --> 00:00:25,440
+So the first thing I'm going to do is go to my Solaris House project and at the root level or create
+
+6
+00:00:25,440 --> 00:00:29,310
+a new go file and I'll call mine DuckDuckGo.
+
+7
+00:00:29,340 --> 00:00:30,570
+You can call it whatever you want.
+
+8
+00:00:30,600 --> 00:00:35,850
+I'm calling it dusk because I'm going to be implementing some of the functionality that you find in
+
+9
+00:00:35,850 --> 00:00:36,810
+Laravel Dusk.
+
+10
+00:00:36,930 --> 00:00:43,500
+And just as an aside, you can actually, as far as I can tell, implement pretty much all of the functionality
+
+11
+00:00:43,500 --> 00:00:49,290
+you have in Laravel Dusk using pretty much the same logic that I'm going to this time around because
+
+12
+00:00:49,290 --> 00:00:55,650
+the Rudd package has an awful lot of control over a given browser, but we'll just do a few.
+
+13
+00:00:56,370 --> 00:01:03,120
+So package still our task that was hopefully filled in by my I.D. and I'll create a function with the
+
+14
+00:01:03,120 --> 00:01:05,400
+receiver see pointer to celebrities.
+
+15
+00:01:06,050 --> 00:01:07,110
+I'm going to call this one.
+
+16
+00:01:08,380 --> 00:01:12,780
+Take screenshot, OK?
+
+17
+00:01:13,320 --> 00:01:14,550
+And it takes a few parameters.
+
+18
+00:01:14,580 --> 00:01:18,720
+First of all, a URL, so page URL that seems like an appropriate name.
+
+19
+00:01:19,260 --> 00:01:22,620
+Also, the name of the test that I'm going to be running this from.
+
+20
+00:01:22,620 --> 00:01:26,340
+Both of these are strings and also width and height.
+
+21
+00:01:26,370 --> 00:01:29,040
+How big a browser window do I want to capture?
+
+22
+00:01:29,310 --> 00:01:34,050
+And these are of type float 64, which seems odd because their whole numbers, but that's what they're
+
+23
+00:01:34,050 --> 00:01:35,160
+using in the wrong package.
+
+24
+00:01:36,850 --> 00:01:42,790
+Now I'm going to create a variable called Page, and you can see this, this is just taken and modified
+
+25
+00:01:42,790 --> 00:01:47,650
+from the example code that you find right on the home page of the GitHub repository for Rudd.
+
+26
+00:01:47,920 --> 00:01:48,610
+It's really simple.
+
+27
+00:01:49,060 --> 00:01:55,360
+I'm going to create a variable called page, and that's a sign the value of rod drive to spell right
+
+28
+00:01:55,750 --> 00:02:02,090
+rod dot new with no parameters and that imports are on for me.
+
+29
+00:02:02,500 --> 00:02:04,180
+And then it must connect.
+
+30
+00:02:04,930 --> 00:02:05,920
+Dot must connect.
+
+31
+00:02:06,960 --> 00:02:09,360
+Then Dot and this one's important.
+
+32
+00:02:09,660 --> 00:02:15,600
+Must ignore certain errors and set that to true.
+
+33
+00:02:16,080 --> 00:02:16,560
+OK.
+
+34
+00:02:17,070 --> 00:02:23,460
+Because when we spin up our test, tell us server, it's actually an SSL encrypted server, but it generates
+
+35
+00:02:23,460 --> 00:02:24,610
+its own certificate.
+
+36
+00:02:24,630 --> 00:02:30,390
+And if we don't put must ignore cert errors true there, then the test will fail every time simply because
+
+37
+00:02:30,390 --> 00:02:33,210
+it says, I don't know what the certificate is, I'm not going any further.
+
+38
+00:02:33,840 --> 00:02:39,720
+So we'll set that to true then must page singular.
+
+39
+00:02:41,310 --> 00:02:46,770
+And the page I want is page URL, the parameter I've got as a call to this function.
+
+40
+00:02:47,130 --> 00:02:49,290
+And then finally, must wait load.
+
+41
+00:02:49,560 --> 00:02:51,360
+Wait until the page is loaded.
+
+42
+00:02:51,570 --> 00:02:51,930
+OK.
+
+43
+00:02:52,770 --> 00:02:59,280
+So as you can see, they actually use what's known as the fluid syntax Enron, where you can chain function
+
+44
+00:02:59,280 --> 00:03:01,440
+after function, after function, and it works pretty well.
+
+45
+00:03:01,980 --> 00:03:03,450
+So there's my page variable.
+
+46
+00:03:03,570 --> 00:03:06,030
+Now I just want to get a screenshot from that page.
+
+47
+00:03:06,090 --> 00:03:11,970
+I'll store the result in a variable called image, and I'll ignore the error, which I probably shouldn't.
+
+48
+00:03:11,970 --> 00:03:15,900
+But I'm going to for right now, and I call Page Dot screenshot.
+
+49
+00:03:17,970 --> 00:03:21,360
+And here it requires a few parameters.
+
+50
+00:03:21,390 --> 00:03:23,340
+First of all, full page, I'll say true.
+
+51
+00:03:25,470 --> 00:03:33,240
+And now the second argument is actually going to be written this way as a reference to Protocol Dot
+
+52
+00:03:33,780 --> 00:03:40,350
+Page Capture screenshot, which should be showing up here, capture screenshot things and we fill in
+
+53
+00:03:40,350 --> 00:03:40,890
+its fields.
+
+54
+00:03:41,760 --> 00:03:47,030
+And I want to say format, which is one of the required fields, and I'm going to make it a ping image.
+
+55
+00:03:47,040 --> 00:03:54,300
+So Kroto Dot and I'm looking for page capture screenshot ping.
+
+56
+00:03:54,600 --> 00:03:57,190
+You can do it as JPEG or Wimpey, but I'm going to go with PNG.
+
+57
+00:03:57,450 --> 00:03:57,810
+OK?
+
+58
+00:03:59,100 --> 00:04:02,670
+And the second thing I'm going to specify is how much of the page do I want to clip?
+
+59
+00:04:02,700 --> 00:04:06,720
+And that's why I put the width and height in there, so I'll put in clip.
+
+60
+00:04:09,150 --> 00:04:13,560
+And this is a reference to Kroto Dot Page Viewport.
+
+61
+00:04:14,220 --> 00:04:15,600
+And I'll specify its fields.
+
+62
+00:04:15,960 --> 00:04:17,730
+So x start at zero.
+
+63
+00:04:20,070 --> 00:04:21,720
+Top left is where we're going here.
+
+64
+00:04:21,870 --> 00:04:25,720
+Y started zero with.
+
+65
+00:04:26,460 --> 00:04:29,850
+I'll make that W, which I received as a parameter to this function.
+
+66
+00:04:30,300 --> 00:04:36,240
+Height will be h, which I received as a parameter, this function and the scale, and I'll scale it
+
+67
+00:04:36,240 --> 00:04:36,870
+to one.
+
+68
+00:04:36,900 --> 00:04:38,640
+In other words, don't scale it at all.
+
+69
+00:04:39,950 --> 00:04:41,960
+Then put a comment after this.
+
+70
+00:04:43,790 --> 00:04:49,640
+And now from surface, if you read the documentation for Ron, it'll tell you this is an experimental
+
+71
+00:04:49,640 --> 00:04:54,710
+feature, but use it, it works really well from surface is true, just makes things a little bit faster,
+
+72
+00:04:54,710 --> 00:04:55,640
+as far as I can tell.
+
+73
+00:04:56,330 --> 00:04:58,130
+OK, so that gives me my image variable.
+
+74
+00:04:58,160 --> 00:04:59,690
+Now I'll create a file name.
+
+75
+00:05:00,020 --> 00:05:04,100
+The name of the file where that I'm going to use when I save this to disk.
+
+76
+00:05:04,580 --> 00:05:06,020
+So filing is a sign.
+
+77
+00:05:06,020 --> 00:05:07,420
+The value of that.
+
+78
+00:05:07,430 --> 00:05:08,990
+I'm going to use time dot now
+
+79
+00:05:12,500 --> 00:05:13,400
+dot format.
+
+80
+00:05:13,760 --> 00:05:17,840
+And then I'll just use a file system safe name using the date and time.
+
+81
+00:05:18,350 --> 00:05:22,520
+So using goes rather unusual syntax for formatting dates and times.
+
+82
+00:05:22,520 --> 00:05:30,200
+Twenty six, excuse me, the year Dash zero one gives me the month Dash zero two, excuse me, the day
+
+83
+00:05:30,470 --> 00:05:31,430
+and then a dash.
+
+84
+00:05:31,880 --> 00:05:34,880
+And I'll just go with the time 15 and I can't use columns.
+
+85
+00:05:34,880 --> 00:05:35,870
+It doesn't work on a Mac.
+
+86
+00:05:36,840 --> 00:05:39,570
+It might work on windows I've never tried zero for.
+
+87
+00:05:41,930 --> 00:05:42,980
+Zero five.
+
+88
+00:05:43,010 --> 00:05:47,780
+And then just to be safe, because it might have to test feeling very close to each other only include
+
+89
+00:05:47,780 --> 00:05:52,970
+milliseconds, so I'm going to put one two three four five six zeros.
+
+90
+00:05:53,360 --> 00:05:55,160
+OK, so that's the first part of my filing.
+
+91
+00:05:56,090 --> 00:06:03,260
+And now I'll ignore the error when I use the Utils package to put a file.
+
+92
+00:06:04,370 --> 00:06:08,650
+And again, that's right from Ron Simmons protocols, and I'm going to put it to a now.
+
+93
+00:06:08,650 --> 00:06:20,810
+I'll build a string format as per death and my format string will be percent s slash screenshots slash
+
+94
+00:06:21,170 --> 00:06:25,370
+percent s dash percent s s dot PNG.
+
+95
+00:06:26,540 --> 00:06:35,450
+And my substitutions for those r c dot root pass the root of my my app application, then the name of
+
+96
+00:06:35,450 --> 00:06:38,960
+the test test name, which I received as a call to this function.
+
+97
+00:06:39,380 --> 00:06:40,070
+And then finally.
+
+98
+00:06:42,120 --> 00:06:46,830
+And after that comma, I'm writing image by MGM.
+
+99
+00:06:48,090 --> 00:06:51,720
+And that should do it, so I should be able to call this from a test.
+
+100
+00:06:52,760 --> 00:06:56,930
+So, of course, we haven't written that bit of the test yet, but we'll take care of that in the next
+
+101
+00:06:56,930 --> 00:06:57,360
+election.
+
+102
+00:06:57,390 --> 00:06:59,510
+And we're also we may as well do this right now.
+
+103
+00:06:59,690 --> 00:07:02,510
+Notice that I'm writing this to a folder called Screenshots.
+
+104
+00:07:03,110 --> 00:07:09,530
+Let's go back to our celebrities and go file and make sure that folder is generated when the application
+
+105
+00:07:09,530 --> 00:07:09,980
+starts.
+
+106
+00:07:10,370 --> 00:07:11,810
+So celebrities don't go.
+
+107
+00:07:12,560 --> 00:07:16,070
+And somewhere in here, I have a place where I'm creating folders.
+
+108
+00:07:16,100 --> 00:07:16,710
+There it is.
+
+109
+00:07:16,730 --> 00:07:21,320
+It's right at the top of the new function in celebrities don't go folder names.
+
+110
+00:07:21,440 --> 00:07:24,560
+I'm just going to add to the very end of this screenshots.
+
+111
+00:07:28,970 --> 00:07:31,000
+OK, so that should take care of it.
+
+112
+00:07:31,010 --> 00:07:34,820
+The next time this starts, it should create the screenshots folder for us.
+
+113
+00:07:35,420 --> 00:07:40,160
+But since I'm going to be doing this running tests and I'm not an optimist, I'm going to go manually
+
+114
+00:07:40,160 --> 00:07:40,820
+create it too.
+
+115
+00:07:40,850 --> 00:07:48,290
+So at the root level of my app or create a new directory called screen shots, which I have to spell,
+
+116
+00:07:48,350 --> 00:07:48,580
+right?
+
+117
+00:07:50,140 --> 00:07:50,470
+OK.
+
+118
+00:07:50,570 --> 00:07:55,550
+In the next lecture, we'll actually try to modify a test to generate a screenshot and see how it all
+
+119
+00:07:55,550 --> 00:07:55,880
+works.
+

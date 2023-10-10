@@ -1,0 +1,87 @@
+1
+00:00:00,820 --> 00:00:06,350
+In this course I'll be using Make, which is a really good and very commonly used build tool.
+
+2
+00:00:06,370 --> 00:00:07,690
+And of course, this is optional.
+
+3
+00:00:07,690 --> 00:00:10,930
+If you don't want to do this, you can just run the software the way that you normally do.
+
+4
+00:00:11,650 --> 00:00:17,680
+But I highly recommend you install Make and I'll be providing build scripts or make scripts, make recipes
+
+5
+00:00:17,680 --> 00:00:20,140
+as they're called as we go on in this course.
+
+6
+00:00:20,290 --> 00:00:25,870
+So this is the documentation for make itself and I put a link to this in the course resources for this
+
+7
+00:00:26,380 --> 00:00:28,420
+and there's a couple of different ways to install it.
+
+8
+00:00:28,420 --> 00:00:34,660
+But if you're in a mac far and away, the easiest is to use Homebrew and you install Homebrew by copying
+
+9
+00:00:34,660 --> 00:00:36,910
+this link, pasting it into a terminal window.
+
+10
+00:00:37,150 --> 00:00:43,150
+And when you've done so, you can install make just by opening your favorite terminal and typing brew
+
+11
+00:00:43,390 --> 00:00:46,510
+install make and that will install it for you.
+
+12
+00:00:46,510 --> 00:00:49,330
+And when you're done you'll be able to run make right from the command line.
+
+13
+00:00:49,780 --> 00:00:51,580
+But if you're on windows, it's a little bit different.
+
+14
+00:00:51,790 --> 00:00:58,000
+And since most people these days are on Windows ten and some have made it to Windows 11, the equivalent
+
+15
+00:00:58,000 --> 00:01:00,850
+of home brew for Windows is called chocolatey.
+
+16
+00:01:01,120 --> 00:01:02,230
+And you can install that.
+
+17
+00:01:02,230 --> 00:01:04,540
+And there's a link to this in the course resources right here.
+
+18
+00:01:04,540 --> 00:01:09,220
+The instructions for doing so are pretty straightforward, and once you've done that, you'll open windows
+
+19
+00:01:09,220 --> 00:01:11,710
+and I'm on a mac, so I'm going to pretend I'm on windows right now.
+
+20
+00:01:12,400 --> 00:01:23,110
+And you would type Choko install Mac and that will install a version of make that is suitable for this
+
+21
+00:01:23,110 --> 00:01:23,560
+course.
+
+22
+00:01:24,010 --> 00:01:26,320
+So go ahead and install Mac and let's move on.

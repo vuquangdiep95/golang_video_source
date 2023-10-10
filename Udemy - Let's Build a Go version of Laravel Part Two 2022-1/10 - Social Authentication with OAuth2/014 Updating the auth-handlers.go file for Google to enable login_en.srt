@@ -1,0 +1,124 @@
+1
+00:00:01,460 --> 00:00:06,380
+So let's make the changes needed to implement logging in with Google, and we'll just worry about logging
+
+2
+00:00:06,380 --> 00:00:09,200
+in for this lecture and worry about logging out in a bit.
+
+3
+00:00:09,830 --> 00:00:15,380
+So right now, if you go over to your web browser and you have your application running this button
+
+4
+00:00:15,380 --> 00:00:21,650
+on the log in screen, logging with Google that appears in this file logging chat.
+
+5
+00:00:22,610 --> 00:00:27,670
+And it's this button right here with the label log in with Google and the route for that is slash auth
+
+6
+00:00:27,710 --> 00:00:31,370
+slash Google with some query parameter and then our roots file.
+
+7
+00:00:32,280 --> 00:00:38,490
+We already have that route covered right here that calls social logging because the provider bit in
+
+8
+00:00:38,490 --> 00:00:40,020
+curly braces can be anything.
+
+9
+00:00:40,050 --> 00:00:41,460
+So let's go over to social logging.
+
+10
+00:00:42,960 --> 00:00:45,300
+And here we grab the query parameter.
+
+11
+00:00:45,630 --> 00:00:48,330
+We store its value in the session.
+
+12
+00:00:48,810 --> 00:00:50,490
+And then we call in its social off.
+
+13
+00:00:52,100 --> 00:00:58,970
+And here this is where we need to uncomment scope and specify what kind of information we want to get
+
+14
+00:00:59,150 --> 00:01:00,470
+from the log in with Google.
+
+15
+00:01:00,650 --> 00:01:04,489
+And it's a bit different than it is with GitHub, but it's still a slice of strings.
+
+16
+00:01:05,440 --> 00:01:09,460
+In this case, we want to get email, which we absolutely have to have.
+
+17
+00:01:10,150 --> 00:01:14,000
+And we also want to get the profile just so we can get the users first and last name.
+
+18
+00:01:14,950 --> 00:01:20,170
+And then we need to add that a provider here in the U.S provider's method.
+
+19
+00:01:20,350 --> 00:01:23,560
+So we'll change this one from GitHub to Google.
+
+20
+00:01:23,770 --> 00:01:28,760
+I just duplicated that line to say some typing, and we don't want the GitHub key.
+
+21
+00:01:28,780 --> 00:01:29,920
+We want the Google key.
+
+22
+00:01:30,010 --> 00:01:32,020
+So we'll get that from the dot on file.
+
+23
+00:01:32,620 --> 00:01:41,530
+And same way we'll get the Google secret and the Google call back, and we'll change the scope here
+
+24
+00:01:41,530 --> 00:01:42,250
+to scope.
+
+25
+00:01:44,600 --> 00:01:46,430
+And that really should be it.
+
+26
+00:01:46,700 --> 00:01:51,470
+So now we should have a means of logging in using Google because there's nothing else required here.
+
+27
+00:01:51,890 --> 00:01:57,800
+When we get down to the social media, colbeck bid instead of getting the value of first name and last
+
+28
+00:01:57,800 --> 00:02:05,690
+name by exploding user name, instead, we just get the value right from user first name of new user.
+
+29
+00:02:06,260 --> 00:02:13,560
+The first name is equal to G User Dot, first name and new user.
+
+30
+00:02:14,600 --> 00:02:20,900
+The last name comes from User Dot, the last name and there shouldn't be anything else required.
+
+31
+00:02:21,650 --> 00:02:25,550
+So in the next lecture, we'll try logging in and see what we got wrong.
+

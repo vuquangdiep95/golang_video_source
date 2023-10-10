@@ -1,0 +1,1043 @@
+1
+00:00:01,500 --> 00:00:07,960
+So the very first thing I want to do in this lecture is to connect to a pusher server.
+
+2
+00:00:07,980 --> 00:00:09,470
+I'm going to close all my windows here.
+
+3
+00:00:10,560 --> 00:00:16,230
+And as I said before, if you want to create an account on PUSHER and they have free developer accounts,
+
+4
+00:00:16,230 --> 00:00:17,250
+feel free to do that.
+
+5
+00:00:17,570 --> 00:00:22,110
+But what I'm going to do is run a local installation of a pusher compatible server.
+
+6
+00:00:22,110 --> 00:00:24,300
+And the one I'm going to use is over here.
+
+7
+00:00:24,930 --> 00:00:33,720
+It's found on GitHub, dot com slash DIMIA R.O., the number one IP and it's something called IPA.
+
+8
+00:00:33,720 --> 00:00:35,250
+And I'm pretty sure I'm pronouncing that right.
+
+9
+00:00:36,150 --> 00:00:38,100
+And it's not been updated for a couple of years.
+
+10
+00:00:38,100 --> 00:00:43,440
+And the author is actually said he's not working on an actively right now, but it is compatible with
+
+11
+00:00:43,440 --> 00:00:44,850
+the latest release of PUSHER.
+
+12
+00:00:44,900 --> 00:00:49,470
+I've actually fought this and I'm working on a new version of it that I might released to the public
+
+13
+00:00:50,010 --> 00:00:51,740
+when I get it done, which is going to take months.
+
+14
+00:00:51,750 --> 00:00:55,540
+But for the purposes of this course, this will work really, really well.
+
+15
+00:00:56,280 --> 00:01:04,560
+So if you go back to your source code, you'll notice that there's a folder called IP right here.
+
+16
+00:01:04,560 --> 00:01:10,670
+And inside of that there are two executables, one for a Mac and one for Windows.
+
+17
+00:01:10,680 --> 00:01:17,940
+And I would, of course, encourage you to use the local installation just to follow along with exactly
+
+18
+00:01:17,940 --> 00:01:18,440
+what I'm doing.
+
+19
+00:01:18,450 --> 00:01:19,700
+But it's entirely up to you.
+
+20
+00:01:19,950 --> 00:01:24,810
+So to run this, it actually uses a configuration file called Config AML.
+
+21
+00:01:25,500 --> 00:01:28,410
+And I'm going to listen on part four thousand and one.
+
+22
+00:01:28,650 --> 00:01:30,070
+I've turned off profilings.
+
+23
+00:01:30,390 --> 00:01:35,970
+All the detail and the information I've said here is absolutely appropriate for our use.
+
+24
+00:01:35,970 --> 00:01:41,430
+And you'll notice that I have a key of one, two, three ABC and a secret of ABC one, two, three in
+
+25
+00:01:41,430 --> 00:01:42,020
+production.
+
+26
+00:01:42,030 --> 00:01:46,380
+I'm going to use much longer, harder to guess keys, but for development, these are easy to remember.
+
+27
+00:01:46,830 --> 00:01:51,870
+And if you go back to the command set up app, you'll and scroll down to the part where I create to
+
+28
+00:01:51,870 --> 00:01:52,620
+push your client.
+
+29
+00:01:53,190 --> 00:01:59,130
+You'll notice that these are stored in here and they're read from when I run the application and run
+
+30
+00:01:59,340 --> 00:02:05,100
+such a run up that so the key and the secret are exactly the same here as they are in my configuration
+
+31
+00:02:05,100 --> 00:02:07,580
+for EPA and so is the port number.
+
+32
+00:02:08,190 --> 00:02:09,460
+So how do you run this?
+
+33
+00:02:09,480 --> 00:02:11,700
+Well, it couldn't be any easier.
+
+34
+00:02:11,730 --> 00:02:18,750
+I'm going to open a terminal window and I'm going to change to the IP directory and I'm going to run
+
+35
+00:02:18,750 --> 00:02:19,380
+IP.
+
+36
+00:02:19,680 --> 00:02:24,660
+And of course, on Windows it's IP with nothing else and it actually starts.
+
+37
+00:02:25,320 --> 00:02:26,910
+So that's running now.
+
+38
+00:02:27,300 --> 00:02:33,840
+As we go on in this course, you have to remember to start IP and if things aren't working, go check
+
+39
+00:02:33,840 --> 00:02:35,130
+and see if IP is running.
+
+40
+00:02:35,130 --> 00:02:36,080
+So it's running right now.
+
+41
+00:02:36,630 --> 00:02:43,370
+So what I want to do now is when someone logs in, let me go back to my application and start right
+
+42
+00:02:43,380 --> 00:02:43,920
+from the beginning.
+
+43
+00:02:43,920 --> 00:02:44,700
+So I'll log out.
+
+44
+00:02:45,450 --> 00:02:51,720
+And if I log in as me, like I called it medo no, I deleted that user right.
+
+45
+00:02:52,650 --> 00:02:56,130
+Admin at example dot com with my password.
+
+46
+00:02:58,050 --> 00:03:03,240
+At this point when I get to the screen I want to connect to Pusher and that's all I want to do is to
+
+47
+00:03:03,510 --> 00:03:04,980
+connect to my local pusher client.
+
+48
+00:03:05,670 --> 00:03:07,020
+So how are we going to do that?
+
+49
+00:03:07,200 --> 00:03:11,970
+Well, not surprisingly, it's very similar to this kind of logic we used when we worked with Gorilla
+
+50
+00:03:11,970 --> 00:03:12,650
+WebSocket.
+
+51
+00:03:13,050 --> 00:03:16,650
+We need to create a handler that listens for a connection.
+
+52
+00:03:17,160 --> 00:03:23,370
+So I'm going to go to my internal packages, find my handlers that will create a new file, which I
+
+53
+00:03:23,370 --> 00:03:25,890
+will call Pusha Duco,
+
+54
+00:03:28,800 --> 00:03:30,570
+and I will add it to my repository.
+
+55
+00:03:31,080 --> 00:03:32,940
+And the package is handlers.
+
+56
+00:03:35,520 --> 00:03:39,960
+I don't create any function and I'm going to call it pusher off because it's the very first thing I'm
+
+57
+00:03:39,960 --> 00:03:42,990
+doing is authenticating to make sure I'm allowed to use Pusher.
+
+58
+00:03:43,470 --> 00:03:49,920
+So I'll create a function and it will be of type repo or have the receiver of repo DV repo so I can
+
+59
+00:03:49,920 --> 00:03:51,210
+get to the database if I have to.
+
+60
+00:03:51,240 --> 00:03:58,440
+I might not actually I'm going to have to and then I'll give it a name, push her off and it's a handler.
+
+61
+00:03:58,440 --> 00:04:02,810
+So it's always, as is the case with all handlers, that has to take a response writer and appointment
+
+62
+00:04:02,850 --> 00:04:03,570
+request.
+
+63
+00:04:03,990 --> 00:04:10,860
+So they should be the response writer, which I'll call W an R pointer to request.
+
+64
+00:04:11,670 --> 00:04:14,310
+And inside of that I actually do my magic.
+
+65
+00:04:15,060 --> 00:04:17,160
+Now, nothing here is too complex.
+
+66
+00:04:17,340 --> 00:04:21,630
+The very first thing I want to do is to figure out is this user authenticated?
+
+67
+00:04:22,170 --> 00:04:27,180
+Well, the easiest way to make sure that that happens is to make sure that the route is protected in
+
+68
+00:04:27,180 --> 00:04:29,610
+our file and only available to authenticate users.
+
+69
+00:04:29,640 --> 00:04:30,750
+So let's open our reads file.
+
+70
+00:04:32,460 --> 00:04:40,440
+And right here, just before my slash admin, I'll create another mux dot route and prefix will be pusher,
+
+71
+00:04:42,180 --> 00:04:43,110
+which I better spell right.
+
+72
+00:04:45,110 --> 00:04:50,090
+And it will be a function of mux Qaeda reader.
+
+73
+00:04:54,730 --> 00:04:59,950
+And inside of that, let me spell everything right here, I seem to have difficulty typing today, that's
+
+74
+00:04:59,950 --> 00:05:04,430
+better inside of that, let's create a route to our off.
+
+75
+00:05:04,450 --> 00:05:06,850
+So, first of all, let's make sure this is a protected route.
+
+76
+00:05:07,300 --> 00:05:09,850
+Muxtape use off now.
+
+77
+00:05:09,850 --> 00:05:14,920
+Only authenticated users have any way of getting to the routes that are inside of this closure.
+
+78
+00:05:16,000 --> 00:05:20,860
+And I'll just create a new hand, a new route to a handler Muxtape post, because the authentication
+
+79
+00:05:20,860 --> 00:05:25,750
+will be a post request and then it will be upgraded just like it is with guerrilla web sockets.
+
+80
+00:05:26,380 --> 00:05:29,710
+So the route will be pushed off.
+
+81
+00:05:30,970 --> 00:05:36,730
+And I'll point it to the handler just created handlers repo dot, push her off.
+
+82
+00:05:38,040 --> 00:05:39,340
+OK, so now I have a route to it.
+
+83
+00:05:39,340 --> 00:05:42,300
+So let's go back to our handler and see what we're actually going to do in here.
+
+84
+00:05:43,240 --> 00:05:48,430
+The fact that I'm authenticated and the fact that I'm being passed through my routes file means that
+
+85
+00:05:48,430 --> 00:05:50,170
+I have access to certain things.
+
+86
+00:05:50,170 --> 00:05:54,520
+And I know if you go back to her authentication handlers, which you haven't looked at in detail, but
+
+87
+00:05:54,520 --> 00:05:59,830
+when someone logs in right here, so this is login attempts to log the user in this line.
+
+88
+00:05:59,830 --> 00:06:02,530
+Thirty of authentication handler Stocco.
+
+89
+00:06:02,890 --> 00:06:08,650
+One of the things that I put in there right at the end is I put the user in the session.
+
+90
+00:06:08,650 --> 00:06:11,230
+So I now have four authenticated users.
+
+91
+00:06:11,470 --> 00:06:15,250
+I have an object stored in the session that is the user, him or herself.
+
+92
+00:06:15,250 --> 00:06:22,540
+And I also have the user ID so I can go back to my roots here or back to my pusher pusher handlers.
+
+93
+00:06:22,540 --> 00:06:26,440
+So what I want to do with this handler, first of all, now that I know that it's a protected handler,
+
+94
+00:06:26,440 --> 00:06:32,080
+only available to logged in users, is I want to get the necessary information that allows me to authenticate
+
+95
+00:06:32,080 --> 00:06:36,430
+this user and connect that user to my pusher host, wherever that is.
+
+96
+00:06:36,430 --> 00:06:38,340
+And in our case, it's going to be a local server.
+
+97
+00:06:39,070 --> 00:06:45,040
+So back in our authentication handlers, I have a user ID and I stuck that in with a key user ID in
+
+98
+00:06:45,040 --> 00:06:45,550
+the session.
+
+99
+00:06:45,560 --> 00:06:46,870
+So let's pull that out of the session.
+
+100
+00:06:47,440 --> 00:06:54,580
+So we'll say user ID is assigned the value of app session douget.
+
+101
+00:06:54,880 --> 00:07:05,110
+It's not app, it is repo DB, the repo app session get and this time I want to get an ENT and I know
+
+102
+00:07:05,110 --> 00:07:07,180
+it exists because this is a protected route.
+
+103
+00:07:07,690 --> 00:07:17,470
+So I have to pass the context, our context and then I get the key user ID and this key absolutely 100
+
+104
+00:07:17,470 --> 00:07:19,740
+percent corresponds to this key right here.
+
+105
+00:07:20,440 --> 00:07:23,860
+So now I have these ready and from that I can go get the user.
+
+106
+00:07:24,730 --> 00:07:33,190
+So you and I'll just ignore the error for this case is a sign the value of repo db get user by ID,
+
+107
+00:07:33,640 --> 00:07:41,740
+user ID and now I have the user stored in a local variable and it's of type users, a model's user.
+
+108
+00:07:41,740 --> 00:07:49,450
+So if I look at my models and find the user, I have all of this information available to me right now
+
+109
+00:07:50,050 --> 00:07:52,930
+and I can use that to authenticate to push her.
+
+110
+00:07:54,390 --> 00:07:57,210
+So let's have a look at how we do this.
+
+111
+00:07:57,240 --> 00:08:01,770
+Well, the very first thing you have to bear in mind is that what I'm getting and we haven't written
+
+112
+00:08:01,770 --> 00:08:08,190
+it yet, but when we write the JavaScript to connect the user to our push host, we're actually pushing
+
+113
+00:08:08,190 --> 00:08:09,720
+a body of information.
+
+114
+00:08:09,870 --> 00:08:13,500
+And I need to get that information from the request.
+
+115
+00:08:13,830 --> 00:08:16,380
+And I do that as follows programs.
+
+116
+00:08:16,530 --> 00:08:17,730
+And these are parameters.
+
+117
+00:08:17,730 --> 00:08:23,760
+And I'll ignore the error or assign the value of IOU to not discard.
+
+118
+00:08:25,920 --> 00:08:34,200
+Read all, and I'm reading the body of the request, and with this information, I can now create a
+
+119
+00:08:34,200 --> 00:08:38,850
+type that is used by the pusher go client and it's called pusher member data.
+
+120
+00:08:39,270 --> 00:08:44,050
+So I'll call this presents data because it's my presence and presence on present on the server.
+
+121
+00:08:44,520 --> 00:08:47,970
+It's a sign the value of pusher member data.
+
+122
+00:08:48,270 --> 00:08:51,470
+And then I just populate its fields and I need to give it a user ID.
+
+123
+00:08:51,990 --> 00:08:55,260
+And in this case it will be it needs to be in a string format.
+
+124
+00:08:55,260 --> 00:09:02,790
+So I'll convert my int, which I have here, to a string with STR, convert it to A and I'm going to
+
+125
+00:09:02,790 --> 00:09:04,070
+pass it user ID.
+
+126
+00:09:04,770 --> 00:09:06,460
+So that's the first thing I have to pass it.
+
+127
+00:09:06,990 --> 00:09:12,080
+The second thing it wants is information about the user and that's in the form of a map of string string.
+
+128
+00:09:12,510 --> 00:09:18,180
+So this is called user info and that's, that's one of the members of the member data type.
+
+129
+00:09:18,900 --> 00:09:26,820
+And I'm going to give it a map of string string and that will be populated with the user's name, which
+
+130
+00:09:26,820 --> 00:09:27,480
+will be.
+
+131
+00:09:30,400 --> 00:09:39,770
+Yuda first name, which is enough and an ID, and that will be against her conv but a it in they're
+
+132
+00:09:39,770 --> 00:09:44,880
+really going to have to stir conv eye to a and again user I.D..
+
+133
+00:09:46,030 --> 00:09:49,000
+All right, so this is the necessary information.
+
+134
+00:09:49,480 --> 00:09:54,340
+This is the information I'm going to be able to use to connect to and authenticate with my server,
+
+135
+00:09:54,340 --> 00:09:55,240
+my Pusha server.
+
+136
+00:09:56,080 --> 00:09:58,840
+And I do that by getting a response and potentially an error.
+
+137
+00:10:00,370 --> 00:10:03,700
+And that comes from Apte client.
+
+138
+00:10:03,830 --> 00:10:05,260
+And now we're using that client.
+
+139
+00:10:05,260 --> 00:10:14,920
+We put it in our application config and the method is authenticate the president's channel pass that
+
+140
+00:10:14,920 --> 00:10:22,480
+the programs we just built, we grabbed up here in the line 15 and past our presence data and we'll
+
+141
+00:10:22,480 --> 00:10:23,230
+check for an error.
+
+142
+00:10:23,350 --> 00:10:29,470
+If error is not equal to nil, then for now I'll just say logged off print line error and return.
+
+143
+00:10:31,240 --> 00:10:35,080
+Otherwise, we're all set and we just write the information back to our user.
+
+144
+00:10:35,080 --> 00:10:38,470
+And what we're writing is a response which is adjacent file.
+
+145
+00:10:38,800 --> 00:10:45,040
+So we write it as Jason to our response reader header set.
+
+146
+00:10:45,070 --> 00:10:48,610
+We tell the client that what's coming is of content type
+
+147
+00:10:51,520 --> 00:10:53,060
+application, Jason.
+
+148
+00:10:54,670 --> 00:10:59,650
+So now the client knows that it's about to get Jason and we just push it the Jason file, and I'll ignore
+
+149
+00:10:59,650 --> 00:11:06,760
+both the response and the potential error and just say write and I'll write the response.
+
+150
+00:11:08,740 --> 00:11:14,950
+So that will allow us in theory, to connect to our push your client or push your server from our client.
+
+151
+00:11:15,280 --> 00:11:17,500
+But we haven't written any JavaScript to do that yet.
+
+152
+00:11:18,250 --> 00:11:24,540
+Now let's have a look at how I've arranged the templates for this particular application.
+
+153
+00:11:25,510 --> 00:11:31,420
+So when my project at the root level, I have a folder called Views, and inside of this I have one
+
+154
+00:11:31,420 --> 00:11:33,790
+called partial and one called layout.
+
+155
+00:11:34,300 --> 00:11:40,150
+So layout, if you look at that, this is just basic HTML and the template I'm using is just a free
+
+156
+00:11:40,150 --> 00:11:42,850
+one that I found online and a admin template.
+
+157
+00:11:43,360 --> 00:11:45,210
+And it's it's good.
+
+158
+00:11:45,220 --> 00:11:48,830
+It uses a an alpha version of Bootstrap five.
+
+159
+00:11:48,940 --> 00:11:53,020
+So if you're used to the beta version, the one that is currently in use of bootstrap five, there's
+
+160
+00:11:53,020 --> 00:11:55,120
+a few changes, but nothing too much to worry about.
+
+161
+00:11:55,120 --> 00:11:57,190
+And I'll draw them to your attention as we come across them.
+
+162
+00:11:58,030 --> 00:12:01,480
+But every page, except for the login page is based on this layer.
+
+163
+00:12:02,020 --> 00:12:08,110
+And what inside of this, we have a couple of places where I yield things so I can yield success.
+
+164
+00:12:08,110 --> 00:12:14,170
+So if I look at, say, the dashboard at the very top, there's a block access and that allows me to
+
+165
+00:12:14,170 --> 00:12:20,950
+populate CSC rules that are specific to this page and back in the layout.
+
+166
+00:12:20,950 --> 00:12:26,620
+I also have another yield for in the next one here, there's our navigation menu along the left card
+
+167
+00:12:26,620 --> 00:12:33,130
+content and that corresponds to on the dashboard DOGIT, everything that's inside here and the title
+
+168
+00:12:33,130 --> 00:12:35,050
+corresponds to car title and that's all that.
+
+169
+00:12:35,050 --> 00:12:37,210
+It works at the very bottom of the layout.
+
+170
+00:12:37,690 --> 00:12:41,140
+I have one where I'm saying, let's see here.
+
+171
+00:12:44,460 --> 00:12:52,110
+The lab, so I can't find it, I have include Parshall's James Jet, so this is JavaScript that's going
+
+172
+00:12:52,110 --> 00:12:56,620
+to be available to every page, every page that requires authentication to see.
+
+173
+00:12:56,970 --> 00:13:04,590
+So that seems to me to be a really good place to put our particular code to connect to the push your
+
+174
+00:13:04,590 --> 00:13:08,490
+client and push your server, because you need to do it on every page where you're authenticated, just
+
+175
+00:13:08,490 --> 00:13:11,070
+as you had to do it on every page with Gorilla WebSocket.
+
+176
+00:13:11,070 --> 00:13:12,570
+You have to do it with Pusha as well.
+
+177
+00:13:13,380 --> 00:13:18,040
+So let me just ignore this and think about how we're going to connect to this.
+
+178
+00:13:18,060 --> 00:13:22,730
+Well, the very first thing we're going to have to have is the actual push or JavaScript library.
+
+179
+00:13:22,920 --> 00:13:24,720
+So I'm going to put it line up here.
+
+180
+00:13:25,260 --> 00:13:32,040
+And I've actually in your static folder, under admin, under underuse, I put Pusher in.
+
+181
+00:13:32,580 --> 00:13:33,480
+So let's include that.
+
+182
+00:13:33,810 --> 00:13:37,290
+That's the official JavaScript library released by Pusher.
+
+183
+00:13:37,500 --> 00:13:39,780
+And you can use the one that that's hosted on a CDN.
+
+184
+00:13:40,530 --> 00:13:45,300
+But in my experience, the problem with using the hosted CDN version that PUSHER provides is they're
+
+185
+00:13:45,300 --> 00:13:53,090
+actually tracking a lot of information from users and sometimes ad blockers tend to disable the pushier
+
+186
+00:13:53,100 --> 00:13:56,250
+library entirely because they think too much information is being tracked.
+
+187
+00:13:56,280 --> 00:13:57,600
+So I just hosted a local copy.
+
+188
+00:13:57,660 --> 00:13:58,740
+So let's bring that in.
+
+189
+00:13:58,740 --> 00:14:09,450
+Script source equals slash static slash admin slash pusher mindgames and close that.
+
+190
+00:14:09,900 --> 00:14:11,760
+Now I have access to the pusher library.
+
+191
+00:14:12,270 --> 00:14:16,920
+So first thing I'm going to do on every page where a user is authenticated, which is the only time
+
+192
+00:14:16,920 --> 00:14:25,890
+people ever see the Jast Jett file, let's create a variable let pusher equal new pusher and it requires
+
+193
+00:14:25,890 --> 00:14:28,270
+a key, something like that, empty for a minute.
+
+194
+00:14:28,290 --> 00:14:32,460
+We'll get back to that in a minute and then it requires some options.
+
+195
+00:14:32,460 --> 00:14:35,500
+And the options would be what are your authentication endpoint?
+
+196
+00:14:35,520 --> 00:14:39,120
+Well, what you are do I hit to a to authenticate users?
+
+197
+00:14:39,120 --> 00:14:41,370
+And as you know, we just created that.
+
+198
+00:14:41,670 --> 00:14:46,020
+It's right here under Pusha and it's pusher's off.
+
+199
+00:14:46,290 --> 00:14:47,430
+So let's put that in there.
+
+200
+00:14:48,480 --> 00:14:54,960
+Auth endpoint has pusher off.
+
+201
+00:14:57,230 --> 00:15:07,220
+And it needs to know what's the host was host in our case, it's local host and port and our case is
+
+202
+00:15:07,220 --> 00:15:08,270
+four thousand and one.
+
+203
+00:15:08,840 --> 00:15:14,090
+That's what we specified both in the start up for our vigilante application and in the start up for
+
+204
+00:15:14,090 --> 00:15:14,990
+our pusher server.
+
+205
+00:15:15,800 --> 00:15:17,690
+We're not using to tell us.
+
+206
+00:15:17,780 --> 00:15:19,240
+So I'll say forestalls.
+
+207
+00:15:19,250 --> 00:15:20,630
+We're not using SSL certificates.
+
+208
+00:15:20,630 --> 00:15:21,980
+In other words, it's false.
+
+209
+00:15:23,090 --> 00:15:25,910
+And we need to say what transports are you using?
+
+210
+00:15:25,910 --> 00:15:29,510
+And will enable enabled transports?
+
+211
+00:15:30,230 --> 00:15:36,200
+And it's an array of W.S. for Unsecured Connections and WSC because this might be in production at some
+
+212
+00:15:36,200 --> 00:15:36,440
+point.
+
+213
+00:15:36,450 --> 00:15:44,260
+So a lot of that transport and disabled transports will just pass an empty array.
+
+214
+00:15:45,990 --> 00:15:53,730
+And that will connect to our server once we call it so we need to actually subscribe to the server.
+
+215
+00:15:53,730 --> 00:15:59,460
+So analysts say here is let public channel, I'm creating a new variable and I'll talk about channels
+
+216
+00:15:59,460 --> 00:16:03,060
+in a bit equal to Pusher Dot subscribe.
+
+217
+00:16:05,120 --> 00:16:11,510
+And I was going to subscribe to a channel called Public Channel, and if it doesn't exist, the server
+
+218
+00:16:11,510 --> 00:16:15,880
+will create it for me if I'm actually successful in my connection.
+
+219
+00:16:17,120 --> 00:16:18,440
+So let's see what we're missing here.
+
+220
+00:16:18,470 --> 00:16:21,260
+We're almost ready to run this and see if we can connect.
+
+221
+00:16:21,260 --> 00:16:25,130
+First of all, we have to get our key in there and we can do that.
+
+222
+00:16:25,130 --> 00:16:29,900
+If you recall, when we logged in and before we remembered, I don't even know if I showed this to you,
+
+223
+00:16:29,900 --> 00:16:35,830
+but let's make sure when I render something, let's go back to our roots here, any page.
+
+224
+00:16:36,050 --> 00:16:41,750
+So when I render a page like this admin dashboard, for example, if I open that up, I'm actually calling
+
+225
+00:16:41,750 --> 00:16:45,290
+a function in a package called Helper's called Render Page.
+
+226
+00:16:45,650 --> 00:16:48,740
+And the template system I'm using here is templates.
+
+227
+00:16:48,740 --> 00:16:50,690
+But you could use any templating system.
+
+228
+00:16:50,690 --> 00:16:55,520
+I just like Jet because it's very easy to use and it's easier to write, say, if statements than the
+
+229
+00:16:55,520 --> 00:16:57,230
+standard go library templates.
+
+230
+00:16:57,260 --> 00:17:00,230
+I use them both, but for this course I thought I'd use Jet.
+
+231
+00:17:01,100 --> 00:17:06,770
+When I'm rendering this page, the very first thing I do is to say, am I being passed variables, which
+
+232
+00:17:06,770 --> 00:17:07,370
+is right here?
+
+233
+00:17:07,730 --> 00:17:09,290
+And if I am, then I use those.
+
+234
+00:17:09,290 --> 00:17:13,700
+Otherwise I create a new empty jet via and call the variable first.
+
+235
+00:17:14,480 --> 00:17:17,990
+And then I have this function and default data and let's have a look at that.
+
+236
+00:17:17,990 --> 00:17:21,250
+It's just a little higher in the right here at default data.
+
+237
+00:17:21,590 --> 00:17:27,950
+One of the things that I'm adding in here in my template data, which is pass to every single template,
+
+238
+00:17:27,950 --> 00:17:34,610
+whether every single page is being rendered, I always have access to this app preference map and that's
+
+239
+00:17:34,610 --> 00:17:35,880
+in the app variable.
+
+240
+00:17:36,650 --> 00:17:43,340
+I have access to that so I can actually pull my push her key right out of the variable dot the preference
+
+241
+00:17:43,340 --> 00:17:50,690
+map and it's key is Pusha Dash key.
+
+242
+00:17:51,140 --> 00:17:55,580
+And then I close my quotes, close this and my double quotes are closed.
+
+243
+00:17:56,050 --> 00:18:01,670
+The only drawback to working with Jet is there is no plug in for my idea that knows about jet templates.
+
+244
+00:18:01,670 --> 00:18:05,170
+So it thinks things like this are in error, but I can live with that for right now.
+
+245
+00:18:05,750 --> 00:18:06,890
+So let's make sure we've got this.
+
+246
+00:18:06,890 --> 00:18:07,370
+All right.
+
+247
+00:18:07,370 --> 00:18:09,500
+We're creating a Pusha of New Pusha.
+
+248
+00:18:09,530 --> 00:18:11,240
+We're getting our preference map.
+
+249
+00:18:11,240 --> 00:18:12,860
+We're pulling the push or key out of it.
+
+250
+00:18:12,860 --> 00:18:15,320
+That looks right off end point.
+
+251
+00:18:15,800 --> 00:18:17,720
+Actually, that needs to be capitalized.
+
+252
+00:18:19,570 --> 00:18:26,600
+OK, push her off, localhost the correct part, perfect, let's try running this and see what happens.
+
+253
+00:18:27,280 --> 00:18:35,590
+So I will stop my application, make sure it compiles and it does all go back to my now let's reload
+
+254
+00:18:35,590 --> 00:18:41,050
+the page, actually open a JavaScript terminal, make sure I'm looking at the network, reload the page.
+
+255
+00:18:41,380 --> 00:18:43,870
+And there I have one on one.
+
+256
+00:18:44,130 --> 00:18:50,010
+Switch us to web sockets and connected to localhost four thousand one, which is exactly what I wanted.
+
+257
+00:18:50,710 --> 00:18:51,320
+Perfect.
+
+258
+00:18:51,520 --> 00:18:56,650
+So it looks like we've connected to our server now in the next election will make sure we're actually
+
+259
+00:18:56,650 --> 00:18:59,290
+connected to our server and authenticated properly.
+
+260
+00:18:59,410 --> 00:19:05,620
+And we'll try pushing some information from the server to our connected client and we'll see how that
+
+261
+00:19:05,620 --> 00:19:05,950
+works.

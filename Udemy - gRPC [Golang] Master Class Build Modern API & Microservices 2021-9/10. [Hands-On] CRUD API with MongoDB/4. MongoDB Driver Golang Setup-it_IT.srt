@@ -1,0 +1,520 @@
+1
+00:00:00,240 --> 00:00:05,100
+Quindi, dopo ciò che dobbiamo fare, è sufficiente impostare i driver be mongered per un buon programma.
+
+2
+00:00:05,100 --> 00:00:07,230
+Quindi lascerò il server in esecuzione per ora.
+
+3
+00:00:07,260 --> 00:00:11,260
+E quindi quello che dobbiamo fare è che il mago G-B gulling.
+
+4
+00:00:11,550 --> 00:00:15,630
+E così ci sarà un pilota ufficiale di Magdi.
+
+5
+00:00:15,630 --> 00:00:17,860
+Non stiamo usando le ONG.
+
+6
+00:00:17,880 --> 00:00:20,420
+C'è anche un'opzione che non la stiamo usando.
+
+7
+00:00:20,670 --> 00:00:23,080
+OK, quindi dobbiamo andare da buoni a battuti.
+
+8
+00:00:23,160 --> 00:00:24,570
+E quindi, dopo.
+
+9
+00:00:24,570 --> 00:00:29,200
+Beh, in pratica quello che facciamo è che scorriamo verso il basso e andiamo all'installazione.
+
+10
+00:00:29,400 --> 00:00:32,230
+E così dice che se stai usando DEP puoi farlo e sicuro.
+
+11
+00:00:32,250 --> 00:00:34,380
+E poi questo comando ma non lo usiamo di per sé.
+
+12
+00:00:34,450 --> 00:00:39,620
+Quando vai vai a fare in modo che possiamo copiare questo ologist sul server perché non ne abbiamo bisogno e
+
+13
+00:00:39,630 --> 00:00:42,230
+tu digiti go get e digiti lì sei fuori.
+
+14
+00:00:42,330 --> 00:00:46,170
+Questo fondamentalmente farà in modo che i buoni driver vengano installati.
+
+15
+00:00:46,170 --> 00:00:51,780
+Quindi, quando Google è in esecuzione e voglio solo installarlo per così poco tempo, puoi iniziare
+
+16
+00:00:51,780 --> 00:00:53,940
+a utilizzare i driver non validi.
+
+17
+00:00:53,940 --> 00:00:54,900
+Ora, io sono onesto con loro.
+
+18
+00:00:54,940 --> 00:00:56,950
+I buoni driver sono davvero difficili da usare.
+
+19
+00:00:56,970 --> 00:00:59,890
+E mi ci è voluto un po 'per capire come farlo correttamente.
+
+20
+00:00:59,910 --> 00:01:04,640
+Ci sono alcuni esempi di esempi di documentazione che puoi controllare qui esempi di codice.
+
+21
+00:01:05,010 --> 00:01:09,120
+E sono abbastanza utili per capire come funzionano le cose in generale.
+
+22
+00:01:09,300 --> 00:01:14,270
+Ma quindi quello che farò qui in questa conferenza sarà un po 'di materiale di installazione, ho capito
+
+23
+00:01:14,280 --> 00:01:18,540
+che la documentazione è davvero scarsa, anche se c'è un buon lavoro su di essa.
+
+24
+00:01:18,810 --> 00:01:25,620
+E quindi se ti senti un po 'così dietro ti fa capire che è quello che sto facendo qui sarà solo
+
+25
+00:01:25,620 --> 00:01:30,260
+la pratica migliore o le buone pratiche, almeno quando si fanno cose più lunghe.
+
+26
+00:01:30,360 --> 00:01:34,950
+E tu usi solo il mio codice e tieni su di esso e usalo solo in futuro.
+
+27
+00:01:34,980 --> 00:01:41,820
+L'altra cosa che vuoi fare è che il driver Mago DBI si oscuri, così possiamo passare alla documentazione e capire cosa
+
+28
+00:01:41,820 --> 00:01:43,450
+succede se è necessario.
+
+29
+00:01:43,790 --> 00:01:47,140
+Tanto buon televisore, basta inserire i documenti in una buona TV.
+
+30
+00:01:47,370 --> 00:01:50,710
+E per questo i documenti sono chiamati in un formato chiamato Sun.
+
+31
+00:01:50,730 --> 00:01:56,190
+Quindi dovremo fare questo, la prima cosa che dobbiamo fare è connetterci al buon Hebei e per questo
+
+32
+00:01:56,190 --> 00:01:58,620
+apriremo solo un client proprio come loro.
+
+33
+00:01:58,620 --> 00:02:05,310
+Quindi quello che farò sarà semplicemente fare clic su copia e creare un nuovo client dice di tornare al codice.
+
+34
+00:02:05,720 --> 00:02:11,610
+E così possiamo aprire un nuovo client che il Tramon si troverà subito dopo l'avvio del server, ad esempio.
+
+35
+00:02:11,610 --> 00:02:14,160
+Quindi faremo bene o prima che sia pari.
+
+36
+00:02:14,230 --> 00:02:19,070
+Quindi inizieremo qui e diremo che qui è tra i buoni clienti.
+
+37
+00:02:19,290 --> 00:02:23,690
+Quindi ora, in termini di connessione, puoi rimuovere foobar perché non stiamo usando l'uso
+
+38
+00:02:23,730 --> 00:02:29,490
+e la password in cui la modalità non protetta rimuove foobar e quindi Mangu proprio qui importeremo solo
+
+39
+00:02:29,850 --> 00:02:35,070
+nel nostro codice, quindi non c'è compulsione come Infine c'è un contesto che devi importare e
+
+40
+00:02:35,070 --> 00:02:37,030
+quindi lo importiamo proprio ora.
+
+41
+00:02:37,480 --> 00:02:38,210
+OK.
+
+42
+00:02:38,790 --> 00:02:44,340
+Quindi in pratica ciò che fa si connette a Mongar per essere localhost 2 7 0 7 che è ciò che abbiamo
+
+43
+00:02:44,340 --> 00:02:44,710
+iniziato.
+
+44
+00:02:44,850 --> 00:02:51,360
+E poi c'è un errore che sta per trascinarsi è solo breve quindi lo accederà e poi ci collegheremo e poi di nuovo
+
+45
+00:02:52,350 --> 00:02:54,340
+se c'è un errore lo accederà.
+
+46
+00:02:54,340 --> 00:03:01,320
+Quindi, in pratica, dopo questo, il client rappresenta un oggetto di connessione per essere buono, quindi
+
+47
+00:03:01,320 --> 00:03:06,470
+dobbiamo fondamentalmente eseguire un database per connetterci a una buona TV.
+
+48
+00:03:06,820 --> 00:03:13,140
+E così per eseguire un database Bene, dobbiamo aprire una collezione in modo che la collezione sia quella che
+
+49
+00:03:13,140 --> 00:03:15,110
+useremo quindi facciamolo proprio ora.
+
+50
+00:03:15,360 --> 00:03:16,490
+Quindi useremo la collezione.
+
+51
+00:03:16,500 --> 00:03:24,170
+E questo è in pratica il nostro tavolo nel mondo D-B di Monga, quindi la raccolta è raccolta dai clienti.
+
+52
+00:03:24,390 --> 00:03:27,690
+Quindi apriamo un database che chiameremo quel database.
+
+53
+00:03:28,200 --> 00:03:33,780
+E in pratica se il database non esiste verrà creato per noi e la raccolta stessa la
+
+54
+00:03:33,780 --> 00:03:35,170
+chiameremo semplicemente blog.
+
+55
+00:03:35,230 --> 00:03:39,230
+E quindi cosa dice OK dai client che si connettono al database.
+
+56
+00:03:39,270 --> 00:03:47,040
+Il mio D-B verrà creato e quindi la raccolta di utilizzare Blug wish in Blug collection significa fondamentalmente table.
+
+57
+00:03:47,040 --> 00:03:50,450
+Se vieni da un mondo di database relazionale.
+
+58
+00:03:50,550 --> 00:03:54,000
+Quindi OK qui apriamo una collezione.
+
+59
+00:03:54,030 --> 00:03:58,640
+Ora questa collezione vogliamo renderla globalmente accessibile a livello globale.
+
+60
+00:03:58,650 --> 00:04:04,890
+Quindi quello che farò è che lo renderò globalmente accessibile, quindi rimuoverò il Kollin.
+
+61
+00:04:04,890 --> 00:04:12,030
+Lo salverò e quindi dobbiamo vedere quale collezione restituisce che la raccolta restituisce un puntatore a una collezione come
+
+62
+00:04:12,450 --> 00:04:13,450
+possiamo vedere.
+
+63
+00:04:13,770 --> 00:04:14,550
+Quindi è quello che faremo.
+
+64
+00:04:14,550 --> 00:04:20,520
+Andremo al nostro server e andremo in cima definiremo un VAR.
+
+65
+00:04:20,550 --> 00:04:24,310
+Quindi qui una vipera e chiameremo questa collezione d'arte.
+
+66
+00:04:24,390 --> 00:04:28,260
+Il tipo è un puntatore della collezione e non è definito.
+
+67
+00:04:28,410 --> 00:04:31,470
+Quindi il vero tipo è la raccolta dati Mongo.
+
+68
+00:04:31,500 --> 00:04:36,090
+Fondamentalmente questa sarà una collezione accessibile a livello globale che possiamo usare per tutto il programma.
+
+69
+00:04:36,240 --> 00:04:38,640
+Quando iniziamo ad implementare il server.
+
+70
+00:04:38,910 --> 00:04:43,670
+Quindi qui andiamo abbiamo creato una collezione usando Madidi e la collezione chiamata Blug.
+
+71
+00:04:43,980 --> 00:04:44,990
+Quindi è così.
+
+72
+00:04:45,000 --> 00:04:50,930
+Ora l'altra cosa che dobbiamo fare è creare fondamentalmente il nostro modello di dati la nostra definizione dei dati.
+
+73
+00:04:50,940 --> 00:04:52,850
+E così metto tutto in un campo.
+
+74
+00:04:53,070 --> 00:04:55,250
+Potresti separare i file se vogliamo, ma non è questo il punto.
+
+75
+00:04:55,440 --> 00:04:56,610
+Il punto giusto qui.
+
+76
+00:04:56,670 --> 00:05:00,770
+Quindi creeremo solo un tipo che sarà chiamato item ed è una struct.
+
+77
+00:05:01,020 --> 00:05:05,000
+E così l'oggetto Blug direttamente dal nostro database.
+
+78
+00:05:05,050 --> 00:05:10,620
+E così fondamentalmente questo terrà i dati del nostro Blug in Magdi.
+
+79
+00:05:10,920 --> 00:05:17,660
+E quindi quello che dobbiamo fare è definire i tipi di ogni campo e fondamentalmente mapparli come sole.
+
+80
+00:05:17,880 --> 00:05:26,160
+Quindi questo è un buon codice specifico, ma così Id è un ID oggetto così bene da obiettare quell'ID oggetto.
+
+81
+00:05:26,280 --> 00:05:31,040
+E la ragione per cui lo facciamo è che in Magdi quando hai un ID il tipo di esso è questo.
+
+82
+00:05:31,080 --> 00:05:33,690
+Quindi questo è tra il bene per essere cosa specifica.
+
+83
+00:05:33,750 --> 00:05:40,050
+Successivamente avremo un ID autore che sarà una stringa e quindi fondamentalmente stiamo facendo corrispondere ciò che abbiamo
+
+84
+00:05:40,140 --> 00:05:41,570
+creato in Protel collegato.
+
+85
+00:05:41,580 --> 00:05:43,210
+Quindi dovremo abbinare questo.
+
+86
+00:05:43,710 --> 00:05:50,830
+Poi avremo una conferenza che è una stringa e un titolo che è una stringa.
+
+87
+00:05:51,600 --> 00:05:55,320
+Quindi, eccoci qui, abbiamo creato qualcosa di simile ma non abbiamo finito.
+
+88
+00:05:55,320 --> 00:05:58,500
+Fondamentalmente abbiamo bisogno di aggiungere questo.
+
+89
+00:05:58,500 --> 00:06:00,880
+E a proposito ovviamente non ci sono virgole.
+
+90
+00:06:00,900 --> 00:06:02,180
+Sono solo io che sono stupido.
+
+91
+00:06:02,220 --> 00:06:02,780
+OK.
+
+92
+00:06:03,090 --> 00:06:08,550
+Quindi dobbiamo sostanzialmente fare lo sponsor per questo bene, usare qualcosa chiamato tag e
+
+93
+00:06:08,580 --> 00:06:13,940
+tag che devi aprire con questo segno di spunta e sarai figlio.
+
+94
+00:06:14,400 --> 00:06:19,040
+E poi lo mapperemo a ID omettere vuoto.
+
+95
+00:06:19,590 --> 00:06:25,300
+E quindi questo significa che questo campo proprio qui sarà mappato alla tua bestia su Fields chiamato
+
+96
+00:06:25,530 --> 00:06:26,550
+underscore IGY.
+
+97
+00:06:26,580 --> 00:06:32,280
+E se non è qui ammettiamo che farà la stessa identica cosa per altre idee, quindi lo
+
+98
+00:06:32,270 --> 00:06:35,730
+avremo nei campi e sarà mappato ad altre idee.
+
+99
+00:06:35,730 --> 00:06:38,920
+Quindi nel nostro database questo sarà chiamato un venerdì.
+
+100
+00:06:38,980 --> 00:06:40,330
+Lo facciamo ancora una volta.
+
+101
+00:06:40,500 --> 00:06:44,070
+Avremo un pezzo sui campi e questo sarà chiamato contenuto.
+
+102
+00:06:44,460 --> 00:06:51,090
+E finalmente avremo un'altra BS sul campo e questo si chiamerà Title I save it e that's.
+
+103
+00:06:51,090 --> 00:06:51,860
+Perfezionare.
+
+104
+00:06:52,140 --> 00:06:58,470
+Quindi eccoci, abbiamo creato il nostro oggetto Blug e ora possiamo usare quell'elemento del blocco per mappare il corpo
+
+105
+00:06:58,470 --> 00:06:59,100
+umano.
+
+106
+00:06:59,100 --> 00:07:01,400
+Ora questo è l'accesso in un secondo molto molto.
+
+107
+00:07:01,470 --> 00:07:05,900
+Quando abbiamo iniziato a creare il nostro primo servizio, ma questo è tutto pronto, questo è tutto per mercanteggiamento.
+
+108
+00:07:06,210 --> 00:07:12,660
+Ora potremmo provare solo a connetterci al nostro blog e quindi, alla fine, quando chiudiamo qualcosa, il server
+
+109
+00:07:12,660 --> 00:07:15,920
+dovrebbe anche interrompere la nostra connessione alla TB commercializzata.
+
+110
+00:07:15,960 --> 00:07:27,360
+Quindi alla fine ti dirò che Prince Alan chiude la connessione EAB e così farà i clienti.
+
+111
+00:07:27,370 --> 00:07:35,260
+Questo è disconnettere qualcosa del genere e il contesto sarà contestualizzato.
+
+112
+00:07:35,440 --> 00:07:38,210
+Quindi qui fondamentalmente chiudiamo la nostra connessione di mobilità.
+
+113
+00:07:38,250 --> 00:07:40,390
+Ora assicuriamoci che tutto questo funzioni.
+
+114
+00:07:40,390 --> 00:07:43,700
+Quindi eseguiremo go run e quindi il server del blog.
+
+115
+00:07:43,780 --> 00:07:47,830
+Quindi qui ci stiamo connettendo in modo che il servizio di bus sia iniziato dove hanno avviato
+
+116
+00:07:47,830 --> 00:07:50,800
+il server di qualsiasi controllo federale, vedere che chiude la connessione Mongo.
+
+117
+00:07:50,800 --> 00:07:55,660
+Ora l'unica cosa che voglio fare è aggiungere un po 'di LUGG proprio qui, quando ci colleghiamo alla TB
+
+118
+00:07:55,660 --> 00:07:56,310
+su Internet.
+
+119
+00:07:56,680 --> 00:08:06,310
+Quindi diremo di connetterti a Mongo D-B e poi il servizio di Blug dovrebbe iniziare subito dopo.
+
+120
+00:08:06,310 --> 00:08:07,440
+OK.
+
+121
+00:08:07,540 --> 00:08:09,150
+Quindi questo è solo per trascinare meglio.
+
+122
+00:08:09,150 --> 00:08:11,240
+Quindi proviamo ancora una volta.
+
+123
+00:08:11,410 --> 00:08:13,550
+Eravamo nel Blug in modo che potessimo effettivamente occuparci della TV.
+
+124
+00:08:13,570 --> 00:08:15,570
+E se funziona, iniziamo il nostro server di blog.
+
+125
+00:08:15,580 --> 00:08:16,770
+Il server è avviato.
+
+126
+00:08:16,840 --> 00:08:21,450
+E poi se controllo io fermi tutto ciò che fermiamo il server smettiamo l'ascoltatore, smettiamo tutti di essere
+
+127
+00:08:21,450 --> 00:08:24,060
+raccolte e poi quella è la fine del programma.
+
+128
+00:08:24,070 --> 00:08:26,760
+Quindi ora siamo praticamente pronti per iniziare a implementare il nostro servizio.
+
+129
+00:08:26,780 --> 00:08:30,170
+C'era un po 'di set up ma si pagherebbe nel prossimo futuro.
+
+130
+00:08:30,190 --> 00:08:31,550
+Quindi ti vedrò nella prossima lezione.
+

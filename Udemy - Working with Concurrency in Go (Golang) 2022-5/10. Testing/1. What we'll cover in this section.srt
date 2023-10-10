@@ -1,0 +1,59 @@
+1
+00:00:01,450 --> 00:00:06,250
+So in this final section of the course, we'll just write some tests for the code we wrote in the previous
+
+2
+00:00:06,250 --> 00:00:06,920
+sections.
+
+3
+00:00:06,940 --> 00:00:08,760
+And testing is really important.
+
+4
+00:00:08,770 --> 00:00:14,200
+And normally when I'm writing code for myself and not for a course, I write tests as I write code.
+
+5
+00:00:14,680 --> 00:00:19,330
+But what we'll do in this section, we're not going to write tests for every single aspect of the code
+
+6
+00:00:19,330 --> 00:00:19,810
+we've written.
+
+7
+00:00:20,260 --> 00:00:24,490
+Instead, we'll write a number of tests that are representative and that will give you enough tools
+
+8
+00:00:24,490 --> 00:00:27,280
+that you should be able to write your own tests as required.
+
+9
+00:00:28,030 --> 00:00:33,700
+So to start with, we'll update our data, package those models to make sure that they're more testable,
+
+10
+00:00:33,700 --> 00:00:36,460
+because right now it's really difficult to test things with the way they're written.
+
+11
+00:00:36,460 --> 00:00:37,780
+And that's pretty straightforward.
+
+12
+00:00:38,530 --> 00:00:44,560
+We'll also test registering routes and we'll test rendering pages and we'll write tests for our handlers.
+
+13
+00:00:44,560 --> 00:00:49,150
+And in particular, we'll write tests for the handler that uses concurrency the most.
+
+14
+00:00:49,570 --> 00:00:49,930
+All right.
+
+15
+00:00:50,410 --> 00:00:51,490
+Let's get started.

@@ -1,0 +1,147 @@
+1
+00:00:12,970 --> 00:00:19,420
+Hello and welcome to the Golang programming language course in the previous session, we talked about
+
+2
+00:00:19,720 --> 00:00:20,950
+this kind of function.
+
+3
+00:00:21,220 --> 00:00:26,140
+And in this session, we want to talk about the other half empty package concept.
+
+4
+00:00:29,550 --> 00:00:32,220
+S. S. Cannon and function.
+
+5
+00:00:34,440 --> 00:00:42,810
+The scan and function in Go language scans the specified history and installs the successive best pace
+
+6
+00:00:42,810 --> 00:00:46,010
+separated values into successive arguments.
+
+7
+00:00:46,650 --> 00:00:54,150
+This function is tops scanning at the new line and after the final item, there must be a new line or
+
+8
+00:00:54,150 --> 00:00:54,930
+in the fine.
+
+9
+00:00:55,500 --> 00:00:59,490
+Moreover, this function is defined under the empty package.
+
+10
+00:00:59,730 --> 00:01:04,740
+Here you need to import this empty package in order to use this function.
+
+11
+00:01:05,370 --> 00:01:09,780
+Now you can see the syntax parameters.
+
+12
+00:01:10,080 --> 00:01:17,850
+This function access to parameters which are illustrated below SDR type, is string.
+
+13
+00:01:18,030 --> 00:01:25,720
+This parameter contains the specified text, which is going to be scanned and a three dot interface.
+
+14
+00:01:25,740 --> 00:01:30,690
+This parameter receives each elements of this ring and returns value.
+
+15
+00:01:30,900 --> 00:01:34,290
+It returns the number of items successfully a scan.
+
+16
+00:01:34,650 --> 00:01:41,490
+Now let's go to this school program to illustrate the use age of Escandon function.
+
+17
+00:01:43,410 --> 00:01:51,450
+First peak learning some valuable, despite the different times, for the example that named a strange
+
+18
+00:01:52,680 --> 00:02:03,720
+and their age and now calling SS Ken Ellen function from the FMO package first defined two variables
+
+19
+00:02:03,720 --> 00:02:15,330
+like No, and you are calling records from FMC Package B in both s Escandon function and set value.
+
+20
+00:02:17,190 --> 00:02:17,940
+Robert.
+
+21
+00:02:20,620 --> 00:02:32,320
+And thirty four h and said variables, Andrew name and emphasized age.
+
+22
+00:02:35,180 --> 00:02:44,300
+Checking if the function returns any role, if you are not equals to Neil.
+
+23
+00:02:47,350 --> 00:02:47,960
+Panic?
+
+24
+00:02:49,690 --> 00:02:49,970
+No.
+
+25
+00:02:54,590 --> 00:03:00,730
+Now printing the number of elements present in the specified history and also the elements.
+
+26
+00:03:01,180 --> 00:03:05,320
+So if you don't print if.
+
+27
+00:03:07,750 --> 00:03:11,570
+Number of elements,
+
+28
+00:03:14,600 --> 00:03:23,040
+personality and name, first and S
+
+29
+00:03:25,650 --> 00:03:26,920
+and H.
+
+30
+00:03:28,520 --> 00:03:41,030
+First and D and set variables number four, number of element and name for dispelling the name and age
+
+31
+00:03:41,030 --> 00:03:48,460
+variable for display the age value refoulement, they could see the prosaic and excused you.
+
+32
+00:03:50,740 --> 00:03:58,150
+Now we can see the output number of elements is to name is Robert, and age is 30.
+
+33
+00:03:58,540 --> 00:03:58,960
+OK?
+
+34
+00:03:59,140 --> 00:04:07,060
+We were able to get the variables value from using Escandon function and print in in order not to prolong
+
+35
+00:04:07,060 --> 00:04:08,170
+the time of decision.
+
+36
+00:04:08,380 --> 00:04:12,320
+We will finish it and we will continue the content in the next session.
+
+37
+00:04:12,340 --> 00:04:12,940
+Goodbye.

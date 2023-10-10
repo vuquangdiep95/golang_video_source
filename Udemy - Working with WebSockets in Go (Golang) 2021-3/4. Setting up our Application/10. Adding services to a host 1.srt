@@ -1,0 +1,435 @@
+1
+00:00:00,900 --> 00:00:06,030
+OK, so now we want to have some services showing up, and first of all, I want to fix this because
+
+2
+00:00:06,030 --> 00:00:06,710
+it bothers me.
+
+3
+00:00:06,720 --> 00:00:08,180
+I want that to be a nice little badge.
+
+4
+00:00:08,190 --> 00:00:15,270
+So let's go back to the idea and let's look at the hosts play host hosts Jet right here.
+
+5
+00:00:16,410 --> 00:00:18,390
+And I want this to be a badge.
+
+6
+00:00:18,390 --> 00:00:23,010
+And the way I had it before was like this badge badge success.
+
+7
+00:00:23,010 --> 00:00:27,210
+And I didn't work and it didn't work because this is the way it used to be in bootstrap for but in bootstrap
+
+8
+00:00:27,210 --> 00:00:27,630
+five.
+
+9
+00:00:27,630 --> 00:00:29,340
+Now it is big for some reason.
+
+10
+00:00:29,340 --> 00:00:31,760
+I'm not entirely sure why, but I'm sure they have a good reason.
+
+11
+00:00:32,970 --> 00:00:35,330
+So let's make this a badge and big danger.
+
+12
+00:00:36,750 --> 00:00:42,020
+And when I say that and come back here to my web browser, that should look like a nice little badge.
+
+13
+00:00:42,030 --> 00:00:42,510
+It does.
+
+14
+00:00:43,170 --> 00:00:44,700
+And I want the same thing over here.
+
+15
+00:00:44,700 --> 00:00:52,050
+I want a green badge that says one healthy service and a red badge that says one problem service or
+
+16
+00:00:52,050 --> 00:00:52,800
+something like that.
+
+17
+00:00:53,130 --> 00:00:54,180
+I want those to be here.
+
+18
+00:00:54,180 --> 00:00:59,360
+And of course, to make that happen, we need to actually add some services under this tent.
+
+19
+00:00:59,820 --> 00:01:01,220
+So right now, that just has some tech.
+
+20
+00:01:01,250 --> 00:01:05,310
+So let's go fix that up and get it set up so we can populated with useful information.
+
+21
+00:01:05,760 --> 00:01:13,170
+So I'll go back to my host page and find the service content right here and I'll delete that text and
+
+22
+00:01:13,170 --> 00:01:22,170
+put in a div class equals row and then a div class equals call and then I'll put a heading in each three
+
+23
+00:01:22,290 --> 00:01:23,250
+services.
+
+24
+00:01:24,690 --> 00:01:37,220
+Underneath that I'll put a table table class equals table table striped and a T head and a tr and T
+
+25
+00:01:37,500 --> 00:01:43,830
+which I'll just call service and we'll just have one, one column in this and then we'll have a Tibaldi
+
+26
+00:01:45,420 --> 00:01:46,200
+and a TR.
+
+27
+00:01:46,690 --> 00:01:48,170
+I'll just make that empty for right now.
+
+28
+00:01:48,720 --> 00:01:49,890
+TD td.
+
+29
+00:01:50,610 --> 00:01:52,260
+OK, so let's see what that looks like.
+
+30
+00:01:52,980 --> 00:01:55,350
+Reload this page, click on services.
+
+31
+00:01:55,680 --> 00:02:01,710
+OK, maybe push that down a little bit so class equals maybe three.
+
+32
+00:02:02,010 --> 00:02:05,770
+Let's save that and that should push it down a little bit and it does.
+
+33
+00:02:05,790 --> 00:02:11,970
+OK, so this will list our services and we'll have one or two services now if we look at our database.
+
+34
+00:02:13,760 --> 00:02:22,130
+Right here, under services, under content, we don't have any anything we're monitoring right now
+
+35
+00:02:22,130 --> 00:02:22,580
+at all.
+
+36
+00:02:23,180 --> 00:02:30,350
+So what I want a monitor to start with is just a website to make sure a Web server is actually running
+
+37
+00:02:30,920 --> 00:02:31,640
+a service in here.
+
+38
+00:02:31,640 --> 00:02:38,180
+And I'll call it HTTP, which will be a sugarbeet.
+
+39
+00:02:38,780 --> 00:02:39,800
+We'll make it active.
+
+40
+00:02:39,830 --> 00:02:44,960
+I'm going to leave the icon empty and I'll have to create it at some date, say twenty twenty one 02.
+
+41
+00:02:44,960 --> 00:02:50,550
+Twenty to twenty twenty one zero two twenty two and save that.
+
+42
+00:02:50,810 --> 00:02:58,310
+So now I have one entry in my services table which says icon cannot be not so icon will be.
+
+43
+00:02:59,240 --> 00:03:00,020
+Oh call it.
+
+44
+00:03:00,050 --> 00:03:05,140
+If a server doesn't matter what it is we'll fix that later.
+
+45
+00:03:05,150 --> 00:03:07,780
+We're going to use a font awesome icon at some point possibly.
+
+46
+00:03:08,180 --> 00:03:09,230
+So I have that in there now.
+
+47
+00:03:09,230 --> 00:03:13,670
+I have one entry in my services table and if I reload, that's a good idea too.
+
+48
+00:03:13,670 --> 00:03:15,920
+Clearly I had one in here at some point, but that doesn't matter.
+
+49
+00:03:15,920 --> 00:03:17,660
+I just want to have a service in here.
+
+50
+00:03:17,660 --> 00:03:25,910
+OK, so I'll reload this and what I'm going to do is just list all of the services that we have here
+
+51
+00:03:26,330 --> 00:03:29,270
+with a radio button beside it that's either on or off.
+
+52
+00:03:29,270 --> 00:03:31,760
+And I'll use that same kind of switch like I have up here.
+
+53
+00:03:31,800 --> 00:03:33,890
+OK, so let's go in here.
+
+54
+00:03:34,250 --> 00:03:36,890
+And I'm just going to hard code this right now just to get it working.
+
+55
+00:03:37,100 --> 00:03:43,490
+We'll call this service and then I'll duplicate that row or that TD and call it status.
+
+56
+00:03:44,210 --> 00:03:46,340
+And here I'll have HTP.
+
+57
+00:03:47,330 --> 00:03:49,150
+And underneath that I'll pull a switch.
+
+58
+00:03:50,120 --> 00:03:54,110
+Now, the syntax for the switch, I have that up here somewhere.
+
+59
+00:03:56,530 --> 00:03:57,010
+Right here.
+
+60
+00:03:59,280 --> 00:04:06,330
+Copy this and paste it down here and just pull the logic out of it, so we'll take this statement out.
+
+61
+00:04:07,730 --> 00:04:16,520
+Here and with the Idy will be HTP service and the name will be HTP.
+
+62
+00:04:17,270 --> 00:04:21,020
+OK, so let's just save that, reload this and see what it looks like.
+
+63
+00:04:23,470 --> 00:04:24,740
+OK, not quite right.
+
+64
+00:04:24,770 --> 00:04:25,690
+What did I get wrong?
+
+65
+00:04:29,780 --> 00:04:34,790
+Oh, yeah, I've got to put this around it, div class equals form, check, form, switch.
+
+66
+00:04:37,450 --> 00:04:44,530
+So that should be here, pasted in here, give it a closing, give format everything and reload the
+
+67
+00:04:44,530 --> 00:04:44,930
+page.
+
+68
+00:04:46,110 --> 00:04:48,190
+OK, so managed services.
+
+69
+00:04:48,190 --> 00:04:50,580
+So we're just going to have one right now on or off.
+
+70
+00:04:50,590 --> 00:04:52,530
+And this isn't reading anything from the database.
+
+71
+00:04:52,540 --> 00:04:56,790
+It's not saving it at all because we've not written those things yet.
+
+72
+00:04:56,800 --> 00:05:02,280
+So let's go look at our database structure as it exists and go under models don't go right now.
+
+73
+00:05:02,980 --> 00:05:10,120
+We have a host and a host has only the things that correspond to the kinds of things that are actually
+
+74
+00:05:10,120 --> 00:05:11,980
+in the database.
+
+75
+00:05:12,340 --> 00:05:15,490
+But we actually want more information associated with a given host.
+
+76
+00:05:15,490 --> 00:05:21,400
+So I'm going to say services and that's going to be a slice of of services.
+
+77
+00:05:22,060 --> 00:05:24,850
+Since I'm in the model package, I don't have to pretend that with models.
+
+78
+00:05:25,720 --> 00:05:28,720
+So those services, should it be a slice of services?
+
+79
+00:05:28,870 --> 00:05:31,090
+It should be a slice of hosted services.
+
+80
+00:05:33,350 --> 00:05:42,110
+Like that, and I'll call this host services just to be absolutely consistent so I don't get confused
+
+81
+00:05:42,110 --> 00:05:42,820
+about what's what.
+
+82
+00:05:43,340 --> 00:05:50,150
+So how service consists of a slice of hosted services so one host can have one or more services or no
+
+83
+00:05:50,150 --> 00:05:51,760
+services if we want to do it that way.
+
+84
+00:05:52,730 --> 00:05:57,130
+And down here under host services, I'm going to add another thing here as well.
+
+85
+00:05:57,140 --> 00:06:02,450
+I'm going to actually put the service information so the service is a service.
+
+86
+00:06:02,450 --> 00:06:08,930
+One service will be associated with one service, which is called services, for reasons I'm not entirely
+
+87
+00:06:08,930 --> 00:06:09,440
+sure about.
+
+88
+00:06:09,440 --> 00:06:10,270
+But there you go.
+
+89
+00:06:11,180 --> 00:06:13,790
+So that gives us our necessary database structure.
+
+90
+00:06:13,940 --> 00:06:21,170
+Engo And now of course, that means when we get a host by ID, we need to also get its host services
+
+91
+00:06:21,170 --> 00:06:22,280
+and that host service.
+
+92
+00:06:22,280 --> 00:06:28,280
+Every service we get for a host, every host service we get for a host should also have a service associated
+
+93
+00:06:28,280 --> 00:06:28,590
+with it.
+
+94
+00:06:29,030 --> 00:06:34,700
+So right now we're monitoring just whether or not a Web server is we're going to do one service and
+
+95
+00:06:34,700 --> 00:06:36,950
+maybe we'll add another one down the road, maybe we won't.
+
+96
+00:06:36,970 --> 00:06:39,870
+But right now we're going to work with one just to get it going.
+
+97
+00:06:40,220 --> 00:06:42,890
+So this gives us our necessary markup.
+
+98
+00:06:43,100 --> 00:06:46,710
+We have a place to display the HDP and whether it's on or off.
+
+99
+00:06:47,120 --> 00:06:53,360
+So now we need to have the means of adding a service to a host by checking it and making it active or
+
+100
+00:06:53,570 --> 00:06:55,420
+checking it and making it inactive.
+
+101
+00:06:55,430 --> 00:06:58,370
+So when we add a host, it adds a host with no services.
+
+102
+00:06:58,700 --> 00:07:03,980
+So the very first time we display this page, if we add a new house, if we for first time we display
+
+103
+00:07:03,980 --> 00:07:09,620
+this tab, this will be unchecked and there will be no entry in the database associated with the host
+
+104
+00:07:09,620 --> 00:07:11,310
+service HTTP.
+
+105
+00:07:11,930 --> 00:07:17,300
+But when we turn it on and click save and we'll need a save button here at some point or else do it
+
+106
+00:07:17,420 --> 00:07:21,620
+using Ajax, then it will put the necessary entry into the database.
+
+107
+00:07:21,620 --> 00:07:25,820
+If it already exists, it'll, it'll turn it inactive if we turn it off.
+
+108
+00:07:25,820 --> 00:07:28,340
+But if it doesn't exist it'll enter it and make it active.
+
+109
+00:07:28,550 --> 00:07:32,000
+OK, so we'll take care of that in the next lecture or two.

@@ -1,0 +1,179 @@
+1
+00:00:00,120 --> 00:00:09,570
+Tôi rất vui khi có bạn bè, đồng nghiệp và đồng nghiệp, nhà mạo hiểm và người khởi nghiệp Daniel
+
+2
+00:00:09,570 --> 00:00:18,300
+ở đây với tôi và Daniel có lợi thế và lợi ích khi trở thành một lập trình viên chuyên nghiệp đang hành nghề nên tôi
+
+3
+00:00:18,300 --> 00:00:23,160
+đã giải thích điều này nhưng trong học viện, tôi dành toàn bộ thời gian để dạy cùng một lớp và đó là
+
+4
+00:00:23,160 --> 00:00:26,820
+khác với việc trở thành một người cha chuyên nghiệp, nơi bạn đang làm việc trên tất cả các loại bộ phận khác nhau.
+
+5
+00:00:26,820 --> 00:00:34,560
+Tôi thực sự vui mừng khi có bạn ở đây Daniel và tôi rất mong được xem qua tài liệu này và
+
+6
+00:00:34,560 --> 00:00:39,810
+tự học một số điều mới và loại lập trình cặp điển hình.
+
+7
+00:00:39,810 --> 00:00:46,380
+Vì vậy, bây giờ chúng tôi có một ống kính rộng hơn một chút, bạn có thể thấy thêm một chút về căn phòng và cái đầu tiên
+
+8
+00:00:46,380 --> 00:00:51,840
+điều chúng ta sẽ làm là đi vào một số thứ để lấy đồ và vì vậy nó sẽ lấy những thứ mà tôi rất chú ý
+
+9
+00:00:51,840 --> 00:00:58,470
+sinh viên của tôi cho dù họ là sinh viên đại học hay sinh viên đã tốt nghiệp, không phải lúc nào họ cũng có những kỹ năng này
+
+10
+00:00:58,500 --> 00:01:03,120
+và ngay cả khi tôi dạy những người trong ngành đôi khi tôi thấy rằng một số người không có những
+
+11
+00:01:03,120 --> 00:01:07,560
+các kỹ năng và vì vậy đây sẽ là chúng ta sẽ kết thúc phần này ở đây bạn có thể thấy từ phần phác thảo
+
+12
+00:01:07,860 --> 00:01:15,030
+chúng tôi sẽ xem xét get, chúng tôi sẽ thiết lập get repo của mình trong video này và vì vậy bạn biết bạn sẽ có
+
+13
+00:01:15,030 --> 00:01:20,370
+một liên kết đến đó và tất nhiên là các tài nguyên chứa mã và sau đó chúng ta sẽ làm việc với các nhánh một chút
+
+14
+00:01:20,370 --> 00:01:26,070
+một chút vì vậy chúng ta sẽ tìm hiểu các chi nhánh và làm việc tại các chi nhánh và làm chủ
+
+15
+00:01:26,070 --> 00:01:30,030
+nhánh, bạn có thể thấy các video xuất hiện dưới dạng một bản xem trước nhỏ về những gì sắp diễn ra trong phần này
+
+16
+00:01:30,540 --> 00:01:33,100
+và sau đó hợp nhất một chi nhánh thành lãnh đạo một chi nhánh.
+
+17
+00:01:33,120 --> 00:01:39,330
+Vì vậy, chúng tôi chỉ đang đặt nền móng và tôi thực sự tin tưởng vào sự thấu đáo vì không có gì khó chịu hơn
+
+18
+00:01:39,330 --> 00:01:44,280
+khi bạn đang cố gắng học điều gì đó hơn là xem ai đó làm điều gì đó và không hiểu điều gì
+
+19
+00:01:44,280 --> 00:01:45,300
+Họ đang làm.
+
+20
+00:01:45,300 --> 00:01:51,030
+Vì vậy, nếu bạn đã biết tất cả những điều được đề cập ở đó thì đây là khóa học vì lợi ích của bạn.
+
+21
+00:01:51,030 --> 00:01:57,450
+Chúng tôi ở đây để giúp bạn nếu bạn đã biết nội dung này, vui lòng bỏ qua phần này nhưng nếu bạn
+
+22
+00:01:57,450 --> 00:02:02,240
+không biết điều này và tôi thực sự tin vào việc cung cấp quá nhiều còn hơn là không đủ.
+
+23
+00:02:02,340 --> 00:02:08,340
+Và cùng với triết lý đó, tôi muốn bạn có tài liệu nếu bạn cần và theo cách đó, nó ở đó
+
+24
+00:02:08,340 --> 00:02:13,270
+cho bạn để bạn có thể đi qua nó và nếu bạn không cần nó, bạn có thể bước qua nó.
+
+25
+00:02:13,270 --> 00:02:18,840
+Và đó là lý do tại sao chúng tôi bao gồm thông tin này, nó giống như bước tiếp theo của những gì tôi đã trình bày
+
+26
+00:02:18,840 --> 00:02:21,900
+trong các khóa học trước đây của tôi, đó là phần giới thiệu để có được.
+
+27
+00:02:22,050 --> 00:02:27,960
+Và vì vậy nếu bạn không hiểu chút nào, bạn muốn quay lại một trong những khóa học trước đây của tôi.
+
+28
+00:02:27,990 --> 00:02:31,800
+Vì vậy, đó là những gì chúng ta sẽ làm trong phần này.
+
+29
+00:02:31,800 --> 00:02:36,090
+Nhưng tôi đã nói hết rồi, bạn có muốn bổ sung gì không.
+
+30
+00:02:36,120 --> 00:02:37,260
+Không thật sự lắm.
+
+31
+00:02:38,330 --> 00:02:45,120
+Vì vậy, bộ kỹ năng ở đây và bất kỳ nhóm tốt nào và bạn có được sự hợp tác, bạn sẽ có bộ kỹ năng bổ sung.
+
+32
+00:02:45,600 --> 00:02:47,980
+Và vì vậy kỹ năng của tôi là giảng dạy.
+
+33
+00:02:48,030 --> 00:02:53,580
+Tôi đã dành rất nhiều thời gian nói chuyện trước mặt người khác và chia sẻ ý kiến ​​cũng như học cách truyền đạt
+
+34
+00:02:53,580 --> 00:02:59,190
+ý tưởng do đó tôi có một phần bộ não của mình thực sự phát triển tốt, điều đó không có nghĩa là tôi không hoàn toàn
+
+35
+00:02:59,190 --> 00:03:06,670
+đôi khi tôi đến New York vào mùa hè này để thuyết trình và chỉ là sự căng thẳng của cuộc sống
+
+36
+00:03:06,720 --> 00:03:11,850
+áp lực ở mức cao mà tôi đang điều hành ở đó tôi không hài lòng với cách nó giảm xuống tôi
+
+37
+00:03:11,850 --> 00:03:17,670
+lo lắng đôi khi vẫn xảy ra nên tôi trình bày tốt và DAB chuyên nghiệp tôi chỉ không có
+
+38
+00:03:17,670 --> 00:03:22,430
+trải nghiệm đó trong khi Daniel bổ sung điều đó và nói rằng bạn sẽ chúng ta sẽ có được lợi ích đó
+
+39
+00:03:22,440 --> 00:03:29,040
+cả hai chúng tôi ở đây, nơi anh ấy có kinh nghiệm chuyên môn, nó đã được làm việc chuyên nghiệp vì wow
+
+40
+00:03:29,820 --> 00:03:36,450
+nhiều năm nay và đó là những gì chúng ta sẽ làm và đó là những gì chúng ta đang xem xét trong phần đầu tiên này
+
+41
+00:03:36,690 --> 00:03:40,940
+và bạn còn điều gì muốn nói mong được chỉ giáo.
+
+42
+00:03:41,100 --> 00:03:46,170
+Anh ấy sẽ nói nhiều hơn khi chúng tôi bắt đầu viết mã và tôi sẽ đảm bảo rằng tôi đang làm mọi thứ chậm lại
+
+43
+00:03:46,790 --> 00:03:50,250
+bạn biết chắc chắn rằng tất cả mọi thứ được hiểu rõ.
+
+44
+00:03:50,250 --> 00:03:50,560
+Được rồi.
+
+45
+00:03:50,580 --> 00:03:53,160
+Vì vậy, chúng tôi sẽ nhảy vào để có được trong video tiếp theo.

@@ -1,0 +1,243 @@
+1
+00:00:00,170 --> 00:00:05,460
+So one of the cool things about get out of here on Daniel's computer you could see that if you go up
+
+2
+00:00:05,460 --> 00:00:06,540
+Well I'll let you show it.
+
+3
+00:00:06,840 --> 00:00:07,060
+Yeah.
+
+4
+00:00:07,080 --> 00:00:07,310
+Yeah.
+
+5
+00:00:07,320 --> 00:00:12,770
+So get up actually has a bunch of stuff that gives you over here on this insights tab.
+
+6
+00:00:12,780 --> 00:00:13,510
+Lots of.
+
+7
+00:00:13,530 --> 00:00:19,490
+But the one I find most helpful most often is the network area.
+
+8
+00:00:19,480 --> 00:00:27,870
+So this network area shows all commits all branches all forks from this repo that have happened.
+
+9
+00:00:27,880 --> 00:00:30,700
+And so you can see here's the original comment.
+
+10
+00:00:30,710 --> 00:00:31,980
+The for storage book.
+
+11
+00:00:32,520 --> 00:00:38,790
+Here's where both Todd and I made a both made a commit in the merge commit and now down here you can
+
+12
+00:00:38,790 --> 00:00:44,940
+see the dog branch and it's even labeled dog dog branches at this commit currently where its master
+
+13
+00:00:44,940 --> 00:00:53,160
+is this commit and you can also see the forked the forked repo down here with its own commit and so
+
+14
+00:00:53,160 --> 00:00:58,110
+you can that you can actually see the lines as they merge back together and split apart and just kind
+
+15
+00:00:58,110 --> 00:01:03,960
+of visually track what's going on with your branches and that's moving left to right or the right is
+
+16
+00:01:03,960 --> 00:01:07,740
+the future so as we continue to add stuff you'll see it growing out to the right.
+
+17
+00:01:07,730 --> 00:01:08,520
+Correct yes.
+
+18
+00:01:08,520 --> 00:01:13,290
+And you can drag it around too to actually see stuff to go back and forth.
+
+19
+00:01:13,350 --> 00:01:18,510
+So one thing to add is that before you create a branch it's important to know what branch you're on
+
+20
+00:01:18,870 --> 00:01:22,400
+because you get to create a branch off of any branch.
+
+21
+00:01:22,560 --> 00:01:27,990
+It can be a master branch of a dog fight fires on dog and one to create another branch I could create
+
+22
+00:01:27,990 --> 00:01:31,410
+a branch right off of dog so I can demonstrate that here.
+
+23
+00:01:31,410 --> 00:01:38,200
+So I get pull to pull everything I can see it sees oh there's now a new branch.
+
+24
+00:01:38,400 --> 00:01:46,530
+And if I get it branch I just see master but if I get branch dash a I can see remote origin dog and
+
+25
+00:01:46,530 --> 00:01:49,230
+I can get check out dog.
+
+26
+00:01:49,230 --> 00:01:52,700
+No no dash B dash B is for creating a branch.
+
+27
+00:01:52,860 --> 00:01:55,770
+Get check out just branch it by itself.
+
+28
+00:01:55,770 --> 00:01:57,840
+Just goes to that branch.
+
+29
+00:01:57,840 --> 00:02:05,730
+Also no I do not need to put remotes origin dog I just put the actual branch name dog and so now switch
+
+30
+00:02:05,770 --> 00:02:09,680
+to a new branch dog and if I get branch now I'm now on dog.
+
+31
+00:02:10,620 --> 00:02:14,950
+And from here I can get I can get check out dash B
+
+32
+00:02:17,680 --> 00:02:28,260
+detailed detailed dog and now I'm on new branch detailed dog get branch dog
+
+33
+00:02:32,010 --> 00:02:41,440
+which currently that's still the same as dog but if I then make some changes like I open up this canine
+
+34
+00:02:41,470 --> 00:02:50,840
+96 t say put capital ii there for example I love your attention at all.
+
+35
+00:02:50,920 --> 00:02:59,200
+Get met proper grammar is important which I don't know how to spell grammar.
+
+36
+00:03:00,180 --> 00:03:02,180
+Yeah it's a G
+
+37
+00:03:06,460 --> 00:03:13,580
+now I push this I will say it will get I almost that ver just know this command I just don't I almost
+
+38
+00:03:13,580 --> 00:03:21,740
+always just do the get push and then copy paste it it's not a command we're memorizing given that it
+
+39
+00:03:21,740 --> 00:03:28,430
+tells you what you're supposed to do to fix it like a so now if I go back to this network tab and I
+
+40
+00:03:28,430 --> 00:03:29,270
+refresh
+
+41
+00:03:31,930 --> 00:03:33,160
+I can now see.
+
+42
+00:03:33,160 --> 00:03:42,010
+Dog is there in detail dog is a separate is off dog doesn't do the little interesting little if something
+
+43
+00:03:42,010 --> 00:03:46,900
+else is committed to dog it will put it'll push this down so you see that dog is still standing let's
+
+44
+00:03:46,900 --> 00:03:52,810
+add a file to your detail dog and see that switch see what happened so that it's back at dog so if I
+
+45
+00:03:52,810 --> 00:04:02,310
+go if I get checked out back to dog and I create a new fire so note this canine guy takes yes that works
+
+46
+00:04:02,330 --> 00:04:09,170
+I still because detail dog is where I got fixed not dog I can now create a new file
+
+47
+00:04:15,780 --> 00:04:16,210
+of smart
+
+48
+00:04:21,690 --> 00:04:33,480
+I can get add all commit and I like poodles push whereas Mangum it's up on the fly yes
+
+49
+00:04:36,940 --> 00:04:46,510
+so now if I refresh the page here now naked see they pulled the tail dog off into its own line again
+
+50
+00:04:46,510 --> 00:04:54,020
+the nice well we've got some confusing stuff to clean up here yeah and the main thing one of the main
+
+51
+00:04:54,020 --> 00:04:59,160
+things you want to take away from this is that when you create a new branch you create that branch off
+
+52
+00:04:59,170 --> 00:05:04,850
+of whatever branch you're currently on and it's also always good to do a get pull and I put that in
+
+53
+00:05:04,850 --> 00:05:14,410
+red here in the video above before creating a branch do a get pull you know so get your current state
+
+54
+00:05:15,370 --> 00:05:23,040
+of the remote repository with a get pull so before you create a branch you get pull so everything's
+
+55
+00:05:23,050 --> 00:05:27,640
+current then create your branch what ever branch your arm and you create a branch creating branch off
+
+56
+00:05:27,640 --> 00:05:32,060
+of that and then when you're ready to check branch out from master to just get check out branch name
+
+57
+00:05:32,110 --> 00:05:35,900
+which you could see right here get check out branch name.
+
+58
+00:05:36,430 --> 00:05:39,720
+Ready for the next video or shall we say getting more on this one.
+
+59
+00:05:39,880 --> 00:05:40,450
+That's it.
+
+60
+00:05:40,450 --> 00:05:40,760
+All right.
+
+61
+00:05:40,760 --> 00:05:41,490
+See the next one.

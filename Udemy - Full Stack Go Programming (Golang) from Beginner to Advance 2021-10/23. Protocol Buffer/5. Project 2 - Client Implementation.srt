@@ -1,0 +1,227 @@
+1
+00:00:11,790 --> 00:00:15,270
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:15,720 --> 00:00:22,470
+In the previous session, we could define the flag and sutures between returned values and indecision.
+
+3
+00:00:22,650 --> 00:00:25,440
+We want to implement the wrong client function.
+
+4
+00:00:26,190 --> 00:00:30,210
+So go to the right line function and implement speech.
+
+5
+00:00:33,660 --> 00:00:38,670
+First, we create an object from the person political buffer and initialize it.
+
+6
+00:00:39,300 --> 00:00:42,210
+For example, we define a variable like person.
+
+7
+00:00:43,530 --> 00:00:46,910
+Color equals protocol.
+
+8
+00:00:48,630 --> 00:00:49,140
+There are.
+
+9
+00:00:52,650 --> 00:00:53,280
+Kirsten,
+
+10
+00:00:58,680 --> 00:01:12,450
+now initialize it's Phil's idea, I.D., for example, Wong and me, for example, came and age, for
+
+11
+00:01:12,450 --> 00:01:13,130
+example.
+
+12
+00:01:13,140 --> 00:01:13,860
+Twenty five.
+
+13
+00:01:15,060 --> 00:01:22,560
+Now we use the martial function from protocol package to sterilize our political power data and install
+
+14
+00:01:22,590 --> 00:01:25,340
+it in the data available, which we display.
+
+15
+00:01:25,920 --> 00:01:28,260
+This will print our encoded data.
+
+16
+00:01:28,740 --> 00:01:35,670
+This function accept a portal message object as input parameter and return to values.
+
+17
+00:01:35,700 --> 00:01:39,480
+First, a slice of pie and second an error value.
+
+18
+00:01:39,660 --> 00:01:42,840
+So define two variable like data and it will.
+
+19
+00:01:47,010 --> 00:02:01,990
+Data coming, you column he calls Protocol Dot, Marshall said person as a portal message, Anderson.
+
+20
+00:02:02,490 --> 00:02:03,030
+Person.
+
+21
+00:02:06,000 --> 00:02:07,770
+And check the status.
+
+22
+00:02:12,270 --> 00:02:19,980
+Lock the throttle and set a message for a more shrugging.
+
+23
+00:02:22,970 --> 00:02:23,480
+Her off.
+
+24
+00:02:31,910 --> 00:02:35,990
+Now we want to send the creative data to the server.
+
+25
+00:02:36,650 --> 00:02:43,640
+This data must be transferred to a port on the server that the server can read data from that port.
+
+26
+00:02:44,150 --> 00:02:51,650
+So we designed the function can't send data that information can be sent to a specific port inside it
+
+27
+00:02:51,950 --> 00:02:52,730
+to do this.
+
+28
+00:02:52,910 --> 00:02:59,420
+We use the TCP port protocol saw first create a function name saying data.
+
+29
+00:03:02,280 --> 00:03:05,480
+Fine sand date
+
+30
+00:03:08,550 --> 00:03:16,470
+that accept a binary as input parameter data point.
+
+31
+00:03:16,850 --> 00:03:17,210
+OK.
+
+32
+00:03:21,310 --> 00:03:21,570
+OK.
+
+33
+00:03:22,590 --> 00:03:29,550
+Now calling dial function from Nets package, the other function connects to the address on the named
+
+34
+00:03:29,550 --> 00:03:30,150
+network.
+
+35
+00:03:30,390 --> 00:03:38,460
+This function accepts two parameters as network and address by the type history and returns to values
+
+36
+00:03:38,460 --> 00:03:43,650
+as a connection, and it so define tool variable like connection and error
+
+37
+00:03:47,910 --> 00:03:52,140
+tolerant equals and calling dial function from that package.
+
+38
+00:03:53,340 --> 00:03:55,170
+NAT data
+
+39
+00:03:57,870 --> 00:03:59,850
+for network reset TCP
+
+40
+00:04:03,960 --> 00:04:06,470
+and set addresses for TCT networks.
+
+41
+00:04:06,480 --> 00:04:09,810
+The address has the four host ports.
+
+42
+00:04:10,050 --> 00:04:15,900
+The host must be a neutral IP address or a host name that can be resolved to IP addresses.
+
+43
+00:04:16,140 --> 00:04:26,850
+The port must be a literal port number or a service name, so we write 827 Dot zero dot zero thought
+
+44
+00:04:26,850 --> 00:04:33,240
+one column and set port, for example 885.
+
+45
+00:04:36,360 --> 00:04:38,340
+Now check error settings.
+
+46
+00:04:44,430 --> 00:04:45,660
+Sit a Mrs.
+
+47
+00:04:45,900 --> 00:04:49,800
+For example, connection at all.
+
+48
+00:04:57,040 --> 00:05:07,930
+Now calling DFA for close in connection after function is completed, Ether Nation Dot closed.
+
+49
+00:05:10,780 --> 00:05:11,440
+Now why?
+
+50
+00:05:11,450 --> 00:05:21,850
+Calling the right function the right, the information into the connection connection dot right and
+
+51
+00:05:21,850 --> 00:05:33,160
+set data brighter day to now go back to the front line function and send the data to the server by calling
+
+52
+00:05:33,160 --> 00:05:35,080
+the send data function.
+
+53
+00:05:38,840 --> 00:05:46,220
+Send data and set data has argues data.
+
+54
+00:05:49,390 --> 00:05:56,170
+So far, you have been able to receive data from the client and sent into the server by designing two
+
+55
+00:05:56,170 --> 00:06:03,880
+functions RON client and send data in order not to prolong the time of decision.
+
+56
+00:06:04,060 --> 00:06:07,960
+We will finish it and we will continue the content in the next session.
+
+57
+00:06:08,270 --> 00:06:08,830
+Goodbye.

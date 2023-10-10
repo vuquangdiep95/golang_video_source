@@ -1,0 +1,131 @@
+1
+00:00:00,840 --> 00:00:06,540
+So just to make this as simple as possible, I'm going to create a new account on Twilio as well and
+
+2
+00:00:06,540 --> 00:00:12,030
+I'll use a different email here just so I can get a new account and you can follow along just in case
+
+3
+00:00:12,030 --> 00:00:13,080
+you're having difficulties.
+
+4
+00:00:13,530 --> 00:00:17,400
+So I'll generate a password and I use one password to generate passwords.
+
+5
+00:00:17,790 --> 00:00:24,090
+So I'll copy this one and paste it in here and I'll change it after this lecture because I think you
+
+6
+00:00:24,090 --> 00:00:24,630
+just saw it.
+
+7
+00:00:24,630 --> 00:00:25,310
+But that's OK.
+
+8
+00:00:25,860 --> 00:00:27,950
+I accept the terms and conditions.
+
+9
+00:00:27,960 --> 00:00:34,110
+I'll start the free trial and I will save this as Twilio there.
+
+10
+00:00:34,270 --> 00:00:36,500
+OK, so they sent me an email.
+
+11
+00:00:36,540 --> 00:00:40,360
+I'll pause this, go verify everything and come back and continue.
+
+12
+00:00:41,580 --> 00:00:47,370
+OK, so I went and clicked on verify email in the appropriate message that I received and it took me
+
+13
+00:00:47,370 --> 00:00:48,380
+to this screen.
+
+14
+00:00:48,750 --> 00:00:52,890
+Now I've already got an off token aside, so I'm going to copy those.
+
+15
+00:00:52,890 --> 00:00:59,390
+I'll copy my new side and go back to my other screen here.
+
+16
+00:00:59,430 --> 00:01:06,240
+Close this one and go back to Vigilante and go to settings and put in under my Twilio.
+
+17
+00:01:06,240 --> 00:01:08,970
+I'll put my new aside, so I'll paste that in there.
+
+18
+00:01:09,630 --> 00:01:11,970
+Then I'll go back here and get my new off token.
+
+19
+00:01:11,970 --> 00:01:16,530
+Copy that, paste that in here and now I'll get a trial number.
+
+20
+00:01:17,250 --> 00:01:22,230
+So I'll get this trial number and I will copy this right like that.
+
+21
+00:01:23,340 --> 00:01:24,930
+And I'm just going to take the default one.
+
+22
+00:01:25,440 --> 00:01:32,460
+And again, you should pay attention if you're actually getting charged for text messages.
+
+23
+00:01:32,460 --> 00:01:37,260
+You may not want to do this, but I'm getting rid of the hyphen and everything, all the hyphens and
+
+24
+00:01:37,260 --> 00:01:39,720
+put on the parentheses and putting a plus sign in front of it.
+
+25
+00:01:39,840 --> 00:01:46,020
+OK, so now I have that and under notifications now I actually want to receive them by text message
+
+26
+00:01:46,020 --> 00:01:46,440
+as well.
+
+27
+00:01:46,470 --> 00:01:53,280
+And I'll simply put in my own cell phone number and I'll blurt out so I don't get any phone calls from
+
+28
+00:01:53,280 --> 00:01:53,970
+anybody else.
+
+29
+00:01:58,290 --> 00:01:59,250
+And save this.
+
+30
+00:02:00,320 --> 00:02:01,840
+OK, so that's now saved.
+
+31
+00:02:02,100 --> 00:02:05,040
+So let's go back to the console councillor's.
+
+32
+00:02:05,050 --> 00:02:07,550
+I should have everything I need at this point to get started.
+
+33
+00:02:08,220 --> 00:02:14,310
+So I've got that set up in the next lecture will actually write the necessary code to send SMS messages.

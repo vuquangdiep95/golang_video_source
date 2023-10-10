@@ -1,0 +1,391 @@
+1
+00:00:00,120 --> 00:00:05,850
+So the third function that got made was a one to pass those aged e-mail messages that I've been that
+
+2
+00:00:05,910 --> 00:00:13,020
+I'm getting back from the API so the conversation turns a slice of strings which is each one is one.
+
+3
+00:00:13,020 --> 00:00:20,680
+Each team mail chunk so I created this function pass shemale which reads one of those chunks and returns
+
+4
+00:00:20,680 --> 00:00:21,870
+a slice of tweets.
+
+5
+00:00:21,880 --> 00:00:24,010
+All the tweets it found in that chunk of each team.
+
+6
+00:00:25,580 --> 00:00:35,310
+And so this particular function uses that go query library that I found online to actually examine within
+
+7
+00:00:35,490 --> 00:00:38,450
+that H2 e-mail.
+
+8
+00:00:38,470 --> 00:00:46,940
+So some way to examine each e-mail go length has a standard has an extended package X net each team
+
+9
+00:00:46,940 --> 00:00:51,530
+email I believe which show it has passing HD email.
+
+10
+00:00:51,570 --> 00:00:52,480
+Yeah.
+
+11
+00:00:52,900 --> 00:00:54,670
+This go green up.
+
+12
+00:00:55,090 --> 00:00:56,040
+Yeah.
+
+13
+00:00:56,260 --> 00:01:04,490
+So I just you know or I go dark and then each team out so you've heard of like the X-Men.
+
+14
+00:01:04,530 --> 00:01:11,900
+And like what is his name Zab year Professor Zambia and savior Xavier.
+
+15
+00:01:12,120 --> 00:01:14,020
+Like I said over 30.
+
+16
+00:01:15,610 --> 00:01:17,280
+Now maybe this is the go equivalent.
+
+17
+00:01:17,310 --> 00:01:23,340
+This is like where all the special really you know not yet in the standard library stuff lives.
+
+18
+00:01:24,680 --> 00:01:28,150
+So yeah here it is going forward X net HD email.
+
+19
+00:01:28,210 --> 00:01:36,060
+This package has all sorts of functions for passing through H.M. as you read it in or just passing through
+
+20
+00:01:36,060 --> 00:01:42,540
+a complete HD military but doesn't really let you have anything to search through it.
+
+21
+00:01:43,140 --> 00:01:48,750
+So the go query library is a search through meaning here is all of your Dom.
+
+22
+00:01:48,780 --> 00:01:49,190
+Yeah.
+
+23
+00:01:49,220 --> 00:01:54,240
+You know now when you get to this piece get to that piece it's not as it's not as easy with access to
+
+24
+00:01:54,410 --> 00:01:54,900
+your mouse.
+
+25
+00:01:54,910 --> 00:01:59,000
+Here with this x age you had to find a particular node you'd have to go searching through okay.
+
+26
+00:01:59,010 --> 00:02:02,700
+This node is a p tag of some sort.
+
+27
+00:02:02,700 --> 00:02:08,570
+Now you get to look at its shot children and siblings and find the particular one you're looking for
+
+28
+00:02:08,580 --> 00:02:09,830
+they personally call that.
+
+29
+00:02:09,830 --> 00:02:12,290
+So you go all the way down through the structure something.
+
+30
+00:02:12,290 --> 00:02:12,540
+Yeah.
+
+31
+00:02:12,580 --> 00:02:13,270
+So.
+
+32
+00:02:13,270 --> 00:02:19,500
+So my first I start I tried started doing this I originally was going through this directly and I started
+
+33
+00:02:19,500 --> 00:02:23,210
+getting into a stack overflow errors because the recursion was getting too deep.
+
+34
+00:02:23,220 --> 00:02:23,620
+Yeah.
+
+35
+00:02:23,670 --> 00:02:28,230
+And so I went I wondered if there's someone else had actually made something already.
+
+36
+00:02:28,350 --> 00:02:31,660
+And so I eventually came out to this go query library.
+
+37
+00:02:31,780 --> 00:02:34,550
+And how did you find that actually went through.
+
+38
+00:02:34,560 --> 00:02:36,970
+Go Kelly go collie.
+
+39
+00:02:36,990 --> 00:02:44,700
+When I looked at there on each team malfunction it wanted a go query selector and it had a link to that
+
+40
+00:02:44,700 --> 00:02:54,140
+go query library separately go go call the call he actually uses go query for searching your dom itself.
+
+41
+00:02:54,210 --> 00:03:01,310
+So that's almost like receiving you know it's like I don't know I'm not.
+
+42
+00:03:01,410 --> 00:03:05,700
+It's like authentication validating that somebody is a good person because they're a friend of somebody
+
+43
+00:03:05,700 --> 00:03:08,710
+that you know is a good person like OK.
+
+44
+00:03:08,730 --> 00:03:11,730
+Colleagues use it we know that's a good open source package.
+
+45
+00:03:11,730 --> 00:03:16,110
+And if they're including this and that's probably a good thing to include because this has had a lot
+
+46
+00:03:16,110 --> 00:03:16,890
+of eyes on it.
+
+47
+00:03:16,920 --> 00:03:21,840
+If you look at and get there's a lot of people who've started this and so that's one way you could sort
+
+48
+00:03:21,840 --> 00:03:26,320
+of vet whether or not co you're using getting back to that Russ Cox article.
+
+49
+00:03:26,340 --> 00:03:32,010
+You've got to trust the code that use if a lot of people are working on it and looking at it then hopefully
+
+50
+00:03:32,010 --> 00:03:41,100
+you could be assured that it's not gonna bad mojo in it is the word ice associate the rock and roll
+
+51
+00:03:41,110 --> 00:03:45,240
+by the way so I'm not a coding phrase so.
+
+52
+00:03:45,280 --> 00:03:45,920
+So what's the final.
+
+53
+00:03:45,920 --> 00:03:54,080
+Go go query similar to how I did code Collie I found there examples to kind of figure out what the functions
+
+54
+00:03:54,080 --> 00:04:03,260
+I should be looking at are new docket from reader find text and then I went to the go dark end and started
+
+55
+00:04:03,260 --> 00:04:14,240
+going through the actual functions their new document reader gets the document a document is also a
+
+56
+00:04:14,240 --> 00:04:24,460
+selection and so I can go through the selection functions that I could do the at the find find returns
+
+57
+00:04:24,460 --> 00:04:25,630
+and other selection.
+
+58
+00:04:25,710 --> 00:04:28,860
+And then there's texting each are in here as well.
+
+59
+00:04:28,960 --> 00:04:33,820
+So I so again whenever I find a new library I usually a lot of functions.
+
+60
+00:04:33,850 --> 00:04:34,460
+There are.
+
+61
+00:04:34,530 --> 00:04:38,770
+I just read every day so I wouldn't want to go looking through the go doc myself to figure out how to
+
+62
+00:04:38,770 --> 00:04:39,580
+use this.
+
+63
+00:04:39,640 --> 00:04:45,070
+But luckily I didn't have to because I had this example to kind of put me at the most important ones
+
+64
+00:04:45,670 --> 00:04:48,890
+and I could look for alternate ones if I needed something else.
+
+65
+00:04:48,950 --> 00:04:58,330
+Pat Epley so my code here for past age CML takes one of those ACL messages wear your seat back to Twitter
+
+66
+00:04:58,990 --> 00:05:06,160
+and you just go query to find all the tweets in one in that one message so since to go query needs me
+
+67
+00:05:06,160 --> 00:05:11,650
+to get the data to pass the documents from a reader I use the strings new reader function to convert
+
+68
+00:05:11,650 --> 00:05:13,590
+this string into a string reader.
+
+69
+00:05:13,930 --> 00:05:17,400
+Whereas past each e-mail being called in Maine and we're gonna get to that in a second.
+
+70
+00:05:17,410 --> 00:05:17,840
+Right.
+
+71
+00:05:17,860 --> 00:05:18,910
+Yes that's where.
+
+72
+00:05:18,910 --> 00:05:20,450
+Pass each emails call me.
+
+73
+00:05:20,740 --> 00:05:23,810
+And then just I got to say my questions the next video.
+
+74
+00:05:23,810 --> 00:05:24,470
+Keep you on.
+
+75
+00:05:24,640 --> 00:05:25,760
+Yeah right.
+
+76
+00:05:25,780 --> 00:05:26,100
+So.
+
+77
+00:05:26,110 --> 00:05:27,090
+So now I've got.
+
+78
+00:05:27,100 --> 00:05:29,070
+My message is now a straight reader.
+
+79
+00:05:29,080 --> 00:05:32,310
+And so now I can use go queries new document from reader.
+
+80
+00:05:32,350 --> 00:05:37,450
+Now I've got to go create document potentially an error while passing.
+
+81
+00:05:37,750 --> 00:05:41,830
+Now I create my slice of tweets that I'm going to be using as my response.
+
+82
+00:05:41,970 --> 00:05:46,780
+Now in my document I'm going to find all the tweets tweet class.
+
+83
+00:05:46,780 --> 00:05:49,260
+This is just the exact same as the previous.
+
+84
+00:05:49,270 --> 00:05:54,570
+Go call a version I'm looking for the DOT tweet class for each tweet.
+
+85
+00:05:54,580 --> 00:06:00,380
+It'll call this function with the index of which time it's calling this the first time it found its
+
+86
+00:06:00,390 --> 00:06:07,300
+second time it found it and the selection for that one tweet and then from that one tweet I'm going
+
+87
+00:06:07,300 --> 00:06:13,200
+to append a new tweet to the tweets list and the selection I can use the find function to find account
+
+88
+00:06:13,210 --> 00:06:19,150
+group full name and I want the text from that account group username I want the text from that tweet
+
+89
+00:06:19,150 --> 00:06:24,120
+text I want the text format and so that's the three values looking forward to put to fill out a tweet
+
+90
+00:06:25,120 --> 00:06:30,540
+and then after I've done this each has finished calling the function for every tweet.
+
+91
+00:06:30,540 --> 00:06:36,130
+Now my T S slice is now complete and I can just return that I found all the tweets from this message.
+
+92
+00:06:37,510 --> 00:06:39,820
+Genius I love it.
+
+93
+00:06:40,030 --> 00:06:44,320
+All right I'm going to have some questions on that and I'm going to walk through it make sure I understood
+
+94
+00:06:44,320 --> 00:06:50,530
+it but we're gonna do that in the next video because I like keeping these videos as short as possible
+
+95
+00:06:51,310 --> 00:06:52,260
+so we'll see in the next video.
+
+96
+00:06:52,270 --> 00:06:56,790
+Got anything where you want to add to this one new.
+
+97
+00:06:56,970 --> 00:06:57,300
+Great.
+
+98
+00:06:57,300 --> 00:06:58,070
+See the next video.

@@ -1,0 +1,219 @@
+1
+00:00:11,880 --> 00:00:17,190
+Hello and welcome to the Golang program language course in the previous session.
+
+2
+00:00:17,370 --> 00:00:24,240
+We could connect to the database, and in this session we want to perform crowd operations by writing
+
+3
+00:00:24,240 --> 00:00:25,380
+different functions.
+
+4
+00:00:26,640 --> 00:00:34,320
+First, we start by writing because related to the selected statement, so create the function to select
+
+5
+00:00:34,320 --> 00:00:42,510
+a student based student I.D. by sending an I.D. to the database as the input parameter off the select
+
+6
+00:00:42,510 --> 00:00:47,790
+metal and returning the student, whose idea is the same as the venue sent.
+
+7
+00:00:48,300 --> 00:00:51,450
+Now go to create our function.
+
+8
+00:00:56,550 --> 00:00:57,180
+Found.
+
+9
+00:01:01,890 --> 00:01:03,960
+Sit receiver for metal.
+
+10
+00:01:03,990 --> 00:01:08,370
+We assigned this metal to the DB initialize restaurants, all right.
+
+11
+00:01:08,820 --> 00:01:11,970
+DB in laser.
+
+12
+00:01:15,980 --> 00:01:28,940
+By the time Esther DBI initialized her and defined name of Mitchell, for the example, select a student.
+
+13
+00:01:30,890 --> 00:01:33,540
+They the.
+
+14
+00:01:36,240 --> 00:01:44,160
+And sit input parameter, this method accept an end value as AIDA variable because it will return a
+
+15
+00:01:44,160 --> 00:01:50,580
+student base IED, IED and 64
+
+16
+00:01:53,520 --> 00:02:00,330
+and return type is two values first in the student object and second is an error of value.
+
+17
+00:02:00,570 --> 00:02:01,770
+So we write
+
+18
+00:02:06,510 --> 00:02:11,670
+the Dart student and Arrow
+
+19
+00:02:14,970 --> 00:02:17,400
+Go to create body of the function.
+
+20
+00:02:19,290 --> 00:02:27,060
+Now, by calling DB initialize their variable, we will have access to the data object from the DB estimate
+
+21
+00:02:27,060 --> 00:02:28,530
+of gestural package.
+
+22
+00:02:28,530 --> 00:02:32,520
+And through it, we can call the query rule and executed.
+
+23
+00:02:32,520 --> 00:02:36,270
+The query that is expected to return at most won't rule.
+
+24
+00:02:36,350 --> 00:02:44,070
+Quitted rule function accepts obscure query statement as the string parameter and turns arrow object.
+
+25
+00:02:44,280 --> 00:02:46,470
+So define a variable like role
+
+26
+00:02:49,530 --> 00:02:53,240
+calling equals DB.
+
+27
+00:02:54,780 --> 00:03:06,540
+Initialize the Dot DB Dot query rule In this query, we want to fetch the student information whose
+
+28
+00:03:06,540 --> 00:03:09,450
+idea we have sent to the database as a query.
+
+29
+00:03:09,450 --> 00:03:10,340
+Input parameters.
+
+30
+00:03:10,410 --> 00:03:11,340
+All right.
+
+31
+00:03:12,540 --> 00:03:26,790
+Select a star from a student's their I.D. equals.
+
+32
+00:03:27,000 --> 00:03:28,410
+Set a question mark
+
+33
+00:03:31,560 --> 00:03:34,620
+and set either variable as input value.
+
+34
+00:03:35,910 --> 00:03:40,020
+OK, it's time to call on your skin function.
+
+35
+00:03:40,290 --> 00:03:46,770
+This function copies the columns from the matched the row into the values pointed at by destination.
+
+36
+00:03:47,040 --> 00:03:51,920
+So before working, disk and function first create an instance of the student model.
+
+37
+00:03:52,200 --> 00:03:53,190
+So we write.
+
+38
+00:03:59,180 --> 00:04:02,360
+Student Colin Equals
+
+39
+00:04:04,940 --> 00:04:08,390
+modern day art student.
+
+40
+00:04:13,730 --> 00:04:19,310
+Now calling a scan function by the role, and it will return as an interior object, so defined and
+
+41
+00:04:19,310 --> 00:04:30,040
+variable like error, the roll call equals roll dot scan and set a student field.
+
+42
+00:04:30,050 --> 00:04:43,460
+So we write and some student the art I.D. and emphasize the student
+
+43
+00:04:45,920 --> 00:04:54,290
+got me and ampersand student dot h.
+
+44
+00:04:58,250 --> 00:05:00,830
+Now, check our status,
+
+45
+00:05:03,770 --> 00:05:04,130
+if
+
+46
+00:05:07,730 --> 00:05:08,980
+not equals.
+
+47
+00:05:09,270 --> 00:05:09,830
+Neal,
+
+48
+00:05:13,100 --> 00:05:22,730
+if we have error returned from the function return student and of.
+
+49
+00:05:27,780 --> 00:05:33,770
+And now return values of the function, return student
+
+50
+00:05:36,120 --> 00:05:42,900
+and need reform of the called and save the project.
+
+51
+00:05:43,740 --> 00:05:51,510
+Now we could define the function name, select a student based I.D. that return a student of a student
+
+52
+00:05:51,510 --> 00:05:58,290
+table in person database by the select statement based I.D. number in order not to prolong the time
+
+53
+00:05:58,290 --> 00:05:59,040
+of decision.
+
+54
+00:05:59,220 --> 00:06:03,550
+We will finish it and we will continue the content in the next session.
+
+55
+00:06:03,570 --> 00:06:04,140
+Goodbye.

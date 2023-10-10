@@ -1,0 +1,100 @@
+1
+00:00:00,570 --> 00:00:06,650
+Jadi ini adalah Leichter pendek tapi saya ingin membuat Anda mengerti bahwa Anda PCI-E di
+
+2
+00:00:06,760 --> 00:00:13,220
+atas menjadi kinerja super juga sangat scalable dan itu karena server PC Anda akan menjadi tidak sinkron
+
+3
+00:00:13,320 --> 00:00:14,370
+secara default.
+
+4
+00:00:14,640 --> 00:00:20,100
+Itu berarti mereka tidak akan memblokir utas berdasarkan permintaan dan dapat menangani banyak permintaan secara bersamaan.
+
+5
+00:00:20,100 --> 00:00:24,520
+Jadi hanya untuk menggunakan beberapa angka dan itu jelas tergantung pada jenis mesin yang
+
+6
+00:00:24,590 --> 00:00:30,810
+Anda miliki dan apa pun selain server europaeus Anda dapat melayani jutaan permintaan secara paralel dan klien GOPAC punya pilihan.
+
+7
+00:00:30,810 --> 00:00:35,260
+Dan kita akan melihat ini dalam implementasi yang dapat berupa asinkron atau sinkron
+
+8
+00:00:35,310 --> 00:00:36,660
+yang berarti memblokir.
+
+9
+00:00:36,660 --> 00:00:41,070
+Jadi terserah Anda untuk memutuskan model mana yang cocok untuk Anda dengan kinerja yang Anda butuhkan.
+
+10
+00:00:41,070 --> 00:00:47,490
+Dan untuk jenis aplikasi klien yang Anda miliki juga klan JPC dapat melakukan sesuatu yang disebut keseimbangan
+
+11
+00:00:47,490 --> 00:00:48,900
+beban sisi klien.
+
+12
+00:00:48,930 --> 00:00:53,810
+Itu berarti jika Anda memiliki beberapa server GAAP Anda dapat melakukan load balancing langsung dari klien.
+
+13
+00:00:53,820 --> 00:00:56,770
+Dan itu memungkinkan Anda untuk skala secara horizontal.
+
+14
+00:00:56,820 --> 00:01:01,970
+Jadi hanya untuk memberi Anda nomor dan bukti skalabilitas dan Anda bukan Google begitu baik Anda tidak akan
+
+15
+00:01:01,980 --> 00:01:03,180
+pernah mencapai itu membantu.
+
+16
+00:01:03,240 --> 00:01:10,710
+Atau mungkin Anda akan tetapi pada dasarnya Google dalam sistem mereka, mereka memiliki 10 miliar permintaan GOPAC yang
+
+17
+00:01:10,800 --> 00:01:13,600
+dibuat per detik dalam sistem mereka.
+
+18
+00:01:13,650 --> 00:01:19,610
+Jadi kerangka kerja ini mereka gunakan secara besar-besaran dan mereka telah mencapai skala besar dari jaringan 10
+
+19
+00:01:19,670 --> 00:01:22,020
+miliar permintaan RBC per detik itu.
+
+20
+00:01:22,180 --> 00:01:22,610
+Baik.
+
+21
+00:01:22,740 --> 00:01:28,230
+Jadi menggunakan kerangka kerja JPC Anda tidak perlu khawatir tentang penskalaan dan tentang kinerja.
+
+22
+00:01:28,230 --> 00:01:30,010
+Ini adalah kerangka kerja yang teruji.
+
+23
+00:01:30,120 --> 00:01:34,630
+Dan jika Google membuatnya bekerja untuk mereka maka itu juga akan bekerja untuk Anda.
+
+24
+00:01:34,650 --> 00:01:36,410
+Baiklah, itu adalah kuliah singkat.
+
+25
+00:01:36,570 --> 00:01:37,620
+Dan segera setelah yang berikutnya.
+

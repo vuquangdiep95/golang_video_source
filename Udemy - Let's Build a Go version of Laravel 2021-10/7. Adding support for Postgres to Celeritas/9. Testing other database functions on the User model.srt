@@ -1,0 +1,767 @@
+1
+00:00:01,680 --> 00:00:06,300
+So let's try working on some additional test routes just to make sure that things work the way that
+
+2
+00:00:06,300 --> 00:00:07,980
+we expect in the user model.
+
+3
+00:00:08,700 --> 00:00:12,180
+So we already have one here that allows us to create a user.
+
+4
+00:00:12,210 --> 00:00:14,910
+And of course, we can do one to get a user and update a user.
+
+5
+00:00:15,510 --> 00:00:20,970
+Now updating a user and that sort of thing, it would be really convenient if I could generate a random
+
+6
+00:00:20,970 --> 00:00:21,600
+string.
+
+7
+00:00:21,720 --> 00:00:24,330
+And we can put that functionality right in my app.
+
+8
+00:00:24,960 --> 00:00:28,660
+But that's the sort of thing you need to do a lot when you're working on a web applications.
+
+9
+00:00:28,680 --> 00:00:30,750
+So let's go back to the celebrity's package.
+
+10
+00:00:32,620 --> 00:00:34,450
+And right here in helpers, don't go.
+
+11
+00:00:34,690 --> 00:00:36,400
+I'm going to add something at the very top.
+
+12
+00:00:36,540 --> 00:00:40,480
+I've already copied this to my clipboard because there's no point in you watching me type this.
+
+13
+00:00:40,780 --> 00:00:41,620
+It's very simple.
+
+14
+00:00:41,860 --> 00:00:47,740
+It's just a constant called random string, and it consists of all of the lowercase letters in the alphabet,
+
+15
+00:00:47,890 --> 00:00:50,180
+all of the uppercase characters in the alphabet.
+
+16
+00:00:50,500 --> 00:00:52,540
+And then an underscore and a plus sign.
+
+17
+00:00:53,110 --> 00:00:56,530
+And that's just something that I'm going to use to generate a random string.
+
+18
+00:00:57,010 --> 00:00:59,470
+Now down here, I'll put it right after the constant.
+
+19
+00:00:59,470 --> 00:01:05,700
+It doesn't matter where it goes or create a new function with the receiver of C pointer to celebrities,
+
+20
+00:01:05,710 --> 00:01:08,740
+so it'll be available in my My App package.
+
+21
+00:01:10,180 --> 00:01:14,560
+And I would call this random string, and it will take one parameter.
+
+22
+00:01:15,940 --> 00:01:18,160
+Which is in an integer.
+
+23
+00:01:18,190 --> 00:01:19,550
+How long should it be?
+
+24
+00:01:19,570 --> 00:01:22,180
+And it's just a number and it returns a string.
+
+25
+00:01:23,530 --> 00:01:24,730
+And this is dead simple.
+
+26
+00:01:24,910 --> 00:01:27,300
+I'll create two variables as an hour.
+
+27
+00:01:27,590 --> 00:01:38,890
+Doesn't matter what they're called, and I will make a slice of room and end and then comma a slice
+
+28
+00:01:38,890 --> 00:01:42,580
+of room random string.
+
+29
+00:01:44,170 --> 00:01:49,480
+So I'm just creating two slices of rooms, one that is of the length end and the other one that has
+
+30
+00:01:49,480 --> 00:01:51,370
+a random string as its entries.
+
+31
+00:01:52,030 --> 00:01:52,360
+OK.
+
+32
+00:01:53,020 --> 00:02:01,990
+And after that, I will say for I is assigned the value of range through s and here I'll just say P
+
+33
+00:02:01,990 --> 00:02:07,090
+comma and I'll ignore the second return value is equal to from the rand package.
+
+34
+00:02:07,420 --> 00:02:07,900
+Dot.
+
+35
+00:02:09,300 --> 00:02:12,360
+And we're getting it from crypto rand.
+
+36
+00:02:12,810 --> 00:02:14,700
+And I want Prime.
+
+37
+00:02:17,150 --> 00:02:18,080
+That's the one right there.
+
+38
+00:02:20,140 --> 00:02:24,820
+And I'll say random reader length her.
+
+39
+00:02:27,450 --> 00:02:34,590
+And then X and Y are assigned the value of from the P variable I just created from the Rand package,
+
+40
+00:02:36,150 --> 00:02:37,320
+you sixty four.
+
+41
+00:02:41,810 --> 00:02:44,470
+And you isn't 64.
+
+42
+00:02:46,560 --> 00:02:48,080
+Lynn, her.
+
+43
+00:02:50,530 --> 00:02:53,530
+I put you in it unit that should be you it.
+
+44
+00:02:54,720 --> 00:02:56,960
+And that again, that looks better.
+
+45
+00:02:59,510 --> 00:03:05,960
+And then finally, S.R. the index of the slice as is equal to error and I get.
+
+46
+00:03:07,190 --> 00:03:08,840
+X percent.
+
+47
+00:03:10,550 --> 00:03:10,920
+Wow!
+
+48
+00:03:11,570 --> 00:03:12,200
+Simple math.
+
+49
+00:03:12,620 --> 00:03:12,980
+OK.
+
+50
+00:03:14,120 --> 00:03:21,990
+And once that's done, I return this as a string and that allows me to get a random string.
+
+51
+00:03:22,010 --> 00:03:23,120
+So let's give this a comment
+
+52
+00:03:27,830 --> 00:03:36,680
+generates a random string of length n from values in the contest.
+
+53
+00:03:37,340 --> 00:03:38,630
+Random string.
+
+54
+00:03:40,250 --> 00:03:46,490
+OK, so that's dead simple, and that will be available to us when I go back here and open my terminal
+
+55
+00:03:47,210 --> 00:03:48,830
+and type goal mind bender.
+
+56
+00:03:50,810 --> 00:03:55,580
+So I'm back in my app now, so that's available to us and that will be really convenient when we go
+
+57
+00:03:55,580 --> 00:03:57,420
+through the test routes we want to do here.
+
+58
+00:03:57,440 --> 00:04:02,120
+So now that we have that out of the way, let's try some additional test routes.
+
+59
+00:04:03,080 --> 00:04:05,410
+So let's try one that says, Get all users.
+
+60
+00:04:05,420 --> 00:04:15,020
+So I'll create another route a dot app, dot roots, dot and get and I'll call this one slash get dash
+
+61
+00:04:15,020 --> 00:04:16,280
+pole dash users.
+
+62
+00:04:16,490 --> 00:04:17,750
+And again, I'll inline the function.
+
+63
+00:04:18,290 --> 00:04:24,470
+So func w dot response rider or pointer to issue repeat our request.
+
+64
+00:04:26,060 --> 00:04:27,320
+And here pretty straightforward.
+
+65
+00:04:28,310 --> 00:04:36,380
+I will say users and potentially an error are assigned values from a models dot user.
+
+66
+00:04:37,130 --> 00:04:43,790
+Users get Oh, and I'll check for an error and I'll just copy this code right here to save some time.
+
+67
+00:04:46,880 --> 00:04:52,880
+And if that works, I can say for I don't care about the index, but I do care about the individual
+
+68
+00:04:52,880 --> 00:05:00,950
+entry, which I'll call X and I'll just range through users and I'll say format dot, print f.
+
+69
+00:05:03,560 --> 00:05:04,150
+W.
+
+70
+00:05:04,430 --> 00:05:08,690
+And just the last name, X.Org, last name, and I should work.
+
+71
+00:05:10,830 --> 00:05:11,870
+And it's not protests.
+
+72
+00:05:14,230 --> 00:05:15,250
+It's f print.
+
+73
+00:05:19,530 --> 00:05:21,750
+That's better half print.
+
+74
+00:05:23,140 --> 00:05:23,650
+That's better.
+
+75
+00:05:24,580 --> 00:05:24,990
+OK.
+
+76
+00:05:25,030 --> 00:05:29,770
+So I should be able now to open my terminal and say, make restart.
+
+77
+00:05:32,050 --> 00:05:33,880
+We'll be using that random function in a bit.
+
+78
+00:05:35,430 --> 00:05:35,890
+There it is.
+
+79
+00:05:35,910 --> 00:05:47,100
+Let's go back to our Web browser, and let's change this to get all users and get all the users.
+
+80
+00:05:48,180 --> 00:05:52,710
+And there it is, printed out the last name of the one user in the database so that one seems to work.
+
+81
+00:05:52,890 --> 00:05:53,520
+Let's keep going.
+
+82
+00:05:54,570 --> 00:06:01,170
+So we'll hide the terminal, give ourselves some room and let's create another function.
+
+83
+00:06:01,260 --> 00:06:03,420
+Another route with an inline function.
+
+84
+00:06:03,420 --> 00:06:06,930
+Eight app routes don't get.
+
+85
+00:06:08,220 --> 00:06:15,600
+And this time I'll make it get a user by ID slash and get dash user slash, and then we'll use cheese
+
+86
+00:06:15,930 --> 00:06:16,950
+placeholder like that.
+
+87
+00:06:19,680 --> 00:06:21,510
+And that will again be an inline function.
+
+88
+00:06:21,510 --> 00:06:30,090
+Func W.H added up sportswriter and our pointer to HTP Dot request.
+
+89
+00:06:32,930 --> 00:06:38,330
+And here I want to get a user by ID, so I'll take advantage of the function that's available to us
+
+90
+00:06:38,330 --> 00:06:40,160
+from chy and convert to an end.
+
+91
+00:06:40,370 --> 00:06:42,090
+I need the ID to be at it.
+
+92
+00:06:42,500 --> 00:06:46,040
+And in this case, I'll ignore the error because this is a test route there.
+
+93
+00:06:46,040 --> 00:06:48,860
+Assign the value of from the Sturt Collins package.
+
+94
+00:06:48,860 --> 00:06:57,740
+We want a try and we want to get cheeky URL perram and we're looking from the request.
+
+95
+00:06:59,270 --> 00:07:03,680
+We're looking for it and that gives me the ID that's in the URL.
+
+96
+00:07:05,300 --> 00:07:07,250
+And now I'll get a user ID you.
+
+97
+00:07:07,550 --> 00:07:08,750
+And this time I'll ignore the error.
+
+98
+00:07:09,860 --> 00:07:13,410
+I'm hoping it's going to work properly, and if it doesn't, I'll go put the error.
+
+99
+00:07:13,430 --> 00:07:16,240
+Check back in with our eight models.
+
+100
+00:07:18,370 --> 00:07:21,920
+Users don't get and we hand it ID.
+
+101
+00:07:23,540 --> 00:07:31,880
+And if this worked, I should be able to say something as simple as format dot f f and give it a format
+
+102
+00:07:31,880 --> 00:07:32,350
+string.
+
+103
+00:07:32,360 --> 00:07:41,670
+And I'll go with, say, percent as an percent s and percent s has to w as its first parameter, the
+
+104
+00:07:41,690 --> 00:07:47,450
+response writer and replace those with you'd first name your last name.
+
+105
+00:07:49,430 --> 00:07:52,460
+And maybe the email address error you don't email.
+
+106
+00:07:55,430 --> 00:07:57,230
+And I should be able to restart my application.
+
+107
+00:07:58,890 --> 00:07:59,670
+Make restart.
+
+108
+00:08:05,170 --> 00:08:11,370
+And I only have one user in the database and it's ID one, so I should be able to go to get Dash user
+
+109
+00:08:11,380 --> 00:08:12,050
+slash one.
+
+110
+00:08:12,100 --> 00:08:12,670
+Let's try that.
+
+111
+00:08:15,420 --> 00:08:21,870
+Slash yet, dash user slash one, the only entry in the database.
+
+112
+00:08:22,680 --> 00:08:24,240
+And of course, it didn't work.
+
+113
+00:08:25,470 --> 00:08:34,050
+Get Dash user slash ID, get dash user slash ID, and this is why you don't skip error checking.
+
+114
+00:08:34,530 --> 00:08:35,430
+So let's try this.
+
+115
+00:08:38,240 --> 00:08:43,220
+Error, and we'll put out the error to the look.
+
+116
+00:08:45,770 --> 00:08:46,910
+Sometimes I'm an optimist.
+
+117
+00:08:47,000 --> 00:08:47,960
+It never pays off.
+
+118
+00:08:48,500 --> 00:08:49,330
+Let's make restart.
+
+119
+00:08:51,880 --> 00:08:54,350
+You see, there's an error 500 there, but I don't know what it is.
+
+120
+00:08:58,210 --> 00:08:58,960
+There it goes.
+
+121
+00:08:59,050 --> 00:09:04,420
+Let's give ourselves some blank lines and reload this page and go see what the error actually is.
+
+122
+00:09:06,790 --> 00:09:09,170
+Column expiry does not exist.
+
+123
+00:09:09,250 --> 00:09:11,590
+Seriously, let's go find out what it's actually called.
+
+124
+00:09:11,830 --> 00:09:13,240
+So back to the database.
+
+125
+00:09:15,660 --> 00:09:18,690
+And go to users now, go to tokens.
+
+126
+00:09:19,470 --> 00:09:21,570
+I have expiry.
+
+127
+00:09:21,590 --> 00:09:22,920
+So where did I get that wrong?
+
+128
+00:09:24,750 --> 00:09:25,870
+Column expiry?
+
+129
+00:09:25,890 --> 00:09:26,790
+Does not exist.
+
+130
+00:09:26,790 --> 00:09:28,350
+Rootstock go 55.
+
+131
+00:09:28,770 --> 00:09:31,170
+So I'm 55 as users get.
+
+132
+00:09:31,350 --> 00:09:32,820
+So let's find out what we have wrong there.
+
+133
+00:09:33,390 --> 00:09:34,770
+Obviously, there's something wrong here.
+
+134
+00:09:35,550 --> 00:09:36,660
+We have the user.
+
+135
+00:09:38,060 --> 00:09:39,530
+So this part seems to work.
+
+136
+00:09:40,410 --> 00:09:41,520
+And it's down here.
+
+137
+00:09:43,550 --> 00:09:48,920
+So Rez is collection dot find and we want to conduct table, and that returns.
+
+138
+00:09:49,160 --> 00:09:50,540
+Maybe it's the name of the table.
+
+139
+00:09:50,540 --> 00:09:51,050
+That's wrong.
+
+140
+00:09:51,770 --> 00:09:52,130
+Yeah.
+
+141
+00:09:54,500 --> 00:09:55,010
+That's better.
+
+142
+00:09:56,030 --> 00:09:58,460
+So that was a stupid mistake.
+
+143
+00:09:58,760 --> 00:09:59,630
+Make restart.
+
+144
+00:10:01,990 --> 00:10:07,930
+I'm sure you noticed that when I put the table function on the tokens file, but hopefully at least
+
+145
+00:10:07,930 --> 00:10:11,860
+one of you did not because I don't want to be the only person that made a stupid mistake like that.
+
+146
+00:10:12,400 --> 00:10:14,950
+And let's go back here and reload this.
+
+147
+00:10:15,700 --> 00:10:16,330
+And there it is.
+
+148
+00:10:16,360 --> 00:10:18,490
+Trevor Solr me out here talking.
+
+149
+00:10:18,580 --> 00:10:19,270
+That's much better.
+
+150
+00:10:20,680 --> 00:10:22,440
+OK, so we have that function working.
+
+151
+00:10:22,480 --> 00:10:26,100
+Let's go back to our roots and do one more before we move on roots.
+
+152
+00:10:27,010 --> 00:10:28,860
+Now, let's try updating a user.
+
+153
+00:10:28,950 --> 00:10:31,750
+Here's where we can use that random string function, we just wrote.
+
+154
+00:10:32,230 --> 00:10:34,330
+So we'll add a third or another test route.
+
+155
+00:10:34,330 --> 00:10:39,750
+Eight app routes does not render routes don't get.
+
+156
+00:10:40,360 --> 00:10:44,370
+And this time I'll make it slash update dash user.
+
+157
+00:10:44,380 --> 00:10:49,510
+And then again, I'll put the ID right in the URL, so I know which user to update again, an inline
+
+158
+00:10:49,510 --> 00:10:55,780
+function HP the response writer and ah, as a pointer to opt out request.
+
+159
+00:10:58,630 --> 00:11:04,450
+And here we'll say once again we need the idea of the user so I can grab that from the previous one
+
+160
+00:11:04,450 --> 00:11:07,120
+right here just to save some time.
+
+161
+00:11:08,650 --> 00:11:09,430
+Paste that in there.
+
+162
+00:11:10,630 --> 00:11:19,010
+Now we'll get that user so you an error or assign the value of a dart models, but users don't get it.
+
+163
+00:11:20,140 --> 00:11:23,140
+And we'll check for the error this time because it didn't work out so well last time.
+
+164
+00:11:25,660 --> 00:11:26,830
+It rarely does.
+
+165
+00:11:28,050 --> 00:11:33,900
+So if we get past that, I have the user, so let's change the last name to you, last name equals and
+
+166
+00:11:33,900 --> 00:11:41,490
+I hear a call by a random string aide or app dot random string and we'll make it, say, 10 characters
+
+167
+00:11:41,490 --> 00:11:41,730
+long.
+
+168
+00:11:41,970 --> 00:11:44,460
+OK, so that gives me a random last name.
+
+169
+00:11:44,910 --> 00:11:45,780
+And now we'll update it.
+
+170
+00:11:47,280 --> 00:11:49,680
+Error is equal to you, dot update.
+
+171
+00:11:51,750 --> 00:11:52,590
+And we just hand it.
+
+172
+00:11:53,970 --> 00:12:01,590
+A pointer to you, and we'll check for an error, which I should still have on my clipboard, and I
+
+173
+00:12:01,590 --> 00:12:04,230
+will print out the updated last name.
+
+174
+00:12:04,830 --> 00:12:06,300
+Format test print.
+
+175
+00:12:07,830 --> 00:12:22,440
+F. Updated last name to present us and it would be your last name and we need to put the W before that,
+
+176
+00:12:22,710 --> 00:12:23,860
+which seems to be an error.
+
+177
+00:12:23,880 --> 00:12:25,320
+A new error that I make all the time.
+
+178
+00:12:27,300 --> 00:12:28,650
+OK, let's restart this.
+
+179
+00:12:31,230 --> 00:12:31,980
+Make restart.
+
+180
+00:12:37,580 --> 00:12:42,980
+And this time will refresh the Web browser to make sure it works once we change this to update user.
+
+181
+00:12:45,290 --> 00:12:49,820
+Analysis will look in the database and make sure it actually changed it to one plus Elle and the rest
+
+182
+00:12:49,820 --> 00:12:50,640
+of those characters.
+
+183
+00:12:50,690 --> 00:12:54,980
+So over here, users refresh.
+
+184
+00:12:55,220 --> 00:12:55,670
+And it did.
+
+185
+00:12:55,820 --> 00:12:56,810
+So that works well.
+
+186
+00:12:57,080 --> 00:12:57,530
+Perfect.
+
+187
+00:12:58,070 --> 00:13:01,370
+OK, so clearly these seem to be working as expected.
+
+188
+00:13:01,520 --> 00:13:08,540
+Now what I want to do next is we want to be able to show off our functionality is when we go to this
+
+189
+00:13:08,540 --> 00:13:09,290
+page.
+
+190
+00:13:10,850 --> 00:13:12,170
+Localhost four thousand.
+
+191
+00:13:12,950 --> 00:13:19,520
+I want to add a things to try here that allows me to add a user, update user and delete user, and
+
+192
+00:13:19,520 --> 00:13:21,980
+we'll get started on that sort of thing in the next lecture.

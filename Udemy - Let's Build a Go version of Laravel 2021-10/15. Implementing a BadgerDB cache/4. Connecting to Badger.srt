@@ -1,0 +1,435 @@
+1
+00:00:01,930 --> 00:00:07,810
+So we're going to now try to connect our celebrities package to Badger if appropriate, and I'm looking
+
+2
+00:00:07,810 --> 00:00:12,100
+at the file celebrities don't go in the celebrities package and the very first thing I'm going to have
+
+3
+00:00:12,100 --> 00:00:17,830
+to do is to declare a variable here ver and I'll call it my badger cash.
+
+4
+00:00:18,100 --> 00:00:23,740
+Even if we don't use it, we have to have it available to us and it's a type pointer to.
+
+5
+00:00:24,820 --> 00:00:28,810
+Cash Badger, cash from our own cash package.
+
+6
+00:00:29,920 --> 00:00:34,900
+Now, if you recall, if we scroll all the way down here, we have a function that creates a client
+
+7
+00:00:35,110 --> 00:00:38,380
+reddest cash somewhere right here.
+
+8
+00:00:39,160 --> 00:00:39,970
+We're going to need another one.
+
+9
+00:00:39,970 --> 00:00:42,040
+Just like this, of course, is for Badger.
+
+10
+00:00:42,040 --> 00:00:52,620
+So fund with a receiver of C pointer to select house and we'll call it create client badger cash.
+
+11
+00:00:53,920 --> 00:00:55,060
+And it takes no parameters.
+
+12
+00:00:55,060 --> 00:00:59,290
+And it will return, of course, a pointer to Cash Dog Badger Cash.
+
+13
+00:01:01,030 --> 00:01:04,390
+And this is pretty much the same logic as we used before.
+
+14
+00:01:04,870 --> 00:01:13,180
+So we're going to have a cash client which will be assigned the value of the type cash.
+
+15
+00:01:14,360 --> 00:01:17,030
+Badger, Cash, Cash Dog and Badger Cash,
+
+16
+00:01:20,150 --> 00:01:22,610
+and we'll populate its fields and then we'll return it.
+
+17
+00:01:22,850 --> 00:01:27,800
+Now we're going to return right here, return a reference to cash client.
+
+18
+00:01:30,320 --> 00:01:34,790
+But of course, we also have to create the necessary pool of connections for Badger.
+
+19
+00:01:35,600 --> 00:01:38,930
+So we'll do that right here just after create.
+
+20
+00:01:38,930 --> 00:01:39,680
+Read us pool.
+
+21
+00:01:43,050 --> 00:01:48,990
+And I'll call this one because it's not really a pool of connections, funk receivers, c pointer to
+
+22
+00:01:48,990 --> 00:01:49,860
+celebrities.
+
+23
+00:01:50,580 --> 00:01:58,320
+I'll call it create badger con and it will take new parameters, but it will return a pointer to Badger
+
+24
+00:01:58,590 --> 00:01:59,130
+DB.
+
+25
+00:02:00,600 --> 00:02:01,630
+And this is dead simple.
+
+26
+00:02:01,680 --> 00:02:08,400
+It's exactly the same sort of thing we did in our setup test, so we'll say DB and potentially an error
+
+27
+00:02:08,430 --> 00:02:16,770
+or assign the value of Badger Dot open and we'll open with Badger default options once again.
+
+28
+00:02:18,180 --> 00:02:27,060
+And this time it will be secret path, the right path of our application plus and we'll just go slash
+
+29
+00:02:27,080 --> 00:02:34,800
+temp or put it in quotation marks slash temp slash badger so could have created the temp folder.
+
+30
+00:02:34,800 --> 00:02:37,740
+You can put it wherever you want, but this will work for our purposes.
+
+31
+00:02:39,150 --> 00:02:48,600
+If error is not equal to nil, then we'll return the error return nil.
+
+32
+00:02:51,720 --> 00:02:54,960
+We're not returning an error with this, otherwise we'll return the DB.
+
+33
+00:02:55,470 --> 00:02:55,800
+OK.
+
+34
+00:02:56,160 --> 00:02:59,070
+And you might want to have that return in error in addition to Badger DB.
+
+35
+00:02:59,100 --> 00:03:00,240
+It's entirely up to you.
+
+36
+00:03:00,990 --> 00:03:08,460
+Well, we can come back up here now and create our badger cache by populating the one thing that we
+
+37
+00:03:08,460 --> 00:03:09,780
+need, which is a connection.
+
+38
+00:03:10,560 --> 00:03:15,540
+As I said, I actually put in that prefix and I didn't need it, but I like to have my types basically
+
+39
+00:03:15,540 --> 00:03:19,330
+matching in the number and kind of field whenever possible, and that's a personal preference.
+
+40
+00:03:19,350 --> 00:03:20,520
+You certainly don't have to do it.
+
+41
+00:03:21,030 --> 00:03:22,770
+So see, does it create?
+
+42
+00:03:25,190 --> 00:03:31,940
+Badger can't return, so that creates our client, Badger Cash, so we're going to have to have that.
+
+43
+00:03:32,930 --> 00:03:34,260
+But where do we call this function?
+
+44
+00:03:34,290 --> 00:03:39,590
+Well, let's go back up to where we're creating the one for Reddit's, which I believe is right before
+
+45
+00:03:39,590 --> 00:03:41,960
+we set all the variables in here.
+
+46
+00:03:41,990 --> 00:03:42,440
+Here it is.
+
+47
+00:03:43,250 --> 00:03:49,100
+So here, just like we're checking in The O.C., get on checking the data on file for the cache, being
+
+48
+00:03:49,100 --> 00:03:52,970
+able to read us or the session type, being able to read us, we do a similar check right here.
+
+49
+00:03:53,930 --> 00:03:58,550
+We'll say if OCR don't get on.
+
+50
+00:04:00,340 --> 00:04:04,130
+And what we're going to look for, of course, is cash.
+
+51
+00:04:06,380 --> 00:04:07,850
+If that's equal to Badger,
+
+52
+00:04:10,880 --> 00:04:12,150
+then we have to do some work.
+
+53
+00:04:12,170 --> 00:04:12,800
+Pretty simple.
+
+54
+00:04:13,400 --> 00:04:19,940
+We'll say my badger cash is equal to see Dot create client badger cash.
+
+55
+00:04:20,390 --> 00:04:21,350
+So that creates that.
+
+56
+00:04:22,100 --> 00:04:24,290
+And then we set our cash seed out cash.
+
+57
+00:04:24,680 --> 00:04:25,340
+Try that again.
+
+58
+00:04:26,000 --> 00:04:30,590
+See that cash equal to my badger cash.
+
+59
+00:04:33,570 --> 00:04:38,040
+Now, here's where we need to do a lot of a little bit of periodic housekeeping.
+
+60
+00:04:38,070 --> 00:04:43,380
+It's basically garbage collection on the Dodger Badger database, and we need to run that once a day.
+
+61
+00:04:44,250 --> 00:04:49,230
+Now there is, in fact, the timer class available in the standard library in Go and I find it really
+
+62
+00:04:49,230 --> 00:04:50,250
+difficult to work with.
+
+63
+00:04:50,340 --> 00:04:57,660
+And there's a really popular and well tested and widely used package available that we can actually
+
+64
+00:04:57,660 --> 00:04:58,130
+import.
+
+65
+00:04:58,140 --> 00:05:00,450
+So I'm going to switch over to my web browser and show it to you.
+
+66
+00:05:01,170 --> 00:05:06,060
+It's called rub thing slash cron, and there's a link to this in the course of resources for this lecture,
+
+67
+00:05:06,210 --> 00:05:07,890
+and it's very easy to use.
+
+68
+00:05:07,920 --> 00:05:11,160
+So I'm going to copy this yet.
+
+69
+00:05:11,220 --> 00:05:18,800
+Version three and I'm going to switch back to my web browser or to my ID, opened my terminal window,
+
+70
+00:05:18,810 --> 00:05:23,840
+clear the screen and paste setting and that will go get some Figs Chrome package for us.
+
+71
+00:05:23,850 --> 00:05:24,840
+3.0.1.
+
+72
+00:05:24,870 --> 00:05:25,320
+Perfect.
+
+73
+00:05:27,540 --> 00:05:28,960
+So now that's available to us.
+
+74
+00:05:28,980 --> 00:05:29,880
+We can actually use it.
+
+75
+00:05:30,210 --> 00:05:34,890
+And if you think it's true, OMG doing here is I'm going to schedule garbage collection once a day.
+
+76
+00:05:35,370 --> 00:05:39,110
+But scheduling is something that's actually kind of common in web applications.
+
+77
+00:05:39,120 --> 00:05:45,390
+You often have things you need to run on a regular schedule, so maybe it makes sense to go back up
+
+78
+00:05:45,390 --> 00:05:50,160
+to our celebrities type and make this available to our end users so they can use it if they want to.
+
+79
+00:05:50,460 --> 00:05:58,620
+So I'll add something called scheduler like that, and I'll make it of type pointer to Cron Dot, and
+
+80
+00:05:58,620 --> 00:06:00,070
+hopefully it'll find the package for me.
+
+81
+00:06:00,330 --> 00:06:00,890
+Cron.
+
+82
+00:06:01,410 --> 00:06:01,980
+There it is.
+
+83
+00:06:03,420 --> 00:06:07,290
+Dot, Chrome and I'll save the format.
+
+84
+00:06:08,010 --> 00:06:13,410
+Then I'll go back down to where I am checking to create whether or not I have to create my connection
+
+85
+00:06:13,410 --> 00:06:16,570
+pool for for Badger and I'll use it.
+
+86
+00:06:16,980 --> 00:06:19,080
+So and it's as simple as this.
+
+87
+00:06:20,430 --> 00:06:24,660
+I'll ignore the first return parameter and I will pay attention to the error.
+
+88
+00:06:24,780 --> 00:06:30,210
+That's equal to see celebrities dot scheduler right there,
+
+89
+00:06:33,120 --> 00:06:43,350
+and I'll add a function and I want this to run every day so daily and I'll just run this function daily.
+
+90
+00:06:44,670 --> 00:06:48,270
+I'll ignore the error and say, my bad, your cash.
+
+91
+00:06:49,110 --> 00:06:54,690
+Dot com dot run value log GC.
+
+92
+00:06:55,320 --> 00:06:59,520
+That's the garbage collection, and we'll give it 0.7.
+
+93
+00:06:59,680 --> 00:07:03,800
+You need some parameter to say how strict should I be with garbage collection?
+
+94
+00:07:03,810 --> 00:07:05,730
+And I want it to be pretty strict, strict.
+
+95
+00:07:05,730 --> 00:07:08,610
+So I'll go with that and I'll check for an error.
+
+96
+00:07:09,990 --> 00:07:14,010
+If error is not equal to nil, just return the error.
+
+97
+00:07:15,600 --> 00:07:17,460
+And that literally should do it.
+
+98
+00:07:17,670 --> 00:07:20,940
+So if we've done everything right, we should be able to go back to my app.
+
+99
+00:07:21,930 --> 00:07:23,730
+Actually, I see an error there somewhere.
+
+100
+00:07:27,900 --> 00:07:28,930
+Could not import this.
+
+101
+00:07:28,950 --> 00:07:31,100
+No required slashing V3.
+
+102
+00:07:33,060 --> 00:07:33,140
+Yeah.
+
+103
+00:07:33,690 --> 00:07:34,800
+You probably didn't get that.
+
+104
+00:07:36,800 --> 00:07:42,920
+And that fixes that, so if I had that because I have a very old version of Rob Things Cron package
+
+105
+00:07:42,920 --> 00:07:46,190
+installed before he started using the slash v syntax.
+
+106
+00:07:46,640 --> 00:07:49,760
+But that's the standard now, so you probably wouldn't get that error in any case.
+
+107
+00:07:49,760 --> 00:07:51,950
+But if you did just add slash three at the end.
+
+108
+00:07:52,670 --> 00:07:59,930
+But now I should be able to go to my app, change the dot on file to say, use the Badger cache, start
+
+109
+00:07:59,930 --> 00:08:04,040
+the application and everything should work, and we'll give that a try in the next lecture.

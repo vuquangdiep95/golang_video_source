@@ -1,0 +1,323 @@
+1
+00:00:12,290 --> 00:00:18,500
+Hello and welcome to the Golang programming language course in the previous session, we talked about
+
+2
+00:00:18,500 --> 00:00:22,640
+API specification and protocols and indecision.
+
+3
+00:00:22,670 --> 00:00:25,010
+We want to talk about the other concept.
+
+4
+00:00:28,740 --> 00:00:30,000
+Rest API.
+
+5
+00:00:31,680 --> 00:00:40,380
+Representational state transfer or arrest is an architectural style that defines a set of constraints
+
+6
+00:00:40,380 --> 00:00:42,930
+to be used for creating video services.
+
+7
+00:00:43,540 --> 00:00:51,900
+The rest API is a way of accessing that services in a simple and flexible way without having any processing
+
+8
+00:00:53,430 --> 00:00:53,730
+risk.
+
+9
+00:00:53,730 --> 00:01:00,570
+Technology is generally preferred to the more robust simple logic access protocols to app technology
+
+10
+00:01:00,870 --> 00:01:03,790
+because risk uses less bandwidth.
+
+11
+00:01:03,840 --> 00:01:08,400
+Simple and flexible, making it more suitable for internet usage.
+
+12
+00:01:08,820 --> 00:01:13,470
+It's used to fetch or give some information from a vet service.
+
+13
+00:01:13,830 --> 00:01:19,290
+All communication down virus API uses on the edge to type in requests.
+
+14
+00:01:20,190 --> 00:01:25,740
+Rest follows Another logic seems it makes data available as resources.
+
+15
+00:01:26,250 --> 00:01:34,230
+Its resource is represented by a unique You are ill and one can request this resource by providing its
+
+16
+00:01:34,230 --> 00:01:38,490
+urine web API that comply with risk.
+
+17
+00:01:38,730 --> 00:01:42,920
+Architectural constraints are called restful APIs.
+
+18
+00:01:44,220 --> 00:01:51,180
+Building risk pool web services like either programming skills is part art, part science.
+
+19
+00:01:51,690 --> 00:02:00,240
+As the internet industry progresses, creating a rest API becomes more concrete with emerging best practices.
+
+20
+00:02:02,010 --> 00:02:10,650
+RESTful systems support and staging in different formats such as the plane takes esteemed examine in
+
+21
+00:02:10,650 --> 00:02:11,310
+JSON.
+
+22
+00:02:11,310 --> 00:02:13,710
+Windswept only allows estimate.
+
+23
+00:02:14,550 --> 00:02:22,310
+The ability to support multiple formats for storing and exchanging data is one of the reasons wrath
+
+24
+00:02:22,320 --> 00:02:25,590
+is a problem and choices for building public API.
+
+25
+00:02:25,680 --> 00:02:33,900
+These days, social media gains in travel companies provide external APIs to improve their brand visibility
+
+26
+00:02:33,900 --> 00:02:34,560
+even more.
+
+27
+00:02:35,010 --> 00:02:37,850
+Twitter has numerous restful APIs.
+
+28
+00:02:38,340 --> 00:02:42,570
+Expedia has both swipe and restful apps for its partners.
+
+29
+00:02:42,840 --> 00:02:49,470
+If you consider redefining your trauma and hospitality business offering, dive deep into the Board
+
+30
+00:02:49,470 --> 00:02:53,550
+of Travel and Booking APIs with our dedicated article.
+
+31
+00:02:53,670 --> 00:03:01,350
+JavaScript Object Notation, or JSON, is a lightweight and easy to parse text format for data exchange.
+
+32
+00:03:02,040 --> 00:03:11,550
+Its syntax is based on a subset of the standard ACMA Dash 200 and 62 tradition.
+
+33
+00:03:12,420 --> 00:03:19,920
+IT JSON file comes as collections of name and value pairs and all their lists of values.
+
+34
+00:03:20,070 --> 00:03:26,640
+Since these are universal data structures, the format can be used with any programming language.
+
+35
+00:03:31,130 --> 00:03:32,350
+HTP verse.
+
+36
+00:03:34,000 --> 00:03:37,780
+These are some conventions, should it be a painless follow.
+
+37
+00:03:38,170 --> 00:03:41,800
+These are actually not part of the specification.
+
+38
+00:03:42,040 --> 00:03:51,760
+What we need to understand these to fully utilize rest API is to debate defines a set of practice methods
+
+39
+00:03:51,970 --> 00:03:56,980
+to indicate the desired action to be performed for a given resource.
+
+40
+00:03:57,640 --> 00:04:01,480
+Also, they can also be nouns is recorded.
+
+41
+00:04:01,480 --> 00:04:05,020
+Methods are sometimes referred to as SDP webs.
+
+42
+00:04:06,220 --> 00:04:13,330
+Each of them implements a different semantic, but some common features are shared by a group of them,
+
+43
+00:04:13,630 --> 00:04:17,590
+e.g. a request method can be safe or catchable.
+
+44
+00:04:18,540 --> 00:04:18,930
+Yes.
+
+45
+00:04:19,590 --> 00:04:28,110
+The urge to Typekit method is used to read or retrieve a representation of a resource in the safe pass,
+
+46
+00:04:28,290 --> 00:04:37,260
+get returns every presentation and examine or Jason and respond response quote off 200 in an earlier
+
+47
+00:04:37,260 --> 00:04:37,740
+case.
+
+48
+00:04:38,010 --> 00:04:47,460
+It most often returns, for example, 400 back because all post the post verb is most often utilized
+
+49
+00:04:47,640 --> 00:04:49,440
+to create new resources.
+
+50
+00:04:49,860 --> 00:04:58,290
+In particular, it's used to create subordinate resources that is subordinate to some other e.g., apparent
+
+51
+00:04:58,290 --> 00:05:01,350
+resource unsuccessful creation.
+
+52
+00:05:01,560 --> 00:05:09,210
+Return to Typekit Status 201 returning a location header with a link to the newly created resource with
+
+53
+00:05:09,210 --> 00:05:11,580
+the 201 entity status.
+
+54
+00:05:12,150 --> 00:05:15,810
+Put it is used for updating the capabilities.
+
+55
+00:05:15,990 --> 00:05:22,830
+However, PWD can also be used to create a resource in the case that the resource ID is chosen by the
+
+56
+00:05:22,830 --> 00:05:24,510
+client instead of by the server.
+
+57
+00:05:25,230 --> 00:05:32,790
+In other words, if the Poot is to a urinal that contains the value of a as a resource idea and success
+
+58
+00:05:32,790 --> 00:05:35,640
+will all be returned 200th from input.
+
+59
+00:05:36,000 --> 00:05:45,990
+If using Poot for Create Return Status 201 Successful Creation Patch, it is used for modifying capabilities
+
+60
+00:05:46,170 --> 00:05:52,320
+that Patrick was only needs to contain the changes to the resource, not the complete resource.
+
+61
+00:05:53,520 --> 00:06:00,870
+This resembles poot, but the body contains its setup instructions, describing how a resource currently
+
+62
+00:06:01,170 --> 00:06:05,310
+residing on the server should be modified to produce a new version.
+
+63
+00:06:06,090 --> 00:06:06,600
+Delete.
+
+64
+00:06:07,710 --> 00:06:11,100
+It is used to delete a resource identified by a You Are.
+
+65
+00:06:11,160 --> 00:06:19,020
+An unsuccessful deletion return is typically a status 211 with a response Buddy Connect.
+
+66
+00:06:19,350 --> 00:06:22,800
+The Connect method establishes the channel of the server.
+
+67
+00:06:22,800 --> 00:06:25,770
+Identify the target resource head.
+
+68
+00:06:26,340 --> 00:06:33,480
+The head metals asks for a response identical to death of a Geth request, but without the response.
+
+69
+00:06:33,480 --> 00:06:41,400
+But trace the trace metal platforms and message loop back test along the path to the target resource
+
+70
+00:06:42,060 --> 00:06:42,750
+options.
+
+71
+00:06:43,170 --> 00:06:48,630
+The options method is used to describe the communication options for the target resource.
+
+72
+00:06:51,570 --> 00:06:58,460
+Terminologies the following are the most important terms related to rest API.
+
+73
+00:06:59,460 --> 00:07:00,240
+Resource.
+
+74
+00:07:02,470 --> 00:07:10,810
+Resource is an object or representation of something which has some associated data with it endure can
+
+75
+00:07:10,810 --> 00:07:18,460
+be set of methods to operate on it, e.g. animals, schools and employs resources and delete and update
+
+76
+00:07:18,460 --> 00:07:23,170
+are the operations to be performed on the resources collections.
+
+77
+00:07:25,070 --> 00:07:32,680
+Collections are set up Resources Egypt companies in the collection of company resource and you are or
+
+78
+00:07:32,680 --> 00:07:38,380
+uniform resource locator is a pass through which a resource can be located in.
+
+79
+00:07:38,380 --> 00:07:43,940
+Some actions can be performed on it in order not to prolong the time of decision.
+
+80
+00:07:43,960 --> 00:07:47,830
+We will finish it and we will continue the content in the next session.
+
+81
+00:07:48,090 --> 00:07:48,580
+Goodbye.

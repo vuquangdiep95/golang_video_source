@@ -1,0 +1,383 @@
+1
+00:00:00,270 --> 00:00:00,550
+Được rồi.
+
+2
+00:00:00,580 --> 00:00:01,410
+Vì vậy, chào mừng trở lại.
+
+3
+00:00:01,410 --> 00:00:11,430
+Và tôi rất vui khi được tìm hiểu thêm về PC thánh chiến với bạn và Daniel đã thực hiện công việc hàng đầu trong việc tìm ra
+
+4
+00:00:11,430 --> 00:00:15,150
+GPS ra và tập hợp một số ví dụ.
+
+5
+00:00:15,150 --> 00:00:20,310
+Vì vậy, anh ấy sẽ dẫn đầu ở đây trong việc chia sẻ thông tin về PC thánh chiến và chỉ cho chúng tôi cách lấy
+
+6
+00:00:20,310 --> 00:00:25,530
+mọi thứ được thiết lập chỉ trong một giờ trò chuyện ngắn trước khi chúng tôi bắt đầu video này.
+
+7
+00:00:25,560 --> 00:00:26,690
+Âm thanh như một số công việc tốt.
+
+8
+00:00:26,700 --> 00:00:33,720
+Anh ấy đã làm một số công việc tốt và các ví dụ trên trang web GOP mà bạn đã thấy chúng hoạt động như thế nào
+
+9
+00:00:33,720 --> 00:00:36,110
+không áp dụng cho các mô-đun đi.
+
+10
+00:00:36,300 --> 00:00:45,330
+Và vì vậy, hôm qua Daniel rất vui khi thấy bạn biết cách cài đặt GPS để chúng tôi có thể sử dụng nó
+
+11
+00:00:45,690 --> 00:00:51,240
+bằng cách sử dụng mô-đun go và tôi đã ghi chú cho bạn trong đề cương khóa học về cách thực hiện điều đó.
+
+12
+00:00:51,240 --> 00:00:56,010
+Và khi Daniel đi qua và chia sẻ với chúng tôi một số ví dụ, chúng tôi sẽ xem một số ví dụ với
+
+13
+00:00:56,010 --> 00:01:00,050
+sử dụng GPS và bạn biết hiểu chúng.
+
+14
+00:01:00,060 --> 00:01:06,480
+Công việc của tôi sẽ là đặt câu hỏi, giải thích rõ ràng, ghi chép và đại loại là đảm bảo rằng
+
+15
+00:01:06,480 --> 00:01:13,980
+tất cả quy trình đều được ghi lại rất rõ ràng và được củng cố vững chắc bước một bước hai bước ba cho bạn cho tôi
+
+16
+00:01:13,980 --> 00:01:18,270
+mọi người khi chúng ta cần nhìn lại và xem chúng ta sẽ làm gì để đạt được điều đó
+
+17
+00:01:18,270 --> 00:01:19,240
+công việc của tôi.
+
+18
+00:01:19,240 --> 00:01:24,120
+Vì vậy, Daniel cảm ơn vì sự nỗ lực của bạn về vấn đề này và mong được biết thêm về GOPAC. Bạn là gì?
+
+19
+00:01:24,120 --> 00:01:25,280
+có cho chúng tôi.
+
+20
+00:01:25,320 --> 00:01:25,670
+Được rồi.
+
+21
+00:01:25,710 --> 00:01:32,520
+Vì vậy, vâng, tôi đã tạo trong 0 1 thư mục nguyên mẫu bên trong thư mục GOPAC của chúng tôi.
+
+22
+00:01:32,720 --> 00:01:35,610
+Và đây sẽ là nơi chúng ta sẽ thực hiện những bước đầu tiên.
+
+23
+00:01:36,390 --> 00:01:43,230
+Vì vậy, bên trong thư mục nguyên mẫu 0 1 này, tôi đang tạo một thư mục tiếng vang vì tôi cho rằng điều đầu tiên chúng tôi
+
+24
+00:01:43,230 --> 00:01:45,200
+việc cần làm là tạo một máy chủ tiếng vang.
+
+25
+00:01:45,210 --> 00:01:50,950
+Nó sẽ chỉ lặp lại bất cứ nơi nào bạn yêu cầu hoặc bất cứ nơi nào bạn nói lại cho bạn.
+
+26
+00:01:50,970 --> 00:01:51,200
+Vâng.
+
+27
+00:01:51,240 --> 00:01:54,540
+Vì vậy, một loại dịch vụ tiếng vang giống như xin chào thế giới với các máy chủ.
+
+28
+00:01:54,530 --> 00:01:54,990
+Phải.
+
+29
+00:01:55,020 --> 00:02:01,110
+Và chúng tôi yêu cầu một máy chủ nói chuyện với một máy tính để nói chuyện với một máy tính khác để có thể một khách hàng nói chuyện
+
+30
+00:02:01,110 --> 00:02:02,240
+đến một máy chủ.
+
+31
+00:02:02,310 --> 00:02:04,080
+Và đây có phải là những gì chúng ta sẽ làm.
+
+32
+00:02:04,110 --> 00:02:04,790
+Đúng.
+
+33
+00:02:04,980 --> 00:02:05,420
+Vì thế.
+
+34
+00:02:05,450 --> 00:02:07,460
+Vì vậy, trước tiên tôi sẽ tạo một máy chủ tiếng vang.
+
+35
+00:02:07,470 --> 00:02:14,040
+Vì vậy, tôi tạo giao thức 0 1 là nơi các dự án của chúng tôi trong và bên trong có một thư mục con tên là
+
+36
+00:02:14,070 --> 00:02:16,230
+Echo một tiếng vang bên trong.
+
+37
+00:02:16,260 --> 00:02:26,740
+Tôi sẽ tạo một tệp và tôi sẽ gọi tệp này là Echo Dot proto Vì vậy, DOT Pro là
+
+38
+00:02:26,740 --> 00:02:33,730
+định dạng tệp cho bộ đệm giao thức ngôn ngữ cụ thể của miền bộ đệm giao thức.
+
+39
+00:02:33,910 --> 00:02:42,010
+Và vì vậy, trong tệp này, chúng tôi sẽ mô tả một giao thức về các tin nhắn của cô ấy và dịch vụ G RBC sẽ là
+
+40
+00:02:42,010 --> 00:02:51,290
+sử dụng những tin nhắn đó với điều đầu tiên trong hồ sơ dấu chấm sẽ là phiên bản nào của giao thức proto
+
+41
+00:02:51,290 --> 00:02:52,550
+Bộ đệm bạn sẽ sử dụng.
+
+42
+00:02:52,550 --> 00:03:03,140
+Vì vậy, bạn sẽ thấy rằng với cú pháp tội lỗi, cú pháp người đánh thuế tội lỗi bằng trích dẫn kép proto ba là
+
+43
+00:03:03,140 --> 00:03:03,750
+cái mới nhất.
+
+44
+00:03:03,760 --> 00:03:11,920
+Bây giờ nếu bạn bỏ qua cái này một dấu chấm phẩy nếu bạn bỏ qua cái này Bộ đệm giao thức thì Potosi sẽ mặc định proto
+
+45
+00:03:12,040 --> 00:03:21,110
+hai proto ba là phiên bản bộ đệm giao thức được khuyến nghị sử dụng hiện tại và do đó, đây là phiên bản
+
+46
+00:03:21,110 --> 00:03:27,260
+đầu hồ sơ dấu chấm của bạn sẽ cho Potosi biết rằng bạn đang sử dụng proto ba C trong ba.
+
+47
+00:03:27,920 --> 00:03:32,930
+Vì vậy, sau đó bạn có thể xác định dịch vụ hoặc tin nhắn của mình.
+
+48
+00:03:32,930 --> 00:03:35,310
+Vì vậy, tôi sẽ tìm dịch vụ đầu tiên.
+
+49
+00:03:35,360 --> 00:03:41,240
+Vì vậy, dịch vụ sẽ gọi nó là máy chủ tiếng vang.
+
+50
+00:03:41,620 --> 00:03:50,090
+Nó chỉ được định nghĩa như thế này, nói phục vụ nó, tôi vâng, bạn nói dịch vụ, bạn đặt tên cho nó rồi uốn xoăn
+
+51
+00:03:50,090 --> 00:03:51,270
+niềng răng.
+
+52
+00:03:51,390 --> 00:03:56,390
+Vì vậy, bên trong đây, bạn có thể định nghĩa các phương thức có thể được sử dụng.
+
+53
+00:03:56,390 --> 00:04:02,360
+Vì vậy, bạn sẽ tìm thấy một phương pháp bằng cách nói PC của chúng tôi và sau đó bạn xác định tên của phương pháp này.
+
+54
+00:04:02,360 --> 00:04:07,540
+Vì vậy, tôi sẽ gọi nó là tiếng vang trong dấu ngoặc đơn mà bạn đặt vào bất kỳ tham số nào.
+
+55
+00:04:07,590 --> 00:04:13,130
+Vì vậy, thứ tiếng vang cụ thể này nhận một yêu cầu tiếng vang mà tôi chưa xác định.
+
+56
+00:04:14,320 --> 00:04:26,280
+Và sau đó nó trả về trong dấu ngoặc đơn và vòng lặp lặp lại phản hồi tiếng vang và sau đó là dấu ngoặc nhọn trống.
+
+57
+00:04:26,300 --> 00:04:29,150
+Và do đó, điều này xác định một máy chủ tiếng vang.
+
+58
+00:04:29,240 --> 00:04:30,840
+Chúng tôi sẽ có một tiếng vang lệnh.
+
+59
+00:04:30,890 --> 00:04:35,590
+Chúng ta sẽ có một phương thức echo nhận yêu cầu echo đó và trả về phản hồi echo.
+
+60
+00:04:35,610 --> 00:04:38,230
+RBC loại bỏ CJ là gì.
+
+61
+00:04:38,370 --> 00:04:41,410
+Điều đó giống như một từ khóa chữ ký nhỏ.
+
+62
+00:04:41,760 --> 00:04:42,080
+Vâng.
+
+63
+00:04:42,110 --> 00:04:43,360
+Đó là loại bạn thích.
+
+64
+00:04:43,430 --> 00:04:43,660
+Vâng.
+
+65
+00:04:43,690 --> 00:04:43,940
+Được rồi.
+
+66
+00:04:44,140 --> 00:04:44,470
+Vâng.
+
+67
+00:04:44,500 --> 00:04:46,700
+Vì vậy, một funk có thể có một chức năng.
+
+68
+00:04:46,850 --> 00:04:47,700
+Đúng.
+
+69
+00:04:47,870 --> 00:04:48,710
+Chính xác.
+
+70
+00:04:49,400 --> 00:04:53,270
+Vì vậy, khi bạn đã hiểu điều này, bạn phải xác định Echo yêu cầu phản hồi tiếng vang là gì.
+
+71
+00:04:53,270 --> 00:04:57,160
+Vì vậy, đó là cả hai thông báo bộ đệm giao thức.
+
+72
+00:04:57,290 --> 00:05:06,740
+Vì vậy, để tìm thấy chúng với thông báo echo request dấu ngoặc nhọn và sau đó bạn có thể điền vào phần thân này những gì
+
+73
+00:05:06,740 --> 00:05:07,750
+một yêu cầu tiếng vang.
+
+74
+00:05:07,790 --> 00:05:14,730
+Vì vậy, một yêu cầu tiếng vang tôi sẽ nói là một chuỗi có thông báo trong đó và sau đó bạn đặt bằng một.
+
+75
+00:05:15,500 --> 00:05:25,250
+Nếu bạn có nhiều thứ ở đây như bạn muốn nói một tin nhắn và được ký hoặc gửi bởi bạn, hãy đặt hai
+
+76
+00:05:25,250 --> 00:05:26,210
+ở đó.
+
+77
+00:05:26,210 --> 00:05:32,000
+Vì vậy, những số này phải là duy nhất và bạn không nên sử dụng lại một số ngay cả khi bạn xóa.
+
+78
+00:05:32,060 --> 00:05:38,130
+Nếu tôi xóa gửi bởi nếu sau này tôi không thêm gì mới, tôi nên đảm bảo không đặt lại nó.
+
+79
+00:05:38,140 --> 00:05:40,900
+Gần như khiến tôi nghĩ về một trường khóa trong cơ sở dữ liệu.
+
+80
+00:05:40,910 --> 00:05:44,050
+Bằng cách nào đó họ đang sử dụng những thứ này trong nội bộ để xác định.
+
+81
+00:05:44,120 --> 00:05:45,180
+Đúng.
+
+82
+00:05:46,070 --> 00:05:50,170
+Vì vậy, đó là yêu cầu tiếng vang chỉ là một tin nhắn phản hồi tiếng vang.
+
+83
+00:05:50,180 --> 00:05:55,610
+Tôi nghĩ có lẽ chúng ta sẽ giống nhau ngoại trừ nó sẽ là phản hồi chuỗi.
+
+84
+00:05:55,830 --> 00:05:59,510
+Một người gọi là đúng.
+
+85
+00:05:59,520 --> 00:06:03,270
+Và đây sẽ là Echo Dot Proto hoàn chỉnh của chúng tôi.
+
+86
+00:06:03,310 --> 00:06:10,480
+Điều này xác định một máy chủ echo máy chủ echo có lệnh echo nhận yêu cầu echo và trả về
+
+87
+00:06:10,500 --> 00:06:11,520
+phản hồi tiếng vang.
+
+88
+00:06:11,560 --> 00:06:15,640
+Và đây là những gì yêu cầu Echo và phản hồi tiếng vang là tuyệt vời.
+
+89
+00:06:15,650 --> 00:06:22,400
+Vì vậy, chỉ với mong muốn giữ cho các video ngắn, đây là một điều tốt khi chỉ nhận được đoạn đầu tiên
+
+90
+00:06:22,400 --> 00:06:24,000
+của mã được viết.
+
+91
+00:06:24,020 --> 00:06:29,090
+Bạn có bất cứ điều gì hoặc bạn muốn một cái gì đó để thêm vào điều này nhiều hơn hay đây là một điểm dừng tốt để tập trung là một điều tốt
+
+92
+00:06:29,090 --> 00:06:29,420
+đề tài.
+
+93
+00:06:29,540 --> 00:06:30,080
+Rất tốt.
+
+94
+00:06:30,110 --> 00:06:34,640
+Vì vậy, trong video tiếp theo, chúng ta sẽ tìm hiểu xem thực sự biến điều này thành mã là gì.
+
+95
+00:06:34,730 --> 00:06:36,590
+Điều đó nghe có vẻ tốt.
+
+96
+00:06:36,590 --> 00:06:37,460
+Hẹn gặp lại các bạn trong video tiếp theo.

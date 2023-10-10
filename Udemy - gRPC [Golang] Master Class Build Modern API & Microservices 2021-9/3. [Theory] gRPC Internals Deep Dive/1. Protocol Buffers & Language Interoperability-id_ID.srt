@@ -1,0 +1,528 @@
+1
+00:00:00,150 --> 00:00:03,410
+Halo dan selamat datang di bagian ini tentang penyelaman dalam GRB.
+
+2
+00:00:03,420 --> 00:00:09,300
+Jadi sebelum kita masuk ke kode saya benar-benar ingin meluangkan waktu untuk menjelaskan bagaimana GAAP bekerja apa dasarnya dan
+
+3
+00:00:09,300 --> 00:00:13,940
+lain-lain karena saya benar-benar berpikir bahwa bagi Anda untuk memahami bagaimana kode bekerja pada
+
+4
+00:00:13,950 --> 00:00:17,730
+para misionaris dan bagaimana kerangka kerja bekerja dan konsep di sekitarnya.
+
+5
+00:00:17,770 --> 00:00:22,450
+Jadi buffer partikel pertama akan menjadi landasan jumpseat.
+
+6
+00:00:22,650 --> 00:00:26,560
+Inilah yang tampak seperti partikel Bufford untuk Jarkesy.
+
+7
+00:00:26,610 --> 00:00:32,410
+Jadi kami masih mendefinisikan pesan kami dan kami akan menemukan data untuk diminta dan mendapat tanggapan.
+
+8
+00:00:32,460 --> 00:00:37,240
+Seperti yang Anda tahu saya ingin Anda memiliki beberapa pengetahuan awal yang cukup dan GRB dalam buffer protokol.
+
+9
+00:00:37,350 --> 00:00:42,180
+Jadi pastikan Anda mengikuti kursus itu terlebih dahulu dan kemudian kami akan mendefinisikan layanan sehingga Anda dapat melihat kotak
+
+10
+00:00:42,180 --> 00:00:42,900
+merah kedua.
+
+11
+00:00:43,050 --> 00:00:45,600
+Yah mereka menemukan layanan menggunakan buffer protokol.
+
+12
+00:00:45,600 --> 00:00:51,030
+Dan layanan kami seperti yang akan kita lihat nanti akan belajar bagaimana menulisnya pada dasarnya akan menentukan titik akhir API kami
+
+13
+00:00:51,360 --> 00:00:54,520
+dan ini akan memungkinkan US GAAP untuk menghasilkan kode bagi kami.
+
+14
+00:00:54,620 --> 00:00:55,170
+BAIK.
+
+15
+00:00:55,320 --> 00:01:01,500
+Jadi semua yang Anda pelajari dalam kursus buffer protokol akan digunakan untuk menghasilkan layanan dan
+
+16
+00:01:02,280 --> 00:01:08,550
+europaeus bukan hal yang indah adalah bahwa JBC seperti buffer akan dapat menghasilkan kode untuk Anda.
+
+17
+00:01:08,550 --> 00:01:11,000
+Jadi mengapa buffer partikel dan mengapa tidak.
+
+18
+00:01:11,090 --> 00:01:13,950
+Kedengarannya seperti yang kita miliki di semua API seperti API sisanya.
+
+19
+00:01:14,400 --> 00:01:19,680
+Nah GOPAC sangat penting untuk menggunakan buffer Perkel untuk komunikasi.
+
+20
+00:01:19,770 --> 00:01:22,710
+Dan alasannya adalah karena ukuran muatan.
+
+21
+00:01:22,890 --> 00:01:29,650
+Jadi jika kita melihat Jason misalnya dan kita memiliki dokumen yang berdekatan dengan nama depan usia dan nama belakang.
+
+22
+00:01:29,800 --> 00:01:33,880
+Ok maka kita punya muatan ini dan saya mengukurnya secara online.
+
+23
+00:01:33,930 --> 00:01:36,050
+Ini sekitar 55 byte.
+
+24
+00:01:36,060 --> 00:01:36,670
+BAIK.
+
+25
+00:01:36,720 --> 00:01:37,750
+Sangat kecil.
+
+26
+00:01:37,800 --> 00:01:39,000
+Tapi lihat itu.
+
+27
+00:01:39,180 --> 00:01:45,320
+Sekarang jika kita mendefinisikan orang yang sama dalam buffer empirisnya sehingga kita memiliki orang pesan dan memiliki usia sebagai
+
+28
+00:01:45,400 --> 00:01:50,310
+hagwon untuk 32 orang string yang memasukkan nama belakang untuk Tat 2 dan 3.
+
+29
+00:01:50,610 --> 00:01:55,950
+Jika saya dikodekan, saya menulis kode sendiri jika saya memasukkan hal ini dan menghasilkan pesan yang sama persis
+
+30
+00:01:55,970 --> 00:02:00,420
+sehingga nama depan atau nama belakang saya di usia saya, saya akan mendapatkan 20 byte.
+
+31
+00:02:00,840 --> 00:02:02,670
+Jadi Anda bisa melihat langsung.
+
+32
+00:02:02,680 --> 00:02:05,520
+Itu dari buffer protokol ke Jason.
+
+33
+00:02:05,520 --> 00:02:09,700
+Kami menghemat banyak bandwidth karena pesannya lebih kecil.
+
+34
+00:02:09,810 --> 00:02:14,440
+OK jadi kita sudah mulai menggunakan buffer kritis kita akan menghemat bandwidth jaringan.
+
+35
+00:02:14,640 --> 00:02:19,830
+Selain itu parsing Jason sebenarnya cukup intensif bagi Anda dan ada banyak perpustakaan yang mencoba
+
+36
+00:02:19,830 --> 00:02:20,900
+untuk mengoptimalkan itu.
+
+37
+00:02:21,060 --> 00:02:23,820
+Namun secara keseluruhan masih cukup curam Anda intensif.
+
+38
+00:02:23,820 --> 00:02:26,840
+Dan itu karena formatnya bisa dibaca manusia.
+
+39
+00:02:26,850 --> 00:02:31,710
+Kita dapat membaca ini menggunakan mata kita tetapi protokol buffer byte yang Anda tidak akan mengerti apa-apa.
+
+40
+00:02:32,100 --> 00:02:37,860
+Jadi parsing buffer kritis karena biner dan karena sangat dekat dengan bagaimana data
+
+41
+00:02:37,860 --> 00:02:41,410
+sebenarnya diwakili dalam memori akan kurang intensif CPQ.
+
+42
+00:02:41,550 --> 00:02:42,270
+BAIK.
+
+43
+00:02:42,270 --> 00:02:47,310
+Dan itu sangat penting karena di atas buffer vertikal ini yang pada dasarnya
+
+44
+00:02:47,310 --> 00:02:54,180
+berarti komunikasi dan perangkat yang lebih cepat dan lebih efisien yang sedikit lebih lemah seperti perangkat seluler untuk memperlambat
+
+45
+00:02:54,360 --> 00:03:01,640
+Anda atau bahkan Anda ke perangkat akan dapat memiliki kinerja yang lebih baik dengan buffer Pirko seperti yang dilakukan dengan Jason.
+
+46
+00:03:01,650 --> 00:03:05,150
+Jadi, semua pendukung pro-batubara adalah tidak punya otak untuk GOPAC.
+
+47
+00:03:05,550 --> 00:03:09,720
+Sekarang saya katakan bahwa kita dapat menghasilkan beberapa kode menggunakan GAAP.
+
+48
+00:03:09,870 --> 00:03:16,230
+Jadi mari kita masuk ke GAAP melihat situs Web dan seperti yang akan kita lihat, mereka akan 11 bahasa pada
+
+49
+00:03:16,540 --> 00:03:21,620
+saat rekaman secara resmi didukung oleh GOPAC dan banyak lainnya sebenarnya didukung secara tidak resmi.
+
+50
+00:03:21,630 --> 00:03:23,290
+Mereka tidak ada di situs Web.
+
+51
+00:03:23,370 --> 00:03:25,850
+Jadi di sini kita berada di situs Web GOP Iowa.
+
+52
+00:03:26,010 --> 00:03:31,170
+Dan seperti yang Anda lihat ini adalah di mana Anda akan melihat dokumen jika Anda memiliki masalah
+
+53
+00:03:31,170 --> 00:03:32,220
+seperti dalam dokumentasi.
+
+54
+00:03:32,430 --> 00:03:37,470
+Tetapi jika Anda menggulir sepenuhnya ke bawah pada dasarnya Anda dapat melihat daftar bahasa yang dapat kita mulai
+
+55
+00:03:37,470 --> 00:03:37,860
+cepat.
+
+56
+00:03:37,980 --> 00:03:42,810
+Jadi berdasarkan bahasa Anda, bahasa favorit Anda tidak penting atau bahasa kursus ini yang
+
+57
+00:03:42,810 --> 00:03:44,950
+mungkin Anda miliki seperti QuickStart.
+
+58
+00:03:45,060 --> 00:03:49,890
+Meskipun demikian semua pembelajaran dalam kursusnya berlaku untuk bahasa lain yang mengagumkan.
+
+59
+00:03:49,890 --> 00:03:50,390
+BAIK.
+
+60
+00:03:50,640 --> 00:03:56,190
+Jadi salah satu hal yang mereka iklankan di GRB adalah ia bekerja lintas bahasa dan platform.
+
+61
+00:03:56,190 --> 00:04:00,960
+Dan lagi itu karena kita menggunakan file buffer protokol di awal dan kemudian kita akan
+
+62
+00:04:00,960 --> 00:04:05,210
+menghasilkan kode untuk bahasa apa pun menggunakan protokol R PC untuk generator.
+
+63
+00:04:05,400 --> 00:04:07,190
+Jadi mari kita kembali ke slide.
+
+64
+00:04:07,980 --> 00:04:15,610
+Jadi, meskipun PC Anda memiliki begitu banyak bahasa akan memiliki begitu sedikit implementasi utama sehingga Anda Java yang merupakan
+
+65
+00:04:15,960 --> 00:04:18,800
+implementasi murni dari europaeus di Jawa.
+
+66
+00:04:18,830 --> 00:04:22,810
+Itu berarti dibangun dari bawah ke atas menggunakan perpustakaan Java.
+
+67
+00:04:22,830 --> 00:04:27,360
+Ada europaeus Anda pergi yang juga implementasi murni dari GRB dalam bahasa.
+
+68
+00:04:27,360 --> 00:04:29,030
+Sekali lagi membangun dari bawah ke atas.
+
+69
+00:04:29,430 --> 00:04:35,160
+Dan kemudian ada GURPS melihat yang tingkat super rendah yang merupakan implementasi murni dari bahasa C dan C dan Anda bertanya-tanya apakah
+
+70
+00:04:35,760 --> 00:04:37,370
+dia akan seperti ini selamanya.
+
+71
+00:04:37,410 --> 00:04:45,180
+Tidak Jarkesy C ++ gypsey Python Ruby Objective-C ph B C Sharp dan banyak lainnya.
+
+72
+00:04:45,180 --> 00:04:48,690
+Mungkin mereka sebenarnya mengandalkan GOP.
+
+73
+00:04:48,700 --> 00:04:49,990
+Implementasi C.
+
+74
+00:04:50,010 --> 00:04:51,960
+Ini disebut menggunakan binding C.
+
+75
+00:04:52,050 --> 00:04:58,920
+Jadi pada dasarnya semua pustaka ini C ++ Python Ruby dll mereka bergantung langsung pada pustaka GOP C dan sangat
+
+76
+00:04:58,920 --> 00:05:03,240
+penting bahwa itu hanya memberi Anda gagasan bahwa pengembangan pembangunan bekerja dengan kerangka
+
+77
+00:05:03,960 --> 00:05:08,060
+kerja yang berarti bahwa misalnya jika besok pustaka GOP diperbarui .
+
+78
+00:05:08,070 --> 00:05:12,640
+Itu tidak berarti bahwa Java di Goldberry akan diperbarui pada saat yang sama
+
+79
+00:05:12,640 --> 00:05:18,510
+tetapi Anda dapat mengharapkan C ++ Python Ruby Objective-C dan seterusnya untuk mengambil keuntungan yang sangat cepat dari
+
+80
+00:05:18,510 --> 00:05:22,140
+peningkatan di perpustakaan GRB CC karena secara langsung tergantung padanya.
+
+81
+00:05:22,200 --> 00:05:27,570
+Beberapa bahasa mungkin mengimplementasikan Djerba secara asli atau bergantung pada implementasinya.
+
+82
+00:05:27,570 --> 00:05:31,850
+OK saya tahu ada pustaka JAROBI python murni misalnya jadi Anda tidak pernah tahu.
+
+83
+00:05:31,860 --> 00:05:35,170
+Tapi itu untuk perpustakaan resmi.
+
+84
+00:05:35,190 --> 00:05:36,540
+Sekarang apa yang saya bicarakan seperti ini.
+
+85
+00:05:36,550 --> 00:05:39,810
+Mengatakannya lagi bahwa itu dapat digunakan dalam bahasa apa pun.
+
+86
+00:05:39,810 --> 00:05:46,110
+Seperti yang saya katakan kode akan secara otomatis dihasilkan dan layanan mikro Anda dalam bahasa apa pun dapat berinteraksi satu
+
+87
+00:05:46,110 --> 00:05:46,940
+sama lain.
+
+88
+00:05:47,220 --> 00:05:52,770
+Jadi katakanlah kita memiliki situs Web dan situs web ini memiliki layanan pembelian yang Anda beli dan
+
+89
+00:05:52,770 --> 00:05:57,720
+orang atau tim di perusahaan Anda ingin melakukannya dan layanan itu adalah tim yang aktif.
+
+90
+00:05:57,720 --> 00:06:03,160
+Jadi mereka menerapkan ini adalah Ingo dan kami juga memiliki tim penetapan harga dan tim penetapan harga di sana.
+
+91
+00:06:03,260 --> 00:06:03,940
+Melakukan.
+
+92
+00:06:04,050 --> 00:06:10,140
+Jadi apa yang telah mereka lakukan adalah mereka telah mengimplementasikan solusi ini menggunakan Python dan sekarang kami memiliki
+
+93
+00:06:10,140 --> 00:06:11,180
+aplikasi aplikasi seluler.
+
+94
+00:06:11,180 --> 00:06:12,650
+Mungkin itu adalah aplikasi Android yang benar.
+
+95
+00:06:12,840 --> 00:06:15,080
+Dan mereka telah mengembangkan aplikasi mereka menggunakan Java.
+
+96
+00:06:15,150 --> 00:06:18,370
+Jadi Anda seperti oh my god, semua hal ini perlu berbicara satu sama lain.
+
+97
+00:06:18,520 --> 00:06:23,250
+Tetapi sebenarnya cukup mudah karena layanan yang dibeli dan layanan penetapan harga ditulis menggunakan
+
+98
+00:06:23,250 --> 00:06:24,700
+G. R. PC.
+
+99
+00:06:24,720 --> 00:06:30,840
+Anda dapat menghasilkan apa yang disebut rintisan atau rintisan sebagai klien di aplikasi seluler Chadha dan secara
+
+100
+00:06:30,840 --> 00:06:36,990
+otomatis rintisan itu akan diterapkan untuk Anda semua panggilan ke layanan pembelian dan layanan penetapan harga menggunakan
+
+101
+00:06:37,290 --> 00:06:41,790
+buffer protokol dan G. R. PC untuk permintaan dan respons sehingga kita akan melihat apa yang
+
+102
+00:06:41,790 --> 00:06:42,480
+terlihat dalam kode nanti.
+
+103
+00:06:42,630 --> 00:06:47,730
+Tetapi hanya bagi Anda untuk mendapatkan ide saat ini Anda tidak perlu peduli apakah itu
+
+104
+00:06:47,730 --> 00:06:53,730
+aplikasi Java yang berbicara untuk naik atau pada aplikasi python karena mereka semua menerapkan GRB PC semua kode yang
+
+105
+00:06:53,730 --> 00:06:57,210
+dihasilkan untuk Anda dan Anda tidak khawatir tentang detail implementasi.
+
+106
+00:06:57,210 --> 00:07:03,920
+Selain kerangka kerja lagi layanan yang dibeli juga dapat memiliki stub untuk layanan Shipman yang akan
+
+107
+00:07:03,930 --> 00:07:05,770
+dibayar kembali dan C-tajam.
+
+108
+00:07:06,170 --> 00:07:11,150
+OK jadi Anda benar-benar ingat diagram itu akan ada di situs web Jessops juga.
+
+109
+00:07:11,160 --> 00:07:13,180
+Sangat penting bagi Anda untuk memahami hal ini.
+
+110
+00:07:13,200 --> 00:07:15,520
+Itu benar-benar kunci dari G R B C bekerja.
+
+111
+00:07:15,570 --> 00:07:20,730
+Keindahan dari itu adalah bahwa bahasa apa pun dapat berbicara dengan bahasa lain menggunakan kerangka umum itu dan
+
+112
+00:07:20,730 --> 00:07:22,560
+itu membuat semuanya menjadi sangat mudah.
+
+113
+00:07:23,010 --> 00:07:25,650
+Jadi secara ringkas mengapa buffer protokol.
+
+114
+00:07:25,860 --> 00:07:29,810
+Yah karena sangat mudah digunakan dan menulis definisi pesan.
+
+115
+00:07:29,820 --> 00:07:33,600
+Definisi API juga akan independen dari implementasi.
+
+116
+00:07:33,750 --> 00:07:38,150
+Jadi itu berarti Anda dapat mulai menulis klien dan server Anda segera setelah Anda
+
+117
+00:07:38,160 --> 00:07:39,120
+mengembalikan buffer Oracle.
+
+118
+00:07:39,130 --> 00:07:45,060
+Definisi Messer ideal dan banyak kode, banyak kode boilerplate yang Anda benar-benar tidak ingin tulis akan ditulis untuk
+
+119
+00:07:45,240 --> 00:07:50,880
+Anda dan akan dihasilkan dalam bahasa apa pun hanya dari file buffer protokol 10 baris yang
+
+120
+00:07:50,880 --> 00:07:51,240
+sederhana.
+
+121
+00:07:51,240 --> 00:07:52,860
+Dan itu luar biasa bagi Anda.
+
+122
+00:07:52,890 --> 00:07:58,420
+Ini menghemat banyak waktu dan memungkinkan Anda untuk benar-benar fokus menulis aplikasi Anda.
+
+123
+00:07:58,560 --> 00:08:03,860
+Juga buffer protokol adalah biner dan karenanya sangat efisien untuk mengirim dan menerima pada jaringan.
+
+124
+00:08:03,870 --> 00:08:09,880
+Ini lebih kecil seperti yang kita lihat dan juga membuat cerita bersambung dan bersambung pada sebuah kapal, Anda akan selesai dalam siklus yang lebih sedikit.
+
+125
+00:08:09,990 --> 00:08:14,190
+Karenanya kurang kuat C. P. Anda akan memiliki keunggulan yang lebih baik.
+
+126
+00:08:14,190 --> 00:08:18,100
+Semua dalam semua buffer Perkel juga akan memungkinkan Anda untuk mendefinisikan API.
+
+127
+00:08:18,210 --> 00:08:22,680
+Dan jika Anda mengikuti kursus terakhir saya tentang buffer protokol, Anda akan melihat bahwa Anda
+
+128
+00:08:22,680 --> 00:08:27,280
+dapat mengembangkan pesan itu di API tanpa merusak klien yang sudah ada yang sangat membantu layanan mikro.
+
+129
+00:08:27,290 --> 00:08:32,630
+Oke, tidak ada lagi versi API Anda, Anda dapat membuatnya berkembang selama Anda mengikuti aturan yang Anda tahu.
+
+130
+00:08:32,730 --> 00:08:33,160
+BAIK.
+
+131
+00:08:33,330 --> 00:08:35,370
+Jadi semuanya adalah ringkasan.
+
+132
+00:08:35,460 --> 00:08:39,810
+Kami akan menggunakan Koba 4G IPC pertama dalam kursus ini dan saya akan melihat di kuliah berikutnya.
+

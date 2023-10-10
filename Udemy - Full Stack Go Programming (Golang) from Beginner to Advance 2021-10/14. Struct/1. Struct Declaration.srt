@@ -1,0 +1,183 @@
+1
+00:00:00,940 --> 00:00:01,140
+OK.
+
+2
+00:00:13,430 --> 00:00:18,560
+Hello and welcome to the golden programming language course in this session.
+
+3
+00:00:18,590 --> 00:00:21,320
+We want to talk about this concept.
+
+4
+00:00:26,020 --> 00:00:27,700
+S structures and go like.
+
+5
+00:00:29,470 --> 00:00:37,060
+Golonka structure is a data tie that allows you to restore different properties under a single variable
+
+6
+00:00:37,060 --> 00:00:37,420
+name.
+
+7
+00:00:38,110 --> 00:00:43,300
+It is similar to a class in object oriented programming that has only properties.
+
+8
+00:00:43,750 --> 00:00:47,260
+It's very similar to a structure in C programming.
+
+9
+00:00:49,650 --> 00:00:54,420
+Airstrike is the collection of data feeds, we declare data types.
+
+10
+00:00:55,630 --> 00:01:03,850
+Golan has the ability to declare and create own data types by combining bong or more types, including
+
+11
+00:01:03,850 --> 00:01:07,090
+both building and user defined types.
+
+12
+00:01:07,960 --> 00:01:15,070
+Each data field in an airstrike is declared with a noun type, which could be a built in type or another
+
+13
+00:01:15,070 --> 00:01:24,010
+user defined type, as are the only way to create concrete user defined types and go and a strike.
+
+14
+00:01:24,010 --> 00:01:32,440
+Types are declared by composing iFixit of unique fields as throngs can improve modularity and allow
+
+15
+00:01:32,440 --> 00:01:36,550
+to create and pass complex data structures around the system.
+
+16
+00:01:37,960 --> 00:01:45,250
+You can also consider asteroids as a template for creating a data record like an employee record or
+
+17
+00:01:45,250 --> 00:01:47,020
+an e-commerce product.
+
+18
+00:01:51,050 --> 00:01:53,660
+Declaration of a strong time.
+
+19
+00:01:54,560 --> 00:02:00,230
+The declaration is SaaS with the key more tight, then a name for the Newstrike.
+
+20
+00:02:00,440 --> 00:02:04,790
+And finally, the key vote a struct within the of righteous.
+
+21
+00:02:04,940 --> 00:02:09,690
+A series of data feeds are specified with a name and a time.
+
+22
+00:02:10,340 --> 00:02:12,740
+Now you can see the syntax.
+
+23
+00:02:13,670 --> 00:02:20,030
+Let's go to this good program to illustrate how to create and declaration extract.
+
+24
+00:02:22,890 --> 00:02:33,450
+First, go to Esplorare and create a project folder, for the example, is relax and created fine like
+
+25
+00:02:33,450 --> 00:02:47,360
+me, but go create package name and main flash, OK?
+
+26
+00:02:47,850 --> 00:02:51,840
+For the example, we create a strike name address.
+
+27
+00:02:52,080 --> 00:02:57,930
+It has a state seat and zip code fence now declaring a striped
+
+28
+00:03:00,510 --> 00:03:11,220
+tie and address and striped curly brackets and set the field.
+
+29
+00:03:11,790 --> 00:03:28,470
+For the example, estate Typekit is a strange city type, is a string and zip code and type of it.
+
+30
+00:03:28,470 --> 00:03:29,760
+Is it?
+
+31
+00:03:33,000 --> 00:03:36,840
+In the above, the type keyboard introduces a new type.
+
+32
+00:03:37,500 --> 00:03:44,760
+It's followed by the name of the time address and the keyboard to try to illustrate that your defining
+
+33
+00:03:44,760 --> 00:03:46,890
+is right there.
+
+34
+00:03:46,890 --> 00:03:51,580
+Strong contains a list of various fields inside the killer braces.
+
+35
+00:03:52,140 --> 00:04:00,080
+Each field has a name, and at times we can also make them compact by combining the various fields of
+
+36
+00:04:00,100 --> 00:04:03,360
+same time, as shown in the below.
+
+37
+00:04:03,870 --> 00:04:16,740
+For example, in the Commons, these strong and defiant and others strike began to address a strong
+
+38
+00:04:17,730 --> 00:04:29,670
+category, says the state and city type of two fields is a string and zip code.
+
+39
+00:04:30,750 --> 00:04:32,740
+Type of it is fields.
+
+40
+00:04:34,920 --> 00:04:41,640
+The address is strong and its fields are not exported to either packages because identifiers or a strike
+
+41
+00:04:41,640 --> 00:04:49,690
+name are a start with and lowercase letter and golang identifiers are exported to other packets.
+
+42
+00:04:49,710 --> 00:04:56,550
+If the name is source, we add attributes that are otherwise the accessibility will be limited within
+
+43
+00:04:56,550 --> 00:04:57,150
+the package.
+
+44
+00:04:58,290 --> 00:05:02,830
+We could define struct in order not to prolong the time of decision.
+
+45
+00:05:02,850 --> 00:05:06,960
+We will finish it and we will continue the content in the next session.
+
+46
+00:05:07,170 --> 00:05:07,650
+Goodbye.

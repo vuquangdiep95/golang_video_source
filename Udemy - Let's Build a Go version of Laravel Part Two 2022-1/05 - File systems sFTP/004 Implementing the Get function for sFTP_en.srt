@@ -1,0 +1,304 @@
+1
+00:00:01,550 --> 00:00:06,680
+So the last functioning we have to implement in order to make this work is to get function, and as
+
+2
+00:00:06,680 --> 00:00:12,140
+was the case with Mineo, this is a function you may not use very often, but when you need it, it's
+
+3
+00:00:12,140 --> 00:00:14,070
+nice to have it, so we might as well implement it.
+
+4
+00:00:14,090 --> 00:00:15,650
+It's not that difficult.
+
+5
+00:00:16,610 --> 00:00:20,960
+So the first thing I'll do is get a client and I'll just copy the code here from the delete function
+
+6
+00:00:22,100 --> 00:00:24,020
+pasted here before the return.
+
+7
+00:00:24,410 --> 00:00:28,490
+And now I have a client and we're not returning false in this case or returning the error.
+
+8
+00:00:29,120 --> 00:00:29,450
+OK.
+
+9
+00:00:30,550 --> 00:00:31,600
+So now that we have a client.
+
+10
+00:00:32,080 --> 00:00:34,270
+Well, how do you put something up there?
+
+11
+00:00:34,450 --> 00:00:38,980
+Well, the thing we need to pay attention to is we might be putting more than one item up because we're
+
+12
+00:00:38,980 --> 00:00:43,150
+accepting a very adequate argument at the very end of the get function.
+
+13
+00:00:43,160 --> 00:00:48,380
+So we'll have one or more thing to get, so we'll range through that four.
+
+14
+00:00:48,430 --> 00:00:53,380
+Again, we don't care about the index and again, we do care about the item, which I'll call once again.
+
+15
+00:00:54,160 --> 00:00:55,480
+I shall call it item this time.
+
+16
+00:00:56,800 --> 00:00:57,280
+Why not?
+
+17
+00:00:57,610 --> 00:00:59,260
+And we'll range through items.
+
+18
+00:01:02,290 --> 00:01:06,910
+And what we have to do is, first of all, create a destination file.
+
+19
+00:01:09,100 --> 00:01:13,990
+So we do that the standard way I'll call it DST file and I'll check for an error.
+
+20
+00:01:14,020 --> 00:01:20,110
+And that's a sign those are assigned values by calling Osako create or just creating something on our
+
+21
+00:01:20,110 --> 00:01:22,420
+own server, not on the FTP server.
+
+22
+00:01:22,630 --> 00:01:25,390
+We're getting it from the SDP server and we have to have somewhere to put it.
+
+23
+00:01:25,390 --> 00:01:27,940
+So we'll create that file and we'll create it.
+
+24
+00:01:28,000 --> 00:01:32,290
+We need to build a string, so we'll use format as printouts as usual.
+
+25
+00:01:32,620 --> 00:01:32,840
+Yes.
+
+26
+00:01:33,160 --> 00:01:33,970
+Print, yes.
+
+27
+00:01:34,870 --> 00:01:39,760
+Give it a format string and that will be in the form of percent as percent s.
+
+28
+00:01:40,570 --> 00:01:46,210
+And the replacements for those placeholders are the first parameter from the call to get destination.
+
+29
+00:01:46,990 --> 00:01:50,680
+And then we want the name of the current item.
+
+30
+00:01:50,920 --> 00:01:53,770
+But again, that's coming as a full path name.
+
+31
+00:01:53,780 --> 00:02:02,110
+So we have to use Path Dot Base to get just the following half dot base again base and we're going to
+
+32
+00:02:02,110 --> 00:02:03,200
+use it.
+
+33
+00:02:06,250 --> 00:02:09,479
+So that creates the file potentially gives us an error.
+
+34
+00:02:09,490 --> 00:02:12,460
+So we'll check for an error if error is not equal to no.
+
+35
+00:02:12,820 --> 00:02:17,020
+Then we'll return the error return in the file system's full.
+
+36
+00:02:17,020 --> 00:02:18,360
+That path name doesn't exist.
+
+37
+00:02:18,370 --> 00:02:20,400
+Whatever the case is, we can't create the file.
+
+38
+00:02:20,410 --> 00:02:21,400
+We don't want to go any further.
+
+39
+00:02:22,720 --> 00:02:24,040
+Now that we've created that file.
+
+40
+00:02:24,040 --> 00:02:25,840
+Of course, we have to defer closing it.
+
+41
+00:02:26,110 --> 00:02:27,700
+Defer test file.
+
+42
+00:02:27,730 --> 00:02:32,770
+Duclos don't want to have a resource leak, and then we want to open the source file.
+
+43
+00:02:35,340 --> 00:02:39,150
+So source file and potentially here.
+
+44
+00:02:40,050 --> 00:02:46,830
+And we just call our SFO be client client open and we open open file open.
+
+45
+00:02:50,010 --> 00:02:52,410
+And again, if there's an error, we return it.
+
+46
+00:02:52,410 --> 00:02:53,550
+So I'll copy and paste.
+
+47
+00:02:57,210 --> 00:02:58,380
+Now we want a copy.
+
+48
+00:03:00,890 --> 00:03:05,460
+Copy source file to desk.
+
+49
+00:03:05,610 --> 00:03:06,990
+So copy source to Dest.
+
+50
+00:03:07,260 --> 00:03:08,040
+And that's easy enough.
+
+51
+00:03:08,820 --> 00:03:13,650
+We get the bytes and an error by calling Ioco Copy.
+
+52
+00:03:16,540 --> 00:03:17,230
+Dust file.
+
+53
+00:03:20,900 --> 00:03:21,560
+And source file.
+
+54
+00:03:23,780 --> 00:03:25,130
+And what are we going to do with those bites?
+
+55
+00:03:25,160 --> 00:03:26,600
+Well, first of all, we'll check for an error.
+
+56
+00:03:26,690 --> 00:03:28,160
+So let's just copy and paste this.
+
+57
+00:03:32,920 --> 00:03:37,960
+We actually don't need those bites, but we should have put this out to the long, so I'll say log dot
+
+58
+00:03:37,960 --> 00:03:46,480
+print line just so we know what's going on and we'll remove this later on and we'll say percent d because
+
+59
+00:03:46,480 --> 00:03:52,720
+we're getting bites as an integer bytes copied just so we can see things happening.
+
+60
+00:03:53,320 --> 00:03:58,030
+Put my substitution, which is bytes, and there's one more thing that we have to do, and this is kind
+
+61
+00:03:58,030 --> 00:03:59,440
+of specific to Asaph St.
+
+62
+00:04:00,190 --> 00:04:06,760
+What we need to do is to flush the in-memory copy.
+
+63
+00:04:07,180 --> 00:04:10,330
+Otherwise, things might not work as expected, and that's really easy.
+
+64
+00:04:10,780 --> 00:04:14,710
+Error is equal to test file sync.
+
+65
+00:04:18,149 --> 00:04:18,490
+Right there.
+
+66
+00:04:19,829 --> 00:04:21,750
+And again, pasting my error check.
+
+67
+00:04:22,200 --> 00:04:22,530
+OK.
+
+68
+00:04:24,040 --> 00:04:25,600
+And I think that will do it for us.
+
+69
+00:04:26,290 --> 00:04:30,790
+So if everything goes according to plan and we might have to do some cleanup here, but if everything
+
+70
+00:04:30,790 --> 00:04:37,660
+goes according to plan, this long, desperate line is not going to work that should be format as print
+
+71
+00:04:37,670 --> 00:04:38,080
+f.
+
+72
+00:04:40,490 --> 00:04:41,600
+And close this.
+
+73
+00:04:42,950 --> 00:04:43,520
+That's better.
+
+74
+00:04:43,790 --> 00:04:44,120
+OK.
+
+75
+00:04:44,720 --> 00:04:50,510
+So if everything goes according to plan, we should be able now to go and make the appropriate changes
+
+76
+00:04:50,630 --> 00:04:56,060
+to the handlers for our web pages and try things out and we'll get started on that in the next lecture.
+

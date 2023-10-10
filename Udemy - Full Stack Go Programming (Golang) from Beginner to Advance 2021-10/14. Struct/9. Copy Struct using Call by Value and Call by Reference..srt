@@ -1,0 +1,263 @@
+1
+00:00:14,260 --> 00:00:20,440
+Hello and welcome to the goal and programming language course in the previous session, we talked about
+
+2
+00:00:20,440 --> 00:00:24,220
+comparisons with the different values assigned to data fields.
+
+3
+00:00:24,550 --> 00:00:28,750
+And in this session, we want to talk about the authors abstract concept.
+
+4
+00:00:34,080 --> 00:00:42,810
+Copyists long time using venue on point to a reference as very ingo learning can be copied to another
+
+5
+00:00:42,810 --> 00:00:46,410
+variable, easily using the assignment a statement.
+
+6
+00:00:47,010 --> 00:00:52,710
+Any changes made to the second astronaut will not be reflected back to the first this rocket.
+
+7
+00:00:54,210 --> 00:00:56,370
+We use two ways to do this.
+
+8
+00:00:56,880 --> 00:01:01,440
+First copy, boy value and second copy by reference.
+
+9
+00:01:02,280 --> 00:01:07,650
+Let's go to the school program to illustrate coppinger structure to another variable.
+
+10
+00:01:10,350 --> 00:01:13,260
+First, we want to talk about concubine value.
+
+11
+00:01:14,160 --> 00:01:18,570
+Create the astronaut named a student and cis variable for it.
+
+12
+00:01:22,510 --> 00:01:23,170
+Typekit.
+
+13
+00:01:26,510 --> 00:01:36,260
+The student just arrived declaring variables name is strange.
+
+14
+00:01:37,940 --> 00:01:42,290
+All right, marks and.
+
+15
+00:01:43,660 --> 00:01:52,000
+CC four and said the comment for the export business right to the list.
+
+16
+00:01:54,760 --> 00:01:56,920
+Now go to the main function,
+
+17
+00:01:59,950 --> 00:02:05,530
+creating an instance of the student assault type and initialize it for the example.
+
+18
+00:02:06,400 --> 00:02:12,040
+This to that one column equals the student.
+
+19
+00:02:13,730 --> 00:02:29,940
+For me, Julia, and for the March 19 display to create an instance if P is to the wrong color.
+
+20
+00:02:31,730 --> 00:02:40,460
+Student one now calling their strike the student to another variable by using the assignment operator
+
+21
+00:02:41,120 --> 00:02:45,200
+create an instance named student two and copious student.
+
+22
+00:02:45,200 --> 00:02:46,850
+Want inside it?
+
+23
+00:02:48,140 --> 00:02:49,610
+Go to the next line.
+
+24
+00:02:52,400 --> 00:02:57,260
+The student two color equals the student.
+
+25
+00:02:57,950 --> 00:03:14,450
+One displayed the created instance if p is student two column student to now list changing values of
+
+26
+00:03:14,450 --> 00:03:29,840
+a student to his right after copying, for example, the student to thoughts name equals Robert and
+
+27
+00:03:29,840 --> 00:03:40,300
+the student to dot marks equals ninety five now display to students after changing values.
+
+28
+00:03:41,450 --> 00:04:01,100
+Go to the next line if be first, set a message this play to the students after changes go to the next
+
+29
+00:04:01,100 --> 00:04:12,770
+line if P is to that one column, so the student bombarded that and go to the next line.
+
+30
+00:04:12,810 --> 00:04:26,450
+FP student two column and simply of a student to OK, he formerly called Save the Project and run the
+
+31
+00:04:26,450 --> 00:04:26,960
+program.
+
+32
+00:04:29,270 --> 00:04:36,430
+Now we can see the out modifications are applied to the second instance made from the student shrunk,
+
+33
+00:04:36,590 --> 00:04:39,440
+and no changes are made to the first instance.
+
+34
+00:04:39,680 --> 00:04:44,840
+And we see a student tool by new values and student y by previous values.
+
+35
+00:04:46,410 --> 00:04:49,980
+Now, let's go to talk about copy by reference.
+
+36
+00:04:50,400 --> 00:04:57,120
+First, create a restaurant name person and sets variable for its first clear the last quote
+
+37
+00:05:04,530 --> 00:05:05,130
+Thai
+
+38
+00:05:07,620 --> 00:05:11,100
+person extract
+
+39
+00:05:13,830 --> 00:05:15,030
+declaring variables.
+
+40
+00:05:15,750 --> 00:05:33,810
+Name a string and I.D. and sixty four said the common or export this is right person construct go to
+
+41
+00:05:33,810 --> 00:05:42,120
+the main function, creating an instance of the person a stroke type and initialize is for the example
+
+42
+00:05:42,390 --> 00:05:43,230
+person.
+
+43
+00:05:43,830 --> 00:05:47,250
+One colon equals person
+
+44
+00:05:49,800 --> 00:06:05,700
+four named gene and or I.D. one one two two three three display the created instance 50 per cent column
+
+45
+00:06:07,170 --> 00:06:08,550
+person one.
+
+46
+00:06:11,490 --> 00:06:17,340
+Now leave Francine this person to another variable by using the Ampersand operator.
+
+47
+00:06:17,880 --> 00:06:26,520
+Here it is the pointer to the restaurant for the example defined cursor by the named person to go to
+
+48
+00:06:26,520 --> 00:06:27,510
+the next line.
+
+49
+00:06:29,970 --> 00:06:33,780
+Person to call and equals Anderson.
+
+50
+00:06:34,500 --> 00:06:46,950
+Person one displayed the created in response if the person to call in person to.
+
+51
+00:06:50,070 --> 00:06:53,910
+Now that's changing value of person to a stroke after copy.
+
+52
+00:06:53,910 --> 00:07:05,080
+For the example, first to the name equals it, go to the next line.
+
+53
+00:07:05,110 --> 00:07:18,720
+Person two dots I.D. equals four four five five six six now displayed to students after changing values.
+
+54
+00:07:20,640 --> 00:07:31,170
+First set the message if they display two persons after changing.
+
+55
+00:07:32,430 --> 00:07:33,930
+Go to the next line.
+
+56
+00:07:34,680 --> 00:07:39,100
+If the person wrong.
+
+57
+00:07:40,110 --> 00:07:49,650
+And if the person to reformat the call, save the project and execute the program.
+
+58
+00:07:53,000 --> 00:08:00,050
+Now we can see the output in this case off point, a reference to the air strike down the line memory
+
+59
+00:08:00,050 --> 00:08:04,640
+location of the original strike and the pointer to the air strike will be the same.
+
+60
+00:08:05,150 --> 00:08:07,020
+And it changes made to the second.
+
+61
+00:08:07,020 --> 00:08:09,980
+The strike will be reflected in the first strike.
+
+62
+00:08:09,980 --> 00:08:15,800
+Also pointed to a strike is achieved by using the Ampersand operator.
+
+63
+00:08:16,130 --> 00:08:20,300
+It's allocated on the heat and its arteries is shaved.
+
+64
+00:08:21,080 --> 00:08:27,020
+OK, in order not to prolong the time of decision, we will finish it and we will continue the content
+
+65
+00:08:27,020 --> 00:08:28,100
+in the next session.
+
+66
+00:08:28,310 --> 00:08:28,790
+Goodbye.

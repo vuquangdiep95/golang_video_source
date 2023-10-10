@@ -1,0 +1,64 @@
+1
+00:00:01,180 --> 00:00:04,059
+So before we go too much further, let's make sure everything works.
+
+2
+00:00:04,120 --> 00:00:05,980
+Now here and celebrities don't go.
+
+3
+00:00:06,010 --> 00:00:07,180
+We have this function.
+
+4
+00:00:07,210 --> 00:00:13,060
+Listen, APC, but at no point do we call it so we're not actually starting our listening on the PC
+
+5
+00:00:13,060 --> 00:00:14,230
+port and we can fix that.
+
+6
+00:00:14,320 --> 00:00:19,240
+Let's go up to the function, listen and serve, which is right here.
+
+7
+00:00:19,480 --> 00:00:20,860
+OK, so listen and serve.
+
+8
+00:00:21,340 --> 00:00:26,020
+And down here at Line 286 in my code are simply type.
+
+9
+00:00:26,020 --> 00:00:27,340
+Go see dot.
+
+10
+00:00:27,770 --> 00:00:31,540
+Listen, APC, OK, and that will start it in the background.
+
+11
+00:00:31,900 --> 00:00:37,900
+Now open my terminal and Typekit make start, and I should see that message saying it's listening on
+
+12
+00:00:37,900 --> 00:00:40,080
+port one, two, three, four or five, and I do.
+
+13
+00:00:40,090 --> 00:00:40,750
+So that's great.
+
+14
+00:00:41,560 --> 00:00:47,530
+So in the next lecture, we'll get started on the middleware and make sure that when the package level
+
+15
+00:00:47,530 --> 00:00:53,260
+variable maintenance mode is true, that we give a an appropriate message to the user saying the is
+
+16
+00:00:53,260 --> 00:00:56,530
+currently in maintenance mode, and we'll get started on that in the next lecture.
+

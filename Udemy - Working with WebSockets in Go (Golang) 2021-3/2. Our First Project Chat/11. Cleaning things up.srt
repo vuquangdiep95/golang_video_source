@@ -1,0 +1,319 @@
+1
+00:00:00,940 --> 00:00:05,200
+Let's just take a few minutes to clean things up, because we have a little bit of messy JavaScript
+
+2
+00:00:05,200 --> 00:00:10,300
+code on our home page, so I'm going to go to the bottom here and see what I might do to clean things
+
+3
+00:00:10,300 --> 00:00:10,510
+up.
+
+4
+00:00:10,520 --> 00:00:17,470
+So you notice here I defined a user field on a message field variable to point to the elements username
+
+5
+00:00:17,470 --> 00:00:18,280
+and message.
+
+6
+00:00:18,970 --> 00:00:25,920
+But I think down here somewhere I have let's see, get element by ID.
+
+7
+00:00:25,930 --> 00:00:26,410
+There it is.
+
+8
+00:00:26,710 --> 00:00:27,220
+This one.
+
+9
+00:00:27,230 --> 00:00:32,490
+Well, instead of having user input here, I've already defined a reference to it up above.
+
+10
+00:00:32,890 --> 00:00:37,660
+So let's just say get rid of that and call it user field.
+
+11
+00:00:40,060 --> 00:00:41,020
+So that one's OK.
+
+12
+00:00:41,020 --> 00:00:42,300
+And the same thing here.
+
+13
+00:00:42,310 --> 00:00:45,640
+I don't need to do document get a little bit of B element body message.
+
+14
+00:00:45,640 --> 00:00:49,060
+I already have a message field so that's good.
+
+15
+00:00:50,170 --> 00:00:54,940
+And look here I have send message taking place here and then I have it taking place again here.
+
+16
+00:00:54,940 --> 00:00:55,990
+You probably noticed that.
+
+17
+00:00:56,020 --> 00:00:56,920
+Let's get rid of that.
+
+18
+00:00:57,670 --> 00:01:02,650
+And if I have any other ones there, send button username and message, that's fine.
+
+19
+00:01:02,680 --> 00:01:04,240
+Except here I don't need to do that.
+
+20
+00:01:04,240 --> 00:01:12,460
+I can just say user field and here I can say message field.
+
+21
+00:01:14,660 --> 00:01:19,310
+No sense in doing look, ups, if I've already got a reference to it, and that should be fine here,
+
+22
+00:01:19,310 --> 00:01:23,240
+except I can say message field.
+
+23
+00:01:23,960 --> 00:01:30,260
+All right, let's save that and stop our application and start our application and make sure everything
+
+24
+00:01:30,260 --> 00:01:32,300
+still works the way we expect it to.
+
+25
+00:01:32,300 --> 00:01:33,980
+And then we'll make a couple of other improvements.
+
+26
+00:01:34,400 --> 00:01:42,720
+So I'll reload this page by hitting return their log on as NENO works.
+
+27
+00:01:43,520 --> 00:01:45,260
+This is from Dino.
+
+28
+00:01:46,070 --> 00:01:47,030
+Send the message.
+
+29
+00:01:47,030 --> 00:01:51,940
+Good second message this time I'll press return to send it.
+
+30
+00:01:52,250 --> 00:01:53,090
+That worked well.
+
+31
+00:01:53,630 --> 00:02:04,460
+And back over here if I connect again and go on as Fred Weir is Dino and that should show up here and
+
+32
+00:02:04,460 --> 00:02:04,970
+it does.
+
+33
+00:02:05,000 --> 00:02:06,350
+OK, so that's a little cleaner.
+
+34
+00:02:06,710 --> 00:02:08,990
+Now there's a few other things I'd like to take care of.
+
+35
+00:02:08,990 --> 00:02:11,600
+One is I don't like this alert.
+
+36
+00:02:11,600 --> 00:02:12,890
+It really irritates me.
+
+37
+00:02:12,890 --> 00:02:14,450
+It just doesn't look good to me.
+
+38
+00:02:14,630 --> 00:02:19,970
+So instead, I want to use this package which I've used in other courses and I use all the time in production,
+
+39
+00:02:19,970 --> 00:02:23,690
+and it's called Nottie and it gives really nice alerts at the top of the page.
+
+40
+00:02:24,230 --> 00:02:29,030
+So let's get a copy of that from CD and Jazz and I'll look for Nottie.
+
+41
+00:02:29,990 --> 00:02:30,590
+And there it is.
+
+42
+00:02:32,640 --> 00:02:38,940
+So click on it and we will get the note he minge, yes, that's what I want.
+
+43
+00:02:40,890 --> 00:02:52,630
+So copy script tag, and I'll go put that script right at the beginning of my JavaScript here and format
+
+44
+00:02:52,650 --> 00:02:59,560
+a little better and I need to get also the success Nottie Minsk's.
+
+45
+00:02:59,670 --> 00:03:06,960
+Let's copy that link tag and put that at the top of our page in the head right about here.
+
+46
+00:03:08,670 --> 00:03:13,710
+And format that, OK, so now I have Nottie and let's see how it works, let's go back and look at the
+
+47
+00:03:13,710 --> 00:03:14,420
+documentation.
+
+48
+00:03:15,000 --> 00:03:16,350
+How do I actually use this?
+
+49
+00:03:16,350 --> 00:03:21,290
+Simplest of cases is right here.
+
+50
+00:03:21,900 --> 00:03:26,910
+So let's copy that one and we'll just make an alert down here.
+
+51
+00:03:26,910 --> 00:03:27,960
+We'll just create a new function
+
+52
+00:03:30,420 --> 00:03:37,680
+function error and it'll take a string, which I'll call MSJ.
+
+53
+00:03:39,420 --> 00:03:40,730
+And inside of that will do it.
+
+54
+00:03:40,740 --> 00:03:44,850
+No, the alert and we want a type is going to be an error.
+
+55
+00:03:45,090 --> 00:03:50,100
+So let's get rid of all this and put in error.
+
+56
+00:03:53,910 --> 00:03:59,280
+Text will be the message and everything else I can leave alone.
+
+57
+00:04:00,040 --> 00:04:01,300
+I'll just take the defaults for that.
+
+58
+00:04:01,560 --> 00:04:02,940
+So now we have an error message.
+
+59
+00:04:02,940 --> 00:04:04,410
+I'll call it error message.
+
+60
+00:04:05,680 --> 00:04:06,900
+OK, so we'll copy that.
+
+61
+00:04:06,900 --> 00:04:08,490
+And everywhere I have an alert.
+
+62
+00:04:08,700 --> 00:04:11,130
+Let's just go to the top and search for alert.
+
+63
+00:04:12,700 --> 00:04:14,820
+OK, now instead I'll say.
+
+64
+00:04:17,230 --> 00:04:21,310
+Error message, filla username.
+
+65
+00:04:27,000 --> 00:04:27,920
+And message.
+
+66
+00:04:28,290 --> 00:04:31,560
+OK, and look for the next alert.
+
+67
+00:04:33,400 --> 00:04:43,540
+We'll change that to their message, capitalize that and put a name at the end and an exclamation point,
+
+68
+00:04:43,630 --> 00:04:44,100
+why not?
+
+69
+00:04:45,520 --> 00:04:49,690
+And that's not the alert, OK, so that should actually be a little bit better.
+
+70
+00:04:49,720 --> 00:04:55,380
+Let's go back here, try reloading this page by hitting written up here and just try sending a message,
+
+71
+00:04:55,810 --> 00:04:58,430
+fill out username, a message that's much better, OK?
+
+72
+00:04:58,450 --> 00:05:02,800
+And it goes away less intrusive than the error alert that we saw before.
+
+73
+00:05:03,280 --> 00:05:05,020
+OK, so that was just a little clean up.
+
+74
+00:05:05,470 --> 00:05:13,030
+And the last couple of things I want to do for this chat project is we've never trap for a situation
+
+75
+00:05:13,030 --> 00:05:17,500
+where the server goes away and if the server goes away, maybe it's been rebooted.
+
+76
+00:05:17,500 --> 00:05:20,920
+Maybe you just lost an Internet connection for a few minutes or a few seconds.
+
+77
+00:05:21,820 --> 00:05:26,530
+But really, we have no way of indicating to the user that something has gone awry.
+
+78
+00:05:26,560 --> 00:05:31,570
+And we want to, first of all, let them know that they've lost their connection to the server.
+
+79
+00:05:31,780 --> 00:05:37,630
+And secondly, we want to reconnect as automatically and give them some indication that they've reconnected.
+
+80
+00:05:37,930 --> 00:05:40,270
+And we'll take care of that in the next lecture.

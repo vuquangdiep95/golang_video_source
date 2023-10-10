@@ -1,0 +1,635 @@
+1
+00:00:00,090 --> 00:00:06,250
+I'm just going to ease Daniel in here and I'm going to take the lead on this first part.
+
+2
+00:00:06,300 --> 00:00:07,050
+This first video.
+
+3
+00:00:07,050 --> 00:00:08,610
+This video right now.
+
+4
+00:00:08,610 --> 00:00:14,400
+And that's just create our get repo and I'm just going to briefly just review a few things and then
+
+5
+00:00:14,400 --> 00:00:20,640
+also maybe Daniel you could show windows and so how you get bashed commands on windows and again all
+
+6
+00:00:20,640 --> 00:00:24,910
+this stuff ah is in my previous court previous course is what we're going to cover here.
+
+7
+00:00:24,960 --> 00:00:26,460
+So this is just f y.
+
+8
+00:00:26,460 --> 00:00:31,290
+Maybe you're still new to this and you need a little bit of reinforcement or review or maybe your completely
+
+9
+00:00:31,290 --> 00:00:38,910
+new to it in which case it's just convenient for you that it's right here but to set up a get hub repo
+
+10
+00:00:39,240 --> 00:00:43,580
+the first thing you want to do is you want to make sure that you could clone using SS H.
+
+11
+00:00:43,590 --> 00:00:45,670
+There's many ways to skin a cat.
+
+12
+00:00:45,690 --> 00:00:48,150
+I don't know where that phrase came from.
+
+13
+00:00:48,210 --> 00:00:55,980
+Probably some hillbillies out in the boondocks who like skinning cats but there's many way different
+
+14
+00:00:55,980 --> 00:01:03,660
+ways you could do things and and so I like using SS H I just find it easier is that your preference.
+
+15
+00:01:03,660 --> 00:01:08,820
+Yeah this searches easier you do have to remember your password and it's more secure too.
+
+16
+00:01:08,850 --> 00:01:09,820
+Well there you go.
+
+17
+00:01:09,900 --> 00:01:15,060
+That's why I'm excited to have a pair programming pair teaching because you get additional perspectives
+
+18
+00:01:16,030 --> 00:01:16,920
+so SS age.
+
+19
+00:01:16,920 --> 00:01:18,450
+Those are all really good reasons to use it.
+
+20
+00:01:18,840 --> 00:01:22,990
+But if you're on Windows creating SS age can be a pain.
+
+21
+00:01:23,180 --> 00:01:30,660
+And so what's easiest is to use bash shell terminal commands on Windows.
+
+22
+00:01:30,810 --> 00:01:33,470
+So there's two main types of operating systems.
+
+23
+00:01:33,510 --> 00:01:41,100
+Windows or posits Unix Linux Mac right to families and then the terminals the command line interface
+
+24
+00:01:41,540 --> 00:01:48,660
+and the the the commands which I think are primarily used in programming are going to be Unix Linux
+
+25
+00:01:49,650 --> 00:01:54,090
+terminal shell bash as opposed to the DOS prompt command prompt which is Windows right.
+
+26
+00:01:54,090 --> 00:01:54,570
+Correct.
+
+27
+00:01:54,600 --> 00:01:55,200
+Yeah.
+
+28
+00:01:55,520 --> 00:01:55,740
+Yeah.
+
+29
+00:01:55,770 --> 00:01:57,630
+What you've experienced in programming too.
+
+30
+00:01:57,660 --> 00:01:58,260
+Yes.
+
+31
+00:01:58,290 --> 00:01:58,910
+Yeah.
+
+32
+00:01:58,970 --> 00:02:07,160
+The thing is most of those Unix bash command line commands are also available on Windows.
+
+33
+00:02:07,290 --> 00:02:09,860
+You just have to dig and find them and install yourself.
+
+34
+00:02:09,870 --> 00:02:10,340
+Yeah.
+
+35
+00:02:10,440 --> 00:02:11,420
+So hassle.
+
+36
+00:02:11,430 --> 00:02:12,510
+So it's just easier.
+
+37
+00:02:12,510 --> 00:02:15,320
+So one way that you could setup get.
+
+38
+00:02:15,340 --> 00:02:15,930
+Yeah I'm sorry.
+
+39
+00:02:15,930 --> 00:02:23,070
+One way you could set up a bash shell terminal commands on Windows just install it get ACM and I think
+
+40
+00:02:23,070 --> 00:02:25,100
+that's the easiest way to do it.
+
+41
+00:02:25,230 --> 00:02:30,120
+And when you install get SVM again you can check out my course on VSO code.
+
+42
+00:02:30,120 --> 00:02:32,710
+I just went through this in detail.
+
+43
+00:02:32,730 --> 00:02:37,980
+It will it will ask you different options but you just want to make sure you're selecting the right
+
+44
+00:02:37,980 --> 00:02:39,920
+options when you select the right options.
+
+45
+00:02:39,990 --> 00:02:45,210
+You'll be able to use and just read through the choices and some are like recommended choice.
+
+46
+00:02:45,330 --> 00:02:50,370
+You'll be able to be able to use Linux shell bash terminal commands on Windows.
+
+47
+00:02:50,820 --> 00:02:59,430
+Alternatively there's one other way you could do it and on Windows machines you could enable windows
+
+48
+00:02:59,430 --> 00:03:02,380
+to do Shell bash terminal commands.
+
+49
+00:03:02,520 --> 00:03:09,900
+Yeah when Windows 10 has a Linux subsystem for Windows which basically gives you an a boon to command
+
+50
+00:03:09,900 --> 00:03:15,330
+line with all the boon to commands that can run when X commands directly.
+
+51
+00:03:15,360 --> 00:03:20,640
+So if you want to do that I just google that here when the windows linux subsystem you can enable that
+
+52
+00:03:20,700 --> 00:03:23,910
+and then you can get back going on your machine to do these commands.
+
+53
+00:03:24,000 --> 00:03:30,020
+Once you've done all that you can then run SS H to create a SS H.
+
+54
+00:03:30,030 --> 00:03:36,750
+Public and private key and so SS H on Mac is what I'm gonna Google and I'll give you a command.
+
+55
+00:03:36,810 --> 00:03:43,170
+And so how to SS H on mac with native SS H client and so I'm just going to scroll down until I find
+
+56
+00:03:43,170 --> 00:03:43,990
+the command.
+
+57
+00:03:44,220 --> 00:03:46,310
+And that's not it.
+
+58
+00:03:46,350 --> 00:03:48,380
+And so I'm just going to search for another one.
+
+59
+00:03:48,510 --> 00:03:51,720
+How to create create create.
+
+60
+00:03:51,900 --> 00:03:53,560
+SS H key Mac.
+
+61
+00:03:53,730 --> 00:03:57,200
+Let's try that one manually generated your SS key.
+
+62
+00:03:57,210 --> 00:04:02,340
+SS each key in Mac and so the command here is this one right here.
+
+63
+00:04:02,520 --> 00:04:07,290
+And so if I go to my Mac and again intermediate course so it's going to actually take me a minute to
+
+64
+00:04:07,290 --> 00:04:11,490
+kind of drop into that mode and not try to teach everything from the beginning.
+
+65
+00:04:12,020 --> 00:04:16,470
+So I'm trying to find that right place of showing too much vs. too little.
+
+66
+00:04:16,530 --> 00:04:18,330
+And so if this is going too fast for you.
+
+67
+00:04:18,330 --> 00:04:22,450
+Drop back to my earlier courses and go through those classes.
+
+68
+00:04:22,500 --> 00:04:30,630
+So here I'm just going to search for my SS H folder and you can see it right there and I'm gonna drop
+
+69
+00:04:30,630 --> 00:04:31,170
+that in.
+
+70
+00:04:31,200 --> 00:04:39,420
+Well I could see what's in that SS H folder first into into SS H C D dot SS H.
+
+71
+00:04:39,520 --> 00:04:45,790
+Go and I could see in there I have a public and I have a private key and so this is public private key
+
+72
+00:04:45,790 --> 00:04:46,980
+encryption.
+
+73
+00:04:47,020 --> 00:04:53,180
+It's asymmetric encryption is referred to as asymmetric encryption because there is a public key and
+
+74
+00:04:53,200 --> 00:04:56,300
+so this dot pub you could share this with anybody in the world.
+
+75
+00:04:56,380 --> 00:05:00,720
+And then there is a private key and this private key you want to keep for yourself.
+
+76
+00:05:00,790 --> 00:05:07,780
+And so I would think it's a good practice to generate like I'm generating as the search key forget I'm
+
+77
+00:05:07,780 --> 00:05:09,070
+only going to do that.
+
+78
+00:05:09,070 --> 00:05:12,430
+Like get Hubble have its own unique public key is that good practice.
+
+79
+00:05:12,430 --> 00:05:13,650
+It doesn't matter it's public key.
+
+80
+00:05:13,650 --> 00:05:14,750
+Anybody can have it right.
+
+81
+00:05:14,770 --> 00:05:15,890
+Anyone can have the public key.
+
+82
+00:05:15,910 --> 00:05:21,430
+So if you want to be extra secure you can have separate private and public eats but then you have to
+
+83
+00:05:21,460 --> 00:05:23,480
+flip between them while you're using it.
+
+84
+00:05:23,480 --> 00:05:25,930
+But when you go to a place that's kind of different.
+
+85
+00:05:25,930 --> 00:05:31,300
+So different Web sites if they want my SS HQ it's totally fine to provide this Publix as Publix for
+
+86
+00:05:31,300 --> 00:05:31,720
+everybody.
+
+87
+00:05:31,760 --> 00:05:32,510
+You get invited to.
+
+88
+00:05:32,560 --> 00:05:33,910
+So never mind on that.
+
+89
+00:05:33,910 --> 00:05:38,510
+So you just want to create this and to do that you drop that command in right there as you could see
+
+90
+00:05:38,510 --> 00:05:43,620
+on my terminal I hit enter and now it says enter the file in which to save the key.
+
+91
+00:05:43,630 --> 00:05:49,960
+So that's going to fall to idea underscore RSA and I could say I'm just gonna create tab creating temp
+
+92
+00:05:49,990 --> 00:05:55,600
+and no passphrase if I wanted extra security create a passphrase and now if I look at what's in there
+
+93
+00:05:56,020 --> 00:06:01,750
+I've got my temp and temp pub and so the pub I'm gonna cap that right.
+
+94
+00:06:01,780 --> 00:06:06,720
+So temped up pub and they'll print out what that is this is everybody can see it including you.
+
+95
+00:06:06,720 --> 00:06:12,730
+I'm going to highlight all of that and then I'm going to go to get so I'm going to go get an ID get
+
+96
+00:06:12,750 --> 00:06:20,840
+a job I'm going to go into my user settings so settings and I'm gonna go to SS H and GP keys.
+
+97
+00:06:20,870 --> 00:06:24,490
+I'm going to add a new SS H key and this would be like What.
+
+98
+00:06:24,800 --> 00:06:31,790
+You know my home desktop or whatever and I drop that in so that key gets dropped in and then I add that
+
+99
+00:06:31,790 --> 00:06:33,250
+SS HQ I'm not going to do that.
+
+100
+00:06:33,290 --> 00:06:40,130
+I already have one but now what that enables when get hub has my public key is they could encrypt a
+
+101
+00:06:40,130 --> 00:06:44,840
+message and send it to me and nobody else in the world could decrypt it to decrypt it.
+
+102
+00:06:44,840 --> 00:06:47,600
+You have to have the private key.
+
+103
+00:06:47,630 --> 00:06:53,630
+So only I can decrypt it when I decrypt that message what GitHub would've sent me is usually some code
+
+104
+00:06:53,930 --> 00:06:59,510
+which I have to send back to them to let them know OK you know intended recipient was an actual recipient
+
+105
+00:06:59,990 --> 00:07:04,010
+and then they'll also send me a key they're gonna send me a symmetric key.
+
+106
+00:07:04,180 --> 00:07:07,720
+It's this symmetric key we'll both be able to encrypt and decrypt.
+
+107
+00:07:07,730 --> 00:07:13,750
+So we're gonna establish communication with asymmetric encryption public private key It's asymmetric
+
+108
+00:07:13,750 --> 00:07:15,710
+is the public key and the private key are different.
+
+109
+00:07:15,860 --> 00:07:18,170
+We're gonna establish communication with that.
+
+110
+00:07:18,170 --> 00:07:24,740
+And then once communication is established we're going to switch to symmetric key and a symmetric key
+
+111
+00:07:24,740 --> 00:07:29,780
+is going to be able to both encrypt and decrypt because you could only encrypt with the public key you
+
+112
+00:07:29,780 --> 00:07:35,120
+can't decrypt and you could only decrypt with the private key when we have symmetric.
+
+113
+00:07:35,120 --> 00:07:40,490
+We're going to be able to both encrypt and decrypt but only get hub and myself will have these keys
+
+114
+00:07:40,820 --> 00:07:46,760
+and the passing of that key was passed securely through encryption so nobody else could have intercepted
+
+115
+00:07:46,760 --> 00:07:46,900
+it.
+
+116
+00:07:47,150 --> 00:07:50,100
+Because we use asymmetric to pass that key and a code phrase.
+
+117
+00:07:50,240 --> 00:07:57,050
+And then I decrypted that the public encryption sent me the key in private encrypted private key decrypted
+
+118
+00:07:57,050 --> 00:08:02,990
+it and now we have what was decrypted what GitHub sent me is that symmetric key where we both have the
+
+119
+00:08:02,990 --> 00:08:03,830
+same key.
+
+120
+00:08:03,830 --> 00:08:08,660
+So now I can encrypt something to get hub send it back to get hub and we're being we're able to communicate
+
+121
+00:08:08,660 --> 00:08:15,080
+and secure encrypted fashion using cryptography encoding our messages and then decoding them when they
+
+122
+00:08:15,080 --> 00:08:21,890
+receive and nobody else can encrypt or decrypt encode or decode those messages because nobody else has
+
+123
+00:08:21,890 --> 00:08:22,700
+the same key.
+
+124
+00:08:22,700 --> 00:08:24,060
+There's only two of them.
+
+125
+00:08:24,110 --> 00:08:30,380
+And so that's kind of I think interesting and not all that widely known about asymmetric and symmetric
+
+126
+00:08:30,440 --> 00:08:35,690
+encryption asymmetric encryption is public private key and then symmetric encryption I guess maybe you
+
+127
+00:08:35,690 --> 00:08:37,850
+call private private key.
+
+128
+00:08:38,330 --> 00:08:40,980
+There's a saying shared secrets shared secret.
+
+129
+00:08:41,000 --> 00:08:43,610
+So that's my understanding of how that process works.
+
+130
+00:08:43,610 --> 00:08:45,680
+Do you have anything to add to that.
+
+131
+00:08:45,800 --> 00:08:46,700
+No.
+
+132
+00:08:46,700 --> 00:08:48,200
+Did that sound accurate.
+
+133
+00:08:49,070 --> 00:08:49,460
+Yeah.
+
+134
+00:08:49,490 --> 00:08:49,860
+All right.
+
+135
+00:08:49,880 --> 00:08:51,170
+For the most understandable.
+
+136
+00:08:51,170 --> 00:08:51,520
+Good.
+
+137
+00:08:52,160 --> 00:08:52,820
+So.
+
+138
+00:08:52,850 --> 00:08:57,350
+So now that we have that that set up we're gonna create a repo for this course.
+
+139
+00:08:57,380 --> 00:08:59,480
+I'm going to go to my profile.
+
+140
+00:08:59,960 --> 00:09:06,410
+I would also like to point out if you just search GitHub SS h the very first result you will get is
+
+141
+00:09:06,430 --> 00:09:13,640
+a guide for SS H including like how would you create a new stage key if you go to any of those it will
+
+142
+00:09:13,640 --> 00:09:18,710
+have tabs for whatever operating system you're on which will tell you the command for that operating
+
+143
+00:09:18,710 --> 00:09:21,410
+system which is both the same.
+
+144
+00:09:22,220 --> 00:09:22,580
+Yeah.
+
+145
+00:09:22,620 --> 00:09:26,590
+And if you're on Windows it's because it's still a safe kitchen.
+
+146
+00:09:26,600 --> 00:09:28,570
+It's just might be saved in a different location.
+
+147
+00:09:28,590 --> 00:09:28,950
+OK.
+
+148
+00:09:29,100 --> 00:09:29,600
+OK.
+
+149
+00:09:29,600 --> 00:09:31,450
+I thought it was much more complicated.
+
+150
+00:09:31,760 --> 00:09:36,740
+Yeah well installing a safe kitchen is a little more complicated but the command itself is the same
+
+151
+00:09:36,740 --> 00:09:38,460
+command across.
+
+152
+00:09:38,800 --> 00:09:44,660
+And if you have the emulator on windows where you could do Shell bash terminal commands you could just
+
+153
+00:09:44,660 --> 00:09:47,150
+use the Mac I put there.
+
+154
+00:09:47,150 --> 00:09:52,000
+So now we're gonna create a new repo for this course and to do that in and click new repository.
+
+155
+00:09:52,580 --> 00:09:53,960
+I think I'll save this for the next video.
+
+156
+00:09:53,960 --> 00:09:55,630
+I'd like to try to keep these videos short.
+
+157
+00:09:55,640 --> 00:10:03,450
+We're already coming up on LIVE minutes has had some good stuff in here about encryption and so all
+
+158
+00:10:03,800 --> 00:10:08,540
+understanding SS age is what I'll call this video and the next one will create or get a repo.
+
+159
+00:10:08,540 --> 00:10:10,010
+See you next video.

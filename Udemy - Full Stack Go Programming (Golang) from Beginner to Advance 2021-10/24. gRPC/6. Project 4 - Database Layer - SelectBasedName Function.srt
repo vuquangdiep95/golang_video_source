@@ -1,0 +1,255 @@
+1
+00:00:12,000 --> 00:00:18,360
+Headline welcome to the Golang programming language course in the previous session, we could define
+
+2
+00:00:18,360 --> 00:00:25,470
+the function name, select a student based idea, and in this session we want to create the function
+
+3
+00:00:25,470 --> 00:00:32,940
+to select all the students based the given name by sending a name to the database as the input parameter
+
+4
+00:00:32,940 --> 00:00:40,170
+of the select metal and all returning list of the students whose name is the same as the value sent.
+
+5
+00:00:40,920 --> 00:00:43,830
+So go to define this function.
+
+6
+00:00:43,980 --> 00:00:51,300
+Find set receiver for me to be assigned this method and the DB initialize arrested I.
+
+7
+00:00:51,310 --> 00:00:55,290
+So we write DB initialize or.
+
+8
+00:00:57,300 --> 00:01:00,360
+And the type is asked to resolve any.
+
+9
+00:01:02,830 --> 00:01:20,470
+Initialize the defined name of Method, select its Hugh Downs based name and define input parameter.
+
+10
+00:01:20,560 --> 00:01:27,280
+This method accept string value as name variable because it will return list of a student based name.
+
+11
+00:01:28,450 --> 00:01:34,600
+Name is strange and return type is two values first array.
+
+12
+00:01:34,600 --> 00:01:45,370
+All the students object, and second is an error value, so the right slice might allow a student in
+
+13
+00:01:45,640 --> 00:01:46,040
+error.
+
+14
+00:01:47,230 --> 00:01:54,880
+Now go to implement the body of function now by calling the DB initialize the value that we will have
+
+15
+00:01:54,880 --> 00:01:58,510
+access to the DB object from the strength of school package.
+
+16
+00:01:58,510 --> 00:02:04,510
+And through it, we can call the query method and executes the returns rolls.
+
+17
+00:02:04,720 --> 00:02:12,430
+Typically, as select, the arguments are for any placeholder parameter in the query query function
+
+18
+00:02:12,430 --> 00:02:20,830
+accepts estriol queries, statement as a strict parameter and returns to rows and URL object, so define
+
+19
+00:02:20,830 --> 00:02:25,150
+tool variable like roles and all roles.
+
+20
+00:02:26,990 --> 00:02:29,280
+And they're all calling.
+
+21
+00:02:29,300 --> 00:02:42,030
+He calls DV Initialize or dot and Dot query in this query.
+
+22
+00:02:42,050 --> 00:02:47,540
+We want to fetch list of students information whose name we have sent to the database as a query input
+
+23
+00:02:47,540 --> 00:02:48,130
+from her.
+
+24
+00:02:48,140 --> 00:03:02,240
+So we write select a song from the students their name equals, so the quotation marks and Sydney variable
+
+25
+00:03:02,240 --> 00:03:03,290
+as input value.
+
+26
+00:03:04,010 --> 00:03:05,060
+Now check entries.
+
+27
+00:03:05,060 --> 00:03:14,480
+That was so we right if they're not equals mean lot fattore.
+
+28
+00:03:17,040 --> 00:03:18,990
+That's her function.
+
+29
+00:03:20,100 --> 00:03:20,520
+OK?
+
+30
+00:03:20,940 --> 00:03:28,650
+One of the returned values of our mettle is a list of students, so we create an array of student etc.
+
+31
+00:03:28,690 --> 00:03:35,400
+to add to each new student that is read from the database, from the student data and at the end of
+
+32
+00:03:35,400 --> 00:03:39,540
+fetching data from the database, the students area is returned by the function.
+
+33
+00:03:40,600 --> 00:03:52,810
+So we write this to this column, equal area of modern dance students now put the return value of the
+
+34
+00:03:52,810 --> 00:03:58,210
+quality inside of Falou to access each of the rows by the next function.
+
+35
+00:03:58,600 --> 00:04:11,470
+So the wry blue rolls darts next function next function prepares the next result to roll for Reading
+
+36
+00:04:11,470 --> 00:04:12,490
+V desk and metal.
+
+37
+00:04:12,730 --> 00:04:16,420
+It returns true on success or false.
+
+38
+00:04:16,420 --> 00:04:21,850
+If there is no next is on a roll or an error happened while preparing it.
+
+39
+00:04:21,850 --> 00:04:24,430
+So we create an object from a student.
+
+40
+00:04:24,430 --> 00:04:30,580
+A strong student, Colleen equals model both a student
+
+41
+00:04:35,170 --> 00:04:36,160
+and colleague.
+
+42
+00:04:36,160 --> 00:04:39,970
+Eskin method on Rolls Resort to read recalls one by one.
+
+43
+00:04:40,480 --> 00:04:46,120
+Scan copies the columns in the car and throw into the various points that by destination.
+
+44
+00:04:46,330 --> 00:04:52,750
+The number of values in destination must be the same as the number of columns and rows defined, and
+
+45
+00:04:52,750 --> 00:04:55,270
+everybody invokes scan function.
+
+46
+00:04:55,870 --> 00:05:09,160
+Error equals rows dots function sit a student ideas point two percent The student thought ID
+
+47
+00:05:11,890 --> 00:05:21,070
+and sit a student name is going to ampersand student's name and set.
+
+48
+00:05:21,070 --> 00:05:31,360
+The student age is going to understand student age, Eskin Commerce, Collins read from the database
+
+49
+00:05:31,360 --> 00:05:34,270
+into defining common goal times in the special.
+
+50
+00:05:34,270 --> 00:05:49,850
+Times were white, but the school case, so check ED over status if or not equals mean sits log dot,
+
+51
+00:05:49,910 --> 00:05:57,970
+fattore or dot roll and continue.
+
+52
+00:06:01,240 --> 00:06:09,130
+Now we at each read record that contains a student to the list of the students by the append function
+
+53
+00:06:09,460 --> 00:06:14,410
+to append built in function at pins elements to the end of each slice.
+
+54
+00:06:14,920 --> 00:06:27,490
+So we write students equals happened students and students,
+
+55
+00:06:30,850 --> 00:06:41,440
+so return as students lease and Neal as return values of function per litre as students and.
+
+56
+00:06:43,100 --> 00:06:43,400
+Okay.
+
+57
+00:06:43,710 --> 00:06:46,400
+Reformat the code and save the project.
+
+58
+00:06:46,820 --> 00:06:53,540
+Now we could define the function name, select all the students by name that fits all students of a
+
+59
+00:06:53,540 --> 00:06:56,840
+student talent in person database by the given name.
+
+60
+00:06:57,140 --> 00:07:04,370
+In this session, we were able to design the database lower and create two functions in its role and
+
+61
+00:07:04,370 --> 00:07:11,720
+function to fetch a student based I.D. and one function to first niece of a student based on the given
+
+62
+00:07:11,720 --> 00:07:15,320
+name in order not to prolong the time of decision.
+
+63
+00:07:15,500 --> 00:07:19,820
+We will finish it and we will continue the content in the next session.
+
+64
+00:07:20,030 --> 00:07:20,600
+Goodbye.

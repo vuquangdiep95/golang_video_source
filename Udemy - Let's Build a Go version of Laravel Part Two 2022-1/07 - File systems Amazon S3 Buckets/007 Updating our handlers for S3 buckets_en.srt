@@ -1,0 +1,96 @@
+1
+00:00:00,990 --> 00:00:06,570
+So before we can try things out, we obviously have to update our handlers for S3, so I'm in the file
+
+2
+00:00:06,570 --> 00:00:12,840
+handlers thought go in my app and I'm going to scroll down till I find list f's right here.
+
+3
+00:00:13,260 --> 00:00:16,260
+So obviously here I need to copy one of these.
+
+4
+00:00:16,620 --> 00:00:21,480
+I don't have to copy and it's just simpler and paste it here and change this to S3.
+
+5
+00:00:22,200 --> 00:00:30,300
+And our file systems will be at the key S3 from H Dot APT file systems that map and we don't want to
+
+6
+00:00:30,300 --> 00:00:31,630
+cast it to a WebDAV.
+
+7
+00:00:31,650 --> 00:00:35,100
+We want to cast it to end as three file systems.
+
+8
+00:00:36,180 --> 00:00:40,620
+Three Enter a first type is a street, so that was easy enough.
+
+9
+00:00:40,920 --> 00:00:41,850
+So let's keep going.
+
+10
+00:00:41,850 --> 00:00:44,760
+That was for listing a file system.
+
+11
+00:00:46,370 --> 00:00:51,410
+Now, upload to a file system that displays the page, this is the handler we want right here.
+
+12
+00:00:51,530 --> 00:01:01,100
+So again, we'll come down here and copy WebDAV and paste it here and change that to S3 and change this
+
+13
+00:01:01,100 --> 00:01:04,519
+to S3 and cast it to.
+
+14
+00:01:05,630 --> 00:01:07,940
+That's three file systems Dog S3.
+
+15
+00:01:09,410 --> 00:01:10,460
+Are there any more?
+
+16
+00:01:10,700 --> 00:01:12,650
+There should be get files.
+
+17
+00:01:12,660 --> 00:01:14,760
+Upload is fun delete from file system.
+
+18
+00:01:14,780 --> 00:01:19,540
+That's the last one, I believe, so we'll copy WebDAV.
+
+19
+00:01:19,970 --> 00:01:20,870
+Paste it here.
+
+20
+00:01:21,170 --> 00:01:22,610
+Change that to S3.
+
+21
+00:01:23,390 --> 00:01:27,200
+Change this to S3 and cast it to the correct type.
+
+22
+00:01:27,710 --> 00:01:31,820
+S3 File Systems S3 and I believe that's it.
+
+23
+00:01:32,090 --> 00:01:32,540
+Perfect.
+
+24
+00:01:32,870 --> 00:01:38,270
+OK, so now we're ready to try things out, and we'll do that in the next lecture.
+

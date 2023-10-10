@@ -1,0 +1,164 @@
+1
+00:00:00,210 --> 00:00:03,110
+OK andiamo avanti e implementiamo i nostri clienti blah.
+
+2
+00:00:03,120 --> 00:00:08,330
+Quindi in questo elenco andremo a elencare tutti i blog che presto elencheranno i blog proprio qui.
+
+3
+00:00:08,340 --> 00:00:11,040
+E quindi andiamo avanti e implementiamo la nostra funzione totale.
+
+4
+00:00:11,060 --> 00:00:15,480
+Ora questo è il servizio di rifilatura, quindi il modo migliore per ricordare come fare le cose è guardare i
+
+5
+00:00:15,480 --> 00:00:19,890
+clienti della calcolatrice e trovare dove abbiamo fatto il servizio di rifilatura, quindi fare il servizio di taglio.
+
+6
+00:00:19,890 --> 00:00:21,260
+E qui abbiamo avuto un ciclo.
+
+7
+00:00:21,360 --> 00:00:22,320
+Quindi sembra molto bello.
+
+8
+00:00:22,320 --> 00:00:23,280
+Useremo questo.
+
+9
+00:00:23,310 --> 00:00:24,720
+Lo abbiamo usato molto.
+
+10
+00:00:24,720 --> 00:00:27,250
+Quindi lo inserirò nei miei blog client.
+
+11
+00:00:27,420 --> 00:00:34,520
+Quindi la prima cosa che dobbiamo fare è chiamare il nostro server, quindi diremo ai clienti che elencano LUGG verrà utilizzato un
+
+12
+00:00:34,540 --> 00:00:35,810
+contesto di background.
+
+13
+00:00:36,090 --> 00:00:38,940
+E poi in termini di richieste di lista dobbiamo crearlo.
+
+14
+00:00:39,210 --> 00:00:41,140
+Ma si scopre che è una richiesta vuota.
+
+15
+00:00:41,160 --> 00:00:44,040
+Quindi passerò semplicemente tra parentesi vuote.
+
+16
+00:00:44,040 --> 00:00:45,960
+Non abbiamo bisogno di alcuna opzione di chiamata, quindi stiamo bene.
+
+17
+00:00:46,470 --> 00:00:52,140
+Quello che usciremo da questa sarà un'aria o un flusso.
+
+18
+00:00:52,140 --> 00:00:55,240
+Quindi facciamolo e vediamo come possiamo andare.
+
+19
+00:00:55,410 --> 00:00:59,620
+Qui avremo un flusso d'aria che i soldati lo copiano qui dentro.
+
+20
+00:00:59,750 --> 00:01:00,010
+OK.
+
+21
+00:01:00,030 --> 00:01:00,900
+Eccellente.
+
+22
+00:01:01,320 --> 00:01:06,630
+Quindi ora possiamo dire Eric mentre chiama questo look ovviamente c'è ovviamente un errore
+
+23
+00:01:06,630 --> 00:01:13,310
+quando elenchiamo i blog e poi guardiamo a streambed ricevendo questo ci permette di ricevere un elemento dallo stream.
+
+24
+00:01:13,380 --> 00:01:18,570
+Ricorda se andiamo in onda, che è la fine del file, il che significa che il server ha chiuso un flusso in
+
+25
+00:01:18,570 --> 00:01:23,840
+streaming che abbiamo finito di leggere in modo da poter infrangere il codice, se così non fosse, spezziamo il ciclo for a destra.
+
+26
+00:01:23,880 --> 00:01:29,930
+Se no, se si verifica un errore Nundle, allora è successo qualcos'altro e poi abbiamo appena stampato
+
+27
+00:01:29,930 --> 00:01:37,050
+che sai sullo schermo, forse solo i risultati quindi diremo risultati che ottengono Blug perché qui otteniamo dei bug e
+
+28
+00:01:37,110 --> 00:01:40,180
+diciamo che è così per assicurarti blog live.
+
+29
+00:01:40,200 --> 00:01:45,570
+Così semplice quando possiamo semplicemente copiare e incollare il codice da altri esercizi che abbiamo fatto.
+
+30
+00:01:45,790 --> 00:01:48,130
+Quindi andiamo avanti ed eseguiamo questo codice adesso.
+
+31
+00:01:48,940 --> 00:01:50,100
+Guarda come funziona.
+
+32
+00:01:50,140 --> 00:01:55,870
+E sì, la cosa bella è che ora, dopo che la spina è stata eliminata, abbiamo un sacco di blog
+
+33
+00:01:55,870 --> 00:01:56,580
+diversi qui.
+
+34
+00:01:56,770 --> 00:02:00,280
+E così possiamo vedere tutti i contenuti e tutti gli ID dei blog e così via.
+
+35
+00:02:00,460 --> 00:02:04,260
+Quindi, qui abbiamo appena fatto una chiamata per il taglio dei servizi di un cliente, che è abbastanza carina.
+
+36
+00:02:04,480 --> 00:02:07,370
+E usando il commercializzato come il backend che è super cool.
+
+37
+00:02:07,630 --> 00:02:13,000
+Quindi è tutto per il crudo, ovviamente puoi giocare e provare a implementare più cose, ma spero che ti
+
+38
+00:02:13,000 --> 00:02:19,740
+dia un'idea di come dovresti integrare l'API di egier o PC o qualsiasi API con un database e nella prossima immagine voglio solo
+
+39
+00:02:19,740 --> 00:02:23,500
+fare qualcosa di veramente bello che userà l'Evans Steeleye solo per giocare intorno
+
+40
+00:02:23,500 --> 00:02:24,640
+ai piccoli pezzi.
+
+41
+00:02:24,730 --> 00:02:26,050
+Quindi vedi nella prossima foto.
+

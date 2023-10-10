@@ -1,0 +1,172 @@
+1
+00:00:00,390 --> 00:00:05,760
+Halo dan selamat datang di kuliah ini di kuliah ini kita akan mendefinisikan berkali-kali AAPI dan
+
+2
+00:00:05,760 --> 00:00:08,240
+API ini akan menjadi server pemangkasan API.
+
+3
+00:00:08,370 --> 00:00:09,830
+Jadi ini adalah sesuatu yang baru.
+
+4
+00:00:09,930 --> 00:00:14,600
+Ini akan membutuhkan satu permintaan salam Mooneyham yang berisi salam seperti sebelumnya.
+
+5
+00:00:14,790 --> 00:00:21,900
+Dan sebagai gantinya sekarang akan banyak kata dalam aliran respon berkali-kali besar dan setiap respons akan berisi
+
+6
+00:00:21,900 --> 00:00:23,070
+string hasil.
+
+7
+00:00:23,100 --> 00:00:27,990
+Jadi Anda mungkin terlihat sedikit membingungkan sekarang, tetapi mari kita lanjutkan dan menulis RBC ini dalam buffer
+
+8
+00:00:28,040 --> 00:00:28,940
+protokol kami.
+
+9
+00:00:29,100 --> 00:00:35,220
+Jadi saya akan membuka profil greedhead dan pada dasarnya di bagian bawah apa yang kita inginkan
+
+10
+00:00:35,730 --> 00:00:40,150
+adalah server streaming server yang mengalirkan PC kita dengan benar.
+
+11
+00:00:40,380 --> 00:00:46,660
+Jadi untuk ini kita akan mendefinisikan PC kita dan ini adalah bagian yang disebut salam berkali-kali.
+
+12
+00:00:46,660 --> 00:00:54,120
+Sekarang seperti yang Anda katakan sebelumnya ketika kami memberi nama RPG sesuatu ketika Anda mengatakan salam berkali-kali
+
+13
+00:00:54,120 --> 00:00:56,650
+permintaan apakah permintaan menerima pengembalian.
+
+14
+00:00:56,670 --> 00:01:01,500
+Dan di sinilah hal yang baru adalah karena ini server yang mengalirkan PC kita.
+
+15
+00:01:01,620 --> 00:01:08,450
+Apa yang dikembalikan adalah aliran sambutan berkali-kali.
+
+16
+00:01:08,460 --> 00:01:11,220
+Jadi izinkan saya tutup saja ini sehingga Anda mendapatkan tampilan penuh.
+
+17
+00:01:11,220 --> 00:01:12,120
+Kita mulai.
+
+18
+00:01:12,600 --> 00:01:18,880
+Jadi itulah yang perlu kita definisikan berkali-kali banyak kali meminta aliran balik.
+
+19
+00:01:18,900 --> 00:01:22,970
+Jadi saya menambahkan Stream kata kunci di sini yang disebut Server streaming.
+
+20
+00:01:23,140 --> 00:01:24,560
+Beri aku bot gadis itu.
+
+21
+00:01:24,600 --> 00:01:30,030
+Jadi sekarang kita benar-benar perlu mendefinisikan pesan-pesan ini dan ini hanya pesan buffer protokol biasa.
+
+22
+00:01:30,080 --> 00:01:33,500
+Seperti sebelumnya, kami akan menentukan banyak permintaan waktu.
+
+23
+00:01:33,870 --> 00:01:39,170
+Dan pesan ini sendiri membutuhkan salam seperti sebelumnya.
+
+24
+00:01:39,450 --> 00:01:48,040
+Dan kemudian kita mendefinisikan respon kelompok berkali-kali dan apa yang dikembalikan hanyalah hasil.
+
+25
+00:01:48,070 --> 00:01:48,820
+BAIK.
+
+26
+00:01:48,820 --> 00:01:50,580
+Sangat sangat mudah.
+
+27
+00:01:50,590 --> 00:01:54,800
+Satu-satunya perbedaan yang kami miliki dari sebelumnya adalah bahwa kami memiliki kata kunci streaming.
+
+28
+00:01:54,820 --> 00:02:01,060
+Jadi jelas kami bisa menggunakan permintaan sebagai tanggapan karena pesan-pesan ini hampir sama.
+
+29
+00:02:01,060 --> 00:02:06,940
+Tetapi perbedaannya adalah bahwa biasanya di PC kami kapan saja Anda miliki dan Anda adalah PC yang ingin Anda
+
+30
+00:02:06,940 --> 00:02:09,130
+buat permintaan baru dan jenis pesan respons.
+
+31
+00:02:09,250 --> 00:02:11,250
+Karena hal-hal ini dapat melayang seiring berjalannya waktu.
+
+32
+00:02:11,430 --> 00:02:12,080
+BAIK.
+
+33
+00:02:12,290 --> 00:02:16,290
+Jadi ini untuk definisi file buffer lokal.
+
+34
+00:02:16,300 --> 00:02:19,490
+Mari kita lanjutkan dengan membuat kode hanya untuk memastikan tidak ada yang berhasil.
+
+35
+00:02:19,690 --> 00:02:22,130
+Jadi saya menyalin baris itu ke editor saya.
+
+36
+00:02:22,450 --> 00:02:23,320
+Tempelkan.
+
+37
+00:02:23,440 --> 00:02:24,280
+Berhasil.
+
+38
+00:02:24,280 --> 00:02:29,260
+Jadi sekarang jika Anda pergi untuk menyapa orang-orang yang masuk dan cukup ketik berkali-kali seperti yang Anda
+
+39
+00:02:29,270 --> 00:02:32,360
+lihat di sini sehingga kode itu dihasilkan dengan benar.
+
+40
+00:02:32,440 --> 00:02:37,210
+Jadi itu untuk protokol tetapi untuk definisi hanya ingat satu-satunya hal yang kami lakukan di sini
+
+41
+00:02:37,210 --> 00:02:39,840
+adalah menambahkan aliran dan kami menambahkan RBC lain.
+
+42
+00:02:39,850 --> 00:02:41,440
+Jadi, sekali Anda mendapatkan hal yang sama.
+
+43
+00:02:41,590 --> 00:02:44,070
+Mari kita beralih ke kuliah berikutnya dan mengimplementasikan server.
+

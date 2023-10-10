@@ -1,0 +1,515 @@
+1
+00:00:00,150 --> 00:00:00,440
+Wait.
+
+2
+00:00:00,450 --> 00:00:01,080
+No I do.
+
+3
+00:00:01,080 --> 00:00:02,930
+I told you I'd throw away get hub accounts.
+
+4
+00:00:02,940 --> 00:00:05,060
+I mean I guess I do have access to our greater company.
+
+5
+00:00:05,160 --> 00:00:05,880
+Awesome.
+
+6
+00:00:07,080 --> 00:00:08,010
+Oh really.
+
+7
+00:00:08,010 --> 00:00:08,220
+Yeah.
+
+8
+00:00:08,230 --> 00:00:09,770
+We had one.
+
+9
+00:00:10,060 --> 00:00:10,390
+Oh yeah.
+
+10
+00:00:10,390 --> 00:00:11,160
+And we just see that.
+
+11
+00:00:11,190 --> 00:00:13,750
+Let's just see that this is how most people will see it right.
+
+12
+00:00:13,770 --> 00:00:14,760
+Mm hmm.
+
+13
+00:00:15,130 --> 00:00:16,180
+Let me know if you're thirsty.
+
+14
+00:00:16,190 --> 00:00:16,430
+Me.
+
+15
+00:00:16,470 --> 00:00:17,520
+Are you thirsty.
+
+16
+00:00:17,590 --> 00:00:17,950
+Water
+
+17
+00:00:24,790 --> 00:00:26,340
+maybe came to me.
+
+18
+00:00:26,600 --> 00:00:27,080
+Probably.
+
+19
+00:00:27,120 --> 00:00:32,330
+So now Daniel has logged in to and we're looking at Daniel's screen here on Windows.
+
+20
+00:00:32,340 --> 00:00:40,910
+But Daniel is logged into a kind of you know just get hub user account and and the user account here.
+
+21
+00:00:40,950 --> 00:00:44,160
+So this is he's no longer a collaborator from this user accounts.
+
+22
+00:00:44,160 --> 00:00:50,820
+This is the way most people will experience this repost we've kind of wanted to do it from get Hub Repository
+
+23
+00:00:51,360 --> 00:00:55,190
+where the person individuals not collaborators.
+
+24
+00:00:55,180 --> 00:01:00,280
+So if you could go to your username here you could see its greater Common's font.
+
+25
+00:01:00,300 --> 00:01:06,970
+Awesome is the name of this account and now he's also gone to ghost eleven go Lang project.
+
+26
+00:01:07,110 --> 00:01:12,510
+Now he's gonna fork this we're gonna do it as a fork and we're gonna start working on branches so take
+
+27
+00:01:12,510 --> 00:01:12,990
+it away.
+
+28
+00:01:13,000 --> 00:01:13,440
+So yeah.
+
+29
+00:01:13,440 --> 00:01:20,130
+One thing to note is this is what it looks like as a non collaborator versus as a collaborator.
+
+30
+00:01:20,300 --> 00:01:22,760
+There's very little difference here.
+
+31
+00:01:22,950 --> 00:01:25,330
+All the all the same tabs and such.
+
+32
+00:01:25,470 --> 00:01:26,870
+I could turn off my.
+
+33
+00:01:26,910 --> 00:01:32,380
+Yeah you say one looks like it's night turn I can turn off my dark dark appearance there.
+
+34
+00:01:32,400 --> 00:01:36,660
+So as you can see the changes are tiny.
+
+35
+00:01:36,660 --> 00:01:42,120
+My the one that's a collaborator has a suggestion to add a read me and that's about the only difference
+
+36
+00:01:42,120 --> 00:01:42,760
+there.
+
+37
+00:01:43,140 --> 00:01:49,430
+So that's because this project is public so old all the same options are available and I can clone this
+
+38
+00:01:49,470 --> 00:01:55,200
+but I wouldn't be able to push if I closed in this way so I can fork it by clicking this work button
+
+39
+00:01:55,820 --> 00:01:57,270
+and that will tell get hub to fork it.
+
+40
+00:01:57,300 --> 00:02:05,360
+So it's working the project can take not it's fairly fast and so now I've got very common spot awesome
+
+41
+00:02:05,480 --> 00:02:06,760
+slash going project.
+
+42
+00:02:07,130 --> 00:02:08,590
+And it knows it has a little note here.
+
+43
+00:02:08,600 --> 00:02:15,860
+It was forked from goes to heaven project and then at the terminal or you're going you're going to work
+
+44
+00:02:15,860 --> 00:02:21,950
+from the command prompt but you have to bash shell commands enabled there correct.
+
+45
+00:02:21,950 --> 00:02:24,140
+I've got to get installed to get SBN.
+
+46
+00:02:24,220 --> 00:02:30,370
+OK so so I've got all the standard get commands and so we're going to start to create a branch.
+
+47
+00:02:30,380 --> 00:02:37,790
+So you could you know maybe add your own file so let's do one where we add a file on a branch that's
+
+48
+00:02:37,790 --> 00:02:44,000
+just going to be pushed Uri Po and then let's do one where we add a file that will then be submitted
+
+49
+00:02:44,000 --> 00:02:46,220
+as a pull request to the main Ricoh.
+
+50
+00:02:46,490 --> 00:02:51,860
+And so for this first one let's just add a file and push it to your repo and we'll compare that to the
+
+51
+00:02:51,860 --> 00:02:53,070
+repo under.
+
+52
+00:02:53,080 --> 00:03:01,700
+So first let me delete my googling project folder here because I was the one under your other that was
+
+53
+00:03:01,700 --> 00:03:02,800
+that was the one clone dwarf.
+
+54
+00:03:02,810 --> 00:03:04,480
+If the goes to 11 again.
+
+55
+00:03:05,030 --> 00:03:05,900
+So now it's gone.
+
+56
+00:03:05,900 --> 00:03:08,230
+So if I do dir it's no longer there.
+
+57
+00:03:08,330 --> 00:03:09,530
+How did you delete that.
+
+58
+00:03:09,530 --> 00:03:13,800
+I just went to my death is on my desktop so it's like that was fast.
+
+59
+00:03:14,170 --> 00:03:19,400
+So we're on Windows to delete a folder from the command line is an incredibly well it's not incredibly
+
+60
+00:03:19,400 --> 00:03:21,810
+complicated but it's different enough.
+
+61
+00:03:21,860 --> 00:03:23,980
+I don't actually remember off the top my head.
+
+62
+00:03:25,100 --> 00:03:26,150
+The arm.
+
+63
+00:03:26,200 --> 00:03:27,550
+RF Yeah.
+
+64
+00:03:27,570 --> 00:03:28,910
+Lizzy It's the ads.
+
+65
+00:03:28,940 --> 00:03:30,480
+It's a lot easier.
+
+66
+00:03:30,680 --> 00:03:35,360
+So I'm not going to go with that stage because it goes to heaven because the greater common so far awesome
+
+67
+00:03:35,360 --> 00:03:43,760
+account does not have my s h set up some screens HD yes which allows me to use my username username
+
+68
+00:03:43,760 --> 00:03:45,220
+and password instead.
+
+69
+00:03:45,500 --> 00:03:48,430
+So get a clone.
+
+70
+00:03:50,820 --> 00:03:52,070
+Yeah the HD.
+
+71
+00:03:52,100 --> 00:03:53,820
+Yes you are.
+
+72
+00:03:55,620 --> 00:04:02,970
+Because this is a public this is a public project it does not require credentials to clone it.
+
+73
+00:04:02,970 --> 00:04:05,490
+So even though I didn't have to type it in at this point.
+
+74
+00:04:05,730 --> 00:04:08,550
+So now I need to create a file of some sort.
+
+75
+00:04:08,550 --> 00:04:19,010
+So I can if I just open up a text editor here and I just create a new file with it.
+
+76
+00:04:19,420 --> 00:04:23,720
+This is a sample file I say.
+
+77
+00:04:26,640 --> 00:04:35,500
+Over in the test coding project here they call it text to
+
+78
+00:04:38,740 --> 00:04:45,730
+now I can run the commands get status and I can see what I have to be in the actual folder get status
+
+79
+00:04:46,710 --> 00:04:50,520
+I can see the new file and I can get add Dutch capital a.
+
+80
+00:04:50,660 --> 00:04:54,810
+So now I get status it's ready and I can do.
+
+81
+00:04:55,220 --> 00:05:07,210
+Get a mint dash and added a new file these are your commands by the way it's like I get ad get come
+
+82
+00:05:07,210 --> 00:05:15,510
+and get push and get ad dash a or dash dash all in the passive use get ad dash dash on Daniel.
+
+83
+00:05:15,520 --> 00:05:19,990
+Be like why you just do dash capital they both work.
+
+84
+00:05:19,990 --> 00:05:26,080
+So now they've added If I get status I can see there's nothing to commit but your branch is ahead of
+
+85
+00:05:26,350 --> 00:05:30,010
+origin master origin just refers to wherever you cloned it from.
+
+86
+00:05:30,010 --> 00:05:35,100
+So in this case it's greater common off the Golden project by one commit.
+
+87
+00:05:35,110 --> 00:05:48,700
+And so now I can get push this this commit and it's through and I can refresh the page refresh or wherever
+
+88
+00:05:48,820 --> 00:05:54,890
+and there's the new file and this is this is under greater Commons font awesome going project.
+
+89
+00:05:55,080 --> 00:05:58,610
+Yes if I go to yes thank you if they go back to the original.
+
+90
+00:05:58,680 --> 00:06:00,360
+No they're not there.
+
+91
+00:06:00,430 --> 00:06:07,630
+And so if we wanted to add something to the original under goes to eleven then you need to do that on
+
+92
+00:06:07,630 --> 00:06:12,700
+a branch you can you can do it on this you can do it on this master is a branch.
+
+93
+00:06:12,880 --> 00:06:14,830
+So type in it technically.
+
+94
+00:06:14,830 --> 00:06:20,910
+So if I want to have this pushed over to the original I need to create a pull request.
+
+95
+00:06:21,370 --> 00:06:26,800
+And so I think I go to the pull request tab hit you or request
+
+96
+00:06:29,360 --> 00:06:37,080
+and so you can see it says base repository goes to eleven going project and head repository you can
+
+97
+00:06:37,080 --> 00:06:38,220
+see it's got a little error here.
+
+98
+00:06:38,230 --> 00:06:47,140
+So stuff from this end greater comments my awesome master is going to great goes to eleven master but
+
+99
+00:06:47,140 --> 00:06:50,780
+if you'd made a whole bunch of changes on a master then it's going to try to send them all over and
+
+100
+00:06:50,780 --> 00:06:55,490
+now where you want the individual branch you send one little thing over so that's one of the benefits.
+
+101
+00:06:55,720 --> 00:07:01,180
+So yeah I can get more than just master branch you can see you can select which one and you can also
+
+102
+00:07:01,180 --> 00:07:06,840
+select which one you're pushing it over to two if the head if the original has multiple branches.
+
+103
+00:07:07,330 --> 00:07:08,690
+That's pretty cool.
+
+104
+00:07:08,710 --> 00:07:11,650
+All right so go ahead and so.
+
+105
+00:07:11,680 --> 00:07:16,830
+So yeah once once you've you can see a little preview of what's being moved over and then when you read
+
+106
+00:07:16,830 --> 00:07:23,650
+each that create pull request and it'll ask you to describe your request if you are doing a poor request
+
+107
+00:07:23,650 --> 00:07:29,620
+to a public to an actual public open source project one as much detail as you can in here.
+
+108
+00:07:29,650 --> 00:07:36,940
+So here I to say I added in there example file.
+
+109
+00:07:36,940 --> 00:07:45,070
+So usually one more detail than that but this works to integrate or best now because he goes love and
+
+110
+00:07:45,070 --> 00:07:52,030
+great going project is that poor request has one pull request and as a collaborator I my system just
+
+111
+00:07:52,030 --> 00:07:57,430
+got an email saying there is a new poll request Todd probably also got an email saying as much just
+
+112
+00:07:57,430 --> 00:07:58,300
+now.
+
+113
+00:07:58,300 --> 00:08:05,830
+But now Todd can now go to this pull request tab and you'll see my new pull request and he'll be able
+
+114
+00:08:05,830 --> 00:08:08,810
+to say that you're you're a collaborator under this account.
+
+115
+00:08:08,880 --> 00:08:15,550
+Yes I'm a clerk so yeah I can go to my account where I'm logged in as me and I can refresh the page
+
+116
+00:08:16,600 --> 00:08:22,640
+I can see the poor request you can see here it is by Greer comments.
+
+117
+00:08:22,710 --> 00:08:32,190
+Awesome I made the comment there I can check what the permits were added a new file I can see the file
+
+118
+00:08:32,190 --> 00:08:41,040
+changes and then when I'm ready I can then go to merge port request which accepts the changes or if
+
+119
+00:08:41,040 --> 00:08:47,000
+I say it's if I say it's done just close the port request you send a message if you're close you can
+
+120
+00:08:47,130 --> 00:08:49,200
+you can cut out a comment closing comment do.
+
+121
+00:08:49,210 --> 00:08:52,840
+This makes no sense closed for class.
+
+122
+00:08:53,260 --> 00:08:54,930
+All right let's close it next.
+
+123
+00:08:55,710 --> 00:08:55,980
+Yeah.
+
+124
+00:08:56,010 --> 00:08:57,040
+Close it was close it.
+
+125
+00:08:57,070 --> 00:09:02,730
+Next we'll show we'll show branches everything you want and this is meaningless.
+
+126
+00:09:02,740 --> 00:09:07,390
+Those records that adds that this is meaningless and it close it.
+
+127
+00:09:07,490 --> 00:09:16,100
+And the original person my the greater comments can now see this comment with the closed.
+
+128
+00:09:16,180 --> 00:09:16,770
+All right great.
+
+129
+00:09:16,790 --> 00:09:18,730
+Next video we'll start working with branches.

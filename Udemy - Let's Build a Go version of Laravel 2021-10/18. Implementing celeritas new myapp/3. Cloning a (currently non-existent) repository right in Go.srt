@@ -1,0 +1,343 @@
+1
+00:00:01,480 --> 00:00:07,900
+So this time around, what we want to do is to write the code that will go and clone a remote git repository
+
+2
+00:00:08,740 --> 00:00:15,010
+and copy that into a folder, the contents of that repository into a folder that is named app name,
+
+3
+00:00:15,130 --> 00:00:17,290
+that thing we sanitized the last time around.
+
+4
+00:00:17,950 --> 00:00:24,190
+Now, just as a reminder, we're going to write code that tries to clone a non-existent git repository
+
+5
+00:00:24,220 --> 00:00:30,040
+and you can use a real git repository if you want to, but make sure it's a public repository, not
+
+6
+00:00:30,040 --> 00:00:30,850
+a private one.
+
+7
+00:00:30,880 --> 00:00:35,200
+There are some hoops you have to jump through if you're trying to clone a private repository, and we're
+
+8
+00:00:35,200 --> 00:00:36,360
+not going to cover that in this course.
+
+9
+00:00:36,370 --> 00:00:38,620
+That's beyond the scope of the things I want to do.
+
+10
+00:00:39,340 --> 00:00:40,060
+So let's get started.
+
+11
+00:00:41,050 --> 00:00:45,700
+So what I'll do is right here, I will, first of all, let the user know what's going on.
+
+12
+00:00:45,820 --> 00:00:53,320
+So I'll use my color package color dot green and I'll just say, and I'll prefix it with a tab.
+
+13
+00:00:53,320 --> 00:00:54,660
+So it's inserted a bit.
+
+14
+00:00:54,670 --> 00:00:57,790
+So Backslash T cloning
+
+15
+00:01:00,190 --> 00:01:01,100
+repository.
+
+16
+00:01:03,610 --> 00:01:10,480
+Now, as far as I know, there is nothing in the standard library in Go that will actually do what I
+
+17
+00:01:10,480 --> 00:01:11,290
+want to do next.
+
+18
+00:01:11,620 --> 00:01:16,790
+But fortunately, there's a very good public repository that we can use to go and clone things.
+
+19
+00:01:16,810 --> 00:01:20,940
+So let me switch to my web browser and this is the repository right here.
+
+20
+00:01:20,950 --> 00:01:23,000
+It's called Go Dash, get go to it.
+
+21
+00:01:23,020 --> 00:01:28,510
+And if you've never used it before and you Google around, you'll see there was a bit of a kerfuffle,
+
+22
+00:01:28,510 --> 00:01:32,710
+as we say in Canada, some kind of dispute about naming and so forth.
+
+23
+00:01:32,710 --> 00:01:35,560
+But that's all resolved, and the project is now being used.
+
+24
+00:01:35,560 --> 00:01:38,050
+As you can see, it's got a lots of stars and it works really well.
+
+25
+00:01:38,440 --> 00:01:40,600
+So we're going to use this because it's dead simple.
+
+26
+00:01:41,590 --> 00:01:46,870
+So let's go back to our idea and let's go get the necessary code.
+
+27
+00:01:49,270 --> 00:01:58,600
+So my terminal, I'll go get GitHub dot com slash go dash, get slash, go dash and get not yet get
+
+28
+00:01:59,020 --> 00:02:01,170
+slash v five.
+
+29
+00:02:01,180 --> 00:02:07,090
+And as I've said before, if version six is out, stick with version five for this course and upgrade
+
+30
+00:02:07,090 --> 00:02:07,870
+after the fact.
+
+31
+00:02:10,820 --> 00:02:12,170
+So that goes and gets it for us.
+
+32
+00:02:17,570 --> 00:02:17,930
+Perfect.
+
+33
+00:02:18,470 --> 00:02:23,570
+So now it's available now I can use it, assuming that Visual Studio code catches up to me relatively
+
+34
+00:02:23,570 --> 00:02:23,960
+quickly.
+
+35
+00:02:25,250 --> 00:02:30,500
+So I'm going to take this comment or this this command and put it below this comment where it belongs
+
+36
+00:02:31,640 --> 00:02:37,970
+and move it over and backspace a little bit just to make things a little clearer.
+
+37
+00:02:38,360 --> 00:02:38,720
+OK.
+
+38
+00:02:39,560 --> 00:02:40,850
+So how do we get cloning?
+
+39
+00:02:40,880 --> 00:02:42,170
+Well, it's actually pretty straightforward.
+
+40
+00:02:42,470 --> 00:02:47,360
+So what I'm going to call the function, I'm going to call plain clone from the get package.
+
+41
+00:02:47,570 --> 00:02:50,270
+It gives two things back, but I only care about the first one.
+
+42
+00:02:51,020 --> 00:02:55,970
+So I'll check for an error when I call from the Git package, which hopefully is this one right here?
+
+43
+00:02:56,840 --> 00:02:58,040
+No, it hasn't found it yet.
+
+44
+00:03:00,480 --> 00:03:02,070
+Well, I'll import it myself at a moment.
+
+45
+00:03:02,580 --> 00:03:06,250
+Get Dot Plane, Clone Capitol, see?
+
+46
+00:03:06,270 --> 00:03:14,880
+There it is found it could get dot plane clone and I'm going to clone into dot slash the current directory,
+
+47
+00:03:15,090 --> 00:03:20,250
+plus whatever the app name is, but that variable we sanitize last time around.
+
+48
+00:03:21,120 --> 00:03:23,850
+And the second parameter I'm going to hand is false.
+
+49
+00:03:24,060 --> 00:03:32,220
+And the third one is of type a reference to Typekit dot clone options right there.
+
+50
+00:03:32,730 --> 00:03:34,650
+And we're going to populate some fields in there.
+
+51
+00:03:35,220 --> 00:03:35,550
+OK.
+
+52
+00:03:36,720 --> 00:03:37,950
+So it didn't find it for me.
+
+53
+00:03:37,950 --> 00:03:38,730
+Of course it didn't.
+
+54
+00:03:39,270 --> 00:03:39,990
+That's what happened.
+
+55
+00:03:39,990 --> 00:03:42,660
+It did import it, but it didn't put the V5 at the end.
+
+56
+00:03:43,470 --> 00:03:43,790
+All right.
+
+57
+00:03:43,800 --> 00:03:45,510
+So that should fix it for me eventually.
+
+58
+00:03:46,290 --> 00:03:46,800
+And it did.
+
+59
+00:03:48,240 --> 00:03:50,700
+So the options for a clone options are simple.
+
+60
+00:03:50,820 --> 00:03:51,650
+What's the URL?
+
+61
+00:03:51,660 --> 00:03:52,410
+Where are we going to go?
+
+62
+00:03:52,440 --> 00:04:03,560
+And I'm going to go to a non-existent URL git at GitHub dot com slash TESOL or slash celebrities Dash
+
+63
+00:04:03,570 --> 00:04:10,800
+app Typekit, which is the full name to the non-existent git repository that will exist in a little
+
+64
+00:04:10,800 --> 00:04:11,100
+while.
+
+65
+00:04:11,970 --> 00:04:13,260
+And I'm going to read its progress.
+
+66
+00:04:13,680 --> 00:04:20,160
+I'm going to write it to OCR stdout so the user can see what's going on while the Get Clone is taking
+
+67
+00:04:20,160 --> 00:04:20,550
+place.
+
+68
+00:04:20,970 --> 00:04:27,780
+And I'm also going to put in depth one because over time the size of that repository might get very
+
+69
+00:04:27,780 --> 00:04:28,320
+large.
+
+70
+00:04:28,320 --> 00:04:33,810
+And if we don't put depth one, it will pull down to get repository and a whole lot of other things
+
+71
+00:04:33,810 --> 00:04:35,820
+from previous commits and so forth.
+
+72
+00:04:36,030 --> 00:04:36,930
+And I just want depth.
+
+73
+00:04:36,930 --> 00:04:43,500
+One Make it as small as I possibly can to make the download as fast as I possibly can and then check
+
+74
+00:04:43,500 --> 00:04:43,920
+for an error.
+
+75
+00:04:45,300 --> 00:04:52,800
+So if error is not equal to nil, then thinks it gracefully with an error, whatever the error is.
+
+76
+00:04:53,040 --> 00:04:53,340
+OK.
+
+77
+00:04:54,150 --> 00:04:54,660
+And that's it.
+
+78
+00:04:54,870 --> 00:04:57,000
+That really should take care of cloning it for us.
+
+79
+00:04:57,030 --> 00:05:02,730
+Now, if you want to try this out, you can put the URL to a correct or an existing public repository
+
+80
+00:05:02,760 --> 00:05:04,710
+here and just run it and see what happens.
+
+81
+00:05:05,430 --> 00:05:06,850
+But I'm not going to do that right now.
+
+82
+00:05:06,870 --> 00:05:08,730
+I use this package many, many times.
+
+83
+00:05:08,730 --> 00:05:10,290
+I'm pretty sure this is going to work.
+
+84
+00:05:10,680 --> 00:05:15,510
+So in the next lecture, I'll create a skeleton application and I will push that up to GitHub.
+
+85
+00:05:15,720 --> 00:05:19,020
+And then this will actually work and we can see what we got from that point.
+
+86
+00:05:19,350 --> 00:05:21,420
+So we'll take care of that in the next election.

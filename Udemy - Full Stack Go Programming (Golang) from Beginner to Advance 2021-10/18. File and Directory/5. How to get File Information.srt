@@ -1,0 +1,171 @@
+1
+00:00:14,470 --> 00:00:17,860
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:18,550 --> 00:00:23,500
+In the previous session, we talked about check if a file or directory exists.
+
+3
+00:00:23,920 --> 00:00:29,200
+And in this section, we want to talk about the other files and directories concept.
+
+4
+00:00:32,920 --> 00:00:35,580
+Get fine information and go land.
+
+5
+00:00:36,250 --> 00:00:40,360
+It's that function can be used to the influence of the file and go.
+
+6
+00:00:40,720 --> 00:00:50,260
+This function returns is fast, which can be used to get the name of the fine size of the file in bytes.
+
+7
+00:00:51,070 --> 00:00:56,710
+Modify time of the file and permission bits or mode of fine.
+
+8
+00:00:58,070 --> 00:01:05,720
+Now you can see the scene techs, this function takes in the named file and return fire and infrastructure,
+
+9
+00:01:05,990 --> 00:01:09,890
+which defines the utility method to get above information.
+
+10
+00:01:10,760 --> 00:01:16,490
+Now let's go to this school with program to illustrate how to get find information.
+
+11
+00:01:17,690 --> 00:01:21,420
+First, create a file and named it 10 30 60.
+
+12
+00:01:21,590 --> 00:01:27,350
+So define two variables like file and error calling equals.
+
+13
+00:01:27,620 --> 00:01:31,730
+Invoke, create function from always package or start.
+
+14
+00:01:32,150 --> 00:01:37,040
+Create function and set name 10 Dot T60.
+
+15
+00:01:38,360 --> 00:01:46,730
+Now you check the print message for us if there is not empty, if they're not equals to Neal.
+
+16
+00:01:48,980 --> 00:01:59,360
+So like the throttle and set, oh, now we want to write something to the file by the following his
+
+17
+00:01:59,360 --> 00:02:00,040
+statement.
+
+18
+00:02:00,080 --> 00:02:12,960
+So we write file dots, write a string and set a message as if string parameter, for the example,
+
+19
+00:02:12,960 --> 00:02:22,800
+is welcome to go programming language and set back slash.
+
+20
+00:02:22,850 --> 00:02:24,470
+And now we get this.
+
+21
+00:02:24,470 --> 00:02:31,070
+That's of the file using this that function, which returns defined infrastructure describing fine.
+
+22
+00:02:31,400 --> 00:02:42,510
+So first, we defined two variables like that, and a roll call equals invokes that function from with
+
+23
+00:02:42,680 --> 00:02:43,350
+the case.
+
+24
+00:02:43,360 --> 00:02:55,940
+Start, start and set name of fine tend to and check to print a message for us if the error is not empty,
+
+25
+00:02:56,330 --> 00:03:00,710
+if they're not equals mean.
+
+26
+00:03:03,280 --> 00:03:12,520
+Launched that baton and set off now we print estimates of the file by calling fine infrastructure functions
+
+27
+00:03:12,520 --> 00:03:14,440
+for the example for the term ashes.
+
+28
+00:03:14,480 --> 00:03:16,210
+We're right if.
+
+29
+00:03:18,560 --> 00:03:27,530
+Share person is back and and said this that got mode
+
+30
+00:03:30,200 --> 00:03:42,680
+and for the size of fine, we can size function if earth size person the bank is close and said it's
+
+31
+00:03:42,680 --> 00:04:01,580
+the that size and for the name, the coin name function from stats, if any person is back and said
+
+32
+00:04:01,580 --> 00:04:02,390
+is that?
+
+33
+00:04:04,180 --> 00:04:17,830
+Dot's name and for the modification time we call mod time fonts, and if if modification time person
+
+34
+00:04:17,890 --> 00:04:29,830
+is back is and sets its start that much time and finally close, define so five.
+
+35
+00:04:32,120 --> 00:04:38,390
+The clothes reform and they called Save the Project and execute the program.
+
+36
+00:04:41,620 --> 00:04:44,050
+We can see the output first.
+
+37
+00:04:44,140 --> 00:04:47,640
+We could create a file like 10:40.
+
+38
+00:04:48,610 --> 00:04:55,780
+Then we wrote the information inside it and then by calling the stealth function the access and object
+
+39
+00:04:55,780 --> 00:04:57,790
+from defined infrastructure.
+
+40
+00:04:57,790 --> 00:05:04,810
+And then we fetched defined information calling function, functional fine infrastructure from object,
+
+41
+00:05:05,200 --> 00:05:13,270
+so we can see television size, name and modification time in order not to prolong the time of decision.
+
+42
+00:05:13,480 --> 00:05:17,620
+We will finish it and we will continue the content in the next session.
+
+43
+00:05:17,860 --> 00:05:18,460
+Goodbye.

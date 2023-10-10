@@ -1,0 +1,139 @@
+1
+00:00:11,680 --> 00:00:16,960
+Hello and welcome to the Golang programming language course in the preview session.
+
+2
+00:00:17,170 --> 00:00:21,280
+We could define methods for implementing channels.
+
+3
+00:00:23,550 --> 00:00:24,570
+Indecision.
+
+4
+00:00:24,960 --> 00:00:31,410
+Finally, we will define our handler that we listen to the events of the channels.
+
+5
+00:00:32,670 --> 00:00:39,780
+The Loop keeps running infinitely and said it's the appropriate action based on the channel's event.
+
+6
+00:00:40,530 --> 00:00:47,700
+So we designed in metal to control this behavior named like wrong socket.
+
+7
+00:00:48,240 --> 00:00:57,600
+So we right fine set a receiver like config pointer of config
+
+8
+00:01:00,750 --> 00:01:02,670
+run socket.
+
+9
+00:01:12,240 --> 00:01:17,160
+And create a loop as a permanent listener for.
+
+10
+00:01:19,800 --> 00:01:27,990
+Now we manage the channel's behavior using the select comment, but different cases, so we try to select
+
+11
+00:01:31,350 --> 00:01:34,140
+and define our cases earlier.
+
+12
+00:01:34,620 --> 00:01:40,230
+We implemented a few methods for different channel behaviors that we will now use from them.
+
+13
+00:01:40,440 --> 00:01:47,460
+For example, suppose data is transferred to the registered land channel to implement it.
+
+14
+00:01:48,110 --> 00:01:55,110
+To the following case Set a name register
+
+15
+00:02:00,360 --> 00:02:05,970
+client colony equals send data to channel.
+
+16
+00:02:09,080 --> 00:02:09,970
+Config
+
+17
+00:02:12,410 --> 00:02:21,040
+dot register client now icon the corresponding method for each case in this case, for the registered
+
+18
+00:02:21,050 --> 00:02:21,830
+client chase.
+
+19
+00:02:22,010 --> 00:02:37,430
+The invoking registered line methods saw the right config dot register clients and set registered client
+
+20
+00:02:37,430 --> 00:02:41,990
+as argument for it, alleges the client.
+
+21
+00:02:43,850 --> 00:02:48,050
+Okay, now right case related to remove client
+
+22
+00:02:52,130 --> 00:03:08,090
+JS set and name like remove client calling E calls and send data to channel config dot.
+
+23
+00:03:08,090 --> 00:03:12,370
+Remove client calling and calling.
+
+24
+00:03:12,380 --> 00:03:15,170
+Now remove Client Smith for this case.
+
+25
+00:03:15,440 --> 00:03:19,520
+Config dot remove clients.
+
+26
+00:03:23,040 --> 00:03:29,160
+And said Ring of Clinton's argument for this method to remove plans.
+
+27
+00:03:33,830 --> 00:03:48,710
+And right Chase related to Message Exchange set a name like message data, message data he calls send
+
+28
+00:03:48,710 --> 00:04:01,550
+data to channel config, that message data caller and colleague message data's method for this case
+
+29
+00:04:01,820 --> 00:04:13,780
+config dot message data for it and set message data as argument for this message date.
+
+30
+00:04:17,120 --> 00:04:19,400
+Reformat the code and save the project.
+
+31
+00:04:21,740 --> 00:04:26,420
+Now you were able to manage channels control using Select.
+
+32
+00:04:26,960 --> 00:04:34,340
+In this case, we could make all the configuration for implementing the circuit layer in order not to
+
+33
+00:04:34,340 --> 00:04:35,900
+prolong the time of decision.
+
+34
+00:04:36,050 --> 00:04:40,190
+We will finish it and we will continue the content in the next session.
+
+35
+00:04:40,370 --> 00:04:40,910
+Goodbye.

@@ -1,0 +1,415 @@
+1
+00:00:01,150 --> 00:00:03,490
+So we're getting pretty close right now.
+
+2
+00:00:03,520 --> 00:00:06,550
+We have successfully seeded a random number generator.
+
+3
+00:00:06,580 --> 00:00:08,740
+We haven't used it yet, but we will very shortly.
+
+4
+00:00:09,670 --> 00:00:11,360
+We've printed out a welcome message.
+
+5
+00:00:11,440 --> 00:00:17,110
+We've created two channels that deal with the barbers, one for clients that the barber is waiting for,
+
+6
+00:00:17,110 --> 00:00:19,120
+and one when a barber is done for the day.
+
+7
+00:00:20,070 --> 00:00:23,910
+We created a type for barber shop and populated its various fields.
+
+8
+00:00:23,970 --> 00:00:30,090
+We've printed out this message and we can add barbers, and the barbers successfully go and check to
+
+9
+00:00:30,090 --> 00:00:31,770
+see if there's a client in the waiting room.
+
+10
+00:00:32,040 --> 00:00:34,680
+And if there's not, we know at least that they take a nap.
+
+11
+00:00:35,070 --> 00:00:36,650
+Now, we need to do this part.
+
+12
+00:00:36,750 --> 00:00:38,820
+Start the barber shop as a go routine.
+
+13
+00:00:38,820 --> 00:00:40,080
+And this is good.
+
+14
+00:00:40,080 --> 00:00:40,560
+Simple.
+
+15
+00:00:41,370 --> 00:00:45,720
+So what we're going to do, of course, you start a go routine, we'll just start start a routine with
+
+16
+00:00:45,720 --> 00:00:47,610
+a go funk like this.
+
+17
+00:00:48,300 --> 00:00:52,860
+And of course, we have to determine what are we going to do in this barber shop go routine?
+
+18
+00:00:53,010 --> 00:00:59,550
+And really, what we need to do is we need to make sure that the go routine stays open, at least this
+
+19
+00:00:59,550 --> 00:01:04,800
+amount up here on line 36 time open, which in our case right now is 10 seconds.
+
+20
+00:01:04,830 --> 00:01:05,610
+Well, that's easy.
+
+21
+00:01:06,300 --> 00:01:07,410
+We can do it like this.
+
+22
+00:01:07,740 --> 00:01:09,240
+And it's really simple for this part.
+
+23
+00:01:10,590 --> 00:01:16,740
+We simply do this time after and we look for time open.
+
+24
+00:01:17,880 --> 00:01:20,490
+So what we're doing is waiting for that to happen.
+
+25
+00:01:21,420 --> 00:01:27,630
+But we also, at this point, once the 10 seconds go by, we need to close the shop and we need at least
+
+26
+00:01:27,720 --> 00:01:29,490
+two channels to make that happen.
+
+27
+00:01:29,810 --> 00:01:30,040
+Okay.
+
+28
+00:01:30,060 --> 00:01:31,770
+So we're going to do fine tuning channels here.
+
+29
+00:01:32,940 --> 00:01:40,290
+We'll make a channel called Shop Closing, because remember, it's possible for people to show up before
+
+30
+00:01:40,290 --> 00:01:41,400
+the shop closes.
+
+31
+00:01:41,790 --> 00:01:45,840
+Find an available seat in the waiting room and wait in the rules.
+
+32
+00:01:45,840 --> 00:01:49,570
+Say that the barber can't go as long as there's somebody still in the waiting room.
+
+33
+00:01:49,590 --> 00:01:52,400
+So we need this channel and we'll make that equal to.
+
+34
+00:01:52,410 --> 00:01:53,550
+I don't need parentheses here.
+
+35
+00:01:53,550 --> 00:01:54,360
+I need an assignment.
+
+36
+00:01:54,360 --> 00:02:00,810
+Operator will make a channel of time book and then we'll have another one closed.
+
+37
+00:02:01,230 --> 00:02:04,900
+And that's a sign the value of again make channel book.
+
+38
+00:02:06,060 --> 00:02:12,600
+And what we'll do here is will block for the the length of time that this is supposed to be open.
+
+39
+00:02:13,080 --> 00:02:25,980
+And then we'll send to the shop closing channel we'll send true and then finally we can say closed is
+
+40
+00:02:25,980 --> 00:02:28,650
+assigned or is pushed the value of true as well.
+
+41
+00:02:29,460 --> 00:02:32,910
+Now, in between those two, there's one more thing I want to do.
+
+42
+00:02:33,390 --> 00:02:36,510
+I want to take care of closing the shop for the day.
+
+43
+00:02:36,540 --> 00:02:40,950
+So what I will do is call a function that doesn't exist yet on the shop type.
+
+44
+00:02:41,820 --> 00:02:49,290
+That shop variable we defined right up on line 51 a call a function called close shop for day.
+
+45
+00:02:49,500 --> 00:02:50,880
+And it doesn't take any parameters.
+
+46
+00:02:51,210 --> 00:02:54,030
+Now, let's go write that over in Barber Shop Echo.
+
+47
+00:02:55,170 --> 00:03:01,560
+At the very bottom of the file, we'll create a function with the receiver of sharp pointer to Barbershop
+
+48
+00:03:01,980 --> 00:03:04,230
+and we'll call this close shop for day.
+
+49
+00:03:04,510 --> 00:03:06,930
+It doesn't take any parameters at all.
+
+50
+00:03:06,930 --> 00:03:09,230
+That's going to do is prints and messages out and things like that.
+
+51
+00:03:09,240 --> 00:03:14,400
+So we'll say color dot cyan just to make it stand out.
+
+52
+00:03:15,570 --> 00:03:22,240
+Closing shop for the day we print that message.
+
+53
+00:03:22,890 --> 00:03:23,240
+Okay.
+
+54
+00:03:24,960 --> 00:03:29,760
+And after that, we close the clients channel shopped up clients chain.
+
+55
+00:03:30,510 --> 00:03:34,410
+So we can't accept any more clients because that is now closed.
+
+56
+00:03:34,770 --> 00:03:35,160
+Okay.
+
+57
+00:03:36,000 --> 00:03:39,510
+And here is where we set shop dot open equal to false.
+
+58
+00:03:40,890 --> 00:03:45,120
+So that field open on the type barbershop stored in the variable shop.
+
+59
+00:03:45,480 --> 00:03:47,010
+We're setting that defaults now.
+
+60
+00:03:48,970 --> 00:03:54,220
+And now the next thing we have to do is we have to wait until all the barbers are done.
+
+61
+00:03:54,580 --> 00:03:55,840
+And that's pretty easy, actually.
+
+62
+00:03:55,930 --> 00:03:56,350
+Okay.
+
+63
+00:03:56,890 --> 00:04:01,570
+Because when a Berber is done for the day, if you'll recall right here, we're sending the Sharpe Dot
+
+64
+00:04:01,570 --> 00:04:03,430
+Berbers done scanned the value of true.
+
+65
+00:04:03,820 --> 00:04:09,820
+So all we have to do, say four and I'll call this one a it's a sign the value of one.
+
+66
+00:04:09,910 --> 00:04:10,870
+It's a simple for loop.
+
+67
+00:04:11,560 --> 00:04:12,820
+We're going to go through this.
+
+68
+00:04:12,820 --> 00:04:14,710
+A is less than or equal to.
+
+69
+00:04:15,710 --> 00:04:16,280
+Shop.
+
+70
+00:04:16,790 --> 00:04:17,870
+Number of barbers.
+
+71
+00:04:17,870 --> 00:04:22,520
+We know how many barbers we have and we increment one every time through the loop a plus plus.
+
+72
+00:04:24,140 --> 00:04:26,990
+And inside of this, we just call.
+
+73
+00:04:27,800 --> 00:04:32,570
+We wait for shop dot barbers dungeon to get something.
+
+74
+00:04:32,840 --> 00:04:38,000
+So that will block until every one of the barbers has sent the dumb value.
+
+75
+00:04:38,540 --> 00:04:45,170
+The value of true to the barbers done channel field of the type barber shop steward in the variable
+
+76
+00:04:45,770 --> 00:04:46,190
+shop.
+
+77
+00:04:46,770 --> 00:04:49,970
+Okay, so this will block until every single barber is done.
+
+78
+00:04:50,600 --> 00:04:53,520
+And once every single barber is done, what do we do?
+
+79
+00:04:53,540 --> 00:04:54,380
+We close.
+
+80
+00:04:54,380 --> 00:04:55,100
+The barber is done.
+
+81
+00:04:55,100 --> 00:04:57,380
+Chain, close, shop.
+
+82
+00:04:57,380 --> 00:04:59,240
+Got barbers done, champ.
+
+83
+00:04:59,990 --> 00:05:01,070
+We don't want to leave that open.
+
+84
+00:05:02,330 --> 00:05:06,190
+And now we can print out a message color dot green.
+
+85
+00:05:07,640 --> 00:05:19,310
+And I'll just say the barber shop is now closed for the day and everyone has gone home.
+
+86
+00:05:20,840 --> 00:05:27,080
+Then I'll duplicate that and I'll change this all to hyphens just so it's easy to see in the output.
+
+87
+00:05:27,440 --> 00:05:27,770
+Okay.
+
+88
+00:05:29,170 --> 00:05:29,920
+Just cosmetic.
+
+89
+00:05:30,640 --> 00:05:32,890
+Absolutely not important for concurrency.
+
+90
+00:05:35,350 --> 00:05:35,680
+There.
+
+91
+00:05:37,120 --> 00:05:37,600
+Okay.
+
+92
+00:05:38,920 --> 00:05:41,380
+So at this point, if we go back to Main, don't go.
+
+93
+00:05:43,290 --> 00:05:44,050
+Let's run it again.
+
+94
+00:05:45,640 --> 00:05:46,030
+Go!
+
+95
+00:05:46,030 --> 00:05:46,840
+Run, Dot.
+
+96
+00:05:50,530 --> 00:05:52,060
+I should wait for 5 seconds.
+
+97
+00:05:53,020 --> 00:05:56,110
+And everything looks exactly the same as it did before.
+
+98
+00:05:56,530 --> 00:05:58,300
+Now, that seems a little odd, doesn't it?
+
+99
+00:05:58,780 --> 00:06:05,380
+Because if you look at this go funk here on the line 69, we have this line time after time open.
+
+100
+00:06:05,920 --> 00:06:08,800
+Why did that not wait for 10 seconds?
+
+101
+00:06:09,370 --> 00:06:12,490
+Well, it's because we haven't actually sent any clients to this yet.
+
+102
+00:06:12,550 --> 00:06:12,970
+Okay.
+
+103
+00:06:13,390 --> 00:06:18,730
+We actually need to start sending some clients and then here block until the barber shop is closed.
+
+104
+00:06:18,790 --> 00:06:21,940
+So in the next lecture, we'll start adding clients.

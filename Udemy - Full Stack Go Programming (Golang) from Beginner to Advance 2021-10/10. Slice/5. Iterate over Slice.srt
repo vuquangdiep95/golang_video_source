@@ -1,0 +1,215 @@
+1
+00:00:14,850 --> 00:00:20,400
+Hello and welcome to the golden programming language course in the previous sessions.
+
+2
+00:00:20,640 --> 00:00:26,070
+We talked about declaration and initialization as lysis and indecision.
+
+3
+00:00:26,100 --> 00:00:28,770
+We want to talk about the other nice this concept.
+
+4
+00:00:33,270 --> 00:00:35,070
+Iterate over a slice.
+
+5
+00:00:37,020 --> 00:00:45,930
+You can iterate over is nice using the following base first using faux loop, second using range and
+
+6
+00:00:45,930 --> 00:00:53,070
+follow third, using a blank identifier in falou and phones using for loop as buy.
+
+7
+00:00:54,060 --> 00:00:59,400
+Now go to the Escott program to illustrate how to use iterating over a slice.
+
+8
+00:01:00,690 --> 00:01:08,770
+Watching in this hamper, we want to talk about iterate over a slice by using for loop first creating
+
+9
+00:01:08,790 --> 00:01:09,630
+a slice.
+
+10
+00:01:12,150 --> 00:01:22,920
+This five column he calls this group rockets type is aimed at initialize value by 10, 20, 30, 40,
+
+11
+00:01:22,920 --> 00:01:25,610
+50, 60 and 70.
+
+12
+00:01:26,850 --> 00:01:34,650
+Now, iterate this slice using follow through the following four I call it equals zero.
+
+13
+00:01:35,430 --> 00:01:44,040
+I list the LEN of slice and I + +.
+
+14
+00:01:46,770 --> 00:01:54,030
+We put the condition here for continue to follow, so we use lean function for set the condition and
+
+15
+00:01:54,030 --> 00:02:02,090
+it means I less than seven now display the element of a slice in each increment, right?
+
+16
+00:02:02,100 --> 00:02:02,790
+FP
+
+17
+00:02:05,370 --> 00:02:15,300
+it's nice the square brackets and set the index I reformatted to save the projects and execute it.
+
+18
+00:02:18,240 --> 00:02:26,160
+Now we can see the output and we could display elements of a slice from 10 to 70 by full loop.
+
+19
+00:02:28,140 --> 00:02:29,750
+Now, do another example.
+
+20
+00:02:30,480 --> 00:02:32,820
+First clear of the last quote.
+
+21
+00:02:36,210 --> 00:02:41,100
+In this case, we want to iterate over this list using range in loop.
+
+22
+00:02:41,670 --> 00:02:45,630
+So do the following four index.
+
+23
+00:02:46,780 --> 00:02:52,360
+Common value Cullen equals range.
+
+24
+00:02:54,160 --> 00:02:56,920
+And it's nice variable here is it's nice.
+
+25
+00:02:59,740 --> 00:03:06,190
+And now he's been the index and value for each element of this nice if there.
+
+26
+00:03:08,800 --> 00:03:15,430
+Index he calls cent the and
+
+27
+00:03:18,040 --> 00:03:18,820
+value.
+
+28
+00:03:20,740 --> 00:03:35,470
+He calls her sandy and slush and and sets the very bad index and value reform at the school, save the
+
+29
+00:03:35,470 --> 00:03:37,330
+project and execute the code.
+
+30
+00:03:40,210 --> 00:03:40,600
+OK.
+
+31
+00:03:41,140 --> 00:03:48,370
+We can see the output we could display indexes and values of a nice elements from 10 to 17 by using
+
+32
+00:03:48,370 --> 00:03:49,170
+ranging for.
+
+33
+00:03:49,840 --> 00:03:51,400
+Now do another example.
+
+34
+00:03:52,180 --> 00:03:54,520
+First clear of the last code.
+
+35
+00:03:57,640 --> 00:04:03,160
+In this sample, we want to iterate over a slice using a blank identifier in for loop.
+
+36
+00:04:03,490 --> 00:04:15,400
+So do the following four underscore comma error value column equals branch in this slice validator.
+
+37
+00:04:17,530 --> 00:04:20,620
+Now write the value if
+
+38
+00:04:24,280 --> 00:04:37,630
+the value equals person and bank is this end and sets the value of the value before you make the call
+
+39
+00:04:38,170 --> 00:04:40,570
+and save and execute the code.
+
+40
+00:04:43,410 --> 00:04:44,970
+OK, we can't see the output.
+
+41
+00:04:45,480 --> 00:04:52,440
+We could display a slice elements from 10 to 70 by using range info look without an index.
+
+42
+00:04:55,170 --> 00:04:58,890
+Now, to another example, first clear last quote.
+
+43
+00:05:02,850 --> 00:05:08,190
+In this sandpit, we want to iterate over a slice by using faux loop as volume.
+
+44
+00:05:08,730 --> 00:05:17,880
+First, define the local variable as a counter for the example I call an equal zero as a counter and
+
+45
+00:05:17,880 --> 00:05:29,250
+right for loop flow range a slice and this fillet the value of a slice.
+
+46
+00:05:29,250 --> 00:05:33,840
+For the example, FP is sliced.
+
+47
+00:05:35,100 --> 00:05:36,780
+Yes, global markets index I.
+
+48
+00:05:38,930 --> 00:05:46,370
+Now, increase the counter after use print and dry eye plus plus reformat the code, save the project
+
+49
+00:05:46,370 --> 00:05:47,930
+and execute the program.
+
+50
+00:05:50,630 --> 00:05:58,370
+Now we can see the output and we could display its nice elements from 10 to 70 by using Falou as a wine
+
+51
+00:05:59,660 --> 00:06:00,410
+indecision.
+
+52
+00:06:00,590 --> 00:06:07,250
+We could iterate over a slice in several different ways in order not to prolong the time of decision.
+
+53
+00:06:07,280 --> 00:06:11,090
+We will finish it and we will continue the content in the next session.
+
+54
+00:06:11,150 --> 00:06:11,720
+Goodbye.

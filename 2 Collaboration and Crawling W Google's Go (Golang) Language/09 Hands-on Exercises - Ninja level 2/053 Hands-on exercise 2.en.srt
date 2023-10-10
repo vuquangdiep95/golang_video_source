@@ -1,0 +1,443 @@
+1
+00:00:00,450 --> 00:00:03,540
+Here for hands on Exercise number two.
+
+2
+00:00:03,540 --> 00:00:07,920
+We want you to working with the same code the built in hands on exercise number one.
+
+3
+00:00:07,920 --> 00:00:16,410
+So let me add that in there working with the same code that you've built and hands on exercise number
+
+4
+00:00:16,410 --> 00:00:17,820
+one.
+
+5
+00:00:17,820 --> 00:00:25,380
+Go get version 3 1.0 of our C dot I O four tax code does your code still run what is the folder structure
+
+6
+00:00:25,500 --> 00:00:33,150
+of that version on GitHub run these commands just to look it up and so pause this video go do this hands
+
+7
+00:00:33,150 --> 00:00:38,160
+on exercise positive you're going to do it when you're all done now y'all come on back on pause video
+
+8
+00:00:38,250 --> 00:00:43,530
+and we'll show you our solution which we're gonna do right now and since it's on my computer I guess
+
+9
+00:00:43,530 --> 00:00:45,220
+I'll be the one typing.
+
+10
+00:00:45,930 --> 00:00:53,070
+So we want to go get version 3 of our C I quote so I could open this up and I could take a look at what's
+
+11
+00:00:53,070 --> 00:00:59,220
+there it brings me here package quote I'm looking through it I don't see anything about versions here
+
+12
+00:00:59,250 --> 00:01:09,900
+I know I'm going to click this and go to get what's it called get yeah I'm got to get and and then.
+
+13
+00:01:10,350 --> 00:01:15,780
+But is there any way in here that I'd be able to see versions only if they added a sort of read me down
+
+14
+00:01:15,780 --> 00:01:16,660
+here or something right.
+
+15
+00:01:17,020 --> 00:01:21,300
+Yeah I don't think go down it doesn't really support it Yeah I don't think so I'm going to open up get
+
+16
+00:01:21,840 --> 00:01:28,770
+an inside get I can go down to releases and it releases I have these different versions so here's one
+
+17
+00:01:28,770 --> 00:01:36,660
+point five two which is what I have been using and I could see that right here one point five two and
+
+18
+00:01:36,690 --> 00:01:44,580
+so we look at one point five to browse those files and if I look at I came in here because I wanted
+
+19
+00:01:44,580 --> 00:01:50,490
+to look at I wanted to look at the folder structure so it's just here's what the folder structure looks
+
+20
+00:01:50,490 --> 00:01:57,220
+and one point five two and if I go back to releases and I look at version three and then Woops I gotta
+
+21
+00:01:57,270 --> 00:02:02,880
+click the little cache thing there click on that Click browse files here's what the folder structure
+
+22
+00:02:02,880 --> 00:02:05,080
+looks like we're now in folder V.
+
+23
+00:02:05,270 --> 00:02:10,650
+All right so version three as go mad go some and quote go.
+
+24
+00:02:10,800 --> 00:02:15,710
+And here at this root we have go mod quote go quote Tesco.
+
+25
+00:02:15,720 --> 00:02:20,370
+That's kind of interesting because we talked about adding the forward slash v three which if I want
+
+26
+00:02:20,370 --> 00:02:29,790
+to bring in a certain version so I'm going to go get a C I O for it slash quote forward slash v three
+
+27
+00:02:30,870 --> 00:02:31,820
+fact correct.
+
+28
+00:02:32,050 --> 00:02:32,930
+I get all that right.
+
+29
+00:02:33,130 --> 00:02:33,990
+I'm going to go get that.
+
+30
+00:02:33,990 --> 00:02:42,210
+And now if I go look at my go mod my good go mod now says Here is our CIO quote version 3 and I also
+
+31
+00:02:42,210 --> 00:02:43,760
+have this one there.
+
+32
+00:02:43,790 --> 00:02:46,540
+So I've got version 3 and that one.
+
+33
+00:02:47,100 --> 00:02:52,140
+And if I want to use that and we're going to come back to this folder structure discussion here in one
+
+34
+00:02:52,140 --> 00:02:58,960
+second but like this before we're like oh that's not necessary tab B correspond to folder and get hub
+
+35
+00:02:58,970 --> 00:03:00,510
+so we're gonna discuss that in a second.
+
+36
+00:03:00,870 --> 00:03:03,360
+But now I just want to change how I use this.
+
+37
+00:03:03,360 --> 00:03:09,510
+So I'm going to import version 3 so I'm going to do a forward slash there and do a v 3 and and then
+
+38
+00:03:09,510 --> 00:03:17,790
+quote glass let me just save all that and version 3 quote glass it's giving me a glass and not declared
+
+39
+00:03:17,790 --> 00:03:23,710
+by package quote so I'm going to look at version 3 there and version 3.
+
+40
+00:03:23,780 --> 00:03:26,130
+Well you need to go to the folder class.
+
+41
+00:03:26,160 --> 00:03:33,860
+I can eat glass and it doesn't hurt me because it's looking in there for version 3 the folder Mallow
+
+42
+00:03:33,890 --> 00:03:37,580
+concurrency glass V Three is the name but there we go.
+
+43
+00:03:37,580 --> 00:03:41,020
+Class V Three Class V Three.
+
+44
+00:03:41,310 --> 00:03:48,910
+And then I'm going to save that and then when I run it go run me and go all still runs and if I do my
+
+45
+00:03:48,910 --> 00:03:58,890
+go list dash M All I could see I have version 3 and version one of quote and if I do my go tidy doing
+
+46
+00:03:58,900 --> 00:04:03,150
+it lets the command go tidy go go my tidy.
+
+47
+00:04:03,220 --> 00:04:12,100
+There you go but you might go mod tidy and then list that all again I got rid of version one point five
+
+48
+00:04:12,110 --> 00:04:15,460
+two so cleaned it up because I'm using his version three now.
+
+49
+00:04:15,480 --> 00:04:17,680
+So now let's talk about that folder.
+
+50
+00:04:17,680 --> 00:04:22,710
+So it's actually compatibility backwards compatibility so that's why they did it this way here.
+
+51
+00:04:22,720 --> 00:04:23,100
+Yeah.
+
+52
+00:04:23,110 --> 00:04:33,970
+So version go version 1 9 7 1 10 3 and go and then go 1 11 with modules on is all are all capable of
+
+53
+00:04:33,970 --> 00:04:42,700
+detecting a following the slash v 3 and knowing this means the rid of the base repo as opposed to a
+
+54
+00:04:42,700 --> 00:04:50,440
+folder but if you're running go 1 9 6 and before or go 1 tend to end before it didn't know that.
+
+55
+00:04:50,440 --> 00:04:58,240
+And so since they have since go always tries to keep two versions up to date working when they first
+
+56
+00:04:58,270 --> 00:05:05,140
+added in Go Models and go 111 they had to make sure go 1 10 was still capable of running most of the
+
+57
+00:05:05,140 --> 00:05:07,150
+code so they added in.
+
+58
+00:05:07,420 --> 00:05:13,600
+So this these 3 folder was kind of a compatibility hook almost so that if you're using go 1 10 without
+
+59
+00:05:13,600 --> 00:05:21,490
+modules it's able to know our CIO slash quote slash v 3 means in that folder so that the import path
+
+60
+00:05:21,490 --> 00:05:23,750
+actually map to a folder path on get.
+
+61
+00:05:23,930 --> 00:05:31,000
+Yep but it's not required though because with go modules it's able to figure that out either way.
+
+62
+00:05:31,030 --> 00:05:38,560
+So given that modules is now fully working on all versions of go that are currently supported that's
+
+63
+00:05:38,560 --> 00:05:40,050
+not really required.
+
+64
+00:05:40,090 --> 00:05:47,680
+So best practice in the future is if you have major versions don't drop it meant to be three V for v
+
+65
+00:05:47,680 --> 00:05:52,060
+five because in your is going to have all the code sitting next to new code that's going to confuse
+
+66
+00:05:52,260 --> 00:05:57,940
+you the recommended way is actually to go for a whole branch just to create like a V to branch or something
+
+67
+00:05:58,000 --> 00:06:03,820
+that way you still have your v 1 code around and you can push like bug fix updates back to that old
+
+68
+00:06:03,820 --> 00:06:12,090
+stuff if you want to but then you're working on your new V V to branch with your new stuff so that branch
+
+69
+00:06:12,090 --> 00:06:14,630
+with that branch you've got M..
+
+70
+00:06:14,700 --> 00:06:14,940
+Right.
+
+71
+00:06:14,940 --> 00:06:16,110
+And this is version one.
+
+72
+00:06:16,500 --> 00:06:19,280
+And then we say oh version two Here's version to branch.
+
+73
+00:06:19,470 --> 00:06:19,720
+Right.
+
+74
+00:06:19,770 --> 00:06:20,350
+Yep.
+
+75
+00:06:20,430 --> 00:06:23,160
+And then do we eventually bring version two back in.
+
+76
+00:06:23,190 --> 00:06:24,260
+No.
+
+77
+00:06:24,330 --> 00:06:30,210
+So Virgin 2 just runs for it and we no longer even look at Master if you if you make it you got like
+
+78
+00:06:30,240 --> 00:06:32,050
+a bug fix or version for Master.
+
+79
+00:06:32,070 --> 00:06:37,380
+Someone's using master for whatever it is someone's still using version one they find some like security
+
+80
+00:06:37,380 --> 00:06:37,930
+for.
+
+81
+00:06:38,010 --> 00:06:44,850
+You decide to go patch it it's on a separate it's on master branch it you can make that bug fix separate
+
+82
+00:06:45,000 --> 00:06:51,870
+from your version to branch and so anyone who's still using version one can still get security updates
+
+83
+00:06:54,480 --> 00:07:02,850
+so master branch was version one doing branch off to version 2 and and then everything is running on
+
+84
+00:07:02,850 --> 00:07:06,180
+Version 2 but if we need to update the old version one we can.
+
+85
+00:07:06,190 --> 00:07:07,060
+Yeah.
+
+86
+00:07:07,340 --> 00:07:11,140
+And and in that so that would.
+
+87
+00:07:11,190 --> 00:07:16,830
+This has the same code as this when they first start out and we do that date here but then also merge
+
+88
+00:07:16,830 --> 00:07:18,310
+it back to master.
+
+89
+00:07:18,330 --> 00:07:20,200
+We would not merge version two back to back.
+
+90
+00:07:20,220 --> 00:07:25,320
+But just that one comment with the O if you want to fix oh if you if you want in Version 2.
+
+91
+00:07:25,380 --> 00:07:30,480
+In that case you probably Version 2 would presumably have a lot of code differences so it may not be
+
+92
+00:07:30,480 --> 00:07:38,260
+the same patch for why Virgin 2 may have different code so it may or may not necessarily be the same.
+
+93
+00:07:38,520 --> 00:07:42,720
+I thought the Master is always master so there's other ways of doing it.
+
+94
+00:07:42,720 --> 00:07:48,110
+The other option is instead of creating a version to branch you create a version one brand.
+
+95
+00:07:48,120 --> 00:07:48,720
+I like that.
+
+96
+00:07:48,740 --> 00:07:53,070
+I mean that's not going to make a lot more sense to my head already either one year like that was just
+
+97
+00:07:53,070 --> 00:07:56,630
+off to the side and everything still coming back to master which is now version 2.
+
+98
+00:07:56,720 --> 00:07:58,330
+Yeah OK I like that right.
+
+99
+00:07:58,530 --> 00:07:59,760
+So so enjoy it.
+
+100
+00:07:59,790 --> 00:08:01,560
+So yeah a major.
+
+101
+00:08:01,560 --> 00:08:11,190
+So the go going modules entry in the in the get hub we keep her going go says basically a major branch
+
+102
+00:08:11,360 --> 00:08:17,280
+for you have a branch for every major version or major sub directory so a folder like they've got there
+
+103
+00:08:18,870 --> 00:08:24,880
+just kind of in general so you can still update your old major versions if you find the need to.
+
+104
+00:08:24,890 --> 00:08:25,080
+All right.
+
+105
+00:08:25,080 --> 00:08:32,700
+So we'll put a link to this here and that is major branch update that go Monfils included v three at
+
+106
+00:08:32,700 --> 00:08:33,150
+the end of.
+
+107
+00:08:33,200 --> 00:08:35,500
+Yes so that's that's all the same stuff yeah.
+
+108
+00:08:35,720 --> 00:08:36,460
+Oh cool.
+
+109
+00:08:36,480 --> 00:08:38,160
+All right.
+
+110
+00:08:38,160 --> 00:08:40,290
+A little bit more about branches.
+
+111
+00:08:40,320 --> 00:08:43,320
+That's our solution for hands on exercise number two.

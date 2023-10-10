@@ -1,0 +1,220 @@
+1
+00:00:01,480 --> 00:00:06,160
+So in recent years, it's become increasingly common for different Web applications to allow people
+
+2
+00:00:06,160 --> 00:00:12,010
+to log on using not an account that's created on a specific site, but instead to use what's sometimes
+
+3
+00:00:12,010 --> 00:00:14,800
+called single sign on or social authentication.
+
+4
+00:00:14,830 --> 00:00:16,930
+There's lots of names for it, but the premise is simple.
+
+5
+00:00:17,380 --> 00:00:23,290
+I have an account on, say, Google or GitHub, and I'm going to use that account to log on to some
+
+6
+00:00:23,290 --> 00:00:24,130
+other website.
+
+7
+00:00:24,970 --> 00:00:28,990
+Now, obviously, there's a fair bit of magic that takes place behind the scenes in order for that to
+
+8
+00:00:28,990 --> 00:00:32,530
+happen, but it's pretty convenient and there's a lot of advantages to doing it.
+
+9
+00:00:33,280 --> 00:00:39,700
+For example, if someone signs onto my web application using their Google account, I know they have
+
+10
+00:00:39,700 --> 00:00:40,950
+a valid email address.
+
+11
+00:00:40,960 --> 00:00:47,140
+They haven't just made up a fake email address like Bill at Microsoft.com or whatever.
+
+12
+00:00:47,440 --> 00:00:51,280
+It's a real email address, and it's also very convenient for end users.
+
+13
+00:00:51,290 --> 00:00:53,270
+They don't have to remember a whole lot of passwords.
+
+14
+00:00:53,290 --> 00:00:57,040
+They just have to remember one password for whatever account they're using to sign up.
+
+15
+00:00:58,450 --> 00:01:04,840
+Now, single sign on or social authentication is very popular, and it's actually a little bit challenging
+
+16
+00:01:04,840 --> 00:01:05,590
+to implement.
+
+17
+00:01:06,250 --> 00:01:13,750
+Sign on for different services because most, most services have their own API and there's lots of similarities
+
+18
+00:01:13,750 --> 00:01:14,210
+between them.
+
+19
+00:01:14,230 --> 00:01:15,790
+But there's also little differences.
+
+20
+00:01:16,000 --> 00:01:22,510
+Configuration parameters The actual URL you call the API endpoint might be a little bit different.
+
+21
+00:01:22,690 --> 00:01:25,900
+So it can be challenging to implement them for lots of different services.
+
+22
+00:01:26,590 --> 00:01:32,860
+Fortunately, most programming languages go included actually have packages that make this a lot simpler,
+
+23
+00:01:33,460 --> 00:01:36,180
+and we're going to use a package in this course.
+
+24
+00:01:36,190 --> 00:01:38,830
+And the more we're going to use, it's right over here.
+
+25
+00:01:38,890 --> 00:01:39,970
+Let me go to my web browser.
+
+26
+00:01:40,720 --> 00:01:47,740
+It's called Murt Bates Slash Gothe, and if you scroll down, you'll see he supports or this project
+
+27
+00:01:47,740 --> 00:01:51,370
+supports lots of different providers, some I've never heard of.
+
+28
+00:01:51,940 --> 00:01:56,140
+But clearly there are lots to choose from here, and there's actually more supported than are listed
+
+29
+00:01:56,140 --> 00:01:56,770
+in the read me.
+
+30
+00:01:56,770 --> 00:02:00,040
+I think at least the last time I checked, but we're only going to use two.
+
+31
+00:02:00,070 --> 00:02:05,950
+We'll use GitHub and we'll use Google and the steps required to implement sign on using one of the other
+
+32
+00:02:05,950 --> 00:02:06,910
+providers support it.
+
+33
+00:02:07,390 --> 00:02:08,620
+There are very, very similar.
+
+34
+00:02:09,009 --> 00:02:10,210
+So let's get started.
+
+35
+00:02:10,509 --> 00:02:13,390
+Let's go down and look at how we install this package.
+
+36
+00:02:13,660 --> 00:02:16,330
+So what we have to do is use this go get command.
+
+37
+00:02:16,390 --> 00:02:17,230
+So I'll copy that.
+
+38
+00:02:18,840 --> 00:02:23,790
+And I'll go back to my I.D. and I'll open a terminal window.
+
+39
+00:02:24,450 --> 00:02:28,590
+And I don't want to be in the silver toss folder, which might seem counterintuitive to you because
+
+40
+00:02:28,590 --> 00:02:34,140
+we've been putting as much as we can into this hilarious package rather than the My App package.
+
+41
+00:02:35,130 --> 00:02:41,010
+But in this case, if you were following along, you can make off at the end of the last lecture and
+
+42
+00:02:41,010 --> 00:02:41,700
+tried things out.
+
+43
+00:02:42,210 --> 00:02:48,360
+And when we did that, it actually installed some views, for example, logging in jet and reset password.
+
+44
+00:02:48,870 --> 00:02:52,950
+But it also installed handlers and the handlers are right up here.
+
+45
+00:02:53,160 --> 00:03:00,460
+So handlers, we have this off handlers and this is where signing logs logic actually lives.
+
+46
+00:03:00,480 --> 00:03:02,940
+Celebrities actually installs that handler for us.
+
+47
+00:03:03,990 --> 00:03:10,440
+So what we're going to do is add that package Goss not in this alert householder, but instead right
+
+48
+00:03:10,440 --> 00:03:11,280
+here in my app.
+
+49
+00:03:11,430 --> 00:03:12,990
+So let me clear the screen.
+
+50
+00:03:13,080 --> 00:03:14,370
+Make sure I'm in the right folder.
+
+51
+00:03:14,370 --> 00:03:17,220
+I am, and I will paste that command and I'll go, get it.
+
+52
+00:03:19,450 --> 00:03:25,720
+And that adds the necessary entry in the gold mod file for my app, so that's installed.
+
+53
+00:03:25,870 --> 00:03:28,190
+And now we can start using it in the next lecture.
+
+54
+00:03:28,210 --> 00:03:33,460
+And as I said, we'll start with GitHub and Google, and I'll do GitHub first and Google after the fact.
+
+55
+00:03:33,730 --> 00:03:35,710
+So let's get started in the next lecture.
+

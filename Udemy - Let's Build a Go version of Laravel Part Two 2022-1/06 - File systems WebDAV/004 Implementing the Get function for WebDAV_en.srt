@@ -1,0 +1,220 @@
+1
+00:00:01,750 --> 00:00:07,660
+So the last function we want to implement for our WebDAV file system is to get function right here in
+
+2
+00:00:07,660 --> 00:00:08,650
+WebDAV Doggo.
+
+3
+00:00:08,830 --> 00:00:15,280
+So first thing we need to do as usual, is to get a client and that comes from calling don't get get
+
+4
+00:00:15,280 --> 00:00:15,940
+credentials.
+
+5
+00:00:16,960 --> 00:00:22,930
+And now I want to loop through all of the items that I receive as a very idec parameter at the end of
+
+6
+00:00:22,930 --> 00:00:23,650
+this function.
+
+7
+00:00:23,740 --> 00:00:29,890
+So four, don't care about the index, do care about the item, and that's populated by calling range
+
+8
+00:00:29,890 --> 00:00:30,370
+items.
+
+9
+00:00:32,560 --> 00:00:39,630
+Now what we're going to do inside this for loop is very similar to what we did in the SFTP get function.
+
+10
+00:00:39,640 --> 00:00:43,060
+And that is we're going to be opening some files and we want to close them.
+
+11
+00:00:43,420 --> 00:00:46,870
+So of course, the easiest way to do that is, again, to use an inline function.
+
+12
+00:00:47,020 --> 00:00:54,820
+So I'll populate the variable e r r by calling the inline function, which returns an error.
+
+13
+00:00:55,750 --> 00:00:58,060
+And then I'll have this return nil for now.
+
+14
+00:00:58,930 --> 00:01:04,150
+And then down here, you put in our two parentheses and we'll check for now.
+
+15
+00:01:04,420 --> 00:01:09,820
+If error is not equal to nil, then we just return the error.
+
+16
+00:01:10,780 --> 00:01:17,770
+And of course, that's just outside or just at the end of the four loop just before the closing parentheses.
+
+17
+00:01:18,160 --> 00:01:21,820
+And of course, the logic we want to do is all in here in this inline function.
+
+18
+00:01:22,660 --> 00:01:26,680
+So to make things readable, what I'm going to do is create a variable called WebDAV file path.
+
+19
+00:01:28,760 --> 00:01:32,320
+Call it whatever you want, but I think that's readable and I'll just make that equal to item, and
+
+20
+00:01:32,320 --> 00:01:39,160
+that makes it really clear what's going on here that I'll have a second variable local file path where
+
+21
+00:01:39,160 --> 00:01:40,210
+am I going to store things?
+
+22
+00:01:40,690 --> 00:01:44,140
+And that will be assigned the value of format as printout.
+
+23
+00:01:44,500 --> 00:01:51,760
+And my format string is just, as you might expect, percent as percent as the first substitution is
+
+24
+00:01:51,760 --> 00:01:54,910
+destination, which we received as a call to this function.
+
+25
+00:01:55,720 --> 00:01:59,110
+And the second one has to be just the file name of the current item.
+
+26
+00:01:59,170 --> 00:02:03,970
+So again, we use Path Dot Base and give it item, and that trims off everything.
+
+27
+00:02:03,970 --> 00:02:05,200
+That's not the file name.
+
+28
+00:02:05,560 --> 00:02:06,880
+So now I have these two variables.
+
+29
+00:02:07,750 --> 00:02:08,830
+What am I going to do with them?
+
+30
+00:02:09,100 --> 00:02:15,160
+Well, to start with, I'm going to create a variable called reader and check for an error when I call
+
+31
+00:02:15,160 --> 00:02:16,240
+from my client.
+
+32
+00:02:16,600 --> 00:02:23,140
+The method reads String and that gives us a reader, gives us an e-reader, or I'll read closer and
+
+33
+00:02:23,140 --> 00:02:23,650
+an error.
+
+34
+00:02:23,710 --> 00:02:32,170
+OK, I can use that, and I'm going to read WebDAV file past that file on the remote system and I check
+
+35
+00:02:32,170 --> 00:02:32,620
+for an error.
+
+36
+00:02:32,710 --> 00:02:37,090
+So if error is not equal to nil, I just return the error and we're all done.
+
+37
+00:02:37,390 --> 00:02:40,000
+OK, so that gives you my reader.
+
+38
+00:02:40,600 --> 00:02:43,750
+Now I need somewhere to write the contents of that reader.
+
+39
+00:02:44,020 --> 00:02:50,500
+So we'll create a file and we'll check for an error when we call Osako Create to create a file.
+
+40
+00:02:50,710 --> 00:02:57,310
+And I want to create local file path, which we just defined right up there online 88.
+
+41
+00:02:57,490 --> 00:03:01,000
+And I see a misspelled WebDAV and that will bother me endlessly.
+
+42
+00:03:01,000 --> 00:03:01,990
+So let me fix that.
+
+43
+00:03:05,500 --> 00:03:05,830
+OK.
+
+44
+00:03:07,280 --> 00:03:11,300
+Now we checked for an error, so I'll copy this error checking code and paste it right here.
+
+45
+00:03:12,050 --> 00:03:17,600
+And after that, we're going to call Defer Filed OK close, which is the whole reason that we're wrapping
+
+46
+00:03:17,600 --> 00:03:18,830
+everything in an inline function.
+
+47
+00:03:19,730 --> 00:03:24,290
+So now I have my reader, I have an empty file in my local file system, and all I have to do is to
+
+48
+00:03:24,290 --> 00:03:26,840
+copy the contents of the remote file to the local file.
+
+49
+00:03:27,080 --> 00:03:31,610
+Don't care about the number of bytes, do care about the error and we call Ioco Copy.
+
+50
+00:03:33,670 --> 00:03:37,690
+And we're going to copy into file the contents of reader.
+
+51
+00:03:38,830 --> 00:03:39,160
+OK.
+
+52
+00:03:39,850 --> 00:03:41,650
+And again, we'll paste it in our air check.
+
+53
+00:03:42,760 --> 00:03:44,410
+And that should be all we have to do here.
+
+54
+00:03:44,800 --> 00:03:51,490
+So that is our get function and we'll start testing things in the next lecture to make sure we get everything
+
+55
+00:03:51,490 --> 00:03:51,730
+right.
+

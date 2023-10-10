@@ -1,0 +1,644 @@
+1
+00:00:00,880 --> 00:00:05,560
+So let's get started implementing our Mineo file system, and we'll start with that one.
+
+2
+00:00:05,770 --> 00:00:06,160
+OK.
+
+3
+00:00:06,610 --> 00:00:13,090
+So right now, I'm looking at the file system start go file inside the Celebrity Sprocket project,
+
+4
+00:00:13,090 --> 00:00:15,010
+inside the file systems folder.
+
+5
+00:00:15,040 --> 00:00:21,190
+And as you can see, we want to implement this interface and that interface requires that we have these
+
+6
+00:00:21,190 --> 00:00:22,060
+four functions.
+
+7
+00:00:22,120 --> 00:00:22,840
+So let's get started.
+
+8
+00:00:23,740 --> 00:00:29,420
+And the first thing I'll do is I'll right click on the file systems folder and create a new directory.
+
+9
+00:00:29,440 --> 00:00:36,610
+I'm going to create this package, which I'll call Mineo File System.
+
+10
+00:00:37,030 --> 00:00:38,220
+Make sure I spelled that right.
+
+11
+00:00:38,230 --> 00:00:43,750
+I did create the folder inside of there, and what I'll do is create each of my file systems within
+
+12
+00:00:43,750 --> 00:00:45,530
+the file systems package.
+
+13
+00:00:45,730 --> 00:00:46,090
+OK.
+
+14
+00:00:46,870 --> 00:00:52,150
+And instead of that, I create a new folder inside Mineo File System and you file not any folder which
+
+15
+00:00:52,150 --> 00:00:52,750
+I'll call mine.
+
+16
+00:00:52,750 --> 00:00:57,490
+Ioco and Golan helpfully does the import for me.
+
+17
+00:00:59,230 --> 00:01:04,569
+Now we're going to be working with Mineo, and that means we need to import a couple of packages.
+
+18
+00:01:04,720 --> 00:01:09,010
+So I'll open my terminal and the first one I want is this one.
+
+19
+00:01:09,100 --> 00:01:17,970
+Go get GitHub dot com slash Mineo slash Mineo Dash Go slash movie seven and a version eight is out.
+
+20
+00:01:18,010 --> 00:01:22,210
+Please use version version seven for this course and then upgrade after the fact.
+
+21
+00:01:22,270 --> 00:01:27,880
+The reason being, as I'm sure you're aware, when you have a major release, it almost always entails
+
+22
+00:01:27,880 --> 00:01:28,960
+breaking changes.
+
+23
+00:01:28,960 --> 00:01:33,380
+And if you try to use version eight, when I'm using version seven, bad things will happen.
+
+24
+00:01:33,400 --> 00:01:36,310
+So let's just avoid that and stick with version seven for right now.
+
+25
+00:01:36,320 --> 00:01:37,210
+So I'll go get that.
+
+26
+00:01:38,200 --> 00:01:39,370
+I probably already have it.
+
+27
+00:01:39,370 --> 00:01:41,350
+I do, and then I'll get another one.
+
+28
+00:01:41,680 --> 00:01:47,890
+Same thing, but slash pcgg slash credentials, which we need for authentication and that might be imported
+
+29
+00:01:47,890 --> 00:01:49,270
+when you import version seven.
+
+30
+00:01:49,690 --> 00:01:50,770
+But I like to be sure.
+
+31
+00:01:51,580 --> 00:01:53,050
+So that goes and gets it for me.
+
+32
+00:01:54,880 --> 00:01:55,450
+And we're good.
+
+33
+00:01:56,410 --> 00:01:58,370
+So I'll hide my terminal now.
+
+34
+00:01:58,390 --> 00:02:03,970
+Very first thing I'm going to do is create a type which will use when we access this system type and
+
+35
+00:02:03,970 --> 00:02:09,490
+I'll call it Mineo with a capital M. So it's exported, it's just a struct, and it has a few fields.
+
+36
+00:02:09,639 --> 00:02:10,930
+The first one is the end point.
+
+37
+00:02:11,530 --> 00:02:12,910
+What are you going to connect to?
+
+38
+00:02:13,240 --> 00:02:14,320
+And that'll just be a string.
+
+39
+00:02:15,280 --> 00:02:18,840
+The second one will be the first part of authentication, which I'll call cheat.
+
+40
+00:02:18,940 --> 00:02:19,420
+OK.
+
+41
+00:02:19,960 --> 00:02:20,830
+And that's a string.
+
+42
+00:02:21,670 --> 00:02:23,320
+And it also requires a secret.
+
+43
+00:02:23,440 --> 00:02:26,410
+The other part of our authentication, and that also will be a string.
+
+44
+00:02:28,640 --> 00:02:31,850
+Next, use SSL now in production.
+
+45
+00:02:31,970 --> 00:02:32,750
+Presumably.
+
+46
+00:02:32,840 --> 00:02:39,950
+Hopefully, you'll be connecting to an encrypted end endpoint, something using SSL, but in development,
+
+47
+00:02:39,950 --> 00:02:43,420
+of course, we're probably not going to bother doing that because it's not necessary.
+
+48
+00:02:43,430 --> 00:02:44,600
+So I'll just make that a boolean.
+
+49
+00:02:46,950 --> 00:02:52,680
+And region, which isn't actually required for Mineo, I mean, it's required as a parameter, but they
+
+50
+00:02:52,680 --> 00:02:54,090
+don't I don't think they actually use it.
+
+51
+00:02:54,840 --> 00:02:58,800
+It's just to maintain compatibility with Amazon S3 buckets.
+
+52
+00:02:59,370 --> 00:03:00,840
+So that will be a string.
+
+53
+00:03:02,550 --> 00:03:04,500
+And what bucket do you want to connect to?
+
+54
+00:03:04,920 --> 00:03:06,270
+And again, that's a string as well.
+
+55
+00:03:07,290 --> 00:03:14,700
+So there now we have a type of format that and next we need to implement all of the necessary functions
+
+56
+00:03:14,700 --> 00:03:17,250
+that are specified back in filesystem scope.
+
+57
+00:03:17,280 --> 00:03:19,080
+And those are put get listed to.
+
+58
+00:03:19,510 --> 00:03:24,840
+OK, now before I do that, I'm going to create another function just to make my life easier.
+
+59
+00:03:24,960 --> 00:03:28,830
+It's a function and it has to have the receiver of a pointer to mean I.
+
+60
+00:03:29,130 --> 00:03:32,730
+So we have access to the necessary fields from that struct of that type.
+
+61
+00:03:33,750 --> 00:03:38,360
+I'm going to call this one get credentials, and I think I spell that right.
+
+62
+00:03:38,370 --> 00:03:38,730
+I did.
+
+63
+00:03:38,820 --> 00:03:44,400
+It takes no parameters and it returns a pointer to a Mineo Dot client.
+
+64
+00:03:45,300 --> 00:03:51,150
+OK, now every time we connect to that endpoint, we're going to have to authenticate, and I don't
+
+65
+00:03:51,150 --> 00:03:55,160
+want to bother rewriting that authentication logic over and over and over.
+
+66
+00:03:55,170 --> 00:03:58,930
+So I'll just put it in a function, and it's pretty easy to authenticate against me.
+
+67
+00:03:58,940 --> 00:04:04,230
+And I know we're going to get to returns to return values from a function, and the first one is our
+
+68
+00:04:04,230 --> 00:04:04,710
+client.
+
+69
+00:04:04,800 --> 00:04:06,060
+That's what we use to connect.
+
+70
+00:04:06,300 --> 00:04:07,950
+The second one is just checking for an error.
+
+71
+00:04:08,910 --> 00:04:17,230
+So we'll call Mineo Dot new, and that requires a few parameters actually to the first one is our endpoint,
+
+72
+00:04:17,250 --> 00:04:19,649
+and we have that from our receiver MDR endpoint.
+
+73
+00:04:20,519 --> 00:04:27,570
+The second one is a pointer to Mineo Dot options, and we'll just build that manually right in line.
+
+74
+00:04:27,780 --> 00:04:34,560
+Meanwhile, the options and we'll populate the necessary fields, and we definitely need the first one
+
+75
+00:04:34,560 --> 00:04:35,130
+krenz.
+
+76
+00:04:35,700 --> 00:04:39,690
+OK, and our credentials come this way.
+
+77
+00:04:40,110 --> 00:04:40,920
+Credentials.
+
+78
+00:04:43,820 --> 00:04:44,010
+L.
+
+79
+00:04:44,230 --> 00:04:55,750
+S Dot new static, v4, not v2, but v4 like that, and it requires a key, a secret and then an empty
+
+80
+00:04:55,750 --> 00:04:56,110
+string.
+
+81
+00:04:56,200 --> 00:05:02,590
+And we get our key from MKI, our receiver, our secret from EMD Secret, our receiver.
+
+82
+00:05:03,160 --> 00:05:04,420
+And the third one is a token.
+
+83
+00:05:04,510 --> 00:05:07,600
+Functionally, that means we're only authenticated use a key and a secret.
+
+84
+00:05:07,600 --> 00:05:09,290
+So that's sufficient for our purposes.
+
+85
+00:05:09,340 --> 00:05:10,510
+So we have to use that.
+
+86
+00:05:11,320 --> 00:05:16,630
+And the second thing we want is is this secure connection or not secure?
+
+87
+00:05:16,780 --> 00:05:19,420
+And again, from our receiver, don't use SSL.
+
+88
+00:05:21,130 --> 00:05:23,620
+So that gives me a client and potentially an error.
+
+89
+00:05:23,710 --> 00:05:25,690
+Now, if there's an error, I'm just going to lock it.
+
+90
+00:05:25,840 --> 00:05:26,860
+You do whatever you want.
+
+91
+00:05:27,160 --> 00:05:34,390
+If error is not equal to nil and I'll just log beer logged on print line the error, OK?
+
+92
+00:05:37,280 --> 00:05:39,560
+And finally, we return the client.
+
+93
+00:05:42,650 --> 00:05:44,630
+OK, so now I have my get credentials.
+
+94
+00:05:45,740 --> 00:05:50,440
+So let's take care of, first of all, putting a file on the remote file system.
+
+95
+00:05:50,450 --> 00:05:56,550
+So that's the first of the four functions we have to implement func with the receiver of M Pointer to
+
+96
+00:05:56,750 --> 00:05:57,320
+denials.
+
+97
+00:05:57,320 --> 00:05:59,300
+So we have access to the fields in the struct.
+
+98
+00:05:59,870 --> 00:06:00,830
+We'll call this one put.
+
+99
+00:06:01,730 --> 00:06:08,360
+And if you recall, if you recall back over here in file systems, put it has two parameters file name
+
+100
+00:06:08,360 --> 00:06:08,960
+and folder.
+
+101
+00:06:08,960 --> 00:06:11,450
+Both are strings, and it potentially returns an error.
+
+102
+00:06:11,600 --> 00:06:12,230
+That's easy enough.
+
+103
+00:06:13,100 --> 00:06:21,980
+So we want our file name and our folder, both of type string, and we're going to potentially return
+
+104
+00:06:21,980 --> 00:06:22,520
+an error.
+
+105
+00:06:23,480 --> 00:06:25,190
+Scroll up and give us some room here.
+
+106
+00:06:27,060 --> 00:06:34,080
+So when you're working with Mineo, you almost always work with context as well, because you might
+
+107
+00:06:34,080 --> 00:06:36,720
+need to cancel the operation if it doesn't work out.
+
+108
+00:06:36,900 --> 00:06:38,910
+And we do that the way we normally do and go.
+
+109
+00:06:39,960 --> 00:06:42,810
+That's what almost everyone calls context and cancel.
+
+110
+00:06:43,590 --> 00:06:48,480
+And those come from context, not with cancel.
+
+111
+00:06:50,100 --> 00:06:54,660
+And our parent context is just the background context, which is always available to us.
+
+112
+00:06:55,080 --> 00:06:55,740
+Context.
+
+113
+00:06:56,100 --> 00:06:58,440
+Background OK.
+
+114
+00:06:58,980 --> 00:07:00,450
+And then we defer cancel.
+
+115
+00:07:02,760 --> 00:07:04,260
+OK, so now we have our context.
+
+116
+00:07:05,700 --> 00:07:07,950
+Now we want to get the name of the object.
+
+117
+00:07:07,950 --> 00:07:09,240
+We're going to put up there now.
+
+118
+00:07:09,240 --> 00:07:10,140
+File name.
+
+119
+00:07:10,140 --> 00:07:17,010
+That first parameter that we have in our put function will usually be the full path name to the file
+
+120
+00:07:17,010 --> 00:07:17,760
+we want to put up.
+
+121
+00:07:17,880 --> 00:07:21,060
+But what we want, we want the name of the file we're putting out.
+
+122
+00:07:21,060 --> 00:07:29,760
+So we'll call that object name and we'll get the actual name from the full path using the path package
+
+123
+00:07:29,760 --> 00:07:35,790
+and go past on base, which is a really, really useful function and handed the parameter filing.
+
+124
+00:07:37,350 --> 00:07:45,660
+So if that path name happened to be slash user slash local slash, my file text Typekit base strips
+
+125
+00:07:45,660 --> 00:07:49,900
+off the first part and just gives me whatever the end of that half name is.
+
+126
+00:07:49,920 --> 00:07:51,600
+In other words, the file name itself?
+
+127
+00:07:51,690 --> 00:07:54,000
+Well, that's what I need now.
+
+128
+00:07:54,000 --> 00:08:00,090
+I need a client in order to make my connection to the endpoint, so client is assigned the value of
+
+129
+00:08:00,150 --> 00:08:00,870
+that function.
+
+130
+00:08:00,870 --> 00:08:03,330
+We just wrote import get credentials.
+
+131
+00:08:04,080 --> 00:08:05,960
+OK, so now I have the file name.
+
+132
+00:08:06,120 --> 00:08:07,200
+Now I have a client.
+
+133
+00:08:08,130 --> 00:08:09,930
+Now I can try to put it up there.
+
+134
+00:08:10,530 --> 00:08:15,900
+So to do that, I will say I'll create a variable, which I'm just going to call upload info because
+
+135
+00:08:15,900 --> 00:08:19,970
+that's the information getting back from the column about to make and potentially an error.
+
+136
+00:08:19,980 --> 00:08:26,970
+And they come from calling the client variable that I just created on Line 36 Dot.
+
+137
+00:08:27,330 --> 00:08:34,049
+The method I want is if put object right there, and that requires the context CTCs, which we declared
+
+138
+00:08:34,049 --> 00:08:35,010
+on line thirty two.
+
+139
+00:08:36,240 --> 00:08:43,470
+It also requires the bucket I want to put it into and that comes from the receiver AMD bucket and it
+
+140
+00:08:43,470 --> 00:08:44,159
+requires.
+
+141
+00:08:44,159 --> 00:08:45,390
+Where do you want to put this?
+
+142
+00:08:46,020 --> 00:08:53,970
+So I'm going to put this into a folder slash object name, so I'll just use Format Dot as print f,
+
+143
+00:08:55,650 --> 00:09:02,730
+and the format string is percent s slash percent s and the substitutions are folder.
+
+144
+00:09:02,910 --> 00:09:11,430
+The second parameter we get in this function and object name, and the next thing it requires is the
+
+145
+00:09:11,430 --> 00:09:15,390
+actual name of the file file name, which is the full path named to the file.
+
+146
+00:09:15,390 --> 00:09:22,470
+I'm putting up there and this is a long one, but it also requires an options which I'll just pass as
+
+147
+00:09:22,470 --> 00:09:23,250
+an empty option.
+
+148
+00:09:23,610 --> 00:09:28,800
+Denial Dot put object options and just leave it empty.
+
+149
+00:09:29,400 --> 00:09:32,940
+OK, so that's a long line.
+
+150
+00:09:33,270 --> 00:09:39,720
+But but those are the required parameters, so we'll check for an error if error is not equal to nil.
+
+151
+00:09:39,720 --> 00:09:46,950
+And since I'm just getting started a monologue, a few things I'll say logged crit line failed with
+
+152
+00:09:46,980 --> 00:09:54,810
+f put object just so I know what's going on, and then I'll print out the error logged out print long
+
+153
+00:09:55,920 --> 00:09:58,230
+error because things almost never work right the first time.
+
+154
+00:09:58,860 --> 00:10:00,810
+And finally logged on print line.
+
+155
+00:10:00,810 --> 00:10:02,360
+What did I get for uploading, though?
+
+156
+00:10:02,730 --> 00:10:07,560
+The return value upload info and I'll print out upload info.
+
+157
+00:10:08,010 --> 00:10:10,620
+OK, and then I'll return the error, but I'm going to go any further.
+
+158
+00:10:12,150 --> 00:10:14,400
+Otherwise, the return null.
+
+159
+00:10:19,970 --> 00:10:26,090
+OK, so that's the very first function of the four that we need in order to implement that interface.
+
+160
+00:10:26,180 --> 00:10:32,120
+Now this lecture is getting fairly long, so I'll pause here or stop here and pick it up with list in
+
+161
+00:10:32,120 --> 00:10:32,750
+the next lecture.
+

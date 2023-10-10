@@ -1,0 +1,343 @@
+1
+00:00:00,060 --> 00:00:00,360
+ĐƯỢC RỒI.
+
+2
+00:00:00,390 --> 00:00:03,340
+Vì vậy, bạn có thể thấy ở đây trong đề cương khóa học của chúng tôi chỉ giúp bạn đi đúng hướng.
+
+3
+00:00:03,390 --> 00:00:05,280
+Vì vậy, bạn đang theo dõi những gì chúng tôi đang học nơi chúng tôi đang học nó.
+
+4
+00:00:05,280 --> 00:00:12,600
+Chúng ta vừa tìm hiểu mã hóa SS H hoạt động trong Windows trên thiết bị đầu cuối, đây cũng là
+
+5
+00:00:12,600 --> 00:00:24,380
+được gọi là Bash, còn được gọi là Shell và trái ngược với dấu nhắc lệnh hoặc dấu nhắc CMT hoặc DOS.
+
+6
+00:00:24,390 --> 00:00:26,190
+Tôi đã nghe nói nó được gọi là tất cả những điều đó.
+
+7
+00:00:27,100 --> 00:00:27,310
+Vâng.
+
+8
+00:00:27,330 --> 00:00:34,620
+Windows cũng có các chương trình bắt chước sức mạnh nhưng về cơ bản, nó là một siêu bộ có vẻ như là chương trình sức mạnh.
+
+9
+00:00:34,650 --> 00:00:34,890
+Được rồi.
+
+10
+00:00:34,890 --> 00:00:38,460
+Vì vậy, bây giờ chúng ta sẽ tạo get repo cho khóa học này và chúng ta sẽ sao chép nó.
+
+11
+00:00:38,490 --> 00:00:45,090
+Vì vậy, tôi sẽ đi tới kho lưu trữ mới, nhấp vào trung tâm, nó sẽ đưa tôi đến màn hình này.
+
+12
+00:00:45,090 --> 00:00:48,640
+Tôi sẽ đặt tên cho kho lưu trữ của mình.
+
+13
+00:00:48,780 --> 00:00:54,320
+Vì vậy, tôi sẽ gọi đây là dự án go lay và going project.
+
+14
+00:00:54,330 --> 00:00:55,250
+Tôi nghĩ điều đó tốt.
+
+15
+00:00:55,350 --> 00:00:57,450
+Đi dự án.
+
+16
+00:00:58,200 --> 00:00:58,730
+Vâng.
+
+17
+00:00:58,970 --> 00:01:00,030
+Yeah, được thôi.
+
+18
+00:01:00,030 --> 00:01:04,200
+Và bây giờ tôi sẽ không bỏ qua bất cứ thứ gì như thế. Tôi sẽ tạo kho lưu trữ, vì vậy hãy nhấp vào Tạo
+
+19
+00:01:04,260 --> 00:01:05,080
+kho.
+
+20
+00:01:05,620 --> 00:01:09,640
+Và bây giờ điều này được tạo ra thiết lập nhanh nếu bạn đã làm điều này trước đây.
+
+21
+00:01:09,750 --> 00:01:11,770
+Tôi đã đạt được SSA.
+
+22
+00:01:11,820 --> 00:01:13,980
+Có, tôi muốn đảm bảo rằng tôi có SSA H.
+
+23
+00:01:14,000 --> 00:01:15,860
+Tôi sẽ sao chép tất cả của người đàn ông đó.
+
+24
+00:01:15,890 --> 00:01:16,610
+Nhìn thấy.
+
+25
+00:01:16,800 --> 00:01:22,210
+Và sau đó đi đến thiết bị đầu cuối của tôi và ở đâu đó trong thiết bị đầu cuối của tôi, tôi nghĩ rằng tôi sẽ đặt cái của mình vào và chúng ta sẽ
+
+26
+00:01:22,470 --> 00:01:25,640
+tham gia vào các mô-đun vì các mô-đun là mới.
+
+27
+00:01:25,800 --> 00:01:33,840
+Và vì các mô-đun là mới nên chúng tôi muốn cung cấp cho bạn một số kiến ​​thức về điều đó để bạn có thể sử dụng
+
+28
+00:01:33,840 --> 00:01:37,040
+các mô-đun sẽ sử dụng các mô-đun go trong khóa học này nếu bạn chưa biết.
+
+29
+00:01:37,050 --> 00:01:37,830
+Cái đó thật tuyệt.
+
+30
+00:01:37,830 --> 00:01:39,020
+Chúng tôi sẽ dạy trong một giây.
+
+31
+00:01:39,180 --> 00:01:45,960
+Nhưng điều đó có nghĩa là cách cũ và đi tạo không gian làm việc là bạn thực sự phải đi đến không gian làm việc.
+
+32
+00:01:45,960 --> 00:01:50,820
+Có một biến môi trường đường dẫn đi được đặt thành không gian làm việc đi bên trong không gian làm việc đi của bạn, anh ta có một
+
+33
+00:01:50,820 --> 00:01:56,430
+nguồn nằm trong thư mục gói bên trong thư mục nguồn thường có một số loại khoảng cách tên sẽ
+
+34
+00:01:56,430 --> 00:02:02,430
+tách mã của tôi khỏi mã của người khác và sau đó là không gian tên và thường là khi người dùng miền đặt tên cho một số
+
+35
+00:02:02,430 --> 00:02:08,550
+sắp xếp lại một cái gì đó dọc theo những dòng đó và trong chừng mực nó có thể là nguồn get hub dot com của tôi
+
+36
+00:02:08,550 --> 00:02:13,590
+tên người dùng đi đến 11 và sau đó gạch chéo tên repo là nơi tôi tạo kho lưu trữ nhưng bây giờ
+
+37
+00:02:13,590 --> 00:02:20,880
+Tôi có thể tạo Tôi có thể tạo các thư mục nơi tôi làm việc trên các dự án đang di chuyển ở bất kỳ đâu trên máy tính của mình và chúng tôi chỉ cần
+
+38
+00:02:20,880 --> 00:02:26,130
+phải tạo các mô-đun go để hoạt động trong đó và vì vậy chúng tôi sẽ giới thiệu cách thực hiện điều đó trong giây lát nhưng điểm chính
+
+39
+00:02:26,130 --> 00:02:32,850
+về điều này là tất cả những gì tôi có thể làm là về điểm này là tất cả để nói rằng tôi có thể đặt repo của mình ở bất cứ đâu
+
+40
+00:02:32,850 --> 00:02:39,390
+Tôi muốn trên máy tính của mình, nó không còn phải ở trong không gian làm việc đi được xác định bởi đường dẫn đi nếu bạn có
+
+41
+00:02:39,390 --> 00:02:45,480
+các dự án kế thừa go pass vẫn hoạt động nhưng các mô-đun go bạn có thể đặt nó ở bất cứ đâu nên tôi sẽ truy cập
+
+42
+00:02:45,480 --> 00:02:50,230
+tài liệu và trong tài liệu tôi sẽ tạo dự án này.
+
+43
+00:02:50,230 --> 00:02:54,990
+Vì vậy, chúng tôi sẽ tạo bản sao và tôi đoán trước khi làm điều đó, tôi sẽ chỉ làm như vậy để tôi có thể thấy
+
+44
+00:02:54,990 --> 00:02:58,620
+những gì trong đó và sau đó chúng ta sẽ xem mọi thứ đã thay đổi như thế nào và vì vậy tôi sẽ làm điều đó.
+
+45
+00:02:58,690 --> 00:03:04,700
+S LA và đó là ở đó và tôi sẽ thực hiện bản sao của mình và sao chép dự án này mà bạn là
+
+46
+00:03:04,700 --> 00:03:09,840
+tất cả đều là một bản sao và vì vậy nó sắp bị hỏng và dự án sẽ nhận được và nói rằng bạn đã sao chép nó vào tài khoản của mình
+
+47
+00:03:09,840 --> 00:03:15,480
+kho lưu trữ và nếu tôi thực hiện SLA của mình bây giờ, tôi sẽ có dự án ngay tại đó.
+
+48
+00:03:15,480 --> 00:03:25,550
+Vì vậy, nếu tôi đi vào dự án đang thực hiện CD đó và tôi tạo một tệp kiểm tra bắt đầu tt và tôi chỉnh sửa phần mở tệp đó
+
+49
+00:03:25,560 --> 00:03:31,630
+trình chỉnh sửa và chỉ cần nhập bất kỳ tên nào của nó đánh vần đúng điều khiển X để lưu nó, vâng, lưu nó vào đó và
+
+50
+00:03:31,650 --> 00:03:32,670
+lối ra.
+
+51
+00:03:32,670 --> 00:03:37,320
+Và bây giờ nếu tôi đạt được trạng thái đúng, tôi đã có bài kiểm tra đó.
+
+52
+00:03:38,130 --> 00:03:42,630
+Tôi chỉ đảm bảo rằng tôi đã thực sự chuyển sang dự án xây dựng LSA LA Tôi đã nhận được thư mục của mình
+
+53
+00:03:43,020 --> 00:03:51,320
+Mình có đến file text không hiểu sao tạo ra hình như khi test win text và text.
+
+54
+00:03:51,320 --> 00:03:53,390
+Được rồi vì vậy tôi sẽ thoát khỏi bài kiểm tra.
+
+55
+00:03:53,430 --> 00:03:54,590
+Chúng ta đi thôi.
+
+56
+00:03:54,670 --> 00:03:56,070
+Và cảm ơn.
+
+57
+00:03:56,100 --> 00:03:59,360
+Đó là nơi lập trình cặp là tuyệt vời.
+
+58
+00:03:59,730 --> 00:04:08,970
+Và bây giờ tôi sẽ thực hiện get add Dash mà tôi đã thấy và lấy tệp kiểm tra commit dash đầu tiên và sau đó get
+
+59
+00:04:08,970 --> 00:04:10,260
+xô.
+
+60
+00:04:10,320 --> 00:04:16,170
+Và vì vậy tôi sẽ thấy điều này hiển thị trên repo của tôi ngay bây giờ.
+
+61
+00:04:16,170 --> 00:04:21,480
+Vì vậy, nếu tôi quay lại repo của mình và chỉ cần nhấn cái này, nó sẽ làm mới và bây giờ mọi thứ đã được kết nối trong
+
+62
+00:04:21,500 --> 00:04:23,850
+tập tin của tôi được đẩy lên.
+
+63
+00:04:23,940 --> 00:04:24,610
+Vậy là tốt rồi.
+
+64
+00:04:24,750 --> 00:04:26,520
+Và đó là thiết lập một repo.
+
+65
+00:04:26,520 --> 00:04:27,930
+Đây sẽ là repo cho khóa học.
+
+66
+00:04:27,930 --> 00:04:33,280
+Vì vậy, nếu bạn muốn thêm vào phần này hoặc trước hết, bạn có thể muốn sao chép nó xuống máy của mình.
+
+67
+00:04:33,280 --> 00:04:36,870
+Vì vậy, bạn có tất cả mã vào thời điểm bạn sao chép nó, sẽ có rất nhiều mã trong đó, chúng tôi chỉ
+
+68
+00:04:36,870 --> 00:04:39,200
+bắt đầu và.
+
+69
+00:04:39,440 --> 00:04:44,280
+Và sau đó, nếu bạn muốn thêm vào kho lưu trữ này hoặc thậm chí nếu bạn muốn đóng góp cho khóa học ở quy mô lớn hơn
+
+70
+00:04:44,280 --> 00:04:53,510
+bằng cách nào họ gọi đó là quản trị viên của một repo ở độ dài 0 cộng tác viên cộng tác viên
+
+71
+00:04:53,520 --> 00:04:54,930
+Chúa tể chiến tranh.
+
+72
+00:04:55,080 --> 00:05:00,930
+Seth a jet Tôi có repo này bất cứ thứ gì bạn muốn gọi nó nếu bạn muốn trở thành người khác đánh giá
+
+73
+00:05:01,260 --> 00:05:09,150
+kéo các yêu cầu và chấp nhận những yêu cầu mà chúng tôi hoàn toàn cởi mở với điều đó vì cuộc sống trở nên bận rộn nhưng nếu bạn biết bạn
+
+74
+00:05:09,300 --> 00:05:12,320
+có thời gian bạn muốn có thể đóng góp cho cộng đồng.
+
+75
+00:05:12,660 --> 00:05:13,290
+Điều đó thật tuyệt vời.
+
+76
+00:05:13,290 --> 00:05:18,120
+Hoặc nếu bạn muốn thực hiện các yêu cầu kéo như ồ đây là một điều khác hoặc đóng góp một ví dụ khác
+
+77
+00:05:18,120 --> 00:05:21,230
+tập tin như đây là một cách khác để làm điều đó cho mọi người trong lớp.
+
+78
+00:05:21,240 --> 00:05:22,820
+Hãy nhìn vào cách này.
+
+79
+00:05:22,950 --> 00:05:28,260
+Vui lòng thêm vào bài đăng lại này các yêu cầu kéo và chúng tôi sẽ hoàn toàn theo dõi điều đó nhiều nhất có thể
+
+80
+00:05:28,260 --> 00:05:34,120
+chúng tôi có thể và chúng tôi hoan nghênh sự trợ giúp thêm nếu có bất kỳ ai khác muốn đóng góp vào việc giám sát điều đó.
+
+81
+00:05:34,230 --> 00:05:38,700
+Vì vậy, đó là tất cả những gì tôi phải nói về việc tạo repo và video tiếp theo chúng ta sẽ nhảy vào cành cây
+
+82
+00:05:38,750 --> 00:05:46,770
+nhưng tôi đã làm tất cả các cuộc nói chuyện và chỉ cần làm mọi thứ nóng lên, làm nóng Daniel và trong
+
+83
+00:05:46,770 --> 00:05:50,700
+video tiếp theo chúng ta sẽ xem xét các nhánh để chúng ta đề cập đến điều đó.
+
+84
+00:05:50,800 --> 00:05:54,570
+Điều đó chưa bao giờ được đề cập trong các lớp học của tôi vì tôi muốn đảm bảo rằng bạn có bất cứ điều gì
+
+85
+00:05:54,570 --> 00:05:56,360
+bạn muốn và biết.
+
+86
+00:05:56,400 --> 00:05:58,890
+Được rồi, hãy xem trong video tiếp theo.

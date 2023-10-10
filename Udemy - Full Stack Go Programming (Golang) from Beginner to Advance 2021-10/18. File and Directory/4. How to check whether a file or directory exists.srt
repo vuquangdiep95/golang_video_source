@@ -1,0 +1,175 @@
+1
+00:00:12,790 --> 00:00:18,970
+Hello and welcome to the golden programming language course in the previous session, we talked about
+
+2
+00:00:18,970 --> 00:00:21,490
+rename, file or folder and go Lanc.
+
+3
+00:00:21,880 --> 00:00:27,250
+And in this session, we want to talk about the other files and directories concept.
+
+4
+00:00:31,060 --> 00:00:34,360
+Check either a file or directory exists.
+
+5
+00:00:35,140 --> 00:00:43,720
+It's that function and is not exist, function can be used to check whether a particular file or directory
+
+6
+00:00:43,960 --> 00:00:50,560
+exists or not as the function returns a finding for describing the named fine.
+
+7
+00:00:51,100 --> 00:00:54,580
+If there is an error, it will be off time pass.
+
+8
+00:00:54,590 --> 00:00:57,820
+Or now you can see the syntax.
+
+9
+00:00:59,640 --> 00:01:06,750
+Is not exist, function returns a Boolean, indicating whether the error is known to report that the
+
+10
+00:01:06,750 --> 00:01:08,970
+file or directory does not exist.
+
+11
+00:01:09,360 --> 00:01:12,780
+Now you can see the syntax of is not exist.
+
+12
+00:01:13,410 --> 00:01:19,920
+Now let's go to this school program to illustrate how to check if a file or directory exists.
+
+13
+00:01:21,600 --> 00:01:28,620
+First, we use the ISTAT function, which returns defined info is structured, describing fine if this
+
+14
+00:01:28,620 --> 00:01:30,390
+function returns an error.
+
+15
+00:01:30,510 --> 00:01:37,650
+We use the E's not exist to determine if the error is caused by the fact that the directory already
+
+16
+00:01:37,650 --> 00:01:38,160
+exists.
+
+17
+00:01:38,550 --> 00:01:50,790
+So first defined to vary event like find info and enrolled calling equals invalid stat function from
+
+18
+00:01:50,790 --> 00:01:51,780
+all this package.
+
+19
+00:01:51,780 --> 00:01:52,110
+O.
+
+20
+00:01:52,110 --> 00:01:54,600
+S Dot stats
+
+21
+00:01:58,170 --> 00:02:02,430
+and set file name for the example 10.
+
+22
+00:02:06,330 --> 00:02:08,160
+Now, right, that is not exist.
+
+23
+00:02:08,160 --> 00:02:13,860
+Function is not text function returns a Boolean, indicating whether the error is known to report that
+
+24
+00:02:13,870 --> 00:02:16,410
+the file or directory does not exist.
+
+25
+00:02:16,800 --> 00:02:31,440
+So if Invoke is not expulsion from all aspects, OS dog is not exist and set a all go to the bot, his
+
+26
+00:02:31,440 --> 00:02:31,980
+statement.
+
+27
+00:02:32,340 --> 00:02:38,880
+In this case, if is not exist, function return a true value, write a statement based on the fact
+
+28
+00:02:38,880 --> 00:02:40,410
+that the file does not exist.
+
+29
+00:02:40,950 --> 00:02:51,180
+So from the large package that photog and set a message like backslash, a file
+
+30
+00:02:53,910 --> 00:02:56,100
+does not exist
+
+31
+00:02:58,980 --> 00:02:59,430
+now.
+
+32
+00:02:59,430 --> 00:03:07,920
+Display defined in variable that describes the file structure by print and function from like package
+
+33
+00:03:08,130 --> 00:03:18,960
+la dah print and set fire info as arguement saved the project and execute the program.
+
+34
+00:03:23,630 --> 00:03:32,120
+Now we can see the output, the these is fine is not available, so the program enters the eve block
+
+35
+00:03:32,370 --> 00:03:36,980
+and an arrow related to absence of the fine is displayed.
+
+36
+00:03:38,280 --> 00:03:42,540
+We are already doing these to check if a folder exists or not.
+
+37
+00:03:43,020 --> 00:03:59,130
+So change the fine name to a folder and change the message folder and see it is valid for all the info
+
+38
+00:03:59,550 --> 00:04:08,100
+and change your folder info reformat format the code save the project and again execute the program.
+
+39
+00:04:11,610 --> 00:04:18,900
+Now we can see down that these are folder does not exist and the program into the if block and an error
+
+40
+00:04:18,900 --> 00:04:21,660
+related to the absent of the folder is display.
+
+41
+00:04:22,050 --> 00:04:29,790
+So we were able to check the existence or not existence of a file or folder using the ISTAT and is not
+
+42
+00:04:29,790 --> 00:04:34,170
+exist functions in order not to prolong the time of decision.
+
+43
+00:04:34,380 --> 00:04:38,460
+We will finish it and we will continue the content in the next session.
+
+44
+00:04:38,730 --> 00:04:39,300
+Goodbye.

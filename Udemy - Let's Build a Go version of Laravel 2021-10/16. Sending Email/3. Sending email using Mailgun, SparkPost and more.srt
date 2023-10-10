@@ -1,0 +1,719 @@
+1
+00:00:01,410 --> 00:00:04,110
+So we seem to have SMTP mail set up.
+
+2
+00:00:04,230 --> 00:00:06,870
+Of course, we're not sure if it works yet, but we'll get to that eventually.
+
+3
+00:00:07,710 --> 00:00:14,730
+But just as a reminder, all the values that you see up here in this type mail, the vast majority of
+
+4
+00:00:14,730 --> 00:00:21,210
+these come from over here in our in our own file, in my app.
+
+5
+00:00:21,390 --> 00:00:25,600
+And you can see here we have some TV host username, password, port, so on and so forth.
+
+6
+00:00:25,620 --> 00:00:32,040
+And I've set mine to default values for local development, and we also have this section mail settings
+
+7
+00:00:32,040 --> 00:00:33,440
+for API services.
+
+8
+00:00:33,450 --> 00:00:35,340
+And you don't want to add three values there.
+
+9
+00:00:35,410 --> 00:00:38,850
+I've copied them and I'm going to paste them in the sense in you watching me type them.
+
+10
+00:00:39,720 --> 00:00:45,810
+They are Maler underscore API and that will be one of Spark Post or SendGrid or Mail Gun.
+
+11
+00:00:46,200 --> 00:00:49,890
+The API key and the URL you have to use to call that API.
+
+12
+00:00:49,950 --> 00:00:53,100
+So put those in there and you can leave them empty for now because you're not going to get to them for
+
+13
+00:00:53,100 --> 00:00:53,520
+a little while.
+
+14
+00:00:54,290 --> 00:00:57,210
+Let's go back to our celebrities project and keep going.
+
+15
+00:00:58,080 --> 00:01:03,570
+So down here where I had that to do message at this point, we're going to make a decision.
+
+16
+00:01:03,780 --> 00:01:05,800
+Do we send using a SMTP?
+
+17
+00:01:05,820 --> 00:01:10,770
+And of course, this is only called when we're sending something to the mail channel or do we send using
+
+18
+00:01:10,770 --> 00:01:11,370
+an API?
+
+19
+00:01:11,970 --> 00:01:16,530
+So of course, we need to decide, how are we going to determine whether or not something is sent using
+
+20
+00:01:16,530 --> 00:01:19,230
+it to some server or sent using an API?
+
+21
+00:01:20,040 --> 00:01:28,200
+I'll simply assume that if we have a value in API in our mail type, then we also have an API key and
+
+22
+00:01:28,200 --> 00:01:29,330
+an API URL.
+
+23
+00:01:29,340 --> 00:01:31,290
+Then we're going to send using API.
+
+24
+00:01:31,350 --> 00:01:34,710
+Otherwise, we'll send it using SMTP.
+
+25
+00:01:34,950 --> 00:01:36,210
+So we'll just write it if statement.
+
+26
+00:01:36,480 --> 00:01:38,880
+And of course, you can use whatever approach you wish.
+
+27
+00:01:39,660 --> 00:01:42,600
+But I'll simply say yes, and I'll put it in parentheses.
+
+28
+00:01:43,290 --> 00:01:58,320
+Len of MDOT API is greater than zero, and the length of MDOT API key is greater than zero and.
+
+29
+00:01:59,600 --> 00:02:05,420
+The length of Emden, April Earl is greater than zero.
+
+30
+00:02:07,230 --> 00:02:17,070
+And I'll make one more check here, I'll say, and import apron is not equal to SMTP in quotes.
+
+31
+00:02:18,030 --> 00:02:22,770
+This A.P., in case they specified that, then I'm going to send it using an API.
+
+32
+00:02:23,840 --> 00:02:28,160
+Otherwise, I'm going to return send using a to SMTP message.
+
+33
+00:02:28,880 --> 00:02:31,070
+But of course, the question is what apps are we using?
+
+34
+00:02:31,310 --> 00:02:36,320
+What I'll do in here is return a function we haven't written yet and choose API.
+
+35
+00:02:37,670 --> 00:02:40,010
+And it's going to take MSG as a parameter.
+
+36
+00:02:40,190 --> 00:02:41,880
+OK, now that function doesn't exist.
+
+37
+00:02:41,900 --> 00:02:47,450
+So let's go write it right down here will determine which of the three APIs we're going to use.
+
+38
+00:02:47,840 --> 00:02:52,370
+And of course, that's specified in the on file and we'll do the appropriate action.
+
+39
+00:02:53,000 --> 00:02:55,940
+So I'll create a function with the receiver of M Pointer to mail.
+
+40
+00:02:58,370 --> 00:03:06,110
+And I call it choose API, and it takes one parameter MSG of type message, and I'll simply run a simple
+
+41
+00:03:06,110 --> 00:03:11,900
+switch statement switch and we're going to switch on MDR API, which of course, is populated from the
+
+42
+00:03:11,900 --> 00:03:15,350
+value that we have in the dart on file.
+
+43
+00:03:15,680 --> 00:03:23,390
+And we'll have our first case be railgun, which is when we're going to support or spark post, which
+
+44
+00:03:23,390 --> 00:03:26,240
+is another one we're going to support or SendGrid.
+
+45
+00:03:28,810 --> 00:03:33,400
+Those are the cases that I'm going to return something and default will be.
+
+46
+00:03:35,060 --> 00:03:38,240
+Return format, error F.
+
+47
+00:03:40,330 --> 00:03:42,820
+And my format string is unknown.
+
+48
+00:03:45,130 --> 00:03:46,720
+API percent pass.
+
+49
+00:03:48,780 --> 00:03:55,490
+Only male gun spark post or SendGrid accepted,
+
+50
+00:03:58,770 --> 00:04:04,920
+and I'll replace my percent s with AMD API because they sent me something I don't know.
+
+51
+00:04:04,980 --> 00:04:06,240
+Now what is the error I have here?
+
+52
+00:04:08,460 --> 00:04:09,120
+No result.
+
+53
+00:04:09,240 --> 00:04:09,570
+OK.
+
+54
+00:04:09,810 --> 00:04:15,450
+We're going to return something, of course, this has to return an error that's better.
+
+55
+00:04:17,650 --> 00:04:22,690
+But of course, we need something in here in order to satisfy the requirement that this returns either
+
+56
+00:04:22,690 --> 00:04:23,800
+an error or nil.
+
+57
+00:04:24,490 --> 00:04:28,300
+And what I'm going to do is call a function that doesn't exist yet, which I think seem to do a fair
+
+58
+00:04:28,300 --> 00:04:32,050
+bit, but we'll get started on in a moment we return m dot.
+
+59
+00:04:33,600 --> 00:04:41,070
+Send using API and it takes one parameter mzgee and another parameter $m API.
+
+60
+00:04:44,100 --> 00:04:46,260
+OK, so let's create that function.
+
+61
+00:04:46,470 --> 00:04:51,140
+Funk with the receiver of a to male, not nap male.
+
+62
+00:04:51,840 --> 00:04:56,040
+And it's going to be called send using API, and it takes two parameters.
+
+63
+00:04:56,640 --> 00:05:02,280
+MSG of type, message and transport, which is a string.
+
+64
+00:05:04,340 --> 00:05:05,660
+And it potentially returns in error.
+
+65
+00:05:06,410 --> 00:05:06,710
+OK.
+
+66
+00:05:08,150 --> 00:05:09,830
+And I'll just put Returnal here.
+
+67
+00:05:10,130 --> 00:05:12,410
+So at that point, our errors all go away.
+
+68
+00:05:13,410 --> 00:05:14,780
+And let's give ourselves some room.
+
+69
+00:05:16,340 --> 00:05:21,170
+Now we're going to send using an API and I'm going to do a little bit of just sanity checking here.
+
+70
+00:05:21,200 --> 00:05:24,440
+For example, if messaged from
+
+71
+00:05:27,140 --> 00:05:35,420
+is equal to an empty string, then I'll populate messaged from being equal to EMD from address and you
+
+72
+00:05:35,420 --> 00:05:44,390
+can do the same thing and send a SMTP if you want to add the firm name if message from Neng is equal
+
+73
+00:05:44,390 --> 00:05:45,230
+to an empty string.
+
+74
+00:05:49,150 --> 00:05:56,980
+The more populated it with MSG from name is equal to end up from name.
+
+75
+00:05:58,570 --> 00:06:04,300
+OK, so now we know we're coming from somebody and APIs will fail if those values are not set.
+
+76
+00:06:05,590 --> 00:06:08,230
+Now we use our API mail package.
+
+77
+00:06:08,260 --> 00:06:15,160
+OK, now the API mail package, which is called Go Mail, it requires a config and I need to import
+
+78
+00:06:15,160 --> 00:06:15,430
+that.
+
+79
+00:06:15,550 --> 00:06:19,620
+But I want to call it something other than its default name.
+
+80
+00:06:19,630 --> 00:06:25,210
+So I'm going to go right up to my imports and I'm going to specify what I want and I'm going to call
+
+81
+00:06:25,210 --> 00:06:37,630
+it API mail, and it's going to come from GitHub dot com slash API and s l e wan seo a r k Ainsley Clark
+
+82
+00:06:38,140 --> 00:06:40,030
+slash go dash mail.
+
+83
+00:06:43,110 --> 00:06:43,440
+OK.
+
+84
+00:06:43,710 --> 00:06:44,460
+So there it is.
+
+85
+00:06:44,490 --> 00:06:46,680
+Now let's go back down to our code here.
+
+86
+00:06:46,710 --> 00:06:51,480
+We were actually trying to send using an API and let's set up its configurations.
+
+87
+00:06:52,320 --> 00:07:02,490
+So CFC assign the value of API mail dot config and we specify its various fields.
+
+88
+00:07:03,740 --> 00:07:10,520
+Now, if you read the documentation, each of the three APIs were supporting required different configuration
+
+89
+00:07:10,520 --> 00:07:11,000
+values.
+
+90
+00:07:11,450 --> 00:07:16,700
+But if you look at the actual source code, you'll discover that specifying ones that aren't used has
+
+91
+00:07:16,700 --> 00:07:18,010
+no effect whatsoever.
+
+92
+00:07:18,020 --> 00:07:18,860
+It doesn't hurt anything.
+
+93
+00:07:19,070 --> 00:07:25,400
+So we're going to specify the URL and that comes from Emden API URL right in our email type.
+
+94
+00:07:26,780 --> 00:07:31,790
+We're also going to specify the key API key, and that will be IMDA API key.
+
+95
+00:07:35,300 --> 00:07:40,160
+We're also going to specify what domain is being used, and we get that from eminent domain.
+
+96
+00:07:43,230 --> 00:07:47,160
+And we need a firm address, which is now MSG up from.
+
+97
+00:07:49,650 --> 00:07:50,760
+And we need the from name.
+
+98
+00:07:51,810 --> 00:07:53,550
+And that's MSG from name.
+
+99
+00:07:56,700 --> 00:08:04,800
+So now that we have the configuration populated, the next step is to get our driver, what driver are
+
+100
+00:08:04,800 --> 00:08:07,530
+we going to be using to send this so driver?
+
+101
+00:08:08,910 --> 00:08:09,510
+That's a variable.
+
+102
+00:08:09,510 --> 00:08:11,430
+I'm declaring I will check for an error.
+
+103
+00:08:13,030 --> 00:08:22,900
+Those are a sign of the values of a from April, that new client and we give it transport, which which
+
+104
+00:08:22,900 --> 00:08:27,730
+we received as a a parameter in the call to this function and the configuration we just made.
+
+105
+00:08:28,840 --> 00:08:32,020
+And we'll check for an error if error is not equal to nil.
+
+106
+00:08:32,320 --> 00:08:33,250
+It will return the error.
+
+107
+00:08:34,330 --> 00:08:34,840
+And we're done.
+
+108
+00:08:34,930 --> 00:08:35,800
+We can't go any further.
+
+109
+00:08:36,580 --> 00:08:42,880
+But if we get past that, we now follow the same basic logic we did down here when we're sending an
+
+110
+00:08:42,940 --> 00:08:50,740
+SMTP message so I can copy these ones, getting my plane message and my formatted message and paste
+
+111
+00:08:50,740 --> 00:08:51,400
+them right here.
+
+112
+00:08:52,520 --> 00:09:01,400
+And now I set up what the Ainsley Clark package go go dash mail calls the transmission tax is a sign
+
+113
+00:09:01,400 --> 00:09:06,560
+the value of a reference to API mail dot transmission right there.
+
+114
+00:09:07,880 --> 00:09:10,610
+And we populists in fields in that recipients.
+
+115
+00:09:12,110 --> 00:09:13,220
+Who's getting this message?
+
+116
+00:09:13,700 --> 00:09:15,500
+Well, in our case, we're just sending it to one person.
+
+117
+00:09:15,590 --> 00:09:18,080
+You can send them more, but I'll leave that as an exercise for you.
+
+118
+00:09:19,130 --> 00:09:20,150
+A slice of string.
+
+119
+00:09:21,790 --> 00:09:26,410
+With MSG ought to not template to.
+
+120
+00:09:28,340 --> 00:09:29,030
+So who's getting it?
+
+121
+00:09:29,210 --> 00:09:30,110
+Those are the recipients.
+
+122
+00:09:30,530 --> 00:09:31,850
+What are the what's the subject?
+
+123
+00:09:31,910 --> 00:09:34,160
+And of course, that's just MSG subject.
+
+124
+00:09:37,100 --> 00:09:41,870
+What's the HTML version of the email that's are formatted message, formatted message?
+
+125
+00:09:43,250 --> 00:09:44,780
+And what's the plain text version?
+
+126
+00:09:44,810 --> 00:09:46,580
+Well, that is plain message.
+
+127
+00:09:48,530 --> 00:09:49,550
+So that's our transmission.
+
+128
+00:09:51,130 --> 00:09:55,570
+Now, of course, we want to add attachments, but we'll do that in a minute and attachments.
+
+129
+00:09:56,590 --> 00:09:58,060
+We're going to put that off at its own function.
+
+130
+00:09:58,090 --> 00:09:59,080
+It's just cleaner that way.
+
+131
+00:09:59,380 --> 00:10:03,460
+And the last step for now is to ignore the first returned value.
+
+132
+00:10:03,820 --> 00:10:08,080
+Look at the error and call Driver Dot send.
+
+133
+00:10:08,350 --> 00:10:11,260
+And we're going to send to our transmission.
+
+134
+00:10:12,940 --> 00:10:15,430
+We check for an error so I can copy and paste this code.
+
+135
+00:10:20,300 --> 00:10:28,650
+And put it right here now, the last thing I want to do for the moment is to actually add API attachments.
+
+136
+00:10:28,670 --> 00:10:29,020
+OK?
+
+137
+00:10:29,720 --> 00:10:33,050
+And I'm going to do that at some function and you'll see why it is a little cleaner this way.
+
+138
+00:10:33,470 --> 00:10:42,860
+So already in a new function with a receiver implanted email and I'll call it add API attachments and
+
+139
+00:10:42,860 --> 00:10:49,280
+it will take the message and the which, which is a type message and the transmission, which is a type
+
+140
+00:10:49,820 --> 00:10:56,240
+pointer to API mail dot transmission, and it potentially returns in error.
+
+141
+00:10:58,070 --> 00:10:59,240
+Let's give ourselves some room.
+
+142
+00:10:59,570 --> 00:11:08,360
+So what we do here is to say, if the length of our message attachments is greater than zero, then
+
+143
+00:11:08,360 --> 00:11:10,580
+we'll create a variable, which I'll call attachments.
+
+144
+00:11:12,740 --> 00:11:17,720
+And it's a type, a slice of API mail dot attachment.
+
+145
+00:11:18,470 --> 00:11:23,180
+It has its own type for attachments, and we'll say for ignoring the index.
+
+146
+00:11:23,180 --> 00:11:28,100
+Paying attention to individual entries is equal to range and MSG attachments.
+
+147
+00:11:29,270 --> 00:11:35,720
+And inside that loop, all we have to do is create an attachment and add it to our slice of attachments
+
+148
+00:11:36,050 --> 00:11:42,260
+so that our attach, which will be an individual attachment, is a type API mail attachment.
+
+149
+00:11:44,330 --> 00:11:51,290
+And the content of that and the error are assigned the value of I o util, which is going to read the
+
+150
+00:11:51,290 --> 00:11:59,630
+file, read file and we're reading X. I have to check for an error if error is not equal to no.
+
+151
+00:11:59,840 --> 00:12:03,710
+This point, something went wrong, so we'll return the error and we're not.
+
+152
+00:12:04,370 --> 00:12:05,570
+Otherwise, we can keep going.
+
+153
+00:12:07,120 --> 00:12:13,510
+So I need to get the name of the file and I need to get the actual bytes of the content and create an
+
+154
+00:12:13,510 --> 00:12:15,890
+attachment, so I'll get the filing.
+
+155
+00:12:15,910 --> 00:12:16,620
+That's easy enough.
+
+156
+00:12:16,660 --> 00:12:19,630
+File name is equal to or assign the value of.
+
+157
+00:12:20,290 --> 00:12:27,450
+And it's from the File Path package, which is part of the standard library file path dot base X.
+
+158
+00:12:28,420 --> 00:12:31,810
+That gives me the file name because we have the full path named the file.
+
+159
+00:12:32,900 --> 00:12:37,250
+In our slice of strings and we said attack dog bites.
+
+160
+00:12:38,120 --> 00:12:42,830
+That's our attachment of type API e-mail attachment that's just equal to content.
+
+161
+00:12:43,070 --> 00:12:52,010
+We read right up there in Line 140 and attach, not filing is equal to filing, which we got in line
+
+162
+00:12:52,010 --> 00:12:52,670
+145.
+
+163
+00:12:54,680 --> 00:12:59,750
+And now we append our attachment to our slice of attachments, so attachments
+
+164
+00:13:02,240 --> 00:13:06,530
+equals append attachments attach.
+
+165
+00:13:09,540 --> 00:13:17,640
+And when we're finished this for loop, we set our to start attachments equal to our slice attachments.
+
+166
+00:13:21,510 --> 00:13:22,440
+And we return nil.
+
+167
+00:13:23,520 --> 00:13:23,850
+OK.
+
+168
+00:13:25,760 --> 00:13:27,230
+So that should take care of that.
+
+169
+00:13:27,470 --> 00:13:33,230
+And of course, up here, we now need to add our attachments, so we say error is equal to.
+
+170
+00:13:34,680 --> 00:13:35,000
+M.D..
+
+171
+00:13:35,340 --> 00:13:39,930
+Add API attachments, and we handed our message than we handed our transmission.
+
+172
+00:13:42,490 --> 00:13:45,160
+And we took for an error, so we'll copy and paste this.
+
+173
+00:13:50,360 --> 00:13:51,110
+And that should be good.
+
+174
+00:13:55,460 --> 00:14:04,460
+So now when we choose our API, it will send using API if we have Morgan or Spark Post or SendGrid specified
+
+175
+00:14:04,460 --> 00:14:10,010
+in the file, and because we have exported the function send using API, we can actually call it directly
+
+176
+00:14:10,010 --> 00:14:14,180
+the same way we can call the SMTP function directly.
+
+177
+00:14:14,690 --> 00:14:15,170
+All right.
+
+178
+00:14:15,290 --> 00:14:16,230
+We're getting closer.
+
+179
+00:14:16,250 --> 00:14:22,430
+So the next step, I believe, is to go to the celebrities package and add this functionality the mail
+
+180
+00:14:22,430 --> 00:14:25,490
+or package right to the core celebrity's code.

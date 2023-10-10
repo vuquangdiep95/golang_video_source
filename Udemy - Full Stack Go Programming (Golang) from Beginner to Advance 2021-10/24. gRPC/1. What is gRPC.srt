@@ -1,0 +1,311 @@
+1
+00:00:14,060 --> 00:00:20,630
+Hello and welcome to the Golang programming language course in this issue, and we want to talk about
+
+2
+00:00:20,630 --> 00:00:22,040
+G.R. PC concept.
+
+3
+00:00:27,070 --> 00:00:28,600
+What is your PC?
+
+4
+00:00:30,000 --> 00:00:36,330
+DRP is the modern lined with communication protocol that's implemented by Google.
+
+5
+00:00:37,740 --> 00:00:46,230
+GOPAC is a high performance, open source, universal RPG framework or remote process or code that can
+
+6
+00:00:46,230 --> 00:00:47,640
+run in any environment.
+
+7
+00:00:50,400 --> 00:00:58,080
+It enables the server and client applications to communicate transparently and build connected systems.
+
+8
+00:01:00,380 --> 00:01:08,510
+We are PC, you can utilize this STP two capabilities such as server side, the streaming, Clydeside
+
+9
+00:01:08,690 --> 00:01:12,890
+streaming or even bi directional streaming, should you wish.
+
+10
+00:01:15,340 --> 00:01:25,210
+Jill PC uses an interface description language for IDL to define a service contract and uses HTTP to
+
+11
+00:01:25,330 --> 00:01:33,520
+the latest network transfer protocol as the default transport protocol and G.R. PCs support only protocol
+
+12
+00:01:33,520 --> 00:01:37,600
+buffers to transfer data between server and client.
+
+13
+00:01:39,160 --> 00:01:47,770
+It can efficiently connect services in and across datacentres with plugging will support for load balancing,
+
+14
+00:01:47,980 --> 00:01:51,520
+threatening health checking and authentication.
+
+15
+00:01:55,710 --> 00:01:59,370
+The G in Group does not stand for Google.
+
+16
+00:01:59,640 --> 00:02:04,230
+It is a recursive acronym that stands for Siri remote processor.
+
+17
+00:02:04,230 --> 00:02:09,240
+Con G.P.S. originated from Google in 2015.
+
+18
+00:02:10,650 --> 00:02:14,610
+It was based on an internal Google project call as to the.
+
+19
+00:02:14,850 --> 00:02:17,880
+Which was an internal framework for GOPAC.
+
+20
+00:02:18,060 --> 00:02:19,830
+But just for Google services.
+
+21
+00:02:21,270 --> 00:02:28,830
+Nowadays, this tube has been rebranded DARPA and it is free open source project with an open source
+
+22
+00:02:28,830 --> 00:02:29,820
+and roadmap.
+
+23
+00:02:31,550 --> 00:02:36,710
+Google designed DARPA to be for and as efficient as possible.
+
+24
+00:02:37,490 --> 00:02:43,000
+The structure of the protocol itself is lean, with the minimal processing occurring at the marshalling
+
+25
+00:02:43,010 --> 00:02:44,570
+and on marshalling a stage.
+
+26
+00:02:45,230 --> 00:02:52,970
+Because of this genre is inherently efficient, made only better by building up an STP two, which enables
+
+27
+00:02:52,970 --> 00:02:55,720
+highly effective use of natural resources.
+
+28
+00:02:55,790 --> 00:03:01,900
+What you end up with is a lean platform using lean transport system to deliver lean bits of code an
+
+29
+00:03:01,910 --> 00:03:05,660
+overall decrease in latency and size.
+
+30
+00:03:09,660 --> 00:03:11,070
+Dear PC, modern.
+
+31
+00:03:12,870 --> 00:03:17,700
+G.R. PC provides four different ways of communication between client and server.
+
+32
+00:03:18,300 --> 00:03:21,990
+The four different ways are a unity server.
+
+33
+00:03:22,170 --> 00:03:30,120
+Streaming client is streaming and bi directional streaming so effectively in groups of both client and
+
+34
+00:03:30,120 --> 00:03:31,680
+server can talk to each other.
+
+35
+00:03:32,280 --> 00:03:35,400
+You know, this is the simplest one.
+
+36
+00:03:35,410 --> 00:03:39,030
+The client send the request and the server sends a response.
+
+37
+00:03:39,840 --> 00:03:41,040
+Client is streaming.
+
+38
+00:03:41,580 --> 00:03:49,110
+The client can send a stream of multiple messages via the server is expected to return on a single response
+
+39
+00:03:49,260 --> 00:03:53,010
+to all client requests server streaming.
+
+40
+00:03:53,550 --> 00:04:00,810
+The client will send only one message, while a server can send a stream of messages back to it and
+
+41
+00:04:00,810 --> 00:04:02,400
+bi directional streaming.
+
+42
+00:04:02,640 --> 00:04:06,330
+Both client and server can stream multiple messages.
+
+43
+00:04:06,810 --> 00:04:10,890
+The streaming will be in parallel in no order.
+
+44
+00:04:11,040 --> 00:04:13,080
+Also, it will no blocking.
+
+45
+00:04:13,260 --> 00:04:18,720
+Neither client nor server needs to wait for a response before sending the next message.
+
+46
+00:04:22,280 --> 00:04:23,240
+Performance.
+
+47
+00:04:25,440 --> 00:04:32,970
+Since you're picking her, Anthony uses HTP to so all the performance optimizations applied to keep
+
+48
+00:04:33,030 --> 00:04:40,710
+do automatically are available in Group C H two capital has introduced several performance optimization
+
+49
+00:04:40,920 --> 00:04:48,360
+over ATP one, such as duplex streaming multiplexing and further conversion.
+
+50
+00:04:50,400 --> 00:04:56,550
+Plus, GOPAC uses political warfare inherently, and since political parties are binary data and have
+
+51
+00:04:56,550 --> 00:04:59,610
+less sides, there are transferred over network fast.
+
+52
+00:05:00,830 --> 00:05:06,530
+Since GOPAC is built on top up political power, it provides automatic code generation.
+
+53
+00:05:07,340 --> 00:05:10,670
+In fact, with political office generation is a mosque.
+
+54
+00:05:10,670 --> 00:05:12,530
+Things to use your PC.
+
+55
+00:05:13,220 --> 00:05:17,960
+Your PC can utilize each TCP connection very effectively.
+
+56
+00:05:18,200 --> 00:05:21,590
+Due to these two reasons, GRC is very fast.
+
+57
+00:05:25,330 --> 00:05:30,190
+There to use G.R., PC microservices.
+
+58
+00:05:32,220 --> 00:05:37,530
+G.R. shines as a way to connect servers in service oriented environments.
+
+59
+00:05:38,100 --> 00:05:45,600
+One of the original problems its predecessor has to the aim to solve was wiring together microservices.
+
+60
+00:05:46,110 --> 00:05:53,610
+It is well-suited for a wide variety of aeronauts from medium and large enterprises systems on the way
+
+61
+00:05:53,610 --> 00:05:57,170
+to the very scaled e-commerce and SAS offerings.
+
+62
+00:05:59,570 --> 00:06:01,190
+Client server applications.
+
+63
+00:06:02,980 --> 00:06:08,620
+Europe is it works just as well in killing server applications where the client applications run on
+
+64
+00:06:08,620 --> 00:06:10,600
+desktop or mobile devices.
+
+65
+00:06:10,960 --> 00:06:18,220
+It uses step two, which improves on S30 one in both latency and network utilization.
+
+66
+00:06:19,680 --> 00:06:21,750
+Integrations and APIs.
+
+67
+00:06:23,300 --> 00:06:30,530
+DRP sees as a way to offer opinions over the internet for integrating applications with services from
+
+68
+00:06:30,530 --> 00:06:32,060
+third party providers.
+
+69
+00:06:35,420 --> 00:06:44,270
+Petty requisites, let's get Assad installing the petty requisites of the development go version 1.6
+
+70
+00:06:44,270 --> 00:06:47,670
+or higher for installation instructions.
+
+71
+00:06:47,780 --> 00:06:49,800
+He goes getting a smart guy.
+
+72
+00:06:49,820 --> 00:06:54,110
+So use the following year end political warfare version three.
+
+73
+00:06:54,830 --> 00:06:59,690
+Install the port The compiler that is used to generate job is a service code.
+
+74
+00:07:00,490 --> 00:07:02,420
+Now, use the following commands.
+
+75
+00:07:03,650 --> 00:07:05,060
+And GOPAC.
+
+76
+00:07:06,220 --> 00:07:13,900
+Use the following comment in a song G.R. PC requirements in order not to prolong the time of decision.
+
+77
+00:07:14,080 --> 00:07:18,130
+We will finish it and we will continue the content in the next session.
+
+78
+00:07:18,440 --> 00:07:18,940
+Goodbye.

@@ -1,0 +1,503 @@
+1
+00:00:00,690 --> 00:00:06,360
+Vì vậy, bây giờ chúng tôi sẽ thực hiện một chút phân tích về tất cả các tweet và chúng tôi sẽ chỉ thực hiện một bước cơ bản
+
+2
+00:00:06,360 --> 00:00:12,670
+đếm từ và sau đó đếm số lần mỗi từ xuất hiện trong mỗi tweet.
+
+3
+00:00:12,780 --> 00:00:18,990
+Và điều đó sẽ cho phép chúng tôi xem xét tất cả những thứ đó và xem cái nào bạn biết xuất hiện nhiều nhất
+
+4
+00:00:18,990 --> 00:00:23,160
+và cung cấp cho chúng tôi một chút ý tưởng về suy nghĩ của mọi người về những gì họ muốn xem.
+
+5
+00:00:23,160 --> 00:00:24,380
+Nó sẽ thực sự khó khăn.
+
+6
+00:00:24,420 --> 00:00:32,370
+Và vì vậy rõ ràng là chúng ta sẽ có rất nhiều thứ nhưng chúng ta cũng sẽ có thể vượt qua và
+
+7
+00:00:32,370 --> 00:00:36,160
+chỉ cần nhìn vào nó một cách trực quan để chọn ra những thứ có ý nghĩa.
+
+8
+00:00:36,180 --> 00:00:37,410
+Vì vậy, mang nó đi.
+
+9
+00:00:37,410 --> 00:00:43,410
+Daniel Oh và để làm điều đó theo cách tôi nghĩ chúng ta đã học bò và tôi thực sự sẽ cho bạn thấy
+
+10
+00:00:43,410 --> 00:00:45,230
+một cái gì đó trên màn hình của tôi ở đây trong một giây.
+
+11
+00:00:45,270 --> 00:00:51,750
+Chúng tôi đã trình bày khá kỹ về việc thu thập thông tin và vì vậy tôi sẽ bắt đầu dự án của mình, tôi sẽ khởi chạy
+
+12
+00:00:51,750 --> 00:01:00,090
+thiết bị đầu cuối của tôi và tôi sẽ thoát khỏi thiết lập mà tôi đã có và vì vậy chúng tôi có 0 3 ở đây.
+
+13
+00:01:00,090 --> 00:01:00,670
+Đúng.
+
+14
+00:01:00,690 --> 00:01:08,180
+Tôi sẽ làm điều này ngoài màn hình và sau đó chúng tôi sẽ thêm phân tích và tôi sẽ chuyển sang Daniel's
+
+15
+00:01:08,180 --> 00:01:13,100
+lỗi và phân tích sẽ ở đó dưới 0 4 lần cạo.
+
+16
+00:01:13,170 --> 00:01:18,330
+Đó sẽ là phân tích 0 3 và vì vậy chúng tôi sẽ chỉ có một bản sao của tất cả các tệp tại sao bạn tiếp tục và bạn có thể nhận được
+
+17
+00:01:18,330 --> 00:01:22,240
+loại bỏ 0 3 Todd trong nhiều năm nếu bạn định cam kết điều đó.
+
+18
+00:01:22,440 --> 00:01:23,510
+OK đó là buồn cười.
+
+19
+00:01:23,580 --> 00:01:25,100
+Vâng đó là tốt.
+
+20
+00:01:25,140 --> 00:01:31,740
+Và bạn chỉ có thể thực hiện phân tích 0 3 và sau đó lấy mọi thứ bạn đã làm trong 0 2 và bỏ phân tích
+
+21
+00:01:31,740 --> 00:01:32,280
+trong đó.
+
+22
+00:01:32,280 --> 00:01:33,330
+thật hoàn hảo
+
+23
+00:01:36,140 --> 00:01:41,540
+chứ không phải người cứ kéo thả qua sublime Nó là file thứ nó không hay lắm.
+
+24
+00:01:41,560 --> 00:01:42,650
+Vì vậy, tôi nghe thấy
+
+25
+00:01:51,880 --> 00:01:54,940
+vì vậy đếm các từ tôi đang suy nghĩ bản đồ.
+
+26
+00:01:55,570 --> 00:01:57,310
+Vâng khá nhiều.
+
+27
+00:01:57,340 --> 00:01:58,950
+Vì vậy, nhiều hơn nữa.
+
+28
+00:01:58,960 --> 00:02:02,020
+Vì vậy, điều này có lẽ sẽ có nhiều thứ hơn.
+
+29
+00:02:02,050 --> 00:02:12,590
+Vì vậy, một điều tôi muốn làm có lẽ chỉ là nói rằng những dòng tweet ngớ ngẩn coi các dòng tweet như một phần của dòng tweet
+
+30
+00:02:14,700 --> 00:02:17,310
+rằng điều này của mẹ và tôi chỉ nghĩ rằng điều này
+
+31
+00:02:20,140 --> 00:02:23,540
+vì vậy tôi có quyền truy cập vào nó sau nếu tôi quay lại lần nữa.
+
+32
+00:02:23,610 --> 00:02:25,270
+Nó chỉ là ra khỏi con đường.
+
+33
+00:02:25,320 --> 00:02:30,330
+Tôi thích điều đó và chức năng tiếp theo có thể là chức năng đếm từ.
+
+34
+00:02:30,580 --> 00:02:31,510
+Vì vậy, bây giờ bạn là.
+
+35
+00:02:35,490 --> 00:02:42,540
+Và điều đó sẽ lấy và tất cả các tweet và vì vậy điều này sẽ không phù hợp hơn và có khả năng quay trở lại
+
+36
+00:02:42,560 --> 00:02:42,890
+trong đó.
+
+37
+00:02:42,920 --> 00:02:52,310
+Tôi không nghĩ rằng nó thực sự cần trả về lỗi nhưng nó sẽ trả về từ tính bản đồ.
+
+38
+00:02:52,320 --> 00:02:58,110
+Vì vậy, tôi gần như nghĩ rằng trước tiên chúng ta có thể tạo một cấu trúc dữ liệu có thể được sắp xếp cho điều đó.
+
+39
+00:02:58,130 --> 00:03:01,520
+Vì vậy, chúng ta có thể có số lượng từ theo thứ tự giảm dần.
+
+40
+00:03:01,830 --> 00:03:03,650
+Vì vậy, tôi thích điều đó.
+
+41
+00:03:03,810 --> 00:03:12,150
+Vì vậy, cần một cuộc đình công cho từ đó cấu trúc thông tin sẽ có từ đó là một chuỗi.
+
+42
+00:03:12,150 --> 00:03:12,280
+Vâng.
+
+43
+00:03:12,300 --> 00:03:13,830
+Và bao nhiêu lần điều đó xuất hiện.
+
+44
+00:03:13,860 --> 00:03:17,610
+Vì vậy, tính nó.
+
+45
+00:03:17,630 --> 00:03:20,080
+Và do đó, điều này sẽ trả về một lát thông tin từ.
+
+46
+00:03:22,890 --> 00:03:29,840
+Vì vậy, theo thứ tự sắp xếp theo thứ tự đếm giảm dần.
+
+47
+00:03:29,870 --> 00:03:31,000
+Và vì vậy bây giờ tôi đã có điều đó.
+
+48
+00:03:31,010 --> 00:03:36,200
+Và vì vậy tôi có thể bắt đầu thực sự đếm các từ.
+
+49
+00:03:36,310 --> 00:03:40,230
+Vì vậy, trong khi đếm chúng, một bản đồ rất hữu ích.
+
+50
+00:03:40,510 --> 00:03:49,630
+Tạo một bản đồ từ là một bản đồ từ chuỗi từ đó là gì đến số lần nó được hiển thị.
+
+51
+00:03:49,940 --> 00:03:51,020
+Vâng.
+
+52
+00:03:51,100 --> 00:03:55,460
+Vì vậy, bản đồ rất hữu ích ở đây trong trường hợp này khi tạo nó.
+
+53
+00:03:55,480 --> 00:04:00,460
+Và sau đó chúng ta quay lại sau và đọc cơ cấu lại để lát cắt dạng cấu trúc nó cấu trúc dạng tầng nào cho dễ dàng
+
+54
+00:04:00,460 --> 00:04:01,240
+sắp xếp.
+
+55
+00:04:01,270 --> 00:04:02,080
+Yeah tuyệt đối.
+
+56
+00:04:02,920 --> 00:04:08,440
+Bản đồ lạ quá, bây giờ tôi có tất cả các tweet này nên tôi cần lặp lại từng tweet để
+
+57
+00:04:11,310 --> 00:04:13,090
+tweet giận dữ.
+
+58
+00:04:13,610 --> 00:04:25,550
+Vì vậy, có một tweet riêng lẻ và mỗi tweet có một tin nhắn sắp xếp các tin nhắn một tin nhắn từ
+
+59
+00:04:25,550 --> 00:04:27,950
+tweet nhưng chúng tôi không có từ nào.
+
+60
+00:04:27,980 --> 00:04:28,170
+Vâng.
+
+61
+00:04:28,190 --> 00:04:29,870
+Vì vậy, chúng ta sẽ phải làm điều này.
+
+62
+00:04:30,050 --> 00:04:36,920
+Gói Chuỗi có thứ mà bạn có thể phân chia ngay, đó là chất lỏng và nó phân chia theo bất cứ thứ gì bạn
+
+63
+00:04:36,920 --> 00:04:39,480
+vượt qua và tôi nghĩ chữ ký là gì.
+
+64
+00:04:39,530 --> 00:04:40,340
+các thông số là gì.
+
+65
+00:04:40,340 --> 00:04:48,350
+Tôi nghĩ đó là do bạn thêm một khoảng trống được gọi là không gian cột nhưng nếu chúng ta xem xét chuỗi phân chia gói chuỗi thì tôi
+
+66
+00:04:48,350 --> 00:04:55,390
+hãy nhớ rằng từ bến tàu Caleb C đầu thế kỷ thứ nhất chúng ta đang làm gì trong dải phân cách.
+
+67
+00:04:55,550 --> 00:04:58,420
+Và cung cấp cho bạn một đoạn dây phân chia các hòn đảo.
+
+68
+00:04:58,630 --> 00:05:00,260
+Của nó.
+
+69
+00:05:00,390 --> 00:05:06,930
+Vì vậy, bây giờ tôi có một từ đẹp và phạm vi C ở mọi nơi tôi có thể di chuyển qua các từ
+
+70
+00:05:10,990 --> 00:05:12,800
+và với mỗi từ tôi có thể làm.
+
+71
+00:05:12,840 --> 00:05:24,410
+Chúng tôi là bản đồ và từ, từ bị mất cộng với một lợi ích tiềm năng cũng có thể làm là bạn có thể làm
+
+72
+00:05:24,410 --> 00:05:26,670
+dây bắt đầu hạ xuống.
+
+73
+00:05:26,690 --> 00:05:27,700
+Ồ hoàn toàn.
+
+74
+00:05:27,890 --> 00:05:30,300
+Vì vậy, theo cách đó, nó không phân biệt chữ hoa chữ thường.
+
+75
+00:05:30,440 --> 00:05:32,870
+Cuộc gọi tốt.
+
+76
+00:05:32,920 --> 00:05:43,050
+Và lý do chúng ta có thể tự động bắt đầu sử dụng một chỉ mục, một phím trên bản đồ là vì nếu không có phím nào
+
+77
+00:05:43,060 --> 00:05:44,700
+ở đó nó không có giá trị đúng không.
+
+78
+00:05:44,860 --> 00:05:47,860
+Có và giá trị bằng không của một kết thúc bằng không.
+
+79
+00:05:47,890 --> 00:05:50,380
+Vì vậy, mọi thứ bắt đầu từ con số không.
+
+80
+00:05:50,380 --> 00:05:53,640
+Và vì vậy bạn có thể chỉ cần nói này, bạn đặt chìa khóa này vào.
+
+81
+00:05:53,680 --> 00:05:55,110
+Không có chìa khóa ở đó.
+
+82
+00:05:55,150 --> 00:05:58,200
+Sau đó, nó tạo khóa đó và nó đi từ 0 đến 1.
+
+83
+00:05:58,240 --> 00:06:03,670
+Và nếu có một chìa khóa ở đó, nó sẽ tìm thấy nó và nó sẽ lấy bất cứ thứ gì có trong đó và tăng nó lên một.
+
+84
+00:06:03,700 --> 00:06:06,480
+Vì vậy, đó là loại ký hiệu nhỏ đó là gì.
+
+85
+00:06:06,490 --> 00:06:10,450
+Tôi nghĩ nó hoàn toàn tiện lợi để giải thích điều đó đúng.
+
+86
+00:06:10,560 --> 00:06:10,850
+Vâng.
+
+87
+00:06:11,050 --> 00:06:11,680
+ĐƯỢC RỒI.
+
+88
+00:06:11,790 --> 00:06:13,000
+Vì vậy, chính xác.
+
+89
+00:06:13,030 --> 00:06:17,380
+Đó là một trong những phần phức tạp nhất của cờ vây.
+
+90
+00:06:17,390 --> 00:06:23,480
+Nó không phức tạp đến thế nhưng kiểu đó chỉ cho bạn biết ngôn ngữ đó đơn giản như thế nào mà thôi
+
+91
+00:06:23,480 --> 00:06:23,710
+Tốt.
+
+92
+00:06:23,710 --> 00:06:30,400
+Đó có thể được coi là một trong những phần khó hiểu hơn của nó.
+
+93
+00:06:30,540 --> 00:06:35,790
+Vì vậy, bây giờ chúng ta có từ toán trong đó mỗi khóa là một từ và giá trị là từ đó hiển thị bao nhiêu lần
+
+94
+00:06:35,790 --> 00:06:36,120
+hướng lên.
+
+95
+00:06:36,120 --> 00:06:40,170
+Vì vậy, bây giờ chúng tôi chuyển đổi nó và cho biết các dòng đó từ 1 6 đến 1 20.
+
+96
+00:06:40,170 --> 00:06:41,470
+Xin lỗi tôi vừa ngắt lời bạn.
+
+97
+00:06:41,820 --> 00:06:43,680
+1 16 đến 120.
+
+98
+00:06:43,680 --> 00:06:48,810
+Điều đó chỉ lướt qua tất cả các tweet và đặt tất cả các từ trong tất cả các tweet vào một bản đồ và đếm
+
+99
+00:06:48,810 --> 00:06:50,790
+bao nhiêu lần mỗi người ở trong đó.
+
+100
+00:06:50,950 --> 00:06:51,260
+Vâng.
+
+101
+00:06:51,290 --> 00:06:52,990
+Đó là thanh lịch và ngắn.
+
+102
+00:06:53,150 --> 00:06:53,910
+Vâng rất buồn.
+
+103
+00:06:53,910 --> 00:06:54,420
+Đi tiếp.
+
+104
+00:06:54,450 --> 00:06:54,960
+Lấy làm tiếc.
+
+105
+00:06:55,120 --> 00:06:55,510
+Vì thế.
+
+106
+00:06:55,540 --> 00:07:03,970
+Vì vậy, sau đó, bây giờ chúng ta cần chuyển nó sang định dạng cấu trúc này để bạn có thể lặp qua bản đồ.
+
+107
+00:07:04,080 --> 00:07:10,670
+Vì vậy, mỗi lần thông qua bản đồ, nó sẽ cho tôi từ và sau đó là số đếm, vì vậy đó chỉ là giá trị chính.
+
+108
+00:07:10,670 --> 00:07:16,010
+Vì vậy, vì Becky là từ và các giá trị mà tôi có thể cho bạn biết, bạn có thể thấy rằng đây là
+
+109
+00:07:16,010 --> 00:07:18,770
+đi ra khỏi bản đồ từ.
+
+110
+00:07:19,220 --> 00:07:22,170
+Và vì vậy bây giờ mỗi lần tôi sẽ cần phải tạo ra từ ngữ mới.
+
+111
+00:07:22,210 --> 00:07:36,240
+Hãy tạo lát cắt trả về từ infos infos Đó là một lát thông tin từ.
+
+112
+00:07:36,400 --> 00:07:48,720
+Bây giờ tôi có thể nói mỗi lần qua vòng lặp này, tôi có thể thêm một thông tin từ mới vào lát đó một từ
+
+113
+00:07:48,920 --> 00:07:55,200
+của W và một C nên bây giờ là lát cắt của riêng nó.
+
+114
+00:07:55,200 --> 00:07:57,490
+Và bây giờ chúng ta có thể tìm nguồn lát cắt.
+
+115
+00:07:57,540 --> 00:08:11,160
+Vì vậy, sắp xếp tốt như vậy từ sắp xếp lưu trữ sắp xếp sắp xếp có một lát xếp một lát
+
+116
+00:08:14,430 --> 00:08:21,870
+lấy một lát của bất kỳ thứ gì ở đây và sau đó là một chức năng để so sánh hai mục trong lát đó và nó
+
+117
+00:08:21,870 --> 00:08:23,130
+không trả lại bất cứ điều gì.
+
+118
+00:08:23,340 --> 00:08:31,680
+Nó chỉ đặt trên lát cắt này, vì vậy hãy sắp xếp lát cắt đó và tôi sẽ cần nhập sắp xếp
+
+119
+00:08:38,590 --> 00:08:45,310
+đã tìm kiếm nhưng cắt tự động hoàn thành của tôi và như vậy bạn biết không làm cho bài viết của tôi công cụ không thích
+
+120
+00:08:45,310 --> 00:08:47,040
+đi các mô-đun để giữ các nhu cầu về sự cố.
+
+121
+00:08:47,050 --> 00:08:52,460
+Đó là lý do tại sao nó không hoạt động và chúng ta sẽ có hai phút nữa. Tôi muốn những video này ngắn gọn.
+
+122
+00:08:52,640 --> 00:08:53,130
+ĐƯỢC RỒI.
+
+123
+00:08:53,380 --> 00:08:54,710
+Vì vậy, để được tiếp tục.
+
+124
+00:08:54,770 --> 00:08:59,350
+Vâng, chúng ta sẽ xem trong video tiếp theo hoặc chúng ta sẽ xem xét việc sắp xếp lát cắt.
+
+125
+00:08:59,350 --> 00:09:03,090
+Tôi biết chúng tôi khá thân thiết nhưng vâng, tôi thực sự muốn cố gắng nói ngắn gọn.
+
+126
+00:09:03,100 --> 00:09:06,550
+Vì vậy, hãy tạo một mục mới và chúng ta sẽ xem trong video tiếp theo.

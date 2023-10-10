@@ -1,0 +1,295 @@
+1
+00:00:13,110 --> 00:00:20,490
+Hendo, and welcome to the Golang programming language course in the previous session, we talked about
+
+2
+00:00:20,490 --> 00:00:22,900
+Jason Consett and indecision.
+
+3
+00:00:22,920 --> 00:00:25,500
+We want to talk about the others Jason concept.
+
+4
+00:00:29,150 --> 00:00:37,760
+Is streaming encoders and decoders, the encoding Jason package provides decoder and encoder types to
+
+5
+00:00:37,760 --> 00:00:42,680
+support the common operation of reading and writing streams of JASON data.
+
+6
+00:00:43,730 --> 00:00:47,330
+Now you can see the syntax of decoder function.
+
+7
+00:00:47,990 --> 00:00:51,320
+It returns a new decoder that reads from R.
+
+8
+00:00:51,770 --> 00:01:00,340
+The decoder introduces its own buffering and memory data from R beyond the JSON values requested, and
+
+9
+00:01:00,350 --> 00:01:02,630
+you can see the encoder syntax.
+
+10
+00:01:03,350 --> 00:01:06,890
+It returns a new encoder that rise to W.
+
+11
+00:01:07,400 --> 00:01:13,280
+Now let's go to this program to illustrate how to use new decoder and new encoder.
+
+12
+00:01:14,570 --> 00:01:21,280
+Go to Project Expeller and create a fine like main that go sit.
+
+13
+00:01:21,440 --> 00:01:26,300
+Package me and define the main function.
+
+14
+00:01:31,190 --> 00:01:38,570
+First created JSON fine that has three key value pairs named name, age and location.
+
+15
+00:01:38,780 --> 00:01:47,060
+So create a variable like Jason is three crawling equals back kick and field.
+
+16
+00:01:52,700 --> 00:01:54,800
+Name Colin
+
+17
+00:01:57,980 --> 00:01:58,670
+Keene.
+
+18
+00:02:03,880 --> 00:02:13,850
+H Holland, 20, and location
+
+19
+00:02:16,370 --> 00:02:25,080
+college in Texas and another key value per name,
+
+20
+00:02:27,690 --> 00:02:28,560
+Jessica.
+
+21
+00:02:32,410 --> 00:02:42,280
+Age 30 and location, for example, California.
+
+22
+00:02:48,170 --> 00:02:56,370
+Now, create a type of i o dot reader using the strings package by calling new reader function and since
+
+23
+00:02:56,450 --> 00:02:59,090
+Jason Astrium and his arguments for it.
+
+24
+00:02:59,510 --> 00:03:07,280
+First, define a variable like reader column equals and from the strings package calling new reader
+
+25
+00:03:07,280 --> 00:03:12,320
+function and set a standard reader as arguments to it.
+
+26
+00:03:14,060 --> 00:03:18,170
+Now create a writer variable by conning STV out front.
+
+27
+00:03:18,170 --> 00:03:28,130
+With Piku now defined and variable like writer Cullen equals and invoke SETI out front with the package.
+
+28
+00:03:31,700 --> 00:03:38,870
+Now, create a new decoder, which reads the data from the reader by shining new decoder function from
+
+29
+00:03:38,870 --> 00:03:39,980
+JSON package.
+
+30
+00:03:40,400 --> 00:03:51,050
+So first, define a variable like decoder calling equals and calling new decoder from JSON package.
+
+31
+00:03:53,550 --> 00:03:55,530
+And says, reader, as argument to.
+
+32
+00:03:59,030 --> 00:04:05,660
+Now, create a new encoder, which rise the data to the writer by calling new encoder function from
+
+33
+00:04:05,660 --> 00:04:15,290
+JSON Typekit, so define a variable like encoder calling equals and calling neo encoder functions from
+
+34
+00:04:15,290 --> 00:04:25,550
+JSON package its new encoder and sits writer, as are humans to it.
+
+35
+00:04:27,710 --> 00:04:35,450
+Now define it for loop and read the stream of JASON data from an eye or reader, then removes the H
+
+36
+00:04:35,450 --> 00:04:40,250
+field from each object rise to object to an AI or writer.
+
+37
+00:04:40,970 --> 00:04:42,980
+So define for
+
+38
+00:04:45,680 --> 00:04:48,530
+in the JSON, all the keys must be a string.
+
+39
+00:04:48,830 --> 00:04:56,720
+It means we can use the map time for arbitrary data the encoding JSON package uses map by the key is
+
+40
+00:04:56,750 --> 00:05:00,770
+string in and efforts to install arbitrary JSON objects.
+
+41
+00:05:01,190 --> 00:05:03,890
+So we first define a variable like.
+
+42
+00:05:06,000 --> 00:05:17,730
+Via the map, defined key by the time as strange and value by the time interface.
+
+43
+00:05:22,090 --> 00:05:30,730
+IMAP by the key string and A. In their face value, the keys are S3 and values are empty interface and
+
+44
+00:05:30,760 --> 00:05:34,420
+interface type describes an interface with zero methods.
+
+45
+00:05:34,750 --> 00:05:41,590
+In short, it can access all the types now calling dikkat function to reads the next JSON encoded value
+
+46
+00:05:41,590 --> 00:05:46,600
+from its input and a source it in the value pointer to by V.
+
+47
+00:05:46,870 --> 00:05:49,840
+So for call and check together, right?
+
+48
+00:05:50,170 --> 00:05:52,480
+If at all.
+
+49
+00:05:53,530 --> 00:05:57,880
+Calling it equals decoder dots.
+
+50
+00:05:58,030 --> 00:06:09,340
+B quote am Casone, the error not equals mean large dot print.
+
+51
+00:06:13,470 --> 00:06:15,870
+Pair off and return.
+
+52
+00:06:20,590 --> 00:06:34,180
+Now, define the range look to remove age fit for define a variable like call and equal range in we.
+
+53
+00:06:37,770 --> 00:06:44,370
+If key equals equals a
+
+54
+00:06:46,830 --> 00:06:47,550
+delete.
+
+55
+00:06:51,280 --> 00:06:54,130
+We come to she.
+
+56
+00:06:58,810 --> 00:07:06,160
+Now coming and could function to rise the JASON encoding of the to the three, followed by a new line
+
+57
+00:07:06,160 --> 00:07:06,790
+character.
+
+58
+00:07:07,000 --> 00:07:20,350
+So for Carl and Jake, together we write Eve error column equals encoder dots and quote Ampersand.
+
+59
+00:07:20,590 --> 00:07:21,250
+We
+
+60
+00:07:23,740 --> 00:07:26,110
+are not equals Neal.
+
+61
+00:07:30,160 --> 00:07:35,820
+Large dot, print and enter.
+
+62
+00:07:38,440 --> 00:07:38,850
+OK.
+
+63
+00:07:39,270 --> 00:07:44,020
+Reformat the court, save the project and execute the program.
+
+64
+00:07:45,250 --> 00:07:47,530
+Go round darts back.
+
+65
+00:07:47,530 --> 00:07:49,120
+Is this man that go?
+
+66
+00:07:51,310 --> 00:07:55,260
+OK, now we can see the output location.
+
+67
+00:07:55,270 --> 00:08:00,400
+Take those name Kane and location Californian named Jessica.
+
+68
+00:08:00,520 --> 00:08:03,370
+We could remove age feed from Jason value.
+
+69
+00:08:03,850 --> 00:08:11,230
+In this example, we were able to read a stream of JSON data through a reader, then delete the age
+
+70
+00:08:11,230 --> 00:08:16,320
+feed value from inside each object and then write the object through.
+
+71
+00:08:16,330 --> 00:08:22,780
+I ordered Reutter and we could use brand new decoder and new encoder from JSON package.
+
+72
+00:08:22,960 --> 00:08:25,480
+In order not to prolong the time of decision.
+
+73
+00:08:25,490 --> 00:08:29,380
+We will finish it and we will continue the content in the next session.
+
+74
+00:08:29,740 --> 00:08:30,280
+Goodbye.

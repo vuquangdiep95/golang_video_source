@@ -1,0 +1,227 @@
+1
+00:00:11,910 --> 00:00:17,070
+Hello and welcome to the gold and polygamy language course in the previous session.
+
+2
+00:00:17,100 --> 00:00:21,480
+We could define connect function to communicate to the MySchool database.
+
+3
+00:00:21,870 --> 00:00:27,090
+And in this time, we want to perform crowd operations by writing different functions.
+
+4
+00:00:28,590 --> 00:00:34,980
+First, you start by writing the queries related to the select statement, so create the function to
+
+5
+00:00:34,980 --> 00:00:39,060
+select all the student records and return a student at a
+
+6
+00:00:42,030 --> 00:00:42,840
+function.
+
+7
+00:00:45,600 --> 00:00:48,870
+Select all the students.
+
+8
+00:00:52,680 --> 00:01:01,410
+And return type is a right off model that a student modern, that student
+
+9
+00:01:04,860 --> 00:01:10,320
+now cutting iconic function for initializing my school driver named on datasource name.
+
+10
+00:01:10,890 --> 00:01:17,760
+This function returns a DBI object from a school package, which gives us access to the metals contained
+
+11
+00:01:17,760 --> 00:01:20,220
+in the package to perform craft operations.
+
+12
+00:01:20,340 --> 00:01:27,660
+So first, define a variable like DB call equals connect.
+
+13
+00:01:30,330 --> 00:01:36,930
+After creating a DB object from a school package, be invoked query method that it executes a query
+
+14
+00:01:36,930 --> 00:01:45,360
+that acts it, a school query statement as a string parameter and returns rows and road objects so defined
+
+15
+00:01:45,360 --> 00:01:49,770
+to variables like rows and rows and column query methods.
+
+16
+00:01:50,580 --> 00:01:52,950
+Rows and rows.
+
+17
+00:01:52,980 --> 00:01:58,010
+Column equals DB dots query.
+
+18
+00:02:00,540 --> 00:02:06,960
+In this case, we want to see all the students in student data, so we should use select queries statement.
+
+19
+00:02:07,410 --> 00:02:10,440
+So we write select query as a student parameter.
+
+20
+00:02:12,150 --> 00:02:14,200
+Double quotation mark ends, right?
+
+21
+00:02:14,230 --> 00:02:20,790
+Select a song from a student.
+
+22
+00:02:22,260 --> 00:02:27,330
+Now catch Aurora status, if at all
+
+23
+00:02:30,630 --> 00:02:31,410
+like that.
+
+24
+00:02:33,150 --> 00:02:33,800
+That's all.
+
+25
+00:02:34,280 --> 00:02:34,740
+A.
+
+26
+00:02:37,530 --> 00:02:37,910
+F.
+
+27
+00:02:41,130 --> 00:02:43,910
+We use the author for closing a created VB object.
+
+28
+00:02:43,920 --> 00:02:49,850
+The author DV Don Close notes.
+
+29
+00:02:50,760 --> 00:02:58,260
+We create a list of student strive to act each new, a student that is read from the database, from
+
+30
+00:02:58,260 --> 00:03:02,970
+the student state ID and at the end of fetching data from the database.
+
+31
+00:03:02,970 --> 00:03:11,370
+The student list is displayed by the mentors return value, so define the value of like student's column
+
+32
+00:03:11,520 --> 00:03:15,780
+he calls all day of modern
+
+33
+00:03:18,090 --> 00:03:18,960
+student
+
+34
+00:03:21,630 --> 00:03:29,070
+now put the return value of the query inside the full loop to access each of the rows by the next function.
+
+35
+00:03:29,520 --> 00:03:36,900
+So we write four rows dots next.
+
+36
+00:03:41,860 --> 00:03:47,560
+Next, function prepares the next result role for Reading with the scan method.
+
+37
+00:03:47,950 --> 00:03:55,060
+It returns true on success or false if there is no next resolve, and that all happened while preparing
+
+38
+00:03:55,060 --> 00:03:58,720
+it, so we create an object from a student instruction.
+
+39
+00:04:01,320 --> 00:04:07,020
+Student calling equals modern art student.
+
+40
+00:04:12,240 --> 00:04:19,650
+And calling it skin metal on Rose Resort to read records, one by one is scanned copies the colors in
+
+41
+00:04:19,650 --> 00:04:23,940
+the current roll into the values pointed at by destination.
+
+42
+00:04:24,720 --> 00:04:30,840
+The number of values in destination must be the same as the number of the columns in rows defiant or
+
+43
+00:04:30,840 --> 00:04:33,750
+variable and invoke a scan function at all.
+
+44
+00:04:34,320 --> 00:04:42,120
+He calls Rose the scanner set a student I.D. as pointer.
+
+45
+00:04:44,960 --> 00:04:59,790
+Student I.D. So the student name the student's name and sits a student page.
+
+46
+00:05:06,850 --> 00:05:12,970
+Eskom, Converse, Collins read from the database into the following common go times and special time
+
+47
+00:05:12,980 --> 00:05:17,440
+provided by the issuer package, so check every status.
+
+48
+00:05:36,830 --> 00:05:38,000
+And continue.
+
+49
+00:05:42,890 --> 00:05:49,640
+Now at each read that record that contains a student of the least of his students by the app and function,
+
+50
+00:05:49,970 --> 00:06:03,120
+the app built in function Athens elements to the end of its life, the students he calls upon in the
+
+51
+00:06:03,170 --> 00:06:05,480
+students, the student.
+
+52
+00:06:10,690 --> 00:06:16,750
+Now, return as student lease has returned values of function due to its students.
+
+53
+00:06:20,740 --> 00:06:27,100
+Now we could define the function name, select all as students that fit all students of a student table
+
+54
+00:06:27,100 --> 00:06:29,980
+in person database by the select the statement.
+
+55
+00:06:30,310 --> 00:06:35,830
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+56
+00:06:35,830 --> 00:06:36,760
+the next session.
+
+57
+00:06:36,950 --> 00:06:37,510
+Goodbye.

@@ -1,0 +1,315 @@
+1
+00:00:14,070 --> 00:00:20,310
+Hello and welcome to the golden programming language course in the pedigree session, we talked about
+
+2
+00:00:20,310 --> 00:00:22,110
+returning multiple values.
+
+3
+00:00:22,440 --> 00:00:27,180
+And in this session, we want to talk about the others fonctions concept.
+
+4
+00:00:31,940 --> 00:00:33,650
+Function arguments.
+
+5
+00:00:35,760 --> 00:00:43,650
+Ingo language, the parameters passed to a function are called actual parameters, various the parameters
+
+6
+00:00:43,650 --> 00:00:51,900
+received by a function or can't form on parameters by default, go language use can't by value method
+
+7
+00:00:52,110 --> 00:00:56,130
+to pass arguments in function go language support.
+
+8
+00:00:56,160 --> 00:01:05,520
+Two ways to pass arguments to your function First is card by value and second is called by reference.
+
+9
+00:01:07,180 --> 00:01:15,250
+Caused by value, the call by value method of passing our humans to a function copies the actual value
+
+10
+00:01:15,250 --> 00:01:19,840
+of an argument into the four parameter of the function.
+
+11
+00:01:20,380 --> 00:01:27,040
+In this case, changes made to the perimeter are inside the function have no effect on the arguments.
+
+12
+00:01:28,350 --> 00:01:35,120
+By default, go programming language users can't buy value to pass arguments in general.
+
+13
+00:01:35,370 --> 00:01:42,030
+This means that code within the function cannot alter arguments used to call the function.
+
+14
+00:01:43,140 --> 00:01:47,940
+Now go to this code and illustrate how to use card by value.
+
+15
+00:01:50,470 --> 00:01:56,500
+First, creating a swap function that takes two parameter and changes, then together.
+
+16
+00:02:00,190 --> 00:02:04,180
+Fine, for example, swept
+
+17
+00:02:07,020 --> 00:02:14,920
+the X and Y is in type and return type, is it?
+
+18
+00:02:19,010 --> 00:02:25,510
+First creative and Van Claire Typekit did.
+
+19
+00:02:26,800 --> 00:02:29,610
+And said the venue of its intent.
+
+20
+00:02:30,060 --> 00:02:54,310
+Ten equals X and put Y value already then into X X equals Y and now put tenth into Y Y equals 10th and
+
+21
+00:02:54,310 --> 00:02:55,330
+return 10.
+
+22
+00:02:55,330 --> 00:03:04,480
+Variable value retailer can reformat the code and save the project.
+
+23
+00:03:05,950 --> 00:03:12,520
+Now create the main function for involved the function, so go to the main function.
+
+24
+00:03:12,940 --> 00:03:21,220
+First, creating local variable definition and initialization for the example that A.
+
+25
+00:03:22,290 --> 00:03:32,100
+E equals a hundred and go to the next line and second variable definition Van B Typekit is into gain
+
+26
+00:03:32,670 --> 00:03:34,440
+equals 200.
+
+27
+00:03:34,860 --> 00:03:39,660
+These play these very the B force swap if F.
+
+28
+00:03:42,420 --> 00:04:00,490
+The four swap a equals persons, the and B equals Person D and said they were a.
+
+29
+00:04:04,530 --> 00:04:08,610
+Now calling it soft function to slap these values.
+
+30
+00:04:09,750 --> 00:04:16,610
+Swap and pass value that A and B to it, A and B.
+
+31
+00:04:19,320 --> 00:04:27,120
+Now displayed these very able after swap if they're after swap.
+
+32
+00:04:30,270 --> 00:04:33,450
+A gladiator equals personality.
+
+33
+00:04:34,800 --> 00:04:45,390
+And B, that evil equals personality and set the very ideals A and B again reformat the code, save
+
+34
+00:04:45,390 --> 00:04:48,600
+the project and execute the code.
+
+35
+00:04:51,720 --> 00:04:58,470
+Now we can see the output before Super eight equals 100 and B equals 200.
+
+36
+00:04:58,950 --> 00:05:04,830
+And after Super eight equals 100 and again, B equals 200.
+
+37
+00:05:05,250 --> 00:05:12,150
+It shows that there is no change in the values, although they had been changed inside the function.
+
+38
+00:05:12,840 --> 00:05:19,830
+In this parameter passing method, values of actual parameters are copied to functions for more parameters,
+
+39
+00:05:20,130 --> 00:05:24,930
+and the two types of parameters are stored in different memory locations.
+
+40
+00:05:25,380 --> 00:05:32,850
+So any changes made inside functions are not reflected in actual parameters of the color.
+
+41
+00:05:33,510 --> 00:05:36,420
+Now go to a slide and continue.
+
+42
+00:05:38,570 --> 00:05:48,310
+Second, call by reference, the code by reference missal of passing our unions to a function copies
+
+43
+00:05:48,320 --> 00:05:54,680
+the address of an argument into the form on perimeter inside the function.
+
+44
+00:05:54,860 --> 00:05:59,360
+The address is used for access to actual argument used in the Con.
+
+45
+00:05:59,990 --> 00:06:08,030
+This means that changes made to the perimeter affect the past argument to pass the venue by refis.
+
+46
+00:06:08,240 --> 00:06:14,090
+Argument pointers are passed to the function just like any other value.
+
+47
+00:06:14,750 --> 00:06:19,540
+Now go to this school and illustrate how to use called by reference.
+
+48
+00:06:21,820 --> 00:06:23,750
+First to your last go.
+
+49
+00:06:30,880 --> 00:06:33,250
+They have the project and ready to ride.
+
+50
+00:06:34,290 --> 00:06:41,100
+First, we need to declare the function parameters as points four times as in the following function
+
+51
+00:06:41,100 --> 00:06:49,200
+swap, which exchange the values of the two integer variables, pointing to why its arguments, for
+
+52
+00:06:49,200 --> 00:06:50,870
+the example formed.
+
+53
+00:06:52,640 --> 00:07:03,800
+Swapped and set the variable X and the type of it is prone to treat as received.
+
+54
+00:07:06,310 --> 00:07:13,860
+And very even why Asterix and the time of the this point of into.
+
+55
+00:07:17,990 --> 00:07:27,830
+Defined the 10 variables that can talk about it ain't go to the next long and save the value and address
+
+56
+00:07:27,830 --> 00:07:35,540
+X terms equals x three x x.
+
+57
+00:07:37,640 --> 00:07:44,870
+And put Y into X cone to X equals to Y.
+
+58
+00:07:45,470 --> 00:07:53,990
+Now put 10 variable into Y value that as six Y equals 10.
+
+59
+00:07:55,610 --> 00:08:02,630
+Reformat the code and save the project, now, create the main function for each of the search function,
+
+60
+00:08:02,630 --> 00:08:12,410
+so go to the main function first, creating local variable definition and initialization for the example,
+
+61
+00:08:12,410 --> 00:08:18,890
+via a m equals a 100 and go to the next line.
+
+62
+00:08:20,050 --> 00:08:30,910
+That be it equals 200 now this these variable default swap for the example that a
+
+63
+00:08:34,390 --> 00:08:53,170
+default swap A equals Person D and the equals Person D and set by either A and B, you go to the next
+
+64
+00:08:53,170 --> 00:09:02,680
+line and calling the function to swap the values, swap and set the variable A and B as a pointer and
+
+65
+00:09:02,680 --> 00:09:07,630
+assign a common Anderson B.
+
+66
+00:09:09,920 --> 00:09:16,280
+And percent, a indiqué pointer to a means address of variable A..
+
+67
+00:09:16,730 --> 00:09:24,920
+And Ampersand B indicates pointing to A to B means ad to solve variable B now displayed these variable
+
+68
+00:09:24,920 --> 00:09:25,760
+after slope.
+
+69
+00:09:26,120 --> 00:09:40,520
+If F after such a equals, Person D and B equals first in the set.
+
+70
+00:09:40,520 --> 00:09:43,160
+The letter A and B.
+
+71
+00:09:45,310 --> 00:09:50,200
+Now reformat the call, save the project and execute the program.
+
+72
+00:09:51,970 --> 00:09:58,840
+Now we can see the output before slap a equals a hundred and B equals 200.
+
+73
+00:09:59,470 --> 00:10:11,440
+But after slap a equals 200 and B equals 100, it shows that the change has reflected outside the function
+
+74
+00:10:11,440 --> 00:10:17,440
+as the only kind of value that changes do not reflect outside the function.
+
+75
+00:10:17,920 --> 00:10:22,660
+Both the actual and formal parameters refer to the same locations.
+
+76
+00:10:22,960 --> 00:10:31,540
+So any changes made inside the functions are actually reflected in actual parameters of the color in
+
+77
+00:10:31,540 --> 00:10:34,360
+order not to prolong the time of decision.
+
+78
+00:10:34,510 --> 00:10:38,770
+We will finish sheet and we will continue the content in the next session.
+
+79
+00:10:39,010 --> 00:10:39,510
+Goodbye.

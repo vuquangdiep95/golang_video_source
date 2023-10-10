@@ -1,0 +1,195 @@
+1
+00:00:14,710 --> 00:00:19,480
+Hello and welcome to Golang programming language course in this session.
+
+2
+00:00:19,510 --> 00:00:22,060
+We want to talk about concurrency concept.
+
+3
+00:00:25,770 --> 00:00:26,850
+Concurrency.
+
+4
+00:00:28,350 --> 00:00:34,350
+Concurrency means that the application has more than one thing to do at the same time.
+
+5
+00:00:35,070 --> 00:00:39,690
+It's about creating multiple process, executing independently.
+
+6
+00:00:40,470 --> 00:00:47,040
+Applications might be dealing with lots of processes together to accomplish the intended behavior.
+
+7
+00:00:47,820 --> 00:00:49,530
+First, we define an exemption.
+
+8
+00:00:50,400 --> 00:00:54,600
+Imagine I am reading this tutorial and my phone is ringing.
+
+9
+00:00:55,440 --> 00:01:00,300
+I will start reading and answer the phone, and then I start reading again.
+
+10
+00:01:01,260 --> 00:01:06,300
+Now I am dealing with two jobs, reading and answering phone.
+
+11
+00:01:06,810 --> 00:01:10,520
+Why sometimes is Slice, which is said to be concurrent?
+
+12
+00:01:10,540 --> 00:01:19,020
+JOTS Point to note here is that these two words reading and answering are not being done at the same
+
+13
+00:01:19,020 --> 00:01:22,810
+time when things are being done at the same time.
+
+14
+00:01:22,830 --> 00:01:27,840
+It's called parallelism teens watching TV and eating fruits.
+
+15
+00:01:28,890 --> 00:01:36,720
+So concurrency is dealing with multiple things at once and does not need to be done at the same time
+
+16
+00:01:36,840 --> 00:01:40,120
+with some time a work and parallelism.
+
+17
+00:01:40,140 --> 00:01:42,060
+I am doing multiple things.
+
+18
+00:01:42,060 --> 00:01:51,720
+At the same time is a subset of this concurrency and parallelism that turns concurrency and parallelism
+
+19
+00:01:51,900 --> 00:01:55,230
+are used in context of multi-threaded programs.
+
+20
+00:01:55,620 --> 00:01:57,660
+However, there are quite different.
+
+21
+00:02:02,270 --> 00:02:04,160
+Concurrency applications.
+
+22
+00:02:05,580 --> 00:02:13,830
+Concurrency means that multiple processes or threads are making progress concurrently, while only one
+
+23
+00:02:13,830 --> 00:02:16,260
+third is executed at the time by the CPU.
+
+24
+00:02:16,500 --> 00:02:20,190
+These stories can be sorted in and out as required.
+
+25
+00:02:20,280 --> 00:02:25,680
+This means that no thread is actually completed totally before another is scheduled.
+
+26
+00:02:26,070 --> 00:02:29,700
+So all the threads are executing concurrently.
+
+27
+00:02:30,360 --> 00:02:33,600
+Let's assume that you have a single core system.
+
+28
+00:02:34,020 --> 00:02:41,310
+Multiple task needs to be accomplished, but we have a constraint where at any moment in time, only
+
+29
+00:02:41,310 --> 00:02:47,400
+one test can be executed in the single core, available in a concurrent execution model.
+
+30
+00:02:47,730 --> 00:02:54,150
+There is context switching between the tasks, so the application is dealing with multiple tasks but
+
+31
+00:02:54,150 --> 00:02:55,980
+not executing them together.
+
+32
+00:02:56,130 --> 00:02:58,800
+As we have only one executing core.
+
+33
+00:02:59,160 --> 00:03:05,820
+The context switching is so quick between the tasks that it feels like the tasks are running.
+
+34
+00:03:05,820 --> 00:03:12,930
+At the same time, the factor of parallel execution is missing during the execution as we have a single
+
+35
+00:03:12,930 --> 00:03:13,740
+core system.
+
+36
+00:03:13,890 --> 00:03:21,870
+We cannot have parallel processes running together in the restoration above concurrency without parallelism.
+
+37
+00:03:22,110 --> 00:03:27,450
+There are two tasks that need to execute concurrently at any moment in time.
+
+38
+00:03:27,460 --> 00:03:32,220
+Only one task is running and there is a constant switch between the tasks.
+
+39
+00:03:36,030 --> 00:03:38,010
+Parallelism applications.
+
+40
+00:03:39,520 --> 00:03:44,020
+In cases where we are working with senior corps, we have resource constraints.
+
+41
+00:03:45,190 --> 00:03:51,220
+If we add more cause to the system, we will have more resources for the application and can be enable
+
+42
+00:03:51,220 --> 00:03:57,970
+multiple tasks to execute at the same time on different course in the illustration above.
+
+43
+00:03:58,120 --> 00:04:04,720
+If you have two tasks that are running together at any moment in time, the tasks are executing in parallel
+
+44
+00:04:04,720 --> 00:04:07,880
+of different course while working with goal line.
+
+45
+00:04:07,930 --> 00:04:12,310
+We can scale up the application from concurrent to parallel execution easily.
+
+46
+00:04:12,790 --> 00:04:13,960
+This capability can go.
+
+47
+00:04:13,960 --> 00:04:20,230
+Land can be achieved with ease in order not to prolong the time of decision.
+
+48
+00:04:20,410 --> 00:04:25,770
+We will finish it and we will continue the content in the next session until next session.
+
+49
+00:04:25,780 --> 00:04:26,220
+Goodbye.

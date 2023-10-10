@@ -1,0 +1,239 @@
+1
+00:00:00,890 --> 00:00:07,040
+Before we move on to a more complex example involving new taxes, let's write a test for our existing
+
+2
+00:00:07,040 --> 00:00:07,460
+code.
+
+3
+00:00:07,550 --> 00:00:13,490
+But before I do that, what I want to do is to restore this code to the way that it was before we added
+
+4
+00:00:13,490 --> 00:00:14,510
+our new taxes.
+
+5
+00:00:14,600 --> 00:00:20,870
+Okay, so I'm going to copy this and just to save it or paste it down here and then comment this out
+
+6
+00:00:21,140 --> 00:00:24,230
+so I can restore it back to the proper version later on.
+
+7
+00:00:24,800 --> 00:00:25,460
+Then I'm here.
+
+8
+00:00:25,700 --> 00:00:30,110
+I'll remove my reference to a mutex in the parameters to update message.
+
+9
+00:00:30,920 --> 00:00:33,410
+I'll remove both of my lock and unlock.
+
+10
+00:00:34,490 --> 00:00:38,180
+So there's a lock on, there's unlock on.
+
+11
+00:00:38,660 --> 00:00:43,010
+I'll get rid of my variable mutex here in the main function and remove these.
+
+12
+00:00:43,250 --> 00:00:47,580
+Okay, so we're going back to the way that it was before we put our mutex in there.
+
+13
+00:00:47,600 --> 00:00:48,590
+So there it is.
+
+14
+00:00:49,250 --> 00:00:54,860
+Now let's create a new file over here called Main Underscore Test.
+
+15
+00:00:56,690 --> 00:00:56,940
+Go.
+
+16
+00:00:57,440 --> 00:00:57,770
+Okay.
+
+17
+00:00:58,160 --> 00:00:59,600
+And again, this is in package main.
+
+18
+00:01:00,410 --> 00:01:06,620
+And I'll write one test func and I'll call this one test underscore update message.
+
+19
+00:01:07,580 --> 00:01:11,750
+And it has one parameter T, which is a pointer to testing dot t.
+
+20
+00:01:12,650 --> 00:01:14,870
+Okay, so let's write the test.
+
+21
+00:01:15,170 --> 00:01:16,730
+And the test will be pretty simple.
+
+22
+00:01:16,940 --> 00:01:22,430
+I'll set message equal to and that's a package level variable so I can use the equals operator.
+
+23
+00:01:22,700 --> 00:01:23,390
+Hello world.
+
+24
+00:01:26,720 --> 00:01:27,140
+Okay.
+
+25
+00:01:28,310 --> 00:01:29,830
+And then I'll create a weight group.
+
+26
+00:01:29,870 --> 00:01:32,510
+I'll use my weight group because it's a package level variable.
+
+27
+00:01:33,460 --> 00:01:36,320
+Add one and I'll call.
+
+28
+00:01:36,320 --> 00:01:44,180
+Go update message with Goodbye Cruel World just to change it to something else.
+
+29
+00:01:45,050 --> 00:01:46,160
+WG Dot, wait.
+
+30
+00:01:46,580 --> 00:01:50,150
+Okay, so I'm basically duplicating the functionality that I have in the main function, which I have
+
+31
+00:01:50,150 --> 00:01:53,570
+to in order to test this properly and then to write my test.
+
+32
+00:01:53,960 --> 00:02:03,620
+If message is not equal to goodbye cruel world with an exclamation mark, I have an error.
+
+33
+00:02:03,860 --> 00:02:05,030
+T dot error.
+
+34
+00:02:05,840 --> 00:02:09,230
+I'll just put incorrect value in MSG.
+
+35
+00:02:09,500 --> 00:02:09,830
+Okay.
+
+36
+00:02:10,520 --> 00:02:16,100
+Now that appears to be a good test, but remember we removed our mutex lock and unlock.
+
+37
+00:02:16,160 --> 00:02:18,680
+So let's open our terminal and type.
+
+38
+00:02:18,680 --> 00:02:19,940
+Go test dot.
+
+39
+00:02:21,730 --> 00:02:22,980
+And it all seemed to pass.
+
+40
+00:02:23,860 --> 00:02:30,430
+But just like I could go run dash race if I put go test dash race dot.
+
+41
+00:02:33,000 --> 00:02:33,990
+It passes again.
+
+42
+00:02:34,770 --> 00:02:43,830
+But what happens if I change this to A to duplicate this line and change this one to say X?
+
+43
+00:02:44,220 --> 00:02:44,610
+Okay.
+
+44
+00:02:46,080 --> 00:02:48,640
+Now, if I type, go test dash race.
+
+45
+00:02:48,660 --> 00:02:55,440
+Now I have to go routines running in the background, both accessing the same data in the form of message
+
+46
+00:02:55,440 --> 00:02:56,070
+that string.
+
+47
+00:02:56,280 --> 00:02:57,120
+Now when I run it.
+
+48
+00:02:58,850 --> 00:03:00,940
+Now I get warning data race.
+
+49
+00:03:00,950 --> 00:03:01,290
+Okay.
+
+50
+00:03:01,340 --> 00:03:06,950
+So there is a clear illustration once again of the danger of race conditions.
+
+51
+00:03:07,250 --> 00:03:12,230
+And remember, when you run the test by itself, if I just go go test, Don.
+
+52
+00:03:13,790 --> 00:03:14,630
+It seems fine.
+
+53
+00:03:14,990 --> 00:03:20,690
+But when I add that condition, check, dash, race that flag, then it lets me know there's a bit of
+
+54
+00:03:20,690 --> 00:03:21,230
+a problem.
+
+55
+00:03:21,270 --> 00:03:21,590
+Okay.
+
+56
+00:03:21,800 --> 00:03:27,620
+Just to let you know that you don't have to test for race condition conditions by running your program.
+
+57
+00:03:27,830 --> 00:03:33,680
+You actually write tests and add that flag dash race just to make sure that everything is going to behave
+
+58
+00:03:33,680 --> 00:03:34,490
+as expected.
+
+59
+00:03:34,760 --> 00:03:35,090
+Okay.
+
+60
+00:03:35,150 --> 00:03:37,640
+Now, let's move on to a slightly more complex example.

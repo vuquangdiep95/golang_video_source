@@ -1,0 +1,207 @@
+1
+00:00:13,750 --> 00:00:18,920
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:18,940 --> 00:00:22,120
+We want to talk about F.A. package concept.
+
+3
+00:00:26,880 --> 00:00:28,710
+A family package in Golang.
+
+4
+00:00:30,820 --> 00:00:38,080
+Taken kind of defining a package is essentially a container of source code for some specific purpose
+
+5
+00:00:38,860 --> 00:00:41,050
+packages are very essential.
+
+6
+00:00:41,230 --> 00:00:48,910
+As in all programs ranging from the most basic programs to a high level complex codes, these are used.
+
+7
+00:00:50,650 --> 00:00:58,690
+A package ensures that no code is repeated and that the main code is and consist as possible in a very
+
+8
+00:00:58,690 --> 00:01:00,010
+structured manner.
+
+9
+00:01:01,960 --> 00:01:09,850
+Google provides various inbuilt packages to users so they can ease, including with pretty defined basic
+
+10
+00:01:10,030 --> 00:01:11,690
+functionality packages.
+
+11
+00:01:13,000 --> 00:01:15,850
+One of such packages is the FMV package.
+
+12
+00:01:16,900 --> 00:01:24,190
+If emptiest stands for the format package, this package allows to format basic strings, values or
+
+13
+00:01:24,190 --> 00:01:30,340
+anything and preen them or collect user input from the console or write into a fine.
+
+14
+00:01:30,460 --> 00:01:35,020
+Using a writer or even print, customized, fancier or messages.
+
+15
+00:01:36,010 --> 00:01:40,300
+This package is all about formatting, input and output.
+
+16
+00:01:42,070 --> 00:01:48,520
+Let's look at the functions it provides to its users, along with a brief description of each function
+
+17
+00:01:49,840 --> 00:01:51,100
+print function.
+
+18
+00:01:54,550 --> 00:02:01,390
+The print function and go language formats using the default format for its offerings and rise based
+
+19
+00:02:01,390 --> 00:02:11,020
+on the output print function simply prints whatever input it receives as it is on the output console
+
+20
+00:02:11,110 --> 00:02:17,920
+screen, beginning from the current cursor position without appending any space or nil lines unless
+
+21
+00:02:18,100 --> 00:02:19,600
+explicitly coded.
+
+22
+00:02:22,030 --> 00:02:28,120
+Here is spaces are added between options, then any a string is not used as a parameter.
+
+23
+00:02:28,750 --> 00:02:32,710
+Moreover, this function is defined under the empty package here.
+
+24
+00:02:32,890 --> 00:02:37,420
+You'll need to import this empty package in order to use these functions.
+
+25
+00:02:37,900 --> 00:02:39,940
+Now you can see the syntax.
+
+26
+00:02:42,900 --> 00:02:49,230
+A 3.0 interface containing some strings and declare constant variables.
+
+27
+00:02:50,520 --> 00:02:56,670
+Return value, it returns the number of by 310 and in your right error in concert.
+
+28
+00:02:58,440 --> 00:03:03,810
+Now let's go to this school with program to illustrate the uses of brain function.
+
+29
+00:03:08,430 --> 00:03:13,440
+First, go to expeller and create a project folder like if!
+
+30
+00:03:13,440 --> 00:03:14,040
+A..
+
+31
+00:03:15,180 --> 00:03:20,070
+Create a file like name that go.
+
+32
+00:03:21,380 --> 00:03:30,390
+And define package me and define main function, okay?
+
+33
+00:03:31,580 --> 00:03:39,770
+First, declaring some esoteric variables, for the example that is still one comma is still two comma
+
+34
+00:03:39,770 --> 00:03:46,310
+is CRT and initialized, then A and B.
+
+35
+00:03:46,850 --> 00:03:56,900
+And for SDR three, we said see that you go to the next line and column print function to display defined
+
+36
+00:03:57,110 --> 00:03:58,070
+string variables.
+
+37
+00:03:59,030 --> 00:04:13,970
+A. got dot print function and set this variable as arguments for this function is t r one, s t r two
+
+38
+00:04:15,020 --> 00:04:16,880
+and SDR G.
+
+39
+00:04:18,020 --> 00:04:18,470
+OK.
+
+40
+00:04:18,980 --> 00:04:32,020
+And declaring some no variable sport b pick that number one, number two and number three initialize
+
+41
+00:04:32,030 --> 00:04:43,190
+them five, 10 and 50 for Gnome three, go to the next line and it will create function to display defined
+
+42
+00:04:43,190 --> 00:04:52,610
+number variables if anti-God can't print function and set these variable as arguments or print function.
+
+43
+00:04:53,420 --> 00:04:59,450
+No one known to and said No.
+
+44
+00:04:59,510 --> 00:04:59,960
+Three.
+
+45
+00:05:00,440 --> 00:05:00,850
+OK.
+
+46
+00:05:00,860 --> 00:05:04,700
+The format the code save the project and execute the program.
+
+47
+00:05:05,090 --> 00:05:11,750
+First, go to project folders, CD20 and run the program.
+
+48
+00:05:15,900 --> 00:05:20,990
+Now we can see the output in the first go, the variables used are extremes.
+
+49
+00:05:21,260 --> 00:05:28,320
+Hans Espaces are not added in between two extremes, but in the second coat the variables used are no.
+
+50
+00:05:28,540 --> 00:05:34,500
+Hans Espaces are added in between two numbers in order not to prolong the time of decision.
+
+51
+00:05:34,710 --> 00:05:38,850
+We will finish it and we will continue the content in the next session.
+
+52
+00:05:39,040 --> 00:05:39,570
+Goodbye.

@@ -1,0 +1,100 @@
+1
+00:00:00,570 --> 00:00:06,650
+Quindi questo è un breve Leichter ma voglio farti capire che sei PCI-E oltre ad
+
+2
+00:00:06,760 --> 00:00:13,220
+essere super performante è anche estremamente scalabile e questo perché i tuoi PC server saranno asincroni
+
+3
+00:00:13,320 --> 00:00:14,370
+di default.
+
+4
+00:00:14,640 --> 00:00:20,100
+Ciò significa che non bloccheranno i thread su richiesta e potranno gestire molte richieste allo stesso tempo.
+
+5
+00:00:20,100 --> 00:00:24,520
+Quindi, solo per usare alcuni numeri e ovviamente dipende dal tipo di macchina che
+
+6
+00:00:24,590 --> 00:00:30,810
+hai e qualsiasi cosa, ma europaeus tu server, può servire milioni di richieste in parallelo e i client GOPAC hanno una scelta.
+
+7
+00:00:30,810 --> 00:00:35,260
+E lo vedremo nelle implementazioni che possono essere asincrone o sincrone
+
+8
+00:00:35,310 --> 00:00:36,660
+che significa blocco.
+
+9
+00:00:36,660 --> 00:00:41,070
+Quindi spetta a te decidere quale modello funziona per te con le prestazioni di cui hai bisogno.
+
+10
+00:00:41,070 --> 00:00:47,490
+E per il tipo di applicazione client hai anche clan JPC in grado di fare qualcosa chiamato bilanciamento del
+
+11
+00:00:47,490 --> 00:00:48,900
+carico lato client.
+
+12
+00:00:48,930 --> 00:00:53,810
+Ciò significa che se si dispone di più server GAAP è possibile eseguire il bilanciamento del carico direttamente dal client.
+
+13
+00:00:53,820 --> 00:00:56,770
+E questo ti permette di scalare orizzontalmente.
+
+14
+00:00:56,820 --> 00:01:01,970
+Quindi, solo per darti un numero e una dimostrazione di scalabilità e tu non sei Google così bene che
+
+15
+00:01:01,980 --> 00:01:03,180
+non lo raggiungerai mai.
+
+16
+00:01:03,240 --> 00:01:10,710
+O forse lo farai, ma Google fondamentalmente nel loro sistema hanno 10 miliardi di richieste GOPAC fatte
+
+17
+00:01:10,800 --> 00:01:13,600
+al secondo nei loro sistemi.
+
+18
+00:01:13,650 --> 00:01:19,610
+Quindi questo framework utilizza in modo massiccio e ha raggiunto quella scala enorme di quella rete di 10
+
+19
+00:01:19,670 --> 00:01:22,020
+miliardi di richieste RBC al secondo.
+
+20
+00:01:22,180 --> 00:01:22,610
+Va bene.
+
+21
+00:01:22,740 --> 00:01:28,230
+Quindi, usando il framework JPC non dovresti preoccuparti del ridimensionamento e delle prestazioni.
+
+22
+00:01:28,230 --> 00:01:30,010
+Questo è un framework testato in battaglia.
+
+23
+00:01:30,120 --> 00:01:34,630
+E se Google ha intenzione di lavorare per loro, dovrebbe funzionare anche per te.
+
+24
+00:01:34,650 --> 00:01:36,410
+Va bene, è stata una breve lezione.
+
+25
+00:01:36,570 --> 00:01:37,620
+E non appena il prossimo.
+

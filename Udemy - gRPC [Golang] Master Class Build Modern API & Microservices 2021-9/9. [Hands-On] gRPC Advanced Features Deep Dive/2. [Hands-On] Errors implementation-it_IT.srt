@@ -1,0 +1,756 @@
+1
+00:00:00,090 --> 00:00:03,020
+OK, andiamo avanti e implementiamo il nostro prefisso.
+
+2
+00:00:03,180 --> 00:00:08,660
+Quindi per questo implementeremo una radice quadrata API API e una radice quadrata, come si può intuire, calcolerà la
+
+3
+00:00:08,670 --> 00:00:10,490
+radice quadrata di un numero.
+
+4
+00:00:10,860 --> 00:00:15,610
+Quindi creeremo l'RBC e implementeremo quei server con l'intestazione e il collegamento.
+
+5
+00:00:15,960 --> 00:00:18,080
+E poi quando la corrente sarebbe erroneamente.
+
+6
+00:00:18,240 --> 00:00:19,880
+Quindi iniziamo.
+
+7
+00:00:20,220 --> 00:00:23,110
+Quindi la prima cosa che vuoi fare è farti calcolare.
+
+8
+00:00:23,580 --> 00:00:28,710
+E lì creeremo nuovi RBC e li chiameremo radici quadrate.
+
+9
+00:00:28,770 --> 00:00:30,890
+Richiederà una richiesta di root quadrata.
+
+10
+00:00:31,680 --> 00:00:36,760
+Rendimenti annuali alla risposta quadrata delle radici.
+
+11
+00:00:36,780 --> 00:00:41,340
+Quindi questo è urinario quindi non c'è bisogno di streaming e parola chiave stream.
+
+12
+00:00:41,370 --> 00:00:47,330
+Ora dobbiamo solo creare queste cose quindi diremo che la richiesta di messaggio quadrato fondamentalmente per espandere
+
+13
+00:00:47,380 --> 00:00:51,440
+in 32 un numero e questo è uguale a uno.
+
+14
+00:00:51,570 --> 00:00:54,820
+E poi se prendiamo la risposta al numero di radici quadrate.
+
+15
+00:00:54,840 --> 00:00:57,350
+Quindi andiamo avanti con questo.
+
+16
+00:00:57,590 --> 00:01:07,870
+Il messaggio è proprio qui prendiamo un doppio numero di radici che rappresenterà le radici quadrate di
+
+17
+00:01:07,870 --> 00:01:09,610
+quel numero.
+
+18
+00:01:09,610 --> 00:01:16,620
+Quindi il codice sembra OK generiamo il PV calcolato e funzionante.
+
+19
+00:01:16,960 --> 00:01:21,370
+Quindi una cosa che vuoi fare di solito quando ricevi errori è documentare il tipo di errori
+
+20
+00:01:21,370 --> 00:01:22,330
+che vengono lanciati.
+
+21
+00:01:22,330 --> 00:01:26,260
+E questo è molto importante perché vuoi che il tuo codice sia leggibile e vuoi
+
+22
+00:01:26,260 --> 00:01:28,770
+che le persone capiscano cosa possono aspettarsi da errori.
+
+23
+00:01:28,810 --> 00:01:39,270
+Quindi andiamo avanti e diciamo che l'errore nella gestione di questo pc genererà un'eccezione se questo numero
+
+24
+00:01:41,190 --> 00:01:51,460
+di senato è negativo perché non possiamo calcolare la radice quadrata di un numero negativo perché l'errore
+
+25
+00:01:51,490 --> 00:01:56,260
+inviato è di tipo argomenti non validi.
+
+26
+00:01:57,160 --> 00:01:59,730
+Quindi daremo un'occhiata a come si crea quell'argomento non valido.
+
+27
+00:01:59,740 --> 00:02:05,780
+Ma ora qualcuno che scrive e legge questo codice capisce che può ottenere un argomento non valido.
+
+28
+00:02:06,510 --> 00:02:07,740
+OK, così va bene.
+
+29
+00:02:08,480 --> 00:02:11,250
+E ora possiamo andare a server fuori andare.
+
+30
+00:02:11,840 --> 00:02:15,120
+E così inservice che dobbiamo implementare questa nuova funzione.
+
+31
+00:02:15,590 --> 00:02:17,760
+Andiamo avanti e eccolo qui.
+
+32
+00:02:17,990 --> 00:02:21,900
+Radici quadrate Andiamo avanti e implementiamo questo.
+
+33
+00:02:22,100 --> 00:02:29,700
+Andiamo al server e aggiungeremo questa funzione sul mio server.
+
+34
+00:02:29,810 --> 00:02:37,490
+Radici quadrate Mi limiterò a chiudere questo dal contesto, quindi dirò solo che questo è il mio contesto CTX.
+
+35
+00:02:37,610 --> 00:02:39,810
+E qui otteniamo una richiesta.
+
+36
+00:02:39,810 --> 00:02:49,010
+Quindi la richiesta di tipo calcolatrice P. B. quella è le richieste di queerer e restituisce una calcolatrice P. B. esegue una query di
+
+37
+00:02:49,040 --> 00:02:49,860
+risposta.
+
+38
+00:02:50,420 --> 00:02:51,810
+E apro le mie staffe.
+
+39
+00:02:51,930 --> 00:02:53,700
+OK, questo sembra buono.
+
+40
+00:02:53,870 --> 00:02:56,860
+Quindi ora dobbiamo implementare il codice.
+
+41
+00:02:56,860 --> 00:02:59,230
+E quindi dobbiamo guardare il numero che sta arrivando.
+
+42
+00:02:59,240 --> 00:03:06,030
+Quindi, se guardi il numero che diciamo di richiedere il numero prima, registreremo il fatto che
+
+43
+00:03:06,050 --> 00:03:08,210
+siamo in questa funzione.
+
+44
+00:03:08,270 --> 00:03:15,020
+Quindi dirò che ho ricevuto un quadrato con RBC e quindi diciamo OK, ecco un numero che otteniamo il numero e ora abbiamo solo
+
+45
+00:03:15,020 --> 00:03:17,350
+bisogno di eseguire una semplice istruzione IF.
+
+46
+00:03:17,510 --> 00:03:21,250
+Se il numero è inferiore a zero, abbiamo un grosso problema, giusto.
+
+47
+00:03:21,260 --> 00:03:24,250
+Quindi, come faremo a gestire questi errori, torneremmo.
+
+48
+00:03:24,590 --> 00:03:29,990
+Ed ecco il trucco che vedi quando restituisci una risposta e un errore.
+
+49
+00:03:29,990 --> 00:03:32,790
+Nel nostro caso la risposta sarà No.
+
+50
+00:03:33,290 --> 00:03:39,680
+Bene, l'errore in sé è di tipo status dot e quando ciascuna delle frecce a destra diciamo errore F e apriamo
+
+51
+00:03:39,680 --> 00:03:40,820
+la loro analisi.
+
+52
+00:03:40,820 --> 00:03:43,730
+Ora puoi vedere che c'è uno stato indefinito, quindi posso importarlo.
+
+53
+00:03:43,760 --> 00:03:48,710
+E abbiamo bisogno di importare a Google il gabbiano che fa lo stato di DRP Schuessler.
+
+54
+00:03:48,710 --> 00:03:54,570
+Quindi se vai molto in alto puoi vedere che è stato importato OK.
+
+55
+00:03:54,600 --> 00:03:58,810
+E ora nell'aria possiamo avere codici e una stringa.
+
+56
+00:03:58,810 --> 00:03:59,850
+Quindi prendiamo un codice.
+
+57
+00:03:59,850 --> 00:04:07,140
+Prima di tutto il codice che vogliamo fare è dire che il codice avvia argomenti non validi e che in pratica dice che la nostra
+
+58
+00:04:07,200 --> 00:04:09,190
+funzione è un argomento non valido.
+
+59
+00:04:09,510 --> 00:04:13,720
+E ora aggiungiamo una nuova riga in modo che possiamo specificare cosa c'era di sbagliato nell'errore.
+
+60
+00:04:13,920 --> 00:04:19,180
+Quindi diciamo che ha ricevuto un numero negativo.
+
+61
+00:04:19,290 --> 00:04:19,890
+OK.
+
+62
+00:04:20,130 --> 00:04:27,900
+E possiamo fare f anti-cut print F per fare qualche stringa in relazione ricevuto un numero negativo e lo
+
+63
+00:04:27,900 --> 00:04:28,590
+passeremo.
+
+64
+00:04:28,590 --> 00:04:33,210
+Il numero di persone che abbiamo ricevuto qui e sembra buono.
+
+65
+00:04:33,210 --> 00:04:36,860
+Quindi, in questo caso, i codici sono stati importati di nuovo.
+
+66
+00:04:36,860 --> 00:04:41,550
+Quindi, se andate in cima, possiamo vedere che abbiamo lo status di europaeus e di europaeus Eco
+
+67
+00:04:41,550 --> 00:04:42,660
+che sono stati importati.
+
+68
+00:04:43,320 --> 00:04:49,620
+E quindi quello che succede qui è quello invece che restituiamo Neal che è il valore di ritorno e quindi un'aria che
+
+69
+00:04:49,680 --> 00:04:55,170
+ci viene detta che se forniamo il codice argomenti non validi proprio qui e oltre a un bel
+
+70
+00:04:55,170 --> 00:04:56,190
+messaggio di errore.
+
+71
+00:04:56,190 --> 00:05:01,740
+Quindi puoi vedere qui in questi commenti che abbiamo detto che avremo un tipo di errore non
+
+72
+00:05:01,740 --> 00:05:02,400
+valido.
+
+73
+00:05:02,850 --> 00:05:04,060
+Quindi sembra buono.
+
+74
+00:05:04,200 --> 00:05:10,710
+E ovviamente se il numero è superiore a zero, possiamo effettivamente restituire un valore positivo in modo che possiamo
+
+75
+00:05:11,520 --> 00:05:14,030
+restituire e calcolare i punti PV.
+
+76
+00:05:14,460 --> 00:05:21,700
+Risposta quadrata alle radici ha bisogno di un numero di radici.
+
+77
+00:05:21,750 --> 00:05:22,160
+OK.
+
+78
+00:05:22,170 --> 00:05:23,610
+E per questo possiamo fare matematica.
+
+79
+00:05:23,640 --> 00:05:26,580
+Sono radici squadrate quadrate.
+
+80
+00:05:26,890 --> 00:05:31,420
+E possiamo prendere qualsiasi numero dirà il numero e questo sembra buono.
+
+81
+00:05:31,420 --> 00:05:34,200
+E poi abbiamo bisogno di definire un errore, quindi torniamo a zero.
+
+82
+00:05:34,660 --> 00:05:35,980
+Quindi questo è tutto.
+
+83
+00:05:35,980 --> 00:05:41,410
+L'abbiamo gestito e venendo qui e qui non siamo felici quindi diamo un'occhiata.
+
+84
+00:05:41,410 --> 00:05:48,370
+La radice quadrata può usare il numero, possiamo usare solo un float 64, quindi galleggia 64.
+
+85
+00:05:49,730 --> 00:05:50,490
+E Happy Days.
+
+86
+00:05:50,620 --> 00:05:55,540
+OK, quindi ora abbiamo una funzione che se il numero è nullo restituisce un errore.
+
+87
+00:05:55,540 --> 00:05:58,280
+E se il numero è positivo, i ritorni sono radici quadrate.
+
+88
+00:05:58,570 --> 00:06:00,190
+Quindi è tutto per le modifiche al server.
+
+89
+00:06:00,190 --> 00:06:03,340
+E come puoi vedere registra un po 'più codice di prima.
+
+90
+00:06:03,360 --> 00:06:09,610
+Ma è bello perché ora possiamo iniziare a restituire alcuni codici di errore personalizzati e cose del genere.
+
+91
+00:06:09,640 --> 00:06:19,630
+E quindi se andiamo ai nostri clienti qui possiamo dare un'occhiata e in effetti invocare annullare i codici
+
+92
+00:06:19,630 --> 00:06:25,420
+di errore tipo di cosa fare errore narry e vedremo.
+
+93
+00:06:25,510 --> 00:06:35,770
+Quindi c'è un accordo con questo, quindi mi limiterò a copiare questo blocco proprio qui in fondo errore di errore che porti è
+
+94
+00:06:37,200 --> 00:06:37,950
+corretto.
+
+95
+00:06:37,970 --> 00:06:43,270
+E poi stiamo iniziando a fare un RBC radice quadrata.
+
+96
+00:06:43,430 --> 00:06:49,280
+Quindi ora faremo due cose per una chiamata corretta e faremo una chiamata aerea.
+
+97
+00:06:49,730 --> 00:06:51,400
+Quindi facciamo la chiamata corretta.
+
+98
+00:06:51,890 --> 00:07:01,010
+Quindi la prima cosa che vogliamo fare è dire che le radici quadrate di seedpods contengano quel contesto.
+
+99
+00:07:01,400 --> 00:07:04,040
+E qui abbiamo una richiesta di root quadrata che dobbiamo creare.
+
+100
+00:07:04,040 --> 00:07:12,470
+Quindi creiamo la nostra richiesta quadrata che prende come argomento il numero e possiamo dire che per ora il numero
+
+101
+00:07:12,470 --> 00:07:15,930
+è il numero uno vediamo se è felice.
+
+102
+00:07:16,190 --> 00:07:16,480
+Sì.
+
+103
+00:07:16,500 --> 00:07:20,640
+Quindi questo numero è numerato 10 per calcolare la radice quadrata di 10.
+
+104
+00:07:20,640 --> 00:07:26,940
+Ora se guardiamo a questo il tipo di ritorno è x quadrato, risponde un errore.
+
+105
+00:07:26,970 --> 00:07:28,100
+Quindi andiamo e basta.
+
+106
+00:07:28,110 --> 00:07:36,300
+Possiamo dire errore di risposta radice quadrata in modo che l'errore di risposta sia uguale a questo.
+
+107
+00:07:36,360 --> 00:07:41,640
+E qui possiamo iniziare a gestire alcuni errori, ma in profondità molto più profonde.
+
+108
+00:07:41,640 --> 00:07:43,260
+Facciamolo.
+
+109
+00:07:43,260 --> 00:07:48,890
+Se l'aria non è nulla, allora possiamo iniziare a gestire i nostri errori.
+
+110
+00:07:49,020 --> 00:07:58,070
+Quindi affrontiamolo e dì che possiamo fare uno status, quindi dobbiamo convertirlo in uno stato
+
+111
+00:07:58,070 --> 00:08:03,080
+in modo da poter dire lo stato dall'errore.
+
+112
+00:08:03,090 --> 00:08:09,500
+E quindi dobbiamo importarlo, quindi andrò avanti e importerò lo stato di europaeus così dall'errore e
+
+113
+00:08:09,500 --> 00:08:14,040
+passerai un errore stesso e ritorna come non lo è.
+
+114
+00:08:14,060 --> 00:08:14,810
+OK.
+
+115
+00:08:14,840 --> 00:08:17,010
+Quindi passiamo a queste cose.
+
+116
+00:08:17,150 --> 00:08:19,620
+Abbiamo un errore di risposta e.
+
+117
+00:08:19,730 --> 00:08:20,960
+OK.
+
+118
+00:08:21,260 --> 00:08:22,860
+Quindi sostanzialmente questo.
+
+119
+00:08:22,880 --> 00:08:25,920
+OK, qui è molto importante.
+
+120
+00:08:25,960 --> 00:08:26,720
+OK.
+
+121
+00:08:27,020 --> 00:08:34,090
+Ciò significa che è l'aria reale da RBC.
+
+122
+00:08:34,420 --> 00:08:36,620
+Quindi errore utente.
+
+123
+00:08:36,640 --> 00:08:39,760
+Quindi questo è il tipo di cose che semplicemente cadiamo.
+
+124
+00:08:39,880 --> 00:08:45,750
+Ma se non va bene altrimenti se non va bene allora in fondo è un errore più grande.
+
+125
+00:08:45,760 --> 00:08:53,170
+È un tipo di errore di framework in modo che possiamo fare Lagat che faranno un grande errore.
+
+126
+00:08:54,660 --> 00:09:01,330
+Chiamando una radice quadrata e poi passiamo l'errore proprio qui.
+
+127
+00:09:01,710 --> 00:09:06,870
+Ma ora se è ok possiamo effettivamente esaminare questo errore di risposta e ottenere alcuni codici, quindi possiamo dire
+
+128
+00:09:06,870 --> 00:09:15,300
+ad esempio che possiamo fare f anti-cuts print L. N. risposta errore quel messaggio.
+
+129
+00:09:15,420 --> 00:09:16,620
+E qui otteniamo il messaggio.
+
+130
+00:09:16,920 --> 00:09:20,610
+Ma possiamo anche fare il principe FM Jihad in risposta.
+
+131
+00:09:20,610 --> 00:09:28,010
+Codice di Airds e ancora meglio possiamo anche fare un'istruzione if in questo codice
+
+132
+00:09:28,260 --> 00:09:38,220
+in modo che possiamo dire se il codice di errore di risposta è uguale ai codici che invocano gli
+
+133
+00:09:38,250 --> 00:09:48,670
+argomenti, quindi possiamo gestire questo errore e dire Ellen che abbiamo inviato probabilmente abbiamo inviato un numero negativo da qui l'errore
+
+134
+00:09:48,920 --> 00:09:50,050
+Quindi questo è molto importante.
+
+135
+00:09:50,060 --> 00:09:57,290
+Fondamentalmente questo converte un errore in un messaggio di errore PC friendly e un codice ma solo se questo errore
+
+136
+00:09:57,350 --> 00:09:58,810
+è in realtà GAAP.
+
+137
+00:09:59,180 --> 00:10:03,720
+Se non lo fai, puoi essere falso e puoi semplicemente lanciarlo come un errore normale.
+
+138
+00:10:04,160 --> 00:10:05,120
+Quindi sembra corretto.
+
+139
+00:10:05,120 --> 00:10:10,610
+E infine, se riusciamo a restituire i risultati con
+
+140
+00:10:10,820 --> 00:10:23,940
+il risultato, possiamo dire che è stato svuotato e stampato, quindi i risultati f delle radici quadrate di numero sono uguali a questo.
+
+141
+00:10:23,960 --> 00:10:31,960
+Quindi qui ho intenzione di astrarre il numero estratto come variabile per essere uguale a 10, quindi
+
+142
+00:10:32,960 --> 00:10:40,770
+possiamo usarlo qui e qui dirò che numero e risultato non ottengono il numero di root.
+
+143
+00:10:40,780 --> 00:10:42,050
+Quindi sembra corretto.
+
+144
+00:10:42,300 --> 00:10:44,930
+E quindi testeremo entrambi i casi d'uso.
+
+145
+00:10:45,040 --> 00:10:50,320
+Quindi abbiamo bisogno di avere questo come un'autorità provvisoria per farlo funzionare.
+
+146
+00:10:51,560 --> 00:10:52,070
+OK.
+
+147
+00:10:52,250 --> 00:10:53,510
+Quindi sembra corretto.
+
+148
+00:10:53,570 --> 00:11:00,180
+E quindi fondamentalmente questa funzione posso anche estrarla come una sottofunzione bassa.
+
+149
+00:11:00,570 --> 00:11:02,570
+Quindi dirò phunk
+
+150
+00:11:05,870 --> 00:11:06,850
+do.
+
+151
+00:11:07,380 --> 00:11:14,940
+Quindi diremo phunk fare la nostra chiamata e prenderemo i clienti del servizio di calcolatrice e abbiamo anche
+
+152
+00:11:19,300 --> 00:11:21,360
+avuto il numero così.
+
+153
+00:11:21,550 --> 00:11:30,610
+E come int 32 come input e qui ci limiteremo a presentarlo e lo passeremo.
+
+154
+00:11:30,620 --> 00:11:40,690
+E così ora possiamo chiamare questa funzione due volte, quindi possiamo dire di ricordare dove il numero era C e il numero 10
+
+155
+00:11:40,690 --> 00:11:42,040
+per iniziare.
+
+156
+00:11:42,250 --> 00:11:45,900
+Quindi questa è la chiamata corretta qui.
+
+157
+00:11:45,940 --> 00:11:47,190
+Questo è il codice di errore.
+
+158
+00:11:47,200 --> 00:11:53,710
+Quindi faremo una chiamata con lo stesso C e meno 2.
+
+159
+00:11:53,770 --> 00:11:57,460
+Quindi vediamo se i lavori erano già pronti.
+
+160
+00:11:57,460 --> 00:11:59,470
+Ho commentato tutto.
+
+161
+00:11:59,590 --> 00:12:01,000
+Quindi, pronto per eseguire la calcolatrice.
+
+162
+00:12:01,000 --> 00:12:07,250
+Quindi eseguiamo il server della calcolatrice ed è in esecuzione.
+
+163
+00:12:07,270 --> 00:12:13,120
+Ora eseguiamo i client della calcolatrice e questo funziona.
+
+164
+00:12:13,120 --> 00:12:17,040
+Quindi il primo è che iniziamo a fare una radice radice inari RBC.
+
+165
+00:12:17,410 --> 00:12:25,330
+E il risultato della radice quadrata di 10 è di tre 116 e poi effettivamente inviamo. In realtà abbiamo
+
+166
+00:12:25,330 --> 00:12:28,550
+dimenticato di avere una nuova linea ovunque.
+
+167
+00:12:28,550 --> 00:12:33,020
+Quindi aggiungiamo una nuova linea ovunque ci sia bisogno.
+
+168
+00:12:33,320 --> 00:12:36,110
+Quindi eseguiamolo di nuovo in modo da poter vedere meglio.
+
+169
+00:12:36,110 --> 00:12:38,850
+Quindi la radice quadrata di dieci è tre 116.
+
+170
+00:12:38,900 --> 00:12:45,930
+Quindi inviamo un numero negativo e otteniamo argomenti non validi e in ritardo probabilmente abbiamo inviato un numero
+
+171
+00:12:45,930 --> 00:12:49,510
+negativo e avremmo dovuto restituire anche quella funzione.
+
+172
+00:12:49,510 --> 00:12:53,010
+Quindi, per non mostrare questa linea, ovviamente questo è sbagliato.
+
+173
+00:12:53,850 --> 00:12:58,030
+Bene, restituisci quella funzione proprio qui e restituiremo quella funzione proprio qui.
+
+174
+00:12:58,050 --> 00:12:59,490
+Quindi sembra corretto.
+
+175
+00:12:59,550 --> 00:13:04,870
+E qui per chiarire che sto per dire messaggio di errore dal
+
+176
+00:13:10,620 --> 00:13:12,440
+server e dovrei chiarirlo.
+
+177
+00:13:12,570 --> 00:13:24,510
+Un'ultima volta con la tua linea.
+
+178
+00:13:24,640 --> 00:13:25,120
+Eccoci qui.
+
+179
+00:13:25,120 --> 00:13:27,870
+Quindi diciamo che uno schizzo di 10 è 3. 6.
+
+180
+00:13:27,910 --> 00:13:31,270
+E quando riceviamo un messaggio di errore, diciamo un messaggio di errore dal server.
+
+181
+00:13:31,660 --> 00:13:37,110
+Il server ha detto che abbiamo ricevuto un numero negativo, quindi possiamo ottenere argomenti di tipo non valido del codice e, se
+
+182
+00:13:37,160 --> 00:13:39,190
+ci colleghiamo, probabilmente abbiamo inviato un numero negativo.
+
+183
+00:13:39,190 --> 00:13:43,890
+Quindi tutto sembra a posto e possiamo fare un po 'di gestione dell'aria veramente interessante su client e server.
+
+184
+00:13:44,050 --> 00:13:49,170
+Ma la cosa veramente positiva è che i codici di errore sono tipi che i codici possono essere su di te.
+
+185
+00:13:49,200 --> 00:13:52,300
+Potrebbe essere argomenti non validi in cui possiamo vedere alcuni di questi.
+
+186
+00:13:52,330 --> 00:13:53,060
+Esattamente.
+
+187
+00:13:53,200 --> 00:13:57,150
+In questo modo, il ri-verificarsi del lavoro con l'API è molto più semplice.
+
+188
+00:13:57,160 --> 00:14:01,390
+Quindi spero che sia stato utile e spero che tu possa avere dei capelli davvero buoni e collegarti al tuo codice e
+
+189
+00:14:01,390 --> 00:14:02,710
+che ti vedrò nella prossima lezione.
+

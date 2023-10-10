@@ -1,0 +1,520 @@
+1
+00:00:00,760 --> 00:00:07,390
+OK jadi sekarang setelah kita selesai membaca pembaruan kita harus pergi dan melakukan
+
+2
+00:00:07,390 --> 00:00:17,220
+pembaruan untuk ini akan pergi ke blog yang Prato dan akan menyertakan aapc baru yang BC akan disebut pembaruan Blug
+
+3
+00:00:17,230 --> 00:00:22,800
+dan dibutuhkan pembaruan permintaan Blug dan kembali pembaruan Blug response.
+
+4
+00:00:22,800 --> 00:00:26,930
+Jadi sekali lagi ini adalah jenis RBC kemih.
+
+5
+00:00:27,040 --> 00:00:32,470
+Sekarang juga akan kembali tidak ditemukan jika tidak ditemukan karena kami tidak dapat memperbarui sesuatu yang tidak
+
+6
+00:00:32,470 --> 00:00:38,150
+ditemukan sehingga hanya sesuatu yang baik untuk dimasukkan. Saya hanya akan menduplikasi hal-hal ini dan melihat bagaimana kami pergi.
+
+7
+00:00:38,170 --> 00:00:45,820
+Jadi sebenarnya permintaan pembaruan Blug akan mengambil blog sebagai masukan sehingga kami harus memasukkan apa yang ingin
+
+8
+00:00:45,820 --> 00:00:52,860
+kami lakukan untuk pembaruan dan pembaruan pembaruan Blug akan mengembalikan blog itu sendiri juga.
+
+9
+00:00:52,870 --> 00:00:53,970
+Itu Sempurna.
+
+10
+00:00:54,060 --> 00:00:54,300
+BAIK.
+
+11
+00:00:54,310 --> 00:00:55,170
+Jadi kita siap sekarang.
+
+12
+00:00:55,200 --> 00:00:57,460
+Silakan dan buat beberapa kode untuk ini.
+
+13
+00:00:57,460 --> 00:01:02,730
+Saya menyalin protes yang Anda perintah dan saya hanya akan menempelkannya di sisi kanan.
+
+14
+00:01:02,810 --> 00:01:03,750
+Kita mulai.
+
+15
+00:01:04,120 --> 00:01:04,650
+BAIK.
+
+16
+00:01:04,870 --> 00:01:08,560
+Selanjutnya kita harus maju dan mulai mengimplementasikan server.
+
+17
+00:01:08,560 --> 00:01:10,140
+Sekarang kita terbiasa dengan hal itu dengan benar.
+
+18
+00:01:10,180 --> 00:01:13,600
+Jadi yang akan saya lakukan adalah saya hanya akan menemukan fungsi yang tepat untuk diterapkan.
+
+19
+00:01:13,600 --> 00:01:18,030
+Jadi untuk ini saya akan pergi dari melihat kode sumber pada fungsi pembaruan Blug.
+
+20
+00:01:18,060 --> 00:01:21,180
+Baik bahwa Anda melayani itu, pergi dan terapkan.
+
+21
+00:01:21,250 --> 00:01:29,210
+Jadi di sini yang ingin kita terapkan adalah fungsi pada server yang disebut log.
+
+22
+00:01:29,290 --> 00:01:37,870
+Ini akan mengambil konteks sebagai argumen dan kemudian permintaan dari Blug P. B. permintaan kunci dan mengembalikan blog
+
+23
+00:01:37,930 --> 00:01:41,530
+P. B. titik seperti itu respons log.
+
+24
+00:01:41,770 --> 00:01:41,980
+BAIK.
+
+25
+00:01:41,980 --> 00:01:44,150
+Sekarang kita hanya perlu mengimplementasikan ini.
+
+26
+00:01:44,290 --> 00:01:47,530
+Jadi saya membuat kesalahan di sini.
+
+27
+00:01:47,530 --> 00:01:48,300
+Kita mulai.
+
+28
+00:01:48,650 --> 00:01:48,960
+BAIK.
+
+29
+00:01:49,000 --> 00:01:50,260
+Sekarang kita harus menerapkan ini.
+
+30
+00:01:50,530 --> 00:01:53,840
+Jadi, ketika kami memperbarui blog, kami akan memanggil koleksi yang diperbarui.
+
+31
+00:01:54,130 --> 00:01:57,970
+Jadi hal pertama yang harus kita lakukan adalah mendapatkan blog IGY darinya.
+
+32
+00:01:57,970 --> 00:02:04,890
+Jadi kita akan mengeluarkan blog dari permintaan jadi kita akan melakukan permintaan yang membuat blog.
+
+33
+00:02:05,210 --> 00:02:05,510
+BAIK.
+
+34
+00:02:05,530 --> 00:02:06,690
+Masuk akal.
+
+35
+00:02:06,790 --> 00:02:13,100
+Kami juga akan menyertakan sederet logging hanya untuk mengatakan bahwa kami berada dalam pencarian mewah dan mengatakan bahwa kami melihatnya.
+
+36
+00:02:13,450 --> 00:02:15,300
+Jadi itu pencarian mewah.
+
+37
+00:02:15,310 --> 00:02:16,830
+Luar biasa jadi kami membuka blog.
+
+38
+00:02:17,170 --> 00:02:21,120
+Dan sekarang kita akan mengekstraksi objek id dan udara.
+
+39
+00:02:21,310 --> 00:02:24,940
+Dan untuk ini kita akan melakukan id objek dari peretasan seperti sebelumnya.
+
+40
+00:02:25,180 --> 00:02:27,750
+Blug tidak mendapatkan ID.
+
+41
+00:02:27,790 --> 00:02:33,370
+Jadi di sini kita mencoba untuk mendapatkan id objek dari itu jelas jika ada kesalahan parsing.
+
+42
+00:02:33,370 --> 00:02:38,470
+Sama seperti sebelumnya, jadi kita harus memasukkan kode dari sebelum argumen yang tidak valid kita tidak
+
+43
+00:02:38,470 --> 00:02:41,180
+dapat menguraikan IGY dan kita hanya melanjutkan.
+
+44
+00:02:41,580 --> 00:02:42,240
+BAIK.
+
+45
+00:02:42,820 --> 00:02:49,960
+Sekarang yang harus kita lakukan adalah pada dasarnya membuat item data jadi buat data seperti sebelumnya.
+
+46
+00:02:49,960 --> 00:02:55,450
+Dan juga Blug saya dan itu akan membuat filter karena kami ingin melakukan pembaruan sehingga
+
+47
+00:02:55,600 --> 00:02:57,810
+kami akan memiliki keunggulan siap.
+
+48
+00:02:57,850 --> 00:03:03,220
+OK jadi kita tidak memiliki hal-hal ini pada dasarnya apakah kita ingin melakukannya dengan baik, pada dasarnya kita ingin memperbarui dokumen.
+
+49
+00:03:03,220 --> 00:03:04,190
+Baik.
+
+50
+00:03:04,210 --> 00:03:10,510
+Jadi untuk ini kita harus melihat apakah kita dapat menemukan dokumen seperti sebelumnya dan jika kita bisa maka kita
+
+51
+00:03:10,900 --> 00:03:12,090
+dapat bermutasi sendiri.
+
+52
+00:03:12,190 --> 00:03:15,940
+Jadi mari kita cari fungsi di sini.
+
+53
+00:03:15,970 --> 00:03:16,290
+BAIK.
+
+54
+00:03:16,330 --> 00:03:17,200
+Luar biasa.
+
+55
+00:03:17,620 --> 00:03:19,850
+Dan kami akan mencoba menemukan Blug yang sama persis.
+
+56
+00:03:20,200 --> 00:03:25,780
+Jadi jika kita tidak dapat menemukannya, kita tidak dapat menemukan blog dengan ID yang ditentukan dan semuanya masuk akal.
+
+57
+00:03:25,780 --> 00:03:31,540
+Dan begitu kita senang karena Blug menemukan data, kita bisa mulai memutasikan data itu sendiri sehingga kita
+
+58
+00:03:31,540 --> 00:03:33,230
+bisa melakukan data itu.
+
+59
+00:03:33,250 --> 00:03:34,180
+Dan ini dia lagi.
+
+60
+00:03:34,240 --> 00:03:35,360
+Itu segalanya.
+
+61
+00:03:35,440 --> 00:03:41,140
+Jadi kami menganggap kami harus meminta pengguna yang sah untuk melakukan Blug yang mendapat otorisasi yang
+
+62
+00:03:41,140 --> 00:03:42,290
+berasal dari permintaan.
+
+63
+00:03:42,520 --> 00:03:44,010
+Maka kita harus memperbarui konten.
+
+64
+00:03:44,050 --> 00:03:46,420
+Jadi kita akan melakukan Blug.
+
+65
+00:03:46,660 --> 00:03:51,820
+Dan akhirnya gelar itu sama dengan cinta yang mendapat gelar.
+
+66
+00:03:51,820 --> 00:04:00,640
+Jadi di sini adalah pembaruan kami sehingga kami memperbarui struktur internal kami dan sekarang kami telah memperbarui data karena kami
+
+67
+00:04:00,640 --> 00:04:07,140
+menemukannya dan kami mendekodekannya sekarang kami hanya perlu melanjutkan dan menggunakan satu fungsi itu.
+
+68
+00:04:07,150 --> 00:04:09,700
+Jadi untuk koleksi ini.
+
+69
+00:04:10,360 --> 00:04:14,680
+Dan kami memiliki yang besar dan kami telah mengganti satu dan kami benar-benar mengganti satu
+
+70
+00:04:14,680 --> 00:04:18,120
+karena kami memiliki penggantian penuh di sini, tidak ada pembaruan tambahan.
+
+71
+00:04:18,430 --> 00:04:24,130
+Dan konteksnya akan menjadi latar belakang dan filter akan seperti sebelum filter yang
+
+72
+00:04:24,130 --> 00:04:25,010
+sama persis.
+
+73
+00:04:25,270 --> 00:04:31,750
+Dan penggantian itu sendiri akan menjadi data karena kami baru saja memutasikan data di tempat, jadi di sini masuk
+
+74
+00:04:31,750 --> 00:04:33,480
+akal kami telah menggantinya.
+
+75
+00:04:33,610 --> 00:04:36,730
+Sekarang ketika kita keluar dari itu adalah hasil pembaruan atau kesalahan.
+
+76
+00:04:36,910 --> 00:04:49,470
+Jadi mari kita mulai dengan hasil dari hasil tanggal dan pembaruan ini bahwa kita mendapatkan ini dan jadi jika kita mendapatkan di daerah itu apa
+
+77
+00:04:49,560 --> 00:04:51,420
+yang kita lakukan.
+
+78
+00:04:51,720 --> 00:04:53,930
+Yah ini mungkin jenis kesalahan internal.
+
+79
+00:04:54,150 --> 00:05:02,070
+Jadi kita hanya akan mengembalikannya jadi jika udaranya tidak baru maka kita akan mengembalikan blok Arab dan kodenya akan
+
+80
+00:05:02,070 --> 00:05:14,200
+menjadi internal dan kita akan mengatakan tidak dapat membuat tanggal objek di Mongo D. B dan kami hanya akan mengatakan mengapa jadi pada dasarnya kami akan mengatakan
+
+81
+00:05:14,200 --> 00:05:14,790
+OK.
+
+82
+00:05:14,800 --> 00:05:20,000
+Alasan mengapa kami tidak dapat melakukan ini adalah karena pembaruannya sangat bagus.
+
+83
+00:05:20,230 --> 00:05:26,450
+Kalau tidak, kita mendapatkan hasil pembaruan dan hasilnya sendiri di mana kita dapatkan.
+
+84
+00:05:27,160 --> 00:05:30,600
+Yah kita pada dasarnya mendapatkan jumlah pertandingan dan jumlah mudflat dan kenaikan.
+
+85
+00:05:31,120 --> 00:05:34,770
+Kami sebenarnya tidak memerlukan hal-hal ini karena kami tahu itu akan diperbarui.
+
+86
+00:05:34,780 --> 00:05:40,600
+Jadi yang bisa kita lakukan adalah mengatakan OK mari kita kembalikan hasilnya.
+
+87
+00:05:40,600 --> 00:05:41,530
+Jadi saya
+
+88
+00:05:44,670 --> 00:05:48,680
+akan mengatakan kembali dan cinta P. B ..
+
+89
+00:05:48,820 --> 00:05:54,350
+Dan di sini kita harus membuat pembaruan tanggapan tanggapan Rob.
+
+90
+00:05:54,370 --> 00:06:02,170
+Ini mengambil blog sebagai argumen dan kami harus mengembalikan apa yang sebenarnya kami miliki sebagai input atau data apa pun
+
+91
+00:06:02,560 --> 00:06:03,760
+yang kami inginkan.
+
+92
+00:06:03,760 --> 00:06:10,510
+Jadi yang keren adalah sekarang karena kita sudah melakukan ini setelah kita mengubah data menjadi
+
+93
+00:06:10,510 --> 00:06:12,010
+blog di sini.
+
+94
+00:06:12,010 --> 00:06:15,090
+Kami sebenarnya bisa mengekstrak ini sebagai fungsi.
+
+95
+00:06:15,100 --> 00:06:23,870
+Jadi yang akan saya lakukan di sini adalah mengekstrak ini dan saya akan mengumpulkan data ke Blug P. B. dan kami meneruskan data dan kami
+
+96
+00:06:24,670 --> 00:06:35,610
+harus membuat fungsi ini sehingga fungsi yang dinamai data ke Blug PV mengambil data jenis blog sebagai input dan itu akan mengembalikan
+
+97
+00:06:35,620 --> 00:06:43,330
+Blug sehingga darah P. B. Blug itu.
+
+98
+00:06:43,360 --> 00:06:45,760
+Dan ini adalah petunjuk untuk itu.
+
+99
+00:06:45,790 --> 00:06:50,620
+Sekarang jika kita hanya mengimplementasikan fungsi yang hanya fungsi pembantu kecil kita hanya akan mengembalikan
+
+100
+00:06:50,680 --> 00:06:52,190
+hal yang tepat ini.
+
+101
+00:06:52,240 --> 00:06:52,910
+Kita mulai.
+
+102
+00:06:53,110 --> 00:06:59,740
+Jadi sekarang kita bisa menggunakan data untuk memblokir P. B. untuk melakukan sintaks steno dan seperti yang disebut bagian paling bawah.
+
+103
+00:06:59,770 --> 00:07:00,910
+Saya akan menggunakannya kembali di sini.
+
+104
+00:07:00,910 --> 00:07:05,230
+Jadi kami baru saja mengubah kode kami untuk menggunakan kembali sedikit informasi.
+
+105
+00:07:05,240 --> 00:07:07,890
+Sekarang jelas jarumnya masuk setelah itu.
+
+106
+00:07:08,440 --> 00:07:12,960
+Dan ini dia tidak senang karena blognya bukan tipe yang tepat.
+
+107
+00:07:13,060 --> 00:07:18,640
+Jadi mari kita lihat tidak dapat menggunakan id blogger itu. sebagai tipe keberuntungan karena menyukainya.
+
+108
+00:07:18,940 --> 00:07:20,230
+Jadi di sini adalah sebuah pointer.
+
+109
+00:07:20,230 --> 00:07:25,510
+Jadi di sini kita bisa mengatakan blog itu sendiri harus menjadi pointer.
+
+110
+00:07:25,510 --> 00:07:25,980
+Kita mulai.
+
+111
+00:07:25,990 --> 00:07:27,540
+Itu lebih masuk akal.
+
+112
+00:07:27,610 --> 00:07:30,230
+Dan sekarang fungsi ganti satu tidak berfungsi.
+
+113
+00:07:30,460 --> 00:07:32,430
+Jadi pembaruan array dinyatakan tidak digunakan.
+
+114
+00:07:32,470 --> 00:07:35,180
+Bagaimana kalau kita tidak menggunakannya saat ini di lapangan.
+
+115
+00:07:35,350 --> 00:07:37,330
+OK jadi sekarang kami telah mengimplementasikan server.
+
+116
+00:07:37,330 --> 00:07:38,590
+Semuanya terlihat bagus.
+
+117
+00:07:38,620 --> 00:07:44,120
+Kami sedang menangani kasus kesalahan dan hanya untuk mengingatkan Anda, kami pertama-tama mem-parsing objek yang jika Anda dapat
+
+118
+00:07:44,180 --> 00:07:47,680
+menguraikannya maka cobalah untuk menemukan apakah ada kecocokan dalam database.
+
+119
+00:07:47,680 --> 00:07:52,930
+Kalau tidak, kami katakan tidak ada kecocokan dan kemudian kami hanya menggunakan fungsi ganti satu untuk mengganti data
+
+120
+00:07:52,960 --> 00:07:55,010
+dan kembali ke kesalahan jika tidak berfungsi.
+
+121
+00:07:55,090 --> 00:07:59,080
+Jelas kami bisa menggunakan ganti tanpa menemukan.
+
+122
+00:07:59,380 --> 00:08:03,790
+Dan ini terserah Anda untuk memilih apakah Anda ingin melakukan dua panggilan atau satu panggilan.
+
+123
+00:08:03,820 --> 00:08:04,760
+Itu tidak masalah.
+
+124
+00:08:04,770 --> 00:08:06,850
+Kami hanya harus berurusan dengan hasil sebaliknya dari pembaruan.
+
+125
+00:08:06,850 --> 00:08:11,440
+Mungkin sedikit lebih pendek tapi setidaknya itu menunjukkan bagaimana kita dapat menggunakan kembali dan rantai panggilan basis data
+
+126
+00:08:11,440 --> 00:08:12,460
+jika kita menginginkannya.
+
+127
+00:08:12,460 --> 00:08:13,380
+Jadi itu untuk server.
+
+128
+00:08:13,420 --> 00:08:14,740
+Sebenarnya cukup mudah.
+
+129
+00:08:14,740 --> 00:08:16,720
+Dan kemudian dalam kuliah berikutnya kita akan berbicara dengan klien.
+
+130
+00:08:16,730 --> 00:08:17,770
+Demikian di kuliah berikutnya.
+

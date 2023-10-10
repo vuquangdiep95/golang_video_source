@@ -1,0 +1,331 @@
+1
+00:00:11,850 --> 00:00:17,160
+Hello and welcome to the Golden and Programming Languages course in the previous session.
+
+2
+00:00:17,460 --> 00:00:21,180
+We could implement Ron client function and send data.
+
+3
+00:00:21,420 --> 00:00:25,920
+And in this session, we want to go to implement strong server function.
+
+4
+00:00:27,450 --> 00:00:30,570
+So go to the round server function.
+
+5
+00:00:34,590 --> 00:00:41,760
+First, the master server to be ready to lease on the port, and this port is the same port that we
+
+6
+00:00:41,760 --> 00:00:45,630
+defined in the same data function to do this.
+
+7
+00:00:45,900 --> 00:00:49,560
+We will call the lease and function from the net package.
+
+8
+00:00:50,580 --> 00:00:58,620
+This function, and now on the local network, address and access to parameters as network and address
+
+9
+00:00:58,950 --> 00:01:05,540
+and return to values as listener and it'll first define to variable like leasing round.
+
+10
+00:01:05,550 --> 00:01:08,490
+It'll be nice and a
+
+11
+00:01:11,580 --> 00:01:17,170
+little column equals invoke, lease and function from the Nith package.
+
+12
+00:01:17,190 --> 00:01:22,980
+Net Dot Nissan said TCP as network parameter
+
+13
+00:01:28,080 --> 00:01:34,170
+for teasing networks if the host in the antis promise from his or on a specified IP address.
+
+14
+00:01:34,440 --> 00:01:42,270
+Listen, Lee sends an all available, unique system in a cast IP address of the local system and now
+
+15
+00:01:42,270 --> 00:01:53,280
+CET address as address parameter for the example 127.0.0.1 and support 885.
+
+16
+00:01:55,950 --> 00:01:57,330
+Check their status
+
+17
+00:02:00,300 --> 00:02:03,510
+and set, if not all the roof locked up.
+
+18
+00:02:03,510 --> 00:02:04,290
+Fattore
+
+19
+00:02:07,620 --> 00:02:10,110
+listener at all.
+
+20
+00:02:17,280 --> 00:02:24,660
+In this section, we designed a for loop that the server is always listening to the specified port.
+
+21
+00:02:25,140 --> 00:02:28,860
+So for this purpose we used from accept function.
+
+22
+00:02:29,280 --> 00:02:30,990
+So right for
+
+23
+00:02:34,260 --> 00:02:36,870
+and call him accept function from listener.
+
+24
+00:02:37,050 --> 00:02:48,240
+This function returns to values as connection and little connection, and a row column equals and coordinates
+
+25
+00:02:48,240 --> 00:02:53,890
+a function from listener dot accent.
+
+26
+00:02:58,150 --> 00:03:09,960
+Check Iran's status, you don't fattore and said the message he sent it all.
+
+27
+00:03:18,090 --> 00:03:25,230
+We are now designing go protein function to see the connection as an input parameter and be able to
+
+28
+00:03:25,230 --> 00:03:26,640
+read the received data.
+
+29
+00:03:27,090 --> 00:03:28,500
+We can define function here.
+
+30
+00:03:28,500 --> 00:03:34,800
+So why go for a defined goal routine gold form
+
+31
+00:03:37,950 --> 00:03:42,780
+and define a variable like see us connection parameter C.
+
+32
+00:03:43,770 --> 00:03:46,530
+Net dot com
+
+33
+00:03:50,550 --> 00:03:55,020
+and said connection important as this as input parameter for function.
+
+34
+00:04:01,090 --> 00:04:04,260
+First, using D3 for close and connection to.
+
+35
+00:04:05,920 --> 00:04:07,210
+See that close
+
+36
+00:04:11,170 --> 00:04:19,240
+lets time to receive data for this purpose, be used from read all function from I or Util package.
+
+37
+00:04:19,540 --> 00:04:25,840
+Read our function reads from reader until an error or in the fight and returns.
+
+38
+00:04:25,840 --> 00:04:27,040
+The data is.
+
+39
+00:04:27,040 --> 00:04:27,430
+Read
+
+40
+00:04:30,400 --> 00:04:39,070
+this function exit a reader as input parameter and returns to values first in binary as data and sick
+
+41
+00:04:39,070 --> 00:04:39,750
+in the middle.
+
+42
+00:04:40,030 --> 00:04:41,890
+Now define two variables.
+
+43
+00:04:42,160 --> 00:04:45,700
+Data comma column equals calling.
+
+44
+00:04:45,700 --> 00:04:48,120
+Read readable function from all to package.
+
+45
+00:04:48,130 --> 00:04:57,790
+I will U.T. and read on function set connection variable as reader parameter connection.
+
+46
+00:05:00,330 --> 00:05:02,100
+First, check our status.
+
+47
+00:05:10,520 --> 00:05:15,380
+Not doing that well at all.
+
+48
+00:05:17,420 --> 00:05:26,600
+And now it's time to realize the values in the data and Putin insider person object.
+
+49
+00:05:26,840 --> 00:05:30,760
+First, create an object from person, a strong like person.
+
+50
+00:05:31,400 --> 00:05:36,050
+Color equals Anderson to call
+
+51
+00:05:40,670 --> 00:05:51,800
+that person now calling on martial function from or packaged to dis realize the data value into person
+
+52
+00:05:51,800 --> 00:05:52,280
+object.
+
+53
+00:05:52,280 --> 00:06:06,140
+So we write protocol dot on Marshawn and CIT data and person, as are humans.
+
+54
+00:06:10,070 --> 00:06:13,190
+And display the person value, FP
+
+55
+00:06:15,950 --> 00:06:16,520
+person.
+
+56
+00:06:24,070 --> 00:06:26,860
+Now we can implement the server function.
+
+57
+00:06:27,250 --> 00:06:34,720
+This function is always listening on the defined port to receive information and en masse on it.
+
+58
+00:06:34,990 --> 00:06:39,150
+We were able to implement the client and server function sections.
+
+59
+00:06:39,730 --> 00:06:44,230
+Now it's time to run the program for this purpose.
+
+60
+00:06:44,440 --> 00:06:48,580
+We used two separate terminals to execute the client and server methods.
+
+61
+00:06:49,030 --> 00:06:53,620
+To do these, right click on the main go forward and select the Rebond File Explorer.
+
+62
+00:06:57,020 --> 00:07:02,480
+In the window that opens, hold down the shift key and right click and select the open policy challenge.
+
+63
+00:07:08,880 --> 00:07:13,200
+Now in new power shifting laws opens for us and do this again.
+
+64
+00:07:22,220 --> 00:07:29,030
+So another terminal opens for us, reassigned the two open terminals inside the screen so we can see
+
+65
+00:07:29,030 --> 00:07:30,740
+both at the same time.
+
+66
+00:07:48,140 --> 00:07:55,970
+OK, now we use this command to run our program once with the seven flag and once we decline for that.
+
+67
+00:07:56,270 --> 00:08:01,580
+So for the Sierra, we right go wrong.
+
+68
+00:08:03,260 --> 00:08:04,670
+Main but go.
+
+69
+00:08:05,600 --> 00:08:09,050
+Yes, I mean and say refuge
+
+70
+00:08:11,810 --> 00:08:18,620
+and go to client and right go wrong.
+
+71
+00:08:19,640 --> 00:08:23,540
+Does that mean that go dash?
+
+72
+00:08:23,840 --> 00:08:29,690
+I mean by client flat and wrong?
+
+73
+00:08:34,290 --> 00:08:39,480
+Now we see that after running the client, the data is displayed on the server site.
+
+74
+00:08:39,570 --> 00:08:40,950
+Do this again.
+
+75
+00:08:45,920 --> 00:08:51,530
+Yes, we can see the person information I.D. One name came and age 25.
+
+76
+00:08:52,250 --> 00:08:59,120
+So in this photo on his sarcastic to implement a protocol, pather by serializing the data on the client
+
+77
+00:08:59,120 --> 00:09:07,190
+side and sending it to the server and the server is listening to gets information and receives the serialized
+
+78
+00:09:07,190 --> 00:09:07,730
+data.
+
+79
+00:09:08,060 --> 00:09:11,210
+So the serialized data and displays it.
+
+80
+00:09:12,350 --> 00:09:12,720
+OK.
+
+81
+00:09:13,010 --> 00:09:14,840
+We have reached the end of this session.
+
+82
+00:09:15,020 --> 00:09:19,400
+I hope you have taken full advantage of decision until next session.
+
+83
+00:09:19,430 --> 00:09:20,000
+Goodbye.

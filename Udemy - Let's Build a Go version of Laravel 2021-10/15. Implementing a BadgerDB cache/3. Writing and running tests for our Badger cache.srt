@@ -1,0 +1,579 @@
+1
+00:00:01,400 --> 00:00:03,640
+So let's write the tests for our your cash.
+
+2
+00:00:03,680 --> 00:00:07,210
+So what I'm going to do is in the cash folder, I'll put this in their own file.
+
+3
+00:00:07,220 --> 00:00:13,310
+You can put them in the cash underscore test if you wish, but I'm going to call this one badger dash
+
+4
+00:00:13,310 --> 00:00:16,790
+cash underscored cash don't go just to keep things separate.
+
+5
+00:00:17,660 --> 00:00:21,690
+And of course, the package is cash, and we're going to write some tests.
+
+6
+00:00:21,710 --> 00:00:25,880
+So let's, first of all, test the has function, so I'll call this one test.
+
+7
+00:00:26,330 --> 00:00:31,730
+Badger cash underscore has, and it should have.
+
+8
+00:00:33,000 --> 00:00:33,930
+An uppercase T.
+
+9
+00:00:36,900 --> 00:00:40,830
+And it takes one parameter T pointer to testing 40.
+
+10
+00:00:44,940 --> 00:00:48,480
+And it doesn't return anything and get rid of that extra parentheses.
+
+11
+00:00:49,200 --> 00:00:52,320
+So let's, first of all, make sure there's nothing in the cache.
+
+12
+00:00:52,500 --> 00:00:54,330
+There's not, but we'll just do this anyway.
+
+13
+00:00:54,390 --> 00:00:58,050
+Test errors assign the value of test badger cache.
+
+14
+00:00:58,680 --> 00:01:05,160
+Don't forget the same logic we use when we test the other cache and we'll check for an error.
+
+15
+00:01:05,160 --> 00:01:11,310
+If error is not equal to nil, then we'll just say the error here.
+
+16
+00:01:11,940 --> 00:01:15,000
+OK, so that makes sure that there's nothing in the cache that's called Foo.
+
+17
+00:01:15,840 --> 00:01:21,720
+Now we'll try in cache is a variable, I'm declaring, and again, we'll look for an error and we just
+
+18
+00:01:21,720 --> 00:01:27,960
+call Test Badger Cache has and we look for food.
+
+19
+00:01:30,270 --> 00:01:38,970
+And if there's an error again, we'll just copy this and paste it here and now the actual test, if
+
+20
+00:01:38,970 --> 00:01:44,520
+in cache, if that's in the cache and something went wrong because it shouldn't be there ketone error
+
+21
+00:01:46,230 --> 00:01:53,850
+and we'll just say Foo found in cash and it shouldn't be there.
+
+22
+00:01:55,170 --> 00:01:55,860
+That's sufficient.
+
+23
+00:01:57,000 --> 00:01:58,830
+Now let's put something in the cache.
+
+24
+00:01:58,860 --> 00:02:07,500
+I don't care about the result, but I'll call Test Badger Cache Dot set, and we'll set Foo equal to
+
+25
+00:02:07,500 --> 00:02:18,990
+bar and will again populate encash and error equal to test.
+
+26
+00:02:18,990 --> 00:02:27,780
+Badger Cache has foo and paste our error check and if not in cash, then something went wrong.
+
+27
+00:02:28,440 --> 00:02:38,610
+Keena error will say Foo not found in cash and you can vote whatever you want for your error message
+
+28
+00:02:38,610 --> 00:02:38,850
+there.
+
+29
+00:02:39,540 --> 00:02:43,140
+So let's just now run this test and see how it goes.
+
+30
+00:02:43,230 --> 00:02:44,820
+So I'm inside the cache directory.
+
+31
+00:02:44,970 --> 00:02:45,710
+Yes, I am.
+
+32
+00:02:45,720 --> 00:02:47,900
+So I can just type go test dot.
+
+33
+00:02:51,950 --> 00:02:56,240
+And everything passed, perfect, so let's read our next test.
+
+34
+00:02:58,280 --> 00:03:01,280
+Actually, what I'm going to do first is forget food just to be safe.
+
+35
+00:03:01,670 --> 00:03:05,360
+Error equals test badger cash.
+
+36
+00:03:08,160 --> 00:03:09,870
+Don't forget, and I'll forget.
+
+37
+00:03:11,940 --> 00:03:22,420
+Now let's read our next test, our next one is to test to get so funk test badger cash get again t a
+
+38
+00:03:22,440 --> 00:03:24,480
+pointer to testing dot t.
+
+39
+00:03:27,480 --> 00:03:34,180
+And what we'll do, first of all, is set a value error is assign the value of test badger cash not
+
+40
+00:03:34,200 --> 00:03:42,120
+set, and we'll set Fu equal to Burr and I'll paste my error check.
+
+41
+00:03:43,800 --> 00:03:48,540
+And now I'll say X and error X is just a temporary variable.
+
+42
+00:03:49,050 --> 00:03:55,410
+Test Badger Cash don't get and I'll get food and paste my error check.
+
+43
+00:03:56,280 --> 00:04:07,950
+And I'll say if X is not equal to Burr, then title error did not yet correct value from cash.
+
+44
+00:04:08,430 --> 00:04:10,860
+And again, you can put whatever you want for an error message there.
+
+45
+00:04:10,920 --> 00:04:12,010
+Let's run the test again.
+
+46
+00:04:12,030 --> 00:04:12,990
+Make sure they still work.
+
+47
+00:04:14,160 --> 00:04:16,790
+Control go.
+
+48
+00:04:16,890 --> 00:04:17,430
+Test don't.
+
+49
+00:04:19,830 --> 00:04:21,930
+And everything passed so far, so good.
+
+50
+00:04:23,670 --> 00:04:29,940
+So after get, we want to try forget that we've already called forget and didn't get an error, but
+
+51
+00:04:29,940 --> 00:04:31,140
+let's write a test for it anyway.
+
+52
+00:04:31,150 --> 00:04:33,210
+Funk test badger cash.
+
+53
+00:04:33,910 --> 00:04:42,740
+Forget Tea Party or to testing our tea, and what we'll do here is set a value in that.
+
+54
+00:04:42,750 --> 00:04:50,880
+So we'll say error is a sign the value of test badger cash set and I'll set Fu equal to Foo.
+
+55
+00:04:50,880 --> 00:04:55,200
+This time doesn't matter what it is and check for an error.
+
+56
+00:04:57,060 --> 00:04:58,080
+And now we'll try forgetting it.
+
+57
+00:04:58,320 --> 00:05:06,270
+Error equals test badger cash -.FOR or Test Badger Cash Cash.
+
+58
+00:05:06,600 --> 00:05:08,880
+Don't forget, we'll just replace that one.
+
+59
+00:05:10,140 --> 00:05:14,190
+Forget and check for an error.
+
+60
+00:05:15,480 --> 00:05:17,460
+And I got to forget Foo.
+
+61
+00:05:22,040 --> 00:05:22,460
+Who?
+
+62
+00:05:25,580 --> 00:05:27,140
+And then we'll try to get of the cash.
+
+63
+00:05:28,850 --> 00:05:38,600
+We'll see if it's in there in cash, in an error or assign the value of test badger cash.
+
+64
+00:05:40,790 --> 00:05:41,660
+Dot has.
+
+65
+00:05:41,960 --> 00:05:44,960
+And look for food and check for an error.
+
+66
+00:05:45,920 --> 00:05:50,320
+If in cash, then we have an error as it should be gone by now.
+
+67
+00:05:50,330 --> 00:05:58,910
+We just deleted it on line 55 to error and we'll just say food found in cash
+
+68
+00:06:01,850 --> 00:06:07,210
+and it should, shouldn't be there.
+
+69
+00:06:09,670 --> 00:06:11,150
+And that should be sufficient for that one.
+
+70
+00:06:11,170 --> 00:06:12,340
+Let's run our tests again.
+
+71
+00:06:13,930 --> 00:06:14,740
+Go Test Dot.
+
+72
+00:06:17,560 --> 00:06:22,330
+Everything passed, and after this one comes empty
+
+73
+00:06:25,990 --> 00:06:37,570
+funk test, badger cash, empty T pointer to testing dirty, so set a new value in there.
+
+74
+00:06:37,570 --> 00:06:45,340
+There's time I'll just copy this code and paste it here, and I'll call this one alpha with a value
+
+75
+00:06:45,340 --> 00:06:56,500
+of beta or beta if you prefer and will call empty badger cash there equals test badger test test badger
+
+76
+00:06:57,610 --> 00:06:58,210
+cash.
+
+77
+00:07:00,760 --> 00:07:01,120
+Empty.
+
+78
+00:07:03,310 --> 00:07:04,240
+And we'll check for error,
+
+79
+00:07:08,410 --> 00:07:13,720
+and we just want to see if something is in the cache, so I'll copy this entire block of code and look
+
+80
+00:07:13,720 --> 00:07:24,280
+for alpha as alpha and alpha found in cache, but it's not there or shouldn't be there.
+
+81
+00:07:25,120 --> 00:07:26,080
+Run our tests again.
+
+82
+00:07:26,380 --> 00:07:27,990
+Clear the screen go test.
+
+83
+00:07:30,950 --> 00:07:33,290
+And we have an error and what is the error?
+
+84
+00:07:35,140 --> 00:07:41,290
+Unclosed iterator at time of P.X and discards, so we have an error somewhere in.
+
+85
+00:07:43,970 --> 00:07:44,600
+Where is it?
+
+86
+00:07:45,620 --> 00:07:49,970
+Badger Cash Dog Go Line 94, let's find that Badger Cash Dog Go.
+
+87
+00:07:52,500 --> 00:07:55,800
+Which is not in Senator Badger test data.
+
+88
+00:07:55,830 --> 00:08:00,870
+It is Badger Test Go Lying 94, Line 94.
+
+89
+00:08:04,360 --> 00:08:07,990
+So somewhere in here, we're calling empty by match with nothing.
+
+90
+00:08:09,380 --> 00:08:10,700
+In the air is.
+
+91
+00:08:11,980 --> 00:08:15,010
+Unclosed iterator, a time of TFS and discard.
+
+92
+00:08:17,180 --> 00:08:20,180
+So it was in Badger Cash Go line for.
+
+93
+00:08:25,690 --> 00:08:27,010
+One hundred and fourteen.
+
+94
+00:08:27,460 --> 00:08:28,360
+Let's find that one.
+
+95
+00:08:29,260 --> 00:08:31,270
+So somewhere in this block of code.
+
+96
+00:08:33,410 --> 00:08:34,190
+And it's right here.
+
+97
+00:08:34,790 --> 00:08:38,780
+So we created our iterator here, but we never actually closed it.
+
+98
+00:08:39,380 --> 00:08:40,360
+And you have to do that.
+
+99
+00:08:40,370 --> 00:08:41,750
+So that was an oversight on my part.
+
+100
+00:08:41,780 --> 00:08:45,920
+All we have to do is to put in defer it close.
+
+101
+00:08:46,670 --> 00:08:53,030
+OK, so now if we come down here and clear the terminal and type go tests done.
+
+102
+00:08:57,000 --> 00:08:57,690
+Much better.
+
+103
+00:08:57,780 --> 00:08:58,200
+OK.
+
+104
+00:08:58,290 --> 00:09:03,930
+This is why we write tests because we often leave things out that we ought not to back to our badger
+
+105
+00:09:04,680 --> 00:09:05,640
+test go.
+
+106
+00:09:05,670 --> 00:09:06,990
+So we've tested empty.
+
+107
+00:09:08,040 --> 00:09:20,700
+So let's try empty by match think test badger cash underscore empty by match parameter T pointer to
+
+108
+00:09:20,700 --> 00:09:23,730
+testing T and it has no return values.
+
+109
+00:09:24,780 --> 00:09:32,670
+So again, we need to set a value here, so I'll just copy this one alpha and beta and paste that in
+
+110
+00:09:32,670 --> 00:09:43,710
+there and now paste that again and make this equals operator and we'll set Alpha say to make that better
+
+111
+00:09:43,710 --> 00:09:44,040
+too.
+
+112
+00:09:44,070 --> 00:09:44,670
+Doesn't matter.
+
+113
+00:09:45,930 --> 00:09:50,700
+And that we'll try to empty by match, but we probably should put something else in there as well.
+
+114
+00:09:50,850 --> 00:09:58,920
+So we'll paste that one more time and call this one beta, and it doesn't matter what the value is.
+
+115
+00:09:59,190 --> 00:10:03,930
+So now when I start the test, I have an alpha in the cache and alpha two in the cache and abetted in
+
+116
+00:10:03,930 --> 00:10:14,700
+the cache, and I won't call empty by match error equals test badger cache, badger cache dot empty
+
+117
+00:10:15,180 --> 00:10:18,470
+by match the uppercase one.
+
+118
+00:10:18,480 --> 00:10:19,490
+That's the export of one.
+
+119
+00:10:20,130 --> 00:10:24,270
+And I'm going to look for anything that starts with NG and I'll check for an error
+
+120
+00:10:27,780 --> 00:10:32,340
+and paste that in here and now I want to see if certain values are in the cache.
+
+121
+00:10:32,340 --> 00:10:35,220
+So let me copy these copy this one first.
+
+122
+00:10:37,770 --> 00:10:42,090
+And paste this in here, and we'll check to see if Alpha is in the cache and it shouldn't be if it's
+
+123
+00:10:42,240 --> 00:10:43,380
+in the cache, we have error.
+
+124
+00:10:43,410 --> 00:10:43,860
+Perfect.
+
+125
+00:10:44,700 --> 00:10:54,090
+Now a copy of this again and paste it again and change it to an equals operator and look for Alpha two,
+
+126
+00:10:54,210 --> 00:10:57,160
+which we put in right up here in Line 98 and that should be gone.
+
+127
+00:10:57,450 --> 00:11:02,310
+The two should be gone in the cache and then will copy this whole thing and look for better, which
+
+128
+00:11:02,310 --> 00:11:03,450
+should still be there.
+
+129
+00:11:07,710 --> 00:11:18,210
+Better, better, not found in cash and it should be there and make this a not.
+
+130
+00:11:19,680 --> 00:11:20,520
+So we have this right?
+
+131
+00:11:21,930 --> 00:11:24,600
+So we put in alpha and alpha two and beta.
+
+132
+00:11:25,050 --> 00:11:29,690
+Then we empty by match anything that starts with a check to see if Alpha is in there.
+
+133
+00:11:29,700 --> 00:11:32,070
+If we if it is in there, then it shouldn't be.
+
+134
+00:11:32,100 --> 00:11:32,820
+We have a problem.
+
+135
+00:11:33,120 --> 00:11:36,420
+If Alpha two is in there, then it shouldn't be and we have a problem.
+
+136
+00:11:36,780 --> 00:11:38,220
+Better should still be there.
+
+137
+00:11:38,220 --> 00:11:40,710
+So if it's not in the cache, then we have a problem.
+
+138
+00:11:40,770 --> 00:11:41,160
+Perfect.
+
+139
+00:11:42,420 --> 00:11:43,530
+Let's try running the test.
+
+140
+00:11:43,980 --> 00:11:44,430
+Go.
+
+141
+00:11:44,640 --> 00:11:45,450
+Test not.
+
+142
+00:11:49,210 --> 00:11:49,600
+Perfect.
+
+143
+00:11:50,110 --> 00:11:52,000
+So there are all of our tests.
+
+144
+00:11:52,300 --> 00:11:58,660
+So in the next lecture, we'll actually connect celebrities itself to Badger if the appropriate value
+
+145
+00:11:58,660 --> 00:12:00,190
+is set in dorms.

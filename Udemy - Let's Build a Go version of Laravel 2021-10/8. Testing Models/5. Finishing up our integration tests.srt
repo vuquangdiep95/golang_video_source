@@ -1,0 +1,1719 @@
+1
+00:00:00,920 --> 00:00:06,410
+So let's see if we can finish up the last tests for our users in tokens and I'm still in integration,
+
+2
+00:00:06,410 --> 00:00:12,920
+underscore Tesco in the Miami project, and the next thing we need to test is the actual authenticate
+
+3
+00:00:12,950 --> 00:00:15,680
+token function, and we want to test this one really carefully.
+
+4
+00:00:15,760 --> 00:00:17,240
+What we want to test everything carefully.
+
+5
+00:00:17,990 --> 00:00:20,390
+But this one in particular, because it's authentication.
+
+6
+00:00:20,390 --> 00:00:25,700
+So I'll create a variable around table test here and I'll call it off data, and it will be equal to
+
+7
+00:00:25,700 --> 00:00:32,490
+a slice of strokes and four fields I'll have name, which will be a string.
+
+8
+00:00:32,510 --> 00:00:37,250
+The name of the test doesn't need to column, and I'll have the token.
+
+9
+00:00:37,340 --> 00:00:43,040
+The token we want to test, which is also a string, and I'll have the email I want to use to look things
+
+10
+00:00:43,040 --> 00:00:44,240
+up, which will be a string.
+
+11
+00:00:45,800 --> 00:00:48,620
+And I also want to have error expected.
+
+12
+00:00:49,190 --> 00:00:50,870
+Are we expecting an error or not?
+
+13
+00:00:51,110 --> 00:00:57,140
+And that will be a Boolean, and whatever message we want to use for the error should also be a string.
+
+14
+00:00:57,530 --> 00:00:57,830
+OK.
+
+15
+00:01:00,080 --> 00:01:04,010
+And now let's populate that slice of structs with some values.
+
+16
+00:01:04,100 --> 00:01:05,940
+So the first one will be invalid.
+
+17
+00:01:05,990 --> 00:01:11,090
+That's the name of my test and I'll have a token and it will be exactly the right number of characters
+
+18
+00:01:11,090 --> 00:01:13,390
+long, which happens to be 26.
+
+19
+00:01:13,400 --> 00:01:16,310
+So I'll just use the alphabet a b c d e f.
+
+20
+00:01:23,300 --> 00:01:29,510
+So there's my token and I'll use a nonexistent email adhir dot com, which is not in my database.
+
+21
+00:01:30,020 --> 00:01:33,680
+I do expect an error and my message will be invalid.
+
+22
+00:01:35,330 --> 00:01:39,710
+Token accepted as valid and that would be a bad thing.
+
+23
+00:01:39,800 --> 00:01:46,310
+So you want to avoid that sort of thing and we'll duplicate this line and I'll make this one named invalid
+
+24
+00:01:46,310 --> 00:01:46,790
+length.
+
+25
+00:01:46,940 --> 00:01:49,970
+In other words, the token is not there the right length.
+
+26
+00:01:51,480 --> 00:01:55,040
+All I have to do is either add or subtract a character, so I'll subtract one.
+
+27
+00:01:55,790 --> 00:01:56,780
+Email doesn't matter.
+
+28
+00:01:56,960 --> 00:02:01,760
+And here I'll say token of wrong length accepted as valid,
+
+29
+00:02:04,940 --> 00:02:09,170
+and I'll duplicate this one and move up a little bit to give us some room.
+
+30
+00:02:10,220 --> 00:02:13,280
+This one will be no user, so I can't find a user.
+
+31
+00:02:13,340 --> 00:02:19,490
+So it doesn't really matter what the token is, but I'll add the Z so it doesn't catch that error and
+
+32
+00:02:19,490 --> 00:02:21,950
+adhered Akam and true.
+
+33
+00:02:25,210 --> 00:02:30,610
+Here I will put in no user, but token accepted as valid.
+
+34
+00:02:31,030 --> 00:02:33,700
+OK, and we may not use this string, but it doesn't matter.
+
+35
+00:02:33,700 --> 00:02:35,050
+When we write the test, we'll take care of it.
+
+36
+00:02:36,490 --> 00:02:42,610
+In the last one is valid and I'll have nothing in the token because I'm going to look it up and here
+
+37
+00:02:42,610 --> 00:02:52,720
+I will have me at here Accom, which is a valid user and I expect no error faults and the error message,
+
+38
+00:02:52,720 --> 00:02:58,210
+if any, will be valid token reported as invalid.
+
+39
+00:02:58,780 --> 00:02:59,920
+OK, so there's my date.
+
+40
+00:03:00,910 --> 00:03:08,560
+Now let's right to table test func and I'll call this one test token and it is authenticate token.
+
+41
+00:03:09,400 --> 00:03:09,730
+OK?
+
+42
+00:03:10,750 --> 00:03:16,910
+Pointer of a T pointer of testing to a T, and we'll run the test.
+
+43
+00:03:16,930 --> 00:03:23,080
+So we'll say for, I don't know, care about the index, but I'll call my table test tie and that's
+
+44
+00:03:23,080 --> 00:03:25,150
+from range of data.
+
+45
+00:03:29,950 --> 00:03:35,020
+So we'll start right away by saying token is going to be a string with nothing in it.
+
+46
+00:03:35,490 --> 00:03:45,340
+OK, I will say if ttot email is equal to dummy user Typekit email, which is me out here, Ekong,
+
+47
+00:03:46,330 --> 00:03:48,010
+then we'll look up a user user.
+
+48
+00:03:48,310 --> 00:03:54,580
+An error are assigned the value of models that get user, which has to have a capital.
+
+49
+00:03:54,580 --> 00:03:57,310
+G get user by email.
+
+50
+00:03:58,540 --> 00:03:59,650
+Now get by email.
+
+51
+00:03:59,650 --> 00:04:00,280
+That's what it's called.
+
+52
+00:04:00,280 --> 00:04:01,450
+There's no user in there at all.
+
+53
+00:04:02,140 --> 00:04:02,650
+That's better.
+
+54
+00:04:03,550 --> 00:04:06,430
+Get my email and we'll put in ttot email.
+
+55
+00:04:08,320 --> 00:04:10,780
+We'll check for an error if error is not equal to nil.
+
+56
+00:04:12,700 --> 00:04:18,370
+Always have trouble typing for some reason, and I'm sure you've noticed that T2 error
+
+57
+00:04:22,420 --> 00:04:26,080
+failed to get user in the error.
+
+58
+00:04:27,610 --> 00:04:27,900
+OK.
+
+59
+00:04:27,940 --> 00:04:40,140
+Seemingly a past that we will now say go back up a line token is equal to you u user Typekit token dot
+
+60
+00:04:40,150 --> 00:04:41,380
+plain text.
+
+61
+00:04:42,070 --> 00:04:42,370
+OK.
+
+62
+00:04:43,950 --> 00:04:53,110
+Else, if it's not our dummy user's email, then we'll just say token is equal to Typekit token.
+
+63
+00:04:54,140 --> 00:04:57,730
+OK, so now we have a token we can use for our test.
+
+64
+00:04:58,960 --> 00:05:00,550
+So we need to build a request.
+
+65
+00:05:00,670 --> 00:05:01,480
+So request.
+
+66
+00:05:01,540 --> 00:05:06,100
+I'll ignore the error because it's a really good package from the standard library and I'll just create
+
+67
+00:05:06,100 --> 00:05:09,220
+a new request http dot new request.
+
+68
+00:05:10,810 --> 00:05:17,110
+And when we get a get request with any URL and we're going to pass now for the last parameter now because
+
+69
+00:05:17,110 --> 00:05:23,910
+we have that whole problem with autocomplete not working, we had better go up and add the HGTV package.
+
+70
+00:05:27,280 --> 00:05:29,080
+So right about here.
+
+71
+00:05:30,940 --> 00:05:33,490
+Net slash HD.
+
+72
+00:05:33,490 --> 00:05:33,880
+Thank you.
+
+73
+00:05:34,810 --> 00:05:36,580
+And we'll go back down to our function.
+
+74
+00:05:36,620 --> 00:05:37,360
+The very bottom.
+
+75
+00:05:42,410 --> 00:05:43,240
+So we have our header.
+
+76
+00:05:43,970 --> 00:05:52,910
+Let's add an authorization header to it, and that would be Rekt header ad. And we want it to be authorization.
+
+77
+00:05:52,920 --> 00:05:59,390
+Be careful how you spell that and the value is bearer with a space plus token.
+
+78
+00:06:00,650 --> 00:06:06,590
+So now we have a request with the correct token, and all we have to do now is ignore the return result.
+
+79
+00:06:06,950 --> 00:06:07,970
+Check for an error.
+
+80
+00:06:08,390 --> 00:06:18,830
+That's a sign the value of models, DOT tokens DOT authenticate token with a request.
+
+81
+00:06:20,840 --> 00:06:32,480
+Now, if we expect an error and the error is nil, if Typekit error expected and error is equal to nil,
+
+82
+00:06:33,830 --> 00:06:41,510
+then teed up Earth is error off this time I almost never do, and I'll just put it in two format strings
+
+83
+00:06:44,030 --> 00:06:52,490
+and those will be substituted for Typekit name and Typekit message to display the appropriate error
+
+84
+00:06:52,490 --> 00:06:52,970
+message.
+
+85
+00:06:53,150 --> 00:06:53,540
+OK.
+
+86
+00:06:54,740 --> 00:06:58,790
+Else, if not, ttot error expected.
+
+87
+00:07:01,340 --> 00:07:05,270
+And air is not equal to nil.
+
+88
+00:07:06,050 --> 00:07:07,160
+That's our second case.
+
+89
+00:07:08,480 --> 00:07:09,860
+Then Teodora
+
+90
+00:07:12,530 --> 00:07:13,460
+percent s.
+
+91
+00:07:16,090 --> 00:07:16,960
+Percent as.
+
+92
+00:07:18,780 --> 00:07:26,880
+And then we'll display the error percent s, and for that, we can put dog name Typekit message in the
+
+93
+00:07:26,880 --> 00:07:27,150
+air.
+
+94
+00:07:29,490 --> 00:07:35,150
+And finally, we'll just kind of catch all else T dot log f past.
+
+95
+00:07:38,040 --> 00:07:38,550
+Why not?
+
+96
+00:07:38,760 --> 00:07:42,240
+And I put two percent s in there and I'll put Typekit name
+
+97
+00:07:45,960 --> 00:07:48,510
+and that I think should work.
+
+98
+00:07:48,780 --> 00:07:49,500
+Let's find out.
+
+99
+00:07:49,680 --> 00:07:50,980
+So let's open our terminal window.
+
+100
+00:07:51,780 --> 00:07:55,410
+Clear the screen and try running this test.
+
+101
+00:07:58,100 --> 00:08:02,420
+And we have get by email type models, don't users,
+
+102
+00:08:05,360 --> 00:08:09,110
+let's try that and see what else there is.
+
+103
+00:08:10,750 --> 00:08:13,180
+Another one HBP, the new new request.
+
+104
+00:08:13,210 --> 00:08:14,200
+Where did I get that?
+
+105
+00:08:14,640 --> 00:08:16,660
+Now look at that new new request.
+
+106
+00:08:17,530 --> 00:08:18,430
+Try that one more time.
+
+107
+00:08:19,090 --> 00:08:22,690
+And then we have error expected, which I called her expected.
+
+108
+00:08:23,050 --> 00:08:25,000
+So let's just change that to error expected.
+
+109
+00:08:30,420 --> 00:08:30,960
+Try this again.
+
+110
+00:08:31,470 --> 00:08:32,160
+Clear the screen.
+
+111
+00:08:33,450 --> 00:08:34,980
+I really miss my auto complete.
+
+112
+00:08:37,500 --> 00:08:40,160
+And authenticate token with a capital O.
+
+113
+00:08:41,790 --> 00:08:43,590
+Which is right here.
+
+114
+00:08:44,580 --> 00:08:46,380
+You can see why I missed my auto complete.
+
+115
+00:08:46,920 --> 00:08:49,350
+You become very rather dependent upon it over time.
+
+116
+00:08:52,790 --> 00:08:53,930
+There it seems to have built.
+
+117
+00:08:53,960 --> 00:08:55,360
+Let's see if we pass our tests.
+
+118
+00:09:03,570 --> 00:09:06,990
+Good, we're up to seventy seven point eight percent, so that's out of the way, and we'll check it
+
+119
+00:09:06,990 --> 00:09:08,970
+out in the browser later on, but let's keep going.
+
+120
+00:09:10,740 --> 00:09:12,150
+So we've authenticated token.
+
+121
+00:09:12,160 --> 00:09:23,140
+Let's try deleting tokens, funk test tokens underscore delete and for that T pointer to testing Dot
+
+122
+00:09:23,160 --> 00:09:24,600
+T, obviously.
+
+123
+00:09:25,110 --> 00:09:25,980
+And let's scroll up.
+
+124
+00:09:28,150 --> 00:09:29,050
+This one's pretty simple.
+
+125
+00:09:29,170 --> 00:09:38,800
+We'll get to user user an error or assign the value of models to what users don't get by email.
+
+126
+00:09:38,920 --> 00:09:49,510
+And I want dummy users email, which will get me the user if error is not equal to nil, then teed up
+
+127
+00:09:49,510 --> 00:09:53,530
+error, I'll just log the next one.
+
+128
+00:09:55,300 --> 00:09:56,740
+So now we'll try this leading the token.
+
+129
+00:09:56,920 --> 00:10:03,580
+Error is equal to models, DOT tokens, DOT delete by token,
+
+130
+00:10:06,850 --> 00:10:14,890
+and we'll put it in here use token dot plain text and we'll check the error and give it a more meaningful
+
+131
+00:10:14,890 --> 00:10:15,370
+message.
+
+132
+00:10:19,360 --> 00:10:21,460
+Error deleting token.
+
+133
+00:10:27,850 --> 00:10:30,760
+OK, let's just write another one since we're at it anyway.
+
+134
+00:10:31,870 --> 00:10:33,160
+There aren't too many left.
+
+135
+00:10:34,750 --> 00:10:44,110
+We need to test for expired tokens, so func test token expired token.
+
+136
+00:10:44,800 --> 00:10:48,760
+That's why I deleted it, because otherwise we'll be waiting a year before the test can complete.
+
+137
+00:10:48,760 --> 00:10:49,600
+And that would be bad.
+
+138
+00:10:50,440 --> 00:10:55,780
+T testing the token, we'd be waiting so long because the expiry was set to a year.
+
+139
+00:10:56,860 --> 00:10:57,850
+So let's insert a token.
+
+140
+00:11:00,040 --> 00:11:02,890
+So we'll get our user and I can just copy this information
+
+141
+00:11:05,500 --> 00:11:08,710
+and paste it in here and scroll up.
+
+142
+00:11:10,290 --> 00:11:19,830
+Then we'll generate a token token, an error or assign the value of models, stock tokens don't generate
+
+143
+00:11:20,130 --> 00:11:23,160
+token and what we'll do is generate token that's actually expired.
+
+144
+00:11:23,190 --> 00:11:28,930
+We can do that user ID and we'll just set the duration to minus timed hour.
+
+145
+00:11:29,130 --> 00:11:31,060
+So one hour in the past.
+
+146
+00:11:31,080 --> 00:11:34,070
+So the token is by default, expired as soon as we generated.
+
+147
+00:11:34,740 --> 00:11:38,400
+So we'll copy this, paste it here
+
+148
+00:11:41,490 --> 00:11:42,510
+and insert the token.
+
+149
+00:11:42,630 --> 00:11:45,340
+Error equals models,
+
+150
+00:11:49,260 --> 00:11:59,670
+DOT tokens, DOT insert and we need to insert our token as a pointer and our user as a pointer and paste
+
+151
+00:11:59,670 --> 00:12:00,000
+our error.
+
+152
+00:12:00,000 --> 00:12:02,430
+Check and scroll up a bit.
+
+153
+00:12:04,470 --> 00:12:08,540
+And now let's generate a request again so I can do the same thing I did up here.
+
+154
+00:12:08,660 --> 00:12:11,340
+Just copy those request lines right here.
+
+155
+00:12:13,990 --> 00:12:14,670
+Copy that.
+
+156
+00:12:17,980 --> 00:12:24,700
+Come down here and we need to make that Typekit token dart or token dart plain text, because that's
+
+157
+00:12:24,700 --> 00:12:31,390
+what's going to go in the bear header and we'll just move this back over to format it properly and now
+
+158
+00:12:31,810 --> 00:12:34,420
+ignore the first return parameter check for an error.
+
+159
+00:12:34,510 --> 00:12:38,150
+Those are equal to models.
+
+160
+00:12:38,320 --> 00:12:49,240
+Dot token is to authenticate token, and we hand it the request if error is not equal to nil.
+
+161
+00:12:50,090 --> 00:12:53,020
+Then something went wrong.
+
+162
+00:12:53,050 --> 00:12:53,950
+Ticker error.
+
+163
+00:12:55,720 --> 00:13:00,700
+And we'll just say failed to catch expired tofu.
+
+164
+00:13:02,380 --> 00:13:05,850
+OK, that's enough test to right before we run it again.
+
+165
+00:13:05,860 --> 00:13:09,280
+So let's run our tests again and we have an error.
+
+166
+00:13:13,500 --> 00:13:16,440
+44 443.
+
+167
+00:13:18,150 --> 00:13:20,200
+Not testing token testing, Don T.
+
+168
+00:13:22,170 --> 00:13:28,350
+OK, let's try that again, dummy user has to be dummy user.
+
+169
+00:13:28,410 --> 00:13:30,240
+Did I mention that I missed my autocomplete?
+
+170
+00:13:31,350 --> 00:13:31,980
+Try that again.
+
+171
+00:13:34,740 --> 00:13:38,610
+Still have a dumb user must have copied and pasted it somewhere I did up here.
+
+172
+00:13:41,460 --> 00:13:45,560
+Copy and paste is great, except when you copy and paste and paste mistakes, obviously.
+
+173
+00:13:46,230 --> 00:13:48,810
+Try to get it seems to be running.
+
+174
+00:13:57,850 --> 00:13:58,670
+And it failed.
+
+175
+00:13:58,720 --> 00:13:59,710
+What did it feel with?
+
+176
+00:14:02,630 --> 00:14:05,480
+So failed to catch expired token.
+
+177
+00:14:10,510 --> 00:14:11,830
+And let's just see what we got here.
+
+178
+00:14:14,220 --> 00:14:15,780
+Oh, it's if error.
+
+179
+00:14:16,260 --> 00:14:18,540
+That should be if error is equal to nil.
+
+180
+00:14:19,110 --> 00:14:22,980
+OK, so it did exactly what I told it, not what I wanted to do one more time.
+
+181
+00:14:29,570 --> 00:14:32,210
+Because an expired token should return an error.
+
+182
+00:14:32,690 --> 00:14:37,040
+And that's what we want to check for, the situation will be handed an expired token and no air comes
+
+183
+00:14:37,040 --> 00:14:37,370
+back.
+
+184
+00:14:38,630 --> 00:14:39,290
+Very good.
+
+185
+00:14:39,320 --> 00:14:42,110
+We are up to eighty one point one percent.
+
+186
+00:14:42,290 --> 00:14:46,010
+But there's still more things to test, for example, and this will be a longer test.
+
+187
+00:14:47,180 --> 00:14:50,240
+We want the funk test token.
+
+188
+00:14:50,480 --> 00:14:53,990
+And one of my tests, something is not actually a function, but it's called bad header.
+
+189
+00:14:54,560 --> 00:14:56,450
+We want to test bed headers going in.
+
+190
+00:14:57,110 --> 00:15:00,080
+So t point or to testing dot t.
+
+191
+00:15:02,330 --> 00:15:03,710
+So let's create a request.
+
+192
+00:15:03,860 --> 00:15:05,210
+I can copy it from here.
+
+193
+00:15:08,880 --> 00:15:10,440
+And paste it in there, OK?
+
+194
+00:15:11,070 --> 00:15:18,390
+And what I'm going to do next is just call authenticate token with no authentication header.
+
+195
+00:15:19,020 --> 00:15:20,190
+And that should generate an error.
+
+196
+00:15:22,200 --> 00:15:30,900
+So that's equal to models, DOT tokens, DOT Authenticate token, and we'll hand it a request.
+
+197
+00:15:30,990 --> 00:15:32,220
+And that should generate an error.
+
+198
+00:15:32,520 --> 00:15:35,430
+So if error is equal to nil, they don't get an error.
+
+199
+00:15:35,550 --> 00:15:40,110
+Then we managed to get past authentication without even having an authentication header, and that's
+
+200
+00:15:40,110 --> 00:15:50,720
+bound to error and we'll just say failed to catch missing author
+
+201
+00:15:54,060 --> 00:15:54,370
+next.
+
+202
+00:15:54,990 --> 00:15:59,490
+Now, request and an underscore at this time, I don't have to use the assignment operator.
+
+203
+00:15:59,820 --> 00:16:01,830
+It's equal to http dot.
+
+204
+00:16:02,370 --> 00:16:13,170
+New request again with yet again to any URL and again with nil.
+
+205
+00:16:14,490 --> 00:16:16,890
+And now let's add a header.
+
+206
+00:16:17,700 --> 00:16:25,350
+But this time I'll add a bad authorization header req dot header dot ad and we'll have the correct name
+
+207
+00:16:25,380 --> 00:16:32,550
+of Thor ization, but we'll just put ABC for the authorization header.
+
+208
+00:16:32,580 --> 00:16:35,940
+No bearer words, no space and no valid token.
+
+209
+00:16:36,330 --> 00:16:36,720
+OK.
+
+210
+00:16:37,980 --> 00:16:48,390
+And we'll copy this and paste it here, and we'll change the message to to bed off header.
+
+211
+00:16:48,880 --> 00:16:52,550
+OK, now let's add a user and a token.
+
+212
+00:16:52,560 --> 00:16:55,050
+Let's save the token and then delete the user.
+
+213
+00:16:55,840 --> 00:16:57,990
+That's a situation that can happen in the real world.
+
+214
+00:16:58,000 --> 00:16:59,430
+Somebody could have a valid token.
+
+215
+00:16:59,850 --> 00:17:05,370
+Then the administrator deletes that particular user and we should actually find no user found.
+
+216
+00:17:05,490 --> 00:17:11,190
+OK, so let's create a new user and I'll scroll up and give us some more screen real estate.
+
+217
+00:17:11,730 --> 00:17:15,870
+New user is a the value of type user, and we'll just put it in here.
+
+218
+00:17:16,560 --> 00:17:23,610
+First name will be the last name will be temp last.
+
+219
+00:17:24,310 --> 00:17:29,610
+It doesn't matter what it is, but I'm still going to try to spell it properly.
+
+220
+00:17:31,560 --> 00:17:40,900
+First name, last name, email will be you at their economy and active will be equal to one.
+
+221
+00:17:40,920 --> 00:17:44,850
+We're not doing anything with active, but I put it in the database because it's something people always
+
+222
+00:17:44,850 --> 00:17:45,180
+need.
+
+223
+00:17:45,840 --> 00:17:47,740
+Password will be equal to anything.
+
+224
+00:17:47,760 --> 00:17:48,860
+ABC OK.
+
+225
+00:17:49,320 --> 00:17:51,150
+So we created a user variable.
+
+226
+00:17:51,630 --> 00:17:59,310
+Let's insert that user ID and error, or assign the value of models that users don't insert our new
+
+227
+00:17:59,310 --> 00:18:09,120
+user and we'll check for an error if error is not equal to nil, then teed up error.
+
+228
+00:18:09,360 --> 00:18:13,320
+And I'll just put error like that that's been tested.
+
+229
+00:18:13,320 --> 00:18:23,070
+So I know it works now will generate a token token, an error or assign the value of models tokens that
+
+230
+00:18:24,120 --> 00:18:25,440
+generate token.
+
+231
+00:18:26,700 --> 00:18:33,270
+And I'll give it the ID of our user, which is i d just got back from our insert and we'll make it expire
+
+232
+00:18:33,360 --> 00:18:40,680
+one hour, one times time dot hour and again we'll check for an error or copy this.
+
+233
+00:18:40,680 --> 00:18:44,550
+And again, I'm not going to worry too much about the error message because by this point, I've already
+
+234
+00:18:44,550 --> 00:18:48,300
+passed that test and I'll still see an error if something goes wrong.
+
+235
+00:18:50,520 --> 00:18:52,890
+And now let's insert the token.
+
+236
+00:18:53,940 --> 00:18:56,720
+Error equals models DOT tokens.
+
+237
+00:18:56,730 --> 00:18:57,430
+Here are
+
+238
+00:18:59,940 --> 00:19:06,930
+tokens DOT insert and we handed a pointer to token and a pointer to new user.
+
+239
+00:19:07,740 --> 00:19:09,020
+Actually, just new user is enough.
+
+240
+00:19:10,560 --> 00:19:18,000
+I think we'll find out shortly and I'll paste in my error message and change it to nothing because I've
+
+241
+00:19:18,000 --> 00:19:21,780
+already inserted tokens, so the error message by itself is probably sufficient.
+
+242
+00:19:22,590 --> 00:19:25,860
+Now let's delete the user error equals models.
+
+243
+00:19:27,330 --> 00:19:33,750
+Don't users delete my ID and I'll paste my error message.
+
+244
+00:19:33,750 --> 00:19:37,770
+And again, I've tested that already, so I'll leave just that as my error notification.
+
+245
+00:19:38,970 --> 00:19:44,580
+Now, in theory, what I'm expecting to happen and I'm verifying that it happens by writing these tests
+
+246
+00:19:44,970 --> 00:19:50,490
+is my database has a foreign key relationship with Cascade on update and delete.
+
+247
+00:19:50,700 --> 00:19:53,400
+So when I delete the user, that token should be gone.
+
+248
+00:19:53,580 --> 00:19:53,970
+OK?
+
+249
+00:19:54,120 --> 00:19:56,370
+But we're testing it to make sure that it actually works.
+
+250
+00:19:57,720 --> 00:20:00,760
+So now let's create our request and header again.
+
+251
+00:20:00,840 --> 00:20:02,630
+Let's copy these things.
+
+252
+00:20:02,650 --> 00:20:03,720
+Actually a copy the whole thing.
+
+253
+00:20:05,080 --> 00:20:09,460
+These lines, because I'm doing pretty much the same thing down here, and I'll just modify it as necessary.
+
+254
+00:20:10,990 --> 00:20:23,440
+So my authorization, let's make it a correct format bearer space plus token plain text, which I still
+
+255
+00:20:23,440 --> 00:20:23,770
+have.
+
+256
+00:20:23,950 --> 00:20:27,070
+I still have it in memory so I can put it there, and that will be a valid token.
+
+257
+00:20:29,430 --> 00:20:30,090
+And again.
+
+258
+00:20:31,290 --> 00:20:38,790
+The only thing I need to change here is to fail to catch a token for deleted user.
+
+259
+00:20:39,750 --> 00:20:41,340
+OK, let's see what we got wrong.
+
+260
+00:20:41,370 --> 00:20:44,480
+Chances are, since I don't have code completion, there's at least one typo.
+
+261
+00:20:44,490 --> 00:20:53,490
+But let's find out and we have an error on 479 and 514, and that was our easy 514.
+
+262
+00:20:53,670 --> 00:21:04,200
+This goes away and 479 right up here that goes away because they're equals not assignments.
+
+263
+00:21:04,500 --> 00:21:08,140
+OK, let's try that again, though.
+
+264
+00:21:08,160 --> 00:21:08,700
+Test cover.
+
+265
+00:21:19,900 --> 00:21:20,500
+And it failed.
+
+266
+00:21:20,620 --> 00:21:22,120
+Let's find out what it was now.
+
+267
+00:21:22,160 --> 00:21:25,090
+It's undoubtedly something that's fairly straightforward.
+
+268
+00:21:35,850 --> 00:21:39,210
+So the air is we're at eighty two point two percent.
+
+269
+00:21:42,100 --> 00:21:48,880
+Those are just messages from their test token bedhead or failed duplicate key value violates any constraint
+
+270
+00:21:48,880 --> 00:21:54,610
+tokens, PKI, so that's integration test five 04.
+
+271
+00:21:54,790 --> 00:21:55,810
+So it is right.
+
+272
+00:22:00,860 --> 00:22:05,660
+Here so this test starts bad hair, we create a request.
+
+273
+00:22:05,780 --> 00:22:11,300
+We get that we get our try to attempt to authenticate that token, that one passed.
+
+274
+00:22:11,390 --> 00:22:13,340
+OK, let's just run that test again.
+
+275
+00:22:13,340 --> 00:22:14,270
+So I open this up.
+
+276
+00:22:15,140 --> 00:22:17,210
+I'm going to look at the error message in more detail.
+
+277
+00:22:17,930 --> 00:22:19,130
+So I'll run this test
+
+278
+00:22:24,470 --> 00:22:26,320
+and see where the first failure is.
+
+279
+00:22:33,670 --> 00:22:34,240
+So.
+
+280
+00:22:37,270 --> 00:22:40,210
+We get a warning there in certain the tokens.
+
+281
+00:22:44,920 --> 00:22:51,910
+Duplicate key value violates unique constraint tokens, Peki, and what is it trying to insert in there?
+
+282
+00:22:51,910 --> 00:22:54,580
+It's inserted into the tokens, it's probably the IDs.
+
+283
+00:22:54,610 --> 00:22:59,710
+So one two three four five, you know what it is?
+
+284
+00:23:00,070 --> 00:23:01,060
+I bet you anything.
+
+285
+00:23:01,840 --> 00:23:07,390
+And if I go, look at this sequel, I'm inserting at the top the very top of this file.
+
+286
+00:23:08,200 --> 00:23:10,750
+I bet you I left amid empty out of one of the tables.
+
+287
+00:23:15,680 --> 00:23:18,140
+So where is my create table function?
+
+288
+00:23:20,840 --> 00:23:27,680
+So down here and I call create tables right here, let's look at these descriptions.
+
+289
+00:23:29,190 --> 00:23:31,680
+So I have that is fine.
+
+290
+00:23:34,630 --> 00:23:35,860
+And that is fine.
+
+291
+00:23:38,320 --> 00:23:40,510
+And this is the one, OK, it has a serial.
+
+292
+00:23:41,650 --> 00:23:45,970
+OK, now let's go look at our token's model here.
+
+293
+00:23:46,780 --> 00:23:49,090
+At the very beginning, there it is simple.
+
+294
+00:23:49,510 --> 00:23:50,620
+That's why we write tests.
+
+295
+00:23:50,620 --> 00:23:52,720
+So this should have karma on it.
+
+296
+00:23:52,720 --> 00:23:53,290
+Empty.
+
+297
+00:23:54,370 --> 00:24:01,840
+Now, if I save this and open my terminal and clear the screen and run the tests again, this is why
+
+298
+00:24:01,840 --> 00:24:02,650
+we write tests.
+
+299
+00:24:09,000 --> 00:24:09,700
+And it works.
+
+300
+00:24:09,720 --> 00:24:14,010
+Eighty one point six percent of these situations, or the code is now covered.
+
+301
+00:24:14,070 --> 00:24:16,170
+OK, well or near the end of this.
+
+302
+00:24:16,290 --> 00:24:17,790
+Let's just go a little bit further.
+
+303
+00:24:17,910 --> 00:24:26,700
+So back to my integration test and I'll rehired this function and I'll go to the very bottom and see
+
+304
+00:24:26,700 --> 00:24:27,870
+what we work on next.
+
+305
+00:24:29,700 --> 00:24:30,780
+So we did bad header.
+
+306
+00:24:31,500 --> 00:24:35,250
+Next, I want to check for a non-existent token.
+
+307
+00:24:35,610 --> 00:24:36,030
+OK.
+
+308
+00:24:36,750 --> 00:24:40,050
+So func test token.
+
+309
+00:24:40,650 --> 00:24:50,220
+And I want to test for deleting a non-existent token and T pointer to testing Dottie.
+
+310
+00:24:50,640 --> 00:24:55,440
+And this is a really an unnecessary test, but I like to get as much coverage as I can if I don't have
+
+311
+00:24:55,440 --> 00:24:57,000
+to jump through a whole lot of hoops.
+
+312
+00:24:57,720 --> 00:25:10,950
+So we'll just say error is assigned the value of models, DOT tokens, DOT delete by token, and the
+
+313
+00:25:10,950 --> 00:25:12,420
+token I'm looking for is ABC.
+
+314
+00:25:12,420 --> 00:25:13,290
+That doesn't exist.
+
+315
+00:25:13,800 --> 00:25:20,430
+So we call that and we say if error is not equal to nil, and the only reason I'm doing this is because
+
+316
+00:25:20,430 --> 00:25:27,210
+it covers an edge case to error error deleting token.
+
+317
+00:25:29,160 --> 00:25:32,880
+That's an easy one, and I'm going to close the terminal to give myself a little more room.
+
+318
+00:25:33,810 --> 00:25:36,840
+Here's one that's pretty important func test token.
+
+319
+00:25:37,170 --> 00:25:39,930
+And then we're testing here the valid token.
+
+320
+00:25:42,060 --> 00:25:42,390
+OK.
+
+321
+00:25:43,620 --> 00:25:46,880
+And it takes the parameter T pointer to testing Doherty.
+
+322
+00:25:48,600 --> 00:25:53,070
+So before we go any further, let's just run our test one more time to make sure that I don't have another
+
+323
+00:25:53,070 --> 00:25:55,320
+typo somewhere, because that will slow me down a lot.
+
+324
+00:25:57,780 --> 00:26:01,890
+So what we're going to do in this situation is we're going to get a user, we're going to insert a token
+
+325
+00:26:01,890 --> 00:26:06,060
+and and then check for the validity of it.
+
+326
+00:26:06,090 --> 00:26:08,300
+OK, so test passed.
+
+327
+00:26:08,310 --> 00:26:08,910
+That's good.
+
+328
+00:26:09,120 --> 00:26:11,260
+So the steps here are pretty straightforward.
+
+329
+00:26:11,280 --> 00:26:16,830
+Let's get a user by email you and error is high in the value of models.
+
+330
+00:26:18,390 --> 00:26:27,690
+Don't users don't get by email and I want to get dummy user dot email and I'll check for an error if
+
+331
+00:26:27,690 --> 00:26:31,410
+error is not equal to nil and I'll just print it out.
+
+332
+00:26:32,220 --> 00:26:34,230
+T dot error here.
+
+333
+00:26:34,800 --> 00:26:43,260
+OK now will insert a new token for this user, so will generate a new token and look for an error and
+
+334
+00:26:43,260 --> 00:26:52,500
+will call models DOT tokens, DOT generate token, gender, generate token and we need to pass it the
+
+335
+00:26:52,500 --> 00:26:52,950
+user ID
+
+336
+00:26:55,950 --> 00:26:58,320
+and make it expire at some point in the future.
+
+337
+00:26:58,350 --> 00:27:01,360
+Twenty four hours should do it 24 times timed out.
+
+338
+00:27:02,850 --> 00:27:05,220
+And again, copy and paste our error check
+
+339
+00:27:09,300 --> 00:27:17,550
+and now we'll insert the token error equals models, DOT tokens, DOT insert and we'll hand it our reference
+
+340
+00:27:17,550 --> 00:27:23,680
+to a new token or a pointer to a new token and a pointer to you, and we'll check for an error.
+
+341
+00:27:24,150 --> 00:27:25,560
+So we've inserted the token now.
+
+342
+00:27:26,610 --> 00:27:27,780
+Now we'll check the validity of it.
+
+343
+00:27:28,650 --> 00:27:38,640
+So, OK, an error are assigned the value of models, DOT tokens, DOT valid token, and we're going
+
+344
+00:27:38,640 --> 00:27:41,850
+to give it new token dot plaintext.
+
+345
+00:27:42,810 --> 00:27:43,110
+OK.
+
+346
+00:27:43,140 --> 00:27:45,450
+Because that's how it looks things up and we'll check for an error.
+
+347
+00:27:46,740 --> 00:27:51,090
+And what we're looking for here, first of all, if the error is not equal to nil, then we'll just
+
+348
+00:27:51,090 --> 00:27:59,800
+print out the message error calling valid token plus the error.
+
+349
+00:28:00,510 --> 00:28:08,280
+So a comma and the next thing we want to check is if it's not OK, if not OK, because this is a valid
+
+350
+00:28:08,280 --> 00:28:20,640
+token, then we'll say Typekit error invalid token reported as invalid and now we can do almost the
+
+351
+00:28:20,640 --> 00:28:21,240
+same thing.
+
+352
+00:28:21,900 --> 00:28:27,420
+Let's copy all of this and paste it here.
+
+353
+00:28:29,340 --> 00:28:37,110
+And instead of handing it a valid token, we'll send an invalid token ABC and we don't need the assignment
+
+354
+00:28:37,110 --> 00:28:37,680
+operator.
+
+355
+00:28:39,850 --> 00:28:44,200
+And we will check for an error, and all we care about here is the OK part.
+
+356
+00:28:45,380 --> 00:28:47,620
+We want to care if it is OK.
+
+357
+00:28:48,310 --> 00:28:52,630
+And we're going to change our error message to invalid token reported as valid.
+
+358
+00:28:53,740 --> 00:28:57,790
+OK, so that's the next case.
+
+359
+00:28:58,960 --> 00:29:03,010
+And now let's refresh our user just to get the current user from the database.
+
+360
+00:29:03,010 --> 00:29:06,830
+So we're working with data from the database now instead of data we have in memory.
+
+361
+00:29:06,850 --> 00:29:08,980
+So you and Eric are equal to.
+
+362
+00:29:09,350 --> 00:29:11,890
+I can just copy this right here.
+
+363
+00:29:12,100 --> 00:29:14,770
+Copy and paste it right there.
+
+364
+00:29:16,230 --> 00:29:24,810
+And now will delete all the tokens for the user error equals models, start tokens, don't delete you
+
+365
+00:29:24,870 --> 00:29:25,540
+DOT tokens.
+
+366
+00:29:27,120 --> 00:29:28,430
+You don't token ID.
+
+367
+00:29:28,920 --> 00:29:31,710
+So it should be gone and I'll copy this error message.
+
+368
+00:29:31,860 --> 00:29:34,770
+And I know that's been thoroughly tested, so that's enough.
+
+369
+00:29:37,830 --> 00:29:41,880
+And now let's try checking for a token that we know is gone now.
+
+370
+00:29:42,180 --> 00:29:51,270
+So, OK, an error or now equal to models Typekit tokens dot valid token.
+
+371
+00:29:51,930 --> 00:29:58,800
+And from our newly refreshed you variable the token field plain text with a capital T,
+
+372
+00:30:01,710 --> 00:30:08,410
+and we can probably paste in the same error message right here and not call it a key.
+
+373
+00:30:08,430 --> 00:30:15,540
+Let's call it OK, so we don't get a compiler error, and we want to make sure that if OK is true,
+
+374
+00:30:15,570 --> 00:30:18,960
+then we fail because that token should be gone by now to error.
+
+375
+00:30:21,150 --> 00:30:29,450
+No error reported when validating non existent token.
+
+376
+00:30:30,600 --> 00:30:31,770
+So that's that situation.
+
+377
+00:30:32,310 --> 00:30:37,050
+Let's run this test right now just to see if we have any more typos, which seems to be the norm when
+
+378
+00:30:37,050 --> 00:30:38,340
+I don't have a autocomplete.
+
+379
+00:30:48,100 --> 00:30:50,470
+And it fails and it fails because.
+
+380
+00:30:53,320 --> 00:30:58,090
+No matching user found integration test go 569.
+
+381
+00:30:58,750 --> 00:30:59,590
+Is that the only one?
+
+382
+00:31:02,020 --> 00:31:03,430
+So we've got a mistake here somewhere.
+
+383
+00:31:05,930 --> 00:31:08,930
+And it is on five 04.
+
+384
+00:31:09,080 --> 00:31:12,020
+So let's find one, five four and go see what we got wrong.
+
+385
+00:31:14,780 --> 00:31:15,980
+Five 04.
+
+386
+00:31:22,380 --> 00:31:26,370
+Let's just run those tests again and make sure I'm looking at current data, so I'll drag this up a
+
+387
+00:31:26,370 --> 00:31:26,760
+little bit.
+
+388
+00:31:27,330 --> 00:31:29,400
+I may have been looking at an old error message.
+
+389
+00:31:29,440 --> 00:31:30,840
+I don't want to waste time doing that.
+
+390
+00:31:30,840 --> 00:31:36,600
+So, but lots of spaces here just to make sure I know where is my results actually start and run the
+
+391
+00:31:36,600 --> 00:31:37,260
+test again.
+
+392
+00:31:37,530 --> 00:31:44,010
+And I should have a clear indication as to where my error is if it's in my code or in my test.
+
+393
+00:31:48,260 --> 00:31:54,200
+So it's no matching user found at 569, so I was looking at the wrong spot, so let's hide that and
+
+394
+00:31:54,200 --> 00:31:57,320
+go to five, 69 five.
+
+395
+00:31:58,350 --> 00:31:59,700
+69.
+
+396
+00:32:01,090 --> 00:32:01,660
+Right here.
+
+397
+00:32:02,020 --> 00:32:03,610
+And of course, it's in my test.
+
+398
+00:32:03,700 --> 00:32:06,710
+This should be checking for no error.
+
+399
+00:32:06,730 --> 00:32:08,860
+We're expecting to get an error back.
+
+400
+00:32:09,190 --> 00:32:12,040
+And we're also expecting OK to be false.
+
+401
+00:32:12,580 --> 00:32:19,510
+So let's open our terminal window clear screen and run that one more time, and hopefully it will pass
+
+402
+00:32:19,510 --> 00:32:20,050
+this time.
+
+403
+00:32:29,250 --> 00:32:32,220
+And it does, and we're up to eighty seven point six percent of statements.
+
+404
+00:32:32,400 --> 00:32:33,020
+OK.
+
+405
+00:32:33,060 --> 00:32:38,920
+I believe that concludes all of our tests for both of these models for the moment.
+
+406
+00:32:38,970 --> 00:32:43,410
+Now we're going to have to go back and add validation at some point, and we'll do that before too long.
+
+407
+00:32:43,650 --> 00:32:49,170
+But before we close this lecture off, let's make sure that we're have sufficient coverage.
+
+408
+00:32:49,320 --> 00:32:55,080
+So clear my screen, make sure I'm in the data directory and once again, I will type go test, dash
+
+409
+00:32:55,440 --> 00:33:06,780
+cover profile equals coverage, dot out and I want to run everything in this directory and I want to
+
+410
+00:33:06,780 --> 00:33:11,340
+use the tags integration and I should generate my own file.
+
+411
+00:33:12,030 --> 00:33:15,600
+And of course, it will take just as long to run as a normal test suite.
+
+412
+00:33:17,780 --> 00:33:20,960
+So seven or eight seconds is seems to be our average these days.
+
+413
+00:33:24,110 --> 00:33:31,220
+And now we'll run go to cover, and we want HTML and we're getting our data from coverage.
+
+414
+00:33:32,240 --> 00:33:35,180
+And I should fire up my web browser and open a window.
+
+415
+00:33:35,840 --> 00:33:39,260
+And we have 100 percent coverage here which we had before, which is good.
+
+416
+00:33:39,340 --> 00:33:42,830
+So let's go look at a token, don't go, which is what we've been doing most of the work.
+
+417
+00:33:43,880 --> 00:33:49,610
+So don't care about that edge case or those ones, that's 100 percent coverage.
+
+418
+00:33:49,610 --> 00:33:51,110
+Forget my token, which is great.
+
+419
+00:33:51,770 --> 00:33:52,970
+Deleting looks good.
+
+420
+00:33:55,710 --> 00:33:57,390
+All of this looks pretty good.
+
+421
+00:33:59,490 --> 00:33:59,940
+All right.
+
+422
+00:34:00,450 --> 00:34:06,060
+So if user token plain text is equal to nothing, we're not catching that, but we are catching invalid
+
+423
+00:34:06,060 --> 00:34:08,400
+tokens, which should be exactly the same thing.
+
+424
+00:34:09,090 --> 00:34:13,200
+And here we didn't get our expires before this in get user for token.
+
+425
+00:34:13,680 --> 00:34:15,930
+You know, I can live with those two edge cases.
+
+426
+00:34:15,930 --> 00:34:16,680
+They're trivial.
+
+427
+00:34:16,920 --> 00:34:18,540
+They're not that difficult to go and implement.
+
+428
+00:34:18,780 --> 00:34:23,100
+But for now, I think we've got pretty good coverage and we might improve this a little bit later on
+
+429
+00:34:23,100 --> 00:34:24,390
+when we add a authentication.
+
+430
+00:34:24,690 --> 00:34:26,460
+But for now, I'm relatively happy.

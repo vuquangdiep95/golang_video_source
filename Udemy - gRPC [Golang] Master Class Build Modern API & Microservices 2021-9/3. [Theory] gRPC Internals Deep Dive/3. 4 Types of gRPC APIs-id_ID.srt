@@ -1,0 +1,288 @@
+1
+00:00:00,090 --> 00:00:04,270
+Jadi sekarang kita sudah bicara tentang buffer Perkel dan HGP juga.
+
+2
+00:00:04,320 --> 00:00:07,750
+Jadi sekarang kita benar-benar dapat mulai berbicara tentang GOPAC itu sendiri.
+
+3
+00:00:07,800 --> 00:00:11,080
+Jadi ada empat jenis panggilan RBC atau API.
+
+4
+00:00:11,280 --> 00:00:18,180
+Anda dapat menggunakan di PC Anda mereka akan menjadi API sebelum server memangkas pemangkasan klien dan
+
+5
+00:00:18,190 --> 00:00:19,830
+streaming bi directional.
+
+6
+00:00:20,070 --> 00:00:24,530
+Jadi mari kita lihat semuanya di slide di bagian selanjutnya.
+
+7
+00:00:24,600 --> 00:00:29,030
+Kami akan menerapkan masing-masing dan setiap dari mereka dan memahami mereka dengan lebih baik.
+
+8
+00:00:29,040 --> 00:00:34,110
+Jadi, Anda tahu API akan menjadi respons permintaan klasik Anda.
+
+9
+00:00:34,140 --> 00:00:39,050
+Jadi itu berarti bahwa klien mengatakan hei beri saya sesuatu di server katakan hei ini dia.
+
+10
+00:00:39,090 --> 00:00:40,260
+Jadi itu mudah kan.
+
+11
+00:00:40,260 --> 00:00:41,240
+Itu yang kamu tahu.
+
+12
+00:00:41,370 --> 00:00:43,790
+Itulah yang dilakukan oleh setiap API lainnya.
+
+13
+00:00:43,800 --> 00:00:46,950
+Anda mengirim sesuatu dan menerima sesuatu dengan lebih mudah.
+
+14
+00:00:47,460 --> 00:00:54,140
+Sekarang kami memiliki layanan streaming dan kemampuan itu dalam setiap kemampuan streaming diaktifkan melalui SATB yang baru
+
+15
+00:00:54,240 --> 00:00:56,650
+saja kita lihat di kuliah sebelumnya.
+
+16
+00:00:56,970 --> 00:01:04,530
+Jadi kita akan berbicara dengan server dan mengatakan hei beri saya sesuatu dan server mengatakan OK di sini satu di
+
+17
+00:01:04,530 --> 00:01:09,650
+sini dua di sini tiga sorakan untuk dan semua pesan ini dapat dikirim.
+
+18
+00:01:09,660 --> 00:01:10,920
+Kedua mungkin terpisah.
+
+19
+00:01:11,100 --> 00:01:16,310
+Jadi ketika server mendapatkan data baru untuk klien, ia hanya akan mengirimnya saat menerimanya.
+
+20
+00:01:16,380 --> 00:01:23,100
+Tetapi klien hanya akan membuat satu permintaan dan akan menerima aliran tanggapan dari klien.
+
+21
+00:01:23,100 --> 00:01:26,510
+Sekarang kita memiliki yang sebaliknya yaitu streaming klien.
+
+22
+00:01:26,520 --> 00:01:29,950
+Jadi klien akan membuka koneksi streaming dan mengirim ke server.
+
+23
+00:01:30,060 --> 00:01:37,330
+Satu pesan pesan kedua pesan ketiga pesan keempat dan hanya mengharapkan respons di beberapa titik.
+
+24
+00:01:37,410 --> 00:01:41,940
+Mungkin setelah yang pertama setelah yang kedua atau ketiga dari empat untuk apa pun yang akan mengharapkan
+
+25
+00:01:41,940 --> 00:01:42,750
+respons dari server.
+
+26
+00:01:42,960 --> 00:01:46,080
+Dan itu sama dengan sebelumnya sebagai streaming server.
+
+27
+00:01:46,080 --> 00:01:49,080
+Tetapi sekarang klien mengirim data streaming.
+
+28
+00:01:49,080 --> 00:01:49,790
+BAIK.
+
+29
+00:01:50,280 --> 00:01:57,330
+Sekarang kami memiliki bidirectional streaming dan bidirectional streaming sebagai jenis pengiriman satu pesan ke pesan mungkin server
+
+30
+00:01:57,570 --> 00:02:02,310
+merespons dengan satu mungkin Kleins mengirim yang lain dan seterusnya.
+
+31
+00:02:02,430 --> 00:02:08,040
+Jadi Anda mungkin memiliki sinkronisasi antara server dan klien untuk menolak dapat mengirim pesan sebanyak mungkin
+
+32
+00:02:08,040 --> 00:02:10,880
+mungkin pekerjaan dan pekerjaan yang harus dilakukan.
+
+33
+00:02:11,070 --> 00:02:13,980
+Dan ketika server selesai dengan pekerjaan itu akan merespons.
+
+34
+00:02:13,980 --> 00:02:16,700
+Jadi itu sangat bagus.
+
+35
+00:02:16,710 --> 00:02:20,940
+Dan itu benar-benar membuka banyak kemungkinan ke dalam jenis API yang dapat Anda tulis.
+
+36
+00:02:21,210 --> 00:02:23,550
+Dan itu disebut streaming dua arah.
+
+37
+00:02:23,550 --> 00:02:23,870
+Baik.
+
+38
+00:02:23,940 --> 00:02:25,140
+Dan itu yang paling maju.
+
+39
+00:02:25,290 --> 00:02:29,410
+Jadi jelas akan ada server yang paling mudah roaming streaming.
+
+40
+00:02:29,420 --> 00:02:33,460
+Ya kedua dan kemudian streaming dua arah yang paling sulit untuk dipahami.
+
+41
+00:02:33,470 --> 00:02:39,750
+Sekarang energi Anda sebagian besar akan berada pada panggilan API Anda sudah Anda Nury adalah semacam API tradisional
+
+42
+00:02:39,750 --> 00:02:43,740
+seperti tetapi Anda mendapatkan semua keuntungan dari buffer protokol Edubuntu.
+
+43
+00:02:43,860 --> 00:02:49,530
+Jadi itu kinerja yang sangat bagus tapi kami memiliki kemampuan streaming dan ini luar biasa ketika Anda
+
+44
+00:02:49,530 --> 00:02:51,280
+mulai melakukan data besar.
+
+45
+00:02:51,410 --> 00:02:57,660
+Atau ketika Anda mulai mendorong beberapa obrolan seperti Chetan ke mana pun memiliki banyak pesan.
+
+46
+00:02:57,660 --> 00:02:58,460
+Ini luar biasa.
+
+47
+00:02:58,470 --> 00:02:59,000
+Pada kasus ini.
+
+48
+00:02:59,010 --> 00:02:59,540
+BAIK.
+
+49
+00:02:59,700 --> 00:03:03,960
+Jadi di GOPAC seperti yang akan kita lihat di slide berikutnya sangat mudah untuk mendefinisikan API.
+
+50
+00:03:04,290 --> 00:03:08,900
+Jadi, inilah layanan hebat dan itulah yang akan kami lakukan selama kursus ini.
+
+51
+00:03:08,910 --> 00:03:16,380
+Jadi yang pertama adalah persatuan dan usery memiliki RBC menyambut dan menerima permintaan salam dan mengembalikan respons salam dan kita akan melihat
+
+52
+00:03:16,380 --> 00:03:20,090
+ini dalam kode cara menulis hal-hal ini satu per satu.
+
+53
+00:03:20,100 --> 00:03:24,720
+Saya hanya ingin membaca dengan saya sekarang yang artinya akan mengirim permintaan yang bagus dan mendapatkan respons yang bagus
+
+54
+00:03:24,980 --> 00:03:25,520
+dengan mudah.
+
+55
+00:03:25,530 --> 00:03:26,710
+Itu yang kamu tahu.
+
+56
+00:03:27,000 --> 00:03:33,030
+Sekarang server trimming pertama akan menyetujui berkali-kali API dan akan mengirim satu permintaan grup
+
+57
+00:03:33,030 --> 00:03:35,210
+berkali-kali meminta dan mengembalikan aliran.
+
+58
+00:03:35,340 --> 00:03:42,330
+Jadi seperti yang Anda lihat sekarang dengan kata kunci aliran ini penting dan aliran respons berkali-kali yang luar biasa.
+
+59
+00:03:42,450 --> 00:03:43,650
+Dan itulah yang kami cari.
+
+60
+00:03:43,680 --> 00:03:49,530
+Kata kunci streaming pada dasarnya menunjukkan bahwa hanya server atau streaming yang sekarang untuk streaming klien untuk
+
+61
+00:03:49,530 --> 00:03:54,350
+membaca lama, kata kunci streaming akan berada di sisi klien pada sisi permintaan.
+
+62
+00:03:54,450 --> 00:03:57,050
+Dan seperti yang Anda lihat responsnya tidak terlalu bagus.
+
+63
+00:03:57,050 --> 00:04:01,840
+Sekarang jika Anda membeli directional streaming, kami memiliki streaming dan streaming di kedua tempat.
+
+64
+00:04:02,100 --> 00:04:07,770
+Jadi mudahnya untuk mendefinisikan layanan streaming uriner atau klien atau bidirectional streaming API
+
+65
+00:04:07,770 --> 00:04:09,880
+hanya menggunakan kata stream.
+
+66
+00:04:09,960 --> 00:04:14,700
+Implementasi itu sendiri akan sedikit lebih rumit tetapi dalam buffer protokol Sangat
+
+67
+00:04:14,700 --> 00:04:16,580
+mudah untuk mendefinisikan kontrak.
+
+68
+00:04:16,770 --> 00:04:23,010
+Jadi harap masuk akal untuk memahami bagaimana GOPAC jenis API yang berbeda adalah ayam
+
+69
+00:04:23,010 --> 00:04:27,480
+pada kuliah di bagian selanjutnya akan menerapkan masing-masing ditambah latihan.
+
+70
+00:04:27,600 --> 00:04:28,650
+Jadi, Anda akan berada di tangan yang baik.
+
+71
+00:04:28,710 --> 00:04:33,650
+Tapi saya ingin memberi Anda tinjauan tingkat tinggi tentang cara GAAP bekerja dan apa yang didefinisikan.
+
+72
+00:04:33,820 --> 00:04:35,610
+OK saya akan lihat di kuliah berikutnya.
+

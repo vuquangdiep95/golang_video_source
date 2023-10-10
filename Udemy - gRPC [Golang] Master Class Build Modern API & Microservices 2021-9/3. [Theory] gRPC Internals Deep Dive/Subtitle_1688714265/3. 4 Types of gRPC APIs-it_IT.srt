@@ -1,0 +1,287 @@
+1
+00:00:00,090 --> 00:00:04,270
+Vì vậy, bây giờ chúng ta cũng đã nói về bộ đệm Perkel và HGP.
+
+2
+00:00:04,320 --> 00:00:07,750
+Vì vậy, bây giờ chúng ta thực sự có thể bắt đầu nói về chính GOPAC.
+
+3
+00:00:07,800 --> 00:00:11,080
+Vì vậy, có bốn loại lệnh gọi RBC hoặc API.
+
+4
+00:00:11,280 --> 00:00:18,180
+Bạn có thể sử dụng trong PC của mình, đây sẽ là API mà máy chủ đang cắt các máy khách
+
+5
+00:00:18,190 --> 00:00:19,830
+và truyền phát hai chiều.
+
+6
+00:00:20,070 --> 00:00:24,530
+Vì vậy, chúng ta hãy xem nhanh tất cả chúng trong slide ở các phần tiếp theo.
+
+7
+00:00:24,600 --> 00:00:29,030
+Chúng tôi sẽ thực hiện từng người trong số họ và hiểu họ tốt hơn.
+
+8
+00:00:29,040 --> 00:00:34,110
+Vì vậy, bạn biết API sẽ là yêu cầu phản hồi cổ điển của bạn.
+
+9
+00:00:34,140 --> 00:00:39,050
+Vì vậy, điều đó có nghĩa là khách hàng nói rằng anh ấy đã đưa cho tôi thứ gì đó trong máy chủ, nói rằng đây là đây.
+
+10
+00:00:39,090 --> 00:00:40,260
+Vì vậy, nó dễ dàng, phải không.
+
+11
+00:00:40,260 --> 00:00:41,240
+Đây là những gì bạn biết.
+
+12
+00:00:41,370 --> 00:00:43,790
+Đây là điều mà mọi API khác làm.
+
+13
+00:00:43,800 --> 00:00:46,950
+Gửi một cái gì đó và nhận một cái gì đó dễ dàng hơn.
+
+14
+00:00:47,460 --> 00:00:54,140
+Bây giờ chúng tôi có dịch vụ phát trực tuyến và khả năng này trong bất kỳ khả năng phát trực tuyến nào được kích hoạt thông qua SATB cho dịch vụ đó
+
+15
+00:00:54,240 --> 00:00:56,650
+mà chúng ta vừa xem ở bài học trước.
+
+16
+00:00:56,970 --> 00:01:04,530
+Vì vậy, chúng tôi sẽ nói chuyện với máy chủ và nói đưa cho tôi thứ gì đó và máy chủ nói OK, đây là một cái ở đây
+
+17
+00:01:04,530 --> 00:01:09,650
+đó là hai ở đây ba lời chúc mừng và tất cả những tin nhắn này có thể được gửi đi.
+
+18
+00:01:09,660 --> 00:01:10,920
+Thứ hai có thể.
+
+19
+00:01:11,100 --> 00:01:16,310
+Sau đó, khi máy chủ nhận dữ liệu mới cho máy khách, nó sẽ gửi dữ liệu đó ngay khi nhận được.
+
+20
+00:01:16,380 --> 00:01:23,100
+Nhưng khách hàng sẽ chỉ thực hiện một yêu cầu và sẽ nhận được một loạt phản hồi từ khách hàng.
+
+21
+00:01:23,100 --> 00:01:26,510
+Bây giờ chúng ta có điều ngược lại là phát trực tuyến của khách hàng.
+
+22
+00:01:26,520 --> 00:01:29,950
+Sau đó, máy khách sẽ mở kết nối phát trực tuyến và gửi đến máy chủ.
+
+23
+00:01:30,060 --> 00:01:37,330
+Một tin nhắn thứ hai tin nhắn thứ ba tin nhắn thứ tư và chỉ chờ đợi câu trả lời ở một số điểm.
+
+24
+00:01:37,410 --> 00:01:41,940
+Có thể sau lần đầu tiên sau lần thứ hai hoặc thứ ba trong số bốn người cho bất cứ điều gì người ta mong đợi
+
+25
+00:01:41,940 --> 00:01:42,750
+phản hồi từ máy chủ.
+
+26
+00:01:42,960 --> 00:01:46,080
+Và do đó, nó giống như trước đây với các máy chủ phát trực tuyến.
+
+27
+00:01:46,080 --> 00:01:49,080
+Nhưng bây giờ máy khách đang truyền dữ liệu.
+
+28
+00:01:49,080 --> 00:01:49,790
+ĐƯỢC RỒI.
+
+29
+00:01:50,280 --> 00:01:57,330
+Hiện tại chúng tôi có phát trực tuyến hai chiều và phát trực tuyến hai chiều là loại gửi tin nhắn đến tin nhắn, có thể là máy chủ
+
+30
+00:01:57,570 --> 00:02:02,310
+anh ấy trả lời bằng một cái có lẽ Klein sẽ gửi một cái khác, v.v.
+
+31
+00:02:02,430 --> 00:02:08,040
+Vì vậy, bạn có thể có sự đồng bộ giữa máy chủ và máy khách để từ chối khả năng gửi lượng tử
+
+32
+00:02:08,040 --> 00:02:10,880
+càng nhiều tin nhắn càng tốt, có thể là công việc và việc phải làm.
+
+33
+00:02:11,070 --> 00:02:13,980
+Và khi máy chủ hoàn thành công việc, nó sẽ phản hồi.
+
+34
+00:02:13,980 --> 00:02:16,700
+Điều này là rất, rất tốt
+
+35
+00:02:16,710 --> 00:02:20,940
+Và nó thực sự mở ra rất nhiều khả năng về loại API mà bạn có thể viết.
+
+36
+00:02:21,210 --> 00:02:23,550
+Và điều này được gọi là phát trực tuyến hai chiều.
+
+37
+00:02:23,550 --> 00:02:23,870
+Được rồi.
+
+38
+00:02:23,940 --> 00:02:25,140
+Và đó là cao cấp nhất.
+
+39
+00:02:25,290 --> 00:02:29,410
+Vì vậy, rõ ràng sẽ có việc phát trực tuyến chuyển vùng máy chủ dễ dàng hơn.
+
+40
+00:02:29,420 --> 00:02:33,460
+Thứ hai có và sau đó truyền phát hai chiều khó hiểu hơn.
+
+41
+00:02:33,470 --> 00:02:39,750
+Bây giờ, năng lượng của bạn sẽ chủ yếu dành cho các lệnh gọi API của bạn vì Nury là loại
+
+42
+00:02:39,750 --> 00:02:43,740
+API truyền thống nhưng nhận được tất cả các lợi ích của bộ đệm giao thức Eduubuntu.
+
+43
+00:02:43,860 --> 00:02:49,530
+Vì vậy, đó là một màn trình diễn thực sự tốt, nhưng chúng tôi có khả năng phát trực tuyến và những khả năng này thật tuyệt vời khi bạn bắt đầu
+
+44
+00:02:49,530 --> 00:02:51,280
+một giá vé tôi dữ liệu lớn.
+
+45
+00:02:51,410 --> 00:02:57,660
+Hoặc khi bạn bắt đầu đẩy một số cuộc trò chuyện như Chetan ở khắp mọi nơi, họ có rất nhiều tin nhắn.
+
+46
+00:02:57,660 --> 00:02:58,460
+Đây là những tuyệt vời.
+
+47
+00:02:58,470 --> 00:02:59,000
+Trong trường hợp này.
+
+48
+00:02:59,010 --> 00:02:59,540
+ĐƯỢC RỒI.
+
+49
+00:02:59,700 --> 00:03:03,960
+Vì vậy, trong GOPAC như chúng ta sẽ thấy trong slide tiếp theo, rất dễ xác định API.
+
+50
+00:03:04,290 --> 00:03:08,900
+Vì vậy, đây là dịch vụ tuyệt vời và đó là những gì chúng tôi sẽ làm trong suốt khóa học này.
+
+51
+00:03:08,910 --> 00:03:16,380
+Vì vậy, đầu tiên là đơn vị và người dùng có RBC nói xin chào và chấp nhận yêu cầu xin chào và trả lại phản hồi chào mừng và
+
+52
+00:03:16,380 --> 00:03:20,090
+chúng ta sẽ thấy điều này trong mã cách viết từng thứ một.
+
+53
+00:03:20,100 --> 00:03:24,720
+Chỉ muốn đọc với tôi ngay bây giờ, điều đó có nghĩa là sẽ gửi một yêu cầu lớn và nhận được một yêu cầu lớn
+
+54
+00:03:24,980 --> 00:03:25,520
+câu trả lời dễ dàng.
+
+55
+00:03:25,530 --> 00:03:26,710
+Đây là những gì bạn biết.
+
+56
+00:03:27,000 --> 00:03:33,030
+Giờ đây, máy chủ cắt xén đầu tiên sẽ đồng ý API nhiều lần và gửi yêu cầu tới nhiều nhóm
+
+57
+00:03:33,030 --> 00:03:35,210
+lần yêu cầu và sẽ trả về một luồng.
+
+58
+00:03:35,340 --> 00:03:42,330
+Vì vậy, như bạn có thể thấy bây giờ với luồng từ khóa này là quan trọng và là luồng phản hồi nhiều lần.
+
+59
+00:03:42,450 --> 00:03:43,650
+Và đó là những gì chúng tôi đang tìm kiếm.
+
+60
+00:03:43,680 --> 00:03:49,530
+Từ khóa luồng về cơ bản có nghĩa là nó chỉ là một máy chủ hoặc phát trực tuyến ngay bây giờ cho các ứng dụng khách phát trực tuyến
+
+61
+00:03:49,530 --> 00:03:54,350
+trong một thời gian dài, từ khóa luồng sẽ nằm ở phía máy khách của phía yêu cầu.
+
+62
+00:03:54,450 --> 00:03:57,050
+Và như bạn có thể thấy câu trả lời là không tuyệt vời.
+
+63
+00:03:57,050 --> 00:04:01,840
+Bây giờ, nếu bạn mua phát trực tuyến theo hướng, chúng tôi có luồng và luồng ở cả hai nơi.
+
+64
+00:04:02,100 --> 00:04:07,770
+Đây là cách dễ dàng để xác định dịch vụ phát trực tuyến nước tiểu hoặc API phát trực tuyến ứng dụng khách hoặc hai chiều
+
+65
+00:04:07,770 --> 00:04:09,880
+chỉ sử dụng dòng chảy của các từ.
+
+66
+00:04:09,960 --> 00:04:14,700
+Bản thân việc triển khai sẽ phức tạp hơn một chút nhưng trong bộ đệm giao thức, nó LÀ
+
+67
+00:04:14,700 --> 00:04:16,580
+cực kỳ dễ dàng để xác định hợp đồng.
+
+68
+00:04:16,770 --> 00:04:23,010
+Vì vậy, tôi hy vọng sẽ hợp lý khi hiểu cách GOPAC, một loại API khác, gà mái trong các bài học
+
+69
+00:04:23,010 --> 00:04:27,480
+trong các phần tiếp theo sẽ đưa vào thực hành từng bài tập khác.
+
+70
+00:04:27,600 --> 00:04:28,650
+Sau đó, bạn sẽ được trong tay tốt.
+
+71
+00:04:28,710 --> 00:04:33,650
+Nhưng tôi muốn cung cấp cho bạn một cái nhìn tổng quan cấp cao về cách thức hoạt động của GAAP và định nghĩa của nó.
+
+72
+00:04:33,820 --> 00:04:35,610
+OK, tôi sẽ xem trong bài học tiếp theo.

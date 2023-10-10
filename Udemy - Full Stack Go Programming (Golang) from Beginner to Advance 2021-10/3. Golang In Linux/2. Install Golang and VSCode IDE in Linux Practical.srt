@@ -1,0 +1,527 @@
+1
+00:00:12,090 --> 00:00:18,480
+Hello and welcome to the Guoliang programming language course in this session, we want to talk about
+
+2
+00:00:18,600 --> 00:00:24,570
+install the go programming language practically inside the Linux operating system.
+
+3
+00:00:26,710 --> 00:00:28,480
+First in a stall, the Golan.
+
+4
+00:00:34,340 --> 00:00:39,920
+Go land dot org, slash the URL.
+
+5
+00:00:44,760 --> 00:00:53,580
+We entered the gold and software download page based on the desired operating system, selecting installation
+
+6
+00:00:53,580 --> 00:00:57,200
+file and download it because my system is leaning.
+
+7
+00:00:57,370 --> 00:00:59,840
+We select the Linux installation fine.
+
+8
+00:01:03,240 --> 00:01:05,430
+And go to Lenovo's tap.
+
+9
+00:01:07,450 --> 00:01:10,780
+And copy the name of the last version of Golang.
+
+10
+00:01:16,600 --> 00:01:21,550
+Now open a new terminal and downloaded by Debbie Lou, get command.
+
+11
+00:01:27,870 --> 00:01:47,100
+So be right, w get Dash C, H T T P s column s S-Class go lang dot org slash dl slash and paste the
+
+12
+00:01:47,100 --> 00:01:50,610
+name of the last version of Go Blank that we have copied it.
+
+13
+00:01:53,840 --> 00:01:55,790
+Now, download this starting.
+
+14
+00:02:02,530 --> 00:02:13,990
+The download completed in this time, check the integrity of the tar ball by verifying the SHA 256 checksum
+
+15
+00:02:13,990 --> 00:02:19,930
+of the archive file using the source and comment saw the right solution.
+
+16
+00:02:21,340 --> 00:02:30,910
+Dash, a 256 and paste name of the Go Lang last version that we have copied it.
+
+17
+00:02:33,970 --> 00:02:44,800
+Now we can get the SHA 256 checksum hashes of the fine and it's quiet now extracted are confined into
+
+18
+00:02:45,010 --> 00:02:45,640
+this user.
+
+19
+00:02:45,640 --> 00:02:47,380
+It's local directory.
+
+20
+00:02:48,220 --> 00:02:54,970
+So in terminal, go to destination of the archive file, download it and extract go lang.
+
+21
+00:02:54,970 --> 00:02:56,590
+File into Escort's use it.
+
+22
+00:02:56,590 --> 00:03:04,750
+If this local by this command sudo tar the ash see.
+
+23
+00:03:07,220 --> 00:03:09,260
+Escorts, user escorts, local.
+
+24
+00:03:12,000 --> 00:03:14,250
+That's exquisite Earth.
+
+25
+00:03:16,660 --> 00:03:20,780
+Name of the last version of Golden Boy, the title Dodd.
+
+26
+00:03:20,800 --> 00:03:21,400
+Geez, it.
+
+27
+00:03:25,370 --> 00:03:29,960
+For the check, we will go to the S-Class User Escorts Local Directory.
+
+28
+00:03:30,230 --> 00:03:34,190
+And now we see the gold and installed chronic.
+
+29
+00:03:37,650 --> 00:03:45,030
+Now configuring Golang environment in Linux, first set up your Go workspace by creating a directory
+
+30
+00:03:45,030 --> 00:03:53,280
+at home for the example named Go Online Projects, which is the root of your workspace, the workspace
+
+31
+00:03:53,280 --> 00:04:00,210
+is made of three directories, namely Bing, which will contain go executable binaries.
+
+32
+00:04:00,780 --> 00:04:07,890
+SRT will be restore your source files and pcgg, which will restore package objects.
+
+33
+00:04:08,460 --> 00:04:12,480
+Now let's go to write some commands for create workspace.
+
+34
+00:04:13,380 --> 00:04:14,190
+Sudo.
+
+35
+00:04:15,530 --> 00:04:33,530
+In the air DSP home S.A. go on the line, projects open, Credible says Bien como SIRC como pcgg and
+
+36
+00:04:33,530 --> 00:04:35,030
+close curly braces.
+
+37
+00:04:36,600 --> 00:04:40,530
+Now go to home and check the go on the line project, walk to space.
+
+38
+00:04:43,980 --> 00:04:50,610
+All the directory is created and see all things is okay now it's time to execute, go.
+
+39
+00:04:51,420 --> 00:04:56,250
+Like the rest of Linux programs without specifying its absolute path.
+
+40
+00:04:56,580 --> 00:05:02,520
+Its installation directory must be installed as one of the values of path environment variable.
+
+41
+00:05:02,760 --> 00:05:05,270
+So at its user, it's not local.
+
+42
+00:05:05,280 --> 00:05:12,600
+It's let's go if there's been to the path environment variable by inserting in your search ETSI as that's
+
+43
+00:05:12,600 --> 00:05:21,270
+profile file for a system wide installation or home Slashdot profile or home Slashdot bash on the line
+
+44
+00:05:21,270 --> 00:05:24,390
+profiling for user specific installation.
+
+45
+00:05:24,750 --> 00:05:33,270
+Now we set it for user a specific installation so open the user profile means that Slashdot profile
+
+46
+00:05:33,480 --> 00:05:35,010
+and add this line.
+
+47
+00:05:44,930 --> 00:05:52,400
+Export pact equals pact, Colin Less user, it's less local.
+
+48
+00:05:53,300 --> 00:05:54,440
+Let's let's go.
+
+49
+00:05:55,520 --> 00:06:05,590
+Slash bean then set the values of girl pat and go bingo environment variables in your user profile fine
+
+50
+00:06:05,990 --> 00:06:08,390
+to point your workspace directory.
+
+51
+00:06:08,570 --> 00:06:11,420
+So add these lines in profile.
+
+52
+00:06:12,800 --> 00:06:15,470
+Export, go, pat.
+
+53
+00:06:16,700 --> 00:06:17,510
+Equals.
+
+54
+00:06:18,520 --> 00:06:22,510
+Whole east, let's go on the line projects.
+
+55
+00:06:23,590 --> 00:06:24,280
+Export.
+
+56
+00:06:27,200 --> 00:06:27,920
+Go being.
+
+57
+00:06:29,520 --> 00:06:30,360
+Equals.
+
+58
+00:06:32,970 --> 00:06:33,750
+Girl power.
+
+59
+00:06:35,450 --> 00:06:36,650
+It's last been.
+
+60
+00:06:48,380 --> 00:06:54,290
+The final list that honors this section is to effect the changes made to the user profile in the current
+
+61
+00:06:54,290 --> 00:06:56,210
+position by source comment.
+
+62
+00:06:56,900 --> 00:06:58,840
+So we right source.
+
+63
+00:07:01,310 --> 00:07:03,350
+Home air slash.
+
+64
+00:07:03,560 --> 00:07:12,140
+Dot profile and execute this comment for verifying go link installation, run the go version and go
+
+65
+00:07:12,140 --> 00:07:15,410
+and in to view your gold version and environment.
+
+66
+00:07:15,410 --> 00:07:17,130
+So be right, go.
+
+67
+00:07:17,210 --> 00:07:18,020
+Well done.
+
+68
+00:07:19,760 --> 00:07:27,170
+Now we can see the gold version and go, and now we can see the environment of go.
+
+69
+00:07:27,560 --> 00:07:30,640
+So the installation is correctly and everything.
+
+70
+00:07:30,650 --> 00:07:31,520
+All right.
+
+71
+00:07:32,120 --> 00:07:38,690
+Now it's time to install Visual Studio code on Debian, or up until the most preferred method of in
+
+72
+00:07:38,690 --> 00:07:46,730
+a stunning visual studio code on Debian based systems is by enabling the VIOUS Code repository and installing
+
+73
+00:07:46,730 --> 00:07:50,600
+the Visual Studio Code package using the APT package manager.
+
+74
+00:07:50,900 --> 00:07:54,650
+So first, we try sudo apt.
+
+75
+00:07:56,650 --> 00:07:57,310
+Update.
+
+76
+00:08:02,380 --> 00:08:06,340
+The update is a starting and wait until update complete.
+
+77
+00:08:09,860 --> 00:08:18,290
+OK, the update has got completed once updated Prosit in install dependencies required by executing.
+
+78
+00:08:18,440 --> 00:08:19,630
+So we write.
+
+79
+00:08:20,770 --> 00:08:25,240
+Sudo apt in a song.
+
+80
+00:08:26,960 --> 00:08:35,290
+Software, the ICE properties that's common is space apt.
+
+81
+00:08:37,110 --> 00:08:44,070
+Dash Transport Dash has two tips and execute the program is being installed.
+
+82
+00:08:44,250 --> 00:08:46,350
+Press Y and continue.
+
+83
+00:08:50,560 --> 00:08:53,050
+Wait, Anthony, installation complete.
+
+84
+00:08:58,320 --> 00:09:08,130
+OK, installation complete next, using the W, you get comment, download the repository and import
+
+85
+00:09:08,130 --> 00:09:11,910
+Microsoft's GPG keys for convenience.
+
+86
+00:09:13,050 --> 00:09:17,550
+I have already saved them in the fine copy and put them in the terminal.
+
+87
+00:09:20,310 --> 00:09:21,990
+So go to our fine.
+
+88
+00:09:23,550 --> 00:09:31,680
+Well, Penny, copy these lines and move them to the terminal and execute them one by one.
+
+89
+00:09:58,740 --> 00:10:05,490
+Once you have enabled the repository, update the system and installed visual studio code by running
+
+90
+00:10:05,490 --> 00:10:06,180
+the command.
+
+91
+00:10:06,300 --> 00:10:07,080
+So do.
+
+92
+00:10:10,450 --> 00:10:11,350
+Opted.
+
+93
+00:10:13,140 --> 00:10:14,610
+The update is starting.
+
+94
+00:10:14,790 --> 00:10:16,710
+Wait until update complete.
+
+95
+00:10:19,730 --> 00:10:24,080
+And sudo apt get install.
+
+96
+00:10:25,710 --> 00:10:26,280
+Could.
+
+97
+00:10:30,920 --> 00:10:35,240
+Due to its size, the installation takes approximately five minutes.
+
+98
+00:10:35,810 --> 00:10:41,690
+Once in its thought, used application manager to search visual studio code and launch it.
+
+99
+00:10:43,670 --> 00:10:44,090
+OK.
+
+100
+00:10:44,120 --> 00:10:46,850
+This software installation process is complete.
+
+101
+00:10:46,910 --> 00:10:49,970
+Now it's time to go to configure device code.
+
+102
+00:10:51,360 --> 00:10:52,890
+So open the Vasco.
+
+103
+00:11:03,200 --> 00:11:12,260
+First opened Extension's marketplace by council plus shift plus short key and search go extension and
+
+104
+00:11:12,260 --> 00:11:13,370
+install it.
+
+105
+00:11:19,990 --> 00:11:20,330
+OK.
+
+106
+00:11:20,350 --> 00:11:21,550
+It's installed.
+
+107
+00:11:23,580 --> 00:11:33,630
+And now open common pilot by console plus shift plus Pete Shawki and select Go column in a stone slash
+
+108
+00:11:33,660 --> 00:11:34,620
+update tools.
+
+109
+00:11:35,700 --> 00:11:40,320
+And select all the check boxes for in a stunning all requires tools.
+
+110
+00:11:47,880 --> 00:11:52,530
+Now we are waiting for the installation of the required tools to be completed.
+
+111
+00:11:57,610 --> 00:11:58,000
+OK.
+
+112
+00:11:58,030 --> 00:12:05,050
+Download complete it now for Test, create a simple project, so go to Explorer Project and go to work
+
+113
+00:12:05,050 --> 00:12:05,620
+a space.
+
+114
+00:12:13,360 --> 00:12:17,350
+And create a folder like, hello.
+
+115
+00:12:19,370 --> 00:12:21,680
+And inside it, create a fight.
+
+116
+00:12:22,810 --> 00:12:24,610
+Like Maine that go.
+
+117
+00:12:25,510 --> 00:12:27,350
+And write some quotes.
+
+118
+00:12:27,940 --> 00:12:32,140
+In future, we will talk about these quotes here, just we want to tests.
+
+119
+00:12:32,140 --> 00:12:34,630
+All right, package main.
+
+120
+00:12:37,010 --> 00:12:48,710
+Forage Maine and write the message by the comment FMD, not print and set the message, for example.
+
+121
+00:12:49,280 --> 00:12:53,420
+Welcome to go programming.
+
+122
+00:12:55,240 --> 00:12:56,020
+Language.
+
+123
+00:12:57,170 --> 00:13:01,710
+Save the project, go to terminal and run the project first.
+
+124
+00:13:01,730 --> 00:13:03,200
+Go to hell of a lower.
+
+125
+00:13:05,830 --> 00:13:06,430
+Hello.
+
+126
+00:13:08,200 --> 00:13:12,370
+And run the project by the comment Go Run.
+
+127
+00:13:13,430 --> 00:13:14,600
+Plane that go.
+
+128
+00:13:16,670 --> 00:13:23,510
+Now we can see the message Welcome to go, programming language, all things are OK and you're ready
+
+129
+00:13:23,510 --> 00:13:24,710
+to write your codes.
+
+130
+00:13:25,070 --> 00:13:27,080
+OK, we have reached the end of decision.
+
+131
+00:13:27,090 --> 00:13:31,230
+I hope that you have take full advantage of decision until next session.
+
+132
+00:13:31,250 --> 00:13:31,850
+Goodbye.

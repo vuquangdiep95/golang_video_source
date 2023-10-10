@@ -1,0 +1,196 @@
+1
+00:00:01,340 --> 00:00:08,000
+So far, we have the ability to put something to a remote file system, a mini file system and the ability
+
+2
+00:00:08,000 --> 00:00:11,230
+to list all of the contents of a given bucket on that.
+
+3
+00:00:11,240 --> 00:00:14,330
+And we still need two more functions delete and get.
+
+4
+00:00:14,450 --> 00:00:16,460
+So let's take care of delete this time around.
+
+5
+00:00:17,180 --> 00:00:23,660
+So I'm still in the file mine ioco inside the mobile file system folder inside the file system folder
+
+6
+00:00:23,660 --> 00:00:27,950
+inside this Holyroodhouse folder and let's take care of delete and it's a pretty short function.
+
+7
+00:00:28,760 --> 00:00:32,270
+Again, a func with the receiver of M Pointer to Mineo.
+
+8
+00:00:32,600 --> 00:00:33,950
+And this one's called delete.
+
+9
+00:00:35,780 --> 00:00:43,590
+And as you recall, that takes one parameter items to delete, which is a slice of string and it returns
+
+10
+00:00:43,590 --> 00:00:45,170
+of Boolean true or false.
+
+11
+00:00:46,040 --> 00:00:47,660
+So once again, we need the context.
+
+12
+00:00:47,690 --> 00:00:57,440
+So CTCs and cancel come from context with cancel and we use context background as it's one parameter
+
+13
+00:00:57,590 --> 00:00:59,930
+and we defer cancel.
+
+14
+00:01:03,380 --> 00:01:04,900
+Now we need to get our client.
+
+15
+00:01:05,000 --> 00:01:08,780
+So client is assigned the value of don't get credentials.
+
+16
+00:01:10,400 --> 00:01:13,820
+And now we need to specify some options and I won't do them inline this time.
+
+17
+00:01:13,820 --> 00:01:14,630
+I'll do it this way.
+
+18
+00:01:14,690 --> 00:01:23,570
+Ops is a sign the value of Mineo Dot remove object options, and the only thing I want to put in there
+
+19
+00:01:23,600 --> 00:01:30,140
+is one parameter and it's one that if you're going to be working with Mineo or with S3 buckets, you
+
+20
+00:01:30,140 --> 00:01:31,100
+should read up on this.
+
+21
+00:01:31,340 --> 00:01:36,560
+It's called Governance Bypass, Governance Bypass, and I'm going to set that to true.
+
+22
+00:01:37,130 --> 00:01:41,180
+And there are situations, many situations actually where you want that.
+
+23
+00:01:41,360 --> 00:01:45,710
+You want to read about this a little bit and find out exactly what it does and make sure that you want
+
+24
+00:01:45,710 --> 00:01:46,600
+to set that to true.
+
+25
+00:01:46,610 --> 00:01:49,580
+But in our case, for our purposes today, this is perfect.
+
+26
+00:01:50,810 --> 00:01:55,760
+Now we'll just range through items to delete for I don't care about index, but I do care about the
+
+27
+00:01:55,760 --> 00:02:04,040
+current item is assigned the value of range items to delete, and all we do is check for an error and
+
+28
+00:02:04,040 --> 00:02:05,450
+call from our client.
+
+29
+00:02:05,930 --> 00:02:10,550
+Remove object, remove object right there.
+
+30
+00:02:13,050 --> 00:02:17,660
+And I don't know why I have parentheses around that, I must have been working in JavaScript recently.
+
+31
+00:02:17,700 --> 00:02:18,670
+So we'll get rid of those.
+
+32
+00:02:18,690 --> 00:02:19,200
+That's better.
+
+33
+00:02:19,920 --> 00:02:21,780
+Now Remove Object takes a few parameters.
+
+34
+00:02:21,990 --> 00:02:23,340
+Context is the first one.
+
+35
+00:02:24,120 --> 00:02:26,250
+The second one is what bucket are you dealing with?
+
+36
+00:02:26,250 --> 00:02:28,380
+Which is amp up bucket rate from the receiver.
+
+37
+00:02:28,920 --> 00:02:30,060
+What do you want to delete?
+
+38
+00:02:30,180 --> 00:02:33,370
+And that's item which we're getting through the range statement.
+
+39
+00:02:33,390 --> 00:02:36,840
+And finally, what are the options which we just specified right up above there?
+
+40
+00:02:37,110 --> 00:02:37,440
+OK.
+
+41
+00:02:38,490 --> 00:02:44,370
+So we try that and we try to check for an error if error is not equal to nil.
+
+42
+00:02:44,490 --> 00:02:45,180
+And I'll print it out.
+
+43
+00:02:46,260 --> 00:02:51,570
+Format dot print line the error and I'll return false because it failed.
+
+44
+00:02:51,990 --> 00:02:56,160
+OK, otherwise outside of this for loop, we just return true.
+
+45
+00:02:56,610 --> 00:03:01,230
+And that's all there is to it for deleting something from him in your file system.
+
+46
+00:03:01,380 --> 00:03:01,710
+OK.
+
+47
+00:03:02,430 --> 00:03:06,060
+So in the next lecture, we'll take care of the last function, which is get one.
+
+48
+00:03:06,060 --> 00:03:09,740
+You won't use very much, but just to be complete, we might as well implement it.
+
+49
+00:03:09,750 --> 00:03:10,950
+It's not a lot of work.
+

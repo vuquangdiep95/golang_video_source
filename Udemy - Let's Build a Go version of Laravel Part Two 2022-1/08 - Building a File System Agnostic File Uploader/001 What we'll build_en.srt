@@ -1,0 +1,100 @@
+1
+00:00:01,290 --> 00:00:05,880
+So in this section of the course, what I want to do is take all the work we put into the last section
+
+2
+00:00:06,330 --> 00:00:13,920
+and add some functionality to the core celebrity's code that makes uploading a file to any file system,
+
+3
+00:00:13,920 --> 00:00:20,430
+including the local system on a server absolutely trivial to make it a one line command with an error
+
+4
+00:00:20,430 --> 00:00:21,150
+check, of course.
+
+5
+00:00:21,600 --> 00:00:26,550
+So something like this, and I'm just sticking this into a random handler just so you can see what the
+
+6
+00:00:26,550 --> 00:00:27,720
+code might look like.
+
+7
+00:00:28,320 --> 00:00:32,430
+Perhaps something like this error is a sign of the value of.
+
+8
+00:00:32,460 --> 00:00:35,790
+And this is going to show errors in my I.D. and just ignore that.
+
+9
+00:00:36,030 --> 00:00:39,770
+Here's the sort of thing I want something like a dart app.
+
+10
+00:00:39,990 --> 00:00:42,160
+Dart upload file.
+
+11
+00:00:43,200 --> 00:00:47,970
+So right from the celebrity's application, a command named upload file.
+
+12
+00:00:48,180 --> 00:00:52,980
+And that would take something like the request, the name of the field that we're uploading, say,
+
+13
+00:00:52,980 --> 00:00:57,940
+uploaded file and then what file system do you want it to go to?
+
+14
+00:00:57,960 --> 00:01:03,690
+So something like and we could get it out of the map and maybe even make it easier something like H
+
+15
+00:01:03,780 --> 00:01:06,180
+Dart app Dart.
+
+16
+00:01:07,050 --> 00:01:07,770
+You know you.
+
+17
+00:01:09,140 --> 00:01:11,330
+Like that leads to an air check.
+
+18
+00:01:11,750 --> 00:01:13,490
+So basically one line of code.
+
+19
+00:01:13,760 --> 00:01:17,390
+And of course, we're getting all of these errors because I'm referring to things that don't exist right
+
+20
+00:01:17,390 --> 00:01:18,890
+now, but hopefully you get the idea.
+
+21
+00:01:19,340 --> 00:01:26,420
+One line of code that allows me to pass just basically at the request, the name of the field in the
+
+22
+00:01:26,420 --> 00:01:29,390
+request that we're passing it, that has the file attached.
+
+23
+00:01:29,870 --> 00:01:32,180
+And then we have a file system you want it to go to.
+
+24
+00:01:32,450 --> 00:01:34,910
+And that's what I want to work on in this section.
+
+25
+00:01:35,000 --> 00:01:36,740
+So let's get started in the next election.
+

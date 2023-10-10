@@ -1,0 +1,136 @@
+1
+00:00:00,130 --> 00:00:05,880
+OK jadi sekarang kita menuju ke API yang lebih maju untuk GOPAC, streaming API.
+
+2
+00:00:05,980 --> 00:00:08,540
+Dan yang pertama adalah server streaming.
+
+3
+00:00:08,580 --> 00:00:10,830
+Jadi apa itu layanan streaming API.
+
+4
+00:00:10,910 --> 00:00:14,720
+Pada dasarnya mereka berada di API jenis baru yang tidak akan Anda temukan sisanya.
+
+5
+00:00:14,820 --> 00:00:17,960
+Dan itu karena mereka memungkinkan semuanya menjadi kenyataan.
+
+6
+00:00:18,000 --> 00:00:23,730
+Jadi jika Anda ingat diagram di sini dengan klien dan server dan Clinton mengirim satu
+
+7
+00:00:23,730 --> 00:00:30,690
+pesan ke server dan dapat menerima banyak tanggapan dari server yang Anda kenal secara streaming sehingga mereka dapat jarak
+
+8
+00:00:30,690 --> 00:00:36,010
+dan waktu dan Anda tidak bisa mungkin menerima jumlah tanggapan yang tak terbatas.
+
+9
+00:00:36,030 --> 00:00:42,460
+Klien hanya harus mengatakan OK saya sudah selesai menerima semua server ini harus mengatakan OK dan kemudian mengirim.
+
+10
+00:00:42,480 --> 00:00:43,520
+Jadi bisa dibilang kapan.
+
+11
+00:00:43,530 --> 00:00:46,890
+Kapan saya ingin menggunakan server semacam ini pemangkasan API.
+
+12
+00:00:46,890 --> 00:00:52,460
+Apakah saya tidak cukup baik dengan respons permintaan yang kami pelajari sebelum API tsunami.
+
+13
+00:00:52,680 --> 00:00:58,130
+Dan Anda mungkin berkata baik Anda mungkin membutuhkan API ini ketika server perlu mengirim banyak data.
+
+14
+00:00:58,130 --> 00:00:59,850
+Saya pikir kasus penggunaan data besar.
+
+15
+00:01:00,090 --> 00:01:03,630
+Jadi itu berarti Anda mengirim muatan besar yang sedang kami bicarakan seperti gigabyte, benar.
+
+16
+00:01:03,900 --> 00:01:10,410
+Dan jika mengirimkannya satu gigabyte sekaligus ada kemungkinan transfer yang sangat tinggi akan gagal.
+
+17
+00:01:10,420 --> 00:01:17,570
+Benar tetapi jika Anda mengirim katakan ini satu gigabyte data melalui pesan yang sangat kecil masing-masing dari mereka mengatakan 10
+
+18
+00:01:17,580 --> 00:01:22,800
+kilobyte karena banyak pesan kecil maka ada kemungkinan besar transfer ini akan berhasil atau setidaknya
+
+19
+00:01:22,800 --> 00:01:26,380
+akan masuk akal di mana pun Anda membutuhkannya menjadi.
+
+20
+00:01:26,730 --> 00:01:32,790
+Jadi pemangkasan disesuaikan dengan sangat baik untuk data besar tetapi juga sangat disesuaikan ketika Anda ingin server
+
+21
+00:01:32,850 --> 00:01:37,010
+mendorong data ke klien tanpa meminta klien untuk lebih banyak data.
+
+22
+00:01:37,200 --> 00:01:41,370
+Jadi pikirkan tentang umpan langsung atau obrolan atau apa pun.
+
+23
+00:01:41,460 --> 00:01:46,290
+Jadi itu adalah kemampuan baru atau paradigma pemrograman baru dan Anda memang memikirkannya.
+
+24
+00:01:46,380 --> 00:01:51,650
+Jika server melewatkan Anda mendorongnya ke klien tanpa klien meminta data ini maka streaming
+
+25
+00:01:51,690 --> 00:01:54,120
+server adalah kandidat yang sangat baik.
+
+26
+00:01:54,180 --> 00:01:58,670
+Sekarang server memangkas panggilan didefinisikan menggunakan kata-kata buffer protokol perawatan.
+
+27
+00:01:59,010 --> 00:02:02,010
+Jadi kita harus mendefinisikan pesan permintaan dan pesan respons.
+
+28
+00:02:02,190 --> 00:02:03,610
+Dan seperti inilah tampilannya.
+
+29
+00:02:03,780 --> 00:02:06,690
+Jadi kita akan mendefinisikan hebat berkali-kali.
+
+30
+00:02:06,700 --> 00:02:09,080
+RBC dan ini akan menjadi server streaming.
+
+31
+00:02:09,240 --> 00:02:16,560
+Jadi seperti yang Anda lihat, kami memiliki permintaan berkali-kali dan respons berkali-kali tetapi ada kata kunci aliran yang telah
+
+32
+00:02:16,800 --> 00:02:18,020
+ditambahkan di sini.
+
+33
+00:02:18,300 --> 00:02:21,160
+Dan itu menjadikan API itu server streaming API.
+
+34
+00:02:21,360 --> 00:02:26,050
+Jadi kuliah berikutnya akan membahas dan menerapkan semacam pemangkasan API.
+

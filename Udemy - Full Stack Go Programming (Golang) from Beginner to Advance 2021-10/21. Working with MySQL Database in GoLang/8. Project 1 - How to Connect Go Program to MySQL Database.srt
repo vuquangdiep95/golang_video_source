@@ -1,0 +1,455 @@
+1
+00:00:13,540 --> 00:00:17,890
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:24,670 --> 00:00:27,210
+Go line crowd using my school.
+
+3
+00:00:28,740 --> 00:00:36,150
+We are going to see an example program to learn how to do database crud operations using gold language
+
+4
+00:00:36,150 --> 00:00:37,980
+and my school database.
+
+5
+00:00:39,500 --> 00:00:47,120
+We have talked about it before, which is an acronym for Create, Read, Update and let current operations
+
+6
+00:00:47,120 --> 00:00:50,300
+are basic data manipulation for databases.
+
+7
+00:00:51,020 --> 00:00:57,830
+In this example, we are going to create an interface as database front end to handle these operations.
+
+8
+00:00:58,490 --> 00:01:04,040
+We have a student table containing tainted information like ID, name and age.
+
+9
+00:01:04,430 --> 00:01:10,370
+With this stated, we have to perform current using my school in previous sessions.
+
+10
+00:01:10,580 --> 00:01:17,600
+We succeed to create a student table in the MySchool database and perform craft operations on it.
+
+11
+00:01:18,110 --> 00:01:24,620
+So we use the same student table built into the MySQL database in previous sessions within this project
+
+12
+00:01:24,800 --> 00:01:26,960
+to connect the Go Languages program.
+
+13
+00:01:34,460 --> 00:01:43,370
+Database driver in a computer system and adopter program is required for making a connection to another
+
+14
+00:01:43,370 --> 00:01:45,350
+system of different type.
+
+15
+00:01:45,710 --> 00:01:53,390
+Similar to connecting your printer to a computer by using a printer driver, a database management system
+
+16
+00:01:53,420 --> 00:02:00,320
+or DBS mess needs a database driver that enables a database connection in other systems.
+
+17
+00:02:01,490 --> 00:02:09,980
+A database driver is a computer program that implements the protocol for a database connection the driver
+
+18
+00:02:09,980 --> 00:02:16,670
+walks like, and the doctor each connects a generic interface to a specific driver vendor implementation.
+
+19
+00:02:18,840 --> 00:02:23,400
+Now, let's go to the escort program to implement this project.
+
+20
+00:02:25,710 --> 00:02:29,130
+Because in this tutorial, we used my school database.
+
+21
+00:02:29,280 --> 00:02:31,830
+We need a driver to connect to my school.
+
+22
+00:02:32,040 --> 00:02:39,540
+So first, we should prepare and install my school driver in our project for this purpose.
+
+23
+00:02:39,750 --> 00:02:45,300
+Using Terminal at first Install Driver four goes my is dual database package.
+
+24
+00:02:45,810 --> 00:02:50,170
+So run this command and install my ISCA driver.
+
+25
+00:02:51,150 --> 00:02:53,640
+Go get.
+
+26
+00:02:54,580 --> 00:02:55,420
+That's you.
+
+27
+00:02:56,950 --> 00:03:11,410
+Tom, dot com slash go the ranch school dash driver, slash my rescuer.
+
+28
+00:03:13,670 --> 00:03:14,900
+And, Ron, this comment.
+
+29
+00:03:24,110 --> 00:03:31,720
+OK, first, go to Package Explorer and go to a Sazi folder and create the project folder name like
+
+30
+00:03:31,730 --> 00:03:32,540
+database.
+
+31
+00:03:34,940 --> 00:03:38,300
+Create a folder log data base
+
+32
+00:03:41,960 --> 00:03:43,010
+in project folder.
+
+33
+00:03:43,010 --> 00:03:45,020
+Create a folder named model.
+
+34
+00:03:52,530 --> 00:03:57,800
+In model folder, we create a file like name the student that go inside it.
+
+35
+00:04:01,410 --> 00:04:03,600
+Student the school.
+
+36
+00:04:06,130 --> 00:04:12,130
+We are going to create a structure equivalent to a student table in the MySchool database.
+
+37
+00:04:14,260 --> 00:04:22,060
+So go to a student file and create a strike name, a student with foods such as foods is stored inside
+
+38
+00:04:22,060 --> 00:04:23,860
+the manuscript database.
+
+39
+00:04:28,350 --> 00:04:31,860
+Typekit mother.
+
+40
+00:04:36,120 --> 00:04:40,050
+And create a structure like a student tied.
+
+41
+00:04:42,920 --> 00:04:46,130
+Student district
+
+42
+00:04:50,150 --> 00:04:52,340
+and city fields for it.
+
+43
+00:04:52,670 --> 00:04:55,730
+I.D. type is in
+
+44
+00:04:59,210 --> 00:05:02,180
+name, type is strange
+
+45
+00:05:04,760 --> 00:05:07,990
+and age tie these parents.
+
+46
+00:05:13,400 --> 00:05:25,340
+And so the comment for this, as throughout as exporter, is to the best of the format, the code and
+
+47
+00:05:25,340 --> 00:05:26,450
+save the product.
+
+48
+00:05:27,110 --> 00:05:34,580
+Now Go Project folder and create another folder named like configuration, which is supposed to include
+
+49
+00:05:34,580 --> 00:05:39,110
+the settings for the connection of the Go program with the MySchool database.
+
+50
+00:05:43,050 --> 00:05:47,580
+New folder on immigration.
+
+51
+00:05:50,940 --> 00:05:54,900
+He want to create a database connection city as a Jason fine.
+
+52
+00:05:55,110 --> 00:06:02,630
+So inside the configuration folder, we create a file called config with the JSON extension, so create
+
+53
+00:06:02,640 --> 00:06:06,960
+a file config dot js.
+
+54
+00:06:10,800 --> 00:06:15,270
+The program requires Tollman settings to connect to the database.
+
+55
+00:06:15,690 --> 00:06:19,710
+First is a driver name and second is data source name.
+
+56
+00:06:20,550 --> 00:06:27,660
+Driver name is MySchool and data source name is a combination of user name, passport and database name
+
+57
+00:06:27,660 --> 00:06:28,960
+that we want to connect in.
+
+58
+00:06:28,980 --> 00:06:32,820
+So we write adjacent fine for settings of database.
+
+59
+00:06:37,890 --> 00:06:38,790
+Driver named.
+
+60
+00:06:44,730 --> 00:06:52,300
+Column and said, Venue My Askew, a sitcom, I'll go to next month.
+
+61
+00:06:52,860 --> 00:07:04,350
+Said another key like data source, meaning column and set value.
+
+62
+00:07:06,780 --> 00:07:13,650
+My database username is root column and my database passport is where I can.
+
+63
+00:07:16,630 --> 00:07:17,320
+At some.
+
+64
+00:07:19,670 --> 00:07:24,110
+Yes, slash and database name is person.
+
+65
+00:07:28,460 --> 00:07:33,080
+Now we could create the JSON file for connection to my database.
+
+66
+00:07:33,740 --> 00:07:38,990
+Now go to Project Folder and create another folder named like DevTools.
+
+67
+00:07:44,610 --> 00:07:46,470
+DBE tools.
+
+68
+00:07:48,430 --> 00:07:56,260
+And create the file inside ID like name, the connection that go, that file contains methods to interact
+
+69
+00:07:56,260 --> 00:08:02,840
+with the database, create a new Find DB connection.
+
+70
+00:08:03,370 --> 00:08:04,240
+That's cool.
+
+71
+00:08:07,280 --> 00:08:11,270
+Before creating any function, there are two things to do.
+
+72
+00:08:11,450 --> 00:08:15,410
+First, in Port My Escort Driver, top of database tools.
+
+73
+00:08:15,410 --> 00:08:15,920
+Package
+
+74
+00:08:18,230 --> 00:08:19,100
+package
+
+75
+00:08:22,400 --> 00:08:23,060
+tools.
+
+76
+00:08:28,950 --> 00:08:37,540
+In Port Open and close, Francis Andre School double quotation mark
+
+77
+00:08:40,090 --> 00:08:46,540
+guitar, dot com slash go.
+
+78
+00:08:47,200 --> 00:08:53,890
+Dash this dual dash driver slash my skewered.
+
+79
+00:08:58,370 --> 00:09:07,250
+And second, define global variable named driver meet and data source name as string type that through
+
+80
+00:09:07,280 --> 00:09:20,800
+either me type is extreme and that data source name and type is strange.
+
+81
+00:09:27,620 --> 00:09:35,330
+Now create and initialize their function to be able to initialize these two variables from other packages.
+
+82
+00:09:35,900 --> 00:09:43,550
+This method receives two values of driver name and data source name as input parameters and uses them
+
+83
+00:09:43,550 --> 00:09:46,340
+to initialize the global variable of package.
+
+84
+00:09:46,640 --> 00:09:50,090
+Until that, other functions can access their values.
+
+85
+00:09:51,830 --> 00:09:53,960
+So define foreign.
+
+86
+00:09:59,420 --> 00:10:02,270
+The the initial laser.
+
+87
+00:10:06,330 --> 00:10:19,440
+Sit down as driver me and this and as Driver Soul's name by the time estranged and create body a statement
+
+88
+00:10:19,980 --> 00:10:32,310
+driver name equals the end and datasource name equals the as in.
+
+89
+00:10:33,830 --> 00:10:42,410
+Reformat the code and say the projects now you want to design a method whose task is to connect the
+
+90
+00:10:42,410 --> 00:10:48,320
+program to the MySchool database and return the object from school package.
+
+91
+00:10:48,830 --> 00:10:55,220
+For example, we create the function named Connect that is stopped by the lower cheesecake there because
+
+92
+00:10:55,220 --> 00:11:01,100
+we want to use this function just to this package and we don't use it to other packages.
+
+93
+00:11:01,130 --> 00:11:04,100
+So we write phone.
+
+94
+00:11:08,850 --> 00:11:09,510
+Can't.
+
+95
+00:11:16,170 --> 00:11:22,080
+And return type is the object by the type, it's cruel that D.B..
+
+96
+00:11:27,480 --> 00:11:34,400
+The asterisk is fuel package Dot TV.
+
+97
+00:11:39,290 --> 00:11:44,780
+They required Metro to connect to the database is the open function of the estriol package.
+
+98
+00:11:45,050 --> 00:11:47,370
+So we should import a school package.
+
+99
+00:11:47,840 --> 00:11:55,730
+Open function opens a database is specified by its database driver name and the driver specific data
+
+100
+00:11:55,730 --> 00:12:01,910
+source name, usually consisting of at least a database name in connection information.
+
+101
+00:12:02,210 --> 00:12:04,360
+And it returns the object then.
+
+102
+00:12:05,390 --> 00:12:14,270
+So first define two variables like DB and or DB comma there column equals in Collingwood and function.
+
+103
+00:12:14,270 --> 00:12:23,780
+Form a school package and set driver name and data source name as prior to eschew a dart open driver
+
+104
+00:12:23,780 --> 00:12:27,860
+name and data source name.
+
+105
+00:12:31,620 --> 00:12:33,210
+Now, check in on our status
+
+106
+00:12:36,210 --> 00:12:36,570
+and.
+
+107
+00:12:37,660 --> 00:12:41,650
+Carl Fattal function from Lok Nayak is not that at all.
+
+108
+00:12:42,430 --> 00:12:46,540
+And sit at all, don't ever function.
+
+109
+00:12:48,560 --> 00:13:00,500
+And Return created Debbie Optic as returned times return TV, reformat the code and save the project,
+
+110
+00:13:01,250 --> 00:13:01,660
+OK?
+
+111
+00:13:02,000 --> 00:13:08,780
+After we can connect to the database, we can perform current operations by writing different functions
+
+112
+00:13:09,440 --> 00:13:12,290
+in order not to prolong the time of decision.
+
+113
+00:13:12,470 --> 00:13:16,580
+We will finish it and we will continue the content in the next session.
+
+114
+00:13:16,730 --> 00:13:17,270
+Goodbye.

@@ -1,0 +1,155 @@
+1
+00:00:00,960 --> 00:00:07,770
+So now we want to set up the actual monitoring for HTP services, but before we do that, I did have
+
+2
+00:00:07,770 --> 00:00:14,070
+a typo in the last lecture and this is in the host jet file when I was copy and pasting this little
+
+3
+00:00:14,070 --> 00:00:20,130
+bit right here and active equals one, I accidentally put that inside the quotation marks.
+
+4
+00:00:20,550 --> 00:00:22,440
+So this belongs over here.
+
+5
+00:00:22,590 --> 00:00:26,160
+So fix that and you may have noticed that and fixed it anyway.
+
+6
+00:00:26,160 --> 00:00:27,870
+But we all make typographical errors.
+
+7
+00:00:28,530 --> 00:00:32,070
+So let's go over to our perform checks dot go file.
+
+8
+00:00:32,880 --> 00:00:36,810
+And the part we're looking at, of course, is this test service for hosts.
+
+9
+00:00:37,440 --> 00:00:44,400
+And we have this switch statement which checks for the case of HTP and obviously we want another case.
+
+10
+00:00:44,400 --> 00:00:52,440
+So I can just copy this and paste it right here and make this https, which is a constant.
+
+11
+00:00:52,830 --> 00:00:55,890
+And as you know, that concept is set to do so.
+
+12
+00:00:55,890 --> 00:00:59,340
+This is calling a method, a test htp for host.
+
+13
+00:00:59,340 --> 00:01:03,710
+And obviously we want to put an S in there and then actually go and create this method.
+
+14
+00:01:03,720 --> 00:01:11,340
+So I'll go down to test HTP for host and this is really easy and simply copy this method because it's
+
+15
+00:01:11,340 --> 00:01:12,300
+virtually the same.
+
+16
+00:01:12,300 --> 00:01:15,510
+I could modify this method to handle both cases, but I'll just keep it simple.
+
+17
+00:01:16,200 --> 00:01:22,290
+Rename it to test http s for host and there's very little else to change here.
+
+18
+00:01:23,020 --> 00:01:31,230
+Basically I need to change this part where I'm looking for HTP s and changing it to HTP and move the
+
+19
+00:01:31,230 --> 00:01:32,900
+S, so that was easy.
+
+20
+00:01:33,990 --> 00:01:35,160
+And then down here.
+
+21
+00:01:35,670 --> 00:01:37,060
+Is there anything else to change.
+
+22
+00:01:37,500 --> 00:01:37,920
+No.
+
+23
+00:01:38,130 --> 00:01:40,190
+That should literally do it.
+
+24
+00:01:40,980 --> 00:01:47,790
+So I think at this point all we have to do is stop our application, start our application.
+
+25
+00:01:50,620 --> 00:01:58,280
+And go back to our Web browser and try going to the overview page, see what it looks like right now.
+
+26
+00:01:58,300 --> 00:02:01,840
+We have one healthy service and we're only monitoring one service.
+
+27
+00:02:01,870 --> 00:02:08,260
+So let's go to localhost and go to managed services and turn on HTP s.
+
+28
+00:02:08,860 --> 00:02:13,870
+And that should, with no change, no other changes in the code, appear under the pending tab.
+
+29
+00:02:14,110 --> 00:02:14,980
+And it does.
+
+30
+00:02:15,550 --> 00:02:19,840
+And I'll actually just check click check now because I don't want to wait the default three minutes
+
+31
+00:02:19,840 --> 00:02:24,200
+for that service and we should get an error and there it is.
+
+32
+00:02:24,370 --> 00:02:26,920
+So if we go to error problems.
+
+33
+00:02:28,040 --> 00:02:29,870
+Everything works as expected.
+
+34
+00:02:30,410 --> 00:02:36,680
+OK, that was the easy one, the next one, and we'll do this in the next lecture or two, is to monitor
+
+35
+00:02:36,680 --> 00:02:37,910
+SSL certificates.
+
+36
+00:02:37,910 --> 00:02:40,360
+And what I want to check there is a very simple thing.
+
+37
+00:02:41,000 --> 00:02:46,660
+How many days are left until our SSL certificate expires?
+
+38
+00:02:46,670 --> 00:02:52,790
+And if it's less than some predefined number, give a warning if it's less than some smaller number
+
+39
+00:02:53,090 --> 00:02:57,410
+than give a problem and we'll we'll take care of that in the next lecture or two.

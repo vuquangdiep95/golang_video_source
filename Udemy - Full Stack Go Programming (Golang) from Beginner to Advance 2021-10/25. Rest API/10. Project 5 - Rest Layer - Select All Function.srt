@@ -1,0 +1,147 @@
+1
+00:00:14,190 --> 00:00:17,580
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:18,120 --> 00:00:24,240
+In the previous session, we could define select a student based name function for rest later.
+
+3
+00:00:24,990 --> 00:00:31,710
+And now it's time to implement another function that is supposed to fit on a student's from a student
+
+4
+00:00:31,710 --> 00:00:33,510
+table of person database.
+
+5
+00:00:34,080 --> 00:00:38,220
+So define the function name like select all students.
+
+6
+00:00:39,480 --> 00:00:44,430
+This function accept two parameters first and object from study participants.
+
+7
+00:00:44,430 --> 00:00:45,000
+Writer.
+
+8
+00:00:45,240 --> 00:00:48,450
+And second, a pointer off basically request.
+
+9
+00:00:48,840 --> 00:00:49,770
+So right
+
+10
+00:00:52,200 --> 00:00:52,890
+font
+
+11
+00:00:55,710 --> 00:00:56,550
+select.
+
+12
+00:00:58,080 --> 00:01:00,600
+All the students
+
+13
+00:01:03,180 --> 00:01:04,830
+set the parameters response.
+
+14
+00:01:04,830 --> 00:01:07,050
+Writer response
+
+15
+00:01:10,500 --> 00:01:24,030
+is Typekit draft response writer and set a pointer parameter as istituti request request.
+
+16
+00:01:26,940 --> 00:01:30,870
+Poynter Institute of Request.
+
+17
+00:01:37,370 --> 00:01:40,190
+Now we want to implement the body of the function.
+
+18
+00:01:40,700 --> 00:01:47,600
+This function is supposed to return the information of all student based on the end point.
+
+19
+00:01:48,650 --> 00:01:54,080
+Now first connect to the database, then call the query to call select all students.
+
+20
+00:01:54,680 --> 00:02:02,360
+So we define a variable like a students call him equals calling DevTools.
+
+21
+00:02:07,270 --> 00:02:14,460
+And from the DevTools in walking, select all a student function, go out, select all the students.
+
+22
+00:02:20,780 --> 00:02:27,500
+Now we have to send the return value of the select metal to the client we GS and the object from the
+
+23
+00:02:27,560 --> 00:02:28,700
+student list.
+
+24
+00:02:29,030 --> 00:02:36,920
+But you have to convert the object adjacent and send it to the client as JSON format that do this through
+
+25
+00:02:36,920 --> 00:02:38,180
+the JSON package.
+
+26
+00:02:38,240 --> 00:02:40,070
+So we write JSON
+
+27
+00:02:42,470 --> 00:02:53,150
+and calling neo encoder function in response as parameter for each new encoder and set response and
+
+28
+00:02:53,150 --> 00:02:54,500
+as parameter for eat.
+
+29
+00:02:58,160 --> 00:03:05,170
+This function returns a new encoder that writes writer and calling encode function instead of student
+
+30
+00:03:05,170 --> 00:03:13,610
+in this parameter for it and code, and set the students as arguments for it.
+
+31
+00:03:16,920 --> 00:03:19,880
+OK, reformat the code and save the project.
+
+32
+00:03:20,690 --> 00:03:27,590
+So we were able to implement the methods of sending all students from the database and sending it to
+
+33
+00:03:27,590 --> 00:03:28,250
+the client.
+
+34
+00:03:28,270 --> 00:03:29,720
+We arrest API.
+
+35
+00:03:30,470 --> 00:03:34,880
+OK, in order not to prolong the time of decision, we will finish time.
+
+36
+00:03:34,900 --> 00:03:37,970
+We will continue the content in the next session.
+
+37
+00:03:38,190 --> 00:03:38,690
+Goodbye.

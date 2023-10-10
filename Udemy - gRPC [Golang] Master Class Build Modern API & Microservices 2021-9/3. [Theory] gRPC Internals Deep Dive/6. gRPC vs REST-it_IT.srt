@@ -1,0 +1,268 @@
+1
+00:00:00,190 --> 00:00:04,720
+Heiser in questa conferenza voglio parlare della differenza tra riposo e RBC.
+
+2
+00:00:04,950 --> 00:00:11,010
+Quindi mi aspetto che tu capisca che cosa è l'API di riposo se non ti piace guardare che
+
+3
+00:00:11,010 --> 00:00:17,370
+Internet sarà solo un breve riassunto in modo rapido, quindi l'API arrestata ha fondamentalmente un verbo che potrebbe essere
+
+4
+00:00:17,370 --> 00:00:17,990
+ottenuto.
+
+5
+00:00:18,090 --> 00:00:24,720
+Quindi usiamo post e lo pubblicheremo come esempio dell'URL dell'URL che viene come puoi vedere e lo pubblicheremo a
+
+6
+00:00:24,720 --> 00:00:26,440
+questo indirizzo proprio qui.
+
+7
+00:00:26,580 --> 00:00:29,020
+Membro qui è il numero di tessere membro.
+
+8
+00:00:29,100 --> 00:00:32,650
+E come puoi vedere il protocollo qui è 1. 1 percento del PIL.
+
+9
+00:00:32,730 --> 00:00:38,640
+Ora possiamo passare alcune intestazioni come l'autorizzazione dell'host che fornisce un nome utente e una password al
+
+10
+00:00:38,640 --> 00:00:45,100
+tipo di contenuto che è l'applicazione Jason e forse alcune intestazioni di accettazione passeranno in quanto i dati di
+
+11
+00:00:45,230 --> 00:00:48,060
+Jason avranno due campi in quantità radiante venerante.
+
+12
+00:00:48,180 --> 00:00:50,070
+Come puoi vedere questo è un testo normale.
+
+13
+00:00:50,190 --> 00:00:53,760
+E poi il server dopo l'elaborazione di quella richiesta risponderà qualcosa.
+
+14
+00:00:53,760 --> 00:01:01,230
+Ad esempio HTP 1. 1 stato ha 2 o uno creato ti darà alcune intestazioni come data il tipo
+
+15
+00:01:01,560 --> 00:01:04,310
+di contenuto e la posizione di dove è stato creato.
+
+16
+00:01:04,320 --> 00:01:09,540
+Quindi questo è un rapido esempio di un veloce ripasso se un pezzo funziona di cosa si tratta e come funziona.
+
+17
+00:01:09,570 --> 00:01:12,420
+Ma questo è ciò che vedresti sugli Internet per STPI.
+
+18
+00:01:12,420 --> 00:01:16,570
+Ora osserviamo una differenza tra GURPS e il resto.
+
+19
+00:01:16,610 --> 00:01:22,560
+L'RBC utilizzerà i buffer verticali come possiamo vedere prima che sia più piccolo, più veloce.
+
+20
+00:01:22,690 --> 00:01:26,630
+Bene riposo useremo Jasen che è basato su testo non binario.
+
+21
+00:01:26,670 --> 00:01:29,370
+È più basso ed è più grande.
+
+22
+00:01:29,370 --> 00:01:31,750
+OK, lo stiamo già vedendo.
+
+23
+00:01:31,770 --> 00:01:37,180
+È un chiaro vantaggio per Jarkesy almeno dal punto di vista delle comunicazioni e un lato delle prestazioni per
+
+24
+00:01:37,180 --> 00:01:40,040
+utilizzare i buffer verticali sarà meno facile all'avvio del debug.
+
+25
+00:01:40,050 --> 00:01:47,810
+Ovviamente ora B-2 è usato da GOPAC che ha una latenza molto inferiore come abbiamo visto in tutto il video.
+
+26
+00:01:47,880 --> 00:01:54,030
+E dovresti essere in sezione e dal 2015 resto in giro per Internet, per
+
+27
+00:01:54,040 --> 00:02:00,610
+quanto ne so ora usa HP 1. 1 che ha una latenza molto più elevata e risale al 1997.
+
+28
+00:02:00,720 --> 00:02:08,250
+Ora l'arresto consente solo le richieste del server client solo come abbiamo visto mentre il tuo PC ha visto
+
+29
+00:02:08,250 --> 00:02:12,240
+nei quattro tipi di API è consente bidirezionale qualsiasi sincronicità.
+
+30
+00:02:12,270 --> 00:02:19,950
+Quindi hai molta più flessibilità con Jarkesy ora il resto consente solo le richieste i cui telefoni mentre JPC
+
+31
+00:02:20,160 --> 00:02:28,590
+ha alcune funzionalità di streaming restano se si implementa perfettamente il resto e molte persone non implementano affatto il resto sono
+
+32
+00:02:28,590 --> 00:02:32,700
+perfettamente chiamate API Rest ish non resk API complete.
+
+33
+00:02:32,970 --> 00:02:38,910
+Fondamentalmente il resto è chiamato Crood orientato Crood significa creare recuperare una data eliminata ei verbi
+
+34
+00:02:38,910 --> 00:02:41,170
+saranno post get put eliminazioni.
+
+35
+00:02:41,400 --> 00:02:43,380
+Quindi il riposo è orientato verso Crood.
+
+36
+00:02:43,380 --> 00:02:49,680
+Avrai risorse ad esempio per gli utenti e tu dici di creare un utente che recuperi un utente di dati o di
+
+37
+00:02:49,680 --> 00:02:53,880
+eliminare un utente, ma in realtà non si concentra su ciò che sta accadendo.
+
+38
+00:02:53,880 --> 00:03:01,230
+OK, hai solo a che fare con le risorse mentre DRP C è orientato verso ciò che la tua API non ha vincoli.
+
+39
+00:03:01,230 --> 00:03:06,260
+È un design gratuito per te e puoi davvero concentrarti su ciò che l'API dovrebbe fare.
+
+40
+00:03:06,270 --> 00:03:08,100
+Quali sono i punti finali perfetti.
+
+41
+00:03:08,100 --> 00:03:10,780
+Quali sono i parametri perfetti per la tua API.
+
+42
+00:03:10,900 --> 00:03:14,310
+OK, quindi il riposo è orientato alle risorse.
+
+43
+00:03:14,400 --> 00:03:16,220
+Europaeus usa le API orientate.
+
+44
+00:03:16,440 --> 00:03:20,980
+E una volta ottenuto questo, forse otterrai questa rivelazione ovviamente che
+
+45
+00:03:20,980 --> 00:03:24,160
+ti mostrerà come rendere GAAP così potente.
+
+46
+00:03:24,270 --> 00:03:31,410
+Ora il resto non ha cogenerazione o è disponibile attraverso qualcosa chiamato API aperta o Swager che sono entrambi
+
+47
+00:03:31,410 --> 00:03:33,900
+adown non fanno parte delle specifiche.
+
+48
+00:03:34,050 --> 00:03:40,650
+Quindi quello che viene chiamato cittadino di seconda classe e l'iniziativa API aperta di Swager è abbastanza recente.
+
+49
+00:03:40,650 --> 00:03:47,730
+Quindi puoi fare un po 'di cogenerazione usando DPR Swager aperto mentre G. R. Il PC è costruito da zero e
+
+50
+00:03:47,790 --> 00:03:51,670
+utilizza buffer di protocollo per definire il servizio e il messaggio nell'API.
+
+51
+00:03:51,840 --> 00:03:57,210
+Pertanto la generazione avviene attraverso buffer critici ed è un cittadino di prima classe.
+
+52
+00:03:57,390 --> 00:04:05,070
+Non puoi usare il PC senza fare cogenerazione che di per sé rende il tuo PC super-sicuro.
+
+53
+00:04:05,070 --> 00:04:08,170
+Quindi è una distinzione molto molto importante.
+
+54
+00:04:08,220 --> 00:04:14,130
+Finalmente il riposo sarà basato su HTB burb, quindi dovrete leggere l'impianto idraulico o usare una libreria di terze parti
+
+55
+00:04:14,130 --> 00:04:17,760
+in giro per i post, inserire le eliminazioni e così via.
+
+56
+00:04:17,940 --> 00:04:21,180
+Mentre G o PC è basato su PC.
+
+57
+00:04:21,180 --> 00:04:25,070
+Ciò significa che possiamo chiamare le funzioni direttamente sul server.
+
+58
+00:04:25,090 --> 00:04:32,490
+Ok come abbiamo visto prima i tuoi clienti chiamano fondamentalmente una funzione sul server e il tuo PC fa tutto il
+
+59
+00:04:32,490 --> 00:04:38,940
+plumbing per noi, quindi c'è un incredibile sorprendente benchmark attuale che è stato fatto da questo ragazzo a questo
+
+60
+00:04:39,270 --> 00:04:44,460
+indirizzo e puoi basta guardarlo ma è su un punto di riferimento e scoprire per
+
+61
+00:04:44,460 --> 00:04:49,230
+la stessa API che GOPAC avrà 25 volte più prestazioni del resto.
+
+62
+00:04:49,230 --> 00:04:55,440
+L'API è e ha definito le prestazioni come il tempo necessario per ottenere una risposta per un'API.
+
+63
+00:04:55,710 --> 00:05:00,510
+E questo è tutto a causa di queste differenze e di tutti questi miglioramenti tecnologici.
+
+64
+00:05:00,510 --> 00:05:05,820
+Quindi, nel complesso, se stai cercando un'API scalabile ad alte prestazioni, il GRB sarà quello
+
+65
+00:05:05,820 --> 00:05:06,920
+che non arresti.
+
+66
+00:05:07,110 --> 00:05:08,760
+Spero tanto che aiuti.
+
+67
+00:05:08,880 --> 00:05:10,100
+Ci vedremo nella prossima lezione.
+

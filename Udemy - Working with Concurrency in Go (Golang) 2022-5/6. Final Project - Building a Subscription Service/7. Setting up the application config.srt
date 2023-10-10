@@ -1,0 +1,283 @@
+1
+00:00:01,020 --> 00:00:01,440
+All right.
+
+2
+00:00:01,450 --> 00:00:04,560
+So we have a session now and we have a connection to the database.
+
+3
+00:00:04,560 --> 00:00:08,940
+And now it's time to, as I said, last lecture, start working on this bit.
+
+4
+00:00:08,940 --> 00:00:13,080
+We're going to skip the channels and the weight group for the moment, and we'll come back to those
+
+5
+00:00:13,080 --> 00:00:13,590
+later on.
+
+6
+00:00:13,590 --> 00:00:18,390
+But right now, let's set up the application configuration and I'm going to do that by going over here
+
+7
+00:00:18,390 --> 00:00:23,940
+to my Explorer and I'll create a new file and I'll put it in the CMT Web folder.
+
+8
+00:00:23,940 --> 00:00:29,040
+Okay, so new file and this will be called Configure.
+
+9
+00:00:29,520 --> 00:00:29,880
+Okay.
+
+10
+00:00:30,450 --> 00:00:31,500
+And it's in package me
+
+11
+00:00:34,560 --> 00:00:38,040
+and what we're going to do here is set up a type and the type will be config.
+
+12
+00:00:38,040 --> 00:00:42,330
+And this is the type we're going to use on the receiver for the various parts of our application to
+
+13
+00:00:42,330 --> 00:00:44,220
+share the application configuration.
+
+14
+00:00:44,430 --> 00:00:49,080
+And it's just a struct and it has a few fields and we'll be adding new fields as time goes on.
+
+15
+00:00:50,100 --> 00:00:57,060
+The first one is our session and it's a of type pointer to export session manager right there and that
+
+16
+00:00:57,060 --> 00:00:58,170
+does the import for me.
+
+17
+00:00:58,890 --> 00:01:02,130
+The second one is DB, which we might not use, but I'll put it in there for now.
+
+18
+00:01:02,180 --> 00:01:04,080
+It's a pointer to SQL DB.
+
+19
+00:01:06,370 --> 00:01:12,850
+The third one will be an info log, which we haven't done yet, but it's an information log and it's
+
+20
+00:01:12,850 --> 00:01:14,770
+a type pointer to log dot logger.
+
+21
+00:01:14,770 --> 00:01:18,760
+And this is just a convenient way of writing things to the console or to a log file.
+
+22
+00:01:19,320 --> 00:01:22,900
+We'll also have an error log, which would be a pointer to log logger.
+
+23
+00:01:25,260 --> 00:01:30,330
+And we're also going to have a weight group, which I'll just call.
+
+24
+00:01:30,330 --> 00:01:30,720
+Wait.
+
+25
+00:01:30,960 --> 00:01:31,800
+I think that's a good name.
+
+26
+00:01:32,220 --> 00:01:38,190
+And it's a type pointer to Sync Dog Waker, which you're already familiar with.
+
+27
+00:01:38,410 --> 00:01:39,780
+Okay, so let's save this.
+
+28
+00:01:41,340 --> 00:01:45,450
+That is a good starting point for our configuration.
+
+29
+00:01:46,710 --> 00:01:49,500
+So let's go back over to me and I'll go and use this.
+
+30
+00:01:49,770 --> 00:01:53,940
+Okay, so I'll get rid of this DB ping because we're not going to need that in a moment.
+
+31
+00:01:54,540 --> 00:02:02,010
+And down here, let's create a wake group which will be using momentarily or in a lecture or two, probably.
+
+32
+00:02:02,070 --> 00:02:06,270
+And it's just called WG and it's a of type sync don't wait group.
+
+33
+00:02:07,530 --> 00:02:09,300
+And of course, I have to put the curly brackets.
+
+34
+00:02:10,740 --> 00:02:12,540
+Now, let's set up the application config.
+
+35
+00:02:12,720 --> 00:02:19,800
+So we'll create a variable called app and it's assigned the value of the type config and we'll populate
+
+36
+00:02:19,800 --> 00:02:20,670
+its various fields.
+
+37
+00:02:21,540 --> 00:02:26,640
+So we have session and of course that's the variable session from line 26.
+
+38
+00:02:28,680 --> 00:02:29,790
+We have DB.
+
+39
+00:02:30,660 --> 00:02:33,630
+And of course that's the variable DV from line 23.
+
+40
+00:02:34,980 --> 00:02:37,560
+And we have weight, which is a weight group.
+
+41
+00:02:37,860 --> 00:02:42,720
+And that's a reference to the variable WG from line 31.
+
+42
+00:02:43,000 --> 00:02:43,350
+Okay.
+
+43
+00:02:44,700 --> 00:02:48,870
+So now let's take some time and set up some loggers as well.
+
+44
+00:02:48,870 --> 00:02:49,620
+We might as well.
+
+45
+00:02:50,580 --> 00:02:54,060
+So right here, I'll just say create loggers.
+
+46
+00:02:55,500 --> 00:02:56,520
+And this is simple stuff.
+
+47
+00:02:57,150 --> 00:03:06,450
+Info log is assigned the value of from the log package dot new and we're going to make this go to OS
+
+48
+00:03:06,790 --> 00:03:07,420
+straight.
+
+49
+00:03:07,560 --> 00:03:12,120
+And of course, in production, you'll probably have this writing to a file but we're not in production
+
+50
+00:03:12,780 --> 00:03:16,680
+will prefix it with the word info in all caps and then a tab character.
+
+51
+00:03:18,060 --> 00:03:25,620
+And what we're going to log is that log dot l date the date and then a pipe and then logged on l time.
+
+52
+00:03:27,570 --> 00:03:31,230
+And let's duplicate this whole thing and make this one error log
+
+53
+00:03:33,990 --> 00:03:40,770
+and we'll prefix it with error in a tab and we'll still have log l date analog l time.
+
+54
+00:03:40,770 --> 00:03:42,730
+But then we want to find out where there took place.
+
+55
+00:03:42,750 --> 00:03:45,000
+So we'll put log dot l short file.
+
+56
+00:03:45,570 --> 00:03:45,870
+Okay.
+
+57
+00:03:46,980 --> 00:03:53,850
+And then down here in our app config, we can now put in info log is info log and we can put an error
+
+58
+00:03:53,850 --> 00:03:55,500
+log is error.
+
+59
+00:03:55,500 --> 00:03:55,800
+Look.
+
+60
+00:03:56,460 --> 00:03:56,730
+Okay.
+
+61
+00:03:56,760 --> 00:03:58,440
+So now we have an application config.
+
+62
+00:03:59,570 --> 00:04:02,060
+And again, we'll be adding to this as time goes on.
+
+63
+00:04:02,510 --> 00:04:07,520
+But this is enough to get us started, at least now.
+
+64
+00:04:08,270 --> 00:04:11,430
+The next step, of course, we're going to be setting up mail.
+
+65
+00:04:11,450 --> 00:04:15,830
+Before too long, we're going to be creating channels probably at the same time we set up mail.
+
+66
+00:04:16,070 --> 00:04:21,080
+The next step is actually to listen for web connections, and that requires that we have something like
+
+67
+00:04:21,080 --> 00:04:24,920
+a roots file using that goce package we imported.
+
+68
+00:04:25,250 --> 00:04:27,260
+And also at least one handler.
+
+69
+00:04:27,800 --> 00:04:32,090
+And again, our application doesn't compile right now because we have that app variable we're not using,
+
+70
+00:04:32,750 --> 00:04:33,890
+but we're in the middle of things.
+
+71
+00:04:33,890 --> 00:04:37,690
+And by the end of the next lecture or the one after that, we'll be able to start this up.

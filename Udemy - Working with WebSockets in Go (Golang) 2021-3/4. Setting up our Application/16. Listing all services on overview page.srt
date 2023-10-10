@@ -1,0 +1,759 @@
+1
+00:00:00,730 --> 00:00:07,030
+So now we want to list all of the hosts and their associated services on this overview page, which
+
+2
+00:00:07,030 --> 00:00:09,030
+is what the pages you see as soon as you log in.
+
+3
+00:00:09,640 --> 00:00:13,750
+And we also want to list the count of problems that are in any of these states.
+
+4
+00:00:13,780 --> 00:00:17,410
+So I don't know if we'll get them both done this lecture, but we'll get started and we'll start with
+
+5
+00:00:17,410 --> 00:00:22,750
+this house part, which should be pretty simple, because if we go back and look at our code and we
+
+6
+00:00:22,750 --> 00:00:23,770
+open the.
+
+7
+00:00:25,440 --> 00:00:33,990
+Internal folder repository DB, repo host, postgrads, we already have somewhere for all hosts and
+
+8
+00:00:33,990 --> 00:00:35,510
+all hosts and it's right here.
+
+9
+00:00:36,180 --> 00:00:40,980
+So we need to modify this and we need to modify it so that we can list the services.
+
+10
+00:00:40,980 --> 00:00:47,460
+So back on this page, I want to list all of the surface services that counts for them that exist on
+
+11
+00:00:47,460 --> 00:00:50,040
+this, for this for a given host.
+
+12
+00:00:50,850 --> 00:00:51,900
+So that's not difficult.
+
+13
+00:00:51,930 --> 00:00:59,160
+So if we actually find get hosted by ID, if you recall, we recently modified this query so that it
+
+14
+00:00:59,160 --> 00:01:00,350
+looks more like this.
+
+15
+00:01:00,780 --> 00:01:02,810
+So we're saying get all the services for.
+
+16
+00:01:03,070 --> 00:01:08,760
+So first of all, we get all the hosts and then when we have a given host, we go and get all of its
+
+17
+00:01:08,760 --> 00:01:09,390
+services.
+
+18
+00:01:09,720 --> 00:01:10,940
+So we should be able to.
+
+19
+00:01:10,950 --> 00:01:17,520
+And I'm just going to copy this query, copy this bit, find all hosts again right here.
+
+20
+00:01:18,180 --> 00:01:25,440
+So we get the hosts then as we're looping through this, at this point, once we've populated the first
+
+21
+00:01:25,440 --> 00:01:30,870
+part of the host record with this information and before we append the information, we actually want
+
+22
+00:01:30,870 --> 00:01:33,170
+to do another query for this host.
+
+23
+00:01:33,600 --> 00:01:40,230
+So I'll just paste what we have in there and modify this and I'll just call this service query just
+
+24
+00:01:40,230 --> 00:01:41,610
+so we're not overwriting anything.
+
+25
+00:01:42,240 --> 00:01:45,480
+And I'll have to use the assigned variable, of course, or the assign operator.
+
+26
+00:01:46,110 --> 00:01:50,900
+So we now have this query and we want to look at this, make sure we've got it right.
+
+27
+00:01:50,910 --> 00:01:55,110
+We want to get yes, we want to get all the service information, all the hosts service information
+
+28
+00:01:55,110 --> 00:01:59,100
+and all the service information from this is the where correct.
+
+29
+00:01:59,100 --> 00:02:01,650
+Where host ID equals dollar sign one.
+
+30
+00:02:01,680 --> 00:02:05,610
+Well it's H ID is what we're assigning it right here.
+
+31
+00:02:06,180 --> 00:02:09,200
+And if we get past this error check then this will execute.
+
+32
+00:02:09,510 --> 00:02:14,130
+So it is append hosts right here where host data equals one.
+
+33
+00:02:14,130 --> 00:02:15,760
+So we need to execute that query.
+
+34
+00:02:16,440 --> 00:02:20,220
+So again, we're going to be getting rows and I'll call it host rows and service rows.
+
+35
+00:02:22,870 --> 00:02:33,970
+Potentially an error are assigned the value of IMDB, that exact context, no query context, query
+
+36
+00:02:35,710 --> 00:02:41,800
+context and will pass that context and we'll pass it or query, which we just called service query.
+
+37
+00:02:43,310 --> 00:02:49,430
+And then we passed our operator, our one parameter of passing in here, and that would be ID.
+
+38
+00:02:52,010 --> 00:02:58,700
+Then we checked for an error, if error is not equal to nil, then we'll just do the same thing we've
+
+39
+00:02:58,700 --> 00:03:05,710
+been doing right along Lagat print line error and return and I'll return nil plus the error.
+
+40
+00:03:07,370 --> 00:03:13,850
+But if we get past that and we want to scan the service rows, actually we have to we can't defer close
+
+41
+00:03:13,850 --> 00:03:14,990
+here, but we'll get to that in a minute.
+
+42
+00:03:15,030 --> 00:03:19,560
+OK, we don't we don't want to use a deferred CLO close inside of a while loop.
+
+43
+00:03:19,580 --> 00:03:27,860
+So what we'll do instead is simply scan our four service rows.
+
+44
+00:03:30,610 --> 00:03:31,210
+Next.
+
+45
+00:03:35,200 --> 00:03:38,500
+And we'll create a variable var.
+
+46
+00:03:39,530 --> 00:03:44,780
+H.S. is of type models Gotho service.
+
+47
+00:03:47,710 --> 00:03:52,090
+And of course, we need a slice to store these things, we may as well put that right here before the
+
+48
+00:03:52,090 --> 00:03:59,770
+for loop via postal services is a slice of models hosted service.
+
+49
+00:04:01,270 --> 00:04:10,060
+OK, so we now have our variable we can append things to, and now we just skip service, rose dot scan.
+
+50
+00:04:11,780 --> 00:04:19,010
+And we're going to scan into what what will scan right into our eyes and we'll just go to ID.
+
+51
+00:04:21,590 --> 00:04:22,370
+On homestudy.
+
+52
+00:04:23,420 --> 00:04:25,670
+And I'll put that in a second line so it's more readable.
+
+53
+00:04:28,970 --> 00:04:29,950
+Got service, service.
+
+54
+00:04:33,370 --> 00:04:34,110
+Not active.
+
+55
+00:04:35,930 --> 00:04:37,730
+Eckstut, schedule No.
+
+56
+00:04:43,260 --> 00:04:44,440
+Start schedule unit.
+
+57
+00:04:49,860 --> 00:05:04,620
+Then at last check, Høst status Eckstut created an updated at and now we're into the services, so
+
+58
+00:05:05,290 --> 00:05:06,510
+escort service.
+
+59
+00:05:08,800 --> 00:05:14,590
+Not ID, and of course, these all have to have ampersands in front of them, so let me copy that and
+
+60
+00:05:14,590 --> 00:05:16,630
+paste and paste and.
+
+61
+00:05:17,380 --> 00:05:26,140
+Paste, paste, paste, paste, paste, paste, paste, paste, duplicate that after service ID comes
+
+62
+00:05:26,620 --> 00:05:35,440
+service name and duplicate that and then active and duplicate that icon.
+
+63
+00:05:39,660 --> 00:05:40,530
+And created a.
+
+64
+00:05:48,020 --> 00:05:49,070
+And updated at.
+
+65
+00:05:52,650 --> 00:05:57,900
+OK, so now we're scanning all of that into our variable, we check for an error.
+
+66
+00:05:59,850 --> 00:06:02,400
+And I think that this actually scan throws an error.
+
+67
+00:06:03,700 --> 00:06:06,460
+Yes, it does so error equals.
+
+68
+00:06:08,010 --> 00:06:19,380
+If there is not equal to no log print line here, return nil and error otherwise appended.
+
+69
+00:06:20,400 --> 00:06:24,680
+So host service, which is our slice of models.
+
+70
+00:06:24,680 --> 00:06:27,030
+So services equals.
+
+71
+00:06:29,210 --> 00:06:29,950
+Append.
+
+72
+00:06:31,570 --> 00:06:40,870
+Hosted services, HHS, and then now at this point, just before we append our host to our outreach
+
+73
+00:06:40,930 --> 00:06:47,740
+to our hosts, we just assign each dot hosted services equals hosted services.
+
+74
+00:06:49,680 --> 00:06:53,010
+And that should work, so we should have that information available to us.
+
+75
+00:06:53,040 --> 00:06:54,660
+So let's just make sure everything compiles.
+
+76
+00:06:58,500 --> 00:06:59,310
+And it does.
+
+77
+00:07:00,060 --> 00:07:04,470
+OK, so now let's go find our handler that renders this page.
+
+78
+00:07:04,980 --> 00:07:10,640
+So I'll go to my roots file and I'll find the overview right here, admin dashboard.
+
+79
+00:07:11,580 --> 00:07:18,600
+So what I want to do is right now I have I've made a VA map already and just passed it some dummy data.
+
+80
+00:07:18,600 --> 00:07:19,380
+And that's fine.
+
+81
+00:07:19,380 --> 00:07:20,130
+We can use that.
+
+82
+00:07:20,130 --> 00:07:21,840
+So let's just get our hosts.
+
+83
+00:07:22,350 --> 00:07:34,540
+So I call the variable all hosts and check for an error is assigned the value of M or DB Repo DB Dot
+
+84
+00:07:34,680 --> 00:07:37,200
+all hosts and check for error.
+
+85
+00:07:37,350 --> 00:07:46,690
+If error is not equal to nil then I'll just say logged print line error and I'll just return.
+
+86
+00:07:47,280 --> 00:07:51,200
+And again, if you're writing this for production code, you want to do something nicer.
+
+87
+00:07:51,210 --> 00:07:56,040
+You want to maybe generate a sessional variable that has the error information, take them back to some
+
+88
+00:07:56,040 --> 00:07:57,510
+other page and display the error.
+
+89
+00:07:57,510 --> 00:08:02,420
+But we're not going to bother doing that in this course because this is not a course in Web development.
+
+90
+00:08:03,960 --> 00:08:05,690
+So I've got that variable, all hosts.
+
+91
+00:08:05,700 --> 00:08:13,910
+Let's just put it in our our version first set and I'll call it hosts and I'll put in all hosts.
+
+92
+00:08:15,000 --> 00:08:16,740
+So now it's available to this template.
+
+93
+00:08:16,740 --> 00:08:20,370
+And I got to get rid of the assign operator here because I declared an error up here.
+
+94
+00:08:21,330 --> 00:08:24,010
+So now it's available to us on dashboards yet.
+
+95
+00:08:24,060 --> 00:08:25,680
+So let's open dashboard chat.
+
+96
+00:08:27,980 --> 00:08:34,970
+And find the part where we're listing hosts, which is right here, and we'll just say, what's my hope?
+
+97
+00:08:34,970 --> 00:08:37,460
+What's my variable called will say range.
+
+98
+00:08:37,880 --> 00:08:39,080
+I think I called it hosts.
+
+99
+00:08:39,710 --> 00:08:40,880
+I'll verify that in a minute.
+
+100
+00:08:40,970 --> 00:08:43,250
+Range hosts, which doesn't need to be in quotes.
+
+101
+00:08:45,530 --> 00:08:50,450
+And end and I'll make sure I call it hosts, I'm pretty sure I did.
+
+102
+00:08:51,390 --> 00:08:57,720
+Yes, hosts, so arranging through that every time we arrange through it, we want to tiara and inside
+
+103
+00:08:57,720 --> 00:09:03,930
+of that we want a TV and inside of that we want the host name, which would be Daudt Hostname, I think.
+
+104
+00:09:04,560 --> 00:09:04,920
+Yeah.
+
+105
+00:09:05,100 --> 00:09:06,010
+Host name.
+
+106
+00:09:06,870 --> 00:09:11,490
+We'll just go with that for right now and we'll create a bunch of empties just to make sure this works
+
+107
+00:09:12,270 --> 00:09:12,870
+that I need.
+
+108
+00:09:12,870 --> 00:09:14,070
+One, two, three, four.
+
+109
+00:09:14,070 --> 00:09:17,310
+One, two, three, four.
+
+110
+00:09:17,520 --> 00:09:18,720
+One, two, three, four.
+
+111
+00:09:18,720 --> 00:09:19,570
+One, two, three, four.
+
+112
+00:09:19,650 --> 00:09:22,620
+OK, so let's go back and see if we got it right.
+
+113
+00:09:22,630 --> 00:09:24,780
+So I should be able just to reload this page.
+
+114
+00:09:26,360 --> 00:09:32,540
+And we have identified a host not available in current map, no healthy, no pending, no apparent scope.
+
+115
+00:09:32,540 --> 00:09:36,770
+So why can't it find hosts, range hosts?
+
+116
+00:09:37,770 --> 00:09:39,980
+Maybe I just need to stop and start my application.
+
+117
+00:09:43,080 --> 00:09:44,100
+I don't think that's it.
+
+118
+00:09:44,130 --> 00:09:46,230
+I must have a typo somewhere, but let's make sure.
+
+119
+00:09:47,900 --> 00:09:48,440
+Reload.
+
+120
+00:09:49,130 --> 00:09:49,650
+There it is.
+
+121
+00:09:49,670 --> 00:09:53,630
+I must not have started and stopped there, stopped and started the application, so it's available
+
+122
+00:09:53,630 --> 00:09:54,170
+to us now.
+
+123
+00:09:54,200 --> 00:09:58,040
+I want this to be a link that will link us to this page.
+
+124
+00:09:58,050 --> 00:10:00,950
+So if we get our hosts, let's see what the link would be.
+
+125
+00:10:01,580 --> 00:10:03,680
+The link is admin, host and host it.
+
+126
+00:10:04,430 --> 00:10:08,060
+So let's go back to our template and change this to a link.
+
+127
+00:10:10,070 --> 00:10:16,790
+A tariff equals slash admin slash host slash Heidi, which is the host ID.
+
+128
+00:10:18,320 --> 00:10:19,280
+And close that.
+
+129
+00:10:20,910 --> 00:10:23,180
+And that should work, so let's make sure it works.
+
+130
+00:10:25,680 --> 00:10:34,270
+Reload this, sorry, reload this, go back to our overview and this now should link, and it does.
+
+131
+00:10:34,320 --> 00:10:36,040
+OK, so let's go back to our overview.
+
+132
+00:10:36,750 --> 00:10:42,110
+Next, we want the services so the services we want to list right here.
+
+133
+00:10:42,150 --> 00:10:44,450
+And those are all stored in those services.
+
+134
+00:10:44,460 --> 00:10:52,680
+So I should be able to range host DOT services, which would just be services in this context.
+
+135
+00:10:56,090 --> 00:11:02,900
+And I'll just do it like this right now and just to make sure it works and inside of this, I'll just
+
+136
+00:11:02,900 --> 00:11:13,430
+put in dot service dot service name, because the dot refers to the current piece of data, which is
+
+137
+00:11:13,430 --> 00:11:14,480
+comes from hosts.
+
+138
+00:11:14,810 --> 00:11:19,520
+Hosts has a member called Let's make sure it's right here.
+
+139
+00:11:19,820 --> 00:11:20,450
+Models.
+
+140
+00:11:22,940 --> 00:11:25,310
+Host has something called host services.
+
+141
+00:11:25,340 --> 00:11:25,990
+That's what I want.
+
+142
+00:11:27,350 --> 00:11:32,570
+Thoughts go back to our dashboard jet range hosted services.
+
+143
+00:11:34,340 --> 00:11:39,950
+Their range of services and then get the service from this current piece of data and display the service
+
+144
+00:11:39,950 --> 00:11:45,210
+name, so that should work, let's make sure it does services HTTP.
+
+145
+00:11:45,530 --> 00:11:51,080
+And if there are two services that simply display beside each other, maybe I want to make that a little
+
+146
+00:11:51,080 --> 00:11:55,130
+more attractive so I can wrap this in a span class equals badge.
+
+147
+00:11:57,430 --> 00:12:00,950
+Big and then what do we have here?
+
+148
+00:12:00,970 --> 00:12:02,210
+Let's just choose.
+
+149
+00:12:03,290 --> 00:12:04,280
+Oh, it doesn't really matter.
+
+150
+00:12:04,780 --> 00:12:05,290
+Info.
+
+151
+00:12:08,960 --> 00:12:12,650
+And wrap it like this spane, let's see what that looks like.
+
+152
+00:12:13,870 --> 00:12:19,000
+There, OK, so that will list all of our services, so there's only one service being monitored right
+
+153
+00:12:19,000 --> 00:12:23,890
+now or that will be monitored when we get things done, but I think we're much closer than we were a
+
+154
+00:12:23,890 --> 00:12:24,370
+moment ago.
+
+155
+00:12:24,370 --> 00:12:31,630
+So let's just put these last three in here and this one is for OS.
+
+156
+00:12:31,630 --> 00:12:33,430
+So that's just OS.
+
+157
+00:12:35,310 --> 00:12:45,540
+And the next one is the location, location, location, and the last one is status, and I'm not sure
+
+158
+00:12:45,540 --> 00:12:46,830
+what that is actually called.
+
+159
+00:12:47,580 --> 00:12:52,320
+So host status is active or inactive, right.
+
+160
+00:12:52,570 --> 00:12:55,290
+OK, so back to my dashboard.
+
+161
+00:12:55,500 --> 00:12:58,230
+We need to put an if statement in here if.
+
+162
+00:12:59,560 --> 00:13:09,730
+Not active equals one on display, one thing else display something else and end, and these are just
+
+163
+00:13:09,730 --> 00:13:10,220
+badges.
+
+164
+00:13:10,240 --> 00:13:14,620
+So if it's active, we'll go spane class equals badge.
+
+165
+00:13:17,420 --> 00:13:24,710
+Big success, active, and I'll just copy this.
+
+166
+00:13:26,740 --> 00:13:27,730
+Pasted in here.
+
+167
+00:13:33,070 --> 00:13:37,900
+Make it a big danger and change that to inactive.
+
+168
+00:13:40,140 --> 00:13:43,770
+OK, and let's reload this, that all looks good.
+
+169
+00:13:43,910 --> 00:13:49,200
+OK, so the only thing we forgot to do and I'm glad I thought of it now because otherwise it might cause
+
+170
+00:13:49,200 --> 00:13:55,190
+me grief down the road is inside our query where we're getting all services for host.
+
+171
+00:13:55,200 --> 00:13:57,660
+And again, this is in the method all hosts.
+
+172
+00:13:59,010 --> 00:14:01,500
+I make the query, I get the service rows.
+
+173
+00:14:01,500 --> 00:14:06,150
+At no point do I close those rows and I don't want to put a defer in here because you really don't want
+
+174
+00:14:06,150 --> 00:14:10,500
+to put a different side of a while loop unless you're absolutely sure what you're doing.
+
+175
+00:14:10,950 --> 00:14:13,740
+So instead, I will do it right here.
+
+176
+00:14:14,530 --> 00:14:19,590
+I will just say service rows close.
+
+177
+00:14:20,510 --> 00:14:27,050
+There, OK, so that should take care of it for us, so that gets this part working properly.
+
+178
+00:14:27,110 --> 00:14:31,130
+Well, we're going to list all of our hosts and all of their associated services, which right now is
+
+179
+00:14:31,130 --> 00:14:35,390
+a maximum of one because we only have one service in the database, but we might have another one in
+
+180
+00:14:35,390 --> 00:14:35,860
+there later.
+
+181
+00:14:37,010 --> 00:14:39,080
+The next step will be to populate these.
+
+182
+00:14:39,380 --> 00:14:40,760
+How many of these are active?
+
+183
+00:14:40,760 --> 00:14:47,330
+And when we get it finished, because we actually have no, no, Krall's taking place right now to make
+
+184
+00:14:47,330 --> 00:14:48,910
+sure that our hosts are up or down.
+
+185
+00:14:49,700 --> 00:14:52,250
+We should have one pending service listed here.
+
+186
+00:14:52,250 --> 00:14:57,860
+And the rest of these should be empty because we have this one service which has a status of pending
+
+187
+00:14:57,860 --> 00:14:58,670
+when it's inserted.
+
+188
+00:14:59,270 --> 00:15:04,100
+So we need to get a database query that will get us those four pieces of information, the count of
+
+189
+00:15:04,100 --> 00:15:08,330
+healthy services, of warning services, of problem services and of pending services.
+
+190
+00:15:08,330 --> 00:15:10,370
+And we'll take care of that in the next lecture.

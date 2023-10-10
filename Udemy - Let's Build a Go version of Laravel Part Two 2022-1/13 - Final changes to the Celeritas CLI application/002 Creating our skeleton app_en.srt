@@ -1,0 +1,268 @@
+1
+00:00:01,450 --> 00:00:07,360
+So the next step is to make some changes to our my app and make sure that's the skeleton app that's
+
+2
+00:00:07,360 --> 00:00:12,310
+committed to a git repository that our installer will use our command line application uses.
+
+3
+00:00:12,980 --> 00:00:18,790
+The very first thing you should do is make a backup of your entire my app folder and put it somewhere
+
+4
+00:00:18,790 --> 00:00:19,750
+where you're not going to lose it.
+
+5
+00:00:20,740 --> 00:00:24,610
+So make sure you do that because we're going to be deleting a fair bit of the things that we worked
+
+6
+00:00:24,610 --> 00:00:30,340
+on in the course so far because none of them are necessary for an empty celebrity's application.
+
+7
+00:00:30,520 --> 00:00:32,619
+So I've already backed mine up, so we'll get started.
+
+8
+00:00:33,580 --> 00:00:38,830
+So the first thing I'll do is look at my roots file, which is, of course, right here.
+
+9
+00:00:38,830 --> 00:00:46,240
+Roots don't go in my app and I'm going to delete everything except for the home root and the static
+
+10
+00:00:46,240 --> 00:00:46,990
+roots, of course.
+
+11
+00:00:47,020 --> 00:00:48,340
+OK, so I'll delete these.
+
+12
+00:00:49,710 --> 00:00:50,340
+And they're gone.
+
+13
+00:00:51,570 --> 00:00:57,480
+And this is basically all that I want to have in the default application, so I'll mount the routes
+
+14
+00:00:57,480 --> 00:00:59,220
+that are directly from celebrities.
+
+15
+00:00:59,250 --> 00:01:06,210
+I'll leave that and amount the API routes, which I have to open now and make sure that this is empty
+
+16
+00:01:07,260 --> 00:01:08,490
+because you don't need that at all.
+
+17
+00:01:09,720 --> 00:01:14,130
+So there's my first two changes now that I've deleted all of those routes.
+
+18
+00:01:14,280 --> 00:01:16,610
+I don't need the handlers that are associated with them either.
+
+19
+00:01:16,620 --> 00:01:22,650
+So let's find handlers and let's open up handlers don't go and see if there's anything there we want
+
+20
+00:01:22,650 --> 00:01:23,190
+to leave in.
+
+21
+00:01:23,670 --> 00:01:24,830
+Well, I want to leave in the home route.
+
+22
+00:01:24,840 --> 00:01:25,590
+No question.
+
+23
+00:01:25,650 --> 00:01:25,950
+It's all.
+
+24
+00:01:25,950 --> 00:01:28,560
+Delete this, everything after that.
+
+25
+00:01:28,560 --> 00:01:31,770
+All the way down to here.
+
+26
+00:01:35,520 --> 00:01:37,530
+And now we just have the home rule, so that's good.
+
+27
+00:01:38,130 --> 00:01:39,270
+Any imports break?
+
+28
+00:01:39,360 --> 00:01:40,170
+No, that's good.
+
+29
+00:01:40,980 --> 00:01:42,060
+So far, so good.
+
+30
+00:01:45,560 --> 00:01:49,400
+Now, handlers test, I've left one in there, the test for the home route.
+
+31
+00:01:49,880 --> 00:01:53,450
+Let's have a look at set up test to make sure there's nothing in there that needs to change.
+
+32
+00:01:54,430 --> 00:01:59,050
+There is, of course, we don't have this route anymore, so that's gone.
+
+33
+00:02:01,930 --> 00:02:02,410
+Perfect.
+
+34
+00:02:04,760 --> 00:02:08,449
+Mail didn't change middleware, do I want to delete anything out of here?
+
+35
+00:02:08,479 --> 00:02:09,470
+Yes, I do.
+
+36
+00:02:09,500 --> 00:02:13,880
+As a matter of fact, I also want to delete off handlers don't know anything that was installed when
+
+37
+00:02:13,880 --> 00:02:18,540
+you type the command from our Seelye that implements authentication.
+
+38
+00:02:18,560 --> 00:02:19,870
+Those need to be deleted.
+
+39
+00:02:19,880 --> 00:02:22,160
+So that includes in the data folder.
+
+40
+00:02:23,150 --> 00:02:27,110
+Remember, token token and user, those can get deleted.
+
+41
+00:02:28,670 --> 00:02:35,270
+And that means in models, we'll have to delete these three entries here where we return models in the
+
+42
+00:02:35,270 --> 00:02:41,270
+new command and we'll have to delete these entries up here in the type of models.
+
+43
+00:02:41,960 --> 00:02:44,560
+OK, so that's fine.
+
+44
+00:02:44,570 --> 00:02:45,140
+Those are gone.
+
+45
+00:02:46,130 --> 00:02:47,660
+Then we delete off handlers.
+
+46
+00:02:50,020 --> 00:02:59,380
+That can go when we go down a little bit further here to auth token and remember and ask, don't go
+
+47
+00:02:59,380 --> 00:03:01,180
+in middleware, those go.
+
+48
+00:03:04,100 --> 00:03:08,030
+We look at our mega migrations folder and simply make sure that's entirely empty.
+
+49
+00:03:09,470 --> 00:03:10,100
+That's gone.
+
+50
+00:03:13,170 --> 00:03:16,440
+In public, that's fine, those can stay.
+
+51
+00:03:17,670 --> 00:03:21,090
+Camps should be empty, and it's ignored by get anyway views.
+
+52
+00:03:22,200 --> 00:03:32,070
+We're going to get rid of celebrities, upload forgot, list us Logan, reset password protester and
+
+53
+00:03:32,070 --> 00:03:34,070
+upload those all go away.
+
+54
+00:03:34,080 --> 00:03:38,550
+We just leave the home jet and the associated base layout.
+
+55
+00:03:40,090 --> 00:03:46,080
+Dawn was not committed to get so it doesn't matter the celebrity binaries, not committed to get, so
+
+56
+00:03:46,080 --> 00:03:46,950
+it doesn't matter.
+
+57
+00:03:48,290 --> 00:03:49,180
+Dr. Campos.
+
+58
+00:03:51,210 --> 00:03:54,900
+Now, I don't see any changes that I really need to make in there, and that should be fine.
+
+59
+00:03:55,320 --> 00:03:56,880
+OK, go modest is fine.
+
+60
+00:03:58,220 --> 00:04:04,430
+And as far as I can see, that's all we need to worry about for this.
+
+61
+00:04:04,910 --> 00:04:10,730
+So my next step and I'm not going to bother making you watch me do this is just to commit this to a
+
+62
+00:04:10,730 --> 00:04:12,560
+git repository and tag it.
+
+63
+00:04:12,680 --> 00:04:18,230
+I'm going to tag mine version two because I'll be pushing it to the repository that I used in the first
+
+64
+00:04:18,230 --> 00:04:19,310
+half of this course.
+
+65
+00:04:19,910 --> 00:04:26,420
+So do that, and we can move on to the next step, which is updating which skeleton application we pulled
+
+66
+00:04:26,420 --> 00:04:27,440
+down from.
+
+67
+00:04:27,440 --> 00:04:31,040
+Get in our Seelye and we'll get started on that in the next lecture.
+

@@ -1,0 +1,359 @@
+1
+00:00:01,140 --> 00:00:06,720
+So we've managed to modify our command line application to generate the appropriate table for sessions
+
+2
+00:00:06,720 --> 00:00:07,450
+in the database.
+
+3
+00:00:07,470 --> 00:00:12,830
+And as you can see right here, we have it live in our Docker database.
+
+4
+00:00:12,840 --> 00:00:18,060
+So there's the sessions table and now we need to modify our package or our projects so that we can actually
+
+5
+00:00:18,060 --> 00:00:19,470
+use database sessions.
+
+6
+00:00:20,010 --> 00:00:25,200
+So the first thing I'm going to do is I'm going to go to session, don't go in the celebrities package
+
+7
+00:00:25,200 --> 00:00:32,220
+inside the session, and I'm going to add a type here because we need to have access to the database
+
+8
+00:00:32,460 --> 00:00:35,610
+pool in order to write to the sessions table and read from it.
+
+9
+00:00:36,210 --> 00:00:38,370
+So I'll add a type or a field in here.
+
+10
+00:00:38,740 --> 00:00:43,710
+Deep pool of type point or two SQL Dash or DV.
+
+11
+00:00:44,100 --> 00:00:44,460
+OK.
+
+12
+00:00:45,180 --> 00:00:46,710
+And that should do the import for me.
+
+13
+00:00:46,710 --> 00:00:47,370
+And it did.
+
+14
+00:00:47,790 --> 00:00:50,430
+So let's save this to format it.
+
+15
+00:00:51,450 --> 00:00:53,830
+And the next thing we want to do is we need to go to celerity.
+
+16
+00:00:54,030 --> 00:01:00,150
+Don't go the main file or the entry point for our Solaris horse package, and I'm going to go all the
+
+17
+00:01:00,150 --> 00:01:04,920
+way down to a modal line, one hundred and eighteen in my code right here.
+
+18
+00:01:05,550 --> 00:01:09,600
+And here's where I need to actually populate the DB pool field.
+
+19
+00:01:09,810 --> 00:01:16,320
+So deep pool should be available to me now, and it is and is simply seed on DB pool because we already
+
+20
+00:01:16,320 --> 00:01:18,690
+have that at this point in our program.
+
+21
+00:01:19,800 --> 00:01:20,580
+So that's done.
+
+22
+00:01:20,730 --> 00:01:25,770
+And the next thing to do is to go to the in its session function, which is right below this.
+
+23
+00:01:25,770 --> 00:01:27,330
+So I'll just command click on it.
+
+24
+00:01:27,750 --> 00:01:34,620
+And that takes me over to Session Doggo where we were just a moment ago and down here.
+
+25
+00:01:36,130 --> 00:01:43,540
+Where my case is Postgres or PostgreSQL at this point, I'm just going to set my session store, so
+
+26
+00:01:43,540 --> 00:01:48,310
+I'll say session, which is a variable we have available to us and we've been setting all of its values
+
+27
+00:01:48,310 --> 00:01:49,060
+right up here.
+
+28
+00:01:50,080 --> 00:01:52,090
+Don't store.
+
+29
+00:01:53,680 --> 00:02:06,460
+That's going to be equal to Postgres Store Dot new and we had it said cool, and that should take care
+
+30
+00:02:06,460 --> 00:02:06,760
+of it.
+
+31
+00:02:07,000 --> 00:02:12,760
+But of course, we need to tell our application in my app that we're going to use a Postgres store for
+
+32
+00:02:12,760 --> 00:02:13,360
+our sessions.
+
+33
+00:02:13,570 --> 00:02:17,720
+So we'll go back to our Maya project should we collect an error there.
+
+34
+00:02:18,730 --> 00:02:19,690
+What is the error?
+
+35
+00:02:23,480 --> 00:02:25,910
+And the air says could not important.
+
+36
+00:02:26,000 --> 00:02:27,290
+So I guess I need to import that.
+
+37
+00:02:27,560 --> 00:02:29,210
+So let's go get this.
+
+38
+00:02:30,650 --> 00:02:32,450
+I thought I had already done that, but apparently not.
+
+39
+00:02:32,840 --> 00:02:33,330
+No problem.
+
+40
+00:02:33,350 --> 00:02:34,640
+Go get that.
+
+41
+00:02:37,090 --> 00:02:38,380
+And it goes and gets it for us.
+
+42
+00:02:38,590 --> 00:02:43,240
+So that's been added to my session or to my go to Ahmad file and the errors are gone.
+
+43
+00:02:43,390 --> 00:02:51,370
+So now let's go over to our Maya project and let's open our own file and let's find this type or the
+
+44
+00:02:51,370 --> 00:02:52,480
+section on sessions.
+
+45
+00:02:52,480 --> 00:02:57,160
+And we're going to use session type equals Postgres.
+
+46
+00:03:00,670 --> 00:03:02,320
+So now if I open my terminal.
+
+47
+00:03:03,330 --> 00:03:10,870
+And say, make start assuming I have my appropriate Docker images running, it should run, and it did.
+
+48
+00:03:11,520 --> 00:03:12,250
+So let's try it out.
+
+49
+00:03:12,270 --> 00:03:15,650
+Let's go to our web browser and I'm already on my local host.
+
+50
+00:03:15,720 --> 00:03:19,800
+Let me reload that and let's try logging in as a user.
+
+51
+00:03:20,670 --> 00:03:28,320
+So I'll log in as we hear dot com with password, password and log in.
+
+52
+00:03:29,100 --> 00:03:33,300
+Another error upper no more rows in this result set is to be expected.
+
+53
+00:03:33,330 --> 00:03:39,660
+But if we go back here to the main screen, the problem is that I've emptied my database so many times
+
+54
+00:03:39,660 --> 00:03:41,150
+that I don't have a user in there anymore.
+
+55
+00:03:41,160 --> 00:03:46,710
+So let's go back and look at our code and open our roots file and find out what that path is to create
+
+56
+00:03:46,710 --> 00:03:47,370
+a user.
+
+57
+00:03:48,150 --> 00:03:49,050
+So right here.
+
+58
+00:03:49,320 --> 00:03:53,400
+Create user slash create user gives me me out here icon with password.
+
+59
+00:03:53,410 --> 00:04:00,920
+So I'll just go back to my application and I'll just put slash create user like that.
+
+60
+00:04:00,960 --> 00:04:01,840
+Create Dash user.
+
+61
+00:04:01,860 --> 00:04:09,810
+Now I've created myself, so now I can go back in here and log in as a user and put in me here dot com
+
+62
+00:04:09,810 --> 00:04:11,220
+with the password password.
+
+63
+00:04:12,090 --> 00:04:12,750
+Log in.
+
+64
+00:04:15,120 --> 00:04:17,580
+Now I'm logged in, so log out shows up.
+
+65
+00:04:17,700 --> 00:04:22,740
+Now, if I go back and actually stop my application and we'll look in the database in a minute, but
+
+66
+00:04:22,740 --> 00:04:29,610
+if I go back in here and go to my terminal and say Make stop, if we were using cookies sessions, which
+
+67
+00:04:29,610 --> 00:04:35,310
+I was a moment ago, then the logged in user would go away as soon as I started the application back
+
+68
+00:04:35,310 --> 00:04:35,550
+up.
+
+69
+00:04:35,760 --> 00:04:40,020
+Let's try and make a start and refresh that screen.
+
+70
+00:04:40,200 --> 00:04:43,620
+And if all went well, I should still be logged in.
+
+71
+00:04:43,770 --> 00:04:47,670
+So I should still see log out here, so I'll reload the page and we are.
+
+72
+00:04:48,120 --> 00:04:56,400
+And if we go, look in our database over here and open our sessions table, I actually have values in
+
+73
+00:04:56,400 --> 00:04:59,460
+there and that's the session for my one user.
+
+74
+00:05:00,030 --> 00:05:02,700
+That worked really well and that will make things much simpler.
+
+75
+00:05:03,300 --> 00:05:09,480
+Now, obviously, as you can see back in our sessions, dark go in the celebrity's package.
+
+76
+00:05:11,500 --> 00:05:15,670
+We're also going to support my Esquivel and MariaDB, so we may as well go get that.
+
+77
+00:05:15,850 --> 00:05:18,980
+So I'll just put in for this case session.
+
+78
+00:05:18,980 --> 00:05:28,070
+Dot Store equals minus goodwill store, which I'll probably have to go get York-New with the Cedar Divi
+
+79
+00:05:28,090 --> 00:05:28,480
+Pool.
+
+80
+00:05:30,280 --> 00:05:31,480
+And if I go to the top.
+
+81
+00:05:31,720 --> 00:05:32,950
+Yes, it's not important.
+
+82
+00:05:33,070 --> 00:05:38,170
+It's showing up here because I have it in another package, but I need to import it for this one.
+
+83
+00:05:38,170 --> 00:05:44,050
+So if my terminal and type go get and paste that in and that will go and get it for me.
+
+84
+00:05:48,450 --> 00:05:50,460
+And that area should go away, and it does.
+
+85
+00:05:51,180 --> 00:05:55,770
+And of course, we're also going to at some point in the not too distant future support Rita Sessions
+
+86
+00:05:55,770 --> 00:05:56,220
+as well.
+
+87
+00:05:56,220 --> 00:06:02,100
+So we'll support Rita's My or MariaDB Postgres and of course, the default of Cookie.
+
+88
+00:06:03,150 --> 00:06:04,670
+So that was relatively painless.
+
+89
+00:06:04,680 --> 00:06:08,970
+And now we have a means of persisting sessions between application restarts.
+
+90
+00:06:09,300 --> 00:06:09,990
+So let's move on.

@@ -1,0 +1,239 @@
+1
+00:00:00,240 --> 00:00:00,770
+ĐƯỢC RỒI.
+
+2
+00:00:00,870 --> 00:00:02,050
+Hãy xem chính.
+
+3
+00:00:02,070 --> 00:00:07,630
+Và tất cả kết hợp với nhau ở đâu và sau đó cũng chạy nó và xem bạn thấy kết quả.
+
+4
+00:00:07,640 --> 00:00:08,540
+Vâng.
+
+5
+00:00:09,330 --> 00:00:16,680
+Vì vậy, chức năng chính trong một hàm như thế này ở đâu hoặc trong một chương trình như thế này, nơi bạn có các hàm được xác định rõ
+
+6
+00:00:16,740 --> 00:00:22,520
+với những nghĩa dễ hiểu chính thường trở thành chỉ móc cái đa.
+
+7
+00:00:23,160 --> 00:00:25,870
+Và đó chính xác là ý nghĩa của nó.
+
+8
+00:00:26,970 --> 00:00:32,270
+Nó gọi nhận cuộc trò chuyện để nhận tất cả chuyển đổi để nhận toàn bộ cuộc trò chuyện.
+
+9
+00:00:32,310 --> 00:00:38,160
+Đó là chức năng thứ hai mà tôi có sau chức năng này. Tôi có một lát chuỗi.
+
+10
+00:00:38,160 --> 00:00:43,230
+Đầu tiên là phản hồi mà tôi sẽ cần để nhận được tất cả các tweet ở đây.
+
+11
+00:00:43,260 --> 00:00:50,820
+Vì vậy, tôi tạo biến tweets và sau đó tôi sắp xếp tất cả các chuỗi ht đó trong vòng lặp for.
+
+12
+00:00:51,020 --> 00:00:58,130
+Và mỗi lần tôi gọi pass ht email để lấy ra tất cả các tweet từ đoạn cụ thể đó của
+
+13
+00:00:58,140 --> 00:00:59,230
+HMO.
+
+14
+00:01:00,080 --> 00:01:08,540
+Và sau đó, tôi nối tất cả các tweet đó vào phần tweet lớn hơn và tôi đang sử dụng dấu chấm
+
+15
+00:01:08,540 --> 00:01:15,590
+chấm rất gác mái để mở rộng phần tweet này vào chức năng định kỳ nối thêm này để tôi có thể đặt
+
+16
+00:01:15,590 --> 00:01:17,180
+lát này vào lát này
+
+17
+00:01:21,340 --> 00:01:28,450
+vì vậy một khi S đã hoàn thành các vòng lặp, giờ đây tôi có một phần hoàn chỉnh của tất cả các tweet trong biến tweets này
+
+18
+00:01:29,080 --> 00:01:34,720
+và vì vậy trong trường hợp này, tôi sẽ sử dụng thụt lề Jason Marshall để đưa nó vào định dạng Jason trong đó với
+
+19
+00:01:35,110 --> 00:01:42,210
+đủ khoảng trắng để dễ đọc hơn và tôi in ra in tất cả những gì Jason ra và sau đó tôi phải lấy
+
+20
+00:01:42,200 --> 00:01:42,600
+một bản in.
+
+21
+00:01:42,610 --> 00:01:47,920
+Có bao nhiêu tweet tôi cuối cùng đã xuất hiện rất tuyệt vời.
+
+22
+00:01:47,950 --> 00:01:53,860
+Vì vậy, nếu tôi chạy tập lệnh go run go này, nó sẽ mất một chút thời gian vì phải đợi một giây giữa
+
+23
+00:01:53,860 --> 00:02:00,910
+mỗi cuộc gọi Twitter nên mất nhiều thời gian hơn cuộc gọi chỉ thực hiện một cuộc gọi tổng thể thì xong.
+
+24
+00:02:00,910 --> 00:02:08,080
+Bây giờ tôi có 60 tweet và nếu tôi nhìn vào đây, những tweet dưới cùng của tôi sẽ thấy máy chủ tự động hóa ICD, họ sẽ quay lại
+
+25
+00:02:08,080 --> 00:02:12,640
+Twitter và cuộn qua nó.
+
+26
+00:02:12,850 --> 00:02:22,350
+Họ muốn làm điều đó, cuộn hết cỡ qua tất cả các phím cách cuộn vô hạn là một cách hay
+
+27
+00:02:22,350 --> 00:02:24,920
+để làm điều đó bạn biết điều đó phụ thuộc vào trang.
+
+28
+00:02:24,930 --> 00:02:28,530
+Tôi không muốn cô ấy gõ vào hộp thư đến sự thật.
+
+29
+00:02:28,650 --> 00:02:31,760
+Vì vậy, phía dưới cùng sẽ thấy máy chủ tự động hóa ICD.
+
+30
+00:02:31,830 --> 00:02:33,560
+Vì vậy, đó là sau tất cả các cuộn.
+
+31
+00:02:33,570 --> 00:02:37,930
+Ồ, điều đó thật tuyệt vời.
+
+32
+00:02:38,060 --> 00:02:40,120
+Hãy quay lại mã trong giây lát.
+
+33
+00:02:41,110 --> 00:02:46,060
+Bạn muốn nói thêm bất cứ điều gì thì vẫn có chỗ để mở rộng về điều này.
+
+34
+00:02:46,130 --> 00:02:52,430
+Nếu tôi xem ở đây, một số câu trả lời này có câu trả lời cho chính chúng mà không thực sự được kéo
+
+35
+00:02:52,430 --> 00:02:53,720
+TRONG.
+
+36
+00:02:54,200 --> 00:02:55,160
+Cố gắng tìm một
+
+37
+00:03:03,140 --> 00:03:06,540
+như ở đây bạn có một bình luận khác ở đây và nó có câu trả lời riêng bên dưới nó.
+
+38
+00:03:06,570 --> 00:03:06,870
+Vâng.
+
+39
+00:03:07,110 --> 00:03:10,840
+Vì vậy, điều đó không được kéo vào nhưng điều đó cũng không được kéo vào từ đây.
+
+40
+00:03:10,860 --> 00:03:17,820
+Vì vậy, nhưng việc đi vào đó sau đó sẽ yêu cầu mã phức tạp hơn nhiều để sau đó đi theo con đường đó
+
+41
+00:03:18,450 --> 00:03:23,550
+và có vẻ hợp lý không chỉ để có được những gì đang hiển thị trên danh sách chính này ở đây.
+
+42
+00:03:23,610 --> 00:03:27,200
+Vì vậy, đó là tất cả những gì tôi đã làm cho tốt đẹp.
+
+43
+00:03:27,200 --> 00:03:33,530
+Vì vậy, tôi sẽ thực hiện cuộc nói chuyện nhỏ của mình thông qua nhận cuộc trò chuyện mang đến cho bạn cuộn cuộc trò chuyện đó
+
+44
+00:03:33,530 --> 00:03:34,940
+sao lưu vào lát chuỗi đó.
+
+45
+00:03:34,940 --> 00:03:35,420
+Chúng ta đi thôi.
+
+46
+00:03:36,020 --> 00:03:46,190
+Và và phần chuỗi trong cuộc trò chuyện sẽ là tất cả các tweet mọi thứ đều đúng.
+
+47
+00:03:46,270 --> 00:03:49,640
+Vâng, số tiền hàng ngày của LA và sau đó chúng tôi vượt qua tất cả số tiền đó.
+
+48
+00:03:49,640 --> 00:03:53,550
+Ở đó, chúng tôi chuyển thông điệp và chúng tôi vượt qua điều đó.
+
+49
+00:03:53,560 --> 00:04:00,440
+Chúng tôi nhận được điều đó và chúng tôi sẽ ghim điều đó vào phần tweet của chúng tôi và sau đó chúng tôi nhận được tất cả các tweet của mình
+
+50
+00:04:00,530 --> 00:04:04,880
+và sau đó chúng tôi sẽ đưa chúng cho Jason và sau đó chúng tôi nhận được một miếng cắn.
+
+51
+00:04:04,880 --> 00:04:09,410
+Chúng tôi biến nó thành một chuỗi để chúng tôi có thể in nó một cách đẹp mắt và sau đó chúng tôi xem độ dài.
+
+52
+00:04:09,500 --> 00:04:09,860
+Đúng.
+
+53
+00:04:09,870 --> 00:04:12,960
+Đó là tất cả thẳng cho tuyệt vời.
+
+54
+00:04:12,980 --> 00:04:14,630
+Điều đó thực sự được thực hiện tốt.
+
+55
+00:04:14,630 --> 00:04:15,680
+Đó là niềm vui để xem.
+
+56
+00:04:15,770 --> 00:04:19,010
+Và chúng tôi có thêm một chút thông tin cho bạn trong một vài video tiếp theo.
+
+57
+00:04:19,310 --> 00:04:21,980
+Bất cứ điều gì nhiều hơn để nói về điều này.
+
+58
+00:04:21,980 --> 00:04:24,770
+Đối với thực tế thời gian này trong năm.
+
+59
+00:04:25,340 --> 00:04:25,750
+Được rồi.
+
+60
+00:04:25,820 --> 00:04:26,680
+Xem video tiếp theo.

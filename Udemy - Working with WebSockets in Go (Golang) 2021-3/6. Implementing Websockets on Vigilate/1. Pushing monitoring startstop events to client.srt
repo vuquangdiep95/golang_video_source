@@ -1,0 +1,523 @@
+1
+00:00:01,230 --> 00:00:08,670
+So we're at the point now where we can actually start pushing events from our application to our connected
+
+2
+00:00:08,670 --> 00:00:12,810
+clients and we're already pushing some events, so let's just make sure everything works the way that
+
+3
+00:00:12,810 --> 00:00:14,030
+we think it's going to.
+
+4
+00:00:14,790 --> 00:00:17,900
+And I'll tell you right now, it's not going to at least not perfectly.
+
+5
+00:00:18,390 --> 00:00:25,140
+So right now, I'm looking at the handlers dutko and I'm looking at these start monitoring our Torgau
+
+6
+00:00:25,140 --> 00:00:26,100
+monitoring function.
+
+7
+00:00:26,100 --> 00:00:28,170
+And I'm going to go to the start monitoring right here.
+
+8
+00:00:29,550 --> 00:00:35,130
+So when monitoring starts at the very beginning, we're already triggering one at one thing and pushing
+
+9
+00:00:35,130 --> 00:00:36,270
+it to the public channel.
+
+10
+00:00:36,300 --> 00:00:39,510
+We're triggering the app starting event and pushing it some data.
+
+11
+00:00:39,510 --> 00:00:41,700
+And the data is just monitoring is starting.
+
+12
+00:00:42,030 --> 00:00:43,830
+And what happens when we push that?
+
+13
+00:00:44,250 --> 00:00:47,160
+Well, nothing happens right now because we're not listening for that event.
+
+14
+00:00:47,400 --> 00:00:55,650
+So let's go back to our site wide JavaScript that's stored in the jet file and look for the part where
+
+15
+00:00:55,680 --> 00:00:57,900
+we're creating our channels.
+
+16
+00:00:57,900 --> 00:01:02,760
+So here we create our public channel named Public Channel, and we're binding to something called a
+
+17
+00:01:02,760 --> 00:01:05,060
+test event, which we did a long time ago.
+
+18
+00:01:05,370 --> 00:01:08,670
+So let's change that event to app starting.
+
+19
+00:01:08,790 --> 00:01:14,010
+And this event name exactly matches what I'm pushing right here.
+
+20
+00:01:14,040 --> 00:01:17,250
+App Dash starting matches app Dash starting.
+
+21
+00:01:17,670 --> 00:01:24,180
+So you would think that when we actually toggle our monitoring off and then put it back on, we're going
+
+22
+00:01:24,180 --> 00:01:25,040
+to get this alert.
+
+23
+00:01:25,170 --> 00:01:26,160
+Let's see if that works.
+
+24
+00:01:26,520 --> 00:01:32,790
+So I'll stop my application and I'll start my application and I'll hide this window and I'll go back
+
+25
+00:01:32,790 --> 00:01:34,980
+to my Web browser and I'll just go to any page.
+
+26
+00:01:34,980 --> 00:01:37,080
+So there monitoring is off.
+
+27
+00:01:37,260 --> 00:01:38,760
+I am going to turn it on.
+
+28
+00:01:38,760 --> 00:01:41,580
+Let me open the JavaScript console to make sure there's no errors.
+
+29
+00:01:41,940 --> 00:01:44,430
+I'll turn it on there.
+
+30
+00:01:45,660 --> 00:01:46,530
+Nothing happened.
+
+31
+00:01:46,930 --> 00:01:48,150
+Well, why did nothing happen?
+
+32
+00:01:48,180 --> 00:01:51,060
+Well, nothing happened because of the way the JavaScript works.
+
+33
+00:01:51,750 --> 00:01:53,440
+So let's go back down to the bottom here.
+
+34
+00:01:54,870 --> 00:02:04,530
+When I actually turn monitoring on, I'm calling update system and update system calls this function
+
+35
+00:02:04,800 --> 00:02:08,400
+and this function actually in the in the go code.
+
+36
+00:02:08,400 --> 00:02:14,950
+If you recall, we're setting the necessary variable monitoring underscore live in our app.
+
+37
+00:02:14,970 --> 00:02:17,490
+Preferences are our application wide config.
+
+38
+00:02:17,490 --> 00:02:18,980
+We're setting that to the correct value.
+
+39
+00:02:19,800 --> 00:02:25,510
+But JavaScript doesn't work exactly the way that you think it would when you're reading the code.
+
+40
+00:02:25,530 --> 00:02:28,980
+So this is firing and it's not waiting for anything to happen.
+
+41
+00:02:28,980 --> 00:02:31,320
+It's immediately toggle toggling the monitoring.
+
+42
+00:02:31,860 --> 00:02:36,900
+So what I could do is I could work with JavaScript promises, wait for the first function to execute
+
+43
+00:02:36,900 --> 00:02:39,990
+and when it's finished, then execute the second one.
+
+44
+00:02:40,050 --> 00:02:40,800
+That's a lot of work.
+
+45
+00:02:41,040 --> 00:02:48,770
+And since this is a one off, I'm just going to go back to my code, which calls Torgau monitoring.
+
+46
+00:02:48,780 --> 00:02:51,780
+So I'll go to my roots file and I'll find Torgau monitoring.
+
+47
+00:02:52,140 --> 00:02:55,980
+And all I'm going to do here is just manually set this right away.
+
+48
+00:02:55,980 --> 00:03:00,390
+So I will say, if we're starting monitoring right now, I'm writing to the console or writing to our
+
+49
+00:03:00,390 --> 00:03:05,850
+application log, but I'll also set the necessary value in the preferences right here.
+
+50
+00:03:05,880 --> 00:03:07,740
+And that way it will work.
+
+51
+00:03:07,920 --> 00:03:08,850
+At least I think it will.
+
+52
+00:03:09,240 --> 00:03:17,400
+So let's so go repo dot preference map, no repo app preference map.
+
+53
+00:03:17,550 --> 00:03:25,440
+And I'm going to look for the key monitoring underscore Leive and I'm going to set that too because
+
+54
+00:03:25,440 --> 00:03:26,670
+we're turning it on here.
+
+55
+00:03:27,270 --> 00:03:28,140
+It's equal to one.
+
+56
+00:03:29,490 --> 00:03:30,870
+And I'll just copy this line.
+
+57
+00:03:31,830 --> 00:03:36,960
+And the very first thing I do after I put it to the log when turning it off is set it to off.
+
+58
+00:03:37,970 --> 00:03:38,480
+Zero.
+
+59
+00:03:38,870 --> 00:03:41,960
+And I'll stop my application, start my application.
+
+60
+00:03:44,280 --> 00:03:48,810
+And when I go back to my screen here, because the application was starting, it pushed that event.
+
+61
+00:03:48,820 --> 00:03:49,980
+So it seems like it's working.
+
+62
+00:03:49,980 --> 00:03:54,600
+Let's make sure I'll turn it off, OK, and I'll turn it back on.
+
+63
+00:03:54,600 --> 00:03:56,220
+And I should get pushed that event.
+
+64
+00:03:57,030 --> 00:03:57,690
+And I do.
+
+65
+00:03:57,750 --> 00:04:01,880
+So now I know that it's actually pushing the events the way that it's supposed to.
+
+66
+00:04:03,240 --> 00:04:10,170
+So logically, if you think it through, when I go back to my code here and hide this window and look
+
+67
+00:04:10,170 --> 00:04:19,080
+at the JavaScript jet, just OzJet file right at the top, all I need to do here find to the public
+
+68
+00:04:19,080 --> 00:04:22,220
+channel for every event I want to push.
+
+69
+00:04:22,680 --> 00:04:26,430
+And right now I'm just pointing to one, which reminds me, we probably should go back to our roots
+
+70
+00:04:26,430 --> 00:04:31,920
+file and find that testing we had up here, which is push your test.
+
+71
+00:04:32,460 --> 00:04:35,740
+And I'm first of all, I'm going to get rid of this test pusher because I don't need it anymore.
+
+72
+00:04:35,850 --> 00:04:37,560
+That was just to make sure things are working.
+
+73
+00:04:37,560 --> 00:04:38,490
+So I'll delete that.
+
+74
+00:04:38,940 --> 00:04:44,520
+Then I'll go back to my roots file and delete this line because we don't need that anymore.
+
+75
+00:04:44,520 --> 00:04:47,390
+And that's just something that's cluttering up our code.
+
+76
+00:04:47,700 --> 00:04:52,830
+So what we need to do is to look at the kinds of events we're going to be pushing to our JavaScript
+
+77
+00:04:52,830 --> 00:04:53,110
+file.
+
+78
+00:04:53,160 --> 00:05:00,600
+So let me go in here, read a few comments, things we want to look for.
+
+79
+00:05:00,890 --> 00:05:05,370
+This is dim, but I'm just going to read it out loud as I do it.
+
+80
+00:05:05,610 --> 00:05:09,750
+I want to look for service goes down.
+
+81
+00:05:12,870 --> 00:05:17,460
+I want to look for service, comes up.
+
+82
+00:05:17,850 --> 00:05:23,340
+In other words, a healthy service becomes an unhealthy service, becomes a healthy service or a problem.
+
+83
+00:05:23,340 --> 00:05:24,870
+Service becomes a healthy service.
+
+84
+00:05:25,170 --> 00:05:30,960
+So they go down, they come up or I just want to look for service status changed that maybe will cover
+
+85
+00:05:30,960 --> 00:05:31,980
+all of the cases.
+
+86
+00:05:32,550 --> 00:05:34,950
+We'll look at that when we actually start writing that code.
+
+87
+00:05:35,760 --> 00:05:44,970
+And we also want to know, has the schedule changed and monitoring is turned off.
+
+88
+00:05:45,750 --> 00:05:50,610
+Now, that may not be all of the cases that I want to look for, but it seems to me that that covers
+
+89
+00:05:50,640 --> 00:05:52,440
+the vast majority of them right now.
+
+90
+00:05:52,830 --> 00:05:55,530
+So these are the kinds of things we're going to be looking for.
+
+91
+00:05:55,680 --> 00:06:02,370
+So we're going to bind to every one of those events and perform some logic, updating tables, giving
+
+92
+00:06:02,370 --> 00:06:05,670
+alerts, removing things from tables, whatever it may be.
+
+93
+00:06:05,940 --> 00:06:08,580
+We'll be looking for all of those as time goes on.
+
+94
+00:06:09,060 --> 00:06:11,100
+So let's go back and look at our start monitoring.
+
+95
+00:06:11,760 --> 00:06:17,280
+When we start, we're pushing an event and then down here, when we loop through the services, we're
+
+96
+00:06:17,280 --> 00:06:20,790
+also pushing next run event and schedule changed event.
+
+97
+00:06:20,790 --> 00:06:26,460
+So I'm not sure what that is, but I'm going to look for that and put it in the code here in my comments.
+
+98
+00:06:28,350 --> 00:06:31,470
+And we want to also look for next run event changes.
+
+99
+00:06:31,860 --> 00:06:37,650
+OK, so we may not do anything with that, but it's the kinds of things that I need to start thinking
+
+100
+00:06:37,650 --> 00:06:38,520
+about right now.
+
+101
+00:06:38,520 --> 00:06:41,580
+I don't want to just jump in and start code coding and hope for the best.
+
+102
+00:06:41,910 --> 00:06:48,840
+I want to think logically about all of the cases where I need to change something on any screen that
+
+103
+00:06:48,840 --> 00:06:53,400
+any connected user might be looking at or to display an alert or something like that.
+
+104
+00:06:53,400 --> 00:06:55,670
+So those are the kinds of things that we're going to looking for.
+
+105
+00:06:56,340 --> 00:07:02,640
+So since we're here anyway, and I know I'm going to look for the monitoring is turned off event center
+
+106
+00:07:02,640 --> 00:07:07,620
+route's file, let me go their routes file and we're toggling our monitoring service.
+
+107
+00:07:07,620 --> 00:07:10,080
+Let's find that again right here, toggling monitoring.
+
+108
+00:07:10,650 --> 00:07:15,180
+So at this point, when I'm turning monitoring on, I could push an event.
+
+109
+00:07:15,210 --> 00:07:19,800
+I could just go back to my start monitoring.
+
+110
+00:07:20,880 --> 00:07:21,960
+Copy this.
+
+111
+00:07:23,790 --> 00:07:26,400
+Go back over here to my.
+
+112
+00:07:27,470 --> 00:07:28,200
+I lost it.
+
+113
+00:07:28,340 --> 00:07:35,300
+Handlers don't go torgau monitoring, so I could also push and push a notification right here if I wanted
+
+114
+00:07:35,300 --> 00:07:43,190
+to, so I could after I stop the scheduler, push this and say monitoring is off, change the message.
+
+115
+00:07:44,370 --> 00:07:51,930
+And call this Apte stopping, OK, and then now that I'm going to be pushing this event and we'll do
+
+116
+00:07:51,930 --> 00:07:56,190
+this a little more logically momentarily, but this is just to make sure that we can actually push a
+
+117
+00:07:56,190 --> 00:07:56,820
+second event.
+
+118
+00:07:57,210 --> 00:08:08,550
+If I go back to my jet file and copy this and paste it here and change it to app stopping and change
+
+119
+00:08:08,550 --> 00:08:09,870
+it to say warning alert.
+
+120
+00:08:11,690 --> 00:08:13,730
+And then stop my application and started.
+
+121
+00:08:16,510 --> 00:08:25,300
+When I come back to my Web browser and reload this, when I turn it off and click, OK, monitoring
+
+122
+00:08:25,300 --> 00:08:27,830
+is off, so that works perfectly.
+
+123
+00:08:28,600 --> 00:08:34,810
+So there's a bunch of things we need to do in the next few lectures to trap for all of those cases.
+
+124
+00:08:34,810 --> 00:08:39,250
+And I think the simplest thing to work with now that we have you know, we know we can actually push
+
+125
+00:08:39,250 --> 00:08:44,620
+events and receive them on the client side is to actually start a local Web server.
+
+126
+00:08:44,770 --> 00:08:49,060
+And I'll provide you the code for that, that you can just download, compile and run to your heart's
+
+127
+00:08:49,060 --> 00:08:55,090
+content and then actually turn monitoring on and wait for the time to elapse.
+
+128
+00:08:55,090 --> 00:08:57,160
+So the schedule actually executes.
+
+129
+00:08:57,160 --> 00:09:01,390
+It checks our local service on host local host Port 80 80.
+
+130
+00:09:01,720 --> 00:09:06,010
+And I want that to move from here to here in real time.
+
+131
+00:09:06,280 --> 00:09:09,040
+So let's see if we can do that in the next lecture or two.

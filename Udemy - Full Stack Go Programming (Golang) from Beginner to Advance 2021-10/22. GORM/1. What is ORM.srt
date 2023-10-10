@@ -1,0 +1,183 @@
+1
+00:00:13,460 --> 00:00:19,970
+Hello and welcome to the golden programming language course in this session, we want to talk about
+
+2
+00:00:19,970 --> 00:00:21,560
+go from concept.
+
+3
+00:00:26,080 --> 00:00:27,820
+What is an all around?
+
+4
+00:00:29,030 --> 00:00:35,660
+Before getting into the proper definition of law, and first, let me take an example, which we explain
+
+5
+00:00:35,660 --> 00:00:37,160
+the term in a better way.
+
+6
+00:00:38,120 --> 00:00:41,840
+So have you ever used this school database in your application?
+
+7
+00:00:42,080 --> 00:00:47,300
+And have you ever used this school queries to update, insert or retrieve the data?
+
+8
+00:00:47,330 --> 00:00:49,730
+No matter how the queries are?
+
+9
+00:00:50,690 --> 00:00:59,990
+So here comes the idea of object relational mapping or M, and it is a programming technique for converting
+
+10
+00:00:59,990 --> 00:01:05,960
+data between incompatible type systems using object oriented programming languages.
+
+11
+00:01:06,500 --> 00:01:13,490
+It means you can write database queries using the object oriented paradigm of your preferred language,
+
+12
+00:01:13,670 --> 00:01:20,990
+and there are many free and commercial packages available that perform object relational mapping or
+
+13
+00:01:21,340 --> 00:01:26,360
+acts as brackets between our developers and our underlying database technology.
+
+14
+00:01:27,110 --> 00:01:34,160
+They allow us to essentially work with objects much as we normally would, and then save these objects
+
+15
+00:01:34,190 --> 00:01:42,080
+without having to craft complex the school statements or insist the mapping between the set of objects
+
+16
+00:01:42,080 --> 00:01:47,930
+which are written in the previous programming language like JavaScript and relational database like
+
+17
+00:01:48,080 --> 00:01:48,550
+Skewer.
+
+18
+00:01:48,890 --> 00:01:55,940
+It hides and encapsulates this fuel queries into objects, and instead of school queries, we can use
+
+19
+00:01:55,940 --> 00:01:59,150
+directly the objects to implement this query.
+
+20
+00:02:04,560 --> 00:02:08,700
+Why to use or in and what are the benefits of lowering?
+
+21
+00:02:09,630 --> 00:02:16,410
+Now the question arises that if we can use like queries, then why to include the are frame frameworks
+
+22
+00:02:16,410 --> 00:02:16,950
+in between.
+
+23
+00:02:17,850 --> 00:02:21,870
+So first of all, you get the written language you are already using.
+
+24
+00:02:22,170 --> 00:02:28,200
+It is some time to try to skewer queries directly, and they are complicated in some cases.
+
+25
+00:02:28,500 --> 00:02:34,620
+So to maintain the fluency, we use the R and so that we can write in the language we know.
+
+26
+00:02:35,460 --> 00:02:41,910
+And second, it hides this dual or any other database query away from your application logic.
+
+27
+00:02:43,200 --> 00:02:50,100
+And third, for heavy database usage, like creating 10+ tables and using many queries in them, then
+
+28
+00:02:50,100 --> 00:02:55,650
+it is good to use R, as it read is the code and give a better understanding of the code to you and
+
+29
+00:02:55,650 --> 00:03:01,080
+as well as to your teammates, and it makes your application faster and easier to maintain.
+
+30
+00:03:06,340 --> 00:03:09,440
+Go on and or go blank or in pages.
+
+31
+00:03:09,970 --> 00:03:15,580
+The Gore team is fantastic, Autumn Library for Golden aims to be developer friendly.
+
+32
+00:03:16,150 --> 00:03:20,320
+It is an awesome library for dealing with relational databases.
+
+33
+00:03:21,220 --> 00:03:28,060
+This Goram library is developed on the top of database as cumulative package gone and is a developer
+
+34
+00:03:28,060 --> 00:03:36,040
+friendly or and and provides crud operations and can also be used for the initial migration and creation
+
+35
+00:03:36,040 --> 00:03:37,600
+of database schema.
+
+36
+00:03:38,350 --> 00:03:44,680
+A few more teams that go out and does better include its extensibility with native plugin support.
+
+37
+00:03:45,040 --> 00:03:47,110
+Its reliance on testing.
+
+38
+00:03:47,110 --> 00:03:50,590
+And one to one and one from many group of associations.
+
+39
+00:03:50,950 --> 00:03:59,800
+Go on and on to source Eskew Lite, MySchool Postgres and MSC you with the overview and feature of RMR
+
+40
+00:04:00,880 --> 00:04:02,460
+Full featured Aughrim.
+
+41
+00:04:04,450 --> 00:04:14,500
+Associations has one has many billions, too many, too many, and polymorph is callbacks before, after
+
+42
+00:04:14,500 --> 00:04:24,820
+create safe, articulate find paid loading, eager loading transactions, composite primary key skill
+
+43
+00:04:24,820 --> 00:04:28,300
+builder, lawyer and developer friendly.
+
+44
+00:04:28,870 --> 00:04:34,180
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+45
+00:04:34,180 --> 00:04:35,050
+the next session.
+
+46
+00:04:35,230 --> 00:04:35,740
+Goodbye.

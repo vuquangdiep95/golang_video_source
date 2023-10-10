@@ -1,0 +1,83 @@
+1
+00:00:01,330 --> 00:00:06,040
+Before we move on to working with jet templates in our render package, I just want to do a little bit
+
+2
+00:00:06,040 --> 00:00:06,580
+of cleanup.
+
+3
+00:00:07,450 --> 00:00:13,870
+A couple of lectures ago we created this function you see here in celebrities don't go in the celebrities
+
+4
+00:00:13,870 --> 00:00:19,900
+package and it's called Create Renderer, and I clearly was caffeine deprived, but I put this together
+
+5
+00:00:19,900 --> 00:00:23,680
+because this is far more complex than it actually needs to be.
+
+6
+00:00:24,070 --> 00:00:27,370
+First of all, we don't need to return anything here at all.
+
+7
+00:00:28,540 --> 00:00:31,780
+And secondly, we don't need a parameter here at all.
+
+8
+00:00:33,160 --> 00:00:36,960
+In fact, we have access to everything we need right from the receiver.
+
+9
+00:00:36,970 --> 00:00:38,500
+So we're not going to return anything here.
+
+10
+00:00:39,640 --> 00:00:43,210
+And these become CS.
+
+11
+00:00:46,900 --> 00:00:55,450
+And all we have to do here is say, see, dot rendered is equal to my render a reference to my render.
+
+12
+00:00:56,560 --> 00:01:03,280
+OK, and then back up here, of course, that means we need to simplify this code to nothing more than
+
+13
+00:01:03,280 --> 00:01:03,790
+this.
+
+14
+00:01:05,770 --> 00:01:07,000
+And get rid of that parameter.
+
+15
+00:01:08,260 --> 00:01:10,600
+And that is ever so much better.
+
+16
+00:01:11,200 --> 00:01:11,590
+OK.
+
+17
+00:01:11,770 --> 00:01:13,360
+So that which is a little bit of clean up.
+
+18
+00:01:13,360 --> 00:01:18,640
+And as I said, that was unnecessarily complicated code where it was passing parameters and changing
+
+19
+00:01:18,640 --> 00:01:21,100
+the receiver, and I could have done everything with the receiver.
+
+20
+00:01:21,220 --> 00:01:23,680
+I blame it on a distinct lack of caffeine.
+
+21
+00:01:24,190 --> 00:01:24,820
+So let's move on.

@@ -1,0 +1,895 @@
+1
+00:00:00,810 --> 00:00:05,250
+So we're getting much closer to having an actual useful application, but there are still some things
+
+2
+00:00:05,250 --> 00:00:05,580
+to do.
+
+3
+00:00:05,880 --> 00:00:10,950
+And what I want to turn my attention to right now is this item, which is the schedule.
+
+4
+00:00:10,950 --> 00:00:16,050
+And if we click on that currently, it just displays an empty table and there's no logic behind it to
+
+5
+00:00:16,050 --> 00:00:17,900
+display a schedule at all.
+
+6
+00:00:18,300 --> 00:00:25,680
+And of course, the goal here is to make this page list, all of the things that are scheduled to run
+
+7
+00:00:25,920 --> 00:00:31,140
+to show us the House, to show us the service, what the schedule is, whether it's three minutes or
+
+8
+00:00:31,140 --> 00:00:36,750
+in our case, 10 seconds, because we just have one item right now when it last ran and when its next
+
+9
+00:00:36,750 --> 00:00:37,500
+going to run.
+
+10
+00:00:37,680 --> 00:00:40,330
+And we want this to update in real time.
+
+11
+00:00:40,350 --> 00:00:47,790
+So I should be able to, when I'm done, watch this page and see my one entry and watch the previous
+
+12
+00:00:47,790 --> 00:00:52,000
+and next values change based upon when it runs in the background.
+
+13
+00:00:52,740 --> 00:00:55,610
+So in order to make that happen, there's a few changes we have to do.
+
+14
+00:00:55,620 --> 00:01:02,070
+First of all, I need to have some kind of data structure to hold the information necessary for this
+
+15
+00:01:02,100 --> 00:01:03,090
+this particular table.
+
+16
+00:01:03,390 --> 00:01:10,410
+So let's go back to our ID and I'm going to open models don't go and in models don't go.
+
+17
+00:01:10,410 --> 00:01:15,320
+We're simply going to add a new member to this or a new entry to this and I'll call it schedule.
+
+18
+00:01:15,330 --> 00:01:20,220
+So at the very bottom, I'll give it a comment schedule model.
+
+19
+00:01:20,440 --> 00:01:21,180
+That's enough for now.
+
+20
+00:01:21,690 --> 00:01:28,840
+And it's a type and I'll call it a schedule and it's just a struct and it's going to hold some information.
+
+21
+00:01:29,250 --> 00:01:35,010
+So first of all, like most of them, it'll have an ID that's in and it will also have an entry ID.
+
+22
+00:01:36,000 --> 00:01:41,280
+And of course, that is of type Kronborg entry ID from our Chron package.
+
+23
+00:01:41,520 --> 00:01:43,590
+And we need that for the monitor map.
+
+24
+00:01:44,850 --> 00:01:48,180
+It has the entry itself, which is Kronborg entry.
+
+25
+00:01:50,450 --> 00:01:53,160
+And again, that's tied to our monitoring package.
+
+26
+00:01:53,930 --> 00:01:57,120
+The host is just a string, so I have some information to display.
+
+27
+00:01:57,650 --> 00:01:59,450
+The service is just a string.
+
+28
+00:02:01,940 --> 00:02:12,320
+In our case, it'll be localhost and HTP for hosting service last run from HHS, which is of time time
+
+29
+00:02:12,320 --> 00:02:18,560
+and that's last run from the host services host Service Idee, which I'd better spell right.
+
+30
+00:02:20,860 --> 00:02:27,430
+And that will just be an end and the text for the actual schedule, scheduled text, which is just a
+
+31
+00:02:27,430 --> 00:02:27,770
+string.
+
+32
+00:02:28,270 --> 00:02:33,910
+OK, so I have a model now and that is a place where I can put the necessary information.
+
+33
+00:02:35,530 --> 00:02:42,220
+Now, if we go back to our lives, think about this one for a minute, we have our host, which is a
+
+34
+00:02:42,220 --> 00:02:43,860
+string and that's the host name.
+
+35
+00:02:44,260 --> 00:02:50,920
+But when we get a host service by IDEM, I'm going to look at the host postgrads and find right here,
+
+36
+00:02:51,010 --> 00:02:52,570
+get host service by ID.
+
+37
+00:02:53,230 --> 00:02:55,240
+I actually don't populate this.
+
+38
+00:02:55,240 --> 00:03:01,420
+There's a place in the model to store the necessary information, but I actually don't get it in this
+
+39
+00:03:01,420 --> 00:03:01,780
+query.
+
+40
+00:03:01,780 --> 00:03:06,460
+And I added that member to the model for host service a while ago.
+
+41
+00:03:07,000 --> 00:03:09,580
+But I think it might be useful just to simplify things.
+
+42
+00:03:09,580 --> 00:03:11,500
+Let's just get that information too.
+
+43
+00:03:11,500 --> 00:03:18,670
+So I'm going to add a host name and it means I'm going to have to join the host table.
+
+44
+00:03:18,670 --> 00:03:21,610
+So I will left join hosts.
+
+45
+00:03:21,730 --> 00:03:32,110
+Try that again, join hosts h on and it would be host ID matches ID and then I'll just take this member
+
+46
+00:03:32,110 --> 00:03:36,100
+that I've added to my select statement and add it right down here at the very bottom.
+
+47
+00:03:37,990 --> 00:03:43,120
+HMS Host, I hostname, that's what I want, and put a comma at the end.
+
+48
+00:03:43,690 --> 00:03:49,740
+OK, so now when I call this method using my repository, I have the hostname pre populated.
+
+49
+00:03:49,750 --> 00:03:52,920
+So that's in there and I know I need it for the schedule table.
+
+50
+00:03:53,320 --> 00:03:54,770
+So we've got that in place.
+
+51
+00:03:55,270 --> 00:04:01,290
+Now let's go to a file that was part of the package that you initially downloaded, called scheduled
+
+52
+00:04:01,290 --> 00:04:01,810
+ago.
+
+53
+00:04:01,810 --> 00:04:08,530
+And all that does is I have a method here called list entries that lists the schedule entries on this
+
+54
+00:04:08,530 --> 00:04:10,080
+page, scheduled jet.
+
+55
+00:04:10,210 --> 00:04:11,590
+So let's make some changes to that.
+
+56
+00:04:12,040 --> 00:04:20,110
+So what I'm going to be passing to it, of course, is the A slice, a variable version, and I'll just
+
+57
+00:04:20,110 --> 00:04:20,800
+call it items.
+
+58
+00:04:21,340 --> 00:04:28,060
+It's a slice slice of model's schedule, that model we created just a few moments ago.
+
+59
+00:04:28,780 --> 00:04:35,670
+And what I need to do is actually to get the schedule slice populated with the necessary information.
+
+60
+00:04:36,130 --> 00:04:40,390
+And remember, we're not actually pulling information out of the database at this point.
+
+61
+00:04:40,540 --> 00:04:44,950
+Instead, we're going to look at the schedule that's running in the background as part of our current
+
+62
+00:04:44,950 --> 00:04:45,430
+package.
+
+63
+00:04:45,820 --> 00:04:50,320
+And we have all of the information related to that schedule stored in our.
+
+64
+00:04:51,610 --> 00:04:57,580
+Application wide config with a member named Monitor Map, so I'm just going to loop through that, so
+
+65
+00:04:57,580 --> 00:05:07,180
+I'll save for key and value our assigned range and I'm going to range through repoll dot app, dot monitor
+
+66
+00:05:07,180 --> 00:05:07,450
+map.
+
+67
+00:05:07,480 --> 00:05:12,070
+I'm just going to go through every single entry in our monitor map.
+
+68
+00:05:12,790 --> 00:05:18,070
+And when I get in there, well, each time I go through will create a new value or new variable called
+
+69
+00:05:18,070 --> 00:05:21,610
+item and it's of type models schedule.
+
+70
+00:05:23,560 --> 00:05:33,970
+So to get the information in that necessary item item ID, the first member in that struct is the ID
+
+71
+00:05:34,240 --> 00:05:35,790
+and that will be equal to the key.
+
+72
+00:05:36,160 --> 00:05:41,860
+So, OK, so now I have the ID, next I want to get the ID and that's in.
+
+73
+00:05:41,860 --> 00:05:47,180
+So item entry ID and that's the actual value that's stored in our map.
+
+74
+00:05:47,380 --> 00:05:50,680
+So now I've got both of the pieces of information from that map.
+
+75
+00:05:51,520 --> 00:05:54,280
+Now I actually want to get the entry itself.
+
+76
+00:05:54,280 --> 00:06:03,400
+So item entry and this is the actual entry that's used by the current package to run a particular job.
+
+77
+00:06:03,730 --> 00:06:13,360
+So that's going to be equal to and we can get that right from our app DOT scheduler sorry, repo dot
+
+78
+00:06:13,570 --> 00:06:15,760
+app, dot scheduler.
+
+79
+00:06:16,300 --> 00:06:23,200
+And I just call a method on that entry and I pass it the value the V that that I'm getting from my monitor
+
+80
+00:06:23,200 --> 00:06:23,500
+map.
+
+81
+00:06:23,890 --> 00:06:25,310
+So that gets me my entry.
+
+82
+00:06:25,310 --> 00:06:30,190
+And if you point this you'll see it just returns type Kronborg entry and I need that.
+
+83
+00:06:30,220 --> 00:06:31,540
+So I have that information not.
+
+84
+00:06:33,480 --> 00:06:38,910
+Next, I need to get the hose service, so hose service and potentially to air our assigned the value
+
+85
+00:06:38,910 --> 00:06:43,770
+of repo DB don't get host service.
+
+86
+00:06:45,700 --> 00:06:52,750
+By ID and my ID in this case is the key from that monitor map, so I have the service and I'll just
+
+87
+00:06:52,750 --> 00:06:53,440
+check for an error.
+
+88
+00:06:53,440 --> 00:07:00,520
+If error is not equal to nil, then I'll say log print line error and I'll just return because I don't
+
+89
+00:07:00,520 --> 00:07:01,270
+want to go any further.
+
+90
+00:07:02,170 --> 00:07:03,150
+Something's gone wrong.
+
+91
+00:07:05,050 --> 00:07:12,910
+Otherwise my item scheduled text is assigned the value of and I'll just build a string format on Sprint
+
+92
+00:07:13,060 --> 00:07:23,500
+F and it will be at every and then percent s percent D and my placeholders are replaced with H.
+
+93
+00:07:23,510 --> 00:07:24,070
+S dot.
+
+94
+00:07:25,000 --> 00:07:37,030
+Schedule number and start schedule unit goes backwards, yeah, should be D and S. So that gives me
+
+95
+00:07:37,030 --> 00:07:43,030
+my schedule text that I can have that I can display and item last run from post service.
+
+96
+00:07:43,060 --> 00:07:43,800
+Well, that's easy.
+
+97
+00:07:43,810 --> 00:07:45,490
+That's how service at last check.
+
+98
+00:07:47,150 --> 00:07:53,290
+And item host is equal to host service dot hostname, which we just added to this query.
+
+99
+00:07:53,300 --> 00:07:54,380
+So that works out all right.
+
+100
+00:07:56,700 --> 00:08:01,010
+Postal service item host there, that's better.
+
+101
+00:08:02,430 --> 00:08:07,770
+And item service is equal to service service.
+
+102
+00:08:09,900 --> 00:08:10,590
+Service name.
+
+103
+00:08:12,480 --> 00:08:19,440
+And now I just append this to my slice of items, so items equals append items.
+
+104
+00:08:24,880 --> 00:08:30,590
+OK, now I have that all built now in a minute, you'll see that this isn't ideal.
+
+105
+00:08:30,700 --> 00:08:31,560
+Actually you won't see it.
+
+106
+00:08:31,570 --> 00:08:35,080
+So I'll have to describe it to you because we just have one entry in this right now.
+
+107
+00:08:35,230 --> 00:08:41,890
+I actually need to be able to sort this this slice because I want to sort it in a particular fashion.
+
+108
+00:08:42,280 --> 00:08:47,890
+And what I'm going to get from the monitor map could be in any order because, as you know, maps are
+
+109
+00:08:47,890 --> 00:08:50,290
+not sorted and you can't sort of map.
+
+110
+00:08:51,010 --> 00:08:55,630
+And we're getting our information from a map, our monitor map.
+
+111
+00:08:55,630 --> 00:08:57,060
+So I actually need to sort this.
+
+112
+00:08:57,670 --> 00:09:02,380
+And fortunately, it's unfortunately, it's not really easy to do that.
+
+113
+00:09:02,950 --> 00:09:04,750
+There's actually a couple of things I need to do.
+
+114
+00:09:04,750 --> 00:09:09,400
+The first thing is I need to define a new type, which I'll call by host because I want to sort this
+
+115
+00:09:09,400 --> 00:09:10,120
+by host.
+
+116
+00:09:10,600 --> 00:09:17,910
+And that's going to be of a type by host, which is of models, a slice of model schedule.
+
+117
+00:09:18,160 --> 00:09:26,380
+So I've defined that type and all I have to do is to create three methods on this type that will allow
+
+118
+00:09:26,380 --> 00:09:28,210
+me to sort a slice.
+
+119
+00:09:28,240 --> 00:09:32,430
+So basically I'm satisfying an interface requirement by creating three functions.
+
+120
+00:09:32,890 --> 00:09:34,300
+So the first one is called Leam.
+
+121
+00:09:35,410 --> 00:09:44,110
+So Leam or func, and this is tied to has the receiver of by host because I'm satisfying an interface
+
+122
+00:09:44,110 --> 00:09:47,710
+requirement is Llyn and it returns in it.
+
+123
+00:09:49,300 --> 00:09:53,980
+And all I'm going to do here is say return Lenn of a.
+
+124
+00:09:55,230 --> 00:09:57,330
+OK, I got something wrong here.
+
+125
+00:09:58,830 --> 00:10:00,450
+Yeah, I need to have my parentheses.
+
+126
+00:10:01,500 --> 00:10:04,380
+OK, so there's the first requirement, so Len.
+
+127
+00:10:06,570 --> 00:10:14,190
+Is used to sort by host was a but a comment in there, as you're supposed to, the second function you
+
+128
+00:10:14,190 --> 00:10:22,620
+need to satisfy this requirement is called less and less again, is just is used to sort by host.
+
+129
+00:10:23,390 --> 00:10:24,360
+So let's create the funk.
+
+130
+00:10:25,450 --> 00:10:28,020
+It has the same receiver by host.
+
+131
+00:10:28,830 --> 00:10:31,230
+It's called Less and Less.
+
+132
+00:10:31,230 --> 00:10:37,350
+Takes a couple of arguments, I and J, both of which are Aints and it returns a ball.
+
+133
+00:10:38,100 --> 00:10:42,570
+And all I'm going to do here is write a really simple one line bit of logic.
+
+134
+00:10:43,110 --> 00:10:46,500
+I'll return a index.
+
+135
+00:10:46,500 --> 00:10:50,940
+I so I'm getting a from my receiver looking at the index of I.
+
+136
+00:10:53,060 --> 00:10:56,890
+Dr. Host is less than a Jay.
+
+137
+00:10:58,550 --> 00:11:04,730
+Host, so I'm using this to start the sorting process, and if you've taken any introductory computer
+
+138
+00:11:04,730 --> 00:11:07,280
+science course, you'll be really familiar with this logic.
+
+139
+00:11:07,760 --> 00:11:10,880
+And the last one is called Swap and Swap.
+
+140
+00:11:10,880 --> 00:11:22,310
+He's used to sort by host funk a by host as my receiver, and it's called Swap and Swap actually takes
+
+141
+00:11:22,310 --> 00:11:26,420
+to INCI and J and it returns and Ent..
+
+142
+00:11:27,470 --> 00:11:31,070
+And the logic for this is a index I.
+
+143
+00:11:33,290 --> 00:11:35,840
+A index, Jay.
+
+144
+00:11:39,570 --> 00:11:41,940
+Is equal to a index, Jay.
+
+145
+00:11:44,410 --> 00:11:46,090
+A index are.
+
+146
+00:11:49,200 --> 00:11:57,240
+And I think you have to be it's OK, so if there's no errors here and there are, this doesn't return
+
+147
+00:11:57,240 --> 00:11:57,600
+on it.
+
+148
+00:11:58,640 --> 00:12:05,360
+Try that again there, so I have no errors there, so that means I now have satisfied the necessary
+
+149
+00:12:05,360 --> 00:12:10,610
+interfaces requirements that will allow me to sort my my slice by hosts.
+
+150
+00:12:11,180 --> 00:12:20,870
+So after I finish all of this, I say sort the slice by host, sort, dot, sort, and I'm going to
+
+151
+00:12:20,870 --> 00:12:25,220
+sort by host and I'm going to pass by host.
+
+152
+00:12:27,390 --> 00:12:27,930
+Items.
+
+153
+00:12:35,000 --> 00:12:39,950
+OK, so that should sort my slice now we're not going to see that immediately because we only have one
+
+154
+00:12:39,950 --> 00:12:45,710
+host, one service, but this will will sort it for us when we have more than one host and more than
+
+155
+00:12:45,710 --> 00:12:46,340
+one service.
+
+156
+00:12:47,370 --> 00:12:50,120
+Now, I want to pass some data to my template.
+
+157
+00:12:50,900 --> 00:12:58,100
+Data is a sign the value of make and we're using jet via map, which I may never do again because I'm
+
+158
+00:12:58,100 --> 00:13:03,980
+getting a little annoyed with the errors in my idy, but it is a good templating package and then we
+
+159
+00:13:03,980 --> 00:13:12,410
+just put some values in data, data, data set and I'll call it items and I'll simply put in my items.
+
+160
+00:13:13,610 --> 00:13:18,320
+And then down here when I render this template, I pass it my data.
+
+161
+00:13:20,360 --> 00:13:25,250
+So that should suffice for the logic required to list our entries on the page.
+
+162
+00:13:25,250 --> 00:13:28,640
+But we still need to go and update the actual schedule page.
+
+163
+00:13:28,640 --> 00:13:29,600
+So let's find that.
+
+164
+00:13:31,740 --> 00:13:42,300
+So here in the body part, I'll just range through those items and all I have to do is range items and
+
+165
+00:13:42,300 --> 00:13:44,070
+clothes that and.
+
+166
+00:13:46,530 --> 00:13:54,060
+And inside, I just put in table rows and because I know I'm going to be updating this schedule in real
+
+167
+00:13:54,060 --> 00:14:01,500
+time, I think it might be appropriate to give this some kind of ID so I can find individual entries
+
+168
+00:14:01,680 --> 00:14:02,550
+as required.
+
+169
+00:14:02,550 --> 00:14:07,920
+And I think the easiest way to do that is just to say ID equals and call it something I'm not using
+
+170
+00:14:07,920 --> 00:14:08,580
+anywhere else.
+
+171
+00:14:08,730 --> 00:14:13,680
+Schedule Dasch and then I'll just pass an ID.
+
+172
+00:14:15,240 --> 00:14:17,370
+So each row will have a unique idea.
+
+173
+00:14:17,640 --> 00:14:23,430
+So that's my tier and I'm going to have one, two, three, four, five entries in this table or five
+
+174
+00:14:23,430 --> 00:14:23,930
+TDs.
+
+175
+00:14:24,210 --> 00:14:31,140
+So the first one is just the host TD and that's just a host because that's what we called it in the
+
+176
+00:14:32,010 --> 00:14:32,490
+model.
+
+177
+00:14:33,420 --> 00:14:36,780
+The second one is the service, which I just called a service.
+
+178
+00:14:36,810 --> 00:14:37,680
+I called it service.
+
+179
+00:14:37,680 --> 00:14:40,250
+So I use service here as he Vicki.
+
+180
+00:14:40,320 --> 00:14:40,980
+That's correct.
+
+181
+00:14:44,400 --> 00:14:51,810
+The third one will be the schedule, and that's called schedule text in our model.
+
+182
+00:14:58,540 --> 00:15:01,900
+Next comes our previous run.
+
+183
+00:15:03,270 --> 00:15:08,460
+So, of course, we need to make a decision here and we need to use that date after year one function
+
+184
+00:15:08,460 --> 00:15:13,380
+we used earlier to allow us to determine whether or not to display a date here so we can just put an
+
+185
+00:15:13,380 --> 00:15:18,330
+if statement if schedule after year one.
+
+186
+00:15:19,500 --> 00:15:21,990
+And I just passing the value from my slice.
+
+187
+00:15:23,050 --> 00:15:27,490
+Last run from Hose Services H.S..
+
+188
+00:15:29,350 --> 00:15:33,760
+If that's true, then do something else.
+
+189
+00:15:36,230 --> 00:15:37,070
+Do something else.
+
+190
+00:15:38,400 --> 00:15:38,970
+And an end.
+
+191
+00:15:41,190 --> 00:15:49,830
+So in here, if the data populated in this member of the slice is actually after the first day of the
+
+192
+00:15:49,830 --> 00:15:58,140
+first month of the year one, then just print it out date from layout, we'll use our our date from
+
+193
+00:15:58,140 --> 00:16:07,650
+layout function and we want to pass it last run from HS and we want to pass a format string which will
+
+194
+00:16:07,650 --> 00:16:16,890
+use two thousand six zero one zero two and then three zero four zero five p.m. just to make it readable
+
+195
+00:16:16,890 --> 00:16:22,340
+for humans and closer parentheses and close our double quotes.
+
+196
+00:16:22,890 --> 00:16:24,900
+Otherwise, I'll just put in spending.
+
+197
+00:16:28,740 --> 00:16:33,510
+And the last one is pretty much the same thing, it just has a different value so I can copy all of
+
+198
+00:16:33,510 --> 00:16:33,960
+this.
+
+199
+00:16:35,920 --> 00:16:45,850
+Pasted in here and change last run from HFS to dot entry and entry has a value bought next, and that's
+
+200
+00:16:45,850 --> 00:16:51,380
+not coming from a model that we defined that actually comes right from the cron package.
+
+201
+00:16:51,400 --> 00:16:55,540
+So we'll copy this entry next.
+
+202
+00:16:56,920 --> 00:16:58,060
+Replace it in here.
+
+203
+00:16:59,820 --> 00:17:01,140
+And for bad things, a little better.
+
+204
+00:17:02,570 --> 00:17:07,860
+OK, so this should actually work, so if I start my application and start my application, let's see
+
+205
+00:17:07,860 --> 00:17:08,550
+what we got wrong.
+
+206
+00:17:10,830 --> 00:17:16,800
+And I'll switch to my Web browser and make sure the schedule is running, it is or the monitoring is
+
+207
+00:17:16,800 --> 00:17:18,520
+running and I'll just go to this page.
+
+208
+00:17:18,570 --> 00:17:23,670
+OK, so I do have a schedule after year one is not available in current.
+
+209
+00:17:23,680 --> 00:17:24,890
+So that's line 45.
+
+210
+00:17:24,900 --> 00:17:26,110
+So I do have a typo somewhere.
+
+211
+00:17:26,250 --> 00:17:30,990
+Let's find that line 45 right here.
+
+212
+00:17:31,140 --> 00:17:37,260
+If schedule after year one, it's actually date after year one.
+
+213
+00:17:39,180 --> 00:17:40,080
+Wrong function name.
+
+214
+00:17:41,670 --> 00:17:47,010
+And the same thing here, so I shouldn't have to restart my application because we're in development
+
+215
+00:17:47,010 --> 00:17:49,620
+mode and we'll load it again and there it is.
+
+216
+00:17:49,740 --> 00:17:51,900
+That works exactly as I want.
+
+217
+00:17:52,470 --> 00:17:58,020
+So the next step is actually to update this schedule page in real time and we have to go back to WebSocket
+
+218
+00:17:58,080 --> 00:17:58,910
+to make that happen.
+
+219
+00:17:59,160 --> 00:18:04,530
+But now that we have this table and it has the appropriate I.D. on the row and let's make sure it does
+
+220
+00:18:04,530 --> 00:18:08,050
+on the schedule table, do I have an idea?
+
+221
+00:18:08,070 --> 00:18:10,050
+Yes, I gave it an idea of schedule table.
+
+222
+00:18:10,080 --> 00:18:15,570
+Now we have this all set up so we can start writing the logic necessary to update that page in real
+
+223
+00:18:15,570 --> 00:18:15,960
+time.
+
+224
+00:18:16,110 --> 00:18:18,320
+And we'll get started on that in the next election.

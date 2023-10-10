@@ -1,0 +1,511 @@
+1
+00:00:00,740 --> 00:00:06,320
+So what I want to do now is I want to have this toggle actually do more than just display a confirmation
+
+2
+00:00:06,320 --> 00:00:08,050
+dialogue and write to the console.
+
+3
+00:00:08,660 --> 00:00:13,010
+So I'm going to go back to my JavaScript and I'm going to create two new functions and I'm going to
+
+4
+00:00:13,010 --> 00:00:17,450
+do them outside of this document at event listener Dom Content loaded.
+
+5
+00:00:17,600 --> 00:00:23,900
+OK, so down here, just before my closing script tag, I'll write one function called function update
+
+6
+00:00:24,230 --> 00:00:29,180
+system pref and it will take two arguments.
+
+7
+00:00:29,330 --> 00:00:34,520
+The preference name, which preference do I want to update and the preference value, what do I want
+
+8
+00:00:34,520 --> 00:00:35,390
+to update it to?
+
+9
+00:00:35,420 --> 00:00:37,380
+And we'll do the logic for that in a bit.
+
+10
+00:00:38,120 --> 00:00:42,020
+The second function I want is going to be called toggle
+
+11
+00:00:44,300 --> 00:00:45,260
+monitoring.
+
+12
+00:00:47,150 --> 00:00:50,390
+And it will take one parameter, which will be a boolean enabled.
+
+13
+00:00:51,590 --> 00:00:58,340
+OK, so those are the two functions I'm going to use and I'm going to call them both right here.
+
+14
+00:00:58,700 --> 00:01:04,910
+So in this callback, if they actually are going to turn monitoring off, I will say update system pref
+
+15
+00:01:04,970 --> 00:01:08,410
+and I'll pass in the name of the value that's in my preferences table.
+
+16
+00:01:08,420 --> 00:01:13,690
+It's monitoring underscore Leive and I want it to be set to zero.
+
+17
+00:01:13,700 --> 00:01:14,780
+In other words, turn it off.
+
+18
+00:01:15,350 --> 00:01:21,590
+And then I'm also going to say toggle monitoring and I'll pass it false.
+
+19
+00:01:21,830 --> 00:01:23,660
+I want monitoring to be off.
+
+20
+00:01:23,760 --> 00:01:29,540
+OK, and down here, when monitoring is on again, I want to do the same thing.
+
+21
+00:01:29,540 --> 00:01:31,280
+I can copy both of these lines.
+
+22
+00:01:34,970 --> 00:01:43,190
+And paste them in here and I'll say monitoring live is such a one and Torgau monitoring true, I want
+
+23
+00:01:43,190 --> 00:01:46,580
+it to be set to true actually that's never my mind.
+
+24
+00:01:46,580 --> 00:01:50,840
+With booleans, this shows you zero and one which actually turns to the same actual value.
+
+25
+00:01:51,650 --> 00:01:54,390
+OK, so those will call the necessary functions.
+
+26
+00:01:54,410 --> 00:01:56,000
+Now let's get started with this one.
+
+27
+00:01:56,000 --> 00:01:57,680
+Update the system preferences.
+
+28
+00:01:57,920 --> 00:02:00,020
+So there's a bunch of ways I could do this.
+
+29
+00:02:00,020 --> 00:02:04,190
+I could use a fetch, I could use a form data with an Ajax response type.
+
+30
+00:02:04,220 --> 00:02:04,700
+Let's do that.
+
+31
+00:02:04,700 --> 00:02:05,990
+I haven't done one of those in a while.
+
+32
+00:02:06,230 --> 00:02:12,620
+So let's create a new form data variable that formed it equal new form data.
+
+33
+00:02:14,480 --> 00:02:19,760
+Try that again, form data and we'll spend some values to it.
+
+34
+00:02:19,770 --> 00:02:23,480
+So we'll say form data append.
+
+35
+00:02:25,240 --> 00:02:33,640
+And I'll append a name like this, and that will be prev name and I'll duplicate that and changes to
+
+36
+00:02:33,960 --> 00:02:37,450
+press value and pass a press value.
+
+37
+00:02:39,160 --> 00:02:49,600
+And because I'm using CSF protection, I also need to form data, append RF token, and the value of
+
+38
+00:02:49,600 --> 00:02:50,470
+that is
+
+39
+00:02:54,670 --> 00:02:55,960
+in parentheses.
+
+40
+00:02:56,500 --> 00:03:03,160
+Dots are RF token, not parentheses in quotes and double curly braces.
+
+41
+00:03:03,700 --> 00:03:08,770
+So those are the three values I want to pass and then I'll create a new XML HDP request.
+
+42
+00:03:08,770 --> 00:03:11,890
+So I'll say let Ajax equal.
+
+43
+00:03:13,110 --> 00:03:22,350
+New XML htp request and my response type, I'll assume I'm going to get Jason back from the server.
+
+44
+00:03:22,350 --> 00:03:25,740
+So Ajax response type.
+
+45
+00:03:29,000 --> 00:03:37,250
+Equals Jason, and I'm going to now post to a specific you are so I have to make the all up and then
+
+46
+00:03:37,250 --> 00:03:38,390
+add it to our roots file.
+
+47
+00:03:38,870 --> 00:03:45,260
+So Ajax door open and we are going to open a post request.
+
+48
+00:03:47,140 --> 00:03:52,480
+Two, and let's make it slash admin slash and let's look at our roots and see what we have in there.
+
+49
+00:03:53,670 --> 00:04:03,090
+So roots in the admin section, anytime I call Ajax, I'm putting Ajax as a second parameter.
+
+50
+00:04:03,100 --> 00:04:12,930
+So let's just add a new thing up here called preferences and we'll put in mux post and we'll put in
+
+51
+00:04:12,930 --> 00:04:13,320
+slash.
+
+52
+00:04:13,410 --> 00:04:19,770
+It'll be slash admin slash preference slash Ajax and.
+
+53
+00:04:21,340 --> 00:04:24,640
+Say, set system set a system.
+
+54
+00:04:26,450 --> 00:04:34,130
+Pref and that will go through Handler's repo set system, prev, which doesn't exist yet, but we'll
+
+55
+00:04:34,130 --> 00:04:34,820
+get to that in a minute.
+
+56
+00:04:35,180 --> 00:04:38,450
+So this is my URL and I have to put a slash admin before that.
+
+57
+00:04:38,720 --> 00:04:45,340
+So I'll go back to my layout or do my JavaScript slash admin slash, get rid of the extra slash.
+
+58
+00:04:46,160 --> 00:04:47,300
+So we're going to post to that.
+
+59
+00:04:47,300 --> 00:04:50,410
+You are up and we're going to send the form data.
+
+60
+00:04:50,930 --> 00:04:53,840
+So Ajax dot send form data.
+
+61
+00:04:56,440 --> 00:05:05,050
+Once that happens, we want to listen to the already state change of this HDP request, so Ajax's on
+
+62
+00:05:05,890 --> 00:05:12,610
+ready state change are a there are already state change is equal to a function.
+
+63
+00:05:14,080 --> 00:05:17,350
+And we want to say if Ajax Dot.
+
+64
+00:05:18,480 --> 00:05:19,230
+Ready, St..
+
+65
+00:05:22,780 --> 00:05:31,180
+Is equal to exactly for hour, our request is finish, we'll get a response, let resp equal to Ajax's
+
+66
+00:05:31,340 --> 00:05:31,990
+response.
+
+67
+00:05:36,660 --> 00:05:38,880
+And we'll say, if not resp.
+
+68
+00:05:39,710 --> 00:05:45,990
+OK, I'm going to assume we're going to be passing back in OK variable as part of our Jason will say
+
+69
+00:05:46,020 --> 00:05:47,700
+error alert.
+
+70
+00:05:50,060 --> 00:05:56,700
+Errors and we'll just pass whatever the error is, so resprout message.
+
+71
+00:05:57,860 --> 00:06:00,580
+So in my JSON response, I'm going to have two possible things.
+
+72
+00:06:00,590 --> 00:06:01,970
+There are two things in there.
+
+73
+00:06:02,180 --> 00:06:08,240
+At least I will have my OK value, which is set to true if everything went well and my message, which
+
+74
+00:06:08,240 --> 00:06:10,910
+will be populated with an error message if something went wrong.
+
+75
+00:06:10,940 --> 00:06:14,510
+OK, so there is our first one that will update the system.
+
+76
+00:06:14,960 --> 00:06:19,400
+Now let's go back to our roots file and see what we call that handler set system.
+
+77
+00:06:20,630 --> 00:06:23,060
+So we need to create a new handler set system.
+
+78
+00:06:23,360 --> 00:06:24,170
+So let's do that.
+
+79
+00:06:25,780 --> 00:06:31,120
+We'll go to our handlers, which are right up here and at the very bottom, I'll create a new function
+
+80
+00:06:33,400 --> 00:06:40,120
+thunk and it will have repo with the receiver of DB Repo this name, and because it's a handler and
+
+81
+00:06:40,120 --> 00:06:46,180
+has a W, which is an HTP response writer and R, which is a pointer to an update request.
+
+82
+00:06:46,990 --> 00:06:49,590
+OK, so that should make the error and the roots go away.
+
+83
+00:06:49,690 --> 00:06:50,440
+And it does.
+
+84
+00:06:50,860 --> 00:06:55,420
+Let's just log, let's just create some JSON and send it back and then we'll make sure everything is
+
+85
+00:06:55,420 --> 00:06:56,460
+wired up correctly.
+
+86
+00:06:56,950 --> 00:06:59,350
+So I already have I believe, JSON response.
+
+87
+00:06:59,350 --> 00:07:02,380
+Let me make sure Jason resp.
+
+88
+00:07:03,070 --> 00:07:04,150
+No I don't have one in there.
+
+89
+00:07:04,150 --> 00:07:05,410
+Maybe some perform checks.
+
+90
+00:07:06,730 --> 00:07:07,630
+Jason resp.
+
+91
+00:07:07,630 --> 00:07:09,940
+Yeah, I can use this type because that has everything.
+
+92
+00:07:09,940 --> 00:07:11,440
+I need it as an OK and a message.
+
+93
+00:07:11,950 --> 00:07:17,460
+So let's go back to our handlers and just create and send back an actual value.
+
+94
+00:07:17,470 --> 00:07:25,750
+So we'll say var resp is of type Jason Recip and we'll say RESPA.
+
+95
+00:07:26,060 --> 00:07:26,520
+OK,
+
+96
+00:07:29,530 --> 00:07:35,110
+try that again with the capital of OK equals true and respect message.
+
+97
+00:07:36,570 --> 00:07:37,380
+Is equal to nothing.
+
+98
+00:07:37,560 --> 00:07:39,100
+I don't have to do what I'm going to do it anyway.
+
+99
+00:07:39,930 --> 00:07:45,930
+Now, will marshall that to a variable called out and I'll ignore the error is assign the value of Jason
+
+100
+00:07:46,140 --> 00:07:47,190
+Marshall intent.
+
+101
+00:07:47,970 --> 00:07:54,420
+And I want to Marshall resp and I'm going to get no prefix and I'll invent it with the few spaces.
+
+102
+00:07:54,480 --> 00:08:02,100
+OK, then double header set will set it to application Jason
+
+103
+00:08:05,490 --> 00:08:08,550
+and we'll just write that to the what do we have here.
+
+104
+00:08:09,610 --> 00:08:11,770
+Not enough arguments set requires.
+
+105
+00:08:12,920 --> 00:08:21,800
+The key and the value content type, like any more coffee, and we'll just write that to the out so
+
+106
+00:08:21,820 --> 00:08:23,360
+w dot, right.
+
+107
+00:08:24,640 --> 00:08:27,670
+And we're going to right out and I should do it.
+
+108
+00:08:28,270 --> 00:08:30,280
+OK, so this should all be hooked up properly.
+
+109
+00:08:30,280 --> 00:08:31,770
+So let's stop the application.
+
+110
+00:08:31,870 --> 00:08:33,070
+Start the application.
+
+111
+00:08:35,600 --> 00:08:40,850
+And go look at our jails and see which ones actually making this call, so we're calling update system
+
+112
+00:08:41,330 --> 00:08:43,490
+on either turning it on or off.
+
+113
+00:08:43,520 --> 00:08:45,680
+OK, so let's just make sure it's all wired up correctly.
+
+114
+00:08:46,850 --> 00:08:56,220
+Reload the page here, the JavaScript console, look at the network and watch for XIKAR, for example,
+
+115
+00:08:56,220 --> 00:08:57,560
+or AJAX requests.
+
+116
+00:08:57,980 --> 00:09:03,740
+So should be able to toggle this off and say, OK, and it made a request and it gave me a status of
+
+117
+00:09:03,740 --> 00:09:04,340
+two hundred.
+
+118
+00:09:05,000 --> 00:09:08,840
+And the response is exactly what I want it true and a message.
+
+119
+00:09:08,840 --> 00:09:14,170
+And if I turn it back on so I'll clear this, turn it back on, I should get exactly the same thing.
+
+120
+00:09:14,780 --> 00:09:16,340
+And it looks like I did.
+
+121
+00:09:16,370 --> 00:09:16,760
+I did.
+
+122
+00:09:16,790 --> 00:09:17,980
+So that's wired up correctly.
+
+123
+00:09:18,170 --> 00:09:18,670
+Perfect.
+
+124
+00:09:19,580 --> 00:09:26,360
+So the next step is to actually go back to this handler and not just hard code a response, but to actually
+
+125
+00:09:26,360 --> 00:09:32,480
+change the value for the system, preference in the database and send back the correct response.
+
+126
+00:09:32,490 --> 00:09:36,380
+So, OK, with no message of everything worked or false.
+
+127
+00:09:36,770 --> 00:09:41,570
+OK, is that default with some error message if things failed and we'll take care of that in the next
+
+128
+00:09:41,570 --> 00:09:42,020
+lecture.

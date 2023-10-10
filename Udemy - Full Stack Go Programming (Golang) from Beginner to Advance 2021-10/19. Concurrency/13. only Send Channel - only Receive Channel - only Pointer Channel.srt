@@ -1,0 +1,291 @@
+1
+00:00:12,650 --> 00:00:17,540
+Hello and welcome to the and programming language course in this session.
+
+2
+00:00:17,570 --> 00:00:20,870
+We want to talk about the others concurrency concept.
+
+3
+00:00:24,000 --> 00:00:32,670
+Only send China signature of Sergeant Sergeant Shannon, to which only you can send will be like below
+
+4
+00:00:32,670 --> 00:00:35,730
+when passed to a function as an argument.
+
+5
+00:00:36,240 --> 00:00:45,480
+Now let's go to the school for a grant to illustrate only sent China first create a function that accept
+
+6
+00:00:45,480 --> 00:00:48,960
+our government as a channel to which only you can send.
+
+7
+00:00:51,090 --> 00:01:00,060
+So we write foreign trusts set a variable like C-H.
+
+8
+00:01:00,510 --> 00:01:06,090
+By the time Chan Chan, an operator and eight.
+
+9
+00:01:09,440 --> 00:01:15,350
+And set a value through a channel, for example, search channel operator to.
+
+10
+00:01:16,550 --> 00:01:22,160
+Now go to main function and create a channel and pass it to a process function.
+
+11
+00:01:23,750 --> 00:01:33,620
+So define the variable like C-H calling equals and calling may function by the time channel end.
+
+12
+00:01:34,130 --> 00:01:40,450
+And, for example, the Triassic hand argument now calling process and set channels.
+
+13
+00:01:40,460 --> 00:01:50,000
+Argument Process said See us as arguments go to the next line and display M.A.S.H.
+
+14
+00:01:51,260 --> 00:01:51,620
+He
+
+15
+00:01:54,560 --> 00:01:59,390
+search the format they call, save the project and execute the program.
+
+16
+00:02:00,410 --> 00:02:03,130
+Go from dot.
+
+17
+00:02:03,140 --> 00:02:05,030
+Righteousness may not go.
+
+18
+00:02:07,490 --> 00:02:11,960
+Now we can see the output, we could send the value through a channel.
+
+19
+00:02:12,540 --> 00:02:19,910
+Now given to receive data from channel, so define a variable in process function and get channel value.
+
+20
+00:02:22,310 --> 00:02:27,200
+Value equals channel operator and search.
+
+21
+00:02:29,450 --> 00:02:32,000
+Reformat the code and see the project.
+
+22
+00:02:32,840 --> 00:02:36,230
+So we see then trying to receive data from a channel.
+
+23
+00:02:36,470 --> 00:02:40,820
+It has an arrow, solve the armistice line and execute again.
+
+24
+00:02:44,150 --> 00:02:46,400
+Now we can see the value of channel.
+
+25
+00:02:46,880 --> 00:02:53,510
+We could send the value to a channel and could not receive its value in a goal routine because the function
+
+26
+00:02:53,510 --> 00:03:01,100
+just accept arguement as a channel to which only send data, go to the slides and continue.
+
+27
+00:03:04,400 --> 00:03:13,040
+Only receive China Sea nature of this sorted channels from peace, you can only receive data will be
+
+28
+00:03:13,040 --> 00:03:17,420
+like below when passed to a function as an unit.
+
+29
+00:03:18,450 --> 00:03:26,130
+Now, let's go to this school curriculum to illustrate only receive China first year, the last quote
+
+30
+00:03:28,890 --> 00:03:34,620
+create a function that accept arguement as a channel to which only you can receive.
+
+31
+00:03:36,800 --> 00:03:47,690
+So we ride for process defining the value of a light switch channel operator channel by the time we.
+
+32
+00:03:50,790 --> 00:04:01,820
+Define a variable like value call equals channel operator, search and display the value FP
+
+33
+00:04:05,190 --> 00:04:05,670
+right
+
+34
+00:04:09,030 --> 00:04:14,250
+now, go to main function, create a channel and pass it to process function.
+
+35
+00:04:16,920 --> 00:04:25,680
+So define the variable like search call and equals calling make function channel by the time end and
+
+36
+00:04:25,920 --> 00:04:34,790
+the for second or unit, and send a value to create a channel search channel operator.
+
+37
+00:04:34,800 --> 00:04:35,430
+For example.
+
+38
+00:04:35,430 --> 00:04:46,370
+10 value now calling process and search channels argument to each go process and channel as argument.
+
+39
+00:04:46,380 --> 00:04:48,720
+Go to the next line and display.
+
+40
+00:04:48,840 --> 00:04:50,700
+Create a channel FP.
+
+41
+00:04:54,420 --> 00:05:00,850
+Can operate or see its reformat, they could save the project and execute the program.
+
+42
+00:05:03,250 --> 00:05:07,200
+Now we can see the output, we could receive the value to a channel.
+
+43
+00:05:07,720 --> 00:05:13,030
+But we want to send data to China, so write this code in process function.
+
+44
+00:05:16,570 --> 00:05:19,660
+See its channel operator.
+
+45
+00:05:20,950 --> 00:05:21,550
+50.
+
+46
+00:05:23,290 --> 00:05:27,040
+Even trying to send data to such a end will give it.
+
+47
+00:05:27,520 --> 00:05:31,120
+So, I mean, to design and execute programming again.
+
+48
+00:05:31,600 --> 00:05:38,770
+We could receive the value of a channel and could not send its value in a go routine because the function
+
+49
+00:05:38,770 --> 00:05:46,570
+just acts arguement as a channel to which only receive data, go to the slides and continue.
+
+50
+00:05:49,770 --> 00:05:58,020
+Shannon Poynter, this way of passing your channel would only make sense if you would want to modify
+
+51
+00:05:58,020 --> 00:05:58,530
+the channel.
+
+52
+00:05:59,220 --> 00:06:06,210
+This is very uncommon and not a profitable way to use signature off such a channel, which is pass as
+
+53
+00:06:06,210 --> 00:06:06,870
+a pointer.
+
+54
+00:06:07,410 --> 00:06:14,430
+Now let's go to your school program on to illustrate Channel Point to her first career the last quote.
+
+55
+00:06:20,000 --> 00:06:23,990
+Define a function that accept arguement as a channel pointer.
+
+56
+00:06:25,880 --> 00:06:33,110
+So you right from a process, set a variable like C age.
+
+57
+00:06:33,230 --> 00:06:45,740
+By the time a pointer changed, hands send the value to a channel pointer asterisk, see its channel
+
+58
+00:06:45,770 --> 00:06:51,620
+operator and send the value like to receive data from a channel pointer.
+
+59
+00:06:52,100 --> 00:07:00,830
+First, define the variable light is calling equals channel operator and asterisk C-H
+
+60
+00:07:03,620 --> 00:07:17,370
+and sits nil value to channel pointer asterisk search equals need now display the value of Channel FP.
+
+61
+00:07:19,240 --> 00:07:19,560
+Yes.
+
+62
+00:07:21,260 --> 00:07:26,270
+Now go to main function to create a chanin and positive process function.
+
+63
+00:07:27,560 --> 00:07:30,380
+Define the variable not see as column equals.
+
+64
+00:07:30,380 --> 00:07:40,730
+Make function by the time in and three a second argument calling process function and set arguments
+
+65
+00:07:40,730 --> 00:07:43,340
+as a channel pointer process.
+
+66
+00:07:45,250 --> 00:07:56,530
+And sit for some serious barrier business as arguments to eat this that H.A. saw you right, FP see
+
+67
+00:07:56,620 --> 00:08:02,560
+its reform at, they could save the projects and execute the program.
+
+68
+00:08:02,770 --> 00:08:05,130
+Go round the back.
+
+69
+00:08:05,260 --> 00:08:06,760
+Bush made that call.
+
+70
+00:08:09,970 --> 00:08:12,100
+Now we can see the output.
+
+71
+00:08:12,460 --> 00:08:19,340
+We could send and receive data to channel by Poynter in order not to prolong the time of decision.
+
+72
+00:08:19,360 --> 00:08:23,170
+We will finish it and we will continue the content in the next session.
+
+73
+00:08:23,350 --> 00:08:23,890
+Goodbye.

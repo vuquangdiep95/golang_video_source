@@ -1,0 +1,116 @@
+1
+00:00:00,820 --> 00:00:05,980
+So over the next few lectures, what I want to do is to implement some of the functionality, not all
+
+2
+00:00:05,980 --> 00:00:10,240
+of it, but some of the functionality that you see here in Laravel Dusk.
+
+3
+00:00:10,780 --> 00:00:16,239
+And this is, of course, testing using a browser rather than you doing it yourself with a web browser,
+
+4
+00:00:16,239 --> 00:00:21,380
+it automates and starts up a browser in the background and runs whatever test you want.
+
+5
+00:00:21,430 --> 00:00:29,050
+And the part I want to focus on right now is just grabbing a screenshot of the page as it exists at
+
+6
+00:00:29,050 --> 00:00:30,580
+some point during a test.
+
+7
+00:00:30,940 --> 00:00:36,370
+Normally, of course, when something goes wrong and you want to look at what the browser sees when
+
+8
+00:00:36,370 --> 00:00:40,050
+an error takes place, so it was a bunch of ways we can do this.
+
+9
+00:00:40,060 --> 00:00:46,310
+There are several packages that actually drive web browsers in the background available in the go world.
+
+10
+00:00:46,330 --> 00:00:48,640
+But the one I want to use is this one.
+
+11
+00:00:49,270 --> 00:00:52,560
+It's go rod, goldenrod slash run.
+
+12
+00:00:53,260 --> 00:00:56,920
+And what I like about this is that it actually works really well.
+
+13
+00:00:57,220 --> 00:00:59,820
+There is another package out there called Chrome DPI.
+
+14
+00:00:59,830 --> 00:01:00,460
+I think it is.
+
+15
+00:01:00,820 --> 00:01:04,870
+I've never been able to get that one to work properly, but that could just be because it wasn't trying
+
+16
+00:01:04,870 --> 00:01:05,590
+hard enough to.
+
+17
+00:01:06,010 --> 00:01:07,890
+In any case, this one works really well.
+
+18
+00:01:07,900 --> 00:01:13,330
+It came out last year and it's actively developed and it works really well.
+
+19
+00:01:13,570 --> 00:01:19,270
+So this is the GitHub repository, and there's a link to this in the course resources for this lecture.
+
+20
+00:01:20,020 --> 00:01:24,340
+And this is the documentation, and there's a link to that in the course of resources for this lecture
+
+21
+00:01:24,340 --> 00:01:24,790
+as well.
+
+22
+00:01:25,210 --> 00:01:26,250
+But let's go install it.
+
+23
+00:01:26,260 --> 00:01:34,570
+And so I'll go back to my idea and I'll open a terminal window and I'll go up to levels and then into
+
+24
+00:01:34,570 --> 00:01:41,290
+this hilarious package because I want this to be important in this hilarious package and not in my app.
+
+25
+00:01:41,560 --> 00:01:48,940
+And I'll type go get and paste in the appropriate URL, GitHub dot com slash and go dash run slash run.
+
+26
+00:01:49,780 --> 00:01:50,500
+And I'll go get it.
+
+27
+00:01:51,960 --> 00:01:56,250
+OK, so it's installed it for us, and that means we can actually use it.
+
+28
+00:01:57,090 --> 00:02:03,750
+So to get started in the next lecture, we'll create a new go file in this hilarious project that just
+
+29
+00:02:03,750 --> 00:02:06,210
+grabs a screenshot and we'll give it a try.
+

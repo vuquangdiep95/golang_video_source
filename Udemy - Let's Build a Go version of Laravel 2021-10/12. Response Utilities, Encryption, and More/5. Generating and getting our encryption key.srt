@@ -1,0 +1,227 @@
+1
+00:00:01,270 --> 00:00:05,590
+So we have our encryption functions written, but we can't use them until we have an encryption key.
+
+2
+00:00:06,070 --> 00:00:09,860
+And right now, I'm looking at the dot on file in my app.
+
+3
+00:00:09,910 --> 00:00:14,230
+And if you scroll to the very bottom of that file, you see there's a place to put that encryption key.
+
+4
+00:00:14,590 --> 00:00:19,630
+And it also has a comment that says it must be exactly 32 characters long.
+
+5
+00:00:20,440 --> 00:00:21,550
+Now, that's pretty straightforward.
+
+6
+00:00:21,580 --> 00:00:27,400
+We already have a function that generates a random string of characters of in length.
+
+7
+00:00:27,550 --> 00:00:32,890
+So we could just call that function with the number 32 and put it in there, or we could just manually
+
+8
+00:00:32,890 --> 00:00:34,750
+type out 32 random characters.
+
+9
+00:00:35,680 --> 00:00:42,320
+But I think the easiest thing to do is to switch back to the celebrity's project and open up the CMG
+
+10
+00:00:42,340 --> 00:00:46,030
+folder, then the Seelye folder and go to the main function.
+
+11
+00:00:46,600 --> 00:00:54,430
+And what we'll do, we'll add a command in our house helper that generates that string of 32 characters
+
+12
+00:00:54,430 --> 00:00:58,960
+for us, and we'll use it later on when we actually implement the new functionality.
+
+13
+00:00:58,960 --> 00:01:06,310
+When we build a new application using this binary and we can pre-populated a dot on file with a 30 to
+
+14
+00:01:06,820 --> 00:01:09,070
+32 character long string of random characters.
+
+15
+00:01:09,160 --> 00:01:11,080
+So it means we'll do that here right now and get started.
+
+16
+00:01:12,100 --> 00:01:14,920
+So in the main function of mean, don't go.
+
+17
+00:01:15,040 --> 00:01:19,150
+I'm going to go to do make and it's a very top here.
+
+18
+00:01:19,510 --> 00:01:30,610
+I'll just say case key like that, and we'll make this return a 32 bit random string or 32 character
+
+19
+00:01:30,610 --> 00:01:32,440
+long random string of bits.
+
+20
+00:01:32,680 --> 00:01:33,700
+That's a totally different thing.
+
+21
+00:01:34,570 --> 00:01:41,860
+So I'll declare a variable R&amp;D for Ferrand, and I'll just call Cel Dot random string and hand it thirty
+
+22
+00:01:41,860 --> 00:01:44,170
+two and then I'll print that out.
+
+23
+00:01:45,280 --> 00:01:47,260
+Color Dot Yellow
+
+24
+00:01:50,830 --> 00:02:02,320
+32 character encryption key and put in a percent s and we'll just put R&amp;D here.
+
+25
+00:02:04,780 --> 00:02:09,430
+Now, it didn't import color for me as long to try that again, color yellow.
+
+26
+00:02:11,430 --> 00:02:20,450
+Well, I'll just go manually, type it in here, and it is GitHub dot com slash f a t h slash color
+
+27
+00:02:22,200 --> 00:02:23,050
+there.
+
+28
+00:02:23,370 --> 00:02:24,030
+I fixed that.
+
+29
+00:02:25,410 --> 00:02:26,810
+And that's all I really have to do for that.
+
+30
+00:02:26,850 --> 00:02:34,800
+So now if I actually start my or open my terminal and type make build seal alive.
+
+31
+00:02:36,190 --> 00:02:41,500
+They should build it and put it over in my app, and I can switch over to my app and open the terminal
+
+32
+00:02:42,340 --> 00:02:46,960
+and clear the screen and type dot slash celebrities make key.
+
+33
+00:02:48,280 --> 00:02:51,290
+And it gives you my three Typekit, so about 30 security keys.
+
+34
+00:02:51,290 --> 00:02:55,300
+So I'll copy that and I'll paste it right here in the door on file.
+
+35
+00:02:56,090 --> 00:03:00,760
+Now I have a means of reading that information when I start my application.
+
+36
+00:03:01,150 --> 00:03:04,990
+So the question, of course, is where do I actually get this encryption key?
+
+37
+00:03:05,050 --> 00:03:05,200
+What?
+
+38
+00:03:05,200 --> 00:03:06,550
+We don't do it in my app.
+
+39
+00:03:06,580 --> 00:03:11,320
+If you recall, when we started our application, let's just find the main go here.
+
+40
+00:03:11,950 --> 00:03:15,560
+So mean Dongo, that actually calls the myth.
+
+41
+00:03:15,580 --> 00:03:21,070
+First thing the main function does is it calls in it application for if we go over here, that actually
+
+42
+00:03:21,070 --> 00:03:26,290
+here on Line 21, after we get the working path and after we declare a cell variable of type celerity
+
+43
+00:03:26,380 --> 00:03:29,560
+celebrities we call celebrities don't new.
+
+44
+00:03:30,010 --> 00:03:38,650
+So let's switch over to celebrities and let's hydro terminal and open celebrities don't go and find
+
+45
+00:03:38,650 --> 00:03:39,340
+that new function.
+
+46
+00:03:41,030 --> 00:03:44,270
+So this is the new function right here.
+
+47
+00:03:44,480 --> 00:03:49,370
+Now, one of the things it does, of course, is it populates values, insularity.
+
+48
+00:03:49,880 --> 00:03:56,660
+What I'm going to do is just out of field here, so I'll add a field right here called encryption key
+
+49
+00:03:58,160 --> 00:03:59,030
+of type string
+
+50
+00:04:02,840 --> 00:04:06,020
+and say that format it and down in the new function.
+
+51
+00:04:08,600 --> 00:04:16,280
+Say, after I declare the session right here, I can just populate see DOT encryption key is equal to
+
+52
+00:04:16,670 --> 00:04:23,270
+OS arms or get on, and I'm looking for cheap because this was called in the dot on file.
+
+53
+00:04:23,810 --> 00:04:25,940
+So now I have that encryption key.
+
+54
+00:04:26,900 --> 00:04:33,110
+So of course, now that I have the functions encrypt and decrypt and the type encryption and I have
+
+55
+00:04:33,110 --> 00:04:39,380
+an encryption key in my celebrity's variable, at this point, we should be able to encrypt something
+
+56
+00:04:39,380 --> 00:04:43,310
+and decrypt something on our inner My App application.
+
+57
+00:04:43,910 --> 00:04:46,100
+So we'll try that in the next lecture.

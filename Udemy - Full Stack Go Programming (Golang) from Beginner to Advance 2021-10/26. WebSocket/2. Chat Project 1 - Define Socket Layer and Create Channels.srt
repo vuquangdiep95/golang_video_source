@@ -1,0 +1,303 @@
+1
+00:00:12,260 --> 00:00:18,110
+Hello and welcome to the golden programming language course in the petrol station, we talked about
+
+2
+00:00:18,110 --> 00:00:19,430
+VIPs to get concept.
+
+3
+00:00:20,270 --> 00:00:23,420
+Now it's time to do a project in this session.
+
+4
+00:00:27,200 --> 00:00:33,170
+In this section, we want to implement a simple chat program using bits to get technology.
+
+5
+00:00:34,460 --> 00:00:41,750
+We designed the program in such a way that any client that sends the message to the server and the other
+
+6
+00:00:41,750 --> 00:00:44,060
+clients can see that message.
+
+7
+00:00:45,020 --> 00:00:49,070
+Now let's go to a school program to implement this project.
+
+8
+00:00:51,320 --> 00:00:57,830
+This program consists of three different layers socket, client and server.
+
+9
+00:00:58,700 --> 00:01:06,890
+First, go to Package Explorer and go to the Sazi folder and create a project folder named like Web
+
+10
+00:01:06,950 --> 00:01:13,640
+Sujit with Sujit for this purpose.
+
+11
+00:01:13,880 --> 00:01:16,610
+First, download Let's at package from Go.
+
+12
+00:01:16,610 --> 00:01:17,600
+Let that go.
+
+13
+00:01:18,080 --> 00:01:19,670
+So go to Terminal.
+
+14
+00:01:19,850 --> 00:01:21,590
+Go to the project folder.
+
+15
+00:01:22,940 --> 00:01:23,900
+Let's look at.
+
+16
+00:01:27,840 --> 00:01:36,090
+Now, execute the following comment Go get the you go blank.
+
+17
+00:01:36,480 --> 00:01:39,870
+Dot org slash eats explosion.
+
+18
+00:01:40,350 --> 00:01:43,920
+That's that's that's the secret.
+
+19
+00:01:46,640 --> 00:01:50,000
+OK, installation has completed first.
+
+20
+00:01:50,150 --> 00:01:52,160
+We will implement the circuit layer.
+
+21
+00:01:52,310 --> 00:01:57,770
+So go to Project Folder and create a folder name like circuit.
+
+22
+00:02:02,440 --> 00:02:07,480
+And create a foreign name like socket that go inside its
+
+23
+00:02:10,090 --> 00:02:17,710
+socket that will set the package name package.
+
+24
+00:02:22,780 --> 00:02:23,320
+So it.
+
+25
+00:02:26,890 --> 00:02:32,890
+This file maintains the set of active connections and broadcast messages to the connections.
+
+26
+00:02:33,940 --> 00:02:40,840
+These connections are mapped from a string array of connections creating different rooms.
+
+27
+00:02:41,890 --> 00:02:47,920
+Server sends data to client and client gets data and this serialized it.
+
+28
+00:02:48,310 --> 00:02:55,720
+Then we create a structure that whole channels for communication between client and server and then
+
+29
+00:02:55,720 --> 00:02:58,840
+create run method for run configurations.
+
+30
+00:03:00,070 --> 00:03:06,730
+The communication data between the client and the server in this example is created by Jason.
+
+31
+00:03:07,120 --> 00:03:11,710
+So first, we create a strength for the transmission message.
+
+32
+00:03:12,430 --> 00:03:22,750
+For example, we create a struct name, message, time, message extract.
+
+33
+00:03:24,820 --> 00:03:31,410
+Define the field like subject by the type string and using JSON tag for it.
+
+34
+00:03:31,870 --> 00:03:32,710
+Subject.
+
+35
+00:03:33,910 --> 00:03:37,480
+By the time a string and said Jason.
+
+36
+00:03:37,480 --> 00:03:39,170
+Pack for it, Jason.
+
+37
+00:03:41,340 --> 00:03:46,840
+Column double quotation mark and set value for its object.
+
+38
+00:03:50,600 --> 00:03:57,920
+Now we create a separate channel for each of the actions in the chats, for example, to add a client
+
+39
+00:03:58,070 --> 00:04:01,850
+or delete a client or send the message by a client.
+
+40
+00:04:02,060 --> 00:04:06,110
+We create a separate channel and put them inside, distract.
+
+41
+00:04:07,160 --> 00:04:16,130
+So defining the strike named like can ft tie config extract.
+
+42
+00:04:17,840 --> 00:04:20,300
+Now define global variable.
+
+43
+00:04:20,720 --> 00:04:29,630
+First, clients feel that is the least of all clients, the active clients or open with its clients
+
+44
+00:04:30,650 --> 00:04:36,830
+and type of this client is a map by entering for key man.
+
+45
+00:04:39,310 --> 00:04:50,650
+And key type is strange and vets connection as a value that restores the client connection point of
+
+46
+00:04:51,100 --> 00:04:52,120
+VIPs who get.
+
+47
+00:04:57,750 --> 00:04:58,890
+That connection.
+
+48
+00:05:06,150 --> 00:05:14,230
+Now defined channels for different operations and chat, for example, for at a client, the right defined
+
+49
+00:05:14,260 --> 00:05:26,520
+and variable like register clients and defined their channel channel by the time web socket.
+
+50
+00:05:29,770 --> 00:05:30,910
+That connection,
+
+51
+00:05:34,960 --> 00:05:37,290
+and for him, all the client, be right.
+
+52
+00:05:37,520 --> 00:05:47,410
+Remove client Chan by the time I point out the kids.
+
+53
+00:05:50,960 --> 00:06:01,630
+That connection and for exchange messages, he writes, for example, message data channel.
+
+54
+00:06:03,170 --> 00:06:13,760
+By the time message extract message data is a single channel that is responsible for sending and receiving
+
+55
+00:06:13,760 --> 00:06:15,620
+our message data structure.
+
+56
+00:06:16,400 --> 00:06:24,560
+In order to be able to initialize the created channels, we create a constructor and initialize them,
+
+57
+00:06:24,740 --> 00:06:28,310
+so define the function like named new config.
+
+58
+00:06:31,460 --> 00:06:41,510
+So we write find new config and return type is a pointer of config.
+
+59
+00:06:41,630 --> 00:06:46,820
+Extract pointer our config extract.
+
+60
+00:06:48,740 --> 00:06:54,200
+The job of this function is to give basic information to the config extract.
+
+61
+00:06:54,500 --> 00:07:02,330
+So return a pointer of config, extract and create a map for clients and create channels for other fields.
+
+62
+00:07:02,540 --> 00:07:08,120
+So the right return ampersand config.
+
+63
+00:07:11,540 --> 00:07:16,430
+Now, invoking each conflict, Phyllis, right, then initialized them clients
+
+64
+00:07:19,730 --> 00:07:24,500
+create a map for this field by make function make.
+
+65
+00:07:29,870 --> 00:07:30,490
+My
+
+66
+00:07:34,340 --> 00:07:42,020
+type of key is strong and type of values, --, introvert, secure connection.
+
+67
+00:07:46,620 --> 00:07:51,230
+Pointed out that Richard Nixon.
+
+68
+00:07:58,910 --> 00:08:00,020
+Registered clients
+
+69
+00:08:03,230 --> 00:08:08,720
+create a channel for registered clients and by calling make function, all right, make.
+
+70
+00:08:11,410 --> 00:08:17,230
+Chan and points are a bit to get of conviction and for removal, and
+
+71
+00:08:20,740 --> 00:08:23,350
+again, the calling make function.
+
+72
+00:08:26,140 --> 00:08:30,760
+Make Chan points of work to get conviction and for message data,
+
+73
+00:08:34,000 --> 00:08:38,740
+create a channel for message data from the messages to solve right.
+
+74
+00:08:38,740 --> 00:08:45,520
+Make Chan off message in order not to prolong the time of decision.
+
+75
+00:08:45,700 --> 00:08:49,900
+We will finish it and we will continue the content in the next session.
+
+76
+00:08:50,090 --> 00:08:50,590
+Goodbye.

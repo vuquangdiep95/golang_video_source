@@ -1,0 +1,151 @@
+1
+00:00:13,060 --> 00:00:18,280
+Hello and welcome to the golden programming language course in this session.
+
+2
+00:00:18,310 --> 00:00:21,760
+We want to talk about files and directories concept.
+
+3
+00:00:26,090 --> 00:00:27,740
+Files and directories.
+
+4
+00:00:29,410 --> 00:00:37,240
+The most important package that allows us to manipulate files and directories as entities is the OAS
+
+5
+00:00:37,240 --> 00:00:37,960
+package.
+
+6
+00:00:38,620 --> 00:00:46,480
+The I or package has the I o dot reader interface to reads and transfers data from a source into a stream
+
+7
+00:00:46,480 --> 00:00:47,200
+of bytes.
+
+8
+00:00:48,100 --> 00:00:55,930
+And I ordered rather interface reads data from a provided this stream or by and writes it as output
+
+9
+00:00:55,930 --> 00:00:57,310
+to a target resource.
+
+10
+00:00:58,270 --> 00:00:59,950
+Create and and define.
+
+11
+00:01:01,800 --> 00:01:09,600
+For this purpose, we use the create function of the obvious package, create function, creates or
+
+12
+00:01:09,600 --> 00:01:11,310
+try and chase the name fine.
+
+13
+00:01:11,700 --> 00:01:18,510
+If the phone already exists, it is truncated and if the find does not exist, it is created.
+
+14
+00:01:19,920 --> 00:01:25,160
+Now let's go to this school program to illustrate how to create an empty flight.
+
+15
+00:01:27,240 --> 00:01:44,550
+First, go to Panderer and create a project folder like file and directory and create a fine like making
+
+16
+00:01:44,880 --> 00:01:47,820
+the go create package
+
+17
+00:01:51,150 --> 00:01:53,040
+and create main function.
+
+18
+00:01:56,220 --> 00:01:59,880
+Now we want to create an end defined by create function.
+
+19
+00:02:01,000 --> 00:02:08,920
+Great function takes the fine name as an argument and creates it the retail value of this function is
+
+20
+00:02:08,920 --> 00:02:10,470
+a fine and a rule.
+
+21
+00:02:11,590 --> 00:02:22,480
+So first define two variable like empty five comma e all column equals invoke, create function from
+
+22
+00:02:22,540 --> 00:02:31,960
+OS package or s don't create function and set a name for five for the example.
+
+23
+00:02:32,800 --> 00:02:34,930
+A. P..
+
+24
+00:02:36,280 --> 00:02:43,690
+Now we could create defining current directory named A. And we assign return values to two variables
+
+25
+00:02:43,690 --> 00:02:45,760
+like and define and row.
+
+26
+00:02:46,240 --> 00:02:56,500
+Now we check the printed message for us if the error is not empty, if we are not equals need.
+
+27
+00:02:58,930 --> 00:03:07,710
+In this case, we use the fits all function of the package law that that's on and set the role, the
+
+28
+00:03:07,750 --> 00:03:15,280
+sage and else we use from opinions and formation of large package parts.
+
+29
+00:03:17,520 --> 00:03:22,650
+That means an empty
+
+30
+00:03:26,100 --> 00:03:26,370
+fine.
+
+31
+00:03:27,810 --> 00:03:33,240
+And in the end of main function, we close our file by the close function.
+
+32
+00:03:34,940 --> 00:03:45,470
+And to find the clothes reformative, who saved the project and executed the program first, go to the
+
+33
+00:03:45,470 --> 00:03:46,580
+Crozet followers
+
+34
+00:03:50,780 --> 00:03:52,250
+and run the program on.
+
+35
+00:03:54,940 --> 00:03:59,350
+OK, now we could create an and defined name on the the.
+
+36
+00:04:00,310 --> 00:04:07,780
+And we can see the file created large message in order not to prolong the time of decision, we will
+
+37
+00:04:07,780 --> 00:04:11,380
+finish it and we will continue the content in the next session.
+
+38
+00:04:11,620 --> 00:04:12,160
+Goodbye.

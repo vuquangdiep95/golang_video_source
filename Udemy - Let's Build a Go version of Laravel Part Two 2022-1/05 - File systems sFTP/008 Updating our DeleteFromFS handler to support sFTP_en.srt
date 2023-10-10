@@ -1,0 +1,76 @@
+1
+00:00:01,270 --> 00:00:04,540
+So the last step in this process with her SFB file system.
+
+2
+00:00:04,720 --> 00:00:05,950
+Well, not quite the last step.
+
+3
+00:00:05,950 --> 00:00:08,170
+We have a bit of cleanup to do, but we'll do that in a moment.
+
+4
+00:00:08,710 --> 00:00:14,410
+The last major step is to permit deleting files from the remote as it SFB server.
+
+5
+00:00:14,530 --> 00:00:16,329
+And of course, that's done here in handlers.
+
+6
+00:00:16,329 --> 00:00:21,310
+Don't go in the Maya project in the handler named Delete from.
+
+7
+00:00:22,030 --> 00:00:27,250
+And it probably comes as no surprise that what I'm going to do is copy this case in a switch statement.
+
+8
+00:00:28,540 --> 00:00:31,830
+Paste it right here and change this to S&P.
+
+9
+00:00:32,830 --> 00:00:40,980
+Change the key to s f t p and cast everything to the appropriate data type, which is as FTB File System
+
+10
+00:00:41,260 --> 00:00:42,060
+S&P.
+
+11
+00:00:42,970 --> 00:00:45,750
+And with that one change, I should be able to say make stop.
+
+12
+00:00:46,870 --> 00:00:47,590
+Make start.
+
+13
+00:00:47,830 --> 00:00:49,000
+Wait for it to compile.
+
+14
+00:00:51,030 --> 00:00:59,520
+Switch over to my Web browser list, my SFTP file system, and let's delete, say, SawStop Zip, I
+
+15
+00:00:59,520 --> 00:01:03,090
+click the delete button and delete and it's gone.
+
+16
+00:01:03,180 --> 00:01:04,800
+And that's all there is to it.
+
+17
+00:01:05,519 --> 00:01:08,550
+OK, so S&P is mostly functional.
+
+18
+00:01:08,560 --> 00:01:14,490
+Actually, it's entirely functional, but I do want to do a bit of cleanup in one bit of code, and
+
+19
+00:01:14,490 --> 00:01:17,700
+we'll take care of that last little bit of housekeeping in the next lecture.
+

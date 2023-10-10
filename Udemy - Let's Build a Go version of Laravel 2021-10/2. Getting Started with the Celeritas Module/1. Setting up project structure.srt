@@ -1,0 +1,435 @@
+1
+00:00:01,160 --> 00:00:07,400
+So let's get started setting up our project structure, and right now I have a an empty window in visual
+
+2
+00:00:07,400 --> 00:00:09,890
+studio code open and I have no open folder.
+
+3
+00:00:10,370 --> 00:00:15,440
+So the first thing I want to do is open a folder that's going to hold both my package that will be building
+
+4
+00:00:15,470 --> 00:00:21,110
+and I'm calling mine celebrities and the actual application that uses that package rebuilding building.
+
+5
+00:00:21,110 --> 00:00:27,380
+So I'll go to the explorer and open a folder, and I've already created a folder inside a visual studio
+
+6
+00:00:27,380 --> 00:00:28,980
+projects called Go About.
+
+7
+00:00:29,060 --> 00:00:29,900
+So open that one.
+
+8
+00:00:32,260 --> 00:00:38,080
+And the very first thing I'll do here is open or create a new folder, and I'll have one for my package,
+
+9
+00:00:38,080 --> 00:00:43,540
+which I'll call silver and toss, and I'll have one for the application out there.
+
+10
+00:00:43,540 --> 00:00:48,550
+I want it at the root level inside of this folder, right beside Celebrity's House new folder.
+
+11
+00:00:49,300 --> 00:00:54,790
+And I'll just call this one of my app and the first folder celebrities will hold the package we're going
+
+12
+00:00:54,790 --> 00:00:55,180
+to build.
+
+13
+00:00:55,330 --> 00:00:58,690
+So it will be one that is imported by some other application.
+
+14
+00:00:59,230 --> 00:01:02,230
+And the other application in my case is the one called my app.
+
+15
+00:01:03,130 --> 00:01:08,350
+Now, the first thing I'll do is I'll open the terminal and I will go into the celebrities folder,
+
+16
+00:01:08,830 --> 00:01:09,220
+OK?
+
+17
+00:01:10,720 --> 00:01:17,200
+And inside of that, I'll initialize go modules, go in it, and I'm going to give this a useful repository
+
+18
+00:01:17,200 --> 00:01:17,560
+name.
+
+19
+00:01:17,590 --> 00:01:20,560
+And I suggest you do as well if you don't have an account on GitHub.
+
+20
+00:01:20,800 --> 00:01:25,440
+Then go create one or find your favorite git repository and use that.
+
+21
+00:01:25,510 --> 00:01:29,890
+So the name I'm going to give it is a name that doesn't exist yet on GitHub, but it will.
+
+22
+00:01:29,890 --> 00:01:38,640
+Before I'm done so I'll call mine GitHub dot com slash my username, which is T sa slash celebrities
+
+23
+00:01:39,850 --> 00:01:43,630
+so that initializes go modules for the celebrities package.
+
+24
+00:01:43,930 --> 00:01:48,430
+And of course, I have to do the same thing in my app go mode in it.
+
+25
+00:01:48,640 --> 00:01:51,520
+And this one, it doesn't matter what you call it, so I'll just call it my app.
+
+26
+00:01:52,870 --> 00:01:57,490
+There go modules for now initialized for both of these folders.
+
+27
+00:01:58,390 --> 00:02:05,350
+Of course, the problem is in my app, I want to import GitHub dot com slash t solar slash veritas,
+
+28
+00:02:05,350 --> 00:02:06,430
+which doesn't exist.
+
+29
+00:02:06,490 --> 00:02:09,220
+There's nothing on GitHub with that particular URL.
+
+30
+00:02:09,730 --> 00:02:12,490
+So what I'll do is open my app and open.
+
+31
+00:02:12,490 --> 00:02:14,590
+Go on the Gomaa file for that.
+
+32
+00:02:15,460 --> 00:02:21,220
+And at the bottom of that file, I'll Adeline and I'm going to say replace any time your you get a request
+
+33
+00:02:21,220 --> 00:02:28,870
+to go to this address GitHub dot com slash TESOL, or make sure you spell it right celerity.
+
+34
+00:02:29,190 --> 00:02:31,560
+And also make sure you're not using my URL.
+
+35
+00:02:31,570 --> 00:02:35,840
+Make your own anytime you get a request to get that package instead.
+
+36
+00:02:35,860 --> 00:02:39,790
+Go up one folder and use what you find in the celebrity's folder.
+
+37
+00:02:40,840 --> 00:02:48,040
+Now, any time I make that request, go get that URL, GitHub dot com slash TESOL or slash Solaris house
+
+38
+00:02:48,490 --> 00:02:49,870
+instead of going to GitHub.
+
+39
+00:02:50,110 --> 00:02:52,780
+It'll just take the contents of that folder and use it instead.
+
+40
+00:02:53,170 --> 00:02:56,170
+OK, so that's set up now.
+
+41
+00:02:56,170 --> 00:03:01,510
+There is one irritating thing about Visual Studio code as I record this lecture, and that is that you
+
+42
+00:03:01,510 --> 00:03:04,090
+can't have two projects open in the same window.
+
+43
+00:03:04,630 --> 00:03:05,410
+And that's no problem.
+
+44
+00:03:05,800 --> 00:03:13,060
+What I'll do instead is create a new window and I'll maximize it and I'll open a folder.
+
+45
+00:03:14,050 --> 00:03:16,870
+And the first one I'm going to open is that Solaris House one.
+
+46
+00:03:17,320 --> 00:03:22,960
+So in visual studio projects go Laravel Solaris House, I'll open that folder.
+
+47
+00:03:24,760 --> 00:03:27,670
+Now, let's create a go file in here, so I'll create a new file.
+
+48
+00:03:28,060 --> 00:03:31,540
+I'll just call it celerity up.
+
+49
+00:03:32,560 --> 00:03:35,740
+And of course, of course, it has a package name package celebrities.
+
+50
+00:03:36,580 --> 00:03:43,360
+And for right now, we're going to create a couple of test functions, so I'll create ones called funk.
+
+51
+00:03:43,820 --> 00:03:45,130
+I'll give it a capital letter.
+
+52
+00:03:45,130 --> 00:03:47,320
+So its export test funk.
+
+53
+00:03:47,920 --> 00:03:49,030
+And it takes, say, two.
+
+54
+00:03:49,030 --> 00:03:53,530
+It's a and B of type integer and it returns an integer.
+
+55
+00:03:54,640 --> 00:03:58,090
+And all I want to do is say return a plus B.
+
+56
+00:03:58,960 --> 00:04:01,330
+OK, so that exists now.
+
+57
+00:04:01,660 --> 00:04:07,690
+So now I'll open another window in visual studio code and I'll maximize it.
+
+58
+00:04:10,790 --> 00:04:17,560
+And I will open a folder, and this time I'll open the My App folder, so in visual studio projects
+
+59
+00:04:17,990 --> 00:04:19,820
+will lavell my app.
+
+60
+00:04:23,390 --> 00:04:26,930
+And I'll create a new file in there called May Not Go.
+
+61
+00:04:28,190 --> 00:04:29,780
+And of course, it's a package main.
+
+62
+00:04:35,370 --> 00:04:43,930
+And we'll give it a main function from Main, and I will open a terminal and I will say go get GitHub,
+
+63
+00:04:43,930 --> 00:04:50,330
+NJ.com, which I have to spell right slash TCR slash hilarious.
+
+64
+00:04:59,370 --> 00:04:59,790
+Perfect.
+
+65
+00:05:00,690 --> 00:05:02,880
+So it got it, and it got it from the local folder.
+
+66
+00:05:03,210 --> 00:05:06,870
+Now I'll call a function in that package and of course, there's only one.
+
+67
+00:05:07,290 --> 00:05:18,840
+So I will say the result is a sign the value of from the celebrity's package dot test funk and give
+
+68
+00:05:18,840 --> 00:05:20,580
+it to integers one and one.
+
+69
+00:05:21,600 --> 00:05:23,640
+And I'll say format, dot print line.
+
+70
+00:05:27,120 --> 00:05:34,170
+Result that we should be able to run this sit down on my terminal, I'll clear the screen and go run
+
+71
+00:05:34,180 --> 00:05:36,840
+dot, and it worked beautifully.
+
+72
+00:05:37,740 --> 00:05:46,770
+Now let's switch back to that Solaris horse window right here, and let's add a second function func
+
+73
+00:05:47,280 --> 00:05:49,320
+test funk too.
+
+74
+00:05:49,830 --> 00:05:54,600
+And again, it'll take two and A and B, and it returns an integer.
+
+75
+00:05:55,800 --> 00:05:57,060
+And of course, that has to have a type.
+
+76
+00:06:00,110 --> 00:06:02,310
+And I'll return a minus B.
+
+77
+00:06:04,920 --> 00:06:08,220
+Now, let's go back to our map window right here.
+
+78
+00:06:10,890 --> 00:06:12,120
+And let's try using that function.
+
+79
+00:06:12,570 --> 00:06:12,990
+So
+
+80
+00:06:16,560 --> 00:06:22,630
+now result is equal to celebrities, and you obviously doesn't see test too.
+
+81
+00:06:22,740 --> 00:06:23,940
+And that's a bit of a problem.
+
+82
+00:06:24,390 --> 00:06:31,370
+And the problem, of course, is that because we're using a package that's in a folder beside the Maya
+
+83
+00:06:31,390 --> 00:06:38,850
+folder, we have to go get that code base again every single time we update our code base in the solar
+
+84
+00:06:38,850 --> 00:06:39,470
+task folder.
+
+85
+00:06:39,510 --> 00:06:49,910
+So let me delete that line down on my terminal and say, go get GitHub icon slash solar slash celebrities
+
+86
+00:06:50,640 --> 00:06:51,450
+and hit return.
+
+87
+00:06:52,200 --> 00:06:53,700
+So now it's updated the code.
+
+88
+00:06:54,240 --> 00:07:04,970
+So in theory, I can come up here and say result is now equal to celebrities dot test, book two and
+
+89
+00:07:04,980 --> 00:07:11,790
+give it to things say two and want a visual studio code has still not updated.
+
+90
+00:07:12,210 --> 00:07:14,010
+But hopefully it will at some time.
+
+91
+00:07:14,010 --> 00:07:15,000
+Let's try this down here.
+
+92
+00:07:15,000 --> 00:07:22,000
+Let's say go get you GitHub dot com slash t solar slash celebrity.
+
+93
+00:07:24,010 --> 00:07:25,230
+Does that air go away?
+
+94
+00:07:25,410 --> 00:07:26,100
+No, it didn't.
+
+95
+00:07:26,130 --> 00:07:28,350
+And that's one of the irritating things about Visual Studio.
+
+96
+00:07:28,650 --> 00:07:30,240
+But we'll get this working right now.
+
+97
+00:07:30,240 --> 00:07:31,440
+Let's make sure our code runs.
+
+98
+00:07:32,190 --> 00:07:39,030
+We actually have to print that out, of course, format or print line result.
+
+99
+00:07:40,590 --> 00:07:41,580
+So let's see if it runs.
+
+100
+00:07:41,670 --> 00:07:45,360
+Go run dot and it runs beautifully.
+
+101
+00:07:45,390 --> 00:07:47,280
+It does exactly exactly what we want.
+
+102
+00:07:48,390 --> 00:07:55,020
+So what we want to do, of course, is to somehow force visual studio code to update when we want it
+
+103
+00:07:55,020 --> 00:07:55,300
+to.
+
+104
+00:07:55,320 --> 00:07:59,970
+So we don't get errors like this as working through this project, and that will be really kind of frustrating.
+
+105
+00:08:00,450 --> 00:08:06,540
+Now, if you're working with goal land or some other idea, this problem probably won't appear.
+
+106
+00:08:07,170 --> 00:08:07,620
+It doesn't.
+
+107
+00:08:07,630 --> 00:08:10,650
+When I use Goal Line, which is my editor of Choice.
+
+108
+00:08:10,650 --> 00:08:14,520
+In any case, what we're going to be using Visual Studio code in this course.
+
+109
+00:08:14,530 --> 00:08:20,010
+So we'll figure out how to make those errors go away and we'll get started on that in the next lecture.

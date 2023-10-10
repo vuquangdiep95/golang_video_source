@@ -1,0 +1,379 @@
+1
+00:00:00,180 --> 00:00:05,550
+Bây giờ chúng tôi đã tạo một số nhánh khác nhau, chúng tôi có một số mã khác nhau trên các nhánh khác nhau đó
+
+2
+00:00:05,550 --> 00:00:08,300
+hoặc các tệp khác nhau, văn bản khác nhau.
+
+3
+00:00:08,310 --> 00:00:13,260
+Chúng tôi muốn xem làm cách nào để hợp nhất các nhánh đó và đưa các nhánh đó trở lại nhánh chính rồi loại bỏ
+
+4
+00:00:13,260 --> 00:00:14,010
+của các nhánh đó.
+
+5
+00:00:14,010 --> 00:00:17,950
+Vì vậy, đó là những gì chúng ta sẽ làm trong video này và Daniel sẽ chỉ cho chúng ta cách thực hiện.
+
+6
+00:00:18,360 --> 00:00:25,620
+Vì vậy, có hai cách chính để hợp nhất các nhánh của bạn trở lại nhánh gốc của chúng hoặc thành
+
+7
+00:00:25,620 --> 00:00:29,220
+master là nhánh gốc cuối cùng.
+
+8
+00:00:29,220 --> 00:00:31,550
+Cách đầu tiên cũng giống như cách trước.
+
+9
+00:00:31,650 --> 00:00:34,830
+Bạn có thể thực hiện một yêu cầu kéo để quên ít nhất.
+
+10
+00:00:35,010 --> 00:00:39,780
+Vì vậy, bạn đã có con chó và bạn có con chó chi tiết và cung cấp cho chúng tôi một lối tắt nhỏ đẹp để đi thẳng
+
+11
+00:00:39,780 --> 00:00:43,690
+cho họ hoặc bạn chỉ có thể tạo một ứng dụng chung thực hiện yêu cầu kéo.
+
+12
+00:00:43,770 --> 00:00:48,510
+Tôi muốn đi từ con chó thành chủ.
+
+13
+00:00:48,510 --> 00:00:51,590
+Bây giờ chúng ta phải nghĩ về chi tiết con chó ra đời từ con chó.
+
+14
+00:00:51,600 --> 00:00:56,950
+Trước khi chúng tôi làm điều đó và đại loại như vậy, hãy hợp nhất chi tiết con chó và con chó trước.
+
+15
+00:00:56,950 --> 00:00:58,140
+Giống như bạn nghĩ về điều đó.
+
+16
+00:00:58,350 --> 00:00:59,980
+Bạn có thể.
+
+17
+00:01:00,500 --> 00:01:04,790
+Và đặc biệt là kể từ khi con chó được cập nhật, chi tiết về con chó bị thiếu.
+
+18
+00:01:05,490 --> 00:01:09,090
+Nhưng nó không nhất thiết phải là tất cả yoy.
+
+19
+00:01:09,120 --> 00:01:15,030
+Điều chính tôi nghĩ đến là không hợp nhất một nhánh này với một nhánh khác hoàn toàn độc lập
+
+20
+00:01:15,030 --> 00:01:15,910
+từ nó.
+
+21
+00:01:15,930 --> 00:01:21,580
+Vì vậy, nếu tôi tạo một nhánh mèo từ chủ, tôi không muốn hợp nhất chó thành mèo vì chúng đã hoàn thành.
+
+22
+00:01:22,200 --> 00:01:23,230
+Họ không đến.
+
+23
+00:01:23,370 --> 00:01:23,750
+Họ không.
+
+24
+00:01:23,860 --> 00:01:25,740
+Vì vậy, bạn có thể làm điều đó theo cách bạn muốn.
+
+25
+00:01:25,770 --> 00:01:27,390
+Vì vậy, hãy bắt đầu với con chó và xem điều gì sẽ xảy ra.
+
+26
+00:01:27,390 --> 00:01:32,280
+Chúng ta sẽ sử dụng con chó trong con chó chủ trong con chó chủ để chúng ta có thể thấy những thay đổi mà những thay đổi đó là
+
+27
+00:01:32,280 --> 00:01:33,890
+màu xanh lá cây ở đó.
+
+28
+00:01:33,920 --> 00:01:40,350
+Vì vậy, người ta quan tâm đến việc thuế chó đã được thêm vào và công nghệ Labrador đã được thêm vào và công nghệ chó xù đã được thêm vào.
+
+29
+00:01:40,350 --> 00:01:41,610
+Vì vậy, chúng tôi sẽ thêm ba tệp đó.
+
+30
+00:01:41,610 --> 00:01:42,430
+Hãy làm nó.
+
+31
+00:01:42,720 --> 00:01:45,990
+Nó chỉ tạo ra một yêu cầu kéo hợp nhất thông báo câu hỏi kém.
+
+32
+00:01:45,990 --> 00:01:50,700
+Nếu chỉ có một cam kết, thông báo yêu cầu kéo sẽ mặc định cho cam kết đó.
+
+33
+00:01:50,700 --> 00:01:53,760
+Mặt khác, tên chi nhánh là trường hợp mặc định nhiều ủy ban.
+
+34
+00:01:53,910 --> 00:01:55,890
+Vì vậy, có ba ý kiến ​​​​ở đây vì vậy nó là tên chi nhánh.
+
+35
+00:01:56,490 --> 00:01:59,880
+Vì vậy, thêm dữ liệu con chó
+
+36
+00:02:03,050 --> 00:02:05,370
+và một lần nữa chúng tôi đã không cung cấp một bình luận.
+
+37
+00:02:05,370 --> 00:02:10,070
+Nhưng bạn muốn đảm bảo rằng bạn có các mô tả và nhận xét tốt để khi bạn gửi chúng
+
+38
+00:02:10,700 --> 00:02:16,890
+đặc biệt nếu bạn gửi chúng cho chúng tôi, chúng tôi biết điều gì đã thay đổi và điều gì đang diễn ra.
+
+39
+00:02:17,870 --> 00:02:23,960
+Vì vậy, bây giờ vì tôi là cộng tác viên, tôi chỉ có thể hợp nhất nó trực tiếp từ đây, điều này cho phép tôi tạo một tin nhắn
+
+40
+00:02:24,020 --> 00:02:30,860
+trên cam kết hợp nhất nếu tôi muốn hoặc bất cứ điều gì.
+
+41
+00:02:30,900 --> 00:02:33,600
+Và bây giờ yêu cầu kéo này được hợp nhất.
+
+42
+00:02:33,600 --> 00:02:43,230
+Nếu tôi đi mã, bây giờ tôi có thể thấy tôi là một chủ chi nhánh và tôi có thể thấy tất cả các con chó khác nhau trừ bản gốc
+
+43
+00:02:43,230 --> 00:02:45,370
+chi nhánh con chó vẫn tồn tại.
+
+44
+00:02:45,370 --> 00:02:46,080
+ĐƯỢC RỒI.
+
+45
+00:02:46,230 --> 00:02:50,350
+Nó được đánh dấu là đã hợp nhất nhưng tôi vẫn có thể quay lại nhánh đó và tiếp tục làm việc với nó.
+
+46
+00:02:51,210 --> 00:02:55,940
+Và con chó chi tiết chưa được hợp nhất, vì vậy hãy tiếp tục và hợp nhất ngay bây giờ và chúng ta sẽ thấy những thay đổi đó.
+
+47
+00:02:55,950 --> 00:02:58,510
+Hãy xem lại điều đó một lần nữa bạn muốn có nghĩa là bạn làm điều đó trên máy của tôi.
+
+48
+00:02:58,650 --> 00:02:58,890
+Vì thế.
+
+49
+00:02:58,900 --> 00:03:02,160
+Vì vậy, điều khác mà chúng ta có thể làm theo cách khác là thực hiện sáp nhập.
+
+50
+00:03:02,160 --> 00:03:04,950
+Chắc chắn hãy làm như vậy nếu bạn là cộng tác viên.
+
+51
+00:03:05,130 --> 00:03:06,910
+Bạn không thực sự phải trải qua.
+
+52
+00:03:07,050 --> 00:03:12,680
+Bạn có thể sử dụng cách thực tế just get để hợp nhất thành cách dòng lệnh với dòng lệnh.
+
+53
+00:03:13,320 --> 00:03:16,590
+Vì vậy, bạn có thể luôn muốn đảm bảo rằng bạn kéo tất cả các thay đổi của mình.
+
+54
+00:03:16,590 --> 00:03:17,920
+Vì vậy, tôi đang ở trên đó.
+
+55
+00:03:17,940 --> 00:03:19,710
+Chi nhánh nào của tôi trên tôi vẫn còn trên con chó.
+
+56
+00:03:19,740 --> 00:03:22,010
+Vì vậy, hãy kiểm tra lại để làm chủ.
+
+57
+00:03:22,410 --> 00:03:28,590
+Và đây là thứ thú vị mà tôi đã lấy được khi đang cưỡi chó và sau đó tôi lật sang chủ và bây giờ
+
+58
+00:03:28,590 --> 00:03:35,970
+nó nói rằng nhánh của bạn chậm hơn gốc chính bốn phút khi bạn kéo nó cập nhật tất cả các nhánh
+
+59
+00:03:36,150 --> 00:03:43,950
+nhưng không cập nhật nhánh cục bộ của bạn lên nhánh từ xa ngoại trừ nhánh bạn đang truy cập để nó biết rằng
+
+60
+00:03:43,950 --> 00:03:49,890
+chủ từ xa có thêm bốn lần xác nhận nhưng chủ của tôi chưa được cập nhật vì tôi đang ở trên chó khi tôi
+
+61
+00:03:49,890 --> 00:03:57,770
+đã kéo nên tôi cần kéo lại trên bản gốc để chuỗi cập nhật bản gốc của mình lên bản gốc từ xa ngay bây giờ
+
+62
+00:03:57,770 --> 00:04:09,350
+rằng tôi đã cập nhật chủ của mình, bây giờ tôi có thể thực hiện hợp nhất vì vậy nếu tôi nhận được thông tin chi tiết về hợp nhất thì không Đánh dấu
+
+63
+00:04:09,430 --> 00:04:11,320
+không hợp nhất Mirko.
+
+64
+00:04:11,740 --> 00:04:17,770
+Vì vậy, hãy thực hiện hợp nhất và sau đó một tên nhánh sẽ lấy mọi thứ trong nhánh đó xuất hiện trong nhánh hiện tại của bạn
+
+65
+00:04:17,770 --> 00:04:18,480
+chi nhánh.
+
+66
+00:04:18,520 --> 00:04:25,430
+Vì vậy, tôi đang chuyển con chó chi tiết vào M..
+
+67
+00:04:25,730 --> 00:04:32,320
+Vì vậy, tại thời điểm hợp nhất này, đây là lúc xung đột xuất hiện có thể xảy ra trong yêu cầu kéo hoặc tại đây
+
+68
+00:04:32,330 --> 00:04:34,670
+thủ công với con chó Get merge detail.
+
+69
+00:04:34,670 --> 00:04:37,070
+Đây là khi xung đột hợp nhất không thể xảy ra đúng không.
+
+70
+00:04:37,100 --> 00:04:40,920
+Nếu có một vấn đề không phải là vấn đề lớn thì bạn chỉ cần vào và giải quyết nó theo cách thủ công.
+
+71
+00:04:40,950 --> 00:04:43,070
+Vì vậy, bạn đang nói mắt người về điều này xin vui lòng.
+
+72
+00:04:43,070 --> 00:04:45,610
+Chúng ta cần một con người để tìm ra những khác biệt này.
+
+73
+00:04:45,680 --> 00:04:47,700
+Vì vậy, trong trường hợp này không có xung đột.
+
+74
+00:04:47,760 --> 00:04:49,050
+Ngoài ra nó chỉ hợp nhất.
+
+75
+00:04:49,070 --> 00:04:58,390
+Và bây giờ tôi chỉ có thể đẩy mã đã hợp nhất này sẽ mất nhiều thời gian và bây giờ nếu tôi quay lại trung tâm
+
+76
+00:04:58,420 --> 00:05:06,580
+và tôi đi đến chi tiết con chó chi nhánh không nói đã hợp nhất vì nó đã hợp nhất nếu có hợp nhất.
+
+77
+00:05:06,870 --> 00:05:13,810
+Nếu có một yêu cầu kéo để làm điều đó nhưng nếu bạn nhìn vào danh sách này ở đây, bạn có thể thấy chi tiết mà con chó có
+
+78
+00:05:13,810 --> 00:05:19,060
+ba lần xác nhận hoặc có ba lần xác nhận trên con chó chi tiết chính không có và không có lần xác nhận nào
+
+79
+00:05:19,120 --> 00:05:24,740
+một chi tiết con chó mà chủ nhân không có nên hãy nói lại điều đó khi bạn nhìn thấy điều đó.
+
+80
+00:05:24,740 --> 00:05:26,850
+Vậy đây là 3 0.
+
+81
+00:05:26,900 --> 00:05:30,710
+Có ba điều trên Master đó là con chó chi tiết đó là đúng.
+
+82
+00:05:30,800 --> 00:05:34,680
+Vâng và không có cam kết nào về con chó chi tiết thiết kế chính.
+
+83
+00:05:34,810 --> 00:05:37,280
+Được rồi, ba bình luận là từ con chó phải không.
+
+84
+00:05:38,010 --> 00:05:43,120
+Yeah yeah các cam kết hợp nhất hợp nhất hoặc bao giờ hoặc như vậy trên Master.
+
+85
+00:05:43,220 --> 00:05:44,660
+Hấp dẫn.
+
+86
+00:05:44,660 --> 00:05:50,120
+Và đó là cách hợp nhất hai nhánh của chúng ta thành nhánh chính.
+
+87
+00:05:50,120 --> 00:05:53,320
+Làm điều đó trên cửa github làm điều đó trên thiết bị đầu cuối.
+
+88
+00:05:53,480 --> 00:05:58,190
+Và khi bạn làm điều đó trên thiết bị đầu cuối, bạn muốn đảm bảo rằng bạn đang ở nhánh bạn muốn hợp nhất
+
+89
+00:05:58,280 --> 00:05:58,790
+vào trong.
+
+90
+00:05:58,790 --> 00:06:07,160
+Vì vậy, chúng tôi đã chuyển sang chế độ chính và sau đó kéo để chúng tôi có dòng điện chính bằng điều khiển từ xa và và
+
+91
+00:06:07,220 --> 00:06:12,350
+sau đó khi chúng tôi đã làm điều đó, chúng tôi có thể hợp nhất nhánh mà chúng tôi muốn thành chủ, vì vậy chúng tôi đang ở trên Chủ
+
+92
+00:06:12,350 --> 00:06:19,120
+Làm chủ dòng điện của nó bằng điều khiển từ xa và sau đó chúng tôi hợp nhất nó và sau đó tên nhánh được hợp nhất
+
+93
+00:06:19,120 --> 00:06:21,640
+và tên chi nhánh đó là nó.
+
+94
+00:06:21,760 --> 00:06:22,060
+Được rồi.
+
+95
+00:06:22,090 --> 00:06:24,940
+Vì vậy, video tiếp theo sẽ hướng dẫn cách xóa các nhánh.

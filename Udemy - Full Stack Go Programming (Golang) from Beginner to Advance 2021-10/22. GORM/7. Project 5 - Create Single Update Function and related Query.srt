@@ -1,0 +1,299 @@
+1
+00:00:11,800 --> 00:00:17,050
+Hello and welcome to the golden programming language course in the previous session.
+
+2
+00:00:17,260 --> 00:00:23,650
+We could create a select function that fits all members of a student table in person database.
+
+3
+00:00:24,160 --> 00:00:31,300
+And in this case, we want to create a function to update a student in a student table in person database.
+
+4
+00:00:32,050 --> 00:00:35,350
+We want to do the opposite operation in two ways.
+
+5
+00:00:35,680 --> 00:00:40,450
+First, for update a student or a record of a student data.
+
+6
+00:00:40,720 --> 00:00:45,910
+And second for update more than a student record or many records in a student table.
+
+7
+00:00:46,600 --> 00:00:48,640
+First, we want to talk about update.
+
+8
+00:00:48,950 --> 00:00:52,870
+Students now go to DB connection fine.
+
+9
+00:00:56,410 --> 00:01:00,280
+First, define the function name single update form.
+
+10
+00:01:01,630 --> 00:01:09,190
+Single update this function accept two parameters.
+
+11
+00:01:09,520 --> 00:01:16,330
+First parameter is an AMD interface, which indicates that an instance of a strike is to be passed to
+
+12
+00:01:16,330 --> 00:01:17,000
+this method.
+
+13
+00:01:17,290 --> 00:01:22,270
+And second parameter is a map, which the update information is sent to the middle.
+
+14
+00:01:22,780 --> 00:01:29,350
+Also, this function returns the number of records that have been affected by the update operation at
+
+15
+00:01:29,350 --> 00:01:30,340
+the end of the watch.
+
+16
+00:01:30,940 --> 00:01:44,140
+So first set in name like object by the time and to interface, object and and interface set to come
+
+17
+00:01:44,140 --> 00:01:57,070
+on and sit a name like data for define and map data not set by the time jetstream.
+
+18
+00:02:01,060 --> 00:02:06,910
+And Sith value by the time empty in their face, because we don't know what time of the value was sent
+
+19
+00:02:06,910 --> 00:02:14,260
+to the function into interface and set N64 as a return type.
+
+20
+00:02:19,110 --> 00:02:25,410
+Now, Colin Connect function for initializing MySchool School DataSource name, this function returns
+
+21
+00:02:25,410 --> 00:02:34,080
+a DB object from goram packets, so define a variable like DB calling equals and calling conic function
+
+22
+00:02:36,690 --> 00:02:41,550
+after creating a DB object from quorum packets being what finite function?
+
+23
+00:02:41,940 --> 00:02:48,300
+This function acts as student instance, then running set query on the student table and fetching a
+
+24
+00:02:48,300 --> 00:02:50,580
+student from database and return it.
+
+25
+00:02:50,820 --> 00:02:57,510
+So the right DB don't find and sit object and argument.
+
+26
+00:03:01,890 --> 00:03:10,050
+Then declining model function from the object and Sith object instance as arguments for it before calling
+
+27
+00:03:10,050 --> 00:03:17,070
+it first define a variable like reason for the return type model function is specify the model you would
+
+28
+00:03:17,070 --> 00:03:20,220
+like to run operations, so be right.
+
+29
+00:03:20,460 --> 00:03:31,530
+Result calling equals and calling model function on DB object DB thought model and set object as argument
+
+30
+00:03:34,020 --> 00:03:34,770
+and more.
+
+31
+00:03:34,770 --> 00:03:36,930
+Invoke this function instead.
+
+32
+00:03:36,930 --> 00:03:39,450
+Data object as a map argument for it.
+
+33
+00:03:39,750 --> 00:03:46,350
+Updates function update attributes with callbacks, dot off days
+
+34
+00:03:48,900 --> 00:03:52,560
+and set data has argued date.
+
+35
+00:03:55,880 --> 00:04:02,300
+Now, invoking Groves affected field from resolved to return that we should update the fact that records
+
+36
+00:04:02,690 --> 00:04:15,110
+sold the right, Rita resolved that those affected OK, reformat the court and save the project.
+
+37
+00:04:15,590 --> 00:04:22,460
+We have now succeeded in designing a method to receive a strike instance from the outside and update
+
+38
+00:04:22,460 --> 00:04:24,410
+the values of descent object.
+
+39
+00:04:24,530 --> 00:04:31,640
+According to the values given the other maps sent now, go to the main function to use this query statement
+
+40
+00:04:33,170 --> 00:04:34,820
+first to your last court.
+
+41
+00:04:38,540 --> 00:04:45,110
+In this case, we want to opt it in new student in person database, so we should use from single update
+
+42
+00:04:45,110 --> 00:04:46,820
+function from DB tools.
+
+43
+00:04:47,420 --> 00:04:54,170
+Suppose a student with I.D. number one is the database and we want to change the name and age values
+
+44
+00:04:54,170 --> 00:04:54,920
+of it.
+
+45
+00:04:55,130 --> 00:05:00,680
+So create an a student object from a student district and initialize I.D. value in it.
+
+46
+00:05:01,060 --> 00:05:13,220
+A student calling equals model dot student and initialize I.D.
+
+47
+00:05:16,340 --> 00:05:22,910
+equals one and now define the map variable for send new data.
+
+48
+00:05:22,940 --> 00:05:24,790
+After opting for this instead.
+
+49
+00:05:24,870 --> 00:05:29,690
+So vraie data column equals map.
+
+50
+00:05:30,740 --> 00:05:36,740
+The time off key is estrange and the type of value is empty.
+
+51
+00:05:37,010 --> 00:05:37,880
+Interface.
+
+52
+00:05:42,280 --> 00:05:43,060
+Name
+
+53
+00:05:45,850 --> 00:05:46,720
+equals.
+
+54
+00:05:49,370 --> 00:05:49,970
+John?
+
+55
+00:05:54,470 --> 00:06:00,770
+And H equals forty.
+
+56
+00:06:07,150 --> 00:06:14,410
+Now calling update function from DevTools package and sent created a student object as first argument
+
+57
+00:06:14,410 --> 00:06:15,250
+and data.
+
+58
+00:06:15,280 --> 00:06:18,550
+A second argument to eat and fish row affected.
+
+59
+00:06:18,730 --> 00:06:21,190
+So first define a variable like row
+
+60
+00:06:24,520 --> 00:06:39,070
+column equals DevTools Dot single object and sit ampersand the student.
+
+61
+00:06:40,410 --> 00:06:41,580
+And said they'd.
+
+62
+00:06:46,660 --> 00:06:50,080
+And now display return time as roll variable.
+
+63
+00:06:50,290 --> 00:06:51,730
+So we write FP
+
+64
+00:06:54,550 --> 00:07:01,810
+roles affected and set variable low.
+
+65
+00:07:03,270 --> 00:07:10,320
+Before run the program, go to the database and see the values of name and age of ID number one.
+
+66
+00:07:13,110 --> 00:07:18,420
+We can see the ID number one name is changed and ages 20.
+
+67
+00:07:19,830 --> 00:07:25,310
+Go to the village school program and run the project go wrong.
+
+68
+00:07:25,380 --> 00:07:28,890
+Dot packets Maine and Maine dot gov.
+
+69
+00:07:32,420 --> 00:07:40,400
+Now we can see the output rose effect, it is one now go to the database again and executed select query
+
+70
+00:07:40,400 --> 00:07:41,450
+and see the changes.
+
+71
+00:07:44,480 --> 00:07:51,860
+OK, now we can see name and age of ex-student object is object correctly in the person database and
+
+72
+00:07:51,860 --> 00:08:01,700
+one row is affected, i.e. the one name has changed to John and age has changed to 40 in order not to
+
+73
+00:08:01,700 --> 00:08:03,230
+prolong the time of decision.
+
+74
+00:08:03,350 --> 00:08:07,190
+We will finish, then we will continue the content in the next session.
+
+75
+00:08:07,430 --> 00:08:07,970
+Goodbye.

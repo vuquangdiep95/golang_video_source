@@ -1,0 +1,196 @@
+1
+00:00:01,780 --> 00:00:07,600
+So we're getting closer, and the next step is to handle uploading something to our remote FTP server
+
+2
+00:00:07,630 --> 00:00:09,220
+so that can handlers start go?
+
+3
+00:00:09,760 --> 00:00:14,170
+Let's go down and find the post upload to Efes right here.
+
+4
+00:00:15,220 --> 00:00:19,340
+And basically the same logic as we applied last time around applies this time.
+
+5
+00:00:19,390 --> 00:00:21,250
+I'm going to copy this case for minute
+
+6
+00:00:24,100 --> 00:00:27,760
+and paste it right here and change this to S.F..
+
+7
+00:00:29,260 --> 00:00:38,200
+And again, I'm going to look at my application file systems field for the key SFTP and cast that to
+
+8
+00:00:38,200 --> 00:00:39,670
+an SFO file system.
+
+9
+00:00:43,020 --> 00:00:43,710
+SFTP.
+
+10
+00:00:46,590 --> 00:00:49,330
+And literally that should take care of it.
+
+11
+00:00:49,350 --> 00:00:55,830
+There's no other change necessary to make, and this is largely because we took all that time to make
+
+12
+00:00:55,830 --> 00:00:59,820
+sure that our file systems all conform to the same interface.
+
+13
+00:01:00,210 --> 00:01:00,570
+All right.
+
+14
+00:01:01,110 --> 00:01:03,540
+So let's stop her application.
+
+15
+00:01:03,930 --> 00:01:04,620
+Make stop.
+
+16
+00:01:05,850 --> 00:01:06,570
+Make start.
+
+17
+00:01:10,830 --> 00:01:17,670
+And see if this works actor or web browser, and right now, I have one thing on my SFB file system
+
+18
+00:01:17,670 --> 00:01:18,510
+SawStop Zip.
+
+19
+00:01:19,230 --> 00:01:21,360
+So let's try uploading something to that.
+
+20
+00:01:22,020 --> 00:01:26,490
+So we'll choose SFP and I'll find some file doesn't matter what it is.
+
+21
+00:01:27,090 --> 00:01:32,070
+I'll choose this way of image again, and I'll try uploading that and see how this works out.
+
+22
+00:01:35,480 --> 00:01:38,030
+And it says it's uploaded, let's go see if we can find it.
+
+23
+00:01:38,780 --> 00:01:45,650
+File systems, list files and I'm going to choose S&P and the whale should be there.
+
+24
+00:01:45,650 --> 00:01:46,370
+And there it is.
+
+25
+00:01:46,550 --> 00:01:47,630
+And that works really well.
+
+26
+00:01:48,410 --> 00:01:50,420
+Now one more thing to look at here.
+
+27
+00:01:50,750 --> 00:01:57,320
+If we go back to our I.D. and look at the console, you can see that little statement, I said to print
+
+28
+00:01:57,320 --> 00:01:58,520
+the current working directory.
+
+29
+00:01:59,150 --> 00:02:01,820
+It says current working directory is slash.
+
+30
+00:02:02,450 --> 00:02:08,990
+And of course, if I want to upload to another place on that file system, say a folder underneath the
+
+31
+00:02:08,990 --> 00:02:11,450
+root level, of course, that's where this bit.
+
+32
+00:02:14,030 --> 00:02:21,590
+And we'll find it here over insularity, us under filesystems, under SFTP.
+
+33
+00:02:24,220 --> 00:02:26,350
+We find the part that puts it up there.
+
+34
+00:02:30,740 --> 00:02:31,460
+Which is right here.
+
+35
+00:02:32,120 --> 00:02:34,790
+This is where we need to make a slight modification to our code.
+
+36
+00:02:35,000 --> 00:02:38,960
+We don't always want to upload to the root level of our file system.
+
+37
+00:02:39,350 --> 00:02:46,760
+Instead, we should probably modify this code right here where it says client create path based file
+
+38
+00:02:46,760 --> 00:02:47,090
+name.
+
+39
+00:02:47,600 --> 00:02:54,890
+We should change that, maybe to an s print f so format print f with a format string.
+
+40
+00:02:55,580 --> 00:03:01,220
+And that would be percent s slash percent s.
+
+41
+00:03:02,310 --> 00:03:08,100
+And then in here, we can take this first parameter or take this parameter out, cut it.
+
+42
+00:03:10,490 --> 00:03:16,430
+And our substitutions in now would be folder that parameter that we received up in the signature for
+
+43
+00:03:16,430 --> 00:03:17,240
+this function.
+
+44
+00:03:17,510 --> 00:03:23,600
+And now we can put the based file name in there, and that will allow us to upload to a specific location
+
+45
+00:03:23,600 --> 00:03:24,710
+on the remote file system.
+
+46
+00:03:24,740 --> 00:03:26,180
+So that was just a simple change.
+
+47
+00:03:26,300 --> 00:03:26,660
+OK.
+
+48
+00:03:27,650 --> 00:03:28,040
+All right.
+
+49
+00:03:28,070 --> 00:03:31,370
+Next, we'll take care of deleting something from our SFTP server.
+

@@ -1,0 +1,235 @@
+1
+00:00:13,570 --> 00:00:19,450
+Hello and welcome to the gold and programming language course in the previous session, we talked about
+
+2
+00:00:19,450 --> 00:00:20,830
+Protocol Boffa concept.
+
+3
+00:00:21,070 --> 00:00:25,210
+And in this session, we want to talk about the authors protocol offer consent.
+
+4
+00:00:29,800 --> 00:00:31,970
+How do we use portable?
+
+5
+00:00:33,070 --> 00:00:37,480
+Now that you only know that part of life is faster than Jason.
+
+6
+00:00:39,030 --> 00:00:42,210
+Let's take a look on how to use these technology.
+
+7
+00:00:42,810 --> 00:00:47,130
+Portable has three main components that you have to deal with.
+
+8
+00:00:47,640 --> 00:00:57,080
+One message descriptors when using portable, we have to define our messages as structures in that protocol
+
+9
+00:00:57,090 --> 00:00:57,750
+face.
+
+10
+00:00:59,700 --> 00:01:08,970
+Two massage implementations, messages, definitions are not enough to represent and exchange data in
+
+11
+00:01:08,970 --> 00:01:10,500
+any programming language.
+
+12
+00:01:10,950 --> 00:01:16,950
+We have to generate classes, objects to deal with data in the chosen programming language.
+
+13
+00:01:18,340 --> 00:01:23,200
+Google provides could generators for the most common programming languages.
+
+14
+00:01:24,330 --> 00:01:32,520
+Three, passing and serialization after defining and creating pulled off messages, we need to be able
+
+15
+00:01:32,520 --> 00:01:34,140
+to exchange these messages.
+
+16
+00:01:34,620 --> 00:01:40,560
+Google helps us here again as long as we use one of the supported programming language.
+
+17
+00:01:43,060 --> 00:01:45,310
+Pirates off message definition.
+
+18
+00:01:46,720 --> 00:01:50,500
+Now we can go about defining our Port of office schema.
+
+19
+00:01:51,070 --> 00:01:54,050
+We will need to start with a dot puerto fine.
+
+20
+00:01:54,580 --> 00:01:58,000
+Let's define the bukas structure we saw earlier.
+
+21
+00:01:58,780 --> 00:02:01,150
+Now you can see the syntax.
+
+22
+00:02:04,830 --> 00:02:06,930
+Let's understand what he just wrote.
+
+23
+00:02:08,160 --> 00:02:15,750
+At first, we specify the syntax we want to use, this is plural three, and it specify that we want
+
+24
+00:02:15,750 --> 00:02:18,360
+these to be a part of the main package.
+
+25
+00:02:19,710 --> 00:02:26,760
+Then via specified hours schema, the definition in a dark truth fight are simple you had a message
+
+26
+00:02:26,760 --> 00:02:29,550
+for each data structure you want to serialized.
+
+27
+00:02:29,790 --> 00:02:35,640
+Then is specify a name and a time for each field in the message here.
+
+28
+00:02:35,670 --> 00:02:37,800
+What is our data structure?
+
+29
+00:02:37,980 --> 00:02:47,820
+This will have to fill the name of time S3 and Espeon of time entry to keep in mind that the time comes
+
+30
+00:02:47,820 --> 00:02:51,480
+before the variable name, unlike go programming language.
+
+31
+00:02:51,750 --> 00:02:55,530
+Also, each field is associated with the unique number.
+
+32
+00:02:56,190 --> 00:03:03,690
+These numbers are used to identify our files in the encoded message and should not be changed once the
+
+33
+00:03:03,690 --> 00:03:07,740
+message type is in use as specifying field rules.
+
+34
+00:03:08,490 --> 00:03:17,190
+We can specify certain rules for our messages throughout office as the singular event form messages
+
+35
+00:03:17,340 --> 00:03:23,790
+can have zero or one of these built, but not more than one, and this is the default feed rule for
+
+36
+00:03:24,060 --> 00:03:25,560
+two three syntax.
+
+37
+00:03:26,310 --> 00:03:33,970
+Repeated this chamber repeated any number of times, including zero in well-formed message.
+
+38
+00:03:34,560 --> 00:03:37,830
+The order of the repeated values will be present.
+
+39
+00:03:42,570 --> 00:03:45,210
+Colorful off message implementation.
+
+40
+00:03:45,960 --> 00:03:52,920
+Now that you have a dart prior to find, the next thing you need to do is generate the classes, you
+
+41
+00:03:52,920 --> 00:03:54,990
+will need to read and write messages.
+
+42
+00:03:55,530 --> 00:04:01,680
+To do this, you'll need to run the protocol before compiling a popular talk on your dart protocol.
+
+43
+00:04:01,980 --> 00:04:06,750
+If you haven't installed a compiler, download pilot packages.
+
+44
+00:04:07,770 --> 00:04:09,330
+You can see the comments.
+
+45
+00:04:10,390 --> 00:04:17,140
+Then around the following coming to install the GO political buffer plugins by the comment that you
+
+46
+00:04:17,140 --> 00:04:17,560
+see.
+
+47
+00:04:19,060 --> 00:04:27,730
+The compiler plugins, Protoc, Dash, Gen Dash Go will be installed in Gilpin, defaulting to go past
+
+48
+00:04:27,730 --> 00:04:28,480
+its lesbian.
+
+49
+00:04:28,810 --> 00:04:33,280
+It must be in your password protocol compiler protocol to find it.
+
+50
+00:04:34,000 --> 00:04:43,420
+Now Ron, the compiler first go to go past an SRT folder and go to your project, then run below comment
+
+51
+00:04:43,960 --> 00:04:52,990
+protocol that must go on the score out that Dash Dash Go Endre score out flag specifies which directory
+
+52
+00:04:52,990 --> 00:04:53,680
+to generate.
+
+53
+00:04:53,680 --> 00:05:00,460
+The girl code for the Dart Protocol will be a story we are keeping it and the root of the project.
+
+54
+00:05:01,030 --> 00:05:05,770
+The second argument as asterisk is specify which file to compile.
+
+55
+00:05:06,040 --> 00:05:10,180
+Here we are compiling on files with a Dot Perotti extension.
+
+56
+00:05:10,600 --> 00:05:17,530
+Running these should generate a book dot pbe dot go find with the equivalent girl code that you will
+
+57
+00:05:17,530 --> 00:05:24,370
+require to use our port call buffer in order not to prolong the time of decision.
+
+58
+00:05:24,520 --> 00:05:28,720
+We will finish it and we will continue the content in the next session.
+
+59
+00:05:28,780 --> 00:05:29,280
+Goodbye.

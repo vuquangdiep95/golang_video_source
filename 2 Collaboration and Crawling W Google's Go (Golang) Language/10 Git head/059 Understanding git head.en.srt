@@ -1,0 +1,631 @@
+1
+00:00:00,150 --> 00:00:06,180
+So we were just discussing what we talked about in the previous video and just wanted to make it clear
+
+2
+00:00:06,180 --> 00:00:08,360
+that when we checked out the files.
+
+3
+00:00:08,370 --> 00:00:11,220
+So we're gonna talk about get ahead in this video.
+
+4
+00:00:12,000 --> 00:00:15,000
+And I'm gonna avoid making any unsavory jokes.
+
+5
+00:00:15,000 --> 00:00:16,830
+And like that one.
+
+6
+00:00:17,280 --> 00:00:17,700
+And
+
+7
+00:00:20,910 --> 00:00:26,620
+so now we're going to explore what what that means what head is and get.
+
+8
+00:00:26,850 --> 00:00:27,420
+And
+
+9
+00:00:30,570 --> 00:00:33,400
+you know my brain is wanting to process.
+
+10
+00:00:34,470 --> 00:00:35,110
+So that's.
+
+11
+00:00:35,130 --> 00:00:36,440
+That's what we want to make sure.
+
+12
+00:00:36,440 --> 00:00:43,120
+We just want to make it clear that when we are doing get check out I wasn't checking out from M. right.
+
+13
+00:00:43,140 --> 00:00:52,800
+I was pulling from my kind of what I had in my machine the last state of where go mine and go somewhere
+
+14
+00:00:52,830 --> 00:00:55,530
+before I'd made you know here's where it was.
+
+15
+00:00:55,530 --> 00:00:57,760
+The Last Kind of like St..
+
+16
+00:00:57,770 --> 00:01:06,060
+Comet that was seeing it with you know my origin goes go goes to eleven going project.
+
+17
+00:01:06,060 --> 00:01:08,150
+This is last comment on my computer.
+
+18
+00:01:08,220 --> 00:01:10,740
+And then Daniel was also there at one point.
+
+19
+00:01:10,740 --> 00:01:13,110
+So here's Daniel's computer here's my computer.
+
+20
+00:01:13,110 --> 00:01:15,820
+I got it like I'm just like it's such a visual person.
+
+21
+00:01:15,900 --> 00:01:22,230
+And Daniel's computer my computer each have a clone of Go going project Quick get your hand right here
+
+22
+00:01:22,230 --> 00:01:23,180
+you see this hand.
+
+23
+00:01:23,250 --> 00:01:24,530
+Daniel's going project.
+
+24
+00:01:24,540 --> 00:01:26,820
+Here's his computer here's my computer.
+
+25
+00:01:26,820 --> 00:01:32,400
+And at one point in time this morning when we started working it was all the same commit right.
+
+26
+00:01:32,460 --> 00:01:37,380
+And then Daniel made some changes and I made some changes and then we were kind of like you know we've
+
+27
+00:01:37,380 --> 00:01:40,800
+moved the code base forward from where I'm going project was.
+
+28
+00:01:40,800 --> 00:01:42,660
+And then Daniel committed.
+
+29
+00:01:42,660 --> 00:01:42,920
+Right.
+
+30
+00:01:42,930 --> 00:01:44,310
+And his came over right.
+
+31
+00:01:44,310 --> 00:01:47,880
+So he's now aligned here but I haven't.
+
+32
+00:01:47,910 --> 00:01:48,170
+Right.
+
+33
+00:01:48,180 --> 00:01:49,580
+So my changes aren't in there.
+
+34
+00:01:49,590 --> 00:01:53,750
+So in some ways the commit I have on my machine this is up one more commit.
+
+35
+00:01:53,850 --> 00:01:59,010
+And so when I said get check out head my changes we're right here I went back and I checked out what
+
+36
+00:01:59,010 --> 00:02:00,600
+was here and.
+
+37
+00:02:00,700 --> 00:02:06,120
+And that align with the commit that we all had at one point which then meant that I could pull from
+
+38
+00:02:06,120 --> 00:02:10,380
+here because it saw oh you have work go something go modular at the last commit.
+
+39
+00:02:10,380 --> 00:02:16,850
+And you know you're ready to move to the next commit we're go mine and go somewhere.
+
+40
+00:02:16,890 --> 00:02:18,400
+Did I explain that correctly.
+
+41
+00:02:18,510 --> 00:02:19,610
+Did that sound.
+
+42
+00:02:19,650 --> 00:02:20,430
+Not really.
+
+43
+00:02:20,690 --> 00:02:21,030
+OK.
+
+44
+00:02:21,060 --> 00:02:22,310
+You get your shot.
+
+45
+00:02:22,510 --> 00:02:23,260
+So.
+
+46
+00:02:23,450 --> 00:02:24,480
+So yeah.
+
+47
+00:02:24,510 --> 00:02:33,720
+So when when you get checked out on a file get goes back to the what it calls the head and it pulls
+
+48
+00:02:33,780 --> 00:02:36,230
+a copy of the file from the head.
+
+49
+00:02:36,240 --> 00:02:39,840
+So the head is wherever you are on get.
+
+50
+00:02:40,140 --> 00:02:46,980
+So if you're on a branch head is at the end of the branch if you're a master it's on the end of M. and
+
+51
+00:02:46,980 --> 00:02:48,450
+it's on your own machine.
+
+52
+00:02:48,450 --> 00:02:56,210
+It has nothing to do with get hub get hub has its own master head and such but your own machine has
+
+53
+00:02:56,210 --> 00:03:04,400
+a head and that's where you are in the get commit treat when you get checkout from a file you get goes
+
+54
+00:03:04,400 --> 00:03:11,090
+to wherever the last head was and copies the file from head over into your working tree where you actually
+
+55
+00:03:11,090 --> 00:03:12,530
+are writing code.
+
+56
+00:03:12,530 --> 00:03:20,720
+So Todd made changes to some to go man go some but the head was still back at the last commit.
+
+57
+00:03:20,870 --> 00:03:22,380
+Heads always are attached to a comet.
+
+58
+00:03:23,240 --> 00:03:28,640
+And so he made the changes to go man go some in his working tree and then we did get checkout on those
+
+59
+00:03:28,640 --> 00:03:34,880
+files get went back to the head which just happened to be at the last commit on master that he had pulled
+
+60
+00:03:35,600 --> 00:03:42,080
+and it copied the files out into his working treat which then overrode all those changes and now his
+
+61
+00:03:42,220 --> 00:03:47,030
+status was showed the files had not been modified and to get pull could happen because the files had
+
+62
+00:03:47,030 --> 00:03:53,250
+not had no longer been modified so when I look at that at the terminal another way we just discussed
+
+63
+00:03:53,250 --> 00:03:55,340
+this right before this video is right.
+
+64
+00:03:55,350 --> 00:03:58,270
+Right now like Oh wow.
+
+65
+00:03:58,280 --> 00:04:00,630
+Because I changed a few things now I need to add these.
+
+66
+00:04:00,630 --> 00:04:10,860
+So we're just going to quickly add this get comet dash a and add Oh yeah get add sorry get add dash
+
+67
+00:04:10,860 --> 00:04:26,050
+a yes and get comet dash M and adds you know half completed scrape Todd and and then get push and now
+
+68
+00:04:26,050 --> 00:04:32,770
+Daniel going over to Daniel's computer let's get everybody's computers current here now Daniel could
+
+69
+00:04:32,770 --> 00:04:37,650
+do a get pull and there he's got everything on his machine.
+
+70
+00:04:37,660 --> 00:04:46,940
+Now if I do get status right I'm on branch master your branch is up to date with origin master and what's
+
+71
+00:04:46,950 --> 00:04:48,800
+your get stats look like on your machine.
+
+72
+00:04:48,820 --> 00:04:49,790
+So my guess is it isn't.
+
+73
+00:04:49,900 --> 00:04:50,100
+Yeah.
+
+74
+00:04:50,130 --> 00:04:55,320
+So I'm on branch pass through my branches up to date and I've got a workspace file which I'm not committing.
+
+75
+00:04:55,320 --> 00:04:56,980
+So that can be ignored.
+
+76
+00:04:57,090 --> 00:04:57,390
+All right.
+
+77
+00:04:57,450 --> 00:04:59,480
+And so is get ignore and get.
+
+78
+00:04:59,910 --> 00:05:00,430
+Yes.
+
+79
+00:05:00,450 --> 00:05:03,120
+Yeah we you could create a file can do that.
+
+80
+00:05:03,630 --> 00:05:06,390
+It's just at the root of your project.
+
+81
+00:05:06,420 --> 00:05:09,740
+The same place where you get file folders located.
+
+82
+00:05:09,810 --> 00:05:12,240
+You can create a file called dot get ignore.
+
+83
+00:05:12,780 --> 00:05:13,470
+Yeah.
+
+84
+00:05:13,740 --> 00:05:18,450
+And you can put in whatever you want in there and any it's a pattern matching.
+
+85
+00:05:18,480 --> 00:05:23,950
+So in this case I want Star not sublime workspace right.
+
+86
+00:05:23,990 --> 00:05:25,220
+Yes.
+
+87
+00:05:25,220 --> 00:05:26,840
+And now that's going to ignore.
+
+88
+00:05:26,870 --> 00:05:31,740
+Now if I get status it's now telling me only changes are get ignore it up man.
+
+89
+00:05:31,770 --> 00:05:32,590
+Let's push that up.
+
+90
+00:05:32,750 --> 00:05:33,590
+So another another.
+
+91
+00:05:33,590 --> 00:05:37,970
+So you usually want to have your workspace in there so another one that would be likely to get ignored.
+
+92
+00:05:37,970 --> 00:05:39,710
+It's like the V it's code workspace
+
+93
+00:05:42,270 --> 00:05:49,700
+so just in general anything if you've got any build files like if you like he I'm on windows so something
+
+94
+00:05:49,700 --> 00:05:52,330
+I will probably want to put in here is start out sexy.
+
+95
+00:05:52,530 --> 00:05:58,320
+I don't want any executable is to be put in in the repo accidentally
+
+96
+00:06:00,790 --> 00:06:05,390
+adds get your SO.
+
+97
+00:06:05,500 --> 00:06:08,760
+JUST if he files in the get ignore it won't let you add it.
+
+98
+00:06:08,860 --> 00:06:11,320
+It won't show up in the get status and the ad will ignore it.
+
+99
+00:06:11,390 --> 00:06:11,590
+Yeah.
+
+100
+00:06:11,620 --> 00:06:12,450
+Dad ignores it.
+
+101
+00:06:13,630 --> 00:06:13,910
+All right.
+
+102
+00:06:14,000 --> 00:06:20,110
+So you just added that up and Bush and now I'm going to come back to my machine and I'm going to do
+
+103
+00:06:20,110 --> 00:06:27,060
+it gets that this and and so this has always been a little bit of a point of confusion for me it's like
+
+104
+00:06:27,090 --> 00:06:34,030
+hey I'm branch master your branch is up to date with G.M. It's not I'm actually behind or G.M. right.
+
+105
+00:06:34,060 --> 00:06:34,360
+Yeah.
+
+106
+00:06:34,390 --> 00:06:35,230
+What are your thoughts.
+
+107
+00:06:35,260 --> 00:06:40,750
+So it gets status tries to be fast so it doesn't actually talk to origin or beer at all.
+
+108
+00:06:40,750 --> 00:06:45,100
+It's just trying to do it all on your own machine for speed purposes and reliability too.
+
+109
+00:06:45,250 --> 00:06:50,040
+Yeah because get static get status and the can you can make myths about pushing them.
+
+110
+00:06:50,140 --> 00:06:55,390
+So I guess that's what's to be fast and efficient for that purpose so it doesn't actually talk to Origin.
+
+111
+00:06:55,450 --> 00:07:02,380
+So if you want you can do get fetch which get fetch just tells get to go check or join for what's up
+
+112
+00:07:02,380 --> 00:07:02,700
+to date.
+
+113
+00:07:03,130 --> 00:07:03,790
+So.
+
+114
+00:07:04,190 --> 00:07:06,160
+So it get fetch.
+
+115
+00:07:06,490 --> 00:07:08,130
+Now it knows more you.
+
+116
+00:07:08,160 --> 00:07:11,110
+But if you do get status now it tells you you are now behind.
+
+117
+00:07:11,110 --> 00:07:12,190
+Got it.
+
+118
+00:07:12,190 --> 00:07:12,450
+All right.
+
+119
+00:07:12,480 --> 00:07:16,890
+So we're going to also covered in this video videos dot get ignore which is good.
+
+120
+00:07:16,960 --> 00:07:25,420
+And it was covered in previous courses but new material here is get fetch and and then now.
+
+121
+00:07:25,420 --> 00:07:28,710
+Now when I did my get status I'm behind so I can do my get pull.
+
+122
+00:07:28,740 --> 00:07:29,000
+Yep.
+
+123
+00:07:29,020 --> 00:07:32,830
+So yeah I get pull also fetches because it's intended for the network access.
+
+124
+00:07:33,010 --> 00:07:34,040
+Yes.
+
+125
+00:07:34,090 --> 00:07:35,680
+So now everything's current again.
+
+126
+00:07:35,680 --> 00:07:43,320
+So if I do might get status and even if I did get fetch and then did it get status again everything
+
+127
+00:07:43,320 --> 00:07:44,470
+is is good.
+
+128
+00:07:44,470 --> 00:07:45,780
+So we're all good.
+
+129
+00:07:45,910 --> 00:07:53,640
+And that same on both and and then the next thing for us to look at is just to.
+
+130
+00:07:53,650 --> 00:07:55,860
+I wanted to look at get log.
+
+131
+00:07:55,870 --> 00:08:02,800
+And so here's here's kind of like one way that I was thinking about head when we were talking between
+
+132
+00:08:02,800 --> 00:08:08,170
+these videos was had is kind of like the cursor in a text document.
+
+133
+00:08:08,170 --> 00:08:12,730
+And so my cursor right here would be like right at this point.
+
+134
+00:08:12,730 --> 00:08:13,000
+Right.
+
+135
+00:08:13,000 --> 00:08:17,750
+This is the last one that came came up right here.
+
+136
+00:08:18,280 --> 00:08:20,650
+This is the last comment from Daniel.
+
+137
+00:08:20,650 --> 00:08:24,010
+And you put that good ignore file in right there.
+
+138
+00:08:24,010 --> 00:08:29,500
+And so that's where my head is right here and you can even see it saying head is pointing to master
+
+139
+00:08:29,500 --> 00:08:32,240
+whether your thoughts on that syntax.
+
+140
+00:08:32,270 --> 00:08:36,290
+So it's just yeah it's just head head right now is an alias for Master.
+
+141
+00:08:36,400 --> 00:08:36,670
+Right.
+
+142
+00:08:36,700 --> 00:08:43,900
+So it's just pointing straight to master and and then if I move things forward so I'm going to control
+
+143
+00:08:43,910 --> 00:08:50,860
+C out of that rescue queue area and and just add some file.
+
+144
+00:08:50,890 --> 00:09:00,210
+So I'll come back to this code and make some small change I'll break open up my last one and I'm the
+
+145
+00:09:00,280 --> 00:09:08,970
+end and do small change and I make sure that saved and then come back here and do get status.
+
+146
+00:09:08,970 --> 00:09:15,370
+And so now things have changed and your branches update with origin master changes not staged.
+
+147
+00:09:15,390 --> 00:09:27,670
+It's asking me to change those stages and so currently my cursor My head is right here but my code is
+
+148
+00:09:29,770 --> 00:09:35,350
+is a little bit ahead because I've added something and if I wanted to I could go and I could check this
+
+149
+00:09:35,350 --> 00:09:42,040
+file back out and checking it back out from ahead head which is this comment that more clearly said
+
+150
+00:09:42,040 --> 00:09:42,590
+and explained.
+
+151
+00:09:42,620 --> 00:09:44,170
+Yes OK.
+
+152
+00:09:44,320 --> 00:09:49,960
+I just want to make sure that that was clearly explained as explained what had was you everything you
+
+153
+00:09:49,960 --> 00:09:56,110
+want to add to that you can move head around freely you can get it get checked out of file number you
+
+154
+00:09:56,110 --> 00:10:01,550
+can get check out any branch number you can get check out any commit number so you can you can just
+
+155
+00:10:01,550 --> 00:10:07,750
+do it get checked out on say any like the previous comment number if you wanted here let's let's check
+
+156
+00:10:07,750 --> 00:10:09,440
+this out.
+
+157
+00:10:09,970 --> 00:10:11,280
+This video is getting a little long.
+
+158
+00:10:11,290 --> 00:10:14,090
+So we're going to continue this in the next video.

@@ -1,0 +1,215 @@
+1
+00:00:11,670 --> 00:00:15,220
+Hello and welcome to the golems programming language course.
+
+2
+00:00:15,900 --> 00:00:19,230
+In the previous session, they could implement such a player.
+
+3
+00:00:20,070 --> 00:00:22,950
+Now it's time to set up the server layer.
+
+4
+00:00:24,090 --> 00:00:31,590
+The task of this layer is to decide and manage requests that are sent from the client to the server.
+
+5
+00:00:32,730 --> 00:00:42,060
+So go to Package Expeller and go to Web Socket Project and create the folder name like server layer.
+
+6
+00:00:48,390 --> 00:00:56,220
+And incite it, create a file like server that go server that could
+
+7
+00:01:00,180 --> 00:01:07,170
+set the package name, package me in this file.
+
+8
+00:01:07,620 --> 00:01:11,550
+We have to do two things related to setting off the server.
+
+9
+00:01:12,120 --> 00:01:19,170
+That is, we created an issue to the server and introduce it as a server of the VIPs circuit type and
+
+10
+00:01:19,170 --> 00:01:21,630
+send the desired handler to it.
+
+11
+00:01:22,320 --> 00:01:24,580
+So define a main method.
+
+12
+00:01:28,650 --> 00:01:37,810
+Now you create a server by calling the server extract from the 8TB package and initialize its properties.
+
+13
+00:01:38,340 --> 00:01:47,070
+So define a variable like server column equals history, Typekit dot server
+
+14
+00:01:51,450 --> 00:01:59,220
+and initialize tool property, first address and Second Handler Address
+
+15
+00:02:02,160 --> 00:02:08,250
+Address optionally specifies the TCP IP address before the server to listen on.
+
+16
+00:02:08,910 --> 00:02:14,820
+In this case, we want to run server on localhost by port number 85.
+
+17
+00:02:15,240 --> 00:02:27,840
+So we write double quotation mark a hundred and twenty seven dots 0.0 0.1 as localhost IP calling 1885
+
+18
+00:02:27,840 --> 00:02:29,250
+as port number.
+
+19
+00:02:33,030 --> 00:02:34,140
+And Handler
+
+20
+00:02:38,130 --> 00:02:42,540
+Handler to invoke default serve marks.
+
+21
+00:02:42,870 --> 00:02:47,040
+So for these handler, we need to create a mock server.
+
+22
+00:02:47,580 --> 00:02:52,350
+So go top of this block and define a server marks.
+
+23
+00:03:01,020 --> 00:03:09,450
+From the HDTV package, Connie Nielsen mocks function, this function and looks and returns and new
+
+24
+00:03:09,450 --> 00:03:10,380
+survey marks.
+
+25
+00:03:10,830 --> 00:03:22,260
+So first, define a variable like mock server mocks, server calling equals and invoking new server
+
+26
+00:03:22,260 --> 00:03:28,590
+function lost from 8TB Package 82, don't you, sir?
+
+27
+00:03:29,130 --> 00:03:40,050
+Mark's now calling handle function from mock server handle function registers the handler for the given
+
+28
+00:03:40,170 --> 00:03:43,320
+patter, so go to the next line.
+
+29
+00:03:43,710 --> 00:03:48,090
+Mark's server dot handle
+
+30
+00:03:50,940 --> 00:03:53,700
+dysfunction accept two arguments.
+
+31
+00:03:54,180 --> 00:04:03,600
+First, a pattern that we said root for it e.g. localhost year double quotation mark insert as much
+
+32
+00:04:04,170 --> 00:04:08,880
+as localhost and second a handler.
+
+33
+00:04:09,510 --> 00:04:14,730
+In this case, the calling handler function from reps package for it.
+
+34
+00:04:15,620 --> 00:04:17,670
+The right whip cards
+
+35
+00:04:20,310 --> 00:04:22,590
+dot handler function.
+
+36
+00:04:29,140 --> 00:04:37,330
+Handler is a simple interface to events to get broader client, it accepts a connection, this pointer,
+
+37
+00:04:37,480 --> 00:04:40,870
+which she also created, these are a function for it.
+
+38
+00:04:42,100 --> 00:04:44,770
+So the right fine.
+
+39
+00:04:48,660 --> 00:04:55,710
+And said the connection as pointer of VIPs get connection.
+
+40
+00:05:06,920 --> 00:05:13,250
+Now, we said they created Mock Server as the venue for the handle property on the server.
+
+41
+00:05:13,430 --> 00:05:14,540
+So we write.
+
+42
+00:05:15,930 --> 00:05:25,770
+Handler Colin Marx said We created our server and made the configurations inside it.
+
+43
+00:05:25,980 --> 00:05:33,210
+Now it's time to run it to do this record release and then serve function inside the server.
+
+44
+00:05:34,080 --> 00:05:42,630
+This function listens on the TCP network address and then comes serve to handle requests on incoming
+
+45
+00:05:42,630 --> 00:05:43,350
+connections.
+
+46
+00:05:44,370 --> 00:05:48,000
+He's an announcer, always returns in non-media role.
+
+47
+00:05:48,330 --> 00:05:51,900
+So first, define a variable like error.
+
+48
+00:05:55,230 --> 00:05:58,890
+A roll call in he calls from server
+
+49
+00:06:01,620 --> 00:06:06,480
+calling lesen to serve function, Lisa and server function.
+
+50
+00:06:08,130 --> 00:06:09,900
+Now check error status
+
+51
+00:06:15,090 --> 00:06:22,320
+like Dot Fattore and or Dot L
+
+52
+00:06:25,140 --> 00:06:31,440
+reformat the code and save the project in order not to prolong the time of decision.
+
+53
+00:06:31,620 --> 00:06:36,300
+We will finish it and we will continue the content in the next session.
+
+54
+00:06:36,600 --> 00:06:37,110
+Goodbye.

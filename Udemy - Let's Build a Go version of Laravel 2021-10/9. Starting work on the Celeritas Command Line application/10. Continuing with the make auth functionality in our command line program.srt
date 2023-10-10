@@ -1,0 +1,487 @@
+1
+00:00:00,770 --> 00:00:01,680
+So we're getting closer.
+
+2
+00:00:01,730 --> 00:00:06,440
+Let's fix the down migration, so it behaves the way it's supposed to, and let's copy over the data
+
+3
+00:00:06,440 --> 00:00:10,130
+models and we'll get started with that right here in my off.
+
+4
+00:00:10,190 --> 00:00:15,020
+Don't go file in the celebrities project inside the CMT slush seal up.
+
+5
+00:00:15,860 --> 00:00:22,400
+So between lectures, I went and made sure that the school to delete everything works the way that it's
+
+6
+00:00:22,400 --> 00:00:23,070
+supposed to.
+
+7
+00:00:23,090 --> 00:00:29,660
+By modifying it to this, so I'm going to copy the city here and go back to my I.D. and just replace
+
+8
+00:00:29,660 --> 00:00:32,630
+this with this.
+
+9
+00:00:33,500 --> 00:00:38,750
+So drop table if users exist, Cascade Drop Table, then a semicolon, then drop table.
+
+10
+00:00:38,750 --> 00:00:43,550
+If exist, tokens cascade and then finally drop table if exists.
+
+11
+00:00:43,790 --> 00:00:44,600
+Remember tokens?
+
+12
+00:00:44,810 --> 00:00:46,700
+OK, so we'll try that in a minute.
+
+13
+00:00:47,480 --> 00:00:51,320
+First of all, let's try copying over our data models.
+
+14
+00:00:51,680 --> 00:00:56,840
+And of course, we're going to have to create some sample data files, the user's table or the user's
+
+15
+00:00:56,840 --> 00:01:01,670
+model and the token model and put them somewhere in our template file system and copy them over.
+
+16
+00:01:01,680 --> 00:01:02,570
+But we'll get to that in a minute.
+
+17
+00:01:02,690 --> 00:01:03,810
+First of all, let's go.
+
+18
+00:01:03,830 --> 00:01:06,060
+Error equals and this is really easy.
+
+19
+00:01:06,380 --> 00:01:11,390
+Copy file from template and we're going to copy from and I'm going to assume it's going to be in the
+
+20
+00:01:11,390 --> 00:01:12,620
+templates file system.
+
+21
+00:01:12,620 --> 00:01:16,040
+So templates slash and we'll create a directory called data.
+
+22
+00:01:16,580 --> 00:01:19,850
+And then I'll put one in there called user go dot text.
+
+23
+00:01:20,120 --> 00:01:26,960
+And the only reason I'm putting text at the end is so my editor visual studio code doesn't continually
+
+24
+00:01:26,960 --> 00:01:31,910
+tell me, Hey, you've got this file in the data package and it's in the wrong folder, which it probably
+
+25
+00:01:31,910 --> 00:01:34,480
+would, and I'm not going to bother checking to see if it does or not.
+
+26
+00:01:34,490 --> 00:01:35,810
+This will do the trick.
+
+27
+00:01:36,730 --> 00:01:39,280
+And we want to copy it to sell down route paths.
+
+28
+00:01:40,330 --> 00:01:45,730
+We want to append slash and data slash user talk go and we'll check for an error.
+
+29
+00:01:45,940 --> 00:01:51,640
+And we actually do need to modify that copy file from template to make sure that file doesn't already
+
+30
+00:01:51,640 --> 00:01:54,340
+exist because we don't want to allow people to overwrite things.
+
+31
+00:01:54,820 --> 00:01:58,140
+So if error is not equal to no, then we'll return.
+
+32
+00:01:58,180 --> 00:01:59,200
+Not, we won't return.
+
+33
+00:01:59,500 --> 00:02:02,920
+We'll simply call things it gracefully and handed the error.
+
+34
+00:02:04,000 --> 00:02:11,460
+Now I'll copy this whole thing and paste it here and change this to token.
+
+35
+00:02:11,470 --> 00:02:14,590
+Don't go to text and change this to token.
+
+36
+00:02:14,590 --> 00:02:15,130
+Don't go.
+
+37
+00:02:16,840 --> 00:02:17,980
+Now let's go.
+
+38
+00:02:17,980 --> 00:02:23,920
+Look at this copy file from template function right here, and I have this to do message that says check
+
+39
+00:02:23,920 --> 00:02:28,090
+to ensure file does not already exist and we can do that pretty easily.
+
+40
+00:02:28,270 --> 00:02:28,660
+OK.
+
+41
+00:02:29,290 --> 00:02:31,960
+What we'll do is just create another file right here.
+
+42
+00:02:32,000 --> 00:02:38,890
+Another function right here called Func File exists, and that'll return true if the file exists and
+
+43
+00:02:38,890 --> 00:02:39,810
+false if it doesn't.
+
+44
+00:02:39,820 --> 00:02:46,420
+So file to check will be the full path into a file in the form of a string, and it returns to William
+
+45
+00:02:47,650 --> 00:02:48,310
+and go.
+
+46
+00:02:48,340 --> 00:02:51,690
+This is pretty easy if we don't care about the first return value.
+
+47
+00:02:51,700 --> 00:02:53,590
+We do care about the error is.
+
+48
+00:02:54,700 --> 00:02:55,690
+Post don't stop.
+
+49
+00:02:58,420 --> 00:03:07,450
+And that requires one Patnaik file to check, and we'll put a semicolon and then we'll put OS dot is
+
+50
+00:03:07,930 --> 00:03:11,250
+not exist error.
+
+51
+00:03:12,880 --> 00:03:16,600
+And then in curly brackets, return false.
+
+52
+00:03:19,230 --> 00:03:20,160
+Return true.
+
+53
+00:03:21,810 --> 00:03:22,530
+That's pretty simple.
+
+54
+00:03:22,620 --> 00:03:33,240
+So up here in my to do now, all I have to do is replace that with if file exists and handed target
+
+55
+00:03:33,240 --> 00:03:42,300
+file, which is the full path named the file I want to create and will say return errors dot new and
+
+56
+00:03:42,300 --> 00:03:50,610
+we'll just say target file plus already exists and that will be the early return.
+
+57
+00:03:51,000 --> 00:03:52,980
+OK, so that takes care of that.
+
+58
+00:03:53,070 --> 00:03:53,990
+Or at least it should.
+
+59
+00:03:54,030 --> 00:03:55,350
+We'll find out before too long.
+
+60
+00:03:56,130 --> 00:03:57,450
+So back to our stock go.
+
+61
+00:03:58,470 --> 00:04:01,020
+Now we're trying to copy from templates data.
+
+62
+00:04:01,050 --> 00:04:02,220
+Use your go to text.
+
+63
+00:04:02,220 --> 00:04:03,090
+And that doesn't exist.
+
+64
+00:04:03,210 --> 00:04:06,860
+So let's go to the CMD Seelye folder, then the Templates folder.
+
+65
+00:04:06,870 --> 00:04:13,800
+Then we'll create in the Templates folder a new directory called data, and we'll create two files in
+
+66
+00:04:13,800 --> 00:04:15,120
+there a new file.
+
+67
+00:04:15,630 --> 00:04:17,990
+And the first one is called User Don't go to text.
+
+68
+00:04:20,610 --> 00:04:23,700
+And another new file token don't go text.
+
+69
+00:04:25,830 --> 00:04:32,340
+Now I'll switch over to my My App project and I'll open the token Darko File, which is inside the data
+
+70
+00:04:32,340 --> 00:04:32,880
+directory.
+
+71
+00:04:33,930 --> 00:04:34,980
+Select All and copy.
+
+72
+00:04:35,220 --> 00:04:36,270
+Switch back here.
+
+73
+00:04:36,300 --> 00:04:38,880
+Make sure I'm looking at token doggo text.
+
+74
+00:04:39,270 --> 00:04:40,560
+I am paste today.
+
+75
+00:04:41,520 --> 00:04:49,800
+Now we'll go to user Agoda and switch back here to the other project and open user account and select
+
+76
+00:04:49,800 --> 00:04:54,360
+all and copy and switch back to celebrities and paste it into the user.
+
+77
+00:04:54,360 --> 00:04:55,710
+Not go too far.
+
+78
+00:04:56,070 --> 00:04:56,400
+OK.
+
+79
+00:04:57,750 --> 00:04:59,400
+So this should actually work.
+
+80
+00:05:00,240 --> 00:05:07,260
+And what I'm going to do, first of all, is build the binary make build Seelye from the root directory
+
+81
+00:05:07,260 --> 00:05:12,090
+of the Celebrities project, and that should build and copy the binary over to my my app.
+
+82
+00:05:12,420 --> 00:05:13,260
+And it looks like it did.
+
+83
+00:05:14,100 --> 00:05:17,850
+So we'll go to my app and the first thing I'll do.
+
+84
+00:05:18,030 --> 00:05:21,510
+And you might want to move them out of the folder, but I have many copies of these.
+
+85
+00:05:21,630 --> 00:05:24,110
+So I'm going to delete token logo and user account.
+
+86
+00:05:24,300 --> 00:05:25,440
+OK, so I'll delete those.
+
+87
+00:05:26,370 --> 00:05:36,570
+Actually, I'll delete them, do we move the trash and then I'll make sure that my migration's folder
+
+88
+00:05:36,570 --> 00:05:37,390
+is empty?
+
+89
+00:05:37,410 --> 00:05:38,000
+It is.
+
+90
+00:05:38,030 --> 00:05:41,980
+I have errors now because I'm referring to two models that don't exist anymore.
+
+91
+00:05:42,000 --> 00:05:44,760
+But hopefully this command will make that go away.
+
+92
+00:05:45,180 --> 00:05:46,300
+So let's check our database.
+
+93
+00:05:46,330 --> 00:05:47,580
+Make sure there's no tables in there.
+
+94
+00:05:48,660 --> 00:05:54,180
+And if I look at celebrities and refresh this, no tables at all perfect.
+
+95
+00:05:54,210 --> 00:05:55,560
+So I'm ready to run the test.
+
+96
+00:05:57,000 --> 00:06:04,140
+So dot slash tossed from the root level of my salary test or my my app project and my command is going
+
+97
+00:06:04,140 --> 00:06:06,360
+to be let's just hit, enter and see what the commands are.
+
+98
+00:06:07,530 --> 00:06:12,180
+We didn't put make off in there yet, but it's make off, make off.
+
+99
+00:06:12,720 --> 00:06:15,300
+And hopefully this will create the two migrations.
+
+100
+00:06:15,660 --> 00:06:18,240
+Run them and copy those files.
+
+101
+00:06:18,730 --> 00:06:21,530
+Token go and user don't go to the correct directory.
+
+102
+00:06:21,540 --> 00:06:22,110
+Let's find it.
+
+103
+00:06:24,650 --> 00:06:28,650
+So it finished and over here, it looks like I have user Darko.
+
+104
+00:06:28,670 --> 00:06:31,370
+Let's make it short, let's make sure it's actually user not go.
+
+105
+00:06:32,330 --> 00:06:33,020
+It is.
+
+106
+00:06:34,040 --> 00:06:38,420
+And we have token Darko, which is token perfect.
+
+107
+00:06:38,840 --> 00:06:40,160
+And let's go look at our database.
+
+108
+00:06:42,550 --> 00:06:45,910
+Refresh this near all my tables, perfect.
+
+109
+00:06:46,120 --> 00:06:49,810
+Now let's try just to make sure we got the down migration right?
+
+110
+00:06:50,740 --> 00:06:54,100
+Dot slash celebrities migrate down.
+
+111
+00:06:55,940 --> 00:06:57,080
+Migrations complete.
+
+112
+00:06:57,260 --> 00:07:02,690
+Let's go back and look at our database and refresh this, and they're gone.
+
+113
+00:07:03,020 --> 00:07:06,500
+And now we should be able to say migrate up the they should come back.
+
+114
+00:07:09,520 --> 00:07:13,870
+And refresh, and they're back, that looks pretty good.
+
+115
+00:07:14,650 --> 00:07:22,720
+So let's try now thinking about the other things we might want to copy over for our authentication package
+
+116
+00:07:22,840 --> 00:07:27,670
+because if you think it through, we have a middleware folder.
+
+117
+00:07:27,970 --> 00:07:28,630
+Has nothing in it.
+
+118
+00:07:29,140 --> 00:07:36,010
+And what use is an authentication framework or an authentication system that doesn't have middleware
+
+119
+00:07:36,010 --> 00:07:39,430
+that allows you to check to see if somebody is authenticated or not?
+
+120
+00:07:40,030 --> 00:07:46,090
+So maybe we should write some simple authentication middleware and put that in our Read-Only file system
+
+121
+00:07:46,090 --> 00:07:50,170
+in the command line application and copy that over as part of make off as well.
+
+122
+00:07:50,710 --> 00:07:53,200
+We'll get started on doing that in the next lecture.

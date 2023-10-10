@@ -1,0 +1,155 @@
+1
+00:00:12,620 --> 00:00:19,220
+Hello and welcome to the Golang programming language course in this session, we want to talk about
+
+2
+00:00:19,220 --> 00:00:21,020
+the protocol barter concept.
+
+3
+00:00:25,200 --> 00:00:26,280
+Political warfare.
+
+4
+00:00:28,730 --> 00:00:36,110
+Political boxers, usually referred as put it above, is a protocol developed by Google to allow serialization
+
+5
+00:00:36,110 --> 00:00:39,080
+and this realization of a structured data.
+
+6
+00:00:39,560 --> 00:00:47,330
+Google developed it with the goal to provide a better way compared to similar to make systems communicate.
+
+7
+00:00:48,200 --> 00:00:53,610
+So they focused on making it simpler, smaller, faster and more maintainable, then examined.
+
+8
+00:00:53,990 --> 00:01:01,520
+But as you will see, this protocol even surpassed Jason with better performance, better maintainability
+
+9
+00:01:01,520 --> 00:01:02,990
+and smaller size.
+
+10
+00:01:03,620 --> 00:01:07,430
+You define how you want your data to be structured once.
+
+11
+00:01:07,730 --> 00:01:14,780
+Then you can use a spatial generated source code to easily write and read your structured data to a
+
+12
+00:01:14,780 --> 00:01:18,410
+variety of data streams and using a variety of languages.
+
+13
+00:01:19,790 --> 00:01:26,720
+They are essentially a data format like Jason or Eastment, i.e. they can install structured data which
+
+14
+00:01:26,720 --> 00:01:30,920
+can be serialized and this serialized by the wide number of languages.
+
+15
+00:01:31,550 --> 00:01:34,160
+Let's understand these with a few examples.
+
+16
+00:01:39,600 --> 00:01:42,840
+Imagine you are storing data about books.
+
+17
+00:01:45,250 --> 00:01:50,860
+So as Sam, policemen were killed like this, you can see the scene syntax.
+
+18
+00:01:52,060 --> 00:01:57,550
+He could represent the same as transfer data using a small footprint with Jason.
+
+19
+00:01:58,300 --> 00:02:01,510
+Now you can see the syntax for Jason.
+
+20
+00:02:02,170 --> 00:02:08,710
+And if we were to represent these using political buffers, it would look like something like this.
+
+21
+00:02:09,310 --> 00:02:15,820
+Now at this school, the size of both the Jason and the political buffer seem to be quite similar.
+
+22
+00:02:16,060 --> 00:02:23,200
+But as your data increases, a lot of the size and complexity gets shaved off, which can lead to smaller
+
+23
+00:02:23,200 --> 00:02:26,380
+and more efficient payloads for your application.
+
+24
+00:02:31,930 --> 00:02:34,210
+How does it differ from Jason?
+
+25
+00:02:35,230 --> 00:02:42,280
+It is important to note that although Jason and Porter, both messages can be used interchangeably,
+
+26
+00:02:42,520 --> 00:02:45,400
+these technologies were designed with different goals.
+
+27
+00:02:46,980 --> 00:02:55,530
+Jason, which stands for JavaScript object notation is simply a message format that arose from a subset
+
+28
+00:02:55,530 --> 00:02:57,450
+of the JavaScript programming language.
+
+29
+00:02:58,590 --> 00:03:06,270
+Jason messages are exchanged in text format and no days they are completely independent and supported
+
+30
+00:03:06,270 --> 00:03:08,730
+by virtually all programming languages.
+
+31
+00:03:10,600 --> 00:03:14,650
+Portal both, on the other hand, is more than a message format.
+
+32
+00:03:14,890 --> 00:03:19,990
+It is also a set of rules and tools to define and exchange these messages.
+
+33
+00:03:20,260 --> 00:03:26,830
+Google, the creator of this protocol, has made it open source and provides tools to generate code
+
+34
+00:03:26,830 --> 00:03:32,820
+for the must use programming language around, like JavaScript, Java, Ruby, C-sharp, the Object,
+
+35
+00:03:32,930 --> 00:03:35,790
+C, Python, C++ and Go Land.
+
+36
+00:03:36,160 --> 00:03:43,360
+Besides their portal, Boff has more data ties than JSON like enumerators and methods, and it is also
+
+37
+00:03:43,360 --> 00:03:50,650
+heavily used on our PC's remote processor costs in order not to prolong the time of decision.
+
+38
+00:03:50,800 --> 00:03:54,760
+We will finish it and we will continue the content in the next session.
+
+39
+00:03:54,970 --> 00:03:55,480
+Goodbye.

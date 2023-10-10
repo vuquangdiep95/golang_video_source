@@ -1,0 +1,375 @@
+1
+00:00:00,210 --> 00:00:00,570
+All right.
+
+2
+00:00:00,630 --> 00:00:04,930
+So now we're going to I'm going to kind of just make sure I understand this pass.
+
+3
+00:00:04,960 --> 00:00:05,480
+SHE MOUTHS.
+
+4
+00:00:05,490 --> 00:00:16,280
+So the first thing they're in line 78 you're passing in message it of its passing in is a variable that's
+
+5
+00:00:16,290 --> 00:00:17,740
+a type string.
+
+6
+00:00:17,940 --> 00:00:19,800
+And that that variables and message.
+
+7
+00:00:19,800 --> 00:00:22,080
+So show me just you to jump ahead and see.
+
+8
+00:00:22,080 --> 00:00:29,830
+Pass each e-mails used in what's being passed in and so pass each e-mail is when you you have range
+
+9
+00:00:29,850 --> 00:00:35,370
+ranging over your responses and your responses come from get conversation.
+
+10
+00:00:35,370 --> 00:00:42,540
+And so get conversation is that first to the second one is the second one that gets all the conversations
+
+11
+00:00:42,540 --> 00:00:52,040
+right and then the first one the first function we had was make conversation requests and the next ones
+
+12
+00:00:52,050 --> 00:00:55,170
+get all get conversations.
+
+13
+00:00:55,170 --> 00:00:55,440
+All right.
+
+14
+00:00:55,470 --> 00:01:01,800
+So get conversations returns that slice of string and then scroll down to the main and then get conversation.
+
+15
+00:01:01,800 --> 00:01:06,660
+Gives us that response which is a slice of string and then we range over that slice of string.
+
+16
+00:01:06,660 --> 00:01:09,330
+And for each wanting passing a message which is a string.
+
+17
+00:01:09,330 --> 00:01:16,050
+So that's just the way that each team now that was down there in depth tools that we saw.
+
+18
+00:01:16,050 --> 00:01:17,240
+All right good.
+
+19
+00:01:17,250 --> 00:01:23,850
+And so then you take that each e-mail and you say we've got to turn this into a reader so you wrap strings
+
+20
+00:01:23,970 --> 00:01:31,260
+reader around it and use go query new document reader and again you've got all this sort of from the
+
+21
+00:01:32,340 --> 00:01:37,620
+example that turns it into a selection or whatever new document reader right then gives you access to
+
+22
+00:01:37,620 --> 00:01:39,160
+all those other methods.
+
+23
+00:01:39,360 --> 00:01:46,620
+And so just go back to New document from reader for a second in the documentation and new document reader.
+
+24
+00:01:46,650 --> 00:01:47,860
+Right.
+
+25
+00:01:47,910 --> 00:01:55,560
+You got all those new document from reader gives you a document pointer to a document and the pointer
+
+26
+00:01:55,560 --> 00:01:56,880
+to a document in there.
+
+27
+00:01:56,940 --> 00:02:01,320
+We have a pointer to a selection since we have a pointer to selection.
+
+28
+00:02:01,650 --> 00:02:04,000
+We have all of those methods.
+
+29
+00:02:04,140 --> 00:02:06,900
+And so now we have access to all those methods is that correct.
+
+30
+00:02:06,930 --> 00:02:07,450
+Yes.
+
+31
+00:02:07,470 --> 00:02:09,180
+So back to the code.
+
+32
+00:02:09,180 --> 00:02:11,480
+Yeah they're all the methods.
+
+33
+00:02:11,490 --> 00:02:21,570
+We have the doc and then we just check that error and your error is return nil fund error K and returning
+
+34
+00:02:21,570 --> 00:02:29,610
+an error if there's problems passing it up through chain of execution and then you slice tweets told
+
+35
+00:02:29,610 --> 00:02:34,290
+all your tweets and now you could just use those functions you got this kind of from the example you
+
+36
+00:02:34,300 --> 00:02:35,020
+looked at zero.
+
+37
+00:02:35,060 --> 00:02:41,610
+You got work and find and each you pass all that in and just return your slice of tweets when it's all
+
+38
+00:02:41,610 --> 00:02:44,270
+done.
+
+39
+00:02:44,720 --> 00:02:46,280
+And that does that for each.
+
+40
+00:02:46,350 --> 00:02:47,190
+Each.
+
+41
+00:02:47,190 --> 00:02:49,010
+Each conversation basically right.
+
+42
+00:02:49,050 --> 00:02:49,440
+Yeah.
+
+43
+00:02:49,520 --> 00:02:51,140
+The other slice of conversation.
+
+44
+00:02:51,170 --> 00:02:53,150
+So you're doing that with the range in Maine.
+
+45
+00:02:53,150 --> 00:02:53,390
+Yeah.
+
+46
+00:02:53,400 --> 00:02:54,090
+That's awesome.
+
+47
+00:02:54,090 --> 00:02:54,830
+Totally got it.
+
+48
+00:02:54,870 --> 00:02:56,230
+So this person just won.
+
+49
+00:02:56,250 --> 00:02:58,980
+One response gets passed with this.
+
+50
+00:02:59,010 --> 00:03:04,280
+And so then you have to put together all the slice of tweets back together at the end cool.
+
+51
+00:03:04,440 --> 00:03:12,750
+And I was going to save this this question for you know and this reflection for kind of questions at
+
+52
+00:03:12,750 --> 00:03:12,980
+the end.
+
+53
+00:03:13,020 --> 00:03:20,540
+I think it's a good point to say this but like I I'm excited that I even understand the code and being
+
+54
+00:03:20,550 --> 00:03:26,670
+able to understand the code like like literally like little endorphins go off in my head when I understand
+
+55
+00:03:26,690 --> 00:03:34,440
+it's like a Las Vegas sort of you know no endorphin positive reinforcement kind of thing like goo I
+
+56
+00:03:34,440 --> 00:03:36,680
+got it I understood it right.
+
+57
+00:03:36,690 --> 00:03:41,730
+And I think that's also I get that when I actually write code you know and it works it's like oh I got
+
+58
+00:03:41,730 --> 00:03:46,200
+it it works like there's a little bit addictive quality that programming for me and I know it's like
+
+59
+00:03:46,200 --> 00:03:51,150
+that for other people it's like it's pleasing when you create a solution when you engineer something
+
+60
+00:03:51,150 --> 00:03:56,580
+that really works well it's pleasing when you can understand something that somebody else engineered
+
+61
+00:03:56,580 --> 00:03:57,950
+that works well.
+
+62
+00:03:57,950 --> 00:04:03,960
+And and so but that's I also just wanted to kind of point out that those are the steps in being able
+
+63
+00:04:03,960 --> 00:04:04,830
+to do.
+
+64
+00:04:04,860 --> 00:04:06,750
+First thing is to be able to understand right.
+
+65
+00:04:06,750 --> 00:04:10,890
+Like first you got to see it and then you got to be able to understand how it was done and then eventually
+
+66
+00:04:10,890 --> 00:04:12,460
+you're going to be able to do it.
+
+67
+00:04:12,480 --> 00:04:15,880
+So just take heart wherever you are on that process.
+
+68
+00:04:15,960 --> 00:04:20,100
+If you look at this and you're like well a little bit overwhelming or if you look at this and you're
+
+69
+00:04:20,190 --> 00:04:25,380
+like Okay I understand it don't think I could write it like that is the process that you go through
+
+70
+00:04:25,380 --> 00:04:27,500
+to eventually being able to write it.
+
+71
+00:04:27,960 --> 00:04:35,490
+You know you think of other fields other industries you know like whether it's you know soccer you know
+
+72
+00:04:35,570 --> 00:04:40,470
+and people saw you know Pele do certain things and then they went and they practice it and then they
+
+73
+00:04:40,470 --> 00:04:41,240
+were able to do it.
+
+74
+00:04:41,250 --> 00:04:42,840
+But at first they couldn't.
+
+75
+00:04:42,870 --> 00:04:47,870
+And you know or or music you know you hear somebody else play something and you're like wow.
+
+76
+00:04:47,970 --> 00:04:50,430
+Then you go practice it and eventually you can do that too.
+
+77
+00:04:50,460 --> 00:04:54,720
+But the first thing is being able to see somebody do it and understand that they're doing it.
+
+78
+00:04:54,720 --> 00:05:00,440
+And and then applying yourself to it being able to do it yourself eventually you can do it to but how
+
+79
+00:05:00,440 --> 00:05:06,560
+long did it take you to be able to write write code like this since you're 13.
+
+80
+00:05:06,620 --> 00:05:07,780
+That was their teammates.
+
+81
+00:05:07,890 --> 00:05:08,530
+Started coding.
+
+82
+00:05:08,540 --> 00:05:11,300
+So that's that's a long time.
+
+83
+00:05:11,900 --> 00:05:15,030
+And but so it takes some time and.
+
+84
+00:05:15,670 --> 00:05:17,330
+But it's 13 years ago actually.
+
+85
+00:05:17,360 --> 00:05:18,410
+So my life.
+
+86
+00:05:18,740 --> 00:05:19,080
+Yeah.
+
+87
+00:05:19,640 --> 00:05:21,890
+But it comes if you apply yourself.
+
+88
+00:05:21,970 --> 00:05:22,190
+All right.
+
+89
+00:05:22,190 --> 00:05:26,050
+That's the low reflection when you have anything where you want to add.
+
+90
+00:05:26,120 --> 00:05:28,640
+Not about this but dreading I'm just jumping to Maine.
+
+91
+00:05:28,840 --> 00:05:29,360
+Yeah.
+
+92
+00:05:29,480 --> 00:05:30,040
+All right.
+
+93
+00:05:30,560 --> 00:05:31,160
+Let's do that.
+
+94
+00:05:31,160 --> 00:05:31,970
+See you at Expedia.

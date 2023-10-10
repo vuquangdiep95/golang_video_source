@@ -1,0 +1,544 @@
+1
+00:00:00,510 --> 00:00:05,790
+OK jadi kita sekarang siap untuk memulai layanan pertama kami sehingga kami akan membuat blog karena di Crood
+
+2
+00:00:05,790 --> 00:00:07,450
+hal pertama yang harus dibuat.
+
+3
+00:00:07,560 --> 00:00:16,050
+Jadi kita akan memiliki RBC dan yang ini disebut buat blog dan permintaannya adalah membuat permintaan blog
+
+4
+00:00:16,050 --> 00:00:20,840
+dan grup respons dan responsnya adalah membuat respons blog.
+
+5
+00:00:20,850 --> 00:00:25,190
+Sekarang kita harus membuat dua pesan ini membuat permintaan dan membuat respons blog.
+
+6
+00:00:25,530 --> 00:00:32,130
+Maka untuk ini kami akan mengirim pesan dan kami akan membuat permintaan yang kredibel dan kami akan mengirim pesan
+
+7
+00:00:32,130 --> 00:00:34,920
+dan kami akan membuat tanggapan buat blog.
+
+8
+00:00:34,920 --> 00:00:37,130
+Jadi, inilah tanggapan saya.
+
+9
+00:00:37,380 --> 00:00:43,080
+Sekarang kita harus menentukan apa yang ingin kita buat dalam permintaan hukum dengan sangat baik pada dasarnya
+
+10
+00:00:43,170 --> 00:00:49,600
+setelah Anda membuat blog sehingga kami akan memasukkannya ke dalam blog dan sebagai tanggapan juga akan memberikan kembali sebuah blog.
+
+11
+00:00:49,770 --> 00:00:53,290
+Yang ini akan memiliki ID blog.
+
+12
+00:00:53,430 --> 00:00:53,670
+Baik.
+
+13
+00:00:53,670 --> 00:00:56,910
+Padahal yang ini kita belum tahu blognya.
+
+14
+00:00:56,910 --> 00:00:57,710
+Jadi disini.
+
+15
+00:00:57,840 --> 00:00:58,280
+BAIK.
+
+16
+00:00:58,530 --> 00:00:59,570
+Jadi kita sudah pergi.
+
+17
+00:00:59,670 --> 00:01:03,940
+Selesai dengan politik untuk hal-hal yang kita butuhkan untuk menghasilkan kode kita.
+
+18
+00:01:04,110 --> 00:01:11,600
+Jadi biarkan saya pergi untuk menghasilkan pencarian data dan salin seluruh gumpalan kode ini untuk menghasilkan kode kita selesai.
+
+19
+00:01:11,640 --> 00:01:18,540
+Jadi sekarang jika kita kembali menyukai PBT dari Protel itu dan kita harus membuat blog, Anda melihat ada kode
+
+20
+00:01:18,540 --> 00:01:21,570
+yang telah dibuat untuk kita sehingga itu sempurna.
+
+21
+00:01:21,630 --> 00:01:27,610
+Jadi ada baiknya server Anda tidak berfungsi dan kami harus mengimplementasikan hutan ini untuk server kami.
+
+22
+00:01:27,930 --> 00:01:31,420
+Jadi yang harus kita lakukan adalah membuat fungsi create.
+
+23
+00:01:31,620 --> 00:01:38,920
+Jadi jika kita kembali mendaftar layanan blok kita dapat melihat di sini di antarmuka server layanan blog bahwa
+
+24
+00:01:39,430 --> 00:01:42,810
+kita harus membuat fungsi yang disebut membuat blog.
+
+25
+00:01:42,820 --> 00:01:44,820
+Jadi mari kita lanjutkan dan lakukan ini.
+
+26
+00:01:44,950 --> 00:01:53,840
+Jadi saya akan masuk ke server saya dan kami akan membuat fungsi di server kami dan itu disebut buat blog.
+
+27
+00:01:54,210 --> 00:01:59,460
+Saya harus menyebutkan semuanya sehingga konteksnya adalah CTX, permintaan Create Blug adalah rec.
+
+28
+00:01:59,550 --> 00:02:06,450
+Dan di sini saya harus menambahkan awalan Blug P. B. untuk memastikan bahwa kelas mendapatkan tipe
+
+29
+00:02:06,450 --> 00:02:07,320
+untuk diselesaikan.
+
+30
+00:02:07,330 --> 00:02:10,440
+OK jadi sekarang kita siap untuk membuat fungsi blog.
+
+31
+00:02:10,790 --> 00:02:16,860
+Jadi dalam hal ini kita pada dasarnya harus mengurai isi permintaan kita dan menyampaikannya kepada seseorang.
+
+32
+00:02:17,220 --> 00:02:23,880
+Jadi hal pertama yang ingin Anda lakukan adalah menetapkan Blug dari rec dot get Blug.
+
+33
+00:02:24,300 --> 00:02:25,760
+Dan ini datang langsung dari protokol.
+
+34
+00:02:25,760 --> 00:02:30,220
+Tetapi untuk sekarang kita pada dasarnya harus membuat data darinya.
+
+35
+00:02:30,270 --> 00:02:37,490
+Jadi yang akan kita lakukan adalah kita akan membuat item Blug dari itu jadi saya hanya akan menempatkan item blog di
+
+36
+00:02:37,520 --> 00:02:39,260
+sini sehingga kita tidak ketinggalan.
+
+37
+00:02:39,260 --> 00:02:39,720
+BAIK.
+
+38
+00:02:40,040 --> 00:02:41,220
+Jadi item blog sudah habis.
+
+39
+00:02:41,390 --> 00:02:47,510
+Jadi apa yang membuat item blog dan kita harus memetakan semua bidang ke apa yang kita ketahui
+
+40
+00:02:47,510 --> 00:02:56,630
+jadi kita akan pergi ke depan dan membuat item blog dan struct ini akan memiliki ID penulis yang merupakan blog budaya yang mendapatkan ID penulis
+
+41
+00:02:57,850 --> 00:03:02,320
+lalu akan memiliki judul yang mana blog Anda yang mendapatkan judul.
+
+42
+00:03:02,450 --> 00:03:05,300
+Dan akhirnya ia akan memiliki hati nurani dan.
+
+43
+00:03:05,390 --> 00:03:10,760
+Cinta memang mendapatkan kepercayaan diri dan kami tidak melupakan komentar terakhir.
+
+44
+00:03:10,760 --> 00:03:16,390
+Jadi ini pada dasarnya mengatakan OK kita akan membuat item blog yang dengan cara mengingat peta.
+
+45
+00:03:16,910 --> 00:03:21,060
+Dan kami hanya akan mengurai data dari blog ke dalam data itu.
+
+46
+00:03:21,110 --> 00:03:27,510
+Jadi sekarang apa yang kita lakukan dengan Deedat itu di mana kita ingin memasukkannya ke dalam database mongoloids kita.
+
+47
+00:03:27,530 --> 00:03:31,790
+Jadi jika Anda mengambil koleksi yang telah kami buat sebelumnya yang datang jauh-jauh
+
+48
+00:03:31,790 --> 00:03:34,490
+dari sini koleksi maka kami mengambil koleksi.
+
+49
+00:03:34,490 --> 00:03:39,350
+Kami pada dasarnya memiliki fungsi yang disebut sisipan 1.
+
+50
+00:03:39,710 --> 00:03:43,740
+Jadi kita hanya akan memasukkan satu dan memasukkan satu membutuhkan banyak argumen.
+
+51
+00:03:43,760 --> 00:03:45,720
+Jadi mari kita buat dokumentasi Anda dengan cepat.
+
+52
+00:03:45,950 --> 00:03:52,250
+Jadi, masukkan satu menyisipkan dokumen tunggal ke dalam koleksi dan kita dapat menentukan konteks khusus
+
+53
+00:03:52,250 --> 00:03:57,150
+untuk metode ini atau nil default ke konteks latar belakang itu.
+
+54
+00:03:57,260 --> 00:04:01,430
+Jadi kita harus menggunakan konsep latar belakang dan memasukkan dokumen.
+
+55
+00:04:01,430 --> 00:04:02,840
+Jadi mari kita pergi dan coba itu.
+
+56
+00:04:02,840 --> 00:04:10,730
+Jadi konteks yang ingin kita gunakan akan disebut konteks yang melatar belakangi dan kemudian kita harus menyerahkannya pada
+
+57
+00:04:10,730 --> 00:04:11,600
+dokumen.
+
+58
+00:04:11,650 --> 00:04:13,920
+Sekarang jenis dokumen adalah antarmuka.
+
+59
+00:04:14,120 --> 00:04:15,320
+Jadi ini generik.
+
+60
+00:04:15,320 --> 00:04:17,590
+Dan pada dasarnya apa yang kita lakukan seperti generik.
+
+61
+00:04:17,600 --> 00:04:22,300
+Jadi yang kami lakukan adalah memasukkan data itu sendiri sehingga kami meneruskan data.
+
+62
+00:04:22,820 --> 00:04:28,300
+Dan ini akan memetakan dokumen Anda dengan baik karena kita harus menjadi Sontag di bagian paling atas Anda
+
+63
+00:04:28,300 --> 00:04:30,770
+akan melihat artinya ketika kami menjalankan fungsi itu.
+
+64
+00:04:30,770 --> 00:04:34,040
+Opsi untuk memasukkan data tidak akan dimasukkan.
+
+65
+00:04:34,570 --> 00:04:36,180
+Dan kita selesai sekarang.
+
+66
+00:04:36,200 --> 00:04:41,180
+Sisipkan satu mengembalikan hasil satu sisipkan dalam kesalahan.
+
+67
+00:04:41,180 --> 00:04:48,260
+Jadi yang harus kita lakukan adalah kembali ke server kita dan berkata OK hasilnya akan
+
+68
+00:04:48,260 --> 00:04:52,090
+disebut sisanya dan kemudian kesalahan akan disebut udara.
+
+69
+00:04:52,140 --> 00:04:53,700
+Itu masuk akal.
+
+70
+00:04:53,700 --> 00:04:56,040
+Dan kami baik-baik saja.
+
+71
+00:04:56,160 --> 00:04:58,490
+Selanjutnya kita perlu tahu apakah ada kesalahan atau tidak.
+
+72
+00:04:58,480 --> 00:05:03,440
+Jadi jika ada kesalahan maka jika kesalahan tidak ada nihil.
+
+73
+00:05:03,460 --> 00:05:05,440
+Jadi ada kesalahan di sini.
+
+74
+00:05:05,480 --> 00:05:12,030
+Ingat ketika kami mulai melakukan beberapa kode dan kami melakukan beberapa kode kesalahan, kami dapat mengembalikan fakta bahwa tidak
+
+75
+00:05:12,030 --> 00:05:14,370
+ada kesalahan sehingga akan mengatakan status.
+
+76
+00:05:14,400 --> 00:05:21,640
+Itulah udara kami dan ini adalah bagaimana kami menyampaikan data ini dari buffer lokal. Jadi kita
+
+77
+00:05:21,640 --> 00:05:29,780
+harus teruskan dan masukkan status Jarkesy ini dan buka dan katakan OK kita akan mengembalikan kesalahan Jarkesy dan kode
+
+78
+00:05:30,500 --> 00:05:33,400
+untuk itu harus mengimpor paket decode.
+
+79
+00:05:33,680 --> 00:05:37,650
+Tetapi kode ini akan disebut Internal karena ini adalah hak kesalahan internal.
+
+80
+00:05:37,650 --> 00:05:42,230
+Ini seperti jika kita tidak dapat memasukkan data ke TB maka ini adalah kesalahan internal.
+
+81
+00:05:42,530 --> 00:05:50,150
+Dan selanjutnya ketika kita harus lakukan adalah menyampaikan pesan sehingga kita akan mengatakan diperkirakan itu adalah Pangeran F dan kita akan mengatakan internal dan kita akan
+
+82
+00:05:50,420 --> 00:05:51,040
+lulus
+
+83
+00:05:54,130 --> 00:06:00,000
+dan kesalahan itu sendiri sehingga persen G. V. dan kami akan melewatinya.
+
+84
+00:06:00,280 --> 00:06:03,850
+OK jadi pada dasarnya OK jika semua yang kita harus datang pada akhirnya.
+
+85
+00:06:04,090 --> 00:06:10,030
+Jadi, jika semuanya memburuk, maka jika kita tidak dapat memasukkan data di Tramon TV yang bagus, ini kemungkinan
+
+86
+00:06:10,250 --> 00:06:11,500
+besar adalah internal.
+
+87
+00:06:11,500 --> 00:06:14,390
+Jadi yang ingin kita lakukan hanyalah melemparkan kesalahan pada klien.
+
+88
+00:06:14,560 --> 00:06:17,290
+Kode ini internal sehingga itu berarti tidak bisa menghadapinya benar-benar.
+
+89
+00:06:17,830 --> 00:06:23,630
+Dan kemudian kita katakan OK di sini adalah pesan kesalahan yang kita punya kalau-kalau mereka bisa menghadapinya selanjutnya.
+
+90
+00:06:23,740 --> 00:06:27,780
+Nah yang ingin kita lakukan adalah mengekstrak id objek dari hasil.
+
+91
+00:06:27,880 --> 00:06:31,450
+Jadi jika Anda melihat masukkan satu hasil di sini.
+
+92
+00:06:31,510 --> 00:06:37,720
+Jika Anda melihat tipe satu hasil, itu berisi ID yang dimasukkan yang merupakan antarmuka tipe
+
+93
+00:06:37,720 --> 00:06:40,710
+atas sehingga kita harus menyimpulkan jenis antarmuka.
+
+94
+00:06:40,720 --> 00:06:43,800
+Syukurlah setelah beberapa penelitian saya tahu bagaimana melakukannya.
+
+95
+00:06:43,870 --> 00:06:52,780
+Jadi pada dasarnya akan lulus mendapatkan id objek jadi Id dan OK untuk melihat bahwa konversi berfungsi dan akan
+
+96
+00:06:53,280 --> 00:06:56,740
+melakukan oh Id mengutip hasil yang dimasukkan.
+
+97
+00:06:56,740 --> 00:07:02,470
+Titik id dan di sini kita dapat menampilkan antarmuka itu ke sesuatu yang kita inginkan.
+
+98
+00:07:02,980 --> 00:07:07,200
+Dan para pemain yang akan bekerja akan disebut objek.
+
+99
+00:07:07,510 --> 00:07:13,920
+Jadi pada dasarnya kami mengatakan bahwa ID yang dimasukkan adalah antarmuka yang merupakan antarmuka kosong dapat
+
+100
+00:07:13,990 --> 00:07:20,400
+diuji ke objek id dan OK pada dasarnya mengatakan OK para pemain bekerja atau tidak bekerja.
+
+101
+00:07:20,680 --> 00:07:22,270
+Jadi OK adalah boolean.
+
+102
+00:07:22,390 --> 00:07:29,110
+Jadi jika tidak ok maka kita akan mengembalikan kesalahan dan kesalahan kali ini akan menjadi internal juga jadi
+
+103
+00:07:29,110 --> 00:07:31,220
+saya hanya akan mengatakan ini.
+
+104
+00:07:31,540 --> 00:07:41,960
+Tapi kali ini saya akan mengatakan tidak dapat menguraikan konversi ke 0 ID untuk beberapa alasan.
+
+105
+00:07:42,130 --> 00:07:43,650
+Mungkin inilah yang terjadi.
+
+106
+00:07:44,080 --> 00:07:47,710
+OK jadi sekarang kita punya ide dan ini adalah objek yang tepat.
+
+107
+00:07:47,710 --> 00:07:50,500
+Jadi kita punya metode untuk itu dan kita bisa mulai menanganinya.
+
+108
+00:07:50,860 --> 00:07:55,010
+Jadi yang kita lakukan adalah kita hanya perlu mengembalikan respons kita.
+
+109
+00:07:55,030 --> 00:08:03,100
+Jadi untuk ini saya akan menggunakan dan Blug P. B. dan kita harus jelas-jelas memberikan tanggapan buat blog dan
+
+110
+00:08:03,100 --> 00:08:05,530
+untuk ini kita perlu mengirimkan Blug di dalamnya.
+
+111
+00:08:05,530 --> 00:08:09,620
+Jadi jika Anda melihat tanggapan Create Blug ada Blug di dalamnya.
+
+112
+00:08:09,670 --> 00:08:15,310
+Jadi mari kita lanjutkan dan mengirimkan Blug sehingga kita akan mengatakan bahwa blog yang
+
+113
+00:08:16,410 --> 00:08:26,020
+kita lewati akan memiliki tipe look P. B. itu Blug dan sekarang kita hanya melewati ID dan ID
+
+114
+00:08:26,020 --> 00:08:32,380
+akan dipanggil ke ID yang baru saja kita dapatkan di sini id objek yang hecks dan isk mengembalikan sebuah string.
+
+115
+00:08:32,710 --> 00:08:37,350
+Sekarang ID lain akan sama dengan Blug yang mendapatkan ID lain.
+
+116
+00:08:37,360 --> 00:08:43,500
+Judul akan dipanggil ke Blug yang mendapat judul.
+
+117
+00:08:43,900 --> 00:08:52,240
+Dan akhirnya kontennya akan sama dengan Blug yang mendapatkan konten dan itu mungkin cara yang lebih baik untuk melakukan
+
+118
+00:08:52,240 --> 00:08:52,800
+ini.
+
+119
+00:08:52,810 --> 00:08:54,140
+Tapi saya hanya akan menambahkan warna yang hilang.
+
+120
+00:08:54,160 --> 00:08:55,320
+Dan di sini kita mulai.
+
+121
+00:08:55,480 --> 00:08:57,450
+Sekarang tidak sepenuhnya bahagia.
+
+122
+00:08:57,550 --> 00:08:59,780
+Dikatakan tidak menyiratkan metode.
+
+123
+00:08:59,800 --> 00:09:05,130
+Ya karena kami tidak kembali, tahu dulu kami mengembalikan nihil terakhir jadi saya hanya akan menambahkan nihil di akhir.
+
+124
+00:09:05,590 --> 00:09:06,390
+Dan di sini kita mulai.
+
+125
+00:09:06,550 --> 00:09:09,220
+Jadi di sini kita telah mengaktifkan fungsi kita dan ini adalah buat.
+
+126
+00:09:09,220 --> 00:09:16,990
+Jadi mari kita lanjutkan meringkas kami mem-parsing data dan kami memetakannya ke item blog ke dalam objek data dan kemudian
+
+127
+00:09:17,470 --> 00:09:22,970
+kami akan meneruskannya ke koleksi kami dan memasukkan data itu ke dalam koleksi kami
+
+128
+00:09:22,980 --> 00:09:29,560
+melalui driver bulan yang baik jika ada kesalahan kembalikan kesalahan ke klien jika kami tidak dapat menguraikan
+
+129
+00:09:29,560 --> 00:09:34,870
+ID yang dimasukkan sebagai id objek maka kami akan mengembalikan pesan ini.
+
+130
+00:09:34,870 --> 00:09:40,030
+Dan akhirnya jika semuanya berjalan dengan baik maka kita memiliki id objek dan kemudian kita dapat membuat
+
+131
+00:09:40,060 --> 00:09:43,670
+pengembalian darah P. B. buat respons Blug yang berisi bug.
+
+132
+00:09:43,690 --> 00:09:44,520
+Jadi banyak kode.
+
+133
+00:09:44,530 --> 00:09:48,780
+Ini sedikit lebih rumit tetapi mari kita lihat apakah setidaknya server dapat dijalankan.
+
+134
+00:09:48,850 --> 00:09:50,750
+Jadi mari kita pergi dan jalankan server kami.
+
+135
+00:09:51,190 --> 00:09:53,830
+Dan ya server kami berjalan dengan sempurna.
+
+136
+00:09:53,830 --> 00:09:57,190
+Kami akan melakukan kuliah berikutnya dan mengimplementasikan klien untuk memanggil fungsi itu.
+

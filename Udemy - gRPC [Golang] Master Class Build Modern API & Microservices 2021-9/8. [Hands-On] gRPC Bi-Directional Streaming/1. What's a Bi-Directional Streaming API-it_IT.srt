@@ -1,0 +1,116 @@
+1
+00:00:00,150 --> 00:00:05,380
+OK, quindi ora impariamo a conoscere le rifiniture delle direzioni o a morire in GRB.
+
+2
+00:00:05,760 --> 00:00:08,110
+Allora, cos'è uno streaming bidirezionale.
+
+3
+00:00:08,310 --> 00:00:13,200
+Bene, di nuovo ci sono nuovi tipi di cose da fare su API, ma lo sai già bene.
+
+4
+00:00:13,260 --> 00:00:19,710
+Abbiamo un client e un server e trasmettono messaggi da uno all'altro il client può inviare molti messaggi al
+
+5
+00:00:19,710 --> 00:00:23,850
+server e al server e invia risposte di menu ai client.
+
+6
+00:00:23,850 --> 00:00:25,250
+Questi numeri non devono corrispondere.
+
+7
+00:00:25,320 --> 00:00:25,880
+OK.
+
+8
+00:00:26,130 --> 00:00:30,810
+È possibile avere cinque client di messaggi in streaming e due risposte dal server.
+
+9
+00:00:30,810 --> 00:00:31,410
+Non lo sai
+
+10
+00:00:31,620 --> 00:00:34,250
+Dipende da come è l'implementazione.
+
+11
+00:00:34,260 --> 00:00:36,460
+Quindi quando useresti lo streaming bidirezionale.
+
+12
+00:00:36,780 --> 00:00:41,810
+Bene, ne hai bisogno quando il client nel server e si inviano molti dati tra loro in modo asincrono.
+
+13
+00:00:41,910 --> 00:00:42,480
+OK.
+
+14
+00:00:42,600 --> 00:00:44,990
+Non vuoi inviare una risposta.
+
+15
+00:00:45,120 --> 00:00:48,360
+Non si desidera attendere la risposta per il client per inviare il messaggio successivo.
+
+16
+00:00:48,510 --> 00:00:53,220
+O per esempio se stai implementando un protocollo Chatz in cui il client invia i messaggi con cui
+
+17
+00:00:53,220 --> 00:00:57,240
+vuole chattare e il servizio invia i messaggi al client da tutte le chat.
+
+18
+00:00:57,330 --> 00:00:57,930
+OK.
+
+19
+00:00:58,080 --> 00:01:00,590
+Quindi questi sono alcuni casi di utilizzo molto buoni.
+
+20
+00:01:00,600 --> 00:01:05,490
+Infine, se si desidera avere una connessione a lunga esecuzione in cui è possibile lo streaming di informazioni tra il
+
+21
+00:01:05,490 --> 00:01:06,480
+client e il server.
+
+22
+00:01:06,660 --> 00:01:07,990
+Questo è un ottimo caso d'uso.
+
+23
+00:01:08,720 --> 00:01:15,150
+Ora, quando hai lo streaming bidirezionale, probabilmente lo hai indovinato, ora usi due volte lo stream di parole.
+
+24
+00:01:15,170 --> 00:01:19,170
+Quindi dovremo ancora definire una richiesta e un messaggio di risposta.
+
+25
+00:01:19,400 --> 00:01:20,720
+Ma ecco come appare.
+
+26
+00:01:20,720 --> 00:01:27,530
+Daremo il benvenuto a tutte le richieste di streaming in cui abbiamo uno stream come client e uno stream come server
+
+27
+00:01:27,530 --> 00:01:31,010
+o guest che avrà la parola chiave stream due volte.
+
+28
+00:01:31,010 --> 00:01:34,800
+Quindi tutto è lo stesso, sta arrivando proprio bene insieme.
+
+29
+00:01:35,000 --> 00:01:38,600
+E poi la prossima lezione andrà avanti e riscriverà quel servizio in particolari buffer.
+

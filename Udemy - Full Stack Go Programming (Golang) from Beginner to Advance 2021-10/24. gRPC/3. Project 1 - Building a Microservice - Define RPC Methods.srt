@@ -1,0 +1,383 @@
+1
+00:00:13,190 --> 00:00:19,280
+Hello and welcome to the gold and programming language course in the previous session, we talked about
+
+2
+00:00:19,280 --> 00:00:25,580
+some concepts obduracy, and in this session we want to do a geographic example.
+
+3
+00:00:32,280 --> 00:00:34,590
+Building in microservice and go like.
+
+4
+00:00:35,920 --> 00:00:42,550
+In this session, we want to implement your PC and practice for this purpose, we design an example
+
+5
+00:00:44,050 --> 00:00:50,020
+in this example, we want to implement the connection between the client and the server with the MySchool
+
+6
+00:00:50,020 --> 00:00:52,570
+database by G.R. PC service.
+
+7
+00:00:53,650 --> 00:01:00,160
+It's important to note that the client cannot communicate directly with the database, but the client
+
+8
+00:01:00,160 --> 00:01:04,180
+is connected to the server and the server is directly connected to the database.
+
+9
+00:01:05,740 --> 00:01:12,690
+The client sends its request to the server and the server analyzes them and sends the appreciated request
+
+10
+00:01:12,690 --> 00:01:18,550
+to the database and receives the response from the database and sends its response to the client.
+
+11
+00:01:20,150 --> 00:01:25,910
+Now it's time to go into the escort program and implement your example.
+
+12
+00:01:28,620 --> 00:01:36,150
+First, go to expel her and create a Prozac folder like named communication.
+
+13
+00:01:42,690 --> 00:01:45,720
+Create a folder inside it named Protocol.
+
+14
+00:01:52,310 --> 00:01:56,910
+And create a fight like a student with the poor, the extension site.
+
+15
+00:01:56,950 --> 00:01:57,290
+It's.
+
+16
+00:02:10,160 --> 00:02:18,470
+OK, so we define the syntax inside it and said it's value equal to proto three, which represent the
+
+17
+00:02:18,470 --> 00:02:20,090
+political buffer version.
+
+18
+00:02:20,810 --> 00:02:25,910
+So right syntax equals.
+
+19
+00:02:27,170 --> 00:02:29,840
+True to three.
+
+20
+00:02:32,080 --> 00:02:41,980
+Chroma semicon now define option and set go on the line package value, so bright option
+
+21
+00:02:45,670 --> 00:02:51,250
+go on the line package equals next.
+
+22
+00:02:51,430 --> 00:03:01,510
+This so to call the go on the line package option defines the import pass of the package, which will
+
+23
+00:03:01,510 --> 00:03:03,700
+contain all the generated code.
+
+24
+00:03:03,700 --> 00:03:09,490
+For this fine, the go package name will be the last pass component of the import pass.
+
+25
+00:03:10,000 --> 00:03:14,350
+In this example, we want the client to send two request to the server.
+
+26
+00:03:14,890 --> 00:03:22,150
+First, send the request based on the student's I.D. and receive information about that student and
+
+27
+00:03:22,150 --> 00:03:29,380
+second request based on sending a student name to the server and returning all the people who have that
+
+28
+00:03:29,380 --> 00:03:29,800
+name.
+
+29
+00:03:31,090 --> 00:03:38,830
+Since we know that the input parameters and return values in the methods of a service in PC are of the
+
+30
+00:03:38,830 --> 00:03:44,440
+message type, so we defined two messages as request and response.
+
+31
+00:03:45,070 --> 00:03:52,240
+We create a student messages response or return time and create a search message as a request or input
+
+32
+00:03:52,240 --> 00:03:54,550
+parameter for the student service functions.
+
+33
+00:03:56,700 --> 00:03:58,180
+Now defined message.
+
+34
+00:03:58,380 --> 00:04:03,720
+For example, you want to name it as students, so write the message.
+
+35
+00:04:06,520 --> 00:04:07,360
+Students
+
+36
+00:04:10,690 --> 00:04:19,960
+and defiantly variables first I.D. by Einstein, think a name by this string type and Third Age by the
+
+37
+00:04:19,960 --> 00:04:20,650
+end type.
+
+38
+00:04:20,660 --> 00:04:29,710
+So we ride in CC for I.D. and equals one.
+
+39
+00:04:31,740 --> 00:04:32,460
+A string.
+
+40
+00:04:33,840 --> 00:04:44,220
+Named vehicles two and and three to age equals three.
+
+41
+00:04:45,870 --> 00:04:51,510
+And define another message, for example, we want to name it, search by IED.
+
+42
+00:04:51,690 --> 00:04:52,950
+So we write.
+
+43
+00:04:53,890 --> 00:05:01,060
+This age of search by all.
+
+44
+00:05:03,930 --> 00:05:17,550
+And defined one variable for it, like named IED by N64 type and 64 either equals one and defined another
+
+45
+00:05:17,550 --> 00:05:21,030
+message, for example, you want to name it, search by name.
+
+46
+00:05:25,020 --> 00:05:31,590
+So you write message, search by name
+
+47
+00:05:34,320 --> 00:05:39,510
+and define Vong variable for it like named name Byte Eastern Time.
+
+48
+00:05:39,550 --> 00:05:41,310
+So write, it's strange.
+
+49
+00:05:42,680 --> 00:05:45,140
+Name equals one.
+
+50
+00:05:48,140 --> 00:05:56,060
+Now let's time to define a service us, specify a name service in your doctorate or fine, for example,
+
+51
+00:05:56,060 --> 00:05:58,700
+we create a service named Student Service.
+
+52
+00:05:58,820 --> 00:06:00,050
+So right?
+
+53
+00:06:02,550 --> 00:06:03,420
+Service
+
+54
+00:06:07,740 --> 00:06:11,550
+is to the service
+
+55
+00:06:14,580 --> 00:06:15,330
+in this time.
+
+56
+00:06:15,360 --> 00:06:24,320
+Live on to define to our PC methods and method is supposed to receive an ideas input parameter and returned
+
+57
+00:06:24,330 --> 00:06:26,310
+a student from the database.
+
+58
+00:06:26,550 --> 00:06:33,510
+And the other method is supposed to get a student name as input parameter and display the least of all
+
+59
+00:06:33,510 --> 00:06:36,090
+the students in the database that have that name.
+
+60
+00:06:36,930 --> 00:06:51,180
+So Brian R. P. C Smith, the name for methods like kids, a student by IED.
+
+61
+00:06:55,690 --> 00:06:57,260
+Sit input parameter.
+
+62
+00:06:57,280 --> 00:07:04,060
+Because in this case, we want to get a student base I.D. the use from search by I.D. message,
+
+63
+00:07:07,000 --> 00:07:12,520
+search by I.D. and returns.
+
+64
+00:07:19,570 --> 00:07:23,050
+And sit a student message as return type.
+
+65
+00:07:30,030 --> 00:07:34,050
+And secured rockets and defined and automated.
+
+66
+00:07:36,630 --> 00:07:42,990
+RBC said the name formatted like get a students by name.
+
+67
+00:07:43,260 --> 00:07:43,640
+Yeah.
+
+68
+00:07:45,140 --> 00:07:50,490
+A few things by name.
+
+69
+00:07:53,930 --> 00:07:59,570
+SIP input parameter, because in this case, you want to get all the students have a same name so of
+
+70
+00:07:59,570 --> 00:08:08,720
+use from search by name, age, search by name, you see and returns.
+
+71
+00:08:12,370 --> 00:08:18,250
+And because we want to fetch lists of students, some someone, we use a stream of a student's message
+
+72
+00:08:18,250 --> 00:08:28,990
+as return time, so we ride as train students and search other places.
+
+73
+00:08:31,920 --> 00:08:39,810
+How we could define two service functions in order to be able to use our service functions in stages,
+
+74
+00:08:40,080 --> 00:08:48,690
+we must first compile needs when we compile it a file with the extensions Dot P.B. Dot Go is created
+
+75
+00:08:48,690 --> 00:08:56,040
+inside the project, which is the equivalent of the messages and service methods, and we will access
+
+76
+00:08:56,040 --> 00:08:57,900
+the components in the portal to fine.
+
+77
+00:08:59,400 --> 00:09:05,640
+Now it's time to compile our Port of Fire to create the equivalent goal and find first up the truth
+
+78
+00:09:05,640 --> 00:09:08,370
+of it and then create job security.
+
+79
+00:09:08,700 --> 00:09:10,770
+Let's go with the command line, right?
+
+80
+00:09:13,930 --> 00:09:16,890
+See the communication
+
+81
+00:09:20,340 --> 00:09:21,000
+protocol.
+
+82
+00:09:25,110 --> 00:09:32,070
+Dash, Dash, go on there, a school out equals four destination.
+
+83
+00:09:32,100 --> 00:09:33,060
+You said don't.
+
+84
+00:09:34,170 --> 00:09:39,240
+And four source pass go to the protocol package in college student and Porto.
+
+85
+00:09:39,240 --> 00:09:39,780
+Fine.
+
+86
+00:09:43,130 --> 00:09:49,100
+Parental and student portal and run the comment.
+
+87
+00:09:52,500 --> 00:10:02,390
+Now we can see the student find that portal is created and run command for generate G.R. people to fire
+
+88
+00:10:02,820 --> 00:10:04,910
+so bright politics.
+
+89
+00:10:06,610 --> 00:10:21,010
+Dash, Dash, go dash to your PC, Andrew Scott House equals set destination dot and for source pass,
+
+90
+00:10:21,010 --> 00:10:24,670
+go to the protocol package and call student that pro to find.
+
+91
+00:10:25,240 --> 00:10:34,060
+So we write protocol and the student protocol run the command.
+
+92
+00:10:35,940 --> 00:10:42,660
+OK, we see that two funds was created in the Project Pass, which we can use to exchange our data.
+
+93
+00:10:42,840 --> 00:10:49,560
+That's called student and a student on their school G.R. PC with the P B that go extensions.
+
+94
+00:10:49,830 --> 00:10:55,410
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+95
+00:10:55,410 --> 00:10:56,370
+the next session.
+
+96
+00:10:56,670 --> 00:10:57,210
+Goodbye.

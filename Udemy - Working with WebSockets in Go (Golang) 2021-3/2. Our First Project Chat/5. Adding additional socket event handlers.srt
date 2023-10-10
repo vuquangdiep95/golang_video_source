@@ -1,0 +1,455 @@
+1
+00:00:01,450 --> 00:00:07,870
+So right now, we have a couple of routes, one to our home, page one to our WebSocket upgrader, and
+
+2
+00:00:07,870 --> 00:00:10,720
+we've managed to connect to our WebSocket successfully.
+
+3
+00:00:10,730 --> 00:00:11,460
+So that's good.
+
+4
+00:00:11,920 --> 00:00:14,870
+And our homepage just looks like this right now.
+
+5
+00:00:15,490 --> 00:00:17,110
+We have a title at the top.
+
+6
+00:00:17,110 --> 00:00:19,630
+We have a column here and we have a column here.
+
+7
+00:00:19,630 --> 00:00:26,210
+And we need to actually be able to send some information to our handler more than just connect to it.
+
+8
+00:00:26,230 --> 00:00:27,490
+We need to be able to do something.
+
+9
+00:00:27,880 --> 00:00:30,980
+So in order to do that, of course, we have to have some information to send.
+
+10
+00:00:31,150 --> 00:00:37,020
+So let's create some things here that allow us to specify username and to create a message.
+
+11
+00:00:37,690 --> 00:00:44,590
+So over in our home jet file, let's create a couple of form elements.
+
+12
+00:00:44,590 --> 00:00:48,780
+And we're not actually creating a real form because we're not posting anywhere.
+
+13
+00:00:48,820 --> 00:00:51,970
+We're going to be using websites for everything, but we can still use form groups.
+
+14
+00:00:52,240 --> 00:00:54,880
+So let's create a div form group.
+
+15
+00:00:59,530 --> 00:01:05,830
+And inside of that, will have a label label for and will do the user name first for user name and we'll
+
+16
+00:01:05,830 --> 00:01:06,730
+just call it user name.
+
+17
+00:01:07,000 --> 00:01:09,010
+That's where the user can type in his or her name.
+
+18
+00:01:09,490 --> 00:01:11,770
+And then we'll have an input type equals text.
+
+19
+00:01:14,190 --> 00:01:22,500
+Name equals username, ID equals username and class equals form control.
+
+20
+00:01:25,290 --> 00:01:32,010
+And I like to also put autocomplete equals to off, even though it doesn't work sometimes with Google
+
+21
+00:01:32,010 --> 00:01:36,690
+Chrome for whatever reason, it's still I like to put it in there just to be, you know, correct.
+
+22
+00:01:37,350 --> 00:01:38,760
+And then we have a place for our message.
+
+23
+00:01:39,510 --> 00:01:44,210
+So copy and paste that and we'll make this message for message.
+
+24
+00:01:45,090 --> 00:01:50,860
+Name is message, ideas, message, and that's enough for that one.
+
+25
+00:01:50,880 --> 00:01:52,110
+So let's see what that looks like.
+
+26
+00:01:52,860 --> 00:01:55,230
+Reload, right.
+
+27
+00:01:55,230 --> 00:01:56,760
+We've got a place to type in a username.
+
+28
+00:01:56,760 --> 00:02:02,370
+And ideally, when someone types in their username and then gets out of this field, in other words,
+
+29
+00:02:02,370 --> 00:02:03,750
+this field loses its focus.
+
+30
+00:02:03,760 --> 00:02:05,250
+The username should show up over here.
+
+31
+00:02:05,700 --> 00:02:08,290
+And when they type in their message, it should show up down here.
+
+32
+00:02:09,270 --> 00:02:10,880
+So let's go look at this.
+
+33
+00:02:10,890 --> 00:02:12,720
+We don't have a place to put that message yet.
+
+34
+00:02:12,720 --> 00:02:20,490
+So let's put an HRR here and we'll put a div and I'll give this idea equals output and I'm going to
+
+35
+00:02:20,490 --> 00:02:28,470
+give it a class that will define in a moment and that'll just be Chatterbox and we'll put it down here
+
+36
+00:02:28,470 --> 00:02:29,070
+like this.
+
+37
+00:02:29,100 --> 00:02:34,680
+OK, so we have now a place to put our message, but let's give that a little bit of styling so I'll
+
+38
+00:02:34,680 --> 00:02:40,020
+create up here in my head style and I'll call it chat box.
+
+39
+00:02:41,610 --> 00:02:42,840
+And what will we do?
+
+40
+00:02:42,850 --> 00:02:44,580
+We'll give it an outline outline.
+
+41
+00:02:45,330 --> 00:02:47,730
+One picks solid silver.
+
+42
+00:02:49,890 --> 00:02:55,980
+We'll give it a min height of, say, one hundred and fifty picks or OK, one hundred and sixty picks
+
+43
+00:02:56,520 --> 00:02:57,720
+and a little bit of padding.
+
+44
+00:02:57,870 --> 00:03:05,070
+Padding zero point five m so let's save that chat box chat box.
+
+45
+00:03:05,070 --> 00:03:08,760
+This should work and there's a place for messages to show up.
+
+46
+00:03:08,940 --> 00:03:14,580
+OK, now let's go look at our handler for a minute in our handlers file.
+
+47
+00:03:15,150 --> 00:03:19,440
+I have already defined a type S Jason response.
+
+48
+00:03:19,470 --> 00:03:23,880
+This is the response that sent back from the WebSocket and we'll get that as a Jason file.
+
+49
+00:03:24,450 --> 00:03:30,480
+I also need a place to define the kind of information we're sending to this server.
+
+50
+00:03:30,780 --> 00:03:35,610
+So let's create a new type type W.S. Jason payload.
+
+51
+00:03:35,880 --> 00:03:39,840
+I'll just call a payload that's even better and it's a struct.
+
+52
+00:03:40,530 --> 00:03:43,740
+And what kind of information are we going to be sending while we're probably going to be sending an
+
+53
+00:03:43,740 --> 00:03:52,440
+action and that will be a string and we'll call it Jason action and that will define what we expect
+
+54
+00:03:52,440 --> 00:03:53,340
+the server to do.
+
+55
+00:03:53,340 --> 00:03:58,680
+So we might be sending it something like joint or something like message, whatever it may be.
+
+56
+00:03:58,680 --> 00:04:01,110
+But there may be multiple actions that we have to handle.
+
+57
+00:04:02,490 --> 00:04:06,120
+We definitely want to have a message and we'll call this message.
+
+58
+00:04:07,460 --> 00:04:11,610
+It's a string and we'll call it Jason message.
+
+59
+00:04:12,630 --> 00:04:17,430
+And the last thing I might need to use is the actual WebSocket connection itself.
+
+60
+00:04:17,430 --> 00:04:18,810
+I don't know if I need it now or not.
+
+61
+00:04:19,050 --> 00:04:25,950
+And I know that my website, WebSocket connection from guerrilla web sockets actually has a type predefined
+
+62
+00:04:26,280 --> 00:04:28,950
+and that's called WebSocket dot com.
+
+63
+00:04:29,220 --> 00:04:37,800
+So let's just create a new type to hold that just a wrapper for it type and I'll call it WebSocket connection
+
+64
+00:04:37,950 --> 00:04:46,770
+and it will be a struct and it only has one member and that will be of type pointer to WebSocket connection.
+
+65
+00:04:48,310 --> 00:04:54,030
+OK, so we have that type defined and it holds that, that's all that it is.
+
+66
+00:04:54,480 --> 00:04:58,560
+So down here I'm going to add in this payload.
+
+67
+00:04:58,560 --> 00:05:02,190
+I don't know if I'm ever going to use it, but I'm going to put it in there just to be safe.
+
+68
+00:05:02,640 --> 00:05:04,590
+So I'll call that Kirchen.
+
+69
+00:05:06,700 --> 00:05:13,060
+Now, not current, I'll just call it court and it will be a type WebSocket connection, and I'm going
+
+70
+00:05:13,060 --> 00:05:14,390
+to leave that out of the Jason.
+
+71
+00:05:16,420 --> 00:05:17,500
+I don't want that to show up.
+
+72
+00:05:17,740 --> 00:05:20,020
+OK, so we have an action.
+
+73
+00:05:20,020 --> 00:05:20,860
+We have a message.
+
+74
+00:05:20,860 --> 00:05:21,640
+We have a con.
+
+75
+00:05:21,640 --> 00:05:23,170
+We probably also need a username.
+
+76
+00:05:23,170 --> 00:05:24,250
+So let's put that in there.
+
+77
+00:05:30,430 --> 00:05:32,020
+Is there anything else they need to store in there?
+
+78
+00:05:32,050 --> 00:05:33,690
+Well, I don't think so at the moment.
+
+79
+00:05:33,700 --> 00:05:38,020
+There may be later on, but for right now, this is probably sufficient for our purposes.
+
+80
+00:05:39,160 --> 00:05:44,400
+OK, so that's enough for that struct.
+
+81
+00:05:44,410 --> 00:05:48,970
+Let's go back to our home jet and think about we have we have username, we have message.
+
+82
+00:05:48,970 --> 00:05:49,840
+We don't have action.
+
+83
+00:05:49,840 --> 00:05:54,580
+So let's put an action in their input type equals and I'll make this one hidden because nobody needs
+
+84
+00:05:54,580 --> 00:05:55,100
+to see it.
+
+85
+00:05:55,660 --> 00:06:00,190
+Name equals action and ID equals action.
+
+86
+00:06:01,140 --> 00:06:06,950
+OK, so now we have let's just make sure this all renders properly looks good.
+
+87
+00:06:08,290 --> 00:06:11,980
+Now we got to think about what we want to do in our JavaScript.
+
+88
+00:06:13,120 --> 00:06:18,220
+So if we scroll down there and have a look at it, all we're doing right now is defining one handler.
+
+89
+00:06:18,400 --> 00:06:20,470
+Sock it on open, do something.
+
+90
+00:06:20,500 --> 00:06:22,990
+Well, there are other things we need to take care of as well.
+
+91
+00:06:23,410 --> 00:06:25,110
+One is obviously on clothes.
+
+92
+00:06:25,120 --> 00:06:28,060
+If there's an unopened there's probably darn clothes and there is.
+
+93
+00:06:29,280 --> 00:06:29,940
+Try that again.
+
+94
+00:06:35,410 --> 00:06:37,810
+And right now, I'll just log to the console.
+
+95
+00:06:41,420 --> 00:06:45,750
+Connection closed, which we would never see, but I'm just putting that in as a placeholder.
+
+96
+00:06:46,550 --> 00:06:50,720
+We have other ones that we need to take care of as well or that we should take care of.
+
+97
+00:06:50,750 --> 00:06:58,010
+For example, what if there's an air socket on air is equal to and we can pass it the air.
+
+98
+00:07:00,800 --> 00:07:07,940
+And we need to do something consoled log, there was an error, which is just a placeholder, but that'll
+
+99
+00:07:07,940 --> 00:07:08,950
+suffice for right now.
+
+100
+00:07:10,460 --> 00:07:15,710
+And this is the one that the next one is the one that'll get called a lot socket on message.
+
+101
+00:07:18,530 --> 00:07:24,350
+And that would be equal to message, that's the variable we're going to pass to our function and we
+
+102
+00:07:24,370 --> 00:07:25,580
+what do we want to do here?
+
+103
+00:07:25,610 --> 00:07:31,310
+Well, first of all, we're going to get our message as Jason console the log.
+
+104
+00:07:33,380 --> 00:07:33,860
+Message.
+
+105
+00:07:34,410 --> 00:07:39,070
+OK, so we're just going to log whatever they get, whatever we get back from the server.
+
+106
+00:07:39,080 --> 00:07:44,990
+So what we need to do next is to actually create a message from the server and send it back.
+
+107
+00:07:45,020 --> 00:07:46,400
+Well, let's see what we're doing right now.
+
+108
+00:07:47,270 --> 00:07:48,820
+When we connect to our End Point.
+
+109
+00:07:48,860 --> 00:07:50,940
+We're writing our JSON response back.
+
+110
+00:07:50,960 --> 00:07:59,330
+So in theory, I should be able to write a message in the same way from a handler from West End Point
+
+111
+00:07:59,330 --> 00:08:03,410
+will pass this off to something else that decides what kind of action are we getting and what should
+
+112
+00:08:03,410 --> 00:08:05,410
+we do and send back a response.
+
+113
+00:08:06,230 --> 00:08:10,670
+So in order to make that happen, there's a little bit of code that needs to be written and we'll take
+
+114
+00:08:10,670 --> 00:08:13,040
+care of that in the next lecture.

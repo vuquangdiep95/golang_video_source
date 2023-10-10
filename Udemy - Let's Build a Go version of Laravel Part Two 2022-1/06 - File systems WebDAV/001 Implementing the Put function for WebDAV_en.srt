@@ -1,0 +1,344 @@
+1
+00:00:01,370 --> 00:00:07,220
+So the next file system I want to support is WebDAV, and WebDAV doesn't get as much attention as it
+
+2
+00:00:07,220 --> 00:00:08,160
+probably should.
+
+3
+00:00:08,180 --> 00:00:14,300
+It's built into every major operating system out there, and it's an extremely useful extension to the
+
+4
+00:00:14,300 --> 00:00:18,190
+HDTV protocol that allows for things like sharing data.
+
+5
+00:00:18,200 --> 00:00:21,740
+Obviously, you can use it as a file system, and that's what I'm going to do right now.
+
+6
+00:00:22,130 --> 00:00:27,320
+But it could actually be extended to allow collaborative editing of documents in real time and things
+
+7
+00:00:27,320 --> 00:00:29,990
+like that, and I'll let you read about that on your own.
+
+8
+00:00:30,080 --> 00:00:34,220
+My focus right now is implementing Web Dev as a remote file system.
+
+9
+00:00:34,250 --> 00:00:35,540
+And it's pretty straightforward.
+
+10
+00:00:36,110 --> 00:00:39,980
+So to do that, of course, I'm going to go to the Celebrity Celebrities project.
+
+11
+00:00:40,070 --> 00:00:45,680
+The File Systems folder, then the Web Deb File System folder, and then we'll open up WebDAV, Dongo
+
+12
+00:00:45,680 --> 00:00:47,150
+and that's the stub.
+
+13
+00:00:47,630 --> 00:00:52,460
+This file consists of the stub functions we put together a while ago, and now we need to actually implement
+
+14
+00:00:52,460 --> 00:00:52,640
+them.
+
+15
+00:00:53,510 --> 00:00:59,660
+So just as we had to with Mineo and as we had to with SFTP, we're going to install a package which
+
+16
+00:00:59,660 --> 00:01:02,270
+gives us access to WebDAV file systems.
+
+17
+00:01:02,330 --> 00:01:07,820
+So I'll open my terminal and I'll start my application, make stop, and I'll make sure I get to the
+
+18
+00:01:07,820 --> 00:01:08,570
+right folder.
+
+19
+00:01:08,570 --> 00:01:13,820
+So I walk one level and then into celebrities, because that's the goal mod file I want to effect with
+
+20
+00:01:13,820 --> 00:01:14,570
+this command.
+
+21
+00:01:15,020 --> 00:01:22,430
+Go get GitHub dot com slash studio Dash B12.
+
+22
+00:01:25,690 --> 00:01:27,820
+Slash go web, dev.
+
+23
+00:01:28,000 --> 00:01:34,000
+Now there's other libraries out there, but this one is never let me down and I rather like it, so
+
+24
+00:01:34,150 --> 00:01:34,960
+I go and get that.
+
+25
+00:01:36,060 --> 00:01:38,400
+And there we go, we've got it added to our government file.
+
+26
+00:01:39,000 --> 00:01:43,740
+And that means I can start implementing my various functions now, as I did before.
+
+27
+00:01:43,770 --> 00:01:49,980
+I'm going to create a get credentials function so funk with a receiver of W or spell funk, right,
+
+28
+00:01:49,980 --> 00:01:50,280
+though.
+
+29
+00:01:51,290 --> 00:01:57,510
+W pointer to WebDAV and I'll call this one get credentials just like I did in the other one.
+
+30
+00:01:57,750 --> 00:02:04,530
+And it returns a pointer to go Web Dev, which we just imported Dot Client right there.
+
+31
+00:02:05,400 --> 00:02:10,949
+And I think the important for me and we'll just make this as simple as we possibly can, and it's not
+
+32
+00:02:10,949 --> 00:02:11,760
+difficult at all.
+
+33
+00:02:11,940 --> 00:02:18,450
+I'm going to get a variable, which I call C four cloned and that's assigned value from calling Go Web
+
+34
+00:02:18,720 --> 00:02:20,490
+Dev Dot New Client.
+
+35
+00:02:21,030 --> 00:02:23,520
+And it just requires three parameters.
+
+36
+00:02:23,700 --> 00:02:30,330
+The first one is the URL or the URL, which we get straight from our receiver host.
+
+37
+00:02:30,900 --> 00:02:37,530
+OK, the second one is W dot user or username, and the final one is W Dot Pass for password.
+
+38
+00:02:38,130 --> 00:02:38,850
+We return that.
+
+39
+00:02:39,300 --> 00:02:39,600
+OK.
+
+40
+00:02:42,790 --> 00:02:48,460
+So now I have my client, and that means I can start working on the put functionality and it is relatively
+
+41
+00:02:48,460 --> 00:02:49,240
+straightforward.
+
+42
+00:02:49,990 --> 00:02:56,740
+So what I'm going to do, first of all, is get a client client is assign the value of W Dot, get credentials.
+
+43
+00:02:59,900 --> 00:03:05,330
+Now she looks like I have my receivers all set to s, so I'll change those to W just for consistency.
+
+44
+00:03:05,900 --> 00:03:10,670
+Should have noticed that when I put these stubs in, but I just wanted to get it started.
+
+45
+00:03:11,960 --> 00:03:12,660
+That's better.
+
+46
+00:03:12,680 --> 00:03:13,640
+They're all W now.
+
+47
+00:03:13,640 --> 00:03:18,980
+So Client is assigned the value of calling W don't get credentials.
+
+48
+00:03:20,170 --> 00:03:20,870
+Now I have a client.
+
+49
+00:03:22,070 --> 00:03:29,090
+And I want to put a file up on the remote file system, so I'll open the file, file an error or assign
+
+50
+00:03:29,090 --> 00:03:31,520
+the values for by calling oast or open.
+
+51
+00:03:34,530 --> 00:03:39,300
+Right there, and I'm going to open file name, which is the full path to the file name.
+
+52
+00:03:39,390 --> 00:03:43,500
+I'll check for an error if error is not equal to nil, then return the error.
+
+53
+00:03:46,810 --> 00:03:52,060
+And, of course, defer filed out close, so we don't have a resource leak next.
+
+54
+00:03:52,180 --> 00:04:00,070
+I just call the method on my client variable, which is my Web Deb file system, and I call the method
+
+55
+00:04:00,070 --> 00:04:02,170
+right string, which gives us an error.
+
+56
+00:04:02,260 --> 00:04:05,930
+So error is now equal to client dot right string.
+
+57
+00:04:07,360 --> 00:04:09,070
+We could use right, but I like write stream.
+
+58
+00:04:09,100 --> 00:04:13,300
+It works really well and it seems a little faster to me, but that's just anecdotal data.
+
+59
+00:04:13,300 --> 00:04:18,610
+So don't take it for what it's worth, and we give it a format as print out to build a string.
+
+60
+00:04:20,200 --> 00:04:24,940
+And my format string will be nothing more than percent se percent as.
+
+61
+00:04:26,910 --> 00:04:31,320
+And I'm going to write to the first place holder will be the folder, the half name.
+
+62
+00:04:31,720 --> 00:04:34,530
+And of course, that's the second parameter we get to this function.
+
+63
+00:04:34,980 --> 00:04:37,440
+And then I get the base name from filing.
+
+64
+00:04:37,440 --> 00:04:38,760
+So past updates
+
+65
+00:04:41,490 --> 00:04:41,910
+filing.
+
+66
+00:04:44,850 --> 00:04:45,420
+Right there.
+
+67
+00:04:47,160 --> 00:04:49,120
+And then I have to give it two more parameters.
+
+68
+00:04:49,140 --> 00:04:54,140
+What am I writing vile and what are the right permissions now?
+
+69
+00:04:54,150 --> 00:04:58,740
+These are the standard Unix permissions, and I'm going to go with one that I almost always use zero
+
+70
+00:04:58,740 --> 00:04:59,640
+six six four.
+
+71
+00:05:01,170 --> 00:05:03,420
+And those are, I think, relatively safe.
+
+72
+00:05:05,550 --> 00:05:06,420
+File permissions.
+
+73
+00:05:06,660 --> 00:05:08,790
+We'll check an again, so I'll copy and paste.
+
+74
+00:05:13,590 --> 00:05:14,160
+And that's it.
+
+75
+00:05:14,610 --> 00:05:20,340
+We now have the necessary put functionality in there now, before I forget, let's open the door on
+
+76
+00:05:20,340 --> 00:05:28,560
+file in my app and let's fill out the necessary information for WebDAV just to get it out of the way
+
+77
+00:05:28,560 --> 00:05:29,010
+right now.
+
+78
+00:05:29,220 --> 00:05:32,670
+So since we're using Docker, we're going to call it this way.
+
+79
+00:05:32,730 --> 00:05:39,570
+Each http now in production, this would be TDPs, but we're connecting to a local Docker image.
+
+80
+00:05:40,210 --> 00:05:49,080
+Now use 127.0.0.1, which is local host colon port one zero zero eight zero and my username.
+
+81
+00:05:49,560 --> 00:05:54,330
+This is offered by the same package or the same Docker image that's giving us SFP.
+
+82
+00:05:54,340 --> 00:05:57,720
+So it's a setup and the password is password.
+
+83
+00:05:58,560 --> 00:05:58,860
+OK.
+
+84
+00:06:00,220 --> 00:06:06,580
+So that's the first of the functions we have to implement, and it's also setting up our own site in
+
+85
+00:06:06,580 --> 00:06:07,250
+the next lecture.
+
+86
+00:06:07,270 --> 00:06:10,480
+We'll take care of list, which is relatively straightforward as well.
+

@@ -1,0 +1,268 @@
+1
+00:00:01,200 --> 00:00:06,180
+So it's almost time to try out our mini or fail system, but we have a few things to take care of before
+
+2
+00:00:06,180 --> 00:00:07,500
+we can actually do that.
+
+3
+00:00:07,980 --> 00:00:13,890
+And one of the things that will make our lives simpler is to actually implement stub functions for our
+
+4
+00:00:13,890 --> 00:00:16,560
+other three file systems, and we're going to do that right now.
+
+5
+00:00:17,280 --> 00:00:23,910
+So inside the celebrity's folder, inside the file systems folder, we have this mineral file system.
+
+6
+00:00:24,330 --> 00:00:26,670
+Let's create three more folders.
+
+7
+00:00:26,850 --> 00:00:27,540
+The first one?
+
+8
+00:00:28,360 --> 00:00:35,580
+I'll create a folder named S3 file system and then I'll create another folder right beside that.
+
+9
+00:00:36,210 --> 00:00:45,030
+So at the File Systems folder level, a new directory called Web Dev File System, and the last one,
+
+10
+00:00:45,030 --> 00:00:46,590
+of course, is SDP.
+
+11
+00:00:46,890 --> 00:00:51,150
+So create a new directory at the same level as the rest of them.
+
+12
+00:00:52,280 --> 00:00:55,640
+And we call this one SFP file system.
+
+13
+00:00:56,240 --> 00:00:58,460
+OK, now let's start with S3.
+
+14
+00:00:59,360 --> 00:01:07,940
+So inside of the S3 file system, I'll create a new go file and I'll just call it S3 ago and go land,
+
+15
+00:01:07,940 --> 00:01:09,920
+added the package declaration for me.
+
+16
+00:01:09,920 --> 00:01:15,470
+But make sure you have it or create a type here, which I'll call S3 and it's just as dropped and it
+
+17
+00:01:15,470 --> 00:01:22,850
+will have certain fields pretty much the same as the other one key, which is a string secret, which
+
+18
+00:01:22,850 --> 00:01:34,040
+is a string region, which is a string end point, which is a string and finally bucket, which is a
+
+19
+00:01:34,040 --> 00:01:34,370
+string.
+
+20
+00:01:34,790 --> 00:01:38,870
+OK, I will format this now.
+
+21
+00:01:38,870 --> 00:01:44,450
+I need to have certain functions in here to satisfy the interface so func and I'll use the receiver
+
+22
+00:01:44,450 --> 00:01:45,800
+of Pointer to S3.
+
+23
+00:01:48,360 --> 00:01:54,360
+This three, we need a put function and put text file name, which is a string
+
+24
+00:01:57,240 --> 00:01:59,730
+and folder, which is a string swiveling each string.
+
+25
+00:01:59,730 --> 00:02:02,280
+Once we get rid of this one, that's redundant.
+
+26
+00:02:02,580 --> 00:02:05,370
+That's better, and it potentially returns an error.
+
+27
+00:02:05,730 --> 00:02:07,950
+And just as a stub, I'll say return nil.
+
+28
+00:02:08,340 --> 00:02:08,669
+OK.
+
+29
+00:02:09,960 --> 00:02:12,240
+And we also need a list.
+
+30
+00:02:12,330 --> 00:02:22,140
+So func s pointer to S3 list and for parameters that requires just a prefix, which is a string, and
+
+31
+00:02:22,140 --> 00:02:35,010
+it returns a slice of file systems, dot listing and potentially an error and all dos declare a variable,
+
+32
+00:02:35,010 --> 00:02:40,770
+which I'll call listing and then make it a slice of file systems dot list.
+
+33
+00:02:42,630 --> 00:02:44,850
+I'll just return listing and nil.
+
+34
+00:02:45,630 --> 00:02:47,550
+And there's a stub function that'll do the trick.
+
+35
+00:02:48,480 --> 00:02:56,310
+Next, I need delete func as pointer to S3, and I'll make that delete.
+
+36
+00:02:57,870 --> 00:03:04,980
+And that requires nothing more than items to delete, which is a slice of strings, and it returns of
+
+37
+00:03:04,980 --> 00:03:05,310
+Boolean.
+
+38
+00:03:06,750 --> 00:03:09,420
+And to make this work, I'll just say return true.
+
+39
+00:03:09,690 --> 00:03:11,520
+And I better put an e after delete.
+
+40
+00:03:12,360 --> 00:03:24,480
+That looks better than the last one is get func as pointed at S3, and we'll call this one get and get
+
+41
+00:03:24,480 --> 00:03:32,280
+requires destination, which is a string and items which is a one or more strings.
+
+42
+00:03:32,610 --> 00:03:37,860
+Technically, zero would be a valid number two, but we're we're going to pass it zero and it returns
+
+43
+00:03:37,860 --> 00:03:38,150
+an error.
+
+44
+00:03:38,160 --> 00:03:39,120
+So we do return now.
+
+45
+00:03:39,780 --> 00:03:40,120
+OK.
+
+46
+00:03:41,010 --> 00:03:44,060
+So we've created stub functions here just to save some time.
+
+47
+00:03:44,070 --> 00:03:50,850
+I'm going to copy everything except for the package statement copy that and I will go to SFP File System
+
+48
+00:03:51,120 --> 00:03:55,580
+and I'll create a new go file in there called SFTP Doggo.
+
+49
+00:03:56,760 --> 00:04:04,950
+I'll return a couple of times, then paste in what I just used and I'll change the keys here and I also
+
+50
+00:04:04,950 --> 00:04:06,420
+change our type.
+
+51
+00:04:06,960 --> 00:04:11,440
+I'll name it SRF type, and we don't need the same keys for us.
+
+52
+00:04:11,440 --> 00:04:23,070
+FTB we just need host is a string user, which is a string pass, which is a string and port, which
+
+53
+00:04:23,070 --> 00:04:26,430
+is a string and now a copy.
+
+54
+00:04:26,490 --> 00:04:29,010
+Step and change all of these receivers.
+
+55
+00:04:33,540 --> 00:04:35,670
+All right now we have stub functions for that type.
+
+56
+00:04:36,240 --> 00:04:42,690
+So now I'll copy all of this except for the package declaration, and I'll do the same thing for WebDAV.
+
+57
+00:04:42,990 --> 00:04:46,710
+I'll create a new go file in the WebDAV file system folder called WebDAV.
+
+58
+00:04:47,250 --> 00:04:50,820
+Don't go there, return a couple of times and paste.
+
+59
+00:04:51,930 --> 00:04:54,890
+And for this one, we just need host user and pass.
+
+60
+00:04:54,900 --> 00:04:58,730
+We don't need part because that's actually part of the whole string so we can delete that.
+
+61
+00:05:00,030 --> 00:05:03,540
+Rename this one to say WebDAV
+
+62
+00:05:06,180 --> 00:05:09,720
+in all caps like that and fix our receivers.
+
+63
+00:05:11,010 --> 00:05:16,710
+Paste, paste, paste and paste there.
+
+64
+00:05:16,710 --> 00:05:18,540
+Now I have stub functions for that one.
+
+65
+00:05:19,260 --> 00:05:25,620
+So we have Mineo, we have S-3, we have SFTP and we have WebDAV perfect.
+
+66
+00:05:25,860 --> 00:05:32,040
+So now that we've created those stub functions, we can actually move on and begin connecting our new
+
+67
+00:05:32,040 --> 00:05:37,740
+file system packages to celebrities itself, and we'll get started on that in the next lecture.
+

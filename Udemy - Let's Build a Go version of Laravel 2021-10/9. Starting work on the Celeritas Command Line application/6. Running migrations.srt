@@ -1,0 +1,703 @@
+1
+00:00:01,690 --> 00:00:06,940
+So we've managed to generate up and down migration successfully, and of course, they're fairly useless
+
+2
+00:00:06,940 --> 00:00:08,740
+until we can actually do something with them.
+
+3
+00:00:08,920 --> 00:00:14,200
+So what we want to work on this time around is actually running migrations up or down ones.
+
+4
+00:00:15,040 --> 00:00:19,480
+And of course, we're going to have to add a new case here in Maine.
+
+5
+00:00:19,480 --> 00:00:25,570
+Don't go in the Celebrity House project inside the CMT Seelye folder, and we're going to have to add
+
+6
+00:00:25,570 --> 00:00:27,310
+something like case migrate.
+
+7
+00:00:27,670 --> 00:00:32,560
+So we'll just put that in there and we won't do anything with it yet.
+
+8
+00:00:32,620 --> 00:00:36,040
+We'll come back to this now in order to run migrations.
+
+9
+00:00:36,040 --> 00:00:41,980
+If you recall, we worked on that migrations don't go file, which we may as well have a look at right
+
+10
+00:00:41,980 --> 00:00:44,670
+here in this hilarious project.
+
+11
+00:00:44,680 --> 00:00:48,280
+And of course, we want to be able to run an up migration, which means we're going to need to be able
+
+12
+00:00:48,280 --> 00:00:49,000
+to call this.
+
+13
+00:00:49,750 --> 00:00:55,240
+And that requires a parameter, which is the data source name the DSM in the form of a string.
+
+14
+00:00:55,780 --> 00:01:02,590
+And as I said a while ago, that data source name actually doesn't follow the same syntax as the one
+
+15
+00:01:02,590 --> 00:01:06,820
+we're using for our main Postgres driver, and I'm working on Postgres migrations right now.
+
+16
+00:01:08,200 --> 00:01:12,850
+So when we hit this case, somebody types celebrities migrate up.
+
+17
+00:01:12,850 --> 00:01:18,280
+For example, we need to call a function that will run some migrations, and that function is going
+
+18
+00:01:18,280 --> 00:01:22,810
+to have to have the DSM because it's going to call that appropriate function in migrations.
+
+19
+00:01:22,810 --> 00:01:23,380
+Don't go.
+
+20
+00:01:24,340 --> 00:01:30,550
+So let's go over to our help helper file and let's make a new function in here, one which I'll call
+
+21
+00:01:30,970 --> 00:01:32,200
+get decent.
+
+22
+00:01:32,410 --> 00:01:38,080
+And this is going to, of course, take no parameters, but it will return a string, a DSM in the correct
+
+23
+00:01:38,080 --> 00:01:38,500
+format.
+
+24
+00:01:39,340 --> 00:01:44,290
+So we'll get our database type because we don't know what type of database that person is running when
+
+25
+00:01:44,290 --> 00:01:45,190
+we call this function.
+
+26
+00:01:45,190 --> 00:01:51,180
+So DB Typekit, which is just a variable, I'm declaring right here and that comes from our cell variable
+
+27
+00:01:51,190 --> 00:01:55,330
+IV type celebrity sliotars and we're looking for DBA Dot data type.
+
+28
+00:01:56,380 --> 00:02:01,840
+So that should be either post-cruise or it should be MariaDB or MySchool.
+
+29
+00:02:02,140 --> 00:02:07,510
+But if it's post-cruise, we've actually changed it to PDX, if you remember, because that's the driver
+
+30
+00:02:07,510 --> 00:02:08,050
+we're using.
+
+31
+00:02:08,590 --> 00:02:20,290
+So we'll say if DB type is equal to X, then DB type is now equal to Postgres, which is the form we
+
+32
+00:02:20,290 --> 00:02:23,650
+need for the driver used by the Go Migrations package.
+
+33
+00:02:25,020 --> 00:02:31,260
+So we'll do a check here, if Debbie type is equal to post-cruise, which is the one I care about right
+
+34
+00:02:31,260 --> 00:02:31,680
+now.
+
+35
+00:02:32,730 --> 00:02:33,600
+Then we'll do something.
+
+36
+00:02:34,650 --> 00:02:37,650
+Otherwise, we'll build a different dataset.
+
+37
+00:02:38,730 --> 00:02:46,800
+So let's create a variable right here in the Postgres condition there, and we'll just call it the end
+
+38
+00:02:47,040 --> 00:02:47,880
+of type string.
+
+39
+00:02:49,830 --> 00:02:55,530
+And we're doing that for the same reason we did when we opened the connection to the Postgres database
+
+40
+00:02:55,530 --> 00:03:02,400
+a while ago because the connection string is different depending whether or not password is actually
+
+41
+00:03:02,400 --> 00:03:02,780
+set.
+
+42
+00:03:02,850 --> 00:03:09,150
+Now, in our case, if you're doing it like I am, then your password is set because you're doing everything
+
+43
+00:03:09,150 --> 00:03:11,540
+through Docker images and we set a password there.
+
+44
+00:03:11,550 --> 00:03:17,400
+But lots of people run a local installation of Postgres and the user is just Postgres and it has no
+
+45
+00:03:17,400 --> 00:03:17,860
+password.
+
+46
+00:03:17,880 --> 00:03:19,350
+So we have to track for both cases.
+
+47
+00:03:20,190 --> 00:03:28,800
+So we'll say if and at this point, we've already read everything from the DOT on into our environment
+
+48
+00:03:29,040 --> 00:03:36,870
+in that setup function, so we can check to see if OCR don't get on and we'll look for database pass
+
+49
+00:03:37,200 --> 00:03:38,190
+the database password.
+
+50
+00:03:40,380 --> 00:03:45,990
+If that's not equal to nothing, then we'll do something else.
+
+51
+00:03:46,890 --> 00:03:47,730
+We'll do something else.
+
+52
+00:03:48,210 --> 00:03:54,060
+So let's handle this first situation, OK, where the database password is not equal to an empty string
+
+53
+00:03:54,750 --> 00:03:59,910
+in this case, DSN is going to be equal to and will use the format as per Deb function.
+
+54
+00:04:01,410 --> 00:04:07,980
+And put things in the syntax or the correct syntax for our migration's package, and it has to begin
+
+55
+00:04:07,980 --> 00:04:11,820
+with Postgres colon slash slash.
+
+56
+00:04:12,180 --> 00:04:19,080
+And then we have a string followed by a colon, followed by another string, followed by an at sign
+
+57
+00:04:19,380 --> 00:04:23,880
+followed by another string and a colon and another string.
+
+58
+00:04:25,230 --> 00:04:33,960
+Then another string, followed by a question mark, followed by SSL mode equals another string.
+
+59
+00:04:34,620 --> 00:04:39,330
+And of course, we need to do the substitutions, so we'll hit a comma and I'll put these on the next
+
+60
+00:04:39,330 --> 00:04:40,380
+line so they're more readable.
+
+61
+00:04:42,420 --> 00:04:47,540
+Our first substitution is going to be OS.
+
+62
+00:04:47,550 --> 00:04:48,370
+Don't get on.
+
+63
+00:04:50,550 --> 00:04:54,750
+And we're looking for database underscore user.
+
+64
+00:04:57,510 --> 00:05:03,030
+And our second substitution is going to be the database password, which in this case is not an empty
+
+65
+00:05:03,030 --> 00:05:03,390
+string.
+
+66
+00:05:06,210 --> 00:05:09,930
+And our third substitution will be the host database host.
+
+67
+00:05:12,090 --> 00:05:15,090
+And after that comes support, not surprisingly.
+
+68
+00:05:17,250 --> 00:05:20,250
+And after that comes the name of the database.
+
+69
+00:05:23,310 --> 00:05:27,090
+And finally, we get the SSL mode.
+
+70
+00:05:27,330 --> 00:05:36,720
+So that is database SSL underscore mode, and I can bring this back up here and get rid of the karma
+
+71
+00:05:37,050 --> 00:05:38,700
+just to make it look pretty decent.
+
+72
+00:05:39,990 --> 00:05:47,680
+Now, if that's not the case and apparently didn't import format for me, so let me import that if empty,
+
+73
+00:05:48,720 --> 00:05:49,170
+that's better.
+
+74
+00:05:50,400 --> 00:05:53,730
+If that's not the case, we're going to have almost the same things.
+
+75
+00:05:53,730 --> 00:05:57,510
+So copy this and paste it here
+
+76
+00:06:00,630 --> 00:06:01,610
+and make the change.
+
+77
+00:06:01,620 --> 00:06:06,540
+And the only thing that really changes is everything before the outside, we get rid of this.
+
+78
+00:06:08,510 --> 00:06:16,400
+And then we get rid of database password, OK, and then down here after this it's statement inside
+
+79
+00:06:16,400 --> 00:06:18,140
+of the overlapping if statement.
+
+80
+00:06:18,140 --> 00:06:21,290
+If TBE Typekit equals Postgres, we'll just return DCEP.
+
+81
+00:06:24,080 --> 00:06:30,020
+Now, in the other situation, we can actually call because it's simpler for my ask, you will already
+
+82
+00:06:30,020 --> 00:06:30,320
+be.
+
+83
+00:06:30,650 --> 00:06:38,180
+We can simply return and pretend my que el colon slash slash, which the database migration's DSM requires.
+
+84
+00:06:38,670 --> 00:06:40,210
+And we can just call it hilarious.
+
+85
+00:06:40,220 --> 00:06:41,930
+Don don't build DSM.
+
+86
+00:06:42,770 --> 00:06:44,390
+And that should give it to us in the correct format.
+
+87
+00:06:44,930 --> 00:06:50,120
+And when we get around to trying MySchool, this should work fine and we can actually simplify this
+
+88
+00:06:50,120 --> 00:06:52,250
+even more because we don't need this health themed.
+
+89
+00:06:53,870 --> 00:06:54,980
+That's a useless code.
+
+90
+00:06:55,730 --> 00:06:57,110
+So let's save this.
+
+91
+00:06:57,960 --> 00:06:58,410
+All right.
+
+92
+00:06:58,500 --> 00:07:05,210
+Now I have a function that will actually return hopefully the DSM in the correct format for the migration's
+
+93
+00:07:05,210 --> 00:07:05,570
+driver.
+
+94
+00:07:06,020 --> 00:07:12,170
+So let's go back to mean dot, go to our initial switch statement and handle the migration part.
+
+95
+00:07:12,560 --> 00:07:18,560
+Now I'm going to assume that if someone types celebrities migrate, then they want to run their up migrations.
+
+96
+00:07:19,190 --> 00:07:23,990
+Otherwise they might be running, migrate down or migrate a number of steps or something like that.
+
+97
+00:07:24,560 --> 00:07:32,510
+So let's try this if are to, which is what would come after the word migrate.
+
+98
+00:07:33,170 --> 00:07:38,330
+If that's equal to nothing, then we'll assume they're going to run an out migration or two equals,
+
+99
+00:07:39,530 --> 00:07:40,880
+which has to be in quotation marks.
+
+100
+00:07:41,330 --> 00:07:41,660
+OK.
+
+101
+00:07:44,460 --> 00:07:50,190
+And at that point, I want to check for an error and run something called do migrate, which doesn't
+
+102
+00:07:50,190 --> 00:07:54,840
+exist yet, and we'll hand it earned two and three, which might be up to.
+
+103
+00:07:56,250 --> 00:08:04,530
+And we'll check for an error if error is not equal to nil, then we'll say exit gracefully and we'll
+
+104
+00:08:04,530 --> 00:08:05,130
+hand it there.
+
+105
+00:08:06,600 --> 00:08:13,620
+And I'm also at this point going to say message that string we haven't done anything with yet, but
+
+106
+00:08:13,620 --> 00:08:15,180
+it's used by exit gracefully.
+
+107
+00:08:16,960 --> 00:08:22,120
+We'll add a message, migrations complete, and of course, you can put whatever you want there.
+
+108
+00:08:23,390 --> 00:08:25,970
+Now it looks like I haven't actually defined message here.
+
+109
+00:08:25,990 --> 00:08:34,780
+So back up in Think Maine, I'll just create a variable called message the message of type string.
+
+110
+00:08:37,030 --> 00:08:37,360
+OK.
+
+111
+00:08:39,910 --> 00:08:47,500
+And at the very end of this, after all of these things have executed, we can just say things it gracefully
+
+112
+00:08:48,010 --> 00:08:50,110
+with no air in hand message.
+
+113
+00:08:51,070 --> 00:08:53,650
+And of course, we'll have to remember to populate it for all of these cases.
+
+114
+00:08:53,740 --> 00:08:55,210
+But we'll get to that when we start running it.
+
+115
+00:08:56,320 --> 00:09:00,190
+So now, of course, we have this do migrate function and we need to build that yet because it doesn't
+
+116
+00:09:00,190 --> 00:09:00,730
+exist.
+
+117
+00:09:01,420 --> 00:09:02,770
+So just to keep things clean.
+
+118
+00:09:03,610 --> 00:09:09,610
+I'll come over here at peace in the Seelye folder and I'll create a new file.
+
+119
+00:09:10,570 --> 00:09:12,190
+Well, let's call it migrate dgo.
+
+120
+00:09:13,840 --> 00:09:17,110
+And this will handle all of our logic for managing migrations.
+
+121
+00:09:17,320 --> 00:09:22,090
+So Package may not see our main.
+
+122
+00:09:23,110 --> 00:09:23,590
+That's better.
+
+123
+00:09:24,930 --> 00:09:34,530
+And we'll declare a function do migrate, and it accepts two arguments are two and three, which I have
+
+124
+00:09:34,530 --> 00:09:40,680
+to put an hour in there, both of type string, and it potentially returns in error.
+
+125
+00:09:42,660 --> 00:09:49,570
+So DSN, at this point we can just call get DSL and now we have our connection string.
+
+126
+00:09:49,590 --> 00:09:57,060
+If we did everything right and now we want to run the migration command and of course, what we want
+
+127
+00:09:57,060 --> 00:09:59,730
+to run first is the UP migration command.
+
+128
+00:09:59,790 --> 00:10:10,740
+So we'll switch on our two and our first case will be up through monitoring the up migrations.
+
+129
+00:10:11,760 --> 00:10:18,420
+And at this point, it becomes as simple as checking for an error and calling from celebrities migrate
+
+130
+00:10:18,420 --> 00:10:19,860
+up and handing it to us.
+
+131
+00:10:21,360 --> 00:10:27,240
+And if error is not equal to nil, so we'll return the error.
+
+132
+00:10:29,730 --> 00:10:33,570
+Now, if that actually worked, then we're done with that case.
+
+133
+00:10:33,630 --> 00:10:36,150
+OK, but let's put the other cases in here, since we're doing it anyway.
+
+134
+00:10:36,990 --> 00:10:43,560
+We might also be running case down, running migrations down.
+
+135
+00:10:43,650 --> 00:10:46,350
+And not surprisingly, this is pretty much the same thing.
+
+136
+00:10:46,800 --> 00:10:53,400
+But in this case, you might want to run one migration down, or you might want to run all of the migrations
+
+137
+00:10:53,400 --> 00:10:53,700
+down.
+
+138
+00:10:53,910 --> 00:10:57,810
+In other words, to reverse all of the migrations that have currently run.
+
+139
+00:10:58,020 --> 00:11:01,710
+So, you know, in essence, to reset your database to nothing.
+
+140
+00:11:01,860 --> 00:11:11,340
+So let's say if our three is equal to all, I want to run all the migrations in reverse, then we'll
+
+141
+00:11:11,340 --> 00:11:12,060
+call error.
+
+142
+00:11:13,110 --> 00:11:17,190
+And that's a sign the value of cell migrate down all.
+
+143
+00:11:17,370 --> 00:11:18,360
+And we had it DCEP.
+
+144
+00:11:18,840 --> 00:11:19,910
+And again, we checked for an error.
+
+145
+00:11:19,920 --> 00:11:25,170
+So I'll just copy this because I'm going to be using a couple of times and I'll paste it right here.
+
+146
+00:11:25,800 --> 00:11:28,440
+So that's the case where they want to run all the migrations.
+
+147
+00:11:28,620 --> 00:11:33,630
+Otherwise, we can assume they just want to run the most recent migration back down and that becomes
+
+148
+00:11:33,630 --> 00:11:34,050
+error.
+
+149
+00:11:35,040 --> 00:11:43,320
+So Dot and we want this time to go steps and we'll hand it minus one, just run the most recent migration
+
+150
+00:11:43,320 --> 00:11:44,010
+backwards.
+
+151
+00:11:45,150 --> 00:11:50,250
+And we had it this hour and pacing our air check, and that handles that one.
+
+152
+00:11:51,150 --> 00:11:56,760
+Now another common use case, and it comes after this is case reset.
+
+153
+00:11:57,450 --> 00:12:04,530
+I want to I want to reset my database, run all the down migrations, then run all the up migrations.
+
+154
+00:12:04,740 --> 00:12:06,690
+And in that case, we just do this.
+
+155
+00:12:06,840 --> 00:12:10,200
+We're going to run, migrate down all just like we do right here.
+
+156
+00:12:14,040 --> 00:12:19,470
+And then we want to migrate up, we want to run them all over again, so I'll just paste it in like
+
+157
+00:12:19,470 --> 00:12:19,950
+this.
+
+158
+00:12:20,670 --> 00:12:27,790
+Move that back over changes to an assignment operator and change this just to migrate up.
+
+159
+00:12:30,530 --> 00:12:32,060
+And that should take care of the reset.
+
+160
+00:12:32,300 --> 00:12:36,590
+OK, now the last case, if something went wrong.
+
+161
+00:12:36,830 --> 00:12:37,280
+OK.
+
+162
+00:12:37,610 --> 00:12:40,490
+And we're going to be doing this regularly default.
+
+163
+00:12:41,450 --> 00:12:43,990
+And of course, that belongs inside that early bracket.
+
+164
+00:12:44,000 --> 00:12:49,460
+So let's try that again, default at this point to show out.
+
+165
+00:12:52,450 --> 00:12:52,840
+OK.
+
+166
+00:12:53,530 --> 00:13:00,230
+And down here, we'll say return nil, so now we have a command we can call do migrate.
+
+167
+00:13:00,280 --> 00:13:01,780
+So let's go back to Mongo.
+
+168
+00:13:03,900 --> 00:13:10,560
+And that era is going away and everything, I think at this point should work as expected.
+
+169
+00:13:11,220 --> 00:13:16,950
+But let's come down here as well and make this default show help.
+
+170
+00:13:18,570 --> 00:13:23,340
+And now we can get rid of our end to end this logging of our two and our three as I was just to make
+
+171
+00:13:23,340 --> 00:13:24,300
+it compile.
+
+172
+00:13:24,870 --> 00:13:27,300
+And that means I need to get rid of lug up here.
+
+173
+00:13:30,450 --> 00:13:30,810
+OK.
+
+174
+00:13:31,200 --> 00:13:31,980
+So let's save it.
+
+175
+00:13:32,550 --> 00:13:33,510
+I don't see any errors.
+
+176
+00:13:33,510 --> 00:13:36,600
+Anywhere in the next lecture will try running a migration.

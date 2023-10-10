@@ -1,0 +1,155 @@
+1
+00:00:13,420 --> 00:00:16,870
+Hello and welcome to goal and programming language course.
+
+2
+00:00:17,350 --> 00:00:23,740
+In the previous session, we talked about for loop as via loop, and in this session we want to talk
+
+3
+00:00:23,740 --> 00:00:26,800
+about the others loops and control statements.
+
+4
+00:00:31,250 --> 00:00:37,070
+Loop control statements in gold language loop control statements.
+
+5
+00:00:37,370 --> 00:00:44,240
+Change and execution from its normal sequence when an execution leaves its scope.
+
+6
+00:00:44,570 --> 00:00:49,550
+All automatic objects that were created in debtor's school are destroyed.
+
+7
+00:00:51,230 --> 00:00:56,150
+The gold language supports three types of loop control statements.
+
+8
+00:00:57,750 --> 00:00:59,070
+Break a statement.
+
+9
+00:01:00,090 --> 00:01:04,320
+Continue the statement and go to a statement.
+
+10
+00:01:09,740 --> 00:01:17,870
+Break a statement, the break is statement and go programming language has the following two usages.
+
+11
+00:01:19,040 --> 00:01:25,910
+First, when a break, a statement is encountered inside the loop, the loop is immediately terminated
+
+12
+00:01:26,150 --> 00:01:31,070
+and the program control resumes at the next the statement following the loop.
+
+13
+00:01:32,180 --> 00:01:37,280
+Second, it can be used to terminate a chase in such a statement.
+
+14
+00:01:38,150 --> 00:01:44,390
+If you are using nested loops, the break a statement will stop the execution of the innermost Luke
+
+15
+00:01:44,390 --> 00:01:48,500
+in a start executing the next line of code after the block.
+
+16
+00:01:49,790 --> 00:01:52,010
+Now you can see the syntax.
+
+17
+00:01:57,730 --> 00:02:02,770
+Let's go to this school program to illustrate how to use a public statement.
+
+18
+00:02:05,030 --> 00:02:13,760
+First, define a for loop and print zero on for solving right, for defining a variable.
+
+19
+00:02:14,390 --> 00:02:21,130
+I call them equals and initialize it by zero value semicolon set condition.
+
+20
+00:02:21,170 --> 00:02:26,690
+I less than five and set increments.
+
+21
+00:02:26,720 --> 00:02:27,350
+All right.
+
+22
+00:02:27,380 --> 00:02:33,800
+I + + open and curly braces and write our statements here.
+
+23
+00:02:34,040 --> 00:02:37,580
+In this case, we want to display our variable value.
+
+24
+00:02:37,850 --> 00:02:40,190
+So bright FP I.
+
+25
+00:02:43,650 --> 00:02:48,390
+Now define that look breaks, then the value of I equals three.
+
+26
+00:02:48,660 --> 00:02:55,140
+So go to the next line, define the condition if I equals equals three.
+
+27
+00:02:55,950 --> 00:02:58,350
+So you want to set that break a statement?
+
+28
+00:03:01,230 --> 00:03:01,640
+OK.
+
+29
+00:03:01,920 --> 00:03:06,210
+Reformat the call, save the project and execute the program.
+
+30
+00:03:06,480 --> 00:03:11,650
+So go to terminal and run the program by the comment go round thoughts back.
+
+31
+00:03:11,670 --> 00:03:13,440
+Is this mean that go?
+
+32
+00:03:15,610 --> 00:03:19,530
+Now we can see the output in this example.
+
+33
+00:03:19,720 --> 00:03:27,820
+We defined the for loop that is thought from zero until as long as I is less than five and one unit
+
+34
+00:03:27,820 --> 00:03:34,780
+is added to the variable I each time and preen the value of I variable and defined the break point where
+
+35
+00:03:34,780 --> 00:03:36,250
+I equals three.
+
+36
+00:03:36,460 --> 00:03:44,470
+So then I variable values three for looking broken so we can no longer display the value four and the
+
+37
+00:03:44,470 --> 00:03:49,610
+program exit from the bloc in order not to prolong the time of decision.
+
+38
+00:03:49,630 --> 00:03:53,380
+We will finish it and we will continue the content in the next session.
+
+39
+00:03:53,530 --> 00:03:54,040
+Goodbye.

@@ -1,0 +1,331 @@
+1
+00:00:00,950 --> 00:00:02,330
+So how did you make out with the challenge?
+
+2
+00:00:02,480 --> 00:00:04,970
+I suspect you didn't find it terribly difficult.
+
+3
+00:00:05,780 --> 00:00:11,000
+So our goal and I did play with this between lectures, so my line numbering is a bit different than
+
+4
+00:00:11,000 --> 00:00:12,260
+it was last time around.
+
+5
+00:00:12,260 --> 00:00:13,750
+But it's exactly the same program.
+
+6
+00:00:13,760 --> 00:00:16,430
+If I open the terminal and type go run dot.
+
+7
+00:00:17,570 --> 00:00:18,140
+There it is.
+
+8
+00:00:18,140 --> 00:00:19,790
+Universe, cosmos, world.
+
+9
+00:00:19,910 --> 00:00:21,800
+So it's exactly the same functionality.
+
+10
+00:00:21,800 --> 00:00:23,390
+The spacing is a bit different, that's all.
+
+11
+00:00:24,200 --> 00:00:28,220
+Now I want to make all the calls to update message run in the background.
+
+12
+00:00:28,220 --> 00:00:33,260
+And of course that just means putting the keyword go in front of all of the calls to update message.
+
+13
+00:00:34,850 --> 00:00:39,770
+And if you thought that was enough for this, well, you were sadly mistaken, because if I open this
+
+14
+00:00:39,770 --> 00:00:42,200
+up and run it a few times, so I'll type go run.
+
+15
+00:00:42,200 --> 00:00:49,430
+Dot You can see that I have three outputs, which is great, but it says Hello World, hello universe,
+
+16
+00:00:49,430 --> 00:00:50,360
+hello universe.
+
+17
+00:00:50,360 --> 00:00:51,350
+And that's not right.
+
+18
+00:00:51,410 --> 00:00:52,460
+So something went wrong.
+
+19
+00:00:53,090 --> 00:00:56,570
+And of course, that's because I need to put a weight group here, and this time I'll make it a package
+
+20
+00:00:56,570 --> 00:00:57,350
+or a little variable.
+
+21
+00:00:57,350 --> 00:00:57,670
+Okay.
+
+22
+00:00:57,740 --> 00:01:04,340
+So I'll put in a variable WG of type S'INQUIETE group and that should do the import for me.
+
+23
+00:01:04,340 --> 00:01:05,090
+And it did.
+
+24
+00:01:06,020 --> 00:01:10,970
+And of course, down here, because this is a little exercise to get used to working with Waker, I
+
+25
+00:01:10,970 --> 00:01:20,210
+can just go WG dot add one and then down here after hello universe I say WG Dot wait.
+
+26
+00:01:21,530 --> 00:01:30,410
+And of course that means up here in update message I have to defer WG dot done and I can call WG there
+
+27
+00:01:31,310 --> 00:01:33,210
+because it's a package a little variable, right?
+
+28
+00:01:33,230 --> 00:01:37,820
+So now I have the first one doing exactly what it should and it's pretty much exactly the same for the
+
+29
+00:01:37,820 --> 00:01:38,330
+next two.
+
+30
+00:01:38,840 --> 00:01:45,100
+So WG dot add one and I want to wait before I print a message.
+
+31
+00:01:45,110 --> 00:01:46,310
+WG Dot wait.
+
+32
+00:01:47,510 --> 00:01:48,620
+And down here, same thing.
+
+33
+00:01:50,270 --> 00:01:54,980
+WG To add one and.
+
+34
+00:01:54,980 --> 00:01:56,030
+WG Don't wait.
+
+35
+00:01:57,920 --> 00:02:03,620
+And of course, if you did this by creating a slice of strings that say Hello Universe, Hello Cosmos,
+
+36
+00:02:03,620 --> 00:02:06,580
+Hello World ended everything by arranging through that slice.
+
+37
+00:02:06,590 --> 00:02:09,620
+That's a perfectly fine solution, actually.
+
+38
+00:02:09,620 --> 00:02:10,550
+It's a bit more elegant.
+
+39
+00:02:10,550 --> 00:02:12,470
+So if you did that, congratulations.
+
+40
+00:02:13,550 --> 00:02:14,500
+Now, that was easy.
+
+41
+00:02:14,510 --> 00:02:15,530
+We can run this again.
+
+42
+00:02:15,650 --> 00:02:18,860
+And it will do exactly what I want every single time.
+
+43
+00:02:19,790 --> 00:02:21,890
+Universe, cosmos, world is run it again.
+
+44
+00:02:22,580 --> 00:02:23,900
+Universe, cosmos, world.
+
+45
+00:02:23,900 --> 00:02:24,490
+Perfect.
+
+46
+00:02:24,500 --> 00:02:26,060
+That does exactly what I want.
+
+47
+00:02:26,810 --> 00:02:30,560
+Now, the test might have been a bit trickier for you, but probably not that much.
+
+48
+00:02:30,560 --> 00:02:33,020
+So I have it pre-written here, so we'll just go through it.
+
+49
+00:02:33,020 --> 00:02:40,670
+So I open up my main underscore Tesco and of course I'm importing IOC strings in testing and those were
+
+50
+00:02:40,670 --> 00:02:42,920
+automatically imported for me as I wrote them.
+
+51
+00:02:43,520 --> 00:02:45,950
+So the first one testing update, a message.
+
+52
+00:02:46,130 --> 00:02:51,770
+I mean, I tested this by running it in the background because that's how my code expects it to run.
+
+53
+00:02:51,770 --> 00:02:57,950
+And any time I write a test, I try to simulate the actual production environment as closely as possible.
+
+54
+00:02:58,160 --> 00:03:04,190
+So here I used the package level variable WG, which is available to this test because it's in the package
+
+55
+00:03:04,190 --> 00:03:11,810
+main added one to it ran update message with some string as a go routine with the keyword go, waited
+
+56
+00:03:11,810 --> 00:03:18,410
+for it to finish and just made sure that epsilon equals or epsilon is the current contents of message
+
+57
+00:03:18,410 --> 00:03:19,630
+if it's not through an error.
+
+58
+00:03:19,640 --> 00:03:20,510
+So that went simple.
+
+59
+00:03:21,410 --> 00:03:29,080
+The next two required me to create a variable STV out and save the existing value of OST standard out
+
+60
+00:03:29,090 --> 00:03:30,500
+and then restore it down here.
+
+61
+00:03:30,590 --> 00:03:33,560
+But it's exactly the same logic I used last time around.
+
+62
+00:03:34,550 --> 00:03:41,150
+I set the package level variable message to epsilon called print message and then just captured my output,
+
+63
+00:03:41,150 --> 00:03:47,510
+restored state to what it was before the test ran and made sure that the strings that the output contained
+
+64
+00:03:47,510 --> 00:03:52,610
+the String Epsilon and I did exactly the same thing with Main, but I checked to make sure that Hello
+
+65
+00:03:52,610 --> 00:03:53,230
+Universe.
+
+66
+00:03:53,300 --> 00:03:54,320
+Hello Cosmos.
+
+67
+00:03:54,500 --> 00:03:55,670
+And Hello World were there.
+
+68
+00:03:56,300 --> 00:04:02,630
+And if I type now go test dash v dot to give a verbose output.
+
+69
+00:04:03,650 --> 00:04:05,930
+They all pass exactly as they should.
+
+70
+00:04:05,990 --> 00:04:06,380
+Okay.
+
+71
+00:04:07,580 --> 00:04:13,130
+Now, we'll be doing more testing with with concurrency as the course goes on.
+
+72
+00:04:13,160 --> 00:04:17,990
+When we look for race conditions, but we're not quite there yet, we have little ways to go before
+
+73
+00:04:17,990 --> 00:04:19,010
+we can start doing that.
+
+74
+00:04:19,520 --> 00:04:23,930
+So that's our overview of the Select Weight Group package.
+
+75
+00:04:23,930 --> 00:04:28,040
+And as I've said a couple of times now, it's the easiest way to deal with concurrency.
+
+76
+00:04:28,040 --> 00:04:30,170
+In a lot of cases, it's all you actually need.
+
+77
+00:04:31,040 --> 00:04:37,820
+But there are situations where weight groups just won't do the trick, which is why later on in the
+
+78
+00:04:37,820 --> 00:04:43,880
+course, we're going to look at two other methods Mute Hexes, which are almost as easy as the weight
+
+79
+00:04:43,880 --> 00:04:44,750
+group, but not quite.
+
+80
+00:04:45,170 --> 00:04:47,420
+And then finally, channels will be looking at that.
+
+81
+00:04:47,420 --> 00:04:52,290
+And that is the most sophisticated way of dealing with concurrency, but it's also the most powerful.
+
+82
+00:04:52,580 --> 00:04:55,970
+So we'll go through those in some detail as the course goes on.
+
+83
+00:04:56,210 --> 00:04:58,550
+In any case, that's it for this section.

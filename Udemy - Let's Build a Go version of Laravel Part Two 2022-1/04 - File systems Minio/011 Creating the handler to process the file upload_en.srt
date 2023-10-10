@@ -1,0 +1,548 @@
+1
+00:00:00,860 --> 00:00:06,710
+So we have this form displaying properly to upload files to our remote file system, and now clearly
+
+2
+00:00:06,710 --> 00:00:07,820
+we need to make it functional.
+
+3
+00:00:07,910 --> 00:00:13,520
+So let's go back to our code and we'll create a new handler and I'll put it right here in the handler
+
+4
+00:00:13,550 --> 00:00:17,570
+dog go file right after the one we just did upload to FS.
+
+5
+00:00:17,570 --> 00:00:20,600
+And I'll call this one func h pointer to handlers.
+
+6
+00:00:21,860 --> 00:00:33,140
+I'll call it simply post upload to EFS and again, give the standard two parameters and are a pointer
+
+7
+00:00:33,140 --> 00:00:34,970
+to a checkpoint request.
+
+8
+00:00:35,750 --> 00:00:41,780
+OK, now the first thing we want to do is to get the file, to upload and to actually get the name of
+
+9
+00:00:41,780 --> 00:00:42,380
+the file.
+
+10
+00:00:43,010 --> 00:00:50,090
+So what I'm going to do is just move that logic into its own handler because I won't use this in a lot
+
+11
+00:00:50,090 --> 00:00:50,850
+of places.
+
+12
+00:00:50,870 --> 00:00:59,930
+So I'll call this get file to upload, and it's going to take a request, which is a pointer to an issue
+
+13
+00:00:59,930 --> 00:01:05,540
+DHCP request, and it will return the name of the file and potentially an error.
+
+14
+00:01:05,930 --> 00:01:06,260
+OK.
+
+15
+00:01:06,440 --> 00:01:12,260
+I'm just putting that in its own function because I like to have functions do one thing and one thing
+
+16
+00:01:12,260 --> 00:01:12,620
+well.
+
+17
+00:01:13,590 --> 00:01:19,680
+So in this case, what I want to do, first of all, is to pass the multipart form because this will
+
+18
+00:01:19,680 --> 00:01:26,940
+come as a post request, but a multipart post requests which you can attach files to, so that returns
+
+19
+00:01:26,940 --> 00:01:27,460
+an error.
+
+20
+00:01:27,480 --> 00:01:35,550
+What I'm going to have to call what I'm calling is earned pass multipart form right there, and that
+
+21
+00:01:35,550 --> 00:01:40,660
+takes one argument, and the argument is simply the maximum memory.
+
+22
+00:01:40,680 --> 00:01:42,480
+How big can this file be?
+
+23
+00:01:42,630 --> 00:01:46,800
+And I'll make it relatively big 10 and 20.
+
+24
+00:01:46,950 --> 00:01:52,650
+That'll give us, I think, 10 10 megs of disk space we can use now.
+
+25
+00:01:52,860 --> 00:01:57,720
+I'm ignoring the error there, and you probably shouldn't in production, but for our purposes, this
+
+26
+00:01:57,720 --> 00:01:58,350
+is sufficient.
+
+27
+00:01:58,800 --> 00:02:03,690
+Now I'm going to get three values when I look at our dot form file.
+
+28
+00:02:03,870 --> 00:02:07,470
+I'll get file header and an error.
+
+29
+00:02:08,039 --> 00:02:12,740
+And those come from a method built right into the request, which is called a form file.
+
+30
+00:02:13,740 --> 00:02:16,470
+And I'm looking for form file.
+
+31
+00:02:17,170 --> 00:02:18,660
+I'm looking for that for a reason.
+
+32
+00:02:18,810 --> 00:02:27,300
+If I open up, upload again and go down to the part where I'm actually putting in the the file input
+
+33
+00:02:27,300 --> 00:02:29,310
+type input type equals file.
+
+34
+00:02:29,310 --> 00:02:30,960
+The name is form file.
+
+35
+00:02:31,200 --> 00:02:33,540
+OK, let's go back to our handlers.
+
+36
+00:02:33,780 --> 00:02:40,260
+So I get those three return values and I'll check for error if error is not equal to nil.
+
+37
+00:02:42,940 --> 00:02:49,030
+Then I'll simply return the nothing, an empty string and the air, OK, something went wrong.
+
+38
+00:02:50,320 --> 00:02:51,640
+But if we get past that?
+
+39
+00:02:52,880 --> 00:02:57,120
+Now I want to defer filed, OK, close.
+
+40
+00:02:57,740 --> 00:02:59,210
+Otherwise, I'll have a resource leak.
+
+41
+00:02:59,360 --> 00:03:03,470
+OK, so after this function exits, file gets closed.
+
+42
+00:03:05,690 --> 00:03:11,390
+Now I want to actually create a file from that posted upload.
+
+43
+00:03:11,510 --> 00:03:16,820
+So I'm going to get a return value DST for destination and potentially an error.
+
+44
+00:03:16,970 --> 00:03:19,090
+And those come from Overstock.
+
+45
+00:03:19,090 --> 00:03:27,830
+Don't create right here and I'm going to create or I'll use print f to build my strength.
+
+46
+00:03:28,700 --> 00:03:35,540
+I'll upload it to the temp directory, which I know exists, and my placeholder is a percent S. And
+
+47
+00:03:35,540 --> 00:03:37,820
+that gets replaced with header file name.
+
+48
+00:03:38,390 --> 00:03:44,570
+OK, so that will create an empty file in destination and it can check for an error.
+
+49
+00:03:45,170 --> 00:03:54,170
+The error is not equal to nil return and empty string and the error otherwise I've created by empty
+
+50
+00:03:54,170 --> 00:03:54,530
+file.
+
+51
+00:03:56,120 --> 00:04:03,740
+And again, I need to put a defer destocked close close that file when this function exits.
+
+52
+00:04:03,890 --> 00:04:07,970
+Otherwise we have resourcefully, then I would just copy it.
+
+53
+00:04:08,810 --> 00:04:16,190
+So we'll get ignore the first return value check for an error and that comes from Io Dot Copy.
+
+54
+00:04:20,130 --> 00:04:27,720
+Into destination, the contents of the variable file, and that will populate my new destination with
+
+55
+00:04:27,750 --> 00:04:33,750
+the posted file, from the upload, from the request and again checked for an error if errors not equal
+
+56
+00:04:33,750 --> 00:04:38,910
+to nil, then return an empty string and the error OK.
+
+57
+00:04:40,710 --> 00:04:42,630
+And finally, I'll return.
+
+58
+00:04:44,340 --> 00:04:45,600
+Format as pro-death.
+
+59
+00:04:49,550 --> 00:04:50,930
+Dot slash Tempe.
+
+60
+00:04:52,220 --> 00:04:54,080
+And then a placeholder percent S..
+
+61
+00:04:54,770 --> 00:04:56,480
+And again, I put in header dot file name.
+
+62
+00:04:59,310 --> 00:05:00,870
+And I return no error.
+
+63
+00:05:03,720 --> 00:05:07,860
+So now I have a function I can call that does nothing more than take a request.
+
+64
+00:05:08,870 --> 00:05:14,600
+Get the posted file name, which in this case is called form file to make this reusable, I probably
+
+65
+00:05:14,600 --> 00:05:17,960
+should do this field name
+
+66
+00:05:21,320 --> 00:05:22,340
+and make this.
+
+67
+00:05:25,140 --> 00:05:29,940
+Feel them and give that, of course, the type of strength
+
+68
+00:05:32,640 --> 00:05:33,870
+there now, it's reasonable.
+
+69
+00:05:34,860 --> 00:05:38,670
+So let's go back up to our actual handler and call that function.
+
+70
+00:05:38,850 --> 00:05:44,420
+So I'm going to get filing, which is the full path to the file that's upload and check for an error.
+
+71
+00:05:44,430 --> 00:05:49,560
+And I'll just call get file to upload and hand it.
+
+72
+00:05:51,030 --> 00:05:54,910
+My request and file name.
+
+73
+00:05:56,340 --> 00:05:58,140
+I think that's what I called it, let's make sure.
+
+74
+00:05:58,380 --> 00:06:01,080
+Upload just form file.
+
+75
+00:06:01,420 --> 00:06:02,190
+Better do it right.
+
+76
+00:06:02,380 --> 00:06:02,670
+Good thing.
+
+77
+00:06:02,670 --> 00:06:03,600
+I noticed that here.
+
+78
+00:06:06,570 --> 00:06:17,970
+For a while, and we checked for an error, if error is not equal to nil, then I'll say issue to error
+
+79
+00:06:18,540 --> 00:06:22,560
+and I'll give it W and the error error error.
+
+80
+00:06:24,320 --> 00:06:28,670
+And HDB status, internal server error right there.
+
+81
+00:06:29,210 --> 00:06:35,030
+I don't want to go any further, so I'll just display that error and I'll return, but if I get past
+
+82
+00:06:35,030 --> 00:06:40,190
+that, I now have the name of the file, so I have the file where it's stored.
+
+83
+00:06:40,220 --> 00:06:45,920
+It'll be in the temp directory with whatever name was assigned to it when it was uploaded, and I need
+
+84
+00:06:45,920 --> 00:06:47,300
+to get that somewhere.
+
+85
+00:06:47,330 --> 00:06:52,760
+I'm going to get it to a Mineo file system or an S3 file system or an SD FTP file system.
+
+86
+00:06:53,270 --> 00:06:57,870
+Well, in our case, we only care about one right now, but we're going to be doing more later, so
+
+87
+00:06:57,870 --> 00:06:59,060
+we will take care of that.
+
+88
+00:06:59,540 --> 00:07:08,800
+And if you go back to upload Jet, we have a dropdown menu, a pick list here that is called upload
+
+89
+00:07:08,800 --> 00:07:11,460
+dash type, and these are the possible values for it.
+
+90
+00:07:11,480 --> 00:07:13,370
+So we'll get that back over here.
+
+91
+00:07:14,330 --> 00:07:18,460
+New variable upload type is assign the value of our form.
+
+92
+00:07:20,420 --> 00:07:31,100
+Don't get upload dash time and I will switch on that switch on upload type.
+
+93
+00:07:33,290 --> 00:07:36,350
+And the only one we have right now is case, you know?
+
+94
+00:07:36,620 --> 00:07:38,180
+So that's the only one I care about right now.
+
+95
+00:07:39,230 --> 00:07:41,930
+So we'll do the similar sort of thing we did last time around.
+
+96
+00:07:42,080 --> 00:07:50,120
+We'll get a file system, EFS, and that comes from each Dot app dot file systems and looking for the
+
+97
+00:07:50,120 --> 00:07:56,890
+key, meanwhile, and casting that too in your file system does not mean I.
+
+98
+00:07:56,900 --> 00:07:57,120
+Ah.
+
+99
+00:07:57,890 --> 00:07:59,000
+So now I have a file system.
+
+100
+00:07:59,870 --> 00:08:06,650
+An error is now assigned the value of or equal to that variable fs, and because it satisfies the interface
+
+101
+00:08:06,650 --> 00:08:13,730
+for file systems put and the file name, that's the first argument is just file it.
+
+102
+00:08:14,540 --> 00:08:19,600
+I'm going to put it nowhere, just at the root level of that file system, and we check for an error
+
+103
+00:08:20,870 --> 00:08:23,030
+if error is not equal to nil.
+
+104
+00:08:26,180 --> 00:08:35,090
+Then again, we'll grab this code right here, copy and paste it in there, and that's sufficient for
+
+105
+00:08:35,090 --> 00:08:35,690
+our purposes.
+
+106
+00:08:35,780 --> 00:08:39,520
+We'll know that something went wrong at the very end.
+
+107
+00:08:40,070 --> 00:08:47,780
+After a switch statement, let's put something in the session app that Session Dot put, and we want
+
+108
+00:08:47,780 --> 00:08:50,270
+to put it using the context context.
+
+109
+00:08:51,530 --> 00:08:57,170
+And it's a flashing message which is built right into celebrities, if you recall, and we'll just put
+
+110
+00:08:57,170 --> 00:08:58,760
+it in a message file uploaded
+
+111
+00:09:01,580 --> 00:09:04,730
+and then we'll do a redirect redirect.
+
+112
+00:09:06,920 --> 00:09:13,640
+And that requires the response writer, the request where we want to go and we're going to go to files,
+
+113
+00:09:13,640 --> 00:09:20,720
+slash files, slash upload, and I want that menu to to default to the same thing that was selected
+
+114
+00:09:20,720 --> 00:09:21,710
+when we posted it.
+
+115
+00:09:22,370 --> 00:09:23,930
+So what type equals?
+
+116
+00:09:24,560 --> 00:09:31,040
+And just add upload type and give it the status of issue Typekit status.
+
+117
+00:09:31,070 --> 00:09:34,170
+See other right there.
+
+118
+00:09:35,480 --> 00:09:36,500
+And that should be sufficient.
+
+119
+00:09:36,860 --> 00:09:45,290
+So now if I copy this, Chandler, go back to my roots and here we're going to have an eight hour post
+
+120
+00:09:47,240 --> 00:09:56,480
+slash files slash upload eight handlers dot post, post upload to F's.
+
+121
+00:09:58,040 --> 00:10:00,660
+And now I should be able to restart my application.
+
+122
+00:10:00,920 --> 00:10:02,630
+Make stop case, it's running.
+
+123
+00:10:02,720 --> 00:10:04,280
+It wasn't make start.
+
+124
+00:10:09,280 --> 00:10:09,850
+It's running.
+
+125
+00:10:09,880 --> 00:10:14,770
+Let's go to our Web browser and see if this all works and remember, you got to have your Docker compose
+
+126
+00:10:14,770 --> 00:10:19,330
+running right now, so those Docker images for Mineo and so forth have to be running.
+
+127
+00:10:20,020 --> 00:10:23,410
+But back to our web browser, reload this page to make sure it works.
+
+128
+00:10:23,980 --> 00:10:24,750
+It does.
+
+129
+00:10:24,790 --> 00:10:30,850
+I'm going to upload to Mineo and I'll choose a file from my file system doesn't matter what it is,
+
+130
+00:10:30,850 --> 00:10:39,100
+so I'll go to the desktop and I'll choose say, Well, this that's too big, so I'll go to my pictures.
+
+131
+00:10:39,100 --> 00:10:43,600
+I must have something in pictures here where a picture of a whale, let's upload it.
+
+132
+00:10:45,910 --> 00:10:50,950
+File uploaded now, let's go make sure it's actually there, so I just uploaded that picture of a whale.
+
+133
+00:10:51,550 --> 00:10:52,990
+I'll go back to list files.
+
+134
+00:10:53,590 --> 00:10:55,540
+Choose Mineo and last.
+
+135
+00:10:56,110 --> 00:10:59,860
+And there it is Whale Dash Bing that worked perfectly.
+
+136
+00:11:00,610 --> 00:11:06,760
+So the last step for many Mineo and will be using that code that we write next for all of our file systems.
+
+137
+00:11:06,940 --> 00:11:10,540
+This is delete functionality and we'll take care of that in the next election.
+

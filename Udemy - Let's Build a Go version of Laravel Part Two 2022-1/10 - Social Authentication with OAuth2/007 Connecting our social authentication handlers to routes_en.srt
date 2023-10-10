@@ -1,0 +1,104 @@
+1
+00:00:01,420 --> 00:00:06,460
+So before we go over to GitHub and set up our secrets and key and all that sort of thing, let's set
+
+2
+00:00:06,460 --> 00:00:12,680
+up the routes necessary to hook our handlers up to the appropriate URLs that are offering.
+
+3
+00:00:12,700 --> 00:00:17,410
+So if you look at log in, check those two buttons that we have here have very similar URLs.
+
+4
+00:00:18,220 --> 00:00:25,180
+It's slash off slash GitHub and then some query parameter, and this one is slash author slash Google
+
+5
+00:00:25,180 --> 00:00:26,380
+and then a query parameter.
+
+6
+00:00:27,190 --> 00:00:28,630
+So let's go over to our roots file.
+
+7
+00:00:28,810 --> 00:00:33,100
+Let's add a couple of routes here, so we'll add, first of all, the one that the button is hooked
+
+8
+00:00:33,100 --> 00:00:33,460
+up to.
+
+9
+00:00:33,760 --> 00:00:40,330
+So we'll put in eight app operates Dot, and yet this is what happens when they click on the button
+
+10
+00:00:40,840 --> 00:00:42,520
+and the URL is slash off.
+
+11
+00:00:42,670 --> 00:00:50,410
+And then some provider, then we could just use Cheez Placeholder like that so that URL will link to
+
+12
+00:00:50,410 --> 00:00:52,630
+a dot handler's dot social plugin.
+
+13
+00:00:53,590 --> 00:00:53,920
+OK.
+
+14
+00:00:54,580 --> 00:00:59,890
+And then of course, we need one for the callback when we go or take it off to GitHub, GitHub authenticates
+
+15
+00:00:59,890 --> 00:01:02,110
+users and calls back to some.
+
+16
+00:01:02,110 --> 00:01:02,570
+You are up.
+
+17
+00:01:02,590 --> 00:01:05,379
+So that's 8Ot app dot roots.
+
+18
+00:01:06,470 --> 00:01:08,010
+Don't get.
+
+19
+00:01:09,890 --> 00:01:16,640
+And it's a get request, do you think it was a post request, but apparently it's not slash off slash
+
+20
+00:01:16,730 --> 00:01:20,840
+and then provider again and then just slash colbeck.
+
+21
+00:01:22,400 --> 00:01:28,430
+And that is connected to Adolf Handler's social media callback like that?
+
+22
+00:01:28,790 --> 00:01:33,640
+OK, now before too long, we'll be adding another route here to log users out.
+
+23
+00:01:33,650 --> 00:01:37,640
+But for right now, we can just work with these two and try logging people in.
+
+24
+00:01:38,180 --> 00:01:38,450
+All right.
+
+25
+00:01:38,450 --> 00:01:44,160
+So the next step is to go over to GitHub and set up the appropriate things to get a key and a secret.
+
+26
+00:01:44,180 --> 00:01:45,890
+And we'll start that in the next lecture.
+

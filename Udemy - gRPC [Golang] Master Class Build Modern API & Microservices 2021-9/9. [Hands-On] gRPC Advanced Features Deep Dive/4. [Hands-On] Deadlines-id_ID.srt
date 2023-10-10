@@ -1,0 +1,584 @@
+1
+00:00:00,310 --> 00:00:05,530
+OK jadi dalam kuliah ini kita akan menerapkan tenggat waktu dan kita tidak jelas sebagai karya seni baru yang disebut
+
+2
+00:00:05,580 --> 00:00:06,850
+jangkauan dengan tenggat waktu.
+
+3
+00:00:07,230 --> 00:00:14,010
+Dan pada dasarnya kami akan mengakhirinya dengan server, respons akan dikembalikan hanya setelah 3000 milidetik
+
+4
+00:00:14,010 --> 00:00:21,000
+dan server ini akan memeriksa secara berkala jika klien dapat membatalkan permintaan dan jelas akan menerapkan
+
+5
+00:00:21,000 --> 00:00:26,880
+klien untuk menetapkan tenggat waktu 5.000 milidetik yang seharusnya membuat panggilan berhasil
+
+6
+00:00:27,060 --> 00:00:30,550
+Dan satu milidetik kita harus membuat panggilan gagal.
+
+7
+00:00:30,750 --> 00:00:36,740
+Jadi untuk melakukan ini kita akan menyambut Prado itu dan kita akan menerapkan satu API lagi.
+
+8
+00:00:36,750 --> 00:00:42,440
+Ini akan menjadi uare dan yang ini akan dipanggil melalui garis itu.
+
+9
+00:00:42,570 --> 00:00:44,930
+Jadi kita akan dipanggil sapa dengan tenggat waktu.
+
+10
+00:00:44,940 --> 00:00:48,020
+Jadi kami hanya akan menambahkan dengan batas waktu di mana-mana.
+
+11
+00:00:48,540 --> 00:00:52,690
+Jadi setuju dengan permintaan jalur itu dan pengembalian setuju dengan respons jalur itu.
+
+12
+00:00:52,710 --> 00:00:54,650
+Kita perlu mengimplementasikan pesan-pesan ini.
+
+13
+00:00:54,870 --> 00:01:04,670
+Jadi mereka langsung saja mengirim salam di sini dan pada hasil yang kami bisa.
+
+14
+00:01:04,680 --> 00:01:10,510
+Jika Anda setuju itu dilakukan sebagai tanggapan dan saya akan mengembalikan string sebagai hasilnya.
+
+15
+00:01:11,190 --> 00:01:11,800
+BAIK.
+
+16
+00:01:12,000 --> 00:01:13,370
+Jadi ini terlihat bagus.
+
+17
+00:01:13,710 --> 00:01:16,230
+Dan di sini tidak akan mengatakan apa-apa.
+
+18
+00:01:16,230 --> 00:01:17,430
+Jadi begini.
+
+19
+00:01:17,460 --> 00:01:24,740
+Sekarang kita jalankan untuk menghasilkan SH yang mengantri hanya untuk menghasilkan kode untuk ini.
+
+20
+00:01:24,810 --> 00:01:27,410
+Jadi kita akan menjalankan kodenya di sini dan sedang berjalan.
+
+21
+00:01:27,600 --> 00:01:28,760
+Jadi itu sempurna.
+
+22
+00:01:28,770 --> 00:01:30,590
+Dan kodenya telah dihasilkan.
+
+23
+00:01:30,750 --> 00:01:36,450
+Jadi tidak, saya akan benar-benar melakukan hal-hal mundur dan mulai dengan menerapkan klien.
+
+24
+00:01:36,450 --> 00:01:43,860
+Jadi di sini kita akan input melakukan panggilan kemih dengan tenggat waktu.
+
+25
+00:01:44,310 --> 00:01:45,710
+Baik.
+
+26
+00:01:45,840 --> 00:01:51,390
+Dan saya hanya akan mengomentari gigitan saya jadi saya akan menyalin seluruh blok ini di sini di bagian paling
+
+27
+00:01:52,310 --> 00:01:53,400
+bawah akan diimplementasikan.
+
+28
+00:01:53,460 --> 00:02:03,240
+Apakah Anda tidak melihat dengan tenggat waktu dan begitu juga Anda Ari dengan garis RBC dan jadi di sini kita akan
+
+29
+00:02:03,350 --> 00:02:11,280
+membuat salam dengan permintaan tenggat waktu yang menerima salam ini dan kemudian hal yang sangat penting adalah
+
+30
+00:02:11,280 --> 00:02:12,240
+sekitar konteks.
+
+31
+00:02:12,660 --> 00:02:18,750
+Jadi mari kita memiliki objek konteks di sini dan saat ini kita sedang melihat setara dengan mengatakan konteks
+
+32
+00:02:18,750 --> 00:02:23,230
+latar belakang di semua Chinna menolak untuk memanggil salam dengan tenggat waktu.
+
+33
+00:02:23,790 --> 00:02:33,080
+Dan argumennya akan sama dengan sebelum konteks jadi di sini sejauh ini sama dengan apa yang telah kami
+
+34
+00:02:33,080 --> 00:02:42,090
+lakukan dan tidak ada perubahan yang pada dasarnya mengekstraksi konteks ini dengan latar belakang konteks yang sama.
+
+35
+00:02:42,230 --> 00:02:46,920
+Sekarang hal yang sangat keren adalah bahwa ada cara untuk membuat konteks ini sedikit lebih baik.
+
+36
+00:02:46,970 --> 00:02:56,020
+Kita dapat melakukan konteks dengan waktu habis dan Anda harus menentukan konteks induk dan waktu habis.
+
+37
+00:02:56,060 --> 00:02:58,940
+Jadi konteks induk akan menjadi latar belakang.
+
+38
+00:02:58,940 --> 00:03:04,130
+Jadi kita harus benar-benar membangun di atas konteks latar belakang dan di sini dia dapat menentukan durasi
+
+39
+00:03:04,130 --> 00:03:04,990
+waktu istirahat.
+
+40
+00:03:05,150 --> 00:03:12,290
+Dan untuk pertama kalinya kita akan menetapkan lima kali lipat kali itu yang kedua.
+
+41
+00:03:12,560 --> 00:03:14,670
+Jadi di sini kita tidur
+
+42
+00:03:20,460 --> 00:03:24,590
+selama lima detik dan apa yang kita kembali sebagai hasilnya dibatalkan.
+
+43
+00:03:24,780 --> 00:03:26,860
+Jadi sekarang kita memiliki objek yang lebih baik.
+
+44
+00:03:27,150 --> 00:03:33,570
+Ini sebenarnya konteks dan Kinslow karena konteks dengan konteks time out untuk membeli tanah dalam lima detik.
+
+45
+00:03:33,600 --> 00:03:36,300
+Jadi kami katakan kami bersedia menunggu selama lima detik.
+
+46
+00:03:36,300 --> 00:03:38,450
+Apa yang kita miliki sekarang adalah apa pun yang terjadi.
+
+47
+00:03:38,490 --> 00:03:42,550
+Ketika fungsi ini selesai, kita harus menunda pembatalan panggilan.
+
+48
+00:03:42,550 --> 00:03:48,620
+Jadi, apa pun yang terjadi setiap kali fungsi ini selesai, kami akan membatalkan panggilan dengan menunda.
+
+49
+00:03:48,990 --> 00:03:53,100
+Dan sekarang pada dasarnya apa yang kami terapkan adalah sebuah konteks.
+
+50
+00:03:53,100 --> 00:03:54,930
+Time out pada fungsi kita.
+
+51
+00:03:55,030 --> 00:04:01,380
+Dan jika batas waktu itu pada dasarnya mencapai tingkat kesalahan ini di sini kita akan memiliki sesuatu yang
+
+52
+00:04:01,380 --> 00:04:03,030
+sangat menyenangkan untuk ditangani.
+
+53
+00:04:03,030 --> 00:04:08,510
+Jadi kita harus melakukannya persis seperti yang kita lakukan dari preview dari kode hasil dengan penanganan kesalahan.
+
+54
+00:04:08,790 --> 00:04:19,160
+Jadi kita harus menggunakan status dari udara kita dan pada dasarnya itu adalah area status GAAP.
+
+55
+00:04:20,070 --> 00:04:30,210
+Dan oke karena ini sehingga jika Oke itu berarti itu GAAP atau kita bisa langsung ke kode kita
+
+56
+00:04:30,300 --> 00:04:32,570
+sebelumnya dan dapatkan ini.
+
+57
+00:04:32,920 --> 00:04:37,600
+Sekarang kita dapat melanjutkan dan melihat kode status.
+
+58
+00:04:37,920 --> 00:04:43,730
+Jadi kita dapat mengatakan jika kode kesalahan status yang melampaui batas waktu.
+
+59
+00:04:44,430 --> 00:04:54,220
+Jadi ini adalah di mana kita memiliki Delany sehingga kita dapat mengatakan sebagai Prindle dikosongkan dan keluar adalah
+
+60
+00:04:54,310 --> 00:04:57,850
+batas waktu hit melebihi yang lain.
+
+61
+00:04:58,360 --> 00:05:07,690
+Yah kita berada di dalam yang buruk di zona buruk sehingga kita dapat memiliki kode apa pun kosong yang Prindle
+
+62
+00:05:08,890 --> 00:05:15,240
+kesalahan yang tidak terduga dan kami akan mencetak pesan kesalahan di sini.
+
+63
+00:05:15,460 --> 00:05:17,770
+Dan di atas ini kita akan melakukan print out.
+
+64
+00:05:18,020 --> 00:05:18,250
+BAIK.
+
+65
+00:05:18,250 --> 00:05:19,340
+Jadi ini terlihat benar.
+
+66
+00:05:19,780 --> 00:05:23,540
+Dan kami akan memiliki status ini di sini untuk memperjelas.
+
+67
+00:05:23,790 --> 00:05:24,250
+BAIK.
+
+68
+00:05:24,370 --> 00:05:31,950
+Jadi pada dasarnya di sini, di klien kami, kami telah menetapkan batas waktu lima detik dan kami menunda untuk membatalkan.
+
+69
+00:05:32,140 --> 00:05:37,790
+Dan pada dasarnya jika kita mendapatkan kesalahan dari panggilan ini dari tenggat waktu yang sangat baik maka kita akan melihat
+
+70
+00:05:37,810 --> 00:05:42,370
+kode area status ini memastikan apakah itu tenggat waktu yang telah terlampaui dan jika itu
+
+71
+00:05:42,370 --> 00:05:45,490
+berarti bahwa batas waktu telah tercapai dan batas waktu terlampaui.
+
+72
+00:05:46,150 --> 00:05:49,800
+Jadi sekarang kita dapat melakukan sesuatu yang hebat dan benar-benar berdampak di sini.
+
+73
+00:05:50,410 --> 00:05:51,460
+Sebagai detik pertama.
+
+74
+00:05:51,490 --> 00:06:00,980
+Jadi kita akan memiliki detik dan sebagai int oke dan kita hanya akan memiliki detik Anda waktu yang kedua hal yang sangat baik
+
+75
+00:06:01,000 --> 00:06:06,400
+tentang itu adalah bahwa sekarang kita bisa lakukan dan itu tidak bahagia.
+
+76
+00:06:08,200 --> 00:06:09,660
+Jadi sudah waktunya durasinya.
+
+77
+00:06:09,940 --> 00:06:19,120
+Jadi kita dapat melakukan durasi di sini, durasi waktu dan kami hanya akan meneruskan dan durasi di sini atau
+
+78
+00:06:21,160 --> 00:06:25,140
+menyebutnya kami akan memanggil waktu ini dengan baik.
+
+79
+00:06:25,490 --> 00:06:27,850
+Jadi sekarang dan kemudian Anda mempersempit tenggat waktu.
+
+80
+00:06:27,890 --> 00:06:31,810
+Kita dapat melakukan satu dengan satu waktu.
+
+81
+00:06:31,810 --> 00:06:33,090
+Itu yang kedua.
+
+82
+00:06:33,490 --> 00:06:36,990
+Dan kita bisa melakukan yang lain dengan lima detik.
+
+83
+00:06:37,010 --> 00:06:37,280
+BAIK.
+
+84
+00:06:37,290 --> 00:06:47,620
+Jadi yang pertama harus selesai dan yang kedua harus time out OK karena kode server kami akan
+
+85
+00:06:47,620 --> 00:06:49,080
+3 detik.
+
+86
+00:06:49,090 --> 00:06:50,440
+Jadi ini terlihat benar.
+
+87
+00:06:50,620 --> 00:06:57,460
+Dan sekarang jika Anda melanjutkan dan mengimplementasikan server, jadi mari kita pergi ke server dan kita
+
+88
+00:06:57,520 --> 00:07:00,580
+harus menerapkan fungsi grete dengan tenggat waktu.
+
+89
+00:07:00,970 --> 00:07:03,020
+Jadi mari kita lanjutkan dan lakukan ini.
+
+90
+00:07:03,300 --> 00:07:07,410
+Kami memiliki salam dengan tenggat waktu dan itu memberikan konteks.
+
+91
+00:07:07,480 --> 00:07:15,230
+Dan masalahnya disetujui dengan permintaan tenggat waktu dan pengembalian disambut dengan tenggat waktu.
+
+92
+00:07:15,370 --> 00:07:17,320
+Responnya OK.
+
+93
+00:07:17,350 --> 00:07:20,600
+Jadi sapa dengan fungsi batas waktu dipanggil.
+
+94
+00:07:21,040 --> 00:07:27,020
+Dan di sini kita akan melakukan fungsi kecil akan lakukan untuk saya.
+
+95
+00:07:27,250 --> 00:07:29,410
+Sama dengan nol.
+
+96
+00:07:29,740 --> 00:07:46,300
+Saya kurang saya kurang dari 3 saya plus plus kita akan tidur waktu itu tidur untuk satu waktu itu detik dan kemudian ketika kita selesai kita
+
+97
+00:07:46,330 --> 00:07:48,580
+akan mengembalikan hasilnya.
+
+98
+00:07:48,820 --> 00:07:49,580
+BAIK.
+
+99
+00:07:49,840 --> 00:07:55,990
+Jadi yang penting di sini adalah kita biasanya meletakkan tiga detik dan setiap kali kita tidur.
+
+100
+00:07:55,990 --> 00:08:04,360
+Kami juga harus memeriksa apakah batas waktu telah dibatalkan atau tidak sehingga kami dapat
+
+101
+00:08:04,490 --> 00:08:15,900
+mengatakan demikian jika konteks bahwa udara sama dengan konteks yang dibatalkan maka pada dasarnya klien membatalkan permintaan sehingga kami dapat
+
+102
+00:08:15,940 --> 00:08:25,530
+melakukan luggage dan kami dapat Anda melakukannya hingga klien membatalkan permintaan dan kita dapat mengembalikan pesan kesalahan
+
+103
+00:08:25,530 --> 00:08:30,580
+misalnya sehingga kita dapat mengatakan status itu udara.
+
+104
+00:08:31,080 --> 00:08:36,860
+Dan di sini kita memiliki tenggat waktu kode Dud seperti yang Anda lakukan misalnya.
+
+105
+00:08:37,980 --> 00:08:45,190
+Dan sebagai pesan kesalahan kita dapat mengatakan klien membatalkan permintaan.
+
+106
+00:08:45,340 --> 00:08:46,760
+Jadi itu bagus.
+
+107
+00:08:46,780 --> 00:08:52,300
+Jadi kami melakukannya hanya memastikan tidak ada yang dibatalkan itu lebih baik sebenarnya bisa kita lakukan yang dibatalkan yang jauh
+
+108
+00:08:52,740 --> 00:08:53,490
+lebih baik.
+
+109
+00:08:53,500 --> 00:08:56,230
+Sehingga mereka dapat membatalkan keunggulan permintaan yang sangat baik.
+
+110
+00:08:56,320 --> 00:08:56,950
+Dan dia akan tidur.
+
+111
+00:08:56,950 --> 00:09:01,420
+Jadi pada dasarnya kami awalnya memberi waktu tiga detik untuk memeriksa apakah klien telah membatalkan
+
+112
+00:09:02,320 --> 00:09:06,690
+permintaan dan kemudian jika sudah selesai, kami dapat melanjutkan dan benar-benar mengembalikan respons.
+
+113
+00:09:06,700 --> 00:09:13,090
+Jadi kita akan mengatakan saya setuju dengan respons garis dengan hasil dan mengembalikan ini.
+
+114
+00:09:13,120 --> 00:09:18,600
+Jadi di sini Anda akan menggunakan tenggat waktu dalam pemeriksaan semacam ini apakah konteksnya telah dibatalkan atau tidak.
+
+115
+00:09:18,760 --> 00:09:23,260
+Jika Anda melakukan beberapa operasi yang sangat mahal dan Anda bisa membatalkannya di
+
+116
+00:09:23,260 --> 00:09:24,690
+tengah-tengah saat melakukannya.
+
+117
+00:09:24,950 --> 00:09:25,530
+BAIK.
+
+118
+00:09:25,720 --> 00:09:27,280
+Jadi mari kita lihat apakah ini berfungsi.
+
+119
+00:09:27,280 --> 00:09:27,890
+Mari kita jalankan.
+
+120
+00:09:27,910 --> 00:09:42,140
+Jadi jalankan server yang kami sepakati dan jalankan klien Yunani kami dan yang pertama adalah tenggat waktu RBC dan yang kedua adalah bahwa
+
+121
+00:09:42,140 --> 00:09:49,460
+tenggat waktu terlampaui di mana Anda mendapatkan kepanikan yang harus saya
+
+122
+00:09:49,820 --> 00:09:59,600
+perhatikan tetapi kedua fungsi dijalankan jadi mari kita lihat dan tampaknya klien pergi ke 129.
+
+123
+00:09:59,630 --> 00:10:01,140
+Jadi begini.
+
+124
+00:10:01,160 --> 00:10:06,850
+Jadi pada dasarnya mengatakan istirahat tidak ada istirahat adalah nol dan karena itu hasilnya tidak ada.
+
+125
+00:10:07,000 --> 00:10:09,530
+Dan itu benar kalau-kalau ada kesalahan.
+
+126
+00:10:09,530 --> 00:10:16,240
+Jelas kita harus kembali dari fungsi ini untuk tidak pernah mencapai garis di sini.
+
+127
+00:10:16,550 --> 00:10:17,930
+Jadi itu kedengarannya benar.
+
+128
+00:10:17,960 --> 00:10:19,140
+Aduh.
+
+129
+00:10:19,630 --> 00:10:20,990
+Kedengarannya benar.
+
+130
+00:10:21,050 --> 00:10:23,660
+Dan sekarang kita siap untuk menjalankan kode kita lagi.
+
+131
+00:10:23,660 --> 00:10:27,720
+Jadi mari kita lanjutkan di sini dan jalankan kodenya.
+
+132
+00:10:28,130 --> 00:10:33,490
+Dan sekarang kita menjalankan dengan tenggat waktu RBC dan kita mendapatkan respons dalam kasus pertama.
+
+133
+00:10:33,500 --> 00:10:35,670
+Jadi itu adalah respons dari tenggat waktu yang hebat.
+
+134
+00:10:35,690 --> 00:10:36,680
+Halo Stefan.
+
+135
+00:10:37,010 --> 00:10:43,430
+Dan yang kedua adalah kita mencapai waktu ketika batas waktu dan tenggat waktu terlampaui dan kita baru belajar bagaimana menggunakan
+
+136
+00:10:43,430 --> 00:10:48,260
+tenggat waktu sehingga hal yang sangat penting adalah bahwa tenggat waktu ini dikembangkan untuk beralih
+
+137
+00:10:48,260 --> 00:10:54,230
+ke kode kesalahan status dan juga kita telah membangun ke konteks dengan menambahkan batas waktu ke konteks dan
+
+138
+00:10:54,240 --> 00:10:55,610
+perbedaan akun konteks.
+
+139
+00:10:55,610 --> 00:11:00,290
+Jadi secara keseluruhan bisa menjadi sangat berbelit-belit tetapi cukup mudah dibaca secara keseluruhan.
+
+140
+00:11:00,290 --> 00:11:02,600
+Jadi pastikan Anda tahu kode kesalahan status Anda.
+
+141
+00:11:02,610 --> 00:11:07,880
+Tentu saja Anda lakukan dan Anda dapat mulai memiliki tenggat waktu yang benar-benar efisien dalam kode
+
+142
+00:11:07,880 --> 00:11:13,160
+Anda dan secara keseluruhan sangat disarankan untuk Anda memiliki tenggat waktu pada setiap RBC yang disebut Anda
+
+143
+00:11:13,160 --> 00:11:17,690
+memastikan bahwa jenis Anda tidak menunggu selamanya untuk klien untuk server merespons sesuatu seandainya
+
+144
+00:11:17,690 --> 00:11:18,780
+server benar-benar lambat.
+
+145
+00:11:19,010 --> 00:11:20,640
+Jadi begitulah.
+
+146
+00:11:20,640 --> 00:11:23,180
+Semoga itu bermanfaat dan kami akan menemui Anda di kuliah berikutnya.
+

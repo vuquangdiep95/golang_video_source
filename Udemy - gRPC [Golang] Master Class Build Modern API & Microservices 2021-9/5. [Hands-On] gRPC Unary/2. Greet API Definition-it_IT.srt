@@ -1,0 +1,204 @@
+1
+00:00:00,300 --> 00:00:05,570
+OK, quindi ora stiamo iniziando e dove definirai l'unità saluta l'API.
+
+2
+00:00:05,670 --> 00:00:11,200
+Quindi il messaggio di input dovrebbe essere benvenuto e conterrà il nome e il cognome di due stringhe.
+
+3
+00:00:11,700 --> 00:00:17,940
+E il pc riceverà una richiesta di saluto contenente un saluto e restituirà una risposta che
+
+4
+00:00:17,940 --> 00:00:20,310
+contiene i risultati abbastanza facilmente.
+
+5
+00:00:20,310 --> 00:00:23,960
+Quindi hai davvero tutti i mattoni.
+
+6
+00:00:24,000 --> 00:00:30,660
+Quindi quello che sto per fare è in questo file che inizieremo a scrivere la sintassi del buffer del protocollo
+
+7
+00:00:30,660 --> 00:00:37,080
+e la prima cosa che dobbiamo fare è creare un saluto e il saluto avrà il primo campo il
+
+8
+00:00:37,080 --> 00:00:43,230
+nome e quel campo sarà una stringa e assegniamo il tag numero uno perché è il primo campo
+
+9
+00:00:43,530 --> 00:00:45,510
+per un messaggio di saluto.
+
+10
+00:00:45,510 --> 00:00:49,530
+Ora abbiamo anche bisogno di un cognome e il cognome sarà il secondo numero.
+
+11
+00:00:49,530 --> 00:00:52,350
+Quindi, ecco la sintassi per il tuo articolo su di noi.
+
+12
+00:00:52,410 --> 00:01:00,420
+Ora per un messaggio avremo una richiesta di benvenuto e questo è un messaggio che Gangsta Rap è salutista e in fondo contiene
+
+13
+00:01:00,930 --> 00:01:07,450
+un saluto che il nome completo sta salutando e il numero del campo è il numero uno.
+
+14
+00:01:07,470 --> 00:01:07,840
+OK.
+
+15
+00:01:07,950 --> 00:01:13,600
+Quindi è il tag numero uno e restituirà una risposta in modo che possiamo dire restituire la risposta Negrete.
+
+16
+00:01:14,160 --> 00:01:20,400
+E in quella risposta puoi restituire una stringa come risultato e se il numero reale è il numero 1.
+
+17
+00:01:20,400 --> 00:01:27,150
+Quindi qui abbiamo definito tre messaggi nei nostri file buffer di protocollo e abbiamo definito una richiesta di
+
+18
+00:01:27,150 --> 00:01:28,710
+benvenuto e la risposta.
+
+19
+00:01:28,770 --> 00:01:32,210
+Quindi mi hanno chiesto cosa diciamo di richiedere la risposta di ingroup.
+
+20
+00:01:32,370 --> 00:01:38,120
+Bene, sono contento che tu l'abbia chiesto perché qui definiremo la nostra API.
+
+21
+00:01:38,430 --> 00:01:44,610
+E così facciamo un RBC e questo è in pratica il primo gioco di ruolo
+
+22
+00:01:44,610 --> 00:01:50,940
+chiamato che definiremo e verrà chiamato Gritz, così grete prende alcuni input e restituisce alcune uscite.
+
+23
+00:01:51,270 --> 00:01:58,670
+Quindi gli input che l'avidità richiede è una richiesta di benvenuto ed è per questo che definiamo una grande richiesta e
+
+24
+00:01:58,670 --> 00:02:02,330
+ritornerà come ci si può aspettare una grande risposta.
+
+25
+00:02:02,340 --> 00:02:08,320
+Quindi abbiamo parentesi graffe aperte e chiuse nel caso in cui vedrai in futuro se hai le tue opzioni.
+
+26
+00:02:08,510 --> 00:02:12,350
+E a volte è abbastanza convenzionale aggiungere questo presupposto che ho ottenuto.
+
+27
+00:02:12,860 --> 00:02:14,900
+Quindi è effettivamente necessario aggiungere questo in semicon.
+
+28
+00:02:14,990 --> 00:02:16,530
+Quindi eccolo qui.
+
+29
+00:02:16,670 --> 00:02:21,740
+Ora una cosa è più una convenzione da tenere in grado di organizzare per assicurarsi che
+
+30
+00:02:21,740 --> 00:02:24,910
+i tuoi messaggi abbiano qualche tipo di somiglianza tra loro.
+
+31
+00:02:25,010 --> 00:02:31,760
+Sempre quando si nomina il proprio RBC qualcosa, l'input è una richiesta e la risposta è una
+
+32
+00:02:31,760 --> 00:02:32,550
+risposta.
+
+33
+00:02:32,710 --> 00:02:34,280
+Quindi qui perché intendiamo in.
+
+34
+00:02:34,630 --> 00:02:40,190
+È una grande richiesta e una grande risposta e mantenere questa convenzione ti permetterà
+
+35
+00:02:40,400 --> 00:02:46,190
+davvero di mantenere i tuoi buffer buffer locali scalabili e così via in termini di organizzazione.
+
+36
+00:02:46,190 --> 00:02:51,230
+Ora, se guardiamo il comando Generate, dobbiamo rigenerare il codice, quindi ho intenzione di copiare questo
+
+37
+00:02:51,230 --> 00:02:58,200
+comando proprio qui ed eseguirlo di nuovo ed è riuscito a fare in modo che sia d'accordo sul fatto che il protocollo sia buono.
+
+38
+00:02:58,580 --> 00:03:03,380
+E ora andiamo a salutare quella P. B. va bene qui dentro
+
+39
+00:03:03,740 --> 00:03:07,950
+E come possiamo vedere questo autunno ora è molto più lungo.
+
+40
+00:03:08,150 --> 00:03:15,740
+Molto di più è stato generato per noi solo perché abbiamo aggiunto tutti questi messaggi e questo IPC.
+
+41
+00:03:15,950 --> 00:03:20,120
+Quindi ti invito a dare un'occhiata in questo momento, non ti mostrerò tutto ciò
+
+42
+00:03:20,120 --> 00:03:27,880
+che è stato generato, ma alcune cose che possiamo vedere è che per noi è stata creata una struttura di benvenuto che è un protocollo per i
+
+43
+00:03:27,970 --> 00:03:33,640
+messaggi e tu ottenere lo stesso per una richiesta e si otterrà lo stesso di nuovo per una grande risposta.
+
+44
+00:03:33,680 --> 00:03:36,510
+Quindi quelle sono le cose con le quali lavoreremo nella prossima lezione.
+
+45
+00:03:36,980 --> 00:03:44,450
+E infine se guardi ai grandi clienti del servizio ora è un'interfaccia che ha accettato l'API in modo che possiamo
+
+46
+00:03:44,450 --> 00:03:45,670
+iniziare a chiamarlo.
+
+47
+00:03:45,950 --> 00:03:51,340
+E abbiamo anche un ottimo server di servizio che è un'interfaccia che ha accettato di implementare.
+
+48
+00:03:51,590 --> 00:03:55,400
+Quindi legacy tutte queste cose che dici ma ti invito a dare un'occhiata a questo file solo
+
+49
+00:03:55,400 --> 00:03:57,560
+per avere un'idea generale di cosa è stato generato.
+
+50
+00:03:57,560 --> 00:04:01,230
+Di nuovo questi valori non cambiano quello che modificheremo è un server o vai.
+
+51
+00:04:01,400 --> 00:04:05,450
+E il tipo che va così spero sia stato utile e ti vedrò nella prossima lezione.
+

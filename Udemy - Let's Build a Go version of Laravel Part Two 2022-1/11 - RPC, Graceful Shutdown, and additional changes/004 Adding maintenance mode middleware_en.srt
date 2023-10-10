@@ -1,0 +1,300 @@
+1
+00:00:01,340 --> 00:00:05,450
+So this time around, we want to write some middleware that will check for maintenance mode, and of
+
+2
+00:00:05,450 --> 00:00:09,230
+course, we're not going to do that middleware here in my app project.
+
+3
+00:00:09,500 --> 00:00:13,670
+Instead, we'll use the middleware file inside the Solaris House project, so let's open that up.
+
+4
+00:00:14,960 --> 00:00:20,420
+Now this, of course, is in package celebrities, so that package level variable maintenance mode is
+
+5
+00:00:20,420 --> 00:00:25,050
+available to us for any handler we write or any middleware we write in this file.
+
+6
+00:00:25,070 --> 00:00:29,360
+So let's write one, write a function and it will be middleware with the receiver.
+
+7
+00:00:29,360 --> 00:00:35,990
+See Pointer to celebrities and we'll call it check for maintenance mode.
+
+8
+00:00:36,470 --> 00:00:43,100
+And because it's middleware, it'll take next HGTV dot handler as its function, and it will return
+
+9
+00:00:43,100 --> 00:00:44,480
+an HGTV dog handler.
+
+10
+00:00:47,070 --> 00:00:55,290
+And what I'm going to do here is return an HTP dog handler, funk handler, funk, make sure you get
+
+11
+00:00:55,290 --> 00:01:03,930
+the right one and it will have an inline function funk with W issue top up response writer and are a
+
+12
+00:01:03,930 --> 00:01:06,840
+pointer to your request HTP.
+
+13
+00:01:06,930 --> 00:01:07,620
+Don't request.
+
+14
+00:01:07,710 --> 00:01:09,600
+I find that really difficult to say for some reason.
+
+15
+00:01:11,130 --> 00:01:14,400
+And inside of that function, we'll just say if maintenance mode.
+
+16
+00:01:15,180 --> 00:01:20,250
+So if that's true, then we want to actually return an HMO file.
+
+17
+00:01:20,910 --> 00:01:26,460
+Now, if you look at the course resources for this lecture, you'll find a zip file called maintenance
+
+18
+00:01:26,460 --> 00:01:28,060
+dot html zip.
+
+19
+00:01:28,080 --> 00:01:33,930
+And what you're going to want to do is download that file and put it inside the public folder in my
+
+20
+00:01:33,930 --> 00:01:34,290
+app.
+
+21
+00:01:34,320 --> 00:01:37,260
+So inside a public, I'll create a new file.
+
+22
+00:01:39,800 --> 00:01:48,130
+A new file not to go file and I'll call it maintenance tried to spell right maintenance, not HTML.
+
+23
+00:01:48,620 --> 00:01:49,280
+I spelled that right.
+
+24
+00:01:49,730 --> 00:01:51,410
+And you can put whatever you want in there.
+
+25
+00:01:51,420 --> 00:01:55,450
+But if you download the file that I put on the course resources, it looks like this.
+
+26
+00:01:55,460 --> 00:01:58,670
+It's a very simple message that just says under maintenance.
+
+27
+00:01:58,670 --> 00:02:01,700
+Check back in a few minutes and gives you a link to click on to try things.
+
+28
+00:02:01,700 --> 00:02:05,450
+So make sure that's in public HTML in your My App project.
+
+29
+00:02:07,340 --> 00:02:14,360
+So we have this if statement and we'll say, if not because I want to make sure that the only page they
+
+30
+00:02:14,360 --> 00:02:17,480
+can see and I better still maintenance right here.
+
+31
+00:02:18,620 --> 00:02:27,950
+Main Amy in maintenance note that's better, if not Strings Dot contains.
+
+32
+00:02:28,370 --> 00:02:32,510
+We'll just use the strings package to see if the ardoin URL path.
+
+33
+00:02:33,830 --> 00:02:34,910
+That's what we're looking at.
+
+34
+00:02:35,360 --> 00:02:41,240
+If that does not contain slash public slash maintenance dot HTML.
+
+35
+00:02:44,420 --> 00:02:48,470
+So if they're trying to hit anything other than that page, we're going to send this back.
+
+36
+00:02:49,310 --> 00:02:55,970
+W Dot right header will set a header first of all, and we'll set it to 8TB Dot status.
+
+37
+00:02:56,390 --> 00:02:58,340
+Say service unavailable.
+
+38
+00:02:58,550 --> 00:02:59,420
+That seems like a good one.
+
+39
+00:03:01,720 --> 00:03:08,890
+And then we'll w dot header dot set, as you're supposed to do when you have this and we'll put in retry
+
+40
+00:03:09,100 --> 00:03:14,500
+dash after with a colon and we'll put 300 seconds.
+
+41
+00:03:14,920 --> 00:03:16,150
+So check after five minutes.
+
+42
+00:03:18,250 --> 00:03:25,540
+And I will say, said another header cash control w dot header that said and will set cash control.
+
+43
+00:03:29,930 --> 00:03:36,890
+And we'll set that to no Dash store, no Dash cash, all the ones that say, just don't keep a copy
+
+44
+00:03:36,890 --> 00:03:43,820
+of this must revalidate, validate, post-test check.
+
+45
+00:03:46,410 --> 00:03:56,680
+But to put this in the right spot, post-test check equals zero and predict check equals zero.
+
+46
+00:03:57,090 --> 00:04:02,550
+And that will just force the browser not to keep a copy of this page and then will serve that file public
+
+47
+00:04:03,030 --> 00:04:04,710
+HDMI out for maintenance studies.
+
+48
+00:04:04,710 --> 00:04:05,160
+HTML.
+
+49
+00:04:05,610 --> 00:04:07,380
+So HTP serve file.
+
+50
+00:04:10,510 --> 00:04:14,860
+We want to serve server with our and we want to put in.
+
+51
+00:04:16,310 --> 00:04:25,660
+We use the format as print printouts to build a string for my string will be present as slash public
+
+52
+00:04:27,010 --> 00:04:30,060
+slash maintenance HTML.
+
+53
+00:04:30,100 --> 00:04:35,200
+Make sure you spell it right and our substitution for that will be set off route path, the path to
+
+54
+00:04:35,200 --> 00:04:39,370
+our application to the Maya, and we'll just return at this point.
+
+55
+00:04:39,400 --> 00:04:40,450
+We don't want to go any further.
+
+56
+00:04:41,110 --> 00:04:51,940
+Otherwise, down here next, don't serve HDB opener, so that should be the necessary middleware.
+
+57
+00:04:51,940 --> 00:04:55,600
+But of course, we want to add that middleware to our middleware middleware chain.
+
+58
+00:04:55,630 --> 00:04:57,730
+And again, we're not going to do that in my app.
+
+59
+00:04:57,910 --> 00:05:00,310
+We'll do it up here in the Roots file.
+
+60
+00:05:03,940 --> 00:05:11,320
+We'll just say, must start use, see dot check for maintenance mode.
+
+61
+00:05:12,190 --> 00:05:12,490
+There.
+
+62
+00:05:13,860 --> 00:05:20,550
+Now, if everything went according to plan, I should be able to go over to celebrities ago and in the
+
+63
+00:05:20,550 --> 00:05:27,600
+listing and serve function right here, I can just say maintenance mode equals true.
+
+64
+00:05:28,770 --> 00:05:30,480
+Set that package level variable.
+
+65
+00:05:30,990 --> 00:05:35,880
+So now if I come down here and say make stop and make start.
+
+66
+00:05:41,640 --> 00:05:47,580
+So it's running now, she'd be able to go to my web browser and try going to localhost four thousand
+
+67
+00:05:47,940 --> 00:05:50,670
+and I get my maintenance mode message perfect.
+
+68
+00:05:50,940 --> 00:05:56,520
+Now, if I go back to my celebrity's package and get rid of this line, just comment it out.
+
+69
+00:05:58,050 --> 00:05:59,460
+Restart the application.
+
+70
+00:05:59,730 --> 00:06:00,570
+Make restart.
+
+71
+00:06:03,690 --> 00:06:08,070
+And of course, what I'm doing here is simulating sending a command from the command line application.
+
+72
+00:06:08,490 --> 00:06:14,970
+Now, when I go back to my web browser and reload the page, I should get my application and I do.
+
+73
+00:06:15,390 --> 00:06:15,930
+Perfect.
+
+74
+00:06:16,230 --> 00:06:22,450
+So the next step is to go to our command line application and add the functionality to talk to the PC
+
+75
+00:06:22,470 --> 00:06:25,200
+port, and we'll get started on that in the next lecture.
+

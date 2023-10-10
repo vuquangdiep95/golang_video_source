@@ -1,0 +1,507 @@
+1
+00:00:01,290 --> 00:00:04,750
+So let's begin the process of writing some tests for our code.
+
+2
+00:00:04,770 --> 00:00:10,050
+And right now, I'm in the Celebrity House package and I'm looking at render don't go the render package.
+
+3
+00:00:10,800 --> 00:00:12,690
+And here's where I want to start writing tests.
+
+4
+00:00:12,780 --> 00:00:17,370
+So the very first thing I want to do is inside the render package, I'm going to create a new folder
+
+5
+00:00:17,940 --> 00:00:19,680
+called test data.
+
+6
+00:00:20,130 --> 00:00:20,460
+OK.
+
+7
+00:00:21,180 --> 00:00:26,040
+And inside of that, I'm going to create another folder called views because I don't want to have to
+
+8
+00:00:26,040 --> 00:00:32,470
+have an application like my app right beside my myself, US project in order to write tests.
+
+9
+00:00:32,550 --> 00:00:39,420
+So instead, we're going to populate this test data folder with information that simulates exactly what
+
+10
+00:00:39,420 --> 00:00:42,660
+we needed duplicates the environment of a running application.
+
+11
+00:00:42,900 --> 00:00:46,080
+OK, so obviously views is where we're going to put our views.
+
+12
+00:00:46,260 --> 00:00:54,810
+So in there, I'm going to create a new file called Home Page Up Tempo, and it really doesn't matter
+
+13
+00:00:54,810 --> 00:00:55,710
+what's inside of it.
+
+14
+00:00:56,340 --> 00:00:58,290
+Hello, world will do the trick.
+
+15
+00:00:58,470 --> 00:01:02,070
+OK, so now I have a test data folder.
+
+16
+00:01:02,100 --> 00:01:07,110
+Inside of that, I have to have a vues folder and inside of that I have homed up page duct tape.
+
+17
+00:01:08,220 --> 00:01:11,670
+The next thing I want to do is write inside the render folder.
+
+18
+00:01:11,670 --> 00:01:18,960
+Beside the test data folder, I'm going to create another file called set up underscore test, not go.
+
+19
+00:01:19,740 --> 00:01:26,670
+And that is a special file that we can use to run some function before we run our tests.
+
+20
+00:01:26,940 --> 00:01:30,120
+But like all good files, it requires a package declaration.
+
+21
+00:01:30,120 --> 00:01:32,460
+So package render in this case.
+
+22
+00:01:33,420 --> 00:01:38,310
+And the first thing I'll do is declare a variable VAR views and this will be our jetset.
+
+23
+00:01:38,550 --> 00:01:41,130
+And we're not going to use it in this lecture, but we'll get to it very soon.
+
+24
+00:01:41,700 --> 00:01:50,010
+So views is equal to Jet Dot new set, just like we did in Silver Tasker, and we need to populate some
+
+25
+00:01:50,010 --> 00:01:51,270
+information inside of that.
+
+26
+00:01:51,300 --> 00:01:55,110
+And the first one is our OS file system loader.
+
+27
+00:01:55,110 --> 00:02:03,930
+So Jetport New OS File System Loader and we'll pass it to path dot slash test data slash use.
+
+28
+00:02:04,590 --> 00:02:04,920
+OK.
+
+29
+00:02:06,840 --> 00:02:12,870
+And just like I did in Celerity Start Go, I'll set jetport in development mode just to make things
+
+30
+00:02:12,870 --> 00:02:13,500
+a little simpler.
+
+31
+00:02:13,980 --> 00:02:15,000
+That's my first variable.
+
+32
+00:02:15,660 --> 00:02:20,100
+The second thing I need is actually need a variable of the type render.
+
+33
+00:02:20,310 --> 00:02:20,910
+Well, that's easy.
+
+34
+00:02:21,390 --> 00:02:24,520
+VAR and I'm going to call this test render.
+
+35
+00:02:25,860 --> 00:02:27,640
+And that's equal to render.
+
+36
+00:02:27,660 --> 00:02:28,410
+That's the type.
+
+37
+00:02:28,530 --> 00:02:37,080
+And we'll just populates fields renderer like that, an empty string and root path.
+
+38
+00:02:37,980 --> 00:02:40,170
+I'll make that equal to an empty string.
+
+39
+00:02:41,760 --> 00:02:43,770
+And finally, get views.
+
+40
+00:02:44,460 --> 00:02:47,520
+And of course, that will be equal to the views variable we just created.
+
+41
+00:02:49,800 --> 00:02:55,920
+And the last thing I'll do in this file for now will be coming back to it later is I'll create a function
+
+42
+00:02:55,920 --> 00:02:57,060
+called test me.
+
+43
+00:02:58,740 --> 00:03:02,550
+And this takes one parameter, and this is something that will I'll talk about in a minute, let's get
+
+44
+00:03:02,550 --> 00:03:12,240
+it set up first is parameters called M of type point or two testing dot m and this is a special function.
+
+45
+00:03:12,720 --> 00:03:19,290
+Any time I run tests in this directory, if Go sees a file named set up underscore test, don't go with
+
+46
+00:03:19,290 --> 00:03:23,760
+a function called test main that takes the parameter pointer to testing M.
+
+47
+00:03:24,840 --> 00:03:30,180
+It'll run that function and then that function will run any tests it finds in that directory.
+
+48
+00:03:30,480 --> 00:03:32,700
+So this is going to be a really simple one right now.
+
+49
+00:03:32,700 --> 00:03:35,550
+We're just going to put an OS Typekit exit.
+
+50
+00:03:36,810 --> 00:03:38,490
+But before you exit.
+
+51
+00:03:39,620 --> 00:03:43,340
+Run and run and that will run our tests.
+
+52
+00:03:43,460 --> 00:03:45,890
+OK, so we've got that all set up now.
+
+53
+00:03:46,100 --> 00:03:48,500
+Now let's finally write some tests.
+
+54
+00:03:48,650 --> 00:03:56,670
+So again, at the root level of the render folder or create a new file and I will call it render oriented
+
+55
+00:03:56,710 --> 00:03:58,580
+year, underscored Tesco.
+
+56
+00:03:58,850 --> 00:03:59,720
+And that's the convention.
+
+57
+00:04:00,350 --> 00:04:02,930
+First of all, the file doesn't end with underscore test.
+
+58
+00:04:02,930 --> 00:04:07,220
+Don't go to any test that happened to be in there will be ignored.
+
+59
+00:04:07,940 --> 00:04:12,560
+And of course, the convention when you're creating these files is to take the name of the file you're
+
+60
+00:04:12,560 --> 00:04:16,280
+going to test and put underscore test before the don't go.
+
+61
+00:04:17,270 --> 00:04:21,110
+So this will have a package declaration of render, of course.
+
+62
+00:04:21,800 --> 00:04:25,400
+And let's write our first test, so I'll test the page function.
+
+63
+00:04:25,550 --> 00:04:26,840
+This one right over here.
+
+64
+00:04:27,500 --> 00:04:31,130
+So this is the function I want to test to begin with.
+
+65
+00:04:31,160 --> 00:04:34,010
+OK, so let's go back to render underscore test.
+
+66
+00:04:34,010 --> 00:04:37,640
+Don't go and I'll call my function test, render
+
+67
+00:04:40,970 --> 00:04:42,260
+underscore page.
+
+68
+00:04:42,920 --> 00:04:47,030
+And it takes one parameter t a pointer to testing dot t.
+
+69
+00:04:49,280 --> 00:04:51,950
+OK, so what are we going to do here?
+
+70
+00:04:51,980 --> 00:04:57,860
+Well, to start with, I'm going to need to have a couple of well, some information in order to call
+
+71
+00:04:58,040 --> 00:05:01,340
+render rendered Go's function page.
+
+72
+00:05:01,610 --> 00:05:05,680
+So we're going to need a response writer and we're going to need a request or the request is easy.
+
+73
+00:05:05,690 --> 00:05:12,770
+I can just go R and potentially an error, and our is going to be our pointer to an HDTV http request.
+
+74
+00:05:13,940 --> 00:05:19,040
+We'll just call HTP Dot New Request and we'll give it the get.
+
+75
+00:05:19,130 --> 00:05:24,770
+That's the method we're going to call and we need, of course, some URL, but it really doesn't matter
+
+76
+00:05:24,770 --> 00:05:25,340
+what it is.
+
+77
+00:05:25,350 --> 00:05:28,990
+So I can literally put some URL like that.
+
+78
+00:05:29,780 --> 00:05:33,070
+And no, I'm not passing anything to the third parameter because I don't need it.
+
+79
+00:05:33,080 --> 00:05:37,130
+I just want to request I'm actually going to do anything with the request or not very much anyway.
+
+80
+00:05:37,490 --> 00:05:38,210
+I'll check for an error.
+
+81
+00:05:38,960 --> 00:05:40,280
+If error is not equal to nil.
+
+82
+00:05:40,570 --> 00:05:45,790
+Then I'll just generate an error in the testing package to error and I'll just pass it over.
+
+83
+00:05:47,870 --> 00:05:51,200
+Now I need a response rate, but I don't want a real response writer.
+
+84
+00:05:51,350 --> 00:05:58,190
+Instead, I'm going to take advantage of TV Test Dot new recorder, but I'll call the variable W because
+
+85
+00:05:58,340 --> 00:05:59,360
+that's what I've been calling it.
+
+86
+00:05:59,360 --> 00:06:06,170
+Every time we use a handler that's assigned the value of HTP test dot, you recorder.
+
+87
+00:06:07,610 --> 00:06:10,400
+So now I have my error and I have my W.
+
+88
+00:06:10,670 --> 00:06:12,140
+What else do I need?
+
+89
+00:06:13,220 --> 00:06:20,240
+Well, in order to create or call the page function, I actually need to populate a couple of the members
+
+90
+00:06:20,240 --> 00:06:26,120
+in the render type, which, if you recall back in set up test, I called a test renderer so I can just
+
+91
+00:06:26,120 --> 00:06:33,860
+say test renderer, dot renderer and first of all, go file's equals go.
+
+92
+00:06:34,760 --> 00:06:42,770
+And I also need the root path test renderer dorey path that's going to be equal to not what it was in
+
+93
+00:06:42,770 --> 00:06:47,480
+my app, but instead we want to go to dot slash test data.
+
+94
+00:06:48,650 --> 00:06:49,910
+And that's my root path.
+
+95
+00:06:50,860 --> 00:06:52,610
+No, I can simply call.
+
+96
+00:06:53,740 --> 00:06:55,930
+Page, so I'll look for an error.
+
+97
+00:06:56,350 --> 00:07:03,850
+Error is equal to test renderer dot page and hand it.
+
+98
+00:07:03,850 --> 00:07:07,890
+The things that need to have W are the name of a template.
+
+99
+00:07:07,900 --> 00:07:14,470
+And if you recall, we already created a really simple file called hold up page dot template and then
+
+100
+00:07:14,470 --> 00:07:15,220
+for data for it.
+
+101
+00:07:15,220 --> 00:07:17,020
+Now I'll just say no and no,
+
+102
+00:07:19,870 --> 00:07:22,880
+and we have an error because I left the parentheses off there.
+
+103
+00:07:22,900 --> 00:07:23,560
+That's better.
+
+104
+00:07:24,640 --> 00:07:30,880
+Now we checked for an error if error is not equal to nil, and then.
+
+105
+00:07:32,310 --> 00:07:39,770
+We'll say to error error rendering, page number.
+
+106
+00:07:41,700 --> 00:07:42,510
+So let's try this out.
+
+107
+00:07:43,200 --> 00:07:47,400
+Let's go to our command prompt or terminal change into the render directory.
+
+108
+00:07:48,900 --> 00:07:51,330
+Clear the screen and tap Go Test Dot.
+
+109
+00:07:54,090 --> 00:07:55,080
+And that test passed.
+
+110
+00:07:55,170 --> 00:07:55,690
+Perfect.
+
+111
+00:07:55,770 --> 00:07:56,220
+All right.
+
+112
+00:07:57,360 --> 00:08:01,020
+Now let's try rendering a jet page so.
+
+113
+00:08:02,520 --> 00:08:12,330
+Test renderer Typekit renderer now it's equal to jet, and it's as simple as saying air equals test
+
+114
+00:08:12,330 --> 00:08:12,870
+renderer.
+
+115
+00:08:17,520 --> 00:08:28,320
+Typekit page and again, W are code nil and nil, and I can just copy my error check now if I run this
+
+116
+00:08:28,320 --> 00:08:28,950
+right now.
+
+117
+00:08:29,010 --> 00:08:32,520
+It should fail because there is no file called homecourt chat.
+
+118
+00:08:32,640 --> 00:08:33,540
+Let's make sure it fails.
+
+119
+00:08:33,750 --> 00:08:34,890
+So back to my terminal.
+
+120
+00:08:35,190 --> 00:08:37,500
+Clear the screen go test dot.
+
+121
+00:08:38,960 --> 00:08:39,750
+And I should fail.
+
+122
+00:08:39,770 --> 00:08:48,080
+And it did so now if we put in here in a test out of use, if we create a new file in there called Holmgren
+
+123
+00:08:49,070 --> 00:08:54,680
+and say hello yet again, it doesn't matter what it is.
+
+124
+00:08:55,190 --> 00:08:59,390
+Now, when I come down here to my terminal, clear the screen and run go test dot.
+
+125
+00:09:01,410 --> 00:09:02,790
+It actually succeeds.
+
+126
+00:09:03,150 --> 00:09:04,320
+OK, that's enough to get started.
+
+127
+00:09:04,350 --> 00:09:07,530
+We'll pick this up in the next lecture and write some more tests.

@@ -1,0 +1,1455 @@
+1
+00:00:00,790 --> 00:00:09,310
+So now we want this code and perform checks that go to actually delete this content, this table from
+
+2
+00:00:09,310 --> 00:00:15,730
+the problems table, populate it over here and display a message any time we receive the appropriate
+
+3
+00:00:15,730 --> 00:00:19,300
+event from Pusha or a Pusha compatible server.
+
+4
+00:00:19,990 --> 00:00:22,590
+So first thing I can do is get rid of this comment docos.
+
+5
+00:00:22,600 --> 00:00:24,760
+I they don't need it anymore, so I'll delete that.
+
+6
+00:00:26,530 --> 00:00:30,400
+And it looks like we're not actually using the models host, but I'm going to leave that there because
+
+7
+00:00:30,400 --> 00:00:34,000
+I might need it later and it's not hurting anything at the moment, subject to ignore the fact that
+
+8
+00:00:34,000 --> 00:00:35,530
+that parameter is not being used.
+
+9
+00:00:36,650 --> 00:00:40,510
+Now, we want to get down to the part where we actually test the service.
+
+10
+00:00:40,510 --> 00:00:45,940
+So let's find that this test service for hosts, this is the part we're going to work on right now.
+
+11
+00:00:47,080 --> 00:00:50,740
+And in here, we only have one case we're watching for.
+
+12
+00:00:50,770 --> 00:00:52,740
+We're testing for HTP.
+
+13
+00:00:52,750 --> 00:00:55,320
+And when we add extra services, there'll be other cases here.
+
+14
+00:00:56,170 --> 00:00:59,330
+And here's what we want to broadcast to clients, if appropriate.
+
+15
+00:00:59,350 --> 00:01:01,450
+So how are we going to do that?
+
+16
+00:01:02,170 --> 00:01:06,970
+Well, we already have the host service and this is prior to the host service being updated in the database.
+
+17
+00:01:06,970 --> 00:01:11,830
+So the status in there is the status as it existed prior to the check.
+
+18
+00:01:12,340 --> 00:01:15,430
+And here we're declaring a new variable called new status.
+
+19
+00:01:15,430 --> 00:01:17,600
+That will be the status after the check.
+
+20
+00:01:18,070 --> 00:01:22,960
+So by the time we get down here to this Tudou statement, all we have to do is do a simple check.
+
+21
+00:01:23,770 --> 00:01:32,440
+If got status, which is the old status is not equal to new status, then we want to broadcast to all
+
+22
+00:01:32,440 --> 00:01:32,970
+clients.
+
+23
+00:01:33,340 --> 00:01:35,530
+Now, what kind of information do we want to broadcast?
+
+24
+00:01:35,590 --> 00:01:37,640
+So we'll broadcast to clients if appropriate.
+
+25
+00:01:38,170 --> 00:01:40,210
+What kind of information do we want to broadcast?
+
+26
+00:01:40,660 --> 00:01:44,800
+Well, we know it's going to have a data payload and we know that's going to be a type of type of map,
+
+27
+00:01:45,160 --> 00:01:46,770
+string, string.
+
+28
+00:01:46,810 --> 00:01:51,100
+So let's create that variable and let's start populating it with all the information that we want.
+
+29
+00:01:51,730 --> 00:01:55,990
+And I'm going to put as much as I think I might need and then some just to be safe.
+
+30
+00:01:55,990 --> 00:01:59,530
+So I'll put in, first of all, the host ID because I have that information.
+
+31
+00:02:02,140 --> 00:02:03,670
+And I got to close the parentheses here.
+
+32
+00:02:05,040 --> 00:02:11,300
+So the host I.D., it has to be in a string format, so I need to convert it to a string I to a store,
+
+33
+00:02:11,310 --> 00:02:16,830
+convert it to a and that's just HS homestudy.
+
+34
+00:02:17,550 --> 00:02:18,180
+So I need that.
+
+35
+00:02:18,960 --> 00:02:24,660
+And I may also I know I'm definitely going to need the service ID, so I'll call it host service ID
+
+36
+00:02:25,110 --> 00:02:26,940
+and that's just HFS ID.
+
+37
+00:02:28,200 --> 00:02:35,250
+And then I probably want the hostname data hostname, and that's just a string, so I can just pull
+
+38
+00:02:35,250 --> 00:02:38,250
+that right from the host record hostname.
+
+39
+00:02:40,170 --> 00:02:40,770
+Equals.
+
+40
+00:02:43,820 --> 00:02:47,270
+And I probably want the service name, so data service name.
+
+41
+00:02:50,160 --> 00:02:54,510
+And that's equal to host service, service, service name.
+
+42
+00:02:56,240 --> 00:03:00,230
+And I probably want the icon, data icon.
+
+43
+00:03:02,060 --> 00:03:10,580
+And that will be able to service the icon, not just the strings and on conversion necessary, the new
+
+44
+00:03:10,580 --> 00:03:13,100
+status data status.
+
+45
+00:03:14,480 --> 00:03:16,160
+Equals our new status.
+
+46
+00:03:18,590 --> 00:03:24,140
+Is there anything else, probably the message and broadcasting that message is pretty straightforward,
+
+47
+00:03:24,140 --> 00:03:26,750
+but in this case, I'm going to make it shorter than the last time we did it.
+
+48
+00:03:26,750 --> 00:03:34,610
+So I'll just say data message is equal to and I'll use formatter as printf so I can build my string
+
+49
+00:03:35,120 --> 00:03:38,750
+percent s on percent s reports.
+
+50
+00:03:41,790 --> 00:03:51,630
+S and a populate that with the service name, which is a service dot, sir, his name, the hostname
+
+51
+00:03:51,630 --> 00:03:54,510
+h dot hostname and the new status.
+
+52
+00:03:58,080 --> 00:04:03,540
+OK, so there's my my message, and the last thing I'm going to put in there is the last check.
+
+53
+00:04:05,420 --> 00:04:12,620
+And that's just the current time and date when I can just build that by using Time Now format and give
+
+54
+00:04:12,620 --> 00:04:19,220
+it the same format string we used before using those interesting date formatting syntax.
+
+55
+00:04:24,730 --> 00:04:28,300
+And I will build it in the correct format, so there's our data.
+
+56
+00:04:29,100 --> 00:04:35,590
+Now I want to broadcast this repo broadcast message, which we built a little while ago, and we're
+
+57
+00:04:35,590 --> 00:04:36,850
+going to put it to the public channel.
+
+58
+00:04:38,890 --> 00:04:45,520
+And the event we want is hosting service status changed because that's where that's what we're listening
+
+59
+00:04:45,520 --> 00:04:49,810
+for on our JavaScript, which will get to in a moment and we pass it the data.
+
+60
+00:04:50,560 --> 00:04:52,680
+OK, so that will broadcast the message for us.
+
+61
+00:04:53,350 --> 00:04:59,470
+Now, after that, let's put another to do in here to do this is the point, I think, where we want
+
+62
+00:04:59,470 --> 00:05:05,110
+to send email or SMS if appropriate, and we'll get to that later on.
+
+63
+00:05:07,120 --> 00:05:14,200
+OK, so we've built that now we need to actually go over to our JavaScript, which is in just DOGIT,
+
+64
+00:05:14,680 --> 00:05:16,500
+and find the part that we need to modify.
+
+65
+00:05:16,600 --> 00:05:21,670
+And what we're looking for here is host service status changed.
+
+66
+00:05:21,900 --> 00:05:23,260
+Now, I got an error here somewhere.
+
+67
+00:05:23,290 --> 00:05:24,100
+Let me find that.
+
+68
+00:05:26,790 --> 00:05:31,390
+So it says that it put him in front of this make map string strength.
+
+69
+00:05:31,410 --> 00:05:31,920
+That's better.
+
+70
+00:05:32,040 --> 00:05:36,870
+OK, let's go back to our Java JavaScript and look at the method we want to change.
+
+71
+00:05:36,900 --> 00:05:41,130
+What we're pushing from perform checks is hosting service status changed.
+
+72
+00:05:41,610 --> 00:05:47,640
+And in our on the public channel and in our JavaScript, we're binding to the public channel and looking
+
+73
+00:05:47,640 --> 00:05:49,190
+for hosted service data changed.
+
+74
+00:05:49,200 --> 00:05:50,080
+And this is what we want.
+
+75
+00:05:50,520 --> 00:05:54,780
+So let's get rid of this successfully because it obscures the very top of the screen.
+
+76
+00:05:54,790 --> 00:06:00,240
+I don't want to put something that's a little less intrusive in there, so I'll put in a tension toast
+
+77
+00:06:00,750 --> 00:06:03,570
+and I'll just pass in some parameters as we did before.
+
+78
+00:06:04,020 --> 00:06:05,880
+Message is DataDot message.
+
+79
+00:06:09,880 --> 00:06:15,420
+The icon, I'll just make it info, because it'll apply for all the situations that were at the timer
+
+80
+00:06:15,420 --> 00:06:17,260
+are set to say 30 seconds.
+
+81
+00:06:17,290 --> 00:06:21,070
+So thirty thousand milliseconds timer, not time.
+
+82
+00:06:22,940 --> 00:06:28,130
+And the last thing I want to put in there is the show Close Button, and I'll set that to true and let
+
+83
+00:06:28,130 --> 00:06:30,910
+people close it if they don't want to wait the 30 seconds for it to disappear.
+
+84
+00:06:31,460 --> 00:06:34,210
+So let's make sure this all works before we go any further.
+
+85
+00:06:34,220 --> 00:06:37,220
+So I'm going to open my terminal, stop my application.
+
+86
+00:06:37,550 --> 00:06:38,870
+Start my application.
+
+87
+00:06:41,290 --> 00:06:47,470
+Make sure that pusher is running, and it is so that's fine, so my IP is running, then I'll go back
+
+88
+00:06:47,470 --> 00:06:53,500
+to my terminal window or my browser window, look at the problems page and refresh it and make sure
+
+89
+00:06:53,500 --> 00:06:54,540
+that the problem is still there.
+
+90
+00:06:54,550 --> 00:06:55,090
+It is.
+
+91
+00:06:55,420 --> 00:07:01,300
+Now, I'll go start my Web server and make sure I schlemiel for the JavaScript console first so the
+
+92
+00:07:01,300 --> 00:07:02,330
+console is empty.
+
+93
+00:07:02,350 --> 00:07:02,860
+Perfect.
+
+94
+00:07:03,160 --> 00:07:09,790
+Now I'll go back to my other Idy window and start this little test web server, the one that we're monitoring.
+
+95
+00:07:11,390 --> 00:07:13,700
+So now go back to my browser and watch this.
+
+96
+00:07:15,530 --> 00:07:20,780
+And I should see a little alert, a pop up here, a little tost alert once I turn on monitoring, of
+
+97
+00:07:20,780 --> 00:07:23,090
+course, that monitoring started.
+
+98
+00:07:30,850 --> 00:07:38,080
+And there it is, HTP on localhost reports healthy and I should be able to close this and I can so we
+
+99
+00:07:38,080 --> 00:07:42,460
+now we know we can actually remove this row and move it over here because everything's talking to each
+
+100
+00:07:42,460 --> 00:07:43,510
+other the way that it should be.
+
+101
+00:07:43,540 --> 00:07:50,320
+So let me go back to my code and get to the correct I.D. window and minimize this.
+
+102
+00:07:50,890 --> 00:07:55,420
+And let's look at think about how we're going to make this take place, because all the logic we want
+
+103
+00:07:55,540 --> 00:07:56,440
+is going to go right in here.
+
+104
+00:07:56,440 --> 00:07:58,210
+We might move it to another function later on.
+
+105
+00:07:58,210 --> 00:08:00,970
+But just to get it working, let's put it in here for right now.
+
+106
+00:08:02,140 --> 00:08:03,370
+So let's write some comments.
+
+107
+00:08:03,610 --> 00:08:06,400
+So update tables.
+
+108
+00:08:07,300 --> 00:08:15,160
+The first thing I want to do is to remove existing table row if it exists.
+
+109
+00:08:15,160 --> 00:08:21,340
+And that's important because we don't want to try to remove a table from a row that doesn't exist anywhere
+
+110
+00:08:21,340 --> 00:08:22,450
+on the current browser window.
+
+111
+00:08:22,450 --> 00:08:25,360
+So we have to check to make sure that it exists and then remove it.
+
+112
+00:08:25,490 --> 00:08:28,620
+OK, so that's the first thing we want to do.
+
+113
+00:08:28,690 --> 00:08:31,330
+The second thing we want to do is to.
+
+114
+00:08:32,190 --> 00:08:33,120
+Update the tables.
+
+115
+00:08:35,690 --> 00:08:42,620
+If they exist, which means we have to have some means of getting some means of getting a hold of the
+
+116
+00:08:42,620 --> 00:08:46,940
+appropriate table, so let's think about those two things.
+
+117
+00:08:46,940 --> 00:08:47,390
+First of all.
+
+118
+00:08:47,390 --> 00:08:50,750
+First of all, how are we going to remove the existing table if it exists?
+
+119
+00:08:51,110 --> 00:08:54,980
+Because we have no means right now of actually getting that information.
+
+120
+00:08:55,010 --> 00:08:57,110
+So let's open our host jet file.
+
+121
+00:08:59,000 --> 00:09:03,860
+And let's find every place we were writing a table row that has a status.
+
+122
+00:09:04,910 --> 00:09:11,540
+So that starts, let's see, not here, because this is the services tab, it's this one, this is the
+
+123
+00:09:11,540 --> 00:09:12,310
+very first one.
+
+124
+00:09:12,830 --> 00:09:15,460
+And what I want to find is this table row.
+
+125
+00:09:16,160 --> 00:09:25,130
+So if, say, we have a service we're monitoring and it changes from healthy to problem, then we want
+
+126
+00:09:25,130 --> 00:09:29,000
+that ROE to disappear, which means we have to have a means of getting a hold of it.
+
+127
+00:09:29,030 --> 00:09:36,530
+So let's just give it an ID ID equals and we'll just call it host Dasch Service Dash and then put in
+
+128
+00:09:36,530 --> 00:09:44,150
+the ID, which is the host service ID, because there's only one entry possible for any given service
+
+129
+00:09:44,150 --> 00:09:44,300
+there.
+
+130
+00:09:44,580 --> 00:09:48,620
+You're never going to have a service showing up in two rows in any of these four tables.
+
+131
+00:09:48,770 --> 00:09:52,720
+At the same time, either it's in one state or it's in another state.
+
+132
+00:09:52,730 --> 00:09:54,280
+So that's a means of getting a hold of it.
+
+133
+00:09:54,290 --> 00:09:55,130
+So we've got that.
+
+134
+00:09:55,940 --> 00:10:00,890
+Let's copy this content right here and add it to the other tables.
+
+135
+00:10:00,890 --> 00:10:01,820
+So I've copied that.
+
+136
+00:10:02,180 --> 00:10:03,080
+I'm unhealthy.
+
+137
+00:10:03,080 --> 00:10:05,090
+I'll go down to the next one, which is warning.
+
+138
+00:10:05,360 --> 00:10:06,530
+I'll find the table row.
+
+139
+00:10:07,440 --> 00:10:08,330
+And paste that in there.
+
+140
+00:10:09,670 --> 00:10:13,720
+OK, and then I'll go down to the next one, which is right here.
+
+141
+00:10:14,820 --> 00:10:19,940
+And I'll pasted in again, my ID is showing an error because I have two elements with the same ID,
+
+142
+00:10:19,980 --> 00:10:22,950
+but we actually generate the Jimal, that's no longer the case.
+
+143
+00:10:22,950 --> 00:10:24,030
+So I'm not worried about that at all.
+
+144
+00:10:25,170 --> 00:10:26,490
+And the last one is pending.
+
+145
+00:10:27,000 --> 00:10:30,480
+OK, so now we have a means of getting a hold of those actual rows.
+
+146
+00:10:30,480 --> 00:10:33,040
+Let's make sure that part works before we do anything else.
+
+147
+00:10:33,090 --> 00:10:38,580
+OK, so I'll go back to my JavaScript and I will remove the existing table row if it exists.
+
+148
+00:10:38,760 --> 00:10:45,140
+So I will get the table row by building a string and then I'll check to see if it exists.
+
+149
+00:10:45,150 --> 00:10:50,760
+So I'll say let exists and that's just a variable I'm creating equal to the double bang.
+
+150
+00:10:50,760 --> 00:10:56,490
+So I'm going to get another return value that's going to be either true or false and trying to get that
+
+151
+00:10:56,490 --> 00:10:57,630
+that element by ID.
+
+152
+00:10:57,660 --> 00:11:08,340
+So document get element by ID and I'm looking for host Dasch service Dasch plus data dot post service
+
+153
+00:11:09,300 --> 00:11:09,770
+ID.
+
+154
+00:11:10,350 --> 00:11:11,820
+And where does this value come from?
+
+155
+00:11:11,850 --> 00:11:18,330
+Well we're in the host service status changed binding to the public channel and we're getting the data
+
+156
+00:11:18,330 --> 00:11:24,780
+right here in this variable called data and that's passed right here when I call this data and the host
+
+157
+00:11:24,780 --> 00:11:30,140
+host service ID and that has to exactly match what I'm checking for is equal to the host service.
+
+158
+00:11:31,080 --> 00:11:32,590
+So let's go back to our JavaScript.
+
+159
+00:11:33,180 --> 00:11:37,650
+Now I know whether it exists or not, and I can just simply check to see if it does in an if statement
+
+160
+00:11:37,650 --> 00:11:38,820
+if it exists.
+
+161
+00:11:40,470 --> 00:11:47,010
+That means somewhere on the currently open browser window, there is a document that has the element
+
+162
+00:11:47,040 --> 00:11:52,500
+ID or has the ID of host Dasch Service Dash, whatever the host service ideas.
+
+163
+00:11:52,980 --> 00:11:55,250
+And all I have to do is to actually get rid of that row.
+
+164
+00:11:55,260 --> 00:12:02,880
+So I'll say console Dooralong trying to remove row just so we have something to look at in our JavaScript
+
+165
+00:12:02,880 --> 00:12:04,640
+console and I'll get rid of it.
+
+166
+00:12:04,980 --> 00:12:14,190
+Let ro equal document doget element by ID and again I'm looking for host Dasch Service Dashi and then
+
+167
+00:12:14,190 --> 00:12:15,540
+the ID passed in there.
+
+168
+00:12:15,570 --> 00:12:16,500
+OK, like that.
+
+169
+00:12:17,190 --> 00:12:19,010
+But it's not this way of course.
+
+170
+00:12:19,020 --> 00:12:22,020
+Let me get this formatted properly Dash.
+
+171
+00:12:25,810 --> 00:12:33,940
+Plus, data dot postal service services, so that gets me the row and I have a reference to it, I just
+
+172
+00:12:33,940 --> 00:12:34,410
+get rid of it.
+
+173
+00:12:35,320 --> 00:12:39,160
+And here's how you delete table rows in JavaScript, rogue parent node.
+
+174
+00:12:42,700 --> 00:12:50,770
+Remove child and pass back in the row right there, so we get our row variable here and that points
+
+175
+00:12:50,770 --> 00:12:55,900
+to the correct here and then we tell JavaScript, go to the element you just found, find its parent
+
+176
+00:12:55,900 --> 00:13:00,130
+and remove the child that matches this syntax, which is the role we just found.
+
+177
+00:13:00,520 --> 00:13:01,480
+So that should get rid of it.
+
+178
+00:13:01,510 --> 00:13:11,320
+So let me put another JavaScript console or console log in their console dialog, trying to remove row
+
+179
+00:13:12,940 --> 00:13:16,450
+and I will start my application just to make sure it's current started back up.
+
+180
+00:13:17,920 --> 00:13:22,130
+And go back to my my Web browser, we're watching the JavaScript console.
+
+181
+00:13:22,150 --> 00:13:23,450
+Let me reload this.
+
+182
+00:13:24,010 --> 00:13:25,370
+Look at the problems tab.
+
+183
+00:13:25,420 --> 00:13:26,540
+There are no problems.
+
+184
+00:13:27,070 --> 00:13:28,240
+Look at the healthy tab.
+
+185
+00:13:28,240 --> 00:13:31,770
+So we have an entry and healthy and I will go kill the Web server.
+
+186
+00:13:32,110 --> 00:13:33,910
+So this should update in real time.
+
+187
+00:13:33,910 --> 00:13:36,640
+And all it will do at this point is delete that road from problems.
+
+188
+00:13:36,640 --> 00:13:41,090
+We have to add it back into healthy or whatever it is, depending on what the status change.
+
+189
+00:13:41,120 --> 00:13:45,610
+So let me go back to my ID and stop this Web server and quickly go back to my.
+
+190
+00:13:46,450 --> 00:13:47,110
+And it worked.
+
+191
+00:13:47,350 --> 00:13:49,950
+Trying to remove road, trying to remove it worked.
+
+192
+00:13:49,960 --> 00:13:51,730
+OK, now that fired twice.
+
+193
+00:13:51,730 --> 00:13:54,340
+I'm not sure why, but I'll figure that out in a little while.
+
+194
+00:13:54,340 --> 00:13:56,620
+At the moment, I know this is working.
+
+195
+00:13:56,880 --> 00:14:04,240
+OK, so back to my JavaScript and get to the correct browser window and hide this.
+
+196
+00:14:05,170 --> 00:14:07,150
+And it printed twice because I told it to.
+
+197
+00:14:07,190 --> 00:14:09,330
+OK, so I can get rid of these.
+
+198
+00:14:09,340 --> 00:14:10,630
+Now I know this works.
+
+199
+00:14:13,940 --> 00:14:20,630
+So once we've actually removed that row, if it exists now, we need to update the tables if they exist
+
+200
+00:14:21,030 --> 00:14:27,380
+and again, we're going to need some means of identifying the actual tables and we do that again back
+
+201
+00:14:27,380 --> 00:14:27,840
+on host.
+
+202
+00:14:28,410 --> 00:14:29,750
+So let's find hosken.
+
+203
+00:14:30,710 --> 00:14:32,720
+And let's find the first table.
+
+204
+00:14:33,960 --> 00:14:38,750
+Which is way up here after the services, here's our first table.
+
+205
+00:14:39,450 --> 00:14:44,460
+So at this point, I have a table and I have no means of getting access to that table.
+
+206
+00:14:44,460 --> 00:14:50,340
+So it means I need to give it an ID and I'll just call it this one will be the healthy table.
+
+207
+00:14:52,600 --> 00:14:59,470
+And I'm choosing this name because the data I'm passing back from perform checks has an entry called
+
+208
+00:14:59,470 --> 00:15:01,570
+status and that's going to be healthy.
+
+209
+00:15:01,840 --> 00:15:03,940
+Warning problem are pending.
+
+210
+00:15:03,940 --> 00:15:10,000
+So I can use this status, this this value status is in our payload to actually find the right table.
+
+211
+00:15:10,630 --> 00:15:11,680
+So we have a healthy table.
+
+212
+00:15:11,740 --> 00:15:13,100
+Now let's go down to find the next one.
+
+213
+00:15:14,260 --> 00:15:16,150
+This will be the warning table.
+
+214
+00:15:16,590 --> 00:15:21,460
+ID equals warning table and go to the next one.
+
+215
+00:15:23,220 --> 00:15:31,410
+This one will be the problem, table ID equals the problem table, and I'm using a hyphen, I've got
+
+216
+00:15:31,410 --> 00:15:32,000
+to remember that.
+
+217
+00:15:32,820 --> 00:15:33,900
+And finally pending.
+
+218
+00:15:35,150 --> 00:15:38,210
+ID equals pending table.
+
+219
+00:15:38,840 --> 00:15:42,020
+OK, so now I have a means of getting access to those tables.
+
+220
+00:15:42,050 --> 00:15:46,540
+So here back in our JavaScript, let's make sure that the table actually exists.
+
+221
+00:15:46,550 --> 00:15:48,140
+So I'll do the same thing I did up here.
+
+222
+00:15:48,150 --> 00:15:50,450
+I'll say let table exists.
+
+223
+00:15:51,890 --> 00:15:58,070
+He exists, bang bang document, get element ID.
+
+224
+00:15:59,180 --> 00:16:06,710
+And this time I'm looking for data status, which will be one of healthy problem pending or warning
+
+225
+00:16:07,280 --> 00:16:08,930
+plus Dasch table.
+
+226
+00:16:10,070 --> 00:16:14,660
+And that exactly matches the idea of the table that I might have to adoro to.
+
+227
+00:16:16,410 --> 00:16:22,950
+So, again, I'll just check to see if it exists, if this time its table exists, if that exists,
+
+228
+00:16:22,980 --> 00:16:24,420
+then I have to adoro to a table.
+
+229
+00:16:25,490 --> 00:16:29,250
+So how do you add a road to a table in JavaScript?
+
+230
+00:16:29,270 --> 00:16:38,270
+First of all, let's say console dialogue, trying to add row two plus data dot status.
+
+231
+00:16:40,580 --> 00:16:45,650
+Plus table, just so I have something that I can look at to make sure I'm trying to update the correct
+
+232
+00:16:45,650 --> 00:16:52,580
+table, well, actually adding a table row is not that difficult, but it does take a little bit of
+
+233
+00:16:52,580 --> 00:16:52,820
+work.
+
+234
+00:16:52,820 --> 00:16:56,630
+First of all, you've got to get a reference to the table you want to update and I'll call that table
+
+235
+00:16:56,630 --> 00:16:58,070
+ref, so I'll say.
+
+236
+00:16:59,210 --> 00:17:07,520
+Let table read the reference to the table equal to document doget element by ID, and it's the same
+
+237
+00:17:07,520 --> 00:17:08,460
+thing I have right here.
+
+238
+00:17:08,810 --> 00:17:13,100
+Data status plus Dasch table.
+
+239
+00:17:13,920 --> 00:17:15,030
+So now I have a reference to it.
+
+240
+00:17:15,620 --> 00:17:18,200
+Now we need to create a new Rolet new row.
+
+241
+00:17:18,370 --> 00:17:25,400
+That's just a variable name I'm choosing equal to table Riffe, which I just got, and then get the
+
+242
+00:17:25,400 --> 00:17:28,310
+body of that table teh bodies.
+
+243
+00:17:30,260 --> 00:17:31,910
+And I want the first entry.
+
+244
+00:17:33,810 --> 00:17:39,300
+And I want to insert a row and I need to put minus one there so it gets in the right place, if you
+
+245
+00:17:39,300 --> 00:17:43,710
+just go with zero, it's not going to go where you want because we actually have a row at the top of
+
+246
+00:17:43,710 --> 00:17:45,820
+the table, minus one gets it in the right spot.
+
+247
+00:17:46,140 --> 00:17:51,240
+OK, so there's our new row and now we need to set some attributes for it.
+
+248
+00:17:51,270 --> 00:17:58,350
+And if we go back to our jet file host jet and look at the rows, we're adding like this one, for example,
+
+249
+00:17:58,530 --> 00:18:04,650
+the row we're adding has to have an I.D. that will allow us to find it again, because after we add
+
+250
+00:18:04,650 --> 00:18:07,080
+this row to the table, the status might change again.
+
+251
+00:18:07,410 --> 00:18:11,910
+The user might still be looking at this table without refreshing their browser or going somewhere else.
+
+252
+00:18:12,150 --> 00:18:15,100
+So we need to be able to build it exactly as it has to be.
+
+253
+00:18:15,300 --> 00:18:19,610
+So back in our JavaScript, let's create a row with the correct attribute.
+
+254
+00:18:20,400 --> 00:18:25,500
+So I'll say my new row, which I just created in the previous line, and I'll set an attribute on it.
+
+255
+00:18:25,500 --> 00:18:37,880
+And the attribute I want to set is ID and I want to give it this name host service Dasch plus data hosting
+
+256
+00:18:38,100 --> 00:18:38,760
+service.
+
+257
+00:18:40,710 --> 00:18:48,240
+Spelt right Postal Service ID, OK, so that will give us a row with the correct attribute and that's
+
+258
+00:18:48,330 --> 00:18:50,330
+the correct ID attribute and we need that.
+
+259
+00:18:50,820 --> 00:18:55,920
+So now we need to insert the first TD.
+
+260
+00:18:56,040 --> 00:18:57,330
+And how many trees do we have?
+
+261
+00:18:57,330 --> 00:18:58,230
+I think we only have three.
+
+262
+00:18:58,230 --> 00:19:05,520
+So we're going to be doing this one at a time, inserting the values for all three of these tables cells
+
+263
+00:19:05,520 --> 00:19:06,500
+in that table row.
+
+264
+00:19:07,080 --> 00:19:11,010
+So we'll create a new cell, let new cell equal to.
+
+265
+00:19:12,030 --> 00:19:17,850
+New robe, which is the robe we just created, dot insert itself, and we want this to be in the first
+
+266
+00:19:17,850 --> 00:19:21,180
+position, which is actually zero, not one.
+
+267
+00:19:22,700 --> 00:19:27,740
+So we create the cell and now we just said it's TML, so we'll say new cell.
+
+268
+00:19:31,040 --> 00:19:36,350
+Not inner turmoil is equal to and I'm going to use the tactics because I'm going to take advantage of
+
+269
+00:19:36,350 --> 00:19:41,780
+the JavaScript templating that's available to us, it just makes it much easier to edit and much easier
+
+270
+00:19:41,780 --> 00:19:42,290
+to read.
+
+271
+00:19:42,590 --> 00:19:47,450
+And what we need here, if we go back to host jet is exactly the kinds of things we're finding from
+
+272
+00:19:47,450 --> 00:19:48,770
+here to here.
+
+273
+00:19:48,770 --> 00:19:54,530
+We need to populate it with exactly the same syntax and we get the values for the various attributes
+
+274
+00:19:54,530 --> 00:20:00,580
+and so forth from the data that's passed to us by PUSHER, our data which is passed right here.
+
+275
+00:20:01,340 --> 00:20:02,010
+So let's do that.
+
+276
+00:20:02,180 --> 00:20:07,940
+So the first thing we need is a spin and the class is going to be equal to and here's where I'm going
+
+277
+00:20:07,940 --> 00:20:13,250
+to take advantage of the JavaScript templating function dollar sign and then in curly braces.
+
+278
+00:20:13,260 --> 00:20:16,820
+But I want and that's the icon which we have in data icon.
+
+279
+00:20:18,330 --> 00:20:24,000
+So that's it's class and then I just close that span because we're taking advantage of the font, awesome
+
+280
+00:20:24,000 --> 00:20:30,240
+icons, and after that I want the service name, which again I'm getting from my day to day service
+
+281
+00:20:30,240 --> 00:20:34,100
+underscore name pass to us by our pusher server.
+
+282
+00:20:35,430 --> 00:20:37,830
+And after that, I have another spam.
+
+283
+00:20:37,980 --> 00:20:39,830
+And you can see that right here in hosts.
+
+284
+00:20:39,840 --> 00:20:41,040
+Yet we have this part.
+
+285
+00:20:41,490 --> 00:20:42,710
+So we need to make that go in there.
+
+286
+00:20:42,720 --> 00:20:47,840
+So I'm going to copy this and then I'll just paste it in there and I'll format it properly.
+
+287
+00:20:49,920 --> 00:20:54,200
+And I'll just make sure that this all gets populated with the correct information.
+
+288
+00:20:54,280 --> 00:20:58,980
+I can't put it in this way because this is being rendered by JavaScript did not go.
+
+289
+00:20:59,440 --> 00:21:08,550
+So get rid of that and put in data host service and our status is not pending hardcoded.
+
+290
+00:21:08,550 --> 00:21:11,500
+Otherwise, we'll have that on every single table.
+
+291
+00:21:11,910 --> 00:21:14,130
+We'll just put in data status.
+
+292
+00:21:15,550 --> 00:21:16,060
+Like that.
+
+293
+00:21:16,740 --> 00:21:19,390
+OK, so that's our first TD.
+
+294
+00:21:19,820 --> 00:21:23,110
+Now we need to insert our second TD and I can get rid of this blank line.
+
+295
+00:21:25,460 --> 00:21:32,360
+And maybe move this up here as well, just to save some space, so let's do our second tee'd insert,
+
+296
+00:21:33,650 --> 00:21:34,730
+second TD.
+
+297
+00:21:35,360 --> 00:21:36,710
+Now what goes in the second TD?
+
+298
+00:21:36,740 --> 00:21:38,530
+Let's go over and have a look and host our check.
+
+299
+00:21:39,140 --> 00:21:44,930
+Our second TD is the date of time of the last check when we passed that already.
+
+300
+00:21:44,930 --> 00:21:47,210
+So we can just grab that right out of here very easily.
+
+301
+00:21:48,140 --> 00:21:50,090
+So we need to create another cell this time.
+
+302
+00:21:50,090 --> 00:21:52,580
+I don't say let because I'm going to use the same variable.
+
+303
+00:21:53,540 --> 00:21:56,300
+New cell equals new row.
+
+304
+00:21:58,480 --> 00:22:05,530
+Don't insert cell and now in my position, too, which is one, because we start counting at zero and
+
+305
+00:22:05,530 --> 00:22:09,310
+I'll just check the status if data status.
+
+306
+00:22:11,840 --> 00:22:24,200
+Is not equal exactly to spending then printed out new, so the ordinary HTML equals.
+
+307
+00:22:25,460 --> 00:22:28,040
+And then I'll just use the same syntax like this.
+
+308
+00:22:30,400 --> 00:22:31,570
+DataDot pending.
+
+309
+00:22:34,640 --> 00:22:38,750
+Otherwise, it's in the pending states and we don't have a date in time to print, so we'll say ELT's
+
+310
+00:22:39,830 --> 00:22:49,310
+new cell, the interim HTML is equal simply to pending, which is what we have by default, and the
+
+311
+00:22:49,310 --> 00:22:50,810
+third row is actually empty.
+
+312
+00:22:50,990 --> 00:22:52,550
+So for right now, it is anyway.
+
+313
+00:22:52,550 --> 00:23:00,010
+So we'll create another third row or not row TD, insert third TD.
+
+314
+00:23:00,980 --> 00:23:02,780
+So we'll just again use that same variable.
+
+315
+00:23:02,780 --> 00:23:10,910
+New cell is equal to new row dot, insert a cell and this time the position is two and we'll just leave
+
+316
+00:23:10,910 --> 00:23:12,510
+that empty room populated at all.
+
+317
+00:23:13,160 --> 00:23:16,670
+So that actually unless I have a typographical error, should work.
+
+318
+00:23:17,240 --> 00:23:18,140
+So I'll save this.
+
+319
+00:23:18,830 --> 00:23:23,300
+I probably don't have to stop and start my application just so I know everything is clean.
+
+320
+00:23:24,020 --> 00:23:28,430
+I'll go back to my Web browser, reload this page and look at the tabs.
+
+321
+00:23:28,700 --> 00:23:31,370
+So I have nothing under healthy, nothing under warning.
+
+322
+00:23:31,880 --> 00:23:33,150
+I do have one problem.
+
+323
+00:23:33,800 --> 00:23:41,650
+OK, so let's go back and restart our web server and then quickly switch back to our browser so it goes
+
+324
+00:23:41,660 --> 00:23:42,020
+and off.
+
+325
+00:23:42,020 --> 00:23:47,870
+I go to my browser and I want to see this row disappear and then it should reappear under the healthy
+
+326
+00:23:47,870 --> 00:23:49,900
+tab and I should get a little alert as well.
+
+327
+00:23:52,300 --> 00:23:53,120
+So it disappeared.
+
+328
+00:23:53,290 --> 00:23:57,840
+We got the alert, let's look under the healthy tap and there it is.
+
+329
+00:23:57,880 --> 00:24:01,210
+Last check is actually undefined, so I must have a typo there somewhere.
+
+330
+00:24:02,200 --> 00:24:03,460
+Let's go back and look at this.
+
+331
+00:24:06,290 --> 00:24:12,750
+So I'll minimize this and get to the part where we're putting the last check in data dump pending.
+
+332
+00:24:12,770 --> 00:24:15,020
+Why don't I put pending their last check?
+
+333
+00:24:16,190 --> 00:24:17,450
+So I'll save this.
+
+334
+00:24:19,180 --> 00:24:21,880
+Reload this, look at the healthy.
+
+335
+00:24:22,100 --> 00:24:23,890
+OK, so the last check is correct there.
+
+336
+00:24:24,130 --> 00:24:28,900
+Now I want it to show up in the problems tab, so I'll reactivate this or activate this just so I can
+
+337
+00:24:28,900 --> 00:24:30,700
+stop the Web server and quickly come back.
+
+338
+00:24:31,410 --> 00:24:37,960
+So let's go back here, find our Web server window, open the terminal and stop it and quickly go back
+
+339
+00:24:37,960 --> 00:24:41,050
+here and wait up to 10 seconds.
+
+340
+00:24:41,890 --> 00:24:42,610
+And there it is.
+
+341
+00:24:42,790 --> 00:24:45,700
+Everything appeared exactly as it should.
+
+342
+00:24:46,430 --> 00:24:48,280
+I was still not doing anything with the message.
+
+343
+00:24:48,550 --> 00:24:50,160
+I could actually populate that.
+
+344
+00:24:50,170 --> 00:24:52,060
+But that's not critical for our exercise.
+
+345
+00:24:52,070 --> 00:24:52,420
+Right now.
+
+346
+00:24:52,440 --> 00:24:56,380
+We're working with JavaScript, so I'll leave that as an exercise for you if you want to populate with
+
+347
+00:24:56,380 --> 00:25:01,510
+that, that you just need to make sure there's a necessary place in the database to store it and store
+
+348
+00:25:01,510 --> 00:25:05,690
+it after every check or after the status changes on a check.
+
+349
+00:25:05,880 --> 00:25:10,900
+OK, so that seems to work and we're getting much closer to where we need to be.
+
+350
+00:25:11,800 --> 00:25:16,780
+So we'll move on in the next lecture and try to see what else we can do with this, because we still
+
+351
+00:25:16,780 --> 00:25:17,830
+have some things to change.
+
+352
+00:25:17,860 --> 00:25:24,340
+For example, if I look at the hosts page or not, the host page, the overview page, we're not updating
+
+353
+00:25:24,370 --> 00:25:27,580
+this table in real time and we should be able to do that.
+
+354
+00:25:27,590 --> 00:25:29,230
+And it's not that difficult.
+
+355
+00:25:30,070 --> 00:25:32,650
+And the same with all the other three services.
+
+356
+00:25:32,830 --> 00:25:35,520
+So actually, that'd be a great exercise for you.
+
+357
+00:25:35,710 --> 00:25:41,950
+You should have enough information at your disposal right now to be able to remove an entry from this
+
+358
+00:25:41,950 --> 00:25:46,980
+table if there's a healthy service and it's status changes while you're looking at this page.
+
+359
+00:25:47,230 --> 00:25:50,910
+So you should be able to remove that and you shouldn't have to write very much JavaScript at all.
+
+360
+00:25:51,430 --> 00:25:57,040
+So it should be really, really straightforward for you to make the changes to this table and the other
+
+361
+00:25:57,040 --> 00:25:58,750
+three that are behind these three links.
+
+362
+00:25:58,810 --> 00:26:00,130
+So why don't you give that a shot?
+
+363
+00:26:00,310 --> 00:26:03,070
+You have everything at your disposal right now to make that take place.
+
+364
+00:26:03,550 --> 00:26:06,160
+And on the next lecture, I'll show you how I did it.

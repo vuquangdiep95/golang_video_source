@@ -1,0 +1,227 @@
+1
+00:00:01,970 --> 00:00:08,600
+So one of the things that makes using a package like Celebrity House or Laravel attractive to many developers
+
+2
+00:00:09,080 --> 00:00:14,270
+is the convenience of getting access to certain functions or methods or functionality.
+
+3
+00:00:14,540 --> 00:00:20,060
+And one of the things that we can say about our application as it exists right now is that it could
+
+4
+00:00:20,060 --> 00:00:21,550
+be a little more convenient.
+
+5
+00:00:21,560 --> 00:00:27,920
+And for example, I'm looking at rootstock go in the my app package and it's little things like this
+
+6
+00:00:28,130 --> 00:00:31,220
+in order to get a get request here and line 16.
+
+7
+00:00:31,310 --> 00:00:38,570
+I have to use the receiver, a and then app and then routes and then get, which doesn't bother me at
+
+8
+00:00:38,570 --> 00:00:45,800
+all because I can see at a glance exactly where that get functionality exists in the celebrity's functionality.
+
+9
+00:00:47,090 --> 00:00:51,590
+Now what we could do is make some convenience or helper methods, so let's try that.
+
+10
+00:00:51,860 --> 00:00:55,760
+So right at the root level of my project, because that's where rootstock go exists.
+
+11
+00:00:57,230 --> 00:01:00,500
+We're going to create a new file called Just Convenience.
+
+12
+00:01:01,370 --> 00:01:01,940
+Don't go.
+
+13
+00:01:02,900 --> 00:01:03,260
+OK.
+
+14
+00:01:03,920 --> 00:01:05,660
+And of course, that's in Package Me.
+
+15
+00:01:09,910 --> 00:01:15,130
+What I'm going to do is just make some helper functions, so for example, if I want to get a get route,
+
+16
+00:01:15,400 --> 00:01:21,580
+I can create a function with the receiver of a pointer to application and I can just call this route
+
+17
+00:01:21,580 --> 00:01:29,970
+get and I can give it the same parameters that aid our app routes don't get has, which is a string.
+
+18
+00:01:29,980 --> 00:01:31,570
+So I'll call it as string.
+
+19
+00:01:32,320 --> 00:01:35,110
+And then it has an FTP handler func.
+
+20
+00:01:35,110 --> 00:01:43,420
+So each of type http dot handler func and make sure you get the right one and it doesn't return anything.
+
+21
+00:01:44,350 --> 00:01:53,380
+And I then I just have that call a dot app, dot roots, dot get and hand it s and h my two parameters.
+
+22
+00:01:54,550 --> 00:02:00,730
+So what I do that that means I can go back to rootstock, go and do things like this instead of having
+
+23
+00:02:00,730 --> 00:02:03,340
+the home page, be a dot app, dot root start.
+
+24
+00:02:03,340 --> 00:02:05,530
+Yet I could just make it a dot.
+
+25
+00:02:06,130 --> 00:02:09,630
+Yeah, and that's a lot shorter, so that's really convenient.
+
+26
+00:02:09,640 --> 00:02:11,710
+So of course, we can do the same thing for post.
+
+27
+00:02:11,800 --> 00:02:16,180
+So let's go back to convenience store go and create another function.
+
+28
+00:02:16,300 --> 00:02:27,180
+I can just copy this whole thing and paste it here and change it to post, and this becomes a to start
+
+29
+00:02:27,190 --> 00:02:27,640
+post.
+
+30
+00:02:29,020 --> 00:02:32,000
+And of course, the other thing we do in Roots File is we use middleware.
+
+31
+00:02:32,020 --> 00:02:36,490
+So let me paste that again and change this to use.
+
+32
+00:02:38,670 --> 00:02:42,060
+And now it becomes a dot, and of course, it has different parameters.
+
+33
+00:02:42,090 --> 00:02:44,010
+It doesn't use all of these things.
+
+34
+00:02:44,100 --> 00:02:46,230
+It uses middleware.
+
+35
+00:02:46,500 --> 00:02:52,830
+So M and then we use the same kind of receiver or some kind of parameter signature that the use function
+
+36
+00:02:52,830 --> 00:02:54,460
+from the chip route uses.
+
+37
+00:02:54,510 --> 00:02:59,460
+And it uses very attic func HTP dot handler.
+
+38
+00:03:00,650 --> 00:03:06,230
+And the second parameter is HGTV dog handler, OK?
+
+39
+00:03:06,620 --> 00:03:09,950
+A weird signature, but that's how it actually appears in the cheap package.
+
+40
+00:03:11,000 --> 00:03:14,570
+So of course, we're going to now use them.
+
+41
+00:03:17,660 --> 00:03:18,470
+Dot dot dot.
+
+42
+00:03:19,280 --> 00:03:20,120
+Because it's very hot.
+
+43
+00:03:21,620 --> 00:03:22,100
+That's better.
+
+44
+00:03:22,700 --> 00:03:24,980
+But these aren't used anywhere, which is why I'm getting the warning.
+
+45
+00:03:25,010 --> 00:03:27,920
+I can go back now to routes and say, change the post one.
+
+46
+00:03:27,950 --> 00:03:29,000
+So this becomes.
+
+47
+00:03:30,120 --> 00:03:30,840
+Simply.
+
+48
+00:03:31,870 --> 00:03:32,860
+A post.
+
+49
+00:03:35,740 --> 00:03:41,890
+Now that's a small change, but it actually makes for very readable code, and a lot of people prefer
+
+50
+00:03:41,890 --> 00:03:43,900
+to have one helper function like that.
+
+51
+00:03:43,930 --> 00:03:47,210
+And really, it's nothing more than an alias to a dot app.
+
+52
+00:03:47,240 --> 00:03:49,300
+Don't read scanned or aid on app.
+
+53
+00:03:49,300 --> 00:03:50,350
+Don't read post.
+
+54
+00:03:50,650 --> 00:03:51,640
+But a lot of people like it.
+
+55
+00:03:52,030 --> 00:03:54,490
+So you might want to implement that functionality.
+
+56
+00:03:54,500 --> 00:03:55,630
+It's entirely up to you.
+
+57
+00:03:55,830 --> 00:03:59,920
+I'm going to make it available for my users so they can use them if they want to.

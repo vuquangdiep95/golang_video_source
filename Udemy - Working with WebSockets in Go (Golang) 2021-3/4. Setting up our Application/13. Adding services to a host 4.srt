@@ -1,0 +1,283 @@
+1
+00:00:00,980 --> 00:00:06,680
+OK, so we have this button hooked up and this button functionalist custom JavaScript behind it, and
+
+2
+00:00:06,680 --> 00:00:11,750
+the first thing I want to point out is that I had a typo in the last lecture right here on line two
+
+3
+00:00:11,750 --> 00:00:12,230
+thirty five.
+
+4
+00:00:12,230 --> 00:00:17,720
+And my code when I'm getting my last response or the last then from my fetch, I have a column that
+
+5
+00:00:17,720 --> 00:00:18,740
+should be a semicolon.
+
+6
+00:00:18,830 --> 00:00:19,510
+So let's fix that.
+
+7
+00:00:20,450 --> 00:00:22,030
+Now back to our handlers.
+
+8
+00:00:22,040 --> 00:00:29,540
+Right now, we're going to be posting to this URL, which is a post request, these bits of information
+
+9
+00:00:29,540 --> 00:00:34,670
+which are turned service on service Side Hoshide and then Kharif Tolkan, which I'm going to put at
+
+10
+00:00:34,670 --> 00:00:37,970
+the end because it's not something we're actually working with.
+
+11
+00:00:38,720 --> 00:00:40,700
+OK, so we're posting this now.
+
+12
+00:00:40,700 --> 00:00:43,130
+Let's go back to our handlers, which are right here.
+
+13
+00:00:43,670 --> 00:00:44,880
+And I have this empty handler.
+
+14
+00:00:44,990 --> 00:00:48,140
+So first thing I want to do is just make sure everything works.
+
+15
+00:00:48,140 --> 00:00:51,170
+So I'll do what I always do whenever I have a posted form.
+
+16
+00:00:51,500 --> 00:01:01,520
+Error is assigned the value of our passport and we check for an error if error is not equal to nil because
+
+17
+00:01:01,550 --> 00:01:05,540
+I got an extra quote there, parentheses, they're logged off print line error.
+
+18
+00:01:05,780 --> 00:01:09,770
+And again, you should have more, more robust error checking here.
+
+19
+00:01:09,770 --> 00:01:13,760
+But I'm just going to ignore that and log the air for right now, OK, because I just want to get this
+
+20
+00:01:13,760 --> 00:01:14,360
+wired up.
+
+21
+00:01:15,320 --> 00:01:16,760
+So let's get our values.
+
+22
+00:01:16,760 --> 00:01:22,340
+And we're posting three things homestudy, service, study and turn service on.
+
+23
+00:01:22,490 --> 00:01:27,950
+OK, so let's get those values posted and potentially an error, which again, I'm ignoring.
+
+24
+00:01:27,950 --> 00:01:31,250
+Is Sterkel a I.
+
+25
+00:01:32,300 --> 00:01:40,760
+And we want our dot form dot get posted and I'll duplicate that twice, the next one was.
+
+26
+00:01:42,130 --> 00:01:51,280
+Service ID and turn service on, so service ID, and then I called this one turn service on, which
+
+27
+00:01:51,280 --> 00:01:54,970
+I'm going to change in a minute because I don't like that this was called service ID.
+
+28
+00:01:55,720 --> 00:02:02,050
+When you think about it, this last one turned service on that's really active in our database.
+
+29
+00:02:02,050 --> 00:02:07,810
+So when our host services table, we have a a value active or and it's set to one or zero.
+
+30
+00:02:07,810 --> 00:02:16,060
+So I'm going to rename that to Active and I'll rename this to Active and then back in our host jet,
+
+31
+00:02:16,060 --> 00:02:18,880
+I'll rename that to Active as well.
+
+32
+00:02:19,330 --> 00:02:26,170
+And I may as well call this active and this active and this act that way.
+
+33
+00:02:26,170 --> 00:02:28,000
+I'm just not going to get confused.
+
+34
+00:02:28,000 --> 00:02:31,270
+What I'm looking at this in six months and saying, what the heck is turn service on?
+
+35
+00:02:31,270 --> 00:02:32,230
+I'll know it's active.
+
+36
+00:02:33,440 --> 00:02:41,050
+OK, so we have those values past or grabbed from our request here and we'll just log them logged up
+
+37
+00:02:41,050 --> 00:02:51,850
+print line data and I'll just list them post Idy service ID and active and then I need to send a JSON
+
+38
+00:02:51,850 --> 00:02:52,510
+response.
+
+39
+00:02:52,510 --> 00:03:01,750
+So what I'm going to do here is just define a type and I'll call it service Jason and it will be a struct.
+
+40
+00:03:03,160 --> 00:03:11,870
+And right now it's going to have one value, OK, and it is a bool and in JSON I will call it OK.
+
+41
+00:03:12,500 --> 00:03:12,890
+OK.
+
+42
+00:03:14,020 --> 00:03:18,700
+So here just to get this working to make sure it's all wired up correctly, I'll create a new variable
+
+43
+00:03:19,090 --> 00:03:20,380
+var service Jason.
+
+44
+00:03:21,500 --> 00:03:22,630
+I'll call it response.
+
+45
+00:03:22,630 --> 00:03:30,790
+Varvara resp is of type service Jason and Remsberg ok equals true.
+
+46
+00:03:31,570 --> 00:03:37,960
+And I'll just write this JSON out to the client, to the connecting service.
+
+47
+00:03:37,960 --> 00:03:46,240
+So out and ignore the error or assign the value of JSON dot mercial indent and my variable is called
+
+48
+00:03:46,240 --> 00:03:50,680
+RESPA and I'll just give it a few spaces to format it properly.
+
+49
+00:03:51,250 --> 00:04:01,110
+Set my header header set and I want it to be content type of application.
+
+50
+00:04:02,470 --> 00:04:03,010
+Jason.
+
+51
+00:04:05,780 --> 00:04:12,410
+And right, and I'm going to write the OK, and that should be all that we do, except I have a typo
+
+52
+00:04:12,410 --> 00:04:12,690
+here.
+
+53
+00:04:13,390 --> 00:04:19,250
+OK, so in theory, when I stop my application and start my application.
+
+54
+00:04:22,000 --> 00:04:28,780
+It's running and I go back to my Web browser and open my console window and reload this, my air is
+
+55
+00:04:28,780 --> 00:04:35,050
+gone away because I fixed that already and we go to our managed services and I'll toggle this and see
+
+56
+00:04:35,050 --> 00:04:37,950
+what I got wrong called Ajax.
+
+57
+00:04:37,990 --> 00:04:38,600
+It worked.
+
+58
+00:04:38,680 --> 00:04:41,460
+Let's see if we actually get the values back from Ajax.
+
+59
+00:04:42,280 --> 00:04:53,720
+So back in my host Jack console log, OK is and I'm going to get it from my data.
+
+60
+00:04:54,040 --> 00:04:57,130
+OK, let's try that better spell console.
+
+61
+00:04:57,130 --> 00:04:57,600
+Right though.
+
+62
+00:04:58,870 --> 00:05:06,940
+There, let's reload this, clear the JavaScript console, go to our managed services page and OK is
+
+63
+00:05:06,940 --> 00:05:07,420
+true.
+
+64
+00:05:07,430 --> 00:05:09,400
+So everything is wired up correctly.
+
+65
+00:05:09,910 --> 00:05:16,420
+So the next step is to actually write the necessary database procedures to update our service for a
+
+66
+00:05:16,420 --> 00:05:18,370
+host to turn it on or off.
+
+67
+00:05:18,730 --> 00:05:22,030
+And at that point, we're almost ready to get to the WebSocket stuff.
+
+68
+00:05:22,570 --> 00:05:25,200
+A few more things to do, but nothing too terribly onerous.
+
+69
+00:05:25,390 --> 00:05:31,480
+So in the next lecture, we'll write the necessary database functions to update a hosted service from
+
+70
+00:05:31,480 --> 00:05:33,520
+active to inactive or vice versa.
+
+71
+00:05:34,390 --> 00:05:36,820
+And we'll go on from there.

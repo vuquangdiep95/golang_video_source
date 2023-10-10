@@ -1,0 +1,211 @@
+1
+00:00:12,790 --> 00:00:19,240
+Hello and welcome to the Golang programming language course in this session, we want to talk about
+
+2
+00:00:19,240 --> 00:00:21,340
+the others concurrency concept.
+
+3
+00:00:24,420 --> 00:00:26,040
+Multiple goal routines.
+
+4
+00:00:27,820 --> 00:00:35,710
+A go routine is a function or method which executes independently and Simon Astley in connection with
+
+5
+00:00:35,710 --> 00:00:43,540
+any other goal routines present in your program or in other words, every concurrently executing activity
+
+6
+00:00:43,540 --> 00:00:48,460
+in language's is known as a go routine and go language.
+
+7
+00:00:48,580 --> 00:00:53,020
+You are allowed to create multiple goal routines in a single program.
+
+8
+00:00:54,070 --> 00:00:59,830
+Now, let's go to the school for a to illustrate how to start multiple goal routines.
+
+9
+00:01:01,000 --> 00:01:08,710
+First, define a function like name for goal routine, one that includes an array of printing names,
+
+10
+00:01:09,310 --> 00:01:13,030
+so define font name.
+
+11
+00:01:14,980 --> 00:01:18,600
+Create this string array variable that contains four values.
+
+12
+00:01:18,610 --> 00:01:31,330
+For example, array one column equals four by the time the string and initialize it by values like Clean
+
+13
+00:01:32,350 --> 00:01:33,250
+Jessica.
+
+14
+00:01:37,730 --> 00:01:38,420
+Julia
+
+15
+00:01:41,180 --> 00:01:50,840
+and Tom now define a for loop, for a a slip and preen the venues off area for
+
+16
+00:01:53,570 --> 00:01:55,770
+I equals zero.
+
+17
+00:01:56,540 --> 00:02:12,360
+I less than four and I + + +, said the statement time dots lead and set a value like a hundred and
+
+18
+00:02:12,380 --> 00:02:15,290
+fifty multiplication time milliseconds.
+
+19
+00:02:21,110 --> 00:02:35,440
+And print each value of a f f per cent less brackets less and and any one index I.
+
+20
+00:02:37,790 --> 00:02:47,270
+OK, now let's go to define a function like IED for routine to that includes an array of printing IED.
+
+21
+00:02:50,480 --> 00:02:54,830
+So define another function, like I'd
+
+22
+00:02:59,060 --> 00:03:10,190
+define an integer at a variable that contains four value at a two column he calls for by the tight end
+
+23
+00:03:10,190 --> 00:03:19,240
+and initialize to it by the values like three hundred three hundred and one to the handwritten to three
+
+24
+00:03:19,250 --> 00:03:20,330
+hundred and three.
+
+25
+00:03:21,830 --> 00:03:33,470
+Now define a follow for set a time slip and print the values of at a two four I equals zero I less than
+
+26
+00:03:33,560 --> 00:03:38,830
+four and set the timeously time.
+
+27
+00:03:38,870 --> 00:03:39,780
+That's clear.
+
+28
+00:03:41,960 --> 00:03:53,630
+For example, five hundred multiplication time, milliseconds time, that's merely sec and display each
+
+29
+00:03:53,630 --> 00:03:54,830
+value off array.
+
+30
+00:03:54,980 --> 00:04:05,600
+If if a person the bank slips in and set I to index my.
+
+31
+00:04:08,690 --> 00:04:13,280
+Now create main function to invoke 2go routines functions.
+
+32
+00:04:16,320 --> 00:04:18,330
+FAJ me
+
+33
+00:04:21,210 --> 00:04:23,850
+first print a message like if the
+
+34
+00:04:26,340 --> 00:04:31,620
+main girl routine is start
+
+35
+00:04:36,390 --> 00:04:42,000
+now calling name function as go routine, want full name function?
+
+36
+00:04:43,920 --> 00:04:49,560
+And calling it function as go routine to go I.D.
+
+37
+00:04:52,200 --> 00:04:59,400
+now set the time asleep and print a message for end of process, time to sleep
+
+38
+00:05:02,850 --> 00:05:08,100
+set, for example, five hundred multiplication times dot milliseconds
+
+39
+00:05:11,730 --> 00:05:20,580
+and set the message like FP made so routine and.
+
+40
+00:05:23,620 --> 00:05:29,950
+In the above example, you have to go through items other than mail or routine eye in name and I.D.
+
+41
+00:05:30,340 --> 00:05:34,480
+Here are name prints to name and I.D. prints to Iris.
+
+42
+00:05:35,050 --> 00:05:40,840
+Now we go to run the, you know, go round dots back.
+
+43
+00:05:40,840 --> 00:05:42,700
+Excuse me that go.
+
+44
+00:05:46,440 --> 00:05:50,730
+Now we can see the output when we were on this program.
+
+45
+00:05:50,940 --> 00:05:57,180
+First, the main goal routine routines start and print main goal routine is start here.
+
+46
+00:05:57,300 --> 00:06:02,610
+The main goal routine is like a pattern, and other goal routines are its children.
+
+47
+00:06:02,880 --> 00:06:04,940
+So first may go routine runs.
+
+48
+00:06:04,950 --> 00:06:07,530
+After that, those other goal routines is start.
+
+49
+00:06:07,530 --> 00:06:13,200
+And if the main goal routine training is, the other goal routines are also terminated.
+
+50
+00:06:13,680 --> 00:06:20,760
+So after the main goal routine name and I the goal routines is stop, they're working concurrently in
+
+51
+00:06:20,760 --> 00:06:23,070
+order not to prolong the time of decision.
+
+52
+00:06:23,280 --> 00:06:28,620
+We will finish, then we will continue the content in the next session until next session.
+
+53
+00:06:28,620 --> 00:06:29,190
+Goodbye.

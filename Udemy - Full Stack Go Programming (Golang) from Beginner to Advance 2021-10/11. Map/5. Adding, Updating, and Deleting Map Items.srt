@@ -1,0 +1,251 @@
+1
+00:00:13,500 --> 00:00:18,390
+Hello and welcome to the gold and programming language course in this session.
+
+2
+00:00:18,420 --> 00:00:22,890
+We want to talk about adding, updating and deleting items.
+
+3
+00:00:28,640 --> 00:00:29,060
+Act.
+
+4
+00:00:30,120 --> 00:00:36,450
+In maps, you're allowed to key value Perth in the initialized map using the given syntax.
+
+5
+00:00:37,140 --> 00:00:39,390
+Now you can see the syntax.
+
+6
+00:00:41,290 --> 00:00:43,310
+Update in maps.
+
+7
+00:00:43,330 --> 00:00:51,220
+If you try to end an already existing key, then it will simply overwrite or update the value of that
+
+8
+00:00:51,220 --> 00:00:53,020
+key within the nil value.
+
+9
+00:00:54,650 --> 00:01:03,080
+And delete the built in delete function, deletes an item from a given man associated with the provided
+
+10
+00:01:03,080 --> 00:01:03,440
+key.
+
+11
+00:01:04,130 --> 00:01:06,770
+You can see the syntax for delete function.
+
+12
+00:01:07,370 --> 00:01:14,840
+Now go to the school program to illustrate how to map adding, updating and deleting items.
+
+13
+00:01:19,000 --> 00:01:23,860
+First, creating and initializing a map to a person's ideas.
+
+14
+00:01:24,220 --> 00:01:26,170
+My Mac.
+
+15
+00:01:27,520 --> 00:01:44,560
+Equals nap time index is in and value type is a string and initialized by values 10 column, 14
+
+16
+00:01:47,320 --> 00:01:54,220
+and 20 column for gene, said Comma.
+
+17
+00:01:54,280 --> 00:02:00,580
+Go to the next line 30 column for the rather
+
+18
+00:02:04,060 --> 00:02:09,490
+40 column value at long.
+
+19
+00:02:12,950 --> 00:02:20,090
+And the end element 50, Colin, and the value for the example of Sophia.
+
+20
+00:02:25,590 --> 00:02:27,540
+Now display the created math.
+
+21
+00:02:29,410 --> 00:02:29,880
+P
+
+22
+00:02:32,640 --> 00:02:38,520
+my ma I said that I needed my.
+
+23
+00:02:40,560 --> 00:02:48,810
+Reformat the code and save the causes first, we created man initialize it and display it now, adding
+
+24
+00:02:48,810 --> 00:02:51,090
+new key value pairs in the map.
+
+25
+00:02:51,870 --> 00:03:04,590
+Go to the next line and follow the example in my mapped set index 60 and initialize it by the value
+
+26
+00:03:04,590 --> 00:03:06,300
+for the example jack.
+
+27
+00:03:07,410 --> 00:03:11,040
+Go to the next line and define another element.
+
+28
+00:03:11,850 --> 00:03:21,690
+My Map Set Index 70 and initialize it by Julia.
+
+29
+00:03:25,580 --> 00:03:31,460
+Go to the next line and display our map again because the map element has changed.
+
+30
+00:03:32,270 --> 00:03:38,960
+If P my map after adding.
+
+31
+00:03:40,740 --> 00:03:43,740
+New elements.
+
+32
+00:03:48,930 --> 00:03:52,820
+And sit my about it.
+
+33
+00:03:55,810 --> 00:04:00,220
+Before the call, save the project and execute, they could.
+
+34
+00:04:04,940 --> 00:04:07,910
+Now we can see the output before adding elements.
+
+35
+00:04:08,180 --> 00:04:10,430
+My map variables has values.
+
+36
+00:04:10,640 --> 00:04:15,920
+10 gene to gene church Robert, 44, and 50 Sophia.
+
+37
+00:04:16,520 --> 00:04:25,630
+And after adding two variables, my map variables has values 10 gene, 20 Gene 30 Robert, 48, want
+
+38
+00:04:25,850 --> 00:04:30,290
+50 Sufian and 60 Jack and 70 Julia.
+
+39
+00:04:31,220 --> 00:04:34,220
+Now we could add new items to our map.
+
+40
+00:04:35,240 --> 00:04:40,520
+Go to updating values of the map and initialize new values to existing index.
+
+41
+00:04:41,060 --> 00:04:45,230
+For example, in the 20s exist and we change its value.
+
+42
+00:04:45,950 --> 00:04:47,150
+Go to the code
+
+43
+00:04:50,450 --> 00:04:56,870
+my Mac Index 20 and change its values.
+
+44
+00:04:57,380 --> 00:05:12,110
+To follow the example Diego, go to the next line and again display the variable values FP Mind now,
+
+45
+00:05:13,070 --> 00:05:15,680
+after changing
+
+46
+00:05:19,100 --> 00:05:27,350
+values and set the values in my map, said the project.
+
+47
+00:05:27,350 --> 00:05:29,600
+An easy commute again.
+
+48
+00:05:35,560 --> 00:05:41,860
+Now we can see the output and we could change index to value from Jean to Diego.
+
+49
+00:05:42,220 --> 00:05:44,980
+Now go to delete an element from that.
+
+50
+00:05:45,880 --> 00:05:47,200
+Go to quote
+
+51
+00:05:50,080 --> 00:05:52,390
+now, use from delete function.
+
+52
+00:06:00,830 --> 00:06:02,940
+This function has two parameters.
+
+53
+00:06:02,960 --> 00:06:10,090
+First is name of your mat at second is index of element that you want to delete it for the example that
+
+54
+00:06:10,100 --> 00:06:17,810
+you want to remove Index 50 and its values from Mac go to display the man again.
+
+55
+00:06:18,560 --> 00:06:32,180
+This is my math after deleting Index 50 and certainly
+
+56
+00:06:34,550 --> 00:06:39,920
+reformat the code and say the project and execute again the program.
+
+57
+00:06:44,530 --> 00:06:50,680
+Now, we can't see the output index 50 and its value has deleted from our map.
+
+58
+00:06:51,520 --> 00:06:51,900
+Okay.
+
+59
+00:06:52,210 --> 00:06:58,540
+We could add new items in map update existing elements by index and delete existing elements by the
+
+60
+00:06:58,540 --> 00:07:01,480
+Delete Function Index in our map.
+
+61
+00:07:01,870 --> 00:07:07,540
+In order not to prolong the time of decision, we'll finish it and we will continue the content in the
+
+62
+00:07:07,540 --> 00:07:08,380
+next session.
+
+63
+00:07:08,530 --> 00:07:09,040
+Goodbye.

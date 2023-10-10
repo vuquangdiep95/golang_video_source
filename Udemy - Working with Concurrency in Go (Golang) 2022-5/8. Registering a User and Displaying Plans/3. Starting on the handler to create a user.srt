@@ -1,0 +1,567 @@
+1
+00:00:00,540 --> 00:00:05,970
+So this time around we want to get started on this function post register page and of course this is
+
+2
+00:00:05,970 --> 00:00:11,370
+a handler and it's called When someone fills out that registration form and hits the register button.
+
+3
+00:00:11,940 --> 00:00:15,620
+So we have some comments in here and these will change or get moved around.
+
+4
+00:00:15,630 --> 00:00:21,450
+This was just to get us started, but we know we're handling a forum post and of course in go, any
+
+5
+00:00:21,450 --> 00:00:25,620
+time you get a forum post, the first thing you want to do is to pass form data.
+
+6
+00:00:25,740 --> 00:00:32,070
+So from our the request variable, that's a parameter to this function we just call personal.
+
+7
+00:00:33,030 --> 00:00:33,280
+Okay?
+
+8
+00:00:33,510 --> 00:00:34,350
+And we check for an error.
+
+9
+00:00:34,440 --> 00:00:38,430
+If error is not equal to nil, then what are we going to do here?
+
+10
+00:00:38,430 --> 00:00:39,270
+We'll just print it out.
+
+11
+00:00:39,990 --> 00:00:44,910
+Dot error log dot print line error.
+
+12
+00:00:45,360 --> 00:00:47,460
+Rarely does that error ever take place.
+
+13
+00:00:47,790 --> 00:00:48,150
+Okay.
+
+14
+00:00:49,020 --> 00:00:54,210
+So the next step would actually be and I'm not going to do it in this course because this is not a course.
+
+15
+00:00:54,210 --> 00:00:58,710
+I'm building web applications, but I'll put it to do comment in here, validate data.
+
+16
+00:00:59,160 --> 00:01:02,970
+So we want to make sure that this user is not already registered.
+
+17
+00:01:03,360 --> 00:01:07,560
+We want to make sure that they filled out all the necessary stuff and we handled some of that with client
+
+18
+00:01:07,560 --> 00:01:09,030
+side JavaScript validation.
+
+19
+00:01:09,150 --> 00:01:12,960
+But typically you're going to validate the data and I'm going to skip that in this course.
+
+20
+00:01:13,890 --> 00:01:16,230
+So the next thing I want to do is to create a user.
+
+21
+00:01:16,320 --> 00:01:17,940
+I know how to do that, and that's easy.
+
+22
+00:01:17,940 --> 00:01:18,660
+At this point.
+
+23
+00:01:18,750 --> 00:01:24,630
+I'll create a variable view and it's a type data point user and I'll just fill in all the fields that
+
+24
+00:01:24,630 --> 00:01:25,140
+I know about.
+
+25
+00:01:25,740 --> 00:01:29,640
+So I know about email and that comes from our dot form dot get.
+
+26
+00:01:29,640 --> 00:01:34,470
+We have access to that because we pass the form data and we're going to get email because that's what
+
+27
+00:01:34,470 --> 00:01:35,610
+it's called in the form.
+
+28
+00:01:35,880 --> 00:01:36,240
+Okay.
+
+29
+00:01:37,680 --> 00:01:45,690
+And we also have the first name, first name our top form get and in the form that's called first hyphen
+
+30
+00:01:45,690 --> 00:01:46,080
+name.
+
+31
+00:01:46,620 --> 00:01:46,950
+Okay.
+
+32
+00:01:47,850 --> 00:01:50,250
+And then I'll duplicate that and make this last name.
+
+33
+00:01:53,370 --> 00:02:01,740
+I make this last dash name, I'll duplicate it again and change this to password and change this to
+
+34
+00:02:01,740 --> 00:02:04,230
+password because that's what it's called in the form.
+
+35
+00:02:05,310 --> 00:02:05,670
+Okay.
+
+36
+00:02:06,630 --> 00:02:12,000
+And then even though I don't need to do this, I'm going to make sure that this is readable by specifying
+
+37
+00:02:12,000 --> 00:02:13,290
+active to be zero.
+
+38
+00:02:13,290 --> 00:02:20,400
+I'm creating a user who is inactive and I'm also going to set is admin two zero even though those are
+
+39
+00:02:20,400 --> 00:02:23,580
+the defaults both active and these admin would default to zero.
+
+40
+00:02:23,610 --> 00:02:28,650
+This just makes it clear that I'm creating a user who is not an admin and who is not active.
+
+41
+00:02:30,180 --> 00:02:34,020
+Now I insert this user into the database and that's just a simple method.
+
+42
+00:02:34,020 --> 00:02:40,980
+Now I'll ignore the returned ID and check for an error when I call from you the variable I just created
+
+43
+00:02:41,670 --> 00:02:43,440
+insert you.
+
+44
+00:02:44,010 --> 00:02:44,250
+Okay.
+
+45
+00:02:44,310 --> 00:02:46,710
+So I'm asserting that user and I'll check for an error.
+
+46
+00:02:47,670 --> 00:02:58,670
+So we'll say if error is not equal to nil this time around, I'll say after session don't put with are
+
+47
+00:02:58,680 --> 00:03:02,730
+not context and the key of error.
+
+48
+00:03:02,730 --> 00:03:04,710
+So it'll show up as a message on the page.
+
+49
+00:03:05,460 --> 00:03:09,540
+I'm able to create a user and then of course you put whatever else you want in there.
+
+50
+00:03:09,660 --> 00:03:12,790
+Okay, then I'll redirect the user issue.
+
+51
+00:03:12,900 --> 00:03:20,430
+Repeat on redirect with W and ah, they take them back to the register page which seems to make sense
+
+52
+00:03:20,940 --> 00:03:22,980
+with status C other.
+
+53
+00:03:24,210 --> 00:03:24,540
+Okay.
+
+54
+00:03:25,080 --> 00:03:25,740
+And then return.
+
+55
+00:03:25,770 --> 00:03:33,450
+We can't go any further now if we get past that at this point we want to send an activation email and
+
+56
+00:03:33,450 --> 00:03:38,310
+that's why we made those email templates and installed that sign or dog go code last time around.
+
+57
+00:03:38,940 --> 00:03:45,000
+So the first thing I'll do is create a URL, you URL just a string variable and it will be equal to
+
+58
+00:03:45,000 --> 00:03:46,680
+format print s.
+
+59
+00:03:49,660 --> 00:03:52,930
+And my format string is and I'm going to hard code the URL.
+
+60
+00:03:53,890 --> 00:03:58,570
+Normally, of course you'd read that from an environment variable or a dot on file or something like
+
+61
+00:03:58,570 --> 00:03:58,810
+that.
+
+62
+00:03:58,900 --> 00:04:03,010
+But we'll just hardcoded HDP Collins slash slash local host.
+
+63
+00:04:03,130 --> 00:04:06,010
+And if you're going on a different port, make sure you add the port there.
+
+64
+00:04:06,600 --> 00:04:09,940
+Local host and I'm going to take them to the URL activate.
+
+65
+00:04:10,010 --> 00:04:12,220
+That doesn't exist yet, but it will before too long.
+
+66
+00:04:12,700 --> 00:04:19,000
+And I'm going to give it a query parameter email equals percent s and my substitution for that is UDOT
+
+67
+00:04:19,000 --> 00:04:20,470
+email users email.
+
+68
+00:04:20,650 --> 00:04:21,010
+Okay.
+
+69
+00:04:22,680 --> 00:04:26,100
+So that's my euro and apparently it didn't import format for me.
+
+70
+00:04:26,100 --> 00:04:27,300
+So let's go put that in there.
+
+71
+00:04:30,030 --> 00:04:30,480
+Thank you.
+
+72
+00:04:31,270 --> 00:04:31,730
+Okay.
+
+73
+00:04:31,800 --> 00:04:33,700
+Go back down to find our handler again.
+
+74
+00:04:33,870 --> 00:04:34,470
+That's better.
+
+75
+00:04:34,980 --> 00:04:39,210
+So now I have this URL, but of course, that's not what I'm going to use for a link.
+
+76
+00:04:39,360 --> 00:04:49,410
+I'm actually going to use a signed that singed signed URL and I'll make that that we assign the value
+
+77
+00:04:49,410 --> 00:04:53,340
+of generate token from string and I'll have that URL.
+
+78
+00:04:53,700 --> 00:04:54,090
+Okay.
+
+79
+00:04:54,720 --> 00:05:01,260
+So this calls that function over here and sign or don't go and it actually appends something to it,
+
+80
+00:05:01,440 --> 00:05:02,250
+a hash.
+
+81
+00:05:02,250 --> 00:05:06,060
+And we can look at that hash and determine whether or not we actually generated this.
+
+82
+00:05:06,090 --> 00:05:06,450
+Okay.
+
+83
+00:05:06,900 --> 00:05:12,120
+So this prevents URL tampering and just to make it readable, let's put it in here.
+
+84
+00:05:12,420 --> 00:05:22,620
+Laptop info, log dot, print line deadline and I'll print out the signed URL so we can see it in the
+
+85
+00:05:22,620 --> 00:05:23,160
+console.
+
+86
+00:05:26,310 --> 00:05:30,140
+And of course now we actually just create an email message.
+
+87
+00:05:30,150 --> 00:05:37,140
+So MSG is assigned the value of the type message and I'll fill in the necessary fields.
+
+88
+00:05:37,170 --> 00:05:40,590
+And all I really care about here is two and that will be your email.
+
+89
+00:05:40,800 --> 00:05:43,890
+That's who the e mails going to the subject.
+
+90
+00:05:44,660 --> 00:05:47,730
+I'll just make that activate your account.
+
+91
+00:05:51,890 --> 00:06:00,890
+The template, we specify a custom template and that's confirmation email, the one we made in the last
+
+92
+00:06:00,890 --> 00:06:02,420
+lecture of the lecture before that.
+
+93
+00:06:03,230 --> 00:06:05,060
+And the data were passed into this template.
+
+94
+00:06:05,540 --> 00:06:11,000
+And in this case, I want to make sure that the what I'm passing actually renders properly.
+
+95
+00:06:11,000 --> 00:06:16,520
+And if you recall the type four message, the field data in the type message, that's any I can put
+
+96
+00:06:16,520 --> 00:06:17,450
+anything I want in there.
+
+97
+00:06:17,450 --> 00:06:25,100
+And I know this is going to be HTML in at least one case, so I'll make that template template HTML,
+
+98
+00:06:25,490 --> 00:06:34,010
+I'll just cast my assigned URL to template dot HTML and I know that will work properly in the go template.
+
+99
+00:06:35,360 --> 00:06:39,590
+And now I send the email and that's going to take place in the background.
+
+100
+00:06:39,680 --> 00:06:45,950
+So app dot, send mail, send email in messaging and I redirect the user.
+
+101
+00:06:46,340 --> 00:06:55,970
+So I'll put in a success message app dot session, dot put with not pop put with our dot context.
+
+102
+00:06:56,990 --> 00:07:03,950
+And it be a flash message and I'll just say confirmation email sent.
+
+103
+00:07:04,670 --> 00:07:07,400
+Check your email for whatever you want to say there.
+
+104
+00:07:07,640 --> 00:07:07,940
+Okay.
+
+105
+00:07:08,120 --> 00:07:17,810
+And now we do a redirect, HTP redirect and with W and our I will take them to the login page and I'll
+
+106
+00:07:17,810 --> 00:07:20,300
+just say issue to status of it.
+
+107
+00:07:24,400 --> 00:07:24,760
+Okay.
+
+108
+00:07:26,110 --> 00:07:29,260
+Now, this this comment here where I misspelled subscribe.
+
+109
+00:07:31,450 --> 00:07:32,680
+That's not going to happen here.
+
+110
+00:07:32,860 --> 00:07:37,960
+That's obviously I don't want to bother subscribing them to an account or a particular subscription
+
+111
+00:07:37,960 --> 00:07:39,700
+package in the registration.
+
+112
+00:07:39,700 --> 00:07:40,960
+So I'll stick it down here for now.
+
+113
+00:07:40,990 --> 00:07:45,400
+It's probably going to get moved out of there as well, but this is enough to get us started.
+
+114
+00:07:46,060 --> 00:07:53,940
+So at this point, I should be able to restart my application, make restart my Docker images are running.
+
+115
+00:07:53,950 --> 00:07:55,480
+I hope we're about to find out.
+
+116
+00:07:55,750 --> 00:07:56,050
+Yep.
+
+117
+00:07:56,050 --> 00:07:56,530
+There.
+
+118
+00:07:57,070 --> 00:07:58,810
+So let's go back and try this out.
+
+119
+00:07:59,560 --> 00:08:08,400
+Let's go back to our web browser and I'll reload this page and I'll register as me here dot com with
+
+120
+00:08:08,410 --> 00:08:09,010
+a password.
+
+121
+00:08:09,070 --> 00:08:09,640
+Test.
+
+122
+00:08:10,270 --> 00:08:10,810
+Test.
+
+123
+00:08:11,650 --> 00:08:12,400
+And me.
+
+124
+00:08:12,410 --> 00:08:12,970
+And here.
+
+125
+00:08:14,020 --> 00:08:15,370
+And when I click register.
+
+126
+00:08:15,520 --> 00:08:21,190
+What should happen, of course, is I should get the success message and I should get an email sent
+
+127
+00:08:21,190 --> 00:08:22,270
+to my mail hog.
+
+128
+00:08:22,300 --> 00:08:23,380
+Let's find out if it works.
+
+129
+00:08:25,120 --> 00:08:27,220
+So we've got the confirmation email message.
+
+130
+00:08:27,310 --> 00:08:33,510
+And if we go over and look at our console in Visual Studio code, there is the signed URL.
+
+131
+00:08:33,520 --> 00:08:38,080
+So there's the part I specified from CDP right up to me at here dot com.
+
+132
+00:08:38,530 --> 00:08:41,170
+And this was appended by my signer package.
+
+133
+00:08:41,260 --> 00:08:42,910
+Now what's to see if we get that email?
+
+134
+00:08:43,050 --> 00:08:43,320
+Okay.
+
+135
+00:08:44,860 --> 00:08:45,760
+So in May, a hug.
+
+136
+00:08:46,630 --> 00:08:47,740
+I'll refresh everything.
+
+137
+00:08:50,250 --> 00:08:50,850
+And there it is.
+
+138
+00:08:51,030 --> 00:08:52,080
+Activate your account.
+
+139
+00:08:53,100 --> 00:08:58,560
+Now I can click on this link if I want to, but there's actually no route or handler set up to handle
+
+140
+00:08:58,560 --> 00:08:58,800
+that.
+
+141
+00:08:59,460 --> 00:09:03,570
+So in the next lecture, we'll take care of the route in the handler for activating an account.
+
+142
+00:09:03,840 --> 00:09:05,400
+All right, let's move on.

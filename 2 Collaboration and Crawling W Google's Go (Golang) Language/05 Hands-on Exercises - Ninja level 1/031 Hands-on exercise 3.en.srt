@@ -1,0 +1,491 @@
+1
+00:00:00,090 --> 00:00:02,510
+Here is hands on Exercise number three.
+
+2
+00:00:02,520 --> 00:00:08,700
+And so in this exercise you're going to emerge from the master branch on your fork.
+
+3
+00:00:08,730 --> 00:00:10,200
+So here's your fork.
+
+4
+00:00:10,320 --> 00:00:15,930
+Here's goes to eleven go Lang project and then down here you have your clone you have master on your
+
+5
+00:00:15,930 --> 00:00:21,510
+fork you're going to then you know push that back up to your fork from your clone from your computer
+
+6
+00:00:21,510 --> 00:00:25,650
+the cloning computer push it up to your fork you'll be on Mars you're gonna emerge from that master
+
+7
+00:00:25,650 --> 00:00:31,480
+to master on repo from which you fought and so at your fork of this repo in the folder.
+
+8
+00:00:31,560 --> 00:00:38,760
+Hands on exercise 0 3 do the following create a branch titled by purpose switch to the branch create
+
+9
+00:00:38,760 --> 00:00:44,160
+a file called Your get hub username desk purpose dot text to share what you believe gives purpose and
+
+10
+00:00:44,160 --> 00:00:45,380
+meaning to human life.
+
+11
+00:00:45,510 --> 00:00:53,130
+That answer might be the number forty two stages file commit this file provide a descriptive commit
+
+12
+00:00:53,130 --> 00:00:57,690
+message and by the way I don't mean to make a joke which it's an insider joke and if you don't know
+
+13
+00:00:57,690 --> 00:00:59,570
+it yet let me bring you inside.
+
+14
+00:00:59,700 --> 00:01:03,600
+So in Hitchhiker's Guide To The Galaxy they said a computer to figure out what the purpose and meaning
+
+15
+00:01:03,600 --> 00:01:04,660
+of life is.
+
+16
+00:01:04,740 --> 00:01:10,040
+And after decades and decades and decades that computer return the answer in the answer was forty two.
+
+17
+00:01:10,180 --> 00:01:14,750
+So just a little tech and tech law there.
+
+18
+00:01:14,910 --> 00:01:22,540
+So stage this file commit this file merge this branch to the brute to the master branch on your fork.
+
+19
+00:01:22,710 --> 00:01:23,010
+Right.
+
+20
+00:01:23,010 --> 00:01:26,300
+So you're going to merge it to master on your fork.
+
+21
+00:01:26,310 --> 00:01:32,490
+So on your clone and then you're going to push that up to year you're your fork from your computer where
+
+22
+00:01:32,490 --> 00:01:33,660
+it's cloned from your fork.
+
+23
+00:01:33,660 --> 00:01:38,790
+You're going to push that merged master up to your fort and then from there on GitHub you're going to
+
+24
+00:01:38,790 --> 00:01:42,620
+make a pull request over it goes it goes to eleven.
+
+25
+00:01:43,350 --> 00:01:44,270
+So go ahead.
+
+26
+00:01:44,370 --> 00:01:48,350
+So create a pull request from branch master on your fork to branch master on this repo.
+
+27
+00:01:48,750 --> 00:01:52,110
+Go ahead and pause this video and I could do that.
+
+28
+00:01:52,110 --> 00:01:54,170
+Hands on exercise and when you're all done.
+
+29
+00:01:54,180 --> 00:01:59,130
+Now y'all come on back and we'll show you our hands on exercise which we're gonna do right now.
+
+30
+00:01:59,160 --> 00:02:00,950
+And are you going to have to reboot.
+
+31
+00:02:01,020 --> 00:02:02,460
+So Daniel is going to start out on this.
+
+32
+00:02:02,460 --> 00:02:06,520
+Are you going to have to do the rebase deal because you don't have my latest file.
+
+33
+00:02:06,550 --> 00:02:08,240
+Yeah I want to hammer through that.
+
+34
+00:02:08,250 --> 00:02:10,320
+I've got to I've also got the problem too.
+
+35
+00:02:10,350 --> 00:02:11,480
+I've got the.
+
+36
+00:02:12,810 --> 00:02:14,260
+When I was on branch Mass.
+
+37
+00:02:15,030 --> 00:02:23,880
+When I was on Master I made those two comments and I don't really want those to be in my history at
+
+38
+00:02:23,880 --> 00:02:24,110
+all.
+
+39
+00:02:24,450 --> 00:02:24,930
+So I'm.
+
+40
+00:02:24,950 --> 00:02:30,780
+So my solution was probably just to do the recoding or the reef just to rework it.
+
+41
+00:02:30,810 --> 00:02:32,160
+OK so.
+
+42
+00:02:32,310 --> 00:02:37,810
+So another way you could do it just delete it on your local machine and then re fork and re clone.
+
+43
+00:02:38,180 --> 00:02:38,450
+Yep.
+
+44
+00:02:38,460 --> 00:02:42,640
+So first I would go to the hub and go on my fork.
+
+45
+00:02:42,650 --> 00:02:48,820
+Go to Settings go at the very bottom in the danger zone delete my fork.
+
+46
+00:02:49,340 --> 00:02:54,620
+They require you to confirm by putting in the name the full name of the repo.
+
+47
+00:02:54,620 --> 00:02:57,570
+That is your username name slash the repo name.
+
+48
+00:02:57,600 --> 00:03:01,660
+I understand it's and you also need to put in your password.
+
+49
+00:03:02,720 --> 00:03:04,170
+Well edit this out.
+
+50
+00:03:04,220 --> 00:03:07,340
+Your repositories been deleted and it's on there.
+
+51
+00:03:07,430 --> 00:03:09,260
+It does not exist anymore.
+
+52
+00:03:09,330 --> 00:03:12,510
+Now I go back to those two.
+
+53
+00:03:12,830 --> 00:03:13,210
+Then
+
+54
+00:03:16,420 --> 00:03:19,630
+googling project and I can rework
+
+55
+00:03:22,480 --> 00:03:28,220
+in the meantime I can go back here to my clone and I can delete it.
+
+56
+00:03:33,010 --> 00:03:37,140
+Which require mean which requires me to make sure my command line is not in the folder.
+
+57
+00:03:40,770 --> 00:03:46,520
+So now I've got a read I've been reformed I'm up to date and I can re clone with SS H.
+
+58
+00:03:46,770 --> 00:03:51,690
+So it goes to Levin going project used to lead everything on your machine you deleted everything on
+
+59
+00:03:51,690 --> 00:03:56,710
+your get hub from your fork and then you said let's fork it again let's clone it again.
+
+60
+00:03:58,430 --> 00:04:08,100
+So now if I go going project 0 0 2 0 2 humble and I look in here I can see I've got to go through I've
+
+61
+00:04:08,110 --> 00:04:13,390
+been humble to so if you don't have anything that you want to have kept.
+
+62
+00:04:13,440 --> 00:04:19,000
+If you don't have anything in your fork that's separate from the origin.
+
+63
+00:04:19,170 --> 00:04:27,420
+This is probably an easier way to pull your fork up to date or at least step it simpler at least.
+
+64
+00:04:29,840 --> 00:04:32,950
+So now you can go back in
+
+65
+00:04:37,210 --> 00:04:37,930
+here did
+
+66
+00:04:41,360 --> 00:04:41,600
+all right.
+
+67
+00:04:41,630 --> 00:04:44,920
+So now you're ready do hands on Exercise number three yet.
+
+68
+00:04:44,960 --> 00:04:53,350
+And for this hands on exercise you're gonna create a branch called my purpose for this to get check
+
+69
+00:04:53,350 --> 00:04:55,190
+out dash B my purpose.
+
+70
+00:04:55,220 --> 00:04:59,750
+You gonna switch to that branch make sure you're on it you're automatically on it and now you're going
+
+71
+00:04:59,750 --> 00:05:05,930
+to Sheriff Lee you believe gives purpose and meaning to life in a file and that file B or your user
+
+72
+00:05:05,930 --> 00:05:14,630
+name dash purpose dot t t create a file your user name on GitHub dash purpose that T.
+
+73
+00:05:15,370 --> 00:05:21,020
+And then in that file share what you believe gives purpose and meaning to life could be forty two years
+
+74
+00:05:21,050 --> 00:05:26,470
+want to be generous and keep it simple or you get philosophical and share a little bit with us
+
+75
+00:05:29,780 --> 00:05:32,520
+there's the file so I can get at it.
+
+76
+00:05:33,810 --> 00:05:38,860
+At this commit am.
+
+77
+00:05:39,400 --> 00:05:39,990
+You need it.
+
+78
+00:05:40,700 --> 00:05:41,050
+Yeah.
+
+79
+00:05:42,410 --> 00:05:51,070
+Yeah exercise is a level 1 exercise.
+
+80
+00:05:51,210 --> 00:05:52,560
+That's a good way to do that.
+
+81
+00:05:54,940 --> 00:05:56,940
+That's nice.
+
+82
+00:05:57,260 --> 00:05:58,330
+Get status.
+
+83
+00:05:58,330 --> 00:06:04,400
+I'm still in a branch my purpose but I've committed so I will push my branch to merge.
+
+84
+00:06:04,600 --> 00:06:07,040
+So I'm pushing my branch to my fork.
+
+85
+00:06:07,070 --> 00:06:08,030
+No I can't.
+
+86
+00:06:08,030 --> 00:06:08,430
+I can.
+
+87
+00:06:08,480 --> 00:06:08,600
+I.
+
+88
+00:06:08,770 --> 00:06:10,140
+Which is kind of an optional thing.
+
+89
+00:06:10,150 --> 00:06:14,410
+I can merge to master straight into your machine and never let my fork know the branch ever existed.
+
+90
+00:06:14,410 --> 00:06:15,540
+Yeah but.
+
+91
+00:06:15,970 --> 00:06:16,960
+Or I can push it.
+
+92
+00:06:16,960 --> 00:06:17,690
+Got it kind of.
+
+93
+00:06:17,770 --> 00:06:23,090
+Either way you can't do the pull request method to merge on your own fork.
+
+94
+00:06:23,110 --> 00:06:31,820
+If you were if you'd ever pushed so so I could push it or I could get check out back to master once
+
+95
+00:06:31,830 --> 00:06:33,960
+a master I can get.
+
+96
+00:06:34,200 --> 00:06:37,760
+I'll always want to make sure you pull first before you do any kind of merging just to make sure you're
+
+97
+00:06:37,760 --> 00:06:38,460
+up to date.
+
+98
+00:06:38,730 --> 00:06:40,640
+And now I can get merge.
+
+99
+00:06:40,950 --> 00:06:42,180
+Purpose.
+
+100
+00:06:42,380 --> 00:06:42,950
+Purchase
+
+101
+00:06:46,680 --> 00:06:47,490
+anyhow.
+
+102
+00:06:47,770 --> 00:06:50,510
+I've merged that thing and I can get push it
+
+103
+00:06:54,830 --> 00:06:56,600
+which takes a little bit of time.
+
+104
+00:06:58,700 --> 00:07:07,620
+Here I've got the added ninja level 1 exercise 3 commit and a shortcut for making Polocrosse is there
+
+105
+00:07:07,620 --> 00:07:13,410
+will be a short shortcut button there if you're in a forked repo that has that's ready to make people
+
+106
+00:07:13,410 --> 00:07:13,960
+request.
+
+107
+00:07:14,000 --> 00:07:22,430
+So from my going project master to go to heaven going project master make my request description up
+
+108
+00:07:22,430 --> 00:07:25,160
+above is plenty good balance.
+
+109
+00:07:25,160 --> 00:07:25,390
+Good.
+
+110
+00:07:25,400 --> 00:07:25,610
+Yeah.
+
+111
+00:07:25,610 --> 00:07:27,510
+The title I don't think you mean that comment.
+
+112
+00:07:27,520 --> 00:07:27,870
+Yeah.
+
+113
+00:07:32,770 --> 00:07:36,390
+Sweep under and they will accept it on the.
+
+114
+00:07:36,400 --> 00:07:40,450
+Goes to Levin three and goes fucking going project now be accepted.
+
+115
+00:07:44,700 --> 00:07:45,730
+It is done.
+
+116
+00:07:45,960 --> 00:07:46,830
+Well done.
+
+117
+00:07:46,870 --> 00:07:49,470
+Anything you want to add.
+
+118
+00:07:50,220 --> 00:07:57,210
+Just just another re re essay restating if you don't have anything in your fork that's worth that you've
+
+119
+00:07:57,210 --> 00:07:58,960
+changed that you want to keep.
+
+120
+00:07:58,980 --> 00:08:04,770
+Simplest way to update to the newest version is just delete your fork and rework and you delete it both
+
+121
+00:08:04,770 --> 00:08:07,740
+locally on your machine and on your get hub account.
+
+122
+00:08:07,740 --> 00:08:12,430
+Get all that stuff out of there and then you go back to the one you want to fork and you re fork it
+
+123
+00:08:13,040 --> 00:08:13,460
+right.

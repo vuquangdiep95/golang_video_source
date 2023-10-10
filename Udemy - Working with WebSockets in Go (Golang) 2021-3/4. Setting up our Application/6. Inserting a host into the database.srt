@@ -1,0 +1,1131 @@
+1
+00:00:01,980 --> 00:00:08,520
+So now we want to insert a host into the database and I'm looking at the host jet file and there's a
+
+2
+00:00:08,520 --> 00:00:10,000
+few changes I need to make to this.
+
+3
+00:00:10,020 --> 00:00:10,530
+First of all.
+
+4
+00:00:10,530 --> 00:00:10,740
+Right.
+
+5
+00:00:10,740 --> 00:00:15,660
+Here in the form method equals post action equals admin host zero.
+
+6
+00:00:15,690 --> 00:00:16,880
+I don't want that to be zero.
+
+7
+00:00:17,370 --> 00:00:23,220
+That's going to be the host side from the host variable that we're passing right here in the handler.
+
+8
+00:00:23,850 --> 00:00:25,890
+So host right here.
+
+9
+00:00:25,890 --> 00:00:28,920
+We get a we create an empty models host.
+
+10
+00:00:29,580 --> 00:00:32,470
+Then later on we're going to grab it from the database.
+
+11
+00:00:32,550 --> 00:00:34,080
+If it's it is greater than zero.
+
+12
+00:00:34,380 --> 00:00:36,390
+Otherwise we're passing an empty host.
+
+13
+00:00:36,390 --> 00:00:42,420
+So the ID will be whatever the ID of the model is, because we're storing it with a variable name host
+
+14
+00:00:42,420 --> 00:00:49,700
+here inversed set and in the host object, we can get access to that host variable just like this.
+
+15
+00:00:50,220 --> 00:00:51,630
+So that will give us the correct ID.
+
+16
+00:00:52,080 --> 00:00:57,390
+And the other thing we want to do is to populate all of the content of that form with whatever's in
+
+17
+00:00:57,390 --> 00:00:58,260
+that host variable.
+
+18
+00:00:58,290 --> 00:01:00,780
+Now we've done it here in host hostname.
+
+19
+00:01:01,320 --> 00:01:03,780
+We also want to get it in the canonical name.
+
+20
+00:01:03,780 --> 00:01:11,730
+So I'll post that in here and change that to canonical name and the euro will Paysite in here and that's
+
+21
+00:01:11,730 --> 00:01:13,340
+just set to you earlier.
+
+22
+00:01:13,410 --> 00:01:16,380
+And if I look at my models, I think I put it in all uppercase.
+
+23
+00:01:16,380 --> 00:01:17,060
+Yes, I did.
+
+24
+00:01:17,100 --> 00:01:26,670
+OK, and the same thing in the IP address, which is just called IP IP IP Version six.
+
+25
+00:01:26,700 --> 00:01:27,870
+Not sure what I call that.
+
+26
+00:01:27,900 --> 00:01:28,770
+Let's go find out.
+
+27
+00:01:29,850 --> 00:01:35,010
+IPV six, all caps, IPV six.
+
+28
+00:01:35,760 --> 00:01:40,800
+And the location is just called location, so we'll just put host dot location.
+
+29
+00:01:42,270 --> 00:01:47,730
+The operating system is OS, host OS and the switch.
+
+30
+00:01:48,330 --> 00:01:50,710
+This doesn't have a value right now and it probably should.
+
+31
+00:01:50,730 --> 00:01:53,970
+So we need to put an if statement in here are actually no we don't.
+
+32
+00:01:53,970 --> 00:02:02,250
+We can just say value equals host dot active and that of course has to be in quotation marks.
+
+33
+00:02:02,250 --> 00:02:08,390
+So we'll put a quotation marks around that and get rid of the extra quote and save that.
+
+34
+00:02:08,400 --> 00:02:09,720
+And this should all work.
+
+35
+00:02:09,720 --> 00:02:10,920
+Is my application running?
+
+36
+00:02:10,920 --> 00:02:11,310
+Yes.
+
+37
+00:02:11,310 --> 00:02:13,230
+I'm going to stop it and start it, just to be sure.
+
+38
+00:02:14,100 --> 00:02:20,790
+And I'll go back to my Web browser and I'll go right to the hosts page, click on New Host and this
+
+39
+00:02:20,790 --> 00:02:23,580
+should have the ID of zero in the action.
+
+40
+00:02:23,580 --> 00:02:24,990
+So let's look for action.
+
+41
+00:02:26,280 --> 00:02:26,940
+And it does.
+
+42
+00:02:26,940 --> 00:02:30,130
+It has zero there and everything else is exactly as it should be.
+
+43
+00:02:30,780 --> 00:02:34,020
+So now I want to fill this form out.
+
+44
+00:02:34,410 --> 00:02:37,560
+I want to grab the data and I want inserted into the database.
+
+45
+00:02:37,590 --> 00:02:39,840
+So we need to create a database function.
+
+46
+00:02:39,840 --> 00:02:47,760
+So let's go back to our code and let's go to the internal folder and then the repository folder and
+
+47
+00:02:47,760 --> 00:02:49,440
+look in the DB repo folder.
+
+48
+00:02:49,830 --> 00:02:52,140
+And inside of that, I'm going to create a new file.
+
+49
+00:02:55,480 --> 00:03:00,100
+And you go file, which I will call host Underscore Postgres Cual.
+
+50
+00:03:02,840 --> 00:03:03,440
+Don't go.
+
+51
+00:03:05,250 --> 00:03:06,630
+All right, so that creates a new one.
+
+52
+00:03:06,670 --> 00:03:08,630
+Yes, I want to add that to my repository.
+
+53
+00:03:09,270 --> 00:03:12,360
+So let's create a function and this is a database function.
+
+54
+00:03:12,930 --> 00:03:16,890
+And because it's a database using a repository, I actually pass it.
+
+55
+00:03:16,890 --> 00:03:24,630
+It has a receiver of I'll call it M Postgrads Postgres DB Repo, and this will be called insert host.
+
+56
+00:03:24,630 --> 00:03:27,060
+And it will take one parameter which I'll call H.
+
+57
+00:03:27,510 --> 00:03:33,990
+It's a type models host and it will return an event which will be the ID of the newly created record
+
+58
+00:03:34,530 --> 00:03:35,790
+and potentially an error.
+
+59
+00:03:36,730 --> 00:03:40,770
+OK, now, because this is a Web application, I tend to do this.
+
+60
+00:03:40,770 --> 00:03:46,590
+I use the contacts package and I'm going to create a variable called seatbacks and a variable called
+
+61
+00:03:46,590 --> 00:03:51,780
+Cancel and they will come from the contacts package.
+
+62
+00:03:53,490 --> 00:04:01,380
+And I want with time out because this is a web application and periodically things will go wrong.
+
+63
+00:04:01,620 --> 00:04:06,990
+Either the user will lose their connection to the Internet or they'll click cancel partway through a
+
+64
+00:04:06,990 --> 00:04:08,070
+transaction, whatever it is.
+
+65
+00:04:08,070 --> 00:04:13,130
+But I want it to time out after a while and we use the context with time out.
+
+66
+00:04:13,170 --> 00:04:14,790
+That method has two parameters.
+
+67
+00:04:14,790 --> 00:04:17,790
+The first one is just the background context, which is always available.
+
+68
+00:04:17,790 --> 00:04:19,380
+So context up background.
+
+69
+00:04:20,550 --> 00:04:22,860
+And the second one is how long do I want this to last?
+
+70
+00:04:22,890 --> 00:04:27,990
+Well, if it takes more than three seconds, then I want it to time out.
+
+71
+00:04:28,470 --> 00:04:32,880
+OK, so I've created that and now I need to defer the cancel.
+
+72
+00:04:33,210 --> 00:04:39,480
+In other words, when this function exits or three seconds past, get rid of the cancel.
+
+73
+00:04:39,480 --> 00:04:40,590
+So we'll defer the cancel.
+
+74
+00:04:41,040 --> 00:04:42,560
+And that's of course a function.
+
+75
+00:04:42,570 --> 00:04:44,360
+So we'll do it like that.
+
+76
+00:04:45,360 --> 00:04:46,230
+Now we wrote a query.
+
+77
+00:04:46,440 --> 00:04:53,550
+Query is just a variable I'm creating and that's a sign the value of insert into hosts and what we want
+
+78
+00:04:53,550 --> 00:04:54,130
+to insert.
+
+79
+00:04:54,150 --> 00:04:57,750
+Well, let's go look at our database again, which I think I still have running right here.
+
+80
+00:04:57,750 --> 00:04:58,140
+Yes.
+
+81
+00:04:58,680 --> 00:05:01,560
+I don't want to insert the ID that will be handled automatically.
+
+82
+00:05:01,560 --> 00:05:12,000
+I want hostname a canonical name, so hostname canonical name, canonical name and then it is you URL,
+
+83
+00:05:12,000 --> 00:05:20,430
+IP and IP version six you url ip IP Version six, which I didn't have an underscoring did I know location
+
+84
+00:05:20,430 --> 00:05:31,170
+was an active location OS active and finally created an updated app created at an updated app.
+
+85
+00:05:31,830 --> 00:05:40,440
+And then on the next line I will put values and because this is Postgres we have to have the dollar
+
+86
+00:05:40,440 --> 00:05:41,220
+sign placeholder.
+
+87
+00:05:41,220 --> 00:05:41,850
+So dollar sign.
+
+88
+00:05:41,850 --> 00:05:43,920
+One dollar sign, two dollar sign three.
+
+89
+00:05:44,640 --> 00:05:50,230
+One, two, three, four, five, six, seven, eight, nine, ten.
+
+90
+00:05:50,250 --> 00:05:53,490
+So I have a total of ten dollar sign for dollar sign.
+
+91
+00:05:53,490 --> 00:05:54,990
+Five dollar sign.
+
+92
+00:05:54,990 --> 00:05:57,420
+Six dollar sign.
+
+93
+00:05:57,430 --> 00:05:58,830
+Seven dollar sign.
+
+94
+00:05:59,220 --> 00:06:00,630
+Eight dollar sign.
+
+95
+00:06:00,630 --> 00:06:02,940
+Nine dollar sign ten.
+
+96
+00:06:03,540 --> 00:06:04,880
+And I want to return.
+
+97
+00:06:05,070 --> 00:06:06,540
+So returning the ID.
+
+98
+00:06:07,200 --> 00:06:08,550
+OK, so there's my query.
+
+99
+00:06:10,500 --> 00:06:17,550
+Now we need to create a new variable to store the ID that will become a successful insert.
+
+100
+00:06:17,580 --> 00:06:23,130
+I'll call that new ID and it'll be of type Int and now we just call our database.
+
+101
+00:06:23,970 --> 00:06:31,920
+Error is a sign the value of M which is my receiver and that has a member called DB and I want the method
+
+102
+00:06:31,920 --> 00:06:38,670
+built into DB called query row context and I pass it my contacts, which I created right up here in
+
+103
+00:06:38,670 --> 00:06:43,110
+the first line of this function and my query which I better spell.
+
+104
+00:06:43,110 --> 00:06:46,470
+Right, and then I'll put these on separate lines.
+
+105
+00:06:46,470 --> 00:06:51,660
+They're more readable, all the values, and these need to correspond to the same order that they're
+
+106
+00:06:51,930 --> 00:06:53,270
+called in the insert statement.
+
+107
+00:06:53,280 --> 00:07:04,650
+So the first one is H hostname and the second one is a canonical name and then short URL and then H
+
+108
+00:07:05,130 --> 00:07:11,160
+IP and then H IP version six H dot.
+
+109
+00:07:11,160 --> 00:07:15,270
+Location H os.
+
+110
+00:07:18,900 --> 00:07:28,170
+Not active, and then the last two older shoes, time now and then I'll duplicate that line, the current
+
+111
+00:07:28,170 --> 00:07:31,410
+time will be inserted into both created and updated.
+
+112
+00:07:32,370 --> 00:07:36,000
+So we do this and now we check for an error.
+
+113
+00:07:36,030 --> 00:07:39,840
+If error is not equal to nil, then what do I want to do?
+
+114
+00:07:39,970 --> 00:07:41,010
+I want to log the error.
+
+115
+00:07:41,010 --> 00:07:47,160
+So logged our print line error and I want to return the new ID, which will have no value.
+
+116
+00:07:47,160 --> 00:07:48,060
+So it'll be zero.
+
+117
+00:07:48,300 --> 00:07:51,000
+And the error which is erm.
+
+118
+00:07:53,840 --> 00:07:55,040
+And I missed something here.
+
+119
+00:07:55,070 --> 00:08:01,720
+Oh, yes, I got to scan the I.D., I got a scan into my.
+
+120
+00:08:04,120 --> 00:08:09,940
+That and that will take care of it, because postgrads actually doesn't work the way that, say, if
+
+121
+00:08:09,940 --> 00:08:11,810
+you're familiar with Maria Debe or Maisky.
+
+122
+00:08:11,830 --> 00:08:14,500
+Well, it's a little different the way that you get the created ID.
+
+123
+00:08:14,500 --> 00:08:21,220
+But in postgrads, we need to Queretaro context and scan its return value into some variable, which
+
+124
+00:08:21,220 --> 00:08:21,980
+is what we're doing here.
+
+125
+00:08:22,240 --> 00:08:24,040
+And if I don't do that, it's not going to throw an error.
+
+126
+00:08:24,070 --> 00:08:32,950
+So now if we get past this, then all is well and we just return the new ID and nil for the error.
+
+127
+00:08:33,410 --> 00:08:34,600
+And let's give this a comment.
+
+128
+00:08:38,490 --> 00:08:46,230
+Inserts a host into the database now, because I'm using the repository pattern, which is a really
+
+129
+00:08:46,230 --> 00:08:49,590
+common one, and if you're not familiar with it, you should become familiar with it.
+
+130
+00:08:49,860 --> 00:08:56,580
+I actually have to add this method signature, this entire thing, the method name its parameters and
+
+131
+00:08:56,580 --> 00:08:59,190
+what it returns into this file repository.
+
+132
+00:08:59,190 --> 00:09:04,480
+Dacko So I'll create a new comment here posts and just paste that in.
+
+133
+00:09:05,190 --> 00:09:10,470
+Now if I stop the application and start it, I didn't need to do that yet, but I'm going to be doing
+
+134
+00:09:10,470 --> 00:09:14,340
+it in a minute so I may as well do it right now and go back to our handlers.
+
+135
+00:09:14,820 --> 00:09:18,840
+At this point, we want to insert a host into the database.
+
+136
+00:09:18,870 --> 00:09:30,180
+OK, so that means we need to read all the values from our post, put them into a model of type models,
+
+137
+00:09:30,180 --> 00:09:34,830
+dot host and then call our insert host function so we can create a new variable.
+
+138
+00:09:35,190 --> 00:09:43,290
+VAR hope for each is a type model host and we just start inserting values into it so we can say each
+
+139
+00:09:43,290 --> 00:09:45,000
+dot first name.
+
+140
+00:09:45,280 --> 00:09:47,700
+Actually let's do it this way first.
+
+141
+00:09:48,000 --> 00:09:55,110
+Let's make sure that we get the IDs up here in the previous function, which is host, we grab the ID
+
+142
+00:09:55,110 --> 00:09:58,360
+from the, from the URL and we're going to do the same thing right here.
+
+143
+00:09:58,380 --> 00:10:04,260
+OK, so now I have the ID and I'm going to do the same kind of logic I do up here.
+
+144
+00:10:04,560 --> 00:10:12,780
+If ID is greater than zero, get the host from the database.
+
+145
+00:10:15,600 --> 00:10:21,390
+So what I'll do is read the host from the database, then overwrite the values from the post into this
+
+146
+00:10:21,390 --> 00:10:23,610
+and then call an update method that doesn't exist yet.
+
+147
+00:10:23,610 --> 00:10:24,420
+So we can't do that.
+
+148
+00:10:25,110 --> 00:10:31,260
+Otherwise we'll just populate this model host, which has to come before the IF statement because I'm
+
+149
+00:10:31,260 --> 00:10:32,460
+going to be using it in here.
+
+150
+00:10:33,600 --> 00:10:34,830
+We just populate its values.
+
+151
+00:10:35,400 --> 00:10:39,810
+So we'll do this the long way first and we'll clean up the code a little bit later on.
+
+152
+00:10:39,810 --> 00:10:42,120
+Right now, I just want to insert something into the database.
+
+153
+00:10:42,120 --> 00:10:43,530
+So what do what am I getting here?
+
+154
+00:10:43,530 --> 00:10:44,610
+I'm getting the hostname.
+
+155
+00:10:44,610 --> 00:10:51,720
+So h dot hostname is equal to we need to get it from a request.
+
+156
+00:10:51,720 --> 00:10:53,730
+So we be are dot.
+
+157
+00:10:54,950 --> 00:11:06,440
+Form dot get hostname, and this name here needs to match exactly what's on the host jet form and what
+
+158
+00:11:06,440 --> 00:11:11,930
+I'm calling it here in the host form is hostname perfect.
+
+159
+00:11:12,680 --> 00:11:14,270
+So back to our handlers.
+
+160
+00:11:14,930 --> 00:11:17,450
+So we get the hostname, then we get the canonical you URL.
+
+161
+00:11:17,460 --> 00:11:20,200
+So I'll just duplicate that line and changes to canonical name.
+
+162
+00:11:21,140 --> 00:11:23,990
+And this is called Canonical Name.
+
+163
+00:11:26,900 --> 00:11:28,460
+And then what's the next thing we get.
+
+164
+00:11:28,460 --> 00:11:29,750
+Let's just go look at our form here.
+
+165
+00:11:30,350 --> 00:11:36,560
+We get the URL that's called URL and in the models it's called URL uppercase.
+
+166
+00:11:37,190 --> 00:11:39,890
+Then we get the IP, which is called IP.
+
+167
+00:11:42,080 --> 00:11:47,270
+Then we get the IP version six, which is called IP Version six.
+
+168
+00:11:47,300 --> 00:11:55,250
+We make sure that's what it's called on the form here, IPV six and I'm using IPV six.
+
+169
+00:11:55,250 --> 00:11:55,670
+Good.
+
+170
+00:11:56,060 --> 00:11:59,900
+And the next thing is the location, the operating system and active.
+
+171
+00:12:00,290 --> 00:12:01,160
+So the location.
+
+172
+00:12:01,160 --> 00:12:01,580
+That's easy.
+
+173
+00:12:01,580 --> 00:12:06,230
+That's just a string location is called location.
+
+174
+00:12:09,600 --> 00:12:16,530
+OS is called OS and the last one is actually an ant, so I need to convert what I'm getting from my
+
+175
+00:12:16,530 --> 00:12:21,330
+form post, which always comes in the form string into an end, and I can do that pretty easily.
+
+176
+00:12:21,360 --> 00:12:27,120
+We'll just say active is a and potentially an error, which I'm going to ignore.
+
+177
+00:12:27,120 --> 00:12:28,770
+And again, in production you wouldn't know it.
+
+178
+00:12:28,770 --> 00:12:31,130
+But I'm not focusing on Web application development here.
+
+179
+00:12:31,140 --> 00:12:37,650
+I'm focusing on Web sockets and we need to jump to some hoops to get their Østergaard on a tour.
+
+180
+00:12:38,730 --> 00:12:41,490
+And what we're going to get is art form douget.
+
+181
+00:12:42,270 --> 00:12:45,190
+And the name of this is active.
+
+182
+00:12:45,960 --> 00:12:51,000
+So now I have a variable active and I can say H dot active is equal to active.
+
+183
+00:12:52,620 --> 00:13:00,420
+So here I actually want to get the artist for this in the database and I want to take them back to the
+
+184
+00:13:00,420 --> 00:13:02,390
+same page in some cases.
+
+185
+00:13:02,400 --> 00:13:04,810
+So I need to get the ID after the insert.
+
+186
+00:13:04,860 --> 00:13:13,170
+So back up here I'm going to create a new variable var new ID are very hostile, call host ID and it's
+
+187
+00:13:13,170 --> 00:13:13,830
+a type eight.
+
+188
+00:13:15,180 --> 00:13:20,850
+And now that I have all this information and I'm not doing any sanitizing of the data at all and you
+
+189
+00:13:20,850 --> 00:13:25,500
+should in a production web application, you should make sure that this is actually not empty, that
+
+190
+00:13:25,500 --> 00:13:26,390
+this is not empty.
+
+191
+00:13:27,030 --> 00:13:30,150
+We've got JavaScript validation which will take care of that in most cases.
+
+192
+00:13:30,630 --> 00:13:33,240
+But computer scientists are not optimist's.
+
+193
+00:13:33,240 --> 00:13:35,850
+We assume that things are going to go wrong.
+
+194
+00:13:35,850 --> 00:13:39,090
+We assume that an unlikely scenario is always going to take place.
+
+195
+00:13:39,480 --> 00:13:42,030
+But again, I'm not going to bother doing that in this course.
+
+196
+00:13:42,240 --> 00:13:47,910
+If you want to get a more detail on form, validation and so forth, I have a course in Web development.
+
+197
+00:13:47,920 --> 00:13:51,150
+You can go and you can go look for that one or find it online or do whatever you want.
+
+198
+00:13:51,150 --> 00:13:52,710
+But anyway, we're going to skip it right now.
+
+199
+00:13:53,730 --> 00:14:00,540
+So I'll just get my values and I'll say new ID, which will be the returned value from my insert insert
+
+200
+00:14:00,540 --> 00:14:03,810
+statement, potentially an error or assign the value of.
+
+201
+00:14:03,810 --> 00:14:08,100
+And because I've added that method in the data, that database method we just wrote into the repo,
+
+202
+00:14:08,100 --> 00:14:16,710
+it's available to me repo db dot insert host and I pass it the model host which I called H.
+
+203
+00:14:17,430 --> 00:14:25,110
+If there's an error, if error is not equal to nil, then I'll just say logged print line error and
+
+204
+00:14:25,110 --> 00:14:33,090
+then I have a helper's method helper's dot server error which takes the response writer the request
+
+205
+00:14:33,090 --> 00:14:34,200
+and an error message.
+
+206
+00:14:34,620 --> 00:14:37,290
+And I'll return because I don't want to go any further after this point.
+
+207
+00:14:37,710 --> 00:14:45,690
+But if I, if I pass this then I can just say host ID is equal to new ideas and at that point we should
+
+208
+00:14:45,690 --> 00:14:46,450
+have it inserted.
+
+209
+00:14:47,490 --> 00:14:50,520
+Now what I'm going to do right now is get rid of this writing thing.
+
+210
+00:14:50,700 --> 00:14:55,430
+I'll just do a redirect back to the same host page that we were looking at.
+
+211
+00:14:56,280 --> 00:15:04,350
+So I'll say flat or set up, I'll put a message in the variable, which is repo dot app, dot session
+
+212
+00:15:04,500 --> 00:15:05,820
+dot put.
+
+213
+00:15:06,660 --> 00:15:15,180
+And it requires a context which I get from my ah my response right at my request ARGT context, I'll
+
+214
+00:15:15,180 --> 00:15:21,960
+name it Flash so it'll display a success message to the user and I'll just say changes saved.
+
+215
+00:15:22,830 --> 00:15:24,510
+And at this point I'll just do a redirect.
+
+216
+00:15:24,540 --> 00:15:29,310
+Now we're going to change this in a little while based upon the button that the people choose.
+
+217
+00:15:29,310 --> 00:15:32,790
+If they choose, save and continue or save and close, we'll do different things.
+
+218
+00:15:32,790 --> 00:15:34,290
+But right now I just want to get this working.
+
+219
+00:15:34,980 --> 00:15:41,310
+HTP don't redirect and it requires a response writer, a pointer to a request, the URL, which will
+
+220
+00:15:41,310 --> 00:15:43,290
+be admin host.
+
+221
+00:15:43,560 --> 00:15:47,730
+I mean, check that you URL it again, admin host and the host ID.
+
+222
+00:15:48,540 --> 00:15:52,140
+So I'm going to wrap this in a format as print F in a moment.
+
+223
+00:15:55,510 --> 00:16:05,650
+Format s, print F and will replace that percent d with the idea of our host, which is host ID, and
+
+224
+00:16:05,650 --> 00:16:11,320
+then the last parameter requires is a status C other, and that'll be good enough for our purposes.
+
+225
+00:16:11,380 --> 00:16:12,460
+So what did I get wrong here?
+
+226
+00:16:13,120 --> 00:16:13,630
+Oh yes.
+
+227
+00:16:13,810 --> 00:16:16,080
+To close this and I should do it.
+
+228
+00:16:16,750 --> 00:16:22,340
+So in theory we should be able to insert a host into the database at this point.
+
+229
+00:16:22,360 --> 00:16:24,130
+Let's see what we got wrong, if anything.
+
+230
+00:16:24,130 --> 00:16:26,380
+So I'll stop my application and start my application.
+
+231
+00:16:28,120 --> 00:16:30,310
+Unexpected parentheses.
+
+232
+00:16:30,310 --> 00:16:32,950
+And this is in go line 177.
+
+233
+00:16:33,040 --> 00:16:34,790
+I get too many parentheses there.
+
+234
+00:16:34,800 --> 00:16:35,500
+Let's try that again.
+
+235
+00:16:36,160 --> 00:16:36,580
+Run.
+
+236
+00:16:39,250 --> 00:16:41,620
+There it is, it's running, so let's start right from the beginning.
+
+237
+00:16:42,360 --> 00:16:50,770
+We'll go to our hosts page will say New Host and I'll call this localhost canonical name is localhost.
+
+238
+00:16:51,490 --> 00:16:55,840
+The URL will be SCDP Colden localhost AT&amp;T.
+
+239
+00:16:56,800 --> 00:17:01,990
+And I'm going to leave these other things that are not required empty, but I will make it active just
+
+240
+00:17:01,990 --> 00:17:03,480
+to make sure this is actually working.
+
+241
+00:17:03,490 --> 00:17:04,720
+So let's see if this works.
+
+242
+00:17:06,080 --> 00:17:11,450
+Save saving close page not found admin host zero, what do I get wrong?
+
+243
+00:17:12,440 --> 00:17:14,380
+So let's go back here and see what the URL is.
+
+244
+00:17:14,390 --> 00:17:16,320
+It's admin host zero.
+
+245
+00:17:18,710 --> 00:17:20,310
+Let's see what the log file has to say.
+
+246
+00:17:20,330 --> 00:17:24,500
+Oh, there's an error and the error is Syntex.
+
+247
+00:17:25,130 --> 00:17:26,570
+Oh, I got an error in my sequence.
+
+248
+00:17:26,570 --> 00:17:35,840
+So let's go find our our host talk show host, Underscore Postgres.
+
+249
+00:17:35,840 --> 00:17:36,620
+There it is right there.
+
+250
+00:17:37,910 --> 00:17:39,320
+So I have a typo somewhere.
+
+251
+00:17:39,410 --> 00:17:40,460
+Insert in the house.
+
+252
+00:17:40,460 --> 00:17:42,620
+OK, got to close this parentheses.
+
+253
+00:17:42,650 --> 00:17:43,520
+So let's stop that.
+
+254
+00:17:44,330 --> 00:17:45,050
+Try this again.
+
+255
+00:17:47,720 --> 00:17:51,960
+And see what else we got wrong, because I think there's another mistake, but we'll make sure.
+
+256
+00:17:52,370 --> 00:18:03,040
+So localhost, localhost, HTP Cologne's localhost 88 and I'll make it active and see what else gets
+
+257
+00:18:03,050 --> 00:18:03,340
+wrong.
+
+258
+00:18:03,350 --> 00:18:05,440
+So let me put some blank lines in here.
+
+259
+00:18:06,320 --> 00:18:07,760
+Save close.
+
+260
+00:18:09,640 --> 00:18:11,660
+And it took me back to host one.
+
+261
+00:18:11,710 --> 00:18:12,260
+Perfect.
+
+262
+00:18:12,280 --> 00:18:19,540
+Now let's look in our database and let's look at our host table and look at the content and reload this.
+
+263
+00:18:19,900 --> 00:18:21,580
+And I have some values.
+
+264
+00:18:21,880 --> 00:18:23,260
+So I have the hostname.
+
+265
+00:18:23,290 --> 00:18:24,460
+I had the canonical name.
+
+266
+00:18:24,460 --> 00:18:25,420
+I have the euro.
+
+267
+00:18:25,600 --> 00:18:26,530
+I left those empty.
+
+268
+00:18:26,530 --> 00:18:27,580
+So they should be empty.
+
+269
+00:18:28,120 --> 00:18:29,410
+Active is zero.
+
+270
+00:18:29,530 --> 00:18:30,580
+And that I actually do that.
+
+271
+00:18:30,580 --> 00:18:30,940
+Right?
+
+272
+00:18:30,970 --> 00:18:31,720
+I'm not sure.
+
+273
+00:18:32,880 --> 00:18:37,160
+OK, well, I'm not sure if I checked active or not, but so far it seems like it might be working.
+
+274
+00:18:37,180 --> 00:18:43,660
+So the next step is to actually grab the host from the database and display it in the list.
+
+275
+00:18:43,810 --> 00:18:46,180
+That requires a couple of steps to start with.
+
+276
+00:18:46,340 --> 00:18:50,230
+I need to be able to list all of the hosts that are in the database on this table.
+
+277
+00:18:50,230 --> 00:18:56,050
+So I need a database method that says get all hosts and gives me enough information to display it on
+
+278
+00:18:56,050 --> 00:19:00,960
+this page that I need to modify this page to actually use the information we're passing to this jet
+
+279
+00:19:01,030 --> 00:19:01,540
+template.
+
+280
+00:19:02,020 --> 00:19:09,700
+Then clicking on the host should take me to in this case it would be one, because that's the idea of
+
+281
+00:19:09,700 --> 00:19:10,670
+our inserted host.
+
+282
+00:19:11,020 --> 00:19:12,300
+OK, so we're getting closer.
+
+283
+00:19:12,670 --> 00:19:18,790
+We'll take care of the update section and the displaying of information in the next lecture or two.

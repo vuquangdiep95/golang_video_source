@@ -1,0 +1,135 @@
+1
+00:00:01,780 --> 00:00:05,600
+So now that we have a test for a session package, let's just check our coverage.
+
+2
+00:00:05,620 --> 00:00:11,590
+So I'm still in the Celebrity House project and I'll open a terminal window and I'm at the correct directory.
+
+3
+00:00:11,590 --> 00:00:17,320
+I'm at the root level of the celebrity house directory and all I have to do is type make cover because
+
+4
+00:00:17,320 --> 00:00:22,810
+we're using that make file and I have a failure and the failure is render test.
+
+5
+00:00:22,810 --> 00:00:24,690
+Don't go line 42.
+
+6
+00:00:24,700 --> 00:00:26,170
+I know exactly what that is.
+
+7
+00:00:27,220 --> 00:00:29,440
+So Line 42 is failing there.
+
+8
+00:00:29,440 --> 00:00:31,810
+It's failing because to make it fail.
+
+9
+00:00:31,810 --> 00:00:34,240
+A few lectures ago, I had a home to hear.
+
+10
+00:00:34,480 --> 00:00:37,690
+Let's change that back to home so that that'll actually pass this time.
+
+11
+00:00:38,260 --> 00:00:41,230
+So clear the terminal window make cover.
+
+12
+00:00:43,940 --> 00:00:48,890
+And everything passed, and we have two files being checked, rendered Argo, which is a seventy nine
+
+13
+00:00:48,890 --> 00:00:51,320
+point three percent and as you can see, it's pretty good coverage.
+
+14
+00:00:51,950 --> 00:00:54,740
+Most of the things that fail here are not covered.
+
+15
+00:00:54,740 --> 00:01:00,770
+Here are actually cases that I personally do not care about because I am not a purist and I don't insist
+
+16
+00:01:00,770 --> 00:01:02,780
+upon 100 percent test coverage.
+
+17
+00:01:03,380 --> 00:01:07,790
+I know that if there's a problem with any of these, I'm going to get the appropriate error returned.
+
+18
+00:01:08,000 --> 00:01:09,380
+So those don't bother me.
+
+19
+00:01:09,380 --> 00:01:14,150
+If they bother you, just jump through the hoops necessary to create the conditions where you'll get
+
+20
+00:01:14,150 --> 00:01:16,890
+an error here in here and here in here.
+
+21
+00:01:16,910 --> 00:01:18,060
+And that's entirely up to you.
+
+22
+00:01:18,080 --> 00:01:18,920
+I'm not going to do that.
+
+23
+00:01:19,250 --> 00:01:21,740
+So let's check session eighty eight point two percent.
+
+24
+00:01:22,100 --> 00:01:23,110
+Not bad.
+
+25
+00:01:23,120 --> 00:01:29,990
+And the only cases that are not covered are if someone does not put a value in the dot own file, which
+
+26
+00:01:29,990 --> 00:01:35,240
+we're facing up in, up here when we create our session struct in our setup, not test file.
+
+27
+00:01:35,690 --> 00:01:39,290
+So you could just leave that empty and write another test, it's entirely up to you, but I'm really
+
+28
+00:01:39,290 --> 00:01:40,370
+happy with this coverage.
+
+29
+00:01:40,490 --> 00:01:40,970
+Perfect.
+
+30
+00:01:41,330 --> 00:01:47,270
+So let's move on, and I think it's time to now start worrying about how we're going to integrate a
+
+31
+00:01:47,270 --> 00:01:49,070
+database into our application.
+
+32
+00:01:49,250 --> 00:01:54,890
+And in this course, we're going to take care of two databases Postgres, my favorite open source and
+
+33
+00:01:54,890 --> 00:02:00,710
+go to database and either my Escuela or MariaDB, which use exactly the same driver.
+
+34
+00:02:00,800 --> 00:02:03,230
+So we'll get started on that in the next section.

@@ -1,0 +1,635 @@
+1
+00:00:01,010 --> 00:00:01,310
+All right.
+
+2
+00:00:01,310 --> 00:00:05,430
+Let's keep going with the pizzeria, our producer so far.
+
+3
+00:00:05,630 --> 00:00:08,090
+We just have some comments and an empty for loop.
+
+4
+00:00:08,090 --> 00:00:09,910
+And we want to do more than that, of course.
+
+5
+00:00:09,980 --> 00:00:14,470
+So first comment says keep track of which pizza we are making no problem of.
+
+6
+00:00:14,480 --> 00:00:17,880
+Create a variable called I and I'll make that equal to zero.
+
+7
+00:00:18,170 --> 00:00:18,430
+Okay.
+
+8
+00:00:18,620 --> 00:00:23,420
+So that will keep track of the current number of the current pizza that we're making.
+
+9
+00:00:24,830 --> 00:00:31,310
+And then down here inside the four loop, of course, what we want to do is to, as the comment says,
+
+10
+00:00:31,310 --> 00:00:32,330
+try to make a pizza.
+
+11
+00:00:32,540 --> 00:00:35,840
+But I'm not going to do that right in this for loop.
+
+12
+00:00:35,870 --> 00:00:39,890
+Instead, I'll call a function that doesn't exist yet, as I often do.
+
+13
+00:00:41,090 --> 00:00:48,470
+So I'll say current pizza, which is a variable name I'm declaring right now, current pizza that's
+
+14
+00:00:48,470 --> 00:00:51,260
+assigned and I'm going to call a function called make pizza.
+
+15
+00:00:51,800 --> 00:00:56,900
+I'm going to hand that by the variable that I'm keeping track of up here on line 33.
+
+16
+00:00:57,200 --> 00:00:58,550
+So which pizza are we making?
+
+17
+00:00:58,550 --> 00:01:00,290
+So I'm going to call this function make pizza.
+
+18
+00:01:00,560 --> 00:01:00,950
+Okay.
+
+19
+00:01:02,140 --> 00:01:04,380
+Now let's create a function called make pizza.
+
+20
+00:01:04,390 --> 00:01:06,880
+So I'll make that right here above this one.
+
+21
+00:01:10,560 --> 00:01:12,630
+Funk make pizza.
+
+22
+00:01:14,490 --> 00:01:21,300
+And that takes one parameter, which I'll call pizza number, and it's an integer and it returns a pointer
+
+23
+00:01:21,300 --> 00:01:22,740
+to a pizza order.
+
+24
+00:01:23,310 --> 00:01:23,640
+Okay.
+
+25
+00:01:24,330 --> 00:01:29,970
+And if you look at the types we have defined up here, pizza order gives us pizza number.
+
+26
+00:01:30,090 --> 00:01:34,530
+The message, whatever message we're sending back, indicating what happened with this order and whether
+
+27
+00:01:34,530 --> 00:01:36,600
+or not we were successful in making this pizza.
+
+28
+00:01:37,170 --> 00:01:40,230
+So let's start on this function.
+
+29
+00:01:41,940 --> 00:01:45,390
+The first thing I'm going to do is increment pizza number.
+
+30
+00:01:46,560 --> 00:01:49,350
+The parameter I received for this order I want.
+
+31
+00:01:49,650 --> 00:01:50,010
+Okay.
+
+32
+00:01:50,580 --> 00:01:55,650
+So the very first time we call make pizza, we're handing it the variable R, which has the value of
+
+33
+00:01:55,650 --> 00:01:57,160
+zero and we just increment one.
+
+34
+00:01:57,180 --> 00:01:59,460
+So now we're working on order number one.
+
+35
+00:02:01,080 --> 00:02:03,700
+And of course, we don't want to keep going indefinitely.
+
+36
+00:02:03,720 --> 00:02:11,790
+So we'll check to see if the pizza number is less than or equal to our constant number of pizzas, which
+
+37
+00:02:11,790 --> 00:02:12,600
+we have set to tell.
+
+38
+00:02:12,900 --> 00:02:15,750
+If it's less than or equal to ten, then we're going to make this.
+
+39
+00:02:16,200 --> 00:02:17,760
+Otherwise, we're going to do something else.
+
+40
+00:02:17,820 --> 00:02:19,170
+So we'll put in a statement there.
+
+41
+00:02:19,230 --> 00:02:20,250
+Leave it empty for the moment.
+
+42
+00:02:21,240 --> 00:02:22,530
+We'll come back to it already.
+
+43
+00:02:24,570 --> 00:02:29,610
+So in the first clause in this statement, we're going to try to make a pizza.
+
+44
+00:02:29,640 --> 00:02:31,950
+Now, I don't want things to happen at the speed of light.
+
+45
+00:02:31,950 --> 00:02:36,330
+And even though I'm on an old computer, this is a seven year old Mac and recording this lecture on,
+
+46
+00:02:36,780 --> 00:02:38,610
+it'll still go very, very quickly.
+
+47
+00:02:38,970 --> 00:02:40,950
+So let's create a variable called delay.
+
+48
+00:02:41,940 --> 00:02:46,320
+And that's going to be equal to from the random package, which we seeded in the main function.
+
+49
+00:02:46,950 --> 00:02:50,010
+We'll get an integer back into N right there.
+
+50
+00:02:50,220 --> 00:02:50,420
+Okay.
+
+51
+00:02:50,550 --> 00:02:54,000
+And that'll give us some value and I'll just choose five.
+
+52
+00:02:54,090 --> 00:02:56,960
+So that'll give me a neat random number back.
+
+53
+00:02:56,970 --> 00:03:03,510
+And as you can see, if you point at this, it says returns n as in a non-negative pseudo random number
+
+54
+00:03:03,510 --> 00:03:07,650
+in the half open interval from the default source it panics of and is less than or equal to zero.
+
+55
+00:03:07,770 --> 00:03:12,460
+I'm going to add one to that because it's possible to get the number zero back.
+
+56
+00:03:12,460 --> 00:03:15,330
+But I want to delay at least for 1/2.
+
+57
+00:03:15,390 --> 00:03:15,810
+Okay.
+
+58
+00:03:17,130 --> 00:03:18,060
+And I'll print out a message.
+
+59
+00:03:18,060 --> 00:03:19,800
+So I'll say format, print, ev
+
+60
+00:03:23,010 --> 00:03:29,010
+and I'll just say I received an order or received order number.
+
+61
+00:03:29,020 --> 00:03:31,800
+That's good enough order number.
+
+62
+00:03:32,250 --> 00:03:34,380
+And it will be an integer percent D.
+
+63
+00:03:37,090 --> 00:03:40,220
+And then I'll give it its carriage return because print out doesn't give me one.
+
+64
+00:03:40,240 --> 00:03:43,210
+Am I substitution for that percentage, of course, is pizza number.
+
+65
+00:03:44,440 --> 00:03:48,880
+So we'll say received order number one the very first time this is executed.
+
+66
+00:03:49,300 --> 00:03:49,660
+Okay.
+
+67
+00:03:50,950 --> 00:03:56,590
+Now, I'm going to try to make the pizza and I'm going to assume that in most cases, we make the pizza
+
+68
+00:03:56,590 --> 00:03:57,280
+successfully.
+
+69
+00:03:57,430 --> 00:04:02,290
+But if we hit some arbitrary number, then we failed.
+
+70
+00:04:02,350 --> 00:04:02,840
+Okay.
+
+71
+00:04:02,860 --> 00:04:06,820
+So I'll generate a random number and I'll have a one in three chance of something going wrong with your
+
+72
+00:04:06,820 --> 00:04:07,120
+order.
+
+73
+00:04:07,150 --> 00:04:12,010
+So I'll just say R&amp;D, which is a random number, is equal to Rand.
+
+74
+00:04:13,120 --> 00:04:20,170
+And again, and I'll give it the number 12 plus one, which will give me a random number between one
+
+75
+00:04:20,170 --> 00:04:23,640
+and 12 and I'll initialize MSG.
+
+76
+00:04:23,650 --> 00:04:26,920
+The message we're going to generate, we send this back as an empty string.
+
+77
+00:04:28,020 --> 00:04:33,270
+And I'll also set success, which is part of the pizza order we'll be sending back.
+
+78
+00:04:33,690 --> 00:04:35,310
+I'll assume it's false to begin with.
+
+79
+00:04:35,940 --> 00:04:37,080
+So now I have these things.
+
+80
+00:04:38,650 --> 00:04:42,550
+Now let's see if we were successful in making our pizza.
+
+81
+00:04:42,970 --> 00:04:48,700
+So we're going to do this by looking to see if the R and D that number we got back there, if it's less
+
+82
+00:04:48,700 --> 00:04:54,190
+than, say, five, if R&amp;D is less than five, then the piece failed.
+
+83
+00:04:54,430 --> 00:04:56,350
+So I'll increment that package.
+
+84
+00:04:56,350 --> 00:04:57,220
+Level variable.
+
+85
+00:04:57,370 --> 00:05:00,070
+Variable pizzas failed by one.
+
+86
+00:05:01,720 --> 00:05:03,370
+Otherwise else.
+
+87
+00:05:06,360 --> 00:05:10,110
+Pizzas made is incremented by one.
+
+88
+00:05:10,380 --> 00:05:12,180
+We successfully made this pizza.
+
+89
+00:05:14,630 --> 00:05:17,030
+And of course, the other variable I need to keep track of is total.
+
+90
+00:05:17,600 --> 00:05:19,190
+How many pizzas did we try to make?
+
+91
+00:05:19,190 --> 00:05:20,930
+So total plus.
+
+92
+00:05:20,930 --> 00:05:22,670
+Plus we increment that by one.
+
+93
+00:05:23,150 --> 00:05:30,920
+Now we'll print out a message again, format or print line or print f and my format string says making
+
+94
+00:05:31,580 --> 00:05:41,420
+pizza number percent D it will take percent the seconds and then a carriage return.
+
+95
+00:05:43,800 --> 00:05:52,500
+And my substitutions are pizza number and delay, which we calculated right up there on 135.
+
+96
+00:05:52,950 --> 00:05:57,210
+So this just gives us some feedback as to what's going on, and that will delay for a bit.
+
+97
+00:06:00,390 --> 00:06:01,770
+So we'll just say time dot sleep.
+
+98
+00:06:04,470 --> 00:06:09,690
+And again, this is just so it doesn't scroll by on the screen very, very quickly and it will be sleeping
+
+99
+00:06:09,690 --> 00:06:15,600
+for timed off duration delay times timed out second.
+
+100
+00:06:17,430 --> 00:06:20,520
+Now let's figure out what kind of message to send back.
+
+101
+00:06:20,550 --> 00:06:25,230
+We already know based upon what we have there on the lines 42 through 46.
+
+102
+00:06:25,350 --> 00:06:27,180
+We know whether or not we were successful.
+
+103
+00:06:27,180 --> 00:06:33,660
+But let's to make up a reason as to why we couldn't make a pizza or make the appropriate message if
+
+104
+00:06:33,660 --> 00:06:34,890
+we were successful in making it.
+
+105
+00:06:34,980 --> 00:06:38,970
+So we'll just do a simple if statement, if our R&amp;D is less than or equal to two.
+
+106
+00:06:39,480 --> 00:06:41,370
+This is one situation where it failed.
+
+107
+00:06:41,790 --> 00:06:49,380
+So I'll say message is now equal to format or as print as we're creating a string.
+
+108
+00:06:49,380 --> 00:06:53,190
+And my format string will be three stars because it's an error.
+
+109
+00:06:54,240 --> 00:06:55,680
+We ran out of ingredients
+
+110
+00:06:59,010 --> 00:07:04,410
+for pizza number, percent the integer and then an exclamation mark.
+
+111
+00:07:05,070 --> 00:07:07,110
+And my substitution of course is pizza number.
+
+112
+00:07:09,960 --> 00:07:16,980
+But else, if R&amp;D is less than or equal to say four, this is our conditions where we failed.
+
+113
+00:07:17,040 --> 00:07:24,090
+If it's one, two, three or four, we failed and we'll just copy this and change the message.
+
+114
+00:07:27,450 --> 00:07:28,530
+And this time, the error.
+
+115
+00:07:28,530 --> 00:07:29,550
+The error will be.
+
+116
+00:07:31,640 --> 00:07:39,140
+Say the cook quit while making pizza number D and D.
+
+117
+00:07:39,140 --> 00:07:40,970
+Of course, percent D is pizza number.
+
+118
+00:07:41,780 --> 00:07:45,090
+Otherwise, if none of those conditions are true, then we made the pizza.
+
+119
+00:07:45,110 --> 00:07:48,530
+So we'll paste this and we'll say success is now equal to true.
+
+120
+00:07:48,560 --> 00:07:57,950
+Remember a defaulted defaults then her messages just messages now equal to format or s print f pizza
+
+121
+00:07:58,370 --> 00:08:04,820
+quarter number percent d is ready.
+
+122
+00:08:05,150 --> 00:08:07,940
+We made the pizza and our substitution was against pizza number.
+
+123
+00:08:10,520 --> 00:08:12,590
+So we've now created our delay.
+
+124
+00:08:12,710 --> 00:08:15,030
+We printed out a message saying we got the order.
+
+125
+00:08:15,050 --> 00:08:18,200
+We initialized a random number variable between one and 12.
+
+126
+00:08:19,070 --> 00:08:21,480
+We initialize the message to be an empty string.
+
+127
+00:08:21,500 --> 00:08:23,570
+We initialize success to be false.
+
+128
+00:08:24,830 --> 00:08:29,840
+And then we decide whether or not we actually made the pizza successfully and update our three counters.
+
+129
+00:08:30,050 --> 00:08:32,840
+Then we print out another message saying We're trying to make it.
+
+130
+00:08:33,650 --> 00:08:39,440
+We delay a little bit some random number of seconds, and then we decide what message and success are
+
+131
+00:08:39,440 --> 00:08:41,810
+going to be based upon the value of R&amp;D.
+
+132
+00:08:42,350 --> 00:08:43,460
+So that's where we are so far.
+
+133
+00:08:44,000 --> 00:08:51,220
+So what we need to do now in this situation is to return a pizza order, a pointer to a pizza order,
+
+134
+00:08:51,230 --> 00:08:53,060
+as you can see right here in line 32.
+
+135
+00:08:53,330 --> 00:08:55,820
+Okay, so let's return it.
+
+136
+00:08:57,350 --> 00:09:03,020
+We can say P, which for pizza order is assigned the value of a type pizza order.
+
+137
+00:09:04,790 --> 00:09:05,870
+When we populate this fields.
+
+138
+00:09:06,770 --> 00:09:15,110
+So pizza number, that of course is the variable pizza number which we incremented by one when we started
+
+139
+00:09:15,110 --> 00:09:15,710
+this function.
+
+140
+00:09:17,420 --> 00:09:24,080
+The message which is the variable MSG and success, which is the variable success.
+
+141
+00:09:24,710 --> 00:09:25,070
+Okay.
+
+142
+00:09:25,790 --> 00:09:30,590
+So we have that p now we need to return it as a pointer, return a reference to P.
+
+143
+00:09:32,390 --> 00:09:37,360
+Now if you think it through the other situation where I have this else clause down here, I actually
+
+144
+00:09:37,380 --> 00:09:42,410
+don't need announce because if everything went according to plan, in other words, our condition,
+
+145
+00:09:42,410 --> 00:09:46,910
+our check up here, if pizza number is less than or equal to our constant number of pizzas, I don't
+
+146
+00:09:46,910 --> 00:09:50,900
+even need the else clause, but I do need to return something and I'm going to return.
+
+147
+00:09:50,900 --> 00:09:57,440
+Here is a pizza order, but the only thing I'll populate it with is the current value of pizza number.
+
+148
+00:09:57,470 --> 00:09:59,540
+The other things don't matter because we're done for the day.
+
+149
+00:10:00,500 --> 00:10:03,680
+So return a reference to and I'll just build it right here.
+
+150
+00:10:04,040 --> 00:10:04,940
+A pizza order.
+
+151
+00:10:05,210 --> 00:10:10,640
+And the only value I'll populate is pizza number, which would be set to pizza number.
+
+152
+00:10:12,530 --> 00:10:16,970
+And if pizza number is greater than ten, then it has to be 11.
+
+153
+00:10:17,120 --> 00:10:22,940
+So the only thing we're returning here is a reference to a pizza order with pizza number populated with
+
+154
+00:10:22,940 --> 00:10:26,960
+a value of 11 because our constant number of pizzas is at the ten.
+
+155
+00:10:28,790 --> 00:10:31,670
+So there is our make pizza function.
+
+156
+00:10:31,760 --> 00:10:38,330
+In the next lecture, we'll actually do something with what we're what we have here on lines 83 through
+
+157
+00:10:38,330 --> 00:10:40,110
+87 this for loop.
+
+158
+00:10:40,160 --> 00:10:40,550
+Okay.
+
+159
+00:10:40,880 --> 00:10:45,440
+So we're getting closer to being able to use that select statement I talked about in the last lecture.

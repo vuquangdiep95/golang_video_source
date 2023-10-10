@@ -1,0 +1,511 @@
+1
+00:00:00,760 --> 00:00:04,530
+So let's get started sending email in the background using our routines.
+
+2
+00:00:04,540 --> 00:00:05,760
+We know our mail works.
+
+3
+00:00:05,770 --> 00:00:08,200
+So now I'm going to go back to Mailer.
+
+4
+00:00:08,200 --> 00:00:09,670
+Don, go right here.
+
+5
+00:00:10,390 --> 00:00:14,800
+And actually let's go over to the Roots file first and get rid of that test root because it's just cluttering
+
+6
+00:00:14,800 --> 00:00:16,570
+up my roots and I don't need it anymore.
+
+7
+00:00:16,570 --> 00:00:20,650
+So I'll delete that and save this, which would clean up the imports.
+
+8
+00:00:20,890 --> 00:00:21,430
+And it did.
+
+9
+00:00:21,550 --> 00:00:28,450
+Okay, so let's go back to Mailer Duco and down here we have a comment that says let's read a function
+
+10
+00:00:28,450 --> 00:00:30,580
+to listen for messages on the mailer chain.
+
+11
+00:00:30,730 --> 00:00:31,960
+And that's what we're going to do right now.
+
+12
+00:00:32,620 --> 00:00:39,430
+So what I'll do is declare function and this is going to have the receiver of app pointer to config.
+
+13
+00:00:39,760 --> 00:00:40,210
+Okay?
+
+14
+00:00:40,930 --> 00:00:46,270
+And we'll just call it listen for mail and it's not going to take any parameters.
+
+15
+00:00:46,400 --> 00:00:47,740
+This is going to run in the background.
+
+16
+00:00:47,740 --> 00:00:48,130
+Okay.
+
+17
+00:00:48,190 --> 00:00:50,290
+So we'll put a for loop in here that runs forever.
+
+18
+00:00:50,590 --> 00:00:55,000
+And now we'll use these select statements which we haven't seen for a while, but here we're going to
+
+19
+00:00:55,000 --> 00:00:57,310
+listen to different channels and do different things.
+
+20
+00:00:58,120 --> 00:01:05,860
+So the first case will be we get a message MSG and that comes from so we use the assignment operator
+
+21
+00:01:05,980 --> 00:01:08,830
+it comes from and we'll use a channel.
+
+22
+00:01:09,100 --> 00:01:10,780
+Now what kind of channel are we going to use?
+
+23
+00:01:11,080 --> 00:01:16,300
+Well, we need a channel to listen to and of course we have the MAILER channel up here, but we don't
+
+24
+00:01:16,300 --> 00:01:19,900
+have access to that because we're not using the receiver of type mail.
+
+25
+00:01:20,830 --> 00:01:27,940
+So let's go over to configure go and we'll give this a new field which we'll call Mailer and it's a
+
+26
+00:01:27,970 --> 00:01:29,320
+type mail.
+
+27
+00:01:30,160 --> 00:01:30,480
+Okay.
+
+28
+00:01:30,760 --> 00:01:31,660
+And we'll save that.
+
+29
+00:01:32,320 --> 00:01:34,330
+We'll, of course, want to populate that at some point.
+
+30
+00:01:34,330 --> 00:01:36,760
+But now I can go back to Mailer Dot go.
+
+31
+00:01:37,450 --> 00:01:41,590
+And this will come from Laporte Mailer Dot Miller Channel.
+
+32
+00:01:42,070 --> 00:01:44,740
+So when we get something there, what are we going to do?
+
+33
+00:01:44,770 --> 00:01:49,300
+Well, all we're going to do is send email and we're going to send it in the background.
+
+34
+00:01:49,750 --> 00:02:00,160
+So go app, dot mailer, dot send mail and we'll hand it the message and the channel will give it is
+
+35
+00:02:00,160 --> 00:02:02,530
+app dot mailer dot version.
+
+36
+00:02:03,700 --> 00:02:05,890
+Okay, so that's our first case.
+
+37
+00:02:06,550 --> 00:02:10,450
+Our second case is we tried to send email and something went wrong.
+
+38
+00:02:10,600 --> 00:02:17,200
+So case and in this case we're going to populate a variable error when it receives something on the
+
+39
+00:02:17,200 --> 00:02:19,930
+channel app dot mailer error chain.
+
+40
+00:02:20,770 --> 00:02:23,200
+And that has to have a capital mailer error.
+
+41
+00:02:24,460 --> 00:02:25,390
+That's our second case.
+
+42
+00:02:26,020 --> 00:02:27,190
+And what do we do with this point?
+
+43
+00:02:27,220 --> 00:02:29,530
+Well, here's where you'd actually handle the error.
+
+44
+00:02:29,530 --> 00:02:32,710
+And of course, depending on what your application is, you might do different things.
+
+45
+00:02:33,250 --> 00:02:37,990
+You might send the text to someone, you might notify someone on Slack, whatever the case may be.
+
+46
+00:02:38,530 --> 00:02:46,150
+But all I'm going to do is say app error along the print line and we'll just print out the error.
+
+47
+00:02:47,680 --> 00:02:52,240
+But again, that's the logic that would be specific to a given project.
+
+48
+00:02:52,450 --> 00:02:55,690
+And the last case, there's one more channel we're listening to.
+
+49
+00:02:56,020 --> 00:03:00,720
+This is where we get anything from app, dot, mailer, dot done channel.
+
+50
+00:03:00,970 --> 00:03:06,190
+In other words, we want to stop processing email in the background, so we'll just return in that quits
+
+51
+00:03:06,190 --> 00:03:07,810
+this go routine.
+
+52
+00:03:08,830 --> 00:03:12,520
+So we have this function and of course we need to do something with it.
+
+53
+00:03:12,520 --> 00:03:14,110
+So let's go back to Mango.
+
+54
+00:03:15,430 --> 00:03:16,600
+We're right at the top here.
+
+55
+00:03:17,110 --> 00:03:18,370
+We're going to call a function.
+
+56
+00:03:18,370 --> 00:03:19,300
+It doesn't exist yet.
+
+57
+00:03:19,300 --> 00:03:22,000
+And here's where we have this comment set up mail.
+
+58
+00:03:22,030 --> 00:03:23,230
+And this is in the main func.
+
+59
+00:03:23,950 --> 00:03:27,850
+And the first thing I'll do is I will set up our email.
+
+60
+00:03:28,000 --> 00:03:31,180
+So as I often do call a function that doesn't exist yet.
+
+61
+00:03:31,720 --> 00:03:39,610
+So what I want to populate is in my app variable mailer that's going to come from calling app dot create.
+
+62
+00:03:40,670 --> 00:03:40,990
+Now.
+
+63
+00:03:42,200 --> 00:03:44,150
+Okay, now that function doesn't exist.
+
+64
+00:03:44,150 --> 00:03:44,570
+So let's go.
+
+65
+00:03:44,570 --> 00:03:45,110
+Set it up.
+
+66
+00:03:45,110 --> 00:03:51,500
+Way down here at the bottom of the file, I'll create a new function func with the receiver of app pointer
+
+67
+00:03:51,500 --> 00:03:58,370
+to config and this is going to be called create mail and it takes no arguments, but it returns the
+
+68
+00:03:58,370 --> 00:03:59,000
+type mail.
+
+69
+00:03:59,390 --> 00:03:59,690
+Okay.
+
+70
+00:04:01,000 --> 00:04:02,950
+So first thing I'll do is create channels.
+
+71
+00:04:03,100 --> 00:04:05,170
+The three channels we're going to use in email.
+
+72
+00:04:05,290 --> 00:04:06,310
+So Ericsson.
+
+73
+00:04:09,940 --> 00:04:16,900
+And that will be a sign the value of make a chain that accepts errors then will have Maler channel.
+
+74
+00:04:18,040 --> 00:04:22,390
+And that's a sign the value of making a channel that accepts messages.
+
+75
+00:04:23,680 --> 00:04:27,460
+Okay, now do I want to have it just as an undercover channel?
+
+76
+00:04:27,520 --> 00:04:31,660
+If I do that, it means I can only send or queue up one message at a time.
+
+77
+00:04:32,320 --> 00:04:34,090
+Let's make this a buffer channel.
+
+78
+00:04:34,180 --> 00:04:39,740
+I'll allow 100 messages to be in that particular channel in a given time before blocks.
+
+79
+00:04:39,760 --> 00:04:40,120
+Okay.
+
+80
+00:04:40,930 --> 00:04:47,860
+And then we have Mailer done channel, and that's just make a channel of rules.
+
+81
+00:04:49,690 --> 00:04:53,230
+Now, just like I did in that temporary function we made up, operate a variable.
+
+82
+00:04:53,230 --> 00:04:58,810
+Say, M is a sign the value of the type mail and I'll fill out its various fields.
+
+83
+00:04:59,110 --> 00:05:02,350
+I wish I hadn't deleted that route over in roots now, or I could have copied and pasted.
+
+84
+00:05:02,890 --> 00:05:08,740
+But in any case domain we'll just hard code these and these would come of course, from the environment
+
+85
+00:05:09,160 --> 00:05:11,320
+or command line flags or something like that.
+
+86
+00:05:11,320 --> 00:05:12,490
+But we'll just hard to add them here.
+
+87
+00:05:13,420 --> 00:05:14,530
+Host is local host.
+
+88
+00:05:19,060 --> 00:05:20,740
+Port is 1025.
+
+89
+00:05:23,050 --> 00:05:24,490
+Encryption is none.
+
+90
+00:05:27,500 --> 00:05:39,950
+From name is say info from address is info at my company dot com.
+
+91
+00:05:42,680 --> 00:05:46,130
+And here we're going to have a wait group and we can get that from app dot.
+
+92
+00:05:46,160 --> 00:05:46,440
+Wait.
+
+93
+00:05:47,010 --> 00:05:47,330
+Okay.
+
+94
+00:05:47,630 --> 00:05:50,850
+So we have one point group being handed around in the appropriate places.
+
+95
+00:05:51,890 --> 00:05:54,800
+Eric Chan is Eric Chen just created
+
+96
+00:05:57,530 --> 00:05:57,890
+Maler.
+
+97
+00:05:57,890 --> 00:06:02,300
+Chan is Maler Chan that I just created and done.
+
+98
+00:06:02,300 --> 00:06:04,910
+Chan is done chan right.
+
+99
+00:06:04,940 --> 00:06:06,800
+Mailer dum chan that I created right there.
+
+100
+00:06:07,010 --> 00:06:10,100
+Okay, so that creates the variable at the end.
+
+101
+00:06:10,250 --> 00:06:11,150
+Now I'll just return it.
+
+102
+00:06:12,020 --> 00:06:12,350
+Okay.
+
+103
+00:06:12,800 --> 00:06:17,030
+So let's go back up to our main function right here.
+
+104
+00:06:18,530 --> 00:06:23,900
+I created that mailer and I populated it in the appropriate field in my application config.
+
+105
+00:06:24,110 --> 00:06:31,730
+Now I just start listening for mail, go after this information, and that should be all I have to do
+
+106
+00:06:31,730 --> 00:06:33,560
+to send email in the background.
+
+107
+00:06:33,650 --> 00:06:34,550
+Except, of course.
+
+108
+00:06:35,510 --> 00:06:41,120
+It will be kind of irritating if I actually ran this program right now and thought everything was going
+
+109
+00:06:41,120 --> 00:06:42,350
+to work the way that it should.
+
+110
+00:06:42,500 --> 00:06:45,500
+We have one more change to make over in Mailer w.
+
+111
+00:06:46,940 --> 00:06:48,290
+And it's this one.
+
+112
+00:06:48,680 --> 00:06:52,880
+And I want you to think about what's going to happen when I call send mail.
+
+113
+00:06:52,910 --> 00:06:58,160
+There's one more thing I have to do here, or you're going to run into problems pretty quickly once
+
+114
+00:06:58,160 --> 00:07:00,350
+you start sending email from your application.
+
+115
+00:07:00,790 --> 00:07:00,930
+Okay.
+
+116
+00:07:00,950 --> 00:07:02,270
+So think about that for a moment.
+
+117
+00:07:02,450 --> 00:07:04,670
+What am I forgetting at this point?
+
+118
+00:07:05,900 --> 00:07:08,540
+Hopefully you thought of this.
+
+119
+00:07:09,200 --> 00:07:10,250
+I need to call.
+
+120
+00:07:10,550 --> 00:07:11,240
+Defer.
+
+121
+00:07:11,690 --> 00:07:12,380
+M dot.
+
+122
+00:07:12,380 --> 00:07:15,890
+Wait, dot don't like that.
+
+123
+00:07:16,220 --> 00:07:21,500
+Otherwise, I'm never going to decrement my weight group and we'll never be able to exit the application
+
+124
+00:07:22,190 --> 00:07:26,000
+without finding into its processor ID and killing it the hard way.
+
+125
+00:07:26,060 --> 00:07:27,500
+Okay, so you have to do that.
+
+126
+00:07:28,070 --> 00:07:33,170
+So at this point, the next thing that will make our lives a little bit easier is to write a helper
+
+127
+00:07:33,170 --> 00:07:39,440
+function, just a convenience wrapper that I can that will make sending email as simple as possible.
+
+128
+00:07:39,620 --> 00:07:42,890
+And we'll get started on that in the next lecture, and then we'll try things that.

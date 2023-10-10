@@ -1,0 +1,483 @@
+1
+00:00:00,120 --> 00:00:02,010
+Bạn có lý thuyết về các nhánh.
+
+2
+00:00:02,010 --> 00:00:02,480
+Tại sao.
+
+3
+00:00:02,520 --> 00:00:02,790
+Tại sao.
+
+4
+00:00:02,850 --> 00:00:05,210
+Vâng, loại đầu tiên đã nói về lý do tại sao chúng hữu ích.
+
+5
+00:00:05,230 --> 00:00:10,800
+Đó là ý tưởng về việc giống như công việc này sẽ mang lại hiệu quả cho công việc này, mang lại nhiều chi nhánh hơn thay vì
+
+6
+00:00:10,800 --> 00:00:18,360
+ít thay đổi nhỏ hơn trái ngược với những thay đổi lớn hơn đối với việc hợp nhất chi nhánh và vâng, chúng tôi thậm chí có thể chứng minh
+
+7
+00:00:18,360 --> 00:00:20,670
+tại sao chỉ nhìn những gì đang hoạt động và chủ thì tệ.
+
+8
+00:00:20,670 --> 00:00:26,340
+Bạn có một Tôi thực hiện thay đổi về thuế và đẩy nó sau đó bạn thực hiện thay đổi mà không cần kéo bạn thực hiện thay đổi
+
+9
+00:00:26,400 --> 00:00:27,570
+trong việc cố gắng thúc đẩy.
+
+10
+00:00:27,670 --> 00:00:29,850
+Bạn có thể thấy xung đột xảy ra.
+
+11
+00:00:29,850 --> 00:00:30,690
+Chắc chắn.
+
+12
+00:00:30,690 --> 00:00:30,960
+Được rồi.
+
+13
+00:00:30,990 --> 00:00:38,760
+Vì vậy, bây giờ chúng ta sẽ bắt đầu khám phá lý do tại sao các nhánh lại hữu ích và video trước đây mà chúng ta vừa thực hiện
+
+14
+00:00:38,850 --> 00:00:41,040
+đang nhân bản một dự án công cộng.
+
+15
+00:00:41,040 --> 00:00:41,330
+Phải.
+
+16
+00:00:41,340 --> 00:00:42,800
+Phương tiện Speedie có hoạt động không.
+
+17
+00:00:42,820 --> 00:00:43,010
+Vâng.
+
+18
+00:00:43,020 --> 00:00:50,100
+Và sau đó chúng tôi đã chiến đấu với nó và bây giờ những gì chúng tôi sẽ làm là cả hai chúng tôi sẽ tạo ra những thay đổi giống nhau
+
+19
+00:00:50,100 --> 00:00:55,600
+repo không có chi nhánh và chúng ta sẽ xem điều đó có thể gây ra một số khó khăn như thế nào.
+
+20
+00:00:55,710 --> 00:01:02,700
+Và vì vậy tôi sẽ bắt đầu và tôi sẽ đi đến thiết bị đầu cuối của mình và tôi đang ở trong dự án ngay bây giờ
+
+21
+00:01:02,730 --> 00:01:10,110
+và bên trong đó tôi có bài kiểm tra đó tt và tôi sẽ mở nó ra và biên tập viên của tôi.
+
+22
+00:01:10,310 --> 00:01:15,810
+Vì vậy, bài kiểm tra Nano văn bản văn bản t văn bản không văn bản D.
+
+23
+00:01:16,350 --> 00:01:20,820
+Và đó là ở đây và sau đó tôi sẽ thêm một số thay đổi.
+
+24
+00:01:20,820 --> 00:01:24,880
+Và vì vậy tôi vừa thêm nó từ Todd.
+
+25
+00:01:24,880 --> 00:01:28,620
+Giống như đó là những gì tôi vừa thêm điều khiển X lưu nó.
+
+26
+00:01:28,620 --> 00:01:29,220
+Và.
+
+27
+00:01:29,640 --> 00:01:35,140
+Và sau đó, trước khi tôi lưu nó, Daniel sẽ mở nó ra và anh ấy cũng sẽ thêm một số thứ mà bạn có thể
+
+28
+00:01:35,140 --> 00:01:36,390
+xem những gì tôi trông giống như bây giờ.
+
+29
+00:01:36,390 --> 00:01:40,980
+Bây giờ chúng ta sẽ chuyển sang máy tính của Daniel và anh ấy sẽ mở nó và thay đổi các dự án.
+
+30
+00:01:40,980 --> 00:01:41,090
+Nó.
+
+31
+00:01:41,450 --> 00:01:41,710
+Được rồi.
+
+32
+00:01:41,720 --> 00:01:47,140
+Tôi chỉ thật nhanh ngả theo sự đi đến một người thân yêu thay vì B Ah đại sự.
+
+33
+00:01:47,240 --> 00:01:47,910
+Điều đó thật tuyệt vời.
+
+34
+00:01:47,940 --> 00:01:49,350
+Và tôi muốn cộng tác viên.
+
+35
+00:01:49,380 --> 00:01:56,890
+Vì vậy, bây giờ tôi được thiết lập với tư cách là cộng tác viên hoặc như tài khoản của tôi hoặc Chúa biết đó là cộng tác viên.
+
+36
+00:01:56,890 --> 00:02:01,750
+Và vì vậy tôi có thể mở một trình soạn thảo văn bản và
+
+37
+00:02:04,900 --> 00:02:12,910
+Tôi có thể mở tệp văn bản đó mở tệp văn bản đó mà bạn thấy tệp văn bản của anh ấy không có thay đổi của tôi nhưng tôi chưa đẩy
+
+38
+00:02:12,910 --> 00:02:14,890
+anh ấy, tôi thậm chí còn chưa lưu anh ấy trên máy của mình.
+
+39
+00:02:15,040 --> 00:02:15,830
+Vì vậy, đi cho nó.
+
+40
+00:02:15,880 --> 00:02:16,630
+Bạn đang ở chuỗi của bạn.
+
+41
+00:02:16,660 --> 00:02:19,000
+Vì vậy, tôi có thể nói oh tôi muốn sửa chữa điều đó.
+
+42
+00:02:19,000 --> 00:02:20,050
+Đó là một sai lầm.
+
+43
+00:02:20,050 --> 00:02:23,440
+Nó chỉ nên là một số văn bản chứ không phải một số văn bản t.
+
+44
+00:02:23,440 --> 00:02:31,090
+Vì vậy, nếu tôi lưu nó và có thể thêm một số nội dung bổ sung, một số văn bản khác và đặt tên của bạn sau đó.
+
+45
+00:02:31,110 --> 00:02:35,480
+Chúng tôi biết rằng một từ tôi chỉ cần đi và nói điều đó.
+
+46
+00:02:35,510 --> 00:02:36,860
+Vì vậy, nó là an toàn bây giờ.
+
+47
+00:02:36,870 --> 00:02:46,170
+Và vì vậy tôi đã cứu mạng mình, bạn hãy đẩy ngay bây giờ và hãy nhấn và đẩy nó. Tôi có thể lấy số liệu thống kê ở đây, hãy thêm tệp đó
+
+48
+00:02:46,170 --> 00:02:46,990
+đặc biệt.
+
+49
+00:02:47,010 --> 00:02:47,820
+Đó là một lựa chọn khác.
+
+50
+00:02:47,820 --> 00:02:52,980
+Tùy chọn là bạn có thể đặt tên cho các tệp bạn đang thêm nhưng sau đó bạn phải liệt kê tất cả chúng.
+
+51
+00:02:53,100 --> 00:03:01,550
+Vì vậy, nó không có màu xanh lục, nó đã được sửa đổi, nó có thể được thêm Mitt và cố định loại O
+
+52
+00:03:04,630 --> 00:03:08,750
+vì vậy nếu tôi gặp lại trạng thái thì nó vẫn còn trên máy của tôi.
+
+53
+00:03:08,770 --> 00:03:11,770
+Tôi đã có cam kết đó nhưng nó vẫn chưa được đẩy.
+
+54
+00:03:11,800 --> 00:03:21,640
+Vì vậy, nếu tôi được đẩy thì thay đổi này bởi vì nó nói để nhận được các lượt đẩy mà tôi có thể đi ngay bây giờ.
+
+55
+00:03:21,640 --> 00:03:26,060
+Tôi có thể đến đây trong 21 giây được trả tiền.
+
+56
+00:03:26,230 --> 00:03:26,920
+Ôi trời.
+
+57
+00:03:26,930 --> 00:03:30,290
+Giữa chừng tôi có thể thấy một số văn bản tại T.
+
+58
+00:03:30,370 --> 00:03:36,190
+Và nó đến ngay đây và bây giờ tôi quay lại hồ sơ của mình và tôi sẽ lưu hồ sơ của mình.
+
+59
+00:03:36,190 --> 00:03:41,160
+Vì vậy, tôi sẽ viết tên tập tin khi công nghệ bắt đầu từ những năm 60 và bây giờ hãy tiết kiệm.
+
+60
+00:03:41,620 --> 00:03:48,970
+Và nếu chúng tôi xem đúng tệp của tôi, bạn có thể thấy tệp của tôi có một số văn bản t và thêm một số thay đổi từ Todd.
+
+61
+00:03:48,970 --> 00:03:55,080
+Không có gì về việc chỉnh sửa hiệu ứng của Daniel làm mất đi một số văn bản t và lời thoại của anh ấy rõ ràng không có ở đó
+
+62
+00:03:55,090 --> 00:03:56,800
+chỉ trên máy của tôi.
+
+63
+00:03:56,800 --> 00:04:07,030
+Vì vậy, tôi sẽ thêm một dấu gạch ngang và nhận được một dấu gạch ngang cam kết và ông chủ của tôi là một người cứng rắn, không kiêu hãnh, không phải là một mệnh lệnh tốt
+
+64
+00:04:07,060 --> 00:04:07,600
+tin nhắn
+
+65
+00:04:10,060 --> 00:04:20,200
+thêm một dòng mới vào tệp văn bản và sau đó nhấn và khi tôi nhấn, nó sẽ báo từ chối không thành công
+
+66
+00:04:20,200 --> 00:04:26,950
+đẩy một số rap để nhận các bản cập nhật bị từ chối vì các nhóm làm việc từ xa mà bạn không có cục bộ, đây là
+
+67
+00:04:26,950 --> 00:04:31,780
+thường do một kho lưu trữ khác đẩy đến cùng một giới thiệu, trước tiên bạn có thể muốn tích hợp điều khiển từ xa
+
+68
+00:04:31,780 --> 00:04:38,590
+các thay đổi được kéo trước khi đẩy lại xem biết về hộ chiếu và được đẩy để biết chi tiết, vậy bạn sẽ làm gì
+
+69
+00:04:38,590 --> 00:04:42,640
+khuyên chúng ta nên làm theo những hướng dẫn đó vào thời điểm này để tốt hơn là bị kéo nếu bị kéo là
+
+70
+00:04:42,640 --> 00:04:51,770
+bước đầu tiên và do đó, hợp nhất tự động không thành công, sửa xung đột và sau đó cam kết kết quả để chúng tôi xuất hiện
+
+71
+00:04:51,770 --> 00:04:56,780
+văn bản xung đột vì vậy khi bạn kéo đôi khi có thể tìm ra nó.
+
+72
+00:04:56,900 --> 00:05:01,490
+Vì vậy, ví dụ nếu tôi chỉ xóa chữ T đó mà không thêm nhiều dòng thì có lẽ tôi đã tìm ra nó
+
+73
+00:05:01,490 --> 00:05:06,140
+ra vì tôi đã thay đổi dòng mà anh ấy thay đổi không có hiệu lực và anh ấy đã thay đổi dòng có thể
+
+74
+00:05:06,140 --> 00:05:11,540
+trên thực tế, nó sẽ có thể tự động hợp nhất nhưng vì tôi đã thêm một số thứ và anh ấy
+
+75
+00:05:11,540 --> 00:05:16,130
+đã thêm một số dòng ở cuối tệp get không thể tự động tìm ra.
+
+76
+00:05:16,130 --> 00:05:23,150
+Vì vậy, nó cho anh ta biết có xung đột trong văn bản 2016 và nếu anh ta không nhận được trạng thái, nó sẽ hiển thị
+
+77
+00:05:23,150 --> 00:05:27,430
+he that it's well nó nói cả chữ đã sửa ở T T.
+
+78
+00:05:28,070 --> 00:05:32,240
+Vì vậy, bây giờ nếu anh ấy mở văn bản ra, anh ấy có thể thấy mâu thuẫn.
+
+79
+00:05:32,240 --> 00:05:45,170
+Vì vậy, với văn bản đó, bạn có thể thấy get thêm xung đột theo cách khá kỳ lạ này, nó có một loạt
+
+80
+00:05:45,170 --> 00:05:49,910
+ít hơn khoa học và sau đó bạn là Kurt và sau đó là gì trên máy của chính bạn.
+
+81
+00:05:49,940 --> 00:05:54,980
+Vì vậy, trong trường hợp này, đầu thường có nghĩa là nơi bạn hiện đang làm việc và sau đó nó có một số bằng nhau
+
+82
+00:05:54,980 --> 00:06:00,140
+các dấu hiệu trong quyền lực và dưới cùng, nó có một loạt các dấu hiệu lớn hơn và một số cam kết.
+
+83
+00:06:00,140 --> 00:06:03,260
+Vì vậy, đây là năm nên công cụ ở đây là như vậy.
+
+84
+00:06:03,500 --> 00:06:04,230
+Đó là nhận xét của bạn.
+
+85
+00:06:04,240 --> 00:06:05,030
+KHÔNG.
+
+86
+00:06:05,440 --> 00:06:06,110
+ĐƯỢC RỒI.
+
+87
+00:06:06,200 --> 00:06:09,730
+Và sau đó, cái đầu hầu như luôn luôn là những gì bạn đã tự làm.
+
+88
+00:06:09,750 --> 00:06:14,520
+Vâng, để khắc phục điều này, tôi thực sự chỉ cần bắt đầu chỉnh sửa tệp này và lưu nó đúng cách.
+
+89
+00:06:14,560 --> 00:06:21,000
+Vì vậy, hãy loại bỏ điều đó tôi đưa ra điều này, tôi nói loại bỏ điều đó và sau đó tôi xuống đây và tôi loại bỏ
+
+90
+00:06:21,000 --> 00:06:25,350
+cái này và sau đó tôi xuống đây và tôi thoát khỏi cái đó
+
+91
+00:06:29,050 --> 00:06:31,410
+và tôi nghĩ đó là những gì chúng tôi muốn tập tin trông như thế nào.
+
+92
+00:06:31,420 --> 00:06:39,070
+Vì vậy, tôi điều khiển X và sau đó tôi nhấn y để lưu nó và tôi nhấn enter và tôi nhận được cập nhật trạng thái mà bạn nhận được chỉ số
+
+93
+00:06:39,070 --> 00:06:43,530
+nó vẫn nói rằng đó là cuốn sách cả những hạt giống đã sửa đổi, bạn nhận được hạt giống, bạn nhận được thêm vào đó.
+
+94
+00:06:43,910 --> 00:06:48,170
+Bạn thêm tên tệp đó hoặc gạch ngang a.
+
+95
+00:06:48,350 --> 00:06:50,750
+Bây giờ nếu bạn nhận được trạng thái, nó sẽ nói.
+
+96
+00:06:51,450 --> 00:06:56,430
+Đây là những thay đổi được cam kết, vì vậy bạn chỉ cần nhận được cam kết mà không cần gạch ngang.
+
+97
+00:06:56,540 --> 00:06:57,250
+Được rồi.
+
+98
+00:06:57,500 --> 00:06:58,110
+Cho tôi biết tại sao.
+
+99
+00:06:58,370 --> 00:07:04,520
+Vì vậy, khi bạn làm được điều này, hãy tạo một cam kết hợp nhất và sau đó cam kết hợp nhất có một thông báo mặc định
+
+100
+00:07:04,520 --> 00:07:05,200
+đã.
+
+101
+00:07:05,360 --> 00:07:08,890
+Vì vậy, bạn có thể thêm dấu gạch ngang M và đặt nó vào thông báo tùy chỉnh cho cam kết hợp nhất này.
+
+102
+00:07:08,900 --> 00:07:14,500
+Nhưng thông báo mặc định thường tốt cho việc hợp nhất tài liệu sửa lỗi xung đột.
+
+103
+00:07:14,660 --> 00:07:19,070
+Vì vậy, nó thực sự sẽ vẫn mở trình chỉnh sửa của bạn nhưng nó đã có thông báo mặc định nên bạn chỉ cần
+
+104
+00:07:19,070 --> 00:07:19,880
+cựu biên tập viên.
+
+105
+00:07:19,910 --> 00:07:27,650
+Vì vậy, trong trường hợp này, đó là một vim nên tôi tin là như vậy và bạn sẽ thoát khỏi cuộc gọi của mình và Q Yeah.
+
+106
+00:07:27,750 --> 00:07:34,710
+Vì vậy, bây giờ nếu bạn đồng ý ngay bây giờ nếu bạn nhận được các trạng thái, bạn có thể thấy rằng nó nhận được điều đó cho thấy nó đã được cam kết
+
+107
+00:07:34,710 --> 00:07:35,470
+và bạn đẩy.
+
+108
+00:07:36,010 --> 00:07:43,060
+Vì vậy, đó là một quá trình tốn nhiều công sức khi bạn xuất hiện xung đột, bạn phải mở tệp theo cách thủ công
+
+109
+00:07:43,060 --> 00:07:45,120
+sửa chữa nó sau đó bạn phải.
+
+110
+00:07:45,160 --> 00:07:45,910
+Phần khó nhất.
+
+111
+00:07:45,910 --> 00:07:46,860
+Ra khỏi chúng.
+
+112
+00:07:47,070 --> 00:07:47,940
+Đúng.
+
+113
+00:07:48,300 --> 00:07:49,950
+Bạn đã đi họ.
+
+114
+00:07:50,240 --> 00:07:51,480
+Và sau đó bạn đẩy nó.
+
+115
+00:07:51,500 --> 00:07:58,810
+Vì vậy, hãy quay lại máy của tôi ngay bây giờ nếu tôi làm mới trang này, bây giờ tôi có thể thấy trang đã hợp nhất Chase đã hợp nhất này
+
+116
+00:07:59,180 --> 00:08:06,970
+4 và thêm các nhánh giúp chúng tôi tránh những xung đột đó và chúng ta sẽ nói về ý tưởng của các nhánh
+
+117
+00:08:06,970 --> 00:08:12,490
+bạn muốn thực hiện nhiều nhánh hơn so với các lần xác nhận cuối cùng và nhỏ hơn trái ngược với các lệnh lớn hơn khi bạn
+
+118
+00:08:12,490 --> 00:08:17,080
+làm việc với mọi người theo cách bạn thấy mọi người đang làm gì thường xuyên hơn.
+
+119
+00:08:17,080 --> 00:08:17,930
+Đúng vậy.
+
+120
+00:08:17,950 --> 00:08:20,100
+Và ít xung đột và ít xung đột hơn.
+
+121
+00:08:20,140 --> 00:08:21,540
+Được rồi, chúng ta sẽ làm video tiếp theo.

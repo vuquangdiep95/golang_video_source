@@ -1,0 +1,703 @@
+1
+00:00:00,660 --> 00:00:07,530
+So far, we have two host services were actually performing checks on, one is HTP, the unencrypted
+
+2
+00:00:07,530 --> 00:00:11,100
+Web server connection, and the other one is the encrypted Web server connection.
+
+3
+00:00:11,460 --> 00:00:12,850
+And we want to add a third case.
+
+4
+00:00:12,960 --> 00:00:15,650
+So I'll do the same thing I did last time and we'll get started here.
+
+5
+00:00:16,440 --> 00:00:24,930
+I will copy and paste that changed that to SSL certificate, which is a constant with the idea of three,
+
+6
+00:00:25,200 --> 00:00:29,070
+which matches the appropriate entry in the services table in the database.
+
+7
+00:00:29,610 --> 00:00:32,520
+And I don't want to test TDB for host.
+
+8
+00:00:32,730 --> 00:00:37,890
+I want to test SSL for host, which doesn't exist yet, but that's no problem.
+
+9
+00:00:37,890 --> 00:00:38,730
+We'll go created.
+
+10
+00:00:38,730 --> 00:00:39,750
+So I'll copy the name.
+
+11
+00:00:40,740 --> 00:00:45,090
+Go down here and I'll put it just after the one we made a few minutes ago.
+
+12
+00:00:45,450 --> 00:00:47,640
+Func paste the name.
+
+13
+00:00:47,850 --> 00:00:55,080
+It takes one one parameter URL which is a string and it returns a string kind of string.
+
+14
+00:00:56,040 --> 00:00:58,410
+OK, so we've got that created.
+
+15
+00:00:58,920 --> 00:01:01,530
+It's not returning anything right now, so we still have an error.
+
+16
+00:01:01,770 --> 00:01:08,450
+But this begs the question, how precisely does one test an SSL certificate from go?
+
+17
+00:01:09,060 --> 00:01:14,040
+Well, it turns out this is a problem I ran into a few years ago, and I'm going to show you a GitHub
+
+18
+00:01:14,040 --> 00:01:15,000
+repository.
+
+19
+00:01:15,000 --> 00:01:19,370
+And the link to this repository is right in the course resources for this lecture.
+
+20
+00:01:20,190 --> 00:01:21,120
+This is a plug in.
+
+21
+00:01:21,130 --> 00:01:25,680
+I wrote free server monitoring system called Nagios or possibly Nagios.
+
+22
+00:01:25,680 --> 00:01:28,920
+I'm not sure how to pronounce it and I don't use that system anymore.
+
+23
+00:01:29,400 --> 00:01:36,780
+But at the time, Nagios didn't support checking HTTP to Connexions or SSL certificates, at least not
+
+24
+00:01:36,780 --> 00:01:37,440
+that I could find.
+
+25
+00:01:37,440 --> 00:01:39,930
+So I wrote my own little plugin for it and I wrote it and go.
+
+26
+00:01:40,620 --> 00:01:44,190
+And as you can see, it's been a few years since this was worked on it all.
+
+27
+00:01:44,190 --> 00:01:50,190
+The last time I did was added a check for individual pages and this does more than test SSL certificates,
+
+28
+00:01:50,430 --> 00:01:51,540
+but let's see how it works.
+
+29
+00:01:51,540 --> 00:01:58,980
+So I'm going to copy the GitHub link and I'll go to my terminal window, make sure I'm on my desktop.
+
+30
+00:01:58,980 --> 00:02:00,360
+I am, and I'll clone that.
+
+31
+00:02:02,490 --> 00:02:06,990
+And it's been a while since I've looked at this, so I'm not actually sure how it works, but I'll change
+
+32
+00:02:06,990 --> 00:02:07,920
+into its directory.
+
+33
+00:02:08,580 --> 00:02:10,770
+Now, let's go look at the reedman I left for myself.
+
+34
+00:02:11,790 --> 00:02:12,900
+So here's how you build it.
+
+35
+00:02:13,080 --> 00:02:14,070
+So I'll copy this.
+
+36
+00:02:16,050 --> 00:02:21,620
+And paste that in here, and that should build it, there's my executable and how does one execute it?
+
+37
+00:02:22,410 --> 00:02:33,600
+So you specify the binary name, the hostname and dash cert, so I should be able to go check HDB to
+
+38
+00:02:34,200 --> 00:02:36,990
+host, which I'll just check Google dot com.
+
+39
+00:02:39,660 --> 00:02:41,580
+And I just want the certificate details.
+
+40
+00:02:41,610 --> 00:02:47,280
+And this should give me something back in the format that Nagios expects to find it and I can't remember
+
+41
+00:02:47,280 --> 00:02:48,860
+what that is, but we're about to find out.
+
+42
+00:02:49,940 --> 00:02:57,890
+OK, Google dot com Port 443 expiring in sixty two days, so that looks like it will do exactly what
+
+43
+00:02:57,890 --> 00:02:58,310
+I want.
+
+44
+00:02:58,370 --> 00:02:59,750
+Now let's see how the code works.
+
+45
+00:03:00,740 --> 00:03:03,230
+OK, so it looks like I have a main go file.
+
+46
+00:03:03,240 --> 00:03:03,730
+Of course.
+
+47
+00:03:03,740 --> 00:03:04,500
+Let's look at that.
+
+48
+00:03:05,540 --> 00:03:07,370
+So there are the imports.
+
+49
+00:03:07,610 --> 00:03:11,900
+There's a function scan host that does something that looks like that's what I'm going to have to use.
+
+50
+00:03:11,900 --> 00:03:12,890
+But we'll check in a minute.
+
+51
+00:03:14,210 --> 00:03:16,910
+We get some flags, we pass them.
+
+52
+00:03:16,940 --> 00:03:18,380
+We do some validation.
+
+53
+00:03:19,410 --> 00:03:25,890
+And here, scanning an SSL certificate for expiry date, and that uses the certificate utils, so we
+
+54
+00:03:25,890 --> 00:03:26,950
+probably need that.
+
+55
+00:03:26,970 --> 00:03:30,380
+Let's go back to the top and see what's in certificate utils.
+
+56
+00:03:30,930 --> 00:03:33,330
+So there's a test file and there's a go file.
+
+57
+00:03:35,140 --> 00:03:42,610
+OK, I'm just going to copy all of this, select all copy and go back to my EDEK because I know I need
+
+58
+00:03:42,610 --> 00:03:44,620
+that package and I'll just put it in as a package.
+
+59
+00:03:45,040 --> 00:03:54,640
+So under my internal I'll create a new directory, which I will call certificate utils.
+
+60
+00:03:56,290 --> 00:04:03,040
+And inside of that, I'll put a new go file called Certificate utils Dongo.
+
+61
+00:04:04,180 --> 00:04:09,820
+And I will select all and paste over top of this and see if it gives me any errors.
+
+62
+00:04:13,240 --> 00:04:14,260
+No, looks good.
+
+63
+00:04:14,350 --> 00:04:15,610
+OK, so I have that important.
+
+64
+00:04:16,150 --> 00:04:23,470
+Let's go back to perform checks, stock, go and see exactly what I do when I scan a an SSL certificate.
+
+65
+00:04:23,470 --> 00:04:25,210
+So I go back to the mango.
+
+66
+00:04:27,210 --> 00:04:29,340
+And get down to that statement.
+
+67
+00:04:29,370 --> 00:04:29,850
+There it is.
+
+68
+00:04:31,560 --> 00:04:38,400
+OK, so it looks like I need to scan for an expiry date, I'll copy all of this stuff and I'll copy
+
+69
+00:04:38,400 --> 00:04:42,570
+this call to scan host to and I'll paste that in there.
+
+70
+00:04:44,810 --> 00:04:52,130
+OK, and we don't have a host pointer that must be the euro, but what format that you will need to
+
+71
+00:04:52,130 --> 00:04:52,580
+be in?
+
+72
+00:04:52,610 --> 00:04:53,400
+Let's find out.
+
+73
+00:04:53,750 --> 00:04:55,160
+So we're getting a euro.
+
+74
+00:04:56,190 --> 00:04:59,460
+And we need it without the HDP or HDP.
+
+75
+00:04:59,620 --> 00:05:05,480
+OK, so we need to just as we did up here, we need to get rid of let me get rid of that long line.
+
+76
+00:05:05,910 --> 00:05:07,830
+We need to sanitize the Eurail coming in.
+
+77
+00:05:07,840 --> 00:05:11,070
+We need to strip off the prefix.
+
+78
+00:05:11,070 --> 00:05:18,170
+So if string's has prefix you IRL and I'm looking for HDP Collins.
+
+79
+00:05:20,810 --> 00:05:29,630
+Then I want to change your URL to be equal to string's don't replace and I'm going to replace you url
+
+80
+00:05:30,260 --> 00:05:36,590
+HGP Colon's with nothing everywhere and then I'll copy this.
+
+81
+00:05:38,170 --> 00:05:42,310
+And paste it because you are all might have been entered as HTP.
+
+82
+00:05:44,050 --> 00:05:47,250
+All right, that should sanitize the part where we're actually getting the euro.
+
+83
+00:05:48,400 --> 00:05:53,110
+Now, before I call scan host, I need to put some information in here.
+
+84
+00:05:53,650 --> 00:06:00,080
+Let me create my message and new status variables, both of which are type string.
+
+85
+00:06:01,270 --> 00:06:04,230
+OK, now let's go back and see what that scan House looks like.
+
+86
+00:06:04,960 --> 00:06:06,160
+So scan host.
+
+87
+00:06:06,160 --> 00:06:06,840
+Where's that?
+
+88
+00:06:07,120 --> 00:06:11,580
+That is right on line 19.
+
+89
+00:06:11,590 --> 00:06:12,880
+So let's go go look at that.
+
+90
+00:06:13,900 --> 00:06:15,190
+Copy this whole function.
+
+91
+00:06:17,110 --> 00:06:21,710
+And I'll paste it right before the function I'm writing right now, OK?
+
+92
+00:06:22,420 --> 00:06:23,770
+Any other changes there?
+
+93
+00:06:24,220 --> 00:06:24,610
+No.
+
+94
+00:06:24,790 --> 00:06:27,660
+We'll go back and look at the actual code and see what all this does in a little bit.
+
+95
+00:06:27,670 --> 00:06:30,330
+But first of all, let me get something in there so we have something to work with.
+
+96
+00:06:31,030 --> 00:06:33,700
+So after we scan the host down here.
+
+97
+00:06:36,780 --> 00:06:41,880
+We have this big four statement, I don't care about the Irish channel, so ignore that.
+
+98
+00:06:43,580 --> 00:06:46,190
+We scan the host and let's just paste that in.
+
+99
+00:06:46,380 --> 00:06:51,800
+OK, so scan host takes are you Earl?
+
+100
+00:06:51,830 --> 00:06:57,170
+It takes the certificate details channel, which we created up here, and it takes the errors channel,
+
+101
+00:06:57,170 --> 00:06:58,090
+which we're ignoring.
+
+102
+00:06:58,430 --> 00:07:02,060
+OK, and I could probably get rid of that, but I'll leave it there for right now.
+
+103
+00:07:02,630 --> 00:07:05,930
+Then we go through all of the entries in that channel.
+
+104
+00:07:07,920 --> 00:07:14,400
+And it has a length of a maximum of one thing at a time, so we'll never, never do more than one certificate
+
+105
+00:07:14,400 --> 00:07:14,800
+at a time.
+
+106
+00:07:14,820 --> 00:07:15,330
+Perfect.
+
+107
+00:07:15,540 --> 00:07:20,460
+OK, so after we do that, we check to see does it expire soon?
+
+108
+00:07:20,470 --> 00:07:23,520
+If it does, I'm not going to create the variable message.
+
+109
+00:07:23,520 --> 00:07:24,990
+I'm going to assign this to it.
+
+110
+00:07:25,380 --> 00:07:26,780
+And that will give me my message.
+
+111
+00:07:27,330 --> 00:07:31,740
+We don't care about the errors channel and we don't care about the messages thing because that's very
+
+112
+00:07:31,740 --> 00:07:35,010
+specific to Nagios in the second case.
+
+113
+00:07:36,910 --> 00:07:42,950
+We want to do this, so in this case, a certificate is expiring in less than seven days.
+
+114
+00:07:43,000 --> 00:07:44,610
+Let's set our status right here.
+
+115
+00:07:44,650 --> 00:07:50,200
+Our new status will be equal to problem, because if your certificates expire in less than seven days,
+
+116
+00:07:50,740 --> 00:07:51,970
+then that's a bit of a problem.
+
+117
+00:07:52,060 --> 00:07:53,740
+Let's go back and look at the original again.
+
+118
+00:07:56,340 --> 00:07:57,820
+Critical and warning, perfect.
+
+119
+00:07:57,840 --> 00:08:00,060
+OK, so this one would be new status.
+
+120
+00:08:01,280 --> 00:08:02,720
+Equals warning.
+
+121
+00:08:04,720 --> 00:08:12,550
+And the last thing would be status, what was the status, their status, OK, so new status.
+
+122
+00:08:14,120 --> 00:08:14,840
+Try that again.
+
+123
+00:08:16,240 --> 00:08:18,190
+New status.
+
+124
+00:08:20,580 --> 00:08:21,450
+Equals healthy.
+
+125
+00:08:23,150 --> 00:08:27,720
+OK, and message, we don't want to create a new variable, we want to change it to that one.
+
+126
+00:08:28,280 --> 00:08:33,530
+So this should build all of our messages appropriately, which means we just need to return things.
+
+127
+00:08:33,530 --> 00:08:35,180
+And what order do we return them in?
+
+128
+00:08:36,650 --> 00:08:39,920
+Message and status, so we'll just return.
+
+129
+00:08:41,650 --> 00:08:43,690
+Message and new status.
+
+130
+00:08:45,770 --> 00:08:46,640
+Now, in theory.
+
+131
+00:08:49,140 --> 00:08:50,040
+That should work.
+
+132
+00:08:50,820 --> 00:08:53,800
+Now, let's go back at Certificate Utils, because I wrote this a while ago.
+
+133
+00:08:53,970 --> 00:09:01,680
+Let's see what it's importing because there were changes and go 16, go one point one six IOU till.
+
+134
+00:09:01,710 --> 00:09:03,270
+OK, let's see where we're using that.
+
+135
+00:09:08,800 --> 00:09:14,140
+I owe util right here, OK, that needs to be changed to Ossy read file.
+
+136
+00:09:15,750 --> 00:09:18,780
+I'll just do it this way so my imports get fixed automatically.
+
+137
+00:09:19,770 --> 00:09:25,020
+OK, that's just the change for go on 16, the IOU till package has been deprecated.
+
+138
+00:09:25,800 --> 00:09:29,670
+So we'll use the OS package, which is what you're supposed to use from now on.
+
+139
+00:09:30,330 --> 00:09:32,460
+OK, let's give this a try and see how it works.
+
+140
+00:09:32,460 --> 00:09:34,650
+So I'll clear this run.
+
+141
+00:09:38,100 --> 00:09:39,700
+And we'll go back and add a new host.
+
+142
+00:09:39,720 --> 00:09:42,010
+So let's go to Vigilante.
+
+143
+00:09:42,750 --> 00:09:44,200
+Let's look at our hosts.
+
+144
+00:09:44,400 --> 00:09:45,270
+We have one.
+
+145
+00:09:45,270 --> 00:09:48,450
+Wahad had a new host and let's use GitHub.
+
+146
+00:09:50,130 --> 00:10:00,240
+And P.S. now it's just GitHub, dotcom hub, dotcom http s Coingate, GitHub, dot com.
+
+147
+00:10:00,540 --> 00:10:02,560
+Don't know its IP address, don't know anything else.
+
+148
+00:10:02,560 --> 00:10:08,550
+So I'll just leave all that empty save and continue and look at managed services and let's turn all
+
+149
+00:10:08,550 --> 00:10:11,610
+three on because I don't think we have actually checked remote hosts at all.
+
+150
+00:10:12,360 --> 00:10:16,440
+So if everything went well there should be three entries under pending and there aren't.
+
+151
+00:10:16,450 --> 00:10:20,140
+So let's check HTP because we've never done it with anything other than a localhost.
+
+152
+00:10:20,140 --> 00:10:21,300
+So let's make sure that it works.
+
+153
+00:10:22,290 --> 00:10:24,540
+OK, that's good, let's try.
+
+154
+00:10:26,310 --> 00:10:27,450
+OK, that worked.
+
+155
+00:10:27,870 --> 00:10:34,530
+Now let's try our SSL certificate and see what we get back GitHub dotcom expiring in four hundred and
+
+156
+00:10:34,530 --> 00:10:37,680
+twenty five days and that should show up under healthy.
+
+157
+00:10:37,710 --> 00:10:39,530
+And it does so there.
+
+158
+00:10:39,550 --> 00:10:42,210
+Now we have a means of checking SSL certificates.
+
+159
+00:10:42,840 --> 00:10:46,830
+Now there's a few things you'd want to change before you actually run this in production.
+
+160
+00:10:46,840 --> 00:10:52,050
+For example, testing in SSL certificate every three minutes seems kind of pointless.
+
+161
+00:10:52,200 --> 00:10:55,800
+So you probably want to change that to once every 30 days or something like that.
+
+162
+00:10:56,100 --> 00:11:00,480
+It's not hurting anything, checking it every three minutes, but it's unnecessary network traffic.
+
+163
+00:11:00,900 --> 00:11:04,220
+But otherwise this seems to be working fairly well.
+
+164
+00:11:05,370 --> 00:11:11,460
+So now we have a means of adding as many hosts as we want to our system, and we have a means of actually
+
+165
+00:11:11,460 --> 00:11:16,560
+displaying the status of three services for any number of hosts.
+
+166
+00:11:16,740 --> 00:11:21,300
+And I think we've done fairly well and we're pushing things through Web sockets exactly as we should.
+
+167
+00:11:21,540 --> 00:11:25,380
+There's a few other things we could add, none of which are critical because you've already learned
+
+168
+00:11:25,380 --> 00:11:28,590
+the concepts, for example, the events page.
+
+169
+00:11:28,620 --> 00:11:32,640
+This is not updated in real time and there's a few other cosmetic things.
+
+170
+00:11:32,640 --> 00:11:37,040
+But by and large, we have covered everything I want to cover in this section of the course.
+
+171
+00:11:37,620 --> 00:11:39,300
+So next we'll go on to testing.
+
+172
+00:11:39,300 --> 00:11:42,680
+How does one write tests for Web sockets?
+
+173
+00:11:42,690 --> 00:11:46,230
+And I'll also do a test for one or two handlers as well.
+
+174
+00:11:46,230 --> 00:11:49,690
+Just to give you a bit of a refresher for that, if it's been a while since you've written them.
+
+175
+00:11:50,100 --> 00:11:50,460
+All right.
+
+176
+00:11:50,460 --> 00:11:52,200
+We'll move on in the next section.

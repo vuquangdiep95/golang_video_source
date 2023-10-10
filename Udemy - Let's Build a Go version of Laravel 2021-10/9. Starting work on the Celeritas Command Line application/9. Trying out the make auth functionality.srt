@@ -1,0 +1,163 @@
+1
+00:00:01,420 --> 00:00:06,280
+So let's try it or make off command, and of course, it's not complete yet, but it should at least
+
+2
+00:00:06,280 --> 00:00:07,840
+create the necessary tables.
+
+3
+00:00:08,340 --> 00:00:15,670
+But before we go too much further here in Austin, go inside the CMD Seelye folder of the celebrities
+
+4
+00:00:15,670 --> 00:00:19,540
+project probably want to put a slash after migration's.
+
+5
+00:00:19,540 --> 00:00:23,980
+Otherwise, we're not going to have valid path names and I will probably create files, but not where
+
+6
+00:00:23,980 --> 00:00:26,140
+we expect and not with the name we expect.
+
+7
+00:00:26,350 --> 00:00:27,460
+OK, so that's out of the way.
+
+8
+00:00:28,360 --> 00:00:33,760
+Now I'll build my seelye, so I open my terminal window and make sure I'm at the root level of my celebrity
+
+9
+00:00:33,760 --> 00:00:34,530
+house project.
+
+10
+00:00:34,540 --> 00:00:39,970
+I am, and I will say, make build underscore C.R and hopefully that will complete without an error.
+
+11
+00:00:41,190 --> 00:00:41,970
+It did.
+
+12
+00:00:42,660 --> 00:00:48,090
+Now I'll switch over to my My App project, and I'll clear the screen here.
+
+13
+00:00:49,170 --> 00:00:51,480
+I'll delete any migrations that are in there right now.
+
+14
+00:00:52,290 --> 00:00:54,750
+So those are now gone.
+
+15
+00:00:56,310 --> 00:01:01,260
+And now I'm going to go back to my database client, make sure I'm connected to my Solaris house, Docker.
+
+16
+00:01:01,260 --> 00:01:04,410
+I am just going to select all of these tables launched.
+
+17
+00:01:04,410 --> 00:01:08,460
+You know, I'll do it as a sequel query and might not be using the same database function as I am.
+
+18
+00:01:09,150 --> 00:01:20,350
+So I will say drop tables, table users cascade and execute that and hopefully delete them.
+
+19
+00:01:20,370 --> 00:01:25,710
+Let's find out about go back to celebrities, refresh those and apparently didn't get rid of remember
+
+20
+00:01:25,710 --> 00:01:26,090
+tokens.
+
+21
+00:01:26,090 --> 00:01:31,140
+So I'll delete that one and I'll get rid of these two as well.
+
+22
+00:01:31,890 --> 00:01:33,810
+I don't know what happened there, but anyway, it doesn't matter.
+
+23
+00:01:34,080 --> 00:01:38,750
+They are now gone, so I emptied my database.
+
+24
+00:01:38,760 --> 00:01:40,860
+So there are no tables in there at all.
+
+25
+00:01:41,250 --> 00:01:43,320
+There's nothing in my migrations folder.
+
+26
+00:01:43,710 --> 00:01:49,380
+So let's try running dot slash celebrities, make off and see if we get it right.
+
+27
+00:01:52,650 --> 00:01:59,400
+So it has my printing to the log file, as it did before, and there are my authentication tables and
+
+28
+00:01:59,400 --> 00:02:05,600
+hopefully those migrations ran, so I'll go back to my database client and refresh this there.
+
+29
+00:02:05,600 --> 00:02:08,580
+There I have my tokens, my users and I remember tokens.
+
+30
+00:02:09,690 --> 00:02:16,620
+OK, now just before we go any further, let's try this make migrate down.
+
+31
+00:02:17,160 --> 00:02:24,720
+And of course, I have to put dot celebrities in front of that dot slash celebrities and see if it deletes
+
+32
+00:02:24,870 --> 00:02:27,210
+those tables the way that I think it's going to.
+
+33
+00:02:28,110 --> 00:02:29,950
+So it's run.
+
+34
+00:02:29,970 --> 00:02:34,620
+Let's go back and have a look at our database client and see what tables are left.
+
+35
+00:02:35,850 --> 00:02:37,140
+And it didn't delete any of them.
+
+36
+00:02:37,410 --> 00:02:38,220
+I wonder why.
+
+37
+00:02:38,430 --> 00:02:42,270
+Let's look at our down migration drop table.
+
+38
+00:02:42,270 --> 00:02:44,530
+If exists, users cascade.
+
+39
+00:02:44,550 --> 00:02:48,650
+So obviously that one which I did for memory isn't the one that I want.
+
+40
+00:02:48,780 --> 00:02:54,210
+Well, this so we can actually manually delete those tables and fix this down migration, and we'll
+
+41
+00:02:54,210 --> 00:02:58,260
+take care of that and start copying files in the next lecture.

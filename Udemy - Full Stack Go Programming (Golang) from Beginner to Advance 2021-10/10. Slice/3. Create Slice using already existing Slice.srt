@@ -1,0 +1,175 @@
+1
+00:00:16,070 --> 00:00:21,740
+Hello and welcome to the golden programming language course in the previous session, we talked about
+
+2
+00:00:21,740 --> 00:00:24,110
+create a slice using an array.
+
+3
+00:00:24,620 --> 00:00:28,370
+In this session, we want to talk about the author slices concepts.
+
+4
+00:00:33,170 --> 00:00:36,710
+Create a slice using already existing slice.
+
+5
+00:00:37,400 --> 00:00:44,830
+It is also be allowed to create a slice from the given the slice for creating a slice from the giving
+
+6
+00:00:44,840 --> 00:00:45,440
+a slice.
+
+7
+00:00:45,680 --> 00:00:52,940
+First, you need to specify the lower and upper bound, which means a slice can take elements from the
+
+8
+00:00:52,940 --> 00:00:56,960
+given a slice, it starting from the lower bound to the upper bound.
+
+9
+00:00:57,380 --> 00:01:03,730
+It does not include the elements, all from the upper bound syntax newest slice.
+
+10
+00:01:04,100 --> 00:01:11,080
+Column equals the slice thin and Escobar kids love column high.
+
+11
+00:01:11,990 --> 00:01:18,650
+These syntax will return and you will slice the default value of the lower bound is zero, and the default
+
+12
+00:01:18,650 --> 00:01:24,020
+value of the upper bound is the total number of the elements present in the given a slice.
+
+13
+00:01:24,860 --> 00:01:30,560
+Now go to this school to illustrate how to create a slice from existing a slice.
+
+14
+00:01:32,820 --> 00:01:42,420
+First, create a slice as a main slice for the example name a slice Cullen equals the square bracket
+
+15
+00:01:43,350 --> 00:01:59,670
+and tight end and initialize value 10, 20, 30, 40, 50, 60 and set and now create other slices from
+
+16
+00:01:59,670 --> 00:02:15,030
+the given a slice first by Vicky Ward declaration via the slice one equals main slice this square bracket
+
+17
+00:02:16,380 --> 00:02:21,750
+and defined lower and upper bound one column five.
+
+18
+00:02:22,740 --> 00:02:27,600
+Go to the next line and create other slices by shorthand declaration.
+
+19
+00:02:27,900 --> 00:02:36,390
+For the example, Slices two column equals main a slice.
+
+20
+00:02:37,860 --> 00:02:50,340
+The square brackets zero column and in the next line is slice three column equals main slice the square
+
+21
+00:02:50,340 --> 00:03:07,500
+brackets and column six and slice for column equals main slice a square brackets and just sit columns.
+
+22
+00:03:08,850 --> 00:03:21,090
+And for the example, Slice five column equals main slice and set the lower end all per pound for the
+
+23
+00:03:21,090 --> 00:03:27,600
+example to column for now displayed as slices by the following code.
+
+24
+00:03:27,810 --> 00:03:30,180
+First main slice if p.
+
+25
+00:03:32,220 --> 00:03:42,330
+I mean, the slice and said the as main a slice go to the next line and display the other slices if
+
+26
+00:03:42,330 --> 00:03:49,570
+P is slice from Colin, said a slice.
+
+27
+00:03:50,910 --> 00:04:09,060
+Well, and it's nice to call in this slice too and display this slice three Slice three column that
+
+28
+00:04:09,510 --> 00:04:15,790
+slice three and display this slice for
+
+29
+00:04:18,220 --> 00:04:23,250
+set the variable Slice four and the end healthy.
+
+30
+00:04:23,940 --> 00:04:33,010
+This Slice five column and sets the variable slice fine.
+
+31
+00:04:33,670 --> 00:04:37,840
+Reformat the code, save the project and execute the code.
+
+32
+00:04:42,200 --> 00:04:43,970
+Now we can see the output.
+
+33
+00:04:44,690 --> 00:04:51,110
+First, we bring the main Islamist, which contains the values from 10 to 17.
+
+34
+00:04:52,490 --> 00:04:59,120
+And then it's nice von, which restores the first index of the main east, lies to the 5th index of
+
+35
+00:04:59,120 --> 00:05:07,820
+the main US lies and contains the values 20 to 50, then this list to which contains the index zero
+
+36
+00:05:07,940 --> 00:05:13,520
+to the end index of the main east lies and hold the value 10 to 70.
+
+37
+00:05:14,270 --> 00:05:21,980
+Now Slide three is contains the zero index of the main east lies to the six index of the main as and
+
+38
+00:05:21,980 --> 00:05:24,170
+holds the values 10 to 60.
+
+39
+00:05:24,890 --> 00:05:28,730
+Now, force is lies that holds on the values of the main slice.
+
+40
+00:05:30,110 --> 00:05:35,570
+And finally, this bias, which towards the second index of the main east, lies to the fault in index
+
+41
+00:05:35,570 --> 00:05:39,470
+of the main stones and contains the values 30 to 40.
+
+42
+00:05:40,970 --> 00:05:48,680
+OK, now we could define the slices using existing a slice in order not to prolong the time of decision.
+
+43
+00:05:48,710 --> 00:05:52,490
+We will finish it and we will continue the content in the next session.
+
+44
+00:05:52,700 --> 00:05:53,200
+Goodbye.

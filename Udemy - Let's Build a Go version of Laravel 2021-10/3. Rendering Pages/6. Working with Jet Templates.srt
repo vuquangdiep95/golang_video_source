@@ -1,0 +1,387 @@
+1
+00:00:01,120 --> 00:00:06,910
+So let's get started working with jet templates, and right now I'm in the My App project and I'm looking
+
+2
+00:00:06,910 --> 00:00:13,160
+at the dart on file, and the very first thing I'm going to do is change my default renderer right here
+
+3
+00:00:13,160 --> 00:00:16,330
+at the very end of the file from go to jet.
+
+4
+00:00:16,780 --> 00:00:23,290
+OK, and then I'll delete Test Jetport Jet because I don't need that anymore, so I'll just delete that.
+
+5
+00:00:24,760 --> 00:00:25,180
+Yes.
+
+6
+00:00:25,210 --> 00:00:30,400
+Move it to the trash and I'll go to my roots file and I'll get rid of this as well.
+
+7
+00:00:30,670 --> 00:00:35,140
+That temporary route we wrote last time just to make sure that everything worked as expected.
+
+8
+00:00:36,190 --> 00:00:42,190
+OK, so now we're back as we were just before the previous lecture, except we've removed the handler,
+
+9
+00:00:42,200 --> 00:00:46,540
+the test handler and the roots file, and we've made that one change in the dart on file.
+
+10
+00:00:47,470 --> 00:00:51,280
+So now let's go to our Reviews folder, and let's get started with jet templates.
+
+11
+00:00:51,370 --> 00:00:51,910
+Right in here.
+
+12
+00:00:51,920 --> 00:00:58,590
+I'm going to create a new folder inside of The View's folder, and I'm going to call it layouts ella
+
+13
+00:00:58,630 --> 00:01:01,610
+y o ut's OK.
+
+14
+00:01:02,230 --> 00:01:09,850
+And inside of layouts, or create a new file called Base Dot Jet, and it will be our base layer.
+
+15
+00:01:09,850 --> 00:01:14,350
+So and if you look at the course resources for this lecture, you'll find the file.
+
+16
+00:01:14,350 --> 00:01:19,600
+You can download code based object, just download it and move it into this folder or copy and paste
+
+17
+00:01:19,600 --> 00:01:24,670
+its contents as I am right now, because there's no point in your watching me, right?
+
+18
+00:01:24,850 --> 00:01:26,440
+Basic jet template.
+
+19
+00:01:26,470 --> 00:01:27,260
+It's very straightforward.
+
+20
+00:01:27,280 --> 00:01:31,420
+This is a simple HTML file with some jet directors on it.
+
+21
+00:01:32,680 --> 00:01:38,860
+Now the next thing I want to do is I'm going to make my life a little bit easier by going here and choosing
+
+22
+00:01:38,860 --> 00:01:41,980
+extensions and searching for jet right there.
+
+23
+00:01:42,700 --> 00:01:47,470
+And you can see the second from the top right now as I search is the jet template engine.
+
+24
+00:01:47,500 --> 00:01:49,120
+Let's try that and see if it works.
+
+25
+00:01:49,150 --> 00:01:50,500
+I've actually never used it before.
+
+26
+00:01:50,530 --> 00:01:51,700
+We're about to find out.
+
+27
+00:01:52,270 --> 00:01:53,110
+So I'll install it.
+
+28
+00:01:54,850 --> 00:01:55,630
+There it is.
+
+29
+00:01:55,960 --> 00:01:56,920
+It's now installed.
+
+30
+00:01:57,430 --> 00:02:00,610
+Now, if I go back to base jet, that's much cleaner.
+
+31
+00:02:01,480 --> 00:02:06,490
+OK, now this is a base layout template, and as you might expect from a good template engine we can
+
+32
+00:02:06,490 --> 00:02:13,270
+actually do includes some yields and all that sort of thing, sort of like blade templates in the Laravel
+
+33
+00:02:13,270 --> 00:02:13,600
+world.
+
+34
+00:02:14,380 --> 00:02:16,780
+Now this is a really simple template.
+
+35
+00:02:17,560 --> 00:02:24,640
+It's a basic HTML file HTML five that imports bootstrap and that has some directives.
+
+36
+00:02:24,820 --> 00:02:30,880
+For example, here on Line eight, I have yield browser title and you'll notice that it has opening
+
+37
+00:02:30,880 --> 00:02:33,030
+and closing parentheses and you do need those.
+
+38
+00:02:33,040 --> 00:02:37,870
+OK, so this is something that I can override on any template that uses this layer.
+
+39
+00:02:38,590 --> 00:02:40,570
+Similarly, down here I have CSC.
+
+40
+00:02:40,570 --> 00:02:46,920
+If I want to have custom CSC on a per page basis, I have the basic content and a word of caution.
+
+41
+00:02:47,050 --> 00:02:50,620
+Don't ever name your content area content.
+
+42
+00:02:50,740 --> 00:02:53,320
+That's a reserved word in the template world.
+
+43
+00:02:53,890 --> 00:02:59,020
+So instead of call it page content and down here, I might have JavaScript on a per page basis.
+
+44
+00:02:59,890 --> 00:03:04,000
+So there is my basic base template for this project.
+
+45
+00:03:04,720 --> 00:03:09,790
+Now, inside of the View Views folder, I'm going to create a new file not in the layouts, but in in
+
+46
+00:03:09,790 --> 00:03:10,600
+the views folder.
+
+47
+00:03:10,960 --> 00:03:13,270
+And I'll call it HomeKit.
+
+48
+00:03:15,300 --> 00:03:21,300
+And let's make sure that this template uses the one we just built, so it extends and this is not a
+
+49
+00:03:21,300 --> 00:03:24,660
+standard go template directive, it's one specific to jet.
+
+50
+00:03:24,960 --> 00:03:31,380
+It extends in double quotes, dot slash layouts, slash they jet.
+
+51
+00:03:31,980 --> 00:03:39,150
+OK, so now it knows that it's going to use that base template and I'll have the block and I'll call
+
+52
+00:03:39,150 --> 00:03:45,750
+it system like that with the quotation, with the double parentheses around it or after it, I'll just
+
+53
+00:03:45,750 --> 00:03:47,520
+say and not put anything in there.
+
+54
+00:03:48,390 --> 00:03:50,310
+And down here, I'll say block.
+
+55
+00:03:50,970 --> 00:03:52,950
+And this one is page content.
+
+56
+00:03:53,960 --> 00:04:02,790
+I'll just leave it empty for now, and I'll fill it in in a minute and then I'll have block Jess.
+
+57
+00:04:05,440 --> 00:04:13,720
+And not surprisingly, and an I'm going to put it in here right now is I'll open up my home page at
+
+58
+00:04:13,720 --> 00:04:18,820
+10 p.m. and I'll copy this stuff right here.
+
+59
+00:04:19,570 --> 00:04:20,680
+OK, so I copy that.
+
+60
+00:04:21,610 --> 00:04:28,560
+Everything is in between the body text, and I'll go back to home jet and I'll paste it in there and
+
+61
+00:04:28,570 --> 00:04:30,900
+then I'll make sure I've got what I actually need in here.
+
+62
+00:04:30,910 --> 00:04:34,960
+So starting with a div container and it's ending with that and what's in my base jet?
+
+63
+00:04:35,800 --> 00:04:40,300
+I have a div container, so all I really need is the call that the innermost column.
+
+64
+00:04:40,300 --> 00:04:46,930
+So I'll get back to home jet and find the inner most, which is this right here?
+
+65
+00:04:47,500 --> 00:04:54,880
+And I'll delete these too, which means I can delete these two and I'll just bring this over to make
+
+66
+00:04:54,880 --> 00:04:56,680
+it format a little bit nicer.
+
+67
+00:04:58,660 --> 00:04:58,960
+OK?
+
+68
+00:04:59,230 --> 00:05:04,330
+And as you can see, this is now very, very easy to work with a page that extends the base layer.
+
+69
+00:05:05,590 --> 00:05:07,720
+Now let's go over to our handlers.
+
+70
+00:05:09,310 --> 00:05:10,330
+Now, let's change this.
+
+71
+00:05:10,600 --> 00:05:15,340
+Instead of saying, Well, you do have to change anything, I don't think I need to change a thing.
+
+72
+00:05:15,520 --> 00:05:17,650
+This should all work.
+
+73
+00:05:17,950 --> 00:05:20,590
+So let's say make stop in our terminal.
+
+74
+00:05:21,610 --> 00:05:22,330
+Make start.
+
+75
+00:05:27,050 --> 00:05:33,530
+And with no other changes, I should be able to reload that page, so let me go back to my browser and
+
+76
+00:05:33,530 --> 00:05:37,910
+go to the top here and get rid of slash jack because that URL doesn't exist anymore.
+
+77
+00:05:37,940 --> 00:05:38,660
+And Chris return.
+
+78
+00:05:39,990 --> 00:05:41,010
+And I have nothing.
+
+79
+00:05:42,870 --> 00:05:46,800
+So we have unresolved block browser title I something.
+
+80
+00:05:47,730 --> 00:05:57,180
+So back to my home, Joe, and we'll put the block browser title, block browser title.
+
+81
+00:05:59,310 --> 00:06:05,580
+And in there, I'll just say celebrities house doesn't matter content and save that now because I'm
+
+82
+00:06:05,580 --> 00:06:06,480
+in development mode.
+
+83
+00:06:06,480 --> 00:06:12,420
+When we set up our jetset at the very couple of lectures ago, I shouldn't have to restart my application.
+
+84
+00:06:12,480 --> 00:06:15,870
+And that's why I put that directive in there, because it makes things a little simpler.
+
+85
+00:06:16,080 --> 00:06:17,460
+So back to my web browser.
+
+86
+00:06:19,690 --> 00:06:24,160
+And there it is now, it says, go templates, let's make it sure it's actually that one because it's
+
+87
+00:06:24,160 --> 00:06:25,090
+not true anymore.
+
+88
+00:06:25,690 --> 00:06:32,500
+We'll go back to Visual Studio code and say Jet templates in Honda Jet.
+
+89
+00:06:32,950 --> 00:06:34,180
+Go reload that page.
+
+90
+00:06:34,930 --> 00:06:35,530
+And there it is.
+
+91
+00:06:35,860 --> 00:06:38,020
+So that works as expected.
+
+92
+00:06:39,580 --> 00:06:45,940
+All right now I'm going to stop developing new code for the next lecture or two, and we'll start writing
+
+93
+00:06:45,940 --> 00:06:48,340
+some tests because we have written any tests at all.
+
+94
+00:06:48,340 --> 00:06:52,630
+And that's generally frowned upon in pretty much any programming language.
+
+95
+00:06:52,870 --> 00:06:58,750
+But particularly when you're dealing with the go, people expect to see tests, particularly employers,
+
+96
+00:06:58,750 --> 00:07:01,360
+even employers who aren't entirely sure what a test is.
+
+97
+00:07:01,540 --> 00:07:06,310
+They look for those files, so we better write some and we'll get started on that in the next election.

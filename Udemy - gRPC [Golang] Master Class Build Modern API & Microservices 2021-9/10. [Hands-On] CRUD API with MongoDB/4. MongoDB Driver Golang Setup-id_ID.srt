@@ -1,0 +1,520 @@
+1
+00:00:00,240 --> 00:00:05,100
+Jadi selanjutnya yang harus kita lakukan hanyalah mengatur driver be mongered untuk program yang bagus.
+
+2
+00:00:05,100 --> 00:00:07,230
+Jadi saya akan membiarkan server berjalan untuk saat ini.
+
+3
+00:00:07,260 --> 00:00:11,260
+Jadi yang harus kita lakukan adalah pengemudi Mago G-B itu merenung.
+
+4
+00:00:11,550 --> 00:00:15,630
+Dan jadi ada driver resmi driver Magdi dengan menjadi.
+
+5
+00:00:15,630 --> 00:00:17,860
+Kami tidak menggunakan LSM.
+
+6
+00:00:17,880 --> 00:00:20,420
+Ada opsi juga bahwa kita tidak menggunakannya.
+
+7
+00:00:20,670 --> 00:00:23,080
+OK jadi kita harus beralih dari yang baik ke yang baik.
+
+8
+00:00:23,160 --> 00:00:24,570
+Lalu apa selanjutnya.
+
+9
+00:00:24,570 --> 00:00:29,200
+Yah pada dasarnya apa yang kita lakukan adalah kita gulir ke bawah dan kita pergi ke instalasi.
+
+10
+00:00:29,400 --> 00:00:32,230
+Dan demikian dikatakan jika Anda menggunakan DEP Anda dapat menjalankan itu dan yakin.
+
+11
+00:00:32,250 --> 00:00:34,380
+Dan kemudian perintah ini tetapi kami tidak menggunakannya per se.
+
+12
+00:00:34,450 --> 00:00:39,620
+Ketika Anda pergi mendapatkan jadi kami hanya dapat menyalin ologist ini ke server karena kami tidak membutuhkannya dan Anda ketik
+
+13
+00:00:39,630 --> 00:00:42,230
+pergi dapatkan dan Anda ketik di sana Anda keluar.
+
+14
+00:00:42,330 --> 00:00:46,170
+Ini pada dasarnya akan memastikan bahwa driver yang baik diinstal.
+
+15
+00:00:46,170 --> 00:00:51,780
+Jadi ketika Google sedang berjalan dan saya hanya ingin sebelumnya jadi instal untuk Anda maka Anda dapat mulai menggunakan
+
+16
+00:00:51,780 --> 00:00:53,940
+yang tidak baik untuk menjadi driver.
+
+17
+00:00:53,940 --> 00:00:54,900
+Sekarang biarkan aku jujur dengan mereka.
+
+18
+00:00:54,940 --> 00:00:56,950
+Driver yang baik sangat sulit digunakan.
+
+19
+00:00:56,970 --> 00:00:59,890
+Dan butuh beberapa saat untuk mencari tahu bagaimana melakukannya dengan benar.
+
+20
+00:00:59,910 --> 00:01:04,640
+Ada beberapa contoh contoh dokumentasi yang dapat Anda lihat di sini contoh kode.
+
+21
+00:01:05,010 --> 00:01:09,120
+Dan mereka sangat membantu dalam memahami cara kerja secara keseluruhan.
+
+22
+00:01:09,300 --> 00:01:14,270
+Tapi apa yang akan saya lakukan di sini dalam kuliah ini akan menjadi sedikit mengatur hal-hal
+
+23
+00:01:14,280 --> 00:01:18,540
+yang saya temukan benar-benar dokumentasi sangat jarang walaupun ada pekerjaan bagus di dalamnya.
+
+24
+00:01:18,810 --> 00:01:25,620
+Dan jika Anda merasa sedikit seperti itu di belakang hanya membuat Anda mengerti bahwa apa yang saya lakukan di sini akan
+
+25
+00:01:25,620 --> 00:01:30,260
+menjadi praktik terbaik atau praktik yang baik setidaknya ketika melakukan hal-hal yang lebih lama.
+
+26
+00:01:30,360 --> 00:01:34,950
+Dan Anda hanya menggunakan kode dan dukungan saya di atasnya dan hanya menggunakannya di masa depan.
+
+27
+00:01:34,980 --> 00:01:41,820
+Hal lain yang ingin Anda lakukan adalah driver Mago DBI menjadi gelap sehingga kita dapat melompat ke dokumentasi dan memahami apa
+
+28
+00:01:41,820 --> 00:01:43,450
+yang terjadi jika kita perlu.
+
+29
+00:01:43,790 --> 00:01:47,140
+Begitu banyak TV yang bagus Anda hanya memasukkan dokumen ke TV yang bagus.
+
+30
+00:01:47,370 --> 00:01:50,710
+Dan untuk ini dokumen-dokumen tersebut disebut dalam format yang disebut Sun.
+
+31
+00:01:50,730 --> 00:01:56,190
+Jadi kita harus melakukan ini hal pertama yang harus kita lakukan adalah terhubung ke Hebei yang bagus dan untuk ini kita
+
+32
+00:01:56,190 --> 00:01:58,620
+hanya akan membuka klien seperti yang mereka lakukan.
+
+33
+00:01:58,620 --> 00:02:05,310
+Jadi yang akan saya lakukan adalah saya hanya akan mengklik salin ini dan membuat klien baru mengatakan kembali ke kode.
+
+34
+00:02:05,720 --> 00:02:11,610
+Jadi kita dapat membuka klien baru Tramon akan segera setelah server mulai misalnya.
+
+35
+00:02:11,610 --> 00:02:14,160
+Jadi kita akan baik-baik saja atau bahkan sebelum itu.
+
+36
+00:02:14,230 --> 00:02:19,070
+Jadi kami akan mulai di sini dan kami akan mengatakan di sini adalah di antara klien yang baik.
+
+37
+00:02:19,290 --> 00:02:23,690
+Jadi sekarang dalam hal koneksi Anda l Anda dapat menghapus foobar karena kami tidak menggunakan
+
+38
+00:02:23,730 --> 00:02:29,490
+dan kata sandi kami sedang mode tidak aman akan menghapus foobar dan kemudian Mangu di sini kami hanya akan mengimpor
+
+39
+00:02:29,850 --> 00:02:35,070
+itu dalam kode kami sehingga tidak ada paksaan sebagai Akhirnya ada konteks yang Anda lakukan kami harus mengimpor
+
+40
+00:02:35,070 --> 00:02:37,030
+juga jadi kami mengimpor ini sekarang.
+
+41
+00:02:37,480 --> 00:02:38,210
+BAIK.
+
+42
+00:02:38,790 --> 00:02:44,340
+Jadi pada dasarnya apa ini yang terhubung ke Mongar berada di localhost 2 7 0 7 yang merupakan apa yang kita
+
+43
+00:02:44,340 --> 00:02:44,710
+mulai.
+
+44
+00:02:44,850 --> 00:02:51,360
+Dan kemudian ada kesalahan akan menyeret itu hanya singkat sehingga akan mencatatnya dan kemudian kita terhubung dan kemudian lagi jika
+
+45
+00:02:52,350 --> 00:02:54,340
+ada kesalahan itu akan mencatatnya.
+
+46
+00:02:54,340 --> 00:03:01,320
+Jadi pada dasarnya setelah ini klien mewakili objek koneksi yang baik maka kita pada
+
+47
+00:03:01,320 --> 00:03:06,470
+dasarnya harus menjalankan database sehingga terhubung ke TV yang bagus.
+
+48
+00:03:06,820 --> 00:03:13,140
+Dan untuk menjalankan basis data Nah yang harus kita lakukan adalah membuka koleksi jadi koleksi itu yang akan kita gunakan
+
+49
+00:03:13,140 --> 00:03:15,110
+jadi mari kita lakukan sekarang.
+
+50
+00:03:15,360 --> 00:03:16,490
+Jadi kita akan menggunakan koleksinya.
+
+51
+00:03:16,500 --> 00:03:24,170
+Dan itu pada dasarnya meja kami di dunia Monga D-B sehingga koleksinya dikumpulkan dari klien.
+
+52
+00:03:24,390 --> 00:03:27,690
+Kemudian kita membuka basis data, kita akan memanggil basis data itu.
+
+53
+00:03:28,200 --> 00:03:33,780
+Dan pada dasarnya jika database tidak ada, itu akan dibuat untuk kita dan koleksi itu sendiri kita
+
+54
+00:03:33,780 --> 00:03:35,170
+sebut saja blog.
+
+55
+00:03:35,230 --> 00:03:39,230
+Jadi apa artinya ini OK dari klien terhubung ke database.
+
+56
+00:03:39,270 --> 00:03:47,040
+D-B saya akan dibuat dan kemudian koleksi bijak menggunakan keinginan Blug dalam koleksi Blug berarti pada dasarnya tabel.
+
+57
+00:03:47,040 --> 00:03:50,450
+Jika Anda berasal dari dunia basis data relasional.
+
+58
+00:03:50,550 --> 00:03:54,000
+Jadi oke di sini kita buka koleksi.
+
+59
+00:03:54,030 --> 00:03:58,640
+Sekarang koleksi ini kami ingin menjadikannya global yang dapat diakses secara global.
+
+60
+00:03:58,650 --> 00:04:04,890
+Jadi yang akan saya lakukan adalah saya membuatnya mudah diakses secara global, jadi saya akan menghapus Kollin.
+
+61
+00:04:04,890 --> 00:04:12,030
+Saya akan menyimpan ini dan jadi kita harus melihat koleksi apa yang mengembalikan koleksi mengembalikan pointer ke koleksi seperti yang
+
+62
+00:04:12,450 --> 00:04:13,450
+kita lihat.
+
+63
+00:04:13,770 --> 00:04:14,550
+Jadi itu yang akan kita lakukan.
+
+64
+00:04:14,550 --> 00:04:20,520
+Kami akan pergi ke server kami dan pergi di bagian paling atas kami akan mendefinisikan VAR.
+
+65
+00:04:20,550 --> 00:04:24,310
+Jadi di sini ular berbisa dan kami akan memanggil koleksi seni ini.
+
+66
+00:04:24,390 --> 00:04:28,260
+Jenisnya adalah penunjuk koleksi dan tidak terdefinisi.
+
+67
+00:04:28,410 --> 00:04:31,470
+Jadi tipe sebenarnya adalah pengumpulan data Mongo.
+
+68
+00:04:31,500 --> 00:04:36,090
+Pada dasarnya ini akan menjadi koleksi yang dapat diakses secara global yang dapat kita gunakan sepanjang program.
+
+69
+00:04:36,240 --> 00:04:38,640
+Ketika kami mulai mengimplementasikan server.
+
+70
+00:04:38,910 --> 00:04:43,670
+Jadi di sini kita pergi, kita telah membuat koleksi menggunakan Madidi dan koleksi bernama Blug.
+
+71
+00:04:43,980 --> 00:04:44,990
+Jadi begitu.
+
+72
+00:04:45,000 --> 00:04:50,930
+Sekarang hal lain yang harus kita lakukan adalah membuat model data definisi data kita.
+
+73
+00:04:50,940 --> 00:04:52,850
+Jadi saya akan memasukkan semuanya ke dalam satu arsip.
+
+74
+00:04:53,070 --> 00:04:55,250
+Anda dapat memisahkan file jika kami mau tetapi bukan itu intinya.
+
+75
+00:04:55,440 --> 00:04:56,610
+Intinya di sini.
+
+76
+00:04:56,670 --> 00:05:00,770
+Jadi kita hanya akan membuat tipe dan itu akan disebut item dan itu adalah struct.
+
+77
+00:05:01,020 --> 00:05:05,000
+Dan item Blug langsung dari database kami.
+
+78
+00:05:05,050 --> 00:05:10,620
+Dan pada dasarnya ini akan menyimpan data Blug kita ke Magdi.
+
+79
+00:05:10,920 --> 00:05:17,660
+Jadi yang harus kita lakukan adalah menentukan tipe masing-masing bidang dan pada dasarnya memetakannya menjadi matahari.
+
+80
+00:05:17,880 --> 00:05:26,160
+Jadi ini adalah kode spesifik yang baik tetapi begitu Id adalah id objek, maka lakukan juga objek itu dengan ID objek tersebut.
+
+81
+00:05:26,280 --> 00:05:31,040
+Dan alasan kami melakukan ini adalah bahwa di Magdi ketika Anda memiliki ID jenisnya adalah ini.
+
+82
+00:05:31,080 --> 00:05:33,690
+Jadi ini adalah hal yang baik untuk menjadi hal yang spesifik.
+
+83
+00:05:33,750 --> 00:05:40,050
+Selanjutnya kita akan memiliki ID penulis yang akan berupa string dan jadi pada dasarnya kita mencocokkan apa yang telah kita buat
+
+84
+00:05:40,140 --> 00:05:41,570
+di Protel yang terpasang.
+
+85
+00:05:41,580 --> 00:05:43,210
+Jadi kita harus mencocokkan ini.
+
+86
+00:05:43,710 --> 00:05:50,830
+Selanjutnya kita akan memiliki konferensi yang merupakan string dan judul yang merupakan string.
+
+87
+00:05:51,600 --> 00:05:55,320
+Jadi di sini kita sudah membuat sesuatu seperti ini tetapi belum selesai.
+
+88
+00:05:55,320 --> 00:05:58,500
+Kami pada dasarnya perlu menambahkan ini.
+
+89
+00:05:58,500 --> 00:06:00,880
+Dan omong-omong tidak ada koma jelas.
+
+90
+00:06:00,900 --> 00:06:02,180
+Hanya aku yang bodoh.
+
+91
+00:06:02,220 --> 00:06:02,780
+BAIK.
+
+92
+00:06:03,090 --> 00:06:08,550
+Jadi pada dasarnya kita harus menjadi sponsor untuk ini dengan baik menggunakan sesuatu yang disebut tag
+
+93
+00:06:08,580 --> 00:06:13,940
+dan tag Anda harus membuka dengan kotak ini kembali centang dan Anda akan menjadi anak.
+
+94
+00:06:14,400 --> 00:06:19,040
+Dan kemudian kita akan memetakannya ke ID dengan mengabaikan kosong.
+
+95
+00:06:19,590 --> 00:06:25,300
+Dan apa artinya ini adalah bahwa bidang ini di sini akan dipetakan ke binatang buas Anda di Bidang bernama
+
+96
+00:06:25,530 --> 00:06:26,550
+garis bawah IGY.
+
+97
+00:06:26,580 --> 00:06:32,280
+Dan jika tidak ada di sini kita akui itu akan melakukan hal yang sama persis untuk ide-ide lain sehingga kita
+
+98
+00:06:32,270 --> 00:06:35,730
+akan memilikinya di lapangan dan itu akan menjadi peta untuk ide-ide lain.
+
+99
+00:06:35,730 --> 00:06:38,920
+Jadi dalam database kami ini akan disebut hari Jumat.
+
+100
+00:06:38,980 --> 00:06:40,330
+Kami melakukannya sekali lagi.
+
+101
+00:06:40,500 --> 00:06:44,070
+Kami akan memiliki bagian di bidang dan yang ini akan disebut konten.
+
+102
+00:06:44,460 --> 00:06:51,090
+Dan akhirnya kita akan memiliki BS lain di lapangan dan ini akan disebut Judul Saya simpan itu dan itu.
+
+103
+00:06:51,090 --> 00:06:51,860
+Sempurna.
+
+104
+00:06:52,140 --> 00:06:58,470
+Jadi di sini kita mulai, kita telah membuat item Blug kita dan sekarang kita dapat menggunakan item blok itu untuk memetakan
+
+105
+00:06:58,470 --> 00:06:59,100
+tubuh manusia.
+
+106
+00:06:59,100 --> 00:07:01,400
+Sekarang ini membuat akses sangat cepat.
+
+107
+00:07:01,470 --> 00:07:05,900
+Ketika kami mulai membuat layanan pertama kami, tetapi ini semua sudah diatur, ini semua untuk mongered.
+
+108
+00:07:06,210 --> 00:07:12,660
+Sekarang kita bisa mencoba hanya terhubung ke blog kita dan akhirnya ketika kita melakukan sesuatu yang ditutup server
+
+109
+00:07:12,660 --> 00:07:15,920
+juga harus menghentikan koneksi kita ke mongered TB.
+
+110
+00:07:15,960 --> 00:07:27,360
+Jadi pada akhirnya saya akan mengatakan kepada Anda bahwa Pangeran Alan menutup koneksi EAB mongered dan begitu juga klien.
+
+111
+00:07:27,370 --> 00:07:35,260
+Itu putuskan sesuatu seperti ini dan konteksnya adalah konteks yang dilakukan.
+
+112
+00:07:35,440 --> 00:07:38,210
+Jadi di sini kita pada dasarnya menutup koneksi mobilitas kita.
+
+113
+00:07:38,250 --> 00:07:40,390
+Sekarang mari kita pastikan semua ini berfungsi.
+
+114
+00:07:40,390 --> 00:07:43,700
+Jadi kita akan menjalankan dan menjalankan server blog.
+
+115
+00:07:43,780 --> 00:07:47,830
+Jadi di sini kita terhubung sehingga layanan bus telah dimulai di mana
+
+116
+00:07:47,830 --> 00:07:50,800
+server mulai kontrol federal melihatnya menutup koneksi Mongo.
+
+117
+00:07:50,800 --> 00:07:55,660
+Sekarang satu-satunya hal yang ingin saya lakukan adalah juga menambahkan sedikit LUGG di sini ketika kita terhubung ke TB
+
+118
+00:07:55,660 --> 00:07:56,310
+yang dicampuri.
+
+119
+00:07:56,680 --> 00:08:06,310
+Jadi kita akan mengatakan menghubungkan ke Mongo D-B dan kemudian layanan Blug akan dimulai segera setelah itu.
+
+120
+00:08:06,310 --> 00:08:07,440
+BAIK.
+
+121
+00:08:07,540 --> 00:08:09,150
+Jadi ini hanya untuk menyeret lebih baik.
+
+122
+00:08:09,150 --> 00:08:11,240
+Jadi mari kita coba ini sekali lagi.
+
+123
+00:08:11,410 --> 00:08:13,550
+Kami berada di Blug sehingga kami dapat membuat TV.
+
+124
+00:08:13,570 --> 00:08:15,570
+Dan jika berhasil kita mulai server blog kita.
+
+125
+00:08:15,580 --> 00:08:16,770
+Server dimulai.
+
+126
+00:08:16,840 --> 00:08:21,450
+Dan kemudian jika saya mengontrol Anda menghentikan semua yang kami hentikan server kami menghentikan pendengar kami menghentikan mereka
+
+127
+00:08:21,450 --> 00:08:24,060
+semua akan menjadi koleksi dan kemudian itulah akhir dari program.
+
+128
+00:08:24,070 --> 00:08:26,760
+Jadi sekarang kita pada dasarnya siap untuk mulai mengimplementasikan layanan kami.
+
+129
+00:08:26,780 --> 00:08:30,170
+Ada sedikit pengaturan tetapi akan terbayar dalam waktu dekat.
+
+130
+00:08:30,190 --> 00:08:31,550
+Jadi saya akan melihat Anda di kuliah berikutnya.
+

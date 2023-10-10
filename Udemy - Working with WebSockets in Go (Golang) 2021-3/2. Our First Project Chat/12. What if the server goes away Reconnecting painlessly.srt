@@ -1,0 +1,327 @@
+1
+00:00:01,370 --> 00:00:07,610
+So one thing we haven't dealt with yet is the situation where, for whatever reason, our WebSocket
+
+2
+00:00:07,610 --> 00:00:14,240
+connection goes away and we have no way of notifying the user that there is an issue and no way of determining
+
+3
+00:00:14,270 --> 00:00:17,000
+by looking at this Web page, whether I'm online or not.
+
+4
+00:00:17,240 --> 00:00:20,840
+Right now, I'm on the server and I'm on as Fred and I can send messages.
+
+5
+00:00:21,480 --> 00:00:23,570
+Hello, is Bernie there?
+
+6
+00:00:24,530 --> 00:00:25,250
+And it works.
+
+7
+00:00:25,700 --> 00:00:34,130
+But what if for whatever reason, I go over to my application, which is running and I stop it and I
+
+8
+00:00:34,130 --> 00:00:35,750
+try to send in another message.
+
+9
+00:00:35,990 --> 00:00:43,170
+This is a test while nothing happens and I have no indication as a user that there's an issue.
+
+10
+00:00:43,550 --> 00:00:48,860
+Now I look at the JavaScript console and it says connection is closed, but it doesn't actually tell
+
+11
+00:00:48,860 --> 00:00:49,790
+me anything here.
+
+12
+00:00:50,420 --> 00:00:55,730
+More importantly, it would be extremely helpful if I could just reconnect automatically when the server
+
+13
+00:00:55,730 --> 00:00:56,360
+comes back.
+
+14
+00:00:56,940 --> 00:01:02,270
+It could just be temporary and network problems where I lost my connection to the server and it should
+
+15
+00:01:02,270 --> 00:01:03,780
+actually reconnect automatically.
+
+16
+00:01:03,920 --> 00:01:08,930
+Now, there are a lot of ways of doing this and a lot of JavaScript libraries we can import to use this.
+
+17
+00:01:09,920 --> 00:01:15,020
+There's a one here that I'm going to show you right now by Joel Wallies, which I'm probably mispronouncing
+
+18
+00:01:15,020 --> 00:01:18,020
+but forgive me, called Reconnecting WebSocket.
+
+19
+00:01:18,020 --> 00:01:19,190
+And it's quite old.
+
+20
+00:01:19,190 --> 00:01:22,610
+It hasn't been updated in years, but it is stable call code.
+
+21
+00:01:22,610 --> 00:01:26,080
+And I've used it many, many times without any difficulty whatsoever.
+
+22
+00:01:26,630 --> 00:01:30,140
+So let's get a copy of that, download it and put it onto our server.
+
+23
+00:01:30,140 --> 00:01:31,970
+So I'm going to download this as a zip file.
+
+24
+00:01:33,360 --> 00:01:34,230
+And I'll just save it.
+
+25
+00:01:36,870 --> 00:01:42,600
+And we'll go back to my desktop, find this file, extract it.
+
+26
+00:01:46,490 --> 00:01:53,360
+And inside, I have this reconnecting websocket mindgames, so I'm going to drag that to my desktop,
+
+27
+00:01:54,080 --> 00:01:57,890
+then I'm going to go to my go projects, find my W.S. folder.
+
+28
+00:01:58,310 --> 00:02:02,720
+And inside of this, we don't right now have a means of serving static files.
+
+29
+00:02:03,230 --> 00:02:04,490
+But I'm going to do that very shortly.
+
+30
+00:02:04,490 --> 00:02:10,910
+So I'll create a new folder called Statik and I will put that file I just downloaded and extracted in
+
+31
+00:02:10,910 --> 00:02:11,150
+there.
+
+32
+00:02:11,810 --> 00:02:18,050
+Then I'll go back to my source code, open my rights file, which is right here, and let's serve this
+
+33
+00:02:18,050 --> 00:02:21,260
+static content and it's really easy to do that in go.
+
+34
+00:02:21,450 --> 00:02:27,410
+I'll just create a new variable called file server and all assign that the value of PDF file server
+
+35
+00:02:28,130 --> 00:02:32,660
+with a directory of cars to dear.
+
+36
+00:02:35,140 --> 00:02:40,450
+From the level of my application, the folder called static, and I will put a trailing slash there
+
+37
+00:02:41,410 --> 00:02:47,380
+and the next line just tells us how to serve that muxtape get from static
+
+38
+00:02:50,170 --> 00:02:52,210
+HGP dot strip prefix.
+
+39
+00:02:52,210 --> 00:02:56,890
+And the prefix I want to strip is static and passive.
+
+40
+00:02:56,890 --> 00:02:58,530
+That file server I just created.
+
+41
+00:02:59,000 --> 00:03:06,030
+OK, so now inside my static folder, I should have this reconnecting websocket, which I'll add to
+
+42
+00:03:06,060 --> 00:03:15,310
+get and let's open our homecourt jet file and at the very bottom where we're importing our JavaScript,
+
+43
+00:03:15,340 --> 00:03:26,080
+let's import that file script that are spelled out right source equals slash static slash reconnecting
+
+44
+00:03:26,080 --> 00:03:28,690
+websocket mindgames and there it is.
+
+45
+00:03:28,900 --> 00:03:31,950
+So now we've imported it and we're not using it yet.
+
+46
+00:03:32,350 --> 00:03:33,540
+So how do we actually use it?
+
+47
+00:03:33,620 --> 00:03:35,260
+Let's go back and look at the documentation.
+
+48
+00:03:35,720 --> 00:03:40,600
+The documentation for this is dead simple, its API compatible.
+
+49
+00:03:40,610 --> 00:03:44,430
+So when you have this, you can just cast it to that or change it to that.
+
+50
+00:03:44,470 --> 00:03:49,080
+So instead of having a new websocket, we can have a new recruit reconnecting WebSocket.
+
+51
+00:03:49,570 --> 00:03:50,410
+So let's do that.
+
+52
+00:03:50,620 --> 00:03:53,020
+Where do we create our W.S.?
+
+53
+00:03:53,170 --> 00:03:54,060
+Right here.
+
+54
+00:03:55,650 --> 00:03:57,030
+Reconnecting WebSocket.
+
+55
+00:03:58,580 --> 00:04:02,640
+Now, there's a few other things we can put in there for parameters and you can read the documentation
+
+56
+00:04:02,640 --> 00:04:03,090
+yourself.
+
+57
+00:04:03,100 --> 00:04:06,750
+It's all right here, but I'm going to put them in myself right now.
+
+58
+00:04:07,260 --> 00:04:09,540
+I'm going to pass Noel as the second argument.
+
+59
+00:04:09,690 --> 00:04:13,110
+And the third argument will be some options debug.
+
+60
+00:04:14,040 --> 00:04:18,540
+True, because I want to see any problems I have while I'm in development.
+
+61
+00:04:18,540 --> 00:04:22,170
+And of course, I'll set that default to when I go live and to reconnect interval.
+
+62
+00:04:23,180 --> 00:04:30,020
+Reconnect interval, which is in milliseconds, and I'll set it to 3000, which is 3000 milliseconds.
+
+63
+00:04:30,680 --> 00:04:33,280
+OK, so let's start our application up and try this again.
+
+64
+00:04:33,650 --> 00:04:35,780
+Go run command Webster, not go.
+
+65
+00:04:35,790 --> 00:04:38,030
+And in windows, of course, it's not start out go.
+
+66
+00:04:38,030 --> 00:04:40,880
+It's DOT, but this runs.
+
+67
+00:04:42,770 --> 00:04:50,360
+And now if I go back to my application and reload this page, I should be connected and I am reconnecting
+
+68
+00:04:50,360 --> 00:04:50,990
+websocket.
+
+69
+00:04:50,990 --> 00:04:51,650
+It got me there.
+
+70
+00:04:51,660 --> 00:04:52,300
+Perfect.
+
+71
+00:04:52,310 --> 00:04:56,900
+OK, I should be able to log in as Fred and I am now.
+
+72
+00:04:56,910 --> 00:05:01,220
+What happens if I go back to my application and I stop this?
+
+73
+00:05:02,060 --> 00:05:05,510
+I've just lost my connection, lost my connection and look at it trying to reconnect.
+
+74
+00:05:06,440 --> 00:05:07,630
+So we're still offline.
+
+75
+00:05:08,150 --> 00:05:11,270
+Let's reconnect by starting up my application again.
+
+76
+00:05:13,990 --> 00:05:21,520
+And now we're connected, perfect, so I should be able to say hello, world, and off it goes.
+
+77
+00:05:21,520 --> 00:05:22,360
+And we reconnected.
+
+78
+00:05:22,360 --> 00:05:23,450
+We kept our connection.
+
+79
+00:05:24,070 --> 00:05:25,300
+Life is good.
+
+80
+00:05:25,660 --> 00:05:30,970
+Now in the next lecture, I want to add one more thing, an indicator that shows the user whether or
+
+81
+00:05:30,970 --> 00:05:33,190
+not we're actively connected at the moment.
+
+82
+00:05:33,200 --> 00:05:35,050
+And we'll take care of that in the next lecture.

@@ -1,0 +1,383 @@
+1
+00:00:00,720 --> 00:00:05,940
+So the last thing I want to look at with respect to channels before we start using them in the sleeping
+
+2
+00:00:05,940 --> 00:00:09,860
+barber problem is the concept of buffered channels.
+
+3
+00:00:09,870 --> 00:00:15,300
+And as usual, I've started a new window in Visual Studio code and I opened a folder named Buffered
+
+4
+00:00:15,300 --> 00:00:24,960
+Dash Channels and I'll as usual, create a go month file, go mod in it buffered channel.
+
+5
+00:00:25,260 --> 00:00:25,770
+That'll work.
+
+6
+00:00:26,130 --> 00:00:26,520
+Okay.
+
+7
+00:00:27,480 --> 00:00:29,400
+And now I'll create my main doggo file.
+
+8
+00:00:29,400 --> 00:00:30,480
+And this is pretty simple.
+
+9
+00:00:33,030 --> 00:00:34,710
+Okay, so package me
+
+10
+00:00:37,530 --> 00:00:42,900
+and I'll create one function called main and above.
+
+11
+00:00:42,900 --> 00:00:45,090
+That will create a function that will run as a go routine.
+
+12
+00:00:45,090 --> 00:00:52,170
+So func and this will just be called Listen to Chan and it takes one parameter which is a chan.
+
+13
+00:00:52,170 --> 00:00:54,530
+And this time I'm making a chain of events, okay?
+
+14
+00:00:55,110 --> 00:01:02,760
+And inside of that I'll have an endless for loop and I'll say Here, print a got data message.
+
+15
+00:01:02,760 --> 00:01:09,210
+Any time I get data in this channel, first of all, I'll get the data or as a sign the value of listening
+
+16
+00:01:09,210 --> 00:01:10,660
+to see H.
+
+17
+00:01:11,160 --> 00:01:14,490
+Okay, I'll print out a message format dot print line
+
+18
+00:01:17,520 --> 00:01:19,470
+got try that again.
+
+19
+00:01:21,870 --> 00:01:25,410
+Got I from channel.
+
+20
+00:01:27,060 --> 00:01:27,380
+Okay.
+
+21
+00:01:28,680 --> 00:01:33,780
+And then I'm going to simulate doing a lot of work.
+
+22
+00:01:34,980 --> 00:01:37,110
+And in that case, I'll say, time, don't sleep.
+
+23
+00:01:39,380 --> 00:01:41,360
+One time's timed out second.
+
+24
+00:01:41,900 --> 00:01:45,410
+So we're doing something in this function and we're pretending we're doing something in this function
+
+25
+00:01:45,680 --> 00:01:49,280
+that will take 1/2 to complete, which is a long time for a program.
+
+26
+00:01:49,370 --> 00:01:49,700
+Okay.
+
+27
+00:01:51,350 --> 00:01:56,570
+Then on my main function, the first thing I'll do is create a channel and I'll call this one C-H.
+
+28
+00:01:57,140 --> 00:02:04,040
+And it's a sign the value of that again, a sign the value of will just make a chain of events like
+
+29
+00:02:04,040 --> 00:02:04,730
+we did before.
+
+30
+00:02:04,730 --> 00:02:06,320
+And we'll change this line in a minute.
+
+31
+00:02:06,890 --> 00:02:11,630
+Then I'll start my go routine, go listen to channel and give that the channel.
+
+32
+00:02:12,770 --> 00:02:15,980
+And down here I'll send a lot of data to the channel.
+
+33
+00:02:16,130 --> 00:02:20,060
+For I is a sign the value of zero.
+
+34
+00:02:21,290 --> 00:02:27,830
+IE is less than or equal to 100 I plus plus and will send data to the channel 100 times.
+
+35
+00:02:28,120 --> 00:02:34,070
+Okay, so inside that loop, let's say format dot print line, just to print out a message, should
+
+36
+00:02:34,070 --> 00:02:34,970
+we know what's going on?
+
+37
+00:02:35,540 --> 00:02:44,120
+And I'll say sending I to channel dot, dot, dot, and then I'll send out a channel.
+
+38
+00:02:44,120 --> 00:02:54,140
+So C-H gets all right and then I'll say format dot print line because this is going to block until that
+
+39
+00:02:54,140 --> 00:03:06,380
+go routine finish is what it's supposed to be doing sent I to channel and then once an outside of this
+
+40
+00:03:06,380 --> 00:03:13,910
+I'll say format of print line done and close the channel as you should.
+
+41
+00:03:14,180 --> 00:03:15,210
+Closed C-H.
+
+42
+00:03:16,130 --> 00:03:17,840
+Okay, no surprises here.
+
+43
+00:03:18,590 --> 00:03:19,730
+This is dead simple.
+
+44
+00:03:19,880 --> 00:03:20,900
+We create a channel.
+
+45
+00:03:21,380 --> 00:03:24,880
+We start a go routine that listens for information from that channel.
+
+46
+00:03:24,890 --> 00:03:26,660
+When it gets it, it prints and message out.
+
+47
+00:03:27,080 --> 00:03:30,960
+Then it goes to sleep for 1/2 and the for loop continues endlessly.
+
+48
+00:03:31,020 --> 00:03:35,000
+Okay, so the first time it gets some information, it'll receive that.
+
+49
+00:03:35,000 --> 00:03:37,190
+Print out the message, go to sleep for a second.
+
+50
+00:03:37,520 --> 00:03:41,500
+Then it goes back up here and it blocks until it gets something from that channel again.
+
+51
+00:03:41,510 --> 00:03:42,510
+So it pauses here.
+
+52
+00:03:42,530 --> 00:03:43,880
+Now we're sending a hundred things.
+
+53
+00:03:43,880 --> 00:03:46,160
+So this should go pretty fast, you would think, right?
+
+54
+00:03:46,880 --> 00:03:50,240
+Let's open the terminal window, clear the screen and type.
+
+55
+00:03:51,020 --> 00:03:52,250
+Go run dark.
+
+56
+00:03:54,930 --> 00:04:00,870
+And you can see there's a 1/2 pause between sending and things actually being sent.
+
+57
+00:04:01,020 --> 00:04:04,500
+That's because that go routine is actually blocking in the background.
+
+58
+00:04:04,650 --> 00:04:05,040
+Okay.
+
+59
+00:04:06,720 --> 00:04:11,040
+So we can wait until a hundred things are gone, but it seems kind of pointless because you know exactly
+
+60
+00:04:11,040 --> 00:04:11,820
+what's going to happen.
+
+61
+00:04:11,820 --> 00:04:15,690
+So I'll stop this and I will make one little change to the program.
+
+62
+00:04:15,750 --> 00:04:22,650
+So I'll close the terminal window and up here in line 20 where I say make chin int, let's put a comma
+
+63
+00:04:22,650 --> 00:04:25,140
+there and put it ten.
+
+64
+00:04:25,800 --> 00:04:26,220
+Okay.
+
+65
+00:04:26,910 --> 00:04:33,510
+So now we have a buffered channel one with a fixed size and let's run the program again and see what
+
+66
+00:04:33,510 --> 00:04:33,960
+happens.
+
+67
+00:04:34,500 --> 00:04:36,660
+Okay, so go run Dot.
+
+68
+00:04:36,900 --> 00:04:38,070
+Now watch what happens this time.
+
+69
+00:04:39,230 --> 00:04:41,390
+Ken, things went really, really quickly.
+
+70
+00:04:41,960 --> 00:04:45,120
+That's because this channel now is buffered.
+
+71
+00:04:45,140 --> 00:04:49,710
+It's allowed to have more than one thing in it and buffer channels.
+
+72
+00:04:49,730 --> 00:04:50,480
+Just take one.
+
+73
+00:04:50,780 --> 00:04:54,260
+And if you're waiting to receive something, everything grinds to a halt.
+
+74
+00:04:54,320 --> 00:05:00,860
+But in this case, we actually put ten things in the channel, and now it's going 1/2 at a time because
+
+75
+00:05:00,860 --> 00:05:08,360
+every time it pulls something off the channel here on the line, 11 in my code, we have one free space
+
+76
+00:05:08,360 --> 00:05:08,880
+in the buffer.
+
+77
+00:05:08,900 --> 00:05:09,980
+So it takes one more.
+
+78
+00:05:10,400 --> 00:05:13,010
+So the first ten went really, really quickly.
+
+79
+00:05:13,670 --> 00:05:19,490
+Now, you might be asking yourself of what possible value is a buffer channel?
+
+80
+00:05:19,970 --> 00:05:21,140
+And the answer is pretty simple.
+
+81
+00:05:21,410 --> 00:05:25,610
+They're useful when you know how many go routines you've launched.
+
+82
+00:05:25,760 --> 00:05:27,140
+In our case, we've launched one.
+
+83
+00:05:28,480 --> 00:05:34,660
+Or we want to limit the number of go routines we launch, or we want to limit the amount of work that's
+
+84
+00:05:34,660 --> 00:05:35,220
+queued up.
+
+85
+00:05:35,230 --> 00:05:37,600
+And in our case, it's the last one.
+
+86
+00:05:37,600 --> 00:05:42,370
+We're limiting the amount of word that work it that is queued up and everything else just pauses.
+
+87
+00:05:43,000 --> 00:05:46,280
+It stays in the buffer until there's a resource available to work on it.
+
+88
+00:05:46,300 --> 00:05:46,670
+Okay.
+
+89
+00:05:47,020 --> 00:05:48,160
+Now, these are very useful.
+
+90
+00:05:48,370 --> 00:05:53,350
+The vast majority of times you're probably going to use on buffer channels, but there are lots of situations
+
+91
+00:05:53,350 --> 00:05:55,960
+where buffer channels just make sense.
+
+92
+00:05:57,100 --> 00:05:57,490
+All right.
+
+93
+00:05:57,520 --> 00:06:01,630
+So with this brief introduction to channels, let's move on and start using them.
+
+94
+00:06:01,630 --> 00:06:06,750
+Because I'm a firm believer in the philosophy that you learn to code by actually writing code.
+
+95
+00:06:06,760 --> 00:06:11,290
+And in this case, we're going to learn how to use channels by writing code that uses channels.
+
+96
+00:06:11,680 --> 00:06:15,430
+So let's begin our consideration of the sleeping Barbara problem.

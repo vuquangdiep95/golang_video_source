@@ -1,0 +1,635 @@
+1
+00:00:01,300 --> 00:00:07,810
+So at this point, we have a bunch of methods available to us here in the user model and I mean my app
+
+2
+00:00:07,840 --> 00:00:10,200
+project and I'm looking at user account.
+
+3
+00:00:10,210 --> 00:00:12,190
+So we have all of these functions right here.
+
+4
+00:00:12,670 --> 00:00:13,540
+Let's try them out.
+
+5
+00:00:13,570 --> 00:00:19,120
+We know that some of them work, but there are almost certainly problems in this and we'll catch those
+
+6
+00:00:19,120 --> 00:00:23,320
+when we start work on the testing of this particular file, which we'll be doing before, too.
+
+7
+00:00:24,070 --> 00:00:27,390
+So before we go too much further, let's just try out a login page.
+
+8
+00:00:27,400 --> 00:00:33,580
+So I'm going to go to the roots, file rootstock, go in my app and I'm going to add a root right here.
+
+9
+00:00:33,730 --> 00:00:43,750
+And I'll put it like this ADA app dot roots, dot get and I'll call it slash users slash log in and
+
+10
+00:00:43,750 --> 00:00:45,690
+it will go to a handler that doesn't exist yet.
+
+11
+00:00:46,210 --> 00:00:47,760
+A dog handlers.
+
+12
+00:00:49,240 --> 00:00:54,610
+I'll go Page Dot as we call it, user log in.
+
+13
+00:00:55,840 --> 00:00:59,860
+And of course, we're going to have to have a post root for that as well because we want to create a
+
+14
+00:00:59,860 --> 00:01:01,960
+form on that page, which doesn't exist yet.
+
+15
+00:01:02,530 --> 00:01:05,320
+So make this one post, which I better spell right?
+
+16
+00:01:06,910 --> 00:01:08,320
+And I'll call the handler.
+
+17
+00:01:09,460 --> 00:01:10,660
+Post user logging.
+
+18
+00:01:11,710 --> 00:01:13,090
+So let's go to our handlers file.
+
+19
+00:01:15,070 --> 00:01:19,060
+And inside of that, I'll create a new file and I'll call it off.
+
+20
+00:01:19,900 --> 00:01:27,550
+Dash handlers duco and I'm putting them in a separate file because ultimately, when we create a command
+
+21
+00:01:27,550 --> 00:01:33,970
+line application and allow users to type something like celebrities make off, it should create all
+
+22
+00:01:33,970 --> 00:01:40,090
+the necessary database tables and it should copy files into our project just to make things easier for
+
+23
+00:01:40,090 --> 00:01:40,550
+the user.
+
+24
+00:01:40,570 --> 00:01:46,960
+So as handlers go off, dash handlers don't go, and that's in package handlers.
+
+25
+00:01:51,250 --> 00:01:57,550
+And what we'll do here is create a function with the receiver of a point or two handlers.
+
+26
+00:01:58,570 --> 00:02:00,670
+And this one needs to be called user login.
+
+27
+00:02:00,730 --> 00:02:03,880
+And this will display the page that's that people use to log in.
+
+28
+00:02:04,510 --> 00:02:10,780
+So Whv, the response writer and our pointer to football request
+
+29
+00:02:13,420 --> 00:02:27,370
+and this is dead simple error will be equal to each dot app dot render and will render using W R and
+
+30
+00:02:27,370 --> 00:02:35,500
+we'll create a file called Log Inkjet in a minute with no data for now, and we'll check for an error.
+
+31
+00:02:35,860 --> 00:02:42,100
+If error is not equal to nil, then.
+
+32
+00:02:44,750 --> 00:02:48,680
+And it's render the page that's better.
+
+33
+00:02:53,380 --> 00:03:03,040
+And we'll just say for now, scrap the analogue print line there.
+
+34
+00:03:04,840 --> 00:03:07,560
+OK, so that's our user login page.
+
+35
+00:03:07,570 --> 00:03:17,930
+Now let's go back over to our views and create a new file called Log Inkjet, a low GI and jnt.
+
+36
+00:03:19,150 --> 00:03:21,940
+So this is really a simple view that extends our base layer.
+
+37
+00:03:21,940 --> 00:03:30,310
+So it extends dot layout dot slash layouts slash you meant that I call that file I.
+
+38
+00:03:30,400 --> 00:03:39,150
+It was based on, yeah, based object based Typekit, and it has to have a browser title.
+
+39
+00:03:39,160 --> 00:03:44,110
+So block browser title.
+
+40
+00:03:46,180 --> 00:03:49,540
+And we'll call this log in to the end
+
+41
+00:03:53,290 --> 00:03:54,730
+and we'll put in our CSV.
+
+42
+00:03:54,730 --> 00:04:02,710
+But leave it empty block CC with just an end.
+
+43
+00:04:05,260 --> 00:04:14,080
+And our page content, block page content and an intake.
+
+44
+00:04:16,120 --> 00:04:19,030
+And in the middle, of course, we want our login page.
+
+45
+00:04:19,360 --> 00:04:28,210
+So H-2 class equals and we'll put some merging at the top using bootstraps to class and center text
+
+46
+00:04:28,210 --> 00:04:32,010
+center, and we'll call this log in and closer each.
+
+47
+00:04:32,020 --> 00:04:44,650
+To that, we'll put an H.R. horizontal rule and form method equals post action equals slash users slash
+
+48
+00:04:44,650 --> 00:04:45,220
+log in.
+
+49
+00:04:45,730 --> 00:04:52,900
+We just added the goes to a non-existent handler and I'll give it a name which I don't need, but I'm
+
+50
+00:04:52,900 --> 00:04:53,590
+going to do it anyway.
+
+51
+00:04:53,950 --> 00:05:02,980
+Logging form and an ID, which I do need log in dash form and we'll give it a class.
+
+52
+00:05:03,550 --> 00:05:13,480
+We'll make it using bootstraps equals d dash block and we'll add needs validation because we'll use
+
+53
+00:05:13,480 --> 00:05:20,440
+bootstraps client side validation and we'll set autocomplete equals off, which you should always do
+
+54
+00:05:20,440 --> 00:05:22,840
+and log in strings and know validate.
+
+55
+00:05:23,110 --> 00:05:27,250
+Don't use the browser validation and we'll close our form tag.
+
+56
+00:05:29,860 --> 00:05:31,930
+And in the middle, we'll put our inputs.
+
+57
+00:05:32,140 --> 00:05:34,510
+So to start with, I'm going to put this one in.
+
+58
+00:05:34,660 --> 00:05:36,480
+Input type equals hidden,
+
+59
+00:05:39,550 --> 00:05:40,660
+which should be in quotes.
+
+60
+00:05:42,670 --> 00:05:44,800
+Name equals c us rf token.
+
+61
+00:05:45,190 --> 00:05:46,170
+You know, we don't have that yet.
+
+62
+00:05:46,180 --> 00:05:47,500
+We're going to have a for too long.
+
+63
+00:05:48,100 --> 00:05:50,380
+And value equals and I'll just leave it empty for now.
+
+64
+00:05:52,960 --> 00:05:54,730
+Actually, I can probably put this in here.
+
+65
+00:05:56,890 --> 00:06:02,740
+Dot c SRF token that might throw an error.
+
+66
+00:06:02,740 --> 00:06:04,420
+And if it does, I'll delete it later on.
+
+67
+00:06:04,510 --> 00:06:06,250
+I can't remember if I added that already.
+
+68
+00:06:08,500 --> 00:06:12,370
+Now we'll have a div class equals maybe three four merging bottom three.
+
+69
+00:06:13,980 --> 00:06:18,310
+I'll close that in and then we have a label.
+
+70
+00:06:19,240 --> 00:06:22,900
+We'll log in using username and password in the username will be your email address.
+
+71
+00:06:23,590 --> 00:06:37,510
+Label equals label four equals email class equals form, dash label, email and close the label tag
+
+72
+00:06:38,170 --> 00:06:42,250
+and then the input input type equals
+
+73
+00:06:46,270 --> 00:07:01,240
+email class equals form control form dash control ID equals email and name equals email and we'll make
+
+74
+00:07:01,240 --> 00:07:09,780
+it required, required equals nothing and we'll set autocomplete equal to email.
+
+75
+00:07:09,860 --> 00:07:14,980
+Dash knew as long as it's unique, it won't pre populate that form with suggestions, which is exactly
+
+76
+00:07:14,980 --> 00:07:15,430
+what I want.
+
+77
+00:07:16,210 --> 00:07:17,140
+So this is my first one.
+
+78
+00:07:17,380 --> 00:07:26,140
+Now we want a password, so I'll copy all of this and paste it there and make this password and copy
+
+79
+00:07:26,140 --> 00:07:28,720
+that and put it here.
+
+80
+00:07:28,720 --> 00:07:35,860
+Typekit calls password I.D. equals password, equals password and make this password new and I'll change
+
+81
+00:07:35,860 --> 00:07:36,940
+the label to password.
+
+82
+00:07:38,410 --> 00:07:49,630
+OK, then I'll put him in and put in a button will say a f equals and I'll make this a and a link.
+
+83
+00:07:49,660 --> 00:07:52,090
+I'm not going to make it a button because I don't want us to try to submit.
+
+84
+00:07:53,560 --> 00:07:57,190
+And I can just take advantage of bootstrap bootstraps classes that make it look like a button.
+
+85
+00:07:57,340 --> 00:08:06,010
+So the rest will be JavaScript colon void with a zero in there, so it doesn't do anything,
+
+86
+00:08:10,660 --> 00:08:16,960
+and I'll put a class equals, say button to make it look like a button and VTM Dash Primary to give
+
+87
+00:08:16,960 --> 00:08:20,470
+it some color and we'll give it an N. click handler.
+
+88
+00:08:20,530 --> 00:08:25,990
+I could use a listener button on Click Work just as well on Click Equals, and we'll call a JavaScript
+
+89
+00:08:25,990 --> 00:08:27,190
+function that doesn't exist yet.
+
+90
+00:08:27,280 --> 00:08:32,940
+Vow to validate and we'll put log in and slashing.
+
+91
+00:08:34,720 --> 00:08:36,670
+And then I'll put something in there.
+
+92
+00:08:36,670 --> 00:08:39,130
+We're not going to use for a little while, but we'll get started on it.
+
+93
+00:08:39,140 --> 00:08:40,300
+We can put the link here anyway.
+
+94
+00:08:40,750 --> 00:08:42,220
+I'll put a paragraph tag in.
+
+95
+00:08:43,700 --> 00:08:48,580
+I'll give it a class equal to Mty Dash to give it some margin on the top.
+
+96
+00:08:49,720 --> 00:08:56,780
+And I'll close the P tag and I'll make this small so small.
+
+97
+00:08:57,730 --> 00:09:05,470
+And then a trip equals and I'll go to users slash users plural slash forgot password.
+
+98
+00:09:05,740 --> 00:09:10,090
+We want people to be able to reset their password and we won't get to this for a while, but we will
+
+99
+00:09:10,090 --> 00:09:10,540
+get to it.
+
+100
+00:09:11,320 --> 00:09:16,720
+Forgot password slash a slash.
+
+101
+00:09:16,720 --> 00:09:17,110
+Small.
+
+102
+00:09:17,880 --> 00:09:18,140
+OK.
+
+103
+00:09:19,330 --> 00:09:20,390
+So there's that part.
+
+104
+00:09:20,410 --> 00:09:21,400
+That's our form.
+
+105
+00:09:21,700 --> 00:09:28,210
+And after the form closes, I'll just put another way to get back to the homepage.
+
+106
+00:09:29,200 --> 00:09:41,290
+So Div class equals text dash center slash div, and in here I'll put a class equals Eaton button outline
+
+107
+00:09:41,620 --> 00:09:46,520
+secondary and the H Ref will be equal to slash.
+
+108
+00:09:47,440 --> 00:09:51,200
+And I'll say back and three dots.
+
+109
+00:09:52,990 --> 00:09:57,460
+OK, so that goes is a means of navigating back to the main homepage, and we'll have to put a link
+
+110
+00:09:57,460 --> 00:09:58,960
+on the home page, but we'll do that in a minute.
+
+111
+00:09:59,920 --> 00:10:04,810
+And after this, just to give us a little bit of space, I'll just put an empty p in here with a non
+
+112
+00:10:04,810 --> 00:10:05,710
+breaking space.
+
+113
+00:10:08,020 --> 00:10:10,180
+Otherwise, it might just look a little crowded.
+
+114
+00:10:11,770 --> 00:10:13,220
+So there's a content section.
+
+115
+00:10:13,240 --> 00:10:16,210
+Now let's put some simple JavaScript in, so that goes on our block.
+
+116
+00:10:16,360 --> 00:10:19,540
+Just like that and we end that.
+
+117
+00:10:22,840 --> 00:10:28,810
+And in the middle, put a script in here and close the script.
+
+118
+00:10:32,020 --> 00:10:38,440
+And the script consists of one function function, which I called Val, which takes no parameters,
+
+119
+00:10:41,260 --> 00:10:46,080
+and we just take advantage of Java Scripts, standard formatting or client side validation.
+
+120
+00:10:46,090 --> 00:10:52,630
+So we get a reference to our form form equal document get element by ID..
+
+121
+00:10:58,110 --> 00:11:02,190
+And I'm looking for log in dashboard, and it gives me a reference to my form.
+
+122
+00:11:03,120 --> 00:11:04,840
+And we just do a simple if statement here.
+
+123
+00:11:04,860 --> 00:11:09,100
+Let's get some rum up here, if formed.
+
+124
+00:11:09,300 --> 00:11:10,260
+Check validity.
+
+125
+00:11:15,120 --> 00:11:21,450
+Equals exactly false, and there's something wrong, we don't want to submit this form and what we put
+
+126
+00:11:21,460 --> 00:11:26,580
+in there is exactly what Bootstrap tells us to this start event.
+
+127
+00:11:26,580 --> 00:11:29,490
+Dot prevent default
+
+128
+00:11:34,620 --> 00:11:40,890
+and this dark event that start propagation, propagation
+
+129
+00:11:44,280 --> 00:11:46,170
+and form class list.
+
+130
+00:11:46,410 --> 00:11:50,670
+The ad was dash validated
+
+131
+00:11:53,400 --> 00:11:53,970
+and return.
+
+132
+00:11:54,300 --> 00:11:55,620
+There's an error, so don't go any further.
+
+133
+00:11:55,920 --> 00:12:00,060
+Otherwise, we could pass that if statement, we say formed on class list.
+
+134
+00:12:02,560 --> 00:12:06,150
+The ad was dash melodies
+
+135
+00:12:09,000 --> 00:12:17,070
+and formed so that OK, now let's go.
+
+136
+00:12:17,120 --> 00:12:23,010
+Make sure we have in our base don't get the necessary JavaScript to bootstrap expects to find.
+
+137
+00:12:23,040 --> 00:12:24,630
+I can't remember if I added that or not.
+
+138
+00:12:25,410 --> 00:12:26,760
+So we have the CC.
+
+139
+00:12:28,460 --> 00:12:33,980
+We have a CSR of tokens, so apparently I did actually add that which is good and we did not include
+
+140
+00:12:33,980 --> 00:12:35,300
+the necessary JavaScript.
+
+141
+00:12:35,690 --> 00:12:41,750
+So let's go to our web browser and open a new tab and go to get bootstrap.
+
+142
+00:12:42,050 --> 00:12:44,030
+You can get the link to the JavaScript.
+
+143
+00:12:44,540 --> 00:12:50,090
+So get started and I want the JavaScript bundle right here.
+
+144
+00:12:50,090 --> 00:12:58,920
+So I'll copy that and I will go back to my I.D. and add that right here before yield jazz.
+
+145
+00:12:58,940 --> 00:13:00,110
+So it's available to us.
+
+146
+00:13:00,410 --> 00:13:04,760
+OK, so if I save that now, I should be able to.
+
+147
+00:13:05,270 --> 00:13:11,960
+If I go back to here, comment this route because it doesn't exist yet in my roots, file and open my
+
+148
+00:13:11,960 --> 00:13:15,290
+terminal and say, Make start.
+
+149
+00:13:18,840 --> 00:13:19,860
+And it should compile.
+
+150
+00:13:21,690 --> 00:13:22,290
+And it did.
+
+151
+00:13:23,070 --> 00:13:31,110
+And I should be able to go back to my web browser and reload this and put slash users slash logging,
+
+152
+00:13:31,230 --> 00:13:33,120
+slash users slash logging.
+
+153
+00:13:34,410 --> 00:13:39,480
+And there's my log in for it, and I should be able to try to submit this and get the errors here,
+
+154
+00:13:39,480 --> 00:13:41,250
+indicating that there's required fields.
+
+155
+00:13:42,090 --> 00:13:42,570
+And I do.
+
+156
+00:13:42,840 --> 00:13:43,260
+Perfect.
+
+157
+00:13:43,860 --> 00:13:46,560
+So that handler exists and this screen exists.
+
+158
+00:13:46,710 --> 00:13:50,370
+So in the next lecture will uncomment this line back in our roots.
+
+159
+00:13:50,370 --> 00:13:55,920
+File right here and create that handler and try logging in.

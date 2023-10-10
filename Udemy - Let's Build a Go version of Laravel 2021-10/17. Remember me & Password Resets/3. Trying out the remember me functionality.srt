@@ -1,0 +1,175 @@
+1
+00:00:01,370 --> 00:00:05,990
+So let's try it, our check, remember functionality, and right now I'm in my app and I'm looking at
+
+2
+00:00:05,990 --> 00:00:10,760
+the roots go, and obviously one of the first things we have to do is to add the necessary middleware,
+
+3
+00:00:11,330 --> 00:00:13,880
+which is as simple as adult use.
+
+4
+00:00:15,620 --> 00:00:18,860
+And I want a middleware Typekit check.
+
+5
+00:00:18,860 --> 00:00:19,280
+Remember?
+
+6
+00:00:20,390 --> 00:00:23,090
+OK, so that adds the middleware to our roots.
+
+7
+00:00:23,870 --> 00:00:28,580
+Now, if we go over to our dot on the file and we go to the session bit.
+
+8
+00:00:31,660 --> 00:00:35,830
+You can see that I'm using a recession, and if you're not switchers to read, it's just that we're
+
+9
+00:00:35,830 --> 00:00:36,670
+doing the same thing.
+
+10
+00:00:37,030 --> 00:00:43,150
+Now let's go back over to celebrities that project and see how long sessions are set to last.
+
+11
+00:00:43,900 --> 00:00:50,770
+So over here and celebrities, if we look at the part where we actually in it, things, so we have
+
+12
+00:00:50,770 --> 00:00:53,800
+our celebrities to go and we look at new.
+
+13
+00:00:55,030 --> 00:00:56,070
+So here's the new bit.
+
+14
+00:00:56,080 --> 00:00:59,020
+Let's find the bit where we initialize our sessions.
+
+15
+00:01:00,430 --> 00:01:05,290
+So our session lifetime is set to see de-conflict cookie dot lifetime.
+
+16
+00:01:05,430 --> 00:01:11,350
+OK, so if we go back to our dot on file, it will look at our cookie lifetime that's set to one thousand
+
+17
+00:01:11,350 --> 00:01:12,640
+four hundred and forty minutes.
+
+18
+00:01:13,030 --> 00:01:14,470
+So change that to one.
+
+19
+00:01:14,950 --> 00:01:16,390
+OK, so it'll be one minute.
+
+20
+00:01:17,530 --> 00:01:24,670
+And now I'm going to open my terminal and make sure that my Docker images are running Docker compose
+
+21
+00:01:25,030 --> 00:01:25,790
+up dash.
+
+22
+00:01:26,750 --> 00:01:28,450
+And that should start Docker for me.
+
+23
+00:01:31,980 --> 00:01:33,330
+Now I'll run my application.
+
+24
+00:01:33,900 --> 00:01:34,590
+Make start.
+
+25
+00:01:45,430 --> 00:01:45,880
+OK.
+
+26
+00:01:45,940 --> 00:01:46,780
+So it's running.
+
+27
+00:01:47,080 --> 00:01:52,720
+And let's go back to our Web browser and reload, this page localhost four thousand.
+
+28
+00:01:52,870 --> 00:01:55,630
+OK, so I am not logged in, which is good.
+
+29
+00:01:57,190 --> 00:01:59,110
+Now let's try logging in.
+
+30
+00:02:00,850 --> 00:02:07,040
+I'll log in as me out here dot com with the password password and I will check.
+
+31
+00:02:07,120 --> 00:02:08,950
+Remember me and log in.
+
+32
+00:02:09,490 --> 00:02:09,910
+OK.
+
+33
+00:02:11,450 --> 00:02:16,460
+So I'm logged in now, I'm going to pause the video and I'll wait a little more than a minute and then
+
+34
+00:02:16,460 --> 00:02:22,010
+I'll refresh this page and I should still be logged in even though my sessions are set to one minute.
+
+35
+00:02:22,370 --> 00:02:24,530
+So I'll see you in 60 seconds or so.
+
+36
+00:02:25,970 --> 00:02:28,070
+So a little more than a minute has gone by.
+
+37
+00:02:28,280 --> 00:02:34,250
+So my session should have timed out by now, and I'm going to reload this page and you can see I'm still
+
+38
+00:02:34,250 --> 00:02:34,790
+logged in.
+
+39
+00:02:34,820 --> 00:02:38,960
+So I remember me functionality seems to be working as it should.
+
+40
+00:02:39,890 --> 00:02:42,860
+So the next thing I'd like to do is to take care of this.
+
+41
+00:02:42,980 --> 00:02:46,490
+Let's go log out here and click on forgot password.
+
+42
+00:02:46,670 --> 00:02:48,950
+Well, don't click on it because there's nothing behind it right now.
+
+43
+00:02:49,310 --> 00:02:54,020
+What I'd like to do next is to implement that functionality as well, and it's really simple, so we'll
+
+44
+00:02:54,020 --> 00:02:55,910
+get started on that in the next lecture.

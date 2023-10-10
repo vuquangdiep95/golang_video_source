@@ -1,0 +1,159 @@
+1
+00:00:00,620 --> 00:00:06,080
+So the last bit of key functionality we need to add to our project in terms of notifications is sending
+
+2
+00:00:06,080 --> 00:00:11,120
+notifications via SMS or text message, and we'll do that using Twilio.
+
+3
+00:00:11,120 --> 00:00:16,670
+And what we'll do is create a developer account, a trial account that gives us a certain balance to
+
+4
+00:00:16,670 --> 00:00:17,870
+use for testing.
+
+5
+00:00:17,900 --> 00:00:22,430
+And provided you do this in the next month or two, you should have no problem doing this and having
+
+6
+00:00:22,430 --> 00:00:23,410
+it cost you nothing.
+
+7
+00:00:23,900 --> 00:00:29,990
+So go to this Eurail Twilio dot com and I've put a link to that in the course resources sign up and
+
+8
+00:00:29,990 --> 00:00:31,330
+you'll get a trial account.
+
+9
+00:00:31,340 --> 00:00:37,070
+And once you've done that, you'll get to the console page and the console page looks just like this
+
+10
+00:00:37,430 --> 00:00:38,900
+and you're going to have an account.
+
+11
+00:00:38,900 --> 00:00:40,970
+Essid and an off token.
+
+12
+00:00:41,060 --> 00:00:41,960
+This is public.
+
+13
+00:00:42,140 --> 00:00:43,790
+Doesn't matter if anybody else sees this.
+
+14
+00:00:44,150 --> 00:00:44,950
+This is private.
+
+15
+00:00:44,960 --> 00:00:48,830
+So I'm not going to show that to you, even though I'm going to change it after this lecture is done.
+
+16
+00:00:49,010 --> 00:00:51,580
+I can copy it just by copying it right here.
+
+17
+00:00:52,280 --> 00:00:55,520
+So in my application, before we do anything else, let's set this up.
+
+18
+00:00:56,060 --> 00:01:02,030
+So I've gone to the Settings page and clicked on the SMS tab over here and I will say, yes, enable
+
+19
+00:01:02,030 --> 00:01:06,050
+text notifications and I'm going to choose the one provider that I'm doing in this course.
+
+20
+00:01:06,290 --> 00:01:09,560
+There are other providers and they all follow a very similar format.
+
+21
+00:01:10,010 --> 00:01:14,330
+So I'll choose Twilio and I'll put in my Twilio phone number, which I'll get in a minute.
+
+22
+00:01:14,510 --> 00:01:15,920
+But let's get our key first.
+
+23
+00:01:15,920 --> 00:01:19,580
+So I'll go back to here and I'll choose this.
+
+24
+00:01:19,910 --> 00:01:21,200
+Copy my essid.
+
+25
+00:01:22,460 --> 00:01:29,480
+And paste it in here and go to my here and copy the off Tolkan.
+
+26
+00:01:30,770 --> 00:01:32,180
+And pasted in here.
+
+27
+00:01:34,980 --> 00:01:41,010
+Now, in order to make this as simple as possible, I've also posted a link to the a blog post put up
+
+28
+00:01:41,010 --> 00:01:46,840
+by Twilio that talks about using gold and sending SMS messages, and you'll find that right here.
+
+29
+00:01:46,890 --> 00:01:51,510
+So, again, this URL is copied and pasted into the course resources for this lecture.
+
+30
+00:01:51,990 --> 00:01:58,010
+And what you want to do is scroll down to the part that says, I don't know why they're there.
+
+31
+00:01:58,020 --> 00:02:02,270
+Formatting is off and some of the text is behind images, but it doesn't really matter for our purposes.
+
+32
+00:02:03,300 --> 00:02:04,810
+So this is the part you want to look at.
+
+33
+00:02:04,830 --> 00:02:11,730
+Say hello to Twilio and that will take you through all of the steps necessary to to get a trial account
+
+34
+00:02:11,730 --> 00:02:12,450
+up and going.
+
+35
+00:02:12,450 --> 00:02:18,120
+And at the time that I'm recording this, at least you get fifteen dollars and fifty cents in test balance
+
+36
+00:02:18,120 --> 00:02:19,210
+so you can test things out.
+
+37
+00:02:19,860 --> 00:02:23,490
+So follow these instructions and get it all set up.
+
+38
+00:02:23,490 --> 00:02:29,010
+And you'll also see the part where it asks you to get a phone number and get that phone number and paste
+
+39
+00:02:29,010 --> 00:02:34,500
+it in here and I'll go get mine and paste it in here and then we'll pick it up in the next lecture and
+
+40
+00:02:34,500 --> 00:02:37,080
+actually start sending test SMS messages.

@@ -1,0 +1,575 @@
+1
+00:00:00,530 --> 00:00:08,360
+So the video that named Daniel came up with was approaching crawling.
+
+2
+00:00:08,360 --> 00:00:10,120
+That's what we called the last video.
+
+3
+00:00:10,160 --> 00:00:14,630
+And now we're just going to move forward and you got that in your course outline.
+
+4
+00:00:14,630 --> 00:00:16,110
+You got a link to go college.
+
+5
+00:00:16,160 --> 00:00:18,200
+Let's check out some more.
+
+6
+00:00:18,210 --> 00:00:27,080
+Yeah so so go Carly is a rather nice go library for any kind of crawling scraping spider whatever you
+
+7
+00:00:27,080 --> 00:00:32,180
+want to call going over the e-mail from some Web site programmatically.
+
+8
+00:00:32,580 --> 00:00:33,610
+So.
+
+9
+00:00:33,790 --> 00:00:43,030
+So whenever I go use a new library oftentimes what I will do is I'll look for examples and go call he's
+
+10
+00:00:43,030 --> 00:00:48,690
+got a good amount of examples some basic advanced logging in parallel.
+
+11
+00:00:48,880 --> 00:00:55,340
+So I'll just find one that seems like it would have similar similar to what I'm doing.
+
+12
+00:00:55,730 --> 00:00:58,730
+And it's beautiful.
+
+13
+00:00:58,750 --> 00:01:01,990
+So here's like crawling Reddit crawling Reddit for some data.
+
+14
+00:01:01,990 --> 00:01:06,610
+So this is this is probably very similar to what I'm looking for it's getting a list of data off Reddit
+
+15
+00:01:06,790 --> 00:01:12,010
+like posts and finding individual sub data to find like the brute to it in the title and such.
+
+16
+00:01:12,010 --> 00:01:13,990
+This very similar to what I'm trying to do.
+
+17
+00:01:13,990 --> 00:01:20,380
+It's a list of data list of things it's trying to find data within the list so that's it this is the
+
+18
+00:01:20,380 --> 00:01:24,970
+good example to reference kind of generally what you should do in what order.
+
+19
+00:01:24,970 --> 00:01:30,340
+And then the go doc is the other thing I like to keep open while I'm working with a library so I can
+
+20
+00:01:30,340 --> 00:01:32,530
+actually see what all the options are.
+
+21
+00:01:33,160 --> 00:01:39,840
+So go Call me the very first thing in this Reddit example is call a new collector.
+
+22
+00:01:39,850 --> 00:01:40,570
+So OK.
+
+23
+00:01:40,570 --> 00:01:47,510
+So I go looking to go dock for new collector new collector takes in these parameters it returns a collector.
+
+24
+00:01:47,600 --> 00:01:48,050
+So OK.
+
+25
+00:01:48,070 --> 00:01:49,270
+What's a collector option.
+
+26
+00:01:49,440 --> 00:01:49,670
+OK.
+
+27
+00:01:49,690 --> 00:01:53,890
+Here's a bunch of stuff I can now think about when I'm making a collector.
+
+28
+00:01:54,790 --> 00:02:01,270
+So for in this case for the scraping Twitter I didn't actually need any options so I was able to just
+
+29
+00:02:01,270 --> 00:02:09,340
+say OK create a collector once you've got a collector you're going to need data to actually what you're
+
+30
+00:02:09,340 --> 00:02:10,300
+actually going to be recording.
+
+31
+00:02:10,300 --> 00:02:14,880
+So I'm looking for a list of information.
+
+32
+00:02:14,920 --> 00:02:20,260
+Yes he created a data structure to hold the different information you want to pull out the different
+
+33
+00:02:20,260 --> 00:02:21,640
+information we wanted to pull out.
+
+34
+00:02:21,640 --> 00:02:26,070
+If you flip back to the tweet there we said Okay let's pull out the name.
+
+35
+00:02:26,280 --> 00:02:31,510
+And so you can see there's a lot Todd McCloud the top as you scroll down you see like and shool and
+
+36
+00:02:31,540 --> 00:02:36,310
+a cache Kosh and Hockney.
+
+37
+00:02:36,310 --> 00:02:36,610
+Right.
+
+38
+00:02:36,610 --> 00:02:40,510
+So you pull up the name and then the user name and then what they suggested.
+
+39
+00:02:40,540 --> 00:02:42,380
+So you're going to pull all that out.
+
+40
+00:02:42,400 --> 00:02:46,560
+So name username message and so that's in the data structure.
+
+41
+00:02:46,690 --> 00:02:49,720
+So we have a destruction that we're going to have a slice of those because there's going to be many
+
+42
+00:02:49,720 --> 00:02:55,540
+messages nice naming of the variables.
+
+43
+00:02:55,830 --> 00:03:02,490
+So very clear that that is the point of a variable name autocomplete is good enough nowadays that you
+
+44
+00:03:02,490 --> 00:03:05,950
+always want your variables to be clear.
+
+45
+00:03:06,400 --> 00:03:14,440
+So once you got messages Cawley says that works by you create the collector and you toll collector points
+
+46
+00:03:14,440 --> 00:03:16,510
+that you are interested in.
+
+47
+00:03:16,510 --> 00:03:19,220
+So with the on e-mail thing you can tell it.
+
+48
+00:03:19,240 --> 00:03:23,250
+I'm interested in everything with this class called this function or a time.
+
+49
+00:03:23,260 --> 00:03:26,960
+This clip that comes up called this function.
+
+50
+00:03:27,280 --> 00:03:31,050
+There's also on request every time it goes to a new page called this function.
+
+51
+00:03:31,090 --> 00:03:37,410
+So lots of different on things so if I go to my with I go doc you can look at on error on a shemale
+
+52
+00:03:37,420 --> 00:03:44,410
+on a show detach on request on response on scraped on X now except so plenty of stuff.
+
+53
+00:03:44,410 --> 00:03:51,400
+So in my case I was interested in whenever I see the tweet class I found this by over here.
+
+54
+00:03:51,430 --> 00:03:58,570
+If I open up my dev tools and I click this little button to the side of the Inspector I can now hover
+
+55
+00:03:58,570 --> 00:04:08,710
+over things and I can see information I found right about here I can see the entire tweet and if I could
+
+56
+00:04:08,710 --> 00:04:16,210
+there I can now see down here and one of the classes is tweet and that shows up on every single one.
+
+57
+00:04:16,210 --> 00:04:20,280
+If I click on the net if I go to the next one it's also as class tweet.
+
+58
+00:04:20,350 --> 00:04:23,310
+So a common class they can find for everything.
+
+59
+00:04:23,420 --> 00:04:23,740
+So yeah.
+
+60
+00:04:23,740 --> 00:04:28,930
+So what you're looking for there is something that's just really unique to the chunk of data you want
+
+61
+00:04:28,930 --> 00:04:29,890
+to grab.
+
+62
+00:04:30,130 --> 00:04:30,620
+And.
+
+63
+00:04:30,640 --> 00:04:33,300
+But but repeatable to each chart.
+
+64
+00:04:33,310 --> 00:04:33,610
+Right.
+
+65
+00:04:33,610 --> 00:04:35,550
+So it's like through all the code that gets sent.
+
+66
+00:04:35,550 --> 00:04:39,770
+You're finding that those those individual chunks and all that and all the code.
+
+67
+00:04:39,910 --> 00:04:40,160
+Yeah.
+
+68
+00:04:40,180 --> 00:04:40,540
+So.
+
+69
+00:04:40,570 --> 00:04:41,340
+So I'm telling you.
+
+70
+00:04:41,350 --> 00:04:44,100
+So here I just tell Callie I want to care.
+
+71
+00:04:44,110 --> 00:04:46,420
+I want every time there's a class tweet.
+
+72
+00:04:46,420 --> 00:04:49,450
+And so this is using just standard CSF selectors.
+
+73
+00:04:49,450 --> 00:04:57,120
+So if you go look if you know C assess this is just a CSF selector or if your g J.S. the query selector.
+
+74
+00:04:57,120 --> 00:05:00,870
+So dot means class and then the class name go.
+
+75
+00:05:00,880 --> 00:05:07,430
+So every time every time call he finds a dot tweet it will call this function here.
+
+76
+00:05:07,810 --> 00:05:11,040
+And this function will receive that element.
+
+77
+00:05:11,620 --> 00:05:19,950
+So in this case it's a div so this will be a div every time and so every time I find a dot tweet I will
+
+78
+00:05:19,950 --> 00:05:27,840
+add a new message to my list of messages with the append and create a new tweet and name and the element
+
+79
+00:05:27,840 --> 00:05:33,390
+has a child text which you can use to get text from a sub selected item.
+
+80
+00:05:33,450 --> 00:05:34,920
+So we're nice.
+
+81
+00:05:34,920 --> 00:05:39,230
+So within a tweet e dot child text and I can put in another selector.
+
+82
+00:05:39,240 --> 00:05:45,240
+So account group full name and account user name just so happened to find the name and user name and
+
+83
+00:05:45,240 --> 00:05:50,310
+then message was tweet text show show one of those again on Twitter just so we can see that.
+
+84
+00:05:50,910 --> 00:05:51,210
+Yeah.
+
+85
+00:05:51,240 --> 00:05:58,920
+So I'll do a so here is uh it's got tweet text.
+
+86
+00:05:58,960 --> 00:06:01,740
+Yeah it's going to be a class text and then show back on the code.
+
+87
+00:06:02,080 --> 00:06:04,200
+So tweet text.
+
+88
+00:06:04,200 --> 00:06:04,760
+All right.
+
+89
+00:06:05,040 --> 00:06:05,750
+So one thing.
+
+90
+00:06:05,760 --> 00:06:06,030
+No.
+
+91
+00:06:06,030 --> 00:06:11,180
+I've got the this separated account name and then inside that full name account.
+
+92
+00:06:11,550 --> 00:06:20,700
+Inside that username because of right here where it says replying to this particular replying to has
+
+93
+00:06:20,700 --> 00:06:27,330
+a class name of username which is the same as this one which is what I'm actually interested in is user
+
+94
+00:06:27,330 --> 00:06:28,040
+name.
+
+95
+00:06:28,170 --> 00:06:28,750
+And so you.
+
+96
+00:06:28,880 --> 00:06:29,080
+So.
+
+97
+00:06:29,090 --> 00:06:33,830
+So to make it more specific I found this username is always the username that I'm actually interested
+
+98
+00:06:33,830 --> 00:06:41,320
+in is always inside an anchor tag with that is always inside a.
+
+99
+00:06:41,430 --> 00:06:44,360
+Anchor tag with account dash group as class.
+
+100
+00:06:44,370 --> 00:06:46,780
+Just come over Jess dash account.
+
+101
+00:06:46,860 --> 00:06:49,960
+Group No account desk group account group.
+
+102
+00:06:50,040 --> 00:06:50,560
+So.
+
+103
+00:06:50,580 --> 00:06:56,460
+So I'm so I look for in four for user username specifically I need account group user name not just
+
+104
+00:06:56,490 --> 00:06:58,810
+any generic user name in my tweet.
+
+105
+00:06:58,950 --> 00:07:04,020
+So I found that out by running into it in my code directly it suddenly started telling me type iCloud
+
+106
+00:07:04,050 --> 00:07:07,340
+for every single one because they were all replying to Todd McLeod.
+
+107
+00:07:07,500 --> 00:07:12,920
+And so then I went back to my back to the H C to the H email and.
+
+108
+00:07:13,050 --> 00:07:15,300
+OK here's a here's a unique.
+
+109
+00:07:15,300 --> 00:07:21,030
+Here's a common class for the particular username I'm looking for.
+
+110
+00:07:21,090 --> 00:07:26,610
+So now after on H T mail I told Callie I every time a tweet happens do this.
+
+111
+00:07:27,030 --> 00:07:31,130
+So every time I tweet happens it will add a new message to the messages.
+
+112
+00:07:31,200 --> 00:07:40,040
+Then I tell Callie to visit site which I have listed out here as just a constant and it's just the URL
+
+113
+00:07:40,040 --> 00:07:45,540
+that you want to crawl to start off with So in this case this just.
+
+114
+00:07:46,700 --> 00:07:53,230
+Once tell Callie to visit Callie actually just go routines to speed up the visiting so you see that
+
+115
+00:07:53,240 --> 00:07:59,870
+wait to tell to wait until Callie is finished scraping so it started off when you told to visit.
+
+116
+00:07:59,870 --> 00:08:01,790
+Now you want to wait for it to be finished.
+
+117
+00:08:02,090 --> 00:08:07,700
+And so this is not that bad here because it's only visiting one page but if you're on each team l was
+
+118
+00:08:07,700 --> 00:08:12,200
+looking for like an anchor tag and then visiting from there to some other page and from there to some
+
+119
+00:08:12,200 --> 00:08:13,130
+other page.
+
+120
+00:08:13,280 --> 00:08:14,170
+It's very important.
+
+121
+00:08:14,180 --> 00:08:17,070
+You to need to wait.
+
+122
+00:08:17,600 --> 00:08:20,220
+So Callie will at this point call he's done.
+
+123
+00:08:20,270 --> 00:08:27,450
+Callie will have will have made a request to the robot start to 60 will have seen that Twitter's requests
+
+124
+00:08:27,470 --> 00:08:33,300
+and the robots that tweaks T and it will obey your programs respecting the robots that T.
+
+125
+00:08:33,320 --> 00:08:38,000
+First so in this case in this case doesn't really matter.
+
+126
+00:08:38,000 --> 00:08:44,330
+The page I tried to visit is allowed in the rules a t t and I'm only visiting one page so I didn't actually
+
+127
+00:08:44,330 --> 00:08:47,320
+make any difference at all but it was looking at the robots up to 60.
+
+128
+00:08:47,850 --> 00:08:53,420
+If it was a bigger crawling job that required going to multiple pages that would be something that's
+
+129
+00:08:53,600 --> 00:08:55,060
+really nice.
+
+130
+00:08:55,070 --> 00:08:59,630
+That's a really nice feature Callie and this video is getting a little long.
+
+131
+00:08:59,630 --> 00:09:03,670
+So maybe I'm marshall and dense very easy though we're almost done right.
+
+132
+00:09:03,670 --> 00:09:04,000
+Yeah.
+
+133
+00:09:04,030 --> 00:09:10,970
+So see our next step is I've got messages full of all the tweets so I'm just Jason marshaling it using
+
+134
+00:09:11,450 --> 00:09:18,500
+Marshall indent 2 to Marshall in a form that's got new lines and tabs so it's more readable and I'm
+
+135
+00:09:18,500 --> 00:09:21,050
+just and then I'm just printing it out to my console.
+
+136
+00:09:21,380 --> 00:09:24,040
+And I'm also pointing out how many tweets I got.
+
+137
+00:09:24,260 --> 00:09:32,860
+So if I actually run this real fast go run scraped I go it'll make the request to Twitter it will start
+
+138
+00:09:32,860 --> 00:09:37,800
+examining all the H it'll examine all the email it will spit out it found 19 tweets.
+
+139
+00:09:37,800 --> 00:09:39,300
+Cool.
+
+140
+00:09:39,460 --> 00:09:40,290
+That's awesome.
+
+141
+00:09:40,290 --> 00:09:40,710
+Yeah.
+
+142
+00:09:40,890 --> 00:09:42,380
+I love your solution.
+
+143
+00:09:42,380 --> 00:09:42,720
+Yeah.
+
+144
+00:09:42,790 --> 00:09:47,240
+Great job in the next video we'll explore this a little bit more.

@@ -1,0 +1,379 @@
+1
+00:00:00,260 --> 00:00:06,780
+Trong video này, chúng ta sẽ xem mã dành cho ứng dụng khách để trò chuyện vì mã máy chủ khá
+
+2
+00:00:06,780 --> 00:00:09,600
+phức tạp cho thiết kế đặc biệt này.
+
+3
+00:00:09,600 --> 00:00:14,170
+Và như vậy, khách hàng đơn giản hơn một chút.
+
+4
+00:00:14,570 --> 00:00:21,710
+Vì vậy, đối với khách hàng, tôi mong bạn đưa vào các đối số dòng lệnh, đồng euro để kết nối với
+
+5
+00:00:21,710 --> 00:00:26,020
+một đối số dòng lệnh và sau đó là tên người dùng của bạn làm đối số dòng lệnh thứ hai.
+
+6
+00:00:26,150 --> 00:00:31,280
+Và vì vậy, bất cứ khi nào bạn có các đối số dòng lệnh, điều đầu tiên cần làm trong phần chính của bạn là tạo
+
+7
+00:00:31,280 --> 00:00:34,160
+chắc chắn rằng các đối số dòng lệnh của bạn là loại hợp lệ.
+
+8
+00:00:34,160 --> 00:00:38,390
+Vì vậy, trong trường hợp này, tôi chỉ đang làm một việc rất cơ bản là tôi có đúng số lượng đối số dòng lệnh hay không.
+
+9
+00:00:38,390 --> 00:00:42,400
+Nếu không, hãy in ra một tin nhắn để nhắc nhở bản thân những lập luận đó là gì.
+
+10
+00:00:42,770 --> 00:00:52,540
+Hoặc người dùng sau khi tôi có những thứ đó, tôi sẽ trở thành ngữ cảnh nhiều nhất vì GBC sử dụng ngữ cảnh bất cứ khi nào bạn
+
+11
+00:00:52,540 --> 00:00:53,260
+thực hiện cuộc gọi.
+
+12
+00:00:53,260 --> 00:00:54,640
+Vì vậy, tôi nhận được bối cảnh.
+
+13
+00:00:54,640 --> 00:00:57,340
+Tôi chỉ đang tạo bối cảnh nền chung chung không có gì trong đó.
+
+14
+00:00:58,580 --> 00:01:08,080
+Và sau đó tôi quay số đến máy chủ của chúng tôi Hệ điều hành lập luận Một là tranh luận đầu tiên về đối số dòng lệnh để người dùng vector
+
+15
+00:01:08,110 --> 00:01:11,980
+nhập như bản địa hóa ADHD hoặc một số địa chỉ IP.
+
+16
+00:01:11,980 --> 00:01:19,570
+Và tôi không bảo mật máy chủ của mình nhưng khách hàng biết điều đó sẽ trì hoãn việc đóng kết nối.
+
+17
+00:01:19,570 --> 00:01:23,220
+Tạo ứng dụng trò chuyện mới qua các kết nối và tôi phải xem.
+
+18
+00:01:23,230 --> 00:01:27,450
+Và bây giờ tôi cần bắt đầu luồng đó trên RBC trò chuyện đó.
+
+19
+00:01:27,460 --> 00:01:28,870
+Cả hai hướng.
+
+20
+00:01:28,870 --> 00:01:37,050
+Vì vậy, tôi thấy cuộc trò chuyện đó và tôi cung cấp cho nó bối cảnh và nó trả lại cho tôi luồng này thuộc loại trò chuyện
+
+21
+00:01:37,080 --> 00:01:42,610
+ứng dụng khách trò chuyện gạch dưới trò chuyện dấu chấm là Daughtry.
+
+22
+00:01:42,710 --> 00:01:44,400
+Có chit chat tán gẫu.
+
+23
+00:01:44,450 --> 00:01:48,530
+Vì vậy, may mắn thay, chúng tôi không phải lo lắng về điều đó vì đã tìm ra nó rất tốt với cuộc gọi và bằng nhau.
+
+24
+00:01:49,430 --> 00:01:56,900
+Vì vậy, bây giờ tôi đã kiểm tra lỗi của luồng và sau đó là luồng có thể gửi và nhận
+
+25
+00:01:56,990 --> 00:02:04,220
+Tôi sử dụng thói quen một lượt để lặp đi lặp lại và nhận tất cả tin nhắn từ luồng và sau đó là tin nhắn chính
+
+26
+00:02:04,220 --> 00:02:11,240
+thói quen đi sẽ ghi tất cả các tin nhắn vào luồng với luồng đã gửi như vậy.
+
+27
+00:02:12,200 --> 00:02:20,550
+Vì vậy, tôi tạo một kênh có cấu trúc trống Tôi hy vọng kênh này sẽ bị đóng trước khi mọi thứ kết thúc
+
+28
+00:02:20,550 --> 00:02:24,840
+bằng cách đó, tôi có thể đảm bảo chức năng chính chờ thói quen đi này thoát trước chức năng chính
+
+29
+00:02:24,870 --> 00:02:28,560
+lối ra và vì vậy tôi dành một loại thói quen đi.
+
+30
+00:02:28,580 --> 00:02:35,570
+Vì vậy, quy trình này lặp đi lặp lại mãi mãi mỗi lần qua vòng lặp, nó nhận được một thông báo từ luồng.
+
+31
+00:02:35,570 --> 00:02:42,310
+Đây sẽ là một tin nhắn trò chuyện trò chuyện, một con trỏ tới một tin nhắn trò chuyện trò chuyện sau khi bạn nhận được tin nhắn trò chuyện.
+
+32
+00:02:42,310 --> 00:02:47,650
+in nó ra với tên người dùng là Cole trong tin nhắn nó cứ thế đi mãi.
+
+33
+00:02:47,910 --> 00:02:56,080
+Một điều cần lưu ý là nếu lỗi tôi nhận được là IO và tệp có nghĩa là luồng đã bị đóng
+
+34
+00:02:56,150 --> 00:02:57,960
+một cách đúng đắn.
+
+35
+00:02:57,980 --> 00:03:00,150
+Vì vậy, tôi chỉ nên tắt mọi thứ bình thường.
+
+36
+00:03:00,170 --> 00:03:06,130
+Vì vậy, tôi đã đóng kênh này để cho biết quy trình đi này đã kết thúc, báo giá đã kết thúc và tôi sẽ quay lại.
+
+37
+00:03:06,130 --> 00:03:08,540
+Ra khỏi các thói quen di chuyển mà bảo mật được thực hiện.
+
+38
+00:03:08,840 --> 00:03:09,560
+Bất kỳ khu vực nào khác.
+
+39
+00:03:09,560 --> 00:03:12,540
+Tôi chỉ đang hoảng loạn thôi.
+
+40
+00:03:13,430 --> 00:03:19,520
+Vì vậy, trong một chương trình phù hợp hơn, có lẽ bạn sẽ đặt một số mã xử lý lỗi thực tế phù hợp nhưng để trình diễn
+
+41
+00:03:19,520 --> 00:03:21,720
+mục đích hoảng loạn hoạt động ở đây.
+
+42
+00:03:23,330 --> 00:03:28,970
+Nửa còn lại của chương trình, tôi sẽ in ra một tuyên bố về cơ bản nói rằng tôi đã sẵn sàng
+
+43
+00:03:29,540 --> 00:03:35,930
+nhận tin nhắn và giải thích cách thoát khỏi chương trình để bạn có thể nhập và thoát hoặc bạn có thể sử dụng
+
+44
+00:03:35,930 --> 00:03:37,730
+điều khiển C để thoát khỏi chương trình
+
+45
+00:03:40,920 --> 00:03:48,900
+và tôi sẽ sử dụng bộ đệm một máy quét mới để quét vì quét phông chữ không quét toàn bộ dòng mã
+
+46
+00:03:49,280 --> 00:03:56,430
+các từ nhưng trình quét sinh học sẽ cho phép bạn nhận được toàn bộ dòng mã mà tiêu chuẩn là đầu vào của bạn trên lệnh
+
+47
+00:03:56,550 --> 00:03:57,200
+đường kẻ.
+
+48
+00:03:57,540 --> 00:04:03,090
+Vì vậy, tôi sẽ lấy một máy quét và sau đó miễn là có dòng để quét, tôi sẽ nhận được dòng đó
+
+49
+00:04:03,090 --> 00:04:04,260
+vừa được quét.
+
+50
+00:04:04,350 --> 00:04:11,400
+Nếu dòng tôi vừa quét nhanh thì tôi đã gọi luồng đóng Thượng viện vừa đóng nó sẽ gửi
+
+51
+00:04:11,400 --> 00:04:16,400
+loại bỏ tất cả các tin nhắn chưa được gửi qua luồng và đóng nó
+
+52
+00:04:19,430 --> 00:04:22,660
+và điều đó thoát ra khỏi vòng lặp for.
+
+53
+00:04:23,270 --> 00:04:26,800
+Cuối cùng, nếu nó không thoát, tôi tạo một tin nhắn trò chuyện.
+
+54
+00:04:26,810 --> 00:04:31,880
+Tên người dùng là đối số dòng lệnh thứ hai và sau đó thông báo là thông báo đã nhập
+
+55
+00:04:31,880 --> 00:04:38,870
+trong dòng lệnh và sau đó nó quay trở lại đầu trang để lặp lại, vì vậy mỗi lần bạn lặp lại, nó sẽ nhận được một dòng
+
+56
+00:04:38,870 --> 00:04:41,220
+kiểm tra dòng lệnh nếu nó thoát.
+
+57
+00:04:41,240 --> 00:04:42,910
+Nếu không nó sẽ gửi nó.
+
+58
+00:04:43,070 --> 00:04:47,010
+Đẹp rồi sau vòng lặp ấy cũng vì sự đứt đoạn này mà kết thúc.
+
+59
+00:04:47,040 --> 00:04:53,820
+Nếu bạn đang gõ, nó sẽ đóng kết nối và sau đó ngắt kết nối và nó sẽ đợi quá trình này diễn ra
+
+60
+00:04:53,820 --> 00:04:58,560
+để hoàn thành việc này sẽ khá nhanh vì bạn đã đóng kết nối nên tôi biết bạn sẽ sớm hoàn thành
+
+61
+00:05:02,010 --> 00:05:02,310
+vâng.
+
+62
+00:05:02,400 --> 00:05:10,050
+Điều duy nhất tôi phải chỉ ra trong mã đó là ngữ cảnh và ngữ cảnh là thứ mà bạn biết rõ
+
+63
+00:05:10,170 --> 00:05:15,750
+một vài thứ trong đó nhưng bối cảnh là thứ được đề cập ngắn gọn trong khóa học phát triển web của tôi.
+
+64
+00:05:15,900 --> 00:05:20,550
+Và chúng tôi cũng đang lên kế hoạch đề cập đến điều đó trong một khóa học tương lai mà chúng tôi sẽ tạo ra sau khóa học này.
+
+65
+00:05:20,970 --> 00:05:28,980
+Vì vậy, nếu bạn hơi giống bối cảnh đó là trải nghiệm chung và chúng ta sẽ đi sâu vào
+
+66
+00:05:28,980 --> 00:05:31,650
+điều đó trong một khóa học trong tương lai trừ khi args.
+
+67
+00:05:31,650 --> 00:05:38,490
+Chúng tôi cũng đã đề cập đến khóa học giới thiệu trước đó để bắt đầu khóa học, tôi tin rằng tôi đã đề cập đến lập luận nhưng điều đó thật dễ dàng
+
+68
+00:05:38,490 --> 00:05:45,360
+để tra cứu thư viện tiêu chuẩn và sau đó bạn cũng biết nếu đây là lần đầu tiên bạn nhìn thấy
+
+69
+00:05:45,750 --> 00:05:52,260
+một máy quét ở đó nhưng cháy gói bằng lửa và máy quét phản tác dụng.
+
+70
+00:05:52,260 --> 00:05:53,820
+Bộ đệm đầu vào và đầu ra.
+
+71
+00:05:53,820 --> 00:05:58,560
+Và vui lòng tham gia vào cuộc trò chuyện này và cho tôi biết nếu tôi trình bày bất kỳ điều gì trong số này theo cách cần thiết
+
+72
+00:05:58,560 --> 00:05:59,580
+một số sửa đổi
+
+73
+00:06:02,070 --> 00:06:05,820
+nhưng bộ đệm là vùng lưu trữ trong bộ nhớ và đầu vào và đầu ra.
+
+74
+00:06:05,850 --> 00:06:09,960
+Vậy là bạn đã biết một bộ đệm máy in spool buffer.
+
+75
+00:06:09,960 --> 00:06:14,730
+Bạn biết đấy, máy tính của bạn thường tạo ra tất cả mã mà máy in cần và sau đó giữ nó trong một
+
+76
+00:06:14,730 --> 00:06:19,260
+bộ đệm và sau đó là máy in gọn gàng để nó làm tất cả công việc đó và chỉ cần đặt tất cả nội dung ở đó sẵn sàng
+
+77
+00:06:19,260 --> 00:06:22,810
+cho máy in và ở đó máy in cần thông tin tiếp theo.
+
+78
+00:06:22,890 --> 00:06:28,590
+Phần thông tin tiếp theo đã sẵn sàng và được cung cấp, nhưng Fido chỉ giống như một cái tên
+
+79
+00:06:28,590 --> 00:06:36,120
+cho vùng đệm này cho đầu vào và đầu ra và sau đó đây chỉ là mẫu chuẩn cho cách máy quét
+
+80
+00:06:36,120 --> 00:06:36,740
+công việc.
+
+81
+00:06:36,860 --> 00:06:43,560
+Vì vậy, bạn Ingo và vì vậy bạn có thể xem điều này đã được thực hiện như thế nào với lần quét 4 máy quét đó và sau đó
+
+82
+00:06:43,560 --> 00:06:48,570
+lấy văn bản từ máy quét và vì vậy bạn có thể xem thư viện tiêu chuẩn tuyệt vời nhưng
+
+83
+00:06:48,570 --> 00:06:54,260
+đó cũng là điều mà bạn biết nếu bạn là người tương đối mới nếu bạn chưa từng thấy nó trước đây.
+
+84
+00:06:54,570 --> 00:06:56,070
+Này chuyện gì đang xảy ra vậy.
+
+85
+00:06:56,190 --> 00:06:56,520
+Được rồi.
+
+86
+00:06:56,520 --> 00:06:59,680
+Vì vậy, đó chỉ là một số suy nghĩ nảy ra trong tôi khi bạn trải qua nó.
+
+87
+00:06:59,700 --> 00:07:00,840
+Hoàn thành rất tốt.
+
+88
+00:07:00,840 --> 00:07:03,030
+Tôi thích mã của bạn.
+
+89
+00:07:03,030 --> 00:07:04,490
+Làm tốt lắm Daniel.
+
+90
+00:07:04,530 --> 00:07:06,590
+Bất cứ điều gì nhiều hơn để thêm vào này.
+
+91
+00:07:06,600 --> 00:07:07,760
+Tạo một khách hàng.
+
+92
+00:07:07,760 --> 00:07:08,190
+KHÔNG.
+
+93
+00:07:08,940 --> 00:07:09,560
+Được rồi tuyệt vời.
+
+94
+00:07:09,570 --> 00:07:14,490
+Vì vậy, tiếp theo chúng ta sẽ bắt đầu xử lý máy chủ và bây giờ có lẽ là một vài video nhưng có lẽ là
+
+95
+00:07:14,490 --> 00:07:15,190
+lớn hơn.

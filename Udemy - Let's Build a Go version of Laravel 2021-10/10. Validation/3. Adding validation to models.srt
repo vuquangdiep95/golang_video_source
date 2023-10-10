@@ -1,0 +1,139 @@
+1
+00:00:01,360 --> 00:00:07,450
+So as I suggested last time, sometimes it's very helpful to have validation right on data models and
+
+2
+00:00:07,450 --> 00:00:08,060
+we can do that.
+
+3
+00:00:08,080 --> 00:00:08,860
+It's pretty easy.
+
+4
+00:00:09,340 --> 00:00:13,840
+So right now I'm looking at user don't go in my app inside the data folder.
+
+5
+00:00:14,690 --> 00:00:19,240
+What I'm going to do is right here just after the table function and before they get all that.
+
+6
+00:00:19,240 --> 00:00:22,960
+It doesn't matter where it goes, but I'm going to put it here, put a validation function.
+
+7
+00:00:23,230 --> 00:00:27,610
+And again, it takes the receiver of you, pointed a user, and we'll call it validate.
+
+8
+00:00:29,500 --> 00:00:31,810
+And it will take one argument of type.
+
+9
+00:00:31,990 --> 00:00:40,450
+We'll call it validator of type a pointer to select a toss dart validation.
+
+10
+00:00:42,550 --> 00:00:45,220
+And it doesn't return anything, even though it's validation.
+
+11
+00:00:45,820 --> 00:00:49,870
+So we're going to have rules for a particular data model.
+
+12
+00:00:50,610 --> 00:00:51,520
+Now, if you think it through.
+
+13
+00:00:52,540 --> 00:00:57,640
+What kinds of things do you want, no matter what you're doing and in search or an update?
+
+14
+00:00:58,210 --> 00:01:01,300
+Well, we'll just put a few in here and you can modify them to whatever you want them to be.
+
+15
+00:01:01,310 --> 00:01:06,880
+So I'll call my validator function, which we received as a parameter to this function.
+
+16
+00:01:07,570 --> 00:01:14,470
+And I'll call check on that and I'll make sure that you don't last name is not equal to an empty string.
+
+17
+00:01:16,980 --> 00:01:21,300
+And the field I want to check, of course, will probably be called last underscore name, and that's
+
+18
+00:01:21,300 --> 00:01:24,840
+a convention you would have to follow in order for this validation to work.
+
+19
+00:01:25,260 --> 00:01:26,400
+But it's pretty straightforward.
+
+20
+00:01:27,150 --> 00:01:28,260
+And we'll give it an error message.
+
+21
+00:01:28,500 --> 00:01:32,460
+Last name must be provided.
+
+22
+00:01:33,810 --> 00:01:34,830
+And I'll duplicate that.
+
+23
+00:01:35,250 --> 00:01:36,780
+And if the same thing for first name.
+
+24
+00:01:41,610 --> 00:01:42,390
+First name.
+
+25
+00:01:44,740 --> 00:01:45,430
+And first thing,
+
+26
+00:01:48,810 --> 00:01:54,370
+then I'll duplicate it again and assume that you also want to have the email included so you don't email
+
+27
+00:01:57,370 --> 00:01:58,840
+and the field would be email.
+
+28
+00:02:00,730 --> 00:02:05,860
+Am I convention is whatever these field names are matches what's in the database and it keeps things
+
+29
+00:02:05,860 --> 00:02:06,640
+dead simple.
+
+30
+00:02:07,800 --> 00:02:17,580
+And will change this to email must be provided, and we'll just do one more validator Dot is email.
+
+31
+00:02:18,120 --> 00:02:23,340
+And that just requires the parameter email, the field, your checking and the value you email.
+
+32
+00:02:24,990 --> 00:02:29,130
+So now that I've added this validation function to my user model.
+
+33
+00:02:29,370 --> 00:02:32,010
+It's available to me anytime I'm working with a user.
+
+34
+00:02:32,610 --> 00:02:36,990
+So in the next lecture, we'll try it out and make sure that this works the way that we think it's supposed
+
+35
+00:02:36,990 --> 00:02:37,170
+to.

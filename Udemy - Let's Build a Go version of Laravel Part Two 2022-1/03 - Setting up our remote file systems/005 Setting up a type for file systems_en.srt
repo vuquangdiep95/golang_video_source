@@ -1,0 +1,428 @@
+1
+00:00:01,890 --> 00:00:07,410
+So now that we have our remote file systems, with the exception of Amazon S3 buckets, which I'll be
+
+2
+00:00:07,440 --> 00:00:12,630
+handling separately now that we have those set up, it's time to start writing some code and we'll just
+
+3
+00:00:12,630 --> 00:00:14,570
+ease into things now.
+
+4
+00:00:14,580 --> 00:00:19,590
+This time around, I've opened up go land instead of Visual Studio code, but it should make absolutely
+
+5
+00:00:19,590 --> 00:00:24,060
+no difference to you because what we're doing will work equally well in either environment.
+
+6
+00:00:24,810 --> 00:00:30,510
+So over here in my left hand panel, I'm going to open the hilarious project and let's think about what
+
+7
+00:00:30,510 --> 00:00:31,230
+we want to do.
+
+8
+00:00:31,530 --> 00:00:35,400
+Ideally, we want to have one body of code.
+
+9
+00:00:35,670 --> 00:00:41,910
+One thing we can call that will do all the basic operations for dealing with a remote file system and
+
+10
+00:00:41,910 --> 00:00:46,920
+the sorts of things we're going to want to do would be to put a file to put something up on the remote
+
+11
+00:00:46,920 --> 00:00:53,700
+file system to get a file from the remote file system to list all of the files that are available to
+
+12
+00:00:53,700 --> 00:00:55,530
+us and to delete things.
+
+13
+00:00:55,530 --> 00:00:57,680
+So put get listed, delete.
+
+14
+00:00:58,440 --> 00:01:04,590
+And obviously, the simplest way to do that is to set up an interface first and interface that each
+
+15
+00:01:04,590 --> 00:01:08,880
+of our various file systems must satisfy in order to be usable.
+
+16
+00:01:09,420 --> 00:01:14,670
+So we're obviously not going to do that in my app because we want all of the logic or as much of the
+
+17
+00:01:14,670 --> 00:01:17,720
+logic as we can manage to exist in celebrities.
+
+18
+00:01:17,760 --> 00:01:22,740
+So every time we start a new project using the celebrity's package, we'll have access to it.
+
+19
+00:01:23,280 --> 00:01:27,090
+So what I'll do is right click on celebrities and create a new directory.
+
+20
+00:01:27,120 --> 00:01:33,750
+I'll create a new package within my celebrity's package, and I'll call it file systems, plural.
+
+21
+00:01:34,050 --> 00:01:34,890
+There's no spaces.
+
+22
+00:01:35,190 --> 00:01:36,450
+So it creates a folder there.
+
+23
+00:01:37,020 --> 00:01:41,970
+And inside of that, I'll create a new go file, which I'll call file system.
+
+24
+00:01:41,970 --> 00:01:42,510
+Start go.
+
+25
+00:01:45,390 --> 00:01:45,720
+OK.
+
+26
+00:01:46,590 --> 00:01:52,770
+So it has the package name of file systems, and what I'm going to do is, first of all, I'm going
+
+27
+00:01:52,770 --> 00:01:57,870
+to define a type which I'll call FS for file system, and it's not going to be a struct.
+
+28
+00:01:57,990 --> 00:01:59,190
+It's going to be an interface.
+
+29
+00:01:59,820 --> 00:02:01,860
+So we'll define one interface.
+
+30
+00:02:02,490 --> 00:02:08,190
+And of course, all we have to do with this interface definition is list all of the functions that something
+
+31
+00:02:08,190 --> 00:02:11,120
+must implement in order to satisfy this interface.
+
+32
+00:02:11,190 --> 00:02:17,070
+So we're going to put that'll be our first function, and there will put in, say, two parameters file
+
+33
+00:02:17,070 --> 00:02:17,430
+name.
+
+34
+00:02:17,670 --> 00:02:18,450
+What are we putting?
+
+35
+00:02:18,990 --> 00:02:20,810
+And the second one will be, where are we putting it?
+
+36
+00:02:20,820 --> 00:02:25,980
+Which I'll call folder, because that's something that most people will immediately understand and that
+
+37
+00:02:25,980 --> 00:02:27,630
+will potentially return an error.
+
+38
+00:02:27,660 --> 00:02:29,460
+So that's one required function.
+
+39
+00:02:30,060 --> 00:02:32,640
+We're also going to one get which won't use that much.
+
+40
+00:02:32,640 --> 00:02:38,220
+Typically, when you're working on a web application like this, rarely do you get something because
+
+41
+00:02:38,220 --> 00:02:41,640
+that would get it from the remote file system and pull it down to the server.
+
+42
+00:02:41,670 --> 00:02:42,830
+I suppose you could do that.
+
+43
+00:02:42,840 --> 00:02:48,240
+You could say, I want to get something from the remote file system, pull it down to the server and
+
+44
+00:02:48,240 --> 00:02:49,800
+then send it to the end user.
+
+45
+00:02:50,190 --> 00:02:51,870
+That's really something you're not going to do very much.
+
+46
+00:02:51,870 --> 00:02:56,880
+But still, there are situations where you might have to get something from the remote file system to
+
+47
+00:02:56,880 --> 00:02:57,700
+your own server.
+
+48
+00:02:57,720 --> 00:02:59,160
+So where are we going to put it?
+
+49
+00:02:59,400 --> 00:03:00,150
+Destination.
+
+50
+00:03:00,180 --> 00:03:02,580
+That's our first parameter that will be a string.
+
+51
+00:03:03,510 --> 00:03:04,870
+And what do we want to get?
+
+52
+00:03:04,890 --> 00:03:10,830
+You might want to get more than one thing, so I'll say items dot, dot, dot string, very attic function.
+
+53
+00:03:10,830 --> 00:03:15,450
+We can get one or more items and potentially that will return an error.
+
+54
+00:03:15,780 --> 00:03:16,080
+OK.
+
+55
+00:03:17,220 --> 00:03:20,250
+We also want to list things now for parameters.
+
+56
+00:03:20,490 --> 00:03:26,640
+I'm going to have one which I'll call prefix string, and the prefix, of course, would be a folder
+
+57
+00:03:26,640 --> 00:03:29,910
+if we were going to say a remote file system like S&P.
+
+58
+00:03:30,450 --> 00:03:36,730
+But in other cases, Amazon S3 buckets, for example, there really is no such thing as a folder.
+
+59
+00:03:36,750 --> 00:03:40,950
+Instead, all of the assets that exist in a bucket have a prefix.
+
+60
+00:03:41,070 --> 00:03:42,600
+So I'm going to call them prefix instead.
+
+61
+00:03:43,840 --> 00:03:46,510
+And that's going to return to things, OK?
+
+62
+00:03:47,230 --> 00:03:49,240
+The first thing is your return is a slice.
+
+63
+00:03:49,630 --> 00:03:53,020
+Try that again, a slice of something I'm going to call listing.
+
+64
+00:03:53,350 --> 00:03:53,710
+OK.
+
+65
+00:03:53,740 --> 00:03:57,730
+That's a type that doesn't exist yet, but it will in a minute and potentially an error.
+
+66
+00:03:59,170 --> 00:04:01,540
+OK, so we're going to find that listing type in just a moment.
+
+67
+00:04:02,260 --> 00:04:08,980
+And the last function I need to implement will be delete, and it'll be again one parameter items to
+
+68
+00:04:09,010 --> 00:04:14,380
+delete, which will be a slice strings and that will return.
+
+69
+00:04:14,500 --> 00:04:19,510
+I'm going to use a bullet in this case, OK, because when you try to delete a non-existent file, we'll
+
+70
+00:04:19,510 --> 00:04:21,459
+just return false instead of true.
+
+71
+00:04:22,500 --> 00:04:28,750
+Now, the next thing I want is another type, and this one is going to be listing and it will be a struct,
+
+72
+00:04:29,200 --> 00:04:30,940
+and it only has five fields.
+
+73
+00:04:31,600 --> 00:04:36,970
+And these five fields correspond to all of the kinds of information I get from whatever file system
+
+74
+00:04:36,970 --> 00:04:37,840
+I'm connecting to.
+
+75
+00:04:38,260 --> 00:04:41,350
+One is an E tag, and you're going to get that from Mineo.
+
+76
+00:04:41,350 --> 00:04:44,290
+You're going to get it from Amazon S3 buckets and it's just a string.
+
+77
+00:04:44,540 --> 00:04:44,920
+OK?
+
+78
+00:04:45,340 --> 00:04:47,650
+That's a tag associated with a specific file.
+
+79
+00:04:48,310 --> 00:04:49,630
+Last modified.
+
+80
+00:04:50,170 --> 00:04:51,910
+That will be timed on time.
+
+81
+00:04:52,270 --> 00:04:52,690
+OK.
+
+82
+00:04:53,380 --> 00:04:55,090
+So that did the auto import for me.
+
+83
+00:04:55,090 --> 00:04:58,810
+And make sure that your ID ID also part of the time package.
+
+84
+00:04:58,810 --> 00:04:59,800
+Like minded online.
+
+85
+00:04:59,800 --> 00:05:00,220
+Three.
+
+86
+00:05:00,910 --> 00:05:02,590
+When was the file last modified?
+
+87
+00:05:03,100 --> 00:05:03,790
+The key?
+
+88
+00:05:04,000 --> 00:05:08,560
+And I'm using the word key for the descriptor here, because that's what Amazon uses.
+
+89
+00:05:09,520 --> 00:05:10,410
+That'll just be a string.
+
+90
+00:05:10,420 --> 00:05:17,410
+That's the filing the size and that will be a float 64 just to handle really big numbers.
+
+91
+00:05:18,670 --> 00:05:20,470
+And finally, here's a boolean.
+
+92
+00:05:20,500 --> 00:05:23,860
+Is this a directory which will be ignored by Amazon?
+
+93
+00:05:24,220 --> 00:05:27,220
+But it's something we'll be using, say, an SFP or WebDAV.
+
+94
+00:05:27,550 --> 00:05:29,980
+So is Directory Boolean true or false?
+
+95
+00:05:30,220 --> 00:05:32,860
+OK, so we'll format this.
+
+96
+00:05:33,310 --> 00:05:34,510
+I'll give it some comments.
+
+97
+00:05:36,790 --> 00:05:43,720
+So the first one first is the interface for file systems.
+
+98
+00:05:44,860 --> 00:05:46,780
+In order to satisfy this,
+
+99
+00:05:49,990 --> 00:05:50,830
+the interface
+
+100
+00:05:54,800 --> 00:06:02,950
+for all of its functions must be exist.
+
+101
+00:06:05,190 --> 00:06:05,650
+That's enough.
+
+102
+00:06:06,370 --> 00:06:16,240
+And the listing listing describes one file on a remote file system.
+
+103
+00:06:19,180 --> 00:06:26,500
+OK, so now we've got our type setup for our interface set up for the file systems, and we have a struct
+
+104
+00:06:26,500 --> 00:06:31,270
+that we can use to store files that exist on remote file systems.
+
+105
+00:06:31,450 --> 00:06:32,380
+So let's get started.
+
+106
+00:06:32,410 --> 00:06:37,960
+Now, in the next section, we'll start with Mineo, which is relatively easy to work with, and once
+
+107
+00:06:37,960 --> 00:06:42,880
+we have that one implemented, we'll move on to the other ones that we're going to include in this course.
+

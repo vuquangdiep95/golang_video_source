@@ -1,0 +1,172 @@
+1
+00:00:00,390 --> 00:00:05,760
+Salve e benvenuti a questa lezione in questa conferenza, definiremo le molte volte AAPI e questa API
+
+2
+00:00:05,760 --> 00:00:08,240
+sarà API per il taglio dei server.
+
+3
+00:00:08,370 --> 00:00:09,830
+Quindi questo è qualcosa di nuovo.
+
+4
+00:00:09,930 --> 00:00:14,600
+Ci vorrà una richiesta Mooneyham saluta che contiene un saluto proprio come prima.
+
+5
+00:00:14,790 --> 00:00:21,900
+E invece ora ci saranno molte parole in un flusso di molte volte risposta e ogni risposta conterrà una
+
+6
+00:00:21,900 --> 00:00:23,070
+stringa di risultati.
+
+7
+00:00:23,100 --> 00:00:27,990
+Quindi potresti sembrare un po 'confuso al momento ma andiamo avanti e scriviamo questo RBC in un
+
+8
+00:00:28,040 --> 00:00:28,940
+buffer di protocollo.
+
+9
+00:00:29,100 --> 00:00:35,220
+Quindi aprirò il profilo greedhead e fondamentalmente in fondo quello che vogliamo sia un
+
+10
+00:00:35,730 --> 00:00:40,150
+server server di streaming che trasmette correttamente il nostro PC.
+
+11
+00:00:40,380 --> 00:00:46,660
+Quindi per questo definiremo il nostro PC e questi sono pezzi chiamati saluti molte volte.
+
+12
+00:00:46,660 --> 00:00:54,120
+Ora come hai detto prima quando chiamiamo un RPG qualcosa quando dici saluta molte volte le richieste,
+
+13
+00:00:54,120 --> 00:00:56,650
+la richiesta prende dei ritorni.
+
+14
+00:00:56,670 --> 00:01:01,500
+Ed è qui che la novità è perché è un server che trasmette in streaming il nostro PC.
+
+15
+00:01:01,620 --> 00:01:08,450
+Quello che ritorna è un flusso di saluto molte volte risposta.
+
+16
+00:01:08,460 --> 00:01:11,220
+Quindi permettimi di chiudere questo in modo da avere una visione completa.
+
+17
+00:01:11,220 --> 00:01:12,120
+Eccoci qui.
+
+18
+00:01:12,600 --> 00:01:18,880
+Quindi è quello che dobbiamo definire molte volte moltissime volte la richiesta restituisce un flusso.
+
+19
+00:01:18,900 --> 00:01:22,970
+Così ho aggiunto la parola chiave Stream proprio qui, che è ciò che viene chiamato Server streaming.
+
+20
+00:01:23,140 --> 00:01:24,560
+Dammi i robot della damigella.
+
+21
+00:01:24,600 --> 00:01:30,030
+Quindi ora abbiamo davvero bisogno di definire questi messaggi e questi sono solo normali messaggi di protocollo buffer.
+
+22
+00:01:30,080 --> 00:01:33,500
+Proprio come prima, definiremo le molte richieste di tempo.
+
+23
+00:01:33,870 --> 00:01:39,170
+E questo messaggio stesso fa un saluto proprio come prima.
+
+24
+00:01:39,450 --> 00:01:48,040
+E poi definiamo il gruppo molte volte la risposta e ciò che restituisce è solo un risultato.
+
+25
+00:01:48,070 --> 00:01:48,820
+OK.
+
+26
+00:01:48,820 --> 00:01:50,580
+Quindi molto, molto facile.
+
+27
+00:01:50,590 --> 00:01:54,800
+L'unica differenza che abbiamo da prima è che abbiamo una parola chiave stream.
+
+28
+00:01:54,820 --> 00:02:01,060
+Quindi ovviamente avremmo potuto usare una richiesta in risposta perché questi messaggi sono praticamente uguali.
+
+29
+00:02:01,060 --> 00:02:06,940
+Ma la differenza è che solitamente nel nostro PC ogni volta che si ha e si è PC si desidera creare una nuova
+
+30
+00:02:06,940 --> 00:02:09,130
+richiesta e il tipo di messaggio di risposta.
+
+31
+00:02:09,250 --> 00:02:11,250
+Perché queste cose possono andare alla deriva nel tempo.
+
+32
+00:02:11,430 --> 00:02:12,080
+OK.
+
+33
+00:02:12,290 --> 00:02:16,290
+Quindi questo è per la definizione del file del buffer locale.
+
+34
+00:02:16,300 --> 00:02:19,490
+Andiamo avanti con la generazione del codice solo per assicurarci che nulla abbia funzionato.
+
+35
+00:02:19,690 --> 00:02:22,130
+Quindi copio quella riga nel mio editor.
+
+36
+00:02:22,450 --> 00:02:23,320
+Incolla
+
+37
+00:02:23,440 --> 00:02:24,280
+Funziona.
+
+38
+00:02:24,280 --> 00:02:29,260
+Quindi ora se vai a salutare le persone che entrano e scrivi tante volte quante puoi vedere
+
+39
+00:02:29,270 --> 00:02:32,360
+è qui che il codice è stato generato correttamente.
+
+40
+00:02:32,440 --> 00:02:37,210
+Quindi è tutto per il protocollo, ma per definizione basta ricordare che l'unica cosa che abbiamo fatto qui è
+
+41
+00:02:37,210 --> 00:02:39,840
+aggiungere uno stream e abbiamo aggiunto un altro RBC.
+
+42
+00:02:39,850 --> 00:02:41,440
+Quindi una volta ottenuta la stessa cosa.
+
+43
+00:02:41,590 --> 00:02:44,070
+Passiamo alla prossima lezione e implementiamo il server.
+

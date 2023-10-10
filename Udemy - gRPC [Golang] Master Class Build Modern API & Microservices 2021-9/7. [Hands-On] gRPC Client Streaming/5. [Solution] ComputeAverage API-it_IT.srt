@@ -1,0 +1,504 @@
+1
+00:00:00,330 --> 00:00:06,720
+OK, quindi spero che tu abbia avuto una buona occasione per far funzionare queste calcolatrici in media delle richieste.
+
+2
+00:00:07,090 --> 00:00:09,780
+Andiamo a dare un'occhiata e vediamo come possiamo farlo qui.
+
+3
+00:00:09,960 --> 00:00:16,440
+Quindi aprirò un profilo alla mia calcolatrice e andrò in Ucraina per voi RBC e questo RBC
+
+4
+00:00:16,800 --> 00:00:18,540
+si chiama media calcolata.
+
+5
+00:00:18,540 --> 00:00:25,500
+Quindi questo è il client di streaming, in modo tale che scriviamo stream in primo luogo e
+
+6
+00:00:26,280 --> 00:00:32,310
+eseguiamo lo streaming della richiesta media e restituisce solo una risposta media calcolata.
+
+7
+00:00:32,850 --> 00:00:33,320
+OK.
+
+8
+00:00:33,390 --> 00:00:34,700
+Quindi questo è perfetto.
+
+9
+00:00:34,740 --> 00:00:36,660
+Ora dobbiamo implementare questi messaggi.
+
+10
+00:00:36,750 --> 00:00:43,240
+Quindi il primo messaggio è la richiesta e la richiesta stessa sarà un numero int 32.
+
+11
+00:00:43,440 --> 00:00:48,980
+Quindi possiamo chiamare questo numero e questo è il primo.
+
+12
+00:00:49,020 --> 00:00:51,390
+Ora il risultato stesso è la media.
+
+13
+00:00:51,420 --> 00:00:55,210
+Quindi possiamo inviare un messaggio per calcolare la risposta media.
+
+14
+00:00:55,590 --> 00:01:01,950
+E poiché la media sarà come un numero con virgole, posso dire che è un doppio e
+
+15
+00:01:01,950 --> 00:01:06,050
+dirò che la media doppia equivale a una abbastanza facile.
+
+16
+00:01:06,300 --> 00:01:08,790
+Quindi la mia calcolatrice sembra buona.
+
+17
+00:01:08,790 --> 00:01:14,310
+Ora posso andare avanti e generare il codice utilizzando questi comandi, quindi procederò e genererò il codice.
+
+18
+00:01:14,540 --> 00:01:19,240
+Ok questo è fatto ora ho bisogno di implementare il mio server.
+
+19
+00:01:19,320 --> 00:01:20,980
+Quindi andiamo avanti e farlo.
+
+20
+00:01:21,270 --> 00:01:25,930
+Quindi aprirò entrambi questi calcolatori di foules Perlow e server che vanno.
+
+21
+00:01:26,160 --> 00:01:27,170
+Eccoci qui.
+
+22
+00:01:27,840 --> 00:01:29,140
+Quindi sembra corretto.
+
+23
+00:01:29,160 --> 00:01:33,120
+La somma viene implementata e viene implementata la decomposizione del numero primo.
+
+24
+00:01:33,240 --> 00:01:38,550
+Devo andare lì e trovare la mia interfaccia server struct server.
+
+25
+00:01:38,550 --> 00:01:43,000
+Qui andiamo e prenderò questa linea e la copierò sulla media del calcolo.
+
+26
+00:01:43,410 --> 00:01:48,520
+Quindi sulla mia funzione che prende un server ho intenzione di fare la media di calcolo.
+
+27
+00:01:48,810 --> 00:01:51,670
+E questo è un flusso proveniente dalla mia calcolatrice.
+
+28
+00:01:51,670 --> 00:01:57,140
+P. B. questo mi apre la mia funzione e ora ho bisogno di implementarlo.
+
+29
+00:01:57,240 --> 00:02:00,100
+Come al solito possiamo stampare il fatto che è stato invocato.
+
+30
+00:02:00,180 --> 00:02:09,690
+Quindi dirò di aver ricevuto RBC mediamente calcolata e di avere solo una linea e ora
+
+31
+00:02:09,690 --> 00:02:11,520
+procediamo all'attuazione effettiva.
+
+32
+00:02:11,520 --> 00:02:17,780
+Quindi ora fondamentalmente per calcolare una media Abbiamo bisogno di avere due cose quando hai la somma
+
+33
+00:02:18,100 --> 00:02:22,720
+del numero a zero 0 e dobbiamo avere il conteggio dei numeri.
+
+34
+00:02:22,830 --> 00:02:26,260
+Quanti numeri sono stati ricevuti e anche inizializzati questo è zero.
+
+35
+00:02:26,700 --> 00:02:33,300
+Ora abbiamo solo bisogno di iterare su quel flusso e continuare a ottenere i numeri
+
+36
+00:02:33,300 --> 00:02:38,980
+così lontano e quindi otteniamo il flusso per ricevere i punti stream.
+
+37
+00:02:39,510 --> 00:02:42,820
+E questa sarà una richiesta e un errore.
+
+38
+00:02:43,230 --> 00:02:50,230
+Possiamo iniziare a trattare con il caso di errore prima se l'errore è un tutto ciò che e
+
+39
+00:02:50,620 --> 00:02:55,900
+un file allora dirà LUGG punti Fadal f alla fine del file.
+
+40
+00:02:55,900 --> 00:02:57,870
+Sto perdendo la testa e un file è buono.
+
+41
+00:02:58,060 --> 00:03:01,040
+Quindi se Arafat è buono dobbiamo inviare il risultato a quello.
+
+42
+00:03:01,270 --> 00:03:06,470
+Quindi diremo mandare e chiudere e dobbiamo creare una risposta media calcolata.
+
+43
+00:03:06,520 --> 00:03:13,990
+Quindi per questo andremo avanti e creeremo una risposta media calcolata che prende una media come float 64.
+
+44
+00:03:13,990 --> 00:03:20,470
+Quindi per questo diremo semplicemente che la media è uguale alla somma divisa per non può venire.
+
+45
+00:03:21,130 --> 00:03:22,520
+E questa è fondamentalmente la mia media.
+
+46
+00:03:22,810 --> 00:03:23,870
+Non è molto felice.
+
+47
+00:03:23,950 --> 00:03:26,260
+Quindi dobbiamo renderlo un float.
+
+48
+00:03:26,650 --> 00:03:27,930
+Quindi creerò proprio qui.
+
+49
+00:03:28,000 --> 00:03:35,880
+La media è uguale a galleggiare sessantaquattro di alcuni svalutati per numero.
+
+50
+00:03:36,160 --> 00:03:37,060
+E dovrebbe essere buono.
+
+51
+00:03:37,090 --> 00:03:40,420
+E ora abbiamo la media andando proprio qui.
+
+52
+00:03:40,420 --> 00:03:47,130
+Quindi ricontrolliamo e se sono in media mi manca il cono e dice operatore.
+
+53
+00:03:47,580 --> 00:03:53,520
+Quindi spero di averlo provato come un float 64 e ora le cose dovrebbero funzionare OK.
+
+54
+00:03:53,860 --> 00:03:58,730
+Quindi ora abbiamo restituito la media e la restituiremo anche nel caso in cui l'aria fuori.
+
+55
+00:03:58,840 --> 00:04:00,150
+Ma non abbiamo finito.
+
+56
+00:04:00,340 --> 00:04:10,780
+Se l'aria questa volta non è nulla, allora LUGG è fatale se dite: Errate bene a leggere il flusso del client
+
+57
+00:04:11,710 --> 00:04:14,260
+e stiamo passando l'errore e
+
+58
+00:04:18,460 --> 00:04:26,500
+poi Altrimenti se tutto va bene allora diremo che la somma più uguale è così incrementale
+
+59
+00:04:26,980 --> 00:04:35,800
+su richiesta otteniamo il numero e il conteggio di 1 in modo che possiamo contare più e più.
+
+60
+00:04:35,800 --> 00:04:37,860
+Quindi tutto sembra a posto.
+
+61
+00:04:37,900 --> 00:04:39,260
+C'è una mancata corrispondenza di tipo.
+
+62
+00:04:39,260 --> 00:04:41,980
+Quindi è dentro e 32.
+
+63
+00:04:41,990 --> 00:04:46,860
+Quindi in questo caso lo farò 32 su 0.
+
+64
+00:04:47,400 --> 00:04:47,840
+Va bene.
+
+65
+00:04:47,930 --> 00:04:49,020
+Tutto sembra a posto.
+
+66
+00:04:49,130 --> 00:04:52,720
+Quindi ne abbiamo alcuni che ottengono il numero e contano più più più.
+
+67
+00:04:52,730 --> 00:04:53,800
+Quindi è perfetto
+
+68
+00:04:54,050 --> 00:04:59,930
+Quindi ora riassumiamo ogni volta che un risultato di ricerca incrementa la somma e il conteggio dei
+
+69
+00:04:59,930 --> 00:05:00,810
+numeri ricevuti.
+
+70
+00:05:00,980 --> 00:05:05,660
+E poi quando abbiamo finito calcoliamo la media come la somma divisa per i conteggi.
+
+71
+00:05:05,960 --> 00:05:07,030
+Tutti questi galleggianti.
+
+72
+00:05:07,250 --> 00:05:09,350
+E poi alla fine riusciremo a salvare.
+
+73
+00:05:09,390 --> 00:05:14,260
+Invieremo indietro i risultati in chiusura inviando la media in una struttura.
+
+74
+00:05:14,420 --> 00:05:16,250
+Quindi tutto sembra a posto.
+
+75
+00:05:16,250 --> 00:05:19,270
+Ora dobbiamo solo convalidarlo usando i client.
+
+76
+00:05:19,280 --> 00:05:19,800
+Quindi va bene.
+
+77
+00:05:19,800 --> 00:05:30,140
+Implementa la funzione di inclemenza dei client chiamata Do streaming client e copierò questo aspetto così lo streaming di
+
+78
+00:05:34,100 --> 00:05:35,330
+Klimt e
+
+79
+00:05:38,410 --> 00:05:46,330
+dirà che sta iniziando a fare un RBC di streaming client medio di calcolo.
+
+80
+00:05:46,420 --> 00:05:51,180
+Quindi ora andiamo avanti e prendiamo i nostri clienti e ora abbiamo una funzione media calcolata.
+
+81
+00:05:51,280 --> 00:05:58,180
+Il contesto è ancora lo sfondo, quindi il contesto e lo sfondo e nessuna opzione sono necessari.
+
+82
+00:05:58,270 --> 00:06:02,050
+A seguito di ciò, riceviamo un errore.
+
+83
+00:06:02,080 --> 00:06:10,350
+Ora se l'aria non è uguale a zero allora dovremmo mandare il nostro messaggio per trascinare quell'aria
+
+84
+00:06:13,520 --> 00:06:17,910
+fatale mentre si apre il flusso e invierà il
+
+85
+00:06:22,860 --> 00:06:24,740
+messaggio di errore.
+
+86
+00:06:25,330 --> 00:06:30,090
+Altrimenti abbiamo un flusso e possiamo iniziare a fare cose interessanti, tra cui alcune
+
+87
+00:06:30,090 --> 00:06:34,870
+mosse invia richiederà una richiesta di calcolo medio, quindi dovremmo inviare alcune richieste di calcolo medio.
+
+88
+00:06:34,870 --> 00:06:42,670
+Quindi, per esempio, possiamo dire che per così è solo fare una serie di esso.
+
+89
+00:06:42,700 --> 00:06:57,960
+Quindi i numeri equivalgono a un array di 32 e prendiamo solo alcuni numeri quindi 2 3 5 nove cinquanta quattro e
+
+90
+00:06:57,960 --> 00:06:58,660
+ventitre.
+
+91
+00:06:59,010 --> 00:06:59,970
+OK.
+
+92
+00:07:00,600 --> 00:07:13,940
+E invierà questo numero per i numeri dell'intervallo, quindi faremo streambed che inviamo e noi abbiamo creato e calcoliamo
+
+93
+00:07:13,990 --> 00:07:16,270
+la richiesta media.
+
+94
+00:07:16,530 --> 00:07:21,520
+Quindi è una struttura e questo camion prende solo un numero e 32.
+
+95
+00:07:21,540 --> 00:07:29,090
+Quindi andiamo avanti e diciamo che il numero è uguale al numero.
+
+96
+00:07:29,120 --> 00:07:33,690
+Quindi vediamo cosa sta succedendo.
+
+97
+00:07:33,710 --> 00:07:42,860
+Quindi, ovviamente per un numero assegnato ai numeri di intervallo, inviamo un numero numerato che è perfetto.
+
+98
+00:07:42,910 --> 00:07:45,960
+E ora dobbiamo occuparci solo della chiusura di quel flusso.
+
+99
+00:07:46,150 --> 00:07:53,770
+Quindi diciamo streambed da vicino e riceviamo il tipo di ritorno è una risposta media calcolata e un errore.
+
+100
+00:07:54,430 --> 00:07:55,660
+Quindi andremo
+
+101
+00:07:59,040 --> 00:08:05,510
+avanti e diciamo che l'errore di risposta è uguale a questo.
+
+102
+00:08:05,600 --> 00:08:18,100
+Ora, se l'errore non è noto, lo registreremo in modo tale da registrare quel fatale F durante la ricezione della risposta.
+
+103
+00:08:19,820 --> 00:08:22,300
+E passeremo nell'aria che otteniamo.
+
+104
+00:08:22,550 --> 00:08:30,800
+Oppure, se non lo è, possiamo iniziare a stampare i risultati e possiamo dire f anti-cuts print f.
+
+105
+00:08:31,250 --> 00:08:36,400
+La media è e noi passiamo il valore.
+
+106
+00:08:37,160 --> 00:08:43,090
+Quindi risultiamo nella media o anche meglio nella media.
+
+107
+00:08:43,370 --> 00:08:44,750
+E così dovrebbe essere.
+
+108
+00:08:44,750 --> 00:08:46,430
+Quindi vediamo se tutto ha funzionato.
+
+109
+00:08:46,460 --> 00:08:56,620
+Possiamo anche trascinare alcune cose qui in modo che possiamo dire FMG che stampa il numero di invio e quindi passeremo il numero
+
+110
+00:08:56,720 --> 00:09:01,630
+proprio qui che stiamo inviando e aggiungeremo una nuova riga.
+
+111
+00:09:02,120 --> 00:09:02,960
+OK.
+
+112
+00:09:03,140 --> 00:09:05,640
+Quindi tutto ciò sembra buono.
+
+113
+00:09:06,110 --> 00:09:09,170
+Proviamo e vediamo se funziona.
+
+114
+00:09:09,210 --> 00:09:12,560
+Sono tornato nel mio codice e ho intenzione di andare in giro.
+
+115
+00:09:12,790 --> 00:09:17,590
+Ho intenzione di eseguire il mio server calcolatrice che sta eseguendo l'eccellenza.
+
+116
+00:09:18,050 --> 00:09:22,540
+E qui ho intenzione di gestire i miei clienti di calcolatrici.
+
+117
+00:09:22,730 --> 00:09:23,930
+Vediamo se funziona.
+
+118
+00:09:24,320 --> 00:09:30,350
+Quindi inviamo il numero 3 5 9 al 54 e al 23 e torniamo indietro.
+
+119
+00:09:30,350 --> 00:09:32,620
+La media è di 18 su 8.
+
+120
+00:09:32,900 --> 00:09:34,330
+Quindi è stato davvero veloce, giusto.
+
+121
+00:09:34,580 --> 00:09:38,220
+E qui, dal lato del servizio, abbiamo detto RBC medio calcolato.
+
+122
+00:09:38,570 --> 00:09:40,520
+Quindi tutto sommato funziona davvero bene.
+
+123
+00:09:40,910 --> 00:09:45,320
+Puoi cambiare i numeri fino a quando vuoi, ma nel complesso otteniamo il risultato che vogliamo,
+
+124
+00:09:45,320 --> 00:09:47,050
+che è la media calcolata correttamente.
+
+125
+00:09:47,330 --> 00:09:48,740
+Quindi è stato utile.
+
+126
+00:09:48,740 --> 00:09:53,180
+Spero che ti sia piaciuto e spero che tu ottenga gli stessi identici risultati e che ci vedremo nella prossima lezione.
+

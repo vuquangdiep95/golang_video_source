@@ -1,0 +1,343 @@
+1
+00:00:00,060 --> 00:00:00,360
+OK.
+
+2
+00:00:00,390 --> 00:00:03,340
+So you could see here in our course outline just keep you on point.
+
+3
+00:00:03,390 --> 00:00:05,280
+So you're tracking what we're learning where we're learning it.
+
+4
+00:00:05,280 --> 00:00:12,600
+We just went through understanding SS H encryption working in Windows on the terminal which is also
+
+5
+00:00:12,600 --> 00:00:24,380
+called Bash which is also called Shell and as opposed to command prompt prompt or CMT or DOS prompt.
+
+6
+00:00:24,390 --> 00:00:26,190
+I've heard it called all those things.
+
+7
+00:00:27,100 --> 00:00:27,310
+Yeah.
+
+8
+00:00:27,330 --> 00:00:34,620
+Windows also has power shown imitates but it's basically it's a superset it seems the power show.
+
+9
+00:00:34,650 --> 00:00:34,890
+All right.
+
+10
+00:00:34,890 --> 00:00:38,460
+So now we're going to create our get repo for this course and we'll clone it.
+
+11
+00:00:38,490 --> 00:00:45,090
+So I'm going to go to get hub click new repository it's going to bring me to this screen.
+
+12
+00:00:45,090 --> 00:00:48,640
+I'm going to name my repository.
+
+13
+00:00:48,780 --> 00:00:54,320
+So I'm going to call this go laying project and going project.
+
+14
+00:00:54,330 --> 00:00:55,250
+I think that's good.
+
+15
+00:00:55,350 --> 00:00:57,450
+Going project.
+
+16
+00:00:58,200 --> 00:00:58,730
+Yeah.
+
+17
+00:00:58,970 --> 00:01:00,030
+Yeah that's fine.
+
+18
+00:01:00,030 --> 00:01:04,200
+And I'm not going now to get ignore anything like that I'm going to create the repository so click Create
+
+19
+00:01:04,260 --> 00:01:05,080
+repository.
+
+20
+00:01:05,620 --> 00:01:09,640
+And now this is created quick setup if you've done this kind of thing before.
+
+21
+00:01:09,750 --> 00:01:11,770
+I have SSA reached.
+
+22
+00:01:11,820 --> 00:01:13,980
+Yes I want to make sure I've got SSA H.
+
+23
+00:01:14,000 --> 00:01:15,860
+I'm going to copy all of that man.
+
+24
+00:01:15,890 --> 00:01:16,610
+See.
+
+25
+00:01:16,800 --> 00:01:22,210
+And then go to my terminal and somewhere in my terminal I think I'll put mine in and we're going to
+
+26
+00:01:22,470 --> 00:01:25,640
+get into modules because modules is new.
+
+27
+00:01:25,800 --> 00:01:33,840
+And so as modules are is new we wanted to provide you know some teaching on that so that you can use
+
+28
+00:01:33,840 --> 00:01:37,040
+modules will be using go modules in this course if you don't know.
+
+29
+00:01:37,050 --> 00:01:37,830
+That is great.
+
+30
+00:01:37,830 --> 00:01:39,020
+We're going to teach in a second.
+
+31
+00:01:39,180 --> 00:01:45,960
+But what that means is the old way and go creating a workspace was that you actually had to go workspace.
+
+32
+00:01:45,960 --> 00:01:50,820
+There was a go path environment variables set to your go workspace inside your go workspace he had a
+
+33
+00:01:50,820 --> 00:01:56,430
+source been in package folder inside the source folder usually had some sort of name spacing that would
+
+34
+00:01:56,430 --> 00:02:02,430
+separate my code from somebody else's code and then namespace and usually when domain user name some
+
+35
+00:02:02,430 --> 00:02:08,550
+sort of repos something along those lines and and so insofar as it might be source get hub dot com my
+
+36
+00:02:08,550 --> 00:02:13,590
+username goes to 11 and then forward slash the repo name is where I'd create the repository but now
+
+37
+00:02:13,590 --> 00:02:20,880
+I could create I could create folders where I work on go projects anywhere on my computer and we just
+
+38
+00:02:20,880 --> 00:02:26,130
+have to create go modules to work in that and so we'll cover how to do that in a second but the point
+
+39
+00:02:26,130 --> 00:02:32,850
+of this is all that I could do is on the point of this is all to say that I could put my repo wherever
+
+40
+00:02:32,850 --> 00:02:39,390
+I want on my computer it no longer has to be in that go workspace defined by the go path if you have
+
+41
+00:02:39,390 --> 00:02:45,480
+legacy projects go pass still works but go modules you can put it anywhere so I'm just going to go to
+
+42
+00:02:45,480 --> 00:02:50,230
+documents and in documents I'm going to create this project.
+
+43
+00:02:50,230 --> 00:02:54,990
+So we're just going to do get clone and I guess before I do that I'll just l s kind of so I could see
+
+44
+00:02:54,990 --> 00:02:58,620
+what's in there and then we'll see how things have changed and so I'll do it.
+
+45
+00:02:58,690 --> 00:03:04,700
+S L.A. and that's it's in there and I'm going to do my get clone and clone this project that you are
+
+46
+00:03:04,700 --> 00:03:09,840
+all a copy and so that's coming down and it's going project get and says you've cloned it into your
+
+47
+00:03:09,840 --> 00:03:15,480
+repository and if I do my SLA now I've got going project right there.
+
+48
+00:03:15,480 --> 00:03:25,550
+So if I go into that C.D. going project and I create a file test start t t and I edit that file opening
+
+49
+00:03:25,560 --> 00:03:31,630
+the editor and just text whatever its name spelled right control X to save it yes save it to that and
+
+50
+00:03:31,650 --> 00:03:32,670
+exit.
+
+51
+00:03:32,670 --> 00:03:37,320
+And now if I do get status right I've got that test.
+
+52
+00:03:38,130 --> 00:03:42,630
+I'm just making sure that I actually switched in the building project LSA L.A. I've got my get folder
+
+53
+00:03:43,020 --> 00:03:51,320
+I've got to text files I don't know why to create it seems like when the test wins text test and text.
+
+54
+00:03:51,320 --> 00:03:53,390
+All right so I'm going to get rid of test.
+
+55
+00:03:53,430 --> 00:03:54,590
+There we go.
+
+56
+00:03:54,670 --> 00:03:56,070
+And thank you.
+
+57
+00:03:56,100 --> 00:03:59,360
+That's where pair programming is awesome.
+
+58
+00:03:59,730 --> 00:04:08,970
+And now I'm going to do a get add Dash I saw and get commit dash first commit test file and then get
+
+59
+00:04:08,970 --> 00:04:10,260
+push.
+
+60
+00:04:10,320 --> 00:04:16,170
+And so I should see this show up over on my repo now.
+
+61
+00:04:16,170 --> 00:04:21,480
+So if I come back to my repo and just hit this it's gonna refresh and now everything's connected in
+
+62
+00:04:21,500 --> 00:04:23,850
+my files getting pushed up.
+
+63
+00:04:23,940 --> 00:04:24,610
+So it's good.
+
+64
+00:04:24,750 --> 00:04:26,520
+And that's establishing a repo.
+
+65
+00:04:26,520 --> 00:04:27,930
+This will be the repo for the course.
+
+66
+00:04:27,930 --> 00:04:33,280
+So if you wanted to add to this or first of all you probably want to clone it down your machine.
+
+67
+00:04:33,280 --> 00:04:36,870
+So you have all the code by the time you clone it there's going to be a lot of code in there we're just
+
+68
+00:04:36,870 --> 00:04:39,200
+getting started and.
+
+69
+00:04:39,440 --> 00:04:44,280
+And then if you want to add to this repo or if you even want to contribute to the course in a larger
+
+70
+00:04:44,280 --> 00:04:53,510
+way by what do they call it being an administrator of a repo at length that 0 collaborator a collaborator
+
+71
+00:04:53,520 --> 00:04:54,930
+Lord of War.
+
+72
+00:04:55,080 --> 00:05:00,930
+Seth a jet I have this repo whatever you want to call it if you want to be somebody who else review
+
+73
+00:05:01,260 --> 00:05:09,150
+pull requests and accept those we're totally open to that because life gets busy but if you know you
+
+74
+00:05:09,300 --> 00:05:12,320
+have time you want to be able to sort of contribute to community.
+
+75
+00:05:12,660 --> 00:05:13,290
+That's awesome.
+
+76
+00:05:13,290 --> 00:05:18,120
+Or if you want to make pull requests like oh here's another thing or contribute another example another
+
+77
+00:05:18,120 --> 00:05:21,230
+file like here's another way to do it for everybody in the class.
+
+78
+00:05:21,240 --> 00:05:22,820
+Take a look at this way.
+
+79
+00:05:22,950 --> 00:05:28,260
+Feel free to add to this repost that pull requests and we're totally going to monitor that as much as
+
+80
+00:05:28,260 --> 00:05:34,120
+we can and we welcome additional help if anybody else wants to contribute to the monitoring of that.
+
+81
+00:05:34,230 --> 00:05:38,700
+So that's all I have to say about creating the repo and the next video we're gonna jump on branches
+
+82
+00:05:38,750 --> 00:05:46,770
+but I've been doing all the talk and just kind of get things warmed up get Daniel warmed up and in the
+
+83
+00:05:46,770 --> 00:05:50,700
+next video we'll jump into looking at branches so that we cover that.
+
+84
+00:05:50,800 --> 00:05:54,570
+That's never been covered in my classes because I want to make sure that's covered you have anything
+
+85
+00:05:54,570 --> 00:05:56,360
+you want and know.
+
+86
+00:05:56,400 --> 00:05:58,890
+All right sweet see in the next video.

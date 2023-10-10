@@ -1,0 +1,775 @@
+1
+00:00:01,860 --> 00:00:07,350
+OK, before we can actually start working with WebSocket, we need to set up a basic Web application
+
+2
+00:00:07,350 --> 00:00:09,150
+and fortunately go makes that really easy.
+
+3
+00:00:09,240 --> 00:00:14,280
+So I'm in goaland you could be in visual studio code or whatever idea you choose to use.
+
+4
+00:00:14,580 --> 00:00:19,500
+But I'm going to create a new project and I'm going to create a new Go Modules project, and I will
+
+5
+00:00:19,500 --> 00:00:22,170
+call it W.S. for Web sockets.
+
+6
+00:00:22,350 --> 00:00:23,130
+So let's create that.
+
+7
+00:00:24,210 --> 00:00:26,840
+And inside of that, I need to have a main function.
+
+8
+00:00:26,850 --> 00:00:32,700
+So I like to organize my code in a way that's kind of standard for people that work in Web applications
+
+9
+00:00:32,700 --> 00:00:38,820
+and go, I'm going to put my main package in a new directory at the root level of my application called
+
+10
+00:00:38,820 --> 00:00:44,490
+CMD, and inside of that will create a new directory called Web.
+
+11
+00:00:45,150 --> 00:00:49,230
+And inside of that I'll create a new go file, which I'll call Mango.
+
+12
+00:00:50,310 --> 00:00:55,260
+And I'm going to change the package name to Main because I like it better than I like Web and I'll create
+
+13
+00:00:55,260 --> 00:00:57,420
+a function here, my empty main function.
+
+14
+00:00:58,830 --> 00:01:03,540
+Now, what we're going to do in this main function is create some roots.
+
+15
+00:01:03,730 --> 00:01:06,210
+So we need to get some roots that we can listen to.
+
+16
+00:01:06,220 --> 00:01:10,940
+So path names to different pages on our Web site and we need to start a Web server.
+
+17
+00:01:11,310 --> 00:01:15,360
+So in order to create a route's file, we need to have something to root to.
+
+18
+00:01:15,360 --> 00:01:16,940
+And those are handlers.
+
+19
+00:01:16,950 --> 00:01:19,440
+So let's go create one handler for a homepage.
+
+20
+00:01:20,160 --> 00:01:22,950
+And when I create my handlers, you could just do it.
+
+21
+00:01:23,000 --> 00:01:25,560
+You write in your your main package if you wanted to.
+
+22
+00:01:26,290 --> 00:01:27,690
+But I like to plan for the future.
+
+23
+00:01:27,690 --> 00:01:32,790
+And quite often when I start a project that seems like it might be really small, suddenly in a few
+
+24
+00:01:32,820 --> 00:01:36,150
+months down the road or six months down the road, it has to have new functionality.
+
+25
+00:01:36,150 --> 00:01:42,120
+And at that point, I'm actually kicking myself saying, why didn't you just organize things in a slightly
+
+26
+00:01:42,120 --> 00:01:43,830
+more sensible fashion?
+
+27
+00:01:44,190 --> 00:01:51,060
+So I'm going to create a new package and I'll do that by creating a folder at the root level of my application
+
+28
+00:01:51,060 --> 00:01:52,110
+called Internal.
+
+29
+00:01:52,500 --> 00:01:56,040
+These will be internal packages that are not useful to anyone except me.
+
+30
+00:01:56,040 --> 00:01:57,960
+They're only used in this application.
+
+31
+00:01:58,560 --> 00:02:03,060
+And inside of that it'll create a new directory called headers.
+
+32
+00:02:04,380 --> 00:02:09,530
+And inside of that I'll create a new file, which I will call handlers dutko.
+
+33
+00:02:10,590 --> 00:02:16,830
+So this is going to have a package of handlers and I'll create a function func.
+
+34
+00:02:17,910 --> 00:02:24,660
+This will show the homepage func named home and like every handler, every handler, every Web handler
+
+35
+00:02:24,660 --> 00:02:26,520
+and go, it has to have two arguments.
+
+36
+00:02:26,520 --> 00:02:33,360
+A response writer, which I'll call w he should be response writer and then a pointer to a request,
+
+37
+00:02:33,360 --> 00:02:40,550
+which I'll call her, and it's a pointer to HTP request and I want this to display a page.
+
+38
+00:02:41,400 --> 00:02:47,520
+Now we could use the built in templating system that's part of the go standard library go templates
+
+39
+00:02:47,520 --> 00:02:49,680
+or go HTML templates if we wanted to.
+
+40
+00:02:50,250 --> 00:02:53,250
+But I want to make this a little easier to use.
+
+41
+00:02:53,250 --> 00:02:57,210
+And there are three things I'm going to import into my my application.
+
+42
+00:02:57,210 --> 00:03:03,750
+Three external packages, one for rooting or routing if you prefer, one for building and displaying
+
+43
+00:03:03,750 --> 00:03:08,430
+HTML templates, so for rendering pages and one for web sockets.
+
+44
+00:03:08,580 --> 00:03:12,900
+So let's go get those right now just to make our lives a little bit easier.
+
+45
+00:03:13,500 --> 00:03:18,120
+So the first thing I'll get is my HTML template package and I'm at the root level of my application.
+
+46
+00:03:18,220 --> 00:03:18,600
+Yeah.
+
+47
+00:03:19,170 --> 00:03:28,620
+And I will just say go get from GitHub dot com cloudy kit with a capital C and a capital K jet and V
+
+48
+00:03:28,620 --> 00:03:29,130
+six.
+
+49
+00:03:29,640 --> 00:03:34,860
+Now at the time I record this lecture version six of Cloudy Kit Jet, which is an e-mail template rendering
+
+50
+00:03:34,860 --> 00:03:35,370
+package.
+
+51
+00:03:36,030 --> 00:03:37,530
+It's the latest stable version.
+
+52
+00:03:38,430 --> 00:03:42,960
+You may be taking this in a few months after I record it and there may be a newer version and feel free
+
+53
+00:03:42,960 --> 00:03:44,010
+to use that if you want to.
+
+54
+00:03:44,040 --> 00:03:48,540
+But if you want to follow along and do exactly what I'm doing, then get version six.
+
+55
+00:03:48,750 --> 00:03:49,590
+So I'll go get that.
+
+56
+00:03:50,610 --> 00:03:56,550
+Now I need a routing package, a place that will allow me to direct traffic from my Web server, which
+
+57
+00:03:56,550 --> 00:03:59,490
+will get to momentarily to the appropriate handler.
+
+58
+00:03:59,490 --> 00:04:01,080
+And I'm going to use one that's dead simple.
+
+59
+00:04:01,290 --> 00:04:08,220
+Go get from GitHub dot com b, m, i, z, e, r, a and Y.
+
+60
+00:04:08,700 --> 00:04:16,440
+Pat Pat is dead simple and very fast and sufficient for our purposes to get an application up and running.
+
+61
+00:04:17,070 --> 00:04:20,160
+And the last thing we need is the actual WebSocket package.
+
+62
+00:04:20,190 --> 00:04:27,810
+So I'll go get from GitHub dot com gorilla websocket singular.
+
+63
+00:04:27,840 --> 00:04:35,340
+There's no s and it gets so if I look at my go mod file now I should have imported all three of those
+
+64
+00:04:35,340 --> 00:04:36,480
+and I have perfect.
+
+65
+00:04:36,990 --> 00:04:42,090
+So I want this homepage, I want it to render a jet template.
+
+66
+00:04:42,690 --> 00:04:44,550
+Well I need somewhere to store those templates.
+
+67
+00:04:44,730 --> 00:04:47,550
+They need to be files somewhere in the file system.
+
+68
+00:04:47,880 --> 00:04:56,370
+So I'm going to put them at the root level of my application in a directory called him up and we may
+
+69
+00:04:56,370 --> 00:04:58,050
+as well create an e-mail page right now.
+
+70
+00:04:58,050 --> 00:04:59,910
+So inside of that directory, I will create a new.
+
+71
+00:04:59,960 --> 00:05:06,140
+File, which I will call home Jet, because it's a jet template, and that's just going to be a basic
+
+72
+00:05:06,140 --> 00:05:07,180
+HTML file.
+
+73
+00:05:07,430 --> 00:05:14,900
+So I'm going to use a an extension I have built into my system called Emet and I will create it like
+
+74
+00:05:14,900 --> 00:05:19,430
+this HTML five and it creates an HTML template for me, empty one.
+
+75
+00:05:19,970 --> 00:05:23,720
+So I'll call this home and I'll just put H1.
+
+76
+00:05:24,170 --> 00:05:27,220
+This is the home page and save that.
+
+77
+00:05:28,250 --> 00:05:29,550
+Now I want to be able to render that.
+
+78
+00:05:29,570 --> 00:05:31,340
+So how do I do that using jet.
+
+79
+00:05:31,370 --> 00:05:34,730
+Well if you've never worked with it before, it's actually really, really easy.
+
+80
+00:05:34,760 --> 00:05:37,900
+It's actually much easier to use than the built in templating system.
+
+81
+00:05:37,910 --> 00:05:39,490
+That's part of the standard library.
+
+82
+00:05:40,250 --> 00:05:47,660
+So we want the home func or the home function to render that that homecourt jet file that I just created.
+
+83
+00:05:48,020 --> 00:05:49,790
+And we can do that really, really easily.
+
+84
+00:05:49,790 --> 00:05:53,360
+Using Jet, it's actually much easier than using the built in templating system.
+
+85
+00:05:53,370 --> 00:05:54,920
+That's part of the Go Standard Library.
+
+86
+00:05:55,430 --> 00:05:58,070
+I have no complaints about that package.
+
+87
+00:05:58,070 --> 00:05:59,120
+I use it all the time.
+
+88
+00:05:59,300 --> 00:06:01,910
+But for this course, I thought it might be fun to use Jet.
+
+89
+00:06:01,920 --> 00:06:02,760
+So how do we do that?
+
+90
+00:06:02,780 --> 00:06:07,100
+Well, we create a variable var, which I'll call views because it's going to be a variable that handles
+
+91
+00:06:07,100 --> 00:06:12,980
+my views and that is equal to jet dot new set and it requires a flutter.
+
+92
+00:06:14,000 --> 00:06:22,760
+So the loader is going to be equal to jet dot, new OS file system and all that wants is a path to my
+
+93
+00:06:22,760 --> 00:06:24,950
+director where my templates are stored.
+
+94
+00:06:26,300 --> 00:06:30,070
+So I'm actually going to add a second thing here just to make life a little bit easier.
+
+95
+00:06:30,200 --> 00:06:33,140
+And the second thing I'm going to add is jet lag in development mode.
+
+96
+00:06:33,620 --> 00:06:40,130
+And all that does is it it removes the requirement of stopping and restarting our application every
+
+97
+00:06:40,130 --> 00:06:42,340
+time I make a change to a jet template.
+
+98
+00:06:42,350 --> 00:06:45,050
+So you take that out before you go into production, obviously.
+
+99
+00:06:45,560 --> 00:06:48,710
+But this is something that's going to make my life a little bit easier.
+
+100
+00:06:49,520 --> 00:06:54,080
+OK, so now I have this views variable and I can use that to render templates.
+
+101
+00:06:54,110 --> 00:06:59,540
+And I could if I want to put all of the code right here in my home func to render the homepage.
+
+102
+00:07:00,140 --> 00:07:04,810
+But chances are I'm going to have more than one page in this application.
+
+103
+00:07:04,820 --> 00:07:11,630
+So what I'm going to do is create a new func called Render Page, and it's going to take three possible
+
+104
+00:07:11,630 --> 00:07:12,320
+arguments.
+
+105
+00:07:12,380 --> 00:07:13,700
+It's going to take or at least three.
+
+106
+00:07:13,730 --> 00:07:18,610
+It's going to take a response writer because I need something to write to and that will be my htp dot
+
+107
+00:07:18,650 --> 00:07:19,460
+response writer.
+
+108
+00:07:21,140 --> 00:07:25,370
+The second argument will be the name of the template that I want to render, which I'll call spell,
+
+109
+00:07:25,370 --> 00:07:26,330
+and it's just a string.
+
+110
+00:07:27,290 --> 00:07:31,790
+And the third argument will be whatever data I want to pass to that template.
+
+111
+00:07:32,030 --> 00:07:38,900
+And Jet has something called Vermaak as a type built into it, and this is going to potentially return
+
+112
+00:07:38,900 --> 00:07:39,350
+an error.
+
+113
+00:07:39,350 --> 00:07:40,250
+So I better add that.
+
+114
+00:07:41,740 --> 00:07:47,330
+OK, so three arguments to pass this one, the response rate is absolutely required.
+
+115
+00:07:47,750 --> 00:07:53,730
+Template is required because I need to know which template to render and data can be nil if it's empty.
+
+116
+00:07:53,730 --> 00:07:56,890
+And I don't want to pass any data to a template, which is what we're going to do right now.
+
+117
+00:07:56,900 --> 00:07:57,590
+I can leave that.
+
+118
+00:07:57,590 --> 00:07:59,720
+No, but let's render the template.
+
+119
+00:07:59,960 --> 00:08:00,710
+So how do I do that?
+
+120
+00:08:01,340 --> 00:08:03,530
+Well, view error.
+
+121
+00:08:03,830 --> 00:08:09,320
+I'm creating a variable and potentially an error called view view as the template itself.
+
+122
+00:08:09,920 --> 00:08:13,070
+And then I call my views variable that are defined up here.
+
+123
+00:08:13,250 --> 00:08:14,360
+And I said, get template.
+
+124
+00:08:14,690 --> 00:08:19,340
+And what I want to get is the name of the template template, the string that I passed right here.
+
+125
+00:08:20,210 --> 00:08:21,260
+So I check for my error.
+
+126
+00:08:21,260 --> 00:08:24,770
+If error is not equal to nil, just return the error.
+
+127
+00:08:25,190 --> 00:08:30,290
+I should just log it to logged up print line error and then return the error.
+
+128
+00:08:31,160 --> 00:08:33,290
+If there is no error now, I want to execute it.
+
+129
+00:08:33,650 --> 00:08:35,510
+So again, check for an error.
+
+130
+00:08:35,570 --> 00:08:40,400
+Error is equal to viewport execute and it requires the response, right.
+
+131
+00:08:40,550 --> 00:08:41,780
+What do you want to write to?
+
+132
+00:08:41,990 --> 00:08:48,220
+I want to write to my HGV response writer and then it also requires data, if there is any.
+
+133
+00:08:48,290 --> 00:08:54,920
+So I'll put in data and there's a third argument for context, which I'm going to ignore in this course,
+
+134
+00:08:54,920 --> 00:08:57,380
+because it's beyond the scope of the things I'm trying to do.
+
+135
+00:08:57,770 --> 00:09:03,170
+But yet templates allow you to pass data as a variable, as a jet via a map and also to pass data in
+
+136
+00:09:03,170 --> 00:09:05,450
+the context which I'm not going to do it all in this course.
+
+137
+00:09:05,450 --> 00:09:06,970
+But you can read about that if you want to.
+
+138
+00:09:07,490 --> 00:09:11,030
+And again, if there's an error, I'll just copy and paste this.
+
+139
+00:09:11,880 --> 00:09:13,580
+Otherwise return nil.
+
+140
+00:09:15,320 --> 00:09:20,510
+So now I have this render page, so I should be able to go up to my homepage and just say something
+
+141
+00:09:20,510 --> 00:09:28,030
+as simple as air is assigned the value of render page pass at the name of my template, which is a part
+
+142
+00:09:28,070 --> 00:09:34,820
+of my response writer, which is w pass it the name of the template line, name that Homburg Jet, and
+
+143
+00:09:34,820 --> 00:09:37,610
+I'm not going to pass any data and will check for an error.
+
+144
+00:09:37,610 --> 00:09:38,900
+So I'll post that in here.
+
+145
+00:09:40,340 --> 00:09:44,450
+I'll just print the error if there is one logged print line error, OK.
+
+146
+00:09:46,970 --> 00:09:49,340
+And will actually improve this in a little while.
+
+147
+00:09:49,340 --> 00:09:51,320
+But this is sufficient for our purposes right now.
+
+148
+00:09:51,320 --> 00:09:55,400
+So I now have a function home that will render my home page.
+
+149
+00:09:55,400 --> 00:09:59,300
+I have the render page function I can use for any handler that needs to render a page.
+
+150
+00:09:59,860 --> 00:10:07,330
+But I still don't have a means of getting from my request in the main function to the actual handlers,
+
+151
+00:10:07,330 --> 00:10:09,820
+we need to create some routes, so let's do that.
+
+152
+00:10:11,910 --> 00:10:16,230
+Over in my Web folder in CMD Web, I'll create a new file.
+
+153
+00:10:18,060 --> 00:10:19,080
+Which I'll call Rich.
+
+154
+00:10:22,950 --> 00:10:31,350
+And this is going to have a funk called Roots that returns and HDP dog handler and what I'm going to
+
+155
+00:10:31,350 --> 00:10:34,620
+do here is use that Pat Rohter that we installed a few moments ago.
+
+156
+00:10:34,620 --> 00:10:38,970
+So I'll create a variable, which I'll call mux, which is pretty common for multiplexed, is equal
+
+157
+00:10:38,970 --> 00:10:41,610
+to Pat Dott knew.
+
+158
+00:10:43,500 --> 00:10:49,020
+And now I'll create a root to the homepage, to the home page handler.
+
+159
+00:10:49,350 --> 00:10:52,830
+So mux it'll be a get request.
+
+160
+00:10:53,280 --> 00:11:00,390
+I'm going to nothing, just slash the top level of my web application and I want to go to htp dot handler
+
+161
+00:11:00,390 --> 00:11:04,590
+func and I want handlers dot com.
+
+162
+00:11:07,060 --> 00:11:11,950
+And that should do it now I just need to return my mux, return mux.
+
+163
+00:11:13,920 --> 00:11:21,300
+OK, so now we have a route to get to our handler --, but I still need to go back to my main application
+
+164
+00:11:21,690 --> 00:11:26,300
+and actually start something, because right now, if I run this application, nothing is going to happen.
+
+165
+00:11:26,640 --> 00:11:28,200
+We have no Web server starting.
+
+166
+00:11:28,200 --> 00:11:29,850
+It'll just I'll compile it.
+
+167
+00:11:29,850 --> 00:11:32,990
+It'll look at the main function, say that's empty and say, OK, well, I'll just quit.
+
+168
+00:11:33,000 --> 00:11:33,960
+There's nothing happening.
+
+169
+00:11:35,040 --> 00:11:36,090
+So let's do that.
+
+170
+00:11:36,090 --> 00:11:37,590
+Let's create a Web server.
+
+171
+00:11:37,590 --> 00:11:39,450
+First of all, I need to get my roots.
+
+172
+00:11:39,900 --> 00:11:42,840
+Roots is a sign the value of roots.
+
+173
+00:11:44,310 --> 00:11:46,560
+And let's just go create a Web server.
+
+174
+00:11:46,560 --> 00:11:53,910
+So I will, first of all, print out a message logged up print line, starting web server on port and
+
+175
+00:11:53,910 --> 00:12:03,990
+I'll put it on Port 880 and I'll ignore the error and go htp listen and serve two port eighty eighty
+
+176
+00:12:05,010 --> 00:12:06,000
+and hand it my roots.
+
+177
+00:12:07,650 --> 00:12:08,010
+Oops.
+
+178
+00:12:09,860 --> 00:12:13,520
+Call this mux there, that makes more sense.
+
+179
+00:12:14,620 --> 00:12:16,970
+So this should actually work, so let's give it a try.
+
+180
+00:12:18,310 --> 00:12:19,830
+So let's make sure we're in the right direction.
+
+181
+00:12:20,080 --> 00:12:22,180
+You need to be at the root level of your application.
+
+182
+00:12:22,220 --> 00:12:22,530
+Yeah.
+
+183
+00:12:23,140 --> 00:12:26,310
+And now we'll just compile and run everything in the command folder.
+
+184
+00:12:26,320 --> 00:12:30,830
+So go run ACMD Web start ogo.
+
+185
+00:12:30,880 --> 00:12:33,900
+Now, if you're running on Windows, you need to go dot.
+
+186
+00:12:34,210 --> 00:12:38,180
+You can't go Stargirl, but if you're on Linux or a Mac you can go start Ukko.
+
+187
+00:12:38,770 --> 00:12:39,580
+So it should run.
+
+188
+00:12:40,610 --> 00:12:41,430
+And it does.
+
+189
+00:12:41,480 --> 00:12:49,400
+Let's go to our Web browser and let's try going to localhost AT&amp;T and this is the homepage.
+
+190
+00:12:49,520 --> 00:12:50,000
+Perfect.
+
+191
+00:12:50,390 --> 00:12:58,130
+So now we have a home page set up and we have a Web server with a routing package and a handlers, and
+
+192
+00:12:58,130 --> 00:12:59,810
+it displays our e-mail template.
+
+193
+00:13:00,290 --> 00:13:02,150
+And that's all we need to do at this point.
+
+194
+00:13:02,180 --> 00:13:06,790
+So in the next lecture, we'll get started working with Web sockets in a little more detail.

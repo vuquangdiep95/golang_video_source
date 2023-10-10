@@ -1,0 +1,139 @@
+1
+00:00:01,500 --> 00:00:07,260
+So before we can work with the database, we probably should add some tables and at least one user because
+
+2
+00:00:07,260 --> 00:00:08,910
+we need someone to log in with.
+
+3
+00:00:09,540 --> 00:00:14,820
+And if you go to the course resources for this lecture, you'll see a file you can download called DB
+
+4
+00:00:14,820 --> 00:00:15,600
+Dot SQL.
+
+5
+00:00:15,600 --> 00:00:22,260
+Does it download that file, unzip it and open it up in your favorite text editor I have right here,
+
+6
+00:00:23,250 --> 00:00:29,040
+select all and copy and this is just basic sequel to create some tables and populates a couple of them.
+
+7
+00:00:29,520 --> 00:00:35,550
+So copy that and go over to Beekeeper Studio, which I have running and I'll connect to my database
+
+8
+00:00:35,550 --> 00:00:42,810
+concurrency and I'm going to paste what I just copied here in the query window, which shows up by default.
+
+9
+00:00:43,620 --> 00:00:46,680
+Then I'll say select all and run the selection.
+
+10
+00:00:47,910 --> 00:00:51,050
+And that, as you can see, creates a table called plans.
+
+11
+00:00:51,060 --> 00:00:53,650
+And if you look inside of that, we have three plans.
+
+12
+00:00:53,670 --> 00:00:56,490
+These are the various things that people can subscribe to.
+
+13
+00:00:57,180 --> 00:00:58,530
+So we have a bronze plan.
+
+14
+00:00:59,280 --> 00:01:03,090
+The plan amount is the price of the plan in sense.
+
+15
+00:01:03,570 --> 00:01:08,460
+Whenever I'm working with currency, I tend to store the information in the database as a whole, number
+
+16
+00:01:08,460 --> 00:01:13,350
+as an integer, and then I just divide by 100 to get the actual dollars and cents value.
+
+17
+00:01:13,770 --> 00:01:18,060
+So we have bronze, silver and gold, which cost ten, 20 and $30 respectively.
+
+18
+00:01:19,050 --> 00:01:26,070
+We have a users table and that has one user and the username is the email admin at example icon.
+
+19
+00:01:26,880 --> 00:01:29,120
+The first name is admin, the last name is user.
+
+20
+00:01:29,130 --> 00:01:36,870
+The password is actually a hash of a password and the password for this user is very secret, all one
+
+21
+00:01:36,870 --> 00:01:38,700
+word and all lowercase.
+
+22
+00:01:39,150 --> 00:01:43,170
+And if we scroll over here a bit, we have a user active field.
+
+23
+00:01:43,170 --> 00:01:48,360
+One means the user is active, zero means the user is not is in an is underscore.
+
+24
+00:01:48,360 --> 00:01:53,840
+Admin tells me whether or not this user is an administrator and then created out and updated out and
+
+25
+00:01:53,850 --> 00:01:56,400
+the actual user plans is just a joined table.
+
+26
+00:01:57,000 --> 00:02:01,410
+It only has a few columns, so it has the ID column, which is the primary key.
+
+27
+00:02:01,920 --> 00:02:08,970
+Then we have the user ID, which is a foreign key to the user's table and the plan ID, which is a foreign
+
+28
+00:02:08,970 --> 00:02:10,140
+key to the plans table.
+
+29
+00:02:10,530 --> 00:02:17,130
+So if user one buys the bronze plan, this would be whatever the primary key is, one would be the user
+
+30
+00:02:17,130 --> 00:02:22,950
+ID column, one would be the plan ID column and created out and updated are just timestamps.
+
+31
+00:02:22,980 --> 00:02:26,600
+Okay, so we have some content in our database.
+
+32
+00:02:26,610 --> 00:02:29,640
+In the next lecture will install the data package.
+
+33
+00:02:29,640 --> 00:02:30,000
+Okay.
+
+34
+00:02:30,540 --> 00:02:35,880
+That'll be the necessary SQL commands and the models that allow us to interact with the database.
+
+35
+00:02:36,150 --> 00:02:36,900
+Let's move on.

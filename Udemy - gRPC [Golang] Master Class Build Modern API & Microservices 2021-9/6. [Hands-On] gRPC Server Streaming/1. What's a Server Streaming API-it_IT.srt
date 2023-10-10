@@ -1,0 +1,136 @@
+1
+00:00:00,130 --> 00:00:05,880
+OK, così ora stiamo arrivando all'API più avanzata per GOPAC è l'API di streaming.
+
+2
+00:00:05,980 --> 00:00:08,540
+E il primo sarà il server di streaming.
+
+3
+00:00:08,580 --> 00:00:10,830
+Quindi cos'è un'API di streaming dei servizi.
+
+4
+00:00:10,910 --> 00:00:14,720
+Fondamentalmente sono in un nuovo tipo di API che non troverai il resto.
+
+5
+00:00:14,820 --> 00:00:17,960
+E questo perché hanno permesso alle cose di essere vere.
+
+6
+00:00:18,000 --> 00:00:23,730
+Quindi se ricordi il diagramma qui era con un client e un server e Clinton manda un
+
+7
+00:00:23,730 --> 00:00:30,690
+messaggio a un server e può ricevere molte risposte dal server che ricevi sapendo in streaming moda in modo che possano
+
+8
+00:00:30,690 --> 00:00:36,010
+essere distanza e tempo e tu non puoi possibilmente ricevere un numero infinito di risposte.
+
+9
+00:00:36,030 --> 00:00:42,460
+Il cliente deve solo dire OK ho finito di ricevere tutto questo server ha da dire OK e poi l'invio.
+
+10
+00:00:42,480 --> 00:00:43,520
+Quindi puoi dire quando.
+
+11
+00:00:43,530 --> 00:00:46,890
+Quando voglio utilizzare questo tipo di server con le API di ritaglio.
+
+12
+00:00:46,890 --> 00:00:52,460
+Non sono abbastanza bravo con la risposta alla richiesta che abbiamo appreso prima dell'API dello tsunami.
+
+13
+00:00:52,680 --> 00:00:58,130
+E potresti dire che potresti aver bisogno di queste API quando il server ha bisogno di inviare molti dati.
+
+14
+00:00:58,130 --> 00:00:59,850
+Penso che un caso di utilizzo di grandi quantità di dati.
+
+15
+00:01:00,090 --> 00:01:03,630
+Significa che si invia un enorme carico utile, stiamo parlando proprio come i gigabyte.
+
+16
+00:01:03,900 --> 00:01:10,410
+E se lo invia un gigabyte in una volta, c'è una possibilità molto alta che il trasferimento fallirà.
+
+17
+00:01:10,420 --> 00:01:17,570
+Giusto, ma se si invia questo gigabyte di dati su piccoli messaggi ognuno dei quali dice 10 kilobyte perché è
+
+18
+00:01:17,580 --> 00:01:22,800
+un sacco di piccoli messaggi, allora c'è un'alta probabilità che questo trasferimento abbia successo
+
+19
+00:01:22,800 --> 00:01:26,380
+o almeno sarà ragionevole ovunque ne abbiate bisogno essere.
+
+20
+00:01:26,730 --> 00:01:32,790
+Quindi il trimming è molto adatto ai big data, ma è anche molto adatto quando si desidera che il server
+
+21
+00:01:32,850 --> 00:01:37,010
+spinga i dati verso i client senza che il client richieda più dati.
+
+22
+00:01:37,200 --> 00:01:41,370
+Quindi pensa a un feed dal vivo o una chat o qualsiasi altra cosa.
+
+23
+00:01:41,460 --> 00:01:46,290
+Quindi è una nuova capacità o un nuovo paradigma di programmazione e ci pensi.
+
+24
+00:01:46,380 --> 00:01:51,650
+Se il server non è presente, lo ha inviato ai client senza che il client richieda questi dati, quindi lo
+
+25
+00:01:51,690 --> 00:01:54,120
+streaming dei server è davvero un buon candidato.
+
+26
+00:01:54,180 --> 00:01:58,670
+Ora le chiamate al taglio dei server sono definite utilizzando i buffer del protocollo di trattamento delle parole.
+
+27
+00:01:59,010 --> 00:02:02,010
+Quindi dovremo definire un messaggio di richiesta e un messaggio di risposta.
+
+28
+00:02:02,190 --> 00:02:03,610
+Ed ecco come appare.
+
+29
+00:02:03,780 --> 00:02:06,690
+Quindi definiremo i grandi più volte.
+
+30
+00:02:06,700 --> 00:02:09,080
+RBC e questo sarà il server di streaming.
+
+31
+00:02:09,240 --> 00:02:16,560
+Quindi, come puoi vedere, abbiamo le richieste di molte volte e molte volte le risposte, ma c'è una parola chiave di flusso che è
+
+32
+00:02:16,800 --> 00:02:18,020
+stata aggiunta qui.
+
+33
+00:02:18,300 --> 00:02:21,160
+Questo rende API un'API del server di streaming.
+
+34
+00:02:21,360 --> 00:02:26,050
+Quindi la prossima lezione andrà avanti e implementerà questo tipo di API di rifinitura.
+

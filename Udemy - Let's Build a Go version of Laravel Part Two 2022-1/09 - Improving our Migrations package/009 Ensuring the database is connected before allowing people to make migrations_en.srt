@@ -1,0 +1,196 @@
+1
+00:00:01,420 --> 00:00:07,840
+So let's take care of this last to do item here in make don't go inside the Seelye folder, inside the
+
+2
+00:00:07,840 --> 00:00:12,850
+CMGI folder in the Celebrity House project, and what we want to do here is to make sure that the database
+
+3
+00:00:12,850 --> 00:00:13,420
+is set up.
+
+4
+00:00:13,990 --> 00:00:20,290
+Now that means having a valid entry or at least having some kind of entry in your own files specifying
+
+5
+00:00:20,290 --> 00:00:21,010
+your database.
+
+6
+00:00:21,370 --> 00:00:27,550
+And it also means we're going to have to have a file in a folder called config at the root level of
+
+7
+00:00:27,550 --> 00:00:28,570
+our application.
+
+8
+00:00:28,780 --> 00:00:32,850
+So a config folder inside of that's something called Database Wiimote.
+
+9
+00:00:32,890 --> 00:00:35,800
+And that's the configuration file that popped needs.
+
+10
+00:00:36,250 --> 00:00:38,260
+So we can just do it like this.
+
+11
+00:00:38,680 --> 00:00:40,360
+We'll say we'll call a function.
+
+12
+00:00:40,510 --> 00:00:41,320
+We'll just call function.
+
+13
+00:00:41,320 --> 00:00:42,220
+That doesn't exist yet.
+
+14
+00:00:42,550 --> 00:00:44,320
+Check for DB.
+
+15
+00:00:44,770 --> 00:00:45,100
+OK.
+
+16
+00:00:45,790 --> 00:00:53,440
+And if I go over to the helper file, which is inside me CMD Seelye folder right there, I'll put it
+
+17
+00:00:53,440 --> 00:00:54,640
+right before the help text.
+
+18
+00:00:55,000 --> 00:00:59,460
+I'll create a function here called func check for DV.
+
+19
+00:01:01,660 --> 00:01:03,100
+Now what are we going to do in here?
+
+20
+00:01:03,130 --> 00:01:08,850
+Well, we know our database type is read by celebrities when it reads the dot on file, so db Typekit
+
+21
+00:01:09,460 --> 00:01:11,520
+and that's assigned the value of year.
+
+22
+00:01:11,620 --> 00:01:13,060
+This is just to make it readable.
+
+23
+00:01:13,060 --> 00:01:15,700
+Selden DB Dot data type.
+
+24
+00:01:16,150 --> 00:01:16,480
+OK.
+
+25
+00:01:17,740 --> 00:01:23,920
+So we'll say here, we'll say if DB type is equal to an empty string.
+
+26
+00:01:24,130 --> 00:01:30,130
+They didn't specify anything in there on file, so we'll say exit gracefully and we'll give it an error.
+
+27
+00:01:30,370 --> 00:01:31,480
+Errors dot new.
+
+28
+00:01:33,430 --> 00:01:41,800
+And the textual pudding is simply no database connection provided in dorms.
+
+29
+00:01:42,640 --> 00:01:44,550
+OK, so that's our first check.
+
+30
+00:01:45,430 --> 00:01:52,690
+The second check is to see if the file database requirement exists in the applications config folder.
+
+31
+00:01:52,870 --> 00:01:56,830
+So we'll say, if not, file exists.
+
+32
+00:01:57,340 --> 00:02:05,230
+And the file we want to check is at the root path of the application spelled out repass plus configuration
+
+33
+00:02:05,230 --> 00:02:06,790
+database requirement.
+
+34
+00:02:07,900 --> 00:02:10,750
+So if that doesn't exist, then exit gracefully.
+
+35
+00:02:10,960 --> 00:02:13,540
+And the error this time is errors York-New.
+
+36
+00:02:14,710 --> 00:02:21,430
+Then we'll just say configuration database dot why HTML does not exist.
+
+37
+00:02:22,390 --> 00:02:25,930
+OK, so now we're checking for database, and that was pretty straightforward.
+
+38
+00:02:26,560 --> 00:02:31,330
+Now, while we're at it, let's scroll down here and update our help text because it's no longer make
+
+39
+00:02:31,330 --> 00:02:32,520
+migration name.
+
+40
+00:02:32,740 --> 00:02:38,690
+It's make migration name and then format, which means are going to hit the spacebar a bunch of times.
+
+41
+00:02:38,690 --> 00:02:41,350
+So things line up properly do that fast enough.
+
+42
+00:02:51,490 --> 00:02:55,090
+I'm sure there's a faster way to do this, but I can't recall where it is right now.
+
+43
+00:03:07,620 --> 00:03:13,590
+And they will change to help text creates two new up and down migrations in the migrations boulder.
+
+44
+00:03:15,430 --> 00:03:22,660
+Semicolon format equals, and then we'll put sequel or fused default theories.
+
+45
+00:03:23,310 --> 00:03:24,820
+There should be enough.
+
+46
+00:03:25,660 --> 00:03:27,490
+OK, so we have that out of the way.
+
+47
+00:03:27,490 --> 00:03:34,660
+And of course, the next step is to actually create that config slash database, start Mel file and
+
+48
+00:03:34,660 --> 00:03:40,060
+to actually try running some migrations once we create them and we'll get started on that in the next
+
+49
+00:03:40,060 --> 00:03:40,450
+election.
+

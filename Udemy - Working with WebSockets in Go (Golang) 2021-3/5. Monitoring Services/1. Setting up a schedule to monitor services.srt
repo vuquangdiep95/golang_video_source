@@ -1,0 +1,687 @@
+1
+00:00:00,470 --> 00:00:07,310
+So the next step in this project is to actually run a schedule that will perform checks on all of the
+
+2
+00:00:07,310 --> 00:00:11,030
+services for all of our hosts on a predetermined schedule.
+
+3
+00:00:11,040 --> 00:00:16,460
+So our default is to run the checks every three minutes and we'll probably make that shorter for development
+
+4
+00:00:16,460 --> 00:00:19,070
+just so we don't have to wait three minutes to see if things work.
+
+5
+00:00:19,820 --> 00:00:24,650
+But to make that happen while we there's a number of ways we could do this, we could.
+
+6
+00:00:24,650 --> 00:00:27,200
+And I'm going to go langue right now.
+
+7
+00:00:27,200 --> 00:00:32,000
+And looking at the package time, we could use the built in functionality.
+
+8
+00:00:32,000 --> 00:00:34,380
+That's part of the standard library called the timer.
+
+9
+00:00:34,400 --> 00:00:41,900
+So if I search for a timer on this page and go to type timer, we have all of the functions necessary
+
+10
+00:00:41,900 --> 00:00:44,080
+to do this built into the standard library.
+
+11
+00:00:44,630 --> 00:00:48,260
+But I'll tell you right now, this is a difficult package to work with.
+
+12
+00:00:48,260 --> 00:00:54,890
+And normally when I'm writing go code, I never reach for a third party package if the functionality
+
+13
+00:00:54,890 --> 00:00:57,210
+I need is already built into the standard library.
+
+14
+00:00:57,530 --> 00:00:59,420
+This is one of the exceptions.
+
+15
+00:00:59,420 --> 00:01:01,190
+I don't like working with the timer package.
+
+16
+00:01:01,210 --> 00:01:03,110
+I've done it before and we could do it.
+
+17
+00:01:03,620 --> 00:01:07,190
+But it's a lot simpler just to use a package like this one.
+
+18
+00:01:07,760 --> 00:01:11,300
+And this is called Chron and it's made by Rob Thig.
+
+19
+00:01:11,690 --> 00:01:15,910
+It's on this URL and I'll post a link to this on the course resources for this page.
+
+20
+00:01:16,370 --> 00:01:22,060
+This is the one I'm going to use because this makes working with schedules ever so much easier.
+
+21
+00:01:22,550 --> 00:01:25,100
+So I'm going to copy this part right here.
+
+22
+00:01:25,100 --> 00:01:28,250
+Actually, I'll copy the whole thing to make sure we have exactly the same
+
+23
+00:01:30,770 --> 00:01:32,390
+version imported into our code.
+
+24
+00:01:32,390 --> 00:01:38,600
+And I'm going to go back to my idea and stop my application and clear the screen and just go get that
+
+25
+00:01:38,600 --> 00:01:39,140
+package.
+
+26
+00:01:39,190 --> 00:01:41,570
+OK, so that will go and get it.
+
+27
+00:01:42,890 --> 00:01:49,970
+And now it's available to us, so it should be in my go mod file, let's make sure here and there it
+
+28
+00:01:49,970 --> 00:01:50,980
+is, it's been important.
+
+29
+00:01:50,990 --> 00:01:52,900
+So we have that available to us.
+
+30
+00:01:53,390 --> 00:01:54,260
+How are we going to use it?
+
+31
+00:01:54,440 --> 00:01:59,120
+Well, first of all, let's go to our main package and look at the main Digo file.
+
+32
+00:01:59,510 --> 00:02:02,170
+And in that I have a thing called set up app.
+
+33
+00:02:02,180 --> 00:02:03,560
+So let's look at that function.
+
+34
+00:02:03,560 --> 00:02:10,610
+And right at the bottom here, after we define our application configuration and all of these things,
+
+35
+00:02:11,240 --> 00:02:13,520
+let's let's make sure this is going to work.
+
+36
+00:02:13,520 --> 00:02:13,790
+Right.
+
+37
+00:02:13,800 --> 00:02:14,780
+APCLS a.
+
+38
+00:02:16,670 --> 00:02:17,900
+Then our preference map.
+
+39
+00:02:18,740 --> 00:02:19,040
+Good.
+
+40
+00:02:19,490 --> 00:02:26,240
+So right here, I'm going to do it just between Apte client equals W.S. client, and before I create
+
+41
+00:02:26,240 --> 00:02:31,730
+any new Helper's, I'm actually going to create a timer, something that I'm going to store in my app
+
+42
+00:02:31,730 --> 00:02:34,310
+config, and this will hold our schedule.
+
+43
+00:02:35,130 --> 00:02:37,240
+So the first thing I'm going to do is set a time zone.
+
+44
+00:02:37,250 --> 00:02:38,290
+I'm going to make it simple.
+
+45
+00:02:38,300 --> 00:02:45,390
+I'll create a new variable called Local Zone just so I know what my what time zone I'm working with.
+
+46
+00:02:45,390 --> 00:02:53,570
+And I'll ignore the error and I'm going to call from the time package load location and my location
+
+47
+00:02:53,570 --> 00:02:54,560
+is just going to be local.
+
+48
+00:02:55,130 --> 00:02:56,690
+So I'm going to use the local location.
+
+49
+00:02:56,840 --> 00:03:01,510
+OK, now I'm going to create a new scheduler and here's where we're using the Quran package.
+
+50
+00:03:01,520 --> 00:03:08,630
+So I'll create a scheduler which I will call scheduler, and it will be assigned the value of Chron,
+
+51
+00:03:09,890 --> 00:03:10,880
+which is our new package.
+
+52
+00:03:10,880 --> 00:03:19,760
+We just imported new and it requires some options and the options are just going to be Quraan with location.
+
+53
+00:03:21,680 --> 00:03:25,130
+And our location will be the location we just defined, local zone.
+
+54
+00:03:28,400 --> 00:03:31,450
+And I'm also going to give it a kronborg with chain.
+
+55
+00:03:32,960 --> 00:03:35,090
+Try that again with chain.
+
+56
+00:03:38,360 --> 00:03:44,480
+And on the next line, I'll make this a little more readable by having this over and coming up into
+
+57
+00:03:44,480 --> 00:03:44,870
+here.
+
+58
+00:03:46,210 --> 00:03:52,930
+And passing it Kronborg DeLay if still running, and I'll use Kronborg default longer and we'll go through
+
+59
+00:03:52,930 --> 00:03:53,430
+this in a minute.
+
+60
+00:03:54,720 --> 00:04:00,690
+And the last thing is Kronborg recover and we'll use Kronborg default longer.
+
+61
+00:04:01,620 --> 00:04:05,980
+OK, so this creates a new variable and that variable has some options.
+
+62
+00:04:06,000 --> 00:04:11,130
+So the first thing I'm telling it is I want to create a schedule and the schedule should use the location,
+
+63
+00:04:11,130 --> 00:04:14,610
+the time zone of our local time zone, which I defined right here.
+
+64
+00:04:15,300 --> 00:04:21,420
+And this Chron is being developed with a chain, things that will take place so it won't run a task
+
+65
+00:04:21,420 --> 00:04:23,630
+if the task is already still running.
+
+66
+00:04:23,640 --> 00:04:28,640
+So we don't have overlapping, overlapping tasks and I will log information if necessary.
+
+67
+00:04:28,920 --> 00:04:33,630
+And if one dies, just recover and keep the schedule going and log the error.
+
+68
+00:04:33,630 --> 00:04:35,210
+And that's all that that's doing.
+
+69
+00:04:36,750 --> 00:04:38,900
+I want to put this in my app config.
+
+70
+00:04:39,090 --> 00:04:43,320
+So let's look at our app config, which is right over in our.
+
+71
+00:04:44,570 --> 00:04:50,810
+Config, config, go, we already have a place in here to hold this, and I put it in as part of the
+
+72
+00:04:50,810 --> 00:04:54,580
+starter code and it's called Scheduler and Type Kronborg Chron.
+
+73
+00:04:54,920 --> 00:05:03,350
+So back in my setup app, I can come down here and simply say app dot scheduler equals scheduler.
+
+74
+00:05:04,350 --> 00:05:10,400
+OK, so that creates the scheduler and it stores it in the app config, but that's not enough.
+
+75
+00:05:10,400 --> 00:05:12,400
+We actually need to run this as well.
+
+76
+00:05:12,710 --> 00:05:17,960
+And what we want is something that runs all the time or at least runs where we want it to be running.
+
+77
+00:05:18,410 --> 00:05:21,500
+So I'm going I'm going to in my command web folder.
+
+78
+00:05:21,920 --> 00:05:23,480
+I'm going to create a new file.
+
+79
+00:05:27,880 --> 00:05:34,180
+Which I will call start monitoring, start dash monitoring, go, OK.
+
+80
+00:05:35,110 --> 00:05:35,800
+So there it is.
+
+81
+00:05:35,800 --> 00:05:40,070
+I will add that to my repository and this is going to have a few things in it.
+
+82
+00:05:40,090 --> 00:05:45,280
+First of all, I'm going to create a type which I'll call job, and that will be a stripped and that's
+
+83
+00:05:45,280 --> 00:05:50,500
+just going to have nothing more than the host service ID, which will be an ant.
+
+84
+00:05:50,740 --> 00:05:53,110
+And this is a unit of work we're in.
+
+85
+00:05:53,110 --> 00:05:55,840
+I store the host service ID now.
+
+86
+00:05:55,840 --> 00:05:57,010
+We only have one right now.
+
+87
+00:05:57,010 --> 00:05:59,530
+So this is going to have a lot of information to start with.
+
+88
+00:06:00,040 --> 00:06:04,660
+But if we have multiple hosts and multiple services, this can get quite large over time.
+
+89
+00:06:04,840 --> 00:06:11,230
+OK, now I'm also going to create a function here and I'll call this func J for job.
+
+90
+00:06:11,230 --> 00:06:12,250
+That's its receiver.
+
+91
+00:06:12,250 --> 00:06:16,240
+And I'm not using a pointer receiver, which is unusual, but in this case it's appropriate.
+
+92
+00:06:16,810 --> 00:06:22,530
+And this function is just called run and all it's going to do is run a schedule check.
+
+93
+00:06:22,540 --> 00:06:25,390
+Right now there's no scheduled checks, so I'll leave that empty for the moment.
+
+94
+00:06:25,400 --> 00:06:30,010
+We'll come back in here and we'll put in the unit of work to be performed or the task that performs
+
+95
+00:06:30,010 --> 00:06:32,310
+a given unit of work a little bit later on.
+
+96
+00:06:33,190 --> 00:06:39,900
+What I'm interested in right now is this function, which I'm going to call start monitoring, OK?
+
+97
+00:06:40,240 --> 00:06:44,330
+And it takes no arguments and it does something actually does quite a few things.
+
+98
+00:06:44,410 --> 00:06:51,660
+OK, so the first thing I'm going to check is should I actually be running my schedule now?
+
+99
+00:06:51,660 --> 00:06:53,050
+I'm going to look at the database for a moment.
+
+100
+00:06:53,860 --> 00:06:58,540
+And inside of the database, we have something called preferences and the contents of that.
+
+101
+00:06:58,540 --> 00:07:04,150
+And this is part of what you actually have from your default starter code is you have an entry called
+
+102
+00:07:04,150 --> 00:07:07,600
+Monitoring Underscore Live, and it's of Idy one.
+
+103
+00:07:07,600 --> 00:07:09,400
+And right now it has a value of zero.
+
+104
+00:07:09,460 --> 00:07:16,210
+OK, so just make a note of that and let's go back to our code and I'm going to check right away if
+
+105
+00:07:16,390 --> 00:07:17,410
+preference map.
+
+106
+00:07:18,340 --> 00:07:22,270
+And the key I'm looking for is monitoring live.
+
+107
+00:07:23,390 --> 00:07:28,050
+If that's equal to and it's a strong one, then start monitoring.
+
+108
+00:07:28,520 --> 00:07:36,260
+Otherwise don't, and we'll be able to turn that on or off in our application using this toggle right
+
+109
+00:07:36,260 --> 00:07:38,640
+here, which isn't hooked up yet, but we'll get to that eventually.
+
+110
+00:07:38,690 --> 00:07:41,210
+So that's how we're going to turn monitoring on and off.
+
+111
+00:07:41,480 --> 00:07:46,940
+And the reason we're setting that is because when this is running in the background, we don't want
+
+112
+00:07:46,940 --> 00:07:47,870
+to monitor things.
+
+113
+00:07:47,870 --> 00:07:50,660
+If that's set to zero, if it's set to one, we do.
+
+114
+00:07:50,900 --> 00:07:54,890
+And we actually want to do a number of things inside of this loop.
+
+115
+00:07:55,340 --> 00:07:57,230
+So to start with, I'm going to create a variable.
+
+116
+00:07:57,230 --> 00:08:01,550
+I'm calling data and I want to sign that and I'll make that of type map.
+
+117
+00:08:02,100 --> 00:08:04,310
+It'll be a map of string.
+
+118
+00:08:05,970 --> 00:08:06,510
+Strength.
+
+119
+00:08:07,500 --> 00:08:12,010
+OK, and that data is going to have lots of things in it.
+
+120
+00:08:12,030 --> 00:08:16,680
+Right now, I'm going to put one value in it data message.
+
+121
+00:08:19,390 --> 00:08:23,070
+Is equal to starting, not staring, starting.
+
+122
+00:08:23,390 --> 00:08:26,230
+OK, so I'm just sticking sticking that in there when this actually starts.
+
+123
+00:08:28,080 --> 00:08:32,670
+And then I want to at this point, we can read a few comments and we'll come in, write the code later
+
+124
+00:08:32,670 --> 00:08:33,580
+on at this point.
+
+125
+00:08:33,690 --> 00:08:45,750
+I want to actually trigger a message to broadcast to all clients, letting them know that the that the
+
+126
+00:08:45,750 --> 00:08:50,130
+app is starting to monitor.
+
+127
+00:08:56,080 --> 00:08:58,490
+OK, so that's what we're going to do once this started.
+
+128
+00:08:58,510 --> 00:09:04,420
+We're going to we're going to send a message and that will actually send a message to every page for
+
+129
+00:09:04,420 --> 00:09:07,600
+every client who's connected to our service, to our Web site.
+
+130
+00:09:07,960 --> 00:09:10,320
+And we're going to do something with that message.
+
+131
+00:09:10,660 --> 00:09:12,380
+Not right now, but we'll get to that eventually.
+
+132
+00:09:12,520 --> 00:09:13,010
+OK.
+
+133
+00:09:13,810 --> 00:09:21,250
+And then we want to get all of the services that we want to monitor.
+
+134
+00:09:23,290 --> 00:09:24,670
+So I'm going to put a to do here.
+
+135
+00:09:24,670 --> 00:09:26,740
+So I don't forget this, OK?
+
+136
+00:09:27,760 --> 00:09:34,610
+We want to get all of the services that we want to monitor and then we want to range through the services.
+
+137
+00:09:34,630 --> 00:09:36,220
+So we're going to go to the database.
+
+138
+00:09:36,250 --> 00:09:37,830
+We're going to go to our host services.
+
+139
+00:09:37,840 --> 00:09:42,790
+We're going to find all of the hosts services that are active, and we're going to monitor those according
+
+140
+00:09:42,790 --> 00:09:46,050
+to the values we find from that query to the database.
+
+141
+00:09:47,140 --> 00:09:51,280
+So once we arrange those services, as we're arranging through them, what do we want to do?
+
+142
+00:09:51,400 --> 00:09:56,200
+We want to I'll just have it in here, get these schedule.
+
+143
+00:09:58,860 --> 00:10:01,530
+Unit and number.
+
+144
+00:10:02,910 --> 00:10:07,320
+So we're going to get that information, then we're going to create a job.
+
+145
+00:10:09,500 --> 00:10:18,710
+That's a type job up here, then we're going to save the ID of the job so we can start or stop it.
+
+146
+00:10:19,040 --> 00:10:26,570
+This will allow us to add a task to our schedule and then start it or stop it without removing the entire
+
+147
+00:10:26,570 --> 00:10:28,490
+schedule, which is pretty, pretty helpful.
+
+148
+00:10:30,980 --> 00:10:36,440
+And for each of these tasks, we want to broadcast overheads over WebSocket.
+
+149
+00:10:36,520 --> 00:10:39,410
+So broadcast over WebSocket.
+
+150
+00:10:39,450 --> 00:10:45,230
+So, uh, the fact that the service
+
+151
+00:10:47,840 --> 00:10:48,590
+is scheduled.
+
+152
+00:10:55,850 --> 00:10:57,230
+And then we want to end our range.
+
+153
+00:11:01,560 --> 00:11:06,210
+So this is what we're going to do and let's just go through it again, so right away we're declaring
+
+154
+00:11:06,210 --> 00:11:10,430
+a type named job and that's a struct that just holds the whole service.
+
+155
+00:11:11,160 --> 00:11:15,720
+OK, then we're going to run the job and we're not going to do that right now, but we'll do it eventually.
+
+156
+00:11:16,440 --> 00:11:22,590
+Start monitoring, will actually make sure that we are monitoring by looking at the preference map.
+
+157
+00:11:22,590 --> 00:11:27,600
+If that value is equal to one, then we create a map, we put a message into it.
+
+158
+00:11:28,170 --> 00:11:33,060
+We trigger a message to broadcast to all of the clients that the app is starting to monitor its services
+
+159
+00:11:33,300 --> 00:11:38,000
+and that will give some feedback on whatever pages are appropriate to get that kind of feedback.
+
+160
+00:11:39,090 --> 00:11:43,590
+Then we'll go to the database and get all the services that we want to monitor will range through those
+
+161
+00:11:43,590 --> 00:11:44,430
+services.
+
+162
+00:11:44,460 --> 00:11:50,070
+We'll get the schedule unit and numbers so we know how frequently to run this in our schedule will create
+
+163
+00:11:50,070 --> 00:11:56,430
+a job and added to our schedule will save the idea of the job so we can start or stop it and we'll broadcast
+
+164
+00:11:56,430 --> 00:11:58,590
+the fact that the service is pending.
+
+165
+00:11:58,590 --> 00:12:03,350
+It's going to be monitored to all of the clients that need to get that information.
+
+166
+00:12:03,720 --> 00:12:05,930
+So that's the basic logic.
+
+167
+00:12:06,210 --> 00:12:10,590
+Now, first thing we're going to have to do, of course, is to write some code to get all of the services
+
+168
+00:12:10,590 --> 00:12:12,540
+that we do want to monitor from the database.
+
+169
+00:12:13,020 --> 00:12:18,540
+So we'll start working on this code, including the run function in the next few lectures, and it will
+
+170
+00:12:18,540 --> 00:12:21,810
+take a little while to get this going, but it's not that difficult.
+
+171
+00:12:22,140 --> 00:12:22,520
+All right.
+
+172
+00:12:22,530 --> 00:12:25,170
+So let's get started on that in the next lecture.

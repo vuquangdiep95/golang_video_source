@@ -1,0 +1,671 @@
+1
+00:00:00,780 --> 00:00:05,040
+OK, before we do anything else, let me draw your attention to a mistake that I made, I think, a
+
+2
+00:00:05,040 --> 00:00:12,090
+couple of years ago, I'm in the set up app file, Inside Command Web setup dash app DOGO.
+
+3
+00:00:12,390 --> 00:00:17,040
+And at this point, the very bottom of that set up app function actually start the monitoring.
+
+4
+00:00:17,040 --> 00:00:20,490
+And if you recall a couple of lectures ago, I said we don't need to start the schedule here.
+
+5
+00:00:20,930 --> 00:00:23,310
+Well, actually we do, but only in certain situations.
+
+6
+00:00:23,310 --> 00:00:26,970
+We want to check our preference map app preference map.
+
+7
+00:00:27,020 --> 00:00:29,100
+We want to look for monitoring Leive.
+
+8
+00:00:31,470 --> 00:00:37,230
+If that is equal to one, then I need to start monitoring.
+
+9
+00:00:37,260 --> 00:00:42,090
+I need to start the schedule because I actually I create all of the things here, but at no point do
+
+10
+00:00:42,090 --> 00:00:43,050
+I actually start it.
+
+11
+00:00:43,140 --> 00:00:48,150
+I would have to go and toggle it off and then on again in order to have scheduled monitoring taking
+
+12
+00:00:48,150 --> 00:00:48,480
+place.
+
+13
+00:00:48,490 --> 00:00:55,300
+So we'll just run that and it is apt scheduler start and that takes care of it.
+
+14
+00:00:55,320 --> 00:01:03,180
+So now if I clear this and start the application, if I look at the database first to see what the status
+
+15
+00:01:03,180 --> 00:01:03,620
+is.
+
+16
+00:01:03,630 --> 00:01:06,920
+So in the database preferences, it's set to true.
+
+17
+00:01:06,930 --> 00:01:13,290
+So it should start monitoring at this point 10 seconds after it compiles a return a couple of times,
+
+18
+00:01:13,650 --> 00:01:17,130
+it will actually start monitoring and printing that stuff out to the console.
+
+19
+00:01:20,240 --> 00:01:21,810
+And there it goes, so that works.
+
+20
+00:01:22,310 --> 00:01:24,700
+Now our next step, I shall leave this running for the moment.
+
+21
+00:01:25,550 --> 00:01:29,090
+Our next step is to update this page.
+
+22
+00:01:29,210 --> 00:01:31,040
+So I'm on this page right now.
+
+23
+00:01:31,100 --> 00:01:36,650
+I am monitoring and I have one problem service which is accurate and everything else is set to zero
+
+24
+00:01:36,650 --> 00:01:38,290
+because I only have one service on monitoring.
+
+25
+00:01:38,540 --> 00:01:40,580
+And what I want to do is.
+
+26
+00:01:41,580 --> 00:01:48,420
+Every time a service changes status, these counts need to be updated and I need to push that information
+
+27
+00:01:48,420 --> 00:01:54,780
+to our connected clients and if they're on this page, but only if they're on this page to update these
+
+28
+00:01:54,780 --> 00:01:55,530
+service counts.
+
+29
+00:01:55,560 --> 00:01:57,800
+OK, so let's get started doing that now.
+
+30
+00:01:57,810 --> 00:02:01,330
+Let's go back and look at our perform checks, which is right here.
+
+31
+00:02:02,670 --> 00:02:09,750
+So at this point when I'm running my schedule check, I get my house service, I get my host, I test
+
+32
+00:02:09,750 --> 00:02:12,240
+the service, and then I have a response coming back.
+
+33
+00:02:12,600 --> 00:02:18,420
+And the condition I'm using to check here right now is if new status is not equal to host to host service
+
+34
+00:02:18,420 --> 00:02:20,510
+status, as it was in the past.
+
+35
+00:02:20,520 --> 00:02:26,100
+In other words, if the existing status prior to this check running doesn't equal the new status that
+
+36
+00:02:26,100 --> 00:02:30,900
+I got back from this check running, then I'm pushing a message off and all I'm doing right now is displaying
+
+37
+00:02:30,900 --> 00:02:32,460
+a warning alert or something like that.
+
+38
+00:02:32,880 --> 00:02:35,160
+And we actually want to make it a little more useful.
+
+39
+00:02:35,850 --> 00:02:42,120
+The problem is, if this is my check, if I'm saying if the new status is equal to the host status and
+
+40
+00:02:42,120 --> 00:02:46,920
+I say, well, go get the service counts, I'm actually getting the service counts as they exist in
+
+41
+00:02:46,920 --> 00:02:49,940
+the database before I update the host service.
+
+42
+00:02:50,340 --> 00:02:51,890
+So that's not good.
+
+43
+00:02:52,020 --> 00:02:55,650
+We can't actually do our updating of the overview page right here.
+
+44
+00:02:55,770 --> 00:02:57,090
+So let's change this instead.
+
+45
+00:02:57,660 --> 00:02:59,750
+Let's just put a connection right here, OK?
+
+46
+00:03:01,250 --> 00:03:08,630
+We'll say host status, social service status changed is a sign the value of falls, and then we'll
+
+47
+00:03:08,630 --> 00:03:10,490
+just want to check if.
+
+48
+00:03:11,540 --> 00:03:12,380
+New status.
+
+49
+00:03:14,440 --> 00:03:16,120
+It's not equal to the old status.
+
+50
+00:03:18,160 --> 00:03:22,570
+Then Postal Service status changed is equal to true.
+
+51
+00:03:22,640 --> 00:03:27,440
+Now, this is a little wordy, but it will get the service done or get the job done for us.
+
+52
+00:03:27,970 --> 00:03:34,000
+So I have it set to false initially, assuming nothing is going to change and then I actually need to
+
+53
+00:03:34,120 --> 00:03:39,790
+set it to true if this check has changed the status of this whole service that we're checking.
+
+54
+00:03:40,450 --> 00:03:43,780
+So now I can take this variable and put it in here.
+
+55
+00:03:45,760 --> 00:03:53,920
+Instead, and that will still execute properly and then down here after I update this, I can say if
+
+56
+00:03:54,670 --> 00:04:00,910
+hose service status changed again, if it's true, then I can update my service counts.
+
+57
+00:04:01,150 --> 00:04:01,990
+How are we going to do that?
+
+58
+00:04:02,200 --> 00:04:04,820
+Well, let's go back here and look at this for a moment.
+
+59
+00:04:05,380 --> 00:04:07,630
+We're already displaying the counts here at some point.
+
+60
+00:04:07,990 --> 00:04:13,240
+And that suggests that when I render this page, I have some means of getting the correct service count.
+
+61
+00:04:13,240 --> 00:04:14,020
+And in fact, I do.
+
+62
+00:04:14,500 --> 00:04:20,830
+I can go back to my roots file and look at the bit that's displaying the dashboard right here, admin
+
+63
+00:04:20,830 --> 00:04:21,460
+dashboard.
+
+64
+00:04:21,790 --> 00:04:24,850
+And I already have the logic to grab all of this information right here.
+
+65
+00:04:24,850 --> 00:04:32,520
+So I'll copy this and I'll come back here and are back to my correct code, underperform checks.
+
+66
+00:04:33,340 --> 00:04:35,680
+And here I want to get those counts.
+
+67
+00:04:35,890 --> 00:04:38,710
+OK, and then I want to create a new data variable.
+
+68
+00:04:38,950 --> 00:04:42,310
+So I'll say data is assigned the value of and this is locally scope.
+
+69
+00:04:42,310 --> 00:04:46,450
+So it's only exists within the scope of this particular block of code.
+
+70
+00:04:46,840 --> 00:04:50,020
+Make map, string, string.
+
+71
+00:04:51,480 --> 00:04:59,130
+And I will now populate my data with all of these variables, so data and I'll call it healthy count.
+
+72
+00:05:02,080 --> 00:05:02,890
+As equal to healthy.
+
+73
+00:05:03,940 --> 00:05:08,320
+And of course, this is giving us an ENT and I need to make it a string, so I'll just convert it to
+
+74
+00:05:08,320 --> 00:05:17,830
+a string str confirm I to a and healthy and I'll duplicate that three more times and do one for spending.
+
+75
+00:05:21,100 --> 00:05:22,210
+One for a problem.
+
+76
+00:05:25,070 --> 00:05:26,150
+And one for warning.
+
+77
+00:05:27,030 --> 00:05:28,530
+And I'll just change these labels.
+
+78
+00:05:30,270 --> 00:05:31,080
+Warning count.
+
+79
+00:05:33,620 --> 00:05:34,520
+Problem count.
+
+80
+00:05:37,420 --> 00:05:43,780
+And pendent count, and now I'll do exactly the same thing I did up here, so we'll just copy this broadcast
+
+81
+00:05:43,780 --> 00:05:47,430
+bit and I'll paste it right in here.
+
+82
+00:05:48,250 --> 00:05:50,410
+So we're broadcasting, but this time I don't want to.
+
+83
+00:05:50,410 --> 00:05:53,470
+Broadcast host's service status changed.
+
+84
+00:05:53,800 --> 00:05:56,230
+Let's say hosts service count changed.
+
+85
+00:05:56,470 --> 00:05:58,990
+OK, so I'll create a new thing that I'm listening for.
+
+86
+00:05:59,590 --> 00:06:06,070
+Now, all it's going to pass is our data variable, which will consist of just these four bits of information.
+
+87
+00:06:06,080 --> 00:06:08,890
+So let's copy the event we're listening for.
+
+88
+00:06:09,220 --> 00:06:12,310
+Actually, it's going to screw it up so we can do this there.
+
+89
+00:06:12,790 --> 00:06:14,820
+Let me copy the event we're listening for.
+
+90
+00:06:15,880 --> 00:06:19,810
+Go back to my Jasjeet page and bind to a new event.
+
+91
+00:06:19,930 --> 00:06:24,460
+So just as we have here hosted service status change, let's just say public channel.
+
+92
+00:06:26,380 --> 00:06:31,510
+And I want to bind to this event now, it's a service county's changed and again, we're executing a
+
+93
+00:06:31,510 --> 00:06:33,670
+function and passing their data into that function.
+
+94
+00:06:35,140 --> 00:06:42,000
+And in here, I need to update those things that exist on this page over here.
+
+95
+00:06:42,400 --> 00:06:45,340
+So these numbers and that's the only thing I'm interested in.
+
+96
+00:06:45,880 --> 00:06:51,970
+So if we go look at the dashboard jet file, which is where these exist, this is down in mind around
+
+97
+00:06:51,970 --> 00:06:52,240
+the line.
+
+98
+00:06:52,240 --> 00:06:53,020
+Thirty five.
+
+99
+00:06:53,200 --> 00:06:56,560
+And here I'm listing the number of healthy the number of all of these things.
+
+100
+00:06:56,590 --> 00:07:02,260
+OK, so the first thing I'm going to do is when I initially put this together, I thought I'd be nice
+
+101
+00:07:02,260 --> 00:07:03,610
+to put the S on the end of this.
+
+102
+00:07:03,700 --> 00:07:05,440
+I don't want to deal with that logic right now.
+
+103
+00:07:05,570 --> 00:07:06,300
+That's too much.
+
+104
+00:07:06,310 --> 00:07:08,670
+So I'm just going to change on a simplified by putting it?
+
+105
+00:07:08,670 --> 00:07:09,700
+S in parentheses.
+
+106
+00:07:10,390 --> 00:07:16,390
+It just means I don't have to execute extra JavaScript to add or delete an S as necessary.
+
+107
+00:07:16,420 --> 00:07:18,400
+And that's just really a little value.
+
+108
+00:07:19,060 --> 00:07:20,890
+So I'll just fix all of these.
+
+109
+00:07:22,690 --> 00:07:28,810
+The second thing I want to do is I need some means of addressing this number, which might be zero,
+
+110
+00:07:28,810 --> 00:07:33,400
+might be one, but when I get on my my event that I'm listening for, I want to change this.
+
+111
+00:07:33,550 --> 00:07:39,220
+So I'm just going to wrap it in an in a span with an idea equals healthy count.
+
+112
+00:07:40,090 --> 00:07:42,540
+And that's exist nowhere else in my application.
+
+113
+00:07:42,550 --> 00:07:44,920
+So this is something I can test for and close that span.
+
+114
+00:07:45,550 --> 00:07:52,510
+So I'll copy this and put it on all of these and then change the IDs as necessary and close the tags
+
+115
+00:07:52,510 --> 00:07:55,030
+as necessary here.
+
+116
+00:07:55,570 --> 00:08:03,070
+And I will close those tags by copying this and pasting it here and here.
+
+117
+00:08:04,410 --> 00:08:12,000
+And here and then changing the IDs to the correct things so it's not healthy count, it will be a warning
+
+118
+00:08:12,000 --> 00:08:19,890
+count and this one will be problem count and this one will be pending count.
+
+119
+00:08:22,750 --> 00:08:28,420
+OK, so now I have a means of getting to this information and updating using JavaScript, so the first
+
+120
+00:08:28,420 --> 00:08:31,710
+time it's rendered, it'll be using the information passed to this template.
+
+121
+00:08:32,050 --> 00:08:35,930
+But if we're on this page and we receive that event, we want to update it.
+
+122
+00:08:36,610 --> 00:08:40,120
+So let me go back to the JavaScript and here's what we want to do it.
+
+123
+00:08:40,510 --> 00:08:46,150
+And the first thing to bear in mind is we only want the code that we're listening to here to actually
+
+124
+00:08:46,150 --> 00:08:53,860
+execute if we receive this event and we're on that page so we can just do a simple test, we can say
+
+125
+00:08:53,860 --> 00:09:02,170
+let healthy count exists, which is just a variable on creating equal to two exclamation marks, which
+
+126
+00:09:02,170 --> 00:09:08,530
+will turn the result into a boolean value and document doget element viddy.
+
+127
+00:09:08,530 --> 00:09:14,570
+And I'll look for a healthy count and if that exists, then execute the necessary code.
+
+128
+00:09:14,590 --> 00:09:19,020
+So I'll say if healthy count exists, then do this.
+
+129
+00:09:19,030 --> 00:09:24,190
+And if it doesn't, it means we're on a page where that particular ID healthy count doesn't exist.
+
+130
+00:09:24,190 --> 00:09:25,450
+Therefore this will never execute.
+
+131
+00:09:26,740 --> 00:09:28,570
+And it's pretty straightforward at this point.
+
+132
+00:09:28,600 --> 00:09:33,070
+We just change those four values with our information passed in our data variable.
+
+133
+00:09:33,070 --> 00:09:34,810
+So we say document.
+
+134
+00:09:37,910 --> 00:09:41,000
+Get element by ID, healthy count.
+
+135
+00:09:43,970 --> 00:09:45,350
+That inner HTML.
+
+136
+00:09:48,780 --> 00:09:50,780
+Is equal to DataDot, healthy count.
+
+137
+00:09:52,420 --> 00:09:57,430
+Which is what we passed from our perform checks right here, healthy count, so we do the same thing
+
+138
+00:09:57,430 --> 00:09:58,180
+for the next three.
+
+139
+00:09:59,350 --> 00:10:07,240
+So I'll duplicate this three more times and change this one to problem, problem, count, but spell
+
+140
+00:10:07,240 --> 00:10:08,140
+it right or won't work.
+
+141
+00:10:09,170 --> 00:10:10,700
+And changes to problem count.
+
+142
+00:10:12,980 --> 00:10:15,290
+And change this to say pending count.
+
+143
+00:10:17,350 --> 00:10:24,820
+And change this to pending account and change this one to what's the last one warning warning count
+
+144
+00:10:25,390 --> 00:10:26,050
+becomes.
+
+145
+00:10:27,150 --> 00:10:33,330
+Warning count, now, if I stop my application and check to see if my Web server is running, it's not
+
+146
+00:10:33,720 --> 00:10:38,730
+and look at our database just to see what it's currently set to and look at my house services.
+
+147
+00:10:39,870 --> 00:10:42,890
+OK, so we currently have a problem, and that's exactly what I want.
+
+148
+00:10:42,920 --> 00:10:43,820
+So I want to test this.
+
+149
+00:10:44,280 --> 00:10:46,930
+So let's go back and start vigilante.
+
+150
+00:10:47,400 --> 00:10:48,360
+So it's starting.
+
+151
+00:10:50,500 --> 00:10:55,150
+Go back and refresh this page so we know it's working because I just got that message saying it all
+
+152
+00:10:55,150 --> 00:10:55,460
+started.
+
+153
+00:10:55,480 --> 00:10:57,250
+We have one problem now.
+
+154
+00:10:57,260 --> 00:10:59,380
+I'm going to go back to my Web server.
+
+155
+00:11:00,480 --> 00:11:02,340
+Here and started.
+
+156
+00:11:03,690 --> 00:11:11,130
+And quickly go back here to watch this and hopefully this will update the zero change of this one changed
+
+157
+00:11:11,130 --> 00:11:15,090
+with zero and this change to a one perfect that worked.
+
+158
+00:11:15,150 --> 00:11:20,370
+Now let's go back and stop that Web server and wait 10 seconds or less.
+
+159
+00:11:20,880 --> 00:11:22,640
+And it changed problem and went back.
+
+160
+00:11:22,650 --> 00:11:25,100
+So everything works exactly as I want.
+
+161
+00:11:25,470 --> 00:11:32,690
+And of course, because I'm checking for the existence of that I.D. healthy count, that code that that
+
+162
+00:11:32,700 --> 00:11:36,780
+populates the correct values up here will only execute on this page.
+
+163
+00:11:37,290 --> 00:11:43,260
+So the only thing I have to bear in mind is that no point on any other page should I have the idea of
+
+164
+00:11:43,260 --> 00:11:49,110
+healthy count unless I have those other three warning count problem count pending count there as well.
+
+165
+00:11:49,140 --> 00:11:50,580
+Otherwise, I'll get a JavaScript error.
+
+166
+00:11:50,580 --> 00:11:51,630
+And you want to avoid that.
+
+167
+00:11:51,990 --> 00:11:53,880
+OK, so, so far so good.
+
+168
+00:11:54,330 --> 00:11:57,270
+Let's move on in the next lecture and start doing other things.

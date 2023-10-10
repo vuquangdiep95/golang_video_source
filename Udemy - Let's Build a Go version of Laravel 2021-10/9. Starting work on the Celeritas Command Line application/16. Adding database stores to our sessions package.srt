@@ -1,0 +1,647 @@
+1
+00:00:01,850 --> 00:00:04,700
+So we have to make model working almost perfectly.
+
+2
+00:00:04,730 --> 00:00:11,300
+There's one thing I left out, I did not include logic to make sure that the model we're trying to create
+
+3
+00:00:11,480 --> 00:00:14,060
+already exists or doesn't already exist.
+
+4
+00:00:14,660 --> 00:00:19,760
+And we did a very similar thing here, and I'm looking at make Dot go in the celebrity's project in
+
+5
+00:00:19,760 --> 00:00:21,170
+CMD Seelye.
+
+6
+00:00:22,580 --> 00:00:24,230
+This if file exists.
+
+7
+00:00:24,350 --> 00:00:25,670
+OK, so let's copy that.
+
+8
+00:00:27,080 --> 00:00:30,020
+And we do that right after we define the file name variable.
+
+9
+00:00:30,070 --> 00:00:35,030
+And let's go back down to the model case, and here we have the file name variable, so we can just
+
+10
+00:00:35,030 --> 00:00:36,980
+paste that right in there and that'll take care of it.
+
+11
+00:00:37,940 --> 00:00:41,710
+Now, this time around, I want to make another thing easier for us.
+
+12
+00:00:41,720 --> 00:00:46,150
+If you recall, right now we're only implementing cookie based sessions.
+
+13
+00:00:46,160 --> 00:00:52,400
+And the big drawback with those is that when you restart the application, all the sessions are lost
+
+14
+00:00:52,460 --> 00:00:54,200
+and there's probably a way around that.
+
+15
+00:00:54,620 --> 00:00:58,460
+But typically, I never use cookie based sessions in production.
+
+16
+00:00:58,550 --> 00:01:01,910
+So let's go back to our web browser and let's have a look at.
+
+17
+00:01:03,080 --> 00:01:06,410
+Alex Edwards SXSW This is the session manager we're using.
+
+18
+00:01:07,040 --> 00:01:13,490
+And if you scroll on down, you'll see that it has supports for various kinds of database stores and
+
+19
+00:01:13,490 --> 00:01:14,300
+other stores.
+
+20
+00:01:14,690 --> 00:01:20,030
+For example, here's one for post-career store where your entire session is stored in the database and
+
+21
+00:01:20,030 --> 00:01:21,590
+there's another one from my school.
+
+22
+00:01:21,710 --> 00:01:23,150
+Let's use those.
+
+23
+00:01:23,180 --> 00:01:29,000
+Let's go back to our code, and let's go to the main menu or the main dog file.
+
+24
+00:01:29,570 --> 00:01:31,520
+And let's go to our show help.
+
+25
+00:01:31,850 --> 00:01:33,440
+And let's add another command in here.
+
+26
+00:01:33,770 --> 00:01:35,620
+First of all, this is incorrect.
+
+27
+00:01:35,630 --> 00:01:38,380
+This one, we're not creating a new model in the model's directory.
+
+28
+00:01:38,390 --> 00:01:39,950
+We're creating the data directory.
+
+29
+00:01:41,030 --> 00:01:45,680
+Now let's implement make session and we'll put four.
+
+30
+00:01:45,680 --> 00:01:55,160
+This creates a table in the database as a session store.
+
+31
+00:01:55,670 --> 00:01:56,000
+OK.
+
+32
+00:01:58,370 --> 00:02:01,250
+And now we'll go back up to where we're doing our make command.
+
+33
+00:02:01,550 --> 00:02:04,190
+And I think that's here in Makoko, it is.
+
+34
+00:02:04,820 --> 00:02:06,260
+Let's create another case here.
+
+35
+00:02:06,260 --> 00:02:07,550
+So we have one for model.
+
+36
+00:02:07,670 --> 00:02:13,760
+Let's now create one down here for session case session.
+
+37
+00:02:16,700 --> 00:02:21,710
+And what I'm going to do is, as I've done with other ones, I'm going to put this off in its own file
+
+38
+00:02:21,710 --> 00:02:23,410
+just to keep things pretty clear.
+
+39
+00:02:23,420 --> 00:02:26,450
+So I'll make a reference to a function that doesn't exist yet.
+
+40
+00:02:26,570 --> 00:02:32,030
+Do Session Table and that will return potentially an error, as you can see.
+
+41
+00:02:32,420 --> 00:02:33,230
+So do the check.
+
+42
+00:02:33,440 --> 00:02:37,970
+If there is not equal to nil, then exit gracefully with the error.
+
+43
+00:02:38,390 --> 00:02:45,260
+OK, now let's create this do session table function because that's all we're doing is creating a database
+
+44
+00:02:45,260 --> 00:02:45,650
+table.
+
+45
+00:02:46,700 --> 00:02:51,920
+So we'll create a new file in the CMD Clia folder called.
+
+46
+00:02:54,600 --> 00:02:55,600
+Session, don't go.
+
+47
+00:02:56,520 --> 00:02:56,880
+OK.
+
+48
+00:02:57,480 --> 00:02:58,470
+And it's package main
+
+49
+00:03:02,100 --> 00:03:10,500
+and we'll create a function do session two, which takes no parameters, potentially returns an error.
+
+50
+00:03:11,760 --> 00:03:12,960
+So we'll say return nil.
+
+51
+00:03:13,500 --> 00:03:15,150
+Just to make sure all the errors go away.
+
+52
+00:03:15,780 --> 00:03:22,050
+And if I go back to make Doc go to session table, I do have an error here, so only copy that name.
+
+53
+00:03:22,830 --> 00:03:27,930
+I probably have a typo over in session doggo do session two.
+
+54
+00:03:28,180 --> 00:03:29,250
+That's OK.
+
+55
+00:03:29,850 --> 00:03:31,080
+So that makes the errors go away.
+
+56
+00:03:31,320 --> 00:03:38,010
+Now we need to figure out what kind of database they're using, because if we go back here and look
+
+57
+00:03:38,010 --> 00:03:43,980
+at the in the web browser, let's look for example at the MySchool store and the Postgres store, and
+
+58
+00:03:43,980 --> 00:03:45,440
+I've opened each one on a new tab.
+
+59
+00:03:45,450 --> 00:03:47,160
+So let's look at the MySchool store.
+
+60
+00:03:48,360 --> 00:03:53,960
+What that says is you have to run this sequel, and that's all we're going to do here is run some sequel,
+
+61
+00:03:53,970 --> 00:03:55,720
+create a migration, run the migration.
+
+62
+00:03:56,430 --> 00:03:58,230
+So this is the one for my host.
+
+63
+00:03:58,230 --> 00:03:58,740
+You will.
+
+64
+00:03:58,920 --> 00:04:04,800
+And as you can see, this is the syntax, and this is the one for Postgres and their different syntax.
+
+65
+00:04:05,010 --> 00:04:07,200
+So we'll have to figure out what database they're using.
+
+66
+00:04:07,240 --> 00:04:11,190
+So let's go back to our code and figure out what database are using.
+
+67
+00:04:11,280 --> 00:04:12,600
+And we already have that information.
+
+68
+00:04:12,780 --> 00:04:14,190
+It's in our cell variable.
+
+69
+00:04:14,670 --> 00:04:21,720
+So DBE type is assigned the value of cell dot db dot data type.
+
+70
+00:04:22,410 --> 00:04:24,930
+So that tells me a third MySQL or Postgres.
+
+71
+00:04:25,590 --> 00:04:32,760
+Of course, they might have typed MySQL or MariaDB, or they might have type Postgres or Postgres Q.
+
+72
+00:04:32,760 --> 00:04:34,590
+Well, so let's just make sure that is correct.
+
+73
+00:04:35,310 --> 00:04:44,490
+If DBE type equals minus Q, well, let's just assume they're going to go with MySchool.
+
+74
+00:04:44,790 --> 00:04:54,770
+If it's equal to Maria DB, then DB type equals, I call it minus two all OK.
+
+75
+00:04:55,410 --> 00:04:58,680
+In the same way, if DB Typekit equals.
+
+76
+00:05:00,110 --> 00:05:08,360
+Postgres que el and debe Typekit is equal to just post-cruise, so we know what to use because we're
+
+77
+00:05:08,360 --> 00:05:09,980
+going to build a file name here shortly.
+
+78
+00:05:10,160 --> 00:05:17,300
+OK, now let's create an outmigration, a file and this will be the full path to where the migration
+
+79
+00:05:17,300 --> 00:05:17,990
+will live.
+
+80
+00:05:18,020 --> 00:05:29,450
+And that will be equal to spelled out root paths plus slash migrations, plural slash plus some file
+
+81
+00:05:29,450 --> 00:05:31,190
+name, which we'll get to in a minute.
+
+82
+00:05:31,760 --> 00:05:42,200
+Plus the Dot Plus DB Type Plus Update Sequel Dot Up Dot sequel.
+
+83
+00:05:42,500 --> 00:05:46,190
+OK, now let's define file name, which I probably should have done first, but it doesn't matter.
+
+84
+00:05:46,190 --> 00:05:46,940
+We're going to get it done.
+
+85
+00:05:48,140 --> 00:05:49,070
+So filing?
+
+86
+00:05:49,580 --> 00:05:50,870
+Will it be equal to it?
+
+87
+00:05:50,880 --> 00:05:52,490
+We've done this for migrations before.
+
+88
+00:05:52,790 --> 00:05:54,240
+Format Esperanto.
+
+89
+00:05:56,030 --> 00:06:01,070
+We're going to have a format stream that consists of a percent D for an integer and then an underscore
+
+90
+00:06:01,880 --> 00:06:05,750
+and then create sessions table.
+
+91
+00:06:06,890 --> 00:06:08,840
+And our substitution is timed right now.
+
+92
+00:06:12,230 --> 00:06:17,330
+There don't Unix timestamp or Unix microbots at Unix Micro.
+
+93
+00:06:17,900 --> 00:06:20,690
+So the cases are based me and we'll duplicate this.
+
+94
+00:06:22,310 --> 00:06:26,570
+I make this down file and this becomes down.
+
+95
+00:06:28,400 --> 00:06:29,930
+So our migrations will be named.
+
+96
+00:06:29,970 --> 00:06:36,770
+Whatever the current Unix micro timestamp is underscore, create sessions table update as you will and
+
+97
+00:06:36,770 --> 00:06:37,790
+dot down to rescue.
+
+98
+00:06:38,030 --> 00:06:39,410
+Exactly like we did before.
+
+99
+00:06:41,100 --> 00:06:46,680
+So now that we have these ready to go, we're going to call the signing a value to error.
+
+100
+00:06:48,320 --> 00:06:49,820
+Copy file from template.
+
+101
+00:06:50,070 --> 00:06:56,540
+We'll have to make the template in a minute, OK, and it will be templates, slash migrations slash.
+
+102
+00:06:57,870 --> 00:07:02,430
+And then our Deb type, which is why we went to the trouble of getting into the right format TV type
+
+103
+00:07:03,630 --> 00:07:08,430
+plus underscore session, don't screw up.
+
+104
+00:07:08,760 --> 00:07:09,150
+OK.
+
+105
+00:07:09,540 --> 00:07:10,560
+And then all.
+
+106
+00:07:12,720 --> 00:07:15,780
+So that will give me my up file, but we have to check for an error.
+
+107
+00:07:15,930 --> 00:07:21,210
+So we'll just do our standard if error is not equal to nil.
+
+108
+00:07:21,630 --> 00:07:22,740
+Then we're going to.
+
+109
+00:07:24,330 --> 00:07:32,760
+Exit gracefully with the air, and our downfall is really simple, air is a sign the value of air is
+
+110
+00:07:32,760 --> 00:07:34,780
+equal to those who already have an air variable.
+
+111
+00:07:35,250 --> 00:07:39,390
+We're going to copy data to file and we want to copy a slice of bytes.
+
+112
+00:07:43,020 --> 00:07:47,100
+And all that's going to consist of is drop table sessions,
+
+113
+00:07:50,400 --> 00:07:51,960
+and we're going to write to downfall.
+
+114
+00:07:54,470 --> 00:08:02,120
+And again, we'll copy our error check pasted here and now we run those migrations.
+
+115
+00:08:02,390 --> 00:08:07,610
+Error equals do migrate and we hand it up.
+
+116
+00:08:08,180 --> 00:08:09,590
+There's nothing for the second parameter.
+
+117
+00:08:10,340 --> 00:08:11,240
+And we do urge it.
+
+118
+00:08:12,380 --> 00:08:13,970
+And that's it for that one.
+
+119
+00:08:14,180 --> 00:08:20,810
+Now we have to create our two templates, so we'll create two and they're both going to be in the migrations
+
+120
+00:08:20,810 --> 00:08:26,300
+folder in our file system or embedded file system, so migrations will create a new file.
+
+121
+00:08:26,390 --> 00:08:32,360
+And the first one is going to be called Postgres underscore session, not sequel.
+
+122
+00:08:34,630 --> 00:08:38,320
+And the second one is going to be called and we bring this up to make sure you get the name right.
+
+123
+00:08:38,470 --> 00:08:43,060
+It'll be minus you will underscore session that sequel.
+
+124
+00:08:46,420 --> 00:08:49,710
+My ask you will underscore session that sequel.
+
+125
+00:08:50,960 --> 00:08:53,150
+OK, so we're looking at my school.
+
+126
+00:08:53,240 --> 00:08:57,860
+So let's go get the appropriate school for that right from Alex Edwards site.
+
+127
+00:08:58,280 --> 00:09:00,170
+So back to the Michael store.
+
+128
+00:09:00,620 --> 00:09:01,730
+So we'll copy this.
+
+129
+00:09:04,400 --> 00:09:08,750
+Paste it in here and I will switch to post-cruise underscore session at school.
+
+130
+00:09:09,050 --> 00:09:12,470
+Our template and go to the post-credits store one.
+
+131
+00:09:15,110 --> 00:09:17,690
+Copy that and paste it in here.
+
+132
+00:09:18,380 --> 00:09:25,310
+OK, so we should be able at this point to say make build underscore seal on.
+
+133
+00:09:31,750 --> 00:09:38,170
+Switched to my app, open a terminal window, clear the screen and typed celebrities, which was type
+
+134
+00:09:38,170 --> 00:09:41,800
+help to make sure help file still looks good and it does.
+
+135
+00:09:41,810 --> 00:09:47,490
+We want make session so clear the screen that celebrities make session.
+
+136
+00:09:48,760 --> 00:09:53,980
+And it says Postgres underscore session dot sequel in templates migrations.
+
+137
+00:09:54,490 --> 00:09:55,980
+That file does not exist.
+
+138
+00:09:55,990 --> 00:09:58,150
+Session Postgres underscore session.
+
+139
+00:09:59,050 --> 00:10:00,160
+Let's see what we have here.
+
+140
+00:10:02,110 --> 00:10:05,440
+So we have in templates.
+
+141
+00:10:06,990 --> 00:10:10,860
+In-migration post-cruise underscore session dot, Scott.
+
+142
+00:10:10,950 --> 00:10:12,570
+Well, I have a typo here somewhere.
+
+143
+00:10:13,800 --> 00:10:15,090
+Let's go back and see what we have.
+
+144
+00:10:15,240 --> 00:10:18,170
+Ah, get rid of that slash before the templates.
+
+145
+00:10:18,180 --> 00:10:20,070
+So that was my problem right here in line.
+
+146
+00:10:20,070 --> 00:10:21,810
+Twenty six do something terrible.
+
+147
+00:10:22,260 --> 00:10:23,580
+I had a slash before that.
+
+148
+00:10:23,580 --> 00:10:26,850
+And of course, this is an embedded file system, so we don't need to slash.
+
+149
+00:10:28,920 --> 00:10:32,790
+Actually, we wouldn't want to slash in that form anyway, ever, but let's try it again.
+
+150
+00:10:33,000 --> 00:10:34,020
+Make build CeeLo.
+
+151
+00:10:36,160 --> 00:10:37,300
+Switch back over.
+
+152
+00:10:39,640 --> 00:10:43,930
+And we should have the new binary there, so it should just be able to hit the up arrow and press return.
+
+153
+00:10:45,430 --> 00:10:45,850
+Finished.
+
+154
+00:10:46,480 --> 00:10:46,870
+OK.
+
+155
+00:10:46,900 --> 00:10:53,060
+There's the session migrations, so this one is the down one, and that looks good.
+
+156
+00:10:53,100 --> 00:10:57,680
+Drop table sessions and it looks like this one ran without an error.
+
+157
+00:10:57,700 --> 00:11:01,180
+Let's make sure let's go to our postcard client.
+
+158
+00:11:03,350 --> 00:11:08,660
+And go back up to celebrities and refresh and we have a Sessions table.
+
+159
+00:11:08,840 --> 00:11:09,290
+Perfect.
+
+160
+00:11:10,160 --> 00:11:14,960
+OK, so we have a sessions table now, but we still can't use it because we haven't installed the necessary
+
+161
+00:11:14,960 --> 00:11:20,810
+session store package and we haven't done the necessary code changes to the celebrity's project.
+
+162
+00:11:21,200 --> 00:11:23,390
+But we'll take care of that in the next lecture.

@@ -1,0 +1,68 @@
+1
+00:00:01,720 --> 00:00:08,270
+So the last function we need to implement inside this file migration SCO is the one that resets migrations.
+
+2
+00:00:08,830 --> 00:00:13,630
+In other words, it runs all the down migrations in reverse order and then runs all the up migrations,
+
+3
+00:00:13,630 --> 00:00:14,890
+and it's pretty simple.
+
+4
+00:00:14,950 --> 00:00:18,950
+So we'll put it right here just after pop migrate down.
+
+5
+00:00:20,920 --> 00:00:28,150
+We have a function with the receiver of sea pointer to our and we'll call it pop, migrate, reset,
+
+6
+00:00:28,630 --> 00:00:35,830
+and it will just take the T.X our connection a pointer to pop dot connection, and it potentially returns
+
+7
+00:00:35,830 --> 00:00:36,160
+an error.
+
+8
+00:00:37,450 --> 00:00:38,680
+And this is dead simple.
+
+9
+00:00:39,010 --> 00:00:45,130
+So once again, we need this information, which I'll copy from run port migrations, migration path
+
+10
+00:00:45,130 --> 00:00:46,030
+and a file migrate.
+
+11
+00:00:46,070 --> 00:00:47,260
+Or so I'll copy that.
+
+12
+00:00:48,100 --> 00:00:50,770
+Come back down here, paste them in.
+
+13
+00:00:52,030 --> 00:00:58,660
+And now it's as simple as saying error is equal to FM dot reset, and we check for an error.
+
+14
+00:00:59,260 --> 00:01:05,080
+If error is not equal to nil return, the error otherwise turned down.
+
+15
+00:01:06,400 --> 00:01:12,490
+OK, so we have all of these functions now and the next step is to actually try to use them, which
+
+16
+00:01:12,490 --> 00:01:17,770
+means we'll have to make some modifications to the celebrities command line application and we'll get
+
+17
+00:01:17,770 --> 00:01:19,960
+started on that in the next lecture.
+

@@ -1,0 +1,255 @@
+1
+00:00:00,090 --> 00:00:02,120
+Vì vậy, bây giờ chúng ta sẽ hoàn thành việc nâng cấp.
+
+2
+00:00:02,160 --> 00:00:08,610
+Vì vậy, bạn nên đồng thời có thể có hai phiên bản chính của cùng một mô-đun trong máy tính của mình.
+
+3
+00:00:08,610 --> 00:00:15,300
+mã, có lẽ không nên giữ nguyên như vậy vì chúng không thực sự tương thích với từng mã
+
+4
+00:00:15,300 --> 00:00:16,500
+khác rất nhiều.
+
+5
+00:00:16,500 --> 00:00:19,260
+Đôi khi chúng có thể nhưng không thường xuyên.
+
+6
+00:00:19,260 --> 00:00:24,450
+Và vì vậy, có lẽ bạn nên hoàn thành việc nâng cấp của mình ngay khi có thể.
+
+7
+00:00:24,450 --> 00:00:26,850
+Nó cũng có nghĩa là ít cần tải xuống hơn.
+
+8
+00:00:26,880 --> 00:00:34,130
+Khi bạn đang cố tải xuống tất cả các phần phụ thuộc này cho mô-đun, để hoàn tất quá trình nâng cấp, chúng tôi đã xóa
+
+9
+00:00:34,170 --> 00:00:40,830
+phiên bản trích dẫn một lần nhập cho biết phiên bản 3 vì chúng tôi chỉ có một phiên bản mà chúng tôi đã loại bỏ
+
+10
+00:00:40,830 --> 00:00:44,200
+bí danh vì điều đó có nghĩa là bạn không phải xóa Bí danh.
+
+11
+00:00:44,220 --> 00:00:45,660
+Nó hoạt động nếu bạn giữ nó xung quanh.
+
+12
+00:00:45,680 --> 00:00:47,020
+Nhưng nó thật tuyệt.
+
+13
+00:00:47,050 --> 00:00:49,350
+Đủ đơn giản để xóa bí danh.
+
+14
+00:00:49,350 --> 00:00:52,290
+Vì vậy, bây giờ trích dẫn trích dẫn càu nhàu xuất hiện vẫn còn.
+
+15
+00:00:52,530 --> 00:00:54,350
+Và bây giờ Trích v V3.
+
+16
+00:00:54,390 --> 00:00:55,020
+Vậy xin chào.
+
+17
+00:00:55,020 --> 00:00:58,490
+Được đổi tên thành Hello v 3 trái ngược với Hello.
+
+18
+00:00:58,530 --> 00:01:04,410
+Đó là chuỗi phá vỡ không tương thích ngược giữa các phiên bản chính.
+
+19
+00:01:04,440 --> 00:01:12,660
+Vì vậy, bạn có thể thấy điều này bằng cách chạy go dark RCD dấu gạch chéo quote dấu gạch chéo ba.
+
+20
+00:01:12,750 --> 00:01:17,400
+Bạn có thể xem danh sách tất cả các chức năng mà gói cụ thể này có.
+
+21
+00:01:18,690 --> 00:01:21,780
+Không, đây là gói không phải là mô-đun.
+
+22
+00:01:22,070 --> 00:01:25,080
+Và do đó, gói cụ thể này có B3 dưới đây.
+
+23
+00:01:25,410 --> 00:01:30,810
+Vì vậy, đó là thay đổi tương thích ngược của bạn để thực hiện nâng cấp này phải đổi tên chức năng
+
+24
+00:01:30,840 --> 00:01:33,520
+ở đây nơi bạn đang gọi nó.
+
+25
+00:01:33,820 --> 00:01:41,580
+Vì vậy, bây giờ các thay đổi đã được thực hiện, bạn có thể chạy go test và nó vẫn diễn ra như vậy.
+
+26
+00:01:41,600 --> 00:01:44,530
+Go Doc hiển thị cho bạn tài liệu bạn có thể bỏ.
+
+27
+00:01:44,540 --> 00:01:48,650
+Go Doc rồi cho vào đường dẫn luôn.
+
+28
+00:01:48,650 --> 00:01:53,900
+Tôi thường nói repo nhưng chúng ta cũng có thể nói mô-đun ở đây bạn nói đúng.
+
+29
+00:01:53,910 --> 00:01:57,000
+Vì vậy, hãy đi doc lấy đường dẫn đến một gói cụ thể.
+
+30
+00:01:57,030 --> 00:02:04,260
+Được rồi, nếu có một gói phụ của RC quote V3, hãy gạch chéo thứ gì đó khác, bạn sẽ phải đặt nó hoàn toàn
+
+31
+00:02:04,400 --> 00:02:04,990
+Phải.
+
+32
+00:02:05,730 --> 00:02:06,020
+Đúng.
+
+33
+00:02:06,050 --> 00:02:11,300
+Tìm thuật ngữ phù hợp ở đó và đi đến tài liệu là bạn đi đến tài liệu trong một gói và nếu chúng tôi muốn
+
+34
+00:02:11,300 --> 00:02:13,750
+thấy rằng chúng tôi vẫn có thể sử dụng máy tính của bạn, chúng tôi có thể làm được.
+
+35
+00:02:13,760 --> 00:02:17,300
+Đi giúp xem tài liệu về điều đó.
+
+36
+00:02:17,300 --> 00:02:24,470
+Chỉ cần giúp Doc thậm chí và tránh một bước đó và sau đó chúng ta có thể thấy ví dụ về ngân sách này
+
+37
+00:02:24,470 --> 00:02:28,880
+doc Fu hiển thị tài liệu về thực phẩm trong gói hiện tại.
+
+38
+00:02:28,880 --> 00:02:30,320
+Vì vậy, đó là một chức năng.
+
+39
+00:02:30,410 --> 00:02:34,620
+Bạn có thể làm tốt tài liệu hiển thị gói hiện tại của bạn đi tài liệu và sau đó một cái gì đó trong gói của bạn hiển thị thứ gì đó
+
+40
+00:02:34,640 --> 00:02:35,210
+trong đó.
+
+41
+00:02:35,210 --> 00:02:41,030
+Hoặc truy cập tài liệu cho một số gói khác như thư viện tiêu chuẩn, bạn có thể làm điều đó và sau đó bạn có thể sử dụng.
+
+42
+00:02:41,030 --> 00:02:46,000
+Cũng sử dụng đó sẽ là phương pháp tài liệu.
+
+43
+00:02:46,150 --> 00:02:46,470
+Chuẩn rồi.
+
+44
+00:02:46,480 --> 00:02:54,560
+Nên cứ nói FI đi về là em đi doc RC quote Ba cái ESB hết cái này rồi em làm chấm được.
+
+45
+00:02:54,730 --> 00:02:56,190
+Xin chào.
+
+46
+00:02:56,300 --> 00:03:08,710
+Ba nó đã được và sau đó nó cung cấp cho tôi tài liệu dành riêng cho chức năng đó một cách tốt đẹp.
+
+47
+00:03:08,800 --> 00:03:11,590
+Một câu hỏi khác mà tôi vừa hỏi về việc đi tới đó là Doc sẽ không hoạt động.
+
+48
+00:03:11,590 --> 00:03:18,510
+Chúng tôi đã trích dẫn tài liệu vì đó là cái tên mà chúng tôi đang đề cập đến gói ừm hơi tò mò.
+
+49
+00:03:18,520 --> 00:03:25,180
+Một số để thử đơn giản và do đó không mang lại những cái giống nhau nên đó là một cái gì đó khác biệt.
+
+50
+00:03:25,190 --> 00:03:34,400
+Đó có thể là phiên bản một và nếu chúng tôi thực hiện danh sách đi, tất cả điều này sẽ hiển thị cho chúng tôi trong bản mod của chúng tôi
+
+51
+00:03:34,400 --> 00:03:41,030
+gửi tệp mod của chúng tôi, nó hiển thị cho chúng tôi các phần phụ thuộc của chúng tôi và chúng tôi có hai dấu ngoặc kép ở đó.
+
+52
+00:03:41,150 --> 00:03:47,090
+Vì vậy, có thể trong video tiếp theo sau khi chúng tôi dọn dẹp vì chúng tôi không thể sử dụng phiên bản một điểm nữa
+
+53
+00:03:47,090 --> 00:03:53,860
+năm phẩy hai chỗ ngồi của chúng tôi đã trích dẫn Io ngay bây giờ chúng tôi chỉ sử dụng phiên bản 3 có thể trong video tiếp theo
+
+54
+00:03:53,870 --> 00:04:01,280
+chúng tôi sẽ dọn sạch các phần phụ thuộc của mình và sau đó nếu chúng tôi sử dụng tốt quote quote Nó sẽ kéo
+
+55
+00:04:01,280 --> 00:04:05,700
+trong phiên bản 3 có lẽ tôi không nhìn thấy.
+
+56
+00:04:05,750 --> 00:04:06,100
+Được rồi.
+
+57
+00:04:06,110 --> 00:04:10,370
+Xem trong video tiếp theo, nơi chúng tôi sẽ xóa mọi phần phụ thuộc không sử dụng. Bạn có bất cứ thứ gì không?
+
+58
+00:04:10,370 --> 00:04:12,700
+muốn thêm vào video này.
+
+59
+00:04:13,130 --> 00:04:17,040
+Chỉ là ban nhạc go dark này giống hệt như trang web go dark.
+
+60
+00:04:17,050 --> 00:04:18,150
+Được.
+
+61
+00:04:18,260 --> 00:04:18,590
+Vâng.
+
+62
+00:04:18,650 --> 00:04:25,910
+Vì vậy, nếu tôi thực sự xem nếu tôi thực sự lấy câu trích dẫn CIO v ba của chúng tôi về trang web đen tối thì nó sẽ
+
+63
+00:04:25,910 --> 00:04:30,840
+cung cấp cho tôi tất cả các thông tin tương tự.
+
+64
+00:04:30,910 --> 00:04:31,960
+Được rồi, xem video tiếp theo.

@@ -1,0 +1,263 @@
+1
+00:00:13,350 --> 00:00:18,020
+Hello and welcome to the golden programming language course in the perilous.
+
+2
+00:00:18,540 --> 00:00:22,500
+We talked about of all phones and directories in Golden.
+
+3
+00:00:22,800 --> 00:00:28,020
+And in this section, we want to talk about the other files and directories concept.
+
+4
+00:00:31,810 --> 00:00:40,690
+Iterate over on phones and folders for a pass like function offering the pass package can be used to
+
+5
+00:00:40,690 --> 00:00:45,370
+recursively iterate over on phones and folder in the directory tree.
+
+6
+00:00:46,530 --> 00:00:54,270
+What function gets the rules passed as argument and will walk the entire two route it at the rules passed
+
+7
+00:00:54,510 --> 00:01:02,010
+include all subdirectories and gets the watch funk as argument and will be called for.
+
+8
+00:01:02,010 --> 00:01:09,240
+Read the parts of the file folder and find info or the it or if any animal occured while walking that
+
+9
+00:01:09,240 --> 00:01:10,200
+fine folder.
+
+10
+00:01:10,590 --> 00:01:16,590
+Now you can see this scene takes some things to note about what function.
+
+11
+00:01:17,160 --> 00:01:22,050
+All errors are filtered and errors might arise while opening.
+
+12
+00:01:22,050 --> 00:01:30,240
+Define the function does not follow symbolic links, and the finds are locked in the Lexicon order.
+
+13
+00:01:30,510 --> 00:01:37,770
+Now, let's go to the school program to illustrate how to iterate over all files and folders for a pass.
+
+14
+00:01:39,660 --> 00:01:42,480
+First, we create a folder named sampler.
+
+15
+00:01:48,010 --> 00:01:53,860
+And create to find inside it named Test one and test to.
+
+16
+00:01:57,240 --> 00:02:00,150
+Test one that takes the.
+
+17
+00:02:02,030 --> 00:02:12,920
+And test to get to 60 and then create a folder named Tent Von in sample directory.
+
+18
+00:02:16,080 --> 00:02:17,820
+Ten point.
+
+19
+00:02:19,590 --> 00:02:27,030
+And then inside tampon, create another file like this three, the dentist 4.60.
+
+20
+00:02:30,460 --> 00:02:32,770
+This three that takes the.
+
+21
+00:02:35,440 --> 00:02:39,610
+And test for Tom T60.
+
+22
+00:02:41,260 --> 00:02:43,390
+OK, so go to main function.
+
+23
+00:02:44,960 --> 00:02:53,150
+First, we used to get W D function, this function returns a routed past name corresponding to the
+
+24
+00:02:53,150 --> 00:02:54,350
+current directory.
+
+25
+00:02:54,740 --> 00:03:01,670
+If the current directory can be reached via multiple paths, get W d may return any one of them.
+
+26
+00:03:02,150 --> 00:03:04,460
+So first, define two variables.
+
+27
+00:03:05,240 --> 00:03:14,090
+Current directory and narrow column equals.
+
+28
+00:03:15,230 --> 00:03:21,200
+And we'll get WD function from oil spike, it will start get w d
+
+29
+00:03:24,350 --> 00:03:26,090
+Cheikh error message if.
+
+30
+00:03:27,700 --> 00:03:30,880
+They're not equals to me.
+
+31
+00:03:32,110 --> 00:03:38,020
+So paint a message for lock the baton.
+
+32
+00:03:39,200 --> 00:03:40,270
+And of
+
+33
+00:03:43,280 --> 00:03:49,280
+now create an E-Trade function that accept a passive string as argument.
+
+34
+00:03:49,730 --> 00:03:54,640
+So go alotof main function and create a function like form.
+
+35
+00:03:56,860 --> 00:04:03,880
+Iterate and sit a string as a pass has a string.
+
+36
+00:04:06,880 --> 00:04:14,680
+Now, we can't want function from foreign press package and initialize it fine pass.
+
+37
+00:04:16,670 --> 00:04:17,860
+What function
+
+38
+00:04:20,590 --> 00:04:27,430
+it gets to our humans first is past, and second is a watch f and function.
+
+39
+00:04:27,730 --> 00:04:37,510
+So we sit pass and what if an argument fine sit pass as this strange
+
+40
+00:04:40,330 --> 00:04:45,370
+info as file info from voice package
+
+41
+00:04:47,770 --> 00:04:50,650
+and e are time is there or.
+
+42
+00:04:52,450 --> 00:04:53,980
+Return type is a or
+
+43
+00:04:56,920 --> 00:05:05,470
+go to the body and check it or eat it all not equals to Neal.
+
+44
+00:05:08,930 --> 00:05:13,700
+Like, don't try to laugh at or.
+
+45
+00:05:17,460 --> 00:05:22,980
+That air now display name of each file and folder.
+
+46
+00:05:23,580 --> 00:05:28,710
+Check if info is directory, so display folder name.
+
+47
+00:05:28,740 --> 00:05:31,920
+And if it is a fine, it prints file names.
+
+48
+00:05:31,920 --> 00:05:33,480
+So do the following.
+
+49
+00:05:35,950 --> 00:05:42,490
+Is the info don't is directory
+
+50
+00:05:44,890 --> 00:05:50,200
+so painful your name, F. A. the plaintiff.
+
+51
+00:05:54,130 --> 00:06:03,010
+Folder named person is in and sit.
+
+52
+00:06:03,430 --> 00:06:09,130
+Name from the info info, Courtney.
+
+53
+00:06:13,160 --> 00:06:14,210
+And there's.
+
+54
+00:06:17,780 --> 00:06:18,530
+If, if.
+
+55
+00:06:20,460 --> 00:06:40,670
+File name first person is back in and said your full name said return for dysfunction and close plants.
+
+56
+00:06:41,550 --> 00:06:45,450
+Now go to main function and call Iterate.
+
+57
+00:06:46,080 --> 00:06:47,880
+Go to main function.
+
+58
+00:06:50,660 --> 00:07:01,400
+And call it raid and said current directory as arguement reformat the code, save the project and execute
+
+59
+00:07:01,400 --> 00:07:02,210
+the program.
+
+60
+00:07:08,500 --> 00:07:17,800
+Now we can see the output folder, name phones, dash directories, fine name that go to folders, name,
+
+61
+00:07:17,920 --> 00:07:25,780
+sample and temp on and for Fine's name Test 1.60 until test for that text.
+
+62
+00:07:26,410 --> 00:07:31,660
+So we could iterate file and folders by the VOC and white Effen functions.
+
+63
+00:07:32,470 --> 00:07:32,860
+OK.
+
+64
+00:07:33,130 --> 00:07:35,170
+We have reached the end of this session.
+
+65
+00:07:35,380 --> 00:07:40,430
+I hope you have taken full advantage of this session onto the next session.
+
+66
+00:07:40,450 --> 00:07:41,040
+Goodbye.

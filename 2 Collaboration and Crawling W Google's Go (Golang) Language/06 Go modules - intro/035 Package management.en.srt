@@ -1,0 +1,563 @@
+1
+00:00:00,090 --> 00:00:07,360
+So now we're in the next video and amazing when we move from one video to the next video.
+
+2
+00:00:07,650 --> 00:00:11,910
+And sorry just try to keep it fun package management.
+
+3
+00:00:11,910 --> 00:00:16,580
+We're gonna talk about package management so what is package management mean to you.
+
+4
+00:00:16,590 --> 00:00:21,600
+How would you describe package management somebody who's never familiar with the concept.
+
+5
+00:00:21,790 --> 00:00:29,120
+So I would consider package management as in You've Got a package of some code that may be useful in
+
+6
+00:00:29,130 --> 00:00:36,450
+package management is how you organize the pet the the various packages needed to grant to make your
+
+7
+00:00:36,450 --> 00:00:37,700
+program.
+
+8
+00:00:37,710 --> 00:00:39,150
+So if you are making.
+
+9
+00:00:39,150 --> 00:00:45,600
+If you're making a program it may have it's you may have other packages of code made by other people.
+
+10
+00:00:45,600 --> 00:00:52,310
+And how do you audit organize it in a repeatable way.
+
+11
+00:00:52,310 --> 00:00:56,480
+You want to make sure other end that you can always get the same package every time.
+
+12
+00:00:56,950 --> 00:01:03,000
+But you also probably don't want to copy the code because that just means extra code that you have to
+
+13
+00:01:03,000 --> 00:01:04,590
+keep track of yourself.
+
+14
+00:01:04,620 --> 00:01:10,950
+You want to have the original person who made the code the package to keep working on it not have to
+
+15
+00:01:11,460 --> 00:01:16,400
+basically take ownership of these other packages in order to do yourself.
+
+16
+00:01:16,560 --> 00:01:22,970
+So package management is usually very very tightly tied to dependency management.
+
+17
+00:01:22,970 --> 00:01:29,910
+It's what does your code need in order to run in other packages and how do you manage that organize
+
+18
+00:01:29,910 --> 00:01:37,710
+it I like that distinction that you just made between packages and dependencies because there is a subtle
+
+19
+00:01:37,710 --> 00:01:38,910
+distinction there.
+
+20
+00:01:39,210 --> 00:01:49,950
+And so packages like originally when people began writing software they just had one big like document
+
+21
+00:01:49,980 --> 00:01:54,060
+with code and there is go to statements and it is really difficult.
+
+22
+00:01:54,220 --> 00:01:58,680
+And it became one of the ways that was described as like spaghetti code.
+
+23
+00:01:58,680 --> 00:02:04,800
+And so one of the big themes in the evolution of software engineering and software design has been to
+
+24
+00:02:04,800 --> 00:02:11,190
+modular rise code and so you modular ize code by instead of just having one big file with a bunch of
+
+25
+00:02:11,190 --> 00:02:18,150
+code where you know that said it's one file and there's a lot of code you break that code up into chunks.
+
+26
+00:02:18,150 --> 00:02:23,100
+And so we break code up into chunks and those chunks can be a function.
+
+27
+00:02:23,100 --> 00:02:28,450
+So here's a function that you know maybe takes text and makes it all capital letters.
+
+28
+00:02:28,590 --> 00:02:33,960
+And so that's a chunk of code or there could be a chunk or several chunks of code.
+
+29
+00:02:33,990 --> 00:02:39,780
+You know another chunk we could have is to get everything related to working with strings into like
+
+30
+00:02:39,870 --> 00:02:41,330
+one big package.
+
+31
+00:02:41,490 --> 00:02:43,560
+And that name it could be called a package.
+
+32
+00:02:43,560 --> 00:02:44,790
+It could be called a module.
+
+33
+00:02:44,790 --> 00:02:47,310
+It could be called a library.
+
+34
+00:02:47,310 --> 00:02:52,060
+That name is like here's the here's a collection of code that's like related together.
+
+35
+00:02:52,080 --> 00:02:57,900
+And so the first thing just understanding that word package is like you know or or it can be called
+
+36
+00:02:57,900 --> 00:03:03,660
+module or be called library it's just a bunch of code kind of wrapped together that could be useful.
+
+37
+00:03:03,660 --> 00:03:09,690
+And it's usually if it's done well organized around some sort of a theme some sort of a purpose so a
+
+38
+00:03:09,690 --> 00:03:16,950
+package a library a module for working with strings a package a module a library for working with printing
+
+39
+00:03:16,980 --> 00:03:18,430
+whatever it might be.
+
+40
+00:03:18,480 --> 00:03:20,370
+And so that's that's the package.
+
+41
+00:03:20,370 --> 00:03:25,440
+Then when you create software when you create software you could take your software and break it up
+
+42
+00:03:25,440 --> 00:03:26,650
+into these packages.
+
+43
+00:03:26,730 --> 00:03:31,260
+So you have different packages that work together to do what you want your software to do.
+
+44
+00:03:31,380 --> 00:03:36,570
+And instead of writing all those little packages yourself you might go out and find somebody who's written
+
+45
+00:03:36,570 --> 00:03:41,340
+a chunk of code for you already they have some package that does something and then you could bring
+
+46
+00:03:41,340 --> 00:03:45,420
+that code into your software project and use it.
+
+47
+00:03:45,540 --> 00:03:51,680
+Licensing and everything permitting and so your code becomes dependent upon all of these packages.
+
+48
+00:03:51,780 --> 00:03:58,980
+They are dependencies your software project is dependent has these dependencies reliant upon these different
+
+49
+00:03:58,980 --> 00:04:02,660
+packages packages you wrote packages other people wrote.
+
+50
+00:04:03,060 --> 00:04:09,470
+And now what happens if you know the package somebody else wrote they upgrade it so they make some changes.
+
+51
+00:04:09,470 --> 00:04:12,540
+Sorry I keep putting my hand in front of your face for my demonstration.
+
+52
+00:04:12,540 --> 00:04:13,220
+They upgrade it.
+
+53
+00:04:13,230 --> 00:04:18,360
+So that's my understanding of packages and dependencies would you have anything that you would add to
+
+54
+00:04:18,360 --> 00:04:20,200
+that.
+
+55
+00:04:20,950 --> 00:04:21,790
+Sorry.
+
+56
+00:04:21,840 --> 00:04:25,310
+Two packages modules libraries.
+
+57
+00:04:25,360 --> 00:04:32,430
+Their concept means same thing but different languages might use individual words for specific more
+
+58
+00:04:32,430 --> 00:04:33,790
+detailed meetings.
+
+59
+00:04:33,870 --> 00:04:37,490
+So go actually has a difference between a package and a module.
+
+60
+00:04:37,500 --> 00:04:37,920
+Thank you.
+
+61
+00:04:37,920 --> 00:04:41,010
+Even though they're in general their concepts are the same.
+
+62
+00:04:41,440 --> 00:04:41,640
+Yeah.
+
+63
+00:04:41,730 --> 00:04:42,180
+Thank you.
+
+64
+00:04:43,310 --> 00:04:43,620
+Yeah.
+
+65
+00:04:43,660 --> 00:04:46,550
+So those words are all pretty similar pretty interchangeable.
+
+66
+00:04:46,710 --> 00:04:52,650
+And because that again change our outline here and take out modules from these worlds have the same
+
+67
+00:04:52,650 --> 00:05:00,300
+meaning and leave package libraries and other people's code your own groupings of other people's code
+
+68
+00:05:00,330 --> 00:05:04,480
+groupings of other people's code and groupings of your own code.
+
+69
+00:05:04,500 --> 00:05:09,610
+I think I'll add those in their groupings of your own code.
+
+70
+00:05:09,810 --> 00:05:14,570
+What else would we want to say about packages.
+
+71
+00:05:14,570 --> 00:05:17,000
+Anything else to say about package management.
+
+72
+00:05:17,000 --> 00:05:19,850
+I've got a few things to read before I jumped in to reading it.
+
+73
+00:05:19,890 --> 00:05:21,650
+Not particularly.
+
+74
+00:05:21,650 --> 00:05:27,800
+So this was from if you go to your terminal and you type in go help and then type in modules because
+
+75
+00:05:27,800 --> 00:05:34,100
+we're gonna be learning about modules here is documentation about some scrolling through my commands
+
+76
+00:05:35,270 --> 00:05:40,670
+documentation about modules and so this is one source of documentation for modules and a look at other
+
+77
+00:05:40,670 --> 00:05:43,630
+sources as we go through what we've outlined here for you.
+
+78
+00:05:43,760 --> 00:05:49,370
+But here is a description of it which I put here which I really like this description.
+
+79
+00:05:49,370 --> 00:05:53,480
+So a module is a collection of Go packages.
+
+80
+00:05:53,510 --> 00:06:00,200
+So there's that distinction Daniel's just making modules are the unit of source code interchange and
+
+81
+00:06:00,200 --> 00:06:01,160
+versioning.
+
+82
+00:06:01,160 --> 00:06:06,920
+So interchange means that this is code that could be the way I interpret that used between projects
+
+83
+00:06:06,920 --> 00:06:08,150
+or between people.
+
+84
+00:06:08,150 --> 00:06:13,180
+It could be interchanged exchanged used and versioning is like the code.
+
+85
+00:06:13,190 --> 00:06:18,320
+We'll have different versions that you use the go command has direct support for working with modules
+
+86
+00:06:18,320 --> 00:06:24,890
+including recording and resolving dependencies on other modules modules replace the old go path based
+
+87
+00:06:24,890 --> 00:06:30,110
+approach specifying which source files are used in a given built built and the go path still work as
+
+88
+00:06:30,110 --> 00:06:32,410
+we've discussed in the previous video.
+
+89
+00:06:32,410 --> 00:06:38,030
+There's a really important note here which I thought was great and there's an article there's written
+
+90
+00:06:38,030 --> 00:06:43,380
+by Rusk Cox and this article is called our software dependency problem.
+
+91
+00:06:43,460 --> 00:06:48,530
+And so the one of the main things that really stood out to me from the sorry decline linked to here
+
+92
+00:06:48,530 --> 00:06:54,320
+is anytime you're using other people's code you're bringing somebody who's code into your software project
+
+93
+00:06:54,740 --> 00:07:00,170
+and you That's like bringing somebody into your house you need to kind of be comfortable with who you're
+
+94
+00:07:00,170 --> 00:07:07,460
+inviting into a place which needs to be security conscious and so you know correctness of their code
+
+95
+00:07:07,490 --> 00:07:12,710
+the security issues surrounding using other people's code and then also licensing issues are some of
+
+96
+00:07:12,710 --> 00:07:17,300
+the issues you want to think about when using anybody's code any other person's codes.
+
+97
+00:07:17,300 --> 00:07:23,450
+This applies to all dependencies not just go modules but definitely something worth thinking about.
+
+98
+00:07:23,600 --> 00:07:29,470
+And in the previous video we alluded or mentioned briefly the node package manager.
+
+99
+00:07:29,630 --> 00:07:37,820
+So node package manager NPM is for node javascript node is for how packages are manages manage with
+
+100
+00:07:37,820 --> 00:07:42,020
+JavaScript node and with NPM there's the left pad story.
+
+101
+00:07:42,080 --> 00:07:43,190
+So what happened with that.
+
+102
+00:07:43,250 --> 00:07:45,380
+We didn't share that entire story.
+
+103
+00:07:45,410 --> 00:07:51,430
+Somebody created this labs had this idea there was there was a left pad function it was very small.
+
+104
+00:07:51,430 --> 00:07:56,460
+I think it was only like five lines of code it was a very tiny package which is a single function in
+
+105
+00:07:56,460 --> 00:08:04,050
+it that would pad Pad with spaces on the left to want to write a line text.
+
+106
+00:08:05,420 --> 00:08:10,580
+It was very small dependency but it was used by other dependencies.
+
+107
+00:08:10,580 --> 00:08:14,780
+This package some other package would depend on left pad and in some other package should depend on
+
+108
+00:08:14,780 --> 00:08:16,720
+that and in some other package depend on that.
+
+109
+00:08:17,090 --> 00:08:23,360
+And then you yourself may never have actually used left pad in your package but you may use something
+
+110
+00:08:23,360 --> 00:08:27,070
+else which then depended indirectly on left pad.
+
+111
+00:08:27,200 --> 00:08:34,700
+And so at some point the creator of left pad had some issues and so he pulled all this code away suddenly
+
+112
+00:08:35,330 --> 00:08:45,290
+the entire node package universe basically all collapsed because left pad was such a deep core dependency
+
+113
+00:08:45,290 --> 00:08:52,130
+for so many other package is that basically the entire chain of dependencies is a very very large proportion
+
+114
+00:08:52,250 --> 00:08:57,980
+of the all the packages just kind of all die because they couldn't get to left pad.
+
+115
+00:08:58,670 --> 00:09:06,410
+And so there was a fairly big panic until finally someone had a local copy of left pad and re uploaded
+
+116
+00:09:06,410 --> 00:09:12,590
+left pad and the note NPM people were able to tie it back in to the same spots that all the other dependencies
+
+117
+00:09:12,590 --> 00:09:13,820
+could find it.
+
+118
+00:09:14,030 --> 00:09:20,930
+And so it just it was it was a major thing because all these packages depended on left pad and the creator
+
+119
+00:09:21,020 --> 00:09:27,540
+left pad just kind of pulled up there could and then one of the neat things about so so that also we're
+
+120
+00:09:27,540 --> 00:09:29,690
+going to talk about direct and indirect dependency.
+
+121
+00:09:29,700 --> 00:09:35,310
+So you could have a direct dependency directly depending upon this chunk of code but that chunk of code
+
+122
+00:09:35,340 --> 00:09:41,280
+that package that you're using might also have dependencies of your own which then become indirect dependencies
+
+123
+00:09:41,280 --> 00:09:42,420
+for your project.
+
+124
+00:09:42,450 --> 00:09:47,940
+And so like left pad that indirect dependency for many people disappeared and then all these projects
+
+125
+00:09:47,940 --> 00:09:49,920
+just stopped working.
+
+126
+00:09:49,920 --> 00:09:53,280
+How does go go has a way of getting around that.
+
+127
+00:09:53,280 --> 00:09:53,590
+Right.
+
+128
+00:09:53,630 --> 00:10:01,500
+And somewhat there's still depart direct and indirect dependencies and such goes got a proxy to try
+
+129
+00:10:01,500 --> 00:10:05,130
+to prevent issues with packed with packages disappearing.
+
+130
+00:10:05,130 --> 00:10:13,060
+It's got there's there's copies of of the code sort of the original code disappears.
+
+131
+00:10:13,070 --> 00:10:16,290
+And here it depends on it can still get access to a copy of it.
+
+132
+00:10:16,710 --> 00:10:17,000
+Yeah.
+
+133
+00:10:17,040 --> 00:10:18,870
+So that's nice.
+
+134
+00:10:19,150 --> 00:10:23,850
+And the last thing we have here in this video is a note as modules are usually one to one with a repo
+
+135
+00:10:23,880 --> 00:10:27,450
+that there are ways to put multiple modules in one repo.
+
+136
+00:10:27,450 --> 00:10:32,070
+So usually you have a repo somewhere and then you're that's going to be a module.
+
+137
+00:10:32,100 --> 00:10:33,760
+So that will be accessible.
+
+138
+00:10:33,760 --> 00:10:35,490
+Do you have anything you want to say about that.
+
+139
+00:10:35,850 --> 00:10:36,660
+No.
+
+140
+00:10:36,660 --> 00:10:38,010
+All right great.
+
+141
+00:10:38,010 --> 00:10:40,770
+So that's a little bit about package management.

@@ -1,0 +1,315 @@
+1
+00:00:14,760 --> 00:00:22,620
+Hello and welcome to the Golang programming language course in the last session, we talked about creating
+
+2
+00:00:22,620 --> 00:00:28,410
+and accessing and adi in this session, we want to talk about the others areas concept.
+
+3
+00:00:34,720 --> 00:00:41,920
+Initializing and atay with ellipses, then we use ellipses instead of specifying the length.
+
+4
+00:00:42,190 --> 00:00:50,560
+The compiler can identify the length of an array based on the elements is specified in the added declaration.
+
+5
+00:00:51,370 --> 00:00:54,240
+Now go to Vesco and do an example.
+
+6
+00:00:56,200 --> 00:00:59,620
+First, define and add a without specifying the length.
+
+7
+00:01:01,330 --> 00:01:05,800
+It's Colleen Nichols.
+
+8
+00:01:07,180 --> 00:01:10,210
+The square brackets and the ellipses
+
+9
+00:01:12,790 --> 00:01:27,400
+and time and initialize it, 10, comma 20 and comma 30 in this case, compiler defined at a list based
+
+10
+00:01:27,400 --> 00:01:38,260
+elements now display the length FP rulings or a column
+
+11
+00:01:42,040 --> 00:01:45,220
+length function X.
+
+12
+00:01:47,740 --> 00:01:50,980
+Before that, they could save the project, then execute the code.
+
+13
+00:01:54,190 --> 00:02:04,930
+Now we can see the output length of 83 and we could use from ellipses for defined the length of array.
+
+14
+00:02:06,010 --> 00:02:09,550
+Now, go to a slide and continue to
+
+15
+00:02:12,190 --> 00:02:17,950
+initialize values for specific add elements with an added D.
+
+16
+00:02:17,950 --> 00:02:23,560
+Clearly using an array, literal values can be initialized for specific elements.
+
+17
+00:02:24,490 --> 00:02:30,670
+Now go to this school to illustrate how to create and add a using a specific area element.
+
+18
+00:02:31,720 --> 00:02:33,490
+First, clear, the last code
+
+19
+00:02:40,630 --> 00:02:42,280
+said the project.
+
+20
+00:02:43,810 --> 00:02:56,320
+Define and add a for the example the X Collin equals score brackets and set the five value for length
+
+21
+00:02:56,320 --> 00:03:11,530
+of array and set the time curly brackets for initialize the add a for the example one column 10 and
+
+22
+00:03:11,530 --> 00:03:15,310
+comma three column 30.
+
+23
+00:03:17,350 --> 00:03:26,170
+Each means any variable of often is assigned to the second element that is index one, and the variable
+
+24
+00:03:26,180 --> 00:03:32,500
+30 is assigned to the Fourth Element that is Index three now displayed at a
+
+25
+00:03:35,290 --> 00:03:42,430
+if p, the X serves the project and execute the code.
+
+26
+00:03:45,260 --> 00:03:46,940
+Now we can see the output.
+
+27
+00:03:47,360 --> 00:03:52,700
+Zero, 10, zero, 30 and zero.
+
+28
+00:03:54,200 --> 00:04:02,770
+We could initialize the value 10 and 30 for index one and index three, and the other indexes have this
+
+29
+00:04:02,780 --> 00:04:10,880
+zero value because we did not assign value to the other indexes and the default value of zero is stored
+
+30
+00:04:10,880 --> 00:04:12,170
+inside them.
+
+31
+00:04:13,870 --> 00:04:17,200
+Okay, now go to a slide and continue.
+
+32
+00:04:21,910 --> 00:04:25,550
+Filter, Ari, elements in go in, go blank.
+
+33
+00:04:25,570 --> 00:04:27,610
+You can filter add elements.
+
+34
+00:04:27,820 --> 00:04:35,710
+Now go to this school and illustrate how to use from column symbol for filter areas.
+
+35
+00:04:36,670 --> 00:04:38,470
+First, clear the last quote.
+
+36
+00:04:43,280 --> 00:04:46,580
+Said the project and define a string.
+
+37
+00:04:47,450 --> 00:04:50,210
+My name's Colin.
+
+38
+00:04:50,750 --> 00:05:00,290
+He calls the score brackets said the lengths five type is a string and initialize the variable
+
+39
+00:05:02,840 --> 00:05:03,470
+key.
+
+40
+00:05:07,320 --> 00:05:07,890
+Jeanne.
+
+41
+00:05:11,230 --> 00:05:11,680
+Be.
+
+42
+00:05:16,630 --> 00:05:17,340
+Robert?
+
+43
+00:05:21,040 --> 00:05:21,970
+And, David,
+
+44
+00:05:26,350 --> 00:05:42,510
+this played out by the following quote if f needs, isn't he, I guess this and her sister value, the
+
+45
+00:05:43,780 --> 00:05:48,460
+names now save the project and execute the code.
+
+46
+00:05:52,240 --> 00:05:59,140
+Now we can see the output we create and initialize and add every bill and print it.
+
+47
+00:05:59,290 --> 00:06:02,830
+Name key gene bill Robert and David.
+
+48
+00:06:03,870 --> 00:06:14,520
+Now go to the code and use calling for filtering the added element, for the example, the news from
+
+49
+00:06:14,520 --> 00:06:15,750
+these code names.
+
+50
+00:06:17,880 --> 00:06:24,800
+Square brackets and set the column, it means extract all elements of names.
+
+51
+00:06:24,810 --> 00:06:29,520
+Array is starting from zero days till the end.
+
+52
+00:06:30,150 --> 00:06:32,910
+Now save the project and execute the code.
+
+53
+00:06:36,570 --> 00:06:40,440
+Now we can see all elements of a printed.
+
+54
+00:06:41,840 --> 00:06:51,620
+Go to the call, comment this line and go to the next line and do another sample, write the following
+
+55
+00:06:51,620 --> 00:06:56,090
+quote FP names.
+
+56
+00:06:57,220 --> 00:07:00,640
+This square bracket, Colleen, three.
+
+57
+00:07:03,240 --> 00:07:04,140
+Save the project.
+
+58
+00:07:05,070 --> 00:07:15,030
+It means extra elements of names at a starting from zero index till Turd Index, but not including industry.
+
+59
+00:07:16,050 --> 00:07:17,220
+Execute the code.
+
+60
+00:07:23,640 --> 00:07:25,100
+We can't see Gene.
+
+61
+00:07:25,470 --> 00:07:33,360
+Gene Bill, billary elements from zero till three Bongarts not including in the extreme, do another
+
+62
+00:07:33,360 --> 00:07:38,030
+example first, come in this line, go to the next line.
+
+63
+00:07:38,050 --> 00:07:38,760
+FP
+
+64
+00:07:41,160 --> 00:07:51,990
+names the square brackets for the example to call and save the project to columns.
+
+65
+00:07:51,990 --> 00:07:57,840
+It means extract elements of names as starting from second index till the end.
+
+66
+00:07:58,920 --> 00:08:00,510
+Now execute the code.
+
+67
+00:08:04,620 --> 00:08:12,600
+And we can see the output being Robert and David from second in Nic's until the end of it on another
+
+68
+00:08:12,600 --> 00:08:15,360
+example on the sly.
+
+69
+00:08:16,010 --> 00:08:16,770
+Hefty
+
+70
+00:08:20,220 --> 00:08:21,110
+names.
+
+71
+00:08:23,280 --> 00:08:23,820
+It's horrible.
+
+72
+00:08:23,850 --> 00:08:34,530
+I kept von Cullen for youth means extract elements of names is starting from first index teens also
+
+73
+00:08:34,530 --> 00:08:39,720
+index, but not including index for execute the code.
+
+74
+00:08:43,650 --> 00:08:48,300
+Now we can see the Output Jean Bill and Robert.
+
+75
+00:08:48,480 --> 00:08:53,730
+It means from first index to enforce the index, but not including index.
+
+76
+00:08:53,730 --> 00:08:58,320
+For now, we could use Colin for filtering error.
+
+77
+00:08:59,220 --> 00:09:05,790
+OK, in order not to prolong the time of decision, we will finish it and we will continue the content
+
+78
+00:09:05,790 --> 00:09:06,960
+in the next session.
+
+79
+00:09:07,560 --> 00:09:08,190
+Goodbye.

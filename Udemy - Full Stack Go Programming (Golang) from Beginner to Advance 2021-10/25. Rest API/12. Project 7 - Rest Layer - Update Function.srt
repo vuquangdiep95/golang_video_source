@@ -1,0 +1,163 @@
+1
+00:00:11,730 --> 00:00:17,820
+Hello and welcome to the Golang programming language course in the previous session, we could define
+
+2
+00:00:17,820 --> 00:00:25,080
+a say, the student function for rest later and now it's time to implement another function that is
+
+3
+00:00:25,080 --> 00:00:27,010
+supposed to update exists.
+
+4
+00:00:27,030 --> 00:00:33,810
+A student from personal database so defined the function names like Update a student.
+
+5
+00:00:34,500 --> 00:00:39,360
+This function accept two parameters first and object from a response writer.
+
+6
+00:00:39,660 --> 00:00:42,740
+And second, the pointer appears to be request.
+
+7
+00:00:43,350 --> 00:00:48,980
+So we write for update.
+
+8
+00:00:50,340 --> 00:01:05,720
+A student set two parameters first response from IS to response writer and second request as pointer
+
+9
+00:01:05,730 --> 00:01:08,040
+of Institute Author request.
+
+10
+00:01:10,860 --> 00:01:13,650
+Now we to implement the body of the function.
+
+11
+00:01:14,430 --> 00:01:22,260
+This function is supposed to update existing student in database, so we should convert the data received
+
+12
+00:01:22,260 --> 00:01:26,940
+from the end point into a student object and save it in the database.
+
+13
+00:01:27,630 --> 00:01:37,440
+To do this, we do the following first create an object of a student model by the student.
+
+14
+00:01:41,230 --> 00:01:50,470
+Model law student, therefore, we received a data sent from the killer through the body and the request
+
+15
+00:01:50,470 --> 00:01:58,240
+by the new theycould function from Jason Pichet and associate into a student object, this function
+
+16
+00:01:58,240 --> 00:02:06,580
+returns a new decoder that reads from reader, so first define an error variable as return type error
+
+17
+00:02:06,610 --> 00:02:07,090
+column.
+
+18
+00:02:07,090 --> 00:02:25,150
+E calls Jason Dart's new decoder and Seth body of recklessness argument with body and calling decode
+
+19
+00:02:25,150 --> 00:02:32,500
+function, decode function and store to receive data into a student model.
+
+20
+00:02:33,160 --> 00:02:34,950
+Anderson student.
+
+21
+00:02:39,840 --> 00:02:47,010
+Now, check the NRA status, so be right, if error not equals nil of the
+
+22
+00:02:49,680 --> 00:02:50,070
+error.
+
+23
+00:02:54,640 --> 00:03:00,910
+And sits an error of state was in response Heather and displayed for a client by their printer function.
+
+24
+00:03:00,920 --> 00:03:05,680
+So the right response dots, right?
+
+25
+00:03:06,580 --> 00:03:21,340
+Heather select an error status, for example, STP dot status, internal server status, internal server
+
+26
+00:03:21,340 --> 00:03:27,490
+error and displayed for client by the colleague.
+
+27
+00:03:27,520 --> 00:03:41,290
+If M t dot f trent f function first response, second parameter set and misses, for example, could
+
+28
+00:03:42,430 --> 00:03:45,610
+not update.
+
+29
+00:03:47,960 --> 00:03:48,860
+Student.
+
+30
+00:03:51,080 --> 00:03:59,990
+By Edward Pierce, and we and sit anywhere valuable.
+
+31
+00:04:03,980 --> 00:04:06,380
+And set a return value return.
+
+32
+00:04:07,040 --> 00:04:16,040
+We can now connect to the database, then call the query to update a student, so we write the tools
+
+33
+00:04:18,080 --> 00:04:25,700
+and calling update function updates and sit a student as our human for this function.
+
+34
+00:04:26,420 --> 00:04:31,250
+Student OK before the call and say the perfect.
+
+35
+00:04:32,390 --> 00:04:35,810
+Now we were able to implement the update function.
+
+36
+00:04:36,050 --> 00:04:44,000
+That Update and N'existe, a student from the database based data receiving from Client The Rest API.
+
+37
+00:04:44,210 --> 00:04:44,660
+OK.
+
+38
+00:04:44,900 --> 00:04:52,550
+In this session, we will able to implement the necessary functions to connect the rest API to the database
+
+39
+00:04:53,150 --> 00:04:55,670
+in order not to prolong the time of decision.
+
+40
+00:04:55,850 --> 00:04:59,840
+We will finish it, then we will continue the content in the next session.
+
+41
+00:05:00,080 --> 00:05:00,560
+Goodbye.

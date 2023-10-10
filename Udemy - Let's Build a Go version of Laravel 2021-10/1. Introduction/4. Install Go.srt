@@ -1,0 +1,99 @@
+1
+00:00:01,110 --> 00:00:05,130
+Chances are, if you've worked with go much in the past, you probably already have it installed.
+
+2
+00:00:05,310 --> 00:00:07,260
+But let's make sure we have the latest version.
+
+3
+00:00:08,010 --> 00:00:15,420
+So as I record this, the current first result if you search for go or probably go long on your favorite
+
+4
+00:00:15,420 --> 00:00:18,760
+search engine, is this page golang dot org?
+
+5
+00:00:18,780 --> 00:00:21,360
+And there's a link to this in the course of resources for this lecture.
+
+6
+00:00:21,960 --> 00:00:23,400
+And in order to download Go.
+
+7
+00:00:23,400 --> 00:00:28,140
+Not surprisingly, you click this big button and you choose the distribution appropriate for your operating
+
+8
+00:00:28,140 --> 00:00:30,810
+system Windows, Mac, Linux.
+
+9
+00:00:31,020 --> 00:00:33,610
+You can compile from source if you want, but I don't recommend it.
+
+10
+00:00:33,630 --> 00:00:36,000
+It's a lot of work for no real benefit.
+
+11
+00:00:36,810 --> 00:00:43,980
+Now, if you're on a Mac, this version, the one that you see right here, that's the one for Intel
+
+12
+00:00:43,980 --> 00:00:44,910
+based processors.
+
+13
+00:00:45,090 --> 00:00:50,160
+But if you're on a newer Mac that has the M1 chip Apple Silicon, the one you want is actually this
+
+14
+00:00:50,160 --> 00:00:53,440
+one ARM 64, Darwin ARM 64.
+
+15
+00:00:53,460 --> 00:00:57,270
+So just download that and install it now as I record this.
+
+16
+00:00:58,080 --> 00:01:03,170
+Go is in the process of making this go dot dev the home page instead.
+
+17
+00:01:03,180 --> 00:01:06,300
+And when you take this course, this might be what you get when you search for it.
+
+18
+00:01:07,050 --> 00:01:08,830
+And again, it is pretty much the same thing.
+
+19
+00:01:08,850 --> 00:01:14,350
+Click the download button and that will actually download it for your operating system.
+
+20
+00:01:14,400 --> 00:01:19,380
+But the thing is, if you're on a Mac right now, you're going to get the AMD64 and not the ARM64.
+
+21
+00:01:19,650 --> 00:01:24,120
+So instead, you might want to click on this more link right here, and then you can.
+
+22
+00:01:24,520 --> 00:01:27,020
+You're taken back to the same page where we were just looking at.
+
+23
+00:01:27,030 --> 00:01:29,790
+And again, if you're on an Intel chip, you download this one.
+
+24
+00:01:30,090 --> 00:01:34,530
+And if you're on Apple Silicon, you download the ARM64 down here.
+
+25
+00:01:34,890 --> 00:01:37,920
+So install that, make sure you have the latest version and let's move on.

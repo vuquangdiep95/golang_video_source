@@ -1,0 +1,487 @@
+1
+00:00:00,930 --> 00:00:07,710
+So we have a couple of tables now, we have our host table, our services table and our host services
+
+2
+00:00:07,710 --> 00:00:13,170
+table, and we need to set up some models that allow us to map the information that we'll have in the
+
+3
+00:00:13,170 --> 00:00:15,860
+database with our go code.
+
+4
+00:00:15,870 --> 00:00:17,070
+And that's pretty straightforward.
+
+5
+00:00:17,100 --> 00:00:23,880
+So let's go back to our idee and let's open up this package that's in the root level of our application,
+
+6
+00:00:23,880 --> 00:00:27,950
+inside the internal folder, inside the model's folder.
+
+7
+00:00:27,960 --> 00:00:29,730
+And I'm going to open model Stocco.
+
+8
+00:00:30,630 --> 00:00:33,000
+And here you see, we already have a couple of models.
+
+9
+00:00:33,000 --> 00:00:35,310
+We have one for users and one for preferences.
+
+10
+00:00:35,310 --> 00:00:38,110
+And we're not using the preferences yet, but we'll get to that eventually.
+
+11
+00:00:39,210 --> 00:00:40,620
+So we need to set up some new ones.
+
+12
+00:00:40,620 --> 00:00:44,340
+So we'll set up one for host type post, which is just a struct.
+
+13
+00:00:46,650 --> 00:00:52,510
+And everything inside that struct will correspond to what we have in our house table.
+
+14
+00:00:52,530 --> 00:00:55,070
+So let's have a look at that and let's look at the structure for it.
+
+15
+00:00:55,860 --> 00:00:57,740
+So it has an I.D. and a host name.
+
+16
+00:00:57,750 --> 00:00:59,790
+So let's add those ID.
+
+17
+00:01:00,990 --> 00:01:06,270
+We'll just that'll just be an aunt and our host name, which will be a string.
+
+18
+00:01:07,200 --> 00:01:12,290
+And then we had our canonical name, which will also be a string.
+
+19
+00:01:12,990 --> 00:01:22,680
+And what else do we have you URL, IP and IP version six, your URL String IP, which is the IP address,
+
+20
+00:01:22,680 --> 00:01:27,630
+which we might not use, but we might say we may also put it in their IP version six.
+
+21
+00:01:27,810 --> 00:01:29,010
+That will also be a string.
+
+22
+00:01:30,030 --> 00:01:31,200
+And what else do we have.
+
+23
+00:01:32,190 --> 00:01:40,830
+Location, operating system and active location, which is just a string OS for operating system, which
+
+24
+00:01:40,830 --> 00:01:53,190
+will be a string and active created an updated and active that will be an int created that which is
+
+25
+00:01:53,190 --> 00:01:59,100
+of time, time and updated at which is also of time.
+
+26
+00:01:59,400 --> 00:01:59,790
+Time.
+
+27
+00:02:04,240 --> 00:02:06,630
+OK, so let's give it a comment.
+
+28
+00:02:09,430 --> 00:02:15,940
+Host is the model for hosts.
+
+29
+00:02:16,480 --> 00:02:27,280
+OK, now we need one for services type services, also a struct, and it will have an ID for sure,
+
+30
+00:02:27,280 --> 00:02:30,610
+which is an ENT and it will also have created out and update it out.
+
+31
+00:02:30,610 --> 00:02:33,860
+So I'll copy those and paste them down in here.
+
+32
+00:02:34,480 --> 00:02:37,150
+Now let's see what else we have in their services.
+
+33
+00:02:42,290 --> 00:02:43,380
+So that has an idea.
+
+34
+00:02:43,430 --> 00:02:52,730
+Service name at an active service name, which will be a string active, which will be an ENT.
+
+35
+00:02:54,820 --> 00:02:57,190
+And an icon, which is just a.
+
+36
+00:02:58,540 --> 00:03:00,030
+OK, let's give that a comment.
+
+37
+00:03:04,560 --> 00:03:05,610
+Services.
+
+38
+00:03:07,910 --> 00:03:16,130
+Is the model for services and are third one is how services type hosted services.
+
+39
+00:03:17,810 --> 00:03:20,600
+I'll just call it host service struct.
+
+40
+00:03:22,280 --> 00:03:23,710
+That will have an ID for sure.
+
+41
+00:03:26,460 --> 00:03:32,850
+And we'll have a creative created and updated out for sure, so let's put those in there and let's see
+
+42
+00:03:32,850 --> 00:03:38,070
+what else is in their host services right there.
+
+43
+00:03:39,780 --> 00:03:41,970
+So hosted in-service day ID
+
+44
+00:03:45,210 --> 00:03:45,480
+in.
+
+45
+00:03:48,910 --> 00:03:55,300
+And those are our foreign keys that allow us to determine which services exist for a given hope host,
+
+46
+00:03:57,130 --> 00:04:06,430
+active schedule, no active input schedule, no.
+
+47
+00:04:08,700 --> 00:04:09,390
+What is that?
+
+48
+00:04:10,260 --> 00:04:10,940
+It's an int.
+
+49
+00:04:13,460 --> 00:04:25,730
+Schedule unit, which is a string, so that would be like three minutes for for number and unit and
+
+50
+00:04:25,730 --> 00:04:26,840
+last check,
+
+51
+00:04:29,750 --> 00:04:32,900
+which will be a time time.
+
+52
+00:04:34,370 --> 00:04:37,730
+OK, so there's our host services.
+
+53
+00:04:39,700 --> 00:04:45,340
+And let's give that a comment is the model for hosting services.
+
+54
+00:04:45,910 --> 00:04:49,820
+OK, so now we have models set up for all of these things.
+
+55
+00:04:49,840 --> 00:04:53,920
+Now let's think about if we've missed anything.
+
+56
+00:04:55,150 --> 00:05:00,430
+We have all the information for our host and we absolutely need to know its ID so we can find it in
+
+57
+00:05:00,430 --> 00:05:04,390
+the database, its host hostname, which is just a string, something we can refer to.
+
+58
+00:05:04,810 --> 00:05:06,010
+So it makes sense to us.
+
+59
+00:05:06,010 --> 00:05:08,940
+We know which server we're looking at, canonical name.
+
+60
+00:05:08,950 --> 00:05:10,120
+We absolutely need that.
+
+61
+00:05:10,120 --> 00:05:11,220
+That's its domain name.
+
+62
+00:05:11,740 --> 00:05:12,660
+It's your URL.
+
+63
+00:05:12,670 --> 00:05:13,600
+How do we get to that?
+
+64
+00:05:13,600 --> 00:05:20,950
+If it's a website that it's HTP or HDB followed by whatever the URL is to get to it, IP and IP version
+
+65
+00:05:20,950 --> 00:05:21,520
+six.
+
+66
+00:05:21,550 --> 00:05:26,260
+We may not use those, but we might if we don't have a hostname, a real canonical name, for example,
+
+67
+00:05:26,260 --> 00:05:31,800
+we won't be checking by IP or IP version six location OS active.
+
+68
+00:05:31,810 --> 00:05:34,000
+I think we have everything you need for our hosts there.
+
+69
+00:05:34,570 --> 00:05:36,160
+What about our services now?
+
+70
+00:05:36,160 --> 00:05:40,440
+Services is the table that's just going to list the services we want to check.
+
+71
+00:05:40,450 --> 00:05:46,180
+So a given service in this table is not tied to a service, a particular host.
+
+72
+00:05:46,720 --> 00:05:51,940
+We do that in the host service table, but we have an ID so we can find in the database a name that's
+
+73
+00:05:51,940 --> 00:05:55,900
+descriptive so we know what we're monitoring, whether it's active or not.
+
+74
+00:05:55,900 --> 00:05:57,520
+Sure, an icon.
+
+75
+00:05:57,520 --> 00:06:02,470
+We're just going to use that for display, which we'll get to when we start building the necessary pages.
+
+76
+00:06:03,400 --> 00:06:05,380
+That seems to be everything we need here.
+
+77
+00:06:05,500 --> 00:06:07,030
+What about host services?
+
+78
+00:06:07,750 --> 00:06:15,580
+So I need some means of determining whether or not a service is up or down or in a morning state or
+
+79
+00:06:15,580 --> 00:06:17,830
+not yet checked, whatever it might be.
+
+80
+00:06:18,610 --> 00:06:25,510
+So what we have here is an ID, a host ID and a service ID and these to allow us to link services to
+
+81
+00:06:25,510 --> 00:06:27,280
+hosts using foreign keys.
+
+82
+00:06:27,820 --> 00:06:30,610
+Active makes sense how often we check it.
+
+83
+00:06:30,820 --> 00:06:37,000
+When we last checked it, I think we need one more thing and that would be the status, whether it's
+
+84
+00:06:37,000 --> 00:06:39,430
+up or down and that can be an A..
+
+85
+00:06:39,430 --> 00:06:40,270
+It could be a string.
+
+86
+00:06:40,270 --> 00:06:41,470
+It could be anything we want.
+
+87
+00:06:42,370 --> 00:06:51,550
+I think I'm just going to make it a string and that string will be OK or healthy for the service is
+
+88
+00:06:51,550 --> 00:06:59,170
+fine warning if it's in a warning state problem if it's in a problem state or pending if it's pending,
+
+89
+00:06:59,350 --> 00:07:00,700
+we could use anything we wanted.
+
+90
+00:07:00,700 --> 00:07:04,810
+We could actually have another table called status and use foreign keys to link them together.
+
+91
+00:07:05,200 --> 00:07:09,850
+But for the purposes of what we're trying to do in this course, I think just using a string is sufficient
+
+92
+00:07:09,850 --> 00:07:11,380
+for our purposes for the moment.
+
+93
+00:07:11,890 --> 00:07:18,580
+Now, we've added this to our model, but it doesn't exist in our actual database table.
+
+94
+00:07:18,580 --> 00:07:20,200
+So we need to run another migration.
+
+95
+00:07:20,200 --> 00:07:22,600
+So I'm make sure I'm in the root level of my directory.
+
+96
+00:07:22,600 --> 00:07:23,080
+I am.
+
+97
+00:07:23,080 --> 00:07:29,530
+And now I want to add a column to this particular table so I'll generate a migration.
+
+98
+00:07:29,530 --> 00:07:41,950
+So to generate fiz add status to host services table and that will allow me to have my two new migrations.
+
+99
+00:07:41,950 --> 00:07:43,000
+So let's open them up.
+
+100
+00:07:43,330 --> 00:07:44,620
+We'll go to our migration's.
+
+101
+00:07:46,220 --> 00:07:52,130
+And find the two that we've just added and I'll look at the up table first and the syntax to add it
+
+102
+00:07:52,130 --> 00:07:53,180
+is really straightforward.
+
+103
+00:07:54,140 --> 00:08:03,200
+Add column to the post services table and we'll call it status.
+
+104
+00:08:04,040 --> 00:08:08,510
+And it's a type of string and it's default.
+
+105
+00:08:11,650 --> 00:08:14,060
+We'll be just make it empty for now.
+
+106
+00:08:14,620 --> 00:08:17,230
+That way we'll never have a null value in there at all.
+
+107
+00:08:18,130 --> 00:08:18,600
+All right.
+
+108
+00:08:18,880 --> 00:08:20,200
+Actually, that's make it pending.
+
+109
+00:08:20,320 --> 00:08:26,020
+When we first add something to the table, its status should be pending because we want to run any checks
+
+110
+00:08:26,020 --> 00:08:26,400
+yet.
+
+111
+00:08:26,980 --> 00:08:31,560
+So there's our up migration and let's put our down migration in there as well.
+
+112
+00:08:31,750 --> 00:08:38,770
+And that's as simple as drop column from the host services table hosted services.
+
+113
+00:08:41,500 --> 00:08:45,940
+And the column I want to drop is status, and that should be it.
+
+114
+00:08:46,450 --> 00:08:49,270
+So let's try writing this migration so to migrate.
+
+115
+00:08:51,140 --> 00:08:57,590
+There it is, let's make sure it's in there, so I'll go back and reload this table and now I have status.
+
+116
+00:08:57,770 --> 00:09:00,380
+All right, so I'll add these to get.
+
+117
+00:09:03,720 --> 00:09:04,830
+And commit everything.
+
+118
+00:09:06,800 --> 00:09:15,260
+Create models and call them to host services and commit and push.
+
+119
+00:09:20,780 --> 00:09:21,530
+And push.
+
+120
+00:09:25,920 --> 00:09:32,340
+So the next step is to go create some database routines that allow us to add, edit and delete entries
+
+121
+00:09:32,340 --> 00:09:39,240
+to our hosts house services and services table, and we'll take care of that in the next lecture or
+
+122
+00:09:39,240 --> 00:09:39,570
+two.

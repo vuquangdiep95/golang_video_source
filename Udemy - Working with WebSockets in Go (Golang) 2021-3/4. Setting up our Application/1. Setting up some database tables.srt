@@ -1,0 +1,823 @@
+1
+00:00:01,190 --> 00:00:07,760
+So now we know how to send an event from our application to our pusher server and then have that sent
+
+2
+00:00:07,760 --> 00:00:13,400
+off to all the connected clients, and in order to do something useful, we need to do a little bit
+
+3
+00:00:13,400 --> 00:00:14,900
+of work just to set things up.
+
+4
+00:00:14,900 --> 00:00:18,890
+So I'm looking at the application right now and I'm looking at the overview page.
+
+5
+00:00:19,280 --> 00:00:22,460
+And apparently we're going to be monitoring hosts.
+
+6
+00:00:22,470 --> 00:00:27,920
+And over here I have a list of hosts and those hosts will have services and each service can have one
+
+7
+00:00:27,920 --> 00:00:29,510
+of four possible statuses.
+
+8
+00:00:29,810 --> 00:00:31,840
+If everything is OK, it's healthy.
+
+9
+00:00:31,850 --> 00:00:35,390
+If there's a warning of some sort, we would we would populate this list.
+
+10
+00:00:35,870 --> 00:00:40,460
+If there is a problem, like a host is down or whatever, this would be in the problem section.
+
+11
+00:00:40,700 --> 00:00:45,790
+And pending is a service that we've said start monitoring this, but it actually hasn't checked it yet.
+
+12
+00:00:45,800 --> 00:00:46,900
+So it's a pending service.
+
+13
+00:00:47,330 --> 00:00:52,190
+So clearly, we're going to need something in our database to hold hosts and services.
+
+14
+00:00:52,700 --> 00:00:57,980
+And I think the easiest way to do that is to set up a model, a table in our database that holds all
+
+15
+00:00:57,980 --> 00:01:03,920
+of our hosts to set up another table, that holds all of the possible services that we want to monitor
+
+16
+00:01:04,430 --> 00:01:11,240
+and then have a third table that lists all of the hosts for a all of the services for a given host.
+
+17
+00:01:11,450 --> 00:01:12,260
+So let's set that up.
+
+18
+00:01:12,290 --> 00:01:12,980
+It won't be too hard.
+
+19
+00:01:13,580 --> 00:01:19,910
+So I'm going to go over to my idee and I'm going to open my terminal window and I'm going to generate
+
+20
+00:01:20,120 --> 00:01:24,260
+some migration's to generate these tables because I don't want to build them by hand.
+
+21
+00:01:24,530 --> 00:01:29,210
+So I'll say SOTA generate and I'll generate a Buis format.
+
+22
+00:01:29,210 --> 00:01:31,460
+And if you're not familiar with that, you'll see it in just a moment.
+
+23
+00:01:31,460 --> 00:01:35,240
+It's just a really simple syntax for describing tables.
+
+24
+00:01:35,900 --> 00:01:42,620
+And I'm going to generate, first of all, create post table and that's just the name of my migration.
+
+25
+00:01:43,220 --> 00:01:50,270
+And when I run that, it creates two new migrations and you'll find those in your application folder
+
+26
+00:01:50,720 --> 00:01:52,070
+under Migration's.
+
+27
+00:01:52,100 --> 00:01:57,410
+So here there are two new migrations, one for the down and one for the up and the down.
+
+28
+00:01:57,410 --> 00:02:04,460
+Migration will actually create the up migration will actually create the table and the down migration
+
+29
+00:02:04,460 --> 00:02:05,360
+just reverses it.
+
+30
+00:02:07,330 --> 00:02:14,020
+So let's do the up migration first, so I'm going to create and this is the syntax called Fiz Create
+
+31
+00:02:14,020 --> 00:02:15,550
+a table named hosts.
+
+32
+00:02:18,400 --> 00:02:27,610
+And inside of the curly brackets, I just define each of the columns to column on in the column ID and
+
+33
+00:02:27,610 --> 00:02:33,790
+that will be a primary key, it's a type integer and then some options for it.
+
+34
+00:02:34,120 --> 00:02:37,060
+And the option for this one is this is my primary key.
+
+35
+00:02:37,090 --> 00:02:38,650
+So primary true.
+
+36
+00:02:40,410 --> 00:02:47,250
+And then closure parenthesis, then I'll have another call, Titcomb, what else do I want for my host?
+
+37
+00:02:47,280 --> 00:02:48,450
+Well, how about hostname?
+
+38
+00:02:48,450 --> 00:02:55,740
+Something that we can actually refer to so we know what it's called and it will be of type string and
+
+39
+00:02:55,740 --> 00:03:02,910
+we'll just specify size of, say, 255, and that's going to be in quotes size of 255 characters.
+
+40
+00:03:02,910 --> 00:03:03,870
+That should be sufficient.
+
+41
+00:03:05,930 --> 00:03:11,540
+And close my parenthesis, then another column, and I'll just duplicate this to make it a little faster,
+
+42
+00:03:12,860 --> 00:03:18,200
+I'll call this the correct domain name for the host.
+
+43
+00:03:18,220 --> 00:03:19,420
+So what's it actually called?
+
+44
+00:03:19,430 --> 00:03:24,880
+So I call this canonical name, canonical name.
+
+45
+00:03:25,010 --> 00:03:27,650
+So that would be the name that it exists on the Internet.
+
+46
+00:03:27,680 --> 00:03:28,070
+So.
+
+47
+00:03:32,720 --> 00:03:38,250
+Could be my post.com, whatever it is, and I've got to get rid of that extra quotation mark.
+
+48
+00:03:38,810 --> 00:03:44,810
+It will also be a string and it'll be a size of 255, then I want the euro.
+
+49
+00:03:45,980 --> 00:03:49,490
+So the euro will be a string 255 should be sufficient for that.
+
+50
+00:03:49,580 --> 00:03:50,900
+That's how you get to the host.
+
+51
+00:03:50,900 --> 00:03:53,840
+So HTP or HDB s, whatever it may be.
+
+52
+00:03:55,010 --> 00:03:56,600
+Let me ask Staats IP address.
+
+53
+00:03:56,600 --> 00:04:01,280
+I don't know if I needed it or not, so I'll just call it IP and that will be a string and it might
+
+54
+00:04:01,280 --> 00:04:02,720
+have an IP version six.
+
+55
+00:04:02,720 --> 00:04:04,660
+So I'll give it an IP version six.
+
+56
+00:04:06,110 --> 00:04:07,300
+Where's the house located.
+
+57
+00:04:07,310 --> 00:04:08,570
+What data centres it in.
+
+58
+00:04:08,570 --> 00:04:12,380
+So location, maybe the operating system.
+
+59
+00:04:13,760 --> 00:04:20,750
+And then I'm going to have an active yes or no and that will be an integer and I'll just give it a default
+
+60
+00:04:22,070 --> 00:04:22,620
+of one.
+
+61
+00:04:22,970 --> 00:04:25,850
+So when we enter something by default, it is equal.
+
+62
+00:04:27,110 --> 00:04:34,850
+Now fears will also create or sota running fiz migrations will actually actually create two more columns
+
+63
+00:04:34,850 --> 00:04:35,330
+for us.
+
+64
+00:04:35,720 --> 00:04:41,050
+And those two columns are created at which is a timestamp and updated at which is a timestamp.
+
+65
+00:04:41,480 --> 00:04:46,370
+And one thing I'm going to show you here, the very first migration in the list, and this is because
+
+66
+00:04:46,370 --> 00:04:53,320
+we're using Postgres postgrads will not by default do those update the the columns for us.
+
+67
+00:04:53,540 --> 00:05:00,200
+So I created a trigger right here that says create a trigger set timestamp.
+
+68
+00:05:00,200 --> 00:05:07,520
+And all that will do is make sure that updated at is updated to the current timestamp any time a record
+
+69
+00:05:07,520 --> 00:05:09,110
+is created or updated.
+
+70
+00:05:09,170 --> 00:05:12,710
+So I'm going to put that trigger in here as well.
+
+71
+00:05:13,100 --> 00:05:19,400
+And I'm just going to say sequel and then I'll use my back text so I can have this on multiple lines.
+
+72
+00:05:19,730 --> 00:05:28,820
+And this will execute Rosabelle for us and I'll say create trigger set underscore timestamp.
+
+73
+00:05:33,580 --> 00:05:39,220
+Before update on hosts, which is the name of our table.
+
+74
+00:05:42,560 --> 00:05:45,500
+For each row.
+
+75
+00:05:49,550 --> 00:05:50,330
+Execute.
+
+76
+00:05:53,420 --> 00:05:54,170
+Procedure.
+
+77
+00:05:56,660 --> 00:06:04,130
+Trigger set time stamp, and that will just make sure that I don't have to manually update the time
+
+78
+00:06:04,130 --> 00:06:08,900
+stamp every time I make a change to the particular record in this table.
+
+79
+00:06:09,470 --> 00:06:09,800
+All right.
+
+80
+00:06:09,800 --> 00:06:12,820
+Now, if I've typed everything correctly, I should be able to run this migration.
+
+81
+00:06:12,830 --> 00:06:16,890
+So let's try this sota migrate and there it is.
+
+82
+00:06:17,180 --> 00:06:21,770
+Now, if I go look at the database, which I have opened right here before I refresh it, I just have
+
+83
+00:06:21,770 --> 00:06:22,310
+preferences.
+
+84
+00:06:22,310 --> 00:06:24,620
+Remember, tokens, schema migration, just these tables.
+
+85
+00:06:24,950 --> 00:06:31,820
+And once I refresh it now I have a host table and the structure of that host table corresponds exactly
+
+86
+00:06:31,820 --> 00:06:33,220
+to what I specified in that.
+
+87
+00:06:33,230 --> 00:06:34,160
+So that's pretty straightforward.
+
+88
+00:06:34,790 --> 00:06:35,180
+All right.
+
+89
+00:06:35,190 --> 00:06:36,630
+So we created our host table.
+
+90
+00:06:37,190 --> 00:06:49,550
+Now let's create our services table so we'll generate a new migration sota, generate Fiz, create services
+
+91
+00:06:49,670 --> 00:06:50,120
+table.
+
+92
+00:06:50,360 --> 00:06:52,130
+We'll do the down migrations in just a moment.
+
+93
+00:06:54,230 --> 00:07:01,550
+So just to make things a little faster, I'll copy this and I will go to my service table up and paste
+
+94
+00:07:01,550 --> 00:07:02,090
+it in there.
+
+95
+00:07:02,510 --> 00:07:07,640
+And I want fewer things in here, but I definitely want an ID and I don't want to hostname, I want
+
+96
+00:07:07,640 --> 00:07:14,510
+a service name and I do want the active and will say requires client.
+
+97
+00:07:14,540 --> 00:07:16,840
+Now what also we need in here, we need the actives.
+
+98
+00:07:16,850 --> 00:07:19,180
+Let's get rid of this all the way up to here.
+
+99
+00:07:19,940 --> 00:07:25,280
+I'm also going to put an icon that's associated with a particular service just to make it more visually
+
+100
+00:07:25,280 --> 00:07:25,700
+appealing.
+
+101
+00:07:25,700 --> 00:07:27,410
+So I'll just create another column here.
+
+102
+00:07:28,280 --> 00:07:29,120
+Teda column.
+
+103
+00:07:33,300 --> 00:07:45,870
+And I'll call it icon, and it's a type of string and it is a size out of 255, again, that's long
+
+104
+00:07:45,870 --> 00:07:46,230
+enough.
+
+105
+00:07:47,680 --> 00:07:55,990
+So I'd service name active icon ID, service name active icon, that should be enough, and here we'll
+
+106
+00:07:55,990 --> 00:07:58,360
+just say not on hosts.
+
+107
+00:07:58,360 --> 00:08:03,880
+This time we're going to create the trigger on services and name the table services.
+
+108
+00:08:04,480 --> 00:08:06,100
+OK, so let's run that.
+
+109
+00:08:07,850 --> 00:08:17,960
+So to my great good, make sure it actually created the table for us back to vigilante reload and there's
+
+110
+00:08:17,960 --> 00:08:20,620
+my services table and the structure is correct.
+
+111
+00:08:20,630 --> 00:08:20,970
+Good.
+
+112
+00:08:21,140 --> 00:08:29,510
+OK, so the last table I want to create is hosted services, so let's create that again.
+
+113
+00:08:29,510 --> 00:08:31,160
+I'll just copy this to make it faster.
+
+114
+00:08:32,900 --> 00:08:42,170
+So to generate views with two Zs, create host services table.
+
+115
+00:08:43,890 --> 00:08:49,020
+And I should create my two empty files, which are right here, I'll go to the up and I'll paste it
+
+116
+00:08:49,020 --> 00:08:52,590
+in, this one will be a little bit different because it's going to have foreign keys.
+
+117
+00:08:53,160 --> 00:08:56,640
+But we're going to call this host, underscore services.
+
+118
+00:08:57,030 --> 00:08:59,430
+It will have an I.D. of type integers.
+
+119
+00:08:59,430 --> 00:09:00,630
+That'll be our primary key.
+
+120
+00:09:01,290 --> 00:09:03,240
+And then it's going to have to call column
+
+121
+00:09:06,630 --> 00:09:11,910
+and I'll call this post ID and it's of type integer.
+
+122
+00:09:14,490 --> 00:09:22,740
+And it has no extra parameters, and then there will be a service ID and these are the keys that link
+
+123
+00:09:22,740 --> 00:09:24,760
+our hosts and our services together.
+
+124
+00:09:25,140 --> 00:09:30,560
+So if a host has five services, there will be five entries in the host services table.
+
+125
+00:09:31,170 --> 00:09:33,900
+So we've got Idy hosted service ID.
+
+126
+00:09:34,350 --> 00:09:36,890
+I mean, will keep the active because I need that.
+
+127
+00:09:38,010 --> 00:09:42,300
+I want to be able to turn the monitoring on and off for individual host services.
+
+128
+00:09:43,230 --> 00:09:45,510
+And what else do we need?
+
+129
+00:09:45,930 --> 00:09:52,830
+We want to figure out how often should we run our our particular service scans.
+
+130
+00:09:53,070 --> 00:09:55,260
+So let's say call them.
+
+131
+00:09:57,990 --> 00:10:01,050
+And I'll call this schedule No.
+
+132
+00:10:04,550 --> 00:10:06,230
+And it will be an integer.
+
+133
+00:10:09,300 --> 00:10:15,090
+And it has some options and the options are default of three.
+
+134
+00:10:17,990 --> 00:10:23,180
+So I want to monitor something, a particular service say we're looking to see that a Web server is
+
+135
+00:10:23,180 --> 00:10:27,710
+up on a particular host and I want to monitor for a number of three.
+
+136
+00:10:28,100 --> 00:10:31,850
+And then I need to also specify what are the units?
+
+137
+00:10:32,660 --> 00:10:34,940
+So the units will be schedule unit.
+
+138
+00:10:38,700 --> 00:10:44,610
+And this time, instead of an integer, I'll make a string and I'll give it a default of four minutes,
+
+139
+00:10:44,640 --> 00:10:51,750
+so I want to monitor it for three minutes, that would be the default that we enter in here and that
+
+140
+00:10:51,750 --> 00:10:55,460
+should be enough for what we're doing here right now.
+
+141
+00:10:56,190 --> 00:10:59,010
+So let's just take this.
+
+142
+00:10:59,070 --> 00:11:00,720
+Well, let's just put one more thing in here.
+
+143
+00:11:01,140 --> 00:11:04,920
+Call column and I'll call this last check.
+
+144
+00:11:05,070 --> 00:11:08,700
+The last time that a CAT scan was run against this particular server.
+
+145
+00:11:08,700 --> 00:11:19,980
+And this is a type timestamp and the default, I'll make it equal to nothing, zero zero zero one zero
+
+146
+00:11:20,010 --> 00:11:25,600
+one zero one and at one second after midnight.
+
+147
+00:11:26,190 --> 00:11:27,540
+Now, there's a reason I'm doing this.
+
+148
+00:11:27,540 --> 00:11:33,230
+And it's because one of the one of the idiosyncrasies of go when you're connecting to a database, though,
+
+149
+00:11:33,240 --> 00:11:35,370
+doesn't like null values in a database.
+
+150
+00:11:35,370 --> 00:11:38,520
+And there are ways of doing this with the gold standard library.
+
+151
+00:11:38,530 --> 00:11:44,580
+But typically, just because I'm a little lazy, I'll simply insert a default date.
+
+152
+00:11:44,580 --> 00:11:45,930
+That is the year one.
+
+153
+00:11:45,930 --> 00:11:50,520
+The month one, the first day of the first month at one second after midnight.
+
+154
+00:11:50,880 --> 00:11:55,790
+And when I'm checking to see a date, when I get the date from the database, I just check to see is
+
+155
+00:11:55,800 --> 00:11:57,480
+the date after year one.
+
+156
+00:11:57,480 --> 00:11:58,890
+If it is then to validate.
+
+157
+00:11:58,890 --> 00:12:00,630
+If it's not, then just ignore it.
+
+158
+00:12:01,120 --> 00:12:06,480
+And that's just a quick way to make sure that I can pull information out of the database without without
+
+159
+00:12:06,480 --> 00:12:07,920
+having to check for null values.
+
+160
+00:12:08,550 --> 00:12:10,970
+OK, so we have hosted services.
+
+161
+00:12:10,980 --> 00:12:13,970
+Let's copy this and paste this down here.
+
+162
+00:12:14,760 --> 00:12:16,020
+So that will create the table.
+
+163
+00:12:16,020 --> 00:12:16,970
+But I'm not quite done.
+
+164
+00:12:17,190 --> 00:12:20,850
+I also want to set up a couple of foreign keys and fortunately Fiz.
+
+165
+00:12:20,850 --> 00:12:27,570
+And so to have a really easy way of doing this, add foreign key and I'll warn you ahead of time.
+
+166
+00:12:27,570 --> 00:12:32,280
+I almost always mistype this the first time around, but I'm going to try really carefully to get this
+
+167
+00:12:32,280 --> 00:12:33,990
+right on the table.
+
+168
+00:12:33,990 --> 00:12:34,980
+Hosted services
+
+169
+00:12:37,470 --> 00:12:39,210
+for the column host ID.
+
+170
+00:12:41,520 --> 00:12:49,770
+That references hosts the hosts table, and I'm looking for the column, and it has to be in the format
+
+171
+00:12:49,770 --> 00:12:54,270
+of an array because, you know, foreign keys can point to more than one column on a remote table.
+
+172
+00:12:55,080 --> 00:12:57,180
+But I'm just looking for the column ID.
+
+173
+00:13:00,030 --> 00:13:06,930
+For that, I want to execute these things on delete if somebody deletes the foreign key or the one that
+
+174
+00:13:06,930 --> 00:13:12,050
+this is pointing to, just Cascais, delete this row as well.
+
+175
+00:13:13,140 --> 00:13:20,940
+And on update, if somebody changes the foreign key that I'm pointing to, Kaskade just change my foreign
+
+176
+00:13:20,940 --> 00:13:21,530
+key as well.
+
+177
+00:13:21,780 --> 00:13:23,490
+So change the entry in this database.
+
+178
+00:13:23,850 --> 00:13:27,960
+And I think now I almost always forget that closing parentheses.
+
+179
+00:13:27,960 --> 00:13:29,000
+So I'm going to copy this.
+
+180
+00:13:29,010 --> 00:13:33,860
+Now we've got a foreign key for house services to host Edet.
+
+181
+00:13:33,900 --> 00:13:37,890
+We also need one for service item on the table services.
+
+182
+00:13:38,580 --> 00:13:41,640
+And I'll just use exactly the same logic here.
+
+183
+00:13:42,480 --> 00:13:44,850
+So do I have this typed right now?
+
+184
+00:13:44,850 --> 00:13:48,420
+I don't have to close that and I have to close that.
+
+185
+00:13:48,420 --> 00:13:49,680
+And that's what I told you.
+
+186
+00:13:49,680 --> 00:13:55,370
+I almost always get these wrong the first time around, but I believe I have it set up right.
+
+187
+00:13:55,380 --> 00:13:57,410
+So let's try writing this migration and see what happens.
+
+188
+00:13:57,510 --> 00:14:03,300
+So to my great and if I get this right, there's a very good chance I'm going to go out and buy a lottery
+
+189
+00:14:03,300 --> 00:14:06,420
+ticket because I never get foreign keys right the first time around.
+
+190
+00:14:07,140 --> 00:14:08,190
+And this time I did.
+
+191
+00:14:08,190 --> 00:14:09,830
+So I guess now I have to buy a lottery ticket.
+
+192
+00:14:10,380 --> 00:14:10,740
+All right.
+
+193
+00:14:11,250 --> 00:14:15,290
+Last thing I want to do is write the down migration's and they're really easy.
+
+194
+00:14:15,780 --> 00:14:27,600
+So for the host table down migration is just this drop table posts and I'll copy that and go to the
+
+195
+00:14:27,600 --> 00:14:37,560
+down migration for services, drop table services and for the host services table, drop table host
+
+196
+00:14:38,220 --> 00:14:41,610
+services and make sure everything is spelled right.
+
+197
+00:14:41,610 --> 00:14:46,200
+Hosted services, services and hosts.
+
+198
+00:14:46,570 --> 00:14:48,690
+OK, so I'm going to commit these to get.
+
+199
+00:14:52,500 --> 00:15:00,750
+And paste them, not paste them, post them, push them up to my remote server, and this is Database
+
+200
+00:15:00,750 --> 00:15:03,690
+Migration's and push.
+
+201
+00:15:05,750 --> 00:15:06,440
+And push.
+
+202
+00:15:10,460 --> 00:15:11,220
+And there it goes.
+
+203
+00:15:12,020 --> 00:15:19,300
+Look at my database, make sure they're all there, reload host services, hosts and services.
+
+204
+00:15:19,430 --> 00:15:19,870
+Perfect.
+
+205
+00:15:20,330 --> 00:15:24,050
+So in the next lesson will set up the database models for these.
+
+206
+00:15:24,080 --> 00:15:29,140
+So our go code has a means of getting information from the database and storing it somewhere.

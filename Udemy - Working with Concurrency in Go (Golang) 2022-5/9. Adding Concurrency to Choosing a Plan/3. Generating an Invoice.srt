@@ -1,0 +1,583 @@
+1
+00:00:00,860 --> 00:00:06,650
+So the next step in our process is to generate an invoice and send that invoice to the consumer, to
+
+2
+00:00:06,650 --> 00:00:08,060
+whoever bought our plan.
+
+3
+00:00:08,600 --> 00:00:13,010
+Now, I have a comment here that says Generate an invoice, and then I have a comment that says send
+
+4
+00:00:13,010 --> 00:00:14,570
+an email with the invoice attached.
+
+5
+00:00:14,870 --> 00:00:16,100
+But let's simplify this.
+
+6
+00:00:16,370 --> 00:00:21,920
+In an actual production environment where we're selling real things, we'd have to calculate tax and
+
+7
+00:00:21,920 --> 00:00:23,450
+there's all sorts of things we'd have to do.
+
+8
+00:00:23,810 --> 00:00:25,100
+So we'll just simulate that.
+
+9
+00:00:25,100 --> 00:00:31,070
+We'll just generate a simple email and send it, but we'll format the code in such a way that you actually
+
+10
+00:00:31,070 --> 00:00:35,450
+might be calling some invoicing service or generating a rather complex invoice.
+
+11
+00:00:35,450 --> 00:00:38,840
+But in our case, we'll just say, generate an invoice and email it.
+
+12
+00:00:39,230 --> 00:00:39,470
+Okay.
+
+13
+00:00:40,520 --> 00:00:44,420
+So to make that happen, I'm going to make this run in the background.
+
+14
+00:00:44,420 --> 00:00:46,100
+I want this to happen concurrently.
+
+15
+00:00:46,110 --> 00:00:49,010
+So what's the very first thing I need to do?
+
+16
+00:00:49,250 --> 00:00:53,390
+Well, if you think it through, I need to add one to the weight group.
+
+17
+00:00:53,420 --> 00:00:57,140
+That's part of the config variable that we have as the receiver to this function.
+
+18
+00:00:57,200 --> 00:01:04,220
+So app dot and we'll wait dot, add one.
+
+19
+00:01:04,790 --> 00:01:05,090
+Okay.
+
+20
+00:01:06,200 --> 00:01:13,460
+And then we'll create a function, an inline function like this func and we'll close off key function
+
+21
+00:01:13,460 --> 00:01:19,040
+with its parentheses and we'll pretend the word go to that thing to make that run in the background.
+
+22
+00:01:19,190 --> 00:01:19,490
+Okay.
+
+23
+00:01:20,630 --> 00:01:25,850
+Now, the next thing I have to do, since I've added one to the weight group, is when this function
+
+24
+00:01:25,850 --> 00:01:26,480
+is done.
+
+25
+00:01:26,480 --> 00:01:27,960
+Let's decrement that weight group.
+
+26
+00:01:27,980 --> 00:01:30,950
+So defer app weight.
+
+27
+00:01:32,060 --> 00:01:32,750
+Try that again.
+
+28
+00:01:33,350 --> 00:01:35,120
+Weight got done.
+
+29
+00:01:36,560 --> 00:01:39,270
+All right, now let's generate the invoice.
+
+30
+00:01:39,290 --> 00:01:42,490
+So what we'll do is will call a function that doesn't exist yet.
+
+31
+00:01:42,500 --> 00:01:44,230
+Then we'll go make a really simple function.
+
+32
+00:01:44,240 --> 00:01:50,000
+So invoice will be the invoice for creating an error or come from calling a function that doesn't exist
+
+33
+00:01:50,000 --> 00:01:50,270
+yet.
+
+34
+00:01:50,420 --> 00:01:57,590
+App dot get invoice and we'll have handed the two things you would need to create an invoice, the user
+
+35
+00:01:57,740 --> 00:01:58,310
+and the plan.
+
+36
+00:01:58,740 --> 00:01:59,090
+Okay.
+
+37
+00:01:59,810 --> 00:02:03,080
+And we check for an error if error is not equal to nil.
+
+38
+00:02:06,530 --> 00:02:07,850
+Well, what do we do at this point?
+
+39
+00:02:08,540 --> 00:02:10,070
+This is running in the background.
+
+40
+00:02:10,100 --> 00:02:13,580
+We have an error, but we have no means of getting that error back.
+
+41
+00:02:14,060 --> 00:02:18,260
+So what we might want to do here is send this to a channel.
+
+42
+00:02:19,100 --> 00:02:22,160
+But what channel do we want to Cynthia send the error to?
+
+43
+00:02:22,760 --> 00:02:31,460
+It seems to me that this is a really good opportunity to go over to our file config, go in, add a
+
+44
+00:02:31,460 --> 00:02:35,780
+couple of channels here, kind of centralized channels for error handling.
+
+45
+00:02:35,780 --> 00:02:40,910
+So we'll create one called error channel and that's a type channel error.
+
+46
+00:02:41,860 --> 00:02:47,720
+We'll create another one called Error Chan Dun Chan Mo.
+
+47
+00:02:48,500 --> 00:02:49,670
+Okay, so let's save that.
+
+48
+00:02:50,720 --> 00:02:53,870
+Now we've created these, but these don't exist yet.
+
+49
+00:02:54,110 --> 00:03:00,260
+So we need to go over to Main Go and at the very top where we create our configuration once and those
+
+50
+00:03:00,260 --> 00:03:03,710
+two channels and we can add them just as easily as this error.
+
+51
+00:03:03,710 --> 00:03:16,910
+Chan That's going to be make Chan error and then error chan done is make Chan bool.
+
+52
+00:03:17,660 --> 00:03:18,030
+Okay.
+
+53
+00:03:18,890 --> 00:03:23,470
+So those are created right now, but we still need to listen for errors.
+
+54
+00:03:23,480 --> 00:03:30,020
+So let's go down here just outside of this main function and create a new function with the receiver
+
+55
+00:03:30,020 --> 00:03:33,380
+of app pointer to config.
+
+56
+00:03:36,590 --> 00:03:40,070
+And we'll call this function listen for errors,
+
+57
+00:03:43,760 --> 00:03:44,150
+okay?
+
+58
+00:03:45,080 --> 00:03:49,880
+And it takes no parameters and it simply runs in the background.
+
+59
+00:03:49,880 --> 00:03:55,130
+We'll call it momentarily with a select statement inside an endless for loop select.
+
+60
+00:03:57,440 --> 00:04:03,830
+And our first case will be getting an error which is assigned a value when anything comes into after
+
+61
+00:04:03,920 --> 00:04:04,360
+error chain.
+
+62
+00:04:05,570 --> 00:04:05,930
+Okay.
+
+63
+00:04:07,370 --> 00:04:08,410
+So that's our case.
+
+64
+00:04:08,420 --> 00:04:09,600
+What are we going to do with the error?
+
+65
+00:04:09,620 --> 00:04:14,540
+Now, here's where you do something like notifying a Slack channel or sending a text or writing it to
+
+66
+00:04:14,540 --> 00:04:16,160
+the database, whatever you want.
+
+67
+00:04:16,280 --> 00:04:19,460
+But all we need to do for our purposes is apt error log.
+
+68
+00:04:21,440 --> 00:04:25,550
+Dot print line and the error.
+
+69
+00:04:26,390 --> 00:04:28,040
+Okay, so that's one case.
+
+70
+00:04:28,760 --> 00:04:30,500
+The second case will be we're done.
+
+71
+00:04:30,740 --> 00:04:33,710
+We get anything from app dot error can done.
+
+72
+00:04:36,440 --> 00:04:37,820
+And what are we going to do in that case?
+
+73
+00:04:37,940 --> 00:04:38,420
+Return.
+
+74
+00:04:38,900 --> 00:04:40,010
+Get out of this function.
+
+75
+00:04:40,190 --> 00:04:43,550
+Okay, so we have this function now, so let's listen for it.
+
+76
+00:04:44,660 --> 00:04:46,280
+We'll simply say listen for errors
+
+77
+00:04:49,100 --> 00:04:50,120
+and we'll say go app.
+
+78
+00:04:50,420 --> 00:04:52,670
+Listen for errors there.
+
+79
+00:04:52,730 --> 00:04:54,680
+The next time we start it up, that will run.
+
+80
+00:04:55,430 --> 00:04:57,860
+Now, is there anything else we need to do?
+
+81
+00:04:58,580 --> 00:04:59,490
+Well, of course there is.
+
+82
+00:04:59,510 --> 00:05:02,100
+We need to close things down when we're finished.
+
+83
+00:05:02,120 --> 00:05:05,900
+Let's find that function where we're shutting things down right here.
+
+84
+00:05:06,170 --> 00:05:06,590
+Okay.
+
+85
+00:05:08,680 --> 00:05:13,600
+So we're closing one channel here or telling the application it's done.
+
+86
+00:05:13,600 --> 00:05:17,760
+So let's say app error channel done.
+
+87
+00:05:19,150 --> 00:05:19,750
+It's a true.
+
+88
+00:05:21,220 --> 00:05:32,500
+And then down here, we'll close it close after error chain and close after error done.
+
+89
+00:05:34,960 --> 00:05:35,290
+Okay.
+
+90
+00:05:36,040 --> 00:05:36,940
+So now we have that.
+
+91
+00:05:36,940 --> 00:05:38,410
+So let's go back to our handlers.
+
+92
+00:05:39,280 --> 00:05:48,670
+And now that we have this, we can replace this comment with after error can get sent here.
+
+93
+00:05:50,200 --> 00:05:50,500
+Okay.
+
+94
+00:05:51,460 --> 00:05:53,710
+So we still don't have our invoice function.
+
+95
+00:05:53,740 --> 00:05:56,450
+Let's write that up and then we'll worry about sending the actual email.
+
+96
+00:05:56,470 --> 00:06:03,280
+And this is just a dummy function func with the receiver of app pointer to config and we're going to
+
+97
+00:06:03,280 --> 00:06:09,130
+call this get invoice and it's going to take two parameters.
+
+98
+00:06:09,220 --> 00:06:11,110
+View of type data dot user.
+
+99
+00:06:13,000 --> 00:06:16,750
+And plan, which is a pointer to dated our plan.
+
+100
+00:06:19,930 --> 00:06:23,010
+Now, here's where you do the heavy lifting in a production application.
+
+101
+00:06:23,020 --> 00:06:29,950
+But all we want to do is to generate some kind of content to send the information back to the user in
+
+102
+00:06:29,950 --> 00:06:30,370
+an email.
+
+103
+00:06:30,400 --> 00:06:33,340
+So all I'm going to do is return a string.
+
+104
+00:06:34,540 --> 00:06:38,620
+So string and we'll build a string and we'll say return.
+
+105
+00:06:39,010 --> 00:06:42,700
+And all I'm going to do is, is return the actual price of the plan.
+
+106
+00:06:43,270 --> 00:06:46,450
+So plan dot, plot, amount, format.
+
+107
+00:06:46,750 --> 00:06:47,080
+Okay.
+
+108
+00:06:47,110 --> 00:06:51,520
+And you might be building a much more complex invoice here, but this is sufficient for our purposes.
+
+109
+00:06:53,710 --> 00:06:57,030
+So you see, we're checking for an invoice and an error.
+
+110
+00:06:57,040 --> 00:06:58,390
+So we've been able to just do this here.
+
+111
+00:06:59,110 --> 00:07:01,030
+We're checking for a string and an error.
+
+112
+00:07:01,840 --> 00:07:03,670
+So this has to return that.
+
+113
+00:07:04,420 --> 00:07:05,680
+And here we return a nil.
+
+114
+00:07:06,580 --> 00:07:06,880
+Okay.
+
+115
+00:07:07,390 --> 00:07:12,090
+And in an actual complex function that's doing all sorts of math, you might be trapping for errors.
+
+116
+00:07:12,430 --> 00:07:14,140
+So this is just a kind of a dummy function.
+
+117
+00:07:14,740 --> 00:07:16,930
+But in any case, we now have the invoice up here.
+
+118
+00:07:17,440 --> 00:07:19,150
+So the next step is to send the email.
+
+119
+00:07:20,440 --> 00:07:29,140
+So let's create a message and it's a type message and we're going to specify two and that's user email
+
+120
+00:07:30,910 --> 00:07:31,570
+subject.
+
+121
+00:07:32,650 --> 00:07:33,940
+Your invoice.
+
+122
+00:07:38,140 --> 00:07:44,740
+Data will be invoice, which is just a string, just the formatted price of the of the actual invoice.
+
+123
+00:07:45,190 --> 00:07:48,730
+And then they want to specify a custom template because we don't want to use the default template.
+
+124
+00:07:48,730 --> 00:07:49,090
+Okay.
+
+125
+00:07:49,780 --> 00:07:55,840
+So the template here is going to be say invoice.
+
+126
+00:07:56,980 --> 00:07:57,250
+Okay.
+
+127
+00:07:57,790 --> 00:07:58,810
+And then we'd send that.
+
+128
+00:07:58,930 --> 00:08:01,570
+We'll have to create that invoice in a moment and it'll be very simple.
+
+129
+00:08:02,860 --> 00:08:06,990
+But now we can just say app dot, send email and hand it and you.
+
+130
+00:08:07,780 --> 00:08:11,500
+Okay, so let's go create the simple templates.
+
+131
+00:08:11,500 --> 00:08:17,620
+So in inside the templates folder, I create a new file which I'll call invoice dot HCM and I'll go
+
+132
+00:08:17,800 --> 00:08:24,790
+to HTML and I'll create another one again, another one called invoice.
+
+133
+00:08:24,790 --> 00:08:29,770
+Start playing dot and go HTML, make sure you spell those right or this won't work.
+
+134
+00:08:30,580 --> 00:08:33,970
+So to save a little time, I'll copy the existing mail.
+
+135
+00:08:33,970 --> 00:08:40,930
+Dot html, dot HTML and I'll paste that into invoice html dot go html.
+
+136
+00:08:41,060 --> 00:08:47,890
+I'll just changes to say your invoice and then it'll put the actual price there.
+
+137
+00:08:47,890 --> 00:08:52,540
+And of course this would be formatted with all the appropriate information for a real invoice.
+
+138
+00:08:53,770 --> 00:08:55,810
+And I'll do the same thing for the plain text.
+
+139
+00:08:55,810 --> 00:09:05,530
+A copy mailed up plain Doug go html copy that pasted in the invoice dot plain go HTML right there and
+
+140
+00:09:05,530 --> 00:09:12,640
+change this to your invoice and we'll all pretend there's some complicated invoice in there.
+
+141
+00:09:12,730 --> 00:09:13,060
+Okay.
+
+142
+00:09:13,840 --> 00:09:17,290
+So if we go back to our handler now, there should be no error.
+
+143
+00:09:18,280 --> 00:09:23,200
+The next step and this one will be a little bit tougher is to generate a PDF manual.
+
+144
+00:09:23,230 --> 00:09:29,260
+And what we'll do is we'll just take a simple PDF file and we'll open it up in go code.
+
+145
+00:09:29,260 --> 00:09:35,800
+We'll write some information to it and we'll send the changed version of that as an attachment to our
+
+146
+00:09:35,800 --> 00:09:38,800
+end user, and we'll get started on that in the next lecture.

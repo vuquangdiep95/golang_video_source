@@ -1,0 +1,192 @@
+1
+00:00:01,359 --> 00:00:06,820
+So far in our effort to implement pop migrations or sort of migrations or phased migrations or whatever
+
+2
+00:00:06,820 --> 00:00:09,220
+you want to call them, I think I'll just call them pop from now on.
+
+3
+00:00:10,000 --> 00:00:14,260
+We have a means of getting a transaction, which is a connection to the database, and we still haven't
+
+4
+00:00:14,260 --> 00:00:15,430
+called that, but we will.
+
+5
+00:00:15,430 --> 00:00:16,300
+Before too long.
+
+6
+00:00:16,870 --> 00:00:23,620
+We can create up and down migrations and we can run the up migrations by calling run port migrations.
+
+7
+00:00:23,620 --> 00:00:26,680
+And of course, we also need to be able to migrate down.
+
+8
+00:00:27,310 --> 00:00:32,740
+So let's create a function to do that for us, the folksy pointer to celebrities as usual.
+
+9
+00:00:33,160 --> 00:00:39,910
+And I'll just call this pop migrate down and all that's going to require these two parameters.
+
+10
+00:00:39,940 --> 00:00:45,160
+The first one is a tax, which is a pointer to pop connection.
+
+11
+00:00:45,820 --> 00:00:46,210
+OK.
+
+12
+00:00:46,900 --> 00:00:49,870
+And we also on steps how many steps do you want to run down?
+
+13
+00:00:50,200 --> 00:00:55,210
+Now I want this to be an optional parameter, so I don't want to have to pass one when I'm running just
+
+14
+00:00:55,210 --> 00:00:56,310
+one down migration.
+
+15
+00:00:56,320 --> 00:01:01,690
+So instead I'll make it very adequate and it will just be an integer and it will potentially return
+
+16
+00:01:01,690 --> 00:01:02,140
+in error.
+
+17
+00:01:02,500 --> 00:01:10,180
+OK, now in untapped languages like JavaScript and PHP and so forth, you can actually have default
+
+18
+00:01:10,180 --> 00:01:14,620
+values given to function parameters, but GO is rather strict about typing.
+
+19
+00:01:14,980 --> 00:01:15,820
+So we can't do that.
+
+20
+00:01:15,910 --> 00:01:22,540
+So one way of getting around that is actually to put a very high parameter as the last parameter in
+
+21
+00:01:22,540 --> 00:01:25,960
+your function and then just check to see if anything exists in that.
+
+22
+00:01:26,350 --> 00:01:30,720
+Because with very audit parameters, you're allowed zero or more entries.
+
+23
+00:01:30,730 --> 00:01:33,790
+So if we don't pass anything, then the function will still work.
+
+24
+00:01:33,790 --> 00:01:38,920
+But if we pass one value and one value only, then things will work just perfectly.
+
+25
+00:01:39,370 --> 00:01:44,860
+So let's work on this, and once again, I need my migration path, so I'll copy that and I'll paste
+
+26
+00:01:44,860 --> 00:01:52,120
+it right here, and then I'm going to default the number of steps I want to run to be equal to one.
+
+27
+00:01:52,270 --> 00:01:53,110
+So that's an integer.
+
+28
+00:01:53,860 --> 00:01:59,200
+And then I'll check to see if the parameter, the very idec parameter I received at the end of the function
+
+29
+00:01:59,200 --> 00:02:07,090
+signature, if the length of steps, if that's greater than zero and I'm only ever going to use one,
+
+30
+00:02:07,090 --> 00:02:13,660
+if I populate that, then step is now equal to steps at index zero.
+
+31
+00:02:14,290 --> 00:02:14,620
+OK.
+
+32
+00:02:15,400 --> 00:02:20,470
+So if I pass a two in the call to this function as the final parameter, then step will be equal to
+
+33
+00:02:20,470 --> 00:02:20,800
+two.
+
+34
+00:02:20,830 --> 00:02:22,360
+Otherwise, it defaults to one.
+
+35
+00:02:23,800 --> 00:02:25,770
+Now we need another file, my Grider.
+
+36
+00:02:25,780 --> 00:02:31,090
+So I'm going to copy this code from up here and paste it right here.
+
+37
+00:02:31,740 --> 00:02:32,560
+Give it a blank one.
+
+38
+00:02:33,490 --> 00:02:35,230
+Now I have a file my greater.
+
+39
+00:02:35,350 --> 00:02:41,170
+And as you might expect, running the down migrations is as simple as checking for an error when you
+
+40
+00:02:41,170 --> 00:02:43,840
+call FMCT down instead of up.
+
+41
+00:02:44,110 --> 00:02:46,360
+But this time it requires number of steps.
+
+42
+00:02:46,630 --> 00:02:48,100
+So I'll put my variable step in there.
+
+43
+00:02:48,950 --> 00:02:55,860
+And copy and paste my error, check, paste it in here and return nil.
+
+44
+00:02:55,880 --> 00:03:01,970
+If everything goes as expected now I can run, generate migration's, I can run the migrations and I
+
+45
+00:03:01,970 --> 00:03:04,310
+can run one or more down migrations.
+
+46
+00:03:05,480 --> 00:03:12,050
+So the next one, and I believe it's the last one I want to do is to reset everything entirely.
+
+47
+00:03:12,050 --> 00:03:19,520
+In other words, to run all the down migrations, then reset the database, then run all the migrations.
+
+48
+00:03:19,670 --> 00:03:24,020
+And that is a really straightforward function, and we'll get started on that in the next lecture.
+

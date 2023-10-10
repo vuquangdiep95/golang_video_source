@@ -1,0 +1,280 @@
+1
+00:00:01,900 --> 00:00:08,580
+So let's make configuring which mime types are allowed for file uploads a lot easier for end users,
+
+2
+00:00:08,590 --> 00:00:13,810
+because right now, if we deploy our application the way that it is, no one will be able to upload
+
+3
+00:00:13,810 --> 00:00:17,080
+anything except for images and PDFs, and that's no good.
+
+4
+00:00:18,070 --> 00:00:23,800
+So we'll start by opening the door on file in my app and I'll go near the bottom of this file and I'll
+
+5
+00:00:23,800 --> 00:00:24,550
+put it in here.
+
+6
+00:00:25,810 --> 00:00:28,150
+Permitted upload types.
+
+7
+00:00:28,150 --> 00:00:28,870
+Just a comment.
+
+8
+00:00:29,620 --> 00:00:36,030
+So the key will be called allowed file types and they'll be equal to a string.
+
+9
+00:00:36,040 --> 00:00:40,810
+And I do have to put this in quotation marks, so this probably won't work.
+
+10
+00:00:40,840 --> 00:00:45,160
+And I'll just put image, gif and then a car with no spaces.
+
+11
+00:00:45,820 --> 00:00:54,910
+Image slash JPEG and then another comma image slash PNG and then another comma and then application
+
+12
+00:00:56,800 --> 00:00:57,790
+slash PDF.
+
+13
+00:00:58,390 --> 00:00:58,720
+OK.
+
+14
+00:00:59,800 --> 00:01:05,530
+And what we'll do is read that and put it into a slice and add it to our configuration at system startup
+
+15
+00:01:05,530 --> 00:01:05,830
+time.
+
+16
+00:01:06,850 --> 00:01:17,890
+And we may, as will also put in the max upload size and just make that equal to one two four eight
+
+17
+00:01:17,890 --> 00:01:18,790
+five seven.
+
+18
+00:01:19,980 --> 00:01:21,630
+Six zero zero zero.
+
+19
+00:01:21,660 --> 00:01:22,230
+10 mins.
+
+20
+00:01:22,380 --> 00:01:23,760
+OK, so this is in bytes.
+
+21
+00:01:23,970 --> 00:01:27,060
+So now those are in the own file and of course, we have to do something with them.
+
+22
+00:01:27,750 --> 00:01:28,860
+So let's go back to the file.
+
+23
+00:01:28,860 --> 00:01:30,360
+Celebrities don't go.
+
+24
+00:01:31,320 --> 00:01:35,550
+Now, what I want to add is something to this type config.
+
+25
+00:01:36,150 --> 00:01:41,940
+So what I want to put in here is maybe something that's called upload config, so will define another
+
+26
+00:01:41,940 --> 00:01:42,270
+type.
+
+27
+00:01:42,420 --> 00:01:45,900
+I can put that in the file type Stargirl, but I'll put it here just for simplicity.
+
+28
+00:01:47,790 --> 00:01:52,110
+I'll call this upload config and will be a struct
+
+29
+00:01:54,960 --> 00:02:06,660
+with just a couple of members say aloud mime types, and that will be a slice of strings and Mac's upload
+
+30
+00:02:06,660 --> 00:02:07,350
+size.
+
+31
+00:02:09,050 --> 00:02:10,740
+They'll just make that an N64.
+
+32
+00:02:12,450 --> 00:02:12,780
+OK.
+
+33
+00:02:14,370 --> 00:02:24,270
+And now I'll add that to the field, which I call uploads of type upload config.
+
+34
+00:02:25,980 --> 00:02:30,270
+OK, now let's scroll down to where we populate this config type.
+
+35
+00:02:32,290 --> 00:02:40,330
+Right here, let's just add a comment in here that says file uploads, so I'll just declare a variable
+
+36
+00:02:40,330 --> 00:02:45,160
+called exploded, which I better spell, right, because I'm going to split a string, I'm going to
+
+37
+00:02:45,160 --> 00:02:49,180
+explode a string, and I'll do that by calling from the strings package.
+
+38
+00:02:49,900 --> 00:02:52,060
+Dot split right from the standard library.
+
+39
+00:02:52,450 --> 00:02:58,480
+And I want to split OS God, get on and I'm looking for a loud file types.
+
+40
+00:03:00,870 --> 00:03:08,220
+And I want to split that on a comma, OK, and then I'll create a variable mime types.
+
+41
+00:03:10,370 --> 00:03:21,150
+My which will be a slice of strings and I'll just range through exploded for underscore m for mime type.
+
+42
+00:03:22,200 --> 00:03:25,020
+They're populated by calling range exploding.
+
+43
+00:03:27,300 --> 00:03:32,220
+And would you say mine types is equal to append mine types?
+
+44
+00:03:34,590 --> 00:03:38,580
+OK, so that gives me the mime types that I'm going to be using momentarily.
+
+45
+00:03:39,990 --> 00:03:41,670
+Now let's declare another variable.
+
+46
+00:03:41,850 --> 00:03:47,370
+Max upload size of type in 64.
+
+47
+00:03:51,350 --> 00:03:59,840
+And we'll try this, we'll see if this in the next line, if Max and potentially an error come from
+
+48
+00:03:59,840 --> 00:04:02,130
+stricken 8y.
+
+49
+00:04:02,630 --> 00:04:05,210
+We're going to convert a string to an integer.
+
+50
+00:04:06,290 --> 00:04:12,080
+And we want to look at polls, don't get on max upload sites right there.
+
+51
+00:04:13,760 --> 00:04:22,190
+And if the error is not equal to nil, then we'll say max upload size is equal to and she's always before
+
+52
+00:04:23,150 --> 00:04:26,050
+10 megs else.
+
+53
+00:04:28,010 --> 00:04:31,940
+Max upload size is equal to what cast it to an int.
+
+54
+00:04:31,940 --> 00:04:32,750
+Sixty four.
+
+55
+00:04:33,800 --> 00:04:34,160
+Thanks.
+
+56
+00:04:39,450 --> 00:04:46,680
+Then down here, where we populate the config, we'll just add the field uploads and that will be equal
+
+57
+00:04:46,680 --> 00:04:47,820
+to an upload config.
+
+58
+00:04:47,970 --> 00:04:56,670
+That's the type we'll populate its two fields max upload size is max upload size and allowed mine types
+
+59
+00:04:57,630 --> 00:04:58,770
+is mine types.
+
+60
+00:05:01,210 --> 00:05:03,970
+And that should take care of all of the errors, so let's format this.
+
+61
+00:05:06,120 --> 00:05:14,130
+The last change is to go back to upload, go and find that variable valid mine types and get rid of
+
+62
+00:05:14,130 --> 00:05:17,280
+it not using anymore and instead read this from the config.
+
+63
+00:05:17,490 --> 00:05:27,420
+So it becomes See Got review, which is our receiver dot config uploads allowed nine times and then
+
+64
+00:05:27,420 --> 00:05:28,380
+down here.
+
+65
+00:05:31,490 --> 00:05:32,120
+Or up here.
+
+66
+00:05:33,200 --> 00:05:38,840
+This gets changed to see ducks and fig uploads dot.
+
+67
+00:05:39,200 --> 00:05:41,390
+Max upload size there.
+
+68
+00:05:41,750 --> 00:05:48,890
+Now we allow the users to specify how big the uploads can be and what mime types they want to accept.
+
+69
+00:05:50,040 --> 00:05:56,880
+So the next step is to create a handler and a page in my app and try this out and see what we got wrong
+
+70
+00:05:57,150 --> 00:05:59,340
+and we'll get started on that in the next election.
+

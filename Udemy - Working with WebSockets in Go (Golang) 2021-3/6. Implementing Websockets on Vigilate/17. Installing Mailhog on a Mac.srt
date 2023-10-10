@@ -1,0 +1,171 @@
+1
+00:00:01,290 --> 00:00:07,080
+So we need to install a local mail server and it is a testing mail server, and while you could actually
+
+2
+00:00:07,260 --> 00:00:12,450
+populate the necessary configurations right in your server configuration, when you're sending mail
+
+3
+00:00:13,230 --> 00:00:18,870
+and send it through a live server in development, that's never a good idea and it's never a good idea
+
+4
+00:00:18,870 --> 00:00:24,510
+because occasionally at some point you will be working with data that includes actual email addresses
+
+5
+00:00:24,840 --> 00:00:30,030
+and you'll be sending emails left, right and center without realizing you're actually sending to real
+
+6
+00:00:30,030 --> 00:00:30,450
+people.
+
+7
+00:00:30,960 --> 00:00:36,150
+So the way we get around that is by installing a local mail server and using that instead.
+
+8
+00:00:36,150 --> 00:00:39,300
+Or you could use mail trapped or one of the commercial services.
+
+9
+00:00:39,300 --> 00:00:42,000
+But I find mail hug are really easy to use package.
+
+10
+00:00:42,930 --> 00:00:47,760
+And if you're on a Mac, then this lecture will show you how to install it on a Macintosh.
+
+11
+00:00:47,770 --> 00:00:50,310
+If you're on Windows, then it's a little different.
+
+12
+00:00:50,580 --> 00:00:54,620
+So I'll have a separate lecture for that because I need to be in front of a Windows machine to do it.
+
+13
+00:00:55,170 --> 00:01:01,980
+But first of all, go here, go to my blog and when you scroll down, it'll tell you how to install
+
+14
+00:01:01,980 --> 00:01:02,130
+it.
+
+15
+00:01:02,400 --> 00:01:06,450
+And on Mac it says Use Broo update and install Malha.
+
+16
+00:01:06,460 --> 00:01:11,970
+Now, you can't do that unless you happen to have homebrew already installed if you don't go install
+
+17
+00:01:11,970 --> 00:01:12,110
+it.
+
+18
+00:01:12,120 --> 00:01:15,210
+It's a really simple process and it's incredibly useful.
+
+19
+00:01:15,210 --> 00:01:20,850
+Homebrew has thousands and thousands of packages which are of immense use to developers.
+
+20
+00:01:21,270 --> 00:01:27,990
+For example, we could have set up postgrads using homebrew on a Mac or on a Mac and it would be just
+
+21
+00:01:27,990 --> 00:01:30,900
+as just as functional as the one that I had you install.
+
+22
+00:01:31,140 --> 00:01:35,760
+Actually, I'm using postgrads installed through Homebrew anyway to install it.
+
+23
+00:01:36,000 --> 00:01:38,330
+Copy this command as it appears here.
+
+24
+00:01:38,550 --> 00:01:41,090
+So just copy it or click the copy button.
+
+25
+00:01:41,090 --> 00:01:41,900
+Not even easier.
+
+26
+00:01:42,420 --> 00:01:47,570
+Go to your favorite terminal, open a new window and paste it in and then run it.
+
+27
+00:01:47,580 --> 00:01:51,750
+Now I already have it installed so I'm not going to install it, but this will actually install it for
+
+28
+00:01:51,750 --> 00:01:53,270
+you and it will take a little while.
+
+29
+00:01:53,280 --> 00:02:01,110
+So once that's done, you just use the commands right on this page back here, copy and paste this.
+
+30
+00:02:01,110 --> 00:02:06,330
+And when you do that, once it's installed mail hug, you will be able to run it by using the command
+
+31
+00:02:06,330 --> 00:02:14,610
+line or more more usefully, you can actually use this command Broo Services start mail hook and that
+
+32
+00:02:14,610 --> 00:02:15,360
+will start it for you.
+
+33
+00:02:15,360 --> 00:02:17,130
+I have it stopped right now, running right now.
+
+34
+00:02:17,130 --> 00:02:17,880
+So I'll stop it.
+
+35
+00:02:18,510 --> 00:02:19,620
+I'll stop the service
+
+36
+00:02:23,340 --> 00:02:25,290
+bus services, stop mail hug.
+
+37
+00:02:28,460 --> 00:02:34,360
+And brew services start mail hug, I guess they didn't have it running and we'll start it.
+
+38
+00:02:35,020 --> 00:02:35,690
+So now it's running.
+
+39
+00:02:35,690 --> 00:02:42,260
+So now that it's running, I can go to my favorite browser and type in HTTP called English Localhost
+
+40
+00:02:43,310 --> 00:02:45,050
+Colen eight 025.
+
+41
+00:02:45,920 --> 00:02:50,060
+So it's running on a port eight 025 and there is mail hug up and running.
+
+42
+00:02:50,330 --> 00:02:51,350
+So install that.
+
+43
+00:02:51,710 --> 00:02:56,270
+And in the next lecture I'll show Windows people how to install it on your Windows machine.

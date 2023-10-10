@@ -1,0 +1,364 @@
+1
+00:00:00,490 --> 00:00:06,870
+OK, in questo honzon miglioreremo e le chiamate del client per il nostro RBC urinario e lo testeremo contro
+
+2
+00:00:06,870 --> 00:00:08,420
+un server in esecuzione.
+
+3
+00:00:08,760 --> 00:00:13,460
+Quindi in realtà qualcosa che voglio fare è nella funzione Negrete ogni volta che viene invocato.
+
+4
+00:00:13,500 --> 00:00:15,130
+Voglio mostrare un po 'di Lugg.
+
+5
+00:00:15,150 --> 00:00:24,910
+Quindi eseguirò la stampa e poi diremo che la grande funzione è stata invocata con percentuale V e l'abbiamo appena passata nella richiesta, quindi qui
+
+6
+00:00:24,910 --> 00:00:30,090
+ogni volta che viene richiamata l'ottima funzione, almeno lo vedremo nel log e
+
+7
+00:00:30,090 --> 00:00:33,440
+noi Avrai molto più senso quando impareresti GOPAC.
+
+8
+00:00:33,660 --> 00:00:35,940
+Ok, allora andiamo ai clienti.
+
+9
+00:00:36,300 --> 00:00:40,560
+E così per il cliente ora dobbiamo andare e invocare tutto correttamente.
+
+10
+00:00:40,890 --> 00:00:44,160
+Quindi qui il client viene creato sugli stessi portali prima.
+
+11
+00:00:44,310 --> 00:00:46,040
+E ora abbiamo un ottimo servizio di Klans.
+
+12
+00:00:46,140 --> 00:00:49,400
+Ma ora non ne abbiamo più bisogno.
+
+13
+00:00:49,530 --> 00:00:54,430
+Se vediamo che c'è una funzione di saluto che possiamo iniziare a invocare.
+
+14
+00:00:54,510 --> 00:00:55,830
+E questo è fantastico.
+
+15
+00:00:55,830 --> 00:00:56,960
+Questa è una grande funzione.
+
+16
+00:00:56,970 --> 00:01:00,910
+E questo è stato generato automaticamente da Palosi.
+
+17
+00:01:00,960 --> 00:01:04,890
+Quindi, se vai a concordare che il PBT va, puoi vedere che c'è una
+
+18
+00:01:04,890 --> 00:01:06,720
+grande funzione automaticamente creata per noi.
+
+19
+00:01:06,720 --> 00:01:12,200
+Quindi questa grande funzione prende un contesto prende una richiesta e prende un sacco di opzioni.
+
+20
+00:01:12,300 --> 00:01:12,860
+OK.
+
+21
+00:01:13,230 --> 00:01:19,320
+Quindi per il contesto è abbastanza facile dove andremo a fare è dire
+
+22
+00:01:22,060 --> 00:01:26,160
+contex che lo sfondo è OK e diremo
+
+23
+00:01:30,030 --> 00:01:36,310
+questo e quindi la richiesta è una grande richiesta, quindi abbiamo bisogno di crearla.
+
+24
+00:01:36,450 --> 00:01:38,250
+Quindi per questo diremo la
+
+25
+00:01:41,330 --> 00:01:45,900
+richiesta e andremo avanti e creare la nostra richiesta in modo da dire una percentuale.
+
+26
+00:01:46,220 --> 00:01:48,730
+Grande ma grande richiesta.
+
+27
+00:01:49,280 --> 00:01:53,820
+E questo prende un nome e il cognome, quindi diremo il nome.
+
+28
+00:01:53,990 --> 00:01:54,680
+Stefan
+
+29
+00:01:57,510 --> 00:02:00,400
+e il loro cognome Meric.
+
+30
+00:02:00,420 --> 00:02:05,910
+Quindi, se non sei sicuro del tipo di campi di cui hai bisogno, hai le richieste di benvenuto e in realtà il
+
+31
+00:02:05,970 --> 00:02:06,810
+saluto dell'utente finale.
+
+32
+00:02:06,840 --> 00:02:08,400
+Ho sbagliato completamente.
+
+33
+00:02:08,400 --> 00:02:12,510
+Quindi il saluto stesso ha il nome e il cognome.
+
+34
+00:02:12,510 --> 00:02:14,620
+Andiamo avanti e controlliamo il nome e il cognome.
+
+35
+00:02:14,620 --> 00:02:26,440
+Quindi ho bisogno di creare nel mio cliente che saluti di tipo e saluti per salutare P. B. questo è il saluto e
+
+36
+00:02:27,010 --> 00:02:33,780
+poi aggiungo queste cose in OK, quindi è molto meglio.
+
+37
+00:02:34,020 --> 00:02:39,330
+Quindi ora abbiamo una grande richiesta e abbiamo un saluto e un testo
+
+38
+00:02:40,200 --> 00:02:46,650
+di saluto, nome e cognome, così passiamo qui qui Rick e non useremo le opzioni di chiamata.
+
+39
+00:02:46,650 --> 00:02:50,970
+Finora questo generale restituisce qualcosa.
+
+40
+00:02:50,970 --> 00:02:55,090
+Quindi, cosa restituisce restituisce una grande risposta e un errore.
+
+41
+00:02:55,110 --> 00:02:58,310
+Quindi andiamo avanti e scrivilo.
+
+42
+00:02:58,440 --> 00:03:06,450
+Quindi andrò a dire che la risposta è uguale a queste cose, quindi dobbiamo occuparci dell'aria stessa.
+
+43
+00:03:06,450 --> 00:03:12,890
+Quindi se non sono uguali a zero, lo registreremo.
+
+44
+00:03:12,880 --> 00:03:20,080
+Quindi diciamo che abbiamo disconnesso quell'errore fatale mentre chiamavamo grete
+
+45
+00:03:22,740 --> 00:03:23,750
+RBC.
+
+46
+00:03:24,060 --> 00:03:31,020
+Quindi stamperemo solo la percentuale V e Bhasin l'errore stesso.
+
+47
+00:03:31,300 --> 00:03:31,920
+OK.
+
+48
+00:03:32,270 --> 00:03:45,740
+E poi, per quanto riguarda la risposta, ti darei una follia, ad esempio la risposta di Prince f da grande e vedremo la risposta
+
+49
+00:03:45,810 --> 00:03:46,880
+stessa.
+
+50
+00:03:46,880 --> 00:03:48,190
+Quindi eccoci qui.
+
+51
+00:03:48,410 --> 00:03:50,180
+E la risposta sarà.
+
+52
+00:03:50,180 --> 00:03:51,900
+RAZ OK.
+
+53
+00:03:51,950 --> 00:03:55,350
+Ciò risulta ad esempio.
+
+54
+00:03:55,680 --> 00:03:59,630
+E così questo stamperà la griglia stessa ed è fantastico.
+
+55
+00:03:59,630 --> 00:04:05,360
+Quindi la griglia dell'orecchio di riposo come puoi vedere il tipo del resto è il risultato che possiamo ottenere
+
+56
+00:04:05,360 --> 00:04:08,230
+direttamente dalla struttura perché il tipo è un'ottima risposta.
+
+57
+00:04:08,330 --> 00:04:09,520
+Quindi è abbastanza facile.
+
+58
+00:04:09,740 --> 00:04:14,450
+E ora perché mi piace mantenere il mio codice un po 'modulare e perché crescerà
+
+59
+00:04:14,720 --> 00:04:16,330
+nel tempo chiamerò la funzione.
+
+60
+00:04:16,460 --> 00:04:17,970
+Ti preoccupi
+
+61
+00:04:18,680 --> 00:04:22,310
+E farà tutte le cose proprio qui.
+
+62
+00:04:23,080 --> 00:04:23,490
+OK.
+
+63
+00:04:23,520 --> 00:04:31,260
+E quindi ha bisogno di un input e l'input di cui ha bisogno è che il client sgrassatore è client in modo
+
+64
+00:04:31,580 --> 00:04:38,240
+che possa vedere vedere i punti della griglia salutare i clienti del servizio e posso farti vedere Noori.
+
+65
+00:04:38,630 --> 00:04:44,050
+Quindi, ciò che è fatto è solo voglio isolare la funzione canarino solo così posso entrare in esso più tardi.
+
+66
+00:04:44,060 --> 00:04:47,450
+Quindi qui andiamo così possiamo anche registrare qualcosa qui.
+
+67
+00:04:47,450 --> 00:04:58,480
+Quindi, se la stampante anti-tagli e iniziare a portare RBC e il gioco è fatto.
+
+68
+00:04:58,580 --> 00:05:05,210
+Quindi abbiamo questa funzione e abbiamo una connessione e facciamo cose Inari che lui rifiuta.
+
+69
+00:05:05,240 --> 00:05:07,340
+Quindi sembra abbastanza buono e abbastanza facile.
+
+70
+00:05:07,340 --> 00:05:08,700
+Ora andiamo avanti e provalo.
+
+71
+00:05:08,720 --> 00:05:10,700
+Tutto funziona come previsto.
+
+72
+00:05:10,700 --> 00:05:14,620
+Quindi il nostro server è in esecuzione, ma ho intenzione di riavviarlo.
+
+73
+00:05:14,840 --> 00:05:21,940
+E ora ho intenzione di eseguire i miei clienti in fondo e, come possiamo vedere, suppongo che Ciao, sono un cliente che inizia a
+
+74
+00:05:21,940 --> 00:05:25,520
+fare un b c e poi ottengo una risposta dagli ingordi.
+
+75
+00:05:25,660 --> 00:05:26,580
+Ciao Stefan.
+
+76
+00:05:26,770 --> 00:05:27,560
+È fantastico
+
+77
+00:05:27,820 --> 00:05:32,600
+E poi in cima possiamo vedere che il server stesso ha registrato ciò che è successo.
+
+78
+00:05:32,620 --> 00:05:38,050
+Quindi dice che la funzione di creazione è stata invocata con un saluto è definito come un nome e come un
+
+79
+00:05:38,650 --> 00:05:40,060
+cognome e l'input è corretto.
+
+80
+00:05:40,090 --> 00:05:41,500
+Quindi è stato abbastanza facile.
+
+81
+00:05:41,500 --> 00:05:46,720
+Abbiamo un server e un client e quindi facciamo qualcosa di estremamente semplice che è solo
+
+82
+00:05:46,770 --> 00:05:53,810
+la richiesta di Neriah, quindi richiedi una risposta ed è estremamente veloce, così puoi eseguirlo di nuovo e tutto funziona come previsto.
+
+83
+00:05:53,860 --> 00:05:58,390
+Forse quando aggiungi una nuova linea per un bisogno, aggiungi una nuova linea per questa parte.
+
+84
+00:05:58,420 --> 00:05:59,770
+Quindi andiamo avanti proprio qui.
+
+85
+00:05:59,860 --> 00:06:06,870
+E nel registro del server ho solo bisogno di aggiungere una nuova linea qui.
+
+86
+00:06:07,010 --> 00:06:07,570
+OK.
+
+87
+00:06:07,680 --> 00:06:09,150
+Quindi questo è tutto corretto.
+
+88
+00:06:09,150 --> 00:06:10,050
+Spero ti piaccia questa lezione.
+
+89
+00:06:10,050 --> 00:06:14,100
+Come sarebbe logico che nella prossima lezione tu debba andare avanti e praticare da
+
+90
+00:06:14,100 --> 00:06:14,520
+solo.
+
+91
+00:06:14,730 --> 00:06:15,780
+Quindi conosci la prossima lezione.
+

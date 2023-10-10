@@ -1,0 +1,143 @@
+1
+00:00:01,840 --> 00:00:06,940
+So let's finish up the functionality for our user model, and there's really only one more method to
+
+2
+00:00:06,940 --> 00:00:10,090
+write, and we still have to do validation, but we'll get to that before too long.
+
+3
+00:00:10,690 --> 00:00:16,570
+So I'm looking at user doggo in the data directory of my app, and I'm going to add one more function
+
+4
+00:00:16,570 --> 00:00:17,520
+here at the very end.
+
+5
+00:00:17,530 --> 00:00:21,420
+And this is the one where we can check to see if a password matches.
+
+6
+00:00:21,430 --> 00:00:27,010
+So of course, this function will be called when someone is authenticating using a form on a web page
+
+7
+00:00:27,010 --> 00:00:29,650
+or authenticating using the API or something like that.
+
+8
+00:00:30,040 --> 00:00:36,490
+So, all right, a new function again with the receiver of you pointer to a user and I'll just call
+
+9
+00:00:36,490 --> 00:00:46,510
+this password matches and it will take one parameter a plain text password, which is a string, and
+
+10
+00:00:46,510 --> 00:00:49,780
+it returns a bool, potentially an error.
+
+11
+00:00:52,220 --> 00:00:53,780
+So this is really straightforward.
+
+12
+00:00:53,960 --> 00:00:57,530
+We'll check for an error when we call from the beach package.
+
+13
+00:00:58,160 --> 00:01:05,390
+We're going to call compare hash and password, and that requires two parameters the hashed password,
+
+14
+00:01:05,390 --> 00:01:09,500
+which is remarkably hard to say and the password both are slices of bytes.
+
+15
+00:01:09,860 --> 00:01:13,940
+So no problem will compare casting it to a slice of bytes.
+
+16
+00:01:15,110 --> 00:01:20,570
+You don't password the one that we have in the database against a slice of bytes
+
+17
+00:01:23,630 --> 00:01:24,260
+plaintext.
+
+18
+00:01:26,420 --> 00:01:29,930
+And we'll check for an error if error is not equal to nil.
+
+19
+00:01:30,290 --> 00:01:35,000
+Then we're going to do a switch statement here because there's a couple of things we need to take into
+
+20
+00:01:35,000 --> 00:01:35,360
+account.
+
+21
+00:01:35,540 --> 00:01:36,110
+Switch.
+
+22
+00:01:36,380 --> 00:01:41,890
+And we're going to switch on case errors.
+
+23
+00:01:41,900 --> 00:01:50,660
+Dot is and if it is, we're looking for the error and the error happens to be from the B Package B Crip.
+
+24
+00:01:51,990 --> 00:01:55,020
+ERA mismatched hash and password right there.
+
+25
+00:01:55,560 --> 00:01:59,940
+OK, so if that's the error that we want to do something and we don't need those curly brackets, I
+
+26
+00:01:59,940 --> 00:02:00,660
+do that all the time.
+
+27
+00:02:02,100 --> 00:02:02,530
+It's a code.
+
+28
+00:02:03,960 --> 00:02:08,880
+So in this case will return false and no, OK.
+
+29
+00:02:09,630 --> 00:02:15,630
+And if that's not the case, then we'll just catch everything with default and the default is return
+
+30
+00:02:15,630 --> 00:02:16,920
+false and the error.
+
+31
+00:02:19,030 --> 00:02:24,730
+So the first case, everything worked, but the password doesn't match in the second case, something
+
+32
+00:02:24,730 --> 00:02:25,420
+else went wrong.
+
+33
+00:02:25,960 --> 00:02:35,920
+But if we get past all of those and we return true with no error and that's all we really need to do.
+
+34
+00:02:37,120 --> 00:02:38,530
+So it's a very simple function.
+
+35
+00:02:38,830 --> 00:02:44,560
+And the next step, of course, is to actually try some of these out and make sure that they work and
+
+36
+00:02:44,560 --> 00:02:46,840
+we'll get started on that in the next lecture.

@@ -1,0 +1,331 @@
+1
+00:00:00,620 --> 00:00:06,680
+So this time around, we want to put some indication for the user as to whether or not they are currently
+
+2
+00:00:06,680 --> 00:00:07,570
+connected to the server.
+
+3
+00:00:07,880 --> 00:00:13,880
+So I think I'll put a little badge right here, one that is red and says not connected when we're offline
+
+4
+00:00:14,240 --> 00:00:17,120
+and one that is green and says connected when we're online.
+
+5
+00:00:17,420 --> 00:00:22,430
+And we'll change the content of that, change it from the red to the green or the green to the red,
+
+6
+00:00:22,760 --> 00:00:25,940
+depending upon whether or not we have an active connection.
+
+7
+00:00:25,970 --> 00:00:27,530
+And we'll just check our Web sockets.
+
+8
+00:00:27,530 --> 00:00:28,580
+And that's really easy to do.
+
+9
+00:00:28,700 --> 00:00:31,670
+And maybe I'll get rid of this HRR so things aren't too cluttered.
+
+10
+00:00:31,940 --> 00:00:33,620
+So let's go back to our homepage.
+
+11
+00:00:33,620 --> 00:00:35,960
+And I'm right here on the home file.
+
+12
+00:00:36,380 --> 00:00:40,370
+And just below the the hidden name equals action.
+
+13
+00:00:40,370 --> 00:00:43,130
+I'll get rid of this H.R. and I'll just put a div there.
+
+14
+00:00:43,400 --> 00:00:44,990
+It equals status.
+
+15
+00:00:45,200 --> 00:00:47,690
+That will be our status and it's just an empty div.
+
+16
+00:00:47,810 --> 00:00:49,100
+That's all that it is right now.
+
+17
+00:00:50,210 --> 00:00:53,550
+And I need to give it a class because I want it to go to the right.
+
+18
+00:00:53,750 --> 00:00:59,990
+I'll say class, I'll give it a little margin at the top mtu and I'll just float to the end, which
+
+19
+00:00:59,990 --> 00:01:03,910
+is how you do it in bootstrap five these days and it's empty right now when we start out.
+
+20
+00:01:04,760 --> 00:01:09,680
+So let's go down to our JavaScript and find the part where we connect.
+
+21
+00:01:10,520 --> 00:01:14,720
+I want to put this just before socket on open.
+
+22
+00:01:15,080 --> 00:01:15,610
+Here we are.
+
+23
+00:01:16,250 --> 00:01:17,990
+So I'm going to define a couple of things here.
+
+24
+00:01:17,990 --> 00:01:23,990
+I'll define a constant offline and that will be equal to some HTML and a better spell offline, correct?
+
+25
+00:01:25,130 --> 00:01:29,570
+Correctly and const online.
+
+26
+00:01:30,980 --> 00:01:32,360
+And again, that'll be some HTML.
+
+27
+00:01:32,690 --> 00:01:34,850
+And the e-mail here is going to be something really simple.
+
+28
+00:01:34,860 --> 00:01:44,510
+We'll use the built in badge classes in bootstrap span class equals badge and then we'll call it big
+
+29
+00:01:44,540 --> 00:01:45,410
+success.
+
+30
+00:01:45,690 --> 00:01:46,310
+Try that again.
+
+31
+00:01:46,910 --> 00:01:54,680
+Big, big success, which will make it green and I'll just put the word connected in there and close
+
+32
+00:01:54,680 --> 00:01:55,310
+my span.
+
+33
+00:01:55,320 --> 00:02:00,180
+Then I'll copy this and paste it in here and modify it and make it better.
+
+34
+00:02:00,230 --> 00:02:04,760
+Badge danger and we'll say not connected.
+
+35
+00:02:05,450 --> 00:02:11,080
+OK, so now we've got our two little variables that holder appropriate html.
+
+36
+00:02:11,510 --> 00:02:21,710
+Let's just grab grab an instance of the status div so let status div equal document get element by ID
+
+37
+00:02:21,710 --> 00:02:22,730
+and I call it status.
+
+38
+00:02:24,600 --> 00:02:29,610
+So now I have my correct HTML for online and offline and I have a reference to my status.
+
+39
+00:02:30,000 --> 00:02:38,340
+So when we're online, what we want to do here after we successfully connect so socket on open right
+
+40
+00:02:38,340 --> 00:02:40,410
+now we're writing to the console and I'll keep doing that.
+
+41
+00:02:40,410 --> 00:02:50,220
+I would remove that before I went live, but I'll just put status div dot in our HTML equals online.
+
+42
+00:02:51,030 --> 00:02:56,070
+OK, so let's just save that and go back and try reloading this page and see what happens.
+
+43
+00:02:56,820 --> 00:02:58,010
+And there I'm connected.
+
+44
+00:02:58,500 --> 00:02:59,000
+Perfect.
+
+45
+00:02:59,730 --> 00:03:01,340
+So that shows that I am connected.
+
+46
+00:03:01,350 --> 00:03:03,870
+Now what happens when I close my connection.
+
+47
+00:03:03,870 --> 00:03:06,840
+When I get an unclosed event, I can do the same thing here.
+
+48
+00:03:06,840 --> 00:03:12,030
+I'll just copy this once we close for whatever reason, we can make that offline.
+
+49
+00:03:13,470 --> 00:03:15,330
+OK, so let's reload this page.
+
+50
+00:03:15,510 --> 00:03:20,120
+We're online and I'll put Fred and I'll send a message to make sure that still works.
+
+51
+00:03:20,280 --> 00:03:21,570
+Test it does.
+
+52
+00:03:22,230 --> 00:03:24,570
+And I will go back here and stop my application.
+
+53
+00:03:28,250 --> 00:03:31,220
+OK, so didn't quite work, what did I get wrong?
+
+54
+00:03:32,680 --> 00:03:35,740
+I misspelled my dange should be big danger.
+
+55
+00:03:39,450 --> 00:03:40,980
+B g dash.
+
+56
+00:03:41,310 --> 00:03:41,880
+I think I got it.
+
+57
+00:03:42,210 --> 00:03:44,250
+So let's start that up again and try this one more time.
+
+58
+00:03:46,840 --> 00:03:48,210
+So I'll reload this page.
+
+59
+00:03:48,280 --> 00:03:54,010
+I'm online now, I'll go back and stop my application, stop.
+
+60
+00:03:55,050 --> 00:04:00,540
+And we're offline and I'll get started again and auto reconnect should change it back, and it does.
+
+61
+00:04:00,600 --> 00:04:05,340
+OK, so there we have some indication as to whether or not a user is online.
+
+62
+00:04:06,360 --> 00:04:08,080
+Is there anywhere else we should add this?
+
+63
+00:04:08,100 --> 00:04:09,060
+Well, probably.
+
+64
+00:04:10,930 --> 00:04:17,050
+On air, for whatever reason, now, that may not be appropriate for every situation, but there may
+
+65
+00:04:17,050 --> 00:04:22,210
+be cases where you do want to put it there in this application where we're just learning about how to
+
+66
+00:04:22,210 --> 00:04:25,380
+connect to WebSocket, how to use them, how to reconnect all those things.
+
+67
+00:04:25,750 --> 00:04:29,100
+I'm going to put it there, assuming that in every other case we've gone offline.
+
+68
+00:04:29,590 --> 00:04:33,600
+And if you're writing a more robust application, you may want to do something different there.
+
+69
+00:04:34,120 --> 00:04:39,750
+But this, I think, gives us a pretty useful and pretty functional chat application.
+
+70
+00:04:40,240 --> 00:04:45,580
+And it also demonstrates the vast majority of the cases where you're going to be able to use WebSocket
+
+71
+00:04:45,580 --> 00:04:47,320
+and how you're going to use those Web websites.
+
+72
+00:04:48,230 --> 00:04:52,640
+So the one thing that's bothering me right now is that this button is bleeding into that device and
+
+73
+00:04:52,640 --> 00:04:53,870
+I can fix that pretty easily.
+
+74
+00:04:54,140 --> 00:05:02,030
+I'll just find my div ID equals output and give it a class of chatterbox and say maybe three.
+
+75
+00:05:02,120 --> 00:05:05,000
+Just give it a margin talk and that looks a little bit better.
+
+76
+00:05:05,750 --> 00:05:07,820
+OK, so that's it for this application.
+
+77
+00:05:07,820 --> 00:05:12,290
+And what we're going to do in the next section of the course is we're going to write a somewhat more
+
+78
+00:05:12,290 --> 00:05:17,300
+sophisticated application and again, we're still going to be using Web sockets, but we're going to
+
+79
+00:05:17,300 --> 00:05:19,910
+use the Pusher library instead.
+
+80
+00:05:20,210 --> 00:05:27,770
+And what we'll build is a server monitoring tool that allows us to monitor the status of as many external
+
+81
+00:05:27,770 --> 00:05:34,580
+servers as we want and to use Web sockets to alert the user who's looking at the application and also
+
+82
+00:05:34,580 --> 00:05:37,740
+to notify otherwise sending email, sending text to whatever it may be.
+
+83
+00:05:38,180 --> 00:05:41,000
+So we'll get started on that in the next section.

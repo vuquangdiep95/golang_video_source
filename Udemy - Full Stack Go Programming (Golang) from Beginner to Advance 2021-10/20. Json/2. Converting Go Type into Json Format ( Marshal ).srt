@@ -1,0 +1,287 @@
+1
+00:00:12,980 --> 00:00:16,580
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:17,030 --> 00:00:22,910
+In the previous session, we talked about J Song concept, and in this session we want to talk about
+
+3
+00:00:22,910 --> 00:00:24,650
+the others Jason concepts.
+
+4
+00:00:27,980 --> 00:00:35,820
+Converting a gold tie into Jason in gold, we can convert data to Jason to do this.
+
+5
+00:00:35,840 --> 00:00:37,580
+We use machine function.
+
+6
+00:00:40,540 --> 00:00:48,640
+The marshal function in package, including Jason, is used to encode the data into JSON format, martial
+
+7
+00:00:48,640 --> 00:00:54,730
+function exits an empty interface and returns an array of by an error message.
+
+8
+00:00:55,300 --> 00:00:57,490
+Now you can see the syntax.
+
+9
+00:00:59,260 --> 00:01:06,490
+Let's go to this school, Cary Grant, to illustrate how to convert Golang data into JSON format by
+
+10
+00:01:06,490 --> 00:01:08,350
+using machine function.
+
+11
+00:01:09,760 --> 00:01:13,360
+First, go to Explorer and create a main fine
+
+12
+00:01:17,320 --> 00:01:22,510
+set package me and define a main function.
+
+13
+00:01:27,490 --> 00:01:40,410
+First, create a struct like person, including some fields, so the right type person is struct and
+
+14
+00:01:40,420 --> 00:01:40,870
+defined.
+
+15
+00:01:40,870 --> 00:01:55,110
+Some fields like name by the type, string and age by the time in 64 and location by the time estrange.
+
+16
+00:01:58,750 --> 00:02:03,760
+Now go to main function to convert go blank object to JSON format.
+
+17
+00:02:07,450 --> 00:02:11,560
+First, create an object from person a struct and initialize it.
+
+18
+00:02:12,040 --> 00:02:21,520
+So define a variable like person column equals person struct and initialize the value.
+
+19
+00:02:25,120 --> 00:02:28,960
+Full name, Gene, for age 20.
+
+20
+00:02:29,440 --> 00:02:32,830
+And for the location, Texas,
+
+21
+00:02:37,330 --> 00:02:41,890
+now we use Marshall function to quote object into JSON format.
+
+22
+00:02:42,820 --> 00:02:51,970
+So first, create two variables for returns values that bind, array and error, so define per cent
+
+23
+00:02:52,330 --> 00:02:59,170
+array and error column equals and calling marschall function from JSON packet.
+
+24
+00:02:59,380 --> 00:03:07,390
+Jason Stuart Marsh and third person object and argument to it.
+
+25
+00:03:12,690 --> 00:03:15,330
+Take our status by the following quote
+
+26
+00:03:18,270 --> 00:03:21,720
+no matter the
+
+27
+00:03:25,500 --> 00:03:27,930
+in to and.
+
+28
+00:03:33,100 --> 00:03:45,310
+Now, Chast returns value to shrink and display it off the chest with a screen and served first time,
+
+29
+00:03:47,840 --> 00:03:54,130
+a reform of the code and save the project and execute the program,
+
+30
+00:03:56,830 --> 00:04:01,930
+go from the splash, made that go.
+
+31
+00:04:06,600 --> 00:04:17,030
+Now we can see the output name is king, age is 20 and the location is takes us, we are encoding person
+
+32
+00:04:17,040 --> 00:04:19,140
+distraught in JSON format.
+
+33
+00:04:20,010 --> 00:04:27,600
+First, create a new object of person, then encode the person in JSON format using JSON that on function.
+
+34
+00:04:28,140 --> 00:04:35,340
+If everything goes well, then the error will be Neil and person error is the representation of a person
+
+35
+00:04:35,340 --> 00:04:36,990
+in byte at a forum.
+
+36
+00:04:38,190 --> 00:04:39,960
+Now take a look at the person.
+
+37
+00:04:39,960 --> 00:04:44,730
+This struct, the location field, is thought by the author chase.
+
+38
+00:04:45,510 --> 00:04:53,370
+Now you can see it, so you want to change it to larges and run program again.
+
+39
+00:04:58,350 --> 00:05:01,350
+Save the project and execute again.
+
+40
+00:05:07,040 --> 00:05:07,470
+OK.
+
+41
+00:05:08,300 --> 00:05:11,930
+We can see my name is Gene and ages 20.
+
+42
+00:05:13,700 --> 00:05:20,120
+The location field could not map to Jason, and we don't see location fall in output.
+
+43
+00:05:20,390 --> 00:05:28,940
+So if you want to change a field name for map to the astronaut field, we use the Jason tank, for example.
+
+44
+00:05:29,150 --> 00:05:35,630
+You have a strong field as name, but you want to map it as a first name in JSON format.
+
+45
+00:05:35,960 --> 00:05:47,120
+To do this, you can use the JASON tag to the struct field notes that don't give any space between defined
+
+46
+00:05:47,120 --> 00:05:50,300
+JSON tag name as it between zero.
+
+47
+00:05:50,960 --> 00:05:55,430
+Now we will apply this change to our program and execute again.
+
+48
+00:05:55,730 --> 00:05:57,490
+Go to the person extract.
+
+49
+00:06:02,600 --> 00:06:03,770
+So be right back.
+
+50
+00:06:03,770 --> 00:06:06,020
+Take Jason.
+
+51
+00:06:09,320 --> 00:06:16,400
+Double quotation mark and set first name first name.
+
+52
+00:06:20,180 --> 00:06:24,530
+Reformat the code, save the project and execute again.
+
+53
+00:06:30,030 --> 00:06:30,390
+OK.
+
+54
+00:06:30,660 --> 00:06:35,370
+First name is Gene, age is 20 and location is taking us.
+
+55
+00:06:35,580 --> 00:06:42,390
+The program ran without any problems, and we could change variable name to first name by using the
+
+56
+00:06:42,390 --> 00:06:43,840
+Jason tank.
+
+57
+00:06:45,360 --> 00:06:47,520
+Go to the slides and continue.
+
+58
+00:06:51,590 --> 00:07:01,190
+Ahmed Empty, we have a special Jason tag as Ahmed Empty if a field is set as Ahmed A..
+
+59
+00:07:01,370 --> 00:07:09,310
+Then it will not end quote the JSON format if it is empty, so go to a school program to illustrate
+
+60
+00:07:09,320 --> 00:07:10,280
+Ahmed A..
+
+61
+00:07:13,200 --> 00:07:18,390
+For example, set location field as Ahmed A. and execute program again.
+
+62
+00:07:18,840 --> 00:07:20,610
+So be right back.
+
+63
+00:07:20,610 --> 00:07:32,160
+Take Jason Colleen double quotation mark since location by lowercase and sit on it and to.
+
+64
+00:07:36,380 --> 00:07:43,810
+Now go to main function and create an object from person is the without initialize location field.
+
+65
+00:07:44,210 --> 00:07:44,960
+So.
+
+66
+00:07:48,600 --> 00:08:02,340
+Define a variable like person, call an equals person for the name, be, said Jessica, and for the
+
+67
+00:08:02,340 --> 00:08:04,650
+age, we said 30.
+
+68
+00:08:05,650 --> 00:08:15,610
+And not set any value for location reform at the called Save the Project and execute the program again.
+
+69
+00:08:18,370 --> 00:08:27,190
+Now we can see the output first name is Jessica and ages 30, and the program ran without any problems.
+
+70
+00:08:28,120 --> 00:08:33,790
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+71
+00:08:33,790 --> 00:08:36,360
+the next session until next session.
+
+72
+00:08:36,370 --> 00:08:36,940
+Goodbye.

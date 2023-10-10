@@ -1,0 +1,243 @@
+1
+00:00:13,050 --> 00:00:19,440
+Hello and welcome to the gold and programming language course in the previous session, we talked about
+
+2
+00:00:19,440 --> 00:00:25,800
+a split after mystery, and in this session we want to talk about the others eastern concept.
+
+3
+00:00:29,820 --> 00:00:31,010
+Spirit after in.
+
+4
+00:00:32,570 --> 00:00:39,830
+This function, ESPN+ stream into our service streams after each instance of the given separator and
+
+5
+00:00:39,830 --> 00:00:43,310
+returns a slice which contains these services.
+
+6
+00:00:44,060 --> 00:00:46,430
+Now you can see the scene techs.
+
+7
+00:00:47,910 --> 00:00:57,150
+Here, SDR is the string sit is the separator and and is used to find the number of solid strings to
+
+8
+00:00:57,150 --> 00:01:00,060
+return if angry turned down zero.
+
+9
+00:01:00,330 --> 00:01:06,360
+Then it returns atoms in solid strings and the last string service strings will not be.
+
+10
+00:01:06,660 --> 00:01:11,100
+If an equal to zero, then it will return Neal.
+
+11
+00:01:11,550 --> 00:01:16,620
+And if in less than zero, then it will return on solid strings.
+
+12
+00:01:17,730 --> 00:01:24,360
+Now let's go to the school with Cary Grant to illustrate how to split after in a string.
+
+13
+00:01:26,830 --> 00:01:35,470
+First, creating and initializing the three Issing variables of us, Esperon calling equals CET value.
+
+14
+00:01:35,890 --> 00:01:36,720
+Welcome.
+
+15
+00:01:37,570 --> 00:01:45,280
+Come on the Karma Go programming
+
+16
+00:01:47,920 --> 00:01:51,550
+language, go to next line.
+
+17
+00:01:51,550 --> 00:01:55,060
+Define another variable like SDR to column equals.
+
+18
+00:01:56,620 --> 00:01:59,830
+My name is rather.
+
+19
+00:02:01,640 --> 00:02:16,940
+And defined territory you are tree pollen equals set value for the example I am to go poor grammar now
+
+20
+00:02:16,940 --> 00:02:21,520
+dispelling a string variable before using a split after end function.
+
+21
+00:02:23,170 --> 00:02:34,460
+AFP STR Home is still a long and free PCR tool.
+
+22
+00:02:35,660 --> 00:02:41,190
+Just, you know, two and display 30.
+
+23
+00:02:41,230 --> 00:02:45,620
+It is still a tree is still empty.
+
+24
+00:02:47,390 --> 00:02:48,710
+Now is fleeting.
+
+25
+00:02:48,710 --> 00:02:52,040
+The given string using is split after and function.
+
+26
+00:02:52,790 --> 00:03:00,590
+For the example, it splits first string into all substring separated by the comma separator and returns
+
+27
+00:03:00,770 --> 00:03:03,230
+a slice which contains solid string.
+
+28
+00:03:03,290 --> 00:03:04,760
+Go to the next line.
+
+29
+00:03:05,060 --> 00:03:07,160
+Define a variable like resolved.
+
+30
+00:03:07,160 --> 00:03:18,140
+One calling equals the strings package that is split after end function.
+
+31
+00:03:18,680 --> 00:03:29,960
+First set variable like is still warm and set comma separate war and for third argument, assign count
+
+32
+00:03:29,960 --> 00:03:33,620
+value that determines the number of solid things to return.
+
+33
+00:03:33,860 --> 00:03:41,000
+For the example, we set three and define another variable life result.
+
+34
+00:03:41,210 --> 00:03:54,100
+Two column equals strings that string at the end, said variable estimate tool and set a space as separator
+
+35
+00:03:54,440 --> 00:04:01,310
+and sit for number of solid string and go to the next line and define another variable.
+
+36
+00:04:01,310 --> 00:04:09,590
+Like these are three Cullin equals package strings that select a split after end function.
+
+37
+00:04:10,340 --> 00:04:19,460
+Set variable is still tree and set exclamation mark as separator and set one as number of solid string
+
+38
+00:04:20,840 --> 00:04:22,520
+now displaying the result.
+
+39
+00:04:22,520 --> 00:04:28,430
+But it is for the example for the result one be display value on type of variable.
+
+40
+00:04:29,090 --> 00:04:44,300
+So right, if that is less and resolved, one type column per cent T upper case by case less T result
+
+41
+00:04:44,840 --> 00:04:58,260
+one column first and the back is less in search result one comma resolved one.
+
+42
+00:04:58,370 --> 00:05:00,020
+Now iterate result one.
+
+43
+00:05:00,140 --> 00:05:04,370
+String a slice and display value of it by the range for a loop.
+
+44
+00:05:04,790 --> 00:05:08,690
+Go to the next line and define it for loop.
+
+45
+00:05:09,500 --> 00:05:12,170
+For the score come out.
+
+46
+00:05:12,560 --> 00:05:22,070
+Already, the lowest value column equals range in result vanderslice a strange go through the body statement
+
+47
+00:05:22,070 --> 00:05:23,960
+and p the value
+
+48
+00:05:26,690 --> 00:05:31,580
+go out of the for loop range and display the other variables.
+
+49
+00:05:31,590 --> 00:05:48,440
+FP but I just and result to call insert value the result two and result three column and display resolve
+
+50
+00:05:50,300 --> 00:05:50,660
+three.
+
+51
+00:05:51,080 --> 00:05:54,970
+Reformat the court, save the project and execute the program.
+
+52
+00:05:56,960 --> 00:06:05,870
+Now we can see the output for the first variable defined the Como character as a separator and city
+
+53
+00:06:05,870 --> 00:06:13,310
+value as number of substring to use the split function and drop a slice of the string as a return value
+
+54
+00:06:13,490 --> 00:06:19,880
+inside the resultant body, even then display the value and the type of the result variable and use
+
+55
+00:06:19,880 --> 00:06:21,460
+the range for loop to iterate.
+
+56
+00:06:21,470 --> 00:06:26,870
+The result is nice value and the result one value even consists of three parts.
+
+57
+00:06:26,970 --> 00:06:31,720
+The answer to this for the second and third levels in third variable.
+
+58
+00:06:31,940 --> 00:06:34,590
+It does not contain the given separately.
+
+59
+00:06:34,910 --> 00:06:43,760
+Then it will return a slice of length, one which contain only its variable value in order not to prolong
+
+60
+00:06:43,760 --> 00:06:48,980
+the time of decision to be finished, and we will continue to contend in the next session.
+
+61
+00:06:49,190 --> 00:06:49,700
+Goodbye.

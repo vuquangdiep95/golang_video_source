@@ -1,0 +1,291 @@
+1
+00:00:12,080 --> 00:00:17,960
+Hello and welcome to the golden programming language course in the pit of U.S., we could define the
+
+2
+00:00:17,960 --> 00:00:25,520
+flag and switches between return values, and in this session, we want to go to implement the Iran
+
+3
+00:00:25,520 --> 00:00:27,500
+GOP server function.
+
+4
+00:00:29,490 --> 00:00:32,010
+Go to the GOP server function
+
+5
+00:00:37,530 --> 00:00:47,040
+first display, a message that the server is a starting sold right off the list, starting
+
+6
+00:00:49,590 --> 00:00:50,190
+Sarah.
+
+7
+00:01:02,040 --> 00:01:09,420
+We must tell Server to be ready to listen to a port to do this because the lease and function from the
+
+8
+00:01:09,420 --> 00:01:18,660
+NYT's package, the lease and function announces on the local network address and accepts two parameters
+
+9
+00:01:18,900 --> 00:01:24,050
+as network and address and returns to venues and leasing around it all.
+
+10
+00:01:24,690 --> 00:01:29,910
+So define two variables like leasing, render and invokes the listening function
+
+11
+00:01:33,870 --> 00:01:41,270
+listener and adult callers because in walk listen function from that package, let's dance.
+
+12
+00:01:44,850 --> 00:01:45,750
+Listen function
+
+13
+00:01:50,190 --> 00:01:55,890
+sit TCP as network parameter t c p.
+
+14
+00:01:57,870 --> 00:02:04,500
+Vorticity networks, if the host in the address parameter is A. or literal on a specified IP address,
+
+15
+00:02:04,860 --> 00:02:12,840
+this information listeners on all available Unix and any guest IP addresses of the low cost system.
+
+16
+00:02:15,210 --> 00:02:17,180
+And said at perimeter.
+
+17
+00:02:20,910 --> 00:02:29,720
+Hundred into an incident, darts 0.0 dart one column for the example port.
+
+18
+00:02:30,210 --> 00:02:32,970
+Eighty eighty five.
+
+19
+00:02:36,480 --> 00:02:44,010
+First, check our status if they're not equals name
+
+20
+00:02:47,370 --> 00:02:53,100
+calling, fat and functional from like packages fatter and all
+
+21
+00:02:55,830 --> 00:02:56,370
+that
+
+22
+00:03:01,020 --> 00:03:05,970
+now display another message that indicates the server is listening now.
+
+23
+00:03:05,970 --> 00:03:08,280
+So we right if PPI
+
+24
+00:03:12,720 --> 00:03:16,950
+server is listening.
+
+25
+00:03:28,220 --> 00:03:36,590
+Now we'll be calling a new survey from G.R. PC Package, new search function creates a G.R. PC server,
+
+26
+00:03:36,800 --> 00:03:41,690
+which has no servers registered and has not to start to accept request.
+
+27
+00:03:41,690 --> 00:03:50,810
+Yet this function accept a list of DDR option as the input parameter and return a server from G.P.S.
+
+28
+00:03:50,810 --> 00:03:51,290
+package.
+
+29
+00:03:51,530 --> 00:03:56,690
+So before invoking this function, we create a variable as array of server options.
+
+30
+00:03:56,690 --> 00:04:00,140
+So we write options
+
+31
+00:04:03,050 --> 00:04:10,550
+ray or G.R. PC Dot server option.
+
+32
+00:04:18,130 --> 00:04:23,860
+Now, Connie, new server function from G.R. PC package, first defined and variable for return value
+
+33
+00:04:23,860 --> 00:04:35,320
+like new server, new server calling equals and calling new server function from your PC package.
+
+34
+00:04:35,620 --> 00:04:44,440
+He said that new server function and set options as parameter.
+
+35
+00:04:51,340 --> 00:04:59,380
+OK, now it's time to call the G.R. PC server initialize a function from the server package so that
+
+36
+00:04:59,380 --> 00:05:04,720
+we can set the necessary values for our jobs service connection to the database.
+
+37
+00:05:05,260 --> 00:05:12,490
+This function accept two values for connect to the database, first driver name and second data source
+
+38
+00:05:12,490 --> 00:05:14,260
+name that we create.
+
+39
+00:05:14,260 --> 00:05:21,280
+Then to Jason fight and reads from the Jason file and set to the object from configuration as struct.
+
+40
+00:05:21,550 --> 00:05:29,170
+This function returns true values for us first and object from the IPC controller and second and Arrow,
+
+41
+00:05:30,250 --> 00:05:39,880
+a student server and roll call in equals connect your PC's server initialize there from server package
+
+42
+00:05:40,360 --> 00:05:42,670
+server dot.
+
+43
+00:05:44,090 --> 00:05:49,670
+John PC server initialize a set driver name from conf object.
+
+44
+00:05:50,230 --> 00:06:00,730
+Com dot driver me and set data source name from Com stored data.
+
+45
+00:06:00,740 --> 00:06:04,580
+Source name from the data source name.
+
+46
+00:06:06,710 --> 00:06:18,860
+First check or status, if they're not equals ne lot fatter and without a roof.
+
+47
+00:06:21,830 --> 00:06:28,580
+Now it's time to connect the server in the G.R. PC package to the server we created in this case, the
+
+48
+00:06:28,580 --> 00:06:35,960
+name of the server we created from the G.R. PC package is new server and the name of the server be created
+
+49
+00:06:35,960 --> 00:06:39,680
+using your PC server initialize there is a student server.
+
+50
+00:06:41,070 --> 00:06:46,680
+We can establish this connection by cutting the register of student service server method from the protocol
+
+51
+00:06:46,680 --> 00:06:47,250
+package.
+
+52
+00:06:47,760 --> 00:06:50,730
+This function, I accept two parameters.
+
+53
+00:06:50,970 --> 00:06:57,750
+First, and no object from service register of the job is the package that registers a service and its
+
+54
+00:06:57,750 --> 00:07:01,680
+implementation to the concrete type implementing this interface.
+
+55
+00:07:02,040 --> 00:07:06,810
+And second and object from a student service server of the protocol package.
+
+56
+00:07:07,110 --> 00:07:18,660
+So we write Protocol Dot Register of Student Service Server set up new server object as service register.
+
+57
+00:07:19,790 --> 00:07:22,190
+New Senator.
+
+58
+00:07:24,830 --> 00:07:32,570
+And said a student server object as a student service over the student server.
+
+59
+00:07:33,700 --> 00:07:37,060
+Now we were able to register the service together.
+
+60
+00:07:38,290 --> 00:07:44,260
+It's time for the created server to be ready to listen to the request to do this.
+
+61
+00:07:44,290 --> 00:07:52,290
+We can't serve metal from server package this function, accept the parameter as listener and return
+
+62
+00:07:52,290 --> 00:07:56,020
+an error value so cunning server methods from new server.
+
+63
+00:07:56,320 --> 00:08:04,420
+First, define a variable like ETL equals new server.
+
+64
+00:08:07,350 --> 00:08:13,740
+And calling serve Mitchell and said, Listen, Ralph Nader, parliament, to listen.
+
+65
+00:08:17,010 --> 00:08:24,000
+Said function accepts incoming connections on the listener, creating a new server, transport in service,
+
+66
+00:08:24,000 --> 00:08:25,170
+good routine for each.
+
+67
+00:08:25,560 --> 00:08:32,940
+The service go Reuters read GOPAC requests and then call the Register's handlers to reply to them.
+
+68
+00:08:33,030 --> 00:08:42,090
+Listener will be closed when this method returns, so check our status if it will not equal.
+
+69
+00:08:50,380 --> 00:08:52,660
+Large got fat on.
+
+70
+00:08:54,610 --> 00:08:56,890
+There or there are no.
+
+71
+00:08:59,050 --> 00:09:06,070
+Now we were able to implement the Iran GOPAC server function in order not to prolong the time of decision.
+
+72
+00:09:06,220 --> 00:09:10,150
+We will finish it and we will continue the content in the next session.
+
+73
+00:09:10,360 --> 00:09:10,990
+Goodbye.

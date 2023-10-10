@@ -1,0 +1,1003 @@
+1
+00:00:00,520 --> 00:00:05,770
+So we have some database tables for our hosts, for our services and for our host services, and now
+
+2
+00:00:05,770 --> 00:00:09,780
+we need to create some forms that will allow us to enter some information into the database.
+
+3
+00:00:10,540 --> 00:00:14,050
+So I'm looking at the application which is running right now.
+
+4
+00:00:14,050 --> 00:00:17,970
+And if I go to the hosts button and then click on, there's nothing listed here.
+
+5
+00:00:17,980 --> 00:00:20,090
+Of course, this is where our hosts will be listed.
+
+6
+00:00:20,110 --> 00:00:24,490
+Once we have some in the database, I don't want to click on the new host button and that takes me to
+
+7
+00:00:24,490 --> 00:00:25,510
+an empty page.
+
+8
+00:00:25,900 --> 00:00:30,490
+And the empty page has a breadcrumb at the top and then a place for content underneath.
+
+9
+00:00:30,490 --> 00:00:32,050
+And here's where I want to put my form.
+
+10
+00:00:32,710 --> 00:00:36,190
+And the form I want to put there is actually going to be a TABD page.
+
+11
+00:00:36,190 --> 00:00:42,820
+I'll use bootstraps tabs to create a page that has a host tab that will just give the basic information
+
+12
+00:00:42,820 --> 00:00:48,490
+about the host, the managed services that will allow us to list the services and add or delete any
+
+13
+00:00:48,490 --> 00:00:52,930
+services we want to monitor then one tab for each of the possible statuses.
+
+14
+00:00:52,990 --> 00:00:56,530
+So a healthy tab, warning problems and pending.
+
+15
+00:00:56,860 --> 00:01:01,970
+And each of those tabs will list services that we're monitoring that are in one of those states.
+
+16
+00:01:01,970 --> 00:01:04,130
+So all the healthy will show up and are healthy and so on.
+
+17
+00:01:04,750 --> 00:01:06,040
+So let's get started doing that.
+
+18
+00:01:06,050 --> 00:01:12,610
+So I'm going to go over to my ID and this is the host page hosted Jet and it's found inside The View's
+
+19
+00:01:12,610 --> 00:01:13,000
+folder.
+
+20
+00:01:13,480 --> 00:01:21,250
+So inside of that, in this content area, I'm going to I'm going to create a new div and it'll be a
+
+21
+00:01:21,250 --> 00:01:22,720
+div of class row.
+
+22
+00:01:23,200 --> 00:01:26,110
+And inside of that I'll create a div of class call.
+
+23
+00:01:26,810 --> 00:01:28,720
+And this is where our content is going to go.
+
+24
+00:01:28,780 --> 00:01:33,910
+Now I know I want to TABD page and if you go back to the application, I already have a tab page.
+
+25
+00:01:33,910 --> 00:01:37,620
+I have one here for settings that has general notification, so on and so forth.
+
+26
+00:01:38,170 --> 00:01:44,410
+So what I'm going to do is open up the settings page and just copy this part that creates the tabs for
+
+27
+00:01:44,410 --> 00:01:45,840
+me just to save some typing.
+
+28
+00:01:45,880 --> 00:01:52,360
+So I'll go back to host Jet and I'll just paste that right in here and then I'll modify this as necessary.
+
+29
+00:01:52,360 --> 00:01:54,250
+So it's not for settings, it's for host.
+
+30
+00:01:55,060 --> 00:01:58,960
+And the first part is not general, it is the host.
+
+31
+00:01:59,600 --> 00:02:01,000
+So I'll call this the host tab.
+
+32
+00:02:02,410 --> 00:02:13,270
+The second one is for managed services, so I'll call it the service tab and it will go to the service
+
+33
+00:02:13,270 --> 00:02:15,930
+content and this will go to the host content.
+
+34
+00:02:15,940 --> 00:02:18,100
+And this is referring to Divs that don't exist yet.
+
+35
+00:02:18,100 --> 00:02:19,180
+But we'll get to those in a moment.
+
+36
+00:02:20,500 --> 00:02:22,690
+Then I'm going to have my healthy tab.
+
+37
+00:02:23,500 --> 00:02:26,980
+So for healthy services and I'll call this healthy.
+
+38
+00:02:29,320 --> 00:02:31,450
+And I'll get rid of the icon, because I don't need that.
+
+39
+00:02:33,020 --> 00:02:40,610
+And to have an icon up here now, it looks OK, so healthy can be that one, and that will go to healthy
+
+40
+00:02:40,610 --> 00:02:44,030
+content and then we'll have warning.
+
+41
+00:02:46,300 --> 00:02:52,720
+And again, I don't need an icon for that, so I'll delete that little tag there, and this is for warning.
+
+42
+00:02:55,420 --> 00:02:55,990
+Warning.
+
+43
+00:02:57,200 --> 00:03:03,440
+That looks right, so after warning, we'll have problem services, so a copy and paste and this will
+
+44
+00:03:03,440 --> 00:03:05,180
+be for problem tab.
+
+45
+00:03:08,330 --> 00:03:09,200
+Problems.
+
+46
+00:03:14,520 --> 00:03:15,870
+Problem content.
+
+47
+00:03:18,070 --> 00:03:24,700
+And the last one is for pending, and that will be the pending tab for pending.
+
+48
+00:03:28,180 --> 00:03:28,800
+Pending.
+
+49
+00:03:29,740 --> 00:03:30,420
+I think that's it.
+
+50
+00:03:31,790 --> 00:03:37,030
+So none of those divs exist yet, which is not a problem, let's just go see what the page looks like.
+
+51
+00:03:37,090 --> 00:03:40,940
+So go back to Host's new host.
+
+52
+00:03:41,780 --> 00:03:45,210
+And there now we have some tips and we can put some content in each of those.
+
+53
+00:03:45,770 --> 00:03:52,160
+So underneath that, if you look back at the settings page, we're going to have a div class equals
+
+54
+00:03:52,160 --> 00:03:58,970
+tab content, which I'll copy and put that underneath the URL and it has to have a closing tag.
+
+55
+00:03:58,970 --> 00:04:06,060
+So we'll put a closing tag in now and reformat that and then back to settings to see how this works.
+
+56
+00:04:06,080 --> 00:04:10,010
+So inside of that we have a debate div class equals content.
+
+57
+00:04:11,870 --> 00:04:13,800
+So put that in there.
+
+58
+00:04:14,660 --> 00:04:20,330
+It's a tab pain and we'll close that and that has to have the correct you URL or ID and right now it
+
+59
+00:04:20,330 --> 00:04:20,780
+doesn't.
+
+60
+00:04:21,320 --> 00:04:26,990
+It's labeled by the very first tab, which is called Host Tab.
+
+61
+00:04:31,290 --> 00:04:37,350
+And it's I.D. is host content, so now a copy that.
+
+62
+00:04:39,110 --> 00:04:40,430
+It host content.
+
+63
+00:04:41,970 --> 00:04:48,540
+Host Hebb host content that is good, why do I have a oh, so I copied the wrong thing here.
+
+64
+00:04:49,470 --> 00:04:50,730
+Let me go back to settings.
+
+65
+00:04:52,600 --> 00:04:53,650
+Post content.
+
+66
+00:04:55,200 --> 00:04:55,650
+All right.
+
+67
+00:04:58,500 --> 00:05:06,060
+Host Tab's host KAB contest there, just give it a different idea and see if that works host Tab's.
+
+68
+00:05:06,360 --> 00:05:06,960
+That looks good.
+
+69
+00:05:07,320 --> 00:05:12,180
+OK, so I have this and let's just make sure it works by putting the word host content in here.
+
+70
+00:05:12,870 --> 00:05:18,200
+Then we'll copy this and paste it one, two, three, four, five times.
+
+71
+00:05:18,210 --> 00:05:20,880
+But first of all, post it once and get rid of active.
+
+72
+00:05:24,870 --> 00:05:28,310
+And the second one, does it have a show on it, I can't remember.
+
+73
+00:05:30,120 --> 00:05:30,780
+No, it doesn't.
+
+74
+00:05:30,810 --> 00:05:40,830
+OK, so we'll get rid of the show here, so the second one is for services content and it's labeled
+
+75
+00:05:40,830 --> 00:05:42,960
+by services tab.
+
+76
+00:05:43,950 --> 00:05:50,430
+Now, I can paste this as many more times as I need to, and it looks like I need one, two, three,
+
+77
+00:05:50,430 --> 00:05:51,390
+four more taps.
+
+78
+00:05:51,420 --> 00:05:58,620
+OK, so this will be services content paste two, three, four.
+
+79
+00:05:59,220 --> 00:06:01,110
+And the last one was pending.
+
+80
+00:06:02,910 --> 00:06:03,540
+Pending.
+
+81
+00:06:05,920 --> 00:06:06,970
+Pending tab.
+
+82
+00:06:08,980 --> 00:06:10,290
+Is there an extra tab in there?
+
+83
+00:06:12,910 --> 00:06:14,050
+Problem TEB.
+
+84
+00:06:18,840 --> 00:06:21,930
+Problem, problem.
+
+85
+00:06:23,780 --> 00:06:26,030
+And then it was warning.
+
+86
+00:06:29,520 --> 00:06:30,030
+Warning.
+
+87
+00:06:32,160 --> 00:06:35,070
+Warning tab and get rid of all these extra tabs.
+
+88
+00:06:37,080 --> 00:06:38,940
+And this one is healthy.
+
+89
+00:06:44,170 --> 00:06:49,060
+And this should be healthy and we will spell warning, right, since I'm here anyway.
+
+90
+00:06:49,540 --> 00:06:52,390
+All right, let's save this and make sure that we get everything right.
+
+91
+00:06:52,420 --> 00:06:58,090
+So I should see content under all of these casso managed services.
+
+92
+00:06:58,090 --> 00:07:03,190
+Didn't work healthy does morning does problem does pending does.
+
+93
+00:07:03,700 --> 00:07:05,740
+So the one that's not working is managed services.
+
+94
+00:07:05,770 --> 00:07:07,210
+Let's see what we got wrong with that one.
+
+95
+00:07:07,210 --> 00:07:08,290
+Managed services.
+
+96
+00:07:08,370 --> 00:07:09,460
+I got an extra tab in there.
+
+97
+00:07:09,500 --> 00:07:09,850
+OK.
+
+98
+00:07:12,140 --> 00:07:13,170
+Tap safe.
+
+99
+00:07:13,820 --> 00:07:15,830
+So now these tabs should all work.
+
+100
+00:07:15,860 --> 00:07:17,870
+They're not pretty yet, but we'll make them pretty in a moment.
+
+101
+00:07:17,920 --> 00:07:23,000
+Those reload, this still not working services TAB services content.
+
+102
+00:07:24,860 --> 00:07:26,480
+Services content.
+
+103
+00:07:28,260 --> 00:07:33,930
+There you go to get your I.D. matched up for the tabs, just don't work, and just so you know, the
+
+104
+00:07:33,930 --> 00:07:38,790
+way the tabs are built here is using the bootstrap alpha version, which happened to be the version
+
+105
+00:07:38,790 --> 00:07:40,830
+of bootstrap that was built into this template.
+
+106
+00:07:41,100 --> 00:07:45,720
+You may have the final version of bootstrap depending on a bootstrap five, depending on when you're
+
+107
+00:07:45,720 --> 00:07:46,560
+taking this course.
+
+108
+00:07:47,010 --> 00:07:51,690
+But just look at the documentation or use the alpha version that worked fine for the purposes of this
+
+109
+00:07:51,690 --> 00:07:51,990
+course.
+
+110
+00:07:52,000 --> 00:07:55,530
+This is, of course, about WebSocket, and we're just going through the steps necessary to get to the
+
+111
+00:07:56,160 --> 00:07:57,840
+point where we can work with WebSocket.
+
+112
+00:07:58,460 --> 00:08:04,790
+OK, so now we need to put a form in here and put the form, first of all, in this part.
+
+113
+00:08:04,920 --> 00:08:12,590
+So let's put it in a div class equals row and a div class equals call.
+
+114
+00:08:12,720 --> 00:08:17,820
+So we'll have rows and columns within this tab and inside of this will put our form and I'll put the
+
+115
+00:08:17,820 --> 00:08:19,320
+form tag in in a little bit.
+
+116
+00:08:19,330 --> 00:08:24,990
+Right now I just want to get the elements in there, so I'm going to have this in two calls.
+
+117
+00:08:24,990 --> 00:08:32,400
+So instead of a div class call, I'll say div class call MDX and call excess 12.
+
+118
+00:08:32,460 --> 00:08:35,880
+So if you're hitting it on a phone, everything will appear in one column.
+
+119
+00:08:35,880 --> 00:08:41,850
+But if you're on something bigger than a phone, then you'll get the two columns just to make the make
+
+120
+00:08:41,850 --> 00:08:43,400
+better use of screen real estate.
+
+121
+00:08:44,160 --> 00:08:47,460
+So let's put it in our first form control.
+
+122
+00:08:47,470 --> 00:08:52,030
+So let's first of all, look at our database to see what our very first piece of information is.
+
+123
+00:08:52,350 --> 00:08:56,550
+So I'm looking at the vigilante database at the host table ID.
+
+124
+00:08:56,680 --> 00:09:00,990
+I don't need to worry about that, but I definitely want to hostname, so I need to put it in a text
+
+125
+00:09:00,990 --> 00:09:01,470
+input.
+
+126
+00:09:01,470 --> 00:09:07,230
+So I'll put in a div class equals EMB three just to give it some padding on the bottom.
+
+127
+00:09:08,100 --> 00:09:11,910
+Then I'll put it a label and it will be four.
+
+128
+00:09:12,480 --> 00:09:14,730
+And the very first column was called Hostname.
+
+129
+00:09:14,910 --> 00:09:16,350
+So I'll call the same thing here.
+
+130
+00:09:16,350 --> 00:09:22,920
+Hostname and I will put in a class of form control which are supposed to.
+
+131
+00:09:27,660 --> 00:09:38,000
+And the label will be hosting them and then we'll put our input in input, Heidi, equals hostname name
+
+132
+00:09:38,040 --> 00:09:44,790
+equals host name value equals I'll leave that empty will populate that with information from the database
+
+133
+00:09:44,790 --> 00:09:45,180
+and a bit.
+
+134
+00:09:45,180 --> 00:09:51,360
+But we need to get it first and then we'll have its type is text.
+
+135
+00:09:53,610 --> 00:09:57,450
+And its class is equal to form control, form text.
+
+136
+00:09:58,700 --> 00:09:59,690
+No firm control.
+
+137
+00:10:02,210 --> 00:10:05,810
+Yeah, form control and this one's wrong is supposed to be formed, labeled.
+
+138
+00:10:07,800 --> 00:10:14,450
+OK, let's see how that looks back to our our Web browser and go to the host and reload.
+
+139
+00:10:14,810 --> 00:10:17,570
+And there probably need a little bit of space at the top here.
+
+140
+00:10:17,570 --> 00:10:19,970
+So let's put some space at the top as well.
+
+141
+00:10:22,100 --> 00:10:23,600
+Merge and top three.
+
+142
+00:10:23,750 --> 00:10:24,740
+Let's see how that looks.
+
+143
+00:10:27,130 --> 00:10:28,780
+Reload, that looks better.
+
+144
+00:10:28,810 --> 00:10:33,210
+OK, so I have one place to enter information right here for the hostname.
+
+145
+00:10:33,700 --> 00:10:38,140
+What's next back and look at our database after the hostname.
+
+146
+00:10:38,140 --> 00:10:39,250
+We have the canonical name.
+
+147
+00:10:39,550 --> 00:10:42,420
+OK, so let's just go back and make things really easy.
+
+148
+00:10:42,910 --> 00:10:43,990
+We'll copy this.
+
+149
+00:10:45,220 --> 00:10:46,180
+Paste it in here.
+
+150
+00:10:46,190 --> 00:10:48,130
+We don't need to merge in top on this one.
+
+151
+00:10:49,240 --> 00:10:50,500
+And this is canonical name.
+
+152
+00:10:52,180 --> 00:10:54,970
+Canonical name.
+
+153
+00:10:56,280 --> 00:11:03,270
+Which I will copy and paste and paste and changes to canonical name.
+
+154
+00:11:03,990 --> 00:11:07,610
+OK, that should look OK and it does.
+
+155
+00:11:08,580 --> 00:11:12,230
+And the third element is after canonical name is Earl.
+
+156
+00:11:12,570 --> 00:11:13,950
+So let's copy this.
+
+157
+00:11:16,540 --> 00:11:27,280
+Paced, and this is just called you URL, so copy paste, paste and get rid of this and put your URL
+
+158
+00:11:29,740 --> 00:11:33,460
+and the next one is the IP address and then IP version six.
+
+159
+00:11:35,610 --> 00:11:43,920
+So paste, paste, and this is for IP, IP address, version for.
+
+160
+00:11:45,840 --> 00:11:48,360
+IP, IP.
+
+161
+00:11:50,010 --> 00:12:02,040
+IP and did I have an underscore in the name, I can't remember no IP Version six copy paste, paste,
+
+162
+00:12:02,910 --> 00:12:03,600
+IP
+
+163
+00:12:06,930 --> 00:12:09,400
+address, version six.
+
+164
+00:12:09,720 --> 00:12:12,700
+And again, we may not use that, but we may and we may as well put it in there.
+
+165
+00:12:14,340 --> 00:12:20,670
+So then location OS and active and I'll put those in another column just to make this a little more
+
+166
+00:12:20,670 --> 00:12:21,330
+attractive.
+
+167
+00:12:21,340 --> 00:12:26,580
+So we have a call here and I'll close this, call them off and then I'll create another call.
+
+168
+00:12:27,150 --> 00:12:32,670
+Div class equals call MMD six, call excess 12.
+
+169
+00:12:33,030 --> 00:12:37,000
+Just so things are in two columns and location is the next one.
+
+170
+00:12:37,020 --> 00:12:41,250
+So let's put paste that in here and I'll just put a blank space in there to make it a little more readable
+
+171
+00:12:42,570 --> 00:12:43,290
+location.
+
+172
+00:12:48,320 --> 00:12:52,190
+Location, copy paste.
+
+173
+00:12:54,170 --> 00:13:00,510
+Paced and this does want the padding at the top, so, um, empty three, I think is what I used.
+
+174
+00:13:00,950 --> 00:13:02,060
+Let's see how that looks.
+
+175
+00:13:04,200 --> 00:13:05,490
+Now, that's looking good so far.
+
+176
+00:13:05,520 --> 00:13:09,550
+OK, operating system, I think is next operating system and then active.
+
+177
+00:13:09,900 --> 00:13:11,570
+So let's put it in an operating system.
+
+178
+00:13:13,570 --> 00:13:14,950
+And I'll just copy this one.
+
+179
+00:13:19,350 --> 00:13:20,220
+Right here.
+
+180
+00:13:24,090 --> 00:13:33,870
+And this is operating system, which I called os, os, os operating system.
+
+181
+00:13:36,370 --> 00:13:42,460
+And that should look good, looks OK, and the last bit we want is an active right here and I'm not
+
+182
+00:13:42,460 --> 00:13:47,260
+going to use a dropdown box, I'll use a toggle kind of like this monitoring one right here, OK, just
+
+183
+00:13:47,260 --> 00:13:48,310
+because it's more attractive.
+
+184
+00:13:49,270 --> 00:13:52,080
+So that comes right after operating system.
+
+185
+00:13:52,090 --> 00:13:57,190
+I want a div class equals form check.
+
+186
+00:13:59,330 --> 00:14:05,750
+Form switch, and this is just a nice thing built into bootstrap five, that gives us an attractive
+
+187
+00:14:05,750 --> 00:14:09,440
+toggle which looks better than a radio button or a checkbox or something like that.
+
+188
+00:14:10,760 --> 00:14:15,410
+So we put an input in their class equals form check input.
+
+189
+00:14:19,180 --> 00:14:20,590
+Type is a checkbox.
+
+190
+00:14:25,800 --> 00:14:28,320
+And the I.D. will be active.
+
+191
+00:14:32,390 --> 00:14:35,750
+And the name will be active, which are better spelled right?
+
+192
+00:14:37,800 --> 00:14:45,900
+And then we put our label after it, label class equals form, check that out, get rid of that check
+
+193
+00:14:47,220 --> 00:14:47,730
+label.
+
+194
+00:14:50,560 --> 00:14:52,180
+Four equals active.
+
+195
+00:14:54,310 --> 00:14:55,450
+And active.
+
+196
+00:14:56,300 --> 00:14:59,720
+OK, so I might have to put an emergent top in there.
+
+197
+00:14:59,740 --> 00:15:01,390
+Let's just go see what it looks like first.
+
+198
+00:15:02,840 --> 00:15:03,510
+It looks OK.
+
+199
+00:15:03,890 --> 00:15:04,880
+I think I can live with that.
+
+200
+00:15:05,260 --> 00:15:12,150
+OK, so there's a place to enter some information about our actual hosts.
+
+201
+00:15:12,200 --> 00:15:18,830
+So let's put a form tag around this whole thing and I will put a form tag around the whole tab list
+
+202
+00:15:18,920 --> 00:15:21,920
+just in case I have form elements on other pages.
+
+203
+00:15:21,920 --> 00:15:25,040
+I don't think I will, but if I ever want to in the future, it'll just save me.
+
+204
+00:15:25,430 --> 00:15:31,310
+Reformatting this entire page subform method equals post.
+
+205
+00:15:32,090 --> 00:15:35,450
+Our action will be exactly the same as the world to this page.
+
+206
+00:15:36,470 --> 00:15:38,150
+So that will be slash.
+
+207
+00:15:38,180 --> 00:15:44,790
+Let's go look at the URL slash admin slash host slash the idea of the host so I don't have the idea
+
+208
+00:15:44,790 --> 00:15:48,200
+of the host right now, so I'll just put zero in there admin.
+
+209
+00:15:50,490 --> 00:15:52,580
+Post and I'll put zero in there.
+
+210
+00:15:54,160 --> 00:15:59,050
+And I do want validation on this form and I'll use bootstraps validation, and that requires that I
+
+211
+00:15:59,050 --> 00:16:04,450
+put no validation here and to give it a class of needs validation.
+
+212
+00:16:06,270 --> 00:16:11,880
+And we'll give it an ID ID equals host form, so that's my opening tag there.
+
+213
+00:16:11,910 --> 00:16:13,370
+I don't want to close it straight away.
+
+214
+00:16:13,380 --> 00:16:20,130
+I'll close it right after the last panel, which would be right here and format everything.
+
+215
+00:16:20,130 --> 00:16:23,850
+And if I go back here and reload, the only thing missing right now is a save button.
+
+216
+00:16:24,000 --> 00:16:27,180
+Well, I already have one on the settings page, so let's just copy that one.
+
+217
+00:16:29,090 --> 00:16:31,290
+Down the bottom somewhere here, there's a safe.
+
+218
+00:16:31,310 --> 00:16:32,490
+I'll just search for safe.
+
+219
+00:16:32,510 --> 00:16:33,080
+There it is.
+
+220
+00:16:33,200 --> 00:16:35,870
+OK, so I will copy this.
+
+221
+00:16:37,790 --> 00:16:45,830
+And I'll put the counsel in there as well and go back to my host page and after the forum closes, where
+
+222
+00:16:45,830 --> 00:16:47,240
+do I want this save button?
+
+223
+00:16:47,270 --> 00:16:49,750
+I think I just want it on the first tab.
+
+224
+00:16:50,210 --> 00:16:52,220
+So that would be right here.
+
+225
+00:16:52,970 --> 00:16:54,530
+And I have a row.
+
+226
+00:16:56,930 --> 00:17:10,670
+So close that row, open a new row after that div class equals row, div class equals call and paste
+
+227
+00:17:10,670 --> 00:17:12,620
+that in there and maybe I'll put a
+
+228
+00:17:15,290 --> 00:17:16,550
+horizontal rule before it.
+
+229
+00:17:16,680 --> 00:17:20,150
+OK, so is there anything in that I need to do in there?
+
+230
+00:17:20,210 --> 00:17:21,380
+No, not right now.
+
+231
+00:17:21,980 --> 00:17:23,720
+Of course this is calling JavaScript.
+
+232
+00:17:23,720 --> 00:17:25,970
+That doesn't exist yet, but let's just see what it looks like.
+
+233
+00:17:26,630 --> 00:17:28,820
+Save, save and close saving.
+
+234
+00:17:28,820 --> 00:17:29,660
+Continue and cancel.
+
+235
+00:17:29,660 --> 00:17:30,650
+Perfect and cancel.
+
+236
+00:17:30,650 --> 00:17:32,450
+Shouldn't take us back to admin overview.
+
+237
+00:17:32,870 --> 00:17:34,160
+You should take us back to host.
+
+238
+00:17:34,170 --> 00:17:35,390
+So let's reload this.
+
+239
+00:17:37,070 --> 00:17:44,780
+And there is no House page, so what what did I call that admin host, all admin host, all save.
+
+240
+00:17:45,640 --> 00:17:47,660
+Let's go to a new host and now cancel.
+
+241
+00:17:47,660 --> 00:17:49,520
+Should take me back to the previous page.
+
+242
+00:17:49,880 --> 00:17:50,520
+And it does.
+
+243
+00:17:50,870 --> 00:17:51,350
+All right.
+
+244
+00:17:51,680 --> 00:17:53,630
+So there we have our forum built.
+
+245
+00:17:54,170 --> 00:18:00,590
+Now we need to actually write some handlers that will either pull a host out of the database and display
+
+246
+00:18:00,590 --> 00:18:07,850
+it on this page with all of these things pre populated or to create an empty hosts object and pass it
+
+247
+00:18:07,850 --> 00:18:11,720
+to this page so we know we're creating a new host and leave these empty.
+
+248
+00:18:12,540 --> 00:18:17,280
+And then the next step will be to create the database handlers and database functions and the handlers.
+
+249
+00:18:17,290 --> 00:18:23,930
+So when I click this button saving continue or save and close, it will actually validate the information,
+
+250
+00:18:24,170 --> 00:18:28,670
+populate the database and take us to some other page and we'll take care of that in the next lecture
+
+251
+00:18:28,670 --> 00:18:29,240
+or two.

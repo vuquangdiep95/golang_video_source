@@ -1,0 +1,163 @@
+1
+00:00:00,300 --> 00:00:05,640
+So there's one more place where we have to push the fact that a host service status has changed to all
+
+2
+00:00:05,640 --> 00:00:11,580
+our connected clients over Web sockets, and it's right here, I'm going to look at the host localhost
+
+3
+00:00:12,270 --> 00:00:14,460
+and I'll look at the problem services.
+
+4
+00:00:14,850 --> 00:00:16,950
+And in my case, I have a problem.
+
+5
+00:00:16,980 --> 00:00:19,620
+My Web server is not running and I am monitoring.
+
+6
+00:00:19,630 --> 00:00:21,300
+So this is being checked in real time.
+
+7
+00:00:21,300 --> 00:00:27,300
+And if I click check now, it does do the check, but it never pushes the fact that the host service
+
+8
+00:00:27,300 --> 00:00:29,650
+status has changed if it has changed.
+
+9
+00:00:30,270 --> 00:00:38,190
+So if I manage to get to this tab and click this button and the Web server has come up, I need to update
+
+10
+00:00:38,190 --> 00:00:39,690
+this table, which works now.
+
+11
+00:00:40,230 --> 00:00:45,780
+But I also need to push the fact that the host service status has changed over WebSocket, and that's
+
+12
+00:00:45,780 --> 00:00:46,230
+really easy.
+
+13
+00:00:46,440 --> 00:00:53,640
+So let's go back to our Edek and I'm looking at my roots file and the code that is called when you click
+
+14
+00:00:53,640 --> 00:00:56,300
+that check now button is this line right here.
+
+15
+00:00:56,730 --> 00:00:59,730
+So there's the URL and this is the handler test check.
+
+16
+00:00:59,850 --> 00:01:00,930
+So let's bring that up.
+
+17
+00:01:01,670 --> 00:01:04,050
+I actually left myself a comment right here.
+
+18
+00:01:04,740 --> 00:01:08,970
+Broadcast service status changed event, but the comments actually in the wrong place.
+
+19
+00:01:09,180 --> 00:01:09,720
+Let's move it.
+
+20
+00:01:10,380 --> 00:01:14,370
+And it's in the wrong place because I had that comment after we updated the database.
+
+21
+00:01:14,370 --> 00:01:21,060
+And I need to actually do that check after I test the service, but before I update the database.
+
+22
+00:01:21,390 --> 00:01:27,960
+And I do that just with a simple if statement, if new status, which I just got back by calling test
+
+23
+00:01:27,960 --> 00:01:30,120
+service for host in the variable here.
+
+24
+00:01:30,600 --> 00:01:37,350
+If that's not equal to the status of the host service, before I update the database, then I want to
+
+25
+00:01:37,350 --> 00:01:40,820
+broadcast the fact that the host service status has changed over WebSocket.
+
+26
+00:01:40,920 --> 00:01:46,560
+And now that we've extracted the code that does that to its own function, this becomes really trivial.
+
+27
+00:01:46,830 --> 00:01:50,340
+Repo dot push status changed event.
+
+28
+00:01:50,700 --> 00:01:56,100
+Give it the host, which I already have, the host service, which I already have and my new status.
+
+29
+00:01:56,920 --> 00:01:59,250
+OK, and that's literally all we have to do.
+
+30
+00:01:59,820 --> 00:02:03,060
+So let's stop the application, start it back up.
+
+31
+00:02:04,200 --> 00:02:08,130
+I'll go over and reload that page just to make sure that everything is working the way it's supposed
+
+32
+00:02:08,130 --> 00:02:08,520
+to be.
+
+33
+00:02:09,000 --> 00:02:10,410
+Go to my problems tab.
+
+34
+00:02:11,010 --> 00:02:17,010
+Now I'm going to go back and start the service that is being monitored here and get back to the screen
+
+35
+00:02:17,010 --> 00:02:20,460
+before ten seconds elapse and click this check now button.
+
+36
+00:02:20,460 --> 00:02:29,820
+So let me go back to my ID, switch to the web server and go run Main and very quickly go back and click
+
+37
+00:02:29,820 --> 00:02:30,510
+check now.
+
+38
+00:02:31,920 --> 00:02:37,650
+There it pushed it and everything worked as it's expected to let me just look at the log file to make
+
+39
+00:02:37,650 --> 00:02:40,350
+sure that there's no errors in there and there are not.
+
+40
+00:02:40,950 --> 00:02:42,420
+So that's all there is for that one.
+
+41
+00:02:42,840 --> 00:02:43,740
+Let's move on.

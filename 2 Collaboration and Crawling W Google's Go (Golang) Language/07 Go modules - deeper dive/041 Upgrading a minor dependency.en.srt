@@ -1,0 +1,259 @@
+1
+00:00:00,090 --> 00:00:08,640
+When upgrading a minor dependency there for whatever reasons go does not automatically update minor
+
+2
+00:00:08,640 --> 00:00:14,700
+and patch dependencies mostly just in case the creator of your module of your dependency.
+
+3
+00:00:14,700 --> 00:00:20,480
+If they made a mistake about which version number to upgrade go will not do that will not upgrade automatically
+
+4
+00:00:20,490 --> 00:00:28,640
+it requires you to explicitly upgrade the minor dependencies so so for example here.
+
+5
+00:00:28,650 --> 00:00:37,850
+If we do go list dash and all we can see all the dependencies direct and indirect of our object here
+
+6
+00:00:38,270 --> 00:00:41,990
+is that we can see we've got specific versions for quote and sampler.
+
+7
+00:00:42,030 --> 00:00:49,070
+We do not have a we're not using a tagged version for going to work slash X slash text.
+
+8
+00:00:49,380 --> 00:00:56,670
+So if we wish to upgrade to that we actually use go get so go get what previously before go modules
+
+9
+00:00:56,700 --> 00:01:00,250
+go get was download this code into your go path.
+
+10
+00:01:00,300 --> 00:01:07,670
+Now go get is if you're in a go module go get is how you adjust your versions in your code.
+
+11
+00:01:07,710 --> 00:01:16,260
+My file as as well as downloading and pre caching pre downloading the file so you can manually go into
+
+12
+00:01:16,260 --> 00:01:23,270
+the go out not file and edit it if you wish but you should probably avoid that when go get does it better.
+
+13
+00:01:23,490 --> 00:01:28,560
+So go get you can just say go get and you give the name of a version of a packet.
+
+14
+00:01:28,560 --> 00:01:39,070
+Module and that will add that as a that'll download it as normal and it will add it into your require
+
+15
+00:01:39,080 --> 00:01:40,850
+list here.
+
+16
+00:01:41,100 --> 00:01:45,330
+Note that it adds this as an indirect dependency.
+
+17
+00:01:45,330 --> 00:01:52,740
+This basically states to your module to go module your code is not directly importing it but it needs
+
+18
+00:01:52,800 --> 00:01:55,840
+to be this particular version to work anyway.
+
+19
+00:01:55,920 --> 00:02:03,660
+So our CIO quote or one of its sub dependencies is required requires text but you're saying you want
+
+20
+00:02:03,660 --> 00:02:05,750
+text to be this version at a minimum.
+
+21
+00:02:07,930 --> 00:02:10,780
+So it's now version 0 3 2.
+
+22
+00:02:12,800 --> 00:02:17,150
+You after you whenever you update your dependencies you always wanna make sure your code still works.
+
+23
+00:02:17,150 --> 00:02:23,200
+So if you've got proper go test setup that's it then you can just simply run your tests see our tests
+
+24
+00:02:23,200 --> 00:02:29,210
+still all pass which since we've got tests testing everything thoroughly that mean it's good enough
+
+25
+00:02:29,210 --> 00:02:37,160
+that we could probably push this code changes and if we run Go go list dash and all we can now see text
+
+26
+00:02:37,220 --> 00:02:43,490
+is now got a specific version on it and suddenly we need tools because apparently this version of text
+
+27
+00:02:43,610 --> 00:02:51,410
+did not require tools but this version text does require tools and then those are on Tag Versions.
+
+28
+00:02:51,410 --> 00:02:51,770
+Right.
+
+29
+00:02:51,890 --> 00:02:52,870
+So what does that mean.
+
+30
+00:02:52,880 --> 00:03:00,830
+It's on tag version there's no it's v 0 0 0 and then some sort of date and a hash behind that time stamp
+
+31
+00:03:00,830 --> 00:03:07,610
+date contact version so that would be just a comment at that repo at some moment in time but no version
+
+32
+00:03:07,610 --> 00:03:08,830
+number was assigned to it.
+
+33
+00:03:08,900 --> 00:03:09,440
+Correct.
+
+34
+00:03:09,440 --> 00:03:17,770
+And so they they specifically designed the this to be a date so that a newer commit would be.
+
+35
+00:03:17,820 --> 00:03:21,830
+It could easily tell a different difference a newer and an older tag to commit.
+
+36
+00:03:21,830 --> 00:03:28,790
+So even if somebody is not using versions in their code base there or using modules or versions at all
+
+37
+00:03:29,150 --> 00:03:36,020
+and you're pulling that code and it still is a way to identify that unique comment for GitHub at least
+
+38
+00:03:36,350 --> 00:03:41,340
+maybe other places to go like this in general this is getting getting general has all this features
+
+39
+00:03:41,390 --> 00:03:43,630
+isn't to get it I think I got it.
+
+40
+00:03:44,670 --> 00:03:50,960
+So there will possibly be other slight changes if it's if it's through SBN or some other version control
+
+41
+00:03:50,960 --> 00:03:59,590
+software but since gets the most common and use and generally what go use in general this is all we
+
+42
+00:03:59,590 --> 00:04:01,070
+did show as an example.
+
+43
+00:04:01,180 --> 00:04:08,190
+It's it's a it's untapped versions they stick a v 0 0 0 so if a new if an actual version comes in later
+
+44
+00:04:08,370 --> 00:04:10,840
+that will immediately register as being greater.
+
+45
+00:04:10,850 --> 00:04:11,560
+Yeah.
+
+46
+00:04:11,850 --> 00:04:13,160
+Then after that they put the date.
+
+47
+00:04:13,260 --> 00:04:17,640
+So if there's if you could try to compare the dirt stream to different commits it can check the date
+
+48
+00:04:18,000 --> 00:04:23,210
+differences to see which one's newer and then some unique hash.
+
+49
+00:04:23,250 --> 00:04:27,550
+I'm not actually sure what's this what this number actually comes from.
+
+50
+00:04:27,630 --> 00:04:30,270
+I don't think it's the commit number.
+
+51
+00:04:31,600 --> 00:04:37,440
+All right that's fine but if it's some value so you shouldn't have to deal with it you can just go get
+
+52
+00:04:38,310 --> 00:04:41,080
+your stuff yesterday.
+
+53
+00:04:41,150 --> 00:04:44,360
+Now you can see in our go mod we now have that version.
+
+54
+00:04:44,460 --> 00:04:53,220
+So if there was some update to two texts that had another version higher like 0 0 3 3 then getting that
+
+55
+00:04:53,220 --> 00:04:58,200
+would just be again just run go get on that package and that will just immediately go straight again
+
+56
+00:04:58,200 --> 00:04:59,070
+to the latest.
+
+57
+00:04:59,070 --> 00:05:06,460
+Tagged or you'll go to the latest version and following that those rules of latest tagged state release
+
+58
+00:05:06,580 --> 00:05:10,660
+latest tagged prerelease and then tagged latest Yeah.
+
+59
+00:05:10,690 --> 00:05:17,400
+So we just got the latest version so we just said hey bring down the latest version and and so brought
+
+60
+00:05:17,400 --> 00:05:23,210
+us the latest in the next video we're gonna see how to specify an exact version and so we'll see that
+
+61
+00:05:23,300 --> 00:05:24,160
+next video.
+
+62
+00:05:24,170 --> 00:05:25,620
+Anything more to add to this one.
+
+63
+00:05:25,650 --> 00:05:26,010
+No.
+
+64
+00:05:26,330 --> 00:05:26,700
+All right.
+
+65
+00:05:26,720 --> 00:05:27,670
+See in the next video.

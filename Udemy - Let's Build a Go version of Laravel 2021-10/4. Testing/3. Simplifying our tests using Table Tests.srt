@@ -1,0 +1,507 @@
+1
+00:00:01,000 --> 00:00:02,500
+So we're coming along with her tests.
+
+2
+00:00:02,740 --> 00:00:09,700
+But if you look at the in the render underscored test, don't go file inside the render folder inside
+
+3
+00:00:09,700 --> 00:00:10,870
+the Celebrity House package.
+
+4
+00:00:11,500 --> 00:00:13,950
+This test render underscore page function.
+
+5
+00:00:13,960 --> 00:00:14,980
+It's a bit awkward.
+
+6
+00:00:15,100 --> 00:00:19,990
+We start the function, then we test one thing, then we test another, then we test another, and this
+
+7
+00:00:19,990 --> 00:00:21,430
+will get long over time.
+
+8
+00:00:22,240 --> 00:00:23,230
+So let's improve this.
+
+9
+00:00:23,320 --> 00:00:28,150
+Let's take advantage of a really common convention in the go world known as table tests, and they're
+
+10
+00:00:28,150 --> 00:00:29,350
+relatively easy to use.
+
+11
+00:00:29,440 --> 00:00:34,420
+So what I'm going to do is right here just before this test render page function, I'm going to create
+
+12
+00:00:34,420 --> 00:00:41,260
+a variable and I will call it page data page because I'm testing the page function and data because
+
+13
+00:00:41,260 --> 00:00:46,000
+it's data for the test and it will be a slice of struct.
+
+14
+00:00:47,230 --> 00:00:50,710
+And the members of that struct will be name, which is a string.
+
+15
+00:00:50,710 --> 00:00:54,520
+And that's the name of the test, just to name that makes it meaningful to me.
+
+16
+00:00:54,520 --> 00:00:56,500
+So I know I know which test failed.
+
+17
+00:00:56,500 --> 00:01:02,340
+If something goes wrong and then we'll have the render render URL, which is also a string.
+
+18
+00:01:02,350 --> 00:01:06,250
+And of course, that will be go or jet or an empty string or something else.
+
+19
+00:01:07,270 --> 00:01:14,560
+Then what template should the test run when we run a given test and then also is a string, then we'll
+
+20
+00:01:14,560 --> 00:01:18,430
+have is there an error expected when I run this test?
+
+21
+00:01:18,430 --> 00:01:20,080
+Should error be nil or not?
+
+22
+00:01:20,230 --> 00:01:21,160
+So that's a Boolean.
+
+23
+00:01:22,270 --> 00:01:27,070
+And finally, what error message do we want to display, which will be a string?
+
+24
+00:01:27,580 --> 00:01:32,470
+OK, now we've defined that struct, let's populated in one step.
+
+25
+00:01:32,650 --> 00:01:35,950
+So each entry here will be an individual test.
+
+26
+00:01:36,310 --> 00:01:39,910
+So the first one will be just test to go pitch test rendering a go page.
+
+27
+00:01:40,060 --> 00:01:41,140
+And that's just my name.
+
+28
+00:01:41,890 --> 00:01:43,050
+What renderer do we use?
+
+29
+00:01:43,060 --> 00:01:44,170
+Well, obviously go.
+
+30
+00:01:44,740 --> 00:01:46,120
+What template should we render?
+
+31
+00:01:46,150 --> 00:01:49,390
+Well, the only one we have is home, so home seems like a good one.
+
+32
+00:01:49,780 --> 00:01:50,950
+Do we expect an error?
+
+33
+00:01:50,980 --> 00:01:51,760
+No, we don't.
+
+34
+00:01:51,940 --> 00:01:52,640
+So false.
+
+35
+00:01:53,320 --> 00:01:55,360
+And what should the error message been?
+
+36
+00:01:55,360 --> 00:01:57,460
+Say error rendering.
+
+37
+00:01:57,640 --> 00:01:58,900
+Go template.
+
+38
+00:02:00,430 --> 00:02:01,900
+So there's our first test.
+
+39
+00:02:02,500 --> 00:02:09,430
+Now we can duplicate this and say go page underscore no template.
+
+40
+00:02:10,330 --> 00:02:14,920
+So this will be the test where we try to render a go page, a go template that doesn't exist.
+
+41
+00:02:15,340 --> 00:02:17,140
+So again, a render will be go and.
+
+42
+00:02:18,730 --> 00:02:24,000
+We're not going to try to render the home page will render no dash file something that doesn't exist.
+
+43
+00:02:24,070 --> 00:02:25,390
+And do we expect an error?
+
+44
+00:02:25,450 --> 00:02:26,680
+Well, in this case, true.
+
+45
+00:02:29,300 --> 00:02:44,120
+And now let's change this to no error rendering non-existent template when one is expected now to save
+
+46
+00:02:44,120 --> 00:02:44,870
+a little time.
+
+47
+00:02:45,080 --> 00:02:50,490
+Our next two tests following the logic we have right now would be exactly the same thing.
+
+48
+00:02:52,760 --> 00:02:53,870
+But for jet templates.
+
+49
+00:02:54,020 --> 00:03:05,540
+So jet page and the render is just an error rendering jet template and then jet page.
+
+50
+00:03:06,830 --> 00:03:07,670
+No template.
+
+51
+00:03:08,570 --> 00:03:09,650
+The renderers jet.
+
+52
+00:03:11,420 --> 00:03:15,440
+We change this to nonexistent jet template.
+
+53
+00:03:16,820 --> 00:03:19,070
+And I'll put the word go up here just to be consistent.
+
+54
+00:03:20,690 --> 00:03:26,690
+Now our last one and I'll just duplicate this line would be rendering with an invalid renderer.
+
+55
+00:03:26,690 --> 00:03:30,560
+So invalid render engine.
+
+56
+00:03:31,550 --> 00:03:33,160
+And we'll make this fool.
+
+57
+00:03:33,680 --> 00:03:38,500
+It could be an empty string, but Fu does the same trick and we make sure this is an actual template.
+
+58
+00:03:38,540 --> 00:03:41,570
+Stay home and we'll change the error.
+
+59
+00:03:41,810 --> 00:03:49,580
+We do expect an error, so we want a true and we'll change this to no error
+
+60
+00:03:53,270 --> 00:03:56,420
+rendering with non-existent
+
+61
+00:03:59,120 --> 00:04:00,230
+template engine.
+
+62
+00:04:02,630 --> 00:04:04,780
+So now we have this data and we're not using it.
+
+63
+00:04:04,790 --> 00:04:06,980
+So let's just come down here inside.
+
+64
+00:04:07,340 --> 00:04:09,470
+Test, render underscore page.
+
+65
+00:04:09,830 --> 00:04:10,630
+And let's use that.
+
+66
+00:04:10,640 --> 00:04:14,660
+So I'll just give myself some blank lines because most of that's going to get deleted before too long.
+
+67
+00:04:15,290 --> 00:04:17,350
+What we do here is a for loop for.
+
+68
+00:04:17,450 --> 00:04:21,440
+We don't care about the index, but we do care about the current test and I'm going to call it E!
+
+69
+00:04:22,130 --> 00:04:24,450
+Is equal to range page data.
+
+70
+00:04:27,800 --> 00:04:30,290
+Now inside of this, what do we want to do?
+
+71
+00:04:30,320 --> 00:04:34,610
+Well, we still need a renderer and we still need a request and a response.
+
+72
+00:04:34,670 --> 00:04:41,510
+So I'll just cut all of this and paste it in here and fix it.
+
+73
+00:04:42,410 --> 00:04:43,760
+So let's move this over.
+
+74
+00:04:49,320 --> 00:04:54,990
+So this line can stay the same, we don't care what the URL is down here, we get a recorder, that's
+
+75
+00:04:54,990 --> 00:04:55,240
+good.
+
+76
+00:04:55,260 --> 00:04:59,910
+Our test render is not hard coded to go and that becomes E Dot renderer.
+
+77
+00:05:01,230 --> 00:05:06,600
+OK, so now we have our request, our response and our celerity variable set up.
+
+78
+00:05:06,990 --> 00:05:08,610
+So what do we want to do next?
+
+79
+00:05:09,300 --> 00:05:19,860
+Well, right here, let's just cut this a cut and paste because we do in fact, want to call the page
+
+80
+00:05:19,860 --> 00:05:21,240
+on the test, render a variable.
+
+81
+00:05:21,240 --> 00:05:23,040
+We want and we want to call the function page.
+
+82
+00:05:23,340 --> 00:05:26,550
+But this becomes its template.
+
+83
+00:05:27,960 --> 00:05:31,920
+And down here, we can't say if error is not equal to nil, that doesn't make any sense.
+
+84
+00:05:31,920 --> 00:05:32,850
+So let's delete that.
+
+85
+00:05:33,540 --> 00:05:40,260
+Instead, let's say if either error expected that we'll do one thing for expecting to get an error else,
+
+86
+00:05:40,560 --> 00:05:41,430
+we'll do something else.
+
+87
+00:05:42,180 --> 00:05:48,420
+And if we're expecting an error but don't get one, then we say if error is equal to nil.
+
+88
+00:05:49,680 --> 00:05:51,420
+And that's the condition where our test fails.
+
+89
+00:05:51,630 --> 00:05:57,390
+So we can just say T-Dog error and I'll use error f because I use a format string and I'll just say
+
+90
+00:05:57,630 --> 00:06:08,460
+string colon, space, string, colon space string, and I'll replace those with a name, the name of
+
+91
+00:06:08,460 --> 00:06:08,990
+the test.
+
+92
+00:06:09,000 --> 00:06:14,310
+So I know what test failed e dot error message, whatever error message should be supplied.
+
+93
+00:06:14,580 --> 00:06:18,180
+And then lastly, error dot error, which is a string.
+
+94
+00:06:18,570 --> 00:06:18,900
+OK.
+
+95
+00:06:19,860 --> 00:06:21,560
+And down here, it's almost the same.
+
+96
+00:06:21,570 --> 00:06:24,270
+Let me copy this and paste it in here.
+
+97
+00:06:24,570 --> 00:06:27,300
+But the difference is if error is not equal to nil.
+
+98
+00:06:29,280 --> 00:06:31,680
+So we're not expecting an error, but we get one.
+
+99
+00:06:31,800 --> 00:06:36,750
+And of course, we don't care about this and we don't care about this.
+
+100
+00:06:41,040 --> 00:06:42,090
+So let's see if we get this right.
+
+101
+00:06:42,150 --> 00:06:43,500
+Sometimes I get things backwards.
+
+102
+00:06:44,400 --> 00:06:47,580
+If we expect an error, but we don't get one.
+
+103
+00:06:48,000 --> 00:06:49,050
+Yeah, I got those backwards.
+
+104
+00:06:49,470 --> 00:06:50,250
+I always do that.
+
+105
+00:06:50,280 --> 00:06:59,160
+Let me cut this and paste that in here and cut this and paste it in here.
+
+106
+00:06:59,310 --> 00:07:04,530
+That's better because if you think it through logically, if error is equal to nil, then there's no
+
+107
+00:07:04,530 --> 00:07:05,700
+error to display.
+
+108
+00:07:05,790 --> 00:07:09,180
+And if error is not equal to nil, then there is an error to display.
+
+109
+00:07:10,050 --> 00:07:18,180
+So with that one change, we can get rid of all of this and format things just to make things a little
+
+110
+00:07:18,180 --> 00:07:18,690
+cleaner.
+
+111
+00:07:19,110 --> 00:07:22,350
+And you can see this is a lot less code.
+
+112
+00:07:22,620 --> 00:07:27,270
+And the nice thing is, of course, if I want to add additional test cases, I just add them up here
+
+113
+00:07:27,270 --> 00:07:31,650
+to my data variable to my page data variable and they automatically run.
+
+114
+00:07:31,830 --> 00:07:34,110
+So let's make sure we got this right.
+
+115
+00:07:34,320 --> 00:07:40,350
+Let's open our terminal and go into render and type go test dot.
+
+116
+00:07:42,680 --> 00:07:46,140
+And everything is fine, and let's make sure it's going to fail.
+
+117
+00:07:46,160 --> 00:07:49,340
+So let me change this to say.
+
+118
+00:07:51,020 --> 00:07:56,030
+I'll make this one home, too, and run the test again, and this time it should fail and give me a
+
+119
+00:07:56,030 --> 00:07:56,870
+meaningful message.
+
+120
+00:07:59,240 --> 00:08:03,930
+And it does render test go, so it says go page error rendering, go template.
+
+121
+00:08:04,250 --> 00:08:07,080
+And it says no such file or directory perfect.
+
+122
+00:08:07,150 --> 00:08:08,320
+So let's get rid of that too.
+
+123
+00:08:08,330 --> 00:08:09,710
+So we don't break our test.
+
+124
+00:08:10,970 --> 00:08:14,530
+And as you can see, table tests make your life ever so much easier.
+
+125
+00:08:14,540 --> 00:08:16,830
+You wind up with easier to read tests.
+
+126
+00:08:16,850 --> 00:08:21,150
+It's easier to add, modify or delete individual test cases.
+
+127
+00:08:21,440 --> 00:08:24,710
+And it just takes up less room on the screen, which is always a good thing.

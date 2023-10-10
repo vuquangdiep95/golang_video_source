@@ -1,0 +1,531 @@
+1
+00:00:00,240 --> 00:00:05,550
+Vì vậy, chúng tôi sẽ trình bày trong video này là chúng tôi sẽ đánh chìm máy tính của mình mã của chúng tôi và chúng tôi chỉ muốn
+
+2
+00:00:05,550 --> 00:00:09,200
+để tiếp tục chứng minh làm việc trên một dự án thực tế.
+
+3
+00:00:09,210 --> 00:00:12,180
+Và điều có thể xảy ra là cơ sở mã di chuyển về phía trước.
+
+4
+00:00:12,180 --> 00:00:17,130
+Vì vậy, bạn đã có cơ sở mã chính và sau đó bạn có thể tách nó ra và bạn có thể có các bản sao
+
+5
+00:00:17,130 --> 00:00:23,160
+từ cơ sở chính hoặc nhân bản từ ngã ba và chúng tôi chỉ muốn cho thấy điều đó xảy ra như thế nào bởi vì cả hai chúng tôi
+
+6
+00:00:23,160 --> 00:00:24,570
+làm việc trên các giải pháp.
+
+7
+00:00:24,780 --> 00:00:31,090
+Và vì vậy khi cả hai chúng tôi quay lại với nhau vào chiều nay, tôi đã có cơ sở mã này ngay tại đây, nơi tôi không có một
+
+8
+00:00:31,090 --> 00:00:32,170
+hai ba.
+
+9
+00:00:32,340 --> 00:00:37,380
+Sau đó, trên máy tính của Daniel và hiển thị cơ sở mã của bạn có máy tính của Daniel.
+
+10
+00:00:37,460 --> 00:00:40,140
+Anh ấy đã không một hai ba rồi quay lại.
+
+11
+00:00:40,140 --> 00:00:45,300
+Và sau đó anh ấy tạo một thư mục 0 0 4 scrape rồi quay lại máy tính của tôi.
+
+12
+00:00:45,310 --> 00:00:50,740
+Quay trở lại máy tính của tôi, ban đầu chúng tôi có 0 0 4 Krall.
+
+13
+00:00:50,760 --> 00:00:52,040
+Vì vậy, tôi đổi tên này.
+
+14
+00:00:52,050 --> 00:00:54,670
+Chúng tôi chỉ ngồi với nhau và thích nơi bạn ra ngoài.
+
+15
+00:00:54,920 --> 00:00:56,510
+Và và chúng tôi đã thấy điều đó.
+
+16
+00:00:56,530 --> 00:00:58,980
+Vì vậy, hãy để tôi đổi tên của tôi thành 0 0 5.
+
+17
+00:00:59,030 --> 00:01:06,360
+Kroll Todd và sau đó là Daniel sau khi tôi làm điều đó, Daniel đã tiếp tục và đẩy mã của mình vào kho lưu trữ chính.
+
+18
+00:01:06,420 --> 00:01:11,770
+Vì vậy, bạn không làm việc trên một fork off repo chính trong repo chính mà chúng ta đang nói đến ở đây là
+
+19
+00:01:13,080 --> 00:01:19,470
+là get have going to Levin going project và tôi sẽ chỉ ra điều đó.
+
+20
+00:01:19,470 --> 00:01:23,010
+Vì vậy, bạn đã có một công cụ bận rộn, bạn có hình ảnh trực quan về nó.
+
+21
+00:01:23,040 --> 00:01:27,180
+Vì vậy, đây là repo chính mà bạn không có nhánh rẽ nào mà bạn đang thực hiện thiết kế của mình
+
+22
+00:01:27,180 --> 00:01:28,800
+một bản sao vào máy của bạn.
+
+23
+00:01:28,800 --> 00:01:29,340
+Chính xác.
+
+24
+00:01:29,350 --> 00:01:29,600
+Phải.
+
+25
+00:01:29,610 --> 00:01:30,950
+Và với tôi cũng vậy.
+
+26
+00:01:31,050 --> 00:01:35,490
+Và vì vậy anh ấy đã làm điều đó và sau đó anh ấy đẩy và điều đó thật ngọt ngào.
+
+27
+00:01:35,520 --> 00:01:36,920
+Vì vậy, bây giờ tôi sẽ kéo.
+
+28
+00:01:37,020 --> 00:01:44,400
+Và vì vậy hãy để tôi mở thiết bị đầu cuối của mình và tôi thích điều này chỉ vì nó có độ tương phản cao hơn một chút
+
+29
+00:01:44,490 --> 00:01:47,910
+và văn bản lớn hơn thiết bị đầu cuối nhỏ của tôi ở đây.
+
+30
+00:01:48,000 --> 00:01:51,990
+Và vì vậy tôi cần xem những thứ này trong tài liệu và sau đó bắt đầu đặt dự án.
+
+31
+00:01:52,230 --> 00:01:57,760
+Và bây giờ tôi đang ở trong đó, tôi có thể thấy chỉ cần đảm bảo rằng tôi có đúng thư mục trong đó.
+
+32
+00:01:57,930 --> 00:01:59,910
+Và vì vậy tôi có thể làm một get pull.
+
+33
+00:01:59,910 --> 00:02:04,440
+Và khi tôi thực hiện thao tác kéo, nó sẽ gửi cho tôi một thông báo cho biết cục bộ của bạn thay đổi các tệp sau
+
+34
+00:02:04,440 --> 00:02:06,090
+sẽ được ghi đè lên bởi nổi lên.
+
+35
+00:02:06,090 --> 00:02:10,560
+Vui lòng cam kết các thay đổi của bạn hoặc cất chúng trước khi bạn hợp nhất.
+
+36
+00:02:10,560 --> 00:02:15,840
+Vì vậy, bạn cần phải cam kết những điều này trong trường hợp nếu tôi cam kết và sau đó kéo tôi sẽ có xung đột
+
+37
+00:02:15,840 --> 00:02:22,830
+viết xung đột hợp nhất bởi vì các tệp của tôi phát điên lên Sam Tôi đang nói đây là những thứ này và sau đó Daniel nói ở đây
+
+38
+00:02:22,830 --> 00:02:26,990
+là những thứ này và sau đó đưa cho tôi như thể chúng là những cách khác nhau để bạn giải quyết chúng và sau đó bạn biết điều đó sẽ xảy ra
+
+39
+00:02:26,990 --> 00:02:32,230
+để yêu cầu tôi sắp xếp giải quyết sự khác biệt theo cách thủ công và sau đó nói đây là giao diện của nó.
+
+40
+00:02:32,250 --> 00:02:33,750
+Tôi không muốn phải làm điều đó.
+
+41
+00:02:34,230 --> 00:02:37,540
+Tôi không muốn phải giải quyết sự khác biệt theo cách thủ công.
+
+42
+00:02:37,550 --> 00:02:42,060
+Vì vậy, giải pháp thay thế khác sẽ là cất giấu.
+
+43
+00:02:42,240 --> 00:02:47,760
+Và sau đó là một sự thay thế khác nhưng tại sao bạn không cho chúng tôi biết một chút về ý nghĩa của việc lưu trữ
+
+44
+00:02:47,760 --> 00:02:56,310
+và những gì liên quan bởi vì tôi đã nói chuyện với bạn nhận được kho lưu trữ chỉ là một chồng các thay đổi không được cam kết
+
+45
+00:02:56,310 --> 00:02:59,960
+mà bạn có thể, bạn có thể đẩy các thay đổi của mình tới.
+
+46
+00:02:59,970 --> 00:03:05,670
+Vì vậy, ngay bây giờ bạn có một số thay đổi chưa được cam kết nên bạn có thể sử dụng get stash để
+
+47
+00:03:05,670 --> 00:03:12,030
+đẩy tất cả các thay đổi của bạn mà bạn chưa cam kết vào kho nhận ở cấp dưới cùng hoặc ở cấp
+
+48
+00:03:12,030 --> 00:03:14,150
+trên cùng của ngăn xếp hiện tại.
+
+49
+00:03:14,360 --> 00:03:18,510
+Và đó là một ngăn xếp bởi vì bạn có thể bạn có thể bạn có thể xếp chồng lên trên đó và sau đó xếp chồng lên trên đó.
+
+50
+00:03:18,510 --> 00:03:24,660
+Và trên hết nếu bạn muốn và sau đó khi bạn có thể chuyển sang nhánh khác và tạm thời
+
+51
+00:03:24,660 --> 00:03:29,730
+làm việc của bạn ở đó và sau đó bạn có thể quay lại chi nhánh ban đầu của mình và lấy lại mã của mình
+
+52
+00:03:29,730 --> 00:03:35,370
+bash văn phòng hoặc bất cứ điều gì, đó là một cách tốt, chỉ cần tạm thời nói OK, tôi không cần phải thực hiện những điều này
+
+53
+00:03:35,370 --> 00:03:41,610
+nhưng tôi chỉ muốn loại bỏ chúng khỏi máy của mình để tôi có thể đi làm ở nơi khác
+
+54
+00:03:41,610 --> 00:03:48,310
+nếu cần, tôi thậm chí sẽ áp dụng cho tình huống này, nó thậm chí sẽ là thứ mà tôi nghĩ đến như
+
+55
+00:03:48,310 --> 00:03:56,080
+một giải pháp cho tình huống mà tôi thấy máy tính của mình liên quan đến nguồn gốc chính trong trường hợp này hoặc
+
+56
+00:03:56,080 --> 00:04:00,010
+khách rằng nếu bạn đã cất nó đi thì các tệp của bạn sẽ không còn bị thay đổi nữa.
+
+57
+00:04:00,010 --> 00:04:05,740
+Và vì vậy, bạn có thể lấy số tiền hiện đại đó nhưng sau đó bạn sẽ hợp nhất các xung đột sẽ xảy ra khi bạn bật ra
+
+58
+00:04:05,740 --> 00:04:12,640
+kho nhưng nó sẽ không yêu cầu hợp nhất cam kết để giải quyết vì bạn chưa bao giờ thực sự cam kết
+
+59
+00:04:12,640 --> 00:04:18,940
+của bạn, bạn là một phần của những thay đổi, vì vậy nó chỉ là một xung đột hợp nhất vào thời điểm đó và sau đó tôi sẽ có một cách thủ công
+
+60
+00:04:18,940 --> 00:04:20,250
+để giải quyết nó tại thời điểm đó.
+
+61
+00:04:20,290 --> 00:04:20,990
+Đúng.
+
+62
+00:04:21,140 --> 00:04:25,290
+Vì vậy, tôi vẫn phải giải quyết thủ công, đó là điều tôi muốn tránh.
+
+63
+00:04:25,750 --> 00:04:28,530
+Vì vậy, tôi có thể cất công cụ và sau đó không bao giờ xử lý nó.
+
+64
+00:04:28,540 --> 00:04:31,040
+Đó là loại giống như nhà để xe bẩn của bộ.
+
+65
+00:04:31,510 --> 00:04:32,210
+Tuyệt.
+
+66
+00:04:32,260 --> 00:04:36,640
+Và ở đó và có một lệnh thả kho của bạn vào mọi thứ hiện có trong kho chỉ
+
+67
+00:04:36,640 --> 00:04:37,390
+biến đi.
+
+68
+00:04:37,510 --> 00:04:40,790
+Vì vậy, tôi có thể cất nó đi và sau đó chỉ nói rằng hãy loại bỏ tất cả những thứ đó.
+
+69
+00:04:40,930 --> 00:04:42,970
+Về cơ bản giống như ném nó đi.
+
+70
+00:04:43,060 --> 00:04:43,910
+Đúng.
+
+71
+00:04:43,960 --> 00:04:44,370
+Được rồi.
+
+72
+00:04:44,410 --> 00:04:51,700
+Chà, điều đó nghe có vẻ nhiều hơn là tôi muốn tham gia vào ý tưởng khác mà tôi đã có giống như Vâng, hãy để tôi vì
+
+73
+00:04:51,700 --> 00:04:58,930
+Tôi biết rằng tôi không thực sự cần theo dõi go crazy and go some bởi vì những gì tôi đã thay đổi không phải là
+
+74
+00:04:58,990 --> 00:05:06,580
+bất cứ thứ gì giống như mã tôi đã thêm vào thư mục của mình không phải là bất kỳ thứ gì quan trọng hoặc tôi cần
+
+75
+00:05:06,580 --> 00:05:13,240
+có một bản ghi về giải pháp của tôi là thực hiện kiểm tra và điều này sẽ xảy ra. Tôi sẽ
+
+76
+00:05:13,240 --> 00:05:19,510
+để kiểm tra hai tệp từ get hub và về cơ bản ghi đè lên mod go của tôi và chuyển một số tệp
+
+77
+00:05:19,510 --> 00:05:26,410
+cái này được kiểm tra và sau đó gạch ngang và tôi sẽ thêm tệp đó vào một số tệp và sau đó chuyển sang tệp mod
+
+78
+00:05:26,770 --> 00:05:31,390
+tất cả điều đó có đúng về mặt cú pháp đối với bạn không.
+
+79
+00:05:31,450 --> 00:05:32,140
+Đúng.
+
+80
+00:05:32,260 --> 00:05:38,230
+Và dấu gạch ngang có nghĩa là gì trong đó bởi vì nó giống như một lá cờ nhưng không có lá cờ nào giống như
+
+81
+00:05:38,230 --> 00:05:38,930
+những gì được nêu ra.
+
+82
+00:05:39,090 --> 00:05:39,420
+Vâng.
+
+83
+00:05:39,430 --> 00:05:46,690
+Nhận được nó có một quy ước rằng một số lệnh mong đợi các tệp như get thêm trong một số lệnh mong đợi
+
+84
+00:05:46,720 --> 00:05:48,030
+những thứ khác như Nhận thanh toán.
+
+85
+00:05:48,040 --> 00:05:53,470
+Thông thường nó dành cho các chi nhánh nhưng nếu bạn cần nếu một số trong số họ có thể làm cả hai.
+
+86
+00:05:53,920 --> 00:05:59,710
+Vì vậy, tôi nhận được kiểm tra hoạt động cho cả tệp và cho các nhánh và loại dấu gạch ngang cho phép bạn lật nó
+
+87
+00:05:59,710 --> 00:06:06,730
+sang các chế độ khác, vì vậy hãy kiểm tra các giá trị mặc định của nhánh trông đợi các nhánh hoặc số cam kết
+
+88
+00:06:06,760 --> 00:06:12,910
+hoặc một thẻ nhưng bạn có thể sử dụng dấu gạch ngang gạch ngang, chỉ cần nói OK, thay vào đó, tôi sẽ cung cấp cho bạn các tệp để kiểm tra
+
+89
+00:06:12,910 --> 00:06:17,300
+from get in that like a đi bác sĩ quên nó đi.
+
+90
+00:06:17,470 --> 00:06:23,620
+Giống như tôi đã nhận được trợ giúp kiểm tra, tôi sẽ đến, vâng, vận động viên về việc kiểm tra, vâng, vâng,
+
+91
+00:06:23,620 --> 00:06:29,590
+giúp kiểm tra nhận trợ giúp kiểm tra tôi tin rằng chúng tôi sẽ trả lời là không.
+
+92
+00:06:30,720 --> 00:06:31,190
+Hay không.
+
+93
+00:06:31,220 --> 00:06:32,150
+Nó sẽ được thôi.
+
+94
+00:06:32,170 --> 00:06:36,410
+Để được trợ giúp, hãy kiểm tra sau đó sẽ mở ra trong trình duyệt của bạn.
+
+95
+00:06:36,660 --> 00:06:38,410
+Thông tin về nhận được kiểm tra.
+
+96
+00:06:38,550 --> 00:06:48,030
+Với tất cả các đối số và mô tả có thể có của nó và do đó, hãy ra lệnh cho thứ dấu gạch ngang đó hãy
+
+97
+00:06:48,030 --> 00:06:55,770
+tìm thứ gạch ngang đó ở nơi nó đang đi vào lãnh thổ khám phá.
+
+98
+00:06:55,780 --> 00:07:02,920
+Hãy kiểm tra ở đây và tôi đã thấy đối số được kiểm tra dấu gạch ngang dấu gạch ngang Pascoe đối số phân rã hoặc ở đó
+
+99
+00:07:02,930 --> 00:07:09,950
+chỉ có một đối số được đưa ra và nó không phải là dấu gạch ngang để kiểm tra ABC khi đối số vừa hợp lệ
+
+100
+00:07:09,990 --> 00:07:16,300
+Tre ish, ví dụ: tập tin hoặc thư mục tồn tại, một cái thường yêu cầu bạn phân rã vì kiểm tra một
+
+101
+00:07:16,300 --> 00:07:22,300
+nhánh là hoạt động rất phổ biến tuy nhiên có thể kiểm tra ABC lấy ABC làm cây ish trong những tình huống như vậy có được
+
+102
+00:07:22,440 --> 00:07:25,960
+out pass back nếu bạn muốn kiểm tra những pass này ra khỏi chỉ mục.
+
+103
+00:07:26,480 --> 00:07:34,930
+Và vì vậy tôi chỉ đang kiểm tra con đường hay còn gọi là kết thúc sau một thời gian bạn thấy một cấu trúc cây ish là một số
+
+104
+00:07:34,990 --> 00:07:39,780
+là một cam kết băm tên nhánh hoặc tên thẻ.
+
+105
+00:07:40,900 --> 00:07:48,970
+Tôi nghĩ về một cấu trúc cây ish giống như cây thư mục nơi chúng ta có các thư mục và bên dưới đó là
+
+106
+00:07:49,130 --> 00:07:54,740
+biết nhiều thư mục hơn và nhiều thư mục hơn sẽ giống như cam kết giống như lịch sử là một cái cây lớn.
+
+107
+00:07:54,830 --> 00:08:02,430
+Vâng và do đó, một cuộc tấn công nhánh cam kết không hoặc thẻ hoặc tất cả các điểm trong cây đó trong lịch sử.
+
+108
+00:08:02,840 --> 00:08:03,660
+Vâng.
+
+109
+00:08:04,090 --> 00:08:04,370
+Được rồi.
+
+110
+00:08:04,390 --> 00:08:08,490
+Vì vậy, tôi sẽ thực hiện kiểm tra của mình, đi sửa đổi một số thứ và gỡ chúng xuống.
+
+111
+00:08:08,500 --> 00:08:15,310
+Và bây giờ nếu tôi nhận được cuộc thăm dò ý kiến, tôi sẽ có thể kéo xuống mà không gặp vấn đề gì và nếu tôi xem mã của mình
+
+112
+00:08:15,310 --> 00:08:21,640
+cơ sở Tôi đã có cơ sở mã của Daniel trong đó và sau đó tôi sẽ thêm vào. Tôi sẽ kéo
+
+113
+00:08:21,640 --> 00:08:33,840
+cái này và thả nó vào, sau đó tôi sẽ đổi tên cái này thành 0 3 để khớp với cách đặt tên của Daniel mà tôi đã làm 2 0.
+
+114
+00:08:33,840 --> 00:08:40,090
+Anh ấy đã làm 1 và tôi sẽ đặt nó là Todd đã thu thập thông tin và nhưng vì nó có tên là cạo ở trên nên chúng tôi sẽ loại bỏ
+
+115
+00:08:40,090 --> 00:08:45,850
+thu thập dữ liệu và chúng tôi sẽ chỉ thực hiện Todd và đây là loại công việc tôi đã làm và vì vậy chúng tôi sẽ xem qua
+
+116
+00:08:45,850 --> 00:08:55,910
+một vài video tiếp theo về cạo hay còn gọi là thu thập thông tin, điều thú vị là theo suy nghĩ của tôi, đó là
+
+117
+00:08:55,920 --> 00:09:05,680
+giống như bị miệt thị là từ xuất hiện trong đầu và hàm ý định nghĩa miệt thị là thể hiện sự khinh miệt
+
+118
+00:09:05,680 --> 00:09:09,820
+hoặc không tán thành một từ thể hiện sự khinh thường hoặc không tán thành.
+
+119
+00:09:09,880 --> 00:09:17,080
+Cũng không phải là một từ miệt thị mà còn là một từ khốn nạn, đó là một từ thú vị có chất lượng hoặc giá trị thấp hơn
+
+120
+00:09:17,080 --> 00:09:17,940
+hình thức ban đầu.
+
+121
+00:09:17,950 --> 00:09:24,220
+Điển hình là kết quả của việc bổ sung từ đó dùng để làm gì khi một từ diễn ra như thể tôi không thể nhớ chính xác.
+
+122
+00:09:24,400 --> 00:09:31,140
+Tôi không phải là một trăm phần trăm bạn biết từ mang nghĩa xấu theo thời gian.
+
+123
+00:09:31,170 --> 00:09:33,660
+Tôi không thể nghĩ về nó, bạn thân.
+
+124
+00:09:33,750 --> 00:09:34,350
+Làm thế nào vậy.
+
+125
+00:09:34,350 --> 00:09:37,090
+Bò và cạo gần như có tiếng xấu.
+
+126
+00:09:37,080 --> 00:09:43,320
+Giống như đây là điều bất chính mà mọi người làm nhưng có một cách hợp pháp để làm điều đó trong một số loại
+
+127
+00:09:43,320 --> 00:09:46,870
+đặc tính của Web.
+
+128
+00:09:46,890 --> 00:09:52,140
+Và vì vậy, bạn chỉ cần được anh ấy hỗ trợ xem các trang web khác nhau nói gì về cách bạn có thể truy cập trang web của họ
+
+129
+00:09:52,680 --> 00:09:59,970
+và nó cũng là nền tảng của các công cụ tìm kiếm lớn nhất và tốt nhất như thế về cơ bản Google sẽ
+
+130
+00:09:59,970 --> 00:10:07,440
+không tồn tại nếu chúng không thể thu thập dữ liệu và do đó, việc thu thập dữ liệu là một phần rất quan trọng của
+
+131
+00:10:07,440 --> 00:10:08,850
+trò chơi của Web.
+
+132
+00:10:08,850 --> 00:10:16,350
+Và vâng, chúng ta sẽ thấy rằng bạn có bất cứ thứ gì khác mà bạn muốn và tôi biết tôi đã làm nhưng tôi không thể nhớ
+
+133
+00:10:16,350 --> 00:10:20,950
+nó đã là gì hay sẽ chuyển động thế nào để các nàng xem video tiếp theo.

@@ -1,0 +1,376 @@
+1
+00:00:01,600 --> 00:00:06,820
+So before we can try out our new Web Deb file system, we obviously have to let celebrities know that
+
+2
+00:00:06,820 --> 00:00:07,810
+it exists.
+
+3
+00:00:08,170 --> 00:00:09,160
+So I'm back in the file.
+
+4
+00:00:09,160 --> 00:00:13,420
+Celebrities don't go in the Celebrity House package and near the bottom of that file.
+
+5
+00:00:13,420 --> 00:00:19,860
+We have this function, create file systems and we already have Mineo here and we have SFTP.
+
+6
+00:00:19,870 --> 00:00:23,290
+So let's add and I'll do so by copying this and modifying it.
+
+7
+00:00:23,950 --> 00:00:26,770
+Let's add our web to our system.
+
+8
+00:00:27,340 --> 00:00:34,060
+So again, we'll do a check here, and my simple check will be if the entry in the dot on file named
+
+9
+00:00:34,060 --> 00:00:35,590
+WebDAV Dot host.
+
+10
+00:00:35,770 --> 00:00:39,790
+If that's not equal to nothing, though, assume I'm going to be having a web dev file system.
+
+11
+00:00:40,690 --> 00:00:49,510
+So obviously I'm going to create a type web dev file systems dot WebDAV and I'll name the variable WebDAV.
+
+12
+00:00:51,640 --> 00:00:52,600
+The name this one.
+
+13
+00:00:52,720 --> 00:00:53,500
+WebDAV.
+
+14
+00:00:55,570 --> 00:00:58,420
+And give it the key web dev in all caps.
+
+15
+00:01:00,880 --> 00:01:03,250
+And that only has three required fields.
+
+16
+00:01:03,490 --> 00:01:10,600
+Port is part of host, so I just need to change this to Web Dev and the same thing for the next two
+
+17
+00:01:11,200 --> 00:01:17,950
+WebDAV host, WebDAV user and WebDAV Pass.
+
+18
+00:01:18,580 --> 00:01:20,950
+OK, so that's the first thing we have to do.
+
+19
+00:01:20,980 --> 00:01:26,440
+The second thing we have to do is to update the handlers in our Maya project that don't know about WebDAV
+
+20
+00:01:26,440 --> 00:01:28,120
+and right now delete from file system.
+
+21
+00:01:28,120 --> 00:01:34,990
+Does we did that in the last lecture, I think, but this one post upload to FS does not.
+
+22
+00:01:35,170 --> 00:01:38,890
+And this one's going to cause us a bit of grief, but I'll talk about that when we try that.
+
+23
+00:01:39,940 --> 00:01:49,570
+So let me paste that in here and modify this to say WebDAV and modify this to get the key WebDAV from
+
+24
+00:01:49,570 --> 00:01:57,130
+the map and cast it to the correct type, which is WebDAV file system web death.
+
+25
+00:01:57,580 --> 00:02:02,380
+OK, so that one's done, and I think the last one is listing the file system, which is up here somewhere.
+
+26
+00:02:02,530 --> 00:02:03,190
+Yeah, right here.
+
+27
+00:02:04,330 --> 00:02:11,590
+So we'll copy this one in the function named List EF-S and make sure you don't copy that closing curly
+
+28
+00:02:11,590 --> 00:02:15,220
+bracket or you'll have problems and we'll make this WebDAV
+
+29
+00:02:18,910 --> 00:02:22,060
+and make this web dev and this web dev.
+
+30
+00:02:22,990 --> 00:02:27,400
+And this one gets converted to WebDAV file system.
+
+31
+00:02:27,400 --> 00:02:28,180
+Dark Web Dev.
+
+32
+00:02:28,600 --> 00:02:28,990
+OK.
+
+33
+00:02:29,020 --> 00:02:30,160
+So those are the changes.
+
+34
+00:02:31,440 --> 00:02:35,550
+Now, make sure you have your Docker images running or the next steps won't work at all.
+
+35
+00:02:35,640 --> 00:02:36,630
+Then open your terminal.
+
+36
+00:02:38,540 --> 00:02:44,360
+Make sure you're in the right directory, the my app directory I am now, when I type make start, it's
+
+37
+00:02:44,360 --> 00:02:45,170
+going to work for me.
+
+38
+00:02:45,320 --> 00:02:50,300
+When you type it, it's probably going to give you an error message saying you need to go get the WebDAV
+
+39
+00:02:50,310 --> 00:02:53,270
+file system from whatever your calling your to project.
+
+40
+00:02:53,720 --> 00:02:59,510
+So just copy the go get command pasted into the terminal hit return and then type make start.
+
+41
+00:02:59,660 --> 00:03:00,710
+Mine should start up.
+
+42
+00:03:06,390 --> 00:03:06,960
+And it did.
+
+43
+00:03:07,650 --> 00:03:15,240
+So let's go over to our web browser and let's go to localhost four thousand or whatever reports you're
+
+44
+00:03:15,240 --> 00:03:15,900
+listening to.
+
+45
+00:03:17,220 --> 00:03:18,690
+And let's go to the file systems.
+
+46
+00:03:18,690 --> 00:03:21,480
+And first of all, let's try listing the files on the file system.
+
+47
+00:03:21,540 --> 00:03:23,550
+So let's make sure that minerals still works.
+
+48
+00:03:24,120 --> 00:03:24,780
+It does.
+
+49
+00:03:25,350 --> 00:03:28,980
+Let's try WebDAV and see what's up on the server there now.
+
+50
+00:03:29,730 --> 00:03:36,450
+And I currently have one file, and that should be exactly the same thing that I have on SFP, and I
+
+51
+00:03:36,450 --> 00:03:37,050
+work perfectly.
+
+52
+00:03:37,290 --> 00:03:40,170
+OK, so let's try deleting that using Web Dev.
+
+53
+00:03:40,500 --> 00:03:41,910
+So I'll list my web dev.
+
+54
+00:03:42,240 --> 00:03:43,380
+There's my, well, big.
+
+55
+00:03:43,500 --> 00:03:44,430
+I'll delete that.
+
+56
+00:03:47,090 --> 00:03:50,780
+And it's now gone, so that worked, so let's try uploading something.
+
+57
+00:03:50,900 --> 00:03:56,360
+And here's where we may run into a problem because Murphy's Law says if something can go wrong, it
+
+58
+00:03:56,360 --> 00:03:56,750
+will.
+
+59
+00:03:57,110 --> 00:04:02,420
+And in this case, it seems to be absolutely accurate because there are currently appears to be a bug
+
+60
+00:04:02,960 --> 00:04:10,280
+in either the SFTP go, the server we're connecting to or in the WebDAV client, because sometimes when
+
+61
+00:04:10,280 --> 00:04:17,450
+I upload to a web dev file system, sometimes I get an error 400, which isn't very helpful, but let's
+
+62
+00:04:17,450 --> 00:04:17,810
+try it.
+
+63
+00:04:18,529 --> 00:04:20,990
+I'll put up meta JPEG and see what happens.
+
+64
+00:04:21,920 --> 00:04:25,370
+And I got my error 400, and that's the only error it's giving me.
+
+65
+00:04:26,030 --> 00:04:33,920
+But if I log in to my SFP server using the username SFTP and the password password, I'm connecting
+
+66
+00:04:33,920 --> 00:04:37,340
+to localhost port 80 80 when I log in.
+
+67
+00:04:39,490 --> 00:04:40,300
+There's nothing there.
+
+68
+00:04:40,640 --> 00:04:41,480
+So let's go back.
+
+69
+00:04:41,500 --> 00:04:43,240
+Sometimes it works, and sometimes it doesn't.
+
+70
+00:04:44,300 --> 00:04:46,000
+Let's try choosing a different file.
+
+71
+00:04:47,180 --> 00:04:51,190
+Say, well, big and uploading that.
+
+72
+00:04:53,690 --> 00:04:54,200
+OK.
+
+73
+00:04:54,350 --> 00:04:56,750
+And now come back in here and refreshing this.
+
+74
+00:04:57,230 --> 00:04:57,920
+And there it is.
+
+75
+00:04:58,460 --> 00:05:03,140
+So there's a bug there right now, and what's happening is sometimes I'm getting an error back and sometimes
+
+76
+00:05:03,140 --> 00:05:03,650
+I'm not.
+
+77
+00:05:04,370 --> 00:05:09,620
+So for the purposes of this course, the easiest thing to do is simply wait for the fix to be applied
+
+78
+00:05:09,620 --> 00:05:11,540
+to either the client or the server.
+
+79
+00:05:11,540 --> 00:05:15,140
+But there is a bug there and it's one that apparently is being looked at.
+
+80
+00:05:15,590 --> 00:05:19,790
+So I'm not going to lose too much sleep about it because I know that I've written the code correctly.
+
+81
+00:05:20,300 --> 00:05:27,200
+And if you really want to make this work, you can simply go back to your code here and find the Post
+
+82
+00:05:27,200 --> 00:05:33,440
+Upload to FS Bid, which is down here.
+
+83
+00:05:33,590 --> 00:05:34,970
+Post Upload FS.
+
+84
+00:05:35,870 --> 00:05:39,120
+You could simply have this return, no error and comment out there.
+
+85
+00:05:39,530 --> 00:05:45,470
+So put a blank identifier there just the underscore and comment this out, and that would get you past
+
+86
+00:05:45,470 --> 00:05:50,000
+the bug that currently exists in my file system, but I don't think it's critical for our purposes.
+
+87
+00:05:50,360 --> 00:05:52,430
+We can simply wait for the bug to be fixed.
+
+88
+00:05:52,730 --> 00:05:57,190
+And chances are, most people are not going to be using WebDAV to put files up in any case.
+
+89
+00:05:57,200 --> 00:06:01,670
+And the reason I included it was just to show you how easy it can be to have multiple file systems.
+
+90
+00:06:02,060 --> 00:06:04,040
+So I'm going to let that one go for right now.
+
+91
+00:06:04,700 --> 00:06:10,370
+And when they've actually fixed the code for either the server or the client, I'll update this lecture.
+
+92
+00:06:10,520 --> 00:06:14,210
+But in the meantime, things seem to be working more or less as they should.
+
+93
+00:06:15,050 --> 00:06:15,440
+OK.
+
+94
+00:06:15,650 --> 00:06:22,520
+We'll move on in the next section to using Amazon's library for connecting to S3 buckets.
+

@@ -1,0 +1,431 @@
+1
+00:00:00,830 --> 00:00:05,630
+So last time we got our consumer pretty much ready to go, we think and I just want to go over this
+
+2
+00:00:05,630 --> 00:00:09,920
+one more time because I know this can be a little confusing if it's the first time you've worked with
+
+3
+00:00:09,920 --> 00:00:10,430
+channels.
+
+4
+00:00:11,360 --> 00:00:13,590
+So in this function pizzeria, okay.
+
+5
+00:00:13,730 --> 00:00:17,810
+And that's called from the main function way down here on line 135.
+
+6
+00:00:18,350 --> 00:00:22,820
+In this one, the very first thing we do is keep track of which pizza we're making and we initialize
+
+7
+00:00:22,820 --> 00:00:24,500
+the variable AI to zero.
+
+8
+00:00:24,710 --> 00:00:25,040
+Okay.
+
+9
+00:00:25,670 --> 00:00:30,740
+Then we have a for loop and that will go forever or until the quick channel receives something.
+
+10
+00:00:31,400 --> 00:00:32,360
+So what do we do?
+
+11
+00:00:32,390 --> 00:00:37,640
+We populate the new variable pizza order by calling the function.
+
+12
+00:00:37,640 --> 00:00:44,330
+Make pizza with the current value of I and that gives back a current pizza, a pointer to a pizza order.
+
+13
+00:00:45,110 --> 00:00:50,030
+And if we're actually making or we tried to make a pizza, then we actually have some value from that,
+
+14
+00:00:50,030 --> 00:00:56,660
+something that has the pizza number and it also has a message and it also has a success variable.
+
+15
+00:00:56,710 --> 00:00:57,070
+Okay.
+
+16
+00:00:59,080 --> 00:01:04,300
+So we checked to make sure if pizza current pizza is not equal to nil, which will probably it's impossible
+
+17
+00:01:04,300 --> 00:01:05,050
+for that to happen.
+
+18
+00:01:05,050 --> 00:01:08,770
+But I'm a belt and suspenders kind of guy, so I always put this kind of checking.
+
+19
+00:01:09,580 --> 00:01:18,100
+Then once I get that value back current pizza, I populate I with whatever current pizza, pizza, pizza
+
+20
+00:01:18,100 --> 00:01:18,820
+number set to.
+
+21
+00:01:18,820 --> 00:01:21,790
+And of course that's our ordered number the first time through.
+
+22
+00:01:21,790 --> 00:01:25,480
+That'll be one, the second time it'll be two, so on and so forth.
+
+23
+00:01:26,110 --> 00:01:27,880
+Then we have this select statement.
+
+24
+00:01:27,940 --> 00:01:28,150
+Okay?
+
+25
+00:01:28,210 --> 00:01:32,590
+And that was really at the heart of what I wanted to get at in this particular exercise.
+
+26
+00:01:33,400 --> 00:01:34,480
+So what does this do?
+
+27
+00:01:35,080 --> 00:01:38,290
+This continues until certain cases are met.
+
+28
+00:01:38,830 --> 00:01:44,980
+Now, the first case, this one right here, we tried to make a pizza, so we send something to the
+
+29
+00:01:44,980 --> 00:01:47,080
+data channel, a chain pizza order.
+
+30
+00:01:47,440 --> 00:01:52,630
+So we get our current pizza, our pointer, and that's sent to this channel.
+
+31
+00:01:52,840 --> 00:01:53,200
+Okay.
+
+32
+00:01:54,160 --> 00:01:55,480
+If we want to quit.
+
+33
+00:01:56,480 --> 00:02:04,340
+Instead, we get a pizza maker equipped that populates this variable kitchen, which is of type chan
+
+34
+00:02:04,340 --> 00:02:10,100
+air and we close the channel, so we close pizza maker data and we close quick chan and then we want
+
+35
+00:02:10,100 --> 00:02:15,050
+to get out of this select statement and this if statement and this force statement.
+
+36
+00:02:15,320 --> 00:02:20,840
+In other words, we want to get out of the entire function pizzeria so we just return nothing and this
+
+37
+00:02:20,840 --> 00:02:22,850
+go routine then quietly goes away.
+
+38
+00:02:23,780 --> 00:02:25,760
+So that's where we are so far.
+
+39
+00:02:26,240 --> 00:02:29,630
+And of course, now we need to create and run the consumer.
+
+40
+00:02:30,500 --> 00:02:31,580
+So how do we do that?
+
+41
+00:02:31,610 --> 00:02:33,200
+Well, it's actually not that difficult.
+
+42
+00:02:33,860 --> 00:02:36,590
+We're going to use a four state a for loop.
+
+43
+00:02:36,800 --> 00:02:44,630
+But in this case, we're populating the variable I when we range through whatever is sent to pizza job
+
+44
+00:02:44,750 --> 00:02:50,300
+dot data, we just range through that channel and we have a couple of situations.
+
+45
+00:02:50,420 --> 00:02:56,840
+The first situation is, is the number of the current pizza, whatever we get on this channel, is it
+
+46
+00:02:56,840 --> 00:03:00,510
+less than or equal to the number of pizzas that constant?
+
+47
+00:03:00,530 --> 00:03:03,390
+If it is, then we had we had an attempt to make a pizza.
+
+48
+00:03:03,410 --> 00:03:10,340
+So we just wrote in a statement, if I drop pizza number, if that's less than or equal to the constant
+
+49
+00:03:10,370 --> 00:03:15,560
+number of pizzas, which in our case is ten, then we try to make a pizza.
+
+50
+00:03:15,710 --> 00:03:17,690
+Well, we don't know if we were successful or not.
+
+51
+00:03:17,720 --> 00:03:19,820
+So let's look at what we get from that channel.
+
+52
+00:03:20,240 --> 00:03:22,730
+And of course, that's if I don't success.
+
+53
+00:03:24,170 --> 00:03:25,670
+We were successful in this case.
+
+54
+00:03:25,760 --> 00:03:29,150
+So all we'll do is print out a message and we'll use that nice color package.
+
+55
+00:03:29,360 --> 00:03:33,920
+We'll set the text to Green because we're successful and I'll print out the message right off message.
+
+56
+00:03:34,340 --> 00:03:34,730
+Okay.
+
+57
+00:03:36,050 --> 00:03:37,970
+And then I can say colored out green.
+
+58
+00:03:40,100 --> 00:03:46,430
+Order number percent D is out for delivery.
+
+59
+00:03:47,660 --> 00:03:48,000
+Okay.
+
+60
+00:03:48,110 --> 00:03:51,320
+And my substitution is either pizza number.
+
+61
+00:03:53,600 --> 00:03:56,790
+Otherwise, we tried to make the pizza and something went wrong.
+
+62
+00:03:56,810 --> 00:04:04,430
+So this time all printed in red color dot red and we'll say I don't message once again and this time
+
+63
+00:04:04,430 --> 00:04:06,320
+we'll print out color dot red.
+
+64
+00:04:08,120 --> 00:04:11,750
+The customer is really mad.
+
+65
+00:04:13,820 --> 00:04:14,120
+Okay.
+
+66
+00:04:15,020 --> 00:04:16,710
+So that's our first situation.
+
+67
+00:04:16,730 --> 00:04:21,800
+If I got pizza, the number is less than or equal to the number of pizzas otherwise.
+
+68
+00:04:22,040 --> 00:04:24,890
+So else we're done for the day.
+
+69
+00:04:25,340 --> 00:04:32,060
+So we'll print out colored out sign and we'll just say, done making pizzas.
+
+70
+00:04:35,930 --> 00:04:37,460
+Now, what else do we want to do here?
+
+71
+00:04:37,520 --> 00:04:39,380
+We want to close that pizza job.
+
+72
+00:04:39,380 --> 00:04:46,090
+Channel error is a sign the value of pizza job don't close.
+
+73
+00:04:47,600 --> 00:04:56,900
+And of course, this function right here is actually defined by us right up here on the type producer.
+
+74
+00:04:56,900 --> 00:04:59,120
+We have the method close available to us.
+
+75
+00:04:59,150 --> 00:05:06,440
+Okay, so let's go back down here and we check for an error if error is not equal to nil.
+
+76
+00:05:07,880 --> 00:05:11,540
+And of course, I don't think there's a situation where we can get an error here, but it's not going
+
+77
+00:05:11,540 --> 00:05:18,200
+to hurt to put in color dot red and then just error closing channel
+
+78
+00:05:22,160 --> 00:05:23,390
+and then whatever the error.
+
+79
+00:05:24,350 --> 00:05:24,680
+Okay.
+
+80
+00:05:26,630 --> 00:05:32,240
+So that should take care of everything we need to create and run the consumer.
+
+81
+00:05:32,390 --> 00:05:34,360
+So let's give this a try, see if we get everything right.
+
+82
+00:05:34,370 --> 00:05:39,920
+So I'll open the window up or upload a terminal up and I'll type go run dot.
+
+83
+00:05:41,680 --> 00:05:44,890
+So we got our message and right away received order number one.
+
+84
+00:05:45,190 --> 00:05:47,650
+And we can see that one is ready in it for delivery.
+
+85
+00:05:47,650 --> 00:05:49,870
+And we had an error making pizza number two.
+
+86
+00:05:51,070 --> 00:05:58,900
+And you notice if you watch very closely that the order, the pizzas are actually processed is not sequential.
+
+87
+00:05:59,650 --> 00:06:02,410
+So here we had let's look this finished running first.
+
+88
+00:06:02,470 --> 00:06:04,350
+See how we're making up to pizza number ten.
+
+89
+00:06:04,360 --> 00:06:06,760
+We're making that and we're finished done making pizzas.
+
+90
+00:06:08,200 --> 00:06:09,700
+So we started with order number one.
+
+91
+00:06:09,700 --> 00:06:14,710
+We received that and then we received order number two before order number one was done.
+
+92
+00:06:14,860 --> 00:06:16,180
+And we finished order number one.
+
+93
+00:06:16,180 --> 00:06:17,260
+We sent it out for delivery.
+
+94
+00:06:17,350 --> 00:06:20,620
+Then we got order number three and we're still working on pizza number two.
+
+95
+00:06:20,650 --> 00:06:24,070
+In other words, these are not in perfectly sequential order.
+
+96
+00:06:24,520 --> 00:06:29,350
+And of course, that's because our consumer is running as a go routine in the background.
+
+97
+00:06:29,440 --> 00:06:30,700
+It's running concurrently.
+
+98
+00:06:31,060 --> 00:06:35,830
+We're making more than one pizza at a time, or we're trying to make more than one pizza at a time.
+
+99
+00:06:36,310 --> 00:06:38,410
+And that, of course, is to be expected.
+
+100
+00:06:38,890 --> 00:06:47,290
+That's why when we closed the terminal here a while ago, a couple of lectures ago up here in this function,
+
+101
+00:06:47,320 --> 00:06:53,890
+make pizza, I said, I know the very first time that I come through, I'll be receiving a zero for
+
+102
+00:06:53,890 --> 00:06:56,470
+pizza number as the parameter to the call this function.
+
+103
+00:06:56,980 --> 00:07:02,920
+I know it's going to be set to one, but after that I'm not entirely sure what this value is going to
+
+104
+00:07:02,920 --> 00:07:10,060
+be because this is going to be called by a go routine which may have other produce or go routines running
+
+105
+00:07:10,060 --> 00:07:12,040
+in the background at the same time.
+
+106
+00:07:13,090 --> 00:07:17,440
+Okay, the last thing we have to do and we may as well do it just to be complete, is to print out the
+
+107
+00:07:17,440 --> 00:07:18,240
+ending message.
+
+108
+00:07:18,250 --> 00:07:20,680
+So we'll take care of that in the next lecture.

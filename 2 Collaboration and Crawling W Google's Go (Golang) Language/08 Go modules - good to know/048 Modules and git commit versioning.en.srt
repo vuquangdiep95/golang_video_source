@@ -1,0 +1,231 @@
+1
+00:00:00,090 --> 00:00:03,810
+So now we're going to take a look at modules and get comment versioning and then we're going to look
+
+2
+00:00:03,810 --> 00:00:09,390
+at get forks and module path replacement and then we're going to do review commands and kind of review
+
+3
+00:00:09,420 --> 00:00:11,500
+everything we've learned so far.
+
+4
+00:00:11,500 --> 00:00:17,160
+And Daniel's got some information here to share with us about modules and get commit versioning.
+
+5
+00:00:17,160 --> 00:00:20,580
+I'm looking forward to learning it myself and see what it is.
+
+6
+00:00:20,640 --> 00:00:21,350
+So.
+
+7
+00:00:21,480 --> 00:00:31,410
+So you may wonder if you have seen the this releases page on on github for RC quote and all the other
+
+8
+00:00:32,250 --> 00:00:37,620
+get all the other modules will have releases as well with version numbers.
+
+9
+00:00:37,620 --> 00:00:46,780
+How do you do for your own project by go to this going project and look because your releases so to
+
+10
+00:00:46,780 --> 00:00:52,360
+do it is it's following get tax so which is just a part of kit itself.
+
+11
+00:00:52,360 --> 00:00:56,870
+So if I do get tagged they'll say we've got no tax on our system.
+
+12
+00:00:57,250 --> 00:00:59,380
+So let me make just make sure real fast.
+
+13
+00:00:59,380 --> 00:01:01,230
+I am on the master branch.
+
+14
+00:01:01,300 --> 00:01:06,000
+I'm up to date so to create a tag is actually very simple.
+
+15
+00:01:06,010 --> 00:01:08,860
+It's simply get tag and the tag name.
+
+16
+00:01:08,950 --> 00:01:16,480
+So what we've got so far here is what a get tag is just something you're tagging your a particular commit
+
+17
+00:01:16,480 --> 00:01:17,740
+to this particular amount.
+
+18
+00:01:17,820 --> 00:01:18,090
+OK.
+
+19
+00:01:18,120 --> 00:01:18,350
+Yeah.
+
+20
+00:01:18,370 --> 00:01:18,670
+So.
+
+21
+00:01:18,670 --> 00:01:24,190
+So get tagged just lets you tag a particular commit with basically a name that can be used for in the
+
+22
+00:01:24,190 --> 00:01:32,000
+future so to create a get tag it's just get tag and then the name of the tag.
+
+23
+00:01:32,020 --> 00:01:36,940
+So for going modules your tags should follow the semantic versioning.
+
+24
+00:01:36,940 --> 00:01:45,790
+So for this case we could say this is this particular commit here with the go modules example for complete
+
+25
+00:01:46,330 --> 00:01:53,260
+we can call this version zero point 1.0 nice.
+
+26
+00:01:53,360 --> 00:01:57,480
+So that creates the get tags now and you get tag it's there.
+
+27
+00:01:57,530 --> 00:02:03,830
+However I can not able to push it by default with just to get push it does not work.
+
+28
+00:02:03,980 --> 00:02:11,780
+Well you have to do instead is you can either use get push origin and then the tag name.
+
+29
+00:02:11,790 --> 00:02:12,950
+Zero point one point.
+
+30
+00:02:13,670 --> 00:02:21,860
+So this would work for pushing up a specific tag Alternately you can get push dash dash tags to push
+
+31
+00:02:21,950 --> 00:02:31,960
+all tags so which is what I will do here.
+
+32
+00:02:31,970 --> 00:02:40,280
+So now you can see it says new tag v 1 0 1 0 is pushed and if I go back to the Hub page and a refresh
+
+33
+00:02:40,280 --> 00:02:47,360
+the page it now says there is one release if I click that I can now see the version is now available
+
+34
+00:02:48,120 --> 00:02:55,430
+version tag so I'm making little notes here of the commands and the first clan you can see is create
+
+35
+00:02:55,430 --> 00:03:01,470
+a tag and we get tag tag name and then we have show to show a tag for whatever the current tag you gave
+
+36
+00:03:01,470 --> 00:03:01,750
+is.
+
+37
+00:03:01,770 --> 00:03:09,870
+So get tags shows a list of all the tags can get brown tail branches show a list of all the tags and
+
+38
+00:03:09,870 --> 00:03:15,720
+let's just get tagging them to push a tag we can do get push origin and tag name or we can do get pushed
+
+39
+00:03:15,750 --> 00:03:17,580
+dest hash tag is all right.
+
+40
+00:03:17,800 --> 00:03:18,050
+Really.
+
+41
+00:03:18,220 --> 00:03:18,470
+Yes.
+
+42
+00:03:18,470 --> 00:03:19,850
+This is dash hashtag.
+
+43
+00:03:19,860 --> 00:03:20,550
+Yes.
+
+44
+00:03:20,550 --> 00:03:21,600
+All right good.
+
+45
+00:03:21,600 --> 00:03:26,190
+Any other command dash dash tags with net tags within that.
+
+46
+00:03:26,420 --> 00:03:27,270
+And.
+
+47
+00:03:28,180 --> 00:03:34,500
+And so anytime we're ready to go to a major minor patch we just add that tag and then that tag starts
+
+48
+00:03:34,610 --> 00:03:38,030
+there that tag it's now attached to whatever committee you are currently on.
+
+49
+00:03:38,040 --> 00:03:41,830
+So make sure you're on the right branch that's awesome.
+
+50
+00:03:42,000 --> 00:03:47,900
+And and if there things that we are committing at the same time we would do all of that with get push.
+
+51
+00:03:47,960 --> 00:03:53,690
+Dash dash tags because they'll do the push and then also include the tags the tags it says all tag bring
+
+52
+00:03:53,690 --> 00:03:59,430
+it on all text you have to list amount with the get push origin technique Excellent.
+
+53
+00:03:59,490 --> 00:04:05,730
+So that's a modules and get commit versioning and then this this allows us to start adding versions
+
+54
+00:04:05,730 --> 00:04:12,330
+to our module so that other people would be able to then using modules import one of our versions or
+
+55
+00:04:12,330 --> 00:04:16,150
+the latest version as opposed to just the random commit.
+
+56
+00:04:16,170 --> 00:04:18,030
+That was the least that point in time.
+
+57
+00:04:18,150 --> 00:04:20,280
+Do you have anything you want to add to this.
+
+58
+00:04:20,340 --> 00:04:20,640
+No.

@@ -1,0 +1,203 @@
+1
+00:00:00,240 --> 00:00:01,100
+Được rồi.
+
+2
+00:00:01,740 --> 00:00:08,460
+Vì vậy, chúng tôi sẽ song song khi chúng tôi dạy bạn về các mô-đun cờ vây, chúng tôi sẽ song song với bài đăng trên blog này
+
+3
+00:00:08,460 --> 00:00:09,080
+ngay chỗ này.
+
+4
+00:00:09,090 --> 00:00:15,600
+Blog blog GO sử dụng mô-đun go và mô-đun đầu tiên có một số mã mẫu mà chúng tôi đã thêm vào
+
+5
+00:00:15,600 --> 00:00:16,230
+để có được.
+
+6
+00:00:16,680 --> 00:00:23,880
+Vì vậy, nếu bạn xem qua get hub, bạn sẽ thấy chúng tôi có các mô-đun 0 3 Go và sau đó tôi đặt bài viết của Rusk Cox
+
+7
+00:00:23,880 --> 00:00:31,410
+ở đó và nút 0 0 0 1 chúng ta đã tạo một mô-đun Xin chào thử đi và xin chào Bác sĩ đi.
+
+8
+00:00:31,410 --> 00:00:37,890
+Và vì vậy, chúng tôi sẽ sử dụng những ví dụ đó vì những ví dụ đó song song với bài báo hiện là một tài liệu tham khảo tốt
+
+9
+00:00:37,890 --> 00:00:42,900
+để bạn quay lại sau và bây giờ chúng ta sẽ tạo một mô-đun cờ vây và Daniel sẽ chỉ cho chúng ta cách
+
+10
+00:00:42,900 --> 00:00:44,050
+Để làm việc đó.
+
+11
+00:00:44,270 --> 00:00:50,790
+Vì vậy, điều đầu tiên là mô-đun cung cấp cho bạn khoảng cách tên của bạn, nó cho dự án của bạn biết mã của bạn tồn tại ở đâu
+
+12
+00:00:51,820 --> 00:00:57,820
+trong số tất cả các mã khác trong vũ trụ đã biết hoặc vừa được phát hành trên Trái đất.
+
+13
+00:00:58,210 --> 00:00:59,770
+Vâng là điều tương tự.
+
+14
+00:00:59,820 --> 00:01:05,750
+Có thể có một số người ngoài hành tinh với giao diện dot com liên giới tính siêu thú vị hoặc.
+
+15
+00:01:05,800 --> 00:01:12,360
+Nhưng không gian tên này sẽ là duy nhất cho mô-đun này mà bạn sẽ tạo một bên trong mô-đun đó
+
+16
+00:01:12,690 --> 00:01:15,640
+bạn sẽ có một gói hoặc nhiều gói mã chính xác.
+
+17
+00:01:15,660 --> 00:01:21,510
+Và thông thường, một mô-đun một gói là cách tốt nhất không nhất thiết phải một mô-đun một tháng một mô-đun
+
+18
+00:01:21,510 --> 00:01:22,770
+đến một repo.
+
+19
+00:01:22,830 --> 00:01:24,890
+Nhưng có thể có nhiều gói trong một mô-đun.
+
+20
+00:01:25,010 --> 00:01:26,070
+ĐƯỢC RỒI.
+
+21
+00:01:26,400 --> 00:01:33,690
+Vì vậy, bạn có thể chứng minh điều này bằng cách chúng tôi có cái này xin chào, tôi đi vào phần kiểm tra Xin chào này, nếu bạn chạy đi kiểm tra
+
+22
+00:01:33,750 --> 00:01:40,710
+để thực sự chạy thử nghiệm, nó sẽ cho bạn biết đây là những gì nó nghĩ rằng gói cụ thể này được gọi là gì
+
+23
+00:01:40,710 --> 00:01:47,220
+là một tên gói khá lố bịch phụ thuộc vào hệ thống tệp của tôi, đây không phải là thứ chúng tôi
+
+24
+00:01:47,220 --> 00:01:47,550
+muốn.
+
+25
+00:01:48,150 --> 00:01:52,950
+Vì vậy, để giải quyết vấn đề này, tôi sẽ quay lại khiêu vũ trước khi thực hiện các mô-đun trước khi đi của mình.
+
+26
+00:01:53,250 --> 00:02:02,460
+Vì vậy, quay trở lại dự án đang thực hiện ở đây, bây giờ tôi có thể tuyên bố dự án đang thực hiện này, đây là lộ trình đạt được của tôi
+
+27
+00:02:02,730 --> 00:02:03,710
+repo của tôi.
+
+28
+00:02:04,290 --> 00:02:12,430
+Tôi có thể thực hiện sửa đổi trong đó và tôi cung cấp cho nó không gian tên của gói cụ thể này trong trường hợp này.
+
+29
+00:02:12,460 --> 00:02:19,440
+Đối với hầu hết và nhận repo có thể chỉ đơn giản là đường dẫn đến repo get hub dot com go celeb and going project
+
+30
+00:02:19,920 --> 00:02:25,470
+không bao gồm HP có nếu bạn đang ở cuối cùng, hãy cẩn thận, bạn không ở trong một số tiểu văn hóa quán rượu với bổ sung
+
+31
+00:02:25,470 --> 00:02:31,940
+thứ cho nó, bạn là con đường dẫn đến tầm với của tuyến đường, vì vậy hãy mod trong đó, hãy lên câu lạc bộ ma dot com và
+
+32
+00:02:31,950 --> 00:02:38,910
+dự án đang thực hiện và không gian tên này có thể là bất kỳ không gian tên nào bạn chọn và do đó, hãy làm điều gì đó với
+
+33
+00:02:38,960 --> 00:02:44,100
+nó đã được kết nối với một repo là một cách hay để làm điều đó nhưng nếu bạn ở công ty thì hãy định cấu hình nó cho
+
+34
+00:02:44,100 --> 00:02:46,200
+tổ chức của chính bạn.
+
+35
+00:02:46,440 --> 00:02:51,510
+Vì vậy, loại quy tắc chung duy nhất là nên có một số cách để liên kết không gian tên với nơi
+
+36
+00:02:51,510 --> 00:02:55,490
+bạn có thể tìm thấy mã trên Internet, đó là lý do tại sao đồng euro là một ý tưởng hay.
+
+37
+00:02:57,760 --> 00:03:03,790
+Vì vậy, điều này tạo ra bản mod mới, vì vậy nếu tôi mở trình chỉnh sửa của mình, tôi có thể tìm thấy bản mod đi lên, nó ở đây
+
+38
+00:03:03,790 --> 00:03:09,860
+một tệp đơn giản rất nhỏ chỉ nói rằng đây là không gian tên và ban đầu nó được tạo go 113.
+
+39
+00:03:09,860 --> 00:03:14,980
+Vì vậy, đây chỉ là một cách suy nghĩ mới về mọi thứ khi chúng ta có con đường đi và đi với nguồn
+
+40
+00:03:14,980 --> 00:03:20,380
+thư mục và thư mục nguồn, chúng tôi muốn bạn biết, hãy chuyển hub dot com đến Levin và tên repo và
+
+41
+00:03:20,380 --> 00:03:25,300
+đó là không gian tên cho tất cả mã trong đó và bây giờ ở bất kỳ đâu trên máy tính của tôi, tôi không
+
+42
+00:03:25,300 --> 00:03:31,030
+cần phải giống như bạn biết không gian làm việc với các thư mục gói Source Been ở bất kỳ đâu trên máy tính của tôi
+
+43
+00:03:31,030 --> 00:03:35,710
+Tôi có thể nói rằng tôi đã vào và tạo mã trong thư mục này và viết vào thư mục gốc của thư mục đó tôi chỉ để
+
+44
+00:03:35,740 --> 00:03:41,500
+truy cập mạng hiện đại và sau đó bất kể không gian tên là gì và bây giờ nó biết rằng mọi thứ tôi đang làm ở đây là
+
+45
+00:03:41,500 --> 00:03:44,460
+được kết nối với repo đó là không gian tên.
+
+46
+00:03:44,790 --> 00:03:50,050
+Và vì vậy, chúng tôi có thể chứng minh điều này bằng cách quay trở lại nơi chúng tôi có mã và tôi có thể chạy thử nghiệm
+
+47
+00:03:50,050 --> 00:03:52,880
+một lần nữa và chúng tôi sẽ kiểm tra lại.
+
+48
+00:03:52,900 --> 00:03:59,320
+Bây giờ bạn có thể thấy đường dẫn đến gói này bây giờ tổng quát hơn theo không gian tên và sau đó là phụ
+
+49
+00:03:59,320 --> 00:04:01,940
+thư mục trong thu hồi của họ.
+
+50
+00:04:02,140 --> 00:04:04,360
+Đó là bước đầu tiên khi làm việc với mô-đun go
+
+51
+00:04:08,070 --> 00:04:08,650
+nhiều nhưng.

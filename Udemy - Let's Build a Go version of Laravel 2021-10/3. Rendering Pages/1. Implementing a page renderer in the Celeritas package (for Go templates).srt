@@ -1,0 +1,763 @@
+1
+00:00:00,820 --> 00:00:04,870
+So we have a Web server running as part of our application, but so far it doesn't do anything very
+
+2
+00:00:04,870 --> 00:00:05,480
+exciting.
+
+3
+00:00:05,560 --> 00:00:08,170
+All it does is what we see right on the page in front of us.
+
+4
+00:00:08,500 --> 00:00:12,940
+It renders the text welcome to celebrities, to the web browser, and that's not very helpful.
+
+5
+00:00:13,450 --> 00:00:19,090
+So let's go back to our code, and I'm looking at the hilarious project right now, and what I'm going
+
+6
+00:00:19,090 --> 00:00:25,630
+to do is create some functionality to render pages and will support more than one kind of rendering
+
+7
+00:00:25,630 --> 00:00:25,960
+engine.
+
+8
+00:00:26,230 --> 00:00:32,170
+So let's get started so I could create the render functions I'm going to be working on shortly right
+
+9
+00:00:32,170 --> 00:00:35,350
+here at the top levels of my project, and it would work just fine.
+
+10
+00:00:35,840 --> 00:00:40,420
+What I'm going to do instead is make it more reusable by putting it into its own package.
+
+11
+00:00:40,720 --> 00:00:48,400
+So I'll create a new folder and I'll call it not surprisingly, render an inside of render or create
+
+12
+00:00:48,400 --> 00:00:56,890
+a new file, which I'll call render go and we'll give it a package name package render.
+
+13
+00:00:57,820 --> 00:01:00,220
+And what I'll do first is set up a couple of types.
+
+14
+00:01:00,430 --> 00:01:05,290
+The first one is going to be called render and it will be exported and it's a struct and it will have
+
+15
+00:01:05,290 --> 00:01:06,070
+a few fields.
+
+16
+00:01:06,190 --> 00:01:11,730
+First of all, it'll have a render for what rendering engine do we want to use?
+
+17
+00:01:11,740 --> 00:01:13,180
+And that will just be a string.
+
+18
+00:01:14,560 --> 00:01:20,320
+And it will also have the root path which we need, which will be a string.
+
+19
+00:01:20,470 --> 00:01:22,600
+In other words, where am I going to find the views?
+
+20
+00:01:23,350 --> 00:01:26,770
+And we'll also have, say, secure, which are set to bool.
+
+21
+00:01:28,570 --> 00:01:31,270
+Are we running in TDPs mode?
+
+22
+00:01:31,300 --> 00:01:32,480
+If so, that's true.
+
+23
+00:01:32,500 --> 00:01:33,640
+If not, it's false.
+
+24
+00:01:34,270 --> 00:01:37,180
+What port quarter are we going to be on, which is a string?
+
+25
+00:01:37,180 --> 00:01:40,000
+And I may not need these for a while, but I'm going to need them eventually.
+
+26
+00:01:41,180 --> 00:01:47,810
+And the server name, which will be a string, and that's enough for now.
+
+27
+00:01:47,990 --> 00:01:49,850
+So that's the first type I'm going to set up.
+
+28
+00:01:50,090 --> 00:01:56,930
+So let's save that and create the next thing we want, and I'm going to call this template data because
+
+29
+00:01:56,930 --> 00:02:01,130
+we're going to be passing data to our go templates and that will be a struct.
+
+30
+00:02:02,390 --> 00:02:06,500
+So first of all, things we might need to know is authenticated.
+
+31
+00:02:06,950 --> 00:02:11,270
+Is the current user authenticated and we will be using this, but not for a while yet.
+
+32
+00:02:11,270 --> 00:02:14,610
+It is authenticated, which is going to be a Boolean.
+
+33
+00:02:16,310 --> 00:02:21,380
+And then let's just say the kinds of things I might want to pass to a template, and we're going to
+
+34
+00:02:21,380 --> 00:02:26,240
+be fairly generic here because we're not sure what kind of data the users might want to send to the
+
+35
+00:02:26,960 --> 00:02:28,400
+particular views they're working with.
+
+36
+00:02:28,460 --> 00:02:34,530
+So we'll have an event map and that will just be map of string int.
+
+37
+00:02:34,880 --> 00:02:40,370
+So we look things up using a string and we find it in value, then a string map, which will be a map
+
+38
+00:02:40,370 --> 00:02:48,020
+of string string and maybe a float map because you need to pass a floating map or floating numbers to
+
+39
+00:02:48,020 --> 00:02:48,670
+your templates.
+
+40
+00:02:48,680 --> 00:02:55,280
+That'll be a map of string, and we'll just make it float 32 and then just generic data.
+
+41
+00:02:55,310 --> 00:03:00,440
+I don't know what it's going to be, but that's going to be in a map of type with an index of string,
+
+42
+00:03:01,520 --> 00:03:06,470
+and we'll just put interface in there so you can store whatever you want to in that particular map.
+
+43
+00:03:08,450 --> 00:03:13,110
+Later on, we're going to implement cross site request forgery protection.
+
+44
+00:03:13,130 --> 00:03:17,180
+So we'll have a CC rf token, which will just be a string.
+
+45
+00:03:18,950 --> 00:03:28,610
+And we'll also want things like the port, which will be a string, the ServerName, which will be a
+
+46
+00:03:28,610 --> 00:03:34,460
+string, whether or not we're running in a secure connection, which is just a ball.
+
+47
+00:03:35,960 --> 00:03:36,590
+That's enough for now.
+
+48
+00:03:36,950 --> 00:03:37,910
+So let's save that.
+
+49
+00:03:38,660 --> 00:03:41,600
+OK, so we have two types now.
+
+50
+00:03:42,140 --> 00:03:51,620
+Let's write a function that will render a page so bunk with a receiver of Save C star render to pointer
+
+51
+00:03:51,620 --> 00:03:53,240
+to the render variable type.
+
+52
+00:03:53,420 --> 00:03:54,470
+So that's the receiver.
+
+53
+00:03:54,950 --> 00:04:00,890
+We'll just call this page, so we'll be able to call render Typekit page and things we're going to want
+
+54
+00:04:00,890 --> 00:04:01,460
+to have there.
+
+55
+00:04:01,490 --> 00:04:08,030
+Well, w the response writer, we need that for sure, because we need something to write to.
+
+56
+00:04:08,150 --> 00:04:10,850
+We're probably going to be using the request at some point.
+
+57
+00:04:10,850 --> 00:04:18,350
+So our export request, when we deal with Sessions, for example, what's the name of the view we want
+
+58
+00:04:18,350 --> 00:04:18,890
+to render?
+
+59
+00:04:19,010 --> 00:04:22,640
+And that will be the actual file, the template that we're going to render information to.
+
+60
+00:04:23,360 --> 00:04:24,440
+Then we'll have variables.
+
+61
+00:04:24,650 --> 00:04:28,490
+What variables are we going to pass to our template and also data?
+
+62
+00:04:29,360 --> 00:04:31,520
+And those are both of type interface.
+
+63
+00:04:32,030 --> 00:04:32,900
+They can be anything.
+
+64
+00:04:33,380 --> 00:04:33,800
+OK?
+
+65
+00:04:36,020 --> 00:04:37,820
+And this will potentially return an error.
+
+66
+00:04:38,750 --> 00:04:39,050
+OK.
+
+67
+00:04:39,710 --> 00:04:41,270
+So let's put return nil in there.
+
+68
+00:04:41,720 --> 00:04:43,640
+So we don't have a compiler error.
+
+69
+00:04:44,660 --> 00:04:53,900
+And what I'm going to do here is decide what function this function calls based upon the value of renderer
+
+70
+00:04:53,900 --> 00:04:55,190
+in the render struct.
+
+71
+00:04:55,340 --> 00:04:56,960
+So we'll just implement a Switch statement.
+
+72
+00:04:57,560 --> 00:05:05,420
+So Switch and we could just go switch on C Dot renderer, but I'm not really an optimist when it comes
+
+73
+00:05:05,420 --> 00:05:06,260
+to this sort of thing.
+
+74
+00:05:06,590 --> 00:05:14,390
+So I'm going to convert it to lowercase strings, dot to lower, and I'll just wrap this whole thing
+
+75
+00:05:15,830 --> 00:05:16,940
+right like this
+
+76
+00:05:20,630 --> 00:05:22,010
+and give it its parentheses.
+
+77
+00:05:22,700 --> 00:05:27,620
+So we're only going to handle two forms of templates in this particular course.
+
+78
+00:05:27,770 --> 00:05:29,240
+Standard go templates.
+
+79
+00:05:29,250 --> 00:05:30,500
+And that's what we'll start with.
+
+80
+00:05:30,500 --> 00:05:32,420
+And then later on, we'll implement Jet.
+
+81
+00:05:33,080 --> 00:05:39,350
+So let's say for case go, if we're going to use go templates and we're going to do something.
+
+82
+00:05:39,610 --> 00:05:39,980
+OK?
+
+83
+00:05:41,020 --> 00:05:45,310
+And then we'll do one as well for Case Jet, which will do a bit later on.
+
+84
+00:05:45,520 --> 00:05:49,990
+And we're going to do something there and what we're going to do is have this function call another
+
+85
+00:05:49,990 --> 00:05:50,400
+function.
+
+86
+00:05:50,410 --> 00:05:51,670
+So let's make the first one here.
+
+87
+00:05:53,330 --> 00:06:01,750
+Func C pointer to to render and we'll call this go page and it will take a few parameters.
+
+88
+00:06:02,110 --> 00:06:03,100
+Our response writer.
+
+89
+00:06:06,130 --> 00:06:06,940
+Our request,
+
+90
+00:06:10,810 --> 00:06:11,470
+the view.
+
+91
+00:06:12,840 --> 00:06:13,650
+It should be a string.
+
+92
+00:06:15,550 --> 00:06:23,680
+And the data, which is interface, it can be anything and it potentially returns an error, and we'll
+
+93
+00:06:23,680 --> 00:06:31,510
+just say for now, return nil and then we can come up here in our switch statement and just say Return
+
+94
+00:06:31,510 --> 00:06:32,590
+Sego page.
+
+95
+00:06:34,710 --> 00:06:37,290
+And give you our view and data,
+
+96
+00:06:40,410 --> 00:06:43,620
+so we'll also have one for Jet, but we'll take care of that a bit later on.
+
+97
+00:06:44,010 --> 00:06:45,360
+So how are we going to undergo pages?
+
+98
+00:06:45,390 --> 00:06:48,300
+Well, it's pretty straightforward to start with.
+
+99
+00:06:48,480 --> 00:06:49,950
+We need to open the template.
+
+100
+00:06:50,250 --> 00:06:52,080
+We need to pass the template file.
+
+101
+00:06:52,080 --> 00:07:00,060
+So tempo and potentially in error are assigned the value of from the template package, which is part
+
+102
+00:07:00,060 --> 00:07:04,260
+of the standard library dot pass files.
+
+103
+00:07:04,740 --> 00:07:09,720
+And you'll notice that I'm getting the HTML template here, not this one, which is text template.
+
+104
+00:07:10,800 --> 00:07:13,080
+If you get that one, you're not going to have good results.
+
+105
+00:07:13,200 --> 00:07:14,490
+This is the one you want.
+
+106
+00:07:14,610 --> 00:07:15,900
+So we're going to pass files.
+
+107
+00:07:16,680 --> 00:07:19,680
+And what we want to pass, we need to build the string for that.
+
+108
+00:07:19,980 --> 00:07:24,300
+We know the root path, the path to the application and we know the name of the template.
+
+109
+00:07:24,300 --> 00:07:32,610
+So we could just call format dot, print f and give it our format string, which in our case will be
+
+110
+00:07:32,610 --> 00:07:35,430
+percent s slash views.
+
+111
+00:07:35,430 --> 00:07:40,920
+The name of the folder we know is going to exist, then the name of the template and I'm going to end
+
+112
+00:07:40,920 --> 00:07:42,870
+mine with Dot Page Dot template.
+
+113
+00:07:43,260 --> 00:07:43,620
+OK.
+
+114
+00:07:45,130 --> 00:07:50,170
+And the substitutions for those two placeholders are the right path, which I have as part of my renderer
+
+115
+00:07:50,200 --> 00:07:55,030
+see dot root path and the name of the template, which is view.
+
+116
+00:07:56,050 --> 00:07:59,000
+So that gets me my template and potentially an error.
+
+117
+00:07:59,020 --> 00:08:00,220
+So let's check for that error.
+
+118
+00:08:01,240 --> 00:08:04,840
+If error is not equal to nil, then just return the error.
+
+119
+00:08:07,030 --> 00:08:08,440
+Otherwise, we've got the template.
+
+120
+00:08:08,440 --> 00:08:09,220
+We've passed it.
+
+121
+00:08:09,520 --> 00:08:11,830
+So let's create a template.
+
+122
+00:08:11,860 --> 00:08:19,060
+Data variable TD for template data is assign the value of a reference to template data.
+
+123
+00:08:21,700 --> 00:08:22,120
+I thought.
+
+124
+00:08:23,740 --> 00:08:28,840
+And now we'll check to see if I received any any data as part of the call to this function.
+
+125
+00:08:29,320 --> 00:08:39,490
+So if data which is a parameter passed to this function, if it's not equal to nil, then T equals data
+
+126
+00:08:39,670 --> 00:08:43,360
+dot and we'll just cast it to a point or two template to the.
+
+127
+00:08:47,900 --> 00:08:57,590
+So now we have data, if any, so all we need to do is call check for an error template template, DOD
+
+128
+00:08:57,770 --> 00:08:58,300
+execute.
+
+129
+00:08:58,670 --> 00:09:02,780
+And we're going to execute it with a response writer and a reference to TD.
+
+130
+00:09:03,410 --> 00:09:05,510
+So once we execute, that life should be good.
+
+131
+00:09:05,690 --> 00:09:07,010
+But let's check for error.
+
+132
+00:09:07,250 --> 00:09:12,110
+If error is not equal to nil, then return the error.
+
+133
+00:09:14,750 --> 00:09:20,930
+OK, so now when we use this package, we have one more step to do before we can do that.
+
+134
+00:09:21,020 --> 00:09:26,390
+When we use that, we just call render Typekit page and then it decides what to do.
+
+135
+00:09:26,390 --> 00:09:29,630
+Based upon the value of the rendering engine.
+
+136
+00:09:29,640 --> 00:09:33,950
+Either Go or jet jet won't do anything right now, but we'll get to that before too long.
+
+137
+00:09:34,370 --> 00:09:36,460
+Or we can call this one directly.
+
+138
+00:09:36,470 --> 00:09:41,300
+And that's going to be great because it will allow end users to either use the convenience function
+
+139
+00:09:41,480 --> 00:09:48,320
+page or to call Go Page or jet page, which will exist before too long directly so they can support
+
+140
+00:09:48,320 --> 00:09:54,740
+multiple template formats or template engines right from the same application with no real effort on
+
+141
+00:09:54,740 --> 00:09:55,280
+their part.
+
+142
+00:09:56,960 --> 00:09:58,410
+So we have this part done.
+
+143
+00:09:58,940 --> 00:10:04,460
+But of course, we need to have some means of accessing this from our my app right now.
+
+144
+00:10:04,460 --> 00:10:05,330
+That doesn't exist.
+
+145
+00:10:06,260 --> 00:10:07,910
+So let's go back to celerity asked.
+
+146
+00:10:08,360 --> 00:10:15,260
+Go go to the top of the file, find our celerity struct type and add something in here.
+
+147
+00:10:15,500 --> 00:10:23,330
+And what I'm going to add is render and it has the type of pointer to render render.
+
+148
+00:10:25,550 --> 00:10:26,960
+So let's save this to format it.
+
+149
+00:10:27,590 --> 00:10:32,390
+Now, of course, we need to create a renderer to populate that particular field, so we need to create
+
+150
+00:10:32,390 --> 00:10:37,460
+a variable and store it in the render field of the celebrity struct type.
+
+151
+00:10:37,490 --> 00:10:42,380
+So I'm going to go to the very bottom of my file, and as I usually do, I'll put this off into its
+
+152
+00:10:42,380 --> 00:10:44,960
+own function so it will become easier to test.
+
+153
+00:10:45,380 --> 00:10:47,090
+So this will be a very simple function.
+
+154
+00:10:47,360 --> 00:10:54,500
+I'll call it func, and it will have the receiver of C pointer to celebrities and I'll call it create
+
+155
+00:10:55,010 --> 00:10:55,930
+render.
+
+156
+00:10:57,710 --> 00:10:59,480
+And it will take one variable.
+
+157
+00:11:00,380 --> 00:11:09,770
+Cell, which is a pointer to celebrities, and it will return a pointer to render render, which is
+
+158
+00:11:09,770 --> 00:11:10,670
+exactly what we need.
+
+159
+00:11:11,110 --> 00:11:21,110
+All we have to do here is say my renderer is assigned the value of rendered, render and populate its
+
+160
+00:11:21,110 --> 00:11:21,770
+various fields.
+
+161
+00:11:22,970 --> 00:11:31,130
+So first of all, we want is renderer Siddharth and Fig renderer.
+
+162
+00:11:31,850 --> 00:11:33,260
+So that's the first thing we need in there.
+
+163
+00:11:33,680 --> 00:11:36,350
+The second thing we need is a root path, root path.
+
+164
+00:11:36,380 --> 00:11:39,180
+Well, we know that one as well, that c dot repair.
+
+165
+00:11:39,800 --> 00:11:41,060
+And this shouldn't be C.
+
+166
+00:11:41,660 --> 00:11:47,650
+It should be so so I could grab it from C.
+
+167
+00:11:47,660 --> 00:11:53,010
+But I want to make sure that when I pass celebrities to this function, that I have the necessary values.
+
+168
+00:11:53,100 --> 00:11:54,710
+OK, so I'm just going to do it this way.
+
+169
+00:11:55,070 --> 00:12:01,700
+And let's put in the thought, which is seld config dot part.
+
+170
+00:12:03,560 --> 00:12:04,810
+That's probably enough to get us started.
+
+171
+00:12:05,150 --> 00:12:05,510
+OK.
+
+172
+00:12:06,500 --> 00:12:12,020
+So we'll come back and populate more of this as we need it, referring now let's just say return a reference
+
+173
+00:12:12,020 --> 00:12:13,430
+to my render.
+
+174
+00:12:14,330 --> 00:12:16,830
+So now I have to create and create renderer available to me.
+
+175
+00:12:16,850 --> 00:12:19,100
+It's currently not being used, so let's go back up and use it.
+
+176
+00:12:19,580 --> 00:12:29,870
+So let's find the repopulating this right here after we create the config, let's say C Dot Render is
+
+177
+00:12:29,870 --> 00:12:34,880
+equal to C to create renderer and will hand it.
+
+178
+00:12:35,300 --> 00:12:35,640
+See?
+
+179
+00:12:37,610 --> 00:12:37,940
+OK.
+
+180
+00:12:38,630 --> 00:12:43,580
+So that should give us a rendering engine, which means we can do something.
+
+181
+00:12:43,580 --> 00:12:50,090
+We can now create a handler and a root on my app in the Maya project that will actually render a single
+
+182
+00:12:50,090 --> 00:12:50,510
+page.
+
+183
+00:12:50,660 --> 00:12:54,110
+But the last thing we have to do before we can do this is open rootstock.
+
+184
+00:12:54,110 --> 00:12:56,300
+Go and get rid of this one.
+
+185
+00:12:56,480 --> 00:12:57,500
+We don't need that anymore.
+
+186
+00:12:58,130 --> 00:12:59,230
+Our dummy.
+
+187
+00:12:59,240 --> 00:13:00,980
+Welcome to celebrities text.
+
+188
+00:13:01,700 --> 00:13:02,030
+OK.
+
+189
+00:13:02,090 --> 00:13:05,540
+In the next lecture, we'll get this render a try and see what happens.
+
+190
+00:13:05,810 --> 00:13:09,500
+Save this to clean up the formats and all is good.
+
+191
+00:13:10,100 --> 00:13:11,030
+So let's move on.

@@ -1,0 +1,427 @@
+1
+00:00:01,030 --> 00:00:06,280
+So let's keep working on our database connectivity now, I'm right now, I'm looking at the Rootstock
+
+2
+00:00:06,280 --> 00:00:10,780
+Go file in my app, and the first thing I'll do is get rid of this temporary route because we don't
+
+3
+00:00:10,780 --> 00:00:11,560
+need that anymore.
+
+4
+00:00:11,590 --> 00:00:15,760
+So that's gone now, and I will save this and actually clean up my imports.
+
+5
+00:00:16,180 --> 00:00:17,080
+OK, perfect.
+
+6
+00:00:17,980 --> 00:00:24,400
+Now what I'm going to do next is create a file in the data directory, and that's a directory that was
+
+7
+00:00:24,400 --> 00:00:27,430
+created when we started celebrities and currently it's empty.
+
+8
+00:00:27,610 --> 00:00:32,490
+I want to create a new file in them, and I'm going to call it models, plural.
+
+9
+00:00:32,500 --> 00:00:33,130
+Don't go.
+
+10
+00:00:33,610 --> 00:00:33,970
+OK.
+
+11
+00:00:34,330 --> 00:00:36,940
+And I'll give it this package declaration package data.
+
+12
+00:00:38,380 --> 00:00:46,780
+Now this package data, that folder is in many ways very similar to the models folder you would find
+
+13
+00:00:47,110 --> 00:00:48,710
+in older versions of Laravel.
+
+14
+00:00:48,730 --> 00:00:51,730
+I'm not sure if it's there in the most current version or not, but I know it used to be.
+
+15
+00:00:51,760 --> 00:00:58,600
+But in any case, it's where we'll store various files that represent the kinds of things we have in
+
+16
+00:00:58,600 --> 00:01:00,910
+our database and our goal in this lecture.
+
+17
+00:01:00,910 --> 00:01:08,350
+In the next few, I'm sure, is to implement a structure for models that correspond to tables and data
+
+18
+00:01:08,350 --> 00:01:12,490
+stored in the database and make it really, really easy for users to work with it.
+
+19
+00:01:12,700 --> 00:01:13,040
+OK.
+
+20
+00:01:13,060 --> 00:01:13,750
+So let's get started.
+
+21
+00:01:14,470 --> 00:01:19,120
+So the first thing I'll do is create a variable VAR db of type pointer to school.
+
+22
+00:01:19,120 --> 00:01:25,150
+Dot VB, OK, and then I'll create a type called models, not surprisingly.
+
+23
+00:01:25,360 --> 00:01:34,810
+And it's a struct, and I'll put a comment in here any models inserted here and in the new function,
+
+24
+00:01:34,810 --> 00:01:44,740
+which doesn't exist yet, but it will in a moment are easily accessible throughout, throughout the
+
+25
+00:01:44,740 --> 00:01:46,000
+entire application.
+
+26
+00:01:46,330 --> 00:01:46,630
+OK.
+
+27
+00:01:46,660 --> 00:01:47,230
+That's our goal.
+
+28
+00:01:48,070 --> 00:01:53,110
+Now let's create the new function func new and we'll take one parameter, which I'm going to call database
+
+29
+00:01:53,110 --> 00:01:59,950
+pool because that's what it is of type of pointer to school dot db and it returns the type of models.
+
+30
+00:02:00,340 --> 00:02:00,700
+OK.
+
+31
+00:02:02,860 --> 00:02:08,650
+So first of all, before the if statement, let's assign some value to this variable DB that we created
+
+32
+00:02:08,650 --> 00:02:09,080
+up here.
+
+33
+00:02:09,100 --> 00:02:12,130
+So DB will be equal to not surprisingly, database pool.
+
+34
+00:02:13,060 --> 00:02:18,820
+So now this variable has a value and is therefore accessible to the entire package because it's a package
+
+35
+00:02:18,820 --> 00:02:19,480
+level variable.
+
+36
+00:02:20,020 --> 00:02:23,940
+Now I'll write that instinct, and I'm going to check to see what database we're using.
+
+37
+00:02:23,950 --> 00:02:31,240
+So I'll say, if OAC don't get on right there, I'm going to look for database type.
+
+38
+00:02:34,090 --> 00:02:40,600
+And I'll say, if that's equal to my skill, I should say or and copy this whole thing.
+
+39
+00:02:44,040 --> 00:02:46,450
+And pasted in there, I make sure they didn't type.
+
+40
+00:02:47,100 --> 00:02:52,440
+Maria Deeb, which is possible and I want to do something right now, I'm not going to do anything so
+
+41
+00:02:52,440 --> 00:02:55,020
+to say to do belts.
+
+42
+00:02:55,410 --> 00:02:59,370
+And the only other one we're going to support in this course is Postgres, and we can assume that this
+
+43
+00:02:59,370 --> 00:03:00,440
+is going to be Postgres.
+
+44
+00:03:01,510 --> 00:03:06,670
+And the reason I'm putting this if statement here is because what I want to get started with this time
+
+45
+00:03:06,670 --> 00:03:14,110
+around is installing something that's very similar to an R M and object relational mapper.
+
+46
+00:03:14,170 --> 00:03:19,270
+A lot of people that use frameworks like Laravel really don't like to work directly with Scott.
+
+47
+00:03:19,330 --> 00:03:23,380
+And as I said a couple of lectures ago, I like working with schools, so it's not a problem for me
+
+48
+00:03:23,380 --> 00:03:25,100
+and probably for many of you as well.
+
+49
+00:03:25,840 --> 00:03:30,760
+But lots of people expect to have an easy means of interacting with the database, and we're going to
+
+50
+00:03:30,760 --> 00:03:31,210
+do that.
+
+51
+00:03:31,220 --> 00:03:33,290
+We're going to do it by using this package.
+
+52
+00:03:33,340 --> 00:03:34,390
+Let me go to my web browser.
+
+53
+00:03:35,380 --> 00:03:43,420
+It's called Upper Slash DB, and it's a very easy to use and well written agnostic database layer.
+
+54
+00:03:43,440 --> 00:03:47,110
+It works with many databases, so I'm going to click on this and there's a link to this in the course
+
+55
+00:03:47,110 --> 00:03:52,600
+resources for this lecture, I'm going to take the tour and I will skip the first one when it just talks
+
+56
+00:03:52,600 --> 00:03:53,490
+about how it works.
+
+57
+00:03:53,500 --> 00:03:54,850
+OK, let's go to the next one.
+
+58
+00:03:55,150 --> 00:03:56,770
+How do I install this thing?
+
+59
+00:03:57,010 --> 00:03:58,950
+I have to go get this.
+
+60
+00:03:58,960 --> 00:04:00,160
+So let's copy that bit.
+
+61
+00:04:01,240 --> 00:04:05,230
+Go get on a leave at the dash, because sometimes that causes grief.
+
+62
+00:04:05,830 --> 00:04:11,800
+I'll just go get this and I'm leaving the dollar sign adapter part out because we're going to use Postgres,
+
+63
+00:04:11,980 --> 00:04:18,640
+OK, and I'll go back to my I.D. and open my terminal and type, go get paste.
+
+64
+00:04:19,240 --> 00:04:28,510
+And then I'll put right here at the end of this post, Grizz show, I'm actually going get it.
+
+65
+00:04:28,780 --> 00:04:29,350
+And it does.
+
+66
+00:04:29,740 --> 00:04:31,090
+And I will do the same thing.
+
+67
+00:04:31,980 --> 00:04:37,700
+It means we'll do it now and go back to Firefox and look at this, what's the other one called Maya's?
+
+68
+00:04:38,270 --> 00:04:45,140
+So let's go back here and I'll just backspace over this bit and put in my school.
+
+69
+00:04:48,080 --> 00:04:48,890
+And it goes and gets it.
+
+70
+00:04:49,340 --> 00:04:54,710
+Now we have access to both Post-cruise and MySchool with Upper DB.
+
+71
+00:04:54,740 --> 00:04:55,640
+Once we start using it.
+
+72
+00:04:55,940 --> 00:05:02,930
+OK, so let's start using it up here at the very top in my import statement, actually actually right
+
+73
+00:05:02,930 --> 00:05:03,530
+here.
+
+74
+00:05:04,250 --> 00:05:07,130
+I will say I'm going to import something.
+
+75
+00:05:07,370 --> 00:05:14,420
+I will say DB two is what I'm going to call it is I'm already using DB and I'll import GitHub dot com
+
+76
+00:05:14,420 --> 00:05:20,000
+slash upper slash DB slash v4.
+
+77
+00:05:20,270 --> 00:05:20,600
+OK.
+
+78
+00:05:21,320 --> 00:05:23,060
+We're not using that yet, so it's going to show me an error.
+
+79
+00:05:23,930 --> 00:05:39,020
+And I'm also going to import GitHub dot com slash upper slash DB slash v4 slash DApp Tor Adapt or your
+
+80
+00:05:39,860 --> 00:05:46,250
+slash might ask you, I'll I'll duplicate that and change my ask to Postgres grad.
+
+81
+00:05:47,360 --> 00:05:54,230
+OK, then down here, I'm going to create a new variable or upper, a package level variable that's
+
+82
+00:05:54,230 --> 00:05:59,480
+been available to the entire data package and that will be of type two session.
+
+83
+00:06:02,430 --> 00:06:03,900
+Not session test session.
+
+84
+00:06:04,290 --> 00:06:04,620
+OK.
+
+85
+00:06:07,130 --> 00:06:10,820
+Now down here in my old statement.
+
+86
+00:06:11,750 --> 00:06:12,950
+The second part of that.
+
+87
+00:06:13,550 --> 00:06:19,810
+So the ELTs part of the if I will say upper and I'll ignore the error for now to get this working is
+
+88
+00:06:19,820 --> 00:06:27,830
+equal equal to PostgreSQL Dot new and I'll hand it my database pool.
+
+89
+00:06:29,030 --> 00:06:29,330
+OK.
+
+90
+00:06:31,250 --> 00:06:38,930
+And here in this one where it's modest, you will, I will say upper and again, ignore the air is equal
+
+91
+00:06:38,930 --> 00:06:40,790
+to my ask you up.
+
+92
+00:06:41,060 --> 00:06:41,830
+Don't new.
+
+93
+00:06:43,310 --> 00:06:47,740
+Try that again, new and I will hand it database pool.
+
+94
+00:06:49,580 --> 00:06:53,150
+OK, now I still have to import errors and hopefully those will go away soon.
+
+95
+00:06:53,240 --> 00:06:58,340
+Let me save this and it says it can't find those, even though I know they're installed.
+
+96
+00:06:59,150 --> 00:07:02,480
+So let's try go mod, then do.
+
+97
+00:07:05,850 --> 00:07:07,140
+And I want to come back up here.
+
+98
+00:07:07,440 --> 00:07:12,870
+Those errors all go away except for news, which should be new, and that takes care of them.
+
+99
+00:07:13,140 --> 00:07:16,680
+OK, so we've imported those, we've got them running.
+
+100
+00:07:16,740 --> 00:07:18,630
+But this new function needs to return something.
+
+101
+00:07:18,660 --> 00:07:19,020
+OK?
+
+102
+00:07:19,500 --> 00:07:26,160
+And what it needs to return is just the type models, so I can just return an empty model for now.
+
+103
+00:07:28,290 --> 00:07:34,020
+So this will over time give us an easy method of interacting with the database.
+
+104
+00:07:34,350 --> 00:07:40,650
+So what we'll do next is we'll go and create a real user's table will update the one that we have there
+
+105
+00:07:40,650 --> 00:07:41,910
+now and make it more useful.
+
+106
+00:07:42,450 --> 00:07:50,250
+And then we'll actually implement some methods on a user model that takes advantage of the upper functionality
+
+107
+00:07:50,250 --> 00:07:54,960
+that we just included in our application, and we'll get started on that in the next lecture.

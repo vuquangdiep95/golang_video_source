@@ -1,0 +1,440 @@
+1
+00:00:01,280 --> 00:00:06,530
+So things look pretty good so far, we can start our application, we can sign in using social authentication,
+
+2
+00:00:06,530 --> 00:00:08,240
+we can do all sorts of things.
+
+3
+00:00:09,380 --> 00:00:15,240
+But one thing we haven't taken into account is stopping the application right now when we stop our application.
+
+4
+00:00:15,500 --> 00:00:19,270
+If I type make stop at the command line, for example, it just stops.
+
+5
+00:00:19,340 --> 00:00:22,040
+It doesn't matter what's going on, it just stops.
+
+6
+00:00:22,970 --> 00:00:25,310
+And in a lot of cases, that's not a good thing.
+
+7
+00:00:25,520 --> 00:00:30,290
+You may want to take your your application off line for some reason, but you probably don't want to
+
+8
+00:00:30,290 --> 00:00:35,450
+interrupt things like mail that's about to be sent, but never gets sent because the application stops
+
+9
+00:00:35,450 --> 00:00:36,230
+and forgets about it.
+
+10
+00:00:36,890 --> 00:00:42,530
+So what I want to focus on for the next little while is graceful shutdown, giving our developers the
+
+11
+00:00:42,530 --> 00:00:49,010
+option of having certain tasks execute when the application receives some kind of signal to say, stop
+
+12
+00:00:49,010 --> 00:00:55,610
+running and we're going to do that by working on this function in celebrities don't go called listen
+
+13
+00:00:55,610 --> 00:00:56,300
+and serve.
+
+14
+00:00:56,330 --> 00:00:58,760
+And right now, all this does is it defines a server.
+
+15
+00:00:59,150 --> 00:01:00,680
+It defers some clothes.
+
+16
+00:01:00,920 --> 00:01:02,690
+It starts, are R.P. solicitor.
+
+17
+00:01:02,930 --> 00:01:06,020
+And then it starts the web application, listening for requests.
+
+18
+00:01:06,170 --> 00:01:07,070
+And that works really well.
+
+19
+00:01:07,370 --> 00:01:08,540
+But we're going to make it a little bit better.
+
+20
+00:01:09,230 --> 00:01:15,020
+I'm going to do that by, first of all, going into the Celebrity House project at the root level and
+
+21
+00:01:15,020 --> 00:01:20,030
+creating a new file, a new go file, which I'll call Server Go.
+
+22
+00:01:21,350 --> 00:01:26,450
+And here is where I'm going to have my new version of the listing and serve function, so I'll define
+
+23
+00:01:26,450 --> 00:01:26,870
+a function.
+
+24
+00:01:26,870 --> 00:01:29,000
+I shall just copy this to make it a little simpler.
+
+25
+00:01:29,480 --> 00:01:30,160
+Copy this.
+
+26
+00:01:30,170 --> 00:01:31,280
+I'll copy the whole function.
+
+27
+00:01:33,770 --> 00:01:34,610
+Copy this.
+
+28
+00:01:35,120 --> 00:01:35,960
+Comment it out.
+
+29
+00:01:36,350 --> 00:01:39,080
+Go back to server, doggo and paste that in there.
+
+30
+00:01:39,260 --> 00:01:39,650
+OK.
+
+31
+00:01:42,010 --> 00:01:44,500
+And it didn't do the imports for me, but that's no problem.
+
+32
+00:01:45,010 --> 00:01:52,660
+HTP Dot server and then clean this bit out and that'll take care of that.
+
+33
+00:01:54,890 --> 00:01:59,260
+So to start with, I'll have this return an error potentially error.
+
+34
+00:01:59,960 --> 00:02:07,040
+And down here, instead of doing this, I'll just changes to a return statement.
+
+35
+00:02:11,130 --> 00:02:15,480
+OK, so now it's off in its own file, and I can get rid of this comment I don't want.
+
+36
+00:02:15,600 --> 00:02:17,250
+And that's just to make things a little bit cleaner.
+
+37
+00:02:17,370 --> 00:02:17,730
+OK.
+
+38
+00:02:18,210 --> 00:02:24,090
+So we have this function and means I can go back here and delete this, and that just makes that file
+
+39
+00:02:24,090 --> 00:02:24,960
+a little bit smaller.
+
+40
+00:02:25,200 --> 00:02:25,560
+OK.
+
+41
+00:02:30,110 --> 00:02:33,440
+So so far, so good, but nothing interesting has happened yet.
+
+42
+00:02:33,470 --> 00:02:37,730
+All I've done is move one function from one place to another and have it return a potential error.
+
+43
+00:02:38,240 --> 00:02:42,770
+So now the next changes I want to make are actually going to be in the Myat project.
+
+44
+00:02:42,990 --> 00:02:51,080
+But what I'm going to do is open up Maine and go right here and I'm going to put a couple of additional
+
+45
+00:02:51,080 --> 00:02:51,860
+functions here.
+
+46
+00:02:52,040 --> 00:02:58,700
+OK, I'll have a function called, say, while the receiver of a pointer to application, and I'm going
+
+47
+00:02:58,700 --> 00:03:03,620
+to call this one shut down and it doesn't return anything.
+
+48
+00:03:03,860 --> 00:03:04,160
+OK?
+
+49
+00:03:04,940 --> 00:03:06,200
+And I'll have another function.
+
+50
+00:03:06,800 --> 00:03:11,480
+Also, with the receiver, a pointer to application and I'm going to call this one.
+
+51
+00:03:11,750 --> 00:03:13,880
+Listen for shut down.
+
+52
+00:03:16,490 --> 00:03:21,800
+And here's what we're going to listen for anything that might stop our application from running, and
+
+53
+00:03:21,800 --> 00:03:27,500
+we're going to do that by creating a channel and having that channel listen for.
+
+54
+00:03:28,900 --> 00:03:33,520
+Interrupts to kind of interrupts a seguinte and a second term.
+
+55
+00:03:33,700 --> 00:03:36,340
+A SIG interrupt and a SIG terminate.
+
+56
+00:03:36,460 --> 00:03:37,210
+Those are signals.
+
+57
+00:03:37,370 --> 00:03:37,690
+OK.
+
+58
+00:03:38,200 --> 00:03:43,920
+There are a bunch of signals that exist in most operating systems and some we can catch and the two
+
+59
+00:03:43,930 --> 00:03:47,140
+are interested in in this case are significant and SIG term.
+
+60
+00:03:47,150 --> 00:03:54,700
+So let's make the listen for shutdown function, which is assigned the value of make a channel and the
+
+61
+00:03:54,700 --> 00:03:58,630
+channel is a type of sports signal right there.
+
+62
+00:04:00,010 --> 00:04:02,950
+And one that's that's how big the channel is.
+
+63
+00:04:03,040 --> 00:04:12,070
+OK, and now we're going to use the signal package built into the standard library signal dot notify
+
+64
+00:04:12,880 --> 00:04:14,050
+and for parameters.
+
+65
+00:04:14,290 --> 00:04:18,519
+The first one is the channel quit, and the second and third are what we're going to listen for.
+
+66
+00:04:18,610 --> 00:04:26,890
+We're going to listen for Cisco built into the standard library dot SIG int right there.
+
+67
+00:04:27,190 --> 00:04:37,120
+And we're also going to listen for Cisco Dot SIG term, and that will send the appropriate signals to
+
+68
+00:04:37,120 --> 00:04:38,110
+that channel quick.
+
+69
+00:04:39,190 --> 00:04:46,350
+And now we just wait for that to receive something as is assigned the value of whatever comes from quit.
+
+70
+00:04:47,860 --> 00:04:48,220
+OK.
+
+71
+00:04:49,570 --> 00:04:52,540
+And now just so we can see what's going to take place here.
+
+72
+00:04:52,570 --> 00:04:58,540
+Let's right to the info log a dot that info log right there.
+
+73
+00:04:59,770 --> 00:05:00,700
+Dot print line.
+
+74
+00:05:03,130 --> 00:05:10,240
+I'll just say received signal and whatever the signal is that start string.
+
+75
+00:05:12,400 --> 00:05:20,320
+OK, and then I'll call the shut down function eight off down the one up there that doesn't do anything
+
+76
+00:05:20,320 --> 00:05:21,310
+in the moment, and that's fine.
+
+77
+00:05:21,310 --> 00:05:22,030
+It exists.
+
+78
+00:05:22,300 --> 00:05:26,680
+And then I'll fix at how I start it with the status code of zero.
+
+79
+00:05:26,900 --> 00:05:33,220
+OK, now this function listen for shutdown is here, but it's actually not being yet.
+
+80
+00:05:33,250 --> 00:05:34,780
+So what I'm going to do is here.
+
+81
+00:05:34,780 --> 00:05:41,350
+After I finished the application and before I call, listen and serve, I'll simply say, Go see Dot.
+
+82
+00:05:42,280 --> 00:05:47,530
+Listen for shutdown now since listen and serve returns an error.
+
+83
+00:05:47,590 --> 00:05:54,910
+Let's try out for that just to avoid the warnings in our I.D. and we'll print out whatever error we
+
+84
+00:05:54,910 --> 00:05:55,120
+get.
+
+85
+00:05:55,450 --> 00:05:59,170
+See the app in full of the print line.
+
+86
+00:05:59,380 --> 00:06:04,210
+We'll make the analog analog dot print line, whatever the error.
+
+87
+00:06:04,690 --> 00:06:04,990
+OK.
+
+88
+00:06:05,260 --> 00:06:10,180
+OK, now this doesn't really seem to do anything at the moment, but let's try our application.
+
+89
+00:06:10,300 --> 00:06:10,840
+Let's run it.
+
+90
+00:06:11,500 --> 00:06:12,430
+So make start.
+
+91
+00:06:20,850 --> 00:06:22,110
+There it started and listening.
+
+92
+00:06:22,590 --> 00:06:24,780
+Now a clear the screen and type make stop.
+
+93
+00:06:26,830 --> 00:06:31,930
+And you can see the received signal terminated, so it's doing what it's supposed to do when the application
+
+94
+00:06:31,930 --> 00:06:34,900
+stops before it actually exits.
+
+95
+00:06:35,350 --> 00:06:42,370
+It actually prints out this message and we're also calling a shutdown, which means up here in this
+
+96
+00:06:42,370 --> 00:06:47,740
+empty function, we can say, put any cleanup tasks here.
+
+97
+00:06:48,850 --> 00:06:55,510
+And if you want to make sure that things actually finish before you exit the application, you can do
+
+98
+00:06:55,510 --> 00:06:56,680
+something as simple as this.
+
+99
+00:06:56,860 --> 00:07:04,330
+In our application struct, we can put a variable called W.G. for weight group of type s'inquiete group.
+
+100
+00:07:06,100 --> 00:07:10,960
+And then down here, all we have to do is say AWG, don't wait.
+
+101
+00:07:11,950 --> 00:07:17,140
+So for example, if you're sending email in your application, you might every time you send a message
+
+102
+00:07:17,140 --> 00:07:17,500
+out.
+
+103
+00:07:17,830 --> 00:07:19,300
+Add something to the wait group.
+
+104
+00:07:19,330 --> 00:07:24,850
+And once it's finished sending you just say, Wait, W.G. done, and that would decremental.
+
+105
+00:07:25,030 --> 00:07:27,820
+So this AWG, don't wait.
+
+106
+00:07:28,750 --> 00:07:34,390
+This will block until the wait group is empty.
+
+107
+00:07:37,520 --> 00:07:43,700
+And just to avoid the irritating warnings will make it this way way through.
+
+108
+00:07:44,930 --> 00:07:51,710
+So that's a pretty simple way of giving our developers people using celerity as a means of putting cleanup
+
+109
+00:07:51,710 --> 00:07:57,770
+tasks things that have to finish or should take place before the application completely shuts down.
+
+110
+00:07:58,010 --> 00:07:58,850
+And that's pretty simple.
+

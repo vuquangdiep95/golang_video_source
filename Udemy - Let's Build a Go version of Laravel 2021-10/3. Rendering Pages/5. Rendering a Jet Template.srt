@@ -1,0 +1,139 @@
+1
+00:00:00,930 --> 00:00:06,550
+So let's try out the rendering a jet template, and we will actually use a jet template this time around.
+
+2
+00:00:06,570 --> 00:00:12,180
+We'll do that in the next lecture or the one after that, we'll just make sure that things work as expected.
+
+3
+00:00:12,330 --> 00:00:18,720
+So if you look in my I'm looking in the My App project, and if you look in my views folder, I have
+
+4
+00:00:18,720 --> 00:00:21,720
+a file I've created called test jet Typekit.
+
+5
+00:00:21,720 --> 00:00:24,480
+And all that's in it is a line of text.
+
+6
+00:00:24,510 --> 00:00:25,440
+This is from jet.
+
+7
+00:00:25,650 --> 00:00:27,090
+OK, so create one of those.
+
+8
+00:00:28,080 --> 00:00:31,200
+Then let's go to our roots file and let's try this out.
+
+9
+00:00:31,590 --> 00:00:37,140
+So before we do that, of course, I have to open my terminal window and type go mode vendor just to
+
+10
+00:00:37,140 --> 00:00:40,600
+get the latest version of celebrities in my vendor folder there.
+
+11
+00:00:40,650 --> 00:00:41,190
+That's done.
+
+12
+00:00:42,120 --> 00:00:43,800
+It will just create a test route right here.
+
+13
+00:00:44,070 --> 00:00:48,240
+A really simple one and will inline everything so we won't even create a handler this time around.
+
+14
+00:00:48,300 --> 00:00:57,000
+So a dot app dot roots don't get because we're just going to make a get request to slash jet and in-line
+
+15
+00:00:57,000 --> 00:00:57,690
+a function here.
+
+16
+00:00:57,810 --> 00:01:10,020
+Func Whv Typekit Response Writers is the first parameter and our a pointer to don't request is the second
+
+17
+00:01:10,020 --> 00:01:10,470
+parameter.
+
+18
+00:01:10,890 --> 00:01:20,280
+And we'll just call a Dot App Dot Render Jet page there, and that requires a few parameters.
+
+19
+00:01:20,280 --> 00:01:24,480
+W R and the name of my template is test jet without the extension.
+
+20
+00:01:24,990 --> 00:01:27,270
+And then Neil and Neil for the two days.
+
+21
+00:01:27,480 --> 00:01:27,780
+OK.
+
+22
+00:01:27,870 --> 00:01:28,770
+So let's give that a try.
+
+23
+00:01:29,910 --> 00:01:32,910
+So we'll open our terminal and type make start.
+
+24
+00:01:38,040 --> 00:01:45,690
+And go to my Web browser and let's go to HP Collins slash local host 4000 and we should get the go templates.
+
+25
+00:01:45,720 --> 00:01:46,440
+There it is.
+
+26
+00:01:47,070 --> 00:01:49,560
+And now let's put slash check after that.
+
+27
+00:01:50,100 --> 00:01:50,700
+And there it is.
+
+28
+00:01:50,730 --> 00:01:52,020
+This is from Jack.
+
+29
+00:01:52,050 --> 00:01:58,740
+So our render functionality using templates, both go templates and jet templates works as expected.
+
+30
+00:01:59,100 --> 00:02:04,740
+But the great thing about this, if you go back to our roots file, is that I can call Jet Page directly
+
+31
+00:02:04,740 --> 00:02:09,440
+or I could call go page directly, or I can just call page and go with the default one.
+
+32
+00:02:09,450 --> 00:02:10,560
+So that works really well.
+
+33
+00:02:11,490 --> 00:02:17,340
+So in the next lecture, we'll try creating a handler and creating some actual jet templates and play
+
+34
+00:02:17,340 --> 00:02:18,090
+with that for a bit.
+
+35
+00:02:18,330 --> 00:02:19,950
+And then we'll write some tests.

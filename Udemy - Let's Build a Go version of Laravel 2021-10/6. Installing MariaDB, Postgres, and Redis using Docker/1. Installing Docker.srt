@@ -1,0 +1,91 @@
+1
+00:00:01,140 --> 00:00:05,550
+So in this section of the course, we're going to be working with databases and we're going to be working
+
+2
+00:00:05,550 --> 00:00:08,030
+with post-cruise and maestro.
+
+3
+00:00:08,070 --> 00:00:13,290
+We're actually MariaDB, which is a drop in replacement for MySchool and a bit later on in the course,
+
+4
+00:00:13,290 --> 00:00:14,970
+we're also going to be working with Reddit's.
+
+5
+00:00:14,970 --> 00:00:20,070
+And I think the simplest way to get these three things installed is using Docker.
+
+6
+00:00:20,070 --> 00:00:24,210
+And of course, if you don't have Docker installed, the first step is to install Docker.
+
+7
+00:00:25,020 --> 00:00:29,730
+So I have links to three resources here on the course resources for this lecture.
+
+8
+00:00:29,760 --> 00:00:32,100
+One is how to install Docker on a Mac.
+
+9
+00:00:32,400 --> 00:00:33,810
+And there's two big buttons here.
+
+10
+00:00:33,820 --> 00:00:38,970
+If you have an Intel chip like I do, this is the one you want if you're fortunate enough to have an
+
+11
+00:00:38,970 --> 00:00:41,080
+M1 chip or one of Apple's chips.
+
+12
+00:00:41,100 --> 00:00:44,300
+This is the one you want, so download that and install it.
+
+13
+00:00:44,310 --> 00:00:47,730
+And it's really, really straightforward if you're on windows.
+
+14
+00:00:47,790 --> 00:00:49,460
+Of course, this is the one you want.
+
+15
+00:00:49,470 --> 00:00:51,740
+And again, it's very, very simple to install it.
+
+16
+00:00:51,750 --> 00:00:53,670
+All of the instructions are here and there.
+
+17
+00:00:53,780 --> 00:00:55,230
+They're detailed very well.
+
+18
+00:00:55,710 --> 00:00:59,250
+And if you're on Linux, chances are you're not going to have any difficulty installing it.
+
+19
+00:00:59,580 --> 00:01:03,540
+Your favorite package manager for whatever your district is probably has Docker.
+
+20
+00:01:03,540 --> 00:01:06,320
+And if not, there are instructions here for Ubuntu.
+
+21
+00:01:06,330 --> 00:01:10,920
+But there's all kinds of resources out there for how to install Docker on Linux.
+
+22
+00:01:11,280 --> 00:01:12,720
+So get that installed in in.
+
+23
+00:01:12,720 --> 00:01:21,510
+The next lesson will use a Docker compose file to install Postgres, Redis and Maria DB as Docker images.

@@ -1,0 +1,411 @@
+1
+00:00:00,870 --> 00:00:05,490
+So now that we've looked at channels in a bit more detail, let's get started working with them.
+
+2
+00:00:05,490 --> 00:00:10,200
+And we'll do so by tackling the classic computer science problem of the sleeping barber.
+
+3
+00:00:11,280 --> 00:00:18,510
+So I've opened up a new folder in Visual Studio code and I'll initialize a go file by typing go mod
+
+4
+00:00:18,630 --> 00:00:20,340
+in it and I'll just call my Berber.
+
+5
+00:00:21,660 --> 00:00:25,320
+Okay, so let's create our main go file.
+
+6
+00:00:26,850 --> 00:00:33,150
+And typically when I'm working with a project like this, I like to put some comments at the top of
+
+7
+00:00:33,150 --> 00:00:35,760
+the mango file just to state the problem.
+
+8
+00:00:35,850 --> 00:00:39,870
+And I've written some out and I've copied to clipboard and I'll place them in here.
+
+9
+00:00:40,410 --> 00:00:46,080
+And if you want these, just download the source for this project from this lecture and you'll have
+
+10
+00:00:46,080 --> 00:00:46,710
+the comments.
+
+11
+00:00:46,740 --> 00:00:47,490
+So let's get started.
+
+12
+00:00:49,050 --> 00:00:50,310
+So we're in Package Main
+
+13
+00:00:53,400 --> 00:00:56,760
+and we're going to have obviously some variables.
+
+14
+00:00:56,820 --> 00:01:00,240
+What I'm going to do right now is just type out a few comments.
+
+15
+00:01:00,450 --> 00:01:00,670
+Okay?
+
+16
+00:01:00,750 --> 00:01:05,930
+So we'll have some variables here and we'll have our main function, of course, of Main.
+
+17
+00:01:05,970 --> 00:01:11,070
+I can put that in there and let's write some comments just to break this problem down into some parts.
+
+18
+00:01:12,130 --> 00:01:13,490
+So what do I want to do in here?
+
+19
+00:01:13,490 --> 00:01:14,290
+And that's all I'm going to do.
+
+20
+00:01:14,290 --> 00:01:18,490
+This lecture is just write some comment and then we'll start tackling them in subsequent lectures.
+
+21
+00:01:19,500 --> 00:01:24,390
+So if we look at the statement of the problem, there's a textual description of it right here.
+
+22
+00:01:25,050 --> 00:01:29,190
+But the rules are basically what I have here in these these bullet points.
+
+23
+00:01:30,250 --> 00:01:35,530
+So we have a barber shop and if there are no customers in the waiting room, the barber falls asleep
+
+24
+00:01:35,530 --> 00:01:36,110
+in a chair.
+
+25
+00:01:36,640 --> 00:01:37,720
+So the barber takes a nap.
+
+26
+00:01:37,750 --> 00:01:38,620
+Well, that's easy enough.
+
+27
+00:01:39,470 --> 00:01:40,340
+A customer.
+
+28
+00:01:40,370 --> 00:01:43,010
+If a customer shows up and the barber is asleep.
+
+29
+00:01:43,250 --> 00:01:45,710
+The customer has to wake the barber up to get a haircut.
+
+30
+00:01:46,730 --> 00:01:51,100
+Now, if a customer arrives while the barber is working, the customer leaves.
+
+31
+00:01:51,110 --> 00:01:56,750
+If all the chairs in the waiting room are occupied but sits in an empty chair if one is available.
+
+32
+00:01:57,020 --> 00:01:58,010
+Okay, that makes sense.
+
+33
+00:01:59,140 --> 00:02:04,090
+When the barber finishes cutting someone's hair, he or she inspects the waiting room to see if there's
+
+34
+00:02:04,090 --> 00:02:07,150
+any waiting customers and goes to go to sleep.
+
+35
+00:02:07,150 --> 00:02:09,130
+If there's nobody there otherwise.
+
+36
+00:02:09,140 --> 00:02:09,790
+Takes the person.
+
+37
+00:02:09,790 --> 00:02:10,420
+Cuts their hair.
+
+38
+00:02:11,610 --> 00:02:17,040
+The barber shop can stop accepting new clients at closing time, but the barbers are not allowed to
+
+39
+00:02:17,040 --> 00:02:17,550
+leave.
+
+40
+00:02:17,580 --> 00:02:21,360
+If there's anybody in the waiting room, so they have to cut everyone's hair if they're waiting, even
+
+41
+00:02:21,360 --> 00:02:26,610
+if the shop is closed and after the shop is closed and there's no clients left in the waiting room,
+
+42
+00:02:26,820 --> 00:02:27,960
+the barber goes home.
+
+43
+00:02:28,080 --> 00:02:29,070
+So those are the rules.
+
+44
+00:02:29,640 --> 00:02:34,410
+Now, this problem, like the ones we've dealt with so far in this course, it was originally proposed
+
+45
+00:02:34,410 --> 00:02:38,110
+in 1965 by the computer science pioneer Dijkstra.
+
+46
+00:02:38,530 --> 00:02:38,880
+Okay.
+
+47
+00:02:39,600 --> 00:02:43,230
+And the point of this problem and it's perfect for our purposes right now.
+
+48
+00:02:43,590 --> 00:02:48,750
+The point of this problem and it's solution is to make it clear that in many cases you don't have to
+
+49
+00:02:48,750 --> 00:02:53,370
+use semaphores or as we call them, we go mutex in order to solve the problem.
+
+50
+00:02:54,320 --> 00:02:56,450
+So let's read some comments to think things out.
+
+51
+00:02:57,170 --> 00:03:01,640
+So the first thing I'm going to do is there's going to be an element of randomness in this program.
+
+52
+00:03:01,940 --> 00:03:06,290
+So we're going to want to seed our random number generator.
+
+53
+00:03:07,070 --> 00:03:08,400
+Okay, that's easy enough.
+
+54
+00:03:08,400 --> 00:03:09,290
+That's one line of code.
+
+55
+00:03:10,160 --> 00:03:12,590
+Then we'll want to print a welcome message of some sort.
+
+56
+00:03:13,130 --> 00:03:14,720
+Again, pretty simple format.
+
+57
+00:03:14,950 --> 00:03:16,130
+Print line will do the trick.
+
+58
+00:03:16,560 --> 00:03:20,210
+We'll probably install a color package just to make things a little more attractive.
+
+59
+00:03:21,280 --> 00:03:25,180
+Then if we need channels, let's create channels
+
+60
+00:03:28,480 --> 00:03:29,300
+if we need any.
+
+61
+00:03:29,320 --> 00:03:33,430
+And as you know, we are, in fact, going to need at least one channel probably to.
+
+62
+00:03:34,580 --> 00:03:39,560
+And then we're going to want to create some data structure that represents the barbershop.
+
+63
+00:03:41,450 --> 00:03:41,780
+Okay.
+
+64
+00:03:42,020 --> 00:03:47,070
+So that will describe the kinds of things that that make this barbershop what it is.
+
+65
+00:03:47,090 --> 00:03:48,650
+How big is the waiting area?
+
+66
+00:03:48,830 --> 00:03:50,420
+How long does it take to cut hair?
+
+67
+00:03:50,660 --> 00:03:52,220
+How many barbers do we have?
+
+68
+00:03:52,700 --> 00:03:54,230
+Any channels we might need?
+
+69
+00:03:54,290 --> 00:03:54,990
+Things like that.
+
+70
+00:03:55,040 --> 00:03:56,690
+So we'll have to create some data structure.
+
+71
+00:03:57,470 --> 00:04:00,320
+Then we're going to want to add barbers.
+
+72
+00:04:00,710 --> 00:04:05,720
+We'll start with one, but we'll add more than one as time goes on just to see how things work.
+
+73
+00:04:06,890 --> 00:04:10,060
+Then we're going to want to start the barber shop.
+
+74
+00:04:11,690 --> 00:04:12,530
+Barber shop.
+
+75
+00:04:13,010 --> 00:04:14,570
+So that data structure we had up there.
+
+76
+00:04:14,930 --> 00:04:19,180
+We're going to want to make that run probably in the background, probably as a go routine.
+
+77
+00:04:19,190 --> 00:04:21,680
+So I'll put it as a go routine.
+
+78
+00:04:22,880 --> 00:04:24,890
+And that's going to run until the shop closes.
+
+79
+00:04:25,290 --> 00:04:25,550
+Okay.
+
+80
+00:04:25,630 --> 00:04:27,180
+So everyone's hair is cut.
+
+81
+00:04:27,200 --> 00:04:28,580
+There's nobody left in the waiting room.
+
+82
+00:04:28,610 --> 00:04:30,290
+We've passed the maximum time.
+
+83
+00:04:30,290 --> 00:04:32,510
+The barbershop can be open, that sort of thing.
+
+84
+00:04:34,100 --> 00:04:36,070
+And then finally, finally.
+
+85
+00:04:36,080 --> 00:04:38,510
+But next, we're going to want to add clients.
+
+86
+00:04:38,930 --> 00:04:41,420
+So we're going to have to have clients show up somehow.
+
+87
+00:04:41,630 --> 00:04:42,020
+Okay.
+
+88
+00:04:42,770 --> 00:04:48,830
+And then we're going to block it until the barbershop is closed.
+
+89
+00:04:48,890 --> 00:04:52,520
+And by block, I just mean keep the application going until things are finished.
+
+90
+00:04:52,700 --> 00:04:53,030
+Okay.
+
+91
+00:04:53,840 --> 00:04:58,490
+Now, this is a very high level description of the kinds of things we're going to be doing, but it's
+
+92
+00:04:58,490 --> 00:04:59,400
+a good starting point.
+
+93
+00:04:59,420 --> 00:05:03,680
+We might move some things around or or add something or delete something as time goes on.
+
+94
+00:05:04,040 --> 00:05:09,380
+But this at least breaks this rather complex problem down into manageable bits.
+
+95
+00:05:09,410 --> 00:05:11,480
+So we're taking a top down approach to this.
+
+96
+00:05:11,510 --> 00:05:11,850
+Okay.
+
+97
+00:05:12,500 --> 00:05:17,120
+So in the next lecture, we'll get started writing some code and replacing some of these comments or
+
+98
+00:05:17,120 --> 00:05:20,690
+adding code after these comments just to get things going.
+
+99
+00:05:20,840 --> 00:05:21,920
+And it's going to take a while.
+
+100
+00:05:21,950 --> 00:05:26,810
+This problem is considerably more sophisticated than the ones we've looked at so far, but it's an excellent
+
+101
+00:05:26,810 --> 00:05:29,780
+introduction to the actual use of channels.
+
+102
+00:05:30,320 --> 00:05:30,680
+All right.
+
+103
+00:05:30,980 --> 00:05:31,760
+Let's move on.

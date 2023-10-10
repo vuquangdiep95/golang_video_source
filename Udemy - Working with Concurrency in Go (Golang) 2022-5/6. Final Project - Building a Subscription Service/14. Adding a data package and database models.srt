@@ -1,0 +1,447 @@
+1
+00:00:00,920 --> 00:00:05,120
+So now we have a means of displaying Web pages to end users.
+
+2
+00:00:05,150 --> 00:00:07,460
+We have a database that has some content in it.
+
+3
+00:00:07,790 --> 00:00:10,940
+And of course, we need some means of interacting with that database.
+
+4
+00:00:11,150 --> 00:00:15,440
+Now, this is a course on concurrency and not database programming.
+
+5
+00:00:15,440 --> 00:00:17,390
+So just to speed things along.
+
+6
+00:00:17,420 --> 00:00:23,480
+If you go to the course resources for this lecture, you'll see a file called Data dot the zip download
+
+7
+00:00:23,480 --> 00:00:28,790
+that extract it and you'll find a folder from that zip file called Data.
+
+8
+00:00:29,160 --> 00:00:33,080
+And I put it at the root level of your project, just like you see right here.
+
+9
+00:00:33,080 --> 00:00:39,620
+I have a folder called Data right beside the CND folder and it has three files in it models, plan and
+
+10
+00:00:39,620 --> 00:00:40,040
+user.
+
+11
+00:00:40,340 --> 00:00:41,180
+Now let's go through these.
+
+12
+00:00:41,210 --> 00:00:42,370
+This is really simple stuff.
+
+13
+00:00:42,380 --> 00:00:44,210
+If you've ever worked with a database before.
+
+14
+00:00:44,630 --> 00:00:45,860
+You'll be familiar with this.
+
+15
+00:00:46,280 --> 00:00:48,530
+So I'll look at the user dango file first.
+
+16
+00:00:49,490 --> 00:00:54,860
+And this is in packaged data and it just imports things from the standard library.
+
+17
+00:00:54,890 --> 00:00:57,050
+Nothing sophisticated here at all.
+
+18
+00:00:57,410 --> 00:01:00,770
+And we have at the very top a type user.
+
+19
+00:01:00,800 --> 00:01:04,140
+And of course, this matches exactly what's in the database.
+
+20
+00:01:04,160 --> 00:01:07,970
+So there's a column called ID in the database and I call it I.B. here.
+
+21
+00:01:08,870 --> 00:01:09,650
+That's an integer.
+
+22
+00:01:09,660 --> 00:01:16,190
+So we have ID, email, first name, last name, password, whether the user is active or an admin.
+
+23
+00:01:16,220 --> 00:01:19,160
+The standard created out and updated at fields.
+
+24
+00:01:19,160 --> 00:01:20,270
+And then we have plan.
+
+25
+00:01:20,270 --> 00:01:25,610
+And this of course corresponds to the plans table in the database and we'll look at that in a minute.
+
+26
+00:01:26,180 --> 00:01:32,000
+So this just maps a a struct, a type to the database fields, simple enough.
+
+27
+00:01:32,420 --> 00:01:38,630
+And then we have with the receiver user, which points to this type of course a whole bunch of functions.
+
+28
+00:01:39,170 --> 00:01:44,930
+One lets me get a slice of all the users and it returns a slice of pointers to the user type and potentially
+
+29
+00:01:44,930 --> 00:01:45,260
+an error.
+
+30
+00:01:45,470 --> 00:01:46,430
+Very simple stuff.
+
+31
+00:01:46,910 --> 00:01:48,290
+We write the simple query.
+
+32
+00:01:48,740 --> 00:01:53,870
+We get our rows from the database with a DB query context and DB of course.
+
+33
+00:01:58,380 --> 00:01:59,770
+We'll have a look at that in a minute.
+
+34
+00:01:59,790 --> 00:02:00,190
+Okay.
+
+35
+00:02:01,380 --> 00:02:07,710
+And down here, we just loop through the rows that we get from the database, populate one user, type
+
+36
+00:02:07,710 --> 00:02:10,590
+in a variable user, and then we append that to the slice.
+
+37
+00:02:10,630 --> 00:02:12,000
+Okay, so that's simple enough.
+
+38
+00:02:12,000 --> 00:02:17,010
+And we do the same thing for getting a user by email and we'll use this in a bit when we log the user
+
+39
+00:02:17,010 --> 00:02:17,400
+in.
+
+40
+00:02:18,690 --> 00:02:25,890
+And then down here we get one user by ID and of course, this gets the necessary user and this one also
+
+41
+00:02:25,890 --> 00:02:27,000
+gets the plan.
+
+42
+00:02:27,080 --> 00:02:33,420
+Okay, so we'll get all the user information and then we'll find out if that user has already purchased
+
+43
+00:02:33,420 --> 00:02:36,600
+or subscribed to one of the plants we're offering in our application.
+
+44
+00:02:36,780 --> 00:02:39,930
+And if they do, we set up a plan variable and add that to the user.
+
+45
+00:02:39,930 --> 00:02:42,110
+And if we don't, it's just nil.
+
+46
+00:02:42,180 --> 00:02:42,930
+There's nothing in there.
+
+47
+00:02:42,990 --> 00:02:46,140
+Okay, an empty plan type update.
+
+48
+00:02:46,140 --> 00:02:50,580
+It allows me to update user delete allows me to delete a user by user ID.
+
+49
+00:02:51,570 --> 00:02:57,270
+Delete my ID is the same thing, but instead of getting user id from the receiver I pass, the ideas
+
+50
+00:02:57,270 --> 00:03:02,220
+in aren't exactly the same, otherwise just delete from users where id equals whatever.
+
+51
+00:03:03,270 --> 00:03:06,570
+Insert allows me to add a new user and we'll be using this one.
+
+52
+00:03:06,570 --> 00:03:12,930
+When we register users, we can reset a user's password and we can verify whether or not a supplied
+
+53
+00:03:12,930 --> 00:03:15,930
+password matches the hash we have stored in the database.
+
+54
+00:03:16,110 --> 00:03:17,070
+Very simple stuff.
+
+55
+00:03:18,060 --> 00:03:19,080
+So that's the user one.
+
+56
+00:03:19,530 --> 00:03:21,000
+Now let's look at planned on go.
+
+57
+00:03:21,090 --> 00:03:25,380
+This is shorter because we're not doing as much with the actual plans, but the same idea.
+
+58
+00:03:26,370 --> 00:03:31,170
+I have a struct that matches the structure of my database table here.
+
+59
+00:03:31,170 --> 00:03:32,880
+I can get all the plans.
+
+60
+00:03:33,390 --> 00:03:38,560
+I can get one plan by ID and I can subscribe a user to a plan.
+
+61
+00:03:38,580 --> 00:03:44,250
+And what this does is it inserts into that table user plans, the user ID, the plan ID, and then the
+
+62
+00:03:44,250 --> 00:03:45,660
+timestamps, and that's it.
+
+63
+00:03:46,500 --> 00:03:51,510
+And the last one is just a little utility function that allows me to get a price from the database and
+
+64
+00:03:51,510 --> 00:03:54,300
+format it as though it's currency and return a string.
+
+65
+00:03:54,510 --> 00:04:02,070
+So if we have a thousand in the database, this will return dollar sign 10.00 or $10.
+
+66
+00:04:02,190 --> 00:04:02,520
+Okay.
+
+67
+00:04:03,750 --> 00:04:05,940
+Now, the last one to look at is models dot go.
+
+68
+00:04:06,720 --> 00:04:13,080
+And this is what we're going to use to make our database functions available to our entire application.
+
+69
+00:04:13,350 --> 00:04:15,450
+So we set a constant here.
+
+70
+00:04:15,630 --> 00:04:16,500
+DB Timeout.
+
+71
+00:04:16,710 --> 00:04:21,210
+If you can't do your database operation in 3 seconds, something has gone wrong.
+
+72
+00:04:21,270 --> 00:04:28,950
+Very standard and this is DB and this is our connection pool, our pointer to a sequel DB type and this
+
+73
+00:04:28,950 --> 00:04:30,450
+is what we use to connect Postgres.
+
+74
+00:04:30,480 --> 00:04:36,040
+Okay, now we have this function called New that we're going to call before too long from our main dot
+
+75
+00:04:36,060 --> 00:04:36,690
+go file.
+
+76
+00:04:37,320 --> 00:04:41,970
+This creates a new type of models and models.
+
+77
+00:04:42,120 --> 00:04:46,050
+It's just this type down here right now it has one field user user.
+
+78
+00:04:47,040 --> 00:04:53,070
+Any time I add something to this return statement in the new new function, one of my database models
+
+79
+00:04:53,070 --> 00:04:57,690
+and I add it to the type models, it's immediately available to my entire application.
+
+80
+00:04:57,810 --> 00:04:59,040
+So let's add plan in here.
+
+81
+00:04:59,070 --> 00:04:59,400
+Okay.
+
+82
+00:04:59,880 --> 00:05:05,580
+So I'll put in plan of type plan and then it's an empty instance of that.
+
+83
+00:05:06,540 --> 00:05:15,360
+And then down here I just add plan and plan and with no other changes, once I actually call this new
+
+84
+00:05:15,360 --> 00:05:17,910
+function from Mean Don't Go, which I'm going to do in just a moment.
+
+85
+00:05:19,290 --> 00:05:24,750
+All of the database models and their associated methods are available to my entire application.
+
+86
+00:05:25,410 --> 00:05:26,430
+So let's do that right now.
+
+87
+00:05:26,460 --> 00:05:28,440
+Let's go over to Mango right here.
+
+88
+00:05:29,340 --> 00:05:29,760
+Okay.
+
+89
+00:05:29,760 --> 00:05:31,470
+And let's also open up config.
+
+90
+00:05:31,470 --> 00:05:32,040
+Don't go.
+
+91
+00:05:33,180 --> 00:05:34,410
+So in config, don't go.
+
+92
+00:05:34,500 --> 00:05:37,680
+I'm going to add a field to this called models.
+
+93
+00:05:39,050 --> 00:05:42,380
+And it's a type data package.
+
+94
+00:05:42,380 --> 00:05:45,140
+We just installed dot models.
+
+95
+00:05:46,830 --> 00:05:47,100
+All right.
+
+96
+00:05:47,220 --> 00:05:54,030
+And it did the import for me, and I'll save this to format it and I'll go back to Main Dog, go and
+
+97
+00:05:54,030 --> 00:05:57,270
+find the main func right near the top right here.
+
+98
+00:05:58,450 --> 00:06:05,920
+And where I populate this applet application config right after the weight I'll put in models and that's
+
+99
+00:06:05,920 --> 00:06:13,630
+now equal to a call to data dot new and I hand it TV, which I already have.
+
+100
+00:06:13,780 --> 00:06:21,310
+I got that right up there in line 27 and I put a comma after this and save it to format it.
+
+101
+00:06:21,820 --> 00:06:28,300
+And if I try compiling my application, make restart or actually make a start cause I see I just stopped
+
+102
+00:06:28,300 --> 00:06:28,450
+it.
+
+103
+00:06:29,110 --> 00:06:30,190
+Everything should compile.
+
+104
+00:06:32,400 --> 00:06:32,910
+And it did.
+
+105
+00:06:33,000 --> 00:06:34,200
+It compiled just perfectly.
+
+106
+00:06:34,800 --> 00:06:39,450
+Now we have access to the database, but we're not actually using anything in that database.
+
+107
+00:06:40,050 --> 00:06:46,720
+So in the next lecture will implement the logic for logging user in and logging you user out.
+
+108
+00:06:46,740 --> 00:06:48,930
+And of course, that will interact with the database.
+
+109
+00:06:49,300 --> 00:06:52,500
+It'll interact with Sessions, which interact with Redis.
+
+110
+00:06:52,770 --> 00:06:55,380
+It just gets us closer to having a functional application.
+
+111
+00:06:55,770 --> 00:06:59,220
+So we can finally get around to implementing some concurrent logic.
+
+112
+00:06:59,760 --> 00:07:00,960
+All right, let's move on.

@@ -1,0 +1,179 @@
+1
+00:00:00,660 --> 00:00:05,070
+All right so we're done with the hands on exercises now we're moving into G.P.S. and the first thing
+
+2
+00:00:05,070 --> 00:00:11,280
+we're gonna do is learn a little bit about P C and Daniel's been doing some research on this I'm going
+
+3
+00:00:11,280 --> 00:00:14,500
+to be learning about it right alongside with you.
+
+4
+00:00:14,520 --> 00:00:16,830
+What did you find out about JROTC here.
+
+5
+00:00:16,830 --> 00:00:26,970
+DANIEL So GOPAC ended up being kind of almost a replacement for communication protocol that Google developed
+
+6
+00:00:27,540 --> 00:00:37,840
+and a G or P C is actually a recursive name GOP C stands for GOPAC wrote procedure call it yeah it's
+
+7
+00:00:37,860 --> 00:00:41,910
+the annual hey is our piece GOPAC Stanford Google GAAP seems like I don't know.
+
+8
+00:00:41,910 --> 00:00:46,590
+And then under that fake you you found GAAP C stands for a GAAP so.
+
+9
+00:00:46,710 --> 00:00:47,210
+OK.
+
+10
+00:00:47,370 --> 00:00:54,570
+GAAP C kind of like you know what Jason stands for G javascript object notation but here GAAP stands
+
+11
+00:00:54,570 --> 00:00:56,880
+for GOPAC remote procedure call of course.
+
+12
+00:00:56,940 --> 00:00:57,980
+That's fine.
+
+13
+00:00:59,590 --> 00:01:00,210
+So yeah.
+
+14
+00:01:00,240 --> 00:01:05,970
+So GAAP C was developed at Google and and there's a couple of things to it but one of the things is
+
+15
+00:01:05,970 --> 00:01:13,050
+it's an alternative to Jason and starting to become used more more widely.
+
+16
+00:01:13,050 --> 00:01:13,280
+Right.
+
+17
+00:01:13,380 --> 00:01:15,600
+Yeah it's it's it's become something that's used.
+
+18
+00:01:15,720 --> 00:01:16,040
+Yes.
+
+19
+00:01:16,070 --> 00:01:24,390
+So it's it's an alternative to HBP and GOPAC most often like ninety nine point ninety nine percent of
+
+20
+00:01:24,390 --> 00:01:30,270
+the time it uses Protocol Buffers first communicate for how you pass data around.
+
+21
+00:01:30,270 --> 00:01:40,440
+So this is similar to ATP you're using Jason so GOP sees Protocol Buffers so GOP sees CBC or B.C. to
+
+22
+00:01:40,440 --> 00:01:49,230
+call methods on your server or remote as opposed to ACP you're sending in requests with a method and
+
+23
+00:01:49,230 --> 00:01:57,690
+a path and then instead of a body to an HP request in GOPAC you've got protocol but for message.
+
+24
+00:01:57,810 --> 00:01:58,130
+OK.
+
+25
+00:01:58,200 --> 00:02:06,060
+So old way HDP make a request an endpoint and then I get a response back some Jason.
+
+26
+00:02:06,090 --> 00:02:06,610
+Right.
+
+27
+00:02:06,900 --> 00:02:17,310
+That's one you knew a G.P.S. and make a request to get back a prototype off and the prototype is binary
+
+28
+00:02:17,310 --> 00:02:19,200
+information but it's data right.
+
+29
+00:02:19,230 --> 00:02:24,530
+Yes yes it's a replacement for Jason it's smaller and more efficient to encode and decode into it.
+
+30
+00:02:24,540 --> 00:02:25,120
+All right.
+
+31
+00:02:25,650 --> 00:02:29,120
+So so that's what GOPAC is.
+
+32
+00:02:30,000 --> 00:02:37,400
+It's a little hard to use the HP Jason HP libraries are everywhere because it's used so often.
+
+33
+00:02:37,410 --> 00:02:39,930
+So it's in the standard library for most period languages.
+
+34
+00:02:39,990 --> 00:02:41,040
+And same thing for Jason.
+
+35
+00:02:41,040 --> 00:02:44,690
+It's so common that it's insanely everything GOPAC.
+
+36
+00:02:44,730 --> 00:02:45,930
+Not so much.
+
+37
+00:02:45,930 --> 00:02:50,890
+So the GOP see part of it the the transport is simple enough.
+
+38
+00:02:50,890 --> 00:02:55,020
+That's just a library for every language but in the protocol buffer is actually where it gets a little
+
+39
+00:02:55,020 --> 00:02:57,510
+more complicated to use G.P.S..
+
+40
+00:02:57,660 --> 00:03:06,840
+And so in so in the next video we'll get how to install G.P.S. and the protocol buffer compiler Yeah.
+
+41
+00:03:06,860 --> 00:03:13,190
+And so the best way to understand something is often just to see it in action and says we work through
+
+42
+00:03:13,280 --> 00:03:19,040
+kind of seeing in an actual game and greater understanding what you see as the good starting point of
+
+43
+00:03:19,040 --> 00:03:26,120
+understanding G.P.S. is it's HBP Jason GOPAC protocol.
+
+44
+00:03:26,180 --> 00:03:31,370
+It's a new way that we could exchange information between machines.
+
+45
+00:03:31,370 --> 00:03:32,500
+All right sounds good.

@@ -1,0 +1,104 @@
+1
+00:00:01,060 --> 00:00:06,070
+So now that we have our handler in progress and presumably at least partially functional, let's create
+
+2
+00:00:06,070 --> 00:00:12,190
+a route that points to it and try things out, and I'll use this test route in my rootstock go file
+
+3
+00:00:12,190 --> 00:00:13,930
+inside my app project.
+
+4
+00:00:14,140 --> 00:00:21,910
+I'll just modify that to point to our handler and strip so aident get and we'll go to and do use this
+
+5
+00:00:21,910 --> 00:00:25,180
+for the URL, because that's what is in the templates.
+
+6
+00:00:25,180 --> 00:00:31,090
+We used that you installed a couple of lectures ago and we'll point it to air handlers list f.
+
+7
+00:00:31,090 --> 00:00:31,420
+S.
+
+8
+00:00:32,409 --> 00:00:36,070
+And now I should be able to open my terminal and type make start.
+
+9
+00:00:38,690 --> 00:00:45,780
+And it's going, so let's go over to our Web browser and hit that URL, so I'll go to localhost 4000.
+
+10
+00:00:47,210 --> 00:00:51,480
+And from my dropdown menu, I should be able to choose list files.
+
+11
+00:00:51,500 --> 00:00:54,860
+And of course, that's the only one of the dropdowns here that works at the moment.
+
+12
+00:00:55,340 --> 00:00:58,220
+And it should, in theory, only work for me.
+
+13
+00:00:58,380 --> 00:01:02,300
+I o and if I click list, there's my whale tail.
+
+14
+00:01:02,300 --> 00:01:02,870
+Taller?
+
+15
+00:01:02,900 --> 00:01:03,410
+Perfect.
+
+16
+00:01:04,010 --> 00:01:05,570
+Now we do have some other things here.
+
+17
+00:01:05,580 --> 00:01:10,400
+For example, this delete does in fact pop a dialogue, but we can't delete anything yet.
+
+18
+00:01:10,460 --> 00:01:12,230
+We'll be adding that before too long.
+
+19
+00:01:12,620 --> 00:01:15,440
+But at the moment, I'm pretty sure that this works.
+
+20
+00:01:16,040 --> 00:01:18,140
+So let's try one more thing.
+
+21
+00:01:18,170 --> 00:01:24,650
+I'll switch back to my finder and I'll open up the Mineo Test bucket and I'll put a second file in there.
+
+22
+00:01:24,710 --> 00:01:26,690
+These views don't zip should do the trick.
+
+23
+00:01:27,220 --> 00:01:32,120
+And I think come back here now and click list, it shows up.
+
+24
+00:01:32,450 --> 00:01:33,080
+Perfect.
+
+25
+00:01:33,410 --> 00:01:33,800
+OK.
+
+26
+00:01:33,830 --> 00:01:36,380
+Let's move on to uploading to the file system.
+

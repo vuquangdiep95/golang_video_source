@@ -1,0 +1,663 @@
+1
+00:00:00,910 --> 00:00:05,630
+So we still have a few more things to do before this check now Button does exactly what we want.
+
+2
+00:00:06,100 --> 00:00:10,750
+So right now I click on it and I get my hardcoded Jason response.
+
+3
+00:00:10,750 --> 00:00:16,060
+And the very first thing we want to do is to actually send back meaningful information rather than hard
+
+4
+00:00:16,060 --> 00:00:17,370
+coded dummy information.
+
+5
+00:00:17,830 --> 00:00:18,970
+So let's get started with that.
+
+6
+00:00:18,970 --> 00:00:29,560
+So I'll go back to my Idy and I'm in the performed checks go file and I'm at the test check method in
+
+7
+00:00:29,560 --> 00:00:30,060
+that file.
+
+8
+00:00:30,490 --> 00:00:33,080
+So let's scroll down here.
+
+9
+00:00:33,280 --> 00:00:38,350
+Here we have this create Jason and all we need to do is to modify this Jason.
+
+10
+00:00:38,650 --> 00:00:40,950
+So it actually gets the information we're sending back.
+
+11
+00:00:41,410 --> 00:00:47,530
+So if we look at the things we expect to find here, we want OK, message service ID host, we want
+
+12
+00:00:47,530 --> 00:00:48,190
+all this stuff.
+
+13
+00:00:48,700 --> 00:00:56,500
+What I'm going to do is just delete this entirely and just help my ID, help me out.
+
+14
+00:00:56,500 --> 00:01:03,400
+RESP is assigned the value of Jason RESP and I want to fill all the fields and I'll delete the ones
+
+15
+00:01:03,400 --> 00:01:04,840
+that I don't need if necessary.
+
+16
+00:01:05,740 --> 00:01:13,870
+OK, so, OK, all right, now that is been hard coded to true and what we're doing in here, of course,
+
+17
+00:01:13,870 --> 00:01:21,340
+is this OK, I should actually respond with whether or not the the check actually passed, not that
+
+18
+00:01:21,340 --> 00:01:26,520
+it gave back the appropriate response, but that nothing went wrong while we're doing this.
+
+19
+00:01:26,530 --> 00:01:32,200
+So what I really should do to make that work properly is to actually set a variable up here that says,
+
+20
+00:01:32,200 --> 00:01:35,710
+OK, give it a default of true and then set it defaults.
+
+21
+00:01:35,710 --> 00:01:37,690
+If I have an error here and set it defaults.
+
+22
+00:01:37,690 --> 00:01:42,940
+If I have an error here, test the service and if it fails, there again said it defaults.
+
+23
+00:01:42,940 --> 00:01:48,460
+And then down here, if false is set to true send back faults and the error message so we can do that.
+
+24
+00:01:48,800 --> 00:01:53,920
+So let's come up here and say, OK, is a sign the value of true.
+
+25
+00:01:55,270 --> 00:02:02,980
+And down here we can say instead of log print line error return, we can just say OK, equals false.
+
+26
+00:02:03,940 --> 00:02:07,960
+And the same thing here, OK, equals false.
+
+27
+00:02:08,710 --> 00:02:15,220
+And then down here we can just check, we can create a variable called the rest, which is of type JSON
+
+28
+00:02:15,220 --> 00:02:15,730
+resp.
+
+29
+00:02:18,870 --> 00:02:30,150
+Change this to an equals instead of an a sign and say if, OK, we'll do this or else we just redefine
+
+30
+00:02:30,150 --> 00:02:36,450
+response to say resp dot equals false.
+
+31
+00:02:39,130 --> 00:02:44,910
+And rasped message equals I'll just put something went wrong.
+
+32
+00:02:49,470 --> 00:02:54,000
+And down here, we're returning that variable as Jason, so that would work fine, so all we need to
+
+33
+00:02:54,000 --> 00:02:58,050
+worry about here is what's the message?
+
+34
+00:02:58,290 --> 00:03:01,040
+Well, the message we're getting right here from testing the service.
+
+35
+00:03:01,050 --> 00:03:03,660
+So that's message the service ID.
+
+36
+00:03:03,720 --> 00:03:09,630
+We know what that is, escort service ID, the host service ID, we know what that is.
+
+37
+00:03:09,670 --> 00:03:20,160
+HHS ID, the host ID is host I.D. The old status was passed right to this function I believe.
+
+38
+00:03:20,430 --> 00:03:20,850
+Yeah.
+
+39
+00:03:20,850 --> 00:03:26,310
+So we've got old status so we can set that to old status, the new status.
+
+40
+00:03:28,230 --> 00:03:30,870
+And again, we get that from right here, new status.
+
+41
+00:03:33,370 --> 00:03:38,260
+And the last check is just the current time, time, we can just say that's time now.
+
+42
+00:03:40,000 --> 00:03:43,530
+OK, so that should send back the correct Jason, let's find out.
+
+43
+00:03:43,690 --> 00:03:45,100
+So we'll stop our application.
+
+44
+00:03:45,100 --> 00:03:46,210
+Start our application.
+
+45
+00:03:48,580 --> 00:03:53,830
+It return a few times, just so if we have a log file that's in error, we'll see it here, go back
+
+46
+00:03:53,830 --> 00:04:01,570
+to Firefox, reload this page, clear the console, go to our spending tab and see what we get back.
+
+47
+00:04:01,780 --> 00:04:02,440
+Check now.
+
+48
+00:04:03,790 --> 00:04:09,220
+And what we get is, OK, true error connecting, so it gave us the correct information.
+
+49
+00:04:09,610 --> 00:04:12,910
+Let's look at the network and see what it actually gave us back here.
+
+50
+00:04:16,660 --> 00:04:22,090
+Well, we'll just click it again there, so there and look at the response.
+
+51
+00:04:24,170 --> 00:04:29,150
+What what did it give us for response, it gave us everything we wanted, it gave us the air connecting
+
+52
+00:04:29,150 --> 00:04:29,620
+the service.
+
+53
+00:04:29,630 --> 00:04:31,580
+I'd absolutely correct.
+
+54
+00:04:31,730 --> 00:04:34,640
+OK, so that we know actually works.
+
+55
+00:04:36,350 --> 00:04:38,870
+So back in here, is there anything else we need to do?
+
+56
+00:04:39,140 --> 00:04:45,320
+Well, in fact, there is we've performed this check and everything seems to be working properly.
+
+57
+00:04:45,320 --> 00:04:47,210
+And I can get rid of these things right now.
+
+58
+00:04:49,270 --> 00:04:53,510
+So they don't need these log files anymore, these log print lines anymore.
+
+59
+00:04:54,290 --> 00:04:55,270
+So let's clean that up.
+
+60
+00:05:00,280 --> 00:05:06,250
+At this point, before I send the Jason response, there's some other information I want to keep track
+
+61
+00:05:06,250 --> 00:05:13,060
+of, quite possibly at the bare minimum, I want to update the last check field in the host status tables.
+
+62
+00:05:13,060 --> 00:05:19,350
+So we go back to our database and we look at how services we have this last check field.
+
+63
+00:05:19,400 --> 00:05:21,930
+And that's even if I refresh this, that's never been updated.
+
+64
+00:05:21,940 --> 00:05:27,280
+That's my default value that I stick in the database when I created this record the very first time
+
+65
+00:05:27,280 --> 00:05:27,640
+around.
+
+66
+00:05:28,150 --> 00:05:29,650
+But of course, I just did a check.
+
+67
+00:05:29,650 --> 00:05:30,880
+It was a manual check.
+
+68
+00:05:31,150 --> 00:05:32,500
+So this should be updated.
+
+69
+00:05:32,500 --> 00:05:33,210
+Absolutely.
+
+70
+00:05:33,700 --> 00:05:40,870
+And if the status has changed from pending to problem, which it just did, this should be updated as
+
+71
+00:05:40,870 --> 00:05:41,230
+well.
+
+72
+00:05:41,560 --> 00:05:44,500
+So I definitely need to do more things at a bare minimum.
+
+73
+00:05:44,500 --> 00:05:56,830
+Before I send this Jason response, I want to update the Postal Service in the database with status
+
+74
+00:05:57,040 --> 00:06:00,010
+if changed and last check.
+
+75
+00:06:00,220 --> 00:06:03,010
+So I definitely want to do that now.
+
+76
+00:06:03,010 --> 00:06:10,690
+This is a manual test, so I'm actually not going to send an email notification or a text notification.
+
+77
+00:06:10,690 --> 00:06:11,860
+So I don't need to worry about that.
+
+78
+00:06:12,220 --> 00:06:14,800
+But I do want one other thing to take place.
+
+79
+00:06:14,800 --> 00:06:21,250
+And of course, that is when this status changes, as it just did, this row should be taken off the
+
+80
+00:06:21,250 --> 00:06:24,540
+pending table and it should be added to this table.
+
+81
+00:06:24,670 --> 00:06:28,600
+Now, I could do that if I wanted to write in the host OzJet, no problem at all.
+
+82
+00:06:29,120 --> 00:06:33,610
+I definitely could do that, but I'm not going to instead, I'm going to do that using WebSocket.
+
+83
+00:06:33,610 --> 00:06:38,500
+And the reason is because this is, of course, about WebSocket and also because I don't want to write
+
+84
+00:06:38,500 --> 00:06:41,620
+JavaScript for every page, any time a check takes place.
+
+85
+00:06:41,740 --> 00:06:45,220
+I just want to have that handled automatically behind the scenes.
+
+86
+00:06:45,820 --> 00:06:52,660
+So what I need to do here at some point and not right now, but we'll get to it eventually is broadcast
+
+87
+00:06:53,350 --> 00:06:56,500
+service status changed event?
+
+88
+00:06:56,740 --> 00:07:02,170
+OK, and the last thing I want to do is when this changes.
+
+89
+00:07:02,530 --> 00:07:05,200
+I need to get a message up here and that's really easy.
+
+90
+00:07:05,230 --> 00:07:06,880
+So let's go back to our host file.
+
+91
+00:07:07,570 --> 00:07:12,040
+And down here, when we get a response, let's not just console log it, OK?
+
+92
+00:07:12,070 --> 00:07:19,090
+I said we'll say first of all, we'll check to make sure that things are OK if DataDot OK, so if we
+
+93
+00:07:19,090 --> 00:07:24,910
+got an OK and the check actually performed, we can do something of the result or else we want to have
+
+94
+00:07:24,910 --> 00:07:25,360
+an error.
+
+95
+00:07:25,390 --> 00:07:32,860
+And what I'm going to do here is just say error alert, something went wrong, OK?
+
+96
+00:07:33,190 --> 00:07:35,410
+And of course you can put whatever message you want in here.
+
+97
+00:07:35,410 --> 00:07:37,120
+You can pass that as part of the JSON.
+
+98
+00:07:37,270 --> 00:07:39,880
+But for our purposes, we'll just say something went wrong.
+
+99
+00:07:40,420 --> 00:07:46,840
+But if something went right, if the status changed or if the check went and we got a result back,
+
+100
+00:07:47,050 --> 00:07:51,280
+we need to give some kind of meaningful notification to the end user.
+
+101
+00:07:51,880 --> 00:08:00,670
+And I have built into this starter code a little JavaScript module, which I've called attention, and
+
+102
+00:08:00,670 --> 00:08:01,420
+I'm going to use that.
+
+103
+00:08:01,960 --> 00:08:03,820
+And it's just a really nice way of doing things.
+
+104
+00:08:03,820 --> 00:08:05,050
+So let's just see how it works.
+
+105
+00:08:05,290 --> 00:08:09,670
+So I'm just going to say, if data OK, and I'm going to broadcast or not broadcast, I'm going to put
+
+106
+00:08:09,670 --> 00:08:13,090
+up a little message that gives some message back to the user.
+
+107
+00:08:13,170 --> 00:08:16,990
+I'm going to do that by calling attention, which is built into my code.
+
+108
+00:08:16,990 --> 00:08:18,340
+The code that you have right now.
+
+109
+00:08:18,700 --> 00:08:21,130
+And I'm going to call the toast method, OK?
+
+110
+00:08:21,640 --> 00:08:23,200
+And that requires a few parameters.
+
+111
+00:08:23,410 --> 00:08:30,100
+So it needs a message, which I'll just put as message is assigned to data or gets the value of data
+
+112
+00:08:30,370 --> 00:08:33,060
+message because I think I called it message.
+
+113
+00:08:33,070 --> 00:08:34,780
+No, I called m e s s.
+
+114
+00:08:35,470 --> 00:08:37,360
+I think we'll find out in a minute.
+
+115
+00:08:38,050 --> 00:08:41,680
+We'll give it an icon, which I'll just say is info.
+
+116
+00:08:44,120 --> 00:08:45,480
+And it needs a timer.
+
+117
+00:08:45,800 --> 00:08:50,420
+How long do I want this to stay, this little toast to stay up there and I'll leave it up for sixty
+
+118
+00:08:50,630 --> 00:08:55,810
+thousand milliseconds so a little while and show close button.
+
+119
+00:08:59,180 --> 00:09:04,460
+And these are just parameters that determine how long this thing will show up.
+
+120
+00:09:04,490 --> 00:09:06,830
+OK, so let me save this.
+
+121
+00:09:08,180 --> 00:09:08,930
+Save this.
+
+122
+00:09:09,500 --> 00:09:11,690
+Go back to my page here.
+
+123
+00:09:11,690 --> 00:09:14,270
+Reload it, go back to my console.
+
+124
+00:09:15,290 --> 00:09:21,760
+So I'll bring up my JavaScript console, clear this, go to my pending page here and say, check now.
+
+125
+00:09:21,770 --> 00:09:23,900
+And it's just going to give me a dummy value for the moment.
+
+126
+00:09:24,290 --> 00:09:25,970
+And there it is, error connecting.
+
+127
+00:09:25,980 --> 00:09:28,610
+So that's exactly what I wanted to see show up.
+
+128
+00:09:28,880 --> 00:09:30,860
+And it's got a nice little close button here.
+
+129
+00:09:31,000 --> 00:09:38,360
+OK, so let's see what we want to do rather than just putting up this, didn't this this default message,
+
+130
+00:09:38,360 --> 00:09:39,860
+we can actually make a determination.
+
+131
+00:09:40,310 --> 00:09:44,300
+We can say little things like what was the old status and what's the new status?
+
+132
+00:09:44,690 --> 00:09:58,060
+So I can say if DataDot old status is not equal to exactly equal to DataDot new status, then do something.
+
+133
+00:09:58,880 --> 00:10:02,360
+Otherwise, if the status is changed, we're going to do something else.
+
+134
+00:10:02,870 --> 00:10:09,980
+OK, so let me copy this or cut it out of here and I'll paste it in twice, once here and once here
+
+135
+00:10:10,280 --> 00:10:11,960
+if the status has changed.
+
+136
+00:10:11,960 --> 00:10:14,390
+And I think I called that old status a new status.
+
+137
+00:10:14,390 --> 00:10:15,380
+Let's just make sure.
+
+138
+00:10:17,480 --> 00:10:19,380
+Old status and new status, yes, I did.
+
+139
+00:10:19,790 --> 00:10:26,570
+If the status has changed, then I want to give an info and I want to give the message and show the
+
+140
+00:10:26,570 --> 00:10:27,680
+close button else.
+
+141
+00:10:27,680 --> 00:10:32,090
+If it stayed the same, I can just say message rather than data message.
+
+142
+00:10:32,750 --> 00:10:46,340
+I can say a service is still in and put a space there plus and the status will be the old status or
+
+143
+00:10:46,340 --> 00:10:48,380
+the news status because they've not changed at all.
+
+144
+00:10:48,380 --> 00:10:51,230
+So I'll just say data, new status
+
+145
+00:10:54,290 --> 00:10:54,800
+state.
+
+146
+00:10:55,710 --> 00:11:00,980
+OK, and I can leave it as maybe a shorter timer because it's not really a problem.
+
+147
+00:11:00,980 --> 00:11:02,510
+I can leave it up for five seconds.
+
+148
+00:11:02,720 --> 00:11:11,090
+OK, so let's reload this and go to pending and it actually should display the same thing it did last
+
+149
+00:11:11,090 --> 00:11:11,330
+time.
+
+150
+00:11:11,330 --> 00:11:13,430
+But I should get no errors in the JavaScript console.
+
+151
+00:11:13,790 --> 00:11:14,300
+Check now.
+
+152
+00:11:15,020 --> 00:11:15,500
+Perfect.
+
+153
+00:11:15,650 --> 00:11:19,100
+OK, so that's actually working the way that I want.
+
+154
+00:11:19,490 --> 00:11:24,770
+Now the last thing we want to do here and we won't do it, this lecture will do it.
+
+155
+00:11:24,770 --> 00:11:28,700
+The next one is where's my comments, perform checks.
+
+156
+00:11:32,800 --> 00:11:39,190
+Right here, I want to update the host service in the database with a status, if it's changed, we
+
+157
+00:11:39,190 --> 00:11:41,800
+want to update that and we definitely want to update the last check.
+
+158
+00:11:41,800 --> 00:11:44,320
+So there's no question we want to make an update in the database.
+
+159
+00:11:44,980 --> 00:11:50,040
+So if we look at a repository, do we have a method that allows me to update a host service?
+
+160
+00:11:50,170 --> 00:11:52,650
+I have one for updating post service status.
+
+161
+00:11:52,810 --> 00:11:53,560
+Is that enough?
+
+162
+00:11:53,620 --> 00:11:54,310
+Let's go look at it.
+
+163
+00:11:56,410 --> 00:12:02,300
+Update host service status, so this will update host services, no, that's just going to do the active.
+
+164
+00:12:02,500 --> 00:12:07,570
+So what I want to do is create a new method that will allow me to just generically update anything in
+
+165
+00:12:07,570 --> 00:12:08,320
+a host service.
+
+166
+00:12:09,400 --> 00:12:13,210
+And we want to call that and we'll take care of that in the next lecture.

@@ -1,0 +1,731 @@
+1
+00:00:01,510 --> 00:00:06,100
+So we're at the point now where we actually want to test the service and I have this one comment here
+
+2
+00:00:06,100 --> 00:00:08,020
+that says Get hosed, questionmark.
+
+3
+00:00:08,020 --> 00:00:11,320
+And the more I think about it, the more I know I'm going to need the host.
+
+4
+00:00:11,770 --> 00:00:12,700
+So let's get the host.
+
+5
+00:00:12,700 --> 00:00:14,560
+And we already have a database method for that.
+
+6
+00:00:14,560 --> 00:00:16,960
+And I'll just call the variable H for host.
+
+7
+00:00:16,960 --> 00:00:18,370
+And we're checking for an error.
+
+8
+00:00:19,030 --> 00:00:27,910
+And our method in the database is repo DB get hosted by ID and we have the host ID right in our host
+
+9
+00:00:27,910 --> 00:00:34,570
+service so I can just go start host ID and again we'll check for an error and I'll just copy and paste
+
+10
+00:00:34,570 --> 00:00:39,460
+this and I'm going to stop at some point telling you that you'll do more robust error checking because
+
+11
+00:00:39,460 --> 00:00:40,540
+I know you know that by now.
+
+12
+00:00:41,650 --> 00:00:47,350
+So now I want to test the service and I know I'm going to be testing the service for more than one place.
+
+13
+00:00:47,350 --> 00:00:49,000
+So I'm not going to write the code in here.
+
+14
+00:00:49,000 --> 00:00:57,520
+Instead, I'll come down here and write a new function func and I'll give it the the repo and I'll call
+
+15
+00:00:57,520 --> 00:01:03,880
+it a test service for post.
+
+16
+00:01:03,880 --> 00:01:05,380
+And that will take two parameters.
+
+17
+00:01:05,380 --> 00:01:15,580
+It'll take the host, which will be of models host and it will take the host service, which will be
+
+18
+00:01:15,580 --> 00:01:16,720
+of type models.
+
+19
+00:01:17,320 --> 00:01:19,150
+DOT hosts service.
+
+20
+00:01:21,290 --> 00:01:26,570
+And I think I'll have that return more than one thing, but I'm not sure what is going to return yet
+
+21
+00:01:26,570 --> 00:01:32,390
+right now, so I'll just leave that empty for the moment and I'll copy this name up from here and I'll
+
+22
+00:01:32,390 --> 00:01:33,610
+just call that function.
+
+23
+00:01:33,770 --> 00:01:37,700
+Now, it's going to return something in a moment, but I'm not sure what it's returning yet.
+
+24
+00:01:37,700 --> 00:01:42,860
+So instead, I'll just put in the H for the host NHS, for the host service.
+
+25
+00:01:43,160 --> 00:01:48,650
+And of course, because this is in the repository, it has to go repo test host for a test service for
+
+26
+00:01:48,650 --> 00:01:48,940
+host.
+
+27
+00:01:49,910 --> 00:01:54,620
+And I've started that with a lowercase letter because I'm never going to call this function outside
+
+28
+00:01:54,620 --> 00:01:58,250
+of this package and giving it a first character.
+
+29
+00:01:58,250 --> 00:02:01,600
+Being lowercase means it's not visible outside of this package.
+
+30
+00:02:02,360 --> 00:02:05,760
+So let's go down here and see how we're going to do this.
+
+31
+00:02:06,290 --> 00:02:12,020
+Now, this function is going to test any kind of service, and right now we just have one.
+
+32
+00:02:12,320 --> 00:02:17,180
+But chances are we're going to have more than one as time goes on, we're definitely going to have at
+
+33
+00:02:17,180 --> 00:02:18,360
+least two in this course.
+
+34
+00:02:19,100 --> 00:02:24,200
+So at the top of this package, I'm going to define a few constants just to make things more readable.
+
+35
+00:02:24,240 --> 00:02:29,630
+OK, so we will define a constant, more than one constant, actually.
+
+36
+00:02:30,290 --> 00:02:35,360
+And I'm going to, first of all, put in the kinds of things I want to test.
+
+37
+00:02:35,420 --> 00:02:40,100
+So I will call HTP will have the value of one.
+
+38
+00:02:40,280 --> 00:02:42,860
+And that's our one service that we're testing right now.
+
+39
+00:02:43,400 --> 00:02:44,990
+So we'll leave it like that for right now.
+
+40
+00:02:44,990 --> 00:02:51,110
+And as we add more services to test, we'll come in here and put more service or more Constance's to
+
+41
+00:02:51,110 --> 00:02:52,070
+reflect those services.
+
+42
+00:02:52,100 --> 00:02:55,820
+So, for example, we might test for an SSL certificate
+
+43
+00:02:58,490 --> 00:03:01,050
+and that will be equal to two or make it three.
+
+44
+00:03:01,340 --> 00:03:05,100
+We might also test for HDP s, which will be equal to two.
+
+45
+00:03:05,930 --> 00:03:07,970
+So right now we're only going to use this one.
+
+46
+00:03:07,970 --> 00:03:13,070
+But I'll define these two just to show you how you can have more services defined in your constants.
+
+47
+00:03:14,630 --> 00:03:21,680
+So back down in this this function right here, when I actually test a service, let's think about the
+
+48
+00:03:21,680 --> 00:03:23,510
+kinds of things we want to return.
+
+49
+00:03:23,900 --> 00:03:24,950
+We want to return.
+
+50
+00:03:25,160 --> 00:03:30,770
+Whether the service has changed, say, from spending to problem, which will be the case when we actually
+
+51
+00:03:30,770 --> 00:03:34,780
+run this code for the first time or the service has not changed.
+
+52
+00:03:34,790 --> 00:03:36,740
+We want to send back to things.
+
+53
+00:03:36,740 --> 00:03:42,550
+We want to send back the new status, and we want to send back also some kind of message.
+
+54
+00:03:42,680 --> 00:03:49,010
+So let's define two variables var MSG and new status, both of which will be strings.
+
+55
+00:03:49,700 --> 00:03:51,610
+And maybe that's what we're going to return.
+
+56
+00:03:51,620 --> 00:03:54,110
+So we'll return a string and a string.
+
+57
+00:03:54,890 --> 00:04:06,170
+OK, so back up here, I can actually say we're going to return a new status and we're going to get
+
+58
+00:04:06,170 --> 00:04:07,280
+back from this function.
+
+59
+00:04:07,280 --> 00:04:10,890
+Also some kind of message and those will come from here.
+
+60
+00:04:11,070 --> 00:04:12,590
+OK, so we're not using those right now.
+
+61
+00:04:12,590 --> 00:04:19,010
+So just to make this compile, I'll say logged up print line, new status and message.
+
+62
+00:04:19,920 --> 00:04:25,400
+OK, so now we're back down in our test service for host.
+
+63
+00:04:25,940 --> 00:04:30,650
+And as I said, I'm not sure what kind of service this is going to be testing AM right now because there's
+
+64
+00:04:30,650 --> 00:04:31,210
+just one.
+
+65
+00:04:31,460 --> 00:04:34,220
+But as time goes on, we'll have more than one service to check.
+
+66
+00:04:34,610 --> 00:04:41,750
+So maybe I'll just try to switch statement switch and we're going to switch on escort service ID.
+
+67
+00:04:42,440 --> 00:04:44,330
+What kind of service are we getting?
+
+68
+00:04:45,380 --> 00:04:48,790
+And what we want to do here, of course, is check for the first one.
+
+69
+00:04:49,580 --> 00:04:56,390
+Our first case will be HTTP, which is the constant we've defined just a moment ago.
+
+70
+00:04:57,710 --> 00:05:04,130
+And when I'm checking that, I want to get two variables, a message and I want to get the new status.
+
+71
+00:05:06,500 --> 00:05:12,620
+From somewhere now, I could write all of the code necessary to check the TV service right in here,
+
+72
+00:05:12,620 --> 00:05:15,630
+but I'm not going to I like to keep things small and simple.
+
+73
+00:05:15,920 --> 00:05:24,830
+So instead of will a new function and I'll call it test HTP for host and one on a pass in there is the
+
+74
+00:05:24,830 --> 00:05:26,780
+domain name, and I need to get that.
+
+75
+00:05:26,780 --> 00:05:29,440
+And that's why I'm passing the models host in this variable.
+
+76
+00:05:30,050 --> 00:05:38,270
+If you look in the database, what we're checking here is our new URL, which is stored in the host
+
+77
+00:05:38,270 --> 00:05:39,500
+table under you, Earl.
+
+78
+00:05:39,800 --> 00:05:43,160
+So back here I can say test this URL.
+
+79
+00:05:45,310 --> 00:05:48,820
+OK, and once we've done that test, we'll just break.
+
+80
+00:05:49,850 --> 00:05:50,880
+We don't need a semicolon.
+
+81
+00:05:51,670 --> 00:05:54,640
+So this, of course, means that I need to return something.
+
+82
+00:05:54,640 --> 00:06:00,640
+I'll return the the message in the new status, and I'm returning those.
+
+83
+00:06:00,640 --> 00:06:01,300
+In what order?
+
+84
+00:06:01,720 --> 00:06:02,890
+New status and message.
+
+85
+00:06:03,310 --> 00:06:06,220
+New status and message.
+
+86
+00:06:07,770 --> 00:06:14,220
+OK, so message and news status don't need the sign, that's better now we need to create this function
+
+87
+00:06:14,880 --> 00:06:15,750
+and that's pretty simple.
+
+88
+00:06:16,890 --> 00:06:21,960
+We'll just create a funk call that it takes one message or one one parameter, the URL, which is a
+
+89
+00:06:21,960 --> 00:06:25,860
+string, and it returns a string and a string.
+
+90
+00:06:27,630 --> 00:06:32,160
+Now, testing HTP Engo is absolutely simple.
+
+91
+00:06:32,160 --> 00:06:33,180
+It is dead simple.
+
+92
+00:06:33,210 --> 00:06:34,380
+It is in other languages too.
+
+93
+00:06:34,380 --> 00:06:35,880
+But I really like the way that happens here.
+
+94
+00:06:35,880 --> 00:06:38,160
+But there are a couple of things I want to check.
+
+95
+00:06:38,760 --> 00:06:40,100
+So I'm getting this URL.
+
+96
+00:06:40,710 --> 00:06:45,060
+First thing I want to check is that to make sure that it doesn't have a trailing slash because that
+
+97
+00:06:45,060 --> 00:06:48,330
+will cause problems when we we actually run the test.
+
+98
+00:06:48,350 --> 00:06:53,880
+So I will make sure that the string doesn't have the suffix of a slash and that's really easy.
+
+99
+00:06:53,880 --> 00:07:03,150
+If strings has suffix and the string I want to check is Yoro and I'm looking for a trailing slash if
+
+100
+00:07:03,150 --> 00:07:05,060
+it has that just stripped that off.
+
+101
+00:07:05,070 --> 00:07:09,690
+So you arrow equals strings, dot, trim suffix.
+
+102
+00:07:10,680 --> 00:07:15,630
+And I'm looking for the string which is Yoro and I'm on a trip off trim off the slash.
+
+103
+00:07:16,260 --> 00:07:22,590
+The second thing I want to make sure is when people enter the URL, they might have entered it as http
+
+104
+00:07:22,620 --> 00:07:24,240
+s colon slash slash.
+
+105
+00:07:24,720 --> 00:07:26,240
+But I don't want to test that.
+
+106
+00:07:26,250 --> 00:07:28,040
+I'm not testing https.
+
+107
+00:07:28,050 --> 00:07:29,370
+That will be a second test.
+
+108
+00:07:29,520 --> 00:07:33,030
+Instead, I'm checking for port 80 or so.
+
+109
+00:07:33,030 --> 00:07:38,730
+Let's make sure that we don't have an HTP at the beginning and again, we can just use a strings package.
+
+110
+00:07:38,730 --> 00:07:41,490
+Eurail equals string's replace.
+
+111
+00:07:43,850 --> 00:07:52,250
+Are you, Earl, we're looking for HTP Collins and we want to replace it with HTP Colon's and we want
+
+112
+00:07:52,250 --> 00:07:53,540
+to do that everywhere now.
+
+113
+00:07:53,570 --> 00:07:58,240
+It'll only occur once, but minus one will take care of it for us and we do require that parameter.
+
+114
+00:07:59,210 --> 00:08:02,960
+So now we have our correct URL.
+
+115
+00:08:03,170 --> 00:08:05,960
+It's been sanitized so we can actually run our test.
+
+116
+00:08:05,960 --> 00:08:07,550
+And it's dead simple to do that.
+
+117
+00:08:07,880 --> 00:08:08,860
+We get a response.
+
+118
+00:08:09,560 --> 00:08:17,300
+We also potentially get an error and we get that from the package and we're just going to do a get request
+
+119
+00:08:17,390 --> 00:08:18,020
+to where you are.
+
+120
+00:08:18,030 --> 00:08:20,180
+So we check for an error.
+
+121
+00:08:20,480 --> 00:08:24,480
+If the error is not equal to nil, then what do we want to do?
+
+122
+00:08:24,500 --> 00:08:28,630
+Well, we want to return the actual information that we have.
+
+123
+00:08:28,640 --> 00:08:31,280
+So those are return.
+
+124
+00:08:31,280 --> 00:08:33,410
+And I'm going to use format as Pranav.
+
+125
+00:08:38,000 --> 00:08:43,310
+And I want to return a string followed by a hyphen followed by another string, and the first part of
+
+126
+00:08:43,340 --> 00:08:49,400
+the string is nothing more than our URL, and the second part is our connecting.
+
+127
+00:08:56,720 --> 00:09:03,980
+And then we also want to return the actual message, and if we look down here, we're returning up here,
+
+128
+00:09:03,980 --> 00:09:09,050
+we're looking for where is the test, a message and a new status.
+
+129
+00:09:09,080 --> 00:09:10,070
+What's our new status?
+
+130
+00:09:10,070 --> 00:09:12,890
+And our status is going to be a status problem.
+
+131
+00:09:13,160 --> 00:09:14,180
+So we just put problem.
+
+132
+00:09:15,580 --> 00:09:21,400
+All right, now we've opened that response, so we've got that response from HDB get and one of the
+
+133
+00:09:21,400 --> 00:09:25,480
+things you're going to want to do and you're not going to want to forget this is to close that when
+
+134
+00:09:25,480 --> 00:09:26,140
+you're done with it.
+
+135
+00:09:26,140 --> 00:09:28,560
+And we use that do that using the defer key word.
+
+136
+00:09:28,900 --> 00:09:35,140
+So after this function finishes executing respawn body, don't close.
+
+137
+00:09:35,680 --> 00:09:37,240
+Otherwise you're going to have a memory leak.
+
+138
+00:09:37,240 --> 00:09:39,430
+And those sometimes can be pretty hard to find.
+
+139
+00:09:40,900 --> 00:09:45,400
+So assuming that we don't have an error here that we've actually connected, we want to check the status
+
+140
+00:09:45,400 --> 00:09:45,730
+code.
+
+141
+00:09:45,730 --> 00:09:50,260
+And if it's not 200, which is status, OK, then we're returning a problem.
+
+142
+00:09:50,260 --> 00:09:52,780
+So we just say if resp dot.
+
+143
+00:09:53,840 --> 00:09:59,840
+Status code, which is available to us right from that request, if that's not equal to and I could
+
+144
+00:09:59,840 --> 00:10:07,190
+put two hundred like that, but I actually prefer to use the status, OK, because it's more readable
+
+145
+00:10:07,430 --> 00:10:10,150
+and that's just a constant defined in the package.
+
+146
+00:10:10,160 --> 00:10:11,450
+It's equal to two hundred.
+
+147
+00:10:11,690 --> 00:10:12,950
+So that makes it more readable.
+
+148
+00:10:13,430 --> 00:10:18,680
+If this is not the case, if we don't get a status two hundred we can return and I'll just copy this
+
+149
+00:10:18,680 --> 00:10:25,130
+and paste it in here and we'll say the same thing, our euro.
+
+150
+00:10:25,430 --> 00:10:32,120
+But instead of er connecting I'll actually put in what we got here, which is respawn status and that's
+
+151
+00:10:32,120 --> 00:10:32,540
+a strength.
+
+152
+00:10:33,530 --> 00:10:39,590
+And again we're returning a problem and if everything else is OK, then we can just paste in our return
+
+153
+00:10:39,590 --> 00:10:45,860
+again, get rid of the error connecting and put in respawn status.
+
+154
+00:10:47,770 --> 00:10:55,630
+Which is a string, and this time our status is healthy and that should work, we should be able to
+
+155
+00:10:55,630 --> 00:10:56,820
+do this now.
+
+156
+00:10:56,830 --> 00:10:59,020
+We want to test this to make sure it's actually going to work.
+
+157
+00:10:59,290 --> 00:11:00,910
+So let's make sure we've got everything right.
+
+158
+00:11:01,510 --> 00:11:06,400
+We're getting our new status and our message from test service for host, and then we're lugging that
+
+159
+00:11:06,400 --> 00:11:08,170
+just so we can compile.
+
+160
+00:11:08,590 --> 00:11:13,600
+So when I run this test right now, if I start my application and start it, what should happen when
+
+161
+00:11:13,600 --> 00:11:13,960
+we click?
+
+162
+00:11:13,960 --> 00:11:17,800
+This is it should call this test check, check function.
+
+163
+00:11:18,190 --> 00:11:22,120
+It should print this out into the log our host service ID and our old status.
+
+164
+00:11:22,120 --> 00:11:26,890
+What we're checking, we should get our host service that we print at our service name.
+
+165
+00:11:26,920 --> 00:11:29,950
+We get our host and then we call this test service.
+
+166
+00:11:29,950 --> 00:11:38,020
+And what we should get back is our new status, which will not be that it's healthy or pending.
+
+167
+00:11:38,290 --> 00:11:42,190
+It should come back with a new status and a message that tells us there's a problem with this, with
+
+168
+00:11:42,190 --> 00:11:45,130
+this particular server we're checking, and that's because it doesn't exist.
+
+169
+00:11:45,580 --> 00:11:47,380
+So let's run our code.
+
+170
+00:11:51,440 --> 00:11:58,760
+He return a few times, come back to our Web browser, reload this, go to the pending page, clear
+
+171
+00:11:58,760 --> 00:12:02,930
+the JavaScript console to make sure that there's no errors and we have no messages yet.
+
+172
+00:12:02,930 --> 00:12:03,650
+So that's good.
+
+173
+00:12:04,040 --> 00:12:05,000
+Now, let's run our test.
+
+174
+00:12:06,840 --> 00:12:11,490
+And it's giving back to Jason because we didn't change the Jason we're sending back, we'll do that
+
+175
+00:12:11,490 --> 00:12:12,000
+in a moment.
+
+176
+00:12:12,720 --> 00:12:17,640
+But the actual message is problem localhost.
+
+177
+00:12:17,640 --> 00:12:19,250
+That's our euro area connecting.
+
+178
+00:12:19,290 --> 00:12:21,520
+That's exactly what I wanted to have happen.
+
+179
+00:12:21,560 --> 00:12:22,040
+Perfect.
+
+180
+00:12:23,100 --> 00:12:28,310
+So when you think about it, all we need to do here is to change the Jason that we're sending back.
+
+181
+00:12:28,560 --> 00:12:34,980
+So we need to actually modify this instead of being hard coded to actually return useful information
+
+182
+00:12:34,980 --> 00:12:38,160
+that we can deal with in our JavaScript on our client site.
+
+183
+00:12:38,820 --> 00:12:41,400
+And we'll get started on that in the next lecture.

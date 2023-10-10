@@ -1,0 +1,291 @@
+1
+00:00:00,570 --> 00:00:00,900
+All right.
+
+2
+00:00:00,930 --> 00:00:08,550
+So now we're down to hands on exercises and this is Ninja level to Ninja level to number two.
+
+3
+00:00:08,550 --> 00:00:08,910
+There we go.
+
+4
+00:00:08,910 --> 00:00:12,910
+Ninja Level 2 and I'm super excited for these hands on exercises.
+
+5
+00:00:13,080 --> 00:00:18,930
+It is 4 0 7 on Friday we've got four hands on exercises for you here and I think they're going to be
+
+6
+00:00:18,930 --> 00:00:20,150
+really cool and really fun.
+
+7
+00:00:20,160 --> 00:00:25,230
+And our goal is to get through these forehands on exercises introducing them to you and then also showing
+
+8
+00:00:25,230 --> 00:00:31,910
+you the solution to them before 5 o'clock because that's when like you know we're done.
+
+9
+00:00:32,370 --> 00:00:35,130
+So we've been here doing this for quite a bit today.
+
+10
+00:00:35,200 --> 00:00:35,550
+Yeah.
+
+11
+00:00:35,620 --> 00:00:42,810
+Been a good time and there's been a lot of intricate detail in the module stuff but now I think in using
+
+12
+00:00:42,810 --> 00:00:48,630
+it you're going to find that you're very conversant with it and that it's actually not you know the
+
+13
+00:00:48,630 --> 00:00:52,140
+theory there's a lot theory there but in practice it's pretty simple.
+
+14
+00:00:52,140 --> 00:00:58,080
+So for this first hands up Yeah I mean you want to add just motivational inspirational do good to others
+
+15
+00:00:58,150 --> 00:01:07,650
+be kind have good integrity and then for this hands on exercise we want you to create a go module import
+
+16
+00:01:07,680 --> 00:01:15,540
+Ah I see I quote use glass from our C I O forward slash quote run your program look at your go module
+
+17
+00:01:15,870 --> 00:01:18,570
+what version of RL CIO quote are you using.
+
+18
+00:01:18,570 --> 00:01:24,840
+Do you have any indirect dependencies and then list out all your dependencies to see if you have any
+
+19
+00:01:24,840 --> 00:01:28,680
+indirect ones I put the command there for you and then just look at your go some.
+
+20
+00:01:28,680 --> 00:01:32,190
+So pauses video go do that hands on exercise when you're all done.
+
+21
+00:01:32,190 --> 00:01:37,620
+Now y'all come on back on pause the video and we'll show you our solution which we're gonna do right
+
+22
+00:01:37,620 --> 00:01:38,390
+now.
+
+23
+00:01:38,670 --> 00:01:40,770
+Do you want to do it or do you want me to do it.
+
+24
+00:01:40,800 --> 00:01:41,540
+I think you better do.
+
+25
+00:01:41,550 --> 00:01:44,630
+Given I just lost connection again Oh you lost connection again.
+
+26
+00:01:44,750 --> 00:01:51,390
+OK so for this one my first thought would be to like I need to be in some other space and I don't need
+
+27
+00:01:51,390 --> 00:01:52,680
+this to be on github.
+
+28
+00:01:52,710 --> 00:01:56,810
+I'm just kind of thinking through my process so I don't need to create a repo because I'm just going
+
+29
+00:01:56,810 --> 00:02:02,930
+to get rid of this at the same time I don't want to do it in this folder right here.
+
+30
+00:02:02,930 --> 00:02:07,080
+That always kind of freaks me out when I bring this is our screen recording software I'm like whoa.
+
+31
+00:02:07,230 --> 00:02:10,140
+Inception reality within reality.
+
+32
+00:02:10,140 --> 00:02:11,240
+I don't want to do it in here.
+
+33
+00:02:11,270 --> 00:02:19,380
+Where do you have go module so I'm just gonna go to you know my terminal and go back to my home folder
+
+34
+00:02:19,710 --> 00:02:29,070
+and then just make it door and call it temp exercise 0 1 and and then I'm going to open up that so I
+
+35
+00:02:29,070 --> 00:02:39,210
+could do code dot and it opened up that your Holder opened up my home folder don't allow don't allow.
+
+36
+00:02:39,230 --> 00:02:45,380
+I think that's going to keep coming back up in a close that I want to switch into my directory so seedy
+
+37
+00:02:45,490 --> 00:02:51,110
+into I get excited and I go too fast and forget steps and now I'm going to do code dot and that's going
+
+38
+00:02:51,110 --> 00:03:00,290
+to open up my my editor and I'm switching from a go land which I loved but at our school people are
+
+39
+00:03:00,290 --> 00:03:07,130
+moving to the free option so here I go to B.S. codes and still learn B.S. code and so inside here I'm
+
+40
+00:03:07,130 --> 00:03:11,870
+going to create a folder and click on that and they'll just be.
+
+41
+00:03:11,870 --> 00:03:17,250
+Actually I don't need a folder I could just do my code right here and I need main go.
+
+42
+00:03:17,330 --> 00:03:28,980
+And this is package Main and func main and I want to use for this I want to use from our CIO quote use
+
+43
+00:03:28,980 --> 00:03:36,780
+glass and so I need to go find our CIO quote and here's the import some import that's going to grab
+
+44
+00:03:36,780 --> 00:03:44,670
+that and drop this and as an import and save this and when it saved it just went away.
+
+45
+00:03:44,690 --> 00:03:46,270
+So I'm not using anything from there.
+
+46
+00:03:46,340 --> 00:03:48,360
+And I also need my go module file.
+
+47
+00:03:48,380 --> 00:03:55,050
+So in this route I'm in that route right there from my thing I'm going to go mod a net and then I need
+
+48
+00:03:55,050 --> 00:03:56,680
+some sort of namespace.
+
+49
+00:03:56,790 --> 00:04:02,640
+And since this is just a throw away my namespace is going to be Mickey Mouse for it slash Donald Duck
+
+50
+00:04:03,510 --> 00:04:04,380
+forward slash
+
+51
+00:04:12,290 --> 00:04:14,480
+he could just do this to Daphne.
+
+52
+00:04:14,870 --> 00:04:16,240
+There you go.
+
+53
+00:04:16,250 --> 00:04:19,940
+And so that's my new go modules in that namespace.
+
+54
+00:04:20,000 --> 00:04:25,120
+And and now I'm going to import that package and not save it.
+
+55
+00:04:25,130 --> 00:04:32,270
+And from quote I'm gonna use glass and I just want to print that front up front line.
+
+56
+00:04:32,270 --> 00:04:39,750
+Quote glass and then I'm gonna save it and it brought all that in and I'm gonna run it go round and
+
+57
+00:04:39,900 --> 00:04:43,220
+go and I can eat glass and it doesn't hurt me.
+
+58
+00:04:43,230 --> 00:04:44,320
+That's not true.
+
+59
+00:04:44,650 --> 00:04:51,780
+I don't it would hurt me and I don't eat it but it is a funny function in that quote in that package.
+
+60
+00:04:51,870 --> 00:04:58,590
+And so now if I look at my go mod I could see that I'm requiring version one point five point two are
+
+61
+00:04:58,600 --> 00:05:03,920
+a C I O quote If I look at my go sum I could kind of come in here and see.
+
+62
+00:05:04,110 --> 00:05:08,640
+I could see those hashes not I kind of but I can't for reals for reals.
+
+63
+00:05:08,640 --> 00:05:14,970
+I could see those different hashes in there and if I want to look at my indirect dependencies as well
+
+64
+00:05:14,970 --> 00:05:22,340
+as my direct dependencies go list dash em all and I could see both my indirect and direct dependency
+
+65
+00:05:22,350 --> 00:05:24,050
+so there's my direct dependency.
+
+66
+00:05:24,120 --> 00:05:27,570
+Here's indirect dependency and here's an indirect dependency.
+
+67
+00:05:27,900 --> 00:05:30,540
+And then here is my namespace.
+
+68
+00:05:30,840 --> 00:05:33,370
+That's the word that comes to me would use that word.
+
+69
+00:05:33,700 --> 00:05:37,890
+Then I'd go module and module name for that thing.
+
+70
+00:05:37,890 --> 00:05:43,590
+So that's hands on exercise no one would see if I got it all run your program look it go mod you have
+
+71
+00:05:43,590 --> 00:05:44,720
+any indirect dependencies.
+
+72
+00:05:44,730 --> 00:05:45,110
+Yes.
+
+73
+00:05:45,120 --> 00:05:48,630
+And look it goes on so as my solution for hands on exercise number one.

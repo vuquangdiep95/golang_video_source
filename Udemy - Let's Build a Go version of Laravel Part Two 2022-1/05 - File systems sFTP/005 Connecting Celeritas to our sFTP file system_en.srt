@@ -1,0 +1,144 @@
+1
+00:00:00,740 --> 00:00:07,520
+So we have all of the necessary functions implemented in our executive go file, and now we're ready
+
+2
+00:00:07,520 --> 00:00:09,850
+to start trying things out with celebrities.
+
+3
+00:00:09,860 --> 00:00:14,090
+Now, to be clear, there are some things we're going to want to clean up, particularly this get function,
+
+4
+00:00:14,270 --> 00:00:15,380
+but we'll get to those shortly.
+
+5
+00:00:15,410 --> 00:00:16,600
+Don't worry about that right now.
+
+6
+00:00:16,610 --> 00:00:18,350
+Let's just see if we can get it working.
+
+7
+00:00:19,040 --> 00:00:21,980
+And of course, the first thing I have to do is to go to celebrities.
+
+8
+00:00:22,010 --> 00:00:26,750
+The celebrities project and open up celebrities don't go and find that bit.
+
+9
+00:00:26,750 --> 00:00:30,380
+Where I create the file systems in my code, it's right here in the file.
+
+10
+00:00:30,380 --> 00:00:36,050
+Celebrities don't go around line three hundred and eighty three, and the only one we have right now
+
+11
+00:00:36,050 --> 00:00:36,800
+is midnight.
+
+12
+00:00:37,160 --> 00:00:43,400
+So of course, we also want to add one for SFTP, and we can use the same logic to see whether or not
+
+13
+00:00:43,400 --> 00:00:48,200
+we should try to create that file system and add it to the map for celebrities.
+
+14
+00:00:48,530 --> 00:00:55,760
+We can say if OST don't get on and we're going to look for something I know that is in my own file and
+
+15
+00:00:55,760 --> 00:00:58,550
+that's s f t p underscore host.
+
+16
+00:00:58,820 --> 00:01:02,450
+If that exists, and it does exist, probably.
+
+17
+00:01:02,870 --> 00:01:07,430
+But if it's not equal to an empty string, which is what it will be if there's no value set there or
+
+18
+00:01:07,430 --> 00:01:12,500
+if it can't find that key in the data on file, if it's not equal to an empty string, then I want to
+
+19
+00:01:12,500 --> 00:01:13,190
+try to set it up.
+
+20
+00:01:13,430 --> 00:01:21,500
+So I'll create a variable called SFTP, which makes sense and will make that equal to S.F. file systems,
+
+21
+00:01:21,980 --> 00:01:26,570
+which it should find for me, SFTP and I did, and we'll just populate its fields.
+
+22
+00:01:27,650 --> 00:01:31,370
+And it needs a host, and we get that from the OS oes don't get on.
+
+23
+00:01:31,730 --> 00:01:38,930
+And that is SFTP host said TP underscore host as a t p there is.
+
+24
+00:01:41,420 --> 00:01:43,910
+And we need the user and that's.
+
+25
+00:01:44,260 --> 00:01:48,980
+Don't get on TPY user right there.
+
+26
+00:01:51,290 --> 00:01:52,520
+We want the password.
+
+27
+00:01:53,930 --> 00:01:54,890
+So pass.
+
+28
+00:01:57,080 --> 00:02:01,970
+And that's O.S., don't get on SFTP Pass.
+
+29
+00:02:03,910 --> 00:02:05,540
+And the last thing, of course, is the port.
+
+30
+00:02:06,920 --> 00:02:12,310
+Port, and that's equal to OS, don't get on SFTP port.
+
+31
+00:02:13,690 --> 00:02:15,470
+OK, so now we've created that variable.
+
+32
+00:02:15,490 --> 00:02:16,570
+We just added to the map.
+
+33
+00:02:17,050 --> 00:02:24,850
+So we'll add to our map file systems at the key SFP, which seems logical.
+
+34
+00:02:25,600 --> 00:02:27,190
+We'll make that equal to SFTP.
+
+35
+00:02:29,690 --> 00:02:35,180
+And that should be all we have to do to create their connect celebrities to that particular file system.
+
+36
+00:02:35,330 --> 00:02:39,080
+Of course, we still have to use it and we'll get started on that in the next lecture.
+

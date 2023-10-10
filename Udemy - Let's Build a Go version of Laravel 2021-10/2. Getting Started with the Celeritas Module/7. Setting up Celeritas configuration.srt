@@ -1,0 +1,207 @@
+1
+00:00:01,890 --> 00:00:04,680
+So things are coming along, but we have a lot of work left to do.
+
+2
+00:00:04,710 --> 00:00:10,650
+And one of the things we have to get out of the way pretty early on is actually setting up the configuration
+
+3
+00:00:11,010 --> 00:00:17,220
+values for celebrities, not for a web application necessarily, but for the celebrities package itself.
+
+4
+00:00:17,970 --> 00:00:23,430
+So in order to get that underway, what I'm going to do is back here in celebrities start go in the
+
+5
+00:00:23,430 --> 00:00:26,010
+celebrities application or project.
+
+6
+00:00:26,430 --> 00:00:31,410
+I'm going to create a new type and these type will not be exported and it will just be called config
+
+7
+00:00:31,650 --> 00:00:32,900
+and it will just be a struct.
+
+8
+00:00:32,940 --> 00:00:38,490
+And this will hold all of the configuration values for this package, and we'll just put a few in there
+
+9
+00:00:38,490 --> 00:00:38,930
+right now.
+
+10
+00:00:38,940 --> 00:00:42,150
+So we're going to want to know things like what port are we going to listen on?
+
+11
+00:00:42,780 --> 00:00:43,530
+And that's a string.
+
+12
+00:00:43,740 --> 00:00:49,140
+So when we start the application, when the final binary is built is going to listen on some port and
+
+13
+00:00:49,140 --> 00:00:51,660
+we'll get that, of course, from the environment variables.
+
+14
+00:00:52,320 --> 00:00:54,570
+We also will want to know what renderer.
+
+15
+00:00:54,600 --> 00:01:00,450
+Are we going to use so renderer, which is a string now that's referring to what template engine we
+
+16
+00:01:00,450 --> 00:01:02,970
+want to use, and in this course we're going to support to.
+
+17
+00:01:03,360 --> 00:01:08,910
+We'll do a little bit first with the standard go templates and then we'll spend a lot more time on another
+
+18
+00:01:08,910 --> 00:01:10,680
+renderer, the jet package.
+
+19
+00:01:10,800 --> 00:01:14,250
+So we're going to want that for certain, and that's enough right now.
+
+20
+00:01:14,280 --> 00:01:17,220
+We'll be adding more to the config type as time goes on.
+
+21
+00:01:17,250 --> 00:01:19,230
+So we have this type, so let's use it.
+
+22
+00:01:19,350 --> 00:01:23,330
+So we'll come down here after we set all these values.
+
+23
+00:01:23,340 --> 00:01:28,840
+And while I'm at it, I mean, this will set secret path and that will be equal to past week.
+
+24
+00:01:28,860 --> 00:01:30,210
+I forgot to do that last time around.
+
+25
+00:01:31,020 --> 00:01:33,310
+Let's set the application config.
+
+26
+00:01:33,330 --> 00:01:40,350
+So what I'll do here is go back up to celebrities and add another type here, which I'll call config.
+
+27
+00:01:40,350 --> 00:01:45,520
+And I'm not going to export that because there's no reason that any application that import celebrities
+
+28
+00:01:45,540 --> 00:01:49,430
+should have access to the config, so config will be of type config.
+
+29
+00:01:49,920 --> 00:01:52,200
+OK, so that's available to us now.
+
+30
+00:01:52,890 --> 00:01:54,030
+So we come down here.
+
+31
+00:01:56,550 --> 00:02:04,380
+Just after I set the path just at the very end of the new function, and let's say see config is equal
+
+32
+00:02:04,380 --> 00:02:07,990
+to the type config and we'll just populate its values.
+
+33
+00:02:08,010 --> 00:02:12,210
+And of course, all we care about right now are the port, and we get that from the environment, which
+
+34
+00:02:12,210 --> 00:02:14,070
+we read when we read our dart on file.
+
+35
+00:02:14,190 --> 00:02:25,860
+OS don't get arms port all in uppercase and the renderer will be equal to again from our OS.
+
+36
+00:02:25,860 --> 00:02:29,160
+Don't get on because this is right in our dart on file.
+
+37
+00:02:30,030 --> 00:02:32,970
+Render it, make sure you spell it right or it's not going to work.
+
+38
+00:02:33,810 --> 00:02:37,830
+So that's available to us now throughout the entire application hour.
+
+39
+00:02:37,830 --> 00:02:43,320
+Anywhere that we share this in our Securitas package will have access to all the configuration variables
+
+40
+00:02:43,320 --> 00:02:43,820
+if we need it.
+
+41
+00:02:43,830 --> 00:02:47,700
+And of course, we're going to add more information to the config, like the database and the cookie
+
+42
+00:02:47,700 --> 00:02:51,380
+type and the session type in our Redis configuration and all that sort of thing.
+
+43
+00:02:51,420 --> 00:02:53,280
+But we'll add those as we need them.
+
+44
+00:02:54,220 --> 00:03:00,580
+Now, of course, our ultimate goal is to start a Web application to start a web server and listen for
+
+45
+00:03:00,580 --> 00:03:01,270
+requests.
+
+46
+00:03:01,930 --> 00:03:07,090
+And that's not terribly difficult to set up a basic one, and we'll get started on that in the next
+
+47
+00:03:07,090 --> 00:03:07,530
+lecture.
+
+48
+00:03:07,540 --> 00:03:12,580
+But right now we have our configuration, we have our lockers, we have all kinds of things that we
+
+49
+00:03:12,580 --> 00:03:13,090
+can use.
+
+50
+00:03:13,780 --> 00:03:19,900
+And I think the next step, just so we can see some tangible progress, will be to start a web server
+
+51
+00:03:19,900 --> 00:03:23,110
+from our Celerity House package and just serve something back.
+
+52
+00:03:23,110 --> 00:03:27,490
+So we know that it works and we'll get started on that in the next lecture.

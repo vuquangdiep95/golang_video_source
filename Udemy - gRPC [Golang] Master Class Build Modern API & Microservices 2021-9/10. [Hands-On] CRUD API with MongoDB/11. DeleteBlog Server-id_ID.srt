@@ -1,0 +1,240 @@
+1
+00:00:00,340 --> 00:00:04,550
+OK jadi selanjutnya kita bisa pergi ke blog kita di Prato dan menangani pembaruan.
+
+2
+00:00:04,570 --> 00:00:12,750
+Orang-orang kami sibuk sehingga kami mengatakan blog harian sebagai RPG dan kami harus menghapus permintaan LUGG dan kami
+
+3
+00:00:12,870 --> 00:00:14,940
+akan mengembalikan respons blog.
+
+4
+00:00:15,980 --> 00:00:20,570
+Hapus respons LUGG ok hanya akrab.
+
+5
+00:00:20,590 --> 00:00:24,360
+Dan sekali lagi apa yang kaya atau tidak ditemukan kalau-kalau tidak ada yang ditemukan.
+
+6
+00:00:24,400 --> 00:00:28,520
+Sekarang kita akan melanjutkan dan membuat pesan ini jadi hapus permintaan Blug.
+
+7
+00:00:28,750 --> 00:00:35,890
+Pelosi hanya perlu sebuah blog setidaknya akan melakukan string ID blog dan kemudian merangkai huruf kecil dengan jelas dan kemudian
+
+8
+00:00:36,220 --> 00:00:41,080
+log respon mengikuti wilayah hal yang persis sama juga siapa yang tahu.
+
+9
+00:00:41,080 --> 00:00:45,520
+Kami tidak benar-benar membutuhkan apa pun sebagai tanggapan, jadi mari kita buat blog seperti itu.
+
+10
+00:00:45,920 --> 00:00:50,920
+Luar biasa jadi kami akan melanjutkan dan menghasilkan kode kami sehingga membuat Anda melihat Ally menghasilkan kode
+
+11
+00:00:50,920 --> 00:00:51,990
+dan kami selesai.
+
+12
+00:00:52,000 --> 00:00:54,000
+Sekarang mari kita lanjutkan dengan implementasinya.
+
+13
+00:00:54,040 --> 00:00:54,790
+Sekarang Anda sudah terbiasa.
+
+14
+00:00:54,790 --> 00:01:00,520
+Jelas kami pergi dan menemukan tanda tangan dari fungsi untuk mengimplementasikan yang akan dihapus Blug dan kami
+
+15
+00:01:01,540 --> 00:01:05,530
+kembali ke kode kami di layanan pergi dan kami akan menerapkannya.
+
+16
+00:01:05,530 --> 00:01:06,910
+Jadi untuk ini saya akan
+
+17
+00:01:10,640 --> 00:01:11,780
+G-funk di server saya.
+
+18
+00:01:13,160 --> 00:01:15,020
+Bukan video untuk melakukannya lebih cepat.
+
+19
+00:01:15,030 --> 00:01:15,850
+OK keunggulan.
+
+20
+00:01:15,850 --> 00:01:23,610
+Sekarang kita harus pergi dan membuat untuk menghapus permintaan Blug untuk dicetak dan hal pertama yang harus Anda lakukan adalah menemukan blog
+
+21
+00:01:23,730 --> 00:01:27,240
+dan memastikan itu ada dan mendapatkan ID dari itu.
+
+22
+00:01:27,240 --> 00:01:34,980
+Jadi mari kita salin kode untuk mendapatkan ID objek sehingga mereka hanya menyalin ini di sini.
+
+23
+00:01:34,980 --> 00:01:44,150
+Jadi yang ingin kami dapatkan dari permintaan dari permintaan adalah dapatkan Blug ID, jadi mari kita lihat mengapa
+
+24
+00:01:44,150 --> 00:01:45,710
+itu tidak berhasil.
+
+25
+00:01:45,820 --> 00:01:47,620
+Langsung bersiap-siap.
+
+26
+00:01:47,630 --> 00:01:48,350
+Kita mulai.
+
+27
+00:01:48,770 --> 00:01:53,290
+Jadi kami mencoba mengonversinya menjadi ID objek dan jika tidak kami katakan tidak bisa Barsad.
+
+28
+00:01:53,300 --> 00:02:00,050
+Jadi sekarang kita memiliki ID yang harus kita lakukan pada dasarnya adalah membuat panggilan API
+
+29
+00:02:00,080 --> 00:02:05,080
+satu fungsi hapus sehingga Anda melihat seperti koleksi yang menghapus satu.
+
+30
+00:02:05,450 --> 00:02:10,250
+Jika Anda melewati konteks yang kami gunakan sekarang adalah konteks latar belakang itu dan kemudian kami telah melewati filter
+
+31
+00:02:10,250 --> 00:02:12,370
+untuk mengatakan apa yang ingin kami hapus.
+
+32
+00:02:12,410 --> 00:02:17,420
+Ternyata filter yang kami gunakan selalu sama, jadi kami akan
+
+33
+00:02:17,420 --> 00:02:23,330
+kembali ke filter sebelumnya dan menyalinnya dan saya akan menempelkannya di sini.
+
+34
+00:02:23,620 --> 00:02:25,530
+Wanita dari sebelumnya jadi sangat baik.
+
+35
+00:02:25,840 --> 00:02:27,080
+Dan apa yang saya lihat di filter.
+
+36
+00:02:27,160 --> 00:02:31,300
+Dan kemudian kita tidak menghapus opsi jadi kita akan tetap seperti ini.
+
+37
+00:02:31,310 --> 00:02:37,690
+OK sekarang kita sudah memiliki ini kita sebut ini dapat mengembalikan hasil atau kesalahan karena kita dapat melihat itu adalah hasil atau
+
+38
+00:02:37,690 --> 00:02:38,190
+kesalahan.
+
+39
+00:02:38,200 --> 00:02:40,450
+Sama seperti setiap panggilan API lainnya.
+
+40
+00:02:40,450 --> 00:02:45,250
+Jadi kita hanya akan memiliki hasil atau kesalahan yang ditetapkan untuk hal-hal ini.
+
+41
+00:02:45,250 --> 00:02:47,640
+Sekarang jika ada kesalahan itu mungkin sesuatu yang internal.
+
+42
+00:02:47,770 --> 00:02:55,060
+Jadi dalam hal ini saya hanya akan menyalin blok kode ini dan menanganinya sehingga dalam kasus kesalahan tahu Neal bahwa kami memiliki
+
+43
+00:02:55,060 --> 00:02:59,790
+internal dan kami tidak dapat menghapus objek di Mogadishu untuk alasan apa pun dan apa
+
+44
+00:02:59,810 --> 00:03:01,390
+yang lewat di udara.
+
+45
+00:03:01,450 --> 00:03:03,970
+Kalau tidak, kita harus berurusan dengan hasilnya sendiri.
+
+46
+00:03:04,090 --> 00:03:11,170
+Jadi jika kita mendapatkan hasilnya, ada yang menghapus itu penting, jadi jelas jika nol, ada masalah.
+
+47
+00:03:11,260 --> 00:03:16,920
+Itu berarti bahwa benda itu tidak ada jadi mungkin Anda ingin memiliki jumlah yang dihapus jika sama dengan nol.
+
+48
+00:03:17,080 --> 00:03:20,480
+Lalu kita akan mengembalikan kesalahan dengan mengatakan itu tidak ditemukan.
+
+49
+00:03:23,360 --> 00:03:35,710
+Dan Anda bilang tidak bisa jadi kami katakan tidak dapat menemukan dokumen Blug di Magdi kami akan mengatakan mengapa dengan kesalahan yang dipanggil
+
+50
+00:03:35,710 --> 00:03:37,180
+dari sebelumnya.
+
+51
+00:03:37,180 --> 00:03:40,950
+Kalau tidak kita sudah berhasil menghapus sesuatu.
+
+52
+00:03:41,110 --> 00:03:51,160
+Jadi kita hanya akan mengembalikan respons kita yang mana dan LUGG PV yang menghapus respons Blug dan jika Anda memposting addy blog saya
+
+53
+00:03:51,170 --> 00:04:01,210
+percaya sangat beragam katakan saja Blug Ya sama dengan blog Aggi yang kita miliki sehingga kita mungkin akan menggunakan sesuatu seperti apa
+
+54
+00:04:01,210 --> 00:04:09,230
+yang kita Sudah diuraikan dari sebelumnya sehingga permintaan yang mendapatkan Blug sangat baik dan kemudian kode kesalahan
+
+55
+00:04:09,230 --> 00:04:10,740
+akan menjadi nol.
+
+56
+00:04:10,760 --> 00:04:12,600
+Dalam hal ini sangat baik.
+
+57
+00:04:12,740 --> 00:04:16,450
+Jadi di sini kita baru saja mengimplementasikan delete yang sebenarnya cukup mudah.
+
+58
+00:04:16,540 --> 00:04:21,020
+Apa yang perlu kita ketahui adalah bahwa menghapus satu fungsi tetapi mereka semua terlihat sama bukan dari perspektif Oman yang
+
+59
+00:04:21,710 --> 00:04:23,140
+baik dan kami baik untuk pergi.
+
+60
+00:04:23,150 --> 00:04:25,510
+Jadi di kuliah berikutnya kita akan pergi dan menguji klien Deely.
+

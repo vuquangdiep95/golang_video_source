@@ -1,0 +1,224 @@
+1
+00:00:00,120 --> 00:00:06,130
+Kay benvenuto in questa sezione su Jarkesy faremo un senso grezzo dell'API grezzo per creare leggere un letto
+
+2
+00:00:06,210 --> 00:00:08,460
+da mangiare e memorizzare i dati.
+
+3
+00:00:08,460 --> 00:00:12,420
+Questa volta non lo faremo solo per il falso. Veramente lo saremo per davvero.
+
+4
+00:00:12,420 --> 00:00:14,780
+Quindi creeremo un database DB mongo.
+
+5
+00:00:14,790 --> 00:00:19,850
+Eseguiremo il nostro computer portatile e quindi eseguiremo un'API di applicazione.
+
+6
+00:00:19,980 --> 00:00:27,360
+Quindi riceveremo un servizio blog e blog come voi conoscete articoli su Internet e così farò blog a
+
+7
+00:00:27,360 --> 00:00:31,440
+leggere blog e blog e tutto questo è grezzo.
+
+8
+00:00:31,440 --> 00:00:36,630
+Quindi applicheremo tutte queste cose una ad una userò Monga come back-end, il che significa
+
+9
+00:00:36,630 --> 00:00:40,690
+che tutti i dati dei blog saranno archiviati in due TB.
+
+10
+00:00:40,710 --> 00:00:45,130
+Ora potrei aver utilizzato qualsiasi database che non sia necessario conoscere TB Mongar per questa sezione.
+
+11
+00:00:45,180 --> 00:00:48,650
+Ho appena trovato utile essere abbastanza facile da usare per iniziare come principiante.
+
+12
+00:00:48,750 --> 00:00:50,050
+E quindi è per questo che l'ho scelto.
+
+13
+00:00:50,160 --> 00:00:53,950
+Ma se vuoi avere il tuo database personale hai il tuo database preferito.
+
+14
+00:00:53,970 --> 00:00:59,760
+Fai questo come un esercizio se ti piace che Dinon venga utilizzato sul problema MTBE come i postgrad o il mio sequel.
+
+15
+00:00:59,790 --> 00:01:01,550
+Sentiti libero di usarli.
+
+16
+00:01:01,650 --> 00:01:03,200
+Per ora useremo Mongar per.
+
+17
+00:01:03,430 --> 00:01:08,730
+Ricorda che non è necessaria una buona conoscenza, useremo semplicemente questo come database in modo che i dati
+
+18
+00:01:08,820 --> 00:01:10,900
+vengano archiviati e mantenuti nelle nostre sessioni.
+
+19
+00:01:10,950 --> 00:01:11,880
+Quindi iniziamo.
+
+20
+00:01:11,910 --> 00:01:16,950
+La prima puntata andrà bene, quindi sono sul web come siti Web chiamati "a venire".
+
+21
+00:01:17,130 --> 00:01:21,630
+E quindi quello che ci resta da fare è andare in alto a destra e fare clic su Ottieni Magdi.
+
+22
+00:01:21,780 --> 00:01:26,550
+Ora non si va per il cloud in modo che debba essere Atlas che è un database come servizio.
+
+23
+00:01:26,550 --> 00:01:29,220
+Per ora faremo semplicemente clic sui server nel mezzo.
+
+24
+00:01:29,460 --> 00:01:32,050
+E qui abbiamo il server della comunità più venduto.
+
+25
+00:01:32,400 --> 00:01:35,380
+E quindi sei sostanzialmente in grado di scaricare Mongar per essere qui.
+
+26
+00:01:35,550 --> 00:01:38,530
+Quindi, fai clic su una deviazione che ti serve, penso per 0 3.
+
+27
+00:01:38,530 --> 00:01:39,890
+La versione attuale è fantastica.
+
+28
+00:01:39,890 --> 00:01:41,880
+Non usare una versione di sviluppo.
+
+29
+00:01:42,030 --> 00:01:46,490
+E se non hai voglia di usare xed e usare 4. 0 quindi lo uso.
+
+30
+00:01:46,500 --> 00:01:48,730
+Le cose possono cambiare in qualsiasi modo per noi.
+
+31
+00:01:48,720 --> 00:01:49,700
+Seleziona il tuo sistema operativo.
+
+32
+00:01:49,720 --> 00:01:51,470
+Per me il suo Mac OS.
+
+33
+00:01:51,600 --> 00:01:55,240
+Si basa su Windows Ubuntu, ecc.
+
+34
+00:01:55,260 --> 00:01:56,920
+Basta scaricare quello giusto.
+
+35
+00:01:56,950 --> 00:02:01,820
+T. G. ciò significa che è compresso e quindi basta andare avanti e fare clic su download.
+
+36
+00:02:01,920 --> 00:02:03,740
+Ora la demo dovrebbe iniziare a breve.
+
+37
+00:02:03,960 --> 00:02:09,560
+OK, quindi abbi un buon Hebei e per me sono stati dei direttori. Quindi se tu potessi essere stato e poi tu
+
+38
+00:02:09,570 --> 00:02:10,130
+digiti Mongo.
+
+39
+00:02:10,150 --> 00:02:12,150
+D Ecco come si inizia a essere Mongar.
+
+40
+00:02:12,480 --> 00:02:16,550
+Quindi se lo fai avrai un errore e l'errore sta per dire.
+
+41
+00:02:16,840 --> 00:02:18,140
+Questa è la nostra directory.
+
+42
+00:02:18,270 --> 00:02:20,680
+Slashdot non deve essere trovato.
+
+43
+00:02:20,700 --> 00:02:25,560
+Quindi quello che sto per fare è semplicemente creare la directory dei dati non dove dicono che dovrebbe essere, ma nella
+
+44
+00:02:25,560 --> 00:02:27,360
+mia directory per mantenere le cose locali.
+
+45
+00:02:27,660 --> 00:02:29,070
+Quindi ti mostrerò cosa intendo.
+
+46
+00:02:29,070 --> 00:02:35,150
+Quindi abbiamo tutti questi attori qui e creerò dati e dati di credito D-B.
+
+47
+00:02:35,340 --> 00:02:38,670
+Quindi ora nella directory dei dati c'è una fabbrica DBI.
+
+48
+00:02:38,700 --> 00:02:41,230
+OK, quindi ora devo lanciare.
+
+49
+00:02:41,700 --> 00:02:46,870
+Dobbiamo lanciare Heebee in modo corretto, quindi ti aiuterò solo per ottenere i comandi giusti.
+
+50
+00:02:46,920 --> 00:02:52,500
+E se vai lì, c'è un argomento di percorso D-B che puoi eseguire e puoi semplicemente dire
+
+51
+00:02:52,500 --> 00:02:54,560
+Aspetta dove vuoi salvare i soldati.
+
+52
+00:02:54,570 --> 00:03:00,590
+Ben mescolato i dati del percorso DP che rappresenta la directory che ho appena creato.
+
+53
+00:03:00,750 --> 00:03:05,090
+Premi enter e ora il marketing è iniziato e siamo pronti per partire.
+
+54
+00:03:05,310 --> 00:03:08,930
+Quindi verrà avviata questa immagine per mantenere aperto quel terminale.
+
+55
+00:03:09,030 --> 00:03:13,440
+Se ti trovi in Windows, le istruzioni sono leggermente diverse ma ti indicherò Tauriel nella
+
+56
+00:03:13,440 --> 00:03:15,920
+prossima lezione, quindi ci vediamo nella prossima lezione.
+

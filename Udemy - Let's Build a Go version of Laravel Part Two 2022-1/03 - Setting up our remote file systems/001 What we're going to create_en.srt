@@ -1,0 +1,136 @@
+1
+00:00:00,960 --> 00:00:05,650
+In this section of the course, we're going to focus upon multiple remote file systems.
+
+2
+00:00:05,670 --> 00:00:10,740
+And since we're building a sort of clone of Laravel lingo, let's have a look at what they have.
+
+3
+00:00:11,310 --> 00:00:13,830
+So as you can see, they have the local driver.
+
+4
+00:00:13,830 --> 00:00:16,020
+I'm just looking in the documentation for Laravel.
+
+5
+00:00:16,470 --> 00:00:22,230
+They have a local driver, the public disk, they have Amazon buckets and they have other ones as well.
+
+6
+00:00:22,260 --> 00:00:22,710
+OK.
+
+7
+00:00:22,920 --> 00:00:23,970
+And here's what we're going to do.
+
+8
+00:00:24,180 --> 00:00:27,840
+And this is a finished version of what we'll be doing in this section of the course.
+
+9
+00:00:28,590 --> 00:00:31,650
+And we have a new menu up here which will be adding momentarily.
+
+10
+00:00:32,310 --> 00:00:35,520
+We're going to go to the file systems and choose list files.
+
+11
+00:00:35,730 --> 00:00:41,910
+And from here, we're going to support four different file systems in addition to the local file system.
+
+12
+00:00:42,360 --> 00:00:47,460
+The first one is an Amazon S3 bucket, so I can choose that and say, show me the files that are on
+
+13
+00:00:47,460 --> 00:00:51,720
+that remote file system and then they're OK and we can delete them if we want to.
+
+14
+00:00:51,750 --> 00:00:53,370
+I'm not going to right now, but we can.
+
+15
+00:00:54,030 --> 00:01:01,350
+So we'll support Amazon S3 buckets and also Mineo, which is a very useful piece of software that allows
+
+16
+00:01:01,350 --> 00:01:05,069
+you to create your own Amazon S3 buckets without paying Amazon.
+
+17
+00:01:05,069 --> 00:01:09,960
+So we may as well support that, and it uses its own driver, which is why it's a separate file system.
+
+18
+00:01:10,860 --> 00:01:18,300
+Also, SFD secure FTP protocol that'll work exactly as we expect, and we can treat this as a local
+
+19
+00:01:18,300 --> 00:01:19,440
+file system with our code.
+
+20
+00:01:20,250 --> 00:01:25,290
+And finally, one that's not used a great deal, but I just wanted to show you how to create multiple
+
+21
+00:01:25,290 --> 00:01:29,940
+file systems using a single type WebDAV, which some people still use.
+
+22
+00:01:30,420 --> 00:01:37,590
+And it actually points to the same directory as SFTP because the one will be using supports web dev
+
+23
+00:01:37,590 --> 00:01:44,910
+and FTP and unsecure FTP, which I refused to implement because it is insecure by default.
+
+24
+00:01:45,570 --> 00:01:50,340
+In any case, we'll be able to list things more loss and delete them, and we'll also be able to, of
+
+25
+00:01:50,340 --> 00:01:51,300
+course, upload them.
+
+26
+00:01:51,300 --> 00:01:54,810
+So I'll be able to choose which file system do I want to upload to.
+
+27
+00:01:54,840 --> 00:02:02,370
+So if I'm choosing, say, SFP, I'll be able to browse for a file, choose something, there's a picture,
+
+28
+00:02:02,400 --> 00:02:03,180
+let's upload it.
+
+29
+00:02:03,660 --> 00:02:07,450
+And now that's been uploaded to FTP and I believe it was called lorem.
+
+30
+00:02:07,470 --> 00:02:08,520
+Let's see if it's there.
+
+31
+00:02:09,270 --> 00:02:13,390
+We go to SMTP and list and there is a lorem ping.
+
+32
+00:02:13,610 --> 00:02:15,330
+Now I can delete it, so I deleted.
+
+33
+00:02:15,660 --> 00:02:17,430
+Yes, and it's gone.
+
+34
+00:02:18,150 --> 00:02:23,580
+OK, a fair bit of work to implement all of this, but let's get started in the next election.
+

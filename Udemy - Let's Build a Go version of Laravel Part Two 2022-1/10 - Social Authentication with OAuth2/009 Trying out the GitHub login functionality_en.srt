@@ -1,0 +1,364 @@
+1
+00:00:01,500 --> 00:00:04,470
+So we should be able to try our log in process right now.
+
+2
+00:00:04,710 --> 00:00:07,160
+And there's a couple of things I need to set up before I do that.
+
+3
+00:00:07,170 --> 00:00:12,990
+If you recall over here and off handlers, we're actually using the session, so I should probably try
+
+4
+00:00:12,990 --> 00:00:15,450
+to configure the session before I try to do anything.
+
+5
+00:00:15,570 --> 00:00:21,820
+Now I already have in my Docker compose reddish running, so I use Redis for the session.
+
+6
+00:00:21,840 --> 00:00:25,800
+And if you don't have that, you probably should enable it as well just to make sure things will work
+
+7
+00:00:25,800 --> 00:00:26,280
+properly.
+
+8
+00:00:26,370 --> 00:00:32,580
+So I'll open the door on file and that's in my app and I'll specify my retest hosts, which comes right
+
+9
+00:00:32,580 --> 00:00:37,860
+out of the Docker, compose its local host port six three seven.
+
+10
+00:00:37,860 --> 00:00:45,630
+Not the default Redis port and down here at Line forty two in my dot on file or specify when I read
+
+11
+00:00:46,170 --> 00:00:49,560
+my session type to be read us our ideas.
+
+12
+00:00:49,980 --> 00:00:50,280
+OK.
+
+13
+00:00:51,000 --> 00:00:52,320
+So that's the first thing I'll do.
+
+14
+00:00:52,590 --> 00:00:57,900
+Now let me go over and look at my database and make sure I have nothing in the user's table.
+
+15
+00:00:57,930 --> 00:01:02,010
+So in the Solaris host database under users, I have nothing.
+
+16
+00:01:02,130 --> 00:01:02,520
+Perfect.
+
+17
+00:01:03,360 --> 00:01:10,500
+And the last thing I'll check is over in my web browser, in my GitHub account, I've looked at my oath
+
+18
+00:01:10,740 --> 00:01:14,730
+applicant application for this and I have no users at the moment.
+
+19
+00:01:15,000 --> 00:01:18,090
+So now I should be able to go over here and see what we got wrong.
+
+20
+00:01:18,510 --> 00:01:21,360
+So I'll go back to my I.D. and I'll open my terminal.
+
+21
+00:01:21,630 --> 00:01:25,200
+Make sure I'm in the My App folder I am and take me make start.
+
+22
+00:01:29,510 --> 00:01:29,720
+Well, we.
+
+23
+00:01:30,590 --> 00:01:31,520
+That's a good sign.
+
+24
+00:01:31,550 --> 00:01:38,060
+So let's go back to our web browser and try this out, so I'll go to a new tab and I'll go to localhost
+
+25
+00:01:38,060 --> 00:01:43,430
+four thousand and I'll go to the users menu and choose a login.
+
+26
+00:01:43,820 --> 00:01:47,720
+And now I should be able to click on login with GitHub, and something should happen.
+
+27
+00:01:49,710 --> 00:01:54,090
+So it took me over to GitHub, that's so far, so good, and it says, should I authorize this?
+
+28
+00:01:54,120 --> 00:01:59,400
+Now I've recently entered my GitHub password when I revoke tokens, so it already knows I'm, I am who
+
+29
+00:01:59,400 --> 00:02:00,120
+I say I am.
+
+30
+00:02:00,390 --> 00:02:03,540
+But if you haven't done that, it'll probably ask you to log in.
+
+31
+00:02:03,630 --> 00:02:06,810
+But I'll click, authorize and see if our callback works as expected.
+
+32
+00:02:09,949 --> 00:02:11,030
+So here.
+
+33
+00:02:12,270 --> 00:02:16,020
+You did the redirect, and everything seems to be the way it's supposed to be.
+
+34
+00:02:16,620 --> 00:02:18,390
+But let's see what we have in our log file.
+
+35
+00:02:21,260 --> 00:02:25,250
+So I have an error somewhere in the air is.
+
+36
+00:02:26,920 --> 00:02:32,350
+Invalid memory address or null pointer D reference, that's one of the worst errors you can get because
+
+37
+00:02:32,350 --> 00:02:36,970
+it's pretty much a catchall, but it says it takes place online.
+
+38
+00:02:37,000 --> 00:02:39,310
+Three hundred and forty four of art handlers.
+
+39
+00:02:39,400 --> 00:02:40,270
+Let's see what that is.
+
+40
+00:02:41,290 --> 00:02:44,200
+So this is what I'm trying to put something in the session.
+
+41
+00:02:45,530 --> 00:02:46,880
+Now, why is it doing that?
+
+42
+00:02:50,540 --> 00:02:59,000
+Social media callback as the handlers pointer as its receiver, and it is a handler, so there's no
+
+43
+00:02:59,000 --> 00:03:00,890
+reason why it shouldn't be doing that.
+
+44
+00:03:02,140 --> 00:03:07,930
+Now this calls in its social office and in its social office is up here.
+
+45
+00:03:08,770 --> 00:03:10,990
+And it also has the handler.
+
+46
+00:03:12,100 --> 00:03:14,200
+We're not storing anything in the session there.
+
+47
+00:03:15,010 --> 00:03:16,240
+That seems a little odd.
+
+48
+00:03:16,360 --> 00:03:17,710
+I'm not sure why it's doing that.
+
+49
+00:03:18,660 --> 00:03:22,110
+Well, let's go back and look at our report on file and make sure we type things incorrectly there.
+
+50
+00:03:25,660 --> 00:03:27,130
+No, that looks OK.
+
+51
+00:03:27,310 --> 00:03:31,180
+So let's go back here and look at both handlers again, see if we missed anything, I'll just close
+
+52
+00:03:31,180 --> 00:03:31,810
+my terminal.
+
+53
+00:03:33,010 --> 00:03:37,640
+So let's just go through this logically, social media callback calls in its social life.
+
+54
+00:03:37,660 --> 00:03:42,370
+I know that works, or I never would have seen that authorized user screen from GitHub.
+
+55
+00:03:42,670 --> 00:03:47,050
+And then I get my big user, which should be fine because it's calling it back.
+
+56
+00:03:47,770 --> 00:03:52,480
+And then I check to see if the user exists in the database and the user doesn't exist in the database.
+
+57
+00:03:52,480 --> 00:03:55,470
+The first time through because I'm on my database was empty.
+
+58
+00:03:55,480 --> 00:03:56,560
+So let's look at our database.
+
+59
+00:04:00,320 --> 00:04:03,850
+And I'll refresh this, and there I have Trevor Salter.
+
+60
+00:04:04,140 --> 00:04:05,460
+No email address.
+
+61
+00:04:05,540 --> 00:04:07,070
+Well, that would cause it.
+
+62
+00:04:08,110 --> 00:04:12,790
+So somewhere here, I forgot to put the user's email address in when I insert the user.
+
+63
+00:04:13,090 --> 00:04:15,080
+So I'm setting new user active.
+
+64
+00:04:15,100 --> 00:04:16,060
+I'll just put it right here.
+
+65
+00:04:16,870 --> 00:04:23,640
+New user email, you're going to be equal to and I'm going to get it from G User Dot email.
+
+66
+00:04:24,980 --> 00:04:30,860
+OK, so the problem was since we didn't actually insert a user with a valid email address when I tried
+
+67
+00:04:30,860 --> 00:04:35,720
+to get the user down here at line three hundred and forty two couldn't find that user at all.
+
+68
+00:04:36,110 --> 00:04:44,240
+So I'll stop the application make stop clear the screen, go back to my database, delete that one entry
+
+69
+00:04:44,240 --> 00:04:44,870
+that's in there.
+
+70
+00:04:46,850 --> 00:04:47,540
+So that's gone.
+
+71
+00:04:48,200 --> 00:04:54,470
+And then I'll go back to GitHub on my web browser and revoke any tokens that are there will refresh
+
+72
+00:04:54,470 --> 00:04:54,800
+that.
+
+73
+00:04:56,360 --> 00:04:57,930
+Revoke all user tokens.
+
+74
+00:04:57,950 --> 00:04:58,470
+Yes.
+
+75
+00:04:58,570 --> 00:05:00,380
+So that should go back to zero and git.
+
+76
+00:05:00,560 --> 00:05:00,890
+All right.
+
+77
+00:05:01,820 --> 00:05:05,930
+Now let's go back to our I.D. and start the application again.
+
+78
+00:05:06,170 --> 00:05:07,070
+Try it one more time.
+
+79
+00:05:07,550 --> 00:05:08,180
+Make start.
+
+80
+00:05:12,840 --> 00:05:15,030
+OK, so it's running back to my Web browser.
+
+81
+00:05:17,440 --> 00:05:19,060
+Go to local host four thousand.
+
+82
+00:05:20,230 --> 00:05:21,190
+And let's try this again.
+
+83
+00:05:21,490 --> 00:05:27,040
+Users log in, log in with GitHub, authorize that user.
+
+84
+00:05:29,120 --> 00:05:35,210
+That's better now when I go over here to my old North applications and refresh this screen, it should
+
+85
+00:05:35,210 --> 00:05:36,800
+show one user and it does.
+
+86
+00:05:37,370 --> 00:05:40,100
+When I look in the database, I should be able to refresh this.
+
+87
+00:05:40,580 --> 00:05:42,770
+And there's all the necessary information.
+
+88
+00:05:42,890 --> 00:05:43,360
+Perfect.
+
+89
+00:05:43,400 --> 00:05:44,450
+So now we can log in.
+
+90
+00:05:44,690 --> 00:05:46,970
+But of course, we also want to be able to log out.
+
+91
+00:05:47,240 --> 00:05:49,400
+We'll get started on that in the next lecture.
+

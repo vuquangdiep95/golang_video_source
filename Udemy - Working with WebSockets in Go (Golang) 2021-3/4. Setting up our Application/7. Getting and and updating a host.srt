@@ -1,0 +1,527 @@
+1
+00:00:01,560 --> 00:00:09,030
+OK, so so far we have this we can go to house and this is the create a new host, but I already have
+
+2
+00:00:09,030 --> 00:00:09,880
+one in the database.
+
+3
+00:00:09,900 --> 00:00:11,960
+You can see that right here.
+
+4
+00:00:11,970 --> 00:00:13,650
+I have one with an idea of one.
+
+5
+00:00:14,040 --> 00:00:15,990
+And this information in the database.
+
+6
+00:00:15,990 --> 00:00:23,910
+And what I want to do is when I'm on this screen looking at slash admin, slash host, slash one, I
+
+7
+00:00:23,910 --> 00:00:28,170
+definitely want to display the information that's in the database in this form.
+
+8
+00:00:28,200 --> 00:00:33,630
+So in order to do that, I need to have a database method that goes and gets a host.
+
+9
+00:00:33,690 --> 00:00:34,680
+So let's write one of those.
+
+10
+00:00:35,070 --> 00:00:43,500
+So I'll go back to my idee and I'm in host Underscore Postgrads Culgoa and I'll just create a new method.
+
+11
+00:00:44,190 --> 00:00:53,700
+Func M it has the receiver of type postcrisis DB repoll and I'll call this ghettoised and it will take
+
+12
+00:00:53,700 --> 00:00:59,040
+one parameter ID which is an aunt and I will return to things, or at least potentially two things.
+
+13
+00:00:59,620 --> 00:01:02,490
+Models dot host and potentially an error.
+
+14
+00:01:04,200 --> 00:01:10,470
+OK, so I'm going to copy the context bit as I often do, to save some typing and avoid typographical
+
+15
+00:01:10,470 --> 00:01:12,530
+errors and I would need to write our query.
+
+16
+00:01:13,380 --> 00:01:15,210
+So that's the simple, simple statement.
+
+17
+00:01:15,300 --> 00:01:20,910
+Query is assigned the value of and I use Bachtiar so I can put it on multiple lines.
+
+18
+00:01:21,840 --> 00:01:23,940
+I need to select the ID.
+
+19
+00:01:24,770 --> 00:01:26,580
+Let's see what the field names are.
+
+20
+00:01:26,760 --> 00:01:43,740
+So structured hostname canonical name url hostname canonical name you url ip ip version six ip ip version
+
+21
+00:01:43,740 --> 00:01:53,070
+six location os active location os active created out and updated at.
+
+22
+00:01:58,960 --> 00:02:05,210
+From hosts, where ideas equals and because we're using postcards, we've got to use a placeholder.
+
+23
+00:02:05,740 --> 00:02:06,650
+So there's my query.
+
+24
+00:02:07,240 --> 00:02:09,580
+So let's execute the statement.
+
+25
+00:02:09,610 --> 00:02:16,930
+Row is a sign the value of IMDB, dot, query, context, Queretaro context.
+
+26
+00:02:17,440 --> 00:02:18,940
+And that takes the context.
+
+27
+00:02:20,140 --> 00:02:22,930
+It takes a query and it takes our ID.
+
+28
+00:02:24,580 --> 00:02:25,590
+So that gives me a row.
+
+29
+00:02:25,600 --> 00:02:30,220
+Now I need to put a variable in place, which I'll call H to hold the results.
+
+30
+00:02:30,220 --> 00:02:32,170
+And it's a type models host.
+
+31
+00:02:33,400 --> 00:02:39,160
+And we'll be modifying this query later on to get more information, but this will get us started and
+
+32
+00:02:39,160 --> 00:02:44,380
+now we scan the row robot scan into our variable, we just create it.
+
+33
+00:02:44,950 --> 00:02:52,510
+So we're going to scan into it and then hostname and I'll just duplicate that a few times.
+
+34
+00:02:53,890 --> 00:03:07,000
+Then each dot canonical name you url, h2, IP, IP Version six and duplicate that a few more times.
+
+35
+00:03:08,260 --> 00:03:16,090
+OS active created and update out.
+
+36
+00:03:17,560 --> 00:03:19,870
+OK, now we'll check for an error.
+
+37
+00:03:20,860 --> 00:03:26,530
+If error is not equal to nil, I'll just return H and the error.
+
+38
+00:03:29,630 --> 00:03:33,890
+Otherwise, things are good, return each and.
+
+39
+00:03:35,300 --> 00:03:39,140
+Now, as I said, we're going to have to get more information from this query later on, but this will
+
+40
+00:03:39,140 --> 00:03:39,800
+get us started.
+
+41
+00:03:39,830 --> 00:03:45,160
+I'm going to call this get hosted by ID just because that's a better name.
+
+42
+00:03:45,320 --> 00:03:48,860
+Now, I've created this, so I have to add it to my repository.
+
+43
+00:03:48,890 --> 00:03:55,090
+So I copy the entire signature, go to my repository, go file and paste that in there.
+
+44
+00:03:55,970 --> 00:03:58,970
+And while we're at it, we may as well do the update code as well.
+
+45
+00:03:59,090 --> 00:04:06,860
+So let's go back to our ID and back to our host Underscore Postgrads and let's create another one which
+
+46
+00:04:06,860 --> 00:04:08,360
+I will call update hosts.
+
+47
+00:04:10,250 --> 00:04:17,000
+So func M receiver is Postgrads DB Repo and I'll call this update host and it will take one parameter
+
+48
+00:04:17,000 --> 00:04:22,340
+H, which is of type models to our host and it returns potentially an error.
+
+49
+00:04:24,290 --> 00:04:31,550
+And again, I'll copy the context line's paste those in here so there's no typographical errors and
+
+50
+00:04:31,550 --> 00:04:32,750
+now I need to write my statement.
+
+51
+00:04:33,890 --> 00:04:36,290
+Statement is assigned the value of.
+
+52
+00:04:38,380 --> 00:04:44,890
+Update hosts set and I don't need to worry about the ID, but I do need to worry about the hostname.
+
+53
+00:04:47,180 --> 00:04:57,500
+He put the dollar sign one and then canonical name equaled a dollar sign to better still name, right,
+
+54
+00:04:57,500 --> 00:04:57,770
+the.
+
+55
+00:05:00,670 --> 00:05:09,070
+Hostname canonical name, and then we have the URL Euro equal to dollar sign three IP equal to dollar
+
+56
+00:05:09,070 --> 00:05:13,360
+sign for IP Version six, equal to dollar sign five.
+
+57
+00:05:16,130 --> 00:05:19,370
+OS equal to Dollar Signs six, and I'll go to another line.
+
+58
+00:05:22,140 --> 00:05:32,460
+Active equal to Dollar Signs seven and updated at Equal Dollar Sign eight, where ID equals dollars
+
+59
+00:05:32,460 --> 00:05:32,830
+are not.
+
+60
+00:05:33,780 --> 00:05:34,740
+So that's my statement.
+
+61
+00:05:35,850 --> 00:05:37,950
+Now let's do the database call.
+
+62
+00:05:41,540 --> 00:05:47,860
+So I don't care about the result, I do care about the error is a sign, the value of IMDB, the exact
+
+63
+00:05:47,870 --> 00:05:51,920
+context right there, has the context.
+
+64
+00:05:53,400 --> 00:06:01,770
+Past my statement and then just on separate lines to make it more readable, we want to put in our hostname,
+
+65
+00:06:03,240 --> 00:06:04,800
+not canonical name.
+
+66
+00:06:09,470 --> 00:06:09,640
+You.
+
+67
+00:06:14,870 --> 00:06:21,260
+IP h dot ip version six H os.
+
+68
+00:06:23,300 --> 00:06:33,590
+How active is this all, just use time now to get the current time to get the updated set to the current
+
+69
+00:06:33,590 --> 00:06:39,170
+date and time, and the last thing is my I.D. and that is EDEK.
+
+70
+00:06:40,820 --> 00:06:42,890
+So that does the query.
+
+71
+00:06:43,190 --> 00:06:44,660
+Now we check for an error.
+
+72
+00:06:47,100 --> 00:06:56,080
+If error is not equal to nil, then I'll log beer logged uprate line error and return error, otherwise
+
+73
+00:06:57,300 --> 00:06:59,500
+return nil, OK.
+
+74
+00:07:00,210 --> 00:07:04,400
+So now we have an update and we can use that to update the information.
+
+75
+00:07:04,410 --> 00:07:06,140
+So let's add that to a repository.
+
+76
+00:07:07,650 --> 00:07:09,360
+Let's make sure everything compiles.
+
+77
+00:07:13,120 --> 00:07:20,050
+It does perfect, so let's go find her handler sonder handlers, we want handlers.
+
+78
+00:07:21,220 --> 00:07:22,750
+And what we have here.
+
+79
+00:07:24,150 --> 00:07:30,750
+Well, let's go to the Reedsville that will give me the right spot, so we want to host post and host
+
+80
+00:07:30,750 --> 00:07:32,580
+get most of the hosts get first.
+
+81
+00:07:32,590 --> 00:07:37,660
+So here, back in this one, this will should display the information on the form for us.
+
+82
+00:07:37,680 --> 00:07:38,640
+So this is called.
+
+83
+00:07:38,640 --> 00:07:40,830
+But we want to display an individual host.
+
+84
+00:07:41,350 --> 00:07:44,340
+And what we want to do here is we've already created a variable.
+
+85
+00:07:44,340 --> 00:07:47,130
+Models are each of type models host.
+
+86
+00:07:47,430 --> 00:07:54,540
+If the idea is greater than zero, then we want to get the host from the database database so we can
+
+87
+00:07:54,540 --> 00:07:57,960
+just say H.
+
+88
+00:07:59,670 --> 00:08:00,750
+I'll call it host.
+
+89
+00:08:01,950 --> 00:08:10,500
+Potentially an error or assign the value of repo DB don't get hosted by ID and pass in the ID that we
+
+90
+00:08:10,500 --> 00:08:12,240
+grab from the parameter right from the.
+
+91
+00:08:12,240 --> 00:08:13,200
+You are right up here.
+
+92
+00:08:15,060 --> 00:08:24,150
+If error is not equal to nil and I'll just say logged print line error exit not an exit return and I'll
+
+93
+00:08:24,150 --> 00:08:26,130
+just give my blank screen, we'll fix this up later on.
+
+94
+00:08:27,180 --> 00:08:31,440
+Otherwise if there is no error then my variable H is equal to host.
+
+95
+00:08:32,360 --> 00:08:35,760
+OK, so now we're passing that information.
+
+96
+00:08:36,000 --> 00:08:36,980
+What is this host.
+
+97
+00:08:37,200 --> 00:08:38,940
+Can I use host type of models.
+
+98
+00:08:38,940 --> 00:08:42,300
+User get user gravities get get hosted by ID.
+
+99
+00:08:42,630 --> 00:08:43,120
+That's better.
+
+100
+00:08:43,800 --> 00:08:50,520
+OK, so now we have the variable H and we're putting that in our verbs, which means I should be able
+
+101
+00:08:50,520 --> 00:08:57,210
+to go to the host page host jet and make sure that I'm displaying some information.
+
+102
+00:08:57,210 --> 00:08:59,640
+We'll just so we have the hostname, we have the canonical name.
+
+103
+00:08:59,850 --> 00:09:00,470
+This should work.
+
+104
+00:09:00,660 --> 00:09:01,590
+So let's see what happens.
+
+105
+00:09:02,390 --> 00:09:09,210
+So let's run it and go back to my Web browser and I'm looking at ID one.
+
+106
+00:09:09,210 --> 00:09:14,130
+So let's load that page and see if we have any information and we have an error.
+
+107
+00:09:14,760 --> 00:09:17,370
+Expected 11 destination arguments, not 10.
+
+108
+00:09:17,370 --> 00:09:19,470
+So that is in get hosted by ID.
+
+109
+00:09:19,470 --> 00:09:21,150
+So let's go back and see what we missed.
+
+110
+00:09:21,810 --> 00:09:31,920
+Host Postcrisis so get hosted by ID is right here so I have ID hostname canonical name you url ip IP
+
+111
+00:09:31,920 --> 00:09:40,050
+Version six OS Active created an updated out where hosts ID equals dollar sign one.
+
+112
+00:09:40,440 --> 00:09:45,690
+One, two, three, four, five, six, seven, eight, nine, ten, eleven.
+
+113
+00:09:46,200 --> 00:09:50,430
+One, two, three, four, five, six, seven, eight, nine, ten.
+
+114
+00:09:50,460 --> 00:09:50,910
+Oh yeah.
+
+115
+00:09:52,860 --> 00:09:53,580
+He Levan.
+
+116
+00:09:54,740 --> 00:10:05,900
+So I missed one idy hostname canonical name, Euro IP, IP version, six location area, each dot location.
+
+117
+00:10:06,270 --> 00:10:08,600
+Let's make sure we didn't make the same mistake down here.
+
+118
+00:10:09,980 --> 00:10:13,610
+Hostname cannot claim you were an IP OS active.
+
+119
+00:10:15,170 --> 00:10:16,490
+I left it out of there as well.
+
+120
+00:10:16,910 --> 00:10:17,620
+Yeah, I did.
+
+121
+00:10:18,560 --> 00:10:19,400
+Active.
+
+122
+00:10:21,130 --> 00:10:34,960
+Then location date, which makes this nine, which makes that 10, and then after active each location.
+
+123
+00:10:35,560 --> 00:10:37,810
+OK, try this again.
+
+124
+00:10:42,010 --> 00:10:47,830
+And reload this page and now I have some information perfect, so the one thing I'm curious about and
+
+125
+00:10:47,830 --> 00:10:53,080
+I think I know what it is, but we'll get to that when we get to the update section is when I save this.
+
+126
+00:10:53,320 --> 00:10:56,140
+I'm not sure that's being handled the active.
+
+127
+00:10:56,140 --> 00:10:59,650
+And we'll figure that out in the next the next election when we do the update.
+
+128
+00:11:00,190 --> 00:11:02,860
+So now we've got a means of at least displaying something.
+
+129
+00:11:02,860 --> 00:11:07,630
+We still have to do this part where we go and get all hosts, enlist them in this table, but we'll
+
+130
+00:11:07,630 --> 00:11:09,280
+take care of that in the next lecture or two.
+
+131
+00:11:09,610 --> 00:11:10,600
+Right now, let's go.
+
+132
+00:11:10,610 --> 00:11:16,420
+And in the next lecture, we'll worry about saving the updates for a particular host.

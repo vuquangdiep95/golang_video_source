@@ -1,0 +1,927 @@
+1
+00:00:00,760 --> 00:00:06,690
+So in the last section, we created some data models and implemented authentication and wrote some tests,
+
+2
+00:00:06,700 --> 00:00:07,810
+and that was really helpful.
+
+3
+00:00:07,840 --> 00:00:13,150
+And this is all code that will make it much easier for users of the celebrity's package to build a web
+
+4
+00:00:13,150 --> 00:00:13,780
+application.
+
+5
+00:00:14,720 --> 00:00:21,590
+But of course, one of the things we want to do is we want to have some kind of command line application
+
+6
+00:00:21,590 --> 00:00:28,310
+that allows users to with one command in their terminal to do things like implement our authentication
+
+7
+00:00:28,310 --> 00:00:28,660
+code.
+
+8
+00:00:28,670 --> 00:00:35,120
+So by default, when you install a LERZ application, it won't have authentication and won't have any
+
+9
+00:00:35,120 --> 00:00:37,310
+of the things will be adding in the coming lectures.
+
+10
+00:00:37,460 --> 00:00:42,650
+But we want people to be able to type something like maybe the command line program is called celebrities
+
+11
+00:00:43,250 --> 00:00:46,040
+and they just type celebrities make off.
+
+12
+00:00:46,220 --> 00:00:53,180
+And that will create the necessary authentication logic by copying files into the project they're working
+
+13
+00:00:53,180 --> 00:00:53,420
+on.
+
+14
+00:00:53,900 --> 00:00:57,920
+And of course, one of the things they're going to have to have is database tables.
+
+15
+00:00:58,190 --> 00:01:05,990
+And the way that's handled in Laravel, for example, is with PHP artisan artisan make migration and
+
+16
+00:01:05,990 --> 00:01:07,040
+we want something like that.
+
+17
+00:01:07,070 --> 00:01:09,410
+We want to be able to create database migrations.
+
+18
+00:01:10,250 --> 00:01:15,710
+So let's get started with the very first steps of building our command line application.
+
+19
+00:01:15,830 --> 00:01:17,870
+And of course, we're not going to do that in my app.
+
+20
+00:01:18,470 --> 00:01:21,350
+We're going to do it over here in the Celebrity House project.
+
+21
+00:01:21,740 --> 00:01:27,530
+So open your celebrity's project, and the very first thing I'll do is I'll create a folder at the root
+
+22
+00:01:27,530 --> 00:01:29,630
+level of that project called.
+
+23
+00:01:29,720 --> 00:01:35,960
+And this is kind of a convention CMT for command and inside of the command folder or create another
+
+24
+00:01:35,960 --> 00:01:36,440
+folder.
+
+25
+00:01:36,650 --> 00:01:42,350
+And I'm going to call mine Seelye for command line interface and inside of the Seelye folder.
+
+26
+00:01:42,380 --> 00:01:45,290
+Let's create a new file called Mean Don't Go.
+
+27
+00:01:45,470 --> 00:01:48,800
+This will be the main entry point to our command line application.
+
+28
+00:01:48,980 --> 00:01:53,720
+So obviously, since it's in the main folder or it's a main package, I'm going to call it package,
+
+29
+00:01:56,300 --> 00:01:59,030
+and we'll just start with some really simple things.
+
+30
+00:01:59,300 --> 00:02:03,860
+First of all, create a variable because I know I'm going to be using code in the packages above this
+
+31
+00:02:03,860 --> 00:02:04,160
+one.
+
+32
+00:02:04,460 --> 00:02:07,340
+I'll call my variable cell for celebrities.
+
+33
+00:02:07,670 --> 00:02:11,060
+And it's a type celebrity's better spell, right?
+
+34
+00:02:13,840 --> 00:02:15,200
+Not celebrities.
+
+35
+00:02:17,180 --> 00:02:18,560
+And hopefully it will find it for me.
+
+36
+00:02:22,060 --> 00:02:23,570
+It looks like it didn't, but that's all right.
+
+37
+00:02:23,610 --> 00:02:25,070
+I'll just imported manually.
+
+38
+00:02:25,820 --> 00:02:29,780
+So import and I'll do it this way because I'm going to have more imports later on.
+
+39
+00:02:31,080 --> 00:02:35,250
+GitHub dot com slash t solar celebrities.
+
+40
+00:02:35,760 --> 00:02:41,460
+And of course, that needs to be in quotation marks, and hopefully that will find it for me.
+
+41
+00:02:42,030 --> 00:02:43,590
+And here this should be an upper case.
+
+42
+00:02:45,150 --> 00:02:45,450
+All right.
+
+43
+00:02:45,490 --> 00:02:45,870
+That's correct.
+
+44
+00:02:46,500 --> 00:02:47,460
+So we have that import.
+
+45
+00:02:48,030 --> 00:02:51,190
+Now another thing I'm going to want to do in this project.
+
+46
+00:02:51,210 --> 00:02:57,750
+This is a command line terminal application, but it's nice to give color as a kind of feedback in any
+
+47
+00:02:57,750 --> 00:02:58,940
+command line application.
+
+48
+00:02:58,950 --> 00:03:04,170
+So I'm going to open my terminal and I'm going to go and get a really simple package.
+
+49
+00:03:04,740 --> 00:03:12,960
+Go get from GitHub dot com slash f a T r h slash color.
+
+50
+00:03:13,680 --> 00:03:16,290
+And the reason I'm going to get that, it's pretty straightforward.
+
+51
+00:03:17,200 --> 00:03:22,640
+When you're writing code for terminals that's supposed to change the color of the output.
+
+52
+00:03:22,660 --> 00:03:26,330
+It's different on Windows and Linux, and it's significantly different.
+
+53
+00:03:26,350 --> 00:03:32,620
+The codes to escape to start a color are different in this package just makes it really dead simple
+
+54
+00:03:32,620 --> 00:03:33,520
+for us to use that.
+
+55
+00:03:34,060 --> 00:03:35,670
+So let's just get an application going here.
+
+56
+00:03:35,680 --> 00:03:36,630
+I've imported that.
+
+57
+00:03:36,640 --> 00:03:41,200
+I'm not using it yet, but I will before too long and I'll put a Constance in here just so I know what
+
+58
+00:03:41,200 --> 00:03:42,100
+version this is.
+
+59
+00:03:43,000 --> 00:03:48,700
+Concert version and I'll make that equal to one point zero point zero, which is pretentious.
+
+60
+00:03:48,790 --> 00:03:51,910
+We're not at one point yet, but this is good enough for our purposes.
+
+61
+00:03:52,570 --> 00:03:54,460
+And of course, this needs a main function.
+
+62
+00:03:54,460 --> 00:04:00,040
+So functioning, and we'll make this really, really simple to start with.
+
+63
+00:04:00,070 --> 00:04:00,490
+OK.
+
+64
+00:04:00,970 --> 00:04:05,280
+We want to get arguments, command line arguments, so I'll just create a few variables.
+
+65
+00:04:05,320 --> 00:04:07,140
+We're not going to ever have more than three.
+
+66
+00:04:07,150 --> 00:04:11,230
+So ergo one hour to an hour three.
+
+67
+00:04:12,130 --> 00:04:14,530
+And I'll also create a variable called error.
+
+68
+00:04:16,030 --> 00:04:20,710
+Those come from a function called validate input.
+
+69
+00:04:21,100 --> 00:04:23,110
+We want to validate what the user has to say.
+
+70
+00:04:23,260 --> 00:04:26,740
+OK, now that a function doesn't exist yet, but don't worry about that, it will before too long.
+
+71
+00:04:27,640 --> 00:04:30,430
+And we're also going to refer to another function that doesn't exist yet.
+
+72
+00:04:30,760 --> 00:04:33,970
+So I'll check for an error if error is not equal to nil.
+
+73
+00:04:34,450 --> 00:04:37,300
+If that validate input function returns us an error.
+
+74
+00:04:37,690 --> 00:04:40,690
+Then I'm going to call another function exit gracefully.
+
+75
+00:04:42,340 --> 00:04:43,780
+I could just, you know, die.
+
+76
+00:04:43,810 --> 00:04:45,570
+That's not a very polite thing to do.
+
+77
+00:04:45,580 --> 00:04:47,800
+So error here past an error to that.
+
+78
+00:04:48,610 --> 00:04:51,100
+Now let's go create these functions that don't exist yet.
+
+79
+00:04:51,280 --> 00:04:57,190
+OK, so I'll create one called func and it's named validate input.
+
+80
+00:04:58,960 --> 00:05:05,560
+It takes no arguments, but a returns string string, a string and potentially an error.
+
+81
+00:05:06,730 --> 00:05:16,870
+OK, so let's create the three strings we might be returning verb one or two or three of type string.
+
+82
+00:05:17,110 --> 00:05:20,170
+So let's try to get our command line arguments.
+
+83
+00:05:20,410 --> 00:05:22,120
+So I'm going to write a simple if statement.
+
+84
+00:05:22,420 --> 00:05:29,560
+If the length of OS were from the standard library, the operating system package ARGS is the function
+
+85
+00:05:29,560 --> 00:05:33,130
+I'm looking for or the value I'm looking for, if that's greater than one.
+
+86
+00:05:33,610 --> 00:05:37,300
+Then we have at least one, and I didn't do the import for me, so let's try that again.
+
+87
+00:05:39,220 --> 00:05:40,540
+OS stop args.
+
+88
+00:05:41,380 --> 00:05:43,630
+That's better if it's greater than one.
+
+89
+00:05:43,660 --> 00:05:48,400
+Then I have more than one command line argument or at least one command line argument.
+
+90
+00:05:49,030 --> 00:05:53,560
+Because when you read the arguments from the command line, if, for example, my application is called
+
+91
+00:05:53,560 --> 00:05:57,010
+celebrities, my command line up application is called celebrities.
+
+92
+00:05:57,700 --> 00:06:04,070
+And if I type, say, celebrities speech space help, then I actually have to command line arguments.
+
+93
+00:06:04,120 --> 00:06:08,350
+The first one is the name of the program and I'm executing, which is hilarious in my case.
+
+94
+00:06:08,470 --> 00:06:09,730
+And the second one would be help.
+
+95
+00:06:10,180 --> 00:06:13,180
+So I'm checking to see if there are any command line arguments.
+
+96
+00:06:14,620 --> 00:06:16,980
+So if that happens, then I know I have at least one.
+
+97
+00:06:16,990 --> 00:06:25,510
+So I can say heard one is equal to 0s words at position one because position zero is the name of my
+
+98
+00:06:25,510 --> 00:06:26,530
+command line argument.
+
+99
+00:06:27,520 --> 00:06:33,730
+Now, immediately after that, I'm going to have another if statement if the length of I don't need
+
+100
+00:06:33,730 --> 00:06:38,650
+that parentheses, if the length of OS starts again.
+
+101
+00:06:39,640 --> 00:06:43,780
+Now, if it's greater than or equal to three than, I have at least one more.
+
+102
+00:06:43,930 --> 00:06:51,790
+OK, so I can just in here say, ah, two is equal to OST earns position two, which I should be the
+
+103
+00:06:51,790 --> 00:06:52,900
+third thing on the line.
+
+104
+00:06:53,110 --> 00:06:56,440
+Celebrities make migration, for example.
+
+105
+00:06:56,680 --> 00:06:57,010
+OK.
+
+106
+00:06:58,420 --> 00:07:06,190
+And I will do one more check if the length of OS starts position or start args is greater than or equal
+
+107
+00:07:06,190 --> 00:07:06,910
+to four.
+
+108
+00:07:08,170 --> 00:07:13,510
+Then our three is now equal to OS arms position.
+
+109
+00:07:13,510 --> 00:07:13,870
+Three.
+
+110
+00:07:16,370 --> 00:07:23,780
+Now, if it's not true, I can say else and down here, I want to give some kind of feedback to the
+
+111
+00:07:23,780 --> 00:07:24,230
+user.
+
+112
+00:07:24,290 --> 00:07:28,190
+OK, so I can say, here's where I want to use that color package.
+
+113
+00:07:28,190 --> 00:07:35,330
+We just imported it color, which is from the fatty package red.
+
+114
+00:07:35,450 --> 00:07:36,560
+Let's see if it finds it.
+
+115
+00:07:37,040 --> 00:07:37,510
+There it is.
+
+116
+00:07:37,520 --> 00:07:41,000
+It found color red and this just prints text in red.
+
+117
+00:07:41,600 --> 00:07:47,090
+And I'll simply say error command required like that.
+
+118
+00:07:47,390 --> 00:07:47,750
+OK.
+
+119
+00:07:48,320 --> 00:07:53,120
+And at that point, I'm also going to show them some help and we'll write that function in just a minute.
+
+120
+00:07:53,300 --> 00:07:53,720
+OK?
+
+121
+00:07:54,110 --> 00:07:59,730
+And we'll return nothing and nothing and nothing and errors.
+
+122
+00:07:59,750 --> 00:08:01,520
+Dot new write a new error.
+
+123
+00:08:01,940 --> 00:08:05,480
+My error will be command required.
+
+124
+00:08:07,540 --> 00:08:08,960
+Marshall help doesn't exist yet.
+
+125
+00:08:09,030 --> 00:08:10,520
+Let's finish this function first.
+
+126
+00:08:11,090 --> 00:08:17,780
+OK, down here, if we got past all of that, then I'm going to return hard one or two or three.
+
+127
+00:08:18,050 --> 00:08:18,530
+And no.
+
+128
+00:08:19,730 --> 00:08:23,080
+Now, art one, two or three might be empty strings.
+
+129
+00:08:23,090 --> 00:08:25,520
+OK, but I'm returning something art one wouldn't be.
+
+130
+00:08:25,670 --> 00:08:27,980
+But this and this might be empty strings.
+
+131
+00:08:28,430 --> 00:08:33,410
+So now let's just write that show help function, and we'll make it pretty simple right below this,
+
+132
+00:08:33,560 --> 00:08:35,930
+and we'll move these things around before too long.
+
+133
+00:08:35,960 --> 00:08:42,440
+Write a new function called Show Help and it takes no parameters, and it doesn't actually return anything
+
+134
+00:08:42,440 --> 00:08:42,710
+either.
+
+135
+00:08:43,430 --> 00:08:49,480
+It just prints to the console here will again use that color package color dot yellow in this case,
+
+136
+00:08:49,490 --> 00:08:51,050
+and if you don't like that color, pick your own.
+
+137
+00:08:52,100 --> 00:08:57,740
+And I'll just put in tactics the help file that I want to show the user.
+
+138
+00:08:58,430 --> 00:09:06,860
+So I'll just say right up here because I want this to be not spaced over available commands and we'll
+
+139
+00:09:06,860 --> 00:09:08,630
+add to this as time goes on.
+
+140
+00:09:09,320 --> 00:09:11,360
+And down here, I'll just say help.
+
+141
+00:09:13,640 --> 00:09:15,980
+And I'll put a few spaces in there and say.
+
+142
+00:09:18,740 --> 00:09:19,910
+Show the help.
+
+143
+00:09:21,320 --> 00:09:21,650
+Come on.
+
+144
+00:09:23,780 --> 00:09:25,670
+Show the help commands.
+
+145
+00:09:25,910 --> 00:09:27,200
+We can fix it later if we don't like it.
+
+146
+00:09:27,740 --> 00:09:35,150
+And I have another one called version, and I'll just line these up nicely and say, print application
+
+147
+00:09:35,600 --> 00:09:36,980
+version, OK?
+
+148
+00:09:40,280 --> 00:09:46,280
+Now, the last thing we need to worry about here is the second, the last thing we need to worry about
+
+149
+00:09:46,280 --> 00:09:48,350
+here is this exit gracefully command.
+
+150
+00:09:49,220 --> 00:09:50,740
+So we may as well write that one right now.
+
+151
+00:09:50,750 --> 00:09:53,600
+I'm going to close this terminal and down here below this.
+
+152
+00:09:54,050 --> 00:09:54,620
+All right.
+
+153
+00:09:54,890 --> 00:09:57,950
+Funk exit gracefully.
+
+154
+00:09:58,280 --> 00:10:00,020
+And that will take an error.
+
+155
+00:10:01,900 --> 00:10:07,600
+The are of type error, and I'm also we're not going to use this right now have one called message and
+
+156
+00:10:07,600 --> 00:10:09,430
+that will be one or more strings.
+
+157
+00:10:10,130 --> 00:10:14,350
+OK, so we think there's a very added function and an exit gracefully.
+
+158
+00:10:14,410 --> 00:10:17,710
+All I really want to do is say, declare a variable message.
+
+159
+00:10:18,190 --> 00:10:20,410
+Make that equal to nothing an empty string.
+
+160
+00:10:22,180 --> 00:10:29,480
+And I'll say if the length of MSG, which is our very attic, which is a parameter, the very adequate
+
+161
+00:10:29,500 --> 00:10:34,690
+and we can have one or more strings there, then I'll say if the length of message is greater than zero,
+
+162
+00:10:34,960 --> 00:10:39,010
+then message is equal to whatever message was passed there.
+
+163
+00:10:39,550 --> 00:10:40,900
+MSG index here.
+
+164
+00:10:41,050 --> 00:10:41,380
+OK.
+
+165
+00:10:41,800 --> 00:10:46,690
+So although we're allowing more than one string to be passed, what we're really doing is making MSG
+
+166
+00:10:46,690 --> 00:10:48,050
+an optional parameter.
+
+167
+00:10:48,370 --> 00:10:54,610
+Because the fact that it has dot dot dot in front of the strings says accept one or zero or more strings
+
+168
+00:10:54,610 --> 00:10:57,460
+as many as you want and will only ever pass one.
+
+169
+00:10:58,510 --> 00:10:59,020
+So.
+
+170
+00:11:00,750 --> 00:11:02,250
+Typekit there should be if.
+
+171
+00:11:07,410 --> 00:11:13,240
+And we'll also say if error is not equal to nil and error is something we received as a parameter to
+
+172
+00:11:13,240 --> 00:11:14,010
+this function.
+
+173
+00:11:14,080 --> 00:11:22,240
+OK, we'll print out color in red this time because it's an error and we'll put error.
+
+174
+00:11:24,670 --> 00:11:28,570
+Present be followed by a carriage return and the air.
+
+175
+00:11:32,890 --> 00:11:40,420
+And now, if the length of message, the string we declared right up there in line 50 53, if it's greater
+
+176
+00:11:40,420 --> 00:11:44,260
+than zero, then print out so color dog yellow.
+
+177
+00:11:45,760 --> 00:11:46,660
+Print a message.
+
+178
+00:11:48,190 --> 00:11:55,660
+Otherwise we'll print colored green finished.
+
+179
+00:11:59,140 --> 00:12:03,490
+And we exit OS x it OS exit
+
+180
+00:12:08,650 --> 00:12:09,430
+status code zero.
+
+181
+00:12:09,790 --> 00:12:17,620
+OK, so if we go back up to the top, we have one hour to an hour three but not being used.
+
+182
+00:12:17,700 --> 00:12:19,820
+And of course, we have to do something with those.
+
+183
+00:12:19,840 --> 00:12:20,950
+So let's just do this.
+
+184
+00:12:21,070 --> 00:12:22,960
+Let's say switch.
+
+185
+00:12:26,800 --> 00:12:30,010
+Argument, what's our first argument, OK?
+
+186
+00:12:30,760 --> 00:12:34,000
+And our case will be held
+
+187
+00:12:36,820 --> 00:12:38,740
+until we're going to do here is say.
+
+188
+00:12:40,050 --> 00:12:40,620
+Show help.
+
+189
+00:12:44,100 --> 00:12:47,460
+And our second case will be version.
+
+190
+00:12:50,160 --> 00:13:01,560
+And here will just say color, the yellow application version, plus the version.
+
+191
+00:13:05,450 --> 00:13:09,080
+And for now, just so we can run this program, let's type default,
+
+192
+00:13:12,500 --> 00:13:14,390
+and we'll just say Long Line
+
+193
+00:13:17,090 --> 00:13:18,590
+are two or three.
+
+194
+00:13:19,910 --> 00:13:26,900
+OK, so at this point, I should be able to do something with this now importing things and declaring
+
+195
+00:13:26,900 --> 00:13:27,980
+things that I'm not using.
+
+196
+00:13:27,980 --> 00:13:29,330
+But let's not worry about that right now.
+
+197
+00:13:29,630 --> 00:13:30,800
+Let's try running this.
+
+198
+00:13:30,860 --> 00:13:36,770
+And if you open the make file for this particular project, you might recall this from some time ago.
+
+199
+00:13:37,010 --> 00:13:42,320
+We have something called Build Seelye and that builds the command line tool celebrities and copies it
+
+200
+00:13:42,320 --> 00:13:43,040
+to my app.
+
+201
+00:13:43,760 --> 00:13:45,940
+So we'll build on.
+
+202
+00:13:45,980 --> 00:13:52,520
+Our output will be to the My App directory, which is beside the Solaris house directory in my case,
+
+203
+00:13:52,520 --> 00:13:55,310
+and if it's not in your case, you're probably going to want to change this path.
+
+204
+00:13:55,460 --> 00:14:01,010
+I'm going to call the the binary that I'm building celebrities and I'm going to compile everything in
+
+205
+00:14:01,010 --> 00:14:03,170
+dot slash cmd slash Cee-Lo.
+
+206
+00:14:03,560 --> 00:14:04,490
+So let's see if that works.
+
+207
+00:14:05,490 --> 00:14:10,560
+Opened my terminal, I make sure I'm in the correct folder, I am, I'm in the celebrity directory,
+
+208
+00:14:10,560 --> 00:14:13,500
+so I should be able to say make build underscore.
+
+209
+00:14:13,560 --> 00:14:14,160
+SEAL up.
+
+210
+00:14:18,520 --> 00:14:25,840
+And there is built now as I switch over to my other project, my app, and open the terminal and go
+
+211
+00:14:25,840 --> 00:14:29,410
+up to the top and type wallets to allow us to make sure it's there.
+
+212
+00:14:29,440 --> 00:14:33,880
+There it is, celebrities, let's Typekit slash celebrities.
+
+213
+00:14:37,000 --> 00:14:41,240
+And it says air available a command required available commands and a printer to help file.
+
+214
+00:14:41,320 --> 00:14:41,920
+And that's it.
+
+215
+00:14:42,050 --> 00:14:43,450
+OK, and then it prints out the air again.
+
+216
+00:14:43,600 --> 00:14:44,130
+Well, that's fine.
+
+217
+00:14:44,140 --> 00:14:45,310
+We can clean that up later.
+
+218
+00:14:45,610 --> 00:14:46,580
+But it seems to work.
+
+219
+00:14:46,660 --> 00:14:48,190
+Now, a word of caution here.
+
+220
+00:14:48,260 --> 00:14:55,000
+Back in the other one, naturally, if you're in windows and you're not using the the Linux subsystem
+
+221
+00:14:55,000 --> 00:14:58,410
+or something like that, you're going to have to call this celerity dot EMC.
+
+222
+00:14:58,720 --> 00:14:59,080
+OK.
+
+223
+00:14:59,560 --> 00:15:04,690
+And when you go to run it in the other window, other package, of course, you're going to run.
+
+224
+00:15:04,690 --> 00:15:05,950
+Celebrities don't exit.
+
+225
+00:15:06,430 --> 00:15:07,830
+But in my case, I'm on a Mac.
+
+226
+00:15:07,840 --> 00:15:11,260
+And if you're on a Mac or Linux, my approach will work fine for you.
+
+227
+00:15:11,830 --> 00:15:16,750
+OK, so we have the very beginning of our command line application in place.
+
+228
+00:15:17,080 --> 00:15:21,100
+And what I want to work on next is actually implementing migrations.
+
+229
+00:15:21,580 --> 00:15:27,910
+We could use a standalone tool like Sota, which I've used in other courses, or we could use a standalone
+
+230
+00:15:27,910 --> 00:15:34,000
+tool like Go Dash, Migrate, but we're actually going to take advantage of a package that allows us
+
+231
+00:15:34,000 --> 00:15:41,200
+to quit the migration logic right in our code and then we can implement it in our own command line application.
+
+232
+00:15:41,320 --> 00:15:45,640
+I think that'll be a fun exercise, so we'll get started on that in the next lecture.

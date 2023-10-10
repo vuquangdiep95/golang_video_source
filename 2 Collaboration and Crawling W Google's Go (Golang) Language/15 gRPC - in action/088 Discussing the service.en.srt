@@ -1,0 +1,255 @@
+1
+00:00:00,450 --> 00:00:02,160
+Anything to say in another video.
+
+2
+00:00:02,160 --> 00:00:08,340
+So one thing I have it's just like a reflection on response versus response and so when we do our ideal
+
+3
+00:00:08,890 --> 00:00:11,710
+interface definition language our response is lowercase.
+
+4
+00:00:11,730 --> 00:00:13,360
+But that's a different language.
+
+5
+00:00:13,500 --> 00:00:16,670
+And when it gets compiled in go code it becomes capital.
+
+6
+00:00:16,680 --> 00:00:19,030
+So it could be exported right.
+
+7
+00:00:19,050 --> 00:00:26,490
+And so if we look here at the actual structure that gets generated a response response capital R it's
+
+8
+00:00:26,490 --> 00:00:28,920
+got the tag here pro above.
+
+9
+00:00:29,010 --> 00:00:35,260
+And it's got a name response lowercase.
+
+10
+00:00:35,510 --> 00:00:41,670
+And then the next thing is just a little bit of a discussion of what are we actually doing here.
+
+11
+00:00:41,690 --> 00:00:47,170
+And so a remote procedure called idea behind a remote procedure calls that your client.
+
+12
+00:00:47,280 --> 00:00:52,370
+There's a server there's some procedure function method up here on the server.
+
+13
+00:00:52,580 --> 00:00:59,110
+And right now in our ideal are in our definition language we said that up on our our client we're going
+
+14
+00:00:59,110 --> 00:01:06,770
+to have a remote procedure called Echo that this client can call this procedure function method whatever
+
+15
+00:01:06,800 --> 00:01:10,130
+echo up on the server and it's going to run.
+
+16
+00:01:10,130 --> 00:01:16,430
+This is just another way for me of thinking about a client makes a request the server does something
+
+17
+00:01:16,430 --> 00:01:17,350
+and sends it back.
+
+18
+00:01:17,350 --> 00:01:17,940
+Right.
+
+19
+00:01:18,050 --> 00:01:22,840
+Like it's just like different terminology for talking about you know if we talked about this to the
+
+20
+00:01:22,850 --> 00:01:26,210
+HP we'd be say endpoints and back Jason.
+
+21
+00:01:26,680 --> 00:01:26,930
+Right.
+
+22
+00:01:26,930 --> 00:01:35,330
+But here we're saying you know a function you know the RCC is usually disguised as if it looks like
+
+23
+00:01:35,330 --> 00:01:36,850
+an ordinary function.
+
+24
+00:01:36,950 --> 00:01:42,100
+So if you did not know this that this was an error procedure call you wouldn't think it was.
+
+25
+00:01:42,110 --> 00:01:48,230
+You just see oh it's just an echo function takes in a context and this struct it returns some other
+
+26
+00:01:48,230 --> 00:01:49,170
+struct.
+
+27
+00:01:49,250 --> 00:01:52,490
+So the fact that it's actually going across a network in between the middle.
+
+28
+00:01:52,490 --> 00:01:56,640
+This is hidden from the from the code from the coder here.
+
+29
+00:01:56,730 --> 00:01:57,690
+OK.
+
+30
+00:01:57,800 --> 00:01:58,650
+For the client.
+
+31
+00:01:58,950 --> 00:02:01,970
+Yeah but you guys set the server up to deal with that obviously.
+
+32
+00:02:02,000 --> 00:02:02,880
+Yes.
+
+33
+00:02:02,980 --> 00:02:03,290
+All right.
+
+34
+00:02:06,590 --> 00:02:06,920
+Yeah.
+
+35
+00:02:06,950 --> 00:02:13,670
+So when we call E dot at good barracks we have a client and calls echo and new Echo is available because
+
+36
+00:02:13,670 --> 00:02:17,920
+of our ideal because we define that our generated code.
+
+37
+00:02:18,220 --> 00:02:25,490
+And when it calls echo it's actually you know call that on the client on the server and then it sends
+
+38
+00:02:25,490 --> 00:02:26,880
+back the response.
+
+39
+00:02:26,880 --> 00:02:27,410
+Yeah.
+
+40
+00:02:27,440 --> 00:02:27,990
+Huh.
+
+41
+00:02:28,010 --> 00:02:28,360
+Cool.
+
+42
+00:02:29,240 --> 00:02:29,740
+All right.
+
+43
+00:02:29,750 --> 00:02:33,050
+Any other reflections you want to add to that.
+
+44
+00:02:33,380 --> 00:02:36,100
+So this is the most basic of GOPAC.
+
+45
+00:02:36,120 --> 00:02:39,500
+He has many many additional features to kind of add on top.
+
+46
+00:02:39,590 --> 00:02:46,200
+So for setting up secure security e you don't have to go with this insecure connection.
+
+47
+00:02:46,700 --> 00:02:51,590
+Streaming requests and responses when you don't have all the data available but you get some of it immediately
+
+48
+00:02:51,590 --> 00:02:56,640
+you can rise to meet a stream that response and then come up with more responses later.
+
+49
+00:02:56,690 --> 00:03:02,750
+There's a lot more to GOPAC but the absolute basics is just request response and that is how you get
+
+50
+00:03:02,750 --> 00:03:09,240
+it set up and then this would be something that we could use to fulfill any type of a service.
+
+51
+00:03:09,260 --> 00:03:09,600
+Right.
+
+52
+00:03:09,720 --> 00:03:17,780
+Maybe you know in the past we maybe would have thought of that as client server endpoint in a restful
+
+53
+00:03:17,780 --> 00:03:21,330
+endpoint or whatever API sin back.
+
+54
+00:03:21,350 --> 00:03:26,640
+Jason you know and have the client deal with that and display the results.
+
+55
+00:03:26,960 --> 00:03:34,940
+And here it would just be instead of that sort of a framework GOPAC you know makes its calls the function
+
+56
+00:03:34,940 --> 00:03:39,890
+the client calls the function that function runs on the client remote procedure it runs on the server
+
+57
+00:03:39,890 --> 00:03:45,580
+remote procedure and then data comes back which the client uses.
+
+58
+00:03:46,010 --> 00:03:50,600
+What's the advantage of GOPAC it's more is it faster and more secure.
+
+59
+00:03:50,610 --> 00:03:56,720
+It's it's smaller and faster and then it's got the additional features kind of on top of what rest traditionally
+
+60
+00:03:56,720 --> 00:03:58,670
+has.
+
+61
+00:03:58,820 --> 00:03:59,330
+Good.
+
+62
+00:03:59,330 --> 00:04:00,800
+All right thanks.
+
+63
+00:04:00,880 --> 00:04:01,670
+It's good stuff.
+
+64
+00:04:01,670 --> 00:04:02,570
+I like that discussion.

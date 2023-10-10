@@ -1,0 +1,255 @@
+1
+00:00:00,530 --> 00:00:04,400
+So it's almost time to run commentary, but I have a couple of things I need to clean up first.
+
+2
+00:00:04,550 --> 00:00:11,870
+I'm looking at the file newco in the CMD Seelye folder of the celebrities project and right here where
+
+3
+00:00:11,870 --> 00:00:13,560
+I call update source.
+
+4
+00:00:13,580 --> 00:00:18,620
+Before I do that, I really should change directories, and it wouldn't be a huge deal if there were
+
+5
+00:00:18,620 --> 00:00:21,920
+no go files beside the place where I run this command.
+
+6
+00:00:22,400 --> 00:00:27,090
+But I really don't want to affect anything except what's in the directory that this function creates.
+
+7
+00:00:27,110 --> 00:00:28,430
+So I'll call OS.
+
+8
+00:00:29,050 --> 00:00:38,330
+HDR changed here and I want to change to dot slash plus app name and then run that update source.
+
+9
+00:00:38,360 --> 00:00:38,780
+OK.
+
+10
+00:00:39,470 --> 00:00:44,330
+And the other thing I want to change and this is just because I've been working with Go for so long.
+
+11
+00:00:44,780 --> 00:00:46,220
+Back in Helpers Dot Go.
+
+12
+00:00:47,270 --> 00:00:50,180
+Where I call, read, file and write file.
+
+13
+00:00:50,690 --> 00:00:55,700
+I used what it used to be prior to go one point one six and that's I.O.U. tell and it really should
+
+14
+00:00:55,700 --> 00:00:59,430
+be OS that was updated in Go 16.
+
+15
+00:00:59,480 --> 00:01:00,860
+Go one point one six.
+
+16
+00:01:01,520 --> 00:01:07,640
+So let's make that OS, and let's save our file and make sure that everything works the way that it
+
+17
+00:01:07,640 --> 00:01:08,180
+should.
+
+18
+00:01:08,850 --> 00:01:12,320
+We imported OS and we don't have our utility more perfect.
+
+19
+00:01:12,560 --> 00:01:15,740
+OK, so that was just a little bit of housekeeping.
+
+20
+00:01:15,980 --> 00:01:18,830
+Now back to our running go my tidy.
+
+21
+00:01:20,090 --> 00:01:27,290
+So by the time I get to line 123 in this function in this file, new don't go, I've already changed
+
+22
+00:01:27,320 --> 00:01:31,730
+to the app directory, the one that we created at the very beginning of this file.
+
+23
+00:01:32,930 --> 00:01:34,820
+So now I want to run go on tidy.
+
+24
+00:01:35,000 --> 00:01:39,230
+So again, color yellow just to let them know what's going on.
+
+25
+00:01:40,130 --> 00:01:45,770
+Indent it one tab running go lord tidy dot dot dot.
+
+26
+00:01:46,400 --> 00:01:47,150
+And now let's run it.
+
+27
+00:01:47,450 --> 00:01:48,450
+And this is really simple.
+
+28
+00:01:49,430 --> 00:01:55,970
+We'll create a command CMD, which is assigned the value of from the exact package in the standard library
+
+29
+00:01:56,630 --> 00:01:58,670
+dot command.
+
+30
+00:01:59,720 --> 00:02:05,510
+And we give it the command go and then mod and then tidy.
+
+31
+00:02:05,840 --> 00:02:07,640
+And this might not work, but we'll try it in.
+
+32
+00:02:07,880 --> 00:02:12,710
+In a moment we might have to put a compatibility flag in there and on the next line, we'll run it.
+
+33
+00:02:13,070 --> 00:02:22,880
+Error equals seemed to start and we checked for an error, so I'll just copy all of this and paste it
+
+34
+00:02:22,880 --> 00:02:23,390
+in here.
+
+35
+00:02:26,470 --> 00:02:28,960
+And now put a little bit of message out for the user.
+
+36
+00:02:28,990 --> 00:02:40,090
+Similarly, a pass that we can print colored green done building plus app name.
+
+37
+00:02:41,770 --> 00:02:47,410
+Actually, they typed up you URLs, put that you are out there and colored green.
+
+38
+00:02:48,490 --> 00:02:54,370
+Whatever else you want to say, go build something awesome.
+
+39
+00:02:56,440 --> 00:02:56,770
+OK.
+
+40
+00:02:58,000 --> 00:03:00,630
+So at this point, I should be able to build my seelye.
+
+41
+00:03:00,820 --> 00:03:08,110
+Let's open our terminal window and type, make, build and actually create a file called celebrities
+
+42
+00:03:08,110 --> 00:03:09,430
+in the dist directory.
+
+43
+00:03:10,150 --> 00:03:11,710
+Let's go to the disk directory.
+
+44
+00:03:14,320 --> 00:03:21,730
+And let's try running it now, it might fail because it might try to go and fetch GitHub dot com slash
+
+45
+00:03:21,730 --> 00:03:25,970
+tea seller slash hilarious, and I haven't pushed that up there yet, but we should get something anywhere.
+
+46
+00:03:25,990 --> 00:03:26,740
+So let's type.
+
+47
+00:03:27,400 --> 00:03:35,950
+Dot slash celebrity's new and I'll call it GitHub dotcom slash TESOL Solr new project.
+
+48
+00:03:38,520 --> 00:03:42,810
+So clumsy and everything seemed to run the way that it was supposed to.
+
+49
+00:03:43,200 --> 00:03:47,960
+OK, so let's try opening that folder or create a new window.
+
+50
+00:03:53,150 --> 00:03:56,870
+And I will open the file open.
+
+51
+00:04:00,210 --> 00:04:07,650
+And I'll find where I have that thing actually stored, which would be in here under celerity, us under
+
+52
+00:04:07,650 --> 00:04:11,730
+dist right here in open new project.
+
+53
+00:04:12,600 --> 00:04:13,680
+And that's what I want to open.
+
+54
+00:04:15,240 --> 00:04:17,520
+And let's make sure everything worked as it supposed to.
+
+55
+00:04:17,610 --> 00:04:20,010
+So I'll zoom the window and I'll open.
+
+56
+00:04:20,010 --> 00:04:20,760
+Mean, don't go.
+
+57
+00:04:22,080 --> 00:04:28,050
+So it has GitHub dot com slash Tesla slash new project slash data perfect, and it's importing that
+
+58
+00:04:28,050 --> 00:04:28,650
+perfect.
+
+59
+00:04:29,430 --> 00:04:32,160
+And there is no don't get directory that looks promising.
+
+60
+00:04:32,190 --> 00:04:33,780
+Let's see what the errors are in here.
+
+61
+00:04:34,260 --> 00:04:34,560
+OK?
+
+62
+00:04:34,590 --> 00:04:39,480
+The only error it has is that it can't find GitHub dot com slash TESOL or slash alerts.
+
+63
+00:04:39,480 --> 00:04:42,060
+And that makes sense because I haven't pushed that there yet.
+
+64
+00:04:42,660 --> 00:04:46,020
+But that's exactly what we're going to do in the next lecture.

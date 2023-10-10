@@ -1,0 +1,107 @@
+1
+00:00:01,570 --> 00:00:05,970
+So we think we have our code set up so that we can send email in the background.
+
+2
+00:00:05,980 --> 00:00:11,950
+And of course the function that's called ultimately once we send something to a channel, this function
+
+3
+00:00:11,950 --> 00:00:14,890
+which is running in the background is a go routine listing for mail.
+
+4
+00:00:14,920 --> 00:00:21,630
+Once it gets something on the app dock mailer, mailer, channel, channel, it fires off send mail
+
+5
+00:00:21,640 --> 00:00:24,100
+this function down here as its own go routine.
+
+6
+00:00:24,730 --> 00:00:30,940
+And of course, that means any time I send something to this channel, I probably need to increment
+
+7
+00:00:30,940 --> 00:00:37,900
+this weight group, which is on the MAILER channel, and we get it from the application config.
+
+8
+00:00:38,290 --> 00:00:39,790
+We need to increment that by one.
+
+9
+00:00:39,820 --> 00:00:41,470
+We need to add one to the weight group.
+
+10
+00:00:41,590 --> 00:00:43,630
+Otherwise, you know, bad things will happen.
+
+11
+00:00:44,260 --> 00:00:47,470
+And of course, that's something that I personally will forget to do.
+
+12
+00:00:47,530 --> 00:00:50,620
+So to make life a little bit easier, let's write a little helper routine.
+
+13
+00:00:50,680 --> 00:00:54,880
+So over here in the CMT Web folder, let's create a new file in there.
+
+14
+00:00:55,840 --> 00:01:01,380
+I'll just call it Helper Echo and we'll just write a simple wrapper.
+
+15
+00:01:01,390 --> 00:01:02,770
+So this is in package main.
+
+16
+00:01:03,580 --> 00:01:10,110
+It will declare one function func with receiver of app pointer to config and we'll just call this,
+
+17
+00:01:10,110 --> 00:01:15,070
+send the email and it will take one parameter MSG of type message.
+
+18
+00:01:15,340 --> 00:01:15,650
+Okay?
+
+19
+00:01:16,510 --> 00:01:18,160
+And it doesn't return anything.
+
+20
+00:01:18,520 --> 00:01:22,130
+And inside of here, here's where I'll increment my weight group so I know.
+
+21
+00:01:22,180 --> 00:01:26,830
+Don't forget to do it at dot wait dot add and we'll add one to it.
+
+22
+00:01:27,010 --> 00:01:27,320
+Okay?
+
+23
+00:01:28,030 --> 00:01:31,740
+And then we'll just take that message and send it to the appropriate channel.
+
+24
+00:01:31,750 --> 00:01:38,620
+So app dot mailer, dot mailer channel it, get sent MSG.
+
+25
+00:01:40,300 --> 00:01:45,220
+And now I have a really easy way of sending email and I don't have to remember to increment the weight
+
+26
+00:01:45,220 --> 00:01:46,000
+group by one.
+
+27
+00:01:46,270 --> 00:01:50,440
+Okay, so a dead simple function and we'll use it in the next lecture.

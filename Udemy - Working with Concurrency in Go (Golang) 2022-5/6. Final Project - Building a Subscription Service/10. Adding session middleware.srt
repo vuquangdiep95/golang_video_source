@@ -1,0 +1,135 @@
+1
+00:00:01,060 --> 00:00:06,280
+As I suggested last time, we can't actually use our application until we set up a little bit of middleware
+
+2
+00:00:06,280 --> 00:00:09,550
+that loads and saves the session on every request.
+
+3
+00:00:10,270 --> 00:00:15,250
+And there are instructions how to do this right on the Alex Edwards assist GitHub repository.
+
+4
+00:00:15,280 --> 00:00:16,330
+But it's pretty simple.
+
+5
+00:00:16,570 --> 00:00:24,910
+So inside the CMB Web folder, we'll create a new file, which we'll call middleware Dot Go, and it's
+
+6
+00:00:24,910 --> 00:00:28,000
+in Package Main and we'll just write some simple middleware.
+
+7
+00:00:28,660 --> 00:00:34,990
+So I'll declare a function with the receiver app pointer to config as usual, and we'll call this session
+
+8
+00:00:34,990 --> 00:00:36,670
+load, which seems to make sense.
+
+9
+00:00:36,670 --> 00:00:41,980
+And like most middleware, it takes one parameter next of type HTTP dot handler.
+
+10
+00:00:42,280 --> 00:00:45,070
+Okay, and it returns an HGTV dot handler.
+
+11
+00:00:45,790 --> 00:00:50,140
+So what this does is modify the request and this is dead simple.
+
+12
+00:00:50,290 --> 00:00:57,430
+We just return app dot session right there, dot and load and save.
+
+13
+00:00:57,730 --> 00:00:58,080
+Okay.
+
+14
+00:00:58,300 --> 00:01:02,020
+And we give it next and that's all that's required to make this happen.
+
+15
+00:01:02,230 --> 00:01:02,620
+Okay.
+
+16
+00:01:03,610 --> 00:01:07,150
+So we've made the actual middleware now we need to use it.
+
+17
+00:01:07,150 --> 00:01:08,350
+So let's go over to Roofstock.
+
+18
+00:01:08,350 --> 00:01:14,170
+Go and right here in the middleware section, after we recover from panic, we'll say, Max, don't
+
+19
+00:01:14,170 --> 00:01:18,940
+use and it will be from the app session live.
+
+20
+00:01:20,230 --> 00:01:25,540
+And with that middleware in place, I should be able to start the application and hit the web page,
+
+21
+00:01:25,540 --> 00:01:26,260
+the homepage.
+
+22
+00:01:26,800 --> 00:01:31,210
+So let's give it a try over my terminal and I'll type make start.
+
+23
+00:01:34,120 --> 00:01:35,530
+The application is building.
+
+24
+00:01:38,690 --> 00:01:39,320
+And it's running.
+
+25
+00:01:39,470 --> 00:01:46,400
+And I should be able to now to switch to my web browser and just go to local host and let's see what
+
+26
+00:01:46,400 --> 00:01:46,770
+happens.
+
+27
+00:01:46,790 --> 00:01:47,560
+See if we got it right.
+
+28
+00:01:47,570 --> 00:01:48,260
+And there it is.
+
+29
+00:01:48,320 --> 00:01:48,860
+Okay.
+
+30
+00:01:49,070 --> 00:01:54,020
+So we're displaying one page now, obviously the links here for registering log in and so forth.
+
+31
+00:01:54,170 --> 00:01:58,700
+They're not going to work because we haven't set up the actual routes or handlers for those.
+
+32
+00:01:58,710 --> 00:02:03,020
+But at least I know that I can now render a web page and send it to the end user.
+
+33
+00:02:04,130 --> 00:02:04,460
+All right.
+
+34
+00:02:04,550 --> 00:02:05,570
+Let's move on.

@@ -1,0 +1,527 @@
+1
+00:00:01,470 --> 00:00:06,950
+So far, our system only has support for GO templates, and we want to add support for additional templating
+
+2
+00:00:06,960 --> 00:00:07,500
+systems.
+
+3
+00:00:07,890 --> 00:00:09,960
+And in this course, we're just going to add one more.
+
+4
+00:00:10,260 --> 00:00:17,250
+The jet template system and this is found in the jet repository, GitHub dot com slash cloudy kit slash
+
+5
+00:00:17,250 --> 00:00:17,670
+jet.
+
+6
+00:00:18,030 --> 00:00:22,740
+And there is a link to this GitHub repo in the course resources for this lecture.
+
+7
+00:00:22,770 --> 00:00:25,860
+So let's go install it and then we'll play with it a little bit later on.
+
+8
+00:00:26,430 --> 00:00:28,720
+So installation, as usual, is pretty simple.
+
+9
+00:00:28,740 --> 00:00:34,650
+Let's go back to our Visual Studio code and make sure you're in the Celebrity House package and open
+
+10
+00:00:34,650 --> 00:00:36,520
+a terminal window and type.
+
+11
+00:00:36,570 --> 00:00:45,780
+Go get GitHub dot com or spell that right slash cloud kit with a Capital C and a capital K. SEAL or
+
+12
+00:00:45,780 --> 00:00:50,460
+you DIY K.R.I.T. slash jet slash D6.
+
+13
+00:00:50,460 --> 00:00:55,500
+And if there's a later version when you're taking this course, I strongly recommend you stick with
+
+14
+00:00:55,500 --> 00:01:00,000
+version six and then worry about upgrading it later on, and that'll make it much easier for you to
+
+15
+00:01:00,000 --> 00:01:00,630
+follow along.
+
+16
+00:01:01,380 --> 00:01:02,190
+So hit return.
+
+17
+00:01:04,310 --> 00:01:07,430
+It goes and gets it, and now it's added to my gold file.
+
+18
+00:01:08,180 --> 00:01:15,140
+And the very first thing I'll do is I will add a tape to my celebrity struct right here in Silver Costco
+
+19
+00:01:15,470 --> 00:01:16,490
+because we're going to need this.
+
+20
+00:01:17,060 --> 00:01:22,340
+So I'll put it right after render and I will add or call it jet views.
+
+21
+00:01:23,750 --> 00:01:28,070
+And it will be a reference to a pointer to jet, which we just imported.
+
+22
+00:01:28,490 --> 00:01:34,040
+Dot set right there, and I'll make sure it imported the right one.
+
+23
+00:01:34,080 --> 00:01:35,410
+No, I've got version three.
+
+24
+00:01:35,420 --> 00:01:36,680
+I want version six.
+
+25
+00:01:36,740 --> 00:01:38,600
+Clearly, I've been using this for a long time.
+
+26
+00:01:39,740 --> 00:01:45,860
+OK, so now we have a member in our celerity struct that we can use when we have to render things.
+
+27
+00:01:46,700 --> 00:01:51,380
+Now let's get down to the bottom of the new function, and the new function is right here.
+
+28
+00:01:52,550 --> 00:01:58,490
+So just before I create the renderer, I'm going to create it because we might need it VAR views and
+
+29
+00:01:58,490 --> 00:02:03,680
+that will be equal to Jet Dot new set.
+
+30
+00:02:06,140 --> 00:02:14,330
+I'm going to give it a few parameters jetport new OS file system loader and that will go to format.
+
+31
+00:02:14,450 --> 00:02:16,150
+Don't sprint f.
+
+32
+00:02:16,160 --> 00:02:22,670
+This is the argument for it and now my pattern I'm going to or my format pattern a placeholder for a
+
+33
+00:02:22,670 --> 00:02:23,120
+string.
+
+34
+00:02:23,200 --> 00:02:23,930
+SplashNews.
+
+35
+00:02:24,410 --> 00:02:28,580
+And not surprisingly, this is going to have a path as its substitution.
+
+36
+00:02:29,360 --> 00:02:29,750
+OK.
+
+37
+00:02:30,800 --> 00:02:35,930
+So this is where we'll find our jet templates and it'll just be at the root level of our application
+
+38
+00:02:35,930 --> 00:02:36,890
+slash views.
+
+39
+00:02:39,560 --> 00:02:43,580
+And the second thing I'm going to put it in there, it's optional, but it's great where you're in development
+
+40
+00:02:43,700 --> 00:02:46,130
+is jetport in development mode.
+
+41
+00:02:47,970 --> 00:02:50,550
+And that will just make our lives easier as a redevelopment.
+
+42
+00:02:50,790 --> 00:02:51,140
+OK.
+
+43
+00:02:52,350 --> 00:02:57,960
+And then after I create that, I'll simply populate see jet use equal to views.
+
+44
+00:02:59,610 --> 00:03:05,700
+So now we have a jet set, which is absolutely critical to load jet templates and work with them.
+
+45
+00:03:05,940 --> 00:03:07,910
+We have that added to the celebrity experience.
+
+46
+00:03:08,350 --> 00:03:12,030
+Now let's go to create renderer right here.
+
+47
+00:03:12,570 --> 00:03:16,170
+Now Create Renderer creates a renderer using render render.
+
+48
+00:03:16,170 --> 00:03:18,720
+And that is something we're going to have to modify a little bit.
+
+49
+00:03:18,720 --> 00:03:20,490
+So I'm on a command.
+
+50
+00:03:20,490 --> 00:03:24,180
+Click on that on Windows or Control, click on a Mac and jump right to it.
+
+51
+00:03:24,720 --> 00:03:25,080
+OK.
+
+52
+00:03:25,710 --> 00:03:34,440
+I'm going to add a field to the render type and it will be called jet views, and it's going to be a
+
+53
+00:03:34,470 --> 00:03:37,800
+type a pointer to Jet Dot set.
+
+54
+00:03:39,750 --> 00:03:41,590
+And let's make sure it imports the right one.
+
+55
+00:03:41,610 --> 00:03:42,150
+It did.
+
+56
+00:03:42,150 --> 00:03:42,630
+Good.
+
+57
+00:03:42,720 --> 00:03:43,140
+OK.
+
+58
+00:03:43,230 --> 00:03:44,340
+So that's available to us.
+
+59
+00:03:45,240 --> 00:03:47,670
+Now let's go back to celebrities.
+
+60
+00:03:48,000 --> 00:03:58,590
+Don't go back to the create renderer function, and I'm going to populate jet views with C dot jet views.
+
+61
+00:04:00,120 --> 00:04:04,060
+And all of this is just so we have a means of accessing that jet set.
+
+62
+00:04:04,080 --> 00:04:10,500
+We created a couple of minutes ago in our renderers and without that, we can't render jet templates
+
+63
+00:04:10,500 --> 00:04:10,920
+at all.
+
+64
+00:04:11,220 --> 00:04:18,240
+Now let's go back to the rendered Argo file and look at what we have right now when we render a page
+
+65
+00:04:18,240 --> 00:04:20,070
+we call Render Dot page.
+
+66
+00:04:20,160 --> 00:04:21,880
+And right now, we only have support for GO.
+
+67
+00:04:21,900 --> 00:04:24,780
+And in fact, we want to render jet templates.
+
+68
+00:04:25,500 --> 00:04:30,330
+So obviously what we're going to do here in the second case statement in our switch.
+
+69
+00:04:33,330 --> 00:04:38,370
+This we're going to return something like Dot Jet page, and it's going to take some parameters.
+
+70
+00:04:38,760 --> 00:04:41,080
+It will take the writer to write to.
+
+71
+00:04:41,190 --> 00:04:45,720
+So our response writer the request, so we know what to do when we write to the response writer.
+
+72
+00:04:46,080 --> 00:04:52,680
+The View we want to render variables and I'm calling them variables because of the way that jet handles
+
+73
+00:04:52,680 --> 00:04:55,020
+passing data templates and then data.
+
+74
+00:04:55,920 --> 00:04:57,550
+Now that function doesn't exist yet.
+
+75
+00:04:57,570 --> 00:04:58,410
+So let's go build it.
+
+76
+00:04:59,730 --> 00:05:06,150
+So I'll create a new function funk with the receiver of, and I'll call it, see a pointer to render.
+
+77
+00:05:08,900 --> 00:05:13,090
+And it's going to be called check page, and it will take his parameters.
+
+78
+00:05:13,760 --> 00:05:13,990
+H.
+
+79
+00:05:14,000 --> 00:05:15,600
+HTP Response Writer.
+
+80
+00:05:15,620 --> 00:05:25,430
+And that's what we're going to write to our which is a pointer to a request template name, which is
+
+81
+00:05:25,430 --> 00:05:34,730
+just a string that tells us what template to render some variables and some data, both of type interface,
+
+82
+00:05:34,730 --> 00:05:40,580
+so we can pass anything to those and it will return potentially in error.
+
+83
+00:05:41,840 --> 00:05:45,850
+So the first thing we'll do is create a variable ver and it's going to be VARs.
+
+84
+00:05:45,860 --> 00:05:52,160
+That's the name of the variable jetport vermouth and a jetport VAR map is a data structure that Jet
+
+85
+00:05:52,160 --> 00:05:54,120
+uses to pass the data to templates.
+
+86
+00:05:54,140 --> 00:05:56,630
+So we created an empty jet VAR map variable.
+
+87
+00:05:57,680 --> 00:06:02,180
+Then we check to see if variables, which was passed as a parameter to this function.
+
+88
+00:06:02,480 --> 00:06:12,020
+If it's equal to nil, then Veras is equal to make jet version, which will initialize and make it empty
+
+89
+00:06:12,290 --> 00:06:15,620
+because the variable itself effectively has no value online.
+
+90
+00:06:15,620 --> 00:06:16,270
+63.
+
+91
+00:06:17,480 --> 00:06:26,090
+But if it's not empty, if we receive some information in that version that variables data, then we
+
+92
+00:06:26,090 --> 00:06:34,580
+make VARs equal to variables and we cast it to a jetport, verma, because we already have data in there.
+
+93
+00:06:34,730 --> 00:06:35,040
+OK.
+
+94
+00:06:35,060 --> 00:06:40,250
+That way, variables is of the correct format or in the correct format before we try to do anything.
+
+95
+00:06:40,520 --> 00:06:45,560
+OK, now, just like we did when we were rendering a go page, we also want to deal with the situation
+
+96
+00:06:45,560 --> 00:06:48,620
+where we have some information in our template data.
+
+97
+00:06:48,620 --> 00:06:53,270
+So to assign the value of a reference to template data
+
+98
+00:06:56,840 --> 00:06:57,740
+and we'll just make it empty.
+
+99
+00:07:00,020 --> 00:07:04,340
+And then we check to see if data, which is the last parameter, passed this function.
+
+100
+00:07:04,880 --> 00:07:12,810
+If that's not equal to nil, then TD becomes data cas to a pointer.
+
+101
+00:07:13,880 --> 00:07:14,430
+Template two.
+
+102
+00:07:16,190 --> 00:07:18,200
+Now we have our template data in both forms.
+
+103
+00:07:20,710 --> 00:07:26,320
+Both the variables and the data parameters passed to this function have now been converted to the format
+
+104
+00:07:26,320 --> 00:07:29,530
+they need to be before we can render a jet template.
+
+105
+00:07:29,830 --> 00:07:31,850
+Now how do we load the template and render it?
+
+106
+00:07:31,870 --> 00:07:35,470
+Well, let's create a variable called T for template and we'll check for an error.
+
+107
+00:07:35,890 --> 00:07:39,460
+Those are assigned the value of C dot jet views
+
+108
+00:07:42,820 --> 00:07:43,810
+dot jet template.
+
+109
+00:07:44,110 --> 00:07:48,580
+And this will go and get the template for us, and the template name is just going to be the first part
+
+110
+00:07:48,580 --> 00:07:50,250
+of the name without the jet extension.
+
+111
+00:07:50,260 --> 00:07:56,950
+So let's add the jet extension to whatever name is passed to this function format as print off as print
+
+112
+00:07:56,950 --> 00:08:04,240
+f and our format string is just percent s dot jet and we substitute.
+
+113
+00:08:05,230 --> 00:08:05,890
+Template name.
+
+114
+00:08:11,360 --> 00:08:14,960
+And we checked for an error if error is not equal to nil.
+
+115
+00:08:15,140 --> 00:08:17,410
+And I'm on a log it here, long the print line.
+
+116
+00:08:19,670 --> 00:08:21,650
+The error and I'll return the error.
+
+117
+00:08:24,900 --> 00:08:31,770
+Otherwise, we execute it if error is equal to T, which has the method execute right from the jet package,
+
+118
+00:08:32,250 --> 00:08:34,230
+W Vase and TD.
+
+119
+00:08:35,280 --> 00:08:39,630
+And if the error is not equal to nil, then not surprisingly will log it again.
+
+120
+00:08:40,110 --> 00:08:41,220
+Logged up print line.
+
+121
+00:08:42,750 --> 00:08:44,940
+The error return the error.
+
+122
+00:08:46,880 --> 00:08:48,830
+Otherwise, return nil,
+
+123
+00:08:52,340 --> 00:08:53,420
+so let's give this a comment.
+
+124
+00:08:57,040 --> 00:08:59,560
+Jet page renders a template
+
+125
+00:09:02,140 --> 00:09:05,320
+using the jet templating engine.
+
+126
+00:09:06,370 --> 00:09:06,740
+OK.
+
+127
+00:09:06,850 --> 00:09:08,890
+And we probably should put one four go page here to
+
+128
+00:09:13,750 --> 00:09:18,490
+go Page renders a standard
+
+129
+00:09:22,060 --> 00:09:23,170
+go template.
+
+130
+00:09:23,830 --> 00:09:25,630
+So now we have these functions available to us.
+
+131
+00:09:25,810 --> 00:09:31,240
+And the next step, of course, is to create a jet template and try it out, and we'll get started on
+
+132
+00:09:31,240 --> 00:09:32,920
+that in the next lecture.

@@ -1,0 +1,84 @@
+1
+00:00:00,210 --> 00:00:06,370
+OK in questa lezione vedremo come definire uno streaming bidirezionale per salutare tutte le API.
+
+2
+00:00:06,630 --> 00:00:09,590
+E questo richiederà molti saluti a tutte le richieste.
+
+3
+00:00:09,600 --> 00:00:11,550
+Questo è il tipo che sta sognando.
+
+4
+00:00:11,760 --> 00:00:14,730
+E poi tornerà molti saluti a tutti risponde.
+
+5
+00:00:14,730 --> 00:00:19,750
+E questo è il server che sta trasmettendo lo streaming in avanti è chiamato streaming bidirezionale.
+
+6
+00:00:19,770 --> 00:00:22,930
+Quindi andiamo avanti e implementiamo il protocollo ma per un messaggio.
+
+7
+00:00:23,210 --> 00:00:23,540
+OK.
+
+8
+00:00:23,550 --> 00:00:29,470
+Così aperto ha concordato quel protocollo e in là ho intenzione di aggiungere un bi die.
+
+9
+00:00:29,470 --> 00:00:38,250
+In questo modo, lo streaming bidirezionale dell'RBC viene chiamato saluti a tutti e richiede
+
+10
+00:00:39,150 --> 00:00:48,200
+un flusso di saluti che tutti richiedono e restituirà un flusso di saluto ad ogni risposta.
+
+11
+00:00:49,140 --> 00:00:53,090
+E così come puoi vedere bi direzionale è abbastanza facile da definire.
+
+12
+00:00:53,100 --> 00:00:57,410
+Abbiamo solo bisogno di avere un flusso e parole chiave stream due volte.
+
+13
+00:00:57,430 --> 00:00:59,420
+Ora andiamo avanti con il messaggio.
+
+14
+00:00:59,560 --> 00:01:02,670
+Quindi la richiesta in giro fa un saluto.
+
+15
+00:01:02,750 --> 00:01:12,070
+Questo era di prima e il saluto di tutti la risposta sarà solo quello che abbiamo prima che i risultati delle stringhe siano
+
+16
+00:01:12,130 --> 00:01:13,560
+uguali a uno.
+
+17
+00:01:13,660 --> 00:01:15,100
+Quindi abbastanza facile.
+
+18
+00:01:15,100 --> 00:01:21,650
+Tutto sembra corretto ma, come al solito, dobbiamo assicurarci che il file del protocollo buffer compili.
+
+19
+00:01:21,760 --> 00:01:24,570
+Quindi andiamo avanti e generiamo del codice.
+
+20
+00:01:25,000 --> 00:01:31,260
+Il codice viene generato ed è stato aggiornato qui, quindi tutto perfetto è stato generato per noi.
+
+21
+00:01:31,330 --> 00:01:34,890
+Quindi ora siamo pronti per implementare il server che faremo nella prossima lezione.
+

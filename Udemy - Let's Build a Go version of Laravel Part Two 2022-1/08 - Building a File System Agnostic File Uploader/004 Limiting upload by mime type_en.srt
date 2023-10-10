@@ -1,0 +1,332 @@
+1
+00:00:01,520 --> 00:00:08,090
+So let's get started by limiting our uploads to a certain set of mime types, and we're going to do
+
+2
+00:00:08,090 --> 00:00:09,940
+that here and upload Echo now.
+
+3
+00:00:09,950 --> 00:00:15,590
+Eventually, we're going to add this to the dot on file and add it to our celebrity's configuration,
+
+4
+00:00:15,590 --> 00:00:17,150
+preferring now let's just get it working.
+
+5
+00:00:17,960 --> 00:00:18,350
+So.
+
+6
+00:00:19,970 --> 00:00:25,040
+At the bottom of this file in get files to upload, this is where we want to check the mind Typekit,
+
+7
+00:00:25,060 --> 00:00:30,740
+so we don't even want to save it to the server in the temp folder if it's a mine type that is not permitted.
+
+8
+00:00:31,790 --> 00:00:37,550
+Now there is some limited functionality in the base or the standard library that allows us to detect
+
+9
+00:00:37,550 --> 00:00:37,820
+type.
+
+10
+00:00:37,860 --> 00:00:44,180
+We used that a while ago with the HTTP Dart Detect Content type, but you never know what someone's
+
+11
+00:00:44,180 --> 00:00:45,200
+going to be uploading.
+
+12
+00:00:45,230 --> 00:00:51,410
+So what I'm going to do is open my terminal and clear the screen and make sure I'm in this Alatas folder.
+
+13
+00:00:52,280 --> 00:00:59,420
+I am now I'm going to go get this package, which is a pretty commonly used and well-written package.
+
+14
+00:01:00,140 --> 00:01:06,980
+It's at GitHub dot com slash Gabriel Dash, the seal vassily, which I'm almost certainly pronouncing
+
+15
+00:01:06,980 --> 00:01:12,410
+wrong, and I apologize if you happen to be watching this lecture Gabriel slash mime type.
+
+16
+00:01:12,530 --> 00:01:13,430
+So I'll go get that.
+
+17
+00:01:16,800 --> 00:01:21,430
+Now it's available to me, and this is a really good library for detecting my paper.
+
+18
+00:01:21,460 --> 00:01:23,560
+We're going to use that right here.
+
+19
+00:01:24,370 --> 00:01:26,560
+So what I'm going to do is at this point.
+
+20
+00:01:27,580 --> 00:01:35,290
+Right after I defer file clothes, OK, I'm going to create a variable called mine type with a capital
+
+21
+00:01:35,290 --> 00:01:41,230
+T. So it doesn't clash with the package name I'm about to use and I'll check for an error when I call
+
+22
+00:01:41,740 --> 00:01:46,840
+mine type dot and it should find it for me and I want to use detect reader.
+
+23
+00:01:48,290 --> 00:01:49,040
+Right here.
+
+24
+00:01:50,120 --> 00:01:50,510
+OK.
+
+25
+00:01:51,170 --> 00:01:56,660
+And my argument for that is just pile, which we created right at right up there in line thirty nine.
+
+26
+00:01:57,230 --> 00:02:00,350
+Now if there's an error, if error is not equal to nil.
+
+27
+00:02:02,690 --> 00:02:07,820
+Then I'll return nothing in the air, an empty string in the air.
+
+28
+00:02:08,150 --> 00:02:15,500
+OK, so that gives me the mime type now after I've read the mime type and this is a really common mistake
+
+29
+00:02:15,500 --> 00:02:18,650
+that a lot of people run into when they just read part of the documentation.
+
+30
+00:02:19,100 --> 00:02:26,000
+What Detect Reader actually does is look at the first 512 bytes of the file or so just to figure out
+
+31
+00:02:26,000 --> 00:02:26,930
+what the mime targets.
+
+32
+00:02:27,470 --> 00:02:31,490
+Now, because I've moved forward in that reader, I actually have to go back to position zero.
+
+33
+00:02:31,520 --> 00:02:40,340
+So we have to go go back to start of file because right now that file is pointing to partway into the
+
+34
+00:02:40,340 --> 00:02:41,300
+file, and that's no good.
+
+35
+00:02:41,300 --> 00:02:43,730
+If you're trying to upload something, you will upload a file.
+
+36
+00:02:44,060 --> 00:02:46,130
+But if it's a picture, you won't be able to see it.
+
+37
+00:02:46,130 --> 00:02:49,370
+If it's a word document, you won't be able to open it, that sort of thing.
+
+38
+00:02:49,400 --> 00:02:50,510
+We want that to go away.
+
+39
+00:02:50,930 --> 00:02:57,470
+So we'll ignore the first return value, but we will check for an error when we call from the variable
+
+40
+00:02:57,470 --> 00:03:02,240
+file seek and we want to go to zero zero right at the beginning of the file.
+
+41
+00:03:03,080 --> 00:03:07,910
+And again, there's going to be an error check here, so I'll copy this and paste it in.
+
+42
+00:03:08,930 --> 00:03:11,930
+So at this point, I now have the mine type of file.
+
+43
+00:03:12,230 --> 00:03:12,620
+OK.
+
+44
+00:03:13,340 --> 00:03:18,320
+And what I'm going to do now is just hardcoded some mime types that I'm going to allow to be uploaded
+
+45
+00:03:18,320 --> 00:03:19,820
+and I'll just disallow everything else.
+
+46
+00:03:19,940 --> 00:03:20,300
+OK?
+
+47
+00:03:20,420 --> 00:03:27,230
+So I'll create a variable called valid mime types that I'll make that a slice of strings.
+
+48
+00:03:31,500 --> 00:03:34,640
+And I'll just put in image types, so image gif.
+
+49
+00:03:34,920 --> 00:03:39,690
+And by the way, on the course resources for this lecture, you'll find a link to the most commonly
+
+50
+00:03:39,690 --> 00:03:43,140
+used mime types, which I'm sure you could find on your own.
+
+51
+00:03:43,170 --> 00:03:45,780
+But I'm just going to allow images and PDFs.
+
+52
+00:03:46,170 --> 00:03:51,870
+So that's my first one, and my second one is image slash JPEG for JPEG images.
+
+53
+00:03:52,560 --> 00:03:53,790
+And then all the pings.
+
+54
+00:03:53,820 --> 00:04:00,930
+Image slash slash PNG and finally, PDFs application slash PDF.
+
+55
+00:04:01,860 --> 00:04:09,360
+So here's my slice of valid mime types, and I want to make sure that if the mime type of the file the
+
+56
+00:04:09,360 --> 00:04:13,110
+user is attempting to upload is not in this slice and not allow it.
+
+57
+00:04:13,350 --> 00:04:20,820
+OK, now unfortunately, GO doesn't have a simple method of checking to see if something is in a slice,
+
+58
+00:04:20,820 --> 00:04:24,900
+but it's pretty easy to write our own functions down at the bottom of this file or write a function
+
+59
+00:04:24,900 --> 00:04:25,920
+called in slice.
+
+60
+00:04:27,120 --> 00:04:35,460
+And it's going to take a slice, which is a slice of strings and a value which is also a string.
+
+61
+00:04:36,630 --> 00:04:37,650
+And it returns Boolean.
+
+62
+00:04:38,610 --> 00:04:44,580
+And all we have to do is say for ignore the index, look at the current item range through slice our
+
+63
+00:04:44,580 --> 00:04:51,470
+slice of strings and we'll say if item is equal to vowel, then return true.
+
+64
+00:04:52,470 --> 00:04:53,310
+It's in the slice.
+
+65
+00:04:53,430 --> 00:04:53,970
+Things are good.
+
+66
+00:04:55,110 --> 00:04:58,950
+Otherwise once we finish ranging through this return, false.
+
+67
+00:05:01,800 --> 00:05:07,020
+And up here, after I've declared that variable and I've received my mime type, all I have to do is
+
+68
+00:05:07,020 --> 00:05:12,330
+say if not in slice and my slice is valid.
+
+69
+00:05:12,330 --> 00:05:17,940
+Mime types, which is a temporary variable, will be replacing that with a configuration later on,
+
+70
+00:05:17,940 --> 00:05:19,440
+reading it from the dot on file.
+
+71
+00:05:20,610 --> 00:05:26,040
+And now I give it the current mime type, which is in mime type with a capital T. The variable we declared
+
+72
+00:05:26,430 --> 00:05:27,510
+dot string.
+
+73
+00:05:30,540 --> 00:05:37,050
+Now, if we get inside this if statement, that means someone tried to upload, say, a Microsoft Excel
+
+74
+00:05:37,050 --> 00:05:41,790
+file, something we're not allowing to be uploaded, so all we're going to do instead here is, say,
+
+75
+00:05:43,050 --> 00:05:46,470
+return the empty string and a new error errors doc new.
+
+76
+00:05:49,870 --> 00:05:55,070
+And I'll just put invalid file type upload.
+
+77
+00:05:57,550 --> 00:05:58,630
+That's enough for our purposes.
+
+78
+00:05:58,750 --> 00:05:59,080
+OK.
+
+79
+00:05:59,770 --> 00:06:01,810
+You can put whatever you want for an error message there.
+
+80
+00:06:01,840 --> 00:06:06,850
+So this, at least in theory, because we haven't tested it yet, should only allow this particular
+
+81
+00:06:06,850 --> 00:06:11,260
+function to accept gifts, JPEGs pings and PDFs.
+
+82
+00:06:11,410 --> 00:06:16,420
+And if anything else is uploaded, it just goes back and throws an error to the user.
+
+83
+00:06:16,540 --> 00:06:18,040
+OK, so let's move on.
+

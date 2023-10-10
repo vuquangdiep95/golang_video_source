@@ -1,0 +1,727 @@
+1
+00:00:01,960 --> 00:00:07,320
+OK, so it's time to improve our code a little bit, and what I want to do this time around is two things.
+
+2
+00:00:07,330 --> 00:00:11,320
+Well, probably one thing, this lecture, but we'll be doing two things over this lecture and maybe
+
+3
+00:00:11,320 --> 00:00:12,730
+the next next one.
+
+4
+00:00:13,120 --> 00:00:19,690
+And that is when someone enters a username like Fred, and then this input loses its focus by hitting
+
+5
+00:00:19,690 --> 00:00:26,230
+return to error tab to get to the next field, for example, that I take this username and I fire a
+
+6
+00:00:26,230 --> 00:00:32,050
+request through Web sockets off to my server saying, hey, a new user has entered the chat room.
+
+7
+00:00:32,380 --> 00:00:35,710
+Can you please populate that user's name over in the list here?
+
+8
+00:00:35,710 --> 00:00:40,450
+And I should be able to see everyone is currently connected to the chat room, everyone who's filled
+
+9
+00:00:40,450 --> 00:00:41,320
+this field out.
+
+10
+00:00:42,280 --> 00:00:46,480
+And the second thing I want to do, and I probably won't get that to that this lecture is to send a
+
+11
+00:00:46,480 --> 00:00:46,900
+message.
+
+12
+00:00:46,900 --> 00:00:51,670
+Someone typed some text in here, his return, and it should show up here and this should get cleared
+
+13
+00:00:51,760 --> 00:00:53,830
+and their username should be prepend into it.
+
+14
+00:00:54,760 --> 00:00:55,660
+All right, let's get started.
+
+15
+00:00:55,870 --> 00:01:01,660
+So the first thing I want to do is to put some kind of listener on this input, which I called username,
+
+16
+00:01:02,020 --> 00:01:05,830
+so that when this changes, I send a request off to the server.
+
+17
+00:01:05,980 --> 00:01:07,710
+OK, so let's go get started on that.
+
+18
+00:01:07,750 --> 00:01:11,650
+I'll go over to my homepage and that's right here home.
+
+19
+00:01:11,660 --> 00:01:17,650
+Yet at the very bottom inside of my ADD event, listener dom content loaded at the very bottom.
+
+20
+00:01:17,920 --> 00:01:23,830
+I'm going to put a new event listener in, so I'll say let user input, which is just a variable I'm
+
+21
+00:01:23,830 --> 00:01:30,920
+declaring equal to document get element by ID and and the one I'm looking for is username.
+
+22
+00:01:31,600 --> 00:01:36,820
+So now I have a reference to that, that Java, that form control and now I can add a listener to it,
+
+23
+00:01:36,970 --> 00:01:41,770
+user input, add event listener and I'm looking for the change.
+
+24
+00:01:42,970 --> 00:01:46,140
+And what I want to do inside this function is pretty straightforward.
+
+25
+00:01:47,230 --> 00:01:52,680
+What I need to do is to construct some Jason and send that through my websocket and that's pretty easy.
+
+26
+00:01:52,690 --> 00:01:59,140
+So we'll just say let JSON data equal to an empty JSON object and then we'll just populated with some
+
+27
+00:01:59,140 --> 00:01:59,730
+information.
+
+28
+00:01:59,740 --> 00:02:06,040
+So if you remember, back in our handlers at the very top, our payload is right here.
+
+29
+00:02:06,040 --> 00:02:08,530
+It has action, username, message and icon.
+
+30
+00:02:08,530 --> 00:02:10,320
+All I care about right now are these two.
+
+31
+00:02:10,690 --> 00:02:15,880
+My action is going to be some some word that I'm going to specify and the user name will be whatever
+
+32
+00:02:15,880 --> 00:02:17,200
+I type into that form input.
+
+33
+00:02:17,290 --> 00:02:30,040
+So let's just say JSON data and I want action to be equal to I'll just call it username and Jason data
+
+34
+00:02:33,910 --> 00:02:39,910
+username is going to be equal to this value, the value of that form control.
+
+35
+00:02:42,070 --> 00:02:44,380
+And then I need to send it off to the server.
+
+36
+00:02:44,410 --> 00:02:51,400
+And it's a simple one line command socket, which is my variable, my my variable that holds my WebSocket
+
+37
+00:02:51,400 --> 00:02:51,880
+connection.
+
+38
+00:02:54,720 --> 00:03:04,020
+Send and I need to send it as Jason, so I'll stratify it Jason Dot String Afie And what I'm stratifying
+
+39
+00:03:04,020 --> 00:03:07,270
+is just Jason data and that should do it.
+
+40
+00:03:07,590 --> 00:03:14,280
+OK, so this will actually send when somebody actually fills that form out, but I'm not doing anything
+
+41
+00:03:14,280 --> 00:03:15,660
+with it in the handlers right now.
+
+42
+00:03:15,660 --> 00:03:20,520
+In the handlers, you enter through this WSM point, you get sent off to this.
+
+43
+00:03:20,520 --> 00:03:26,970
+Listen, for W.S., it listens for a payload and when it gets it is just sending it into the channel.
+
+44
+00:03:27,300 --> 00:03:32,040
+But the channel listener and this is where we're doing our processing, our logic, all it's doing is
+
+45
+00:03:32,040 --> 00:03:33,090
+printing some stuff out.
+
+46
+00:03:33,300 --> 00:03:34,320
+Now, this should work.
+
+47
+00:03:34,470 --> 00:03:38,940
+I should be able to stop this and start my application to make sure everything is current.
+
+48
+00:03:39,540 --> 00:03:43,140
+Go back here, look at my JavaScript console.
+
+49
+00:03:43,170 --> 00:03:48,390
+I'll reload this page to make sure it's current, clear the screen and put Fred in there.
+
+50
+00:03:49,500 --> 00:03:50,250
+And it does.
+
+51
+00:03:50,250 --> 00:03:54,630
+It sends back got here, sent some message and action was username.
+
+52
+00:03:54,780 --> 00:03:55,370
+That's great.
+
+53
+00:03:55,380 --> 00:03:58,290
+So it's actually working, but I want to do more than that.
+
+54
+00:03:58,620 --> 00:04:02,130
+I actually want to send back a list of users with my username.
+
+55
+00:04:02,970 --> 00:04:09,540
+So let's go back up to our handler here and think about where we're going to do rather than this, which
+
+56
+00:04:09,540 --> 00:04:12,150
+is not here, down here rather than this.
+
+57
+00:04:12,210 --> 00:04:14,940
+I'm not going to comment this stuff out because it does nothing of value.
+
+58
+00:04:15,910 --> 00:04:16,800
+I'm going to switch.
+
+59
+00:04:17,010 --> 00:04:21,810
+I'm going to use switch on e try that again.
+
+60
+00:04:22,140 --> 00:04:24,690
+TKG on IDOT action.
+
+61
+00:04:26,550 --> 00:04:31,130
+And right now my first and only case is username.
+
+62
+00:04:31,920 --> 00:04:33,660
+In other words, someone entered the username.
+
+63
+00:04:34,020 --> 00:04:45,360
+And what I want to do here is I want to get a list of all users and send it back via broadcast.
+
+64
+00:04:45,600 --> 00:04:48,330
+I broadcast function so well.
+
+65
+00:04:48,330 --> 00:04:57,210
+The very first thing I need to bear in mind is that back up here when I have my initial WC endpoint,
+
+66
+00:04:57,360 --> 00:04:59,880
+I'm saying clients can't is equal to nothing.
+
+67
+00:04:59,880 --> 00:05:00,260
+Right?
+
+68
+00:05:00,630 --> 00:05:05,250
+So I need to actually put my username in there now while I can do that pretty easily, I can just say
+
+69
+00:05:05,250 --> 00:05:13,700
+clients and we're looking for Edcon is going to be equal to IDOT username.
+
+70
+00:05:14,190 --> 00:05:17,220
+So now I've updated my entry in the map to have the username.
+
+71
+00:05:17,220 --> 00:05:18,810
+So that's the very first thing I need to do.
+
+72
+00:05:20,130 --> 00:05:24,870
+The next thing I need to do is to get a list of all users and to do that I could write it right in here,
+
+73
+00:05:24,870 --> 00:05:31,230
+but I'm not going to I'm going to read a little function down here func and I will say get user list.
+
+74
+00:05:31,800 --> 00:05:35,760
+And it takes no parameters, but it returns a slice of string.
+
+75
+00:05:37,560 --> 00:05:44,220
+So all I have to do is to go through my list of users, build the string and send it back.
+
+76
+00:05:44,670 --> 00:05:54,570
+So for nothing and I'll call it X is a sign the value of range clients.
+
+77
+00:05:59,500 --> 00:06:08,320
+And I needed to declare a variable, so let me declare a variable user list via our user list.
+
+78
+00:06:08,590 --> 00:06:21,640
+Equals or is a slice of string and all I have to do is to say user list equals append user list and
+
+79
+00:06:21,640 --> 00:06:22,600
+I'm a pending X.
+
+80
+00:06:27,480 --> 00:06:29,030
+I'd better put a capital L there.
+
+81
+00:06:31,020 --> 00:06:34,710
+And the next I probably want to sort that, that would be the nice thing to do.
+
+82
+00:06:34,710 --> 00:06:37,760
+I don't want to give people a list, an unsorted list of users.
+
+83
+00:06:37,770 --> 00:06:40,440
+So that's pretty easy sort of strings.
+
+84
+00:06:41,220 --> 00:06:46,350
+And I'm sorting user list and then I just return the user list.
+
+85
+00:06:48,180 --> 00:06:51,150
+Now I have my user list or a means of getting my user list.
+
+86
+00:06:51,150 --> 00:06:57,930
+So up here, now that I've added myself to this map, I can just get my list of users.
+
+87
+00:06:57,960 --> 00:07:03,270
+So I'll just call it users is a sign the value of get user list.
+
+88
+00:07:04,350 --> 00:07:08,100
+And I want to send this back and I want to send it back to my client.
+
+89
+00:07:08,640 --> 00:07:09,990
+But do I have anywhere to put that?
+
+90
+00:07:10,290 --> 00:07:12,600
+Well, let's go back and look at our response payload.
+
+91
+00:07:12,780 --> 00:07:14,790
+Our response, Jason.
+
+92
+00:07:14,790 --> 00:07:15,240
+Response.
+
+93
+00:07:15,240 --> 00:07:15,990
+I have action.
+
+94
+00:07:15,990 --> 00:07:21,330
+I have message, I have message type, but I don't have anywhere to put a list of users.
+
+95
+00:07:21,930 --> 00:07:29,730
+So maybe we should add that I'll create a new entry in here called Connected.
+
+96
+00:07:29,970 --> 00:07:30,810
+That's the wrong one.
+
+97
+00:07:35,670 --> 00:07:45,780
+Connected users, and it's going to be a slice of strings and in Jason, I will call that connected
+
+98
+00:07:45,780 --> 00:07:46,260
+users.
+
+99
+00:07:48,340 --> 00:07:56,410
+All right, now I have somewhere to put it, let me just format this and go back down to our code here
+
+100
+00:07:57,280 --> 00:08:01,990
+and I can say response dot action because I need to give some action.
+
+101
+00:08:02,000 --> 00:08:03,760
+I'm going to send back to my users.
+
+102
+00:08:04,030 --> 00:08:12,580
+I will call that what seems like list users might be the appropriate term and a response dot connected
+
+103
+00:08:12,580 --> 00:08:14,200
+users is equal to users.
+
+104
+00:08:15,490 --> 00:08:20,050
+And then I just broadcast this broadcast to all response.
+
+105
+00:08:23,030 --> 00:08:29,210
+So that actually should do something of value, so let's stop our application, we're still not going
+
+106
+00:08:29,210 --> 00:08:30,280
+to see them on the screens.
+
+107
+00:08:30,290 --> 00:08:35,090
+I haven't written the JavaScript to handle the response, but I can actually make sure this all works
+
+108
+00:08:35,090 --> 00:08:36,200
+the way I think it's going to.
+
+109
+00:08:36,200 --> 00:08:37,400
+So I'll reload the page.
+
+110
+00:08:38,150 --> 00:08:43,340
+I will clear this console and I'll put Fred in there again and I get a response.
+
+111
+00:08:44,000 --> 00:08:47,040
+Connected users, Fred, so as getting back the way it should be.
+
+112
+00:08:47,060 --> 00:08:55,370
+So now I need to go back to my home dot jet and in the JavaScript section, I need to be able to handle
+
+113
+00:08:55,370 --> 00:08:57,350
+the response that I'm getting from the server.
+
+114
+00:08:57,540 --> 00:09:01,150
+So we have this code right here on message.
+
+115
+00:09:01,160 --> 00:09:04,040
+And what it's doing right now is just parsing that stuff out.
+
+116
+00:09:04,040 --> 00:09:05,360
+So I don't need that anymore.
+
+117
+00:09:05,360 --> 00:09:09,490
+So I'll just comment it out and instead let's decide what we're going to do.
+
+118
+00:09:10,370 --> 00:09:12,020
+Well, I'm actually do need that line.
+
+119
+00:09:12,020 --> 00:09:14,960
+I still need to get the JSON data, so I'll put that right here.
+
+120
+00:09:15,600 --> 00:09:18,230
+I now have my JSON data, which I'll call data.
+
+121
+00:09:21,430 --> 00:09:29,620
+And what I'm going to do now, which is a console log action, is just so I can see something in the
+
+122
+00:09:29,620 --> 00:09:34,390
+console and it's going to be DataDot Action.
+
+123
+00:09:36,190 --> 00:09:42,190
+And then I'll switch on this as Whitechurch Switch data action.
+
+124
+00:09:44,140 --> 00:09:49,720
+And my first case and only case right now is list users.
+
+125
+00:09:55,800 --> 00:10:00,510
+So I need somewhere to store this information, so before we go any further, let's just go back up
+
+126
+00:10:00,510 --> 00:10:01,500
+and look at our code here.
+
+127
+00:10:01,510 --> 00:10:06,120
+I have who's online, but I have nothing in there to actually list them.
+
+128
+00:10:06,120 --> 00:10:07,170
+So let's put a list.
+
+129
+00:10:07,170 --> 00:10:14,040
+Should put an unordered list and you will ID equals online users with nothing in it.
+
+130
+00:10:14,250 --> 00:10:16,140
+OK, so now I have a place to put something.
+
+131
+00:10:18,000 --> 00:10:25,950
+So what I'm going to do here is to say after I've got my case statement, I don't need that Colen case
+
+132
+00:10:25,950 --> 00:10:26,760
+list users.
+
+133
+00:10:26,790 --> 00:10:28,080
+Let's get our reference to that.
+
+134
+00:10:28,080 --> 00:10:37,410
+You well, we just created let us all equal document get element by ID and it was our online users.
+
+135
+00:10:38,070 --> 00:10:39,540
+So that gives me a reference to it.
+
+136
+00:10:40,860 --> 00:10:46,080
+And then I need to empty that while you ulda up first child.
+
+137
+00:10:50,680 --> 00:10:52,210
+You will remove child.
+
+138
+00:10:54,920 --> 00:10:58,040
+And the one I want to remove is you held up first child.
+
+139
+00:11:00,640 --> 00:11:07,350
+That's that's a one line, first child, first child that should get rid of everything in that list,
+
+140
+00:11:07,360 --> 00:11:10,540
+we're going to empty it because we're going to repopulate it with new information.
+
+141
+00:11:11,110 --> 00:11:12,540
+And that's as simple as this.
+
+142
+00:11:13,060 --> 00:11:18,940
+First of all, I need to make sure that there are some users in that list so I can say if DataDot connected
+
+143
+00:11:18,940 --> 00:11:19,600
+users
+
+144
+00:11:22,870 --> 00:11:28,360
+this year length, if that's greater than zero, do this.
+
+145
+00:11:28,360 --> 00:11:32,710
+Otherwise, I'll just get a JavaScript error if I try to do what I'm about to do next on an empty list.
+
+146
+00:11:33,580 --> 00:11:36,010
+So I'll just say data connected users.
+
+147
+00:11:39,660 --> 00:11:45,300
+For each to loose loop through it all function and my current one, I'll call item.
+
+148
+00:11:49,220 --> 00:11:55,310
+And I'm going to say let ally equal document, create element.
+
+149
+00:11:58,360 --> 00:12:03,880
+And I want to create an ally and then ally to pin child.
+
+150
+00:12:07,700 --> 00:12:13,830
+Document, create text node must have a typo in their text.
+
+151
+00:12:13,850 --> 00:12:14,840
+No, there it is.
+
+152
+00:12:16,450 --> 00:12:16,930
+Item.
+
+153
+00:12:20,810 --> 00:12:25,130
+One, two, three has too many to opening ones here.
+
+154
+00:12:28,250 --> 00:12:31,460
+And then append that to my up, you will not append child.
+
+155
+00:12:33,370 --> 00:12:40,900
+Hello, so all I'm doing there is I'm saying if I have a length of greater than zero in connected users
+
+156
+00:12:40,900 --> 00:12:46,870
+from data, if there's at least one user in there, do this loop through every entry in that list of
+
+157
+00:12:46,870 --> 00:12:53,680
+users, create an ally tag, populate the text of that like tag with the value that I'm getting from
+
+158
+00:12:53,710 --> 00:12:56,490
+my list of connected users and append it to you, Will.
+
+159
+00:12:56,530 --> 00:12:57,290
+And you will.
+
+160
+00:12:57,700 --> 00:12:58,670
+Is this one right here?
+
+161
+00:12:59,470 --> 00:13:01,960
+So that is all that I have to do there, I think.
+
+162
+00:13:03,370 --> 00:13:07,720
+Except, of course, because I'm going to switch statement, I should probably put a break in there.
+
+163
+00:13:12,290 --> 00:13:14,900
+OK, let's.
+
+164
+00:13:16,720 --> 00:13:17,950
+Go reload our Web page
+
+165
+00:13:20,620 --> 00:13:25,240
+action is empty string, OK, so it's connecting and sending something back and I'll put Fred in here.
+
+166
+00:13:26,290 --> 00:13:28,450
+Uncut reference you is not to find.
+
+167
+00:13:28,460 --> 00:13:29,200
+Where's that?
+
+168
+00:13:31,980 --> 00:13:36,070
+You know, type of let's reload the page.
+
+169
+00:13:36,450 --> 00:13:41,020
+Try it again, Fred and Fred winning twice.
+
+170
+00:13:41,040 --> 00:13:43,170
+OK, so I don't know why Fred Button twice.
+
+171
+00:13:43,200 --> 00:13:43,980
+That's not good.
+
+172
+00:13:44,430 --> 00:13:47,210
+But at least I know there's something of value going on there.
+
+173
+00:13:47,730 --> 00:13:49,470
+So let's try reloading it again.
+
+174
+00:13:50,460 --> 00:13:52,410
+Fred, Fred, Fred.
+
+175
+00:13:52,570 --> 00:13:54,860
+OK, so we're still getting to nothing.
+
+176
+00:13:54,870 --> 00:13:57,450
+It's not perfect, but at least we're getting a list right now.
+
+177
+00:13:57,450 --> 00:13:58,930
+So we're moving in the right direction.
+
+178
+00:13:59,370 --> 00:14:04,980
+So in the next lecture, we'll clean this part up and make sure that when we change our name, Frederick,
+
+179
+00:14:05,610 --> 00:14:06,290
+that worked.
+
+180
+00:14:06,300 --> 00:14:09,870
+See, there's something there's something setting a value in that map to start with.
+
+181
+00:14:09,870 --> 00:14:13,260
+And we need to actually find out where that is and resolve that.
+
+182
+00:14:13,260 --> 00:14:14,870
+And it shouldn't be terribly difficult.

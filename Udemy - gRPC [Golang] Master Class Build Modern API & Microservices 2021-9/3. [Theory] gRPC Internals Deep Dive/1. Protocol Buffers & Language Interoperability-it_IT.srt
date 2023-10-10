@@ -1,0 +1,528 @@
+1
+00:00:00,150 --> 00:00:03,410
+Ciao e benvenuto in questa sezione sull'immersione profonda del GRB.
+
+2
+00:00:03,420 --> 00:00:09,300
+Quindi, prima di entrare nel codice, voglio davvero dedicare un momento a spiegare in che modo GAAP funziona quali sono le
+
+3
+00:00:09,300 --> 00:00:13,940
+basi eccetera e così via perché penso davvero che tu capisca come funziona il codice nei
+
+4
+00:00:13,950 --> 00:00:17,730
+missionari e come funziona il framework e il concetto intorno ad esso.
+
+5
+00:00:17,770 --> 00:00:22,450
+Quindi il primo buffer delle particelle sarà una pietra miliare del jumpseat.
+
+6
+00:00:22,650 --> 00:00:26,560
+Questo è ciò che la particella di Bufford assomiglia a Jarkesy.
+
+7
+00:00:26,610 --> 00:00:32,410
+Quindi definiamo ancora i nostri messaggi e troveremo i dati per la richiesta e avremo una risposta.
+
+8
+00:00:32,460 --> 00:00:37,240
+Come sai, voglio che tu abbia una conoscenza piuttosto preliminare e GRB nel buffer del protocollo.
+
+9
+00:00:37,350 --> 00:00:42,180
+Quindi assicurati di seguire prima quel corso e poi definiremo il servizio in modo da poter vedere il secondo
+
+10
+00:00:42,180 --> 00:00:42,900
+riquadro rosso.
+
+11
+00:00:43,050 --> 00:00:45,600
+Bene, trovano il servizio usando i buffer del protocollo.
+
+12
+00:00:45,600 --> 00:00:51,030
+E così il nostro servizio, come vedremo in seguito, impareremo come scriverli, in pratica definirà i nostri endpoint API
+
+13
+00:00:51,360 --> 00:00:54,520
+e ciò consentirà a US GAAP di generare codice per noi.
+
+14
+00:00:54,620 --> 00:00:55,170
+OK.
+
+15
+00:00:55,320 --> 00:01:01,500
+Quindi tutto ciò che si apprende nel corso del protocollo buffer sarà usato per generare servizi e europaeus
+
+16
+00:01:02,280 --> 00:01:08,550
+non è una cosa bella, è che JBC, proprio come i buffer, sarà in grado di generare codice per te.
+
+17
+00:01:08,550 --> 00:01:11,000
+Quindi, perché i buffer delle particelle e perché no.
+
+18
+00:01:11,090 --> 00:01:13,950
+Sembra che abbiamo in tutte le API è come API resto.
+
+19
+00:01:14,400 --> 00:01:19,680
+Bene GOPAC è davvero importante usare i buffer Perkel per le comunicazioni.
+
+20
+00:01:19,770 --> 00:01:22,710
+E il motivo è dovuto alla dimensione del carico utile.
+
+21
+00:01:22,890 --> 00:01:29,650
+Quindi se guardiamo Jason per esempio e abbiamo documenti adiacenti con nome e cognome dell'età.
+
+22
+00:01:29,800 --> 00:01:33,880
+Ok, abbiamo questo carico utile e l'ho misurato online.
+
+23
+00:01:33,930 --> 00:01:36,050
+Questo è circa 55 byte.
+
+24
+00:01:36,060 --> 00:01:36,670
+OK.
+
+25
+00:01:36,720 --> 00:01:37,750
+Quindi davvero piccolo.
+
+26
+00:01:37,800 --> 00:01:39,000
+Ma guardalo.
+
+27
+00:01:39,180 --> 00:01:45,320
+Ora, se definiamo la stessa persona nel suo buffer empirico, abbiamo la nostra persona di messaggio e ha l'età
+
+28
+00:01:45,400 --> 00:01:50,310
+come ha fatto per 32 persona stringa inserendo cognome per Tat 2 e 3.
+
+29
+00:01:50,610 --> 00:01:55,950
+Se ho codificato in ho scritto il codice me stesso se ho incluso questa cosa e prodotto lo
+
+30
+00:01:55,970 --> 00:02:00,420
+stesso identico messaggio così il mio nome o cognome nella mia età otterrò 20 byte.
+
+31
+00:02:00,840 --> 00:02:02,670
+E così puoi vedere subito.
+
+32
+00:02:02,680 --> 00:02:05,520
+Quello è da buffer di protocollo a Jason.
+
+33
+00:02:05,520 --> 00:02:09,700
+Risparmiamo molta larghezza di banda perché i messaggi sono più piccoli.
+
+34
+00:02:09,810 --> 00:02:14,440
+OK, così già iniziamo ad usare i buffer critici che salveremo nella larghezza di banda della rete.
+
+35
+00:02:14,640 --> 00:02:19,830
+Inoltre, l'analisi di Jason in realtà è abbastanza intensa per Seabee e ci sono molte librerie che
+
+36
+00:02:19,830 --> 00:02:20,900
+tentano di ottimizzarle.
+
+37
+00:02:21,060 --> 00:02:23,820
+Ma nel complesso rimane ancora abbastanza intensivo.
+
+38
+00:02:23,820 --> 00:02:26,840
+E questo perché il formato è leggibile dall'uomo giusto.
+
+39
+00:02:26,850 --> 00:02:31,710
+Possiamo leggere questo usando i nostri occhi ma il protocollo memorizza i byte che non capiresti nulla.
+
+40
+00:02:32,100 --> 00:02:37,860
+Quindi, analizzando i buffer critici perché è binario e perché è molto molto vicino a come i dati
+
+41
+00:02:37,860 --> 00:02:41,410
+vengono effettivamente rappresentati in memoria sarà meno intensivo per il CPQ.
+
+42
+00:02:41,550 --> 00:02:42,270
+OK.
+
+43
+00:02:42,270 --> 00:02:47,310
+E questo è molto importante perché oltre a questi buffer verticali che fondamentalmente
+
+44
+00:02:47,310 --> 00:02:54,180
+significano comunicazioni e dispositivi più veloci ed efficienti che sono un po 'più deboli, come i dispositivi mobili per avere
+
+45
+00:02:54,360 --> 00:03:01,640
+più lenti o anche i dispositivi saranno in grado di avere prestazioni migliori con il buffer Pirko come fatto con Jason.
+
+46
+00:03:01,650 --> 00:03:05,150
+Quindi, tutto sommato, i buffer pro-carbone non sono un problema per GOPAC.
+
+47
+00:03:05,550 --> 00:03:09,720
+Ora ti ho detto che potremmo generare del codice usando GAAP.
+
+48
+00:03:09,870 --> 00:03:16,230
+Quindi andiamo in GAAP vedere i siti Web e come vedremo saranno 11 lingue al momento della registrazione
+
+49
+00:03:16,540 --> 00:03:21,620
+sono ufficialmente supportati da GOPAC e molti altri sono in realtà non ufficialmente supportati.
+
+50
+00:03:21,630 --> 00:03:23,290
+Non sono solo sui siti Web.
+
+51
+00:03:23,370 --> 00:03:25,850
+Quindi eccoci nel sito Web GOP Iowa.
+
+52
+00:03:26,010 --> 00:03:31,170
+E come puoi vedere, è qui che daresti un'occhiata ai documenti se dovessi avere qualche problema, come
+
+53
+00:03:31,170 --> 00:03:32,220
+è nella documentazione.
+
+54
+00:03:32,430 --> 00:03:37,470
+Ma se si scorre verso il basso in pratica, è possibile visualizzare l'elenco delle lingue su cui è possibile avviare
+
+55
+00:03:37,470 --> 00:03:37,860
+QuickStart.
+
+56
+00:03:37,980 --> 00:03:42,810
+Quindi, in base alla tua lingua, la tua lingua preferita non è essenziale o la lingua di questo corso
+
+57
+00:03:42,810 --> 00:03:44,950
+che puoi avere, come lo è QuickStart.
+
+58
+00:03:45,060 --> 00:03:49,890
+Ciononostante, tutti gli insegnamenti del suo corso sono applicabili ad altre lingue, il che è fantastico.
+
+59
+00:03:49,890 --> 00:03:50,390
+OK.
+
+60
+00:03:50,640 --> 00:03:56,190
+Quindi una delle cose che pubblicizzano attraverso GRB è che funziona attraverso linguaggi e piattaforme.
+
+61
+00:03:56,190 --> 00:04:00,960
+E ancora perché all'inizio usiamo un file di protocollo buffer e poi genereremo il
+
+62
+00:04:00,960 --> 00:04:05,210
+codice per qualsiasi lingua usando il protocollo R PC per generare.
+
+63
+00:04:05,400 --> 00:04:07,190
+Quindi torniamo alle diapositive.
+
+64
+00:04:07,980 --> 00:04:15,610
+Quindi, anche se il tuo PC ha così tante lingue avrà così poche implementazioni principali quindi c'è Java, che è
+
+65
+00:04:15,960 --> 00:04:18,800
+una pura implementazione di europaeus in Java.
+
+66
+00:04:18,830 --> 00:04:22,810
+Ciò significa che è stato costruito da zero utilizzando le librerie Java.
+
+67
+00:04:22,830 --> 00:04:27,360
+C'è europaeus, che è anche pura implementazione del GRB nella lingua.
+
+68
+00:04:27,360 --> 00:04:29,030
+Ancora una volta costruisce da zero.
+
+69
+00:04:29,430 --> 00:04:35,160
+E poi c'è GURPS, che è un livello super basso che è una pura implementazione del linguaggio C e C e ti stai chiedendo
+
+70
+00:04:35,760 --> 00:04:37,370
+se sta andando così per sempre.
+
+71
+00:04:37,410 --> 00:04:45,180
+No Jarkesy C ++ gypsey Python Ruby Objective-C ph B C Sharp e molti altri ancora.
+
+72
+00:04:45,180 --> 00:04:48,690
+Forse si affidano effettivamente al GOP.
+
+73
+00:04:48,700 --> 00:04:49,990
+Implementazione C
+
+74
+00:04:50,010 --> 00:04:51,960
+Si chiama usando le associazioni C.
+
+75
+00:04:52,050 --> 00:04:58,920
+Quindi praticamente tutte queste librerie C ++ Python Ruby ecc. Si basano direttamente sulla libreria GOP C ed è molto importante che
+
+76
+00:04:58,920 --> 00:05:03,240
+ti dia solo un'idea che lo sviluppo dello sviluppo funziona con un framework che
+
+77
+00:05:03,960 --> 00:05:08,060
+significa che, ad esempio, se domani la libreria GOP viene aggiornata .
+
+78
+00:05:08,070 --> 00:05:12,640
+Ciò non significa che Java in Goldberry verrà aggiornato allo stesso tempo, ma puoi
+
+79
+00:05:12,640 --> 00:05:18,510
+aspettarti che il Python Ruby Objective-C in C ++ e così via trarranno molto rapidamente vantaggio dei miglioramenti
+
+80
+00:05:18,510 --> 00:05:22,140
+nella libreria CC GRB perché questo direttamente dipende da questo.
+
+81
+00:05:22,200 --> 00:05:27,570
+Alcune delle lingue possono implementare Djerba in modo nativo o fare affidamento sull'implementazione.
+
+82
+00:05:27,570 --> 00:05:31,850
+OK, so che esiste una libreria JAROBI Python pura per esempio, quindi non si sa mai.
+
+83
+00:05:31,860 --> 00:05:35,170
+Ma questo è per le biblioteche ufficiali.
+
+84
+00:05:35,190 --> 00:05:36,540
+Ora, di cosa sto parlando?
+
+85
+00:05:36,550 --> 00:05:39,810
+Dicendolo ripetutamente che può essere usato in qualsiasi lingua.
+
+86
+00:05:39,810 --> 00:05:46,110
+Come ho già detto, il codice verrà generato automaticamente e quindi i tuoi micro servizi in qualsiasi lingua possono interagire
+
+87
+00:05:46,110 --> 00:05:46,940
+tra loro.
+
+88
+00:05:47,220 --> 00:05:52,770
+Quindi diciamo che abbiamo un sito Web e questo sito ha un servizio di acquisto che acquisti e la persona
+
+89
+00:05:52,770 --> 00:05:57,720
+o il team della tua azienda vogliono farlo e quel servizio è un team di go.
+
+90
+00:05:57,720 --> 00:06:03,160
+Quindi implementano questo è Ingo e abbiamo anche un team di determinazione dei prezzi e il team dei prezzi lì.
+
+91
+00:06:03,260 --> 00:06:03,940
+Ha fatto.
+
+92
+00:06:04,050 --> 00:06:10,140
+Quindi quello che hanno fatto è che hanno implementato questa soluzione usando Python e ora abbiamo un'applicazione
+
+93
+00:06:10,140 --> 00:06:11,180
+mobile app.
+
+94
+00:06:11,180 --> 00:06:12,650
+Forse è un'app Android giusta.
+
+95
+00:06:12,840 --> 00:06:15,080
+E hanno sviluppato la loro app utilizzando Java.
+
+96
+00:06:15,150 --> 00:06:18,370
+Quindi tu sei come il mio dio tutte queste cose devono parlarsi.
+
+97
+00:06:18,520 --> 00:06:23,250
+Ma in realtà è piuttosto semplice perché il servizio acquistato e il servizio di determinazione dei prezzi sono stati scritti
+
+98
+00:06:23,250 --> 00:06:24,700
+utilizzando G. R. PC.
+
+99
+00:06:24,720 --> 00:06:30,840
+È possibile generare ciò che è chiamato stub o stub come client sull'app mobile Chadha e automaticamente tale stub avrà
+
+100
+00:06:30,840 --> 00:06:36,990
+implementato per te tutte le chiamate al servizio di acquisto e al servizio di determinazione dei prezzi utilizzando i buffer
+
+101
+00:06:37,290 --> 00:06:41,790
+di protocollo e G. R. PC per richiesta e risposta, quindi vedremo in seguito ciò
+
+102
+00:06:41,790 --> 00:06:42,480
+che appare nel codice.
+
+103
+00:06:42,630 --> 00:06:47,730
+Ma solo per farti avere un'idea in questo momento non devi preoccuparti se è un'applicazione
+
+104
+00:06:47,730 --> 00:06:53,730
+Java che parla di andare su o su un'applicazione python perché sono tutti implementati GRB PC tutto il codice
+
+105
+00:06:53,730 --> 00:06:57,210
+generato per te e tu Non preoccuparti dei dettagli dell'implementazione.
+
+106
+00:06:57,210 --> 00:07:03,920
+Oltre al framework, il servizio acquistato può anch'esso avere un mozzicone per il servizio di Shipman che
+
+107
+00:07:03,930 --> 00:07:05,770
+sarà riaccordato e C-sharp.
+
+108
+00:07:06,170 --> 00:07:11,150
+OK, quindi ricorda davvero che il diagramma si troverà anche sul sito di Jessops.
+
+109
+00:07:11,160 --> 00:07:13,180
+È molto importante per te capire questo.
+
+110
+00:07:13,200 --> 00:07:15,520
+È davvero la chiave di G R B C.
+
+111
+00:07:15,570 --> 00:07:20,730
+Il bello è che qualsiasi lingua può parlare con qualsiasi altra lingua usando quella struttura comune e
+
+112
+00:07:20,730 --> 00:07:22,560
+che rende le cose super facili.
+
+113
+00:07:23,010 --> 00:07:25,650
+Quindi, in sintesi, perché i buffer di protocollo.
+
+114
+00:07:25,860 --> 00:07:29,810
+Bene perché è molto facile da usare e scrivere la definizione del messaggio.
+
+115
+00:07:29,820 --> 00:07:33,600
+La definizione dell'API sarà anche indipendente dall'implementazione.
+
+116
+00:07:33,750 --> 00:07:38,150
+Ciò significa che puoi iniziare a scrivere i tuoi client e il tuo server non appena avrai restituito
+
+117
+00:07:38,160 --> 00:07:39,120
+i buffer Oracle.
+
+118
+00:07:39,130 --> 00:07:45,060
+La definizione di Messers ideale e un sacco di codice un sacco di codice boilerplate che non vuoi scrivere
+
+119
+00:07:45,240 --> 00:07:50,880
+sarà scritto per te e verrà generato in qualsiasi lingua solo da un semplice buffer di 10
+
+120
+00:07:50,880 --> 00:07:51,240
+righe.
+
+121
+00:07:51,240 --> 00:07:52,860
+E questo è fantastico per te.
+
+122
+00:07:52,890 --> 00:07:58,420
+Ti fa risparmiare un sacco di tempo e ti consente di concentrarti davvero sulla scrittura della tua applicazione.
+
+123
+00:07:58,560 --> 00:08:03,860
+Anche i buffer di protocollo sono binari e quindi molto molto efficienti da inviare e ricevere su una rete.
+
+124
+00:08:03,870 --> 00:08:09,880
+È più piccolo come abbiamo visto e anche la serializzazione e la serializzazione su una nave sarà eseguita in meno cicli.
+
+125
+00:08:09,990 --> 00:08:14,190
+Quindi meno potente C. P. avrai un vantaggio migliore.
+
+126
+00:08:14,190 --> 00:08:18,100
+Tutto sommato, i buffer Perkel consentiranno inoltre di definire un'API.
+
+127
+00:08:18,210 --> 00:08:22,680
+E se segui il mio ultimo corso sui buffer di protocollo vedrai che puoi evolvere
+
+128
+00:08:22,680 --> 00:08:27,280
+i messaggi nell'API senza rompere i client esistenti che è estremamente utile per i micro servizi.
+
+129
+00:08:27,290 --> 00:08:32,630
+Ok, non più versioni della tua API puoi farlo evolvere finché segui le tue regole che conosci.
+
+130
+00:08:32,730 --> 00:08:33,160
+OK.
+
+131
+00:08:33,330 --> 00:08:35,370
+Quindi tutto sommato era un riassunto.
+
+132
+00:08:35,460 --> 00:08:39,810
+Utilizzeremo Koba prima 4G IPC in questo corso e vedrò nella prossima lezione.
+

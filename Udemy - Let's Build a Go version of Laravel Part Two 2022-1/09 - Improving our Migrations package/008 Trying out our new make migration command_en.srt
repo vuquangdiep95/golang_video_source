@@ -1,0 +1,224 @@
+1
+00:00:01,589 --> 00:00:07,080
+So we have the necessary code, we think, in place to generate phase migrations or cycle migrations,
+
+2
+00:00:07,080 --> 00:00:08,130
+but phase for now.
+
+3
+00:00:08,490 --> 00:00:09,900
+So let's give this a try.
+
+4
+00:00:09,960 --> 00:00:11,680
+Now there's a couple of things we have to do here.
+
+5
+00:00:11,700 --> 00:00:16,770
+We can comment this out and we'll take care of checking to make sure the database is set up in a bit
+
+6
+00:00:17,460 --> 00:00:20,420
+and hopefully deleting the unnecessary imports it did.
+
+7
+00:00:20,430 --> 00:00:22,090
+So there's no error showing up right now.
+
+8
+00:00:22,110 --> 00:00:23,610
+So I should be able to open my terminal.
+
+9
+00:00:24,390 --> 00:00:26,340
+Make sure I'm in this hilarious folder.
+
+10
+00:00:27,090 --> 00:00:34,020
+Clear the screen and say make build, underscore Seelye and actually create a new celerity executable.
+
+11
+00:00:34,560 --> 00:00:36,810
+And I have something missing here.
+
+12
+00:00:36,820 --> 00:00:37,920
+So let's go get that.
+
+13
+00:00:38,730 --> 00:00:39,330
+I will.
+
+14
+00:00:43,670 --> 00:00:46,850
+Apparently, I have to go get this thing, which I will.
+
+15
+00:00:47,090 --> 00:00:48,260
+So let's paste right in there.
+
+16
+00:00:48,380 --> 00:00:48,830
+Go get it.
+
+17
+00:00:56,110 --> 00:01:00,490
+This is one of the problems you run into when you're working with multiple projects in a single project.
+
+18
+00:01:00,940 --> 00:01:01,660
+Let's try that again.
+
+19
+00:01:01,960 --> 00:01:03,490
+Make build, underscore Selah.
+
+20
+00:01:14,680 --> 00:01:19,210
+OK, so it apparently made it so now I can switch to my other tab, where I'm in my celebrity's folder
+
+21
+00:01:19,210 --> 00:01:24,760
+and do an last show in my My At folder and do it like special celebrities.
+
+22
+00:01:25,120 --> 00:01:26,620
+So that was just built moments ago.
+
+23
+00:01:27,760 --> 00:01:32,700
+Now let's make sure our migrations folder is currently empty, and it is.
+
+24
+00:01:33,070 --> 00:01:35,610
+So let's try this out, let's say.
+
+25
+00:01:37,000 --> 00:01:40,960
+Dot slash celebrities make migration test.
+
+26
+00:01:41,230 --> 00:01:46,420
+And I'll leave it with no final parameter, I could put fizz there, but I'll test it this way first.
+
+27
+00:01:47,110 --> 00:01:47,910
+Let's see what happens.
+
+28
+00:01:48,010 --> 00:01:49,030
+It says it's finished.
+
+29
+00:01:49,870 --> 00:01:52,360
+Let's look at our migrations folder and see what we have.
+
+30
+00:01:52,450 --> 00:01:56,140
+There's an up migration and that is the correct code.
+
+31
+00:01:56,470 --> 00:01:57,670
+And here's a down migration.
+
+32
+00:01:58,480 --> 00:01:59,590
+And that's the correct code as well.
+
+33
+00:01:59,590 --> 00:02:00,450
+So that works really well.
+
+34
+00:02:00,460 --> 00:02:01,570
+So let's try making another one.
+
+35
+00:02:02,470 --> 00:02:09,580
+Dot slash celebrities make migration test, too, and this time I'll specify Skull sequel for the last
+
+36
+00:02:09,580 --> 00:02:10,030
+argument.
+
+37
+00:02:11,600 --> 00:02:13,920
+Now, if I come up here, I should have two more.
+
+38
+00:02:13,940 --> 00:02:17,660
+And they're both school migrations and they should be empty, so he didn't specify anything.
+
+39
+00:02:17,780 --> 00:02:18,320
+Perfect.
+
+40
+00:02:18,590 --> 00:02:18,950
+OK.
+
+41
+00:02:20,510 --> 00:02:28,460
+And now let's try the last cased dot slash celebrities make migration test three is.
+
+42
+00:02:29,850 --> 00:02:31,680
+And if I come up here, I should have another one.
+
+43
+00:02:32,070 --> 00:02:38,100
+And it's a phased migration and the up is the correct content and the down is the correct content.
+
+44
+00:02:38,190 --> 00:02:38,550
+Perfect.
+
+45
+00:02:38,560 --> 00:02:39,720
+So that seemed to work really well.
+
+46
+00:02:40,320 --> 00:02:41,400
+So let's delete these.
+
+47
+00:02:42,360 --> 00:02:45,540
+So we're not going to be using them, and I don't want them messing me up later on.
+
+48
+00:02:46,020 --> 00:02:48,180
+And let's go back and see what we have to do next.
+
+49
+00:02:48,870 --> 00:02:51,270
+So back here, my to do comment.
+
+50
+00:02:51,300 --> 00:02:53,190
+Make sure the database is set up.
+
+51
+00:02:53,220 --> 00:02:57,110
+I shouldn't be able to create a migration if there is no database in place.
+
+52
+00:02:57,180 --> 00:03:02,640
+The only reason being that someone might create a new project and they decide all too many database
+
+53
+00:03:02,640 --> 00:03:06,630
+migrations without having set up their database and then migrations get created.
+
+54
+00:03:06,640 --> 00:03:08,520
+But every time they try to run them, they get errors.
+
+55
+00:03:08,850 --> 00:03:13,740
+So we may as well make sure that they do things in the correct order and set up their database before
+
+56
+00:03:13,740 --> 00:03:16,680
+they try to create migrations, and we'll do that in the next election.
+

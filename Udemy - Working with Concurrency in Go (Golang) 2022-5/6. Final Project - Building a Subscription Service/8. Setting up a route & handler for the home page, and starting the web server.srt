@@ -1,0 +1,395 @@
+1
+00:00:00,720 --> 00:00:05,820
+So at the moment our application does not compile because here in the main dog go file, we have this
+
+2
+00:00:05,820 --> 00:00:10,830
+variable app and we're not using it and we'll be using that when we start listening for web connections.
+
+3
+00:00:11,430 --> 00:00:13,740
+But before we can do that, we need to set up a few things.
+
+4
+00:00:13,800 --> 00:00:15,420
+We need to set up some handlers.
+
+5
+00:00:15,420 --> 00:00:22,230
+So in the CMG web folder or create a new file called handlers, which I have to spell, write handlers
+
+6
+00:00:22,230 --> 00:00:22,920
+don't go.
+
+7
+00:00:23,310 --> 00:00:27,360
+We'll also need some routes and I'll put those in here as well.
+
+8
+00:00:27,360 --> 00:00:31,980
+See any web new file routes, docker.
+
+9
+00:00:32,610 --> 00:00:34,890
+And you might notice that I added a templates folder here.
+
+10
+00:00:34,890 --> 00:00:38,640
+Just ignore that you'll be adding that yourself in a few lectures for the moment.
+
+11
+00:00:38,640 --> 00:00:42,330
+Let's go back to our handlers and get that set up so handlers don't go.
+
+12
+00:00:42,630 --> 00:00:44,180
+And obviously this is in package, mate.
+
+13
+00:00:44,550 --> 00:00:44,930
+Okay.
+
+14
+00:00:45,390 --> 00:00:47,940
+And we need to create at least one handler.
+
+15
+00:00:47,940 --> 00:00:51,390
+And what I'll do is just create a handler for a home page that doesn't exist yet.
+
+16
+00:00:51,900 --> 00:00:57,870
+So I create a function and this will have the receiver app pointer to the type config.
+
+17
+00:00:58,440 --> 00:00:58,810
+Okay.
+
+18
+00:00:59,220 --> 00:01:05,850
+So we'll have access to everything we populated into that config variable named app in the main go file
+
+19
+00:01:05,850 --> 00:01:06,600
+before too long.
+
+20
+00:01:06,870 --> 00:01:07,170
+Okay.
+
+21
+00:01:08,220 --> 00:01:12,030
+So this is a very simple handler and I should put a stubborn here for now.
+
+22
+00:01:12,030 --> 00:01:13,170
+I'll call it home page.
+
+23
+00:01:13,650 --> 00:01:20,550
+And because it's a handler, it requires two arguments a response writer which I'll call w http dog
+
+24
+00:01:20,550 --> 00:01:22,500
+response writer right there.
+
+25
+00:01:23,340 --> 00:01:29,550
+And it also requires a pointer to a request, which I'll call error, and that's a pointer to HTTP request
+
+26
+00:01:31,050 --> 00:01:33,130
+and that's just going to stay empty for right now.
+
+27
+00:01:33,150 --> 00:01:33,450
+Okay.
+
+28
+00:01:33,540 --> 00:01:35,040
+So it's a stub handler.
+
+29
+00:01:35,160 --> 00:01:38,280
+Now let's go over to this roots dot go file and create some roots.
+
+30
+00:01:38,550 --> 00:01:42,090
+So again, this is in packaging which I have to spell, right?
+
+31
+00:01:43,650 --> 00:01:48,300
+And we're going to create a function with the receiver of app pointer to config.
+
+32
+00:01:48,600 --> 00:01:50,310
+Again, our application config.
+
+33
+00:01:51,270 --> 00:01:56,040
+And we'll just call this roots and it's going to return an HTTP dog handler.
+
+34
+00:01:56,820 --> 00:01:59,370
+And this is where we're going to use the mux rotor.
+
+35
+00:01:59,730 --> 00:02:05,010
+So the first thing we'll do is create a rudder and we'll call nine months for multiplexing, which is
+
+36
+00:02:05,010 --> 00:02:05,610
+pretty common.
+
+37
+00:02:05,790 --> 00:02:08,220
+And it's a type cheeked new rudder.
+
+38
+00:02:10,230 --> 00:02:11,070
+New rudder.
+
+39
+00:02:11,070 --> 00:02:14,310
+And I've got to make sure I get the right one because I have multiple versions installed.
+
+40
+00:02:14,340 --> 00:02:16,140
+That's the one I want, version five.
+
+41
+00:02:16,980 --> 00:02:23,640
+So it gives me a new rudder and we're going to set up some middleware and we'll use right now some of
+
+42
+00:02:23,640 --> 00:02:27,510
+the middleware that comes bundled with that rudder, which makes it such a great package.
+
+43
+00:02:27,990 --> 00:02:33,120
+So to use middleware with the key router has just maxed out use and then name the middleware you want.
+
+44
+00:02:33,120 --> 00:02:39,740
+And this one is going to be straight from the middleware package that comes as part of Cheat.
+
+45
+00:02:39,840 --> 00:02:47,280
+So I'll use middleware DOT and I'm looking for the recover right there.
+
+46
+00:02:47,280 --> 00:02:50,340
+And again, I need to make sure it's version five and it is.
+
+47
+00:02:51,270 --> 00:02:55,230
+So now I has a middleware and now let's create a root, a root to the home page.
+
+48
+00:02:55,230 --> 00:03:03,570
+So we'll say define application roots and we're going to have a MUX, get any get requests that goes
+
+49
+00:03:03,570 --> 00:03:11,490
+to this slash is going to use app dot homepage and then we just say return mux.
+
+50
+00:03:11,940 --> 00:03:12,240
+Okay?
+
+51
+00:03:12,880 --> 00:03:15,630
+And that's all we have to worry about for this for right now.
+
+52
+00:03:15,630 --> 00:03:18,330
+Obviously, we'll be adding things here as time goes on.
+
+53
+00:03:19,320 --> 00:03:22,920
+But now I can go back over to Mango.
+
+54
+00:03:23,550 --> 00:03:29,460
+And what I'm going to do is set up a new function here outside of the main function, which I'll call
+
+55
+00:03:29,940 --> 00:03:30,330
+surf.
+
+56
+00:03:32,280 --> 00:03:32,650
+Okay?
+
+57
+00:03:32,910 --> 00:03:34,530
+And it doesn't return anything.
+
+58
+00:03:35,430 --> 00:03:43,260
+But what it does is start a web server, so start HTP server and this is simple create a variable called
+
+59
+00:03:43,260 --> 00:03:50,720
+SRB for serve and it's of the type a reference to a checkpoint server server right there.
+
+60
+00:03:51,360 --> 00:03:51,750
+Okay.
+
+61
+00:03:52,770 --> 00:03:59,370
+And I just populate some fields for right now we can just put in the address EDR and I'm listening if
+
+62
+00:03:59,370 --> 00:04:04,650
+you remember, we have that constant web port at Port 80, so I'll use the format as print, f, package
+
+63
+00:04:05,400 --> 00:04:06,030
+or function.
+
+64
+00:04:06,360 --> 00:04:12,870
+And my format string is just a colon which this particular type requires a colon and then a percent
+
+65
+00:04:12,870 --> 00:04:15,810
+s and my substitution is the constant webhook.
+
+66
+00:04:16,260 --> 00:04:16,650
+Okay.
+
+67
+00:04:16,740 --> 00:04:23,430
+So that's the address we're going to listen on port 84, any IP address on this particular machine.
+
+68
+00:04:24,030 --> 00:04:25,890
+And then we have to define what's handler's URL.
+
+69
+00:04:26,160 --> 00:04:29,700
+And the handler in this case is just a call to output routes.
+
+70
+00:04:32,340 --> 00:04:32,670
+Okay.
+
+71
+00:04:33,570 --> 00:04:37,650
+Now, of course, to have access to that variable app, I'm probably going to want to put a receiver
+
+72
+00:04:37,650 --> 00:04:39,330
+right here receiver.
+
+73
+00:04:39,720 --> 00:04:43,770
+So app pointer to config, that makes more sense.
+
+74
+00:04:44,460 --> 00:04:46,140
+And I have access to apt routes.
+
+75
+00:04:46,980 --> 00:04:50,850
+And with that SRB variable, I'll just print out some information.
+
+76
+00:04:50,850 --> 00:04:56,430
+So I'll say app dot info log and I'll print out print line.
+
+77
+00:05:00,120 --> 00:05:05,700
+Starting Web server went off to start the server.
+
+78
+00:05:06,510 --> 00:05:09,390
+And that is as simple as calling.
+
+79
+00:05:09,720 --> 00:05:11,490
+Well, I'm going to populate the variable error.
+
+80
+00:05:11,520 --> 00:05:21,480
+When I call server listing answer, I check for an error if error is not equal to nil.
+
+81
+00:05:22,170 --> 00:05:24,510
+If I can't start the web server, I'm just going to panic.
+
+82
+00:05:24,720 --> 00:05:27,240
+Logged out panic with the error.
+
+83
+00:05:27,660 --> 00:05:28,020
+Okay.
+
+84
+00:05:29,100 --> 00:05:33,270
+And up here in the main function, I just call app dot server.
+
+85
+00:05:36,490 --> 00:05:40,390
+And that should allow me to actually start the application now.
+
+86
+00:05:40,510 --> 00:05:43,690
+So let's open our terminal and clear the screen.
+
+87
+00:05:44,380 --> 00:05:52,720
+And if I do, unless there's my Makefile, so I should be able to type make start and it builds my application.
+
+88
+00:05:53,820 --> 00:05:55,500
+And now it's running and it's running.
+
+89
+00:05:55,510 --> 00:05:58,850
+You might notice in the background I have my command prompt back.
+
+90
+00:05:58,860 --> 00:06:01,530
+Okay, so it actually started.
+
+91
+00:06:01,540 --> 00:06:05,760
+Now if I try to hit that, I'm going to get a blank screen because my handler is empty right now for
+
+92
+00:06:05,760 --> 00:06:06,500
+the home page.
+
+93
+00:06:06,520 --> 00:06:09,420
+But I can also type make it stop and that should stop it.
+
+94
+00:06:09,420 --> 00:06:10,320
+And it stopped.
+
+95
+00:06:10,500 --> 00:06:10,950
+Perfect.
+
+96
+00:06:11,610 --> 00:06:12,840
+So we're much closer now.
+
+97
+00:06:13,020 --> 00:06:20,910
+So the next step is to actually go and make this handler the home page, render some kind of home page.
+
+98
+00:06:20,960 --> 00:06:21,360
+Okay.
+
+99
+00:06:21,600 --> 00:06:24,150
+So we'll get started on that in the next lecture.

@@ -1,0 +1,427 @@
+1
+00:00:01,010 --> 00:00:04,820
+In this section of the course, we're going to just take care of a little bit of housekeeping, for
+
+2
+00:00:04,820 --> 00:00:08,970
+example, we have reddish installed and we're using it now.
+
+3
+00:00:08,990 --> 00:00:13,820
+And one of the things that our session package supports is storing sessions in redness, and that makes
+
+4
+00:00:13,820 --> 00:00:14,610
+a lot of sense.
+
+5
+00:00:14,630 --> 00:00:17,090
+It's actually faster than storing them in the database.
+
+6
+00:00:17,720 --> 00:00:22,730
+So we're going to take care of that, and we'll also take care of implementing CSS RF protection and
+
+7
+00:00:22,730 --> 00:00:29,600
+finally speeding things up by disabling some debug info based upon whether or not we're going to production
+
+8
+00:00:29,600 --> 00:00:30,140
+or development.
+
+9
+00:00:30,350 --> 00:00:34,940
+So right now, I'm in this alert house package and we're going to take care of implementing Redis sessions
+
+10
+00:00:34,940 --> 00:00:35,540
+first.
+
+11
+00:00:35,900 --> 00:00:38,930
+So I'm looking at the file celebrities don't go.
+
+12
+00:00:39,440 --> 00:00:46,010
+And if you recall one of the things we did right here in Line 91 in my code of celebrities don't go
+
+13
+00:00:46,520 --> 00:00:50,690
+is we decided whether or not we should take care of implementing a retest cache.
+
+14
+00:00:51,260 --> 00:00:56,570
+But of course, the other thing we need to do here is to not just worry about whether or not a cache
+
+15
+00:00:56,570 --> 00:01:00,650
+is being used with Redis, but also whether sessions are being used with credits.
+
+16
+00:01:00,770 --> 00:01:08,470
+So let's modify this if statement by putting in or condition here and say, Oh s don't get on.
+
+17
+00:01:10,160 --> 00:01:17,690
+We're going to look for the key session underscore type in the dot on file, if that's equal to Redis.
+
+18
+00:01:18,050 --> 00:01:20,670
+We also need to create this my read his cache.
+
+19
+00:01:21,680 --> 00:01:27,020
+And of course, the problem is that right now, this variable, my read, his cache only exists within
+
+20
+00:01:27,020 --> 00:01:28,550
+the scope of this if statement.
+
+21
+00:01:28,880 --> 00:01:34,220
+And that is, as you can see, if we point at it of type a pointer to cache portraitist cache.
+
+22
+00:01:34,670 --> 00:01:40,790
+So what I'm going to do is get rid of the assignment operator here and go up to the top of the file
+
+23
+00:01:40,850 --> 00:01:46,220
+and create a variable with this name of the type pointer to cache readies cache.
+
+24
+00:01:46,310 --> 00:01:49,550
+So let's go up here and we can put it anywhere.
+
+25
+00:01:49,700 --> 00:01:51,680
+But I'll put it right after my constants.
+
+26
+00:01:52,520 --> 00:01:59,390
+I'll say ver my Redis cache of type a pointer to cache readies cache.
+
+27
+00:02:00,050 --> 00:02:05,570
+OK, so now once once we set it in this if statement, it's available in other places and we're actually
+
+28
+00:02:05,570 --> 00:02:07,490
+going to need it in other places as well.
+
+29
+00:02:08,090 --> 00:02:09,500
+So this part has taken care of.
+
+30
+00:02:09,500 --> 00:02:10,950
+We've modified our if statement.
+
+31
+00:02:11,180 --> 00:02:14,270
+Now let's go down to where we create our session right here.
+
+32
+00:02:15,440 --> 00:02:22,370
+So what I'm going to do is add some fields that contain non nil values to my type session.
+
+33
+00:02:22,610 --> 00:02:24,410
+So we can do that, of course, with the switch state.
+
+34
+00:02:24,530 --> 00:02:28,190
+And we'll have to make a change to the session type itself in a moment.
+
+35
+00:02:28,190 --> 00:02:29,060
+But let's get this out of the way.
+
+36
+00:02:29,060 --> 00:02:34,310
+First, we'll switch on C dot config dot session type.
+
+37
+00:02:37,280 --> 00:02:39,620
+So our first case will be Redis,
+
+38
+00:02:43,610 --> 00:02:45,800
+and we're going to do something in that case in a moment.
+
+39
+00:02:47,090 --> 00:02:51,740
+And our second case, and there's no call in after case, I don't know why I put that there.
+
+40
+00:02:52,190 --> 00:02:52,940
+I often do.
+
+41
+00:02:54,800 --> 00:03:04,670
+Our second case will be MySchool or Postgres or Maria.
+
+42
+00:03:04,670 --> 00:03:12,110
+TBE emails will put Postgres Q will there as well, because sometimes people type that and we'll do
+
+43
+00:03:12,110 --> 00:03:13,400
+something with that as well.
+
+44
+00:03:13,970 --> 00:03:18,350
+In that case, and this is the only one we can take care of right now, we'll say.
+
+45
+00:03:18,350 --> 00:03:26,660
+Sache says our variable cesse de pool is equal to Cedar DB School.
+
+46
+00:03:27,860 --> 00:03:34,250
+And of course, that means I can probably take this right out of here because in point of fact, that
+
+47
+00:03:34,250 --> 00:03:35,170
+might be set to nil.
+
+48
+00:03:35,180 --> 00:03:40,400
+People might be using sessions, but not a database, so that takes care of the first situation.
+
+49
+00:03:40,580 --> 00:03:41,030
+OK.
+
+50
+00:03:41,220 --> 00:03:42,260
+And we don't need a comma there.
+
+51
+00:03:44,060 --> 00:03:45,860
+Now this case, what if it's Redis?
+
+52
+00:03:46,010 --> 00:03:52,160
+Well, I want to set Redis my Redis pool, and I can't put that in the field DB pool because those are
+
+53
+00:03:52,160 --> 00:03:52,880
+different types.
+
+54
+00:03:53,000 --> 00:03:55,550
+So let's go find our session type wherever that is
+
+55
+00:03:58,370 --> 00:03:58,850
+right here.
+
+56
+00:03:59,840 --> 00:04:10,150
+Let's add another field to that, and we'll call it red is cool, and that will be of type a pointer
+
+57
+00:04:10,160 --> 00:04:11,660
+to cache Dot.
+
+58
+00:04:12,500 --> 00:04:13,340
+Read his cache.
+
+59
+00:04:13,640 --> 00:04:16,310
+And of course, he didn't report that for me, but that's no problem.
+
+60
+00:04:16,310 --> 00:04:17,240
+We can import that.
+
+61
+00:04:17,600 --> 00:04:20,840
+Actually, that's a type pointer to read a school.
+
+62
+00:04:21,740 --> 00:04:22,190
+That's better.
+
+63
+00:04:24,000 --> 00:04:25,200
+And that did the import for me.
+
+64
+00:04:25,290 --> 00:04:32,310
+So let's save that, and let's go back to celebrities now, and let's change this case of readies to
+
+65
+00:04:32,310 --> 00:04:33,780
+be, says Dot.
+
+66
+00:04:35,620 --> 00:04:37,540
+Is pool is equal to.
+
+67
+00:04:39,010 --> 00:04:42,850
+My reader's cache, dconf, not forget dot com.
+
+68
+00:04:44,320 --> 00:04:49,960
+There now we have a case for readies, a case for MySchool, Postgres, MariaDB and PostgreSQL.
+
+69
+00:04:50,380 --> 00:04:55,120
+And of course, the default case is do nothing because we don't specify a default case, so those don't
+
+70
+00:04:55,120 --> 00:04:55,630
+get set.
+
+71
+00:04:56,050 --> 00:05:00,540
+And the nice thing about this, of course, is we're only setting fields that have a non nil value,
+
+72
+00:05:00,550 --> 00:05:01,570
+and that's kind of important.
+
+73
+00:05:01,960 --> 00:05:02,770
+So after that?
+
+74
+00:05:04,990 --> 00:05:07,600
+We ended our session and we have to make any changes in there.
+
+75
+00:05:07,630 --> 00:05:08,350
+Let's go have a look.
+
+76
+00:05:08,950 --> 00:05:14,500
+And of course there is because although we've now assigned a reddish pool to the appropriate fields
+
+77
+00:05:14,500 --> 00:05:19,450
+in the session type, we actually don't have the diretta store installed.
+
+78
+00:05:19,450 --> 00:05:20,890
+So let's take care of that.
+
+79
+00:05:22,270 --> 00:05:23,200
+I don't think we do anyway.
+
+80
+00:05:23,590 --> 00:05:25,240
+So let's scroll on down here.
+
+81
+00:05:25,990 --> 00:05:32,860
+Yes, we have a case for race, but we actually haven't installed the reddest store type for the Alex
+
+82
+00:05:32,860 --> 00:05:34,240
+Edwards sex package.
+
+83
+00:05:34,960 --> 00:05:39,950
+So let's open a terminal and clearer screen and type go get.
+
+84
+00:05:39,970 --> 00:05:41,890
+And I've copied it to my clipper already.
+
+85
+00:05:42,730 --> 00:05:48,250
+It's GitHub dot com slash Alex Edwards slash x slash Reddit store.
+
+86
+00:05:48,280 --> 00:05:49,120
+So let's go get that.
+
+87
+00:05:51,960 --> 00:05:52,540
+And there it is.
+
+88
+00:05:52,560 --> 00:05:53,760
+It's available to us now.
+
+89
+00:05:54,270 --> 00:06:00,330
+And I think all we have to do right here on Line 58 in my code in the Switch statement is say Session
+
+90
+00:06:00,330 --> 00:06:02,490
+Dot Store is equal to.
+
+91
+00:06:03,060 --> 00:06:11,580
+And now we take advantage of the package we just installed, which is register store new and we hand
+
+92
+00:06:11,580 --> 00:06:13,500
+it secret is cool.
+
+93
+00:06:16,050 --> 00:06:18,570
+And that should, in theory, take care of it.
+
+94
+00:06:18,900 --> 00:06:25,170
+And all we have to do now is switch to our other a project, my app and open our doors on file
+
+95
+00:06:27,990 --> 00:06:32,840
+on and find our session type and make it read us.
+
+96
+00:06:34,260 --> 00:06:38,430
+Now, if I open my terminal and start my application because it's running.
+
+97
+00:06:40,440 --> 00:06:41,730
+And start my application.
+
+98
+00:06:50,770 --> 00:06:52,340
+Everything compiled, that's a good sign.
+
+99
+00:06:52,360 --> 00:06:54,550
+Let's switch to our web browser and see if this works.
+
+100
+00:06:56,890 --> 00:07:04,120
+So I'll go back to the homepage and I'm not currently logged in, so logging in actually sets the sessional
+
+101
+00:07:04,120 --> 00:07:05,260
+variable, so let's try that.
+
+102
+00:07:06,550 --> 00:07:13,450
+So and I think it's Mia here dot com with password, but we'll find out in a minute it could be my email
+
+103
+00:07:13,450 --> 00:07:13,840
+address.
+
+104
+00:07:15,500 --> 00:07:19,880
+We're logged in and we're authenticated, so I should be able to refresh this page and still see it.
+
+105
+00:07:20,360 --> 00:07:23,660
+So now it's using recessions and recessions are very fast.
+
+106
+00:07:24,200 --> 00:07:25,550
+So that was relatively painless.
+
+107
+00:07:25,940 --> 00:07:29,600
+So let's move on and now finally implement see us rf protection.

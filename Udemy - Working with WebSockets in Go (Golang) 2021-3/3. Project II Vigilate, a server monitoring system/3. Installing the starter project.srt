@@ -1,0 +1,1391 @@
+1
+00:00:00,520 --> 00:00:05,710
+So it's time to install the starter code for our project, and you're going to get that by going to
+
+2
+00:00:05,710 --> 00:00:14,470
+GitHub, Dotcom, TESOL Vigilante Vigilante and I have posted a link to this in the course resources
+
+3
+00:00:14,470 --> 00:00:16,060
+for the this lecture.
+
+4
+00:00:16,950 --> 00:00:21,720
+And what you have here is an application, it's called vigilante vigilantes, a Latin word, in case
+
+5
+00:00:21,720 --> 00:00:23,940
+you're curious, that means watch.
+
+6
+00:00:24,120 --> 00:00:28,410
+And this is an application that will, by the time we're finished with this project or this course,
+
+7
+00:00:28,950 --> 00:00:34,080
+watch servers, remote servers and services on remote servers and notify people when something goes
+
+8
+00:00:34,080 --> 00:00:36,050
+wrong or when something gets better.
+
+9
+00:00:36,690 --> 00:00:41,690
+So it will notify users by email, by SMS if you choose to implement that.
+
+10
+00:00:41,700 --> 00:00:43,310
+So so text messages.
+
+11
+00:00:43,740 --> 00:00:49,470
+And this is the part that is of interest to us in this course in real time, using Web sockets while
+
+12
+00:00:49,470 --> 00:00:50,700
+you're in the Web application.
+
+13
+00:00:51,270 --> 00:00:54,150
+So don't install what you see here.
+
+14
+00:00:54,150 --> 00:00:58,230
+This is right now as you're looking at this, this is exactly the starter code.
+
+15
+00:00:58,230 --> 00:01:01,650
+But by the time I launch this course, this will no longer be the starter code.
+
+16
+00:01:01,660 --> 00:01:03,120
+This will be the finished code.
+
+17
+00:01:03,120 --> 00:01:09,520
+And you'll be able to look at the project in various stages as we go along by going to particular releases.
+
+18
+00:01:09,540 --> 00:01:14,850
+So if I go over to the releases tab here, the link right now, there's only one starter project and
+
+19
+00:01:14,850 --> 00:01:15,810
+this is what you want.
+
+20
+00:01:15,810 --> 00:01:20,880
+So download the zip file or the target file, extract that into your local computer.
+
+21
+00:01:20,880 --> 00:01:25,950
+And if you want to commit that to get or whatever your favorite repository is, I encourage you to do
+
+22
+00:01:25,950 --> 00:01:26,250
+so.
+
+23
+00:01:26,610 --> 00:01:30,780
+But don't just clone this project or you're going to have the finished project as we begin.
+
+24
+00:01:30,780 --> 00:01:32,530
+And that's not going to be very helpful for you.
+
+25
+00:01:33,030 --> 00:01:37,950
+So I've already downloaded this or I actually haven't downloaded this, but it's functionally the same
+
+26
+00:01:37,950 --> 00:01:39,870
+thing because this is where you're going to start.
+
+27
+00:01:40,230 --> 00:01:42,870
+And I've imported it into my favorite Edek.
+
+28
+00:01:43,920 --> 00:01:47,820
+And what we need to do, first of all, is to connect this to our database.
+
+29
+00:01:48,510 --> 00:01:50,730
+So there's a couple of files here I need to change.
+
+30
+00:01:50,790 --> 00:01:53,280
+One is called database y email dot example.
+
+31
+00:01:53,280 --> 00:01:58,350
+So I'm going to copy that just by opening my terminal and making sure I'm in the right direction.
+
+32
+00:01:58,530 --> 00:01:59,160
+I am.
+
+33
+00:01:59,460 --> 00:02:05,270
+And I will keep database dot y Amelda, for example, to database y amount.
+
+34
+00:02:06,180 --> 00:02:11,280
+And this is a file that's going to be used to manage our database migration's which I'll get to momentarily.
+
+35
+00:02:12,180 --> 00:02:17,220
+The second file you want to copy and it's different if you're on Windows or Mac, if you're on Windows,
+
+36
+00:02:17,220 --> 00:02:22,640
+you want to copy this one run batdorf example to run it back and we'll make changes to that.
+
+37
+00:02:23,010 --> 00:02:25,290
+I'm on a Mac, so I'll use the rundown, S.H..
+
+38
+00:02:25,320 --> 00:02:30,060
+So if you're on macro Linux, you're going to do this copy run, for example.
+
+39
+00:02:32,060 --> 00:02:36,620
+To run S.H. and then I need to make this executable on a Mac.
+
+40
+00:02:39,610 --> 00:02:44,440
+Now I can run it, first of all, let's make sure the contents are correct, so I'll start with the
+
+41
+00:02:44,440 --> 00:02:44,920
+database.
+
+42
+00:02:44,930 --> 00:02:49,600
+Open your database, why file and all you need to populate could ignore the bits down here.
+
+43
+00:02:50,170 --> 00:02:54,310
+All you need to populate up here is the name of the database, which I'm going to call vigilante.
+
+44
+00:02:55,420 --> 00:02:58,120
+The user happens to be, in my case, my username.
+
+45
+00:02:58,120 --> 00:03:01,640
+So use whatever username you have and I have no password, so that's fine.
+
+46
+00:03:02,560 --> 00:03:04,750
+Now the rundown, S.H. Let's look at that.
+
+47
+00:03:05,170 --> 00:03:06,130
+My DB user.
+
+48
+00:03:06,130 --> 00:03:08,740
+I need to change that to tax.
+
+49
+00:03:08,740 --> 00:03:10,600
+In my case, push your host.
+
+50
+00:03:10,600 --> 00:03:12,690
+I'm just going to put localhost in there right now.
+
+51
+00:03:13,150 --> 00:03:15,330
+This isn't going to be used for a little while, so don't worry about it.
+
+52
+00:03:15,610 --> 00:03:17,080
+Leave the key in secret alone.
+
+53
+00:03:17,080 --> 00:03:18,070
+Leave the app alone.
+
+54
+00:03:18,070 --> 00:03:20,080
+Leave the leave everything else alone.
+
+55
+00:03:20,170 --> 00:03:24,310
+OK, so now I want to actually populate my database.
+
+56
+00:03:24,310 --> 00:03:29,710
+So I'm going to start up my favorite database client connect to my localhost, which I'm on right now,
+
+57
+00:03:29,710 --> 00:03:34,240
+and create a new database which I'm going to call the gelati, just like I did in my database.
+
+58
+00:03:34,780 --> 00:03:38,290
+Dot, why am Alpha OK?
+
+59
+00:03:38,290 --> 00:03:43,840
+Now that I've created that, I'm going to open my terminal window, make sure I'm in the correct directory.
+
+60
+00:03:43,840 --> 00:03:49,450
+I am, and I'm going to run Sota now you don't have SOTA installed and SOTA is something that's very
+
+61
+00:03:49,450 --> 00:03:50,290
+useful actually.
+
+62
+00:03:50,440 --> 00:03:56,170
+It's actually part of a project called Go Buffalo and let's go have a look at it and I'll show you how
+
+63
+00:03:56,170 --> 00:03:59,710
+you can either install it yourself or you can use the binaries I provided you.
+
+64
+00:04:00,190 --> 00:04:10,870
+So I'm going to go to go Buffalo Io slash n slash dock's DB slash toolbox.
+
+65
+00:04:10,870 --> 00:04:11,590
+There it is right there.
+
+66
+00:04:12,670 --> 00:04:13,690
+And this is soda.
+
+67
+00:04:13,720 --> 00:04:19,030
+Soda is actually just a little command line utility that's built in to go Buffalo, which is a web framework.
+
+68
+00:04:19,030 --> 00:04:25,420
+Many of you may be familiar with it, but I just like soda because it makes migration's makes creating
+
+69
+00:04:25,420 --> 00:04:27,970
+migration's running them up and down really, really easy.
+
+70
+00:04:28,390 --> 00:04:33,400
+So to install this, if you're on a Mac and you have homebrew, you can just do that and that will install
+
+71
+00:04:33,400 --> 00:04:34,450
+it for you very easily.
+
+72
+00:04:34,450 --> 00:04:36,280
+And then you'll have soda right in your command line.
+
+73
+00:04:36,880 --> 00:04:40,810
+You can compile it from source if you want to on a Mac or on windows.
+
+74
+00:04:40,840 --> 00:04:43,960
+We're not going to use Silverlight three or any version of SQLite.
+
+75
+00:04:44,230 --> 00:04:47,440
+So you can just run these two commands and then you'll have it available to you.
+
+76
+00:04:47,920 --> 00:04:52,150
+Or if you want, you'll notice in the repository that you just downloaded.
+
+77
+00:04:52,150 --> 00:04:58,630
+I have a folder called SOTA Binaries and I have three versions here, one for a Mac, one for really
+
+78
+00:04:58,630 --> 00:05:02,410
+old Windows machines and one for current Windows machines.
+
+79
+00:05:02,530 --> 00:05:07,210
+So you can just extract that, the one that's appropriate for your platform, put it somewhere in your
+
+80
+00:05:07,210 --> 00:05:09,370
+path so you can find it from the command line.
+
+81
+00:05:09,730 --> 00:05:14,410
+And when you do come back to your application, make sure you've set up a database, which I did just
+
+82
+00:05:14,410 --> 00:05:15,670
+a moment ago right over here.
+
+83
+00:05:15,670 --> 00:05:16,630
+It's called Vigilante.
+
+84
+00:05:16,630 --> 00:05:23,890
+It's in my local Postgres install and all you do is type SOTA migrate and it will actually populate
+
+85
+00:05:23,890 --> 00:05:24,640
+that database.
+
+86
+00:05:24,880 --> 00:05:28,900
+Now, it's not a very complex database and it will become more complex as time goes on.
+
+87
+00:05:29,350 --> 00:05:35,200
+It has a preference table of remember tokens table that allows users to log in and have the system remember
+
+88
+00:05:35,200 --> 00:05:39,070
+them by setting a cookie and checking its valid validity against whatever is in here.
+
+89
+00:05:39,670 --> 00:05:43,750
+Schema migration is what SOTA uses to migrate things up and down.
+
+90
+00:05:44,200 --> 00:05:48,820
+The sessions table is just to store sessions, sessional information and you could do that somewhere
+
+91
+00:05:48,820 --> 00:05:49,000
+else.
+
+92
+00:05:49,000 --> 00:05:51,940
+But I just did it in the database so you don't have to install anything else.
+
+93
+00:05:51,940 --> 00:05:57,370
+And so it won't forget you every time you stop the application, which is what happens if you use in
+
+94
+00:05:57,370 --> 00:06:00,790
+memory sessions and the user's table and in the user's table.
+
+95
+00:06:00,790 --> 00:06:04,210
+I have one user, some admin with a username and a password.
+
+96
+00:06:04,540 --> 00:06:12,100
+OK, so now that I've installed the necessary database tables and content, I can actually run this
+
+97
+00:06:12,100 --> 00:06:15,310
+and I just go run S.H. and it will start the application.
+
+98
+00:06:16,180 --> 00:06:23,110
+On Port 4000 of the local system, so let's go over to our Web browser and have a look at it, localhost
+
+99
+00:06:24,340 --> 00:06:27,460
+4000 and it brings you to the login screen.
+
+100
+00:06:27,880 --> 00:06:36,610
+And the default user that's added to the database is admin at example, dotcom with the rather less
+
+101
+00:06:36,610 --> 00:06:39,370
+than strong password of password.
+
+102
+00:06:39,760 --> 00:06:40,870
+And I'll have it remember me.
+
+103
+00:06:41,860 --> 00:06:45,770
+And once I've logged in, you have basically the framework for a Web application.
+
+104
+00:06:45,790 --> 00:06:47,970
+There's only a couple of things that are functional right now.
+
+105
+00:06:48,280 --> 00:06:52,210
+This button at the top, for example, doesn't do anything, but it's there and it's something for us
+
+106
+00:06:52,210 --> 00:06:52,840
+to work with.
+
+107
+00:06:53,410 --> 00:06:57,880
+These are all hard coded values, but it will show you what you're going to do here is you're going
+
+108
+00:06:57,880 --> 00:07:00,790
+to be monitoring specific posts which will be listed down here.
+
+109
+00:07:01,180 --> 00:07:06,760
+And this gives you a dashboard overview of the status of any services for any given host.
+
+110
+00:07:06,790 --> 00:07:08,790
+And again, this is just HTML right now.
+
+111
+00:07:08,800 --> 00:07:11,290
+There's nothing being populated dynamically here at all.
+
+112
+00:07:12,220 --> 00:07:16,000
+On the right hand side, you can list your hosts and this doesn't do anything.
+
+113
+00:07:16,000 --> 00:07:18,820
+The new host button takes you here but doesn't show you a host.
+
+114
+00:07:19,480 --> 00:07:24,100
+This will list the events that take place when a server goes down or comes up that's recorded here.
+
+115
+00:07:25,240 --> 00:07:31,030
+A schedule when we're done will actually list all of the next checks with the time and date when they're
+
+116
+00:07:31,030 --> 00:07:31,840
+going to take place.
+
+117
+00:07:33,010 --> 00:07:38,740
+This part does work settings and first thing you're going to want to do is populate the user of this
+
+118
+00:07:38,740 --> 00:07:48,070
+application, which if you're using the same IBM is HTTP Colins localhost 4000 for notifications.
+
+119
+00:07:48,340 --> 00:07:53,230
+You can specify how do you want to be notified when some event takes place, a server goes down, a
+
+120
+00:07:53,230 --> 00:07:54,850
+server comes up, whatever it may be.
+
+121
+00:07:55,360 --> 00:08:00,910
+I'll just say by email right now and I'll put my name in here and some email address.
+
+122
+00:08:01,180 --> 00:08:03,130
+Treva at example dot com.
+
+123
+00:08:03,130 --> 00:08:05,980
+Since I'm not going to use a real mail server, I'm going to use a dummy e-mail server.
+
+124
+00:08:05,980 --> 00:08:10,930
+When we get to the part of the course, I can just put any valid anything that looks like an email address
+
+125
+00:08:10,930 --> 00:08:11,380
+in here.
+
+126
+00:08:11,380 --> 00:08:16,270
+And I won't bother with text message for settings under mail settings.
+
+127
+00:08:16,270 --> 00:08:21,580
+I'm going to specify and SMTP server of localhost with a port of ten, twenty five.
+
+128
+00:08:21,580 --> 00:08:26,650
+And if you want to follow along, exactly as I'm going to do a little bit later in the course, will
+
+129
+00:08:26,650 --> 00:08:31,630
+be installing something called Mail Hug, which is a local dummy e-mail server, which is great for
+
+130
+00:08:31,630 --> 00:08:33,220
+development, and it's written and goes well.
+
+131
+00:08:33,370 --> 00:08:34,930
+So it's a single binary to run.
+
+132
+00:08:34,930 --> 00:08:35,590
+It's very easy.
+
+133
+00:08:36,280 --> 00:08:45,460
+Mail sent from I'll just put a vigilante at example, dotcom, that's the name, but I'll use the email
+
+134
+00:08:45,460 --> 00:08:50,830
+address for both the name and the email and I'll leave these two empty and then I can save this.
+
+135
+00:08:51,070 --> 00:08:54,310
+So I will save and close and save the changes.
+
+136
+00:08:55,090 --> 00:08:56,380
+So settings actually work.
+
+137
+00:08:56,890 --> 00:09:00,880
+Now, one of the thing I didn't show you here is if you want to do this and I'm going to do it later
+
+138
+00:09:00,880 --> 00:09:05,740
+in the course, I'm also going to enable text notifications, text messages, and I'm only going to
+
+139
+00:09:05,740 --> 00:09:07,060
+do it for one provider.
+
+140
+00:09:07,060 --> 00:09:10,480
+But the logic is is very much the same for any provider.
+
+141
+00:09:10,480 --> 00:09:16,120
+And I'll use Twilio because I can get a free account there that will allow me to send text test texts
+
+142
+00:09:16,420 --> 00:09:18,190
+at no charge, which is very helpful.
+
+143
+00:09:18,640 --> 00:09:20,170
+So I would specify that.
+
+144
+00:09:20,170 --> 00:09:24,910
+And then I would give the information that I get once I create my Toilolo account, which I haven't
+
+145
+00:09:24,910 --> 00:09:26,380
+done yet for this course.
+
+146
+00:09:26,380 --> 00:09:27,820
+But I'll do it when we get to that point.
+
+147
+00:09:28,120 --> 00:09:28,920
+So let's cancel it.
+
+148
+00:09:29,770 --> 00:09:32,440
+The last thing that's in here are users right now.
+
+149
+00:09:32,440 --> 00:09:34,360
+I can I can look at myself.
+
+150
+00:09:34,900 --> 00:09:36,310
+I can't delete myself.
+
+151
+00:09:36,310 --> 00:09:38,080
+I can change my password if I want to.
+
+152
+00:09:38,080 --> 00:09:39,550
+I can change this information.
+
+153
+00:09:39,550 --> 00:09:43,300
+But because I'm logged in, I don't want to have complete control.
+
+154
+00:09:43,300 --> 00:09:45,490
+I don't want to accidentally lock myself out of the system.
+
+155
+00:09:45,640 --> 00:09:46,660
+So I'll just cancel that.
+
+156
+00:09:47,020 --> 00:09:54,610
+And if I want to have a new user, I can have another user, another user, last name, whatever it
+
+157
+00:09:54,610 --> 00:09:54,910
+is.
+
+158
+00:09:55,390 --> 00:10:00,820
+I'm going to delete this in a minute anyway, so it doesn't matter to me at here dot com with some password
+
+159
+00:10:00,820 --> 00:10:06,400
+and I'll make this user active and it's just a simple user management system so I can save that.
+
+160
+00:10:06,550 --> 00:10:12,700
+Now it shows both users and if I want to get rid of this one, I can just delete this user and the user
+
+161
+00:10:12,700 --> 00:10:13,330
+is gone.
+
+162
+00:10:13,870 --> 00:10:14,860
+That's not really gone.
+
+163
+00:10:14,860 --> 00:10:18,490
+I'm using soft deletes, but I'll talk about that when I go through the code review, which I'm going
+
+164
+00:10:18,490 --> 00:10:19,240
+to do right now.
+
+165
+00:10:19,240 --> 00:10:22,990
+And this is just a quick walkthrough of how this application works.
+
+166
+00:10:23,770 --> 00:10:29,680
+So I'm going back to my ID and I'm going to close these two files that I have open and we'll start at
+
+167
+00:10:29,680 --> 00:10:30,460
+the entry point.
+
+168
+00:10:31,180 --> 00:10:35,830
+Now, if you took my course in Web development and goaland, you'll be familiar with the format that
+
+169
+00:10:35,830 --> 00:10:38,080
+I use when I start most Web applications.
+
+170
+00:10:38,230 --> 00:10:42,580
+I put the entry point in a folder called CMD at the root level of the project.
+
+171
+00:10:43,090 --> 00:10:47,440
+And then because this is the Web application, I have a folder called Web and we have Mango.
+
+172
+00:10:47,890 --> 00:10:48,790
+So let's look at that.
+
+173
+00:10:49,840 --> 00:10:51,280
+Mango is dead simple.
+
+174
+00:10:51,640 --> 00:10:54,490
+I declare a few variables here that I'll go through momentarily.
+
+175
+00:10:55,000 --> 00:10:59,170
+I declare a few constants here that I'll go through when I get to the appropriate parts.
+
+176
+00:10:59,170 --> 00:11:04,450
+Well, the first ones obvious, it's the version of the application and then I call the Init function.
+
+177
+00:11:04,450 --> 00:11:11,080
+And all I'm doing in here is registering the type of models user, which is a type that I have defined
+
+178
+00:11:11,080 --> 00:11:15,640
+in this application, and it's the one that holds the admin user or the admin users if there's more.
+
+179
+00:11:15,700 --> 00:11:20,830
+And one and it lets me put that in the session, so I registry's using Godbout register, which means
+
+180
+00:11:20,830 --> 00:11:25,230
+I can store this data type in the session and then I set the time zone.
+
+181
+00:11:25,270 --> 00:11:28,740
+I have it set to America Halifax, because that happens to be my time zone.
+
+182
+00:11:29,170 --> 00:11:31,390
+You can send it to whatever you want or you can just ignore it.
+
+183
+00:11:31,420 --> 00:11:33,730
+It's really not important for this course in any case.
+
+184
+00:11:34,930 --> 00:11:36,520
+The main function is the entry point.
+
+185
+00:11:36,550 --> 00:11:37,670
+This is where we begin.
+
+186
+00:11:37,930 --> 00:11:44,980
+So I get the value of insecure port and potentially an error from a function called set up app, which
+
+187
+00:11:44,980 --> 00:11:47,860
+is over here at Setup Dash app DOKO.
+
+188
+00:11:48,340 --> 00:11:52,440
+And this is where I set up the basic information for the application.
+
+189
+00:11:53,710 --> 00:11:56,740
+So as you can see here, these are all flags.
+
+190
+00:11:56,770 --> 00:11:58,140
+Not all of them are required.
+
+191
+00:11:58,180 --> 00:11:59,980
+Some of them have default values.
+
+192
+00:11:59,980 --> 00:12:05,410
+But if you look at the run S.H. or run that file that we worked with a little while ago, you'll see
+
+193
+00:12:05,410 --> 00:12:08,530
+that I'm setting the bare minimum to get the application functional.
+
+194
+00:12:08,780 --> 00:12:11,290
+OK, so all I'm doing is reading the flags here.
+
+195
+00:12:11,290 --> 00:12:15,310
+I pass them and then I make sure that the required ones are actually there.
+
+196
+00:12:15,490 --> 00:12:21,730
+And if they're not just dye and print out that message, missing required flags, then I connected the
+
+197
+00:12:21,730 --> 00:12:22,310
+database.
+
+198
+00:12:22,810 --> 00:12:28,090
+Now, the only database I'm supporting here is postgrads, but it's actually set up using the really
+
+199
+00:12:28,090 --> 00:12:30,480
+common pattern known as the repository pattern.
+
+200
+00:12:30,700 --> 00:12:35,920
+So if you don't want to use postgrads, you want to use Maruja to be your MySQL or Mongo DB, you feel
+
+201
+00:12:35,920 --> 00:12:41,500
+free to go and write your own driver for this and drop it in here and use that instead of postscripts.
+
+202
+00:12:41,500 --> 00:12:42,520
+And it's really straightforward.
+
+203
+00:12:43,420 --> 00:12:48,400
+So there are two potential connection strings, this one and this one.
+
+204
+00:12:49,060 --> 00:12:54,760
+And the only difference is that postgrads, at least version 13 that I'm using, gets really upset if
+
+205
+00:12:54,760 --> 00:12:57,780
+you pass it an empty password and it refuses to start.
+
+206
+00:12:58,210 --> 00:13:01,660
+So in development, we often don't have a password and that's the case right here.
+
+207
+00:13:01,660 --> 00:13:04,070
+So I'm just checking to see if the password is empty.
+
+208
+00:13:04,450 --> 00:13:05,800
+Use this connection string.
+
+209
+00:13:06,020 --> 00:13:08,080
+Otherwise use this connection string.
+
+210
+00:13:08,080 --> 00:13:13,380
+And the only difference is the second one has a password equals some value and the first one does not.
+
+211
+00:13:14,440 --> 00:13:20,110
+Then I connect to the database using driver connect to postscripts, and that's in the internal folder
+
+212
+00:13:20,890 --> 00:13:22,360
+in the driver's package.
+
+213
+00:13:22,600 --> 00:13:23,800
+And it's dead simple.
+
+214
+00:13:24,040 --> 00:13:27,370
+All it does here is connected the database and ping it.
+
+215
+00:13:27,670 --> 00:13:32,550
+And this is the kind of code you would find in any of a million of tutorials out there online.
+
+216
+00:13:32,860 --> 00:13:36,660
+I'm just connecting the database, pinging it and moving on.
+
+217
+00:13:37,930 --> 00:13:40,540
+So once I ping it, I start the session.
+
+218
+00:13:41,140 --> 00:13:48,460
+And here I'm using a package called Developed by Alex Edwards called Alex Edwards says if you like gorilla
+
+219
+00:13:48,460 --> 00:13:52,100
+mux or gorilla sessions and want to use that instead, just go ahead and change the code.
+
+220
+00:13:52,120 --> 00:13:57,790
+It's very straightforward, but it's really pretty straightforward to use this this particular session
+
+221
+00:13:57,790 --> 00:13:58,180
+manager.
+
+222
+00:13:58,180 --> 00:14:00,480
+And I've used it for years and it works really, really well.
+
+223
+00:14:02,040 --> 00:14:06,720
+So coming down here a little bit further, I start my male channel, all I'm doing is setting up a channel
+
+224
+00:14:06,900 --> 00:14:12,180
+that I can send email to and then I start a dispatcher that listens to this.
+
+225
+00:14:12,180 --> 00:14:17,580
+So all I'm doing here is making a channel and giving it the Max Poole worker size or max worker pool
+
+226
+00:14:17,580 --> 00:14:17,910
+size.
+
+227
+00:14:17,920 --> 00:14:22,170
+I'm saying that was the constant set back in Mingo right over here.
+
+228
+00:14:22,800 --> 00:14:25,370
+And I'm saying only have five workers at any time.
+
+229
+00:14:25,410 --> 00:14:27,210
+That's Max worker pool size.
+
+230
+00:14:27,210 --> 00:14:30,930
+And we have the same thing for Max job worker, which you'll see in a moment.
+
+231
+00:14:32,510 --> 00:14:37,610
+So here I start up a new dispatcher and we can look at that one by clicking on it and it actually starts
+
+232
+00:14:37,610 --> 00:14:42,230
+up jobs are opens up jobs, Dasch, Moeldoko and all this does this is code.
+
+233
+00:14:42,230 --> 00:14:47,780
+And if anybody's worked with the gorilla WebSocket in the past or any of the gorilla packages, this
+
+234
+00:14:47,780 --> 00:14:53,990
+is a really common pattern to make sure that I'm never going to overload my channel with too many things
+
+235
+00:14:54,320 --> 00:14:57,290
+and everything will get done in an orderly fashion.
+
+236
+00:14:57,470 --> 00:15:01,070
+And the is you know, it's fairly long, but it's not that hard to read through.
+
+237
+00:15:01,430 --> 00:15:06,110
+And for the purposes of this course, all you really have to be aware of is that this is how I'm going
+
+238
+00:15:06,110 --> 00:15:07,070
+to send email.
+
+239
+00:15:07,370 --> 00:15:12,530
+And potentially because I might be watching a thousand servers, I might be sending a lot of email at
+
+240
+00:15:12,530 --> 00:15:13,790
+any given point in time.
+
+241
+00:15:13,910 --> 00:15:18,370
+So this ensures that only five will go out at a time because I'm just going to be doing this locally.
+
+242
+00:15:18,410 --> 00:15:20,630
+That's more than sufficient for our purposes.
+
+243
+00:15:21,350 --> 00:15:29,360
+Back to set up that app once I have the dispatcher started, I define a simple struct of type config
+
+244
+00:15:29,360 --> 00:15:33,650
+app config, which is over the internal internal folder and just called config.
+
+245
+00:15:33,920 --> 00:15:34,880
+And it's really straightforward.
+
+246
+00:15:34,880 --> 00:15:35,660
+It's just a type.
+
+247
+00:15:35,930 --> 00:15:39,350
+And these are things that I probably want to share across my application.
+
+248
+00:15:39,380 --> 00:15:41,900
+So there's more information in here that we're actually going to use.
+
+249
+00:15:42,290 --> 00:15:46,220
+But for our purposes right now, we're setting up these things.
+
+250
+00:15:46,250 --> 00:15:47,330
+What's the database?
+
+251
+00:15:47,330 --> 00:15:48,250
+What's the session?
+
+252
+00:15:48,260 --> 00:15:49,610
+Are we in production or not?
+
+253
+00:15:49,610 --> 00:15:52,640
+What's the domain name for our server?
+
+254
+00:15:53,150 --> 00:15:56,480
+What's our pusher secret, which we're going to get to in a while?
+
+255
+00:15:56,480 --> 00:16:00,290
+Right now, it's set to, I think, ABC one, two, three, or one, two, three, ABC.
+
+256
+00:16:00,380 --> 00:16:01,130
+But it doesn't matter.
+
+257
+00:16:01,130 --> 00:16:02,210
+We're not using it at the moment.
+
+258
+00:16:03,200 --> 00:16:04,250
+I share the mail.
+
+259
+00:16:04,250 --> 00:16:11,210
+Q So I have a place to send info, send my email messages to store the version information for the current
+
+260
+00:16:12,950 --> 00:16:15,230
+build of the code and this identifier.
+
+261
+00:16:15,440 --> 00:16:20,930
+We're actually not going to pay attention to it, but I tend to use that because quite often I want
+
+262
+00:16:20,930 --> 00:16:26,480
+to have more than one application on a given server and an identifier is just a way for me to keep track
+
+263
+00:16:26,480 --> 00:16:28,110
+of which one is which.
+
+264
+00:16:28,160 --> 00:16:29,000
+So you can ignore that.
+
+265
+00:16:29,000 --> 00:16:32,450
+But it's in there because I use it all the time and I expect to find it there.
+
+266
+00:16:33,510 --> 00:16:39,780
+Then I store the value a incap, which is a package level variable, so it's available to everything
+
+267
+00:16:39,780 --> 00:16:40,920
+in my main package.
+
+268
+00:16:41,800 --> 00:16:48,340
+I get my crate, my handlers and my handlers are everything in the handlers folders, so internal handlers
+
+269
+00:16:48,350 --> 00:16:51,870
+and this is where you're going to we're going to be working most doing most of our work.
+
+270
+00:16:52,330 --> 00:16:59,950
+Here's where we actually process specific requests to specific routes on our application that I just
+
+271
+00:16:59,950 --> 00:17:04,110
+create a map called preference map and I store all of the information.
+
+272
+00:17:04,120 --> 00:17:05,500
+I create the map right here.
+
+273
+00:17:05,920 --> 00:17:10,900
+I store all of the information that's in the preferences table in the database by looping through through
+
+274
+00:17:10,900 --> 00:17:11,560
+it right here.
+
+275
+00:17:11,930 --> 00:17:17,080
+I started my map and that gives me a quick and easy method of getting any preference right out of my
+
+276
+00:17:17,260 --> 00:17:22,330
+system wide or application wide app variable so I can read preferences and store them in their.
+
+277
+00:17:23,910 --> 00:17:29,310
+Now, down here, I'm actually creating a pusher client, and you'll notice if you look at the imports
+
+278
+00:17:29,310 --> 00:17:32,730
+on the top here, I've imported Pusher somewhere.
+
+279
+00:17:34,310 --> 00:17:40,820
+Where there is right there, pusher HDB go, and that's the official go library for Pusher, even though
+
+280
+00:17:40,820 --> 00:17:42,470
+I'm not going to be using Pusher in this.
+
+281
+00:17:42,470 --> 00:17:46,280
+Course you can if you want to, and I'll talk more about that when we get there.
+
+282
+00:17:46,550 --> 00:17:51,320
+I'm going to be using a local pusher clone instead because I like to have control over everything as
+
+283
+00:17:51,320 --> 00:17:56,570
+I'm developing and all this does is create that client and we're not actually doing anything with that
+
+284
+00:17:56,570 --> 00:17:57,620
+client right yet.
+
+285
+00:17:57,710 --> 00:18:02,690
+But I'm creating it and I'm storing it where it needs to be in my application abdelnabi client.
+
+286
+00:18:03,410 --> 00:18:07,100
+And then I'm done and I hand back the port and I hand back potentially an error.
+
+287
+00:18:07,100 --> 00:18:09,350
+If everything went well then there is no error.
+
+288
+00:18:09,380 --> 00:18:15,920
+So now we're back in the main routine and from here all I'm going to do is do my standard, defer clothes
+
+289
+00:18:15,920 --> 00:18:21,230
+for both the database and the channel because it's always important to defer clothes for those things.
+
+290
+00:18:21,230 --> 00:18:26,030
+Technically speaking, I wouldn't have to because the main function stops when the application stops.
+
+291
+00:18:26,150 --> 00:18:31,430
+But it's good practice and if I do it all the time, I never forget to that.
+
+292
+00:18:31,430 --> 00:18:36,530
+I just put a little print, a little message to the screen and create my web server and hand it some
+
+293
+00:18:36,530 --> 00:18:37,040
+roots.
+
+294
+00:18:37,280 --> 00:18:41,230
+And the roots are in a file called Roots in the main package right over here.
+
+295
+00:18:42,770 --> 00:18:49,910
+And for this course, I'm using the monks are sort of using the key router and it's a really dead simple,
+
+296
+00:18:49,910 --> 00:18:51,560
+easy to use routing package.
+
+297
+00:18:51,890 --> 00:18:55,450
+And if you want to go read about it, the URL is right here in the imports.
+
+298
+00:18:56,180 --> 00:18:57,500
+GOCE it's in GitHub.
+
+299
+00:18:57,500 --> 00:19:03,770
+Dotcom, Godus cheat cheap, simple to use and perfect for the kind, of course, that we're doing right
+
+300
+00:19:03,770 --> 00:19:04,010
+here.
+
+301
+00:19:05,570 --> 00:19:07,150
+Most of the roots are protected.
+
+302
+00:19:07,820 --> 00:19:12,710
+All I'm doing here is loading some middleware, loading the session, which I have to do for Alex Edwards
+
+303
+00:19:12,710 --> 00:19:15,590
+X so the session is available on every request.
+
+304
+00:19:15,890 --> 00:19:18,080
+Rickover panic if things go awry.
+
+305
+00:19:18,080 --> 00:19:19,550
+I don't want the application to die.
+
+306
+00:19:19,550 --> 00:19:22,070
+I want to recover from that and print a message to my log.
+
+307
+00:19:23,280 --> 00:19:28,860
+No surf ensures that I can use extra tokens so I can protect my forms against cross site request forgery,
+
+308
+00:19:29,070 --> 00:19:35,190
+dead simple and check, remember, is just a really simple middleware that actually verifies it's right
+
+309
+00:19:35,190 --> 00:19:35,460
+here.
+
+310
+00:19:35,850 --> 00:19:41,880
+It verifies if someone has checked that remember me on the login screen the next time they come to the
+
+311
+00:19:41,880 --> 00:19:47,430
+site, check, remember, looks to see if that cookie exists, if it's valid, and if it does, it logs
+
+312
+00:19:47,430 --> 00:19:48,450
+them in automatically.
+
+313
+00:19:48,780 --> 00:19:49,560
+Very straightforward.
+
+314
+00:19:50,170 --> 00:19:56,280
+Everything else here outside of these three routes, which are show me the login screen, handle the
+
+315
+00:19:56,280 --> 00:19:59,010
+post of the login screen and log user out.
+
+316
+00:19:59,820 --> 00:20:02,550
+Everything else in here is actually a protected route.
+
+317
+00:20:03,120 --> 00:20:04,740
+So you have to be able to logged in to see it.
+
+318
+00:20:05,040 --> 00:20:07,820
+And each one of these is tied to a specific handler.
+
+319
+00:20:08,340 --> 00:20:10,350
+So back to our application here.
+
+320
+00:20:10,440 --> 00:20:16,830
+When I go to the dashboard, for example, this screen is rendered using the admin dashboard I handler
+
+321
+00:20:16,830 --> 00:20:19,350
+and I can go look at that and it's very straightforward.
+
+322
+00:20:19,380 --> 00:20:19,890
+Right now.
+
+323
+00:20:19,890 --> 00:20:22,290
+I'm taking creating four variables.
+
+324
+00:20:22,290 --> 00:20:28,110
+No healthy, no problem warning impending, setting them all desirous of putting them into a variable
+
+325
+00:20:28,110 --> 00:20:34,010
+called var map because I'm using the template rendering engine and then I just render it.
+
+326
+00:20:34,170 --> 00:20:39,630
+So what we're going to have to do of course, a little bit later on is make these zeros actual meaningful
+
+327
+00:20:39,630 --> 00:20:45,570
+numbers that correspond to servers that we're watching and services that we're watching and get those
+
+328
+00:20:45,570 --> 00:20:48,270
+somehow and send that information to the dashboard.
+
+329
+00:20:48,390 --> 00:20:51,180
+And that's exactly how this application works.
+
+330
+00:20:51,180 --> 00:20:52,380
+It is dead simple.
+
+331
+00:20:53,070 --> 00:20:55,410
+There is nothing too complex in here at all.
+
+332
+00:20:57,000 --> 00:21:01,800
+For example, one thing that I did not mention was how do we how are we querying the database?
+
+333
+00:21:02,220 --> 00:21:05,580
+And I'm doing it by hand using my retaught repository pattern.
+
+334
+00:21:06,210 --> 00:21:13,140
+I have a file called Repository Dogo Go in the repository folder in the internal packages folder, and
+
+335
+00:21:13,140 --> 00:21:16,230
+here I list all of my database functions and there aren't very many right now.
+
+336
+00:21:16,230 --> 00:21:17,790
+There'll be more by the time we're done.
+
+337
+00:21:18,390 --> 00:21:26,090
+But each one of these is specific to or corresponds to an entry in DB Repo inside the repository folder.
+
+338
+00:21:26,100 --> 00:21:32,790
+So for example, if I look at preferences here, I have one function called all preferences of type
+
+339
+00:21:32,790 --> 00:21:38,130
+postgrads DB repo, and there's only one type for all of these handler, these database functions right
+
+340
+00:21:38,130 --> 00:21:38,430
+now.
+
+341
+00:21:38,820 --> 00:21:39,960
+And it's for postgrads.
+
+342
+00:21:40,620 --> 00:21:42,810
+It returns a slice of model's preference.
+
+343
+00:21:43,320 --> 00:21:48,420
+And I just do my query the standard way of connecting to a database engo.
+
+344
+00:21:48,450 --> 00:21:53,850
+I just write some SQL, do the query and return the result or an error.
+
+345
+00:21:54,330 --> 00:22:01,830
+So that's a thousand foot overview of our code and you'll be seeing more of it in more detail as we
+
+346
+00:22:01,830 --> 00:22:03,120
+go through the entire project.
+
+347
+00:22:03,390 --> 00:22:08,010
+But the simplest way to get familiar with this is just to start working with it and we'll start doing
+
+348
+00:22:08,010 --> 00:22:09,810
+that in the next lecture.

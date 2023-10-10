@@ -1,0 +1,131 @@
+1
+00:00:00,950 --> 00:00:06,770
+So just for fun, let's add one more thing to this solution to the dining philosopher's problem that
+
+2
+00:00:06,770 --> 00:00:11,510
+will make it closer to the solution that's actually required by the original version, and that is giving
+
+3
+00:00:11,510 --> 00:00:13,250
+philosophers time to think.
+
+4
+00:00:14,390 --> 00:00:20,660
+So what I want to do this time around, and it's not difficult at all, is to add a delay after the
+
+5
+00:00:20,660 --> 00:00:27,350
+philosopher finishes eating, but before the philosopher drops the forks where he begins to think and
+
+6
+00:00:27,350 --> 00:00:29,440
+he'll think for some predetermined amount of time.
+
+7
+00:00:29,450 --> 00:00:34,910
+So what I'll do is come up to the top here and I'll put another variable in, I'll put it in var think
+
+8
+00:00:34,910 --> 00:00:38,960
+time and that will be equal to 1/2 one times time dot second.
+
+9
+00:00:39,290 --> 00:00:39,640
+Okay.
+
+10
+00:00:40,340 --> 00:00:44,210
+And just to make it run a little bit faster, I'll make eating time only 2 seconds.
+
+11
+00:00:44,780 --> 00:00:46,220
+So I have this variable.
+
+12
+00:00:46,640 --> 00:00:48,290
+Now, where am I going to put this?
+
+13
+00:00:48,470 --> 00:00:54,410
+Well, obviously each time the philosopher finishes eating and each philosopher gets hungry and eats
+
+14
+00:00:54,410 --> 00:01:00,320
+three times, it would be after they start eating, but before they drop the forks.
+
+15
+00:01:00,350 --> 00:01:06,350
+So right here in the function dining problem after we print this has both forks and is eating message.
+
+16
+00:01:06,350 --> 00:01:09,320
+But before we unlock the mutex is in print out these messages.
+
+17
+00:01:09,740 --> 00:01:18,920
+We can just put this in, give the philosopher some time to think and all we are going to do is say
+
+18
+00:01:20,390 --> 00:01:24,200
+format op print line philosopher.
+
+19
+00:01:26,000 --> 00:01:33,890
+He's thinking, okay, and then we'll wait the appropriate length of time, time to sleep, and it will
+
+20
+00:01:33,890 --> 00:01:36,230
+be think time and that's all there is to it.
+
+21
+00:01:36,740 --> 00:01:41,720
+So now when I run this, I should see that message coming periodically.
+
+22
+00:01:41,930 --> 00:01:43,180
+Okay, so go run Dot.
+
+23
+00:01:43,340 --> 00:01:47,360
+And this is just to make it closer to the solution that was actually required back when it was first
+
+24
+00:01:47,360 --> 00:01:49,370
+proposed in 1965.
+
+25
+00:01:49,880 --> 00:01:50,540
+And there they are.
+
+26
+00:01:50,540 --> 00:01:53,300
+They're thinking Plato is thinking at the same time as Aristotle.
+
+27
+00:01:54,080 --> 00:01:56,870
+It's going a little bit faster now, which is good.
+
+28
+00:02:02,990 --> 00:02:03,740
+Almost done.
+
+29
+00:02:06,260 --> 00:02:10,040
+People have left the table and the program ran exactly as intended.
+
+30
+00:02:10,790 --> 00:02:14,090
+Now, in the next lecture, I'm going to give you a bit of a challenge.
+
+31
+00:02:14,180 --> 00:02:19,460
+Nothing terribly difficult and something that you have all the information you need to complete successfully.
+
+32
+00:02:20,030 --> 00:02:24,470
+So we'll have that challenge in the next lecture and then I'll show you how I solve the challenge.
+
+33
+00:02:24,540 --> 00:02:25,640
+Okay, let's move on.

@@ -1,0 +1,255 @@
+1
+00:00:12,840 --> 00:00:16,620
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:16,980 --> 00:00:22,920
+In the previous session, we talked about spirit after and mastering and indecision.
+
+3
+00:00:22,950 --> 00:00:25,770
+We want to talk about the other's strengths concept.
+
+4
+00:00:29,890 --> 00:00:31,890
+Compare extremes in Golang.
+
+5
+00:00:33,190 --> 00:00:42,460
+No language, this ring is an immutable chain of arbitrary bias encoded UTF eight encoding, you are
+
+6
+00:00:42,460 --> 00:00:50,620
+allowed to compare extremes with each other using different face, fierce competition operators and
+
+7
+00:00:50,620 --> 00:00:52,810
+the other compare method.
+
+8
+00:00:54,400 --> 00:01:04,720
+Using competition operators go with string supports conversion operators i.e. equals two not equals
+
+9
+00:01:04,720 --> 00:01:11,140
+to greater than equal to less than equal to greater than and less than.
+
+10
+00:01:13,980 --> 00:01:22,200
+Here the equals two and not equals to operate or are used to check if the given streams are equal or
+
+11
+00:01:22,200 --> 00:01:32,110
+not and greater than equal to and less than equal to greater than and than operators are used to find
+
+12
+00:01:32,110 --> 00:01:33,540
+the lexical order.
+
+13
+00:01:34,770 --> 00:01:42,000
+The results of these operators are of Boolean type, meaning if the condition is satisfied, it will
+
+14
+00:01:42,000 --> 00:01:44,970
+return to otherwise return false.
+
+15
+00:01:45,900 --> 00:01:53,670
+Now let's go to this school program to illustrate the concept of equals two and not equals to operate
+
+16
+00:01:53,670 --> 00:01:54,960
+or meet strings.
+
+17
+00:01:57,870 --> 00:02:05,160
+First, creating an initializing for listing variables, using shorthand declaration for the example,
+
+18
+00:02:05,160 --> 00:02:17,850
+the first the one calling equals go that first characters offer this, and if they are to call an equals,
+
+19
+00:02:18,990 --> 00:02:34,020
+go that all characters are uppercase and three equals Golang and just three or four equals.
+
+20
+00:02:35,930 --> 00:02:47,360
+Go like first variable now checking the string are equal or not using equals to operator and assign
+
+21
+00:02:47,360 --> 00:02:48,800
+resolve to a variable.
+
+22
+00:02:49,190 --> 00:02:55,340
+For the example, check is your home and if your are and assign value to resolve one.
+
+23
+00:02:55,670 --> 00:03:06,340
+So define variable result from column equals is still the one equal to SDR to.
+
+24
+00:03:06,890 --> 00:03:13,220
+Now we make a few more conversions for the example SDR to end SDR three.
+
+25
+00:03:14,420 --> 00:03:24,140
+So define a variable right result to column equals SDR to equal to SDR three.
+
+26
+00:03:25,880 --> 00:03:43,310
+And resolved three Colleen Equals is TR three, not to be cool, to see are full and resolved for Cullen
+
+27
+00:03:43,310 --> 00:03:45,160
+equals another conversion.
+
+28
+00:03:46,100 --> 00:03:55,550
+Or one equal equal to this, the are full now display the result variables FP.
+
+29
+00:03:56,990 --> 00:04:02,800
+Result one, Colin and I set variable result one.
+
+30
+00:04:03,140 --> 00:04:09,260
+It returns a Boolean value FP resolved to.
+
+31
+00:04:09,440 --> 00:04:12,610
+Colin sits resolved to.
+
+32
+00:04:13,900 --> 00:04:18,910
+And right, for the other variables he resolved.
+
+33
+00:04:19,450 --> 00:04:23,170
+Three Colin Smith resolved.
+
+34
+00:04:23,350 --> 00:04:24,040
+Three.
+
+35
+00:04:24,520 --> 00:04:34,840
+And this be resolved for Colin and set by the end result for Reform article.
+
+36
+00:04:35,230 --> 00:04:39,310
+Save the projects and execute the program.
+
+37
+00:04:42,840 --> 00:04:51,900
+Now we can see the output result volume and the to fast and resolve to the end result for these two.
+
+38
+00:04:52,440 --> 00:05:00,270
+We could compete for racing very well together by the equal two and not equal to operators and see the
+
+39
+00:05:00,270 --> 00:05:00,930
+results.
+
+40
+00:05:01,740 --> 00:05:09,180
+OK, now go to a slice and continue second v using confirm it would.
+
+41
+00:05:11,010 --> 00:05:18,900
+You can also compare it to other things using the built in function compare provided by this package.
+
+42
+00:05:20,100 --> 00:05:22,500
+Now you can see the scene tax.
+
+43
+00:05:24,070 --> 00:05:30,730
+This function returns an integer value after competing two strings in terms of vocabulary.
+
+44
+00:05:31,300 --> 00:05:42,370
+The return values are returns zero if SDR want equal to SDR to return one if SDR one greeter, then
+
+45
+00:05:42,370 --> 00:05:48,640
+is the R2 and return minus swan if SDR one less than SDR to.
+
+46
+00:05:49,450 --> 00:05:56,350
+Now let's go to a school program to illustrate how to compare a string using compare function.
+
+47
+00:05:57,720 --> 00:05:59,310
+First, clear, the last court.
+
+48
+00:06:06,960 --> 00:06:08,120
+So, right, if the.
+
+49
+00:06:10,970 --> 00:06:12,170
+Festering, Speck H.
+
+50
+00:06:12,560 --> 00:06:20,870
+Dot com paid fonctionne that it acts it to arguements as a and B and type of them.
+
+51
+00:06:22,010 --> 00:06:31,850
+So select counter and sit variable or value of instant like hello and set to value.
+
+52
+00:06:32,540 --> 00:06:33,770
+Like what?
+
+53
+00:06:35,570 --> 00:06:45,470
+And do another conversion that to things are similar together, like FP Mistress Package dot com per
+
+54
+00:06:45,470 --> 00:06:59,750
+function and set to variable like together, go blank and go blank and do another conversion that to
+
+55
+00:06:59,750 --> 00:07:06,470
+a string are the same, except that the first letter of the first string is thought to be the largest
+
+56
+00:07:06,470 --> 00:07:12,170
+character, and the first letter of the second is string a source with the uppercase character.
+
+57
+00:07:12,560 --> 00:07:14,360
+So right, if the
+
+58
+00:07:17,730 --> 00:07:29,750
+strings package and involved the column, her function and set value for first variable go blank and
+
+59
+00:07:29,750 --> 00:07:39,560
+set value for second argument like go blank, reformat the code, save the project and execute the program.
+
+60
+00:07:42,710 --> 00:07:50,180
+Now we can see the output for first comparison, we have minus one value and four second zero value
+
+61
+00:07:50,330 --> 00:07:53,120
+and four third conversion, and we have one value.
+
+62
+00:07:53,420 --> 00:08:00,950
+So we could compare two variables by comp or function and get into resolved in order not to prolong
+
+63
+00:08:00,950 --> 00:08:06,170
+the time of decision to be finished, and we will continue to contend in the next session.
+
+64
+00:08:06,380 --> 00:08:06,910
+Goodbye.

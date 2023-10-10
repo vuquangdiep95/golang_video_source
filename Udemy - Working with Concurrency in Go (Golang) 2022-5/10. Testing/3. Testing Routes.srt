@@ -1,0 +1,515 @@
+1
+00:00:01,040 --> 00:00:01,460
+Okay.
+
+2
+00:00:01,460 --> 00:00:03,860
+So let's read our first actual test.
+
+3
+00:00:03,860 --> 00:00:09,800
+And what I want to test right now is just this rootstock goat, which has, as you can see, two functions,
+
+4
+00:00:09,950 --> 00:00:11,740
+roots and R3 here.
+
+5
+00:00:11,780 --> 00:00:17,000
+Now, rather than testing those functions, the only thing I really care about is that we actually do,
+
+6
+00:00:17,000 --> 00:00:20,240
+in fact, have these roots registered.
+
+7
+00:00:20,390 --> 00:00:25,340
+So let's write a test to make sure that all of the roots, I think, need to be in the project are actually
+
+8
+00:00:25,340 --> 00:00:26,300
+in the project.
+
+9
+00:00:27,260 --> 00:00:33,490
+So let's go over to our CMT Web folder and we'll create a new file and you have to name it like this
+
+10
+00:00:33,500 --> 00:00:35,330
+or it's conventional to name it roots.
+
+11
+00:00:35,540 --> 00:00:37,430
+And then we're going to be testing roots ago.
+
+12
+00:00:37,430 --> 00:00:38,390
+So I start with roots.
+
+13
+00:00:38,630 --> 00:00:40,700
+Then underscore test, dot, go.
+
+14
+00:00:40,700 --> 00:00:43,700
+And if it doesn't end in underscore test, don't go.
+
+15
+00:00:44,300 --> 00:00:47,000
+The test will never actually get executed.
+
+16
+00:00:47,120 --> 00:00:48,560
+So there's my new file.
+
+17
+00:00:49,400 --> 00:00:55,670
+And of course this is in package name, not Mailer Dun Chan Package Main.
+
+18
+00:00:56,000 --> 00:00:56,510
+There we go.
+
+19
+00:00:57,860 --> 00:01:04,340
+And what I'm going to do is create a variable root, which is equal to a slice of strings.
+
+20
+00:01:04,580 --> 00:01:05,060
+Okay.
+
+21
+00:01:05,510 --> 00:01:08,180
+And I'll just have one entry for each of the roots in my project.
+
+22
+00:01:08,300 --> 00:01:13,850
+I know I have a home root, and I have a log in root and I have a log out root.
+
+23
+00:01:15,770 --> 00:01:18,260
+And these are, of course, exactly the roots that are in that file.
+
+24
+00:01:18,260 --> 00:01:19,160
+Root, start, go.
+
+25
+00:01:19,700 --> 00:01:21,020
+I have a register root.
+
+26
+00:01:23,630 --> 00:01:27,770
+I have an activate root which has to start with a slash activate.
+
+27
+00:01:30,470 --> 00:01:38,860
+I have a plans slash members member member's slash plan, but I'm only calling it slash plans.
+
+28
+00:01:38,870 --> 00:01:39,710
+That will actually work.
+
+29
+00:01:40,490 --> 00:01:43,880
+We're just looking for this string and we have a slash.
+
+30
+00:01:43,970 --> 00:01:46,520
+Subscribe is.
+
+31
+00:01:46,520 --> 00:01:47,120
+I think it'll work.
+
+32
+00:01:47,270 --> 00:01:48,320
+We'll find out before too long.
+
+33
+00:01:49,280 --> 00:01:49,610
+Okay.
+
+34
+00:01:49,910 --> 00:01:52,580
+Now we'll create one function and I'll call this one test.
+
+35
+00:01:52,580 --> 00:01:57,850
+Underscore roots, underscore exist because that's what I'm testing is do these roots exist?
+
+36
+00:01:57,860 --> 00:02:04,370
+And it's has a variable T as a parameter and it's always a type testing T for this sort of test.
+
+37
+00:02:04,820 --> 00:02:06,200
+And I did the import for me.
+
+38
+00:02:07,010 --> 00:02:09,620
+So let's get the roots.
+
+39
+00:02:09,800 --> 00:02:11,720
+So we'll create a variable test roots.
+
+40
+00:02:12,320 --> 00:02:15,710
+And that's assigned when I call not from apt roots.
+
+41
+00:02:16,280 --> 00:02:16,880
+Like that.
+
+42
+00:02:16,970 --> 00:02:17,400
+Okay.
+
+43
+00:02:17,660 --> 00:02:20,360
+That comes from test app dot roots.
+
+44
+00:02:21,870 --> 00:02:23,060
+Oh, okay.
+
+45
+00:02:24,080 --> 00:02:27,500
+So I have these now these are actually coming back.
+
+46
+00:02:27,650 --> 00:02:33,050
+If you look over at roots dot go, it's being returned as the type H-2B handler.
+
+47
+00:02:33,530 --> 00:02:39,520
+But what's actually being produced if I roll over, this is the type A pointer to cheat on marks.
+
+48
+00:02:39,530 --> 00:02:47,990
+And of course the reason I can return that is that checkmarks satisfies the interface for a beta handler.
+
+49
+00:02:48,020 --> 00:02:48,380
+Okay.
+
+50
+00:02:48,890 --> 00:02:50,960
+So over here in roots test, don't go.
+
+51
+00:02:51,200 --> 00:02:53,690
+I'm going to cast that to key roots.
+
+52
+00:02:53,930 --> 00:03:01,700
+Key roots that's assigned the value of test roots dot cast to cheat out render.
+
+53
+00:03:02,720 --> 00:03:03,050
+Okay.
+
+54
+00:03:03,650 --> 00:03:09,630
+That's the type I want to use to run some tests and then I'll actually verify that the roots exist.
+
+55
+00:03:09,650 --> 00:03:15,410
+So I'm going to do that by ranging through I don't care about the index, but I do care about the root,
+
+56
+00:03:15,530 --> 00:03:16,550
+the current entry.
+
+57
+00:03:17,090 --> 00:03:21,110
+I'm going to arrange the roots, that slice of strings I declared above.
+
+58
+00:03:22,610 --> 00:03:25,160
+And I got to put the keyword range in there or this isn't going to work.
+
+59
+00:03:26,270 --> 00:03:26,750
+That's better.
+
+60
+00:03:27,020 --> 00:03:27,410
+Okay.
+
+61
+00:03:27,830 --> 00:03:30,120
+Now, I have an area here is I'm not using this.
+
+62
+00:03:30,140 --> 00:03:32,310
+I am an error here because I'm not using this.
+
+63
+00:03:32,330 --> 00:03:38,360
+But what I want to do inside of this is actually call a function called root roots exists.
+
+64
+00:03:38,480 --> 00:03:41,300
+So what I'm going to do is call a function that doesn't exist.
+
+65
+00:03:42,350 --> 00:03:46,700
+So root exists, which is a function I'm going to write in a minute.
+
+66
+00:03:46,760 --> 00:03:52,370
+I'm going to hand that T, which is the parameter T up at the very in line 19.
+
+67
+00:03:52,370 --> 00:03:56,540
+It's a parameter to this function call because I'm going to do my tests in the function that I call
+
+68
+00:03:56,930 --> 00:03:58,460
+and I'll hand it key roots.
+
+69
+00:03:58,940 --> 00:03:59,420
+Okay.
+
+70
+00:03:59,930 --> 00:04:02,900
+And I'll also hand the current root, the one I want to check for.
+
+71
+00:04:03,800 --> 00:04:09,170
+Now, let's go down here and create a function and we'll call this root exists.
+
+72
+00:04:09,740 --> 00:04:10,090
+Okay.
+
+73
+00:04:10,100 --> 00:04:15,000
+And it takes it takes as parameters T, which is a pointer to testing T.
+
+74
+00:04:15,950 --> 00:04:22,730
+It takes root, which is a type she dot router and it takes root, which is a string.
+
+75
+00:04:23,930 --> 00:04:24,260
+Okay.
+
+76
+00:04:25,010 --> 00:04:30,290
+And inside of this, I'm going to start by initializing a variable found to be equal to false.
+
+77
+00:04:30,470 --> 00:04:34,070
+So if I can't find it, it will be false when I'm finished checking.
+
+78
+00:04:34,130 --> 00:04:35,150
+Otherwise it'll be true.
+
+79
+00:04:35,300 --> 00:04:35,690
+Okay.
+
+80
+00:04:36,470 --> 00:04:38,840
+Now, how do I actually go through all of the roots?
+
+81
+00:04:38,870 --> 00:04:43,250
+Well, this is why I cast our our roots.
+
+82
+00:04:43,250 --> 00:04:48,500
+Our test roots online toe into she roots online, too.
+
+83
+00:04:49,760 --> 00:04:52,760
+What I'm going to do is ignore the return value when I call.
+
+84
+00:04:52,850 --> 00:04:53,990
+She doesn't walk.
+
+85
+00:04:54,410 --> 00:04:57,380
+And that's a function that's built right into the cheap package.
+
+86
+00:04:57,800 --> 00:05:03,470
+And I'm going to hand it roots and I'm going to hand it a function which is a method.
+
+87
+00:05:03,890 --> 00:05:05,960
+Method is the first parameter of type string.
+
+88
+00:05:06,380 --> 00:05:06,770
+Okay.
+
+89
+00:05:07,610 --> 00:05:10,390
+Found root is of type string.
+
+90
+00:05:12,580 --> 00:05:15,850
+Handler is a type UDP dog handler.
+
+91
+00:05:15,910 --> 00:05:18,630
+These are just required by this actual function.
+
+92
+00:05:20,110 --> 00:05:25,790
+And then middleware is, which we don't care about right now, but we're going to go dot, dot, dot
+
+93
+00:05:26,500 --> 00:05:26,840
+bunk.
+
+94
+00:05:26,980 --> 00:05:34,390
+This is very attic handling an HD dot handler and returning an HD brought handler.
+
+95
+00:05:36,970 --> 00:05:37,320
+Can't see you.
+
+96
+00:05:37,320 --> 00:05:39,000
+Don't take them there, Handler.
+
+97
+00:05:39,450 --> 00:05:39,810
+Okay.
+
+98
+00:05:41,550 --> 00:05:47,970
+And then outside of that parentheses, this potentially returns an error and I give it its opening and
+
+99
+00:05:47,970 --> 00:05:52,140
+closing curly brackets hit return and in between.
+
+100
+00:05:53,520 --> 00:05:57,750
+All we eat, we say as if root is equal to found.
+
+101
+00:05:57,750 --> 00:06:01,850
+Root then found is equal to true
+
+102
+00:06:06,450 --> 00:06:09,090
+and to satisfy the Arab, it will say return nil.
+
+103
+00:06:11,070 --> 00:06:13,080
+And that should be correct.
+
+104
+00:06:13,890 --> 00:06:19,170
+Now, once we've walked all the routes and checked for the existence of the route we're looking for
+
+105
+00:06:19,170 --> 00:06:21,450
+with the current route from the list of all routes.
+
+106
+00:06:22,020 --> 00:06:24,480
+If found, this is still set to false.
+
+107
+00:06:24,540 --> 00:06:25,350
+We didn't find it.
+
+108
+00:06:25,620 --> 00:06:30,160
+So we have to do a test and of course we have to do that outside of this.
+
+109
+00:06:30,240 --> 00:06:37,560
+Just before the closing parentheses and assist is now just simply if not found, if not found.
+
+110
+00:06:39,010 --> 00:06:46,710
+T Which we received as a parameter to this function air f and we'll give it a format string did not
+
+111
+00:06:46,920 --> 00:06:54,540
+find percent s in registered routes and my substitution for that is just a route.
+
+112
+00:06:56,610 --> 00:07:02,520
+So with that, I should be able to check to make sure that all of the routes that I specify up here
+
+113
+00:07:02,520 --> 00:07:05,010
+in this slice of strings that they actually exist.
+
+114
+00:07:05,150 --> 00:07:12,990
+So let's open a terminal and clear the screen and we'll CD in the CMD slash web and run go test dash
+
+115
+00:07:12,990 --> 00:07:16,680
+v dot to run all the tests in this directory and there's only one.
+
+116
+00:07:20,750 --> 00:07:24,530
+And did not find slash planes in registered routes.
+
+117
+00:07:24,600 --> 00:07:24,940
+Okay.
+
+118
+00:07:24,950 --> 00:07:25,640
+So I was wrong.
+
+119
+00:07:25,820 --> 00:07:29,930
+We do need to put members in there and we do need to put members in here.
+
+120
+00:07:33,050 --> 00:07:33,770
+Let's run it again.
+
+121
+00:07:37,930 --> 00:07:38,890
+There it passed.
+
+122
+00:07:39,550 --> 00:07:40,520
+Well, that was easy enough.
+
+123
+00:07:40,540 --> 00:07:45,250
+And if we put a route that doesn't exist up here like fish, it should fail.
+
+124
+00:07:48,570 --> 00:07:49,290
+And it failed.
+
+125
+00:07:49,410 --> 00:07:52,350
+So that test does exactly what it should.
+
+126
+00:07:52,440 --> 00:07:52,830
+Okay.
+
+127
+00:07:54,000 --> 00:07:54,330
+All right.
+
+128
+00:07:54,360 --> 00:07:55,230
+That was easy enough.
+
+129
+00:07:55,260 --> 00:07:58,290
+Let's move on and write our next test for this project.

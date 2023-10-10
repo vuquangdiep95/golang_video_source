@@ -1,0 +1,227 @@
+1
+00:00:01,240 --> 00:00:04,220
+So the next step is to create the correct Makefile.
+
+2
+00:00:04,240 --> 00:00:08,500
+Now, some users might not use a Makefile, but many do, myself included.
+
+3
+00:00:09,100 --> 00:00:14,950
+And if you recall, if you look at the repository for our remote application, which I called skeleton
+
+4
+00:00:14,950 --> 00:00:21,280
+application at GitHub dot com slash Tesla slash celebrities slash app, we have two versions of the
+
+5
+00:00:21,280 --> 00:00:24,730
+Makefile one for Mac and Linux and one for Windows.
+
+6
+00:00:24,760 --> 00:00:29,170
+And of course, we want to make the appropriate one for the users operating system.
+
+7
+00:00:29,590 --> 00:00:30,770
+The actual Makefile.
+
+8
+00:00:30,790 --> 00:00:38,770
+So let's go back to our code and here in New Dot Go right at Line fifty seven in my code, I need to
+
+9
+00:00:38,770 --> 00:00:39,610
+create a make file.
+
+10
+00:00:40,210 --> 00:00:44,020
+So obviously the first thing I have to do is to determine what operating system you want.
+
+11
+00:00:44,140 --> 00:00:48,010
+And the only thing I really care about is, are you on windows or not?
+
+12
+00:00:48,280 --> 00:00:49,180
+And that's really simple.
+
+13
+00:00:49,630 --> 00:00:59,890
+We can use something ready to the standard library if runtime right there dont go OS right there, if
+
+14
+00:00:59,890 --> 00:01:05,710
+that's equal to in lower case windows and I'll do something, otherwise I'll do something else.
+
+15
+00:01:06,160 --> 00:01:10,750
+So if it is windows, then I'm going to be using that file make filed out windows.
+
+16
+00:01:11,080 --> 00:01:16,210
+So what I'll do is create a file called source or a variable called source, and then I'll check for
+
+17
+00:01:16,210 --> 00:01:19,720
+an error and those come from OST open.
+
+18
+00:01:20,170 --> 00:01:21,520
+I got rid of the standard library.
+
+19
+00:01:21,580 --> 00:01:25,750
+We're just going to open the file and the file we want to open is formatted as per death.
+
+20
+00:01:25,930 --> 00:01:32,800
+So we need this in the form of a string and a format string is dot slash percent s and then capital
+
+21
+00:01:32,890 --> 00:01:35,050
+Makefile Typekit windows.
+
+22
+00:01:36,010 --> 00:01:39,760
+And my substitution as usual is happening, so I open that file.
+
+23
+00:01:40,180 --> 00:01:40,540
+OK.
+
+24
+00:01:41,620 --> 00:01:46,750
+And we'll check for an error, so I'll just copy this and paste it in here.
+
+25
+00:01:48,850 --> 00:01:52,030
+And if we get past that, then I need to make sure that file gets closed.
+
+26
+00:01:52,120 --> 00:01:54,750
+So I'll defer source close.
+
+27
+00:01:56,240 --> 00:01:56,650
+OK?
+
+28
+00:01:57,880 --> 00:01:59,590
+And now I want a destination.
+
+29
+00:02:00,190 --> 00:02:02,230
+So I'll create a variable called destination.
+
+30
+00:02:03,550 --> 00:02:09,220
+And of course, this is where we're going to copy the final version of the file and I'll check for an
+
+31
+00:02:09,220 --> 00:02:09,550
+error.
+
+32
+00:02:09,550 --> 00:02:12,400
+And those come from O's script.
+
+33
+00:02:12,610 --> 00:02:14,500
+We're going to create a file this time and again.
+
+34
+00:02:14,920 --> 00:02:24,880
+Its format is print off with the format string of dots percent s and now I want to call it make file
+
+35
+00:02:24,880 --> 00:02:34,330
+with no extension or my substitution is name and I'll paste in my error check and I'll defer destination
+
+36
+00:02:35,440 --> 00:02:40,150
+destination dot close and our copy it.
+
+37
+00:02:40,330 --> 00:02:47,740
+So I don't care about the return value, but I do care about an error and that's equal to Io dot copy
+
+38
+00:02:48,910 --> 00:02:52,660
+from to destination from source.
+
+39
+00:02:55,640 --> 00:02:57,110
+And I'll paste in my air, Chuck.
+
+40
+00:02:57,290 --> 00:02:58,430
+And that should be that.
+
+41
+00:02:59,870 --> 00:03:06,020
+Now I'll copy all of this logic because very little changes and pasted in here.
+
+42
+00:03:07,160 --> 00:03:14,180
+And this time on line 78 of my code right after the L statement, it's make Dot Mac and nothing else
+
+43
+00:03:14,270 --> 00:03:15,080
+really changes.
+
+44
+00:03:15,230 --> 00:03:20,570
+Now, obviously, you could make this one statement and just change the file name, make fold up Mac
+
+45
+00:03:20,570 --> 00:03:22,220
+or make fold up Windows appropriately.
+
+46
+00:03:22,520 --> 00:03:25,750
+But I want to make this as readable as possible for you, so I'll leave it like this.
+
+47
+00:03:25,760 --> 00:03:28,700
+And if you want to simplify this code, you feel free to do so.
+
+48
+00:03:30,230 --> 00:03:36,290
+And the last thing I need to do after this whole, if else statement is to delete, make file dot mac
+
+49
+00:03:36,290 --> 00:03:37,480
+and make folder up windows.
+
+50
+00:03:37,490 --> 00:03:42,560
+So I don't care about the return value, but I'm going to call the West Doc Remove and I'm going to
+
+51
+00:03:42,560 --> 00:03:55,910
+remove and I'll just put Dot Slash Plus app name plus slash make file Mac and I'll duplicate that and
+
+52
+00:03:55,910 --> 00:03:56,780
+put Windows there.
+
+53
+00:03:59,790 --> 00:04:00,180
+OK.
+
+54
+00:04:01,770 --> 00:04:07,670
+Now, the next step is to update the Goedert mod file, and what we'll do is actually delete the Dot
+
+55
+00:04:07,680 --> 00:04:11,310
+Mod file that's there and put it in one that we can create by hand.
+
+56
+00:04:11,310 --> 00:04:16,590
+And that's a pretty simple process, almost identical to what we did with the dot on file, and we'll
+
+57
+00:04:16,590 --> 00:04:18,150
+take care of that in the next lecture.

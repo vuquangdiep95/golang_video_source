@@ -1,0 +1,343 @@
+1
+00:00:13,810 --> 00:00:20,080
+Hello and welcome to the golems programming language course in the Pentagon session, we talked about
+
+2
+00:00:20,080 --> 00:00:23,620
+assignment operators and indecision.
+
+3
+00:00:23,830 --> 00:00:27,040
+We want to talk about the other operators concept.
+
+4
+00:00:32,770 --> 00:00:41,410
+Competition operators, competition operators or relational operators are used to compare to values,
+
+5
+00:00:42,100 --> 00:00:53,320
+competition operators in go language are equal to not equal to less than less than equal to greater
+
+6
+00:00:53,320 --> 00:00:56,080
+than and greater than equal to.
+
+7
+00:00:57,370 --> 00:01:03,820
+Now let's go to this school program to illustrate how to use competition operators.
+
+8
+00:01:04,510 --> 00:01:07,960
+First, we define two variables and initialize them.
+
+9
+00:01:07,990 --> 00:01:14,140
+For example, a in equals 50 and B calling equals 40.
+
+10
+00:01:15,960 --> 00:01:20,190
+At first, we want to create a sandpit for equal to operate.
+
+11
+00:01:20,880 --> 00:01:23,490
+So the right result?
+
+12
+00:01:23,820 --> 00:01:31,020
+One column equals a equal to B.
+
+13
+00:01:32,530 --> 00:01:38,770
+Equal tour operator checks whether the two given Australians are equal or not.
+
+14
+00:01:39,340 --> 00:01:41,110
+If so, it returns true.
+
+15
+00:01:41,350 --> 00:01:48,970
+Otherwise, it returns form for the exam period if the values of A and B are equal to each other.
+
+16
+00:01:49,180 --> 00:01:53,290
+The value of true will be stored in the resolved one variable.
+
+17
+00:01:53,650 --> 00:02:00,820
+Otherwise, the value of funds will be assigned to it now displayed the value of resolved one variable.
+
+18
+00:02:01,210 --> 00:02:02,650
+So right FP.
+
+19
+00:02:03,730 --> 00:02:18,550
+A e eku to be column comma resolved one, reformat the code, save the project and execute the program.
+
+20
+00:02:21,280 --> 00:02:24,160
+Now we can see the outputs result.
+
+21
+00:02:24,160 --> 00:02:31,930
+One value is equivalent false because the values of these two variables are not equal to each other
+
+22
+00:02:32,170 --> 00:02:34,750
+and a equal to BS.
+
+23
+00:02:34,840 --> 00:02:35,410
+False.
+
+24
+00:02:36,700 --> 00:02:47,770
+Now create a sample for not equal to a creator of first clear last code and define a variable not resolved
+
+25
+00:02:48,200 --> 00:02:50,650
+two column equals.
+
+26
+00:02:52,230 --> 00:03:02,610
+A not equal to be, not equal to operate or checks, whether the two given often are equal or not.
+
+27
+00:03:02,910 --> 00:03:05,100
+If not, it returns true.
+
+28
+00:03:05,610 --> 00:03:10,200
+Now go to the next line and display the result of variable to FP.
+
+29
+00:03:11,640 --> 00:03:13,620
+A not E!
+
+30
+00:03:13,660 --> 00:03:17,830
+Cool B column.
+
+31
+00:03:18,300 --> 00:03:25,290
+And is it resolved to reformat the code, save the project and execute it through, you know?
+
+32
+00:03:28,240 --> 00:03:36,400
+Now we can see the output result, one value is equivalent to because the values of these two variables
+
+33
+00:03:36,400 --> 00:03:42,970
+are not equal to each other, a not equal to be at, it returns true.
+
+34
+00:03:44,530 --> 00:03:47,470
+Now create a sample for less than operator.
+
+35
+00:03:47,830 --> 00:04:02,650
+So first clear the last quote define a variable like off three column equals a less than be less than
+
+36
+00:04:02,650 --> 00:04:07,450
+operator checks, whether the first or print is less or the second or print.
+
+37
+00:04:07,690 --> 00:04:09,500
+If so, it returns to.
+
+38
+00:04:09,520 --> 00:04:11,650
+Otherwise, it returns false.
+
+39
+00:04:12,040 --> 00:04:15,600
+So go to the next line and display the value of results.
+
+40
+00:04:15,600 --> 00:04:15,970
+Three.
+
+41
+00:04:15,970 --> 00:04:26,260
+Value the FP a less than be column and we said result three.
+
+42
+00:04:26,960 --> 00:04:31,480
+The format they call save the project and execute the program.
+
+43
+00:04:34,150 --> 00:04:36,550
+Now we can see the output result.
+
+44
+00:04:36,580 --> 00:04:44,170
+Three values equivalent false because the value of a variable is not less than be variable and it returns
+
+45
+00:04:44,170 --> 00:04:44,770
+false.
+
+46
+00:04:45,460 --> 00:04:49,330
+Now create a sample for less than equal do operator.
+
+47
+00:04:49,520 --> 00:04:51,730
+So first the last quote.
+
+48
+00:04:55,720 --> 00:05:08,470
+Define a variable result for column equals a less than equal to be less than equal to operate or checks,
+
+49
+00:05:08,480 --> 00:05:13,140
+whether the first or present is lesser than or equal to the second.
+
+50
+00:05:13,850 --> 00:05:15,280
+If so, it returns true.
+
+51
+00:05:15,290 --> 00:05:17,570
+Otherwise it returns false.
+
+52
+00:05:17,990 --> 00:05:31,010
+So go to the next line and display the reason for value FP a less than equal to be in.
+
+53
+00:05:31,010 --> 00:05:39,050
+And we said reason for reform at the core, say the project and execute the program again.
+
+54
+00:05:43,050 --> 00:05:52,350
+Now we can see the output result for value is equivalent false because the value of a variable is not
+
+55
+00:05:52,350 --> 00:05:57,330
+lesser than or equal to be variable and its returns false.
+
+56
+00:05:58,440 --> 00:06:02,070
+Now we want to create a sample for greater than operator.
+
+57
+00:06:02,280 --> 00:06:04,580
+So first, clear the last code.
+
+58
+00:06:05,640 --> 00:06:12,900
+So define a variable like these five column equals a greater than B.
+
+59
+00:06:14,990 --> 00:06:20,000
+Greater than operator checks, whether the first or print is greater than the second or print.
+
+60
+00:06:20,420 --> 00:06:22,140
+If so, it returns true.
+
+61
+00:06:22,160 --> 00:06:24,440
+Otherwise, it returns false.
+
+62
+00:06:24,770 --> 00:06:27,470
+Now go to the next line and display the result.
+
+63
+00:06:27,470 --> 00:06:36,620
+Five Variable value so of right Duffy a greater Din B column, he said.
+
+64
+00:06:36,620 --> 00:06:38,030
+Resolved five.
+
+65
+00:06:39,650 --> 00:06:40,670
+Reformat the call.
+
+66
+00:06:41,060 --> 00:06:43,820
+Save the perfect time to execute the program.
+
+67
+00:06:46,520 --> 00:06:54,350
+Now we can see the output result five value is equivalent to because the value of a variable is greater
+
+68
+00:06:54,350 --> 00:06:57,650
+than to be variable, and it returns true.
+
+69
+00:06:59,120 --> 00:07:03,920
+Now you want to create an example for greater than equal to or greater.
+
+70
+00:07:04,340 --> 00:07:15,590
+So first clear the last quote define a variable like resolved six column equals a greater than equal
+
+71
+00:07:15,590 --> 00:07:16,550
+to be.
+
+72
+00:07:18,930 --> 00:07:26,010
+Greeter Danny Cool two operator checks whether the first or grant is greater than or equal to the second
+
+73
+00:07:26,010 --> 00:07:26,420
+option.
+
+74
+00:07:26,820 --> 00:07:28,310
+If so, it returns true.
+
+75
+00:07:28,320 --> 00:07:30,570
+Otherwise it retains fast.
+
+76
+00:07:30,870 --> 00:07:33,810
+So go to the next line and display the results.
+
+77
+00:07:33,810 --> 00:07:47,860
+Six Variable value So be right FP a greater than equal to be call in and we said result six value reform
+
+78
+00:07:47,860 --> 00:07:48,390
+of the code.
+
+79
+00:07:48,390 --> 00:07:51,170
+Save the project and execute the program.
+
+80
+00:07:54,820 --> 00:08:02,560
+Now we can see the output risen six value is equivalent to because the value of a variable is greater
+
+81
+00:08:02,560 --> 00:08:07,030
+than equal to be variable and is returns true.
+
+82
+00:08:07,780 --> 00:08:08,230
+OK.
+
+83
+00:08:08,260 --> 00:08:15,820
+We were able to explain the definition of conversion operators and give examples in order not to prolong
+
+84
+00:08:15,820 --> 00:08:16,990
+the time of decision.
+
+85
+00:08:17,110 --> 00:08:20,860
+We will finish it and we will continue the content in the next session.
+
+86
+00:08:20,950 --> 00:08:21,460
+Goodbye.

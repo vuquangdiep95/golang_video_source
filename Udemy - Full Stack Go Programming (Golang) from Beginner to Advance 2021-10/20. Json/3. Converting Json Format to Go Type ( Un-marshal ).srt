@@ -1,0 +1,163 @@
+1
+00:00:12,890 --> 00:00:18,710
+Hello and welcome to the golden programming language course in the previous session, we talked about
+
+2
+00:00:18,710 --> 00:00:23,930
+Jason concepts, and in this session we want to talk about the authors Jason Concepts.
+
+3
+00:00:26,950 --> 00:00:35,980
+Converting JSON data to a go type in go blank, we can convert JSON time to go, time to do these views
+
+4
+00:00:35,980 --> 00:00:37,510
+on marshall function.
+
+5
+00:00:40,510 --> 00:00:47,950
+Don Marshall function in package and coding, Jason is used to decode JSON data into Go Lang taught
+
+6
+00:00:48,310 --> 00:00:55,420
+on Marshall function axis and Arnold vide and an interface and returns the error message.
+
+7
+00:00:56,020 --> 00:00:59,710
+This interface is the instrument to which the JSON backward.
+
+8
+00:01:00,250 --> 00:01:02,530
+Now you can see the syntax.
+
+9
+00:01:03,430 --> 00:01:10,840
+Let's go to this code for a guitar to illustrate how to convert JSON data into go length time by using
+
+10
+00:01:10,840 --> 00:01:12,250
+on Marshon function.
+
+11
+00:01:14,090 --> 00:01:22,730
+Go to project, explore and define the Fine Line campaign that school since Package Maine
+
+12
+00:01:25,370 --> 00:01:35,630
+and Define Maine function from Maine first create this stroke like person, including some fields.
+
+13
+00:01:36,350 --> 00:01:51,650
+So the right time person extract and define some variables like name by the time the strange and age
+
+14
+00:01:51,650 --> 00:02:04,370
+by type and 64 and location by the time estrange now go to Maine function and continue.
+
+15
+00:02:06,170 --> 00:02:10,850
+First, define an array of bind and sets adjacent value in it.
+
+16
+00:02:11,300 --> 00:02:20,480
+For example, define a variable like j calling equals array of bytes, sets back to song and sets a
+
+17
+00:02:20,480 --> 00:02:22,430
+JSON value between it.
+
+18
+00:02:23,240 --> 00:02:48,140
+For example, name Colin Key Comma Age Column 20 Comma Location Column Texas.
+
+19
+00:02:48,650 --> 00:02:56,060
+So we define a person object like p value p pers.
+
+20
+00:02:59,160 --> 00:03:05,280
+Now you can en marche en fonction from Jason Package and post two arguments to it.
+
+21
+00:03:05,520 --> 00:03:09,660
+First, define byte array and second define estriol object.
+
+22
+00:03:09,720 --> 00:03:16,980
+First, define a variable as return value like Aaron calling equals and calling on Marshon function
+
+23
+00:03:16,980 --> 00:03:18,810
+from JSON package
+
+24
+00:03:21,540 --> 00:03:29,730
+and sit j parse first argument and sit ampersand p as second arguments.
+
+25
+00:03:30,660 --> 00:03:32,760
+Now check error status
+
+26
+00:03:35,460 --> 00:03:37,950
+lock that ratcliff
+
+27
+00:03:41,010 --> 00:03:41,970
+unable
+
+28
+00:03:44,820 --> 00:03:48,750
+to decode the JS.
+
+29
+00:03:50,910 --> 00:03:54,010
+Now print the object and see the value of it.
+
+30
+00:03:54,030 --> 00:04:13,430
+If f nine percent is back is less than eight, then the back end and the location percent is backslash
+
+31
+00:04:13,970 --> 00:04:16,620
+and sets value for it.
+
+32
+00:04:16,950 --> 00:04:17,910
+P dot.
+
+33
+00:04:18,450 --> 00:04:27,180
+Name comma, p, dot h and p dot location.
+
+34
+00:04:28,110 --> 00:04:28,510
+OK.
+
+35
+00:04:28,620 --> 00:04:32,520
+Reformat the code, save the project and execute the program.
+
+36
+00:04:32,700 --> 00:04:35,610
+Go from Dot package slash.
+
+37
+00:04:35,610 --> 00:04:36,990
+May that go.
+
+38
+00:04:39,020 --> 00:04:48,140
+OK, now we can see the output name is Jean, age is 20 and location is takes us now we could convert
+
+39
+00:04:48,140 --> 00:04:53,540
+a JSON value to a golden data in order not to prolong the time of decision.
+
+40
+00:04:53,550 --> 00:04:57,440
+We will finish it and we will continue the content in the next session.
+
+41
+00:04:57,800 --> 00:04:58,370
+Goodbye.

@@ -1,0 +1,128 @@
+1
+00:00:01,410 --> 00:00:02,700
+So let's see if we got everything right.
+
+2
+00:00:02,880 --> 00:00:08,130
+Right now, we have our logout function and that's called when someone chooses, log in from the dropdown
+
+3
+00:00:08,130 --> 00:00:12,990
+menu on the web app and that will of course, delete a remember token if it exists.
+
+4
+00:00:12,990 --> 00:00:14,460
+And then it calls social logout.
+
+5
+00:00:14,580 --> 00:00:19,460
+And that is the one that will actually check to see if social provider exists in the session.
+
+6
+00:00:19,470 --> 00:00:21,090
+If it doesn't, it just returns.
+
+7
+00:00:21,090 --> 00:00:25,200
+And if it does, then in our case it should call GitHub API.
+
+8
+00:00:25,500 --> 00:00:26,750
+Let's see if we got everything right.
+
+9
+00:00:26,760 --> 00:00:30,840
+So I'm going to stop my application, make stop and restart.
+
+10
+00:00:30,840 --> 00:00:38,130
+It may start and I should still be logged in because I haven't logged in yet and my token doesn't expire
+
+11
+00:00:38,130 --> 00:00:38,970
+for 30 days.
+
+12
+00:00:40,240 --> 00:00:41,320
+So everything compiled.
+
+13
+00:00:41,710 --> 00:00:47,110
+Let's go back to our Web browser, and I'll just refresh the page to make sure its current look under
+
+14
+00:00:47,110 --> 00:00:48,160
+the user's menu.
+
+15
+00:00:48,190 --> 00:00:49,030
+There's my log in.
+
+16
+00:00:49,210 --> 00:00:51,250
+But first, I'll go to off on GitHub.
+
+17
+00:00:52,060 --> 00:00:53,410
+Refresh this page.
+
+18
+00:00:53,860 --> 00:00:59,830
+I have one user right now and I'll go back to my application and I'll try logging it and see if I got
+
+19
+00:00:59,830 --> 00:01:00,190
+it right.
+
+20
+00:01:01,950 --> 00:01:07,770
+OK, so I've logged out in my log out button or menu item is gone, so that's good.
+
+21
+00:01:08,250 --> 00:01:11,280
+But now let's go refresh this page over on GitHub.
+
+22
+00:01:12,860 --> 00:01:16,070
+We have zero users, and now if I try to log in.
+
+23
+00:01:17,020 --> 00:01:19,960
+It takes me back and asked me to reauthorize Perfect.
+
+24
+00:01:20,710 --> 00:01:25,150
+Now, just so, you know, the only reason I don't have to enter my username and password here is because
+
+25
+00:01:25,150 --> 00:01:27,430
+I'm already logged in to GitHub and another window.
+
+26
+00:01:27,790 --> 00:01:29,140
+And that's still active.
+
+27
+00:01:29,500 --> 00:01:34,480
+But if I do this back and forth, back and forth, logging in and logging out eventually, and it doesn't
+
+28
+00:01:34,480 --> 00:01:35,290
+take very long.
+
+29
+00:01:36,300 --> 00:01:40,860
+GitHub will say there have been an awful lot of requests to authenticate for your account, so I'm going
+
+30
+00:01:40,860 --> 00:01:42,990
+to ask you to enter your password in right now.
+
+31
+00:01:43,110 --> 00:01:44,970
+And that's just, you know, what's going on here.
+
+32
+00:01:45,090 --> 00:01:50,520
+All right, so let's move on and implement some of the similar functionality for Google.
+

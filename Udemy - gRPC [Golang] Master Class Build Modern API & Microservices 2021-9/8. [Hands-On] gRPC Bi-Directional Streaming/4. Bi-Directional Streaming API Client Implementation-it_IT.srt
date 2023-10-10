@@ -1,0 +1,588 @@
+1
+00:00:00,110 --> 00:00:05,550
+OK, andiamo avanti con uno streaming bidirezionale con i clienti e andremo avanti e vedremo
+
+2
+00:00:05,550 --> 00:00:07,460
+ben testato contro il server.
+
+3
+00:00:07,500 --> 00:00:12,180
+Ma questa cosa è che ora useremo delle buone routine solo per mostrare come possiamo fare
+
+4
+00:00:12,180 --> 00:00:15,190
+cose in parallelo incluso l'invio e la ricezione in parallelo.
+
+5
+00:00:15,450 --> 00:00:20,280
+Quindi sarà abbastanza interessante un po 'più complicato perché ora ci sono più buone routine in esecuzione in
+
+6
+00:00:20,280 --> 00:00:20,770
+parallelo.
+
+7
+00:00:20,850 --> 00:00:22,980
+Ma se non ci sei, dovrebbe andare bene.
+
+8
+00:00:23,190 --> 00:00:24,540
+Faremo anche uso dei canali.
+
+9
+00:00:24,540 --> 00:00:28,450
+Quindi è un concetto un po 'avanzato ma nel complesso è piuttosto semplice da leggere.
+
+10
+00:00:28,470 --> 00:00:30,460
+Andiamo avanti e provalo.
+
+11
+00:00:31,130 --> 00:00:31,510
+OK.
+
+12
+00:00:31,530 --> 00:00:34,900
+Quindi andiamo avanti e apriamo i client di saluto.
+
+13
+00:00:35,250 --> 00:00:41,450
+E così il client greco ora farà uno streaming streaming bidirezionale.
+
+14
+00:00:41,460 --> 00:00:43,520
+Quindi andiamo avanti e creiamo quella funzione.
+
+15
+00:00:43,530 --> 00:00:54,420
+Quindi copro semplicemente queste righe qui e diremo go fa byde streaming OK.
+
+16
+00:00:54,620 --> 00:00:59,170
+Quindi l'unica cosa che devo fare è fondamentalmente che ci sono due cose giuste.
+
+17
+00:00:59,240 --> 00:01:06,420
+Quindi creiamo uno stream invocando il client giusto.
+
+18
+00:01:06,500 --> 00:01:14,870
+Quindi inviamo un sacco di messaggi ai clienti e possiamo avere questo nella sua routine di go.
+
+19
+00:01:15,590 --> 00:01:25,270
+E poi possiamo anche mandare un gruppo a ricevere un sacco di messaggi dai clienti.
+
+20
+00:01:25,480 --> 00:01:28,000
+E questa è una routine separata.
+
+21
+00:01:28,000 --> 00:01:33,180
+E in pratica vogliamo bloccare fino a quando non è stato fatto tutto.
+
+22
+00:01:33,250 --> 00:01:35,880
+Questo è lo pseudo codice di ciò che stiamo cercando di fare.
+
+23
+00:01:35,920 --> 00:01:37,610
+Quindi andiamo uno per uno.
+
+24
+00:01:37,920 --> 00:01:43,810
+Se vediamo i punti abbiamo un saluto a tutti e questo è il nostro streaming proprio qui
+
+25
+00:01:43,810 --> 00:01:49,120
+nel contesto in cui saremo sfondi e le opzioni non sono altro che per ora.
+
+26
+00:01:49,330 --> 00:01:52,380
+Ciò restituirà un flusso e un errore.
+
+27
+00:01:52,900 --> 00:01:54,310
+Quindi andiamo avanti con questo.
+
+28
+00:01:54,670 --> 00:01:59,760
+E come al solito se l'aria non è uguale a zero, allora non siamo felici.
+
+29
+00:01:59,950 --> 00:02:09,460
+Mi è piaciuta l'aria federale mentre creavo il flusso e passavo nell'aria.
+
+30
+00:02:12,620 --> 00:02:14,390
+E torneranno.
+
+31
+00:02:14,390 --> 00:02:17,030
+Altrimenti il flusso è corretto.
+
+32
+00:02:17,030 --> 00:02:24,740
+Quindi ora possiamo inviare un sacco di messaggi ai client, per fare ciò possiamo fare una funzione di go e definiremo
+
+33
+00:02:24,740 --> 00:02:27,470
+quella funzione e quindi invocheremo quella funzione.
+
+34
+00:02:27,470 --> 00:02:31,330
+Ecco, questo è il formato giusto qui.
+
+35
+00:02:31,570 --> 00:02:36,930
+E quindi qui diciamo la funzione per inviare un sacco di messaggi.
+
+36
+00:02:37,130 --> 00:02:37,650
+Destra.
+
+37
+00:02:37,790 --> 00:02:44,420
+E poi riceveremo un sacco di messaggi, quindi andremo anche a fare funk proprio qui e questo è quello di ricevere un
+
+38
+00:02:44,420 --> 00:02:49,020
+sacco di messaggi e quindi dobbiamo bloccare fino a quando non viene fatto tutto.
+
+39
+00:02:49,040 --> 00:02:55,840
+Quindi il modo in cui blocchi è quello di avere un piccolo trucco che è un canale di attesa in modo che possiamo fare quale canale.
+
+40
+00:02:56,140 --> 00:02:57,140
+OK.
+
+41
+00:02:57,380 --> 00:03:04,240
+E diremo che facciamo un canale di struct e destruct.
+
+42
+00:03:04,440 --> 00:03:08,510
+E quindi questo fondamentalmente sta dicendo che abbiamo un canale in modo che possiamo usarlo seguendo le routine.
+
+43
+00:03:08,580 --> 00:03:09,310
+OK.
+
+44
+00:03:09,690 --> 00:03:12,210
+Ed è composto da camion in modo da non prendere alcun dato.
+
+45
+00:03:12,480 --> 00:03:19,110
+Ma ora possiamo fondamentalmente bloccarlo, quindi bloccarlo alla fine dirà aspettare e aspettiamo fondamentalmente che
+
+46
+00:03:19,110 --> 00:03:21,270
+il canale venga chiuso.
+
+47
+00:03:21,450 --> 00:03:22,210
+OK.
+
+48
+00:03:22,530 --> 00:03:27,020
+Quindi andiamo avanti ed eseguiamo la prima funzione per inviare un sacco di messaggi.
+
+49
+00:03:27,030 --> 00:03:29,110
+Quindi per questo abbiamo bisogno di creare alcuni dati.
+
+50
+00:03:29,130 --> 00:03:35,100
+Quindi copia le richieste proprio qui abbiamo già un sacco di richieste.
+
+51
+00:03:35,100 --> 00:03:39,420
+Quindi andrò avanti e copio questo qui solo così che sembra
+
+52
+00:03:42,820 --> 00:03:47,230
+bello e poi ci occuperemo di queste richieste, quindi dobbiamo inviare ogni richiesta.
+
+53
+00:03:47,230 --> 00:03:48,520
+Quindi
+
+54
+00:03:50,970 --> 00:03:57,730
+diremo ad esempio le richieste in una gamma di richieste.
+
+55
+00:03:58,370 --> 00:03:59,190
+Cosa faremo.
+
+56
+00:03:59,180 --> 00:04:04,900
+Stiamo per inviare questa richiesta in modo che possiamo dire lo streaming che invia.
+
+57
+00:04:05,450 --> 00:04:09,300
+E poi quando invii la richiesta OK.
+
+58
+00:04:09,740 --> 00:04:13,570
+Questo sembra abbastanza buono anche se il tipo di richiesta è sbagliato.
+
+59
+00:04:13,880 --> 00:04:14,800
+Non è più una lettura.
+
+60
+00:04:14,810 --> 00:04:15,200
+Abbiamo.
+
+61
+00:04:15,200 --> 00:04:22,230
+Abbiamo bisogno di salutare tutti, quindi ho solo bisogno di rinominare tutto saluta tutti, quindi fammi solo rinominare
+
+62
+00:04:22,230 --> 00:04:28,400
+qui tutto e questa è la bellezza di andare è che c'è qualcosa di simile.
+
+63
+00:04:28,430 --> 00:04:32,180
+Quindi, se abbiamo il tipo sbagliato di messaggi, vogliamo accettarlo ovviamente.
+
+64
+00:04:32,200 --> 00:04:42,450
+Quindi abbiamo una richiesta e ora abbiamo inviato ciascuno di loro e forse dormiremo per circa un secondo millisecondo.
+
+65
+00:04:42,620 --> 00:04:43,650
+Sembra giusto.
+
+66
+00:04:45,010 --> 00:04:46,000
+E questo è bello.
+
+67
+00:04:46,000 --> 00:04:55,030
+Quindi qui dirò che possiamo stampare qualcosa, ad esempio sullo schermo possiamo dire di inviare un messaggio e poi passeremo
+
+68
+00:04:55,990 --> 00:05:00,700
+e il messaggio che inviamo la richiesta e poi dormiremo
+
+69
+00:05:03,990 --> 00:05:05,130
+un secondo.
+
+70
+00:05:05,130 --> 00:05:08,190
+Quindi questo funzionerà nella sua routine.
+
+71
+00:05:08,280 --> 00:05:08,880
+OK.
+
+72
+00:05:09,120 --> 00:05:16,030
+E fondamentalmente quando abbiamo finito con questo quando abbiamo finito dato che tutto ciò che possiamo fare è inviare i vestiti.
+
+73
+00:05:16,290 --> 00:05:19,340
+E questo in pratica significa che abbiamo finito con l'invio di materiale al flusso.
+
+74
+00:05:19,410 --> 00:05:26,010
+Quindi inviamo cinque messaggi e quando abbiamo finito e questo è tutto per la routine.
+
+75
+00:05:26,100 --> 00:05:29,910
+Non devi metterlo in una buona routine, ma trovo molto più divertente dover andare, che
+
+76
+00:05:29,910 --> 00:05:34,550
+è in esecuzione e in esecuzione allo stesso tempo perché mostra davvero come le cose possono accadere in parallelo.
+
+77
+00:05:34,560 --> 00:05:40,090
+Ora dobbiamo ricevere un sacco di messaggi e quindi andiamo avanti e scriviamo questa funzione.
+
+78
+00:05:40,410 --> 00:05:45,510
+Quindi, in pratica, se hai seguito ciò che abbiamo fatto ogni volta che riceviamo un flusso, c'è
+
+79
+00:05:45,540 --> 00:05:51,210
+una funzione di ricezione in quella funzione di ricezione che restituisce una risposta di benvenuto a tutti e un errore.
+
+80
+00:05:51,210 --> 00:05:53,030
+Andiamo avanti e riceviamo questo.
+
+81
+00:05:53,040 --> 00:05:56,720
+Quindi avremo ricevuto l'aria di risposta.
+
+82
+00:05:56,820 --> 00:05:58,480
+Quindi se c'è un errore.
+
+83
+00:05:58,890 --> 00:06:04,650
+Bene, se l'aria non è uguale a zero, allora non va bene.
+
+84
+00:06:04,650 --> 00:06:16,380
+Quindi registrerà questo errore durante la ricezione e passeremo semplicemente in onda e in realtà un caso con cui hai a che fare prima è che se l'aria
+
+85
+00:06:16,380 --> 00:06:22,540
+è un errore di fine file, allora è ciò che vogliamo è la fine
+
+86
+00:06:22,540 --> 00:06:26,940
+del flusso che noi può chiudere il canale di attesa.
+
+87
+00:06:26,950 --> 00:06:29,110
+Quindi questa è la nostra funzione di uscita per questo canale bagnato.
+
+88
+00:06:29,140 --> 00:06:35,170
+Fondamentalmente quando raggiungiamo la fine del flusso dal server, chiudiamo il canale e
+
+89
+00:06:35,170 --> 00:06:38,460
+chiudendo il canale questo sbloccherà tutto.
+
+90
+00:06:38,470 --> 00:06:39,750
+Quindi questo sembra buono.
+
+91
+00:06:40,270 --> 00:06:44,740
+E ora ogni volta che otteniamo un risultato che possiamo fare
+
+92
+00:06:44,740 --> 00:06:58,510
+un sacco di cose con i nostri risultati, ma lasciamo solo stamparlo in modo che possiamo dire se gli anti-tagli si stampano e possiamo dire di ricevere ricevuto e stamperò solo ciò che
+
+93
+00:06:58,510 --> 00:07:01,870
+abbiamo ricevuto che è il risultato stesso.
+
+94
+00:07:01,930 --> 00:07:03,570
+Quindi sembra corretto e possiamo farlo.
+
+95
+00:07:03,580 --> 00:07:04,690
+Ottieni risultati.
+
+96
+00:07:05,170 --> 00:07:06,000
+Va bene.
+
+97
+00:07:06,010 --> 00:07:09,500
+E anche qui potresti anche chiudere il canale qui.
+
+98
+00:07:09,550 --> 00:07:15,130
+Se, ad esempio, ricevi un errore, potrebbe essere qualcosa che vuoi fare.
+
+99
+00:07:15,190 --> 00:07:17,200
+Quindi solo alcune opzioni per te.
+
+100
+00:07:17,770 --> 00:07:19,210
+Va bene così tutto sembra a posto.
+
+101
+00:07:19,210 --> 00:07:24,400
+Quindi, in pratica, abbiamo due funzioni che inviano i dati in una ricezione e stampano i dati e
+
+102
+00:07:24,400 --> 00:07:26,300
+che corrono tutti paralleli l'uno dall'altro.
+
+103
+00:07:26,470 --> 00:07:34,450
+E poi quando ha finito quando è fatto, avremo una chiusura e quando la chiusura sarà conclusa, il peso
+
+104
+00:07:34,450 --> 00:07:35,930
+stesso verrà chiuso.
+
+105
+00:07:35,950 --> 00:07:40,730
+Quindi sembra che adesso dobbiamo testarlo solo per assicurarmi di non aver commesso errori.
+
+106
+00:07:40,780 --> 00:07:43,430
+Quindi questa è la parte diversa.
+
+107
+00:07:43,510 --> 00:07:48,820
+Quindi lascia andare avanti ed eseguire il server grete in modo che possiamo andare avanti ed eseguire il server
+
+108
+00:07:48,880 --> 00:07:53,920
+in modo che il client si spiace così possiamo andare a correre grandi clienti e vediamo se funziona.
+
+109
+00:07:53,920 --> 00:07:55,900
+Quindi sembra che funzioni.
+
+110
+00:07:56,140 --> 00:07:57,430
+In realtà non funziona.
+
+111
+00:07:57,430 --> 00:07:57,930
+Quindi andiamo.
+
+112
+00:07:58,030 --> 00:07:59,420
+Questo è in realtà molto interessante.
+
+113
+00:07:59,440 --> 00:08:00,900
+Quindi, cosa sta succedendo.
+
+114
+00:08:00,940 --> 00:08:08,350
+Abbiamo clienti che sono in esecuzione e manda il primo messaggio Stefan e poi usa Helo's define poi invia il
+
+115
+00:08:08,920 --> 00:08:14,500
+secondo messaggio John ma non riceve nulla allora invia il quarto terzo e quinto
+
+116
+00:08:14,500 --> 00:08:17,740
+messaggio e non riceve alcun messaggio messaggi indietro.
+
+117
+00:08:17,740 --> 00:08:18,900
+E ora è solo bloccato.
+
+118
+00:08:18,910 --> 00:08:19,900
+I miei clienti
+
+119
+00:08:20,080 --> 00:08:24,450
+Quindi la mia ipotesi è che mi manca un ciclo for, ma facciamo un doppio controllo.
+
+120
+00:08:24,730 --> 00:08:25,580
+Quindi diamo un'occhiata.
+
+121
+00:08:25,630 --> 00:08:29,480
+E qui al centro funziona perfettamente ed è fantastico.
+
+122
+00:08:30,260 --> 00:08:35,830
+Ma sì, dal lato di ricezione, proprio qui sulla funzione di Rissi, non ho fatto le cose correttamente.
+
+123
+00:08:35,910 --> 00:08:39,250
+Ho bisogno che tu abbia un ciclo per uscire da questo ovviamente.
+
+124
+00:08:39,650 --> 00:08:43,000
+Quindi avrò un ciclo for proprio qui.
+
+125
+00:08:43,780 --> 00:08:44,900
+Che suona alla grande
+
+126
+00:08:44,920 --> 00:08:52,000
+Ora i vestiti posso effettivamente metterlo fuori dal ciclo for qui dentro posso solo spezzarlo rompendo il mio per un giro e
+
+127
+00:08:52,000 --> 00:08:54,990
+qui posso rompere il mio per un giro.
+
+128
+00:08:55,060 --> 00:09:01,960
+Quindi, avendo un 4, costringerò il mio allenatore a leggere più che a leggere più di un messaggio che è esattamente
+
+129
+00:09:01,960 --> 00:09:03,310
+quello che voglio.
+
+130
+00:09:03,370 --> 00:09:07,870
+E anche quando inviamo ricevuto mi piace avere una nuova linea.
+
+131
+00:09:07,870 --> 00:09:09,960
+Quindi sembra che funzionerà meglio.
+
+132
+00:09:10,060 --> 00:09:12,230
+Facciamo un altro tentativo.
+
+133
+00:09:12,340 --> 00:09:15,840
+Quindi fermiamoci ed eseguiamo nuovamente il client.
+
+134
+00:09:16,660 --> 00:09:19,520
+E ora dice che funziona perfettamente.
+
+135
+00:09:19,520 --> 00:09:20,740
+Quindi diamo un'occhiata.
+
+136
+00:09:20,810 --> 00:09:22,730
+Dice l'invio di un messaggio.
+
+137
+00:09:22,750 --> 00:09:27,290
+Saluti Stefan e riceve aiuto definire Stefan che invia il messaggio di saluto a Giovanni e riceve.
+
+138
+00:09:27,290 --> 00:09:28,200
+Ciao John.
+
+139
+00:09:28,230 --> 00:09:34,310
+E quindi questo è lo streaming bidirezionale e puoi inviarne quante ne vuoi e riceverle il
+
+140
+00:09:34,310 --> 00:09:35,710
+più velocemente possibile.
+
+141
+00:09:35,720 --> 00:09:38,210
+Questa è davvero la potenza dello streaming bidirezionale.
+
+142
+00:09:38,540 --> 00:09:40,550
+Quindi funziona davvero molto bene.
+
+143
+00:09:40,580 --> 00:09:46,520
+Quello che voglio davvero che tu mostri è che ora puoi usare la funzione go per invocare roba in parallelo sul tuo
+
+144
+00:09:46,520 --> 00:09:48,310
+codice e questo è davvero sorprendente.
+
+145
+00:09:48,680 --> 00:09:50,030
+Quindi spero che sia stato utile.
+
+146
+00:09:50,030 --> 00:09:53,300
+Spero che abbia senso e spero che tu abbia visto l'errore prima di vederlo.
+
+147
+00:09:53,330 --> 00:09:56,720
+Sono sicuro che l'hai fatto e ti vedremo nella prossima lezione dopo la tua pratica.
+

@@ -1,0 +1,528 @@
+1
+00:00:00,220 --> 00:00:05,740
+OK, chi hai intenzione di creare il nostro progetto per avere un servizio da brivido da usare tra una buona TV.
+
+2
+00:00:05,900 --> 00:00:09,080
+Quindi, per questo, eseguirò un po 'di configurazione proprio come facevamo prima.
+
+3
+00:00:09,210 --> 00:00:15,140
+Quindi crea una directory Blug e sotto quella directory mi limiterò a copiare quello che ho fatto per una calcolatrice.
+
+4
+00:00:15,390 --> 00:00:21,690
+Quindi ci saranno clienti di blog, poi ci sarà anche un server di blog.
+
+5
+00:00:21,960 --> 00:00:24,290
+E infine ci sarà un blog P. B ..
+
+6
+00:00:24,540 --> 00:00:27,930
+Quindi, tranne tutti i miei alberi sono un po 'incasinato.
+
+7
+00:00:27,930 --> 00:00:28,320
+Va bene.
+
+8
+00:00:28,320 --> 00:00:29,970
+Lo rimetterò in ordine.
+
+9
+00:00:29,970 --> 00:00:30,760
+Eccoci qui.
+
+10
+00:00:31,080 --> 00:00:31,370
+OK.
+
+11
+00:00:31,410 --> 00:00:40,770
+Ora all'interno di ogni famiglia in realtà crea alcuni client così i clienti che vanno e qui sarà server dog go.
+
+12
+00:00:40,770 --> 00:00:48,030
+E poi finalmente per Blug P. B. sarà Blug che Protel e creerà quella spina in due secondi.
+
+13
+00:00:48,420 --> 00:00:50,190
+OK, questo è tutto per ora.
+
+14
+00:00:50,190 --> 00:00:54,300
+Ora dobbiamo solo creare tutto il codice in ognuna di queste cose.
+
+15
+00:00:54,300 --> 00:00:56,780
+Quindi iniziamo con il pro-audio perché questo è il più interessante.
+
+16
+00:00:56,790 --> 00:01:00,300
+Quindi la sintassi verrà chiamata a due o tre.
+
+17
+00:01:00,750 --> 00:01:01,520
+OK.
+
+18
+00:01:01,920 --> 00:01:07,490
+E poi dobbiamo creare il nostro messaggio sul blog, quindi diciamo che siamo nel pacchetto Blug.
+
+19
+00:01:07,980 --> 00:01:14,930
+E come opzione per un buon pacchetto sarà uguale a Blug P. B. eccellente come prima.
+
+20
+00:01:14,990 --> 00:01:21,450
+Ora possiamo Grinchy creare un messaggio Blug e avrà un ID che è possibile presentare
+
+21
+00:01:21,450 --> 00:01:28,860
+l'ID nel database, quindi avremo un ID autore che sarà il nostro altro ID in qualcosa che creiamo.
+
+22
+00:01:28,860 --> 00:01:31,200
+Quindi chi è l'autore del blog in fondo.
+
+23
+00:01:31,740 --> 00:01:36,660
+Ora il nostro blog era un titolo quindi diventeremo una stringa e avremo anche un contenuto.
+
+24
+00:01:36,870 --> 00:01:39,930
+Quindi questo sarà anche nella stringa così semplice in tutte le stringhe.
+
+25
+00:01:40,050 --> 00:01:45,660
+In un blog e finalmente dovremo creare un servizio, lo chiameremo servizio blog.
+
+26
+00:01:46,170 --> 00:01:50,850
+E per ora sarà vuoto perché stiamo solo impostando le cose e assicurandoci
+
+27
+00:01:50,850 --> 00:01:58,380
+di poter generare del codice in modo che possiamo generare dati che possiamo copiare e solo cambiare quella linea per generare
+
+28
+00:01:58,380 --> 00:02:02,550
+del codice, quindi è come fare il PV Bloccato quel Protel.
+
+29
+00:02:02,670 --> 00:02:03,660
+E questo è tutto.
+
+30
+00:02:03,660 --> 00:02:10,500
+Quindi quello che devo fare ora è eseguire questa riga di codice in modo che copi e incolli e il nostro record sia
+
+31
+00:02:10,500 --> 00:02:11,300
+stato generato.
+
+32
+00:02:11,340 --> 00:02:17,460
+Se torniamo al nostro codice possiamo vedere che un blog che P. B. è stato creato il file che è perfetto.
+
+33
+00:02:17,460 --> 00:02:21,190
+E contiene solo tutto il codice generato che abbiamo per un blog.
+
+34
+00:02:21,530 --> 00:02:22,870
+Ok, eccellente
+
+35
+00:02:22,890 --> 00:02:29,430
+Quindi, ora, ci occupiamo del codice del server in modo che il codice del server sia esattamente lo
+
+36
+00:02:29,430 --> 00:02:30,810
+stesso di prima.
+
+37
+00:02:30,810 --> 00:02:33,930
+Quindi copieremo e incolleremo molto dal server della calcolatrice.
+
+38
+00:02:34,140 --> 00:02:37,710
+Ma questa volta voglio che tu chiuda correttamente la nostra applicazione.
+
+39
+00:02:37,890 --> 00:02:39,720
+Quindi iniziamo facendo questo.
+
+40
+00:02:39,750 --> 00:02:46,670
+Quindi quello che farò è che avrò un pacchetto principale e poi avrò una funzione principale.
+
+41
+00:02:47,190 --> 00:02:47,840
+OK.
+
+42
+00:02:48,210 --> 00:02:53,220
+Ora questa funzione principale farà un sacco di cose che verranno copiate dal server della calcolatrice.
+
+43
+00:02:53,220 --> 00:02:56,010
+Quindi questo è semplicemente un ottimo server, sarà più semplice.
+
+44
+00:02:56,000 --> 00:03:02,510
+Così grande server così andare e quindi se faccio scorrere fino in fondo qui è la nostra funzione principale.
+
+45
+00:03:02,520 --> 00:03:06,940
+Quindi andrò avanti e copierò tutto questo e vedremo cosa possiamo rimuovere e modificare.
+
+46
+00:03:06,960 --> 00:03:08,400
+Quindi andiamo a Buxar.
+
+47
+00:03:08,400 --> 00:03:09,270
+Eccoci qui.
+
+48
+00:03:09,300 --> 00:03:15,770
+Quindi diremo che questo è un servizio di Blug avviato.
+
+49
+00:03:15,960 --> 00:03:18,410
+Terremo mortificati il tuo 051.
+
+50
+00:03:18,470 --> 00:03:21,150
+Quindi c'è un sacco di cose importanti che mancano.
+
+51
+00:03:21,180 --> 00:03:25,580
+Invio Posso aggiungere l'importazione mancante in modo che lo faccia ora.
+
+52
+00:03:25,590 --> 00:03:29,670
+Quindi ora abbiamo questa funzione.
+
+53
+00:03:29,670 --> 00:03:32,820
+Quindi qui le opzioni jerkish saranno vuote.
+
+54
+00:03:32,820 --> 00:03:34,870
+Non lo useremo.
+
+55
+00:03:34,980 --> 00:03:40,820
+Quindi in questo caso rimuoverò tutto questo e quindi l'opzione sarà vuota.
+
+56
+00:03:40,830 --> 00:03:45,070
+Devo importare GOPAC che faccio adesso.
+
+57
+00:03:45,370 --> 00:03:52,550
+E ora dobbiamo fare, invece di fare Blug su PBT, registrare il servizio di cui abbiamo bisogno.
+
+58
+00:03:52,620 --> 00:03:54,910
+Dobbiamo anche definire la struttura del server.
+
+59
+00:03:55,050 --> 00:04:00,490
+Quindi basterà digitare la struttura del server che è proprio qui.
+
+60
+00:04:00,520 --> 00:04:07,430
+Trovano una struttura di servizio che al momento è vuota e funziona alla grande.
+
+61
+00:04:07,500 --> 00:04:11,840
+E poi finalmente dovremo registrarci da Blug.
+
+62
+00:04:11,850 --> 00:04:17,800
+Quindi farò il registro dei punti PV Blug.
+
+63
+00:04:19,890 --> 00:04:22,770
+Blug service server.
+
+64
+00:04:22,830 --> 00:04:28,470
+Quindi questo è il nome della funzione e dovrò importare il mio sangue P. B. Posso rimuovere Greevy P. B. da qui
+
+65
+00:04:28,470 --> 00:04:31,230
+dalle importazioni e quindi se salvi questo.
+
+66
+00:04:31,230 --> 00:04:34,420
+Fondamentalmente abbiamo un server per iniziare.
+
+67
+00:04:34,440 --> 00:04:39,630
+Così ora l'unica cosa che mi piace in questo è che il roba del server non è stato davvero elegante quando
+
+68
+00:04:39,630 --> 00:04:41,390
+abbiamo iniziato il nostro codice da prima.
+
+69
+00:04:41,430 --> 00:04:44,510
+Non stava davvero facendo bene le cose in termini di arresto.
+
+70
+00:04:44,520 --> 00:04:46,250
+Ora ci sono modi per fare le cose meglio.
+
+71
+00:04:46,260 --> 00:04:49,950
+E quindi questo è quello che voglio mostrarti adesso come lo facciamo una volta perché
+
+72
+00:04:49,950 --> 00:04:51,860
+voglio mostrarti come configurare correttamente un server.
+
+73
+00:04:51,930 --> 00:04:59,850
+Quindi in quel caso quello che dobbiamo fare è fondamentalmente impostare un hook come hookdown e quindi questo fondamentalmente quando iniziamo
+
+74
+00:04:59,850 --> 00:05:05,580
+un server lo faremo in una funzione go e quindi quando configureremo il codice lo
+
+75
+00:05:05,880 --> 00:05:12,780
+faremo come segnale di interruzione, ecco come sembra che quello che farò è che farò in modo che
+
+76
+00:05:12,780 --> 00:05:17,840
+il server inizi questa parte in cui iniziamo a fare funzionare il server.
+
+77
+00:05:17,850 --> 00:05:25,500
+Quindi è una routine di go proprio qui e metterò questo qui e stamperemo solo del codice
+
+78
+00:05:25,500 --> 00:05:30,450
+che dirà FMS che Prince Allen sta avviando il server.
+
+79
+00:05:31,240 --> 00:05:34,170
+Quindi qui abbiamo avviato il server e una buona funzione e dobbiamo chiamare quella buona funzione.
+
+80
+00:05:34,170 --> 00:05:35,910
+Quindi i genitori questo è proprio alla fine.
+
+81
+00:05:35,950 --> 00:05:36,540
+OK.
+
+82
+00:05:36,790 --> 00:05:38,250
+Ora questa funzione è stata chiamata.
+
+83
+00:05:38,450 --> 00:05:41,150
+E quindi dobbiamo bloccare su qualcosa.
+
+84
+00:05:41,400 --> 00:05:43,350
+E quindi c'è un modo per farlo.
+
+85
+00:05:43,360 --> 00:05:47,410
+Si chiama Make e il canale ci chiama quel segnale.
+
+86
+00:05:47,980 --> 00:05:52,290
+E questo fondamentalmente intercetta quando si fa uno che intercetta il controllo-C.
+
+87
+00:05:52,300 --> 00:05:58,170
+Quindi qui il peso per il controllo vede due uscite.
+
+88
+00:05:58,410 --> 00:06:03,290
+Quindi questo è un buon bene specifico, ma fondamentalmente ci assicureremo di poter intercettare le cose correttamente.
+
+89
+00:06:03,510 --> 00:06:09,540
+In questo modo segnaliamo il segnale e passiamo il canale che viene creato e il segnale che
+
+90
+00:06:10,050 --> 00:06:12,710
+volete fare è interrompere, che è control-C.
+
+91
+00:06:12,750 --> 00:06:13,830
+Ora stiamo andando
+
+92
+00:06:17,610 --> 00:06:21,090
+a bloccare fino a quando non viene ricevuto un segnale.
+
+93
+00:06:21,690 --> 00:06:26,390
+E quindi per questo ci limiteremo ad usare questo codice go proprio qui.
+
+94
+00:06:26,400 --> 00:06:34,120
+Quindi qui ora blocchiamo il canale quando abbiamo questo, probabilmente possiamo configurare i server in modo da poter
+
+95
+00:06:34,120 --> 00:06:42,220
+eseguire un codice come Prince L-N e diremo OK arrestando il server qui probabilmente possiamo chiamare la fermata
+
+96
+00:06:42,330 --> 00:06:43,680
+di Ascot.
+
+97
+00:06:44,440 --> 00:06:49,380
+Quindi possiamo avere del codice per smettere di pagare l'ascoltatore e
+
+98
+00:06:52,300 --> 00:06:55,650
+qui possiamo dire le liste che chiudono.
+
+99
+00:06:56,050 --> 00:07:01,360
+Quindi stiamo solo chiudendo l'ascoltatore perché è più preciso.
+
+100
+00:07:01,420 --> 00:07:09,310
+E alla fine, quando abbiamo finito il nostro programma, possiamo solo dire anti-dote Princella e fine del programma, quindi questo è un
+
+101
+00:07:09,320 --> 00:07:13,910
+po 'più Graceville perché ora chiudiamo correttamente tutto ciò che sta accadendo nel
+
+102
+00:07:13,910 --> 00:07:14,710
+nostro codice.
+
+103
+00:07:15,020 --> 00:07:18,540
+Quindi questa è la ragione per cui ho fatto questo ora è dare un'occhiata e vedere se funziona.
+
+104
+00:07:18,740 --> 00:07:23,060
+Quindi, cosa farò, tornerò al mio codice qui e andrò in giro.
+
+105
+00:07:23,060 --> 00:07:25,960
+Server Blug Blug.
+
+106
+00:07:26,260 --> 00:07:30,820
+Servite andrei in modo da poter vedere il server avviato da qualsiasi controllo federale.
+
+107
+00:07:30,990 --> 00:07:35,510
+Ora fermiamo il server chiudendo l'ascoltatore e la fine del programma che ritengo sia
+
+108
+00:07:35,540 --> 00:07:36,860
+un po 'più pulito.
+
+109
+00:07:36,860 --> 00:07:43,820
+Quindi questo è per l'installazione del server Go e ora l'ultima cosa che voglio mostrarti è che possiamo impostare il livello di log su qualcosa di
+
+110
+00:07:43,820 --> 00:07:48,110
+un po 'diverso nel caso avessimo degli errori e questo è un piccolo trucco che ho
+
+111
+00:07:48,110 --> 00:07:49,120
+imparato di recente.
+
+112
+00:07:49,330 --> 00:07:51,700
+Quindi puoi fare il capocorda che imposta le bandiere.
+
+113
+00:07:52,160 --> 00:07:54,580
+Quella L come bandiere digi.
+
+114
+00:07:54,980 --> 00:07:58,190
+E poi hai il tubo Lagat.
+
+115
+00:07:58,320 --> 00:07:59,550
+File breve
+
+116
+00:07:59,570 --> 00:08:09,820
+Quindi il motivo per cui lo facciamo è che, in pratica, se il codice viene bloccato, otteniamo il nome del file e il numero di riga.
+
+117
+00:08:09,860 --> 00:08:14,240
+Quindi questo è esattamente ciò che se noi schiacciamo qualcosa e abbiamo un amore fatale e qualcosa
+
+118
+00:08:14,240 --> 00:08:18,200
+non funziona e noi saremo solo in grado di sapere dove è il problema.
+
+119
+00:08:18,200 --> 00:08:20,450
+Facciamo un breve test per mostrarti cosa intendo.
+
+120
+00:08:20,450 --> 00:08:24,850
+Quindi ora eseguiremo questo server go una volta e funzionerà.
+
+121
+00:08:24,950 --> 00:08:31,170
+Ma se comincio a correre di nuovo in un'altra scheda ora andrà in crash ovviamente perché se c'è un grosso
+
+122
+00:08:31,220 --> 00:08:32,890
+errore l'indirizzo è già inutilizzato.
+
+123
+00:08:33,050 --> 00:08:35,100
+Ma questa volta vedi il livello del registro.
+
+124
+00:08:35,120 --> 00:08:38,010
+Dammi il tempo ma anche il problema con quel server.
+
+125
+00:08:38,030 --> 00:08:39,910
+Andrei sulla linea 25.
+
+126
+00:08:40,310 --> 00:08:43,590
+E questa era la linea qui che sono stato in grado di eseguire il debug.
+
+127
+00:08:43,610 --> 00:08:46,800
+Ora so dov'è il problema e questo è abbastanza utile per essere onesti.
+
+128
+00:08:46,800 --> 00:08:49,910
+Lo userò solo nel caso avessimo degli errori in futuro.
+
+129
+00:08:49,910 --> 00:08:55,370
+Possiamo semplicemente usare questa piccola riga di codice qui per assicurarci di intercettare e sapere dove si è verificato il
+
+130
+00:08:55,370 --> 00:08:56,490
+crash del codice.
+
+131
+00:08:56,660 --> 00:08:59,220
+Quindi diciamo che non useremo ovviamente una seconda scheda.
+
+132
+00:08:59,480 --> 00:09:02,870
+Quindi qui il server sta iniziando e ci vedremo nella prossima lezione.
+

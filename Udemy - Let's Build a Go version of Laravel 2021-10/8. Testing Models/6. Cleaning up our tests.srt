@@ -1,0 +1,227 @@
+1
+00:00:00,870 --> 00:00:05,640
+So before we leave the section on testing our data models behind, there's just a couple of typos that
+
+2
+00:00:05,640 --> 00:00:09,000
+I had and I'm sure you noticed them and you probably don't have them, but I do.
+
+3
+00:00:09,660 --> 00:00:11,710
+So I'm looking at integration underscore test.
+
+4
+00:00:11,720 --> 00:00:20,970
+Don't go inside the data directory in the My App project and add line 478 in my code right here near
+
+5
+00:00:20,970 --> 00:00:23,100
+the top of Test token bed header.
+
+6
+00:00:23,400 --> 00:00:25,130
+I misspelled authorization.
+
+7
+00:00:25,230 --> 00:00:29,230
+And that's not good because it's not going to do the test, and I think it's going to do so.
+
+8
+00:00:29,250 --> 00:00:30,840
+Let's just fix that one.
+
+9
+00:00:31,560 --> 00:00:35,280
+And then probably because I copied and pasted it right at the end of this function.
+
+10
+00:00:35,460 --> 00:00:36,510
+I have the same problem.
+
+11
+00:00:36,750 --> 00:00:38,100
+And that's a bit of a problem.
+
+12
+00:00:39,030 --> 00:00:43,800
+Now one other thing I just want to draw to your attention and that's that line five hundred and fifty
+
+13
+00:00:43,800 --> 00:00:47,880
+two or so and it is right down here.
+
+14
+00:00:48,450 --> 00:00:51,870
+This isn't the test token invalid token here.
+
+15
+00:00:51,870 --> 00:00:57,270
+My ID is given me a warning, saying the value of error is never used and in fact, I don't want it
+
+16
+00:00:57,270 --> 00:01:00,660
+to be used because it's going to throw an error.
+
+17
+00:01:00,690 --> 00:01:06,030
+All I really care about here is the OK, so I'm going to just ignore that response.
+
+18
+00:01:06,330 --> 00:01:06,660
+OK.
+
+19
+00:01:08,110 --> 00:01:14,440
+So now if I opened my terminal window and make sure I'm inside the data directory in my app what I am
+
+20
+00:01:15,430 --> 00:01:23,410
+and I can run my test coverage in the browser against, so I'll type go test dash cover profile equals
+
+21
+00:01:23,410 --> 00:01:29,230
+coverage dot out just to generate the data I can use to display it in the web browser.
+
+22
+00:01:29,230 --> 00:01:34,390
+And that will take just as long to run as our normal test to normal integration tests because it's actually
+
+23
+00:01:34,390 --> 00:01:36,850
+running, those tests is just saving the output into a file.
+
+24
+00:01:38,960 --> 00:01:45,350
+And once it finishes, everything passed and you notice these warnings here, it says it's an upper
+
+25
+00:01:45,770 --> 00:01:48,440
+log level equals warning in effect that in the moment too.
+
+26
+00:01:49,280 --> 00:01:51,890
+But right now we have our output, so let's type.
+
+27
+00:01:52,130 --> 00:02:05,030
+So let's clear the screen and type go tool cover dash HTML equals coverage dot out and they should fire
+
+28
+00:02:05,030 --> 00:02:08,360
+up our web browser and show us the most recent results of our test.
+
+29
+00:02:09,110 --> 00:02:09,650
+And it does.
+
+30
+00:02:10,340 --> 00:02:12,620
+So let's go over to authorization.
+
+31
+00:02:12,620 --> 00:02:15,440
+Are tokens right here and see what we have now?
+
+32
+00:02:15,470 --> 00:02:16,470
+That's looking pretty good.
+
+33
+00:02:16,490 --> 00:02:21,470
+It's eighty eight point five percent, so it's more than it was before, and it's looking pretty good.
+
+34
+00:02:21,680 --> 00:02:23,760
+OK, so that was that.
+
+35
+00:02:23,810 --> 00:02:28,370
+And of course, these tests can be improved, but we've covered the vast majority of the cases, and
+
+36
+00:02:28,370 --> 00:02:32,030
+I'll leave it as an exercise to you if you want to make any improvements or changes.
+
+37
+00:02:33,440 --> 00:02:39,980
+Now the other thing I want to take care of is that warning from upper slash and DB where it gives us
+
+38
+00:02:40,160 --> 00:02:41,150
+warning logs.
+
+39
+00:02:41,210 --> 00:02:46,010
+I don't want to turn those off, and I actually went and looked at the source code for this project
+
+40
+00:02:46,010 --> 00:02:48,090
+for upper slash DB.
+
+41
+00:02:48,710 --> 00:02:54,410
+And let me show to you over my web browser, so I'm on upper slash and DB on GitHub dot com.
+
+42
+00:02:54,620 --> 00:02:55,500
+Here's the source code.
+
+43
+00:02:55,520 --> 00:02:58,130
+And if we scroll down to the longer bit right here.
+
+44
+00:02:59,780 --> 00:03:01,250
+And we look at this source code.
+
+45
+00:03:01,460 --> 00:03:08,090
+You'll notice that it has these potential settings log level trace debug info warning, the one I want
+
+46
+00:03:08,090 --> 00:03:08,650
+is error.
+
+47
+00:03:08,660 --> 00:03:11,670
+I don't want it to be warm, which is what it defaults to.
+
+48
+00:03:11,720 --> 00:03:18,270
+OK, so let's go back to our setup integration tests where we set up integration tests, right?
+
+49
+00:03:18,290 --> 00:03:18,830
+Very tall.
+
+50
+00:03:19,190 --> 00:03:22,040
+And let's just do what they do so right?
+
+51
+00:03:26,270 --> 00:03:27,320
+Near the very top.
+
+52
+00:03:28,910 --> 00:03:29,330
+Here we are.
+
+53
+00:03:30,470 --> 00:03:35,500
+So we set an environment variable database, which we're using in our code, but it turns out that upper
+
+54
+00:03:35,510 --> 00:03:41,900
+DV is also using an environment variable, so we'll set it on and then when we want to set is upper
+
+55
+00:03:41,930 --> 00:03:50,300
+underscore DB underscore log, we want to set it to error, so it'll ignore the warning messages and
+
+56
+00:03:50,300 --> 00:03:53,780
+that just cleans it up and makes our tests ever so much easier to run.
+
+57
+00:03:54,620 --> 00:03:55,880
+OK, let's move on.

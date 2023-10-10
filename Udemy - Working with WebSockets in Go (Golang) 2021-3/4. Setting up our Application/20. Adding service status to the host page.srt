@@ -1,0 +1,955 @@
+1
+00:00:00,500 --> 00:00:05,030
+So hopefully you didn't have any trouble finishing up these three screens, and it's pretty straightforward,
+
+2
+00:00:05,420 --> 00:00:09,410
+and if you looked at the source that I posted at the end of the last lecture, you'll notice that I
+
+3
+00:00:09,410 --> 00:00:14,330
+did make one minor change and it's literally one little bit in the school query.
+
+4
+00:00:14,340 --> 00:00:21,110
+So this is the get services by status method found inside the host underscore PostgreSQL go file.
+
+5
+00:00:21,410 --> 00:00:23,960
+And all I did was add this little bit at the end.
+
+6
+00:00:24,320 --> 00:00:29,950
+So when we have more than one service, of course you want them to be ordered in some meaningful way.
+
+7
+00:00:29,960 --> 00:00:32,780
+So I said order by hostname and service name.
+
+8
+00:00:32,780 --> 00:00:37,460
+And that way when we have more than one host or more than one service, things won't be arranged just
+
+9
+00:00:37,460 --> 00:00:38,060
+randomly.
+
+10
+00:00:38,360 --> 00:00:39,880
+They'll have some sensible order.
+
+11
+00:00:39,920 --> 00:00:41,460
+So that's the one change we made there.
+
+12
+00:00:42,020 --> 00:00:44,680
+So now if we go back and look at this, this page looks good.
+
+13
+00:00:44,870 --> 00:00:50,750
+We have one service with one host and it displays everything just the way that it should.
+
+14
+00:00:50,760 --> 00:00:53,090
+But if we go back here, I don't like this.
+
+15
+00:00:53,600 --> 00:00:54,470
+There's nothing here.
+
+16
+00:00:54,470 --> 00:00:56,720
+And this table has no information whatsoever.
+
+17
+00:00:56,720 --> 00:00:58,990
+And it's just cosmetically it's not that attractive.
+
+18
+00:00:59,000 --> 00:01:02,600
+So let's go fix that up and then we'll move on to the next step in this project.
+
+19
+00:01:02,600 --> 00:01:03,560
+And this is really easy.
+
+20
+00:01:04,160 --> 00:01:10,700
+So let me go to my code and let me look at my views folder, which is right here, and we'll start with
+
+21
+00:01:10,700 --> 00:01:11,100
+healthy.
+
+22
+00:01:11,870 --> 00:01:17,120
+So at this point, I'm ranging through the services and displaying them right here in the template.
+
+23
+00:01:17,510 --> 00:01:21,320
+And if there's nothing in there, of course, none of this code gets executed.
+
+24
+00:01:21,380 --> 00:01:26,240
+Therefore, we just have an empty body so we can improve this just by saying and the simple if statement
+
+25
+00:01:26,690 --> 00:01:30,320
+if Lenn of services is greater than zero.
+
+26
+00:01:34,690 --> 00:01:36,310
+And put an ELT's here.
+
+27
+00:01:40,940 --> 00:01:45,860
+And put an end here and let's just tab things around so it's a little more readable.
+
+28
+00:01:46,730 --> 00:01:51,680
+So if we have at least one thing in our services variable, then this code gets executed.
+
+29
+00:01:51,680 --> 00:02:01,790
+Otherwise we'll just put it in one table row with one table column that has a call span of one, two,
+
+30
+00:02:01,790 --> 00:02:06,950
+three, four, four, no services.
+
+31
+00:02:07,520 --> 00:02:08,540
+And that's all we need to do.
+
+32
+00:02:09,470 --> 00:02:11,750
+So let me that was the healthy one.
+
+33
+00:02:11,780 --> 00:02:14,960
+Now let's get to the next one, which would be spending.
+
+34
+00:02:19,870 --> 00:02:24,370
+If Lynn of Services is greater than zero.
+
+35
+00:02:29,520 --> 00:02:30,270
+ELT's.
+
+36
+00:02:32,250 --> 00:02:43,170
+And I'll just have this over go back to my healthy copy, this one section here and pasted in.
+
+37
+00:02:46,080 --> 00:02:51,620
+And have it in, so that's pending now problems, same idea.
+
+38
+00:02:55,570 --> 00:03:00,400
+If Lenn of services is greater than zero.
+
+39
+00:03:04,970 --> 00:03:05,600
+ELT's.
+
+40
+00:03:07,950 --> 00:03:09,120
+Pasting my code.
+
+41
+00:03:11,660 --> 00:03:12,230
+And.
+
+42
+00:03:19,210 --> 00:03:21,070
+And I think there's one more warning.
+
+43
+00:03:25,740 --> 00:03:29,220
+If one of services is greater than zero.
+
+44
+00:03:32,460 --> 00:03:36,210
+Beltz, Paiste and.
+
+45
+00:03:38,140 --> 00:03:39,430
+And this over.
+
+46
+00:03:41,460 --> 00:03:44,610
+And tab this over and make sure everything is done properly.
+
+47
+00:03:44,640 --> 00:03:46,600
+So let's just go have a look at this overview.
+
+48
+00:03:47,400 --> 00:03:53,550
+There should be one row in this table that says no services and that looks much better, not just a
+
+49
+00:03:53,550 --> 00:03:54,390
+cosmetic thing.
+
+50
+00:03:54,390 --> 00:03:55,580
+I just like it much better.
+
+51
+00:03:56,100 --> 00:03:59,250
+And let's make sure the pending actually displays properly and it does.
+
+52
+00:03:59,260 --> 00:04:00,310
+OK, so that's simple.
+
+53
+00:04:01,230 --> 00:04:05,280
+Now, the next thing I want to do, and this is where things start to get a little more complicated,
+
+54
+00:04:05,280 --> 00:04:07,440
+but not too much when I look at my host.
+
+55
+00:04:08,040 --> 00:04:08,910
+This is correct.
+
+56
+00:04:10,050 --> 00:04:11,040
+This is correct.
+
+57
+00:04:11,760 --> 00:04:12,560
+And these are empty.
+
+58
+00:04:12,570 --> 00:04:13,290
+There's nothing in them.
+
+59
+00:04:13,410 --> 00:04:19,170
+And we want to actually display all of the healthy services here, all of the warning services here,
+
+60
+00:04:19,170 --> 00:04:20,910
+all of the problems and all of the pending.
+
+61
+00:04:21,720 --> 00:04:27,570
+And I also want to allow the user when they're looking, say, for example, at the pending services
+
+62
+00:04:27,810 --> 00:04:32,880
+or the problems or any of these for a list, the service, and I'll have a button beside it that allows
+
+63
+00:04:32,880 --> 00:04:33,570
+me to check.
+
+64
+00:04:33,570 --> 00:04:38,820
+Now, that will actually fire off a request in the background, do a check of that service.
+
+65
+00:04:38,820 --> 00:04:42,090
+If it's not changed status, give them some message to that.
+
+66
+00:04:42,090 --> 00:04:43,020
+That indicates that.
+
+67
+00:04:43,290 --> 00:04:48,660
+But if it has changed status, what's going to happen down the road is will remove the entry from the
+
+68
+00:04:48,660 --> 00:04:54,360
+current tab, display an alert or a message to the user saying that the status has changed from something
+
+69
+00:04:54,360 --> 00:04:58,650
+to something else and then add a row in the appropriate tab.
+
+70
+00:04:58,650 --> 00:05:05,280
+So for impending and we say check now and it moves from, say, pending to problems, it deletes the
+
+71
+00:05:05,280 --> 00:05:10,140
+entry from the table here, adds it to the table here and displays an alert up here.
+
+72
+00:05:10,560 --> 00:05:12,450
+So let's get started doing that.
+
+73
+00:05:12,450 --> 00:05:16,260
+The first thing we're going to have to do, of course, is figure out how we populate each of these
+
+74
+00:05:16,260 --> 00:05:17,430
+tabs with the information.
+
+75
+00:05:17,970 --> 00:05:25,230
+So let's go back to our roots file roots and find the part where we're showing a host, which is right
+
+76
+00:05:25,230 --> 00:05:27,990
+here, handler's repost.
+
+77
+00:05:28,620 --> 00:05:32,220
+So what we're doing here is we're grabbing the ID from the URL.
+
+78
+00:05:32,940 --> 00:05:35,010
+We're creating an empty models host.
+
+79
+00:05:35,370 --> 00:05:38,340
+We're getting the host from the database if it's greater than zero.
+
+80
+00:05:38,340 --> 00:05:43,080
+And we're going to assume that's the case here right now and that calls get hosted by ID.
+
+81
+00:05:43,560 --> 00:05:52,230
+So when we go to get hosted by ID under the Postgrads File, which is in the repository in DB Repo and
+
+82
+00:05:52,230 --> 00:05:54,360
+it's called Host Underscore Postgrads.
+
+83
+00:05:54,630 --> 00:05:57,650
+Let's find get hosted by ID right there.
+
+84
+00:05:57,900 --> 00:05:58,830
+So what are we getting here.
+
+85
+00:05:58,830 --> 00:06:00,570
+We're getting the basic host information.
+
+86
+00:06:00,960 --> 00:06:06,900
+We're scanning that into our variable, then we're getting all the services for the host and this includes
+
+87
+00:06:06,900 --> 00:06:10,230
+all of the services that have any status.
+
+88
+00:06:10,680 --> 00:06:14,930
+So we're having them all there and it also includes inactive services.
+
+89
+00:06:15,360 --> 00:06:15,840
+Perfect.
+
+90
+00:06:16,020 --> 00:06:17,970
+This will give us everything we need.
+
+91
+00:06:17,970 --> 00:06:25,740
+So we already have enough information that we can go to our hosts file host jet right here, host Cingular
+
+92
+00:06:25,980 --> 00:06:26,400
+Jet.
+
+93
+00:06:27,090 --> 00:06:30,510
+And let's do the let's do the pending one first because we have some content in there.
+
+94
+00:06:30,930 --> 00:06:42,480
+So let's create a t a div of class equals row and then a div of class equals call and let's create a
+
+95
+00:06:42,480 --> 00:06:44,700
+table so we'll create a table.
+
+96
+00:06:44,730 --> 00:06:47,850
+Table class equals.
+
+97
+00:06:50,910 --> 00:06:53,250
+Table, table striped.
+
+98
+00:06:56,480 --> 00:07:00,080
+And give it a head and think about what information we want in there.
+
+99
+00:07:00,110 --> 00:07:02,480
+Well, we definitely want the TIAR.
+
+100
+00:07:02,630 --> 00:07:03,350
+We want it.
+
+101
+00:07:05,000 --> 00:07:08,420
+We want the service, the service name.
+
+102
+00:07:10,260 --> 00:07:12,690
+We want the last check.
+
+103
+00:07:15,330 --> 00:07:19,350
+And we'll have a message which will be empty for right now as we have nothing display in that, but
+
+104
+00:07:19,350 --> 00:07:20,280
+we'll get to that later on.
+
+105
+00:07:21,180 --> 00:07:24,990
+So this gives us our table heading and then we want our table body.
+
+106
+00:07:27,870 --> 00:07:37,410
+And we want to display information again only if there is a status that is of the status pending so
+
+107
+00:07:37,560 --> 00:07:39,960
+we can do it like this range.
+
+108
+00:07:42,040 --> 00:07:46,060
+Host Dot, and I think it's called host services, but let me make sure in your models.
+
+109
+00:07:47,520 --> 00:07:52,500
+So host has hosted services, yes, plural, so let's go back to our House page.
+
+110
+00:07:54,000 --> 00:07:57,880
+Hosted services and.
+
+111
+00:07:59,520 --> 00:08:01,170
+Let's just display the services here.
+
+112
+00:08:01,220 --> 00:08:06,770
+So the first one would be a tiara, because we're going to loop through this one item at a time and
+
+113
+00:08:06,770 --> 00:08:10,700
+then a TV, and then we want the service name, which I believe.
+
+114
+00:08:10,700 --> 00:08:15,890
+Let's just go back to our models and make sure wherever they're here, we are host services, a hosted
+
+115
+00:08:15,890 --> 00:08:18,740
+service holds a service that has a service name.
+
+116
+00:08:18,740 --> 00:08:19,540
+So back to host.
+
+117
+00:08:20,780 --> 00:08:25,910
+So that would be Dort service, not service name.
+
+118
+00:08:27,420 --> 00:08:28,610
+Clothes are curly brackets.
+
+119
+00:08:28,670 --> 00:08:29,830
+Let's just make sure that works.
+
+120
+00:08:29,850 --> 00:08:37,200
+I'll just put in two empty rows so it satisfies that requirement and go back and go back to her overview,
+
+121
+00:08:37,590 --> 00:08:40,500
+look at our hosts and look at pending.
+
+122
+00:08:40,500 --> 00:08:44,880
+And that should list one service and it does HDP last check and message.
+
+123
+00:08:45,300 --> 00:08:47,640
+OK, so we know what that has that information.
+
+124
+00:08:47,640 --> 00:08:53,920
+I probably should give it to that pending content, but let's go down here and change that pending content.
+
+125
+00:08:53,920 --> 00:08:54,630
+Just delete it.
+
+126
+00:08:55,410 --> 00:09:00,030
+And just before the just after the column is opened, we'll put a little heading in there each three
+
+127
+00:09:00,450 --> 00:09:02,910
+and we'll say pending services.
+
+128
+00:09:03,510 --> 00:09:04,800
+And we already have last checked.
+
+129
+00:09:04,800 --> 00:09:07,340
+So let's just stick that in there as it looks right now.
+
+130
+00:09:07,380 --> 00:09:08,940
+Last check.
+
+131
+00:09:11,850 --> 00:09:12,480
+Reload.
+
+132
+00:09:13,750 --> 00:09:14,280
+Pending.
+
+133
+00:09:15,230 --> 00:09:19,670
+OK, that needs to be pushed down to maybe a little bit smaller, so last check, OK?
+
+134
+00:09:19,690 --> 00:09:25,300
+That's my default value and I'm not really happy with the displaying that way, but I'll take care of
+
+135
+00:09:25,300 --> 00:09:25,530
+that.
+
+136
+00:09:25,540 --> 00:09:31,330
+I have some functions available to us that will format this more appropriately, but it looks like it's
+
+137
+00:09:31,330 --> 00:09:33,340
+actually getting the information the way that we want.
+
+138
+00:09:33,700 --> 00:09:38,140
+And the problem with that, of course, is that this is going to list all of the services, whether
+
+139
+00:09:38,140 --> 00:09:39,130
+they're pending or not.
+
+140
+00:09:39,310 --> 00:09:40,480
+And we don't want to do that.
+
+141
+00:09:40,660 --> 00:09:42,990
+We actually only want to list the pending services.
+
+142
+00:09:43,420 --> 00:09:45,130
+So first of all, let's push this down.
+
+143
+00:09:45,130 --> 00:09:47,020
+I'll make this an effort to make it smaller.
+
+144
+00:09:47,380 --> 00:09:52,660
+Class equals empty, say, three, reload this pending.
+
+145
+00:09:56,050 --> 00:10:00,250
+Class equals PT three padding top three doesn't seem to be working.
+
+146
+00:10:03,180 --> 00:10:03,900
+That works better.
+
+147
+00:10:03,980 --> 00:10:09,900
+OK, so we only want to display things here that are actually pending so we can just do it like this
+
+148
+00:10:09,900 --> 00:10:10,590
+if.
+
+149
+00:10:12,740 --> 00:10:16,520
+DOT's status equals spending.
+
+150
+00:10:19,570 --> 00:10:26,500
+And then do an end here, not the most efficient way in the world, but it'll work, this should actually
+
+151
+00:10:26,500 --> 00:10:30,100
+display the information again and it should include the pending one and it does.
+
+152
+00:10:30,670 --> 00:10:33,050
+OK, so let's get to getting us started.
+
+153
+00:10:33,070 --> 00:10:34,780
+Let's just quickly duplicate that.
+
+154
+00:10:35,440 --> 00:10:38,740
+All of this information starting with here.
+
+155
+00:10:40,630 --> 00:10:41,410
+Copy that.
+
+156
+00:10:43,280 --> 00:10:50,990
+And go back up to problem content and just paste it in here and only after changes this problem and
+
+157
+00:10:50,990 --> 00:10:55,160
+this to problem.
+
+158
+00:10:56,720 --> 00:10:58,430
+OK, let's just make sure that's working.
+
+159
+00:10:59,000 --> 00:11:01,310
+Reload this and that should show nothing.
+
+160
+00:11:01,610 --> 00:11:05,690
+OK, so that worked.
+
+161
+00:11:05,930 --> 00:11:07,070
+We'll just have this in.
+
+162
+00:11:08,950 --> 00:11:14,790
+And to have that in good, so there's only one of thing I want to want to put here, and that is status,
+
+163
+00:11:15,160 --> 00:11:17,730
+so I want to have that check now Button.
+
+164
+00:11:17,740 --> 00:11:18,880
+So where am I going to put that?
+
+165
+00:11:19,120 --> 00:11:24,450
+Let's go back to our pending service issue and I should put a check now button right there.
+
+166
+00:11:24,970 --> 00:11:25,780
+So let's do that.
+
+167
+00:11:28,960 --> 00:11:30,520
+So after the service name.
+
+168
+00:11:33,560 --> 00:11:42,530
+I want to put a little a HSF equals go nowhere, so JavaScript void zero, which will make the Celenk
+
+169
+00:11:42,530 --> 00:11:43,540
+but won't go anywhere.
+
+170
+00:11:44,570 --> 00:11:49,090
+And we want to say unclick or just say class.
+
+171
+00:11:49,100 --> 00:11:50,570
+We'll give it a class now.
+
+172
+00:11:50,600 --> 00:11:51,200
+We'll make it or not.
+
+173
+00:11:51,200 --> 00:12:00,080
+Click on click equals check now and then the ID of the host service, which would be Dort ID because
+
+174
+00:12:00,080 --> 00:12:01,750
+we're looping through host services here.
+
+175
+00:12:01,760 --> 00:12:08,000
+We know, we know, we have the ID and we'll just say check now and we'll format this in a little,
+
+176
+00:12:08,030 --> 00:12:09,830
+a little more nicely in a moment.
+
+177
+00:12:10,400 --> 00:12:11,300
+OK, I think I have that.
+
+178
+00:12:11,300 --> 00:12:11,720
+All right.
+
+179
+00:12:11,720 --> 00:12:17,690
+And down here we need to put a check now function so I'll just make an empty function function check
+
+180
+00:12:17,690 --> 00:12:20,930
+now and the ID and it does nothing.
+
+181
+00:12:21,290 --> 00:12:25,790
+I'll just say console log clicked.
+
+182
+00:12:28,660 --> 00:12:30,700
+Check now.
+
+183
+00:12:32,040 --> 00:12:39,660
+OK, let's go reformat this a reload this, open our JavaScript console, go to pending and we should
+
+184
+00:12:39,660 --> 00:12:41,160
+have a check now button and we do.
+
+185
+00:12:41,700 --> 00:12:43,860
+And when I click on it, uncaught reference.
+
+186
+00:12:43,860 --> 00:12:45,340
+I got a typo in there somewhere.
+
+187
+00:12:45,360 --> 00:12:46,320
+Let's go fix that.
+
+188
+00:12:50,800 --> 00:12:53,760
+Oh, yes, probably want to close that there.
+
+189
+00:12:53,830 --> 00:13:00,370
+That looks a little better, let's close this and apparently I don't have IP running, so I'll start
+
+190
+00:13:00,370 --> 00:13:02,080
+that up to avoid those errors.
+
+191
+00:13:06,780 --> 00:13:12,630
+Now go back and reload this page to make sure everything's current, go to pending and click on Check
+
+192
+00:13:12,630 --> 00:13:12,960
+now.
+
+193
+00:13:18,010 --> 00:13:24,400
+That looks better, and if I clear this check now, check now, OK, so that all seems to be working.
+
+194
+00:13:24,540 --> 00:13:31,150
+Let's make this a little more attractive and I can probably just make that a button or a small let's
+
+195
+00:13:31,150 --> 00:13:31,840
+go like this.
+
+196
+00:13:32,330 --> 00:13:33,040
+Let's go.
+
+197
+00:13:33,700 --> 00:13:36,610
+Spane class equals badge.
+
+198
+00:13:39,780 --> 00:13:48,780
+Vague outline, secondary, I think that will do it and put this one down here and let's see how that
+
+199
+00:13:48,780 --> 00:13:49,140
+looks.
+
+200
+00:13:50,650 --> 00:13:54,230
+Reloads tending, OK?
+
+201
+00:13:54,400 --> 00:13:57,190
+Apparently, that's not a background, so we'll have to change it to something else.
+
+202
+00:13:58,110 --> 00:14:07,640
+Let's change it to, well, info, see what that looks like, reload pending, that's not going to work.
+
+203
+00:14:12,120 --> 00:14:13,790
+B.G. Dash.
+
+204
+00:14:15,930 --> 00:14:18,300
+Say, secondary, PJI secondary.
+
+205
+00:14:18,330 --> 00:14:18,960
+Let's try that.
+
+206
+00:14:22,870 --> 00:14:23,720
+Still pretty dark.
+
+207
+00:14:24,280 --> 00:14:24,720
+OK.
+
+208
+00:14:27,530 --> 00:14:29,150
+What it doesn't need to be an if at all.
+
+209
+00:14:29,170 --> 00:14:31,110
+Let's just take this on Klickitat there.
+
+210
+00:14:33,060 --> 00:14:38,310
+Put it up here, get rid of the AI altogether.
+
+211
+00:14:41,260 --> 00:14:47,260
+And Unclipped needs a print this earth quote after it.
+
+212
+00:14:47,980 --> 00:14:50,140
+OK, Alex, right, let's try that.
+
+213
+00:14:52,730 --> 00:14:53,390
+That looks better.
+
+214
+00:14:53,450 --> 00:14:58,640
+OK, so that will give me my check now button, and I probably want to add some success.
+
+215
+00:14:58,640 --> 00:15:00,890
+So when you roll over this, that it turns into a pointer.
+
+216
+00:15:00,900 --> 00:15:03,440
+But for now, this is sufficient for our purposes.
+
+217
+00:15:04,520 --> 00:15:06,400
+So that works there.
+
+218
+00:15:06,410 --> 00:15:08,120
+Let's just copy this little bit.
+
+219
+00:15:10,630 --> 00:15:15,280
+And add it to this one, so after the service name.
+
+220
+00:15:18,030 --> 00:15:22,070
+And it goes right here to have that, and so it looks a little better.
+
+221
+00:15:23,530 --> 00:15:31,840
+And that and so it looks a little bit better analysis, copy this entire range bid and add it to the
+
+222
+00:15:31,840 --> 00:15:34,620
+next one, which is warning content.
+
+223
+00:15:34,630 --> 00:15:36,010
+Actually, I want to copy the whole thing.
+
+224
+00:15:37,010 --> 00:15:41,150
+Div class equals row all the way down to here, so we're going to go to warning.
+
+225
+00:15:43,110 --> 00:15:44,070
+Which is right here.
+
+226
+00:15:45,330 --> 00:15:50,850
+Paste that in and make that morning services that make this morning.
+
+227
+00:15:52,180 --> 00:15:58,570
+OK, and healthy and paste that in there and change this to healthy.
+
+228
+00:16:00,560 --> 00:16:02,210
+And change this to healthy.
+
+229
+00:16:05,220 --> 00:16:10,860
+Let's make sure this all works appropriately and pending good problems, no problem.
+
+230
+00:16:12,060 --> 00:16:12,600
+Warning.
+
+231
+00:16:13,600 --> 00:16:14,260
+And healthy.
+
+232
+00:16:14,420 --> 00:16:17,060
+OK, so that's sufficient for our purposes right now.
+
+233
+00:16:17,080 --> 00:16:18,120
+This gets us started.
+
+234
+00:16:18,520 --> 00:16:21,750
+So now we know we can display all of the appropriate information.
+
+235
+00:16:21,760 --> 00:16:28,150
+So if I go back to my overview and look at pending services and click on localhost, it should take
+
+236
+00:16:28,150 --> 00:16:32,590
+me to the pending tab and have everything displaying as it should.
+
+237
+00:16:32,650 --> 00:16:33,100
+All right.
+
+238
+00:16:33,190 --> 00:16:35,290
+That's enough for this time in the next election.
+
+239
+00:16:35,320 --> 00:16:36,570
+We'll move on to the next step.

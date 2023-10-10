@@ -1,0 +1,308 @@
+1
+00:00:00,150 --> 00:00:04,800
+Quindi, qui voglio fare qualcosa di veramente interessante e iniziare a utilizzare Evans Steeleye che abbiamo già
+
+2
+00:00:05,160 --> 00:00:07,730
+visto per interagire con la nostra API grezza.
+
+3
+00:00:08,010 --> 00:00:12,780
+Quindi quello che dobbiamo fare è ovviamente esporre una riflessione per il servizio.
+
+4
+00:00:12,780 --> 00:00:18,180
+Quindi per questo torniamo al nostro servizio ed è qui che registriamo il nostro servizio e ora fondamentalmente
+
+5
+00:00:18,180 --> 00:00:23,240
+dobbiamo semplicemente usare il riflesso che implementiamo il riflesso quando siamo andati al server della calcolatrice.
+
+6
+00:00:23,280 --> 00:00:28,970
+Quindi, se scorriamo fino in fondo è solo una semplice riflessione sulle chiamate API.
+
+7
+00:00:29,040 --> 00:00:30,470
+Quindi facciamolo qui.
+
+8
+00:00:30,510 --> 00:00:33,790
+Bene, semplicemente implementa refl. che ci registrano e assicurati di importarlo.
+
+9
+00:00:33,810 --> 00:00:39,120
+Se ti chiede di importare Quindi questo è tutto per il nostro server ora è fondamentalmente refl. abilitato.
+
+10
+00:00:39,120 --> 00:00:47,390
+Quindi quello che possiamo fare ora è andare da noi qui, che è proprio qui, riavviare il nostro server che ha senso per i residenti
+
+11
+00:00:47,440 --> 00:00:50,550
+rubati e sul lato destro possiamo probabilmente usare Evans.
+
+12
+00:00:50,550 --> 00:00:55,670
+Quindi quello che farò è che avrò due piccole finestre qui a sinistra come server
+
+13
+00:00:55,670 --> 00:00:57,800
+e sul lato destro sarà Evans.
+
+14
+00:00:57,870 --> 00:00:58,830
+Adesso gli Evans.
+
+15
+00:00:58,860 --> 00:01:04,820
+Non so se ti ricordi di Evans e poi del tuo per specificare i rapporti e poi devi solo specificare che Mannus
+
+16
+00:01:04,830 --> 00:01:06,230
+è per la riflessione.
+
+17
+00:01:06,250 --> 00:01:07,570
+Così farà Evans.
+
+18
+00:01:07,710 --> 00:01:11,840
+La porta sarà 5 0 0 5 1 e meno la riflessione.
+
+19
+00:01:11,850 --> 00:01:16,560
+Qui andiamo dove e ora possiamo mostrare il pacchetto e siamo il pacchetto predefinito in cui ci
+
+20
+00:01:16,560 --> 00:01:17,120
+troviamo.
+
+21
+00:01:17,280 --> 00:01:18,600
+Possiamo mostrare il servizio.
+
+22
+00:01:18,600 --> 00:01:24,360
+Ed ecco il nostro servizio blog con cinque chiamate RBOC che possiamo fare, selezioneremo il nostro servizio chiamato
+
+23
+00:01:24,360 --> 00:01:25,320
+servizio LUGG.
+
+24
+00:01:25,320 --> 00:01:30,150
+Ora siamo nel servizio blog perché dice che il servizio Blug è predefinito.
+
+25
+00:01:30,150 --> 00:01:35,360
+E quindi ricorda, chiamiamolo di nuovo servizio, possiamo co-creare glu glu glu glu glu.
+
+26
+00:01:35,360 --> 00:01:36,570
+Quindi proviamolo.
+
+27
+00:01:36,840 --> 00:01:43,180
+Bene, per esempio chiama il nostro PC, l'ID del blog sarà vuoto.
+
+28
+00:01:43,230 --> 00:01:48,120
+L'autore del blog sarà divertente e puoi avere citazioni che puoi rimuovere le virgolette, ma
+
+29
+00:01:48,120 --> 00:01:53,390
+se è un blog che ha spazi aerei hai bisogno delle virgolette, quindi tappati con gli spazi.
+
+30
+00:01:53,910 --> 00:01:54,830
+Bel titolo.
+
+31
+00:01:55,110 --> 00:01:55,550
+OK.
+
+32
+00:01:55,620 --> 00:02:00,770
+E il contenuto è questo è un blog che è stato creato usando questo.
+
+33
+00:02:00,770 --> 00:02:01,570
+Sì giusto.
+
+34
+00:02:01,680 --> 00:02:02,210
+Eccezionale.
+
+35
+00:02:02,370 --> 00:02:03,270
+E boom qui andiamo.
+
+36
+00:02:03,270 --> 00:02:04,210
+La richiesta è stata fatta.
+
+37
+00:02:04,200 --> 00:02:06,530
+Possiamo vedere che è stata creata una richiesta LUGG.
+
+38
+00:02:06,750 --> 00:02:09,280
+E da qui otteniamo il blog.
+
+39
+00:02:09,570 --> 00:02:15,270
+Quindi forse un'altra chiamata che possiamo fare è elencare i blocchi che chiameremo elenco Blug premere enter
+
+40
+00:02:15,300 --> 00:02:16,480
+e qui andiamo.
+
+41
+00:02:16,560 --> 00:02:20,790
+Abbiamo tutti i blog che sono stati creati nel nostro database per essere visualizzati qui, quindi ovviamente funziona
+
+42
+00:02:20,790 --> 00:02:21,440
+alla grande.
+
+43
+00:02:21,750 --> 00:02:25,760
+Quindi vogliamo cancellare questo blog proprio qui con questo IGY.
+
+44
+00:02:25,860 --> 00:02:27,110
+Andiamo avanti e provalo.
+
+45
+00:02:27,120 --> 00:02:30,690
+Chiameremo eliminare Blug RBC.
+
+46
+00:02:30,900 --> 00:02:32,880
+Bene sull'idea del blog che volevamo premere invio.
+
+47
+00:02:32,910 --> 00:02:33,920
+E qui andiamo.
+
+48
+00:02:33,930 --> 00:02:35,160
+È stato cancellato
+
+49
+00:02:35,160 --> 00:02:40,190
+Se provassimo a cancellare lo stesso blog, dovremmo darci un errore dicendo hey dal modo in cui non è
+
+50
+00:02:40,590 --> 00:02:44,440
+stato trovato perché non possiamo trovare il Blug in Magdi che abbia senso.
+
+51
+00:02:44,460 --> 00:02:47,040
+Successivamente possiamo probabilmente chiamare replug.
+
+52
+00:02:47,040 --> 00:02:50,150
+Quindi chiama questo blog di nuovo per vedere se funziona.
+
+53
+00:02:50,160 --> 00:02:53,940
+OK, ecco tutti i blog che leggeremo sul blog proprio qui.
+
+54
+00:02:54,120 --> 00:02:58,260
+Quindi, naturalmente, chiamano leggere, Blug passerà nel blog e ne uscirà.
+
+55
+00:02:58,290 --> 00:03:00,650
+Otteniamo il blog di cui abbiamo bisogno.
+
+56
+00:03:00,680 --> 00:03:03,840
+E quindi è piuttosto bello perché sul lato sinistro vediamo tutte le richieste che abbiamo fatto.
+
+57
+00:03:04,350 --> 00:03:11,150
+E poi forse una volta che avrai finalmente aggiornato questo blog, chiameremo l'aggiornamento Blug sul blog.
+
+58
+00:03:11,160 --> 00:03:12,270
+Lui è quello di prima.
+
+59
+00:03:12,270 --> 00:03:14,150
+Oops, ho incasinato
+
+60
+00:03:14,160 --> 00:03:20,960
+Quindi lasciami solo uscire chiamerà il blog, il blog è e non ce l'ho più.
+
+61
+00:03:21,080 --> 00:03:23,930
+Si chiama di nuovo questo blog molto velocemente.
+
+62
+00:03:24,210 --> 00:03:26,780
+E aggiorneremo questo per esempio.
+
+63
+00:03:26,850 --> 00:03:30,990
+Quindi diremo che chiamiamo blog di aggiornamento che indirizziamo il blog a mangiare.
+
+64
+00:03:31,050 --> 00:03:34,990
+L'autore sarà un autore di cambiamenti.
+
+65
+00:03:35,040 --> 00:03:39,340
+Il titolo sarà un titolo modificato e il contenuto sarà cambiato.
+
+66
+00:03:39,340 --> 00:03:42,810
+Constance e il blog hanno funzionato.
+
+67
+00:03:42,820 --> 00:03:48,370
+Ma assicuriamoci che funzioni davvero chiamandolo funzione blog e lo copiamo di nuovo.
+
+68
+00:03:48,440 --> 00:03:54,050
+Quindi, basandoci sull'idea del blog appena aggiornato, premi Invio e vediamo esattamente l'aggiornamento che è stato fatto.
+
+69
+00:03:54,130 --> 00:03:54,820
+Quindi è davvero fantastico.
+
+70
+00:03:54,810 --> 00:03:59,760
+Usando questo tu ed io stiamo interagendo direttamente con la nostra API con Ironmonger TV.
+
+71
+00:03:59,980 --> 00:04:06,670
+E potresti ovviamente assicurarti che tutto non cambi usando l'UI di Blug come interfaccia utente.
+
+72
+00:04:06,910 --> 00:04:10,960
+Ma nel complesso intendo che abbiamo visto che tutto è stato testato, tutto funzionava,
+
+73
+00:04:10,960 --> 00:04:17,420
+ma ora è piuttosto interessante perché abilitando la riflessione e utilizzando le prove si è riusciti a interagire con la nostra API del blog.
+
+74
+00:04:17,440 --> 00:04:18,580
+Quindi congratulazioni.
+
+75
+00:04:18,610 --> 00:04:19,210
+Spero ti sia piaciuto.
+
+76
+00:04:19,210 --> 00:04:20,040
+È stato fantastico.
+
+77
+00:04:20,110 --> 00:04:21,490
+E ti vedrò nella prossima lezione.
+

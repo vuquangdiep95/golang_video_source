@@ -1,0 +1,375 @@
+1
+00:00:00,210 --> 00:00:00,570
+Được rồi.
+
+2
+00:00:00,630 --> 00:00:04,930
+Vì vậy, bây giờ chúng ta sẽ tiến tới. Tôi sẽ chỉ đảm bảo rằng tôi hiểu rõ đường chuyền này.
+
+3
+00:00:04,960 --> 00:00:05,480
+CÔ MIỆNG.
+
+4
+00:00:05,490 --> 00:00:16,280
+Vì vậy, điều đầu tiên họ đang ở dòng 78 bạn đang chuyển thông báo rằng nó được chuyển vào là một biến đó là
+
+5
+00:00:16,290 --> 00:00:17,740
+một chuỗi kiểu.
+
+6
+00:00:17,940 --> 00:00:19,800
+Và rằng các biến và tin nhắn.
+
+7
+00:00:19,800 --> 00:00:22,080
+Vì vậy, chỉ cho tôi chỉ bạn nhảy về phía trước và xem.
+
+8
+00:00:22,080 --> 00:00:29,830
+Vượt qua từng e-mail được sử dụng trong những gì đang được chuyển vào và do đó, vượt qua từng e-mail là khi bạn có phạm vi
+
+9
+00:00:29,850 --> 00:00:35,370
+khác nhau về câu trả lời của bạn và câu trả lời của bạn đến từ cuộc trò chuyện.
+
+10
+00:00:35,370 --> 00:00:42,540
+Và do đó, cuộc trò chuyện là cuộc trò chuyện đầu tiên đến cuộc trò chuyện thứ hai là cuộc trò chuyện thứ hai nhận được tất cả các cuộc trò chuyện
+
+11
+00:00:42,540 --> 00:00:52,040
+đúng và sau đó là chức năng đầu tiên chúng tôi có là thực hiện các yêu cầu hội thoại và những chức năng tiếp theo
+
+12
+00:00:52,050 --> 00:00:55,170
+nhận tất cả các cuộc hội thoại.
+
+13
+00:00:55,170 --> 00:00:55,440
+Được rồi.
+
+14
+00:00:55,470 --> 00:01:01,800
+Vì vậy, nhận các cuộc hội thoại trả về đoạn chuỗi đó, sau đó cuộn xuống phần chính và sau đó nhận cuộc hội thoại.
+
+15
+00:01:01,800 --> 00:01:06,660
+Cung cấp cho chúng tôi phản hồi đó là một lát chuỗi và sau đó chúng tôi trải rộng trên lát chuỗi đó.
+
+16
+00:01:06,660 --> 00:01:09,330
+Và đối với mỗi lần muốn chuyển một tin nhắn là một chuỗi.
+
+17
+00:01:09,330 --> 00:01:16,050
+Vì vậy, đó chỉ là cách mà mỗi nhóm hiện đang ở dưới đó trong các công cụ chuyên sâu mà chúng tôi đã thấy.
+
+18
+00:01:16,050 --> 00:01:17,240
+Được rồi, tốt.
+
+19
+00:01:17,250 --> 00:01:23,850
+Và sau đó bạn lấy từng e-mail đó và bạn nói rằng chúng tôi phải biến nó thành một trình đọc để bạn quấn chuỗi
+
+20
+00:01:23,970 --> 00:01:31,260
+người đọc xung quanh nó và sử dụng đi truy vấn trình đọc tài liệu mới và một lần nữa bạn đã có tất cả những thứ này từ
+
+21
+00:01:32,340 --> 00:01:37,620
+ví dụ biến nó thành một lựa chọn hoặc bất kỳ trình đọc tài liệu mới nào ngay sau đó cung cấp cho bạn quyền truy cập vào
+
+22
+00:01:37,620 --> 00:01:39,160
+tất cả những phương pháp khác.
+
+23
+00:01:39,360 --> 00:01:46,620
+Và vì vậy, chỉ cần quay lại Tài liệu mới từ trình đọc trong một giây trong tài liệu và trình đọc tài liệu mới.
+
+24
+00:01:46,650 --> 00:01:47,860
+Phải.
+
+25
+00:01:47,910 --> 00:01:55,560
+Bạn đã nhận được tất cả những tài liệu mới đó từ trình đọc cung cấp cho bạn một con trỏ tài liệu tới một tài liệu và con trỏ
+
+26
+00:01:55,560 --> 00:01:56,880
+đến một tài liệu trong đó.
+
+27
+00:01:56,940 --> 00:02:01,320
+Chúng tôi có một con trỏ tới một lựa chọn vì chúng tôi có một con trỏ tới lựa chọn.
+
+28
+00:02:01,650 --> 00:02:04,000
+Chúng tôi có tất cả các phương pháp đó.
+
+29
+00:02:04,140 --> 00:02:06,900
+Và vì vậy bây giờ chúng tôi có quyền truy cập vào tất cả các phương pháp đó là chính xác.
+
+30
+00:02:06,930 --> 00:02:07,450
+Đúng.
+
+31
+00:02:07,470 --> 00:02:09,180
+Vì vậy, trở lại mã.
+
+32
+00:02:09,180 --> 00:02:11,480
+Vâng, chúng là tất cả các phương pháp.
+
+33
+00:02:11,490 --> 00:02:21,570
+Chúng tôi có tài liệu và sau đó chúng tôi chỉ cần kiểm tra lỗi đó và lỗi của bạn là trả về lỗi quỹ không K và trả về
+
+34
+00:02:21,570 --> 00:02:29,610
+một lỗi nếu có vấn đề khi truyền nó qua chuỗi thực thi và sau đó bạn cắt các tweet đã nói
+
+35
+00:02:29,610 --> 00:02:34,290
+tất cả các tweet của bạn và bây giờ bạn chỉ có thể sử dụng các chức năng mà bạn có loại này từ ví dụ mà bạn
+
+36
+00:02:34,300 --> 00:02:35,020
+nhìn vào số không.
+
+37
+00:02:35,060 --> 00:02:41,610
+Bạn có công việc và tìm kiếm và mỗi lần bạn chuyển tất cả những thứ đó vào và chỉ trả lại phần tweet của bạn khi đã xong
+
+38
+00:02:41,610 --> 00:02:44,270
+xong.
+
+39
+00:02:44,720 --> 00:02:46,280
+Và điều đó làm điều đó cho mỗi.
+
+40
+00:02:46,350 --> 00:02:47,190
+Mỗi.
+
+41
+00:02:47,190 --> 00:02:49,010
+Mỗi cuộc trò chuyện về cơ bản là đúng.
+
+42
+00:02:49,050 --> 00:02:49,440
+Vâng.
+
+43
+00:02:49,520 --> 00:02:51,140
+Các lát khác của cuộc trò chuyện.
+
+44
+00:02:51,170 --> 00:02:53,150
+Vì vậy, bạn đang làm điều đó với phạm vi ở Maine.
+
+45
+00:02:53,150 --> 00:02:53,390
+Vâng.
+
+46
+00:02:53,400 --> 00:02:54,090
+Điều đó thật tuyệt vời.
+
+47
+00:02:54,090 --> 00:02:54,830
+Hoàn toàn có nó.
+
+48
+00:02:54,870 --> 00:02:56,230
+Vì vậy, người này chỉ giành chiến thắng.
+
+49
+00:02:56,250 --> 00:02:58,980
+Một phản hồi được thông qua với điều này.
+
+50
+00:02:59,010 --> 00:03:04,280
+Và vì vậy, sau đó bạn phải tập hợp tất cả các đoạn tweet lại với nhau ở phần cuối.
+
+51
+00:03:04,440 --> 00:03:12,750
+Và tôi sẽ lưu câu hỏi này cho bạn biết và phản ánh này cho các loại câu hỏi tại
+
+52
+00:03:12,750 --> 00:03:12,980
+kết thúc.
+
+53
+00:03:13,020 --> 00:03:20,540
+Tôi nghĩ rằng thật tốt khi nói điều này nhưng giống như tôi, tôi rất vui vì tôi thậm chí còn hiểu mã và đang
+
+54
+00:03:20,550 --> 00:03:26,670
+có thể hiểu mã giống như theo nghĩa đen giống như một chút endorphin xuất hiện trong đầu tôi khi tôi hiểu
+
+55
+00:03:26,690 --> 00:03:34,440
+nó giống như một kiểu Las Vegas mà bạn biết không có loại tăng cường tích cực endorphin nào như goo I
+
+56
+00:03:34,440 --> 00:03:36,680
+hiểu rồi tôi hiểu đúng rồi.
+
+57
+00:03:36,690 --> 00:03:41,730
+Và tôi nghĩ đó cũng là điều tôi hiểu khi tôi thực sự viết mã, bạn biết đấy và nó hoạt động giống như ồ tôi đã hiểu
+
+58
+00:03:41,730 --> 00:03:46,200
+nó hoạt động giống như có một chút chất lượng gây nghiện lập trình đối với tôi và tôi biết nó giống như
+
+59
+00:03:46,200 --> 00:03:51,150
+rằng đối với những người khác, bạn cảm thấy hài lòng khi tạo ra một giải pháp khi bạn thiết kế một thứ gì đó
+
+60
+00:03:51,150 --> 00:03:56,580
+điều đó thực sự hoạt động tốt, thật thú vị khi bạn có thể hiểu điều gì đó mà người khác đã thiết kế
+
+61
+00:03:56,580 --> 00:03:57,950
+mà hoạt động tốt.
+
+62
+00:03:57,950 --> 00:04:03,960
+Và như vậy nhưng đó là tôi cũng chỉ muốn chỉ ra rằng đó là những bước để có thể
+
+63
+00:04:03,960 --> 00:04:04,830
+làm.
+
+64
+00:04:04,860 --> 00:04:06,750
+Điều đầu tiên là có thể hiểu đúng.
+
+65
+00:04:06,750 --> 00:04:10,890
+Giống như lần đầu tiên bạn phải nhìn thấy nó và sau đó bạn có thể hiểu nó được thực hiện như thế nào và cuối cùng
+
+66
+00:04:10,890 --> 00:04:12,460
+bạn sẽ có thể làm điều đó.
+
+67
+00:04:12,480 --> 00:04:15,880
+Vì vậy, hãy tận tâm dù bạn đang ở đâu trong quá trình đó.
+
+68
+00:04:15,960 --> 00:04:20,100
+Nếu bạn nhìn vào điều này và bạn cảm thấy hơi choáng ngợp hoặc nếu bạn nhìn vào điều này và bạn đang
+
+69
+00:04:20,190 --> 00:04:25,380
+như Được rồi tôi hiểu nó không nghĩ rằng tôi có thể viết nó như thế đó là quá trình mà bạn trải qua
+
+70
+00:04:25,380 --> 00:04:27,500
+để cuối cùng có thể viết nó.
+
+71
+00:04:27,960 --> 00:04:35,490
+Bạn biết bạn nghĩ về các lĩnh vực khác, các ngành khác mà bạn biết như thế nào cho dù đó là bạn biết bóng đá bạn biết
+
+72
+00:04:35,570 --> 00:04:40,470
+và mọi người đã thấy bạn biết Pele làm những việc nhất định và sau đó họ đi và họ thực hành nó và sau đó họ
+
+73
+00:04:40,470 --> 00:04:41,240
+đã có thể làm điều đó.
+
+74
+00:04:41,250 --> 00:04:42,840
+Nhưng lúc đầu họ không thể.
+
+75
+00:04:42,870 --> 00:04:47,870
+Và bạn biết hoặc hoặc âm nhạc mà bạn biết, bạn nghe người khác chơi thứ gì đó và bạn giống như wow.
+
+76
+00:04:47,970 --> 00:04:50,430
+Sau đó, bạn thực hành nó và cuối cùng bạn cũng có thể làm được điều đó.
+
+77
+00:04:50,460 --> 00:04:54,720
+Nhưng điều đầu tiên là có thể thấy ai đó làm điều đó và hiểu rằng họ đang làm điều đó.
+
+78
+00:04:54,720 --> 00:05:00,440
+Và sau đó áp dụng bản thân vào việc có thể tự mình làm điều đó, cuối cùng bạn có thể làm điều đó nhưng làm thế nào
+
+79
+00:05:00,440 --> 00:05:06,560
+bạn đã mất bao lâu để có thể viết mã như thế này kể từ khi bạn 13 tuổi.
+
+80
+00:05:06,620 --> 00:05:07,780
+Đó là đồng đội của họ.
+
+81
+00:05:07,890 --> 00:05:08,530
+Bắt đầu mã hóa.
+
+82
+00:05:08,540 --> 00:05:11,300
+Vì vậy, đó là một thời gian dài.
+
+83
+00:05:11,900 --> 00:05:15,030
+Và nhưng vì vậy phải mất một thời gian và.
+
+84
+00:05:15,670 --> 00:05:17,330
+Nhưng thực ra là 13 năm trước.
+
+85
+00:05:17,360 --> 00:05:18,410
+Vì vậy, cuộc sống của tôi.
+
+86
+00:05:18,740 --> 00:05:19,080
+Vâng.
+
+87
+00:05:19,640 --> 00:05:21,890
+Nhưng nó đến nếu bạn áp dụng chính mình.
+
+88
+00:05:21,970 --> 00:05:22,190
+Được rồi.
+
+89
+00:05:22,190 --> 00:05:26,050
+Đó là phản xạ thấp khi bạn có bất cứ thứ gì bạn muốn thêm vào.
+
+90
+00:05:26,120 --> 00:05:28,640
+Không phải về điều này nhưng sợ hãi Tôi chỉ nhảy đến Maine.
+
+91
+00:05:28,840 --> 00:05:29,360
+Vâng.
+
+92
+00:05:29,480 --> 00:05:30,040
+Được rồi.
+
+93
+00:05:30,560 --> 00:05:31,160
+Hãy làm điều đó.
+
+94
+00:05:31,160 --> 00:05:31,970
+Hẹn gặp bạn tại Expedia.

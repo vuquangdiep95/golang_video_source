@@ -1,0 +1,667 @@
+1
+00:00:01,850 --> 00:00:06,410
+So let's try out that render package we worked on in the last lecture, and right now I'm looking at
+
+2
+00:00:06,410 --> 00:00:12,710
+the My App project and on the course resources for this lecture, you'll find a few things you can download.
+
+3
+00:00:13,190 --> 00:00:20,600
+One that has some images and a zip file, and one that is a sample home page template.
+
+4
+00:00:21,200 --> 00:00:26,300
+And when I'm going to ask you to do is to download the images, unzip them and then put them, put the
+
+5
+00:00:26,300 --> 00:00:31,850
+contents of that zip file inside the public folder, so you should wind up with a folder called Echo.
+
+6
+00:00:32,000 --> 00:00:37,880
+And that's just the five icons for a for a web application, so we won't continue to get a file not
+
+7
+00:00:37,880 --> 00:00:38,990
+found error.
+
+8
+00:00:39,740 --> 00:00:43,490
+And the other one is an images folder that has a sample logo in there.
+
+9
+00:00:43,520 --> 00:00:50,650
+So download those and put them in your public directory and also download the HomeKit page Duct Temple
+
+10
+00:00:50,660 --> 00:00:53,180
+File and put that inside your views.
+
+11
+00:00:53,270 --> 00:00:59,600
+Now, I haven't put it in here yet, but I'm going to create a new file called HomeKit Page Dot Tempo.
+
+12
+00:01:00,410 --> 00:01:04,940
+And I've actually copied the contents of that file to my clipboard, so let me paste it in.
+
+13
+00:01:06,020 --> 00:01:06,710
+And there it is.
+
+14
+00:01:06,770 --> 00:01:09,490
+As you can see, it's a really simple HTML file.
+
+15
+00:01:09,500 --> 00:01:12,930
+It has this dot cc rf token here, but just leave that alone.
+
+16
+00:01:12,950 --> 00:01:13,730
+That'll be fine.
+
+17
+00:01:13,760 --> 00:01:15,230
+We'll be working with that later on.
+
+18
+00:01:16,160 --> 00:01:22,700
+So once you have those created, our goal in this lecture is to have the ability to serve that HomeKit
+
+19
+00:01:22,760 --> 00:01:29,150
+page tempo using the render functionality we worked on in the Celerity package last time around.
+
+20
+00:01:30,050 --> 00:01:34,830
+So the first thing we're going to need, of course, is a route's file and we have a root file insularity
+
+21
+00:01:34,830 --> 00:01:35,650
+Moscow.
+
+22
+00:01:35,660 --> 00:01:38,260
+But our actual application roots won't live there.
+
+23
+00:01:38,270 --> 00:01:39,740
+That just sets up some middleware.
+
+24
+00:01:40,160 --> 00:01:47,750
+Our actual application roots will live in this file, which I'm about to create, called not surprisingly,
+
+25
+00:01:48,020 --> 00:01:48,920
+roots don't go.
+
+26
+00:01:49,190 --> 00:01:51,290
+And again, this is in the My App package.
+
+27
+00:01:52,670 --> 00:01:58,700
+Now, of course, this needs a package declaration package main, and it will be remarkably similar
+
+28
+00:01:58,700 --> 00:02:01,550
+in format to what we have in the Solar House package.
+
+29
+00:02:01,910 --> 00:02:07,650
+So we'll create a function, but the receiver for this one is a pointer to the application type.
+
+30
+00:02:07,670 --> 00:02:14,570
+We created a little while ago, but it's still called roots, and it returns a pointer to checkmarks.
+
+31
+00:02:17,240 --> 00:02:22,070
+Now the first thing I'll do here is put a couple of comments in and I guess it didn't auto import chief
+
+32
+00:02:22,070 --> 00:02:22,460
+for me.
+
+33
+00:02:22,460 --> 00:02:25,490
+So let's try that again cheeked mooks.
+
+34
+00:02:26,700 --> 00:02:26,860
+That's.
+
+35
+00:02:28,670 --> 00:02:35,870
+So I put some comments in, and the first one is going to say middleware must come before any roots,
+
+36
+00:02:36,470 --> 00:02:38,870
+and then I'll put and roots here.
+
+37
+00:02:39,620 --> 00:02:41,530
+OK, now there's a reason for that.
+
+38
+00:02:41,540 --> 00:02:47,090
+The way that the chip router works is pretty straightforward, but it expects to find middleware before
+
+39
+00:02:47,090 --> 00:02:48,030
+it finds roots.
+
+40
+00:02:48,590 --> 00:02:50,990
+So we can't just be adding them wherever we want.
+
+41
+00:02:51,020 --> 00:02:55,670
+We should put our middleware at the top of our roots file and the actual roots at the bottom.
+
+42
+00:02:56,990 --> 00:03:02,600
+Now, of course, it might seem a little counterintuitive, but right now we're not returning anything
+
+43
+00:03:02,600 --> 00:03:04,040
+because we have nothing to return.
+
+44
+00:03:04,430 --> 00:03:09,740
+We actually appear not to have a root to return, no pointer to achieve, but not much to return.
+
+45
+00:03:10,580 --> 00:03:16,580
+But we actually do because this has a receiver of type pointer to application.
+
+46
+00:03:17,030 --> 00:03:21,050
+I can do something as simple as this return a dart app.
+
+47
+00:03:21,290 --> 00:03:28,280
+Dot roots, OK, because the roots that were initialized in the celebrity's application are available
+
+48
+00:03:28,280 --> 00:03:31,070
+as part of this pointer to an application.
+
+49
+00:03:31,430 --> 00:03:36,830
+The variable A. that we have as a receiver in this function now, we haven't actually added any routes
+
+50
+00:03:36,830 --> 00:03:38,630
+yet, but we could do that easily enough.
+
+51
+00:03:38,780 --> 00:03:40,340
+Let's create right here.
+
+52
+00:03:41,300 --> 00:03:45,410
+Let's return a handler that will take care of static assets.
+
+53
+00:03:45,500 --> 00:03:50,630
+The ICO files and the celebrities start JPEG file that you downloaded a little while ago.
+
+54
+00:03:51,380 --> 00:03:57,260
+So to do that, let's say static reads, and we do it the way we always do in go.
+
+55
+00:03:57,470 --> 00:03:58,390
+We create a variable.
+
+56
+00:03:58,400 --> 00:04:01,040
+I'll call my own file server because it's serving files.
+
+57
+00:04:01,370 --> 00:04:07,700
+That's a sign the value of HTP Dot file server right there.
+
+58
+00:04:08,510 --> 00:04:11,930
+And that requires one parameter, but it has to be in a specific format.
+
+59
+00:04:11,960 --> 00:04:21,890
+So we'll take each to http d.r and we'll say look for everything in dot slash public, the public folder
+
+60
+00:04:21,890 --> 00:04:23,540
+at the root level of this application.
+
+61
+00:04:23,900 --> 00:04:29,400
+And now we can create a root account dot roots right there.
+
+62
+00:04:30,890 --> 00:04:31,820
+Dot handle.
+
+63
+00:04:32,990 --> 00:04:39,410
+And we're going to look for everything in the public, followed by a star.
+
+64
+00:04:40,700 --> 00:04:48,350
+And then we strip the prefix http dot strict prefix, and we're going to strip it down to slash public
+
+65
+00:04:49,130 --> 00:04:50,330
+using file server.
+
+66
+00:04:51,320 --> 00:04:56,390
+So those two lines of code allow us to serve all of the content, the assets in the public folder of
+
+67
+00:04:56,390 --> 00:05:00,850
+our application by going to the root, whatever your server name is, slash.
+
+68
+00:05:01,110 --> 00:05:04,230
+Public slash the following, so that's pretty straightforward.
+
+69
+00:05:05,520 --> 00:05:09,870
+Now there's one more change we need to make in our tax package before we go too much further, and I'm
+
+70
+00:05:09,870 --> 00:05:13,020
+going to do it now, otherwise chances are I will forget.
+
+71
+00:05:13,500 --> 00:05:19,380
+So I'm going to switch to the securitized package and I'm going to go to the in it bit.
+
+72
+00:05:19,590 --> 00:05:23,520
+So that is in this us.
+
+73
+00:05:24,270 --> 00:05:27,570
+I'm looking for the listing and serve it, which is right here.
+
+74
+00:05:28,350 --> 00:05:34,140
+This secret routes, it worked great when we were testing a hard coded route in the routes file in the
+
+75
+00:05:34,140 --> 00:05:35,220
+silver tax package.
+
+76
+00:05:36,300 --> 00:05:43,110
+But this actually needs to be changed to see routes like that because that's the one we're accessing
+
+77
+00:05:43,110 --> 00:05:48,140
+in our aked app routes, in the other package, in our My App project.
+
+78
+00:05:48,300 --> 00:05:50,760
+So let's get that change done now before I forget.
+
+79
+00:05:51,900 --> 00:05:52,230
+OK.
+
+80
+00:05:52,800 --> 00:05:58,320
+So what we want to do next, of course, is we have these routes, this routes file.
+
+81
+00:05:58,330 --> 00:06:01,050
+We want to be able to add routes, something like this.
+
+82
+00:06:01,530 --> 00:06:10,020
+Let's say we're going to call a dart app, dart routes, not render routes and then say a get request
+
+83
+00:06:10,290 --> 00:06:12,510
+for the home page for our application.
+
+84
+00:06:13,380 --> 00:06:18,000
+And what I'd like to do next, of course, is put a handler here, maybe something called home, for
+
+85
+00:06:18,000 --> 00:06:22,050
+example, but the way that we have our application structured.
+
+86
+00:06:22,080 --> 00:06:25,920
+If you look at those folders, we created quite a few lectures ago now.
+
+87
+00:06:26,460 --> 00:06:31,890
+One of those folders is called handlers, which means my handlers are supposed to be in that folder
+
+88
+00:06:32,370 --> 00:06:33,510
+and in the go world.
+
+89
+00:06:33,600 --> 00:06:36,120
+If you're in your own folder, you are a package.
+
+90
+00:06:36,210 --> 00:06:39,990
+So we need to actually create a package for handlers.
+
+91
+00:06:40,110 --> 00:06:41,160
+Let's do that really quickly.
+
+92
+00:06:41,880 --> 00:06:47,940
+So inside the Hammers folder or create a new file, which I'll call handlers don't go.
+
+93
+00:06:49,350 --> 00:06:52,530
+And of course, it requires a package declaration package handlers.
+
+94
+00:06:53,160 --> 00:06:57,830
+So let's create a type so we can create an instance of this and use it in our application.
+
+95
+00:06:57,840 --> 00:07:04,920
+And I'll call it handlers and struct, and we'll give it one member for now app, which is a pointer
+
+96
+00:07:04,920 --> 00:07:08,520
+to celebrities, top celebrities.
+
+97
+00:07:09,030 --> 00:07:15,330
+OK, now that I have that, let's just really quickly put together a home function handler that we can
+
+98
+00:07:15,330 --> 00:07:15,640
+use.
+
+99
+00:07:15,660 --> 00:07:20,430
+So func and h pointer two handlers in this case, because we're in a package.
+
+100
+00:07:21,240 --> 00:07:22,140
+And I'll just call it home.
+
+101
+00:07:22,350 --> 00:07:29,430
+And because it's a handler, it requires two parameters a response writer, which I'll call W http response
+
+102
+00:07:29,430 --> 00:07:36,330
+writer and a pointer to a request, our Typekit request.
+
+103
+00:07:38,880 --> 00:07:43,080
+And here finally is where we're going to use that render package.
+
+104
+00:07:43,080 --> 00:07:45,930
+We built in this Alatas package, and it's really straightforward.
+
+105
+00:07:46,080 --> 00:07:52,890
+So we'll check for an error here is assigned the value of From H, which is our receiver Typekit app,
+
+106
+00:07:53,040 --> 00:07:58,740
+which is a member or field in that receiver Typekit render, which we now have access to.
+
+107
+00:07:58,740 --> 00:08:05,370
+And I want to render a page and the page I want a renter requires four parameters.
+
+108
+00:08:05,370 --> 00:08:12,330
+If you recall the response freighter, the request, the name of the template which is home, and two
+
+109
+00:08:12,330 --> 00:08:13,080
+pieces of data.
+
+110
+00:08:13,080 --> 00:08:15,720
+But I'll just pass meal for both of those kneeling, Neal.
+
+111
+00:08:16,110 --> 00:08:16,500
+OK.
+
+112
+00:08:17,250 --> 00:08:24,360
+If error is not equal to nil, then I'll just take advantage of the error logger in my celerity package.
+
+113
+00:08:24,930 --> 00:08:29,250
+So each app dot error logged on print line.
+
+114
+00:08:31,470 --> 00:08:35,970
+I'll just say error rendering and then whatever the error was.
+
+115
+00:08:36,840 --> 00:08:46,980
+OK, so now if we go back to our roots file, I can change this to aid handlers at home.
+
+116
+00:08:47,730 --> 00:08:51,080
+But of course, we still haven't initialized that handlers.
+
+117
+00:08:51,210 --> 00:08:52,350
+So let's go take care of that.
+
+118
+00:08:52,620 --> 00:08:54,000
+So let's go right from the start.
+
+119
+00:08:54,230 --> 00:08:54,930
+Got a main dog.
+
+120
+00:08:54,930 --> 00:08:57,960
+So we're looking for in it application.
+
+121
+00:08:58,800 --> 00:09:01,400
+And let's say, let's get rid of this debug line.
+
+122
+00:09:01,410 --> 00:09:02,370
+You don't need that anymore.
+
+123
+00:09:03,960 --> 00:09:05,820
+Let's create a new handler right here.
+
+124
+00:09:06,000 --> 00:09:09,810
+So I'll say my handlers can call it whatever I want, but that works.
+
+125
+00:09:10,050 --> 00:09:14,730
+My handlers assign the value of a reference to the handlers.
+
+126
+00:09:14,730 --> 00:09:20,570
+Package dog handlers node is populate its field, which is just apt, and that becomes self.
+
+127
+00:09:21,690 --> 00:09:25,590
+And then down here, we need to add the handlers type to our application.
+
+128
+00:09:25,590 --> 00:09:31,170
+So let's find that and add handlers.
+
+129
+00:09:31,800 --> 00:09:35,490
+And that's a pointer to handlers, dog handlers.
+
+130
+00:09:36,960 --> 00:09:39,450
+So back to our unit celebrities.
+
+131
+00:09:43,080 --> 00:09:47,190
+And here we can now, say handlers, is my handlers.
+
+132
+00:09:49,890 --> 00:09:55,290
+So the last thing we have to do, we have our handlers, we have our roots file, but at no point have
+
+133
+00:09:55,290 --> 00:10:02,400
+we told the celebrities back end to add our roots to its default roots, which just consist of middleware
+
+134
+00:10:02,400 --> 00:10:02,880
+right now.
+
+135
+00:10:03,420 --> 00:10:04,680
+And fortunately, that's pretty easy.
+
+136
+00:10:05,250 --> 00:10:08,070
+We just here, say app.
+
+137
+00:10:10,040 --> 00:10:10,790
+Typekit app.
+
+138
+00:10:11,240 --> 00:10:12,410
+And that's hilarious.
+
+139
+00:10:12,680 --> 00:10:16,910
+Dot roots is now equal to.
+
+140
+00:10:18,740 --> 00:10:27,410
+Popped up roots, because what we're doing in this function, Apport Roots, which is this one, is
+
+141
+00:10:27,410 --> 00:10:33,090
+we're taking the existing roots from our receiver and we're adding these roots to it.
+
+142
+00:10:33,470 --> 00:10:40,400
+So back here, we're effectively overriding the default roots, which we got from celebrities with the
+
+143
+00:10:40,400 --> 00:10:42,860
+roots from celebrities, plus our own roots.
+
+144
+00:10:43,130 --> 00:10:43,490
+All right.
+
+145
+00:10:43,670 --> 00:10:47,420
+So if we did everything right, I should be able to open my terminal window.
+
+146
+00:10:49,550 --> 00:10:54,290
+Make sure that this isn't running, make stop and say make start.
+
+147
+00:10:57,650 --> 00:11:03,530
+And switched to our Web browser and go to local host 4000.
+
+148
+00:11:04,310 --> 00:11:06,500
+And there it is, it rendered the template for us.
+
+149
+00:11:07,520 --> 00:11:13,490
+So the nice thing about this is although we've had to do a fair bit of work right now, by the time
+
+150
+00:11:13,490 --> 00:11:19,370
+someone actually installs a new celebrity application using the command line utility, we're going to
+
+151
+00:11:19,370 --> 00:11:20,870
+be building before too long.
+
+152
+00:11:21,740 --> 00:11:26,600
+They're not going to have to do any of this stuff that will already exist when they start in effect.
+
+153
+00:11:26,600 --> 00:11:31,850
+What they're going to have is this a very simple mean go file?
+
+154
+00:11:32,420 --> 00:11:39,320
+And this are ready to edit roots file, and we're going to make it as painless as possible for people
+
+155
+00:11:39,320 --> 00:11:40,730
+to render their content.
+
+156
+00:11:41,660 --> 00:11:44,470
+Now, of course, so far we're only rendering go templates.
+
+157
+00:11:44,480 --> 00:11:50,900
+And as I said a couple of times, what I want to focus on a great deal more in this course with respect
+
+158
+00:11:50,900 --> 00:11:53,870
+to rendering in any case, is working with jet templates.
+
+159
+00:11:54,530 --> 00:11:58,040
+And that's because go templates, as good as they are and they are quite good.
+
+160
+00:11:58,790 --> 00:12:01,460
+Many people find the syntax a little awkward.
+
+161
+00:12:01,490 --> 00:12:10,700
+For example, instead of saying if X equals y, you say if e q x y and some people find that syntax
+
+162
+00:12:10,700 --> 00:12:11,510
+a little bit awkward.
+
+163
+00:12:12,320 --> 00:12:17,930
+Jet templates will give the end user something much more familiar in most cases.
+
+164
+00:12:17,930 --> 00:12:21,710
+And also jet templates are quite a bit faster than GO templates.
+
+165
+00:12:21,940 --> 00:12:23,690
+It will support both in any case.
+
+166
+00:12:24,470 --> 00:12:30,890
+All right, so our next step is to extend or improve our rendering package, insularity us to support
+
+167
+00:12:30,890 --> 00:12:35,540
+jet templates, and we'll get started on that in the next lecture.

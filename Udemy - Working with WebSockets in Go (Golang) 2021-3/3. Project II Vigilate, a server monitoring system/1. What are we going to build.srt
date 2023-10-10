@@ -1,0 +1,339 @@
+1
+00:00:01,280 --> 00:00:06,050
+So in this part of the course, we're going to build a rather interesting little project and it's one
+
+2
+00:00:06,050 --> 00:00:11,680
+that is used to monitor external services on various servers out there.
+
+3
+00:00:11,690 --> 00:00:13,030
+So I'll just show you how it works.
+
+4
+00:00:13,040 --> 00:00:14,090
+I'll just log in here.
+
+5
+00:00:21,560 --> 00:00:26,390
+All right, I'm calling this vigilante, which is just a Latin word, that means watch, because the
+
+6
+00:00:26,390 --> 00:00:33,320
+entire purpose of this application is to watch remote services on remote servers and notify someone
+
+7
+00:00:33,320 --> 00:00:35,480
+when things go awry or when they go down.
+
+8
+00:00:35,840 --> 00:00:37,870
+So right now, you'll see that this is the dashboard.
+
+9
+00:00:37,880 --> 00:00:39,490
+I have to help these services.
+
+10
+00:00:39,500 --> 00:00:44,930
+And there's only one host on monitoring, which is Google, which is usually up, no warnings, no problems
+
+11
+00:00:44,930 --> 00:00:46,040
+and no pending services.
+
+12
+00:00:46,050 --> 00:00:47,120
+So let's go look at Google.
+
+13
+00:00:47,120 --> 00:00:48,020
+So we'll look at Google.
+
+14
+00:00:48,680 --> 00:00:52,280
+And you can see here we have some basic information about the server.
+
+15
+00:00:52,550 --> 00:00:54,200
+You know, where is it located?
+
+16
+00:00:54,200 --> 00:00:55,490
+What is the world to find it?
+
+17
+00:00:55,500 --> 00:00:59,330
+I can validate that this is a valid UFO and I connected to it successfully.
+
+18
+00:00:59,330 --> 00:01:00,050
+So that's good.
+
+19
+00:01:00,530 --> 00:01:01,970
+I can manage it services.
+
+20
+00:01:01,970 --> 00:01:03,830
+There's only two that I'm monitoring here.
+
+21
+00:01:03,830 --> 00:01:09,830
+Can I ping it and can I connect to to it using https and I can look at the settings, check this every
+
+22
+00:01:09,830 --> 00:01:12,050
+three and I can change minutes, hours or days.
+
+23
+00:01:12,050 --> 00:01:13,580
+How frequently do you want to check it.
+
+24
+00:01:13,580 --> 00:01:14,510
+So on and so forth.
+
+25
+00:01:14,810 --> 00:01:16,160
+What are the healthy services.
+
+26
+00:01:16,370 --> 00:01:18,410
+I can refresh it and that works great.
+
+27
+00:01:18,410 --> 00:01:19,910
+It just refreshes and stays there.
+
+28
+00:01:20,240 --> 00:01:25,490
+I can see any warnings, any problems or any services that are not being checked right now.
+
+29
+00:01:25,970 --> 00:01:27,170
+So I'm going to add a host.
+
+30
+00:01:27,170 --> 00:01:33,410
+I'm going to go to hosts and say add a new host and I'll call this local server.
+
+31
+00:01:33,440 --> 00:01:41,330
+And the URL is HDP colon slash slash localhost eighty eighty, which is a Web server I have running
+
+32
+00:01:41,330 --> 00:01:47,600
+locally and it's where its location is right here and its operating system is Mac OS X.
+
+33
+00:01:48,020 --> 00:01:50,240
+So let me test that to make sure I can connect to it.
+
+34
+00:01:50,240 --> 00:01:50,840
+I can.
+
+35
+00:01:50,840 --> 00:01:51,950
+So I'll save that.
+
+36
+00:01:52,700 --> 00:02:02,040
+I'll say save and continue and then I'll add a service so I'll add a service and I'll just add HlV there.
+
+37
+00:02:02,060 --> 00:02:07,760
+So Sanaz it's added it and I have not left this page and yet this appeared here.
+
+38
+00:02:07,760 --> 00:02:14,900
+I actually change the contents of this table based upon using web sockets.
+
+39
+00:02:15,210 --> 00:02:17,900
+Now I'm going to open another window here to show you how this works.
+
+40
+00:02:18,380 --> 00:02:20,990
+So I'll open the settings are not the settings.
+
+41
+00:02:21,140 --> 00:02:29,210
+I'll open the schedule window and I will drag this down and resize this window so that it's over here
+
+42
+00:02:30,590 --> 00:02:32,210
+and resize this window.
+
+43
+00:02:34,130 --> 00:02:39,840
+Make it a little smaller, too, and I'll just drag it over to about here and then this way.
+
+44
+00:02:40,280 --> 00:02:44,270
+OK, so now we can see two windows at the same time.
+
+45
+00:02:47,300 --> 00:02:52,880
+Now you'll see that this schedule, this is a list, this lists what is currently being checked.
+
+46
+00:02:52,970 --> 00:02:58,270
+I'm going to turn monitoring on and notice how this automatically refreshes.
+
+47
+00:02:58,280 --> 00:03:01,610
+I use Web sockets to update what's going on in that table.
+
+48
+00:03:01,970 --> 00:03:03,710
+And we're going to use this application.
+
+49
+00:03:03,710 --> 00:03:04,960
+We're going to build this from the ground up.
+
+50
+00:03:04,970 --> 00:03:07,490
+I'll give you some starter code so you don't have to write the boilerplate.
+
+51
+00:03:08,150 --> 00:03:15,350
+We're going to write code that uses Web sockets to update everything in real time without leaving the
+
+52
+00:03:15,350 --> 00:03:15,740
+page.
+
+53
+00:03:15,740 --> 00:03:18,320
+And we're going to do it using a pusher compliant server.
+
+54
+00:03:18,470 --> 00:03:23,540
+You can use Pusha if you want to, but I'm going to show you how to use a free version and we'll do
+
+55
+00:03:23,540 --> 00:03:24,620
+it all through Web sockets.
+
+56
+00:03:24,740 --> 00:03:27,020
+Now, there's lots of other things we can do in here as well.
+
+57
+00:03:27,290 --> 00:03:29,690
+One of the things that we'll be doing is under settings.
+
+58
+00:03:30,140 --> 00:03:32,810
+You can say you can determine how do you want to be notified.
+
+59
+00:03:32,810 --> 00:03:37,070
+So you have to specify the URL of this application because we're going to be sending email encryption
+
+60
+00:03:37,070 --> 00:03:42,140
+key may or may not make it to the final version, but it's here right now, notifications and scheduling.
+
+61
+00:03:42,140 --> 00:03:46,690
+How do you want to be notified of problems and recovery by email and by text message?
+
+62
+00:03:47,030 --> 00:03:51,680
+So email, I've put my information in here and for text messages, I'll just put in a fake phone number
+
+63
+00:03:53,450 --> 00:03:55,520
+555 one, two, one, two.
+
+64
+00:03:55,760 --> 00:03:57,140
+And I'll save and continue.
+
+65
+00:03:58,670 --> 00:04:01,670
+And if I go to mail settings, you can specify your mail server.
+
+66
+00:04:01,700 --> 00:04:05,570
+And for text message settings, I'm only going to bother with one provider.
+
+67
+00:04:05,570 --> 00:04:11,150
+I'll say yes, enable text message and the provider will be Twilio because it's really easy to use.
+
+68
+00:04:11,630 --> 00:04:15,050
+So we'll specify all of this information and then we'll test things.
+
+69
+00:04:15,290 --> 00:04:21,410
+So let's go back to our overview and you'll see right now I have one pending service I'm monitoring.
+
+70
+00:04:21,410 --> 00:04:23,750
+Let me go to that pending service and refresh it.
+
+71
+00:04:24,760 --> 00:04:31,090
+And I got a little message saying the servers, OK, and it automatically populated the healthy table
+
+72
+00:04:31,180 --> 00:04:33,460
+or the healthy tab at the table in the healthy tab.
+
+73
+00:04:34,000 --> 00:04:40,870
+Now, I'm going to go over here and I'm going to stop that application running on Port AT&amp;T and come
+
+74
+00:04:40,870 --> 00:04:41,410
+back here.
+
+75
+00:04:42,280 --> 00:04:49,560
+And if we look at our schedule, when's it next going to check it, it's going to check it at 11, 28
+
+76
+00:04:49,570 --> 00:04:52,260
+and it is 11, 27, 53, that's a whole minute.
+
+77
+00:04:52,270 --> 00:04:53,290
+I'm not going to wait a minute.
+
+78
+00:04:53,680 --> 00:05:00,760
+I'll just go back to overview and go to healthy services and look at local server and refresh that.
+
+79
+00:05:01,270 --> 00:05:07,270
+And it says there is a problem here and I can click on details and it would take me right to the problems
+
+80
+00:05:07,270 --> 00:05:09,160
+tab showing me that error connected.
+
+81
+00:05:09,790 --> 00:05:10,840
+So this is what we're going to build.
+
+82
+00:05:10,900 --> 00:05:11,980
+It's going to take a little while.
+
+83
+00:05:12,220 --> 00:05:16,140
+But as I said, I'm going to give you some starter code that will make things a little simpler for you.
+
+84
+00:05:16,150 --> 00:05:22,480
+We're going to focus on the WebSocket aspect and not the Web application aspect, but it'll be fun.
+
+85
+00:05:22,490 --> 00:05:23,430
+So let's get started.

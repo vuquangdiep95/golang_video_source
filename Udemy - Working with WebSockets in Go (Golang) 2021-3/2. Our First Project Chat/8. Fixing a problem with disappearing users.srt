@@ -1,0 +1,291 @@
+1
+00:00:00,810 --> 00:00:05,340
+So last time it looked like we had an error and it looked like we were getting our username displayed
+
+2
+00:00:05,340 --> 00:00:11,220
+twice and it wasn't actually an error in our code, or at least not exactly an error in our code, it
+
+3
+00:00:11,220 --> 00:00:13,400
+was more error in the way that I was doing things.
+
+4
+00:00:13,590 --> 00:00:16,200
+So I have just started the application.
+
+5
+00:00:16,200 --> 00:00:20,280
+As you can see right here, I've just started there's only one message being printed to the console.
+
+6
+00:00:20,580 --> 00:00:22,740
+That's because this client is already connected.
+
+7
+00:00:23,040 --> 00:00:25,170
+And if I put Fred in here, I get one Fred.
+
+8
+00:00:25,620 --> 00:00:28,440
+And if I put Frederich in here, I get one Frederich.
+
+9
+00:00:29,130 --> 00:00:34,400
+But if I reload the page without restarting the application, here's what happens.
+
+10
+00:00:34,410 --> 00:00:35,400
+Watch this log file.
+
+11
+00:00:35,400 --> 00:00:39,300
+So I'll just put a couple of blank spaces in here so you can see that there's nothing right here right
+
+12
+00:00:39,300 --> 00:00:39,630
+now.
+
+13
+00:00:39,990 --> 00:00:46,800
+When I reload the page, all of my users go away because I'm not actually listing my users, but I have
+
+14
+00:00:46,800 --> 00:00:47,190
+error.
+
+15
+00:00:47,190 --> 00:00:49,690
+Repeated field on failed WebSocket connection.
+
+16
+00:00:49,720 --> 00:00:55,650
+That's because when I reload the page, I actually got a different WebSocket connection.
+
+17
+00:00:55,650 --> 00:00:57,090
+So I put Fred in here.
+
+18
+00:00:57,090 --> 00:01:01,280
+Now I'm going to see Fred and Frederick because that Frederick is still in the map.
+
+19
+00:01:01,800 --> 00:01:06,690
+So because I didn't stop the application and start it, that's what caused the grief.
+
+20
+00:01:06,990 --> 00:01:09,750
+There was still one entry in that map.
+
+21
+00:01:10,170 --> 00:01:17,520
+So what I need to do is I need to have some means of determining whether or not a user leaves the page.
+
+22
+00:01:17,550 --> 00:01:18,760
+Unfortunately, that's pretty easy.
+
+23
+00:01:18,930 --> 00:01:22,470
+So I want to go back to my code and I'm going to go to homecourt jet.
+
+24
+00:01:23,040 --> 00:01:29,460
+And right here at the top, I'm going to put some code in my JavaScript.
+
+25
+00:01:30,450 --> 00:01:36,390
+And what I'm going to put here is something that will execute just before we leave the page window,
+
+26
+00:01:36,400 --> 00:01:39,860
+dot onload or on before unload.
+
+27
+00:01:39,900 --> 00:01:43,560
+So in other words, just before we leave the page, I click the link, I close the window.
+
+28
+00:01:43,560 --> 00:01:48,060
+Whatever it may be, I'm going to execute a function that's equal to a function.
+
+29
+00:01:48,570 --> 00:01:55,920
+And all I'm going to do here is say console dot log leaving, just so I know that it's actually executing.
+
+30
+00:01:56,910 --> 00:01:59,520
+And then I'll create an empty JSON data object.
+
+31
+00:02:04,530 --> 00:02:12,480
+And then I'll populate that with an action that we don't have yet, Jason, data action is going to
+
+32
+00:02:12,480 --> 00:02:13,680
+be equal to left.
+
+33
+00:02:14,190 --> 00:02:18,780
+In other words, somebody left and I'll send that along my socket sockets.
+
+34
+00:02:18,790 --> 00:02:22,710
+Send Jason String Afie, Jason, Dana.
+
+35
+00:02:24,470 --> 00:02:29,570
+OK, so that will actually send the command to the server, but in the handlers, I need to actually
+
+36
+00:02:29,570 --> 00:02:30,430
+check for that now.
+
+37
+00:02:31,100 --> 00:02:36,010
+So let's find the part where we have our actions, we have our actions right here.
+
+38
+00:02:36,020 --> 00:02:36,940
+We have username.
+
+39
+00:02:37,580 --> 00:02:40,190
+So let's create a new action case left.
+
+40
+00:02:41,690 --> 00:02:47,690
+So I need to send an action to the users that tells them that the user is left.
+
+41
+00:02:47,840 --> 00:02:52,120
+And the simplest way of doing that is actually just to remove the user from the list of users.
+
+42
+00:02:52,520 --> 00:02:55,670
+So let's make a response, response action.
+
+43
+00:02:56,120 --> 00:02:59,150
+And my action will be equal to list users.
+
+44
+00:03:00,410 --> 00:03:02,060
+And if we look at our home dot jet.
+
+45
+00:03:04,270 --> 00:03:06,380
+We have a case for list users.
+
+46
+00:03:06,400 --> 00:03:14,050
+It's our only case right now, so back to our handlers and then we need to actually fix our list of
+
+47
+00:03:14,050 --> 00:03:14,620
+users.
+
+48
+00:03:16,320 --> 00:03:21,060
+So that's our action and we want to send them a new list of users, but we don't want to send a user
+
+49
+00:03:21,060 --> 00:03:22,020
+that's not there anymore.
+
+50
+00:03:22,020 --> 00:03:25,800
+So let's delete from clients Edcon.
+
+51
+00:03:26,790 --> 00:03:34,170
+And of course, because this is being executed on the on before unload in homecourt jet, then we're
+
+52
+00:03:34,170 --> 00:03:40,310
+actually deleting the correct user and now we need to get our list of users so users is equal to get
+
+53
+00:03:40,320 --> 00:03:43,450
+user list and a response.
+
+54
+00:03:43,800 --> 00:03:47,370
+Users are connected users is equal to users.
+
+55
+00:03:51,580 --> 00:03:57,100
+And so we've got our users, we've got our user list, we have our action, all we need to do now is
+
+56
+00:03:57,100 --> 00:03:58,480
+to say broadcast to all.
+
+57
+00:03:59,810 --> 00:04:05,480
+Response and that should do it, and to make this really easy, I'm going to go back to our homepage
+
+58
+00:04:05,930 --> 00:04:09,200
+and I'll put a link right about.
+
+59
+00:04:11,230 --> 00:04:18,170
+Here, just before this, I'll just put a paragraph tag in there and say a draft equals ICDs, set to
+
+60
+00:04:18,190 --> 00:04:24,790
+go to GitHub, Dotcom, go to GitHub, and this will give me a means of making sure the user leaves
+
+61
+00:04:24,790 --> 00:04:28,140
+the page and watching the response on the other page.
+
+62
+00:04:28,150 --> 00:04:29,740
+So let's stop our application.
+
+63
+00:04:30,580 --> 00:04:31,690
+Start our application.
+
+64
+00:04:34,540 --> 00:04:40,810
+Go back to this page and rather than reloading it, I'm just going to return so there's nobody online
+
+65
+00:04:40,930 --> 00:04:44,020
+and I put Fred in here and Fred shows up.
+
+66
+00:04:44,020 --> 00:04:44,530
+Perfect.
+
+67
+00:04:44,560 --> 00:04:49,150
+Now, I'll go to a different browser entirely, Google Chrome, and I'll go to localhost eighty eighty
+
+68
+00:04:49,840 --> 00:04:53,430
+and I'll put Wilma in here and we see Fred and Wilma.
+
+69
+00:04:53,440 --> 00:04:56,250
+And if I go back to Firefox, I see Fred and Wilma.
+
+70
+00:04:56,680 --> 00:05:00,460
+Now, if Wilma goes to GitHub and that's who I am right now on Chrome.
+
+71
+00:05:01,870 --> 00:05:08,160
+She's gone to GitHub and over here she's removed from the list, and that solves that problem perfect.
+
+72
+00:05:08,740 --> 00:05:13,780
+So in the next lecture, we'll work on getting a message broadcast to all users so everyone can actually
+
+73
+00:05:13,780 --> 00:05:15,160
+chat for the very first time.

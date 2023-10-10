@@ -1,0 +1,344 @@
+1
+00:00:00,600 --> 00:00:06,960
+OK, così in questa lezione andiamo avanti e configuriamo un server GOP senza alcun servizio su di esso solo un codice boilerplate.
+
+2
+00:00:06,990 --> 00:00:09,960
+Vedremo come avviare e arrestare il server sulla porta migliore.
+
+3
+00:00:10,170 --> 00:00:15,480
+E deve essere fatto solo con il codice del corpo, quindi possiamo andare avanti e in realtà codificare il nostro servizio
+
+4
+00:00:15,480 --> 00:00:16,600
+in modo più approfondito.
+
+5
+00:00:17,040 --> 00:00:18,630
+Quindi qui sono uno studente.
+
+6
+00:00:18,660 --> 00:00:22,370
+Creerò una nuova cartella e la chiamerò server di sottolineatura.
+
+7
+00:00:22,380 --> 00:00:28,140
+E questo è dove andrà un codice simile. So che sto per creare un nuovo file e chiamarlo Server
+
+8
+00:00:28,600 --> 00:00:29,220
+go.
+
+9
+00:00:29,520 --> 00:00:31,470
+E questo è dove va il codice del server.
+
+10
+00:00:31,620 --> 00:00:37,050
+Il pacchetto verrà creato in modo che possiamo eseguire il nostro file e quindi abbiamo una funzione principale proprio qui
+
+11
+00:00:37,050 --> 00:00:40,340
+per assicurarci che il codice di go sia in esecuzione per te.
+
+12
+00:00:40,530 --> 00:00:46,950
+Possiamo fare la stampa anti-debito tail end e salvare questo automaticamente l'importazione è fatta per te.
+
+13
+00:00:46,950 --> 00:00:50,100
+Altrimenti devi digitare o importare manualmente NMT.
+
+14
+00:00:50,640 --> 00:00:58,950
+E solo per assicurarci che le cose funzionino davvero bene, eseguiamo un ottimo server e poi il server va a
+
+15
+00:00:59,370 --> 00:01:00,640
+riprenderci Hellawell.
+
+16
+00:01:00,660 --> 00:01:02,980
+Quindi tutto sommato funziona ora.
+
+17
+00:01:03,060 --> 00:01:06,770
+Più cose interessanti stiamo andando a scrivere il codice relativo al GRB.
+
+18
+00:01:07,230 --> 00:01:10,630
+Ok, quindi la prima cosa che dobbiamo fare è scrivere un ascoltatore.
+
+19
+00:01:10,890 --> 00:01:13,110
+Quindi abbiamo ragione aria di ascolto.
+
+20
+00:01:13,350 --> 00:01:17,340
+E poi lo invieremo a una nuova variabile e non ascolteremo.
+
+21
+00:01:17,640 --> 00:01:22,140
+E questa funzione prende una stringa per la rete e un indirizzo come una stringa.
+
+22
+00:01:22,140 --> 00:01:27,870
+Quindi per questo useremo GCP perché è una rete GCP che stiamo aprendo la connessione e
+
+23
+00:01:27,900 --> 00:01:37,050
+quindi per l'indirizzo possiamo fare 0 0 0 8 5 0 0 5 1 5 user se voglio è fondamentalmente la porta predefinita per Jarkesy come
+
+24
+00:01:37,050 --> 00:01:37,870
+tu vedremo.
+
+25
+00:01:38,220 --> 00:01:39,640
+Ora dobbiamo occuparci dell'aria.
+
+26
+00:01:39,660 --> 00:01:44,690
+Quindi diremmo se l'aria non è no, allora cosa facciamo?
+
+27
+00:01:45,180 --> 00:01:49,210
+Diciamo LUGG Fatal Death perché questo è un grosso problema.
+
+28
+00:01:49,350 --> 00:01:58,150
+Diciamo che non abbiamo ascoltato e poi avremo il potere e scriverò l'aria proprio qui.
+
+29
+00:01:58,160 --> 00:01:58,400
+OK.
+
+30
+00:01:58,410 --> 00:02:04,470
+Quindi, nel caso ci sia un problema e ad esempio non possiamo legarci alla porta, questo ci
+
+31
+00:02:04,470 --> 00:02:09,390
+piacerà perché puoi vedere che non è felice perché le liste non sono
+
+32
+00:02:09,750 --> 00:02:17,220
+ancora utilizzate, quindi useremo questo come listener e per questo possiamo fare uguali a GOPAC che è un server di notizie.
+
+33
+00:02:18,310 --> 00:02:18,930
+OK.
+
+34
+00:02:19,370 --> 00:02:25,410
+Quindi, se dico questo, è importante per Google che Golinger org tagli Jarkesy.
+
+35
+00:02:25,940 --> 00:02:27,510
+Quindi cosa faremo con questo.
+
+36
+00:02:27,770 --> 00:02:29,580
+Bene, dobbiamo registrare un servizio.
+
+37
+00:02:29,890 --> 00:02:38,220
+E quindi per questo, per ora, ho intenzione di fare magia, ma mi dilungherò su questo più presto in un server di tipo tu.
+
+38
+00:02:38,240 --> 00:02:42,760
+Struct e fondamentalmente questo sarà il tuo oggetto server.
+
+39
+00:02:42,770 --> 00:02:47,260
+E quando aggiungiamo servizi, aggiungeremo l'implementazione per quel tipo.
+
+40
+00:02:47,290 --> 00:02:49,860
+Quindi eccoci ora con il nostro nuovo server.
+
+41
+00:02:49,870 --> 00:02:54,080
+Possiamo fare una grande TV.
+
+42
+00:02:54,480 --> 00:03:03,430
+Quindi abbiamo bisogno di importare BPB e quindi registra un ottimo servizio e ci porta il server GOPAC.
+
+43
+00:03:03,510 --> 00:03:07,270
+Quindi questo è fondamentalmente il nostro s che abbiamo avuto proprio qui.
+
+44
+00:03:08,640 --> 00:03:14,280
+I soldati hanno qui e un server e questo è il tipo che abbiamo avuto in precedenza.
+
+45
+00:03:14,280 --> 00:03:17,400
+Quindi di nuovo tutto questo è un po 'di codice boilerplate.
+
+46
+00:03:17,700 --> 00:03:18,350
+Non ti preoccupare
+
+47
+00:03:18,360 --> 00:03:23,410
+Avrà senso in pochi minuti ma finora abbiamo creato una connessione.
+
+48
+00:03:23,490 --> 00:03:29,000
+Abbiamo un server GOPAC e quindi passiamo fondamentalmente nel server come una struttura qui.
+
+49
+00:03:29,340 --> 00:03:30,040
+OK.
+
+50
+00:03:30,480 --> 00:03:41,630
+Ora finalmente riflettiamo se l'aria e poi facciamo come fa il server e poi passiamo l'ascoltatore e l'aria
+
+51
+00:03:41,630 --> 00:03:43,760
+non è nulla.
+
+52
+00:03:44,280 --> 00:03:54,190
+OK, allora abbiamo impostato l'accesso a Fiddle che non è riuscito a servire per esempio quando questo e stiamo andando a Bessen il messaggio
+
+53
+00:03:54,190 --> 00:03:55,440
+di errore qui.
+
+54
+00:03:55,480 --> 00:03:56,310
+E quando l'aria e
+
+55
+00:03:59,110 --> 00:03:59,850
+qui andiamo.
+
+56
+00:04:00,070 --> 00:04:02,160
+Quindi qui abbiamo un codice trojan.
+
+57
+00:04:02,170 --> 00:04:08,620
+E così fondamentalmente quando lo facciamo, se i nostri pari e che servono se l'arabo fondamentalmente non è nulla, entriamo nel
+
+58
+00:04:08,620 --> 00:04:09,750
+messaggio di errore.
+
+59
+00:04:09,850 --> 00:04:12,910
+Altrimenti il nostro server sta funzionando e stiamo bene.
+
+60
+00:04:12,910 --> 00:04:16,310
+Quindi questa è una scorciatoia per una funzione se non la conosci e vai.
+
+61
+00:04:16,450 --> 00:04:17,940
+E questo è tutto.
+
+62
+00:04:17,980 --> 00:04:19,000
+È un po 'di lamiera.
+
+63
+00:04:18,990 --> 00:04:19,860
+Devo.
+
+64
+00:04:19,900 --> 00:04:26,260
+Ma la cosa importante è che qui c'è una porta Vining Ecco dove hai creato il tuo pc server e colleghi
+
+65
+00:04:26,260 --> 00:04:30,790
+la porta al server GOP e poi possiamo registrare tutti i servizi che vogliamo.
+
+66
+00:04:31,180 --> 00:04:35,210
+Quindi l'importante è l'avidità P. B. avidità P. B. giusto qui.
+
+67
+00:04:35,320 --> 00:04:41,490
+Come puoi vedere l'importazione è il percorso completo per il mio progetto, così buono arriva roba semplice.
+
+68
+00:04:41,640 --> 00:04:42,610
+È meno europeo.
+
+69
+00:04:42,610 --> 00:04:47,920
+Ovviamente, le ciabatte con la slitta tagliano l'avidità P. B. E quindi potresti dover digitare qualcosa di diverso se
+
+70
+00:04:47,920 --> 00:04:49,680
+scegli una cartella diversa e così via.
+
+71
+00:04:49,690 --> 00:04:51,010
+Ma questo è importante.
+
+72
+00:04:51,280 --> 00:04:56,170
+E così come puoi vedere concordato P. B. ha un server di servizio di registro delle funzioni.
+
+73
+00:04:56,170 --> 00:05:02,020
+Quindi se andiamo a salutare P. B. c'è un bel po 'di codice, ma quello che possiamo vedere
+
+74
+00:05:02,350 --> 00:05:04,280
+al suo interno è il numero uno delle importazioni Europaeus.
+
+75
+00:05:04,870 --> 00:05:12,100
+Il numero due definisce alcuni client in modo che possiamo avere un servizio di news client e registrare la funzione del
+
+76
+00:05:12,190 --> 00:05:13,360
+server di servizio.
+
+77
+00:05:13,360 --> 00:05:19,090
+Tra l'altro, le convenzioni di denominazione sono piuttosto negative, ma direi che dobbiamo occuparcene e che un po 'di funzione in esso coinvolge fondamentalmente
+
+78
+00:05:19,090 --> 00:05:25,570
+i gritters mentre generiamo il codice questa avidità. B. ci fornirà fondamentalmente una serie di
+
+79
+00:05:25,570 --> 00:05:29,770
+funzioni che vogliamo utilizzare nel nostro codice per implementare il nostro server.
+
+80
+00:05:30,070 --> 00:05:32,180
+Quindi questo è solo il boilerplate.
+
+81
+00:05:32,200 --> 00:05:38,220
+Cerchiamo di testarlo in modo che possiamo andare go run saluta i server che vanno e dice ciao mondo.
+
+82
+00:05:38,230 --> 00:05:40,330
+E ora come ora lo vedi bloccato.
+
+83
+00:05:40,360 --> 00:05:43,380
+Ciò significa che il server è in esecuzione e in attesa di connessioni.
+
+84
+00:05:43,420 --> 00:05:45,330
+Se lo smetto si è fermato.
+
+85
+00:05:45,370 --> 00:05:46,960
+Quindi questo è tutto per il piatto della caldaia.
+
+86
+00:05:46,960 --> 00:05:50,450
+Ora andiamo ai piatti della caldaia del cliente e poi leggeremo un codice interessante.
+

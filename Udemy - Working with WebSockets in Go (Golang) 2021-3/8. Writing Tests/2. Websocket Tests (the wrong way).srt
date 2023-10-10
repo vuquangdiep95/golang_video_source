@@ -1,0 +1,423 @@
+1
+00:00:01,020 --> 00:00:05,820
+All right, the last test I want to write is one that tests something that interacts with our pusher
+
+2
+00:00:05,820 --> 00:00:11,940
+client and I thought or push your server and I thought I would just use this one in the routes file.
+
+3
+00:00:12,090 --> 00:00:16,350
+The simplest one to use is the pusher off route.
+
+4
+00:00:16,530 --> 00:00:18,830
+And that calls this method pusher off.
+
+5
+00:00:19,680 --> 00:00:26,010
+And what that seems to look for are some parameters and it builds a response or builds a member data
+
+6
+00:00:26,010 --> 00:00:30,510
+object that it's called presence data and pushes that off to the server and gets some kind of response.
+
+7
+00:00:30,570 --> 00:00:34,490
+OK, so let's go look at our application.
+
+8
+00:00:34,500 --> 00:00:40,080
+I have this running and I have my pusher server running IP and I suggest you do two or nothing's going
+
+9
+00:00:40,080 --> 00:00:40,500
+to work.
+
+10
+00:00:40,980 --> 00:00:42,960
+And I'm going to open the JavaScript console.
+
+11
+00:00:43,770 --> 00:00:47,490
+I'm going to look at the network tab and I'm going to look at all the responses.
+
+12
+00:00:47,490 --> 00:00:48,990
+And now I'll reload the page.
+
+13
+00:00:49,710 --> 00:00:52,780
+And then what I'm looking for is called off right here.
+
+14
+00:00:52,800 --> 00:00:53,220
+The file.
+
+15
+00:00:53,330 --> 00:00:56,190
+It says file, which is a strange name, but anyway, it's off.
+
+16
+00:00:56,370 --> 00:00:59,070
+And that's the one that's actually making our request.
+
+17
+00:00:59,340 --> 00:01:04,560
+And if we look at this, the request has a socket ID and a channel name.
+
+18
+00:01:04,710 --> 00:01:11,790
+OK, so I'm going to leave that open and I'm going to go back to my ID and back to my handlers test.
+
+19
+00:01:11,790 --> 00:01:15,660
+And I've already created an empty method here to test the pusher off method.
+
+20
+00:01:16,020 --> 00:01:23,400
+And I'm going to copy everything from here, everything that's in the method named as a test to test
+
+21
+00:01:23,400 --> 00:01:24,270
+login screen.
+
+22
+00:01:24,390 --> 00:01:29,070
+And I'm getting the part that tests a post request because we are in fact making a post request.
+
+23
+00:01:29,310 --> 00:01:35,490
+And I'll just paste it in here to save some time typing and I'll modify it as necessary.
+
+24
+00:01:36,060 --> 00:01:40,330
+So because this is not a table test, these E's aren't going to work, but we'll fix that in a minute.
+
+25
+00:01:40,350 --> 00:01:47,940
+First of all, if you look back here in our Web browser, I'm making a form post and I'm passing two
+
+26
+00:01:47,940 --> 00:01:48,990
+pieces of information.
+
+27
+00:01:48,990 --> 00:01:52,710
+So let me create a variable, which I'll call posted data.
+
+28
+00:01:55,170 --> 00:01:58,770
+And it's going to be of type orld values, same as before.
+
+29
+00:01:59,340 --> 00:02:02,670
+And I'm going to put in there the two things that I see are being posted.
+
+30
+00:02:03,000 --> 00:02:07,050
+So one is socket ID and I'm going to copy this socket ID.
+
+31
+00:02:07,570 --> 00:02:17,220
+OK, I'll copy it and I'll call this socket ID, which is exactly what it's called in the Web browsers
+
+32
+00:02:17,220 --> 00:02:17,880
+console.
+
+33
+00:02:18,120 --> 00:02:20,820
+And then I'll put in the value that I just copied and pasted.
+
+34
+00:02:21,480 --> 00:02:27,060
+And the next one is called Channel Name and it's just private dash channel dash one.
+
+35
+00:02:27,060 --> 00:02:32,610
+So private dash channel dash one.
+
+36
+00:02:33,990 --> 00:02:39,150
+And it has the value of actually Erith at the wrong spot.
+
+37
+00:02:39,150 --> 00:02:41,130
+So I'll delete this, try that again.
+
+38
+00:02:42,200 --> 00:02:47,180
+This is called Channel Dasch name, right, channel underscore name.
+
+39
+00:02:49,500 --> 00:02:58,770
+Channel underscore name, so this is actually using our off to serve the private channel to connect
+
+40
+00:02:58,770 --> 00:03:02,550
+to the private channel, and this needs to have princes around it, curly braces.
+
+41
+00:03:03,210 --> 00:03:04,200
+Let's try that there.
+
+42
+00:03:04,470 --> 00:03:06,720
+I finally got that right now.
+
+43
+00:03:06,720 --> 00:03:07,100
+I do.
+
+44
+00:03:07,470 --> 00:03:08,780
+So I've got my posted data.
+
+45
+00:03:09,360 --> 00:03:14,670
+So what I'm going to do here is get rid of this E and instead just post the variable that I created
+
+46
+00:03:14,670 --> 00:03:16,950
+right here so that we'll post it.
+
+47
+00:03:16,950 --> 00:03:18,750
+And I'm posting it not to slash.
+
+48
+00:03:18,750 --> 00:03:23,580
+I'm pushing it to push her off, which is not actually being used in our case.
+
+49
+00:03:23,580 --> 00:03:25,680
+But I like to have things accurate.
+
+50
+00:03:25,680 --> 00:03:29,220
+So when I'm reading this in six months, I'll have some clue as to what I was doing.
+
+51
+00:03:29,500 --> 00:03:32,220
+OK, so we create a request.
+
+52
+00:03:32,220 --> 00:03:39,930
+We put in the session stuff, we create our response and then we call the appropriate method.
+
+53
+00:03:39,930 --> 00:03:42,660
+And the method we want to call here is not login.
+
+54
+00:03:42,660 --> 00:03:44,020
+It's pushed off.
+
+55
+00:03:44,550 --> 00:03:48,900
+OK, now what we're getting back.
+
+56
+00:03:48,930 --> 00:03:50,300
+Let's go back to the Web browser.
+
+57
+00:03:50,490 --> 00:03:53,760
+What we're getting back from this request is the response.
+
+58
+00:03:53,970 --> 00:03:58,320
+And we're actually getting some Jason and the Jason has this format.
+
+59
+00:03:58,320 --> 00:04:02,280
+So we have OTH and we can actually look at the payload to get a little closer.
+
+60
+00:04:02,280 --> 00:04:09,630
+Look at it, we have an off and then we have some scroll over here, an off apparently I can't do it.
+
+61
+00:04:09,990 --> 00:04:15,740
+And then we have channel data that comes after it right there and that's got some other fields in there.
+
+62
+00:04:16,140 --> 00:04:17,400
+So let's go back here.
+
+63
+00:04:17,400 --> 00:04:24,020
+And all I want to do is I want to first of all, check the response code, which should be here where
+
+64
+00:04:24,130 --> 00:04:25,170
+we want to get a status.
+
+65
+00:04:25,170 --> 00:04:34,230
+OK, so htp dot status, OK, and get rid of the extra E and here the error code should be.
+
+66
+00:04:34,560 --> 00:04:38,610
+I'll just change this message to make it really clean.
+
+67
+00:04:41,860 --> 00:04:51,310
+Expected response, two hundred, but got and I'll just put in a comma or a placeholder present the
+
+68
+00:04:52,840 --> 00:04:53,950
+pardon code.
+
+69
+00:04:54,190 --> 00:04:55,990
+OK, so we're going to check the status quo.
+
+70
+00:04:56,020 --> 00:04:56,620
+And that's great.
+
+71
+00:04:56,620 --> 00:04:59,670
+But I also want to check to Jason that's being fired back at us.
+
+72
+00:05:00,190 --> 00:05:05,280
+And the easiest way to do that, of course, is to create a new type, which I'll call pusher resp.
+
+73
+00:05:05,560 --> 00:05:10,930
+It will be a struct and I'm going to give it only one field off.
+
+74
+00:05:11,380 --> 00:05:16,720
+I could, of course, put all the necessary fields in to pass the entire JSON file, but I just want
+
+75
+00:05:16,720 --> 00:05:18,570
+to make sure that I get back something of value.
+
+76
+00:05:19,480 --> 00:05:20,530
+It's a type string.
+
+77
+00:05:20,710 --> 00:05:27,200
+And in JSON, I want this to be known as exactly it is as it is in a return JSON which is off.
+
+78
+00:05:27,220 --> 00:05:31,630
+So back here we actually have oth and I should get something back.
+
+79
+00:05:31,660 --> 00:05:34,470
+OK, so that's the only thing I care about.
+
+80
+00:05:34,630 --> 00:05:38,250
+I want to pass just enough of that Jason, to actually get our information.
+
+81
+00:05:38,260 --> 00:05:39,490
+So I'll create a new variable.
+
+82
+00:05:39,490 --> 00:05:43,570
+I'll call it P for Pusher and it's a type pusher resp.
+
+83
+00:05:44,890 --> 00:05:49,300
+And now I simply unmerciful the Jason that I'm getting back.
+
+84
+00:05:49,420 --> 00:05:51,670
+Jason Daudt, new decoder.
+
+85
+00:05:52,860 --> 00:06:00,940
+And I'm going to decode our body, which has the Jason response, and I want to decode it into Pete
+
+86
+00:06:01,470 --> 00:06:02,190
+check for an error.
+
+87
+00:06:02,340 --> 00:06:10,680
+If error is not equal to nil, then I will say t dot fatele and I'll just pass in the error.
+
+88
+00:06:12,270 --> 00:06:17,850
+And assuming we get past that, then I should be able to verify that it actually exists.
+
+89
+00:06:18,910 --> 00:06:23,560
+So first of all, let's just log in print line, log, print line.
+
+90
+00:06:24,830 --> 00:06:27,170
+Got back and I'll just read that.
+
+91
+00:06:30,460 --> 00:06:35,530
+Peter off and then we'll read our test afterwards just to make sure this works, so I've got that test
+
+92
+00:06:35,530 --> 00:06:45,610
+going, I switch into my internal handlers directory, clear the screen and go test dashboard.
+
+93
+00:06:49,400 --> 00:06:54,040
+And I seem to get it back, so there we are, got back that string.
+
+94
+00:06:54,050 --> 00:06:59,510
+So what I can test for here is very simple if p dot off.
+
+95
+00:07:00,720 --> 00:07:09,990
+We'll say if Lenn of Peterhof equals zero, then we fail our test, if we get back nothing, if that
+
+96
+00:07:09,990 --> 00:07:15,060
+value is still empty, which it would be when I initialised it right here with this variable, I'll
+
+97
+00:07:15,060 --> 00:07:16,680
+just say Teda Şeref.
+
+98
+00:07:20,520 --> 00:07:21,450
+Arab works here.
+
+99
+00:07:23,530 --> 00:07:25,900
+Empty Jason response.
+
+100
+00:07:27,040 --> 00:07:29,500
+OK, and now we can actually run this test.
+
+101
+00:07:33,000 --> 00:07:33,550
+There you go.
+
+102
+00:07:33,960 --> 00:07:39,330
+So it's simply a matter when you're working with Pusher in WebSocket of looking at the JSON response
+
+103
+00:07:39,330 --> 00:07:43,590
+that you get in this case, and I think this is enough to get you started so you can start writing your
+
+104
+00:07:43,590 --> 00:07:44,310
+own tests.
+
+105
+00:07:45,270 --> 00:07:45,860
+Well, there we go.
+
+106
+00:07:45,900 --> 00:07:46,950
+That's all there is to that.

@@ -1,0 +1,339 @@
+1
+00:00:12,210 --> 00:00:17,370
+Hello and welcome to the gold and programming language course in the previous session.
+
+2
+00:00:17,520 --> 00:00:24,660
+We were able to create the political ball from messages and air pieces services and create equivalent
+
+3
+00:00:24,660 --> 00:00:26,010
+gold angus stratifying.
+
+4
+00:00:26,340 --> 00:00:32,730
+Now it's time to design the database layer to communicate the connection between the database and the
+
+5
+00:00:32,730 --> 00:00:33,180
+server.
+
+6
+00:00:34,230 --> 00:00:38,850
+Now go to Project Folder and create a folder named Launch Model
+
+7
+00:00:43,500 --> 00:00:44,920
+in Model Folder.
+
+8
+00:00:44,940 --> 00:00:49,260
+Recreate the file like named A-student that go inside it.
+
+9
+00:00:50,730 --> 00:00:54,500
+Right click and create a new file like the.
+
+10
+00:00:55,140 --> 00:00:55,950
+That's cool.
+
+11
+00:00:57,420 --> 00:01:04,350
+Now we are going to create a structure equivalent to a student table in the MySchool database in design.
+
+12
+00:01:04,980 --> 00:01:13,470
+So we create a strike name student with fields such as fields is taught inside the MySchool database.
+
+13
+00:01:13,830 --> 00:01:24,870
+So right first package modern and tried is to then instruct
+
+14
+00:01:28,110 --> 00:01:29,190
+and write the fields.
+
+15
+00:01:29,430 --> 00:01:43,680
+I'd buy the type in 64 and name by string type and age by end 32.
+
+16
+00:01:45,300 --> 00:01:48,150
+He format the code and save the project.
+
+17
+00:01:48,540 --> 00:01:57,150
+Now go to Project Folder and create another folder name like configuration, which is supposed to include
+
+18
+00:01:57,150 --> 00:02:03,510
+the settings for the connection of the Go program with the MySchool database, so right click on the
+
+19
+00:02:03,510 --> 00:02:04,440
+project folder.
+
+20
+00:02:04,620 --> 00:02:08,910
+Create a folder like Come Figuration.
+
+21
+00:02:13,230 --> 00:02:19,740
+We want to create a database connection settings as a JSON file, so inside the configuration folder,
+
+22
+00:02:19,740 --> 00:02:23,640
+we create the phone call config with the JSON extension.
+
+23
+00:02:25,620 --> 00:02:28,580
+Right click on the Configuration folder and create the file.
+
+24
+00:02:28,590 --> 00:02:31,170
+I can fix that.
+
+25
+00:02:32,340 --> 00:02:38,970
+Jason The program requires two main settings to connect to the database.
+
+26
+00:02:39,270 --> 00:02:42,930
+First, its driver name and second is data source name.
+
+27
+00:02:43,500 --> 00:02:46,150
+Driver name is my school and data source.
+
+28
+00:02:46,170 --> 00:02:51,170
+Name is a combination of username, password and database name that we want.
+
+29
+00:02:51,180 --> 00:02:52,050
+Connect it.
+
+30
+00:02:54,300 --> 00:03:01,440
+So right adjacent five four sittings off database, open and closed braces and dry key and venue between
+
+31
+00:03:01,440 --> 00:03:02,730
+them, so bright.
+
+32
+00:03:05,450 --> 00:03:18,560
+First, derive her name as key and set venue for it, my skewer sitcom and go to the next line, said
+
+33
+00:03:18,560 --> 00:03:25,820
+another key like data, source name and set value for it.
+
+34
+00:03:28,920 --> 00:03:36,540
+My database username is Ruth, Colin and my database passport use or I care
+
+35
+00:03:39,510 --> 00:03:43,950
+outside this line and database name is person
+
+36
+00:03:46,560 --> 00:03:53,490
+reformat the code and say if the project could create the JSON file for connection to my school database.
+
+37
+00:03:55,190 --> 00:04:03,350
+Now it's project folder and create another folder named like DBI tools and create the file inside it
+
+38
+00:04:03,350 --> 00:04:06,140
+like name the connection that go.
+
+39
+00:04:06,140 --> 00:04:10,070
+That file contains metals to interact with the database.
+
+40
+00:04:10,190 --> 00:04:14,630
+Now go to the Project Explorer and write on the project folder.
+
+41
+00:04:14,960 --> 00:04:22,010
+Create another folder like the web tools and inside it.
+
+42
+00:04:22,010 --> 00:04:31,500
+Create another fight like DV connection that go before doing anything.
+
+43
+00:04:31,500 --> 00:04:36,110
+We must first import the MySchool database driver in our package.
+
+44
+00:04:36,200 --> 00:04:40,910
+So first package give you tools and import
+
+45
+00:04:44,960 --> 00:04:45,890
+underscore
+
+46
+00:04:49,790 --> 00:05:02,270
+get dot com slash go dash discuter dash driver slash my skewered.
+
+47
+00:05:03,680 --> 00:05:07,820
+Okay, now if you want to create the connection to the database.
+
+48
+00:05:08,210 --> 00:05:16,370
+So first, create, extract and define an instance of a strike from a secured package for communicate
+
+49
+00:05:16,370 --> 00:05:17,120
+the connection.
+
+50
+00:05:19,060 --> 00:05:33,520
+For example, we named it didn't initialize the sole right time D.B. initialize or the struct and define
+
+51
+00:05:33,520 --> 00:05:35,560
+a variable like DB
+
+52
+00:05:38,320 --> 00:05:43,060
+from type of a skew of dot db.
+
+53
+00:05:50,660 --> 00:05:57,800
+Now we want to design the middle, whose task is to connect to the minuscule that is access to input
+
+54
+00:05:57,800 --> 00:06:05,570
+parameters as driver name and data sourcing by this string type and return it to initialize rests like
+
+55
+00:06:05,570 --> 00:06:10,820
+the instance, an error is thus, for example, you name it, connect function.
+
+56
+00:06:10,820 --> 00:06:15,020
+So right, fine connect.
+
+57
+00:06:18,750 --> 00:06:20,880
+City's string variable as driver me.
+
+58
+00:06:27,270 --> 00:06:39,630
+And sit and other string as data source names like data source, the frank and set return tied first
+
+59
+00:06:39,630 --> 00:06:42,360
+is a pointer of DB a Lazarus, right?
+
+60
+00:06:42,570 --> 00:06:43,890
+So B right
+
+61
+00:06:47,970 --> 00:06:52,290
+pointer off DV initial either.
+
+62
+00:06:52,500 --> 00:06:53,910
+And second is a of.
+
+63
+00:06:59,700 --> 00:07:07,470
+Go to create the body of iconic function, the requirement or to connect to the database is the open
+
+64
+00:07:07,470 --> 00:07:09,480
+function of the actual package.
+
+65
+00:07:09,810 --> 00:07:11,640
+So we should import a school package.
+
+66
+00:07:12,000 --> 00:07:20,820
+Open function opens a database is defined by its database driver name and the driver is specified source
+
+67
+00:07:20,820 --> 00:07:27,810
+name, usually consisting of at least the database name and connection information, and it returns
+
+68
+00:07:27,990 --> 00:07:39,870
+the object and or so first defined two variables like the connection and or DB connection, and they're
+
+69
+00:07:39,870 --> 00:07:46,770
+all calling vehicles, calling open function from a secure package and set driver name and data source
+
+70
+00:07:46,770 --> 00:07:48,360
+name as parameters.
+
+71
+00:07:50,600 --> 00:07:58,400
+School thought or her driver name and datasource name?
+
+72
+00:07:59,990 --> 00:08:08,140
+OK, now check it or a status if they're not equals.
+
+73
+00:08:08,500 --> 00:08:15,200
+Neil from the package like calling fat wallet phones.
+
+74
+00:08:19,030 --> 00:08:28,420
+And since it all starts, there are OK, and we should set two values as return time.
+
+75
+00:08:28,810 --> 00:08:35,290
+First, an instance of Debbie Initialise restaurant and second is an indoor object as return type.
+
+76
+00:08:35,890 --> 00:08:43,540
+So in this case, we the Debbie Initialise restaurant instance in line and initialize Debbie Field of
+
+77
+00:08:43,540 --> 00:08:48,490
+Debbie initializes struck by the Debbie connection that created from open function.
+
+78
+00:08:48,910 --> 00:08:51,850
+So we write her return.
+
+79
+00:08:54,340 --> 00:08:56,980
+Ampersand dealing shall either.
+
+80
+00:08:59,430 --> 00:09:09,600
+And initialize Dib Field by DB connection, DB field by DB Connection and CIP mean as inner value
+
+81
+00:09:14,310 --> 00:09:19,110
+reformat the code and save the project.
+
+82
+00:09:19,590 --> 00:09:26,820
+OK, we could create a connect function to communicate with database in order not to prolong the time
+
+83
+00:09:26,820 --> 00:09:27,420
+of decision.
+
+84
+00:09:27,420 --> 00:09:32,880
+We will finish it and we will continue the content in the next session until next session.
+
+85
+00:09:32,910 --> 00:09:33,450
+Goodbye.

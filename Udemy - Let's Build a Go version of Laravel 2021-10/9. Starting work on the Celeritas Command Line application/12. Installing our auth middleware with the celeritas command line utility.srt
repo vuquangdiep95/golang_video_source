@@ -1,0 +1,179 @@
+1
+00:00:01,930 --> 00:00:07,030
+So we have our middleware written, and now, of course, we need to update our command line tool to
+
+2
+00:00:07,030 --> 00:00:10,210
+install that middleware when someone types make off.
+
+3
+00:00:10,570 --> 00:00:17,020
+So we have our off token middleware here and we have our off middleware here in my app and we have a
+
+4
+00:00:17,020 --> 00:00:19,230
+warning, OK, I can do that.
+
+5
+00:00:19,260 --> 00:00:27,070
+He wants me to use this constant instead of hard coding for a one which is fine, we can do that.
+
+6
+00:00:28,030 --> 00:00:33,220
+So now let's switch back to our celebrities project, and I'm looking at off.
+
+7
+00:00:33,220 --> 00:00:34,160
+Don't go.
+
+8
+00:00:34,180 --> 00:00:40,660
+And we're at this point here where we want to now the very end of this before the return statement copy
+
+9
+00:00:40,660 --> 00:00:41,920
+over middleware.
+
+10
+00:00:42,250 --> 00:00:46,480
+And not surprisingly, it's pretty much the same as what we've done here.
+
+11
+00:00:46,840 --> 00:00:49,000
+And again, we're going to have to create those templates.
+
+12
+00:00:49,160 --> 00:00:50,710
+But let's get this going first.
+
+13
+00:00:51,220 --> 00:00:57,070
+We're going to copy copy file from template inside of the Templates directory, which is our Read-Only
+
+14
+00:00:57,070 --> 00:00:58,300
+embedded file system.
+
+15
+00:00:58,300 --> 00:01:08,710
+And we'll make this middleware and we'll copy over auth don't go text to in the application in my app.
+
+16
+00:01:08,890 --> 00:01:11,290
+Middleware often go.
+
+17
+00:01:13,660 --> 00:01:23,410
+And of course, we can copy this and scroll up a bit and paste it here and make this auth dash token
+
+18
+00:01:23,980 --> 00:01:28,390
+go and make this our Dash token go.
+
+19
+00:01:29,290 --> 00:01:34,060
+So now, of course, we need to come over to our Templates directory and create a new folder called
+
+20
+00:01:34,060 --> 00:01:34,570
+middleware.
+
+21
+00:01:37,710 --> 00:01:42,230
+And inside of the middleware folder, we'll create a new file called Auth Go.
+
+22
+00:01:44,800 --> 00:01:49,920
+And another one of Dash Token Go text.
+
+23
+00:01:51,250 --> 00:01:53,290
+So we're looking at off Dash token.
+
+24
+00:01:54,040 --> 00:01:59,200
+So let's switch over to my app and find off a token here.
+
+25
+00:01:59,230 --> 00:02:07,660
+Select and copy and paste it in here, and then we'll open off, go to text and switch back to my app
+
+26
+00:02:08,440 --> 00:02:10,310
+and get off and go to text.
+
+27
+00:02:11,500 --> 00:02:12,810
+I think I might get those backwards.
+
+28
+00:02:12,850 --> 00:02:16,360
+Let's make sure I often do that off token.
+
+29
+00:02:16,690 --> 00:02:17,770
+Yeah, I got them backwards.
+
+30
+00:02:18,280 --> 00:02:20,020
+So we'll copy off token.
+
+31
+00:02:21,460 --> 00:02:21,730
+Good thing.
+
+32
+00:02:21,730 --> 00:02:25,900
+I noticed that and paste this into off dash token.
+
+33
+00:02:25,900 --> 00:02:26,500
+Don't go.
+
+34
+00:02:26,740 --> 00:02:27,250
+That's better.
+
+35
+00:02:27,880 --> 00:02:29,650
+And now we'll open off doggo
+
+36
+00:02:32,320 --> 00:02:36,460
+and go back here and open, often go to text and paste it in.
+
+37
+00:02:37,240 --> 00:02:39,730
+So that actually should work.
+
+38
+00:02:40,420 --> 00:02:45,520
+So if you think it through, we should be able to go back to our original Darcy line.
+
+39
+00:02:46,000 --> 00:02:48,040
+Go back to our map project.
+
+40
+00:02:48,220 --> 00:02:52,090
+Delete the models related to authentication from the data directory.
+
+41
+00:02:52,510 --> 00:02:55,990
+Delete the middleware from the middleware directory, but leave middleware.
+
+42
+00:02:55,990 --> 00:02:56,830
+Don't go.
+
+43
+00:02:56,890 --> 00:03:02,390
+That'll be part of the actual empty application and delete all the database tables run.
+
+44
+00:03:02,410 --> 00:03:07,840
+Make auth and everything should be recreated from scratch, which should be pretty straightforward if
+
+45
+00:03:07,840 --> 00:03:11,140
+we didn't make any mistakes and we'll try that in the next lecture.

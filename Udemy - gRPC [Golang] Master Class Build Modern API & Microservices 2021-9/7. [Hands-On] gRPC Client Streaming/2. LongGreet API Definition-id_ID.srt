@@ -1,0 +1,100 @@
+1
+00:00:00,140 --> 00:00:06,240
+Fokus dalam kuliah ini kita akan membahas API pemangkasan yang panjang ini dan pada dasarnya lebih lama
+
+2
+00:00:06,370 --> 00:00:11,030
+hanya akan membutuhkan banyak permintaan lagi dalam setiap permintaan ini dalam sambutan.
+
+3
+00:00:11,190 --> 00:00:17,100
+Dan ketika semua permintaan salam diterima, itu akan mengembalikan satu respons salam panjang yang akan berisi
+
+4
+00:00:17,100 --> 00:00:18,260
+string hasil.
+
+5
+00:00:18,270 --> 00:00:24,230
+Jadi idenya adalah bahwa sekarang klien harus mengirim banyak banyak permintaan ke server.
+
+6
+00:00:24,270 --> 00:00:26,820
+Dan ketika selesai, server akan mengembalikan satu respons.
+
+7
+00:00:26,820 --> 00:00:28,740
+Dan itu membuatnya menjadi klien streaming.
+
+8
+00:00:28,770 --> 00:00:35,890
+Jadi mari kita lanjutkan dan mengimplementasikan buffer protokol ini, jadi Prato akan mengedit file itu.
+
+9
+00:00:35,910 --> 00:00:43,890
+Jadi yang ingin kami lakukan adalah meminta klien melakukan streaming dan RBC sekarang disebut Long great karena itu
+
+10
+00:00:43,890 --> 00:00:50,510
+akan membutuhkan permintaan salam yang lebih lama dan mengembalikan respons salam yang lebih lama.
+
+11
+00:00:50,610 --> 00:00:57,540
+Tetapi karena ini adalah klien streaming Yah Anda mungkin telah memperhatikan saya harus menambahkan kata kunci aliran di
+
+12
+00:00:57,540 --> 00:00:57,940
+sini.
+
+13
+00:00:58,170 --> 00:01:03,480
+Jadi ketika itu server streaming, alirannya ada di akhir dan ketika klien streaming, alirannya
+
+14
+00:01:03,480 --> 00:01:04,670
+ada di awal.
+
+15
+00:01:04,740 --> 00:01:10,710
+Jadi ini yang Anda butuhkan untuk mendefinisikan klien stream RBC stream dengan jelas.
+
+16
+00:01:10,800 --> 00:01:17,070
+Sekarang kita perlu mendefinisikan pesan permintaan salam panjang ini dan ini hanya akan berisi salam.
+
+17
+00:01:17,070 --> 00:01:23,520
+Jadi, katakan salam panggilan 1 dan kita juga harus mendefinisikan pesan respons Keserakahan yang panjang dan yang
+
+18
+00:01:23,520 --> 00:01:27,880
+ini hanya akan mempertahankan berisi string hasil sama dengan satu.
+
+19
+00:01:28,010 --> 00:01:33,480
+OK jadi sekarang ini yang harus kita lakukan untuk menghasilkan ini semua terlihat benar.
+
+20
+00:01:33,480 --> 00:01:40,440
+Jadi sekarang kita dapat menghasilkan SH Dan kita akan menjalankan baris pertama kode dan berhasil
+
+21
+00:01:40,440 --> 00:01:40,980
+menyelesaikannya.
+
+22
+00:01:41,010 --> 00:01:45,850
+Dan seperti yang dapat kita lihat, PBT hebat yang lalu telah dimodifikasi dan kami memiliki beberapa kode baru di sini.
+
+23
+00:01:46,050 --> 00:01:46,920
+Jadi ini sempurna.
+
+24
+00:01:46,920 --> 00:01:49,300
+Kami siap diimplementasikan di server.
+
+25
+00:01:49,410 --> 00:01:50,750
+Jadi saya akan melihat Anda di kuliah berikutnya.
+

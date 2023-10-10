@@ -1,0 +1,260 @@
+1
+00:00:00,590 --> 00:00:07,870
+Jadi mari kita lanjutkan dan buka sekarang server kami tidak pergi dan seperti yang bisa kita lihat sekarang jika Anda pergi ke salam P. B.
+
+2
+00:00:08,230 --> 00:00:14,150
+yang pergi dan lihat antarmuka kami untuk server dengan server di antarmuka.
+
+3
+00:00:14,150 --> 00:00:16,280
+Sekarang ada banyak kali.
+
+4
+00:00:16,310 --> 00:00:17,870
+Jadi dimana itu?
+
+5
+00:00:17,940 --> 00:00:18,770
+Itu disini.
+
+6
+00:00:18,770 --> 00:00:24,440
+Jadi dalam antarmuka server layanan kami ada fungsi grid berkali-kali yang perlu kita implementasikan
+
+7
+00:00:24,440 --> 00:00:27,150
+agar struct kita mewarisi antarmuka itu.
+
+8
+00:00:27,230 --> 00:00:30,410
+Jadi kita perlu menerapkan yang membuat saya terkena sanksi tapi itu diharapkan.
+
+9
+00:00:30,410 --> 00:00:38,570
+Jadi jika kita kembali ke server yang sekarang kita buat fungsi OK di server kita dan nama
+
+10
+00:00:38,570 --> 00:00:40,030
+fungsinya bagus berkali-kali.
+
+11
+00:00:40,220 --> 00:00:46,800
+Dan sebagai input dibutuhkan banyak 10 permintaan atau kita akan menyebutnya wreck dan kemudian kita akan menambahkan salam P. B.
+
+12
+00:00:47,000 --> 00:00:52,220
+ini dan dibutuhkan sebagai tanggapan itu aliran.
+
+13
+00:00:52,280 --> 00:00:54,400
+Jadi kami Stream tepat di sini.
+
+14
+00:00:54,410 --> 00:01:03,020
+Gary P. B. ini dan begitu objek aliran ini akan melihat cara kerjanya persis
+
+15
+00:01:03,020 --> 00:01:06,970
+tetapi objek aliran ini akan dapat mengirim barang ke sana dan itulah yang akan membuat API kami.
+
+16
+00:01:06,980 --> 00:01:10,040
+Streaming bijak dan tipe pengembalian adalah kesalahan.
+
+17
+00:01:10,040 --> 00:01:11,260
+Jadi saya buka fungsinya.
+
+18
+00:01:11,610 --> 00:01:11,920
+BAIK.
+
+19
+00:01:11,960 --> 00:01:14,170
+Sekarang kita harus benar-benar melakukan beberapa pekerjaan.
+
+20
+00:01:14,210 --> 00:01:16,820
+Jadi seperti yang Anda lihat permintaan ada di sini.
+
+21
+00:01:17,090 --> 00:01:19,100
+Jadi jika kita mendapatkan nama depan, kita bisa melakukannya.
+
+22
+00:01:19,100 --> 00:01:24,710
+Nama depan sama dengan rec dot dapatkan salam yang mendapatkan nama depan.
+
+23
+00:01:24,800 --> 00:01:26,320
+Tidak ada yang di sini, benar.
+
+24
+00:01:26,790 --> 00:01:30,960
+Tapi sekarang kita bisa melakukannya untuk satu putaran misalnya karena kita ingin menyapa berkali-kali.
+
+25
+00:01:31,070 --> 00:01:43,840
+Jadi kita katakan untuk saya mengambil nilai-nol 0 dan kemudian saya plus plus dan saya kurang dari 10 sehingga kita akan melakukannya 10 kali.
+
+26
+00:01:43,860 --> 00:01:47,940
+OK sekarang kita punya untuk loop di sini
+
+27
+00:01:48,410 --> 00:01:53,780
+Jadi yang kita lakukan sebenarnya mungkin sebaliknya.
+
+28
+00:01:53,830 --> 00:01:56,710
+Kita mulai.
+
+29
+00:01:56,740 --> 00:02:04,990
+Jadi saat kita melakukan loop ini, apa yang ingin kita lakukan adalah membuat respons sehingga kita dapat mengatakan
+
+30
+00:02:04,990 --> 00:02:12,090
+respons sama dan menyapa P. B. sambut tanggapan berkali-kali dan ini membuahkan hasil.
+
+31
+00:02:12,370 --> 00:02:18,040
+Jadi kita akan memberikan hasilnya jadi kita perlu menemukan hasilnya
+
+32
+00:02:20,230 --> 00:02:32,240
+sehingga hasil kita akan membuat string menjadi Hello Plus nama depan plus dan kita hanya akan mengatakan angka plus string converter dan saya lakukan.
+
+33
+00:02:32,430 --> 00:02:37,470
+Jadi ini adalah fungsi untuk hanya mengubah bilangan bulat menjadi string dan saya hanya akan memposting nomor I.
+
+34
+00:02:37,790 --> 00:02:38,350
+BAIK.
+
+35
+00:02:38,500 --> 00:02:43,010
+Jadi di sini kita pergi kita memiliki nomor Helo yang ditentukan tetapi dan ini sempurna.
+
+36
+00:02:43,180 --> 00:02:52,260
+Dan sekarang kita dapat mengatakan stream dots dan di sini Anda memiliki banyak fungsi informasi yang dapat Anda gunakan dan yang
+
+37
+00:02:52,260 --> 00:02:54,740
+akan kami gunakan adalah kirim.
+
+38
+00:02:55,080 --> 00:02:58,080
+Dan kemudian saya dapat mengirim pesan respons berkali-kali.
+
+39
+00:02:58,080 --> 00:03:04,810
+Jadi saya baru saja mengirim RAZ Dan seperti yang dapat Anda lihat untuk 10 loop saya akan mengirim 10 pesan.
+
+40
+00:03:04,860 --> 00:03:09,130
+Apa yang bisa saya lakukan di sini adalah waktu tidur dan kita akan tidur.
+
+41
+00:03:09,150 --> 00:03:14,280
+Seratus satu detik waktu mili detik.
+
+42
+00:03:14,280 --> 00:03:16,340
+Jadi kita akan tidur satu detik setiap kali.
+
+43
+00:03:16,350 --> 00:03:17,000
+BAIK.
+
+44
+00:03:17,400 --> 00:03:24,150
+Dan ketika kita selesai dengan mengirimkan 10 hasil ketika saya akan lakukan adalah mengembalikan nihil karena tidak ada
+
+45
+00:03:24,150 --> 00:03:24,680
+kesalahan.
+
+46
+00:03:24,690 --> 00:03:26,660
+Jadi ini adalah bagaimana Anda dan impian Anda.
+
+47
+00:03:26,700 --> 00:03:26,970
+BAIK.
+
+48
+00:03:26,970 --> 00:03:30,620
+Ketika Anda memangkas, Anda mengirim sebanyak yang Anda inginkan.
+
+49
+00:03:30,630 --> 00:03:34,140
+Anda tidak harus tidur tetapi saya tidur hanya untuk menunjukkan bahwa itu adalah streaming yang sebenarnya.
+
+50
+00:03:34,560 --> 00:03:39,320
+Dan kemudian pada akhirnya kami mengembalikan nol dan secara otomatis akan menghentikan pemangkasan layanan Anda.
+
+51
+00:03:39,330 --> 00:03:44,310
+Jadi hal lain yang bisa saya lakukan adalah mencetak dengan jelas kapan saja fungsi ini dipanggil.
+
+52
+00:03:44,830 --> 00:03:45,300
+BAIK.
+
+53
+00:03:45,330 --> 00:03:51,300
+Jadi saya akan mengatakan fungsi salam berkali-kali dipanggil dan ini tentang hal itu.
+
+54
+00:03:51,300 --> 00:03:57,640
+Jadi ini terlihat bagus hanya yang perlu Anda ingat adalah bahwa di sini kita memiliki objek aliran yang dapat kita
+
+55
+00:03:57,660 --> 00:03:59,100
+gunakan dari tipe fungsi.
+
+56
+00:03:59,100 --> 00:04:02,020
+Dan ini yang kita butuhkan untuk menggunakan fungsi send.
+
+57
+00:04:02,160 --> 00:04:06,010
+Dan tidur hanya untuk menginduksi sedikit cahaya untuk menunjukkan kepada Anda bahwa itu sebenarnya mengalir.
+
+58
+00:04:06,170 --> 00:04:06,860
+BAIK.
+
+59
+00:04:07,050 --> 00:04:08,430
+Jadi ini terlihat benar.
+
+60
+00:04:08,490 --> 00:04:10,820
+Mari kita verifikasi dengan hanya menjalankan server.
+
+61
+00:04:10,860 --> 00:04:14,180
+Jadi berkeliling dan bukan pada klien.
+
+62
+00:04:14,250 --> 00:04:18,030
+Saya akan menjalankan server di sini.
+
+63
+00:04:18,050 --> 00:04:22,910
+Jadi sudah berakhir dan sejauh ini server sedang berjalan.
+
+64
+00:04:22,920 --> 00:04:25,320
+Jadi semuanya dikompilasi dari hal-hal yang bekerja dengan baik.
+
+65
+00:04:25,320 --> 00:04:28,700
+Jadi sekarang di kuliah berikutnya kita akan menyambungkan klien untuk melihat cara kerjanya.
+

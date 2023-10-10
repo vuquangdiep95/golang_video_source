@@ -1,0 +1,148 @@
+1
+00:00:01,130 --> 00:00:06,560
+So we have our test main function set up that actually establishes the environment in which we want
+
+2
+00:00:06,560 --> 00:00:10,430
+to run our tests and how we're going to add two functions to the bottom of this file.
+
+3
+00:00:11,450 --> 00:00:15,350
+The first one is going to be called simply get roots, funk, get roots.
+
+4
+00:00:16,250 --> 00:00:20,870
+And it takes no parameters, but returns in Eastport Handler.
+
+5
+00:00:21,230 --> 00:00:22,820
+OK, and we'll write that in a second.
+
+6
+00:00:23,930 --> 00:00:28,970
+The second function I want is because it's going to be called get C.T. X and it's going to take one
+
+7
+00:00:28,970 --> 00:00:31,220
+parameter, which I'll call every cue.
+
+8
+00:00:31,220 --> 00:00:38,540
+And it's a pointer to HTP Dot request and it returns context, dot context.
+
+9
+00:00:39,890 --> 00:00:43,920
+OK, now we'll populate the values in these functions of the body.
+
+10
+00:00:43,920 --> 00:00:45,140
+These functions right now.
+
+11
+00:00:45,950 --> 00:00:47,870
+The first one get roots.
+
+12
+00:00:48,080 --> 00:00:54,830
+This is a substitute for the root start go file that exists in our project, in my app, and I'll we're
+
+13
+00:00:54,830 --> 00:00:55,910
+going to do here is create a router.
+
+14
+00:00:56,060 --> 00:01:00,740
+So Max is a sign the value of from the chip package dot new router.
+
+15
+00:01:02,850 --> 00:01:10,650
+And then we'll say mucks don't use, and the only middleware I'm going to put in here right now is sell
+
+16
+00:01:10,650 --> 00:01:14,190
+dot session load to manage sessions, OK?
+
+17
+00:01:15,240 --> 00:01:21,900
+And I must specify a route and I'll just put one in four right now, Muscat and everybody has a home
+
+18
+00:01:21,900 --> 00:01:23,340
+page, so slash.
+
+19
+00:01:24,240 --> 00:01:26,610
+And that's going to go to test handlers.
+
+20
+00:01:27,010 --> 00:01:30,870
+The Hunt, the one handler that we're worried about right now.
+
+21
+00:01:31,110 --> 00:01:33,240
+We might do more later on, but this will get us started.
+
+22
+00:01:33,630 --> 00:01:35,310
+And now we just return Max.
+
+23
+00:01:36,540 --> 00:01:44,100
+So that is where we'll specify our routes that we're going to be testing and get CTCs or get context.
+
+24
+00:01:44,220 --> 00:01:50,190
+This is just so we can use sessions, and there's just basically one line and an error check that we
+
+25
+00:01:50,190 --> 00:01:50,970
+have to add here.
+
+26
+00:01:51,000 --> 00:01:51,840
+And it's very simple.
+
+27
+00:01:52,050 --> 00:01:59,580
+So Seat X is a variable, I'm declaring, and we'll check for an error come from test session dot load
+
+28
+00:02:00,870 --> 00:02:05,550
+and we hand it the context which we get from the request Erica context.
+
+29
+00:02:07,490 --> 00:02:13,040
+And then the second parameter is just wreck dot header, don't get.
+
+30
+00:02:13,580 --> 00:02:20,690
+And we just have to use this header and it's a very specific format x dash capital s session.
+
+31
+00:02:22,330 --> 00:02:28,330
+OK, without that, we can't we can't actually access any values from the session, and I will check
+
+32
+00:02:28,330 --> 00:02:30,580
+for an error if error is not equal to nil.
+
+33
+00:02:31,180 --> 00:02:33,310
+Then I'll just log in logged our current line.
+
+34
+00:02:33,310 --> 00:02:37,410
+The error down here, we just say returns KCTCS.
+
+35
+00:02:38,680 --> 00:02:44,170
+OK, now we're not using either of these yet, but in the next lecture, we'll write one very, very
+
+36
+00:02:44,170 --> 00:02:50,500
+simple test that developers can use as kind of a starting point, and we'll get started on that in the
+
+37
+00:02:50,500 --> 00:02:51,340
+next lecture.
+

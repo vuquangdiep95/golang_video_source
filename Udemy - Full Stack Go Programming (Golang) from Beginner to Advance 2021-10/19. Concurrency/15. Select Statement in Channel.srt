@@ -1,0 +1,263 @@
+1
+00:00:12,710 --> 00:00:18,080
+Hello and welcome to the goal and programming language course in this session.
+
+2
+00:00:18,110 --> 00:00:21,770
+We want to talk about the others concurrency concept.
+
+3
+00:00:25,130 --> 00:00:31,190
+Select a statement and GO Select is similar to such a statement.
+
+4
+00:00:31,580 --> 00:00:38,210
+The difference being that in select each of the cases statement, they spot a send or receive operation
+
+5
+00:00:38,210 --> 00:00:40,340
+from a Channon Select.
+
+6
+00:00:40,340 --> 00:00:46,790
+The statement will wait until sent or receive operation is completed on any one of the case.
+
+7
+00:00:46,790 --> 00:00:53,240
+The statement It is different from the Suchas statement in the way that each of the cases statements
+
+8
+00:00:53,240 --> 00:00:58,670
+will either send or receive operation on a Channon, whereas in sewage each of the case.
+
+9
+00:00:58,670 --> 00:01:06,710
+The statement is an expression, so a select statement lets you wait on multiple and receive operations
+
+10
+00:01:06,710 --> 00:01:08,030
+from different channels.
+
+11
+00:01:09,320 --> 00:01:14,570
+Two important points to note about City's statement is the select ballots.
+
+12
+00:01:14,570 --> 00:01:20,750
+Until any of the case, the statements are ready, and if multiple cases statements are ready, then
+
+13
+00:01:20,870 --> 00:01:23,840
+it selects one at random and proceeds.
+
+14
+00:01:24,350 --> 00:01:27,470
+The following rules apply to select statement.
+
+15
+00:01:28,280 --> 00:01:31,670
+You can have any number of cases statements within a select.
+
+16
+00:01:32,120 --> 00:01:36,470
+Each case is followed by the value to be compared to and the column.
+
+17
+00:01:37,400 --> 00:01:41,600
+The time for a case must be a communication channel operation.
+
+18
+00:01:42,950 --> 00:01:47,510
+When the channel operation accurate statements following that case will execute.
+
+19
+00:01:47,750 --> 00:01:51,320
+No break is needed in case a statement is select.
+
+20
+00:01:51,320 --> 00:01:56,870
+The statement can have in the optional default case, which must appear at the end of the select.
+
+21
+00:01:57,350 --> 00:02:02,510
+The default case can be used for performing a task then known of the case is true.
+
+22
+00:02:03,020 --> 00:02:05,270
+No work is needed in different chase.
+
+23
+00:02:10,600 --> 00:02:12,850
+Now you can see the scene techs.
+
+24
+00:02:14,850 --> 00:02:21,390
+Select chooses the case on which send or receive operation on a channel is not blocked and is ready
+
+25
+00:02:21,390 --> 00:02:22,410
+to be executed.
+
+26
+00:02:23,400 --> 00:02:28,110
+If multiple cases are ready to be executed, then one is chosen at random.
+
+27
+00:02:28,680 --> 00:02:33,540
+Now let's go to this school with program to see how to use select statements.
+
+28
+00:02:35,370 --> 00:02:42,530
+First, create two functions that accept arguments as extreme Channel five.
+
+29
+00:02:42,930 --> 00:02:43,610
+Hello.
+
+30
+00:02:44,850 --> 00:02:48,540
+Set a variable like search by the time string
+
+31
+00:02:52,140 --> 00:02:57,210
+set value to channel search channel operator, for example.
+
+32
+00:02:57,300 --> 00:03:07,410
+Hello and create another function, for example by phone by set a variable.
+
+33
+00:03:08,100 --> 00:03:09,720
+By the time it's strange
+
+34
+00:03:12,330 --> 00:03:18,810
+and assign a string value to channel, for example, search channel operator and goodbye.
+
+35
+00:03:19,890 --> 00:03:25,350
+Now go to main function to create two channel and commands these two go routines.
+
+36
+00:03:26,730 --> 00:03:31,500
+First, define a variable like Sichuan call equals calling make function.
+
+37
+00:03:32,760 --> 00:03:42,540
+By the time a string and define another channel like search, two column equals make function by the
+
+38
+00:03:42,540 --> 00:03:55,830
+time is now calling hello and by function in past these Channon as arguments to then go Hello Sichuan.
+
+39
+00:03:56,220 --> 00:04:00,450
+And in the next line, cutting another function go by.
+
+40
+00:04:01,020 --> 00:04:08,730
+And it seems to, as our humans do it now we define a select statement for handling channels.
+
+41
+00:04:09,000 --> 00:04:09,870
+Select
+
+42
+00:04:13,020 --> 00:04:16,020
+Define First Case and reset channel value.
+
+43
+00:04:16,030 --> 00:04:22,950
+Case value one calling equals channel operator.
+
+44
+00:04:23,220 --> 00:04:28,390
+Search one column and print value of this channel.
+
+45
+00:04:28,410 --> 00:04:31,890
+FP Value one.
+
+46
+00:04:34,170 --> 00:04:37,410
+And Define Second Case and fetch channel value.
+
+47
+00:04:37,620 --> 00:04:50,220
+Case Value two column equals channel operator search two and now print value of Bystrom.
+
+48
+00:04:50,580 --> 00:05:02,640
+If the value to reformat the code, save the project and execute the program, go from Duck's back to
+
+49
+00:05:03,000 --> 00:05:03,450
+me.
+
+50
+00:05:03,630 --> 00:05:04,260
+That's cool.
+
+51
+00:05:06,120 --> 00:05:10,340
+Now we can see the outputs in their bound program.
+
+52
+00:05:10,350 --> 00:05:14,360
+We created two channels that are passed to two different go routines.
+
+53
+00:05:14,370 --> 00:05:19,230
+Then each of the go routines is sending one value through the channel in the cell.
+
+54
+00:05:19,650 --> 00:05:21,480
+We have to chase the statement.
+
+55
+00:05:21,900 --> 00:05:28,590
+Each of the two cases statement is waiting for receive operation to complete on one of the channels
+
+56
+00:05:28,770 --> 00:05:35,430
+once and receive operation is complete on any of the channels it is executed in select exec.
+
+57
+00:05:35,640 --> 00:05:41,790
+So as seen from the output in the above program, it drains the received value from one of the challenges
+
+58
+00:05:41,790 --> 00:05:42,030
+and.
+
+59
+00:05:42,600 --> 00:05:44,520
+And now we say goodbye.
+
+60
+00:05:44,760 --> 00:05:51,510
+So in the about program, since it is not deterministic, which of the sand operation will complete
+
+61
+00:05:51,510 --> 00:05:52,230
+earlier?
+
+62
+00:05:52,470 --> 00:05:57,420
+That is why you will see different outputs if you run the program multiple times.
+
+63
+00:05:57,600 --> 00:06:01,320
+So in this example, we could use select statement.
+
+64
+00:06:01,800 --> 00:06:03,670
+We have reached the end of decision.
+
+65
+00:06:03,690 --> 00:06:07,720
+I hope you have taken full advantage of decision on the next edition.
+
+66
+00:06:07,740 --> 00:06:08,250
+Goodbye.

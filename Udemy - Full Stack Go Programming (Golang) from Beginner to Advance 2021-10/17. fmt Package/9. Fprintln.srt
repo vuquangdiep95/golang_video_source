@@ -1,0 +1,215 @@
+1
+00:00:13,340 --> 00:00:19,760
+Hello and welcome to the Golang programming language course in the previous session, we talked about,
+
+2
+00:00:19,760 --> 00:00:26,570
+if pained, if function and indecision, we want to talk about the other F.A. package concept.
+
+3
+00:00:30,160 --> 00:00:32,440
+If preened and fonctionne.
+
+4
+00:00:33,810 --> 00:00:41,910
+The FBI and fonctionne in go language formats using the different formats for its operations and rise
+
+5
+00:00:41,910 --> 00:00:43,980
+to I o dot writer.
+
+6
+00:00:44,980 --> 00:00:47,910
+It's exactly the same as if print function.
+
+7
+00:00:48,660 --> 00:00:54,000
+One extra point in print at end is that a new line is appended.
+
+8
+00:00:55,320 --> 00:00:59,610
+The formatted input string will then be written into dimension.
+
+9
+00:01:00,210 --> 00:01:06,990
+With the help of the writer here, as spaces are always added between the specified options and the
+
+10
+00:01:06,990 --> 00:01:08,940
+new line is appended at the end.
+
+11
+00:01:09,300 --> 00:01:12,750
+More on the function is defined under this empty package.
+
+12
+00:01:12,990 --> 00:01:17,400
+So you need to import this empty package in order to use this function.
+
+13
+00:01:18,000 --> 00:01:21,930
+Now you can see the syntax parameters.
+
+14
+00:01:22,320 --> 00:01:26,220
+This function accepts two parameters, which are lists it below.
+
+15
+00:01:27,090 --> 00:01:30,450
+First, W type is on auto writer.
+
+16
+00:01:30,750 --> 00:01:36,570
+That is, they specify the standard input or output and a three dot interface.
+
+17
+00:01:36,870 --> 00:01:43,890
+This is containing some strings and constant variables used in the code and return value.
+
+18
+00:01:44,070 --> 00:01:48,690
+It returns the number of buys written and any write error encountered.
+
+19
+00:01:50,450 --> 00:01:56,930
+Now, let's go to the school program to illustrate the uses of the FP and function.
+
+20
+00:01:59,780 --> 00:02:08,960
+First, learning some history variables, for the example that name common value and initialize them
+
+21
+00:02:09,560 --> 00:02:14,150
+go and programming language
+
+22
+00:02:20,780 --> 00:02:31,490
+now calling FP and function first defined too many of the likes number and verbal column equals from
+
+23
+00:02:31,490 --> 00:02:36,320
+the package F.A. Select FP and function.
+
+24
+00:02:38,300 --> 00:02:47,480
+First is to the art from the OST package will start to the out and set the other variable name.
+
+25
+00:02:52,340 --> 00:02:56,570
+It is a and value
+
+26
+00:02:59,720 --> 00:03:09,560
+and and that is the statements at the point now printing the number of mines written if empty dots print.
+
+27
+00:03:12,050 --> 00:03:12,740
+No.
+
+28
+00:03:16,030 --> 00:03:28,450
+Wise leader dropped like a sledgehammer and printing, if any, at all encountered if empty lots preen.
+
+29
+00:03:30,040 --> 00:03:36,580
+We sit is separate for FP brackets closed and.
+
+30
+00:03:39,460 --> 00:03:48,820
+Go to the next line and declaring other missing variables like there is still a long comma or two and
+
+31
+00:03:48,820 --> 00:03:52,540
+comma is the artery and initialized, then A,
+
+32
+00:03:55,390 --> 00:04:07,660
+B and C now calling f print and function, which returns number as the number of by 310 and error as
+
+33
+00:04:07,660 --> 00:04:09,010
+any and all encounters.
+
+34
+00:04:09,130 --> 00:04:21,790
+So we write number and you are equals from the package of empty synik, FP and function and first set
+
+35
+00:04:22,240 --> 00:04:24,160
+out from the always package.
+
+36
+00:04:27,080 --> 00:04:37,100
+And set the other variables like SDR one and SDR two and SDR three now printing number of by three to
+
+37
+00:04:37,520 --> 00:04:41,240
+infinity dots print No.
+
+38
+00:04:44,330 --> 00:04:47,870
+Bites of Rita
+
+39
+00:04:51,230 --> 00:05:02,300
+and printing, if any raw encounter, if found to the print he off work reformat, they could save the
+
+40
+00:05:02,300 --> 00:05:04,610
+project and execute the program.
+
+41
+00:05:07,220 --> 00:05:15,650
+Now we can see the output for first time that we have go is the programming language and 33 by 310 and
+
+42
+00:05:15,650 --> 00:05:16,430
+no error.
+
+43
+00:05:16,700 --> 00:05:25,010
+And for second bad a b c six miles of written and no error in the first code.
+
+44
+00:05:25,310 --> 00:05:30,740
+It can be seen that in print and function, no new line was added.
+
+45
+00:05:30,920 --> 00:05:38,300
+Still, it prints the new line and in the second coat it can be seen that in print and function, no
+
+46
+00:05:38,390 --> 00:05:39,710
+space was added.
+
+47
+00:05:39,840 --> 00:05:44,390
+Still, it prints, including a space in this sandpit.
+
+48
+00:05:44,510 --> 00:05:49,130
+First, we create a string value of it and using the print and function.
+
+49
+00:05:49,370 --> 00:05:55,240
+Then we assign the retained value inside to variables like number and IRR.
+
+50
+00:05:55,250 --> 00:05:59,810
+And finally, the print the number of by 310 as no variable.
+
+51
+00:05:59,990 --> 00:06:03,880
+And if there is an error, we will display it as it already would.
+
+52
+00:06:04,470 --> 00:06:11,090
+Now we could use from if print and function in order not to prolong the time of decision.
+
+53
+00:06:11,270 --> 00:06:15,410
+We will finish it and we will continue the content in the next session.
+
+54
+00:06:15,590 --> 00:06:16,160
+Goodbye.

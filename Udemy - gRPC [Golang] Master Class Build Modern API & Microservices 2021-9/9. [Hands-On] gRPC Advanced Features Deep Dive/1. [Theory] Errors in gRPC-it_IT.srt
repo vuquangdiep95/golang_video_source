@@ -1,0 +1,252 @@
+1
+00:00:00,390 --> 00:00:03,490
+OK, verremo su questa sezione avanzata su GOPAC.
+
+2
+00:00:03,720 --> 00:00:07,910
+Questo sarà ancora un mucchio di mani, ma voglio che tu sappia che si tratta di concetti molto avanzati.
+
+3
+00:00:07,980 --> 00:00:13,540
+Potrebbe essere necessario usarli come errori e così via, ma è necessario sapere che questo è un livello X.
+
+4
+00:00:13,560 --> 00:00:15,180
+Bene, iniziamo.
+
+5
+00:00:15,180 --> 00:00:20,270
+Quindi i codici di Eric sono molto importanti e li ho saltati per tutta la classe fino ad ora perché
+
+6
+00:00:20,280 --> 00:00:22,070
+voglio che ti concentri su Jarkesy.
+
+7
+00:00:22,350 --> 00:00:24,570
+Ma ora iniziamo a gestire gli errori.
+
+8
+00:00:24,630 --> 00:00:29,030
+Quindi in pratica è abbastanza comune che la tua API a volte restituisca i codici di errore.
+
+9
+00:00:29,040 --> 00:00:30,600
+Le cose possono andare storte.
+
+10
+00:00:30,600 --> 00:00:34,680
+Quindi in HGP di solito in riposo APC ci sono molti codici di errore.
+
+11
+00:00:34,830 --> 00:00:37,280
+C'è 200 200 o.
+
+12
+00:00:37,470 --> 00:00:44,220
+Quindi 2 x x x per il successo 3 x x per qualsiasi cosa attraverso X è per quando c'è un errore e 5:55 X
+
+13
+00:00:44,220 --> 00:00:44,770
+quando qualcos'altro.
+
+14
+00:00:44,790 --> 00:00:46,630
+Quindi sono molti i codici di errore giusti.
+
+15
+00:00:46,770 --> 00:00:52,230
+Quindi HTP afferma che questi codici sono standardizzati, in realtà non sono molto chiari e la gente
+
+16
+00:00:52,230 --> 00:00:53,250
+li abusa.
+
+17
+00:00:53,250 --> 00:01:00,270
+Quindi il tuo approccio è che al posto di tanti codici di errore ci sono solo alcuni codici di errore e ti mostreranno solo
+
+18
+00:01:00,270 --> 00:01:03,710
+il link o dopo che i documenti possono essere abbastanza disordinati.
+
+19
+00:01:03,840 --> 00:01:08,670
+Quindi c'è anche un riferimento completo all'implementazione dei codici di errore che causano molto ottenere la documentazione di
+
+20
+00:01:08,730 --> 00:01:09,260
+questo.
+
+21
+00:01:09,260 --> 00:01:11,710
+Sei malato e vedremo questo in un secondo.
+
+22
+00:01:11,730 --> 00:01:17,550
+Inoltre, infine, se un'applicazione deve restituire informazioni extra in cima a un errore, può utilizzare il contesto
+
+23
+00:01:17,610 --> 00:01:22,200
+dei metadati semplicemente usando le strutture aeree e vedremo questo nel secondo.
+
+24
+00:01:22,440 --> 00:01:25,430
+Quindi, senza ulteriori attese, andiamo da te o da altri.
+
+25
+00:01:25,560 --> 00:01:31,020
+Ora la prima cosa che vedrai è che c'è una sezione per la gestione dell'aria nella gestione dell'area
+
+26
+00:01:31,020 --> 00:01:31,980
+di debug.
+
+27
+00:01:31,980 --> 00:01:36,160
+Quindi, fondamentalmente, aiuta a spiegare come funziona l'aria.
+
+28
+00:01:36,360 --> 00:01:39,570
+E c'è della documentazione e alcune cose e così via qui.
+
+29
+00:01:39,720 --> 00:01:44,690
+Quindi quello che vuoi fare è scorrere verso il basso e vedrai che ci sono dei codici di stato.
+
+30
+00:01:44,730 --> 00:01:45,370
+OK.
+
+31
+00:01:45,570 --> 00:01:47,970
+E questi codici di stato sono piuttosto specifici.
+
+32
+00:01:48,030 --> 00:01:52,710
+Quindi in sostanza ti dicono che se basato sul caso quale stato potrebbe lanciare.
+
+33
+00:01:52,740 --> 00:01:56,020
+E ancora queste sono solo alcune linee guida.
+
+34
+00:01:56,020 --> 00:02:01,210
+Quindi, se il cliente annulla una richiesta, diciamo che viene cancellata se la scadenza ha superato.
+
+35
+00:02:01,230 --> 00:02:05,900
+Ci sediamo e vediamo che se non è implementato e implementato non disponibile non disponibile e sconosciuto sconosciuto allora quando ci
+
+36
+00:02:05,970 --> 00:02:10,520
+sono alcuni errori di rete otteniamo la scadenza X. non sei disponibile.
+
+37
+00:02:10,710 --> 00:02:16,440
+E poi c'è un errore di protocollo e questo verrà implementato e le mani in poi useranno il nostro status di
+
+38
+00:02:16,470 --> 00:02:17,110
+specie interno.
+
+39
+00:02:17,310 --> 00:02:22,380
+Se c'è qualche problema non implementato se non è stato implementato e quindi hai solo un sacco di cose
+
+40
+00:02:22,410 --> 00:02:22,770
+diverse.
+
+41
+00:02:22,830 --> 00:02:25,720
+E se il bambino o la risorsa interna sono esauriti.
+
+42
+00:02:25,740 --> 00:02:26,240
+OK.
+
+43
+00:02:26,550 --> 00:02:32,200
+Quindi, come puoi vedere se contiamo il numero di errori, le risorse interne non implementate sono esaurite.
+
+44
+00:02:32,310 --> 00:02:39,330
+SCONOSCIUTO E penso che sia stato superato il piano e pochi altri ma è lì che ce n'è otto o nove
+
+45
+00:02:39,480 --> 00:02:40,620
+ed è apposta.
+
+46
+00:02:40,620 --> 00:02:41,230
+OK.
+
+47
+00:02:41,550 --> 00:02:44,620
+Quindi sono abbastanza espliciti e abbastanza facili da usare.
+
+48
+00:02:44,670 --> 00:02:47,630
+Quindi vedremo questo nelle mani ora per il GOP.
+
+49
+00:02:47,650 --> 00:02:50,820
+C'è quel sito Web è assolutamente incredibile.
+
+50
+00:02:50,820 --> 00:02:57,090
+Si chiama una guida pratica agli errori del PC e viene fornito con un proprio repository di codice che implementa
+
+51
+00:02:57,120 --> 00:02:58,100
+tutto OK.
+
+52
+00:02:58,320 --> 00:03:05,070
+Quindi quello che abbiamo qui è il codice per tutti questi linguaggi. C ++ l'oggetto nodo go acuto si vede
+
+53
+00:03:05,070 --> 00:03:08,840
+Python Ruby swift e Skala tutti questi linguaggi qui fondamentalmente.
+
+54
+00:03:09,040 --> 00:03:14,120
+Ci dice che i siti Web come farlo per il server e come farlo per i clienti.
+
+55
+00:03:14,310 --> 00:03:15,970
+Come puoi vedere manca Java.
+
+56
+00:03:16,010 --> 00:03:18,390
+Quindi nel corso di Jella avremo tutti a vederlo.
+
+57
+00:03:18,780 --> 00:03:22,220
+Ma fondamentalmente è abbastanza esplicito e abbastanza sorprendente per noi.
+
+58
+00:03:22,220 --> 00:03:25,770
+Abbiamo una guida rapida in qualsiasi lingua per gestire le eccezioni.
+
+59
+00:03:25,770 --> 00:03:26,790
+Quindi è così.
+
+60
+00:03:26,790 --> 00:03:30,350
+E poi sul suo get Herb puoi trovare tutto il codice associato.
+
+61
+00:03:30,540 --> 00:03:32,790
+Quindi sai tutto sugli errori.
+
+62
+00:03:32,790 --> 00:03:34,410
+Sono sicuro che vuoi implementarne uno.
+
+63
+00:03:34,410 --> 00:03:36,090
+Quindi nelle loro mani lo faremo.
+

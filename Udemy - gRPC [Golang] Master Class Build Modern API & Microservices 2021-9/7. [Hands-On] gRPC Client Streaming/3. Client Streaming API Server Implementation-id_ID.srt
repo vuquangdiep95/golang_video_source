@@ -1,0 +1,376 @@
+1
+00:00:00,260 --> 00:00:02,240
+Yah kira kita akan mengimplementasikan server.
+
+2
+00:00:02,610 --> 00:00:08,310
+Jadi untuk wanita ini dari streaming bahasa klien RBC seperti sebelumnya tetapi kali ini akan sedikit berbeda sedikit lebih
+
+3
+00:00:08,310 --> 00:00:13,080
+sulit karena kita sekarang harus mengirim dan menerima menggunakan aliran yang sama yang akan Anda
+
+4
+00:00:13,080 --> 00:00:13,560
+lihat.
+
+5
+00:00:13,950 --> 00:00:18,930
+Dan omong-omong server akan merespons klien setelah klien selesai mengirim semua permintaan.
+
+6
+00:00:18,930 --> 00:00:21,600
+Jadi kita akan menunggu akhir dari penanda file.
+
+7
+00:00:21,720 --> 00:00:26,190
+Namun secara teori server dapat merespons dan menutup permintaan streaming kapan pun diinginkan.
+
+8
+00:00:26,190 --> 00:00:26,690
+BAIK.
+
+9
+00:00:26,970 --> 00:00:28,210
+Jadi mari kita mulai.
+
+10
+00:00:28,540 --> 00:00:28,790
+BAIK.
+
+11
+00:00:28,800 --> 00:00:31,460
+Jadi saya dimasukkan pergi sekarang.
+
+12
+00:00:31,740 --> 00:00:37,860
+Dan apa yang harus saya lakukan adalah mencari server saya jadi struct dan sekarang kami telah menerapkan keserakahan
+
+13
+00:00:37,860 --> 00:00:41,240
+dan menyapa berkali-kali dan kami perlu menerapkan lebih lama.
+
+14
+00:00:41,310 --> 00:00:48,060
+Jadi jika saya pergi ke grid tidak masuk dan mencari antarmuka server kita memiliki tanda tangan bahasa di
+
+15
+00:00:48,060 --> 00:00:48,840
+sini.
+
+16
+00:00:48,840 --> 00:00:51,450
+Jadi mari kita salin ini ke server.
+
+17
+00:00:51,480 --> 00:00:54,340
+Pergi dan tulis fungsi kita.
+
+18
+00:00:54,510 --> 00:01:00,450
+Jadi di sini kita mendapatkan fungsi di server dan itu akan berjalan dengan baik.
+
+19
+00:01:00,720 --> 00:01:05,500
+Jadi kami menggunakan kereta ini sebagai masukan dan itu bagus.
+
+20
+00:01:05,630 --> 00:01:08,910
+P. B. ini dan itu mengembalikan kesalahan.
+
+21
+00:01:09,000 --> 00:01:13,980
+Jadi fungsi tanda tangan di sini adalah Anda dapat melihat sebelum kami memiliki permintaan dan aliran dan
+
+22
+00:01:13,980 --> 00:01:16,440
+sebelum itu kami hanya konteks dan permintaan.
+
+23
+00:01:16,890 --> 00:01:18,420
+Sekarang kami hanya memiliki aliran.
+
+24
+00:01:18,620 --> 00:01:18,910
+BAIK.
+
+25
+00:01:18,930 --> 00:01:24,600
+Itu karena klien streaming sehingga Stream ini di sini akan mengembalikan kita banyak hasil yang
+
+26
+00:01:24,600 --> 00:01:28,110
+berbeda dan akhirnya kita mencapai era ketika kita selesai.
+
+27
+00:01:28,350 --> 00:01:29,760
+Jadi bagaimana cara kerjanya secara konkret.
+
+28
+00:01:29,940 --> 00:01:31,280
+Baiklah mari kita lihat.
+
+29
+00:01:31,320 --> 00:01:37,990
+Pada dasarnya jika Anda melihat stream, ia memiliki beberapa fungsi, salah satunya adalah menerima.
+
+30
+00:01:38,430 --> 00:01:40,980
+Dan salah satunya adalah kirim dan tutup.
+
+31
+00:01:40,980 --> 00:01:46,380
+Jadi pada dasarnya kita akan menjalankan menerima sebanyak mungkin dan kemudian setelah kita menemukan akhir
+
+32
+00:01:46,380 --> 00:01:50,960
+file Kita akan mengirim dan menutup dan kemudian kita akan kembali nihil.
+
+33
+00:01:50,970 --> 00:01:52,830
+Jadi mari kita lanjutkan dan lihat bagaimana itu bekerja.
+
+34
+00:01:53,690 --> 00:01:54,860
+Kapan Anda memiliki satu loop.
+
+35
+00:01:54,860 --> 00:02:04,330
+Karena kami mendapatkan Hunter dan senjata adalah banyak pesan berbeda dan kami melakukan pesan sehingga kami dapat
+
+36
+00:02:04,660 --> 00:02:09,760
+melakukan kesalahan permintaan sama dengan aliran titik menerima.
+
+37
+00:02:09,950 --> 00:02:19,700
+Dan sekarang setelah ini kita dapat mengatakan jika kesalahan sama dengan IO dan file sehingga itu berarti bahwa kita
+
+38
+00:02:19,700 --> 00:02:27,890
+telah menyelesaikan aliran sehingga kita telah selesai membaca aliran klien maka kita dapat mengembalikan hasilnya.
+
+39
+00:02:27,890 --> 00:02:29,700
+Kalau tidak, aku tidak melakukannya sekarang.
+
+40
+00:02:29,930 --> 00:02:36,490
+Jika kesalahannya nihil maka jelas kami telah memberikan pesan mereka.
+
+41
+00:02:36,670 --> 00:02:46,060
+Jadi Fadell F dan kemudian kami akan mengatakan kesalahan saat membaca aliran klien dan kami akan menampilkan kesalahan di sini.
+
+42
+00:02:47,660 --> 00:02:50,830
+Dan akhirnya kami memiliki kasus normal di mana permintaan baik.
+
+43
+00:02:50,870 --> 00:02:56,460
+Jadi, jika kita meminta, kita bisa mendapatkan titik salam untuk mendapatkan nama depan dan itu akan memberi kita nama depan.
+
+44
+00:02:56,470 --> 00:02:58,850
+Jadi nama depan sama dengan ini.
+
+45
+00:02:59,030 --> 00:03:01,160
+Dan sekarang pada dasarnya kita harus membuat salam Anda.
+
+46
+00:03:01,160 --> 00:03:05,840
+Jadi dalam fungsi ini pertama-tama akan melakukan hal itu sebelum kita akan
+
+47
+00:03:05,840 --> 00:03:07,560
+mencetak setiap kali dipanggil.
+
+48
+00:03:07,730 --> 00:03:17,220
+Jadi saya akan mengatakan fungsi Longreach dipanggil dengan permintaan dengan permintaan streaming.
+
+49
+00:03:17,280 --> 00:03:17,840
+BAIK.
+
+50
+00:03:18,120 --> 00:03:23,910
+Dan sekarang pada dasarnya kita perlu membuat string hasil sehingga kita dapat melihat hasil sama dengan string kosong
+
+51
+00:03:23,920 --> 00:03:24,920
+atau hanya halo.
+
+52
+00:03:25,310 --> 00:03:25,720
+BAIK.
+
+53
+00:03:25,740 --> 00:03:27,490
+Dengan ruang di sini.
+
+54
+00:03:27,780 --> 00:03:33,150
+Dan katakan saja setiap kali kita mendapatkan nama
+
+55
+00:03:33,240 --> 00:03:42,580
+depan kita akan mengatakan bahwa hasilnya akan ditambahkan nama depan dan tanda seru diikuti oleh spasi.
+
+56
+00:03:42,580 --> 00:03:48,730
+Jadi di sini kami telah menghasilkan panggilan halo panggilan dan halo dan sekarang kami hanya menambahkan nama pertama yang
+
+57
+00:03:48,730 --> 00:03:49,530
+akan menyapa.
+
+58
+00:03:49,660 --> 00:03:50,730
+Halo John.
+
+59
+00:03:50,740 --> 00:03:51,850
+Halo terserah.
+
+60
+00:03:51,920 --> 00:03:53,620
+Jadi kami mendapatkan banyak halo kembali.
+
+61
+00:03:53,650 --> 00:03:54,370
+BAIK.
+
+62
+00:03:54,850 --> 00:03:56,780
+Jadi itu hanya cara melakukannya.
+
+63
+00:03:56,800 --> 00:04:05,740
+Kita bisa saja melakukan hasilnya karena G string dan kemudian kita hanya akan setiap kali mengatakan halo Plus
+
+64
+00:04:05,740 --> 00:04:07,760
+tanda seru nama depan.
+
+65
+00:04:07,930 --> 00:04:10,370
+Itu juga bisa menjadi kemungkinan.
+
+66
+00:04:10,390 --> 00:04:10,990
+BAIK.
+
+67
+00:04:11,500 --> 00:04:13,800
+Jadi di sini kita mendapat hasilnya.
+
+68
+00:04:14,010 --> 00:04:18,730
+Dan pada dasarnya ketika hasilnya ketika kita tidak memiliki file yang kita tambahkan.
+
+69
+00:04:18,760 --> 00:04:19,610
+Halo halo halo.
+
+70
+00:04:19,780 --> 00:04:23,210
+Dan kemudian ketika kita selesai kita perlu mengirim respons kembali.
+
+71
+00:04:23,230 --> 00:04:28,610
+Jadi, maukah Anda mengirim pakaian ke sini, kita perlu membuat respons yang lebih lama.
+
+72
+00:04:28,750 --> 00:04:30,580
+Jadi untuk ini sangat mudah.
+
+73
+00:04:30,580 --> 00:04:31,590
+Kami akan membuatnya.
+
+74
+00:04:31,630 --> 00:04:33,080
+Dan itu hanya sebuah struct.
+
+75
+00:04:33,190 --> 00:04:36,380
+Jadi struct ini mengambil hasil sebagai string.
+
+76
+00:04:36,430 --> 00:04:41,730
+Jadi kami akan melakukan hasilnya dan kami akan menambahkan hasil yang baru saja kami buat di sini.
+
+77
+00:04:41,740 --> 00:04:43,610
+Kami memiliki koma dan kami menyimpan.
+
+78
+00:04:43,660 --> 00:04:45,100
+Jadi ini terlihat benar.
+
+79
+00:04:45,130 --> 00:04:46,600
+Sekarang akhirnya kita perlu mengembalikan kesalahan.
+
+80
+00:04:46,600 --> 00:04:49,530
+Jadi ini sebenarnya mengembalikan kesalahan.
+
+81
+00:04:49,840 --> 00:04:54,270
+Fungsi yang dikirim ini menyertakan pengembalian kesalahan sehingga kami bisa mengembalikannya.
+
+82
+00:04:54,910 --> 00:05:00,100
+Dan jika ini tidak berhasil maka itu akan mengembalikan kesalahan dengan tepat sehingga itu sempurna.
+
+83
+00:05:00,100 --> 00:05:01,820
+Jadi kita berada dalam lingkaran ini.
+
+84
+00:05:01,930 --> 00:05:08,440
+Dan kemudian ketika kita mencapai ujung file kita akan kembali ke pengirim dan menutup tetapi kita tidak perlu menekan file kita hanya
+
+85
+00:05:08,440 --> 00:05:10,660
+bisa mengirimnya dekat kapan saja kita mau.
+
+86
+00:05:10,990 --> 00:05:13,200
+Jadi itu saja untuk server.
+
+87
+00:05:13,210 --> 00:05:18,640
+Sekarang mari kita pastikan bahwa semuanya berfungsi sehingga akan berjalan dan menjalankannya sehingga kita dapat
+
+88
+00:05:19,840 --> 00:05:20,920
+menjalankan server.
+
+89
+00:05:21,460 --> 00:05:22,780
+Dan sejauh ini terlihat bagus.
+
+90
+00:05:22,870 --> 00:05:23,700
+Halo Dunia.
+
+91
+00:05:23,710 --> 00:05:24,880
+Jadi itu sempurna.
+
+92
+00:05:25,150 --> 00:05:28,920
+Seperti biasa saya lupa menambahkan baris baru dan hanya itu.
+
+93
+00:05:28,930 --> 00:05:33,450
+Jadi sekarang kita harus mengimplementasikan klien di kuliah berikutnya untuk melihat apakah semuanya berfungsi.
+
+94
+00:05:33,470 --> 00:05:34,560
+Jadi dosen selanjutnya.
+

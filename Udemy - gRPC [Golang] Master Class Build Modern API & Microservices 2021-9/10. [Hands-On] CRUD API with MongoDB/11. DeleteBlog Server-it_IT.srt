@@ -1,0 +1,240 @@
+1
+00:00:00,340 --> 00:00:04,550
+OK quindi possiamo andare sul nostro blog a Prato e gestire gli aggiornamenti.
+
+2
+00:00:04,570 --> 00:00:12,750
+La nostra gente è occupata, quindi diciamo blog quotidiano come un gioco di ruolo e dovremmo eliminare la richiesta LUGG e
+
+3
+00:00:12,870 --> 00:00:14,940
+restituiremo una risposta al blog.
+
+4
+00:00:15,980 --> 00:00:20,570
+Elimina la risposta LUGG ok solo familiare.
+
+5
+00:00:20,590 --> 00:00:24,360
+E poi di nuovo ciò che fa ricco o non trovato nel caso non venga trovato nulla.
+
+6
+00:00:24,400 --> 00:00:28,520
+Ora andremo avanti e creeremo questo messaggio per eliminare la richiesta Blug.
+
+7
+00:00:28,750 --> 00:00:35,890
+Pelosi ha solo bisogno di un blog, almeno farà l'ID del blog di stringhe e poi lo stringa in minuscolo come ovviamente e
+
+8
+00:00:36,220 --> 00:00:41,080
+quindi la risposta del registro segue la regione esattamente la stessa cosa che sa.
+
+9
+00:00:41,080 --> 00:00:45,520
+Non abbiamo davvero bisogno di qualcosa nella risposta, quindi diamo solo il blog in quanto tale.
+
+10
+00:00:45,920 --> 00:00:50,920
+Eccellente quindi andremo avanti e genereremo il nostro codice in modo da farvi vedere Ally generare il codice e
+
+11
+00:00:50,920 --> 00:00:51,990
+il gioco è fatto.
+
+12
+00:00:52,000 --> 00:00:54,000
+Ora andiamo avanti con l'implementazione.
+
+13
+00:00:54,040 --> 00:00:54,790
+Ora ci sei abituato.
+
+14
+00:00:54,790 --> 00:01:00,520
+Ovviamente andiamo a cercare la firma della funzione per implementare quella che sarà eliminata Blug
+
+15
+00:01:01,540 --> 00:01:05,530
+e torniamo al nostro codice in servizio e la implementeremo.
+
+16
+00:01:05,530 --> 00:01:06,910
+Quindi per questo farò G-funk
+
+17
+00:01:10,640 --> 00:01:11,780
+nel mio server.
+
+18
+00:01:13,160 --> 00:01:15,020
+Non è un video per farlo più veloce.
+
+19
+00:01:15,030 --> 00:01:15,850
+OK eccellenza.
+
+20
+00:01:15,850 --> 00:01:23,610
+Ora dobbiamo andare e creare per eliminare la richiesta di Blug per la stampa e la prima cosa che devi fare è trovare il
+
+21
+00:01:23,730 --> 00:01:27,240
+blog e assicurarti che esista e ottenere l'ID da esso.
+
+22
+00:01:27,240 --> 00:01:34,980
+Quindi copiamo il codice per ottenere l'ID dell'oggetto in modo che copi questo qui.
+
+23
+00:01:34,980 --> 00:01:44,150
+E quindi quello che vogliamo ottenere dalla richiesta dalla richiesta è ottenere Blug ID, quindi vediamo solo perché
+
+24
+00:01:44,150 --> 00:01:45,710
+non funziona.
+
+25
+00:01:45,820 --> 00:01:47,620
+Direttamente preparati.
+
+26
+00:01:47,630 --> 00:01:48,350
+Eccoci qui.
+
+27
+00:01:48,770 --> 00:01:53,290
+Così abbiamo provato a convertire questo in un ID oggetto e se non lo facciamo non possiamo dire Barsad.
+
+28
+00:01:53,300 --> 00:02:00,050
+Quindi ora che abbiamo l'ID che dobbiamo fare è fondamentalmente creare una chiamata API di cancellazione di una
+
+29
+00:02:00,080 --> 00:02:05,080
+funzione in modo che tu possa vedere come una raccolta che cancelli una.
+
+30
+00:02:05,450 --> 00:02:10,250
+Se si passa un contesto a cui siamo abituati ora è il contesto che lo sfondo e poi abbiamo passato
+
+31
+00:02:10,250 --> 00:02:12,370
+un filtro per dire ciò che vogliamo eliminare.
+
+32
+00:02:12,410 --> 00:02:17,420
+Il filtro a cui ci stiamo abituando è sempre lo stesso,
+
+33
+00:02:17,420 --> 00:02:23,330
+quindi torneremo al filtro di prima e lo coperemo e lo incollerò proprio qui.
+
+34
+00:02:23,620 --> 00:02:25,530
+La signora di prima quindi è eccellente.
+
+35
+00:02:25,840 --> 00:02:27,080
+E quello che vedo nel filtro.
+
+36
+00:02:27,160 --> 00:02:31,300
+E poi non eliminiamo l'opzione, quindi la manterremo in questo modo.
+
+37
+00:02:31,310 --> 00:02:37,690
+OK ora che abbiamo questo chiamiamo questo può restituire un risultato o un errore come possiamo vedere è un risultato o un
+
+38
+00:02:37,690 --> 00:02:38,190
+errore.
+
+39
+00:02:38,200 --> 00:02:40,450
+Proprio come ogni altra chiamata API.
+
+40
+00:02:40,450 --> 00:02:45,250
+Quindi avremo un risultato o un errore assegnato a queste cose.
+
+41
+00:02:45,250 --> 00:02:47,640
+Ora se c'è un errore è probabilmente qualcosa di interno.
+
+42
+00:02:47,770 --> 00:02:55,060
+Quindi in questo caso mi limiterò a copiare questo blocco di codice e gestirlo nel caso in cui gli errori sappiano che
+
+43
+00:02:55,060 --> 00:02:59,790
+Neal ha un interno e non possiamo eliminare l'oggetto in Mogadiscio per qualsiasi motivo
+
+44
+00:02:59,810 --> 00:03:01,390
+e cosa passi nell'aria.
+
+45
+00:03:01,450 --> 00:03:03,970
+Altrimenti dobbiamo affrontare il risultato stesso.
+
+46
+00:03:04,090 --> 00:03:11,170
+Quindi se otteniamo il risultato c'è una cancellazione conta la cosa quindi ovviamente se è zero c'è un problema.
+
+47
+00:03:11,260 --> 00:03:16,920
+Ciò significa che la cosa non esisteva, quindi forse vuoi avere un conteggio cancellato uguale a zero.
+
+48
+00:03:17,080 --> 00:03:20,480
+Quindi restituiremo un errore che dice che non è stato trovato.
+
+49
+00:03:23,360 --> 00:03:35,710
+E tu dici che non possiamo dire che non possiamo trovare i documenti Blug in Magdi diremo perché con gli errori che viene chiamato
+
+50
+00:03:35,710 --> 00:03:37,180
+da prima.
+
+51
+00:03:37,180 --> 00:03:40,950
+Altrimenti abbiamo eliminato qualcosa con successo.
+
+52
+00:03:41,110 --> 00:03:51,160
+Quindi restituiremo la nostra risposta, che è LUGG PV che elimina la risposta di Blug e se pubblichi un blog addy, credo
+
+53
+00:03:51,170 --> 00:04:01,210
+che sia così vulvolo che dico Blug Yes equivale al blog Aggi, quindi useremo probabilmente qualcosa come quello che Ho analizzato
+
+54
+00:04:01,210 --> 00:04:09,230
+da prima così una richiesta che ottiene Blug eccellente e quindi il codice di errore sta
+
+55
+00:04:09,230 --> 00:04:10,740
+per essere nullo.
+
+56
+00:04:10,760 --> 00:04:12,600
+In questo caso eccellente.
+
+57
+00:04:12,740 --> 00:04:16,450
+Quindi qui abbiamo appena implementato l'eliminazione che era in realtà abbastanza semplice.
+
+58
+00:04:16,540 --> 00:04:21,020
+Quello che dobbiamo sapere è eliminare una funzione, ma sembrano tutte uguali non dalla buona prospettiva
+
+59
+00:04:21,710 --> 00:04:23,140
+dell'Oman e siamo a posto.
+
+60
+00:04:23,150 --> 00:04:25,510
+Quindi nella prossima lezione andremo a testare il client Deely.
+

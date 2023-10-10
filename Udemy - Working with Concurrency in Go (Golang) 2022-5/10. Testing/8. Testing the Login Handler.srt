@@ -1,0 +1,911 @@
+1
+00:00:01,200 --> 00:00:06,720
+So this time around, I want to test this function over here and handler stock go and the function is
+
+2
+00:00:06,720 --> 00:00:08,370
+called post login page.
+
+3
+00:00:08,370 --> 00:00:13,830
+And of course this is the function that is called when someone actually fills in their username and
+
+4
+00:00:13,830 --> 00:00:15,230
+password and log in screen.
+
+5
+00:00:15,240 --> 00:00:18,810
+So this is handling a post request, so let's get started doing that.
+
+6
+00:00:18,960 --> 00:00:19,320
+Okay.
+
+7
+00:00:19,320 --> 00:00:23,130
+So over and handlers dot test or handlers underscore test, don't go.
+
+8
+00:00:23,550 --> 00:00:25,440
+I'm actually going to put this in its own function.
+
+9
+00:00:25,500 --> 00:00:28,680
+So I'm going to do a little bit of work on this one just to demonstrate something.
+
+10
+00:00:29,340 --> 00:00:36,060
+So we'll declare a function and I'll call it test config, underscore post, log in page and it takes
+
+11
+00:00:36,060 --> 00:00:38,700
+one parameter t pointer team testing dot t
+
+12
+00:00:42,030 --> 00:00:42,360
+now.
+
+13
+00:00:43,500 --> 00:00:47,670
+First thing we'll have to do, of course, is set the path to the templates so the render function can
+
+14
+00:00:47,670 --> 00:00:50,040
+find the appropriate page if necessary.
+
+15
+00:00:50,190 --> 00:00:51,810
+Path to templates.
+
+16
+00:00:52,930 --> 00:00:58,330
+And this is equal to DOT slash templates because it's right beside this test.
+
+17
+00:00:59,110 --> 00:01:05,680
+Now we're posting some data to this and to post data in our in our test will declare a variable called
+
+18
+00:01:05,680 --> 00:01:07,090
+posted data.
+
+19
+00:01:07,780 --> 00:01:12,130
+And it's a sign the type of an it has to be from the URL package values.
+
+20
+00:01:12,520 --> 00:01:12,820
+Okay.
+
+21
+00:01:13,360 --> 00:01:14,420
+And we'll put two in here.
+
+22
+00:01:14,440 --> 00:01:19,450
+And the first one is email, which is what's the username filled in on the form?
+
+23
+00:01:20,230 --> 00:01:26,980
+And that's going to be equal to and it has to be in curly brackets, admin app, example dot com.
+
+24
+00:01:27,940 --> 00:01:29,260
+And then we'll put in some password.
+
+25
+00:01:29,420 --> 00:01:29,780
+Okay.
+
+26
+00:01:29,920 --> 00:01:34,440
+So we'll put in password and it doesn't really matter what it is at this point.
+
+27
+00:01:34,450 --> 00:01:38,500
+So I'll put in, in curly brackets, ABC one, two, three.
+
+28
+00:01:38,860 --> 00:01:42,460
+And then just to make it a little longer, I'll copy this and paste it a couple of times there.
+
+29
+00:01:43,240 --> 00:01:49,630
+So we have a password now or we have posted data that consists of an email address and a password.
+
+30
+00:01:50,380 --> 00:01:51,370
+So far, so good.
+
+31
+00:01:51,490 --> 00:01:55,370
+Now we declare a response record HIV test.
+
+32
+00:01:55,420 --> 00:01:56,980
+Don't try that again.
+
+33
+00:01:57,250 --> 00:01:59,380
+Test dot response.
+
+34
+00:01:59,380 --> 00:01:59,860
+Reporter
+
+35
+00:02:03,220 --> 00:02:04,600
+And we'll declare request.
+
+36
+00:02:04,690 --> 00:02:08,440
+Ignoring the error when we call from the HTTP package.
+
+37
+00:02:08,920 --> 00:02:09,780
+New request.
+
+38
+00:02:12,330 --> 00:02:17,460
+And it has to be a post request and it's going to go to slash and login, which we're not using, but
+
+39
+00:02:17,460 --> 00:02:19,590
+it's nice to have it match what it's actually going to.
+
+40
+00:02:20,160 --> 00:02:23,880
+And then we need to encode our posted data into the correct format.
+
+41
+00:02:23,880 --> 00:02:31,320
+And we do that by calling strings dot new reader and then we call posted data dot encode.
+
+42
+00:02:32,250 --> 00:02:32,580
+Okay.
+
+43
+00:02:34,530 --> 00:02:37,050
+And now we need our request with the context.
+
+44
+00:02:37,050 --> 00:02:44,430
+So KCTCS is assigned a value by calling that function get context handing at the request and our request
+
+45
+00:02:44,430 --> 00:02:45,480
+is equal to.
+
+46
+00:02:46,620 --> 00:02:50,010
+Request dot with context six.
+
+47
+00:02:50,760 --> 00:02:52,860
+Okay, now we need our handler.
+
+48
+00:02:53,400 --> 00:03:02,690
+Handler is assigned the value of HGV to hand lir func and we give it the appropriate handler test our
+
+49
+00:03:04,470 --> 00:03:07,320
+dot post login page right there.
+
+50
+00:03:08,640 --> 00:03:08,980
+Okay.
+
+51
+00:03:09,000 --> 00:03:10,290
+Now we serve the handler.
+
+52
+00:03:11,160 --> 00:03:18,240
+Handler dot serve HGV and we hand it our our response recorder and our request.
+
+53
+00:03:20,700 --> 00:03:21,930
+And this should be new recorder.
+
+54
+00:03:26,790 --> 00:03:27,930
+Now we perform a test.
+
+55
+00:03:28,080 --> 00:03:32,130
+Now let's go over and look at Handler Echo and see what we're supposed to get back at the very bottom
+
+56
+00:03:32,130 --> 00:03:32,820
+of this function.
+
+57
+00:03:33,060 --> 00:03:37,780
+At the very bottom of this function, we're supposed to get HTP status C other.
+
+58
+00:03:37,800 --> 00:03:39,000
+So let's perform that test.
+
+59
+00:03:40,740 --> 00:03:43,020
+If heard a code
+
+60
+00:03:45,690 --> 00:03:53,280
+is not equal to again achieve a status C other
+
+61
+00:03:55,980 --> 00:04:02,580
+than will say T to error wrong code returned, which is enough to get this going.
+
+62
+00:04:02,770 --> 00:04:05,130
+Okay, so let's run this test.
+
+63
+00:04:05,160 --> 00:04:06,300
+I'll open the terminal window.
+
+64
+00:04:06,570 --> 00:04:07,680
+I'm in the correct folder.
+
+65
+00:04:07,860 --> 00:04:08,670
+Go test.
+
+66
+00:04:09,780 --> 00:04:10,950
+Dash V dot.
+
+67
+00:04:13,550 --> 00:04:14,780
+And everything seemed to pass.
+
+68
+00:04:14,840 --> 00:04:16,550
+That seems really encouraging.
+
+69
+00:04:16,910 --> 00:04:21,410
+But what happens if we actually make this a little more accurate test?
+
+70
+00:04:21,590 --> 00:04:22,910
+Over in Hamburg, don't go.
+
+71
+00:04:23,510 --> 00:04:31,160
+If you look near the bottom of this function post login page, we should have, for example, a key
+
+72
+00:04:31,160 --> 00:04:34,370
+user ID with some value stored in the session.
+
+73
+00:04:34,400 --> 00:04:35,390
+Let's see if it's there.
+
+74
+00:04:37,220 --> 00:04:43,310
+So after this check for the response status code, let's say if not test ab.
+
+75
+00:04:44,570 --> 00:04:51,610
+Dot session dot exists using the context and we're looking for user ID like that.
+
+76
+00:04:51,620 --> 00:04:54,590
+If that doesn't exist in the session, then something went wrong.
+
+77
+00:04:55,250 --> 00:05:01,490
+So we'll say t the error did not find user id in session.
+
+78
+00:05:02,710 --> 00:05:04,110
+Our test passed last time.
+
+79
+00:05:04,130 --> 00:05:06,020
+Let's see what happens when we actually check the session.
+
+80
+00:05:06,320 --> 00:05:07,310
+So I'll clear the screen.
+
+81
+00:05:07,610 --> 00:05:08,540
+Run the test again.
+
+82
+00:05:10,340 --> 00:05:11,180
+And it failed.
+
+83
+00:05:11,390 --> 00:05:13,340
+It didn't find that in the session.
+
+84
+00:05:13,670 --> 00:05:15,980
+Why not now at this point?
+
+85
+00:05:16,760 --> 00:05:22,430
+This is where I start testing things like Let's find out what code is actually being covered in our
+
+86
+00:05:22,430 --> 00:05:22,940
+test.
+
+87
+00:05:22,940 --> 00:05:24,740
+And fortunately Go makes that really easy.
+
+88
+00:05:25,460 --> 00:05:32,360
+All I have to do is in the same folder where this test exists is run these two commands, go test again,
+
+89
+00:05:32,780 --> 00:05:39,500
+dash cover profile equals and then some file name and I always call mine coverage out.
+
+90
+00:05:39,950 --> 00:05:41,300
+Okay, so let's run that command.
+
+91
+00:05:41,330 --> 00:05:46,730
+Now this will run the test, which will fail, but it will also produce a file called coverage that
+
+92
+00:05:46,730 --> 00:05:49,100
+I can use to look at the code in more detail.
+
+93
+00:05:50,660 --> 00:05:51,930
+So the test failed.
+
+94
+00:05:51,950 --> 00:05:54,050
+It produced the coverage file.
+
+95
+00:05:54,110 --> 00:06:02,420
+Now I'll run go tool cover, dash html equals and then the name of the file.
+
+96
+00:06:02,420 --> 00:06:04,310
+I just specified coverage.
+
+97
+00:06:04,550 --> 00:06:04,780
+Okay.
+
+98
+00:06:05,030 --> 00:06:10,550
+And what this will do is fire up a web browser and show me what is actually happening in the tests.
+
+99
+00:06:11,210 --> 00:06:13,190
+Anything that's green is covered.
+
+100
+00:06:13,610 --> 00:06:15,650
+Anything that is red is not covered.
+
+101
+00:06:16,040 --> 00:06:18,950
+And here's the function I'm interested in post login page.
+
+102
+00:06:19,430 --> 00:06:20,300
+So what happens?
+
+103
+00:06:20,300 --> 00:06:20,720
+It does.
+
+104
+00:06:20,720 --> 00:06:24,040
+In fact, for new the session token, it does pass the form post.
+
+105
+00:06:24,050 --> 00:06:27,200
+There's no error, so this doesn't get executed and I'm fine with that.
+
+106
+00:06:27,920 --> 00:06:29,870
+We do get the email and the password.
+
+107
+00:06:30,140 --> 00:06:35,490
+We do get a user from our fake database and there's no database behind it, but there was no error.
+
+108
+00:06:35,510 --> 00:06:40,040
+So we have a user and then we check the password and here's where we have some grief.
+
+109
+00:06:40,370 --> 00:06:47,510
+Notice that it's getting the value for valid password and it's getting an error when it calls user DHCP
+
+110
+00:06:47,540 --> 00:06:48,650
+password matches.
+
+111
+00:06:48,980 --> 00:06:50,630
+And that's where the problem lies.
+
+112
+00:06:51,110 --> 00:06:59,140
+The problem is that when we said to ourselves, our test models are completely divorced from the database.
+
+113
+00:07:00,120 --> 00:07:02,460
+They are entirely divorced from the database.
+
+114
+00:07:02,580 --> 00:07:08,920
+If I call a variable user like I created this variable user up here when I called app top model start
+
+115
+00:07:08,940 --> 00:07:10,470
+user, I can't buy it by email.
+
+116
+00:07:10,890 --> 00:07:17,070
+That's calling my test function, but when I call it directly, user password matches.
+
+117
+00:07:17,490 --> 00:07:23,250
+The problem I run into is it's calling the actual production version of password matches.
+
+118
+00:07:23,700 --> 00:07:28,800
+And of course, it's never going to find a valid password because this variable user doesn't have any
+
+119
+00:07:28,800 --> 00:07:30,150
+of its fields populated.
+
+120
+00:07:30,390 --> 00:07:33,810
+It's populated up here with just empty values or dummy values.
+
+121
+00:07:34,170 --> 00:07:36,180
+So it's never going to be able to do that.
+
+122
+00:07:36,180 --> 00:07:38,160
+Password matches the way that I want it to.
+
+123
+00:07:38,760 --> 00:07:40,920
+And fortunately, that's pretty easy to fix.
+
+124
+00:07:40,950 --> 00:07:47,740
+Let's close this and go back to our code and go over to the handlers ego.
+
+125
+00:07:47,740 --> 00:07:52,650
+Go file and find that line, which is right here.
+
+126
+00:07:52,680 --> 00:07:55,590
+Line 44, my code where I'm checking the password.
+
+127
+00:07:55,890 --> 00:08:04,200
+We change that to app dot models, dot user dot password matches.
+
+128
+00:08:04,980 --> 00:08:08,640
+So let's run that test again and see if everything works as expected.
+
+129
+00:08:08,820 --> 00:08:11,430
+So go test dashboard.
+
+130
+00:08:11,640 --> 00:08:13,380
+And this time it should pass.
+
+131
+00:08:15,520 --> 00:08:16,840
+And it does.
+
+132
+00:08:17,380 --> 00:08:17,770
+Okay.
+
+133
+00:08:18,280 --> 00:08:26,080
+So that means that anywhere in this handler's file that I'm calling a method on the user variable directly.
+
+134
+00:08:26,380 --> 00:08:30,530
+In other words, I'm not calling app dot models, dot, user dot, whatever the method is.
+
+135
+00:08:30,550 --> 00:08:34,510
+Instead, I'm calling some variable that is that the user type dot the method.
+
+136
+00:08:34,990 --> 00:08:35,830
+I have to change that.
+
+137
+00:08:36,100 --> 00:08:37,990
+So let's find those really quickly.
+
+138
+00:08:39,060 --> 00:08:40,200
+So act up, models.
+
+139
+00:08:40,200 --> 00:08:41,070
+That one's fine.
+
+140
+00:08:41,850 --> 00:08:43,050
+This one's fine.
+
+141
+00:08:45,850 --> 00:08:47,130
+This all looks okay.
+
+142
+00:08:47,890 --> 00:08:49,970
+So that was all right here.
+
+143
+00:08:49,990 --> 00:08:51,370
+We're calling out of session.
+
+144
+00:08:51,370 --> 00:08:51,850
+Destroyed.
+
+145
+00:08:51,880 --> 00:08:52,580
+No problem.
+
+146
+00:08:52,600 --> 00:08:53,500
+Register pages.
+
+147
+00:08:53,510 --> 00:08:54,100
+Fine.
+
+148
+00:08:54,400 --> 00:08:55,750
+Post, register page.
+
+149
+00:08:56,440 --> 00:08:59,980
+So we get a variable you and we call you, insert you.
+
+150
+00:08:59,980 --> 00:09:04,750
+So here we should be calling at dot models, dot user,
+
+151
+00:09:08,530 --> 00:09:09,250
+dot insert.
+
+152
+00:09:09,610 --> 00:09:13,600
+So we found one there and that is in the function post register page.
+
+153
+00:09:13,690 --> 00:09:14,500
+Let's keep going.
+
+154
+00:09:16,280 --> 00:09:18,110
+We generate a token from a string.
+
+155
+00:09:18,110 --> 00:09:19,250
+So far so good.
+
+156
+00:09:19,760 --> 00:09:21,260
+Let's try to activate account.
+
+157
+00:09:21,290 --> 00:09:25,340
+So we're calling here verify token, which is fine.
+
+158
+00:09:29,610 --> 00:09:35,310
+So we get the variable you and we call get by email here we call you update.
+
+159
+00:09:35,520 --> 00:09:38,280
+Now we're gonna have to make a change to the actual update function.
+
+160
+00:09:38,370 --> 00:09:47,910
+Instead, this will be app dot models, dot users update and we're going to have to hand that you.
+
+161
+00:09:48,720 --> 00:09:49,200
+Okay.
+
+162
+00:09:49,680 --> 00:09:51,640
+So that means now we have two changes to make.
+
+163
+00:09:51,660 --> 00:09:57,390
+The first one is going to be actually three changes over here in our data folder.
+
+164
+00:09:57,390 --> 00:09:59,490
+We're going to have to change the interface type.
+
+165
+00:10:00,540 --> 00:10:07,020
+So update will have to be user of type user.
+
+166
+00:10:08,130 --> 00:10:08,610
+Okay.
+
+167
+00:10:10,000 --> 00:10:11,140
+And delete.
+
+168
+00:10:11,380 --> 00:10:13,690
+We can just get rid that -- altogether because we're not even using it.
+
+169
+00:10:13,690 --> 00:10:16,810
+So I'll comment that one out then we're going to have to go.
+
+170
+00:10:16,810 --> 00:10:18,310
+Two models don't go.
+
+171
+00:10:21,750 --> 00:10:22,680
+That's okay.
+
+172
+00:10:22,920 --> 00:10:28,590
+But we'll have to go to user echo, find the update function, which is.
+
+173
+00:10:29,980 --> 00:10:30,850
+Here somewhere.
+
+174
+00:10:31,090 --> 00:10:31,480
+Update.
+
+175
+00:10:31,900 --> 00:10:32,830
+We'll have to make this.
+
+176
+00:10:32,830 --> 00:10:34,270
+Accept the type.
+
+177
+00:10:35,170 --> 00:10:36,790
+User of type.
+
+178
+00:10:36,790 --> 00:10:37,330
+User.
+
+179
+00:10:38,920 --> 00:10:39,880
+And.
+
+180
+00:10:41,190 --> 00:10:43,180
+This becomes user.
+
+181
+00:10:43,920 --> 00:10:51,090
+We'll copy that and paste it right here and here and here and here.
+
+182
+00:10:51,840 --> 00:10:55,920
+Okay, so that's it for the production version of the database models.
+
+183
+00:10:55,920 --> 00:11:04,350
+Now we'll have to go to test models and find the error here, which is going to be in the update.
+
+184
+00:11:07,090 --> 00:11:07,990
+Where are you?
+
+185
+00:11:08,260 --> 00:11:11,860
+Update So get all, get by email.
+
+186
+00:11:11,860 --> 00:11:13,350
+Get one update right there.
+
+187
+00:11:13,450 --> 00:11:19,520
+That's going to have to take the tape user or the model user of the user.
+
+188
+00:11:20,560 --> 00:11:20,920
+Okay.
+
+189
+00:11:21,460 --> 00:11:24,970
+So handlers, let's go back to handlers and make sure that worked.
+
+190
+00:11:25,660 --> 00:11:28,480
+So that takes care of this situation.
+
+191
+00:11:29,810 --> 00:11:31,220
+Subscribe to plan.
+
+192
+00:11:32,300 --> 00:11:36,440
+We had an idea and a plan I.D. and we're not calling anything directly there.
+
+193
+00:11:36,980 --> 00:11:39,800
+Here, we're getting a user from the session.
+
+194
+00:11:43,280 --> 00:11:44,330
+That looks okay.
+
+195
+00:11:51,440 --> 00:11:52,510
+That looks okay.
+
+196
+00:11:55,960 --> 00:11:57,460
+We're calling this directly.
+
+197
+00:11:57,460 --> 00:12:00,160
+We're going to use are we calling any methods on that?
+
+198
+00:12:00,160 --> 00:12:01,420
+You know, we're fine.
+
+199
+00:12:01,750 --> 00:12:02,160
+Okay.
+
+200
+00:12:04,730 --> 00:12:06,650
+And here we generate the manual.
+
+201
+00:12:09,700 --> 00:12:10,120
+Good.
+
+202
+00:12:12,540 --> 00:12:15,950
+Get invoices simple and choose subscription is the last one.
+
+203
+00:12:15,960 --> 00:12:18,420
+That should be all the changes we have to make there.
+
+204
+00:12:18,450 --> 00:12:20,820
+Now let's run our tests one more time to see if we broke anything.
+
+205
+00:12:21,930 --> 00:12:23,340
+Go test stash v dot.
+
+206
+00:12:25,190 --> 00:12:26,540
+And we do have a fail.
+
+207
+00:12:26,840 --> 00:12:29,540
+So that's in handler's dog go line 151.
+
+208
+00:12:30,600 --> 00:12:34,440
+Handler stock go line 151.
+
+209
+00:12:37,980 --> 00:12:45,240
+So here the error is it says cannot use variable of type star data don't user as type data don't user.
+
+210
+00:12:45,840 --> 00:12:48,120
+All we should have to do here is to reference that.
+
+211
+00:12:48,990 --> 00:12:49,950
+All right, let's try that again.
+
+212
+00:12:50,280 --> 00:12:50,520
+Go.
+
+213
+00:12:50,520 --> 00:12:51,660
+Test dash v dot.
+
+214
+00:12:54,780 --> 00:12:55,770
+And everything passes.
+
+215
+00:12:56,160 --> 00:12:56,550
+Okay.
+
+216
+00:12:56,940 --> 00:13:00,150
+Now, you might be asking yourself, is there another way to do this?
+
+217
+00:13:00,390 --> 00:13:05,790
+To me, it's really convenient to be able to call methods on a variable of the type user, for example.
+
+218
+00:13:05,790 --> 00:13:13,800
+And a factor is the way they would normally do this is you would not separate your test database functionality
+
+219
+00:13:13,800 --> 00:13:15,890
+and your production database functionality.
+
+220
+00:13:15,900 --> 00:13:19,590
+The way that we did instead would use something called the repository pattern.
+
+221
+00:13:20,310 --> 00:13:26,100
+And it's pretty easy to implement, but this is of course in concurrency, not in repository patterns.
+
+222
+00:13:26,430 --> 00:13:31,170
+And if you're interested, I do that sort of thing in another one of my courses, the one that's entitled
+
+223
+00:13:31,170 --> 00:13:34,620
+something like building modern web applications in go.
+
+224
+00:13:34,620 --> 00:13:38,590
+And it's pretty straightforward, but this is sufficient for our purposes.
+
+225
+00:13:39,210 --> 00:13:39,540
+All right.
+
+226
+00:13:39,540 --> 00:13:45,000
+Let's move on and actually test something that uses concurrency and we'll discover we have another problem
+
+227
+00:13:45,000 --> 00:13:49,920
+or two when we do that, which is, after all, why we write tests in the first place.
+
+228
+00:13:50,220 --> 00:13:52,020
+Okay, let's move on.

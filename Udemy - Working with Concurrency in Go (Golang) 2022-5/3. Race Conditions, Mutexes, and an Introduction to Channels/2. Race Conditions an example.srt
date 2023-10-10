@@ -1,0 +1,291 @@
+1
+00:00:01,270 --> 00:00:05,740
+So now that we have some idea as to what a race condition is, let's look at an example.
+
+2
+00:00:05,770 --> 00:00:09,970
+So I've started up Visual Studio code and I'm in a new folder.
+
+3
+00:00:10,510 --> 00:00:17,170
+So I'll initialize the project by starting a go on file, go mod in it, and I'll just call this example
+
+4
+00:00:17,170 --> 00:00:17,460
+too.
+
+5
+00:00:18,310 --> 00:00:26,350
+Okay, so we have a new government file and now I'll create a new go file called Mongo and it's in package
+
+6
+00:00:26,350 --> 00:00:30,340
+name and we'll just do a variation on what we did a couple of lectures ago.
+
+7
+00:00:30,690 --> 00:00:38,290
+Okay, so I'll create a variable MSG of type string and I'll create a main function.
+
+8
+00:00:41,590 --> 00:00:50,440
+And all that's going to do is set message to hello world, same as before.
+
+9
+00:00:50,890 --> 00:00:51,250
+Okay.
+
+10
+00:00:52,000 --> 00:00:58,180
+And now I want to actually change the value of update message a couple of times and then print it out.
+
+11
+00:00:58,570 --> 00:01:00,900
+So to do that, I'm going to do it in the background.
+
+12
+00:01:00,910 --> 00:01:08,890
+So create a new function and I'll just call this say update message and it takes one value s, which
+
+13
+00:01:08,890 --> 00:01:11,350
+is a type string and it doesn't return anything.
+
+14
+00:01:11,560 --> 00:01:11,890
+Okay.
+
+15
+00:01:12,580 --> 00:01:17,770
+And all this does is say MSG is equal to S.
+
+16
+00:01:18,760 --> 00:01:21,700
+Now, since I'm running that in the background, I probably need a weight group.
+
+17
+00:01:21,820 --> 00:01:23,140
+So let's put a weight group in here.
+
+18
+00:01:23,350 --> 00:01:25,420
+We'll just declare it right at the package level.
+
+19
+00:01:25,990 --> 00:01:28,630
+Var WG of type sync weight group.
+
+20
+00:01:29,920 --> 00:01:39,070
+And down here of course I'm going to defer WG, dot, dot and down here after my message weight group,
+
+21
+00:01:39,190 --> 00:01:42,420
+I'm going to spawn two instances of update message.
+
+22
+00:01:42,430 --> 00:01:44,560
+So of course I'm going to have to wait for them to finish.
+
+23
+00:01:44,560 --> 00:01:48,760
+So I'll say WG Dot and then I'm going to do it twice.
+
+24
+00:01:48,760 --> 00:01:53,620
+So I'll put two in there and then I'll call, go update message and I'll have that a string.
+
+25
+00:01:54,190 --> 00:01:55,780
+Hello Universe.
+
+26
+00:01:57,310 --> 00:02:00,550
+This should look familiar to you and then I'll duplicate that line.
+
+27
+00:02:01,120 --> 00:02:03,850
+I make this one Hello Cosmos.
+
+28
+00:02:05,650 --> 00:02:07,870
+And then I'll wait for those weight groups to finish.
+
+29
+00:02:08,080 --> 00:02:16,600
+WG Dot wait and then I'll print out the message format dot print line MSG.
+
+30
+00:02:16,960 --> 00:02:18,900
+Okay, dead simple program.
+
+31
+00:02:18,910 --> 00:02:20,020
+So let's go through this again.
+
+32
+00:02:20,530 --> 00:02:24,940
+We declare to package label variables one to hold our message and one for the weight group.
+
+33
+00:02:25,510 --> 00:02:30,310
+Then we have a function that we're going to call using the go keyword to run it as its own go routine
+
+34
+00:02:31,120 --> 00:02:36,070
+that calls defer weight group done so it'll decrement wait group by one when it finishes and all it
+
+35
+00:02:36,070 --> 00:02:39,820
+does is set the value of message to whatever it receives as a parameter.
+
+36
+00:02:40,420 --> 00:02:45,100
+Down here we give message an initial value, then we call weight group and two.
+
+37
+00:02:45,100 --> 00:02:50,830
+So we're going to wait for two decrements of the weight group and we call update message with Hello
+
+38
+00:02:50,830 --> 00:02:53,620
+Universe Call Update message with Hello Cosmos.
+
+39
+00:02:53,950 --> 00:02:56,920
+We wait for the weight group and then we print out the message.
+
+40
+00:02:57,160 --> 00:02:59,440
+So that all seems pretty straightforward.
+
+41
+00:03:00,760 --> 00:03:04,510
+So if I open up the terminal and type go run dot.
+
+42
+00:03:06,700 --> 00:03:07,870
+It said Hello Universe.
+
+43
+00:03:08,150 --> 00:03:09,850
+Well, that sort of makes sense.
+
+44
+00:03:10,420 --> 00:03:15,070
+You would think, since I'm waiting for these two weight groups, that it might be Hello, Cosmos.
+
+45
+00:03:15,460 --> 00:03:17,050
+So why is it Hello Universe.
+
+46
+00:03:17,440 --> 00:03:21,040
+Well, once again, this is an issue where we have a problem with concurrency.
+
+47
+00:03:22,030 --> 00:03:23,620
+Those two go routines.
+
+48
+00:03:23,920 --> 00:03:29,210
+The one on line 20 and the one on line 21 are both cold, and they're called in a particular order.
+
+49
+00:03:29,290 --> 00:03:32,320
+But I have no idea which one's going to finish first.
+
+50
+00:03:33,190 --> 00:03:40,630
+Now, in the instance we just ran, it's pretty clear that Hello Cosmos Line 21 actually finished before
+
+51
+00:03:40,630 --> 00:03:44,290
+line 20, even though it was called after line 20.
+
+52
+00:03:45,070 --> 00:03:49,180
+If I run this again, there's really no telling what kind of information I'm going to get back.
+
+53
+00:03:49,210 --> 00:03:55,060
+I've got a low universe again now three times in a row, but it might at some point be Hello Cosmos.
+
+54
+00:03:56,200 --> 00:04:03,190
+Now, if I run this program one more time, but this time I say Go run, dash, race and then dot watch
+
+55
+00:04:03,190 --> 00:04:03,760
+what happens.
+
+56
+00:04:05,610 --> 00:04:06,840
+It gives me a warning.
+
+57
+00:04:06,840 --> 00:04:15,150
+Data race and a data race takes place when you have concurrent go routines, as you know, that access
+
+58
+00:04:15,150 --> 00:04:20,400
+the same piece of data and because you're never sure which one's going to finish first, you actually
+
+59
+00:04:20,400 --> 00:04:21,460
+run into problems.
+
+60
+00:04:21,810 --> 00:04:23,430
+So how do I fix this?
+
+61
+00:04:23,730 --> 00:04:26,880
+You know, how do I actually make this problem go away?
+
+62
+00:04:27,030 --> 00:04:34,190
+Well, we can do that by using something called a mutex, mutual exclusivity.
+
+63
+00:04:34,200 --> 00:04:37,710
+And that's exactly what we're going to be looking at in the coming lectures.
+
+64
+00:04:37,800 --> 00:04:39,420
+So right now we have an example.
+
+65
+00:04:40,290 --> 00:04:42,590
+So right now we have a program that has a race condition.
+
+66
+00:04:42,600 --> 00:04:49,050
+And unless I put that flag dash race when I run the program, I probably have no idea that this is actually
+
+67
+00:04:49,290 --> 00:04:53,130
+a program that might cause me problems, that will cause me problems down the road.
+
+68
+00:04:54,420 --> 00:04:56,580
+So we're going to address that in the next lecture.
+
+69
+00:04:56,610 --> 00:05:00,110
+We'll have a look at Sync Mutex, and this is a very simple example.
+
+70
+00:05:00,120 --> 00:05:04,740
+So once we go through these two simple examples, one with the race condition and one addressing the
+
+71
+00:05:04,740 --> 00:05:07,320
+race condition, we'll look at a slightly more complex one.
+
+72
+00:05:07,380 --> 00:05:07,710
+Okay.
+
+73
+00:05:08,070 --> 00:05:08,760
+So let's move on.

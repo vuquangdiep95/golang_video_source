@@ -1,0 +1,268 @@
+1
+00:00:00,190 --> 00:00:04,720
+Heiser dalam kuliah ini saya ingin berbicara tentang perbedaan istirahat dan RBC.
+
+2
+00:00:04,950 --> 00:00:11,010
+Jadi saya berharap Anda mengerti apa itu API sisanya jika Anda tidak tolong lihat
+
+3
+00:00:11,010 --> 00:00:17,370
+bahwa Internet akan menjadi ringkasan cepat yang cepat sehingga API yang ditahan pada dasarnya memiliki kata
+
+4
+00:00:17,370 --> 00:00:17,990
+kerja.
+
+5
+00:00:18,090 --> 00:00:24,720
+Jadi kami menggunakan pos dan kami akan mempostingnya kepada Anda contoh URL API yang datang seperti yang Anda lihat dan kami akan mempostingnya
+
+6
+00:00:24,720 --> 00:00:26,440
+ke alamat ini di sini.
+
+7
+00:00:26,580 --> 00:00:29,020
+Anggota di sini adalah kartu nomor anggota.
+
+8
+00:00:29,100 --> 00:00:32,650
+Dan seperti yang Anda lihat protokol di sini adalah 1. PDB 1 persen.
+
+9
+00:00:32,730 --> 00:00:38,640
+Sekarang kita dapat melewati beberapa header seperti otorisasi host yang memberikan nama pengguna dan kata sandi
+
+10
+00:00:38,640 --> 00:00:45,100
+jenis konten yang merupakan aplikasi Jason dan mungkin beberapa header penerimaan akan menyampaikan bahwa data Jason akan
+
+11
+00:00:45,230 --> 00:00:48,060
+memiliki dua bidang dalam memuliakan kuantitas radian.
+
+12
+00:00:48,180 --> 00:00:50,070
+Seperti yang Anda lihat ini adalah teks biasa.
+
+13
+00:00:50,190 --> 00:00:53,760
+Dan kemudian server setelah memproses permintaan itu akan merespons sesuatu.
+
+14
+00:00:53,760 --> 00:01:01,230
+Misalnya HTP 1. 1 status memiliki 2 atau satu yang dibuat akan memberi Anda beberapa tajuk
+
+15
+00:01:01,560 --> 00:01:04,310
+seperti tanggal Tipe-Konten dan lokasi di mana ia dibuat.
+
+16
+00:01:04,320 --> 00:01:09,540
+Jadi ini adalah contoh cepat dari penyegaran cepat apakah sepotong itu berfungsi seperti apa dan bagaimana cara kerjanya.
+
+17
+00:01:09,570 --> 00:01:12,420
+Tapi ini yang akan Anda lihat di internet untuk STPI.
+
+18
+00:01:12,420 --> 00:01:16,570
+Sekarang mari kita lihat perbedaan penggunaan GURPS sisanya.
+
+19
+00:01:16,610 --> 00:01:22,560
+RBC akan menggunakan buffer vertikal seperti yang bisa kita lihat sebelum lebih kecil lebih cepat.
+
+20
+00:01:22,690 --> 00:01:26,630
+Baiklah kita akan menggunakan Jasen yang berbasis teks bukan biner.
+
+21
+00:01:26,670 --> 00:01:29,370
+Lebih rendah dan ukurannya lebih besar.
+
+22
+00:01:29,370 --> 00:01:31,750
+OK jadi kita sudah melihat ini.
+
+23
+00:01:31,770 --> 00:01:37,180
+Ini adalah keuntungan yang jelas untuk Jarkesy setidaknya di sisi komunikasi dan sisi kinerja untuk menggunakan buffer
+
+24
+00:01:37,180 --> 00:01:40,040
+vertikal akan lebih mudah ketika Anda mulai debugging.
+
+25
+00:01:40,050 --> 00:01:47,810
+Jelas sekarang B-2 digunakan oleh GOPAC yang latensi jauh lebih rendah seperti yang kita lihat di seluruh video.
+
+26
+00:01:47,880 --> 00:01:54,030
+Dan jika Anda ke bagian dan dari 2015 sisanya di seluruh Internet sejauh yang
+
+27
+00:01:54,040 --> 00:02:00,610
+saya tahu sekarang menggunakan HP 1. 1 yang memiliki latensi jauh lebih tinggi dan berasal dari tahun 1997.
+
+28
+00:02:00,720 --> 00:02:08,250
+Sekarang penangkapan hanya memungkinkan permintaan server klien saja seperti yang telah kita lihat sedangkan PC Anda telah melihat dalam
+
+29
+00:02:08,250 --> 00:02:12,240
+empat jenis API memungkinkan dua arah sinkronisitas dua arah.
+
+30
+00:02:12,270 --> 00:02:19,950
+Jadi Anda memiliki lebih banyak fleksibilitas menggunakan Jarkesy sekarang istirahat hanya memungkinkan permintaan yang teleponnya sementara
+
+31
+00:02:20,160 --> 00:02:28,590
+JPC memiliki sisa kemampuan streaming jika Anda sempurna menerapkan istirahat dan banyak orang tidak menerapkan istirahat sama sekali
+
+32
+00:02:28,590 --> 00:02:32,700
+disebut Rest ish API bukan resk API penuh.
+
+33
+00:02:32,970 --> 00:02:38,910
+Pada dasarnya selebihnya disebut Crood oriented Crood berarti membuat mengambil tanggal penghapusan dan
+
+34
+00:02:38,910 --> 00:02:41,170
+kata kerja akan dihapus.
+
+35
+00:02:41,400 --> 00:02:43,380
+Jadi istirahat berorientasi Crood.
+
+36
+00:02:43,380 --> 00:02:49,680
+Anda akan memiliki sumber daya misalnya pengguna dan Anda mengatakan membuat pengguna mengambil pengguna data pengguna atau
+
+37
+00:02:49,680 --> 00:02:53,880
+menghapus pengguna tetapi itu tidak benar-benar fokus pada apa yang terjadi.
+
+38
+00:02:53,880 --> 00:03:01,230
+OK Anda hanya berurusan dengan sumber daya sedangkan DRP C berorientasi pada apa yang API Anda tidak punya kendala.
+
+39
+00:03:01,230 --> 00:03:06,260
+Ini desain gratis untuk Anda dan Anda dapat benar-benar fokus pada apa yang seharusnya dilakukan API.
+
+40
+00:03:06,270 --> 00:03:08,100
+Apa poin akhir yang sempurna.
+
+41
+00:03:08,100 --> 00:03:10,780
+Apa parameter yang sempurna untuk API Anda.
+
+42
+00:03:10,900 --> 00:03:14,310
+OK jadi sisanya berorientasi pada sumber daya.
+
+43
+00:03:14,400 --> 00:03:16,220
+Europaeus menggunakan berorientasi API.
+
+44
+00:03:16,440 --> 00:03:20,980
+Dan setelah Anda mendapatkan ini mungkin Anda akan mendapatkan wahyu itu tentu saja yang benar-benar
+
+45
+00:03:20,980 --> 00:03:24,160
+akan menunjukkan kepada Anda bagaimana membuat GAAP tetap kuat.
+
+46
+00:03:24,270 --> 00:03:31,410
+Sekarang sisanya tidak memiliki kogenerasi atau tersedia melalui sesuatu yang disebut open API atau Swager yang keduanya dikemukakan
+
+47
+00:03:31,410 --> 00:03:33,900
+mereka bukan bagian dari spesifikasi.
+
+48
+00:03:34,050 --> 00:03:40,650
+Jadi apa yang disebut warga negara kelas dua dan inisiatif API terbuka Swager juga cukup baru.
+
+49
+00:03:40,650 --> 00:03:47,730
+Jadi Anda dapat melakukan beberapa kogenerasi menggunakan open DPR Swager sedangkan G. R. PC dibangun dari bawah ke atas
+
+50
+00:03:47,790 --> 00:03:51,670
+dan menggunakan buffer protokol untuk menentukan layanan dan pesan di API.
+
+51
+00:03:51,840 --> 00:03:57,210
+Karena itu generasi dilakukan melalui buffer kritis dan itu adalah warga negara kelas satu.
+
+52
+00:03:57,390 --> 00:04:05,070
+Anda tidak dapat menggunakan PC Anda tanpa melakukan kogenerasi yang dengan sendirinya membuat PC Anda super super aman.
+
+53
+00:04:05,070 --> 00:04:08,170
+Jadi itu perbedaan yang sangat penting.
+
+54
+00:04:08,220 --> 00:04:14,130
+Akhirnya sisanya akan menjadi HTP burb berbasis jadi Anda harus membaca pipa ledeng atau menggunakan perpustakaan pihak ketiga
+
+55
+00:04:14,130 --> 00:04:17,760
+di sekitar melakukan posting mendapatkan put put dihapus dan sebagainya.
+
+56
+00:04:17,940 --> 00:04:21,180
+Sedangkan G atau PC berbasis PC.
+
+57
+00:04:21,180 --> 00:04:25,070
+Itu berarti bahwa kita dapat memanggil fungsi secara langsung di server.
+
+58
+00:04:25,090 --> 00:04:32,490
+Oke seperti yang telah kita lihat sebelumnya, klien Anda pada dasarnya akan memanggil fungsi di server dan PC Anda melakukan semua pemasangan pipa
+
+59
+00:04:32,490 --> 00:04:38,940
+untuk kami di luar kotak sehingga ada patokan luar biasa yang menakjubkan yang telah dilakukan oleh orang ini di alamat ini
+
+60
+00:04:39,270 --> 00:04:44,460
+dan Anda dapat lihat saja tapi dia menggunakan beberapa tolok ukur dan cari tahu untuk API
+
+61
+00:04:44,460 --> 00:04:49,230
+yang sama bahwa GOPAC akan memiliki kinerja 25 kali lebih banyak daripada yang lain.
+
+62
+00:04:49,230 --> 00:04:55,440
+API adalah dan telah menetapkan kinerja sebagai waktu yang diperlukan untuk memiliki respons terhadap API.
+
+63
+00:04:55,710 --> 00:05:00,510
+Dan itu semua karena perbedaan ini dan semua peningkatan teknologi ini.
+
+64
+00:05:00,510 --> 00:05:05,820
+Jadi secara keseluruhan, jika Anda mencari API GRB dengan kinerja tinggi yang scalable akan menjadi
+
+65
+00:05:05,820 --> 00:05:06,920
+yang tidak ditahan.
+
+66
+00:05:07,110 --> 00:05:08,760
+Saya sangat berharap itu membantu.
+
+67
+00:05:08,880 --> 00:05:10,100
+Sampai jumpa di kuliah selanjutnya.
+

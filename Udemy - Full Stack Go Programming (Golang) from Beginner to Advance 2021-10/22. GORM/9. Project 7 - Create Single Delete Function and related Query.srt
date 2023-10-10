@@ -1,0 +1,239 @@
+1
+00:00:12,080 --> 00:00:17,360
+Hello and welcome to the golden programming language course in the previous session.
+
+2
+00:00:17,390 --> 00:00:21,080
+They could define multiple update function and in.
+
+3
+00:00:22,010 --> 00:00:27,650
+We want to create the function to delete a student in a student in an in-person database.
+
+4
+00:00:28,130 --> 00:00:31,040
+We want to do the delete operation in two ways.
+
+5
+00:00:31,670 --> 00:00:38,600
+First, for delete a student or a record of the student today and second for delete more than a student
+
+6
+00:00:38,600 --> 00:00:41,240
+record or many records in the student data.
+
+7
+00:00:42,410 --> 00:00:43,820
+Delete a student.
+
+8
+00:00:45,320 --> 00:00:47,930
+First, define the function named single.
+
+9
+00:00:47,930 --> 00:00:54,800
+Delete that accept a parameter that is an empty interface, which indicates that any instance of a strike
+
+10
+00:00:54,830 --> 00:00:56,810
+is to be passed to the this method.
+
+11
+00:00:57,650 --> 00:01:03,710
+Also, this function returns the number of records that have been affected by the delete operation at
+
+12
+00:01:03,710 --> 00:01:04,760
+the end of the works.
+
+13
+00:01:05,660 --> 00:01:10,610
+So go to the DB connection PHI and define our function.
+
+14
+00:01:12,260 --> 00:01:15,800
+Find singular delete.
+
+15
+00:01:19,700 --> 00:01:25,220
+Set a name like object for empty interface object.
+
+16
+00:01:27,290 --> 00:01:30,710
+Either tied into and or face.
+
+17
+00:01:35,440 --> 00:01:38,590
+And return type is in sixty four.
+
+18
+00:01:42,830 --> 00:01:49,820
+Now calling connect function for initializing MySchool data source name, this function returns a DB
+
+19
+00:01:49,820 --> 00:01:51,700
+object from garden package.
+
+20
+00:01:52,250 --> 00:01:58,100
+So define a variable like DB calling equals and invoke connect function.
+
+21
+00:02:03,390 --> 00:02:10,980
+After creating a DV object from Gore and package, we invoked delete function so we can delete function
+
+22
+00:02:11,160 --> 00:02:18,470
+on the DBI object and Sith object instance, an argument for it before calling it first define a variable
+
+23
+00:02:18,480 --> 00:02:22,390
+like reason for the return type delete function.
+
+24
+00:02:22,410 --> 00:02:28,860
+Deletes value match given conditions if the value has primary key denville, including the primary key
+
+25
+00:02:28,860 --> 00:02:35,970
+as condition result column equals DB dot lead.
+
+26
+00:02:39,660 --> 00:02:42,150
+And said, Optic, there's argument to it.
+
+27
+00:02:47,250 --> 00:02:53,640
+When did it record, you need to ensure its primary field has value and Gorham will use the primary
+
+28
+00:02:53,640 --> 00:02:54,900
+key to delete the record?
+
+29
+00:02:55,200 --> 00:03:02,010
+If primary fields blank or invaded, did it are records for the model now invoking those affected field
+
+30
+00:03:02,010 --> 00:03:13,450
+from resolved return that we showed the remove the fact that records so be right ITR resolved dot rows
+
+31
+00:03:13,470 --> 00:03:15,380
+affects the format.
+
+32
+00:03:15,390 --> 00:03:22,680
+The code in SEC, the project we have now succeeded in designing a method to receive a strike instance
+
+33
+00:03:22,680 --> 00:03:27,300
+from the outside and delete this object from its table in database.
+
+34
+00:03:27,810 --> 00:03:32,130
+Now we go to the main function to use to this query statement.
+
+35
+00:03:34,980 --> 00:03:36,690
+First, clear the last code.
+
+36
+00:03:41,790 --> 00:03:48,450
+In this case, we want to delete a student in person database, so we should use from single digit functions
+
+37
+00:03:48,450 --> 00:03:49,500
+from TV tools.
+
+38
+00:03:49,920 --> 00:03:56,400
+Suppose a student with I.D. number two is in the database and we want to delete these records from a
+
+39
+00:03:56,400 --> 00:03:58,320
+student table in person database.
+
+40
+00:03:59,460 --> 00:04:03,270
+So first, go to my school database and see this record.
+
+41
+00:04:05,460 --> 00:04:09,750
+Now we can see the records of the student table in person database.
+
+42
+00:04:10,320 --> 00:04:15,210
+We want to remove the I.D. number two by the name Robert and age 25.
+
+43
+00:04:15,960 --> 00:04:18,510
+Now go to the school program and continue.
+
+44
+00:04:20,460 --> 00:04:26,280
+First, create an a student object from a student, etc. and initialize it value in it.
+
+45
+00:04:26,490 --> 00:04:32,730
+So override the student calling equals model dot student
+
+46
+00:04:35,280 --> 00:04:44,370
+and sit idly by two and now invoke delete function from TV tools.
+
+47
+00:04:44,370 --> 00:04:49,760
+Package and send create the student object argument and fist row effect it.
+
+48
+00:04:50,040 --> 00:04:58,470
+So first, define a variable like roll call equals calling single digit function from TV tools, TV
+
+49
+00:04:58,680 --> 00:05:03,660
+tools, dot single let and set a student instance.
+
+50
+00:05:09,230 --> 00:05:24,650
+Now this a return type as role variable, so right, FP Rose faked it and said roll reformat the code
+
+51
+00:05:24,650 --> 00:05:28,390
+and save the project, now execute the program.
+
+52
+00:05:31,840 --> 00:05:35,800
+Glow from the outback is the main main.
+
+53
+00:05:35,860 --> 00:05:36,670
+That's cool.
+
+54
+00:05:41,250 --> 00:05:45,180
+OK, now we can see the output rose affected one.
+
+55
+00:05:45,810 --> 00:05:52,590
+Now go to database again and execute silly query and see the changes executed.
+
+56
+00:05:52,590 --> 00:05:53,460
+Select query.
+
+57
+00:05:56,100 --> 00:06:04,260
+OK, we can see that a record of a student with I.D. number two was removed from table and one row is
+
+58
+00:06:04,260 --> 00:06:08,730
+affected in order not to prolong the time of decision.
+
+59
+00:06:08,760 --> 00:06:14,210
+We will finish it and we will continue the content in the next session until next session.
+
+60
+00:06:14,220 --> 00:06:14,700
+Goodbye.

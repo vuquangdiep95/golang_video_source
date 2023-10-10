@@ -1,0 +1,572 @@
+1
+00:00:01,010 --> 00:00:05,960
+So this time around, what we want to work on is logging the user out of GitHub when they log out of
+
+2
+00:00:05,960 --> 00:00:06,680
+our application.
+
+3
+00:00:06,800 --> 00:00:11,850
+Now when I say log it of GitHub, it's not actually logging you out of GitHub in your normal GitHub
+
+4
+00:00:11,850 --> 00:00:14,270
+bbc.com web browser, you visit GitHub.
+
+5
+00:00:14,270 --> 00:00:16,280
+After logging out, you'll still be logged in.
+
+6
+00:00:16,309 --> 00:00:21,470
+If you were logging in before, but you'll no longer have access to the web application using your GitHub
+
+7
+00:00:21,470 --> 00:00:21,860
+account.
+
+8
+00:00:22,520 --> 00:00:23,840
+So we tried it this way.
+
+9
+00:00:23,990 --> 00:00:27,670
+Using Gothic don't log out in our log out function.
+
+10
+00:00:27,680 --> 00:00:31,430
+That handler inside auth handler stuck out and it just doesn't work.
+
+11
+00:00:32,150 --> 00:00:37,550
+So what we need to do is to use the GitHub API and we need to do this for a couple of reasons.
+
+12
+00:00:37,670 --> 00:00:41,210
+So I'm over here in my silver toss application.
+
+13
+00:00:41,750 --> 00:00:48,080
+I'm currently logged in using GitHub, but if I log out, it does log me out of the application.
+
+14
+00:00:48,800 --> 00:00:54,020
+But if I click again, it immediately logs me in without having to authenticate through GitHub.
+
+15
+00:00:54,590 --> 00:00:55,700
+And that's a bit of a problem.
+
+16
+00:00:55,820 --> 00:00:59,290
+It's not a big deal if it's on your personal computer inside your house.
+
+17
+00:00:59,300 --> 00:01:05,239
+But what if someone accesses the site using GitHub from a shared computer, something in a library or
+
+18
+00:01:05,239 --> 00:01:06,050
+something like that?
+
+19
+00:01:06,080 --> 00:01:10,790
+Well, the next user that comes up and clicks on that button will automatically be logged in, and that
+
+20
+00:01:10,790 --> 00:01:12,350
+is a bit of a security nightmare.
+
+21
+00:01:13,190 --> 00:01:18,320
+So to fix this, what we're going to do is look at this documentation, which I've already read, and
+
+22
+00:01:18,320 --> 00:01:22,370
+I'll put a link to this in the course resources for this lecture, and it gives you all the information
+
+23
+00:01:22,370 --> 00:01:26,210
+you need for how to make calls to GitHub and do certain things.
+
+24
+00:01:26,270 --> 00:01:27,920
+And all I really want to do is to log out.
+
+25
+00:01:28,670 --> 00:01:35,600
+So let's go back to our code and let's delete this function or these lines of code entirely and call
+
+26
+00:01:35,600 --> 00:01:37,070
+a function that doesn't exist.
+
+27
+00:01:37,340 --> 00:01:43,160
+So I'll call one that's not exported, called social logout, which doesn't exist yet, but rather to
+
+28
+00:01:43,160 --> 00:01:43,480
+make it.
+
+29
+00:01:44,060 --> 00:01:47,420
+And that's going to take a response writer and the request.
+
+30
+00:01:47,630 --> 00:01:48,020
+OK.
+
+31
+00:01:48,110 --> 00:01:49,190
+And it doesn't return anything.
+
+32
+00:01:49,190 --> 00:01:50,150
+So we're just going to call that.
+
+33
+00:01:50,630 --> 00:01:54,590
+So now we'll go to the very bottom of this file and I'll create this function.
+
+34
+00:01:55,670 --> 00:01:58,130
+You can put it anywhere in this file, but I'm going to put it at the bottom.
+
+35
+00:01:58,820 --> 00:02:04,250
+So I'll create a function with the receiver of H put in a handlers and it's going to be called social.
+
+36
+00:02:04,250 --> 00:02:11,690
+Log out like that and it takes W, which is initiative response writer and error, which is a pointer
+
+37
+00:02:11,690 --> 00:02:15,170
+to each CDP to request just like any handler.
+
+38
+00:02:15,440 --> 00:02:15,770
+OK.
+
+39
+00:02:16,760 --> 00:02:20,810
+So that should take care of the air at the top where this function didn't exist.
+
+40
+00:02:20,990 --> 00:02:22,040
+Now we need to do something.
+
+41
+00:02:22,940 --> 00:02:28,970
+So the first thing I need to do is determine what kind of provider we used to log in.
+
+42
+00:02:29,270 --> 00:02:34,370
+And of course, if you recall, we stored something in the session called social underscore provider
+
+43
+00:02:34,380 --> 00:02:35,380
+and we just a string.
+
+44
+00:02:35,390 --> 00:02:36,140
+So let's get that.
+
+45
+00:02:36,320 --> 00:02:38,060
+So we'll call the variable.
+
+46
+00:02:38,060 --> 00:02:41,450
+We're going to build provider and we'll check for an error.
+
+47
+00:02:41,480 --> 00:02:42,110
+OK?
+
+48
+00:02:42,680 --> 00:02:45,680
+Just by calling each Dot app dot session.
+
+49
+00:02:47,590 --> 00:02:48,210
+Not yet.
+
+50
+00:02:48,940 --> 00:02:52,210
+And we give it the context and context as usual.
+
+51
+00:02:53,480 --> 00:02:57,620
+And then we're looking for social underscore provider, make sure you spell it right.
+
+52
+00:02:57,920 --> 00:03:00,050
+And when we get it, we want to cast it to a string.
+
+53
+00:03:00,470 --> 00:03:00,830
+OK.
+
+54
+00:03:01,840 --> 00:03:06,640
+And if OK is not true, so if not, OK, can't find that in the session, just return.
+
+55
+00:03:06,910 --> 00:03:13,090
+So when someone's logged in the normal way using a username and password, when they try to log out,
+
+56
+00:03:13,090 --> 00:03:18,140
+it'll call this function, can't find social provider in the session, so it just returns.
+
+57
+00:03:18,190 --> 00:03:20,140
+So things just progressed as they should.
+
+58
+00:03:21,280 --> 00:03:29,520
+But assuming we do have an OK set to true, then we need to call the appropriate apple for our provider.
+
+59
+00:03:29,590 --> 00:03:31,580
+So remember, we're going to be supporting two.
+
+60
+00:03:32,620 --> 00:03:37,000
+And what we want to do is we want to revoke the auth token.
+
+61
+00:03:37,900 --> 00:03:38,230
+OK?
+
+62
+00:03:39,280 --> 00:03:41,530
+Each provider has different logic
+
+63
+00:03:46,780 --> 00:03:51,190
+for doing this if it exists at all.
+
+64
+00:03:53,620 --> 00:03:58,840
+And I strongly suspect that some of those various social authentication providers that are supported
+
+65
+00:03:58,840 --> 00:04:04,120
+by Gothe don't actually support this, but I'm only going to implement two and both of them do.
+
+66
+00:04:04,660 --> 00:04:13,810
+So what we'll do is we'll switch on that variable provider, which should only have two possible values.
+
+67
+00:04:14,050 --> 00:04:16,120
+The first one is the only one it's going to have right now.
+
+68
+00:04:16,360 --> 00:04:17,230
+Case GitHub.
+
+69
+00:04:18,490 --> 00:04:18,880
+OK.
+
+70
+00:04:19,540 --> 00:04:22,570
+So we're going to do something if it's GitHub, and then we'll have other cases.
+
+71
+00:04:22,570 --> 00:04:24,100
+But one other case at the end of the day.
+
+72
+00:04:25,000 --> 00:04:28,750
+So I've already dug through the documentation and figured out how this works.
+
+73
+00:04:28,880 --> 00:04:29,830
+And it's pretty straightforward.
+
+74
+00:04:30,550 --> 00:04:38,440
+First of all, I'm going to need the client ID. So I will call that Client ID, and I'm going to get
+
+75
+00:04:38,440 --> 00:04:39,940
+that from the dot on file.
+
+76
+00:04:40,030 --> 00:04:41,440
+OS don't get on.
+
+77
+00:04:41,740 --> 00:04:46,060
+And this is simply the GitHub key.
+
+78
+00:04:46,390 --> 00:04:47,320
+That's the client I.D..
+
+79
+00:04:47,530 --> 00:04:47,890
+OK.
+
+80
+00:04:49,210 --> 00:04:51,880
+And I'm also going to need the client secret, the GitHub secret.
+
+81
+00:04:51,890 --> 00:04:53,170
+So I'll call that client secret.
+
+82
+00:04:53,270 --> 00:04:55,840
+And this is just so we can authenticate against the API.
+
+83
+00:04:56,230 --> 00:05:00,010
+OS, don't get on GitHub secret.
+
+84
+00:05:01,300 --> 00:05:09,760
+So I'm going to need those two things, and I also need the token that the user received from GitHub
+
+85
+00:05:09,760 --> 00:05:12,500
+when they authenticated and we stored that in the session as well.
+
+86
+00:05:12,520 --> 00:05:14,440
+We called it social underscore token.
+
+87
+00:05:15,490 --> 00:05:19,420
+So token is assigned the value of each stop app.
+
+88
+00:05:21,700 --> 00:05:32,110
+That session doesn't get out of context, and the key is social underscore token, and we cast it to
+
+89
+00:05:32,110 --> 00:05:32,500
+a string.
+
+90
+00:05:33,880 --> 00:05:38,410
+So at this point, we have the client I.D. We have the client secret and we have the token that was
+
+91
+00:05:38,410 --> 00:05:40,570
+issued to the user when he or she logged in.
+
+92
+00:05:41,140 --> 00:05:46,570
+Now we just need to make a request to GitHub API Impasses and Jason.
+
+93
+00:05:46,750 --> 00:05:49,900
+So let's build the payload for the JSON, and it's dead simple.
+
+94
+00:05:50,410 --> 00:05:55,930
+I'll create a variable, which I'm going to call payload, and it's going to be a struct, and it has
+
+95
+00:05:55,930 --> 00:05:58,690
+one field access token.
+
+96
+00:05:59,050 --> 00:06:05,620
+OK, I'm type string and in JSON, that's going to be called access underscore token.
+
+97
+00:06:07,340 --> 00:06:14,630
+So there's my variable now it's populated with some content payload, the access token is equal to token.
+
+98
+00:06:18,970 --> 00:06:22,240
+Now, let's create a JSON request.
+
+99
+00:06:23,860 --> 00:06:30,760
+Joe called Jason RFQ a potential leader, which I'm going to ignore, and you probably shouldn't, and
+
+100
+00:06:30,760 --> 00:06:34,090
+I'll just mercial my value into Jason request.
+
+101
+00:06:34,210 --> 00:06:35,680
+So Jason Marshall?
+
+102
+00:06:37,580 --> 00:06:41,060
+Marshall right there, and I'm going to hand it payload.
+
+103
+00:06:44,050 --> 00:06:50,070
+Now I'll create a request, and it should be request and they'll check for error when I call FTP the
+
+104
+00:06:50,140 --> 00:06:50,920
+new request.
+
+105
+00:06:52,440 --> 00:06:54,160
+And this requires three parameters.
+
+106
+00:06:54,180 --> 00:06:55,350
+First of all, what's the method?
+
+107
+00:06:55,380 --> 00:06:59,260
+Well, GitHub API documentation says it has to be method delete.
+
+108
+00:06:59,370 --> 00:07:08,280
+So I'll use the constant from the HDD package called Method Delete, and it also requires the second
+
+109
+00:07:08,280 --> 00:07:10,410
+argument to be in the form of a string.
+
+110
+00:07:10,410 --> 00:07:11,130
+What do we call it?
+
+111
+00:07:11,280 --> 00:07:12,900
+And here's where we put our credentials in.
+
+112
+00:07:13,050 --> 00:07:21,170
+So I need to build a string, so I'll use the format as printouts function and my format string is t.p.s.,
+
+113
+00:07:21,180 --> 00:07:22,590
+colon slash slash.
+
+114
+00:07:23,340 --> 00:07:28,860
+And then my credentials, which are two strings, a placeholder and a colon and another placeholder
+
+115
+00:07:28,890 --> 00:07:38,100
+both of type string, then add API dot GitHub dot com slash applications slash.
+
+116
+00:07:38,610 --> 00:07:43,680
+Then another placeholder shall be my client ID, then slash grant.
+
+117
+00:07:45,300 --> 00:07:54,240
+And the substitution is for those are Client ID, Client Secret and then Client I.D. again.
+
+118
+00:07:56,900 --> 00:07:58,340
+OK, so that's my second parameter.
+
+119
+00:07:59,630 --> 00:08:01,670
+And the last part, of course, is the body.
+
+120
+00:08:02,570 --> 00:08:07,090
+And in this case, the body must be in the form of an Iowa reader, so will this create a bite start
+
+121
+00:08:07,110 --> 00:08:12,320
+new buffer and will hand it Jason e Chew?
+
+122
+00:08:12,980 --> 00:08:17,330
+And then I'll put my closing parentheses up on that same line, so it's a little more readable.
+
+123
+00:08:18,380 --> 00:08:23,030
+OK, so that builds a request that we'll check for an error if error is not equal to nil.
+
+124
+00:08:23,530 --> 00:08:29,750
+I'll write it to the Log H Dot app dot error log dot print line.
+
+125
+00:08:29,930 --> 00:08:32,570
+The error and I'll just return can't go any further.
+
+126
+00:08:32,900 --> 00:08:33,230
+OK.
+
+127
+00:08:34,280 --> 00:08:37,520
+But if we get past that now, we'll create an HTP client.
+
+128
+00:08:37,520 --> 00:08:45,050
+So Client is assigned the value of a reference to agitprop client and we'll just make it empty and then
+
+129
+00:08:45,050 --> 00:08:47,020
+we'll use that client to make a request.
+
+130
+00:08:47,030 --> 00:08:54,400
+So don't care about the return value, but I do care about potentially an error that's equal to client
+
+131
+00:08:54,400 --> 00:08:55,220
+don't do.
+
+132
+00:08:55,360 --> 00:08:59,480
+And I just handed my request a review, which I built right up there in line three hundred and seventy
+
+133
+00:08:59,480 --> 00:09:02,620
+nine Chuck Vernier in error is not equal to nil.
+
+134
+00:09:04,260 --> 00:09:05,960
+Then I'll say print out the air.
+
+135
+00:09:06,220 --> 00:09:12,720
+The app error log dot print, one error logging out
+
+136
+00:09:15,510 --> 00:09:20,640
+of GitHub, and I'll put the error and I'll return.
+
+137
+00:09:22,020 --> 00:09:23,520
+Otherwise, we're pretty much done.
+
+138
+00:09:23,760 --> 00:09:27,600
+Now we'll obviously have another case here for Google.
+
+139
+00:09:27,690 --> 00:09:30,260
+We may as well put that in here right now and just leave it empty.
+
+140
+00:09:33,000 --> 00:09:34,050
+Case, Google.
+
+141
+00:09:36,630 --> 00:09:40,020
+And do nothing because we're not writing that right now, we'll do that later on.
+
+142
+00:09:40,710 --> 00:09:43,030
+But this should actually work for us now.
+
+143
+00:09:43,050 --> 00:09:47,580
+So in the next lecture, we'll try logging out and make sure that we got everything right.
+

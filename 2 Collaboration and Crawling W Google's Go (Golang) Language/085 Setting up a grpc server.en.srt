@@ -1,0 +1,579 @@
+1
+00:00:00,270 --> 00:00:00,590
+Được rồi.
+
+2
+00:00:00,600 --> 00:00:08,040
+Vì vậy, chỉ để neo bạn neo bạn trong khóa học phác thảo những gì chúng ta đã thấy cho đến nay khi xác định dịch vụ.
+
+3
+00:00:08,250 --> 00:00:14,790
+Và sau đó tôi đã có một bài bình luận nhỏ về DSL so với lý tưởng của ngôn ngữ cụ thể miền so với giao diện
+
+4
+00:00:14,790 --> 00:00:17,820
+ngôn ngữ thiết kế hoặc ngôn ngữ định nghĩa.
+
+5
+00:00:17,820 --> 00:00:22,560
+Và chúng tôi cũng đã nói về các phiên bản sử dụng phiên bản mới nhất.
+
+6
+00:00:22,830 --> 00:00:28,650
+Và sau đó chúng tôi xem xét việc biên dịch dịch vụ và sau đó chúng tôi nói về Bộ đệm giao thức.
+
+7
+00:00:28,890 --> 00:00:35,310
+Và sau đó khi tôi nghe thấy bộ đệm giao thức, tôi nghĩ Jason và chúng tôi cũng đã thảo luận về các thư mục và gói rồi đi.
+
+8
+00:00:35,310 --> 00:00:42,360
+Và bây giờ chúng ta sẽ thấy việc thiết lập một máy chủ GPS và điều đó sẽ yêu cầu viết một số
+
+9
+00:00:42,360 --> 00:00:49,090
+mã để chúng tôi có thể sử dụng những gì chúng tôi đã tạo cho đến nay và đây sẽ là một quy trình gồm nhiều bước.
+
+10
+00:00:49,090 --> 00:00:51,100
+Và vì vậy chúng tôi sẽ không giao dịch với khách hàng.
+
+11
+00:00:51,120 --> 00:00:52,820
+Chúng tôi sẽ thiết lập máy chủ.
+
+12
+00:00:53,070 --> 00:00:56,580
+Và Daniel sẽ hướng dẫn chúng ta về đoạn mã đó.
+
+13
+00:00:56,580 --> 00:01:02,910
+Và sau đó trong video sau này, nếu cần, chúng tôi sẽ thêm vào một video khác, tất cả chúng ta đều tốt bụng
+
+14
+00:01:02,910 --> 00:01:08,200
+giống như xem qua mã để giúp tất cả chúng ta hiểu mã nếu điều đó cần xảy ra.
+
+15
+00:01:08,250 --> 00:01:12,300
+Và đó là kế hoạch trò chơi đó là nơi chúng tôi đã ở nơi chúng tôi đang ở và nơi chúng tôi sẽ đến.
+
+16
+00:01:12,460 --> 00:01:18,360
+Và một điều mà chúng tôi đang thảo luận ngoại tuyến mà tôi đã thêm vào ghi chú của chúng tôi ở đây để chúng tôi thảo luận
+
+17
+00:01:18,360 --> 00:01:25,950
+trên các video mà bạn nhận được một phần của nó là đảm bảo cam kết DSL lý tưởng của bạn bất cứ thứ gì bạn muốn gọi
+
+18
+00:01:25,950 --> 00:01:34,100
+nó proto GPS gọi nó là lý tưởng vì vậy có lẽ chúng ta nên gắn bó với ngôn ngữ định nghĩa giao diện lý tưởng.
+
+19
+00:01:34,240 --> 00:01:39,470
+Và tôi chỉ cần đảm bảo rằng mình đang sử dụng đúng ngôn ngữ định nghĩa giao diện phù hợp.
+
+20
+00:01:39,470 --> 00:01:40,430
+Nó đây rồi.
+
+21
+00:01:40,500 --> 00:01:50,520
+Và bạn biết đấy, chúng tôi đang nói về tầm quan trọng của việc cam kết sử dụng GitHub ở bất cứ đâu bạn có thể
+
+22
+00:01:50,610 --> 00:01:55,790
+đáp ứng mã của bạn, bạn là công cụ DSL lý tưởng của bạn.
+
+23
+00:01:55,830 --> 00:01:58,770
+Vì vậy, bạn đã có một vài suy nghĩ về điều đó và một số kinh nghiệm với điều đó.
+
+24
+00:01:59,530 --> 00:02:00,320
+Vâng chỉ.
+
+25
+00:02:00,800 --> 00:02:05,850
+Vì vậy, vâng, bạn cần dấu chấm, hồ sơ dấu chấm vì đó là thực tế của bạn, đó là phần quan trọng của bạn nhưng bạn
+
+26
+00:02:05,850 --> 00:02:09,270
+cũng muốn cam kết DOT go đã được tạo từ nó.
+
+27
+00:02:09,630 --> 00:02:14,460
+Vì vậy, mặc dù bạn có thể tạo lại điều này bất cứ khi nào bạn muốn chỉ bằng cách chạy lại lệnh Potosi đó
+
+28
+00:02:14,760 --> 00:02:21,660
+hồ sơ DOT bạn vẫn muốn cam kết tệp dot go này để bạn có thể nhập hoặc sử dụng nó làm
+
+29
+00:02:21,660 --> 00:02:24,080
+một mô-đun trong các gói khác.
+
+30
+00:02:24,210 --> 00:02:30,160
+Vì vậy, hãy đảm bảo rằng bạn cam kết cả tệp bạn viết và mã được tạo dựa trên đó.
+
+31
+00:02:30,600 --> 00:02:34,670
+Vâng, có một chút vấn đề ở đó vì bạn có thể nghĩ rằng đây có thể là thời điểm tôi thực hiện nó.
+
+32
+00:02:34,920 --> 00:02:38,310
+Và vì vậy đừng làm điều đó chỉ cam kết tất cả.
+
+33
+00:02:38,310 --> 00:02:38,560
+Được rồi.
+
+34
+00:02:38,580 --> 00:02:41,100
+Vì vậy, hãy xem làm thế nào để thiết lập một GPS thưa ngài.
+
+35
+00:02:41,100 --> 00:02:41,340
+Được rồi.
+
+36
+00:02:41,430 --> 00:02:49,170
+Vì vậy, tôi đã sao chép mọi thứ từ máy chủ 0 1 0 2 0 2 ở đây chỉ để giữ cho mọi thứ sạch sẽ và khôn ngoan
+
+37
+00:02:49,740 --> 00:02:51,530
+vì vậy tôi sẽ tạo một tệp mới ở đây.
+
+38
+00:02:51,570 --> 00:02:55,170
+Tôi sẽ chỉ gọi nó là một ý nghĩa đi.
+
+39
+00:02:55,180 --> 00:03:03,210
+Đây là trong thư mục 0 2 máy chủ trực tiếp cùng cấp với thư mục echo nên đây sẽ là gói của tôi
+
+40
+00:03:03,210 --> 00:03:05,640
+chính với chức năng chính của tôi.
+
+41
+00:03:06,600 --> 00:03:08,550
+Và đây là nơi chúng ta sẽ tạo máy chủ.
+
+42
+00:03:08,550 --> 00:03:14,580
+Vì vậy, điều đầu tiên tôi muốn làm là nếu bạn truy cập mã được tạo và bạn cuộn xuống đủ
+
+43
+00:03:15,630 --> 00:03:20,780
+bạn sẽ tìm thấy máy chủ echo server.
+
+44
+00:03:21,640 --> 00:03:23,550
+Vâng, nó có một chút nói lắp ở đó.
+
+45
+00:03:23,550 --> 00:03:29,370
+Vì vậy, phần đầu tiên máy chủ tiếng vang của họ chỉ là những gì tôi xác định là dịch vụ của mình và sau đó là phần máy chủ
+
+46
+00:03:29,370 --> 00:03:29,670
+của điều đó.
+
+47
+00:03:29,820 --> 00:03:31,530
+Vì vậy, đây là có một giao diện.
+
+48
+00:03:31,530 --> 00:03:39,150
+Vì vậy, bạn cần triển khai giao diện này vì đây là giao diện bạn sẽ gọi sẽ được gọi bất cứ khi nào có yêu cầu
+
+49
+00:03:39,150 --> 00:03:40,390
+được thực hiện cho điều này.
+
+50
+00:03:41,120 --> 00:03:41,640
+Vì thế.
+
+51
+00:03:41,700 --> 00:03:44,340
+Vì vậy, để hoàn thành giao diện, bạn sẽ cần một số loại.
+
+52
+00:03:44,340 --> 00:03:48,810
+Vì vậy, tôi sẽ gõ echo server là một cấu trúc rỗng.
+
+53
+00:03:49,020 --> 00:03:53,400
+Tôi không có bất kỳ trường nào mà tôi cần phải có trong cấu trúc đó, tôi có thể đặt một inch ở đó hoặc chỉ là
+
+54
+00:03:53,400 --> 00:03:57,120
+dễ dàng nhưng cấu trúc trống là tốt vì nó không chiếm bộ nhớ
+
+55
+00:04:00,670 --> 00:04:08,320
+vì vậy tôi sẽ thực hiện và sau đó tôi cần tạo chức năng máy chủ tiếng vang. Tôi sẽ đi qua đây để
+
+56
+00:04:08,320 --> 00:04:17,170
+giao diện này tôi sẽ sao chép trực tiếp phần này vào đây rồi quay lại và thêm vào Echo Dot
+
+57
+00:04:18,890 --> 00:04:21,550
+và Echo Dot ở đó.
+
+58
+00:04:22,820 --> 00:04:28,360
+Vì vậy, bây giờ tôi đã có chức năng mà tôi sẽ lưu và tôi sẽ cần quay lại và thêm các mục nhập.
+
+59
+00:04:28,700 --> 00:04:34,080
+Tôi sẽ cần nhập bối cảnh và tôi sẽ cần nhập.
+
+60
+00:04:34,230 --> 00:04:35,440
+Điều này lặp lại PDB.
+
+61
+00:04:35,740 --> 00:04:45,350
+Vì vậy, nó nằm ở không gian tên của chúng tôi sẽ được sửa đổi, vì vậy dấu gạch chéo của dấu chấm com sẽ thực hiện điều đó sau đó dấu gạch chéo
+
+62
+00:04:45,840 --> 00:04:57,410
+Dự án vàng và sau đó là các thư mục con Ý tôi là 0 0 5 gạch ngang GRPC gạch chéo 0 2 0 2 máy chủ gạch chéo echo
+
+63
+00:05:01,020 --> 00:05:01,790
+có vẻ tốt.
+
+64
+00:05:01,790 --> 00:05:04,670
+Vì vậy, đó là R nên đó là hàng nhập khẩu.
+
+65
+00:05:04,670 --> 00:05:07,410
+Điều này tạo ra tiếng vang từ mã.
+
+66
+00:05:07,820 --> 00:05:15,260
+Và khi tôi thấy rằng chúng tôi hiện đang tạo một phương thức với con trỏ máy thu tới máy chủ echo được gắn vào
+
+67
+00:05:15,260 --> 00:05:28,310
+loại cấu trúc máy chủ echo thì chúng ta phải trong phương thức này trả lại con trỏ đó cho phản hồi tiếng vang và
+
+68
+00:05:28,310 --> 00:05:29,360
+một lỗi chưa.
+
+69
+00:05:29,390 --> 00:05:32,900
+Vì vậy, chúng ta phải có một cái gì đó để đưa vào đó trả về một con trỏ tới một phản hồi.
+
+70
+00:05:32,930 --> 00:05:33,070
+Vâng.
+
+71
+00:05:33,090 --> 00:05:39,400
+Ở đó nhìn thấy một con trỏ tới một quả trứng để phản hồi tiếng vang vọng lại.
+
+72
+00:05:39,480 --> 00:05:43,050
+Và vì vậy đây sẽ chỉ là phản hồi và lỗi thông thường của bạn.
+
+73
+00:05:43,130 --> 00:05:50,380
+Vì vậy, bởi vì phản hồi của chúng tôi nếu bạn xem trong hồ sơ của mình hoặc phản hồi tiếng vang có phản hồi hạn chế.
+
+74
+00:05:50,420 --> 00:05:57,310
+Vì vậy, nếu chúng ta đi vào mã đã tạo của mình, chúng ta thực sự có thể tìm thấy phản hồi tiếng vang là một cấu trúc với tất cả những thứ này
+
+75
+00:05:57,310 --> 00:06:03,190
+ba trường bắt đầu xxx này là nội bộ của bộ đệm proto, vì vậy chúng tôi không cần phải lo lắng về
+
+76
+00:06:03,190 --> 00:06:03,910
+họ.
+
+77
+00:06:03,910 --> 00:06:05,930
+Vì vậy, chúng tôi chỉ có phản hồi này.
+
+78
+00:06:06,250 --> 00:06:09,350
+Vì vậy, chúng tôi chỉ có thể tạo phản hồi đó.
+
+79
+00:06:09,370 --> 00:06:12,070
+Vì vậy, đây sẽ là những gì phản ứng của chúng tôi.
+
+80
+00:06:12,310 --> 00:06:19,240
+Và vì vậy, chúng tôi muốn phản hồi của mình có thể là dấu hai chấm echo và sau đó là bất kỳ thứ gì họ đã gửi cho chúng tôi trong yêu cầu phản hồi.
+
+81
+00:06:19,990 --> 00:06:27,970
+Vì vậy, yêu cầu tiếng vang của chúng tôi, chúng tôi cần đảm bảo rằng chúng tôi thực sự có các biến cho mỗi trong số này để tôi có thể yêu cầu
+
+82
+00:06:28,000 --> 00:06:32,690
+chúng tôi có dấu chấm yêu cầu và có rất nhiều thứ ở đây.
+
+83
+00:06:32,950 --> 00:06:36,340
+Mặc dù vậy, tin nhắn là những gì chúng tôi đã xác định một yêu cầu tiếng vang có một tin nhắn.
+
+84
+00:06:36,400 --> 00:06:42,100
+Và một lần nữa nếu bạn truy cập mã đã tạo, chúng tôi có thể tìm thấy yêu cầu tiếng vang và nó có thông báo và một số bản proto
+
+85
+00:06:42,120 --> 00:06:43,060
+Buffington.
+
+86
+00:06:43,210 --> 00:06:45,450
+Đẹp.
+
+87
+00:06:45,600 --> 00:06:46,040
+Vì thế.
+
+88
+00:06:46,050 --> 00:06:50,340
+Vì vậy, bây giờ bất cứ khi nào ai đó gọi echo, chúng tôi sẽ gửi lại phản hồi.
+
+89
+00:06:50,340 --> 00:06:57,200
+Echo không gian dấu hai chấm bất cứ điều gì họ cú pháp, hãy gọi nó là tiếng vang của tôi.
+
+90
+00:06:57,270 --> 00:06:59,320
+Tôi biết nó chỉ giống như văn bản.
+
+91
+00:06:59,340 --> 00:06:59,850
+Của bạn đi.
+
+92
+00:06:59,850 --> 00:07:00,430
+Hoàn hảo.
+
+93
+00:07:01,100 --> 00:07:01,310
+Vâng.
+
+94
+00:07:01,350 --> 00:07:01,810
+Tuyệt vời.
+
+95
+00:07:02,960 --> 00:07:03,780
+Vâng.
+
+96
+00:07:04,200 --> 00:07:04,520
+Vì thế.
+
+97
+00:07:04,600 --> 00:07:06,440
+Vì vậy, bây giờ chúng tôi đã xác định Điểm cuối của mình.
+
+98
+00:07:06,470 --> 00:07:08,520
+Bây giờ chúng ta cần thực sự tạo phần máy chủ.
+
+99
+00:07:08,670 --> 00:07:15,130
+Và do đó, điều này không thực sự dễ dàng như gói HP mà chúng tôi chỉ đang nghe máy chủ.
+
+100
+00:07:15,570 --> 00:07:17,510
+Nó có một vài bước bổ sung.
+
+101
+00:07:17,550 --> 00:07:24,580
+Vì vậy, trước tiên, máy chủ GOPAC của bạn không nghe theo mặc định trên cổng mạng.
+
+102
+00:07:24,630 --> 00:07:28,380
+Vì vậy, chúng ta phải tự tạo một bộ lắng nghe mạng.
+
+103
+00:07:28,560 --> 00:07:36,630
+Và đó chỉ là trong gói net không phải net HP just net so net
+
+104
+00:07:39,150 --> 00:07:46,300
+lắng nghe về khoản nợ ròng của chúng tôi, lắng nghe đưa họ đến những tranh luận về loại mạng bạn đang sử dụng
+
+105
+00:07:46,300 --> 00:07:48,880
+nghe trên và sau đó là địa chỉ.
+
+106
+00:07:48,880 --> 00:07:53,980
+Vì vậy, những gì bạn đang nghe trên chúng tôi muốn nghe các thông điệp chính và địa chỉ về cơ bản chỉ là
+
+107
+00:07:53,980 --> 00:07:54,400
+cảng.
+
+108
+00:07:54,880 --> 00:07:57,150
+Vì vậy, dấu hai chấm 88 hoạt động ở đây.
+
+109
+00:07:57,220 --> 00:08:06,000
+Vì vậy, để nghe trên Cổng 88, điều này mang lại cho người nghe của chúng tôi và khả năng của họ, vì vậy khi chúng tôi nhận được điều đó, hãy kiểm tra
+
+110
+00:08:06,000 --> 00:08:08,060
+lỗi không bằng không.
+
+111
+00:08:08,120 --> 00:08:14,270
+Đó là lỗi IC nên chúng tôi đã có người nghe.
+
+112
+00:08:14,270 --> 00:08:20,540
+Bây giờ chúng tôi đã thiết lập máy chủ GOP C, vì vậy tôi sẽ chuyển đến mã được tạo này vì nó đã nhập
+
+113
+00:08:20,540 --> 00:08:28,090
+cho GPS và chỉ cần nhập thật nhanh để GOPAC
+
+114
+00:08:30,610 --> 00:08:41,050
+bạn có thể tạo một máy chủ GPS như thế này và điều này có một số tùy chọn mà tất cả đều là tùy chọn.
+
+115
+00:08:41,080 --> 00:08:46,360
+Vì vậy, tôi sẽ bỏ qua tất cả những thứ mà bạn sẽ thiết lập như xác thực nếu bạn
+
+116
+00:08:46,380 --> 00:08:51,150
+muốn như TRW hoặc thứ gì đó có thể là một đối số tiềm năng nhưng lại tắt các máy chủ cũ.
+
+117
+00:08:51,160 --> 00:08:51,990
+Đủ tốt cho đây.
+
+118
+00:08:52,000 --> 00:08:54,240
+Vì vậy, chúng tôi sẽ chỉ để nó ở đó.
+
+119
+00:08:54,250 --> 00:09:03,250
+Bây giờ chúng ta cần tạo máy chủ echo để máy chủ này là một con trỏ tới máy chủ echo.
+
+120
+00:09:03,550 --> 00:09:09,700
+Và bây giờ chúng ta cần đăng ký máy chủ echo với máy chủ GOP.
+
+121
+00:09:09,780 --> 00:09:17,830
+Vì vậy, dòng thứ hai mươi bảy ở đó bạn chỉ đang khởi tạo, tôi muốn thấy bạn đang khởi tạo
+
+122
+00:09:18,640 --> 00:09:24,770
+khởi tạo một biến kiểu echo server và nó không có trường nào.
+
+123
+00:09:25,950 --> 00:09:26,350
+Vì thế.
+
+124
+00:09:26,380 --> 00:09:31,620
+Vì vậy, để đăng ký máy chủ echo với dịch vụ, một trong các chức năng được tạo của chúng tôi.
+
+125
+00:09:31,660 --> 00:09:38,250
+Nếu chúng ta đi xuống hết giao diện máy chủ Echo server ngay bên dưới nó có một thanh ghi
+
+126
+00:09:38,250 --> 00:09:46,650
+chức năng máy chủ echo máy chủ có trong máy chủ GOP và giao diện máy chủ máy chủ đang hoạt động để chúng tôi có thể
+
+127
+00:09:46,650 --> 00:09:55,590
+chỉ cần sử dụng trực tiếp Echo Dot đăng ký máy chủ tiếng vang vượt qua trong máy chủ GPS của chúng tôi và của chúng tôi.
+
+128
+00:09:56,130 --> 00:10:04,760
+Và việc triển khai giao diện máy chủ Echo của chúng tôi giờ đây GOP C đã biết về dịch vụ của chúng tôi và bây giờ
+
+129
+00:10:04,760 --> 00:10:06,830
+chúng ta cần phải thực sự lắng nghe.
+
+130
+00:10:06,920 --> 00:10:16,630
+Vì vậy, chúng tôi yêu cầu máy chủ GPS của chúng tôi phục vụ người nghe của chúng tôi và điều này có khả năng xảy ra lỗi, vì vậy
+
+131
+00:10:16,630 --> 00:10:17,470
+chúng tôi sẽ kiểm tra lỗi của chúng tôi
+
+132
+00:10:21,660 --> 00:10:28,680
+vì vậy, một điều bạn có thể làm để khiến mọi thứ trở nên đẹp hơn là bạn có thể đặt một dòng in hiện đang phục vụ tại
+
+133
+00:10:29,000 --> 00:10:39,920
+Cổng 88 chỉ để cho bạn biết khi nào bạn đến khi nó kết thúc bắt đầu từ
+
+134
+00:10:43,190 --> 00:10:43,520
+Phải.
+
+135
+00:10:43,550 --> 00:10:48,230
+Vì vậy, máy chủ này hiện đang chạy có sẵn, tôi có thể chạy chính dot go
+
+136
+00:10:50,930 --> 00:10:52,070
+cái nào sẽ xây dựng và chạy nó
+
+137
+00:10:55,050 --> 00:10:56,730
+tuy nhiên phải mất nhiều thời gian.
+
+138
+00:10:57,070 --> 00:11:03,390
+Đó là khoảnh khắc nghẹt thở mà bạn nghe thấy nó bây giờ là 0 hoặc 80 80 tuyệt vời.
+
+139
+00:11:03,590 --> 00:11:04,320
+Vậy là xong.
+
+140
+00:11:04,340 --> 00:11:05,900
+Giả sử chúng ta chưa có khách hàng.
+
+141
+00:11:05,920 --> 00:11:09,260
+Chúng tôi thực sự không thể kiểm tra xem nó có hoạt động như chúng tôi dự định hay không.
+
+142
+00:11:09,330 --> 00:11:10,480
+Đó sẽ là video tiếp theo.
+
+143
+00:11:10,500 --> 00:11:18,330
+Nhưng đây là cách bạn tạo máy chủ hoặc triển khai dịch vụ mà bạn đã xác định và cách thực hiện
+
+144
+00:11:18,600 --> 00:11:23,800
+đăng ký nó với một máy chủ GOP được thực hiện độc đáo.
+
+145
+00:11:23,800 --> 00:11:24,670
+Hẹn gặp lại video tiếp theo.

@@ -1,0 +1,419 @@
+1
+00:00:00,720 --> 00:00:06,420
+So now we're at the point where we actually want to broadcast a message to all connected clients if
+
+2
+00:00:06,420 --> 00:00:11,370
+the service status or the host service status has changed since the last check.
+
+3
+00:00:12,270 --> 00:00:17,970
+And we need to do that before we actually update the database, before we change his status with news
+
+4
+00:00:17,970 --> 00:00:18,300
+status.
+
+5
+00:00:18,310 --> 00:00:20,190
+So we actually need to do that right here.
+
+6
+00:00:20,730 --> 00:00:26,850
+So I'm going to take this comment and cut it out of here and move it up to here, because this is where
+
+7
+00:00:26,850 --> 00:00:27,890
+we actually have to do it.
+
+8
+00:00:28,350 --> 00:00:37,240
+So all we need to do is to say if new status is not equal to star status, then we need to do something.
+
+9
+00:00:37,290 --> 00:00:41,800
+So here's where we broadcast and we're also, if appropriate, we'll send her email.
+
+10
+00:00:41,970 --> 00:00:45,610
+We need to do that before we update the database or before we update our service record.
+
+11
+00:00:46,410 --> 00:00:51,870
+So this is the part where we want to do it and we need to broadcast a service and we already know how
+
+12
+00:00:51,870 --> 00:00:52,370
+to do that.
+
+13
+00:00:52,380 --> 00:00:53,380
+It's really straightforward.
+
+14
+00:00:53,760 --> 00:00:55,370
+So the way we've been doing it right along.
+
+15
+00:00:55,380 --> 00:00:57,180
+Let me scroll down here till I find one.
+
+16
+00:00:59,670 --> 00:01:04,410
+We actually do it like, well, it's not in here, must be in the handler's.
+
+17
+00:01:05,360 --> 00:01:08,580
+We find the trigger trigger right here.
+
+18
+00:01:09,350 --> 00:01:16,700
+We do it like this and this works so I could copy this, I could go back to perform checks or my where's
+
+19
+00:01:16,700 --> 00:01:17,030
+it here?
+
+20
+00:01:18,840 --> 00:01:24,180
+Right here, I could paste that in there and broadcast that message, and that will work, but if you
+
+21
+00:01:24,180 --> 00:01:30,990
+think about it all we're really doing every time we trigger app client trigger, we're passing a channel
+
+22
+00:01:30,990 --> 00:01:36,660
+name, we're passing it a app, starting our app, stopping one of our messages wherever the thing we're
+
+23
+00:01:36,660 --> 00:01:39,210
+looking for on our client JavaScript and some data.
+
+24
+00:01:39,240 --> 00:01:42,010
+So we could simplify this just by writing a function.
+
+25
+00:01:42,030 --> 00:01:42,720
+Let's do that.
+
+26
+00:01:43,440 --> 00:01:47,910
+So let's create a new function and I'll put it right below this one and we can move it somewhere later
+
+27
+00:01:47,910 --> 00:01:49,020
+if we don't like it where it is.
+
+28
+00:01:49,020 --> 00:01:49,710
+But that's OK.
+
+29
+00:01:50,340 --> 00:01:54,810
+We'll just say func and it doesn't need the it does need the reposts, so we'll have to give it up.
+
+30
+00:01:54,820 --> 00:02:05,100
+The repo and the repo will be of type a point or two DB repo and we'll call this broadcast message and
+
+31
+00:02:05,100 --> 00:02:06,330
+we'll take three arguments.
+
+32
+00:02:06,360 --> 00:02:08,610
+We'll take the channel we want to go to.
+
+33
+00:02:09,270 --> 00:02:13,420
+We'll take the message, not the message.
+
+34
+00:02:13,420 --> 00:02:14,190
+Or will we call that.
+
+35
+00:02:14,640 --> 00:02:15,720
+We'll call it message type.
+
+36
+00:02:17,100 --> 00:02:24,720
+And then those are both strings and it's taking the data, which is a map of string.
+
+37
+00:02:28,600 --> 00:02:37,210
+OK, and we can just take this logic right here, cut it out of this, paste it into here and make the
+
+38
+00:02:37,210 --> 00:02:43,300
+data message we don't need this part at all because we're passing data as a parameter.
+
+39
+00:02:43,930 --> 00:02:44,770
+We're triggering it.
+
+40
+00:02:44,920 --> 00:02:50,470
+We're triggering it to a specific channel and we're triggering the message type.
+
+41
+00:02:53,400 --> 00:02:54,550
+And that's all that we have to do.
+
+42
+00:02:55,080 --> 00:02:57,220
+So this will simplify things a little bit.
+
+43
+00:02:57,870 --> 00:03:04,500
+So up here, when I want to broadcast this, all I need to do is to create a data variable, which is
+
+44
+00:03:04,500 --> 00:03:12,720
+a make map, string, string and put DataDot message or data.
+
+45
+00:03:13,110 --> 00:03:17,240
+The key is message and put some string in there.
+
+46
+00:03:17,910 --> 00:03:23,370
+So and then of course, once I populate that, which I'll do in a minute, I actually want to broadcast
+
+47
+00:03:23,370 --> 00:03:23,550
+that.
+
+48
+00:03:23,560 --> 00:03:32,250
+So I just say repo broadcast message and I'm broadcasting it to the public channel and I'll call the
+
+49
+00:03:32,280 --> 00:03:40,800
+event status host service status changed and I'll pass on my data.
+
+50
+00:03:41,930 --> 00:03:43,620
+OK, I just think that's clear now.
+
+51
+00:03:43,620 --> 00:03:46,540
+It doesn't save a lot of lines of text, but it does save some.
+
+52
+00:03:46,560 --> 00:03:47,670
+And I just think that's cleaner.
+
+53
+00:03:47,670 --> 00:03:53,170
+And we'll have to go through and clean up any other places where we're triggering a call to our W.S.
+
+54
+00:03:53,520 --> 00:03:55,670
+client to use this syntax instead.
+
+55
+00:03:55,680 --> 00:03:57,260
+But that won't be very difficult at all.
+
+56
+00:03:57,480 --> 00:03:58,660
+So I'm going to broadcast that.
+
+57
+00:03:59,250 --> 00:04:00,690
+And what do I want to broadcast?
+
+58
+00:04:00,690 --> 00:04:07,350
+What I want to broadcast here, broadcast here is a message saying that the status is changed and let's
+
+59
+00:04:07,350 --> 00:04:10,500
+put in the message so format, not def.
+
+60
+00:04:12,690 --> 00:04:13,290
+Host.
+
+61
+00:04:14,350 --> 00:04:15,160
+Service.
+
+62
+00:04:16,780 --> 00:04:25,480
+And then I'll put in a string on the host has changed to whatever the new statuses and just populate
+
+63
+00:04:25,480 --> 00:04:27,820
+that with escort service.
+
+64
+00:04:28,400 --> 00:04:35,860
+Service, name, address, each dot hostname and new status.
+
+65
+00:04:38,170 --> 00:04:39,740
+And that should take care of it for us.
+
+66
+00:04:39,760 --> 00:04:45,200
+So that should broadcast it to everyone on the public channel and this is what we're looking for.
+
+67
+00:04:45,220 --> 00:04:46,240
+So let's copy that.
+
+68
+00:04:49,310 --> 00:04:53,610
+And let's go to our Jagjit and Bond to that event on the public channel.
+
+69
+00:04:53,960 --> 00:04:54,590
+So here.
+
+70
+00:04:56,130 --> 00:05:05,490
+Public channel bind to this event and will call a function and pass it the data.
+
+71
+00:05:07,490 --> 00:05:12,740
+And all we need to do here right now to make this work is you say any alert, I'll just say success
+
+72
+00:05:12,740 --> 00:05:13,040
+alert.
+
+73
+00:05:14,750 --> 00:05:16,310
+And DataDot message.
+
+74
+00:05:18,980 --> 00:05:21,620
+And that should actually work, so let's stop this.
+
+75
+00:05:21,900 --> 00:05:22,700
+Start this.
+
+76
+00:05:22,880 --> 00:05:25,460
+Make sure that my application is not running.
+
+77
+00:05:25,490 --> 00:05:26,650
+It isn't OK.
+
+78
+00:05:27,470 --> 00:05:31,190
+And look at my database before I started to make sure that everything is going to work the way that
+
+79
+00:05:31,190 --> 00:05:31,720
+I want to.
+
+80
+00:05:31,730 --> 00:05:37,270
+So the content of this one service and I'll refresh is it currently has a status of problem.
+
+81
+00:05:37,700 --> 00:05:43,070
+So when I start my application and it starts monitoring, nothing should change until I start that Web
+
+82
+00:05:43,070 --> 00:05:43,430
+server.
+
+83
+00:05:43,460 --> 00:05:48,620
+So let's go back here, start our application on our vigilante's.
+
+84
+00:05:48,620 --> 00:05:49,310
+So that's running.
+
+85
+00:05:50,890 --> 00:05:51,580
+We'll be in a moment.
+
+86
+00:05:51,610 --> 00:05:58,180
+There it is, it's running and see if we have monitoring turned on a refresh the page.
+
+87
+00:05:58,180 --> 00:05:58,690
+We do.
+
+88
+00:05:59,300 --> 00:06:03,220
+OK, so this should every 10 seconds run.
+
+89
+00:06:03,220 --> 00:06:05,590
+And I think I'm still printing to the log file their.
+
+90
+00:06:13,330 --> 00:06:14,200
+So running Chuck.
+
+91
+00:06:29,400 --> 00:06:30,800
+Let's just stop in the it.
+
+92
+00:06:35,430 --> 00:06:36,330
+Turn it back on.
+
+93
+00:06:38,020 --> 00:06:39,430
+OK, so monitoring is on.
+
+94
+00:06:45,280 --> 00:06:50,260
+They're so, er, connected now, I may have to go back and check my startup code to make sure it's
+
+95
+00:06:50,260 --> 00:06:52,900
+actually starting the monitoring because I'm not sure that it is.
+
+96
+00:06:53,050 --> 00:06:56,310
+I may have removed something that's supposed to turn it on, but this is enough for right now.
+
+97
+00:06:57,160 --> 00:07:00,190
+So let's return a couple of times and start our Web server.
+
+98
+00:07:03,050 --> 00:07:04,130
+And watch this.
+
+99
+00:07:05,420 --> 00:07:10,400
+Their host service was changed to healthy, so it actually worked the way that I wanted it to.
+
+100
+00:07:11,720 --> 00:07:16,930
+Now, we've not updated this screen yet, but if I reload the page, it moves over.
+
+101
+00:07:16,940 --> 00:07:21,350
+So the next thing we're going to want to do is to write some code that actually updates this page.
+
+102
+00:07:22,370 --> 00:07:23,930
+So we'll take care of that in the next lecture.
+
+103
+00:07:23,930 --> 00:07:28,550
+And we'll also make sure that when we actually start our application, that monitoring is actually turned
+
+104
+00:07:28,550 --> 00:07:32,330
+on if it's turned on in the database, because it looks like we have an error there somewhere.
+
+105
+00:07:32,570 --> 00:07:34,550
+But we'll look at that in the next lecture.

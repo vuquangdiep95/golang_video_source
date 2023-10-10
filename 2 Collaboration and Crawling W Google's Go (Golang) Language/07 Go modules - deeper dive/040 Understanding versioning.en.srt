@@ -1,0 +1,211 @@
+1
+00:00:00,090 --> 00:00:04,110
+So to understand modules and we're moving into the new section here and I just break these sections
+
+2
+00:00:04,110 --> 00:00:09,840
+up so each section doesn't have too many videos but the next section here is go modules deeper dive
+
+3
+00:00:10,320 --> 00:00:12,680
+and it's important to understand versioning.
+
+4
+00:00:12,930 --> 00:00:18,370
+And so the standard for versioning it's called semantic versioning and there's a link to it right here.
+
+5
+00:00:18,370 --> 00:00:23,550
+So you could click that link and you can learn everything you want to know about semantic version versioning
+
+6
+00:00:23,550 --> 00:00:28,950
+and all kinds of different languages but semantic versioning you could see even this has three numbers
+
+7
+00:00:28,950 --> 00:00:30,680
+here separated by dots.
+
+8
+00:00:30,780 --> 00:00:33,400
+And so this first number is the major version.
+
+9
+00:00:33,400 --> 00:00:38,550
+The second number is the minor version and the third number is the patch and I outlined all of this
+
+10
+00:00:38,550 --> 00:00:38,870
+here.
+
+11
+00:00:38,870 --> 00:00:44,130
+So for example you had these 0 1 2 the major version is 0.
+
+12
+00:00:44,160 --> 00:00:46,730
+The minor version is 1 the patch is 2.
+
+13
+00:00:46,770 --> 00:00:52,970
+What's the difference 3 major minor patch Major is backwards incompatible changes add it.
+
+14
+00:00:53,130 --> 00:00:55,620
+And so maybe the name of a function changed.
+
+15
+00:00:55,620 --> 00:01:00,020
+And so anybody who'd been using that function in the previous major version.
+
+16
+00:01:00,120 --> 00:01:03,090
+Now they need to have a new name and their codes going to break.
+
+17
+00:01:03,090 --> 00:01:08,430
+If they start using this new major version and so they're gonna have to go through and rename their
+
+18
+00:01:08,430 --> 00:01:12,570
+function in their code based continue using the next major version.
+
+19
+00:01:12,570 --> 00:01:17,760
+So there's backward incompatible changes and we're gonna see that illustrated example coming up and
+
+20
+00:01:17,760 --> 00:01:23,940
+then a minor change is backwards compatible changes are added and then a patch is just backwards compatible
+
+21
+00:01:23,940 --> 00:01:25,440
+bug fixes.
+
+22
+00:01:25,440 --> 00:01:32,340
+And so you know you might see this patch number going up and then you might see the minor changes being
+
+23
+00:01:32,340 --> 00:01:33,870
+added to minor versions.
+
+24
+00:01:33,900 --> 00:01:35,390
+Number going up and then this one.
+
+25
+00:01:35,520 --> 00:01:37,440
+But that's how semantic versioning works.
+
+26
+00:01:37,560 --> 00:01:42,050
+What happens if we get up to like past nine you go to 13.
+
+27
+00:01:42,080 --> 00:01:42,580
+Yeah.
+
+28
+00:01:42,680 --> 00:01:44,190
+It doesn't go to eleven.
+
+29
+00:01:44,220 --> 00:01:46,220
+You can have it made did it into C want it.
+
+30
+00:01:46,680 --> 00:01:49,180
+In there it's not just it's not just single digit.
+
+31
+00:01:49,230 --> 00:01:50,790
+So there you could get two.
+
+32
+00:01:50,790 --> 00:01:54,890
+You could have version one point two hundred fifty seven point thirty six.
+
+33
+00:01:54,930 --> 00:02:00,180
+If you wanted although I do wonder how long you've been working on this project if you get your minor
+
+34
+00:02:00,180 --> 00:02:06,390
+version and high and then if we see if we're relying upon a dependency I have a little question here
+
+35
+00:02:06,390 --> 00:02:12,210
+for discussion and let's say it's dependency major version 1 and goes to major version 2 what what should
+
+36
+00:02:12,210 --> 00:02:18,420
+we do at that point we see oh there's a new major version of this code it doesn't automatically go modules
+
+37
+00:02:18,420 --> 00:02:24,690
+doesn't automatically start using version to right still going to import whatever we specifically specified
+
+38
+00:02:24,780 --> 00:02:26,910
+or the latest of that.
+
+39
+00:02:26,910 --> 00:02:27,470
+Correct.
+
+40
+00:02:27,480 --> 00:02:30,000
+Give us the latest of that major release.
+
+41
+00:02:30,150 --> 00:02:35,520
+But if we see a major version two is out I guess the thing we'd want to do is figure out what are the
+
+42
+00:02:35,520 --> 00:02:42,120
+backward incompatible changes between this major version 2 and the previous major version one and then
+
+43
+00:02:42,120 --> 00:02:46,740
+figure out what we need to do with our code base to get it to be able to use the next major version
+
+44
+00:02:46,740 --> 00:02:50,340
+if we wanted to move forward so that we get the right thought process.
+
+45
+00:02:50,370 --> 00:02:50,670
+Yeah.
+
+46
+00:02:50,700 --> 00:02:54,940
+So overall the thought is for a patch and probably minor versions as well.
+
+47
+00:02:55,050 --> 00:03:00,300
+You can actually probably have an automatic system for upgrading the versions in your system just like
+
+48
+00:03:00,300 --> 00:03:04,500
+have a hybrid computer every week just automatically look through and see if it's possible to update
+
+49
+00:03:04,820 --> 00:03:10,160
+if you've got go test set up properly so he can confirm that it hasn't broken with the major version.
+
+50
+00:03:10,170 --> 00:03:13,410
+It's probably gonna require human intervention to do that.
+
+51
+00:03:13,410 --> 00:03:14,910
+Great.
+
+52
+00:03:15,520 --> 00:03:15,840
+All right.
+
+53
+00:03:15,940 --> 00:03:18,070
+So that's understanding versioning.

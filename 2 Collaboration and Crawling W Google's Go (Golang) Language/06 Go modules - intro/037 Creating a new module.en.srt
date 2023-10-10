@@ -1,0 +1,203 @@
+1
+00:00:00,240 --> 00:00:01,100
+All right.
+
+2
+00:00:01,740 --> 00:00:08,460
+So we're going to parallel as we kind of teach you about go modules we're gonna parallel this blog post
+
+3
+00:00:08,460 --> 00:00:09,080
+right here.
+
+4
+00:00:09,090 --> 00:00:15,600
+The blog the GO blog using go modules and the first one is there some sample code we already added this
+
+5
+00:00:15,600 --> 00:00:16,230
+to get.
+
+6
+00:00:16,680 --> 00:00:23,880
+So if you go take a look at get hub you will see we have 0 3 Go modules and then I put Rusk Cox's article
+
+7
+00:00:23,880 --> 00:00:31,410
+there and 0 0 button 0 1 we have create a module Hello test go and hello Doc go.
+
+8
+00:00:31,410 --> 00:00:37,890
+And so we're gonna use those examples because those examples parallel the article now be a good reference
+
+9
+00:00:37,890 --> 00:00:42,900
+for you to come back to later and now we're going to create a go module and Daniel's gonna show us how
+
+10
+00:00:42,900 --> 00:00:44,050
+to do that.
+
+11
+00:00:44,270 --> 00:00:50,790
+So well first things go module gives you your name spacing it tells your project where your code exists
+
+12
+00:00:51,820 --> 00:00:57,820
+amongst all the other code in the known universe or just released on Earth.
+
+13
+00:00:58,210 --> 00:00:59,770
+Yeah is the same thing.
+
+14
+00:00:59,820 --> 00:01:05,750
+There might be some aliens with the dot com interface intersex super interest or.
+
+15
+00:01:05,800 --> 00:01:12,360
+But this this namespace will be unique to this module that you're going to create an inside that module
+
+16
+00:01:12,690 --> 00:01:15,640
+you'll have a package or packages of code correct.
+
+17
+00:01:15,660 --> 00:01:21,510
+And usually it's one module one package is the best practice not necessarily one module month one module
+
+18
+00:01:21,510 --> 00:01:22,770
+to one repo.
+
+19
+00:01:22,830 --> 00:01:24,890
+But there may be multiple packages in a module.
+
+20
+00:01:25,010 --> 00:01:26,070
+OK.
+
+21
+00:01:26,400 --> 00:01:33,690
+So you can demonstrate this by we've got this hello I go in this Hello test stuff go if you run go test
+
+22
+00:01:33,750 --> 00:01:40,710
+to actually run the tests it'll tell you this is what it thinks this particular package is called which
+
+23
+00:01:40,710 --> 00:01:47,220
+is a rather ridiculous package name that's dependent on my foot my file system which is not what we
+
+24
+00:01:47,220 --> 00:01:47,550
+want.
+
+25
+00:01:48,150 --> 00:01:52,950
+So to help this I will go back up dance before I go my before go modules.
+
+26
+00:01:53,250 --> 00:02:02,460
+So going back up to going project here I can now declare this going project here is my route of my get
+
+27
+00:02:02,730 --> 00:02:03,710
+my get repo.
+
+28
+00:02:04,290 --> 00:02:12,430
+I can do go mod in it and I give it the the namespace of this particular package which in this case.
+
+29
+00:02:12,460 --> 00:02:19,440
+For most and get repos can simply be the path to the repo get hub dot com goes celeb and going project
+
+30
+00:02:19,920 --> 00:02:25,470
+do not include HP yes if you're in some end be careful you're not in some pub subculture with additional
+
+31
+00:02:25,470 --> 00:02:31,940
+stuff to it you are the path to the reach of the route so go mod in it get up dot com ghost club and
+
+32
+00:02:31,950 --> 00:02:38,910
+going project and this namespace could be any namespace that you choose and so doing something with
+
+33
+00:02:38,960 --> 00:02:44,100
+it have connected to a repo is a good way to do it but also if you're at a company configure it for
+
+34
+00:02:44,100 --> 00:02:46,200
+your own organisation.
+
+35
+00:02:46,440 --> 00:02:51,510
+So the only kind of general rule of thumb is there should be some way to link the namespace to where
+
+36
+00:02:51,510 --> 00:02:55,490
+you can find the code on the Internet so which is why the euro is such a good idea.
+
+37
+00:02:57,760 --> 00:03:03,790
+So this creates the new go to mod so if I open up my editor I can find the go up mod it's here it's
+
+38
+00:03:03,790 --> 00:03:09,860
+a very small simple file just says this is the namespace and it was built go 113 originally.
+
+39
+00:03:09,860 --> 00:03:14,980
+So this is just kind of a new way of thinking about things when we had the go path and go with the source
+
+40
+00:03:14,980 --> 00:03:20,380
+folder and the source folder we'd have you know get hub dot com goes to Levin and the repo name and
+
+41
+00:03:20,380 --> 00:03:25,300
+that was the namespace for all of the code that was in there and now anywhere on my computer I don't
+
+42
+00:03:25,300 --> 00:03:31,030
+need to be in like you know the go workspace with Source Been package folders anywhere on my computer
+
+43
+00:03:31,030 --> 00:03:35,710
+I could say I came in and create code in this folder and write in the root of that folder I just to
+
+44
+00:03:35,740 --> 00:03:41,500
+go modern net and then whatever the namespace is and now it knows that everything I'm doing here is
+
+45
+00:03:41,500 --> 00:03:44,460
+connected to that repo that's namespace.
+
+46
+00:03:44,790 --> 00:03:50,050
+And so we can demonstrate this by going back down into where we've got the code and I can run go test
+
+47
+00:03:50,050 --> 00:03:52,880
+again and we'll test it again.
+
+48
+00:03:52,900 --> 00:03:59,320
+Now you can see the path to this package is now a more general follows the namespace and then the sub
+
+49
+00:03:59,320 --> 00:04:01,940
+folders within their recall.
+
+50
+00:04:02,140 --> 00:04:04,360
+That's the first step in working with go modules
+
+51
+00:04:08,070 --> 00:04:08,650
+much but.

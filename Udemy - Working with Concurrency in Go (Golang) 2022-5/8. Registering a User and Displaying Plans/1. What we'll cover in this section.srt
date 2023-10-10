@@ -1,0 +1,63 @@
+1
+00:00:00,810 --> 00:00:06,180
+So in this section of the course, we're focusing upon adding and activating users and displaying the
+
+2
+00:00:06,180 --> 00:00:08,820
+list of available subscriptions to our users.
+
+3
+00:00:09,180 --> 00:00:13,740
+Now, although this course is entitled Working with concurrency and go, there's not going to be a lot
+
+4
+00:00:13,740 --> 00:00:16,530
+of concurrency in this section, but we need to get this out of the way.
+
+5
+00:00:16,770 --> 00:00:21,300
+So we get to the point where we can actually write some code where concurrency is appropriate.
+
+6
+00:00:21,750 --> 00:00:22,770
+So what are we going to do?
+
+7
+00:00:23,850 --> 00:00:28,910
+To start with, we're going to worry about adding users to the system and validating user accounts.
+
+8
+00:00:28,920 --> 00:00:34,440
+And the way we'll do that is when a user registers, we'll send them an email with a link in it that
+
+9
+00:00:34,440 --> 00:00:37,020
+they have to click on in order to activate their account.
+
+10
+00:00:38,010 --> 00:00:43,710
+And of course, for security purposes, that URL, the one that's included in the email, it needs to
+
+11
+00:00:43,710 --> 00:00:46,350
+be signed so that it can't be tampered with.
+
+12
+00:00:46,350 --> 00:00:47,340
+And we'll take care of that.
+
+13
+00:00:47,350 --> 00:00:48,510
+And it's really straightforward.
+
+14
+00:00:48,930 --> 00:00:53,820
+And the last thing we'll do in this section is just modify your application so that there's a page that
+
+15
+00:00:53,820 --> 00:00:57,930
+displays all of the available subscriptions, things that users can buy.
+
+16
+00:00:58,260 --> 00:00:59,040
+So let's get started.

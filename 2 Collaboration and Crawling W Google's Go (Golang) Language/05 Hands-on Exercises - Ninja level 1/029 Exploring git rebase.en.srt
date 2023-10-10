@@ -1,0 +1,907 @@
+1
+00:00:00,090 --> 00:00:06,450
+So here's the solution to my hands on exercise for hands on Exercise number two this is me giving a
+
+2
+00:00:06,450 --> 00:00:13,350
+solution for the second one and we get into a little bit of get complexity here and we're going to explain
+
+3
+00:00:13,350 --> 00:00:17,090
+that to you and give you the resources to understand it and to also do it.
+
+4
+00:00:17,100 --> 00:00:23,190
+We're going to do and get is something with a lot of depth and it can get complex and this course isn't
+
+5
+00:00:23,190 --> 00:00:26,950
+a course on get completely.
+
+6
+00:00:27,150 --> 00:00:30,810
+It's just kind of wanting to take things a little bit farther so that people have the skills to be able
+
+7
+00:00:30,810 --> 00:00:33,300
+to contribute to an open source project.
+
+8
+00:00:33,510 --> 00:00:35,580
+And that was one of the things students requested.
+
+9
+00:00:35,580 --> 00:00:43,080
+So we want to include it and just move things forward if you take my classes with using get so all of
+
+10
+00:00:43,080 --> 00:00:45,000
+that said here's the situation.
+
+11
+00:00:45,060 --> 00:00:53,000
+So we have the original get Hub Repository that's under goes to eleven and it's the go project.
+
+12
+00:00:53,000 --> 00:00:58,740
+And so here's that repository and then I had a dummy account where I fought that project so I created
+
+13
+00:00:58,740 --> 00:01:03,120
+a fork over here and off of this fork this fork is a snapshot.
+
+14
+00:01:03,150 --> 00:01:06,020
+It grabs the code from the original repo.
+
+15
+00:01:06,030 --> 00:01:11,750
+When I fork off of it I get the code at one point in time at a certain point in time.
+
+16
+00:01:11,880 --> 00:01:15,600
+And then this code here I clone it down to my computer right.
+
+17
+00:01:15,600 --> 00:01:19,700
+So here's the original repo goes to Levin going project.
+
+18
+00:01:19,710 --> 00:01:22,200
+I fork it under a different github account.
+
+19
+00:01:22,200 --> 00:01:27,020
+It could just be a different person I'm using a dummy account to represent a different person.
+
+20
+00:01:27,060 --> 00:01:30,970
+So I fork it and then I clone it down to my local machine.
+
+21
+00:01:30,970 --> 00:01:31,260
+All right.
+
+22
+00:01:31,290 --> 00:01:33,750
+So we kind of have three things here.
+
+23
+00:01:33,810 --> 00:01:37,650
+We have the original repo under goes to eleven going project.
+
+24
+00:01:37,710 --> 00:01:41,130
+We have a fork under some other get hub user account.
+
+25
+00:01:41,130 --> 00:01:41,710
+Right.
+
+26
+00:01:41,730 --> 00:01:43,890
+And then we have a clone on a local machine.
+
+27
+00:01:43,890 --> 00:01:45,750
+We've got three things going on.
+
+28
+00:01:45,750 --> 00:01:51,570
+And then Daniel who also is a different user as has fought this project.
+
+29
+00:01:51,570 --> 00:01:57,330
+He's made a change he's made a merge request to the original goes to 11 repo and that code has been
+
+30
+00:01:57,330 --> 00:02:03,900
+accepted and that goes to 11 repos moved forward from this point where it was it has now moved forward
+
+31
+00:02:04,230 --> 00:02:10,440
+my fork has not moved forward I forked from this point back here where the code was at this point right.
+
+32
+00:02:10,470 --> 00:02:12,420
+And then I cloned it to my machine.
+
+33
+00:02:12,420 --> 00:02:19,650
+So I do not have the code that's been merged into the original repository under goes to eleven.
+
+34
+00:02:19,650 --> 00:02:21,620
+Does that all make sense.
+
+35
+00:02:21,900 --> 00:02:29,850
+And if you go and you look at my repo so here I'm inside the go lane project and this is not under goes
+
+36
+00:02:29,850 --> 00:02:33,710
+to eleven right which is the one that everybody's forking.
+
+37
+00:02:33,840 --> 00:02:39,120
+This is under that other user account so some other individuals forked it I'm using a double dummy account
+
+38
+00:02:39,120 --> 00:02:40,320
+to represent that individuals.
+
+39
+00:02:40,320 --> 00:02:41,460
+That's this project.
+
+40
+00:02:41,550 --> 00:02:48,420
+And if I look at that I could see what's in here at 0 0 1 learning get a 0 0 2 hands on exercises and
+
+41
+00:02:48,510 --> 00:02:57,150
+I need to see into that and then if I look in there I have zero to humble and if I look in their right
+
+42
+00:02:57,360 --> 00:03:03,410
+I do not have Daniel's code but if I go to goes to eleven so let's go take a look at goes to eleven
+
+43
+00:03:03,440 --> 00:03:13,410
+so it goes to 11 get hub if I go to goes to 11 and I look at the repositories and I go into the go Lang
+
+44
+00:03:13,890 --> 00:03:21,280
+project right and I look at hands on exercises 0 2 and I go into humble his is in here.
+
+45
+00:03:21,470 --> 00:03:27,150
+Mine mine doesn't have that mine doesn't have that mine only has goes to eleven humble goes to eleven
+
+46
+00:03:27,150 --> 00:03:32,880
+humble it doesn't have authorities so you might think oh great let me just pull let me first do get
+
+47
+00:03:32,880 --> 00:03:38,460
+status if it tells me a thing your branch is up to date with Origin Master let me do a get pull right
+
+48
+00:03:38,480 --> 00:03:43,030
+so I do get Paul and I already have to date because guess what.
+
+49
+00:03:43,380 --> 00:03:49,260
+Right here's goes to 11 going project I forked off at that one point time I cloned it and then goes
+
+50
+00:03:49,260 --> 00:03:55,530
+to Levin Go line project move forward right here's my fork here's my clone of my fork on my machine
+
+51
+00:03:55,770 --> 00:03:59,060
+when I'm out my clone on my machine I say hey are we up to date.
+
+52
+00:03:59,070 --> 00:04:02,580
+It looks to my fork and says yep you're up to date with this fork.
+
+53
+00:04:02,670 --> 00:04:11,550
+So how do I get my fork to re kind of get the code that is on the original one the easiest solution
+
+54
+00:04:11,550 --> 00:04:19,980
+at this point in time is to go to stack overflow and if you go to Google and you just Google like Google
+
+55
+00:04:20,290 --> 00:04:29,130
+I'm and type in Google Stack Overflow Stack Overflow overflow update get hub fork repository and if
+
+56
+00:04:29,130 --> 00:04:30,420
+you search for that.
+
+57
+00:04:30,420 --> 00:04:35,940
+How do I update get hub fork repository and you come into here here are all the instructions that you
+
+58
+00:04:35,940 --> 00:04:41,850
+need to follow and so part of this the first thing they're working well gate is just understanding these
+
+59
+00:04:41,850 --> 00:04:48,180
+concepts like how are things related you've got the goes to eleven going project you've got a fork over
+
+60
+00:04:48,180 --> 00:04:53,160
+here you've got a clone down your local machine this and move forward your fork has a move forward your
+
+61
+00:04:53,160 --> 00:04:55,880
+clone is talking to your fork right.
+
+62
+00:04:55,920 --> 00:05:02,550
+So now we understand those concepts as like the first important step the next thing is to understand
+
+63
+00:05:02,550 --> 00:05:08,270
+this code and because I've been doing a whole lot of talking because Daniel is better get than me we're
+
+64
+00:05:08,270 --> 00:05:13,110
+going to have Daniel just kind of explain this code and then we're going to do it and this is like bonus
+
+65
+00:05:13,140 --> 00:05:18,040
+right for you going through these hands on exercises you get this extra step.
+
+66
+00:05:18,450 --> 00:05:22,980
+So let's let's go for Daniel you and tell us a little bit about this code or maybe you tell it and I'll
+
+67
+00:05:22,980 --> 00:05:25,170
+do it and we'll just step through it let's do that.
+
+68
+00:05:25,290 --> 00:05:25,830
+Yeah yeah.
+
+69
+00:05:25,860 --> 00:05:26,610
+So so yeah.
+
+70
+00:05:26,610 --> 00:05:29,900
+This code represents a remotes.
+
+71
+00:05:30,090 --> 00:05:37,500
+So when you clone your your clone has one remote it calls it origin and that's where you clone from
+
+72
+00:05:37,650 --> 00:05:42,450
+in which case this case it's your fork you up my fork here and then I'm like clone here.
+
+73
+00:05:42,480 --> 00:05:48,350
+So whenever you say origin in any whenever we get says Origin in any way shape or form prove it represents
+
+74
+00:05:48,420 --> 00:05:49,800
+your fork right there.
+
+75
+00:05:49,800 --> 00:05:50,150
+So.
+
+76
+00:05:50,180 --> 00:05:55,450
+So that's your connection you get remote or get remote origin is your fork.
+
+77
+00:05:55,470 --> 00:06:02,460
+So origins like another way it's the origin it's the source from which everybody is you know from from
+
+78
+00:06:02,460 --> 00:06:06,290
+this right replan get hub anybody could connect to that Origin and pull it down.
+
+79
+00:06:06,300 --> 00:06:11,730
+If I gave you permission to write so origins the source from which all things come it's still an origin
+
+80
+00:06:12,210 --> 00:06:12,590
+right.
+
+81
+00:06:12,660 --> 00:06:13,970
+Yes that's the replan gap.
+
+82
+00:06:14,430 --> 00:06:14,640
+Yes.
+
+83
+00:06:14,670 --> 00:06:19,740
+So if you type in and get remote on your terminal it'll actually tell you all your remotes they get
+
+84
+00:06:19,740 --> 00:06:28,000
+knows about your device get remote to list origin you've only got one remote origin.
+
+85
+00:06:28,000 --> 00:06:35,170
+You can also do you get remote show origin to get more details about about origin which includes telling
+
+86
+00:06:35,170 --> 00:06:38,540
+you what the URL at origin is from.
+
+87
+00:06:38,650 --> 00:06:41,830
+And so here we have get get dot com temp Todd McCloud.
+
+88
+00:06:41,830 --> 00:06:46,660
+That's the user name it's not goes to Levin going project get and push.
+
+89
+00:06:46,660 --> 00:06:48,730
+So this is where it fetches from.
+
+90
+00:06:48,730 --> 00:06:53,310
+This is where it pushes to head branch master K go on.
+
+91
+00:06:53,520 --> 00:06:53,840
+So.
+
+92
+00:06:53,890 --> 00:06:54,850
+So what's the detail there.
+
+93
+00:06:54,850 --> 00:07:01,370
+So including you can see the URL is not goes to eleven killing project it's just the temp top McLeod
+
+94
+00:07:01,690 --> 00:07:03,130
+going project.
+
+95
+00:07:03,130 --> 00:07:09,100
+So what you need to update your fork get hub does not update the fork automatically.
+
+96
+00:07:09,100 --> 00:07:12,040
+In fact it doesn't have any way of doing it at all.
+
+97
+00:07:12,100 --> 00:07:15,160
+What you have to do is do it yourself on your own machine.
+
+98
+00:07:15,260 --> 00:07:22,440
+So way to do that is to add a new remote to the original goes to eleven repo to you to your local court
+
+99
+00:07:22,760 --> 00:07:23,360
+clone.
+
+100
+00:07:23,650 --> 00:07:24,980
+OK so we are looking at remotes.
+
+101
+00:07:25,000 --> 00:07:29,240
+The only one right now is this one when we get the details of the remote right.
+
+102
+00:07:29,250 --> 00:07:30,390
+Show origin.
+
+103
+00:07:30,520 --> 00:07:33,110
+It says Hey this is kind of like what I'm doing.
+
+104
+00:07:33,160 --> 00:07:40,200
+I'm fetching from the temp account a temp account and I'm also pushing to the temp account.
+
+105
+00:07:40,450 --> 00:07:47,210
+So our idea is we're going to get remote add an upstream origin or the streams.
+
+106
+00:07:47,280 --> 00:07:53,470
+See you get remote and give it whatever name you want in this case upstream makes is a good is a good
+
+107
+00:07:53,470 --> 00:07:58,870
+name for it because it's it's further up on your stream from the origin from your origin.
+
+108
+00:07:58,870 --> 00:07:59,870
+This name can be any.
+
+109
+00:07:59,870 --> 00:08:02,910
+It could be anything it's just whatever you want to call the stream.
+
+110
+00:08:03,050 --> 00:08:10,160
+So and then and then you rel is the clone euro for wherever you're going to call it.
+
+111
+00:08:10,180 --> 00:08:10,740
+So I'm going to go.
+
+112
+00:08:10,750 --> 00:08:16,120
+Goes to eleven I'm going to go to the repositories for this guy Todd McCloud seems like he's a pretty
+
+113
+00:08:16,120 --> 00:08:24,880
+good dude likes picture it looks peaceful and we're gonna go to clown with each G.P.S. and copy that
+
+114
+00:08:25,020 --> 00:08:25,300
+right.
+
+115
+00:08:25,360 --> 00:08:27,640
+Yeah they're either HP s or SSA.
+
+116
+00:08:27,670 --> 00:08:30,460
+You guys set up on a stage so as well use it.
+
+117
+00:08:30,460 --> 00:08:31,110
+Thank you.
+
+118
+00:08:31,130 --> 00:08:34,440
+And then I'm going to pace that up so get remote add upstream.
+
+119
+00:08:34,450 --> 00:08:35,790
+So now you drop that n.
+
+120
+00:08:35,890 --> 00:08:36,420
+Yep.
+
+121
+00:08:36,420 --> 00:08:40,490
+And now if you run get remote it'll show it'll tell you you've got two remotes.
+
+122
+00:08:40,530 --> 00:08:47,360
+Origin in upstream nice ASO so if you show origin it's got that origin still is temp Todd McLeod and
+
+123
+00:08:47,380 --> 00:08:55,080
+if you show upstream it'll have the you will have the details about about what upstream is which is
+
+124
+00:08:55,080 --> 00:08:57,460
+the goes to heaven going project as toy sweet.
+
+125
+00:08:58,780 --> 00:09:00,820
+And then what's the next step in the process.
+
+126
+00:09:00,880 --> 00:09:06,010
+The next step is your local machine now who's got that remote but doesn't know anything about what's
+
+127
+00:09:06,100 --> 00:09:09,790
+in that remote it knows upstream exists but it doesn't know anything about it.
+
+128
+00:09:09,990 --> 00:09:16,690
+So you to use get fetch upstream to tell it to actually go to that you are real and and take a look
+
+129
+00:09:16,690 --> 00:09:17,940
+at what actually exists.
+
+130
+00:09:17,980 --> 00:09:22,420
+What branches are there what comets are there you need to know about it.
+
+131
+00:09:23,080 --> 00:09:30,700
+So just to document this we did give them out and we did get a remote show origin to get those details.
+
+132
+00:09:30,730 --> 00:09:37,600
+And then from here we grab give remote add upstream with your l and I'm just going to do this little
+
+133
+00:09:37,600 --> 00:09:39,490
+trick here to get that on the text.
+
+134
+00:09:39,640 --> 00:09:40,510
+And we did.
+
+135
+00:09:40,510 --> 00:09:42,610
+Is that the same as I can get remote at upstream.
+
+136
+00:09:42,680 --> 00:09:42,970
+Yep.
+
+137
+00:09:42,970 --> 00:09:45,370
+With SS H your alts already have that one in here.
+
+138
+00:09:45,640 --> 00:09:50,440
+So I just wanna make sure we document the steps we're going through and then the next one is get batch
+
+139
+00:09:50,620 --> 00:09:51,400
+upstream right.
+
+140
+00:09:51,580 --> 00:09:51,820
+Yeah.
+
+141
+00:09:51,850 --> 00:09:52,440
+So I'm gonna do.
+
+142
+00:09:52,440 --> 00:09:54,940
+Get that upstream.
+
+143
+00:09:54,940 --> 00:10:00,610
+So I'm going and fetching this other remote origin.
+
+144
+00:10:00,610 --> 00:10:01,820
+It's the name it's called upstream.
+
+145
+00:10:01,820 --> 00:10:06,540
+So now your clone knows that there's a branch called upstream master.
+
+146
+00:10:06,570 --> 00:10:09,930
+Can you see that says new new branch upstream MASTER.
+
+147
+00:10:09,960 --> 00:10:11,550
+THANKS.
+
+148
+00:10:11,650 --> 00:10:14,620
+CAN I DO MY get branch dash and they'll show me some stuff.
+
+149
+00:10:15,000 --> 00:10:15,420
+Yes.
+
+150
+00:10:15,490 --> 00:10:15,700
+Yeah.
+
+151
+00:10:15,700 --> 00:10:16,220
+Nice.
+
+152
+00:10:16,240 --> 00:10:20,170
+So that you can see you've got remotes origin master you get remotes upstream master.
+
+153
+00:10:20,230 --> 00:10:27,040
+You guys just playing master they're all they're all there call and then the next step here at Stack
+
+154
+00:10:27,070 --> 00:10:28,510
+Overflow tells us to do what.
+
+155
+00:10:29,020 --> 00:10:34,840
+So make sure you're on the branch that you want to be updating in this case almost always master.
+
+156
+00:10:34,840 --> 00:10:36,710
+So make sure you're you're in the right branch.
+
+157
+00:10:36,750 --> 00:10:41,050
+We got to get checkout master just to ensure that make sure you're on the right branch.
+
+158
+00:10:41,770 --> 00:10:43,130
+So that's the next step.
+
+159
+00:10:43,340 --> 00:10:45,340
+You are already you could confirm that.
+
+160
+00:10:45,340 --> 00:10:54,310
+Confirm with get branch shake yep and also make sure that you are that you get pulled to make sure that
+
+161
+00:10:54,310 --> 00:10:56,220
+you're up to date with your own work.
+
+162
+00:10:56,340 --> 00:11:00,200
+Get Paul in this case it already is.
+
+163
+00:11:00,210 --> 00:11:05,090
+So now you're on the latest version of master and you get fetched upstream so you know about the latest
+
+164
+00:11:05,100 --> 00:11:07,480
+thing that upstream has for Master.
+
+165
+00:11:07,530 --> 00:11:14,610
+So now you can actually pull from upstream into yours into your clone and there's two ways doing it.
+
+166
+00:11:14,610 --> 00:11:19,260
+You can use get rebates upstream master or get merge upstream master
+
+167
+00:11:22,010 --> 00:11:24,430
+so that's two different ways of doing it.
+
+168
+00:11:24,650 --> 00:11:29,450
+Get rebase is the fancy or way it basically.
+
+169
+00:11:29,720 --> 00:11:37,190
+It basically takes all the commits for your entire repo both at your local clone and upstream and just
+
+170
+00:11:37,190 --> 00:11:39,950
+reapplying them in order.
+
+171
+00:11:39,950 --> 00:11:42,340
+It's a time machine.
+
+172
+00:11:42,350 --> 00:11:48,320
+The problem is if you've got people who fought off of you or clone you it can cause some issues because
+
+173
+00:11:48,320 --> 00:11:51,810
+you're modifying history.
+
+174
+00:11:52,020 --> 00:11:55,820
+The other option is get merge upstream master and what.
+
+175
+00:11:55,940 --> 00:11:57,780
+And this doesn't modify history.
+
+176
+00:11:57,780 --> 00:12:05,510
+This just creates a new comet that it's a it's a merge commit from the upstream master.
+
+177
+00:12:05,550 --> 00:12:11,280
+Which point kind of says OK all these committees over here are in the repo after this point.
+
+178
+00:12:11,340 --> 00:12:16,770
+So since nobody's probably forked my temp dummy account I'm going to do the get rebase upstream master
+
+179
+00:12:16,770 --> 00:12:18,450
+and I just added some notes here.
+
+180
+00:12:18,530 --> 00:12:23,220
+Yeah there's two ways to pull from forked repo so you could just check the way I've described this if
+
+181
+00:12:23,220 --> 00:12:24,450
+you'd add anything to it.
+
+182
+00:12:24,660 --> 00:12:33,060
+Get rebase upstream master is one way the other way is get merge upstream master and and this way modifies
+
+183
+00:12:33,060 --> 00:12:36,210
+history but because issues people have fought my fork.
+
+184
+00:12:36,210 --> 00:12:36,600
+Right.
+
+185
+00:12:37,140 --> 00:12:39,910
+And this doesn't modify history so this would be safer.
+
+186
+00:12:39,930 --> 00:12:42,530
+People have fought to save for.
+
+187
+00:12:42,660 --> 00:12:47,080
+If people have fought your fork Yeah.
+
+188
+00:12:47,100 --> 00:12:47,460
+So.
+
+189
+00:12:47,460 --> 00:12:54,930
+So basically if you're if you're alone rebase is fine and it makes for a nicer looking get history about
+
+190
+00:12:55,000 --> 00:12:59,780
+merges you want you would prefer to use merge if you got anyone else is on your repo too.
+
+191
+00:13:00,000 --> 00:13:05,390
+So if you're working with someone as a collaborator or they fork over someone else's fault off you the
+
+192
+00:13:05,400 --> 00:13:06,580
+merge is safer.
+
+193
+00:13:06,760 --> 00:13:11,000
+But in this case it goes to heaven Tampa's alone.
+
+194
+00:13:11,010 --> 00:13:12,950
+So the rebase is fine.
+
+195
+00:13:12,960 --> 00:13:17,010
+Now I'm going to rebase and first rewinding head replay your work on top of that.
+
+196
+00:13:17,010 --> 00:13:19,200
+Fast forward master upstream master.
+
+197
+00:13:19,200 --> 00:13:21,840
+Now is that it or do we have anything else that should be.
+
+198
+00:13:21,890 --> 00:13:24,430
+So so now I've got a lower dose humble there.
+
+199
+00:13:24,480 --> 00:13:25,140
+Yep.
+
+200
+00:13:25,440 --> 00:13:26,430
+And that's awesome.
+
+201
+00:13:26,430 --> 00:13:27,570
+So that brought all that down.
+
+202
+00:13:28,130 --> 00:13:28,290
+Yep.
+
+203
+00:13:28,320 --> 00:13:33,660
+So now this is on your clone but your fork on GitHub has not yet been updated so you have to push to
+
+204
+00:13:33,660 --> 00:13:34,640
+solve that.
+
+205
+00:13:34,860 --> 00:13:39,030
+And sometimes when you do this push it can cut it might have problems.
+
+206
+00:13:39,060 --> 00:13:44,440
+So sometimes you need to put in the dash f origin master which is that's what's listed on the stack
+
+207
+00:13:44,440 --> 00:13:45,420
+overflow thing.
+
+208
+00:13:45,420 --> 00:13:46,590
+In this case it wasn't needed.
+
+209
+00:13:46,590 --> 00:13:52,040
+The rebase was simple enough that there wasn't any heavy changes and so it worked.
+
+210
+00:13:52,230 --> 00:13:58,620
+But sometimes sometimes when it's replaying history it has to change one of your comments a little bit.
+
+211
+00:13:58,620 --> 00:14:02,800
+And so you have to force the push to tell it to overwrite the original comment on the
+
+212
+00:14:16,610 --> 00:14:22,800
+so you shouldn't need to use the the force push more than once though it's just if you've if you changed
+
+213
+00:14:22,800 --> 00:14:25,680
+history with rebase you might have to tell it before work.
+
+214
+00:14:25,700 --> 00:14:25,940
+Hey.
+
+215
+00:14:25,940 --> 00:14:28,840
+History changed for years a forced Bush.
+
+216
+00:14:29,730 --> 00:14:30,120
+Yeah.
+
+217
+00:14:30,330 --> 00:14:34,730
+So that's a little bit of an involved process that took a little bit of time to explain.
+
+218
+00:14:34,770 --> 00:14:36,230
+And I like to keep these videos short.
+
+219
+00:14:36,240 --> 00:14:42,570
+So in the next video I'll show you my solution now that I'm up to up to date with goes to Levin I've
+
+220
+00:14:42,570 --> 00:14:47,910
+got all the code and kind of got everything current with my fork and my clone and my in the next video
+
+221
+00:14:47,910 --> 00:14:49,530
+I'll show you my solution to the second.
+
+222
+00:14:49,530 --> 00:14:56,190
+Hands on exercise so one note if you want to do this again you don't have to add the remote upstream
+
+223
+00:14:56,190 --> 00:14:57,690
+remote again that's saved.
+
+224
+00:14:57,690 --> 00:15:00,750
+You just have to do the fetch and the fetch step on.
+
+225
+00:15:00,750 --> 00:15:03,700
+I think we'll probably see that when I do the 3rd hands on exercise.
+
+226
+00:15:03,710 --> 00:15:04,650
+Okay all right good.
+
+227
+00:15:04,650 --> 00:15:06,390
+See you in the next video I'll do my solution.

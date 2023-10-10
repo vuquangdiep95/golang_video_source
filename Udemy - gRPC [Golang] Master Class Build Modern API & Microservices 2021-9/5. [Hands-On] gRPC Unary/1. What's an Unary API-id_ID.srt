@@ -1,0 +1,92 @@
+1
+00:00:00,270 --> 00:00:06,550
+Jadi di bagian ini kita akan belajar dan menerapkan panggilan API kemih rBC.
+
+2
+00:00:06,570 --> 00:00:09,090
+Jadi apa itu API kesatuan.
+
+3
+00:00:09,090 --> 00:00:12,770
+Kami telah melihat ini sebelumnya tetapi saya hanya ingin merangkum Anda panggilan Noori RBC.
+
+4
+00:00:12,770 --> 00:00:16,620
+Atau pada dasarnya respons permintaan yang semua orang kenal.
+
+5
+00:00:16,670 --> 00:00:22,200
+Jadi diagram itu kami memiliki server klien dan mereka bertukar satu pesan setiap jalan.
+
+6
+00:00:22,290 --> 00:00:22,630
+BAIK.
+
+7
+00:00:22,680 --> 00:00:27,690
+Itu bukan API klien akan mengirim satu pesan dan server akan menjalankan satu pesan.
+
+8
+00:00:27,690 --> 00:00:32,100
+Panggilan Deanery ARPA-E akan menjadi implementasi paling umum untuk API Anda.
+
+9
+00:00:32,160 --> 00:00:39,310
+OK satu bisa sangat baik pergi dengan seluruh aplikasi atau seluruh sistem atau database yang ditulis
+
+10
+00:00:39,310 --> 00:00:43,000
+dalam GRB C hanya panggilan Gennari RBC RBC.
+
+11
+00:00:43,230 --> 00:00:43,520
+BAIK.
+
+12
+00:00:43,560 --> 00:00:46,090
+Mereka sangat cocok untuk saat data kecil.
+
+13
+00:00:46,260 --> 00:00:51,210
+Dan ketika Anda mulai menulis API, saya sangat menyarankan Anda mulai dengan Noori Anda sampai
+
+14
+00:00:51,210 --> 00:00:55,590
+Anda memiliki kasus penggunaan yang sangat baik dan peningkatan kinerja menggunakan streaming API.
+
+15
+00:00:55,630 --> 00:01:02,130
+Sekarang panggilan Noori Anda ditentukan menggunakan buffer protokol dan seperti inilah tampilan file buffer Anda
+
+16
+00:01:02,130 --> 00:01:03,030
+yang menyedihkan.
+
+17
+00:01:03,240 --> 00:01:06,840
+Jadi, kami akan mendefinisikan permintaan sambutan dan respons yang luar biasa.
+
+18
+00:01:06,900 --> 00:01:13,230
+Dan ini adalah pesan dan kemudian kita akan memiliki salam atau layanan salam implementasi dari RBC salam.
+
+19
+00:01:13,260 --> 00:01:18,440
+Jadi itu Atau Anda tahu RBC itu namanya menyapa Kami akan menerima permintaan salam dan mengembalikan respons yang bagus.
+
+20
+00:01:18,450 --> 00:01:22,910
+Jangan khawatir kami akan menulis ini bersama di tangan mereka untuk setiap panggilan RBC.
+
+21
+00:01:22,920 --> 00:01:26,180
+Kita harus mendefinisikan pesan permintaan dan pesan respons.
+
+22
+00:01:26,250 --> 00:01:29,290
+Jadi Anda bisa lihat di sini Anda mendapat respons yang marah.
+
+23
+00:01:29,340 --> 00:01:31,920
+Sekarang kita memiliki ini di kuliah berikutnya kita akan melakukan Henzen.
+

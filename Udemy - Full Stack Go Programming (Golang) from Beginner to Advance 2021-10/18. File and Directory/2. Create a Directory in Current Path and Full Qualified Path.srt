@@ -1,0 +1,191 @@
+1
+00:00:12,810 --> 00:00:17,970
+Hello and welcome to the goal and programming language course in the previous session.
+
+2
+00:00:18,000 --> 00:00:25,020
+We talked about create an empty fine and in this session, we want to talk about the other files and
+
+3
+00:00:25,020 --> 00:00:26,430
+directories concept.
+
+4
+00:00:30,290 --> 00:00:40,550
+Create a directory or folder and go blank in-car DVR function can be used to create a directory or folder
+
+5
+00:00:40,550 --> 00:00:48,920
+and go in the air creates a new directory with the specified name and permission beats.
+
+6
+00:00:49,580 --> 00:00:53,820
+If there is an error, it will be a time Asterix parser.
+
+7
+00:00:53,930 --> 00:00:56,180
+Now you can see the syntax.
+
+8
+00:00:58,530 --> 00:01:01,140
+This function takes into promises.
+
+9
+00:01:02,480 --> 00:01:06,890
+Name five existing, the first parameter is the name directory.
+
+10
+00:01:07,100 --> 00:01:12,980
+If the name directory is a fully qualified pass, it will create a directory at that press.
+
+11
+00:01:13,340 --> 00:01:18,080
+If not, it'll be create a directory with respect to current working directory.
+
+12
+00:01:19,180 --> 00:01:21,340
+Perm type is fine.
+
+13
+00:01:21,610 --> 00:01:25,000
+The second parameter is specifies the permission beats.
+
+14
+00:01:25,900 --> 00:01:33,010
+Now let's go to this school program to illustrate how to create a directory or folder and go like.
+
+15
+00:01:34,630 --> 00:01:42,520
+First, we want to create a folder or directory at the Fool Qualified Pass by encode the air function.
+
+16
+00:01:42,610 --> 00:01:51,040
+The return value of this function is an error, so we define a variable like e are colon equals.
+
+17
+00:01:51,790 --> 00:01:55,870
+Invoke ENCODE the our function from OS package
+
+18
+00:01:58,690 --> 00:02:01,570
+CIT Fool destination via the folder name.
+
+19
+00:02:01,570 --> 00:02:15,580
+For the example, the colon backslash backslash for the example temp and set permission zero seven five
+
+20
+00:02:15,850 --> 00:02:24,070
+five zero seven five five means read and execute access for everyone and authorized access for the owner
+
+21
+00:02:24,070 --> 00:02:24,820
+of the file.
+
+22
+00:02:24,880 --> 00:02:31,750
+Now we could create a directory at the foon qualified past name 10, and we assign returns value to
+
+23
+00:02:31,750 --> 00:02:33,070
+a variable like error.
+
+24
+00:02:33,400 --> 00:02:37,780
+Now we check the print message for us if the error is not empty.
+
+25
+00:02:37,990 --> 00:02:43,150
+Go to the next line if error not equal, Neal.
+
+26
+00:02:45,010 --> 00:02:48,850
+In this case, we use the Fartown function of the long package.
+
+27
+00:02:49,000 --> 00:02:52,600
+Lock the Fattore.
+
+28
+00:02:55,060 --> 00:03:01,360
+And sit around and sage reformat the code, save the project and execute the program.
+
+29
+00:03:05,530 --> 00:03:07,210
+Now go to drive D
+
+30
+00:03:09,700 --> 00:03:13,630
+and select the files and directory by the air.
+
+31
+00:03:14,530 --> 00:03:17,830
+And now we can see the 10 folder is here.
+
+32
+00:03:18,760 --> 00:03:22,630
+OK, now let's do another example.
+
+33
+00:03:23,080 --> 00:03:26,980
+First, create a folder or directory at the current pass.
+
+34
+00:03:26,980 --> 00:03:29,770
+By the end, call the air function.
+
+35
+00:03:30,190 --> 00:03:40,270
+So two clear the last quote first, defining a variable like error calling equals always start, then
+
+36
+00:03:40,270 --> 00:03:53,290
+called the i r set the folder name like 10th and set version zero seven five five.
+
+37
+00:03:54,460 --> 00:04:01,870
+Now we could create a directory at current pass and name type and the assign return values to a variable
+
+38
+00:04:01,870 --> 00:04:02,560
+like error.
+
+39
+00:04:02,980 --> 00:04:07,180
+So we check the print and message for us if the road is not empty.
+
+40
+00:04:07,630 --> 00:04:22,450
+So if they're not equals name from the package like FATTORE and set or reformat the called Save the
+
+41
+00:04:22,450 --> 00:04:26,620
+Project and execute the program, go to the current pass.
+
+42
+00:04:30,220 --> 00:04:32,240
+And execute the program.
+
+43
+00:04:36,750 --> 00:04:44,280
+So we go to diet three of these contests, and we can see the ten folder created here.
+
+44
+00:04:44,820 --> 00:04:45,250
+Okay.
+
+45
+00:04:45,480 --> 00:04:52,560
+We could create two directory at court current past and at the Fool Qualified Pass in order not to prolong
+
+46
+00:04:52,560 --> 00:04:53,800
+the time of decision.
+
+47
+00:04:53,820 --> 00:04:57,780
+We will finish it and we will continue the content in the next session.
+
+48
+00:04:58,170 --> 00:04:58,740
+Goodbye.

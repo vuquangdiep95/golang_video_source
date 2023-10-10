@@ -1,0 +1,179 @@
+1
+00:00:00,120 --> 00:00:09,570
+I'm excited to have my friend and colleague and fellow venture fellow adventurer and start ups Daniel
+
+2
+00:00:09,570 --> 00:00:18,300
+here with me and Daniel has the advantage and benefit of being a practicing professional coder so I
+
+3
+00:00:18,300 --> 00:00:23,160
+already explained this but in academia I spend all my time kind of teaching the same classes and that's
+
+4
+00:00:23,160 --> 00:00:26,820
+different than being a professional dad where you're working on all kinds of different parts.
+
+5
+00:00:26,820 --> 00:00:34,560
+I'm really excited to have you here Daniel and I'm looking forward to going through this material and
+
+6
+00:00:34,560 --> 00:00:39,810
+learning some new things myself and kind of exemplifying pair programming.
+
+7
+00:00:39,810 --> 00:00:46,380
+So we have a little bit a wider lens on now you could see a little bit more of the room and the first
+
+8
+00:00:46,380 --> 00:00:51,840
+thing we're gonna do is just kind of go in to some get stuff and so it gets stuff that I notice a lot
+
+9
+00:00:51,840 --> 00:00:58,470
+of my students whether they're undergraduates or graduate students they don't always have these skills
+
+10
+00:00:58,500 --> 00:01:03,120
+and even when I teach people who are in industry sometimes I find that some people don't have these
+
+11
+00:01:03,120 --> 00:01:07,560
+skills and so this is going to be we're going to end this section here you could see from the outline
+
+12
+00:01:07,860 --> 00:01:15,030
+we're going to look at get we're gonna setup our get repo in this video and and so you know you'll have
+
+13
+00:01:15,030 --> 00:01:20,370
+a link to that and of course resources where the code is and then we're gonna work with branches a little
+
+14
+00:01:20,370 --> 00:01:26,070
+bit so we're going to go through understanding branches and working at branches and doing def master
+
+15
+00:01:26,070 --> 00:01:30,030
+branch you could see the videos coming up as a little bit of a preview of what's coming in this section
+
+16
+00:01:30,540 --> 00:01:33,100
+and then merging a branch into leading a branch.
+
+17
+00:01:33,120 --> 00:01:39,330
+So we're just laying the foundation and I really believe in being thorough because nothing is more frustrating
+
+18
+00:01:39,330 --> 00:01:44,280
+when you're trying to learn something than watching somebody do something and not understanding what
+
+19
+00:01:44,280 --> 00:01:45,300
+they're doing.
+
+20
+00:01:45,300 --> 00:01:51,030
+So if you already know all of the things that are mentioned there this is your course for your benefit.
+
+21
+00:01:51,030 --> 00:01:57,450
+We're here to help you if you already know this stuff feel free to skip over this section but if you
+
+22
+00:01:57,450 --> 00:02:02,240
+don't know this and I really believe in providing too much rather than not enough.
+
+23
+00:02:02,340 --> 00:02:08,340
+And so along with that philosophy I'd rather you have material if you need it and that way it's there
+
+24
+00:02:08,340 --> 00:02:13,270
+for you so you can go through it and if you don't need it you could step over it.
+
+25
+00:02:13,270 --> 00:02:18,840
+And so that's why we're including this information it's kind of like the next step up of what I've covered
+
+26
+00:02:18,840 --> 00:02:21,900
+in my previous courses which was an introduction to get.
+
+27
+00:02:22,050 --> 00:02:27,960
+And so if you don't understand get at all you want to step back to one of my earlier courses.
+
+28
+00:02:27,990 --> 00:02:31,800
+So that's what we're going to do in this section.
+
+29
+00:02:31,800 --> 00:02:36,090
+But I've been doing all the talking do you have anything you want to add.
+
+30
+00:02:36,120 --> 00:02:37,260
+No not really.
+
+31
+00:02:38,330 --> 00:02:45,120
+So the the skill set here and any good team and you get partnership you have complementary skill sets.
+
+32
+00:02:45,600 --> 00:02:47,980
+And so my skill set is teaching.
+
+33
+00:02:48,030 --> 00:02:53,580
+I've spent a lot of time talking in front of other people and sharing ideas and learning how to convey
+
+34
+00:02:53,580 --> 00:02:59,190
+ideas thus I have part of my brain that's really well developed do that doesn't mean I don't completely
+
+35
+00:02:59,190 --> 00:03:06,670
+screw it up at times I went to New York this summer to do a presentation and just the tension of life
+
+36
+00:03:06,720 --> 00:03:11,850
+the pressure the high level I was operating out back there I wasn't happy with how it turned down I
+
+37
+00:03:11,850 --> 00:03:17,670
+got nervous sometimes still happens so I'm good at presenting and professional DAB I just don't have
+
+38
+00:03:17,670 --> 00:03:22,430
+that experience whereas Daniel complements that and say you're gonna we're gonna have that benefit of
+
+39
+00:03:22,440 --> 00:03:29,040
+both of us here where he has professional experience it's been working with go professionally for wow
+
+40
+00:03:29,820 --> 00:03:36,450
+many years now and so that's what we're going to do and that's what we're looking at in this first section
+
+41
+00:03:36,690 --> 00:03:40,940
+and you got anything else you want to say looking forward to teaching.
+
+42
+00:03:41,100 --> 00:03:46,170
+He'll be talking more when we get into the coding and I'll make sure that I'm slowing things down to
+
+43
+00:03:46,790 --> 00:03:50,250
+you know make sure all things are under well understood.
+
+44
+00:03:50,250 --> 00:03:50,560
+All right.
+
+45
+00:03:50,580 --> 00:03:53,160
+So we'll jump in to get in the next video.

@@ -1,0 +1,267 @@
+1
+00:00:01,510 --> 00:00:07,660
+So we're finally at the point where we can start work on the celebrity make and then some project name
+
+2
+00:00:07,660 --> 00:00:13,300
+functionality, in other words, someone wants to build an application using celebrities so they have
+
+3
+00:00:13,300 --> 00:00:18,160
+the celebrities binary installed on their system and they just type celebrities new and then the name
+
+4
+00:00:18,160 --> 00:00:19,540
+of whatever it is they want to build.
+
+5
+00:00:20,470 --> 00:00:25,510
+So of course, to do that, we have to work on the Seelye on our command line application.
+
+6
+00:00:25,690 --> 00:00:33,010
+And I'm looking right now at the file mango in the celebrities project in the CMT slash seelye folder.
+
+7
+00:00:33,190 --> 00:00:38,830
+And of course, in the main function here, this is after we call set up where we get started.
+
+8
+00:00:39,280 --> 00:00:44,650
+So we're switching here and we have help and version of migrating make, and I'm just going to add a
+
+9
+00:00:44,650 --> 00:00:51,280
+new so I'll put it right after help case new.
+
+10
+00:00:53,650 --> 00:00:59,050
+And of course, we actually require argument to in this case, because we need something to name whatever
+
+11
+00:00:59,050 --> 00:01:00,110
+the project is going to be.
+
+12
+00:01:00,130 --> 00:01:07,270
+So if our two is equal to an empty string, then we'll exit gracefully with the error.
+
+13
+00:01:08,070 --> 00:01:17,560
+Error New New requires an application name like that.
+
+14
+00:01:19,300 --> 00:01:23,950
+Otherwise, we're going to call a function, and we'll put all of the functionality for building a new
+
+15
+00:01:23,950 --> 00:01:27,040
+application in its own file with its own function.
+
+16
+00:01:27,040 --> 00:01:29,170
+So we'll just call this function that doesn't exist yet.
+
+17
+00:01:29,680 --> 00:01:33,820
+Do new with our two, and that's it for that file.
+
+18
+00:01:33,880 --> 00:01:40,750
+So now let's go over here to our Command Seelye folder and create a new file, which I'll call NewCo.
+
+19
+00:01:42,150 --> 00:01:49,230
+And of course, it's in package men, and we'll create a function funk do to try that again.
+
+20
+00:01:49,440 --> 00:01:56,250
+New and it takes one argument apt name, which is a strength and of course, that's actually our two
+
+21
+00:01:56,250 --> 00:01:57,450
+that's part of this function.
+
+22
+00:01:57,540 --> 00:02:00,230
+But it's actually the name of the new application.
+
+23
+00:02:00,240 --> 00:02:02,940
+So that's what we'll call it for our parameter.
+
+24
+00:02:03,750 --> 00:02:08,730
+Now I'm going to convert whatever they pass me as a name to lowercase.
+
+25
+00:02:09,000 --> 00:02:09,320
+OK.
+
+26
+00:02:09,750 --> 00:02:18,120
+So I'll say apt name is now equal to from the strings package right in the standard library to lower
+
+27
+00:02:19,260 --> 00:02:19,730
+that name.
+
+28
+00:02:21,180 --> 00:02:22,230
+And I have it in lowercase.
+
+29
+00:02:23,970 --> 00:02:26,400
+So let's think about the things we're going to do here.
+
+30
+00:02:27,660 --> 00:02:33,750
+When someone types celebrities knew the third thing that they type, the first one being celebrities,
+
+31
+00:02:33,750 --> 00:02:34,800
+the second one being new.
+
+32
+00:02:35,160 --> 00:02:41,520
+The third thing that the Typekit might be a single word like my app or it might be a complete URL like
+
+33
+00:02:41,520 --> 00:02:44,520
+GitHub dot com slash t solr slash my app.
+
+34
+00:02:44,820 --> 00:02:48,490
+And of course, we can't name a folder, something that has slashes in it.
+
+35
+00:02:48,540 --> 00:02:53,790
+So we'll have to say sanitize the application name.
+
+36
+00:02:55,420 --> 00:02:58,720
+Convert you, Earl, to single word.
+
+37
+00:02:59,020 --> 00:03:05,080
+OK, so that's the first thing we're going to have to do, then we want to get the application kind
+
+38
+00:03:05,080 --> 00:03:11,050
+of an empty celebrity application with everything set up for them so they can start working really quickly.
+
+39
+00:03:11,590 --> 00:03:17,740
+And of course, the easiest way to do that is to take my app or a stripped down version of my app and
+
+40
+00:03:17,740 --> 00:03:20,110
+put that on and get repository and then we'll just clone it.
+
+41
+00:03:20,800 --> 00:03:29,230
+So we'll say, get clone the skeleton application, and we're going to do that right in go code.
+
+42
+00:03:30,580 --> 00:03:31,840
+So a clone, an application.
+
+43
+00:03:33,100 --> 00:03:39,130
+And after we've done that, we want to remove the don't get directory because we don't want to have
+
+44
+00:03:39,130 --> 00:03:46,960
+them start an application that has a git folder that says, Hey, the code that you see right here belongs
+
+45
+00:03:46,960 --> 00:03:48,600
+in this repository over there.
+
+46
+00:03:48,610 --> 00:03:49,510
+So we'll get rid of that.
+
+47
+00:03:49,540 --> 00:03:51,220
+And that way it becomes an empty application.
+
+48
+00:03:52,090 --> 00:03:55,270
+They can make their own git commit and push it to their own repository.
+
+49
+00:03:56,050 --> 00:04:04,090
+Then we need to create a ready to go on file, and we can't put that in the git repository.
+
+50
+00:04:04,090 --> 00:04:08,590
+Of course, that's just not a good idea because it would have the wrong application name and all sorts
+
+51
+00:04:08,590 --> 00:04:10,750
+of things, so we need to create one for them.
+
+52
+00:04:11,200 --> 00:04:13,090
+Then we should create a make file.
+
+53
+00:04:14,440 --> 00:04:20,110
+And of course, that'll be different if they're on Windows or Unix or Linux or a Mac, so we'll put
+
+54
+00:04:20,110 --> 00:04:22,240
+the appropriate make file in place for them.
+
+55
+00:04:22,810 --> 00:04:29,320
+Then we'll need to update the Goda Mod file because what they're going to get from the repository won't
+
+56
+00:04:29,320 --> 00:04:30,670
+be appropriate for their purposes.
+
+57
+00:04:30,740 --> 00:04:34,210
+That's a really simple fix, but we do need to make a couple of changes in that document.
+
+58
+00:04:36,070 --> 00:04:44,200
+Then we'll need to update the existing Dongo files with correct name and imports.
+
+59
+00:04:44,620 --> 00:04:47,770
+And when we get to that part of this section, you'll understand what I mean.
+
+60
+00:04:47,770 --> 00:04:55,000
+But we're of course, when we do a clone, it's going to have imports that refer to the incorrect repository,
+
+61
+00:04:55,030 --> 00:04:56,830
+so we'll have to update that for them as well.
+
+62
+00:04:57,790 --> 00:04:59,050
+And finally, we have to run.
+
+63
+00:05:00,070 --> 00:05:08,410
+Go mod tidy in the project directory just to make sure that everything is cleaned up.
+
+64
+00:05:09,280 --> 00:05:15,220
+Now this looks like a lot of work, but it's actually a pretty simplistic process at this point, and
+
+65
+00:05:15,220 --> 00:05:19,050
+we'll get started on implementing some of this in the next lecture.
+
+66
+00:05:19,060 --> 00:05:22,120
+But this is an overall roadmap of where we're going to go in this section.
+
+67
+00:05:22,420 --> 00:05:26,770
+So let's move on to the next lecture and get started with sanitizing the application name.

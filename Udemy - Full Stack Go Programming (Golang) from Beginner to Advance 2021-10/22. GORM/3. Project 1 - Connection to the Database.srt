@@ -1,0 +1,375 @@
+1
+00:00:11,830 --> 00:00:15,190
+Hello and welcome to the golden programming language course.
+
+2
+00:00:15,910 --> 00:00:23,440
+In the previous session, we could install gore and my school driver into project, so continue to create
+
+3
+00:00:23,440 --> 00:00:33,580
+a modern first go to Package Explorer and in Project Folder, create a folder named Model New Folder
+
+4
+00:00:33,580 --> 00:00:35,800
+and set a name like Modern.
+
+5
+00:00:39,880 --> 00:00:46,030
+In model folder, it create a file like named the student or go inside it because we are going to create
+
+6
+00:00:46,030 --> 00:00:50,710
+a structure equivalent to a student table in the MySchool database.
+
+7
+00:00:52,990 --> 00:01:03,910
+New find students that go so go to student file and create is not named a student with fields such as
+
+8
+00:01:03,910 --> 00:01:06,880
+fields east or inside the MySchool database.
+
+9
+00:01:07,960 --> 00:01:24,310
+First, that package model and create a strike named Student Time two that instruct.
+
+10
+00:01:27,910 --> 00:01:44,350
+Set to comment for this as an exporter, student, as student and defiant variables, I.D. and attack
+
+11
+00:01:44,350 --> 00:01:51,400
+for a field allows you to attach media information to the film, which can be secured using reflection.
+
+12
+00:01:51,940 --> 00:01:59,320
+Usually, it is used to provide transformation on highest ranked film is encoded to or decoded from
+
+13
+00:01:59,320 --> 00:02:05,830
+another format, but you can use it to restore whatever metal info you want to, either intended for
+
+14
+00:02:05,830 --> 00:02:08,440
+another package or for your own use.
+
+15
+00:02:08,950 --> 00:02:15,760
+So in this case, we use from all our intact for these films, for the example for Aida.
+
+16
+00:02:15,910 --> 00:02:18,730
+We write, set, go on and take back to each
+
+17
+00:02:21,850 --> 00:02:23,050
+go our own
+
+18
+00:02:25,870 --> 00:02:33,970
+column, double quotation mark and set primary.
+
+19
+00:02:35,240 --> 00:02:40,850
+Underscore key, so said primary key attribute for IED I.D.
+
+20
+00:02:43,610 --> 00:02:56,090
+and name five is estranged and said contact back Dick Gore and Colin.
+
+21
+00:03:00,290 --> 00:03:06,380
+Double quotation, Mark Android N. Vaca,
+
+22
+00:03:09,110 --> 00:03:14,300
+50 semicolon not.
+
+23
+00:03:16,330 --> 00:03:26,030
+So said Eastern character numbers and not not a status for name and go to the next line and age type,
+
+24
+00:03:26,050 --> 00:03:31,420
+is it and set another and take.
+
+25
+00:03:35,500 --> 00:03:36,570
+Google are
+
+26
+00:03:39,900 --> 00:03:43,180
+calling double quotation mark and said, not not.
+
+27
+00:03:47,490 --> 00:03:50,430
+So it not not a status or AIDS field.
+
+28
+00:03:51,180 --> 00:03:54,720
+OK, reformat the code and save the project.
+
+29
+00:03:55,440 --> 00:04:02,340
+Now go to Project Folder and create another folder named like configuration, which is supposed to include
+
+30
+00:04:02,340 --> 00:04:06,600
+the settings for the connection of the Go program with the MySchool database.
+
+31
+00:04:11,160 --> 00:04:15,720
+New father can be Grecian.
+
+32
+00:04:18,260 --> 00:04:24,560
+We want to create a database connection settings as adjacent, so inside the configuration folder,
+
+33
+00:04:24,770 --> 00:04:34,370
+we create the file called config with the JSON extension, new Fong config, the JS.
+
+34
+00:04:39,020 --> 00:04:45,440
+The program requires Maine sitting to connect to the database that is data source name, data source
+
+35
+00:04:45,440 --> 00:04:51,500
+name is a combination of username, password and database name that we want to connect it.
+
+36
+00:04:55,220 --> 00:04:58,580
+So be right adjacent five four sittings off database
+
+37
+00:05:02,210 --> 00:05:02,980
+data.
+
+38
+00:05:05,680 --> 00:05:16,810
+Source named as key calling and set value, my database username is Ruth.
+
+39
+00:05:19,340 --> 00:05:23,150
+Colin and my database passport is or I can.
+
+40
+00:05:26,630 --> 00:05:32,270
+And that's why this slash and database name is person.
+
+41
+00:05:36,910 --> 00:05:45,130
+And set any configuration, so put a question mark end of database nine and right other settings, for
+
+42
+00:05:45,130 --> 00:05:52,720
+example, Chad set equals UTF eight.
+
+43
+00:05:54,170 --> 00:05:56,690
+Pass time.
+
+44
+00:05:57,720 --> 00:05:58,470
+Equals.
+
+45
+00:06:00,300 --> 00:06:04,860
+True and large
+
+46
+00:06:07,260 --> 00:06:09,390
+equals look.
+
+47
+00:06:11,060 --> 00:06:13,940
+Reformat the code and save the project.
+
+48
+00:06:14,270 --> 00:06:18,620
+Now he could create adjacent file for connection to my school database.
+
+49
+00:06:19,160 --> 00:06:27,380
+It's time to go to Project Folder and create another package like DB tools for connection to the database.
+
+50
+00:06:30,350 --> 00:06:41,320
+You Father DB tools and create the fine inside it, like deep connection that gold that contains metals
+
+51
+00:06:41,320 --> 00:06:43,300
+to interact with the data base.
+
+52
+00:06:44,170 --> 00:06:58,540
+New five DB connection that go before do anything first import guar and miniscule driver type of database
+
+53
+00:06:58,540 --> 00:06:59,620
+tools package.
+
+54
+00:06:59,950 --> 00:07:06,010
+So we write these two lines first package these tools
+
+55
+00:07:08,710 --> 00:07:09,430
+import.
+
+56
+00:07:15,580 --> 00:07:19,860
+Go on and I'll ask that score.
+
+57
+00:07:20,560 --> 00:07:30,550
+And in the next line, Quantum Dot, I'll ask the writer and slash why is it
+
+58
+00:07:35,200 --> 00:07:37,150
+OK for using datasource name?
+
+59
+00:07:37,150 --> 00:07:43,180
+First, define the global variable named datasource name as a string type that.
+
+60
+00:07:44,460 --> 00:07:52,520
+Data source name as a street type
+
+61
+00:07:55,500 --> 00:08:02,190
+now create an initialized function to be able to initialize this variable from other packages.
+
+62
+00:08:02,670 --> 00:08:09,720
+This method receives one value named data source name as input parameter and uses it to initialize the
+
+63
+00:08:09,720 --> 00:08:11,340
+global variable of package.
+
+64
+00:08:11,340 --> 00:08:14,790
+Until that, other functions can access their values.
+
+65
+00:08:15,030 --> 00:08:17,130
+So override function
+
+66
+00:08:20,010 --> 00:08:33,660
+DB initialize or set a variable like this, and by the time it is string and initialize the data source
+
+67
+00:08:33,660 --> 00:08:40,140
+named global variable data source name equals D is.
+
+68
+00:08:40,140 --> 00:08:40,500
+And
+
+69
+00:08:43,470 --> 00:08:50,760
+now we want to design the method who is task is to connect the program to the MySQL database and return
+
+70
+00:08:50,760 --> 00:08:53,250
+it to the object from our end package.
+
+71
+00:08:53,790 --> 00:08:59,460
+For example, we create the function named Connie that is stored by the lowercase character because
+
+72
+00:08:59,460 --> 00:09:04,770
+we want to use this function just to this package, and we don't use it to either package it.
+
+73
+00:09:04,770 --> 00:09:08,730
+So we right fine connect.
+
+74
+00:09:13,380 --> 00:09:26,550
+And return type is the object by the time of Mr. Gore and Dot DB, DB Asterisk, Gore and Dot the B.
+
+75
+00:09:30,310 --> 00:09:30,550
+OK.
+
+76
+00:09:32,150 --> 00:09:37,490
+They required Metro to connect to the database is the open function of the gore and package.
+
+77
+00:09:37,850 --> 00:09:45,080
+So we should import car and package open function opens, initialize the decision by its dialectal and
+
+78
+00:09:45,080 --> 00:09:53,030
+gore config option, and it returns a DB object of gore and error, as Stuart is the programming language
+
+79
+00:09:53,030 --> 00:10:00,010
+used to talk to those databases, and each database product has its own variant of school.
+
+80
+00:10:00,230 --> 00:10:02,060
+So we call this variance in school.
+
+81
+00:10:02,060 --> 00:10:12,320
+Dialects first defined two variables like Debian Roller Derby, Croma, error calling equals and calling
+
+82
+00:10:12,320 --> 00:10:21,380
+open function from gore and package gore and dot open function.
+
+83
+00:10:26,100 --> 00:10:32,790
+And said, dialectal an option as input parameter for dialect parameter, we can't open function from
+
+84
+00:10:32,790 --> 00:10:37,740
+miniscule package and sit data source name as input parameter for it.
+
+85
+00:10:38,160 --> 00:10:52,110
+So we write minuscule thought open and set data, source name, data, source name, comma and forgotten
+
+86
+00:10:52,110 --> 00:10:53,100
+config option.
+
+87
+00:10:53,130 --> 00:10:57,480
+We write ampersand and select configure straight from gore and package.
+
+88
+00:10:59,680 --> 00:11:05,440
+Anderson Cooper and Dot can speak.
+
+89
+00:11:07,920 --> 00:11:24,930
+Now, check our status if error like that fatal error to enroll and return created TBE object as return
+
+90
+00:11:24,930 --> 00:11:35,850
+type returned DB reformat the call and say the project so we could define the database dialect for connecting
+
+91
+00:11:35,850 --> 00:11:36,870
+to a database.
+
+92
+00:11:37,260 --> 00:11:42,660
+In order not to prolong the time of decision, we will finish you, then we will continue the content
+
+93
+00:11:42,660 --> 00:11:43,710
+in the next session.
+
+94
+00:11:43,860 --> 00:11:44,400
+Goodbye.

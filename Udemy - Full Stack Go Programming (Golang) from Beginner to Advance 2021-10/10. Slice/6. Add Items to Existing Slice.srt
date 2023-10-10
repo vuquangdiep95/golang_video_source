@@ -1,0 +1,175 @@
+1
+00:00:14,570 --> 00:00:20,120
+Hello and welcome to the golden programming language course in the previous session, we talked about
+
+2
+00:00:20,120 --> 00:00:23,820
+how to iterate over a slice in this session.
+
+3
+00:00:23,840 --> 00:00:26,720
+We want to talk about the either a splice concept.
+
+4
+00:00:33,890 --> 00:00:37,310
+At items, twist lies using Appin function.
+
+5
+00:00:38,440 --> 00:00:45,910
+Goal building package provides an app and function that can be used to appeal to a slice at the end.
+
+6
+00:00:47,040 --> 00:00:49,050
+Now you can see the syntax.
+
+7
+00:00:50,970 --> 00:00:57,900
+The first argument of the append function is this nice, it's sunny, the second is the variable number
+
+8
+00:00:57,900 --> 00:01:00,870
+of arguments, which is element ellipses type.
+
+9
+00:01:02,710 --> 00:01:10,030
+It's this operator, is there VIDEO The syntax, so basically and it's this type means that the append
+
+10
+00:01:10,030 --> 00:01:14,680
+function can accept variable number of arguments of type type.
+
+11
+00:01:17,910 --> 00:01:24,390
+Now go to the school program to illustrate how to add items to it's nice using app and function.
+
+12
+00:01:29,030 --> 00:01:42,290
+First, define this vice for the example, a column he could make function and sit the tight end and
+
+13
+00:01:42,290 --> 00:01:46,160
+lend his tool and copy satisfying.
+
+14
+00:01:48,780 --> 00:01:55,380
+Go to the next line and initialize it, slice a square brackets in big zero.
+
+15
+00:01:56,510 --> 00:02:06,530
+He calls for the example, 10, and in the next line, a square bracket index one equals 20.
+
+16
+00:02:09,860 --> 00:02:12,780
+Now, this very variable created if
+
+17
+00:02:16,100 --> 00:02:21,600
+this is a separate event.
+
+18
+00:02:21,930 --> 00:02:30,280
+Hey, and go to the next line and display lands and capacity off variable a if if!
+
+19
+00:02:31,610 --> 00:02:32,690
+The length.
+
+20
+00:02:36,430 --> 00:02:42,610
+Percent de Vegas, the city and Traverse City
+
+21
+00:02:45,940 --> 00:02:53,460
+following this and be like, is this an asset to function land and capacities here?
+
+22
+00:02:54,940 --> 00:03:04,030
+And and sit here aid and chat function for display the capacity of a very area.
+
+23
+00:03:04,180 --> 00:03:08,530
+Now we can add items to a slice by using athon function.
+
+24
+00:03:08,530 --> 00:03:16,300
+Go to the next line a equals attend function.
+
+25
+00:03:16,960 --> 00:03:24,430
+First, Barry is name of the variable and second variable is values and, for the example, set the
+
+26
+00:03:24,430 --> 00:03:32,130
+value 30 como 40, 50, 60, 70, 80 and 90.
+
+27
+00:03:32,200 --> 00:03:37,510
+OK, go to the next line and display the variable values again.
+
+28
+00:03:37,870 --> 00:03:39,810
+For the example, if p
+
+29
+00:03:42,970 --> 00:03:51,070
+this nice a after appending data
+
+30
+00:03:54,340 --> 00:04:03,890
+and set the very then a and go to the next line and display length and capacity of variable again,
+
+31
+00:04:04,780 --> 00:04:21,820
+if f the links person, the is T and capacity call in Person D and back is less and set to function
+
+32
+00:04:21,820 --> 00:04:30,850
+linear check land for a and chat function faucet.
+
+33
+00:04:30,850 --> 00:04:38,940
+The capacity for variable A now only format the save the project and execute the code.
+
+34
+00:04:42,130 --> 00:04:46,300
+Now we can see the output before we add new items.
+
+35
+00:04:46,300 --> 00:04:52,420
+It's nice e has to value 10 and 20 and length is too, and capacity is five.
+
+36
+00:04:52,660 --> 00:04:55,210
+And after appending data, it's noise.
+
+37
+00:04:55,240 --> 00:05:00,670
+Elements are 10 to 90 and length is nine and capacities 10.
+
+38
+00:05:00,790 --> 00:05:06,910
+If there is sufficient capacity in the underlying guest list, the element is placed after the last
+
+39
+00:05:06,910 --> 00:05:09,370
+element and the links get implemented.
+
+40
+00:05:09,640 --> 00:05:16,360
+However, if there is not sufficient capacity in meaningless noise is created, all of the existing
+
+41
+00:05:16,360 --> 00:05:17,770
+elements are copied over.
+
+42
+00:05:18,010 --> 00:05:25,390
+The new element is added on to the end and the nearest noise is returned in order not to prolong the
+
+43
+00:05:25,390 --> 00:05:30,040
+time of decision even will finish it, and we will continue the content in the next session.
+
+44
+00:05:30,310 --> 00:05:30,850
+Goodbye.

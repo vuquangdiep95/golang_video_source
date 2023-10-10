@@ -1,0 +1,920 @@
+1
+00:00:00,090 --> 00:00:05,260
+Caso, quindi, impareremo a conoscere la crittografia SSL in questa conferenza e questo sarà operativo.
+
+2
+00:00:05,280 --> 00:00:09,340
+Quindi creeremo un'autorità di certificazione e ho già i comandi pronti per te.
+
+3
+00:00:09,360 --> 00:00:13,530
+Non devi sapere nulla sulla sicurezza per questa lezione e ci siederemo ai certificati del
+
+4
+00:00:14,050 --> 00:00:19,050
+server delle news firmeremo i certificati del server e configureremo il server per utilizzare questa crittografia e il
+
+5
+00:00:19,050 --> 00:00:21,450
+client per connettersi in modo sicuro più geloso.
+
+6
+00:00:21,450 --> 00:00:24,130
+Quindi nel complesso c'è un sacco di link che dovresti sapere.
+
+7
+00:00:24,180 --> 00:00:28,930
+E uno di loro è questo link qui sotto e c'è una documentazione che sto per mostrarti in questo momento.
+
+8
+00:00:29,040 --> 00:00:30,400
+Quindi iniziamo.
+
+9
+00:00:30,870 --> 00:00:36,600
+OK così nella sezione di autenticazione della documentazione, come puoi vedere se scorri verso il
+
+10
+00:00:36,600 --> 00:00:43,170
+basso ti dice molto sul supporto del meccanismo di autenticazione e userò SSL ts solo per la crittografia
+
+11
+00:00:43,170 --> 00:00:44,110
+proprio qui.
+
+12
+00:00:44,140 --> 00:00:51,020
+Quindi mentre scorri verso il basso, andrai a vedere c'è un esempio e questo esempio deve passare al codice.
+
+13
+00:00:51,180 --> 00:00:53,440
+Quindi è ovvio ciò che faremo riferimento.
+
+14
+00:00:53,700 --> 00:00:57,480
+Finora in questo corso non abbiamo fatto alcuna crittografia o autenticazione.
+
+15
+00:00:57,480 --> 00:01:02,570
+Quindi come puoi vedere ricorda che GOPAC è protetto proprio qui.
+
+16
+00:01:02,640 --> 00:01:07,340
+E alla fine abbiamo creato un nuovo server senza alcuna opzione.
+
+17
+00:01:07,410 --> 00:01:12,480
+Andremo a prendere questo codice qui e cambieremo i client e il server.
+
+18
+00:01:12,480 --> 00:01:18,420
+Quindi la differenza è che ora per i client dovremo utilizzare GOPAC con le credenziali di trasporto
+
+19
+00:01:18,750 --> 00:01:24,780
+e i nuovi client da file e in per il nuovo server più freddo tra file e nuovo server.
+
+20
+00:01:24,780 --> 00:01:27,660
+E poi aggiungeremo queste opzioni credenziali GAAP.
+
+21
+00:01:28,110 --> 00:01:33,330
+Quindi un po 'da fare ma prima voglio guidarti attraverso lo script che useremo.
+
+22
+00:01:33,470 --> 00:01:40,080
+Così ho creato questa directory SSL e ho creato questa istruzione per il file SH.
+
+23
+00:01:40,100 --> 00:01:42,170
+Quindi lascia che ti guidi attraverso tutto.
+
+24
+00:01:42,230 --> 00:01:47,630
+Questo file è fondamentalmente un file che mi è stato ispirato da questo repository e che uso
+
+25
+00:01:47,630 --> 00:01:48,620
+a scopo personale.
+
+26
+00:01:48,620 --> 00:01:52,190
+E quindi questo file esegue fondamentalmente una serie di comandi SSL aperti.
+
+27
+00:01:52,340 --> 00:01:56,670
+Quindi non è previsto che tu esegua il tuo computer a meno che tu non abbia Linux o Mac.
+
+28
+00:01:56,750 --> 00:02:00,280
+Forse lavorerai su Windows ma devi capire come installare SSL aperto.
+
+29
+00:02:00,330 --> 00:02:04,880
+Complessivamente eseguirò questo comando per te e tutto l'output verrà generato e nel repository GET hub in modo
+
+30
+00:02:04,880 --> 00:02:07,880
+che tu possa utilizzare questi file come vuoi giocare con loro.
+
+31
+00:02:08,270 --> 00:02:12,620
+Quindi nel complesso questo è un lungo script e non mi aspetto che sia un esperto di sicurezza.
+
+32
+00:02:12,620 --> 00:02:14,920
+E mi ci è voluto un po 'per capire i comandi giusti.
+
+33
+00:02:14,930 --> 00:02:21,350
+Di conseguenza, questi vengono normalmente copiati e incollati quando necessario, ma questi generano sei file diversi e quindi la prima cosa
+
+34
+00:02:21,350 --> 00:02:25,920
+che verrà creata è un file di chiave privata della chiave dell'autorità di certificazione.
+
+35
+00:02:26,180 --> 00:02:28,060
+Quindi questo è il file chiave più importante.
+
+36
+00:02:28,070 --> 00:02:30,020
+Non dovresti condividerlo nella vita reale.
+
+37
+00:02:30,020 --> 00:02:35,270
+Ok questo è privato per chiunque possieda l'autorità di certificazione nella tua azienda.
+
+38
+00:02:35,270 --> 00:02:41,200
+Poi c'è anche quel file CRT e questo è sì tipo di dimenticare i certificati di fiducia dell'autorità.
+
+39
+00:02:41,300 --> 00:02:47,330
+E questo dovrebbe assolutamente essere condiviso con qualsiasi utente della tua azienda per avere fiducia su qualunque cosa firmerà
+
+40
+00:02:47,390 --> 00:02:48,620
+l'autorità di certificazione.
+
+41
+00:02:49,640 --> 00:02:54,500
+Quindi questo è il tipo di autorità di certificazione e poi c'è un server e
+
+42
+00:02:54,500 --> 00:02:57,980
+il server in pratica rivendica di essere un indirizzo localhost.
+
+43
+00:02:58,190 --> 00:03:03,920
+Quindi, il server prima di tutto voi per generare una chiave privata e che sarà passato protetto e questo
+
+44
+00:03:03,920 --> 00:03:05,370
+non dovrebbe essere condiviso.
+
+45
+00:03:05,420 --> 00:03:12,320
+Poi c'è quel CSR che è una richiesta di firma e questo è ciò che si invia a chiunque possieda l'autorità
+
+46
+00:03:12,380 --> 00:03:18,230
+di certificazione in modo che possano firmare il certificato e quindi aver prestato servizio al CRT.
+
+47
+00:03:18,470 --> 00:03:24,610
+Questo è ciò che ritorna dal server quando è firmato dalla CIA e lo manteniamo sul server.
+
+48
+00:03:24,670 --> 00:03:25,920
+Non dovrebbe essere condiviso
+
+49
+00:03:25,940 --> 00:03:32,600
+E infine c'è il server PTM che è una conversione del server in chiave in un formato a cui GAAP
+
+50
+00:03:32,990 --> 00:03:35,470
+piace e che non dovrebbe essere condiviso.
+
+51
+00:03:35,480 --> 00:03:38,090
+Quindi questo è molto simile a OK, cosa di sicuro non condividerei.
+
+52
+00:03:38,090 --> 00:03:44,780
+Quindi al riepilogo della critter qui e il sommario dice che foules privato è C-8 un APM server chiave
+
+53
+00:03:44,780 --> 00:03:45,650
+server chiave.
+
+54
+00:03:45,680 --> 00:03:46,970
+E così questo è il tuo ARCI.
+
+55
+00:03:47,240 --> 00:03:53,240
+Quindi questo è il tipo di autorità di certificazione e il resto sono per il server e nei
+
+56
+00:03:53,240 --> 00:03:59,750
+file che dovresti condividere è C-8 un CRT che sarà sicuramente necessario dal client e dal server che CSR sarà
+
+57
+00:03:59,750 --> 00:04:02,520
+necessario per il tipo dell'autorità dei biglietti.
+
+58
+00:04:02,540 --> 00:04:06,690
+Quindi eseguirò questo script un passo alla volta con te.
+
+59
+00:04:06,920 --> 00:04:08,310
+Non devi farlo.
+
+60
+00:04:08,370 --> 00:04:15,440
+Quindi la prima cosa che fai è stabilire sul server il nome del certificato del server e nomi comuni.
+
+61
+00:04:15,440 --> 00:04:19,670
+Quindi in questo momento sto andando a dire localhost perché tutto è sulla mia macchina.
+
+62
+00:04:19,670 --> 00:04:25,490
+Ma se tu avessi un vero esempio di vita sarebbe la mia API che l'esempio che viene o qualunque sia l'indirizzo
+
+63
+00:04:25,490 --> 00:04:27,850
+della tua API o dell'API del tuo PC.
+
+64
+00:04:28,010 --> 00:04:28,860
+OK.
+
+65
+00:04:28,970 --> 00:04:30,330
+Quindi per me è localhost.
+
+66
+00:04:30,440 --> 00:04:35,270
+Quindi aprirò questo piccolo terminale sotto questo e gestirò le cose.
+
+67
+00:04:35,270 --> 00:04:40,890
+Quindi questo fondamentalmente dice OK per il resto dei comandi server, la fine sarà chiamata localhost.
+
+68
+00:04:41,000 --> 00:04:46,550
+Ora ci assicureremo di essere nella directory SSL per il resto dei miei commenti quindi intendo la directory SSL e
+
+69
+00:04:47,270 --> 00:04:51,560
+la prima cosa che devo fare è eseguire questo comando proprio qui e questo comando
+
+70
+00:04:51,620 --> 00:04:55,110
+crea un'autorità di certificazione e l'output di esso sarà la chiave CDATA.
+
+71
+00:04:55,250 --> 00:05:00,530
+Alcuni fanno andare avanti e incollare questo e questo comando richiede un po 'di tempo perché c'è un po' di
+
+72
+00:05:00,860 --> 00:05:02,220
+casualità generato in questo comando.
+
+73
+00:05:02,420 --> 00:05:07,400
+Ma alla fine della giornata avremo la chiave segreta e sarà una chiave di crittografia forte per questo
+
+74
+00:05:07,400 --> 00:05:08,810
+tipo di autorità di ticket.
+
+75
+00:05:09,020 --> 00:05:16,340
+Il secondo Vieni e devi eseguire è questo e in pratica questo crea in C-A quel CRT che
+
+76
+00:05:16,370 --> 00:05:20,470
+è il certificato che è il certificato del certificato.
+
+77
+00:05:20,960 --> 00:05:26,080
+E quindi in pratica questo è il file che vogliamo condividere con i nostri clienti e che useremo nel nostro codice.
+
+78
+00:05:26,300 --> 00:05:29,510
+Quindi copialo qui e incollalo ed è fatto.
+
+79
+00:05:29,660 --> 00:05:33,850
+Quindi finora abbiamo una chiave segreta al posto della CRT.
+
+80
+00:05:33,890 --> 00:05:36,460
+Passo 2 Voglio iniziare a generare cose per il server.
+
+81
+00:05:36,650 --> 00:05:39,850
+Quindi la prima cosa che fai è generare una chiave privata per il server.
+
+82
+00:05:40,010 --> 00:05:42,190
+Proprio come prima alcuni problemi di comando.
+
+83
+00:05:42,200 --> 00:05:46,520
+Ora che il nome del file che creiamo è server quella chiave.
+
+84
+00:05:46,660 --> 00:05:50,440
+Dopo questo voglio firmare la chiave del server.
+
+85
+00:05:50,650 --> 00:05:54,980
+Sostanzialmente si sostiene che il nome del server sia localhost.
+
+86
+00:05:55,060 --> 00:06:02,080
+Quindi mi limiterò a incollare quel comando proprio qui e l'output sarà server su CSR che è una richiesta di firma
+
+87
+00:06:02,530 --> 00:06:04,350
+del certificato firmata dal server.
+
+88
+00:06:04,690 --> 00:06:06,270
+Quindi c'è solo il lavoro da fare.
+
+89
+00:06:08,420 --> 00:06:16,150
+OK, ora posso incollare questo comando e, in generale, abbiamo il CSR che è stato creato ora nella vita reale, manderesti
+
+90
+00:06:16,160 --> 00:06:21,560
+quel CSR via e-mail a chiunque abbia l'autorità di certificazione e andrebbero avanti ed
+
+91
+00:06:21,560 --> 00:06:26,740
+eseguiranno questo comando per firmarlo e lo firmeranno per esempio per 365 giorni.
+
+92
+00:06:27,080 --> 00:06:31,600
+Quindi sto firmando in questo momento è firmato.
+
+93
+00:06:31,820 --> 00:06:32,560
+OK.
+
+94
+00:06:32,870 --> 00:06:34,610
+Ora abbiamo un servizio che è Archie.
+
+95
+00:06:34,610 --> 00:06:35,960
+Quindi è lì che ti rimanderanno.
+
+96
+00:06:35,960 --> 00:06:37,630
+Ti rimanderebbero il server.
+
+97
+00:06:37,640 --> 00:06:38,620
+Quello è Yahtzee.
+
+98
+00:06:39,020 --> 00:06:43,930
+E ora finalmente eseguiamo l'ultimo comando per convertire i server della chiave sul server.
+
+99
+00:06:44,330 --> 00:06:48,570
+Quindi facciamolo incollare e il gioco è fatto.
+
+100
+00:06:49,110 --> 00:06:51,720
+Quindi ora abbiamo tutti questi file qui.
+
+101
+00:06:51,730 --> 00:06:53,240
+Sono pronti per l'uso.
+
+102
+00:06:53,490 --> 00:06:54,360
+Ora stiamo bene.
+
+103
+00:06:54,660 --> 00:06:59,610
+Quindi questi utenti li inserirò nel buon hub in modo da poterli riutilizzare, non devi eseguire
+
+104
+00:06:59,610 --> 00:07:04,930
+tutti questi commenti dal tuo laptop, ma questo è per mostrarti come li ho gestiti e cosa fanno.
+
+105
+00:07:05,010 --> 00:07:06,000
+OK.
+
+106
+00:07:06,000 --> 00:07:11,070
+Quindi, dopo dobbiamo andare e in realtà cambiare un server e un client.
+
+107
+00:07:11,610 --> 00:07:16,250
+Quindi andiamo al server e andiamo a vedere quali modifiche dobbiamo apportare.
+
+108
+00:07:16,710 --> 00:07:23,890
+Quindi se vado sull'europaeus si autentica la pagina web e si guarda al server abbiamo bisogno di creare credenziali Nuccio
+
+109
+00:07:23,980 --> 00:07:27,360
+sul server da file e specificare questi due file.
+
+110
+00:07:27,360 --> 00:07:29,010
+Quindi questo è dove andrò a farlo adesso.
+
+111
+00:07:29,010 --> 00:07:30,520
+Ho intenzione di copiare quella riga.
+
+112
+00:07:31,110 --> 00:07:32,860
+Quindi ho intenzione di incollarlo.
+
+113
+00:07:33,120 --> 00:07:35,520
+E quindi dobbiamo definire questo file cert e la chiave è caduta.
+
+114
+00:07:35,670 --> 00:07:45,600
+Quindi il file di ricerca è fondamentalmente uguale al server slash SSL che CRT otterrà l'estrema destra
+
+115
+00:07:45,600 --> 00:07:54,070
+qui mentre il file chiave è uguale al server SSL che è PTM.
+
+116
+00:07:54,090 --> 00:07:54,650
+OK.
+
+117
+00:07:54,930 --> 00:08:00,440
+Ora questo colera qui genera effettivamente un errore, quindi possiamo avere un errore SSL proprio qui.
+
+118
+00:08:00,440 --> 00:08:01,800
+E quindi dobbiamo iniziare a gestire l'errore.
+
+119
+00:08:01,800 --> 00:08:08,070
+Quindi, se l'errore SSL non è nuovo, in sostanza possiamo
+
+120
+00:08:10,770 --> 00:08:24,800
+dire che il registro non ha esito negativo hanno fallito nel caricare i certificati e l'abbiamo passato l'errore e abbiamo restituito il
+
+121
+00:08:24,800 --> 00:08:27,740
+programma, tutto è buono.
+
+122
+00:08:27,830 --> 00:08:33,940
+Quindi ora dobbiamo fare la seconda parte che è quella di passare questo credito come jerkish che accredita sul
+
+123
+00:08:33,940 --> 00:08:35,150
+server delle news.
+
+124
+00:08:35,330 --> 00:08:42,980
+Quindi andremo avanti e creeremo opzioni per essere uguali a Jarkesy che le folle e queste opzioni saranno
+
+125
+00:08:43,010 --> 00:08:45,930
+passate nel nostro server di notizie.
+
+126
+00:08:45,950 --> 00:08:46,940
+Quindi questo è corretto.
+
+127
+00:08:46,970 --> 00:08:52,760
+E ora sembra che possiamo eseguire il server e assicurarci che sia abilitato SSL.
+
+128
+00:08:52,760 --> 00:08:53,720
+Quindi diamo un'occhiata.
+
+129
+00:08:55,690 --> 00:08:57,310
+Ho intenzione di eseguire il mio server e ottengo.
+
+130
+00:08:57,310 --> 00:08:58,110
+Ciao mondo.
+
+131
+00:08:58,210 --> 00:08:59,050
+Fin qui tutto bene.
+
+132
+00:08:59,040 --> 00:08:59,800
+Nessun errore
+
+133
+00:08:59,830 --> 00:09:01,550
+Quindi sembra che funzioni adesso.
+
+134
+00:09:01,570 --> 00:09:09,040
+Se andiamo al codice del cliente proprio qui e ho intenzione di scomunicare, conosci Ari e io
+
+135
+00:09:09,040 --> 00:09:15,830
+verrò fuori il resto, quindi se corri non ti aspetti che arrivi un errore.
+
+136
+00:09:15,830 --> 00:09:20,080
+Perché utilizziamo il PC come non sicuro.
+
+137
+00:09:20,330 --> 00:09:21,780
+Quindi proviamolo.
+
+138
+00:09:22,590 --> 00:09:28,150
+Io vado a correre saluta i clienti.
+
+139
+00:09:28,640 --> 00:09:31,970
+E in effetti riceviamo un errore che diciamo bene, stiamo chiamando l'avidità.
+
+140
+00:09:32,070 --> 00:09:35,770
+Il nostro PC potrebbe essere chiamato anche una descrizione non disponibile.
+
+141
+00:09:35,840 --> 00:09:37,910
+Quindi la connessione non transend fallisce.
+
+142
+00:09:37,940 --> 00:09:40,120
+Quindi questo è fondamentalmente un errore SSL.
+
+143
+00:09:40,370 --> 00:09:41,110
+Quindi non funziona.
+
+144
+00:09:41,110 --> 00:09:48,740
+Quindi abbiamo bisogno di cambiare i nostri clienti proprio qui intorno a quest'area per assicurarsi che usi meno.
+
+145
+00:09:48,800 --> 00:09:54,430
+Quindi torniamo alla documentazione e nella documentazione vediamo che ci sono credenziali uguali a credenziali
+
+146
+00:09:54,430 --> 00:09:55,980
+Nuccio meno da file.
+
+147
+00:09:56,240 --> 00:10:01,450
+E poi lo passiamo come GOPAC con credenziali di credenziali di trasporto.
+
+148
+00:10:01,790 --> 00:10:03,350
+Quindi proviamoci.
+
+149
+00:10:03,350 --> 00:10:05,280
+Ho intenzione di copiare questo.
+
+150
+00:10:05,900 --> 00:10:09,870
+E quindi la prima cosa che devi fare è incollare questi crediti.
+
+151
+00:10:10,190 --> 00:10:11,510
+E quindi dobbiamo definire il file di ricerca.
+
+152
+00:10:11,510 --> 00:10:16,990
+Quindi il file cert questo sarà in effetti SSL che è il tuo t.
+
+153
+00:10:17,020 --> 00:10:17,250
+OK.
+
+154
+00:10:17,270 --> 00:10:28,060
+Questa è l'autorità di certificazione, quindi i certificati di affidabilità dell'autorità di certificazione.
+
+155
+00:10:28,520 --> 00:10:29,260
+Sembra bello.
+
+156
+00:10:29,420 --> 00:10:34,660
+E il secondo argomento è un override per il nome del server che non abbiamo bisogno di mandare semplicemente a vuoto.
+
+157
+00:10:35,150 --> 00:10:39,550
+Ora anche questo può creare un errore di Excel quindi lo avrò qui.
+
+158
+00:10:39,590 --> 00:10:41,140
+Ora quando gestisci questo errore SSL.
+
+159
+00:10:41,150 --> 00:10:52,040
+Quindi se l'errore SSL non è uguale saprai che trascineremo quel violino in aria mentre carichiamo C. UN. fiducia certificati e
+
+160
+00:10:52,200 --> 00:11:02,550
+passeremo in questo e sarà in aria in cambio.
+
+161
+00:11:02,590 --> 00:11:06,670
+Altrimenti se tutto va bene, dobbiamo passare alcune nuove opzioni.
+
+162
+00:11:06,910 --> 00:11:16,480
+Quindi avremo le opzioni Abts uguali a GOPAC con le credenziali di trasporto uguali e Baseremo gli oggetti
+
+163
+00:11:16,480 --> 00:11:17,550
+creds.
+
+164
+00:11:18,070 --> 00:11:18,990
+Quindi questo sembra buono.
+
+165
+00:11:18,990 --> 00:11:27,240
+E invece di sicurezza ora abbiamo i crediti qui le opzioni qui.
+
+166
+00:11:27,250 --> 00:11:33,370
+Quindi ora i nostri clienti sembrano essere abilitati a usare questo genere di cose per ottenere i certificati di fiducia dell'autorità.
+
+167
+00:11:33,820 --> 00:11:36,460
+Quindi è perfetto e fa una chiamata a Cuba.
+
+168
+00:11:36,470 --> 00:11:38,020
+Quindi ora vediamo se funziona.
+
+169
+00:11:42,230 --> 00:11:43,150
+E infatti ha funzionato.
+
+170
+00:11:43,160 --> 00:11:45,700
+Diventa fan dell'elicity e restituisce il saluto.
+
+171
+00:11:45,710 --> 00:11:47,260
+Quindi questo è davvero buono.
+
+172
+00:11:47,270 --> 00:11:54,230
+Così abbiamo visto come abilitare il server e il mondo dei client non è tanto un cambio di riga che fai qui
+
+173
+00:11:54,230 --> 00:11:56,830
+e qui, ma devi sapere di questi.
+
+174
+00:11:57,020 --> 00:12:01,740
+E penso che il trucco più importante sia sapere come generare correttamente i certificati.
+
+175
+00:12:01,850 --> 00:12:03,760
+Quindi buono a sapersi.
+
+176
+00:12:03,770 --> 00:12:07,610
+Buono per avere esempi che funzionano in codice che funziona per essere onesti.
+
+177
+00:12:07,610 --> 00:12:13,610
+L'altra cosa è che potresti volere avere una modalità non sicura e una modalità sicura in
+
+178
+00:12:13,610 --> 00:12:17,950
+generale. Ad esempio, puoi dire se possiamo avere questo diritto.
+
+179
+00:12:18,080 --> 00:12:26,590
+Quindi sì, possiamo dire oh sì è uguale a GAAP che è con insicurezza.
+
+180
+00:12:27,290 --> 00:12:27,890
+Destra.
+
+181
+00:12:27,910 --> 00:12:35,150
+E così possiamo vedere se e fino ad ora avremo un accordo altrettanto equo.
+
+182
+00:12:35,450 --> 00:12:41,660
+Quindi se sì, possiamo cambiarlo in realtà ogni volta che è necessario, se GLSEN faremo tutte queste
+
+183
+00:12:41,660 --> 00:12:42,220
+cose.
+
+184
+00:12:44,180 --> 00:12:50,090
+Proprio qui e dire che UPS è uguale a credenziali di credenziali di trasporto e che sembra buono.
+
+185
+00:12:50,090 --> 00:12:54,840
+Quindi ora se lo facciamo è meno vero che vero verrebbe etichettato come falso.
+
+186
+00:12:54,910 --> 00:12:57,300
+Sarà disabilitato quindi lo imposto su false adesso.
+
+187
+00:12:57,340 --> 00:13:06,580
+Quindi disabilitato e possiamo fare lo stesso tipo di logica con i server in modo che possiamo dire a noi è uguale a false se tu e
+
+188
+00:13:06,700 --> 00:13:12,210
+noi avremo un po 'di codice e nel complesso vogliamo un po' di sì come risultato.
+
+189
+00:13:12,500 --> 00:13:13,070
+Quindi
+
+190
+00:13:16,210 --> 00:13:17,160
+avremo il file cert.
+
+191
+00:13:17,190 --> 00:13:21,070
+Metterò tutto questo qui.
+
+192
+00:13:21,070 --> 00:13:24,360
+E quindi anche queste opzioni possono essere conosciute a volte.
+
+193
+00:13:24,360 --> 00:13:28,340
+Quindi dirò di si.
+
+194
+00:13:28,810 --> 00:13:31,420
+Questa è un'opzione del tipo server.
+
+195
+00:13:31,640 --> 00:13:32,820
+Quindi Vire.
+
+196
+00:13:33,540 --> 00:13:35,760
+Oh si.
+
+197
+00:13:36,050 --> 00:13:46,770
+L'opzione server Server GOPAC è fondamentalmente un'opzione di istanza che inserisce la variabile opzioni in Neal e
+
+198
+00:13:46,890 --> 00:13:49,010
+uguale a questo.
+
+199
+00:13:49,380 --> 00:13:50,320
+Ora è assegnato.
+
+200
+00:13:50,700 --> 00:13:56,280
+E ora abbiamo un codice funzionante, quindi se abbiamo bisogno di avere le opzioni del server per usare i
+
+201
+00:13:56,290 --> 00:14:00,040
+bambini, lo diciamo vero e il server sarà automaticamente abilitato a TS.
+
+202
+00:14:00,090 --> 00:14:01,870
+E per ora lo imposterò su false.
+
+203
+00:14:01,890 --> 00:14:02,900
+Quindi questo sembra buono.
+
+204
+00:14:02,950 --> 00:14:07,290
+E sembra che funzioni, assicuriamoci che quando entrambi siano falsi funziona ancora in
+
+205
+00:14:07,290 --> 00:14:08,700
+modo falso e falso.
+
+206
+00:14:08,870 --> 00:14:09,720
+Eccellente.
+
+207
+00:14:10,060 --> 00:14:13,200
+E mi limiterò a fermarlo e fermarlo.
+
+208
+00:14:13,200 --> 00:14:15,120
+Siamo sul server in modalità non sicura.
+
+209
+00:14:16,120 --> 00:14:17,760
+E otteniamo un piccolo errore.
+
+210
+00:14:17,790 --> 00:14:20,810
+Hai bisogno di un riferimento a un puntatore.
+
+211
+00:14:20,830 --> 00:14:30,040
+Il problema è che le opzioni dovrebbero essere uguali a una porzione dell'opzione server GAAP inizializzata con niente.
+
+212
+00:14:30,430 --> 00:14:37,550
+E poi nel caso in cui qualcosa è successo qualcosa aggiungi le opzioni con queste credenziali.
+
+213
+00:14:37,660 --> 00:14:40,630
+E ora per l'Europa nuove opzioni per i server.
+
+214
+00:14:40,690 --> 00:14:41,850
+Punto punto punto.
+
+215
+00:14:41,990 --> 00:14:43,420
+Per convertire questi due argomenti.
+
+216
+00:14:43,420 --> 00:14:44,840
+Quindi ora dovrebbe funzionare.
+
+217
+00:14:45,270 --> 00:14:48,350
+Proviamoci di nuovo.
+
+218
+00:14:48,460 --> 00:14:53,750
+Così eseguo il mio server sta facendo un errore nei miei clienti e il mio client funziona.
+
+219
+00:14:53,770 --> 00:14:54,650
+Quindi è perfetto
+
+220
+00:14:54,650 --> 00:15:00,780
+E ora in modalità DNS ho detto che è vero e tutti hanno detto che anche il client è vero.
+
+221
+00:15:04,720 --> 00:15:07,170
+Abbiamo un buon codice che possiamo avere nel test Debian.
+
+222
+00:15:07,210 --> 00:15:10,290
+Quindi il DNS funziona per SQL Server.
+
+223
+00:15:10,330 --> 00:15:12,650
+NTFS funziona per i client.
+
+224
+00:15:12,710 --> 00:15:13,230
+Perfezionare.
+
+225
+00:15:13,300 --> 00:15:14,530
+Quindi il codice funziona.
+
+226
+00:15:14,680 --> 00:15:16,060
+Va bene così è tutto per questa lezione.
+
+227
+00:15:16,060 --> 00:15:22,300
+Hai un server che puoi attivare e disattivare DNS e lo stesso per i client e puoi portare il tuo codice
+
+228
+00:15:22,300 --> 00:15:23,400
+al livello successivo.
+
+229
+00:15:23,410 --> 00:15:23,870
+Tutto ok.
+
+230
+00:15:23,900 --> 00:15:24,680
+Docente di Sinonyx.
+

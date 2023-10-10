@@ -1,0 +1,252 @@
+1
+00:00:00,390 --> 00:00:03,490
+OK kami akan datang ke bagian lanjutan ini di GOPAC.
+
+2
+00:00:03,720 --> 00:00:07,910
+Ini masih akan menjadi banyak hal, tetapi saya ingin Anda tahu ini adalah konsep yang sangat maju.
+
+3
+00:00:07,980 --> 00:00:13,540
+Anda mungkin harus menggunakannya seperti kesalahan dan sebagainya, tetapi Anda perlu tahu bahwa ini adalah level X.
+
+4
+00:00:13,560 --> 00:00:15,180
+Baiklah, mari kita mulai.
+
+5
+00:00:15,180 --> 00:00:20,270
+Jadi kode Eric sangat penting dan saya telah melewatkannya untuk semua kelas sejauh ini karena saya
+
+6
+00:00:20,280 --> 00:00:22,070
+ingin Anda fokus pada Jarkesy.
+
+7
+00:00:22,350 --> 00:00:24,570
+Tapi sekarang mari kita mulai berurusan dengan kesalahan.
+
+8
+00:00:24,630 --> 00:00:29,030
+Jadi pada dasarnya sangat umum bagi API Anda untuk terkadang mengembalikan kode kesalahan.
+
+9
+00:00:29,040 --> 00:00:30,600
+Semua bisa salah.
+
+10
+00:00:30,600 --> 00:00:34,680
+Jadi di HGP biasanya dalam istirahat APC ada banyak kode kesalahan.
+
+11
+00:00:34,830 --> 00:00:37,280
+Ada 200 200 atau.
+
+12
+00:00:37,470 --> 00:00:44,220
+Jadi 2 x x x untuk sukses 3 x x untuk apa pun melalui X adalah ketika ada kesalahan dan 5:55 X ketika sesuatu yang
+
+13
+00:00:44,220 --> 00:00:44,770
+lain.
+
+14
+00:00:44,790 --> 00:00:46,630
+Jadi banyak kode kesalahan yang benar.
+
+15
+00:00:46,770 --> 00:00:52,230
+HTP menyatakan dengan baik bahwa kode-kode ini terstandarisasi mereka benar-benar tidak begitu jelas dan
+
+16
+00:00:52,230 --> 00:00:53,250
+orang menyalahgunakannya.
+
+17
+00:00:53,250 --> 00:01:00,270
+Jadi pendekatan Anda adalah bahwa alih-alih begitu banyak kode kesalahan hanya ada beberapa kode kesalahan dan hanya akan menunjukkan
+
+18
+00:01:00,270 --> 00:01:03,710
+kepada Anda tautannya atau setelah dokumen bisa sangat berantakan.
+
+19
+00:01:03,840 --> 00:01:08,670
+Jadi ada juga referensi lengkap untuk implementasi kode kesalahan yang menyebabkan banyak mendapatkan dokumentasi
+
+20
+00:01:08,730 --> 00:01:09,260
+ini.
+
+21
+00:01:09,260 --> 00:01:11,710
+Anda sakit dan kita akan melihat ini sebentar lagi.
+
+22
+00:01:11,730 --> 00:01:17,550
+Akhirnya, jika suatu aplikasi mengembalikan informasi tambahan di atas kesalahan, ia dapat menggunakan konteks metadata
+
+23
+00:01:17,610 --> 00:01:22,200
+hanya dengan menggunakan fasilitas udara dan kita akan melihatnya pada detik.
+
+24
+00:01:22,440 --> 00:01:25,430
+Jadi tanpa menunggu lebih jauh mari kita pergi kepada Anda atau yang lain.
+
+25
+00:01:25,560 --> 00:01:31,020
+Sekarang hal pertama yang akan Anda lihat adalah ada bagian penanganan udara di area panduan
+
+26
+00:01:31,020 --> 00:01:31,980
+penanganan debugging.
+
+27
+00:01:31,980 --> 00:01:36,160
+Jadi ada dasarnya membantu menjelaskan cara kerja udara.
+
+28
+00:01:36,360 --> 00:01:39,570
+Dan ada beberapa dokumentasi dan beberapa hal dan seterusnya di sini.
+
+29
+00:01:39,720 --> 00:01:44,690
+Jadi yang ingin Anda lakukan adalah gulir ke bawah dan Anda akan melihat bahwa ada beberapa kode status.
+
+30
+00:01:44,730 --> 00:01:45,370
+BAIK.
+
+31
+00:01:45,570 --> 00:01:47,970
+Dan kode status ini cukup spesifik.
+
+32
+00:01:48,030 --> 00:01:52,710
+Jadi pada dasarnya mereka memberitahu Anda bahwa jika berdasarkan kasus status apa yang bisa dilemparkan.
+
+33
+00:01:52,740 --> 00:01:56,020
+Dan lagi ini hanya beberapa pedoman.
+
+34
+00:01:56,020 --> 00:02:01,210
+Jadi, jika klien membatalkan permintaan, kami katakan itu dibatalkan jika batas waktu telah terlampaui.
+
+35
+00:02:01,230 --> 00:02:05,900
+Kami duduk dan melihat bahwa jika itu tidak diterapkan dan diterapkan tidak tersedia dan tidak diketahui tidak diketahui maka ketika
+
+36
+00:02:05,970 --> 00:02:10,520
+ada beberapa kegagalan jaringan kami mendapatkan tenggat waktu X. kamu tidak tersedia
+
+37
+00:02:10,710 --> 00:02:16,440
+Dan kemudian ada kesalahan protokol dan ini akan diterapkan dan tangan akan menggunakan status spesies kita
+
+38
+00:02:16,470 --> 00:02:17,110
+internal.
+
+39
+00:02:17,310 --> 00:02:22,380
+Jika ada beberapa masalah yang tidak diterapkan jika tidak diimplementasikan dan kemudian Anda hanya mendapatkan banyak hal yang
+
+40
+00:02:22,410 --> 00:02:22,770
+berbeda.
+
+41
+00:02:22,830 --> 00:02:25,720
+Dan jika anak atau sumber daya internal habis.
+
+42
+00:02:25,740 --> 00:02:26,240
+BAIK.
+
+43
+00:02:26,550 --> 00:02:32,200
+Jadi seperti yang Anda lihat jika kami menghitung jumlah kesalahan ada sumber daya yang tidak diimplementasikan internal habis.
+
+44
+00:02:32,310 --> 00:02:39,330
+TIDAK DIKETAHUI Dan saya pikir ini rencana yang terlampaui dan beberapa yang lain tapi itu ada delapan atau sembilan
+
+45
+00:02:39,480 --> 00:02:40,620
+dan itu sengaja.
+
+46
+00:02:40,620 --> 00:02:41,230
+BAIK.
+
+47
+00:02:41,550 --> 00:02:44,620
+Jadi mereka cukup eksplisit dan cukup mudah digunakan.
+
+48
+00:02:44,670 --> 00:02:47,630
+Jadi kita akan melihat ini di tangan sekarang untuk GOP.
+
+49
+00:02:47,650 --> 00:02:50,820
+Ada situs web yang benar-benar luar biasa.
+
+50
+00:02:50,820 --> 00:02:57,090
+Ini disebut panduan praktis untuk kesalahan PC Anda dan dilengkapi dengan repositori kode sendiri yang mengimplementasikan
+
+51
+00:02:57,120 --> 00:02:58,100
+semuanya OK.
+
+52
+00:02:58,320 --> 00:03:05,070
+Jadi apa yang kita miliki di sini adalah kode untuk semua bahasa ini C ++ objek tajam go node yang Anda lihat
+
+53
+00:03:05,070 --> 00:03:08,840
+Python Ruby swift dan Skala semua bahasa ini pada dasarnya di sini.
+
+54
+00:03:09,040 --> 00:03:14,120
+Dia memberi tahu kami situs web bagaimana melakukannya untuk server dan bagaimana melakukannya untuk klien.
+
+55
+00:03:14,310 --> 00:03:15,970
+Seperti yang Anda lihat, Java tidak ada.
+
+56
+00:03:16,010 --> 00:03:18,390
+Jadi dalam kursus Jella, kami semua harus melihat ini.
+
+57
+00:03:18,780 --> 00:03:22,220
+Tetapi pada dasarnya itu cukup eksplisit dan sangat menakjubkan bagi kami.
+
+58
+00:03:22,220 --> 00:03:25,770
+Kami memiliki panduan cepat dalam bahasa apa pun untuk menangani pengecualian.
+
+59
+00:03:25,770 --> 00:03:26,790
+Jadi begitu.
+
+60
+00:03:26,790 --> 00:03:30,350
+Dan kemudian pada Herb nya, Anda dapat menemukan semua kode yang terkait.
+
+61
+00:03:30,540 --> 00:03:32,790
+Jadi, Anda tahu semua tentang kesalahan.
+
+62
+00:03:32,790 --> 00:03:34,410
+Saya yakin Anda ingin menerapkannya.
+
+63
+00:03:34,410 --> 00:03:36,090
+Jadi di tangan mereka, kita akan melakukannya.
+

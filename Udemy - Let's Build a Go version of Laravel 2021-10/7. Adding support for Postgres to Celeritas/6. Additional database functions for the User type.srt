@@ -1,0 +1,887 @@
+1
+00:00:01,370 --> 00:00:02,840
+So let's keep working on the user model.
+
+2
+00:00:02,960 --> 00:00:09,100
+And this is inside the data directory in my app, and as I said before, this is not code.
+
+3
+00:00:09,110 --> 00:00:14,090
+We're going to ask the end user to write this is code that will automatically be added to a project
+
+4
+00:00:14,450 --> 00:00:17,780
+when we run a command line utility, which we haven't started yet.
+
+5
+00:00:18,320 --> 00:00:23,960
+And type something like celebrities make off and that will generate all of the appropriate database
+
+6
+00:00:23,960 --> 00:00:26,870
+tables and the models for authentication.
+
+7
+00:00:27,350 --> 00:00:32,180
+But before we go too much further, I did have a mistake last time around, as I sometimes do, and
+
+8
+00:00:32,180 --> 00:00:33,380
+it's inside that token.
+
+9
+00:00:33,380 --> 00:00:37,160
+Don't go far and it's right here the expires.
+
+10
+00:00:37,640 --> 00:00:41,180
+This in the database is not called expired expires.
+
+11
+00:00:41,180 --> 00:00:42,470
+It's called expiring.
+
+12
+00:00:42,980 --> 00:00:48,830
+And that's something that I often do is I spend way too much time agonizing over what variables and
+
+13
+00:00:49,430 --> 00:00:51,050
+database fields should be called.
+
+14
+00:00:51,050 --> 00:00:55,070
+And apparently, at some point in the past, I thought it should be called expires, but ultimately
+
+15
+00:00:55,070 --> 00:00:56,720
+went back to expiry anyway.
+
+16
+00:00:56,720 --> 00:00:57,590
+That takes care of that.
+
+17
+00:00:58,640 --> 00:01:00,980
+Now let's go back to user Dongo, and let's look at that.
+
+18
+00:01:00,980 --> 00:01:06,230
+Get all function right here on Line twenty five in User ID and go in my code.
+
+19
+00:01:07,280 --> 00:01:10,220
+Well, this actually has a condition, a parameter it accepts.
+
+20
+00:01:10,220 --> 00:01:14,720
+But the name of this method or this function get all implies there is no condition.
+
+21
+00:01:14,720 --> 00:01:16,280
+I want to get all users.
+
+22
+00:01:16,400 --> 00:01:17,150
+So let's fix that.
+
+23
+00:01:17,390 --> 00:01:18,310
+We'll just get rid of this.
+
+24
+00:01:18,980 --> 00:01:23,030
+And I had that in there just so we could see how conditions work, but we'll be working with those a
+
+25
+00:01:23,030 --> 00:01:24,290
+lot as time goes on.
+
+26
+00:01:25,070 --> 00:01:27,780
+So all we have to do is delete that parameter and delete this.
+
+27
+00:01:27,980 --> 00:01:30,770
+And we also maybe we should order them by last name.
+
+28
+00:01:30,770 --> 00:01:35,750
+So I'll say order by and I just order by the following last name.
+
+29
+00:01:36,530 --> 00:01:36,890
+OK.
+
+30
+00:01:37,040 --> 00:01:37,970
+So that takes care of that.
+
+31
+00:01:38,510 --> 00:01:41,930
+So we have get all which returns all users.
+
+32
+00:01:42,200 --> 00:01:47,450
+We have to get by email, which returns a user by email and includes a token, if any.
+
+33
+00:01:47,900 --> 00:01:50,000
+What other kinds of functions do we want?
+
+34
+00:01:50,030 --> 00:01:52,370
+Well, maybe we want to be able to get a user by ID.
+
+35
+00:01:52,640 --> 00:01:53,900
+That's something you're going to do a lot.
+
+36
+00:01:54,350 --> 00:01:55,400
+So let's add a new function.
+
+37
+00:01:55,790 --> 00:02:03,890
+Func and again, it's tied to the receiver point to user, and we'll just call this one get and it will
+
+38
+00:02:03,890 --> 00:02:10,730
+take one parameter ID, which is an integer, and it will return potentially a pointer to a user and
+
+39
+00:02:10,850 --> 00:02:11,870
+possibly an error.
+
+40
+00:02:13,220 --> 00:02:15,330
+And again, this is really straightforward.
+
+41
+00:02:15,350 --> 00:02:20,120
+So we declare the variable that we're going to read the results into and I'll call it the user like
+
+42
+00:02:20,120 --> 00:02:22,400
+I did before and it's a type user.
+
+43
+00:02:23,510 --> 00:02:32,060
+Then we create our collection and that's a sign of the value of Upper Dot collection, and we get the
+
+44
+00:02:32,060 --> 00:02:33,760
+table name from Udeid Table.
+
+45
+00:02:36,110 --> 00:02:38,630
+Then we get a result, which I'll call Rez.
+
+46
+00:02:39,530 --> 00:02:42,500
+And that's a sign the value of from the collection variable.
+
+47
+00:02:42,500 --> 00:02:51,410
+We just got Dot find and we specify or condition abscond and in curly brackets, Heidi.
+
+48
+00:02:52,160 --> 00:02:53,300
+And that should be equal to it.
+
+49
+00:02:54,860 --> 00:02:59,810
+And as I said before, you can if you want to put the equal sign in there, but if you leave out any
+
+50
+00:02:59,810 --> 00:03:02,480
+comparison operator equals is assumed.
+
+51
+00:03:02,870 --> 00:03:03,200
+OK.
+
+52
+00:03:04,460 --> 00:03:06,020
+And then we read the result in the variable.
+
+53
+00:03:06,590 --> 00:03:14,840
+So we'll say error is assign the value of reds and I'm only expecting to find one.
+
+54
+00:03:15,710 --> 00:03:20,450
+So we'll use the one function and I'm going to read it into the user.
+
+55
+00:03:22,250 --> 00:03:30,140
+And if there's an error, if error is not equal to nil, then I'll return nil and the error.
+
+56
+00:03:31,180 --> 00:03:33,230
+But assuming we got that far.
+
+57
+00:03:33,470 --> 00:03:34,490
+What do we want to do next?
+
+58
+00:03:37,030 --> 00:03:41,890
+We'll get the token and we'll check for expired tokens, and that's pretty much exactly the same logic
+
+59
+00:03:41,890 --> 00:03:42,850
+we have up here.
+
+60
+00:03:43,300 --> 00:03:47,140
+So a copy that and paste it down here.
+
+61
+00:03:50,540 --> 00:03:58,190
+And all I have to do is return a reference to the user because we're returning a pointer and no.
+
+62
+00:03:59,360 --> 00:04:00,230
+And that takes care of it.
+
+63
+00:04:00,470 --> 00:04:04,160
+So now we can get a user by email, we can get a user by ID.
+
+64
+00:04:04,970 --> 00:04:07,190
+And of course, there's other things we want to do here.
+
+65
+00:04:07,490 --> 00:04:09,710
+We also want to be able to update users.
+
+66
+00:04:09,770 --> 00:04:11,000
+So let's create a new function.
+
+67
+00:04:11,220 --> 00:04:12,590
+I'll give ourselves some room here.
+
+68
+00:04:14,630 --> 00:04:15,920
+Thank you.
+
+69
+00:04:16,820 --> 00:04:19,100
+User pointed to user, That's our receiver.
+
+70
+00:04:19,860 --> 00:04:24,650
+We'll just call this one update and we're going to update in this case, the user and we'll pass the
+
+71
+00:04:24,650 --> 00:04:29,450
+entire model user and we'll return an error, possibly.
+
+72
+00:04:31,190 --> 00:04:33,320
+So this is really, really simple.
+
+73
+00:04:33,440 --> 00:04:39,200
+And one of the nice features of using something like upper, even though I prefer to do a sequel, is
+
+74
+00:04:39,200 --> 00:04:47,180
+that it's much less code so I can write the user dot updated at because we want to make sure that's
+
+75
+00:04:47,300 --> 00:04:50,080
+updated to the current timestamp time.
+
+76
+00:04:50,120 --> 00:04:58,580
+OK, now one line, then we get our collection that's assigned the value of or down collection.
+
+77
+00:04:59,480 --> 00:05:04,190
+And again, we call you Dot Table that gets her collection.
+
+78
+00:05:05,450 --> 00:05:08,030
+We get a results that result is equal to.
+
+79
+00:05:10,780 --> 00:05:14,530
+Collection, not find try that again.
+
+80
+00:05:18,350 --> 00:05:24,260
+Collection find, and we're going to find by these Friday, the user.
+
+81
+00:05:24,530 --> 00:05:25,030
+Got it.
+
+82
+00:05:25,670 --> 00:05:28,490
+You're updating existing users, so there's already an either.
+
+83
+00:05:29,360 --> 00:05:33,200
+We'll check for an error and say resource update.
+
+84
+00:05:33,740 --> 00:05:42,530
+And we're going to update you using the user a reference to the the user, which we actually received
+
+85
+00:05:42,530 --> 00:05:44,270
+as a call to this function.
+
+86
+00:05:44,840 --> 00:05:54,860
+And we check for there if error is not equal to nil return error, otherwise return nil.
+
+87
+00:05:56,580 --> 00:06:05,220
+So that is what one two three four five six seven eight nine ten lines of code, including the actual
+
+88
+00:06:05,220 --> 00:06:06,240
+function signature.
+
+89
+00:06:07,480 --> 00:06:11,260
+And we update a user record with that little bit of code.
+
+90
+00:06:11,350 --> 00:06:12,400
+So that's pretty straightforward.
+
+91
+00:06:13,390 --> 00:06:19,600
+So now we can find all the users, we can get a user by email, we can get a user by ID, we can update
+
+92
+00:06:19,600 --> 00:06:20,140
+a user.
+
+93
+00:06:20,200 --> 00:06:21,100
+What else do we need to do?
+
+94
+00:06:21,160 --> 00:06:23,200
+Well, we also need to delete users.
+
+95
+00:06:23,230 --> 00:06:29,740
+So thank you pointer to user, and we'll just call this one delete and we'll delete.
+
+96
+00:06:29,740 --> 00:06:33,880
+Saved by ID ident and we'll return an error.
+
+97
+00:06:35,440 --> 00:06:48,010
+Potentially exactly the same logic collection is assigned the value of upper collection, and we call
+
+98
+00:06:48,010 --> 00:06:51,100
+you a table that gives us our collection.
+
+99
+00:06:51,850 --> 00:06:55,120
+Rez is assigned the value of collection.
+
+100
+00:06:55,450 --> 00:07:00,100
+Got fined and we're going to find by ID and I will delete it.
+
+101
+00:07:00,460 --> 00:07:06,520
+Error is a the value of resort delete with no parameters and we check for an error.
+
+102
+00:07:07,150 --> 00:07:15,700
+So I was copy and paste this code pasted here and now we can delete users priority.
+
+103
+00:07:16,210 --> 00:07:17,440
+So what else do we need to do?
+
+104
+00:07:17,650 --> 00:07:19,900
+Well, we also need to be able to insert users.
+
+105
+00:07:19,990 --> 00:07:25,990
+So let's say thank you pointer to user and we'll call it insert.
+
+106
+00:07:26,350 --> 00:07:35,050
+And it will take one parameter the user of type user, and it will return an integer, which is the
+
+107
+00:07:35,050 --> 00:07:39,430
+ID of the newly inserted record and potentially an error if something goes wrong.
+
+108
+00:07:40,690 --> 00:07:47,800
+Same logic as before, except that we have a password field for users, so we actually need to generate
+
+109
+00:07:48,040 --> 00:07:50,140
+a hash from a password.
+
+110
+00:07:50,590 --> 00:07:52,960
+Unfortunately, Go makes that remarkably easy.
+
+111
+00:07:53,140 --> 00:08:00,100
+So we'll say I'll call the hashed password or the hash of the password hash because we're going to create
+
+112
+00:08:00,100 --> 00:08:02,200
+a new hash and potentially an error.
+
+113
+00:08:02,590 --> 00:08:07,360
+And those are populated by calling from the standard library Decrypt
+
+114
+00:08:09,850 --> 00:08:14,950
+Dot generate from a password.
+
+115
+00:08:16,990 --> 00:08:19,330
+And that requires two parameters.
+
+116
+00:08:19,390 --> 00:08:22,780
+The first one is a slice of bytes, so a slice of byte.
+
+117
+00:08:22,780 --> 00:08:26,740
+We're going to cast the value of whatever the password is.
+
+118
+00:08:27,460 --> 00:08:32,350
+The user password and how expensive do we want to make this operation?
+
+119
+00:08:32,420 --> 00:08:35,020
+Twelve is a really good number for that sort of thing.
+
+120
+00:08:36,010 --> 00:08:38,410
+We'll check for error if error is not equal to nil.
+
+121
+00:08:39,820 --> 00:08:44,980
+Then we'll return, say, zero for the ID because the insert didn't take place and the error.
+
+122
+00:08:47,200 --> 00:08:54,700
+Now, for some reason, it did not import B for me, so I can fix that up here and import B script and
+
+123
+00:08:54,700 --> 00:08:55,750
+that is from.
+
+124
+00:08:56,890 --> 00:09:05,350
+Golang dot org slash x slash crypto slash decrypt.
+
+125
+00:09:08,320 --> 00:09:16,170
+Not to make this all work, just say go on vendor that should go and get that package for me acting.
+
+126
+00:09:16,870 --> 00:09:17,230
+OK.
+
+127
+00:09:17,650 --> 00:09:21,640
+That's one of the irritating things about using Go Mod vendor, but it's not that difficult.
+
+128
+00:09:22,240 --> 00:09:26,430
+So let's go back down here, and I think I said that the crypto is part of the standard library.
+
+129
+00:09:26,440 --> 00:09:27,070
+It's not.
+
+130
+00:09:27,070 --> 00:09:33,130
+It's part of the well, you can see right from the URL that we imported Googling dot or slash x.
+
+131
+00:09:33,130 --> 00:09:36,500
+So it's part of GO, but it's not actually included in the standard library.
+
+132
+00:09:37,030 --> 00:09:38,970
+But anyway, anyway, it's made by the go authors.
+
+133
+00:09:38,980 --> 00:09:39,880
+So I'm OK with it.
+
+134
+00:09:41,080 --> 00:09:42,430
+So now we have our new hash.
+
+135
+00:09:43,240 --> 00:09:45,190
+Now let's make sure that.
+
+136
+00:09:46,430 --> 00:09:52,250
+They created and updated values are set to time Dot now because we're inserting a new user, so we'll
+
+137
+00:09:52,250 --> 00:10:02,630
+just make sure they use are not created as equals time dot now and the user updated is equal to time
+
+138
+00:10:02,630 --> 00:10:03,260
+dot now.
+
+139
+00:10:04,390 --> 00:10:07,730
+Now they may have been set by the end user, but I never assume anything.
+
+140
+00:10:08,420 --> 00:10:11,090
+And we also need to populate the password with the new hash.
+
+141
+00:10:11,210 --> 00:10:18,290
+So the user password and that's needs to be in the form of a string and what we get back from generate
+
+142
+00:10:18,290 --> 00:10:20,150
+from password is actually a slice of bytes.
+
+143
+00:10:20,510 --> 00:10:24,170
+So we'll just say string new hash.
+
+144
+00:10:27,890 --> 00:10:33,440
+OK, now it's as simple as calling getting a collection.
+
+145
+00:10:33,950 --> 00:10:43,400
+So collection was assigned the value of the upper dot collection from you to the table or UK table.
+
+146
+00:10:46,670 --> 00:10:53,630
+And we say Red's an error and we call on the collection variable, the method insert, and we're going
+
+147
+00:10:53,630 --> 00:10:57,410
+to insert the user and we'll check for an error.
+
+148
+00:10:58,100 --> 00:11:04,160
+If error is not equal to nil, then we'll return zero and the error.
+
+149
+00:11:10,400 --> 00:11:16,970
+Now we want the first return parameter from the insert function that we're the one we're working on
+
+150
+00:11:16,970 --> 00:11:20,270
+right now to actually be an integer.
+
+151
+00:11:20,510 --> 00:11:26,840
+And of course, the problem is that different databases return that sort of thing in a different format.
+
+152
+00:11:27,710 --> 00:11:33,720
+So I can't just say return resort I.D., which is a function available to us.
+
+153
+00:11:33,740 --> 00:11:41,150
+Instead, I need to convert that to an ant because this function might be called using Postgres or MariaDB
+
+154
+00:11:41,450 --> 00:11:46,370
+or MongoDB or any of the databases that are supported by the Upper Dev package.
+
+155
+00:11:47,180 --> 00:11:53,360
+So what I'm going to do is go back over to the models start go, which will be added automatically,
+
+156
+00:11:53,360 --> 00:11:54,560
+just like the user package.
+
+157
+00:11:54,860 --> 00:12:03,740
+I'm going to add a function here and I'll call it get insert ID and it will take one parameter, which
+
+158
+00:12:03,740 --> 00:12:10,910
+is an AI, and it will be a type that we get from the DB two package, which is actually as you can
+
+159
+00:12:10,910 --> 00:12:16,040
+see it in the import statement, GitHub dot com slash upper slash DB slash v4.
+
+160
+00:12:16,220 --> 00:12:22,730
+So I'm going to make this type DB two dart ID and it's going to always return in int.
+
+161
+00:12:23,120 --> 00:12:23,480
+OK.
+
+162
+00:12:24,970 --> 00:12:32,890
+So we'll declare a variable aid type is a sign, the value of what you need to get the ID type from
+
+163
+00:12:33,580 --> 00:12:35,710
+the variable I that's passed to this.
+
+164
+00:12:35,860 --> 00:12:36,750
+And that's you go.
+
+165
+00:12:36,760 --> 00:12:37,480
+That's really easy.
+
+166
+00:12:37,630 --> 00:12:44,890
+You just called the format package and you look for a printout and you put it in a format string and
+
+167
+00:12:44,890 --> 00:12:47,260
+it's nothing more than a percent uppercase T.
+
+168
+00:12:48,910 --> 00:12:55,000
+We substitute the I for that percent percent uppercase T, and that will give us the type.
+
+169
+00:12:55,750 --> 00:13:05,410
+Now we just say if I type is equal to in sixty four, and that's what Postgres returns as the inserted
+
+170
+00:13:05,410 --> 00:13:05,620
+ID.
+
+171
+00:13:07,280 --> 00:13:13,240
+Then we'll return int I cast two in 64.
+
+172
+00:13:15,770 --> 00:13:21,170
+And if it's not of typing in 64, and that's all I care about in this course because we're just supporting
+
+173
+00:13:21,170 --> 00:13:26,740
+my skill and post-cruise, then we just return on cast to an end.
+
+174
+00:13:27,570 --> 00:13:32,750
+OK, so now we have this function available to any of the models inside of the data package.
+
+175
+00:13:33,530 --> 00:13:40,880
+So back in user doggo, all I have to do now is, say, declare a variable ID and that will be the in
+
+176
+00:13:40,880 --> 00:13:47,630
+the ID of the record we just inserted and we called yet insert ID and we handed resort ID, which is
+
+177
+00:13:47,630 --> 00:13:50,520
+the function built right into our results.
+
+178
+00:13:50,520 --> 00:13:52,340
+Set our res variable.
+
+179
+00:13:52,370 --> 00:13:59,450
+OK, so now it's in the format I needed to be so I can say return ID and no.
+
+180
+00:14:00,710 --> 00:14:02,120
+And there's our insert function now.
+
+181
+00:14:02,120 --> 00:14:04,730
+There's no validation on this yet, and don't worry about that.
+
+182
+00:14:04,760 --> 00:14:13,130
+We'll also be adding validation to every model that's included in this package in this celebrity's package.
+
+183
+00:14:13,910 --> 00:14:15,410
+But for right now, let's just get it working.
+
+184
+00:14:16,250 --> 00:14:17,450
+So we have our insert.
+
+185
+00:14:17,720 --> 00:14:21,590
+Now what other things and these are things specific to the user model?
+
+186
+00:14:21,920 --> 00:14:25,400
+What other things are we possibly going to have to do?
+
+187
+00:14:25,520 --> 00:14:27,470
+Well, we need to add users.
+
+188
+00:14:27,470 --> 00:14:29,360
+We can do that and update them.
+
+189
+00:14:29,360 --> 00:14:31,330
+We can do that and delete them.
+
+190
+00:14:31,340 --> 00:14:37,160
+We can do that and get a list of all the users or get a user by email or by ID.
+
+191
+00:14:38,030 --> 00:14:42,290
+But users also very frequently have to reset their password.
+
+192
+00:14:42,350 --> 00:14:43,520
+So let's read a function for that.
+
+193
+00:14:43,790 --> 00:14:44,750
+Thank you.
+
+194
+00:14:44,780 --> 00:14:54,850
+Point your to user and we'll just call this reset password and it will take an ID, which is the user
+
+195
+00:14:54,860 --> 00:15:01,910
+ID, and it will take the new password, which will be a string and will return, potentially here.
+
+196
+00:15:02,420 --> 00:15:04,160
+And again, this is really, really simple.
+
+197
+00:15:04,700 --> 00:15:10,010
+So we do need to generate a new hash for the password, whatever they're changing a password to, and
+
+198
+00:15:10,010 --> 00:15:15,770
+that's pretty much the same as what we did right at the insert function, new hash in error or assign
+
+199
+00:15:15,770 --> 00:15:18,620
+the value of from the Decrypt package.
+
+200
+00:15:19,280 --> 00:15:21,110
+And we're going to say generate from password.
+
+201
+00:15:22,550 --> 00:15:24,560
+And again, we need a slice of bytes.
+
+202
+00:15:24,560 --> 00:15:33,200
+So we'll cast password to a slice of bytes and we'll use the 12 as a how complex to make this this hash,
+
+203
+00:15:33,980 --> 00:15:38,360
+if error is not equal to nil and we'll just return the error.
+
+204
+00:15:41,820 --> 00:15:44,250
+And now we just update the user's password.
+
+205
+00:15:44,610 --> 00:15:49,440
+And that's as simple as calling the user and potentially an error.
+
+206
+00:15:51,180 --> 00:15:56,670
+We're going to populate the user with the user record from the database and we'll just call you don't
+
+207
+00:15:56,670 --> 00:15:59,640
+get which we've already written, so we can call that a at the.
+
+208
+00:16:00,870 --> 00:16:02,880
+And again, if there's an error or turn the error.
+
+209
+00:16:02,900 --> 00:16:06,390
+So let me copy this and paste it here.
+
+210
+00:16:07,350 --> 00:16:15,510
+So now let's take you which is the receiver for this function and say the use password is equal to string
+
+211
+00:16:15,900 --> 00:16:16,590
+new hash.
+
+212
+00:16:19,620 --> 00:16:30,180
+And now updating the user as simple as saying air is equal to the user DAAD update with a pointer to
+
+213
+00:16:30,870 --> 00:16:35,460
+you and we'll check for an error, so we'll just copy this code
+
+214
+00:16:38,910 --> 00:16:39,900
+and paste it right here.
+
+215
+00:16:41,130 --> 00:16:42,240
+Get rid of that blank line.
+
+216
+00:16:43,950 --> 00:16:47,130
+And if we get past that, we return now.
+
+217
+00:16:48,480 --> 00:16:53,340
+OK, this lecture is beginning to get a bit long, and we've not tested any of this code yet.
+
+218
+00:16:53,340 --> 00:16:54,240
+But don't worry about that.
+
+219
+00:16:54,250 --> 00:16:58,080
+There's undoubtedly an error or two in there somewhere, but it's pretty close.
+
+220
+00:16:58,170 --> 00:17:02,340
+So we'll end this lecture here and we'll pick it up in the next one, and we'll do things like making
+
+221
+00:17:02,340 --> 00:17:08,100
+sure that a user's password matches whatever they type in and the last of the functions we need for
+
+222
+00:17:08,100 --> 00:17:12,540
+most use cases when you're doing database operations for a user.

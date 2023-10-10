@@ -1,0 +1,343 @@
+1
+00:00:01,490 --> 00:00:05,420
+So in this section of the course, we're going to start working with Sessions, and our goal will be
+
+2
+00:00:05,420 --> 00:00:10,880
+to make session management in session usage as painless as possible for the end user.
+
+3
+00:00:11,780 --> 00:00:17,590
+So before we do that, let's have a look at this page homeport jet and what we can do right now.
+
+4
+00:00:17,600 --> 00:00:18,800
+This page looks like this.
+
+5
+00:00:19,280 --> 00:00:20,940
+So there it is rendered.
+
+6
+00:00:20,960 --> 00:00:24,710
+It's just the logo in the center with celebrities and jet templates.
+
+7
+00:00:24,980 --> 00:00:30,050
+Let's put a menu underneath this that will link to all of the things we're going to be building for
+
+8
+00:00:30,050 --> 00:00:36,410
+the remainder of this course, and it will give us a very easy way to test functionality as we progress
+
+9
+00:00:36,410 --> 00:00:37,020
+through the course.
+
+10
+00:00:37,040 --> 00:00:38,030
+So let's get started.
+
+11
+00:00:38,270 --> 00:00:43,100
+Let's go back to our editor, and first of all, I'll get rid of this bit right here.
+
+12
+00:00:43,370 --> 00:00:48,590
+Jet templates and just put the title there and up here at the top where it says browser title.
+
+13
+00:00:48,830 --> 00:00:51,130
+Right now, it says celebrities are celebrities.
+
+14
+00:00:51,140 --> 00:00:52,670
+Let's just change that to welcome.
+
+15
+00:00:52,880 --> 00:00:53,210
+OK?
+
+16
+00:00:53,990 --> 00:00:56,750
+It doesn't really matter, but it makes it look nicer.
+
+17
+00:00:57,380 --> 00:01:04,580
+And right now, this one div class deflects this has a height of 100 V8, so it takes up the whole browser
+
+18
+00:01:04,580 --> 00:01:05,030
+window.
+
+19
+00:01:05,050 --> 00:01:11,570
+Let's just delete that style entirely, and let's add the class say Mty Dash five to push it down a
+
+20
+00:01:11,570 --> 00:01:11,960
+little bit.
+
+21
+00:01:12,140 --> 00:01:13,130
+Let's see what that looks like.
+
+22
+00:01:13,610 --> 00:01:17,750
+So I'll go back and refresh this page, and that is good.
+
+23
+00:01:17,960 --> 00:01:20,570
+OK, so now let's add some links underneath this.
+
+24
+00:01:21,080 --> 00:01:29,150
+So let's go back to our editor and right after this, after this div, after this second to last closing
+
+25
+00:01:29,150 --> 00:01:35,150
+div, I'll put a horizontal rule in and then I'll put a paragraph, tag things to try
+
+26
+00:01:38,150 --> 00:01:39,620
+and close the paragraph tag.
+
+27
+00:01:40,490 --> 00:01:46,550
+And I'll put a division here with a class of straight out of bootstrap list, dash and group.
+
+28
+00:01:47,390 --> 00:01:50,540
+And I'll close that div and I'll put some entries in here.
+
+29
+00:01:50,660 --> 00:01:54,980
+So first of all, a f equals and we'll go to a non-existent path.
+
+30
+00:01:55,310 --> 00:01:58,190
+Go Dash page because this is something we've already done.
+
+31
+00:01:58,790 --> 00:02:08,440
+And it's class will be list Dash Group, Dash Item List, Dash Group, Dash Item, Dash action against
+
+32
+00:02:08,630 --> 00:02:16,280
+to bootstrap and say render a go template and close that I'm going to duplicate the line and change
+
+33
+00:02:16,280 --> 00:02:16,490
+it.
+
+34
+00:02:16,700 --> 00:02:17,840
+Change this to jet.
+
+35
+00:02:18,770 --> 00:02:22,270
+So render a jet template and that will go to Jet.
+
+36
+00:02:22,400 --> 00:02:24,710
+Dash page and I'll duplicate that again.
+
+37
+00:02:24,710 --> 00:02:31,220
+And this is the one we're interested in in this section sessions and we'll say.
+
+38
+00:02:33,890 --> 00:02:34,670
+Try Sessions.
+
+39
+00:02:35,810 --> 00:02:37,160
+OK, let's see what that looks like.
+
+40
+00:02:37,190 --> 00:02:40,040
+Let's go back and refresh this.
+
+41
+00:02:40,850 --> 00:02:41,110
+All right.
+
+42
+00:02:41,240 --> 00:02:43,400
+So now I have three links and we can add more.
+
+43
+00:02:43,400 --> 00:02:46,640
+We can add our cash when we get to that and everything else we're going to build in this course.
+
+44
+00:02:46,670 --> 00:02:50,360
+OK, so let's go back and make those links active.
+
+45
+00:02:50,360 --> 00:02:51,230
+At least the first two.
+
+46
+00:02:51,530 --> 00:02:56,240
+So back to visual studio code, we want to have a go page and a check page.
+
+47
+00:02:56,240 --> 00:03:04,040
+So let's go to Route's rootstock, go in our Miami package and I'll just duplicate this twice and change
+
+48
+00:03:04,040 --> 00:03:06,050
+the first one to go to page.
+
+49
+00:03:07,280 --> 00:03:11,870
+And then we'll go to a handler that doesn't exist yet called Code Page like that.
+
+50
+00:03:12,620 --> 00:03:19,010
+And this one will be Gitesh Page and that will go to Jette page.
+
+51
+00:03:19,640 --> 00:03:26,300
+OK, so now let's go back to our handlers inside the handlers folder handlers dugout, and I'll just
+
+52
+00:03:26,300 --> 00:03:27,590
+duplicate this and modify it.
+
+53
+00:03:27,590 --> 00:03:31,070
+So I'll copy this and paste it and paste it again.
+
+54
+00:03:31,910 --> 00:03:36,980
+This one is going to be go page and this one is going to be jet page.
+
+55
+00:03:38,390 --> 00:03:43,680
+And I want this one to not use the default rendering page function.
+
+56
+00:03:43,700 --> 00:03:46,460
+Instead, we'll make that go page.
+
+57
+00:03:46,880 --> 00:03:47,300
+OK.
+
+58
+00:03:47,570 --> 00:03:54,110
+And that means we get rid of this extra parameter and we'll have this render home what we already have
+
+59
+00:03:54,110 --> 00:03:58,490
+a home page to temple, which we're not using, so we can use that one that works fine.
+
+60
+00:04:00,020 --> 00:04:04,370
+And for this one again, I don't want to use page because that will use the default renderer.
+
+61
+00:04:04,640 --> 00:04:09,110
+We'll change that to jet page, and that does have the two data parameters.
+
+62
+00:04:09,140 --> 00:04:15,290
+We'll leave them both additional and we'll make that render, say, jet dash template.
+
+63
+00:04:17,720 --> 00:04:22,340
+So let's go create jet dash template inside our views directory.
+
+64
+00:04:22,760 --> 00:04:23,510
+So a new file.
+
+65
+00:04:24,830 --> 00:04:27,680
+Jet Dash template dot jet.
+
+66
+00:04:28,940 --> 00:04:32,080
+We can just modify the home page just to make sure that it actually works.
+
+67
+00:04:32,090 --> 00:04:33,590
+So we'll open home jet.
+
+68
+00:04:34,220 --> 00:04:42,380
+Select all and copy clothes that open jet template jet pasted in there and change this to, in the title,
+
+69
+00:04:42,380 --> 00:04:44,450
+say, jet template.
+
+70
+00:04:45,290 --> 00:04:47,510
+And we'll just get rid of this stuff.
+
+71
+00:04:47,510 --> 00:04:50,600
+We just added all of that and say.
+
+72
+00:04:53,750 --> 00:05:01,250
+This page is rendered using the jet template engine.
+
+73
+00:05:02,240 --> 00:05:07,620
+OK, so everything went well, I should be able to say make restart.
+
+74
+00:05:09,480 --> 00:05:12,440
+It'll stop my application, start my application.
+
+75
+00:05:12,860 --> 00:05:18,680
+And now when I go back and reload this page, this one should work.
+
+76
+00:05:19,070 --> 00:05:20,450
+It should render a go template.
+
+77
+00:05:21,770 --> 00:05:23,180
+And it does go templates.
+
+78
+00:05:23,900 --> 00:05:26,510
+And this one should work rendering a jet template.
+
+79
+00:05:27,620 --> 00:05:28,280
+And it does.
+
+80
+00:05:28,280 --> 00:05:34,250
+This page is rendered using the jet template engine, and this one should give me a 404 page not found
+
+81
+00:05:34,250 --> 00:05:34,790
+in error.
+
+82
+00:05:35,540 --> 00:05:37,640
+And it did for a four page not found.
+
+83
+00:05:38,000 --> 00:05:38,450
+Perfect.
+
+84
+00:05:38,690 --> 00:05:40,190
+OK, so that just gets us started.
+
+85
+00:05:40,200 --> 00:05:44,840
+So now we have a place to actually start playing with sessions when we're ready to do that.
+
+86
+00:05:45,560 --> 00:05:48,830
+So in the next lecture, let's go install a session package.

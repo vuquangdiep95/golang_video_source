@@ -1,0 +1,391 @@
+1
+00:00:01,170 --> 00:00:05,820
+So before we can actually make sure that we're pushing events to our clients and receiving them properly,
+
+2
+00:00:05,970 --> 00:00:11,550
+it will be really helpful if I could actually have this work, because then I can start my application
+
+3
+00:00:11,820 --> 00:00:16,670
+and have it display as on, because we've manually set it to on in the database already.
+
+4
+00:00:17,670 --> 00:00:23,970
+And then when you talk, it actually turns the monitoring off and then we can turn it back on and wait
+
+5
+00:00:23,970 --> 00:00:25,310
+for the events to be pushed to us.
+
+6
+00:00:25,650 --> 00:00:27,360
+So let's get started doing that.
+
+7
+00:00:27,360 --> 00:00:33,300
+And I'm going to go over to my I.D. and I'm going to open LAYO jet, which is in The View's folder,
+
+8
+00:00:33,300 --> 00:00:35,100
+in the layout layouts folder.
+
+9
+00:00:35,100 --> 00:00:36,420
+And it's called Layout Yet.
+
+10
+00:00:37,200 --> 00:00:39,210
+And right here, where is that?
+
+11
+00:00:39,210 --> 00:00:40,590
+Tarballs right here in front of me.
+
+12
+00:00:40,620 --> 00:00:48,180
+OK, so in this div where I have my class form, check form switch and the label is monitoring this,
+
+13
+00:00:48,390 --> 00:00:51,240
+these lines right here correspond to this button.
+
+14
+00:00:51,720 --> 00:00:58,650
+So I'm going to put an if statement in here if and I have available to me on every template, my preference
+
+15
+00:00:58,650 --> 00:01:06,780
+map and I pass that using my render function functionality when I pass a bunch of data to every template
+
+16
+00:01:07,410 --> 00:01:18,680
+and I'm going to look for in my preference map if the value of money touring live is equal to one.
+
+17
+00:01:18,690 --> 00:01:22,650
+And remember that everything stored in the preference map is a string, then I'm going to do something
+
+18
+00:01:23,610 --> 00:01:30,210
+otherwise else and then I'll have my end and I'll just copy this.
+
+19
+00:01:31,670 --> 00:01:33,000
+I tab it over first.
+
+20
+00:01:34,710 --> 00:01:39,090
+Tablet over, copy and paste it right here, and I guess I've got a tablet, too.
+
+21
+00:01:39,270 --> 00:01:44,550
+OK, so my ID is telling me that I have two things with the same ID and that doesn't matter because
+
+22
+00:01:44,550 --> 00:01:46,470
+only one of them will show up at a given time.
+
+23
+00:01:47,160 --> 00:01:52,170
+So if it's turned on, then I want this to be checked.
+
+24
+00:01:52,560 --> 00:02:00,930
+So I will say checked on the input and if I save that, so then my application is already running and
+
+25
+00:02:00,930 --> 00:02:04,040
+reload this page it should show has checked and it does.
+
+26
+00:02:04,080 --> 00:02:11,430
+OK, so now I want this toggle to actually call some JavaScript and it already has an ID and I'm calling
+
+27
+00:02:11,430 --> 00:02:14,040
+it monitoring dash life.
+
+28
+00:02:14,730 --> 00:02:16,020
+So in my JavaScript.
+
+29
+00:02:18,440 --> 00:02:23,240
+I'll just add another event listener, so I'll put it right in here, my dumb content loaded, I'll
+
+30
+00:02:23,240 --> 00:02:31,730
+just make sure that there's actually going to be here, I'll say document get element by ID.
+
+31
+00:02:33,320 --> 00:02:35,360
+And I called it monitoring Leive.
+
+32
+00:02:36,850 --> 00:02:44,440
+And I wanted to add an event listener, and the event I'm looking for is change, and I'm just going
+
+33
+00:02:44,440 --> 00:02:47,680
+to call a function and inside of that function.
+
+34
+00:02:48,160 --> 00:02:50,460
+Well, right now, let's just make sure it's actually going to work.
+
+35
+00:02:50,470 --> 00:02:56,050
+We'll say console dialogue changed toggle it'll work.
+
+36
+00:02:56,170 --> 00:03:01,760
+I like to verify these things just to make sure that I can trap any typographical errors early on.
+
+37
+00:03:02,080 --> 00:03:06,850
+OK, so now when I toggle this, I should get a message and I do.
+
+38
+00:03:06,850 --> 00:03:08,270
+OK, so that's working properly.
+
+39
+00:03:08,830 --> 00:03:10,240
+What do I actually want to do in here?
+
+40
+00:03:10,270 --> 00:03:12,820
+I don't want to just toggle right to the console.
+
+41
+00:03:12,830 --> 00:03:20,700
+I actually want to make sure that I do something based upon the state of that check.
+
+42
+00:03:21,010 --> 00:03:25,570
+So let's find out what the state of that check is, whether it's turned on or off.
+
+43
+00:03:25,600 --> 00:03:27,760
+So I will say let enabled.
+
+44
+00:03:27,950 --> 00:03:32,260
+In other words, monitoring is enabled equal to document.
+
+45
+00:03:35,180 --> 00:03:42,860
+Get element by ID, and again, I'm going to get it from monitoring, live monitor, touring, live
+
+46
+00:03:44,450 --> 00:03:44,870
+checked.
+
+47
+00:03:46,880 --> 00:03:50,290
+So that will be true if the doc if that Torvill is turned on.
+
+48
+00:03:50,840 --> 00:04:00,590
+So I'll say if it's not enabled, in other words, if it's turned off, do something, otherwise do
+
+49
+00:04:00,590 --> 00:04:01,200
+something else.
+
+50
+00:04:02,330 --> 00:04:05,180
+So if it's not enabled, what do I actually want it to do?
+
+51
+00:04:05,660 --> 00:04:07,580
+First of all, I want to get a confirmation.
+
+52
+00:04:07,580 --> 00:04:11,570
+I want to make sure that the user knows that he or she is turning monitoring off.
+
+53
+00:04:11,750 --> 00:04:16,520
+So someone make take advantage of that attention module that we used a little while ago.
+
+54
+00:04:16,520 --> 00:04:22,450
+And I'll call the method confirm and I'll pass it some parameters, so I'll put in some HTML.
+
+55
+00:04:22,460 --> 00:04:27,230
+This will be what's being displayed and say this will stop monitoring.
+
+56
+00:04:32,830 --> 00:04:36,730
+Of all hosts and services, are you sure?
+
+57
+00:04:37,780 --> 00:04:42,100
+So that'll be the what's the message is displayed and I'm going to give it a callback.
+
+58
+00:04:43,660 --> 00:04:49,940
+And the callback is nothing more than a function that gets the result of whatever action the user chooses.
+
+59
+00:04:50,620 --> 00:04:53,890
+So function result and I'll say if result.
+
+60
+00:04:54,040 --> 00:04:58,440
+In other words, if the result is actually true, then I'll just write a comment here.
+
+61
+00:05:02,420 --> 00:05:04,190
+Want to turn?
+
+62
+00:05:04,880 --> 00:05:05,580
+Try that again.
+
+63
+00:05:06,710 --> 00:05:07,610
+Want to turn.
+
+64
+00:05:09,910 --> 00:05:21,440
+Monitoring off and I right to the console console, that log would turn monitoring off.
+
+65
+00:05:22,260 --> 00:05:26,350
+OK, so that's if the result is true.
+
+66
+00:05:26,620 --> 00:05:35,280
+If it's false, else then we'll just say document dot, get out of it by ID.
+
+67
+00:05:35,590 --> 00:05:37,180
+And again, it's monitoring live.
+
+68
+00:05:38,290 --> 00:05:40,180
+And Will said it's checked to.
+
+69
+00:05:40,180 --> 00:05:40,510
+True.
+
+70
+00:05:42,070 --> 00:05:46,420
+So basically we'll give them a confirmation dialog box.
+
+71
+00:05:46,840 --> 00:05:49,750
+If they say yeah, turn it off then we'll actually turn it off.
+
+72
+00:05:49,750 --> 00:05:55,330
+Otherwise we'll set it back to turned on the toggle and take no other action that's purely cosmetic.
+
+73
+00:05:55,900 --> 00:05:58,060
+So let's go back here, reload.
+
+74
+00:05:58,060 --> 00:06:00,430
+This monitoring is now turned on.
+
+75
+00:06:00,880 --> 00:06:02,460
+This should give me a confirmation.
+
+76
+00:06:02,620 --> 00:06:04,990
+This will stop monitoring of all hosts and services.
+
+77
+00:06:04,990 --> 00:06:05,650
+Are you sure?
+
+78
+00:06:05,650 --> 00:06:08,530
+If I say cancel, it should turn this toggle back on.
+
+79
+00:06:10,080 --> 00:06:15,390
+And it does, but if I say, OK, it should leave, it turned off and I should get something in the
+
+80
+00:06:15,390 --> 00:06:16,530
+console log.
+
+81
+00:06:17,760 --> 00:06:20,310
+Would turn monitoring off, OK, so that seems to be working.
+
+82
+00:06:20,340 --> 00:06:26,250
+All right, so how are we going to actually toggle the monitoring on and off?
+
+83
+00:06:26,280 --> 00:06:31,320
+Well, the first thing we want to do logically is we want to in the database.
+
+84
+00:06:31,320 --> 00:06:32,700
+And let's look at the database again.
+
+85
+00:06:33,150 --> 00:06:35,400
+We're looking at the preferences table.
+
+86
+00:06:35,580 --> 00:06:37,370
+I want to change this to a zero.
+
+87
+00:06:37,410 --> 00:06:41,100
+So I'm going to have to write some code that updates a preference.
+
+88
+00:06:41,430 --> 00:06:47,160
+So rather than writing one specifically for monitoring alive, maybe I'll write a more generic one in
+
+89
+00:06:47,160 --> 00:06:51,690
+case I ever want to change the already more generic function that allows me to change the preferences
+
+90
+00:06:52,650 --> 00:06:54,670
+to whatever value I want them to be.
+
+91
+00:06:55,170 --> 00:06:59,520
+And the second thing I want to do is I actually want to stop monitoring.
+
+92
+00:06:59,550 --> 00:07:03,570
+So I need to stop the the current jobs that are running in the background.
+
+93
+00:07:03,570 --> 00:07:07,590
+They're not really cron jobs, but it's the Go Chron package and that's how I think of them.
+
+94
+00:07:08,130 --> 00:07:09,180
+So we want to do that.
+
+95
+00:07:09,810 --> 00:07:12,890
+And that's all we really need to do in this case.
+
+96
+00:07:13,170 --> 00:07:14,760
+So we'll get started on that.
+
+97
+00:07:14,760 --> 00:07:19,500
+In the next lecture, we'll write the necessary database function and we'll also figure out how to start
+
+98
+00:07:19,500 --> 00:07:23,310
+and stop our monitoring process in the background.

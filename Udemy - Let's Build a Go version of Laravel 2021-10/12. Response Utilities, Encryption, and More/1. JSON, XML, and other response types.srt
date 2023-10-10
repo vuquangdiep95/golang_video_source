@@ -1,0 +1,527 @@
+1
+00:00:01,020 --> 00:00:03,930
+So this section of the course is all about responses.
+
+2
+00:00:04,140 --> 00:00:09,960
+And I'm right now, I'm looking at the documentation for Laravel and I'm looking at the HTP responses
+
+3
+00:00:09,960 --> 00:00:15,150
+section and there are some really convenient functions in here or functionality in here where I can,
+
+4
+00:00:15,150 --> 00:00:21,750
+for example, return a response as JSON just with one comment or say this response should be a file
+
+5
+00:00:21,750 --> 00:00:23,730
+download and again, a single command.
+
+6
+00:00:24,270 --> 00:00:27,480
+So we're going to implement similar functionality in celebrities.
+
+7
+00:00:27,630 --> 00:00:32,040
+Now, some of the things that you see up here, like redirects, for example, those are pretty specific
+
+8
+00:00:32,040 --> 00:00:36,800
+to Laravel and a lot of cases, but they're very easy to duplicate and go with.
+
+9
+00:00:36,810 --> 00:00:39,930
+The ones I'm really interested in are these other response types.
+
+10
+00:00:40,320 --> 00:00:42,480
+So let's see how we do that in celebrities.
+
+11
+00:00:42,990 --> 00:00:48,910
+And if we look at our code, we already have one function, right, Jason, that we used, that we wrote
+
+12
+00:00:48,910 --> 00:00:50,610
+what we did, the off token bit.
+
+13
+00:00:51,450 --> 00:00:56,340
+So we already have one response type in place the ability to respond as JSON.
+
+14
+00:00:56,880 --> 00:01:01,860
+Now we can do a similar thing and write a response as X amount, which is still using a lot of places,
+
+15
+00:01:02,100 --> 00:01:06,210
+even though I think JSON is in fact a much more intelligent data format.
+
+16
+00:01:06,240 --> 00:01:13,170
+Lots of people still use XML, so let's write a function that does that func see pointer to celebrities,
+
+17
+00:01:14,100 --> 00:01:19,140
+and we'll call this one not surprisingly, write X amount, and it will take a few parameters something
+
+18
+00:01:19,140 --> 00:01:19,870
+to write to.
+
+19
+00:01:19,890 --> 00:01:21,090
+So our response writer?
+
+20
+00:01:24,650 --> 00:01:29,120
+The status of the response, the status code we're going to give is as part of the response, which
+
+21
+00:01:29,120 --> 00:01:30,020
+is always an integer.
+
+22
+00:01:30,920 --> 00:01:34,970
+The data we want to convert to XML, we don't know what format that's going to be in.
+
+23
+00:01:34,970 --> 00:01:37,760
+So we'll call it data interface.
+
+24
+00:01:42,170 --> 00:01:45,260
+And we might want to put some additional headers in there, so I'll put headers.
+
+25
+00:01:45,290 --> 00:01:51,770
+Dot, dot dot and HTP dot header, not handler header.
+
+26
+00:01:52,250 --> 00:01:52,670
+That's better.
+
+27
+00:01:53,810 --> 00:01:55,190
+And potentially it returns an error.
+
+28
+00:01:55,220 --> 00:01:58,370
+So virtually the same signature as right, Jason.
+
+29
+00:01:58,820 --> 00:02:02,980
+And actually, the logic for doing this is pretty much the same as right Jason as well.
+
+30
+00:02:02,990 --> 00:02:05,990
+We still write an out variable and check for an error.
+
+31
+00:02:06,680 --> 00:02:11,780
+And this time we're going to call them out from the standard library dot.
+
+32
+00:02:12,620 --> 00:02:15,590
+And we want Marshall and I'm going to make it marshall and Dent.
+
+33
+00:02:15,710 --> 00:02:19,640
+Of course, you probably wouldn't do that in production, but I want to make sure that things look good
+
+34
+00:02:19,640 --> 00:02:21,050
+and I want the XFL to be readable.
+
+35
+00:02:22,520 --> 00:02:26,210
+So we're going to Marshall and Dent, and its first parameter is our data.
+
+36
+00:02:28,130 --> 00:02:30,110
+The second is a prefix, I don't want one.
+
+37
+00:02:30,530 --> 00:02:32,900
+And the third is, how do you want to indent this?
+
+38
+00:02:32,900 --> 00:02:35,360
+And I'll just put some spaces in there that'll be good enough.
+
+39
+00:02:37,580 --> 00:02:38,390
+And we check for an error.
+
+40
+00:02:38,690 --> 00:02:41,690
+If error is not equal to nil, then return it.
+
+41
+00:02:44,690 --> 00:02:47,060
+Otherwise, let's check the length of our headers.
+
+42
+00:02:47,540 --> 00:02:53,300
+If the line of headers is greater than zero, then we have a header.
+
+43
+00:02:53,300 --> 00:02:55,340
+We want to put in there and we'll put them all in.
+
+44
+00:02:57,150 --> 00:03:03,780
+For key and value, actually, this is exactly the same as this.
+
+45
+00:03:03,840 --> 00:03:06,210
+So why don't I just copy this and make life easier
+
+46
+00:03:09,030 --> 00:03:09,440
+there?
+
+47
+00:03:12,330 --> 00:03:16,890
+And next, we want to set our content type header and we want to write our status header and write it
+
+48
+00:03:16,890 --> 00:03:17,180
+out.
+
+49
+00:03:17,190 --> 00:03:20,750
+And all of that is exactly the same as this with one little change.
+
+50
+00:03:20,760 --> 00:03:24,900
+So we'll copy this will paste it in here.
+
+51
+00:03:26,850 --> 00:03:31,860
+Make an application XML and we're pretty much done with writing x amount.
+
+52
+00:03:32,610 --> 00:03:33,750
+So that's an easy one.
+
+53
+00:03:34,590 --> 00:03:40,410
+Another response type that we probably want to give is the ability to serve a file but force it to be
+
+54
+00:03:40,410 --> 00:03:41,140
+downloaded.
+
+55
+00:03:41,160 --> 00:03:43,320
+In other words, don't display it in the browser.
+
+56
+00:03:43,350 --> 00:03:51,840
+So let's make one for that Func C pointer to celebrities, and I'll call this response type download
+
+57
+00:03:51,990 --> 00:03:53,540
+file and it will.
+
+58
+00:03:53,550 --> 00:03:58,080
+Then we'll take a W HTP response writer.
+
+59
+00:04:01,200 --> 00:04:05,070
+We're also going to want the request in this, in this case, HDP dot request.
+
+60
+00:04:07,200 --> 00:04:14,070
+The full path to the file path to file and the file name, both of type string.
+
+61
+00:04:14,670 --> 00:04:15,900
+And again, we're going to check for now.
+
+62
+00:04:17,280 --> 00:04:18,270
+And this is pretty simple.
+
+63
+00:04:20,550 --> 00:04:25,310
+All we have to do is say, get the full path FP, OK?
+
+64
+00:04:25,980 --> 00:04:33,270
+That's going to be assigned the value of using the path package from the standard library dot joint.
+
+65
+00:04:35,070 --> 00:04:39,510
+And we want to join path to file and filing.
+
+66
+00:04:43,010 --> 00:04:48,830
+And now we want the file to serve, and I'm going to do a file perfect clean here just to make sure
+
+67
+00:04:48,830 --> 00:04:54,410
+that nobody's trying to trick our system and get something outside of a directory somewhere they shouldn't
+
+68
+00:04:54,410 --> 00:04:55,240
+have access to.
+
+69
+00:04:55,250 --> 00:05:02,510
+And this is really simple file to serve, which I have to spell right to serve is assigned the value
+
+70
+00:05:02,510 --> 00:05:05,400
+of file path dot clean.
+
+71
+00:05:06,980 --> 00:05:10,910
+And I'm cleaning up variable, I just declared on line 54.
+
+72
+00:05:12,530 --> 00:05:17,060
+Now we set the header type and we want this header to say, download this file, no matter what.
+
+73
+00:05:17,150 --> 00:05:19,430
+So we'll say W-, which is our response writer.
+
+74
+00:05:20,360 --> 00:05:21,440
+The header.
+
+75
+00:05:23,000 --> 00:05:25,420
+And this should not be a pointer to a response writer.
+
+76
+00:05:25,490 --> 00:05:30,770
+That's why that's not working typo w dot header dot set.
+
+77
+00:05:31,220 --> 00:05:37,010
+And we want to set the content type and because we want this to be downloaded.
+
+78
+00:05:37,430 --> 00:05:48,470
+We're going to use format dot se print F and R format string is going to be attachment eight to see
+
+79
+00:05:48,770 --> 00:05:53,240
+any anti semicolon space file name equals.
+
+80
+00:05:53,750 --> 00:05:55,640
+And then I'll escape my quote.
+
+81
+00:05:56,420 --> 00:06:04,670
+And in there I'll put a percent s and then I'll escape another quote and my substitution is just file
+
+82
+00:06:04,670 --> 00:06:04,850
+name.
+
+83
+00:06:09,890 --> 00:06:11,060
+So that gives me my header.
+
+84
+00:06:11,600 --> 00:06:19,370
+And now we just serve the file HTP da serve file, which is right from the standard library and we give
+
+85
+00:06:19,370 --> 00:06:24,050
+it W and R and file to serve.
+
+86
+00:06:27,650 --> 00:06:28,400
+And now we return.
+
+87
+00:06:28,400 --> 00:06:28,670
+Nil.
+
+88
+00:06:31,100 --> 00:06:32,690
+OK, so that's download file.
+
+89
+00:06:32,780 --> 00:06:36,890
+Now there's a few other things we may as well put in here, just things that will make it easier for
+
+90
+00:06:36,890 --> 00:06:40,250
+our users to to work with this package.
+
+91
+00:06:40,260 --> 00:06:42,140
+For example, what if a page is not found?
+
+92
+00:06:42,260 --> 00:06:48,320
+Well, I'll put in a really simple one that can be used for a lot of cases with a receiver of a pointer
+
+93
+00:06:48,320 --> 00:06:49,340
+to celebrities.
+
+94
+00:06:49,790 --> 00:06:55,840
+And I'll just call it error four or four, and that's just going to require the W, which is an ACTIVETO
+
+95
+00:06:55,850 --> 00:07:01,880
+response writer and the request, which is a pointer to dot request.
+
+96
+00:07:04,300 --> 00:07:09,100
+Now, at this point, I could write everything out, but I'm going to be doing a lot of errors.
+
+97
+00:07:09,130 --> 00:07:15,870
+Error 404 error five five hundred for internal server error, error, unauthorized things like that.
+
+98
+00:07:15,880 --> 00:07:19,450
+So rather than writing that same code out over and over.
+
+99
+00:07:19,480 --> 00:07:21,790
+Let's make it a generic function here below this one.
+
+100
+00:07:22,240 --> 00:07:30,940
+Func C pointer to celebrities and I'll call this one error status and it's gonna require the W ActiveTO
+
+101
+00:07:31,030 --> 00:07:31,780
+response writer.
+
+102
+00:07:34,610 --> 00:07:38,480
+It's going to require the request to point to ACP, don't request.
+
+103
+00:07:40,850 --> 00:07:48,120
+It's going to require the status which is in it, and all I'm going to say here is Typekit error error
+
+104
+00:07:48,120 --> 00:07:48,640
+or.
+
+105
+00:07:50,460 --> 00:07:54,120
+And I'll give it w h Typekit status.
+
+106
+00:07:54,270 --> 00:07:58,890
+Text which will translate our status into the appropriate text.
+
+107
+00:07:59,220 --> 00:08:00,330
+So I just have it status.
+
+108
+00:08:01,860 --> 00:08:03,910
+And finally, the status as in it.
+
+109
+00:08:05,760 --> 00:08:06,090
+OK.
+
+110
+00:08:06,450 --> 00:08:08,370
+And it turns out, I don't actually need the request.
+
+111
+00:08:08,380 --> 00:08:09,750
+So let's pull that one right over there.
+
+112
+00:08:09,990 --> 00:08:10,890
+So we don't need it at all.
+
+113
+00:08:11,940 --> 00:08:12,630
+Make it simpler.
+
+114
+00:08:13,140 --> 00:08:21,210
+And now up here for error of error four or four, I just call cdot error status and I hand it W and
+
+115
+00:08:21,250 --> 00:08:23,040
+a status not found.
+
+116
+00:08:29,760 --> 00:08:32,670
+Now I can copy this and paste it.
+
+117
+00:08:33,390 --> 00:08:36,990
+It just makes it clean and I'll make this one Air 500.
+
+118
+00:08:40,400 --> 00:08:44,750
+And call this status internal server error.
+
+119
+00:08:45,530 --> 00:08:46,970
+And again, I'll paste it.
+
+120
+00:08:48,360 --> 00:08:50,280
+And this one will be say error.
+
+121
+00:08:51,780 --> 00:08:52,470
+Unauthorized.
+
+122
+00:08:57,310 --> 00:09:02,380
+And this is HTP status status unauthorized?
+
+123
+00:09:06,510 --> 00:09:09,390
+And we'll do Forbidden, which is used in a lot of cases as well.
+
+124
+00:09:10,350 --> 00:09:11,220
+You're forbidden.
+
+125
+00:09:17,250 --> 00:09:18,270
+Status forbidden.
+
+126
+00:09:19,860 --> 00:09:22,950
+OK, so now we have all of these response types.
+
+127
+00:09:23,160 --> 00:09:28,800
+Now let's try a couple, a couple of them out, and in the next lecture, we'll modify the first page
+
+128
+00:09:29,250 --> 00:09:31,000
+on our celebrity application.
+
+129
+00:09:31,200 --> 00:09:38,610
+My app, that one and we'll put a link in to say, download a JSON file, download an XML file and download
+
+130
+00:09:38,610 --> 00:09:39,060
+a file.
+
+131
+00:09:39,060 --> 00:09:43,590
+And that should be sufficient to demonstrate this functionality, and we'll take care of that in the
+
+132
+00:09:43,590 --> 00:09:44,190
+next election.

@@ -1,0 +1,1251 @@
+1
+00:00:01,350 --> 00:00:05,640
+So in this section of the course, we're going to go to some things that I have deliberately left until
+
+2
+00:00:05,640 --> 00:00:06,090
+now.
+
+3
+00:00:06,690 --> 00:00:11,370
+And you might've been asking yourself and I'm looking at the database right now in my Docker image.
+
+4
+00:00:11,880 --> 00:00:14,610
+Why do we have this remember tokens table?
+
+5
+00:00:14,940 --> 00:00:17,190
+And if we look at it, you know, it's a pretty simple table.
+
+6
+00:00:17,670 --> 00:00:20,370
+It only has an ideal user ID remember token.
+
+7
+00:00:20,370 --> 00:00:22,890
+And then the standard created an updated at fields.
+
+8
+00:00:23,310 --> 00:00:25,470
+And we've never done anything with this.
+
+9
+00:00:26,040 --> 00:00:28,380
+And of course, this table will be used.
+
+10
+00:00:28,380 --> 00:00:33,390
+When someone logs in, they'll check a box or flip, flip a toggle or whatever that says, remember
+
+11
+00:00:33,390 --> 00:00:36,390
+me, so they don't have to log in every time that they come to the site.
+
+12
+00:00:37,200 --> 00:00:40,100
+And this is a really common feature, and it's a really useful feature.
+
+13
+00:00:40,140 --> 00:00:40,830
+People like it.
+
+14
+00:00:41,160 --> 00:00:43,160
+So let's implement that this time around.
+
+15
+00:00:43,170 --> 00:00:47,970
+And the reason I've left it until this late in the course is because at some point you're going to have
+
+16
+00:00:47,970 --> 00:00:53,160
+to come back and add new functionality, and this is the kind of functionality you might be adding.
+
+17
+00:00:53,160 --> 00:00:55,890
+So let's go through the process of how we're going to make this happen.
+
+18
+00:00:56,700 --> 00:01:00,650
+And I'm looking at the My App project, and here's where I'm going to build the functionality.
+
+19
+00:01:00,660 --> 00:01:05,550
+And then after we have it working, we'll move it over to this layer toss package as part of the command
+
+20
+00:01:05,550 --> 00:01:06,450
+line interface.
+
+21
+00:01:07,320 --> 00:01:11,880
+So of course, this will be added to the make off functionality, but let's get started.
+
+22
+00:01:12,090 --> 00:01:15,950
+The first thing we're going to have to have, obviously, is in our data folder.
+
+23
+00:01:15,990 --> 00:01:18,210
+We'll have to have something that describes the model.
+
+24
+00:01:18,720 --> 00:01:24,140
+So we'll create a new file in here and I'll call it remember underscore token go.
+
+25
+00:01:27,060 --> 00:01:29,340
+And of course, it's going to have a package data
+
+26
+00:01:32,130 --> 00:01:36,200
+and we create a type that describes the kind of structure we have in the database type.
+
+27
+00:01:36,210 --> 00:01:39,780
+And I'll call it remember token and it's just a struct.
+
+28
+00:01:39,960 --> 00:01:44,010
+And now we put its fields in there and the first one is ID of Typekit.
+
+29
+00:01:44,850 --> 00:01:46,320
+And this is the primary key.
+
+30
+00:01:46,350 --> 00:01:50,940
+So we use the DB descriptor like this ID and umit empty.
+
+31
+00:01:51,180 --> 00:01:52,830
+I want to leave that one out or it's not going to work.
+
+32
+00:01:54,030 --> 00:01:59,820
+So we have the ID, we have the user ID, which is also mentioned in the database that's called user
+
+33
+00:01:59,820 --> 00:02:00,600
+underscore ID.
+
+34
+00:02:02,940 --> 00:02:12,710
+Then we have the Remember token, which is a string, and in the database, I call that remember underscore
+
+35
+00:02:12,720 --> 00:02:17,970
+token and remember that the descriptor in the DB tags has to match exactly what's in the database.
+
+36
+00:02:18,870 --> 00:02:23,280
+And I have created a lot of time dot time
+
+37
+00:02:26,490 --> 00:02:34,170
+and in the database that's called created underscore that cannot duplicate that and change this one
+
+38
+00:02:34,170 --> 00:02:34,890
+to updated it
+
+39
+00:02:40,050 --> 00:02:41,250
+and updated that.
+
+40
+00:02:42,870 --> 00:02:43,750
+So let's save that.
+
+41
+00:02:44,520 --> 00:02:48,500
+So there's the type and of course, we want a table function as well func.
+
+42
+00:02:48,510 --> 00:02:55,500
+And this one will have the receiver of T remember token and we just call a table and it returns a string.
+
+43
+00:02:57,000 --> 00:02:59,190
+And all we need to put in there right now is return.
+
+44
+00:02:59,610 --> 00:03:03,300
+Remember tokens, the actual name in the database?
+
+45
+00:03:05,190 --> 00:03:10,710
+Now we're really only going to need two functions associated with the Remember token one to insert them
+
+46
+00:03:10,950 --> 00:03:12,060
+and one to delete them.
+
+47
+00:03:12,300 --> 00:03:15,060
+And that probably should be sufficient for our purposes right now.
+
+48
+00:03:15,450 --> 00:03:21,900
+So let's make those I'll call this one func with the receiver T pointer to remember token, and this
+
+49
+00:03:21,900 --> 00:03:29,250
+one's going to be called insert token and it takes a user ID, which is in it, and it takes the token,
+
+50
+00:03:29,910 --> 00:03:32,610
+which is a string, and it returns potentially in error.
+
+51
+00:03:34,320 --> 00:03:35,130
+And we just follow.
+
+52
+00:03:35,130 --> 00:03:43,260
+Our standard way of using upper collection is assign the value of Upper Dot Collection, and that takes
+
+53
+00:03:43,260 --> 00:03:45,030
+one argument to the table.
+
+54
+00:03:45,240 --> 00:03:46,560
+So that returns the table name.
+
+55
+00:03:46,560 --> 00:03:50,040
+And that's exactly what we need and that will create a Remember token.
+
+56
+00:03:53,700 --> 00:03:59,190
+Remember token is assigned the value of type, remember token, and we fill in its fields and we leave
+
+57
+00:03:59,190 --> 00:04:02,130
+it empty because that's auto updated when we insert.
+
+58
+00:04:02,640 --> 00:04:10,260
+But we need to put in User ID, which is User ID, and we need to put in remember token, which is actually
+
+59
+00:04:10,260 --> 00:04:19,140
+the token received as a call to this function and created a will be timed right now and updated.
+
+60
+00:04:19,140 --> 00:04:20,460
+It will be timed on that.
+
+61
+00:04:24,180 --> 00:04:25,170
+So we have a variable.
+
+62
+00:04:25,320 --> 00:04:26,310
+We just do the insert.
+
+63
+00:04:26,490 --> 00:04:28,240
+We don't care about the insert IDs.
+
+64
+00:04:28,270 --> 00:04:32,190
+We ignore the first return parameter, but we do check for an error there.
+
+65
+00:04:32,190 --> 00:04:40,250
+Assign the value of collection, not insert, and we're inserting Iremember token.
+
+66
+00:04:41,430 --> 00:04:42,240
+We check for an error.
+
+67
+00:04:42,900 --> 00:04:48,570
+If error is not equal to nil, return the error, otherwise return nil.
+
+68
+00:04:51,190 --> 00:04:52,120
+So that's the insert.
+
+69
+00:04:52,420 --> 00:04:59,200
+And we also need to be able to delete these funk t point or to remember token, and we'll call it delete,
+
+70
+00:05:00,850 --> 00:05:02,770
+and it just takes the Remember tokens string.
+
+71
+00:05:02,960 --> 00:05:12,370
+Remember, remember BR token, which is a string and it potentially returns in error, so we'll be deleting
+
+72
+00:05:12,370 --> 00:05:12,940
+by token.
+
+73
+00:05:13,600 --> 00:05:21,580
+So same idea collection is a sign the value of a perfect collection, and we call to the table to get
+
+74
+00:05:21,580 --> 00:05:22,210
+the table name.
+
+75
+00:05:24,940 --> 00:05:33,100
+We get a result and that's a sign the value of collection, the find and we're looking for up condition
+
+76
+00:05:36,040 --> 00:05:37,450
+and in curly brackets.
+
+77
+00:05:38,080 --> 00:05:39,760
+Remember token.
+
+78
+00:05:44,620 --> 00:05:48,460
+Followed by a colon, followed by the parameter pass to this function.
+
+79
+00:05:49,390 --> 00:05:52,690
+So we find it, and it didn't import up for us.
+
+80
+00:05:52,890 --> 00:05:59,020
+Let's try that again up and we'll just get the import from another model.
+
+81
+00:05:59,260 --> 00:06:02,210
+So we'll go to Tokyo and find out what up is.
+
+82
+00:06:02,290 --> 00:06:09,190
+It's this one less copy that and switch back to remember a token put that are imports
+
+83
+00:06:15,520 --> 00:06:17,800
+and close the parentheses there.
+
+84
+00:06:18,460 --> 00:06:28,330
+Now we have a result and we call error is a sign the value of resort delete if error is not equal to
+
+85
+00:06:28,330 --> 00:06:33,880
+nil and return the error, otherwise return null.
+
+86
+00:06:35,890 --> 00:06:42,880
+So we now have a data structure that describes our table and allows us to insert and delete tokens.
+
+87
+00:06:43,210 --> 00:06:48,550
+OK, now the next step, of course, is to figure out how we're going to implement the actual remember
+
+88
+00:06:48,550 --> 00:06:50,560
+me functionality and the far and away.
+
+89
+00:06:50,560 --> 00:06:55,990
+The easiest way to do this is to write some middleware middleware that checks for the existence of some
+
+90
+00:06:55,990 --> 00:06:56,490
+value.
+
+91
+00:06:56,770 --> 00:07:01,300
+If it finds it, it logs the user in, and if it doesn't, it just keeps going and doesn't allow the
+
+92
+00:07:01,300 --> 00:07:02,230
+user to be logged in.
+
+93
+00:07:02,440 --> 00:07:04,180
+So what I'll do is create some middleware.
+
+94
+00:07:04,300 --> 00:07:10,810
+And again, the model we created here in the data folder and the middleware we're about to create will
+
+95
+00:07:10,810 --> 00:07:16,920
+both be copied over to our template folder in a read only file system for the command line interface.
+
+96
+00:07:16,930 --> 00:07:21,820
+And when someone types make off, it will install these along with the things it's already installing.
+
+97
+00:07:22,330 --> 00:07:27,790
+But let's write the middleware first, so I'll go to my middleware folder and I'll create a new file
+
+98
+00:07:27,790 --> 00:07:29,680
+in there and I'll call it.
+
+99
+00:07:29,680 --> 00:07:31,210
+Just remember, don't go.
+
+100
+00:07:32,140 --> 00:07:35,440
+And of course, its package is middleware,
+
+101
+00:07:38,530 --> 00:07:43,420
+and we'll just write some middleware so func with a receiver of a pointer to the middleware, same as
+
+102
+00:07:43,420 --> 00:07:43,990
+the rest of them.
+
+103
+00:07:44,560 --> 00:07:45,980
+And I'll call this one check.
+
+104
+00:07:46,020 --> 00:07:48,730
+Remember, remember?
+
+105
+00:07:50,350 --> 00:07:57,750
+And it's middleware, so it takes a next parameter of Type H HDP dog handler and it returns any checkpoint
+
+106
+00:07:57,760 --> 00:07:58,180
+handler.
+
+107
+00:08:01,210 --> 00:08:05,830
+So of course, the first thing we need to check in here is whether or not the person is actually logged
+
+108
+00:08:05,830 --> 00:08:06,100
+in.
+
+109
+00:08:06,250 --> 00:08:11,740
+And of course, to do that, we have to check the session and check for the existence of a value in
+
+110
+00:08:11,740 --> 00:08:17,500
+the session called User ID with no case, I add an uppercase D, so that means I'm going to have to
+
+111
+00:08:17,500 --> 00:08:18,190
+write my middleware.
+
+112
+00:08:18,190 --> 00:08:27,430
+Like this return http dot handler func and have an inline function that gives me the two variables,
+
+113
+00:08:27,430 --> 00:08:30,880
+or at least one variable that I need access to, which is the request.
+
+114
+00:08:31,630 --> 00:08:43,960
+So W8 Sheetmetal Response Writer and our pointer to HTP request and now I check to see if the user's
+
+115
+00:08:43,960 --> 00:08:44,410
+logged in.
+
+116
+00:08:45,010 --> 00:08:50,110
+If not, then we'll use our Receiver M Dot app and then get this session.
+
+117
+00:08:51,790 --> 00:09:00,310
+Dot exists and we need to pass that are not context and we're looking for user ID like that.
+
+118
+00:09:00,550 --> 00:09:04,960
+So if that doesn't exist, then the user is not logged in.
+
+119
+00:09:06,790 --> 00:09:08,920
+OK, and we'll do something else.
+
+120
+00:09:09,640 --> 00:09:18,010
+The user is logged in, and if they're logged in, we're just going to call next dot, serve http with
+
+121
+00:09:18,010 --> 00:09:21,160
+W and R, OK?
+
+122
+00:09:21,820 --> 00:09:26,050
+But here's the part where we actually need to do some decision making to determine whether or not there's
+
+123
+00:09:26,050 --> 00:09:31,930
+some value we can look at and determine if it's valid and if it is, then let the person be logged in
+
+124
+00:09:31,930 --> 00:09:34,420
+automatically log them in and if it's not, do something else.
+
+125
+00:09:35,350 --> 00:09:41,080
+And what I'll do is I'll check for the existence of a remember cookie, a cookie that has some values
+
+126
+00:09:41,080 --> 00:09:45,130
+in it that allows me to determine whether or not the person is a valid user.
+
+127
+00:09:45,790 --> 00:09:50,320
+So I'll look for a cookie and check for an error.
+
+128
+00:09:50,680 --> 00:09:53,170
+And those come from right from the standard library.
+
+129
+00:09:53,660 --> 00:10:00,820
+Our cookie and we're looking for a cookie with a particular name, which means when a user logs in and
+
+130
+00:10:00,820 --> 00:10:04,090
+checks box that says, Remember me, we need to set that cookie.
+
+131
+00:10:04,180 --> 00:10:07,720
+And when we do use the same name there as we're using here.
+
+132
+00:10:08,680 --> 00:10:16,780
+And I think the easiest way to do that is to just write format as print f and we'll name the cookie.
+
+133
+00:10:17,080 --> 00:10:21,820
+And I'll start it with an underscore and then some string value and then another underscore.
+
+134
+00:10:22,150 --> 00:10:29,740
+And then remember and what I'll substitute for that percent s is the app name import app Apni.
+
+135
+00:10:30,610 --> 00:10:31,840
+So we're looking for that cookie.
+
+136
+00:10:32,590 --> 00:10:37,960
+OK, now if the error is not equal to nil, then there is no cookie.
+
+137
+00:10:40,600 --> 00:10:44,020
+So on to the next middleware if.
+
+138
+00:10:44,940 --> 00:10:49,800
+So all we do again is you say next, don't serve HDP, W.R..
+
+139
+00:10:51,510 --> 00:10:53,880
+And at that point, we're done that check.
+
+140
+00:10:54,090 --> 00:10:58,650
+But if the cookie exists, if we get past that, then we have an else statement.
+
+141
+00:11:01,440 --> 00:11:02,790
+We found a cookie.
+
+142
+00:11:04,290 --> 00:11:04,860
+So check it.
+
+143
+00:11:07,020 --> 00:11:12,110
+And what I'm going to do here is say the value of the cookie is stored in something called key.
+
+144
+00:11:12,840 --> 00:11:22,800
+So key is cookie dough value, cookie token value, and I'll create an empty user variable, which I'll
+
+145
+00:11:22,800 --> 00:11:23,400
+call you.
+
+146
+00:11:23,640 --> 00:11:25,380
+It's a type of data user.
+
+147
+00:11:26,950 --> 00:11:28,770
+Let's make sure it's doing the imports for us.
+
+148
+00:11:29,160 --> 00:11:30,120
+It is good.
+
+149
+00:11:32,820 --> 00:11:38,010
+And now we'll check to see if the data in that cookie has a length of greater than zero because if it
+
+150
+00:11:38,010 --> 00:11:39,480
+doesn't, then it's a useless cookie.
+
+151
+00:11:39,960 --> 00:11:43,650
+If Len of key is greater than zero.
+
+152
+00:11:44,490 --> 00:11:48,900
+OK, Cookie has some data so validated.
+
+153
+00:11:51,270 --> 00:11:55,470
+So what we'll do here is assume one of restoring some value in that cookie.
+
+154
+00:11:55,470 --> 00:12:01,710
+Some data in that cookie that will be separated by the Typekit, and I'll split on that Typekit.
+
+155
+00:12:01,710 --> 00:12:03,810
+So I'll call the variable I'm going to create here split.
+
+156
+00:12:05,550 --> 00:12:10,620
+And that's a sign the value of right from the strings package strings starts split and I'm going to
+
+157
+00:12:10,620 --> 00:12:14,940
+split the key on the pipe character.
+
+158
+00:12:15,360 --> 00:12:16,290
+That's straight line.
+
+159
+00:12:16,500 --> 00:12:16,890
+OK.
+
+160
+00:12:19,820 --> 00:12:26,540
+And I will assume that the user ID is the first thing in that split variable, so I'll call it UID,
+
+161
+00:12:27,800 --> 00:12:32,990
+and a hash is the second thing in that variable and that will be the remember me token.
+
+162
+00:12:34,130 --> 00:12:35,990
+And those are populated by calling.
+
+163
+00:12:37,350 --> 00:12:37,920
+Split.
+
+164
+00:12:38,250 --> 00:12:38,850
+Zero.
+
+165
+00:12:39,330 --> 00:12:44,730
+The first value and split one is a second value.
+
+166
+00:12:45,630 --> 00:12:49,200
+That's almost a store in there is the user ID, a pipe and then some token.
+
+167
+00:12:49,590 --> 00:12:54,930
+And now I need to convert the ID, the UID variable, which I'll get in the form of a string.
+
+168
+00:12:54,930 --> 00:12:56,470
+I need to convert it into an integer.
+
+169
+00:12:56,500 --> 00:13:01,650
+And that's easy, Heidi, and I'll ignore the error and we call Sturt on.
+
+170
+00:13:02,930 --> 00:13:06,560
+Not a I mean, we're passing a UID.
+
+171
+00:13:06,980 --> 00:13:12,050
+So now I have the hash or the token in a string and I have the user ID as an int.
+
+172
+00:13:12,320 --> 00:13:18,680
+OK, so now I'm going to have to call a function that says, is this a valid hash?
+
+173
+00:13:18,710 --> 00:13:23,090
+In other words, we're going to have to check for a member token that's associated with this user I.D..
+
+174
+00:13:23,480 --> 00:13:30,470
+And of course, the place to put that is over here in the data folder user ago.
+
+175
+00:13:31,130 --> 00:13:35,540
+And at the very end of this file, I'll just add another method another function.
+
+176
+00:13:35,990 --> 00:13:36,350
+OK.
+
+177
+00:13:37,820 --> 00:13:40,940
+So it will be a func with a receiver of you, pointed a user.
+
+178
+00:13:40,970 --> 00:13:49,040
+Same as all the other functions in here, and we'll call this one check for Remember token, and it
+
+179
+00:13:49,040 --> 00:13:52,970
+will take an IV, which is the user ID of Typekit.
+
+180
+00:13:53,450 --> 00:13:56,840
+And it will take the token, which is a string and it just returns Boolean.
+
+181
+00:13:58,520 --> 00:14:00,350
+And all we have to do here is create a variable.
+
+182
+00:14:00,800 --> 00:14:01,640
+Remember me?
+
+183
+00:14:03,320 --> 00:14:13,250
+I call remember token, remember token of type, remember token, and I'll create another variable called
+
+184
+00:14:13,250 --> 00:14:21,290
+R.T, which is of type, remember token, and I'll give it the curly brackets because it's just populated
+
+185
+00:14:21,290 --> 00:14:30,200
+with default values and I create a collection and the collection is Upper Dot Collection.
+
+186
+00:14:31,280 --> 00:14:35,780
+And this is why I created the art variable, because you need to get the name of the Remember tokens
+
+187
+00:14:35,780 --> 00:14:36,200
+table.
+
+188
+00:14:36,350 --> 00:14:43,820
+So I'll just call art table or Team Table, and that gives me the correct table name.
+
+189
+00:14:44,360 --> 00:14:50,060
+And now I just say result is a sign the value of collection dot find
+
+190
+00:14:52,670 --> 00:15:01,440
+and I'm going to use the update condition of user underscore ID is equal to it.
+
+191
+00:15:02,900 --> 00:15:07,520
+And remember, token is equal to token.
+
+192
+00:15:10,640 --> 00:15:12,860
+And now I say error is a sign.
+
+193
+00:15:12,860 --> 00:15:19,220
+The value of red dot one find one value and read it into remember token.
+
+194
+00:15:20,960 --> 00:15:25,360
+If the error is not equal to nil and we can't find it, so return.
+
+195
+00:15:26,600 --> 00:15:28,100
+Actually, all we have to do here is return.
+
+196
+00:15:28,100 --> 00:15:38,360
+The error return error is equal to nil, and that will return false if it can't find it.
+
+197
+00:15:38,480 --> 00:15:39,860
+And true, if it can.
+
+198
+00:15:40,040 --> 00:15:41,150
+And that's pretty straightforward.
+
+199
+00:15:41,330 --> 00:15:44,420
+So now we can go back to our middleware and call that function.
+
+200
+00:15:46,400 --> 00:15:49,700
+So we'll store the result of that function.
+
+201
+00:15:49,700 --> 00:15:51,980
+We're going to call it a variable called valid hash.
+
+202
+00:15:52,670 --> 00:15:58,010
+In other words, it's a valid token, and that is a sign the value of from the new variable.
+
+203
+00:15:58,820 --> 00:16:06,950
+The user we created up there on Line 22 dog check for Remember token and we handed ID and hash.
+
+204
+00:16:08,030 --> 00:16:13,100
+And now that will be true if this is a valid token and it will be false if it's not a valid token.
+
+205
+00:16:13,640 --> 00:16:19,280
+So I'll say, if not valid hash, then it's not true.
+
+206
+00:16:19,460 --> 00:16:19,880
+OK.
+
+207
+00:16:19,910 --> 00:16:25,280
+So I'll say at this point, I did find a cookie, but it's not a valid cookie, so I probably want to
+
+208
+00:16:25,280 --> 00:16:25,760
+delete it.
+
+209
+00:16:26,150 --> 00:16:30,290
+And the way you delete cookies in the internet world is kind of strange.
+
+210
+00:16:30,290 --> 00:16:31,940
+You don't just call the delete function.
+
+211
+00:16:32,240 --> 00:16:38,450
+You actually set a cookie with the same name and attributes, but give it an expiry in the past.
+
+212
+00:16:38,660 --> 00:16:42,230
+So I'm going to have to do that, and I'm probably going to have to do it more than once.
+
+213
+00:16:42,450 --> 00:16:44,630
+So I'm going to put that off in its own function.
+
+214
+00:16:44,720 --> 00:16:52,370
+So I'll call this func m pointer to middleware that says receiver, and I'm not going to export this.
+
+215
+00:16:52,580 --> 00:16:53,600
+I'll just call it delete.
+
+216
+00:16:54,140 --> 00:16:55,910
+Remember Cookie?
+
+217
+00:16:58,460 --> 00:17:00,050
+And that requires two arguments.
+
+218
+00:17:01,220 --> 00:17:02,150
+The response writer
+
+219
+00:17:05,000 --> 00:17:08,030
+and not surprisingly, the pointer to the request.
+
+220
+00:17:11,930 --> 00:17:13,190
+So let's give ourselves some room.
+
+221
+00:17:15,350 --> 00:17:18,800
+And the first thing I'm going to do is it's always good practice when you do this sort of thing.
+
+222
+00:17:19,010 --> 00:17:21,530
+It's just to renew whatever token you have in the session.
+
+223
+00:17:21,950 --> 00:17:30,890
+So I'll ignore the error and that's equal to M Dot after dot session dot renew token.
+
+224
+00:17:31,670 --> 00:17:32,800
+And I'm going to renew it.
+
+225
+00:17:32,810 --> 00:17:34,850
+You have to pass it, the perimeter, the context.
+
+226
+00:17:36,080 --> 00:17:37,440
+So that renews the token.
+
+227
+00:17:37,460 --> 00:17:38,640
+And that's just good practice.
+
+228
+00:17:38,660 --> 00:17:41,000
+And now I'll delete the cookie.
+
+229
+00:17:41,150 --> 00:17:44,900
+And as I said, to do that, we have to create a cookie, which I'll call a new cookie.
+
+230
+00:17:46,040 --> 00:17:48,740
+And that's a sign the value of HGTV dot cookie.
+
+231
+00:17:50,360 --> 00:17:51,500
+And we just said it's values.
+
+232
+00:17:52,280 --> 00:17:53,240
+So its name.
+
+233
+00:17:54,020 --> 00:17:56,720
+Well, and that's going to be exactly what it was up here.
+
+234
+00:17:58,400 --> 00:18:01,430
+Format or desperate have in all of this law.
+
+235
+00:18:01,430 --> 00:18:12,440
+Copy that and paste that here and its value also to an empty string and its path.
+
+236
+00:18:13,070 --> 00:18:15,290
+This just has to match the cookie that exists.
+
+237
+00:18:15,650 --> 00:18:16,760
+I'll just make it slash.
+
+238
+00:18:16,880 --> 00:18:20,750
+And that's what I'll make it when I set the cookie, when someone logs in and checks the Remember Me
+
+239
+00:18:20,750 --> 00:18:24,380
+box and I'll make it expire and expires.
+
+240
+00:18:24,410 --> 00:18:27,050
+It's going to be set to something in the past time.
+
+241
+00:18:27,050 --> 00:18:27,600
+Not now.
+
+242
+00:18:27,800 --> 00:18:36,530
+So the current time don't add and we'll add minus 100 times time to our, put it, 100 hours in the
+
+243
+00:18:36,530 --> 00:18:36,920
+past.
+
+244
+00:18:38,750 --> 00:18:49,600
+So that's it expires, and HDP only will set to true and the domain will be equal to import app dot
+
+245
+00:18:49,730 --> 00:18:52,070
+session dot cookie.
+
+246
+00:18:52,790 --> 00:19:03,710
+So Session Dot, Cookie Dot Domain and I will set it's max age equal to minus one again expire right
+
+247
+00:19:03,710 --> 00:19:04,070
+away.
+
+248
+00:19:05,480 --> 00:19:06,680
+Is it a secure cookie?
+
+249
+00:19:06,770 --> 00:19:14,210
+Well, that will be set to whatever MDOT app dot session dot cookie dot secure is.
+
+250
+00:19:14,600 --> 00:19:17,510
+So that'll be false in development and true in production.
+
+251
+00:19:20,150 --> 00:19:27,500
+And we need the same site attribute and I'm going to use A2DP dot same site, strict mode right there.
+
+252
+00:19:28,910 --> 00:19:29,930
+So we've created the cookie.
+
+253
+00:19:30,230 --> 00:19:41,540
+Now we just sent each Typekit set cookie and we handed the response writer in a reference to New Cookie,
+
+254
+00:19:42,110 --> 00:19:43,100
+which is what it requires.
+
+255
+00:19:45,110 --> 00:19:50,150
+And then we logged the user and they may not be logged in at this point, but just to be safe.
+
+256
+00:19:50,330 --> 00:19:52,370
+MDOT app dot session.
+
+257
+00:19:54,760 --> 00:20:07,300
+Remove, and I'm going to remove from our context, user ID like that, and then I'll destroy the app,
+
+258
+00:20:09,250 --> 00:20:18,790
+not session, not destroy our context, destroy the session entirely, and I'll renew the token one
+
+259
+00:20:18,790 --> 00:20:22,840
+more time, which I might not have to, but I'm paranoid about this sort of thing.
+
+260
+00:20:23,030 --> 00:20:28,240
+Imgur app dot session dot renew token.
+
+261
+00:20:29,200 --> 00:20:30,880
+And that requires just the context.
+
+262
+00:20:32,530 --> 00:20:35,060
+OK, so now I have a means of deleting the cookie.
+
+263
+00:20:35,110 --> 00:20:36,070
+So mark up here.
+
+264
+00:20:37,430 --> 00:20:40,220
+In this function, let's delete the remember cookie.
+
+265
+00:20:41,870 --> 00:20:48,260
+So we call them delete, remember cookie and hand the response writer and the pointer to the request.
+
+266
+00:20:48,980 --> 00:20:51,320
+Now we have a new session created right after we delete that.
+
+267
+00:20:51,320 --> 00:20:52,080
+Remember Cookie?
+
+268
+00:20:52,100 --> 00:20:56,090
+So I'm going to say, assume that you're probably going to want to give some kind of message to the
+
+269
+00:20:56,090 --> 00:20:56,480
+user.
+
+270
+00:20:56,930 --> 00:21:07,220
+So I'll just say M Dot app dot session dot put and had it the context or not context.
+
+271
+00:21:09,500 --> 00:21:17,360
+And hand it an error message and then whatever the message might be, so I'll just say you've been logged
+
+272
+00:21:17,600 --> 00:21:22,790
+out from another device, which is almost always the situation that takes place.
+
+273
+00:21:23,180 --> 00:21:23,520
+OK.
+
+274
+00:21:23,840 --> 00:21:25,940
+But you can put whatever you want for in your message there.
+
+275
+00:21:26,960 --> 00:21:33,440
+And now we call next sort, serve a trip with a response writer and the pointer to the request.
+
+276
+00:21:34,700 --> 00:21:35,360
+And that's done.
+
+277
+00:21:36,410 --> 00:21:45,830
+Otherwise, if it is a valid hash else, valid hash, so log the user in and this is the automatic log
+
+278
+00:21:45,830 --> 00:21:46,330
+in part.
+
+279
+00:21:46,340 --> 00:21:50,780
+And all we have to do is, say user a new variable and I'll ignore the error.
+
+280
+00:21:50,870 --> 00:21:53,900
+You can put error checking in if you wish you try.
+
+281
+00:21:53,900 --> 00:21:55,250
+That again equals.
+
+282
+00:21:57,090 --> 00:21:59,760
+You don't get and handed the ID.
+
+283
+00:22:00,030 --> 00:22:09,330
+Now I have the user variable in the session, I'll say M&amp;A app, dot session Dot put.
+
+284
+00:22:10,620 --> 00:22:13,230
+I'll just set the necessary variables for someone to be logged in.
+
+285
+00:22:13,710 --> 00:22:22,770
+So we'll put in the context and user ID and make that user ID, which I just pulled from the database.
+
+286
+00:22:23,370 --> 00:22:25,000
+Then I'll duplicate this whole thing.
+
+287
+00:22:25,020 --> 00:22:29,990
+I'm going to put another value in there and the value will be remembered.
+
+288
+00:22:30,030 --> 00:22:37,140
+Remember underscore token and I'll put the hash in because I might might need that.
+
+289
+00:22:37,420 --> 00:22:37,610
+Okay.
+
+290
+00:22:37,650 --> 00:22:39,240
+The Remember Me token.
+
+291
+00:22:41,430 --> 00:22:47,610
+And at this point, I just say next, does it serve HDP work?
+
+292
+00:22:48,000 --> 00:22:50,640
+And they're all logged in and on they go on their merry way.
+
+293
+00:22:51,120 --> 00:22:56,580
+Now, at this point, right here, this is the last part of the link.
+
+294
+00:22:56,580 --> 00:23:00,870
+If we're checking if the length of the key is greater than zero, if the length of the key is equal
+
+295
+00:23:00,870 --> 00:23:01,500
+to zero.
+
+296
+00:23:02,340 --> 00:23:06,000
+And else that's probably happened is that the key length is zero.
+
+297
+00:23:08,550 --> 00:23:17,970
+So it's probably a leftover cookie, and that usually takes place when the user has not closed browser.
+
+298
+00:23:19,080 --> 00:23:21,630
+OK, but whatever the case is, the key length is zero.
+
+299
+00:23:21,840 --> 00:23:29,160
+So I'm going to delete that cookie, which is useless now and delete to remember Cookie An and we'll
+
+300
+00:23:29,160 --> 00:23:30,720
+say next serve.
+
+301
+00:23:32,330 --> 00:23:34,190
+H GDP W in error.
+
+302
+00:23:36,890 --> 00:23:43,700
+And if we did everything right, this middleware can be added to our roots file and check to see if
+
+303
+00:23:43,700 --> 00:23:45,470
+someone is properly logged in.
+
+304
+00:23:45,770 --> 00:23:49,820
+But of course, there's one more step that we have to follow here, and that is we have to update our
+
+305
+00:23:49,820 --> 00:23:56,810
+authentication handlers to check to see if someone checks a particular checkbox in the form that says,
+
+306
+00:23:56,810 --> 00:23:57,650
+Remember me?
+
+307
+00:23:57,660 --> 00:24:03,470
+If they did, we need to write a value into the room, remember me tokens table associated with that
+
+308
+00:24:03,470 --> 00:24:04,070
+user.
+
+309
+00:24:04,100 --> 00:24:10,020
+And we also, of course, have to update the form, the form that displays the login credentials.
+
+310
+00:24:10,040 --> 00:24:14,840
+And finally, when someone logs out, we want to make sure that Remember Me token is deleted from the
+
+311
+00:24:14,840 --> 00:24:15,410
+database.
+
+312
+00:24:15,650 --> 00:24:20,810
+Otherwise, there's a potential loophole where people can get into the system without being authenticated.
+
+313
+00:24:21,410 --> 00:24:23,690
+So we'll take care of those steps in the next lecture.

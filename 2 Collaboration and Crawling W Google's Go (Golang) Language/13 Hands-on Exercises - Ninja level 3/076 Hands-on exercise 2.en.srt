@@ -1,0 +1,443 @@
+1
+00:00:00,480 --> 00:00:00,740
+All right.
+
+2
+00:00:00,750 --> 00:00:02,910
+Welcome to hands on Exercise number two.
+
+3
+00:00:02,910 --> 00:00:10,980
+And for this hands on exercise use go Cauley and crawl the go Ling Reddit site and I forgot to start
+
+4
+00:00:10,980 --> 00:00:16,710
+my own B.S. and so I'm going to start my own B.S. and this is why we do pair programming impaired teaching.
+
+5
+00:00:16,710 --> 00:00:23,790
+So now you can see my screen you can see go Callie there and and crawl they go laying Reddit site so
+
+6
+00:00:23,820 --> 00:00:28,750
+go see what you can do to get that to work and positive video go do that when you're all done now y'all
+
+7
+00:00:28,770 --> 00:00:34,740
+come on back and I'm positive video and I'm going to take a swing at using go Callie never used it before
+
+8
+00:00:34,740 --> 00:00:40,860
+in my life and you'll see that after you do your solution so positive video go dears when you're done
+
+9
+00:00:40,860 --> 00:00:45,070
+come on back on opposite end you can see my solution which I'm gonna do right now.
+
+10
+00:00:45,330 --> 00:00:50,460
+So the first thing you'd want to do is drop that into the validator or a robot start texting validator
+
+11
+00:00:50,460 --> 00:00:56,520
+and here I have it going and just test it and it says yep you're allowed to do that next thing go the
+
+12
+00:00:56,520 --> 00:01:04,920
+go Lane Callie you know Web page go to docs and what we kind of what I learned from Daniel what we've
+
+13
+00:01:04,920 --> 00:01:10,470
+learned from Daniel was go down take a look at the examples there's actually a Reddit example and so
+
+14
+00:01:10,800 --> 00:01:16,080
+a good starting point is just to see if get this run so I copied including all of red I just want the
+
+15
+00:01:16,080 --> 00:01:22,170
+code so I'm gonna grab that code and bring it over to my editor and then paste it into my editor and
+
+16
+00:01:22,170 --> 00:01:28,110
+then I could do a quick read through of the code and when I do that I see that it's like an old read
+
+17
+00:01:28,100 --> 00:01:35,730
+it and so I'm going to see what I'm going to do is see if when I go to going read it here if I can bring
+
+18
+00:01:35,730 --> 00:01:38,150
+up the old read it and.
+
+19
+00:01:38,490 --> 00:01:45,510
+And right there I've got that I'm going to change it from WW W to old and see if there's an old read
+
+20
+00:01:45,510 --> 00:01:51,770
+it that comes up and an old read it did come up and it looks a mite easier to crawl and so I'm going
+
+21
+00:01:51,770 --> 00:01:58,680
+to add this in as a hint to your hands on exercise Yeah take a look at
+
+22
+00:02:03,190 --> 00:02:08,620
+the old read it and so noticing the difference there and so I want to crawl the old read it and then
+
+23
+00:02:08,620 --> 00:02:14,050
+also as I look through the code there's going to be some place where it's asking for OS ARGs and so
+
+24
+00:02:14,050 --> 00:02:21,880
+on going this is command line argumentation and so I'm going to try pasting in this old read it old
+
+25
+00:02:21,880 --> 00:02:29,320
+read it where did it go old read it you are Al right there as the you are all that I want to crawl in
+
+26
+00:02:29,320 --> 00:02:37,930
+my argument and so here's the code here's my terminal and I'm going to put in go run main dot go and
+
+27
+00:02:38,980 --> 00:02:48,120
+paste in the URL of the old code and see if I get any type of result and so now it's starting to crawl
+
+28
+00:02:48,180 --> 00:02:53,250
+and get some results out which looks promising so we'll let this run for a second and maybe fast forward
+
+29
+00:02:53,250 --> 00:02:54,540
+or edit pass this
+
+30
+00:02:58,030 --> 00:03:03,600
+and there it crawled for a bit and then brought some things out and I could kind of look through here
+
+31
+00:03:04,050 --> 00:03:11,070
+it's quite a bit of text to see what came out but that's the first step in my solution is just seeing
+
+32
+00:03:11,070 --> 00:03:16,170
+if I can get that example to work the next thing that I would do is I would go through here and I would
+
+33
+00:03:16,170 --> 00:03:22,620
+try to understand the code and so to understand the code I'm going to need to go to the documentation
+
+34
+00:03:23,100 --> 00:03:32,720
+and so Callie's documentation if you go to go talk and you search for Carlie you could find the documentation
+
+35
+00:03:32,720 --> 00:03:40,010
+here you have go calling you have Cawley and one of the things that you'll notice in the code I would
+
+36
+00:03:40,010 --> 00:03:46,130
+start going between the example that works here is the example that works one in you know in the code
+
+37
+00:03:46,130 --> 00:03:51,410
+we're creating a item struct and getting different items and then we're going to have a slice of those
+
+38
+00:03:51,410 --> 00:03:57,140
+items and these will be the different stories but one of the first lines is to create a new collector
+
+39
+00:03:57,530 --> 00:04:01,940
+and so I want to understand what this collector part is and I remember that from Daniel's code and so
+
+40
+00:04:01,940 --> 00:04:06,800
+I'd come in and I'd take a look at what the new collector is it gives me a pointer to collector when
+
+41
+00:04:06,790 --> 00:04:13,940
+I have a pointer to collector I have all of these methods available right there and and so I get a new
+
+42
+00:04:13,940 --> 00:04:20,300
+collector see and then I'm starting to use some of those methods like on each email on each email limit
+
+43
+00:04:20,720 --> 00:04:27,620
+on request and so I'd want to go through and take a look at each of those and and see what each of those
+
+44
+00:04:27,620 --> 00:04:28,250
+do.
+
+45
+00:04:28,340 --> 00:04:30,550
+And then also I have it here.
+
+46
+00:04:30,610 --> 00:04:30,930
+Right.
+
+47
+00:04:30,950 --> 00:04:34,630
+It's a visit only domains old Reddit dot com.
+
+48
+00:04:34,640 --> 00:04:41,180
+There's a few options that got set in there and so new collector and I have options an unlimited number
+
+49
+00:04:41,180 --> 00:04:42,200
+of collector options.
+
+50
+00:04:42,200 --> 00:04:47,600
+I'd also want to understand collector options and to understand collector option I could click click
+
+51
+00:04:47,720 --> 00:04:54,650
+what it did right there click right on the you know link for this item it takes me to it but then I
+
+52
+00:04:54,650 --> 00:04:58,220
+could collect on collector option it tells me what to collect your option is.
+
+53
+00:04:58,400 --> 00:05:03,950
+And so I'd go through all of the code like that and I don't want to take the time to do it here because
+
+54
+00:05:03,950 --> 00:05:07,460
+it's all already been demonstrated and explained.
+
+55
+00:05:07,880 --> 00:05:15,080
+And we're running at about seven minutes on this video but you could go through and start to explore
+
+56
+00:05:15,110 --> 00:05:19,770
+all of that in that fashion to see see what it has to give to you.
+
+57
+00:05:19,850 --> 00:05:27,800
+Maybe I'll do some of it so that the new collector collector options when I point click on new collector
+
+58
+00:05:27,830 --> 00:05:33,950
+go back to collect your options type collector options is a function and gives you a pointer to a collector
+
+59
+00:05:34,340 --> 00:05:38,500
+and a pointer to a collector has all of this information here.
+
+60
+00:05:38,570 --> 00:05:44,470
+So it starts to get in kind of deep but we could see here we have Colley allowed domains and Callie
+
+61
+00:05:44,570 --> 00:05:50,520
+async so I might look for where is allowed domain show up and allowed domains is a function here.
+
+62
+00:05:50,600 --> 00:05:53,470
+It's a collector option.
+
+63
+00:05:53,690 --> 00:05:54,300
+Right.
+
+64
+00:05:54,320 --> 00:06:03,920
+And then that allowed domains function gives me back a collector option and and so when allowed domains
+
+65
+00:06:04,500 --> 00:06:09,740
+Callie allowed domains gives me back a collector option.
+
+66
+00:06:09,740 --> 00:06:14,830
+Oh and then Callie async is going to give me back a collector option.
+
+67
+00:06:14,840 --> 00:06:17,610
+So if I look for caller async right.
+
+68
+00:06:17,630 --> 00:06:19,940
+This gives me back a collector option.
+
+69
+00:06:19,940 --> 00:06:28,180
+And what and what a new collector takes is a backup here at the top.
+
+70
+00:06:29,790 --> 00:06:33,540
+New collector takes a bunch of different collector options.
+
+71
+00:06:33,580 --> 00:06:33,870
+Right.
+
+72
+00:06:33,960 --> 00:06:39,420
+So new collector takes in a bunch of different collector options and so anything that gives me back
+
+73
+00:06:39,420 --> 00:06:42,400
+a collector option is something that I could pass in there.
+
+74
+00:06:42,420 --> 00:06:50,190
+So I could do a command C to copy that command after fine command V to search and I could start to look
+
+75
+00:06:50,190 --> 00:06:58,290
+through what is returning a different collector option and a collector option sets an option on a collector
+
+76
+00:06:58,850 --> 00:07:05,490
+type collector option underlying type as a funk that has a pointer to a collector.
+
+77
+00:07:05,490 --> 00:07:12,750
+And so if I when I clicked on that is kind of taking me into you know more and more depth but to use
+
+78
+00:07:12,750 --> 00:07:18,540
+the code what I need to know is that new collector takes into anything that returns a collector option
+
+79
+00:07:18,540 --> 00:07:21,080
+or anything that is of any value of type.
+
+80
+00:07:21,080 --> 00:07:22,560
+Collector option.
+
+81
+00:07:22,560 --> 00:07:26,430
+And so when I search for values of type collector option I could start to see.
+
+82
+00:07:26,510 --> 00:07:26,870
+Right.
+
+83
+00:07:26,880 --> 00:07:33,900
+Allow your RL revisit allowed domains async in the naming of this makes sense because this isn't this
+
+84
+00:07:33,900 --> 00:07:40,770
+is like options for collecting and the options that we're using here are allowed domains in async.
+
+85
+00:07:40,770 --> 00:07:45,750
+And so it's kind of a different way to think about that.
+
+86
+00:07:45,750 --> 00:07:47,920
+Do you have anything you want to say Add to that.
+
+87
+00:07:48,540 --> 00:07:51,040
+Yeah it's a good way to.
+
+88
+00:07:51,720 --> 00:07:57,960
+So when you create a structure you use a struct little to create a struct you can pass and all the options
+
+89
+00:07:58,290 --> 00:07:59,370
+but this doesn't work.
+
+90
+00:07:59,400 --> 00:08:03,660
+If you're creating a strict but a rule that has private values it's well that need to be set.
+
+91
+00:08:03,660 --> 00:08:10,530
+So this collector option thing is actually fairly common amongst bigger projects to have a way to kind
+
+92
+00:08:10,530 --> 00:08:15,720
+of preset public arguments on a struct that also has private arguments that need to be set by the new
+
+93
+00:08:15,720 --> 00:08:17,560
+function nice.
+
+94
+00:08:17,560 --> 00:08:22,950
+So it's a new collector or it will set some private private fields in the collector as well.
+
+95
+00:08:23,050 --> 00:08:29,300
+And then collector options is a nice way to easily set those public options to yeah.
+
+96
+00:08:29,330 --> 00:08:33,110
+So we've got our new collector with some options.
+
+97
+00:08:33,110 --> 00:08:39,060
+And once we have our collected then we go into on each team Al and we already saw that in Daniel's video.
+
+98
+00:08:39,400 --> 00:08:45,170
+And so that's where we start to look for the different class names and read it and we use our inspector
+
+99
+00:08:45,170 --> 00:08:46,570
+tools to do that.
+
+100
+00:08:47,090 --> 00:08:53,750
+And so in here launch Inspector tools and get this little icon right there and then I could start to
+
+101
+00:08:53,750 --> 00:09:00,770
+look at each of these stories and try to figure out which how do I grab just that story right there.
+
+102
+00:09:00,770 --> 00:09:06,860
+And looking at what the tag is and so they've already figured this out that it's a top matter.
+
+103
+00:09:07,010 --> 00:09:13,730
+And then for a top matter it's going to bring out the source title story you are all different items
+
+104
+00:09:13,730 --> 00:09:15,430
+like that through there.
+
+105
+00:09:15,440 --> 00:09:20,090
+So this is actually a little bit more involved than I think could be done in 12 minutes.
+
+106
+00:09:20,300 --> 00:09:25,310
+Takes a little bit of time but nice to look at the example.
+
+107
+00:09:25,340 --> 00:09:28,510
+Anything more you want to say about this.
+
+108
+00:09:28,700 --> 00:09:29,820
+No.
+
+109
+00:09:29,830 --> 00:09:30,120
+All right.
+
+110
+00:09:30,130 --> 00:09:35,260
+It's a little bit of hard hands on exercise for me to demonstrate a solution in just 12 minutes because
+
+111
+00:09:36,250 --> 00:09:44,380
+it does take some time to do that but that's my start at my solution for creating crawler using Callie.

@@ -1,0 +1,247 @@
+1
+00:00:02,000 --> 00:00:06,110
+So in this section of the course, we're going to look at some other things that are important to be
+
+2
+00:00:06,110 --> 00:00:06,890
+familiar with.
+
+3
+00:00:06,890 --> 00:00:12,710
+When you're working with concurrent programming and in go where firing off a go routine into the background
+
+4
+00:00:12,710 --> 00:00:16,340
+is so easy, it's really important to be aware of race conditions.
+
+5
+00:00:16,460 --> 00:00:21,710
+So we're going to spend some time looking at those and we'll also look at a means of locking a particular
+
+6
+00:00:21,710 --> 00:00:28,340
+resource so that somebody has exclusive access to it until you're done working with it or some part
+
+7
+00:00:28,340 --> 00:00:32,750
+of your program has exclusive access to it until you're done working with it, and then you unlock it
+
+8
+00:00:32,750 --> 00:00:37,220
+and make it available for other things to access and change as necessary.
+
+9
+00:00:37,700 --> 00:00:39,890
+And that's called the sync mutex.
+
+10
+00:00:39,890 --> 00:00:44,210
+It's from the Sync package, it's called a mutex which stands for mutual exclusion.
+
+11
+00:00:44,570 --> 00:00:47,750
+And we'll also have a look at something, and it's just a brief introduction to it.
+
+12
+00:00:47,750 --> 00:00:52,640
+It'll take us a while to write the code, but it's important to be aware of channels and that is the
+
+13
+00:00:52,640 --> 00:00:55,580
+preferred way of dealing with concurrency in go.
+
+14
+00:00:55,730 --> 00:00:58,250
+So at the end of this section we'll have a look at channels.
+
+15
+00:00:58,370 --> 00:01:00,860
+Okay, so what are we going to do to start with?
+
+16
+00:01:00,860 --> 00:01:04,310
+We'll look at the sink, dot mutex package and race conditions.
+
+17
+00:01:04,790 --> 00:01:10,700
+And as I said, mutex is a shortened version of the phrase mutual exclusion.
+
+18
+00:01:10,700 --> 00:01:14,690
+It allows us to deal with and prevent race conditions from happening.
+
+19
+00:01:14,690 --> 00:01:16,580
+And I'll be talking about those momentarily.
+
+20
+00:01:17,600 --> 00:01:22,460
+Now, the great thing about Sync Top Mutex is it's really easy to use, not quite as easy as wait groups.
+
+21
+00:01:22,580 --> 00:01:28,370
+The other thing we've seen from the sync package but almost is easy and this allows us to deal with
+
+22
+00:01:28,370 --> 00:01:34,760
+shared resources like variables are some data structure, something that can be accessed by at least
+
+23
+00:01:34,760 --> 00:01:37,100
+two go routines at the same time.
+
+24
+00:01:37,550 --> 00:01:42,170
+And of course, if you have two things running in the background and they both try to hit the same bit
+
+25
+00:01:42,170 --> 00:01:47,990
+of data and things can happen, you may have unpredictable results and we deal with that by locking
+
+26
+00:01:47,990 --> 00:01:50,630
+and unlocking the resource as necessary.
+
+27
+00:01:51,410 --> 00:01:56,930
+Now we can test for race conditions and go either when we when we run a program just by adding a flag
+
+28
+00:01:56,930 --> 00:02:02,450
+to the go command or when we test a program, when we actually run a unit test or an integration test
+
+29
+00:02:02,450 --> 00:02:03,410
+or something like that.
+
+30
+00:02:03,410 --> 00:02:04,640
+And we'll have a look at that as well.
+
+31
+00:02:05,840 --> 00:02:07,640
+Now, a little bit more about race conditions.
+
+32
+00:02:08,270 --> 00:02:11,270
+Race conditions occur when multiple go routines.
+
+33
+00:02:11,270 --> 00:02:15,530
+At least two, you're never going to have one if you just have your main program and some other go routine.
+
+34
+00:02:16,310 --> 00:02:21,500
+But when you have at least two go routines running concurrently and they try to access the same thing,
+
+35
+00:02:21,500 --> 00:02:26,720
+say a variable like a string, and they can be extremely difficult to spot when you're reading code.
+
+36
+00:02:26,720 --> 00:02:29,540
+In fact, you can actually run a program that has a race condition.
+
+37
+00:02:29,540 --> 00:02:33,830
+It runs exactly as you expected and you move on thinking everything is fine.
+
+38
+00:02:34,490 --> 00:02:39,890
+But fortunately, as I suggested, go lets us check for these either when we run them or when we run
+
+39
+00:02:39,890 --> 00:02:43,520
+an actual test and we'll be doing both of these things in this section.
+
+40
+00:02:44,120 --> 00:02:47,450
+Now here's an illustration of how race conditions actually work.
+
+41
+00:02:48,110 --> 00:02:49,490
+On the left hand side of the screen.
+
+42
+00:02:49,490 --> 00:02:53,870
+I have my main function in my program and it spawns to go routines.
+
+43
+00:02:53,870 --> 00:02:59,600
+They don't have to be the same one, but both of these go routines actually access some kind of data
+
+44
+00:02:59,600 --> 00:03:01,280
+over there on the right hand side of the screen.
+
+45
+00:03:02,540 --> 00:03:08,930
+Now, since I have no idea which go routine is going to execute first or which one is going to end first
+
+46
+00:03:09,260 --> 00:03:14,750
+and both of these access and perform some operation on that data, bad things can happen.
+
+47
+00:03:15,020 --> 00:03:20,420
+So we'll have examples of how to create these will artificially create a couple and then how to deal
+
+48
+00:03:20,420 --> 00:03:22,700
+with them using new taxes in.
+
+49
+00:03:22,700 --> 00:03:26,720
+The last thing we're going to look at in this section is we'll have an introduction to channels.
+
+50
+00:03:26,930 --> 00:03:34,610
+And channels are nothing more than a means of having one go routine, share data or share information
+
+51
+00:03:34,610 --> 00:03:35,600
+with another go routine.
+
+52
+00:03:35,720 --> 00:03:40,160
+They're actually channels between those go routines which are running concurrently in the background.
+
+53
+00:03:40,730 --> 00:03:45,860
+So in effect, it lets one go routine, talk to another, and channels can go in both directions.
+
+54
+00:03:45,860 --> 00:03:50,720
+You can have uni directional channels or you can have bidirectional channels and in fact you can have
+
+55
+00:03:50,720 --> 00:03:52,130
+as many channels as you want.
+
+56
+00:03:52,460 --> 00:03:55,850
+So that information can be passed back and forth between go routines.
+
+57
+00:03:56,540 --> 00:04:02,690
+And this is an example of Go's philosophy of having things share memory by communicating rather than
+
+58
+00:04:02,690 --> 00:04:04,400
+communicating by sharing memory.
+
+59
+00:04:04,400 --> 00:04:08,900
+And the easiest way to see how channels work is to write a program that actually uses them.
+
+60
+00:04:09,440 --> 00:04:14,390
+So I'm going to introduce one of the classic computer science problems, and it's called the Producer
+
+61
+00:04:14,390 --> 00:04:17,600
+Consumer Problem, and that's how we'll finish this section.
+
+62
+00:04:17,600 --> 00:04:19,040
+And so let's get started.

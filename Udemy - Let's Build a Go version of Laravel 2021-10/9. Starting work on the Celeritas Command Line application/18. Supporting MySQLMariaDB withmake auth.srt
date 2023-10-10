@@ -1,0 +1,87 @@
+1
+00:00:00,940 --> 00:00:07,510
+So the last thing I want to do in this section before we move on to validation is to support make off
+
+2
+00:00:07,600 --> 00:00:10,660
+for people who are using MariaDB or my ask you out.
+
+3
+00:00:11,080 --> 00:00:14,800
+So I'm back in the Celebrity House package I'm looking at mean doggo.
+
+4
+00:00:15,130 --> 00:00:21,340
+And of course, right here in the first switch statement in the main function, we want the case where
+
+5
+00:00:21,340 --> 00:00:21,970
+it's make.
+
+6
+00:00:22,150 --> 00:00:23,860
+So we're going to we're going to do make.
+
+7
+00:00:24,820 --> 00:00:26,170
+So I'll come and click on that.
+
+8
+00:00:26,800 --> 00:00:30,850
+And of course, I want to make Auth, which takes me to the function do off.
+
+9
+00:00:31,780 --> 00:00:37,420
+And all I really have to do here, if you look at it, is we're building the file name for the create
+
+10
+00:00:37,420 --> 00:00:43,930
+off tables, but we're reading it from here on line 17 copy file from template templates, migration
+
+11
+00:00:44,260 --> 00:00:46,990
+auth underscore tables dot db type.
+
+12
+00:00:47,260 --> 00:00:56,560
+OK, so let's create a new file in our Templates folder under migrations and we'll call it off underscore
+
+13
+00:00:56,560 --> 00:00:57,190
+tables.
+
+14
+00:00:57,190 --> 00:01:00,040
+Dot Mostue out the sequel, so create a new file
+
+15
+00:01:03,460 --> 00:01:05,290
+auth underscore tables.
+
+16
+00:01:05,290 --> 00:01:12,460
+Dot my scroll dot sequel, and if you go to the course resources for this lecture, you'll find a file
+
+17
+00:01:12,460 --> 00:01:14,910
+you can download that gives you the necessary sequel.
+
+18
+00:01:14,950 --> 00:01:21,010
+So I already have that copy to my clipboard, so I'm just going to paste it in, and there we go.
+
+19
+00:01:21,340 --> 00:01:22,450
+It's very straightforward.
+
+20
+00:01:22,780 --> 00:01:24,250
+There's nothing surprising here.
+
+21
+00:01:24,250 --> 00:01:30,250
+It's a simple, simple file that creates all of the necessary tables and relations for authentication.
+
+22
+00:01:30,730 --> 00:01:35,650
+All right, let's move on to the next section and figure out how we're going to implement data validation.

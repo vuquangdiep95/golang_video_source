@@ -1,0 +1,259 @@
+1
+00:00:00,090 --> 00:00:08,640
+Khi nâng cấp một phụ thuộc nhỏ, vì bất kỳ lý do gì, nó không tự động cập nhật phụ thuộc
+
+2
+00:00:08,640 --> 00:00:14,700
+và vá các phần phụ thuộc chủ yếu chỉ trong trường hợp người tạo mô-đun phụ thuộc của bạn.
+
+3
+00:00:14,700 --> 00:00:20,480
+Nếu họ mắc lỗi về số phiên bản cần nâng cấp, điều đó sẽ không tự động nâng cấp.
+
+4
+00:00:20,490 --> 00:00:28,640
+nó yêu cầu bạn phải nâng cấp rõ ràng các phụ thuộc nhỏ, ví dụ như ở đây.
+
+5
+00:00:28,650 --> 00:00:37,850
+Nếu chúng ta vào danh sách gạch ngang và tất cả chúng ta có thể thấy tất cả các phụ thuộc trực tiếp và gián tiếp của đối tượng của chúng ta ở đây
+
+6
+00:00:38,270 --> 00:00:41,990
+là chúng tôi có thể thấy rằng chúng tôi có các phiên bản cụ thể để trích dẫn và lấy mẫu.
+
+7
+00:00:42,030 --> 00:00:49,070
+Chúng tôi không có phiên bản chúng tôi không sử dụng phiên bản được gắn thẻ để đi làm văn bản gạch chéo X gạch chéo.
+
+8
+00:00:49,380 --> 00:00:56,670
+Vì vậy, nếu chúng tôi muốn nâng cấp lên phiên bản đó, chúng tôi thực sự sử dụng go get, vì vậy hãy go get what trước đó trước go module
+
+9
+00:00:56,700 --> 00:01:00,250
+go get đã tải mã này vào đường dẫn go của bạn.
+
+10
+00:01:00,300 --> 00:01:07,670
+Bây giờ go get is nếu bạn đang sử dụng mô-đun go get là cách bạn điều chỉnh các phiên bản trong mã của mình.
+
+11
+00:01:07,710 --> 00:01:16,260
+Tệp của tôi cũng như tải xuống và lưu trước vào bộ đệm trước khi tải xuống tệp để bạn có thể truy cập thủ công
+
+12
+00:01:16,260 --> 00:01:23,270
+đi ra ngoài không tập tin và chỉnh sửa nó nếu bạn muốn nhưng có lẽ bạn nên tránh điều đó khi go get làm điều đó tốt hơn.
+
+13
+00:01:23,490 --> 00:01:28,560
+Vì vậy go get bạn chỉ cần nói go get và bạn đưa ra tên của một phiên bản của một gói tin.
+
+14
+00:01:28,560 --> 00:01:39,070
+Mô-đun và điều đó sẽ thêm nó dưới dạng mô-đun sẽ tải xuống như bình thường và nó sẽ thêm nó vào yêu cầu của bạn
+
+15
+00:01:39,080 --> 00:01:40,850
+liệt kê ở đây.
+
+16
+00:01:41,100 --> 00:01:45,330
+Lưu ý rằng nó thêm điều này dưới dạng phụ thuộc gián tiếp.
+
+17
+00:01:45,330 --> 00:01:52,740
+Về cơ bản, điều này nói với mô-đun của bạn rằng mã của bạn không được nhập trực tiếp vào mô-đun nhưng nó cần
+
+18
+00:01:52,800 --> 00:01:55,840
+để phiên bản cụ thể này hoạt động.
+
+19
+00:01:55,920 --> 00:02:03,660
+Vì vậy, trích dẫn CIO của chúng tôi hoặc một trong những phần phụ thuộc của nó là bắt buộc, yêu cầu phải có văn bản nhưng bạn đang nói rằng bạn muốn
+
+20
+00:02:03,660 --> 00:02:05,750
+văn bản là phiên bản này ở mức tối thiểu.
+
+21
+00:02:07,930 --> 00:02:10,780
+Vì vậy, bây giờ là phiên bản 0 3 2.
+
+22
+00:02:12,800 --> 00:02:17,150
+Bạn theo dõi bất cứ khi nào bạn cập nhật các phụ thuộc của mình, bạn luôn muốn đảm bảo rằng mã của mình vẫn hoạt động.
+
+23
+00:02:17,150 --> 00:02:23,200
+Vì vậy, nếu bạn đã có thiết lập thử nghiệm phù hợp, thì bạn chỉ cần chạy thử nghiệm của mình, hãy xem các thử nghiệm của chúng tôi
+
+24
+00:02:23,200 --> 00:02:29,210
+tất cả vẫn vượt qua vì chúng tôi đã có các bài kiểm tra kiểm tra mọi thứ kỹ lưỡng, điều đó có nghĩa là nó đủ tốt
+
+25
+00:02:29,210 --> 00:02:37,160
+rằng chúng ta có thể đẩy mã này thay đổi và nếu chúng ta chạy Go go list dash và tất cả những gì chúng ta có thể thấy bây giờ là văn bản
+
+26
+00:02:37,220 --> 00:02:43,490
+hiện đã có một phiên bản cụ thể trên đó và đột nhiên chúng tôi cần các công cụ vì rõ ràng phiên bản văn bản này
+
+27
+00:02:43,610 --> 00:02:51,410
+không yêu cầu công cụ nhưng văn bản phiên bản này yêu cầu công cụ và những công cụ đó có trên Phiên bản thẻ.
+
+28
+00:02:51,410 --> 00:02:51,770
+Phải.
+
+29
+00:02:51,890 --> 00:02:52,870
+Vậy điều đó có ý nghĩa gì.
+
+30
+00:02:52,880 --> 00:03:00,830
+Đó là trên phiên bản thẻ, không có nó v 0 0 0 và sau đó là một số loại ngày và hàm băm đằng sau dấu thời gian đó
+
+31
+00:03:00,830 --> 00:03:07,610
+phiên bản liên hệ ngày tháng để đó chỉ là một nhận xét tại repo đó vào một thời điểm nào đó nhưng không có phiên bản
+
+32
+00:03:07,610 --> 00:03:08,830
+số đã được gán cho nó.
+
+33
+00:03:08,900 --> 00:03:09,440
+Chính xác.
+
+34
+00:03:09,440 --> 00:03:17,770
+Và vì vậy, họ đã thiết kế đặc biệt ngày này thành một ngày để một cam kết mới hơn sẽ diễn ra.
+
+35
+00:03:17,820 --> 00:03:21,830
+Nó có thể dễ dàng cho biết sự khác biệt khác nhau giữa một thẻ mới hơn và một thẻ cũ hơn để cam kết.
+
+36
+00:03:21,830 --> 00:03:28,790
+Vì vậy, ngay cả khi ai đó không sử dụng các phiên bản trong cơ sở mã của họ ở đó hoặc hoàn toàn không sử dụng các mô-đun hoặc phiên bản
+
+37
+00:03:29,150 --> 00:03:36,020
+và bạn đang lấy mã đó và ít nhất đó vẫn là một cách để xác định nhận xét duy nhất đó cho GitHub
+
+38
+00:03:36,350 --> 00:03:41,340
+có thể những nơi khác để đi như thế này nói chung điều này đang trở nên phổ biến có tất cả các tính năng này
+
+39
+00:03:41,390 --> 00:03:43,630
+không phải để có được nó Tôi nghĩ rằng tôi đã có nó.
+
+40
+00:03:44,670 --> 00:03:50,960
+Vì vậy, có thể sẽ có những thay đổi nhỏ khác nếu đó là thông qua SBN hoặc một số kiểm soát phiên bản khác
+
+41
+00:03:50,960 --> 00:03:59,590
+phần mềm nhưng kể từ khi được phổ biến nhất và sử dụng và nói chung những gì sử dụng nói chung đây là tất cả những gì chúng tôi
+
+42
+00:03:59,590 --> 00:04:01,070
+đã hiển thị như một ví dụ.
+
+43
+00:04:01,180 --> 00:04:08,190
+Đó là phiên bản chưa được khai thác, họ dán av 0 0 0 vì vậy nếu có phiên bản mới nếu phiên bản thực tế xuất hiện sau
+
+44
+00:04:08,370 --> 00:04:10,840
+điều đó sẽ ngay lập tức đăng ký là lớn hơn.
+
+45
+00:04:10,850 --> 00:04:11,560
+Vâng.
+
+46
+00:04:11,850 --> 00:04:13,160
+Sau đó, họ đặt ngày.
+
+47
+00:04:13,260 --> 00:04:17,640
+Vì vậy, nếu có nếu bạn có thể thử so sánh luồng bụi bẩn với các lần xác nhận khác nhau, nó có thể kiểm tra ngày
+
+48
+00:04:18,000 --> 00:04:23,210
+sự khác biệt để xem cái nào mới hơn và sau đó là một số hàm băm duy nhất.
+
+49
+00:04:23,250 --> 00:04:27,550
+Tôi thực sự không chắc con số này thực sự đến từ đâu.
+
+50
+00:04:27,630 --> 00:04:30,270
+Tôi không nghĩ đó là số cam kết.
+
+51
+00:04:31,600 --> 00:04:37,440
+Được rồi, tốt thôi nhưng nếu đó là một số giá trị thì bạn không cần phải xử lý nó, bạn có thể đi lấy
+
+52
+00:04:38,310 --> 00:04:41,080
+đồ của bạn ngày hôm qua.
+
+53
+00:04:41,150 --> 00:04:44,360
+Bây giờ bạn có thể thấy trong bản mod đi của chúng tôi, chúng tôi hiện có phiên bản đó.
+
+54
+00:04:44,460 --> 00:04:53,220
+Vì vậy, nếu có một số cập nhật cho hai văn bản có phiên bản khác cao hơn như 0 0 3 3 thì hãy nhận
+
+55
+00:04:53,220 --> 00:04:58,200
+sẽ chỉ là một lần nữa, chỉ cần chạy đi lấy gói đó và điều đó sẽ ngay lập tức đi thẳng trở lại
+
+56
+00:04:58,200 --> 00:04:59,070
+đến mới nhất.
+
+57
+00:04:59,070 --> 00:05:06,460
+Được gắn thẻ hoặc bạn sẽ chuyển sang phiên bản mới nhất và tuân theo các quy tắc đó của bản phát hành trạng thái được gắn thẻ mới nhất
+
+58
+00:05:06,580 --> 00:05:10,660
+phát hành trước được gắn thẻ mới nhất và sau đó được gắn thẻ mới nhất Yeah.
+
+59
+00:05:10,690 --> 00:05:17,400
+Vì vậy, chúng tôi vừa có phiên bản mới nhất, vì vậy chúng tôi chỉ nói rằng hãy mang phiên bản mới nhất xuống và cứ thế mang đến
+
+60
+00:05:17,400 --> 00:05:23,210
+cho chúng tôi thông tin mới nhất trong video tiếp theo, chúng ta sẽ xem cách chỉ định phiên bản chính xác và vì vậy chúng ta sẽ thấy điều đó
+
+61
+00:05:23,300 --> 00:05:24,160
+video tiếp theo.
+
+62
+00:05:24,170 --> 00:05:25,620
+Bất cứ điều gì nhiều hơn để thêm vào cái này.
+
+63
+00:05:25,650 --> 00:05:26,010
+KHÔNG.
+
+64
+00:05:26,330 --> 00:05:26,700
+Được rồi.
+
+65
+00:05:26,720 --> 00:05:27,670
+Xem trong video tiếp theo.

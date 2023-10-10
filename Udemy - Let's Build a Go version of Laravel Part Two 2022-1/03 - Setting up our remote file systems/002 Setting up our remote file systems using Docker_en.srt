@@ -1,0 +1,264 @@
+1
+00:00:01,160 --> 00:00:05,870
+So before we can work with remote file systems, we obviously need some file systems that we can connect
+
+2
+00:00:05,870 --> 00:00:10,850
+to, and we're going to do that using Docker and I presume that you have Docker installed, but if not,
+
+3
+00:00:10,850 --> 00:00:19,550
+you can go over to this URL, Docker WWE Gawker.com slash products slash Docker Dash desktop.
+
+4
+00:00:20,030 --> 00:00:23,400
+And if you hit it on a Mac, you'll see this screen with the two buttons.
+
+5
+00:00:23,690 --> 00:00:28,430
+Download the one appropriate for your file system or for your computer, and if you're on windows,
+
+6
+00:00:28,430 --> 00:00:31,050
+you'll see the download for Windows and Linux and so forth.
+
+7
+00:00:31,070 --> 00:00:32,780
+OK, so install that.
+
+8
+00:00:33,470 --> 00:00:37,280
+Then once you have that installed, go back to your project.
+
+9
+00:00:37,490 --> 00:00:42,860
+And right now, I'm going to look at the My App folder in this workspace, and let's open up Docker
+
+10
+00:00:42,860 --> 00:00:43,400
+compose.
+
+11
+00:00:43,400 --> 00:00:45,410
+Don't worry, I'm out now.
+
+12
+00:00:45,590 --> 00:00:48,420
+There are three services in this in this file right now.
+
+13
+00:00:48,440 --> 00:00:54,470
+The first one starts Postgres, and it expects to find a folder called DB data at the root level of
+
+14
+00:00:54,470 --> 00:00:57,230
+our application, and inside of that a folder called Postgres.
+
+15
+00:00:58,190 --> 00:01:00,080
+Now I could create those here.
+
+16
+00:01:00,230 --> 00:01:06,560
+But one of the really irritating features is if I create an empty folder like clicking over here in
+
+17
+00:01:06,560 --> 00:01:11,690
+my app and seeing create a new folder and I can do the first one DB data.
+
+18
+00:01:12,080 --> 00:01:18,650
+And I need that because I have DB Dash data right here for the mounted volume for this Postgres Docker
+
+19
+00:01:18,650 --> 00:01:24,860
+container, and I can create one called inside of that a new folder called Postgres, and that works.
+
+20
+00:01:25,130 --> 00:01:30,800
+But if I create another one, often it creates an inside of Postgres, so I'm going to create the rest
+
+21
+00:01:30,800 --> 00:01:34,490
+of them right from my desktop and you can follow whatever procedure works for you.
+
+22
+00:01:34,520 --> 00:01:35,810
+We just need these folders.
+
+23
+00:01:35,930 --> 00:01:36,350
+OK?
+
+24
+00:01:37,220 --> 00:01:43,550
+Now, if you go to the course resources for this lecture, you'll see a complete Docker wire ml file
+
+25
+00:01:43,550 --> 00:01:46,700
+or Docker Dash composed by EML file that you can download.
+
+26
+00:01:47,330 --> 00:01:48,680
+But we need a few new services.
+
+27
+00:01:48,880 --> 00:01:52,430
+First thing I'll do is comment about MariaDB because I'm not going to be using that.
+
+28
+00:01:52,700 --> 00:01:55,040
+I'm going to be using Postgres, so I'll comment there.
+
+29
+00:01:56,000 --> 00:01:57,950
+Then, right underneath Redis.
+
+30
+00:01:58,250 --> 00:01:59,300
+I'll get a blank line.
+
+31
+00:01:59,330 --> 00:02:02,810
+Then another blank line, then I'll backspace twice to get to the right column.
+
+32
+00:02:03,440 --> 00:02:06,530
+And I already have on my clipboard the two new Docker images.
+
+33
+00:02:06,530 --> 00:02:09,620
+I want to make part of my Docker compose file as well.
+
+34
+00:02:09,620 --> 00:02:13,760
+Paste them in and you'll get these from the course resources for this lecture.
+
+35
+00:02:14,960 --> 00:02:20,450
+So the first thing we're going to have the first new service is one called SFTP, and that will actually
+
+36
+00:02:20,450 --> 00:02:25,520
+provide both SFTP and WebDAV services.
+
+37
+00:02:25,760 --> 00:02:31,280
+And again, that requires two folders inside the DB data folder, one called SFP and one called home.
+
+38
+00:02:31,490 --> 00:02:38,060
+So I'll switch over to my desktop here and I'll open up my DB data folder and create a new folder called
+
+39
+00:02:38,330 --> 00:02:38,900
+FTP.
+
+40
+00:02:39,320 --> 00:02:41,060
+And another one called Home.
+
+41
+00:02:41,450 --> 00:02:48,700
+OK, so now if I come back here inside the DB data folder, I don't have home postgres in 150 people.
+
+42
+00:02:50,900 --> 00:02:55,880
+Now, the next Docker image that we're including is one called Mineo, and I'll talk about that in a
+
+43
+00:02:55,880 --> 00:02:56,190
+minute.
+
+44
+00:02:56,210 --> 00:02:56,630
+OK.
+
+45
+00:02:57,200 --> 00:03:03,590
+Now this one by default listens to two ports 9000, which is the actual service that we can connect
+
+46
+00:03:03,590 --> 00:03:07,580
+a minute with, and 9001, which is the web interface.
+
+47
+00:03:08,270 --> 00:03:14,780
+Now, in my case, I need to change the 9000 to an 8000 just because I already have something running
+
+48
+00:03:14,780 --> 00:03:16,880
+on Port, 9000 on my system.
+
+49
+00:03:16,880 --> 00:03:23,720
+Right now, I actually am being forced to work on a project for a client, so I have the fpm running
+
+50
+00:03:23,720 --> 00:03:27,320
+and that's taking up Port 9000, so I'll just use eight thousand instead.
+
+51
+00:03:27,890 --> 00:03:33,170
+And of course, this also wants a folder called Mineo inside the DVD data folder, where it's going
+
+52
+00:03:33,170 --> 00:03:33,940
+to store its data.
+
+53
+00:03:33,950 --> 00:03:37,700
+So I'll come back here and create a new folder called Mean I'll.
+
+54
+00:03:38,570 --> 00:03:38,900
+OK.
+
+55
+00:03:40,220 --> 00:03:46,340
+So with those changes, I should now be able to start up Docker so my terminal and make sure I'm in
+
+56
+00:03:46,340 --> 00:03:47,320
+the correct directory.
+
+57
+00:03:47,330 --> 00:03:55,820
+My app, I am and I'll type Docker compose up dashboard to run it in the background and hopefully everything
+
+58
+00:03:55,820 --> 00:03:56,270
+will work.
+
+59
+00:03:58,670 --> 00:04:02,780
+Now that might take you a little bit longer as it pulls the darker images, but it's running now, so
+
+60
+00:04:02,780 --> 00:04:08,450
+if I go to my doctor desktop right over here the dashboard.
+
+61
+00:04:11,670 --> 00:04:18,690
+I should see my app running, and it's got all the appropriate services Reddish, SFP, Mineo and Postgres.
+
+62
+00:04:18,720 --> 00:04:24,660
+Now if I wanted to stop them, I just come down here and typed Docker compose down and that will actually
+
+63
+00:04:24,660 --> 00:04:25,200
+stop them.
+
+64
+00:04:25,620 --> 00:04:29,760
+But I'm going to leave them running right now because in the next lecture, we'll configure accounts
+
+65
+00:04:29,760 --> 00:04:31,830
+on both Mineo and SFO.
+
+66
+00:04:32,880 --> 00:04:35,580
+So we'll take care of that in the next lecture.
+

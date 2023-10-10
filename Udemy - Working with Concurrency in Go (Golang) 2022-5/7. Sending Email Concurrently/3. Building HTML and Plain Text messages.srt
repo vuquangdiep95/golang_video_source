@@ -1,0 +1,439 @@
+1
+00:00:00,970 --> 00:00:03,550
+So let's finish up our Malago file.
+
+2
+00:00:03,580 --> 00:00:08,920
+And what we need to do is to finish off these two stub functions and to write one more that will inline
+
+3
+00:00:08,920 --> 00:00:12,070
+CC using that package, the pre mailer package.
+
+4
+00:00:12,070 --> 00:00:15,250
+We imported a couple of lectures ago and this is pretty simple.
+
+5
+00:00:15,880 --> 00:00:20,230
+So here in the build HTML message function, let's do that 1/1.
+
+6
+00:00:20,380 --> 00:00:20,670
+Okay.
+
+7
+00:00:20,770 --> 00:00:26,710
+So the first thing I'm going to do is declare a variable template to render and that's going to be assigned.
+
+8
+00:00:26,710 --> 00:00:32,920
+The value of what we're going to be doing is passing things like just mail to this, this function,
+
+9
+00:00:32,920 --> 00:00:38,440
+and then we'll build the name of the file using format of print F right there.
+
+10
+00:00:39,100 --> 00:00:48,040
+And my format string will be dot slash, cmd slash, web slash, templates slash and then percent s
+
+11
+00:00:48,190 --> 00:00:50,470
+dot, html, dot and go.
+
+12
+00:00:50,470 --> 00:00:53,260
+Each HTML is we're doing the HTML version of it here.
+
+13
+00:00:53,440 --> 00:00:53,880
+Okay.
+
+14
+00:00:55,210 --> 00:01:01,120
+So that gives me the name of the full path to the file I want to use to render this email.
+
+15
+00:01:01,390 --> 00:01:08,380
+Then I'll declare a variable T for template while checking for an error when I call template dot new
+
+16
+00:01:10,630 --> 00:01:12,580
+and the first thing I to do is give it a name.
+
+17
+00:01:12,790 --> 00:01:13,540
+It can be anything.
+
+18
+00:01:13,540 --> 00:01:21,580
+So I'll call this email, dash html and then I'll pass files right there and use the variable template
+
+19
+00:01:21,580 --> 00:01:22,000
+to render.
+
+20
+00:01:22,460 --> 00:01:22,750
+Okay.
+
+21
+00:01:23,110 --> 00:01:26,380
+So that passes the file and we check for an error.
+
+22
+00:01:26,560 --> 00:01:31,900
+If error is not equal to nil, then we'll return an empty string.
+
+23
+00:01:33,280 --> 00:01:33,790
+And the error.
+
+24
+00:01:35,110 --> 00:01:35,380
+Okay.
+
+25
+00:01:35,980 --> 00:01:43,980
+But if we get past that now, let's declare a variable var tpo and it's a type bytes buffer.
+
+26
+00:01:45,080 --> 00:01:47,920
+And we're going to render into that rule, execute into that.
+
+27
+00:01:48,670 --> 00:01:55,030
+So we'll do that by saying if error is equal to t dot execute template.
+
+28
+00:01:57,920 --> 00:02:01,520
+And we're going to execute it into that bite stop buffer TPO.
+
+29
+00:02:02,090 --> 00:02:09,260
+We're looking for a section in the template named body and we're passing it our data message data map
+
+30
+00:02:10,010 --> 00:02:10,520
+right there.
+
+31
+00:02:12,500 --> 00:02:19,880
+And if the error is not equal to nil and once again, we'll return an empty string in the error.
+
+32
+00:02:21,080 --> 00:02:21,410
+Okay.
+
+33
+00:02:22,670 --> 00:02:27,590
+But if we get past that now, we have a formatted message or something we can use as a formatted message.
+
+34
+00:02:27,620 --> 00:02:31,790
+We still have a bit of work to do on it, but we'll say formatted message.
+
+35
+00:02:34,730 --> 00:02:40,880
+It's a sign the value of two year old string, which you get a string at of that vital stop buffer.
+
+36
+00:02:41,180 --> 00:02:41,520
+Okay.
+
+37
+00:02:42,020 --> 00:02:46,800
+Now, at this point, before I send that back, I want to inline any excess.
+
+38
+00:02:46,820 --> 00:02:50,570
+So what I'm going to do is come down here after build a plain text message.
+
+39
+00:02:51,060 --> 00:02:53,390
+I'll create another simple function with the receiver.
+
+40
+00:02:53,810 --> 00:02:54,710
+A pointer to mail.
+
+41
+00:02:55,010 --> 00:02:56,870
+And here's what we'll use that perimeter package.
+
+42
+00:02:57,020 --> 00:02:57,320
+Okay.
+
+43
+00:02:58,220 --> 00:03:01,550
+I'll call this one inline CSV, because that's what we're doing.
+
+44
+00:03:01,940 --> 00:03:06,420
+We're making the CSC more acceptable to various email clients.
+
+45
+00:03:06,440 --> 00:03:13,490
+It takes one parameter, which is I'll call S, it's a type string, and it returns a string and potentially
+
+46
+00:03:13,490 --> 00:03:13,790
+an error.
+
+47
+00:03:15,200 --> 00:03:17,240
+Okay, let's give ourselves some room here.
+
+48
+00:03:18,200 --> 00:03:19,400
+And this is very, very simple.
+
+49
+00:03:19,790 --> 00:03:23,780
+So the first thing we need to do is to set up some options for the pre mailer package.
+
+50
+00:03:23,840 --> 00:03:24,860
+So I'll call that options.
+
+51
+00:03:25,190 --> 00:03:29,750
+And it's a sign the value of the type pre mailer options.
+
+52
+00:03:31,260 --> 00:03:32,420
+I'll just fill in the fields.
+
+53
+00:03:32,990 --> 00:03:34,790
+So we'll say remove classes.
+
+54
+00:03:34,790 --> 00:03:36,460
+And there are many options you can use here.
+
+55
+00:03:36,470 --> 00:03:37,400
+But this will do the trick.
+
+56
+00:03:37,640 --> 00:03:38,390
+I'll say don't bother.
+
+57
+00:03:38,750 --> 00:03:47,060
+We're moving the classes, some email, clients use them 62 attributes and I'll say that one false as
+
+58
+00:03:47,060 --> 00:03:47,330
+well.
+
+59
+00:03:47,570 --> 00:03:47,870
+Okay.
+
+60
+00:03:49,490 --> 00:03:52,130
+And I'll say keep being important.
+
+61
+00:03:52,310 --> 00:03:56,450
+If someone puts an exclamation mark in front of a CSV rule and wants to make it important.
+
+62
+00:03:56,630 --> 00:03:57,800
+I'll say you keep that one too.
+
+63
+00:03:57,800 --> 00:03:58,070
+True.
+
+64
+00:03:58,490 --> 00:03:59,480
+So now I have some options.
+
+65
+00:04:00,470 --> 00:04:07,430
+Now all I do is say premise for pre mailer while checking for an error comes from pre mailer.
+
+66
+00:04:08,670 --> 00:04:09,270
+Right there.
+
+67
+00:04:10,890 --> 00:04:17,340
+Dot knew pre mailer from string because that's what we're getting is a string and we'll give it the
+
+68
+00:04:17,340 --> 00:04:22,920
+string and we'll give it a reference to our options and we check for an error.
+
+69
+00:04:23,190 --> 00:04:30,990
+If error is not equal to nil, then return an empty string and the error can't go any further.
+
+70
+00:04:32,250 --> 00:04:37,260
+Otherwise we'll declare a variable called HTML while checking for an error.
+
+71
+00:04:37,350 --> 00:04:39,270
+When we say preempt, transform.
+
+72
+00:04:41,440 --> 00:04:43,090
+And once again, we have our check.
+
+73
+00:04:43,090 --> 00:04:47,530
+So I'll copy this and paste it here.
+
+74
+00:04:47,860 --> 00:04:50,410
+And if we get past that, then everything went according to plan.
+
+75
+00:04:50,800 --> 00:04:53,110
+So we'll return to normal and go.
+
+76
+00:04:54,100 --> 00:04:55,770
+Now I have this function available to me.
+
+77
+00:04:55,780 --> 00:04:56,610
+So up here.
+
+78
+00:04:56,620 --> 00:04:58,660
+Back in build H2O message.
+
+79
+00:05:00,010 --> 00:05:04,450
+We'll try to inline the CCed, so we'll say formatted message.
+
+80
+00:05:07,540 --> 00:05:10,360
+An error or equal to from the receiver.
+
+81
+00:05:10,360 --> 00:05:18,370
+M will inline the CCS and we just hand it formatted message and we'll do our error check.
+
+82
+00:05:18,370 --> 00:05:19,810
+So I'll copy and paste this
+
+83
+00:05:22,570 --> 00:05:23,410
+and paste it here.
+
+84
+00:05:24,150 --> 00:05:27,910
+Oh, and if we get past that, we're not going to return an empty string.
+
+85
+00:05:28,600 --> 00:05:30,610
+We're going to return the formatted message.
+
+86
+00:05:35,530 --> 00:05:35,860
+Okay.
+
+87
+00:05:36,670 --> 00:05:41,380
+So with all of that, now we can copy this.
+
+88
+00:05:44,880 --> 00:05:49,980
+Paste it down here in the build plain text message and just modify it.
+
+89
+00:05:51,210 --> 00:05:55,440
+So we're going to modify first of all, we're not going to be using HTML to go HTML.
+
+90
+00:05:55,450 --> 00:05:58,200
+We're going to be using plain dark HTML as the template.
+
+91
+00:05:58,410 --> 00:05:58,800
+Okay.
+
+92
+00:05:59,490 --> 00:06:04,650
+And we'll change the name here to email plain, which doesn't really matter, but it makes it more readable.
+
+93
+00:06:06,000 --> 00:06:10,920
+This all stays exactly the same, but we don't actually inline the CSRs.
+
+94
+00:06:13,020 --> 00:06:19,560
+And just to make it readable, we'll make this one plain message and we'll return plain message.
+
+95
+00:06:22,230 --> 00:06:22,620
+Okay.
+
+96
+00:06:22,770 --> 00:06:28,140
+So with those changes, we should be able to actually use this code to send email.
+
+97
+00:06:28,900 --> 00:06:31,620
+Now, we have some warnings here, but I think this is from go, please.
+
+98
+00:06:32,810 --> 00:06:34,650
+I'll look at that up here.
+
+99
+00:06:34,670 --> 00:06:35,970
+I did, in fact, miss something.
+
+100
+00:06:36,020 --> 00:06:37,310
+It's a good thing I spotted that.
+
+101
+00:06:38,180 --> 00:06:47,240
+We want to put an MSG out template, and down here we want to put MSG to a template that wouldn't have
+
+102
+00:06:47,240 --> 00:06:47,900
+worked otherwise.
+
+103
+00:06:48,620 --> 00:06:51,110
+And we still have some errors here or warnings here.
+
+104
+00:06:51,110 --> 00:06:54,050
+And it says it is unused, but in fact.
+
+105
+00:06:56,730 --> 00:06:57,840
+We are using it up here.
+
+106
+00:06:57,900 --> 00:07:00,480
+That's just a language server and Visual Studio code.
+
+107
+00:07:00,960 --> 00:07:02,610
+Not quite keeping up with me.
+
+108
+00:07:03,120 --> 00:07:05,880
+So I believe that this should work for us.
+
+109
+00:07:05,910 --> 00:07:07,230
+We'll find out before too long.
+
+110
+00:07:07,260 --> 00:07:09,060
+But in any case, let's move on.

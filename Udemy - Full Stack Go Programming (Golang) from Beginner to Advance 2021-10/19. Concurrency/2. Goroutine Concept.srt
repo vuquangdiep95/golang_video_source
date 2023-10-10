@@ -1,0 +1,271 @@
+1
+00:00:13,900 --> 00:00:19,690
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:19,900 --> 00:00:23,110
+We want to talk about the others concurrency concept.
+
+3
+00:00:26,840 --> 00:00:27,860
+Go routines.
+
+4
+00:00:29,510 --> 00:00:36,080
+To achieve concurrence and parallelism in goal, we need to understand the concept of goal routines,
+
+5
+00:00:36,830 --> 00:00:43,940
+goal routines are a goal and greater on top of threats and managed by goal runtime rather than the operating
+
+6
+00:00:43,940 --> 00:00:44,480
+system.
+
+7
+00:00:45,590 --> 00:00:53,240
+Go routines are a way of doing tasks concurrently in goal, and they allow us to create and run multiple
+
+8
+00:00:53,240 --> 00:00:59,130
+methods or functions concurrently in the same address space inexpensively.
+
+9
+00:00:59,480 --> 00:01:06,050
+Goal run time has the responsibility to assign or withdraw memory resources from goal routines.
+
+10
+00:01:06,620 --> 00:01:14,180
+A goal routine is most like a threat to accomplish multiple tasks, but consumes fewer resources than
+
+11
+00:01:14,180 --> 00:01:16,610
+always with goal.
+
+12
+00:01:16,610 --> 00:01:19,610
+Routine does not have a one to one relationship.
+
+13
+00:01:19,610 --> 00:01:27,620
+Betrays a goal routine is a function or method which executives independently and seamlessly in connection
+
+14
+00:01:27,620 --> 00:01:32,660
+with any other goal routines present in your program or in other wars.
+
+15
+00:01:33,050 --> 00:01:38,870
+Every concurrently executing activity in goal language is known as the goal routines.
+
+16
+00:01:39,560 --> 00:01:42,800
+You can consider a goal routine like a where thread.
+
+17
+00:01:43,490 --> 00:01:47,570
+We can divide d'application application into multiple concurrent tasks.
+
+18
+00:01:47,870 --> 00:01:54,140
+These tasks can be accomplished with different goal routines, accomplishing different tasks using multiple
+
+19
+00:01:54,140 --> 00:01:54,830
+goal routines.
+
+20
+00:01:54,980 --> 00:01:57,320
+Enable concurrency in the application.
+
+21
+00:01:58,340 --> 00:02:04,250
+If the application is executing on multiple cores, it also asked parallelism to the application.
+
+22
+00:02:05,000 --> 00:02:11,510
+Every program contains at least a single goal routine, and the goal routine is known as the main goal
+
+23
+00:02:11,510 --> 00:02:11,930
+routine.
+
+24
+00:02:12,230 --> 00:02:15,740
+Our legal teams are working on the main goal routine.
+
+25
+00:02:16,430 --> 00:02:22,700
+If the main goal routine terminated, then all the goal routine present in the program also terminated.
+
+26
+00:02:22,940 --> 00:02:25,730
+Girl routine always works in the background.
+
+27
+00:02:30,150 --> 00:02:32,130
+The benefits of GO routines.
+
+28
+00:02:33,180 --> 00:02:38,070
+They are lightweight ability to escape seamlessly.
+
+29
+00:02:39,120 --> 00:02:47,370
+They are virtual terrorists, less memory requirements provide additional memory to go routines during
+
+30
+00:02:47,370 --> 00:02:48,210
+runtime.
+
+31
+00:02:49,450 --> 00:02:54,970
+Go proteins are light, they are abstractions over tress because they are creation and destruction are
+
+32
+00:02:54,970 --> 00:03:00,220
+very cheap as compared to threats, and they are scattered with over oysters.
+
+33
+00:03:01,180 --> 00:03:07,360
+Executing the metals in the background is as easy as through handing the word go in the function call.
+
+34
+00:03:10,190 --> 00:03:13,850
+Different beat bingo routines and threats go with you.
+
+35
+00:03:15,990 --> 00:03:22,710
+A go routine is a function or method which executes independently and seamlessly in connection with
+
+36
+00:03:22,710 --> 00:03:29,370
+any other goal in presenting your program or, in other words, every concurrently executing activity
+
+37
+00:03:29,370 --> 00:03:31,920
+and goal language is known as a go routine.
+
+38
+00:03:33,270 --> 00:03:33,780
+Tarek?
+
+39
+00:03:35,790 --> 00:03:42,030
+That process is a part of an operating system which is responsible for executing an application.
+
+40
+00:03:42,780 --> 00:03:49,320
+Every program that executes on your system is a process and to run the code inside the application,
+
+41
+00:03:49,320 --> 00:03:52,470
+that process uses a term known as a threat.
+
+42
+00:03:53,070 --> 00:03:59,040
+A threat is a lightweight process or, in other words, a threat is a unit which executives the code
+
+43
+00:03:59,070 --> 00:04:00,090
+on the program.
+
+44
+00:04:00,420 --> 00:04:06,390
+So every program has logic, and it's threat is responsible for executing this logic.
+
+45
+00:04:10,580 --> 00:04:12,170
+Memory consumption.
+
+46
+00:04:14,800 --> 00:04:19,930
+The creation of GO routines require much less or memory as compared to stress.
+
+47
+00:04:20,410 --> 00:04:26,500
+They are designed in a way that is that size of proteins can grow and change according to the need of
+
+48
+00:04:26,500 --> 00:04:27,400
+an application.
+
+49
+00:04:27,940 --> 00:04:34,540
+There might be only one thread in the program which thousands of go routines set up and entire down
+
+50
+00:04:34,540 --> 00:04:34,990
+costs.
+
+51
+00:04:36,720 --> 00:04:43,440
+Terrorists have significant set ups and three are down costs because it has to request resources from
+
+52
+00:04:43,440 --> 00:04:46,160
+the OSP in return, it wants its dome.
+
+53
+00:04:47,120 --> 00:04:50,550
+Go routine out, created and destroyed by the go wrong time.
+
+54
+00:04:50,910 --> 00:04:57,540
+It manages a scheduling garbage collection and the runtime environments for gore teams and those operations
+
+55
+00:04:57,540 --> 00:04:58,590
+are pretty cheap.
+
+56
+00:04:59,460 --> 00:05:00,390
+Switch cost.
+
+57
+00:05:01,860 --> 00:05:08,430
+This difference is mainly because of the difference in this case of go routines and threats, threats
+
+58
+00:05:08,430 --> 00:05:10,380
+are associated with plaintively.
+
+59
+00:05:10,620 --> 00:05:16,110
+If a process is running for more than a schedule of time, a slice, it would prevent the process and
+
+60
+00:05:16,110 --> 00:05:22,860
+is Kittrell execution of inother running processes on the same CPU the scheduler needs to save or restore
+
+61
+00:05:22,860 --> 00:05:24,180
+on registers.
+
+62
+00:05:25,170 --> 00:05:29,010
+Why go routines are as key to work cooperatively?
+
+63
+00:05:29,670 --> 00:05:35,730
+They do not directly tied to the always and when they go routines, which occurs very few registers
+
+64
+00:05:35,730 --> 00:05:39,960
+like program counter and is the point or need to be saved or restore.
+
+65
+00:05:47,530 --> 00:05:55,270
+Following are the important differences between go routine and threat in order not to prolong the time
+
+66
+00:05:55,270 --> 00:05:56,050
+of decision.
+
+67
+00:05:56,230 --> 00:06:00,100
+We will finish it and we will continue the content in the next session.
+
+68
+00:06:00,340 --> 00:06:00,910
+Goodbye.

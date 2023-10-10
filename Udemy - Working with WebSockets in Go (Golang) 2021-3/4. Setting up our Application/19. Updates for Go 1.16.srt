@@ -1,0 +1,115 @@
+1
+00:00:00,720 --> 00:00:07,380
+So while I was recording this course go one point one six came out and go one point one six is a pretty
+
+2
+00:00:07,380 --> 00:00:09,540
+good upgrade with a lot of new features.
+
+3
+00:00:10,290 --> 00:00:12,250
+And there's an article here on Long Rocket.
+
+4
+00:00:12,320 --> 00:00:15,570
+This is a blog post called What's New and Go One Point one six.
+
+5
+00:00:15,570 --> 00:00:18,630
+And I've posted a link to this in the course resources for this lecture.
+
+6
+00:00:19,320 --> 00:00:22,170
+And there are very few changes required.
+
+7
+00:00:22,170 --> 00:00:27,180
+And to be fair, if you don't do any of these changes, there's only two small ones we need to make.
+
+8
+00:00:27,180 --> 00:00:28,260
+Everything will still work.
+
+9
+00:00:28,770 --> 00:00:33,300
+But I think it's always a good idea to stay current with the language and to keep my code base up to
+
+10
+00:00:33,300 --> 00:00:35,670
+date with whatever changes have occurred in the language.
+
+11
+00:00:36,270 --> 00:00:42,540
+So the part that interests us and we you scroll down this article all the way down to IOU til right
+
+12
+00:00:42,540 --> 00:00:48,900
+here, the IOU IOU still package is now deprecated and all they've done is they've left the existing
+
+13
+00:00:48,900 --> 00:00:52,470
+methods that are in the ideal package as part of the language.
+
+14
+00:00:52,950 --> 00:00:57,690
+But they've actually moved, the methods are copied, the methods to other places where they make more
+
+15
+00:00:57,690 --> 00:00:58,100
+sense.
+
+16
+00:00:58,440 --> 00:01:03,140
+So the part that interests us are these methods right here and we're only using one of them.
+
+17
+00:01:03,210 --> 00:01:09,120
+So if you go to our code and just to be clear, if you make these changes without installing go one
+
+18
+00:01:09,120 --> 00:01:11,070
+point one six, your code is not going to work.
+
+19
+00:01:11,430 --> 00:01:16,350
+So the first step is to go update from go one point one five or whatever.
+
+20
+00:01:16,350 --> 00:01:20,780
+You have to go one point one six, then you make these changes.
+
+21
+00:01:21,330 --> 00:01:27,480
+So if you look at our code right over here, the only places where where we make a call to IOU till
+
+22
+00:01:27,480 --> 00:01:33,480
+there's only one place and it's in Pusher Go, which is found in internal handlers, pusher go.
+
+23
+00:01:33,600 --> 00:01:42,030
+And it's this in my code, it's line 17 and all we need to do is to change IO util to IO and our updates
+
+24
+00:01:42,030 --> 00:01:44,010
+are imports should update and they did.
+
+25
+00:01:44,310 --> 00:01:48,840
+So that changes is necessary to make this current with go one point one six.
+
+26
+00:01:49,470 --> 00:01:51,630
+The other place is in my go modify.
+
+27
+00:01:51,810 --> 00:01:57,060
+I just changed the third line from go one point one five to go one point one six.
+
+28
+00:01:57,510 --> 00:02:01,020
+And assuming that you've installed go one point once a one point one six.
+
+29
+00:02:01,620 --> 00:02:04,950
+Life is good and those are the only changes required for our code base.

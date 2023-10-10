@@ -1,0 +1,379 @@
+1
+00:00:00,180 --> 00:00:05,550
+Now that we've created some different branches we've got some different code on those different branches
+
+2
+00:00:05,550 --> 00:00:08,300
+or different files different text.
+
+3
+00:00:08,310 --> 00:00:13,260
+We want to look at how do we merge those and bring those branches back into master and then get rid
+
+4
+00:00:13,260 --> 00:00:14,010
+of those branches.
+
+5
+00:00:14,010 --> 00:00:17,950
+So that's what we're gonna do in this video and Daniel is going to show us how to do it.
+
+6
+00:00:18,360 --> 00:00:25,620
+So there's two main ways to get to merge your branches back into either their origin branch or into
+
+7
+00:00:25,620 --> 00:00:29,220
+master which is the ultimate origin branch.
+
+8
+00:00:29,220 --> 00:00:31,550
+The first way is same as with before.
+
+9
+00:00:31,650 --> 00:00:34,830
+You can make a pull request to forget at least.
+
+10
+00:00:35,010 --> 00:00:39,780
+So you've got the dog and you had detailed dog and gives us a nice little shortcut to just go straight
+
+11
+00:00:39,780 --> 00:00:43,690
+to them or you can just make a generic app make a pull request.
+
+12
+00:00:43,770 --> 00:00:48,510
+I want to go from the dog into master.
+
+13
+00:00:48,510 --> 00:00:51,590
+Now we have to think about detail dog came off of dog.
+
+14
+00:00:51,600 --> 00:00:56,950
+Before we do that and kind of like so merge detail dog and the dog first.
+
+15
+00:00:56,950 --> 00:00:58,140
+Like do you think about that.
+
+16
+00:00:58,350 --> 00:00:59,980
+You can.
+
+17
+00:01:00,500 --> 00:01:04,790
+And especially since dog gotten update that detail dog is missing.
+
+18
+00:01:05,490 --> 00:01:09,090
+But it's not necessarily all required yoy.
+
+19
+00:01:09,120 --> 00:01:15,030
+The main thing I would think about is don't merge one branch into another branch that's completely independent
+
+20
+00:01:15,030 --> 00:01:15,910
+from it.
+
+21
+00:01:15,930 --> 00:01:21,580
+So if I make a cat branch off of master I don't want to merge dog into cat because they are complete.
+
+22
+00:01:22,200 --> 00:01:23,230
+They don't come.
+
+23
+00:01:23,370 --> 00:01:23,750
+They're not.
+
+24
+00:01:23,860 --> 00:01:25,740
+So you can do it however you want.
+
+25
+00:01:25,770 --> 00:01:27,390
+So let's start with dog and see what happens.
+
+26
+00:01:27,390 --> 00:01:32,280
+We're gonna use the dog in the master dog in the master so we can see the changes that the changes are
+
+27
+00:01:32,280 --> 00:01:33,890
+in green there.
+
+28
+00:01:33,920 --> 00:01:40,350
+So there is keen on the dog tax got added and Labrador tech's got added and poodle techs got added.
+
+29
+00:01:40,350 --> 00:01:41,610
+So we're gonna add those three files.
+
+30
+00:01:41,610 --> 00:01:42,430
+Let's do it.
+
+31
+00:01:42,720 --> 00:01:45,990
+It's just creates a merger pull request the poor questions message.
+
+32
+00:01:45,990 --> 00:01:50,700
+If there's only one commit the pull requests messages defaults to that commit.
+
+33
+00:01:50,700 --> 00:01:53,760
+Otherwise it's the branch name is the default case multiple committees.
+
+34
+00:01:53,910 --> 00:01:55,890
+So there's three comments here so it's the branch name.
+
+35
+00:01:56,490 --> 00:01:59,880
+So add dog data
+
+36
+00:02:03,050 --> 00:02:05,370
+and again we didn't provide a comment.
+
+37
+00:02:05,370 --> 00:02:10,070
+But you want to make sure you have good descriptions and comments so that when you're submitting these
+
+38
+00:02:10,700 --> 00:02:16,890
+particularly if you're submitting them to us we know what's changed and what's going on.
+
+39
+00:02:17,870 --> 00:02:23,960
+So now since I'm a collaborator I can just merge it directly from here which allows me to make a message
+
+40
+00:02:24,020 --> 00:02:30,860
+on the merge commit if I want to or whatever.
+
+41
+00:02:30,900 --> 00:02:33,600
+And so now this this pull request is merged.
+
+42
+00:02:33,600 --> 00:02:43,230
+If I go to code it can now see I'm one branch master and I can see all the different dog but the original
+
+43
+00:02:43,230 --> 00:02:45,370
+dog branch still exists.
+
+44
+00:02:45,370 --> 00:02:46,080
+OK.
+
+45
+00:02:46,230 --> 00:02:50,350
+It's marked as merged but I can go back to that branch still and keep working on it.
+
+46
+00:02:51,210 --> 00:02:55,940
+And detail dog hasn't been merged so let's go ahead and merge now and we'll see those changes.
+
+47
+00:02:55,950 --> 00:02:58,510
+Let's just go through that once more you want mean you do it on my machine.
+
+48
+00:02:58,650 --> 00:02:58,890
+So.
+
+49
+00:02:58,900 --> 00:03:02,160
+So the other that we could do it the other way of doing mergers though.
+
+50
+00:03:02,160 --> 00:03:04,950
+Sure let's do so if you are a collaborator.
+
+51
+00:03:05,130 --> 00:03:06,910
+You don't actually have to go through.
+
+52
+00:03:07,050 --> 00:03:12,680
+You can use the actual just get way of merging into the way the command line with the command line.
+
+53
+00:03:13,320 --> 00:03:16,590
+So you can so always want to make sure you pull all your changes.
+
+54
+00:03:16,590 --> 00:03:17,920
+So I am on it.
+
+55
+00:03:17,940 --> 00:03:19,710
+What branch my on I'm on dog still.
+
+56
+00:03:19,740 --> 00:03:22,010
+So get check out back to master.
+
+57
+00:03:22,410 --> 00:03:28,590
+And here's something interesting I pulled while I was on dog and then I flipped over to master and now
+
+58
+00:03:28,590 --> 00:03:35,970
+it says your branch is behind origin master by four minutes when you get pull it updates all the branches
+
+59
+00:03:36,150 --> 00:03:43,950
+but does not update your local branch to the remote branch except the one you were on so it knows that
+
+60
+00:03:43,950 --> 00:03:49,890
+the remote master has four more commits but my master is not updated yet because I was on dog when I
+
+61
+00:03:49,890 --> 00:03:57,770
+pulled so I need to pull again on master in order to chain update my master to the remote master now
+
+62
+00:03:57,770 --> 00:04:09,350
+that I've got my master is up to date I can now do the merge so if I get merge detailed dog so not Mark
+
+63
+00:04:09,430 --> 00:04:11,320
+not Mirko merge.
+
+64
+00:04:11,740 --> 00:04:17,770
+So get merge takes and then a branch name takes everything in that branch emerges into your current
+
+65
+00:04:17,770 --> 00:04:18,480
+branch.
+
+66
+00:04:18,520 --> 00:04:25,430
+So I'm moving detail dog into M..
+
+67
+00:04:25,730 --> 00:04:32,320
+So at this merge time this is when emerge conflict may occur either during the pull request or here
+
+68
+00:04:32,330 --> 00:04:34,670
+manually with the Get merge detail dog.
+
+69
+00:04:34,670 --> 00:04:37,070
+This is when a merge conflict cannot happen right.
+
+70
+00:04:37,100 --> 00:04:40,920
+If there is one not a big deal then you just manually go in and resolve it.
+
+71
+00:04:40,950 --> 00:04:43,070
+So are you saying human eyes on this please.
+
+72
+00:04:43,070 --> 00:04:45,610
+We need a human to figure out these differences.
+
+73
+00:04:45,680 --> 00:04:47,700
+So in this case there was no conflicts.
+
+74
+00:04:47,760 --> 00:04:49,050
+Also it just merged.
+
+75
+00:04:49,070 --> 00:04:58,390
+And now I can just get push this merged code which will take however long and now if I go back to hub
+
+76
+00:04:58,420 --> 00:05:06,580
+and I go to branches detail dog does not say merged because it has merged if there is a merge.
+
+77
+00:05:06,870 --> 00:05:13,810
+If there is a pull request to do it but if you look at this list here you can see that detail dog has
+
+78
+00:05:13,810 --> 00:05:19,060
+three commits or there's three commits on master detail dog doesn't have and there are zero commits
+
+79
+00:05:19,120 --> 00:05:24,740
+one detail dog that master does not have so say that again when you see that.
+
+80
+00:05:24,740 --> 00:05:26,850
+So so this is 3 0.
+
+81
+00:05:26,900 --> 00:05:30,710
+There are three commits on Master that detail dog that's right.
+
+82
+00:05:30,800 --> 00:05:34,680
+Yeah and there are zero commits on detail dog that master design.
+
+83
+00:05:34,810 --> 00:05:37,280
+Okay so the three comments are from dog right.
+
+84
+00:05:38,010 --> 00:05:43,120
+Yeah yeah the merge merge commits or ever or so on Master.
+
+85
+00:05:43,220 --> 00:05:44,660
+Interesting.
+
+86
+00:05:44,660 --> 00:05:50,120
+And so that's that's merging our two branches onto master one way.
+
+87
+00:05:50,120 --> 00:05:53,320
+Doing it on github doorway doing it on the terminal.
+
+88
+00:05:53,480 --> 00:05:58,190
+And when you do it on the terminal you want to make sure that you are on the branch you want to merge
+
+89
+00:05:58,280 --> 00:05:58,790
+into.
+
+90
+00:05:58,790 --> 00:06:07,160
+So we switched over to master and then pulled so that we got master current with the remote and and
+
+91
+00:06:07,220 --> 00:06:12,350
+then once we did that we were able to merge the branch that we wanted into master so we're on Master
+
+92
+00:06:12,350 --> 00:06:19,120
+Master its current with the remote and then we do get it merge and then the branch name get merging
+
+93
+00:06:19,120 --> 00:06:21,640
+and the branch name that's it.
+
+94
+00:06:21,760 --> 00:06:22,060
+All right.
+
+95
+00:06:22,090 --> 00:06:24,940
+So the next video will show how to delete branches.

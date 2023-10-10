@@ -1,0 +1,136 @@
+1
+00:00:01,900 --> 00:00:07,900
+So the first function, apart from this non-expert and pop connect, the first function I want to write
+
+2
+00:00:07,900 --> 00:00:13,410
+for pop migrations will be the one that actually creates the migrations and up and a down migration.
+
+3
+00:00:13,420 --> 00:00:19,750
+So it's a function with receive, receive hundreds of celebrities and I'll call this one, create pop
+
+4
+00:00:20,170 --> 00:00:20,800
+migration.
+
+5
+00:00:21,550 --> 00:00:25,150
+OK, now this will create both the up and the down migrations.
+
+6
+00:00:25,990 --> 00:00:32,619
+Now, if you actually use the binary, this sort of binary that is distributed by the Go Buffalo project,
+
+7
+00:00:32,619 --> 00:00:34,510
+it actually creates empty migrations.
+
+8
+00:00:34,540 --> 00:00:35,450
+I don't want to do that.
+
+9
+00:00:35,470 --> 00:00:39,850
+I want to put some starter code in there just to make it easier to write a migration.
+
+10
+00:00:40,450 --> 00:00:43,230
+So I'll accept a few arguments or parameters.
+
+11
+00:00:43,240 --> 00:00:48,490
+And the first ones are called up and down and these will be slices of bytes.
+
+12
+00:00:50,620 --> 00:00:55,960
+So we'll be able to pass a slice of bytes that will consist of the contents of the up migration and
+
+13
+00:00:55,960 --> 00:00:57,430
+the same thing for the down migration.
+
+14
+00:00:57,700 --> 00:01:00,840
+We also need to name our migration, so migration name.
+
+15
+00:01:01,540 --> 00:01:07,960
+That'll be a string that we accept and the migration type because we don't want to limit the kinds of
+
+16
+00:01:07,960 --> 00:01:09,400
+migrations that people generate.
+
+17
+00:01:09,460 --> 00:01:11,800
+If they want to use SQL, they should be able to use signal.
+
+18
+00:01:12,160 --> 00:01:15,850
+So both of these are strings, and this will potentially return an error.
+
+19
+00:01:16,390 --> 00:01:19,990
+OK, well, let's declare a variable migration path.
+
+20
+00:01:21,430 --> 00:01:27,270
+Where are these things going to be stored and that will be equal to from a receiver sees of Typekit
+
+21
+00:01:27,280 --> 00:01:29,440
+pointer to Solaris has the right path.
+
+22
+00:01:29,740 --> 00:01:35,140
+In other words, the root path of wherever the application is and we'll add slash migrations because
+
+23
+00:01:35,140 --> 00:01:36,550
+that's where we store migrations.
+
+24
+00:01:37,540 --> 00:01:44,260
+Then we'll check for an error when we call from the pop up package dot migration create.
+
+25
+00:01:45,580 --> 00:01:49,810
+And that requires the migration path, which we just built a migration path.
+
+26
+00:01:50,620 --> 00:01:58,450
+It also requires the migration main, which we get as a parameter migration name, and it requires the
+
+27
+00:01:58,450 --> 00:01:58,930
+type.
+
+28
+00:01:59,140 --> 00:02:00,490
+Well, that's another parameter.
+
+29
+00:02:00,490 --> 00:02:09,070
+We received migration type and up and down the slice of bytes that we're going to use to populate those
+
+30
+00:02:09,070 --> 00:02:13,170
+with some content if there's an error return.
+
+31
+00:02:15,880 --> 00:02:21,010
+Otherwise, return null and that should actually do it.
+
+32
+00:02:21,160 --> 00:02:22,540
+So that was an easy enough one.
+
+33
+00:02:22,640 --> 00:02:27,820
+As you can see, these aren't terribly complex functions, but they will give us some additional functionality.
+
+34
+00:02:28,450 --> 00:02:33,070
+All right, in the next lecture, we'll write the function that will actually run migrations.
+

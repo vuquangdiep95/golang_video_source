@@ -1,0 +1,615 @@
+1
+00:00:01,070 --> 00:00:05,810
+So we have make Handler working pretty well and is pretty simple, but it will make life easier for
+
+2
+00:00:05,810 --> 00:00:08,570
+people using the celebrity's package and this time around.
+
+3
+00:00:08,900 --> 00:00:16,340
+I'm back in Mexico in the CMT Seelye folder of the Celebrity House project, and this time around I
+
+4
+00:00:16,340 --> 00:00:23,690
+want to work on allowing us to make models case model so someone types celebrities make model and it
+
+5
+00:00:23,690 --> 00:00:25,460
+will actually make a model for them.
+
+6
+00:00:26,450 --> 00:00:33,080
+Now, the convention we've used so far is that database table names would be plural, but model names
+
+7
+00:00:33,080 --> 00:00:33,870
+are singular.
+
+8
+00:00:33,890 --> 00:00:39,410
+So, for example, the database for users the table in the database is called users plural, and the
+
+9
+00:00:39,410 --> 00:00:41,720
+one for tokens is called tokens plural.
+
+10
+00:00:42,020 --> 00:00:48,290
+But the actual models in the data folder are called user and token, and we'll follow that same convention
+
+11
+00:00:48,290 --> 00:00:49,250
+where we make models.
+
+12
+00:00:50,060 --> 00:00:55,790
+Now, of course, making a word plural is actually not as simple as you might think, because sometimes
+
+13
+00:00:55,790 --> 00:00:56,630
+it's easy.
+
+14
+00:00:56,660 --> 00:00:59,490
+Sometimes it's ISIS, sometimes it's s.
+
+15
+00:00:59,930 --> 00:01:05,990
+But fortunately, there's a little package, a really straightforward one found here at GitHub dot com
+
+16
+00:01:05,990 --> 00:01:11,030
+slash g e r t d slash go dash plurals.
+
+17
+00:01:11,330 --> 00:01:15,620
+And this is a part of a nice JavaScript package that solves that problem for us.
+
+18
+00:01:15,860 --> 00:01:16,850
+So we're going to use that.
+
+19
+00:01:16,970 --> 00:01:21,530
+So we'll go back to my I.D. Make sure I'm in the celebrities project.
+
+20
+00:01:21,740 --> 00:01:26,150
+I am an open terminal window and type go get.
+
+21
+00:01:26,390 --> 00:01:28,130
+And then that's the URL.
+
+22
+00:01:28,310 --> 00:01:32,000
+So it will go and get that for us, and that will just make our lives a lot easier.
+
+23
+00:01:32,900 --> 00:01:34,790
+So I'll close my terminal and I'll get started.
+
+24
+00:01:35,540 --> 00:01:40,340
+So the first thing we want to do, of course, is pretty much the same thing we did when we created
+
+25
+00:01:40,340 --> 00:01:40,880
+a handler.
+
+26
+00:01:40,880 --> 00:01:45,380
+And that is to make sure that Argument three is there, that they're giving the model a name because
+
+27
+00:01:45,380 --> 00:01:46,820
+we can't actually read minds.
+
+28
+00:01:47,420 --> 00:01:52,160
+So I'll paste that in here and say, you must give the model a name.
+
+29
+00:01:53,160 --> 00:02:01,790
+And assuming we get that again, we want to do this sort of thing that we did before, and that is to
+
+30
+00:02:01,820 --> 00:02:04,400
+create a data variable and look for an error.
+
+31
+00:02:04,760 --> 00:02:06,740
+And actually, we can just copy this whole thing.
+
+32
+00:02:06,770 --> 00:02:08,510
+There's no point in reinventing the wheel.
+
+33
+00:02:08,540 --> 00:02:16,700
+We'll just copy this and paste it here and change this from templates handlers handler.
+
+34
+00:02:16,700 --> 00:02:21,990
+Don't go to text to template data and we'll call it model.
+
+35
+00:02:22,860 --> 00:02:23,630
+Don't go.
+
+36
+00:02:24,920 --> 00:02:25,250
+OK.
+
+37
+00:02:25,940 --> 00:02:31,340
+So once we've read that again, we'll create a temporary variable string variable, which I'll call
+
+38
+00:02:32,030 --> 00:02:32,510
+model.
+
+39
+00:02:34,040 --> 00:02:38,600
+And that will be the data bytes, which is a slice of bytes cast to a string.
+
+40
+00:02:40,040 --> 00:02:44,150
+And then I'm going to plurals that I'm going to get a plural version of this.
+
+41
+00:02:44,180 --> 00:02:45,290
+So I'll just call plumber.
+
+42
+00:02:45,410 --> 00:02:46,520
+That's my variable name.
+
+43
+00:02:46,640 --> 00:02:51,290
+Not a real word, but it'll work for my purposes, and I'm going to call the Plurals Package.
+
+44
+00:02:51,290 --> 00:02:54,910
+We just installed plural lies and found it.
+
+45
+00:02:54,920 --> 00:02:57,950
+That's good, and I want a new client.
+
+46
+00:02:59,600 --> 00:03:02,540
+And this is right in the documentation for that page, but it's danceable.
+
+47
+00:03:03,350 --> 00:03:08,990
+So I'll create a variable, which I'm going to call modeling, and that will be equal to R3.
+
+48
+00:03:09,920 --> 00:03:16,610
+And I'll create another variable, which I'll call table name or table name is we need both of these
+
+49
+00:03:16,610 --> 00:03:17,000
+things.
+
+50
+00:03:17,180 --> 00:03:18,410
+And again, that's earned three.
+
+51
+00:03:18,470 --> 00:03:19,400
+And then I'll just work on them.
+
+52
+00:03:19,580 --> 00:03:20,840
+I'll make them what they need to be.
+
+53
+00:03:22,670 --> 00:03:27,020
+So the first thing I'll check is to see, did they type in a pluralist name already?
+
+54
+00:03:27,020 --> 00:03:32,060
+So if plural, which is that client I just created for the plural plurals package?
+
+55
+00:03:32,510 --> 00:03:33,170
+Is it plural?
+
+56
+00:03:33,710 --> 00:03:38,810
+Is plural and I handed out three or three.
+
+57
+00:03:44,790 --> 00:03:46,810
+If it is plural, then modeling.
+
+58
+00:03:49,650 --> 00:03:53,670
+Model name is equal to plural, singular.
+
+59
+00:03:56,040 --> 00:03:56,370
+Three.
+
+60
+00:03:59,370 --> 00:04:04,740
+And table name is equal to strings to lower.
+
+61
+00:04:05,640 --> 00:04:08,250
+We want it all to be lowercase tabling
+
+62
+00:04:11,670 --> 00:04:12,450
+otherwise.
+
+63
+00:04:13,380 --> 00:04:18,240
+In the case where what they typed as ERG three is not plural, then tabling
+
+64
+00:04:22,830 --> 00:04:30,180
+is equal to strings to lower plural, plural part three.
+
+65
+00:04:31,380 --> 00:04:36,390
+And this will give us our two variables are variables model, name and table name.
+
+66
+00:04:37,380 --> 00:04:40,620
+In the format that we need them to be now, let's keep going.
+
+67
+00:04:41,880 --> 00:04:43,860
+Let's build a filing filing.
+
+68
+00:04:44,280 --> 00:04:46,260
+This is where we're going to write the final file.
+
+69
+00:04:46,800 --> 00:04:48,520
+It goes to sell dot root path
+
+70
+00:04:51,360 --> 00:04:55,200
+plus slashing data slash plus.
+
+71
+00:04:56,900 --> 00:05:03,800
+Strings to lower name plus dot.
+
+72
+00:05:04,940 --> 00:05:07,400
+That's what we'll write the final version of this, OK?
+
+73
+00:05:07,790 --> 00:05:13,270
+And now of course, we need to work on the final version of the data that we're writing to that file,
+
+74
+00:05:13,280 --> 00:05:18,880
+and we're doing that with the string model, OK, that we declared right up there in Line 77.
+
+75
+00:05:19,400 --> 00:05:20,580
+That's going to be equal to.
+
+76
+00:05:20,600 --> 00:05:25,070
+And again, we're going to do a search and replace, but we're going to search for two things strings
+
+77
+00:05:25,070 --> 00:05:26,090
+don't replace all.
+
+78
+00:05:27,650 --> 00:05:34,520
+And we're working with model and we're going to look for the string that'll be in our template model
+
+79
+00:05:34,520 --> 00:05:34,940
+name.
+
+80
+00:05:35,750 --> 00:05:37,520
+Dollar sign modeling, dollar sign.
+
+81
+00:05:37,970 --> 00:05:43,400
+And we're going to replace every occurrence of that using the staircase package we installed last time
+
+82
+00:05:43,400 --> 00:05:43,800
+around.
+
+83
+00:05:44,270 --> 00:05:45,230
+And we want it to count.
+
+84
+00:05:46,130 --> 00:05:47,920
+And again, it's going to be model name.
+
+85
+00:05:49,550 --> 00:05:49,880
+OK.
+
+86
+00:05:50,870 --> 00:05:52,450
+So that's the first thing we want to replace.
+
+87
+00:05:52,460 --> 00:05:54,050
+And of course, that's the name of the model.
+
+88
+00:05:54,410 --> 00:06:01,370
+Now I'll duplicate this whole line, and this time I'm looking for table nine door sign table name.
+
+89
+00:06:02,720 --> 00:06:03,260
+I get that right.
+
+90
+00:06:03,260 --> 00:06:04,850
+Tamboli and Amit.
+
+91
+00:06:04,860 --> 00:06:08,030
+Yep, and here I'm going to use just table name.
+
+92
+00:06:11,930 --> 00:06:15,080
+And of course, that's the function that returns the name of the table.
+
+93
+00:06:15,920 --> 00:06:17,450
+And I have an extra parentheses there.
+
+94
+00:06:19,460 --> 00:06:23,510
+OK, so we have that the next step is just a copy data to file.
+
+95
+00:06:23,840 --> 00:06:35,120
+So I can say error equals copy data to file and I'm going to use a slice of bytes and I'm going to hand
+
+96
+00:06:35,120 --> 00:06:37,640
+it model that string we just worked on.
+
+97
+00:06:39,470 --> 00:06:46,400
+And we're writing into filing and we'll check for air, you know, just copy this error checking code
+
+98
+00:06:46,400 --> 00:06:50,870
+right here because it's exactly the same and paste it in there.
+
+99
+00:06:51,890 --> 00:06:53,090
+OK, so that's a good start.
+
+100
+00:06:53,420 --> 00:06:58,730
+Now, of course, we need to actually put a file named the one we're reading here.
+
+101
+00:06:58,970 --> 00:07:01,760
+Templates data model, don't go to text.
+
+102
+00:07:01,940 --> 00:07:02,720
+So let's open that up.
+
+103
+00:07:05,690 --> 00:07:12,760
+Could a new file and we're going to call it Model Dot Go Dot T s t.
+
+104
+00:07:14,670 --> 00:07:19,380
+Now, just to save some time on the course resources for this lecture, you'll find a file called Model
+
+105
+00:07:19,380 --> 00:07:20,370
+Dot Gokey.
+
+106
+00:07:21,030 --> 00:07:23,450
+Because what we're putting in here, there's nothing new.
+
+107
+00:07:23,460 --> 00:07:26,820
+It's exactly the sort of thing we've done already, but we'll go through it quickly anyway.
+
+108
+00:07:26,820 --> 00:07:30,900
+So I'll paste in the contents of that file at the very top.
+
+109
+00:07:30,930 --> 00:07:32,130
+Of course, it's packaged data.
+
+110
+00:07:32,130 --> 00:07:37,130
+We have our standard imports and here is where we're going to give the model its actual length.
+
+111
+00:07:37,200 --> 00:07:41,460
+So that's why we went to all that trouble of using camel case and plurals and so forth.
+
+112
+00:07:42,030 --> 00:07:47,280
+And we're going to say that the stub model has only three fields I've created and updated that.
+
+113
+00:07:49,130 --> 00:07:54,650
+Then we have our table function, and that's where we substitute model name here and table name here,
+
+114
+00:07:55,610 --> 00:07:57,090
+and everything else is pretty standard.
+
+115
+00:07:57,110 --> 00:08:06,230
+We put in a starter, get all a get by ID, an update record or update method, delete method and insert
+
+116
+00:08:06,230 --> 00:08:06,680
+method.
+
+117
+00:08:07,160 --> 00:08:10,100
+And then down here just to show them how they can use builder.
+
+118
+00:08:10,310 --> 00:08:14,600
+I put an example of how you can use uppers sequel builder.
+
+119
+00:08:14,630 --> 00:08:14,990
+OK.
+
+120
+00:08:15,080 --> 00:08:18,050
+That's a good starting point, and they can modify it to their heart's content.
+
+121
+00:08:18,890 --> 00:08:21,320
+So at this point, I should be able to open my terminal window.
+
+122
+00:08:21,900 --> 00:08:23,240
+Make sure I have everything right.
+
+123
+00:08:23,630 --> 00:08:27,020
+I'll type, make build, underscore Sealord.
+
+124
+00:08:30,940 --> 00:08:36,430
+And then I should be able to switch to my My App project, which should have the new build of celebrities
+
+125
+00:08:36,430 --> 00:08:36,880
+in there.
+
+126
+00:08:37,460 --> 00:08:40,300
+And if I look in my data directory, I don't have anything called test.
+
+127
+00:08:40,420 --> 00:08:41,530
+So let's just try this out.
+
+128
+00:08:43,180 --> 00:08:49,750
+Dot slash celebrities make model and I call it test, and it said it finished.
+
+129
+00:08:50,080 --> 00:08:52,810
+And if we look up here in our data model, we have a test.
+
+130
+00:08:52,810 --> 00:08:53,490
+Don't go.
+
+131
+00:08:53,520 --> 00:08:54,760
+It does look like there's an error.
+
+132
+00:08:55,600 --> 00:08:57,510
+And of course, it's the FMT package.
+
+133
+00:08:57,520 --> 00:08:59,040
+Apparently, I have that left in there.
+
+134
+00:08:59,060 --> 00:08:59,590
+There's no problem.
+
+135
+00:08:59,590 --> 00:09:01,120
+If I delete that, does it fix it?
+
+136
+00:09:03,910 --> 00:09:05,620
+We have an error down here.
+
+137
+00:09:06,760 --> 00:09:08,630
+Get Insert I.D..
+
+138
+00:09:09,100 --> 00:09:13,030
+And of course, that's an uppercase D like that.
+
+139
+00:09:13,930 --> 00:09:18,370
+So let's go fix those two things in our test model back over here.
+
+140
+00:09:19,060 --> 00:09:24,820
+So the first thing up here is get rid of the format package and then look for get insert.
+
+141
+00:09:24,970 --> 00:09:26,880
+There it is, and this will be fixed on the copy.
+
+142
+00:09:26,890 --> 00:09:31,300
+I posted the course website for you, but I had to fix it right here and that should take care of it.
+
+143
+00:09:31,420 --> 00:09:31,870
+OK.
+
+144
+00:09:31,900 --> 00:09:35,050
+So if I rebuild this now, make build seal.
+
+145
+00:09:37,680 --> 00:09:46,560
+And switch back to my app and close this test, go and delete Tesco and run it again, this time it
+
+146
+00:09:46,560 --> 00:09:47,050
+should work.
+
+147
+00:09:48,630 --> 00:09:49,560
+Make model test.
+
+148
+00:09:51,430 --> 00:09:53,560
+So it made a model, let's go look at it.
+
+149
+00:09:53,590 --> 00:09:59,770
+There's Tesco and the model name is Test Singular Perfect.
+
+150
+00:10:00,040 --> 00:10:03,280
+The table it's returning is tests plural perfect?
+
+151
+00:10:03,910 --> 00:10:05,170
+Everything looks good here.
+
+152
+00:10:05,320 --> 00:10:05,630
+OK.
+
+153
+00:10:05,650 --> 00:10:08,170
+And that will make life much easier for our end users.
+
+154
+00:10:08,710 --> 00:10:09,820
+All right, let's move on.

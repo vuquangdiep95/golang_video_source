@@ -1,0 +1,299 @@
+1
+00:00:00,690 --> 00:00:05,550
+So this time around, we want to set up a make file just to make our lives a little bit easier.
+
+2
+00:00:05,550 --> 00:00:09,540
+And the process is a little bit different in on Windows than it is on Mac.
+
+3
+00:00:09,660 --> 00:00:14,650
+But to speed things along, if you go to the course resources for this lecture, you'll see two files.
+
+4
+00:00:14,670 --> 00:00:20,430
+One is called Makefile dot zip, and that's for Mac or Linux, and the other one is called Makefile,
+
+5
+00:00:20,430 --> 00:00:21,900
+dot windows, dot zip.
+
+6
+00:00:22,230 --> 00:00:23,550
+And obviously that's for windows.
+
+7
+00:00:23,970 --> 00:00:29,550
+So download the one appropriate for your operating system, unzip it and put it at the root level of
+
+8
+00:00:29,550 --> 00:00:34,860
+your project and make sure it's called Makefile with a capital M and no extension.
+
+9
+00:00:34,920 --> 00:00:35,310
+Okay.
+
+10
+00:00:36,120 --> 00:00:40,290
+And before we actually look at that, I did have a couple of typos in the last lecture.
+
+11
+00:00:40,290 --> 00:00:45,270
+And you think I would have noticed that because, you know, the whole bright red color in the mango
+
+12
+00:00:45,270 --> 00:00:46,050
+file name here.
+
+13
+00:00:46,050 --> 00:00:50,130
+But apparently I wasn't that alert last time around and they're easy fixes.
+
+14
+00:00:50,130 --> 00:00:58,020
+The first one is here in mango in line for the line 34 function called in DB in my code I didn't return
+
+15
+00:00:58,020 --> 00:00:58,470
+anything.
+
+16
+00:00:58,470 --> 00:01:01,380
+And of course I just have to go return corn.
+
+17
+00:01:01,950 --> 00:01:02,340
+Okay.
+
+18
+00:01:03,060 --> 00:01:05,940
+And the second one is down here in this for loop.
+
+19
+00:01:05,940 --> 00:01:09,660
+Even though I have the variable counts, I never actually incremented count.
+
+20
+00:01:10,110 --> 00:01:15,000
+So I need to do that counts plus plus.
+
+21
+00:01:15,660 --> 00:01:20,250
+And I fixed both of those typos before I uploaded the source code for the last lecture.
+
+22
+00:01:20,400 --> 00:01:20,730
+Okay.
+
+23
+00:01:21,180 --> 00:01:25,380
+So in any case, now let's have a look at the Makefile and I'll go to the Mac version first Mac and
+
+24
+00:01:25,380 --> 00:01:27,090
+Linux and then I'll go through the windows.
+
+25
+00:01:27,210 --> 00:01:30,510
+So it's a really simple file at the very top.
+
+26
+00:01:30,510 --> 00:01:35,040
+I have three variables and these are substituted down here.
+
+27
+00:01:35,040 --> 00:01:42,420
+So for example, I have binary underscore name is equal to my app and down here each of these is a command
+
+28
+00:01:42,420 --> 00:01:44,940
+I can type after I type the keyword make.
+
+29
+00:01:45,450 --> 00:01:52,290
+So if I type make build of the command line in the same directory where this Makefile exists, it will
+
+30
+00:01:52,290 --> 00:01:53,190
+build the binary.
+
+31
+00:01:53,190 --> 00:01:59,850
+So here it runs the on c c go enabled is set the zero which is good good practice for building a binary.
+
+32
+00:01:59,850 --> 00:02:06,540
+If you're not using zygote now then I just build it and you can see that binary name in curly brackets
+
+33
+00:02:06,540 --> 00:02:09,960
+with a dollar sign in front of it that's substituted for.
+
+34
+00:02:09,990 --> 00:02:12,930
+Or we get a substitution there for my app.
+
+35
+00:02:13,080 --> 00:02:17,940
+Okay, so we can build it, we can run it, we can clean it, which is clean the binary and runs go
+
+36
+00:02:17,940 --> 00:02:18,450
+clean.
+
+37
+00:02:18,870 --> 00:02:26,880
+Start is just an alias for run stop stops everything and restart first run stop then run start and we
+
+38
+00:02:26,880 --> 00:02:28,140
+have test for running tests.
+
+39
+00:02:28,140 --> 00:02:29,100
+We'll get to that eventually.
+
+40
+00:02:29,970 --> 00:02:30,300
+Okay.
+
+41
+00:02:30,300 --> 00:02:33,870
+Now, one key thing you have to know about make files is here.
+
+42
+00:02:33,870 --> 00:02:35,070
+That has to be a tab.
+
+43
+00:02:35,070 --> 00:02:37,680
+You can't use spaces, it has to be a tab.
+
+44
+00:02:37,680 --> 00:02:43,320
+So if for some reason when you download this, those are converted to spaces which apparently has happened
+
+45
+00:02:43,320 --> 00:02:44,310
+at some point in the past.
+
+46
+00:02:44,310 --> 00:02:45,010
+I don't know why.
+
+47
+00:02:45,270 --> 00:02:47,370
+Just change them all to tabs and you'll be fine.
+
+48
+00:02:47,490 --> 00:02:50,580
+Okay, so that's the version for Mac and Linux.
+
+49
+00:02:50,580 --> 00:02:56,220
+Now the Windows version right here, unfortunately, you're not going to see any any coloration here
+
+50
+00:02:56,220 --> 00:02:59,160
+because Windows doesn't mean anything to my idea.
+
+51
+00:02:59,490 --> 00:03:01,380
+But the process is almost the same.
+
+52
+00:03:01,380 --> 00:03:03,060
+Just some of the commands are different.
+
+53
+00:03:03,060 --> 00:03:05,910
+So like line 12, for example, a little bit different.
+
+54
+00:03:06,750 --> 00:03:13,200
+So we have, as you can see here and DSN, that's our data source name, that's for connecting to Postgres
+
+55
+00:03:13,200 --> 00:03:15,090
+and that's the one we care about right now.
+
+56
+00:03:15,570 --> 00:03:18,750
+And I exist so obviously over the other other one as well.
+
+57
+00:03:19,500 --> 00:03:24,840
+And in this case for Windows, I just put a dot xy at the name of the binary name so Windows will know
+
+58
+00:03:24,840 --> 00:03:25,770
+it's an executable.
+
+59
+00:03:25,980 --> 00:03:33,270
+Okay, so I have the appropriate file name to make file and I'm in the final project folder right at
+
+60
+00:03:33,270 --> 00:03:33,930
+the root level.
+
+61
+00:03:34,770 --> 00:03:36,570
+So I'm in the correct directory.
+
+62
+00:03:36,570 --> 00:03:39,600
+And if I type else, you can see that the make file is right there.
+
+63
+00:03:39,900 --> 00:03:44,910
+And if I type make start, this should run my application and connect to the database.
+
+64
+00:03:44,910 --> 00:03:47,010
+If we get everything right, let's find out.
+
+65
+00:03:48,360 --> 00:03:49,350
+It's building it.
+
+66
+00:03:50,650 --> 00:03:52,000
+It connected to the database.
+
+67
+00:03:52,330 --> 00:03:57,820
+Life is good and at this point it's actually terminated in finished because it is not doing anything
+
+68
+00:03:57,820 --> 00:03:58,150
+else.
+
+69
+00:03:58,540 --> 00:04:06,790
+If you look in the main ego file over here, all we're doing is connecting to the database, pinging
+
+70
+00:04:06,790 --> 00:04:09,120
+it, and then the application terminates.
+
+71
+00:04:09,130 --> 00:04:12,670
+But at least I know I connected to the database without any problem.
+
+72
+00:04:13,210 --> 00:04:13,560
+Okay.
+
+73
+00:04:13,570 --> 00:04:15,970
+In the next lecture, we'll get started with sessions.
+
+74
+00:04:16,090 --> 00:04:16,420
+Okay.
+
+75
+00:04:16,570 --> 00:04:17,560
+So let's move on.

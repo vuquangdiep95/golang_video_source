@@ -1,0 +1,99 @@
+1
+00:00:01,460 --> 00:00:05,840
+In this section of the course, we're going to focus upon adding some concurrency to our code base.
+
+2
+00:00:05,840 --> 00:00:09,590
+And what we're going to do first is send email concurrently.
+
+3
+00:00:09,600 --> 00:00:11,810
+In other words, we're going to send it in the background.
+
+4
+00:00:12,320 --> 00:00:13,610
+Now, there's a good reason for that.
+
+5
+00:00:13,610 --> 00:00:18,890
+Sending email can slow things down if you're connecting to a mail service and it's having a bad day.
+
+6
+00:00:18,890 --> 00:00:24,470
+So you're connected to Mail Gun and for some reason they're really slow to send emails.
+
+7
+00:00:24,470 --> 00:00:30,050
+You don't want whatever you're doing in your code to just stop until that email gets sent.
+
+8
+00:00:30,500 --> 00:00:32,330
+Instead, you want to send it off in the background.
+
+9
+00:00:32,330 --> 00:00:37,520
+And we're going to do that using two channels, actually three channels, but only two that are involved
+
+10
+00:00:37,520 --> 00:00:44,120
+with actually sending email will send information off to a channel and that will have something listening
+
+11
+00:00:44,120 --> 00:00:44,780
+to that channel.
+
+12
+00:00:44,780 --> 00:00:47,450
+And when it receives it, it'll send it off in the background.
+
+13
+00:00:47,810 --> 00:00:53,390
+It'll fire off a new go routine that sends our email off concurrently and the other channel will listen
+
+14
+00:00:53,390 --> 00:00:54,110
+for errors.
+
+15
+00:00:54,110 --> 00:00:58,220
+And if something goes wrong, then we send something in that error channel, and a third one is just
+
+16
+00:00:58,220 --> 00:00:59,540
+used to shut things down.
+
+17
+00:00:59,780 --> 00:01:05,450
+And that will be our third task for this section, and that is adding some cleanup logic to our application.
+
+18
+00:01:06,230 --> 00:01:11,300
+If our application is sending emails and doing all sorts of things in the background and someone decides,
+
+19
+00:01:11,300 --> 00:01:15,260
+Hey, I need to stop the application to install the new version or whatever it may be.
+
+20
+00:01:15,560 --> 00:01:20,360
+You don't want it to just stop because some things that were queued to happen in the background or that
+
+21
+00:01:20,400 --> 00:01:24,650
+were actually happening in the background, they'll just die and you'll never find out about it.
+
+22
+00:01:25,220 --> 00:01:26,270
+And that's a bit of a problem.
+
+23
+00:01:26,570 --> 00:01:32,240
+So let's add some logic that allows us to wait until everything that's running in the background is
+
+24
+00:01:32,240 --> 00:01:37,400
+finished, and then we stop our application and perform some other cleanup tasks while we're at it.
+
+25
+00:01:37,820 --> 00:01:39,350
+So let's get started.

@@ -1,0 +1,468 @@
+1
+00:00:01,839 --> 00:00:07,420
+So the next thing I want to look at in our kind of grab bag of miscellaneous application updates is
+
+2
+00:00:07,420 --> 00:00:11,720
+a function that exists in Laravel, which is kind of useful and it's called maintenance mode.
+
+3
+00:00:11,740 --> 00:00:15,700
+And right now I'm logged into a server that's running a application.
+
+4
+00:00:15,880 --> 00:00:22,810
+And if I want to bring the application down, I type up artisan down and that puts it in maintenance
+
+5
+00:00:22,810 --> 00:00:24,010
+mode and to bring it back up.
+
+6
+00:00:24,010 --> 00:00:30,670
+Of course, I type partisan up and while it's in maintenance mode, anybody that goes to any page on
+
+7
+00:00:30,670 --> 00:00:36,460
+the site just gets a page that says this applications in maintenance mode will be back soon and we're
+
+8
+00:00:36,460 --> 00:00:39,220
+going to do a similar thing in our application.
+
+9
+00:00:39,430 --> 00:00:44,800
+Now, the way that it works in Laravel is it actually generates a temporary file and there's some middleware
+
+10
+00:00:44,800 --> 00:00:49,230
+that says every time a request comes in, it looks as if that file exists.
+
+11
+00:00:49,240 --> 00:00:53,140
+If it does, then the applications in maintenance mode, and if it doesn't, then it's not.
+
+12
+00:00:53,290 --> 00:00:57,760
+And that's pretty straightforward, and we could do it like that, but we're actually going to take
+
+13
+00:00:57,760 --> 00:00:59,140
+a slightly different approach.
+
+14
+00:01:00,210 --> 00:01:05,610
+Instead, we're going to use remote procedure calls in our command line application.
+
+15
+00:01:06,030 --> 00:01:12,390
+We'll actually make a call to the running application and say either put it in maintenance mode or take
+
+16
+00:01:12,390 --> 00:01:13,330
+it out of maintenance mode.
+
+17
+00:01:13,350 --> 00:01:14,430
+So it's pretty straightforward.
+
+18
+00:01:15,300 --> 00:01:19,350
+Now here in the files alertness, don't go in the celebrity's application.
+
+19
+00:01:20,250 --> 00:01:28,020
+The very first thing I'll do is I'll come over here and create a variable called meet in this mode and
+
+20
+00:01:28,020 --> 00:01:28,770
+it'll be a Boolean.
+
+21
+00:01:30,190 --> 00:01:34,080
+OK, so we've created that variable.
+
+22
+00:01:34,410 --> 00:01:36,450
+And of course, we actually have to do something with it.
+
+23
+00:01:36,690 --> 00:01:44,790
+So we need to set up in this Alatas package some code that allows us to use the command line application
+
+24
+00:01:44,790 --> 00:01:47,040
+to communicate with the running celerity app.
+
+25
+00:01:47,790 --> 00:01:54,360
+Now we could if we wanted to simply make a route and a handler and make sure it's protected and turn
+
+26
+00:01:54,360 --> 00:01:56,280
+things on and off that way.
+
+27
+00:01:56,310 --> 00:01:57,060
+Maintenance mode.
+
+28
+00:01:57,720 --> 00:02:01,860
+But instead, we're going to use our PC because we've never done that before, and it's kind of useful
+
+29
+00:02:01,920 --> 00:02:03,780
+and it's not that difficult to implement.
+
+30
+00:02:05,010 --> 00:02:10,289
+So the first thing I'll do is I'll go to the bottom of this file very bottom and we'll start writing
+
+31
+00:02:10,289 --> 00:02:17,340
+our code in here, and I'll start by defining a type which I'll call our PC server.
+
+32
+00:02:17,640 --> 00:02:20,400
+And it's just an empty struct, OK?
+
+33
+00:02:20,460 --> 00:02:24,090
+And you have to have something like this in order to use our PC and go.
+
+34
+00:02:25,980 --> 00:02:35,550
+And now I'll develop a function called Frank with a receiver pointer to the type we just created, which
+
+35
+00:02:35,550 --> 00:02:42,420
+I'll call our a pointer to our PC server and I'll call this maintenance mode.
+
+36
+00:02:42,940 --> 00:02:49,740
+Make sure you spell maintenance right, and it's going to take two possible parameters in maintenance
+
+37
+00:02:50,070 --> 00:02:57,060
+mode, which is a bool and the response, which is a pointer to type string.
+
+38
+00:02:57,180 --> 00:03:01,200
+And you have to use this format and it has to return potentially an error.
+
+39
+00:03:04,060 --> 00:03:11,470
+And we'll put a simple if statement here, if in maintenance mode, if that's true, then we'll set
+
+40
+00:03:11,470 --> 00:03:14,940
+our package level variable maintenance mode to true.
+
+41
+00:03:16,690 --> 00:03:24,790
+And we'll set our pointer to a string a response to server in maintenance mode.
+
+42
+00:03:26,410 --> 00:03:28,270
+And there has to be an equal sign there, obviously.
+
+43
+00:03:31,760 --> 00:03:39,560
+Otherwise, if it's false else, then as you might expect, maintenance mode is now equal to faults
+
+44
+00:03:40,610 --> 00:03:41,420
+and error.
+
+45
+00:03:41,630 --> 00:03:51,260
+Return value is going to be or a pointer to a string is going to be response equals server alive and
+
+46
+00:03:51,260 --> 00:03:51,620
+down here.
+
+47
+00:03:51,620 --> 00:03:52,550
+We'll just return nil.
+
+48
+00:03:53,570 --> 00:03:56,030
+Now there's no situation where we're not going to return now.
+
+49
+00:03:56,120 --> 00:04:01,700
+But when you're making functions like this and this is a function that can be called using our PC,
+
+50
+00:04:02,330 --> 00:04:03,630
+some of them might return errors.
+
+51
+00:04:03,650 --> 00:04:05,540
+So you have to have the return nil there.
+
+52
+00:04:06,290 --> 00:04:07,370
+So that's easy enough.
+
+53
+00:04:08,450 --> 00:04:17,329
+And now here we need to have another function, which has a point or two celebrities and this one is
+
+54
+00:04:17,329 --> 00:04:24,680
+going to be called Listen, our PC and this will run and listen for our command line application to
+
+55
+00:04:24,680 --> 00:04:27,470
+send commands merely going to send one potential command.
+
+56
+00:04:27,470 --> 00:04:28,940
+But of course, you can have more than one.
+
+57
+00:04:29,690 --> 00:04:30,050
+So.
+
+58
+00:04:31,850 --> 00:04:36,920
+First of all, we're going to have to have some pork that we have to listen on because we're not going
+
+59
+00:04:36,920 --> 00:04:40,220
+to be listening on Port 80 or 0.4 for Port 443.
+
+60
+00:04:40,760 --> 00:04:47,210
+This will be a secret port which lives behind our firewall and can't be accessed from the outside world.
+
+61
+00:04:47,960 --> 00:04:49,610
+But we need to listen on some kind of port.
+
+62
+00:04:50,090 --> 00:04:53,840
+So we need some kind of our our PC port to listen to.
+
+63
+00:04:53,960 --> 00:04:59,030
+So let's make that right now, let's go to our arms in the solicitous application.
+
+64
+00:05:00,130 --> 00:05:04,510
+And right at the top of this file, where we're listening to a particular port, let's put another value
+
+65
+00:05:04,510 --> 00:05:04,840
+here.
+
+66
+00:05:04,870 --> 00:05:07,780
+We'll call this one our C underscore port.
+
+67
+00:05:09,810 --> 00:05:10,950
+And that's going to be equal to.
+
+68
+00:05:10,980 --> 00:05:13,500
+I would just think mine one, two, three, four or five.
+
+69
+00:05:13,530 --> 00:05:15,600
+Because I know nothing is listening on that port.
+
+70
+00:05:16,610 --> 00:05:18,860
+So there's a part that we're going to actually listen to.
+
+71
+00:05:18,890 --> 00:05:20,240
+So back in celebrities.
+
+72
+00:05:22,040 --> 00:05:27,800
+In this function, we need to have access to that variable, our PC underscore port.
+
+73
+00:05:29,550 --> 00:05:35,520
+Now, if that's not specified, I don't want this particular function to do anything, so I'll say if
+
+74
+00:05:35,520 --> 00:05:43,050
+nothing specified in or for harpsichord, don't stir.
+
+75
+00:05:43,890 --> 00:05:53,880
+So we'll say if OAC don't get on and the key and looking for is our PC port, if that's equal to an
+
+76
+00:05:53,880 --> 00:06:00,090
+empty string, which is what it'll be if nothing is specified and do nothing, actually listen to it
+
+77
+00:06:00,090 --> 00:06:00,530
+this way.
+
+78
+00:06:00,540 --> 00:06:03,540
+If it's not equal to nothing, that's clear.
+
+79
+00:06:04,800 --> 00:06:07,880
+If it's not equal to nothing, then let's print it a message.
+
+80
+00:06:07,890 --> 00:06:15,240
+So we'll say see dot info log dot print line that again info logged on print line
+
+81
+00:06:19,950 --> 00:06:26,880
+starting our PC server on port and then off start.
+
+82
+00:06:26,880 --> 00:06:32,010
+Get on our PC port, so we'll just print a little message.
+
+83
+00:06:33,330 --> 00:06:39,750
+Then we need to use the built in package, our P.S., and register our type, our PC server.
+
+84
+00:06:39,900 --> 00:06:40,740
+And that's pretty simple.
+
+85
+00:06:41,370 --> 00:06:45,930
+We checked for an error and we'll call our PC dot.
+
+86
+00:06:47,460 --> 00:06:48,900
+And we want to register.
+
+87
+00:06:51,530 --> 00:06:56,670
+We want to register a new PC that, again, our PC server.
+
+88
+00:07:00,380 --> 00:07:03,260
+And if error is not equal to nil,
+
+89
+00:07:06,350 --> 00:07:13,910
+then we'll print it out, say, see that error log dot print line error and will return.
+
+90
+00:07:14,420 --> 00:07:15,290
+We can't go any further.
+
+91
+00:07:17,370 --> 00:07:21,480
+Now we need to start listening on that port that we specified in our door on file, so I'll create a
+
+92
+00:07:21,480 --> 00:07:29,790
+variable called listen and I'll check for an error when I call from the net package built into the standard
+
+93
+00:07:29,790 --> 00:07:31,080
+library dot.
+
+94
+00:07:32,040 --> 00:07:45,600
+Listen, and we're going to listen using TCP and our address will be the local host 127.0.0.1 colon
+
+95
+00:07:46,050 --> 00:07:48,160
+plus OST.
+
+96
+00:07:48,330 --> 00:07:51,030
+Get on our PC port.
+
+97
+00:07:53,860 --> 00:07:57,850
+And again, we'll check for an error, so I'll copy all of this error checking logic.
+
+98
+00:08:01,260 --> 00:08:02,310
+And paste it in here.
+
+99
+00:08:06,280 --> 00:08:12,250
+And now we want this function to go forever, so we'll use a for loop for an inside of this, we'll
+
+100
+00:08:12,250 --> 00:08:15,460
+say our PC can choose the variable.
+
+101
+00:08:15,460 --> 00:08:18,610
+I'm declaring an error are assigned the value.
+
+102
+00:08:18,610 --> 00:08:21,700
+Oh, listen, dot except.
+
+103
+00:08:24,490 --> 00:08:30,790
+I will check for an error if error is not equal to nil, that in this case, I don't want to stop.
+
+104
+00:08:31,000 --> 00:08:31,750
+I want to continue.
+
+105
+00:08:32,080 --> 00:08:32,380
+OK.
+
+106
+00:08:34,480 --> 00:08:35,049
+And now?
+
+107
+00:08:36,610 --> 00:08:41,740
+We use the go keyword to run this in the background as a good routine.
+
+108
+00:08:41,830 --> 00:08:44,800
+Our dart serve com.
+
+109
+00:08:48,820 --> 00:08:50,820
+And we're going to pass it on.
+
+110
+00:08:54,580 --> 00:08:59,390
+And that literally should be all we have to do in the celebrity file itself.
+
+111
+00:09:00,010 --> 00:09:00,640
+Scope.
+
+112
+00:09:01,210 --> 00:09:05,920
+Now we're going to need to add some middleware that will do certain things if maintenance mode is set
+
+113
+00:09:05,920 --> 00:09:09,370
+to true, but we'll take care of that in the next lecture.
+
+114
+00:09:09,370 --> 00:09:13,000
+And of course, we'll also have to make some changes to our command line application.
+
+115
+00:09:13,280 --> 00:09:14,920
+We'll take care of that before too long.
+
+116
+00:09:15,220 --> 00:09:16,690
+But that's enough for this time around.
+
+117
+00:09:16,780 --> 00:09:17,830
+Let's move on.
+

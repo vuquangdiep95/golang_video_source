@@ -1,0 +1,347 @@
+1
+00:00:11,730 --> 00:00:16,950
+Hello and welcome to the goal and programming language course in the previous session.
+
+2
+00:00:17,160 --> 00:00:19,890
+We have been able to design the database there.
+
+3
+00:00:20,280 --> 00:00:26,790
+Now it's time to create the rest API layer before implementing the rest layer.
+
+4
+00:00:27,030 --> 00:00:31,170
+You must first install Gorilla Marks tool to do this.
+
+5
+00:00:31,350 --> 00:00:34,980
+Go to the terminal and execute the following comment.
+
+6
+00:00:36,090 --> 00:00:36,720
+Go
+
+7
+00:00:39,630 --> 00:00:41,490
+get gas.
+
+8
+00:00:41,490 --> 00:00:49,290
+You get half dot com slash gorilla
+
+9
+00:00:51,780 --> 00:00:53,160
+slash marks.
+
+10
+00:00:57,570 --> 00:01:01,860
+OK, the government's package was in a stall, and now you will continue.
+
+11
+00:01:04,080 --> 00:01:10,770
+So go to Project Folder and create another folder named like Rest Layer, which is supposed to include
+
+12
+00:01:10,770 --> 00:01:15,470
+the rest files for the connection of the Go program with the rest APIs.
+
+13
+00:01:19,060 --> 00:01:23,230
+Create a folder rest layer.
+
+14
+00:01:27,780 --> 00:01:35,950
+This layer consists of two parts, one part is related to rest configuration and the other part is related
+
+15
+00:01:35,950 --> 00:01:37,290
+to rest functions.
+
+16
+00:01:38,010 --> 00:01:45,120
+First, we create the file related to the rest functions, so go to Project Folder and go to rest players
+
+17
+00:01:45,270 --> 00:01:57,330
+and create the go blank fine name like rest functions that go create the file list functions that go.
+
+18
+00:02:01,630 --> 00:02:13,090
+The package name, package rest claim first, the implement, a function that is supposed to take the
+
+19
+00:02:13,090 --> 00:02:19,360
+name of the student through the endpoint, then search it in the database.
+
+20
+00:02:19,600 --> 00:02:24,310
+And if that student exists, returned the information of that student to us.
+
+21
+00:02:25,060 --> 00:02:26,440
+So define the function.
+
+22
+00:02:26,440 --> 00:02:30,340
+Then like select the student based name phone.
+
+23
+00:02:32,800 --> 00:02:41,860
+Select a student based name this function.
+
+24
+00:02:41,980 --> 00:02:51,070
+Accept two parameters first and object from the a response writer and second, a pointer of each type
+
+25
+00:02:51,070 --> 00:02:51,760
+of request.
+
+26
+00:02:52,420 --> 00:02:53,500
+So we write
+
+27
+00:02:57,430 --> 00:03:02,470
+response as a student
+
+28
+00:03:05,020 --> 00:03:06,250
+response writer
+
+29
+00:03:09,160 --> 00:03:13,300
+and set the pointer parameters the prerequisites request.
+
+30
+00:03:15,820 --> 00:03:20,470
+As Point Rob Typekit request
+
+31
+00:03:25,150 --> 00:03:28,150
+now want to implement that body of the function?
+
+32
+00:03:29,140 --> 00:03:35,860
+This function is supposed to return the information of a student based on the name it receives from
+
+33
+00:03:35,860 --> 00:03:36,730
+that endpoint.
+
+34
+00:03:37,240 --> 00:03:39,510
+So to access the parameters in the.
+
+35
+00:03:40,270 --> 00:03:46,420
+We have to do this using Mox, so we write marks.
+
+36
+00:03:51,190 --> 00:03:58,190
+In calling vast function and sit requisites as parameter for each virus.
+
+37
+00:04:00,730 --> 00:04:09,250
+And it requires that parameter for its last function, returns the road variables for the current request.
+
+38
+00:04:09,550 --> 00:04:16,180
+For example, in this case, our endpoint parameter is name that define in risk config alter.
+
+39
+00:04:16,960 --> 00:04:24,610
+The return value of this function is a map who is key is the name of the parameters in the endpoint,
+
+40
+00:04:24,760 --> 00:04:29,410
+and its value is the value based on which the key is to be returned.
+
+41
+00:04:29,590 --> 00:04:33,460
+So defining a variable like that as a return type.
+
+42
+00:04:34,120 --> 00:04:36,700
+So define a variable launch.
+
+43
+00:04:37,360 --> 00:04:40,600
+That column equals
+
+44
+00:04:43,510 --> 00:04:48,550
+know all the keys in the endpoint are inside the vast value of.
+
+45
+00:04:49,920 --> 00:04:52,920
+We can access their venues by calling each key.
+
+46
+00:04:53,700 --> 00:04:59,040
+In this example, we have defined only one parameter as name, in our view.
+
+47
+00:04:59,790 --> 00:05:07,210
+So there is only one name key inside the vast variable, which we can display the value of that can
+
+48
+00:05:07,210 --> 00:05:17,810
+as follows first, define two variable for return types like name and OK, so write name comma OK.
+
+49
+00:05:19,980 --> 00:05:29,960
+Column equals calling values, variable values and sit and point parameter as index for it.
+
+50
+00:05:32,390 --> 00:05:35,470
+In this case, our euro parameter name is name.
+
+51
+00:05:38,600 --> 00:05:38,930
+OK.
+
+52
+00:05:39,260 --> 00:05:47,780
+This value of the variable Auchi indicates the presence or absence of a return value if only returns
+
+53
+00:05:47,780 --> 00:05:48,710
+the true value.
+
+54
+00:05:48,890 --> 00:05:55,790
+It means that the return value exists and if it returns the false value, it means that the key has
+
+55
+00:05:55,790 --> 00:05:56,570
+no venue.
+
+56
+00:05:57,350 --> 00:06:01,070
+Therefore, we checked the value in the key through the variable OK.
+
+57
+00:06:01,760 --> 00:06:06,530
+And if it does not exist, we should send an error message to the client.
+
+58
+00:06:06,860 --> 00:06:11,060
+So we write, if not, OK.
+
+59
+00:06:13,520 --> 00:06:14,480
+Response.
+
+60
+00:06:16,720 --> 00:06:22,630
+Start calling right, Heather, function in the city's status court right here,
+
+61
+00:06:25,990 --> 00:06:26,680
+right?
+
+62
+00:06:27,690 --> 00:06:28,240
+Heather.
+
+63
+00:06:31,190 --> 00:06:41,900
+For example, a status battery course from the HTP package is to debate what the state rules that request.
+
+64
+00:06:46,810 --> 00:06:53,950
+Right, Heather, function since its type of response, Heather, with the provided the status quo and
+
+65
+00:06:53,950 --> 00:07:04,910
+calling it prindle and fonctionne for displaying the arrow to client if A. Don't give preened Alan and
+
+66
+00:07:05,020 --> 00:07:06,370
+sandy response.
+
+67
+00:07:10,790 --> 00:07:17,540
+And sets, for example, a student not found.
+
+68
+00:07:28,740 --> 00:07:36,390
+Now it's time to connect to the database, then call the query to call the student based search by name
+
+69
+00:07:36,720 --> 00:07:39,720
+and fetch the return value, which is a student.
+
+70
+00:07:40,200 --> 00:07:52,920
+So we define a variable like the student student column equals DB tools dot and from the DB tools invoking
+
+71
+00:07:52,920 --> 00:07:56,970
+select the student based name function select.
+
+72
+00:08:01,720 --> 00:08:09,910
+A student based name function, and that name is arguement for it name.
+
+73
+00:08:11,020 --> 00:08:16,960
+Now we have to sand the return value of the select method to the client, which is an object from the
+
+74
+00:08:16,960 --> 00:08:25,150
+student, but you have to convert the object to JSON in sent it to the client as JSON format that do
+
+75
+00:08:25,150 --> 00:08:26,740
+this through the JSON packet.
+
+76
+00:08:26,800 --> 00:08:30,460
+So right, Jason
+
+77
+00:08:34,780 --> 00:08:44,500
+Dauth, calling new encoder function, instead responds as parameter for each new encoder, and that
+
+78
+00:08:44,500 --> 00:08:46,750
+response is our human for it.
+
+79
+00:08:48,880 --> 00:08:56,740
+This function returns a new encoder that rice writer and calling input function in such a student as
+
+80
+00:08:56,900 --> 00:08:58,360
+argument for it.
+
+81
+00:08:59,950 --> 00:09:04,990
+But ENCODE said the student as argument.
+
+82
+00:09:07,810 --> 00:09:14,590
+This writes to Jason, including of A-student student object to the extreme, followed by a new line
+
+83
+00:09:14,590 --> 00:09:15,250
+character.
+
+84
+00:09:15,940 --> 00:09:23,440
+So we were able to implement the method of selecting a student based on name from the database and sending
+
+85
+00:09:23,470 --> 00:09:30,100
+it into the client, the rest API in order not to prolong the time of decision.
+
+86
+00:09:30,310 --> 00:09:34,300
+We will finish it and we will continue the content in the next session.
+
+87
+00:09:34,450 --> 00:09:34,960
+Goodbye.

@@ -1,0 +1,215 @@
+1
+00:00:00,920 --> 00:00:06,380
+So before we move on to an even more complex example, let's take a little bit of time and write a test
+
+2
+00:00:06,380 --> 00:00:11,710
+for this program for the one that calculates the earnings for a person for a year.
+
+3
+00:00:11,720 --> 00:00:14,570
+And of course, this one's really easy, so we'll just create it.
+
+4
+00:00:14,570 --> 00:00:20,870
+File main underscore test dock go in package main and we'll create one function func.
+
+5
+00:00:21,380 --> 00:00:24,200
+Now I'll just call this test underscore main.
+
+6
+00:00:24,680 --> 00:00:30,110
+Now you can't call it test main like this because that's actually something that's used by the testing
+
+7
+00:00:30,110 --> 00:00:30,950
+package itself.
+
+8
+00:00:30,950 --> 00:00:32,390
+But you're probably aware of that.
+
+9
+00:00:32,930 --> 00:00:41,390
+So I'll call a test main takes one parameter T pointer to testing dot T and we'll do the same sort of
+
+10
+00:00:41,390 --> 00:00:43,880
+thing we did last time around.
+
+11
+00:00:44,270 --> 00:00:49,520
+We're writing to the console, so we need to keep a copy of whatever OS standard standard out is.
+
+12
+00:00:49,520 --> 00:00:56,030
+So I'll call it standard out and that's equal to OS STD out right there.
+
+13
+00:00:56,390 --> 00:00:57,800
+And that does the import for me.
+
+14
+00:01:00,140 --> 00:01:04,010
+Now, once I've captured that, of course, I need to create my own versions.
+
+15
+00:01:04,010 --> 00:01:07,700
+So R and W and we don't care about a third parameter.
+
+16
+00:01:07,700 --> 00:01:14,420
+Come from over start pipe and now we need to set of STD out.
+
+17
+00:01:17,220 --> 00:01:19,740
+Make that equal to W from our pipe.
+
+18
+00:01:20,490 --> 00:01:22,830
+Okay, so now we have a means of capturing information.
+
+19
+00:01:23,300 --> 00:01:24,570
+And now we just run the main function.
+
+20
+00:01:24,820 --> 00:01:27,970
+Main, and it doesn't run as a go routine.
+
+21
+00:01:27,970 --> 00:01:30,660
+And by default, main is its own code routine.
+
+22
+00:01:31,350 --> 00:01:32,790
+When we're finished, we close the pipe.
+
+23
+00:01:32,790 --> 00:01:41,610
+So I'll ignore the error when I call w dot close, closed the w pipe and then we read the results into
+
+24
+00:01:41,610 --> 00:01:42,780
+a variable called result.
+
+25
+00:01:42,780 --> 00:01:47,030
+So result and ignore the second return parameter come from IO.
+
+26
+00:01:47,040 --> 00:01:51,030
+Don't read all and that does the import for me and I'm reading.
+
+27
+00:01:51,030 --> 00:01:52,290
+Ah, okay.
+
+28
+00:01:53,130 --> 00:01:53,790
+So I have that.
+
+29
+00:01:53,790 --> 00:01:55,860
+Let's convert it to a string output
+
+30
+00:01:58,560 --> 00:02:03,270
+and that's a sign the value of casting to a string result.
+
+31
+00:02:04,020 --> 00:02:06,750
+And I just check to see if the correct value is in there.
+
+32
+00:02:06,750 --> 00:02:13,230
+And if you recall, when this program runs properly, the result, the bank balance should always be
+
+33
+00:02:13,230 --> 00:02:15,720
+$34,320.
+
+34
+00:02:16,290 --> 00:02:25,590
+So all I have to do after I set post STD out back to its original value that's TD out is to write a
+
+35
+00:02:25,590 --> 00:02:37,680
+simple test if not strings dot contains and I'm looking at output and I'm expecting to find $34,320.
+
+36
+00:02:39,540 --> 00:02:40,740
+Then she'll take that right.
+
+37
+00:02:42,030 --> 00:02:50,670
+And if that's not there then I have an error te error and I'll just say wrong balance returned.
+
+38
+00:02:51,270 --> 00:02:53,370
+Okay, now let's run this test.
+
+39
+00:02:54,090 --> 00:02:55,170
+So I'll run it two ways.
+
+40
+00:02:55,500 --> 00:02:58,710
+The first way I look at my terminal, just type go test dot.
+
+41
+00:03:00,350 --> 00:03:02,670
+And I happened to get the right result that time.
+
+42
+00:03:02,690 --> 00:03:04,430
+But now let's check for race conditions.
+
+43
+00:03:04,430 --> 00:03:04,760
+Go.
+
+44
+00:03:04,760 --> 00:03:05,630
+Test dash.
+
+45
+00:03:05,630 --> 00:03:06,440
+Race start.
+
+46
+00:03:07,950 --> 00:03:09,000
+And it should pass.
+
+47
+00:03:09,000 --> 00:03:09,810
+And it does.
+
+48
+00:03:09,840 --> 00:03:10,320
+Okay.
+
+49
+00:03:10,410 --> 00:03:11,910
+So that was simple enough.
+
+50
+00:03:12,360 --> 00:03:16,980
+Let's move on to something a little more complex in this, actually considerably more complex than this.
+
+51
+00:03:17,610 --> 00:03:23,250
+And it's what's referred to in computer science circles as the producer slash consumer problem.
+
+52
+00:03:23,250 --> 00:03:29,820
+And it's a great opportunity to use what we've learned so far and apply it to a more complex problem,
+
+53
+00:03:29,820 --> 00:03:31,200
+one involving pizzas.
+
+54
+00:03:31,590 --> 00:03:32,160
+Let's move on.

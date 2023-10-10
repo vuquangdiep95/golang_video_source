@@ -1,0 +1,488 @@
+1
+00:00:00,330 --> 00:00:05,840
+Ok jadi suka latihan ini karena ini memungkinkan saya untuk menyatukan semuanya dan saya harap Anda
+
+2
+00:00:05,840 --> 00:00:06,780
+berhasil melakukannya.
+
+3
+00:00:06,780 --> 00:00:12,790
+Jadi mari kita mulai dengan kalkulator dan membuatnya meminta beberapa jenis respons RBC.
+
+4
+00:00:12,810 --> 00:00:19,050
+Jadi hal pertama yang ingin saya lakukan adalah membuat kalkulator P. B. folder dan saya
+
+5
+00:00:19,140 --> 00:00:25,010
+akan membuat klien kalkulator dan juga saya akan membuat server kalkulator.
+
+6
+00:00:25,790 --> 00:00:26,150
+BAIK.
+
+7
+00:00:26,190 --> 00:00:31,770
+Jadi begitu kita memiliki hal-hal ini pada kalkulator mereka OPB saya akan membuat file baru dan
+
+8
+00:00:31,780 --> 00:00:33,220
+menyebutnya dihitung di Prato.
+
+9
+00:00:33,360 --> 00:00:38,550
+Sekarang sintaksnya sama dengan dua atau tiga.
+
+10
+00:00:39,390 --> 00:00:40,300
+BAIK.
+
+11
+00:00:40,890 --> 00:00:49,560
+Dan paket itu sendiri akan disebut kalkulator tetapi sebagai opsi untuk pergi paket akan
+
+12
+00:00:49,560 --> 00:00:54,000
+disebut kalkulator P. B ..
+
+13
+00:00:54,010 --> 00:00:56,510
+Sekarang kita perlu mendefinisikan banyak pesan.
+
+14
+00:00:56,550 --> 00:00:57,210
+BAIK.
+
+15
+00:00:57,400 --> 00:01:01,060
+Jadi pesan pertama yang harus kita definisikan adalah jika ada permintaan.
+
+16
+00:01:01,060 --> 00:01:04,160
+Jadi ada beberapa permintaan karena kita dapat melihat teks dua angka.
+
+17
+00:01:04,180 --> 00:01:14,760
+Jadi dalam 32 angka pertama sama dengan 1 dan dalam 32 angka kedua sama dengan 2.
+
+18
+00:01:15,310 --> 00:01:25,840
+Jadi hasil pertama di bidang kedua dan kemudian akan mengembalikan respons jumlah dan dalam 32 beberapa hasil sebagai nama
+
+19
+00:01:25,860 --> 00:01:28,150
+lengkap sama dengan 1.
+
+20
+00:01:28,150 --> 00:01:29,420
+Jadi ini terlihat bagus.
+
+21
+00:01:29,770 --> 00:01:39,010
+Dan sekarang kita perlu membuat layanan kalkulator layanan kami sehingga layanan kalkulator Layanan dan di
+
+22
+00:01:39,050 --> 00:01:48,470
+dalamnya akan menjadi RBC tidak akan memenuhi beberapa yang membawa kita beberapa permintaan dan mengembalikan beberapa tanggapan.
+
+23
+00:01:49,970 --> 00:01:51,360
+Jadi ini semua terlihat bagus.
+
+24
+00:01:51,560 --> 00:01:53,500
+Seperti yang Anda lihat nomornya ada beberapa.
+
+25
+00:01:53,510 --> 00:01:56,250
+Jadi kami memiliki beberapa permintaan dan beberapa tanggapan.
+
+26
+00:01:56,630 --> 00:01:59,570
+Jadi protokol dengan file-nya sendiri terlihat benar.
+
+27
+00:01:59,570 --> 00:02:01,320
+Saya harap kamu adalah hal yang sama.
+
+28
+00:02:01,400 --> 00:02:04,060
+Sekarang kita perlu maju dan menghasilkan beberapa kode untuk itu.
+
+29
+00:02:04,460 --> 00:02:08,440
+Jadi saya malas jadi saya hanya akan menyalin ini dan mencari tahu hal yang benar.
+
+30
+00:02:08,440 --> 00:02:15,230
+Jadi kalkulator kalkulator adalah kalkulator PV Prato.
+
+31
+00:02:15,260 --> 00:02:22,000
+Jadi izinkan saya salin seluruh baris ke baris perintah dan lihat apakah itu berfungsi ok.
+
+32
+00:02:22,010 --> 00:02:22,850
+Ini terlihat telah berfungsi.
+
+33
+00:02:22,850 --> 00:02:28,220
+Jadi sekarang kami memiliki kalkulator yang digunakan orang dan semua kode ini dibuat untuk kami.
+
+34
+00:02:28,220 --> 00:02:31,550
+Itu terlihat sangat mirip dengan kode yang kita buat sebelumnya.
+
+35
+00:02:31,630 --> 00:02:34,800
+Jadi sekarang kita dapat melanjutkan dan membuat server dan klien.
+
+36
+00:02:35,170 --> 00:02:36,430
+Jadi saya sangat malas.
+
+37
+00:02:36,490 --> 00:02:41,670
+Saya akan menyalin semua ini dan berubah seiring berjalannya waktu.
+
+38
+00:02:42,220 --> 00:02:44,830
+Jadi server terlihat benar di sini.
+
+39
+00:02:44,830 --> 00:02:46,600
+Saya akan menghapus ini.
+
+40
+00:02:46,600 --> 00:02:56,480
+Jadi kita harus menghapus ini juga sehingga kita memiliki server kalkulator seolah-olah apa yang kita cetak ketika terbuka.
+
+41
+00:02:56,820 --> 00:02:59,150
+Kami akan mendengarkan di port yang berbeda.
+
+42
+00:02:59,250 --> 00:03:01,170
+Sebenarnya kita bisa mengirim faks ke sini bersamanya jika saya punya.
+
+43
+00:03:01,200 --> 00:03:02,550
+Tidak apa-apa.
+
+44
+00:03:02,550 --> 00:03:03,810
+Dan kami hanya server berita.
+
+45
+00:03:04,110 --> 00:03:12,630
+Jadi apa yang perlu kita panggil di sini bukan menyapa P. B. tapi kalkulator P. B. dan fungsinya adalah register itu.
+
+46
+00:03:12,630 --> 00:03:13,810
+Jadi mari kita lihat apa itu.
+
+47
+00:03:13,830 --> 00:03:14,630
+Daftarkan Jadi
+
+48
+00:03:18,030 --> 00:03:23,820
+kadang-kadang Anda akan mendapatkan masalah di mana tidak penting untuk secara medis sehingga untuk ini Anda klik pada
+
+49
+00:03:23,850 --> 00:03:28,600
+alt enter dan dikatakan impor dan Anda dapat mengimpor ke jalur penuh di sini.
+
+50
+00:03:28,620 --> 00:03:36,600
+Jadi sekarang kami mendaftar server layanan kalkulator dan kami melewati S dan kemudian kami melewati server.
+
+51
+00:03:36,600 --> 00:03:37,760
+Seperti sebelumnya.
+
+52
+00:03:38,220 --> 00:03:43,100
+Jadi sekarang server ini di sini kita perlu alat Anda adalah antarmuka kami.
+
+53
+00:03:43,620 --> 00:03:53,830
+Jadi jika kita pergi ke kalkulator itu atau pergi dan kita melihat layanan server itu sendiri dibutuhkan beberapa fungsi.
+
+54
+00:03:53,970 --> 00:03:58,280
+Jadi mari kita lanjutkan dan ketik beberapa fungsi.
+
+55
+00:03:58,340 --> 00:04:05,510
+Jadi silakan dan katakan fungsi pada pointer ke server saya fungsi jumlah.
+
+56
+00:04:05,510 --> 00:04:09,230
+Dan jelas kebutuhan nama argumen, jadi ini konteks.
+
+57
+00:04:09,260 --> 00:04:10,940
+Ini permintaan saya.
+
+58
+00:04:11,420 --> 00:04:17,860
+Dan tipe tidak akan bahagia sampai kita mengatakan kalkulator P. B. tetapi beberapa permintaan dan kalkulator
+
+59
+00:04:17,870 --> 00:04:20,240
+P. B. untuk beberapa tanggapan.
+
+60
+00:04:20,240 --> 00:04:22,060
+Jadi ini terlihat bagus.
+
+61
+00:04:22,130 --> 00:04:25,120
+Konteksnya tidak didefinisikan sehingga kita perlu mengimpornya.
+
+62
+00:04:25,370 --> 00:04:29,150
+Jadi konteksnya sekarang didefinisikan dan semuanya terlihat benar.
+
+63
+00:04:29,150 --> 00:04:31,960
+OK jadi sekarang mari kita lanjutkan dan mengimplementasikan fungsi itu.
+
+64
+00:04:32,390 --> 00:04:35,100
+Jadi angka pertama adalah.
+
+65
+00:04:35,150 --> 00:04:38,890
+Jadi kita akan mengatakan angka pertama sama dengan.
+
+66
+00:04:38,930 --> 00:04:46,350
+Tetapi angka pertama angka kedua adalah peringkat nomor kedua.
+
+67
+00:04:46,640 --> 00:04:52,370
+Dan ini agak sedikit kikuk tapi saya hanya ingin menyoroti bahwa kita mengekstrak angka
+
+68
+00:04:52,370 --> 00:04:54,950
+pertama dan nomor kedua dari permintaan.
+
+69
+00:04:54,950 --> 00:05:06,880
+Jadi ini terlihat bagus dengan cara kita dapat mengatakan cetak anti-dote telah menerima beberapa RBC dan kami hanya akan menyampaikan apa
+
+70
+00:05:06,880 --> 00:05:10,570
+pun yang telah dilewati dalam permintaan.
+
+71
+00:05:10,610 --> 00:05:12,040
+Jadi ini terlihat bagus.
+
+72
+00:05:12,080 --> 00:05:13,500
+Sekarang kami membuat hasilnya.
+
+73
+00:05:13,940 --> 00:05:23,010
+Jadi hasil yang sebenarnya jumlah pada dasarnya adalah angka pertama ditambah angka kedua.
+
+74
+00:05:23,510 --> 00:05:25,850
+Dan sekarang kita hanya perlu mengembalikan ini.
+
+75
+00:05:25,850 --> 00:05:32,080
+Jadi kita akan membuat beberapa objek respons sehingga responsnya sama dengan.
+
+76
+00:05:32,870 --> 00:05:41,120
+Dan kalkulator P. B. mendapat beberapa respons dan beberapa struktur respons sendiri membawa kita beberapa hasil.
+
+77
+00:05:41,150 --> 00:05:46,100
+Jadi, ketika Anda membuat beberapa hasil sekarang dan itu adalah int 32 yang sudah ada.
+
+78
+00:05:46,250 --> 00:05:51,280
+Jadi ini adalah beberapa hasil Prefek dan kami lulus dalam objek yang sama.
+
+79
+00:05:51,290 --> 00:05:58,420
+Jadi ini semua terlihat bagus dan kami harus datang dan kami mengembalikan ini sebagai hasilnya.
+
+80
+00:05:58,990 --> 00:06:01,790
+Dan ini sepertinya jumlah yang diterapkan.
+
+81
+00:06:01,790 --> 00:06:02,900
+Jadi ini terlihat benar.
+
+82
+00:06:02,930 --> 00:06:10,540
+Sekarang masih tidak senang di sini karena server bukan ekspresi saya hanya perlu membuat struct saya.
+
+83
+00:06:10,640 --> 00:06:12,680
+OK jadi sekarang ini terlihat bagus.
+
+84
+00:06:12,860 --> 00:06:16,730
+Jadi server dibuat saya bisa melanjutkan dan benar-benar meluncurkannya.
+
+85
+00:06:17,090 --> 00:06:32,030
+Jadi kita bisa mengatakan Go run go run kalkulator server server kalkulator untuk pergi dan server berjalan sehingga itu sempurna.
+
+86
+00:06:32,140 --> 00:06:35,090
+Dan kemudian kita bisa melanjutkan dengan klien itu sendiri.
+
+87
+00:06:35,460 --> 00:06:43,620
+Jadi sekali lagi saya malas jadi saya akan pergi dan menyalin klien ini di sini dan menempelkannya dan mari kita lihat apa yang
+
+88
+00:06:43,620 --> 00:06:44,670
+kita miliki.
+
+89
+00:06:44,670 --> 00:06:47,120
+Saya hanya akan menghapus apa yang tidak saya butuhkan.
+
+90
+00:06:47,130 --> 00:06:52,070
+Jadi ini adalah klien kalkulator.
+
+91
+00:06:52,080 --> 00:06:53,580
+Ini akan terhubung ke port.
+
+92
+00:06:53,610 --> 00:06:54,640
+Itu sempurna.
+
+93
+00:06:55,020 --> 00:07:03,790
+Dan dia akan membutuhkan kalkulator P. B. dan layanan akan membuat klien layanan kalkulator
+
+94
+00:07:03,790 --> 00:07:07,840
+baru yang mengambil rata-rata koneksi CC dan kami akan melakukan panggilan kenari.
+
+95
+00:07:07,840 --> 00:07:11,060
+Jadi sempurna hanya akan meneruskannya.
+
+96
+00:07:11,050 --> 00:07:14,370
+Saya telah menghitung P. B. disini.
+
+97
+00:07:14,710 --> 00:07:22,570
+Jadi kami akan mulai melakukan penjumlahan kepada Anda Nare RBC sekarang, saya ingin Anda membuat permintaan musim panas, jadi mari
+
+98
+00:07:22,600 --> 00:07:31,990
+kita lanjutkan dan katakan dan kalkulator P. B. itu beberapa permintaan dan ini mengambil nomor sebagai masukan.
+
+99
+00:07:32,260 --> 00:07:38,940
+Jadi misalnya kita dapat mengatakan angka pertama adalah angka 5 dan angka kedua adalah angka 40.
+
+100
+00:07:38,950 --> 00:07:40,980
+Jadi jumlahnya 45.
+
+101
+00:07:41,550 --> 00:07:45,120
+Itu terlihat benar maka kita dapat mengatakan titik klien.
+
+102
+00:07:45,250 --> 00:07:46,760
+Jadi itu bukan klien layanan hebat.
+
+103
+00:07:46,760 --> 00:07:53,450
+Sekarang ini adalah layanan kalkulator klien dan fungsinya sendiri ada beberapa.
+
+104
+00:07:53,890 --> 00:07:57,100
+Dan kita bisa menggunakan konteks yang sama seperti sebelumnya yang merupakan latar belakang.
+
+105
+00:07:57,550 --> 00:08:06,170
+Jadi izinkan saya hanya membersihkan ini dan permintaan itu sendiri adalah REC dan kita dapat memanggil beberapa
+
+106
+00:08:06,170 --> 00:08:12,160
+RBC dan tanggapan dari jumlah itu sendiri akan diminta beberapa hasil.
+
+107
+00:08:12,290 --> 00:08:12,740
+BAIK.
+
+108
+00:08:12,770 --> 00:08:14,110
+Jadi ini terlihat benar.
+
+109
+00:08:14,180 --> 00:08:18,630
+Sekarang pada dasarnya Anda baru saja memodifikasi kode dengan sangat cepat untuk beradaptasi.
+
+110
+00:08:18,650 --> 00:08:25,440
+Tapi sekarang kita akan menjumlahkan angka 4 5 dan 40 dan mudah-mudahan kita mendapatkan jawaban yang tepat.
+
+111
+00:08:25,490 --> 00:08:30,970
+Jadi mari kita lanjutkan dan jalankan klien kalkulator.
+
+112
+00:08:31,120 --> 00:08:33,490
+Dan seperti yang Anda lihat itu mulai melakukan beberapa RBC.
+
+113
+00:08:33,610 --> 00:08:39,460
+Dan jawaban dari jumlah itu adalah 45 yang merupakan angka yang benar dan yang kami terima adalah beberapa RBC dari lima dan
+
+114
+00:08:39,460 --> 00:08:40,280
+empat puluh.
+
+115
+00:08:40,660 --> 00:08:41,770
+Jadi ini terlihat hebat.
+
+116
+00:08:41,770 --> 00:08:43,210
+Ini terlihat benar.
+
+117
+00:08:43,210 --> 00:08:46,130
+Saya hanya memperhatikan bahwa saya juga perlu menambahkan baris baru di sini.
+
+118
+00:08:46,400 --> 00:08:49,120
+Tetapi katakanlah kita telah menerapkan dan saya harap Anda memiliki hasil yang sama.
+
+119
+00:08:49,120 --> 00:08:55,290
+Kami telah mengimplementasikan layanan kalkulator yang melakukan beberapa fungsi saat ini yang sangat sangat mudah.
+
+120
+00:08:55,540 --> 00:09:00,820
+Tetapi di bagian selanjutnya kita akan melihat apa sebenarnya ini karena mulai membawa beberapa
+
+121
+00:09:00,820 --> 00:09:03,250
+kemampuan streaming ke dalam campuran.
+
+122
+00:09:03,370 --> 00:09:05,940
+Jadi harap Anda bersemangat dan saya akan melihat Anda di kuliah berikutnya.
+

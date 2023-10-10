@@ -1,0 +1,687 @@
+1
+00:00:01,260 --> 00:00:06,510
+So let's get started with some of the changes necessary to make our remember me functionality actually
+
+2
+00:00:06,510 --> 00:00:06,990
+functional.
+
+3
+00:00:07,470 --> 00:00:14,880
+So I mean, I can my app and I'm going to look under The View's folder and I'll go to log in jet and
+
+4
+00:00:14,880 --> 00:00:16,500
+I'll add a little toggle there.
+
+5
+00:00:17,220 --> 00:00:25,200
+So I'll put it right here before the forgot password bit and say, and I'll just use bootstraps.
+
+6
+00:00:25,200 --> 00:00:26,250
+Nice little toggle.
+
+7
+00:00:26,850 --> 00:00:30,510
+So Div class equals form check.
+
+8
+00:00:32,980 --> 00:00:34,090
+Formed a switch.
+
+9
+00:00:36,920 --> 00:00:45,020
+And I'll close that, Dave, and in between, I'll put the two required fields input class equals form
+
+10
+00:00:45,030 --> 00:00:55,250
+dash checked dash input type equals checkbox value equals and I'll use the word remember all lowercase
+
+11
+00:00:55,250 --> 00:00:55,940
+for the value.
+
+12
+00:00:57,290 --> 00:01:03,020
+And its ID equals, remember, and I also need a name, of course.
+
+13
+00:01:04,640 --> 00:01:17,840
+Name equals remember, and I'll give it its label label class equals formed check, dash label and four
+
+14
+00:01:17,840 --> 00:01:19,160
+equals, remember?
+
+15
+00:01:22,580 --> 00:01:24,020
+And I'll just put remember me.
+
+16
+00:01:26,210 --> 00:01:26,630
+Label.
+
+17
+00:01:28,280 --> 00:01:29,420
+So let's see how that looks.
+
+18
+00:01:29,610 --> 00:01:31,110
+I'll make sure my application is running.
+
+19
+00:01:32,420 --> 00:01:33,380
+Make restart.
+
+20
+00:01:50,320 --> 00:01:50,650
+OK.
+
+21
+00:01:50,710 --> 00:01:51,350
+So it's running.
+
+22
+00:01:51,370 --> 00:01:52,450
+Let's go to our web browser.
+
+23
+00:01:54,170 --> 00:01:56,320
+And go to local host four thousand.
+
+24
+00:01:57,760 --> 00:02:00,520
+OK, so I'm not logged in, so I'll get a log any user.
+
+25
+00:02:01,640 --> 00:02:05,060
+And I didn't quite look the way I wanted, so I made something wrong there.
+
+26
+00:02:05,090 --> 00:02:06,290
+Let's go back and fix that.
+
+27
+00:02:08,440 --> 00:02:10,200
+It should be four months which.
+
+28
+00:02:10,630 --> 00:02:15,430
+Try that, save it, go back to our web browser, reload this.
+
+29
+00:02:16,410 --> 00:02:17,010
+And that's better.
+
+30
+00:02:17,230 --> 00:02:19,720
+So now I have a remember me toggle that's on.
+
+31
+00:02:19,920 --> 00:02:20,590
+That's off.
+
+32
+00:02:20,670 --> 00:02:21,120
+Perfect.
+
+33
+00:02:21,520 --> 00:02:23,490
+Doesn't do anything yet, so let's go fix that.
+
+34
+00:02:24,450 --> 00:02:28,440
+So the next thing I want to do is to go to my auth handlers.
+
+35
+00:02:29,970 --> 00:02:31,380
+So let's open off handlers.
+
+36
+00:02:32,070 --> 00:02:33,900
+It's under handlers.
+
+37
+00:02:35,170 --> 00:02:40,810
+Most handlers and let's find the part where the person actually logs in right here.
+
+38
+00:02:41,020 --> 00:02:43,760
+So that would be right after this check if matches.
+
+39
+00:02:43,820 --> 00:02:48,760
+OK, we have invalid password when we return, but if we get past that, presumably that can be logged
+
+40
+00:02:48,760 --> 00:02:49,020
+in.
+
+41
+00:02:49,030 --> 00:02:50,770
+So at this point, we need to decide.
+
+42
+00:02:51,940 --> 00:02:53,740
+Did the user check?
+
+43
+00:02:54,040 --> 00:02:55,060
+Remember me?
+
+44
+00:02:56,140 --> 00:02:58,570
+And it's a form checkbox.
+
+45
+00:02:58,930 --> 00:03:05,800
+So all we have to do is to say if our dot form dot yet and we're looking for remember.
+
+46
+00:03:06,160 --> 00:03:10,420
+And because it's a checkbox, this will only be populated if it was actually checked.
+
+47
+00:03:10,720 --> 00:03:14,800
+Otherwise, it's an empty string, if that equals, remember?
+
+48
+00:03:15,640 --> 00:03:16,570
+Then they checked.
+
+49
+00:03:16,750 --> 00:03:17,470
+Remember me?
+
+50
+00:03:19,510 --> 00:03:21,780
+So what do we do if they checked?
+
+51
+00:03:21,790 --> 00:03:22,560
+Remember me?
+
+52
+00:03:22,570 --> 00:03:28,720
+But we need to create a kind of token they can use to log in using the cookie, so we'll create a random
+
+53
+00:03:28,720 --> 00:03:29,050
+string.
+
+54
+00:03:29,380 --> 00:03:32,530
+So we'll just create a random string, which is sufficient for our purposes.
+
+55
+00:03:32,530 --> 00:03:34,960
+So I'll store that in a variable called random string.
+
+56
+00:03:35,710 --> 00:03:40,210
+And that's assigned the value of each dot random string with a length of 12.
+
+57
+00:03:41,110 --> 00:03:42,280
+And then we'll create a hasher.
+
+58
+00:03:43,930 --> 00:03:51,430
+And that's a sign the value of s h a 256 right from the standard library dot new.
+
+59
+00:03:54,150 --> 00:03:59,940
+And then we'll ignore the return value, but check for an error and say that is a sign the value of
+
+60
+00:04:00,840 --> 00:04:02,100
+hasher right?
+
+61
+00:04:02,580 --> 00:04:04,520
+And it requires a slice of bite.
+
+62
+00:04:04,530 --> 00:04:07,710
+So we'll take our random string and cast that to a slice of votes.
+
+63
+00:04:09,180 --> 00:04:10,050
+Random string.
+
+64
+00:04:11,330 --> 00:04:17,980
+And if the error is not equal to nil, then we'll just give them a bad, bad request short app dart
+
+65
+00:04:18,080 --> 00:04:20,600
+status, the error status.
+
+66
+00:04:23,500 --> 00:04:31,360
+And I'll call it W, R and H football status bad request, which is sufficient for testing purposes.
+
+67
+00:04:32,520 --> 00:04:33,670
+And what's it giving me here?
+
+68
+00:04:34,210 --> 00:04:36,200
+Too many arguments, right?
+
+69
+00:04:36,490 --> 00:04:39,850
+Studies only requires a W in the status.
+
+70
+00:04:39,850 --> 00:04:44,020
+We don't need the the R, so we get better there, there and we'll return.
+
+71
+00:04:47,230 --> 00:04:54,900
+But if we get past that, then let's create a variable called Shah and we'll use base sixty four from
+
+72
+00:04:54,910 --> 00:05:00,940
+a standard library that you are all encoding the encode to string.
+
+73
+00:05:01,480 --> 00:05:05,620
+And we'll hand that Hasher Dot song with no arguments.
+
+74
+00:05:05,620 --> 00:05:05,980
+No.
+
+75
+00:05:09,330 --> 00:05:15,120
+And that will create a Remember token, Ahram for Remember token is of the type day to remember token.
+
+76
+00:05:17,740 --> 00:05:19,090
+With empty, curly braces.
+
+77
+00:05:19,830 --> 00:05:25,000
+We'll check for an error when we call our import insert token and we'll insert the user ID.
+
+78
+00:05:28,430 --> 00:05:29,150
+And I say check.
+
+79
+00:05:31,220 --> 00:05:34,320
+Now, let's make sure we actually have that user because they don't recall if we.
+
+80
+00:05:34,370 --> 00:05:36,650
+Yes, we did, we got the user up here in Line twenty seven.
+
+81
+00:05:36,650 --> 00:05:37,890
+So we have that, that's good.
+
+82
+00:05:37,910 --> 00:05:39,440
+So that's a valid thing.
+
+83
+00:05:40,880 --> 00:05:41,920
+And again, we'll check for an error.
+
+84
+00:05:41,930 --> 00:05:45,620
+So a copy this error checking code and paste it right here.
+
+85
+00:05:47,900 --> 00:05:53,480
+So we've inserted the token and into the database now there, remember me token that we have to set
+
+86
+00:05:53,480 --> 00:06:00,430
+a cookie and the cookie must be exactly the same format as the one we use for our delete cookie token.
+
+87
+00:06:00,440 --> 00:06:01,370
+So we'll get that right.
+
+88
+00:06:01,400 --> 00:06:03,180
+First of all, it's the expiry for it.
+
+89
+00:06:03,200 --> 00:06:11,060
+So I'll say this cookie expires, expire is assigned the value of time done now, and this will be whatever
+
+90
+00:06:11,060 --> 00:06:13,510
+you want for the rules for your cookie.
+
+91
+00:06:13,610 --> 00:06:14,300
+Try that again.
+
+92
+00:06:14,720 --> 00:06:15,560
+Time now.
+
+93
+00:06:18,490 --> 00:06:21,790
+And I will add, and in my case, I'm going to make it last a really long time.
+
+94
+00:06:21,880 --> 00:06:23,770
+Three hundred and sixty five times.
+
+95
+00:06:23,950 --> 00:06:25,600
+Twenty four hours times.
+
+96
+00:06:25,930 --> 00:06:27,340
+60 minutes times.
+
+97
+00:06:27,700 --> 00:06:31,600
+60 seconds times time dot second.
+
+98
+00:06:34,200 --> 00:06:36,930
+OK, so that will be the expiry for our cookie.
+
+99
+00:06:37,380 --> 00:06:38,430
+Now let's create the cookie.
+
+100
+00:06:38,910 --> 00:06:47,310
+Cookie is assigned the value of from GDP, the type cookie, and we populate the fields.
+
+101
+00:06:49,200 --> 00:06:58,500
+So the name and this has to be exactly what we use before that will be format as per death and our format
+
+102
+00:06:58,500 --> 00:07:02,970
+string will be an underscore and a string and another underscore.
+
+103
+00:07:04,130 --> 00:07:11,210
+And then remember, and we're substituting for that H2O app, Apni.
+
+104
+00:07:12,710 --> 00:07:17,210
+So that gives me the correct cookie name, which exactly matches what I used everywhere else in referring
+
+105
+00:07:17,210 --> 00:07:17,810
+to this cookie.
+
+106
+00:07:19,430 --> 00:07:20,240
+And it needs a value.
+
+107
+00:07:20,570 --> 00:07:25,220
+And if you recall, what I'm going to sell for the value are two things separated by a pipe.
+
+108
+00:07:26,650 --> 00:07:36,850
+So format as pretest, and I want an integer and then a pipe and then a string, and I'm substituting
+
+109
+00:07:36,850 --> 00:07:43,340
+for those user ID because I need the user's I.D. and then I want shot.
+
+110
+00:07:46,300 --> 00:07:46,930
+You want a comma.
+
+111
+00:07:48,400 --> 00:07:49,420
+So that's name and value.
+
+112
+00:07:49,420 --> 00:07:57,760
+The path I had set to the root level of the application expires in this case is expired.
+
+113
+00:08:00,220 --> 00:08:02,230
+HGTV only asset to true.
+
+114
+00:08:05,250 --> 00:08:14,880
+Domain is H Dot app, dot session, dot cookie dot domain, max age.
+
+115
+00:08:15,630 --> 00:08:20,940
+I'll make that equal two seconds in a year, which is three one five three six zero.
+
+116
+00:08:22,480 --> 00:08:23,680
+Zero zero zero.
+
+117
+00:08:26,910 --> 00:08:37,920
+Secure is equal to each dot app, dot session, dot, cookie dot, secure faults in development, true
+
+118
+00:08:37,920 --> 00:08:38,520
+in production.
+
+119
+00:08:39,390 --> 00:08:45,950
+And the last thing is same site and that's set to HGTV Dot same site, strict mode right there.
+
+120
+00:08:48,360 --> 00:08:49,410
+That defines the cookie.
+
+121
+00:08:49,440 --> 00:08:51,570
+Now let's set it aside, Peter said Cookie.
+
+122
+00:08:52,410 --> 00:08:56,880
+And that requires the response writer in a reference to the cookie we just created.
+
+123
+00:08:58,140 --> 00:09:02,580
+And then I'm going to save hash in session.
+
+124
+00:09:02,760 --> 00:09:05,430
+If you recall, I called it remember underscore token.
+
+125
+00:09:05,850 --> 00:09:12,810
+So start app the session that could not pop put.
+
+126
+00:09:13,740 --> 00:09:15,150
+And we need context.
+
+127
+00:09:16,500 --> 00:09:20,460
+And we're going to call it remember underscore token.
+
+128
+00:09:21,810 --> 00:09:22,530
+And that's shot.
+
+129
+00:09:23,860 --> 00:09:26,710
+And at that point, I should be pretty much ready to go.
+
+130
+00:09:27,890 --> 00:09:32,840
+So if they've not checked, remember me, none of this code gets executed, but if they have checked,
+
+131
+00:09:32,840 --> 00:09:34,340
+remember me, then that's good.
+
+132
+00:09:34,620 --> 00:09:39,830
+OK, so that that takes care of logging the user in now in log out.
+
+133
+00:09:40,040 --> 00:09:41,720
+We have some other things to do as well.
+
+134
+00:09:43,640 --> 00:09:47,810
+First of all, we want to delete the Remember token
+
+135
+00:09:50,660 --> 00:09:51,920
+if it exists.
+
+136
+00:09:52,460 --> 00:09:53,330
+And that's really simple.
+
+137
+00:09:53,570 --> 00:10:04,850
+We just say if each app dot session dot exists and we check using our context and we're looking for,
+
+138
+00:10:04,860 --> 00:10:09,200
+remember, underscore token if that exists.
+
+139
+00:10:09,890 --> 00:10:12,470
+Well, let's get rid of the Remember token.
+
+140
+00:10:12,770 --> 00:10:19,190
+Artie is just a variable and declaring of type data dot remember token, and I'm only declaring it so
+
+141
+00:10:19,190 --> 00:10:20,450
+I can call a method on it.
+
+142
+00:10:20,840 --> 00:10:23,840
+Like, ignore, the error is I don't really care if it doesn't exist or not.
+
+143
+00:10:24,200 --> 00:10:30,020
+And I call delete and I handed each Dot app dot session.
+
+144
+00:10:33,030 --> 00:10:40,380
+Get string, and that requires the context, and it requires the name I'm looking for, which is remember
+
+145
+00:10:40,380 --> 00:10:41,450
+underscore token.
+
+146
+00:10:43,290 --> 00:10:46,500
+So that should delete the token from the database if it exists.
+
+147
+00:10:46,980 --> 00:10:47,340
+OK.
+
+148
+00:10:48,920 --> 00:10:51,080
+And now I need to delete the Remember Me cookie.
+
+149
+00:10:51,440 --> 00:10:53,060
+So delete the cookie.
+
+150
+00:10:55,430 --> 00:10:59,900
+I can check to see if it exists first, but I'm still going to have to set a cookie even if it does.
+
+151
+00:11:00,110 --> 00:11:02,240
+So I may as well just set a cookie that expired.
+
+152
+00:11:02,990 --> 00:11:08,540
+So we'll copy the cookie we have here and change its values just to save some typing.
+
+153
+00:11:10,730 --> 00:11:18,080
+Paste that in there and I'll call it new cookie and I'll make its value an empty string.
+
+154
+00:11:19,040 --> 00:11:21,620
+But its name has to stay the same, so its value is empty.
+
+155
+00:11:22,280 --> 00:11:30,620
+This is the same, except expires is time now, and we use the same logic we did before that ad, minus
+
+156
+00:11:30,620 --> 00:11:37,250
+one hundred times timed our set it now 100 hours in the past that stays the same.
+
+157
+00:11:37,250 --> 00:11:38,420
+That stays the same.
+
+158
+00:11:38,450 --> 00:11:42,040
+This becomes minus one because we want it deleted.
+
+159
+00:11:42,050 --> 00:11:43,250
+We want it to be expired.
+
+160
+00:11:43,790 --> 00:11:45,920
+That stays the same and that stays the same.
+
+161
+00:11:47,390 --> 00:11:52,370
+And then we set the cookie HDP Dot set cookie.
+
+162
+00:11:54,290 --> 00:11:57,020
+And we handed W and a reference to new cookie.
+
+163
+00:11:59,600 --> 00:12:02,720
+And then we can renew the token, we remove user ID.
+
+164
+00:12:04,030 --> 00:12:06,550
+We may also remove, remember, underscore token.
+
+165
+00:12:11,240 --> 00:12:20,120
+And let's destroy this session H2O app, which I think I should have done before session got destroyed.
+
+166
+00:12:22,380 --> 00:12:28,050
+And that just requires out of context, everyone knew that took it again, just because I'm paranoid
+
+167
+00:12:28,050 --> 00:12:28,920
+about that sort of thing.
+
+168
+00:12:32,620 --> 00:12:34,190
+I think that will take care of that.
+
+169
+00:12:35,300 --> 00:12:40,760
+So at this point, we have our off handlers updated, we have middleware available to us.
+
+170
+00:12:41,030 --> 00:12:44,120
+We've updated our form to put the appropriate toggle in there.
+
+171
+00:12:44,510 --> 00:12:50,180
+So the last thing to do is to actually try it all out and see if it works and we'll give that a whirl
+
+172
+00:12:50,180 --> 00:12:51,290
+in the next lecture.

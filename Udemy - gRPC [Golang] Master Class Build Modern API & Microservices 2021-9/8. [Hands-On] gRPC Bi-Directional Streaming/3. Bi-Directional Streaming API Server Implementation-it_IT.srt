@@ -1,0 +1,336 @@
+1
+00:00:00,300 --> 00:00:04,460
+Quindi implementeremo il server tramite l'API di trimming delle direzioni.
+
+2
+00:00:04,800 --> 00:00:09,590
+Ma questa volta risponderemo ad ogni invio di messaggi rifiutati.
+
+3
+00:00:09,750 --> 00:00:14,570
+Ma solo una nota che non dobbiamo, possiamo semplicemente chiudere il flusso ogni volta che vogliamo.
+
+4
+00:00:14,640 --> 00:00:19,640
+Quindi il server alla fine decide ogni volta che viene eseguito lo streaming sul client e la ricezione dai client.
+
+5
+00:00:19,740 --> 00:00:20,140
+OK.
+
+6
+00:00:20,340 --> 00:00:24,780
+Ma in questo esempio manterremo le cose facili e semplici e risponderemo ad ogni messaggio che viene
+
+7
+00:00:25,370 --> 00:00:29,140
+fornito in questo esempio e non useremo buone routine all'interno della nostra funzione.
+
+8
+00:00:29,370 --> 00:00:35,370
+Ma quando facciamo i clienti useremo delle buone routine per mostrare in pratica come possiamo avere thread
+
+9
+00:00:35,370 --> 00:00:38,640
+diversi che fanno più cose allo stesso tempo.
+
+10
+00:00:38,640 --> 00:00:40,410
+Quindi andiamo avanti.
+
+11
+00:00:40,410 --> 00:00:45,450
+Quindi aprirò i miei saluti P. B. file e il mio server si spegne.
+
+12
+00:00:45,840 --> 00:00:46,830
+OK.
+
+13
+00:00:46,830 --> 00:00:49,870
+Quindi, come puoi immaginare, dobbiamo implementare un'altra funzione.
+
+14
+00:00:49,980 --> 00:00:52,160
+Quindi cerchiamo di trovare il nome della funzione proprio qui.
+
+15
+00:00:52,200 --> 00:00:57,340
+Se cerchiamo se cerchiamo ciò che abbiamo cercato prima è la sua interfaccia.
+
+16
+00:00:57,660 --> 00:00:59,260
+L'ultimo è di taglio del giorno.
+
+17
+00:00:59,280 --> 00:01:00,290
+Saluta tutti.
+
+18
+00:01:00,420 --> 00:01:09,640
+Quindi copiamo questo e creiamo una funzione proprio qui sul nostro server chiamato saluta tutti e ha uno stream in quanto richiede un
+
+19
+00:01:09,930 --> 00:01:14,180
+input di tipo griglia P. B ..
+
+20
+00:01:14,400 --> 00:01:16,390
+Questo è un ottimo servizio per tutti.
+
+21
+00:01:16,680 --> 00:01:20,760
+E abbiamo la nostra funzione con le parentesi graffe.
+
+22
+00:01:21,060 --> 00:01:26,860
+Quindi questo sembra corretto come puoi vedere la definizione è praticamente la stessa di prima.
+
+23
+00:01:26,880 --> 00:01:30,940
+Abbiamo anche un flusso prima e abbiamo un flusso qui ma questo flusso questa volta.
+
+24
+00:01:31,050 --> 00:01:38,160
+Se si guardano le funzioni del flusso, è possibile inviare e ricevere, mentre in precedenza, se si guardava prima
+
+25
+00:01:38,670 --> 00:01:42,890
+c'era solo una ricezione e infine un invio e una chiusura.
+
+26
+00:01:43,140 --> 00:01:47,880
+Quindi questo è perfetto per noi perché ora possiamo inviare più volte e ricevere molte volte.
+
+27
+00:01:48,240 --> 00:01:53,220
+Quindi per prima cosa stampiamo qualche registro dal fatto che siamo stati invocati.
+
+28
+00:01:53,220 --> 00:01:55,350
+Quindi OK con questa richiesta di trimming.
+
+29
+00:01:55,800 --> 00:02:00,080
+E quindi quello che vogliamo fare è fondamentalmente guardare questo flusso iterare sul flusso del client.
+
+30
+00:02:00,150 --> 00:02:03,950
+E ogni volta che riceviamo un messaggio dai clienti rispondiamo ad esso.
+
+31
+00:02:04,020 --> 00:02:07,500
+Quindi affrontiamo questo in modo che possiamo fare per.
+
+32
+00:02:07,950 --> 00:02:14,600
+E prima riceviamo un messaggio dallo stream, quindi diciamo riceviamo come puoi aspettarci riceviamo
+
+33
+00:02:15,120 --> 00:02:17,870
+una richiesta o un errore.
+
+34
+00:02:17,990 --> 00:02:22,400
+E quindi possiamo dire se l'aria è uguale a quella e una caduta.
+
+35
+00:02:22,460 --> 00:02:29,360
+Quindi, in pratica, il client ha eseguito lo streaming, possiamo solo restituire zero perché abbiamo finito con la nostra funzione
+
+36
+00:02:29,810 --> 00:02:31,530
+e dovremmo restituirlo lì.
+
+37
+00:02:31,780 --> 00:02:32,010
+OK.
+
+38
+00:02:32,030 --> 00:02:42,430
+Ora se l'aria non è uguale a zero, allora quando guardi a questo problema è un errore fatale e possiamo
+
+39
+00:02:42,430 --> 00:02:49,780
+restituire l'errore, così possiamo dire che succede un errore durante la lettura del flusso
+
+40
+00:02:49,780 --> 00:02:50,830
+del client.
+
+41
+00:02:51,700 --> 00:02:55,070
+Ed ecco il flusso e poi passiamo nell'aria.
+
+42
+00:02:55,330 --> 00:03:00,220
+E in realtà ho appena realizzato qualcosa che puoi far tornare l'aria proprio qui perché c'era un grosso
+
+43
+00:03:00,220 --> 00:03:01,860
+errore sull'orologio dal lato del lettore.
+
+44
+00:03:02,050 --> 00:03:07,010
+E questo è qualcosa che avrebbe potuto includere nei codici prima che ci fosse un errore.
+
+45
+00:03:07,090 --> 00:03:10,740
+E stava succedendo che avremmo potuto restituire l'aria interamente.
+
+46
+00:03:10,840 --> 00:03:15,400
+Come una funzione di ritorno Ad ogni modo non modifica realmente il comportamento.
+
+47
+00:03:15,910 --> 00:03:17,200
+Quindi questo è buono.
+
+48
+00:03:17,410 --> 00:03:18,870
+E ora abbiamo una richiesta.
+
+49
+00:03:19,010 --> 00:03:22,990
+E quindi quella richiesta contiene fondamentalmente un saluto.
+
+50
+00:03:23,020 --> 00:03:25,460
+Facciamo ottenere il nome alla tua squadra.
+
+51
+00:03:25,600 --> 00:03:28,300
+Questo ci dà il primo nome.
+
+52
+00:03:29,460 --> 00:03:38,150
+E ora possiamo restituire un risultato che è ciao Inoltre la prima cosa.
+
+53
+00:03:38,340 --> 00:03:40,320
+Quindi questo sembra buono.
+
+54
+00:03:40,760 --> 00:03:45,570
+È un punto di missione e quindi dobbiamo affrontare quel risultato,
+
+55
+00:03:45,570 --> 00:03:50,400
+quindi dobbiamo rimandarlo in modo da poter eseguire lo streaming che inviamo.
+
+56
+00:03:50,790 --> 00:03:54,630
+E quando invii un saluto, tutti richiedono una risposta.
+
+57
+00:03:54,630 --> 00:03:56,940
+Quindi creeremo quella struttura in questo momento.
+
+58
+00:03:57,360 --> 00:04:00,000
+E questo ha come risultato un risultato.
+
+59
+00:04:00,000 --> 00:04:01,320
+E lo stesso di prima.
+
+60
+00:04:01,360 --> 00:04:04,120
+Si dovrebbe guardare la funzione di invio, sono sicuro che questo restituisce un errore.
+
+61
+00:04:04,230 --> 00:04:12,300
+Quindi, nel caso ci sia un errore in modo che possiamo fare i nostri pari questo e nel caso ci sia ancora un errore non l'ho fatto prima,
+
+62
+00:04:12,300 --> 00:04:16,290
+ma lo faremo solo ora per mostrare esattamente come fare le cose perfettamente.
+
+63
+00:04:16,770 --> 00:04:25,250
+Ma nel caso ci sia un errore possiamo dire errore durante l'invio di dati ai client.
+
+64
+00:04:25,820 --> 00:04:26,380
+OK.
+
+65
+00:04:26,490 --> 00:04:30,450
+E passeremo l'errore e poi restituiremo anche quell'errore.
+
+66
+00:04:30,930 --> 00:04:32,270
+Ok, sembra buono
+
+67
+00:04:32,580 --> 00:04:35,550
+E alcune cose non sono felici quindi diamo un'occhiata.
+
+68
+00:04:35,580 --> 00:04:39,340
+Nessuna nuova variabile sul lato sinistro di 0.
+
+69
+00:04:39,420 --> 00:04:44,510
+Quindi possiamo fare che possiamo fare.
+
+70
+00:04:45,450 --> 00:04:50,950
+Manda che chiama questo e ora è meglio.
+
+71
+00:04:51,130 --> 00:04:51,580
+OK.
+
+72
+00:04:51,670 --> 00:04:53,110
+Dobbiamo solo cambiare il nome.
+
+73
+00:04:53,470 --> 00:04:54,970
+Quindi per favore manda aria.
+
+74
+00:04:55,020 --> 00:04:58,480
+Lo trascineremo e sostanzialmente lo restituiremo in generale.
+
+75
+00:04:58,510 --> 00:05:00,090
+Quindi tutto sembra corretto.
+
+76
+00:05:00,100 --> 00:05:04,700
+Quindi praticamente ogni volta che riceviamo un messaggio, invieremo un risultato.
+
+77
+00:05:04,840 --> 00:05:09,190
+E poi quando avremo la fine del file così quando avremo la fine del flusso dove non lo
+
+78
+00:05:09,190 --> 00:05:10,180
+sappiamo e abbiamo finito.
+
+79
+00:05:10,240 --> 00:05:11,770
+Quindi sembra buono.
+
+80
+00:05:11,770 --> 00:05:17,170
+Ora andiamo avanti e vediamo se il server compila così andremo avanti e andremo a correre
+
+81
+00:05:17,170 --> 00:05:19,780
+e faremo il server e ciao mondo.
+
+82
+00:05:19,800 --> 00:05:20,490
+Inizia.
+
+83
+00:05:20,500 --> 00:05:22,050
+Quindi questo è perfetto.
+
+84
+00:05:22,120 --> 00:05:25,300
+Quindi ora siamo pronti ad andare avanti e implementare il codice client.
+

@@ -1,0 +1,104 @@
+1
+00:00:01,280 --> 00:00:06,110
+So as I did last time before I test this, I'm going to delete the one value I have in the database,
+
+2
+00:00:06,110 --> 00:00:08,029
+so my users table is empty.
+
+3
+00:00:08,210 --> 00:00:14,600
+OK, then I'll come back and open my terminal and I'll stop the application and I'll start the application.
+
+4
+00:00:15,170 --> 00:00:17,420
+And this should compile without any difficulty.
+
+5
+00:00:21,790 --> 00:00:22,210
+Here we are.
+
+6
+00:00:22,240 --> 00:00:22,750
+It's running.
+
+7
+00:00:22,880 --> 00:00:29,170
+I go back to my Web browser and reload this page just to make sure everything is absolutely current.
+
+8
+00:00:29,680 --> 00:00:30,070
+There we go.
+
+9
+00:00:30,340 --> 00:00:32,110
+And now I'll try logging in with Google.
+
+10
+00:00:32,110 --> 00:00:34,120
+As you can see now, I'm not logged in.
+
+11
+00:00:34,120 --> 00:00:41,290
+And if you are, log out first, OK, so I'll log in with Google and I'll choose my Gmail account.
+
+12
+00:00:43,800 --> 00:00:44,970
+And I'm logged in.
+
+13
+00:00:45,360 --> 00:00:46,140
+Yes, I am.
+
+14
+00:00:46,500 --> 00:00:50,730
+And I'll look in my lawn file just to make sure everything is as it should be.
+
+15
+00:00:50,760 --> 00:00:52,500
+So back to my terminal looks good.
+
+16
+00:00:52,740 --> 00:00:54,300
+OK, now let's log it.
+
+17
+00:00:54,720 --> 00:00:56,030
+Users log at.
+
+18
+00:00:57,120 --> 00:00:59,050
+Now, let's go back and look at our log file.
+
+19
+00:00:59,860 --> 00:01:03,940
+No errors here, everything seems to be going as it should.
+
+20
+00:01:04,019 --> 00:01:04,540
+OK.
+
+21
+00:01:05,590 --> 00:01:10,680
+And now I'll try logging in again, and it should actually just take me back to the authentication screen,
+
+22
+00:01:10,690 --> 00:01:11,590
+the consent screen.
+
+23
+00:01:11,740 --> 00:01:12,070
+OK.
+
+24
+00:01:12,790 --> 00:01:18,760
+And everything seems to work as expected, and we'll sleep better at night knowing that token is revoked.
+
+25
+00:01:18,820 --> 00:01:23,770
+I may not have to do that, but as I said, I'm a bit paranoid when it comes to authentication and security.
+
+26
+00:01:24,690 --> 00:01:26,970
+All right, let's move on to the next section of the course.
+

@@ -1,0 +1,251 @@
+1
+00:00:12,250 --> 00:00:18,580
+Hello and welcome to go down to the Jeromy language course in this session, we want to talk about variable
+
+2
+00:00:18,580 --> 00:00:19,270
+concept.
+
+3
+00:00:23,520 --> 00:00:27,870
+Variables variables are like boxes.
+
+4
+00:00:28,410 --> 00:00:35,520
+Each of each has a specific type, and you can store values to the boxes based of its type.
+
+5
+00:00:36,420 --> 00:00:44,280
+We might be limited by our programming language, but as shown above, integer float, Boolean and string
+
+6
+00:00:44,490 --> 00:00:51,750
+are certain the options to be stored in a variable as storing data.
+
+7
+00:00:52,860 --> 00:00:58,590
+A variable is a place holder of the information, which can be changed and wrong.
+
+8
+00:00:58,590 --> 00:01:06,960
+Time and variables allow to retrieve and manipulate the stored information in any programming language.
+
+9
+00:01:07,170 --> 00:01:14,100
+A variable is used to store the data or the value that is used in the program for execution.
+
+10
+00:01:14,940 --> 00:01:21,330
+The value that is is stored in the variable can be used or modify in the later part of the execution.
+
+11
+00:01:22,200 --> 00:01:26,280
+For example, a int equals a hundred.
+
+12
+00:01:26,850 --> 00:01:31,530
+Here a is the variable that is towards the value of 100.
+
+13
+00:01:32,100 --> 00:01:38,430
+The data type defined is integer, hence a canister only the integer values.
+
+14
+00:01:40,760 --> 00:01:47,360
+Go variables and go language, a variable holds data temporarily to work with it.
+
+15
+00:01:48,540 --> 00:01:56,450
+A go line variable declaration needs for things first, a statement that declaring the goal and variable.
+
+16
+00:01:57,850 --> 00:02:00,130
+Second, a name for the variable.
+
+17
+00:02:01,930 --> 00:02:05,440
+Toured the type of data it can hold.
+
+18
+00:02:07,620 --> 00:02:10,080
+And force an initial value for it.
+
+19
+00:02:11,460 --> 00:02:18,990
+Fortunately, some of the parts are optional, but that also means there is more than one way of defining
+
+20
+00:02:18,990 --> 00:02:20,340
+a variable in gold.
+
+21
+00:02:23,170 --> 00:02:29,020
+Go variables include language variables are created in two different.
+
+22
+00:02:30,460 --> 00:02:38,980
+First, using Varkey Keyboard and go language variables are created using bad keyboard at a particular
+
+23
+00:02:38,980 --> 00:02:43,570
+time, connected with name and provides its initial value.
+
+24
+00:02:45,010 --> 00:02:54,640
+Now you can see the syntax that variable name type equals two value.
+
+25
+00:02:58,120 --> 00:03:05,920
+Second, using short variable declaration, the local variables, which are declared and initialized
+
+26
+00:03:05,920 --> 00:03:10,300
+in the functions, are declared by using short variable declaration.
+
+27
+00:03:11,260 --> 00:03:17,530
+Now you can see the syntax variable name column equals value.
+
+28
+00:03:18,400 --> 00:03:23,230
+Now we want to know some important things about governing variables.
+
+29
+00:03:24,520 --> 00:03:28,390
+First, Go Lang is a particular type language.
+
+30
+00:03:28,720 --> 00:03:36,100
+This means that when Golang variables are declared, they either explicitly or implicitly assigned a
+
+31
+00:03:36,100 --> 00:03:38,920
+type even before your program runs.
+
+32
+00:03:39,970 --> 00:03:49,090
+Second, Go Lang requires that every variable you declare inside main function get used some very popular
+
+33
+00:03:49,900 --> 00:03:50,280
+term.
+
+34
+00:03:50,620 --> 00:03:58,900
+You can assign new value to existing variable, but the value needs to be a same type force.
+
+35
+00:03:59,350 --> 00:04:05,410
+A variable declared within both branches may be accessed anywhere within the block.
+
+36
+00:04:05,980 --> 00:04:11,470
+The opening curly braces introduces a new scope that ends with the closing brace.
+
+37
+00:04:12,340 --> 00:04:19,570
+Either blocks can access variables within out or blocks, but out of block cannot access variables within
+
+38
+00:04:19,570 --> 00:04:20,470
+inner blocks.
+
+39
+00:04:25,580 --> 00:04:27,680
+Rules for naming variables.
+
+40
+00:04:29,830 --> 00:04:39,010
+First, variable names must begin with a letter or an underscore, and the names may contain the letters
+
+41
+00:04:39,280 --> 00:04:50,950
+a til z lowercase or a P Z uppercase or digits zero till nine, as well as the character underscore.
+
+42
+00:04:52,590 --> 00:04:55,480
+In this example, we have defined two variables.
+
+43
+00:04:56,070 --> 00:05:00,910
+Gene is the first variable who is first letter is capital genes.
+
+44
+00:05:00,990 --> 00:05:08,560
+Second variable in which all letters are lowercase characters and under a scorching 123.
+
+45
+00:05:08,580 --> 00:05:15,210
+The third variable, who is first letter, begins with an owner, a school and all three variables are
+
+46
+00:05:15,210 --> 00:05:16,440
+named correctly.
+
+47
+00:05:19,460 --> 00:05:23,660
+Second and variable name should not to start with a digit.
+
+48
+00:05:24,670 --> 00:05:32,470
+In this example, we define the variable called a hundred three came, and since the variable is sparse
+
+49
+00:05:32,470 --> 00:05:33,310
+with the number.
+
+50
+00:05:33,550 --> 00:05:37,600
+These vary a bit, is not named correctly and is illegal.
+
+51
+00:05:39,950 --> 00:05:44,120
+Third, the name of the variable is case sensitive.
+
+52
+00:05:45,740 --> 00:05:53,870
+In this example, you have defined 280 adults in three ways team with lowercase letters and keen that
+
+53
+00:05:53,870 --> 00:06:00,230
+all the letters are uppercase and queen, who is first letter is uppercase character.
+
+54
+00:06:00,590 --> 00:06:04,130
+And the naming of all three variable is done correctly.
+
+55
+00:06:06,050 --> 00:06:13,970
+Fourth, key vote is not allowed to use as a variable name, the GO programming language has a serious
+
+56
+00:06:13,970 --> 00:06:22,940
+of key wars that cannot be used to define variables such as VAR for extract and search.
+
+57
+00:06:25,870 --> 00:06:33,190
+Fifth, there is no limit on the length of the name of the variable, but it is advisable to use an
+
+58
+00:06:33,190 --> 00:06:40,960
+optimum length of 14 15 letters only like first name, last name.
+
+59
+00:06:43,490 --> 00:06:52,940
+Sixth, the convention go is to use missed caps rather than underscores to ride multi wars names like
+
+60
+00:06:52,940 --> 00:07:00,980
+the Vote Bear state, where the second part of the vote means debate begins with a capital letter in
+
+61
+00:07:00,980 --> 00:07:03,560
+order not to prolong the time of decision.
+
+62
+00:07:03,740 --> 00:07:07,520
+We will finish it and we will continue the content in the next session.
+
+63
+00:07:07,760 --> 00:07:08,290
+Goodbye.

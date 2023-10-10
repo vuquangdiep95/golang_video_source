@@ -1,0 +1,447 @@
+1
+00:00:11,700 --> 00:00:15,120
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:15,540 --> 00:00:21,300
+In the previous session, we could update a singular student using single update function.
+
+3
+00:00:21,570 --> 00:00:25,620
+And in this session, we want to update multiple students.
+
+4
+00:00:26,640 --> 00:00:35,510
+So go to the DB connection and define a function named multiple update FAJ
+
+5
+00:00:37,860 --> 00:00:40,890
+multiple updates.
+
+6
+00:00:44,280 --> 00:00:47,560
+This function accept three parameters.
+
+7
+00:00:47,710 --> 00:00:54,330
+First parameter is an empty interface, which indicates that an instance of an strike is to be passed
+
+8
+00:00:54,340 --> 00:00:55,300
+to this function.
+
+9
+00:00:55,930 --> 00:01:03,490
+And second is a very closest string for condition, and third parameter is a map which to update information
+
+10
+00:01:03,490 --> 00:01:04,930
+is sent to the function.
+
+11
+00:01:05,380 --> 00:01:12,340
+Also, this function returns the number of records that have been affected by the update operation at
+
+12
+00:01:12,340 --> 00:01:13,390
+the end of the watch.
+
+13
+00:01:13,840 --> 00:01:20,830
+So we write object into the interface.
+
+14
+00:01:23,680 --> 00:01:24,310
+Where?
+
+15
+00:01:26,690 --> 00:01:36,200
+Close the string and set a name like data for define and map data.
+
+16
+00:01:37,730 --> 00:01:41,720
+Map Sid Key by the time is string
+
+17
+00:01:44,750 --> 00:01:51,290
+and search value y the type and interface because we don't know what type of the value is sent to the
+
+18
+00:01:51,290 --> 00:02:00,980
+function and the interface and set and 64 as return type and 64.
+
+19
+00:02:04,340 --> 00:02:09,380
+OK now calling connect function for initializing MySchool data source name.
+
+20
+00:02:09,650 --> 00:02:18,830
+This function returns ADP object from Guérin package so defined a variable like DB calling equals and
+
+21
+00:02:18,830 --> 00:02:20,450
+calling connect fonts.
+
+22
+00:02:22,710 --> 00:02:29,580
+After creating a DV object, found gore and package the involved model function on the DBI object and
+
+23
+00:02:29,600 --> 00:02:36,450
+set object instance and arguments for it before calling it first defined and valuable like reasons for
+
+24
+00:02:36,450 --> 00:02:41,730
+the return type model function is specify the model you would like to run operations.
+
+25
+00:02:41,730 --> 00:02:49,950
+So we right resolved Colin equals DB dot model.
+
+26
+00:02:53,450 --> 00:02:56,840
+And said opticals arguments to its object.
+
+27
+00:02:59,120 --> 00:03:05,450
+And more in work, their function and sit their close object as an argument to it, their function at
+
+28
+00:03:05,450 --> 00:03:12,930
+conditions, so be right there and said workloads close the object as argument to it.
+
+29
+00:03:13,210 --> 00:03:13,970
+They're close.
+
+30
+00:03:16,960 --> 00:03:23,650
+And more in look up this function and set data object as a map, our human state updates, function
+
+31
+00:03:23,770 --> 00:03:26,350
+updates, attributes with callbacks.
+
+32
+00:03:26,530 --> 00:03:28,570
+So we write all this
+
+33
+00:03:31,390 --> 00:03:33,820
+and set Data's argument to it.
+
+34
+00:03:36,690 --> 00:03:43,530
+Now invoking Rose effect, that field from recent return value that we showed up the Earth records,
+
+35
+00:03:43,530 --> 00:03:53,340
+so we right Rita, result that rose affected, reformat the code and save the project.
+
+36
+00:03:54,180 --> 00:04:00,480
+Now you have succeeded in designing a method to receive a strike, the instance from the outside and
+
+37
+00:04:00,480 --> 00:04:06,150
+update the values of this object, according to the values given below the map sent.
+
+38
+00:04:06,630 --> 00:04:14,940
+Now we go to the main function to use this query statement first to your last quote.
+
+39
+00:04:23,570 --> 00:04:29,900
+In this case, we want to audit all the students who have a special condition in the database, so we
+
+40
+00:04:29,900 --> 00:04:36,680
+should use from multiple update function from DevTools first define a condition has very close arguments.
+
+41
+00:04:36,980 --> 00:04:44,840
+Consider that we want to update students based on the Durm names, so define the condition for base
+
+42
+00:04:44,840 --> 00:04:45,230
+name.
+
+43
+00:04:45,980 --> 00:04:52,430
+First, define a variable like name, and we want to say that every record whose name had this value
+
+44
+00:04:52,670 --> 00:04:57,560
+for the example name calling equals key
+
+45
+00:05:00,470 --> 00:05:02,420
+and set another variable for writing.
+
+46
+00:05:02,420 --> 00:05:16,880
+Our call like name were close to name their close call and equals and write condition for query name
+
+47
+00:05:18,200 --> 00:05:21,020
+equals single code
+
+48
+00:05:23,660 --> 00:05:31,940
+plus name variable plus double quotation mark and set single code between each.
+
+49
+00:05:37,420 --> 00:05:44,170
+Now define and my variable for send new data after updating, or in other words, we want to say that
+
+50
+00:05:44,170 --> 00:05:50,500
+the values of name and age are changed to these values based on the above name or close condition.
+
+51
+00:05:50,770 --> 00:06:02,590
+So we write data column equals man and city string as key and sit empty in your face as value
+
+52
+00:06:08,560 --> 00:06:11,440
+and sit value for main
+
+53
+00:06:15,910 --> 00:06:16,420
+column.
+
+54
+00:06:17,320 --> 00:06:18,970
+For example, daily
+
+55
+00:06:21,790 --> 00:06:26,680
+and sit age by the value.
+
+56
+00:06:27,640 --> 00:06:28,300
+50.
+
+57
+00:06:32,780 --> 00:06:39,710
+And now, even with multiple update function from DevTools package and sent created a student object
+
+58
+00:06:39,710 --> 00:06:46,820
+as first are human and main very close, a second argument for the condition and data, and third are
+
+59
+00:06:46,820 --> 00:06:55,430
+human to it and fetch RO effect that so first define a variable like Rose, Collins equals colleague
+
+60
+00:06:55,610 --> 00:07:04,070
+multiple lot8 function from DB Tools Package, DevTools Dart multiple update and set model Dot A-student
+
+61
+00:07:04,070 --> 00:07:08,030
+student as first argument model student.
+
+62
+00:07:10,950 --> 00:07:21,120
+And sit Namer to lose a second argument, mean their clothes and sit they till after argument
+
+63
+00:07:23,730 --> 00:07:36,090
+now display return type as role variable the all right 50 roles affected and said Rosemary to
+
+64
+00:07:39,120 --> 00:07:41,250
+reformat the cord and save the furniture.
+
+65
+00:07:43,700 --> 00:07:50,000
+Before on the program, go to the database and see the name and age values of the records whose name
+
+66
+00:07:50,000 --> 00:07:50,780
+is Kim.
+
+67
+00:07:52,880 --> 00:07:58,780
+OK, now we can see names off the records by the I.D. five and seven are keen.
+
+68
+00:07:59,480 --> 00:08:06,200
+Go back to school and execute the program, go wrong.
+
+69
+00:08:06,900 --> 00:08:11,050
+That's backslash Maine and Maine dot gov.
+
+70
+00:08:14,050 --> 00:08:21,760
+Now we can see the output rose effect, it is to now go to the database again and execute, select,
+
+71
+00:08:21,760 --> 00:08:23,500
+query and see the changes.
+
+72
+00:08:25,730 --> 00:08:27,020
+Execute the query.
+
+73
+00:08:28,550 --> 00:08:28,850
+OK.
+
+74
+00:08:28,910 --> 00:08:38,090
+Names and ages of the records by the i5 and sitting has changed to David and 50 now go to the escort
+
+75
+00:08:38,090 --> 00:08:44,460
+program and continue what define another condition as very close arguments.
+
+76
+00:08:44,480 --> 00:08:49,670
+Consider that we want to update as students based on their ages.
+
+77
+00:08:49,670 --> 00:08:54,770
+So define and condition based age first clear the last quote.
+
+78
+00:09:01,500 --> 00:09:08,400
+First, define a value of light age, and we want to say that every record whose age had this value
+
+79
+00:09:08,400 --> 00:09:17,940
+for the example, age column equals 13 and set another variable for writing our query light age, work
+
+80
+00:09:17,940 --> 00:09:22,890
+loss, age where close
+
+81
+00:09:25,740 --> 00:09:34,860
+calling equals and right condition for query age equals.
+
+82
+00:09:36,360 --> 00:09:43,410
+We use this command to convert time of errors from integer to a string value and paste it into the continuation
+
+83
+00:09:43,410 --> 00:09:48,570
+of our string plus SDR column
+
+84
+00:09:51,810 --> 00:09:58,530
+dot IED or a end set age as argument.
+
+85
+00:10:02,360 --> 00:10:08,870
+And now define and map barrier built for sand, new data after updating, or in other words, if you
+
+86
+00:10:08,870 --> 00:10:15,170
+want to say that the values of name and age are changed to these values based on the above age were
+
+87
+00:10:15,170 --> 00:10:16,820
+close condition sold.
+
+88
+00:10:16,850 --> 00:10:27,140
+The right data Cullen equals map sit is starring as key and sit empty in your face as value.
+
+89
+00:10:33,980 --> 00:10:34,980
+Full name.
+
+90
+00:10:38,760 --> 00:10:40,160
+Set a value like.
+
+91
+00:10:41,540 --> 00:10:42,140
+John?
+
+92
+00:10:46,180 --> 00:10:52,000
+And set for age revenue like twenty five
+
+93
+00:10:56,020 --> 00:11:02,740
+and now invokes multiple update function from debate tools package and sent created student object as
+
+94
+00:11:02,740 --> 00:11:08,740
+first argument and age workloads, a second argument for the condition and data.
+
+95
+00:11:08,750 --> 00:11:11,470
+Third are human to eat and fetch ro affected.
+
+96
+00:11:11,980 --> 00:11:19,420
+So first, define a variable like roles calling equals and calling multiple update functions from DB
+
+97
+00:11:19,420 --> 00:11:30,100
+tools, package DB tools, dot multiple updates and set model dot student.
+
+98
+00:11:31,360 --> 00:11:44,350
+As first argument and error is very close, a second arguments and set data expert arguments and now
+
+99
+00:11:44,350 --> 00:11:57,430
+display return time as roles variable that saw the right FP rows affected and set variables roles.
+
+100
+00:12:00,040 --> 00:12:04,360
+Reformat the code and save the project before on the program.
+
+101
+00:12:04,360 --> 00:12:11,770
+Go to the database and see the name and age values of the records whose ages 30.
+
+102
+00:12:12,430 --> 00:12:16,780
+OK, we can see the ages of the record by the idea.
+
+103
+00:12:16,900 --> 00:12:20,050
+Three and eight are 30.
+
+104
+00:12:20,560 --> 00:12:24,250
+Now go back to the Waskow program and execute the project.
+
+105
+00:12:27,490 --> 00:12:33,260
+Go from Dot Package Slash Main and main dot go.
+
+106
+00:12:36,880 --> 00:12:44,800
+Now we can see the output rose affected to now go to the database again and executes select query and
+
+107
+00:12:44,800 --> 00:12:47,140
+see the changes execute the query.
+
+108
+00:12:49,600 --> 00:12:58,360
+Now we can see name and age of students is opted chronically in the person database and names and ages
+
+109
+00:12:58,570 --> 00:13:05,140
+of the records by the idea three and eight has changed to John and five.
+
+110
+00:13:06,040 --> 00:13:11,800
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+111
+00:13:11,800 --> 00:13:14,110
+the next session until next session.
+
+112
+00:13:14,110 --> 00:13:14,650
+Goodbye.

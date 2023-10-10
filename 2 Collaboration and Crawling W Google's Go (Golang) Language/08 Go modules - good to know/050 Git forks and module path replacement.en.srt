@@ -1,0 +1,315 @@
+1
+00:00:00,090 --> 00:00:05,820
+Say you got some package that's using some other package like say here I've got I've just created a
+
+2
+00:00:05,820 --> 00:00:14,000
+simple may not go it imports are a go goes to heaven going projects going all the way down to zero zero
+
+3
+00:00:14,010 --> 00:00:18,450
+three go modules zero for upgrade energy dependency and I'm just using that.
+
+4
+00:00:18,450 --> 00:00:18,940
+Hello.
+
+5
+00:00:19,120 --> 00:00:20,390
+Hello.
+
+6
+00:00:22,820 --> 00:00:31,620
+To make this work because this particular folder is package hello it's like you to load up hello do
+
+7
+00:00:31,620 --> 00:00:33,290
+you call this function.
+
+8
+00:00:34,190 --> 00:00:36,380
+Yeah it's package Hello Function Hello yeah.
+
+9
+00:00:36,810 --> 00:00:43,960
+So if I in that and this is a go module so if I go run mean dot go.
+
+10
+00:00:44,190 --> 00:00:46,880
+Yeah I think it is say I didn't see it in there.
+
+11
+00:00:46,920 --> 00:00:57,130
+No I gotta go back out and see it's over to replace so go run main go so it will stay I'll start finding
+
+12
+00:00:57,130 --> 00:01:04,060
+that package so it prints hello world and you can see there's the Reporter Where's your main go where's
+
+13
+00:01:04,060 --> 00:01:04,750
+that same.
+
+14
+00:01:04,750 --> 00:01:09,200
+No this is any this is not in going OK it's somewhere else.
+
+15
+00:01:09,220 --> 00:01:13,930
+Yeah I got somewhere else with it's own go mod which is now which is requiring the ghost eleven one
+
+16
+00:01:15,540 --> 00:01:17,330
+indirectly so which is God.
+
+17
+00:01:17,730 --> 00:01:24,500
+So that just pulled it off of the Mir Yeah it's or we could probably probably.
+
+18
+00:01:24,720 --> 00:01:31,560
+Yeah probably added to the Mir site probably actually it put in it got the zipped version zero stuff
+
+19
+00:01:31,590 --> 00:01:36,170
+so I might actually want to run go get on that to see about.
+
+20
+00:01:37,650 --> 00:01:42,060
+Nope it's still looking at the latest version I'm not I'm wondering why it's like going to calling it
+
+21
+00:01:42,060 --> 00:01:54,410
+v 0 1 0 if you go get the 0 1 0 with it do it good try the 0 1 0 finding
+
+22
+00:01:59,140 --> 00:02:02,960
+did we push me 0 1 0 yes it's it's here Oh yeah.
+
+23
+00:02:04,300 --> 00:02:08,300
+There it is Delanie extracting it is nice.
+
+24
+00:02:08,300 --> 00:02:17,780
+All right so now we're using the D 0 1 0 of this thing and so you run it go run may not go and go oh
+
+25
+00:02:17,930 --> 00:02:24,560
+I really don't like having a comma or a period there or there's a bug in the function or something you
+
+26
+00:02:24,560 --> 00:02:30,320
+need to fix it but it's going to take too long for the original owner to fix it so you go OK I'm going
+
+27
+00:02:30,320 --> 00:02:33,920
+to fix it myself so you fork the repo
+
+28
+00:02:38,730 --> 00:02:48,810
+which takes however long to fork just a few seconds yeah yeah yeah it's done and so you can clone this
+
+29
+00:02:48,930 --> 00:02:53,910
+so I'll just go back out I got to go back out and get a quote here
+
+30
+00:03:00,010 --> 00:03:03,770
+um do I actually have just testing real fast.
+
+31
+00:03:03,800 --> 00:03:13,020
+Yes that is a quick shortcut to open up my editor to this location so now I decide ok well I want this
+
+32
+00:03:13,020 --> 00:03:19,140
+to not have the period where the comma so let's fix this I just want to say hello world when I type
+
+33
+00:03:19,440 --> 00:03:28,260
+when to call that Hello Function and then presumably at this point you would get you'd add that you'd
+
+34
+00:03:28,260 --> 00:03:29,600
+get commit this
+
+35
+00:03:34,050 --> 00:03:37,110
+better wording on
+
+36
+00:03:39,690 --> 00:03:46,870
+function and oh you would also want to update here to make sure your tests still work
+
+37
+00:03:53,050 --> 00:04:06,090
+so make sure that everything still works in this project um because this is an 0 0 3 0 4 Go test.
+
+38
+00:04:06,090 --> 00:04:10,920
+Make sure it's the test still works because you're fixing something you've already added you need to
+
+39
+00:04:10,920 --> 00:04:11,310
+add again.
+
+40
+00:04:11,320 --> 00:04:11,590
+Yeah.
+
+41
+00:04:11,900 --> 00:04:12,230
+Yep.
+
+42
+00:04:12,270 --> 00:04:13,410
+So for that.
+
+43
+00:04:13,440 --> 00:04:21,300
+So now fix her remove punk shoe Asian from low.
+
+44
+00:04:21,560 --> 00:04:29,710
+Shen And I push this to your foot to my fork which is not affect fact the original repo
+
+45
+00:04:33,350 --> 00:04:35,740
+so that my fork says it's one commit ahead.
+
+46
+00:04:35,970 --> 00:04:39,200
+So presumably at this point you'd create a pull request as well.
+
+47
+00:04:39,420 --> 00:04:44,670
+But in the meantime going back to your original project
+
+48
+00:04:47,630 --> 00:04:54,620
+you still need to figure out you still need to make sure this particular you fix the punctuation here.
+
+49
+00:04:54,650 --> 00:05:01,250
+Now one thing you could do is you could adjust this import.
+
+50
+00:05:01,330 --> 00:05:09,770
+I could change this to a lower dose and this would work but that's not really viable if you got a really
+
+51
+00:05:09,770 --> 00:05:18,110
+large project where you got the import everywhere and so modules has a way to basically alias it an
+
+52
+00:05:18,110 --> 00:05:27,270
+import to some other module and so you can find this out by looking for go help mod a C there's a edit
+
+53
+00:05:27,660 --> 00:05:37,110
+an edit command for go mod Edit So I you go help mod edit you will find all the information on the edit
+
+54
+00:05:37,110 --> 00:05:46,820
+command including a new a comma a dash replace so you can use this dash replace to replace an old to
+
+55
+00:05:46,820 --> 00:05:59,140
+a new so if you do go mod edit dash replace and the old is the old module with this module not the whole
+
+56
+00:05:59,140 --> 00:06:10,590
+package old module is going to be replaced with a dot com slash or dose slash going project which is
+
+57
+00:06:10,590 --> 00:06:11,580
+my fork.
+
+58
+00:06:11,700 --> 00:06:14,870
+So this this will be replaced with that
+
+59
+00:06:17,920 --> 00:06:29,340
+um UN version to a new path must be local directory so at m..
+
+60
+00:06:29,700 --> 00:06:36,780
+So now if I look in here and if I I my import still says goes to eleven but if I go into the go mod
+
+61
+00:06:37,900 --> 00:06:44,980
+I now has it still says requires goes to eleven going project but now there's also a replace goes to
+
+62
+00:06:44,980 --> 00:06:53,740
+eleven with or alerts going project and if I test this go run main I go it'll now start looking.
+
+63
+00:06:53,740 --> 00:06:59,150
+It doesn't it doesn't have my word it's going project for so now it's nice to go find it and download
+
+64
+00:06:59,150 --> 00:06:59,270
+it
+
+65
+00:07:03,010 --> 00:07:07,240
+that's pretty cool yeah says hello world without the comma in the period.
+
+66
+00:07:07,520 --> 00:07:08,410
+That's pretty cool.
+
+67
+00:07:08,500 --> 00:07:13,930
+And so when you would then you'd also have your poorer class and whenever the original person merges
+
+68
+00:07:13,930 --> 00:07:20,730
+your poor request you can then just go into your go module and delete the replace line would you have
+
+69
+00:07:20,730 --> 00:07:23,300
+to take it was it did it get set in an environment variable.
+
+70
+00:07:23,310 --> 00:07:24,900
+No it's just this replacement.
+
+71
+00:07:24,940 --> 00:07:25,260
+Okay.
+
+72
+00:07:26,770 --> 00:07:28,130
+It's very nice.
+
+73
+00:07:28,290 --> 00:07:29,300
+Well done.
+
+74
+00:07:31,410 --> 00:07:33,170
+Higher level stuff.
+
+75
+00:07:33,800 --> 00:07:36,210
+Let's get to know about C..
+
+76
+00:07:36,220 --> 00:07:40,750
+This should be rare but every once in a while some package has a bug and you can figure out how to fix
+
+77
+00:07:40,750 --> 00:07:45,230
+it in 10 minutes but it's going to take a day take a week for the pull request to be accepted.
+
+78
+00:07:45,250 --> 00:07:49,200
+So this will let you keep working while that happens.
+
+79
+00:07:49,210 --> 00:07:49,910
+Nicely done.

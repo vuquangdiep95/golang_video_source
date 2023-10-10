@@ -1,0 +1,215 @@
+1
+00:00:00,180 --> 00:00:00,420
+Được rồi.
+
+2
+00:00:00,450 --> 00:00:07,820
+Vì vậy, bây giờ chúng ta sẽ xem cách xóa các chi nhánh và chương trình hàng năm. Tôi thấy nó như thế nào.
+
+3
+00:00:07,860 --> 00:00:11,760
+Vì vậy, khi bạn đã hợp nhất các nhánh, bạn có thể muốn dọn sạch chúng để có được nhánh.
+
+4
+00:00:11,760 --> 00:00:16,920
+Bạn có thể thấy chi tiết con chó và con chó vẫn ở đó mặc dù chúng đã được hợp nhất thành chủ.
+
+5
+00:00:16,920 --> 00:00:18,080
+Vì vậy, làm ăn một chi nhánh.
+
+6
+00:00:18,100 --> 00:00:25,890
+Nó có dấu gạch ngang D để xóa tên nhánh ăn thịt chó.
+
+7
+00:00:26,670 --> 00:00:30,540
+Tuy nhiên, điều này chỉ xóa nó trên máy của riêng bạn.
+
+8
+00:00:30,540 --> 00:00:38,720
+Vì vậy, nếu tôi nhận được dấu gạch ngang nhánh, nguồn gốc từ xa vẫn có con chó và việc đẩy hoàn toàn không ảnh hưởng đến điều này nếu
+
+9
+00:00:38,720 --> 00:00:40,550
+Tôi đẩy nói rằng mọi thứ đã được cập nhật.
+
+10
+00:00:40,580 --> 00:00:50,480
+Nếu tôi kéo mọi thứ vẫn cập nhật, hãy lấy nhánh gạch ngang, vẫn hiển thị, lấy trung tâm vẫn có con chó.
+
+11
+00:00:51,440 --> 00:00:57,500
+Vì vậy, nếu bạn truy cập kho lưu trữ của mình và nhấn vào các nhánh trên GitHub, bạn có thể truy cập.
+
+12
+00:00:57,530 --> 00:00:59,660
+Bạn có thể thấy nhánh con chó và bạn có thể xóa nó.
+
+13
+00:00:59,660 --> 00:01:04,840
+Có xóa nó trên github.
+
+14
+00:01:04,910 --> 00:01:16,320
+Bây giờ nếu tôi có thể kéo và vẫn cập nhật nhưng nếu tôi nhận được dấu gạch ngang nhánh thì bây giờ nó vẫn thấy con chó
+
+15
+00:01:16,350 --> 00:01:22,830
+lý do cho điều này chỉ là get đang lưu vào bộ nhớ đệm mà nó thấy rằng có một nhánh
+
+16
+00:01:22,830 --> 00:01:28,640
+được gọi là con chó tại một thời điểm nên nó vẫn giữ cái tên đó xung quanh mặc dù nó không thực sự ở đó nữa.
+
+17
+00:01:28,680 --> 00:01:34,320
+Vì vậy, những gì bạn cần làm để làm điều đó là lấy nguồn gốc rune từ xa.
+
+18
+00:01:34,470 --> 00:01:37,890
+Điều này là có.
+
+19
+00:01:37,920 --> 00:01:40,660
+Vì vậy, bạn có được nguồn gốc tỉa từ xa.
+
+20
+00:01:40,660 --> 00:01:48,580
+Điều này cho biết hãy kiểm tra nguồn gốc và loại bỏ bất kỳ nhánh nào mà chúng tôi đã lưu vào bộ nhớ đệm nguồn gốc đó
+
+21
+00:01:48,580 --> 00:01:49,820
+không còn nữa.
+
+22
+00:01:49,870 --> 00:01:56,290
+Vì vậy, bạn có thể thấy nó nói chó gốc đã được cắt tỉa và nếu bạn lấy trứng gạch ngang nhánh và thấy nó không còn chó
+
+23
+00:01:56,570 --> 00:02:00,080
+các thẻ như vậy và bạn cũng có thể thực hiện việc này theo thứ tự này hoặc thứ tự khác.
+
+24
+00:02:00,090 --> 00:02:02,080
+Tôi có thể xóa chi tiết con chó
+
+25
+00:02:05,110 --> 00:02:09,650
+và nếu tôi nhận được Pprune từ xa, Orange cho biết chi tiết con chó đã biến mất.
+
+26
+00:02:09,680 --> 00:02:12,950
+Nhận nhánh gạch ngang và Nó biến mất ở đây.
+
+27
+00:02:12,970 --> 00:02:19,750
+Nhưng tôi vẫn có bản sao địa phương của mình nên tôi cần phải ăn bản sao địa phương của mình một cách chi tiết
+
+28
+00:02:23,330 --> 00:02:25,960
+chi nhánh.
+
+29
+00:02:25,980 --> 00:02:27,150
+Bây giờ tôi đã dọn sạch tất cả.
+
+30
+00:02:27,150 --> 00:02:35,830
+Bây giờ chúng ta đã thành thạo, chúng ta đã có master local và sau đó chúng ta có HEAD gốc gốc chính từ xa.
+
+31
+00:02:35,940 --> 00:02:39,700
+SO head về cơ bản chỉ là mặc định nơi chúng tôi hiện đang ở.
+
+32
+00:02:39,720 --> 00:02:45,660
+Vì vậy, nguồn gốc từ xa là cái hiện đang ở đầu Master là cái mà chủ nhân đang chỉ nó gần như
+
+33
+00:02:45,660 --> 00:02:49,350
+giống như một bí danh cho chủ gốc, bà hoặc chủ.
+
+34
+00:02:49,350 --> 00:02:49,880
+Đúng.
+
+35
+00:02:50,050 --> 00:02:51,210
+Rất tốt.
+
+36
+00:02:51,210 --> 00:02:52,010
+Điều đó thật tuyệt.
+
+37
+00:02:52,020 --> 00:02:54,150
+Tôi thực sự thích nhìn thấy các chi nhánh hàng đầu vì vậy yeah.
+
+38
+00:02:54,160 --> 00:03:00,380
+Todd vẫn có bản sao của hai nhánh đó vì hoặc bạn chưa bao giờ có con chó chi tiết nên bạn thậm chí không có.
+
+39
+00:03:00,400 --> 00:03:00,550
+Vâng.
+
+40
+00:03:00,570 --> 00:03:09,420
+Hãy xem và hãy dọn dẹp tôi để lấy sổ chi nhánh lấy DSA DSA chi nhánh và tôi đang ở trên những con chó tôi cần
+
+41
+00:03:09,420 --> 00:03:19,320
+để thực hiện, hãy kiểm tra tổng thể và sau đó nhận Dash nhánh và tôi sử dụng các phím mũi tên của mình để duyệt qua các lệnh
+
+42
+00:03:19,320 --> 00:03:26,610
+trước đó chúng đã thực hiện các lệnh và sau đó tôi sẽ thực hiện một nhánh D và thoát khỏi hình dạng con chó
+
+43
+00:03:26,630 --> 00:03:32,560
+thăm dò ý kiến ​​​​trước tiên hãy xem điều gì sẽ xảy ra khi bạn kéo nếu bạn không hoạt động quá nhiều.
+
+44
+00:03:32,730 --> 00:03:39,840
+Tuy nhiên, một điều cần lưu ý là nếu bạn xóa một nhánh mà nó không biết rằng nó đã được hợp nhất vì
+
+45
+00:03:39,840 --> 00:03:44,270
+bạn chưa kéo, chẳng hạn như get, chúng tôi sẽ cảnh báo cho bạn.
+
+46
+00:03:44,370 --> 00:03:49,530
+Vì vậy, nếu bạn đã cố xóa con chó trước khi kéo để máy tính của bạn không biết rằng con chó đã xuất hiện
+
+47
+00:03:49,530 --> 00:03:53,500
+sẽ cảnh báo bạn và đưa ra lệnh buộc bạn phải xóa nó.
+
+48
+00:03:53,800 --> 00:03:58,780
+Mà tôi tin rằng chỉ là vốn tránh tôi nhớ.
+
+49
+00:03:58,800 --> 00:04:08,930
+Vì vậy, bây giờ tôi đã thoát khỏi con chó và tôi muốn thực hiện việc lấy nguồn gốc in từ xa để xem có gì không
+
+50
+00:04:08,930 --> 00:04:15,140
+có thể được dọn dẹp và tôi đã loại bỏ một con chó có nguồn gốc từ xa nên tôi vẫn ổn.
+
+51
+00:04:15,310 --> 00:04:18,030
+Đó là những nhánh hàng đầu mà bạn muốn thêm vào đó.
+
+52
+00:04:18,770 --> 00:04:19,690
+Đúng rồi.
+
+53
+00:04:19,860 --> 00:04:21,130
+Tweet chi nhánh.
+
+54
+00:04:21,260 --> 00:04:21,650
+Đồ tốt.

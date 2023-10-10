@@ -1,0 +1,216 @@
+1
+00:00:00,470 --> 00:00:04,460
+OK così per i clienti quello che vogliamo fare è sostanzialmente aggiornare il blog.
+
+2
+00:00:04,540 --> 00:00:06,830
+Quindi faremo un blog di aggiornamento.
+
+3
+00:00:06,850 --> 00:00:12,180
+E questo aggiornerà solo il blog che conosciamo e aggiungeremo campi diversi.
+
+4
+00:00:12,190 --> 00:00:18,250
+Quindi, per quanto riguarda la creazione di un nuovo blog, prenderemo questo campo chiamato Blug
+
+5
+00:00:18,250 --> 00:00:26,370
+e creeremo un nuovo blog, quindi creerò qui un nuovo blog e questo è un autore modificato e il mio primo blog.
+
+6
+00:00:26,410 --> 00:00:36,390
+Forse è stato modificato, quindi diremo modificato e quindi il contenuto del suo primo blog con alcune fantastiche aggiunte.
+
+7
+00:00:36,920 --> 00:00:38,870
+Ok ora, ha senso.
+
+8
+00:00:38,870 --> 00:00:41,330
+Quindi qui abbiamo un nuovo blog e non è ancora usato.
+
+9
+00:00:41,420 --> 00:00:44,590
+Quindi, ma almeno cambiamo il titolo e il contenuto.
+
+10
+00:00:44,600 --> 00:00:49,240
+L'unica cosa che ci manca è l'idea di LUGG perché quando si dice quale database
+
+11
+00:00:49,240 --> 00:00:54,710
+si desidera aggiornare e quindi per questo utilizzeremo solo la variabile ID del blog che abbiamo creato da prima.
+
+12
+00:00:55,010 --> 00:01:00,380
+OK, ora abbiamo un nuovo blog con un'idea e siamo andati a sostituirlo per questo
+
+13
+00:01:00,860 --> 00:01:06,760
+molto semplice, usiamo i client e facciamo l'aggiornamento Blug sul nostro PC e qui useremo un contesto
+
+14
+00:01:07,370 --> 00:01:12,240
+contestuale di sfondi e poi devo dire che dobbiamo passare una richiesta Blug.
+
+15
+00:01:12,260 --> 00:01:18,800
+Quindi, per questo molto semplice, creeremo quello in linea e passeremo nel nuovo blog che abbiamo
+
+16
+00:01:18,800 --> 00:01:22,600
+creato l'eccellenza e non c'è bisogno di opzioni.
+
+17
+00:01:23,090 --> 00:01:24,730
+OK, cosa restituisce?
+
+18
+00:01:24,770 --> 00:01:27,090
+Ciò restituisce una risposta Blug di aggiornamento in caso di errore.
+
+19
+00:01:27,080 --> 00:01:28,500
+Quindi andiamo con questo.
+
+20
+00:01:28,790 --> 00:01:33,410
+Qui possiamo dire di aggiornare la risposta o aggiornare
+
+21
+00:01:36,240 --> 00:01:43,800
+i nostri pari e quindi avremo l'errore proprio come facciamo normalmente, quindi se c'è un errore.
+
+22
+00:01:43,830 --> 00:01:49,890
+Quindi, se non è nulla, allora quello che dobbiamo fare è stampare ciò che è successo e dire che qualcosa è
+
+23
+00:01:49,890 --> 00:01:50,740
+andato storto.
+
+24
+00:01:51,500 --> 00:01:53,120
+Perché siamo un po 'pigri.
+
+25
+00:01:53,470 --> 00:01:58,930
+Quindi lo vedremo accadere durante l'aggiornamento e altri risultati.
+
+26
+00:01:58,930 --> 00:02:03,830
+Che ne dici se lo stampiamo e quindi diremo che mi piace stampare.
+
+27
+00:02:04,330 --> 00:02:11,090
+Blug è stato letto e quindi stamperemo i contenuti del blog che è stato letto.
+
+28
+00:02:11,330 --> 00:02:13,330
+Quindi, abbastanza facile, davvero semplice.
+
+29
+00:02:13,340 --> 00:02:15,400
+Ma ora abbiamo stampato tutto.
+
+30
+00:02:15,400 --> 00:02:21,000
+Così ora, se arriviamo ai client e Treacher lo esegue, riavviamo il nostro server ovviamente, quindi riavviamo
+
+31
+00:02:21,000 --> 00:02:26,070
+l'eccellenza del nostro server e quindi iniziamo i nostri clienti che è proprio qui.
+
+32
+00:02:26,340 --> 00:02:27,230
+E quindi diamo un'occhiata.
+
+33
+00:02:27,320 --> 00:02:34,520
+Bene, il server ottenuto lo ha creato per leggere le richieste del registro di aggiornamento della richiesta di blocco 1 e poi sul lato client,
+
+34
+00:02:34,860 --> 00:02:38,650
+mentre il registro è un po 'disordinato, quindi facciamolo ancora una volta.
+
+35
+00:02:38,660 --> 00:02:44,930
+Aggiungerò sempre una nuova riga ogni volta perché dimentico questi e quindi ovviamente le cose non sembrano davvero
+
+36
+00:02:44,930 --> 00:02:45,630
+buone.
+
+37
+00:02:46,720 --> 00:02:52,940
+Aggiornato E ora questo dovrebbe essere abbastanza per noi da leggere nel nostro codice e forse vedere un aggancio leggermente migliore.
+
+38
+00:02:53,420 --> 00:02:54,780
+Quindi questo sembra un po 'meglio.
+
+39
+00:02:54,790 --> 00:03:00,020
+Quindi qui abbiamo letto Blug e quindi leggiamo il blog con questa idea e
+
+40
+00:03:00,020 --> 00:03:01,980
+poi aggiorneremo Blug cosa aggiorna.
+
+41
+00:03:02,020 --> 00:03:03,920
+E poi abbiamo un cambiamento di lì.
+
+42
+00:03:04,030 --> 00:03:09,070
+Abbiamo un titolo di modifica e cambieremo i contenuti che funzionano molto bene direttamente dal server.
+
+43
+00:03:09,070 --> 00:03:12,580
+Possiamo verificare che le cose siano un database semplicemente controllando che Mago sia UI.
+
+44
+00:03:12,580 --> 00:03:17,950
+Quindi, se aggiorno il mio blog, abbiamo eseguito il nostro programma più volte, quindi abbiamo sette oggetti lì
+
+45
+00:03:17,950 --> 00:03:18,520
+dentro.
+
+46
+00:03:18,610 --> 00:03:23,260
+Quindi il primo anno che abbiamo creato era solo scoprire se il primo blocco del primo log nel mio primo
+
+47
+00:03:23,260 --> 00:03:23,710
+Blug.
+
+48
+00:03:23,860 --> 00:03:26,740
+Ma se guardi l'ultimo esempio, sappiamo che è stato aggiornato.
+
+49
+00:03:26,740 --> 00:03:30,270
+Quindi se guardiamo a questo uno ora le altre idee cambiano autore.
+
+50
+00:03:30,390 --> 00:03:35,140
+Il contenuto è il contenuto aggiornato e il titolo è il titolo aggiornato.
+
+51
+00:03:35,140 --> 00:03:40,210
+Ciò significa che sì, in effetti gli aggiornamenti sono avvenuti in Mongar TB e otteniamo esattamente ciò che
+
+52
+00:03:40,210 --> 00:03:42,660
+volevamo da esso, il che è abbastanza interessante.
+
+53
+00:03:42,700 --> 00:03:44,880
+Quindi è tutto per gli aggiornamenti funziona davvero bene.
+
+54
+00:03:45,070 --> 00:03:49,010
+E ora l'eliminazione sarà abbastanza semplice da usare per farlo nella prossima lezione.
+

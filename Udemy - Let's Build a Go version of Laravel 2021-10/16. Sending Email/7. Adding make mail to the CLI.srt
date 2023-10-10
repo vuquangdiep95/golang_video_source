@@ -1,0 +1,323 @@
+1
+00:00:01,410 --> 00:00:06,360
+So this time around, we want to improve our celebrities command line application to make it easy for
+
+2
+00:00:06,360 --> 00:00:08,370
+people to generate email templates.
+
+3
+00:00:08,790 --> 00:00:13,440
+In other words, they open up a terminal switch to the directory where their application is and just
+
+4
+00:00:13,440 --> 00:00:18,030
+type Solaris house make mail with some kind of name for their template.
+
+5
+00:00:18,780 --> 00:00:20,950
+And of course, we do that in this Alatas project.
+
+6
+00:00:21,030 --> 00:00:26,010
+So let's go to our CMG folder, then the Seelye folder and open up main account.
+
+7
+00:00:26,910 --> 00:00:30,540
+And of course, the main function here is where we determine what to do.
+
+8
+00:00:30,570 --> 00:00:36,780
+And if you're down to Line 41, my code when they type, make I fire off request to this function,
+
+9
+00:00:36,780 --> 00:00:37,410
+do Nick.
+
+10
+00:00:37,620 --> 00:00:43,530
+So if I open that, that's in the file mate, don't go and I'll have to do is scroll down and find a
+
+11
+00:00:43,530 --> 00:00:44,850
+spot to add mail.
+
+12
+00:00:44,910 --> 00:00:45,660
+So I'll put it right here.
+
+13
+00:00:47,520 --> 00:00:48,090
+Case
+
+14
+00:00:50,940 --> 00:00:51,290
+Map.
+
+15
+00:00:52,530 --> 00:00:54,930
+And of course, that's going to require are three.
+
+16
+00:00:54,930 --> 00:00:56,910
+So I'll make sure that only three exists.
+
+17
+00:00:57,480 --> 00:01:04,680
+If our three is equal to an empty string, then exit gracefully with a message, a new error.
+
+18
+00:01:04,860 --> 00:01:08,520
+Errors start new and I'll say you must.
+
+19
+00:01:09,030 --> 00:01:10,020
+That has to be a string.
+
+20
+00:01:10,950 --> 00:01:18,360
+You must give the email template a name or whatever you want in there, of course.
+
+21
+00:01:18,960 --> 00:01:26,700
+But if they get past that, then really all we need to do is to open templates for our templates, which
+
+22
+00:01:26,820 --> 00:01:28,410
+sounds kind of weird, but you know what I mean?
+
+23
+00:01:28,410 --> 00:01:36,240
+A starter template for HTML Doc Team Temple and a starter template for playing dot template and copy
+
+24
+00:01:36,240 --> 00:01:36,750
+those over.
+
+25
+00:01:37,110 --> 00:01:37,440
+OK.
+
+26
+00:01:37,620 --> 00:01:41,550
+So what I'm going to do is assume that those exist and they don't, but they will.
+
+27
+00:01:41,550 --> 00:01:51,090
+Before too long, I'll say HTML mail is assigned the value of cel dot root path plus slash mail, and
+
+28
+00:01:51,090 --> 00:01:53,850
+I know that folder exists because I created that startup.
+
+29
+00:01:54,780 --> 00:02:04,560
+Plus that'll take our three convert to lowercase strings dot to lower our own three plus, and I'll
+
+30
+00:02:04,560 --> 00:02:08,640
+have it end with Dot h html template.
+
+31
+00:02:09,240 --> 00:02:14,370
+Then I'll duplicate this line and change the variable name to plain mail.
+
+32
+00:02:14,640 --> 00:02:15,300
+Try that again.
+
+33
+00:02:17,520 --> 00:02:27,300
+Plain now mail and this one becomes plain oatmeal, so that'll be the the targets where we're putting
+
+34
+00:02:27,300 --> 00:02:28,350
+the final files.
+
+35
+00:02:29,550 --> 00:02:33,120
+Now I'll copy file from template,
+
+36
+00:02:36,120 --> 00:02:38,790
+from template, and I want to copy it from.
+
+37
+00:02:39,030 --> 00:02:44,790
+This doesn't exist yet, but it will in a few minutes, templates on a Read-Only embedded file system,
+
+38
+00:02:45,390 --> 00:02:50,160
+mailer mail dot html dot tempo.
+
+39
+00:02:50,760 --> 00:03:00,540
+And I'm copying that to my mail and I'll check for an error if error is not equal to nil and exit gracefully
+
+40
+00:03:01,590 --> 00:03:02,220
+with the error.
+
+41
+00:03:03,840 --> 00:03:05,430
+Now I'll copy this whole thing.
+
+42
+00:03:07,770 --> 00:03:09,050
+Give myself a little more room.
+
+43
+00:03:09,790 --> 00:03:10,860
+Paste it in here.
+
+44
+00:03:11,850 --> 00:03:19,840
+Make this an equals instead of an assignment operator, and I'm going to copy plane mail from mail not
+
+45
+00:03:19,860 --> 00:03:21,840
+playing dot template.
+
+46
+00:03:22,860 --> 00:03:24,570
+And that should be all I have to do there.
+
+47
+00:03:25,140 --> 00:03:30,030
+So now let's go to our Templates folder and create a new folder.
+
+48
+00:03:30,030 --> 00:03:39,540
+Inside of that, a new folder called Maler, which is what I specified here when I reference the templates
+
+49
+00:03:40,260 --> 00:03:46,530
+creating new files, new file mail dot html template.
+
+50
+00:03:49,350 --> 00:03:57,900
+And another new file mailed a plane called Temple, and I will go to the actual mail templates that
+
+51
+00:03:57,900 --> 00:04:03,250
+I'm using in my other application and copy those kind of you can put whatever you want in there.
+
+52
+00:04:03,270 --> 00:04:07,890
+So here's the one for HTML, a copy that switch back to my celebrity's project.
+
+53
+00:04:08,550 --> 00:04:16,650
+Make sure I'm looking at the correct file I am pasting back to my app, open test playing, copy the
+
+54
+00:04:16,650 --> 00:04:22,110
+contents and put it in the plane template and paste that.
+
+55
+00:04:23,310 --> 00:04:30,060
+Then the only other thing to do is to open our help and update that so show help is the function is
+
+56
+00:04:30,060 --> 00:04:32,220
+called right from here in main dgo.
+
+57
+00:04:32,220 --> 00:04:39,240
+So I'll go command, click on it and I'll say make mail, make mail.
+
+58
+00:04:39,630 --> 00:04:40,470
+And then some name
+
+59
+00:04:43,680 --> 00:04:49,380
+creates two starter mail templates in the Mail Directory.
+
+60
+00:04:50,880 --> 00:04:54,240
+So at this point, I should be able to clear my terminal.
+
+61
+00:04:54,670 --> 00:04:57,240
+Make sure I'm at the root level of my this project.
+
+62
+00:04:57,240 --> 00:04:57,750
+I am.
+
+63
+00:04:58,410 --> 00:05:03,930
+And I'll say, make build, underscore Clia, and that should build the command line interface.
+
+64
+00:05:04,770 --> 00:05:08,070
+Copy it over to my other project, so I'll switch to my other project.
+
+65
+00:05:08,940 --> 00:05:09,810
+Open a terminal.
+
+66
+00:05:09,960 --> 00:05:10,830
+Clear the screen.
+
+67
+00:05:11,520 --> 00:05:12,780
+I'm in the correct directory.
+
+68
+00:05:12,780 --> 00:05:19,950
+Yes, I'm at the root level of my app, so I should be able to Typekit celebrities make mail and I already
+
+69
+00:05:19,950 --> 00:05:23,160
+have one called test, so I'll call this one doesn't matter what I use.
+
+70
+00:05:23,760 --> 00:05:26,340
+Yellow is another.
+
+71
+00:05:26,580 --> 00:05:29,970
+So let's look at yellow HTML template.
+
+72
+00:05:30,990 --> 00:05:36,600
+That's an HTML template and yellow plain, and it's all set to go perfect.
+
+73
+00:05:36,750 --> 00:05:41,070
+Well, that's just a little touch, but it makes life easier for the developer and speeds up the workflow.
+
+74
+00:05:41,460 --> 00:05:46,410
+And of course, if you're using this for code that you can reuse for projects, you would obviously
+
+75
+00:05:46,410 --> 00:05:51,900
+make those starter templates a little more sophisticated than I have, but it's entirely up to you.
+
+76
+00:05:51,930 --> 00:05:59,640
+For example, in the HTML, my starter template might be using one of the CC frameworks that are specifically
+
+77
+00:05:59,640 --> 00:06:02,640
+for email, and that's perfectly fine.
+
+78
+00:06:02,640 --> 00:06:04,530
+And if you want to do that, more power to you.
+
+79
+00:06:04,950 --> 00:06:10,470
+But I just want to make sure that we know how to send email and I'll leave the refinements of the actual
+
+80
+00:06:10,470 --> 00:06:12,690
+message and formatting of the message to you.
+
+81
+00:06:13,440 --> 00:06:14,100
+Let's move on.

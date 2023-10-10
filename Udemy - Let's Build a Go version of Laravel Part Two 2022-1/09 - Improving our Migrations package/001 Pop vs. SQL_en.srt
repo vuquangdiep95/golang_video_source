@@ -1,0 +1,296 @@
+1
+00:00:01,620 --> 00:00:07,110
+So this section of the course is all about improving our database migrations, and as you recall from
+
+2
+00:00:07,110 --> 00:00:13,620
+the first half of this course or the previous version of this course, we actually have migrations built
+
+3
+00:00:13,620 --> 00:00:17,670
+into our system right now in order to try those out and just to have a quick review.
+
+4
+00:00:18,270 --> 00:00:20,260
+Let's look at our Docker compose.
+
+5
+00:00:20,550 --> 00:00:23,090
+Why image, file and the section up here.
+
+6
+00:00:23,100 --> 00:00:24,300
+I'm using Postgres.
+
+7
+00:00:24,300 --> 00:00:30,480
+You might be using MariaDB or MySchool, but in any case, you have a section in here for your database.
+
+8
+00:00:31,410 --> 00:00:37,320
+And in order to try out our existing migration solution, we have to populate some information in the
+
+9
+00:00:37,320 --> 00:00:38,580
+dot on file.
+
+10
+00:00:38,670 --> 00:00:40,500
+If you don't already have this, you need to put it in.
+
+11
+00:00:40,620 --> 00:00:43,200
+So I'll put it here in my daughter on file.
+
+12
+00:00:43,710 --> 00:00:45,480
+My database type is Postgres.
+
+13
+00:00:46,290 --> 00:00:50,220
+My host is just local host, my port.
+
+14
+00:00:50,370 --> 00:00:52,350
+And let's review that to make sure I have it right.
+
+15
+00:00:52,800 --> 00:00:55,560
+My port here is five four three two.
+
+16
+00:00:55,590 --> 00:00:58,980
+The standard Postgres port, so five four three two.
+
+17
+00:01:00,720 --> 00:01:06,840
+And my user, we can see as Postgres right there in the Docker file Docker compose my password is just
+
+18
+00:01:06,840 --> 00:01:07,470
+password.
+
+19
+00:01:08,280 --> 00:01:12,030
+My database name is celebrities and I'm not using SSL.
+
+20
+00:01:12,030 --> 00:01:14,490
+So for Postgres, you use disable.
+
+21
+00:01:14,820 --> 00:01:15,150
+OK.
+
+22
+00:01:16,110 --> 00:01:21,390
+So the next time I start my application, it will connect to that Docker image with a Postgres database
+
+23
+00:01:21,390 --> 00:01:23,340
+running and we'll have access to the database.
+
+24
+00:01:23,550 --> 00:01:28,890
+OK, now let's open our terminal and make sure you're in the celebrity folder.
+
+25
+00:01:28,950 --> 00:01:31,770
+Not the My App folder.
+
+26
+00:01:32,400 --> 00:01:35,400
+And what I'll do is just build the celebrity executable.
+
+27
+00:01:35,440 --> 00:01:40,890
+Little program we use to generate handlers and migrations and migrations are what interests me right
+
+28
+00:01:40,890 --> 00:01:41,160
+now.
+
+29
+00:01:41,490 --> 00:01:44,880
+So I'll build that may build, underscore Cee-Lo.
+
+30
+00:01:45,780 --> 00:01:49,140
+And that should create a celebrity's executable.
+
+31
+00:01:49,470 --> 00:01:52,290
+If you're on a Mac or Linux, it'll be called celebrities.
+
+32
+00:01:52,290 --> 00:01:55,250
+And if you're on Windows, it's called Celebrity X.
+
+33
+00:01:55,920 --> 00:02:01,850
+So if I go back over to my other tab where I mean the My App folder, I actually have a celebrity's
+
+34
+00:02:01,950 --> 00:02:02,460
+file now.
+
+35
+00:02:02,460 --> 00:02:04,560
+So less celebrities.
+
+36
+00:02:05,040 --> 00:02:05,460
+There it is.
+
+37
+00:02:05,580 --> 00:02:06,480
+That's an executable.
+
+38
+00:02:07,230 --> 00:02:11,610
+And if I just run it by itself, Dot Slash Alatas, it gives me a halfa.
+
+39
+00:02:11,820 --> 00:02:17,340
+And the command I'm interested in here is make migration with a name and that creates two new up and
+
+40
+00:02:17,340 --> 00:02:19,380
+down migrations in the migrations folder.
+
+41
+00:02:19,530 --> 00:02:22,500
+So I Migrations folder is right here and it's currently empty.
+
+42
+00:02:23,250 --> 00:02:29,040
+So now if I type dot slash celebrities make migration and I'll just call it test.
+
+43
+00:02:30,510 --> 00:02:35,400
+I when I look inside the migration's folder, there should be two files there with some comment that
+
+44
+00:02:35,610 --> 00:02:36,060
+code.
+
+45
+00:02:36,300 --> 00:02:37,620
+So the up migration.
+
+46
+00:02:38,100 --> 00:02:38,800
+And there it is.
+
+47
+00:02:38,820 --> 00:02:44,520
+It shows a create table with a small comment that also won't run, but it just gives people an indication
+
+48
+00:02:44,520 --> 00:02:47,460
+as to how they should write migrations.
+
+49
+00:02:47,460 --> 00:02:50,520
+And the down migration is a comment that I drop table comment.
+
+50
+00:02:50,640 --> 00:02:52,950
+OK, now that's great.
+
+51
+00:02:52,980 --> 00:02:56,010
+But you might notice that this is pure sequel.
+
+52
+00:02:56,250 --> 00:03:01,620
+And of course, sequel for Maya Skull is just a little bit different than sequel for Postgres.
+
+53
+00:03:01,980 --> 00:03:04,290
+Not always, but enough that it becomes irritating.
+
+54
+00:03:05,040 --> 00:03:11,610
+So with the system, as it exists right now, when we generate a migration, we have to look and see
+
+55
+00:03:11,610 --> 00:03:15,930
+what kind of database the person is using and putting the correct template for.
+
+56
+00:03:15,930 --> 00:03:18,480
+Marcella has application, and it's a little awkward.
+
+57
+00:03:18,510 --> 00:03:23,100
+It works really well, but it can be a little bit awkward if you take an other.
+
+58
+00:03:23,370 --> 00:03:26,130
+Any other of my courses on Udemy?
+
+59
+00:03:26,160 --> 00:03:29,320
+You've probably noticed that I'm really fond of this package.
+
+60
+00:03:29,340 --> 00:03:30,390
+Let me go to my web browser.
+
+61
+00:03:31,830 --> 00:03:39,510
+The soda, seelye and soda is actually part of the Buffalo Dot Io project, a web framework written
+
+62
+00:03:39,510 --> 00:03:40,080
+for Go.
+
+63
+00:03:40,680 --> 00:03:41,940
+And it works really well.
+
+64
+00:03:41,940 --> 00:03:49,140
+So if we get down here to migrations, so the nice thing about soda migrations or PHE's migrations as
+
+65
+00:03:49,140 --> 00:03:55,110
+they call them, is that you write one migration file and it's basically database agnostic.
+
+66
+00:03:55,140 --> 00:03:58,020
+It works with my ask you, well, that works with MariaDB.
+
+67
+00:03:58,050 --> 00:03:59,160
+It works with Postgres.
+
+68
+00:03:59,910 --> 00:04:03,060
+Not every database, but enough for my purposes.
+
+69
+00:04:03,510 --> 00:04:08,250
+Postgres is my go to database, but I occasionally use mariadb or some other database.
+
+70
+00:04:08,640 --> 00:04:15,120
+So what I want to do in this section of the course is modify our code in this Alatas package and in
+
+71
+00:04:15,120 --> 00:04:15,930
+the SEELYE.
+
+72
+00:04:15,960 --> 00:04:21,660
+We might leave that to the end of the course, but we'll get there eventually to allow for SQL migrations,
+
+73
+00:04:21,660 --> 00:04:26,460
+which we already have, and also to allow for PhysX migrations.
+
+74
+00:04:26,820 --> 00:04:29,400
+So we'll get started on that in the next lecture.
+

@@ -1,0 +1,444 @@
+1
+00:00:00,510 --> 00:00:04,650
+OK akhirnya kita hanya akan menerapkan daftar hanya untuk bersenang-senang karena kita akan melakukan streaming.
+
+2
+00:00:04,980 --> 00:00:12,210
+Jadi yang ini akan memiliki daftar Blug PC yang mengambil daftar LUGG meminta argumen dan akan
+
+3
+00:00:12,210 --> 00:00:13,620
+mengembalikan aliran daftar.
+
+4
+00:00:13,620 --> 00:00:15,610
+Respon blug.
+
+5
+00:00:15,690 --> 00:00:19,900
+OK jadi yang ini agak keren karena kami akan menggunakan sedikit streaming hanya untuk bersenang-senang.
+
+6
+00:00:20,400 --> 00:00:24,650
+Sekarang kita akan memasukkan pesan dan permintaan blog sebenarnya akan kosong.
+
+7
+00:00:24,690 --> 00:00:28,800
+Kami tidak perlu meneruskan apa pun yang negatif melewati filter Anda, kami akhirnya dapat memperpanjang ini untuk
+
+8
+00:00:28,800 --> 00:00:29,510
+memiliki filter.
+
+9
+00:00:29,610 --> 00:00:32,050
+Tetapi untuk saat ini kami hanya akan memiliki permintaan kosong.
+
+10
+00:00:32,220 --> 00:00:34,970
+Dan kemudian dalam hal apa tanggapan akan berisi.
+
+11
+00:00:35,130 --> 00:00:38,730
+Yah tagihannya bisa berisi blog dan salah satunya saja.
+
+12
+00:00:38,940 --> 00:00:44,160
+Dan alasan kami melakukan ini adalah karena kami akan mendapatkan aliran Blug. Jadi, inilah cara kami mendapatkan dan
+
+13
+00:00:44,250 --> 00:00:46,580
+mendapatkan daftar lengkap blog yang menggunakan aliran.
+
+14
+00:00:46,860 --> 00:00:50,680
+Jadi akan menjadi praktik yang baik untuk juga merevisi streaming layanan.
+
+15
+00:00:50,760 --> 00:00:56,100
+Jadi cinta P. B. kami akan melanjutkan dan menghasilkan beberapa kode sehingga kami terbiasa.
+
+16
+00:00:56,100 --> 00:01:01,070
+Ini dia dihasilkan dan sekarang implementasi dan implementasinya akan menjadi sedikit rumit tetapi tidak
+
+17
+00:01:01,110 --> 00:01:02,210
+terlalu banyak.
+
+18
+00:01:02,420 --> 00:01:02,930
+Baik.
+
+19
+00:01:03,090 --> 00:01:08,030
+Jadi pertama-tama kita harus menemukan tanda tangan yang tepat dari fungsi untuk mengimplementasikan terakhir kali.
+
+20
+00:01:08,040 --> 00:01:13,170
+Jadi kita akan pergi dan melihat daftar Blug dan mengimplementasikannya.
+
+21
+00:01:13,550 --> 00:01:14,320
+Baik.
+
+22
+00:01:14,340 --> 00:01:22,440
+Jadi kita akan menerapkan fungsi dan fungsi ini ada di server saya dan ini disebut Daftar blog.
+
+23
+00:01:22,810 --> 00:01:28,620
+Dan saya harus memposting ini sekarang karena ini adalah layanan pemangkasan hal ini sedikit berbeda.
+
+24
+00:01:28,630 --> 00:01:32,250
+Kami memiliki server daftar layanan Blug di sini.
+
+25
+00:01:32,290 --> 00:01:35,100
+Jadi inilah aliran kami yang akan kami gunakan.
+
+26
+00:01:35,110 --> 00:01:41,860
+Dan di sini ini adalah permintaan kami sehingga kami akan mengatakan permintaan dan dengan cara kami harus menerapkan P. darah B. dan juga salin ini
+
+27
+00:01:41,860 --> 00:01:44,050
+ke aliran kami.
+
+28
+00:01:44,180 --> 00:01:44,820
+BAIK.
+
+29
+00:01:44,860 --> 00:01:47,400
+Jadi sekarang kita baik dan kita dapat mengimplementasikan fungsi kita.
+
+30
+00:01:47,860 --> 00:01:52,300
+Jadi untuk mengimplementasikan daftar, Blug akan menjadi sedikit lebih rumit karena sekarang kita harus menggunakan kursor dan hal-hal seperti
+
+31
+00:01:52,300 --> 00:01:52,720
+itu.
+
+32
+00:01:52,720 --> 00:01:54,600
+Jadi mari kita lihat bagaimana kita bisa melakukannya.
+
+33
+00:01:54,880 --> 00:02:01,080
+Jadi yang kami lakukan adalah kami harus menggunakan koleksi dan kami akan mencari.
+
+34
+00:02:01,090 --> 00:02:04,240
+Jadi yang ini bukan yang seperti yang kita lakukan sebelumnya.
+
+35
+00:02:04,270 --> 00:02:09,970
+Kita dapat menemukan dan menemukannya memberi kita konteks filter dan beberapa opsi.
+
+36
+00:02:10,000 --> 00:02:15,610
+Sekarang sebelum kita melakukan ini, mari kita cetak baris dan katakan kita berada di daftar permintaan Blug daftar permintaan
+
+37
+00:02:15,610 --> 00:02:16,040
+Blug.
+
+38
+00:02:16,110 --> 00:02:17,070
+Oke bagus sekali.
+
+39
+00:02:17,500 --> 00:02:22,750
+Jadi ini membutuhkan konteks yang sudah kita ketahui sebelumnya sehingga latar belakang konteks dan kemudian itu adalah filter
+
+40
+00:02:22,750 --> 00:02:28,390
+karena kami hanya ingin mendapatkan semua bug dalam database kami dan kemudian di antara akan menjadi database maka kami pada
+
+41
+00:02:28,990 --> 00:02:30,570
+dasarnya tidak menyediakan filter .
+
+42
+00:02:30,580 --> 00:02:34,250
+Jadi saya hanya akan memberikan email dan kemudian kami tidak akan memberikan opsi apa pun.
+
+43
+00:02:34,540 --> 00:02:39,870
+Jadi ini adalah temuan khusus karena hanya akan menemukan setiap blog di database kami.
+
+44
+00:02:39,880 --> 00:02:44,740
+Sekarang yang keren adalah ini mengembalikan sesuatu yang disebut kursor dan kesalahan.
+
+45
+00:02:44,860 --> 00:02:46,280
+Jadi kita akan melihat satu per satu.
+
+46
+00:02:46,300 --> 00:02:48,850
+Hal-hal ini hanya akan menjadi kursor.
+
+47
+00:02:49,480 --> 00:02:55,460
+Dan di sana-sini sekarang jika ada kesalahan ini kemungkinan besar adalah kesalahan internal.
+
+48
+00:02:55,460 --> 00:03:06,610
+Jadi kami hanya akan menyalin bug ini dan saya akan mengatakan kesalahan internal yang tidak diketahui karena kami tidak dapat membuat daftar untuk
+
+49
+00:03:06,610 --> 00:03:14,660
+beberapa alasan dalam hal ini kami hanya akan mengembalikan ini dan itu jika jelas udaranya nol.
+
+50
+00:03:14,990 --> 00:03:18,690
+Saya hanya akan menempel ini dan itu masuk akal.
+
+51
+00:03:18,860 --> 00:03:25,050
+Sekarang udaranya tidak baru dan ini tidak bahagia karena kami tidak mengembalikannya, itu bukan kesalahan Nerium Anda.
+
+52
+00:03:25,080 --> 00:03:26,520
+Kami hanya harus mengembalikan udara.
+
+53
+00:03:26,820 --> 00:03:31,240
+Jadi kami hanya akan menghapus paku di sini dan kami hanya akan mengembalikan kode kesalahan itu sendiri.
+
+54
+00:03:31,740 --> 00:03:32,050
+BAIK.
+
+55
+00:03:32,050 --> 00:03:33,460
+Dan kemudian kita memiliki kursor.
+
+56
+00:03:33,550 --> 00:03:36,510
+Jadi yang perlu kita lakukan adalah menutup kursor itu pada akhirnya.
+
+57
+00:03:36,720 --> 00:03:40,310
+Jadi kita akan menggunakan kata kunci untuk mengatakan OK kita akan menutupnya akhirnya.
+
+58
+00:03:40,530 --> 00:03:46,920
+Jadi kita akan melakukan sepintas itu dan kita akan menggunakan diagram konteks untuk memanggilnya sehingga ketika fungsi
+
+59
+00:03:47,400 --> 00:03:50,160
+ini keluar, kursor akan ditutup secara otomatis.
+
+60
+00:03:50,160 --> 00:03:55,420
+Sekarang kita pada dasarnya harus mengulangi kursor ini pada dasarnya menemukan semua elemen yang kita miliki.
+
+61
+00:03:55,470 --> 00:04:00,150
+Jadi kita katakan untuk kursor konteks berikutnya latar belakang.
+
+62
+00:04:00,240 --> 00:04:06,750
+Jadi untuk setiap kali kami memiliki elemen baru yang kami temukan dan ini adalah kasus yang sempurna untuk pemangkasan maka kami
+
+63
+00:04:06,750 --> 00:04:08,730
+pergi Anda harus memecahkan kode data.
+
+64
+00:04:08,730 --> 00:04:14,130
+Jadi seperti sebelumnya ketika kami melakukan decoding, kami memprakarsai sebuah struct kosong.
+
+65
+00:04:14,130 --> 00:04:19,460
+Jadi kita hanya akan meletakkan struktur kosong lagi dan kita akan meminta Anda memanggil fungsi de-code.
+
+66
+00:04:19,920 --> 00:04:22,680
+Jadi mari kita mulai struct kosong kami.
+
+67
+00:04:22,770 --> 00:04:23,400
+BAIK.
+
+68
+00:04:23,670 --> 00:04:29,410
+Dan kemudian kita harus melakukan cursor de-code itu dan kita akan meneruskannya dalam data.
+
+69
+00:04:29,700 --> 00:04:36,180
+Jadi pada dasarnya kita mengatakan oke untuk setiap kali kita dapat melihatnya dalam percobaan mengambil beberapa data
+
+70
+00:04:36,180 --> 00:04:42,370
+dan menginisialisasi sebagai Strutt kosong dan kemudian meletakkan kursor bahwa data kursor ke objek data kita.
+
+71
+00:04:42,390 --> 00:04:45,440
+Sekarang jelas ini dapat mengembalikan kesalahan seperti yang kita lihat sebelumnya.
+
+72
+00:04:45,750 --> 00:04:49,580
+Jadi kita hanya akan mengatakan OK jika ada kesalahan di sini apa yang kita lakukan.
+
+73
+00:04:49,800 --> 00:04:55,680
+Nah jika kesalahannya bukan tidak, jelas ada sesuatu yang sangat salah dalam hal
+
+74
+00:04:55,680 --> 00:04:58,770
+ini kita akan mengatakan status pengembalian.
+
+75
+00:04:58,770 --> 00:05:00,520
+Itu udara.
+
+76
+00:05:00,560 --> 00:05:03,350
+Jika dan ini mungkin kesalahan internal lagi.
+
+77
+00:05:03,570 --> 00:05:09,030
+Jadi kita akan mengatakan kodenya akan internal dan kemudian kita benar-benar tidak tahu apa yang
+
+78
+00:05:09,030 --> 00:05:14,650
+terjadi tetapi pada dasarnya ini seperti kesalahan decoding jadi kita akan mengatakan f anti-cuts Sprint f air.
+
+79
+00:05:14,700 --> 00:05:19,600
+Mengurai data dengan baik dari TV yang tidak bagus.
+
+80
+00:05:20,130 --> 00:05:25,420
+Dan kemudian kita akan dengan jelas meledak di udara kalau-kalau kita tidak tahu apa yang terjadi.
+
+81
+00:05:25,490 --> 00:05:28,590
+Bantu kami mendapatkan udara dan kami sudah selesai.
+
+82
+00:05:28,920 --> 00:05:29,440
+BAIK.
+
+83
+00:05:29,640 --> 00:05:34,130
+Jadi inilah yang akan kami kembalikan dan bawa pakaian Anda, orang tua saya sangat bagus.
+
+84
+00:05:34,170 --> 00:05:36,260
+Sekarang udaranya tidak nol.
+
+85
+00:05:36,300 --> 00:05:42,000
+Yang harus kami lakukan adalah mengirim data ke klien kami.
+
+86
+00:05:42,000 --> 00:05:45,940
+Jadi ini akan mengatakan OK udara tidak baru.
+
+87
+00:05:46,110 --> 00:05:47,200
+Jadi apa yang akan saya lakukan.
+
+88
+00:05:47,250 --> 00:05:50,670
+Saya akan mengatakan aliran yang mengirim.
+
+89
+00:05:50,670 --> 00:05:52,920
+Dan kemudian kita harus membuat daftar darah.
+
+90
+00:05:52,920 --> 00:06:00,180
+Respons blug yang akan saya buat sekarang ternyata kita perlu mengirimkan plug ini dan kami memiliki beberapa
+
+91
+00:06:00,180 --> 00:06:01,080
+data.
+
+92
+00:06:01,200 --> 00:06:05,650
+Untungnya kami memiliki fungsi PV data ke blog yang siap untuk kami.
+
+93
+00:06:05,670 --> 00:06:08,760
+Jadi di sini kita pergi, kita baru saja mengirim aliran yang cukup keren.
+
+94
+00:06:08,790 --> 00:06:11,960
+Sekarang semua fungsi ini muncul dan benar-benar membantu kami.
+
+95
+00:06:12,230 --> 00:06:13,000
+BAIK.
+
+96
+00:06:13,440 --> 00:06:18,560
+Akhirnya ketika semua kursor dilakukan selanjutnya mungkin Anda akan memiliki kesalahan.
+
+97
+00:06:18,750 --> 00:06:23,050
+Jadi harus berurusan dengan setiap kasus di mana itu OK jika ada kesalahan.
+
+98
+00:06:23,060 --> 00:06:28,370
+Dan ini berasal dari dokumentasi dan kesalahannya bukan Neil sehingga kami dapat memeriksa jika ada
+
+99
+00:06:28,370 --> 00:06:32,930
+satu kesalahan yang kurang maka ini mungkin jenis kesalahan yang tidak diketahui.
+
+100
+00:06:33,050 --> 00:06:37,840
+Jadi kita akan mengatakan mengembalikan jenis kesalahan internal yang tidak dikenal.
+
+101
+00:06:38,300 --> 00:06:39,550
+Dan jika kita bahagia.
+
+102
+00:06:39,550 --> 00:06:44,300
+Jadi jika tidak ada kesalahan pada akhirnya dan kami telah mengirimkan semuanya sebagai streaming, mereka hanya akan
+
+103
+00:06:44,300 --> 00:06:48,840
+mengembalikan nol mengatakan bahwa tidak ada kesalahan dan itu akan menutup aliran kami kembali ke klien.
+
+104
+00:06:49,280 --> 00:06:54,700
+Jadi sedikit lebih rumit di sini tapi agak keren karena sekarang kita melihat penggunaan kursor dari
+
+105
+00:06:55,130 --> 00:06:59,820
+TV dan kita bisa bagaimana kita bisa mengulangi kursor melakukan fungsi selanjutnya.
+
+106
+00:06:59,960 --> 00:07:04,580
+Dan kemudian menggunakan aliran untuk mengirim data sebagai server memangkas sesuatu yang merupakan kasus penggunaan
+
+107
+00:07:04,580 --> 00:07:08,740
+keren untuk menunjukkan bahwa streaming dapat membantu ketika Anda memiliki database di backend.
+
+108
+00:07:08,810 --> 00:07:09,830
+Jadi itu untuk server.
+
+109
+00:07:09,830 --> 00:07:14,320
+Mari kita lihat apakah kita bisa makan siang, mari kita pergi dan meluncurkannya.
+
+110
+00:07:14,500 --> 00:07:15,280
+Ya itu berhasil.
+
+111
+00:07:15,330 --> 00:07:19,610
+Sekarang kita hanya perlu menerapkan klien untuk melihat apakah kode de-list berfungsi SOSINA kuliah berikutnya.
+

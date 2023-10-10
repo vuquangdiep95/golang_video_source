@@ -1,0 +1,279 @@
+1
+00:00:00,210 --> 00:00:02,440
+So here's our game plan for this video.
+
+2
+00:00:02,610 --> 00:00:07,230
+We're gonna get this up and running on my machine we're going get it running I'm Daniel's machine you're
+
+3
+00:00:07,230 --> 00:00:13,230
+gonna be able to see it running on both machines I'm just checking our clock and and then I also just
+
+4
+00:00:13,230 --> 00:00:18,960
+wanted to convey that there's two more pieces and so one piece is that this is kind of this is a media
+
+5
+00:00:18,960 --> 00:00:26,750
+example just took us I don't know 12 15 16 minutes and two videos took him that long to explain just
+
+6
+00:00:26,750 --> 00:00:33,420
+to sort of sit here just watch it and and and so we're not going to go through and explain every piece
+
+7
+00:00:33,420 --> 00:00:33,780
+of this.
+
+8
+00:00:33,780 --> 00:00:38,820
+You did get a more detailed explanation with the earlier GAAP example that we did where we walked through
+
+9
+00:00:38,820 --> 00:00:45,330
+all that and but with this one it's just something meaty an example the works that you could sink your
+
+10
+00:00:45,330 --> 00:00:48,680
+teeth into if and when you are ready for it.
+
+11
+00:00:48,930 --> 00:00:52,680
+And then what we will do though at the end of this video or maybe the next video depending upon how
+
+12
+00:00:52,680 --> 00:00:58,650
+long it takes us to kind of show it working is we're going to trace a message through the code and you'll
+
+13
+00:00:58,650 --> 00:01:00,850
+kind of see our message passes through the code.
+
+14
+00:01:00,990 --> 00:01:04,070
+So that will give you a little bit more insight into the code.
+
+15
+00:01:04,410 --> 00:01:09,810
+So the first step is to get it up and running on my machine and I've got all of my code here.
+
+16
+00:01:09,810 --> 00:01:15,050
+I'm not current SO I'M JUST GONNA MAKE SURE THAT I'M IN THE going project I'm going to do it get status.
+
+17
+00:01:15,060 --> 00:01:22,270
+Of course they'll tell me a little bit of information and so do I get PULL AND AND NOW IF I DO MY get
+
+18
+00:01:22,270 --> 00:01:27,160
+staffs all should be well that's some voodoo computing there for you.
+
+19
+00:01:27,160 --> 00:01:31,270
+And now that I have that code down here how do I get this up and running.
+
+20
+00:01:31,480 --> 00:01:38,930
+I need to go into this folder right into the chat folder yet so C.D. into your 0 5 0 0 5 0 4.
+
+21
+00:01:38,960 --> 00:01:39,640
+Yeah.
+
+22
+00:01:39,810 --> 00:01:44,300
+And then what I want to do that you're going to want to be in the client and so.
+
+23
+00:01:45,350 --> 00:01:51,350
+So over on my machine I will open up I'm in the 0 4 server.
+
+24
+00:01:51,370 --> 00:01:53,410
+I'm just gonna go run the server
+
+25
+00:01:58,420 --> 00:02:03,160
+now serving at Port 880 and I'm going to run the client ready for that.
+
+26
+00:02:03,160 --> 00:02:03,490
+So.
+
+27
+00:02:03,520 --> 00:02:05,620
+So in the client it's go or I may not go.
+
+28
+00:02:05,620 --> 00:02:07,290
+And it takes two arguments.
+
+29
+00:02:07,390 --> 00:02:09,520
+So the first argument is where to connect to.
+
+30
+00:02:09,550 --> 00:02:21,350
+So I'm on my computer and we use IP config on windows and my IP address is that 10 0 0 0 24 0 0 24.
+
+31
+00:02:21,550 --> 00:02:23,430
+Colon 80 84 88.
+
+32
+00:02:24,280 --> 00:02:25,160
+And then space.
+
+33
+00:02:25,180 --> 00:02:29,370
+And then what you want your username is going to be on this chat message.
+
+34
+00:02:29,430 --> 00:02:32,630
+So that's the hardest part.
+
+35
+00:02:35,450 --> 00:02:39,290
+So so you don't have GRC and all the various libraries.
+
+36
+00:02:39,320 --> 00:02:39,580
+Yes.
+
+37
+00:02:39,610 --> 00:02:44,180
+So it's go modules is automatically grabbing all of that for you.
+
+38
+00:02:44,180 --> 00:02:46,800
+Super nice.
+
+39
+00:02:47,050 --> 00:02:49,240
+Meantime on my machine I will do.
+
+40
+00:02:49,240 --> 00:02:57,220
+Go run main go in the client folder and I'm on my own machine so I can use local host 1880 and Daniel
+
+41
+00:02:57,220 --> 00:02:57,760
+for any
+
+42
+00:03:02,680 --> 00:03:07,360
+mind connected but over on Todd it says you've got the connection here.
+
+43
+00:03:07,850 --> 00:03:09,710
+And I think I knew what that it was actually.
+
+44
+00:03:09,730 --> 00:03:16,260
+It's my firewall it's windows blocking external connections so
+
+45
+00:03:18,900 --> 00:03:21,160
+Daniel's security conscious never.
+
+46
+00:03:21,690 --> 00:03:28,230
+So yeah he can rerun that command and it should work this time but it looks like it worked before you
+
+47
+00:03:28,230 --> 00:03:28,600
+cleared.
+
+48
+00:03:28,620 --> 00:03:34,680
+Yeah so it should I closed the server to restart it until the firewall.
+
+49
+00:03:34,690 --> 00:03:38,830
+So it should make this message here connection established a quick corrosive exit.
+
+50
+00:03:38,980 --> 00:03:40,540
+And now you can type in a message
+
+51
+00:03:45,220 --> 00:03:49,420
+and so it shows up there and it shows up on my machine and I can get something back.
+
+52
+00:03:49,430 --> 00:03:51,280
+Super cool.
+
+53
+00:03:51,320 --> 00:03:51,660
+Todd
+
+54
+00:03:54,630 --> 00:03:59,560
+is all working.
+
+55
+00:03:59,780 --> 00:04:02,350
+I love this.
+
+56
+00:04:03,470 --> 00:04:05,930
+So this is just the server is running on my laptop.
+
+57
+00:04:05,930 --> 00:04:11,600
+I'm connected with a client will close to my left to my own server and Todd's on his own machine next
+
+58
+00:04:11,600 --> 00:04:12,230
+to me.
+
+59
+00:04:12,350 --> 00:04:15,260
+And he typed in my IP address to connect to my server as well.
+
+60
+00:04:15,500 --> 00:04:20,480
+And so every time one of us types the message the server forwards it on to the other person or both
+
+61
+00:04:20,480 --> 00:04:21,510
+of us actually.
+
+62
+00:04:21,710 --> 00:04:24,340
+Yeah it's very cool.
+
+63
+00:04:24,410 --> 00:04:31,550
+Do we want to keep the video short so let's do the tracing the path of a message through the code in
+
+64
+00:04:31,550 --> 00:04:32,540
+the next video.
+
+65
+00:04:32,540 --> 00:04:37,100
+So this is just seeing everything running in the next video we're going to trace the path of a message
+
+66
+00:04:37,930 --> 00:04:40,010
+you anymore you want to add to this one.
+
+67
+00:04:40,700 --> 00:04:41,660
+Nicely done.
+
+68
+00:04:41,660 --> 00:04:42,580
+Nicely done.
+
+69
+00:04:42,680 --> 00:04:43,950
+Really cool.
+
+70
+00:04:44,030 --> 00:04:44,870
+See the next video.

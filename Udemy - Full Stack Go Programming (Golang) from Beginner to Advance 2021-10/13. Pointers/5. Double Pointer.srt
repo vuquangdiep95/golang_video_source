@@ -1,0 +1,215 @@
+1
+00:00:13,770 --> 00:00:19,380
+Hello and welcome to the golden programming language course in the television station, we talked about
+
+2
+00:00:19,380 --> 00:00:26,100
+competing pointers and Googling and indecision, and we want to talk about the other's point first concept.
+
+3
+00:00:30,470 --> 00:00:39,320
+Go pointer to point to or domino pointer, the pointer is especially bad either, so it can point to
+
+4
+00:00:39,320 --> 00:00:42,200
+a variable of any time even to a pointer.
+
+5
+00:00:42,890 --> 00:00:50,690
+Basically, this looks like a chain of pointers when we define the pointer to pointer, then the first
+
+6
+00:00:50,690 --> 00:00:54,200
+pointer is used to restore the actress of the second pointer.
+
+7
+00:00:54,710 --> 00:00:58,460
+This concept is sometimes termed as double pointers.
+
+8
+00:01:00,870 --> 00:01:08,700
+Hard to declare a pointer to pointer and go land the pointer to a pointer is a form of chain of pointers.
+
+9
+00:01:09,000 --> 00:01:12,750
+Normally, a pointer contains the address of a very.
+
+10
+00:01:13,290 --> 00:01:19,380
+Then we define a pointer to a coin to the first pointer contains the address of the second pointer.
+
+11
+00:01:19,590 --> 00:01:25,470
+Each points to the location that contains the actual value, as shown below.
+
+12
+00:01:28,570 --> 00:01:33,970
+A very bad that is a pointer to a pointer must be declared as such.
+
+13
+00:01:34,180 --> 00:01:39,220
+This is done by placing an additional asterisk in front of its name.
+
+14
+00:01:39,640 --> 00:01:45,610
+For example, the following statement declares a pointer to a pointer of type int.
+
+15
+00:01:46,840 --> 00:01:57,010
+That Peter, three, Asterix, each time when the target value is indirectly pointed to by a pointer
+
+16
+00:01:57,010 --> 00:02:03,700
+to a pointer, accessing that value requires that the asterisk operator be applied twice.
+
+17
+00:02:05,920 --> 00:02:11,440
+Now, go to this good program to illustrate the concept of pointer to pointer.
+
+18
+00:02:14,950 --> 00:02:19,110
+First, taking a variable of integer type that.
+
+19
+00:02:20,320 --> 00:02:24,010
+Peaks and equals 100.
+
+20
+00:02:25,240 --> 00:02:29,290
+Now, taking a pointer of the time that.
+
+21
+00:02:30,580 --> 00:02:30,930
+P.
+
+22
+00:02:31,060 --> 00:02:40,510
+T one Asterix E equals actress of East Valley, the Anderson he's
+
+23
+00:02:43,300 --> 00:02:52,840
+now taking pointer to pointer to Pete Yvonne is touring the actress of Pizjuan into PETA to vie Pete
+
+24
+00:02:53,230 --> 00:03:02,050
+to asterisk, asterisk and equals actress of Pointer Rock Anderson.
+
+25
+00:03:02,560 --> 00:03:11,740
+Petey won't now display EEGs and Petey and PETA variables if IFBB.
+
+26
+00:03:13,030 --> 00:03:22,330
+The value of X equals said the value of the Ace go to the next line.
+
+27
+00:03:23,550 --> 00:03:24,060
+Fifty.
+
+28
+00:03:25,470 --> 00:03:27,150
+The dragging you off.
+
+29
+00:03:28,610 --> 00:03:33,770
+He t one equals set point to a long.
+
+30
+00:03:35,320 --> 00:03:36,890
+And go to the next line.
+
+31
+00:03:37,210 --> 00:03:37,750
+If we.
+
+32
+00:03:40,110 --> 00:03:41,850
+The value.
+
+33
+00:03:43,960 --> 00:03:50,380
+Home to two equals and set the value a pointer to.
+
+34
+00:03:53,460 --> 00:03:54,450
+Reformat the quote.
+
+35
+00:03:55,570 --> 00:03:58,960
+Now referencing the pointer to pointer.
+
+36
+00:04:01,050 --> 00:04:02,160
+Yes, he.
+
+37
+00:04:03,490 --> 00:04:08,140
+Value at the address.
+
+38
+00:04:09,740 --> 00:04:29,000
+Of pointer to or has to expand to two equals, that's two pointer to and double pointer bequeathed the
+
+39
+00:04:29,000 --> 00:04:32,690
+value of variable X if P
+
+40
+00:04:35,240 --> 00:04:35,870
+value.
+
+41
+00:04:38,390 --> 00:04:41,090
+At the at risk.
+
+42
+00:04:43,930 --> 00:04:48,100
+Point to two or.
+
+43
+00:04:49,320 --> 00:04:54,540
+Asterisk, asterisk, p t two equals
+
+44
+00:04:57,000 --> 00:04:59,040
+six, that's p t.
+
+45
+00:05:00,570 --> 00:05:06,510
+To reformat the code, save the project and execute the program.
+
+46
+00:05:09,500 --> 00:05:17,100
+Now we can see the output first, we see the value of the variable X, which is a hundredth.
+
+47
+00:05:18,800 --> 00:05:25,700
+Then we see the value of the variable points or one in which the address of the variable X is a thought.
+
+48
+00:05:26,660 --> 00:05:33,080
+And then we see the value of the variable point or two in which the address of the variable point to
+
+49
+00:05:33,080 --> 00:05:34,100
+one is distort.
+
+50
+00:05:34,700 --> 00:05:38,210
+And now you see the address of the variable pointer two.
+
+51
+00:05:38,990 --> 00:05:45,890
+And finally, we see the value of the variable points or two, which is preceded by two asterisks.
+
+52
+00:05:48,170 --> 00:05:50,220
+We have reached the end of decision.
+
+53
+00:05:50,240 --> 00:05:54,440
+I hope you have taken full advantage of this station onto next session.
+
+54
+00:05:54,650 --> 00:05:55,190
+Goodbye.

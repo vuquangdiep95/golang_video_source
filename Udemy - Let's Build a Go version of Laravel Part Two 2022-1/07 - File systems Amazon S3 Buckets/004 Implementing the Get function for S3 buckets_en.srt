@@ -1,0 +1,196 @@
+1
+00:00:01,270 --> 00:00:06,390
+So the last function we have to implement for our SRT file system before we connected to celebrities
+
+2
+00:00:06,400 --> 00:00:10,540
+is, of course, the get function little used but nice to have when you need it.
+
+3
+00:00:11,080 --> 00:00:15,730
+And of course, the first thing I'm going to have to do is get some credentials and create a session.
+
+4
+00:00:17,200 --> 00:00:23,860
+So I'll copy that from the other function, delete and just paste it down here before the return statement
+
+5
+00:00:24,310 --> 00:00:25,270
+in the get function.
+
+6
+00:00:26,650 --> 00:00:27,010
+OK.
+
+7
+00:00:27,220 --> 00:00:33,610
+So I have my credentials, I have my session and now all I'm going to do is loop through my very attic
+
+8
+00:00:33,910 --> 00:00:38,950
+parameter items and process the get function for each entry I find there.
+
+9
+00:00:39,220 --> 00:00:40,300
+So four.
+
+10
+00:00:40,540 --> 00:00:41,470
+Ignore the index.
+
+11
+00:00:42,640 --> 00:00:46,480
+Pay attention to each individual item comes from ranging through items.
+
+12
+00:00:48,940 --> 00:00:56,500
+And now I'm going to check for an error when I and this is an inline function which returns an error.
+
+13
+00:00:56,950 --> 00:01:02,320
+And I'm doing this because of course, I'm going to be deferring file clothes periodically.
+
+14
+00:01:02,560 --> 00:01:04,360
+And this is exactly what we did before.
+
+15
+00:01:05,770 --> 00:01:13,210
+So I'll get a file and check for an error when I call OAC stock create and I'm going to create and this
+
+16
+00:01:13,210 --> 00:01:21,610
+will be a format string so formatted as print f, my string will be percent as slash percent s and the
+
+17
+00:01:21,610 --> 00:01:28,270
+substitutions will be destination, which I received as a parameter to this function and the current
+
+18
+00:01:28,270 --> 00:01:28,570
+item.
+
+19
+00:01:29,770 --> 00:01:30,130
+OK.
+
+20
+00:01:30,910 --> 00:01:31,810
+And I'll check for an error.
+
+21
+00:01:32,290 --> 00:01:35,110
+If error is not equal to nil, then return the error.
+
+22
+00:01:36,460 --> 00:01:40,330
+And down here I have to add my closing double parentheses, of course.
+
+23
+00:01:41,520 --> 00:01:46,890
+So once I have the file, I'll defer closing it, which is why this is all wrapped in that anonymous
+
+24
+00:01:46,890 --> 00:01:52,590
+function, and I'll create a variable called downloader, which is assigned the value of.
+
+25
+00:01:53,980 --> 00:01:55,930
+And they should have filed in front of the clothes.
+
+26
+00:01:56,290 --> 00:01:58,990
+That was sloppy and there should be a capital C..
+
+27
+00:01:59,560 --> 00:02:00,790
+Apparently, I can't type today.
+
+28
+00:02:01,690 --> 00:02:06,730
+My downloader is an S3 manager, dot new downloader.
+
+29
+00:02:08,810 --> 00:02:15,500
+And it requires my session, and now I'll ignore the first return parameter, but check for an error
+
+30
+00:02:15,890 --> 00:02:25,100
+when I use Downloader to download the file, and that requires the file and the second parameter, and
+
+31
+00:02:25,100 --> 00:02:29,990
+I'll put this on another line, so it's easier to read is a reference to S3.
+
+32
+00:02:29,990 --> 00:02:29,990
+Three.
+
+33
+00:02:30,290 --> 00:02:31,490
+Get object input.
+
+34
+00:02:33,520 --> 00:02:42,040
+And that takes two fields the bucket, which, of course, is an AWOL string from my receiver escort
+
+35
+00:02:42,130 --> 00:02:42,490
+bucket.
+
+36
+00:02:44,530 --> 00:02:45,730
+And the second thing is the key.
+
+37
+00:02:46,840 --> 00:02:50,770
+And then, of course, that's just A.W. Asked String the current item
+
+38
+00:02:53,830 --> 00:02:56,050
+and looks like I already have an error variable.
+
+39
+00:02:56,050 --> 00:02:59,890
+So this should not be an assignment operator and I'll format this.
+
+40
+00:03:01,900 --> 00:03:03,490
+So there's my downloader.
+
+41
+00:03:05,800 --> 00:03:06,760
+We check for an error.
+
+42
+00:03:07,360 --> 00:03:10,330
+If error is not equal to nil, then we'll just return the error.
+
+43
+00:03:12,880 --> 00:03:14,980
+Otherwise we'll return nil.
+
+44
+00:03:18,490 --> 00:03:26,680
+OK, and then outside of this inline function, we do our last error check if error is not equal to
+
+45
+00:03:26,680 --> 00:03:28,120
+nil, then return the error.
+
+46
+00:03:30,670 --> 00:03:34,420
+And I think unless I have a typo somewhere, that should actually do it.
+
+47
+00:03:34,600 --> 00:03:41,900
+So now we have all of our necessary functions implemented to satisfy the file system FC interface.
+
+48
+00:03:42,550 --> 00:03:48,700
+So the next step is to connect celebrities to our new S3 file system, and we'll get started on that
+
+49
+00:03:48,700 --> 00:03:49,630
+in the next lecture.
+

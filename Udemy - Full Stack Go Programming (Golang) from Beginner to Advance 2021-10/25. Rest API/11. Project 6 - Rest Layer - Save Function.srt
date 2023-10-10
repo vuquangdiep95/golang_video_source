@@ -1,0 +1,171 @@
+1
+00:00:11,810 --> 00:00:16,800
+Hello and welcome to the Golang programming language course in the pit of your station.
+
+2
+00:00:16,820 --> 00:00:25,700
+We could define select all students method for rest player, and now we want to implement another function
+
+3
+00:00:25,730 --> 00:00:31,160
+that is supposed to insert a student in the student table of person database.
+
+4
+00:00:31,400 --> 00:00:36,410
+So define the function named like save as student dysfunction.
+
+5
+00:00:36,410 --> 00:00:42,680
+Accept two parameters first and object from issue type response writer and second, the pointer of a
+
+6
+00:00:42,680 --> 00:00:44,120
+steep request.
+
+7
+00:00:44,480 --> 00:00:47,270
+So we try find.
+
+8
+00:00:51,630 --> 00:00:57,450
+Save the student and set two parameters.
+
+9
+00:00:57,830 --> 00:01:01,850
+First, a parameter response writer response.
+
+10
+00:01:06,700 --> 00:01:22,480
+By the time TTP, the arts response writer and second request from Pointer Poynter Institute art request.
+
+11
+00:01:27,400 --> 00:01:30,430
+Now we want to implement a body of dysfunction.
+
+12
+00:01:32,320 --> 00:01:36,220
+This violation is supposed to save a new student and database.
+
+13
+00:01:36,700 --> 00:01:44,710
+So we should convert the data we received from the end point into a student object and save it in the
+
+14
+00:01:44,710 --> 00:01:45,310
+database.
+
+15
+00:01:45,580 --> 00:01:53,260
+To do this, we do the following first, create an object of a student model so defining variable like
+
+16
+00:01:53,890 --> 00:01:59,980
+the student from modern a student.
+
+17
+00:02:03,560 --> 00:02:10,130
+Therefore, we received the data sent from the client to the body in the request by the new decoder
+
+18
+00:02:10,130 --> 00:02:15,350
+function from Jason Typekit and saw it into a student object.
+
+19
+00:02:15,740 --> 00:02:19,850
+This function returns a new decoder that reads from reader.
+
+20
+00:02:20,270 --> 00:02:28,460
+So first, define an error variable as return time, roll call and equals and calling new decoder function.
+
+21
+00:02:29,450 --> 00:02:46,130
+Jason Start new decoder function and set body of request as argument request, dot body as argument
+
+22
+00:02:46,400 --> 00:02:56,960
+and calling decode function thought decode and Esaw to receive data into a student model and person
+
+23
+00:02:57,950 --> 00:02:58,820
+a student.
+
+24
+00:03:01,910 --> 00:03:06,710
+Now, check Iran's status, so right, if there are.
+
+25
+00:03:08,770 --> 00:03:09,960
+Not equals, Neal.
+
+26
+00:03:11,230 --> 00:03:14,110
+For example, if at all,
+
+27
+00:03:19,390 --> 00:03:26,320
+and set an interim status in response, Heather and displayed for a client by the FBI to function saw
+
+28
+00:03:26,320 --> 00:03:28,060
+the right response.
+
+29
+00:03:29,140 --> 00:03:30,490
+That's right, Heather
+
+30
+00:03:34,450 --> 00:03:38,560
+and select an overall status as argument from the SDP package.
+
+31
+00:03:38,560 --> 00:03:44,590
+For example, HTP thought a status internal seller of the status.
+
+32
+00:03:48,840 --> 00:04:02,550
+Internal server error and displayed for client by colleague F.A. Dot F printer function, Sid responds
+
+33
+00:04:02,550 --> 00:04:15,300
+as first argument Sid misses, for example, could not add new students
+
+34
+00:04:18,060 --> 00:04:18,780
+by
+
+35
+00:04:21,090 --> 00:04:28,200
+error calling personally and set error variable that.
+
+36
+00:04:31,550 --> 00:04:35,000
+And set the return value return
+
+37
+00:04:38,060 --> 00:04:44,360
+now connect to the database, then call the courier to save and the students, so we write DV tools.
+
+38
+00:04:46,610 --> 00:04:49,040
+And colleagues say function.
+
+39
+00:04:50,980 --> 00:04:59,470
+And sit a student as argument for dysfunction students, the format, the code and save the project.
+
+40
+00:04:59,830 --> 00:05:07,210
+Now we were able to implement the same function that at a new student into the database based data receiving
+
+41
+00:05:07,210 --> 00:05:12,910
+from client various API in order not to prolong the time of decision.
+
+42
+00:05:13,120 --> 00:05:16,930
+We will finish it and we will continue the content in the next session.
+
+43
+00:05:17,110 --> 00:05:17,620
+Goodbye.

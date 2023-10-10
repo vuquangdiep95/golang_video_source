@@ -1,0 +1,427 @@
+1
+00:00:01,190 --> 00:00:06,770
+So now that we've put all this work into password resets and things like that, let's make sure our
+
+2
+00:00:06,770 --> 00:00:12,020
+command line applications celebrities in the Celebrity House project is updated to take advantage of
+
+3
+00:00:12,020 --> 00:00:12,680
+that sort of thing.
+
+4
+00:00:13,250 --> 00:00:18,140
+So what I'm going to do is switch to my desktop and I have two windows open here.
+
+5
+00:00:18,890 --> 00:00:22,800
+On the left hand side is my app that has the latest versions of everything I need.
+
+6
+00:00:23,300 --> 00:00:27,620
+And on the right hand side is hilarious and I need to copy things over here.
+
+7
+00:00:28,310 --> 00:00:29,090
+So let's get started.
+
+8
+00:00:29,270 --> 00:00:32,300
+First of all, we're going to need the mail templates.
+
+9
+00:00:32,780 --> 00:00:35,870
+The password reset stuff, and that's inside the mail folder.
+
+10
+00:00:36,830 --> 00:00:47,060
+So these two files I'll copy over to the CMD folder, insularity, tasks and then Seelye and then templates
+
+11
+00:00:47,270 --> 00:00:48,190
+inside of Mailer.
+
+12
+00:00:48,200 --> 00:00:49,250
+So I'll copy them in there.
+
+13
+00:00:53,480 --> 00:01:01,790
+And I also need the handlers so that inside the handlers folder, the art handlers, and I'm going to
+
+14
+00:01:01,790 --> 00:01:04,670
+copy that to the Handlers folder inside the Templates folder.
+
+15
+00:01:08,540 --> 00:01:16,340
+And I also need my forgot and reset templates, and those are inside views, so I have forgot right
+
+16
+00:01:16,340 --> 00:01:20,900
+here and I have reset password both jet files.
+
+17
+00:01:21,410 --> 00:01:25,370
+They get copied to the Views folder in templates.
+
+18
+00:01:25,550 --> 00:01:27,320
+I don't have one now, so I'll create one.
+
+19
+00:01:27,950 --> 00:01:36,830
+So inside of templates create a new folder called views, and I'll copy these two over to the Views
+
+20
+00:01:36,830 --> 00:01:37,250
+folder.
+
+21
+00:01:41,150 --> 00:01:42,500
+Now, go back up one level.
+
+22
+00:01:44,690 --> 00:01:48,740
+Now I need to copy my middleware for remember token.
+
+23
+00:01:49,290 --> 00:01:51,290
+And see what we have in center middleware right now.
+
+24
+00:01:52,130 --> 00:02:02,000
+We have off token and off, so I won't remember a copy that in there and then insert our data folder.
+
+25
+00:02:02,540 --> 00:02:06,530
+We'll have to copy the Remember token over so data.
+
+26
+00:02:09,580 --> 00:02:10,630
+And remember token.
+
+27
+00:02:18,610 --> 00:02:20,890
+And I'll put a text at the end of that as well.
+
+28
+00:02:28,430 --> 00:02:36,050
+OK, so all those files are copied over now, you can see I have a few errors here, so I'm going to
+
+29
+00:02:36,050 --> 00:02:43,220
+refactor this and rename it to remember, don't go to text just to and get rid of those errors because
+
+30
+00:02:43,220 --> 00:02:44,150
+these are just templates.
+
+31
+00:02:44,150 --> 00:02:51,830
+They don't get compiled and rename that one to go to next.
+
+32
+00:02:54,170 --> 00:02:54,500
+OK.
+
+33
+00:02:54,830 --> 00:02:59,120
+So I think I have all the necessary files copied over to my templates.
+
+34
+00:02:59,870 --> 00:03:07,040
+Now, obviously, we're working with off don't go in the CMD Seelye folder, and so far we're copying
+
+35
+00:03:07,040 --> 00:03:15,560
+over or we're doing the migrations and then we run the migrations and then we copy user and token over
+
+36
+00:03:15,860 --> 00:03:16,970
+to a data folder.
+
+37
+00:03:16,970 --> 00:03:20,750
+So I'm going to copy this and we're going to have to copy over.
+
+38
+00:03:24,020 --> 00:03:28,700
+I remember one which is called Remember Underscore token logo.
+
+39
+00:03:29,150 --> 00:03:30,110
+So remember?
+
+40
+00:03:33,370 --> 00:03:38,170
+Underscore token, go to text to data.
+
+41
+00:03:38,290 --> 00:03:44,620
+And I want to call it remember underscore token, there's that one.
+
+42
+00:03:45,610 --> 00:03:48,520
+Now let's look at our middleware in our middleware folder.
+
+43
+00:03:48,520 --> 00:03:51,550
+We now have remember underscore or go dot.
+
+44
+00:03:52,170 --> 00:03:53,350
+We need to copy that over.
+
+45
+00:03:53,410 --> 00:03:57,040
+So copy this and paste it here.
+
+46
+00:03:58,660 --> 00:04:00,070
+And we want to call this.
+
+47
+00:04:02,830 --> 00:04:05,410
+Remember, don't go to text to
+
+48
+00:04:08,350 --> 00:04:11,160
+remember ago MBA.
+
+49
+00:04:11,620 --> 00:04:11,960
+OK.
+
+50
+00:04:11,980 --> 00:04:13,540
+So there's that middleware done.
+
+51
+00:04:15,070 --> 00:04:18,460
+And we also want to copy over the views and the handlers.
+
+52
+00:04:18,820 --> 00:04:20,000
+Let's do the handlers first.
+
+53
+00:04:20,020 --> 00:04:23,770
+So I'll copy this whole thing and paste it here.
+
+54
+00:04:24,490 --> 00:04:30,460
+And my handlers are called, Where are they off, dash handlers?
+
+55
+00:04:30,490 --> 00:04:40,870
+OK, so we're going to copy from handlers and we want off dash handlers.
+
+56
+00:04:41,440 --> 00:04:45,370
+Don't go to text to handlers
+
+57
+00:04:49,210 --> 00:04:51,660
+of dash handlers.
+
+58
+00:04:52,720 --> 00:04:53,260
+Don't go.
+
+59
+00:04:53,830 --> 00:05:00,460
+OK, so there's our handlers now we want our views and we have views in the views folder and views in
+
+60
+00:05:00,460 --> 00:05:01,480
+the mailer folder.
+
+61
+00:05:01,750 --> 00:05:05,980
+So let's copy this and we'll do the ones in the mail folder first.
+
+62
+00:05:06,970 --> 00:05:16,690
+So we're copying from Mailer, which is what it's called in templates, and the file is called Password
+
+63
+00:05:16,690 --> 00:05:19,180
+Dash Reset HTML that tempo.
+
+64
+00:05:28,300 --> 00:05:34,990
+Two male and we're calling this file
+
+65
+00:05:37,600 --> 00:05:49,210
+password Dash Reset Dash HTML the template, now we'll copy this whole thing and do the plain text version
+
+66
+00:05:49,600 --> 00:05:50,590
+and scroll up a bit.
+
+67
+00:05:53,710 --> 00:05:57,820
+And this becomes plain and this becomes plain.
+
+68
+00:05:59,950 --> 00:06:06,580
+OK, so we have the male templates now we have to do the reset templates and the log in template in
+
+69
+00:06:06,580 --> 00:06:13,570
+the Views folder, so I'll copy this and paste it here and we're copying from views.
+
+70
+00:06:14,200 --> 00:06:18,010
+The IWC what do I have my views folder?
+
+71
+00:06:18,010 --> 00:06:20,500
+Did I remember to copy over the log in one?
+
+72
+00:06:20,680 --> 00:06:21,280
+No, I didn't.
+
+73
+00:06:21,370 --> 00:06:24,820
+So let's go back over here and go down to views.
+
+74
+00:06:27,300 --> 00:06:35,100
+We also want the login page, so we'll copy that over to up one level views.
+
+75
+00:06:35,790 --> 00:06:40,230
+So log in, goes to views there.
+
+76
+00:06:40,710 --> 00:06:45,930
+OK, so the first one we want is from views.
+
+77
+00:06:49,640 --> 00:06:50,780
+Log in, Georgette.
+
+78
+00:06:52,670 --> 00:06:53,780
+Two views.
+
+79
+00:06:56,760 --> 00:06:57,690
+Log in, D'Achat.
+
+80
+00:07:01,620 --> 00:07:06,950
+And I will copy this and paste it twice, once, twice.
+
+81
+00:07:07,740 --> 00:07:09,870
+And the second one is not called log in.
+
+82
+00:07:10,200 --> 00:07:25,080
+It's called for God jet, which becomes for God jet and reset dash password dot jet becomes reset dash
+
+83
+00:07:25,080 --> 00:07:26,760
+password dot.
+
+84
+00:07:27,480 --> 00:07:27,720
+All right.
+
+85
+00:07:28,380 --> 00:07:31,080
+So that should copy all of those files over.
+
+86
+00:07:31,470 --> 00:07:32,970
+Now there's one more thing we need to do.
+
+87
+00:07:33,180 --> 00:07:38,580
+Let's go back over to our other project and that is my app and look inside the data folder.
+
+88
+00:07:38,580 --> 00:07:40,250
+I believe we added a function.
+
+89
+00:07:40,260 --> 00:07:41,930
+Yes, we did to our check.
+
+90
+00:07:41,940 --> 00:07:50,490
+Remember, we added this function to the user's dgo data in the data file, so I copied that function.
+
+91
+00:07:50,610 --> 00:07:56,880
+Now I'm going to switch back here and open up user don't go, don't text and paste that right here,
+
+92
+00:07:58,170 --> 00:08:02,490
+there, and that should take care of all of the heavy lifting.
+
+93
+00:08:02,670 --> 00:08:06,030
+So let's try compiling our seal on.
+
+94
+00:08:07,260 --> 00:08:11,910
+Make sure everything compiles make build, underscore seal seelye.
+
+95
+00:08:17,760 --> 00:08:18,240
+And it did.
+
+96
+00:08:18,570 --> 00:08:24,150
+OK, so I'll leave it to you to test that, but that should work exactly as expected.
+
+97
+00:08:24,150 --> 00:08:28,590
+And of course, in order to test it, you have to go and delete the necessary tables from your database
+
+98
+00:08:29,160 --> 00:08:35,670
+and then delete all of the things that are copied over in the data directory, in the mail directory,
+
+99
+00:08:35,970 --> 00:08:40,650
+in the handlers directory, in the middleware directory and the views directory.
+
+100
+00:08:40,680 --> 00:08:46,260
+So once you delete all the files that are installed, when someone typed celebrities make off and you
+
+101
+00:08:46,260 --> 00:08:51,450
+remove the necessary migrations and the necessary tables in the database, you should be able to run
+
+102
+00:08:51,450 --> 00:08:53,970
+this and everything should work as expected.
+
+103
+00:08:54,270 --> 00:08:58,440
+Now, I'm not going to bother testing it in this lecture because we're moving on in the next section
+
+104
+00:08:58,440 --> 00:09:04,530
+to building a make new functionality into our celebrity voice command line application, and we'll test
+
+105
+00:09:04,530 --> 00:09:05,520
+it at that point.
+
+106
+00:09:05,850 --> 00:09:08,850
+And if we got something wrong, it's not going to be anything major.
+
+107
+00:09:09,180 --> 00:09:10,620
+So let's move on to the next section.

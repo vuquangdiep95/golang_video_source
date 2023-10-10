@@ -1,0 +1,695 @@
+1
+00:00:01,890 --> 00:00:07,740
+In this section of the course, we want to implement basic validation to give our users tools that makes
+
+2
+00:00:07,740 --> 00:00:12,840
+it easy for them to validate forum posts or request to the API, whatever the case may be.
+
+3
+00:00:13,440 --> 00:00:18,060
+So I mean, this hilarious package right now, and the first thing I'll do is create a new file at the
+
+4
+00:00:18,060 --> 00:00:21,000
+root level of my project called validator.
+
+5
+00:00:24,720 --> 00:00:26,880
+And of course, that's in package celebrities.
+
+6
+00:00:31,810 --> 00:00:35,650
+Now, there are lots of different ways that we can implement validation, but there is no question we're
+
+7
+00:00:35,650 --> 00:00:42,040
+going to need a type to start with a type which I'll call validation type validation.
+
+8
+00:00:42,610 --> 00:00:43,030
+OK?
+
+9
+00:00:43,540 --> 00:00:44,740
+And it's just going to be a struct.
+
+10
+00:00:44,910 --> 00:00:51,540
+It's only going to have two members data and this will be used for forum posts and it'll be a type URL
+
+11
+00:00:51,550 --> 00:00:54,140
+right from the standard library values.
+
+12
+00:00:54,580 --> 00:01:01,840
+And as you can see in the help file that shows up in my I.D. value maps a string key to it to a list
+
+13
+00:01:01,840 --> 00:01:05,320
+of values and is typically used for query parameters in form values.
+
+14
+00:01:05,840 --> 00:01:07,170
+So very straightforward.
+
+15
+00:01:07,180 --> 00:01:09,520
+We're going to have euro values is our first one.
+
+16
+00:01:09,820 --> 00:01:15,460
+And we're also going to have a place to store errors and this will be a map of string string.
+
+17
+00:01:15,520 --> 00:01:20,200
+So if something doesn't pass validation, there will be a corresponding entry in the errors.
+
+18
+00:01:20,200 --> 00:01:21,550
+Map error singular.
+
+19
+00:01:21,880 --> 00:01:24,940
+Actually, I'll make errors plural, but sounds better because you have more than one error.
+
+20
+00:01:26,590 --> 00:01:31,090
+And the next thing I'm going to want is a function with the receiver of C pointer to celebrities.
+
+21
+00:01:31,090 --> 00:01:33,490
+And this will be how we initially are validator.
+
+22
+00:01:33,490 --> 00:01:38,590
+And I'll call it validator validate, validate data like that.
+
+23
+00:01:39,640 --> 00:01:46,790
+And it will take one parameter called data of type URL values, and it returns a pointer to the type
+
+24
+00:01:46,790 --> 00:01:48,280
+of validation that we just created.
+
+25
+00:01:48,520 --> 00:01:48,910
+OK.
+
+26
+00:01:49,660 --> 00:01:50,650
+So this is very simple.
+
+27
+00:01:50,650 --> 00:01:54,760
+We'll just return a reference to validation and we'll fill in the fields.
+
+28
+00:01:55,180 --> 00:02:06,430
+So errors will be make math, string string and empty map and data will be, you know, what we would
+
+29
+00:02:06,430 --> 00:02:08,500
+ever receive as a call to this function.
+
+30
+00:02:08,790 --> 00:02:15,620
+OK, now basic form validation can be a pain, and there is a really useful package.
+
+31
+00:02:15,640 --> 00:02:16,720
+Let me go to my web browser.
+
+32
+00:02:17,630 --> 00:02:22,950
+It's a really useful package that is used by a lot of go programmers, and I'll pasted all in there.
+
+33
+00:02:22,960 --> 00:02:28,180
+It's GitHub dot com slash slash and then the last thing that I'm not even going to try to pronounce.
+
+34
+00:02:28,840 --> 00:02:29,650
+Go validator.
+
+35
+00:02:30,500 --> 00:02:34,790
+And it's a very easy to use package, so you can read the documentation at your leisure.
+
+36
+00:02:34,820 --> 00:02:37,880
+There is a link to this in the course of resources for this lecture.
+
+37
+00:02:38,480 --> 00:02:43,070
+So I will go and get this copy back to my I.D..
+
+38
+00:02:45,420 --> 00:02:50,040
+You know, open a terminal window and clear the screen and paste in that comment.
+
+39
+00:02:50,910 --> 00:02:52,110
+And that goes and gets it for us.
+
+40
+00:02:53,160 --> 00:02:58,380
+This is a really useful validation package that has an awful lot of different kinds of validation that
+
+41
+00:02:58,380 --> 00:03:03,150
+can be implemented, and I'm only going to do a few the most basic ones, OK, to start with, I'm going
+
+42
+00:03:03,150 --> 00:03:04,830
+to use this function.
+
+43
+00:03:04,830 --> 00:03:11,610
+I'm going to create a function with a receiver of V pointed to validation, and it's going to be called
+
+44
+00:03:11,730 --> 00:03:12,600
+simply valid.
+
+45
+00:03:14,430 --> 00:03:22,170
+Invalid takes no arguments, then returns a Boolean and all or returns is the length of V errors equal
+
+46
+00:03:22,170 --> 00:03:22,690
+to zero.
+
+47
+00:03:22,710 --> 00:03:29,820
+So return LEN of VDOT errors is equal to zero.
+
+48
+00:03:29,880 --> 00:03:32,430
+So if there are no errors, then returns true.
+
+49
+00:03:32,430 --> 00:03:38,010
+But if there's at least one entry in that map string string, then it return false.
+
+50
+00:03:38,160 --> 00:03:39,570
+OK, so that's a pretty easy one.
+
+51
+00:03:40,950 --> 00:03:45,290
+Now I'll also have to have a means of adding errors to that map.
+
+52
+00:03:45,300 --> 00:03:53,700
+So func the pointer to validation, and we'll call this one an error and it will take a key and a message
+
+53
+00:03:53,970 --> 00:03:57,120
+both of type string and it returns nothing.
+
+54
+00:03:58,950 --> 00:04:03,480
+So we'll we'll do it if statement to make sure we're not adding something that shouldn't be added if
+
+55
+00:04:03,660 --> 00:04:06,990
+we don't care about the first return parameter, but we do care about exists.
+
+56
+00:04:07,800 --> 00:04:17,340
+And that's a sign the value of the errors looking for key and if not exists, then we just add that
+
+57
+00:04:17,340 --> 00:04:19,140
+error to the to the map.
+
+58
+00:04:19,290 --> 00:04:27,840
+The errors key is equal to whatever the error messages, and we receive that as a call to this function.
+
+59
+00:04:28,110 --> 00:04:31,860
+So we have a means of checking validity change by means of adding an error.
+
+60
+00:04:32,820 --> 00:04:33,880
+Now, let's do a simple one.
+
+61
+00:04:33,900 --> 00:04:36,510
+Let's do one that doesn't use go validator.
+
+62
+00:04:36,930 --> 00:04:44,820
+So we'll say funk with a receiver appointed a validation that again, the quantity validation.
+
+63
+00:04:45,840 --> 00:04:49,530
+And we'll check to see if has if the request.
+
+64
+00:04:49,710 --> 00:04:51,120
+This would be for form post.
+
+65
+00:04:52,200 --> 00:04:58,290
+If it has a particular field, so we'll look for a field i.e. bounty of type string.
+
+66
+00:04:59,220 --> 00:05:03,090
+And of course, we need the request as a pointer to a request.
+
+67
+00:05:05,720 --> 00:05:11,960
+And that will return a Boolean true, if it's in the request vaults of it's not.
+
+68
+00:05:12,470 --> 00:05:14,660
+So we just look in the form request to see if it has it.
+
+69
+00:05:14,840 --> 00:05:17,240
+So EX can call this variable.
+
+70
+00:05:17,240 --> 00:05:23,660
+Whatever we want is a sign the value of our the request, dot, form, dot and get.
+
+71
+00:05:23,960 --> 00:05:28,100
+And we're looking for fields which are received as a call to this function.
+
+72
+00:05:28,790 --> 00:05:33,470
+If X is equal to nothing, then return false.
+
+73
+00:05:34,190 --> 00:05:36,800
+Otherwise, it's in the request, so we return true.
+
+74
+00:05:37,220 --> 00:05:43,850
+So checking to see if a particular value is in the form post and what's this?
+
+75
+00:05:45,680 --> 00:05:47,120
+You OK, so we'll fix that.
+
+76
+00:05:48,110 --> 00:05:49,550
+Should return, that's fine.
+
+77
+00:05:49,790 --> 00:05:52,900
+I like it this way, I find it more readable, so I'm going to ignore that error.
+
+78
+00:05:52,910 --> 00:05:54,530
+You can make it a one liner if you want to.
+
+79
+00:05:54,950 --> 00:05:57,730
+OK, now we'll add a check for required fields.
+
+80
+00:05:57,740 --> 00:05:59,600
+And again, we can do this without go validator.
+
+81
+00:05:59,600 --> 00:06:00,800
+But we'll be getting to that in a moment.
+
+82
+00:06:01,490 --> 00:06:02,330
+So we'll call this one.
+
+83
+00:06:02,330 --> 00:06:09,770
+Func V is the receiver for type validator validation and we'll make certain fields required.
+
+84
+00:06:11,300 --> 00:06:13,100
+And again, this is typically for form post.
+
+85
+00:06:13,190 --> 00:06:19,580
+So we're going to need to request our pointer to actually beat out request, and we're also going to
+
+86
+00:06:19,580 --> 00:06:21,860
+need what fields are required.
+
+87
+00:06:21,950 --> 00:06:23,880
+So we'll make that very edit fields.
+
+88
+00:06:23,900 --> 00:06:25,250
+Dot dot dot string.
+
+89
+00:06:27,080 --> 00:06:28,100
+And it doesn't return anything.
+
+90
+00:06:29,730 --> 00:06:34,770
+So this one's as simple as ranging through our fields, so for we don't care about the index, we do
+
+91
+00:06:34,800 --> 00:06:36,570
+care about the field, so we use field.
+
+92
+00:06:36,580 --> 00:06:39,600
+Singular is a sign the value of range through fields.
+
+93
+00:06:42,840 --> 00:06:47,700
+And here we check for the value that's in a given field, the smallest store that in a field in a variable
+
+94
+00:06:47,700 --> 00:06:48,420
+called value.
+
+95
+00:06:48,510 --> 00:06:50,280
+And that's a signed art form.
+
+96
+00:06:50,560 --> 00:06:51,180
+Don't get.
+
+97
+00:06:51,990 --> 00:06:59,130
+And we're going to get filled and we say, if and here, I'm going to trim spaces just to make sure
+
+98
+00:06:59,130 --> 00:07:01,110
+we have something more than a blank space.
+
+99
+00:07:01,470 --> 00:07:06,780
+So I use the strings package dot trim space right there.
+
+100
+00:07:08,720 --> 00:07:13,370
+Value, if that's equal to nothing, if you take the blank spaces away, if there's nothing there,
+
+101
+00:07:13,820 --> 00:07:15,680
+then we'll just say that error.
+
+102
+00:07:15,730 --> 00:07:16,820
+And here's where we're adding an error.
+
+103
+00:07:17,870 --> 00:07:25,880
+We don't add error for field and we'll just put in this field cannot be blank.
+
+104
+00:07:27,440 --> 00:07:28,830
+And that's sufficient for our purposes.
+
+105
+00:07:28,850 --> 00:07:30,830
+You can put whatever you want for an error message there.
+
+106
+00:07:31,160 --> 00:07:38,480
+OK, now a very general purpose function, and this one will get used a lot b validation.
+
+107
+00:07:39,410 --> 00:07:40,850
+And we'll just call this check.
+
+108
+00:07:42,110 --> 00:07:45,830
+And all it's going to take is OK, which is a Boolean.
+
+109
+00:07:47,840 --> 00:07:56,300
+A key the fielding question and the message, which will be both be strings, and this is a very simple
+
+110
+00:07:56,300 --> 00:07:58,010
+function, but it's incredibly useful.
+
+111
+00:07:58,640 --> 00:08:03,530
+We can simply say, if not, OK, then we don't add error.
+
+112
+00:08:05,280 --> 00:08:10,380
+Key message and key, of course, is the name of the field in question, and this is useful both for
+
+113
+00:08:10,380 --> 00:08:15,870
+foreign posts and also for checking things like posted Jason on an API.
+
+114
+00:08:16,710 --> 00:08:21,540
+So what you pass this function, of course, is some condition something that can be evaluated to true
+
+115
+00:08:21,540 --> 00:08:22,380
+or false.
+
+116
+00:08:22,590 --> 00:08:29,250
+It could be as simple as if LEN of the field is less than two or greater than two than return true,
+
+117
+00:08:29,250 --> 00:08:30,360
+otherwise return false.
+
+118
+00:08:30,620 --> 00:08:35,160
+And that would be good for at least two characters requested or required in a field.
+
+119
+00:08:35,160 --> 00:08:38,610
+And we'll be using this, you know, sample code here before too long.
+
+120
+00:08:38,700 --> 00:08:39,870
+Let's get it out of the way.
+
+121
+00:08:40,080 --> 00:08:46,290
+OK, so you've installed that form validation package go validator or that validation package, but
+
+122
+00:08:46,290 --> 00:08:47,340
+we still haven't used it.
+
+123
+00:08:47,880 --> 00:08:48,810
+So let's try one.
+
+124
+00:08:48,900 --> 00:08:54,030
+And here we can use Go Validator, and we want to make sure that something is a valid email address
+
+125
+00:08:54,030 --> 00:08:56,640
+or at least in the form of a valid email address.
+
+126
+00:08:56,700 --> 00:08:57,030
+OK.
+
+127
+00:08:57,480 --> 00:09:04,590
+A simple one func the pointer to validation and we'll call this one is email, and it will take two
+
+128
+00:09:04,590 --> 00:09:09,510
+parameters the field that we're checking, the value that we're checking both of string.
+
+129
+00:09:10,590 --> 00:09:16,890
+OK, and here we can say, if not, if you were using the go validate or package and it's really, really
+
+130
+00:09:16,890 --> 00:09:17,580
+easy to use.
+
+131
+00:09:18,030 --> 00:09:20,880
+Go Validator Dot is email.
+
+132
+00:09:23,520 --> 00:09:25,200
+And we hand it value.
+
+133
+00:09:26,850 --> 00:09:35,970
+So if that's not true, then we had an error vetoing that error and we'll add the field and an invalid.
+
+134
+00:09:38,020 --> 00:09:41,860
+Invalid email address, as simple as that.
+
+135
+00:09:42,250 --> 00:09:48,880
+OK, let's just get a few more, so maybe you want to make sure that a value on a forum post is an integer
+
+136
+00:09:48,940 --> 00:09:51,160
+so long we want you to.
+
+137
+00:09:51,160 --> 00:09:58,360
+Validation is int field and value again, both of type string.
+
+138
+00:10:00,130 --> 00:10:04,210
+And here we can ignore the result, but check for an error and try to convert.
+
+139
+00:10:04,210 --> 00:10:07,600
+That was to an integer so stricken right from the standard library.
+
+140
+00:10:07,930 --> 00:10:15,960
+Got a two hour value and we say if error is not equal to nil, then there's an error.
+
+141
+00:10:15,970 --> 00:10:18,460
+So let's just add it to our map feed at error.
+
+142
+00:10:20,620 --> 00:10:28,840
+The field is the key and the error messages, this field must be an integer again, whatever you want
+
+143
+00:10:28,840 --> 00:10:29,740
+for an error message.
+
+144
+00:10:31,240 --> 00:10:32,500
+So let's just do a few more.
+
+145
+00:10:33,100 --> 00:10:39,310
+So we'll say funk again, the pointer to validation and make sure that this is a float.
+
+146
+00:10:40,060 --> 00:10:42,460
+Pretty much the same is float.
+
+147
+00:10:43,600 --> 00:10:47,230
+So we have field and value, both of type string.
+
+148
+00:10:49,810 --> 00:10:53,350
+I was going to copy and paste this and modify it because it's virtually identical.
+
+149
+00:10:55,120 --> 00:11:02,980
+So instead of calling a toy, we call pass float and we'll try to pass it to say a 64 bit float.
+
+150
+00:11:03,430 --> 00:11:04,000
+Doesn't matter.
+
+151
+00:11:04,120 --> 00:11:05,770
+Long as it can be passed to a float.
+
+152
+00:11:05,920 --> 00:11:11,410
+But we do need something here, so I'll put 64 and my error message will be.
+
+153
+00:11:13,100 --> 00:11:20,240
+A floating point number, so let's try another one for data formats.
+
+154
+00:11:20,420 --> 00:11:27,620
+And again, we'll just use a simple one, func the pointer to validation and I'll call that is data
+
+155
+00:11:27,800 --> 00:11:28,270
+ISO.
+
+156
+00:11:28,390 --> 00:11:34,550
+I'm in Canada, so I like the ISO date format, but you can use whatever format you want value string
+
+157
+00:11:34,760 --> 00:11:35,690
+just as before.
+
+158
+00:11:36,470 --> 00:11:43,670
+And we simply say ignoring the result, checking for an error and we call Time Dot Pass and we pass
+
+159
+00:11:44,990 --> 00:11:51,200
+into this format using Go's unusual date formatting syntax.
+
+160
+00:11:51,500 --> 00:11:55,550
+2006 zero one zero two And we want a pass value.
+
+161
+00:11:56,660 --> 00:12:00,950
+And again, if there's an error, I'll copy and paste this and modify that.
+
+162
+00:12:03,960 --> 00:12:14,220
+Must be a date in the form of Y, y y y, and you get rid of that extraneous space.
+
+163
+00:12:15,660 --> 00:12:20,130
+And last one, somebody you want to make sure that there's no white space in a particular field, so
+
+164
+00:12:20,130 --> 00:12:21,210
+we can do that really easily.
+
+165
+00:12:21,780 --> 00:12:30,450
+And again, this is using go validate or func the validation, and we'll call it no spaces and it takes
+
+166
+00:12:30,450 --> 00:12:32,780
+a field in a value both of type string.
+
+167
+00:12:32,790 --> 00:12:34,020
+It doesn't return anything.
+
+168
+00:12:34,770 --> 00:12:41,780
+But here we say, if GO Validator Dot has white space, no, no.
+
+169
+00:12:41,820 --> 00:12:44,060
+It has lowercase as white space.
+
+170
+00:12:44,070 --> 00:12:48,710
+There are value and there's white space in there and there ought not to be.
+
+171
+00:12:48,720 --> 00:12:53,280
+So we just add an air V2 at air field
+
+172
+00:12:55,890 --> 00:13:00,360
+and spaces are not permitted, and that's enough.
+
+173
+00:13:01,290 --> 00:13:06,660
+So now we have a validation package and in the next lecture we'll try using this and you will discover
+
+174
+00:13:06,660 --> 00:13:08,940
+how easy it is to work with this sort of thing.

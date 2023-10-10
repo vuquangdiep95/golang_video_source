@@ -1,0 +1,259 @@
+1
+00:00:12,840 --> 00:00:19,410
+Hello and welcome to the blank and programming language course in the previous session, we talked about
+
+2
+00:00:19,410 --> 00:00:24,420
+creating a database and table queries and indecision.
+
+3
+00:00:24,450 --> 00:00:26,820
+We want to talk about the other queries.
+
+4
+00:00:33,790 --> 00:00:43,450
+Insert into a statement this you'll insert into a statement is used to add new rolls of data to a table
+
+5
+00:00:43,450 --> 00:00:44,470
+in the database.
+
+6
+00:00:48,920 --> 00:00:53,180
+It is possible to write the insert into a statement in two ways.
+
+7
+00:00:55,670 --> 00:01:00,350
+First is specify both the column names and the values to be inserted.
+
+8
+00:01:02,420 --> 00:01:04,190
+Now you can see the syntax.
+
+9
+00:01:06,670 --> 00:01:13,990
+And second, if you are adding value for all the colours of the table, you do not need to specify the
+
+10
+00:01:13,990 --> 00:01:15,940
+column names in this query.
+
+11
+00:01:16,870 --> 00:01:24,400
+However, make sure the order of the values is in the same order as the columns in the table here.
+
+12
+00:01:24,490 --> 00:01:27,070
+The inserted into syntax would be as follows.
+
+13
+00:01:31,760 --> 00:01:35,400
+Now go to my school database to create a new query.
+
+14
+00:01:36,080 --> 00:01:42,290
+We want to insert values into a student table in person database so people write a new query select
+
+15
+00:01:42,290 --> 00:01:45,790
+database by the comment and use database name.
+
+16
+00:01:45,800 --> 00:01:49,750
+So we write query statement use person.
+
+17
+00:01:52,370 --> 00:01:53,600
+Go to the next line.
+
+18
+00:01:54,320 --> 00:02:01,350
+First, we create a query for insert values in a stool and table by select some fields of the student
+
+19
+00:02:01,350 --> 00:02:01,760
+tail.
+
+20
+00:02:02,600 --> 00:02:09,110
+So the right answer into the student
+
+21
+00:02:12,830 --> 00:02:22,700
+in parentheses, we said fields that we want insert values to them like name and age, name, comma,
+
+22
+00:02:23,000 --> 00:02:36,290
+age, clause Frances's and then values open and close branches again and set values for those fields,
+
+23
+00:02:36,290 --> 00:02:37,150
+for example,
+
+24
+00:02:40,400 --> 00:02:46,250
+chain for name and 24 for each.
+
+25
+00:02:48,250 --> 00:02:57,460
+And said, semicolon in the end of this statement, now execute the query in the navigation panel,
+
+26
+00:02:57,490 --> 00:02:59,590
+right click and select Refresh.
+
+27
+00:03:01,750 --> 00:03:08,280
+Then we select Person Database and go to Table submenu and right click on this student did and select
+
+28
+00:03:08,280 --> 00:03:09,490
+the roles limit.
+
+29
+00:03:13,520 --> 00:03:21,020
+OK, now you can see the new record added to the student table because you insert values for name and
+
+30
+00:03:21,020 --> 00:03:21,980
+age fields.
+
+31
+00:03:22,070 --> 00:03:28,670
+Now we clear the last query and create a new query for insert values for all fields.
+
+32
+00:03:35,430 --> 00:03:42,000
+So we write insert into the student values
+
+33
+00:03:44,550 --> 00:03:57,900
+and set values for all fields, respectively, for example, two for I.D. and Sit Robert for name and
+
+34
+00:03:57,900 --> 00:04:08,970
+security as h and execute again a statement go to the Navigator panel, right click and reference wrong
+
+35
+00:04:09,330 --> 00:04:15,360
+and go to the database person and on the student table, right click and select rules.
+
+36
+00:04:17,250 --> 00:04:20,850
+Now you can see the new record added to this student data.
+
+37
+00:04:21,720 --> 00:04:26,120
+In this case, we saw twist or two different values in two different ways.
+
+38
+00:04:26,130 --> 00:04:31,620
+Inside this student tale, it now goes twist, lies and continue.
+
+39
+00:04:36,810 --> 00:04:44,610
+Read Operation Statement this Q and select a statement is used to fetch the data from a database table,
+
+40
+00:04:44,820 --> 00:04:48,810
+which returns these data in the form of a result table.
+
+41
+00:04:49,410 --> 00:04:52,410
+This result tables are called results sets.
+
+42
+00:04:53,130 --> 00:04:59,340
+If you want to fit some of the fields variable in the table, then you can use the following syntax
+
+43
+00:05:00,600 --> 00:05:00,990
+here.
+
+44
+00:05:01,020 --> 00:05:07,290
+Column one comma column two are the fields of a table whose values you want to fetch.
+
+45
+00:05:08,280 --> 00:05:14,220
+If you want to fit all the feeds available in the table, then you can use the following syntax.
+
+46
+00:05:18,490 --> 00:05:22,000
+Now go to my school database to create a new query.
+
+47
+00:05:23,080 --> 00:05:24,820
+First, clear the last query.
+
+48
+00:05:26,980 --> 00:05:30,940
+We want to select values from a student table in person database.
+
+49
+00:05:31,240 --> 00:05:37,060
+So before right and you query select database by the comment use database name.
+
+50
+00:05:37,070 --> 00:05:44,890
+So write query statement, use person cynical and go to the next line.
+
+51
+00:05:46,420 --> 00:05:49,240
+We want to create the select query in two ways.
+
+52
+00:05:49,660 --> 00:05:58,850
+First, select query for some fields of a student table, so we write select right field names that
+
+53
+00:05:58,850 --> 00:06:10,660
+we want to display like i.e. the common name and continue to query from the student, said Semicolon,
+
+54
+00:06:10,660 --> 00:06:12,850
+and execute the statement.
+
+55
+00:06:15,310 --> 00:06:21,880
+Now we can see a student table records were displayed based on the selected fields, I.D. and name.
+
+56
+00:06:23,110 --> 00:06:27,640
+It's time to create a new query and display on fields of the student table.
+
+57
+00:06:27,940 --> 00:06:29,860
+So clear the last go
+
+58
+00:06:32,440 --> 00:06:36,940
+and write select put an asterisk.
+
+59
+00:06:37,210 --> 00:06:45,760
+The asterisk indicates that all fields in the table should be selected as tar or asterisk from the student's.
+
+60
+00:06:46,750 --> 00:06:50,350
+Sit semicolon and again, execute the query.
+
+61
+00:06:52,570 --> 00:06:57,800
+Now we can see a student table records were displayed based on all fields.
+
+62
+00:06:58,180 --> 00:06:58,550
+OK.
+
+63
+00:06:59,620 --> 00:07:02,350
+In order not to prolong the time of decision.
+
+64
+00:07:02,600 --> 00:07:06,490
+Will finish it and we will continue the content in the next session.
+
+65
+00:07:06,770 --> 00:07:07,300
+Goodbye.

@@ -1,0 +1,583 @@
+1
+00:00:01,220 --> 00:00:05,840
+So in order to try out our Maler package, we of course, need to have some kind of mail server and
+
+2
+00:00:05,840 --> 00:00:08,330
+you can use them live mail server if you want to.
+
+3
+00:00:08,360 --> 00:00:09,350
+It's entirely up to you.
+
+4
+00:00:09,770 --> 00:00:14,660
+But typically in development, we use something like Mail Trapdoors Bio, which is on the screen right
+
+5
+00:00:14,660 --> 00:00:19,130
+in front of us, and it does have a developer account and it's free and it allows sufficient traffic
+
+6
+00:00:19,130 --> 00:00:20,720
+for most development purposes.
+
+7
+00:00:21,710 --> 00:00:26,360
+Another alternative and I've used this in other courses is something called Mail Hook, which you can
+
+8
+00:00:26,360 --> 00:00:27,940
+download and run locally.
+
+9
+00:00:27,950 --> 00:00:32,030
+If you're on a Mac and you happen to have homebrew installed, it's as simple as opening a terminal
+
+10
+00:00:32,270 --> 00:00:33,320
+and typing brew.
+
+11
+00:00:33,320 --> 00:00:39,560
+Install mail hug all one word, all lowercase, but you can download it and run it, and it's really
+
+12
+00:00:39,560 --> 00:00:44,150
+easy to use and the instructions are right on this page, and I've put a link to both mail trap and
+
+13
+00:00:44,150 --> 00:00:47,690
+mail hug on the course resources for this lecture.
+
+14
+00:00:48,320 --> 00:00:51,620
+I'm going to use Mail Hogg because I have it installed and running.
+
+15
+00:00:52,070 --> 00:00:56,780
+So first thing we need to do is to go over to our My App project.
+
+16
+00:00:57,170 --> 00:01:01,610
+And if you look in the course resources for this lecture, you'll find a zip file you can download that
+
+17
+00:01:01,610 --> 00:01:03,500
+has two things inside of it.
+
+18
+00:01:03,980 --> 00:01:06,980
+And so unzip that file and put those in your mail folder.
+
+19
+00:01:07,010 --> 00:01:08,870
+One is called test HTML.
+
+20
+00:01:08,870 --> 00:01:12,290
+That tempo, and the other one is test explained, up tempo.
+
+21
+00:01:12,950 --> 00:01:14,630
+And of course, these are very simple files.
+
+22
+00:01:14,960 --> 00:01:19,010
+So here's the test explain, define body.
+
+23
+00:01:19,010 --> 00:01:20,930
+Enter your email message content here.
+
+24
+00:01:21,260 --> 00:01:24,800
+Very simple, and the HTML version is the same thing.
+
+25
+00:01:24,800 --> 00:01:29,660
+It just wrapped some HTML around it, and it doesn't really matter what the contents of that HTML is.
+
+26
+00:01:29,990 --> 00:01:31,730
+We just want to be able to mail it.
+
+27
+00:01:32,480 --> 00:01:38,270
+So once you have that done, the next step is to open up your own file and go down to the very bottom
+
+28
+00:01:38,270 --> 00:01:42,140
+of the file and populate the appropriate values.
+
+29
+00:01:42,140 --> 00:01:46,070
+Here, whatever host you're using, I'm on my blog, so I'm using a local host.
+
+30
+00:01:46,490 --> 00:01:52,430
+And because I'm a mail hog, I use part one zero two five with no encryption, and I also specify my
+
+31
+00:01:52,520 --> 00:01:53,690
+SMTP from value.
+
+32
+00:01:53,930 --> 00:01:54,230
+OK.
+
+33
+00:01:55,010 --> 00:01:57,980
+So once those are all set, we can actually test this out.
+
+34
+00:01:58,160 --> 00:02:03,890
+So what I'm going to do is open my roots file and I'll simply inline a test route and I'll put it right
+
+35
+00:02:03,890 --> 00:02:04,190
+here.
+
+36
+00:02:04,220 --> 00:02:08,190
+So I'll just write my handler right in the route itself, and I'll make this a guess.
+
+37
+00:02:08,210 --> 00:02:09,040
+Get requests.
+
+38
+00:02:09,040 --> 00:02:10,100
+So don't get it.
+
+39
+00:02:10,700 --> 00:02:17,420
+And I'm going to use slash test dash mail as the root to call, and then I'll inline my handler.
+
+40
+00:02:17,540 --> 00:02:26,330
+So a function with a W.A.S.P. response writer and a request our pointer to issue repeat our request.
+
+41
+00:02:29,060 --> 00:02:30,560
+And my function will be very simple.
+
+42
+00:02:30,830 --> 00:02:32,300
+And here's how we send mail.
+
+43
+00:02:32,330 --> 00:02:37,640
+If everything works as expected, in any case, I'll create a variable called message and it will be
+
+44
+00:02:37,640 --> 00:02:44,540
+of type mailer, dark message, and I'll put some values in there.
+
+45
+00:02:45,200 --> 00:02:50,720
+So I'll say it's from doesn't matter what it is because I'm using Mail Hog, but I'll put test at example
+
+46
+00:02:51,020 --> 00:02:51,680
+dot com.
+
+47
+00:02:53,540 --> 00:02:58,550
+And I'll put it to and I'll make that you add there dot com.
+
+48
+00:03:01,010 --> 00:03:03,590
+Again, because I'm using a test, a mailer mail hog.
+
+49
+00:03:03,650 --> 00:03:07,400
+It really doesn't matter what those values are, as long as they look like email addresses.
+
+50
+00:03:08,390 --> 00:03:09,170
+And I'll put a subject
+
+51
+00:03:14,570 --> 00:03:15,980
+and I'll say test subject
+
+52
+00:03:19,280 --> 00:03:24,490
+sent using func because I'm going to send it by calling the function directly for two to start with
+
+53
+00:03:24,500 --> 00:03:30,950
+in any case and its template in this case, because in my mail folder, I have two files that start
+
+54
+00:03:30,950 --> 00:03:31,930
+with the word test.
+
+55
+00:03:32,000 --> 00:03:36,620
+One ends with dot html duct tape TPL, the other ends with explained oatmeal.
+
+56
+00:03:37,160 --> 00:03:38,780
+I just put test in here as a string.
+
+57
+00:03:39,840 --> 00:03:45,500
+I have a spell right or won't work, and I'll say attachments.
+
+58
+00:03:46,130 --> 00:03:47,000
+I'll just make that, Neal.
+
+59
+00:03:47,090 --> 00:03:50,120
+I could just leave it empty and it would default to nil and I'll put data.
+
+60
+00:03:50,720 --> 00:03:55,070
+And of course, that's Neil as well, because I'm not going to actually attach anything to this message
+
+61
+00:03:55,070 --> 00:03:56,490
+and I'm not passing any data.
+
+62
+00:03:56,510 --> 00:04:00,050
+The templates, I could leave those empty and they would default to nil.
+
+63
+00:04:00,050 --> 00:04:00,980
+But I like to be clear.
+
+64
+00:04:01,940 --> 00:04:04,040
+So now we'll try sending a message.
+
+65
+00:04:04,640 --> 00:04:16,130
+So I'll give myself some room and scroll up and I'll simply say a dot app, dot mail dot jobs.
+
+66
+00:04:16,460 --> 00:04:18,260
+That's the jobs channel I'm going to use.
+
+67
+00:04:18,800 --> 00:04:21,500
+So I'm actually in the Senate using the channels to do the function later.
+
+68
+00:04:27,200 --> 00:04:29,210
+I'm going to pass into that my message.
+
+69
+00:04:31,630 --> 00:04:34,750
+And of course, they want to get the result, so we'll call that raise.
+
+70
+00:04:35,350 --> 00:04:41,020
+That's a sign the value of whatever comes back from a don't mailed results.
+
+71
+00:04:42,490 --> 00:04:53,130
+And if there's an error, if resort error, if that's not equal to nil, then I'll say aid on app dialogue.
+
+72
+00:04:56,320 --> 00:04:57,190
+Dot print line.
+
+73
+00:04:58,420 --> 00:05:01,120
+And I'll just print out Reds dot error.
+
+74
+00:05:03,070 --> 00:05:07,570
+So we should be able now to compile this and go to test dash mail.
+
+75
+00:05:07,570 --> 00:05:08,770
+So I'll copy this route.
+
+76
+00:05:10,150 --> 00:05:11,380
+I'll start the application.
+
+77
+00:05:14,590 --> 00:05:15,460
+Make restart.
+
+78
+00:05:22,940 --> 00:05:28,460
+So it's building Solares house, and it's taking some time because it's creating the Voyager database,
+
+79
+00:05:28,460 --> 00:05:29,090
+but now it's running.
+
+80
+00:05:29,390 --> 00:05:39,860
+OK, so let's go to our web browser and let's go to celebrities localhost four thousand and I will open
+
+81
+00:05:39,860 --> 00:05:46,550
+another tab and a look at local host port eight zero two five, which is mail hook.
+
+82
+00:05:48,320 --> 00:05:50,240
+OK, so there's nothing in mail hub.
+
+83
+00:05:50,360 --> 00:05:57,350
+So now I can come back here and put the test in the mail and I should just give me a blank screen so
+
+84
+00:05:57,400 --> 00:06:00,560
+didn't tell it to write anything to the screen or an error in the log file.
+
+85
+00:06:01,550 --> 00:06:03,290
+So it's set that hopefully.
+
+86
+00:06:03,680 --> 00:06:04,910
+And if you look in mail, hug.
+
+87
+00:06:06,010 --> 00:06:06,700
+Nothing showed up.
+
+88
+00:06:06,850 --> 00:06:08,950
+So let's go look at our error log and see what we got wrong.
+
+89
+00:06:09,250 --> 00:06:13,210
+This is the first time we're actually testing the mail functionality, so undoubtedly something is wrong.
+
+90
+00:06:15,040 --> 00:06:19,460
+Mail open mail test, mailed tempo.
+
+91
+00:06:20,680 --> 00:06:25,090
+So I called it so it's opening the incorrect route.
+
+92
+00:06:25,120 --> 00:06:27,340
+No such file or directory.
+
+93
+00:06:27,340 --> 00:06:31,360
+It's looking for slash mail slash test, mailed out template.
+
+94
+00:06:32,230 --> 00:06:35,770
+So it looks like we have something wrong over here in our silver tax package.
+
+95
+00:06:36,340 --> 00:06:42,640
+Let's open up the mail file and find out what we specified for the template.
+
+96
+00:06:47,190 --> 00:06:48,470
+That would be under build.
+
+97
+00:06:52,450 --> 00:06:53,590
+Each time our message.
+
+98
+00:06:56,270 --> 00:07:00,920
+And templates, yeah, we probably want to populate that with some useful value, so let's go back to
+
+99
+00:07:00,920 --> 00:07:03,440
+our celebrity start and go and see what we put in there.
+
+100
+00:07:05,180 --> 00:07:06,740
+So that would be under create mailer.
+
+101
+00:07:10,980 --> 00:07:12,900
+Which is down here somewhere.
+
+102
+00:07:14,600 --> 00:07:19,160
+Create Miller and I put C slash route path.
+
+103
+00:07:20,860 --> 00:07:28,630
+Plus, slash mail that looks right, then it must be where I specify creating the mailer must be after
+
+104
+00:07:28,630 --> 00:07:29,770
+a set route path.
+
+105
+00:07:35,550 --> 00:07:36,910
+Where do I set Route Path?
+
+106
+00:07:44,470 --> 00:07:44,800
+Yeah.
+
+107
+00:07:45,310 --> 00:07:51,670
+So here's the problem I created the root path variable here after I created the matter, so let's just
+
+108
+00:07:51,670 --> 00:07:58,810
+take this and cut it, put it down here after we populate root path.
+
+109
+00:08:00,310 --> 00:08:00,910
+That's better.
+
+110
+00:08:02,140 --> 00:08:06,280
+So switch back to our application and restart the app.
+
+111
+00:08:06,430 --> 00:08:07,750
+So make restart.
+
+112
+00:08:08,680 --> 00:08:09,550
+And this time it should work.
+
+113
+00:08:17,680 --> 00:08:18,250
+So it's running.
+
+114
+00:08:18,520 --> 00:08:19,780
+Let's go back to our Web browser
+
+115
+00:08:22,720 --> 00:08:29,000
+and just click in the URL bar and hit return and come back to mail hug.
+
+116
+00:08:29,050 --> 00:08:29,800
+And there's by mail.
+
+117
+00:08:30,130 --> 00:08:31,510
+It sent it using a channel.
+
+118
+00:08:31,660 --> 00:08:32,800
+Well, that's pretty straightforward.
+
+119
+00:08:33,100 --> 00:08:35,850
+Now we can also, of course, call that function directly.
+
+120
+00:08:35,860 --> 00:08:37,120
+We can go back here.
+
+121
+00:08:38,100 --> 00:08:41,550
+To visual studio code and find our roots.
+
+122
+00:08:42,330 --> 00:08:56,760
+And we just comment this part out and instead we can say, Hey, Don App Dot Mail Dot, send us some
+
+123
+00:08:56,760 --> 00:08:58,950
+TV message and hand it message.
+
+124
+00:09:01,650 --> 00:09:02,010
+OK.
+
+125
+00:09:02,310 --> 00:09:07,620
+And that, as you can see, returns an error, so we can do the same thing here, we can say error is
+
+126
+00:09:07,620 --> 00:09:17,070
+a sign the value of and if there's an error, if there is not equal to nil, then printed out a Dot
+
+127
+00:09:17,070 --> 00:09:22,530
+app Typekit error log dot print line
+
+128
+00:09:26,220 --> 00:09:28,590
+error and will return.
+
+129
+00:09:29,700 --> 00:09:36,270
+And this time we'll write something to the screen so we can say format, dot, f print and print out
+
+130
+00:09:36,960 --> 00:09:41,520
+sent mail and we have to print it to the response rate, of course.
+
+131
+00:09:43,410 --> 00:09:46,650
+OK, let's restart the application just to make sure this works.
+
+132
+00:09:47,400 --> 00:09:48,090
+Make restart.
+
+133
+00:09:58,030 --> 00:10:05,120
+And now we'll go back to our web browser and I'll clear out everything that's in Mail Hog so those will
+
+134
+00:10:05,120 --> 00:10:08,570
+be gone or that message is now gone and I'll come back here.
+
+135
+00:10:08,720 --> 00:10:11,780
+Click on the earlier hit return and I should get a message back.
+
+136
+00:10:11,780 --> 00:10:16,150
+This time sent mail, which says, Send mail, but oh well, it's a typo.
+
+137
+00:10:16,160 --> 00:10:17,050
+I can live with that.
+
+138
+00:10:17,060 --> 00:10:17,670
+And there it is.
+
+139
+00:10:17,930 --> 00:10:21,710
+Test subject and everything is there and I look at the plain text.
+
+140
+00:10:22,010 --> 00:10:26,390
+There's the plain text version of the message, so everything seems to work as expected.
+
+141
+00:10:27,170 --> 00:10:33,020
+Now, of course, the next thing I want to test is sending mail using an API and I'll use Mail Gun because
+
+142
+00:10:33,020 --> 00:10:34,280
+I already have an account there.
+
+143
+00:10:34,280 --> 00:10:38,480
+And you may not want to do this part if you don't want to pay for them, because all three of the services
+
+144
+00:10:38,480 --> 00:10:41,540
+we're supporting actually require a subscription of some sort.
+
+145
+00:10:42,050 --> 00:10:47,240
+But I can at least test out mail going and make sure that it works as I expect it to, and we'll take
+
+146
+00:10:47,240 --> 00:10:48,800
+care of that in the next election.

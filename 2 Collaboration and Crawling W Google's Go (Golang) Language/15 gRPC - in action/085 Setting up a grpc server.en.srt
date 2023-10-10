@@ -1,0 +1,579 @@
+1
+00:00:00,270 --> 00:00:00,590
+All right.
+
+2
+00:00:00,600 --> 00:00:08,040
+So just to anchor you anchor you in the course outline what we've seen so far as defining the service.
+
+3
+00:00:08,250 --> 00:00:14,790
+And then I had a little commentary on DSL versus ideals of domain specific language versus interface
+
+4
+00:00:14,790 --> 00:00:17,820
+design language or definition language.
+
+5
+00:00:17,820 --> 00:00:22,560
+And we also talked about versions using the most current version.
+
+6
+00:00:22,830 --> 00:00:28,650
+And then we looked at compiling the service and then after that we talked about Protocol Buffers.
+
+7
+00:00:28,890 --> 00:00:35,310
+And then when I hear protocol buffer I think Jason and we also discussed folders and packages and go.
+
+8
+00:00:35,310 --> 00:00:42,360
+And so now we're going to see setting up a G.P.S. server and that's going to require writing some go
+
+9
+00:00:42,360 --> 00:00:49,090
+code so that we can use what we've generated so far and this will be a multi-step process.
+
+10
+00:00:49,090 --> 00:00:51,100
+And so we're not going to deal with the client yet.
+
+11
+00:00:51,120 --> 00:00:52,820
+We're just going to setup the server.
+
+12
+00:00:53,070 --> 00:00:56,580
+And Daniel is going to give us a walkthrough on that code.
+
+13
+00:00:56,580 --> 00:01:02,910
+And then in the video after this if needed all out and we'll add in another video we're all just kind
+
+14
+00:01:02,910 --> 00:01:08,200
+of like go through the code to help us all understand the code if that needs to happen.
+
+15
+00:01:08,250 --> 00:01:12,300
+And so that's the game plan that's where we've been where we are and where we're going.
+
+16
+00:01:12,460 --> 00:01:18,360
+And and the one thing that we were discussing off line which I added into our notes here for us to discuss
+
+17
+00:01:18,360 --> 00:01:25,950
+on videos that you get a piece of it was making sure to commit your ideal DSL whatever you want to call
+
+18
+00:01:25,950 --> 00:01:34,100
+it proto G.P.S. calls it ideal so maybe we should stick with ideal interface definition language.
+
+19
+00:01:34,240 --> 00:01:39,470
+And I just need to make sure I'm using the right right interface definition language.
+
+20
+00:01:39,470 --> 00:01:40,430
+There it is.
+
+21
+00:01:40,500 --> 00:01:50,520
+And and so you know we were talking about the importance of committing to get GitHub wherever you can
+
+22
+00:01:50,610 --> 00:01:55,790
+meet your code you're your ideal DSL stuff.
+
+23
+00:01:55,830 --> 00:01:58,770
+So you had a couple of thoughts on that and some experience with that.
+
+24
+00:01:59,530 --> 00:02:00,320
+Yeah just.
+
+25
+00:02:00,800 --> 00:02:05,850
+So yeah you need the dot the dot profile because that's your actual that's your important bit but you
+
+26
+00:02:05,850 --> 00:02:09,270
+also want to commit the DOT go filed that got generated from it.
+
+27
+00:02:09,630 --> 00:02:14,460
+So even though you can regenerate this whenever you want just by rerunning that Potosi command off of
+
+28
+00:02:14,760 --> 00:02:21,660
+the the DOT profile you still want to commit this dot go file so that you can import it or use it as
+
+29
+00:02:21,660 --> 00:02:24,080
+a module in other packages.
+
+30
+00:02:24,210 --> 00:02:30,160
+So make sure you commit both both the the file you write and the generated code based on that.
+
+31
+00:02:30,600 --> 00:02:34,670
+Yeah a little gotcha there as you might think well this could be generally the time I commit it.
+
+32
+00:02:34,920 --> 00:02:38,310
+And so don't do that just commit it all.
+
+33
+00:02:38,310 --> 00:02:38,560
+All right.
+
+34
+00:02:38,580 --> 00:02:41,100
+So let's see how to setup a G.P.S. sir.
+
+35
+00:02:41,100 --> 00:02:41,340
+All right.
+
+36
+00:02:41,430 --> 00:02:49,170
+So I've copied everything from the 0 1 0 2 0 2 server here just to to keep things clean and step wise
+
+37
+00:02:49,740 --> 00:02:51,530
+so I going to create a new file in here.
+
+38
+00:02:51,570 --> 00:02:55,170
+I'm just going to call it a mean go.
+
+39
+00:02:55,180 --> 00:03:03,210
+This is in the folder 0 2 server directly at same level as the echo folder so this will be my package
+
+40
+00:03:03,210 --> 00:03:05,640
+main with my func main.
+
+41
+00:03:06,600 --> 00:03:08,550
+And here's where we will create the server.
+
+42
+00:03:08,550 --> 00:03:14,580
+So first thing I'm going to want to do is if you go to the generated code and you scroll down enough
+
+43
+00:03:15,630 --> 00:03:20,780
+you will find the echo server server.
+
+44
+00:03:21,640 --> 00:03:23,550
+Yes it's got a little bit of stutter there.
+
+45
+00:03:23,550 --> 00:03:29,370
+So the first part their echo server is just what I define as my service and then it's the server part
+
+46
+00:03:29,370 --> 00:03:29,670
+of that.
+
+47
+00:03:29,820 --> 00:03:31,530
+So this is got an interface.
+
+48
+00:03:31,530 --> 00:03:39,150
+So you need to implement this interface as this is what you will call will be called whenever a request
+
+49
+00:03:39,150 --> 00:03:40,390
+is made to this.
+
+50
+00:03:41,120 --> 00:03:41,640
+So.
+
+51
+00:03:41,700 --> 00:03:44,340
+So to fulfill the interface you're going to need some type.
+
+52
+00:03:44,340 --> 00:03:48,810
+So I'm just gonna type echo server is an empty struct.
+
+53
+00:03:49,020 --> 00:03:53,400
+I don't have any fields that I need to have in that struct I could put an inch there just or just as
+
+54
+00:03:53,400 --> 00:03:57,120
+easily but empty struct is good because it takes no memory
+
+55
+00:04:00,670 --> 00:04:08,320
+so I'm going to and then I need to create in the echo server function I'm just gonna go over here to
+
+56
+00:04:08,320 --> 00:04:17,170
+this interface I'm just gonna copy this part here directly and then go back and add in the Echo Dot
+
+57
+00:04:18,890 --> 00:04:21,550
+and Echo Dot there in there.
+
+58
+00:04:22,820 --> 00:04:28,360
+So now I've got the function I'm going to save and I'm gonna need to go back and add the imports.
+
+59
+00:04:28,700 --> 00:04:34,080
+I'm going to need to import context and I'm going to need to import the.
+
+60
+00:04:34,230 --> 00:04:35,440
+This echo PDB.
+
+61
+00:04:35,740 --> 00:04:45,350
+So that's located at our namespace that are go modified so hub dot com slash goes to do that then slash
+
+62
+00:04:45,840 --> 00:04:57,410
+Golding project and then sub folders I mean 0 0 5 dash G R P C slash 0 2 0 2 server slash echo
+
+63
+00:05:01,020 --> 00:05:01,790
+looks good.
+
+64
+00:05:01,790 --> 00:05:04,670
+So that's R so that's that imports.
+
+65
+00:05:04,670 --> 00:05:07,410
+This generated echo from code.
+
+66
+00:05:07,820 --> 00:05:15,260
+And when I see that we're now creating a method with the receiver pointer to echo server attached to
+
+67
+00:05:15,260 --> 00:05:28,310
+the type echo server struct then we have to in this method return that pointer to an echo response and
+
+68
+00:05:28,310 --> 00:05:29,360
+an error yet.
+
+69
+00:05:29,390 --> 00:05:32,900
+So we've got to get something to go in there that returns a pointer to an a response.
+
+70
+00:05:32,930 --> 00:05:33,070
+Yeah.
+
+71
+00:05:33,090 --> 00:05:39,400
+There see a pointer to an egg to an echo echo response.
+
+72
+00:05:39,480 --> 00:05:43,050
+And so this will just be your normal response and error.
+
+73
+00:05:43,130 --> 00:05:50,380
+So because our response if you look in your profile or echo responses has a restrained response.
+
+74
+00:05:50,420 --> 00:05:57,310
+So if we go into our generated code we can actually find an echo response is a struct with all these
+
+75
+00:05:57,310 --> 00:06:03,190
+fields these three ones that start x x x are internal to proto buffer so we don't need to worry about
+
+76
+00:06:03,190 --> 00:06:03,910
+them.
+
+77
+00:06:03,910 --> 00:06:05,930
+So we just have this response.
+
+78
+00:06:06,250 --> 00:06:09,350
+So we can just create that as response.
+
+79
+00:06:09,370 --> 00:06:12,070
+So this will be what our responses.
+
+80
+00:06:12,310 --> 00:06:19,240
+And so we want our response to be maybe echo colon and then whatever they sent us in the echo request.
+
+81
+00:06:19,990 --> 00:06:27,970
+So our echo request we need to make sure we actually have variables for each of these so I could request
+
+82
+00:06:28,000 --> 00:06:32,690
+we got request dot and there's a bunch of stuff in here.
+
+83
+00:06:32,950 --> 00:06:36,340
+Message though is what we defined an echo request has a message.
+
+84
+00:06:36,400 --> 00:06:42,100
+And again if you go to the generated code we can find echo request and it's got message and some proto
+
+85
+00:06:42,120 --> 00:06:43,060
+Buffington.
+
+86
+00:06:43,210 --> 00:06:45,450
+Nice.
+
+87
+00:06:45,600 --> 00:06:46,040
+So.
+
+88
+00:06:46,050 --> 00:06:50,340
+So now whenever someone calls echo we will send back a response.
+
+89
+00:06:50,340 --> 00:06:57,200
+Echo colon space whatever they syntax let's call it my echo.
+
+90
+00:06:57,270 --> 00:06:59,320
+I know it's just like text right.
+
+91
+00:06:59,340 --> 00:06:59,850
+There you go.
+
+92
+00:06:59,850 --> 00:07:00,430
+Perfect.
+
+93
+00:07:01,100 --> 00:07:01,310
+Yeah.
+
+94
+00:07:01,350 --> 00:07:01,810
+Great.
+
+95
+00:07:02,960 --> 00:07:03,780
+Yeah.
+
+96
+00:07:04,200 --> 00:07:04,520
+So.
+
+97
+00:07:04,600 --> 00:07:06,440
+So now we've defined our End Point.
+
+98
+00:07:06,470 --> 00:07:08,520
+Now we need to actually create the server part.
+
+99
+00:07:08,670 --> 00:07:15,130
+And so this is not actually as easy as the HP package we're just listening server.
+
+100
+00:07:15,570 --> 00:07:17,510
+It's got a few extra steps.
+
+101
+00:07:17,550 --> 00:07:24,580
+So first off you GOPAC server does not listen by default on a network port.
+
+102
+00:07:24,630 --> 00:07:28,380
+So we have to create a network listener ourselves.
+
+103
+00:07:28,560 --> 00:07:36,630
+And so that's in just the the net package not net HP just net so net
+
+104
+00:07:39,150 --> 00:07:46,300
+listen takes in to our net debt listen takes them to arguments it takes in what kind of network you're
+
+105
+00:07:46,300 --> 00:07:48,880
+listening on and then the address.
+
+106
+00:07:48,880 --> 00:07:53,980
+So that what you're listening on we want to listen for key messages and the address is just basically
+
+107
+00:07:53,980 --> 00:07:54,400
+the port.
+
+108
+00:07:54,880 --> 00:07:57,150
+So colon 88 works here.
+
+109
+00:07:57,220 --> 00:08:06,000
+So to listen on Port 88 this gives our listener and their potentially so once we got that check our
+
+110
+00:08:06,000 --> 00:08:08,060
+error is not equal nil.
+
+111
+00:08:08,120 --> 00:08:14,270
+It's an IC error so we've got our listener now.
+
+112
+00:08:14,270 --> 00:08:20,540
+Now we've set up the GOP C server so I'm just gonna go to this generated code because it's got the import
+
+113
+00:08:20,540 --> 00:08:28,090
+for G.P.S. and just import that real fast so GOPAC
+
+114
+00:08:30,610 --> 00:08:41,050
+you can create a G.P.S. server like this and this takes in a number of options that are all optional.
+
+115
+00:08:41,080 --> 00:08:46,360
+So I'm going to skip all of those that you that would be where you'd set up like authentication if you
+
+116
+00:08:46,380 --> 00:08:51,150
+wanted like TRW or something that would be a potential argument but an on off antiquated servers.
+
+117
+00:08:51,160 --> 00:08:51,990
+Good enough for here.
+
+118
+00:08:52,000 --> 00:08:54,240
+So we'll just leave it at that.
+
+119
+00:08:54,250 --> 00:09:03,250
+Now we need to create our echo server so this server is a pointer to echo server.
+
+120
+00:09:03,550 --> 00:09:09,700
+And now we need to register our echo server with the GOP server or so.
+
+121
+00:09:09,780 --> 00:09:17,830
+So that line twenty seven there you're just instantiating I want to see instantiate you are you are
+
+122
+00:09:18,640 --> 00:09:24,770
+initializing a variable of type echo server and it has no fields.
+
+123
+00:09:25,950 --> 00:09:26,350
+So.
+
+124
+00:09:26,380 --> 00:09:31,620
+So to register echo server with the service one of our generated functions.
+
+125
+00:09:31,660 --> 00:09:38,250
+If we go all the way down to the Echo server server interface right underneath it there is a register
+
+126
+00:09:38,250 --> 00:09:46,650
+echo server server function that takes in a GOP server and an active server server interface so we can
+
+127
+00:09:46,650 --> 00:09:55,590
+just use that directly Echo Dot register echo server clear pass in our G.P.S. server and our.
+
+128
+00:09:56,130 --> 00:10:04,760
+And our implementation of the Echo server server interface now GOP C knows about our service and now
+
+129
+00:10:04,760 --> 00:10:06,830
+we need to actually listen.
+
+130
+00:10:06,920 --> 00:10:16,630
+So we tell our G.P.S. server to serve on our listener and this could potentially return in error so
+
+131
+00:10:16,630 --> 00:10:17,470
+we'll check our error
+
+132
+00:10:21,660 --> 00:10:28,680
+so one thing you might do to just make things nicer to you might put in a print line now serving at
+
+133
+00:10:29,000 --> 00:10:39,920
+Port 88 just to just to let you so you can know when you are when it's finished starting at
+
+134
+00:10:43,190 --> 00:10:43,520
+right.
+
+135
+00:10:43,550 --> 00:10:48,230
+So this server is now running available I can go run main dot go
+
+136
+00:10:50,930 --> 00:10:52,070
+which will build and run it
+
+137
+00:10:55,050 --> 00:10:56,730
+however long it takes.
+
+138
+00:10:57,070 --> 00:11:03,390
+There it goes the breathless moment you hear it's now 0 or 80 80 awesome.
+
+139
+00:11:03,590 --> 00:11:04,320
+So done.
+
+140
+00:11:04,340 --> 00:11:05,900
+Let's say we don't have a client yet.
+
+141
+00:11:05,920 --> 00:11:09,260
+We can't actually check if it's working as we intend yet.
+
+142
+00:11:09,330 --> 00:11:10,480
+That'll be the next video.
+
+143
+00:11:10,500 --> 00:11:18,330
+But this is how you how you create a server or implement your service that you've defined and how to
+
+144
+00:11:18,600 --> 00:11:23,800
+register it up with a GOP server nicely done.
+
+145
+00:11:23,800 --> 00:11:24,670
+See you next video.

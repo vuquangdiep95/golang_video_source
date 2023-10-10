@@ -1,0 +1,335 @@
+1
+00:00:14,920 --> 00:00:19,450
+Hello and welcome to the goal and programming language course in this session.
+
+2
+00:00:19,480 --> 00:00:22,600
+We want to talk about the other hottest concepts.
+
+3
+00:00:28,080 --> 00:00:29,760
+Multidimensional at A.
+
+4
+00:00:30,970 --> 00:00:37,930
+As we already know, that arrays are one dimensional, but you are allowed to create a multidimensional
+
+5
+00:00:37,930 --> 00:00:43,630
+array, multidimensional arrays are the arrays of arrays of the same type.
+
+6
+00:00:44,660 --> 00:00:50,780
+In go language, you can create a multidimensional a using the following syntax.
+
+7
+00:00:54,070 --> 00:01:02,320
+Indecision, we want to talk about two dimensional array, a two dimensional arrays, in a sense at
+
+8
+00:01:02,330 --> 00:01:10,540
+least of one dimensional arrays to declare a two dimensional at a right something as follows that.
+
+9
+00:01:12,320 --> 00:01:19,730
+Add a name Esquire bracket, it's Esquire bracket y and very, very tight.
+
+10
+00:01:20,510 --> 00:01:27,440
+They're very able Typekit can be any valid go data time and rename will be a valid go identifier.
+
+11
+00:01:28,410 --> 00:01:35,940
+A two dimensional array can be king as a table, which will have X number of rolls and Y number of colors.
+
+12
+00:01:36,930 --> 00:01:44,730
+For the example, a two dimensional adi, which contains two rows and three continents, can be shown
+
+13
+00:01:44,730 --> 00:01:45,990
+as below table.
+
+14
+00:01:48,440 --> 00:01:56,870
+You can create a multidimensional ADI using via keyboard or using shorthand declaration in multidimensional
+
+15
+00:01:56,870 --> 00:02:04,160
+at a if a sin is not initialized with some manual by the user, then it will be initialized with zero
+
+16
+00:02:04,160 --> 00:02:06,020
+by the compiler automatically.
+
+17
+00:02:06,500 --> 00:02:09,860
+There is no initialized concept in the goal link.
+
+18
+00:02:10,580 --> 00:02:15,920
+Now go to this good program to illustrate the concept of multidimensional array.
+
+19
+00:02:19,720 --> 00:02:28,940
+Well, OK, we create an initialized two dimensional arrow using shorthand declaration and that keyboard
+
+20
+00:02:28,980 --> 00:02:32,270
+declaration first shorthand declaration, right?
+
+21
+00:02:32,280 --> 00:02:43,890
+The following code for the example Ray one column he calls this group rocket three for the rolls.
+
+22
+00:02:44,580 --> 00:02:56,250
+And this group, rocket three for the Collins and Type is a strange and Charlie rockets and initialize
+
+23
+00:02:56,250 --> 00:02:56,880
+the value.
+
+24
+00:03:02,400 --> 00:03:03,030
+First.
+
+25
+00:03:05,990 --> 00:03:07,670
+For example, go.
+
+26
+00:03:12,590 --> 00:03:13,310
+Java
+
+27
+00:03:17,960 --> 00:03:18,680
+Seashore.
+
+28
+00:03:21,890 --> 00:03:27,110
+And sits the comma here, comma is necessary in the next line
+
+29
+00:03:30,520 --> 00:03:33,680
+and other value, for the example, see?
+
+30
+00:03:35,320 --> 00:03:36,010
+Come on.
+
+31
+00:03:39,740 --> 00:03:49,550
+Scala, come here and set the comma and in the next line.
+
+32
+00:03:54,750 --> 00:03:55,530
+Python
+
+33
+00:04:00,720 --> 00:04:03,150
+C Plus Plus.
+
+34
+00:04:05,380 --> 00:04:07,090
+And, Ruby,
+
+35
+00:04:10,300 --> 00:04:16,960
+before that, the court now we define two dimensional at a and initialize it.
+
+36
+00:04:17,170 --> 00:04:20,420
+Accessing the values of the array using for loop.
+
+37
+00:04:21,250 --> 00:04:25,000
+So right, the following code first put into mrJ
+
+38
+00:04:27,400 --> 00:04:39,190
+FP elements at a long go to the next line and use prong for loop.
+
+39
+00:04:41,560 --> 00:04:49,390
+Create a method for Loop for iterate, the array value first for iterate between rolls and second for
+
+40
+00:04:49,390 --> 00:04:49,810
+Iterate.
+
+41
+00:04:49,810 --> 00:05:04,210
+Between this column full on KOLLAN equals zero i less than three because the numbers are always three
+
+42
+00:05:05,320 --> 00:05:08,800
+and i + +
+
+43
+00:05:12,670 --> 00:05:13,780
++ for the columns.
+
+44
+00:05:14,050 --> 00:05:26,470
+For G Column equal zero j less than three j + +
+
+45
+00:05:29,320 --> 00:05:35,620
+for loop condition is less than three because column numbers are one two dimensional of at A1 is three.
+
+46
+00:05:36,370 --> 00:05:41,440
+Now write the value of each set for the example rows zero and column zero.
+
+47
+00:05:41,680 --> 00:05:51,010
+It returns the value of row zero, column zero cell or row zero and column one returns value of row
+
+48
+00:05:51,030 --> 00:05:52,890
+zero, column one said.
+
+49
+00:05:53,080 --> 00:06:09,730
+Now write the code if f person is backslash T and set to add a one here four row set index I and four
+
+50
+00:06:09,730 --> 00:06:12,820
+column set index J.
+
+51
+00:06:13,240 --> 00:06:25,720
+After end of each row, we go to the next line by the following command f p reformat the code, save
+
+52
+00:06:25,720 --> 00:06:27,700
+the project and execute the code.
+
+53
+00:06:30,600 --> 00:06:37,860
+Now we can see the output, we see that the elements of each row and column are displayed separately
+
+54
+00:06:38,100 --> 00:06:47,700
+and printed in three rows and three columns, now creating a two dimensional array using via keyboard
+
+55
+00:06:48,180 --> 00:06:52,230
+and initializing a multi-dimensional array using index.
+
+56
+00:06:53,400 --> 00:06:56,130
+First, clear the last code
+
+57
+00:07:00,480 --> 00:07:14,190
+and define a two dimensional variable via every tool set to value for the row in the X and set the tool
+
+58
+00:07:14,190 --> 00:07:17,970
+value or the column in the X and data type.
+
+59
+00:07:17,970 --> 00:07:21,620
+Is it in the next line?
+
+60
+00:07:21,630 --> 00:07:26,580
+The initialize the variable every two
+
+61
+00:07:29,190 --> 00:07:43,020
+rows zero Collins zero and initialize value 10 the next line array to row zero and column volume set
+
+62
+00:07:43,020 --> 00:07:44,230
+the value 20.
+
+63
+00:07:47,790 --> 00:07:54,750
+These are for the first three to row one.
+
+64
+00:07:55,350 --> 00:08:09,580
+And Column zero initialized by 30 value very two row one column long and initialize it by 14 percent.
+
+65
+00:08:09,580 --> 00:08:16,530
+The message FP alignments of ready to
+
+66
+00:08:20,430 --> 00:08:27,960
+go to the next line create a nested follow for iterate adding value first for iterate between rows and
+
+67
+00:08:27,960 --> 00:08:31,470
+second fold trade between column four.
+
+68
+00:08:32,940 --> 00:08:38,220
+I call an equals zero I less than two.
+
+69
+00:08:39,670 --> 00:08:50,140
+And I + + follow condition is less than two because those numbers are two dimensional array two is two
+
+70
+00:08:50,410 --> 00:08:55,020
+and right four low for the columns for J.
+
+71
+00:08:55,030 --> 00:09:01,630
+Colin equals zero J less than two J + +
+
+72
+00:09:04,240 --> 00:09:04,720
++ four.
+
+73
+00:09:04,720 --> 00:09:11,320
+Lu condition is less than two because columns number of two dimensional at eight weeks to now write
+
+74
+00:09:11,320 --> 00:09:15,850
+the value of each set for the example rows zero and column zero.
+
+75
+00:09:16,030 --> 00:09:23,220
+And it returns the value of zero zero seven zero zero in column one returns value of zero one set.
+
+76
+00:09:23,230 --> 00:09:40,330
+Now write the code if F percent, the back is less T and set the value of the array to sit.
+
+77
+00:09:40,330 --> 00:09:47,200
+I four row index and sit j full column next.
+
+78
+00:09:48,040 --> 00:09:56,620
+After end of each row, we go to the next line by the following comment Go to the next line.
+
+79
+00:09:57,370 --> 00:10:04,870
+And if he OK, he format the call, save the project and execute the code.
+
+80
+00:10:08,530 --> 00:10:14,800
+Now we can see the output, we see that the elements of each row and column are displayed separately
+
+81
+00:10:14,800 --> 00:10:23,260
+and printed in two rows and two columns by declaration the Varkey War in order not to prolong the time
+
+82
+00:10:23,260 --> 00:10:24,050
+of this session.
+
+83
+00:10:24,070 --> 00:10:27,820
+We will finish it and we will continue the content in the next session.
+
+84
+00:10:27,910 --> 00:10:28,480
+Goodbye.

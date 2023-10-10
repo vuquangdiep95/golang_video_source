@@ -1,0 +1,255 @@
+1
+00:00:00,090 --> 00:00:02,120
+So now we're going to finish the upgrade.
+
+2
+00:00:02,160 --> 00:00:08,610
+So you should you while you can have two major versions of the same module at the same time in your
+
+3
+00:00:08,610 --> 00:00:15,300
+code it's probably not a good idea to keep it that way because they're not really compatible with each
+
+4
+00:00:15,300 --> 00:00:16,500
+other very much.
+
+5
+00:00:16,500 --> 00:00:19,260
+Sometimes they can be but not often.
+
+6
+00:00:19,260 --> 00:00:24,450
+And so you should probably finish your upgrade as soon as you can.
+
+7
+00:00:24,450 --> 00:00:26,850
+It also means less that needs to be downloaded.
+
+8
+00:00:26,880 --> 00:00:34,130
+When you're trying to download all these dependencies for the module so to finish the upgrade we removed
+
+9
+00:00:34,170 --> 00:00:40,830
+the quote version one import which said the version 3 because we only have the one we got rid of the
+
+10
+00:00:40,830 --> 00:00:44,200
+alias because it means you don't have to remove the Alias.
+
+11
+00:00:44,220 --> 00:00:45,660
+It works if you keep it around.
+
+12
+00:00:45,680 --> 00:00:47,020
+But it was nice.
+
+13
+00:00:47,050 --> 00:00:49,350
+Is simple enough to remove the alias.
+
+14
+00:00:49,350 --> 00:00:52,290
+So now quote quote quote grunts appearances still.
+
+15
+00:00:52,530 --> 00:00:54,350
+And now Quote v V3.
+
+16
+00:00:54,390 --> 00:00:55,020
+So hello.
+
+17
+00:00:55,020 --> 00:00:58,490
+Got renamed to Hello v 3 as opposed to Hello.
+
+18
+00:00:58,530 --> 00:01:04,410
+That was the breaking chain that backwards incompatible between the major versions.
+
+19
+00:01:04,440 --> 00:01:12,660
+So you can see this by running go dark RCD slash quote slash the three.
+
+20
+00:01:12,750 --> 00:01:17,400
+You can see the list of all the functions that this particular package has.
+
+21
+00:01:18,690 --> 00:01:21,780
+No this is package not a module.
+
+22
+00:01:22,070 --> 00:01:25,080
+And so this particular package has a below B3.
+
+23
+00:01:25,410 --> 00:01:30,810
+So that was your backwards compatible change so to make this upgrade had to rename the the function
+
+24
+00:01:30,840 --> 00:01:33,520
+here where you're calling it.
+
+25
+00:01:33,820 --> 00:01:41,580
+So now that changes are made you can run go test and it's in passing still like that.
+
+26
+00:01:41,600 --> 00:01:44,530
+The Go Doc shows you the documentation you can drop.
+
+27
+00:01:44,540 --> 00:01:48,650
+Go Doc and then put in the the path too.
+
+28
+00:01:48,650 --> 00:01:53,900
+I would have normally say repo but we could also say module here you're right.
+
+29
+00:01:53,910 --> 00:01:57,000
+So go doc takes the path to a package specific.
+
+30
+00:01:57,030 --> 00:02:04,260
+Okay so if there was a sub package of RC quote V3 slash something else you would have to put that entirely
+
+31
+00:02:04,400 --> 00:02:04,990
+right.
+
+32
+00:02:05,730 --> 00:02:06,020
+Yes.
+
+33
+00:02:06,050 --> 00:02:11,300
+Finding the right terminology there and go doc is you go doc takes in a package and if we wanted to
+
+34
+00:02:11,300 --> 00:02:13,750
+see that we could still just use your computer we could do.
+
+35
+00:02:13,760 --> 00:02:17,300
+Go help see the documentation on that.
+
+36
+00:02:17,300 --> 00:02:24,470
+Just go help Doc even and avoid that one step and then in there we could see this budget example go
+
+37
+00:02:24,470 --> 00:02:28,880
+doc Fu show documentation for food in the current package.
+
+38
+00:02:28,880 --> 00:02:30,320
+So that's a function.
+
+39
+00:02:30,410 --> 00:02:34,620
+You can do good doc shows your current package go doc and then something in your package shows something
+
+40
+00:02:34,640 --> 00:02:35,210
+in there.
+
+41
+00:02:35,210 --> 00:02:41,030
+Or go doc for some other package like standard library you can do it and then you can use.
+
+42
+00:02:41,030 --> 00:02:46,000
+Also use that would be for documentation method.
+
+43
+00:02:46,150 --> 00:02:46,470
+Yep.
+
+44
+00:02:46,480 --> 00:02:54,560
+So just says the F I go back to that I go doc RC quote The three ESB all these and then I can do dot.
+
+45
+00:02:54,730 --> 00:02:56,190
+Hello.
+
+46
+00:02:56,300 --> 00:03:08,710
+The three it was and then it gives me the documentation specifically for that function with nice.
+
+47
+00:03:08,800 --> 00:03:11,590
+The other question I just had about go Doc there is wouldn't work.
+
+48
+00:03:11,590 --> 00:03:18,510
+We did go doc quote because that's the name we're referring to the package um is kind of curious.
+
+49
+00:03:18,520 --> 00:03:25,180
+Some to try simply and so that didn't bring out the same ones so that's something different.
+
+50
+00:03:25,190 --> 00:03:34,400
+That's probably what the version one and if we do the go list dash cam all this shows us in our mod
+
+51
+00:03:34,400 --> 00:03:41,030
+file our mod file it shows us our dependencies and we have two quotes there.
+
+52
+00:03:41,150 --> 00:03:47,090
+So maybe in the next video after we've cleaned up because we could no longer use using version one point
+
+53
+00:03:47,090 --> 00:03:53,860
+five point two of our seat out Io quote right we're only using version 3 now maybe in the next video
+
+54
+00:03:53,870 --> 00:04:01,280
+we're gonna clean up our dependencies and then after that if we ran good out quote quote It would pull
+
+55
+00:04:01,280 --> 00:04:05,700
+in the version 3 maybe I don't see.
+
+56
+00:04:05,750 --> 00:04:06,100
+All right.
+
+57
+00:04:06,110 --> 00:04:10,370
+See in the next video where we're gonna do removing any unused dependencies do you have anything you
+
+58
+00:04:10,370 --> 00:04:12,700
+want to add to this video.
+
+59
+00:04:13,130 --> 00:04:17,040
+Just that this go dark band is the exact same stuff as the go dark web site.
+
+60
+00:04:17,050 --> 00:04:18,150
+Gets.
+
+61
+00:04:18,260 --> 00:04:18,590
+Yeah.
+
+62
+00:04:18,650 --> 00:04:25,910
+So if I actually went to if I actually took in our CIO quote v three to the go dark web site it would
+
+63
+00:04:25,910 --> 00:04:30,840
+give me all the same information.
+
+64
+00:04:30,910 --> 00:04:31,960
+All right see the next video.

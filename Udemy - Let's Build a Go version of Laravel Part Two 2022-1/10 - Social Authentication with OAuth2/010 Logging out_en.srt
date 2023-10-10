@@ -1,0 +1,308 @@
+1
+00:00:01,170 --> 00:00:05,850
+So we've managed to log in successfully using GitHub, and that's really good and everything seems to
+
+2
+00:00:05,850 --> 00:00:06,960
+be working properly.
+
+3
+00:00:06,990 --> 00:00:11,370
+In fact, if you go to the users menu now that I'm logged in, I have that log out showing up.
+
+4
+00:00:11,850 --> 00:00:16,460
+And of course, that links us to logging out of the application, which isn't enough.
+
+5
+00:00:16,470 --> 00:00:19,350
+We also want to log the user out of GitHub.
+
+6
+00:00:20,130 --> 00:00:27,060
+So if we go back and look at our ID and we look at the based git, which is found in the My App application
+
+7
+00:00:27,480 --> 00:00:35,360
+in the Views folder under lands, this part right here, around 150 or so this does a little check.
+
+8
+00:00:35,370 --> 00:00:39,930
+If the user is authenticated, then it shows the dropdown item which links to users.
+
+9
+00:00:39,930 --> 00:00:40,440
+Log out.
+
+10
+00:00:40,740 --> 00:00:42,720
+If we go to our roots, file over here.
+
+11
+00:00:44,620 --> 00:00:47,890
+We don't have a user log out, so we probably should put that in there.
+
+12
+00:00:48,220 --> 00:00:52,230
+So Ada app dot roots don't get.
+
+13
+00:00:52,540 --> 00:00:59,350
+And the pattern is slash and users slash log out and that links to ADA handlers dot log.
+
+14
+00:01:00,040 --> 00:01:03,400
+OK, so the next time I restart the application, I'll be able to log out.
+
+15
+00:01:04,280 --> 00:01:11,150
+But if we actually look at that method, which is in the art handlers don't go, all that does is it
+
+16
+00:01:11,150 --> 00:01:12,860
+checks to see if there's a Remember token.
+
+17
+00:01:12,860 --> 00:01:14,330
+If that exists, it deletes it.
+
+18
+00:01:14,610 --> 00:01:17,910
+OK, then it deletes our cookie if that exists.
+
+19
+00:01:18,170 --> 00:01:20,600
+And, you know, if you're logging out, presumably it does.
+
+20
+00:01:21,260 --> 00:01:26,120
+And then it removes some things from the session and it does the renew session, which you're supposed
+
+21
+00:01:26,120 --> 00:01:30,740
+to do any time you're changing authentication status and redirects the user to the log in screen and
+
+22
+00:01:30,740 --> 00:01:32,390
+it doesn't log us out of GitHub.
+
+23
+00:01:32,450 --> 00:01:36,530
+So let's go back over to our web browser and look at that gothe package.
+
+24
+00:01:36,830 --> 00:01:42,620
+And I'm on Mark Bates dot goth right here, and I'm going to go to the Examples folder and I'm going
+
+25
+00:01:42,620 --> 00:01:45,560
+to go to Maine Dot Go and I'll search for a logo.
+
+26
+00:01:45,740 --> 00:01:46,700
+See how you do it here.
+
+27
+00:01:46,730 --> 00:01:47,000
+Hello.
+
+28
+00:01:47,330 --> 00:01:49,070
+Oh, you two right there.
+
+29
+00:01:49,520 --> 00:01:55,330
+So it says all I have to do is call Gothic Dot Logout with a request of the response and the request
+
+30
+00:01:55,350 --> 00:01:56,930
+response writer and the request.
+
+31
+00:01:57,230 --> 00:01:57,830
+I can do that.
+
+32
+00:01:58,460 --> 00:02:05,540
+So let's go back to our I.D. and I'll do it right here after I check to see if the user is logged.
+
+33
+00:02:06,350 --> 00:02:14,630
+If the user has a remember token, so I'll call Gothic dot longer than that wants the response writer,
+
+34
+00:02:14,630 --> 00:02:19,530
+which I call W and the request pointer to HCV request, which I called her OK.
+
+35
+00:02:21,320 --> 00:02:28,250
+So that tells me it throws an error, so I'm his will handle here, so error is assigned the value of
+
+36
+00:02:28,490 --> 00:02:33,560
+that, and then we'll check to see if there's an error, if error is not equal to nil.
+
+37
+00:02:34,130 --> 00:02:36,080
+Then I'll just say Logcat print line.
+
+38
+00:02:36,320 --> 00:02:41,840
+I shall use the built in error logging eight short app error log dot print line.
+
+39
+00:02:42,290 --> 00:02:42,920
+Try that again.
+
+40
+00:02:44,540 --> 00:02:46,520
+Print line and I'll just print out the error.
+
+41
+00:02:46,730 --> 00:02:48,310
+OK, and I'll keep going.
+
+42
+00:02:48,320 --> 00:02:53,270
+Because if there's an error logging out, I still want to actually log the user out of my application.
+
+43
+00:02:53,810 --> 00:02:55,520
+So in theory, this should all work.
+
+44
+00:02:56,660 --> 00:02:58,460
+It's not going to, but in theory it should.
+
+45
+00:02:58,730 --> 00:03:02,270
+So let's try to make restart and see what happens.
+
+46
+00:03:10,470 --> 00:03:11,910
+So their application has started.
+
+47
+00:03:11,970 --> 00:03:16,920
+Let's go back to your web browser and find the celebrity's tab and reload the page.
+
+48
+00:03:17,760 --> 00:03:19,080
+Make sure I'm still logged in.
+
+49
+00:03:19,080 --> 00:03:25,680
+I am OK and if I look at my GitHub a settings and refresh the page for that particular application,
+
+50
+00:03:25,680 --> 00:03:27,270
+it shows me I have one user logged in.
+
+51
+00:03:27,390 --> 00:03:27,810
+Perfect.
+
+52
+00:03:28,410 --> 00:03:31,260
+So let's log at log.
+
+53
+00:03:32,430 --> 00:03:37,230
+And now in theory, I'm logged out and I am logged on to my application because I don't see the log
+
+54
+00:03:37,230 --> 00:03:38,370
+out menu item anymore.
+
+55
+00:03:39,390 --> 00:03:45,000
+And if I go back to my GitHub page and refresh this, I'm still actually logged in.
+
+56
+00:03:46,260 --> 00:03:47,970
+So if I log in with GitHub again.
+
+57
+00:03:49,770 --> 00:03:51,540
+It just takes me doesn't take me to GitHub.
+
+58
+00:03:51,840 --> 00:03:54,330
+So you're already logged in, so what's happening there?
+
+59
+00:03:55,330 --> 00:04:00,430
+Is it's checking with GitHub to see if the user is currently authenticated and yet you're still authenticated,
+
+60
+00:04:00,430 --> 00:04:00,940
+so you're good.
+
+61
+00:04:01,180 --> 00:04:11,530
+So apparently this code right here, gothic log out doesn't actually log me out of the system out of
+
+62
+00:04:11,530 --> 00:04:11,950
+GitHub.
+
+63
+00:04:12,640 --> 00:04:19,779
+Now, if you actually download that example code that is provided on Mark Bates Goss and run that application
+
+64
+00:04:19,779 --> 00:04:26,400
+after removing all the things that are not GitHub in the sample code and try that it'll actually work,
+
+65
+00:04:26,410 --> 00:04:28,030
+it will log you out of GitHub.
+
+66
+00:04:28,060 --> 00:04:29,280
+At least they did when I tried it.
+
+67
+00:04:29,310 --> 00:04:36,040
+But it does that because it's actually using that temporary cookie, that gorilla cookie gorilla session
+
+68
+00:04:36,040 --> 00:04:42,230
+that uses a cookie store and any serious web application is not going to be using a cookie store.
+
+69
+00:04:42,250 --> 00:04:43,510
+It's going to be using something else.
+
+70
+00:04:43,570 --> 00:04:45,400
+So we actually have to do some more work.
+
+71
+00:04:45,520 --> 00:04:53,950
+We actually have to look at GitHub API and figure out how do I longa user out of GitHub without relying
+
+72
+00:04:53,950 --> 00:04:59,080
+upon Mark Bates slash goth guerilla sessions cookie, which we're not actually using.
+
+73
+00:04:59,080 --> 00:05:05,890
+As far as we're concerned, it's only exists for the little period of time when someone is actually
+
+74
+00:05:05,890 --> 00:05:09,990
+authorizing their GitHub account to be connected to our application.
+
+75
+00:05:10,000 --> 00:05:14,740
+And then it's gone as far as we're concerned and we have no access to it, so we'll actually have to
+
+76
+00:05:14,740 --> 00:05:15,730
+read a little bit of code.
+
+77
+00:05:15,760 --> 00:05:20,080
+Now it's not terribly difficult and we'll get started on that in the next lecture.
+

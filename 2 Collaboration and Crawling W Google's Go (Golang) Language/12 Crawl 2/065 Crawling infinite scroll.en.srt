@@ -1,0 +1,455 @@
+1
+00:00:00,300 --> 00:00:04,350
+So now we're going to take a look at a second crawl solution Daniel put together and Daniel I've been
+
+2
+00:00:04,350 --> 00:00:11,850
+super impressed by the code the student has become the master and I really love the concept that we
+
+3
+00:00:11,850 --> 00:00:18,320
+all have multiple intelligences and and that together we're stronger than we are individually.
+
+4
+00:00:18,330 --> 00:00:24,000
+And I could wax poetic about this for a long time as you probably heard me do in the past but I just
+
+5
+00:00:24,000 --> 00:00:28,620
+really love the solutions you created here and excited for you.
+
+6
+00:00:28,710 --> 00:00:36,210
+Excited for you dear colleague friend fellow adventure in programming excited for you to see the solution
+
+7
+00:00:36,240 --> 00:00:36,810
+so take it away.
+
+8
+00:00:36,810 --> 00:00:37,990
+Daniel.
+
+9
+00:00:38,000 --> 00:00:38,760
+Yeah so.
+
+10
+00:00:38,790 --> 00:00:47,340
+So we discovered on the first one kind of after running it that it only found 19 solution tweets because
+
+11
+00:00:47,730 --> 00:00:54,600
+the screen was an infinite scroll and so it wasn't able to actually get all off the page all at once.
+
+12
+00:00:54,600 --> 00:01:01,400
+And so go call we didn't doesn't really have too much of it away to really solve that.
+
+13
+00:01:01,410 --> 00:01:02,760
+It's not going.
+
+14
+00:01:03,000 --> 00:01:06,180
+It's not actually running a web server so it can't run the javascript.
+
+15
+00:01:06,210 --> 00:01:09,320
+When you scroll down enough to actually like load more stuff.
+
+16
+00:01:09,780 --> 00:01:12,290
+So for some sites this is the end.
+
+17
+00:01:12,300 --> 00:01:18,140
+There's not really much you can do about it for Twitter though there ended up being a solution.
+
+18
+00:01:18,210 --> 00:01:21,270
+I do want to zoom in.
+
+19
+00:01:21,420 --> 00:01:30,440
+Open up the dev tools and go to the Network tab and I refreshed the page so you can be loaded up and
+
+20
+00:01:30,450 --> 00:01:39,210
+I filter the Network tab to x H R which is basically requests that have happened not as part of creating
+
+21
+00:01:39,210 --> 00:01:46,470
+the page initially but of a script is making these requests way scroll down to the infinite scroll you
+
+22
+00:01:46,470 --> 00:01:53,620
+can see the requests the the Web browser is making to get the additional data and so if I click on one
+
+23
+00:01:53,620 --> 00:02:00,610
+of these requests I can actually examine the you URL that it's making the request to which has some
+
+24
+00:02:00,610 --> 00:02:01,320
+parameters.
+
+25
+00:02:01,330 --> 00:02:09,670
+After this question mark including one that's called Max position with a big long code on seconds so
+
+26
+00:02:09,670 --> 00:02:16,570
+you you got as you infinite scrolled you were looking at the network tab and you had it filtered for
+
+27
+00:02:16,570 --> 00:02:22,480
+X H.R. and then it was showing you the gets are coming through and then you clicked on the file is that
+
+28
+00:02:22,480 --> 00:02:22,700
+right.
+
+29
+00:02:22,730 --> 00:02:23,010
+Yeah.
+
+30
+00:02:23,140 --> 00:02:25,840
+And then are there any any anything on the line.
+
+31
+00:02:25,870 --> 00:02:26,130
+Okay.
+
+32
+00:02:26,130 --> 00:02:27,020
+Anything on the line.
+
+33
+00:02:27,040 --> 00:02:34,070
+And then over there it shows you the header and and so click on one of the requests and examine you
+
+34
+00:02:34,080 --> 00:02:35,050
+are also go.
+
+35
+00:02:35,110 --> 00:02:42,500
+So go over to the header go to headers area I'm just making notes here and then you examine you are
+
+36
+00:02:42,500 --> 00:02:48,790
+all sensible rats and you're looking at your request you were out here I can see is made up has a query
+
+37
+00:02:48,790 --> 00:02:55,500
+parameter after the question mark Yeah there's a several query parameters separated by the ampersand
+
+38
+00:02:56,860 --> 00:03:03,550
+but the one that seems to change when I click between multiple ones of these each one is basically the
+
+39
+00:03:03,550 --> 00:03:10,210
+same parameters except for Max position that sounds good and so Max position appears to be changing
+
+40
+00:03:10,210 --> 00:03:15,670
+every time to some new value but it's some value that I can't guess just by looking at it.
+
+41
+00:03:15,820 --> 00:03:19,900
+So it's gonna need some experimentation to actually figure out.
+
+42
+00:03:20,740 --> 00:03:28,480
+Besides this I also look at to see if I go over to Paramus I can actually see the parameter Firefox
+
+43
+00:03:28,480 --> 00:03:34,580
+at least has a brand's tab which shows the query string parameters in a nicer view.
+
+44
+00:03:35,070 --> 00:03:38,850
+I realize chrome probably has something similar somewhere too.
+
+45
+00:03:38,890 --> 00:03:43,960
+That's nice because when you click between them you could kind of really see the differences that Max
+
+46
+00:03:43,960 --> 00:03:45,780
+position changes.
+
+47
+00:03:46,000 --> 00:03:46,960
+That's cool.
+
+48
+00:03:47,210 --> 00:03:53,380
+If so then the other thing to look at here immediately is response takes a while to actually load the
+
+49
+00:03:53,380 --> 00:04:01,300
+response see the response is Jason data and I can look at this I can see that the response here for
+
+50
+00:04:01,300 --> 00:04:09,790
+this middle of these three requests the browser made it's got a min position which this Min position
+
+51
+00:04:09,790 --> 00:04:17,860
+string matches the max version string for the very next call if I if I if I take this.
+
+52
+00:04:17,950 --> 00:04:24,220
+This main position string and I go over to the next call it makes and look in the parameter list this
+
+53
+00:04:24,220 --> 00:04:30,330
+Max position is an exact match so for each call it tells you with the max position is going to be for
+
+54
+00:04:30,330 --> 00:04:41,460
+your next call to kind of get more data a second it's so there's also it has more items she can tell
+
+55
+00:04:41,520 --> 00:04:45,120
+which is I think could be useful to say Oh I'm done I finished loading.
+
+56
+00:04:45,120 --> 00:04:49,230
+So this one versus over here this one has no more items.
+
+57
+00:04:50,200 --> 00:04:57,340
+All right so it looks promising you're looking at you're looking at men position looked promising in
+
+58
+00:04:57,360 --> 00:05:00,630
+Max position and then also has more items right.
+
+59
+00:05:00,660 --> 00:05:01,150
+Yep.
+
+60
+00:05:01,260 --> 00:05:01,760
+And.
+
+61
+00:05:01,810 --> 00:05:09,350
+And then the max position in Max positions and parameters becomes your main position in the next call.
+
+62
+00:05:09,360 --> 00:05:16,380
+So yeah your main position is what they Twitter gives me and I give that as Max this next call so they
+
+63
+00:05:16,380 --> 00:05:20,570
+give me I'm in position and then I give them that as an expedition.
+
+64
+00:05:20,580 --> 00:05:21,560
+OK.
+
+65
+00:05:21,810 --> 00:05:26,510
+So then the final thing they give that seems so they've got this new limb a little bit confused on that
+
+66
+00:05:26,520 --> 00:05:32,200
+so call 0 comes in and on the first call for scale on the first call.
+
+67
+00:05:32,370 --> 00:05:38,160
+So I don't I can't actually see a first very first call I've already got they've already got my prams
+
+68
+00:05:38,160 --> 00:05:40,050
+list already has a max for this shot ready.
+
+69
+00:05:40,170 --> 00:05:47,140
+OK but its response has a min position and it takes a while to flip over to a response tab for some
+
+70
+00:05:47,140 --> 00:05:51,020
+reason it has a main position and that's DC.
+
+71
+00:05:51,040 --> 00:05:59,320
+And so that men position there they go over to the next call down and I go to Paramus this is that it
+
+72
+00:05:59,310 --> 00:06:04,010
+comes your main position because your max position does until it makes sense.
+
+73
+00:06:04,010 --> 00:06:09,530
+It seems like so I think it's max would be the end of the last call which then become the men of the
+
+74
+00:06:09,530 --> 00:06:10,480
+next call.
+
+75
+00:06:10,490 --> 00:06:16,730
+I think it's more I'm not actually sure why they call it that just so happen to be what Twitter ended
+
+76
+00:06:16,730 --> 00:06:17,350
+up calling them.
+
+77
+00:06:17,360 --> 00:06:20,490
+So maybe it confuses people who are trying to do this.
+
+78
+00:06:20,510 --> 00:06:21,300
+Maybe.
+
+79
+00:06:21,380 --> 00:06:25,880
+Doesn't it seem kind of like more intuitively your max on your last call be your man on the next call.
+
+80
+00:06:26,450 --> 00:06:27,250
+Yeah somewhat.
+
+81
+00:06:27,350 --> 00:06:28,450
+Yeah.
+
+82
+00:06:28,680 --> 00:06:35,360
+So the final thing that was looks interesting is this items H2 email which looked from a quick examination
+
+83
+00:06:35,690 --> 00:06:43,520
+just eyeballing it looks like the h email that gets put into this list directly so if I can just pass
+
+84
+00:06:43,520 --> 00:06:47,300
+this a shemale it's probably got the tweets that I'm looking for.
+
+85
+00:06:48,750 --> 00:06:52,600
+Oh nice.
+
+86
+00:06:52,670 --> 00:06:53,940
+So this is all.
+
+87
+00:06:53,960 --> 00:06:56,150
+So just just quick examining.
+
+88
+00:06:56,150 --> 00:07:04,280
+So one final thing I want to do before I do this is if I go back to this you or L here I'll just copy
+
+89
+00:07:04,280 --> 00:07:12,510
+the entire euro and I go search for a robot's t t value.
+
+90
+00:07:12,570 --> 00:07:13,840
+Save this for the next video.
+
+91
+00:07:13,900 --> 00:07:17,330
+I think that was a good video just crawling infinite scroll.
+
+92
+00:07:17,570 --> 00:07:17,860
+Okay.
+
+93
+00:07:17,930 --> 00:07:20,320
+Or you think robots he's pretty quick.
+
+94
+00:07:20,410 --> 00:07:26,420
+I like keeping things to concepts so that's that's crawling infinite scroll and inspecting the all the
+
+95
+00:07:26,420 --> 00:07:28,860
+information that's coming back as you scroll.
+
+96
+00:07:28,880 --> 00:07:30,290
+Using dev tools.
+
+97
+00:07:30,470 --> 00:07:33,930
+Anything you want to summarize about that or say more about that.
+
+98
+00:07:34,250 --> 00:07:41,270
+Not every page will have an understandable request response like some websites will basically are unprofitable
+
+99
+00:07:41,270 --> 00:07:43,730
+for casual crawlers.
+
+100
+00:07:43,730 --> 00:07:44,690
+There's always a way.
+
+101
+00:07:44,690 --> 00:07:51,260
+I mean the page has to fill itself up somehow but some sites will just be a little too convoluted to
+
+102
+00:07:51,260 --> 00:07:52,210
+have it work.
+
+103
+00:07:52,250 --> 00:07:54,180
+So in this case it ended up working.
+
+104
+00:07:54,230 --> 00:07:59,900
+It's got some pretty nice requests responses that seem understandable enough that we could probably
+
+105
+00:07:59,900 --> 00:08:01,940
+figure it out so we can keep going.
+
+106
+00:08:02,860 --> 00:08:09,790
+That really gives it a lot of respect and appreciation for what search engines have to deal with.
+
+107
+00:08:09,820 --> 00:08:15,400
+AK particularly Google right to be able to catalog all the information out there on the web.
+
+108
+00:08:15,400 --> 00:08:22,090
+They need to be able to automate away that even as sites are changing their code can grab the information
+
+109
+00:08:22,560 --> 00:08:27,410
+so they're they're probably running servers so that it's just you know they could run that JavaScript
+
+110
+00:08:27,410 --> 00:08:27,950
+and get.
+
+111
+00:08:28,030 --> 00:08:30,130
+They probably rolling on to do all that.
+
+112
+00:08:30,220 --> 00:08:37,720
+Yeah they're probably running some into some full web browser interactively for all right good.
+
+113
+00:08:37,720 --> 00:08:38,590
+See you the next video.
+
+114
+00:08:38,800 --> 00:08:38,970
+Yeah.

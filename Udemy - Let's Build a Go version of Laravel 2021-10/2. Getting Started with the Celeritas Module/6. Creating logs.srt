@@ -1,0 +1,387 @@
+1
+00:00:01,320 --> 00:00:07,620
+So we've created some folders and we've created the dot on file and read its values into the environment
+
+2
+00:00:07,620 --> 00:00:09,360
+for application, so let's keep going.
+
+3
+00:00:10,020 --> 00:00:15,720
+So I'm back in celebrities to go in the celebrities package and I'm looking at the type of celebrities.
+
+4
+00:00:15,840 --> 00:00:18,030
+Let's add a few things here that we might be using.
+
+5
+00:00:18,240 --> 00:00:18,570
+OK.
+
+6
+00:00:19,140 --> 00:00:21,210
+So for example, let's put some bloggers in.
+
+7
+00:00:21,420 --> 00:00:24,150
+Let's put an error, log in there and we'll make that type.
+
+8
+00:00:24,330 --> 00:00:27,960
+And this is right from the standard library, a pointer to long dot logger.
+
+9
+00:00:29,700 --> 00:00:31,560
+And we'll also put an info log in there.
+
+10
+00:00:32,080 --> 00:00:36,650
+This will allow us to print things to a log file or through the terminal or wherever we want, and it
+
+11
+00:00:36,660 --> 00:00:38,010
+will be logged out longer to.
+
+12
+00:00:40,950 --> 00:00:45,960
+And we should also put our route path in there because we might need that, so route pass.
+
+13
+00:00:46,440 --> 00:00:47,310
+And that will be a string.
+
+14
+00:00:49,050 --> 00:00:49,800
+Well, that's enough for now.
+
+15
+00:00:49,950 --> 00:00:50,790
+So let's use this.
+
+16
+00:00:51,090 --> 00:00:52,200
+So a format this.
+
+17
+00:00:52,830 --> 00:00:53,310
+All right.
+
+18
+00:00:53,820 --> 00:00:55,960
+And let's come down here and use some of these things.
+
+19
+00:00:56,010 --> 00:00:59,310
+So back in the new function, well, let's create our loggers first.
+
+20
+00:00:59,370 --> 00:00:59,630
+OK.
+
+21
+00:01:00,450 --> 00:01:02,220
+So we might as well say, create loggers.
+
+22
+00:01:05,760 --> 00:01:14,280
+And for now, I'll just say in full log and error log, which are two new variables I'm declaring right
+
+23
+00:01:14,280 --> 00:01:16,510
+now, they'll be assigned the value of.
+
+24
+00:01:16,530 --> 00:01:20,850
+And as I often do, I'm going to put this in its own function just to make it easier to test.
+
+25
+00:01:21,450 --> 00:01:23,940
+So we'll create a function or call a function that doesn't exist yet.
+
+26
+00:01:24,210 --> 00:01:26,370
+See that start loggers.
+
+27
+00:01:27,900 --> 00:01:28,260
+OK.
+
+28
+00:01:28,860 --> 00:01:31,170
+So we're going down to the bottom of this file.
+
+29
+00:01:32,040 --> 00:01:41,400
+And I'll just say func, see celebrities is the receiver and we'll call it start loggers, and it returns
+
+30
+00:01:41,880 --> 00:01:46,380
+a pointer to a logged off logger and another pointer to logged logger.
+
+31
+00:01:48,870 --> 00:01:51,120
+And we'll make this dead simple for our info.
+
+32
+00:01:51,120 --> 00:01:56,580
+Log is a type lost pointer to a logged out logger, and VAR error log
+
+33
+00:01:59,460 --> 00:02:04,770
+is a type pointer logged logger and we'll just create them and send them back.
+
+34
+00:02:05,640 --> 00:02:12,170
+So Info Log will be equal to log dot new OS Dot stdout.
+
+35
+00:02:13,890 --> 00:02:21,810
+We're going to print it terminal and we'll prefix it with info in a tab and we'll make it logged until
+
+36
+00:02:21,870 --> 00:02:22,920
+date to get the date.
+
+37
+00:02:23,940 --> 00:02:26,190
+Printed and logged all time.
+
+38
+00:02:29,390 --> 00:02:29,720
+OK.
+
+39
+00:02:30,860 --> 00:02:38,210
+And our error log will be equal to logged on new and again we'll print predict to standard post on stdout
+
+40
+00:02:39,890 --> 00:02:44,270
+and we'll prefix it with error, you know, caps and a tab.
+
+41
+00:02:45,830 --> 00:02:52,310
+And we'll put in here a little more information log that l date log l time.
+
+42
+00:02:54,530 --> 00:03:00,440
+And we'll also put logged on L short file, which gives us some information about where the error actually
+
+43
+00:03:00,440 --> 00:03:07,310
+occurred and we'll return this info log and error log.
+
+44
+00:03:08,300 --> 00:03:15,710
+Now, the reason I declared variables here is because a little later on, when we're not in debug mode,
+
+45
+00:03:15,710 --> 00:03:19,070
+when we're in production, we'll write this information to files instead.
+
+46
+00:03:19,280 --> 00:03:22,280
+So that just saves me a little bit of correction later, later on.
+
+47
+00:03:23,330 --> 00:03:28,610
+So those are now set up so we can come back up here and now we can do something with it.
+
+48
+00:03:28,730 --> 00:03:33,350
+Well, we added those types error log and info log to our typed celebrities.
+
+49
+00:03:34,040 --> 00:03:36,560
+So let's get started using those.
+
+50
+00:03:36,980 --> 00:03:42,290
+So we already have the typed celebrities as a receiver on this function, so we can just say, see dot
+
+51
+00:03:42,290 --> 00:03:47,870
+info log equals info log and see it on air log equals air log.
+
+52
+00:03:49,490 --> 00:03:55,250
+And we can also, since we now have the environment variable debug available to us because we read the
+
+53
+00:03:55,250 --> 00:04:05,990
+dot on the file, we can say See Dot Debug equals OS X, get on and we'll look for debug, which is
+
+54
+00:04:05,990 --> 00:04:08,150
+what we called it in our dart on file.
+
+55
+00:04:08,450 --> 00:04:11,120
+But of course, this is a string.
+
+56
+00:04:11,150 --> 00:04:16,010
+Anything we call from our dot on that's right into our environment is actually a string, so we need
+
+57
+00:04:16,010 --> 00:04:20,900
+to convert it to a Boolean because that's the type in celebrities for the debug field.
+
+58
+00:04:21,380 --> 00:04:22,130
+And that's easy enough.
+
+59
+00:04:22,250 --> 00:04:32,120
+We can just add right here, ignore the error and put in stir calls dot her bool.
+
+60
+00:04:34,580 --> 00:04:36,020
+And then wrap this whole thing.
+
+61
+00:04:38,730 --> 00:04:45,030
+In quotation marks or in parentheses, and it's okay, don't get on there.
+
+62
+00:04:45,660 --> 00:04:49,890
+Now we have our loggers and our debug value set in our celebrities variable.
+
+63
+00:04:50,490 --> 00:04:51,990
+And of course, we can do more than that.
+
+64
+00:04:52,020 --> 00:04:56,460
+We also have, for example, if you recall up here version, which we're not using, well, we may as
+
+65
+00:04:56,460 --> 00:04:57,690
+well populate that as well.
+
+66
+00:04:58,350 --> 00:05:02,400
+So see, dot version equals version our constant.
+
+67
+00:05:04,430 --> 00:05:08,190
+So now all of this information is available to us on the front end.
+
+68
+00:05:08,360 --> 00:05:10,700
+So if we switch back to the front end, for example.
+
+69
+00:05:12,070 --> 00:05:16,330
+So back here in our main application, we can try using some of the things we've set, so let's open
+
+70
+00:05:16,330 --> 00:05:23,260
+a terminal and make sure we have the latest version of everything going on vendor and Hyder Terminal.
+
+71
+00:05:23,800 --> 00:05:28,270
+And let's go over this in IT application and see if we can call some of these things.
+
+72
+00:05:28,420 --> 00:05:35,050
+So here's where we have our security variable we created on Line 17 in in it application and then we
+
+73
+00:05:35,050 --> 00:05:36,910
+call new and handed the path.
+
+74
+00:05:37,090 --> 00:05:42,070
+And at that point, we should have some information available to us so I can get rid of this, for example.
+
+75
+00:05:42,220 --> 00:05:46,710
+So don't debug because that should be set by the time I finish calling new.
+
+76
+00:05:47,440 --> 00:05:47,960
+So down here.
+
+77
+00:05:47,980 --> 00:05:48,900
+Let's see if that works.
+
+78
+00:05:48,910 --> 00:05:49,630
+Let's try.
+
+79
+00:05:51,030 --> 00:05:53,070
+Format dot print line
+
+80
+00:05:55,890 --> 00:06:01,350
+Debug is set to and then we just put Cell Dot Debug.
+
+81
+00:06:03,120 --> 00:06:04,630
+Let's try running this and see what happens.
+
+82
+00:06:04,650 --> 00:06:11,170
+So down here in my terminal, I simply type, make start, build celebrities.
+
+83
+00:06:11,220 --> 00:06:14,580
+And it says debug is set to true, which is perfect.
+
+84
+00:06:15,030 --> 00:06:18,530
+OK, so that means I also don't have to use format print one.
+
+85
+00:06:18,540 --> 00:06:26,850
+I could instead say sell the info log script line and run this application again.
+
+86
+00:06:26,850 --> 00:06:28,380
+And this time it shouldn't just print.
+
+87
+00:06:28,390 --> 00:06:29,660
+Debug is set to true.
+
+88
+00:06:29,670 --> 00:06:33,590
+It should put some more information that our info log pretends to it, for example.
+
+89
+00:06:33,630 --> 00:06:34,410
+So make start.
+
+90
+00:06:36,640 --> 00:06:40,300
+And we have imported not used format over insularity, so of course.
+
+91
+00:06:41,800 --> 00:06:47,140
+So let's just say this, and that will clean that up and try that again, make start.
+
+92
+00:06:48,880 --> 00:06:54,310
+And there it says info, plus the date and time and then debug is set to true.
+
+93
+00:06:55,450 --> 00:07:01,510
+So as you can see, every time we add new functionality to our solar toss package, any application
+
+94
+00:07:01,510 --> 00:07:06,250
+that uses that functionality will have access to it, and that's the entire goal of what we're trying
+
+95
+00:07:06,250 --> 00:07:06,820
+to do here.
+
+96
+00:07:07,450 --> 00:07:08,960
+All right, that's enough for this time around.
+
+97
+00:07:08,980 --> 00:07:10,900
+We'll move on in the next election.

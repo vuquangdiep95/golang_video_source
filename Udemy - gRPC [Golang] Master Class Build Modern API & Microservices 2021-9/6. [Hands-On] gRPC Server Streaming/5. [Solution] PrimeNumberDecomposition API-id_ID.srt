@@ -1,0 +1,532 @@
+1
+00:00:00,420 --> 00:00:01,260
+OK jadi kita mulai.
+
+2
+00:00:01,260 --> 00:00:04,790
+Jadi sekarang saya harus berurusan dengan kalkulator di Pluto.
+
+3
+00:00:05,190 --> 00:00:08,630
+Jadi saya harap Anda memberikan cukai pada cukai dan Anda berhasil.
+
+4
+00:00:08,640 --> 00:00:16,760
+Yang ingin kami lakukan adalah membuat RB C dan kemudian unpc akan disebut dekomposisi bilangan prima.
+
+5
+00:00:16,950 --> 00:00:17,580
+BAIK.
+
+6
+00:00:18,100 --> 00:00:19,870
+Jadi itu nama yang panjang.
+
+7
+00:00:19,870 --> 00:00:28,540
+Begitu juga bilangan prima D-cup dan permintaan dan mengembalikan bilangan prima serangkaian respons dekomposisi bilangan
+
+8
+00:00:29,040 --> 00:00:30,110
+prima.
+
+9
+00:00:30,210 --> 00:00:35,350
+Dan meskipun namanya super panjang untuk API saya, saya benar-benar ingin memastikan bahwa ia
+
+10
+00:00:35,350 --> 00:00:38,300
+masih memiliki konvensi penamaan yang sama yang didefinisikan.
+
+11
+00:00:38,380 --> 00:00:40,790
+Jadi sekarang kita harus mendefinisikan pesan-pesan ini.
+
+12
+00:00:41,210 --> 00:00:45,170
+Permintaan dekomposisi utama dan permintaan itu sendiri cukup sederhana.
+
+13
+00:00:45,310 --> 00:00:50,840
+Saya pikir nomor int 64 dan itu penuh pertama saya dan hanya itu yang saya butuhkan.
+
+14
+00:00:51,160 --> 00:00:55,240
+Dan juga responnya sendiri akan sangat sederhana.
+
+15
+00:00:55,540 --> 00:01:03,680
+Ini hanya pesan dan itu akan mengembalikan faktor prima sehingga faktor garis bawah prima sama dengan 1.
+
+16
+00:01:04,060 --> 00:01:06,100
+Dan itulah yang saya butuhkan.
+
+17
+00:01:06,280 --> 00:01:07,650
+Saya punya permintaan ini.
+
+18
+00:01:07,700 --> 00:01:10,490
+RBC sudah benar dalam protokol saya tetapi ayahnya baik-baik saja.
+
+19
+00:01:10,820 --> 00:01:17,570
+Sekarang dapatkan hasil Anda dan saya hanya akan menjalankan perintah ini lagi untuk menghasilkan kode dan berfungsi.
+
+20
+00:01:17,570 --> 00:01:23,980
+Jadi sekarang kita kembali untuk menghitung bahwa PBG saya akan pergi dan semuanya telah dihasilkan untuk kita.
+
+21
+00:01:24,110 --> 00:01:28,830
+Jika kita melihat bilangan prima kita dapat melihat bahwa kode sudah ditambahkan di sini.
+
+22
+00:01:28,880 --> 00:01:29,650
+Begitu sempurna.
+
+23
+00:01:29,660 --> 00:01:30,780
+Semuanya bagus.
+
+24
+00:01:30,890 --> 00:01:33,440
+Sekarang kita maju dan mengimplementasikan server.
+
+25
+00:01:33,680 --> 00:01:38,270
+Jadi kita miliki di server saya perlu menerapkan fungsi baru di sana.
+
+26
+00:01:38,300 --> 00:01:47,870
+Jadi jika kita pergi ke Kathleen Koch dan kita melihat antarmuka server lalu masing-masing kita mengimplementasikan fungsi dekomposisi
+
+27
+00:01:47,960 --> 00:01:49,460
+bilangan prima.
+
+28
+00:01:49,460 --> 00:01:54,090
+Jadi saya akan langsung menyalin ini tetapi akan menjadi hal yang persis sama seperti yang kita lihat sebelumnya.
+
+29
+00:01:54,110 --> 00:01:57,060
+Itu hanya latihan.
+
+30
+00:01:57,210 --> 00:02:04,790
+Jadi saya keluar dari suatu fungsi di server saya dan nama fungsinya adalah dekomposisi bilangan prima.
+
+31
+00:02:04,800 --> 00:02:11,020
+Sekarang dibutuhkan permintaan dan setengah kalkulator P. B. ini.
+
+32
+00:02:11,260 --> 00:02:12,460
+OK, itu terlihat bagus.
+
+33
+00:02:12,840 --> 00:02:17,890
+Dan di sini dibutuhkan streaming dan mengembalikan kesalahan.
+
+34
+00:02:18,120 --> 00:02:20,770
+Ok sekarang saya pergi dan bisa menulis fungsi saya.
+
+35
+00:02:21,090 --> 00:02:28,410
+Jadi seperti yang telah kita lihat sebelumnya kita hanya perlu mencetak pernyataan pertama kita, kita akan mengatakan itu menerima dekomposisi bilangan prima
+
+36
+00:02:28,410 --> 00:02:30,810
+r b c yang terlihat bagus.
+
+37
+00:02:30,810 --> 00:02:40,410
+Jadi sekarang mari kita ekstrak angka pertama yang diminta dari kita sehingga kita dapat mengatakan nomor itu untuk diurai.
+
+38
+00:02:40,410 --> 00:02:48,840
+Jadi kami baru saja mendapat jumlah sama dengan permintaan yang mendapatkan nomor dan itu memberi kami nomor yang perlu kami kerjakan.
+
+39
+00:02:48,930 --> 00:02:51,210
+Dan sekarang jika Anda melihat algoritma yang saya berikan kepada Anda.
+
+40
+00:02:51,330 --> 00:02:51,830
+BAIK.
+
+41
+00:02:51,900 --> 00:02:54,370
+Dan Anda hanya perlu melihat kodesemu.
+
+42
+00:02:54,570 --> 00:03:03,590
+Kami dapat mulai bekerja dengan dekomposisi saat ini sehingga kami akan mengatakan kami akan menetapkan pembagi sama dengan untuk memulai untuk
+
+43
+00:03:03,610 --> 00:03:04,430
+menang.
+
+44
+00:03:04,600 --> 00:03:07,210
+Dan omong-omong di sini itu tidak bahagia karena aku belum.
+
+45
+00:03:07,650 --> 00:03:08,690
+Mungkin penting.
+
+46
+00:03:08,880 --> 00:03:09,700
+Kita mulai.
+
+47
+00:03:09,720 --> 00:03:11,570
+Saya baru saja menghitung P. B. dot.
+
+48
+00:03:11,780 --> 00:03:12,720
+BAIK.
+
+49
+00:03:12,750 --> 00:03:14,090
+Jadi sekarang sama dengan.
+
+50
+00:03:14,340 --> 00:03:19,470
+Maka menurut algoritma akan mengatakan baik jumlahnya lebih besar dari 1.
+
+51
+00:03:19,470 --> 00:03:24,240
+Jadi untuk angka lebih besar dari satu maka kita dapat menulis dekomposisi.
+
+52
+00:03:24,240 --> 00:03:33,690
+Jadi kita katakan jika angka pembagi modulo sama dengan nol sehingga itu berarti jika angka tersebut dapat dibagi
+
+53
+00:03:33,690 --> 00:03:37,620
+dengan pembagi maka kita dapat membuat respons.
+
+54
+00:03:37,710 --> 00:03:43,100
+Jadi kita bisa melakukan streaming yang mengirim dan kemudian kita perlu mengirim respons dekomposisi.
+
+55
+00:03:43,110 --> 00:03:50,250
+Jadi mari kita lanjutkan dan kirim ini akan membuat pesan di sini dan kita akan melihat
+
+56
+00:03:50,400 --> 00:03:54,060
+apa yang diperlukan sebagai input dibutuhkan faktor utama.
+
+57
+00:03:54,600 --> 00:03:58,520
+Jadi saya akan mengatakan faktor utama sama dengan pembagi.
+
+58
+00:03:58,910 --> 00:03:59,430
+BAIK.
+
+59
+00:04:00,210 --> 00:04:04,050
+Dan tidak dapat menggunakannya sebagai tipe nilai 64.
+
+60
+00:04:04,050 --> 00:04:07,530
+Jadi saya perlu menampilkan ini sebagai int 64.
+
+61
+00:04:07,830 --> 00:04:09,770
+Jadi di sini kita mulai, kita melakukannya di 64.
+
+62
+00:04:09,780 --> 00:04:11,790
+Jadi itu panjang dan sangat sempurna.
+
+63
+00:04:11,790 --> 00:04:18,120
+Jadi, jika angka itu adalah pembagi nol maka aliran akan mengirimkan ini dan kemudian kita dapat mengatakan angka
+
+64
+00:04:18,120 --> 00:04:20,300
+sama dengan angka dibagi dengan pembagi.
+
+65
+00:04:20,570 --> 00:04:20,790
+BAIK.
+
+66
+00:04:20,790 --> 00:04:23,830
+Jadi itulah algoritma kami.
+
+67
+00:04:23,910 --> 00:04:27,010
+Kalau tidak, kita hanya akan menambah pembagi.
+
+68
+00:04:27,080 --> 00:04:28,830
+Jadi plus sama dengan 1.
+
+69
+00:04:28,880 --> 00:04:29,970
+BAIK.
+
+70
+00:04:30,390 --> 00:04:36,120
+Tapi Anda juga bisa mengatakan pembagi plus plus apa pun yang
+
+71
+00:04:36,120 --> 00:04:43,830
+Anda rujuk, kami bisa melakukannya plus plus dan kami juga bisa mencatat pernyataan jika kami bisa
+
+72
+00:04:43,830 --> 00:04:51,340
+mengatakan cetak cheetah saja dan mengatakan baik hanya menerapkan pembagi pembagi dengan peningkatan ok 2.
+
+73
+00:04:51,830 --> 00:04:54,230
+Dan kami hanya akan memberikan nilai di sini.
+
+74
+00:04:54,270 --> 00:05:01,240
+Persentase Makan mengatakan Pangeran dan baik yang ada di pembagi kurasa aku hanya sedikit pernyataan atau
+
+75
+00:05:01,240 --> 00:05:01,830
+tertinggal.
+
+76
+00:05:02,050 --> 00:05:06,180
+Jadi pada dasarnya jumlah akan dibagi dan dibagi dan dibagi dengan sangat cepat.
+
+77
+00:05:06,520 --> 00:05:11,020
+Dan kemudian setelah angka mengenai satu itu berarti kami menemukan semua pembagi dalam hal ini kami selesai dengan
+
+78
+00:05:11,020 --> 00:05:12,840
+fungsi ini dan kami mengembalikan nihil.
+
+79
+00:05:13,300 --> 00:05:14,730
+Jadi server terlihat benar.
+
+80
+00:05:14,950 --> 00:05:15,780
+BAIK.
+
+81
+00:05:15,820 --> 00:05:17,470
+Sekarang kita lanjutkan dengan klien.
+
+82
+00:05:17,800 --> 00:05:27,200
+Jadi jam itu sendiri akan naik ke yang pergi dan saya hanya akan menyalin fungsi ini saya akan menyebutnya melakukan server streaming C
+
+83
+00:05:27,430 --> 00:05:34,860
+dan saya akan pergi ke depan dan menyalin seluruh blok ini sehingga kita dapat bekerja dengan sesuatu seperti
+
+84
+00:05:34,860 --> 00:05:37,240
+ini melakukan server streaming .
+
+85
+00:05:37,260 --> 00:05:45,260
+Jadi sekarang kita melakukan server dekomposisi utama memimpikan RBC.
+
+86
+00:05:45,390 --> 00:05:46,830
+Itu betul.
+
+87
+00:05:46,830 --> 00:05:53,520
+Sekarang kita perlu membuat permintaan dekomposisi utama jadi mari kita lakukan yang sangat sederhana
+
+88
+00:05:53,520 --> 00:05:59,770
+di mana nomor yang ingin kita minta nomor akan menjadi nomor 12.
+
+89
+00:05:59,980 --> 00:06:08,290
+OK karena kita dapat menguraikan ini dengan sangat mudah dan kemudian kita akan mengatakan melihat titik-titik yang
+
+90
+00:06:08,380 --> 00:06:12,020
+akan membuat komposisi ini dapat saya hapus.
+
+91
+00:06:12,260 --> 00:06:16,160
+OK jadi permintaannya sudah benar dan kita perlu tindak lanjut.
+
+92
+00:06:16,200 --> 00:06:19,040
+Jadi mari kita pergi ke depan dan memiliki for loop.
+
+93
+00:06:19,040 --> 00:06:26,100
+Jadi sekali lagi untuk dan kami akan menangani ini jadi ini adalah aliran yang kami dapatkan kembali.
+
+94
+00:06:26,100 --> 00:06:36,850
+Jadi bagi kami streaming tidak menerima dan itu adalah respons atau udara karena setiap kali kami melakukan streaming tidak
+
+95
+00:06:36,860 --> 00:06:47,140
+menerima jika udara sama dengan iRobot dan sebuah file akan pecah karena kami telah mencapai akhir aliran.
+
+96
+00:06:47,440 --> 00:06:58,680
+Kalau tidak, jika udaranya tidak nol maka sesuatu terjadi pada Lagattuta fatal F sesuatu terjadi karena kurangnya nama yang
+
+97
+00:06:58,680 --> 00:07:03,510
+lebih baik dan kami melewati pesan kesalahan.
+
+98
+00:07:03,510 --> 00:07:07,060
+Kalau tidak, hasilnya benar dan kami hanya akan mencetak hasilnya.
+
+99
+00:07:07,470 --> 00:07:17,910
+Jadi kita akan mengatakan bahwa dikosongkan untuk Intel dan Rhett dan kita hanya akan mencetak hasil yang kita terima hasilnya adalah kita juga
+
+100
+00:07:17,910 --> 00:07:23,410
+bisa mendapatkan faktor prima hanya untuk mendapatkan faktor prima dari itu.
+
+101
+00:07:23,410 --> 00:07:24,480
+Jadi di sini kita dapatkan nomornya.
+
+102
+00:07:24,520 --> 00:07:26,080
+Dan itu terlihat sempurna.
+
+103
+00:07:26,110 --> 00:07:29,490
+Dan setelah kita selesai dengan ini kita selesai dengan fungsi ini.
+
+104
+00:07:29,680 --> 00:07:31,040
+Jadi klien tampak hebat.
+
+105
+00:07:31,060 --> 00:07:33,440
+Saya pergi agak cepat tetapi ini sama seperti sebelumnya.
+
+106
+00:07:34,030 --> 00:07:35,970
+Dan sekarang kita hanya perlu menguji semuanya.
+
+107
+00:07:35,980 --> 00:07:37,320
+Jadi mari kita lanjutkan.
+
+108
+00:07:37,480 --> 00:07:45,790
+Saya akan menjalankan server server kalkulator sehingga berjalan sekarang dan saya akan
+
+109
+00:07:45,790 --> 00:07:48,270
+menjalankan klien kalkulator.
+
+110
+00:07:49,030 --> 00:07:55,600
+Dan demikian dikatakan keunggulan mulai melakukan server dekomposisi utama berbagi RBC dan hasilnya adalah dua hingga
+
+111
+00:07:55,600 --> 00:07:56,460
+tiga.
+
+112
+00:07:56,560 --> 00:08:00,470
+Jadi dua kali dua kali tiga memang sama dengan 12.
+
+113
+00:08:00,760 --> 00:08:02,790
+Dan di sini hanya mendapat sedikit pesan cinta.
+
+114
+00:08:02,820 --> 00:08:04,970
+Pembagi David telah meningkat menjadi tiga.
+
+115
+00:08:05,350 --> 00:08:07,030
+Jadi ini terlihat benar.
+
+116
+00:08:07,030 --> 00:08:10,810
+Tetapi sekarang kita dapat melakukan hal-hal yang lebih menyenangkan, kita dapat memiliki jumlah yang sangat besar.
+
+117
+00:08:12,230 --> 00:08:12,670
+Disini.
+
+118
+00:08:12,670 --> 00:08:16,580
+Jadi bukan hanya 12 tetapi jumlah yang besar.
+
+119
+00:08:16,930 --> 00:08:20,200
+Jadi itu terlihat seperti angka yang cukup besar bagi saya.
+
+120
+00:08:20,200 --> 00:08:23,220
+Dan di server ketika saya melihat hal-hal yang ingin saya tambahkan baris baru.
+
+121
+00:08:23,260 --> 00:08:24,530
+Jadi itu tidak terlihat gila.
+
+122
+00:08:24,550 --> 00:08:25,230
+BAIK.
+
+123
+00:08:25,780 --> 00:08:29,280
+Jadi saya akan menjalankan kembali server saya karena saya mengubah kode.
+
+124
+00:08:29,280 --> 00:08:31,850
+Saya akan menjalankan kembali klien.
+
+125
+00:08:31,870 --> 00:08:37,570
+Dan seperti yang dapat kita lihat, kita memiliki jumlah komposisi utama dari angka itu dua kali dua kali
+
+126
+00:08:37,570 --> 00:08:41,020
+dua kali lima kali tujuh kali tujuh kali 163 kali.
+
+127
+00:08:41,170 --> 00:08:42,820
+Jumlah ini sangat besar.
+
+128
+00:08:42,820 --> 00:08:45,130
+Dan semuanya berjalan seperti yang diharapkan.
+
+129
+00:08:45,130 --> 00:08:46,960
+Dan yang paling keren adalah pemangkasan.
+
+130
+00:08:47,010 --> 00:08:54,520
+Jadi karena server sedang menunggu pembagi kami pada dasarnya menerima secara real time faktor dekomposisi
+
+131
+00:08:54,520 --> 00:08:55,350
+utama.
+
+132
+00:08:55,390 --> 00:09:02,200
+Jadi saya pikir ini adalah latihan yang sangat keren untuk dijalani dan saya harap Anda berhasil dan saya akan melihat di
+
+133
+00:09:02,200 --> 00:09:04,110
+kuliah berikutnya untuk melakukan streaming.
+

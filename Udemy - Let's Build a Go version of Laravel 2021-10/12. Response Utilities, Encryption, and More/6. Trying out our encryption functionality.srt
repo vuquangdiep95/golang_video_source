@@ -1,0 +1,419 @@
+1
+00:00:01,770 --> 00:00:03,540
+So we have our encryption key set.
+
+2
+00:00:03,570 --> 00:00:05,360
+We have the functions, insularity.
+
+3
+00:00:05,640 --> 00:00:07,950
+Let's try it out here in my app.
+
+4
+00:00:08,100 --> 00:00:13,710
+And the first thing I'm going to do because I need to make sure that my app is aware of this new encryption
+
+5
+00:00:13,710 --> 00:00:20,100
+functionality is I open my terminal and type of go mode vendor just to update the dependencies from
+
+6
+00:00:20,100 --> 00:00:20,910
+the other project.
+
+7
+00:00:21,030 --> 00:00:22,110
+And that should take care of it.
+
+8
+00:00:23,370 --> 00:00:24,480
+Now, how am I going to do this?
+
+9
+00:00:24,900 --> 00:00:30,010
+Well, I could if I wanted to write a handler and do all the hard work right in the handler.
+
+10
+00:00:30,030 --> 00:00:35,400
+But why don't we jump right to the convenience functions first, and I want to assume that.
+
+11
+00:00:35,610 --> 00:00:40,260
+And this just for the sake of this, this lecture, I'm going to assume that most of our encryption
+
+12
+00:00:40,260 --> 00:00:42,120
+will be done inside the handlers package.
+
+13
+00:00:42,330 --> 00:00:48,360
+So I'll open the convenience functionality in their convenience, Darko at the very end.
+
+14
+00:00:48,480 --> 00:00:52,020
+And you can put these helpers in any place you need to have them, of course.
+
+15
+00:00:52,320 --> 00:00:55,950
+I'll create a function with the receiver of a pointer to handlers,
+
+16
+00:00:58,920 --> 00:01:00,120
+and I'm going to call this one.
+
+17
+00:01:00,150 --> 00:01:08,690
+Not surprisingly, encrypt E and C are wiped, and it will take one argument text of type string and
+
+18
+00:01:08,700 --> 00:01:11,490
+it will return a string and potentially an error.
+
+19
+00:01:14,130 --> 00:01:14,430
+OK.
+
+20
+00:01:15,720 --> 00:01:17,880
+So how do I use this?
+
+21
+00:01:18,120 --> 00:01:19,290
+Well, it's actually pretty simple.
+
+22
+00:01:19,590 --> 00:01:26,760
+I'm going to create a variable called ink, and it's going to be assigned the value of celebrities dot
+
+23
+00:01:27,300 --> 00:01:28,140
+encryption.
+
+24
+00:01:28,650 --> 00:01:32,580
+That type I made a little while ago and I'll pre-populated.
+
+25
+00:01:32,610 --> 00:01:40,150
+It's one field key with what we have, of course, is our H Dot app dot encryption key.
+
+26
+00:01:40,170 --> 00:01:46,080
+But this needs to be in a slice of bytes, insularity, encryption, so I'll just cast it to a slice
+
+27
+00:01:46,080 --> 00:01:51,450
+of pie and it's going to have E or H Dot app.
+
+28
+00:01:52,860 --> 00:01:54,960
+Encryption key like that?
+
+29
+00:01:55,920 --> 00:01:56,230
+OK.
+
+30
+00:01:56,250 --> 00:01:58,560
+For some reason, this did not import celebrities for me.
+
+31
+00:01:58,560 --> 00:02:00,510
+So let's try that again, celebrities.
+
+32
+00:02:01,650 --> 00:02:02,130
+That's better.
+
+33
+00:02:02,760 --> 00:02:03,810
+So it part of that for me.
+
+34
+00:02:03,810 --> 00:02:05,390
+So now I have that ink variable.
+
+35
+00:02:05,430 --> 00:02:13,030
+And if you recall, everything we need to encrypt or decrypt is right on that variable.
+
+36
+00:02:13,110 --> 00:02:14,280
+Think EMC.
+
+37
+00:02:14,430 --> 00:02:26,910
+So I can say encrypted c r y e d and potentially an error come from ink, dot, encrypt and text.
+
+38
+00:02:28,050 --> 00:02:30,570
+I called it test up here and I wanted to call it text.
+
+39
+00:02:31,200 --> 00:02:31,710
+That's better.
+
+40
+00:02:32,850 --> 00:02:33,660
+Well, check for an error.
+
+41
+00:02:34,650 --> 00:02:44,220
+If error is not equal to nil, then we'll return an empty string and the error otherwise return encrypted
+
+42
+00:02:45,450 --> 00:02:45,900
+and no.
+
+43
+00:02:47,380 --> 00:02:49,150
+So that should encrypt something.
+
+44
+00:02:49,340 --> 00:02:55,870
+Now, if I copied this whole thing and make the necessary changes paste pasted in here and call this
+
+45
+00:02:55,870 --> 00:02:56,440
+decrypt.
+
+46
+00:02:59,810 --> 00:03:07,910
+And I'll call this variable crypto just because it's clearer and now I want to call Decrypt and crypto,
+
+47
+00:03:10,850 --> 00:03:11,990
+and that should do it for me.
+
+48
+00:03:12,290 --> 00:03:16,610
+OK, so we have these two helper functions or convenience functions available to us.
+
+49
+00:03:17,180 --> 00:03:17,900
+Let's go use them.
+
+50
+00:03:19,040 --> 00:03:20,750
+So we'll make this dead simple.
+
+51
+00:03:21,290 --> 00:03:27,300
+Will create a new handler, so we'll go to handlers and I'll scroll.
+
+52
+00:03:27,320 --> 00:03:32,330
+The very bottom of this will create a new function with the type of h pointer to handlers.
+
+53
+00:03:33,380 --> 00:03:44,450
+And I'll call it test crypto crypto W.H. Speed Up Response Writer and our is a pointer to HGTV Dot request.
+
+54
+00:03:46,970 --> 00:03:49,040
+So I'll just create a variable some text on it.
+
+55
+00:03:49,310 --> 00:03:55,010
+So plain text is assigned the value of Hello World.
+
+56
+00:03:56,270 --> 00:03:58,850
+Then I'll just write that right to the browser window.
+
+57
+00:03:58,880 --> 00:04:01,490
+This won't be a pretty page, but it will work, hopefully.
+
+58
+00:04:02,210 --> 00:04:13,250
+So I'll say format dot f print and we're going to print W and we'll print unencrypted
+
+59
+00:04:15,620 --> 00:04:21,470
+plus plain text plus because they're not writing HTML.
+
+60
+00:04:21,770 --> 00:04:23,870
+I'll just put a line feed in there.
+
+61
+00:04:24,700 --> 00:04:36,980
+OK, then I'll say encrypted and earth come from H Dot Encrypt and we'll encrypt plain text.
+
+62
+00:04:38,420 --> 00:04:41,030
+I'll check for an error if error is not equal to nil.
+
+63
+00:04:41,060 --> 00:04:43,100
+I'll just write to the error log.
+
+64
+00:04:44,760 --> 00:04:57,630
+H2 app Air Log Dot Print Line, and I'll print out the air and then I'll call each dot.
+
+65
+00:04:59,760 --> 00:05:00,710
+Error 500.
+
+66
+00:05:01,110 --> 00:05:01,500
+Why not?
+
+67
+00:05:01,950 --> 00:05:02,280
+OK.
+
+68
+00:05:03,090 --> 00:05:08,880
+And that requires W R and that's it, and I'll return.
+
+69
+00:05:12,240 --> 00:05:14,100
+Otherwise, let's print that out.
+
+70
+00:05:15,750 --> 00:05:25,470
+Format dot f print and I'll print out W encrypted plus encrypted,
+
+71
+00:05:29,340 --> 00:05:30,330
+and that will decrypt it.
+
+72
+00:05:30,540 --> 00:05:38,970
+So we'll say decrypted and potentially there come from H Dot, Decrypt and I had that encrypted.
+
+73
+00:05:41,370 --> 00:05:50,670
+And I'll check for an error, so I'll copy this stuff, paste it in here, and then I'll print out the
+
+74
+00:05:50,940 --> 00:05:51,960
+decrypted text.
+
+75
+00:05:52,170 --> 00:05:54,420
+I better put a carriage and return at the end of that.
+
+76
+00:05:58,630 --> 00:06:10,510
+And a copy this and paste it down here and change this to decrypted the label and printed decrypted.
+
+77
+00:06:12,130 --> 00:06:17,680
+OK, so now I have a rather simple, simplistic, but it's testing everything I want to test because
+
+78
+00:06:18,010 --> 00:06:23,410
+plain text is only used when I print it to the terminal the first time or printed to the browser window
+
+79
+00:06:23,410 --> 00:06:24,010
+the first time.
+
+80
+00:06:24,010 --> 00:06:29,230
+And then I encrypt it and he never to use it again so that I print out the actual encrypted value a
+
+81
+00:06:29,230 --> 00:06:31,210
+base64 encrypted string.
+
+82
+00:06:31,690 --> 00:06:35,190
+Then I decrypt encrypted and then I print out decrypted.
+
+83
+00:06:35,230 --> 00:06:42,010
+So if this gives the same value at the very end as it does at the beginning, hello world, then everything
+
+84
+00:06:42,010 --> 00:06:42,910
+works as expected.
+
+85
+00:06:43,030 --> 00:06:47,280
+So let's open a reach for the let's test it out.
+
+86
+00:06:48,040 --> 00:06:51,100
+So a yet.
+
+87
+00:06:52,250 --> 00:06:57,100
+And I'll put it as crypto and that calls a dot handlers
+
+88
+00:06:59,950 --> 00:07:01,330
+dot test crypto.
+
+89
+00:07:02,800 --> 00:07:04,180
+So let's open our terminal window.
+
+90
+00:07:04,700 --> 00:07:05,440
+Make stop.
+
+91
+00:07:05,440 --> 00:07:08,200
+In case it's running, it was make start.
+
+92
+00:07:09,910 --> 00:07:13,180
+And I'm going to go to local host 4000 crypto.
+
+93
+00:07:15,290 --> 00:07:16,760
+So let's switch to our Web browser.
+
+94
+00:07:17,990 --> 00:07:18,430
+OK.
+
+95
+00:07:18,590 --> 00:07:20,260
+Just reload this to make sure it's working.
+
+96
+00:07:20,270 --> 00:07:20,780
+It is.
+
+97
+00:07:21,230 --> 00:07:26,680
+And up here, I'll just put slash crypto page not found.
+
+98
+00:07:26,690 --> 00:07:30,230
+I left the top off t.
+
+99
+00:07:30,710 --> 00:07:34,300
+Oh, so we have hello world.
+
+100
+00:07:34,310 --> 00:07:38,300
+Then we have the encrypted string and then we have decrypted hello world.
+
+101
+00:07:38,330 --> 00:07:41,090
+So that works exactly as it should.
+
+102
+00:07:42,200 --> 00:07:46,400
+And of course, if you need that encryption functionality, say somewhere else in your application,
+
+103
+00:07:46,400 --> 00:07:47,690
+not in your handler's folder.
+
+104
+00:07:47,780 --> 00:07:53,540
+Just copy those same two functions, change the receivers to the appropriate value, and you are good
+
+105
+00:07:53,540 --> 00:07:53,960
+to go.

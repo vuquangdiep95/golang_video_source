@@ -1,0 +1,204 @@
+1
+00:00:00,300 --> 00:00:05,570
+OK jadi sekarang kita sedang memulai dan di mana Anda akan mendefinisikan API unity greets.
+
+2
+00:00:05,670 --> 00:00:11,200
+Jadi pesan input harus berupa salam dan itu akan berisi dua string nama depan dan nama belakang.
+
+3
+00:00:11,700 --> 00:00:17,940
+Dan pc akan menerima permintaan salam yang berisi salam dan dia akan mengembalikan respons yang berisi
+
+4
+00:00:17,940 --> 00:00:20,310
+hasil yang cukup mudah bukan.
+
+5
+00:00:20,310 --> 00:00:23,960
+Jadi, Anda benar-benar memiliki semua blok bangunan.
+
+6
+00:00:24,000 --> 00:00:30,660
+Jadi yang akan saya lakukan adalah dalam file ini kita akan mulai menulis beberapa sintaks buffer protokol
+
+7
+00:00:30,660 --> 00:00:37,080
+dan hal pertama yang harus kita lakukan adalah membuat salam dan salam akan mengambil bidang pertama nama
+
+8
+00:00:37,080 --> 00:00:43,230
+depan dan bidang itu adalah sebuah string dan kami menetapkan tag nomor satu karena itulah bidang
+
+9
+00:00:43,530 --> 00:00:45,510
+pertama untuk pesan ucapan.
+
+10
+00:00:45,510 --> 00:00:49,530
+Sekarang kita juga perlu nama belakang dan nama belakang akan menjadi tag nomor dua.
+
+11
+00:00:49,530 --> 00:00:52,350
+Jadi, inilah sintaks untuk artikel Anda tentang kami.
+
+12
+00:00:52,410 --> 00:01:00,420
+Sekarang untuk sebuah pesan, kita akan memiliki permintaan salam dan itu adalah pesan bahwa gangsta rap menyambut dan
+
+13
+00:01:00,930 --> 00:01:07,450
+pada dasarnya berisi salam, nama lengkapnya salam dan nomor bidang adalah nomor satu.
+
+14
+00:01:07,470 --> 00:01:07,840
+BAIK.
+
+15
+00:01:07,950 --> 00:01:13,600
+Jadi ini adalah tag nomor satu dan akan mengembalikan respons sehingga kita dapat mengatakan mengembalikan respons Negatif.
+
+16
+00:01:14,160 --> 00:01:20,400
+Dan dalam respons itu Anda dapat mengembalikan string hasil dan jika bilangan real adalah nomor 1.
+
+17
+00:01:20,400 --> 00:01:27,150
+Jadi di sini kami telah menetapkan tiga pesan dalam file buffer protokol kami dan kami telah menetapkan permintaan
+
+18
+00:01:27,150 --> 00:01:28,710
+ucapan dan respons.
+
+19
+00:01:28,770 --> 00:01:32,210
+Jadi mereka bertanya kepada saya apa yang kita katakan meminta tanggapan ingroup.
+
+20
+00:01:32,370 --> 00:01:38,120
+Yah saya senang Anda bertanya karena di sini kita akan mendefinisikan API kami.
+
+21
+00:01:38,430 --> 00:01:44,610
+Jadi kami melakukan RBC dan itu pada dasarnya RPG pertama yang disebut kami
+
+22
+00:01:44,610 --> 00:01:50,940
+akan mendefinisikan dan akan disebut Gritz sehingga grete mengambil beberapa input dan mengembalikan beberapa output.
+
+23
+00:01:51,270 --> 00:01:58,670
+Jadi input yang dibutuhkan oleh keserakahan adalah permintaan salam dan inilah mengapa kami mendefinisikan permintaan yang bagus dan itu
+
+24
+00:01:58,670 --> 00:02:02,330
+akan kembali karena Anda dapat mengharapkan respons yang bagus.
+
+25
+00:02:02,340 --> 00:02:08,320
+Maka kami memiliki kurung keriting terbuka dan tertutup kalau-kalau Anda akan melihat di masa depan jika Anda pilihan Anda.
+
+26
+00:02:08,510 --> 00:02:12,350
+Dan kadang-kadang cukup konvensional untuk menambahkan anggapan ini.
+
+27
+00:02:12,860 --> 00:02:14,900
+Jadi sebenarnya perlu menambahkan ini dalam semicon.
+
+28
+00:02:14,990 --> 00:02:16,530
+Jadi begini.
+
+29
+00:02:16,670 --> 00:02:21,740
+Sekarang beberapa hal yang lebih dari sebuah konvensi untuk tetap dapat diatur untuk memastikan bahwa
+
+30
+00:02:21,740 --> 00:02:24,910
+pesan Anda memiliki beberapa kesamaan di antara mereka.
+
+31
+00:02:25,010 --> 00:02:31,760
+Selalu ketika Anda memberi nama RBC Anda sesuatu, input adalah permintaan sesuatu dan responsnya adalah respons
+
+32
+00:02:31,760 --> 00:02:32,550
+sesuatu.
+
+33
+00:02:32,710 --> 00:02:34,280
+Jadi di sini karena kita maksudkan di.
+
+34
+00:02:34,630 --> 00:02:40,190
+Ini permintaan yang bagus dan respons yang bagus serta menjaga konvensi ini akan benar-benar
+
+35
+00:02:40,400 --> 00:02:46,190
+memungkinkan Anda untuk menjaga agar pesan buffer lokal Anda dapat diskalakan dan sebagainya dalam hal organisasi.
+
+36
+00:02:46,190 --> 00:02:51,230
+Sekarang jika kita melihat Generate apakah kita perlu membuat ulang kode jadi saya
+
+37
+00:02:51,230 --> 00:02:58,200
+akan menyalin perintah ini di sini dan jalankan lagi dan berhasil sehingga berarti saya setuju bahwa protokol itu baik.
+
+38
+00:02:58,580 --> 00:03:03,380
+Dan sekarang kita pergi untuk menyambut P. B. tidak apa-apa di sini.
+
+39
+00:03:03,740 --> 00:03:07,950
+Dan seperti yang bisa kita lihat musim gugur ini sekarang jauh lebih lama.
+
+40
+00:03:08,150 --> 00:03:15,740
+Lebih banyak yang dihasilkan untuk kami hanya karena kami telah menambahkan semua pesan ini dan IPC ini.
+
+41
+00:03:15,950 --> 00:03:20,120
+Jadi saya mengundang Anda untuk melihat-lihat sekarang musim gugur ini. Saya tidak akan
+
+42
+00:03:20,120 --> 00:03:27,880
+memandu Anda melalui semua yang dihasilkan tetapi beberapa hal yang dapat kita lihat adalah bahwa struct sambutan dibuat untuk kami yang merupakan protokol untuk pesan dan Anda
+
+43
+00:03:27,970 --> 00:03:33,640
+akan dapatkan hal yang sama untuk permintaan dan Anda akan mendapatkan hal yang sama lagi untuk tanggapan yang bagus.
+
+44
+00:03:33,680 --> 00:03:36,510
+Jadi hal-hal itu akan kita bahas dalam kuliah berikutnya.
+
+45
+00:03:36,980 --> 00:03:44,450
+Dan akhirnya jika Anda melihat klien layanan hebat sekarang antarmuka telah menyetujui API sehingga kami dapat
+
+46
+00:03:44,450 --> 00:03:45,670
+mulai memanggilnya.
+
+47
+00:03:45,950 --> 00:03:51,340
+Dan kami juga memiliki server layanan hebat yang merupakan antarmuka yang telah setuju untuk diimplementasikan juga.
+
+48
+00:03:51,590 --> 00:03:55,400
+Jadi warisan semua hal ini yang Anda katakan tetapi saya mengundang Anda untuk melihat file ini
+
+49
+00:03:55,400 --> 00:03:57,560
+hanya untuk mendapatkan gambaran umum tentang apa yang dihasilkan.
+
+50
+00:03:57,560 --> 00:04:01,230
+Sekali lagi nilai-nilai ini tidak mengubah apa yang akan kita edit sebagai server atau pergi.
+
+51
+00:04:01,400 --> 00:04:05,450
+Dan hal yang baik jadi saya harap itu membantu dan saya akan melihat Anda di kuliah berikutnya.
+

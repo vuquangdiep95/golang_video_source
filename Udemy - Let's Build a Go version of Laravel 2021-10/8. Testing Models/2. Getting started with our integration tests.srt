@@ -1,0 +1,1035 @@
+1
+00:00:02,450 --> 00:00:06,540
+OK, let's try writing some integration tests and a word of caution.
+
+2
+00:00:06,560 --> 00:00:13,130
+It can be irritating to write integration tests that use build tags in visual studio code and only in
+
+3
+00:00:13,130 --> 00:00:14,200
+visual studio code.
+
+4
+00:00:14,210 --> 00:00:18,290
+It seems it's much easier in things like go land and other ideas.
+
+5
+00:00:18,770 --> 00:00:23,720
+But for some reason, Visual Studio code seems to have trouble with autocomplete when I'm using build
+
+6
+00:00:23,720 --> 00:00:24,170
+text.
+
+7
+00:00:24,260 --> 00:00:27,200
+But we'll get past this, and it's not that difficult.
+
+8
+00:00:27,830 --> 00:00:33,230
+So the first thing I'll do, and I mean my app right now is I'll go to the data directory and I'll create
+
+9
+00:00:33,230 --> 00:00:38,120
+a new file, which I'm going to call integration into.
+
+10
+00:00:38,400 --> 00:00:40,120
+Gration underscore test.
+
+11
+00:00:40,130 --> 00:00:41,300
+Don't go OK.
+
+12
+00:00:42,470 --> 00:00:47,720
+And I'm going to give it its package name, package data, and I'm not going to put the build tag in
+
+13
+00:00:47,720 --> 00:00:53,900
+there because sometimes when I leave the bill tag out, initially it's actually works better doing autocomplete.
+
+14
+00:00:55,520 --> 00:01:00,200
+So first thing I'm going to do, I have my package declaration is I'm going to create a variable because
+
+15
+00:01:00,200 --> 00:01:03,920
+we need to determine what are the values we're going to use.
+
+16
+00:01:04,250 --> 00:01:05,520
+We're going to pull the Docker image.
+
+17
+00:01:05,540 --> 00:01:09,590
+It's going to have Postgres, and we need to have some information about how we connect to Postgres.
+
+18
+00:01:09,890 --> 00:01:18,650
+So I'll create a variable like this host is equal to local host, low goal host, which I have to spell,
+
+19
+00:01:18,650 --> 00:01:18,810
+right?
+
+20
+00:01:18,900 --> 00:01:21,470
+Make sure you spell all of these right or you're going to have problems.
+
+21
+00:01:22,010 --> 00:01:27,860
+The user I'm going to use to connect to the database will just be called Postgres, and the password
+
+22
+00:01:28,010 --> 00:01:29,540
+will make that just secret.
+
+23
+00:01:29,750 --> 00:01:30,800
+These are all just strings.
+
+24
+00:01:31,460 --> 00:01:31,820
+OK.
+
+25
+00:01:33,620 --> 00:01:39,920
+And the DBI name will, I'm going to call mine Solara toss under test.
+
+26
+00:01:40,100 --> 00:01:44,330
+It doesn't matter what you call it, because this will be a Docker image that we use to run our tests
+
+27
+00:01:44,330 --> 00:01:45,860
+and then we get rid of right away.
+
+28
+00:01:46,190 --> 00:01:49,070
+OK, what port am I going to listen on?
+
+29
+00:01:49,790 --> 00:01:51,020
+Not post port.
+
+30
+00:01:51,470 --> 00:01:58,490
+Well, the standard one is five four three two, but I don't want that to conflict if I have my other
+
+31
+00:01:58,490 --> 00:01:59,720
+developed environment running.
+
+32
+00:02:00,140 --> 00:02:03,170
+So we'll just use a different port, say, five four three five.
+
+33
+00:02:03,470 --> 00:02:03,860
+OK.
+
+34
+00:02:05,450 --> 00:02:11,570
+And then we need a data source name, and this is going to be a format string and we'll populate the
+
+35
+00:02:11,570 --> 00:02:15,580
+various substitutions for the placeholders a little bit later on.
+
+36
+00:02:15,590 --> 00:02:17,360
+But we'll build the format string right here.
+
+37
+00:02:17,720 --> 00:02:23,540
+Host equals with no spaces percent as port equals percent.
+
+38
+00:02:23,540 --> 00:02:29,670
+As user equals percent as password equals percent S..
+
+39
+00:02:29,690 --> 00:02:32,360
+And this is the connection string for Postgres, of course.
+
+40
+00:02:32,780 --> 00:02:33,400
+DB.
+
+41
+00:02:33,530 --> 00:02:43,400
+Name equals percent as SSL mode equals false, you know, disable falsies for the other database and
+
+42
+00:02:43,400 --> 00:02:44,730
+will use time zone.
+
+43
+00:02:44,750 --> 00:02:47,330
+I'll use the same thing I did in my live connection strings.
+
+44
+00:02:47,330 --> 00:02:52,910
+UTC and Connect underscore time out will be equal to five.
+
+45
+00:02:53,390 --> 00:02:53,720
+OK.
+
+46
+00:02:54,410 --> 00:02:57,560
+So there's my variables I'm going to use to connect to the database.
+
+47
+00:02:58,160 --> 00:03:04,470
+Now, when we run our application or actually when we run our tests, we're going to pull a Docker image.
+
+48
+00:03:04,490 --> 00:03:07,640
+It's going to have an empty database with no tables or anything in.
+
+49
+00:03:07,640 --> 00:03:10,730
+It will create the tables which will get to before too long.
+
+50
+00:03:11,120 --> 00:03:16,220
+And then we'll try inserting a user and it would be convenient to have that user ready to go small created
+
+51
+00:03:16,220 --> 00:03:18,560
+here via dummy user.
+
+52
+00:03:19,190 --> 00:03:24,050
+And that's going to be equal to the type user, and I'll just populate the fields I want in there,
+
+53
+00:03:24,110 --> 00:03:24,990
+just the ones I need.
+
+54
+00:03:25,010 --> 00:03:27,720
+So I need first name, Colin.
+
+55
+00:03:27,950 --> 00:03:38,090
+I'll make that song, then a comma last name, and I'll make that guy some guy email and that will be
+
+56
+00:03:38,090 --> 00:03:38,840
+equal to me.
+
+57
+00:03:38,840 --> 00:03:39,780
+Not here, Gqom.
+
+58
+00:03:40,670 --> 00:03:49,130
+Long as it's a value, we'll make the user active one and we'll give them a password, which will make
+
+59
+00:03:49,130 --> 00:03:51,920
+password like that.
+
+60
+00:03:52,610 --> 00:03:55,580
+So there there's something I can use to insert into the database.
+
+61
+00:03:56,420 --> 00:03:57,800
+Now I'm going to create a few variables.
+
+62
+00:03:57,800 --> 00:03:59,150
+I'm going to need to run this test.
+
+63
+00:03:59,240 --> 00:04:06,380
+I'm going to need models, obviously of type models, and I'm going to need a test database pool, which
+
+64
+00:04:06,380 --> 00:04:08,600
+I'll call Ver Test DB.
+
+65
+00:04:08,810 --> 00:04:13,700
+And it's a type pointer to sequel DB, and hopefully it will do the import.
+
+66
+00:04:13,710 --> 00:04:15,350
+For me, it did good.
+
+67
+00:04:16,760 --> 00:04:18,470
+So I'm glad I left that build tag out.
+
+68
+00:04:18,470 --> 00:04:21,560
+Otherwise I'd be typing blindly and hoping for the best.
+
+69
+00:04:22,250 --> 00:04:28,580
+Now we're going to need another thing, another resource, and the resource points to our Docker image.
+
+70
+00:04:28,880 --> 00:04:35,870
+And what I'm going to do is open my terminal window and import a third party package that makes working
+
+71
+00:04:35,870 --> 00:04:39,080
+with Docker images ever so much easier.
+
+72
+00:04:39,210 --> 00:04:40,100
+That's a really simple one.
+
+73
+00:04:40,100 --> 00:04:43,040
+We'll look at the repository in a bit, but right now, let's just import it.
+
+74
+00:04:44,300 --> 00:04:56,810
+So I'm going to go get it from GitHub dot com slash or y slash Docker test slash V3.
+
+75
+00:04:57,440 --> 00:05:02,180
+And if there's a later version out, as usual, please stick with V3 for the duration of this course
+
+76
+00:05:02,180 --> 00:05:06,020
+and feel free to upgrade to a later version at your leisure.
+
+77
+00:05:06,110 --> 00:05:10,250
+But when you have major version changes, you have breaking changes.
+
+78
+00:05:10,250 --> 00:05:14,480
+And if you don't stick with me, three probably things won't work the way that they do for me.
+
+79
+00:05:14,550 --> 00:05:15,380
+It's all important.
+
+80
+00:05:15,530 --> 00:05:18,020
+I may already have it, but I'll go get it just to be safe.
+
+81
+00:05:18,650 --> 00:05:24,740
+I already had it, and now I'm going to hit the up arrow and just add slash Docker to the end of this,
+
+82
+00:05:24,770 --> 00:05:25,130
+OK?
+
+83
+00:05:25,520 --> 00:05:30,980
+And that goes and gets to things that we absolutely are going to have to have in order to run our tests.
+
+84
+00:05:31,700 --> 00:05:32,810
+So that goes and gets it.
+
+85
+00:05:33,410 --> 00:05:34,070
+And there we go.
+
+86
+00:05:34,790 --> 00:05:38,150
+So now that they're here, I'm going to go ver.
+
+87
+00:05:39,930 --> 00:05:48,600
+And I'll create a variable called resource, and it's going to be of type a pointer to Docker test right
+
+88
+00:05:48,600 --> 00:05:50,330
+there, dart.
+
+89
+00:05:50,910 --> 00:05:55,200
+And the one I want and it looks like it's not going to oh, it did do the option of the autocomplete
+
+90
+00:05:55,200 --> 00:05:56,610
+for me resource.
+
+91
+00:05:57,630 --> 00:05:57,960
+OK.
+
+92
+00:05:58,470 --> 00:05:59,250
+So we need that.
+
+93
+00:05:59,430 --> 00:06:02,930
+And we also need a database pool, VAR pool.
+
+94
+00:06:03,750 --> 00:06:08,490
+And this is a pool used by Docker, a pointer to Docker test
+
+95
+00:06:11,070 --> 00:06:12,090
+dart pool.
+
+96
+00:06:14,230 --> 00:06:17,950
+Now those are out of the way, so I'm going to hide this terminal window to give myself a little more
+
+97
+00:06:17,950 --> 00:06:18,280
+room.
+
+98
+00:06:19,210 --> 00:06:22,180
+And now we're going to have a test main function.
+
+99
+00:06:23,410 --> 00:06:26,210
+And this is why we're using build tags when you're running tests.
+
+100
+00:06:26,230 --> 00:06:32,410
+You can't have to test mains and we already have one over here in model or in setup.
+
+101
+00:06:32,410 --> 00:06:34,930
+Test dog under setup underscore test dog go.
+
+102
+00:06:34,960 --> 00:06:36,070
+We already have a test me.
+
+103
+00:06:36,550 --> 00:06:39,250
+And if I have to test means well, no test will run.
+
+104
+00:06:39,460 --> 00:06:40,390
+Bad things will happen.
+
+105
+00:06:40,420 --> 00:06:47,940
+That's why we're separating them using build tags so close that let's create a function test me.
+
+106
+00:06:48,850 --> 00:06:54,350
+And as usual, it has one parameter and I always call it Hammer Point or two testing.
+
+107
+00:06:54,520 --> 00:06:55,540
+Dot m.
+
+108
+00:06:58,300 --> 00:06:59,680
+And hopefully it imported testing.
+
+109
+00:06:59,680 --> 00:07:01,180
+For me, it did good.
+
+110
+00:07:02,500 --> 00:07:08,620
+Now, when we run these tests, of course, the code we're testing expects to find an environment variable
+
+111
+00:07:08,620 --> 00:07:15,310
+called database underscore type, and it's either Postgres or PostgreSQL or MariaDB or minus Q up.
+
+112
+00:07:15,700 --> 00:07:17,160
+So let's set our environment for.
+
+113
+00:07:17,370 --> 00:07:20,020
+I only care about right now testing Postgres.
+
+114
+00:07:20,120 --> 00:07:25,240
+OK, so I'll call the OS package and I'll use set on and hopefully it did the import.
+
+115
+00:07:25,240 --> 00:07:26,290
+For me, it looks like it did.
+
+116
+00:07:26,980 --> 00:07:29,200
+And I'm going to set the environment variable.
+
+117
+00:07:29,200 --> 00:07:36,040
+My code expects to have database underscore type two Postgres, which I have to spell, right?
+
+118
+00:07:37,450 --> 00:07:38,860
+So we've set that variable.
+
+119
+00:07:39,670 --> 00:07:45,970
+Now I'm going to use my Docker test package to go and get a darker image and run it.
+
+120
+00:07:46,240 --> 00:07:47,920
+And there's a few steps to make that happen.
+
+121
+00:07:48,010 --> 00:07:52,510
+Start with I need to create a variable called P, which I'm going to use just for a couple of lines
+
+122
+00:07:53,140 --> 00:07:54,250
+and we'll check for an error.
+
+123
+00:07:54,790 --> 00:08:03,610
+And those are assigned values by calling Docker Test Dot New Pool, and it requires one parameter an
+
+124
+00:08:03,610 --> 00:08:07,030
+endpoint which I'm going to leave empty and empty string will get me past the error.
+
+125
+00:08:07,810 --> 00:08:10,780
+And we check for an error if error is not equal to nil.
+
+126
+00:08:12,250 --> 00:08:14,960
+Then at this point, I really don't want to go any further.
+
+127
+00:08:14,980 --> 00:08:23,620
+So I'll say log dot fatal f and I'll just say could not connect to Docker.
+
+128
+00:08:23,620 --> 00:08:28,600
+And this will happen, of course, if the person running the test doesn't actually have Docker installed,
+
+129
+00:08:28,990 --> 00:08:30,130
+so we'll print the error message.
+
+130
+00:08:30,760 --> 00:08:36,850
+OK, now that I have a value in P, if I get past this, I'm going to set my package a little variable
+
+131
+00:08:36,850 --> 00:08:38,050
+pool equal to Pete.
+
+132
+00:08:38,440 --> 00:08:44,170
+That's the only reason I had a p there because otherwise I get into a whole problem with creating variables
+
+133
+00:08:44,170 --> 00:08:44,680
+and errors.
+
+134
+00:08:44,830 --> 00:08:46,570
+This is a simple way of getting past that.
+
+135
+00:08:48,220 --> 00:08:54,790
+Now, before I run Docker, of course I have to tell Docker test what image I need and what I want to
+
+136
+00:08:54,790 --> 00:08:56,600
+be in their versions and so forth.
+
+137
+00:08:56,710 --> 00:08:57,680
+So that's really easy.
+
+138
+00:08:57,730 --> 00:09:04,480
+You just create some options, which I'll call Ops Opts, and that's a sign the value of the type Docker
+
+139
+00:09:04,480 --> 00:09:12,250
+test run options right there, and I populate its various fields.
+
+140
+00:09:14,650 --> 00:09:16,420
+So first of all, what repository?
+
+141
+00:09:16,450 --> 00:09:17,560
+What image am I getting?
+
+142
+00:09:17,570 --> 00:09:25,630
+So repository not going to be able to equal to Postgres just like we did in our Docker compose y email
+
+143
+00:09:25,630 --> 00:09:25,990
+file?
+
+144
+00:09:26,620 --> 00:09:31,270
+So Postgres, and then we need to know what tag what version of Postgres do we want?
+
+145
+00:09:31,270 --> 00:09:34,870
+And I'll use the same one I'm using in my my code thirteen point four.
+
+146
+00:09:36,640 --> 00:09:43,570
+And I also want to set some environment variables, and this will tell Docker test what to use to configure
+
+147
+00:09:43,600 --> 00:09:44,200
+Postgres.
+
+148
+00:09:44,770 --> 00:09:51,490
+So these come in the form of a slice of string, and I'm going to put in there, first of all, the
+
+149
+00:09:51,490 --> 00:09:55,330
+environment variable Postgres underscore user.
+
+150
+00:09:56,410 --> 00:10:00,010
+And that will be equal to and I'll just use the Cat Nation operator user.
+
+151
+00:10:00,040 --> 00:10:07,000
+The variable we declared right at the top of this file and then we want Postgres underscore password
+
+152
+00:10:08,800 --> 00:10:11,200
+and that will be equal to plus password.
+
+153
+00:10:13,660 --> 00:10:17,890
+And then we want Postgres underscore DB.
+
+154
+00:10:17,920 --> 00:10:20,170
+What database are we connecting to equal?
+
+155
+00:10:20,290 --> 00:10:25,660
+And I'll use the plus sign and say DB name house underscore test in my case.
+
+156
+00:10:26,530 --> 00:10:30,850
+So that's our environment variables, and we'll put the comma it expects to find and we tell it, what
+
+157
+00:10:30,850 --> 00:10:32,410
+parts should you expose?
+
+158
+00:10:32,590 --> 00:10:36,520
+When I talk about ports here, I'm talking about the ports inside the Docker image.
+
+159
+00:10:37,480 --> 00:10:40,330
+So the port I want to expose is exposed ports.
+
+160
+00:10:41,230 --> 00:10:43,510
+And that again, comes as a slice of strings.
+
+161
+00:10:43,510 --> 00:10:46,000
+But we're only going to have one so slice of string.
+
+162
+00:10:46,660 --> 00:10:52,390
+And inside of that, I'll just put the standard port five four, three two, and that's inside the Docker
+
+163
+00:10:52,390 --> 00:10:52,750
+image.
+
+164
+00:10:53,380 --> 00:11:00,220
+And now we tell it to bind those ports to ports on my local machine, the host computer port bindings.
+
+165
+00:11:00,910 --> 00:11:09,100
+And we want that to be in the form of a map with a key of Docker port, and hopefully it'll find that
+
+166
+00:11:11,230 --> 00:11:12,490
+and the values.
+
+167
+00:11:12,600 --> 00:11:16,800
+Are a slice of dockworker pork bindings,
+
+168
+00:11:19,860 --> 00:11:21,030
+Docker pork bindings.
+
+169
+00:11:22,390 --> 00:11:24,090
+It's not showing an error, so hopefully that'll work.
+
+170
+00:11:25,120 --> 00:11:31,710
+Port binding, singular and in curly braces, we populated with one value.
+
+171
+00:11:32,400 --> 00:11:34,250
+Five four three two.
+
+172
+00:11:34,350 --> 00:11:38,640
+That part in binds to.
+
+173
+00:11:39,540 --> 00:11:41,850
+And then here I have host IP
+
+174
+00:11:44,610 --> 00:11:53,700
+0.0 0.0 all IP addresses and then host port is port.
+
+175
+00:11:55,120 --> 00:11:56,700
+I has to have a code in there
+
+176
+00:12:01,320 --> 00:12:07,260
+and I put a comma there, so we get rid of any syntax errors and I put a comma here and I put a comma
+
+177
+00:12:07,260 --> 00:12:07,530
+here.
+
+178
+00:12:08,910 --> 00:12:10,620
+Now it's not finding Docker.
+
+179
+00:12:10,650 --> 00:12:11,370
+Why not?
+
+180
+00:12:12,420 --> 00:12:14,430
+Because it didn't import it up here.
+
+181
+00:12:15,720 --> 00:12:16,470
+That's no problem.
+
+182
+00:12:16,680 --> 00:12:24,550
+I'll just duplicate this line and put slash Docker at the end before the closing quote.
+
+183
+00:12:24,570 --> 00:12:25,830
+And that should make that go away.
+
+184
+00:12:25,860 --> 00:12:29,070
+Port bindings should be port binding there.
+
+185
+00:12:29,340 --> 00:12:30,030
+That's much better.
+
+186
+00:12:33,240 --> 00:12:36,030
+So we have these options now.
+
+187
+00:12:36,030 --> 00:12:38,640
+We need to tell Docker test to run that resource.
+
+188
+00:12:38,790 --> 00:12:43,500
+So we'll use our variable resource, which we defined at the top of this file, and we'll check for
+
+189
+00:12:43,500 --> 00:12:50,730
+an error and we'll call pool the variable that we have declared that we defined on line 45.
+
+190
+00:12:51,000 --> 00:12:57,990
+So a pool is equal to P, so it comes from Docker test, new pool and we a pool dot run with options
+
+191
+00:12:58,890 --> 00:13:04,140
+and we handed a reference to ops, which we just defined up there in line 47.
+
+192
+00:13:04,410 --> 00:13:04,770
+OK.
+
+193
+00:13:05,490 --> 00:13:06,330
+And we'll check for an error.
+
+194
+00:13:06,810 --> 00:13:10,950
+So if error is not equal to nil
+
+195
+00:13:13,920 --> 00:13:15,990
+at that point, what do I want to do?
+
+196
+00:13:16,020 --> 00:13:21,540
+Well, I actually want to get rid of the the the pool variable, the resource that we actually got there.
+
+197
+00:13:21,540 --> 00:13:25,950
+I don't want that Docker image hanging around, so I'll ignore the return value, which is just an error
+
+198
+00:13:27,000 --> 00:13:30,810
+and call pool dot perch and I'm going to purge resource.
+
+199
+00:13:31,920 --> 00:13:33,750
+So I don't want that hanging around if it didn't work.
+
+200
+00:13:33,840 --> 00:13:36,930
+And I do want to also print some information out and stop.
+
+201
+00:13:37,350 --> 00:13:45,870
+So Logcat fatal f and my error will just be could not start resource.
+
+202
+00:13:46,230 --> 00:13:49,860
+And then the error and I put error in for the substitution.
+
+203
+00:13:49,860 --> 00:13:51,390
+So that will stop at this point.
+
+204
+00:13:51,390 --> 00:13:53,130
+It will clean things up and it will stop.
+
+205
+00:13:54,240 --> 00:13:56,940
+Now here's something to bear in mind.
+
+206
+00:13:57,330 --> 00:14:04,500
+We are using build tags to separate our unit tests from our integration tests because integration tests
+
+207
+00:14:04,680 --> 00:14:11,310
+take longer, a lot longer in our case, certainly the first time you run it and they take longer in
+
+208
+00:14:11,310 --> 00:14:15,090
+our case, because we're starting a Docker image and then we're starting a database, and it doesn't
+
+209
+00:14:15,090 --> 00:14:17,310
+take long to bring a doctor image.
+
+210
+00:14:17,310 --> 00:14:22,530
+But when you bring it up and actually has to create the database and start the base and get ready to
+
+211
+00:14:22,530 --> 00:14:27,900
+listen for connections, and what we need to do is we need to wait until that's ready.
+
+212
+00:14:28,050 --> 00:14:34,110
+Now we could run the Docker image and start a stopwatch and figure out how long it takes on average
+
+213
+00:14:34,110 --> 00:14:40,170
+and then make our test wait that many seconds plus, say, 10 percent just to be safe, but that seems
+
+214
+00:14:40,170 --> 00:14:41,220
+really awkward.
+
+215
+00:14:41,970 --> 00:14:46,920
+So instead, we're going to take advantage of something that we get as part of this Docker test package
+
+216
+00:14:46,920 --> 00:14:47,640
+that we import it.
+
+217
+00:14:48,180 --> 00:14:55,830
+And it's a back off retry function and it allows us to wait until the database is ready and it's pretty
+
+218
+00:14:55,830 --> 00:14:56,520
+easy to use.
+
+219
+00:14:56,610 --> 00:14:58,020
+So we use an if statement.
+
+220
+00:14:58,020 --> 00:15:08,310
+If error is assign, the value of pool has a function called retry it right there and retry takes as
+
+221
+00:15:08,310 --> 00:15:08,990
+a parameter.
+
+222
+00:15:09,000 --> 00:15:16,860
+An anonymous function which returns an error in what we put in here is will to define a new variable
+
+223
+00:15:17,010 --> 00:15:19,080
+error of type error
+
+224
+00:15:21,900 --> 00:15:29,370
+and we'll say Test DB, which is a variable we defined a while ago and we're looking for an error is
+
+225
+00:15:29,370 --> 00:15:31,620
+equal to cycle dot open.
+
+226
+00:15:31,860 --> 00:15:38,910
+So we open a connection to the database and here's where we use that format string called DSM that we
+
+227
+00:15:38,910 --> 00:15:39,740
+defined a while ago.
+
+228
+00:15:39,750 --> 00:15:45,900
+So it's a type PBX because we're using Jack C's PBX package, and I would just build our connection
+
+229
+00:15:45,900 --> 00:15:53,160
+string format Dot s print F. Right there, and we're using the string DSN that we defined at the very
+
+230
+00:15:53,160 --> 00:16:02,580
+beginning of this file and our substitutions, our host and port and user and password and even.
+
+231
+00:16:03,780 --> 00:16:05,470
+So we're trying to connect to the database.
+
+232
+00:16:05,670 --> 00:16:06,060
+OK.
+
+233
+00:16:07,020 --> 00:16:09,660
+And we checked for an error if error is not equal to nil.
+
+234
+00:16:10,110 --> 00:16:11,580
+Then we just return the error.
+
+235
+00:16:13,500 --> 00:16:15,600
+And here's where the retry thing comes in here.
+
+236
+00:16:15,750 --> 00:16:21,030
+So at this point, we're going to say return test.
+
+237
+00:16:21,480 --> 00:16:22,540
+Beekeeping,
+
+238
+00:16:25,840 --> 00:16:33,370
+so it'll keep going until that pinging of the database works properly after our closing curly bracket
+
+239
+00:16:33,370 --> 00:16:35,290
+and are closing parentheses.
+
+240
+00:16:35,470 --> 00:16:37,180
+And we say error is not equal to nil.
+
+241
+00:16:39,970 --> 00:16:41,740
+And here we want to purge everything out.
+
+242
+00:16:42,430 --> 00:16:52,540
+So again will ignore the return value and say Pool dot purge the not pulled up, purge the resource
+
+243
+00:16:53,920 --> 00:16:57,460
+and again printed error message so logged.
+
+244
+00:16:57,460 --> 00:16:57,970
+Not fatal.
+
+245
+00:16:58,570 --> 00:16:59,690
+Same as we did before.
+
+246
+00:17:00,220 --> 00:17:05,410
+And my message here will be could not spell it right.
+
+247
+00:17:06,820 --> 00:17:09,310
+Could not connect to darker
+
+248
+00:17:11,980 --> 00:17:13,480
+per se and the error.
+
+249
+00:17:14,080 --> 00:17:15,670
+So everything stops at that point.
+
+250
+00:17:16,270 --> 00:17:21,370
+But once we get past this, we're at the point where we can actually do something with the database.
+
+251
+00:17:21,400 --> 00:17:25,210
+Now this lecture is getting pretty long, so I'll stop it here and pick it up in the next one.
+
+252
+00:17:25,750 --> 00:17:31,630
+But what we want to do next in our test main is at this point, we've got Docker running.
+
+253
+00:17:31,810 --> 00:17:33,220
+We've got Postgres running.
+
+254
+00:17:33,220 --> 00:17:38,050
+It has a database called Celerity House Underscore Test, but it has no tables.
+
+255
+00:17:38,320 --> 00:17:39,850
+And that's not useful for us.
+
+256
+00:17:40,210 --> 00:17:46,810
+So our next step is to populate that database with the necessary tables, and we can use that same SQL
+
+257
+00:17:46,810 --> 00:17:47,200
+file.
+
+258
+00:17:47,200 --> 00:17:50,230
+I gave you a couple of lectures ago and just run that.
+
+259
+00:17:50,650 --> 00:17:53,380
+So we'll get started on that in the next lecture.

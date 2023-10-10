@@ -1,0 +1,931 @@
+1
+00:00:02,100 --> 00:00:07,050
+One of the things you often have to do with a Web application is send email, and that's what this section
+
+2
+00:00:07,050 --> 00:00:08,340
+of the course is all about.
+
+3
+00:00:09,030 --> 00:00:14,370
+We're going to write functionality right into the celebrity's package that makes it easier to send email
+
+4
+00:00:14,370 --> 00:00:20,610
+using SMTP servers or one of a number of third party services like Mail Gun to send email using an API.
+
+5
+00:00:21,180 --> 00:00:26,130
+And right now, I'm in the Celebrity House project and I'll put mail in its own package, so I'm going
+
+6
+00:00:26,130 --> 00:00:31,470
+to create a new folder over here at the root level of my project, and I'm going to call it Mailer.
+
+7
+00:00:32,700 --> 00:00:36,150
+And inside of that, I'll create a file called mail logo.
+
+8
+00:00:39,330 --> 00:00:41,160
+And of course, it has the package mail.
+
+9
+00:00:43,950 --> 00:00:47,640
+Now we're going to need a number of things in order to send email.
+
+10
+00:00:47,670 --> 00:00:53,130
+We could, if we wanted, just write a function that sends email and we wait for that function to execute
+
+11
+00:00:53,130 --> 00:00:55,530
+and then look at the result and on we go.
+
+12
+00:00:56,250 --> 00:01:01,800
+But that's pretty inefficient because sending mail can be a pretty slow process, and we don't want
+
+13
+00:01:02,040 --> 00:01:04,240
+sending mail to slow down our application.
+
+14
+00:01:04,260 --> 00:01:11,370
+So what we'll do instead is create a couple of types one for a mail system, which will have things
+
+15
+00:01:11,370 --> 00:01:15,450
+like What the domain are we sending from where our mail templates stored?
+
+16
+00:01:15,450 --> 00:01:16,470
+What's our mail host?
+
+17
+00:01:16,490 --> 00:01:21,060
+Things like that will also create a type for a an individual message.
+
+18
+00:01:21,120 --> 00:01:22,260
+So let's get started with that.
+
+19
+00:01:22,320 --> 00:01:27,630
+So I'll create a type right here, and I'll call it mail with a capital m because it needs to be exported
+
+20
+00:01:28,470 --> 00:01:30,990
+and it's just a struct and it has a number of fields.
+
+21
+00:01:31,140 --> 00:01:34,080
+So what sorts of things are we going to need to send mail?
+
+22
+00:01:34,110 --> 00:01:36,420
+Well, obviously we need to know what domain is it coming from?
+
+23
+00:01:36,630 --> 00:01:37,650
+And that'll just be a string.
+
+24
+00:01:38,820 --> 00:01:41,670
+And we're also going to say, where are the mail templates stored?
+
+25
+00:01:42,360 --> 00:01:47,520
+Because we want to send nicely formatted messages, not just plain text, and that'll be a string as
+
+26
+00:01:47,520 --> 00:01:47,790
+well.
+
+27
+00:01:48,520 --> 00:01:49,980
+And that's just a path to a directory.
+
+28
+00:01:50,820 --> 00:01:55,140
+What's our mail host for sending SMTP or through an API?
+
+29
+00:01:55,170 --> 00:01:56,370
+We still have to have a host.
+
+30
+00:01:57,060 --> 00:01:58,470
+What port do we send to?
+
+31
+00:01:58,500 --> 00:02:01,560
+And that'll be like twenty five or five, eighty seven or for sixty?
+
+32
+00:02:02,070 --> 00:02:03,240
+We'll store that is a string.
+
+33
+00:02:05,100 --> 00:02:11,490
+Also, when you log on to as SMTP server to send mail, you need a username, which is going to be a
+
+34
+00:02:11,490 --> 00:02:15,840
+string and a password, which will also be a string.
+
+35
+00:02:17,980 --> 00:02:21,160
+Is there SMTP server or a mail service encrypted?
+
+36
+00:02:21,250 --> 00:02:24,340
+So I'll say encryption, which will be a string.
+
+37
+00:02:24,460 --> 00:02:29,890
+That'll be something like SSL or tell us what's our default from address?
+
+38
+00:02:31,000 --> 00:02:41,260
+Also a string and our default from a name, from name, not from from name, but should also be a string.
+
+39
+00:02:43,330 --> 00:02:47,260
+And then we're going to have one called jobs, and that will be mail jobs.
+
+40
+00:02:47,290 --> 00:02:51,850
+And that's just going to be a channel, a channel of type message.
+
+41
+00:02:51,970 --> 00:02:53,740
+And that doesn't exist yet, but it will in a minute.
+
+42
+00:02:53,740 --> 00:02:54,490
+So don't worry about it.
+
+43
+00:02:55,800 --> 00:02:58,120
+We'll also want to look for results from that channel.
+
+44
+00:02:58,120 --> 00:02:59,800
+What happened when we tried to send mail?
+
+45
+00:02:59,800 --> 00:03:02,830
+So I'll call that results.
+
+46
+00:03:03,280 --> 00:03:07,510
+And it's a channel of type result, another type that doesn't exist yet, but it will in a moment.
+
+47
+00:03:09,490 --> 00:03:16,090
+And if we're sending using it, using an API, which API, that'll be a string and we'll have to have
+
+48
+00:03:16,090 --> 00:03:17,410
+an API key.
+
+49
+00:03:19,220 --> 00:03:23,110
+We shall also be a string and the URL for that API.
+
+50
+00:03:24,310 --> 00:03:27,970
+So I call it API URL just so we know what it is.
+
+51
+00:03:28,660 --> 00:03:30,400
+You URL string.
+
+52
+00:03:31,390 --> 00:03:35,620
+OK, so there's our first Typekit now we need one for individual messages.
+
+53
+00:03:35,980 --> 00:03:43,270
+So type of message and this is a mail message and it's just a struct, and it's going to have to have
+
+54
+00:03:43,270 --> 00:03:44,080
+a few things.
+
+55
+00:03:44,920 --> 00:03:50,380
+Who was the email message from in case we want to override the default from name or from address?
+
+56
+00:03:51,040 --> 00:03:54,790
+So from and from name, both of type string.
+
+57
+00:03:56,380 --> 00:04:03,550
+And who's it to which is a string and the subject of the email, which is a string?
+
+58
+00:04:05,290 --> 00:04:07,180
+And what template do we want to use?
+
+59
+00:04:08,980 --> 00:04:13,190
+And that will be a template of some sort like a go template or a template, and we'll call that one
+
+60
+00:04:13,190 --> 00:04:16,390
+a string as well, because it's just the name of the template.
+
+61
+00:04:17,020 --> 00:04:19,090
+Does the email have any attachments?
+
+62
+00:04:20,350 --> 00:04:25,090
+And that will be a slice of string because you might have more than one attachment or no attachments.
+
+63
+00:04:25,930 --> 00:04:29,890
+And then any data we want to pass to the template when we render it now, we don't know what that's
+
+64
+00:04:29,890 --> 00:04:33,550
+going to be, so I'll just call it an interface like that.
+
+65
+00:04:35,620 --> 00:04:37,660
+And we also need our result type.
+
+66
+00:04:37,990 --> 00:04:40,990
+So and that should be singular result
+
+67
+00:04:44,380 --> 00:04:46,960
+type result, which is a struct.
+
+68
+00:04:48,520 --> 00:04:49,720
+And it just has two things.
+
+69
+00:04:50,140 --> 00:04:50,970
+Success.
+
+70
+00:04:50,980 --> 00:04:52,750
+Did the mail go successfully or not?
+
+71
+00:04:52,930 --> 00:04:56,170
+So it's a Boolean and any kind of error.
+
+72
+00:04:56,170 --> 00:05:00,130
+We got error, which is of type error.
+
+73
+00:05:00,910 --> 00:05:01,240
+OK.
+
+74
+00:05:03,370 --> 00:05:07,000
+So there are basic types, so I'll save this to format it.
+
+75
+00:05:07,900 --> 00:05:10,750
+That looks better now in order to use those channels.
+
+76
+00:05:10,750 --> 00:05:18,310
+Of course, we need some kind of function that actually listens for mail, so I'm going to create a
+
+77
+00:05:18,310 --> 00:05:22,870
+function here that's going to have the receiver of M Pointer to the type of mail.
+
+78
+00:05:24,730 --> 00:05:30,760
+And we're going to listen for male function that takes no arguments.
+
+79
+00:05:31,030 --> 00:05:31,390
+OK.
+
+80
+00:05:32,290 --> 00:05:35,620
+And this has an endless for loop because we're going to run this in the background.
+
+81
+00:05:37,140 --> 00:05:42,210
+And while that's happening, we're going to take anything we get from the jobs channel up there in the
+
+82
+00:05:42,210 --> 00:05:42,870
+mail type.
+
+83
+00:05:43,350 --> 00:05:47,280
+And we're going to do something with it, so will declare a variable called MSG because it's going to
+
+84
+00:05:47,280 --> 00:05:53,100
+be a mail message and that listens for any incoming messages on the jobs channel.
+
+85
+00:05:56,720 --> 00:06:01,430
+And then we're going to call a function that doesn't exist yet, but it will in a minute, we're going
+
+86
+00:06:01,430 --> 00:06:03,050
+to call from the receiver M.
+
+87
+00:06:03,230 --> 00:06:06,530
+We're going to call a function called send and we're going to send the message.
+
+88
+00:06:07,310 --> 00:06:09,380
+OK, now that doesn't exist yet, but don't worry about it.
+
+89
+00:06:09,920 --> 00:06:11,150
+But we will check for an error.
+
+90
+00:06:11,360 --> 00:06:15,230
+If error is not equal to nil, then we'll do something.
+
+91
+00:06:15,920 --> 00:06:18,950
+Otherwise we'll do something else.
+
+92
+00:06:19,100 --> 00:06:21,230
+Now what happens if there is an error?
+
+93
+00:06:22,070 --> 00:06:23,600
+Scroll up and give us some room here.
+
+94
+00:06:24,410 --> 00:06:28,730
+If there's an error, when we try to send the message, we need to send some something to the results
+
+95
+00:06:28,730 --> 00:06:29,140
+channel.
+
+96
+00:06:29,150 --> 00:06:34,940
+And what we'll send is the fact that the mail didn't go and whatever the error is, so to the channel
+
+97
+00:06:34,940 --> 00:06:40,760
+end results, we'll send it a result.
+
+98
+00:06:42,600 --> 00:06:45,930
+And we'll populate his fields as being false on the air.
+
+99
+00:06:47,220 --> 00:06:52,650
+But if it did go successfully and we'll do the same thing, we'll just send a different payload up results
+
+100
+00:06:53,400 --> 00:06:55,890
+receives a new result.
+
+101
+00:06:57,630 --> 00:06:58,350
+And this time.
+
+102
+00:06:58,560 --> 00:07:01,620
+True success is true with no air.
+
+103
+00:07:02,680 --> 00:07:03,070
+OK.
+
+104
+00:07:05,180 --> 00:07:10,490
+So now let's write that function send and we'll just do a stub to get it going right now.
+
+105
+00:07:10,490 --> 00:07:14,070
+So function receiver of M Pointer to mail.
+
+106
+00:07:15,000 --> 00:07:22,700
+We want this to be called send and it's going to receive mzgee of type message and this can return potentially
+
+107
+00:07:22,700 --> 00:07:23,090
+an error.
+
+108
+00:07:24,200 --> 00:07:27,140
+OK, now at this point, we have to make a decision.
+
+109
+00:07:27,950 --> 00:07:33,920
+Are we sending using a standard SMTP server, which is considered legacy for most web applications these
+
+110
+00:07:33,920 --> 00:07:34,310
+days?
+
+111
+00:07:34,970 --> 00:07:37,460
+Or are we sending this through an API?
+
+112
+00:07:38,000 --> 00:07:43,340
+So for right now, I'm going to suggest that we're just going to send using SMTP server and we'll take
+
+113
+00:07:43,340 --> 00:07:50,870
+care of sending using mail gun or another third party service after we get the SMTP it working.
+
+114
+00:07:51,050 --> 00:07:51,380
+OK.
+
+115
+00:07:51,860 --> 00:07:54,110
+So I'll just put a comment in here to do.
+
+116
+00:07:55,820 --> 00:08:00,800
+Are we using an API or SMTP?
+
+117
+00:08:01,310 --> 00:08:03,170
+OK, so we have to take care of that later on.
+
+118
+00:08:03,860 --> 00:08:08,510
+But what we're going to do instead right now is we're going to return another function.
+
+119
+00:08:08,750 --> 00:08:14,000
+We're going to return em which and we're going to call a function that doesn't exist yet called send
+
+120
+00:08:14,900 --> 00:08:19,370
+SMTP message, and it's going to require the message.
+
+121
+00:08:19,670 --> 00:08:19,970
+OK.
+
+122
+00:08:21,020 --> 00:08:23,000
+So obviously, we need to define that function.
+
+123
+00:08:23,090 --> 00:08:30,650
+So let's create another function func with receiver of importer to mail, and we'll call this one send
+
+124
+00:08:30,800 --> 00:08:40,180
+SMTP message and it takes one parameter mzgee of typed message, and we'll have that potentially return
+
+125
+00:08:40,190 --> 00:08:40,700
+in error.
+
+126
+00:08:43,850 --> 00:08:51,830
+So in order to do this in order to send email, we could if we wanted to just send a standard plain
+
+127
+00:08:51,830 --> 00:08:55,730
+text email, but that's not really very user friendly.
+
+128
+00:08:55,730 --> 00:09:03,080
+We like in this world in the 21st century to send messages that have images that use different fonts
+
+129
+00:09:03,080 --> 00:09:04,700
+that are formatted using CSE's.
+
+130
+00:09:05,480 --> 00:09:08,880
+But we also need to include in that plain text messages.
+
+131
+00:09:08,900 --> 00:09:14,240
+So every time we send a message, we're going to send two payloads or two kinds of messages, one that
+
+132
+00:09:14,240 --> 00:09:18,260
+is a formatted HTML message and one that is a plain text message.
+
+133
+00:09:19,130 --> 00:09:24,080
+So of course, that means that we're going to have to do something with the content that we receive.
+
+134
+00:09:24,890 --> 00:09:29,900
+And it also means that when we send messages, we're probably going to have two templates one template
+
+135
+00:09:29,900 --> 00:09:33,470
+that's for a nicely formatted HTML message and one that's for plain text.
+
+136
+00:09:34,220 --> 00:09:39,200
+So we're going to have to build an HTML message and we're going to have to build a plain text message
+
+137
+00:09:39,200 --> 00:09:42,980
+and we might be passing data to those templates.
+
+138
+00:09:43,040 --> 00:09:44,630
+So we have to keep that in mind as well.
+
+139
+00:09:44,990 --> 00:09:49,130
+And we're also going to have to decide what kind of mail client are we going to use?
+
+140
+00:09:49,490 --> 00:09:55,130
+While it's true that Go does have right in a standard library, all of the code necessary to send email.
+
+141
+00:09:56,150 --> 00:10:00,080
+There are many third party packages that make this a lot less painful.
+
+142
+00:10:00,710 --> 00:10:03,410
+So we're going to have to decide how to build those templates.
+
+143
+00:10:03,590 --> 00:10:07,610
+We're going to have to decide how to pass message or data to those templates, and we're going to have
+
+144
+00:10:07,610 --> 00:10:12,220
+to decide what kind of mail client we want to use safari.
+
+145
+00:10:12,350 --> 00:10:19,490
+Now, let's just assume that we're going to build two kinds of messages plain text and each chamber.
+
+146
+00:10:19,610 --> 00:10:26,660
+So we know from right back up in here that we have what template to use and that is in the form of a
+
+147
+00:10:26,660 --> 00:10:27,050
+string.
+
+148
+00:10:27,290 --> 00:10:32,450
+So let's come down here and right now, just to get this to work properly, we'll say return nil.
+
+149
+00:10:32,870 --> 00:10:34,220
+So we don't have an error showing up.
+
+150
+00:10:34,940 --> 00:10:39,680
+Let's create two more functions function with a receiver of a pointer to mail,
+
+151
+00:10:42,710 --> 00:10:44,250
+and I'm not going to export this.
+
+152
+00:10:44,270 --> 00:10:51,770
+I'm going to call this one build each T.M. message, and it will take as parameters, just a message,
+
+153
+00:10:52,240 --> 00:10:58,190
+MSG type message, and it'll return a string and potentially an error.
+
+154
+00:10:59,030 --> 00:10:59,360
+OK.
+
+155
+00:11:00,410 --> 00:11:04,160
+So down here, just to get it working for it now, so it doesn't show me an error, I'll return an empty
+
+156
+00:11:04,160 --> 00:11:07,610
+string and no, then I'll copy this whole thing.
+
+157
+00:11:10,450 --> 00:11:15,730
+And I'll paste it here, and I'll say build plain text message,
+
+158
+00:11:18,760 --> 00:11:25,780
+so these will be two functions we use to build the actual message and then we'll call them from send
+
+159
+00:11:25,930 --> 00:11:27,010
+SMTP message.
+
+160
+00:11:27,130 --> 00:11:31,060
+OK, so that's those are two things we're going to have to take care of.
+
+161
+00:11:31,210 --> 00:11:33,760
+So let's get started with the build HTML message.
+
+162
+00:11:36,010 --> 00:11:40,450
+What I'm going to do, first of all, is declare a variable called template to render.
+
+163
+00:11:41,080 --> 00:11:46,450
+And this is the template we're going to use to build our HTML version of the email message, and I'll
+
+164
+00:11:46,450 --> 00:11:47,200
+just build a string.
+
+165
+00:11:47,200 --> 00:11:55,750
+So I use format as print f and I'll give it as a format string and it will be %s slash percent s dot
+
+166
+00:11:55,930 --> 00:11:57,880
+h html template.
+
+167
+00:11:58,030 --> 00:11:59,250
+I'm going to use go templates.
+
+168
+00:11:59,260 --> 00:12:02,530
+You can use jet templates if you want to, but I'm going to use go templates right now.
+
+169
+00:12:04,260 --> 00:12:08,670
+And the replacements for those will be import templates.
+
+170
+00:12:08,940 --> 00:12:16,080
+Where are the templates stored, the mail templates and MSG template, and that gives me the path to
+
+171
+00:12:16,080 --> 00:12:17,130
+the templates folder.
+
+172
+00:12:17,130 --> 00:12:24,330
+And of course, that will be in the folder called mail or something like that in the My App project.
+
+173
+00:12:24,510 --> 00:12:28,650
+And the name of the individual template will just be the first part of the template to render because
+
+174
+00:12:28,650 --> 00:12:35,460
+we're going to use that name that's stored in the template field of the typed message in order to find
+
+175
+00:12:35,460 --> 00:12:38,250
+both the HTML template and the plain text template.
+
+176
+00:12:38,550 --> 00:12:43,050
+So that'll give me the information I need in order to work with a particular template.
+
+177
+00:12:43,320 --> 00:12:46,170
+And now I'll declare a variable T for template.
+
+178
+00:12:46,620 --> 00:12:52,350
+I'll check for an error and I'll call right from the standard library template dot new.
+
+179
+00:12:53,730 --> 00:12:56,120
+And that requires some kind of name for the template.
+
+180
+00:12:56,220 --> 00:12:57,780
+And I'll just call it email.
+
+181
+00:12:58,470 --> 00:13:02,740
+Dash came out just something that we can use when we actually execute the template.
+
+182
+00:13:02,760 --> 00:13:05,190
+It can be anything you want, but that seems meaningful to me.
+
+183
+00:13:05,490 --> 00:13:05,850
+OK.
+
+184
+00:13:06,630 --> 00:13:13,770
+And then I'll call from that PERS files and I'll pass template to render.
+
+185
+00:13:15,840 --> 00:13:22,200
+We'll check for an error if error is not equal to nil and I'll return an empty string and the error.
+
+186
+00:13:24,570 --> 00:13:28,110
+So now if we get past that, we actually have the variable T that we can work with.
+
+187
+00:13:28,440 --> 00:13:34,050
+And what I'll do next is declare a variable of type bytes dot buffer, and I'm going to need that in
+
+188
+00:13:34,050 --> 00:13:35,340
+order to execute this template.
+
+189
+00:13:35,580 --> 00:13:35,910
+OK.
+
+190
+00:13:36,990 --> 00:13:47,040
+So I will declare variable trio of type bytes, dot buffer and scroll up and give ourselves some room
+
+191
+00:13:47,040 --> 00:13:52,740
+here, and then I'll just execute my template into the variable TPL.
+
+192
+00:13:53,160 --> 00:13:53,490
+OK.
+
+193
+00:13:54,000 --> 00:13:58,350
+So if error is equal to key, don't execute template.
+
+194
+00:13:59,700 --> 00:14:04,800
+I'm going to take the results and read it into my variable TPO that I just declared on the previous
+
+195
+00:14:04,800 --> 00:14:05,190
+line.
+
+196
+00:14:06,030 --> 00:14:11,340
+And I'm going to assume that there's something called body in that template and pass it any data that
+
+197
+00:14:11,340 --> 00:14:13,980
+might exist in our email message.
+
+198
+00:14:14,730 --> 00:14:21,360
+And I'll check for an error if the error is not equal to nil again, return an empty string in the error.
+
+199
+00:14:22,800 --> 00:14:27,960
+But if that works, I now have a formatted email message, but I need to get it in the form of a string.
+
+200
+00:14:27,960 --> 00:14:36,510
+So I'll say formatted message is a sign the value of from my bytes buffer tuple dot string.
+
+201
+00:14:37,970 --> 00:14:43,280
+And now, instead of returning an empty string, I can return formatted message.
+
+202
+00:14:46,290 --> 00:14:48,000
+OK, that's a good start.
+
+203
+00:14:48,300 --> 00:14:51,450
+There's actually one more thing we're going to want to do here, but we'll get to that a little bit
+
+204
+00:14:51,450 --> 00:14:52,060
+later on.
+
+205
+00:14:52,080 --> 00:14:57,870
+We're going to want to in-line any CSIS just to make the email, just to make sure the email renders
+
+206
+00:14:57,870 --> 00:15:00,360
+the way it's supposed to, but we'll take care of that a little bit later on.
+
+207
+00:15:01,380 --> 00:15:08,850
+So that gives me my build HTML message now my plain text message build plain text message is very similar.
+
+208
+00:15:09,360 --> 00:15:13,310
+I can actually take this first line or these this first section right here.
+
+209
+00:15:13,360 --> 00:15:16,770
+Copy and paste it and modify it as necessary.
+
+210
+00:15:17,430 --> 00:15:21,600
+Because the only real difference that I'm going with right here is that I'm not going to render the
+
+211
+00:15:22,530 --> 00:15:28,050
+HTML tempo instead of render dot plain dot template.
+
+212
+00:15:28,170 --> 00:15:30,340
+So I'm going to assume that there's a template.
+
+213
+00:15:30,870 --> 00:15:33,870
+There are two templates in some folder on this system.
+
+214
+00:15:34,650 --> 00:15:41,040
+One ends with dot html dot tempo and there's a corresponding one called Dot that ends with dot playing
+
+215
+00:15:41,040 --> 00:15:42,960
+dot template for plain text messages.
+
+216
+00:15:43,230 --> 00:15:43,530
+OK.
+
+217
+00:15:45,130 --> 00:15:47,410
+And then, of course, we can do pretty much the same thing here.
+
+218
+00:15:47,500 --> 00:15:51,790
+So we'll copy all of this and paste it down here.
+
+219
+00:15:52,270 --> 00:15:55,630
+I shall replace this paste that down there.
+
+220
+00:15:56,260 --> 00:16:00,760
+And instead of calling it formatted message, I'll call it playing message
+
+221
+00:16:03,910 --> 00:16:05,890
+just because that's a more meaningful variable name.
+
+222
+00:16:07,480 --> 00:16:08,140
+Paste that here.
+
+223
+00:16:09,460 --> 00:16:14,230
+OK, now this lecture is getting fairly long, but we've got a good start here now.
+
+224
+00:16:14,470 --> 00:16:21,760
+So when someone calls this channel or send something to the channel jobs, this function will listen
+
+225
+00:16:21,760 --> 00:16:22,180
+for it.
+
+226
+00:16:22,210 --> 00:16:24,340
+It'll find it, and it will try to send it.
+
+227
+00:16:24,520 --> 00:16:28,720
+So it calls MDOT sent em don't send currently doesn't do anything.
+
+228
+00:16:29,050 --> 00:16:33,970
+It just calls return em send SMTP message, which does nothing.
+
+229
+00:16:34,300 --> 00:16:41,480
+But in here, this is where we're going to actually take care of the heavy lifting and send the message.
+
+230
+00:16:41,500 --> 00:16:48,880
+And of course, this send SMTP message will come call, build my message and call build plain text message,
+
+231
+00:16:49,060 --> 00:16:50,350
+and we'll take care of sending them out.
+
+232
+00:16:50,830 --> 00:16:56,200
+So in the next lesson will install some packages that we're going to use to send mail, and we'll see
+
+233
+00:16:56,200 --> 00:16:58,240
+if we can get this actually functional.

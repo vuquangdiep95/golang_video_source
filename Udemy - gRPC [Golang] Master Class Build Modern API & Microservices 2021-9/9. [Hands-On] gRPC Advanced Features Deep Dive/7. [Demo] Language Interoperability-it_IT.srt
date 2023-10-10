@@ -1,0 +1,256 @@
+1
+00:00:00,180 --> 00:00:04,980
+Quindi c'è una cosa che ho detto nel corso all'inizio e mi hai dato la mia parola per scontata.
+
+2
+00:00:05,010 --> 00:00:07,670
+Ho detto che gli RPG possono essere usati da qualsiasi lingua.
+
+3
+00:00:07,800 --> 00:00:12,160
+E poi c'è l'abilità dell'interprete linguistico tra tutte le lingue.
+
+4
+00:00:12,180 --> 00:00:17,090
+Finché si utilizzano gli stessi file buffer di protocollo ed è vero, è assolutamente vero.
+
+5
+00:00:17,370 --> 00:00:21,780
+Ma mi piacerebbe darti una demo ora perché ho fatto questo corso a Garling e ho fatto questo
+
+6
+00:00:21,870 --> 00:00:22,830
+corso in Java.
+
+7
+00:00:22,830 --> 00:00:26,210
+Quindi ora ho lo stesso servizio implementato in due lingue.
+
+8
+00:00:26,280 --> 00:00:29,270
+E voglio mostrarti che lavorano davvero insieme.
+
+9
+00:00:29,460 --> 00:00:34,520
+Quindi andiamo avanti con una demo rapida e vedrai che tutto funziona come previsto.
+
+10
+00:00:34,530 --> 00:00:37,520
+Quindi questa è la directory completa del corso SIGO GOP.
+
+11
+00:00:37,520 --> 00:00:43,980
+E quindi se guardi quel prototipo puoi vedere che è esattamente lo stesso, così possiamo vedere che abbiamo tutti
+
+12
+00:00:44,040 --> 00:00:51,180
+gli stessi RBOC tutti lo stesso nome di messaggio e tipi di messaggio di quello che ho fatto nel corso Java
+
+13
+00:00:51,210 --> 00:00:51,890
+di GOPAC.
+
+14
+00:00:52,050 --> 00:00:58,390
+Quindi se guardi Greta Greta Prato vediamo esattamente lo stesso profilo di benvenuto.
+
+15
+00:00:58,500 --> 00:01:04,770
+Quindi, fondamentalmente perché questi greedy provider sono gli stessi, ci aspettiamo di avere piena interoperabilità
+
+16
+00:01:04,770 --> 00:01:05,670
+nelle lingue.
+
+17
+00:01:05,880 --> 00:01:12,090
+Quindi quello che voglio fare è correre per salutare quel server e andare e quindi eseguire il client contro di esso e andare ed
+
+18
+00:01:12,090 --> 00:01:13,510
+eseguire anche il client Java.
+
+19
+00:01:13,680 --> 00:01:19,740
+Quindi andiamo avanti e creerò anche una nuova scheda, in modo che tu possa vedere entrambe le cose che accadono
+
+20
+00:01:19,740 --> 00:01:20,940
+nello stesso momento.
+
+21
+00:01:20,940 --> 00:01:21,920
+Quindi eccolo qui.
+
+22
+00:01:21,960 --> 00:01:26,660
+Quindi qui ho intenzione di far funzionare il mio grande server.
+
+23
+00:01:26,700 --> 00:01:28,990
+Quindi questo è il mio server go in esecuzione al momento.
+
+24
+00:01:29,300 --> 00:01:37,380
+Quindi, se voglio eseguire il mio client di benvenuto, andrò come puoi vedere tutti gli altri il tipo di RBC sta per essere eseguito.
+
+25
+00:01:37,380 --> 00:01:39,700
+Quindi stiamo per averti Nare RBC.
+
+26
+00:01:39,720 --> 00:01:44,860
+Avremo server streaming in streaming per streaming direzionale.
+
+27
+00:01:44,970 --> 00:01:51,450
+E così come possiamo vedere ora tutte queste richieste funzionano e questo è previsto perché nel corso li programmiamo
+
+28
+00:01:51,450 --> 00:01:52,870
+per farlo funzionare.
+
+29
+00:01:52,890 --> 00:01:54,110
+Quindi niente sorprese qui.
+
+30
+00:01:54,120 --> 00:01:55,230
+Tutto funziona.
+
+31
+00:01:55,350 --> 00:02:02,460
+Ma ora se andiamo avanti nel codice Java ed eseguiamo i client di saluto e questo è dal corso di Jether.
+
+32
+00:02:02,460 --> 00:02:05,640
+Quindi eseguo questo saluto client e fa esattamente la stessa cosa.
+
+33
+00:02:05,660 --> 00:02:07,710
+Questo è chiamato per tipo di API.
+
+34
+00:02:08,040 --> 00:02:14,660
+E così vediamo che sì, in questo in basso a sinistra sappiamo che ora vediamo le risposte inviate
+
+35
+00:02:14,670 --> 00:02:17,290
+dal server Go ai client Java.
+
+36
+00:02:17,520 --> 00:02:21,780
+Quindi qui si risponde ai miei client Java e tutto funziona.
+
+37
+00:02:21,780 --> 00:02:29,770
+Quindi qui abbiamo appena dimostrato che l'esecuzione di un server go funziona effettivamente contro un buon client e un client Jever e
+
+38
+00:02:30,240 --> 00:02:31,550
+ciò è previsto.
+
+39
+00:02:31,850 --> 00:02:36,320
+Ma ora possiamo eseguire la cosa opposta e stiamo andando a eseguire il server di saluto in Java.
+
+40
+00:02:36,540 --> 00:02:42,270
+Quindi ora Java diventerà un server e io avrò intenzione di eseguire i miei client di saluto contro il
+
+41
+00:02:42,270 --> 00:02:43,020
+mio Java.
+
+42
+00:02:43,380 --> 00:02:49,020
+E come possiamo vedere funziona ancora otteniamo ancora risposte dal server Java in questo momento utilizzando
+
+43
+00:02:49,020 --> 00:02:50,310
+il client go.
+
+44
+00:02:50,310 --> 00:02:55,100
+Quindi, di nuovo mostra che c'è interoperabilità e tutto funziona.
+
+45
+00:02:55,170 --> 00:03:01,500
+Ma posso anche eseguire i miei client di saluto proprio qui i miei client Java che ovviamente funzioneranno contro il
+
+46
+00:03:01,500 --> 00:03:02,660
+mio server Java.
+
+47
+00:03:02,880 --> 00:03:05,270
+Quindi sì, è davvero fantastico.
+
+48
+00:03:05,340 --> 00:03:07,940
+Ma non è solo andare e Jever lavorare insieme.
+
+49
+00:03:08,070 --> 00:03:14,790
+Qualsiasi lingua che abbia la stessa sorgente saluta che profiler lo stesso file buffer di protocollo nella stessa
+
+50
+00:03:15,150 --> 00:03:16,490
+definizione di servizio.
+
+51
+00:03:16,680 --> 00:03:17,920
+Lavoreranno l'un l'altro.
+
+52
+00:03:18,060 --> 00:03:23,640
+Quindi potresti benissimo generare codice in Python in C Sharp in qualsiasi cosa e funzioneranno contro un server
+
+53
+00:03:23,640 --> 00:03:24,910
+go un server Java.
+
+54
+00:03:24,960 --> 00:03:25,640
+Quello che vuoi.
+
+55
+00:03:25,640 --> 00:03:26,600
+Qualsiasi combinazione
+
+56
+00:03:26,910 --> 00:03:33,120
+Ma se fossi abbastanza interessante per mostrarti come questi due corsi possono venire insieme, possiamo implementare il server
+
+57
+00:03:33,120 --> 00:03:37,630
+in una lingua e il cliente in un'altra lingua e tutto funzionerà.
+
+58
+00:03:37,950 --> 00:03:38,970
+Quindi spero che ti piaccia.
+
+59
+00:03:39,030 --> 00:03:45,180
+Spero che abbia molto senso per te e tu sei tipo oh sì che ha un senso totale perché è quello che
+
+60
+00:03:45,180 --> 00:03:46,570
+voglio che tu mostri.
+
+61
+00:03:46,800 --> 00:03:53,250
+Questi sono GOPAC non è legato ad una sorta di linguaggio di programmazione, solo la grinta che Prato di
+
+62
+00:03:53,250 --> 00:03:56,100
+default è il bit più importante in comune.
+
+63
+00:03:56,310 --> 00:03:57,720
+Quindi è stato utile.
+
+64
+00:03:57,720 --> 00:04:00,820
+Spero ti sia piaciuta questa piccola demo e questa è stata la prossima lezione.
+

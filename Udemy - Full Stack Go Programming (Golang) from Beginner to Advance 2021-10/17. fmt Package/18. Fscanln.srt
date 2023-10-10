@@ -1,0 +1,183 @@
+1
+00:00:13,490 --> 00:00:19,610
+Hello and welcome to the golden programming language course in the previous session, we talk about
+
+2
+00:00:19,610 --> 00:00:26,330
+if this cannot function and in this session, we want to talk about the other half empty package concept.
+
+3
+00:00:30,310 --> 00:00:32,440
+If can Ellen function?
+
+4
+00:00:33,910 --> 00:00:42,470
+The if scan and function in go language is Cairns, the specified takes read from I dot reader and then
+
+5
+00:00:42,470 --> 00:00:50,470
+the store successive space separated values into successive arguments, if it can learn, is similar
+
+6
+00:00:50,470 --> 00:00:51,370
+to a first scan.
+
+7
+00:00:51,550 --> 00:01:00,160
+But if the scan stops scanning at a new line, meaning that the last input character should be followed
+
+8
+00:01:00,160 --> 00:01:07,510
+by a new line for if this can lead to a stop scanning, it may as well be an end.
+
+9
+00:01:07,510 --> 00:01:10,290
+The Find No Content, No Eskin.
+
+10
+00:01:11,380 --> 00:01:14,830
+This function is defined under the empty package here.
+
+11
+00:01:14,980 --> 00:01:19,690
+You'll need to import the FMO package in order to use this function.
+
+12
+00:01:21,010 --> 00:01:28,840
+Now you can see the scene techs parameters, this function, except two parameters which are illustrated
+
+13
+00:01:28,840 --> 00:01:29,320
+below.
+
+14
+00:01:30,610 --> 00:01:40,000
+Our time is I 00. reader, this parameter contains this can specify text and a three dot interface.
+
+15
+00:01:40,030 --> 00:01:45,940
+These parameters are accepting each as specified elements and return value.
+
+16
+00:01:46,090 --> 00:01:46,840
+It returns.
+
+17
+00:01:46,840 --> 00:01:49,600
+The number of items successfully is scanned.
+
+18
+00:01:50,050 --> 00:01:56,680
+Now let's go to this school program to illustrate the use age of if scanned Ellen function.
+
+19
+00:01:58,250 --> 00:02:03,530
+First declaring least of extremes, integers and float value.
+
+20
+00:02:03,800 --> 00:02:10,610
+Define a variable like text column he calls Robert.
+
+21
+00:02:12,860 --> 00:02:25,910
+Twenty seven, eighty dot fifty and through now calling new reader function for reading each elements
+
+22
+00:02:25,910 --> 00:02:30,200
+of the list and then it plays it into a skin barrier.
+
+23
+00:02:30,800 --> 00:02:37,460
+So define a barrier the light skin color equals from the strength package.
+
+24
+00:02:37,970 --> 00:02:42,560
+The Invoke the new reader function, new reader.
+
+25
+00:02:44,380 --> 00:02:46,590
+And Sit takes that argument.
+
+26
+00:02:47,000 --> 00:02:47,680
+Text.
+
+27
+00:02:50,070 --> 00:02:55,130
+Now declaring different types of variables than.
+
+28
+00:02:57,310 --> 00:02:58,140
+The Strange.
+
+29
+00:03:00,710 --> 00:03:08,900
+That age and that march low thirty two.
+
+30
+00:03:09,830 --> 00:03:12,070
+And that ease access.
+
+31
+00:03:13,630 --> 00:03:14,070
+Born.
+
+32
+00:03:16,450 --> 00:03:28,480
+Now calling if Escandon function first defined to variable like number and URL calling equals from 50
+
+33
+00:03:28,480 --> 00:03:37,030
+pages, we select, if this can elen function first, said Eskin, as I would not read the arguments
+
+34
+00:03:38,140 --> 00:03:52,180
+and set variables Ampersand named Anderson Age, Ampersand, Mar and Ampersand is exit
+
+35
+00:03:56,380 --> 00:03:58,600
+now checking if there is any error.
+
+36
+00:03:59,020 --> 00:04:07,360
+If E are not equal to mean panic, eruv
+
+37
+00:04:12,850 --> 00:04:23,650
+now printing the number of items successfully is scanned and each element to F.A. Dot print a
+
+38
+00:04:26,380 --> 00:04:43,510
+number of elements persons d and person is for name percent, D for age and person, F for mark and
+
+39
+00:04:43,510 --> 00:04:44,310
+persons.
+
+40
+00:04:44,500 --> 00:05:01,240
+T four is exact and set variables first number and name, age Mar and said is exit value.
+
+41
+00:05:03,070 --> 00:05:07,330
+Now reformat the code, save the project and execute the programmed.
+
+42
+00:05:10,070 --> 00:05:18,590
+Now we can see the output number of elements is four and Robert set for testing variable 27, set for
+
+43
+00:05:18,590 --> 00:05:29,090
+age variable and 8.50 sit for mark and true value is set for easy exit value that so we were able to
+
+44
+00:05:29,090 --> 00:05:36,140
+get the variable value from using if Escandon function and preen, then in order not to prolong the
+
+45
+00:05:36,140 --> 00:05:41,240
+time of decision, we will finish it and we will continue the content in the next session.
+
+46
+00:05:41,360 --> 00:05:41,960
+Goodbye.

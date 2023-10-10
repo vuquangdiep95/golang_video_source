@@ -1,0 +1,447 @@
+1
+00:00:00,240 --> 00:00:00,500
+Được rồi.
+
+2
+00:00:00,510 --> 00:00:04,550
+Vì vậy, chỉ là một vài phản ánh đã đưa ra.
+
+3
+00:00:04,680 --> 00:00:11,490
+Xin lỗi, TÔI ĐÃ BẮT ĐẦU SUY NGHĨ BỞI ĐÂY NHƯNG sự phản ánh ĐẦU TIÊN là trong mã được sử dụng tại Infinite Loop
+
+4
+00:00:11,580 --> 00:00:15,860
+và các vòng lặp vô hạn có tiếng xấu trong lập trình đúng như vậy.
+
+5
+00:00:15,880 --> 00:00:23,730
+Vì vậy, chúng tôi thực sự đang ở trong một vòng lặp vô tận, sau đó không bao giờ kết thúc và chương trình của bạn bị treo ở đó và thế là xong.
+
+6
+00:00:23,760 --> 00:00:25,920
+Bạn đang ở trong một vòng lặp vô hạn.
+
+7
+00:00:26,070 --> 00:00:30,980
+Và vì vậy tôi có hai giai thoại để chia sẻ về các vòng lặp vô hạn mà tôi sẽ làm ở phần cuối.
+
+8
+00:00:31,170 --> 00:00:37,710
+Nhưng đây thực sự không phải là một vòng lặp vô tận bởi vì bạn phải đột nhập vào đó mà phá vỡ chỉ là một bước đi
+
+9
+00:00:37,710 --> 00:00:39,830
+cách sống.
+
+10
+00:00:40,710 --> 00:00:42,150
+Nó thực sự khá lý thuyết.
+
+11
+00:00:42,270 --> 00:00:47,270
+Hầu hết các ngôn ngữ có vòng lặp sẽ có hệ thống câu lệnh ngắt, vâng.
+
+12
+00:00:47,470 --> 00:00:49,080
+Nhưng nó không thực sự là một vòng lặp vô tận.
+
+13
+00:00:49,220 --> 00:00:49,630
+Vâng.
+
+14
+00:00:49,670 --> 00:00:49,990
+Vì thế.
+
+15
+00:00:50,010 --> 00:00:51,080
+Nên.
+
+16
+00:00:51,120 --> 00:00:51,710
+Bạn có thể có.
+
+17
+00:00:51,740 --> 00:00:56,330
+Bạn có thể có một vòng lặp vô tận miễn là bạn có một vị trí được xác định rõ ràng nơi nó được dự định
+
+18
+00:00:56,330 --> 00:00:58,120
+để kết thúc.
+
+19
+00:00:58,280 --> 00:00:58,640
+Vâng.
+
+20
+00:00:58,700 --> 00:01:04,460
+Vì vậy, tôi chỉ muốn lặp lại ở đó để làm rõ rằng đây không phải là một vòng lặp vô hạn.
+
+21
+00:01:04,460 --> 00:01:10,260
+Mặc dù thuật ngữ đang được sử dụng phổ biến ở đây là một vòng lặp vô hạn.
+
+22
+00:01:10,430 --> 00:01:14,240
+Nó không phải là vòng lặp vô hạn bởi vì vòng lặp vô hạn và lập trình là xấu.
+
+23
+00:01:14,330 --> 00:01:15,160
+Đúng vậy.
+
+24
+00:01:15,200 --> 00:01:17,030
+Đó là sự hiểu biết của tôi như tôi hiểu.
+
+25
+00:01:17,050 --> 00:01:17,460
+Tuyệt.
+
+26
+00:01:17,610 --> 00:01:18,030
+Vì thế.
+
+27
+00:01:18,100 --> 00:01:25,010
+Vì vậy, một cách để an toàn hơn ở đây là vòng lặp này phụ thuộc vào việc Twitter đưa ra phản hồi mà tôi mong đợi.
+
+28
+00:01:25,100 --> 00:01:36,220
+Vì vậy, nếu tôi muốn an toàn hơn, tôi có thể thay đổi điều này thành một tiêu chuẩn hơn. Tôi 0 ít hơn nói 50 cộng cộng.
+
+29
+00:01:36,360 --> 00:01:42,110
+Và theo cách đó, nó sẽ gọi Twitter tới 50 lần, vì vậy nếu Twitter cứ đứng như thế thì hãy bắt đầu gửi lại rác
+
+30
+00:01:42,110 --> 00:01:47,810
+dữ liệu và khiến bạn luôn lặp đi lặp lại mọi thứ. Tôi sẽ giới hạn bản thân ở mức 50 gọi chín trước khi thoát
+
+31
+00:01:48,200 --> 00:01:51,550
+đẹp nên luôn có điểm kết thúc được xác định rõ ràng.
+
+32
+00:01:51,560 --> 00:01:55,660
+Vì vậy, điều này thực sự có lẽ tốt hơn về mặt lập trình.
+
+33
+00:01:55,990 --> 00:01:58,450
+Vâng, có lẽ bạn không bao giờ có được thời gian nghỉ ngơi đó.
+
+34
+00:01:58,560 --> 00:01:59,660
+Tuyệt.
+
+35
+00:01:59,660 --> 00:02:02,540
+Có thể là Twitter không bao giờ thực sự nói rằng không còn đúng nữa.
+
+36
+00:02:02,690 --> 00:02:05,870
+Vì vậy, vâng, đó là một khám phá tốt.
+
+37
+00:02:05,870 --> 00:02:06,070
+Vâng.
+
+38
+00:02:06,140 --> 00:02:07,880
+Nhiều điều để nói về điều đó.
+
+39
+00:02:08,000 --> 00:02:09,330
+Không.
+
+40
+00:02:09,440 --> 00:02:14,230
+Đợi 50 liệu có cách nào giống như không có cách nào tính được độ dài của nó trước x.
+
+41
+00:02:14,240 --> 00:02:16,040
+Chúng tôi không biết như vậy là vô hạn x.
+
+42
+00:02:16,160 --> 00:02:22,070
+Bạn chỉ cần nói nhìn này, chúng tôi sẽ nắm bắt được nhiều điều này Vâng và sau đó câu hỏi tiếp theo tôi có chỉ là tử tế
+
+43
+00:02:22,070 --> 00:02:26,600
+giống như thiết kế của chương trình này, quy trình mà bạn đã sử dụng để thiết kế nó là gì.
+
+44
+00:02:26,610 --> 00:02:32,570
+Bạn có một quy trình được sử dụng khi bạn bắt đầu nghĩ về điều này đối với mắt mô-đun hay tôi gọi nó là chunking
+
+45
+00:02:32,570 --> 00:02:35,080
+nó như muốn phá vỡ nó thành nhiều mảnh.
+
+46
+00:02:35,090 --> 00:02:38,090
+Quá trình suy nghĩ của bạn về cách bạn thiết kế mã này là gì.
+
+47
+00:02:38,090 --> 00:02:40,100
+Kiến trúc sư của cấu trúc của nó.
+
+48
+00:02:40,370 --> 00:02:43,190
+Tôi đã thực hiện chức năng này.
+
+49
+00:02:43,190 --> 00:02:45,680
+Tôi bắt đầu bằng cách bắt đầu đưa ra yêu cầu.
+
+50
+00:02:45,710 --> 00:02:50,950
+Chỉ cần một yêu cầu duy nhất để lấy thứ gì đó từ Twitter trong chức năng chính của tôi.
+
+51
+00:02:51,040 --> 00:02:53,050
+Tôi mới bắt đầu viết ở đây.
+
+52
+00:02:53,280 --> 00:02:59,180
+Nhưng khi tôi viết tuyên bố hoãn lại là lúc tôi quyết định Ồ, đây có lẽ nên là chức năng của chính nó bởi vì
+
+53
+00:02:59,180 --> 00:03:03,290
+Tôi muốn cái này cạnh quần áo khi tôi xong việc cho Jason.
+
+54
+00:03:03,290 --> 00:03:05,600
+Không phải khi tôi hoàn thành toàn bộ chương trình.
+
+55
+00:03:05,600 --> 00:03:06,210
+Đẹp.
+
+56
+00:03:06,270 --> 00:03:11,840
+Và đó là một dấu hiệu tốt đối với tôi khi tôi nói trì hoãn điều này có lẽ nên chuyển sang các chức năng như
+
+57
+00:03:11,840 --> 00:03:15,300
+kiểm soát chặt chẽ hơn khi việc trì hoãn đó sắp xảy ra.
+
+58
+00:03:15,530 --> 00:03:18,950
+Bởi vì tôi muốn hoãn lại kết thúc sau cuộc rượt đuổi giải mã nó vì tôi không cần cơ thể.
+
+59
+00:03:18,980 --> 00:03:25,680
+Sau thời điểm đó, một khi tôi đã biến nó thành một chức năng độc lập.
+
+60
+00:03:25,780 --> 00:03:27,130
+Bây giờ tôi đang nghĩ về chức năng.
+
+61
+00:03:27,130 --> 00:03:29,630
+Vì vậy, khi tôi đi vào phần tiếp theo Tôi cần làm gì tiếp theo.
+
+62
+00:03:29,770 --> 00:03:33,670
+Tôi sẽ cần phải gọi đây là một loạt thời gian thực sự trở nên hơi phức tạp.
+
+63
+00:03:33,700 --> 00:03:39,580
+Tôi cũng bắt đầu viết nó ở Maine. Ồ, tôi có một vòng lặp for lớn ở đây.
+
+64
+00:03:39,580 --> 00:03:42,600
+phức tạp đằng sau khi tôi thoát khỏi nó.
+
+65
+00:03:43,060 --> 00:03:50,110
+Có lẽ tôi nên kéo nó vào chức năng riêng của nó để làm cho nó dễ sử dụng hơn.
+
+66
+00:03:50,110 --> 00:03:51,360
+đã trở thành điều này.
+
+67
+00:03:51,460 --> 00:03:55,180
+Và sau đó khi tôi bắt đầu thực hiện vượt qua HRT bây giờ tôi thực sự đã có chức năng đó rồi
+
+68
+00:03:55,270 --> 00:04:01,030
+Tôi đã hình dung mỗi lần vượt qua tôi sẽ trở nên đủ phức tạp và dễ dàng hơn tôi mong đợi nhưng vẫn vậy
+
+69
+00:04:01,030 --> 00:04:03,850
+phức tạp hơn một chút, tôi muốn chức năng chính.
+
+70
+00:04:04,360 --> 00:04:08,100
+Và sau đó, tất cả những gì còn lại ở đây cho chức năng chính của tôi là kết nối tất cả lại với nhau.
+
+71
+00:04:08,170 --> 00:04:13,080
+Phức tạp duy nhất thấy chức năng chính thực sự có cái này độc lập với vòng lặp for.
+
+72
+00:04:13,650 --> 00:04:17,790
+Rất vui, tôi thích quá trình suy nghĩ của bạn tương tự.
+
+73
+00:04:17,790 --> 00:04:18,020
+CHÀO.
+
+74
+00:04:18,030 --> 00:04:23,970
+Tôi chỉ bắt đầu cố gắng giải quyết vấn đề và sau đó khi mã bắt đầu trở nên lớn hơn ở Maine, tôi
+
+75
+00:04:23,970 --> 00:04:28,410
+như được rồi, những thành phần nào có ý nghĩa giống như để chúng độc lập.
+
+76
+00:04:29,460 --> 00:04:35,520
+Và tôi nghĩ cũng thật thú vị khi bạn có một việc cần phải làm đi làm lại và
+
+77
+00:04:35,520 --> 00:04:40,110
+vì vậy bạn đã nói rõ rằng một điều cần phải được thực hiện đó là giúp bạn biết các phần riêng lẻ
+
+78
+00:04:40,110 --> 00:04:44,220
+số lượng tweet cho mỗi cuộn vô hạn sẽ là thứ của riêng nó.
+
+79
+00:04:44,220 --> 00:04:48,880
+Lấy nó ở đây lấy nó ở đây lấy nó ở đây và bây giờ tôi cần thứ gì đó sẽ dùng đi dùng lại.
+
+80
+00:04:49,050 --> 00:04:50,250
+Làm điều đó ở đây và ở đây và ở đây.
+
+81
+00:04:50,250 --> 00:04:56,790
+Vì vậy, cái đầu tiên mà bạn nhận được từng cái là tôi nhận được các yêu cầu trò chuyện, tạo các yêu cầu trò chuyện và
+
+82
+00:04:56,790 --> 00:05:02,080
+sau đó họ có cuộc trò chuyện có tất cả những điều đó đúng và đó là nơi tôi đưa ra yêu cầu trò chuyện
+
+83
+00:05:02,100 --> 00:05:05,040
+được gọi đi gọi lại nhiều lần cho đến khi không còn nữa.
+
+84
+00:05:05,040 --> 00:05:11,010
+Và sau đó vượt qua từng email được gọi ra khỏi Maine để giải quyết tất cả những quyền đó.
+
+85
+00:05:11,140 --> 00:05:11,470
+Đúng.
+
+86
+00:05:11,960 --> 00:05:12,150
+Vâng.
+
+87
+00:05:12,180 --> 00:05:16,260
+Vì vậy, tôi nghĩ đó là một phần khác để xem xét về cách nó được cấu trúc.
+
+88
+00:05:16,260 --> 00:05:19,050
+Một điều được gọi đi gọi lại.
+
+89
+00:05:19,350 --> 00:05:24,990
+Làm tốt lắm Daniel, bất cứ điều gì khác để thêm đã quên mất.
+
+90
+00:05:25,150 --> 00:05:26,570
+Chào mừng đến với câu lạc bộ.
+
+91
+00:05:26,620 --> 00:05:28,310
+Nếu nó quan trọng, chúng tôi sẽ cho bạn biết về nó.
+
+92
+00:05:28,310 --> 00:05:29,050
+Các video tiếp theo.
+
+93
+00:05:29,260 --> 00:05:32,680
+Giai thoại này tôi quên kể cho bạn giai thoại về vòng lặp vô hạn.
+
+94
+00:05:32,680 --> 00:05:37,000
+Vì vậy, nếu bạn tra cứu địa chỉ của Máy tính Apple và tôi phải đảm bảo rằng mình đang thực sự ghi âm
+
+95
+00:05:37,000 --> 00:05:37,690
+màn hình của tôi.
+
+96
+00:05:37,690 --> 00:05:45,160
+Chúng tôi đã và đang làm điều trên màn hình của tôi Tổng công ty Apple trụ sở chính trụ sở chính.
+
+97
+00:05:45,250 --> 00:05:52,890
+Địa chỉ là Địa chỉ trụ sở chính ở đâu.
+
+98
+00:05:53,070 --> 00:05:58,890
+1 Infinite Loop Cupertino California đặt địa chỉ cho Máy tính Apple.
+
+99
+00:05:58,890 --> 00:06:05,340
+Điều thú vị là địa chỉ Facebook là một cách của hacker.
+
+100
+00:06:06,420 --> 00:06:11,580
+Vì vậy, đó là một giai thoại thú vị về các vòng lặp vô hạn mà tôi quên kể cho bạn khi chúng ta đang nói chuyện
+
+101
+00:06:11,580 --> 00:06:19,080
+về các vòng lặp vô hạn và sau đó là một thỏa thuận khác mà tôi muốn chia sẻ với bạn là một trò đùa trong trò đùa là
+
+102
+00:06:19,080 --> 00:06:24,210
+về một lập trình viên đã chết trong căn hộ của anh ấy và anh ấy đã không đi làm trong hai tuần.
+
+103
+00:06:24,290 --> 00:06:27,720
+Và thế là cảnh sát đến căn hộ mà họ mở cửa và họ tìm thấy lập trình viên đã chết trong phòng tắm
+
+104
+00:06:27,720 --> 00:06:34,140
+cầm một chai dầu gội đầu và trên chai hướng dẫn cho biết loại tóc nào.
+
+105
+00:06:34,140 --> 00:06:37,370
+Lót, rửa sạch, lặp lại.
+
+106
+00:06:37,760 --> 00:06:39,270
+Tôi nói với bạn câu chuyện cười đó.
+
+107
+00:06:40,610 --> 00:06:43,300
+Và vì vậy bạn cứ tiếp tục làm điều đó đã chết.
+
+108
+00:06:43,530 --> 00:06:46,090
+Vì vậy, đó là một vòng lặp vô hạn.
+
+109
+00:06:46,160 --> 00:06:46,840
+Được rồi.
+
+110
+00:06:47,130 --> 00:06:48,060
+Chúng ta sẽ xem video tiếp theo.
+
+111
+00:06:48,060 --> 00:06:49,800
+Chúng ta sẽ xem nó sẽ là gì và chúng ta sẽ nói về nó.
+
+112
+00:06:49,800 --> 00:06:50,600
+Hẹn gặp lại các bạn trong video tiếp theo.

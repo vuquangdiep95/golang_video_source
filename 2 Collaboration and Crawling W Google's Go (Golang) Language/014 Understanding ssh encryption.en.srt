@@ -1,0 +1,635 @@
+1
+00:00:00,090 --> 00:00:06,250
+Tôi sẽ giúp Daniel dễ dàng ở đây và tôi sẽ dẫn đầu trong phần đầu tiên này.
+
+2
+00:00:06,300 --> 00:00:07,050
+Video đầu tiên này.
+
+3
+00:00:07,050 --> 00:00:08,610
+Video này ngay bây giờ.
+
+4
+00:00:08,610 --> 00:00:14,400
+Và đó chỉ là tạo get repo của chúng tôi và tôi sẽ chỉ xem xét ngắn gọn một số điều và sau đó
+
+5
+00:00:14,400 --> 00:00:20,640
+cũng có thể Daniel, bạn có thể hiển thị các cửa sổ và do đó, cách bạn nhận được các lệnh bash trên windows và một lần nữa tất cả
+
+6
+00:00:20,640 --> 00:00:24,910
+những thứ này ah là trong khóa học trước tòa án trước đây của tôi là những gì chúng ta sẽ đề cập ở đây.
+
+7
+00:00:24,960 --> 00:00:26,460
+Vì vậy, đây chỉ là f y.
+
+8
+00:00:26,460 --> 00:00:31,290
+Có thể bạn vẫn chưa quen với điều này và bạn cần một chút củng cố hoặc xem lại hoặc có thể là hoàn toàn của bạn.
+
+9
+00:00:31,290 --> 00:00:38,910
+mới đối với nó, trong trường hợp đó, thật thuận tiện cho bạn khi nó ở ngay đây nhưng để thiết lập một repo trung tâm
+
+10
+00:00:39,240 --> 00:00:43,580
+điều đầu tiên bạn muốn làm là đảm bảo rằng bạn có thể sao chép bằng SS H.
+
+11
+00:00:43,590 --> 00:00:45,670
+Có nhiều cách để lột da một con mèo.
+
+12
+00:00:45,690 --> 00:00:48,150
+Tôi không biết cụm từ đó đến từ đâu.
+
+13
+00:00:48,210 --> 00:00:55,980
+Có lẽ là một số kẻ đồi bại ở vùng hoang dã thích lột da mèo nhưng có nhiều cách khác nhau
+
+14
+00:00:55,980 --> 00:01:03,660
+những cách bạn có thể làm mọi việc và vì vậy tôi thích sử dụng SS HI chỉ cần bạn thấy dễ dàng hơn đó là sở thích của bạn.
+
+15
+00:01:03,660 --> 00:01:08,820
+Vâng, điều này tìm kiếm dễ dàng hơn, bạn phải nhớ mật khẩu của mình và nó cũng an toàn hơn.
+
+16
+00:01:08,850 --> 00:01:09,820
+Vâng, bạn đi.
+
+17
+00:01:09,900 --> 00:01:15,060
+Đó là lý do tại sao tôi rất vui khi được dạy lập trình theo cặp vì bạn có thêm quan điểm
+
+18
+00:01:16,030 --> 00:01:16,920
+nên tuổi SS.
+
+19
+00:01:16,920 --> 00:01:18,450
+Đó là tất cả những lý do thực sự tốt để sử dụng nó.
+
+20
+00:01:18,840 --> 00:01:22,990
+Nhưng nếu bạn đang sử dụng Windows, việc tạo tuổi SS có thể là một điều khó khăn.
+
+21
+00:01:23,180 --> 00:01:30,660
+Và cách đơn giản nhất là sử dụng các lệnh đầu cuối bash shell trên Windows.
+
+22
+00:01:30,810 --> 00:01:33,470
+Vì vậy, có hai loại hệ điều hành chính.
+
+23
+00:01:33,510 --> 00:01:41,100
+Windows hoặc đặt Unix Linux Mac ngay cho các gia đình và sau đó là các thiết bị đầu cuối giao diện dòng lệnh
+
+24
+00:01:41,540 --> 00:01:48,660
+và các lệnh mà tôi nghĩ chủ yếu được sử dụng trong lập trình sẽ là Unix Linux
+
+25
+00:01:49,650 --> 00:01:54,090
+terminal shell bash trái ngược với dấu nhắc lệnh của DOS, đó là quyền của Windows.
+
+26
+00:01:54,090 --> 00:01:54,570
+Chính xác.
+
+27
+00:01:54,600 --> 00:01:55,200
+Vâng.
+
+28
+00:01:55,520 --> 00:01:55,740
+Vâng.
+
+29
+00:01:55,770 --> 00:01:57,630
+Những gì bạn đã trải nghiệm trong lập trình quá.
+
+30
+00:01:57,660 --> 00:01:58,260
+Đúng.
+
+31
+00:01:58,290 --> 00:01:58,910
+Vâng.
+
+32
+00:01:58,970 --> 00:02:07,160
+Vấn đề là hầu hết các lệnh dòng lệnh bash Unix đó cũng có sẵn trên Windows.
+
+33
+00:02:07,290 --> 00:02:09,860
+Bạn chỉ cần đào và tìm chúng và tự cài đặt.
+
+34
+00:02:09,870 --> 00:02:10,340
+Vâng.
+
+35
+00:02:10,440 --> 00:02:11,420
+Vì vậy, rắc rối.
+
+36
+00:02:11,430 --> 00:02:12,510
+Vì vậy, nó chỉ dễ dàng hơn.
+
+37
+00:02:12,510 --> 00:02:15,320
+Vì vậy, một cách mà bạn có thể thiết lập có được.
+
+38
+00:02:15,340 --> 00:02:15,930
+Vâng, tôi xin lỗi.
+
+39
+00:02:15,930 --> 00:02:23,070
+Một cách để bạn có thể thiết lập các lệnh đầu cuối bash shell trên Windows, chỉ cần cài đặt nó, hãy lấy ACM và tôi nghĩ vậy
+
+40
+00:02:23,070 --> 00:02:25,100
+đó là cách dễ nhất để làm điều đó.
+
+41
+00:02:25,230 --> 00:02:30,120
+Và khi bạn cài đặt lại SVM, bạn có thể xem khóa học của tôi về mã VSO.
+
+42
+00:02:30,120 --> 00:02:32,710
+Tôi chỉ đi qua điều này một cách chi tiết.
+
+43
+00:02:32,730 --> 00:02:37,980
+Nó sẽ hỏi bạn các tùy chọn khác nhau nhưng bạn chỉ muốn đảm bảo rằng mình đang chọn đúng
+
+44
+00:02:37,980 --> 00:02:39,920
+tùy chọn khi bạn chọn đúng tùy chọn.
+
+45
+00:02:39,990 --> 00:02:45,210
+Bạn sẽ có thể sử dụng và chỉ cần đọc qua các lựa chọn và một số giống như lựa chọn được đề xuất.
+
+46
+00:02:45,330 --> 00:02:50,370
+Bạn sẽ có thể sử dụng các lệnh đầu cuối Linux shell bash trên Windows.
+
+47
+00:02:50,820 --> 00:02:59,430
+Ngoài ra, có một cách khác mà bạn có thể thực hiện và trên các máy Windows, bạn có thể kích hoạt các cửa sổ
+
+48
+00:02:59,430 --> 00:03:02,380
+để thực hiện các lệnh đầu cuối Shell bash.
+
+49
+00:03:02,520 --> 00:03:09,900
+Vâng khi Windows 10 có một hệ thống con Linux dành cho Windows, về cơ bản mang lại cho bạn một lợi ích để ra lệnh
+
+50
+00:03:09,900 --> 00:03:15,330
+dòng với tất cả các lợi ích cho các lệnh có thể chạy khi các lệnh X trực tiếp.
+
+51
+00:03:15,360 --> 00:03:20,640
+Vì vậy, nếu bạn muốn làm điều đó, tôi chỉ cần google ở ​​đây khi hệ thống con linux của windows, bạn có thể kích hoạt nó
+
+52
+00:03:20,700 --> 00:03:23,910
+và sau đó bạn có thể quay lại máy của mình để thực hiện các lệnh này.
+
+53
+00:03:24,000 --> 00:03:30,020
+Khi bạn đã hoàn thành tất cả những gì bạn có thể chạy SS H để tạo SS H.
+
+54
+00:03:30,030 --> 00:03:36,750
+Khóa công khai và khóa riêng, v.v. SS H trên Mac là những gì tôi sẽ Google và tôi sẽ ra lệnh cho bạn.
+
+55
+00:03:36,810 --> 00:03:43,170
+Và làm thế nào để SS H trên mac với ứng dụng khách SS H gốc và vì vậy tôi sẽ cuộn xuống cho đến khi tôi tìm thấy
+
+56
+00:03:43,170 --> 00:03:43,990
+lệnh.
+
+57
+00:03:44,220 --> 00:03:46,310
+Và đó không phải là nó.
+
+58
+00:03:46,350 --> 00:03:48,380
+Và vì vậy tôi sẽ tìm kiếm một cái khác.
+
+59
+00:03:48,510 --> 00:03:51,720
+Cách tạo tạo tạo tạo.
+
+60
+00:03:51,900 --> 00:03:53,560
+Phím SS H Mac.
+
+61
+00:03:53,730 --> 00:03:57,200
+Hãy thử tạo khóa SS của bạn theo cách thủ công.
+
+62
+00:03:57,210 --> 00:04:02,340
+SS từng phím trong Mac và do đó, lệnh ở đây là lệnh này ngay tại đây.
+
+63
+00:04:02,520 --> 00:04:07,290
+Và vì vậy nếu tôi sử dụng máy Mac của mình và thực hiện lại khóa học trung cấp, tôi sẽ thực sự mất một phút để
+
+64
+00:04:07,290 --> 00:04:11,490
+loại bỏ vào chế độ đó và không cố gắng dạy mọi thứ ngay từ đầu.
+
+65
+00:04:12,020 --> 00:04:16,470
+Vì vậy, tôi đang cố gắng tìm đúng chỗ để hiển thị quá nhiều so với quá ít.
+
+66
+00:04:16,530 --> 00:04:18,330
+Và vì vậy nếu điều này diễn ra quá nhanh đối với bạn.
+
+67
+00:04:18,330 --> 00:04:22,450
+Quay trở lại các khóa học trước đây của tôi và xem qua các lớp đó.
+
+68
+00:04:22,500 --> 00:04:30,630
+Vì vậy, ở đây tôi sẽ tìm kiếm thư mục SS H của mình và bạn có thể thấy nó ngay tại đó và tôi sẽ bỏ qua
+
+69
+00:04:30,630 --> 00:04:31,170
+mà trong.
+
+70
+00:04:31,200 --> 00:04:39,420
+Chà, tôi có thể thấy những gì trong thư mục SS H đó trước tiên vào SS HCD dot SS H.
+
+71
+00:04:39,520 --> 00:04:45,790
+Đi và tôi có thể thấy trong đó tôi có một khóa công khai và tôi có một khóa riêng và vì vậy đây là khóa riêng tư công khai
+
+72
+00:04:45,790 --> 00:04:46,980
+mã hóa.
+
+73
+00:04:47,020 --> 00:04:53,180
+Đó là mã hóa bất đối xứng được gọi là mã hóa bất đối xứng vì có khóa chung và
+
+74
+00:04:53,200 --> 00:04:56,300
+vì vậy quán rượu chấm này bạn có thể chia sẻ điều này với bất kỳ ai trên thế giới.
+
+75
+00:04:56,380 --> 00:05:00,720
+Và sau đó là một khóa riêng và khóa riêng này bạn muốn giữ cho riêng mình.
+
+76
+00:05:00,790 --> 00:05:07,780
+Và vì vậy tôi nghĩ rằng đó là một cách thực hành tốt để tạo giống như tôi đang tạo khi khóa tìm kiếm quên tôi
+
+77
+00:05:07,780 --> 00:05:09,070
+chỉ đi để làm điều đó.
+
+78
+00:05:09,070 --> 00:05:12,430
+Giống như để Hubble có khóa công khai duy nhất của riêng mình là một cách làm tốt.
+
+79
+00:05:12,430 --> 00:05:13,650
+Nó không quan trọng đó là khóa công khai.
+
+80
+00:05:13,650 --> 00:05:14,750
+Bất cứ ai cũng có thể có nó đúng.
+
+81
+00:05:14,770 --> 00:05:15,890
+Bất kỳ ai cũng có thể có khóa công khai.
+
+82
+00:05:15,910 --> 00:05:21,430
+Vì vậy, nếu bạn muốn an toàn hơn, bạn có thể có các bữa ăn riêng tư và công khai nhưng sau đó bạn phải
+
+83
+00:05:21,460 --> 00:05:23,480
+lật giữa chúng trong khi bạn đang sử dụng nó.
+
+84
+00:05:23,480 --> 00:05:25,930
+Nhưng khi bạn đến một nơi hoàn toàn khác.
+
+85
+00:05:25,930 --> 00:05:31,300
+Vì vậy, các trang Web khác nhau nếu họ muốn SS HQ của tôi thì hoàn toàn ổn nếu cung cấp Publix này dưới dạng Publix cho
+
+86
+00:05:31,300 --> 00:05:31,720
+mọi người.
+
+87
+00:05:31,760 --> 00:05:32,510
+Bạn được mời đến.
+
+88
+00:05:32,560 --> 00:05:33,910
+Vì vậy, đừng bận tâm về điều đó.
+
+89
+00:05:33,910 --> 00:05:38,510
+Vì vậy, bạn chỉ muốn tạo cái này và để làm điều đó, bạn thả lệnh đó vào ngay đó như bạn có thể thấy
+
+90
+00:05:38,510 --> 00:05:43,620
+trên thiết bị đầu cuối của tôi, tôi nhấn enter và bây giờ nó báo nhập tệp để lưu khóa.
+
+91
+00:05:43,630 --> 00:05:49,960
+Vì vậy, điều đó sẽ rơi vào ý tưởng RSA gạch dưới và tôi có thể nói rằng tôi sẽ tạo tab tạo tạm thời
+
+92
+00:05:49,990 --> 00:05:55,600
+và không có cụm mật khẩu nếu tôi muốn bảo mật hơn, hãy tạo cụm mật khẩu và bây giờ nếu tôi xem có gì trong đó
+
+93
+00:05:56,020 --> 00:06:01,750
+Tôi đã có quán rượu tạm thời và quán rượu tạm thời của mình và vì vậy quán rượu tôi sẽ giới hạn đúng.
+
+94
+00:06:01,780 --> 00:06:06,720
+Vì vậy, tạm thời mở quán rượu và họ sẽ in ra đây là gì, mọi người đều có thể nhìn thấy nó kể cả bạn.
+
+95
+00:06:06,720 --> 00:06:12,730
+Tôi sẽ làm nổi bật tất cả những điều đó và sau đó tôi sẽ đi lấy vì vậy tôi sẽ đi lấy ID lấy
+
+96
+00:06:12,750 --> 00:06:20,840
+một công việc tôi sẽ đi vào cài đặt người dùng của mình để cài đặt và tôi sẽ đi đến các phím SS H và GP.
+
+97
+00:06:20,870 --> 00:06:24,490
+Tôi sẽ thêm một khóa SS H mới và nó sẽ giống như What.
+
+98
+00:06:24,800 --> 00:06:31,790
+Bạn biết máy tính để bàn ở nhà của tôi hoặc bất cứ thứ gì và tôi thả nó vào để khóa đó được đưa vào và sau đó tôi thêm nó
+
+99
+00:06:31,790 --> 00:06:33,250
+SS HQ Tôi sẽ không làm điều đó.
+
+100
+00:06:33,290 --> 00:06:40,130
+Tôi đã có một cái nhưng bây giờ điều kích hoạt khi get hub có khóa công khai của tôi là họ có thể mã hóa một
+
+101
+00:06:40,130 --> 00:06:44,840
+tin nhắn và gửi nó cho tôi và không ai khác trên thế giới có thể giải mã nó để giải mã nó.
+
+102
+00:06:44,840 --> 00:06:47,600
+Bạn phải có khóa riêng.
+
+103
+00:06:47,630 --> 00:06:53,630
+Vì vậy, chỉ tôi mới có thể giải mã nó khi tôi giải mã tin nhắn mà GitHub sẽ gửi cho tôi thường là một số mã
+
+104
+00:06:53,930 --> 00:06:59,510
+mà tôi phải gửi lại cho họ để cho họ biết OK, bạn biết người nhận dự định là người nhận thực
+
+105
+00:06:59,990 --> 00:07:04,010
+và sau đó họ cũng sẽ gửi cho tôi một khóa họ sẽ gửi cho tôi một khóa đối xứng.
+
+106
+00:07:04,180 --> 00:07:07,720
+Đó là khóa đối xứng mà cả hai chúng ta sẽ có thể mã hóa và giải mã.
+
+107
+00:07:07,730 --> 00:07:13,750
+Vì vậy, chúng tôi sẽ thiết lập liên lạc với khóa riêng tư mã hóa bất đối xứng Nó không đối xứng
+
+108
+00:07:13,750 --> 00:07:15,710
+là khóa chung và khóa riêng khác nhau.
+
+109
+00:07:15,860 --> 00:07:18,170
+Chúng tôi sẽ thiết lập liên lạc với điều đó.
+
+110
+00:07:18,170 --> 00:07:24,740
+Và sau khi giao tiếp được thiết lập, chúng ta sẽ chuyển sang khóa đối xứng và khóa đối xứng
+
+111
+00:07:24,740 --> 00:07:29,780
+sẽ có thể mã hóa và giải mã vì bạn chỉ có thể mã hóa bằng khóa công khai mà bạn
+
+112
+00:07:29,780 --> 00:07:35,120
+không thể giải mã và bạn chỉ có thể giải mã bằng khóa riêng khi chúng tôi có đối xứng.
+
+113
+00:07:35,120 --> 00:07:40,490
+Chúng tôi sẽ có thể mã hóa và giải mã nhưng chỉ nhận được trung tâm và bản thân tôi sẽ có các khóa này
+
+114
+00:07:40,820 --> 00:07:46,760
+và việc truyền khóa đó được truyền an toàn thông qua mã hóa để không ai khác có thể chặn được
+
+115
+00:07:46,760 --> 00:07:46,900
+Nó.
+
+116
+00:07:47,150 --> 00:07:50,100
+Bởi vì chúng tôi sử dụng bất đối xứng để chuyển khóa đó và cụm từ mã.
+
+117
+00:07:50,240 --> 00:07:57,050
+Và sau đó tôi đã giải mã rằng mã hóa công khai đã gửi cho tôi khóa trong khóa riêng được mã hóa riêng được giải mã
+
+118
+00:07:57,050 --> 00:08:02,990
+nó và bây giờ chúng tôi có thứ đã được giải mã, thứ mà GitHub đã gửi cho tôi là khóa đối xứng mà cả hai chúng tôi đều có
+
+119
+00:08:02,990 --> 00:08:03,830
+cùng một khóa.
+
+120
+00:08:03,830 --> 00:08:08,660
+Vì vậy, bây giờ tôi có thể mã hóa thứ gì đó để lấy trung tâm gửi lại để lấy trung tâm và chúng tôi có thể giao tiếp
+
+121
+00:08:08,660 --> 00:08:15,080
+và thời trang được mã hóa an toàn bằng cách sử dụng mật mã mã hóa tin nhắn của chúng tôi và sau đó giải mã chúng khi chúng
+
+122
+00:08:15,080 --> 00:08:21,890
+nhận và không ai khác có thể mã hóa hoặc giải mã mã hóa hoặc giải mã những tin nhắn đó bởi vì không ai khác có
+
+123
+00:08:21,890 --> 00:08:22,700
+cùng một khóa.
+
+124
+00:08:22,700 --> 00:08:24,060
+Chỉ có hai người họ.
+
+125
+00:08:24,110 --> 00:08:30,380
+Và đó là điều mà tôi nghĩ là thú vị và không phải là tất cả những gì được biết đến rộng rãi về bất đối xứng và đối xứng
+
+126
+00:08:30,440 --> 00:08:35,690
+mã hóa mã hóa bất đối xứng là khóa riêng tư công khai và sau đó là mã hóa đối xứng, tôi đoán có lẽ bạn
+
+127
+00:08:35,690 --> 00:08:37,850
+gọi khóa riêng tư.
+
+128
+00:08:38,330 --> 00:08:40,980
+Có một câu nói bí mật được chia sẻ bí mật.
+
+129
+00:08:41,000 --> 00:08:43,610
+Vì vậy, đó là sự hiểu biết của tôi về cách thức hoạt động của quá trình đó.
+
+130
+00:08:43,610 --> 00:08:45,680
+Bạn có bất cứ điều gì để thêm vào đó.
+
+131
+00:08:45,800 --> 00:08:46,700
+KHÔNG.
+
+132
+00:08:46,700 --> 00:08:48,200
+Điều đó nghe có chính xác không.
+
+133
+00:08:49,070 --> 00:08:49,460
+Vâng.
+
+134
+00:08:49,490 --> 00:08:49,860
+Được rồi.
+
+135
+00:08:49,880 --> 00:08:51,170
+Để dễ hiểu nhất.
+
+136
+00:08:51,170 --> 00:08:51,520
+Tốt.
+
+137
+00:08:52,160 --> 00:08:52,820
+Vì thế.
+
+138
+00:08:52,850 --> 00:08:57,350
+Vì vậy, bây giờ chúng tôi đã thiết lập xong, chúng tôi sẽ tạo một repo cho khóa học này.
+
+139
+00:08:57,380 --> 00:08:59,480
+Tôi sẽ đi đến hồ sơ của tôi.
+
+140
+00:08:59,960 --> 00:09:06,410
+Tôi cũng muốn chỉ ra rằng nếu bạn chỉ tìm kiếm GitHub SS h thì kết quả đầu tiên bạn sẽ nhận được là
+
+141
+00:09:06,430 --> 00:09:13,640
+hướng dẫn về SS H bao gồm cách bạn tạo khóa giai đoạn mới nếu bạn truy cập bất kỳ khóa nào trong số đó
+
+142
+00:09:13,640 --> 00:09:18,710
+có các tab cho bất kỳ hệ điều hành nào bạn đang sử dụng sẽ cho bạn biết lệnh cho hệ điều hành đó
+
+143
+00:09:18,710 --> 00:09:21,410
+hệ thống mà cả hai đều giống nhau.
+
+144
+00:09:22,220 --> 00:09:22,580
+Vâng.
+
+145
+00:09:22,620 --> 00:09:26,590
+Và nếu bạn đang dùng Windows thì đó là vì đây vẫn là một căn bếp an toàn.
+
+146
+00:09:26,600 --> 00:09:28,570
+Nó chỉ có thể được lưu ở một vị trí khác.
+
+147
+00:09:28,590 --> 00:09:28,950
+ĐƯỢC RỒI.
+
+148
+00:09:29,100 --> 00:09:29,600
+ĐƯỢC RỒI.
+
+149
+00:09:29,600 --> 00:09:31,450
+Tôi nghĩ nó phức tạp hơn nhiều.
+
+150
+00:09:31,760 --> 00:09:36,740
+Vâng, việc cài đặt một nhà bếp an toàn phức tạp hơn một chút nhưng bản thân lệnh thì giống nhau
+
+151
+00:09:36,740 --> 00:09:38,460
+lệnh xuyên suốt.
+
+152
+00:09:38,800 --> 00:09:44,660
+Và nếu bạn có trình giả lập trên windows, nơi bạn có thể thực hiện các lệnh đầu cuối Shell bash, bạn có thể chỉ cần
+
+153
+00:09:44,660 --> 00:09:47,150
+sử dụng máy Mac tôi đặt ở đó.
+
+154
+00:09:47,150 --> 00:09:52,000
+Vì vậy, bây giờ chúng ta sẽ tạo một kho lưu trữ mới cho khóa học này và để thực hiện điều đó trong và nhấp vào kho lưu trữ mới.
+
+155
+00:09:52,580 --> 00:09:53,960
+Tôi nghĩ rằng tôi sẽ lưu nó cho video tiếp theo.
+
+156
+00:09:53,960 --> 00:09:55,630
+Tôi muốn cố gắng giữ cho những video này ngắn.
+
+157
+00:09:55,640 --> 00:10:03,450
+Chúng tôi đã đến vào phút TRỰC TIẾP đã có một số nội dung hay ở đây về mã hóa, v.v.
+
+158
+00:10:03,800 --> 00:10:08,540
+hiểu tuổi SS là những gì tôi sẽ gọi video này và video tiếp theo sẽ tạo hoặc nhận repo.
+
+159
+00:10:08,540 --> 00:10:10,010
+Hẹn gặp lại video tiếp theo.

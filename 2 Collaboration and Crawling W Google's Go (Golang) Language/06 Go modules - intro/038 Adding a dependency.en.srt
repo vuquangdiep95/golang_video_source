@@ -1,0 +1,515 @@
+1
+00:00:00,090 --> 00:00:03,840
+So the next thing we're going to do is we're going to add a dependency and just to anchor anchor you
+
+2
+00:00:03,840 --> 00:00:04,660
+in the course outline.
+
+3
+00:00:04,670 --> 00:00:05,640
+Here's where we're at.
+
+4
+00:00:05,640 --> 00:00:09,330
+We're adding a dependency and the code that we're going to add we had.
+
+5
+00:00:09,330 --> 00:00:11,940
+Hello go and hello Tesco.
+
+6
+00:00:11,940 --> 00:00:18,010
+We're going to now pull in a package and it's R.S. C dot I O forward slash quote.
+
+7
+00:00:18,150 --> 00:00:25,440
+And if you go and you look for that online to see what comes up what you will find is its package quote
+
+8
+00:00:25,470 --> 00:00:26,790
+here and to import it.
+
+9
+00:00:26,790 --> 00:00:30,010
+We need are a C I O forward slash quote.
+
+10
+00:00:30,040 --> 00:00:36,810
+This is in go dock which has documentation for the standard library and third party packages from other
+
+11
+00:00:36,810 --> 00:00:37,800
+people.
+
+12
+00:00:37,800 --> 00:00:41,920
+And so we're going to import this package and we're going to run func Hello.
+
+13
+00:00:41,940 --> 00:00:43,050
+Right here.
+
+14
+00:00:43,050 --> 00:00:44,270
+And so that's what we've added.
+
+15
+00:00:44,280 --> 00:00:50,320
+We've changed our code to include return quote Hello which returns a string and import this package.
+
+16
+00:00:50,580 --> 00:00:57,360
+So I now have that in my editor right here in 0 2 adding a dependency we added in this file and I can
+
+17
+00:00:57,360 --> 00:01:06,010
+go to my terminal and my terminal I'm going to see which directory I'm in and C.D. and 2 0 0 3 0 2 and.
+
+18
+00:01:06,350 --> 00:01:08,910
+And then I'm going to do a go test.
+
+19
+00:01:08,930 --> 00:01:14,850
+And when I run this we're going to see all of the dependencies so the first time you add a dependency
+
+20
+00:01:15,270 --> 00:01:19,940
+and on your local machine it needs to go out and get that code and bring it back.
+
+21
+00:01:20,040 --> 00:01:22,110
+You're going to see that process happen.
+
+22
+00:01:22,230 --> 00:01:29,240
+And so your editor did it when you open up the file Oh my editor automatically did it for me when I
+
+23
+00:01:29,720 --> 00:01:30,690
+opened up the file.
+
+24
+00:01:30,710 --> 00:01:33,770
+Yeah I notice to go to some show up in your as I have it all.
+
+25
+00:01:33,770 --> 00:01:38,900
+Sometimes this stuff happens in the background to see what would have happened if my editor hadn't done
+
+26
+00:01:38,900 --> 00:01:43,850
+that for me would have found RCI quote don't download downloaded that and all of that.
+
+27
+00:01:43,850 --> 00:01:50,090
+And so what it's doing when it does that is it's if you import a package library not yet tracked by
+
+28
+00:01:50,090 --> 00:01:55,710
+go module by default go adds it to go mod using the latest version.
+
+29
+00:01:55,760 --> 00:02:03,410
+So the latest version of whatever package you're wanting to use is defined as the latest tag stable
+
+30
+00:02:03,590 --> 00:02:10,070
+laser tag release version or latest UN tagged version so it gets the latest version and you could see
+
+31
+00:02:10,070 --> 00:02:15,130
+the version of RSA quote by cashing out that go mod or opening it up.
+
+32
+00:02:15,170 --> 00:02:22,480
+So if I opened it up here here's my go mod you could see I'm now requiring R A C I O quote version one
+
+33
+00:02:22,480 --> 00:02:24,210
+point five point two.
+
+34
+00:02:24,690 --> 00:02:28,140
+And and so that's that's my latest version.
+
+35
+00:02:28,280 --> 00:02:30,850
+And there's also two types of dependencies.
+
+36
+00:02:30,950 --> 00:02:31,160
+Right.
+
+37
+00:02:31,160 --> 00:02:35,770
+So only direct dependencies are recorded and go mod so direct dependency.
+
+38
+00:02:35,770 --> 00:02:41,780
+This is the direct dependency but there might also be indirect dependency so are a C I O forward slash
+
+39
+00:02:41,780 --> 00:02:50,630
+quote might itself be using other packages and to see those direct and indirect dependency.
+
+40
+00:02:50,640 --> 00:02:57,080
+So just distinguishing differentiate between direct and indirect dependencies we go we use go list dash
+
+41
+00:02:57,130 --> 00:02:59,210
+M forward slash all.
+
+42
+00:02:59,210 --> 00:03:08,840
+And so if I bring that up and you go list dash M go list dash jam all I think I set forward slash all
+
+43
+00:03:08,870 --> 00:03:16,640
+but go dash m all we could see all of my dependencies and so here is my direct dependency here's my
+
+44
+00:03:16,670 --> 00:03:20,800
+indirect dependency another indirect dependency is right here.
+
+45
+00:03:20,810 --> 00:03:25,790
+So I have all of those dependencies for my project and you're looking at something there anything you
+
+46
+00:03:25,790 --> 00:03:32,000
+want to add to that or anything you want to show I believe the indirect dependencies will be within
+
+47
+00:03:32,000 --> 00:03:39,950
+your go mod if that's if you're going through a compatibility with a non module so are a C quote has
+
+48
+00:03:39,950 --> 00:03:48,610
+a go module I'm trying to figure out how to go back to the correct version on get out of here it's a
+
+49
+00:03:49,490 --> 00:03:54,800
+one point five point two one five two that's this C for
+
+50
+00:03:58,660 --> 00:04:02,730
+permit number C for D for etc..
+
+51
+00:04:02,800 --> 00:04:13,890
+So if I go to MITs and go to look for C or D for right now it out by your test that was that I view
+
+52
+00:04:13,890 --> 00:04:21,680
+the code at this point in the get repo it's got to go mod and you can see it's of its own dependency.
+
+53
+00:04:21,690 --> 00:04:24,140
+So this is your indirect dependency the sampler.
+
+54
+00:04:24,180 --> 00:04:25,710
+Yeah.
+
+55
+00:04:26,070 --> 00:04:27,170
+So the only reason.
+
+56
+00:04:27,180 --> 00:04:34,930
+So this does not show up in your go mod because it's listed a go my SO if you are importing some patch
+
+57
+00:04:34,950 --> 00:04:37,190
+that's not modules yet.
+
+58
+00:04:37,400 --> 00:04:40,160
+Your go mod will include the indirect dependencies to
+
+59
+00:04:43,600 --> 00:04:44,340
+I'm confused.
+
+60
+00:04:44,490 --> 00:04:45,170
+Again.
+
+61
+00:04:45,370 --> 00:04:52,380
+So because RC quote is the go module your go module does not have to list the indirect dependencies
+
+62
+00:04:52,680 --> 00:04:58,780
+because RC quote has has its dependence has its dependencies listed in its own mind.
+
+63
+00:04:58,800 --> 00:04:59,480
+Oh right yeah.
+
+64
+00:04:59,550 --> 00:05:03,290
+So if you import some package let's not go modules yet.
+
+65
+00:05:03,300 --> 00:05:07,100
+Yeah your module will be responsible for getting its indirect dependencies too.
+
+66
+00:05:07,110 --> 00:05:07,830
+I got it.
+
+67
+00:05:08,130 --> 00:05:08,330
+All right.
+
+68
+00:05:08,400 --> 00:05:15,720
+So since since this package uses go modules it's got its own go dot mod file and you could see here
+
+69
+00:05:15,720 --> 00:05:17,810
+that the dependencies of this package.
+
+70
+00:05:17,820 --> 00:05:19,900
+This is on Daniel's computer.
+
+71
+00:05:20,190 --> 00:05:23,440
+You know the dependencies are the module is ours.
+
+72
+00:05:23,480 --> 00:05:31,950
+See Io forward slash quote and its dependency is RISC diode forward slash sampler and that's one point
+
+73
+00:05:31,950 --> 00:05:36,200
+three and when I bring in our AC Io for its last quote.
+
+74
+00:05:36,210 --> 00:05:41,170
+So that's the version I brought in their version one point five point two and we can go look at that
+
+75
+00:05:41,170 --> 00:05:45,600
+and second their direct dependency is my indirect dependency.
+
+76
+00:05:45,610 --> 00:05:45,890
+Right.
+
+77
+00:05:45,900 --> 00:05:49,740
+So coming with this are the dependencies of that which is this.
+
+78
+00:05:49,740 --> 00:05:50,580
+That's very direct.
+
+79
+00:05:50,580 --> 00:05:51,630
+Is that what you're trying to say.
+
+80
+00:05:51,660 --> 00:05:51,990
+Yeah.
+
+81
+00:05:52,020 --> 00:05:52,380
+Got it.
+
+82
+00:05:52,680 --> 00:05:52,930
+Yeah.
+
+83
+00:05:52,940 --> 00:05:53,310
+So.
+
+84
+00:05:53,460 --> 00:05:54,130
+So it's not sure.
+
+85
+00:05:54,160 --> 00:05:56,790
+So but the indirect dependency does not show up in your work.
+
+86
+00:05:56,820 --> 00:06:02,670
+Oh my God the goes to up and go going project because it's already listed in this go mod.
+
+87
+00:06:02,700 --> 00:06:07,050
+Yeah but to see them I I go list dash em all.
+
+88
+00:06:07,050 --> 00:06:11,790
+Do this command right here and that shows them onto me and then.
+
+89
+00:06:12,330 --> 00:06:17,880
+So but if you imported some package it's not a go mod you see you would see their indirect dependencies
+
+90
+00:06:17,910 --> 00:06:23,040
+in your mind because they have to you have seen some go mod whether it's yours or till he makes some
+
+91
+00:06:23,040 --> 00:06:29,580
+other one and then go back to where we saw the versions and we could see that this is version one point
+
+92
+00:06:29,580 --> 00:06:38,910
+five point two releases and version one point five point two is that C.D. C for D for 2 3 6 which is
+
+93
+00:06:38,910 --> 00:06:46,860
+that one and and so that's the same version that I downloaded and that came down as latest right it
+
+94
+00:06:46,860 --> 00:06:54,670
+automatically came down as latest yes because of the list of dependencies your import statement was
+
+95
+00:06:54,720 --> 00:07:01,300
+not saying you needed a v2 version so tries to find the latest stable released version.
+
+96
+00:07:01,380 --> 00:07:01,960
+So this went.
+
+97
+00:07:02,010 --> 00:07:04,470
+So these ones are V2 which we said we wanted.
+
+98
+00:07:04,470 --> 00:07:09,660
+We didn't say Fuck version so defaults to version 1 so it doesn't have any of these it doesn't get this
+
+99
+00:07:09,660 --> 00:07:12,750
+one because this is a prerelease version of some sort.
+
+100
+00:07:12,750 --> 00:07:17,520
+It doesn't get this one because this version is not a proper version number.
+
+101
+00:07:17,520 --> 00:07:23,700
+So it gets this because the newest properly tagged stable version one version and we'll learn how to
+
+102
+00:07:23,700 --> 00:07:31,080
+specify exactly which version you want but by default it gives you the latest version one unless you
+
+103
+00:07:31,080 --> 00:07:33,900
+specify the exact version you want by default.
+
+104
+00:07:33,900 --> 00:07:39,510
+All right so that's a little bit surprising to me because when I read the documentation if you import
+
+105
+00:07:39,510 --> 00:07:45,300
+a package library diet tracked by go mod by default go adds it to go mod using the latest version.
+
+106
+00:07:45,300 --> 00:07:51,300
+I would think the latest version is 3.0 1.0 but it just as latest based upon one server so that it goes
+
+107
+00:07:51,300 --> 00:07:52,090
+based on the weight.
+
+108
+00:07:52,150 --> 00:07:58,320
+So with go modules the the major version the first number is a part of the input path.
+
+109
+00:07:58,590 --> 00:08:01,070
+So because you don't have the version number in your import.
+
+110
+00:08:01,170 --> 00:08:02,280
+It goes for version 1.
+
+111
+00:08:02,320 --> 00:08:02,860
+I got it.
+
+112
+00:08:02,880 --> 00:08:10,380
+That makes sense so the reason it's version 1 and we're gonna see this is you could specify version
+
+113
+00:08:10,440 --> 00:08:15,300
+number 4 version 2 or higher but then that becomes part of the import path.
+
+114
+00:08:15,300 --> 00:08:25,370
+And so since in my code my import path is RISC dot Io forward slash quote and it's not foreign slash
+
+115
+00:08:25,380 --> 00:08:33,240
+quote the two which would be version 2 or v 3 version 3 which by default would give me the latest version
+
+116
+00:08:33,240 --> 00:08:34,480
+to hear version 3.
+
+117
+00:08:34,560 --> 00:08:39,840
+I'm just doing that which says it's version 1 and it's getting me the latest version one since I didn't
+
+118
+00:08:39,840 --> 00:08:40,520
+specify it there.
+
+119
+00:08:40,530 --> 00:08:40,950
+Correct.
+
+120
+00:08:40,950 --> 00:08:41,840
+Correct.
+
+121
+00:08:41,850 --> 00:08:42,230
+Cool.
+
+122
+00:08:42,240 --> 00:08:43,320
+We're figuring this out.
+
+123
+00:08:43,350 --> 00:08:46,080
+So that's that's adding a dependency.
+
+124
+00:08:46,110 --> 00:08:52,530
+And again that's paralleling this article and so we're just kind of going through and showing you what
+
+125
+00:08:52,530 --> 00:08:57,800
+they're showing you here and the next one we're gonna see how to do security assurances but go some
+
+126
+00:08:57,810 --> 00:09:00,800
+and we're gonna see what goes some is we're going to learn a little bit about that.
+
+127
+00:09:00,880 --> 00:09:03,350
+You have anything you want to add to this video.
+
+128
+00:09:03,640 --> 00:09:05,340
+I do not believe so.
+
+129
+00:09:05,340 --> 00:09:06,240
+See the next video.

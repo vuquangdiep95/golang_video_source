@@ -1,0 +1,479 @@
+1
+00:00:00,300 --> 00:00:06,690
+Đó là một kỹ năng thực sự mạnh mẽ mà chúng tôi vừa học được như hiểu gói quản lý phụ thuộc
+
+2
+00:00:06,690 --> 00:00:09,190
+quản lý có quản lý gói.
+
+3
+00:00:09,190 --> 00:00:11,910
+Điều đó sẽ không đi ma vào bạn.
+
+4
+00:00:11,910 --> 00:00:12,320
+Phải.
+
+5
+00:00:12,320 --> 00:00:14,080
+Tương tự với NPM
+
+6
+00:00:14,220 --> 00:00:16,700
+Bạn giống như tôi không biết mã đó đã từng ở đó.
+
+7
+00:00:16,700 --> 00:00:18,540
+Anh chàng tắt máy tính đi rồi.
+
+8
+00:00:18,930 --> 00:00:21,940
+Và giống như một nửa vũ trụ ngừng hoạt động trong một giờ.
+
+9
+00:00:22,140 --> 00:00:29,490
+Bởi vì họ có mô-đun Mir là proxy và proxy đó đang lưu trữ mọi thứ và nhân tiện
+
+10
+00:00:29,490 --> 00:00:35,310
+nếu bạn không muốn nội dung được lưu trữ ở đó, bạn phải chuyển sang biến riêng tư mà bạn có thể đặt cho các mô-đun
+
+11
+00:00:35,310 --> 00:00:41,850
+mà bạn tạo và sau đó sử dụng các mô-đun đi thay vì đường dẫn đi theo cách cũ của không gian làm việc rồi đóng gói
+
+12
+00:00:41,850 --> 00:00:45,030
+thư mục nguồn ngay trong khoảng cách tên dưới nguồn.
+
+13
+00:00:45,030 --> 00:00:52,260
+Chúng tôi đã học về khoảng cách tên, giờ đây bạn sử dụng các mô-đun thay vì tên đó và với các mô-đun ở bất kỳ đâu trên
+
+14
+00:00:52,260 --> 00:00:56,360
+máy tính, bạn chỉ cần nói rằng đây là một mô-đun và bạn đặt không gian tên.
+
+15
+00:00:56,370 --> 00:01:01,050
+Bạn đặt không gian tên sao cho không gian tên đó là bất kỳ thứ gì bạn muốn.
+
+16
+00:01:01,050 --> 00:01:07,500
+Tôi sử dụng bạn ngớ ngẩn đó để Mickey Mouse Vịt Donald và Daphne hoặc bất cứ điều gì hoặc bạn biết điều đó là tốt nhất
+
+17
+00:01:07,500 --> 00:01:14,070
+để kết nối nó là một cái gì đó trên web để chúng tôi nếu bạn muốn người khác truy cập mã của mình để
+
+18
+00:01:14,070 --> 00:01:19,370
+rằng khi mã của bạn ở trên đó, bạn biết nó được lưu trữ hoặc chỉ để bạn biết nó được lưu trữ ở đâu.
+
+19
+00:01:19,380 --> 00:01:27,250
+Nếu nó là riêng tư, hãy viết các mô-đun của bạn được kết nối tại vị trí lưu trữ này, vì vậy tên miền và sau đó là bất kỳ thứ gì khác.
+
+20
+00:01:27,360 --> 00:01:33,660
+Và vì vậy, chúng tôi tìm hiểu điều đó và chúng tôi cũng tìm hiểu cách tạo một mô-đun mà bạn hoặc bạn có thể truy cập và sử dụng.
+
+21
+00:01:33,690 --> 00:01:40,470
+bất cứ ai và kết nối nó để có được trung tâm và sau đó đẩy nó lên đó và thêm một phiên bản để
+
+22
+00:01:40,470 --> 00:01:45,650
+bây giờ bạn có thể tăng các phiên bản của mình và chúng tôi đã tìm hiểu về cách tạo phiên bản chính phụ trong Bản vá.
+
+23
+00:01:45,750 --> 00:01:51,570
+Và vì vậy, làm thế nào bạn thêm những con số đó và ở đâu và khi nào bạn sẽ phá vỡ chính khả năng tương thích ngược nhỏ
+
+24
+00:01:51,570 --> 00:01:56,240
+bạn không biết nó tương thích ngược và các bản vá tương thích ngược.
+
+25
+00:01:56,370 --> 00:02:02,670
+Chúng ta còn học được gì nữa trong đó một số thứ hay ho cách ăn cách nâng cấp từ bạn có thể có nhiều
+
+26
+00:02:02,670 --> 00:02:07,800
+các phiên bản của một gói mô-đun cùng một lúc để nâng cấp gia tăng
+
+27
+00:02:10,440 --> 00:02:11,200
+và những gì khác.
+
+28
+00:02:11,200 --> 00:02:12,380
+Còn gì nữa không.
+
+29
+00:02:12,780 --> 00:02:17,220
+Cuối cùng, tất cả các thẻ khác nhau, văn bản nội dung thẻ hữu ích ngay cả khi bạn không có ý định đó
+
+30
+00:02:17,220 --> 00:02:25,850
+được sử dụng bởi những người khác giống như đây là một phiên bản bạn sẽ gắn thẻ mà bạn cho là hoạt động như vậy
+
+31
+00:02:25,880 --> 00:02:30,720
+bạn có thể có ba lần xác nhận trước khi đặt một thẻ khác vì mã của bạn không hoạt động đầy đủ
+
+32
+00:02:30,720 --> 00:02:35,480
+trong hai phút còn lại ở giữa và sau đó là phiên bản thứ ba.
+
+33
+00:02:35,480 --> 00:02:37,730
+Người bạn đời thứ ba Nico nó đã hết chức năng tấn công.
+
+34
+00:02:37,740 --> 00:02:43,560
+Hiện đã có phiên bản một điểm hai.
+
+35
+00:02:43,590 --> 00:02:44,730
+Được rồi Suzanne thứ tốt.
+
+36
+00:02:44,730 --> 00:02:49,890
+Tôi hy vọng bạn thích điều đó và chúng ta sẽ ngồi lại và suy nghĩ vào cuối tuần về những gì sẽ dạy bạn tiếp theo.
+
+37
+00:02:50,040 --> 00:02:57,480
+Tôi biết rằng cuộn tròn là thứ gì đó có khả năng xuất hiện trên đường chân trời của chúng ta cũng như một số mặt hàng dưới đây
+
+38
+00:02:58,410 --> 00:03:01,700
+đường dẫn xây dựng tích hợp liên tục gói ngữ cảnh.
+
+39
+00:03:01,770 --> 00:03:03,390
+Tôi không biết nếu điều đó sẽ phù hợp với điều này.
+
+40
+00:03:03,390 --> 00:03:04,500
+Những gì đã làm.
+
+41
+00:03:05,150 --> 00:03:11,430
+Bạn chỉ biết một ghi chú ở đó để nói về tài liệu và điều đó sẽ không phù hợp lắm ngoài giao diện
+
+42
+00:03:11,430 --> 00:03:20,160
+và phần mềm trung gian và thử nghiệm và đo điểm chuẩn và sau đó cũng tạo ra một số loại ứng dụng nguyên khối
+
+43
+00:03:20,190 --> 00:03:25,680
+nhưng toàn bộ quá trình này cho đến thời điểm này khiến tôi hơi ngạc nhiên vì nó mất nhiều thời gian hơn tôi nghĩ.
+
+44
+00:03:25,710 --> 00:03:32,850
+Vì vậy, điều này cuối cùng có thể trở thành một khóa học khá gần giống như một số kỹ năng cơ bản chết tiệt
+
+45
+00:03:33,180 --> 00:03:37,560
+và chúng tôi có thể thực hiện khóa học nguyên khối ở một khóa học khác vì trước đây tất cả các khóa học của tôi đều thực sự
+
+46
+00:03:37,560 --> 00:03:42,780
+dài và vì vậy tôi đang cố gắng chia chúng thành khoảng từ sáu đến tám giờ để chúng tôi sẽ chỉnh sửa tất cả
+
+47
+00:03:43,230 --> 00:03:44,880
+và chúng ta sẽ thấy chúng ta đang ở đâu.
+
+48
+00:03:44,920 --> 00:03:51,690
+Và sau đó chúng ta có thể có một khóa học thứ hai thay vì thực hiện một khóa học nguyên khối sau đó.
+
+49
+00:03:51,690 --> 00:03:52,130
+Được rồi.
+
+50
+00:03:52,200 --> 00:03:57,180
+Bạn có bất cứ điều gì muốn nói hoặc thêm vào trước khi chúng tôi 442 chúng tôi đã làm khá tốt, chúng tôi còn 18 phút trước
+
+51
+00:03:57,180 --> 00:03:58,140
+chúng tôi đi ra ngoài vào cuối tuần.
+
+52
+00:03:58,140 --> 00:04:01,680
+Bất cứ điều gì khác bạn muốn thêm bất kỳ giai thoại cá nhân.
+
+53
+00:04:01,680 --> 00:04:05,030
+Vì vậy, nó chỉ là giai thoại cá nhân từ thời điểm này.
+
+54
+00:04:05,390 --> 00:04:07,140
+KHÔNG.
+
+55
+00:04:07,890 --> 00:04:13,480
+Hãy để tôi xem liệu tôi có bất kỳ giai thoại cá nhân nào mà tôi đã nghĩ đến không.
+
+56
+00:04:13,960 --> 00:04:20,410
+Tôi đã có một ý tưởng về phần mềm vào nửa đêm qua và trong kinh doanh có một thứ gọi là
+
+57
+00:04:20,410 --> 00:04:26,130
+hiệu ứng Hawthorne Tôi nghĩ đó là cái được gọi là hiệu ứng Hawthorne Yeah.
+
+58
+00:04:26,160 --> 00:04:32,220
+Ricky và họ nghiên cứu kiểu phản ứng trong đó các cá nhân sửa đổi một khía cạnh trong hành vi của họ để đáp lại
+
+59
+00:04:32,220 --> 00:04:39,660
+đến nhận thức đang được quan sát và vì vậy họ nghiên cứu lại những người trong ngày trên sàn nhà máy.
+
+60
+00:04:39,660 --> 00:04:45,420
+các nhà khoa học đến học thuật và họ nói rằng chúng tôi sẽ nghiên cứu xem tất cả các bạn đang làm việc như thế nào và mức độ như thế nào
+
+61
+00:04:45,510 --> 00:04:48,630
+ánh sáng trong nhà máy ảnh hưởng đến hiệu suất của bạn.
+
+62
+00:04:48,630 --> 00:04:52,200
+Và thế là họ bật đèn lên, họ làm cho nó thật sáng và năng suất tăng lên và họ nói rằng đó là
+
+63
+00:04:52,200 --> 00:04:53,250
+hấp dẫn.
+
+64
+00:04:53,250 --> 00:04:56,560
+Và sau đó họ tắt đèn và làm cho nó tối hơn bình thường.
+
+65
+00:04:56,640 --> 00:04:59,640
+Và năng suất thậm chí còn tăng cao hơn và họ bối rối.
+
+66
+00:04:59,700 --> 00:05:02,650
+Và sau đó họ nhận ra rằng ánh sáng không liên quan gì đến nó.
+
+67
+00:05:02,650 --> 00:05:04,500
+Chà, chúng sáng hay mờ.
+
+68
+00:05:04,500 --> 00:05:07,850
+Và điều quan trọng là liệu các cá nhân có được quan sát hay không.
+
+69
+00:05:07,950 --> 00:05:12,100
+Và với hiệu ứng Hawthorne cũng như với ý tưởng về sự phản chiếu này.
+
+70
+00:05:12,120 --> 00:05:18,750
+Vì vậy, nếu chúng ta suy nghĩ về việc chúng ta là ai và chúng ta đang làm gì trong công việc, tôi đã có một ý tưởng giống như một số phần mềm
+
+71
+00:05:18,750 --> 00:05:25,260
+sẽ cho phép nhân viên giống như lấy nhật ký trung tâm những gì họ làm hàng ngày.
+
+72
+00:05:25,380 --> 00:05:30,480
+Và để theo dõi sẽ có một hệ thống theo dõi kiểu như trước khi bạn đi ăn trưa.
+
+73
+00:05:30,480 --> 00:05:32,790
+Đây là những gì tôi đã làm từ 8:00 đến trưa.
+
+74
+00:05:32,790 --> 00:05:35,700
+Và sau khi bạn quay lại, bạn biết trước khi anh ấy rời đi trong ngày.
+
+75
+00:05:35,700 --> 00:05:41,010
+Đây là những gì tôi đã làm từ 1 đến 5 lần gặp gỡ và tạo những liên hệ này. Tôi có những khách hàng tiềm năng này, đây là số điện thoại
+
+76
+00:05:41,010 --> 00:05:45,060
+các email đã trò chuyện với người này để ghi nhật ký tất cả hoạt động của bạn.
+
+77
+00:05:45,300 --> 00:05:51,990
+Vì vậy, về cơ bản nó giống như nhận trung tâm nhưng đối với những người đang bán hàng hoặc những người mà bạn biết thì tôi không biết
+
+78
+00:05:51,990 --> 00:05:53,790
+kỹ thuật và bán hàng còn gì nữa
+
+79
+00:05:56,580 --> 00:06:01,260
+bạn biết vị trí của mình là gì, bạn sẽ ghi nhật ký hoạt động của mình trong ngày và sau đó bạn có thể chạy
+
+80
+00:06:01,380 --> 00:06:05,530
+một email chống lại tất cả những điều đó để cố gắng tìm ra hiệu quả.
+
+81
+00:06:05,880 --> 00:06:10,820
+Và điều quan trọng nhất là tôi có thể cố gắng mang lại sự gắn kết cho tổ chức.
+
+82
+00:06:10,830 --> 00:06:15,810
+Vì vậy, tổ chức sẽ biết những gì nó biết hiệu quả hơn biết những gì nó biết.
+
+83
+00:06:15,810 --> 00:06:17,690
+Và bởi vì bạn sẽ thấy ai đang làm gì.
+
+84
+00:06:17,700 --> 00:06:24,440
+Nhưng sau đó, mọi người cũng sẽ cảm thấy như bất cứ điều gì họ đang làm ở đó, họ không có đánh giá hàng quý
+
+85
+00:06:24,440 --> 00:06:29,840
+và không có hàng năm hoặc hàng năm trong học viện, tôi được đánh giá ba năm một lần, vậy thôi.
+
+86
+00:06:30,090 --> 00:06:30,390
+Phải.
+
+87
+00:06:30,390 --> 00:06:35,780
+Nó giống như cứ sau bốn giờ, ai đó có thể tìm kiếm người của họ ở trên trong máy học để
+
+88
+00:06:35,780 --> 00:06:38,750
+đang nhìn vào những gì họ đã làm trong bốn giờ qua.
+
+89
+00:06:39,060 --> 00:06:43,500
+Và vì vậy với cảm giác OK đó, tôi đã đi đúng hướng.
+
+90
+00:06:43,500 --> 00:06:48,030
+Nó có thể dẫn đến tăng năng suất có thể chỉ khiến mọi người căng thẳng trong công việc.
+
+91
+00:06:48,210 --> 00:06:54,240
+Bạn biết anh chàng đã nghiên cứu về hiệu quả thấy rằng tôi thực sự sẽ google điều đó.
+
+92
+00:06:54,290 --> 00:06:57,780
+Ông lớn nghiên cứu hiệu quả
+
+93
+00:07:00,150 --> 00:07:03,100
+Frank Buck là ý tưởng điên rồ rằng Google sẽ đưa ra điều đó.
+
+94
+00:07:03,150 --> 00:07:09,900
+Frank Buck Tác giả người Mỹ và người tiên phong nghiên cứu về chuyển động thời gian cha phải và nhân vật trung tâm Tôi không biết
+
+95
+00:07:09,900 --> 00:07:13,940
+Cheaper By The Dozen là gì nhưng anh ấy là một chuyên gia hiệu quả.
+
+96
+00:07:13,940 --> 00:07:16,740
+Tôi tự hỏi nếu có câu chuyện xẻng ở đây.
+
+97
+00:07:17,130 --> 00:07:24,090
+Vì vậy, thời gian hiệu quả xem câu chuyện xẻng.
+
+98
+00:07:24,180 --> 00:07:25,100
+Hãy xem nào.
+
+99
+00:07:25,530 --> 00:07:27,300
+Frederick Winslow Taylor.
+
+100
+00:07:27,300 --> 00:07:28,560
+Đó là nó.
+
+101
+00:07:28,560 --> 00:07:31,830
+Vì vậy, không phải anh chàng này là Frederick Winslow Taylor.
+
+102
+00:07:31,860 --> 00:07:37,020
+Vì vậy, anh chàng Frederick Winslow Taylor này đã nghiên cứu cách mọi người có thể làm việc hiệu quả hơn.
+
+103
+00:07:37,030 --> 00:07:46,080
+Và anh ấy sẽ tính thời gian cho họ bằng đồng hồ bấm giờ và anh ấy chỉ khiến mọi người căng thẳng và vì vậy anh ấy đã làm điều này
+
+104
+00:07:46,080 --> 00:07:50,480
+với tất cả những đứa con của anh ấy và và tôi nghĩ điều này là đúng.
+
+105
+00:07:50,490 --> 00:07:51,850
+Trẻ em tự sát.
+
+106
+00:07:52,320 --> 00:07:53,970
+Tất cả những đứa trẻ này đều tự sát.
+
+107
+00:07:53,970 --> 00:07:56,850
+Họ như thế này là quá dữ dội.
+
+108
+00:07:58,820 --> 00:08:00,310
+Có một thập kỷ sau đó.
+
+109
+00:08:00,310 --> 00:08:00,690
+Tôi không.
+
+110
+00:08:01,070 --> 00:08:09,090
+Vì vậy, đó có thể chỉ là cái mà họ gọi là những huyền thoại văn hóa.
+
+111
+00:08:09,100 --> 00:08:11,020
+Chúng tôi thực sự vào một giai thoại cá nhân.
+
+112
+00:08:11,050 --> 00:08:14,100
+Họ gọi những huyền thoại văn hóa đó là gì.
+
+113
+00:08:14,150 --> 00:08:18,160
+Có một bộ phim mà bạn có thể biết.
+
+114
+00:08:18,160 --> 00:08:23,440
+Đó là gì thưa cô văn hóa.
+
+115
+00:08:23,520 --> 00:08:23,940
+Tôi không biết.
+
+116
+00:08:24,030 --> 00:08:27,420
+Vì vậy, dù sao đi nữa, có lẽ đó chỉ là một trong những huyền thoại văn hóa và nó không thực sự đúng.
+
+117
+00:08:27,420 --> 00:08:27,880
+Được rồi.
+
+118
+00:08:27,880 --> 00:08:32,160
+Một chút giai thoại cá nhân và một số thông tin thú vị về hiệu quả nhưng điều đó
+
+119
+00:08:32,160 --> 00:08:40,970
+là ý tưởng đến với tôi đêm qua cho một số phần mềm có thể thú vị có thể là một hóa đơn ánh sáng.
+
+120
+00:08:41,000 --> 00:08:42,410
+Hẹn gặp lại các bạn trong video tiếp theo.

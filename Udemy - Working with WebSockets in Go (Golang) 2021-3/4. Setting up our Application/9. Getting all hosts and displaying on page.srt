@@ -1,0 +1,531 @@
+1
+00:00:01,460 --> 00:00:09,590
+So let's get started with the steps necessary to display on this page over here, posts on the overview
+
+2
+00:00:09,890 --> 00:00:12,680
+page, which is a slash admin slash host slash.
+
+3
+00:00:12,680 --> 00:00:16,890
+All we want to list are one host here and any other hosts, we might add.
+
+4
+00:00:17,690 --> 00:00:23,060
+So in our roots, you can see that host all takes us to all hosts.
+
+5
+00:00:23,060 --> 00:00:23,680
+That handler.
+
+6
+00:00:23,690 --> 00:00:24,200
+Let's go there.
+
+7
+00:00:24,920 --> 00:00:34,790
+So here what we want to do is to get all hosts from database and then we want to send data to template,
+
+8
+00:00:35,090 --> 00:00:36,090
+which is pretty straightforward.
+
+9
+00:00:36,770 --> 00:00:42,920
+So let's go to our host, underscore postgrads and at the very bottom, call that a new method func
+
+10
+00:00:43,490 --> 00:00:48,590
+has the receiver of Postgrads DB Repo and we'll call this all hosts.
+
+11
+00:00:50,090 --> 00:00:58,840
+And it takes no parameters and it returns a slice of models, host and potentially an error.
+
+12
+00:01:00,710 --> 00:01:02,150
+So I'll get the context.
+
+13
+00:01:02,150 --> 00:01:07,280
+I'll copy it the way I always do, because I always make a mistake when I type that up by hand and then
+
+14
+00:01:07,280 --> 00:01:07,910
+read her statement.
+
+15
+00:01:07,910 --> 00:01:12,090
+Query, query is and we'll just make this a simple query right now.
+
+16
+00:01:12,110 --> 00:01:16,970
+Again, we're going to have to come back and modify this later on, but it's not necessary to do that
+
+17
+00:01:16,970 --> 00:01:17,680
+at the moment.
+
+18
+00:01:18,320 --> 00:01:24,950
+So all I need to do is select it and let's look at the actual contents of the host table to make sure
+
+19
+00:01:24,950 --> 00:01:25,840
+we don't miss anything.
+
+20
+00:01:26,990 --> 00:01:29,150
+The structure is as follows.
+
+21
+00:01:29,570 --> 00:01:37,970
+We want the hostname, the canonical name in the URL, hostname canonic call name.
+
+22
+00:01:39,600 --> 00:01:46,410
+You ip IP Version six, you URL, IP, IP, Version six, we're not using all this, but I may as well
+
+23
+00:01:46,410 --> 00:01:55,170
+grab it now because I might use it later on location OS and active location OS Colma Active.
+
+24
+00:01:56,550 --> 00:02:08,520
+I think it's just created an updated at Yepp created at an updated act from Host's order by and I'll
+
+25
+00:02:08,520 --> 00:02:09,300
+say hostname.
+
+26
+00:02:11,090 --> 00:02:20,840
+So there's our query now let's execute it, rose error or assign the value of IMDB dot query context.
+
+27
+00:02:23,270 --> 00:02:27,170
+Right there and handed the context and handed our query.
+
+28
+00:02:29,450 --> 00:02:36,740
+And of course, we want to check for an error, if error is not equal to nil, return the error.
+
+29
+00:02:38,880 --> 00:02:46,560
+Otherwise, defer rose clothes so we don't wind up with a memory leak and now we'll say declaring a
+
+30
+00:02:46,560 --> 00:02:54,330
+variable and the variable will be via our hosts, which is of type, slice of models, thought host
+
+31
+00:02:56,010 --> 00:02:57,570
+and now for rows.
+
+32
+00:02:57,840 --> 00:03:00,380
+Next we go through our entire ROSET.
+
+33
+00:03:01,230 --> 00:03:02,340
+We create a new variable.
+
+34
+00:03:02,340 --> 00:03:07,080
+VAR H is a type model host and that's what we'll store.
+
+35
+00:03:07,080 --> 00:03:14,610
+This in error is assign the value of rows scam and will scan into this h.
+
+36
+00:03:14,610 --> 00:03:19,020
+We just created the ID and I'll duplicate this a few times.
+
+37
+00:03:20,590 --> 00:03:21,430
+The hostname.
+
+38
+00:03:23,950 --> 00:03:25,060
+The canonical name.
+
+39
+00:03:28,470 --> 00:03:34,320
+The euro, the IP, the IP version six.
+
+40
+00:03:37,840 --> 00:03:41,620
+The location, the operating system OS.
+
+41
+00:03:44,240 --> 00:03:45,620
+Whether or not it's active.
+
+42
+00:03:47,990 --> 00:03:59,560
+And they created app and the updated perfect, so if there's an error, error is not equal to nil,
+
+43
+00:04:01,310 --> 00:04:07,070
+we'll just log the error, logged our print line error and return.
+
+44
+00:04:09,580 --> 00:04:11,230
+Nhill and the Air.
+
+45
+00:04:14,320 --> 00:04:23,800
+Otherwise, we want to append this to our slice and a slice is called hosts equals host append and we're
+
+46
+00:04:23,800 --> 00:04:29,740
+spending the two hosts, we're spending each perfect.
+
+47
+00:04:29,760 --> 00:04:30,790
+So now we have our hosts.
+
+48
+00:04:31,930 --> 00:04:36,340
+And then after we're doing all of our scans, we'll do one last error check.
+
+49
+00:04:36,340 --> 00:04:46,090
+If error equals Rosewarne error and error is not equal to nil, then log the error logged up print line
+
+50
+00:04:46,300 --> 00:04:55,980
+error and return nil and the error otherwise return hosts and nil.
+
+51
+00:04:57,850 --> 00:04:58,350
+OK.
+
+52
+00:04:59,250 --> 00:05:07,440
+So up here, this can't be air has to be returned to an air, and I think that's it for errors.
+
+53
+00:05:07,450 --> 00:05:07,900
+It is.
+
+54
+00:05:07,920 --> 00:05:09,240
+All right, so let's copy.
+
+55
+00:05:09,240 --> 00:05:11,160
+Are all hosts signature?
+
+56
+00:05:12,360 --> 00:05:13,830
+Go to our repository.
+
+57
+00:05:16,180 --> 00:05:20,650
+And paste it in here and now it's available to us in our handler, so back to our handler.
+
+58
+00:05:22,870 --> 00:05:24,900
+We want to get all the hose from the database.
+
+59
+00:05:24,910 --> 00:05:25,420
+Well, that's easy.
+
+60
+00:05:25,420 --> 00:05:32,800
+Now hosts an error or assigned the value of repo DB all hosts, not all users, all hosts.
+
+61
+00:05:33,970 --> 00:05:40,570
+If error is not equal to nil logged up print line error and just return again, you're not going to
+
+62
+00:05:40,570 --> 00:05:41,430
+do that in production.
+
+63
+00:05:41,440 --> 00:05:44,700
+But I just want to get this up and functional so we can get to the WebSocket stuff.
+
+64
+00:05:45,880 --> 00:05:49,510
+Now we want to send this host data to our handlers and that's pretty straightforward.
+
+65
+00:05:49,520 --> 00:05:50,440
+We've already done that.
+
+66
+00:05:50,740 --> 00:05:59,440
+We just create a variable which I'll call VARs and that's a sign the value of make a jet map and then
+
+67
+00:05:59,440 --> 00:06:04,930
+Vasin set and I'll call this hosts and hand it hosts.
+
+68
+00:06:07,710 --> 00:06:12,600
+And then down here, this error, because we have one above, is now just an equal stunt, a sign,
+
+69
+00:06:12,930 --> 00:06:14,490
+and we pass it first.
+
+70
+00:06:14,910 --> 00:06:17,960
+OK, so let's just make sure this all works.
+
+71
+00:06:17,970 --> 00:06:20,370
+We're not going to render anything, but make sure it all compiles.
+
+72
+00:06:21,910 --> 00:06:28,930
+And it does and I should be able to see this House page by going to hosts, and I do so now, I should
+
+73
+00:06:28,930 --> 00:06:33,400
+be able to open the jet file, which is called host OzJet.
+
+74
+00:06:34,060 --> 00:06:43,930
+And in here, I should be able to range through that data, which is as simple as range hosts.
+
+75
+00:06:47,080 --> 00:06:58,090
+And and in here, I want to have a table row and I want to have a table data for one entry and this
+
+76
+00:06:58,090 --> 00:07:03,610
+is the host, so it will be hostname and I'll just leave the rest of them empty for right now just to
+
+77
+00:07:03,610 --> 00:07:04,750
+make sure it actually works.
+
+78
+00:07:05,200 --> 00:07:07,990
+TD And there are one, two, three, four more.
+
+79
+00:07:07,990 --> 00:07:09,130
+So one, two, three.
+
+80
+00:07:09,610 --> 00:07:10,570
+Save this.
+
+81
+00:07:10,920 --> 00:07:14,650
+I should be able to reload this and see my one host and I do.
+
+82
+00:07:14,650 --> 00:07:17,170
+And of course that should be a hyperlink.
+
+83
+00:07:17,610 --> 00:07:24,250
+A traffic equals admin slash, admin slash host slash Heidi.
+
+84
+00:07:26,750 --> 00:07:34,990
+And close this and close my A and save that and reloaded, and now I should be able to click on that.
+
+85
+00:07:35,450 --> 00:07:35,920
+Perfect.
+
+86
+00:07:36,290 --> 00:07:41,590
+OK, now back on this table, we also want to list services.
+
+87
+00:07:41,590 --> 00:07:46,040
+And what I'd like to see here is how many are OK, how many are in mourning, how many are pending,
+
+88
+00:07:46,040 --> 00:07:50,510
+how many are in problem state lists, the operating system, the location on the status.
+
+89
+00:07:50,510 --> 00:07:50,630
+What?
+
+90
+00:07:50,630 --> 00:07:55,040
+We can't do this part yet because we have no services for our host, but we can definitely do the last
+
+91
+00:07:55,040 --> 00:07:55,400
+three.
+
+92
+00:07:55,430 --> 00:07:56,210
+So let's do those.
+
+93
+00:07:57,170 --> 00:08:01,730
+So the last three, the first one is The O.C., which is just doorposts.
+
+94
+00:08:03,740 --> 00:08:08,690
+The second one is the location, which is location, which I don't think are even populated for our
+
+95
+00:08:08,690 --> 00:08:17,900
+existing house, but it will show up as nothing and the status if status equals one.
+
+96
+00:08:20,260 --> 00:08:20,970
+Else
+
+97
+00:08:23,610 --> 00:08:33,870
+and end, and I think the syntax for this is spam class equals, what is it called batch?
+
+98
+00:08:35,000 --> 00:08:35,660
+Badge.
+
+99
+00:08:37,890 --> 00:08:42,360
+And if the status is one, its active badge success.
+
+100
+00:08:45,500 --> 00:08:52,760
+Active, otherwise, it's inactive, so I'll just copy this, paste it in here, tab it over so it's
+
+101
+00:08:52,760 --> 00:08:58,220
+properly formatted and make it badge danger inactive.
+
+102
+00:08:59,900 --> 00:09:05,600
+Already there fact, OK, you don't need two versions of that.
+
+103
+00:09:05,640 --> 00:09:07,380
+Save it, reload it.
+
+104
+00:09:07,740 --> 00:09:09,600
+And I have something here, can't you?
+
+105
+00:09:09,610 --> 00:09:12,210
+Status as field name and struct type model host.
+
+106
+00:09:12,870 --> 00:09:13,100
+Right.
+
+107
+00:09:13,140 --> 00:09:13,980
+It's not called status.
+
+108
+00:09:13,980 --> 00:09:14,880
+It's called active.
+
+109
+00:09:19,570 --> 00:09:22,870
+OK, try that again and nothing showing up.
+
+110
+00:09:25,880 --> 00:09:26,930
+Range hosts.
+
+111
+00:09:29,480 --> 00:09:31,880
+Spanned class equals badge, badge danger.
+
+112
+00:09:33,930 --> 00:09:37,320
+Well, just put it in here and see what it looks like active.
+
+113
+00:09:42,440 --> 00:09:46,820
+So it does have one, if not active, equals one span.
+
+114
+00:09:46,850 --> 00:09:49,010
+Well, I've got the syntax wrong for that, so let's go figure.
+
+115
+00:09:49,040 --> 00:09:50,180
+I'll just do it like this.
+
+116
+00:09:51,050 --> 00:09:54,500
+Spang class equals tax excessed.
+
+117
+00:09:57,330 --> 00:10:00,730
+And spin class equals text danger.
+
+118
+00:10:01,290 --> 00:10:08,670
+That's not a great text success and get rid of this and that should at least put it up there and I'll
+
+119
+00:10:08,670 --> 00:10:10,350
+figure out the bad syntax in a bit.
+
+120
+00:10:11,100 --> 00:10:12,210
+And it's not critical there.
+
+121
+00:10:12,220 --> 00:10:13,450
+So it shows it up is active.
+
+122
+00:10:13,480 --> 00:10:20,730
+Now, if I open this up and give it more information like its location, say, Toronto and its Kubuntu,
+
+123
+00:10:20,910 --> 00:10:25,650
+it's actually a Mac Mac OS X and it's not in Toronto.
+
+124
+00:10:25,650 --> 00:10:26,490
+It's in New Brunswick.
+
+125
+00:10:27,660 --> 00:10:28,830
+That's where I am right now.
+
+126
+00:10:29,880 --> 00:10:33,810
+And save this and go back to hosts.
+
+127
+00:10:34,320 --> 00:10:36,600
+It now displays the rest of the information.
+
+128
+00:10:36,660 --> 00:10:40,400
+OK, so now we have a means of getting to our hosts very, very easily.
+
+129
+00:10:41,400 --> 00:10:44,520
+So the next thing we need to worry about is this services bit.
+
+130
+00:10:44,540 --> 00:10:48,600
+And this is critical because these are the things we want to monitor and that's what we're going to
+
+131
+00:10:48,600 --> 00:10:49,950
+be using web sockets for.
+
+132
+00:10:49,980 --> 00:10:51,950
+So there's some work required to make that happen.
+
+133
+00:10:51,960 --> 00:10:56,130
+None of it's terribly difficult and we'll get started on it in the next lecture.

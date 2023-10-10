@@ -1,0 +1,1449 @@
+1
+00:00:01,440 --> 00:00:07,320
+So this time around, before we actually get to testing, I want to write the necessary functions to
+
+2
+00:00:07,320 --> 00:00:12,960
+our tokens and go file our token data structure in the My project.
+
+3
+00:00:13,260 --> 00:00:16,500
+And the first thing I'm going to do is make a change here.
+
+4
+00:00:16,530 --> 00:00:22,100
+When I made this model initially, I thought, I'm not going to store plaintext in the database.
+
+5
+00:00:22,110 --> 00:00:25,740
+And of course, there is no place to store it in our current database, but we're going to fix that
+
+6
+00:00:25,740 --> 00:00:26,190
+in a moment.
+
+7
+00:00:27,000 --> 00:00:31,350
+As I was preparing these next few lectures, it quickly became apparent to me that it's really convenient
+
+8
+00:00:31,350 --> 00:00:32,190
+to have that in there.
+
+9
+00:00:32,200 --> 00:00:37,950
+So let's change this from a dash, which tells upar to ignore it to a field name token.
+
+10
+00:00:39,060 --> 00:00:41,370
+And that means that I need to make a change in my database.
+
+11
+00:00:41,580 --> 00:00:48,930
+And the simplest thing to do at this point is to go to the course resources for this lecture and download
+
+12
+00:00:48,930 --> 00:00:49,440
+a file.
+
+13
+00:00:49,440 --> 00:00:54,330
+You'll find they're called off, underscore tables don't sequel and it looks like this.
+
+14
+00:00:54,510 --> 00:00:59,460
+I have it opened in my text item, and you can see it's a little bit different than what we had before.
+
+15
+00:00:59,580 --> 00:01:06,690
+To start with, I added this function, which actually updates the column updated at for a given table
+
+16
+00:01:06,720 --> 00:01:08,110
+to the current date and time.
+
+17
+00:01:08,130 --> 00:01:11,250
+It just automates that for us, so I create this function.
+
+18
+00:01:11,430 --> 00:01:16,590
+And then after I create the tables, I create a trigger on each table and that just automates the process
+
+19
+00:01:16,590 --> 00:01:16,900
+for us.
+
+20
+00:01:16,920 --> 00:01:18,690
+It just makes things a little bit more convenient.
+
+21
+00:01:19,800 --> 00:01:23,370
+You will also notice on tokens that I actually added this column online.
+
+22
+00:01:23,370 --> 00:01:31,110
+
+23
+4:09 In my code, I added that column, so select everything in that file and copy it, then go to your
+
+24
+00:01:31,110 --> 00:01:36,540
+favorite database client, connect to your database and I'm connected right now to Solaris House, Docker
+
+25
+00:01:36,540 --> 00:01:38,010
+and the database hilarious.
+
+26
+00:01:38,520 --> 00:01:45,060
+And I'll just select all of the tables and delete them, and I have to delete them cascaded because,
+
+27
+00:01:45,060 --> 00:01:48,900
+you know, there there are foreign key dependencies that will cause me grief otherwise.
+
+28
+00:01:49,230 --> 00:01:50,070
+So I delete those.
+
+29
+00:01:50,950 --> 00:01:56,430
+Now I'll go to a sequel, the sequel window and paste in the contents of that text file, select all
+
+30
+00:01:56,820 --> 00:01:59,920
+and execute the selection and that will create the tables for me.
+
+31
+00:01:59,940 --> 00:02:02,400
+And now they have triggers and it has the necessary column.
+
+32
+00:02:03,150 --> 00:02:04,200
+All right, so that's out of the way.
+
+33
+00:02:05,250 --> 00:02:06,600
+Now let's go back to user.
+
+34
+00:02:06,600 --> 00:02:12,030
+Don't go just really quickly and see if we have any changes we need to make here before we start writing
+
+35
+00:02:12,030 --> 00:02:12,600
+tests.
+
+36
+00:02:13,140 --> 00:02:14,190
+And you'll see right away.
+
+37
+00:02:14,190 --> 00:02:19,590
+And most of you probably noticed this on this get by email function.
+
+38
+00:02:20,280 --> 00:02:24,840
+I actually say when I'm getting the token, find me in the tokens table.
+
+39
+00:02:25,770 --> 00:02:29,960
+The tokens for the user were the expiry is less than Typekit now.
+
+40
+00:02:29,970 --> 00:02:32,310
+And of course, that's the opposite of what it should be.
+
+41
+00:02:32,310 --> 00:02:33,300
+It should be greater than.
+
+42
+00:02:33,480 --> 00:02:38,880
+And the same thing down here when we say, get my ID. This should be greater than OK.
+
+43
+00:02:39,420 --> 00:02:42,360
+That'll just save us a little bit grief, a little bit of grief down the road.
+
+44
+00:02:43,170 --> 00:02:47,970
+Now let's go back to token dark go and start thinking about the kinds of functions that we want here.
+
+45
+00:02:48,300 --> 00:02:54,240
+Well, right away, I'm going to say we probably want one with the receiver of Te Pointer two token.
+
+46
+00:02:55,110 --> 00:03:00,300
+We probably one want one that says, Get user four token OK.
+
+47
+00:03:00,840 --> 00:03:04,230
+And all it's going to take is one parameter token, which is a string.
+
+48
+00:03:05,160 --> 00:03:11,190
+And we're going to return potentially a pointer to a user model and an error or nil if there's no error.
+
+49
+00:03:11,580 --> 00:03:11,880
+OK.
+
+50
+00:03:13,020 --> 00:03:14,170
+So this is pretty simple.
+
+51
+00:03:14,190 --> 00:03:22,620
+Let's create a variable called u of type user, and let's create a variable called the token of type
+
+52
+00:03:22,620 --> 00:03:23,010
+token.
+
+53
+00:03:25,200 --> 00:03:28,200
+And now let's get a collection just like we did before.
+
+54
+00:03:28,680 --> 00:03:33,960
+Collection is assigned a value of uppercase collection, and we want tweaked table.
+
+55
+00:03:34,110 --> 00:03:37,410
+The table name, which, as you can see right here in line 18, is tokens.
+
+56
+00:03:37,840 --> 00:03:47,490
+OK, so like using my collection, we'll get a result set by calling Collection Dot Find and our condition
+
+57
+00:03:47,490 --> 00:03:54,600
+is up dots you, Andy and then in Curly Braces Token Colon Space Token.
+
+58
+00:03:54,630 --> 00:03:56,070
+The parameter pass to this function.
+
+59
+00:03:57,480 --> 00:04:02,040
+Now it didn't import up for me, so let's see if we can do with a quick fix.
+
+60
+00:04:09,230 --> 00:04:12,200
+And that worked, OK, so now we have our results set.
+
+61
+00:04:14,480 --> 00:04:21,470
+And now we'll check for an error and call resort one because we only want one and we're going to read
+
+62
+00:04:21,470 --> 00:04:32,480
+that into the token, if error is not equal to nil, then we'll just return error or nil and the error.
+
+63
+00:04:33,920 --> 00:04:42,080
+Otherwise we have our necessary toolkit and now will overwrite the value of collection to be equal to
+
+64
+00:04:42,860 --> 00:04:44,750
+Upper Dot collection.
+
+65
+00:04:45,470 --> 00:04:48,320
+And this time, I want to go to the user's table, so I'll just put it in like that.
+
+66
+00:04:49,370 --> 00:04:52,910
+And a result is now equal to collection dot find.
+
+67
+00:04:54,410 --> 00:05:01,460
+And we want an up dart condition where it is equal to.
+
+68
+00:05:03,180 --> 00:05:06,660
+The token got user I.D. right there.
+
+69
+00:05:07,110 --> 00:05:09,870
+And that should get me the user if that user exists.
+
+70
+00:05:12,500 --> 00:05:19,720
+Now we'll call we'll check for an error by calling from resort one and read into the variable you,
+
+71
+00:05:19,730 --> 00:05:20,660
+and that should be our user.
+
+72
+00:05:21,050 --> 00:05:21,380
+OK.
+
+73
+00:05:22,130 --> 00:05:27,980
+And if there's an error, will return nil errors or copy this and paste it here.
+
+74
+00:05:30,360 --> 00:05:34,620
+And now we say you Dot token is equal to the token.
+
+75
+00:05:35,310 --> 00:05:43,140
+So we populate that necessary field in our user model and we return a reference to, you know, so there's
+
+76
+00:05:43,140 --> 00:05:45,320
+a first one that allows us to get a user by token.
+
+77
+00:05:45,330 --> 00:05:49,080
+And clearly we're going to be using that one regularly, particularly when we're authenticating through
+
+78
+00:05:49,080 --> 00:05:49,710
+an API.
+
+79
+00:05:50,160 --> 00:05:50,460
+OK.
+
+80
+00:05:51,680 --> 00:05:52,880
+What else are we going to want to do?
+
+81
+00:05:52,910 --> 00:05:57,960
+Well, let's say get tokens for user, get all the tokens for a given user.
+
+82
+00:05:57,980 --> 00:05:59,620
+We might never need it, but let's put it in there.
+
+83
+00:06:00,150 --> 00:06:10,700
+T pointer to token and we'll say get tokens for user ID and that'll be a user ID, and we'll return
+
+84
+00:06:10,700 --> 00:06:14,690
+a slice of pointers to token and potentially an error.
+
+85
+00:06:16,040 --> 00:06:17,510
+And this should be old hat for you now.
+
+86
+00:06:17,540 --> 00:06:22,910
+We'll create a variable tokens, which will be a slice of pointers to token, which we have to return
+
+87
+00:06:24,680 --> 00:06:25,610
+and we'll get our collection.
+
+88
+00:06:26,300 --> 00:06:34,850
+Collection is assigned the value of uppercut collection and we want to get the table to table, which
+
+89
+00:06:34,850 --> 00:06:36,260
+will return tokens.
+
+90
+00:06:37,700 --> 00:06:39,260
+And we'll say Rose is a sign.
+
+91
+00:06:39,260 --> 00:06:47,240
+The value of collection dot find and are up condition is user ID.
+
+92
+00:06:49,280 --> 00:06:51,440
+The equal is implied so we can just put it in
+
+93
+00:06:54,530 --> 00:06:57,460
+and we'll check for an error when we read it into tokens.
+
+94
+00:06:57,470 --> 00:07:01,470
+So error is a sign the value of resident all.
+
+95
+00:07:02,720 --> 00:07:11,780
+And we want to read into tokens and I'll paste that error check, which I had from last time around.
+
+96
+00:07:11,900 --> 00:07:15,500
+And if there's no error, we return tokens and no.
+
+97
+00:07:16,220 --> 00:07:17,840
+OK, so that's when we might need as well.
+
+98
+00:07:18,560 --> 00:07:19,520
+Let's keep going.
+
+99
+00:07:19,880 --> 00:07:21,200
+Another one we might need to do.
+
+100
+00:07:21,210 --> 00:07:23,060
+We might need to get a token by ID.
+
+101
+00:07:23,310 --> 00:07:32,930
+So Func T point or two token, and we'll just call this one get and it takes one parameter ID, which
+
+102
+00:07:32,930 --> 00:07:37,920
+is in it, and it returns a pointer to a token and potentially an error.
+
+103
+00:07:38,930 --> 00:07:44,510
+But again, very simple create a variable token of type token.
+
+104
+00:07:45,890 --> 00:07:46,790
+We'll get our collection
+
+105
+00:07:53,180 --> 00:07:54,560
+pointing to the tokens table.
+
+106
+00:07:57,290 --> 00:07:57,920
+We get a result.
+
+107
+00:07:57,920 --> 00:07:58,220
+So.
+
+108
+00:08:00,360 --> 00:08:09,540
+Which is collection to find, and we want an up condition where it is equal to it.
+
+109
+00:08:11,940 --> 00:08:18,200
+We check for an error when we read from rows one into token.
+
+110
+00:08:20,340 --> 00:08:26,010
+And again, I'll paste my error check because I still have it and will return a reference to token and
+
+111
+00:08:26,010 --> 00:08:26,250
+nil.
+
+112
+00:08:28,530 --> 00:08:29,700
+So there's our get method.
+
+113
+00:08:31,410 --> 00:08:33,950
+Another one would be get by token, which is very similar.
+
+114
+00:08:33,960 --> 00:08:41,190
+So let's copy this and paste it here and call it get by token.
+
+115
+00:08:42,000 --> 00:08:43,830
+But we're not going to take an integer parameter.
+
+116
+00:08:44,220 --> 00:08:44,820
+We'll take.
+
+117
+00:08:46,980 --> 00:08:53,340
+Plain text, which is of type, string the plain text version of our token and down here, our condition
+
+118
+00:08:53,340 --> 00:08:56,850
+is not I.D., our condition is token.
+
+119
+00:08:59,100 --> 00:09:06,530
+That column I just added to the database and the value is plain text, so those have to match select
+
+120
+00:09:06,580 --> 00:09:06,830
+stats.
+
+121
+00:09:06,840 --> 00:09:07,500
+Get by token.
+
+122
+00:09:07,890 --> 00:09:11,040
+OK, what else do we need to do?
+
+123
+00:09:11,310 --> 00:09:16,050
+Well, occasionally we need to delete tokens, particularly when a user logs out, for example.
+
+124
+00:09:16,170 --> 00:09:26,280
+So func te pointer to token and we'll say delete by ID, ID int, and it returns nothing more than an
+
+125
+00:09:26,280 --> 00:09:27,870
+error or nil if there's no error.
+
+126
+00:09:28,890 --> 00:09:34,320
+And this is just collection is a the value of upper collection.
+
+127
+00:09:35,400 --> 00:09:45,820
+And we want T table that gives us our collection and now we want rows is equal to collection dot find.
+
+128
+00:09:45,840 --> 00:09:50,340
+And since we're finding by primary key primary here, we can just put it there and that will work just
+
+129
+00:09:50,340 --> 00:09:50,700
+fine.
+
+130
+00:09:51,840 --> 00:09:58,120
+And we'll say error is equal to dot delete put in our error check.
+
+131
+00:09:58,200 --> 00:10:02,100
+So a copy and paste copy paste.
+
+132
+00:10:03,320 --> 00:10:05,060
+And we return our error.
+
+133
+00:10:05,180 --> 00:10:06,290
+There's only one thing there.
+
+134
+00:10:08,270 --> 00:10:16,930
+And if there's no error, return nil now it's very infrequent that you would delete a token by I.D.
+
+135
+00:10:16,940 --> 00:10:18,280
+It's far more common.
+
+136
+00:10:18,290 --> 00:10:24,950
+I would think that you're going to delete, by token, the plain text version of our token.
+
+137
+00:10:25,910 --> 00:10:28,090
+OK, but we might need both.
+
+138
+00:10:28,100 --> 00:10:32,510
+So here we'll put it in plain text of type string.
+
+139
+00:10:33,920 --> 00:10:36,620
+And here this becomes update condition.
+
+140
+00:10:38,120 --> 00:10:44,810
+And it is token and that becomes plaintext, and everything else stays the same.
+
+141
+00:10:44,840 --> 00:10:46,160
+So that's our delete my token.
+
+142
+00:10:48,260 --> 00:10:50,450
+We're also going to need to insert tokens.
+
+143
+00:10:50,900 --> 00:10:56,150
+So Func T token insert.
+
+144
+00:10:56,630 --> 00:10:59,560
+And this will take two parameters because we need to know the token.
+
+145
+00:10:59,570 --> 00:11:01,250
+So token of type token.
+
+146
+00:11:01,820 --> 00:11:05,750
+And we're also going to need the user information so we can get their ID first name, things like that
+
+147
+00:11:06,140 --> 00:11:06,560
+user.
+
+148
+00:11:07,850 --> 00:11:09,200
+And potentially that returns an error.
+
+149
+00:11:10,130 --> 00:11:14,210
+And of course, you could pre populate everything you needed in the token variable, but it's faster
+
+150
+00:11:14,210 --> 00:11:14,930
+to do it this way.
+
+151
+00:11:14,960 --> 00:11:16,370
+Less code on the other end.
+
+152
+00:11:17,390 --> 00:11:18,170
+So we'll get a collection.
+
+153
+00:11:18,860 --> 00:11:26,420
+Collection is assigned the value of upward collection, and we want to table that case as our collection.
+
+154
+00:11:27,620 --> 00:11:34,030
+Now, if we're going to insert a token, let's delete existing tokens, which you may not want to do.
+
+155
+00:11:34,040 --> 00:11:39,830
+But in my case, I always do this OK because I'm paranoid and don't want sessions hanging around or
+
+156
+00:11:39,830 --> 00:11:41,960
+connections hanging around when they don't have to be anymore.
+
+157
+00:11:43,070 --> 00:11:54,050
+So I'll say Rez is assigned the value of collection got find and my condition will be up second user
+
+158
+00:11:54,050 --> 00:11:54,350
+ID.
+
+159
+00:11:55,070 --> 00:12:00,050
+And that's going to be equal to you, the ID, you being the user passed here.
+
+160
+00:12:01,280 --> 00:12:01,590
+OK.
+
+161
+00:12:01,610 --> 00:12:03,080
+And it's not a comma, it's a colon,
+
+162
+00:12:06,020 --> 00:12:09,800
+so that gets me my results, so and I'll just check for an error when I delete them.
+
+163
+00:12:10,310 --> 00:12:15,170
+Resort delete if error is not equal to nil,
+
+164
+00:12:18,050 --> 00:12:18,800
+return the error.
+
+165
+00:12:19,580 --> 00:12:21,080
+And let's give ourselves some room here.
+
+166
+00:12:22,610 --> 00:12:29,120
+So once they're all deleted, let's make sure that created an updated out first name and email have
+
+167
+00:12:29,120 --> 00:12:32,330
+been set on the token variable that we received as a parameter.
+
+168
+00:12:32,330 --> 00:12:34,010
+So Token Dot created up.
+
+169
+00:12:34,790 --> 00:12:40,940
+This is new, so I can just say time dot now, and this is the same thing for updated.
+
+170
+00:12:40,940 --> 00:12:41,150
+I
+
+171
+00:12:44,570 --> 00:12:45,200
+get rid of that.
+
+172
+00:12:46,310 --> 00:12:46,790
+That's better.
+
+173
+00:12:47,930 --> 00:12:54,950
+And we're going to want token dot first name will be equal to you dot first name because that's all
+
+174
+00:12:54,950 --> 00:12:56,960
+I'm storing in there and token.
+
+175
+00:12:56,960 --> 00:13:00,020
+The email is equal to youdon't email.
+
+176
+00:13:01,190 --> 00:13:05,960
+So now I have my token populated with all the necessary information so I can just insert it.
+
+177
+00:13:06,290 --> 00:13:12,440
+I don't care about the returned I.D. error and I already have an error variable, so that becomes an
+
+178
+00:13:12,440 --> 00:13:14,750
+equals collection.
+
+179
+00:13:14,960 --> 00:13:20,420
+Don't insert and we insert the token and we check for an error.
+
+180
+00:13:20,420 --> 00:13:21,560
+So a copy and paste,
+
+181
+00:13:25,910 --> 00:13:28,880
+and if everything went according to plan, we can return nil.
+
+182
+00:13:29,570 --> 00:13:29,840
+All right.
+
+183
+00:13:31,160 --> 00:13:32,570
+So that inserts a token.
+
+184
+00:13:33,920 --> 00:13:37,280
+We also, of course, need to generate tokens before we can insert them.
+
+185
+00:13:37,280 --> 00:13:43,490
+So thunk te pointer or two token generate token.
+
+186
+00:13:44,180 --> 00:13:51,110
+And this is going to take a user I.D. that we need and the time to life, and that will be a timed duration.
+
+187
+00:13:51,260 --> 00:13:53,150
+How long do we want the token to last?
+
+188
+00:13:53,630 --> 00:14:00,050
+And of course, we need to return the tokens or return a pointer to token and potentially an error and
+
+189
+00:14:00,050 --> 00:14:02,150
+generating a token is really straightforward.
+
+190
+00:14:03,620 --> 00:14:04,940
+First of all, let's create a token.
+
+191
+00:14:04,940 --> 00:14:12,920
+Variable token is assigned the value of a reference to token and will populate the fields we know about
+
+192
+00:14:13,370 --> 00:14:17,120
+user I.D. that will be equal to the user I.D.
+
+193
+00:14:19,880 --> 00:14:21,350
+and that needs to have an event after it.
+
+194
+00:14:22,220 --> 00:14:22,700
+That's better.
+
+195
+00:14:27,240 --> 00:14:29,720
+And the expiry, when does it expire?
+
+196
+00:14:31,600 --> 00:14:33,340
+And they call it expires here.
+
+197
+00:14:33,370 --> 00:14:35,950
+What do I have at the top before I go any further?
+
+198
+00:14:36,730 --> 00:14:38,860
+Expires expiry perfect.
+
+199
+00:14:39,070 --> 00:14:39,490
+OK.
+
+200
+00:14:40,780 --> 00:14:46,030
+So in the database, I'm calling you expiry in the field in the type is called expires, which is for
+
+201
+00:14:46,030 --> 00:14:46,120
+you.
+
+202
+00:14:47,440 --> 00:14:51,460
+So expires it's going to expire at a particular date and time.
+
+203
+00:14:51,610 --> 00:14:53,400
+And what we're getting is our duration.
+
+204
+00:14:53,410 --> 00:15:01,060
+So we'll take the current time timed out now and we will add the time to life, which is already in
+
+205
+00:15:01,060 --> 00:15:02,010
+the form of a duration.
+
+206
+00:15:02,020 --> 00:15:06,040
+So that will add the duration here to the current date and time.
+
+207
+00:15:06,250 --> 00:15:07,270
+So we have that information.
+
+208
+00:15:07,270 --> 00:15:08,620
+We have part of our token set up.
+
+209
+00:15:10,330 --> 00:15:15,430
+Now we need to generate a token and that's really simple and go random bytes, which is just a variable
+
+210
+00:15:15,430 --> 00:15:20,800
+name I'm choosing and it consists of, as you might expect, bytes.
+
+211
+00:15:21,160 --> 00:15:26,090
+So make a slice of byte and we'll make it 16.
+
+212
+00:15:26,110 --> 00:15:26,530
+OK.
+
+213
+00:15:26,770 --> 00:15:27,940
+So that's the size.
+
+214
+00:15:30,190 --> 00:15:33,700
+And now we'll read into random bytes.
+
+215
+00:15:33,700 --> 00:15:35,200
+So underscore.
+
+216
+00:15:35,200 --> 00:15:39,040
+I don't care about the first return value, but I do care about the error and we're going to call from
+
+217
+00:15:39,040 --> 00:15:40,270
+the rand package.
+
+218
+00:15:41,210 --> 00:15:41,710
+Read.
+
+219
+00:15:43,090 --> 00:15:44,320
+And that looks like it's there.
+
+220
+00:15:45,040 --> 00:15:51,560
+So we're going to read random votes, OK, and we'll check for an error.
+
+221
+00:15:51,580 --> 00:15:58,900
+So we're only I'll say if error is not equal to nil and we have to return values are Richard Nil in
+
+222
+00:15:58,900 --> 00:15:59,380
+the error.
+
+223
+00:16:00,190 --> 00:16:01,270
+Otherwise we can keep going.
+
+224
+00:16:03,230 --> 00:16:07,010
+Return, that's better.
+
+225
+00:16:08,330 --> 00:16:13,670
+It's a return that if we have an error, but if we get past that and we certainly will, then we need
+
+226
+00:16:13,670 --> 00:16:15,080
+to populate plain text.
+
+227
+00:16:15,350 --> 00:16:23,240
+That part of our token, so token plain text and how do we get what we need, which is a string from
+
+228
+00:16:23,240 --> 00:16:24,290
+all of those random bytes?
+
+229
+00:16:25,100 --> 00:16:28,550
+It's actually a fairly lengthy command, but it's not complicated.
+
+230
+00:16:28,850 --> 00:16:33,020
+Based 32 is the package, so we're going to take that from the standard library.
+
+231
+00:16:33,470 --> 00:16:34,790
+We're going to use standard encoding.
+
+232
+00:16:37,600 --> 00:16:40,060
+And we're going to add padding in case it's not the right length.
+
+233
+00:16:40,210 --> 00:16:45,250
+So with padding and the parameter for that is based 32, no padding.
+
+234
+00:16:45,790 --> 00:16:50,050
+So we're specifying what kind of padding we want, which is no padding whatsoever because it should
+
+235
+00:16:50,050 --> 00:16:50,920
+be the correct length.
+
+236
+00:16:51,400 --> 00:16:55,690
+And now we encode this to a string and we're encoding to a string of random bytes.
+
+237
+00:16:56,110 --> 00:16:56,420
+OK.
+
+238
+00:16:56,440 --> 00:17:03,520
+And that will give us our token in exactly the right format and will always be the same number of characters
+
+239
+00:17:03,520 --> 00:17:05,710
+long every time we generate a token.
+
+240
+00:17:06,670 --> 00:17:08,110
+So that gives us the plain text.
+
+241
+00:17:08,170 --> 00:17:11,140
+Now we need the hash because we need both of those for the database.
+
+242
+00:17:12,580 --> 00:17:20,980
+Subhash, which is just a variable I'm declaring is equal to from the S.H., a 2:56 package in crypto.
+
+243
+00:17:22,140 --> 00:17:25,030
+And we want some 256.
+
+244
+00:17:25,050 --> 00:17:29,460
+Make sure you get the right one or you'll be banging your head against a wall trying to figure out what
+
+245
+00:17:29,460 --> 00:17:30,030
+went wrong.
+
+246
+00:17:31,080 --> 00:17:32,390
+Some 256.
+
+247
+00:17:32,430 --> 00:17:37,110
+And we're going to take our token plaintext and cast it to a slice of votes.
+
+248
+00:17:37,320 --> 00:17:40,560
+Slice of byte token.
+
+249
+00:17:40,830 --> 00:17:44,760
+Plain text that uses our hash.
+
+250
+00:17:45,030 --> 00:17:50,310
+Now we just populate token dot hash equal to hash.
+
+251
+00:17:50,640 --> 00:17:57,840
+But we need to convert it to an array to get everything out of it that's not necessary for the format
+
+252
+00:17:57,840 --> 00:17:58,650
+we need to store.
+
+253
+00:17:58,920 --> 00:18:00,870
+Otherwise, we'll never be able to authenticate anyone.
+
+254
+00:18:01,560 --> 00:18:04,710
+And now we just return it, return token and nil.
+
+255
+00:18:05,670 --> 00:18:06,930
+So that's how we generate tokens.
+
+256
+00:18:06,930 --> 00:18:12,090
+And as you can see, 133 to 148, there's not very many lines of code there.
+
+257
+00:18:13,470 --> 00:18:16,710
+OK, so now we can insert tokens, we can generate tokens.
+
+258
+00:18:17,040 --> 00:18:22,410
+The next thing we need to do is to authenticate a token to make sure a token is actually valid.
+
+259
+00:18:22,890 --> 00:18:31,470
+So func t pointer to token, and we'll call this one not surprisingly authenticate token, and it will
+
+260
+00:18:31,470 --> 00:18:40,050
+take as parameters nothing more than the request our pointer to HDP request, and it returns potentially
+
+261
+00:18:40,050 --> 00:18:43,980
+a pointer to a user and an error or nil if there's no error.
+
+262
+00:18:44,940 --> 00:18:46,140
+Let's give ourselves some room.
+
+263
+00:18:47,310 --> 00:18:53,190
+So this is exactly the standard way with authenticated token, and it really doesn't matter whether
+
+264
+00:18:53,190 --> 00:18:56,220
+that token is stateful token like we're using.
+
+265
+00:18:56,550 --> 00:18:59,130
+It's very similar if you're doing, say, adjacent token.
+
+266
+00:18:59,370 --> 00:19:08,670
+OK, so let's go with authorization header, which is just a variable name, I'm declaring that will
+
+267
+00:19:08,670 --> 00:19:10,830
+be equal to from the request.
+
+268
+00:19:11,310 --> 00:19:19,410
+Get the headers and the one we want in particular is going to be called authorization, OK, which is
+
+269
+00:19:19,410 --> 00:19:22,830
+the standard header used for authentication and authorization.
+
+270
+00:19:24,210 --> 00:19:27,810
+And if there is no header, then we have a problem right away.
+
+271
+00:19:28,050 --> 00:19:34,530
+If authorization header is equal to an empty string, which is what will happen if it doesn't exist,
+
+272
+00:19:35,100 --> 00:19:39,390
+then we'll return nil because we don't have a user and then I'll just create an error.
+
+273
+00:19:39,990 --> 00:19:47,760
+Errors don't new and my error message will be no authorization header received.
+
+274
+00:19:51,000 --> 00:19:55,590
+OK, but if we get past that, then let's make sure the header is in the correct format.
+
+275
+00:19:55,590 --> 00:20:03,420
+So I'll call the variable that her purse, which almost everybody does, that's equal to strings dot
+
+276
+00:20:03,630 --> 00:20:12,960
+and we're going to split the authorization header and we're going to split it on one blank space.
+
+277
+00:20:14,880 --> 00:20:22,590
+So we expect to find an authorization header that consists of the word bearer with a Capital B, followed
+
+278
+00:20:22,590 --> 00:20:28,080
+by a space followed by the plain text version of the token the person is going to authenticate with.
+
+279
+00:20:28,110 --> 00:20:31,320
+That's the standard way you do API authentication.
+
+280
+00:20:31,530 --> 00:20:31,860
+OK.
+
+281
+00:20:32,340 --> 00:20:34,290
+So we can check for a couple of obvious things.
+
+282
+00:20:34,440 --> 00:20:47,850
+If the length of head or parts is not equal to two OK or header parts, the first index is not equal
+
+283
+00:20:47,850 --> 00:20:53,670
+to the word bear and spell it right or again, you'll have problems.
+
+284
+00:20:54,540 --> 00:20:56,880
+Then we'll return nil.
+
+285
+00:20:57,030 --> 00:20:57,960
+So we don't have a user.
+
+286
+00:20:59,470 --> 00:21:00,910
+And another new error.
+
+287
+00:21:01,120 --> 00:21:10,810
+Errors dog new, and I'll just put in no authorization header received, which is exactly the same error
+
+288
+00:21:10,810 --> 00:21:16,420
+I gave before, but when people are trying to authenticate, I just want them to know that I can't authenticate
+
+289
+00:21:16,420 --> 00:21:18,360
+because you're not giving me enough information.
+
+290
+00:21:18,370 --> 00:21:19,890
+I don't want to give them specifics.
+
+291
+00:21:19,900 --> 00:21:24,970
+I want to make it difficult for people to try to figure out how to log in if they're doing something
+
+292
+00:21:24,970 --> 00:21:25,660
+nefarious.
+
+293
+00:21:26,530 --> 00:21:28,180
+And that's useful information.
+
+294
+00:21:28,960 --> 00:21:31,630
+That's enough if you're a valid user trying to write some code.
+
+295
+00:21:32,350 --> 00:21:36,520
+Now, if we get past both of those, then our token is equal to header parts.
+
+296
+00:21:38,620 --> 00:21:44,680
+The second index position one because position one, position two, because position one is actually
+
+297
+00:21:44,680 --> 00:21:48,160
+zero because we start counting from zero in the computer world.
+
+298
+00:21:49,260 --> 00:21:52,330
+Now let's make sure this token is exactly the right format.
+
+299
+00:21:52,360 --> 00:21:59,890
+If the length of token is not equal to twenty six, every token will be exactly 26 characters along.
+
+300
+00:22:00,220 --> 00:22:01,900
+Then I'll return a new error.
+
+301
+00:22:01,900 --> 00:22:10,000
+So to save some time by copying this and pasting it in here and changing the message to in this case,
+
+302
+00:22:10,000 --> 00:22:15,460
+I can say token wrong size, and I'm not going to tell them how long it needs to be.
+
+303
+00:22:15,610 --> 00:22:19,450
+Let them figure it out on their own if they're trying to break it, which they'll never be able to do
+
+304
+00:22:19,450 --> 00:22:20,770
+anyway if we do our job right.
+
+305
+00:22:21,820 --> 00:22:22,870
+So we have it now.
+
+306
+00:22:23,170 --> 00:22:28,510
+Let's try getting our token from the database, so I'll create a variable called T four token.
+
+307
+00:22:28,990 --> 00:22:34,820
+I'll check for an error and those will come from calling the method.
+
+308
+00:22:34,840 --> 00:22:40,000
+T get my token that we wrote just a moment ago and I'll hand it token the string.
+
+309
+00:22:40,660 --> 00:22:40,960
+OK.
+
+310
+00:22:41,680 --> 00:22:44,200
+And again, if error is not equal to nil,
+
+311
+00:22:47,500 --> 00:22:51,070
+then return nil and errors don't new.
+
+312
+00:22:51,850 --> 00:22:56,370
+And in this time, I'll say no matching token felt.
+
+313
+00:22:56,890 --> 00:23:00,730
+OK, now at this point I made, it might have received the token.
+
+314
+00:23:01,060 --> 00:23:04,540
+The problem, of course, is that token might have expired.
+
+315
+00:23:04,870 --> 00:23:07,570
+And if the tokens expired, I want to throw back an error message.
+
+316
+00:23:07,900 --> 00:23:10,180
+So if T dot expiry.
+
+317
+00:23:12,030 --> 00:23:20,250
+Expires Dot before if it expires before the current date and time time dot now, then that Typekit took,
+
+318
+00:23:20,250 --> 00:23:20,940
+it is expired.
+
+319
+00:23:21,470 --> 00:23:25,000
+OK, then I will return, Neal.
+
+320
+00:23:25,170 --> 00:23:31,200
+No user and errors dot new and the message will just be expired.
+
+321
+00:23:31,590 --> 00:23:33,300
+Token guy to spell, right?
+
+322
+00:23:35,670 --> 00:23:38,970
+OK, so we've checked all of those things.
+
+323
+00:23:39,300 --> 00:23:41,850
+Now finally, we have a valid token.
+
+324
+00:23:41,880 --> 00:23:43,460
+We can find the token in the database.
+
+325
+00:23:43,470 --> 00:23:45,510
+The token is of the right length and all those things.
+
+326
+00:23:45,510 --> 00:23:47,550
+We have the correct authorization header.
+
+327
+00:23:48,150 --> 00:23:51,120
+Now we try to get a user user an error.
+
+328
+00:23:51,120 --> 00:23:56,250
+Our assigned the value of Typekit user for token.
+
+329
+00:23:57,060 --> 00:23:58,470
+And I just hand it token.
+
+330
+00:24:00,090 --> 00:24:02,170
+And if everything goes well, then I can return that.
+
+331
+00:24:02,190 --> 00:24:04,440
+But I do have to make sure that I actually have a user.
+
+332
+00:24:05,010 --> 00:24:11,100
+So if error is not equal to nil, then return nil and errors dot new.
+
+333
+00:24:12,150 --> 00:24:17,940
+And all I can say here is no matching user found or whatever you want for an error message.
+
+334
+00:24:18,690 --> 00:24:21,420
+But if that worked, I can return user and no.
+
+335
+00:24:23,040 --> 00:24:23,340
+OK.
+
+336
+00:24:23,500 --> 00:24:27,750
+Seems like a lot of code, but most of it is just making sure that the information is in the correct
+
+337
+00:24:27,750 --> 00:24:30,540
+format in the header and the rest of it is pretty straightforward.
+
+338
+00:24:32,190 --> 00:24:36,950
+So we get that token and occasionally someone's going to hand as a token and we need to validate it.
+
+339
+00:24:36,960 --> 00:24:40,500
+So we'll create another function function T token.
+
+340
+00:24:41,700 --> 00:24:46,290
+And I'll just say valid token for the name, and it will be nothing more than the plain text version
+
+341
+00:24:46,290 --> 00:24:51,570
+of our token, which is a string, and I'm going to return a Boolean and potentially an error.
+
+342
+00:24:53,040 --> 00:25:00,360
+OK, so first thing we'll do is get a user for the token, which I did right here, so I can copy this
+
+343
+00:25:02,220 --> 00:25:04,140
+and paste it and fix the return type.
+
+344
+00:25:04,980 --> 00:25:08,520
+And the return type, of course, is going to be false because things are not good.
+
+345
+00:25:09,300 --> 00:25:11,250
+So no matching user found I was easy.
+
+346
+00:25:13,620 --> 00:25:16,950
+And again, let's make sure this token has an expired, OK?
+
+347
+00:25:17,910 --> 00:25:21,240
+First of all, let's make sure it's not empty, which I may not have to do, but I'm going to anyway.
+
+348
+00:25:21,780 --> 00:25:28,530
+If user token plaintext is equal to an empty string, which is what would happen if we got a user with
+
+349
+00:25:28,530 --> 00:25:29,190
+no token.
+
+350
+00:25:29,970 --> 00:25:32,100
+Then let's return.
+
+351
+00:25:33,690 --> 00:25:41,490
+Faults and no matching token found, which is an error is new, so let's put that in front of it.
+
+352
+00:25:44,460 --> 00:25:46,500
+Aristotle knew there.
+
+353
+00:25:47,850 --> 00:25:52,170
+And finally, let's make sure it hasn't expired, so I'll copy this and change it.
+
+354
+00:25:53,970 --> 00:25:56,190
+Paste it in here and say.
+
+355
+00:25:57,710 --> 00:26:01,640
+User token dot expires before time now.
+
+356
+00:26:01,650 --> 00:26:02,670
+Return false.
+
+357
+00:26:03,480 --> 00:26:04,290
+It's not a valid token.
+
+358
+00:26:04,980 --> 00:26:11,220
+OK, but if we and the last thing I need to do here is we've passed all those checks, so it is a valid
+
+359
+00:26:11,490 --> 00:26:14,490
+unexpired token return, true and nil.
+
+360
+00:26:15,590 --> 00:26:20,040
+Now, if we did everything right and we almost certainly have a typo in there somewhere.
+
+361
+00:26:20,430 --> 00:26:25,050
+But if we did everything right, we're now at the point where we can start to write tests.
+
+362
+00:26:25,260 --> 00:26:30,360
+So we'll get started on our tests in the next lecture, and it will probably take a few lectures to
+
+363
+00:26:30,360 --> 00:26:31,560
+go through all of the tests.

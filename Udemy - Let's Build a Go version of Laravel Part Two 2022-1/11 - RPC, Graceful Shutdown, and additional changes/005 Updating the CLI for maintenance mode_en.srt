@@ -1,0 +1,248 @@
+1
+00:00:01,030 --> 00:00:06,820
+So now that we have the server a bit finished, it's time to implement the client application and of
+
+2
+00:00:06,820 --> 00:00:11,980
+course, we're going to do that in our command line application stored in the Solaire Trust project
+
+3
+00:00:12,580 --> 00:00:15,840
+in CMD Seelye and we'll start with may not go.
+
+4
+00:00:16,720 --> 00:00:22,540
+And what we want to put in here, of course, is the ability to handle something like Solaris toss up
+
+5
+00:00:22,750 --> 00:00:27,220
+to bring the server out of maintenance mode, ancillary tasks down to put it in maintenance mode.
+
+6
+00:00:27,370 --> 00:00:34,750
+So I'll do what I've done before right here in the function main right in the Switch statement after
+
+7
+00:00:34,750 --> 00:00:40,900
+the first case help, I'll put a case up and I'll call a function that doesn't exist yet, and I'll
+
+8
+00:00:40,900 --> 00:00:42,550
+call it our PC client.
+
+9
+00:00:43,870 --> 00:00:48,820
+And because this is going to be calling the server and saying, take it out of maintenance mode, we
+
+10
+00:00:48,820 --> 00:00:52,030
+want the parameter for our client to be false.
+
+11
+00:00:52,630 --> 00:00:59,620
+In other words, is not in maintenance mode, and we'll also have a case down and then we'll also call
+
+12
+00:00:59,620 --> 00:01:00,610
+our client.
+
+13
+00:01:02,140 --> 00:01:03,190
+This time will find it true.
+
+14
+00:01:05,110 --> 00:01:08,260
+Now, of course, we need to define this function RPG client.
+
+15
+00:01:08,410 --> 00:01:16,390
+So I'll do that by creating a new file in Seelye and I'll call it our pickup, which seems appropriate.
+
+16
+00:01:18,400 --> 00:01:21,610
+So let's define the function funk, our PC client.
+
+17
+00:01:22,270 --> 00:01:29,380
+And it takes one parameter in maintenance mode and it's a Boolean, and it doesn't return anything.
+
+18
+00:01:31,600 --> 00:01:38,410
+So the first thing I need to do is to actually call the method dial from the built in package or PC
+
+19
+00:01:38,500 --> 00:01:40,570
+that's part of the standard library and get a client.
+
+20
+00:01:40,750 --> 00:01:45,850
+So see for client and we'll check for an error when we call our PC.
+
+21
+00:01:46,300 --> 00:01:56,320
+Dial right there in our transport will be TCP and we're going to call one two seven zero zero one colon
+
+22
+00:01:57,040 --> 00:01:59,410
+plus and I need their PC port.
+
+23
+00:01:59,410 --> 00:02:01,000
+So why don't I just store that in a variable?
+
+24
+00:02:01,000 --> 00:02:08,770
+Right now, our PC port is assigned the value of Dot get on.
+
+25
+00:02:10,120 --> 00:02:11,590
+And we're looking for the key.
+
+26
+00:02:11,980 --> 00:02:16,060
+Our PC port and now down here, I can just put our PC port.
+
+27
+00:02:19,840 --> 00:02:21,220
+Of course, I could have made this.
+
+28
+00:02:21,370 --> 00:02:24,110
+The OS don't get on, but I think this is more readable.
+
+29
+00:02:24,700 --> 00:02:25,630
+So we'll check for error.
+
+30
+00:02:26,860 --> 00:02:34,720
+If error is not equal to nil, then we'll just exit gracefully with the error.
+
+31
+00:02:36,670 --> 00:02:40,660
+But assuming we are past that, then let's just prints a message out to the user.
+
+32
+00:02:40,720 --> 00:02:45,670
+Format dot print line connected dot dot dot.
+
+33
+00:02:49,420 --> 00:02:56,230
+Now, this is the part where we're going to use that client, see, we just created on the line 11 and
+
+34
+00:02:56,230 --> 00:03:01,790
+we're actually going to call a function that's registered in our PC server.
+
+35
+00:03:01,810 --> 00:03:02,950
+And that's really straightforward.
+
+36
+00:03:03,070 --> 00:03:09,310
+So we'll check for an error and we'll use Seacole, a method built right into that variable.
+
+37
+00:03:09,850 --> 00:03:14,650
+And the way that this works is we're going to pass the first parameter as a string and we're going to
+
+38
+00:03:14,650 --> 00:03:21,120
+use the type we registered with our server, which was type our server dot.
+
+39
+00:03:21,190 --> 00:03:29,650
+Whatever method we want to call, there's only one maintenance mode and behind the scenes go, we'll
+
+40
+00:03:29,650 --> 00:03:32,380
+use reflection to get the appropriate method and call it.
+
+41
+00:03:32,500 --> 00:03:33,190
+Then we pass it.
+
+42
+00:03:33,190 --> 00:03:38,860
+The one parameter requires in maintenance mode that will be either true or false.
+
+43
+00:03:38,860 --> 00:03:42,550
+Depending how this is called, then we're going to store the results.
+
+44
+00:03:42,850 --> 00:03:50,950
+Now that comes as a pointer to a string, so let's go up here and create a variable for result, and
+
+45
+00:03:50,950 --> 00:03:51,820
+that's going to be a string.
+
+46
+00:03:53,140 --> 00:04:01,000
+And now down here, we can actually read the results from that call into results and we'll check for
+
+47
+00:04:01,000 --> 00:04:01,360
+an error.
+
+48
+00:04:02,690 --> 00:04:08,000
+So I'll copy this error checking code and paste it here.
+
+49
+00:04:09,020 --> 00:04:11,570
+And if we get past that, we'll just print out the result.
+
+50
+00:04:12,230 --> 00:04:16,500
+Color yellow just to make it look nice result.
+
+51
+00:04:18,170 --> 00:04:21,029
+And in theory, that should be everything we have to do.
+
+52
+00:04:21,050 --> 00:04:25,910
+And as you can see, our PC is actually pretty simple to use and it's very, very useful.
+
+53
+00:04:26,720 --> 00:04:27,130
+OK?
+
+54
+00:04:27,170 --> 00:04:29,210
+In the next lecture, we'll try this out.
+
+55
+00:04:29,330 --> 00:04:31,790
+But before we do that, let's just make one last change.
+
+56
+00:04:31,850 --> 00:04:33,440
+Let's go back to Mango.
+
+57
+00:04:34,430 --> 00:04:37,880
+And find the help function right here, show help.
+
+58
+00:04:38,060 --> 00:04:38,900
+Let's update that.
+
+59
+00:04:39,740 --> 00:04:43,940
+So right here, I'll just put it up.
+
+60
+00:04:49,440 --> 00:04:55,530
+Take the server out of maintenance mode, and before that will put it down.
+
+61
+00:05:01,580 --> 00:05:04,550
+Put the server into maintenance mode.
+
+62
+00:05:06,770 --> 00:05:09,020
+So in the next lecture, we'll give this a try.
+

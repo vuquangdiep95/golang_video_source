@@ -1,0 +1,67 @@
+1
+00:00:02,090 --> 00:00:05,330
+So in this section of the course, we're going to have a look at goal routines.
+
+2
+00:00:05,360 --> 00:00:09,950
+And chances are, if you've been working with go for any length of time, you've probably used them
+
+3
+00:00:09,950 --> 00:00:10,730
+to some extent.
+
+4
+00:00:10,790 --> 00:00:15,620
+But I'm going to go over the basics in any case and illustrate just how easy it is to use go routines
+
+5
+00:00:16,340 --> 00:00:18,020
+and why you have to be careful when you do it.
+
+6
+00:00:18,260 --> 00:00:20,090
+So what are we going to do in this section?
+
+7
+00:00:20,750 --> 00:00:23,990
+Well, to start with, we're going to have a look at what a go routine is.
+
+8
+00:00:23,990 --> 00:00:28,580
+And go routines are nothing more than a part of your program that runs.
+
+9
+00:00:28,820 --> 00:00:34,400
+You might think of it as in the background or concurrently, and you can have multiple go routines running
+
+10
+00:00:34,400 --> 00:00:37,340
+at the same time and they're incredibly easy to use.
+
+11
+00:00:37,340 --> 00:00:41,420
+You just have to type two characters in a space and suddenly you have a go routine.
+
+12
+00:00:42,170 --> 00:00:47,180
+But creating go routines, as we'll see in this section, it can create problems and there are multiple
+
+13
+00:00:47,180 --> 00:00:48,950
+ways with solving those problems.
+
+14
+00:00:48,950 --> 00:00:53,270
+We can use new taxes, we can use weight groups, we can use channels.
+
+15
+00:00:53,630 --> 00:00:57,800
+We'll have a look at weight groups in this section because they're the easiest ones to understand,
+
+16
+00:00:57,800 --> 00:00:59,960
+I think, and they're really easy to implement.
+
+17
+00:01:00,230 --> 00:01:02,300
+But in any case, let's get started.

@@ -1,0 +1,924 @@
+1
+00:00:00,090 --> 00:00:05,260
+Jika demikian, kita akan belajar tentang enkripsi SSL dalam kuliah ini dan ini akan langsung dibahas.
+
+2
+00:00:05,280 --> 00:00:09,340
+Jadi kami akan membuat otoritas sertifikat dan saya sudah memiliki perintah yang siap untuk Anda.
+
+3
+00:00:09,360 --> 00:00:13,530
+Anda tidak perlu tahu apa-apa tentang keamanan untuk perkuliahan ini dan kami akan duduk
+
+4
+00:00:14,050 --> 00:00:19,050
+di server berita sertifikat akan menandatangani sertifikat server dan kami akan menyiapkan server untuk menggunakan enkripsi ini dan
+
+5
+00:00:19,050 --> 00:00:21,450
+klien untuk terhubung dengan aman lebih dari cemburu.
+
+6
+00:00:21,450 --> 00:00:24,130
+Jadi secara keseluruhan ada banyak tautan yang harus Anda ketahui.
+
+7
+00:00:24,180 --> 00:00:28,930
+Dan salah satunya adalah tautan di bawah ini dan ada dokumentasi yang akan saya tunjukkan kepada Anda saat ini.
+
+8
+00:00:29,040 --> 00:00:30,400
+Jadi mari kita mulai.
+
+9
+00:00:30,870 --> 00:00:36,600
+OK jadi di bagian otentikasi dokumentasi seperti yang Anda lihat jika Anda gulir ke bawah
+
+10
+00:00:36,600 --> 00:00:43,170
+itu hanya memberi tahu Anda banyak tentang dukungan mekanisme otentikasi dan akan menggunakan ts ts hanya untuk enkripsi
+
+11
+00:00:43,170 --> 00:00:44,110
+di sini.
+
+12
+00:00:44,140 --> 00:00:51,020
+Jadi saat kita gulir ke bawah Anda akan pergi dan melihat ada contoh dan contoh ini harus pergi kode.
+
+13
+00:00:51,180 --> 00:00:53,440
+Jadi jalannya adalah apa yang akan kita rujuk dengan jelas.
+
+14
+00:00:53,700 --> 00:00:57,480
+Sejauh ini dalam kursus ini kami tidak melakukan enkripsi atau otentikasi.
+
+15
+00:00:57,480 --> 00:01:02,570
+Jadi seperti yang Anda lihat ingat, kami memiliki GOPAC yang aman di sini.
+
+16
+00:01:02,640 --> 00:01:07,340
+Dan pada akhirnya kami juga membuat server baru tanpa opsi apa pun.
+
+17
+00:01:07,410 --> 00:01:12,480
+Kami akan pergi dan memiliki kode ini di sini dan kami akan mengubah klien dan server.
+
+18
+00:01:12,480 --> 00:01:18,420
+Jadi perbedaannya adalah sekarang untuk klien kita harus menggunakan GOPAC dengan kredensial transport dan klien
+
+19
+00:01:18,750 --> 00:01:24,780
+baru dari file dan untuk server server baru yang paling keren dari file dan server baru.
+
+20
+00:01:24,780 --> 00:01:27,660
+Dan kemudian kita akan menambahkan opsi ini kredit GAAP.
+
+21
+00:01:28,110 --> 00:01:33,330
+Jadi sedikit yang harus dilakukan tetapi pertama-tama saya ingin memandu Anda melalui skrip yang akan kita gunakan.
+
+22
+00:01:33,470 --> 00:01:40,080
+Jadi saya membuat direktori SSL ini dan saya membuat instruksi ini file SH.
+
+23
+00:01:40,100 --> 00:01:42,170
+Jadi biarkan saya memandu Anda melalui semuanya.
+
+24
+00:01:42,230 --> 00:01:47,630
+File ini pada dasarnya adalah file yang saya terinspirasi darinya dari repositori ini dan yang saya gunakan
+
+25
+00:01:47,630 --> 00:01:48,620
+dari tujuan pribadi.
+
+26
+00:01:48,620 --> 00:01:52,190
+Jadi file ini pada dasarnya menjalankan banyak perintah SSL terbuka.
+
+27
+00:01:52,340 --> 00:01:56,670
+Jadi ini tidak dimaksudkan untuk Anda menjalankan komputer kecuali Anda memiliki Linux atau Mac.
+
+28
+00:01:56,750 --> 00:02:00,280
+Mungkin Anda akan bekerja pada Windows tetapi Anda harus mencari cara menginstal SSL terbuka.
+
+29
+00:02:00,330 --> 00:02:04,880
+Secara keseluruhan saya akan menjalankan perintah ini untuk Anda dan semua output akan dihasilkan dan dalam repositori hub GET
+
+30
+00:02:04,880 --> 00:02:07,880
+sehingga Anda dapat menggunakan file-file ini saat Anda ingin bermain dengannya.
+
+31
+00:02:08,270 --> 00:02:12,620
+Jadi secara keseluruhan ini adalah skrip yang panjang dan saya tidak mengharapkannya menjadi ahli keamanan.
+
+32
+00:02:12,620 --> 00:02:14,920
+Dan butuh beberapa saat untuk mencari tahu perintah yang tepat.
+
+33
+00:02:14,930 --> 00:02:21,350
+Jadi ini datang biasanya salin dan tempel ketika dibutuhkan tetapi output ini enam file yang berbeda dan
+
+34
+00:02:21,350 --> 00:02:25,920
+yang pertama-tama akan dibuat adalah kunci otoritas sertifikat file kunci pribadi.
+
+35
+00:02:26,180 --> 00:02:28,060
+Jadi ini adalah file kunci yang paling penting.
+
+36
+00:02:28,070 --> 00:02:30,020
+Anda tidak boleh membaginya dalam kehidupan nyata.
+
+37
+00:02:30,020 --> 00:02:35,270
+Ok ini pribadi untuk siapa pun yang memiliki otoritas sertifikat di perusahaan Anda.
+
+38
+00:02:35,270 --> 00:02:41,200
+Lalu ada juga file CRT dan itu ya semacam ini lupa sertifikat kepercayaan otoritas.
+
+39
+00:02:41,300 --> 00:02:47,330
+Dan ini harus benar-benar dibagikan dengan pengguna di perusahaan Anda untuk mempercayai apa pun yang akan ditandatangani
+
+40
+00:02:47,390 --> 00:02:48,620
+oleh otoritas sertifikat.
+
+41
+00:02:49,640 --> 00:02:54,500
+Jadi itulah semacam otoritas sertifikat dan kemudian ada server dan server
+
+42
+00:02:54,500 --> 00:02:57,980
+pada dasarnya akan mengklaim sebagai alamat localhost.
+
+43
+00:02:58,190 --> 00:03:03,920
+Jadi server pertama-tama kita membuat kunci privat dan yang akan diteruskan dilindungi dan ini
+
+44
+00:03:03,920 --> 00:03:05,370
+tidak boleh dibagikan.
+
+45
+00:03:05,420 --> 00:03:12,320
+Lalu ada CSR yang merupakan permintaan penandatanganan dan ini adalah apa yang Anda kirim ke siapa pun yang
+
+46
+00:03:12,380 --> 00:03:18,230
+memiliki otoritas sertifikat sehingga mereka dapat menandatangani sertifikat dan kemudian Anda telah melayani di CRT.
+
+47
+00:03:18,470 --> 00:03:24,610
+Itulah yang kembali dari server ketika ditandatangani oleh CIA dan kami menyimpannya di server.
+
+48
+00:03:24,670 --> 00:03:25,920
+Seharusnya tidak dibagikan.
+
+49
+00:03:25,940 --> 00:03:32,600
+Dan akhirnya ada PTM server yang merupakan konversi dari server ke kunci ke format yang suka GAAP
+
+50
+00:03:32,990 --> 00:03:35,470
+dan yang tidak boleh dibagikan juga.
+
+51
+00:03:35,480 --> 00:03:38,090
+Jadi ini seperti OK, apa yang saya yakin tidak akan bagikan.
+
+52
+00:03:38,090 --> 00:03:44,780
+Jadi pada ringkasan makhluk di sini dan ringkasan mengatakan bahwa pelanggaran pribadi adalah C-8 kunci server kunci
+
+53
+00:03:44,780 --> 00:03:45,650
+server APM.
+
+54
+00:03:45,680 --> 00:03:46,970
+Dan itu ARCI Anda.
+
+55
+00:03:47,240 --> 00:03:53,240
+Jadi ini adalah semacam otoritas sertifikat dan sisanya untuk server dan dalam file yang harus
+
+56
+00:03:53,240 --> 00:03:59,750
+Anda bagikan adalah C-8 CRT yang pasti akan dibutuhkan oleh klien dan server bahwa CSR yang akan
+
+57
+00:03:59,750 --> 00:04:02,520
+dibutuhkan oleh semacam itu otoritas tiket.
+
+58
+00:04:02,540 --> 00:04:06,690
+Jadi saya akan menjalankan skrip ini selangkah demi selangkah dengan Anda.
+
+59
+00:04:06,920 --> 00:04:08,310
+Anda tidak harus melakukannya.
+
+60
+00:04:08,370 --> 00:04:15,440
+Jadi, hal pertama yang Anda lakukan adalah menetapkan ke server nama sertifikat server dan nama umum.
+
+61
+00:04:15,440 --> 00:04:19,670
+Jadi pada dasarnya sekarang saya akan mengatakan localhost karena semuanya ada di komputer saya.
+
+62
+00:04:19,670 --> 00:04:25,490
+Tetapi jika Anda memiliki contoh kehidupan nyata, itu akan menjadi API saya yang menjadi contoh atau alamat apa pun
+
+63
+00:04:25,490 --> 00:04:27,850
+yang Anda gunakan atau API PC Anda.
+
+64
+00:04:28,010 --> 00:04:28,860
+BAIK.
+
+65
+00:04:28,970 --> 00:04:30,330
+Jadi bagi saya ini adalah localhost.
+
+66
+00:04:30,440 --> 00:04:35,270
+Jadi saya akan membuka terminal kecil ini di bawah ini dan menjalankan sesuatu.
+
+67
+00:04:35,270 --> 00:04:40,890
+Jadi ini pada dasarnya mengatakan OK untuk sisa dari perintah server akhirnya akan disebut localhost.
+
+68
+00:04:41,000 --> 00:04:46,550
+Sekarang kita akan memastikan bahwa saya berada di direktori SSL untuk sisa komentar saya, jadi maksud saya direktori SSL
+
+69
+00:04:47,270 --> 00:04:51,560
+dan hal pertama yang harus saya lakukan adalah menjalankan perintah ini di sini dan perintah
+
+70
+00:04:51,620 --> 00:04:55,110
+ini menciptakan otoritas sertifikat dan output itu akan menjadi kunci CDATA.
+
+71
+00:04:55,250 --> 00:05:00,530
+Beberapa memang teruskan dan tempel ini dan perintah ini membutuhkan sedikit waktu karena ada sedikit keacakan yang
+
+72
+00:05:00,860 --> 00:05:02,220
+dihasilkan dalam perintah ini.
+
+73
+00:05:02,420 --> 00:05:07,400
+Tetapi pada akhirnya kami akan memiliki kunci rahasia dan itu akan menjadi kunci enkripsi yang kuat untuk
+
+74
+00:05:07,400 --> 00:05:08,810
+otoritas tiket semacam ini.
+
+75
+00:05:09,020 --> 00:05:16,340
+Yang kedua Datang dan harus jalankan adalah yang ini dan yang ini pada dasarnya menciptakan C-A yang
+
+76
+00:05:16,370 --> 00:05:20,470
+CRT yang merupakan sertifikat yang merupakan sertifikat sertifikat.
+
+77
+00:05:20,960 --> 00:05:26,080
+Dan pada dasarnya ini adalah file yang ingin kami bagikan dengan klien kami dan yang akan kami gunakan dalam kode kami.
+
+78
+00:05:26,300 --> 00:05:29,510
+Jadi salin di sini dan tempel dan selesai.
+
+79
+00:05:29,660 --> 00:05:33,850
+Sejauh ini kami memiliki kunci rahasia, bukan CRT.
+
+80
+00:05:33,890 --> 00:05:36,460
+Langkah dua Saya ingin mulai menghasilkan barang untuk server.
+
+81
+00:05:36,650 --> 00:05:39,850
+Jadi, hal pertama yang Anda lakukan adalah membuat kunci privat untuk server.
+
+82
+00:05:40,010 --> 00:05:42,190
+Sama seperti sebelumnya beberapa masalah perintah.
+
+83
+00:05:42,200 --> 00:05:46,520
+Sekarang nama file yang kita buat adalah server kunci itu.
+
+84
+00:05:46,660 --> 00:05:50,440
+Setelah ini saya ingin menandatangani kunci server.
+
+85
+00:05:50,650 --> 00:05:54,980
+Pada dasarnya Anda mengklaim bahwa nama server adalah localhost.
+
+86
+00:05:55,060 --> 00:06:02,080
+Jadi saya hanya akan menempelkan perintah itu di sini dan hasilnya akan menjadi server di CSR yang merupakan permintaan
+
+87
+00:06:02,530 --> 00:06:04,350
+penandatanganan sertifikat penandatanganan server.
+
+88
+00:06:04,690 --> 00:06:06,270
+Jadi ada pekerjaan yang harus dilakukan.
+
+89
+00:06:08,420 --> 00:06:16,150
+OK jadi sekarang saya dapat menempelkan perintah ini dan secara keseluruhan kami memiliki CSR yang telah dibuat sekarang dalam kehidupan nyata Anda akan
+
+90
+00:06:16,160 --> 00:06:21,560
+mengirimkan CSR itu melalui email ke siapa pun yang memiliki otoritas sertifikat dan mereka akan melanjutkan
+
+91
+00:06:21,560 --> 00:06:26,740
+dan menjalankan perintah ini untuk menandatanganinya dan mereka akan menandatanganinya misalnya selama 365 hari.
+
+92
+00:06:27,080 --> 00:06:31,600
+Jadi saya menandatanganinya sekarang sudah ditandatangani.
+
+93
+00:06:31,820 --> 00:06:32,560
+BAIK.
+
+94
+00:06:32,870 --> 00:06:34,610
+Sekarang kami memiliki layanan itu Archie.
+
+95
+00:06:34,610 --> 00:06:35,960
+Jadi di situlah mereka akan mengirim kembali kepada Anda.
+
+96
+00:06:35,960 --> 00:06:37,630
+Mereka akan mengirim Anda kembali ke server.
+
+97
+00:06:37,640 --> 00:06:38,620
+Itu Yahtzee.
+
+98
+00:06:39,020 --> 00:06:43,930
+Dan sekarang akhirnya kita menjalankan perintah terakhir untuk mengkonversi server dari kunci ke server.
+
+99
+00:06:44,330 --> 00:06:48,570
+Jadi mari kita lakukan tempel ini dan kita selesai.
+
+100
+00:06:49,110 --> 00:06:51,720
+Jadi sekarang kita memiliki semua file ini di sini.
+
+101
+00:06:51,730 --> 00:06:53,240
+Mereka siap digunakan.
+
+102
+00:06:53,490 --> 00:06:54,360
+Sekarang kita baik-baik saja.
+
+103
+00:06:54,660 --> 00:06:59,610
+Jadi orang-orang ini saya akan komit ke hub yang baik sehingga Anda dapat menggunakannya kembali Anda tidak harus menjalankan
+
+104
+00:06:59,610 --> 00:07:04,930
+semua komentar ini dari laptop Anda, tetapi ini untuk menunjukkan kepada Anda bagaimana saya menjalankan mereka dan apa yang mereka lakukan.
+
+105
+00:07:05,010 --> 00:07:06,000
+BAIK.
+
+106
+00:07:06,000 --> 00:07:11,070
+Jadi selanjutnya kita harus pergi dan benar-benar mengubah server dan klien.
+
+107
+00:07:11,610 --> 00:07:16,250
+Jadi mari kita pergi ke server dan pergi dan melihat perubahan apa yang perlu kita buat.
+
+108
+00:07:16,710 --> 00:07:23,890
+Jadi jika saya pergi ke halaman web europaeus Anda otentikasi dan melihat server kita perlu membuat kredensial server
+
+109
+00:07:23,980 --> 00:07:27,360
+dari file Nuccio dan tentukan dua file ini.
+
+110
+00:07:27,360 --> 00:07:29,010
+Jadi ini yang akan saya lakukan sekarang.
+
+111
+00:07:29,010 --> 00:07:30,520
+Saya akan menyalin satu baris itu.
+
+112
+00:07:31,110 --> 00:07:32,860
+Jadi saya akan menempelkannya.
+
+113
+00:07:33,120 --> 00:07:35,520
+Jadi kita harus mendefinisikan file dan kunci sertifikat ini.
+
+114
+00:07:35,670 --> 00:07:45,600
+Jadi file pencarian pada dasarnya sama dengan server slash SSL CRT akan mendapatkan jauh
+
+115
+00:07:45,600 --> 00:07:54,070
+di sini sedangkan file kunci sama dengan server SSL itu PTM.
+
+116
+00:07:54,090 --> 00:07:54,650
+BAIK.
+
+117
+00:07:54,930 --> 00:08:00,440
+Sekarang kolera ini di sini sebenarnya menghasilkan kesalahan sehingga kita dapat memiliki kesalahan SSL di sini.
+
+118
+00:08:00,440 --> 00:08:01,800
+Jadi kita harus mulai berurusan dengan kesalahan.
+
+119
+00:08:01,800 --> 00:08:08,070
+Jadi, jika kesalahan SSL bukan hal baru maka pada
+
+120
+00:08:10,770 --> 00:08:24,800
+dasarnya kita bisa mengatakan log jangan gagal telah gagal memuat sertifikat dan kami mengirimkannya kesalahan kesalahan dan kami mengembalikan program
+
+121
+00:08:24,800 --> 00:08:27,740
+lain semuanya baik-baik saja.
+
+122
+00:08:27,830 --> 00:08:33,940
+Jadi sekarang kita harus melakukan bagian kedua yang lulus kredit ini sebagai jerkish yang masuk ke
+
+123
+00:08:33,940 --> 00:08:35,150
+server berita.
+
+124
+00:08:35,330 --> 00:08:42,980
+Jadi kita akan pergi ke depan dan membuat opsi untuk menjadi sama dengan Jarkesy yang ramai dan opsi ini
+
+125
+00:08:43,010 --> 00:08:45,930
+akan diteruskan ke server berita kami.
+
+126
+00:08:45,950 --> 00:08:46,940
+Jadi ini benar.
+
+127
+00:08:46,970 --> 00:08:52,760
+Dan sekarang sepertinya kita bisa menjalankan server dan memastikan itu diaktifkan SSL.
+
+128
+00:08:52,760 --> 00:08:53,720
+Jadi mari kita lihat.
+
+129
+00:08:55,690 --> 00:08:57,310
+Saya akan menjalankan server saya dan saya dapatkan.
+
+130
+00:08:57,310 --> 00:08:58,110
+Halo Dunia.
+
+131
+00:08:58,210 --> 00:08:59,050
+Sejauh ini baik.
+
+132
+00:08:59,040 --> 00:08:59,800
+Tidak ada kesalahan
+
+133
+00:08:59,830 --> 00:09:01,550
+Jadi sepertinya itu berfungsi sekarang.
+
+134
+00:09:01,570 --> 00:09:09,040
+Jika kita pergi ke kode klien di sini dan saya akan membatalkan komentar apakah Anda tahu Ari
+
+135
+00:09:09,040 --> 00:09:15,830
+dan saya akan keluar dan keluar jadi jika Anda menjalankan Anda tidak mengharapkan kesalahan tiba.
+
+136
+00:09:15,830 --> 00:09:20,080
+Karena kami menggunakan PC Anda dengan tidak aman sebagai opsi.
+
+137
+00:09:20,330 --> 00:09:21,780
+Jadi mari kita coba.
+
+138
+00:09:22,590 --> 00:09:28,150
+Saya lakukan untuk menjalankan menjalankan menyambut klien.
+
+139
+00:09:28,640 --> 00:09:31,970
+Dan kami memang mendapatkan kesalahan yang kami katakan baik-baik saja, kami menyebutnya ketamakan.
+
+140
+00:09:32,070 --> 00:09:35,770
+PC kami juga bisa disebut deskripsi tidak tersedia.
+
+141
+00:09:35,840 --> 00:09:37,910
+Jadi koneksi bukan kegagalan transend.
+
+142
+00:09:37,940 --> 00:09:40,120
+Jadi ini pada dasarnya adalah kesalahan SSL.
+
+143
+00:09:40,370 --> 00:09:41,110
+Jadi tidak berfungsi.
+
+144
+00:09:41,110 --> 00:09:48,740
+Jadi kami perlu mengubah klien kami di sini di area ini untuk memastikan itu menggunakan lebih sedikit.
+
+145
+00:09:48,800 --> 00:09:54,430
+Jadi mari kita kembali ke dokumentasi dan dalam dokumentasi kita melihat bahwa ada kredit sama dengan kredensial
+
+146
+00:09:54,430 --> 00:09:55,980
+Nuccio kurang dari file.
+
+147
+00:09:56,240 --> 00:10:01,450
+Dan kemudian kita melewatinya sebagai GOPAC dengan kredensial transport kredibilitas.
+
+148
+00:10:01,790 --> 00:10:03,350
+Jadi mari kita mulai saja.
+
+149
+00:10:03,350 --> 00:10:05,280
+Saya akan menyalin ini.
+
+150
+00:10:05,900 --> 00:10:09,870
+Dan hal pertama yang harus Anda lakukan adalah menempelkan kredit ini.
+
+151
+00:10:10,190 --> 00:10:11,510
+Dan kemudian kita harus mendefinisikan file pencarian.
+
+152
+00:10:11,510 --> 00:10:16,990
+Jadi file cert yang satu ini sebenarnya akan menjadi SSL itu t Anda.
+
+153
+00:10:17,020 --> 00:10:17,250
+BAIK.
+
+154
+00:10:17,270 --> 00:10:28,060
+Itulah otoritas sertifikat sehingga otoritas sertifikat mempercayai sertifikat.
+
+155
+00:10:28,520 --> 00:10:29,260
+Itu terlihat bagus.
+
+156
+00:10:29,420 --> 00:10:34,660
+Dan argumen kedua adalah override untuk nama server yang tidak kita perlukan, kami hanya akan mengirim ke blank.
+
+157
+00:10:35,150 --> 00:10:39,550
+Sekarang ini juga dapat membuat kesalahan excel jadi saya akan memilikinya di sini.
+
+158
+00:10:39,590 --> 00:10:41,140
+Sekarang ketika Anda menangani kesalahan SSL ini.
+
+159
+00:10:41,150 --> 00:10:52,040
+Jadi jika kesalahan SSL tidak sama dengan yang Anda tahu maka kita akan membawa udara itu saat memuat C. SEBUAH. percaya pada sertifikat dan kami
+
+160
+00:10:52,200 --> 00:10:52,940
+akan
+
+161
+00:10:56,020 --> 00:11:02,550
+meneruskan ini dan akan yang ada di udara sebagai balasannya.
+
+162
+00:11:02,590 --> 00:11:06,670
+Kalau tidak, jika semuanya baik kita perlu melewati beberapa opsi baru.
+
+163
+00:11:06,910 --> 00:11:16,480
+Jadi kita akan memiliki opsi Abts sama dengan GOPAC dengan kredensial transport sama dengan dan kita akan mendasarkan
+
+164
+00:11:16,480 --> 00:11:17,550
+objek kredit.
+
+165
+00:11:18,070 --> 00:11:18,990
+Jadi ini terlihat bagus.
+
+166
+00:11:18,990 --> 00:11:27,240
+Dan alih-alih aman sekarang kita memiliki kredit di sini opsi di sini.
+
+167
+00:11:27,250 --> 00:11:33,370
+Jadi sekarang klien kami tampaknya dapat menggunakan hal semacam ini untuk mendapatkan sertifikat kepercayaan otoritas.
+
+168
+00:11:33,820 --> 00:11:36,460
+Jadi itu sempurna dan ia melakukan panggilan kenari.
+
+169
+00:11:36,470 --> 00:11:38,020
+Jadi sekarang mari kita lihat apakah itu berhasil.
+
+170
+00:11:42,230 --> 00:11:43,150
+Dan memang itu berhasil.
+
+171
+00:11:43,160 --> 00:11:45,700
+Ia mendapat kipas helicity dan mengembalikan salam.
+
+172
+00:11:45,710 --> 00:11:47,260
+Jadi ini benar-benar bagus.
+
+173
+00:11:47,270 --> 00:11:54,230
+Jadi kami melihat cara mengaktifkan server dan dunia klien tidak banyak perubahan jalur yang Anda lakukan di sini dan di
+
+174
+00:11:54,230 --> 00:11:56,830
+sini tetapi Anda perlu tahu tentang ini.
+
+175
+00:11:57,020 --> 00:12:01,740
+Dan saya pikir trik yang paling penting adalah mengetahui cara menghasilkan sertifikat dengan benar.
+
+176
+00:12:01,850 --> 00:12:03,760
+Senang mengetahui hal itu.
+
+177
+00:12:03,770 --> 00:12:07,610
+Bagus memiliki contoh yang berfungsi dalam kode yang berfungsi jujur.
+
+178
+00:12:07,610 --> 00:12:13,610
+Hal lainnya adalah Anda mungkin ingin memiliki mode tidak aman dan mode aman secara keseluruhan. Jadi,
+
+179
+00:12:13,610 --> 00:12:17,950
+misalnya, Anda dapat mengatakan jika kami dapat memiliki hak ini.
+
+180
+00:12:18,080 --> 00:12:26,590
+Jadi ya kita bisa mengatakan oh ya sama dengan GAAP yang tidak aman.
+
+181
+00:12:27,290 --> 00:12:27,890
+Baik.
+
+182
+00:12:27,910 --> 00:12:35,150
+Jadi kita bisa melihat apakah dan sejauh ini kita akan memiliki kesepakatan yang sama dengan false.
+
+183
+00:12:35,450 --> 00:12:41,660
+Jadi jika ya dan kita bisa mengubah ini menjadi kenyataan kapan pun kita perlu jika GLSEN kita akan melakukan semua hal
+
+184
+00:12:41,660 --> 00:12:42,220
+ini.
+
+185
+00:12:44,180 --> 00:12:50,090
+Tepat di sini dan katakan UPS sama dengan kredensial transport, kredibilitas dan itu terlihat bagus.
+
+186
+00:12:50,090 --> 00:12:54,840
+Jadi sekarang jika kita lakukan itu kurang benar daripada benar akan akan diberi label palsu.
+
+187
+00:12:54,910 --> 00:12:57,300
+Ini akan dinonaktifkan jadi saya akan membuatnya salah sekarang.
+
+188
+00:12:57,340 --> 00:13:06,580
+Jadi dinonaktifkan dan kita dapat melakukan logika yang sama dengan server sehingga kita dapat mengatakan kepada kami sama dengan salah jika Anda dan
+
+189
+00:13:06,700 --> 00:13:12,210
+kami akan memiliki beberapa kode dan secara keseluruhan kami menginginkannya ya sebagai hasilnya.
+
+190
+00:13:12,500 --> 00:13:13,070
+Jadi kita
+
+191
+00:13:16,210 --> 00:13:17,160
+akan memiliki file cert.
+
+192
+00:13:17,190 --> 00:13:21,070
+Saya akan meletakkan semua ini di sini.
+
+193
+00:13:21,070 --> 00:13:24,360
+Dan terkadang opsi-opsi ini bisa diketahui juga.
+
+194
+00:13:24,360 --> 00:13:28,340
+Jadi saya akan mengatakan ya.
+
+195
+00:13:28,810 --> 00:13:31,420
+Ini adalah opsi jenis server.
+
+196
+00:13:31,640 --> 00:13:32,820
+Jadi Vire.
+
+197
+00:13:33,540 --> 00:13:35,760
+Oh ya.
+
+198
+00:13:36,050 --> 00:13:46,770
+Server Opsi server GOPAC pada dasarnya adalah instantiate opsi ini penyisipan variabel opsi menjadi Neal dan
+
+199
+00:13:46,890 --> 00:13:49,010
+sama dengan ini.
+
+200
+00:13:49,380 --> 00:13:50,320
+Sekarang ditugaskan.
+
+201
+00:13:50,700 --> 00:13:56,280
+Dan sekarang kita memiliki kode kerja jadi jika kita perlu memiliki opsi server untuk menggunakan anak-anak kita
+
+202
+00:13:56,290 --> 00:14:00,040
+akan mengatakan ini benar dan server akan secara otomatis diaktifkan TS.
+
+203
+00:14:00,090 --> 00:14:01,870
+Dan untuk saat ini saya akan menjadikannya false.
+
+204
+00:14:01,890 --> 00:14:02,900
+Jadi ini terlihat bagus.
+
+205
+00:14:02,950 --> 00:14:07,290
+Dan ini sepertinya berfungsi, mari kita pastikan bahwa ketika keduanya salah itu masih berfungsi
+
+206
+00:14:07,290 --> 00:14:08,700
+jadi salah dan salah.
+
+207
+00:14:08,870 --> 00:14:09,720
+Luar biasa.
+
+208
+00:14:10,060 --> 00:14:13,200
+Dan saya akan menghentikan ini dan menghentikan ini.
+
+209
+00:14:13,200 --> 00:14:15,120
+Kami berada di server dalam mode tidak aman.
+
+210
+00:14:16,120 --> 00:14:17,760
+Dan kami mendapat kesalahan kecil.
+
+211
+00:14:17,790 --> 00:14:20,810
+Butuh referensi penunjuk.
+
+212
+00:14:20,830 --> 00:14:30,040
+Masalahnya adalah bahwa opsi harus sama dengan sepotong opsi server GAAP diinisialisasi dengan apa-apa.
+
+213
+00:14:30,430 --> 00:14:37,550
+Dan jika terjadi sesuatu yang Anda tambahkan opsi dengan kredensial ini.
+
+214
+00:14:37,660 --> 00:14:40,630
+Dan sekarang untuk Eropa opsi server baru.
+
+215
+00:14:40,690 --> 00:14:41,850
+Titik titik titik.
+
+216
+00:14:41,990 --> 00:14:43,420
+Untuk mengonversi dua argumen ini.
+
+217
+00:14:43,420 --> 00:14:44,840
+Jadi sekarang ini seharusnya bekerja.
+
+218
+00:14:45,270 --> 00:14:48,350
+Mari kita coba lagi.
+
+219
+00:14:48,460 --> 00:14:53,750
+Jadi saya menjalankannya server saya menjalankan kesalahan pada klien saya dan klien saya berfungsi.
+
+220
+00:14:53,770 --> 00:14:54,650
+Jadi itu sempurna.
+
+221
+00:14:54,650 --> 00:15:00,780
+Dan sekarang dalam mode DNS saya sudah mengatakan itu benar dan mereka semua mengatakan klien juga benar.
+
+222
+00:15:04,720 --> 00:15:07,170
+Kami memiliki kode bagus yang dapat kami miliki dalam uji Debian.
+
+223
+00:15:07,210 --> 00:15:10,290
+Jadi DNS berfungsi untuk SQL Server.
+
+224
+00:15:10,330 --> 00:15:12,650
+NTFS bekerja untuk klien.
+
+225
+00:15:12,710 --> 00:15:13,230
+Sempurna.
+
+226
+00:15:13,300 --> 00:15:14,530
+Jadi kodenya bekerja.
+
+227
+00:15:14,680 --> 00:15:16,060
+Baiklah jadi itu saja untuk pelajaran ini.
+
+228
+00:15:16,060 --> 00:15:22,300
+Anda memiliki server, Anda dapat menghidupkan dan mematikan DNS dan sama untuk klien dan Anda dapat mengambil kode Anda
+
+229
+00:15:22,300 --> 00:15:23,400
+ke tingkat berikutnya.
+
+230
+00:15:23,410 --> 00:15:23,870
+Baiklah.
+
+231
+00:15:23,900 --> 00:15:24,680
+Dosen Sinonyx.
+

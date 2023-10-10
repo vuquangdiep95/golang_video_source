@@ -1,0 +1,207 @@
+1
+00:00:13,960 --> 00:00:20,140
+Hello and welcome to the gold and programming language course in the previous session, we talked about
+
+2
+00:00:20,350 --> 00:00:25,990
+split this string, and in this session we want to talk about the other extreme concept.
+
+3
+00:00:29,670 --> 00:00:30,720
+Split after.
+
+4
+00:00:32,790 --> 00:00:41,670
+Dysfunction split S3 into all saw the strings after each instance of the given separator and returns
+
+5
+00:00:41,850 --> 00:00:44,850
+a slice which contains these services.
+
+6
+00:00:45,600 --> 00:00:49,110
+Now you can see the syntax here.
+
+7
+00:00:49,320 --> 00:00:52,650
+SDR is the string and set is the separator.
+
+8
+00:00:53,130 --> 00:01:01,710
+If SDR does not contain the given, set and set is not empty, then it will return a slice of length,
+
+9
+00:01:01,710 --> 00:01:11,160
+one which contain only SDR or if the sip is A. Then it will split after each UTF eight sequence or if
+
+10
+00:01:11,160 --> 00:01:16,770
+both SDR and SIP are empty, then it in return an entire slice.
+
+11
+00:01:17,640 --> 00:01:23,130
+Let's go to Waskow program to illustrate how to split after a string.
+
+12
+00:01:25,060 --> 00:01:37,480
+First, creating an initializing three speed variables defined as zero crawling equals their car comma
+
+13
+00:01:38,590 --> 00:01:42,160
+to the comma go.
+
+14
+00:01:44,440 --> 00:01:45,280
+Programming
+
+15
+00:01:47,680 --> 00:01:56,080
+common language go to next line and define another variable like SDR to call and you call.
+
+16
+00:01:58,660 --> 00:02:10,090
+My name is Robert and go to the next line and define another variable like SDR three calling calls and
+
+17
+00:02:10,090 --> 00:02:10,830
+set value.
+
+18
+00:02:10,840 --> 00:02:15,340
+I am a go programmer.
+
+19
+00:02:18,790 --> 00:02:22,780
+Now this spelling is very obvious before using ESP adaptive function.
+
+20
+00:02:23,170 --> 00:02:37,480
+F t SDR one column is still one, and this TR two column said that a utility or two and in the next
+
+21
+00:02:37,480 --> 00:02:42,880
+line FP is your tree call and said Why you lost your tree.
+
+22
+00:02:45,020 --> 00:02:53,720
+OK, now is pleading the given string using split after function, for example, splits first into all,
+
+23
+00:02:53,720 --> 00:02:59,540
+substituting separated by the comma and returns a slice which contains some strings.
+
+24
+00:03:00,050 --> 00:03:01,580
+Go to the next line.
+
+25
+00:03:01,940 --> 00:03:04,010
+Define a variable like resolved.
+
+26
+00:03:04,520 --> 00:03:12,560
+One column equals the strings by cage and involve a split after function.
+
+27
+00:03:14,810 --> 00:03:20,540
+First, sit ready to test your lawn and set separate or, in this case, be set.
+
+28
+00:03:22,430 --> 00:03:28,700
+Go to the next line and define another variable life result to column equals
+
+29
+00:03:31,100 --> 00:03:36,200
+heartstrings that is split after sit variable.
+
+30
+00:03:36,300 --> 00:03:48,050
+The city are to set a space as separate and define another variable result three column equals the string
+
+31
+00:03:48,110 --> 00:03:58,520
+start is split after sit variable as two or three and sit exclamation mark as separate now displaying
+
+32
+00:03:58,520 --> 00:04:01,190
+the result values for the example.
+
+33
+00:04:01,190 --> 00:04:05,620
+For the result wrong, we display value and type of variable.
+
+34
+00:04:05,670 --> 00:04:19,130
+So right, if Earth back is less and result one tie color first and key opportunities as Congress and
+
+35
+00:04:19,130 --> 00:04:31,670
+character for type variable and fetches less T and result one color first and B and set variable result
+
+36
+00:04:31,820 --> 00:04:36,110
+one and result for now.
+
+37
+00:04:36,110 --> 00:04:42,010
+Each rate result one extraneous lines and display value of each by the range for you.
+
+38
+00:04:42,110 --> 00:04:54,380
+So define both look for either a score comma defined variable like value column equals range end result,
+
+39
+00:04:54,380 --> 00:05:00,380
+one slice go to of statements and print the value.
+
+40
+00:05:02,720 --> 00:05:17,210
+Now displaying the other variables go out of the loop and FP result to color search result to variable
+
+41
+00:05:17,210 --> 00:05:18,800
+and in the next line.
+
+42
+00:05:18,890 --> 00:05:29,210
+If P result three column and said variable result three the format, they could save the project and
+
+43
+00:05:29,210 --> 00:05:30,740
+execute that program.
+
+44
+00:05:35,010 --> 00:05:42,420
+Now we can see the output for the first variable defined the common character as a separate or to use
+
+45
+00:05:42,420 --> 00:05:49,530
+the split after function and drop is a slice of the string as the return value inside the result.
+
+46
+00:05:49,530 --> 00:05:57,400
+But even and the separator itself is calculated as part of the separated string, then display the value
+
+47
+00:05:57,400 --> 00:06:04,680
+on time of the resolved one very bit and use the range for Lou to iterate the result on a slice value.
+
+48
+00:06:04,890 --> 00:06:09,870
+The answer to this for the second and third variables in third variables.
+
+49
+00:06:10,020 --> 00:06:12,690
+It does not contain the given separator.
+
+50
+00:06:12,990 --> 00:06:21,180
+Then it will return a slice of links long each contain only itself body value in order not to prolong
+
+51
+00:06:21,180 --> 00:06:26,460
+the time of decision even finished, and we will continue the content in the next session.
+
+52
+00:06:26,700 --> 00:06:27,240
+Goodbye.

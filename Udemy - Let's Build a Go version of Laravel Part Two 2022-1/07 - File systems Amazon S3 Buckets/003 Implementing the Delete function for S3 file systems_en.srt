@@ -1,0 +1,304 @@
+1
+00:00:01,260 --> 00:00:06,810
+So we have two more functions to complete to finish off our SE three file system and the one we're going
+
+2
+00:00:06,810 --> 00:00:09,690
+to do this time around is delete right here.
+
+3
+00:00:10,290 --> 00:00:15,420
+And as usual, with Amazon code or code for Amazon, it's going to take a lot more lines of code to
+
+4
+00:00:15,420 --> 00:00:17,520
+do this than it did with our other file systems.
+
+5
+00:00:17,670 --> 00:00:21,600
+But the first thing we need to do is to get our credentials and create a session.
+
+6
+00:00:21,600 --> 00:00:28,770
+So I'll copy this code from the list function and go back down to my delete function and paste it here
+
+7
+00:00:28,770 --> 00:00:30,050
+before the return statement.
+
+8
+00:00:30,390 --> 00:00:30,720
+OK.
+
+9
+00:00:31,680 --> 00:00:33,180
+So we have our credentials.
+
+10
+00:00:33,180 --> 00:00:34,380
+We've created a session.
+
+11
+00:00:34,410 --> 00:00:38,280
+The next thing we need to do is to create a service just like we did when listing files.
+
+12
+00:00:38,340 --> 00:00:47,280
+HSBC is assigned the value of from the S3 package, not new, and we're going to pass it session, which
+
+13
+00:00:47,280 --> 00:00:47,970
+I have to spell, right?
+
+14
+00:00:48,930 --> 00:00:50,370
+OK, so now we have a service.
+
+15
+00:00:52,130 --> 00:00:58,670
+The next thing we'll do is range through that parameter that we receive a slice of strings listing the
+
+16
+00:00:58,670 --> 00:01:04,160
+files we want to get rid of, so we'll save for and we don't care about the index, but we do care about
+
+17
+00:01:04,160 --> 00:01:05,870
+the current item, which I'll call Adam.
+
+18
+00:01:06,560 --> 00:01:12,680
+Those are populated by calling range items to delete the parameter we receive as a call to this function.
+
+19
+00:01:13,610 --> 00:01:22,610
+Now we need we need to create a an input for S3, which is of typer calls the method delete objects
+
+20
+00:01:22,610 --> 00:01:23,090
+input.
+
+21
+00:01:23,210 --> 00:01:29,600
+OK, so we do that by creating a variable input and using the assignment operator and then using a reference
+
+22
+00:01:29,600 --> 00:01:35,710
+to S3 Dot Delete Object's input right there.
+
+23
+00:01:36,470 --> 00:01:37,940
+And that just requires some fields.
+
+24
+00:01:38,300 --> 00:01:40,340
+What bucket do you want to delete it from?
+
+25
+00:01:40,370 --> 00:01:43,670
+Well, you know how to do that bucket AWG dot string
+
+26
+00:01:46,400 --> 00:01:49,190
+and we're going to give an escort bucket from my receiver.
+
+27
+00:01:49,640 --> 00:01:50,810
+So that's our first field.
+
+28
+00:01:51,290 --> 00:01:53,000
+The second one is delete.
+
+29
+00:01:53,480 --> 00:01:54,170
+That's a field.
+
+30
+00:01:54,290 --> 00:02:01,820
+And that has to be a reference to S3 delete and we populate its fields.
+
+31
+00:02:02,930 --> 00:02:12,170
+So objects, those are the objects we're going to delete, and that is a slice of a pointer to S3 object
+
+32
+00:02:12,170 --> 00:02:13,910
+identifier right there.
+
+33
+00:02:14,990 --> 00:02:18,710
+And we have to populate its fields, which fortunately are pretty easy like this.
+
+34
+00:02:19,490 --> 00:02:27,860
+So in curly brackets, the key is A.W. s string and then just item our current item in our current iteration
+
+35
+00:02:27,860 --> 00:02:28,730
+in our range statement.
+
+36
+00:02:29,120 --> 00:02:29,450
+OK.
+
+37
+00:02:30,380 --> 00:02:33,320
+So that's our delete the first part of it.
+
+38
+00:02:33,590 --> 00:02:35,720
+So the object is the first field.
+
+39
+00:02:35,960 --> 00:02:41,600
+The next the next one is quiet and we want to be noisy if something goes wrong.
+
+40
+00:02:41,720 --> 00:02:47,430
+IWC dot bool it's a Boolean, but once again, Amazon wants it to be its own Boolean thoughts.
+
+41
+00:02:47,810 --> 00:02:48,190
+OK.
+
+42
+00:02:48,230 --> 00:02:52,250
+So don't be quiet if something goes wrong and then our closing comma here.
+
+43
+00:02:53,440 --> 00:02:55,390
+And that's it for our input statement.
+
+44
+00:02:55,750 --> 00:02:57,490
+No, something's wrong here.
+
+45
+00:03:00,710 --> 00:03:02,360
+Objects should be plural.
+
+46
+00:03:04,610 --> 00:03:07,830
+It's delete objects, input there.
+
+47
+00:03:08,150 --> 00:03:10,440
+That was messy or sloppy of me.
+
+48
+00:03:10,460 --> 00:03:12,120
+But in any case, it's correct now.
+
+49
+00:03:12,140 --> 00:03:15,380
+So we have our input to find.
+
+50
+00:03:15,920 --> 00:03:18,680
+Now we actually have to try to delete the objects.
+
+51
+00:03:19,430 --> 00:03:26,000
+So after the input statement or the input variable is declared, let's ignore the first parameter,
+
+52
+00:03:26,000 --> 00:03:30,830
+but pay attention to an error when we call from our service variable.
+
+53
+00:03:31,130 --> 00:03:33,140
+The method delete objects.
+
+54
+00:03:33,440 --> 00:03:35,210
+Delete object.
+
+55
+00:03:35,510 --> 00:03:36,350
+It's plural.
+
+56
+00:03:38,310 --> 00:03:39,270
+And we it in play.
+
+57
+00:03:41,090 --> 00:03:46,750
+OK, now again, we'll do our fancy error checking to see if it's an Amazon error or something else.
+
+58
+00:03:46,770 --> 00:03:56,880
+So if error is not equal to nil, then if a E are an OK are populated by calling error.
+
+59
+00:03:58,160 --> 00:04:07,730
+And of type IWC are error, and if OK is true, then we'll switch on the error code.
+
+60
+00:04:09,370 --> 00:04:17,950
+And our expression in this case is we are decode and our first case, actually in this case, I just
+
+61
+00:04:17,950 --> 00:04:19,060
+want a default case.
+
+62
+00:04:19,120 --> 00:04:24,640
+I'll put a switch in there in case you want to look for specific Amazon Air codes, but in our case,
+
+63
+00:04:24,950 --> 00:04:29,380
+I'll just go with the default and it's going to be returned.
+
+64
+00:04:29,380 --> 00:04:29,770
+False?
+
+65
+00:04:30,640 --> 00:04:30,970
+OK.
+
+66
+00:04:34,660 --> 00:04:38,440
+And then down here else, we'll just return calls again.
+
+67
+00:04:39,760 --> 00:04:44,710
+And you might want to put some logging statements in here, for example, in this one, I might put
+
+68
+00:04:44,710 --> 00:04:49,580
+format dot print on Amazon error.
+
+69
+00:04:52,960 --> 00:04:55,990
+And then just print out a R error.
+
+70
+00:04:57,250 --> 00:04:59,500
+And down here I might put another log instead.
+
+71
+00:05:01,180 --> 00:05:02,500
+Format dot print line.
+
+72
+00:05:04,150 --> 00:05:05,020
+Other error.
+
+73
+00:05:07,510 --> 00:05:08,530
+And then just the error.
+
+74
+00:05:10,540 --> 00:05:13,600
+OK, so that should take care of it.
+
+75
+00:05:13,750 --> 00:05:19,120
+Once we get down outside of this for loop, we just return true because everything worked as expected.
+
+76
+00:05:19,990 --> 00:05:25,390
+OK, so last, functioning to implement is the get one, and we'll take care of that in the next lecture.
+

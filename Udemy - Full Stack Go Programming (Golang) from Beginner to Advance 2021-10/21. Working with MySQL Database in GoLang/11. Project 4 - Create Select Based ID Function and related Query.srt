@@ -1,0 +1,295 @@
+1
+00:00:12,040 --> 00:00:17,140
+Hello and welcome to the Golang programming language course in this session.
+
+2
+00:00:17,170 --> 00:00:19,780
+We want to create another select function.
+
+3
+00:00:20,860 --> 00:00:28,580
+We want to fetch a student by a connection, otherwise we create a query by workless for these Sampat.
+
+4
+00:00:28,600 --> 00:00:33,790
+We want to define the function that returns a student base I.D. number.
+
+5
+00:00:34,840 --> 00:00:37,480
+So first, define the function name.
+
+6
+00:00:37,930 --> 00:00:45,730
+Select a student based I.D. that exit an integer parameter as I.D number and return a student based
+
+7
+00:00:45,730 --> 00:00:46,570
+that idea.
+
+8
+00:00:46,930 --> 00:00:48,370
+Not so first.
+
+9
+00:00:48,370 --> 00:00:53,140
+Go to DB connection and create our function.
+
+10
+00:00:54,670 --> 00:01:03,670
+Find Select a student base I.D..
+
+11
+00:01:08,840 --> 00:01:14,480
+And set a variable like IED as input parameter by the type of end
+
+12
+00:01:17,600 --> 00:01:22,560
+and defined a student as return type model.
+
+13
+00:01:22,940 --> 00:01:24,500
+The student
+
+14
+00:01:27,200 --> 00:01:32,500
+now cutting connect function for initializing my school driver name and data source name.
+
+15
+00:01:33,020 --> 00:01:39,080
+This function returns a DV object from a school package, which gives us access to the metals contained
+
+16
+00:01:39,080 --> 00:01:42,080
+in that package to perform cloud operations.
+
+17
+00:01:42,440 --> 00:01:47,630
+So define a variable like DV call equals and calling connect function
+
+18
+00:01:50,450 --> 00:01:53,420
+after creating a DV object from a school package.
+
+19
+00:01:53,480 --> 00:02:01,640
+The invoked Queretaro method that it executes a query that is expected to return at most one rule quit
+
+20
+00:02:01,640 --> 00:02:03,770
+enrollment or office returns and none nil.
+
+21
+00:02:03,770 --> 00:02:07,490
+Value and awards are deferred until rose is scanned.
+
+22
+00:02:07,490 --> 00:02:08,400
+Method is called.
+
+23
+00:02:08,720 --> 00:02:11,660
+If the query select no roads, the roads are scanned.
+
+24
+00:02:11,660 --> 00:02:13,340
+Her return error no rules.
+
+25
+00:02:13,700 --> 00:02:14,820
+Otherwise, the roads.
+
+26
+00:02:14,820 --> 00:02:18,740
+The scan is Cairns, the first selected row and this cost the rest.
+
+27
+00:02:19,100 --> 00:02:23,470
+So define a variable like roll and roll method.
+
+28
+00:02:23,840 --> 00:02:24,430
+Roll.
+
+29
+00:02:24,920 --> 00:02:35,360
+Column E equaled and calling query row method from TBE Optic DB Dot Query Law.
+
+30
+00:02:35,990 --> 00:02:42,740
+In this case, we want to select a student in student table by based on the given either number, and
+
+31
+00:02:42,740 --> 00:02:44,800
+we should use select query parameter.
+
+32
+00:02:44,810 --> 00:02:49,250
+We are very close and so writes that a query has a string parameter.
+
+33
+00:02:50,210 --> 00:03:06,800
+Select the star from the student and set very close condition based IED their IED equals instead of
+
+34
+00:03:06,800 --> 00:03:13,970
+the IED value put a question mark and as the second parameter, we received the IED value from inside
+
+35
+00:03:13,970 --> 00:03:14,570
+the method.
+
+36
+00:03:14,720 --> 00:03:16,940
+So we write IED.
+
+37
+00:03:17,900 --> 00:03:26,220
+OK, we use defer for closing the created object d4 d without clothes.
+
+38
+00:03:29,780 --> 00:03:37,730
+Now we create an object from a student, a strong student calling equals model of the student.
+
+39
+00:03:45,620 --> 00:03:52,340
+And calling Eskin Mitchell on roll resolve to lead record defying and already able and invoke, yes,
+
+40
+00:03:52,340 --> 00:03:53,510
+can't function.
+
+41
+00:03:54,350 --> 00:04:11,160
+They're all calling equals roll dots can sit A-student ideas pointer percent student I.D. Karma.
+
+42
+00:04:11,180 --> 00:04:25,400
+So the student, the undersigned student, the last name and set age and person, a student dot H.
+
+43
+00:04:27,320 --> 00:04:29,570
+S can converse.
+
+44
+00:04:29,570 --> 00:04:34,220
+Collins read from the database and to the following comment Go tights and ESPECIE.
+
+45
+00:04:34,220 --> 00:04:36,740
+All types provided by the rescue package.
+
+46
+00:04:37,700 --> 00:04:39,020
+Check in order status
+
+47
+00:04:48,560 --> 00:04:48,920
+now.
+
+48
+00:04:48,920 --> 00:04:51,860
+Return your student as return value off function.
+
+49
+00:04:51,860 --> 00:05:01,460
+If the student is not available, the NOL value will be returned with the select Ike Return student.
+
+50
+00:05:05,620 --> 00:05:12,530
+Now we could define a function named select students based idea that the return student of students
+
+51
+00:05:12,530 --> 00:05:17,020
+made that in-person database by the select statement based I.D. number.
+
+52
+00:05:17,410 --> 00:05:21,070
+Now we go to the main function to use this query statement.
+
+53
+00:05:23,530 --> 00:05:25,030
+First, clear the last code.
+
+54
+00:05:27,310 --> 00:05:34,390
+In this case, we want to select a student base I.D. number, so we should use from select a student
+
+55
+00:05:34,390 --> 00:05:39,970
+based I.D. function from DV tools that accept their student ideas input arguments.
+
+56
+00:05:40,300 --> 00:05:48,400
+So first, define a variable like a student calling equals and calling selected student based I.D. function
+
+57
+00:05:48,400 --> 00:05:50,710
+from DB tools.
+
+58
+00:05:53,560 --> 00:06:01,630
+For example, you set I.D. number three, go to the next line and the displayed is student variables.
+
+59
+00:06:02,170 --> 00:06:02,800
+If P
+
+60
+00:06:05,590 --> 00:06:07,450
+I.D. caller
+
+61
+00:06:10,030 --> 00:06:10,870
+student
+
+62
+00:06:14,080 --> 00:06:14,730
+I.D..
+
+63
+00:06:18,460 --> 00:06:19,510
+Backsplash and
+
+64
+00:06:22,630 --> 00:06:24,020
+name calling.
+
+65
+00:06:26,890 --> 00:06:30,010
+Student that name.
+
+66
+00:06:31,720 --> 00:06:33,370
+And I kiss slash and.
+
+67
+00:06:37,770 --> 00:06:48,960
+Age column, student, the age reform, reforming the code and save the project and go to execute the
+
+68
+00:06:48,960 --> 00:06:57,300
+program, go Ronald Reagan, slash Maine, Maine Dot Go.
+
+69
+00:07:01,070 --> 00:07:02,930
+Now we can see the output.
+
+70
+00:07:03,440 --> 00:07:09,710
+And it is expected that the information about a student whose I.D. number is three will be returned.
+
+71
+00:07:10,040 --> 00:07:17,180
+Now we could select a student based I.D. number from person database and display it in order not to
+
+72
+00:07:17,180 --> 00:07:18,620
+prolong the time of decision.
+
+73
+00:07:18,620 --> 00:07:22,460
+We will finish it and we will continue the content in the next session.
+
+74
+00:07:22,730 --> 00:07:23,240
+Goodbye.

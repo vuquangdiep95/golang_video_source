@@ -1,0 +1,447 @@
+1
+00:00:01,360 --> 00:00:03,200
+So let's start looking at go routines.
+
+2
+00:00:03,220 --> 00:00:09,300
+I started up Visual Studio code and I've opened up the folder and I called my folder first dash example.
+
+3
+00:00:09,310 --> 00:00:14,640
+You can call yours whatever you want, but make sure you have a folder open and as is good practice,
+
+4
+00:00:14,650 --> 00:00:22,750
+I'm going to open my terminal and I'll type go mod in it and I'll call this first dash example.
+
+5
+00:00:22,750 --> 00:00:24,010
+That's the name of my project.
+
+6
+00:00:24,010 --> 00:00:25,870
+Okay, and that will create a government file.
+
+7
+00:00:26,680 --> 00:00:28,330
+So there now I have a go mod file.
+
+8
+00:00:28,930 --> 00:00:34,420
+Now over here, I'm going to create a new file, not surprisingly called Mico, and we're going to start
+
+9
+00:00:34,420 --> 00:00:35,920
+right from first principles.
+
+10
+00:00:36,160 --> 00:00:40,540
+So a lot of this will be review for some of you, but I just want to make sure that everyone's on,
+
+11
+00:00:40,540 --> 00:00:42,730
+as they say, a level playing field.
+
+12
+00:00:43,570 --> 00:00:49,270
+So this is my main doggo file and of course this is in package me and I'll create a function here,
+
+13
+00:00:49,270 --> 00:00:50,830
+my main function that I have to have.
+
+14
+00:00:51,700 --> 00:00:57,910
+And now that I have a main function, one of the things you should be aware of is that every go program,
+
+15
+00:00:58,090 --> 00:01:08,410
+even a simple one like this, if I just say format dot, print line hello world and run that that actually
+
+16
+00:01:08,410 --> 00:01:10,570
+has one go routine.
+
+17
+00:01:10,570 --> 00:01:13,150
+The main function itself is a go routine.
+
+18
+00:01:13,900 --> 00:01:19,420
+Now a program can have just one, as is the example here, but we're going to create one that has at
+
+19
+00:01:19,420 --> 00:01:20,890
+least two and one.
+
+20
+00:01:20,890 --> 00:01:26,200
+Our go routines will go routines are in effect very lightweight threads.
+
+21
+00:01:26,530 --> 00:01:33,010
+They run on very lightweight threads, not the built in hardware threads of a processor, but instead
+
+22
+00:01:33,100 --> 00:01:35,260
+ones that are specific to go itself.
+
+23
+00:01:35,410 --> 00:01:36,670
+They take very little memory.
+
+24
+00:01:36,670 --> 00:01:42,640
+They run very, very quickly, and they're all managed as a group of go routines is called core routines.
+
+25
+00:01:42,940 --> 00:01:48,460
+They're all managed by the Ghost Scheduler, and it decides what runs, when, how much processing time
+
+26
+00:01:48,460 --> 00:01:49,150
+one gets.
+
+27
+00:01:49,600 --> 00:01:50,800
+It schedules everything.
+
+28
+00:01:50,800 --> 00:01:53,320
+It takes care of all that magic for us in the background.
+
+29
+00:01:53,380 --> 00:01:53,770
+Okay.
+
+30
+00:01:53,800 --> 00:01:56,290
+Now, obviously this is not a very sophisticated program.
+
+31
+00:01:56,560 --> 00:02:02,110
+We're going to be building very simple programs to demonstrate how the important concepts in concurrent
+
+32
+00:02:02,110 --> 00:02:03,610
+programming actually work.
+
+33
+00:02:04,360 --> 00:02:07,720
+And then we'll start tackling some more sophisticated problems.
+
+34
+00:02:07,720 --> 00:02:11,380
+And I'll begin with classic problems from the field of computer science.
+
+35
+00:02:11,890 --> 00:02:17,290
+And then later on in the course, we'll actually build a real world example of the concurrent program.
+
+36
+00:02:17,530 --> 00:02:19,000
+Okay, so let's get started.
+
+37
+00:02:19,330 --> 00:02:22,210
+So I'm going to start here above my main function.
+
+38
+00:02:22,210 --> 00:02:23,440
+I'm going to create another function.
+
+39
+00:02:23,590 --> 00:02:23,890
+Okay?
+
+40
+00:02:24,490 --> 00:02:31,900
+Now I'm going to call this one, print something and print something will take one parameter s, which
+
+41
+00:02:31,900 --> 00:02:32,590
+is a string.
+
+42
+00:02:32,980 --> 00:02:38,890
+And not surprisingly, it's just going to print it to the terminal format or print line and the parameter.
+
+43
+00:02:38,890 --> 00:02:39,730
+S Okay.
+
+44
+00:02:40,660 --> 00:02:45,670
+Now down here in the main program, I'm going to delete this one and the first thing I'm going to do
+
+45
+00:02:45,670 --> 00:02:46,810
+is call print something.
+
+46
+00:02:46,810 --> 00:02:49,720
+So I'll call print something and I'll give it a string.
+
+47
+00:02:50,590 --> 00:02:55,090
+This is the first thing to be printed.
+
+48
+00:02:56,800 --> 00:02:57,160
+Okay?
+
+49
+00:02:57,760 --> 00:03:01,720
+And I'll hit return a couple of times and then I'll call it again, print something.
+
+50
+00:03:06,280 --> 00:03:09,940
+This is the second thing to be printed.
+
+51
+00:03:12,490 --> 00:03:16,660
+Now, if I run this program, you know exactly what's going to happen over my terminal.
+
+52
+00:03:16,660 --> 00:03:22,600
+I clear the screen and I type go run dot and it prints two things out.
+
+53
+00:03:22,750 --> 00:03:24,340
+This is the first thing to be printed.
+
+54
+00:03:24,340 --> 00:03:26,050
+This is the second thing to be printed.
+
+55
+00:03:26,410 --> 00:03:27,970
+And there's no surprises there at all.
+
+56
+00:03:28,000 --> 00:03:31,180
+I'm going to put in an exclamation mark there just to be consistent.
+
+57
+00:03:31,180 --> 00:03:31,540
+Okay.
+
+58
+00:03:32,140 --> 00:03:33,340
+So that's really, really simple.
+
+59
+00:03:33,880 --> 00:03:39,370
+Now, what I want to do this time around, the next time I run the program is I want this first call
+
+60
+00:03:39,370 --> 00:03:41,320
+to print something, this one on line 12.
+
+61
+00:03:41,470 --> 00:03:46,570
+I want that to run concurrently with the main function and all I have to do and go and this is what
+
+62
+00:03:46,570 --> 00:03:52,030
+makes it so easy to to write concurrent programs and go or at least it appears to be easy.
+
+63
+00:03:52,690 --> 00:03:54,190
+I just put the word go in front of it.
+
+64
+00:03:54,430 --> 00:03:54,880
+Okay.
+
+65
+00:03:55,480 --> 00:04:02,080
+So what that word go does is it tells the compiler when you execute whatever comes after this go command
+
+66
+00:04:02,440 --> 00:04:04,750
+executed in its own go routine.
+
+67
+00:04:04,750 --> 00:04:09,790
+So it spawns in Hugo routine, hands it off to the scheduler and the scheduler says, okay, I'll take
+
+68
+00:04:09,790 --> 00:04:11,020
+care of running this for you.
+
+69
+00:04:12,160 --> 00:04:18,430
+But when I run the program right now, if I clear the screen and type go run dot what you would expect
+
+70
+00:04:18,430 --> 00:04:24,610
+to see happen logically is you would expect to see, well, it's going to on line 12, it's saying spawn
+
+71
+00:04:24,610 --> 00:04:26,980
+a new go routine called print something.
+
+72
+00:04:26,980 --> 00:04:30,850
+Call that function and print out that text and then it'll print out, print something.
+
+73
+00:04:30,940 --> 00:04:31,900
+But watch what happens.
+
+74
+00:04:34,900 --> 00:04:38,260
+I only see this is the second thing to be printed.
+
+75
+00:04:39,070 --> 00:04:40,090
+Well, what happened there?
+
+76
+00:04:41,230 --> 00:04:42,910
+Well, what happened is pretty straightforward.
+
+77
+00:04:43,630 --> 00:04:50,470
+This program executed so quickly that there was not sufficient time for that go routine, the one I
+
+78
+00:04:50,470 --> 00:04:52,660
+spun on line 12 to actually execute.
+
+79
+00:04:52,870 --> 00:04:54,100
+So what happened to its output?
+
+80
+00:04:54,220 --> 00:04:55,190
+Well, it just died.
+
+81
+00:04:55,210 --> 00:04:56,560
+It's often the ether somewhere.
+
+82
+00:04:56,950 --> 00:04:58,180
+We're never going to see it.
+
+83
+00:04:58,510 --> 00:05:02,290
+But you'll notice the program ran with no errors whatsoever.
+
+84
+00:05:02,530 --> 00:05:03,010
+Okay.
+
+85
+00:05:03,700 --> 00:05:04,960
+Now, how do I fix that?
+
+86
+00:05:05,290 --> 00:05:07,180
+Well, there's a couple of ways of doing this.
+
+87
+00:05:07,750 --> 00:05:12,430
+And actually, there's three good ways of doing it and one really bad way, which is the way I going
+
+88
+00:05:12,440 --> 00:05:13,360
+to look at right now.
+
+89
+00:05:13,570 --> 00:05:19,090
+I could, if I wanted to go in between these lines, hit return a couple of times, and then just tap
+
+90
+00:05:19,090 --> 00:05:20,980
+over and say, time, dot sleep.
+
+91
+00:05:21,520 --> 00:05:28,750
+I'm going to put the program to sleep for 1/2, one times, time dot second.
+
+92
+00:05:30,490 --> 00:05:30,850
+Okay.
+
+93
+00:05:30,880 --> 00:05:32,470
+And hopefully that did the import for me.
+
+94
+00:05:32,500 --> 00:05:33,220
+Yes, it did.
+
+95
+00:05:34,240 --> 00:05:37,390
+So now I'm saying to the program, okay, start running.
+
+96
+00:05:37,840 --> 00:05:42,200
+Send off, print something with this string as its own go routine.
+
+97
+00:05:42,340 --> 00:05:45,530
+Then just go to sleep for a second and then print this.
+
+98
+00:05:45,550 --> 00:05:47,470
+And technically, that will solve the problem.
+
+99
+00:05:48,040 --> 00:05:49,020
+I can run the program.
+
+100
+00:05:49,030 --> 00:05:50,140
+So down here in my terminal.
+
+101
+00:05:50,140 --> 00:05:50,950
+Go run dot.
+
+102
+00:05:52,590 --> 00:05:55,320
+And a prince out the first one and then a prince at the second one.
+
+103
+00:05:55,740 --> 00:05:57,240
+Now, is that a good solution?
+
+104
+00:05:57,270 --> 00:05:58,260
+Absolutely not.
+
+105
+00:05:58,290 --> 00:06:03,450
+This would be a singularly awful solution, the kind of thing that if you try to do this in a production
+
+106
+00:06:03,450 --> 00:06:09,780
+environment and your manager sees you do it well, at best there will be some harsh words.
+
+107
+00:06:09,900 --> 00:06:14,010
+At worst, you're suddenly polishing your CV and looking for a new job.
+
+108
+00:06:14,240 --> 00:06:17,460
+Okay, so this is obviously not the best way to do it.
+
+109
+00:06:18,000 --> 00:06:24,150
+Now, in the next lecture will modify this program to introduce a concept known as weight groups.
+
+110
+00:06:24,420 --> 00:06:29,970
+And this will allow us to wait for certain things to happen and then continue once they've taken place.
+
+111
+00:06:30,000 --> 00:06:30,420
+All right.
+
+112
+00:06:30,750 --> 00:06:31,410
+Let's move on.

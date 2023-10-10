@@ -1,0 +1,379 @@
+1
+00:00:00,090 --> 00:00:06,090
+So now we're going to talk about the module media and privacy and fortunate for you and for me.
+
+2
+00:00:06,120 --> 00:00:10,080
+Daniel is a huge privacy advocate and I don't.
+
+3
+00:00:10,170 --> 00:00:16,380
+The number of individuals with as as high of a focus in a security conscious mind it.
+
+4
+00:00:16,380 --> 00:00:20,120
+I don't know if that was all grammatically said the right way.
+
+5
+00:00:20,280 --> 00:00:24,740
+But Daniel is is very tuned in to privacy and security.
+
+6
+00:00:24,930 --> 00:00:30,150
+And so that's a great thing because you want to make sure that the code that you write is robust and
+
+7
+00:00:30,150 --> 00:00:34,770
+doesn't get broken or you don't accidentally put things out there that you don't want out there.
+
+8
+00:00:34,770 --> 00:00:40,430
+And the module mere and privacy two things we're going to learn about in this video.
+
+9
+00:00:40,740 --> 00:00:50,020
+But the module Mir is basically a proxy of all of the packages that are publicly available so that they're
+
+10
+00:00:50,040 --> 00:00:51,900
+all always available.
+
+11
+00:00:52,040 --> 00:00:59,430
+And and if there's a package somewhere that people are getting and that location goes down as happened
+
+12
+00:00:59,430 --> 00:01:02,360
+with the node package manager left pad.
+
+13
+00:01:02,360 --> 00:01:02,920
+Right.
+
+14
+00:01:03,030 --> 00:01:08,930
+People are using left pad and then left pad became inaccessible and I remember is that correct story.
+
+15
+00:01:09,190 --> 00:01:12,450
+And and then you know tons of people's code broke.
+
+16
+00:01:12,450 --> 00:01:19,260
+And so with this proxy all those publicly available packages are going to also be cached also be stored
+
+17
+00:01:19,710 --> 00:01:21,150
+over at this proxy.
+
+18
+00:01:21,210 --> 00:01:24,630
+Proxy is one of those words I'm always like what is proxy mean.
+
+19
+00:01:24,690 --> 00:01:30,630
+And it's kind of a stand in for somebody else the authority to represent someone else especially in
+
+20
+00:01:30,630 --> 00:01:35,160
+voting a figure that can be used to represent the value of something in a calculation.
+
+21
+00:01:35,220 --> 00:01:41,280
+So a proxy server or proxy location is just another location of something else.
+
+22
+00:01:41,280 --> 00:01:44,100
+Is that it's my understanding of a proxy.
+
+23
+00:01:44,100 --> 00:01:51,480
+So this module Mir is a proxy server for all of the publicly available modules so that they're always
+
+24
+00:01:51,480 --> 00:01:58,260
+accessible you don't have to rely upon some dude in his mom's garage computer being turned off and he's
+
+25
+00:01:58,260 --> 00:02:03,450
+lost access to code that you needed like anything that's publicly available will also be on this module
+
+26
+00:02:03,450 --> 00:02:06,790
+Mir and go is built up with security in mind.
+
+27
+00:02:06,900 --> 00:02:12,660
+So there's a video right here that you can watch as well as this article is going blog post right here
+
+28
+00:02:12,660 --> 00:02:18,570
+which you can read which talks about that but that's the first thing to take away from this video is
+
+29
+00:02:18,570 --> 00:02:26,250
+this idea that there's this computer where all of the you know packages that are publicly available
+
+30
+00:02:26,610 --> 00:02:29,280
+are also being put onto this computer.
+
+31
+00:02:29,280 --> 00:02:34,140
+And and then that brings up a privacy issue because what if you don't want your code to accidentally
+
+32
+00:02:34,140 --> 00:02:36,400
+be put out there in public for everybody.
+
+33
+00:02:36,450 --> 00:02:40,470
+So Daniel is going to talk to that a little bit and share any thoughts on what we've already.
+
+34
+00:02:40,640 --> 00:02:41,620
+Yeah I guess so.
+
+35
+00:02:41,720 --> 00:02:48,870
+So you had the Mir the Mir is available it is it is on by default for go 113 and up you actually have
+
+36
+00:02:48,870 --> 00:02:55,810
+an environment variable go proxy which which lists what your proxy that you're connecting to IS.
+
+37
+00:02:55,920 --> 00:02:57,390
+SO YOU COULD SEE THIS SCO proxy.
+
+38
+00:02:57,450 --> 00:03:02,630
+So your go proxy over variable list separate with commas what it should try.
+
+39
+00:03:02,640 --> 00:03:10,370
+So first thing it tries it tries the proxy first then it tries a direct connection to the original place
+
+40
+00:03:10,370 --> 00:03:12,030
+where the module is located.
+
+41
+00:03:12,220 --> 00:03:20,040
+So you going then direct the proxy the going Mir is available to for your own use.
+
+42
+00:03:20,040 --> 00:03:24,890
+So if you wish to download it and put it on your own systems if you're like a company or something you
+
+43
+00:03:24,890 --> 00:03:30,110
+can do so as well and then you just adjust your go proxy to point to your own personal Mir instead of
+
+44
+00:03:30,110 --> 00:03:37,270
+to the general going one for most people though just the general going one is works just fine.
+
+45
+00:03:37,310 --> 00:03:43,760
+Now the downside of the proxy is if you've got private repos the proxy can't really access them.
+
+46
+00:03:43,760 --> 00:03:48,860
+And so you can't bounce through the proxy to them.
+
+47
+00:03:48,950 --> 00:03:53,510
+So to avoid that there is now a new environment variable for who called go private.
+
+48
+00:03:53,540 --> 00:04:00,320
+So if you have private repos like here's a repo that's private and you know like I have it on github
+
+49
+00:04:00,320 --> 00:04:04,810
+it's under private repo I don't want that to end up on the proxy.
+
+50
+00:04:04,910 --> 00:04:10,240
+Does the proxy automatically know not to look at my private gab repo or do I have to set this flag.
+
+51
+00:04:10,250 --> 00:04:11,720
+I'm not entirely sure.
+
+52
+00:04:11,720 --> 00:04:16,940
+I think the private the proxy is not actually able to access it because it doesn't it's private.
+
+53
+00:04:16,940 --> 00:04:18,110
+Yeah you're you're private.
+
+54
+00:04:18,110 --> 00:04:18,410
+Yeah.
+
+55
+00:04:18,530 --> 00:04:24,170
+When you're doing it direct it's able to use your sage or your HP connection to connect to it and grab
+
+56
+00:04:24,170 --> 00:04:25,030
+your private repo.
+
+57
+00:04:25,280 --> 00:04:30,760
+But the proxy doesn't have access to your SDH private key and so it can't do that.
+
+58
+00:04:30,760 --> 00:04:32,000
+OK.
+
+59
+00:04:32,390 --> 00:04:39,080
+So but to tell you go to not even bother trying it is the the go private environment variable so which
+
+60
+00:04:39,080 --> 00:04:39,410
+a.
+
+61
+00:04:40,070 --> 00:04:40,990
+Right.
+
+62
+00:04:41,960 --> 00:04:48,810
+Which I don't actually have any value in but there is a go help topic on this module private.
+
+63
+00:04:49,010 --> 00:04:56,060
+So if you do go help module private there is a big large amount of information starting from here going
+
+64
+00:04:56,060 --> 00:05:06,920
+down about how to properly keep private code private and so go private is the easy environment variable.
+
+65
+00:05:06,920 --> 00:05:17,100
+If you just set your go private to some value like for example if I want to say my get hub or overdose
+
+66
+00:05:17,440 --> 00:05:22,410
+and I've got some private repo private repo.
+
+67
+00:05:23,110 --> 00:05:28,180
+Now if I do go in the go private I can see that's there.
+
+68
+00:05:28,180 --> 00:05:35,590
+And so now whenever I have a module go modules go modules ever looks at looks for this module it will
+
+69
+00:05:35,590 --> 00:05:41,890
+skip it from the proxy it will it will try to do it direct from my machine it will not cache it in any
+
+70
+00:05:41,890 --> 00:05:49,640
+way it can't in any way possible it'll just try to keep it just for my own device.
+
+71
+00:05:50,080 --> 00:05:56,710
+So you can use asterisks as well so if you actually have access to like I'd get hub organization that
+
+72
+00:05:59,280 --> 00:06:07,120
+so like for example if I've got access to a whole like Hub Group that's private private group and it's
+
+73
+00:06:07,120 --> 00:06:09,370
+got a bunch of repos in there I can use an asterisk.
+
+74
+00:06:09,370 --> 00:06:15,560
+So now everything that's in that group is now private as well.
+
+75
+00:06:16,110 --> 00:06:22,180
+Or will also be skipped from the proxy from attempting the proxy for this.
+
+76
+00:06:22,210 --> 00:06:28,170
+So as I said I'm pretty sure the proxy can't actually access the private code but without the go private
+
+77
+00:06:28,180 --> 00:06:34,420
+you will still tell the proxy that because that there's a repo that exists at that you URL which you
+
+78
+00:06:34,420 --> 00:06:35,830
+probably don't want to do.
+
+79
+00:06:35,950 --> 00:06:40,750
+And of course you're losing time because every time it's trying to go through the proxy ask call the
+
+80
+00:06:40,750 --> 00:06:46,460
+proxy before trying the direct connection if it's not in a private.
+
+81
+00:06:46,480 --> 00:06:46,710
+All right.
+
+82
+00:06:46,730 --> 00:06:54,530
+So two takeaways from this video is that one there's this incredibly great service which keeps all packages
+
+83
+00:06:54,530 --> 00:07:03,740
+publicly available packages available and it's known as the module Mir and it's proxy for anything that's
+
+84
+00:07:03,740 --> 00:07:06,170
+stored out there in any location.
+
+85
+00:07:06,680 --> 00:07:11,430
+And and if you have stuff in a private repo then it's not going to be seen.
+
+86
+00:07:11,600 --> 00:07:18,200
+But it's also good to specify explicitly if you have something that you don't want to end up on module
+
+87
+00:07:18,200 --> 00:07:24,470
+mere to set to look into this go private variable and set that variable that you stack of that.
+
+88
+00:07:24,530 --> 00:07:24,730
+Yeah.
+
+89
+00:07:24,740 --> 00:07:31,700
+There's actually a little note here to go private might be abused by other by other tools like for example
+
+90
+00:07:31,730 --> 00:07:37,400
+if you got an editor that makes packages clickable link to a go doc page it might look at the go private
+
+91
+00:07:37,400 --> 00:07:42,400
+to see if that particular package is public or not and if it's not public there's if it's private.
+
+92
+00:07:42,440 --> 00:07:46,160
+There's no good off page it doesn't need to bother even trying to make a living at Nice.
+
+93
+00:07:46,730 --> 00:07:52,340
+So go private is kind of good to have set in general just in case some other tool use the tip.
+
+94
+00:07:52,340 --> 00:07:52,580
+All right.
+
+95
+00:07:52,610 --> 00:07:55,040
+So that's a that's the model we are in go private.

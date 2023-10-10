@@ -1,0 +1,759 @@
+1
+00:00:01,160 --> 00:00:06,560
+So in the last lecture, I actually closed the dialogue that gave me my test, Twilio number two, quickly,
+
+2
+00:00:06,890 --> 00:00:10,190
+I should have clicked save, so I had to go and get a new phone number.
+
+3
+00:00:10,190 --> 00:00:11,510
+And hopefully you didn't do that.
+
+4
+00:00:11,510 --> 00:00:17,450
+If you did back in your Twilio console, you'll still have a get test number here or something.
+
+5
+00:00:17,450 --> 00:00:18,620
+Just so just click that.
+
+6
+00:00:18,620 --> 00:00:24,290
+Choose the default number, click save and then it will give you the number to paste into your preferences
+
+7
+00:00:24,290 --> 00:00:25,820
+in exactly the right format.
+
+8
+00:00:25,970 --> 00:00:27,080
+So copy and paste that.
+
+9
+00:00:27,470 --> 00:00:29,320
+So I have a number that's functional.
+
+10
+00:00:29,330 --> 00:00:36,500
+Now let's go back to our Idy and start writing some code and I'm going to write the code in a package
+
+11
+00:00:37,040 --> 00:00:39,110
+and the package I will call SMS.
+
+12
+00:00:39,110 --> 00:00:44,240
+I don't have to put it in a package, but I'm going to say I'll create a new directory in my internal
+
+13
+00:00:44,240 --> 00:00:46,160
+folder called.
+
+14
+00:00:49,560 --> 00:00:59,760
+Esme's and inside of Esme's, I'll create a new go file, which I will call Twilio Dutko and I will
+
+15
+00:00:59,760 --> 00:01:03,770
+add that to my repository and I'll just write the function and it's pretty straightforward.
+
+16
+00:01:03,780 --> 00:01:13,020
+I'll read a funk and I'll just call it send or send text, send text with send text while you keep it
+
+17
+00:01:13,020 --> 00:01:21,150
+short and it will take a few parameters to and message, both of which will be strings.
+
+18
+00:01:21,150 --> 00:01:28,050
+So the number I want to send it to and the message I want to send and I will also pass it on my app,
+
+19
+00:01:28,050 --> 00:01:34,920
+which will be of type a pointer to config app config because we're going to use some values from our
+
+20
+00:01:34,920 --> 00:01:35,460
+app config.
+
+21
+00:01:35,460 --> 00:01:37,110
+So we need that now.
+
+22
+00:01:37,110 --> 00:01:38,250
+I'll grab my secrets.
+
+23
+00:01:38,250 --> 00:01:44,730
+So my secret, this is the Essid or the the the token from Twilio.
+
+24
+00:01:44,730 --> 00:01:49,770
+Twilio, because I've saved that in my preferences screen that's now in my preference map.
+
+25
+00:01:49,770 --> 00:01:53,070
+So I can just grab that from app preference map.
+
+26
+00:01:53,490 --> 00:01:57,420
+Dot, dot, dot, dot in square brackets.
+
+27
+00:01:57,960 --> 00:02:03,660
+Twilio underscore auth, underscore token because that's what it's called, hidden preferences.
+
+28
+00:02:03,660 --> 00:02:05,820
+And you can look in the database and see that for yourself.
+
+29
+00:02:06,750 --> 00:02:15,740
+And the key is again from my preference map and this one is called Twilio Underscore Side.
+
+30
+00:02:16,770 --> 00:02:23,040
+So I need those two two pieces of information to send anything and the U are l I actually got directly
+
+31
+00:02:23,040 --> 00:02:29,100
+out of that blog post that I pointed you to a couple of lectures ago, and I need to build a euro as
+
+32
+00:02:29,100 --> 00:02:37,680
+a string, so I'll use my format as print f function and I'll pace are putting the url hebes colon slash
+
+33
+00:02:37,680 --> 00:02:50,820
+slash api dot twilio dot com slash twenty ten dash zero four dash zero one slash accounts with a capital
+
+34
+00:02:50,820 --> 00:03:02,220
+a slash and then I'll put a percent percent s for a placeholder slash messages dot Jason and the placeholder
+
+35
+00:03:02,220 --> 00:03:03,450
+is replaced with my key.
+
+36
+00:03:03,990 --> 00:03:08,800
+OK, so that gives me my, my key which replaces this percent.
+
+37
+00:03:08,820 --> 00:03:15,630
+S so now I have my euro and all I have to do is follow the instructions in that tutorial which are ever
+
+38
+00:03:15,630 --> 00:03:16,200
+so simple.
+
+39
+00:03:16,950 --> 00:03:20,070
+Message data is a variable I'm going to create of type U.
+
+40
+00:03:20,070 --> 00:03:21,210
+URL values.
+
+41
+00:03:23,810 --> 00:03:28,190
+And for some reason, my I.D. did not import that for me, so I'll just go put it in myself.
+
+42
+00:03:29,990 --> 00:03:32,300
+Net slash Yoro.
+
+43
+00:03:35,390 --> 00:03:37,100
+I see what I did, I made a mistake there.
+
+44
+00:03:37,640 --> 00:03:41,690
+Let's just delete this you URL and call this you a string.
+
+45
+00:03:42,120 --> 00:03:43,010
+That's the problem.
+
+46
+00:03:43,040 --> 00:03:48,140
+OK, so it should have been pointed it for me, but I actually accidentally called that you URL, which
+
+47
+00:03:48,140 --> 00:03:50,630
+is a package name, and you ought not to do that sort of thing.
+
+48
+00:03:50,960 --> 00:03:53,870
+So now I have an empty message data and let's put some stuff in there.
+
+49
+00:03:54,650 --> 00:04:03,650
+So according to the blog post, I need to have message data set and the first thing is to add the value
+
+50
+00:04:03,650 --> 00:04:13,880
+for that we're getting from our parameters to the next thing is message data set from and use the uppercase
+
+51
+00:04:13,880 --> 00:04:15,770
+letters exactly as I'm doing right here.
+
+52
+00:04:16,310 --> 00:04:19,340
+And I'll get that from my preference map app preference map.
+
+53
+00:04:20,030 --> 00:04:26,690
+And I'm looking for the key Twilio phone number, which is the test number.
+
+54
+00:04:29,700 --> 00:04:38,460
+Next, we want the body of the text message data set body with a capital B, and that will be equal
+
+55
+00:04:38,460 --> 00:04:41,370
+to the message which we're taking as a parameter up here.
+
+56
+00:04:42,900 --> 00:04:51,170
+And now we need to set up a message data reader, and that is a sign the value of a pointer to strings,
+
+57
+00:04:51,750 --> 00:04:52,720
+not new reader.
+
+58
+00:04:52,790 --> 00:04:56,480
+And we're just creating a new reader, as you would in any go application.
+
+59
+00:04:56,820 --> 00:05:00,690
+And this is going to be encoding our message data.
+
+60
+00:05:02,380 --> 00:05:09,300
+And code, and I can tell you, are euro values into a reader, and we need that to do the next step.
+
+61
+00:05:09,320 --> 00:05:13,460
+So the next step is to create an HDTV client, which I'll just call client.
+
+62
+00:05:14,210 --> 00:05:22,220
+And that's assign the value of ampersand HTP client with the curly braces after it.
+
+63
+00:05:24,520 --> 00:05:29,830
+And now we just make a request, so we're going to get the result and potentially something I'm going
+
+64
+00:05:29,830 --> 00:05:39,550
+to ignore and we're going to do an HTP got new request and the method is post because we're posting
+
+65
+00:05:39,550 --> 00:05:45,160
+to that URL and we're posting to you earlier string, which we defined right up here.
+
+66
+00:05:45,880 --> 00:05:53,140
+And we're going to pass it a reference to our message data reader, which gives us our post values for
+
+67
+00:05:53,140 --> 00:05:53,950
+a post request.
+
+68
+00:05:55,240 --> 00:05:58,870
+And after that, we set our basic off the authentication.
+
+69
+00:05:58,870 --> 00:06:03,730
+And this is straight out of that blog post, set basic off.
+
+70
+00:06:03,730 --> 00:06:11,110
+And our username is our key and our password is our secret, which we got from our app preference map.
+
+71
+00:06:13,300 --> 00:06:16,270
+And now we want to say except Jason.
+
+72
+00:06:16,270 --> 00:06:18,970
+So request header dot.
+
+73
+00:06:20,440 --> 00:06:21,040
+And.
+
+74
+00:06:23,380 --> 00:06:24,130
+Except.
+
+75
+00:06:26,110 --> 00:06:30,070
+And then application Jason, Jason,
+
+76
+00:06:33,190 --> 00:06:42,000
+and at another header request header, add content, dash type exactly like that.
+
+77
+00:06:42,010 --> 00:06:44,950
+The case matters here application.
+
+78
+00:06:45,910 --> 00:06:50,530
+X w w w dash form dash yoro encoded.
+
+79
+00:06:52,170 --> 00:06:56,590
+And make sure I type that right, x w w form, you are uncoated.
+
+80
+00:06:56,600 --> 00:06:57,460
+Yup, that's correct.
+
+81
+00:06:58,540 --> 00:07:06,090
+And then we get a response response and I'll ignore the second parameter is assigned the value of client
+
+82
+00:07:06,100 --> 00:07:06,880
+not do.
+
+83
+00:07:08,230 --> 00:07:08,950
+The request.
+
+84
+00:07:10,900 --> 00:07:24,790
+And if restante status code is greater than or equal to 200 and the status code from the RESP is less
+
+85
+00:07:24,790 --> 00:07:25,600
+than 300.
+
+86
+00:07:27,740 --> 00:07:28,760
+Status code.
+
+87
+00:07:30,700 --> 00:07:37,480
+And things are good, so we get our data, we'll create a new variable VAD data, which is a map string,
+
+88
+00:07:37,480 --> 00:07:39,130
+and it's going to hold any type we want.
+
+89
+00:07:39,160 --> 00:07:40,570
+So I'll put an interface in there.
+
+90
+00:07:40,640 --> 00:07:43,780
+The second as the type of the string here.
+
+91
+00:07:46,560 --> 00:07:55,410
+Now we want to decode this decoder is a sign the value of Jason's new new decoder and we pass it the
+
+92
+00:07:55,410 --> 00:07:56,520
+response body.
+
+93
+00:07:59,380 --> 00:08:00,870
+And now we decode things.
+
+94
+00:08:00,930 --> 00:08:11,680
+Error is a sign the value of Decoder Decode, and we're decoding a reference to data if error is not
+
+95
+00:08:11,680 --> 00:08:12,410
+equal to nil.
+
+96
+00:08:13,480 --> 00:08:18,220
+I'll just log the error log print line error and I'll return.
+
+97
+00:08:18,540 --> 00:08:19,450
+I don't want to go any further.
+
+98
+00:08:19,570 --> 00:08:20,260
+It didn't work.
+
+99
+00:08:22,990 --> 00:08:29,620
+Down here, closing this statement or this statement, we add an ounce, so if we don't get a status
+
+100
+00:08:29,620 --> 00:08:32,640
+code in this range, then we have something that's gone wrong.
+
+101
+00:08:32,920 --> 00:08:38,380
+And again, I'll do exactly the same thing I did here, log and return.
+
+102
+00:08:38,980 --> 00:08:45,120
+And I will I can't log in and I'll just say they're sending SMS, OK?
+
+103
+00:08:45,340 --> 00:08:52,870
+And you can do whatever error checking you wanting there finally will say return nil now to actually
+
+104
+00:08:52,870 --> 00:08:54,100
+have a return type up here.
+
+105
+00:08:56,770 --> 00:08:59,660
+Error there.
+
+106
+00:08:59,920 --> 00:09:00,490
+That's better.
+
+107
+00:09:00,520 --> 00:09:05,840
+So here will return an error and here will return errors.
+
+108
+00:09:06,220 --> 00:09:11,530
+New error sending SMS.
+
+109
+00:09:13,550 --> 00:09:15,740
+Wrong response code.
+
+110
+00:09:18,530 --> 00:09:24,140
+And errors are not supposed to start with a capital letter, so there so that's a function that will
+
+111
+00:09:24,140 --> 00:09:28,430
+allow us to send our text now back and perform checks.
+
+112
+00:09:28,580 --> 00:09:33,810
+Let's go find that to do and see if we want to actually send that response message.
+
+113
+00:09:34,340 --> 00:09:35,570
+So let's get rid of the two.
+
+114
+00:09:36,470 --> 00:09:40,460
+And again, we have some conditions we want to check before we actually send things.
+
+115
+00:09:40,910 --> 00:09:49,100
+So we'll say if repo dot app, dot preference map and I'm looking for the key in there, which is notify
+
+116
+00:09:49,430 --> 00:09:51,140
+via SMS.
+
+117
+00:09:53,070 --> 00:09:57,810
+And that is equal to the string value of one that we want to send our response.
+
+118
+00:09:57,930 --> 00:10:00,660
+OK, and this doesn't belong here, of course.
+
+119
+00:10:01,110 --> 00:10:02,130
+Let's get this out of here.
+
+120
+00:10:02,310 --> 00:10:03,060
+Maybe it does.
+
+121
+00:10:03,300 --> 00:10:06,120
+Let's see where the check is that we're inside the correct spot.
+
+122
+00:10:06,160 --> 00:10:09,720
+So here we're checking to see if the old status is not equal to the new status.
+
+123
+00:10:10,560 --> 00:10:12,490
+So we're where we need to be good.
+
+124
+00:10:13,560 --> 00:10:20,340
+So two is going to be assigned the value of what are we texting to where we're texting to from repo
+
+125
+00:10:20,820 --> 00:10:22,950
+dot app, dot preference map.
+
+126
+00:10:22,950 --> 00:10:26,400
+And we're looking for the key SMS notify.
+
+127
+00:10:26,910 --> 00:10:27,360
+No.
+
+128
+00:10:29,800 --> 00:10:36,070
+And the message we'll just make that an empty string, because we need to build different messages.
+
+129
+00:10:36,670 --> 00:10:41,980
+So just as we did up here, we need to say if new status is equal to healthy, so a copy that and paste
+
+130
+00:10:41,980 --> 00:10:44,980
+it and then I'll do an else else.
+
+131
+00:10:44,980 --> 00:10:52,650
+If new status is equal to the problem, we're going to do something else else.
+
+132
+00:10:52,660 --> 00:10:57,760
+If new status is equal to warning, we'll do something else.
+
+133
+00:10:58,240 --> 00:11:00,930
+And all we're doing here is just building a message.
+
+134
+00:11:01,390 --> 00:11:10,390
+So we'll say MSgt equals format, Sprint F and the text will be something as simple as because this
+
+135
+00:11:10,390 --> 00:11:20,980
+is healthy service percent s on percent s is healthy and replace that with an escort service service
+
+136
+00:11:20,980 --> 00:11:23,530
+name and address hostname.
+
+137
+00:11:25,480 --> 00:11:26,560
+And I'll copy this.
+
+138
+00:11:28,040 --> 00:11:39,200
+And paste it and paste it and I can say, is reports a problem and this time I actually want to get
+
+139
+00:11:39,290 --> 00:11:42,690
+a third thing in this text message, so I'll put percent.
+
+140
+00:11:42,710 --> 00:11:43,130
+S.
+
+141
+00:11:43,850 --> 00:11:46,040
+And what I want here, of course, is MSgt.
+
+142
+00:11:46,070 --> 00:11:53,030
+The message we got after we tested our host and I'll just copy this one and use it to replace this one,
+
+143
+00:11:55,910 --> 00:12:05,480
+reports a warning and then we just text it so pretty straightforward after if we say error is a sign,
+
+144
+00:12:05,480 --> 00:12:11,450
+the value of SMS, our new package does send text to Twilio and it wants a two.
+
+145
+00:12:11,570 --> 00:12:12,710
+Well, we already have that.
+
+146
+00:12:13,340 --> 00:12:19,400
+It wants the message MSG, which, you know, I'm got variable shadowing going on, going on here.
+
+147
+00:12:19,400 --> 00:12:22,070
+Let me fix this SMS message.
+
+148
+00:12:23,710 --> 00:12:29,290
+Copy, paste, paste, paste, paste.
+
+149
+00:12:29,970 --> 00:12:35,080
+OK, so I actually would have had the wrong message up here because I created a new variable with the
+
+150
+00:12:35,080 --> 00:12:37,750
+name MSG there, which was sloppy on my part.
+
+151
+00:12:37,750 --> 00:12:39,700
+And I apologize, but I'm glad I caught it.
+
+152
+00:12:40,360 --> 00:12:41,800
+So to message.
+
+153
+00:12:41,800 --> 00:12:45,100
+And we want our app, which is repo app.
+
+154
+00:12:46,980 --> 00:12:56,520
+And we checked for an error, if error is not equal to nil and I'll just log print line error, error,
+
+155
+00:12:56,520 --> 00:13:03,570
+sending SMS in, perform checks go and the error.
+
+156
+00:13:04,200 --> 00:13:06,550
+OK, so that should do it.
+
+157
+00:13:06,570 --> 00:13:10,890
+So if I actually stop my application, start my application.
+
+158
+00:13:13,610 --> 00:13:17,780
+Everything should be set up properly, so let's go back and see what's actually going to happen.
+
+159
+00:13:17,810 --> 00:13:22,430
+So let's go to notifications and I'll turn on by text message.
+
+160
+00:13:22,680 --> 00:13:23,620
+So that's turned on.
+
+161
+00:13:23,720 --> 00:13:24,560
+Let me save it.
+
+162
+00:13:26,150 --> 00:13:30,260
+OK, we have one problem service.
+
+163
+00:13:30,260 --> 00:13:32,390
+So let me switch back to my.
+
+164
+00:13:34,570 --> 00:13:42,310
+I'd eat and turn over to my Web browser and I'm going to turn the volume up on my phone just to make
+
+165
+00:13:42,310 --> 00:13:45,200
+sure that everything is going to work the way that it should.
+
+166
+00:13:46,090 --> 00:13:52,510
+And if this works properly, once I start my main dock, go and quickly switch back to my Web browser,
+
+167
+00:13:53,260 --> 00:13:54,360
+it reported healthy.
+
+168
+00:13:56,200 --> 00:13:58,900
+And if you heard that ding, I got a text.
+
+169
+00:13:58,900 --> 00:14:01,090
+And if I read it, it says.
+
+170
+00:14:02,650 --> 00:14:09,400
+Sent from your Twilio trial account service HTTP on localhost is healthy, and that's exactly what I
+
+171
+00:14:09,400 --> 00:14:10,160
+wanted to see.
+
+172
+00:14:10,180 --> 00:14:12,270
+So that's all there is to sending texts.
+
+173
+00:14:12,550 --> 00:14:18,160
+Now, if you want to save your trial balance, make sure you go back to settings and go to notifications
+
+174
+00:14:18,550 --> 00:14:21,090
+and turn text message off and safe.
+
+175
+00:14:22,480 --> 00:14:28,720
+Now, word of caution again, if you're getting charged for international texts and the local number
+
+176
+00:14:28,720 --> 00:14:32,440
+it gave you was not a local number, then don't do this.
+
+177
+00:14:32,470 --> 00:14:34,030
+Otherwise, it might be costing you money.
+
+178
+00:14:34,570 --> 00:14:37,240
+But the logic for doing it is very straightforward.
+
+179
+00:14:37,240 --> 00:14:43,270
+And if you ever need to send SMS from a ghost account or go application, it's really straightforward
+
+180
+00:14:43,270 --> 00:14:43,690
+to do it.
+
+181
+00:14:44,020 --> 00:14:46,390
+So you can use Twilio, you can use next MO.
+
+182
+00:14:46,390 --> 00:14:49,510
+I think next month is actually part of Vonage, but I'm not sure.
+
+183
+00:14:49,690 --> 00:14:53,020
+But there are lots of services out there and they're all relatively inexpensive.
+
+184
+00:14:53,380 --> 00:14:57,730
+But what I'm developing, I don't want to be paying money that I'm probably not billing anybody else
+
+185
+00:14:57,730 --> 00:14:59,530
+for just to get things working.
+
+186
+00:14:59,530 --> 00:15:01,350
+So a trial account is the way to go?
+
+187
+00:15:02,170 --> 00:15:06,060
+Well, that takes care of the core functionality for our application.
+
+188
+00:15:06,100 --> 00:15:09,130
+There's a few cosmetic things we can clean up and we will before we're done.
+
+189
+00:15:09,640 --> 00:15:14,860
+But the next thing I want to do is just to try monitoring a couple of new services and we'll do that
+
+190
+00:15:14,860 --> 00:15:15,790
+in the next section.

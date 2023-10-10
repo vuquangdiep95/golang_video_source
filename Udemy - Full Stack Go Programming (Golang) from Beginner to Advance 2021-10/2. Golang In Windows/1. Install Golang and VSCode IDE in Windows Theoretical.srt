@@ -1,0 +1,251 @@
+1
+00:00:12,640 --> 00:00:17,710
+Hello and welcome to the gold and programming language course in this session.
+
+2
+00:00:17,740 --> 00:00:23,800
+We want to talk about installing, go learning and preparing vis code I.D. in Windows.
+
+3
+00:00:29,640 --> 00:00:33,960
+Guide Tool Kit is a version control system.
+
+4
+00:00:34,470 --> 00:00:36,300
+We need it for two reasons.
+
+5
+00:00:36,840 --> 00:00:41,190
+First, many components of go land are distributed via gate.
+
+6
+00:00:41,520 --> 00:00:49,020
+And second, the Windows installer includes the terminal that makes it behave more like Unix operating
+
+7
+00:00:49,020 --> 00:00:49,620
+systems.
+
+8
+00:00:50,700 --> 00:01:00,060
+So download and install mice escaped from mice, escaped the gate hop that I or vending installer asked,
+
+9
+00:01:00,150 --> 00:01:04,530
+make sure to select use gate from the Windows Command prompt.
+
+10
+00:01:09,590 --> 00:01:15,220
+The terminal windows comes with a terminal called CND Dot X Z.
+
+11
+00:01:15,830 --> 00:01:24,950
+You can start it by click on the window button in typing CMT and then selecting its terminals are a
+
+12
+00:01:24,950 --> 00:01:27,770
+text drive interface to your computer.
+
+13
+00:01:28,730 --> 00:01:36,230
+You can enter commands by typing the comment and hitting into your computer will then execute the command
+
+14
+00:01:36,230 --> 00:01:38,060
+and display any results.
+
+15
+00:01:42,300 --> 00:01:50,700
+Go ahead and close it as we will be using a different terminal that comes bundled with my CS kit.
+
+16
+00:01:52,180 --> 00:01:53,180
+Clique is soft.
+
+17
+00:01:53,200 --> 00:02:02,410
+All programs guide and select Keith Bash Tina's answer allow you to manipulate files and folders on
+
+18
+00:02:02,410 --> 00:02:03,270
+your computer.
+
+19
+00:02:03,820 --> 00:02:08,170
+Your terminal starts in the working directory where you can release.
+
+20
+00:02:08,170 --> 00:02:16,750
+The folder contends with less change directories using CD, make directories using the air and remove
+
+21
+00:02:16,750 --> 00:02:17,980
+files using are.
+
+22
+00:02:22,920 --> 00:02:27,600
+Go Lanc in this style, going is a compiled programming language.
+
+23
+00:02:27,900 --> 00:02:37,260
+So we need to install the go toolset, download and run the installer from Go Lang dot org slash dial
+
+24
+00:02:38,130 --> 00:02:49,680
+2's Windows Dash AMD64 dot MCI for 64 bit or Windows Dash 386 dot MSI for 32 bit version.
+
+25
+00:02:50,520 --> 00:02:53,520
+You'll probably want that 64 bit version.
+
+26
+00:02:56,250 --> 00:03:02,070
+Confirm that it worked by opening a new terminal and typing go version.
+
+27
+00:03:03,590 --> 00:03:07,070
+Now you should see the go version you installed.
+
+28
+00:03:09,850 --> 00:03:18,250
+Environment variables now set the environment variables right click on my PC and select properties,
+
+29
+00:03:18,610 --> 00:03:26,410
+choose the advanced system settings from the left side and click on environment variables as shown in
+
+30
+00:03:26,410 --> 00:03:28,090
+the below screenshots.
+
+31
+00:03:30,130 --> 00:03:34,960
+Click on path from the system variables and then click Edit.
+
+32
+00:03:35,980 --> 00:03:43,240
+So click new and then add the path with being directory where you'll have paste the Go folder.
+
+33
+00:03:43,960 --> 00:03:47,820
+Here we are editing the pack see column Baccus.
+
+34
+00:03:47,830 --> 00:03:53,770
+Let's go back to the screen and click OK, as shown in the below screenshots.
+
+35
+00:03:57,910 --> 00:04:05,950
+Now, create a new user variable, which tells Go, Come in, Virgo Lang, libraries are present.
+
+36
+00:04:07,120 --> 00:04:12,820
+For that, click a neon user variable, as shown in the below screenshot.
+
+37
+00:04:16,420 --> 00:04:23,920
+Now feel the variable names as go routes and variable value is the part of your Go Lang folder.
+
+38
+00:04:24,310 --> 00:04:28,800
+So here variable value is C column Backus.
+
+39
+00:04:28,810 --> 00:04:32,170
+Let's go after filling, click OK.
+
+40
+00:04:33,660 --> 00:04:38,430
+After that, click OK on environment variables and your setup is completed.
+
+41
+00:04:38,670 --> 00:04:45,800
+Now let's check the Golang version by using the common Go version, uncomment prompt and see the Golang
+
+42
+00:04:45,810 --> 00:04:46,350
+version.
+
+43
+00:04:46,560 --> 00:04:54,570
+So after completing the installation process, any idea or takes editor can be used to write goals and
+
+44
+00:04:54,570 --> 00:04:59,940
+codes and run them on the IED or the command prompt with the use of comment.
+
+45
+00:05:00,060 --> 00:05:05,310
+In this case, we want to install this code and write our courts and it.
+
+46
+00:05:08,350 --> 00:05:19,060
+Install visual Estadio code and extension download and install VSCO from the following link code dot
+
+47
+00:05:19,060 --> 00:05:22,240
+visual Estadio dot com slash download.
+
+48
+00:05:23,380 --> 00:05:30,610
+After the installation launch, VSCO opened the extensions marketplace by the Council Plus Shift, plus
+
+49
+00:05:30,610 --> 00:05:35,950
+its short key and then search go extension and install it.
+
+50
+00:05:39,730 --> 00:05:48,310
+After it opened the comment, followed by the control plus shift plus P Short G and run they go install
+
+51
+00:05:48,310 --> 00:05:49,870
+update tools comment.
+
+52
+00:05:51,360 --> 00:05:56,330
+And select all the go extensions listed here and install them.
+
+53
+00:06:00,150 --> 00:06:01,520
+Start coding.
+
+54
+00:06:03,090 --> 00:06:05,700
+Create a file like name.
+
+55
+00:06:05,700 --> 00:06:06,550
+Hello Dot.
+
+56
+00:06:06,570 --> 00:06:14,520
+Go in this code either by the following by default auto completion and formatting for quote saving or
+
+57
+00:06:14,520 --> 00:06:15,120
+enable.
+
+58
+00:06:15,330 --> 00:06:16,170
+That's great.
+
+59
+00:06:16,740 --> 00:06:26,310
+After created the fine, save it and go to the terminal and execute the following command Go run hello
+
+60
+00:06:26,310 --> 00:06:30,060
+dot go and you can see the Hello World message.
+
+61
+00:06:30,540 --> 00:06:36,600
+Now it's ready to writing our courts in order not to prolong the time of decision.
+
+62
+00:06:36,780 --> 00:06:40,860
+We will finish it and we will continue the content in the next session.
+
+63
+00:06:41,040 --> 00:06:41,610
+Goodbye.

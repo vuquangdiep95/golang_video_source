@@ -1,0 +1,368 @@
+1
+00:00:00,280 --> 00:00:03,780
+Selamat datang di kuliah ini tentang enkripsi SSL dan GOPAC.
+
+2
+00:00:03,780 --> 00:00:10,130
+Jadi pada dasarnya di GOPAC semua panggilan saat Anda menerapkan aplikasi ke produksi harus dienkripsi.
+
+3
+00:00:10,470 --> 00:00:13,720
+Dan ini adalah default untuk itu juga.
+
+4
+00:00:13,860 --> 00:00:21,000
+Jadi GOPAC menghargai bahwa untuk mengenkripsi panggilan kita perlu membuat sertifikat SSL karena SSL pada dasarnya memungkinkan
+
+5
+00:00:21,000 --> 00:00:23,600
+komunikasi menjadi aman atau terenkripsi.
+
+6
+00:00:23,820 --> 00:00:28,800
+Dan untuk menjawabnya di antara klien Anda dan server Anda dengan memastikan bahwa tidak ada router di tengah yang
+
+7
+00:00:29,040 --> 00:00:32,040
+dapat melakukan serangan dan itu disebut orang di tengah serangan.
+
+8
+00:00:32,310 --> 00:00:37,840
+Tetapi pertama-tama sebelum kita sampai di sana saya ingin Anda memahami bagaimana ini semua bekerja jika Anda tahu cara kerjanya.
+
+9
+00:00:37,890 --> 00:00:39,460
+Anda bisa melewatkan kuliah ini.
+
+10
+00:00:39,510 --> 00:00:41,490
+Tetapi hal itu harus menarik bagi Anda.
+
+11
+00:00:41,640 --> 00:00:43,650
+Jadi mengapa kita perlu enkripsi?
+
+12
+00:00:43,650 --> 00:00:45,640
+Apa masalahnya?
+
+13
+00:00:45,720 --> 00:00:51,000
+Pada dasarnya ketika Anda berkomunikasi melalui internet, data Anda akan terlihat oleh semua server yang mentransfer
+
+14
+00:00:51,000 --> 00:00:52,050
+paket Anda.
+
+15
+00:00:52,050 --> 00:00:56,260
+Jadi misalnya katakan Anda memiliki Anda di situs Web seperti gadget DDP.
+
+16
+00:00:56,550 --> 00:00:59,880
+Sekarang Anda mengirim nama pengguna dan kata sandi Anda ke situs web Anda.
+
+17
+00:01:00,000 --> 00:01:00,680
+BAIK.
+
+18
+00:01:01,050 --> 00:01:05,430
+Pada dasarnya setiap router di Internet dapat memotong nama pengguna dan kata sandi itu.
+
+19
+00:01:05,490 --> 00:01:06,460
+Dan itu sangat buruk.
+
+20
+00:01:06,630 --> 00:01:07,140
+BAIK.
+
+21
+00:01:07,230 --> 00:01:10,810
+Itu sebabnya Anda tidak boleh login di situs web menjadi SCDP.
+
+22
+00:01:11,310 --> 00:01:13,420
+Jadi pada dasarnya itu adalah teks biasa.
+
+23
+00:01:13,650 --> 00:01:17,700
+Tetapi sekarang ketika data sensitif Apa yang bisa kita lakukan.
+
+24
+00:01:17,970 --> 00:01:21,930
+Kita bisa menggunakan SSL untuk mengizinkan klien dan mencari serta merayap paket.
+
+25
+00:01:21,930 --> 00:01:23,090
+Jadi seperti apa bentuknya.
+
+26
+00:01:23,160 --> 00:01:28,770
+Sekarang kami memiliki SSL dan klien Gypsy kami berbicara dengan server Jarkesy akan mengambil nama pengguna
+
+27
+00:01:28,770 --> 00:01:33,500
+dan kata sandi dan pertama-tama kami akan mengenkripsi pesan itu menggunakan SSL.
+
+28
+00:01:33,510 --> 00:01:39,630
+Jadi sekarang pesan ini menjadi atau pesan dan dienkripsi sehingga tidak ada yang bisa mendekripsi
+
+29
+00:01:39,720 --> 00:01:41,010
+kecuali server RBC.
+
+30
+00:01:41,400 --> 00:01:44,590
+Jadi kami mengirim pesan terenkripsi itu langsung ke server GOP.
+
+31
+00:01:44,850 --> 00:01:50,190
+Itu menerimanya dan kemudian melakukan dekripsi SSL dan menemukan tetapi karena nama dan kata sandi.
+
+32
+00:01:50,370 --> 00:01:55,720
+Jadi konsep enkripsi cukup mudah untuk memahami implementasi itu agak rumit.
+
+33
+00:01:56,130 --> 00:02:02,190
+Jadi pada dasarnya cara lain SSL adalah server klan dapat dengan aman bertukar data dan router tidak
+
+34
+00:02:02,190 --> 00:02:03,990
+dapat melihat konten paket.
+
+35
+00:02:04,020 --> 00:02:09,450
+Jadi sekarang kita mentransfer paket-paket oranye di Internet router hanya bisa melihat omong kosong dan tidak
+
+36
+00:02:09,570 --> 00:02:13,200
+bisa mengerti apa artinya ini karena tidak dapat mendekripsi itu.
+
+37
+00:02:13,590 --> 00:02:15,410
+Jadi sekarang bagaimana cara kerjanya.
+
+38
+00:02:15,420 --> 00:02:18,670
+Bagaimana SSL diatur dan bagaimana ini benar-benar berfungsi.
+
+39
+00:02:19,110 --> 00:02:21,100
+Jadi beri tahu kami.
+
+40
+00:02:21,390 --> 00:02:29,240
+Adalah penerus SSL tetapi kedua nama tersebut sebenarnya digunakan dengan cara yang sama sehingga digunakan untuk mengenkripsi koneksi.
+
+41
+00:02:29,550 --> 00:02:32,310
+Jadi katakan Anda memiliki komputer dan Anda berbicara dengan google. com.
+
+42
+00:02:32,640 --> 00:02:36,810
+Ketika Anda terhubung ke google. com Anda akan terhubung melalui SCDP OK.
+
+43
+00:02:36,840 --> 00:02:38,370
+Dan itulah kunci hijau ini.
+
+44
+00:02:38,400 --> 00:02:41,010
+Jadi caranya adalah berdasarkan sertifikat SSL.
+
+45
+00:02:41,010 --> 00:02:44,380
+Jadi ada dua cara untuk menggunakan SSL dan europaeus Anda dapat menggunakan keduanya.
+
+46
+00:02:44,490 --> 00:02:49,440
+Yang pertama adalah yang dengan verifikasi yang merupakan enkripsi di mana browser memverifikasi
+
+47
+00:02:49,990 --> 00:02:54,260
+server web dan cara lainnya adalah semacam verifikasi ingin otentikasi SSL.
+
+48
+00:02:54,270 --> 00:02:57,110
+Jadi dalam kursus ini kita hanya akan melihat enkripsi.
+
+49
+00:02:57,360 --> 00:03:00,090
+Itu di luar ruang lingkup untuk Jarkesy.
+
+50
+00:03:00,630 --> 00:03:02,540
+Jadi sekarang seperti apa pengaturan ini.
+
+51
+00:03:02,580 --> 00:03:03,410
+BAIK.
+
+52
+00:03:03,660 --> 00:03:05,610
+Jadi di sini adalah pengaturan yang sebenarnya.
+
+53
+00:03:05,700 --> 00:03:08,510
+Kami memiliki klien aktif atau PC di server GOP.
+
+54
+00:03:08,850 --> 00:03:17,190
+Dan server GOP misalnya, Anda adalah contoh API saya yang pertama-tama harus kami setel sertifikatnya.
+
+55
+00:03:17,190 --> 00:03:23,490
+Jadi untuk ini kita perlu membuat otoritas sertifikat sehingga tiket atau 30 dapat menjadi publik jika Anda ingin
+
+56
+00:03:23,490 --> 00:03:24,430
+menetapkan publik.
+
+57
+00:03:24,550 --> 00:03:26,930
+Anda semua seperti contoh API saya.
+
+58
+00:03:27,260 --> 00:03:31,710
+Atau Anda dapat memiliki semacam otoritas tiket pribadi jika misalnya Anda memiliki banyak internal
+
+59
+00:03:31,710 --> 00:03:36,130
+Anda atau dalam hal ini Anda perlu membuat atau mempertahankan otoritas sertifikat itu.
+
+60
+00:03:36,150 --> 00:03:40,040
+Sekarang server perlu membuat apa yang disebut kunci pribadi.
+
+61
+00:03:40,290 --> 00:03:40,970
+BAIK.
+
+62
+00:03:41,310 --> 00:03:43,990
+Menggunakan kunci pribadi itu akan menghasilkan semacam permintaan tiket.
+
+63
+00:03:44,160 --> 00:03:48,980
+Dan pada dasarnya itu akan meminta semacam otoritas hei tolong tandatangani permintaan sertifikat saya.
+
+64
+00:03:49,170 --> 00:03:55,110
+Saya ingin membuktikan bahwa saya adalah API saya, misalnya, adalah beberapa otoritas khas yang melihat permintaan tersebut dan
+
+65
+00:03:55,110 --> 00:03:59,290
+berkata OK Saya akan menandatanganinya untuk Anda dan mengirimkan kembali sertifikat tanda.
+
+66
+00:03:59,610 --> 00:04:04,150
+Jadi server di sisi server untuk mengatur kami menerima server CRT.
+
+67
+00:04:04,400 --> 00:04:06,910
+Ini adalah sertifikat yang sudah ditandatangani oleh ini.
+
+68
+00:04:07,170 --> 00:04:12,270
+Jadi di sisi server kita perlu memiliki kunci pribadi dan menetapkan sertifikat.
+
+69
+00:04:12,270 --> 00:04:12,980
+BAIK.
+
+70
+00:04:13,340 --> 00:04:17,850
+Sekarang di sisi klien apa yang perlu kita miliki ketika Anda memiliki
+
+71
+00:04:17,880 --> 00:04:24,290
+sertifikat kepercayaan dari otoritas sertifikat untuk hal semacam ini otoritas yang baik biasanya mengeluarkan CA root sertifikat publik.
+
+72
+00:04:24,480 --> 00:04:24,760
+BAIK.
+
+73
+00:04:24,780 --> 00:04:30,360
+Dan publisitas yang didapat adalah apa yang dipercaya oleh pengguna Clinton menggunakan set up akan
+
+74
+00:04:30,360 --> 00:04:36,450
+memperoleh kode dan begitu pada pencarian Anda menggunakan kunci pribadi dan sertifikat tanda dan klon untuk menggunakan
+
+75
+00:04:36,450 --> 00:04:37,320
+sertifikat root.
+
+76
+00:04:37,530 --> 00:04:43,150
+Dan sekarang pada dasarnya klien dan server harus dapat melakukan apa yang disebut jabat tangan SSL.
+
+77
+00:04:43,500 --> 00:04:48,260
+Jadi selama jabat tangan, server akan mengirim tanda kepada klien karena juga sulit.
+
+78
+00:04:48,510 --> 00:04:52,230
+Klien Jersey akan memverifikasi itu sebagai semacam tiket dari server.
+
+79
+00:04:52,560 --> 00:04:58,050
+Dan kemudian setelah senang mereka akan menjadi komunikasi terenkripsi SSL aman antara klien
+
+80
+00:04:58,050 --> 00:04:58,900
+dan server.
+
+81
+00:04:59,310 --> 00:05:03,370
+Jadi Anda mungkin suka oh my god ini sangat rumit.
+
+82
+00:05:03,440 --> 00:05:05,330
+Jadi apa yang perlu kita lakukan.
+
+83
+00:05:05,330 --> 00:05:11,370
+Kami benar-benar mengatur server PM pihak layanan dan tahun ini berakar dan kemudian kami akan menghasilkan semuanya.
+
+84
+00:05:11,810 --> 00:05:15,500
+Tetapi jabat tangan SSL yang sebenarnya sengaja melakukannya untuk kita.
+
+85
+00:05:15,500 --> 00:05:17,200
+Jadi tidak ada yang perlu dikhawatirkan.
+
+86
+00:05:17,270 --> 00:05:20,580
+Dan kabar baiknya adalah bahwa jika pengaturannya salah, hal-hal tidak akan berhasil.
+
+87
+00:05:20,630 --> 00:05:22,700
+Jadi, jika semuanya berfungsi, pengaturan Anda sudah benar.
+
+88
+00:05:22,820 --> 00:05:24,230
+Itu kesepakatan dengan keamanan.
+
+89
+00:05:24,500 --> 00:05:28,550
+Jadi saya hanya ingin memberi Anda gambar yang jelas Anda dapat mengambil screenshot jika Anda
+
+90
+00:05:28,550 --> 00:05:33,950
+ingin mendapatkan gambar yang jelas tentang apa yang dibutuhkan dan bagaimana SSL bekerja di tangan gadis kecil berikutnya untuk menghasilkan
+
+91
+00:05:34,130 --> 00:05:37,010
+sertifikat dan memilikinya digunakan oleh server kami dan klien kami.
+
+92
+00:05:37,010 --> 00:05:38,010
+Jadi Anda tidak mengharapkannya.
+

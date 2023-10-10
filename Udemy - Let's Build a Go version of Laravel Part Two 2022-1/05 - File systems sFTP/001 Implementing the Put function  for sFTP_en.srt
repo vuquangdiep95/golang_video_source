@@ -1,0 +1,600 @@
+1
+00:00:01,910 --> 00:00:07,370
+So we have our Mineo file system working as as expected, and it's time to turn our attention to secure
+
+2
+00:00:07,370 --> 00:00:07,930
+FTP.
+
+3
+00:00:08,480 --> 00:00:14,780
+FTP and to make that happen, the first thing I'll do is I'll open the dot on the file inside of my
+
+4
+00:00:14,780 --> 00:00:21,530
+app and I'll go down to the FTP section right here and populate the necessary values so we can connect
+
+5
+00:00:21,530 --> 00:00:23,540
+to our local Docker setup server.
+
+6
+00:00:24,470 --> 00:00:29,610
+And of course, the host for that is local host and make sure you spell it right or nothing will work.
+
+7
+00:00:30,770 --> 00:00:38,990
+The user we called FSF, FTP and the password was password not very secure, but fine for a local development
+
+8
+00:00:38,990 --> 00:00:40,670
+server and the port.
+
+9
+00:00:40,910 --> 00:00:47,390
+Normally, when you connect to SFO, it's Port 22 because it uses S.H. as its underlying transport method.
+
+10
+00:00:48,050 --> 00:00:55,010
+But Port, 22 is used in a lot of machines and we're listing on Port 2022 on our Docker installation.
+
+11
+00:00:55,160 --> 00:00:57,560
+So that's what we need for our set up in the.
+
+12
+00:00:58,340 --> 00:00:59,030
+And that's easy enough.
+
+13
+00:00:59,870 --> 00:01:03,380
+The next thing I need to do is to go to the celebrities package.
+
+14
+00:01:03,890 --> 00:01:08,420
+Open file systems and open the SFP file system.
+
+15
+00:01:08,930 --> 00:01:11,600
+And the file is as FTP don't go.
+
+16
+00:01:12,950 --> 00:01:17,330
+Now we have some stub functions in here right now, and of course, we're going to populate those and
+
+17
+00:01:17,330 --> 00:01:18,860
+we'll start with the put function.
+
+18
+00:01:18,920 --> 00:01:23,870
+But before we do that, of course, we need a client that knows about SFP servers.
+
+19
+00:01:24,080 --> 00:01:25,880
+We need to install that using Go Get.
+
+20
+00:01:26,000 --> 00:01:31,790
+So I'll open my terminal and I'll make sure I'm inside the celebrity's project and not inside my app
+
+21
+00:01:31,790 --> 00:01:35,300
+because we want to modify the government file for celebrities and not for my app.
+
+22
+00:01:35,360 --> 00:01:37,640
+And I'm in the right folder, so I'll just type.
+
+23
+00:01:37,970 --> 00:01:38,550
+Go get.
+
+24
+00:01:38,720 --> 00:01:41,060
+And this is a really good asset TV package.
+
+25
+00:01:41,480 --> 00:01:45,920
+GitHub dot com slash pcmagas FTP.
+
+26
+00:01:45,950 --> 00:01:49,400
+And if you go to that, you URL, GitHub, dot com slash, so on and so forth.
+
+27
+00:01:49,820 --> 00:01:52,670
+You'll see all the documentation for this, but it's really straightforward.
+
+28
+00:01:53,090 --> 00:01:54,290
+So let's go get that.
+
+29
+00:01:55,790 --> 00:01:56,360
+There it is.
+
+30
+00:01:57,800 --> 00:01:58,580
+And now we can use it.
+
+31
+00:01:59,300 --> 00:02:03,350
+Now I'm going to start with Typekit function, but just like I did with Mineo, I'm actually going to
+
+32
+00:02:03,350 --> 00:02:08,389
+create another function called get credentials because I have to get credentials for all operations
+
+33
+00:02:08,389 --> 00:02:13,460
+with the SFB server, and it'll have the receiver of S Pointer to FTP.
+
+34
+00:02:14,090 --> 00:02:20,210
+And just like I did in, meanwhile, I'll call it and get credentials and it takes no parameters, but
+
+35
+00:02:20,210 --> 00:02:21,530
+it returns two things.
+
+36
+00:02:21,740 --> 00:02:28,490
+The first one is a pointer to an FTP client right there, and the second one is potentially an error.
+
+37
+00:02:30,470 --> 00:02:35,330
+Now to connect or to get the necessary credentials and a client, I have to have an address to connect
+
+38
+00:02:35,330 --> 00:02:35,570
+to.
+
+39
+00:02:35,780 --> 00:02:39,740
+So EDR, it's just going to be a string and that's the address we're going to connect to.
+
+40
+00:02:39,740 --> 00:02:47,060
+And that will be a string using the format sprint package, which returns the string and my format string
+
+41
+00:02:47,060 --> 00:02:52,730
+is percent s colon percent s and the first value was the host.
+
+42
+00:02:52,820 --> 00:02:55,190
+And of course, I get that from the receiver I start host.
+
+43
+00:02:57,350 --> 00:03:01,100
+And the second value is the Port Start port again from the receiver.
+
+44
+00:03:02,120 --> 00:03:03,560
+So that gives me my connection string.
+
+45
+00:03:04,340 --> 00:03:13,060
+Now I need to build a configuration variable of type a pointer to SSA short client config because SFP
+
+46
+00:03:13,070 --> 00:03:18,920
+uses the underlying transport of secure shell or S-H, so we can just use a standard library for that
+
+47
+00:03:19,580 --> 00:03:25,820
+config, which is the variable name I'm choosing right now, is a reference to SSA H Don.
+
+48
+00:03:26,920 --> 00:03:31,240
+And eventually, it'll pop up there it is client config, and we'll just populate the fields that we
+
+49
+00:03:31,240 --> 00:03:33,640
+have to have, the first one is the user.
+
+50
+00:03:33,700 --> 00:03:34,360
+And that's easy.
+
+51
+00:03:34,540 --> 00:03:36,730
+I just comes in the receiver start user.
+
+52
+00:03:38,140 --> 00:03:44,260
+The second one is actually a slice of authentication methods now, because this is using SSA age, we
+
+53
+00:03:44,260 --> 00:03:51,330
+can connect using SSA keys or if the SSA servers configured to accept it, just a username and password.
+
+54
+00:03:51,400 --> 00:03:52,590
+And we want to keep this simple.
+
+55
+00:03:52,600 --> 00:03:56,140
+So we'll use the username and password, which are Docker image supports anyway.
+
+56
+00:03:57,130 --> 00:04:04,900
+So the field is called off and it takes a slice of SSA each dot off method, and we're just going to
+
+57
+00:04:04,900 --> 00:04:05,520
+put one in there.
+
+58
+00:04:05,530 --> 00:04:10,000
+But because it's a slice, of course, you could put multiple authentication methods in there and we
+
+59
+00:04:10,000 --> 00:04:15,190
+want SSA short password and our password again from the receiver, our pass.
+
+60
+00:04:16,420 --> 00:04:19,170
+So that's the first two things we need in our config.
+
+61
+00:04:19,180 --> 00:04:21,550
+And the last one is just to make things simpler for us.
+
+62
+00:04:21,910 --> 00:04:23,230
+Host key callback.
+
+63
+00:04:23,800 --> 00:04:30,130
+We're going to use SSA dot insecure, host key, insecure, ignore host key right there.
+
+64
+00:04:30,790 --> 00:04:34,540
+And that allows us not to get queries for unknown hosts and things like that.
+
+65
+00:04:34,870 --> 00:04:35,890
+So that's our configuration.
+
+66
+00:04:36,100 --> 00:04:36,790
+So that's all right.
+
+67
+00:04:38,200 --> 00:04:40,720
+Now, once we have that config variable, we get a connection.
+
+68
+00:04:41,170 --> 00:04:47,110
+Con is my variable name and we'll check for an error, and that is those are assigned the value of SSA.
+
+69
+00:04:47,230 --> 00:04:47,860
+Don't dial.
+
+70
+00:04:48,400 --> 00:04:50,710
+That's how you connect to an SSA SFTP server.
+
+71
+00:04:51,850 --> 00:04:54,790
+And our method is TCP, which is standard for the internet.
+
+72
+00:04:55,960 --> 00:05:00,040
+We're going to ADR the address, which is the host and the port.
+
+73
+00:05:00,460 --> 00:05:06,550
+And we're using the config values stored in config and we'll check for an error if error is not equal
+
+74
+00:05:06,550 --> 00:05:07,030
+to nil.
+
+75
+00:05:07,270 --> 00:05:12,100
+And I'll return nil for the client because we don't have one and the error.
+
+76
+00:05:13,870 --> 00:05:17,770
+But if we get past that now, we can get our client client.
+
+77
+00:05:18,850 --> 00:05:26,830
+And again, checking for an error there assign the value of from the SFO, S.F. TP Package Dot new client
+
+78
+00:05:27,730 --> 00:05:32,980
+and that requires a connection which we just made called Con, and we'll check for an error again.
+
+79
+00:05:32,980 --> 00:05:34,480
+So I'll just copy and paste this error.
+
+80
+00:05:34,480 --> 00:05:34,810
+Check
+
+81
+00:05:37,690 --> 00:05:38,790
+and paste that in here.
+
+82
+00:05:43,670 --> 00:05:49,940
+And now, once we're connected, we want to find out what the working directory is, what's the current
+
+83
+00:05:49,940 --> 00:05:51,240
+directory on the server?
+
+84
+00:05:51,260 --> 00:05:57,810
+So I'm going to store that in a variable called S.W.A.T and I'll check for an error and those come from
+
+85
+00:05:57,830 --> 00:06:03,300
+Client Dot, get WD, get working directory, OK?
+
+86
+00:06:03,320 --> 00:06:07,400
+And I'm just going to print that out just so we can see what the directory is on the print line.
+
+87
+00:06:11,580 --> 00:06:16,230
+Current working directory, this is just for our information.
+
+88
+00:06:17,370 --> 00:06:22,560
+OK, and finally, I'll return the client and Neal, because there was no error.
+
+89
+00:06:23,400 --> 00:06:25,650
+So now I have a means of connecting to the server.
+
+90
+00:06:26,160 --> 00:06:28,470
+So now let's take care of our put function.
+
+91
+00:06:28,500 --> 00:06:30,240
+And that's the one will do in this lecture.
+
+92
+00:06:30,330 --> 00:06:34,510
+Now, Put takes two parameters file name and where do you want to put it?
+
+93
+00:06:34,530 --> 00:06:35,130
+The folder?
+
+94
+00:06:35,220 --> 00:06:35,640
+OK.
+
+95
+00:06:36,030 --> 00:06:41,310
+And it potentially returns an error, and we can't change the parameters because if we do, we will
+
+96
+00:06:41,310 --> 00:06:46,030
+no longer satisfy the interface for file systems fs.
+
+97
+00:06:46,170 --> 00:06:49,020
+So that's a limitation that we have, but it's not a big problem.
+
+98
+00:06:50,190 --> 00:06:52,020
+So right now, this stub function returns nil.
+
+99
+00:06:52,440 --> 00:06:57,060
+The very first thing I want to do is get a client and check for an error, and I get that by calling
+
+100
+00:06:57,060 --> 00:07:00,450
+ask, don't get credentials and we check for an error.
+
+101
+00:07:01,020 --> 00:07:04,260
+If error is not equal to nil, then we'll return the error.
+
+102
+00:07:05,310 --> 00:07:11,700
+OK, so now we have a client, but we want to make sure that client doesn't stay open because it will
+
+103
+00:07:11,700 --> 00:07:17,830
+actually keep our connection to the SFP server open and eventually we'll run out of connections.
+
+104
+00:07:17,840 --> 00:07:20,860
+So we have to put in a defer client.
+
+105
+00:07:20,860 --> 00:07:21,510
+Got close.
+
+106
+00:07:24,000 --> 00:07:26,880
+And of course, that will run when this function exits.
+
+107
+00:07:27,060 --> 00:07:31,740
+And at that point, our put operation should be done and we want that connection to be closed.
+
+108
+00:07:32,730 --> 00:07:37,290
+And this the rest of this function is remarkably similar to to mine, i o.
+
+109
+00:07:37,320 --> 00:07:40,680
+But of course, we're using type, so there are some differences.
+
+110
+00:07:40,710 --> 00:07:44,700
+So I'll declare a variable f for file and I'll check for an error.
+
+111
+00:07:44,850 --> 00:07:48,060
+And those come from the OAC package part of the standard library.
+
+112
+00:07:48,450 --> 00:07:49,020
+I'll open.
+
+113
+00:07:52,170 --> 00:07:56,850
+And I'm opening a file, and the file I'm opening, of course, is the parameter pass to this function
+
+114
+00:07:56,970 --> 00:07:57,510
+file name.
+
+115
+00:07:59,850 --> 00:08:03,140
+So it's open now and again we'll look for an error.
+
+116
+00:08:03,150 --> 00:08:07,830
+So I'll copy and paste this error checking right here because it's exactly the same.
+
+117
+00:08:09,350 --> 00:08:15,170
+But if I've opened it, then I need to close it when this function is done, so again, defer foreclose.
+
+118
+00:08:17,330 --> 00:08:18,680
+So now I have opened my client.
+
+119
+00:08:18,920 --> 00:08:25,550
+I've opened a file and I've deferred clothes for both of the client and the file itself.
+
+120
+00:08:26,930 --> 00:08:29,050
+Now I need to create a file called F-2.
+
+121
+00:08:29,750 --> 00:08:30,940
+I can call it whatever I want.
+
+122
+00:08:30,940 --> 00:08:32,480
+That's just a variable name I'm choosing.
+
+123
+00:08:33,169 --> 00:08:36,230
+And again, I'm checking for an error and I'll call client.
+
+124
+00:08:36,350 --> 00:08:40,549
+That's our SFB Client Dot create, and I'm going to create.
+
+125
+00:08:40,580 --> 00:08:48,800
+I want the base file name of what was passed to us in file name, so it might be slash temp slash,
+
+126
+00:08:48,800 --> 00:08:50,960
+whatever the file name, I just want the file name.
+
+127
+00:08:51,050 --> 00:08:52,820
+And again, I can use that path base.
+
+128
+00:08:52,820 --> 00:08:55,160
+So path to spell, right?
+
+129
+00:08:56,180 --> 00:08:58,760
+Don Bass and I give it filing.
+
+130
+00:08:58,910 --> 00:09:02,810
+And that gives me the name of the file that I want to create, which will be the same as the name of
+
+131
+00:09:02,810 --> 00:09:07,190
+the file that was uploaded and will paste in our check.
+
+132
+00:09:08,300 --> 00:09:13,550
+And now we again defer to foreclose because we don't want to leave that file open either.
+
+133
+00:09:13,550 --> 00:09:17,180
+Or we'll have a resource leak and bad things will happen eventually.
+
+134
+00:09:18,940 --> 00:09:26,020
+And finally, I want to copy F2 or F2 F2, so if we don't care about the first return value, but we
+
+135
+00:09:26,020 --> 00:09:31,540
+do care about an error and that comes from Io built right into the standard library dot copy.
+
+136
+00:09:32,080 --> 00:09:33,640
+Our destination is F2.
+
+137
+00:09:33,700 --> 00:09:36,310
+That file we created using the SFD clients.
+
+138
+00:09:36,310 --> 00:09:39,400
+So that's on the remote server and we're copying F..
+
+139
+00:09:40,750 --> 00:09:43,030
+And if error is not equal to nil.
+
+140
+00:09:51,260 --> 00:09:55,490
+Then we'll return the error return to Earth.
+
+141
+00:09:56,860 --> 00:10:02,180
+Otherwise, everything worked as expected, so that should do the trick for us.
+
+142
+00:10:04,100 --> 00:10:05,660
+Now is there anything missing here?
+
+143
+00:10:05,840 --> 00:10:11,120
+Well, one thing that I notice is that I have that variable folder that I'm not using.
+
+144
+00:10:11,960 --> 00:10:15,260
+And of course, that tells me where I want to put it on the remote server.
+
+145
+00:10:15,800 --> 00:10:18,000
+Well, let's just leave it like that for right now.
+
+146
+00:10:18,140 --> 00:10:22,100
+And when we start experimenting with this, we'll see if we need to make any changes.
+
+147
+00:10:22,190 --> 00:10:23,420
+But that's enough to get us started.
+
+148
+00:10:24,050 --> 00:10:24,410
+OK?
+
+149
+00:10:24,740 --> 00:10:28,130
+We'll move on in the next lecture to the next required function.
+
+150
+00:10:28,400 --> 00:10:29,000
+Let's move on.
+

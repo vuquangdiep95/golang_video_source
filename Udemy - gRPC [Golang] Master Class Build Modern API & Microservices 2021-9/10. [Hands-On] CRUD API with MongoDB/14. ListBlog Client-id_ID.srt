@@ -1,0 +1,164 @@
+1
+00:00:00,210 --> 00:00:03,110
+OK, mari kita lanjutkan dan menerapkan klien bla kami.
+
+2
+00:00:03,120 --> 00:00:08,330
+Jadi yang ini kami hanya akan daftar semua blog yang akan segera daftar blog di sini.
+
+3
+00:00:08,340 --> 00:00:11,040
+Jadi mari kita lanjutkan dan mengimplementasikan fungsi total kami.
+
+4
+00:00:11,060 --> 00:00:15,480
+Sekarang ini adalah pemangkasan layanan sehingga cara terbaik Anda mengingat bagaimana melakukan sesuatu adalah dengan melihat
+
+5
+00:00:15,480 --> 00:00:19,890
+contohnya klien kalkulator dan menemukan di mana kami melakukan pemangkasan layanan, jadi lakukan pemangkasan layanan.
+
+6
+00:00:19,890 --> 00:00:21,260
+Dan di sini kami memiliki satu lingkaran.
+
+7
+00:00:21,360 --> 00:00:22,320
+Jadi ini terlihat sangat bagus.
+
+8
+00:00:22,320 --> 00:00:23,280
+Kami akan menggunakan ini.
+
+9
+00:00:23,310 --> 00:00:24,720
+Kami sudah sering menggunakan ini.
+
+10
+00:00:24,720 --> 00:00:27,250
+Jadi saya hanya akan menempelkan ini ke klien blog saya.
+
+11
+00:00:27,420 --> 00:00:34,520
+Jadi hal pertama yang harus kita lakukan adalah memanggil server kita sehingga kita akan mengatakan klien bahwa daftar LUGG akan menggunakan
+
+12
+00:00:34,540 --> 00:00:35,810
+konteks latar belakang.
+
+13
+00:00:36,090 --> 00:00:38,940
+Dan kemudian dalam hal permintaan daftar kita harus membuatnya.
+
+14
+00:00:39,210 --> 00:00:41,140
+Tapi ternyata itu permintaan kosong.
+
+15
+00:00:41,160 --> 00:00:44,040
+Jadi saya hanya akan melewati kurung kosong.
+
+16
+00:00:44,040 --> 00:00:45,960
+Kami tidak memerlukan opsi panggilan apa pun sehingga kami baik-baik saja.
+
+17
+00:00:46,470 --> 00:00:52,140
+Apa yang kita dapatkan dari ini akan menjadi udara atau aliran.
+
+18
+00:00:52,140 --> 00:00:55,240
+Jadi mari kita lakukan dan lihat bagaimana kita bisa maju.
+
+19
+00:00:55,410 --> 00:00:59,620
+Di sini kita akan memiliki tentara aliran udara menyalin ini kembali ke sini.
+
+20
+00:00:59,750 --> 00:01:00,010
+BAIK.
+
+21
+00:01:00,030 --> 00:01:00,900
+Luar biasa.
+
+22
+00:01:01,320 --> 00:01:06,630
+Jadi sekarang kita dapat mengatakan Eric sambil memanggil tampilan ini jelas ada kesalahan jelas
+
+23
+00:01:06,630 --> 00:01:13,310
+ketika kita daftar blog dan kemudian kita melihat menerima streambed ini memungkinkan kita untuk menerima elemen dari aliran.
+
+24
+00:01:13,380 --> 00:01:18,570
+Ingat jika kita mengudara yang merupakan akhir dari file itu berarti server telah menutup aliran streaming
+
+25
+00:01:18,570 --> 00:01:23,840
+yang sudah selesai kita baca sehingga kita dapat memecahkan kode jika tidak jadi kita memecahkan perulangan untuk benar.
+
+26
+00:01:23,880 --> 00:01:29,930
+Jika tidak, jika ada kesalahan kesalahan Nundle maka sesuatu yang lain terjadi dan kemudian kami hanya mencetak Anda tahu
+
+27
+00:01:29,930 --> 00:01:37,050
+di layar mungkin hanya hasilnya jadi kami akan mengatakan hasil yang mendapatkan Blug karena di sini kami mendapatkan bug dari itu dan
+
+28
+00:01:37,110 --> 00:01:40,180
+katakanlah ini adalah bagaimana untuk meyakinkan Anda tinggal blog.
+
+29
+00:01:40,200 --> 00:01:45,570
+Jadi cukup mudah ketika kita bisa menyalin dan menempelkan kode dari latihan lain yang kita lakukan.
+
+30
+00:01:45,790 --> 00:01:48,130
+Jadi mari kita lanjutkan dan jalankan kode ini sekarang.
+
+31
+00:01:48,940 --> 00:01:50,100
+Lihat cara kerjanya.
+
+32
+00:01:50,140 --> 00:01:55,870
+Dan ya yang keren adalah bahwa sekarang setelah plug dihapus, kita mendapatkan banyak blog yang berbeda di
+
+33
+00:01:55,870 --> 00:01:56,580
+sini.
+
+34
+00:01:56,770 --> 00:02:00,280
+Jadi kita bisa melihat semua konten dan semua ID blog dan lain-lain.
+
+35
+00:02:00,460 --> 00:02:04,260
+Jadi di sini kita baru saja melakukan panggilan pemangkasan layanan klien yang agak rapi.
+
+36
+00:02:04,480 --> 00:02:07,370
+Dan menggunakan mongered sebagai backend yang super keren.
+
+37
+00:02:07,630 --> 00:02:13,000
+Jadi itu saja untuk semua minyak mentah jelas Anda dapat bermain-main dan mencoba untuk mengimplementasikan lebih banyak hal tetapi
+
+38
+00:02:13,000 --> 00:02:19,740
+mudah-mudahan itu memberi Anda gambaran tentang bagaimana Anda harus mengintegrasikan edgier atau PC API atau API apa pun dengan database dan pada gambar berikutnya
+
+39
+00:02:19,740 --> 00:02:23,500
+saya hanya ingin melakukan sesuatu yang sangat keren yang akan menggunakan Evans Steeleye hanya
+
+40
+00:02:23,500 --> 00:02:24,640
+untuk bermain-main sedikit.
+
+41
+00:02:24,730 --> 00:02:26,050
+Jadi lihat di gambar selanjutnya.
+

@@ -1,0 +1,268 @@
+1
+00:00:00,680 --> 00:00:03,360
+OK jadi mari kita lanjutkan dengan mengimplementasikan server ini.
+
+2
+00:00:03,360 --> 00:00:06,520
+Ini adalah kuliah tangan dan satu mengimplementasikan karya seni hebat.
+
+3
+00:00:06,930 --> 00:00:09,760
+Kami akan mengaitkan layanan ke server kami dan dekat dengan server kami.
+
+4
+00:00:09,990 --> 00:00:11,330
+Jadi mari kita mulai.
+
+5
+00:00:11,850 --> 00:00:18,210
+OK jadi sekarang hal yang menarik yang harus kita lakukan adalah server ini mengimplementasikan antarmuka yang kita miliki
+
+6
+00:00:18,210 --> 00:00:19,080
+di sini.
+
+7
+00:00:19,260 --> 00:00:25,530
+Jadi, inilah jenis jenis antarmuka server layanan grete dan ada fungsi hebat di atasnya.
+
+8
+00:00:25,590 --> 00:00:27,870
+Jadi kita perlu mengimplementasikan hal ini.
+
+9
+00:00:27,870 --> 00:00:33,410
+Jadi apa yang akan Anda lakukan adalah pergi ke server kami dan sekarang kami akan melakukan sesuatu yang jauh lebih menarik.
+
+10
+00:00:33,420 --> 00:00:41,100
+Kami akan mengatakan funk pada pointer ke server kami.
+
+11
+00:00:41,180 --> 00:00:45,960
+Sapa akan lulus dalam konteks dan kami akan mendasarkan permintaan.
+
+12
+00:00:45,960 --> 00:00:49,450
+Jadi Rick West atau apa pun yang Anda inginkan.
+
+13
+00:00:49,650 --> 00:00:51,980
+Dan di sini adalah tipe pengembalian.
+
+14
+00:00:52,110 --> 00:00:54,320
+Jadi sekarang kita harus mengimplementasikan fungsi ini.
+
+15
+00:00:54,570 --> 00:01:01,880
+Jadi seperti yang kita lihat konteksnya di sini telah diimpor dan permintaannya tidak ditentukan.
+
+16
+00:01:01,960 --> 00:01:04,430
+Jadi karena di sini kapan Anda bilang Hebat.
+
+17
+00:01:04,550 --> 00:01:08,870
+Permintaan hebat karena permintaan datang langsung dari file yang dihasilkan.
+
+18
+00:01:09,200 --> 00:01:09,520
+Baik.
+
+19
+00:01:09,530 --> 00:01:11,150
+Dan respon sederhana.
+
+20
+00:01:11,180 --> 00:01:11,910
+Bagus.
+
+21
+00:01:12,270 --> 00:01:13,990
+Respons yang bagus dan ini dia.
+
+22
+00:01:14,010 --> 00:01:19,420
+Sekarang kita perlu mengimplementasikan fungsi ini sehingga untuk mengimplementasikan fungsi ini cukup mudah.
+
+23
+00:01:19,470 --> 00:01:21,020
+Yang ingin kami lakukan adalah kembali.
+
+24
+00:01:21,030 --> 00:01:21,390
+Halo.
+
+25
+00:01:21,410 --> 00:01:22,350
+Dan nama depan.
+
+26
+00:01:22,590 --> 00:01:24,590
+Jadi pertama-tama kami membutuhkan Anda mendapatkan nama depan.
+
+27
+00:01:24,870 --> 00:01:28,620
+Jika kita melihat permintaan ada yang mendapat salam.
+
+28
+00:01:28,710 --> 00:01:33,840
+OK karena permintaannya adalah struct dan mengandung salam di dalamnya.
+
+29
+00:01:34,110 --> 00:01:41,300
+Jadi kita bisa mendapatkan salam sebagai fungsi salam dan kemudian mengembalikan salam itu sendiri dan kemudian kita bisa mendapatkan
+
+30
+00:01:41,360 --> 00:01:44,630
+nama depan dan itu memberi kita nama depan.
+
+31
+00:01:44,630 --> 00:01:45,650
+Jadi kami lakukan.
+
+32
+00:01:45,980 --> 00:01:49,780
+Nama depan sama dengan ini.
+
+33
+00:01:49,930 --> 00:01:55,580
+Dan begitulah cara kita mengekstrak informasi dari objek permintaan kita.
+
+34
+00:01:55,680 --> 00:01:56,970
+Jadi instruksikan.
+
+35
+00:01:56,970 --> 00:01:58,330
+Jadi itu sangat mudah.
+
+36
+00:01:58,380 --> 00:02:00,880
+Dan sekarang kita perlu membentuk respons.
+
+37
+00:02:01,200 --> 00:02:01,830
+BAIK.
+
+38
+00:02:02,130 --> 00:02:08,580
+Jadi Anda membentuk respons grup yang dapat kita lihat lagi dan ini adalah struct dan dibutuhkan hasilnya sebagai string.
+
+39
+00:02:08,580 --> 00:02:13,860
+Jadi mari kita hasilkan Mari kita bentuk tanggapan ini untuk kita sehingga kita dapat melihat hasilnya.
+
+40
+00:02:15,120 --> 00:02:20,250
+Setara dan kami akan menyapa dan kami akan menambahkan nama depan.
+
+41
+00:02:20,800 --> 00:02:21,090
+BAIK.
+
+42
+00:02:21,090 --> 00:02:24,880
+Jadi kita mendapatkan nama depan, Stefan menyapa dan nama depan.
+
+43
+00:02:25,290 --> 00:02:27,530
+Dan sekarang dari mana Anda mendapat respons yang bagus dari saya.
+
+44
+00:02:28,080 --> 00:02:33,460
+Jadi jawabannya adalah dan kami akan membuat respons salam.
+
+45
+00:02:33,460 --> 00:02:37,900
+Jadi P. disetujui B. dot respons yang bagus dan ini adalah struct.
+
+46
+00:02:37,950 --> 00:02:39,280
+Jadi kami membuka ini.
+
+47
+00:02:39,600 --> 00:02:48,940
+Dan saat kita melanjutkan, kita dapat mengatakan bahwa dibutuhkan hasil untuk menjadi sama dengan hasil yang baru saja kita buat sebelumnya dan kita
+
+48
+00:02:49,230 --> 00:02:50,460
+harus maju.
+
+49
+00:02:50,820 --> 00:02:51,670
+Dan itu saja.
+
+50
+00:02:51,700 --> 00:02:52,990
+Hasil kami dibuat.
+
+51
+00:02:53,160 --> 00:03:01,820
+Sekarang kita perlu mengembalikan respons sehingga kita semacam mengembalikan sisa nihil karena tidak ada kesalahan dan apa yang
+
+52
+00:03:01,830 --> 00:03:02,910
+kita lewatkan.
+
+53
+00:03:04,900 --> 00:03:07,570
+Ini adalah pointer di sini.
+
+54
+00:03:07,570 --> 00:03:11,090
+Jadi yang perlu saya lakukan adalah menambahkan persen di sini.
+
+55
+00:03:11,320 --> 00:03:17,860
+OK jadi sekarang kami memiliki hasil kami dan itu adalah titik untuk respons Anda dan itu merusak dan kami
+
+56
+00:03:17,860 --> 00:03:19,420
+mengembalikan respons dan nol.
+
+57
+00:03:19,660 --> 00:03:24,520
+Jadi ini adalah fungsi hebat pertama kami dan sangat mudah ketika Anda
+
+58
+00:03:24,520 --> 00:03:31,060
+melihatnya, tetapi Anda hanya perlu menguasai mengekstraksi data dari permintaan input dan membuat output sebagai struct sebagai
+
+59
+00:03:31,060 --> 00:03:32,410
+strip penyangga kritis.
+
+60
+00:03:32,470 --> 00:03:37,870
+Jadi cukup mudah tetapi tidak ada fungsi kita pada dasarnya adalah server yang baik dan mengimplementasikan apa yang kita butuhkan.
+
+61
+00:03:38,760 --> 00:03:41,300
+Jadi saya lanjutkan dan periksa semuanya.
+
+62
+00:03:41,460 --> 00:03:46,650
+Dan ya memang kami membuat server PC brengsek dan kemudian kami mendaftarkan layanan ini yang telah kami
+
+63
+00:03:46,650 --> 00:03:47,640
+tetapkan di sini.
+
+64
+00:03:47,640 --> 00:03:48,810
+Jadi semuanya.
+
+65
+00:03:48,870 --> 00:03:52,920
+Sekarang jika kami meluncurkan server semuanya harus berfungsi.
+
+66
+00:03:53,010 --> 00:03:59,060
+Jadi saya akan pergi menjalankan server dan server berjalan dan semuanya baik-baik saja.
+
+67
+00:03:59,070 --> 00:04:04,410
+Jadi dalam kuliah berikutnya kita akan melanjutkan dan benar-benar mengimplementasikan klien untuk memanggil fungsi itu.
+

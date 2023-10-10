@@ -1,0 +1,575 @@
+1
+00:00:00,890 --> 00:00:06,530
+So last time around, we managed to figure out a rather bad way of ensuring that our single go routine
+
+2
+00:00:06,530 --> 00:00:11,060
+runs, and that's by giving the program one extra second here on the line 17.
+
+3
+00:00:11,130 --> 00:00:12,500
+And that's a terrible solution.
+
+4
+00:00:12,980 --> 00:00:15,950
+Now, let's find out just exactly why that's a terrible solution.
+
+5
+00:00:16,790 --> 00:00:18,650
+So what I'm going to do is delete this line entirely.
+
+6
+00:00:19,760 --> 00:00:23,330
+And instead, I'm going to spawn more than one goal or two.
+
+7
+00:00:23,630 --> 00:00:28,910
+So what I'll do, first of all, is create a slice of strings and I'll call that slice words, and that's
+
+8
+00:00:28,910 --> 00:00:32,360
+going to be equal to a slice of string.
+
+9
+00:00:32,450 --> 00:00:33,770
+And I'll just put some words in here.
+
+10
+00:00:33,780 --> 00:00:35,180
+So we'll use the Greek alphabet.
+
+11
+00:00:35,630 --> 00:00:37,760
+Alpha, beta,
+
+12
+00:00:41,390 --> 00:00:41,900
+delta.
+
+13
+00:00:44,010 --> 00:00:45,000
+Just some Greek letters.
+
+14
+00:00:45,150 --> 00:00:45,700
+Gama.
+
+15
+00:00:46,530 --> 00:00:47,750
+In no particular order.
+
+16
+00:00:47,760 --> 00:00:55,320
+Pi and maybe Zeta and ETA of Theta.
+
+17
+00:00:56,280 --> 00:00:57,270
+Theta, if you prefer.
+
+18
+00:00:58,560 --> 00:01:00,180
+And we'll give it one more epsilon.
+
+19
+00:01:01,680 --> 00:01:02,010
+Okay.
+
+20
+00:01:02,070 --> 00:01:03,360
+Now I have a slice of strings.
+
+21
+00:01:03,780 --> 00:01:07,410
+Now, what I'm going to do this time around is below that slice of strings.
+
+22
+00:01:08,390 --> 00:01:10,490
+Is, um, going to range through it.
+
+23
+00:01:10,630 --> 00:01:19,190
+So for I don't care about the index and X are assigned the values by ringing through words
+
+24
+00:01:22,430 --> 00:01:24,860
+and then I'll call principal.
+
+25
+00:01:25,160 --> 00:01:32,840
+So print something and I'll print and I'll use a format print f to create a string format that is pronounced.
+
+26
+00:01:35,010 --> 00:01:40,460
+And my format string will be saying, actually, I'm going to keep the index in here, so we'll call
+
+27
+00:01:40,540 --> 00:01:41,190
+the index.
+
+28
+00:01:42,720 --> 00:01:48,780
+So we'll say, ah, we should get percent D, that's my placeholder and then a colon and then the word
+
+29
+00:01:49,560 --> 00:01:50,290
+percent pass.
+
+30
+00:01:51,450 --> 00:01:55,380
+And my substitutions for those are obviously on an X.
+
+31
+00:01:56,100 --> 00:01:56,520
+Okay.
+
+32
+00:01:56,880 --> 00:01:59,790
+And now I'll put the keyword go in front of that.
+
+33
+00:02:00,330 --> 00:02:00,630
+Okay.
+
+34
+00:02:01,800 --> 00:02:08,100
+So if I run the program right now, I have one, two, three, four, five, six, seven, eight, nine
+
+35
+00:02:08,100 --> 00:02:08,520
+things.
+
+36
+00:02:08,790 --> 00:02:09,120
+Okay.
+
+37
+00:02:09,240 --> 00:02:10,870
+So let's run the program and see what it looks like.
+
+38
+00:02:10,890 --> 00:02:13,440
+So could the screen and type go run dot.
+
+39
+00:02:15,170 --> 00:02:16,580
+And here's an interesting thing.
+
+40
+00:02:16,820 --> 00:02:17,450
+Look at that.
+
+41
+00:02:17,960 --> 00:02:22,130
+I actually got all nine printed, but they didn't come in any particular order.
+
+42
+00:02:22,310 --> 00:02:25,940
+And that's another important thing you have to understand about go routines.
+
+43
+00:02:26,690 --> 00:02:29,960
+It doesn't matter what order you spun them in.
+
+44
+00:02:30,020 --> 00:02:35,570
+As you can see here, I started at index zero and went right up to eight in my range statement or four
+
+45
+00:02:35,600 --> 00:02:36,410
+for loop here.
+
+46
+00:02:37,280 --> 00:02:41,180
+But they came out as 823456701.
+
+47
+00:02:41,210 --> 00:02:44,420
+And then 1/2 was long enough to get all of those printed.
+
+48
+00:02:44,570 --> 00:02:50,240
+But the problem is, you know, what happens if I change that one or this this slice of strings to one
+
+49
+00:02:50,240 --> 00:02:57,080
+that has a thousand words in it, or as is more likely, I'm querying the database and I have no idea
+
+50
+00:02:57,080 --> 00:02:58,790
+how big that slice is going to be.
+
+51
+00:02:59,120 --> 00:03:00,710
+How long should I wait?
+
+52
+00:03:00,770 --> 00:03:03,740
+Well, obviously you shouldn't wait using time, dot sleep.
+
+53
+00:03:03,800 --> 00:03:05,630
+That's a really bad idea.
+
+54
+00:03:06,440 --> 00:03:08,810
+And here's where weight groups come to the rescue and wait.
+
+55
+00:03:08,810 --> 00:03:09,890
+Groups are dead.
+
+56
+00:03:09,980 --> 00:03:11,180
+Simple to use.
+
+57
+00:03:11,330 --> 00:03:13,910
+So I'm going to delete that that time sleep.
+
+58
+00:03:14,510 --> 00:03:19,910
+And up here in the main function, the very first thing I'm going to do is create a variable Var and
+
+59
+00:03:19,910 --> 00:03:21,740
+I'll call it WG for weight group.
+
+60
+00:03:22,100 --> 00:03:25,520
+And it's a type right from the standard library, sync type weight group.
+
+61
+00:03:25,830 --> 00:03:26,150
+Okay.
+
+62
+00:03:26,750 --> 00:03:30,950
+So that could be important for me and important time, which I'll delete because I'm not using it anymore.
+
+63
+00:03:31,460 --> 00:03:32,870
+So now I have this variable weight group.
+
+64
+00:03:33,320 --> 00:03:37,250
+Now, the great thing about weight groups is they're so easy to understand.
+
+65
+00:03:37,760 --> 00:03:41,810
+It's one of three different ways of dealing with concurrency that we're going to look at in this course.
+
+66
+00:03:42,320 --> 00:03:45,860
+Really, those are the only three you ever have to worry about and go because they're the three main
+
+67
+00:03:45,860 --> 00:03:46,520
+ways of doing it.
+
+68
+00:03:47,090 --> 00:03:49,160
+And we groups, I think, are the easiest.
+
+69
+00:03:49,910 --> 00:03:54,290
+So the first thing you have to do is you have to add one entry to your weight group.
+
+70
+00:03:54,320 --> 00:03:58,010
+It's just an integer, one entry for everything you need to wait for.
+
+71
+00:03:58,100 --> 00:03:58,490
+Okay.
+
+72
+00:03:59,270 --> 00:04:06,410
+So what I'm going to do is say, well, I have one, two, three, four, five, six, seven, eight,
+
+73
+00:04:06,500 --> 00:04:11,870
+nine things I need to wait for because I'm calling this this go print something nine times.
+
+74
+00:04:12,440 --> 00:04:17,960
+So I could down here just say WG dot ad and put in nine.
+
+75
+00:04:18,260 --> 00:04:18,560
+Okay.
+
+76
+00:04:18,650 --> 00:04:24,290
+Now I have to wait for nine things to finish before I finish before I'm done with that weight group.
+
+77
+00:04:25,210 --> 00:04:29,440
+And down here after the for loop, all I put in is WG dot weight.
+
+78
+00:04:30,220 --> 00:04:39,730
+Okay, so this on line 34 in my code, this WG the weight will wait until the weight group WG is set
+
+79
+00:04:39,730 --> 00:04:40,210
+to zero.
+
+80
+00:04:40,690 --> 00:04:47,830
+And I set it to nine here and I'm looking for a zero here, but at no point do I actually decrease the
+
+81
+00:04:47,830 --> 00:04:48,310
+weight group.
+
+82
+00:04:48,640 --> 00:04:54,220
+Well, of course, the place to do that is in the go routine for spawning, which means I need to have
+
+83
+00:04:54,220 --> 00:04:57,220
+access to that weight group in that particular go routine.
+
+84
+00:04:57,580 --> 00:05:03,760
+So what I can do is come up here to print something and say, I'm going to take a string test and I'm
+
+85
+00:05:03,760 --> 00:05:05,740
+also going to take a weight group.
+
+86
+00:05:06,070 --> 00:05:10,270
+WG Which is a pointer to center weight group.
+
+87
+00:05:11,170 --> 00:05:13,510
+And it's important that you use a pointer here.
+
+88
+00:05:13,570 --> 00:05:14,980
+And I'll explain that momentarily.
+
+89
+00:05:15,730 --> 00:05:20,380
+Now, down here in this way or in this for loop, when I call, go print something.
+
+90
+00:05:20,380 --> 00:05:21,310
+Obviously say I'm looking for it.
+
+91
+00:05:21,310 --> 00:05:24,040
+My second parameter was just WG MC group.
+
+92
+00:05:24,670 --> 00:05:30,070
+Okay, now I have an error because I'm not passing a pointer, so I need to put an ampersand in front
+
+93
+00:05:30,070 --> 00:05:30,430
+of this.
+
+94
+00:05:31,060 --> 00:05:32,830
+And there's a reason you want to do this.
+
+95
+00:05:33,190 --> 00:05:37,390
+Once you've created a weight group, you really shouldn't copy it after the fact.
+
+96
+00:05:37,570 --> 00:05:38,530
+And that's right.
+
+97
+00:05:38,530 --> 00:05:40,360
+And then the documentation for Go.
+
+98
+00:05:40,360 --> 00:05:44,790
+And it just tells you that you need to be really cautious with weight groups.
+
+99
+00:05:44,800 --> 00:05:48,060
+Don't go copying them and modifying them, just pass them around as pointers.
+
+100
+00:05:48,070 --> 00:05:49,030
+It's much simpler.
+
+101
+00:05:49,120 --> 00:05:55,150
+And of course, the last change I need to make here in print something is to hand this WG which will
+
+102
+00:05:55,150 --> 00:05:56,500
+be ignored as well.
+
+103
+00:05:57,040 --> 00:05:58,120
+And that needs to be a reference.
+
+104
+00:05:59,950 --> 00:06:06,370
+Now, the last step in this process, I'm now passing a pointer to weight group up to this function
+
+105
+00:06:06,370 --> 00:06:09,490
+print something I need to decrement by one.
+
+106
+00:06:09,490 --> 00:06:11,680
+And that's as simple as using the defer keyword.
+
+107
+00:06:11,830 --> 00:06:18,130
+And I'm sure you've seen this many times and go, but just to be safe, Defer says whatever comes after
+
+108
+00:06:18,130 --> 00:06:22,090
+this, don't execute it until the current function exits.
+
+109
+00:06:22,450 --> 00:06:30,100
+So what I want to do is say WG, dot, dot and that will decrement the weight group by one.
+
+110
+00:06:30,400 --> 00:06:35,920
+Now let's run this program, see how it looks so clear the screen and type.
+
+111
+00:06:35,920 --> 00:06:37,030
+Go run dot.
+
+112
+00:06:38,800 --> 00:06:43,890
+And I have a negative weight group counter now that is completely to be expected.
+
+113
+00:06:43,900 --> 00:06:45,520
+And I'm sure you saw this error coming.
+
+114
+00:06:45,730 --> 00:06:46,180
+Why?
+
+115
+00:06:46,210 --> 00:06:47,220
+Let's close the terminal.
+
+116
+00:06:47,230 --> 00:06:48,040
+Come back here.
+
+117
+00:06:49,030 --> 00:06:53,170
+When I started here in the function I declare in the main function and declare weight group.
+
+118
+00:06:53,410 --> 00:06:55,180
+Then I create my slices strings.
+
+119
+00:06:55,180 --> 00:06:56,420
+Then I add nine to it.
+
+120
+00:06:56,810 --> 00:07:02,710
+Then I call this function as a go routine with a keyword go nine times.
+
+121
+00:07:03,070 --> 00:07:09,820
+So by the time I get to this line 36 and get to zero when I get to the next one.
+
+122
+00:07:10,510 --> 00:07:13,120
+Of course, Weight Group is already at zero.
+
+123
+00:07:13,270 --> 00:07:18,310
+So to make this compile, I can just do this WG to add one.
+
+124
+00:07:20,290 --> 00:07:25,090
+And now if I clear the screen in my terminal and run the program again, everything should run as expected.
+
+125
+00:07:25,090 --> 00:07:26,470
+And it does.
+
+126
+00:07:27,190 --> 00:07:31,360
+And of course, if I run this many, many times, I'm going to get different results.
+
+127
+00:07:31,630 --> 00:07:36,970
+The first time around, the last word printed was number three, which is, of course, and position
+
+128
+00:07:36,970 --> 00:07:38,050
+four in the slice.
+
+129
+00:07:38,050 --> 00:07:40,050
+That's Gamma at the second time I ran it.
+
+130
+00:07:40,060 --> 00:07:40,690
+It's Delta.
+
+131
+00:07:41,200 --> 00:07:42,610
+So key things to remember.
+
+132
+00:07:42,790 --> 00:07:48,580
+Weight groups are really easy to use but never try to get them below zero or bad things happen.
+
+133
+00:07:49,300 --> 00:07:53,890
+And the second thing to remember is if you have multiple go routines running at the same time, even
+
+134
+00:07:53,890 --> 00:07:58,750
+if they're the same function, you have no guarantee as to what order they complete.
+
+135
+00:07:58,750 --> 00:08:02,160
+And that's entirely decided by the Go's scheduler.
+
+136
+00:08:02,450 --> 00:08:08,110
+Okay, so that's our brief introduction to weight groups will be seeing much, much more of these as
+
+137
+00:08:08,110 --> 00:08:08,950
+time goes on.
+
+138
+00:08:09,370 --> 00:08:14,320
+And of course, the last thing I can change here is if I don't know how big the slice is going to be,
+
+139
+00:08:14,380 --> 00:08:15,730
+I don't have to add nine.
+
+140
+00:08:16,120 --> 00:08:23,220
+I can just add the length of words, and that's a much more useful way of doing it, because in this
+
+141
+00:08:23,230 --> 00:08:25,450
+simple example, this is never going to change.
+
+142
+00:08:25,900 --> 00:08:31,870
+But if word is actually populated by calling a remote API, getting some Jason, putting it into a slice
+
+143
+00:08:31,870 --> 00:08:36,220
+of strings, you never know how long it's going to be and this just makes much more sense.
+
+144
+00:08:36,340 --> 00:08:37,900
+Okay, let's move on.

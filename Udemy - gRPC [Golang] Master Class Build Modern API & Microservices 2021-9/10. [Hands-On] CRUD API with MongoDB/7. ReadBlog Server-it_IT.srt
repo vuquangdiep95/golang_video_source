@@ -1,0 +1,636 @@
+1
+00:00:00,180 --> 00:00:04,280
+OK, dopo ci occuperemo dell'API di lettura del blog.
+
+2
+00:00:04,290 --> 00:00:06,980
+Quindi andiamo avanti e aggiungere un gioco di ruolo.
+
+3
+00:00:07,890 --> 00:00:15,070
+E questo si chiamerà blog letti, quindi farò Blug e quello che otterremo è una richiesta simile a una lettura e
+
+4
+00:00:15,090 --> 00:00:17,810
+quale ritorno è una risposta di ripiego.
+
+5
+00:00:17,820 --> 00:00:21,250
+Ora c'è una possibilità che questa richiesta di sostituzione non funzioni correttamente.
+
+6
+00:00:21,450 --> 00:00:28,690
+Quindi quello che dovremmo dire è che dal modo in cui restituiamo non trovato se non trovato.
+
+7
+00:00:28,920 --> 00:00:30,050
+Ha senso giusto
+
+8
+00:00:30,060 --> 00:00:36,120
+Se non troviamo un blog perché a volte chiederemo un ID errato dovremmo restituire un codice di errore
+
+9
+00:00:36,120 --> 00:00:40,200
+chiamato non trovato mai ma la richiesta ci darà una risposta.
+
+10
+00:00:40,200 --> 00:00:43,170
+Quindi qui andiamo avanti e creiamo alcuni messaggi.
+
+11
+00:00:43,170 --> 00:00:45,330
+Quindi crea la richiesta di lettura del blog.
+
+12
+00:00:45,450 --> 00:00:46,610
+E cosa vogliamo fuori da lì.
+
+13
+00:00:46,630 --> 00:00:53,300
+Beh, forse vogliamo solo una stringa ID blog Blug underscore ID uguale a uno.
+
+14
+00:00:53,400 --> 00:00:54,900
+E così questo è ciò che ne ricaviamo.
+
+15
+00:00:55,140 --> 00:01:02,910
+E forse la risposta di Blug che vogliamo da essa sarà Blug in sé che ha senso perché abbiamo richiesto Blug ID e
+
+16
+00:01:03,360 --> 00:01:09,560
+vogliamo che il contenuto di quello che blocca il suo blog sia uguale a un esone OK.
+
+17
+00:01:09,570 --> 00:01:11,060
+Quindi questo è abbastanza buono.
+
+18
+00:01:11,070 --> 00:01:13,530
+Ora dobbiamo andare avanti e generare il nostro codice.
+
+19
+00:01:13,530 --> 00:01:18,720
+Quindi lascia andare e basta farlo ora nella nostra interfaccia a linea di comando che è proprio qui.
+
+20
+00:01:19,150 --> 00:01:19,560
+OK.
+
+21
+00:01:19,570 --> 00:01:26,610
+Potrebbe essere stato generato e ora possiamo procedere al passaggio successivo e implementare sostanzialmente il nostro server.
+
+22
+00:01:27,180 --> 00:01:31,940
+Quindi la funzione che dovrà implementare è leggere Blug e per questo sapere esattamente la firma della
+
+23
+00:01:32,210 --> 00:01:37,760
+funzione lascia andare di nuovo al nostro servizio blog ed ecco la funzione di blocco di lettura che è stata aggiunta.
+
+24
+00:01:37,920 --> 00:01:40,540
+Quindi copio e incollo questo qui.
+
+25
+00:01:40,590 --> 00:01:48,300
+E così come prima creerà una funzione su un server chiamato Read Blug e avremo il contesto.
+
+26
+00:01:48,420 --> 00:01:50,630
+Beh, si chiama CTX.
+
+27
+00:01:51,510 --> 00:01:58,220
+E poi la richiesta di lettura Blug verrà chiamata REC e la richiesta di conferma della lettura di Blug verrà eseguita.
+
+28
+00:01:58,230 --> 00:02:01,870
+E infine per la risposta sono stati bloccati anche i prefissi.
+
+29
+00:02:02,400 --> 00:02:04,820
+OK implementiamo questa funzione ora.
+
+30
+00:02:04,960 --> 00:02:10,470
+E quindi risulta che non sarà troppo difficile essere onesti perché la lettura di Blug è in realtà
+
+31
+00:02:10,470 --> 00:02:11,310
+abbastanza semplice.
+
+32
+00:02:11,490 --> 00:02:16,770
+L'unica cosa che sarà difficile è trattare i casi di errore nel caso in cui le cose vadano male nel caso in
+
+33
+00:02:17,130 --> 00:02:21,280
+cui non riusciamo a trovare un blog o non possiamo analizzare l'ID e quel tipo di cose.
+
+34
+00:02:21,300 --> 00:02:23,140
+Che ne dici se facciamo proprio questo.
+
+35
+00:02:23,430 --> 00:02:31,310
+Bene, l'energia Blug equivale alla richiesta di ottenere l'ID Blug.
+
+36
+00:02:31,370 --> 00:02:31,550
+Tutto ok.
+
+37
+00:02:31,550 --> 00:02:32,840
+È un buon inizio.
+
+38
+00:02:32,840 --> 00:02:36,030
+Ora che Blug deve essere convertito in un ID oggetto.
+
+39
+00:02:36,380 --> 00:02:40,420
+Se ti ricordi da prima abbiamo dedotto il tipo di ID di essere un ID oggetto.
+
+40
+00:02:40,820 --> 00:02:43,460
+Quindi un ID oggetto è solo un tipo B.
+
+41
+00:02:43,490 --> 00:02:47,060
+E quindi ci sono modi per noi di creare ID oggetto in movimento.
+
+42
+00:02:47,480 --> 00:02:55,790
+Quindi, quello che faremo è che il nostro ID sarà uguale e ci sarà un errore nel caso
+
+43
+00:02:55,790 --> 00:03:01,480
+in cui fallisca l'id oggetto da Hex e poi il blog Besen.
+
+44
+00:03:01,850 --> 00:03:09,630
+Quindi, prima che avessimo un esagono di due, così quando abbiamo fatto il punto esadecimale ci ha dato l'idea di una stringa esadecimale.
+
+45
+00:03:09,950 --> 00:03:15,050
+E ora ovviamente c'è un diavolo dove possiamo passare quello che vogliamo.
+
+46
+00:03:15,050 --> 00:03:19,700
+Quindi all'ID del libro mancano due punti perché è una nuova variabile.
+
+47
+00:03:19,730 --> 00:03:20,810
+OK.
+
+48
+00:03:22,170 --> 00:03:27,860
+Quindi dovrebbe essere Blug Id solo così è felice o OK.
+
+49
+00:03:27,930 --> 00:03:28,470
+Eccellente.
+
+50
+00:03:28,730 --> 00:03:36,140
+Così ora abbiamo un'idea e fondamentalmente deduciamo e creiamo un oggetto id oggetto dalla rappresentazione esadecimale chiamata Blog
+
+51
+00:03:36,140 --> 00:03:40,250
+ID e questo dà un ID o un errore.
+
+52
+00:03:40,550 --> 00:03:42,110
+Quindi questo è abbastanza buono.
+
+53
+00:03:42,110 --> 00:03:44,110
+Ora quello che dobbiamo fare è affrontare questo errore.
+
+54
+00:03:44,120 --> 00:03:50,780
+Quindi se l'errore non è sapere cosa potrebbe essere successo bene, si scopre che se otteniamo un errore da questa
+
+55
+00:03:50,870 --> 00:03:55,400
+funzione significa che ciò che abbiamo passato non è una stringa esadecimale.
+
+56
+00:03:55,520 --> 00:03:57,110
+Questo è ciò che oggi dice Mangu.
+
+57
+00:03:57,440 --> 00:04:01,190
+Quindi in questo caso il cliente non ci ha inviato qualcosa di corretto.
+
+58
+00:04:01,310 --> 00:04:10,540
+Quindi diremo lo stato che è f e il codice stesso è stato creato perché è argomenti validi.
+
+59
+00:04:10,940 --> 00:04:15,780
+Argomenti non validi perché il client non ha inviato gli argomenti giusti.
+
+60
+00:04:15,830 --> 00:04:18,650
+Ci ha mandato qualcosa di sbagliato che non abbiamo potuto analizzare.
+
+61
+00:04:18,770 --> 00:04:28,740
+E poi, in termini di messaggio di errore, perché vogliamo essere amichevoli, diremo che Sprint f non può identificarsi con le parti
+
+62
+00:04:28,980 --> 00:04:33,850
+e quindi la spesa dovrà venire al termine del chiamante.
+
+63
+00:04:33,880 --> 00:04:37,060
+E qui andiamo, ci siamo occupati di quell'amnestico.
+
+64
+00:04:37,120 --> 00:04:40,590
+Ora continuiamo ad andare avanti e guardiamo cosa succede.
+
+65
+00:04:40,720 --> 00:04:47,500
+Ora abbiamo un oggetto e ora dobbiamo recuperare l'oggetto da un buon Heebee per quanto riguarda i dati
+
+66
+00:04:47,500 --> 00:04:48,150
+corrispondenti.
+
+67
+00:04:48,430 --> 00:04:54,940
+Quindi farò i dati e creerò fondamentalmente una struttura vuota o creerò una
+
+68
+00:04:54,940 --> 00:05:03,300
+struttura vuota. Creerò alcuni dati e sarà un puntatore di un elemento del blog e lo svuoteremo.
+
+69
+00:05:03,470 --> 00:05:08,300
+E così fondamentalmente i dati leggeranno che saranno inseriti in quei dati.
+
+70
+00:05:08,470 --> 00:05:10,570
+Sembra che mi manchi qualcosa qui.
+
+71
+00:05:10,660 --> 00:05:12,170
+Sì, ovviamente mi manca.
+
+72
+00:05:12,310 --> 00:05:14,370
+E padre questo è.
+
+73
+00:05:14,380 --> 00:05:20,830
+E a proposito qui dirò semplicemente in cima aggiungeremo semplicemente il fatto che abbiamo una richiesta Blug
+
+74
+00:05:20,830 --> 00:05:21,550
+letta.
+
+75
+00:05:21,640 --> 00:05:22,030
+OK.
+
+76
+00:05:22,120 --> 00:05:23,030
+Eccellente.
+
+77
+00:05:23,500 --> 00:05:28,010
+Quindi è stato chiamato down e quindi abbiamo questa struttura vuota
+
+78
+00:05:28,760 --> 00:05:35,040
+e fondamentalmente dovremo riempire è la funzione per la quale verrà chiamata Vedi quella di trovarne una.
+
+79
+00:05:35,190 --> 00:05:40,900
+E quindi non si vede la sua collezione che ne trova una e quindi trovarne una troverà fondamentalmente un documento
+
+80
+00:05:40,900 --> 00:05:41,480
+per noi.
+
+81
+00:05:41,530 --> 00:05:44,270
+Dobbiamo passare un contesto in modo che sia contestualizzato.
+
+82
+00:05:44,270 --> 00:05:46,930
+Quello sfondo proprio come prima.
+
+83
+00:05:47,170 --> 00:05:53,210
+Ad ogni modo se passi un filtro e alcune opzioni le opzioni di cui non abbiamo bisogno e il filtro è qualcosa di nuovo.
+
+84
+00:05:53,440 --> 00:05:58,330
+Quindi, se passiamo attraverso la documentazione o ne troviamo uno, vediamo che il filtro è un'interfaccia e un'interfaccia di ingresso, quindi dovremo
+
+85
+00:05:58,330 --> 00:06:01,680
+capire cosa ci hai messo dentro e mi ci è voluto un po 'per capirlo.
+
+86
+00:06:01,990 --> 00:06:09,340
+Ma dice OK, in pratica si fornisce un documento trasferito come una base e B alcuni documenti e questo
+
+87
+00:06:09,340 --> 00:06:13,400
+filtrerà ciò di cui abbiamo bisogno in Magdi e restituitelo.
+
+88
+00:06:13,540 --> 00:06:18,660
+Quindi il filtro è solo l'unica cosa che può richiedere molto tempo per andare bene.
+
+89
+00:06:18,670 --> 00:06:22,790
+Quindi, ecco per te è basato sui nuovi documenti.
+
+90
+00:06:23,260 --> 00:06:26,740
+E questo deriva dalla documentazione in realtà se si guarda la documentazione è
+
+91
+00:06:26,740 --> 00:06:28,590
+possibile sfogliarla e vedrai come funziona.
+
+92
+00:06:28,870 --> 00:06:33,220
+E poi faremo la canzone che vedi quell'oggetto.
+
+93
+00:06:35,150 --> 00:06:41,320
+Id underscore ID e quindi l'ID stesso che abbiamo appena analizzato.
+
+94
+00:06:41,320 --> 00:06:44,460
+Quindi lasciatemi solo spiegare questa linea di codice perché può essere piuttosto complicata.
+
+95
+00:06:44,590 --> 00:06:48,440
+Il filtro deve essere basato su documenti che saranno alcuni dei nuovi documenti.
+
+96
+00:06:48,670 --> 00:06:50,550
+E poi praticamente sei passato in condizioni.
+
+97
+00:06:50,860 --> 00:06:58,480
+E qui diciamo che vogliamo che l'ID oggetto con l'ID di sottolineatura del nome del campo sia uguale all'ID che abbiamo
+
+98
+00:06:58,540 --> 00:07:02,490
+appena dedotto da ciò che è stato passato dalla richiesta.
+
+99
+00:07:02,560 --> 00:07:04,260
+E quindi questa è fondamentalmente una dichiarazione dove.
+
+100
+00:07:04,270 --> 00:07:04,810
+Destra.
+
+101
+00:07:04,840 --> 00:07:06,180
+Molto molto semplice.
+
+102
+00:07:06,580 --> 00:07:11,480
+E quindi quello che facciamo ora è che possiamo personalmente filtrare e raccogliere non trovarne uno.
+
+103
+00:07:11,710 --> 00:07:15,190
+Ora andiamo a trovarne uno e vediamo cosa succede lì dentro.
+
+104
+00:07:15,190 --> 00:07:21,850
+Quindi scorreremo verso il basso e vedremo che restituisce un risultato del documento che ha senso.
+
+105
+00:07:21,850 --> 00:07:25,990
+Quindi andiamo e vediamo i risultati del documento, quindi diremo che
+
+106
+00:07:31,340 --> 00:07:33,870
+i risultati sono uguali a OK.
+
+107
+00:07:34,220 --> 00:07:35,280
+No, non è pizza.
+
+108
+00:07:35,330 --> 00:07:39,310
+Contesto indefinito di sfondi per qualche motivo.
+
+109
+00:07:39,390 --> 00:07:43,340
+E si scopre che sì, in effetti ho appena fatto un refuso e sono tornato a posto con te.
+
+110
+00:07:43,680 --> 00:07:44,680
+OK.
+
+111
+00:07:44,730 --> 00:07:52,110
+Quindi abbiamo questo risultato e il risultato è di tipo documento risultati e questo tipo contiene un errore o
+
+112
+00:07:52,200 --> 00:07:53,010
+un cursore.
+
+113
+00:07:53,010 --> 00:07:54,980
+E molti dei metodi su di esso.
+
+114
+00:07:55,380 --> 00:08:02,280
+Quindi il modo giusto di fare le cose ora è di fare il punto di decodifica del punto e devi passare un'interfaccia e
+
+115
+00:08:02,280 --> 00:08:05,160
+l'interfaccia sono i dati che vengono creati da prima.
+
+116
+00:08:05,160 --> 00:08:11,610
+Quindi, in pratica, decodificheremo tutti i risultati in quei dati. Phooka la funzione di decodifica.
+
+117
+00:08:11,760 --> 00:08:15,560
+Qui dice che il codice tenterà di decodificare i primi documenti in V.
+
+118
+00:08:15,600 --> 00:08:18,130
+Quindi quello che passiamo è stato un errore.
+
+119
+00:08:18,270 --> 00:08:20,330
+Sarà restituito sarà restituito.
+
+120
+00:08:20,430 --> 00:08:23,760
+E se non ci sono documenti, non ci sono documenti restituiti.
+
+121
+00:08:23,760 --> 00:08:26,780
+Quindi in pratica questo può restituire un errore a sé stante.
+
+122
+00:08:26,790 --> 00:08:29,990
+Quindi torniamo al nostro server e dobbiamo affrontare quell'errore.
+
+123
+00:08:30,030 --> 00:08:41,140
+Per questo faremo solo una riga se con errori se l'errore, perché questo dovremo fare air equals non uguale a
+
+124
+00:08:41,230 --> 00:08:41,820
+no.
+
+125
+00:08:41,840 --> 00:08:47,180
+Quindi questo è il caso di verificare se l'errore è dovuto al fatto che si tratta di una sintassi abbreviata.
+
+126
+00:08:47,530 --> 00:08:56,130
+Diranno OK Dovremmo restituire un errore ai nostri clienti e lo stato f sarà.
+
+127
+00:08:56,290 --> 00:09:00,220
+Bene, non abbiamo trovato un codice di scrittura del documento ma non lo abbiamo trovato.
+
+128
+00:09:00,490 --> 00:09:02,960
+E poi il messaggio di errore stesso.
+
+129
+00:09:03,010 --> 00:09:16,790
+Bene, possiamo solo dire che la stampa anti-taglio non riesce a trovare LUGG con un ID specificato qualcosa del genere.
+
+130
+00:09:16,910 --> 00:09:17,470
+OK.
+
+131
+00:09:17,790 --> 00:09:23,520
+Sembra che l'errore che è stato restituito non possa essere trovato e quindi forse aggiungerò anche il
+
+132
+00:09:24,180 --> 00:09:25,560
+messaggio di Mangieri.
+
+133
+00:09:25,620 --> 00:09:28,340
+Eccoci e aggiungeremo un commento alla fine.
+
+134
+00:09:28,590 --> 00:09:29,310
+Quindi questo è perfetto.
+
+135
+00:09:29,310 --> 00:09:33,510
+Stiamo dicendo che qui guardi e mi mancherà sempre quel parametro.
+
+136
+00:09:33,540 --> 00:09:34,250
+Questo fa parte di questo.
+
+137
+00:09:34,260 --> 00:09:34,510
+OK.
+
+138
+00:09:34,530 --> 00:09:37,510
+Diciamo qui se non possiamo decodificare i dati.
+
+139
+00:09:37,710 --> 00:09:38,790
+C'era qualcosa di sbagliato.
+
+140
+00:09:38,970 --> 00:09:44,430
+E quindi deve esserci che l'oggetto non viene trovato perché proviamo a trovare una funzione, nel
+
+141
+00:09:44,430 --> 00:09:48,190
+qual caso restituirò un errore non trovato e quindi saremo bravi.
+
+142
+00:09:48,360 --> 00:09:55,230
+Ora, nel caso in cui tutto funzioni nel caso in cui questo codice non venga richiamato, in pratica abbiamo letto i dati
+
+143
+00:09:55,230 --> 00:09:58,750
+e li abbiamo trasposti nei dati dei nostri articoli del blog.
+
+144
+00:09:59,100 --> 00:10:07,160
+E quindi quello che possiamo fare non è restituire le risposte, quindi dovremmo restituire un PV Blug letto come risposta Blug.
+
+145
+00:10:07,650 --> 00:10:15,260
+E ciò che serve è un blog che dovrà essere dedotto da questi dati.
+
+146
+00:10:15,530 --> 00:10:23,960
+E quindi se lo guardiamo bene con te e Blug P. B. punti e Blug e aprirlo.
+
+147
+00:10:24,060 --> 00:10:25,880
+E così ora dobbiamo restituire i dati.
+
+148
+00:10:25,920 --> 00:10:35,760
+Quindi l'ID si chiamerà dati che l'ID dell'autore verrà chiamato dati dall'ID il contenuto proviene dai
+
+149
+00:10:36,420 --> 00:10:42,230
+dati il contenuto e il titolo proviene dai dati.
+
+150
+00:10:42,420 --> 00:10:47,870
+Il titolo sembra buono, siamo al training e arriviamo e qui andiamo.
+
+151
+00:10:48,150 --> 00:10:50,070
+Ovviamente ho sempre torto quando faccio queste cose.
+
+152
+00:10:50,070 --> 00:10:57,440
+Non è Neal questo è questo il chiodo e questo non funziona perché i dati che sono ID saranno una zappa
+
+153
+00:10:57,440 --> 00:11:04,580
+e oh Id ID di oggetto quindi devi fare X per ottenere la rappresentazione esadecimale e questo è tutto per un
+
+154
+00:11:04,580 --> 00:11:05,210
+server.
+
+155
+00:11:05,260 --> 00:11:06,750
+Oppure leggi la risposta di Blug.
+
+156
+00:11:06,770 --> 00:11:13,020
+Quindi dovremmo essere in grado di avviare il nostro server solo per assicurarci che tutto stia compilando bene.
+
+157
+00:11:13,280 --> 00:11:14,870
+E sì, il nostro server è avviato.
+
+158
+00:11:14,870 --> 00:11:19,130
+Quindi ora dovremo leggere i generi nella prossima lezione solo per assicurarci di poter leggere un prossimo SOSINA
+
+159
+00:11:19,160 --> 00:11:19,800
+sul blog.
+

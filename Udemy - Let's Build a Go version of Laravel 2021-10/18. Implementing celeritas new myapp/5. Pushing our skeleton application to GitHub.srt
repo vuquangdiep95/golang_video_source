@@ -1,0 +1,219 @@
+1
+00:00:01,940 --> 00:00:02,360
+All right.
+
+2
+00:00:02,420 --> 00:00:07,820
+So the next step is to push our bear application, and that's what I have opened right now in visual
+
+3
+00:00:07,820 --> 00:00:08,610
+studio code.
+
+4
+00:00:08,630 --> 00:00:09,830
+We're going to push that up to GitHub.
+
+5
+00:00:10,430 --> 00:00:16,730
+But before I do that, we're going to create one more file in here, just called Read Me, M.D. and
+
+6
+00:00:16,730 --> 00:00:27,020
+inside of that, I'm just going to put a hash mark and I'll just put a celebrity's skeleton application.
+
+7
+00:00:27,170 --> 00:00:30,650
+It's always nice to have a read me up on GitHub, and I'm just going to put that in there.
+
+8
+00:00:30,650 --> 00:00:31,970
+You can put whatever you want in there.
+
+9
+00:00:32,000 --> 00:00:37,430
+Ultimately, of course, you would put some language about how to download the binary and how to run
+
+10
+00:00:37,430 --> 00:00:41,240
+it in the fact that you don't need to clone this application, but it's entirely up to you, and this
+
+11
+00:00:41,240 --> 00:00:42,980
+is sufficient for my purposes right now.
+
+12
+00:00:43,970 --> 00:00:49,040
+So now I'm going to open a terminal in visual studio code, and I'll give myself a little more room
+
+13
+00:00:49,040 --> 00:00:49,370
+here.
+
+14
+00:00:52,400 --> 00:00:58,250
+And I'll initialize a jet repository, so get not fit, get in it.
+
+15
+00:00:59,300 --> 00:00:59,600
+OK.
+
+16
+00:01:00,050 --> 00:01:04,310
+And you might see different messages than I do here, but don't worry about it typing get in.
+
+17
+00:01:04,310 --> 00:01:06,710
+It will actually create an empty git repository.
+
+18
+00:01:07,190 --> 00:01:08,690
+Now I need to add everything into it.
+
+19
+00:01:08,900 --> 00:01:14,480
+So before I do that, why don't I create also a get ignore file?
+
+20
+00:01:14,690 --> 00:01:15,830
+So I'll create a new file.
+
+21
+00:01:15,950 --> 00:01:18,350
+And this will just tell Git what not to put in there.
+
+22
+00:01:18,350 --> 00:01:22,870
+So Git ignored its dot git i.g.
+
+23
+00:01:22,880 --> 00:01:25,910
+A.R.T. all lowercase, and I'm sure you've used it before.
+
+24
+00:01:26,690 --> 00:01:27,470
+Inside of that?
+
+25
+00:01:27,830 --> 00:01:32,870
+Sometimes I work with actually most of the time when I'm not recording lectures, I work with jet brains,
+
+26
+00:01:32,870 --> 00:01:34,510
+products and forego.
+
+27
+00:01:34,520 --> 00:01:38,180
+I use go land, so I'm going to ignore the idea folder.
+
+28
+00:01:38,570 --> 00:01:40,460
+And that's not created by Visual Studio.
+
+29
+00:01:40,460 --> 00:01:42,920
+Code is created by jet brains, but lots of people use it.
+
+30
+00:01:44,420 --> 00:01:48,260
+And I'm also going to ignore discovery or coverage out.
+
+31
+00:01:50,510 --> 00:01:51,620
+OK, that's enough.
+
+32
+00:01:51,860 --> 00:01:54,350
+You can put whatever else you want to ignore into that folder.
+
+33
+00:01:55,010 --> 00:01:57,290
+And now I'll say get ad done.
+
+34
+00:01:58,160 --> 00:01:59,000
+That adds everything.
+
+35
+00:01:59,580 --> 00:02:04,260
+Yet commit dashcam and I'll just type initial entry.
+
+36
+00:02:04,700 --> 00:02:05,540
+And that's the message.
+
+37
+00:02:05,870 --> 00:02:09,190
+OK, so now I've created my git repository.
+
+38
+00:02:09,260 --> 00:02:14,570
+I've created the necessary don't get ignore to ignore certain files and I've added everything to it.
+
+39
+00:02:14,810 --> 00:02:22,520
+Now I'm going to go to my web browser where I'm already logged into GitHub and I'll create a new repository
+
+40
+00:02:22,520 --> 00:02:27,950
+and I'm going to name it exactly the same thing that I named it in my Seelye when we wrote those few
+
+41
+00:02:27,950 --> 00:02:34,940
+lines of code that will actually clone a remote kit repository and I called mind Solara toss up.
+
+42
+00:02:35,300 --> 00:02:35,660
+OK.
+
+43
+00:02:36,710 --> 00:02:40,160
+And I'm going to make sure it's set to public and I'll create the repository.
+
+44
+00:02:42,780 --> 00:02:46,380
+And I don't need to create a new repository on the command line, I just did that.
+
+45
+00:02:46,410 --> 00:02:51,270
+I want to push an existing one, so I'm just going to copy all of this by clicking a little button here,
+
+46
+00:02:52,200 --> 00:02:53,730
+and it should be copied at that point.
+
+47
+00:02:54,150 --> 00:02:57,390
+I'll go back to my I.D. Make sure I'm in the terminal.
+
+48
+00:02:57,420 --> 00:03:00,960
+Clear the screen and paste that text in turn.
+
+49
+00:03:03,120 --> 00:03:04,630
+There it should all be set up.
+
+50
+00:03:04,650 --> 00:03:11,100
+So now if I switch back to my web browser and just click on the name of the repository in the top left
+
+51
+00:03:11,100 --> 00:03:17,160
+hand corner, I should see my read me file down here and all of my files showing up here.
+
+52
+00:03:17,700 --> 00:03:18,240
+Perfect.
+
+53
+00:03:18,900 --> 00:03:24,720
+So now that we have this repository and it's a public repository and I know the URL to it, I can go
+
+54
+00:03:24,720 --> 00:03:30,540
+back and compile my application, my command line application, and just see if the cloning logic works
+
+55
+00:03:30,540 --> 00:03:34,080
+the way that we think it's going to, and we'll take care of that in the next lecture.

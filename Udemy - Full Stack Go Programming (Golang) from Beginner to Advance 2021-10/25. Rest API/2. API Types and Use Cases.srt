@@ -1,0 +1,283 @@
+1
+00:00:12,550 --> 00:00:18,820
+Hello and welcome to the go and programming language course in the Pentagon's session, we talked about
+
+2
+00:00:18,820 --> 00:00:21,920
+this API's concept and indecision.
+
+3
+00:00:21,940 --> 00:00:24,490
+We want to talk about the others concept.
+
+4
+00:00:27,220 --> 00:00:38,980
+Types of APIs in terms of released policies, APIs can be private partner and public private API.
+
+5
+00:00:39,880 --> 00:00:46,990
+These are application software interfaces are designed for improving solutions and services within an
+
+6
+00:00:46,990 --> 00:00:49,720
+organization in house.
+
+7
+00:00:49,720 --> 00:00:57,820
+Developers or contractors may use these APIs to integrate as a company's I.T. system or applications.
+
+8
+00:00:58,060 --> 00:01:07,390
+Build new systems or customer facing apps leveraging existing systems, even if apps are publicly available.
+
+9
+00:01:07,600 --> 00:01:14,140
+The interface itself remains available only for those working directly with the API publisher.
+
+10
+00:01:14,860 --> 00:01:23,340
+The private estratégia allows a company to fully control the API usage partner API.
+
+11
+00:01:25,010 --> 00:01:33,200
+Partner opinions are only apparently prompt, but share with business partners who have signed an agreement
+
+12
+00:01:33,200 --> 00:01:34,100
+with the publisher.
+
+13
+00:01:34,880 --> 00:01:43,310
+The common use case for partner APIs is software integration between two parties, a company that grants
+
+14
+00:01:43,310 --> 00:01:46,250
+partners with access to data or tapping ability.
+
+15
+00:01:46,520 --> 00:01:49,130
+Benefits from extra revenue streams.
+
+16
+00:01:52,380 --> 00:01:59,500
+At the same time, it can monitor how the exposed digital assets are used in ensure whether to party
+
+17
+00:01:59,520 --> 00:02:07,200
+solutions using their APIs, provide decent user experience in Maine to incorporated identity in their
+
+18
+00:02:07,200 --> 00:02:07,680
+apps.
+
+19
+00:02:09,720 --> 00:02:11,430
+Public APIs.
+
+20
+00:02:12,930 --> 00:02:20,640
+Also known as developer facing or external, these APIs are available for any third party developers.
+
+21
+00:02:21,510 --> 00:02:29,580
+The public API program allows for increasing brand assurance and receiving an additional source of income
+
+22
+00:02:29,700 --> 00:02:31,290
+than properly executed.
+
+23
+00:02:32,900 --> 00:02:38,240
+These are two types of public APIs open in commercial ones.
+
+24
+00:02:38,990 --> 00:02:46,940
+The open API definition suggests that all features of such an API are public and can be used without
+
+25
+00:02:46,940 --> 00:02:49,190
+restrictive terms and conditions.
+
+26
+00:02:49,550 --> 00:02:57,680
+For instance, it's possible to build an application that utilize the API without explicit approval
+
+27
+00:02:57,860 --> 00:03:01,790
+from the API supplier or mandatory license fees.
+
+28
+00:03:04,040 --> 00:03:10,550
+The definition also states that the API description and any related they can mention must be openly
+
+29
+00:03:10,550 --> 00:03:16,580
+available, and the API can be freely used to create and test applications.
+
+30
+00:03:22,090 --> 00:03:31,420
+API use cases API can be classified according to the systems for which they are designed.
+
+31
+00:03:32,770 --> 00:03:41,590
+Database API Database API enable communication between and that application and a database management
+
+32
+00:03:41,590 --> 00:03:42,130
+system.
+
+33
+00:03:42,700 --> 00:03:49,300
+Developers work with the database by running queries to access data, changed tables and etc.
+
+34
+00:03:50,170 --> 00:03:51,430
+They did open seven.
+
+35
+00:03:51,430 --> 00:03:58,960
+Database API, for example, allows users to write unified queries for different databases.
+
+36
+00:03:59,260 --> 00:04:02,200
+Both proprietary and open source.
+
+37
+00:04:02,800 --> 00:04:10,000
+Another example is AWS Database API, which is an embedded into Oracle Rest Data Services, Operating
+
+38
+00:04:10,000 --> 00:04:11,320
+Systems APIs.
+
+39
+00:04:12,850 --> 00:04:20,620
+This group of APIs defines how applications use the resources and services of operating systems, every
+
+40
+00:04:20,620 --> 00:04:23,410
+OS has its sets of APIs.
+
+41
+00:04:23,620 --> 00:04:31,420
+For instance, Windows API or Linux API by Terminal users faces API and channeled into not API.
+
+42
+00:04:32,010 --> 00:04:36,400
+Apple provides API reference for Mac OS and iOS.
+
+43
+00:04:36,580 --> 00:04:43,570
+In its developer, Dutcher mentioned APIs for building applications for Apple's Mac OS desktop operating
+
+44
+00:04:43,570 --> 00:04:47,320
+system are included in Kirkwall set of developer tools.
+
+45
+00:04:48,620 --> 00:04:49,940
+Remote appearance.
+
+46
+00:04:51,410 --> 00:04:57,710
+Remote APIs define the standards of interaction for applications running on different machines.
+
+47
+00:04:58,400 --> 00:05:05,840
+In other words, one software product accesses resources located outside the device that requested,
+
+48
+00:05:05,960 --> 00:05:07,460
+which explains the name.
+
+49
+00:05:08,210 --> 00:05:14,810
+Since two remotely located applications are connected over communications networks, particularly the
+
+50
+00:05:14,810 --> 00:05:19,320
+internet, most remote APIs are written based on very standards.
+
+51
+00:05:22,120 --> 00:05:23,500
+VVIP, ap, ice.
+
+52
+00:05:25,500 --> 00:05:34,560
+This API class is the most common lib APIs, Pearl White, machine readable data in functionality transfer
+
+53
+00:05:34,560 --> 00:05:39,150
+between web based systems, which represent client server architecture.
+
+54
+00:05:40,170 --> 00:05:49,200
+These APIs mainly deliver Acworth from web applications and responses from server using Hypertext Transfer
+
+55
+00:05:49,200 --> 00:05:51,560
+Protocol, or HTP.
+
+56
+00:05:52,710 --> 00:05:58,380
+Developers can use web APIs to expand the functionality of their apps or sites.
+
+57
+00:05:59,370 --> 00:06:03,990
+Two types of APIs are first server side.
+
+58
+00:06:05,300 --> 00:06:13,850
+Server side Web API is a programmatic interface that consist of one or more publicly exposed and points
+
+59
+00:06:13,970 --> 00:06:16,760
+to a defined records response message system.
+
+60
+00:06:17,420 --> 00:06:23,030
+It is typically expressed in JSON or expand the client site.
+
+61
+00:06:24,680 --> 00:06:32,330
+A client site, what API is a programmatic interface helps to extend functionality within a web browser
+
+62
+00:06:32,330 --> 00:06:34,490
+or other Typekit client.
+
+63
+00:06:35,270 --> 00:06:38,240
+Examples of that API are like Google Maps.
+
+64
+00:06:38,270 --> 00:06:45,470
+APIs allow developers to emit Google Maps and web pages by using a German script or flashing interface.
+
+65
+00:06:46,370 --> 00:06:53,960
+YouTube API allows developers to integrate YouTube videos and functionality into websites or applications.
+
+66
+00:06:55,100 --> 00:06:57,140
+Twitter offers two APIs.
+
+67
+00:06:57,410 --> 00:07:06,620
+The rest API helps developers to access Twitter data, and the Search API provides methods for developers
+
+68
+00:07:06,620 --> 00:07:14,180
+to interact with tweets or search, and Amazon's API gives developers access to Amazon's product selection
+
+69
+00:07:16,010 --> 00:07:18,540
+in order not to prolong the time of decision.
+
+70
+00:07:18,560 --> 00:07:22,250
+We will finish it and we will continue the content in the next session.
+
+71
+00:07:22,430 --> 00:07:22,910
+Goodbye.

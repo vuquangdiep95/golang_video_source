@@ -1,0 +1,683 @@
+1
+00:00:00,650 --> 00:00:05,570
+So the last thing I want to test in this section is the handler that uses concurrency the most.
+
+2
+00:00:05,570 --> 00:00:06,980
+And of course, that's this one.
+
+3
+00:00:06,980 --> 00:00:09,980
+Subscribe to plan in the file handler scope.
+
+4
+00:00:11,120 --> 00:00:16,130
+And as you know, this handler fires off one go routine that generates an invoice, an eco routine,
+
+5
+00:00:16,130 --> 00:00:18,320
+fires off another go routine that sends an email.
+
+6
+00:00:18,980 --> 00:00:23,390
+And the first thing I notice when I look at this handler is that I have some hardcoded values that are
+
+7
+00:00:23,390 --> 00:00:29,930
+going to cause me some grief, like here on line 214 when I have slash temp here.
+
+8
+00:00:30,530 --> 00:00:32,900
+And a little bit further down, I have it here as well.
+
+9
+00:00:32,900 --> 00:00:37,850
+And of course, this go routine, the one that generates a manual, it calls generate manual.
+
+10
+00:00:37,850 --> 00:00:42,590
+And if I go down to generate manual, I have yet another hardcoded path name right here.
+
+11
+00:00:42,860 --> 00:00:43,910
+So let's take care of that.
+
+12
+00:00:44,030 --> 00:00:47,900
+Let's go to the very top of this file and let's create two new variables.
+
+13
+00:00:48,050 --> 00:00:52,400
+So the first one, I'll call our path to manual.
+
+14
+00:00:52,940 --> 00:00:53,310
+Okay?
+
+15
+00:00:53,810 --> 00:00:57,530
+And it's a string that's equal to in production, dot slash PDF.
+
+16
+00:00:57,710 --> 00:01:02,840
+And of course, that's where manual dot pdf is the file that we open and modify when we're generating
+
+17
+00:01:02,840 --> 00:01:03,290
+a manual.
+
+18
+00:01:04,130 --> 00:01:08,570
+And the second one, I'll just call temp path the path to the temp folder and in production, that's
+
+19
+00:01:08,570 --> 00:01:09,950
+dot slash TMP.
+
+20
+00:01:11,240 --> 00:01:19,550
+Now we'll go down to that handler, subscribe to plan which is right here and let's fix those hardcoded
+
+21
+00:01:19,550 --> 00:01:20,330
+path names.
+
+22
+00:01:20,330 --> 00:01:23,000
+So I'm looking for the part where I generate a manual right here.
+
+23
+00:01:23,780 --> 00:01:30,830
+So let's get rid of dot slash tmp and replace that with a percent s and over here our substitution will
+
+24
+00:01:30,830 --> 00:01:40,820
+be the temp path temp path comp and we do exactly the same thing here on line 228, my code percent
+
+25
+00:01:40,820 --> 00:01:45,140
+s replaces dot slash temp and our substitution is temp path.
+
+26
+00:01:46,880 --> 00:01:54,260
+Now we'll go down to the generate manual function and we'll change this to use format as Pranav to build
+
+27
+00:01:54,260 --> 00:02:04,300
+a string that's print F and I'll get rid of the dot slash PDF and replace that with percent s and we
+
+28
+00:02:04,490 --> 00:02:10,010
+declare substitution here and that is path to manual and closer parentheses.
+
+29
+00:02:10,430 --> 00:02:12,950
+Okay, so now that's a little more testable.
+
+30
+00:02:13,910 --> 00:02:20,360
+So now let's go over to setup underscore test ago and here right in the test main function, I can actually
+
+31
+00:02:20,360 --> 00:02:23,270
+set those two variables I declared right here.
+
+32
+00:02:23,300 --> 00:02:28,850
+It's a little simpler and in fact if you wanted to, you could move path to templates in here as well
+
+33
+00:02:28,850 --> 00:02:31,040
+and remove all references to it in our test.
+
+34
+00:02:31,040 --> 00:02:36,470
+It's up to you, but I'll just put in temp path and that's going to be equal to when I'm in testing.
+
+35
+00:02:36,470 --> 00:02:42,140
+It's the current directory, then up one level and up one more level and then the folder temp.
+
+36
+00:02:42,530 --> 00:02:42,860
+Okay.
+
+37
+00:02:43,820 --> 00:02:45,860
+And path to manual.
+
+38
+00:02:46,280 --> 00:02:47,000
+Same idea.
+
+39
+00:02:47,030 --> 00:02:52,700
+It's equal to the current folder which is CMT web, then up one level, then up one more level, which
+
+40
+00:02:52,700 --> 00:02:54,080
+is the root level of my project.
+
+41
+00:02:54,350 --> 00:02:55,550
+Then the folder called PDF.
+
+42
+00:02:55,880 --> 00:03:00,560
+Okay, so let's go over to handlers underscore test and write any test.
+
+43
+00:03:00,710 --> 00:03:06,320
+I'll go to the very bottom of this file and I'll create one test file function func and this one is
+
+44
+00:03:06,320 --> 00:03:14,510
+going to be called test config because there is a config receiver and this one is called subscribe to
+
+45
+00:03:14,690 --> 00:03:22,520
+plan with one parameter t pointer to testing dot t and here I'm going to need a response recorder and
+
+46
+00:03:22,520 --> 00:03:25,490
+I'm ready to context and requests and all that sort of thing.
+
+47
+00:03:25,490 --> 00:03:30,470
+So let's copy everything out of this previous function and paste it in here and we'll make modifications
+
+48
+00:03:30,470 --> 00:03:31,340
+as necessary.
+
+49
+00:03:31,580 --> 00:03:34,880
+First of all, this is a get request, not a post request.
+
+50
+00:03:35,600 --> 00:03:40,250
+And here every other function we've written that tests a handler, I said we don't care what the URL
+
+51
+00:03:40,250 --> 00:03:48,110
+is, but in this case we do because remember we're calling slash subscribe and it has to have one query
+
+52
+00:03:48,110 --> 00:03:49,340
+parameter named i.t.
+
+53
+00:03:49,340 --> 00:03:50,570
+So I'll put question mark.
+
+54
+00:03:50,570 --> 00:03:51,770
+It equals one here.
+
+55
+00:03:51,770 --> 00:03:53,060
+We're actually using it this time.
+
+56
+00:03:53,150 --> 00:03:53,510
+Okay.
+
+57
+00:03:54,500 --> 00:03:58,550
+And the last parameter can be nil because we're not posting anything.
+
+58
+00:03:59,390 --> 00:03:59,750
+Okay.
+
+59
+00:03:59,750 --> 00:04:04,730
+So I have my response recorder, I have my request and I have my contact all set up.
+
+60
+00:04:04,910 --> 00:04:08,090
+So let's get started with the test.
+
+61
+00:04:08,870 --> 00:04:15,170
+Now, this particular handler requires that there be a user in the session, so I have to put a user
+
+62
+00:04:15,170 --> 00:04:16,580
+in the session and that's pretty easy.
+
+63
+00:04:17,100 --> 00:04:27,470
+Test a dot session dot put using Ctcs the context we built, it's going to be called user like that
+
+64
+00:04:28,250 --> 00:04:30,080
+and it has to be a data user.
+
+65
+00:04:30,350 --> 00:04:40,640
+So we'll put that in here and we'll give them an ID of, say one, an email of say admin at example
+
+66
+00:04:41,150 --> 00:04:46,970
+dot com and a first thing first name will be admin,
+
+67
+00:04:50,300 --> 00:04:56,900
+last name will be user, active will be one.
+
+68
+00:04:58,940 --> 00:04:59,840
+And that should be sufficient.
+
+69
+00:05:00,110 --> 00:05:00,300
+Okay.
+
+70
+00:05:00,440 --> 00:05:04,730
+So now we have a user in the session, so let's get our handler.
+
+71
+00:05:04,790 --> 00:05:12,860
+So we'll declare a variable handler and that is assigned the value of each UDP dot handler func right
+
+72
+00:05:12,860 --> 00:05:13,160
+there.
+
+73
+00:05:13,550 --> 00:05:16,220
+And the one I want to pass it is of course test app.
+
+74
+00:05:18,150 --> 00:05:19,380
+Not subscribe to plan.
+
+75
+00:05:20,430 --> 00:05:21,900
+And now we serve that handler.
+
+76
+00:05:22,080 --> 00:05:22,670
+Handler.
+
+77
+00:05:23,500 --> 00:05:28,860
+Dot serve htp with our response recorder and the request we built.
+
+78
+00:05:29,250 --> 00:05:29,550
+Okay.
+
+79
+00:05:30,450 --> 00:05:35,910
+Now, at this point, I can write a test if I want to, and I'm going to look for, say, status other
+
+80
+00:05:35,910 --> 00:05:37,250
+as being the response code.
+
+81
+00:05:37,290 --> 00:05:46,980
+If our code is equal to are not equal to HDP or status C other than my test is failed.
+
+82
+00:05:47,130 --> 00:05:47,490
+Right.
+
+83
+00:05:47,490 --> 00:05:49,050
+So T dot rf.
+
+84
+00:05:51,090 --> 00:06:04,530
+Expected status code of status c other but got percent d because it's an internal code and that will
+
+85
+00:06:04,530 --> 00:06:05,460
+actually work.
+
+86
+00:06:05,520 --> 00:06:09,480
+And if I run this test right now, I have no idea what's going to happen because I'm not going to bother
+
+87
+00:06:09,480 --> 00:06:10,730
+running this test right now.
+
+88
+00:06:10,740 --> 00:06:15,090
+If I do, nothing's going to have time to finish those two go routines.
+
+89
+00:06:15,090 --> 00:06:18,690
+I'm firing off the one that produces a PDF, for example.
+
+90
+00:06:18,900 --> 00:06:23,220
+It's not going to have time to finish because I need to take advantage of that wait group.
+
+91
+00:06:23,370 --> 00:06:27,120
+And that means that I need to come in here and wait for things to finish.
+
+92
+00:06:27,960 --> 00:06:29,340
+Now, you might think this would work.
+
+93
+00:06:29,550 --> 00:06:30,120
+Test out.
+
+94
+00:06:31,050 --> 00:06:34,200
+Don't wait, don't wait.
+
+95
+00:06:35,100 --> 00:06:35,400
+Okay.
+
+96
+00:06:35,760 --> 00:06:36,750
+Seems logical.
+
+97
+00:06:36,750 --> 00:06:37,950
+It should do the trick.
+
+98
+00:06:38,120 --> 00:06:38,790
+Let's try it out.
+
+99
+00:06:38,820 --> 00:06:42,120
+So I'll open the terminal and I mean the right folder.
+
+100
+00:06:42,150 --> 00:06:42,810
+So I'll run.
+
+101
+00:06:42,810 --> 00:06:46,470
+Go test dash v dot and it's not going to finish.
+
+102
+00:06:46,770 --> 00:06:48,210
+It might, it might pass.
+
+103
+00:06:48,210 --> 00:06:50,490
+I don't know, but it's definitely not going to finish.
+
+104
+00:06:50,700 --> 00:06:51,810
+Let's see what happens.
+
+105
+00:06:53,950 --> 00:07:00,790
+So it starts running the tests and it gets to test config, subscribe to plan and it stops and it will
+
+106
+00:07:00,790 --> 00:07:03,790
+stop forever or until the power goes out, whichever comes first.
+
+107
+00:07:04,240 --> 00:07:08,230
+So to start this test, I'll hit control C and then I'll close the terminal window.
+
+108
+00:07:08,560 --> 00:07:09,880
+Now let's figure out what's going on.
+
+109
+00:07:10,390 --> 00:07:14,020
+It seems pretty clear that it's waiting here where I'm telling it to wait.
+
+110
+00:07:14,620 --> 00:07:21,670
+And of course, what it's waiting for is for that variable test app dot wait to have the value of zero.
+
+111
+00:07:22,870 --> 00:07:27,940
+In other words, every time we added one to it, it has a positive value and every time we remove one
+
+112
+00:07:27,940 --> 00:07:29,430
+from it goes down by one.
+
+113
+00:07:29,440 --> 00:07:31,810
+And clearly we're adding more than we're removing.
+
+114
+00:07:33,400 --> 00:07:34,720
+And where is that happening?
+
+115
+00:07:34,750 --> 00:07:36,520
+Well, let's go back and look at that handler again.
+
+116
+00:07:36,580 --> 00:07:38,010
+So back over in, handlers.
+
+117
+00:07:38,020 --> 00:07:38,950
+Let's find that.
+
+118
+00:07:40,050 --> 00:07:43,500
+Subscribe user to plan right here.
+
+119
+00:07:43,620 --> 00:07:48,840
+So in this function I'm adding one to the weight group here and I'm removing it here.
+
+120
+00:07:48,870 --> 00:07:50,100
+On line 194.
+
+121
+00:07:50,640 --> 00:07:57,180
+And down here I'm adding one to the weight group online to 12 and a removing it here online to 14.
+
+122
+00:07:57,930 --> 00:07:59,070
+So why is it not zero?
+
+123
+00:07:59,430 --> 00:08:02,730
+One plus one is two minus one minus one is zero.
+
+124
+00:08:02,730 --> 00:08:08,700
+It seems that they should all be set to zero, but of course this app does not send mail.
+
+125
+00:08:08,760 --> 00:08:14,490
+Also adds one to the weight group and down here app dot send mail also adds one to the weight group.
+
+126
+00:08:14,550 --> 00:08:19,740
+Now, we didn't notice it up until this point because we never actually tried to wait for anything in
+
+127
+00:08:19,740 --> 00:08:20,730
+any of our tests.
+
+128
+00:08:20,730 --> 00:08:25,260
+It didn't seem appropriate to do so, since we weren't directly running any concurrent code or any code
+
+129
+00:08:25,260 --> 00:08:26,670
+that was concurrent in nature.
+
+130
+00:08:27,390 --> 00:08:29,310
+But now we see we have a bit of a problem.
+
+131
+00:08:29,520 --> 00:08:30,780
+Actually, we have two problems.
+
+132
+00:08:30,900 --> 00:08:36,870
+Let's go over to setup, underscore Tesco and let's find that bit where we create a mailer and start
+
+133
+00:08:36,870 --> 00:08:36,990
+it.
+
+134
+00:08:37,440 --> 00:08:42,090
+So we create the daily mailer here in this section and then we start listening here.
+
+135
+00:08:42,570 --> 00:08:48,120
+And the first thing I notice is everything inside that go func that should be wrapped in a for loop.
+
+136
+00:08:48,510 --> 00:08:53,490
+Otherwise it's going to send one email and then just the weight group will die.
+
+137
+00:08:53,670 --> 00:08:55,620
+And of course that's exactly what happened.
+
+138
+00:08:55,980 --> 00:09:02,340
+Every time we called any handler that generated email in our tests, if we did, it just sent the one
+
+139
+00:09:02,340 --> 00:09:03,930
+email that go routine died.
+
+140
+00:09:03,930 --> 00:09:08,100
+And we don't notice anything because as far as the problem is concerned, you don't need it anymore.
+
+141
+00:09:09,000 --> 00:09:11,520
+Now the second problem we run into is here.
+
+142
+00:09:11,760 --> 00:09:16,260
+When I check for the case, something comes in on the mailer chain.
+
+143
+00:09:16,260 --> 00:09:19,650
+That means somebody tried to send email or we tried to send email.
+
+144
+00:09:20,160 --> 00:09:24,900
+And we need to at this point actually add one thing to this test app.
+
+145
+00:09:26,220 --> 00:09:27,630
+Dot wait.
+
+146
+00:09:28,380 --> 00:09:28,980
+Dot done.
+
+147
+00:09:29,700 --> 00:09:30,080
+Okay.
+
+148
+00:09:30,150 --> 00:09:35,010
+Because we're never actually firing off the code that sends email in our tests because we're not testing
+
+149
+00:09:35,010 --> 00:09:36,180
+our email functionality.
+
+150
+00:09:36,810 --> 00:09:39,450
+So here we need to decrement our weight group by one.
+
+151
+00:09:39,870 --> 00:09:45,870
+Now when I open my terminal and clear the screen and run this test, it should pass.
+
+152
+00:09:52,960 --> 00:09:54,220
+And it does.
+
+153
+00:09:54,250 --> 00:10:00,940
+Now, that pause there for 5 seconds was because I told the routine that generates a manual to simulate
+
+154
+00:10:00,940 --> 00:10:03,720
+something that takes a lot of time by putting a pause in there.
+
+155
+00:10:03,730 --> 00:10:04,540
+But it passed.
+
+156
+00:10:04,630 --> 00:10:06,070
+But of course, I'm not done.
+
+157
+00:10:06,340 --> 00:10:09,780
+I want to make absolutely certain that there are no race conditions.
+
+158
+00:10:09,790 --> 00:10:17,470
+So I'll go back here and add a dash race to this and run it one more time and make sure we got everything
+
+159
+00:10:17,470 --> 00:10:17,800
+right.
+
+160
+00:10:18,580 --> 00:10:19,870
+So it'll start the tests.
+
+161
+00:10:20,860 --> 00:10:24,350
+They'll still be that 5/2 delay and running go test.
+
+162
+00:10:24,580 --> 00:10:25,900
+Race always takes longer.
+
+163
+00:10:31,150 --> 00:10:32,140
+There goes.
+
+164
+00:10:33,380 --> 00:10:37,700
+It's pausing while it subscribes to a plan and everything passed.
+
+165
+00:10:38,450 --> 00:10:44,810
+Okay, so there we've managed to write some basic tests for core web functionality and we've also written
+
+166
+00:10:44,810 --> 00:10:49,500
+some tests that test concurrency, and I think that is sufficient for our purposes.
+
+167
+00:10:49,560 --> 00:10:54,500
+Now obviously we didn't test every little bit of our application, and that wasn't my intention.
+
+168
+00:10:54,510 --> 00:11:00,590
+My intention was to give you the tools necessary for you to be able to write your own tests in whatever
+
+169
+00:11:00,590 --> 00:11:01,610
+your project may be.
+
+170
+00:11:01,940 --> 00:11:02,680
+So there we go.
+
+171
+00:11:02,690 --> 00:11:04,790
+And that is it for this section.

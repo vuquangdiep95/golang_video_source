@@ -1,0 +1,344 @@
+1
+00:00:00,600 --> 00:00:06,960
+OK jadi dalam kuliah ini kita melanjutkan dan menyiapkan server GOP tanpa layanan di atasnya hanya kode boilerplate.
+
+2
+00:00:06,990 --> 00:00:09,960
+Kita akan melihat bagaimana memulai dan menghentikan server pada port terbaik.
+
+3
+00:00:10,170 --> 00:00:15,480
+Dan itu hanya harus dilakukan dengan kode tubuh maka kita dapat melanjutkan dan benar-benar kode layanan kami
+
+4
+00:00:15,480 --> 00:00:16,600
+secara lebih mendalam.
+
+5
+00:00:17,040 --> 00:00:18,630
+Jadi di sini saya seorang mahasiswa.
+
+6
+00:00:18,660 --> 00:00:22,370
+Saya akan membuat folder baru dan saya akan menyebutnya server garis bawah.
+
+7
+00:00:22,380 --> 00:00:28,140
+Dan di sinilah kode serupa akan pergi. Saya tahu ini saya akan membuat file baru dan menyebutnya Server
+
+8
+00:00:28,600 --> 00:00:29,220
+pergi.
+
+9
+00:00:29,520 --> 00:00:31,470
+Dan di sinilah kode server berjalan.
+
+10
+00:00:31,620 --> 00:00:37,050
+Paket ini akan dibuat sehingga kita dapat menjalankan menjalankan file kita dan kemudian kita memiliki fungsi utama di
+
+11
+00:00:37,050 --> 00:00:40,340
+sini hanya untuk memastikan bahwa kode go berjalan untuk Anda.
+
+12
+00:00:40,530 --> 00:00:46,950
+Kita dapat melakukan halo ujung dunia anti-hutang dan menyimpan ini secara otomatis impor dilakukan untuk Anda.
+
+13
+00:00:46,950 --> 00:00:50,100
+Kalau tidak, Anda harus mengetik atau mengimpor NMT secara manual.
+
+14
+00:00:50,640 --> 00:00:58,950
+Dan untuk memastikan semuanya berjalan dengan baik, kami menjalankan server yang hebat dan kemudian server pergi dan kami mendapatkan
+
+15
+00:00:59,370 --> 00:01:00,640
+Hellawell kembali.
+
+16
+00:01:00,660 --> 00:01:02,980
+Jadi semuanya bekerja sekarang.
+
+17
+00:01:03,060 --> 00:01:06,770
+Yang lebih menarik adalah kita akan menulis kode terkait GRB.
+
+18
+00:01:07,230 --> 00:01:10,630
+Ok jadi hal pertama yang harus kita lakukan adalah menulis pendengar.
+
+19
+00:01:10,890 --> 00:01:13,110
+Jadi kami pendengar yang benar.
+
+20
+00:01:13,350 --> 00:01:17,340
+Dan kemudian kami akan mengirimkan ini ke variabel baru dan tidak mendengarkan.
+
+21
+00:01:17,640 --> 00:01:22,140
+Dan fungsi ini mengambil string untuk jaringan dan alamat sebagai string.
+
+22
+00:01:22,140 --> 00:01:27,870
+Jadi untuk ini kita akan menggunakan GCP karena itu adalah jaringan GCP kita sedang membuka koneksi dan kemudian
+
+23
+00:01:27,900 --> 00:01:37,050
+untuk alamat kita dapat melakukan 0 0 0 8 5 0 0 5 1 5 pengguna jika saya ingin pada dasarnya adalah port default untuk Jarkesy seperti Anda
+
+24
+00:01:37,050 --> 00:01:37,870
+akan lihat.
+
+25
+00:01:38,220 --> 00:01:39,640
+Sekarang kita harus berurusan dengan udara.
+
+26
+00:01:39,660 --> 00:01:44,690
+Jadi kami akan mengatakan jika udara tidak tidak maka apa yang kita lakukan.
+
+27
+00:01:45,180 --> 00:01:49,210
+Kami mengatakan LUGG Fatal Death karena ini adalah masalah besar.
+
+28
+00:01:49,350 --> 00:01:58,150
+Kami mengatakan gagal mendengarkan dan kemudian kami hanya akan memilikinya dan akan menulis di sini.
+
+29
+00:01:58,160 --> 00:01:58,400
+BAIK.
+
+30
+00:01:58,410 --> 00:02:04,470
+Jadi kalau-kalau ada masalah dan kita tidak bisa mengikat ke port misalnya kita akan suka
+
+31
+00:02:04,470 --> 00:02:09,390
+ini karena Anda dapat melihat itu tidak bahagia karena daftar masih tidak
+
+32
+00:02:09,750 --> 00:02:17,220
+digunakan sehingga kita akan menggunakan ini sebagai pendengar dan untuk ini bisa kita lakukan sama dengan GOPAC itu server berita.
+
+33
+00:02:18,310 --> 00:02:18,930
+BAIK.
+
+34
+00:02:19,370 --> 00:02:25,410
+Jadi sekarang jika saya mengatakan ini juga penting bagi Google bahwa Golinger org memangkas Jarkesy.
+
+35
+00:02:25,940 --> 00:02:27,510
+Jadi apa yang akan kita lakukan dengan ini.
+
+36
+00:02:27,770 --> 00:02:29,580
+Kita perlu mendaftarkan layanan.
+
+37
+00:02:29,890 --> 00:02:38,220
+Dan untuk ini hanya untuk saat ini saya akan melakukan sihir tetapi saya akan memperluas ini awal nanti pada Anda ketik server.
+
+38
+00:02:38,240 --> 00:02:42,760
+Struct dan pada dasarnya ini akan menjadi objek server Anda.
+
+39
+00:02:42,770 --> 00:02:47,260
+Dan saat kami menambahkan layanan, kami akan menambahkan implementasi untuk jenis itu.
+
+40
+00:02:47,290 --> 00:02:49,860
+Jadi di sini kita sekarang dengan server baru kami.
+
+41
+00:02:49,870 --> 00:02:54,080
+Kita bisa melakukan TV yang luar biasa.
+
+42
+00:02:54,480 --> 00:03:03,430
+Jadi kita perlu mengimpor BPB dan kemudian mendaftar layanan hebat dan itu membawa kita server GOPAC.
+
+43
+00:03:03,510 --> 00:03:07,270
+Jadi itu pada dasarnya milik kita yang kita miliki di sini.
+
+44
+00:03:08,640 --> 00:03:14,280
+Tentara memilikinya di sini dan di server dan itu adalah jenis yang kami miliki sebelumnya.
+
+45
+00:03:14,280 --> 00:03:17,400
+Jadi sekali lagi semua ini adalah sedikit kode boilerplate.
+
+46
+00:03:17,700 --> 00:03:18,350
+Jangan khawatir.
+
+47
+00:03:18,360 --> 00:03:23,410
+Ini akan masuk akal dalam beberapa menit tetapi sejauh ini kami membuat koneksi.
+
+48
+00:03:23,490 --> 00:03:29,000
+Kami memiliki server GOPAC dan kemudian kami pada dasarnya meneruskan server sebagai struct di sini.
+
+49
+00:03:29,340 --> 00:03:30,040
+BAIK.
+
+50
+00:03:30,480 --> 00:03:41,630
+Sekarang akhirnya kita memantulkan jika udara dan kemudian kita lakukan seperti server dan kemudian kita melewati pendengar dan
+
+51
+00:03:41,630 --> 00:03:43,760
+udara tidak nol.
+
+52
+00:03:44,280 --> 00:03:54,190
+OK lalu kita atur log on ke biola gagal melayani misalnya saat ini dan kita akan ke Bessen pesan kesalahan
+
+53
+00:03:54,190 --> 00:03:55,440
+di sini.
+
+54
+00:03:55,480 --> 00:03:56,310
+Dan ketika udara dan di
+
+55
+00:03:59,110 --> 00:03:59,850
+sini kita pergi.
+
+56
+00:04:00,070 --> 00:04:02,160
+Jadi di sini kita memiliki kode trojan.
+
+57
+00:04:02,170 --> 00:04:08,620
+Dan pada dasarnya ketika kita lakukan jika kita sama dan itu berfungsi jika Arab pada dasarnya tidak nol kita masuk
+
+58
+00:04:08,620 --> 00:04:09,750
+ke pesan kesalahan.
+
+59
+00:04:09,850 --> 00:04:12,910
+Kalau tidak, server kami melayani dan kami baik-baik saja.
+
+60
+00:04:12,910 --> 00:04:16,310
+Jadi ini adalah singkatan untuk suatu fungsi jika Anda tidak mengetahuinya dan pergi.
+
+61
+00:04:16,450 --> 00:04:17,940
+Jadi begitulah.
+
+62
+00:04:17,980 --> 00:04:19,000
+Ini sedikit boilerplate.
+
+63
+00:04:18,990 --> 00:04:19,860
+Saya harus.
+
+64
+00:04:19,900 --> 00:04:26,260
+Tetapi yang penting adalah bahwa inilah Vining port. Di sinilah Anda membuat server pc Anda dan Anda mengikat port
+
+65
+00:04:26,260 --> 00:04:30,790
+ke server GOP dan kemudian kita dapat mendaftarkan layanan sebanyak yang kita inginkan.
+
+66
+00:04:31,180 --> 00:04:35,210
+Jadi yang penting keserakahan P. B. keserakahan P. B. disini.
+
+67
+00:04:35,320 --> 00:04:41,490
+Seperti yang Anda lihat, impor adalah jalur lengkap ke proyek saya sehingga bagus muncul hal-hal sederhana.
+
+68
+00:04:41,640 --> 00:04:42,610
+Itu kurang europaeus.
+
+69
+00:04:42,610 --> 00:04:47,920
+Tentu saja memperlakukan sledged slash keserakahan P. B. Dan Anda mungkin harus mengetikkan sesuatu yang berbeda jika
+
+70
+00:04:47,920 --> 00:04:49,680
+Anda memilih folder yang berbeda dan seterusnya.
+
+71
+00:04:49,690 --> 00:04:51,010
+Tetapi ini penting.
+
+72
+00:04:51,280 --> 00:04:56,170
+Dan sehingga Anda dapat melihat P. disepakati B. memiliki server layanan register fungsi.
+
+73
+00:04:56,170 --> 00:05:02,020
+Jadi jika kita pergi untuk menyapa P. B. ada banyak kode boilerplate tetapi apa yang bisa kita lihat
+
+74
+00:05:02,350 --> 00:05:04,280
+di dalamnya adalah yang nomor satu impor europaeus.
+
+75
+00:05:04,870 --> 00:05:12,100
+Nomor dua itu mendefinisikan beberapa klien sehingga kami dapat memiliki klien layanan berita dan mendaftar fungsi
+
+76
+00:05:12,190 --> 00:05:13,360
+server layanan.
+
+77
+00:05:13,360 --> 00:05:19,090
+Ngomong-ngomong konvensi penamaannya cukup buruk, saya akan mengatakannya, tetapi kita harus menghadapinya dan sedikit fungsi di dalamnya melibatkan gritter pada dasarnya
+
+78
+00:05:19,090 --> 00:05:25,570
+saat kita menghasilkan kode P. keserakahan ini. B. pada dasarnya akan memberi kita banyak
+
+79
+00:05:25,570 --> 00:05:29,770
+fungsi yang ingin kita gunakan dalam kode kita untuk mengimplementasikan server kita.
+
+80
+00:05:30,070 --> 00:05:32,180
+Jadi ini hanya boilerplate.
+
+81
+00:05:32,200 --> 00:05:38,220
+Mari kita mengujinya sehingga kita bisa menjalankan menjalankan server salam yang menyapa dan mengatakan halo dunia.
+
+82
+00:05:38,230 --> 00:05:40,330
+Dan sekarang Anda melihatnya tergantung.
+
+83
+00:05:40,360 --> 00:05:43,380
+Jadi itu berarti server sedang berjalan dan menunggu koneksi.
+
+84
+00:05:43,420 --> 00:05:45,330
+Jika saya hentikan itu berhenti.
+
+85
+00:05:45,370 --> 00:05:46,960
+Jadi itu saja untuk pelat ketel.
+
+86
+00:05:46,960 --> 00:05:50,450
+Sekarang mari kita menuju ke pelat boiler klien dan kemudian kita akan membaca beberapa kode yang menarik.
+

@@ -1,0 +1,467 @@
+1
+00:00:01,220 --> 00:00:05,090
+So now that we're more or less sure the migrations work as they should.
+
+2
+00:00:05,450 --> 00:00:10,730
+Let's get started on making a new command for our celebrities come online application and it will be
+
+3
+00:00:10,730 --> 00:00:18,230
+make off and that will do everything necessary to in one step with one command set up the necessary
+
+4
+00:00:18,230 --> 00:00:25,490
+database tables, create the necessary models and everything else we need to do to make sure that authentication
+
+5
+00:00:25,490 --> 00:00:27,890
+is created very easily for end users.
+
+6
+00:00:28,490 --> 00:00:32,990
+So right now, I'm in this alert house package and I'm looking at Mango, and obviously we're going
+
+7
+00:00:32,990 --> 00:00:36,860
+to have to have a command down here that says make off.
+
+8
+00:00:36,950 --> 00:00:40,830
+Now we already have make render that takes us to do mix.
+
+9
+00:00:40,860 --> 00:00:41,630
+So let's go look at that.
+
+10
+00:00:42,890 --> 00:00:45,430
+Do make, says one case migration.
+
+11
+00:00:45,440 --> 00:00:46,790
+So let's add a second case here.
+
+12
+00:00:46,850 --> 00:00:47,300
+OK.
+
+13
+00:00:48,020 --> 00:00:49,820
+And it would be right here.
+
+14
+00:00:51,020 --> 00:00:51,620
+Case.
+
+15
+00:00:56,390 --> 00:01:00,530
+And rather than putting all of the logic right in this switch statement, because there's going to be
+
+16
+00:01:00,530 --> 00:01:01,970
+a fair bit for make off.
+
+17
+00:01:02,090 --> 00:01:04,250
+Let's create a new function called do off.
+
+18
+00:01:04,640 --> 00:01:11,390
+So we'll create a reference to a function that doesn't exist, do off, and it has no parameters and
+
+19
+00:01:11,390 --> 00:01:12,200
+we'll check for an error.
+
+20
+00:01:12,300 --> 00:01:18,230
+We'll do the same thing we do everywhere else, so we'll copy and paste that right there.
+
+21
+00:01:19,220 --> 00:01:22,080
+Now let's go make this dual function or at least get started with it.
+
+22
+00:01:22,100 --> 00:01:26,330
+And because it's going to be a fairly lengthy bit of code, I'll put it in its own file.
+
+23
+00:01:26,660 --> 00:01:32,450
+So in CMD Seelye, we'll create a new file, which I will call off ego.
+
+24
+00:01:35,030 --> 00:01:44,180
+And of course, that has package made and we need a function called due off and it returns potentially
+
+25
+00:01:44,180 --> 00:01:44,630
+an error.
+
+26
+00:01:47,930 --> 00:01:54,170
+So I'll put return nil here, and let's just think about the kinds of things we're going to need to
+
+27
+00:01:54,170 --> 00:01:56,000
+do here in this function.
+
+28
+00:01:56,030 --> 00:01:59,690
+Well, first of all, before we can have any authentication taking place, we're going to have to have
+
+29
+00:01:59,780 --> 00:02:00,540
+our migrations.
+
+30
+00:02:01,940 --> 00:02:06,350
+And then we're going to have to after we've done that, you know, will create the migrations.
+
+31
+00:02:06,620 --> 00:02:13,670
+We'll need to run the migrations and then we'll need to copy some files over and there might be more.
+
+32
+00:02:13,680 --> 00:02:14,820
+But this isn't a first term.
+
+33
+00:02:14,840 --> 00:02:16,520
+Well, we already know how to make migrations.
+
+34
+00:02:16,640 --> 00:02:22,490
+We had our DV type because we need to know what kind of database the person is using, and we get that
+
+35
+00:02:22,490 --> 00:02:24,890
+from seld DV data type.
+
+36
+00:02:25,160 --> 00:02:29,750
+So that gives us our data type, and then we need to create a file name, a based file name for our
+
+37
+00:02:29,750 --> 00:02:31,340
+migrations, just like before.
+
+38
+00:02:31,670 --> 00:02:33,830
+So that would be equal to from the format package.
+
+39
+00:02:36,140 --> 00:02:38,050
+Sprint F and our format string.
+
+40
+00:02:38,570 --> 00:02:45,920
+And that's going to consist of the Unix time, which is return is it isn't and then create users or
+
+41
+00:02:45,920 --> 00:02:50,720
+create off tables or tables like that because there's more than one table being created.
+
+42
+00:02:51,380 --> 00:02:54,740
+And we substitute, of course, time dot now
+
+43
+00:02:57,710 --> 00:02:58,760
+dot Unix Micro.
+
+44
+00:03:00,920 --> 00:03:02,240
+So that gives us our base file name.
+
+45
+00:03:04,370 --> 00:03:08,510
+Now we'll create our up file full path to the up.
+
+46
+00:03:08,630 --> 00:03:13,640
+We're going to create and that will be equal to sell dot root path
+
+47
+00:03:18,920 --> 00:03:26,240
+plus slash migrations plus file name plus.
+
+48
+00:03:26,240 --> 00:03:30,950
+And then we'll put up Dot sequel at the end and we'll duplicate that.
+
+49
+00:03:35,360 --> 00:03:36,710
+I will make this one downfall.
+
+50
+00:03:40,290 --> 00:03:41,100
+I make this down.
+
+51
+00:03:43,710 --> 00:03:44,070
+OK.
+
+52
+00:03:44,760 --> 00:03:46,380
+Looks like there's an error there somewhere.
+
+53
+00:03:47,340 --> 00:03:48,690
+Let's just make sure there's no error.
+
+54
+00:03:48,720 --> 00:03:53,730
+I'll just put a long dot print line and use the variables variables I'm not using.
+
+55
+00:03:53,730 --> 00:03:57,810
+So give me type of file and downfall.
+
+56
+00:03:58,200 --> 00:03:58,980
+Yeah, there is no error.
+
+57
+00:03:59,070 --> 00:04:00,390
+OK, so that'll go away in a minute.
+
+58
+00:04:00,540 --> 00:04:04,440
+But I'll leave that that here, just so we don't have any errors while I'm writing the rest of the code.
+
+59
+00:04:05,790 --> 00:04:11,760
+So now we need to copy the upper up migration and we can do that using that function copy file from
+
+60
+00:04:11,760 --> 00:04:12,510
+template.
+
+61
+00:04:13,260 --> 00:04:18,210
+And just handed the name of the template we want, which doesn't exist yet, so we'll have to copy it
+
+62
+00:04:18,210 --> 00:04:18,840
+in there in a minute.
+
+63
+00:04:19,500 --> 00:04:24,270
+Templates it'll be our file system that we're using.
+
+64
+00:04:25,340 --> 00:04:35,000
+Slashed migrations, and we'll call that one stay off tables, dot plus de B-type, because I have to
+
+65
+00:04:35,000 --> 00:04:38,870
+have one for my school, one for post-cruise dot sequel.
+
+66
+00:04:43,390 --> 00:04:46,290
+And that will be up for OK.
+
+67
+00:04:48,190 --> 00:04:49,120
+And we'll check for an error
+
+68
+00:04:52,030 --> 00:04:55,690
+if error is not equal to nil, we'll just exit gracefully with the error.
+
+69
+00:04:59,190 --> 00:05:01,140
+And now we need to create a down migration.
+
+70
+00:05:01,330 --> 00:05:06,960
+OK, so that when I can actually just write the code for it right here because it's very simple.
+
+71
+00:05:07,110 --> 00:05:08,100
+So I'll check for an error.
+
+72
+00:05:08,520 --> 00:05:11,330
+And of course, I don't use the assignment operator because I already have an error.
+
+73
+00:05:12,270 --> 00:05:21,870
+And we'll say copy data to file, and the data will be a slice of bytes and I'll I have to put in here
+
+74
+00:05:21,870 --> 00:05:23,730
+is drop table.
+
+75
+00:05:23,940 --> 00:05:33,420
+If exists, users cascade and that will delete the user's table and everything else, that depends upon
+
+76
+00:05:33,420 --> 00:05:37,530
+it because we're cascading it and we hand it down.
+
+77
+00:05:37,530 --> 00:05:37,860
+File.
+
+78
+00:05:39,210 --> 00:05:39,420
+Yeah.
+
+79
+00:05:39,930 --> 00:05:41,190
+And again, we check for an error.
+
+80
+00:05:41,880 --> 00:05:42,600
+So copy
+
+81
+00:05:45,360 --> 00:05:50,220
+and paste and the next step is to actually run the migrations.
+
+82
+00:05:51,540 --> 00:05:58,530
+So to make that happen, I might be able just to call do my great right here and hand it the necessary
+
+83
+00:05:58,530 --> 00:05:59,070
+arguments.
+
+84
+00:05:59,250 --> 00:06:01,890
+And of course, the arguments I want to hand out are pretty straightforward.
+
+85
+00:06:01,980 --> 00:06:03,960
+I want to run up and nothing.
+
+86
+00:06:04,680 --> 00:06:06,150
+And that does return an error.
+
+87
+00:06:07,320 --> 00:06:09,320
+So error equals you migrate.
+
+88
+00:06:09,510 --> 00:06:13,230
+And again, copy this and paste it there.
+
+89
+00:06:14,010 --> 00:06:16,140
+And let's just look at this and think of what we're doing right now.
+
+90
+00:06:16,530 --> 00:06:21,210
+So we're creating our migrations, and I'm pretty sure this is right because that's exactly the syntax
+
+91
+00:06:21,210 --> 00:06:28,020
+we use before we do have to make the create off tables template that we're referring to down here.
+
+92
+00:06:28,020 --> 00:06:29,040
+But this should work.
+
+93
+00:06:29,070 --> 00:06:29,520
+All right.
+
+94
+00:06:30,240 --> 00:06:37,470
+Then we'll get our migration, our template and put one in for Postgres and then later on one for my
+
+95
+00:06:37,470 --> 00:06:38,040
+school.
+
+96
+00:06:38,670 --> 00:06:41,880
+Then we copy that data over and make the necessary up migration.
+
+97
+00:06:41,890 --> 00:06:48,480
+Then we copy the this string of bytes over to down migration, and then we run the migrations that should
+
+98
+00:06:48,480 --> 00:06:48,780
+work.
+
+99
+00:06:49,440 --> 00:06:53,690
+So let's create a file in templates.
+
+100
+00:06:53,700 --> 00:07:01,230
+Migrations create a new file that's inside the CMG Seelye folder, and I want to call this one off.
+
+101
+00:07:01,650 --> 00:07:06,900
+Underscore tables dot postgres dot SQL.
+
+102
+00:07:07,440 --> 00:07:15,420
+OK, now I've already copied to my clipboard the contents of the school file we use to make those tables
+
+103
+00:07:15,420 --> 00:07:16,560
+so just pasted in here.
+
+104
+00:07:16,860 --> 00:07:17,190
+OK.
+
+105
+00:07:17,310 --> 00:07:22,350
+And that should be the one appropriate for Postgres, and we have our IDE.
+
+106
+00:07:22,470 --> 00:07:25,130
+Firstly, my name and make sure I got the right one here.
+
+107
+00:07:25,140 --> 00:07:28,530
+I want to go all the way down to tokens and make sure I have token in there.
+
+108
+00:07:28,540 --> 00:07:28,750
+Yeah.
+
+109
+00:07:28,770 --> 00:07:31,320
+This is the right one because I added my token character.
+
+110
+00:07:31,860 --> 00:07:36,450
+OK, so if that SQL is right, then in theory this should work.
+
+111
+00:07:36,780 --> 00:07:37,090
+OK.
+
+112
+00:07:37,110 --> 00:07:39,900
+We haven't done the copy files over a part yet, but we can test this.
+
+113
+00:07:40,470 --> 00:07:44,520
+So what we'll do in the next lecture is delete the three tables that are in our database or all the
+
+114
+00:07:44,520 --> 00:07:45,680
+tables from our database.
+
+115
+00:07:45,690 --> 00:07:47,850
+Make sure the migrations folder is empty.
+
+116
+00:07:48,480 --> 00:07:54,150
+Rebuild the Seelye and then run it and see if we get the necessary tables created, which will be a
+
+117
+00:07:54,150 --> 00:07:54,930
+good first step.

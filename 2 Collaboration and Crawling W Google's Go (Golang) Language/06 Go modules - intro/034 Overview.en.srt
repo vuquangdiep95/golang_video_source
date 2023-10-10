@@ -1,0 +1,371 @@
+1
+00:00:00,080 --> 00:00:01,980
+So now we're moving into some new sections.
+
+2
+00:00:01,980 --> 00:00:08,610
+My glasses were about fall off my head and we just finished these hands on exercise and we're going
+
+3
+00:00:08,610 --> 00:00:15,200
+to look at go modules and so go modules is actually a pretty big change for the go programming language.
+
+4
+00:00:15,390 --> 00:00:17,660
+And one of the great things about go.
+
+5
+00:00:17,670 --> 00:00:23,690
+I recently had a student I created a course my first online course was several years ago once tunes
+
+6
+00:00:23,700 --> 00:00:27,460
+like Hey these videos are still here and you're online course are they still relevant.
+
+7
+00:00:27,510 --> 00:00:28,030
+And I'm like Yeah.
+
+8
+00:00:28,050 --> 00:00:29,100
+They're absolutely relevant.
+
+9
+00:00:29,100 --> 00:00:31,170
+That's why it goes great.
+
+10
+00:00:31,170 --> 00:00:32,900
+It doesn't change that much.
+
+11
+00:00:32,910 --> 00:00:39,840
+They really made sure that the design of the language was built solid from the get go and and because
+
+12
+00:00:39,840 --> 00:00:44,690
+of that they've added incremental changes but there haven't really been any large significant changes.
+
+13
+00:00:44,850 --> 00:00:50,670
+The initial architecture of the language was solid built by geniuses built by luminaries in computer
+
+14
+00:00:50,670 --> 00:00:51,420
+science.
+
+15
+00:00:51,420 --> 00:00:52,310
+KEN THOMPSON Rob.
+
+16
+00:00:52,560 --> 00:00:54,910
+Rob Pike and Robert Gregg summer right.
+
+17
+00:00:54,960 --> 00:01:01,680
+Some of the same people who created C Unix UTF 8 the bedrock of comp science now created this language
+
+18
+00:01:01,710 --> 00:01:05,640
+created at one of the best soft fringing engineering firms to have ever existed.
+
+19
+00:01:05,630 --> 00:01:10,950
+Google so it's a really well built danger language doesn't change that much but one of the things that
+
+20
+00:01:10,950 --> 00:01:16,830
+has changed and this has been probably the most significant change in the language is that we used to
+
+21
+00:01:16,830 --> 00:01:25,020
+have something called Go workspaces that were tied to your go path environment variable and so that
+
+22
+00:01:25,020 --> 00:01:31,050
+go path environment variable if you come from you know if you programmed and go before this point that
+
+23
+00:01:31,050 --> 00:01:34,410
+go path environment variable defined your go work space.
+
+24
+00:01:34,470 --> 00:01:39,030
+And it was recommended that you just have one workspace and in that workspace he had a bin folder you
+
+25
+00:01:39,030 --> 00:01:44,640
+had a package folder and then you had a source folder and then inside that source folder you had your
+
+26
+00:01:44,640 --> 00:01:50,270
+name spacing which was often related to some domain user name and maybe a repo.
+
+27
+00:01:50,270 --> 00:01:55,020
+And that's how you namespace different code in different packages.
+
+28
+00:01:55,020 --> 00:02:00,120
+Well one of the big changes with the language was that they needed a more effective way to do package
+
+29
+00:02:00,120 --> 00:02:03,750
+management or dependency management whatever you want to call it.
+
+30
+00:02:03,840 --> 00:02:08,550
+And we're gonna get into all the details of what package management dependency management is and the
+
+31
+00:02:08,550 --> 00:02:12,860
+terminology and we're gonna walk you through all the fine to details.
+
+32
+00:02:12,960 --> 00:02:18,990
+This is just an introduction to go modules and go modules is actually really simple in practice.
+
+33
+00:02:19,080 --> 00:02:20,850
+However there's a lot of depth to it.
+
+34
+00:02:20,880 --> 00:02:22,650
+So we want to show you that depth.
+
+35
+00:02:22,650 --> 00:02:28,740
+Show you the power and if you're using some other versioning dependency management piece of SOC software
+
+36
+00:02:28,950 --> 00:02:33,530
+like glide or is it go depths or depths because it's called dat.
+
+37
+00:02:33,570 --> 00:02:33,860
+Yeah.
+
+38
+00:02:33,900 --> 00:02:39,450
+Def right if you're using something else he'll automatically do a pretty good job sometimes a good you
+
+39
+00:02:39,450 --> 00:02:46,440
+know you'll be a perfect job automatically go modules will convert those other package management if
+
+40
+00:02:46,440 --> 00:02:54,810
+you're using it to go modules and so go modules is a new way of managing your go work spaces so you
+
+41
+00:02:54,810 --> 00:03:01,180
+can have many workspaces and managing your code and your dependencies and so it's really cool easy in
+
+42
+00:03:01,170 --> 00:03:02,570
+practice but with a lot of depth.
+
+43
+00:03:02,580 --> 00:03:08,010
+So by the time we get through all this material you're going to have an awesome understanding of doing
+
+44
+00:03:08,010 --> 00:03:15,000
+package management using go modules and it's all built in and it's got a lot of really cool features
+
+45
+00:03:15,000 --> 00:03:16,440
+and security features.
+
+46
+00:03:16,530 --> 00:03:22,290
+So you're going to avoid things like that JavaScript NPM deal that they had which was what is it called
+
+47
+00:03:22,350 --> 00:03:28,470
+left that left pad where like you know millions of people are relying on this one little dependency
+
+48
+00:03:28,470 --> 00:03:32,080
+and like the person yanks it like code everywhere just fails.
+
+49
+00:03:32,250 --> 00:03:32,620
+Right.
+
+50
+00:03:32,650 --> 00:03:34,410
+So so it's pretty cool.
+
+51
+00:03:34,410 --> 00:03:36,030
+So here's just a little bit of an overview.
+
+52
+00:03:36,030 --> 00:03:37,320
+This is the introduction.
+
+53
+00:03:37,440 --> 00:03:42,030
+We have three sections we're going to look at we have a go modules intro section right now we're at
+
+54
+00:03:42,030 --> 00:03:47,280
+the overview video and then we're going to have a go modules deeper dive and then we're gonna have a
+
+55
+00:03:47,280 --> 00:03:48,000
+go modules.
+
+56
+00:03:48,000 --> 00:03:52,710
+Good to know and we're going to learn what package management is so if you're new to package management
+
+57
+00:03:52,920 --> 00:03:57,810
+we're gonna discuss that and explore what package management is because I remember at this point my
+
+58
+00:03:57,810 --> 00:04:04,780
+tie at a point in time in my life where I was like what package management.
+
+59
+00:04:04,890 --> 00:04:09,930
+And you're going to read some documentation one of my favorite things to do is like you know let's get
+
+60
+00:04:09,930 --> 00:04:13,870
+the definitive source of information about what this is all about we're going to give you resources
+
+61
+00:04:13,870 --> 00:04:20,790
+to that we're going to create a new module we're going to learn about go mod and get repos and adding
+
+62
+00:04:20,790 --> 00:04:26,310
+a dependency and security assurance that's provided by go modules and we're going to learn all about
+
+63
+00:04:26,310 --> 00:04:31,620
+understanding versioning and upgrading minor dependencies and specifying dependency versions and adding
+
+64
+00:04:31,620 --> 00:04:36,360
+a new major dependency and upgrading major dependency and removing unused dependencies then we're going
+
+65
+00:04:36,360 --> 00:04:41,370
+to take a look at this automatic conversion thing which I just talked about with if you're using DAP
+
+66
+00:04:41,490 --> 00:04:47,400
+or glide or others we're going to learn about something called the module Mir and modules and get commit
+
+67
+00:04:47,400 --> 00:04:51,890
+versioning and get forks a module path replacement and they're going to review all those commands.
+
+68
+00:04:51,990 --> 00:04:52,860
+So that's what's common.
+
+69
+00:04:52,860 --> 00:04:59,280
+It's Friday late in the morning later in the morning it's 11:00 a.m. Friday and Daniel and I are both
+
+70
+00:04:59,280 --> 00:05:05,790
+really committed to providing you a great cause so committed this is what we're doing with our time
+
+71
+00:05:06,570 --> 00:05:08,810
+and we've studied this.
+
+72
+00:05:09,030 --> 00:05:10,070
+We just spent a lot.
+
+73
+00:05:10,120 --> 00:05:14,820
+You know like I spent the last couple of days just really diving into go modules so I could really understand
+
+74
+00:05:14,820 --> 00:05:15,250
+it.
+
+75
+00:05:15,420 --> 00:05:20,190
+And Daniel's got a lot of great practice and was awesome studying and it's also got a lot of great practical
+
+76
+00:05:20,190 --> 00:05:22,140
+experience using go modules.
+
+77
+00:05:22,140 --> 00:05:29,370
+So we're really excited to be offering this information this material this course to you so that you
+
+78
+00:05:29,370 --> 00:05:39,290
+are most best equipped to move out on your journey with coding to create the best code projects repositories
+
+79
+00:05:39,300 --> 00:05:40,200
+possible.
+
+80
+00:05:40,390 --> 00:05:41,580
+That's that's intro.
+
+81
+00:05:41,610 --> 00:05:43,310
+You anything you want to add.
+
+82
+00:05:43,800 --> 00:05:53,130
+So the go modules is a big change from go path but go path still exists in the go go 1.0 guarantee I
+
+83
+00:05:53,130 --> 00:05:59,130
+believe will mean go path will always exist in some form or another just in case you want to use old
+
+84
+00:05:59,280 --> 00:06:03,410
+old code or old tutorials so go modules is the new way of doing things.
+
+85
+00:06:03,420 --> 00:06:08,640
+It's the recommended way of doing things go path will still exist if you are dependent on it.
+
+86
+00:06:10,510 --> 00:06:15,310
+That's why pair programming and teaching is awesome because when you have many minds you get better
+
+87
+00:06:15,310 --> 00:06:16,070
+solutions.
+
+88
+00:06:16,210 --> 00:06:24,250
+And that's many not am I and I but many am a NY many minds often result in better solutions.
+
+89
+00:06:24,250 --> 00:06:25,210
+Different perspectives.
+
+90
+00:06:25,240 --> 00:06:27,900
+Yeah that's really good important that.
+
+91
+00:06:28,060 --> 00:06:28,330
+All right.
+
+92
+00:06:28,360 --> 00:06:30,070
+So anything else.
+
+93
+00:06:30,700 --> 00:06:35,350
+We'll see in the next video where we're going to jump in to discussing package management.

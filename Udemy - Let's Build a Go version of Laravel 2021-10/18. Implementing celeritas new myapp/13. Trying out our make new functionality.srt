@@ -1,0 +1,531 @@
+1
+00:00:01,550 --> 00:00:07,070
+So it's time to try our celebrity's new functionality and see what we got wrong, and I'm pretty sure
+
+2
+00:00:07,070 --> 00:00:07,880
+we got something wrong.
+
+3
+00:00:07,910 --> 00:00:09,590
+But anyway, let's run it and try it.
+
+4
+00:00:09,830 --> 00:00:17,630
+So am I still a toss up and I am going to run make built and that should build a Seelye version, my
+
+5
+00:00:17,630 --> 00:00:20,600
+C-list celebrity application into the disc directory.
+
+6
+00:00:21,230 --> 00:00:25,520
+So if I change into the Disc Directory, I'm doing less unless there is.
+
+7
+00:00:25,760 --> 00:00:27,000
+So that's the latest version.
+
+8
+00:00:27,530 --> 00:00:34,370
+Now I've already opened up my bare application from way back when and when I opened it up.
+
+9
+00:00:34,370 --> 00:00:39,470
+I noticed that I, in fact did forget to delete all of the middleware in here because we don't need
+
+10
+00:00:39,470 --> 00:00:40,340
+any of this.
+
+11
+00:00:40,850 --> 00:00:43,520
+All of this is actually except for the middleware go file.
+
+12
+00:00:43,550 --> 00:00:44,510
+So those should be gone.
+
+13
+00:00:46,410 --> 00:00:47,010
+And they are.
+
+14
+00:00:47,490 --> 00:00:52,980
+And now I'll go to my OK version control and committees.
+
+15
+00:00:53,220 --> 00:00:56,600
+Delete unused files.
+
+16
+00:00:57,200 --> 00:00:58,200
+So commit those.
+
+17
+00:01:00,570 --> 00:01:01,470
+And I'll push them.
+
+18
+00:01:05,540 --> 00:01:10,310
+And I go back to my Web browser, and I'll refresh this page to make sure it's the current version,
+
+19
+00:01:10,310 --> 00:01:14,960
+I'm looking at my Celerity app project in middleware that should just be one file in there.
+
+20
+00:01:14,990 --> 00:01:15,500
+That's better.
+
+21
+00:01:16,250 --> 00:01:19,580
+So now when I run celerity, this new everything should work as expected.
+
+22
+00:01:20,600 --> 00:01:28,760
+So I have my bare application here and let me switch back over to celebrities and I will copy my celebrity's
+
+23
+00:01:28,820 --> 00:01:29,720
+executable.
+
+24
+00:01:29,960 --> 00:01:31,870
+And yours might be called Celebrity X.
+
+25
+00:01:32,450 --> 00:01:38,330
+But I'm going to copy it to the location where I want to run it, which is my desktop, so I'll copy
+
+26
+00:01:38,330 --> 00:01:39,050
+it to my desktop.
+
+27
+00:01:39,200 --> 00:01:41,600
+And if you want to just click and drag.
+
+28
+00:01:41,780 --> 00:01:43,430
+Get it on your desktop somehow.
+
+29
+00:01:44,270 --> 00:01:53,720
+OK, so it's on my desktop now, so I'll open another terminal window by clicking the plus sign and
+
+30
+00:01:53,720 --> 00:01:54,530
+go to my desktop.
+
+31
+00:01:58,980 --> 00:02:05,490
+Or wherever you put the file and I'll try running dot slash house new and I'll just call it cool app.
+
+32
+00:02:06,120 --> 00:02:10,050
+OK, so Klum's, it puts it all down there and it's finished.
+
+33
+00:02:10,440 --> 00:02:12,030
+Let's open a new window.
+
+34
+00:02:16,080 --> 00:02:20,130
+And zoom in and open the folder on your desktop.
+
+35
+00:02:20,250 --> 00:02:23,010
+So I'll open from my desktop.
+
+36
+00:02:23,220 --> 00:02:27,030
+I'm looking for cool app right there and I'll open this up.
+
+37
+00:02:30,950 --> 00:02:35,180
+And in theory, I should be able to open my terminal window.
+
+38
+00:02:36,530 --> 00:02:41,450
+And type make start is probably not going to work the first try.
+
+39
+00:02:41,630 --> 00:02:42,620
+Nothing ever does.
+
+40
+00:02:42,860 --> 00:02:43,970
+And there is the first problem.
+
+41
+00:02:44,390 --> 00:02:48,740
+It tries to download two solar celerity version zero zero zero.
+
+42
+00:02:49,640 --> 00:02:52,280
+And of course, that's something we'll have to change in the go.
+
+43
+00:02:52,280 --> 00:02:53,060
+Don't modifier.
+
+44
+00:02:53,160 --> 00:02:54,680
+Let's see what we have to change it to.
+
+45
+00:02:55,070 --> 00:02:58,010
+So I'll simply delete this line entirely.
+
+46
+00:02:59,120 --> 00:03:07,400
+The one that says the refers to alertness and close this file and clear the screen and type.
+
+47
+00:03:07,550 --> 00:03:15,890
+Go get GitHub dot com, slash Tesla slash celebrities and see what it does.
+
+48
+00:03:18,980 --> 00:03:19,370
+OK.
+
+49
+00:03:19,550 --> 00:03:20,310
+So I downloaded it.
+
+50
+00:03:20,330 --> 00:03:20,840
+That's good.
+
+51
+00:03:21,920 --> 00:03:25,610
+Now let's type make start and see if it all compiles and runs.
+
+52
+00:03:28,840 --> 00:03:33,640
+Imported and not used, so there's something else we have to clear it that some handlers don't go.
+
+53
+00:03:33,710 --> 00:03:34,830
+So let's open up handlers.
+
+54
+00:03:36,970 --> 00:03:38,730
+We left a reference to Jet in there.
+
+55
+00:03:38,740 --> 00:03:41,200
+So should you be able to save this might goes away.
+
+56
+00:03:41,260 --> 00:03:41,670
+Good.
+
+57
+00:03:41,710 --> 00:03:42,430
+We'll close that.
+
+58
+00:03:43,200 --> 00:03:45,140
+So that's a second thing we're going to have to fix.
+
+59
+00:03:45,160 --> 00:03:46,150
+Let's do that right now.
+
+60
+00:03:46,160 --> 00:03:54,790
+Let's go over to bear your bear application and open your handlers right there.
+
+61
+00:03:56,990 --> 00:03:58,190
+And delete that one.
+
+62
+00:03:59,900 --> 00:04:00,800
+Save that.
+
+63
+00:04:01,400 --> 00:04:01,850
+OK.
+
+64
+00:04:03,060 --> 00:04:05,420
+And let's go back now and try running that again.
+
+65
+00:04:06,590 --> 00:04:10,160
+So back to cool app three are for the screen.
+
+66
+00:04:11,000 --> 00:04:12,640
+See if the third time is the charm.
+
+67
+00:04:12,680 --> 00:04:13,190
+Make sure.
+
+68
+00:04:19,420 --> 00:04:19,810
+OK.
+
+69
+00:04:19,840 --> 00:04:24,270
+Add up middle, weird check, remember undefined and that is in roots.
+
+70
+00:04:24,730 --> 00:04:25,960
+There's something else we have to change.
+
+71
+00:04:28,550 --> 00:04:33,740
+OK to recap and go back to our beer application.
+
+72
+00:04:35,170 --> 00:04:37,030
+Right here and find roots.
+
+73
+00:04:38,660 --> 00:04:43,820
+And doing that right now, let's commit all of these changes.
+
+74
+00:04:44,330 --> 00:04:49,790
+So remove unused code commit.
+
+75
+00:04:51,400 --> 00:04:52,210
+And push.
+
+76
+00:04:56,020 --> 00:04:58,690
+OK, and now let's go back and try running it again.
+
+77
+00:04:59,680 --> 00:05:03,040
+So I'm back to cool air and clear the terminal.
+
+78
+00:05:03,840 --> 00:05:04,180
+Start.
+
+79
+00:05:16,040 --> 00:05:16,550
+Perfect.
+
+80
+00:05:16,580 --> 00:05:17,240
+It's running.
+
+81
+00:05:17,810 --> 00:05:20,100
+So let's try running this or see what this does.
+
+82
+00:05:20,120 --> 00:05:25,580
+We'll go over to our browser and type local host four thousand.
+
+83
+00:05:27,580 --> 00:05:28,920
+And it works perfect.
+
+84
+00:05:29,830 --> 00:05:38,440
+OK, so we need to make a change now to our celebrities project, so let's find that celebrities and
+
+85
+00:05:38,440 --> 00:05:40,780
+what we wanted to change was.
+
+86
+00:05:42,950 --> 00:05:48,560
+In our CMT folder, templates go dark mode.
+
+87
+00:05:50,210 --> 00:05:51,380
+We want to get rid of this part.
+
+88
+00:05:51,650 --> 00:05:57,380
+What I'm going to do is put in V one point zero point zero because I want to make sure that I'm downloading
+
+89
+00:05:57,380 --> 00:05:59,600
+exactly the version that I want to download.
+
+90
+00:05:59,750 --> 00:06:00,110
+OK.
+
+91
+00:06:00,470 --> 00:06:06,320
+So I am referring to a tag version one point zero point zero, and I don't think I've tagged it over
+
+92
+00:06:06,320 --> 00:06:06,650
+here.
+
+93
+00:06:06,650 --> 00:06:09,170
+So go back to my celebrity's project.
+
+94
+00:06:10,350 --> 00:06:14,790
+Go to the root level and there are no releases, so let's create a new release.
+
+95
+00:06:14,880 --> 00:06:15,930
+I will tag this.
+
+96
+00:06:17,780 --> 00:06:20,570
+Has the one point zero point zero.
+
+97
+00:06:21,410 --> 00:06:21,750
+OK.
+
+98
+00:06:23,400 --> 00:06:25,860
+And I will because I missed that.
+
+99
+00:06:26,010 --> 00:06:26,490
+There it is.
+
+100
+00:06:27,120 --> 00:06:27,550
+OK.
+
+101
+00:06:28,260 --> 00:06:33,510
+Publish the release and I'll call this initial release, publish the release.
+
+102
+00:06:34,410 --> 00:06:34,860
+There it is.
+
+103
+00:06:36,120 --> 00:06:40,470
+So now when I go back to my celebrity's project, let's try this one last time.
+
+104
+00:06:42,270 --> 00:06:44,760
+So I'm going to, first of all, find the cool app.
+
+105
+00:06:46,710 --> 00:06:49,680
+So I'm going to, first of all, close my cool art project altogether.
+
+106
+00:06:50,340 --> 00:06:53,130
+There's beer celebrities cooler, so I'll close this.
+
+107
+00:06:53,400 --> 00:06:54,270
+I'll stop it first.
+
+108
+00:06:56,010 --> 00:07:00,150
+Make stop and I'll close this.
+
+109
+00:07:01,510 --> 00:07:07,660
+And then I'll remove the folder cool app, or I'm or RF Cool app, and you can just drag yours to the
+
+110
+00:07:07,660 --> 00:07:13,780
+folder or to the trash if you're using windows or use whatever the equivalent command is in your favorite
+
+111
+00:07:13,780 --> 00:07:14,140
+show.
+
+112
+00:07:14,680 --> 00:07:16,600
+And now we'll go back to my other terminal.
+
+113
+00:07:17,840 --> 00:07:24,320
+Here and I will go up one level, rebuild my seal, I make build.
+
+114
+00:07:31,530 --> 00:07:37,440
+Go to the dust folder and copy celebrities back to the desktop folder.
+
+115
+00:07:39,500 --> 00:07:48,290
+And now will switch to my other terminal window and Typekit slash celebrity's new cool app to.
+
+116
+00:07:51,240 --> 00:07:51,630
+OK.
+
+117
+00:07:52,520 --> 00:07:57,570
+Now open a new window in visual studio code Zoom to
+
+118
+00:08:00,300 --> 00:08:02,040
+open the cool app to folder.
+
+119
+00:08:04,990 --> 00:08:08,830
+From the desktop cool app to open.
+
+120
+00:08:11,650 --> 00:08:13,000
+Let's see if we missed anything else.
+
+121
+00:08:14,080 --> 00:08:18,460
+So open my terminal window and type make start.
+
+122
+00:08:23,370 --> 00:08:25,230
+So it's building it, that's a good sign.
+
+123
+00:08:29,530 --> 00:08:33,490
+The delay is that it's downloading celebrities and all the associated packages, of course.
+
+124
+00:08:41,560 --> 00:08:42,460
+And it started it.
+
+125
+00:08:43,120 --> 00:08:45,310
+And can I see it in my Web browser?
+
+126
+00:08:45,820 --> 00:08:47,470
+Let's just reload this page.
+
+127
+00:08:48,400 --> 00:08:48,970
+Perfect.
+
+128
+00:08:49,540 --> 00:08:50,270
+So there you go.
+
+129
+00:08:50,290 --> 00:08:57,130
+We have a fully functional application that allows us to specify a database easily, a cache, easily.
+
+130
+00:08:57,140 --> 00:08:59,980
+It has management for sessions, for user authentication.
+
+131
+00:08:59,980 --> 00:09:03,400
+It has all of the things I need to get started building an application.
+
+132
+00:09:04,680 --> 00:09:05,460
+Well, that was fun.
+
+133
+00:09:05,790 --> 00:09:11,820
+OK, let's move on to the final section of this course, and that's just where to go next section.

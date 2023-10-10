@@ -1,0 +1,511 @@
+1
+00:00:11,690 --> 00:00:16,700
+Hello and welcome to the Go programming language course in the previous session.
+
+2
+00:00:16,730 --> 00:00:23,750
+We were able to implement to run G.P.S. server function, and in this session we want to implement the
+
+3
+00:00:23,750 --> 00:00:25,850
+range your PC client function.
+
+4
+00:00:27,080 --> 00:00:31,430
+The client must communicate with the server to do this.
+
+5
+00:00:31,640 --> 00:00:37,010
+We use the dial function of the G.R. PC package during our function.
+
+6
+00:00:37,190 --> 00:00:40,250
+Create a client connection to the given target.
+
+7
+00:00:40,910 --> 00:00:49,430
+This function accepts two parameters first, that address a target, and second is lists of denial option
+
+8
+00:00:49,760 --> 00:00:54,050
+and return to values first and object from client connection.
+
+9
+00:00:54,230 --> 00:00:55,880
+And second, an error object.
+
+10
+00:00:56,510 --> 00:01:04,910
+So first, go to run your PC client and define to Maribeth Light Connection, and it will connection
+
+11
+00:01:07,220 --> 00:01:15,920
+and calling you calls calling down function from C Typekit your PC dot the off
+
+12
+00:01:19,040 --> 00:01:20,210
+set address
+
+13
+00:01:21,380 --> 00:01:25,790
+127.0.0.1 column.
+
+14
+00:01:27,680 --> 00:01:31,460
+Eighty eighty five as port.
+
+15
+00:01:35,470 --> 00:01:42,610
+And for dialogue option in this case, for use with insecure function from GOPAC package that returns
+
+16
+00:01:42,610 --> 00:01:52,660
+a deal option which disable transport security for this client connection g r p c dot we'd.
+
+17
+00:01:55,570 --> 00:01:57,660
+In sexual function.
+
+18
+00:01:58,420 --> 00:01:58,710
+OK.
+
+19
+00:02:00,310 --> 00:02:02,320
+First check and order status.
+
+20
+00:02:03,070 --> 00:02:06,550
+If it were not equals need.
+
+21
+00:02:10,430 --> 00:02:21,180
+Not the photog thought, you know, using this Earth for close connection after functions completed
+
+22
+00:02:22,050 --> 00:02:27,440
+the ether connection to close.
+
+23
+00:02:30,050 --> 00:02:32,690
+Now it's time to start line service.
+
+24
+00:02:33,110 --> 00:02:39,500
+We do this by calling the new Student Service Client Method from protocol package.
+
+25
+00:02:40,220 --> 00:02:48,050
+This method receives a connection as an input parameter and returns a client service, a student of
+
+26
+00:02:48,050 --> 00:02:49,490
+the portal to us.
+
+27
+00:02:49,850 --> 00:02:59,510
+So first, define a variable like client client column equals and calling you a student service client
+
+28
+00:02:59,510 --> 00:03:11,990
+from Protocol Protocol, Dot, new student service, client function and Cert connection as parameter
+
+29
+00:03:12,200 --> 00:03:13,100
+connection.
+
+30
+00:03:17,060 --> 00:03:23,780
+The client is now connected to the server and we can call the methods in our job is the service.
+
+31
+00:03:24,530 --> 00:03:31,730
+First, we display a few messages that indicate what the client wants from the server, so we write
+
+32
+00:03:34,820 --> 00:03:35,570
+off P
+
+33
+00:03:38,630 --> 00:03:39,980
+and back list.
+
+34
+00:03:41,300 --> 00:03:42,110
+Welcome.
+
+35
+00:03:46,340 --> 00:04:04,130
+Please enter number to select your requests, go to the next line and set number one message.
+
+36
+00:04:04,700 --> 00:04:05,390
+FP.
+
+37
+00:04:09,960 --> 00:04:17,760
+One select oh, students
+
+38
+00:04:19,890 --> 00:04:27,210
+based nay and go to the next line and set number two message
+
+39
+00:04:29,700 --> 00:04:30,300
+FP
+
+40
+00:04:33,110 --> 00:04:46,110
+to call column select, add this to there based on the know
+
+41
+00:04:50,520 --> 00:04:54,690
+and set a message for select number by the user.
+
+42
+00:04:55,080 --> 00:04:55,530
+If.
+
+43
+00:04:58,340 --> 00:04:58,760
+The.
+
+44
+00:05:01,520 --> 00:05:02,840
+Barack is less and.
+
+45
+00:05:08,330 --> 00:05:12,770
+Please enter your No.
+
+46
+00:05:18,170 --> 00:05:25,490
+Now define evaluated for store value that receive from client by the scandal and function.
+
+47
+00:05:25,760 --> 00:05:37,880
+So we try, for the example, improved quality calls and go to the next line calling Escandon function
+
+48
+00:05:37,880 --> 00:05:46,520
+from family package if and to on the scan and in function ampersand input.
+
+49
+00:05:50,820 --> 00:05:59,430
+Suppose that clients select no one saw me write a statement for selecting no one messes for this purpose
+
+50
+00:05:59,580 --> 00:06:07,170
+because an equal fall from a strings package that reports whether twisting parameters interpreted as
+
+51
+00:06:07,170 --> 00:06:15,510
+UTF eight strings are equal on their unique case for you, which is a more general form of chaste insensitivity.
+
+52
+00:06:16,260 --> 00:06:21,840
+So be right if it swings.
+
+53
+00:06:24,460 --> 00:06:34,090
+Guts, equal form and sit in pool and perimeter.
+
+54
+00:06:34,310 --> 00:06:34,660
+One.
+
+55
+00:06:40,130 --> 00:06:57,290
+Define a variable for store name value column equals double quotation mark if in two thirds print into
+
+56
+00:06:57,980 --> 00:06:58,970
+your name.
+
+57
+00:07:04,180 --> 00:07:17,320
+And receive name value by calling can information from client if you got a skin alarm function and ampersand
+
+58
+00:07:17,320 --> 00:07:21,340
+and the venue now set a new line.
+
+59
+00:07:25,780 --> 00:07:32,830
+Now it's time to call and get the students by name method from pro to fine so we can get the students
+
+60
+00:07:32,830 --> 00:07:35,560
+by name method from client object.
+
+61
+00:07:36,100 --> 00:07:38,620
+The past two arguments for this method.
+
+62
+00:07:38,890 --> 00:07:46,510
+First, a context and second an object from search by name, message and return stream of students and
+
+63
+00:07:46,510 --> 00:07:47,290
+or object.
+
+64
+00:07:47,590 --> 00:08:00,550
+So define two variables like a this and we'll call it equals client to give the students by name calling
+
+65
+00:08:00,550 --> 00:08:07,270
+background function from context as a context, argument, context, dark background
+
+66
+00:08:09,790 --> 00:08:15,970
+and create an instance of search by name is derived from protocol package and initialized name value
+
+67
+00:08:15,970 --> 00:08:18,100
+for it as second arguments.
+
+68
+00:08:18,100 --> 00:08:21,130
+Arguments for the example ampersand protocol
+
+69
+00:08:23,680 --> 00:08:29,140
+dot search by name and set for name value.
+
+70
+00:08:30,580 --> 00:08:32,860
+Name equals.
+
+71
+00:08:36,240 --> 00:08:43,890
+Value reform at the cold and save the project, go to the next line.
+
+72
+00:08:45,030 --> 00:08:58,290
+First, check your status, if at all not equals mean, like that fatal error of DOT.
+
+73
+00:08:58,510 --> 00:09:07,890
+So we create the full loop and this loop will be able to receive data as long as it is sent from the
+
+74
+00:09:07,890 --> 00:09:09,030
+data server.
+
+75
+00:09:09,360 --> 00:09:11,100
+So create for.
+
+76
+00:09:16,310 --> 00:09:23,690
+We received data from server by the receive function first, create two variables like student and error
+
+77
+00:09:24,320 --> 00:09:27,230
+calling equals the student's
+
+78
+00:09:29,840 --> 00:09:31,850
+dot c function.
+
+79
+00:09:32,060 --> 00:09:38,210
+Now we want to check and see if the data is still sent to us from the server or not.
+
+80
+00:09:38,660 --> 00:09:42,620
+For this purpose, be used in the file from IE or package.
+
+81
+00:09:42,740 --> 00:09:48,950
+So we write Eve all equals equals AI or DOT.
+
+82
+00:09:49,370 --> 00:09:50,900
+And often
+
+83
+00:09:53,780 --> 00:09:59,030
+if the program enters this block, the break command is executed reg
+
+84
+00:10:02,660 --> 00:10:06,560
+and check it or a status Heathrow.
+
+85
+00:10:09,690 --> 00:10:13,850
+Lord, the faithful and all that.
+
+86
+00:10:15,870 --> 00:10:21,510
+Oh, and now preen the student value FP.
+
+87
+00:10:23,990 --> 00:10:24,590
+Students.
+
+88
+00:10:29,230 --> 00:10:33,130
+And set a new line for display better WiFi
+
+89
+00:10:35,740 --> 00:10:37,710
+and set return.
+
+90
+00:10:40,810 --> 00:10:44,650
+OK, reform of the code and save the project.
+
+91
+00:10:45,790 --> 00:10:52,600
+Now, if the client does not select number one, the program will not enter the FBI much and will run
+
+92
+00:10:52,600 --> 00:10:55,240
+from here on or in other wars.
+
+93
+00:10:55,270 --> 00:11:00,820
+Number two has been selected, so create a message for entering I.D. value.
+
+94
+00:11:04,950 --> 00:11:18,570
+If A. Don't print an instant message, enter your I.D., Colin, go to the next line, receive I.D.
+
+95
+00:11:18,570 --> 00:11:28,250
+value by calling is information from clients, so be right if indeed all this content and said Anderson.
+
+96
+00:11:28,260 --> 00:11:35,040
+Input value I and we create a new line for better display.
+
+97
+00:11:35,310 --> 00:11:35,580
+That's
+
+98
+00:11:38,550 --> 00:11:38,970
+OK.
+
+99
+00:11:39,300 --> 00:11:42,060
+Then we receive the parameter from the console.
+
+100
+00:11:42,240 --> 00:11:49,620
+This parameter into the program, as is string type and in this case, because the type of I.D. is integer
+
+101
+00:11:49,830 --> 00:11:53,520
+and on the other hand, the receive parameter is of type S3.
+
+102
+00:11:53,790 --> 00:12:01,370
+So it is necessary to convert the receipt parameter to INT value for this purpose, calling 80 only
+
+103
+00:12:01,380 --> 00:12:09,750
+function from SDR conf package for chest being input a string variable to an integer value so defined
+
+104
+00:12:09,750 --> 00:12:23,460
+to variable like I.D. and or I.D. comma there column he calls and calling a toy function from SDR card
+
+105
+00:12:23,490 --> 00:12:30,000
+package is still called and said import labor.
+
+106
+00:12:33,210 --> 00:12:33,570
+OK.
+
+107
+00:12:35,940 --> 00:12:37,290
+Take every status.
+
+108
+00:12:41,650 --> 00:12:43,690
+Like the FATTORE.
+
+109
+00:12:44,720 --> 00:12:47,630
+And sit erode the art or function.
+
+110
+00:12:49,700 --> 00:12:57,320
+OK, now it's time to call and get a student, buy the metal from putrefying so we can get the student
+
+111
+00:12:57,320 --> 00:12:58,250
+by either method.
+
+112
+00:12:58,250 --> 00:13:06,170
+Front line object the past two arguments for this method first context and second and object from search
+
+113
+00:13:06,170 --> 00:13:13,130
+by either Mercedes and return a student and or object so defined to marry bill like this student and
+
+114
+00:13:13,130 --> 00:13:17,090
+or a student.
+
+115
+00:13:18,200 --> 00:13:27,220
+Come on, little Collins equals and con and get a student by IED function from Client Client Dot.
+
+116
+00:13:27,620 --> 00:13:36,830
+Get a student by IED, cutting back on function from context as context, argument, civil right context,
+
+117
+00:13:38,000 --> 00:13:45,080
+dot background function and create an instance of service by name ideas derived from protocol, package
+
+118
+00:13:45,290 --> 00:13:46,400
+and initialize.
+
+119
+00:13:46,400 --> 00:13:50,800
+I value for it as second hour units sold right.
+
+120
+00:13:50,810 --> 00:13:51,590
+Anderson.
+
+121
+00:13:52,850 --> 00:14:10,040
+First of all, dot search by IED and sit IED venue for it by testing to N64, IED, IED and cast and
+
+122
+00:14:10,100 --> 00:14:10,730
+sixty.
+
+123
+00:14:14,120 --> 00:14:28,190
+Now check our status if you learn the battle and sit around and display their student value.
+
+124
+00:14:28,370 --> 00:14:32,030
+FP a student.
+
+125
+00:14:38,790 --> 00:14:49,230
+And we create a new life or better display if we OK now we were able to implement run GOPAC client function
+
+126
+00:14:49,920 --> 00:14:52,500
+in order not to prolong the time of decision.
+
+127
+00:14:52,680 --> 00:14:56,550
+We will finish it and we will continue the content in the next session.
+
+128
+00:14:56,790 --> 00:14:57,330
+Goodbye.

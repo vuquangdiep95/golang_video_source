@@ -1,0 +1,311 @@
+1
+00:00:15,760 --> 00:00:22,240
+Hello and welcome to the and programming language course in this session, we want to talk about Ari's
+
+2
+00:00:22,240 --> 00:00:22,930
+concept.
+
+3
+00:00:29,700 --> 00:00:30,920
+Now, days in go.
+
+4
+00:00:32,570 --> 00:00:36,740
+Arise and go land is much similar to other programming languages.
+
+5
+00:00:37,740 --> 00:00:43,980
+In the program, sometimes we need to restore a collection of data at the same time, like a list of
+
+6
+00:00:43,980 --> 00:00:48,330
+a student marks, such type of collection is a thought in the program.
+
+7
+00:00:48,330 --> 00:00:56,190
+Using an array and array is a fixed length sequence that is used to assess or homogenous elements in
+
+8
+00:00:56,190 --> 00:01:05,190
+the memory due to their fixed length array are not much popular, like a slice and go language in an
+
+9
+00:01:05,190 --> 00:01:05,730
+array.
+
+10
+00:01:05,880 --> 00:01:10,250
+You are allowed to store zero or more than zero elements in it.
+
+11
+00:01:11,130 --> 00:01:17,370
+The elements of their array are indexed by using this square brackets index or create or with their
+
+12
+00:01:17,370 --> 00:01:23,940
+zero base position means the index of the first element is only zero and the index of the last element
+
+13
+00:01:23,940 --> 00:01:27,300
+is at a glance at a minus one.
+
+14
+00:01:31,990 --> 00:01:40,780
+Creating and accessing injury, Ingo language arrays are created in two different ways.
+
+15
+00:01:41,890 --> 00:01:56,170
+First, using Vancouver Declaration and second using shorthand declaration, first using virtual in-goal
+
+16
+00:01:56,170 --> 00:02:04,900
+language and arrays created using the vernacular of a particular time with name, size and elements.
+
+17
+00:02:05,710 --> 00:02:07,720
+You can see the syntax in this line.
+
+18
+00:02:09,280 --> 00:02:19,030
+Important points First encode language arrays are mutable so that you can use array index syntax to
+
+19
+00:02:19,030 --> 00:02:24,670
+the left hand side of the assignment to set the elements of the array at the given index.
+
+20
+00:02:26,200 --> 00:02:26,770
+Second.
+
+21
+00:02:28,860 --> 00:02:36,870
+You can access the elements of the array by using the index value or by using for loop turn in go language,
+
+22
+00:02:36,870 --> 00:02:44,970
+the right time is one dimensional force the lengths of the arrays fixed and unchangeable.
+
+23
+00:02:46,000 --> 00:02:50,050
+And if you are allowed to assess or duplicate elements in an array.
+
+24
+00:02:51,990 --> 00:02:58,290
+Now go to tomorrow get program to illustrate how to create an array using the VAD keyboard and accessing
+
+25
+00:02:58,290 --> 00:03:00,990
+the elements of the audio using their index value.
+
+26
+00:03:03,350 --> 00:03:06,980
+First, go to extérieur and create a project folder.
+
+27
+00:03:08,110 --> 00:03:10,390
+For example, very.
+
+28
+00:03:13,990 --> 00:03:26,050
+And create a fund like me, just go back, raise me and create function me.
+
+29
+00:03:32,940 --> 00:03:33,320
+OK.
+
+30
+00:03:33,360 --> 00:03:34,410
+Everything is OK.
+
+31
+00:03:35,520 --> 00:03:42,450
+First creating and any of this trying time and using that keyboard to the following that.
+
+32
+00:03:44,700 --> 00:03:45,780
+Names.
+
+33
+00:03:47,810 --> 00:03:52,490
+Square clear brackets, three and time radiated a.
+
+34
+00:03:55,400 --> 00:04:01,850
+You can access or assign the array elements by referring to the index number, then they specify in
+
+35
+00:04:01,850 --> 00:04:16,730
+this score brackets for the example the names and the square brackets, zero equals gene and the other
+
+36
+00:04:17,210 --> 00:04:18,080
+names.
+
+37
+00:04:18,860 --> 00:04:29,810
+This score bracket one equals gene and enhanced my names S-Corp bracket.
+
+38
+00:04:30,140 --> 00:04:35,020
+Index two equals Alex.
+
+39
+00:04:39,170 --> 00:04:45,410
+Now we can access the elements of the array by using index value when you walk the index of an element.
+
+40
+00:04:45,770 --> 00:04:48,260
+It will return the value of that element.
+
+41
+00:04:49,250 --> 00:05:00,350
+Now do the following for the example display a message, display arrays and then
+
+42
+00:05:03,770 --> 00:05:05,040
+go to the next line.
+
+43
+00:05:06,120 --> 00:05:11,330
+FP Elements one column
+
+44
+00:05:15,080 --> 00:05:19,580
+names the square brackets zero.
+
+45
+00:05:21,020 --> 00:05:27,020
+It returns the value of index zero of names, value will go to the next line.
+
+46
+00:05:27,630 --> 00:05:40,760
+FP Alliance two column names this group rocket index, Vong and FP.
+
+47
+00:05:43,890 --> 00:05:55,830
+L.A. three columns names Esquire Bracket Index to save the project and execute the quote
+
+48
+00:06:02,550 --> 00:06:05,310
+from his last name, that cool.
+
+49
+00:06:07,110 --> 00:06:15,600
+Now we can see the output areas, elements, elements one equals gene elements two equals gene and elements
+
+50
+00:06:15,600 --> 00:06:17,460
+three equals Alex.
+
+51
+00:06:19,000 --> 00:06:26,050
+In this sample, first, we define an anybody, but we know you then initialize element of array by
+
+52
+00:06:26,050 --> 00:06:31,930
+index and pin the value of at a by accessing via index of array elements.
+
+53
+00:06:33,540 --> 00:06:35,850
+Now go to a slide and continue.
+
+54
+00:06:37,740 --> 00:06:46,050
+Second, they for creating and accessing and a is using shorthand declaration in goal language areas
+
+55
+00:06:46,050 --> 00:06:49,410
+can also declare using shorthand declaration.
+
+56
+00:06:49,740 --> 00:06:51,600
+You can see the syntax for it.
+
+57
+00:06:54,930 --> 00:07:01,350
+Now, go to this school to illustrate how to create an area using shorthand declaration and accessing
+
+58
+00:07:01,350 --> 00:07:03,540
+the elements of the array using for loop.
+
+59
+00:07:04,680 --> 00:07:06,750
+First, clear, the last quote.
+
+60
+00:07:13,320 --> 00:07:22,680
+Save the project, define and added by shorthand declaration for the example, create and add a name
+
+61
+00:07:22,680 --> 00:07:36,390
+names color equals S-Corp I and set the lens for any food and sets the time the string and curly brackets
+
+62
+00:07:36,390 --> 00:07:38,130
+for initialize the variable
+
+63
+00:07:40,770 --> 00:07:53,500
+gene, comma, key, comma, Alex and comma date.
+
+64
+00:07:55,530 --> 00:08:00,030
+We could define and names at a variable and initialize it.
+
+65
+00:08:00,150 --> 00:08:09,390
+Go to the next line and accessing the elements of the array using fold first right and message FP
+
+66
+00:08:12,330 --> 00:08:18,840
+elements added color and go to the next line.
+
+67
+00:08:19,170 --> 00:08:21,000
+Define L2 for iterate.
+
+68
+00:08:21,000 --> 00:08:36,420
+The elements of add a fourth I call an equals zero I less than four because the length of array is four
+
+69
+00:08:36,840 --> 00:08:38,970
+and a high class plus.
+
+70
+00:08:39,960 --> 00:08:49,670
+In the next line, we create a code that return the value of each element of array by names.
+
+71
+00:08:50,280 --> 00:08:57,540
+This square bracket indicates I reformat the code, save the project and execute the code.
+
+72
+00:09:01,920 --> 00:09:10,480
+Now we can see the output elements of Add A Is Jean Keen, Alex and David in this sample?
+
+73
+00:09:10,680 --> 00:09:12,840
+First, we define and add Avery.
+
+74
+00:09:12,840 --> 00:09:17,460
+Then we are shorthand declaration and initialize elements of it.
+
+75
+00:09:17,820 --> 00:09:25,110
+Then accessing the value of array by iterate the elements of it by for loop in order not to prolong
+
+76
+00:09:25,110 --> 00:09:26,400
+the time of decision.
+
+77
+00:09:26,610 --> 00:09:30,510
+We will finish it and we will continue the content in the next session.
+
+78
+00:09:30,660 --> 00:09:31,230
+Goodbye.

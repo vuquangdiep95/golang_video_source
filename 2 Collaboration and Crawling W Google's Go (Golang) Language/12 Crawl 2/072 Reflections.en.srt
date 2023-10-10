@@ -1,0 +1,447 @@
+1
+00:00:00,240 --> 00:00:00,500
+All right.
+
+2
+00:00:00,510 --> 00:00:04,550
+So just a couple of reflections that came up.
+
+3
+00:00:04,680 --> 00:00:11,490
+Sorry I STARTED OFF BY HERE THINKING BUT THE FIRST reflection was in the code used at Infinite Loop
+
+4
+00:00:11,580 --> 00:00:15,860
+and infinite loops have a bad reputation in programming rightly so.
+
+5
+00:00:15,880 --> 00:00:23,730
+So we truly are in an infinite loop then that never ends and your program hangs there and that's it.
+
+6
+00:00:23,760 --> 00:00:25,920
+You're in an infinite loop.
+
+7
+00:00:26,070 --> 00:00:30,980
+And so I have two anecdotes to share about infinite loops which I'll do at the end.
+
+8
+00:00:31,170 --> 00:00:37,710
+But this is not truly an infinite loop because you've got to break into that break is just a go laying
+
+9
+00:00:37,710 --> 00:00:39,830
+way of life.
+
+10
+00:00:40,710 --> 00:00:42,150
+It's actually pretty theoretical.
+
+11
+00:00:42,270 --> 00:00:47,270
+Most languages with loops will have break statements systems so yeah.
+
+12
+00:00:47,470 --> 00:00:49,080
+But it's not truly an infinite loop.
+
+13
+00:00:49,220 --> 00:00:49,630
+Yeah.
+
+14
+00:00:49,670 --> 00:00:49,990
+So.
+
+15
+00:00:50,010 --> 00:00:51,080
+So the.
+
+16
+00:00:51,120 --> 00:00:51,710
+You can have.
+
+17
+00:00:51,740 --> 00:00:56,330
+You can have a loop that's infinite so long as you've got a clearly defined place where it's intended
+
+18
+00:00:56,330 --> 00:00:58,120
+to end.
+
+19
+00:00:58,280 --> 00:00:58,640
+Yeah.
+
+20
+00:00:58,700 --> 00:01:04,460
+So I just wanted to iterate there make it clear there that this is not an infinite loop.
+
+21
+00:01:04,460 --> 00:01:10,260
+Even though the terminology that's being colloquially used is here's an infinite loop.
+
+22
+00:01:10,430 --> 00:01:14,240
+It's not it's not infinite loop because infinite loops and programming are bad.
+
+23
+00:01:14,330 --> 00:01:15,160
+Yeah right.
+
+24
+00:01:15,200 --> 00:01:17,030
+That's my understanding as I understand.
+
+25
+00:01:17,050 --> 00:01:17,460
+Yeah yeah.
+
+26
+00:01:17,610 --> 00:01:18,030
+So.
+
+27
+00:01:18,100 --> 00:01:25,010
+So one way to be safer here is this loop is dependent on Twitter giving back responses that I expect.
+
+28
+00:01:25,100 --> 00:01:36,220
+So if I wanted to be safer I could change this into a more standard I 0 is less than say 50 plus plus.
+
+29
+00:01:36,360 --> 00:01:42,110
+And that way it'll call Twitter up to 50 times so if Twitter just stood like start sending back garbage
+
+30
+00:01:42,110 --> 00:01:47,810
+data and make you always looping forever of everything I would limit myself to 50 call nine before exiting
+
+31
+00:01:48,200 --> 00:01:51,550
+nice so always have a clearly defined end point.
+
+32
+00:01:51,560 --> 00:01:55,660
+So this is actually probably better programmatically.
+
+33
+00:01:55,990 --> 00:01:58,450
+Yeah maybe you just never get that break.
+
+34
+00:01:58,560 --> 00:01:59,660
+Yeah yeah.
+
+35
+00:01:59,660 --> 00:02:02,540
+Could be that Twitter never actually says there's no more right.
+
+36
+00:02:02,690 --> 00:02:05,870
+So yeah oh that's a good good exploration.
+
+37
+00:02:05,870 --> 00:02:06,070
+Yeah.
+
+38
+00:02:06,140 --> 00:02:07,880
+More to say about that.
+
+39
+00:02:08,000 --> 00:02:09,330
+Nope.
+
+40
+00:02:09,440 --> 00:02:14,230
+Wait for the 50 is there any way to sort of like there's no way to get the length of it all before x.
+
+41
+00:02:14,240 --> 00:02:16,040
+We don't know such is infinite x.
+
+42
+00:02:16,160 --> 00:02:22,070
+You just have to say look we'll grab up to this many Yeah and then the next question I had is just kind
+
+43
+00:02:22,070 --> 00:02:26,600
+of like the design of this program what was the process that you used for designing it.
+
+44
+00:02:26,610 --> 00:02:32,570
+Do you have a process that used when you started thinking about this to modular eyes or I call it chunking
+
+45
+00:02:32,570 --> 00:02:35,080
+it up like to break it up into chunks.
+
+46
+00:02:35,090 --> 00:02:38,090
+What was your thought process for how you designed this code.
+
+47
+00:02:38,090 --> 00:02:40,100
+Architect of its structure.
+
+48
+00:02:40,370 --> 00:02:43,190
+I made this function.
+
+49
+00:02:43,190 --> 00:02:45,680
+I started off by starting to make a request.
+
+50
+00:02:45,710 --> 00:02:50,950
+Just a single request to get something from the yet from Twitter in my main function.
+
+51
+00:02:51,040 --> 00:02:53,050
+I just started writing in here.
+
+52
+00:02:53,280 --> 00:02:59,180
+But when I wrote deferred statement was when I decided Oh this should probably be its own function because
+
+53
+00:02:59,180 --> 00:03:03,290
+I want this by the clothes when I'm done passing off the Jason.
+
+54
+00:03:03,290 --> 00:03:05,600
+Not when I'm done with the entire program.
+
+55
+00:03:05,600 --> 00:03:06,210
+Nice.
+
+56
+00:03:06,270 --> 00:03:11,840
+And so that was a good good indicator to me when I said defer this should probably go to functions like
+
+57
+00:03:11,840 --> 00:03:15,300
+a more closely control when that defer is going to happen.
+
+58
+00:03:15,530 --> 00:03:18,950
+Because I want the deferred to end after the chase decode it because I don't need the body.
+
+59
+00:03:18,980 --> 00:03:25,680
+After that point so once I had that into a single standalone function.
+
+60
+00:03:25,780 --> 00:03:27,130
+Now I'm thinking about functions.
+
+61
+00:03:27,130 --> 00:03:29,630
+So when I go into the next part What do I need to do next.
+
+62
+00:03:29,770 --> 00:03:33,670
+I'm gonna need to call this bunch of times that's actually getting a little complex.
+
+63
+00:03:33,700 --> 00:03:39,580
+I start writing that in Maine as well I go oh I've got a big large for loop in here that's got a bit
+
+64
+00:03:39,580 --> 00:03:42,600
+of complexity behind when I'm exiting it.
+
+65
+00:03:43,060 --> 00:03:50,110
+Maybe I should pull that into its own function to just to make it more easily used nice and so that
+
+66
+00:03:50,110 --> 00:03:51,360
+became this.
+
+67
+00:03:51,460 --> 00:03:55,180
+And then when I started doing the pass HRT now I actually had that and a function by itself already
+
+68
+00:03:55,270 --> 00:04:01,030
+I figured passing each time I was going to be complex enough be easier than I expected but it's still
+
+69
+00:04:01,030 --> 00:04:03,850
+a little more complex I'd want the main function.
+
+70
+00:04:04,360 --> 00:04:08,100
+And then all that was left here for my main function was both just hooking it all together.
+
+71
+00:04:08,170 --> 00:04:13,080
+The only complex see the main function actually has this one for loop independent.
+
+72
+00:04:13,650 --> 00:04:17,790
+Nice I like your thought process that's similar.
+
+73
+00:04:17,790 --> 00:04:18,020
+Hi.
+
+74
+00:04:18,030 --> 00:04:23,970
+Do I just start trying to solve the problem and then when the code starts getting large in Maine I'm
+
+75
+00:04:23,970 --> 00:04:28,410
+like okay what components makes sense to kind of like have them be independent.
+
+76
+00:04:29,460 --> 00:04:35,520
+And I think it's also interesting that you've got one thing that needs to be done over and over and
+
+77
+00:04:35,520 --> 00:04:40,110
+so you said well that one thing that needs to be done which is to get you know the individual chunks
+
+78
+00:04:40,110 --> 00:04:44,220
+of tweets for each infinite scroll that will be its own thing.
+
+79
+00:04:44,220 --> 00:04:48,880
+Get it here get it here get it here and now I need something that's going to use that over and over.
+
+80
+00:04:49,050 --> 00:04:50,250
+Do it here and here and here.
+
+81
+00:04:50,250 --> 00:04:56,790
+So the first one where you get each one is I get conversation requests make conversation requests and
+
+82
+00:04:56,790 --> 00:05:02,080
+then they get conversation gets all of the all of those right and that's where I make conversation requests
+
+83
+00:05:02,100 --> 00:05:05,040
+gets called over and over and over until there's no more.
+
+84
+00:05:05,040 --> 00:05:11,010
+And then pass each email gets called out of Maine to deal with deal with all of those right.
+
+85
+00:05:11,140 --> 00:05:11,470
+Yes.
+
+86
+00:05:11,960 --> 00:05:12,150
+Yeah.
+
+87
+00:05:12,180 --> 00:05:16,260
+So that's a I think another piece to look at in terms of how it's structured.
+
+88
+00:05:16,260 --> 00:05:19,050
+One thing being called over and over and over.
+
+89
+00:05:19,350 --> 00:05:24,990
+Nicely done Daniel anything else to add has forgotten forgotten.
+
+90
+00:05:25,150 --> 00:05:26,570
+Welcome to the club.
+
+91
+00:05:26,620 --> 00:05:28,310
+If it's important we'll tell you about it.
+
+92
+00:05:28,310 --> 00:05:29,050
+The next videos.
+
+93
+00:05:29,260 --> 00:05:32,680
+Hey anecdote I forgot to tell you the anecdotes about infinite loop.
+
+94
+00:05:32,680 --> 00:05:37,000
+So if you look up the address for Apple Computer and I just got to make sure I'm actually recording
+
+95
+00:05:37,000 --> 00:05:37,690
+my screen.
+
+96
+00:05:37,690 --> 00:05:45,160
+We have been doing the thing on my screen Apple Corporation headquarter headquarters.
+
+97
+00:05:45,250 --> 00:05:52,890
+The address is is Where's the address headquarter.
+
+98
+00:05:53,070 --> 00:05:58,890
+1 Infinite Loop Cupertino California sets the address for Apple Computers.
+
+99
+00:05:58,890 --> 00:06:05,340
+Interestingly Facebook address is one hacker way.
+
+100
+00:06:06,420 --> 00:06:11,580
+So that's a interesting anecdote about infinite loops I forgot to tell you about when we're talking
+
+101
+00:06:11,580 --> 00:06:19,080
+about infinite loops and then the other deal that I want to share with you is a joke into the joke is
+
+102
+00:06:19,080 --> 00:06:24,210
+about the programmer who died in his apartment and he didn't show up for work for like two weeks.
+
+103
+00:06:24,290 --> 00:06:27,720
+And so the police went to the apartment they opened and they found the programmer dead in the shower
+
+104
+00:06:27,720 --> 00:06:34,140
+holding a bottle of shampoo and on the bottle the instructions said what hair.
+
+105
+00:06:34,140 --> 00:06:37,370
+Lather rinse repeat.
+
+106
+00:06:37,760 --> 00:06:39,270
+I tell you that joke.
+
+107
+00:06:40,610 --> 00:06:43,300
+And so you just kept doing that died.
+
+108
+00:06:43,530 --> 00:06:46,090
+So that's that's an infinite loop.
+
+109
+00:06:46,160 --> 00:06:46,840
+All right.
+
+110
+00:06:47,130 --> 00:06:48,060
+We'll see the next video.
+
+111
+00:06:48,060 --> 00:06:49,800
+We'll see what it's going to be we're going to talk about it.
+
+112
+00:06:49,800 --> 00:06:50,600
+See you the next video.

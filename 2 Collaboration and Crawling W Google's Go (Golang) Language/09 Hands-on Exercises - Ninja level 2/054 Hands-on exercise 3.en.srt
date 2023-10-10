@@ -1,0 +1,247 @@
+1
+00:00:00,150 --> 00:00:03,270
+Here's hands on Exercise number three and sorry about that noise in the background.
+
+2
+00:00:03,300 --> 00:00:08,100
+You can hear that we're running short on time but we want to get these done for hands on Exercise number
+
+3
+00:00:08,100 --> 00:00:16,140
+three from version three point one I know of our CIA quote use the function glass from Version 2.0 1.0
+
+4
+00:00:16,140 --> 00:00:18,270
+of our CIO quote use the function.
+
+5
+00:00:18,330 --> 00:00:24,930
+OK and so this hands on exercises just so that you can practice using functions from different major
+
+6
+00:00:25,380 --> 00:00:28,240
+branches or different major versions.
+
+7
+00:00:28,320 --> 00:00:30,320
+So go ahead and pause this video.
+
+8
+00:00:30,330 --> 00:00:32,250
+Go do this hands on exercise when you're all done.
+
+9
+00:00:32,250 --> 00:00:35,930
+Come on back now y'all and we'll show you our solution.
+
+10
+00:00:35,930 --> 00:00:37,680
+We're going to do right now.
+
+11
+00:00:37,680 --> 00:00:38,700
+So in the previous.
+
+12
+00:00:38,700 --> 00:00:43,790
+Hands on exercise we were already using version o three point one point zero.
+
+13
+00:00:43,920 --> 00:00:50,550
+And so I've got that three right here and I'm using glass three and now I need to do a version two point
+
+14
+00:00:50,550 --> 00:01:00,480
+one point oh and there is a command up here where we can list all of the versions of package and I'm
+
+15
+00:01:00,480 --> 00:01:02,920
+just looking for that command in our list yet.
+
+16
+00:01:03,190 --> 00:01:08,110
+I don't think that's to our short list it was but we'll find it here in just one second.
+
+17
+00:01:08,420 --> 00:01:12,270
+It was something like go list dash and dash version.
+
+18
+00:01:12,290 --> 00:01:15,360
+It's in the module.
+
+19
+00:01:15,660 --> 00:01:19,650
+Erica remember it was on it.
+
+20
+00:01:19,660 --> 00:01:19,860
+No
+
+21
+00:01:36,880 --> 00:01:38,390
+and this is a package name.
+
+22
+00:01:38,540 --> 00:01:38,640
+Yeah
+
+23
+00:01:51,050 --> 00:01:51,780
+check it out.
+
+24
+00:01:52,520 --> 00:01:52,740
+OK.
+
+25
+00:01:52,770 --> 00:01:58,290
+So we just found that code it's go list dash M versions and then the package name so I'm going to use
+
+26
+00:01:58,290 --> 00:01:59,770
+that code here.
+
+27
+00:01:59,880 --> 00:02:02,590
+Go list dash versions.
+
+28
+00:02:02,780 --> 00:02:03,500
+Let's have flag.
+
+29
+00:02:03,510 --> 00:02:11,810
+Yes versions and then the package name which is or C I O quote.
+
+30
+00:02:11,940 --> 00:02:17,250
+And so here are the versions of those packages and the ones that I need for this hands on exercise are
+
+31
+00:02:17,250 --> 00:02:20,670
+two point one zero.
+
+32
+00:02:20,670 --> 00:02:34,260
+So I've got version 1 1 1 1 1 1 1 1 0 because I can also do forward slash v 2 and I could also do need
+
+33
+00:02:34,260 --> 00:02:41,740
+to be lowercase city and pretty sure I could also do v 2 and I can also do the three.
+
+34
+00:02:41,750 --> 00:02:49,290
+So there are versions and I would need to point 0 point 1 so I'm going to come back to my code and add
+
+35
+00:02:49,290 --> 00:02:55,690
+my import and I'll be Version 2 and 0.
+
+36
+00:02:55,700 --> 00:03:04,830
+Better yet gonna go get go get control C.
+
+37
+00:03:04,890 --> 00:03:21,880
+Go get R A C dot dot I O Ford slash quote forward slash V to at B to dot was a e to dot 1.0.
+
+38
+00:03:22,180 --> 00:03:22,810
+Is that right.
+
+39
+00:03:22,830 --> 00:03:23,050
+No.
+
+40
+00:03:23,070 --> 00:03:28,370
+I think it's 2 to 1 but it's also the latest version c do we even need to add sine because it's also
+
+41
+00:03:28,540 --> 00:03:30,840
+it's also the latest version for me to read too.
+
+42
+00:03:30,860 --> 00:03:33,900
+Oh all right I got that next step right here
+
+43
+00:03:36,740 --> 00:03:39,030
+2 0 1.
+
+44
+00:03:39,030 --> 00:03:44,130
+Sorry if that caused you confusion on years hopefully you figured it out and I'm going to try with that
+
+45
+00:03:44,160 --> 00:03:45,480
+because that should be the same as later.
+
+46
+00:03:45,540 --> 00:03:46,120
+Yep.
+
+47
+00:03:46,290 --> 00:03:52,860
+And so now if I go look at my mod I should have 2 0 1.
+
+48
+00:03:53,400 --> 00:03:53,880
+Yes.
+
+49
+00:03:53,940 --> 00:03:55,540
+And there's my import.
+
+50
+00:03:55,810 --> 00:03:59,640
+And so I could grab that and just add this import in here.
+
+51
+00:04:00,400 --> 00:04:05,450
+Or it just easier to duplicate this line go.
+
+52
+00:04:05,730 --> 00:04:14,820
+And now I'm ready to duplicate this line and I need to use from quote and I need an alias.
+
+53
+00:04:14,820 --> 00:04:23,890
+This quote V2 alias that and this will be quote V2 since they have the same package name and the function
+
+54
+00:04:23,890 --> 00:04:30,800
+that I'm going to use is what popped up village to
+
+55
+00:04:33,430 --> 00:04:41,420
+go now to run it and see what happens and my still on a temp exercise 0 1 yet.
+
+56
+00:04:41,450 --> 00:04:46,250
+Now let's go run main and the program is too slow.
+
+57
+00:04:46,260 --> 00:04:55,770
+Must have a loop and then I'm going to go list dash them all and then go to I.T. just go mod tidy and
+
+58
+00:04:55,770 --> 00:04:57,210
+I don't think that's going to change anything.
+
+59
+00:04:58,390 --> 00:05:01,810
+2 3 1 2 3 1 yet saw the same.
+
+60
+00:05:01,810 --> 00:05:02,070
+All right.
+
+61
+00:05:02,080 --> 00:05:04,300
+So that's our solution for this.
+
+62
+00:05:04,300 --> 00:05:09,220
+Hands on exercise the next hands on exercise is gonna be awesome.

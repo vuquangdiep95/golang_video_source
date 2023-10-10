@@ -1,0 +1,111 @@
+1
+00:00:01,370 --> 00:00:05,740
+Before we get to sending messages, there's one other case I want to handle, and you may have noticed
+
+2
+00:00:05,740 --> 00:00:06,290
+that already.
+
+3
+00:00:06,800 --> 00:00:11,690
+So I've just started the server and as you can see in the log file, only one client is connected because
+
+4
+00:00:11,690 --> 00:00:17,220
+I started here and there's the connected message and I'll register as Fred as I have been right along.
+
+5
+00:00:17,570 --> 00:00:22,420
+Now I'm going to go to another browser and open a new window and go to localhost AT&amp;T.
+
+6
+00:00:23,570 --> 00:00:28,220
+And because the only thing I do when you first come to the page is connect to the server.
+
+7
+00:00:28,520 --> 00:00:30,440
+I don't get the news online.
+
+8
+00:00:30,440 --> 00:00:34,400
+That action has never been sent to me from the server to handle in JavaScript.
+
+9
+00:00:34,670 --> 00:00:40,310
+But if I go back to Fred, you'll see if I, for example, change my name or I send a message, I do
+
+10
+00:00:40,310 --> 00:00:43,850
+something that actually contacts the server.
+
+11
+00:00:44,000 --> 00:00:50,240
+It sends back an empty string for a user, someone who's hit the page but has not yet entered their
+
+12
+00:00:50,240 --> 00:00:50,750
+username.
+
+13
+00:00:51,260 --> 00:00:53,150
+And I probably don't want to do that.
+
+14
+00:00:53,150 --> 00:00:57,530
+I probably don't want to have that person show up or I want to have them show up as a lurker or something
+
+15
+00:00:57,530 --> 00:00:57,950
+like that.
+
+16
+00:00:57,950 --> 00:00:59,270
+So we should probably fix that.
+
+17
+00:00:59,270 --> 00:01:00,230
+And that's pretty easy.
+
+18
+00:01:01,430 --> 00:01:07,340
+All I have to do is go back to my code, find my handlers, go down to the part where I get the user
+
+19
+00:01:07,340 --> 00:01:09,350
+list and all I have to do is run a check in here.
+
+20
+00:01:10,190 --> 00:01:15,220
+If X is not equal to nothing, then append it, otherwise skip it.
+
+21
+00:01:15,650 --> 00:01:17,930
+And that should take care of that situation.
+
+22
+00:01:18,260 --> 00:01:27,520
+So let's make sure let's stop this started again and I'll go back to my Fred page and just hit that.
+
+23
+00:01:27,530 --> 00:01:33,340
+So now I should be connected and there's nothing there and I'll go back to my other page and hit that.
+
+24
+00:01:33,500 --> 00:01:36,290
+So now I have two clients connected, but no names in there.
+
+25
+00:01:36,650 --> 00:01:40,970
+And if I go back to Fred and put Fred in here, I just get Fred.
+
+26
+00:01:41,360 --> 00:01:46,790
+But if I go to this one and put in Bernie, I get Fred and Bernie and I get Fred and Bernie.
+
+27
+00:01:47,030 --> 00:01:49,250
+So that handles that one situation.
+
+28
+00:01:49,850 --> 00:01:52,310
+OK, now we'll finally get around to sending messages.

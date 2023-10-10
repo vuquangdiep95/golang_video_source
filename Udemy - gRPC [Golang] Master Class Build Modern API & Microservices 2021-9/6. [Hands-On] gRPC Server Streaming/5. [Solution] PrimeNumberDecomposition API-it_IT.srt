@@ -1,0 +1,532 @@
+1
+00:00:00,420 --> 00:00:01,260
+OK, eccoci qui.
+
+2
+00:00:01,260 --> 00:00:04,790
+Quindi ora devo occuparmi della calcolatrice di Pluto.
+
+3
+00:00:05,190 --> 00:00:08,630
+E quindi spero che dai una merda alle accise e tu ci sia riuscito.
+
+4
+00:00:08,640 --> 00:00:16,760
+Quello che vogliamo fare è creare un R B C e poi unpc verrà chiamato decomposizione del numero primo.
+
+5
+00:00:16,950 --> 00:00:17,580
+OK.
+
+6
+00:00:18,100 --> 00:00:19,870
+Quindi è un nome lungo.
+
+7
+00:00:19,870 --> 00:00:28,540
+Quindi è il numero primo D-cup e le richieste e restituisce un numero primo una stringa di risposta alla decomposizione del
+
+8
+00:00:29,040 --> 00:00:30,110
+numero primo.
+
+9
+00:00:30,210 --> 00:00:35,350
+E quindi anche se il nome è molto lungo per la mia API, voglio davvero assicurarmi
+
+10
+00:00:35,350 --> 00:00:38,300
+che abbia ancora la stessa convenzione di denominazione definita.
+
+11
+00:00:38,380 --> 00:00:40,790
+Quindi ora dobbiamo definire questi messaggi.
+
+12
+00:00:41,210 --> 00:00:45,170
+La prima scomposizione richiesta e quindi la richiesta stessa è piuttosto semplice.
+
+13
+00:00:45,310 --> 00:00:50,840
+Penso a un numero int 64 e questo è il mio primo pieno e questo è tutto ciò di cui ho bisogno.
+
+14
+00:00:51,160 --> 00:00:55,240
+E anche la risposta in sé sarà abbastanza semplice.
+
+15
+00:00:55,540 --> 00:01:03,680
+È solo un messaggio e restituirà il fattore primo in modo che il fattore di sottolineatura principale sia uguale a 1.
+
+16
+00:01:04,060 --> 00:01:06,100
+E quindi è tutto ciò di cui ho bisogno davvero.
+
+17
+00:01:06,280 --> 00:01:07,650
+Ho questa richiesta.
+
+18
+00:01:07,700 --> 00:01:10,490
+Il RBC è corretto nel mio protocollo ma suo padre sta bene.
+
+19
+00:01:10,820 --> 00:01:17,570
+Ora ottieni i tuoi generati e eseguirò di nuovo questo comando per generare il codice e funziona.
+
+20
+00:01:17,570 --> 00:01:23,980
+Quindi ora torniamo indietro per calcolare quel PBG che vorrei andare e tutto è stato generato per noi.
+
+21
+00:01:24,110 --> 00:01:28,830
+Se guardiamo un numero primo possiamo vedere che il codice è già stato aggiunto qui.
+
+22
+00:01:28,880 --> 00:01:29,650
+Così perfetta.
+
+23
+00:01:29,660 --> 00:01:30,780
+Tutto bene.
+
+24
+00:01:30,890 --> 00:01:33,440
+Ora andiamo avanti e implementiamo il server.
+
+25
+00:01:33,680 --> 00:01:38,270
+Quindi abbiamo sul server ho bisogno di implementare una nuova funzione in là.
+
+26
+00:01:38,300 --> 00:01:47,870
+Quindi, se andiamo a Kathleen Koch e guardiamo all'interfaccia del server, allora ognuno di noi implementa una funzione di decomposizione
+
+27
+00:01:47,960 --> 00:01:49,460
+del numero primo.
+
+28
+00:01:49,460 --> 00:01:54,090
+Quindi andrò avanti e copio questo, ma sarà esattamente la stessa cosa che abbiamo visto prima.
+
+29
+00:01:54,110 --> 00:01:57,060
+È solo pratica.
+
+30
+00:01:57,210 --> 00:02:04,790
+Quindi esco da una funzione sul mio server e il nome della funzione è la decomposizione del numero primo.
+
+31
+00:02:04,800 --> 00:02:11,020
+Ora ci vuole una richiesta e una mezza calcolatrice P. B. Questo.
+
+32
+00:02:11,260 --> 00:02:12,460
+OK, sembra buono
+
+33
+00:02:12,840 --> 00:02:17,890
+E qui ci vuole un flusso e restituisce un errore.
+
+34
+00:02:18,120 --> 00:02:20,770
+Ok ora vado e posso scrivere la mia funzione.
+
+35
+00:02:21,090 --> 00:02:28,410
+Quindi, come abbiamo visto prima, dobbiamo solo stampare le nostre prime affermazioni, diremo che ha ricevuto la decomposizione del numero primo
+
+36
+00:02:28,410 --> 00:02:30,810
+r b c che sembra buona.
+
+37
+00:02:30,810 --> 00:02:40,410
+Quindi ora estraiamo il primo numero che ci è stato chiesto in modo da poter dire quel numero da decomporre.
+
+38
+00:02:40,410 --> 00:02:48,840
+Quindi abbiamo appena ricevuto la richiesta numero uguale che ottiene il numero e che ci fornisce un numero con cui dobbiamo lavorare.
+
+39
+00:02:48,930 --> 00:02:51,210
+E ora se guardi all'algoritmo che ti ho dato.
+
+40
+00:02:51,330 --> 00:02:51,830
+OK.
+
+41
+00:02:51,900 --> 00:02:54,370
+E devi solo guardare lo pseudocodice.
+
+42
+00:02:54,570 --> 00:03:03,590
+Possiamo iniziare a lavorare con una scomposizione corrente, quindi diremo che imposteremo i divisori equali per iniziare a
+
+43
+00:03:03,610 --> 00:03:04,430
+vincere.
+
+44
+00:03:04,600 --> 00:03:07,210
+E a proposito qui non è felice perché non l'ho fatto.
+
+45
+00:03:07,650 --> 00:03:08,690
+Potenziale importante
+
+46
+00:03:08,880 --> 00:03:09,700
+Eccoci qui.
+
+47
+00:03:09,720 --> 00:03:11,570
+Ho appena fatto calcolare il P. B. punto.
+
+48
+00:03:11,780 --> 00:03:12,720
+OK.
+
+49
+00:03:12,750 --> 00:03:14,090
+Quindi ora è uguale a
+
+50
+00:03:14,340 --> 00:03:19,470
+E così secondo l'algoritmo dirò bene che il numero è maggiore di 1.
+
+51
+00:03:19,470 --> 00:03:24,240
+Quindi per un numero maggiore di uno allora possiamo scrivere la decomposizione.
+
+52
+00:03:24,240 --> 00:03:33,690
+Quindi diciamo che se il divisore del modulo numero è uguale a zero, quindi significa che se il numero è
+
+53
+00:03:33,690 --> 00:03:37,620
+divisibile per il divisore, possiamo creare una risposta.
+
+54
+00:03:37,710 --> 00:03:43,100
+Quindi possiamo fare il flusso che viene inviato e quindi dobbiamo inviare una risposta di decomposizione.
+
+55
+00:03:43,110 --> 00:03:50,250
+Quindi andiamo avanti e inviamo questo creerà il messaggio proprio qui e vedremo cosa ci vuole
+
+56
+00:03:50,400 --> 00:03:54,060
+come in input prende un fattore primario.
+
+57
+00:03:54,600 --> 00:03:58,520
+Quindi dirò che il fattore primo è uguale al divisore.
+
+58
+00:03:58,910 --> 00:03:59,430
+OK.
+
+59
+00:04:00,210 --> 00:04:04,050
+E non può usarlo come un tipo di valore 64.
+
+60
+00:04:04,050 --> 00:04:07,530
+Quindi ho bisogno di lanciare questo come un 64 int.
+
+61
+00:04:07,830 --> 00:04:09,770
+Quindi eccoci, l'abbiamo fatto in 64.
+
+62
+00:04:09,780 --> 00:04:11,790
+Quindi è un lungo e così perfetto.
+
+63
+00:04:11,790 --> 00:04:18,120
+Quindi se il numero è il divisore di zero, il flusso invierà questo e quindi potremo dire il numero di
+
+64
+00:04:18,120 --> 00:04:20,300
+uguale numero diviso per il divisore.
+
+65
+00:04:20,570 --> 00:04:20,790
+OK.
+
+66
+00:04:20,790 --> 00:04:23,830
+Quindi questo è il nostro algoritmo.
+
+67
+00:04:23,910 --> 00:04:27,010
+Altrimenti aumenteremo il divisore.
+
+68
+00:04:27,080 --> 00:04:28,830
+Quindi più uguale a 1.
+
+69
+00:04:28,880 --> 00:04:29,970
+OK.
+
+70
+00:04:30,390 --> 00:04:36,120
+Ma si può anche dire divisore più più qualsiasi cosa si stia
+
+71
+00:04:36,120 --> 00:04:43,830
+facendo, possiamo fare questo plus-plus e possiamo anche registrare le affermazioni nel caso in cui possiamo dire
+
+72
+00:04:43,830 --> 00:04:51,340
+che il ghepardo stampa da solo e dire bene, basta implementare il divisore come aumentato ok 2.
+
+73
+00:04:51,830 --> 00:04:54,230
+E passeremo il valore proprio qui.
+
+74
+00:04:54,270 --> 00:05:01,240
+Percentage of Eat say Prince e beh, questo è nel divisore. Immagino di essere solo un po 'di dichiarazioni o di
+
+75
+00:05:01,240 --> 00:05:01,830
+ritardo.
+
+76
+00:05:02,050 --> 00:05:06,180
+Quindi in pratica il numero verrà diviso, diviso e diviso molto molto rapidamente.
+
+77
+00:05:06,520 --> 00:05:11,020
+E poi una volta che il numero colpisce uno che significa che abbiamo trovato tutti i divisori, nel qual caso
+
+78
+00:05:11,020 --> 00:05:12,840
+abbiamo finito con questa funzione e restituiamo zero.
+
+79
+00:05:13,300 --> 00:05:14,730
+Quindi il server sembra corretto.
+
+80
+00:05:14,950 --> 00:05:15,780
+OK.
+
+81
+00:05:15,820 --> 00:05:17,470
+Ora andiamo avanti con i clienti.
+
+82
+00:05:17,800 --> 00:05:27,200
+Quindi l'orologio stesso andrà a salire e io copierò questa funzione lo chiamerò streaming server di C e
+
+83
+00:05:27,430 --> 00:05:34,860
+andrò avanti e copierò l'intero blocco in modo che possiamo lavorare con qualcosa come
+
+84
+00:05:34,860 --> 00:05:37,240
+questo server streaming .
+
+85
+00:05:37,260 --> 00:05:45,260
+Così ora facciamo un server di decomposizione in primo piano sta sognando RBC.
+
+86
+00:05:45,390 --> 00:05:46,830
+È corretto.
+
+87
+00:05:46,830 --> 00:05:53,520
+Ora dobbiamo creare una richiesta di scomposizione primaria, quindi facciamo solo una molto semplice
+
+88
+00:05:53,520 --> 00:05:59,770
+in cui il numero che vogliamo richiedere numero sarà il numero 12.
+
+89
+00:05:59,980 --> 00:06:08,290
+OK perché possiamo decomporlo molto facilmente e poi diremo di vedere i punti prendere
+
+90
+00:06:08,380 --> 00:06:12,020
+la composizione che posso rimuovere.
+
+91
+00:06:12,260 --> 00:06:16,160
+OK, quindi la richiesta è corretta e abbiamo bisogno di avere un seguito.
+
+92
+00:06:16,200 --> 00:06:19,040
+Quindi andiamo avanti e abbiamo un ciclo for.
+
+93
+00:06:19,040 --> 00:06:26,100
+Quindi di nuovo per e ci occuperemo di questo quindi questo è un flusso che torniamo.
+
+94
+00:06:26,100 --> 00:06:36,850
+E così per noi lo stream riceve e questa è una risposta o un'aria perché ogni volta che facciamo streaming non
+
+95
+00:06:36,860 --> 00:06:47,140
+riceviamo se l'aria è uguale a iRobot e un file si romperà perché siamo arrivati alla fine del flusso.
+
+96
+00:06:47,440 --> 00:06:58,680
+Altrimenti se l'aria non è nulla allora succede a Lagattuta qualcosa di fatale, qualcosa è successo per mancanza di un nome
+
+97
+00:06:58,680 --> 00:07:03,510
+migliore e stiamo passando il messaggio di errore.
+
+98
+00:07:03,510 --> 00:07:07,060
+Altrimenti il risultato è corretto e stamperemo i risultati.
+
+99
+00:07:07,470 --> 00:07:17,910
+Quindi diremo che è svuotato per Intel e Rhett e stamperemo solo il risultato che riceviamo, il risultato è che possiamo anche ottenere
+
+100
+00:07:17,910 --> 00:07:23,410
+il primo fattore solo per ottenere il primo fattore da esso.
+
+101
+00:07:23,410 --> 00:07:24,480
+Quindi qui otteniamo il numero.
+
+102
+00:07:24,520 --> 00:07:26,080
+E quello sembra perfetto.
+
+103
+00:07:26,110 --> 00:07:29,490
+E poi, una volta che abbiamo finito, abbiamo finito con questa funzione.
+
+104
+00:07:29,680 --> 00:07:31,040
+Quindi il cliente sembra fantastico.
+
+105
+00:07:31,060 --> 00:07:33,440
+Sono andato un po 'veloce ma è lo stesso di prima.
+
+106
+00:07:34,030 --> 00:07:35,970
+E ora abbiamo solo bisogno di testare tutto.
+
+107
+00:07:35,980 --> 00:07:37,320
+Quindi andiamo avanti.
+
+108
+00:07:37,480 --> 00:07:45,790
+Ho intenzione di eseguire il server server della calcolatrice in modo che sia in esecuzione in questo momento e ho intenzione
+
+109
+00:07:45,790 --> 00:07:48,270
+di eseguire il client della calcolatrice.
+
+110
+00:07:49,030 --> 00:07:55,600
+E così dice che l'eccellenza inizia a fare un server di decomposizioni di prim'ordine che condivide RBC e il risultato è due
+
+111
+00:07:55,600 --> 00:07:56,460
+o tre.
+
+112
+00:07:56,560 --> 00:08:00,470
+Quindi due volte due volte tre è pari a 12.
+
+113
+00:08:00,760 --> 00:08:02,790
+E qui arriva solo un messaggio d'amore.
+
+114
+00:08:02,820 --> 00:08:04,970
+Il divisore di David è aumentato a tre.
+
+115
+00:08:05,350 --> 00:08:07,030
+Quindi sembra corretto.
+
+116
+00:08:07,030 --> 00:08:10,810
+Ma ora possiamo fare cose molto più divertenti che possiamo avere un numero davvero grande.
+
+117
+00:08:12,230 --> 00:08:12,670
+Giusto qui.
+
+118
+00:08:12,670 --> 00:08:16,580
+Quindi non solo 12 ma un grande numero.
+
+119
+00:08:16,930 --> 00:08:20,200
+In questo modo mi sembra un numero piuttosto grande.
+
+120
+00:08:20,200 --> 00:08:23,220
+E nel server quando guardo cose voglio aggiungere una nuova riga.
+
+121
+00:08:23,260 --> 00:08:24,530
+Quindi non sembra pazzo.
+
+122
+00:08:24,550 --> 00:08:25,230
+OK.
+
+123
+00:08:25,780 --> 00:08:29,280
+Quindi ho intenzione di rieseguire il mio server perché ho cambiato il codice.
+
+124
+00:08:29,280 --> 00:08:31,850
+Ho intenzione di rieseguire i client.
+
+125
+00:08:31,870 --> 00:08:37,570
+E come possiamo vedere abbiamo il numero di composizione primo di quel numero è due volte due volte
+
+126
+00:08:37,570 --> 00:08:41,020
+due volte cinque volte sette volte sette volte 163 volte.
+
+127
+00:08:41,170 --> 00:08:42,820
+Questo numero molto grande.
+
+128
+00:08:42,820 --> 00:08:45,130
+E così tutto ha funzionato come previsto.
+
+129
+00:08:45,130 --> 00:08:46,960
+E quindi la cosa bella è che è stato il taglio.
+
+130
+00:08:47,010 --> 00:08:54,520
+Quindi, dato che il server stava aspettando i divisori, sostanzialmente abbiamo ricevuto in tempo reale il fattore di scomposizione
+
+131
+00:08:54,520 --> 00:08:55,350
+principale.
+
+132
+00:08:55,390 --> 00:09:02,200
+Quindi penso che sia un esercizio davvero interessante da affrontare e spero che tu abbia avuto successo e che vedrò nella
+
+133
+00:09:02,200 --> 00:09:04,110
+prossima lezione per fare streaming.
+

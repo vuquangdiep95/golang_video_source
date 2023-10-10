@@ -1,0 +1,303 @@
+1
+00:00:00,270 --> 00:00:00,830
+Sweet.
+
+2
+00:00:00,880 --> 00:00:05,500
+Let's see it handling multiple connections as well we're going to look at this video and maybe answer
+
+3
+00:00:06,880 --> 00:00:07,520
+it.
+
+4
+00:00:07,590 --> 00:00:14,820
+So next up I've got the overall chat server which will have a slice of connections so the connections
+
+5
+00:00:14,820 --> 00:00:19,830
+being this all this other connection code up here with its own good routines the channels.
+
+6
+00:00:19,830 --> 00:00:25,300
+So the chat server will have a slice of all the connections that are currently connected and there is
+
+7
+00:00:25,300 --> 00:00:32,080
+also a I think new text of connection for connection LoC is a sync that new text.
+
+8
+00:00:32,110 --> 00:00:40,030
+So any time I access the list of connections I will use I will walk this lock and do my changes and
+
+9
+00:00:40,030 --> 00:00:42,420
+then unlock it afterwards.
+
+10
+00:00:42,820 --> 00:00:49,960
+So go always says channels but sometimes you just need a lock which is the old which is the pre channel
+
+11
+00:00:49,990 --> 00:00:53,800
+kind of way of doing sharing memory as a means of communicating.
+
+12
+00:00:53,890 --> 00:00:55,800
+Yes.
+
+13
+00:00:56,030 --> 00:01:02,790
+So beyond that I've got the big broadcast channel which the connections will send their messages to.
+
+14
+00:01:03,070 --> 00:01:08,630
+And so that this chat server will receive messages on the broadcast channel and send them to each of
+
+15
+00:01:08,630 --> 00:01:13,430
+the connections and then I've got a quick channel similar to a connect each connections got its own
+
+16
+00:01:13,430 --> 00:01:14,160
+quick channel.
+
+17
+00:01:14,240 --> 00:01:22,940
+I've got a global server server wide channel that's good thinking and so I've got this new chat server
+
+18
+00:01:22,940 --> 00:01:25,570
+function that returns the chat server.
+
+19
+00:01:25,580 --> 00:01:31,220
+It creates those two channels I don't need to bother with the slice of connections because append will
+
+20
+00:01:31,220 --> 00:01:37,100
+create that if needed and you don't ever have to actually create a sync mute text the zero value it's
+
+21
+00:01:37,100 --> 00:01:45,570
+valid for it so I just create these two channels I start the I run the start method in another girl
+
+22
+00:01:45,570 --> 00:01:47,850
+routine and they return the chat server.
+
+23
+00:01:47,850 --> 00:01:52,440
+So this start method is the broadcast handler basically.
+
+24
+00:01:52,590 --> 00:01:58,560
+So this will do a loop every time to loop it checks if there is there if there's a message coming in
+
+25
+00:01:58,560 --> 00:01:59,700
+through the broadcast channel.
+
+26
+00:02:00,700 --> 00:02:06,610
+Lock the connection lock loop through all the connections and for each one send the message in that
+
+27
+00:02:06,610 --> 00:02:12,040
+gherkin safe way I'm going to do it another go routine so that it doesn't lock up the entire server
+
+28
+00:02:12,070 --> 00:02:21,740
+if one connections being slow and then I unlock the the connection lock I like that alternately if the
+
+29
+00:02:21,770 --> 00:02:26,290
+quit Channel has to think through or if it's closed I can end this loop and close this script routine
+
+30
+00:02:26,300 --> 00:02:33,310
+to which I've got a nice helpful close function here to kind of abstract that away so.
+
+31
+00:02:33,550 --> 00:02:35,560
+So to shut down this code you'd call a close
+
+32
+00:02:39,240 --> 00:02:42,450
+so besides that I've also got this chat function.
+
+33
+00:02:42,450 --> 00:02:48,750
+This is the function that implements the prototype the prototype chat stream chat messages return stream
+
+34
+00:02:48,750 --> 00:02:56,410
+chat messages so it receives in a a chat chat server which is the stream and returns an error.
+
+35
+00:02:56,480 --> 00:03:03,200
+So first thing it does is it creates that connection from up above it walks the connection lock and
+
+36
+00:03:03,200 --> 00:03:08,970
+adds the connection to the left to the slice of connections that unlocks it and then it calls connection
+
+37
+00:03:08,970 --> 00:03:10,560
+get messages to.
+
+38
+00:03:10,560 --> 00:03:16,680
+That's the that's the loop in a connection that receives the messages and it gives that get messages
+
+39
+00:03:16,680 --> 00:03:20,070
+the broadcast channel so that it's able to broadcast back to the server.
+
+40
+00:03:21,490 --> 00:03:25,630
+When you get messages returns that means that channel.
+
+41
+00:03:25,650 --> 00:03:27,180
+That connection is done.
+
+42
+00:03:27,420 --> 00:03:35,250
+And so we can lock the connection lock again and look through to try to find our connection and remove
+
+43
+00:03:35,250 --> 00:03:41,090
+it from the list of connections and then unlock contextual lock in so connections will always be all
+
+44
+00:03:41,090 --> 00:03:41,950
+the connections.
+
+45
+00:03:41,960 --> 00:03:43,790
+When you where cash first comes in.
+
+46
+00:03:43,790 --> 00:03:49,010
+It gets added and then when the connection is closing it looks through and removes that connection from
+
+47
+00:03:49,010 --> 00:03:54,700
+the slice of connections.
+
+48
+00:03:54,760 --> 00:04:02,890
+So this is a little bit simpler than the connection part but it still has lots of Go routines and channels
+
+49
+00:04:02,890 --> 00:04:03,370
+and such.
+
+50
+00:04:03,370 --> 00:04:12,730
+So yeah I know there's a lot of literally moving pieces in that one in line 111 when you look at your
+
+51
+00:04:12,850 --> 00:04:20,320
+profile the profile interface definition language not being compiled one but the next whenever I see
+
+52
+00:04:20,320 --> 00:04:25,210
+that as like it's a function that takes in this and returns that right.
+
+53
+00:04:25,450 --> 00:04:25,870
+Yes.
+
+54
+00:04:25,870 --> 00:04:35,080
+And then if we look at line 111 it's a function that takes and I don't see the return on that.
+
+55
+00:04:35,080 --> 00:04:36,440
+So tell me a little bit about that.
+
+56
+00:04:36,550 --> 00:04:37,960
+That's that's where I had a question.
+
+57
+00:04:37,960 --> 00:04:38,920
+So how is that.
+
+58
+00:04:38,930 --> 00:04:42,740
+Whenever whenever you've got a stream whether in or out.
+
+59
+00:04:42,760 --> 00:04:44,330
+Yeah on a.
+
+60
+00:04:44,500 --> 00:04:51,800
+On a particular method in Gypsy in go it'll change that into a single ah input argument that's got the
+
+61
+00:04:52,330 --> 00:04:53,980
+send and receive now on it.
+
+62
+00:04:54,130 --> 00:04:55,730
+OK all right.
+
+63
+00:04:55,870 --> 00:04:58,960
+So that's fulfilling the interface.
+
+64
+00:04:59,020 --> 00:04:59,550
+Yes.
+
+65
+00:04:59,590 --> 00:05:04,010
+And all right I get that.
+
+66
+00:05:04,360 --> 00:05:06,350
+That's a nice program.
+
+67
+00:05:06,350 --> 00:05:12,460
+And then the main function is pretty much a copy paste from our server from before it just listens great
+
+68
+00:05:12,470 --> 00:05:21,900
+server registers and started to search it very nice Daniel anything you want to add to those two pieces.
+
+69
+00:05:21,950 --> 00:05:24,680
+We looked at this in two videos.
+
+70
+00:05:25,070 --> 00:05:27,080
+No that's we want to show it.
+
+71
+00:05:27,830 --> 00:05:28,070
+Oh yeah.
+
+72
+00:05:28,090 --> 00:05:30,430
+Let's see running it though in the next in the next video.
+
+73
+00:05:30,460 --> 00:05:30,680
+Right.
+
+74
+00:05:30,830 --> 00:05:31,060
+All right.
+
+75
+00:05:31,070 --> 00:05:34,790
+So we'll save any commentary we have and running it for the next video.
+
+76
+00:05:34,790 --> 00:05:35,620
+See you next video.

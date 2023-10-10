@@ -1,0 +1,531 @@
+1
+00:00:00,240 --> 00:00:05,550
+So we're going to cover in this video is we're going to sink our computers our code and we just want
+
+2
+00:00:05,550 --> 00:00:09,200
+to continue to sort of demonstrate working on a real project.
+
+3
+00:00:09,210 --> 00:00:12,180
+And what could happen is a code base moves forward.
+
+4
+00:00:12,180 --> 00:00:17,130
+So you've got the main code base and then you could have forks off of that and you could have clones
+
+5
+00:00:17,130 --> 00:00:23,160
+from the main base or clones off the fork and we just want to show how that happens because we both
+
+6
+00:00:23,160 --> 00:00:24,570
+worked on solutions.
+
+7
+00:00:24,780 --> 00:00:31,090
+And so when we both got back together this afternoon I had this code base right here where I zero one
+
+8
+00:00:31,090 --> 00:00:32,170
+two three.
+
+9
+00:00:32,340 --> 00:00:37,380
+And then over on Daniel's computer and show your code base there's Daniel's computer.
+
+10
+00:00:37,460 --> 00:00:40,140
+He had zero one two three and then back.
+
+11
+00:00:40,140 --> 00:00:45,300
+And then he created a folder 0 0 4 scrape and then back on my computer.
+
+12
+00:00:45,310 --> 00:00:50,740
+Coming back to my computer we had 0 0 4 Krall originally.
+
+13
+00:00:50,760 --> 00:00:52,040
+So I renamed this.
+
+14
+00:00:52,050 --> 00:00:54,670
+We just kind of sat together and like where you out yet.
+
+15
+00:00:54,920 --> 00:00:56,510
+And and we saw that.
+
+16
+00:00:56,530 --> 00:00:58,980
+So well let me rename mine to 0 0 5.
+
+17
+00:00:59,030 --> 00:01:06,360
+Kroll Todd and and then Daniel after I did that Daniel went ahead and pushed his code to the main repo.
+
+18
+00:01:06,420 --> 00:01:11,770
+So you're not working on a fork off the main repo in the main repo that we're talking about here is
+
+19
+00:01:13,080 --> 00:01:19,470
+is get get have goes to Levin going project and I'm just going to show that.
+
+20
+00:01:19,470 --> 00:01:23,010
+So you've got a busy tool you've got a visual on it.
+
+21
+00:01:23,040 --> 00:01:27,180
+So this is the main repo you don't have a fork off of this that you're working on your design doing
+
+22
+00:01:27,180 --> 00:01:28,800
+a clone to your machine.
+
+23
+00:01:28,800 --> 00:01:29,340
+Correct.
+
+24
+00:01:29,350 --> 00:01:29,600
+Right.
+
+25
+00:01:29,610 --> 00:01:30,950
+And same with me.
+
+26
+00:01:31,050 --> 00:01:35,490
+And so he did that and then he pushed and that was like sweet.
+
+27
+00:01:35,520 --> 00:01:36,920
+So now I'm going to pull.
+
+28
+00:01:37,020 --> 00:01:44,400
+And so let me bring up my terminal and I like this just because it's a little bit more high contrast
+
+29
+00:01:44,490 --> 00:01:47,910
+and larger text than my little terminal down here.
+
+30
+00:01:48,000 --> 00:01:51,990
+And so I need to see these in the documents and then go laying project.
+
+31
+00:01:52,230 --> 00:01:57,760
+And and then now that I'm in there I could see just make sure I have the right directories in there.
+
+32
+00:01:57,930 --> 00:01:59,910
+And so I could do a get pull.
+
+33
+00:01:59,910 --> 00:02:04,440
+And when I do a get pull it's going to give me a message says your local changes the following files
+
+34
+00:02:04,440 --> 00:02:06,090
+would be overwritten by emerge.
+
+35
+00:02:06,090 --> 00:02:10,560
+Please commit your changes or stash them before you merge.
+
+36
+00:02:10,560 --> 00:02:15,840
+So you either need to commit these in which case if I commit and then pull I'm going to have a conflict
+
+37
+00:02:15,840 --> 00:02:22,830
+write merge conflict because my files go mad go Sam I'm saying here are these and then Daniel said here
+
+38
+00:02:22,830 --> 00:02:26,990
+are these and then give me like they're different ways you resolve those and then you know that's going
+
+39
+00:02:26,990 --> 00:02:32,230
+to ask me to manually sort of resolve the differences and then say this is what it should look like.
+
+40
+00:02:32,250 --> 00:02:33,750
+I don't want to have to do that.
+
+41
+00:02:34,230 --> 00:02:37,540
+I don't want to have to manually sort of resolve the differences.
+
+42
+00:02:37,550 --> 00:02:42,060
+So the other alternative would be to stash.
+
+43
+00:02:42,240 --> 00:02:47,760
+And then there's one more alternative but why didn't you tell us a little bit about what stashing means
+
+44
+00:02:47,760 --> 00:02:56,310
+and what that involves because I've been talking to you get stashes just a stack of uncommitted changes
+
+45
+00:02:56,310 --> 00:02:59,960
+that you can you can push your changes to.
+
+46
+00:02:59,970 --> 00:03:05,670
+So right now you've got some changes that have not yet been committed so you could use get stash to
+
+47
+00:03:05,670 --> 00:03:12,030
+push all your changes that you haven't yet committed into the get stash at the bottom level or at the
+
+48
+00:03:12,030 --> 00:03:14,150
+top of whatever the stack is currently.
+
+49
+00:03:14,360 --> 00:03:18,510
+And it's a stack because you can you can you can then stash on top of that and then on top of that.
+
+50
+00:03:18,510 --> 00:03:24,660
+And on top of that if you wished and then when you you can then flip over to another branch and temporarily
+
+51
+00:03:24,660 --> 00:03:29,730
+work do your work over there and then you can come back to your original branch and pull your code back
+
+52
+00:03:29,730 --> 00:03:35,370
+office bash or whatever it's a good way just kind of temporarily say OK I don't need to commit these
+
+53
+00:03:35,370 --> 00:03:41,610
+just yet I just want to get them out of the way on my own machine only so I can go work somewhere else
+
+54
+00:03:41,610 --> 00:03:48,310
+if need be so I'd stash even apply to this situation would it even be something that I think about as
+
+55
+00:03:48,310 --> 00:03:56,080
+a solution for the situation in which I find my computer in relation to master origin in this case or
+
+56
+00:03:56,080 --> 00:04:00,010
+the guest that if you've got it stashed then your files are no longer changed.
+
+57
+00:04:00,010 --> 00:04:05,740
+And so you could pull that modern sum but then you're merge conflicts going to happen when you pop off
+
+58
+00:04:05,740 --> 00:04:12,640
+the stash but it won't require a merge commit in order to resolve because you've never actually committed
+
+59
+00:04:12,640 --> 00:04:18,940
+your you're part of the changes so it just be a merge conflict at that point and then I'd manually have
+
+60
+00:04:18,940 --> 00:04:20,250
+to resolve it at that point.
+
+61
+00:04:20,290 --> 00:04:20,990
+Yes.
+
+62
+00:04:21,140 --> 00:04:25,290
+So I'd still have to manually resolve it which is what I want to avoid.
+
+63
+00:04:25,750 --> 00:04:28,530
+So can I stash stuff and then just never deal with it.
+
+64
+00:04:28,540 --> 00:04:31,040
+That's kind of like the dirty garage of kit.
+
+65
+00:04:31,510 --> 00:04:32,210
+Yeah yeah.
+
+66
+00:04:32,260 --> 00:04:36,640
+And there and there is a command to drop your stash to everything that's currently in the stash just
+
+67
+00:04:36,640 --> 00:04:37,390
+go away.
+
+68
+00:04:37,510 --> 00:04:40,790
+So I could stash it and then just later say get rid of all that.
+
+69
+00:04:40,930 --> 00:04:42,970
+Which is basically kind of like throwing it away.
+
+70
+00:04:43,060 --> 00:04:43,910
+Yes.
+
+71
+00:04:43,960 --> 00:04:44,370
+All right.
+
+72
+00:04:44,410 --> 00:04:51,700
+Well that sounds like more than I want to get in to the other idea I had was just like Well let me because
+
+73
+00:04:51,700 --> 00:04:58,930
+I know that I don't really need to keep track of go mad and go some because what I've changed isn't
+
+74
+00:04:58,990 --> 00:05:06,580
+anything like the code I added in my folder isn't anything that is mission critical or that I need to
+
+75
+00:05:06,580 --> 00:05:13,240
+have a record of my solution was to do a get check out and this was going to go check out I'm going
+
+76
+00:05:13,240 --> 00:05:19,510
+to go check out the two files from get hub and basically overwrite my my go mod and go some files so
+
+77
+00:05:19,510 --> 00:05:26,410
+this is get checked out and then dash dash and I'm going to add that go some file and then go mod file
+
+78
+00:05:26,770 --> 00:05:31,390
+does that all look syntactically correct to you.
+
+79
+00:05:31,450 --> 00:05:32,140
+Yes.
+
+80
+00:05:32,260 --> 00:05:38,230
+And and what is the dash dash mean in there because that's kind of like a flag but there's no flag like
+
+81
+00:05:38,230 --> 00:05:38,930
+what's yet.
+
+82
+00:05:39,090 --> 00:05:39,420
+Yeah.
+
+83
+00:05:39,430 --> 00:05:46,690
+Get get it has it has a convention that some commands expect files like get add in some commands expect
+
+84
+00:05:46,720 --> 00:05:48,030
+other stuff like Get check out.
+
+85
+00:05:48,040 --> 00:05:53,470
+Normally it's for branches but if you need to if it but some of them can do both.
+
+86
+00:05:53,920 --> 00:05:59,710
+So I get check out works for both files and for branches and the dash dash kind of lets you flip it
+
+87
+00:05:59,710 --> 00:06:06,730
+to the other modes so check out defaults to branch look morning expecting branches or commit number
+
+88
+00:06:06,760 --> 00:06:12,910
+or a tag but you can use the dash dash just say OK I'm going to give you files instead to check out
+
+89
+00:06:12,910 --> 00:06:17,300
+from get in there like a go doc forget it.
+
+90
+00:06:17,470 --> 00:06:23,620
+Like I did get checkout help am I going to am I going to see yes the athlete about checking yeah get
+
+91
+00:06:23,620 --> 00:06:29,590
+help check out get help check out I believe we'll give you a no it does not.
+
+92
+00:06:30,720 --> 00:06:31,190
+Or no.
+
+93
+00:06:31,220 --> 00:06:32,150
+Yes it will.
+
+94
+00:06:32,170 --> 00:06:36,410
+To get help check out will then open up in your browser.
+
+95
+00:06:36,660 --> 00:06:38,410
+Information on get check out.
+
+96
+00:06:38,550 --> 00:06:48,030
+With all its all the arguments possible and description and so command that that dash dash thing let's
+
+97
+00:06:48,030 --> 00:06:55,770
+find that dash dash thing where it is going into exploratory territory.
+
+98
+00:06:55,780 --> 00:07:02,920
+Get check out here and I saw argument get checked out dash dash Pascoe argument disintegration or there
+
+99
+00:07:02,930 --> 00:07:09,950
+is only one argument given and it is not dash dash to get check out ABC when argued is both a valid
+
+100
+00:07:09,990 --> 00:07:16,300
+Tre ish e.g. file or directory exists get one usually ask you to disintegrate because checking out a
+
+101
+00:07:16,300 --> 00:07:22,300
+branch is so common operation however can check out ABC takes ABC as a tree ish in such situations get
+
+102
+00:07:22,440 --> 00:07:25,960
+out pass back if you want to check out these pass out of the index.
+
+103
+00:07:26,480 --> 00:07:34,930
+And so I'm just checking out the path a.k.a. ending in a while you see a tree ish structure is some
+
+104
+00:07:34,990 --> 00:07:39,780
+is either a commit hash a branch name or a tag name.
+
+105
+00:07:40,900 --> 00:07:48,970
+I think of a tree ish structure as like directory tree where we have folders and then beneath that are
+
+106
+00:07:49,130 --> 00:07:54,740
+know more folders and more folder will get like commit like history is a big tree.
+
+107
+00:07:54,830 --> 00:08:02,430
+Yeah and so a branch attack commit no or a tag or all points within that tree within the history.
+
+108
+00:08:02,840 --> 00:08:03,660
+Yeah.
+
+109
+00:08:04,090 --> 00:08:04,370
+All right.
+
+110
+00:08:04,390 --> 00:08:08,490
+So I'm going to do my get check out go some go mod and bring those down.
+
+111
+00:08:08,500 --> 00:08:15,310
+And then now if I do gets get poll I should be able to pull down no problem and if I look at my code
+
+112
+00:08:15,310 --> 00:08:21,640
+base I've got Daniel's code base in there and and then I'm going to just added Well I'm just gonna drag
+
+113
+00:08:21,640 --> 00:08:33,840
+this and drop it in and then I'm going to rename this as 0 3 just to match Daniel's naming I did 2 0.
+
+114
+00:08:33,840 --> 00:08:40,090
+He did 1 and I will put that as crawled Todd and but since it's named scrape up above we'll get rid
+
+115
+00:08:40,090 --> 00:08:45,850
+of crawl and we'll just do Todd and this is kind of what I worked on and so we'll just take a look in
+
+116
+00:08:45,850 --> 00:08:55,910
+the next couple of videos at scraping a.k.a. crawling which is interestingly it kind of in my mind it's
+
+117
+00:08:55,920 --> 00:09:05,680
+like been pejorative is the word that comes to mind and jaw tive define pejorative is expressing contempt
+
+118
+00:09:05,680 --> 00:09:09,820
+or dis approval a word expressing contempt or disapproval.
+
+119
+00:09:09,880 --> 00:09:17,080
+Also not a pejorative but also bastardized which is an interesting word lower in quality or value than
+
+120
+00:09:17,080 --> 00:09:17,940
+the original form.
+
+121
+00:09:17,950 --> 00:09:24,220
+Typical as a result of the addition what's the word for when a word takes on like I can't remember right.
+
+122
+00:09:24,400 --> 00:09:31,140
+I'm not a hundred percent do you know the word that takes on a bad meaning over time.
+
+123
+00:09:31,170 --> 00:09:33,660
+I can't think of it buddy.
+
+124
+00:09:33,750 --> 00:09:34,350
+How so.
+
+125
+00:09:34,350 --> 00:09:37,090
+Crawling and scraping almost has a bad reputation.
+
+126
+00:09:37,080 --> 00:09:43,320
+Like this is something nefarious that people do but there is a legitimate way to do it within sort of
+
+127
+00:09:43,320 --> 00:09:46,870
+the ethos of the Web.
+
+128
+00:09:46,890 --> 00:09:52,140
+And so you just have to his backed what different Web sites say about how you can access their site
+
+129
+00:09:52,680 --> 00:09:59,970
+and also it is the basis of like the biggest and best search engines like that's basically Google would
+
+130
+00:09:59,970 --> 00:10:07,440
+not exist if they could not crawl and so crawling is very much something that's part and parcel of the
+
+131
+00:10:07,440 --> 00:10:08,850
+game of the Web.
+
+132
+00:10:08,850 --> 00:10:16,350
+And so yeah we're gonna see that you have anything else you want and I know I did but I can't remember
+
+133
+00:10:16,350 --> 00:10:20,950
+what it was or just going to move for her to see the next video.

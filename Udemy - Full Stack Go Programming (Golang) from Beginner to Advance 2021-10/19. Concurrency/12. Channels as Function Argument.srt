@@ -1,0 +1,123 @@
+1
+00:00:12,470 --> 00:00:15,980
+Hello and welcome to the kulang programming language course.
+
+2
+00:00:16,310 --> 00:00:20,960
+In this session, we want to talk about the others concurrency concepts.
+
+3
+00:00:25,130 --> 00:00:28,130
+Channel as Fonctionne, are you man to go?
+
+4
+00:00:29,030 --> 00:00:34,040
+There are many ways in which it can and can be passed as a function argument.
+
+5
+00:00:34,730 --> 00:00:42,890
+The direction of the arrow for a channel specifies the direction of flow of data channel bi directional
+
+6
+00:00:42,890 --> 00:00:43,340
+channel.
+
+7
+00:00:43,520 --> 00:00:53,330
+Both read and write channel channel operator on the writing channel channel operator channel on the
+
+8
+00:00:53,330 --> 00:01:01,580
+reading from the Channel, the input channel, Asterix Channel Channel Pointer both read and write.
+
+9
+00:01:02,270 --> 00:01:10,190
+BI directional channel signature of such a bi directional channel will be light below, then pass to
+
+10
+00:01:10,190 --> 00:01:12,110
+a function as an argument.
+
+11
+00:01:12,620 --> 00:01:17,930
+Now let's go to a school with program to illustrate by of Shannon Channel.
+
+12
+00:01:19,490 --> 00:01:23,630
+First, create a function that accept the channel as argument.
+
+13
+00:01:24,800 --> 00:01:25,730
+Solve you right?
+
+14
+00:01:25,730 --> 00:01:28,310
+Find, for example, process.
+
+15
+00:01:32,270 --> 00:01:36,200
+Set a variable like search by the time of each.
+
+16
+00:01:40,000 --> 00:01:48,190
+Sent a value to Channel C H channel operator, for example, send a value like 10.
+
+17
+00:01:50,190 --> 00:01:58,620
+Received value off channel and display, it defines a value to like value calling equals channel operator
+
+18
+00:01:58,620 --> 00:02:03,690
+and CSI event and display it FP
+
+19
+00:02:06,330 --> 00:02:14,670
+Value now go to main function and create a channel and positive process function.
+
+20
+00:02:16,710 --> 00:02:28,200
+So define a value like search Collins equals and consummate function channel for you to come in and
+
+21
+00:02:28,200 --> 00:02:28,680
+sit.
+
+22
+00:02:28,680 --> 00:02:38,970
+For example, try a second argument now counting process and set channel as arguement go, process and
+
+23
+00:02:38,970 --> 00:02:43,560
+sit c is a channel are human to process function.
+
+24
+00:02:44,730 --> 00:02:48,510
+Now go to the next line and put a time asleep.
+
+25
+00:02:48,990 --> 00:02:51,450
+Time to sleep.
+
+26
+00:02:54,640 --> 00:02:58,310
+For example, one multiplication time.
+
+27
+00:02:58,330 --> 00:03:07,870
+The second reform that the court said the projects and execute the program go from, that the bank is
+
+28
+00:03:07,870 --> 00:03:15,250
+dismaying that quote now we can see the output, we could send a value through a channel and receive
+
+29
+00:03:15,250 --> 00:03:22,130
+its value in a gold routine by the buffer China in order not to prolong the time of decision.
+
+30
+00:03:22,150 --> 00:03:26,200
+You will finish it and we will continue the content in the next session.
+
+31
+00:03:26,420 --> 00:03:26,950
+Goodbye.

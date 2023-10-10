@@ -1,0 +1,511 @@
+1
+00:00:00,680 --> 00:00:05,330
+So we have our host displaying properly in the overview page, and the next thing I want to do is populate
+
+2
+00:00:05,330 --> 00:00:10,280
+the number zero in all four of these boxes with the actual accurate number.
+
+3
+00:00:10,280 --> 00:00:12,680
+How many healthy services are we monitoring?
+
+4
+00:00:12,680 --> 00:00:14,710
+How many pending services are we monitoring?
+
+5
+00:00:14,840 --> 00:00:15,940
+So on and so forth.
+
+6
+00:00:16,250 --> 00:00:17,120
+And that's pretty simple.
+
+7
+00:00:17,630 --> 00:00:23,750
+We just need to get a query written that will return the count of all of those services and pass that
+
+8
+00:00:23,750 --> 00:00:28,330
+data to our handler and then render this page with the appropriate information.
+
+9
+00:00:28,340 --> 00:00:35,990
+And if you recall, if we go back to our code here and I go two routes and I look at the admin dashboard,
+
+10
+00:00:35,990 --> 00:00:38,150
+I'm hard coding zero in right now.
+
+11
+00:00:38,150 --> 00:00:44,840
+So we just we need to get a database query that executes right before this populates the four zeros
+
+12
+00:00:44,840 --> 00:00:49,580
+with actual meaningful information and pass that off to our template and everything else should just
+
+13
+00:00:49,580 --> 00:00:49,900
+work.
+
+14
+00:00:50,840 --> 00:00:52,820
+So let's go figure out how we're going to do this.
+
+15
+00:00:53,140 --> 00:00:59,240
+I could if I wanted to let me go to my postgrads client and I'm looking at the host services table.
+
+16
+00:00:59,930 --> 00:01:07,040
+All we really want here for pending, for example, is account of all of the entries in this table that
+
+17
+00:01:07,040 --> 00:01:10,700
+have the status of pending and that have active set to one.
+
+18
+00:01:11,200 --> 00:01:12,370
+So let's just write some sequel.
+
+19
+00:01:12,410 --> 00:01:13,280
+I'll do it right here.
+
+20
+00:01:13,700 --> 00:01:24,620
+So I'll say select count IDE from host services where active equals one and status equals pending.
+
+21
+00:01:25,810 --> 00:01:28,130
+I run that I should get a one and I do.
+
+22
+00:01:28,310 --> 00:01:32,870
+But if I change that to say healthy, I should get zero and I do.
+
+23
+00:01:33,350 --> 00:01:37,730
+OK, so I'm going to put this back depending and I'm going to delete this now.
+
+24
+00:01:37,730 --> 00:01:45,380
+I could if I wanted to write one database query that does this and change the value of the pending part
+
+25
+00:01:46,040 --> 00:01:49,070
+using a parameter and just make for database queries.
+
+26
+00:01:49,070 --> 00:01:52,510
+Or I can make one database query, which I think is way more efficient.
+
+27
+00:01:52,520 --> 00:01:53,590
+So I'm going to do that instead.
+
+28
+00:01:54,170 --> 00:02:02,420
+So I'll put before that statement I just wrote Select and then I'll surround this statement in parentheses
+
+29
+00:02:03,050 --> 00:02:05,000
+and put as pending here.
+
+30
+00:02:05,330 --> 00:02:08,300
+Let's just run that and make sure that it works and it does.
+
+31
+00:02:08,900 --> 00:02:14,930
+Now I'll delete that semicolon, copy this entire line and has a comma at the end of it now.
+
+32
+00:02:14,930 --> 00:02:15,710
+And that's important.
+
+33
+00:02:16,190 --> 00:02:17,600
+Paste it three more times.
+
+34
+00:02:20,020 --> 00:02:27,210
+Delete the last comma and change pending for the second one to say healthy and then put healthy in here.
+
+35
+00:02:29,730 --> 00:02:32,340
+And then warning and warning.
+
+36
+00:02:36,510 --> 00:02:42,400
+And energy and then problem, so those will be our four statuses problem.
+
+37
+00:02:43,650 --> 00:02:48,900
+Now when I run this, I get all the information in one query and that seems way more efficient to me.
+
+38
+00:02:49,290 --> 00:02:56,280
+So let me copy this whole query and go back to my code and go to host postgrads and I'll just put a
+
+39
+00:02:56,280 --> 00:02:57,040
+new function in here.
+
+40
+00:02:57,050 --> 00:02:58,110
+It doesn't matter where it goes.
+
+41
+00:02:58,740 --> 00:03:07,260
+Func M and it's got a receiver of postgrads DB and I'll say get all service status counts, which is
+
+42
+00:03:07,260 --> 00:03:14,700
+as good a name as any, and it doesn't take any parameters and it returns and eat and eat and eat and
+
+43
+00:03:14,700 --> 00:03:16,560
+eat and potentially an error.
+
+44
+00:03:17,420 --> 00:03:25,350
+OK, and then I'll put my query in here and I'll just paste in the sequel I wrote a moment ago, OK,
+
+45
+00:03:25,500 --> 00:03:28,040
+and I'll just have this over so it looks a little more attractive.
+
+46
+00:03:28,650 --> 00:03:35,250
+Put this back tick up here now I my context so I'll just copy it from the function right next to it
+
+47
+00:03:36,210 --> 00:03:40,500
+and I would just execute the query, but I got to declare four variables to store things in.
+
+48
+00:03:40,500 --> 00:03:48,410
+So I'll say var pending warning know pending healthy to them in the same order.
+
+49
+00:03:48,600 --> 00:03:51,480
+Healthy warning and problem.
+
+50
+00:03:51,840 --> 00:03:56,700
+Those are all going to be ense and now I'll just execute my query.
+
+51
+00:03:57,450 --> 00:04:07,500
+So Roe is a sign, the value of IMDB, the query, query, row context and pass it in my context hasset
+
+52
+00:04:07,500 --> 00:04:08,190
+my query.
+
+53
+00:04:08,520 --> 00:04:18,150
+I have no parameters so I should be able to now just say error is sign the value of Rodust scanned and
+
+54
+00:04:18,150 --> 00:04:22,260
+scanned into those four variables and the first thing I'm getting is pending.
+
+55
+00:04:22,260 --> 00:04:26,490
+So I'll scan that into my pending variable and I'll just duplicate that three more times.
+
+56
+00:04:27,300 --> 00:04:28,170
+That's one too many.
+
+57
+00:04:29,130 --> 00:04:31,440
+And the second one is healthy.
+
+58
+00:04:32,370 --> 00:04:36,180
+The third one is warning, the fourth one is problem.
+
+59
+00:04:37,350 --> 00:04:38,340
+Check for an error.
+
+60
+00:04:38,370 --> 00:04:45,090
+If error is not equal to nil, I'll return zero zero zero zero.
+
+61
+00:04:45,600 --> 00:04:47,180
+So I'm going to ignore those.
+
+62
+00:04:47,240 --> 00:04:51,210
+They'll be paying attention to the error instead and the error otherwise.
+
+63
+00:04:51,390 --> 00:04:54,660
+Return pending healthy.
+
+64
+00:04:56,940 --> 00:05:02,250
+Warning problem and no, OK, so that should do it.
+
+65
+00:05:02,280 --> 00:05:10,980
+So let me copy this signature, open my repository and paste that new method right in here and now it's
+
+66
+00:05:10,980 --> 00:05:15,210
+available to me so I can go back to my roots, find the admin dashboard.
+
+67
+00:05:15,690 --> 00:05:23,310
+And now rather than passing these, I will say instead, let's see what order do we do them in pending,
+
+68
+00:05:23,850 --> 00:05:33,270
+then healthy, then warning, then problem and error are assigned the value of repo DB and I think I
+
+69
+00:05:33,270 --> 00:05:36,810
+called that get all service status counts there.
+
+70
+00:05:37,410 --> 00:05:41,640
+If error is not equal to nil and I'll just do what I've been doing right along.
+
+71
+00:05:41,640 --> 00:05:47,460
+Logged uprate line error and return so they'll see a blank screen, but we can check the log file to
+
+72
+00:05:47,460 --> 00:05:48,300
+see what's going on.
+
+73
+00:05:48,570 --> 00:05:54,300
+And in production I would do something a little more user friendly, but I'm not in production now.
+
+74
+00:05:54,300 --> 00:06:03,420
+I substitute the number healthy with healthy, the no problem with problem, the number pending with
+
+75
+00:06:03,420 --> 00:06:06,900
+pending and then no warning with warning.
+
+76
+00:06:08,310 --> 00:06:12,630
+And if I stop my application and clear this and run my application.
+
+77
+00:06:15,610 --> 00:06:21,170
+And go back to my dashboard and say, I'll just go to the House page, then I'll go back to overview.
+
+78
+00:06:21,640 --> 00:06:23,370
+I have one pending service.
+
+79
+00:06:23,500 --> 00:06:24,100
+Perfect.
+
+80
+00:06:24,490 --> 00:06:28,030
+And if I go back to my database, I need to go to my database.
+
+81
+00:06:28,030 --> 00:06:35,560
+I can just go to my hosts and look at my services and turn this one off, which should take place in
+
+82
+00:06:35,560 --> 00:06:37,960
+the background that I get an error message.
+
+83
+00:06:40,310 --> 00:06:43,430
+I'm terminated, quoted string Learjet.
+
+84
+00:06:43,850 --> 00:06:44,860
+I'm going to fix that.
+
+85
+00:06:44,870 --> 00:06:50,570
+Where is the layout Parshall's Jast Jet and under UN terminated quoted string.
+
+86
+00:06:50,690 --> 00:06:55,940
+So let's find that I must have hit return at some point and I better fix that right now.
+
+87
+00:06:55,940 --> 00:06:57,260
+So that's interviews.
+
+88
+00:06:58,680 --> 00:07:05,610
+Parshall's Jast jet, and it says to look at line for, line for.
+
+89
+00:07:10,940 --> 00:07:14,240
+And I get that somehow I mess this up, so let's fix that.
+
+90
+00:07:16,410 --> 00:07:17,660
+Let's see what's going on here.
+
+91
+00:07:22,750 --> 00:07:27,640
+Oh, I know what it is, I must have formatted this text at some point, and that messed it all up.
+
+92
+00:07:28,270 --> 00:07:29,990
+So this can go back up here.
+
+93
+00:07:30,310 --> 00:07:31,660
+This can come back up here.
+
+94
+00:07:31,870 --> 00:07:41,170
+That's one of the problems of not having a correct plug in for jet for my I.D. And it's making me rethink
+
+95
+00:07:41,170 --> 00:07:42,340
+using this in the future.
+
+96
+00:07:42,760 --> 00:07:49,210
+But let's just make sure that's not going to generate any more errors and reload this.
+
+97
+00:07:49,210 --> 00:07:52,040
+Check the console, no errors.
+
+98
+00:07:52,450 --> 00:07:55,880
+Now, if I go to manage services and make that inactive, that's better.
+
+99
+00:07:55,940 --> 00:07:57,060
+OK, that's where I wanted to get.
+
+100
+00:07:57,070 --> 00:07:57,520
+So I.
+
+101
+00:07:57,760 --> 00:07:59,020
+You don't have that error, I'm sure.
+
+102
+00:07:59,020 --> 00:07:59,680
+But I do.
+
+103
+00:08:00,820 --> 00:08:08,290
+And just so you know, if I am looking at this just jet page and I reformat it by hitting the key combination
+
+104
+00:08:08,290 --> 00:08:14,260
+that reformats my text sometimes, but not always, which is the most irritating kind of error ever.
+
+105
+00:08:14,800 --> 00:08:18,970
+It will actually break the formatting for this this sort of thing.
+
+106
+00:08:18,970 --> 00:08:19,930
+And that's what happened here.
+
+107
+00:08:19,930 --> 00:08:22,540
+But spaces between the hyphens and put things in other lines.
+
+108
+00:08:22,550 --> 00:08:23,550
+Anyway, I cleaned it up.
+
+109
+00:08:24,400 --> 00:08:25,320
+So now that's working.
+
+110
+00:08:25,330 --> 00:08:31,240
+Now, if I go back to my overview, this should say zero, and it does because that service is not active
+
+111
+00:08:31,240 --> 00:08:32,230
+on localhost.
+
+112
+00:08:32,230 --> 00:08:37,930
+But when I go back to localhost, go to services, turn it back on and go back to my overview.
+
+113
+00:08:38,260 --> 00:08:42,960
+Now, it shows the number one in pending over here, and that's exactly what I wanted to do.
+
+114
+00:08:43,720 --> 00:08:46,360
+So this page, it looks like it's done.
+
+115
+00:08:46,510 --> 00:08:48,560
+It's working exactly the way I want it to.
+
+116
+00:08:49,090 --> 00:08:54,130
+So the next step and we'll do this for one and I'll leave the other three is an exercise for you because
+
+117
+00:08:54,130 --> 00:08:55,900
+it's exactly the same sort of thing.
+
+118
+00:08:56,620 --> 00:09:02,050
+We need this page to list all of the problems, all of the pending services, and we want to see the
+
+119
+00:09:02,050 --> 00:09:04,900
+hostname, the service name, the status and the message.
+
+120
+00:09:05,560 --> 00:09:07,930
+And there will be no message because it's pending.
+
+121
+00:09:07,930 --> 00:09:08,730
+Nothing's happened yet.
+
+122
+00:09:09,280 --> 00:09:10,900
+The status will just be pending.
+
+123
+00:09:11,320 --> 00:09:16,630
+The service will be the name of the service in our case, HTTP and the name of the host is the name
+
+124
+00:09:16,630 --> 00:09:17,230
+of the host.
+
+125
+00:09:17,530 --> 00:09:21,760
+And this is just a quick way to list all of the services that are in a given status.
+
+126
+00:09:21,940 --> 00:09:26,680
+And we want to be able to click on the service or the host and go right to the appropriate page.
+
+127
+00:09:26,930 --> 00:09:32,470
+OK, so we'll take care of that in the next lecture and then I'll leave the last three that are not
+
+128
+00:09:32,470 --> 00:09:37,210
+the pending status as an exercise for you, which should be really straightforward.

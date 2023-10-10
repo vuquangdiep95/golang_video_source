@@ -1,0 +1,619 @@
+1
+00:00:01,570 --> 00:00:07,180
+So let's get started implementing a very simple Web server and, of course, will improve on this as
+
+2
+00:00:07,180 --> 00:00:08,410
+time goes on.
+
+3
+00:00:09,040 --> 00:00:13,990
+So I'm back in the Celebrity House package and the first thing I want to do is create a new file.
+
+4
+00:00:14,260 --> 00:00:18,000
+And I want to create a new file right at the root level of the celebrity's project.
+
+5
+00:00:18,010 --> 00:00:20,560
+And I'm going to call it Roots Dot Go.
+
+6
+00:00:20,800 --> 00:00:25,870
+And this will be the default routes that are available as part of the celebrity's package.
+
+7
+00:00:26,890 --> 00:00:30,490
+So let's give it its a name package, celebrities.
+
+8
+00:00:32,980 --> 00:00:38,890
+And what I'm going to do is create a new function, and this will have the receiver of C Pointer to
+
+9
+00:00:38,890 --> 00:00:41,950
+celebrities, and I'm going to call it simply roots.
+
+10
+00:00:42,100 --> 00:00:50,050
+It's not exported, and it will return the type of http dot handler handler with an on the end not handle.
+
+11
+00:00:50,440 --> 00:00:50,800
+OK.
+
+12
+00:00:52,750 --> 00:00:58,030
+And this, of course, is going to return all of the routes that are available to our application by
+
+13
+00:00:58,030 --> 00:01:01,930
+default, if any and any middleware, we want to implement things like that.
+
+14
+00:01:02,410 --> 00:01:08,050
+Now we could use the built in rooting functionality that's part of the standard library, but that would
+
+15
+00:01:08,050 --> 00:01:09,340
+get awkward very quickly.
+
+16
+00:01:09,460 --> 00:01:14,170
+And if you take in any of my other courses, you're probably aware of the fact that I'm a big fan of
+
+17
+00:01:14,170 --> 00:01:15,150
+this package.
+
+18
+00:01:15,160 --> 00:01:16,630
+So let me go over to my web browser.
+
+19
+00:01:17,980 --> 00:01:23,800
+It's the cheat router, and that's the one I want to use, and I'm going to implement this as the basic
+
+20
+00:01:23,800 --> 00:01:27,400
+routing package that we use as part of our celebrities package.
+
+21
+00:01:28,030 --> 00:01:33,040
+So I'll copy the installation command right here, and there's a link to this on the course resources
+
+22
+00:01:33,040 --> 00:01:39,190
+for this lecture, and I'll go back to my celebrity's package, opened my terminal window and paste
+
+23
+00:01:39,190 --> 00:01:42,520
+that in and it goes and gets cheap.
+
+24
+00:01:43,240 --> 00:01:44,090
+Version five.
+
+25
+00:01:44,110 --> 00:01:47,860
+And if you want to follow along, exactly even if there's a later version of this.
+
+26
+00:01:47,980 --> 00:01:49,170
+Stick with the V5.
+
+27
+00:01:49,180 --> 00:01:52,510
+Otherwise, you might run into difficulties because there might be a breaking change.
+
+28
+00:01:53,590 --> 00:01:57,520
+OK, so I have it available to me now as part of my Go Dot Mod file.
+
+29
+00:01:58,420 --> 00:01:59,110
+So let's use it.
+
+30
+00:01:59,380 --> 00:02:00,820
+And it's really simple to use.
+
+31
+00:02:00,910 --> 00:02:07,270
+We'll create a variable rate inside the function called MUX for multiplexing, and it's equal to cheat
+
+32
+00:02:07,270 --> 00:02:10,600
+Dot New River right there.
+
+33
+00:02:12,910 --> 00:02:14,710
+And hopefully that imported version five.
+
+34
+00:02:14,740 --> 00:02:15,340
+No, it didn't.
+
+35
+00:02:15,490 --> 00:02:18,000
+So we'll make that slash V5.
+
+36
+00:02:18,010 --> 00:02:24,100
+I had an old version available, so now we've created that and I'm also going to take advantage of cheese
+
+37
+00:02:24,100 --> 00:02:25,180
+middleware package.
+
+38
+00:02:25,870 --> 00:02:29,920
+So to use that, I'll open my terminal window and I'm going to type or paste in here.
+
+39
+00:02:29,950 --> 00:02:30,670
+Go get.
+
+40
+00:02:31,240 --> 00:02:32,730
+And it's almost the same URL.
+
+41
+00:02:32,740 --> 00:02:36,380
+It just ends with slash, V5 slash and middleware.
+
+42
+00:02:36,400 --> 00:02:41,980
+So I'll go get that because there are some really good middleware that's available by default when you
+
+43
+00:02:41,980 --> 00:02:42,940
+import that package.
+
+44
+00:02:43,690 --> 00:02:44,560
+So I'm going to use some of that.
+
+45
+00:02:44,680 --> 00:02:46,210
+I'll say Mark start use.
+
+46
+00:02:48,730 --> 00:02:50,290
+I guess I'm missing some parentheses here.
+
+47
+00:02:50,380 --> 00:02:51,040
+Let's try that again.
+
+48
+00:02:53,040 --> 00:02:54,010
+Mark, start use.
+
+49
+00:02:54,340 --> 00:02:58,000
+And I want to use from Middleware
+
+50
+00:03:01,060 --> 00:03:01,510
+Dot.
+
+51
+00:03:03,660 --> 00:03:04,530
+Request I.D..
+
+52
+00:03:08,060 --> 00:03:19,340
+And then I'll also use Macs don't use from the middleware package, real IP, and only when I'm in debug
+
+53
+00:03:19,340 --> 00:03:23,670
+mode, I want to actually log things to the console.
+
+54
+00:03:23,690 --> 00:03:30,080
+OK, so I'll say if see that debug, which is available to us right from the celebrity's receiver.
+
+55
+00:03:31,220 --> 00:03:38,460
+So if Cederberg and I will say Macs don't use middleware logger.
+
+56
+00:03:39,710 --> 00:03:43,460
+OK, and then I'll just say return marks.
+
+57
+00:03:44,810 --> 00:03:48,650
+So there are no actual routes in here, but what I've done is add some default middleware.
+
+58
+00:03:48,770 --> 00:03:50,120
+OK, I'll add one more here.
+
+59
+00:03:50,120 --> 00:03:59,660
+Two, if things panic, we want to recover gracefully so Macs don't use middleware recover or and that
+
+60
+00:03:59,660 --> 00:04:03,380
+will actually recover if our application should panic for some reason.
+
+61
+00:04:04,160 --> 00:04:09,020
+So the first one request ID, if you look at the comment, it's a middleware that injects a request
+
+62
+00:04:09,020 --> 00:04:11,060
+ID into the context of each request.
+
+63
+00:04:11,060 --> 00:04:16,970
+A request ID is a string of the form, and it gives you an example, and it allows us to easily take
+
+64
+00:04:16,970 --> 00:04:19,940
+advantage of request ID and the context.
+
+65
+00:04:20,510 --> 00:04:25,670
+The second one actually gets the real IP where the request is coming from, and in lots of situations
+
+66
+00:04:25,670 --> 00:04:27,770
+you want to know the IP address of your visitor.
+
+67
+00:04:28,340 --> 00:04:34,160
+The logger just writes to the console, in our case, every request that comes in and that will be helpful
+
+68
+00:04:34,160 --> 00:04:34,790
+as we develop.
+
+69
+00:04:34,820 --> 00:04:37,370
+And finally, this one recovers from Panic's.
+
+70
+00:04:37,550 --> 00:04:40,370
+OK, so we have this available to us now.
+
+71
+00:04:41,600 --> 00:04:49,790
+So let's go back to our Solaris Housego Go File and close our terminal, and now I'm going to create
+
+72
+00:04:49,790 --> 00:04:50,300
+a function.
+
+73
+00:04:50,330 --> 00:04:52,980
+I'll put it right right after the init function.
+
+74
+00:04:53,000 --> 00:04:53,510
+Why not?
+
+75
+00:04:53,660 --> 00:04:54,050
+OK.
+
+76
+00:04:54,240 --> 00:04:56,420
+It doesn't matter where it is as long as it's available to us.
+
+77
+00:04:56,960 --> 00:05:01,400
+And this will be a function with the receiver of C, a pointer to celebrities.
+
+78
+00:05:02,570 --> 00:05:05,650
+And I'm going to call it listen and serve.
+
+79
+00:05:05,660 --> 00:05:10,640
+And this will actually start our application, our web server, OK and keep it running in the background.
+
+80
+00:05:11,600 --> 00:05:17,060
+So we'll create a variable called SRB for server server, and that's assigned the value of a reference
+
+81
+00:05:17,060 --> 00:05:25,250
+to HTTP server right there, and we'll populate some values we're going to need.
+
+82
+00:05:25,430 --> 00:05:26,300
+What's our address?
+
+83
+00:05:26,480 --> 00:05:34,070
+So ADT are OK with a Capital eight, and that, of course, will be what part we're going to listen
+
+84
+00:05:34,070 --> 00:05:34,230
+on.
+
+85
+00:05:35,000 --> 00:05:45,740
+So we'll say format Sprint F, Sprint F, and we'll give it this formatting string a colon followed
+
+86
+00:05:45,740 --> 00:05:52,250
+by percent s, which is a string and we have from our own don't get on the port we're listening on.
+
+87
+00:05:53,690 --> 00:05:59,510
+So that will give us, in my case, a string colon four thousand and that tells the that will tell the
+
+88
+00:05:59,510 --> 00:06:00,120
+web server.
+
+89
+00:06:00,140 --> 00:06:01,210
+Here's where you listen.
+
+90
+00:06:01,220 --> 00:06:07,130
+This is the port you'll listen to and we want an error log and we have one of those we can use C Dot
+
+91
+00:06:07,130 --> 00:06:10,940
+Heirloom and we want handlers.
+
+92
+00:06:11,270 --> 00:06:13,580
+And this is where we call C Dot Roots.
+
+93
+00:06:15,620 --> 00:06:21,230
+And finally, we want we're not finally, we want an idle timeout, and we'll just put a reasonable
+
+94
+00:06:21,230 --> 00:06:24,170
+value there, say 30 times time dot second.
+
+95
+00:06:26,750 --> 00:06:30,890
+And we also want to read timeout 30 times timed second.
+
+96
+00:06:34,360 --> 00:06:35,230
+And comma there.
+
+97
+00:06:39,720 --> 00:06:45,810
+And we want to time timeout, which will certainly say 600 times times Dot second.
+
+98
+00:06:46,170 --> 00:06:50,280
+I'm just going to make that really long for development purposes and if necessary, we can change that
+
+99
+00:06:50,280 --> 00:06:50,760
+later on.
+
+100
+00:06:51,900 --> 00:06:52,260
+OK.
+
+101
+00:06:52,890 --> 00:06:58,290
+So from here, let's right to the log file, see dot info log dot print line.
+
+102
+00:07:00,240 --> 00:07:02,640
+And we'll just say, let make that a print if.
+
+103
+00:07:06,710 --> 00:07:13,910
+Listening on Port Percent s and here will substitute that with don't get on the port.
+
+104
+00:07:15,110 --> 00:07:20,200
+OK, so now we can start our web server, so we'll say error is a sign the value of service.
+
+105
+00:07:20,540 --> 00:07:23,930
+Listen and serve and we'll check for an error.
+
+106
+00:07:24,620 --> 00:07:28,910
+See Dot analog dot fatal error.
+
+107
+00:07:29,120 --> 00:07:30,100
+So something goes wrong.
+
+108
+00:07:30,110 --> 00:07:32,840
+We'll know what happened and we'll give this a comment.
+
+109
+00:07:37,310 --> 00:07:41,420
+Listen and serve starts the web server.
+
+110
+00:07:44,180 --> 00:07:45,200
+OK, very good.
+
+111
+00:07:46,400 --> 00:07:50,000
+Now we actually want some means of testing this, so let's go back to our roots file.
+
+112
+00:07:51,350 --> 00:07:53,600
+Let's just put one test route in here.
+
+113
+00:07:53,630 --> 00:08:00,890
+So we'll say Max, don't get and we'll make it just the default slash.
+
+114
+00:08:01,070 --> 00:08:01,490
+OK?
+
+115
+00:08:01,910 --> 00:08:03,800
+And we'll just put an inline function here.
+
+116
+00:08:04,160 --> 00:08:12,590
+Func, W.H Response Writer Because every handler and this is an inline handler has to have two parameters
+
+117
+00:08:12,590 --> 00:08:16,490
+the response writer and our which is a pointer to HGTV Dot request.
+
+118
+00:08:18,500 --> 00:08:24,890
+And when we hit this route, we'll just say format, dot print and we'll give it a writer, which is
+
+119
+00:08:25,220 --> 00:08:33,110
+in our case, and we'll just say welcome to celebrities just to make sure that things are actually working.
+
+120
+00:08:35,060 --> 00:08:37,700
+OK, so this will actually start a Web server.
+
+121
+00:08:37,730 --> 00:08:43,580
+Now we're not going to be able to do anything except get the request to the home page and get some text
+
+122
+00:08:43,580 --> 00:08:44,390
+written back to us.
+
+123
+00:08:44,420 --> 00:08:46,790
+Not even true HTML, but it's a start.
+
+124
+00:08:48,440 --> 00:08:51,980
+But how am I going to get access to these routes in my front end?
+
+125
+00:08:52,280 --> 00:08:54,320
+Well, let's go back to celebrities.
+
+126
+00:08:54,320 --> 00:08:54,920
+Don't go.
+
+127
+00:08:57,530 --> 00:09:00,920
+Let's go to the very top where we define our celebrity package.
+
+128
+00:09:01,490 --> 00:09:03,920
+And let's put another value in here roots.
+
+129
+00:09:04,580 --> 00:09:09,830
+And that will be of type in our case, she mugs, because we're using the cheat river.
+
+130
+00:09:10,130 --> 00:09:16,130
+So let's save this to format it, and let's go all the way down to our in it here.
+
+131
+00:09:16,430 --> 00:09:17,480
+And let's populate that.
+
+132
+00:09:18,500 --> 00:09:23,600
+So I want see dot roots right here and be equal to.
+
+133
+00:09:24,020 --> 00:09:28,070
+And I can call the function cedar roots lowercase right there.
+
+134
+00:09:28,340 --> 00:09:32,540
+But as you can see, that's not the right type because that's returning in football handler.
+
+135
+00:09:32,570 --> 00:09:37,550
+So what I'll do is simply cast that to a pointer up to G Dot.
+
+136
+00:09:39,230 --> 00:09:40,910
+And now the roots are available to us.
+
+137
+00:09:41,180 --> 00:09:46,640
+OK, so let's switch to the front end and find our main file right here.
+
+138
+00:09:46,640 --> 00:09:47,510
+Mandago.
+
+139
+00:09:48,140 --> 00:09:50,000
+And after we end it, the application.
+
+140
+00:09:52,170 --> 00:10:03,210
+Let's store that value in a variable called see for celebrities and then call See Dot App Dot.
+
+141
+00:10:03,600 --> 00:10:06,510
+Listen, answer OK.
+
+142
+00:10:07,540 --> 00:10:13,060
+So this should, in theory, start the webserver, so let's open a terminal window and type, make a
+
+143
+00:10:13,060 --> 00:10:15,100
+stop to make sure nothing is going and it shouldn't be.
+
+144
+00:10:15,100 --> 00:10:17,050
+It's not and totemic start.
+
+145
+00:10:19,750 --> 00:10:26,470
+And there it is, it's listening on Port four thousand now we actually have no means of doing anything
+
+146
+00:10:26,470 --> 00:10:33,010
+exciting with that, but we can go back to our web browser and open a new terminal, open a new browser
+
+147
+00:10:33,010 --> 00:10:38,020
+window and go to HGTV colon slash slash localhost port four thousand.
+
+148
+00:10:38,770 --> 00:10:40,990
+And it says, Welcome to celebrity chefs.
+
+149
+00:10:41,290 --> 00:10:42,310
+Well, that's a great start.
+
+150
+00:10:43,540 --> 00:10:47,080
+Now, obviously, we want to do more things than this if we go back to our code.
+
+151
+00:10:47,680 --> 00:10:52,420
+For example, we have this view's directory right here, which is currently empty.
+
+152
+00:10:52,570 --> 00:11:00,190
+And what I want is I want the end user who using this package to be able to populate that view's holder
+
+153
+00:11:00,190 --> 00:11:04,090
+with views of some type go templates and later on jet templates.
+
+154
+00:11:04,840 --> 00:11:09,310
+And then just call a simple, built in function that's part of the Celerity House package that allows
+
+155
+00:11:09,310 --> 00:11:13,270
+them to render a page, and we'll get started on that in the next lecture.

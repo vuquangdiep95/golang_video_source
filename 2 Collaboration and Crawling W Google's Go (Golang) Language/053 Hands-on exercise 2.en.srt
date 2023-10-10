@@ -1,0 +1,443 @@
+1
+00:00:00,450 --> 00:00:03,540
+Ở đây để thực hành Bài tập số hai.
+
+2
+00:00:03,540 --> 00:00:07,920
+Chúng tôi muốn bạn làm việc với cùng một đoạn mã có sẵn trong bài tập số một.
+
+3
+00:00:07,920 --> 00:00:16,410
+Vì vậy, hãy để tôi thêm nó vào đó làm việc với cùng mã mà bạn đã tạo và thực hiện số bài tập
+
+4
+00:00:16,410 --> 00:00:17,820
+một.
+
+5
+00:00:17,820 --> 00:00:25,380
+Truy cập phiên bản 3 1.0 của mã số thuế C chấm IO bốn của chúng tôi, mã của bạn vẫn chạy cấu trúc thư mục là gì
+
+6
+00:00:25,500 --> 00:00:33,150
+của phiên bản đó trên GitHub, hãy chạy các lệnh này chỉ để tra cứu và vì vậy hãy tạm dừng video này để thực hiện việc này
+
+7
+00:00:33,150 --> 00:00:38,160
+về bài tập tích cực, bạn sẽ thực hiện nó khi bạn hoàn thành tất cả bây giờ, tất cả các bạn sẽ quay lại video tạm dừng
+
+8
+00:00:38,250 --> 00:00:43,530
+và chúng tôi sẽ cho bạn thấy giải pháp của chúng tôi mà chúng tôi sẽ làm ngay bây giờ và vì nó có trên máy tính của tôi nên tôi đoán vậy
+
+9
+00:00:43,530 --> 00:00:45,220
+Tôi sẽ là người gõ.
+
+10
+00:00:45,930 --> 00:00:53,070
+Vì vậy, chúng tôi muốn lấy phiên bản 3 của báo giá CI của chúng tôi để tôi có thể mở nó ra và tôi có thể xem những gì
+
+11
+00:00:53,070 --> 00:00:59,220
+ở đó nó đưa tôi đến đây báo giá gói Tôi đang xem qua nó Tôi không thấy gì về các phiên bản ở đây
+
+12
+00:00:59,250 --> 00:01:09,900
+Tôi biết tôi sẽ nhấp vào đây và đi đến cái được gọi là get yeah tôi phải lấy và sau đó.
+
+13
+00:01:10,350 --> 00:01:15,780
+Nhưng có cách nào ở đây mà tôi chỉ có thể xem các phiên bản nếu họ thêm một loại đọc tôi xuống
+
+14
+00:01:15,780 --> 00:01:16,660
+ở đây hoặc một cái gì đó đúng.
+
+15
+00:01:17,020 --> 00:01:21,300
+Vâng, tôi không nghĩ đi xuống nó không thực sự hỗ trợ Vâng, tôi không nghĩ vậy nên tôi sẽ mở ra
+
+16
+00:01:21,840 --> 00:01:28,770
+tôi có thể truy cập vào các bản phát hành và nó phát hành. Tôi có các phiên bản khác nhau nên đây là một
+
+17
+00:01:28,770 --> 00:01:36,660
+điểm năm hai đó là những gì tôi đang sử dụng và tôi có thể thấy rằng ngay tại đây một điểm năm hai và
+
+18
+00:01:36,690 --> 00:01:44,580
+vì vậy chúng tôi xem xét một điểm năm để duyệt các tệp đó và nếu tôi nhìn vào thì tôi đến đây vì tôi muốn
+
+19
+00:01:44,580 --> 00:01:50,490
+để xem tôi muốn xem cấu trúc thư mục nên đây là cấu trúc thư mục
+
+20
+00:01:50,490 --> 00:01:57,220
+và một điểm năm hai và nếu tôi quay lại các bản phát hành và tôi xem phiên bản ba và sau đó Rất tiếc, tôi phải
+
+21
+00:01:57,270 --> 00:02:02,880
+nhấp vào thứ bộ nhớ cache nhỏ ở đó nhấp vào đó Nhấp vào duyệt tệp đây là cấu trúc thư mục
+
+22
+00:02:02,880 --> 00:02:05,080
+có vẻ như chúng ta đang ở trong thư mục V.
+
+23
+00:02:05,270 --> 00:02:10,650
+Được rồi, vì vậy phiên bản ba như phát điên đi một số và trích dẫn đi.
+
+24
+00:02:10,800 --> 00:02:15,710
+Và ở gốc này, chúng ta có mod quote go quote Tesco.
+
+25
+00:02:15,720 --> 00:02:20,370
+Điều đó khá thú vị vì chúng ta đã nói về việc thêm dấu gạch chéo v ba mà nếu tôi muốn
+
+26
+00:02:20,370 --> 00:02:29,790
+để mang đến một phiên bản nhất định, vì vậy tôi sẽ đi kiếm một CIO cho nó.
+
+27
+00:02:30,870 --> 00:02:31,820
+thực tế đúng.
+
+28
+00:02:32,050 --> 00:02:32,930
+Tôi hiểu tất cả những điều đó đúng.
+
+29
+00:02:33,130 --> 00:02:33,990
+Tôi sẽ đi lấy cái đó.
+
+30
+00:02:33,990 --> 00:02:42,210
+Và bây giờ nếu tôi nhìn vào go mod của tôi, mod go tốt của tôi bây giờ nói Đây là báo giá CIO của chúng tôi phiên bản 3 và tôi cũng vậy
+
+31
+00:02:42,210 --> 00:02:43,760
+có cái này ở đó.
+
+32
+00:02:43,790 --> 00:02:46,540
+Vì vậy, tôi đã có phiên bản 3 và phiên bản đó.
+
+33
+00:02:47,100 --> 00:02:52,140
+Và nếu tôi muốn sử dụng nó và chúng ta sẽ quay lại thảo luận về cấu trúc thư mục này trong một
+
+34
+00:02:52,140 --> 00:02:58,960
+thứ hai nhưng như thế này trước khi chúng tôi giống như ồ không cần thiết tab B tương ứng với thư mục và nhận trung tâm
+
+35
+00:02:58,970 --> 00:03:00,510
+vì vậy chúng ta sẽ thảo luận về điều đó trong giây lát.
+
+36
+00:03:00,870 --> 00:03:03,360
+Nhưng bây giờ tôi chỉ muốn thay đổi cách tôi sử dụng cái này.
+
+37
+00:03:03,360 --> 00:03:09,510
+Vì vậy, tôi sẽ nhập phiên bản 3, vì vậy tôi sẽ thực hiện một dấu gạch chéo ở đó và thực hiện av 3, sau đó
+
+38
+00:03:09,510 --> 00:03:17,790
+quote glass để mình save hết đó còn bản 3 quote glass nó cho mình 1 ly và ko khai báo
+
+39
+00:03:17,790 --> 00:03:23,710
+theo báo giá gói nên tôi sẽ xem phiên bản 3 ở đó và phiên bản 3.
+
+40
+00:03:23,780 --> 00:03:26,130
+Vâng, bạn cần phải đi đến lớp thư mục.
+
+41
+00:03:26,160 --> 00:03:33,860
+Tôi có thể ăn thủy tinh và nó không làm hại tôi vì nó đang tìm phiên bản 3 trong thư mục Mallow
+
+42
+00:03:33,890 --> 00:03:37,580
+kính đồng thời V Ba là tên nhưng có chúng tôi đi.
+
+43
+00:03:37,580 --> 00:03:41,020
+Lớp V Ba Lớp V Ba.
+
+44
+00:03:41,310 --> 00:03:48,910
+Và sau đó tôi sẽ lưu nó và sau đó khi tôi chạy, hãy chạy tôi và chạy tất cả vẫn chạy và nếu tôi làm
+
+45
+00:03:48,910 --> 00:03:58,890
+go list dash M Tất cả những gì tôi có thể thấy Tôi có phiên bản 3 và phiên bản một của trích dẫn và nếu tôi thực hiện, tôi sẽ làm gọn gàng
+
+46
+00:03:58,900 --> 00:04:03,150
+nó cho phép lệnh đi gọn gàng đi đi gọn gàng của tôi.
+
+47
+00:04:03,220 --> 00:04:12,100
+Thế là xong nhưng bạn có thể sửa đổi gọn gàng và sau đó liệt kê lại tất cả. Tôi đã thoát khỏi phiên bản một điểm năm
+
+48
+00:04:12,110 --> 00:04:15,460
+hai vì vậy hãy dọn dẹp nó vì tôi đang sử dụng phiên bản ba của anh ấy.
+
+49
+00:04:15,480 --> 00:04:17,680
+Vì vậy, bây giờ hãy nói về thư mục đó.
+
+50
+00:04:17,680 --> 00:04:22,710
+Vì vậy, nó thực sự là khả năng tương thích ngược, vì vậy đó là lý do tại sao họ làm theo cách này ở đây.
+
+51
+00:04:22,720 --> 00:04:23,100
+Vâng.
+
+52
+00:04:23,110 --> 00:04:33,970
+Vì vậy, phiên bản đi phiên bản 1 9 7 1 10 3 và đi và sau đó đi 1 11 với các mô-đun trên tất cả đều có khả năng
+
+53
+00:04:33,970 --> 00:04:42,700
+phát hiện dấu gạch chéo sau v 3 và biết điều này có nghĩa là loại bỏ repo cơ sở thay vì
+
+54
+00:04:42,700 --> 00:04:50,440
+thư mục nhưng nếu bạn đang chạy go 1 9 6 trở về trước hay go 1 có xu hướng kết thúc trước khi nó không biết điều đó.
+
+55
+00:04:50,440 --> 00:04:58,240
+Và vì vậy, kể từ đó, họ luôn cố gắng cập nhật hai phiên bản hoạt động khi lần đầu tiên
+
+56
+00:04:58,270 --> 00:05:05,140
+được thêm vào trong Go Models và go 111 họ phải đảm bảo rằng go 1 10 vẫn có khả năng chạy hầu hết
+
+57
+00:05:05,140 --> 00:05:07,150
+mã để họ thêm vào.
+
+58
+00:05:07,420 --> 00:05:13,600
+Vì vậy, 3 thư mục này gần như là một loại móc nối tương thích để nếu bạn đang sử dụng go 1 10 mà không cần
+
+59
+00:05:13,600 --> 00:05:21,490
+mô-đun nó có thể biết dấu gạch chéo CIO của chúng ta quote gạch chéo v 3 có nghĩa là trong thư mục đó để đường dẫn nhập
+
+60
+00:05:21,490 --> 00:05:23,750
+thực sự ánh xạ tới một đường dẫn thư mục khi nhận.
+
+61
+00:05:23,930 --> 00:05:31,000
+Đúng nhưng điều đó không bắt buộc bởi vì với các mô-đun go, nó có thể tìm ra điều đó theo bất kỳ cách nào.
+
+62
+00:05:31,030 --> 00:05:38,560
+Vì vậy, với điều kiện là các mô-đun hiện đang hoạt động đầy đủ trên tất cả các phiên bản go hiện được hỗ trợ, đó là
+
+63
+00:05:38,560 --> 00:05:40,050
+không thực sự cần thiết.
+
+64
+00:05:40,090 --> 00:05:47,680
+Vì vậy, cách tốt nhất trong tương lai là nếu bạn có các phiên bản chính, đừng bỏ, nó có nghĩa là ba V cho v
+
+65
+00:05:47,680 --> 00:05:52,060
+năm vì trong bạn sẽ có tất cả mã nằm cạnh mã mới sẽ gây nhầm lẫn
+
+66
+00:05:52,260 --> 00:05:57,940
+bạn, cách được đề xuất thực sự là tạo toàn bộ nhánh chỉ để tạo giống như chữ V thành nhánh hoặc thứ gì đó
+
+67
+00:05:58,000 --> 00:06:03,820
+bằng cách đó, bạn vẫn có mã v1 của mình và bạn có thể đẩy các bản cập nhật sửa lỗi giống như bản cũ đó
+
+68
+00:06:03,820 --> 00:06:12,090
+thứ nếu bạn muốn nhưng sau đó bạn đang làm việc trên VV mới của mình để phân nhánh với thứ mới của bạn để nhánh đó
+
+69
+00:06:12,090 --> 00:06:14,630
+với chi nhánh đó, bạn đã có M..
+
+70
+00:06:14,700 --> 00:06:14,940
+Phải.
+
+71
+00:06:14,940 --> 00:06:16,110
+Và đây là phiên bản một.
+
+72
+00:06:16,500 --> 00:06:19,280
+Và sau đó chúng tôi nói oh phiên bản hai Đây là phiên bản để phân nhánh.
+
+73
+00:06:19,470 --> 00:06:19,720
+Phải.
+
+74
+00:06:19,770 --> 00:06:20,350
+Chuẩn rồi.
+
+75
+00:06:20,430 --> 00:06:23,160
+Và sau đó chúng tôi cuối cùng sẽ đưa phiên bản hai trở lại.
+
+76
+00:06:23,190 --> 00:06:24,260
+KHÔNG.
+
+77
+00:06:24,330 --> 00:06:30,210
+Vì vậy, Virgin 2 chỉ cần chạy cho nó và chúng tôi thậm chí không còn nhìn vào Chủ nhân nếu bạn nếu bạn làm được, bạn sẽ như thế nào
+
+78
+00:06:30,240 --> 00:06:32,050
+bản sửa lỗi hoặc phiên bản dành cho Master.
+
+79
+00:06:32,070 --> 00:06:37,380
+Ai đó đang sử dụng bản chính cho bất cứ thứ gì, ai đó vẫn đang sử dụng phiên bản một mà họ thấy giống như bảo mật
+
+80
+00:06:37,380 --> 00:06:37,930
+vì.
+
+81
+00:06:38,010 --> 00:06:44,850
+Bạn quyết định vá nó ở một nhánh riêng, nó ở nhánh chính, bạn có thể sửa lỗi đó riêng biệt
+
+82
+00:06:45,000 --> 00:06:51,870
+từ phiên bản của bạn đến nhánh và vì vậy bất kỳ ai vẫn đang sử dụng phiên bản một vẫn có thể nhận được các bản cập nhật bảo mật
+
+83
+00:06:54,480 --> 00:07:02,850
+Vì vậy, nhánh chính là phiên bản một chuyển sang phiên bản 2 và sau đó mọi thứ vẫn tiếp tục
+
+84
+00:07:02,850 --> 00:07:06,180
+Phiên bản 2 nhưng nếu chúng tôi cần cập nhật phiên bản cũ thì chúng tôi có thể.
+
+85
+00:07:06,190 --> 00:07:07,060
+Vâng.
+
+86
+00:07:07,340 --> 00:07:11,140
+Và và trong đó để mà sẽ.
+
+87
+00:07:11,190 --> 00:07:16,830
+Cái này có mã giống như cái này khi chúng mới bắt đầu và chúng tôi thực hiện ngày đó ở đây nhưng sau đó cũng hợp nhất
+
+88
+00:07:16,830 --> 00:07:18,310
+nó trở lại với chủ.
+
+89
+00:07:18,330 --> 00:07:20,200
+Chúng tôi sẽ không hợp nhất phiên bản hai lại với nhau.
+
+90
+00:07:20,220 --> 00:07:25,320
+Nhưng chỉ một nhận xét đó với chữ O nếu bạn muốn sửa oh if you if you want trong Phiên bản 2.
+
+91
+00:07:25,380 --> 00:07:30,480
+Trong trường hợp đó, có lẽ Phiên bản 2 của bạn có thể có nhiều khác biệt về mã nên có thể không
+
+92
+00:07:30,480 --> 00:07:38,260
+cùng một bản vá cho lý do tại sao Virgin 2 có thể có mã khác nhau nên nó có thể giống hoặc không nhất thiết phải giống nhau.
+
+93
+00:07:38,520 --> 00:07:42,720
+Tôi nghĩ Master luôn là master nên có những cách khác để làm điều đó.
+
+94
+00:07:42,720 --> 00:07:48,110
+Tùy chọn khác là thay vì tạo một phiên bản để phân nhánh, bạn tạo một phiên bản cho một thương hiệu.
+
+95
+00:07:48,120 --> 00:07:48,720
+Tôi thích điều đó.
+
+96
+00:07:48,740 --> 00:07:53,070
+Ý tôi là điều đó sẽ không còn ý nghĩa gì nữa đối với đầu tôi hoặc một năm như thế chỉ là
+
+97
+00:07:53,070 --> 00:07:56,630
+tắt sang một bên và mọi thứ vẫn trở lại bình thường, hiện là phiên bản 2.
+
+98
+00:07:56,720 --> 00:07:58,330
+Vâng, tôi thích điều đó đúng.
+
+99
+00:07:58,530 --> 00:07:59,760
+Vì vậy, hãy tận hưởng nó.
+
+100
+00:07:59,790 --> 00:08:01,560
+Vì vậy, yeah một thiếu tá.
+
+101
+00:08:01,560 --> 00:08:11,190
+Vì vậy, mục nhập mô-đun go going trong trung tâm in get we keep her going go về cơ bản là một nhánh chính
+
+102
+00:08:11,360 --> 00:08:17,280
+vì bạn có một nhánh cho mọi phiên bản chính hoặc thư mục con chính nên một thư mục giống như chúng đã có ở đó
+
+103
+00:08:18,870 --> 00:08:24,880
+chỉ là nói chung để bạn vẫn có thể cập nhật các phiên bản chính cũ của mình nếu thấy cần thiết.
+
+104
+00:08:24,890 --> 00:08:25,080
+Được rồi.
+
+105
+00:08:25,080 --> 00:08:32,700
+Vì vậy, chúng tôi sẽ đặt một liên kết đến điều này ở đây và đó là bản cập nhật nhánh chính mà Monfils đưa vào v ba tại
+
+106
+00:08:32,700 --> 00:08:33,150
+Kết cục của.
+
+107
+00:08:33,200 --> 00:08:35,500
+Vâng, đó là tất cả những thứ giống nhau.
+
+108
+00:08:35,720 --> 00:08:36,460
+Ồ tuyệt.
+
+109
+00:08:36,480 --> 00:08:38,160
+Được rồi.
+
+110
+00:08:38,160 --> 00:08:40,290
+Thêm một chút về chi nhánh.
+
+111
+00:08:40,320 --> 00:08:43,320
+Đó là lời giải của chúng tôi cho bài tập thực hành số hai.

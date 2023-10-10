@@ -1,0 +1,487 @@
+1
+00:00:00,880 --> 00:00:06,460
+So we left this function do make in the make don't go file for a command line application.
+
+2
+00:00:06,700 --> 00:00:11,470
+We left it kind of in the middle of things broken our code won't compile right now, so let's finish
+
+3
+00:00:11,470 --> 00:00:12,580
+this part off.
+
+4
+00:00:13,390 --> 00:00:19,390
+And what I want to do next is to take those two full path names to an up file and a down file, which
+
+5
+00:00:19,390 --> 00:00:22,330
+are an up migration and a down migration, respectively.
+
+6
+00:00:22,870 --> 00:00:28,300
+I want to create some functions that allow us to copy starter migrations to make it easy for end users.
+
+7
+00:00:29,290 --> 00:00:30,340
+So to make that happen.
+
+8
+00:00:30,520 --> 00:00:34,450
+I'm going to call a function that doesn't exist yet, and I'll write it right here.
+
+9
+00:00:35,140 --> 00:00:44,470
+So I'm going to look for an error and that will be assigned the value returned by copy file from template
+
+10
+00:00:45,370 --> 00:00:46,600
+and that will take two parameters.
+
+11
+00:00:47,770 --> 00:00:50,290
+And the first one is where does the file exist?
+
+12
+00:00:50,410 --> 00:00:56,680
+And it's going to exist in an embedded file system called templates right at the same level as Dot.
+
+13
+00:00:58,390 --> 00:01:03,010
+And inside of that there'll be a folder called migrations, and inside of that there'll be a file called
+
+14
+00:01:03,010 --> 00:01:06,610
+migration dot and then whatever the DB type is.
+
+15
+00:01:06,610 --> 00:01:15,790
+So I ask you over Postgres, followed by upstart SQL, and we want to copy it to this path name up file.
+
+16
+00:01:16,000 --> 00:01:19,640
+And of course, that's the path to the migrations folder in my app.
+
+17
+00:01:19,660 --> 00:01:20,410
+In our case?
+
+18
+00:01:21,410 --> 00:01:24,500
+Now, of course, that that function doesn't exist yet, but we're going to write it in a minute.
+
+19
+00:01:24,530 --> 00:01:27,830
+So first of all, let's just say if error is not equal to nil,
+
+20
+00:01:30,890 --> 00:01:33,740
+then we'll exit gracefully with the error.
+
+21
+00:01:34,730 --> 00:01:42,020
+OK, then I'll copy this whole thing and do precisely the same sort of thing for the down migration.
+
+22
+00:01:42,110 --> 00:01:44,090
+So this becomes an equal operator.
+
+23
+00:01:44,720 --> 00:01:50,600
+And this becomes down the scale and this becomes downfall.
+
+24
+00:01:53,240 --> 00:01:58,940
+OK, so now let's go create this copy file from template, which I think I better spell, right?
+
+25
+00:02:00,410 --> 00:02:01,010
+That's better.
+
+26
+00:02:01,820 --> 00:02:08,000
+And here as well, look, I'll create that and we'll do it in its own file once again.
+
+27
+00:02:08,010 --> 00:02:17,800
+So in CMD in the Seelye folder will create a new file, which I will call copy Desch files.
+
+28
+00:02:17,820 --> 00:02:18,650
+Don't go.
+
+29
+00:02:21,110 --> 00:02:23,630
+So let's keep that it's packaged declaration package main.
+
+30
+00:02:24,950 --> 00:02:28,280
+And the first thing I'll do is create an embedded file system.
+
+31
+00:02:28,310 --> 00:02:32,830
+So I'm going to put things in a folder called templates.
+
+32
+00:02:32,840 --> 00:02:40,550
+So I'll go create in the Seelye directory a new folder called templates, and we'll take advantage of
+
+33
+00:02:40,550 --> 00:02:44,780
+that embedded file system functionality that came out a couple of versions of Go ago.
+
+34
+00:02:46,100 --> 00:02:48,140
+So to make that happen, we put in a special comment.
+
+35
+00:02:48,350 --> 00:02:50,600
+Go Colon embed.
+
+36
+00:02:51,950 --> 00:02:57,770
+And we're going to embed templates that folder we just created and we'll create a variable, a variable
+
+37
+00:02:57,770 --> 00:03:06,020
+called template EF-S for file system of type embed dot fs managed the import form.
+
+38
+00:03:06,050 --> 00:03:06,530
+That's good.
+
+39
+00:03:09,710 --> 00:03:10,670
+So we've imported that.
+
+40
+00:03:11,060 --> 00:03:11,840
+Now let's use it.
+
+41
+00:03:12,290 --> 00:03:20,930
+Funk copy file from Template, which takes two arguments Template path will be the first one, which
+
+42
+00:03:20,930 --> 00:03:28,190
+is a string and target file, which is also a string, and it potentially returns an error.
+
+43
+00:03:30,060 --> 00:03:36,360
+So first of all, we need need to make sure that the target file, the one we're trying to create does
+
+44
+00:03:36,360 --> 00:03:38,850
+not already exist, so let's put a comment there.
+
+45
+00:03:40,050 --> 00:03:47,070
+Check to ensure file does not already exist.
+
+46
+00:03:47,190 --> 00:03:50,430
+We'll come back to that and I'll put it to you in front of it.
+
+47
+00:03:50,430 --> 00:03:52,350
+So I don't forget to do
+
+48
+00:03:55,980 --> 00:03:56,130
+so.
+
+49
+00:03:56,130 --> 00:03:56,820
+We'll do that in a minute.
+
+50
+00:03:58,590 --> 00:04:02,520
+Now, let's read some file from our embedded file system.
+
+51
+00:04:02,520 --> 00:04:07,860
+Some data and error are assigned the value of from template f's.
+
+52
+00:04:10,290 --> 00:04:12,330
+I spelled it wrong, which is why that's not working.
+
+53
+00:04:15,320 --> 00:04:17,960
+And let's make this template for us.
+
+54
+00:04:19,060 --> 00:04:20,730
+That's better template.
+
+55
+00:04:21,660 --> 00:04:24,510
+Don't read file first, don't read file.
+
+56
+00:04:26,790 --> 00:04:31,700
+And we want to read template path and we'll check for error.
+
+57
+00:04:32,040 --> 00:04:34,970
+If error is not equal to nil, then our template doesn't exist.
+
+58
+00:04:35,010 --> 00:04:37,500
+So exit gracefully in the error.
+
+59
+00:04:39,570 --> 00:04:40,680
+Otherwise, we have some data.
+
+60
+00:04:41,760 --> 00:04:47,220
+So now what we want to do is to copy the data to a file, and we'll be doing that a lot with the various
+
+61
+00:04:47,220 --> 00:04:49,830
+templates we'll be building during the remainder of this course.
+
+62
+00:04:50,640 --> 00:04:52,740
+So what I'm going to do is read another.
+
+63
+00:04:52,740 --> 00:04:56,010
+Yet another function will refer to yet another function that doesn't exist yet.
+
+64
+00:04:56,040 --> 00:05:02,010
+So let's check for an error in equals copy data to file.
+
+65
+00:05:02,490 --> 00:05:02,820
+OK.
+
+66
+00:05:03,510 --> 00:05:08,400
+And we'll make that in a minute, and we're going to pass that two parameters data and the target file.
+
+67
+00:05:09,960 --> 00:05:11,280
+And again, we'll check for an error.
+
+68
+00:05:12,760 --> 00:05:15,620
+Copy paste.
+
+69
+00:05:17,550 --> 00:05:20,460
+And if we get past all that, then we've copied our file return.
+
+70
+00:05:20,460 --> 00:05:20,760
+Nil.
+
+71
+00:05:21,480 --> 00:05:29,460
+OK, now let's create that function func copy data to file and that takes two parameters data which
+
+72
+00:05:29,460 --> 00:05:30,960
+is nothing more than a slice of bytes.
+
+73
+00:05:34,590 --> 00:05:39,840
+And it also takes to string what are we copying it to and potentially returns an error.
+
+74
+00:05:41,070 --> 00:05:46,650
+All we do is say error is assigned the value of from the IOU till package.
+
+75
+00:05:46,890 --> 00:05:51,900
+We want right file and we want to write to.
+
+76
+00:05:52,290 --> 00:05:57,750
+That's where we're writing it to what we're writing into into that file is the data a slice of bytes
+
+77
+00:05:58,200 --> 00:05:59,990
+and we'll give it sensible permissions.
+
+78
+00:06:00,030 --> 00:06:01,170
+Zero six four four.
+
+79
+00:06:02,550 --> 00:06:08,310
+If error is not equal to nil, return the error, otherwise return nil.
+
+80
+00:06:11,100 --> 00:06:14,310
+OK, now go embed templates.
+
+81
+00:06:14,700 --> 00:06:17,640
+Templates, command Seelye.
+
+82
+00:06:17,670 --> 00:06:18,180
+It's there.
+
+83
+00:06:19,260 --> 00:06:20,970
+Hopefully, that error will go away shortly.
+
+84
+00:06:22,350 --> 00:06:28,410
+So the error I'm getting here, it says go embed templates and it says cannot embed directory template
+
+85
+00:06:28,410 --> 00:06:31,050
+because it's no embeddable files that will go away momentarily.
+
+86
+00:06:31,950 --> 00:06:38,100
+So let's create a new directory inside of our templates a new folder called migrations.
+
+87
+00:06:40,620 --> 00:06:45,750
+And inside of that, let's create some standard templates we can use.
+
+88
+00:06:45,990 --> 00:06:53,520
+Now, if you recall, back here in Make Dog Go, we're trying to create a file called migration or read
+
+89
+00:06:53,520 --> 00:06:58,020
+a file called migration dot db type postgres.
+
+90
+00:06:58,020 --> 00:07:02,010
+In our case, dart up SQL and one down dust you out.
+
+91
+00:07:02,040 --> 00:07:08,670
+So let's create some files inside of migrations or create a new file called and it has to match exactly
+
+92
+00:07:08,670 --> 00:07:10,650
+what I have here, and I do make function.
+
+93
+00:07:12,410 --> 00:07:21,440
+Migration dot postgres dot up school and we'll create another one.
+
+94
+00:07:22,310 --> 00:07:28,550
+Any file migration that post grows, don't screw up.
+
+95
+00:07:30,500 --> 00:07:31,970
+Now let's go back to migrations.
+
+96
+00:07:31,970 --> 00:07:37,670
+Postgres up, and I've already copied to my clipboard the contents of a file you can download from the
+
+97
+00:07:37,670 --> 00:07:42,680
+course resources for this lecture, and it's called Migration PostgreSQL Update sequel.
+
+98
+00:07:42,830 --> 00:07:48,730
+And it's nothing more than Common's and sequel, a starting point for people that are working on a migration.
+
+99
+00:07:48,740 --> 00:07:55,370
+And it gives them a simple create table in the Postgres syntax, and it gives the instructions on how
+
+100
+00:07:55,370 --> 00:07:57,440
+to use the trigger to auto update.
+
+101
+00:07:57,860 --> 00:08:03,020
+The updated app for the table might be creating, and of course, they can use this as a starting point.
+
+102
+00:08:03,050 --> 00:08:07,910
+Delete it, put their own sequel in there, whatever they want to do in the same way.
+
+103
+00:08:07,940 --> 00:08:14,510
+I have some down starter code here, and as you might expect to reverse that migration, all we're going
+
+104
+00:08:14,510 --> 00:08:16,480
+to do is drop that table, whatever it is.
+
+105
+00:08:16,490 --> 00:08:21,020
+So we'll leave it up to the end user to make sure that the sequel is correct, but this gives them a
+
+106
+00:08:21,020 --> 00:08:21,620
+starting point.
+
+107
+00:08:21,890 --> 00:08:25,010
+OK, now back in copy files ago go.
+
+108
+00:08:25,340 --> 00:08:30,050
+Presumably, that error will go away soon once it realizes that there is some embeddable stuff there.
+
+109
+00:08:30,620 --> 00:08:34,500
+But we now have we go back to the beginning of this main doggo.
+
+110
+00:08:34,840 --> 00:08:42,170
+If someone types celerity US space make and calls, of course, do make, so we go over to do make.
+
+111
+00:08:43,370 --> 00:08:46,500
+And then the one case we're trapping for right now is migration.
+
+112
+00:08:46,520 --> 00:08:52,160
+So here we get our database type and we make sure there is an argument three where they give their migration
+
+113
+00:08:52,160 --> 00:08:52,760
+a name.
+
+114
+00:08:52,790 --> 00:08:55,430
+We build the first part of the file name.
+
+115
+00:08:55,910 --> 00:09:01,880
+Then we construct the complete path to where we want these migrations to live and we copy file from
+
+116
+00:09:01,880 --> 00:09:02,470
+template.
+
+117
+00:09:02,840 --> 00:09:04,370
+So we're copying it.
+
+118
+00:09:05,090 --> 00:09:11,210
+The contents of this file, which is in our embedded file system templates, and then we copy the one
+
+119
+00:09:11,210 --> 00:09:12,230
+for the down migration.
+
+120
+00:09:12,450 --> 00:09:13,820
+At that point, it should be done.
+
+121
+00:09:14,060 --> 00:09:16,340
+OK, so this is a good starting point.
+
+122
+00:09:16,670 --> 00:09:20,300
+In the next lecture, we'll give it a try and see if it actually works.

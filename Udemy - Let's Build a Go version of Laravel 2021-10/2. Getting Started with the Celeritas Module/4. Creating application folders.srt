@@ -1,0 +1,339 @@
+1
+00:00:01,130 --> 00:00:05,960
+So let's try out the changes we made in our celebrity package in our my app.
+
+2
+00:00:06,200 --> 00:00:07,940
+And the first thing I'll do is I'll create a type.
+
+3
+00:00:08,600 --> 00:00:13,310
+And just as a word of warning, we might have to fight with the Visual Studio code a little bit to get
+
+4
+00:00:13,310 --> 00:00:15,110
+this type to work, but we'll figure it out.
+
+5
+00:00:15,770 --> 00:00:19,070
+So a credit type called application and it will be a struct.
+
+6
+00:00:19,220 --> 00:00:25,520
+And this is going to be the type that holds all of the things our application needs, and we'll share
+
+7
+00:00:25,520 --> 00:00:28,700
+it with the parts of our application that need that kind of functionality.
+
+8
+00:00:29,480 --> 00:00:34,610
+So this will have one member and I'm going to call it app for application, and it will be of type a
+
+9
+00:00:34,610 --> 00:00:39,890
+pointer to celebrities, not celebrities.
+
+10
+00:00:40,460 --> 00:00:45,470
+OK, now if I type go go mod vendor, will it go find it for me?
+
+11
+00:00:45,590 --> 00:00:47,000
+Go mod vendor.
+
+12
+00:00:49,370 --> 00:00:53,510
+Sometimes the very first time you do this sort of thing in visual studio code, you have to fight with
+
+13
+00:00:53,510 --> 00:00:53,660
+it.
+
+14
+00:00:54,650 --> 00:01:00,080
+So all important manually GitHub dot com slash TESOL or slash.
+
+15
+00:01:02,110 --> 00:01:02,450
+Juice.
+
+16
+00:01:04,340 --> 00:01:06,440
+OK, now it found it, so that's good.
+
+17
+00:01:06,660 --> 00:01:07,640
+We're good to go.
+
+18
+00:01:07,730 --> 00:01:11,930
+You might have to if that didn't work for you, you might have to go to your terminal and just go get
+
+19
+00:01:11,930 --> 00:01:16,430
+GitHub dot com slash whatever your username is, slash whatever your package name is.
+
+20
+00:01:16,580 --> 00:01:17,240
+But we got it in there.
+
+21
+00:01:17,240 --> 00:01:18,280
+So that's where it's working.
+
+22
+00:01:18,290 --> 00:01:18,770
+All right.
+
+23
+00:01:20,480 --> 00:01:22,340
+Now I want to keep this main function.
+
+24
+00:01:22,820 --> 00:01:27,890
+Everything from line nine to line 11 right now, as simple as I possibly can.
+
+25
+00:01:28,460 --> 00:01:33,710
+So I'm going to put all of the heavy lifting off into separate functions that I can call as necessary.
+
+26
+00:01:34,460 --> 00:01:41,030
+So what I'll do is create a new file at the top level of this project, and I'll call it in it.
+
+27
+00:01:42,080 --> 00:01:45,260
+Dash solicitous dot com.
+
+28
+00:01:45,800 --> 00:01:46,130
+OK.
+
+29
+00:01:46,820 --> 00:01:53,000
+And of course, that's in Package Main and will make this function pretty straightforward.
+
+30
+00:01:53,030 --> 00:01:55,970
+So func in it application.
+
+31
+00:01:59,600 --> 00:02:00,000
+OK.
+
+32
+00:02:00,650 --> 00:02:06,410
+And it will take no parameters, and it will return a pointer to the type we just created application.
+
+33
+00:02:09,320 --> 00:02:13,670
+So there's certain things I absolutely am going to have to know for my web app to function properly,
+
+34
+00:02:13,680 --> 00:02:16,520
+and one of the first things is what's the working directory?
+
+35
+00:02:16,550 --> 00:02:18,590
+Where did this application start?
+
+36
+00:02:19,160 --> 00:02:20,360
+Unfortunately, it's pretty simple.
+
+37
+00:02:20,450 --> 00:02:29,120
+I'll say path is a sign the value of from the and potentially in error they're assigned the value of
+
+38
+00:02:29,120 --> 00:02:30,560
+from the OS package.
+
+39
+00:02:30,740 --> 00:02:34,430
+Get working directory right there, OK?
+
+40
+00:02:34,730 --> 00:02:37,880
+And we'll check for an error if error is not equal to nil.
+
+41
+00:02:38,180 --> 00:02:40,520
+Then at this point, I want to say logged, not fatal.
+
+42
+00:02:41,090 --> 00:02:46,910
+And I wanted to just die is if we can't find a working directory, something's gone wrong.
+
+43
+00:02:47,840 --> 00:02:54,810
+So now I have the path, the root path to the application, and now I want to initialize celebrities.
+
+44
+00:02:54,830 --> 00:02:57,970
+So let's put a comment in in it celebrities.
+
+45
+00:02:59,300 --> 00:03:02,480
+And here's where we call that function we made.
+
+46
+00:03:02,540 --> 00:03:05,600
+But of course, we need to select celebrities variable.
+
+47
+00:03:05,600 --> 00:03:07,670
+So I'll call it cell for celebrities.
+
+48
+00:03:08,270 --> 00:03:15,980
+It's assigned the value of a reference to celebrities, not celebrities.
+
+49
+00:03:16,280 --> 00:03:18,560
+And the opening and closing curly brackets.
+
+50
+00:03:19,760 --> 00:03:20,960
+Now we'll check for an error.
+
+51
+00:03:21,200 --> 00:03:22,610
+Let's get rid of those spaces.
+
+52
+00:03:22,610 --> 00:03:23,360
+We don't need that
+
+53
+00:03:26,420 --> 00:03:31,970
+on the next line, I'll check for an error and that will be equal to Cell York-New.
+
+54
+00:03:33,320 --> 00:03:35,720
+So we're calling that function we just created.
+
+55
+00:03:35,720 --> 00:03:39,800
+And of course, that expects to find the root directory at the path to the working directory.
+
+56
+00:03:39,890 --> 00:03:45,170
+And we have that in path and we'll check for an error if error is not equal to nil.
+
+57
+00:03:46,540 --> 00:03:48,410
+Again, something's really gone wrong.
+
+58
+00:03:48,410 --> 00:03:51,500
+So let's just die logged fatal error.
+
+59
+00:03:53,930 --> 00:03:58,160
+So cell is there right now, and can I populate any of its values?
+
+60
+00:03:58,230 --> 00:03:59,410
+Let's have a look at that type again.
+
+61
+00:04:00,500 --> 00:04:03,110
+The types of alerts back in our other window.
+
+62
+00:04:04,460 --> 00:04:07,920
+The types of alerts has an apt name, debug and version.
+
+63
+00:04:07,970 --> 00:04:11,690
+Well, let's go back here and just populate some of this information.
+
+64
+00:04:12,350 --> 00:04:14,240
+Cell dot apni.
+
+65
+00:04:14,570 --> 00:04:21,050
+We can do that, and that will be my app and say Cell Dot Debug.
+
+66
+00:04:21,590 --> 00:04:24,500
+We'll make that equal to true for right now, and that's enough right now.
+
+67
+00:04:24,980 --> 00:04:27,170
+And now let's build our application.
+
+68
+00:04:27,170 --> 00:04:32,720
+Variable app is assigned the value of a reference to application.
+
+69
+00:04:38,460 --> 00:04:40,740
+And we'll populate its fields with the things that we have.
+
+70
+00:04:40,770 --> 00:04:49,230
+Well, right now we have up and that's equal to so and now we'll return up.
+
+71
+00:04:51,480 --> 00:04:54,060
+OK, so let's go back to our main function to make sure we have that.
+
+72
+00:04:54,060 --> 00:04:54,540
+All right.
+
+73
+00:04:55,050 --> 00:05:00,300
+Well, we obviously need to call that application function, and that's easy enough in its application.
+
+74
+00:05:02,430 --> 00:05:04,290
+Now, with no other changes.
+
+75
+00:05:04,410 --> 00:05:07,320
+Let's see what happens when we run our application.
+
+76
+00:05:07,410 --> 00:05:15,870
+So down on a terminal window, I will simply say make start and let the Makefile do all the heavy lifting
+
+77
+00:05:15,870 --> 00:05:16,260
+for me.
+
+78
+00:05:18,360 --> 00:05:19,120
+And there it is.
+
+79
+00:05:19,170 --> 00:05:24,720
+Look, it created all of the folders that we expected to find there and then it just exited because
+
+80
+00:05:24,720 --> 00:05:26,340
+we didn't tell it to do anything else.
+
+81
+00:05:26,460 --> 00:05:27,390
+But that's a good start.
+
+82
+00:05:27,420 --> 00:05:35,220
+We know that the connection between our main application, my app is working with calls to the celebrities
+
+83
+00:05:35,220 --> 00:05:35,730
+package.
+
+84
+00:05:36,150 --> 00:05:38,910
+All right, in the next lecture, we'll keep going and get to the point.
+
+85
+00:05:38,910 --> 00:05:42,510
+Eventually, before too long, we're actually serving up a webpage.

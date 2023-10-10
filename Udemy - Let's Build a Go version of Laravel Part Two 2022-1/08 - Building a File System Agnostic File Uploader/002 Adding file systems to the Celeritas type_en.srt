@@ -1,0 +1,100 @@
+1
+00:00:01,220 --> 00:00:06,140
+So in order to make things simpler, before we start writing the actual generic uploading code.
+
+2
+00:00:06,500 --> 00:00:12,380
+Let's go to the file celebrities don't go and just simplify the tape a little bit, so the file celebrities
+
+3
+00:00:12,380 --> 00:00:14,500
+don't go in the celebrities project.
+
+4
+00:00:14,510 --> 00:00:18,440
+And right here at the top of the file, we have this type of celebrities.
+
+5
+00:00:18,560 --> 00:00:24,290
+And right now, all of her file systems are stored in a map with an index of string and the contents
+
+6
+00:00:24,290 --> 00:00:27,620
+of interface, which could probably be file systems dot EFS.
+
+7
+00:00:27,620 --> 00:00:29,000
+But that's fine for now.
+
+8
+00:00:29,660 --> 00:00:33,770
+So let's instead add three or four new types, or 14 fields.
+
+9
+00:00:33,950 --> 00:00:43,070
+That's three, which will be a type as three file system Dot S3, and we'll add SFP of type SFTP file
+
+10
+00:00:43,070 --> 00:00:46,670
+system setup and obviously WebDAV
+
+11
+00:00:49,760 --> 00:00:52,460
+of Typekit WebDAV file system WebDAV.
+
+12
+00:00:52,640 --> 00:00:57,140
+And finally, meanwhile, I've type, you know, file systems document.
+
+13
+00:00:57,140 --> 00:01:04,069
+I o OK, so that way we won't have to pull our value out of the map and cast it to the correct type,
+
+14
+00:01:04,220 --> 00:01:05,239
+which doesn't bother me.
+
+15
+00:01:05,239 --> 00:01:08,810
+I don't mind doing that at all, but lots of people want to keep things as simple as possible.
+
+16
+00:01:09,830 --> 00:01:14,960
+Now we'll be down to the Create File Systems function, which I believe is near the bottom of the file
+
+17
+00:01:15,440 --> 00:01:15,890
+right here.
+
+18
+00:01:16,850 --> 00:01:26,810
+And in addition to populating the map file systems with S3, now we can say C Dot S3 is equal to a three.
+
+19
+00:01:29,440 --> 00:01:33,430
+And again, that's three that's better.
+
+20
+00:01:34,480 --> 00:01:39,670
+And down here, see, meanwhile, IO is equal to the Nile.
+
+21
+00:01:44,440 --> 00:01:47,660
+And here she is.
+
+22
+00:01:47,690 --> 00:01:49,730
+SFTP is equal to SFTP.
+
+23
+00:01:51,730 --> 00:01:56,410
+And finally, see that WebDAV is equal to WebDAV.
+
+24
+00:01:58,870 --> 00:02:04,840
+OK, that'll just make it easier for us to access the correct file system when we call our uploader.
+
+25
+00:02:05,590 --> 00:02:07,720
+OK, let's move on in the next lecture.
+

@@ -1,0 +1,427 @@
+1
+00:00:00,060 --> 00:00:06,660
+Vì vậy, bây giờ chúng ta sẽ nói về việc đi một số và vì vậy hãy đi một số để kiểm tra an ninh chỉ để đảm bảo rằng
+
+2
+00:00:06,660 --> 00:00:11,250
+mã mà bạn tải xuống là mã dự kiến ​​sẽ được tải xuống.
+
+3
+00:00:11,790 --> 00:00:15,920
+Và nếu bạn xem các tài nguyên mà chúng tôi đã cung cấp cho bạn bốn mô-đun cờ vây.
+
+4
+00:00:16,080 --> 00:00:21,090
+Và một lần nữa, bạn nên biết rất nhiều nội dung này để bạn hiểu thấu đáo về cách các mô-đun hoạt động.
+
+5
+00:00:21,090 --> 00:00:21,870
+đang làm việc.
+
+6
+00:00:22,020 --> 00:00:26,240
+Nhưng ở cấp độ sử dụng các mô-đun, nó khá đơn giản và dễ dàng.
+
+7
+00:00:26,250 --> 00:00:34,290
+Chỉ cần làm điều đó trên mạng và sau đó bạn L một số khoảng cách tên cho nó và sau đó bạn đang làm việc với các mô-đun
+
+8
+00:00:34,290 --> 00:00:39,180
+và hầu như tất cả đều diễn ra ở hậu trường nhưng thật tốt khi biết những gì chúng ta đã trải qua trong lần trước
+
+9
+00:00:39,180 --> 00:00:46,590
+video để khi bạn thêm một phụ thuộc, bạn sẽ biết quá trình nhập nếu quá trình nhập có dấu gạch chéo lên tôi hai
+
+10
+00:00:46,590 --> 00:00:49,740
+hoặc bốn dấu gạch chéo v ba hoặc không có gì dấu gạch chéo phải.
+
+11
+00:00:49,740 --> 00:00:53,310
+Vì vậy, chúng tôi đã thấy quá trình nhập này ở đây trong video trước.
+
+12
+00:00:53,340 --> 00:01:00,330
+Ah mình thấy mình có quote là sắp có bản mới nhất của bản 1 và nếu bạn có tương lai
+
+13
+00:01:00,330 --> 00:01:03,100
+phiên bản như phiên bản 2 hoặc phiên bản 3.
+
+14
+00:01:03,180 --> 00:01:03,440
+Phải.
+
+15
+00:01:03,450 --> 00:01:08,190
+Điều đó sẽ được chỉ định trong phiên bản tương lai và sau đó cũng là điều nổi bật đối với tôi
+
+16
+00:01:08,190 --> 00:01:11,220
+chúng tôi đã không nói chuyện với là bạn có yêu cầu.
+
+17
+00:01:11,280 --> 00:01:11,640
+Phải.
+
+18
+00:01:11,640 --> 00:01:18,590
+Và do đó, yêu cầu là thứ mà bạn biết và nói rằng đây là thứ cần thiết cho dự án này.
+
+19
+00:01:18,660 --> 00:01:26,310
+Và do đó, nó sẽ luôn sử dụng mã này cho dự án của tôi mà tôi đang xây dựng ở đây mang lại sự khác biệt
+
+20
+00:01:26,310 --> 00:01:30,640
+đóng gói các mô-đun khác nhau từ những người khác hoặc có thể tôi đã tạo ra chúng.
+
+21
+00:01:30,680 --> 00:01:37,230
+Và do đó, nó sẽ luôn nhận được đoạn mã cụ thể đó, vì vậy nếu mã đó tiếp tục thì sẽ có một phiên bản
+
+22
+00:01:37,230 --> 00:01:44,940
+đến phiên bản 3 của phiên bản này, tôi có thể mang mã tôi cần cho dự án của mình và Và thật thú vị khi
+
+23
+00:01:44,940 --> 00:01:50,130
+chỉ ra điều gì đó thú vị nếu bạn nhìn vào nơi nó được lưu trữ như tất cả những thứ này ở đâu
+
+24
+00:01:50,130 --> 00:01:56,940
+được lưu trữ khi bạn tải xuống một mô-đun ở đâu đó và tất cả việc đọc tôi đã tìm thấy tài liệu này
+
+25
+00:01:57,000 --> 00:02:03,630
+các mô-đun đã được tải xuống là bộ đệm cục bộ trong đường dẫn đi của bạn trong gói và mod, vì vậy điều đó tốt
+
+26
+00:02:03,630 --> 00:02:08,880
+về một nơi thú vị để đặt nó bởi vì đường dẫn CO giống như này, chúng tôi không sử dụng Markov nữa cho
+
+27
+00:02:08,880 --> 00:02:13,050
+không gian làm việc riêng của chúng tôi nhưng các mô-đun vẫn đang sử dụng không gian làm việc đi bạn có bất cứ điều gì bạn nói.
+
+28
+00:02:13,050 --> 00:02:13,740
+Bất kỳ suy nghĩ về điều đó.
+
+29
+00:02:13,740 --> 00:02:15,510
+Tôi biết chúng ta đã không nói về điều này trước đây.
+
+30
+00:02:15,540 --> 00:02:22,890
+Nó có thể gần như là một di sản bởi vì giống như các trình quản lý gói khác trước đây
+
+31
+00:02:22,890 --> 00:02:31,530
+các mô-đun để đi như DEP thực sự sẽ sử dụng cùng một vị trí cho các tệp được lưu trong bộ nhớ cache của chúng và nếu chúng tôi xem xét ở đó.
+
+32
+00:02:31,530 --> 00:02:37,050
+Vì vậy, ngay bây giờ bạn có thể thấy tôi đã in một thư mục làm việc và mọi người có thể vào không gian làm việc được kết nối
+
+33
+00:02:37,050 --> 00:02:41,700
+để bạn biết biến môi trường đường dẫn của tôi, tôi đang ở trong thư mục gói và sau đó là thư mục mod, tôi nói
+
+34
+00:02:41,700 --> 00:02:42,870
+này có gì ở đây.
+
+35
+00:02:42,930 --> 00:02:49,670
+Tôi đã nhận được tổ ong nhưng tôi cũng có RC dot Io, đây là gói mà tôi đang làm việc ngay tại đây.
+
+36
+00:02:49,680 --> 00:02:53,160
+Vì vậy, mã đó đã được tải xuống và lưu trữ trên máy cục bộ của tôi.
+
+37
+00:02:53,190 --> 00:03:00,840
+Vì vậy, một trong những điều bạn muốn biết là mã bạn đang sử dụng có an toàn không bị thay đổi
+
+38
+00:03:01,680 --> 00:03:07,050
+và mã mà bạn đã tải xuống một tuần trước là mã mà có thể một tháng kể từ bây giờ hoặc một năm kể từ bây giờ
+
+39
+00:03:07,050 --> 00:03:09,070
+bạn tải xuống mã chính xác của nó.
+
+40
+00:03:09,140 --> 00:03:12,410
+Nó không cố ý hay ác ý thay đổi đúng.
+
+41
+00:03:12,420 --> 00:03:16,920
+Bạn vẫn đang làm việc với cùng một mã mà mã đó không thay đổi và cách mã đó được theo dõi là
+
+42
+00:03:16,920 --> 00:03:22,350
+với thứ gọi là Go sum và có một mức độ bảo mật được tích hợp trong này và đây cũng là
+
+43
+00:03:22,350 --> 00:03:23,610
+đọc thú vị.
+
+44
+00:03:23,730 --> 00:03:27,070
+Tôi không nghĩ rằng tôi đã từng cho bạn thấy liên kết đó trong phần giới thiệu mô-đun.
+
+45
+00:03:27,090 --> 00:03:34,950
+Chúng tôi đã cung cấp cho bạn một số tài nguyên và một trong những tài nguyên đó trong tài liệu là mô-đun Mir và hãy kiểm tra một số
+
+46
+00:03:34,950 --> 00:03:36,550
+cơ sở dữ liệu ra mắt.
+
+47
+00:03:36,630 --> 00:03:41,940
+Và đây là một bài viết thực sự thú vị chỉ nói về tính bảo mật của các gói và cách
+
+48
+00:03:41,940 --> 00:03:47,670
+họ đã suy nghĩ thấu đáo và họ có cấu trúc cây thực sự thú vị này mà họ đang sử dụng dựa trên
+
+49
+00:03:47,670 --> 00:03:52,670
+trên cây Merkle và băm được hỗ trợ bởi trilling và nó trông thực sự hấp dẫn.
+
+50
+00:03:52,670 --> 00:04:00,360
+Tôi hoàn toàn không hiểu tất cả những điều này nhưng những gì nó làm là so sánh giá trị băm của mọi người với
+
+51
+00:04:00,360 --> 00:04:05,340
+đảm bảo rằng phiên bản này của mã này có các giá trị băm tương tự trên toàn bộ vũ trụ của những người sử dụng
+
+52
+00:04:05,340 --> 00:04:05,910
+Nó.
+
+53
+00:04:06,060 --> 00:04:09,510
+Và điều đó giúp tôi duy trì an ninh.
+
+54
+00:04:09,510 --> 00:04:12,970
+Bạn sẽ thêm gì vào đó.
+
+55
+00:04:13,020 --> 00:04:14,230
+Không thực sự nhiều.
+
+56
+00:04:14,310 --> 00:04:22,110
+Vì vậy, điểm chính là phiên bản của bạn, phiên bản mà bạn giữ bản mod được giữ, bạn muốn giữ nó xung quanh
+
+57
+00:04:22,110 --> 00:04:27,630
+bởi vì nó nêu rõ không gian tên của bạn trong phiên bản của bạn và tất nhiên là các phụ thuộc của bạn và nó biết phiên bản này
+
+58
+00:04:27,630 --> 00:04:29,280
+là một trong những bạn đã làm việc với.
+
+59
+00:04:29,310 --> 00:04:36,270
+Nếu 1 5 3 xuất hiện sau đó trên mã của bạn cho biết rằng nó đang hoạt động với 1 5 2 nên nó sẽ tự động
+
+60
+00:04:36,300 --> 00:04:43,380
+cập nhật lên 1 5 3 cho đến khi bạn sẵn sàng kiểm tra xem 1 5 3 có còn hoạt động với bạn hay không.
+
+61
+00:04:43,380 --> 00:04:51,330
+chắc chắn rằng 1 5 2 không thay đổi người đó đã không đi và tạo lại get repo của họ và khai báo
+
+62
+00:04:51,330 --> 00:04:54,580
+mới 1 5 2 với mã riêng biệt.
+
+63
+00:04:54,720 --> 00:04:57,140
+Không, nó vẫn sẽ có một hàm băm khác.
+
+64
+00:04:57,150 --> 00:05:05,230
+Và do đó, nó có thể cho biết 1 5 2 đây có phải là mã hóa được mã hóa lại như thế này không và đó là phiên bản chúng tôi cần
+
+65
+00:05:05,800 --> 00:05:12,220
+và không thay đổi hàm băm là mã hóa một chiều trong đó bạn đặt thứ gì đó vào và nó tạo ra một số đầu ra
+
+66
+00:05:12,220 --> 00:05:14,770
+và đầu ra sẽ luôn giống nhau.
+
+67
+00:05:14,830 --> 00:05:20,740
+Và vì vậy nếu đầu vào giống nhau thì đầu ra giống nhau nên đầu vào thay đổi ở tất cả các đầu ra luôn luôn
+
+68
+00:05:20,740 --> 00:05:21,750
+trở nên khác biệt.
+
+69
+00:05:21,790 --> 00:05:25,540
+Vì vậy, bạn có thể sử dụng hàm băm vì nếu bạn đặt cùng một thứ vào hàm băm, bạn sẽ nhận được
+
+70
+00:05:25,540 --> 00:05:28,040
+cùng một mã băm mã ra.
+
+71
+00:05:28,120 --> 00:05:33,310
+Nhưng nếu bạn đặt một cái gì đó khác và bạn sẽ nhận được một mã băm khác, vì vậy nếu con số đó thay đổi
+
+72
+00:05:33,310 --> 00:05:35,750
+bạn sẽ cho chúng tôi biết rằng mã mà chúng tôi đang nhập đã thay đổi.
+
+73
+00:05:35,890 --> 00:05:38,650
+Nhưng nếu nó giữ nguyên thì mã giống nhau.
+
+74
+00:05:38,650 --> 00:05:46,820
+Vì vậy, thật tốt khi biết điều cuối cùng mà tôi nghĩ sẽ thú vị ở đây trong chế độ đi của tôi
+
+75
+00:05:47,420 --> 00:05:53,750
+nó cho thấy rằng tôi đã có phiên bản 2 và phiên bản 3 và điều này là phổ biến, nó là sự phụ thuộc gián tiếp của phiên bản
+
+76
+00:05:53,750 --> 00:05:54,310
+1 có thể.
+
+77
+00:05:54,320 --> 00:05:59,270
+Tôi không chắc tại sao những thứ đó lại xảy ra vì trình chỉnh sửa tự động của bạn đang cố gắng tự động hoàn thành nội dung.
+
+78
+00:05:59,300 --> 00:06:05,960
+Vì vậy, khi bạn ghi dấu gạch chéo B đó và gạch chéo B 3 trong đầu, biên tập viên của bạn đang cố gắng trở thành biên tập viên của bạn
+
+79
+00:06:05,960 --> 00:06:08,180
+đã cố gắng làm những thứ trong nền để giúp bạn theo kịp.
+
+80
+00:06:08,630 --> 00:06:13,520
+Vì vậy, bạn phải tự động hoàn thành nội dung và sau đó nếu tôi thấy phần cuối của RISC, tôi không biết liệu điều này đã được đưa ra chưa
+
+81
+00:06:13,520 --> 00:06:19,610
+vẫn chưa xuống đây nhưng nếu tôi nhìn vào đây, tôi có thể thấy ở đây tôi đã trích dẫn ảo một điểm năm cho đó là
+
+82
+00:06:19,610 --> 00:06:23,960
+những gì tôi đang sử dụng nhưng một số trong số này đã bị kéo xuống và bạn có thể thấy rằng có những thứ khác nhau
+
+83
+00:06:23,960 --> 00:06:25,480
+đúng thư mục.
+
+84
+00:06:25,570 --> 00:06:30,380
+Vì vậy, các phiên bản khác nhau của cơ sở mã đó đã bị gỡ xuống để chúng được lưu trữ cục bộ khác nhau
+
+85
+00:06:30,380 --> 00:06:31,740
+thư mục ở đó.
+
+86
+00:06:31,790 --> 00:06:33,990
+Vì vậy, đó là loại thú vị để xem xét.
+
+87
+00:06:34,070 --> 00:06:34,370
+Được rồi.
+
+88
+00:06:34,390 --> 00:06:40,490
+Vì vậy, đó là một chút về đi một số và đảm bảo an ninh và sau đó là bài viết mà bạn có thể đi
+
+89
+00:06:40,490 --> 00:06:46,370
+hãy xem nếu bạn muốn biết thêm một chút về bảo mật được tích hợp trong các mô-đun go.
+
+90
+00:06:46,370 --> 00:06:47,480
+Còn gì nữa không.
+
+91
+00:06:47,480 --> 00:06:47,870
+KHÔNG.
+
+92
+00:06:48,140 --> 00:06:54,650
+Vì vậy, tôi đoán chỉ là một bản tóm tắt ở đây vì nó là phần cuối của phần giới thiệu này giống như phần giới thiệu về các mô-đun go cho các mô-đun go mà bạn
+
+93
+00:06:54,650 --> 00:07:00,260
+giả sử đi sửa đổi trong đó và bạn đặt không gian tên của mình ở thư mục gốc của mô-đun và sau đó bạn có thể bắt đầu
+
+94
+00:07:00,320 --> 00:07:03,240
+nhập và sử dụng và viết mã bạn chỉ có thể.
+
+95
+00:07:03,300 --> 00:07:07,880
+Và bạn hoàn toàn không cần phải tìm trong tệp mô-đun go nếu muốn.
+
+96
+00:07:07,880 --> 00:07:13,460
+Bạn chỉ cần bắt đầu viết mã và tất cả mọi thứ sẽ tự động diễn ra khi nói nhiều
+
+97
+00:07:13,460 --> 00:07:17,510
+đối với siêu đơn giản, chỉ cần truy cập theo chủ nghĩa hiện đại trong URL mà bạn thấy ổn.
+
+98
+00:07:17,540 --> 00:07:17,780
+Vì thế.
+
+99
+00:07:17,780 --> 00:07:23,360
+Vì vậy, có rất nhiều chi tiết và những thứ như vậy đằng sau nó để giữ an toàn cho phiên bản ghi chú để sử dụng và tất cả những thứ đó
+
+100
+00:07:23,390 --> 00:07:26,460
+nhưng đối với hầu hết các phần xảy ra đằng sau hậu trường.
+
+101
+00:07:26,630 --> 00:07:31,790
+Vì vậy, bạn chỉ thực sự cần biết nếu có điều gì đó không ổn xảy ra. Tuyệt vời.
+
+102
+00:07:31,800 --> 00:07:32,130
+Được rồi.
+
+103
+00:07:32,130 --> 00:07:35,130
+Xem trong phần tiếp theo tôi đang nghĩ rằng tôi không biết.
+
+104
+00:07:35,130 --> 00:07:36,620
+Chúng ta có cần tập thể dục không.
+
+105
+00:07:36,620 --> 00:07:41,140
+Thật thú vị khi được tập thể dục, có thể sau khi kiểm tra, có thể điều đó sẽ xảy ra.
+
+106
+00:07:41,150 --> 00:07:44,460
+Được rồi, chúng ta sẽ thấy trong phần tiếp theo, nơi chúng ta sẽ tìm hiểu sâu hơn một chút về các mô-đun
+
+107
+00:07:44,760 --> 00:07:45,300
+thậm chí sâu hơn.

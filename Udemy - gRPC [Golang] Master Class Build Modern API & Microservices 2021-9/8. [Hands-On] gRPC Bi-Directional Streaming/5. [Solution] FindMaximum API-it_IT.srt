@@ -1,0 +1,560 @@
+1
+00:00:00,720 --> 00:00:04,580
+OK, quindi spero che tu abbia successo con questo esercizio, andiamo avanti con una soluzione.
+
+2
+00:00:04,650 --> 00:00:12,180
+Sto aprendo la mia calcolatrice POTO e ho bisogno di te CRETON tu RBC chiama trovare il massimo in o fare
+
+3
+00:00:12,210 --> 00:00:21,510
+un flusso di trovare la massima richiesta di rendimenti annuali un flusso di trovare la massima risposta e la cosa veramente interessante di questo esempio è
+
+4
+00:00:21,510 --> 00:00:27,120
+che vedremo che non dobbiamo inviare una risposta ogni volta che riceviamo un messaggio.
+
+5
+00:00:27,210 --> 00:00:28,080
+Quindi va bene.
+
+6
+00:00:28,080 --> 00:00:31,170
+Ora andiamo avanti e implementiamo questi messaggi.
+
+7
+00:00:31,290 --> 00:00:32,960
+Dovresti esserci abituato ormai.
+
+8
+00:00:33,300 --> 00:00:42,090
+E così, ad esempio, nel mio amico le richieste massime di un numero 32 sono uguali a uno e
+
+9
+00:00:42,270 --> 00:00:50,290
+poi il messaggio restituisce la risposta massima, chiameremo anche quel numero 32 e lo chiameremo solo quel
+
+10
+00:00:50,290 --> 00:00:52,470
+numero che chiameremo massimo.
+
+11
+00:00:53,190 --> 00:00:58,860
+In questo momento, sembra che genererà quel SH e copierà il codice di generazione della
+
+12
+00:00:58,940 --> 00:01:00,890
+calcolatrice ovunque sia perfetto.
+
+13
+00:01:00,900 --> 00:01:02,990
+Quindi ora dobbiamo andare avanti e implementare il server.
+
+14
+00:01:03,180 --> 00:01:05,130
+Ed ecco la parte divertente.
+
+15
+00:01:05,130 --> 00:01:07,460
+Quindi dobbiamo implementare quella funzione.
+
+16
+00:01:07,470 --> 00:01:13,530
+Quindi per questo usciamo e proviamo a trovare la nostra interfaccia server.
+
+17
+00:01:13,530 --> 00:01:14,290
+Eccoci qui.
+
+18
+00:01:14,400 --> 00:01:16,870
+Dobbiamo trovare la massima funzionalità proprio qui.
+
+19
+00:01:18,290 --> 00:01:20,420
+Andiamo avanti e implementiamo quello.
+
+20
+00:01:20,510 --> 00:01:29,530
+Quindi dirà che la funzione stella server trova il massimo e richiede un flusso di calcolatrice.
+
+21
+00:01:29,540 --> 00:01:31,960
+PV lo fa senza una stella.
+
+22
+00:01:31,960 --> 00:01:41,220
+In realtà qualsiasi restituisce un errore che sembra proprio ora che devo implementare quella funzione.
+
+23
+00:01:41,410 --> 00:01:46,130
+Quindi, proprio come prima, dobbiamo gestire questo flusso, quindi riceveremo messaggi e così via.
+
+24
+00:01:46,390 --> 00:01:51,730
+Quindi possiamo avere un numero massimo adesso ed è uguale a zero.
+
+25
+00:01:51,730 --> 00:01:59,060
+Inizializzeremo come 0 in 32 solo per evitare problemi e correggeremo.
+
+26
+00:01:59,080 --> 00:02:01,450
+Ora dobbiamo ricevere messaggi da quel flusso.
+
+27
+00:02:01,480 --> 00:02:11,730
+Quindi per e lo streaming che riceve questo ci dà una richiesta e un errore non tutti Riceviamo un messaggio.
+
+28
+00:02:11,760 --> 00:02:22,440
+Guardiamo se il messaggio è nuovo e in realtà prima l'aria è uguale a quella e una caduta poi torneremo
+
+29
+00:02:22,440 --> 00:02:31,040
+a sapere se l'errore è in realtà qualcosa a Portland e lo amerà e dirà aria
+
+30
+00:02:31,050 --> 00:02:33,810
+mentre legge stream stream.
+
+31
+00:02:34,040 --> 00:02:38,790
+Quindi avremo questo e questo sembra corretto.
+
+32
+00:02:38,820 --> 00:02:41,780
+E poi dovremmo anche restituire l'aria.
+
+33
+00:02:41,820 --> 00:02:42,560
+Eccoci qui.
+
+34
+00:02:42,720 --> 00:02:44,220
+Quindi sembra buono.
+
+35
+00:02:44,220 --> 00:02:49,250
+E poi, nel caso in cui ricevessimo una richiesta, potremo estrarre il numero da quella
+
+36
+00:02:49,290 --> 00:02:52,430
+richiesta, quindi diciamo la richiesta di ottenere il numero.
+
+37
+00:02:52,920 --> 00:02:55,030
+E ora quando lo confronti al massimo.
+
+38
+00:02:55,230 --> 00:03:01,320
+Quindi se il numero è maggiore del massimo, allora cosa succede.
+
+39
+00:03:01,320 --> 00:03:05,070
+Possiamo solo guardarlo e dire OK al massimo.
+
+40
+00:03:05,070 --> 00:03:06,250
+Prima di tutto viene aggiornato.
+
+41
+00:03:06,320 --> 00:03:08,930
+Diventa un numero come un nuovo valore.
+
+42
+00:03:09,120 --> 00:03:09,820
+OK.
+
+43
+00:03:10,230 --> 00:03:17,520
+E possiamo anche inviare un messaggio in streaming, quindi diciamo che Miss stream che inviamo e che creiamo
+
+44
+00:03:17,520 --> 00:03:25,440
+per trovare la risposta massima che richiede un nuovo massimo per essere uguale al massimo e che ha un bell'aspetto.
+
+45
+00:03:25,440 --> 00:03:33,120
+Quindi praticamente ogni volta che il numero è più alto del massimo otteniamo il massimo e lo inviamo e questo è
+
+46
+00:03:33,120 --> 00:03:37,980
+praticamente possiamo anche fare la gestione degli errori su questo messaggio di errore.
+
+47
+00:03:37,980 --> 00:03:40,660
+Quindi facciamolo pure.
+
+48
+00:03:40,770 --> 00:03:52,110
+Perché così invia un errore di invio equivale a questo e quindi possiamo dire se l'errore di invio non
+
+49
+00:03:52,140 --> 00:04:00,670
+è uguale a zero, quindi abbiamo inviato il nostro erit inviando dati ai clienti.
+
+50
+00:04:02,080 --> 00:04:03,130
+E stiamo bene.
+
+51
+00:04:03,400 --> 00:04:06,690
+In modo che sembra corretto e in pratica il numero è inferiore al massimo.
+
+52
+00:04:06,700 --> 00:04:10,220
+Quindi non abbiamo bisogno di aggiungere il massimo e non abbiamo nulla da fare.
+
+53
+00:04:10,810 --> 00:04:12,920
+Quindi tutto sembra buono e corretto.
+
+54
+00:04:12,940 --> 00:04:14,920
+Quindi è dal mio server.
+
+55
+00:04:14,920 --> 00:04:18,000
+Ora assicuriamoci che sia effettivamente compilato eseguendolo.
+
+56
+00:04:18,190 --> 00:04:25,490
+Possiamo anche avere una funzione di stampa solo per assicurarci che stiamo vedendo che viene invocato.
+
+57
+00:04:25,490 --> 00:04:34,990
+Quindi il Principe L-N ha ricevuto la massima RBC e questo sembra buono.
+
+58
+00:04:35,160 --> 00:04:35,980
+OK.
+
+59
+00:04:36,570 --> 00:04:37,760
+Quindi questo è perfetto.
+
+60
+00:04:37,770 --> 00:04:44,270
+E ora stiamo andando a far girare i server per andare a far funzionare il server calcolatrice ed è in esecuzione.
+
+61
+00:04:44,770 --> 00:04:47,800
+E ora possiamo prenderci cura dei clienti, che è la parte divertente.
+
+62
+00:04:48,280 --> 00:04:50,270
+Quindi il tipo che va qui.
+
+63
+00:04:50,530 --> 00:04:57,850
+Quindi andiamo avanti e creiamo una funzione chiamata do di David Rimi.
+
+64
+00:04:58,100 --> 00:05:09,290
+Così lo streaming giorno per giorno e dovrò andare avanti e creare quella funzione quindi copierò questo fare tramite streaming e
+
+65
+00:05:10,550 --> 00:05:21,560
+ci vuole il client giusto e il log dovrebbe iniziare a fare un massimo di trovare da Died streaming
+
+66
+00:05:21,580 --> 00:05:22,280
+RBOC.
+
+67
+00:05:22,630 --> 00:05:29,800
+Quindi ora dobbiamo effettivamente fare il nostro PC, quindi vedi Dud's trovare il massimo e il contesto sarà lo
+
+68
+00:05:30,610 --> 00:05:32,390
+sfondo e le opzioni.
+
+69
+00:05:32,650 --> 00:05:34,480
+Non abbiamo bisogno di quelli.
+
+70
+00:05:34,480 --> 00:05:37,500
+E questo ci dà un flusso o un errore.
+
+71
+00:05:37,990 --> 00:05:45,580
+Quindi ora con l'aria se l'aria non è uguale a zero, allora abbiamo un
+
+72
+00:05:47,110 --> 00:06:00,060
+problema e diciamo che l'errore fatale che si sta aprendo in streaming e chiama trova il massimo e mostreremo solo quell'errore, altrimenti abbiamo uno stream con
+
+73
+00:06:00,060 --> 00:06:01,260
+cui lavorare.
+
+74
+00:06:01,260 --> 00:06:04,100
+Quindi è qui che creeremo un canale.
+
+75
+00:06:04,130 --> 00:06:13,830
+Quindi aspettate di vedere per chiudere il canale, quindi dirò rendere il canale di struct e avremo solo un destruct.
+
+76
+00:06:14,010 --> 00:06:22,720
+Quindi ora che siamo channel dobbiamo andare phunk per creare così send send routine e una receive go routine.
+
+77
+00:06:23,310 --> 00:06:24,000
+Sembra giusto.
+
+78
+00:06:24,000 --> 00:06:36,600
+Quindi vai funk e poi alla fine lo invochiamo e poi un altro phunk crea e poi si sveglia e alla
+
+79
+00:06:36,600 --> 00:06:40,420
+fine possiamo fare aspettare il canale.
+
+80
+00:06:40,560 --> 00:06:41,690
+Perfezionare.
+
+81
+00:06:41,700 --> 00:06:46,730
+Quindi questo sembra proprio ora su questa funzione, abbiamo bisogno di inviare una buona routine.
+
+82
+00:06:47,070 --> 00:06:51,030
+Quindi fanno solo una serie di numeri da inviare.
+
+83
+00:06:51,090 --> 00:06:55,830
+Quindi invieremo il numero come una fetta ed è 32.
+
+84
+00:06:56,180 --> 00:07:08,760
+Ora troviamo questi numeri per sette a 18 o 19 per sei e poi a 32.
+
+85
+00:07:09,670 --> 00:07:13,460
+Quindi i numeri qui il massimo è 32 ovviamente.
+
+86
+00:07:13,760 --> 00:07:21,970
+E ci aspettiamo di vedere il 4 7 1932 che viene restituito a noi, quindi vediamo ora che dobbiamo
+
+87
+00:07:21,970 --> 00:07:29,690
+inviare questi numeri così per una parte numerica di una gamma di questi numeri che cosa facciamo.
+
+88
+00:07:29,860 --> 00:07:36,730
+Facciamo streaming che inviamo e poi creiamo una richiesta di ricerca massima.
+
+89
+00:07:37,300 --> 00:07:41,380
+Quindi questo richiede un numero per essere chiamato a quel numero.
+
+90
+00:07:41,530 --> 00:07:42,810
+È corretto.
+
+91
+00:07:43,330 --> 00:07:48,570
+E possiamo anche occuparci degli errori qui, ma non lo farò solo per il gusto di farlo.
+
+92
+00:07:48,580 --> 00:07:49,500
+Quindi questo sembra buono.
+
+93
+00:07:49,500 --> 00:07:54,910
+E poi, quando avremo finito, potremo semplicemente tornare su quella buona funzione e il gioco è fatto.
+
+94
+00:07:54,910 --> 00:08:02,520
+Possiamo eseguire lo stream stream close per indicare che il client ha eseguito lo streaming dei numeri.
+
+95
+00:08:02,770 --> 00:08:09,760
+E come sempre possiamo fare un po 'di sonno per un secondo solo per mostrare che è in realtà il
+
+96
+00:08:09,760 --> 00:08:15,460
+tempo di streaming che il millisecondo otterrà alla fine della mia routine di ricezione questa volta.
+
+97
+00:08:15,490 --> 00:08:24,220
+Vado a credito per un album in cui lo streaming di Dud riceve e così riceverò qualcosa così
+
+98
+00:08:24,580 --> 00:08:30,550
+riceverà una risposta o un'aria e poi ci occuperemo degli eredi.
+
+99
+00:08:30,580 --> 00:08:32,950
+Se le aree spero che sia abbastanza.
+
+100
+00:08:32,980 --> 00:08:37,630
+Ciò significa che al client viene eseguito lo streaming dei dati sui client.
+
+101
+00:08:38,050 --> 00:08:44,920
+Interromperemo questo e perché abbiamo rotto questo dobbiamo chiudere il canale di attesa.
+
+102
+00:08:44,920 --> 00:08:53,170
+Altrimenti se l'aria non è uguale a IO per sapere allora abbiamo un grosso problema.
+
+103
+00:08:53,170 --> 00:08:59,820
+Quindi trascineremo il problema f pieno mentre leggiamo il server o lo stream dei client e
+
+104
+00:09:03,490 --> 00:09:05,710
+andiamo avanti e mostriamo questo.
+
+105
+00:09:05,740 --> 00:09:14,830
+Quindi avremo l'aria qui e dovremmo anche irrompere una volta che avremo questi ping pronti.
+
+106
+00:09:14,830 --> 00:09:22,530
+Ora abbiamo i risultati e quindi diremo che il massimo dei risultati equivale al massimo.
+
+107
+00:09:22,570 --> 00:09:28,330
+Quindi abbiamo appena ricevuto un nuovo massimo e ora possiamo solo stampare
+
+108
+00:09:28,330 --> 00:09:39,060
+il fatto che abbiamo effettivamente ricevuto un nuovo massimo in modo che la stampa svuotata rimanga un nuovo massimo e andremo avanti e stamperemo questo.
+
+109
+00:09:40,260 --> 00:09:44,120
+E qui mostrerà il nuovo massimo.
+
+110
+00:09:44,190 --> 00:09:45,430
+Quindi sembra corretto.
+
+111
+00:09:45,450 --> 00:09:47,550
+E poi alla fine è chiuso.
+
+112
+00:09:47,550 --> 00:09:48,360
+Quindi questo sembra buono.
+
+113
+00:09:48,360 --> 00:09:54,890
+In pratica ogni volta che riceviamo un nuovo massimo dal server, lo stamperemo e passeremo sopra queste cose.
+
+114
+00:09:54,900 --> 00:09:56,470
+Quindi sembra che funzionerebbe.
+
+115
+00:09:56,550 --> 00:09:58,700
+Diamo un'occhiata.
+
+116
+00:09:59,360 --> 00:10:02,900
+Ora se vado a correre il mio calcolatore
+
+117
+00:10:05,720 --> 00:10:09,400
+client come possiamo vedere riceve nuovi massimi nel tempo.
+
+118
+00:10:09,400 --> 00:10:16,260
+Quindi, è meglio avere una registrazione migliore e stampare nuove linee molto migliori.
+
+119
+00:10:16,280 --> 00:10:19,970
+Quindi hai appena una nuova linea qui.
+
+120
+00:10:21,290 --> 00:10:27,470
+E qui ogni volta che inviamo un numero mi piacerebbe stamparlo così potremo dire che ho fatto
+
+121
+00:10:27,530 --> 00:10:35,920
+un numero di invio pre-morte e invieremo il numero che stiamo inviando per rendere le cose molto chiare e noi aggiungerò una nuova riga
+
+122
+00:10:35,990 --> 00:10:36,260
+OK.
+
+123
+00:10:36,260 --> 00:10:38,060
+Quindi questo sembrerà migliore.
+
+124
+00:10:38,060 --> 00:10:40,230
+Quindi guardiamo di nuovo e gestiamo questo.
+
+125
+00:10:40,580 --> 00:10:41,380
+Così perfetta.
+
+126
+00:10:41,480 --> 00:10:43,180
+Funziona come previsto.
+
+127
+00:10:43,610 --> 00:10:50,060
+Quindi, come puoi vedere, inviamo il numero numero quattro e riceviamo la massima forza prevista.
+
+128
+00:10:50,210 --> 00:10:54,710
+Poi entro 7 ed è più di 4 quindi riceviamo un nuovo massimo di 7.
+
+129
+00:10:54,710 --> 00:10:55,940
+Poi abbiamo detto il numero due.
+
+130
+00:10:55,950 --> 00:10:57,710
+Quindi non succede nulla.
+
+131
+00:10:57,710 --> 00:11:01,210
+Poi abbiamo detto il numero 19 e ricevere un nuovo massimo di 19.
+
+132
+00:11:01,280 --> 00:11:03,550
+Quindi quel numero per il numero 6 non è successo.
+
+133
+00:11:03,560 --> 00:11:07,000
+Numero 32 Abbiamo ricevuto il massimo di 32.
+
+134
+00:11:07,070 --> 00:11:10,790
+Così, di giorno in giorno, lo streaming ha funzionato al massimo.
+
+135
+00:11:10,790 --> 00:11:15,890
+E abbiamo appena visto un buon esempio in cui il server non restituisce un messaggio ogni volta.
+
+136
+00:11:15,890 --> 00:11:21,290
+Quindi è stato utile per me che funziona molto bene e penso che sia un buon esempio per mostrare alla
+
+137
+00:11:21,650 --> 00:11:26,570
+gente come può funzionare un flusso bidirezionale in particolare quando il numero di messaggi inviati e ricevuti non
+
+138
+00:11:26,570 --> 00:11:27,950
+è esattamente lo stesso.
+
+139
+00:11:28,040 --> 00:11:29,930
+Ma tutto funziona davvero molto bene.
+
+140
+00:11:30,230 --> 00:11:34,180
+E spero che ti sia piaciuto ed è stata una conferenza UNIX per alcuni concetti avanzati.
+

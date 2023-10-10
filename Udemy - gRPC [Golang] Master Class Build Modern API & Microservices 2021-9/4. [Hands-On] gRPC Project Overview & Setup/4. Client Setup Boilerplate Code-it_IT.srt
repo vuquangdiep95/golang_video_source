@@ -1,0 +1,320 @@
+1
+00:00:00,070 --> 00:00:04,150
+Un caso e questa conferenza installeranno i client Jersey e si connetteranno a un server.
+
+2
+00:00:04,320 --> 00:00:06,140
+Vedremo come avviare e fermare i client.
+
+3
+00:00:06,150 --> 00:00:09,570
+E il punto di questa lezione deve essere fatto con il codice boilerplate.
+
+4
+00:00:09,570 --> 00:00:12,030
+Bene, iniziamo OK.
+
+5
+00:00:12,050 --> 00:00:18,430
+Quindi ho intenzione di andare avanti e creare un'altra cartella qui e questo verrà chiamato client greets e
+
+6
+00:00:18,970 --> 00:00:23,480
+sotto di esso creerò un file e lo chiamerò client che va.
+
+7
+00:00:23,500 --> 00:00:29,020
+Quindi, di nuovo, possiamo difendere il pacchetto principale del pacchetto definito in modo che possiamo avere una funzione principale in là e
+
+8
+00:00:29,110 --> 00:00:31,140
+diciamo s. un. una stampante.
+
+9
+00:00:31,620 --> 00:00:33,880
+Ciao clienti.
+
+10
+00:00:33,920 --> 00:00:35,930
+Ok, eccoci qui.
+
+11
+00:00:35,990 --> 00:00:36,950
+Chi sta lavorando.
+
+12
+00:00:37,180 --> 00:00:41,180
+E ora abbiamo bisogno di leggere le cose importanti e interessanti che stanno scrivendo i clienti.
+
+13
+00:00:41,500 --> 00:00:45,870
+Quindi la prima cosa che dobbiamo fare è creare una connessione al server.
+
+14
+00:00:46,090 --> 00:00:53,350
+E per questo dire che una connessione o un errore sono nuove variabili e facciamo GAAP che compongono il numero.
+
+15
+00:00:53,560 --> 00:00:57,250
+E quindi questa funzione di selezione richiede due argomenti.
+
+16
+00:00:57,310 --> 00:00:59,380
+Il primo è l'indirizzo a cui ci colleghiamo.
+
+17
+00:00:59,380 --> 00:01:06,160
+Quindi ci colleghiamo a localhost 5 0 0 5 1 e la seconda cosa è che ci vuole un sacco di
+
+18
+00:01:06,160 --> 00:01:11,740
+opzioni e una di queste opzioni che vogliamo usare sarà chiamata il tuo PC in sicurezza.
+
+19
+00:01:11,740 --> 00:01:16,960
+Quindi, cosa significa per impostazione predefinita il tuo PC ha SSL in esso.
+
+20
+00:01:16,990 --> 00:01:18,960
+E lo vedremo nelle conferenze degli esperti.
+
+21
+00:01:19,150 --> 00:01:23,170
+Ma per ora perché non abbiamo alcun certificato SSL e sarebbe troppo complicato da gestire.
+
+22
+00:01:23,200 --> 00:01:27,370
+Per prima cosa dobbiamo usare un GAAP con l'opzione sicura.
+
+23
+00:01:27,370 --> 00:01:31,830
+Questo è sicuramente qualcosa che vuoi rimuovere una volta che inizi la produzione e tu pensi che stia
+
+24
+00:01:31,830 --> 00:01:32,650
+andando in giro.
+
+25
+00:01:32,710 --> 00:01:39,160
+Ma per ora apriamo una connessione non sicura all'importazione 5 0 0 1.
+
+26
+00:01:39,300 --> 00:01:42,040
+Ora con andare ci occupiamo degli errori.
+
+27
+00:01:42,190 --> 00:01:49,650
+Quindi se non c'è, allora diciamo log fatal F e quindi diremo.
+
+28
+00:01:49,930 --> 00:01:51,820
+Impossibile connettersi.
+
+29
+00:01:51,910 --> 00:01:57,160
+E tu sei tu il motivo per cui passeremo in aria.
+
+30
+00:01:57,280 --> 00:02:01,160
+OK e ora abbiamo un oggetto di connessione e ha un oggetto di connessione chiaro.
+
+31
+00:02:01,240 --> 00:02:04,520
+Quindi quello che possiamo fare è creare clienti.
+
+32
+00:02:04,660 --> 00:02:16,000
+Quindi quello che vedi è uguaglianza o P. B. grippy è un nuovo servizio clienti di accoglienza e richiede una connessione
+
+33
+00:02:16,090 --> 00:02:18,960
+clan. I CCP presenteranno la connessione proprio qui.
+
+34
+00:02:19,210 --> 00:02:21,960
+In realtà è meglio rimuoverlo per rinominare il CC.
+
+35
+00:02:22,030 --> 00:02:23,740
+Solo per chiarezza.
+
+36
+00:02:24,010 --> 00:02:31,690
+OK così prima che tra l'altro la connessione di questo client proprio qui vogliamo chiuderla ogni volta che il nostro programma
+
+37
+00:02:31,690 --> 00:02:32,780
+si chiude.
+
+38
+00:02:32,850 --> 00:02:36,950
+E così per questo alla fine di un programma vogliamo dire CC così vicino.
+
+39
+00:02:36,970 --> 00:02:37,550
+OK.
+
+40
+00:02:37,690 --> 00:02:38,890
+Alla fine molto.
+
+41
+00:02:39,230 --> 00:02:44,110
+Ma poiché vogliamo che questo accada alla fine del nostro programma, esiste una stenografia che Engo
+
+42
+00:02:44,590 --> 00:02:48,700
+chiama differire e differisce sostanzialmente per rinviare questa affermazione da eseguire alla fine.
+
+43
+00:02:48,970 --> 00:02:55,060
+Quindi in pratica quando viene eseguito l'intero main senza l'istruzione posticipata, il rinvio verrà chiuso
+
+44
+00:02:55,060 --> 00:02:57,160
+e non verrà chiuso.
+
+45
+00:02:57,370 --> 00:03:01,340
+Quindi è un po 'un trucco, ma è misto.
+
+46
+00:03:01,400 --> 00:03:02,470
+Potrebbe davvero davvero pulito.
+
+47
+00:03:02,470 --> 00:03:06,730
+Perché qui creiamo una connessione e diciamo tra l'altro quando abbiamo finito con
+
+48
+00:03:06,730 --> 00:03:07,930
+la connessione chiuderla.
+
+49
+00:03:07,960 --> 00:03:10,480
+Ma questo in realtà viene chiamato proprio alla fine.
+
+50
+00:03:10,480 --> 00:03:11,000
+OK.
+
+51
+00:03:11,110 --> 00:03:14,270
+Quindi quando CC viene chiamato qui non è ancora chiuso.
+
+52
+00:03:14,530 --> 00:03:20,250
+Semplicemente rinnovato il tuo andare, questo è abbastanza classico per usare i primi otto mesi appena abituati.
+
+53
+00:03:20,250 --> 00:03:24,310
+Direi di sì, così ora abbiamo i nostri client di servizio per gli avidi.
+
+54
+00:03:24,730 --> 00:03:29,220
+E non c'è molto che possiamo fare in questo momento perché i nostri clienti non hanno alcuna
+
+55
+00:03:29,220 --> 00:03:32,440
+funzione se si vedono i punti non ci viene suggerito nulla.
+
+56
+00:03:32,740 --> 00:03:36,760
+Ma quando iniziamo ad implementare le cose, funzionerà.
+
+57
+00:03:36,790 --> 00:03:48,160
+Quindi, se possiamo solo dire di Godard, possiamo dire F. UN. sono stampe che ho creato clienti e poi
+
+58
+00:03:48,160 --> 00:03:50,260
+passiamo ai clienti.
+
+59
+00:03:50,430 --> 00:03:51,840
+Ottieni qualcosa di molto semplice.
+
+60
+00:03:52,120 --> 00:03:58,000
+Quindi, alla fine, ciò che questo codice fa è aiutare un client a creare una connessione, il client
+
+61
+00:03:58,120 --> 00:04:00,760
+Krister lo stampa e infine chiude la connessione.
+
+62
+00:04:00,850 --> 00:04:02,460
+Andiamo avanti e vediamo come funzionano le cose.
+
+63
+00:04:02,530 --> 00:04:04,280
+Vado avanti e apro una nuova scheda.
+
+64
+00:04:05,220 --> 00:04:12,480
+E che posto tab in basso quindi in alto abbiamo il server in basso dove i clienti.
+
+65
+00:04:12,480 --> 00:04:20,530
+Quindi andiamo in giro a ricevere il server server che va e otteniamo Helliwell in modo che il server sia in esecuzione.
+
+66
+00:04:21,010 --> 00:04:28,360
+E vai a correre saluta i clienti e i clan che vanno.
+
+67
+00:04:28,800 --> 00:04:33,420
+E come puoi vedere il tipo è connesso è creato e poi viene chiuso perché non facciamo nulla
+
+68
+00:04:33,420 --> 00:04:34,200
+con i client.
+
+69
+00:04:34,500 --> 00:04:40,530
+Ma le cose si sono risolte in modo definitivo se si vuole vedere se il nostro messaggio sta funzionando bene, possiamo
+
+70
+00:04:40,530 --> 00:04:46,200
+eseguire il server due volte e dovremmo ottenere un problema perché non possiamo associare due volte alla stessa porta.
+
+71
+00:04:46,320 --> 00:04:50,220
+Quindi se la porta è già occupata, dice che l'indirizzo di bind è già in uso.
+
+72
+00:04:50,250 --> 00:04:51,440
+Quindi è previsto.
+
+73
+00:04:51,690 --> 00:04:55,620
+E se esegui più client senza il server in esecuzione sono quasi certo che ci sarà un errore.
+
+74
+00:04:55,620 --> 00:05:00,800
+Quindi eseguiamo il client e ne otteniamo un altro.
+
+75
+00:05:01,020 --> 00:05:04,210
+In realtà non ci sono errori perché non passiamo comunque alcun messaggio.
+
+76
+00:05:04,320 --> 00:05:07,060
+Il client funziona e il server funziona.
+
+77
+00:05:07,110 --> 00:05:12,160
+Quindi abbiamo fatto il piatto della caldaia e la prossima lezione andrà avanti e realizzeremo qualcosa.
+
+78
+00:05:12,180 --> 00:05:13,070
+Il primo servizio
+
+79
+00:05:13,110 --> 00:05:13,800
+OK.
+
+80
+00:05:13,830 --> 00:05:15,060
+Vedi la prossima lezione.
+

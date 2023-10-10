@@ -1,0 +1,151 @@
+1
+00:00:12,530 --> 00:00:18,680
+Hello and welcome to the goal and programming language course in this session, we want to talk about
+
+2
+00:00:18,680 --> 00:00:20,810
+the others concurrency concept.
+
+3
+00:00:23,910 --> 00:00:31,980
+Length and capacity of a channel and go lengths, as well as capacity only applies to the Beaufort channel.
+
+4
+00:00:32,640 --> 00:00:38,700
+The length of the channel is the number of elements that are already during the channel, whereas the
+
+5
+00:00:38,700 --> 00:00:43,800
+capacity of the buffer channel is the number of elements which the channel can hold.
+
+6
+00:00:44,430 --> 00:00:51,840
+So length actually represents the number of elements keyed in the buffer of the channel, while capacity
+
+7
+00:00:51,840 --> 00:00:54,630
+refers to the size of the buffer of the channel.
+
+8
+00:00:55,410 --> 00:01:01,560
+Hence, the length of the channel is owned weighs less than or equal to the capacity of the channel.
+
+9
+00:01:01,830 --> 00:01:08,910
+Length function can be used to get the length of the channel, and chat function can be used to get
+
+10
+00:01:08,910 --> 00:01:10,410
+the capacity off the channel.
+
+11
+00:01:11,160 --> 00:01:15,480
+Length and capacity up on Beaufort Channel is always zero.
+
+12
+00:01:15,810 --> 00:01:23,220
+Now let's go to this school with program to illustrate how to find the capacity of the channel first,
+
+13
+00:01:23,220 --> 00:01:27,690
+creating a channel using make function and set capacity for it.
+
+14
+00:01:28,500 --> 00:01:37,230
+For example, define a variable like C-H calling equals and in which main function sip and integer variable
+
+15
+00:01:37,230 --> 00:01:42,930
+like Channel 18th and set five as capacity argument.
+
+16
+00:01:43,830 --> 00:01:50,790
+Now set data to Channel Channel Channel Operator and send 10 value for it.
+
+17
+00:01:51,720 --> 00:01:57,240
+Now finding the length and capacity of the channel using lean in channel functions.
+
+18
+00:01:57,300 --> 00:02:10,440
+So you're right, if Len Caller first and the back is lost, he and Colin Glen function and passes as
+
+19
+00:02:10,470 --> 00:02:13,110
+arguments to eat and go to the next line.
+
+20
+00:02:13,200 --> 00:02:13,830
+If if!
+
+21
+00:02:15,690 --> 00:02:27,120
+And Cha Caller first, then the back is left hand and invoking chat function and sets this variable
+
+22
+00:02:27,120 --> 00:02:28,470
+as arguments to it.
+
+23
+00:02:29,820 --> 00:02:40,710
+Now set another data to Tichina Sea Edge channel operator, for example, send 20 value to the channel
+
+24
+00:02:42,630 --> 00:02:46,200
+and again finding the length and capacity of the channel.
+
+25
+00:02:46,320 --> 00:02:48,420
+So copied these two lines.
+
+26
+00:02:49,470 --> 00:02:57,660
+And paste here for new value of the channel and a gain, said the other data, showing that, for example,
+
+27
+00:02:57,690 --> 00:03:03,690
+search channel operator and send 30 value to the internet.
+
+28
+00:03:04,680 --> 00:03:08,130
+And again finding the length and capacity of the channel.
+
+29
+00:03:08,250 --> 00:03:16,140
+So paste these two lines here again, the format they code, save the projects and execute the program.
+
+30
+00:03:16,140 --> 00:03:20,310
+Go from that fake, useless name that glow.
+
+31
+00:03:23,040 --> 00:03:30,960
+Now we can see the out in the above code, the first created the channel of capacity fine after death
+
+32
+00:03:30,960 --> 00:03:38,370
+that we keep sending some value to the channel, as you can notice from your output that after each
+
+33
+00:03:38,370 --> 00:03:45,660
+sent operation to the lengths up channel increases by one, while capacity is always the same, which
+
+34
+00:03:45,660 --> 00:03:46,230
+is fine.
+
+35
+00:03:46,680 --> 00:03:54,630
+So we could fetch lengths and capacity of channel by the LAN in cap functions in order not to prolong
+
+36
+00:03:54,630 --> 00:03:55,860
+the time of decision.
+
+37
+00:03:56,040 --> 00:03:59,850
+We will finish it and we will continue the content in the next session.
+
+38
+00:04:00,030 --> 00:04:00,570
+Goodbye.

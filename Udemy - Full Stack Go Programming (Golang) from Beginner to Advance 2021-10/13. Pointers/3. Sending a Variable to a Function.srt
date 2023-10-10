@@ -1,0 +1,247 @@
+1
+00:00:14,990 --> 00:00:21,020
+Hello and welcome to the gold and programming language course in the previous session, we talked about
+
+2
+00:00:21,020 --> 00:00:25,940
+Neal pointers and changing pointer value and indecision.
+
+3
+00:00:26,180 --> 00:00:29,480
+We want to talk about the other pointers concept.
+
+4
+00:00:33,840 --> 00:00:37,320
+Sending a variable to a function in GO.
+
+5
+00:00:40,000 --> 00:00:46,840
+Pointers in go programming language or go blank is a very bad, which is used to restore the memory
+
+6
+00:00:46,840 --> 00:00:49,080
+address of another variable.
+
+7
+00:00:49,750 --> 00:00:52,480
+You can also pass the pointers to the function.
+
+8
+00:00:52,480 --> 00:00:53,680
+Like to validate this?
+
+9
+00:00:54,490 --> 00:00:57,430
+There are two ways to do this as follows.
+
+10
+00:00:58,600 --> 00:01:00,220
+First copy that you.
+
+11
+00:01:01,520 --> 00:01:08,270
+In cop Emanuel Chase, which is the norm on a state, then you pass the value of a very able to a function.
+
+12
+00:01:08,540 --> 00:01:16,340
+Any change to the value of the variable has no effect on the variable sense because a copy of that variable
+
+13
+00:01:16,340 --> 00:01:17,960
+is sent to the function.
+
+14
+00:01:18,980 --> 00:01:26,180
+Now go to be school program to illustrate how to use copy value and passing it to the function.
+
+15
+00:01:28,090 --> 00:01:35,080
+First created function with integer type as parameter, for the example, print function,
+
+16
+00:01:38,980 --> 00:01:48,040
+fine print, a type of it ends as a parameter.
+
+17
+00:01:52,410 --> 00:01:58,100
+Now initialize eight point five hundred a equals five hundred.
+
+18
+00:01:59,490 --> 00:02:09,120
+Now go to create the main function, define the normal variable and initialize it, right?
+
+19
+00:02:10,140 --> 00:02:12,000
+X equals.
+
+20
+00:02:14,070 --> 00:02:18,330
+Now display value of variable before calling by function.
+
+21
+00:02:18,780 --> 00:02:19,500
+If if!
+
+22
+00:02:21,330 --> 00:02:28,350
+The value of x P4.
+
+23
+00:02:30,870 --> 00:02:42,890
+Function call is first the legislation and set the value it's.
+
+24
+00:02:45,200 --> 00:02:56,660
+Go to the next line in calling dysfunction, buy very evil print and set barricaded inside it as arguments
+
+25
+00:02:57,680 --> 00:03:04,100
+go to the next line and again display the value of the after call function.
+
+26
+00:03:04,280 --> 00:03:05,030
+If Earth
+
+27
+00:03:07,880 --> 00:03:24,380
+did value on the the after function, call this curse entity that can slash and and set the value to
+
+28
+00:03:24,620 --> 00:03:29,420
+fix, reformat the code, save the property and execute the program.
+
+29
+00:03:35,910 --> 00:03:42,690
+Now we can see the output before calling function, the value of X is 100.
+
+30
+00:03:42,960 --> 00:03:47,450
+And after calling function, the value of X is 100 hundred.
+
+31
+00:03:47,670 --> 00:03:53,130
+We see in the output that no change is made to the variable passed to the function.
+
+32
+00:03:53,490 --> 00:03:57,840
+Because in this case, a copy of the variable is sent to the function.
+
+33
+00:03:57,870 --> 00:04:00,050
+Now go to a site and continue.
+
+34
+00:04:01,290 --> 00:04:03,120
+Second reference value.
+
+35
+00:04:04,800 --> 00:04:09,570
+In this case, in fact, the address of the ivory bill is sent to a function.
+
+36
+00:04:09,960 --> 00:04:16,650
+And any change on the very bad inside the function, which is seen as a pointer, will cause a change
+
+37
+00:04:16,650 --> 00:04:24,150
+on the main value that now go to the school program to create a pointer and passing it to the function.
+
+38
+00:04:26,530 --> 00:04:28,330
+First, clear, the last quote.
+
+39
+00:04:34,950 --> 00:04:38,790
+Save the project and it's ready to write first.
+
+40
+00:04:38,880 --> 00:04:46,050
+Taking it function with integer tie pointer as a parameter for the example we call display function
+
+41
+00:04:46,050 --> 00:04:48,840
+and sit an integer pointer as parameter
+
+42
+00:04:51,660 --> 00:04:54,240
+FAJ display.
+
+43
+00:04:57,250 --> 00:05:10,690
+A and set a time for it has three means as a pointer now initialize it by five hundred Asterix A equals
+
+44
+00:05:10,690 --> 00:05:18,170
+five hundred, so we create the function y and endpoint or parameter and initialize it.
+
+45
+00:05:18,490 --> 00:05:26,800
+Now go to create the main function, go to main function, define the normal variable and initialize
+
+46
+00:05:26,800 --> 00:05:29,170
+it by, for example, a hundred.
+
+47
+00:05:29,560 --> 00:05:32,110
+That equals 100.
+
+48
+00:05:34,300 --> 00:05:37,810
+Now display value of that either before calling by function.
+
+49
+00:05:38,530 --> 00:05:55,360
+If if the value of the X before function card is first and the back is less and and set the variable,
+
+50
+00:05:56,230 --> 00:05:56,830
+it's
+
+51
+00:05:59,770 --> 00:06:06,640
+now calling the display function by passing pointer to function and we send address of value that is
+
+52
+00:06:06,640 --> 00:06:15,100
+as parameter, for example, display and set ampersand the X.
+
+53
+00:06:17,010 --> 00:06:25,320
+And go to the next line and again, this believe your variability after cutting by function, if f value
+
+54
+00:06:25,320 --> 00:06:39,720
+of X after function, Carney's personality that his left hand and set the value to X.
+
+55
+00:06:41,830 --> 00:06:45,750
+Reformat the court, save the project and execute the program.
+
+56
+00:06:48,900 --> 00:06:50,760
+Now we can see the output.
+
+57
+00:06:52,310 --> 00:07:01,370
+Value of XP before function call is a hundred and after calling function value off is 500 in the output,
+
+58
+00:07:01,430 --> 00:07:08,900
+we see that the value of the value was sent to the function has changed because the address of the variable
+
+59
+00:07:08,900 --> 00:07:17,090
+has been sent to the function and the change on it has caused a change in the main value of it in order
+
+60
+00:07:17,090 --> 00:07:19,080
+not to prolong the time of decision.
+
+61
+00:07:19,100 --> 00:07:23,150
+We will finish it and we will continue the content in the next session.
+
+62
+00:07:23,270 --> 00:07:23,810
+Goodbye.

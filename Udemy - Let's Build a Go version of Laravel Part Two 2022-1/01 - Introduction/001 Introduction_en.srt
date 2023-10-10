@@ -1,0 +1,168 @@
+1
+00:00:01,290 --> 00:00:04,790
+So welcome to let's build a go version of Laravel Part two.
+
+2
+00:00:04,860 --> 00:00:10,350
+And before you enroll in this course, one thing you should be really clear about is that this course
+
+3
+00:00:10,350 --> 00:00:15,780
+should only be taken after the first course, which is oddly enough entitled Let's build a go version
+
+4
+00:00:15,780 --> 00:00:21,690
+of Laravel, because this course builds on the core functionality that we have in the first half of
+
+5
+00:00:21,690 --> 00:00:22,410
+this course.
+
+6
+00:00:23,010 --> 00:00:28,470
+So first time around, as you'll recall, if you took that course, we have an awful lot of functionality
+
+7
+00:00:28,470 --> 00:00:33,840
+built into a package called celebrities that makes building web applications really, really easy.
+
+8
+00:00:33,960 --> 00:00:39,510
+And of course, what we're trying to duplicate is much of the core functionality you find in the web
+
+9
+00:00:39,510 --> 00:00:41,070
+framework known as Laravel.
+
+10
+00:00:41,700 --> 00:00:47,070
+So we have support from multiple databases for sessions, for user authentication, for all sorts of
+
+11
+00:00:47,070 --> 00:00:47,520
+things.
+
+12
+00:00:47,970 --> 00:00:52,890
+And this time around, what we're going to do is extend that to include more core functionality.
+
+13
+00:00:53,130 --> 00:00:56,280
+For example, we're going to start with building remote file systems.
+
+14
+00:00:57,400 --> 00:01:03,370
+These days, very few sophisticated Web applications just serve everything from one place, they'll
+
+15
+00:01:03,370 --> 00:01:09,520
+have assets like graphics and videos stored on Amazon S3 buckets or FTB server or something like that.
+
+16
+00:01:10,150 --> 00:01:18,460
+So we're going to build in support for four different file systems Mineo, Secure FTP, WebDAV and Amazon
+
+17
+00:01:18,460 --> 00:01:19,480
+S3 buckets.
+
+18
+00:01:20,230 --> 00:01:24,970
+And once we have those up and running, we'll build a file system agnostic file uploader where you can
+
+19
+00:01:24,970 --> 00:01:31,360
+upload a file using standard web upload and have it automatically stored on whatever file system you
+
+20
+00:01:31,360 --> 00:01:31,810
+wish.
+
+21
+00:01:32,500 --> 00:01:34,900
+We'll also improve our database migrations.
+
+22
+00:01:35,020 --> 00:01:40,600
+Last time around, we built migrations that were pure sequel, and this time will also support features,
+
+23
+00:01:40,600 --> 00:01:45,610
+and we'll build that functionality right into the celebrity command line application.
+
+24
+00:01:46,540 --> 00:01:51,970
+We'll also add support for social authentication, and we'll support only two in the course GitHub and
+
+25
+00:01:51,970 --> 00:01:52,480
+Google.
+
+26
+00:01:53,170 --> 00:01:58,570
+But when you go through those lectures, you'll also learn how to implement that for pretty much any
+
+27
+00:01:58,570 --> 00:02:01,090
+social authentication that's available these days.
+
+28
+00:02:01,780 --> 00:02:07,000
+We'll also build in support for remote procedure calls, which is an alternative method of having your
+
+29
+00:02:07,000 --> 00:02:09,509
+web application listen for commands.
+
+30
+00:02:09,520 --> 00:02:12,640
+So rather than posting a JSON file or something like that.
+
+31
+00:02:13,090 --> 00:02:15,250
+Instead, we'll build remote procedure calls.
+
+32
+00:02:16,150 --> 00:02:22,810
+We'll also simplify testing, so we'll make it easy for people that are using celebrities to build web
+
+33
+00:02:22,810 --> 00:02:28,660
+applications to actually test their handlers without having to build support for sessions and everything
+
+34
+00:02:28,660 --> 00:02:29,860
+else read into their tests.
+
+35
+00:02:29,890 --> 00:02:33,550
+We'll do all that heavy lifting for them and let them test what they want to test.
+
+36
+00:02:34,060 --> 00:02:41,080
+We'll also add some browser functionality to our tests, much like Laravel Dusk Package, so you'll
+
+37
+00:02:41,080 --> 00:02:41,770
+run a test.
+
+38
+00:02:41,770 --> 00:02:46,750
+If something goes wrong, then you can actually capture a screenshot of what the browser shows at the
+
+39
+00:02:46,750 --> 00:02:48,100
+moment of failure.
+
+40
+00:02:48,520 --> 00:02:53,380
+And we'll also add some support for browser emulation in testing, for example, clicking buttons.
+
+41
+00:02:54,130 --> 00:02:54,490
+All right.
+
+42
+00:02:54,820 --> 00:02:57,970
+It'll be a lot of fun to go through all of this, so let's get started.
+

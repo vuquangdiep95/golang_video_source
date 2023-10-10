@@ -1,0 +1,308 @@
+1
+00:00:00,150 --> 00:00:04,800
+Jadi di sini saya ingin melakukan sesuatu yang sangat keren dan mulai menggunakan Evans Steeleye yang telah kami
+
+2
+00:00:05,160 --> 00:00:07,730
+lihat sebelumnya untuk hanya berinteraksi dengan API mentah kami.
+
+3
+00:00:08,010 --> 00:00:12,780
+Jadi apa yang harus kita lakukan adalah memaparkan refleksi untuk pelayanan.
+
+4
+00:00:12,780 --> 00:00:18,180
+Jadi untuk ini, mari kita kembali ke layanan kami dan ini adalah tempat kami mendaftarkan layanan kami dan
+
+5
+00:00:18,180 --> 00:00:23,240
+sekarang kami pada dasarnya harus menggunakan refleksi kami menerapkan refleksi ketika kami pergi ke server kalkulator.
+
+6
+00:00:23,280 --> 00:00:28,970
+Jadi jika kita gulirkan ke bawah semuanya itu hanya refleksi panggilan API sederhana yang teres.
+
+7
+00:00:29,040 --> 00:00:30,470
+Jadi mari kita lakukan di sini.
+
+8
+00:00:30,510 --> 00:00:33,790
+Yah hanya mengimplementasikan refl. yang mendaftarkan kami dan pastikan Anda mengimpornya.
+
+9
+00:00:33,810 --> 00:00:39,120
+Jika memang meminta Anda untuk mengimpor Jadi itu untuk server kami sekarang pada dasarnya refl. diaktifkan.
+
+10
+00:00:39,120 --> 00:00:47,390
+Jadi yang bisa kita lakukan sekarang adalah pergi ke sini, yang di sini restart server kita yang masuk akal bagi penduduk yang dicuri dan
+
+11
+00:00:47,440 --> 00:00:50,550
+di sisi kanan kita mungkin bisa menggunakan Evans.
+
+12
+00:00:50,550 --> 00:00:55,670
+Jadi yang akan saya lakukan adalah saya hanya akan memiliki dua jendela kecil di sebelah kiri sebagai server
+
+13
+00:00:55,670 --> 00:00:57,800
+kami dan di sebelah kanan adalah Evans.
+
+14
+00:00:57,870 --> 00:00:58,830
+Sekarang Evans.
+
+15
+00:00:58,860 --> 00:01:04,820
+Saya tidak tahu apakah Anda ingat Evans dan kemudian Anda menentukan laporan dan kemudian Anda hanya menentukan
+
+16
+00:01:04,830 --> 00:01:06,230
+Mannus untuk refleksi.
+
+17
+00:01:06,250 --> 00:01:07,570
+Jadi itu akan dilakukan Evans.
+
+18
+00:01:07,710 --> 00:01:11,840
+Port akan menjadi 5 0 0 5 1 dan minus untuk refleksi.
+
+19
+00:01:11,850 --> 00:01:16,560
+Di sini kita pergi ke mana dan sekarang kita dapat menunjukkan paket dan kita adalah paket default yang
+
+20
+00:01:16,560 --> 00:01:17,120
+kita masuki.
+
+21
+00:01:17,280 --> 00:01:18,600
+Kami dapat menunjukkan layanan.
+
+22
+00:01:18,600 --> 00:01:24,360
+Dan inilah layanan blog kami dengan lima panggilan RBOC yang dapat kami lakukan sehingga kami hanya akan memilih layanan kami yang
+
+23
+00:01:24,360 --> 00:01:25,320
+disebut layanan LUGG.
+
+24
+00:01:25,320 --> 00:01:30,150
+Sekarang kita berada di layanan blog karena dikatakan default bahwa layanan Blug.
+
+25
+00:01:30,150 --> 00:01:35,360
+Dan jadi ingatlah, mari kita sebut saja layanan ini lagi, kita dapat membuat glug glug glug.
+
+26
+00:01:35,360 --> 00:01:36,570
+Jadi mari kita coba saja.
+
+27
+00:01:36,840 --> 00:01:43,180
+Sebagai contoh, panggil menciptakan lug PC kita ID blog akan kosong.
+
+28
+00:01:43,230 --> 00:01:48,120
+Penulis blog akan menyenangkan dan Anda dapat memiliki tanda kutip Anda dapat menghapus tanda kutip
+
+29
+00:01:48,120 --> 00:01:53,390
+tetapi jika itu adalah blog yang memiliki ruang udara Anda memerlukan tanda kutip sehingga tancapkan dengan spasi.
+
+30
+00:01:53,910 --> 00:01:54,830
+Judul keren.
+
+31
+00:01:55,110 --> 00:01:55,550
+BAIK.
+
+32
+00:01:55,620 --> 00:02:00,770
+Dan isinya adalah ini blog yang dibuat menggunakan ini.
+
+33
+00:02:00,770 --> 00:02:01,570
+Ya benar.
+
+34
+00:02:01,680 --> 00:02:02,210
+Luar biasa.
+
+35
+00:02:02,370 --> 00:02:03,270
+Dan booming di sini kita mulai.
+
+36
+00:02:03,270 --> 00:02:04,210
+Permintaan sudah dilakukan.
+
+37
+00:02:04,200 --> 00:02:06,530
+Kita bisa melihat ada permintaan LUGG buat yang dilakukan.
+
+38
+00:02:06,750 --> 00:02:09,280
+Dan dari situ kita dapat blog.
+
+39
+00:02:09,570 --> 00:02:15,270
+Jadi mungkin panggilan lain yang bisa kita lakukan adalah mencentang plug blok lurus yang akan kita panggil daftar Blug tekan enter dan
+
+40
+00:02:15,300 --> 00:02:16,480
+di sini kita pergi.
+
+41
+00:02:16,560 --> 00:02:20,790
+Kami memiliki semua blog yang dibuat dalam database kami untuk ditampilkan di sini jadi jelas berfungsi
+
+42
+00:02:20,790 --> 00:02:21,440
+dengan baik.
+
+43
+00:02:21,750 --> 00:02:25,760
+Jadi kami ingin menghapus blog ini di sini juga dengan IGY ini.
+
+44
+00:02:25,860 --> 00:02:27,110
+Jadi mari kita lanjutkan dan coba itu.
+
+45
+00:02:27,120 --> 00:02:30,690
+Kami akan memanggil hapus Blug RBC.
+
+46
+00:02:30,900 --> 00:02:32,880
+Nah pada ide blog kami ingin menekan enter.
+
+47
+00:02:32,910 --> 00:02:33,920
+Dan di sini kita mulai.
+
+48
+00:02:33,930 --> 00:02:35,160
+Itu dihapus.
+
+49
+00:02:35,160 --> 00:02:40,190
+Jika kita mencoba menghapus blog yang sama lagi, itu akan memberi kita kesalahan mengatakan hei dengan cara itu
+
+50
+00:02:40,590 --> 00:02:44,440
+tidak ditemukan karena kita tidak dapat menemukan Blug di Magdi yang masuk akal.
+
+51
+00:02:44,460 --> 00:02:47,040
+Selanjutnya kita mungkin bisa memanggil replug.
+
+52
+00:02:47,040 --> 00:02:50,150
+Jadi ini panggil blog ini lagi untuk melihat apakah itu berfungsi.
+
+53
+00:02:50,160 --> 00:02:53,940
+OK, inilah semua blog yang akan kita baca di blog itu.
+
+54
+00:02:54,120 --> 00:02:58,260
+Jadi tentu saja mereka memanggil baca Blug akan lulus di blog dan keluar dari itu.
+
+55
+00:02:58,290 --> 00:03:00,650
+Kami mendapatkan blog yang kami butuhkan.
+
+56
+00:03:00,680 --> 00:03:03,840
+Dan itu sangat keren karena di sisi kiri kita melihat semua permintaan yang telah kita lakukan.
+
+57
+00:03:04,350 --> 00:03:11,150
+Dan mungkin setelah Anda akhirnya memperbarui blog ini, maka kami akan menelepon kami akan memanggil pembaruan Blug blog.
+
+58
+00:03:11,160 --> 00:03:12,270
+Dia adalah orang dari sebelumnya.
+
+59
+00:03:12,270 --> 00:03:14,150
+Ups, saya mengacau.
+
+60
+00:03:14,160 --> 00:03:20,960
+Jadi biarkan saya keluar saja yang akan memanggil blog blog itu dan saya tidak memilikinya lagi.
+
+61
+00:03:21,080 --> 00:03:23,930
+Ini disebut blog ini lagi dengan sangat cepat.
+
+62
+00:03:24,210 --> 00:03:26,780
+Dan kami akan memperbarui yang ini misalnya.
+
+63
+00:03:26,850 --> 00:03:30,990
+Jadi kita akan mengatakan panggilan pembaruan blog kita mengarahkan blog saat makan.
+
+64
+00:03:31,050 --> 00:03:34,990
+Penulis akan menjadi penulis perubahan.
+
+65
+00:03:35,040 --> 00:03:39,340
+Judul akan menjadi judul yang diubah dan konten diubah.
+
+66
+00:03:39,340 --> 00:03:42,810
+Constance dan blognya berfungsi.
+
+67
+00:03:42,820 --> 00:03:48,370
+Tapi mari kita pastikan itu benar-benar berfungsi dengan menyebutnya fungsi blog dan kita akan menyalinnya lagi.
+
+68
+00:03:48,440 --> 00:03:54,050
+Jadi berdasarkan ide blog baru saja perbarui tekan enter dan kami melihat persis pembaruan yang dilakukan.
+
+69
+00:03:54,130 --> 00:03:54,820
+Sangat keren kan.
+
+70
+00:03:54,810 --> 00:03:59,760
+Dengan ini Anda dan saya sekarang kami berinteraksi langsung dengan API kami dengan ironmonger TV.
+
+71
+00:03:59,980 --> 00:04:06,670
+Dan Anda jelas dapat memastikan bahwa semuanya tidak berubah dengan menggunakan Blug UI menjadi UI.
+
+72
+00:04:06,910 --> 00:04:10,960
+Tapi secara keseluruhan yang saya maksud adalah kita telah melihat bahwa semuanya telah
+
+73
+00:04:10,960 --> 00:04:17,420
+diuji, semuanya berfungsi tetapi cukup keren sekarang karena dengan mengaktifkan refleksi dan dengan menggunakan bukti Anda dapat berinteraksi dengan API blog kami.
+
+74
+00:04:17,440 --> 00:04:18,580
+Jadi selamat.
+
+75
+00:04:18,610 --> 00:04:19,210
+Saya harap Anda menyukainya.
+
+76
+00:04:19,210 --> 00:04:20,040
+Itu luar biasa.
+
+77
+00:04:20,110 --> 00:04:21,490
+Dan saya akan melihat Anda di kuliah berikutnya.
+

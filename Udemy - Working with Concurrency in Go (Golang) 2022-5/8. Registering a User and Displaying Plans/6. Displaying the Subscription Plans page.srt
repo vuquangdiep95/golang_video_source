@@ -1,0 +1,719 @@
+1
+00:00:00,450 --> 00:00:05,730
+So now that we can create an account and log in after activating the account, the next step, of course,
+
+2
+00:00:05,730 --> 00:00:10,070
+is to display the list of plans, subscriptions that a user can purchase.
+
+3
+00:00:10,080 --> 00:00:13,110
+And we have three in our database bronze, silver and gold.
+
+4
+00:00:14,040 --> 00:00:17,340
+So let's go over to handlers ago and we'll start working on the handler.
+
+5
+00:00:17,370 --> 00:00:19,470
+And of course, we'll have to put a template and a routine.
+
+6
+00:00:19,530 --> 00:00:20,700
+We'll get started right here.
+
+7
+00:00:21,540 --> 00:00:24,210
+So down at the bottom of this file, handlers, dot, go.
+
+8
+00:00:24,960 --> 00:00:32,070
+I'm going to create a new handler func with the receiver of app pointer to config as usual and I'll
+
+9
+00:00:32,070 --> 00:00:41,970
+call this one choose subscription which is as good a name as any and it takes a response writer and
+
+10
+00:00:41,970 --> 00:00:43,200
+a pointer to a request.
+
+11
+00:00:47,190 --> 00:00:53,430
+Okay, so the very first thing, no one should be able to see this page unless they've already created
+
+12
+00:00:53,430 --> 00:00:54,930
+an account and logged in.
+
+13
+00:00:55,620 --> 00:00:59,670
+Now we could write some middleware that does that for us, but this is a very simple example.
+
+14
+00:00:59,670 --> 00:01:01,440
+So I'll just put the logic right in here.
+
+15
+00:01:01,590 --> 00:01:02,010
+Okay.
+
+16
+00:01:02,040 --> 00:01:06,840
+So I'll check to see if not after session.
+
+17
+00:01:09,140 --> 00:01:09,630
+Session.
+
+18
+00:01:10,080 --> 00:01:13,740
+Dot exists and I'm looking for using the context.
+
+19
+00:01:15,990 --> 00:01:20,430
+I'm looking for user ID and that tells me whether or not the user is logged in.
+
+20
+00:01:20,580 --> 00:01:21,000
+Okay.
+
+21
+00:01:21,720 --> 00:01:26,100
+So if they're not logged in, we'll just generate a message at dot session.
+
+22
+00:01:29,150 --> 00:01:41,690
+Not put using are not context and I'll put in a warning message and just say you must log in to see
+
+23
+00:01:41,690 --> 00:01:52,040
+this page and then I'll redirect the user HD Peacock redirect using W an R and we'll take them to say
+
+24
+00:01:52,040 --> 00:01:53,990
+the login page, which seems appropriate.
+
+25
+00:01:55,910 --> 00:02:02,810
+And we'll put in an HDP DOT status temporary redirect right there and we'll return.
+
+26
+00:02:03,500 --> 00:02:03,830
+Okay.
+
+27
+00:02:04,760 --> 00:02:07,310
+But if we get past that, then we know the user is logged in.
+
+28
+00:02:08,900 --> 00:02:10,300
+So let's show the page.
+
+29
+00:02:10,310 --> 00:02:16,040
+Now, in order to show the page, we need to show all the various plants and over here in the plan and
+
+30
+00:02:16,040 --> 00:02:17,390
+go in the data folder.
+
+31
+00:02:17,750 --> 00:02:23,750
+We actually have a means of getting all the plants right here get all.
+
+32
+00:02:23,870 --> 00:02:32,690
+So let's use that socrata variable plans while checking for an error when I call after model start plan
+
+33
+00:02:32,930 --> 00:02:33,620
+don't get all.
+
+34
+00:02:34,370 --> 00:02:36,590
+Okay then we'll check for an error.
+
+35
+00:02:36,590 --> 00:02:41,270
+If error is not equal to nil, then something went wrong with our connection to the database or whatever.
+
+36
+00:02:41,540 --> 00:02:42,470
+So we'll just print it out.
+
+37
+00:02:42,770 --> 00:02:45,470
+An error log dot print line
+
+38
+00:02:48,560 --> 00:02:50,930
+the error and we'll return.
+
+39
+00:02:51,980 --> 00:02:52,310
+Okay.
+
+40
+00:02:53,030 --> 00:02:54,830
+Which is sufficient for our purposes today.
+
+41
+00:02:54,980 --> 00:02:58,610
+And of course, you might want to display an error page or something else, but I'll leave that as an
+
+42
+00:02:58,610 --> 00:02:59,510
+exercise for you.
+
+43
+00:03:00,230 --> 00:03:05,900
+Now I want to pass the variable plans to the template that doesn't exist yet, but it's going to need
+
+44
+00:03:05,900 --> 00:03:07,430
+it because we have to draw those.
+
+45
+00:03:07,700 --> 00:03:10,190
+We have to draw a table or something, at least those plants.
+
+46
+00:03:10,190 --> 00:03:18,680
+So I'll create a data map variable and that's assigned sign the value of make map string is the key
+
+47
+00:03:18,860 --> 00:03:20,060
+and it will take anything at all.
+
+48
+00:03:20,270 --> 00:03:20,630
+Any.
+
+49
+00:03:20,870 --> 00:03:21,200
+Okay.
+
+50
+00:03:22,490 --> 00:03:24,410
+And then we'll add plans to that data map.
+
+51
+00:03:24,740 --> 00:03:31,040
+Data map with a key of plans is equal to plants.
+
+52
+00:03:33,500 --> 00:03:41,660
+And then we just render the template using app render and we render using W and R and this will be the
+
+53
+00:03:41,660 --> 00:03:49,310
+template we'll make in the minute plans dot page dot, go HTML and we'll hand that a reference to template
+
+54
+00:03:49,310 --> 00:03:59,180
+data which is what it expects to find that or nil and in there will make data equal to data map and
+
+55
+00:03:59,180 --> 00:04:00,710
+render has a lowercase r.
+
+56
+00:04:02,870 --> 00:04:03,320
+That's better.
+
+57
+00:04:04,040 --> 00:04:05,780
+Okay, so that's the handler.
+
+58
+00:04:05,810 --> 00:04:08,090
+Now let's go create the plans dot page.
+
+59
+00:04:08,090 --> 00:04:08,990
+Doug switched him up.
+
+60
+00:04:09,200 --> 00:04:17,870
+So in templates, CMC Web templates, we'll create a new file called Plans dot page and go to your map
+
+61
+00:04:19,430 --> 00:04:23,090
+and save a bit of time or copy the contents of the home page.
+
+62
+00:04:23,360 --> 00:04:25,430
+So home page go to tomorrow.
+
+63
+00:04:25,580 --> 00:04:30,710
+I'll just select all and copy and close that and paste that right in here.
+
+64
+00:04:31,190 --> 00:04:31,500
+Okay.
+
+65
+00:04:32,270 --> 00:04:34,130
+And then we'll modify it as necessary.
+
+66
+00:04:35,000 --> 00:04:39,950
+So we'll change the title to plans and we'll get rid of all of this.
+
+67
+00:04:41,430 --> 00:04:41,760
+Okay.
+
+68
+00:04:43,400 --> 00:04:50,150
+Now let's just create a table with the class of from straight from bootstrap table.
+
+69
+00:04:51,200 --> 00:04:51,710
+Table.
+
+70
+00:04:52,550 --> 00:04:55,610
+Compact table stripped.
+
+71
+00:04:57,590 --> 00:04:59,150
+And we'll close that table tag.
+
+72
+00:04:59,360 --> 00:05:00,160
+So I don't forget.
+
+73
+00:05:01,130 --> 00:05:05,540
+And then we'll put it in a t head and close that
+
+74
+00:05:08,720 --> 00:05:11,510
+and a TR and close that
+
+75
+00:05:15,020 --> 00:05:16,110
+and we'll put in the headings.
+
+76
+00:05:16,130 --> 00:05:25,670
+So I'll just put in a couple of simple headings, t h for that again t h plan slash th0 duplicate that
+
+77
+00:05:25,670 --> 00:05:31,940
+twice and I'll center these once class equals text dash center
+
+78
+00:05:35,360 --> 00:05:38,870
+and I'll copy this and paste it here.
+
+79
+00:05:40,410 --> 00:05:43,290
+And change these labels to say price
+
+80
+00:05:45,930 --> 00:05:46,890
+and select.
+
+81
+00:05:47,790 --> 00:05:49,770
+Okay, so that's my t hat.
+
+82
+00:05:50,160 --> 00:05:52,770
+Now we'll have the t body and close that.
+
+83
+00:05:58,410 --> 00:06:06,990
+And inside of this T body we want to range through index dot data.
+
+84
+00:06:07,500 --> 00:06:08,730
+And the key we used was plant.
+
+85
+00:06:08,790 --> 00:06:15,270
+So we have this map data available to us and we're going to arrange through that whatever we find in
+
+86
+00:06:15,270 --> 00:06:16,050
+the key plant.
+
+87
+00:06:16,080 --> 00:06:19,890
+And we just put that in there so we know that's going to be there and we'll end this.
+
+88
+00:06:22,620 --> 00:06:30,360
+And in between, of course, we're just going to draw some tears and a t, t and inside of that we'll
+
+89
+00:06:30,360 --> 00:06:38,400
+put in a dot plant name, which we got from the database and close this and then we'll have a t d class
+
+90
+00:06:38,400 --> 00:06:40,170
+equals text dash center.
+
+91
+00:06:43,590 --> 00:06:54,420
+And inside of that, I'll put the key and this is dot plan amount formatted and we get that from the
+
+92
+00:06:54,420 --> 00:06:54,900
+database.
+
+93
+00:06:54,900 --> 00:06:55,830
+We can look at that in a minute.
+
+94
+00:06:56,520 --> 00:06:58,520
+So how much does it cost per month?
+
+95
+00:06:58,590 --> 00:07:00,240
+And that takes the value.
+
+96
+00:07:01,140 --> 00:07:06,990
+So for bronze, it's 1000 sense that converts it to dollar sign 10.00.
+
+97
+00:07:07,020 --> 00:07:08,730
+Just because that's what people expect to see.
+
+98
+00:07:09,900 --> 00:07:14,490
+Let me close the tree and then we'll duplicate this and change this pen.
+
+99
+00:07:16,420 --> 00:07:16,990
+To a button.
+
+100
+00:07:17,330 --> 00:07:17,710
+Okay.
+
+101
+00:07:17,950 --> 00:07:20,230
+I'm going to put this on a couple of lines so it's more readable.
+
+102
+00:07:21,890 --> 00:07:25,310
+So what I'm going to say is a class equals beaten.
+
+103
+00:07:27,120 --> 00:07:30,330
+So bootstrap button and I'll make it a button save primary.
+
+104
+00:07:30,330 --> 00:07:31,530
+So it's blue.
+
+105
+00:07:31,530 --> 00:07:32,430
+Easy to see.
+
+106
+00:07:33,920 --> 00:07:37,010
+Then I'll make it small feat and dash, Sam.
+
+107
+00:07:37,480 --> 00:07:37,810
+Okay.
+
+108
+00:07:39,220 --> 00:07:48,610
+And when we make the trip equal to nothing, so just hash a bang and we'll add an on click handler.
+
+109
+00:07:48,790 --> 00:07:51,150
+And that will cause some JavaScript that doesn't exist yet.
+
+110
+00:07:51,190 --> 00:07:58,750
+And we'll call that, say, select plan and will hand it the plan ID, which we get from ID like that.
+
+111
+00:07:59,050 --> 00:07:59,440
+Okay.
+
+112
+00:08:00,340 --> 00:08:05,730
+And closer quotes and we'll just put in here, select and close the egg.
+
+113
+00:08:06,880 --> 00:08:07,330
+Okay.
+
+114
+00:08:07,900 --> 00:08:09,700
+So that will list all of the plants.
+
+115
+00:08:09,850 --> 00:08:11,320
+So we've got our TVs.
+
+116
+00:08:11,320 --> 00:08:15,550
+We need to close our tr t bodies already closed.
+
+117
+00:08:15,550 --> 00:08:16,540
+Table's already closed.
+
+118
+00:08:16,570 --> 00:08:18,160
+Let's go down the JavaScript section.
+
+119
+00:08:19,780 --> 00:08:25,600
+What I want to have happen is when someone clicks on this select button, I want some kind of dialog
+
+120
+00:08:25,600 --> 00:08:28,780
+to pop up just to confirm that they want to choose that plant.
+
+121
+00:08:28,780 --> 00:08:32,530
+So it'll have some message and then two buttons select and cancel.
+
+122
+00:08:32,860 --> 00:08:35,860
+And if they click select, we subscribed the user to the plant.
+
+123
+00:08:36,070 --> 00:08:40,780
+Now, to make this really easy, let's install a JavaScript library.
+
+124
+00:08:40,900 --> 00:08:47,080
+I want to go to my web browser and I will search for Sweet Alert two right there.
+
+125
+00:08:47,950 --> 00:08:52,840
+So it will be a link to this in the course resources for this lecture and it's called Sweet Alert.
+
+126
+00:08:52,900 --> 00:08:55,820
+Okay, now I'm not going to bother downloading and install this.
+
+127
+00:08:55,840 --> 00:09:00,340
+I'll just go over here to just deliver and there'll be a link to this in the course.
+
+128
+00:09:00,340 --> 00:09:01,300
+Resources as well.
+
+129
+00:09:01,300 --> 00:09:10,480
+Just delivered icon with an E missing and I'll search for sweet alert two right there.
+
+130
+00:09:10,510 --> 00:09:11,740
+That's the one that I want.
+
+131
+00:09:11,890 --> 00:09:12,280
+Okay.
+
+132
+00:09:14,740 --> 00:09:18,170
+And I'll delete the one that I had selected from the last time I visited here.
+
+133
+00:09:18,190 --> 00:09:24,790
+This is the one I want sweet alert to all messengers, and I'll have a list added to the collection.
+
+134
+00:09:25,600 --> 00:09:32,050
+Then I'll click show and configure all links and the one I want is to output some.
+
+135
+00:09:32,050 --> 00:09:34,710
+I'll just copy this to the clipboard, okay.
+
+136
+00:09:34,900 --> 00:09:42,100
+And go back to my I.D. And just before the opening script tag will install that library by pasting in
+
+137
+00:09:42,100 --> 00:09:43,030
+the link to the queue.
+
+138
+00:09:43,360 --> 00:09:43,660
+Okay.
+
+139
+00:09:44,620 --> 00:09:48,970
+Now I'll define a function called so I'll call it function.
+
+140
+00:09:49,150 --> 00:09:53,710
+And we called our select plan and it took one argument.
+
+141
+00:09:55,010 --> 00:09:56,420
+Actually, I'm going to give it to arguments.
+
+142
+00:09:56,870 --> 00:09:57,830
+So back up here.
+
+143
+00:09:58,930 --> 00:10:07,060
+I'll put in the ID and then in single quotes I'll put in a dot plan name like that just so I can put
+
+144
+00:10:07,060 --> 00:10:12,520
+the name in the pop up menu as a pop up dialog as well.
+
+145
+00:10:12,530 --> 00:10:15,820
+So this will take two things, X and the plan.
+
+146
+00:10:16,450 --> 00:10:16,840
+Okay.
+
+147
+00:10:19,750 --> 00:10:21,880
+Now, what about what do I want to do inside of this function?
+
+148
+00:10:21,910 --> 00:10:22,770
+Well, it's really simple.
+
+149
+00:10:22,780 --> 00:10:24,430
+I'll just take advantage of sweet alert.
+
+150
+00:10:24,430 --> 00:10:31,720
+And Sweet Alert will fire a dialog with my attributes by calling small dot fire lower case.
+
+151
+00:10:32,110 --> 00:10:32,500
+Okay.
+
+152
+00:10:33,130 --> 00:10:38,710
+So in opening parentheses and opening curly bracket and a closing curly bracket and closing parentheses.
+
+153
+00:10:38,710 --> 00:10:43,480
+And inside of this I'll give it a title and the title will be subscribe
+
+154
+00:10:47,050 --> 00:10:55,540
+and then I'll give it some HTML textual message and I'll just say, Are you sure you want to subscribe
+
+155
+00:10:58,420 --> 00:11:00,940
+to the space?
+
+156
+00:11:01,360 --> 00:11:03,550
+And then a plus plan like that.
+
+157
+00:11:03,700 --> 00:11:04,060
+Okay.
+
+158
+00:11:04,510 --> 00:11:09,730
+And then a plus and a question mark and a comma to end that off.
+
+159
+00:11:10,360 --> 00:11:15,040
+And then another attribute to specify is show cancel button.
+
+160
+00:11:15,310 --> 00:11:16,240
+Give them a cancelled button.
+
+161
+00:11:16,860 --> 00:11:17,140
+True.
+
+162
+00:11:18,670 --> 00:11:26,050
+And then I want the confirm button text override that to to have it say instead subscribe.
+
+163
+00:11:28,090 --> 00:11:28,450
+Okay.
+
+164
+00:11:30,930 --> 00:11:37,110
+And then after the closing curly bracket and the closing parentheses, then we put a then clause in
+
+165
+00:11:37,890 --> 00:11:45,630
+and then result whatever we're getting back and then the arrow function, we'll close that up.
+
+166
+00:11:45,630 --> 00:11:46,470
+So I don't forget.
+
+167
+00:11:46,590 --> 00:11:54,210
+And inside of here we'll have a simple if statement, if result DOT is confirmed, which is supplied
+
+168
+00:11:54,210 --> 00:11:57,330
+by sweet alert, then we'll take them somewhere.
+
+169
+00:11:57,480 --> 00:11:57,840
+Okay.
+
+170
+00:11:57,930 --> 00:12:01,350
+And what I'm going to do is type this in that I'll comment it out because it's going to try to take
+
+171
+00:12:01,350 --> 00:12:02,700
+them somewhere that doesn't exist yet.
+
+172
+00:12:03,300 --> 00:12:04,460
+Window dot.
+
+173
+00:12:04,470 --> 00:12:08,460
+Location the ref.
+
+174
+00:12:09,590 --> 00:12:18,920
+Equals and we'll take them to slash subscribe with the idea that they just chose which is X which we
+
+175
+00:12:18,920 --> 00:12:20,510
+received as a call to this function.
+
+176
+00:12:20,990 --> 00:12:26,720
+Now a comment that it right now because we're not able to use that at the moment but now we have a handler
+
+177
+00:12:26,870 --> 00:12:28,170
+and we have a template.
+
+178
+00:12:28,190 --> 00:12:32,870
+So in the next lecture, we'll set up a route and we'll make sure that this renders the way that we
+
+179
+00:12:32,870 --> 00:12:33,800
+think it's going to.
+
+180
+00:12:33,920 --> 00:12:35,420
+Okay, let's move on.

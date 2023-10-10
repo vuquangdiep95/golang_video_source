@@ -1,0 +1,523 @@
+1
+00:00:01,600 --> 00:00:06,140
+OK, now that we have our basic project structure set up, let's get started writing some code.
+
+2
+00:00:06,190 --> 00:00:11,290
+So right now, I'm looking at the My App project, looking at Mango, and the first thing I'll do is
+
+3
+00:00:11,290 --> 00:00:16,930
+clear out all of these functions are these calls to functions because they're useless and I'll save
+
+4
+00:00:16,930 --> 00:00:21,100
+this or the import should go away and we have an empty main file.
+
+5
+00:00:21,250 --> 00:00:24,280
+In other words, package mean with the func meaning that does nothing.
+
+6
+00:00:25,030 --> 00:00:31,460
+Now let's switch over to our celerity this application that project and delete these three functions
+
+7
+00:00:31,480 --> 00:00:32,840
+because we're not going to use those.
+
+8
+00:00:32,860 --> 00:00:34,150
+Those are utterly useless.
+
+9
+00:00:34,870 --> 00:00:36,610
+So we're starting right from scratch.
+
+10
+00:00:37,150 --> 00:00:41,660
+And the very first thing I want to do is create a type and I'll call this type.
+
+11
+00:00:41,710 --> 00:00:47,740
+Not surprisingly, Solara tasks, and it's just a struct that's going to have quite a few members over
+
+12
+00:00:47,740 --> 00:00:48,770
+time for right now.
+
+13
+00:00:48,790 --> 00:00:51,450
+We'll start with really simple things app name.
+
+14
+00:00:51,670 --> 00:00:53,020
+What's my application called?
+
+15
+00:00:53,200 --> 00:00:54,130
+And that will be a string.
+
+16
+00:00:55,330 --> 00:00:56,740
+And then we'll have debug.
+
+17
+00:00:56,920 --> 00:01:00,840
+Are we working in development or are we working in production?
+
+18
+00:01:00,850 --> 00:01:03,130
+So that will be a Boolean if it's true.
+
+19
+00:01:03,160 --> 00:01:09,430
+We're working in debug mode or development mode, and I also put a version in the same version, which
+
+20
+00:01:09,430 --> 00:01:09,970
+is a string.
+
+21
+00:01:10,300 --> 00:01:10,650
+OK.
+
+22
+00:01:11,530 --> 00:01:13,030
+So there's a very simple type.
+
+23
+00:01:13,030 --> 00:01:15,640
+And of course, this will become more complex over time.
+
+24
+00:01:17,680 --> 00:01:19,720
+Now let's put a constant in here.
+
+25
+00:01:19,870 --> 00:01:20,710
+I'll put it right here.
+
+26
+00:01:21,040 --> 00:01:24,850
+Concert version is equal to one point zero point zero.
+
+27
+00:01:25,300 --> 00:01:28,810
+So now we have something we can put in this field right here version.
+
+28
+00:01:29,950 --> 00:01:36,610
+And I'll also create a function here with the receiver, see which is a pointer to celebrities.
+
+29
+00:01:37,210 --> 00:01:41,560
+And this will be called new, OK, and it's only going to take one parameter, which I'm going to call
+
+30
+00:01:41,560 --> 00:01:42,310
+route path.
+
+31
+00:01:42,940 --> 00:01:47,200
+And that will be the path that we are in when we start our application.
+
+32
+00:01:47,200 --> 00:01:48,760
+Where are we on the file system?
+
+33
+00:01:49,000 --> 00:01:53,860
+And that will just be a string, and all it's going to return is potentially an error.
+
+34
+00:01:54,340 --> 00:02:01,960
+OK, now there's quite a few things we want to do when someone calls the new function on the type celebrities.
+
+35
+00:02:02,350 --> 00:02:05,680
+We're going to want to create some folders or make sure the folders exist.
+
+36
+00:02:05,680 --> 00:02:08,110
+We're going to want to want to initialize the application.
+
+37
+00:02:08,110 --> 00:02:09,940
+We're going to want to do all kinds of things.
+
+38
+00:02:10,300 --> 00:02:14,170
+But for right now, let's make this as simple as we possibly can.
+
+39
+00:02:15,190 --> 00:02:20,440
+So what I'll do just to keep my code nice and modular, so it's easy to test is I'll create a new function
+
+40
+00:02:20,440 --> 00:02:26,890
+down here func with a pointer to the receiver of a pointer to celebrities.
+
+41
+00:02:27,670 --> 00:02:34,270
+And I'll call this one in it and it will take one parameter and it's going to be, I'll call it P,
+
+42
+00:02:34,540 --> 00:02:40,960
+and it's going to be a bit of a type that doesn't exist yet, which I'll call in it paths, and it will
+
+43
+00:02:40,960 --> 00:02:42,160
+potentially return an error.
+
+44
+00:02:43,120 --> 00:02:44,710
+Now what is in it, pat?
+
+45
+00:02:44,770 --> 00:02:46,570
+Let's go create the type that I'll talk about it.
+
+46
+00:02:47,860 --> 00:02:52,610
+So to create this type, I'm going to create a new file right beside celebrities, doggo.
+
+47
+00:02:52,900 --> 00:02:54,550
+And I'm going to call it type stucco.
+
+48
+00:02:55,330 --> 00:02:58,150
+And that's where I'm going to put it all of my types or most of my types.
+
+49
+00:02:58,390 --> 00:03:05,500
+And this has a package declaration package celebrities and I'll create a type in here called init paths.
+
+50
+00:03:07,330 --> 00:03:11,950
+And it's just a struct, and it only has two members root path.
+
+51
+00:03:12,220 --> 00:03:18,790
+What's the root path to this application, which is a string and I'll create one called folder names
+
+52
+00:03:18,940 --> 00:03:24,580
+the list of folders that I expect to be available to me, and that will be a slice of strings.
+
+53
+00:03:24,790 --> 00:03:25,150
+OK.
+
+54
+00:03:25,180 --> 00:03:30,760
+So we have that type created now, which means when I go back to celebrities, don't go in it, paths
+
+55
+00:03:30,760 --> 00:03:31,750
+that air went away.
+
+56
+00:03:31,990 --> 00:03:34,750
+Now what do I want to do in in pads?
+
+57
+00:03:35,350 --> 00:03:39,490
+Well, to start with, I want to get the root to the application, so I'll call that root.
+
+58
+00:03:40,090 --> 00:03:43,420
+And that's a sign the value of dot ridpath.
+
+59
+00:03:43,750 --> 00:03:50,350
+And that is now a string that holds the full path name to the root level of my web app of my application.
+
+60
+00:03:51,790 --> 00:03:58,210
+Now I want to go through the list of folders in that slice of strings, in the type init paths and make
+
+61
+00:03:58,210 --> 00:04:00,660
+sure those folders exist and create them if they don't.
+
+62
+00:04:00,670 --> 00:04:05,560
+So I'll just say four and I don't care about the index, but I do care about the individual entry,
+
+63
+00:04:05,560 --> 00:04:06,700
+which I'll call path.
+
+64
+00:04:07,630 --> 00:04:12,310
+Those are assigned the values of ranging through peaked folder names.
+
+65
+00:04:13,990 --> 00:04:18,760
+And what I want to do here is create the folder if it doesn't exist.
+
+66
+00:04:19,960 --> 00:04:25,390
+OK, now I can put all of the code right in here, but this is actually the sort of thing you're going
+
+67
+00:04:25,390 --> 00:04:27,460
+to want to do a lot of the time.
+
+68
+00:04:28,390 --> 00:04:30,430
+So I may as well make that available function.
+
+69
+00:04:30,430 --> 00:04:33,320
+So I'll create a new file and I'll just call it helper stucco.
+
+70
+00:04:34,870 --> 00:04:41,440
+And again, that's in package celebrities, and I'll create a function here and something as simple
+
+71
+00:04:41,440 --> 00:04:42,010
+as this.
+
+72
+00:04:42,580 --> 00:04:54,310
+So func with the receiver see pointer to celebrities create dear if not exist, and it takes one parameter
+
+73
+00:04:54,460 --> 00:04:58,030
+path, which is a string and it returns potentially an error.
+
+74
+00:04:58,810 --> 00:05:01,000
+And we just use the standard mode of creating.
+
+75
+00:05:01,080 --> 00:05:08,130
+Directories in GO and its principles are but a constant here mode is equal to say, zero seven five
+
+76
+00:05:08,130 --> 00:05:14,310
+five, which will be good for our purposes, and we just do a simple check to create the folder if it
+
+77
+00:05:14,310 --> 00:05:15,100
+doesn't exist.
+
+78
+00:05:15,120 --> 00:05:20,760
+So if we don't care about the first return parameter, but we do care about the error, those are assigned
+
+79
+00:05:20,760 --> 00:05:23,190
+the value of OS x stat.
+
+80
+00:05:24,810 --> 00:05:25,620
+Hopefully it'll find it.
+
+81
+00:05:25,620 --> 00:05:27,070
+For me, it did OK.
+
+82
+00:05:27,090 --> 00:05:42,180
+OS x start the path followed by a semicolon, then OS Dart is not exist with her as its parameter and
+
+83
+00:05:42,180 --> 00:05:43,230
+then in curly brackets.
+
+84
+00:05:43,500 --> 00:05:49,080
+Error is assigned the value of OS x McDeere and we're going to make their path and mode.
+
+85
+00:05:50,430 --> 00:05:52,020
+If error is not equal to nil,
+
+86
+00:05:55,950 --> 00:05:57,450
+then we'll just return the error.
+
+87
+00:05:59,010 --> 00:06:02,670
+Otherwise, it's created and we can just say return nil.
+
+88
+00:06:04,140 --> 00:06:09,090
+So now that this is available to us, we can go back to celebrities, don't go and actually create that
+
+89
+00:06:09,090 --> 00:06:10,400
+folder if it doesn't exist.
+
+90
+00:06:10,410 --> 00:06:13,230
+And it's as simple now as calling errors.
+
+91
+00:06:13,230 --> 00:06:20,880
+Assign the value of C Dot Create tier if not exist, and we handed Root, which is the full path name
+
+92
+00:06:20,880 --> 00:06:28,950
+of the application, followed by a slash followed by path, and that will create the directory if it
+
+93
+00:06:28,950 --> 00:06:29,760
+doesn't exist.
+
+94
+00:06:31,440 --> 00:06:38,910
+So if there's an error, if error is not equal to nil, return the error.
+
+95
+00:06:39,570 --> 00:06:42,630
+Otherwise, when we're done, return nil.
+
+96
+00:06:43,560 --> 00:06:47,160
+So in it does that for me so far, and that's the only thing that it does.
+
+97
+00:06:47,700 --> 00:06:49,320
+But of course, we need to call it it.
+
+98
+00:06:49,470 --> 00:06:53,370
+So backup at our new function, we can just create a path config variable.
+
+99
+00:06:53,880 --> 00:06:55,110
+So path config.
+
+100
+00:06:57,200 --> 00:07:00,530
+Is a sign the value of in iPads.
+
+101
+00:07:01,910 --> 00:07:05,060
+And we'll give it its members, so route path.
+
+102
+00:07:05,900 --> 00:07:12,530
+I'm getting that as the parameter to the new function, so that route path and then folder names.
+
+103
+00:07:14,270 --> 00:07:21,740
+And for that I will make a slice of string and populate it with the folders that I think I might need.
+
+104
+00:07:21,890 --> 00:07:24,950
+Now what folders am I going to need in a web application?
+
+105
+00:07:25,000 --> 00:07:25,910
+Well, let's just create a few.
+
+106
+00:07:25,950 --> 00:07:26,960
+Just make sure it works.
+
+107
+00:07:27,350 --> 00:07:28,760
+We're probably going to want handlers.
+
+108
+00:07:29,510 --> 00:07:31,760
+We're probably going to want, say, database migration.
+
+109
+00:07:31,760 --> 00:07:33,590
+So I'll call that folder migrations.
+
+110
+00:07:34,280 --> 00:07:36,330
+We're going to want a place to put our views.
+
+111
+00:07:36,350 --> 00:07:37,820
+So I'll create one called views.
+
+112
+00:07:38,720 --> 00:07:43,010
+We're probably going to want some place to store models and information like that and not call that
+
+113
+00:07:43,010 --> 00:07:43,380
+data.
+
+114
+00:07:43,400 --> 00:07:48,530
+And we can always change this later on if it doesn't work out for us some place to put static assets.
+
+115
+00:07:48,650 --> 00:07:50,660
+Maybe the public folder is a good place for that.
+
+116
+00:07:52,790 --> 00:07:57,170
+A place to put some temporary data, Tempe, a place to store logs.
+
+117
+00:07:57,680 --> 00:08:01,820
+And maybe we're going to have some middleware that's enough to get started anyway.
+
+118
+00:08:01,970 --> 00:08:04,160
+So I've created this path config variable.
+
+119
+00:08:04,970 --> 00:08:05,960
+Now let's do something with it.
+
+120
+00:08:06,500 --> 00:08:13,730
+So I'll create and I'll look for an error and I will call C Dot in it and hand it path config.
+
+121
+00:08:14,690 --> 00:08:15,670
+And we'll check for an error.
+
+122
+00:08:16,640 --> 00:08:19,730
+If error is not equal to nil, then return it.
+
+123
+00:08:24,810 --> 00:08:26,610
+So that's the first thing I'm going to do.
+
+124
+00:08:26,640 --> 00:08:28,830
+And of course, down here, I can say return nil.
+
+125
+00:08:31,620 --> 00:08:38,580
+So at this point, if I was to create a web application that imported this celebrity type and then it
+
+126
+00:08:38,580 --> 00:08:46,500
+called the new function on that celebrity celebrity type, it should go and create a handlers folder
+
+127
+00:08:46,500 --> 00:08:49,930
+of migrations, folder views, everything you see in that slice of strings.
+
+128
+00:08:49,930 --> 00:08:53,490
+It should create empty folders at the root level of that application.
+
+129
+00:08:53,640 --> 00:08:59,010
+If they don't exist, but there's a fair bit more we want to do before we're done.
+
+130
+00:08:59,460 --> 00:09:03,420
+But this lecture is getting quite long, so let's stop it right now, and we'll pick it up in the next
+
+131
+00:09:03,420 --> 00:09:03,810
+lecture.

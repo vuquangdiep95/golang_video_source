@@ -1,0 +1,120 @@
+1
+00:00:01,290 --> 00:00:04,650
+So let's try logging in with Google and see if we got everything right.
+
+2
+00:00:04,740 --> 00:00:08,680
+So the first thing I'm going to do is make sure my Docker images are running and mine are.
+
+3
+00:00:09,030 --> 00:00:14,580
+And then I'm going to log on to my database with my favorite Postgres client, look at the user's table
+
+4
+00:00:14,580 --> 00:00:15,750
+and just make sure it's empty.
+
+5
+00:00:15,900 --> 00:00:20,970
+I deleted the one entry that was in here before this lecture started, just so I know I'm starting from
+
+6
+00:00:20,970 --> 00:00:23,980
+a known location or known status.
+
+7
+00:00:24,780 --> 00:00:30,690
+Then I'll open my terminal window and type, make stop and clear the screen and make start.
+
+8
+00:00:32,750 --> 00:00:36,290
+And it looks like I have to do a go get, which is no problems long copy that
+
+9
+00:00:39,320 --> 00:00:40,220
+and paste it here.
+
+10
+00:00:42,200 --> 00:00:47,960
+We have to do that once in a while when we're working with multiple packages at the same in the same
+
+11
+00:00:47,960 --> 00:00:48,440
+project.
+
+12
+00:00:48,590 --> 00:00:49,640
+And I will type start.
+
+13
+00:00:54,790 --> 00:00:56,050
+So my application is running.
+
+14
+00:00:56,080 --> 00:01:01,840
+Let me go to my Web browser and I'll go to the home page just to make sure everything is current, go
+
+15
+00:01:01,840 --> 00:01:07,570
+to users, log in and I'll try logging in with Google and this should take me to the Google authentication
+
+16
+00:01:07,570 --> 00:01:07,960
+screen.
+
+17
+00:01:10,330 --> 00:01:16,900
+And it does, and I'm going to log in using this account and I logged now in theory.
+
+18
+00:01:17,350 --> 00:01:17,980
+There it is.
+
+19
+00:01:18,400 --> 00:01:23,950
+And if I go back to my database, we should see that I have my Gmail account, my first name and my
+
+20
+00:01:23,950 --> 00:01:24,550
+last name.
+
+21
+00:01:24,580 --> 00:01:28,210
+And we do everything looks great, so that works really well.
+
+22
+00:01:29,230 --> 00:01:34,510
+So the next step is to implement logging out of Google because I can come up here and choose a log out
+
+23
+00:01:34,510 --> 00:01:35,800
+once again logging out.
+
+24
+00:01:36,340 --> 00:01:40,360
+And then if I click Log in with Google, it takes me out again.
+
+25
+00:01:40,420 --> 00:01:43,090
+Now it appears that that might have worked.
+
+26
+00:01:43,090 --> 00:01:43,630
+But you know what?
+
+27
+00:01:44,200 --> 00:01:51,130
+I'm not an optimist, so I'm actually going to make sure that I manually call Google's API and say,
+
+28
+00:01:51,370 --> 00:01:53,640
+revoke that token because I just don't trust it.
+
+29
+00:01:53,650 --> 00:01:57,040
+It didn't work with GitHub, and it's not very difficult to implement.
+
+30
+00:01:57,190 --> 00:01:58,930
+So we'll take care of that in the next election.
+

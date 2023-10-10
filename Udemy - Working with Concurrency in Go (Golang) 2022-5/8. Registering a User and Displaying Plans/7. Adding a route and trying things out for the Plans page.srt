@@ -1,0 +1,455 @@
+1
+00:00:01,420 --> 00:00:01,780
+All right.
+
+2
+00:00:01,780 --> 00:00:03,620
+We're almost ready to try things out.
+
+3
+00:00:03,640 --> 00:00:06,820
+But I did have a couple of typos in the last lecture.
+
+4
+00:00:06,880 --> 00:00:14,470
+The first one is down here in the comment that I part of the then clause in our sworn call.
+
+5
+00:00:14,710 --> 00:00:17,140
+And then it's just the missing equals sign right here.
+
+6
+00:00:17,140 --> 00:00:22,420
+Otherwise, we're not going to be able to get that query parameter and up here in the range statement.
+
+7
+00:00:22,420 --> 00:00:28,270
+For some reason I said range through index dot data plan, but it's actually plans plural.
+
+8
+00:00:28,270 --> 00:00:34,960
+As you can see over here in the handler, we added plans as the key on line 178 micro.
+
+9
+00:00:35,140 --> 00:00:35,530
+Okay.
+
+10
+00:00:36,070 --> 00:00:38,440
+So now we need to add a route to this handler.
+
+11
+00:00:38,440 --> 00:00:44,860
+So let's go back to our routes file right here and let's add a route right here.
+
+12
+00:00:45,280 --> 00:00:46,180
+I'll put it like this.
+
+13
+00:00:46,180 --> 00:00:46,780
+Mac, start.
+
+14
+00:00:46,780 --> 00:00:48,040
+Get that again.
+
+15
+00:00:49,300 --> 00:00:49,840
+Mac start.
+
+16
+00:00:49,840 --> 00:00:55,540
+Get slash plans and that's going to go to app dot choose subscription.
+
+17
+00:00:56,320 --> 00:01:03,880
+Okay, so let's restart our application or start it in my case, make start, my Docker images are running
+
+18
+00:01:03,880 --> 00:01:06,880
+so we have access to the database and it started.
+
+19
+00:01:06,940 --> 00:01:11,560
+Now go to my web browser and go to local host.
+
+20
+00:01:12,970 --> 00:01:13,390
+Okay.
+
+21
+00:01:13,390 --> 00:01:15,040
+So the pages are working now.
+
+22
+00:01:15,040 --> 00:01:18,010
+We don't have a link to it yet, so let's just put Slash plans here.
+
+23
+00:01:19,800 --> 00:01:22,020
+And I'm logged in and I can see it now.
+
+24
+00:01:22,030 --> 00:01:24,030
+I'll copy this.
+
+25
+00:01:25,020 --> 00:01:26,100
+First of all, let's try the button.
+
+26
+00:01:26,100 --> 00:01:27,810
+Make sure this fire is as expected.
+
+27
+00:01:28,410 --> 00:01:33,810
+I'm going to choose the bronze plan and it gives me my nice little dialogue and I cancel and it takes
+
+28
+00:01:33,810 --> 00:01:34,740
+me back to this page.
+
+29
+00:01:35,550 --> 00:01:36,690
+Now let's log out.
+
+30
+00:01:37,720 --> 00:01:42,730
+And try going to local host slash plants and I should get a warning and get redirected.
+
+31
+00:01:43,750 --> 00:01:44,500
+And I do.
+
+32
+00:01:44,710 --> 00:01:45,160
+Okay.
+
+33
+00:01:45,160 --> 00:01:46,270
+So that all works really well.
+
+34
+00:01:46,930 --> 00:01:48,160
+Now, let's add a link up here.
+
+35
+00:01:48,190 --> 00:01:53,530
+First of all, let me log in and then at example dot com with the password.
+
+36
+00:01:53,530 --> 00:01:54,400
+Very secret.
+
+37
+00:01:56,680 --> 00:01:57,370
+So I've loved it.
+
+38
+00:01:57,490 --> 00:02:00,460
+Now I want a plans thing to show up here.
+
+39
+00:02:00,550 --> 00:02:04,930
+Now, obviously, in a real Web site, you're going to have one that's available to the public.
+
+40
+00:02:05,770 --> 00:02:09,160
+But we just want to get to the part where we can write some concurrent logic.
+
+41
+00:02:09,190 --> 00:02:15,040
+So let's go back over to our I.D. and let's open up and have Bardot partial don't go each HTML.
+
+42
+00:02:15,280 --> 00:02:17,590
+And that's the navigation bar at the top of the screen.
+
+43
+00:02:17,860 --> 00:02:25,810
+And all I have to do is to duplicate this line and change it to plans and plans.
+
+44
+00:02:27,100 --> 00:02:29,500
+And I will only show up for authenticated users.
+
+45
+00:02:30,010 --> 00:02:33,910
+So let's go back over here now and reload this page.
+
+46
+00:02:34,330 --> 00:02:35,440
+And there's my plans link.
+
+47
+00:02:36,190 --> 00:02:37,480
+And it works as expected.
+
+48
+00:02:38,440 --> 00:02:38,890
+Okay.
+
+49
+00:02:39,010 --> 00:02:45,760
+Now, when I'm logged in and after I've bought a plan, I shouldn't see select next to the plan that
+
+50
+00:02:45,760 --> 00:02:46,900
+I'm currently looking at.
+
+51
+00:02:47,740 --> 00:02:49,750
+It should say something like currently select it.
+
+52
+00:02:50,500 --> 00:02:52,780
+Let's put that logic in place because that's pretty easy.
+
+53
+00:02:52,870 --> 00:02:58,600
+Remember, we added all of the user information to every rendered template.
+
+54
+00:02:58,900 --> 00:03:03,100
+So back here in the plans dot page, don't go each time out.
+
+55
+00:03:04,450 --> 00:03:06,670
+Let's go to the content block.
+
+56
+00:03:06,700 --> 00:03:07,930
+Define content.
+
+57
+00:03:07,930 --> 00:03:13,930
+And right after the opening line for that block, I'll create a variable called user and that will be
+
+58
+00:03:13,930 --> 00:03:16,060
+assigned the value of DOT user.
+
+59
+00:03:16,090 --> 00:03:21,580
+The only reason I'm doing that is it gives me easier access to it inside this range statement and this
+
+60
+00:03:21,580 --> 00:03:22,870
+is where I need to do things.
+
+61
+00:03:23,770 --> 00:03:29,750
+So really the only place I'm making a decision about whether or not a user has a plan is in this.
+
+62
+00:03:29,770 --> 00:03:32,170
+This block right here where I'm displaying the button.
+
+63
+00:03:32,830 --> 00:03:34,930
+So what I can do is put an if statement here.
+
+64
+00:03:36,730 --> 00:03:41,890
+So if I want to put the end condition, if two things are true.
+
+65
+00:03:41,890 --> 00:03:47,080
+And the first one is that the user has a plan because a user might not have a plan if they just register,
+
+66
+00:03:47,080 --> 00:03:47,920
+they certainly don't.
+
+67
+00:03:48,790 --> 00:03:49,940
+So dollar sign user.
+
+68
+00:03:49,960 --> 00:04:01,650
+So if that's true and we have an equality check here, user dot plan dot ID is equal to ID.
+
+69
+00:04:02,800 --> 00:04:05,170
+If that's true, then I'm going to display something.
+
+70
+00:04:05,380 --> 00:04:05,740
+Okay.
+
+71
+00:04:06,280 --> 00:04:07,930
+And then I'll put an else here.
+
+72
+00:04:11,420 --> 00:04:12,590
+And close my if statement.
+
+73
+00:04:14,750 --> 00:04:21,480
+And and what I'm going to put in this first block, this first check, get over to the right spot.
+
+74
+00:04:22,250 --> 00:04:23,720
+The simply strong.
+
+75
+00:04:24,410 --> 00:04:25,520
+Current plan.
+
+76
+00:04:27,830 --> 00:04:28,310
+Strong.
+
+77
+00:04:29,480 --> 00:04:29,810
+Okay.
+
+78
+00:04:30,650 --> 00:04:31,580
+So we'll save that.
+
+79
+00:04:32,210 --> 00:04:36,860
+And then I'm going to go to Beekeeper Studio and give my user a plan.
+
+80
+00:04:39,470 --> 00:04:42,800
+So I start a beekeeper studio and I'll manually add an entry.
+
+81
+00:04:42,800 --> 00:04:45,830
+So I'll go to concurrency and connect.
+
+82
+00:04:47,520 --> 00:04:49,980
+And I look at my users to see what my ideas.
+
+83
+00:04:51,250 --> 00:04:54,970
+So I'd one for immediate example dot com and I'll go to user plans.
+
+84
+00:04:57,050 --> 00:04:59,570
+And I'll add a row, so I'll outro.
+
+85
+00:05:01,300 --> 00:05:02,980
+Let the IDB generate generated.
+
+86
+00:05:03,220 --> 00:05:04,420
+One is my user ID.
+
+87
+00:05:05,110 --> 00:05:06,880
+I'll subscribe to plan one.
+
+88
+00:05:07,130 --> 00:05:08,180
+I'll just put a date in here.
+
+89
+00:05:08,200 --> 00:05:18,220
+2022 zero 517 2022 zero 517 and I'll apply this.
+
+90
+00:05:19,390 --> 00:05:19,870
+Okay.
+
+91
+00:05:20,530 --> 00:05:23,080
+Now that user is now subscribed with the plan.
+
+92
+00:05:23,110 --> 00:05:26,860
+But if I go back to my website and I reload this page.
+
+93
+00:05:27,950 --> 00:05:30,560
+We have an error, so there's a typo in there somewhere.
+
+94
+00:05:31,310 --> 00:05:34,040
+Neil Poynter Evaluating Direct planned ID.
+
+95
+00:05:34,410 --> 00:05:37,920
+Okay, so got a mistake there somewhere.
+
+96
+00:05:37,960 --> 00:05:43,520
+Let's go find that back over to my I.D. dot plan.
+
+97
+00:05:44,750 --> 00:05:45,470
+That's better.
+
+98
+00:05:45,560 --> 00:05:46,100
+Okay.
+
+99
+00:05:46,130 --> 00:05:48,900
+So the user was set, but plan was set to nil.
+
+100
+00:05:48,920 --> 00:05:51,800
+So I'm checking to see if plan is actually not nil.
+
+101
+00:05:51,830 --> 00:05:55,070
+In other words, that pointer points to some location in memory that has data.
+
+102
+00:05:56,060 --> 00:05:58,340
+So let's go reload that page and see if that works again.
+
+103
+00:05:59,480 --> 00:06:00,050
+Reload.
+
+104
+00:06:00,380 --> 00:06:00,770
+Okay.
+
+105
+00:06:00,980 --> 00:06:07,160
+Even though it reloaded the page successfully, it still doesn't show that I'm subscribed to the bronze
+
+106
+00:06:07,160 --> 00:06:07,520
+plan.
+
+107
+00:06:08,180 --> 00:06:12,410
+And that's because the user data that I'm getting for this page comes from the session.
+
+108
+00:06:12,950 --> 00:06:15,590
+And when I logged in, I didn't have that plan.
+
+109
+00:06:15,620 --> 00:06:26,510
+But if I'm longer and long back in admin example dot com very secret this time it should work.
+
+110
+00:06:28,050 --> 00:06:29,370
+And now I want to go to plans.
+
+111
+00:06:30,300 --> 00:06:32,100
+It shows me that's my current plan.
+
+112
+00:06:32,280 --> 00:06:32,700
+Perfect.
+
+113
+00:06:33,540 --> 00:06:40,530
+Okay, let's move on and we'll write a stub handler for choosing and subscribing to a plan and we'll
+
+114
+00:06:40,530 --> 00:06:42,780
+get started on that in the next lecture.

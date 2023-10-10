@@ -1,0 +1,231 @@
+1
+00:00:00,330 --> 00:00:00,630
+All right.
+
+2
+00:00:00,690 --> 00:00:01,450
+Now we're going to.
+
+3
+00:00:01,470 --> 00:00:01,940
+Sorry.
+
+4
+00:00:02,110 --> 00:00:02,420
+Yes.
+
+5
+00:00:02,430 --> 00:00:03,740
+Now we're going to sort the saga.
+
+6
+00:00:04,140 --> 00:00:07,020
+So we got word in fact we've got a slice of word infos.
+
+7
+00:00:07,020 --> 00:00:09,690
+Each one has a word and it count.
+
+8
+00:00:09,690 --> 00:00:12,370
+But now we want to sort it so it's in descending order.
+
+9
+00:00:12,390 --> 00:00:20,710
+We want the word info zero to be the most commonly appearing word in that way it's easily we can easily
+
+10
+00:00:20,710 --> 00:00:22,930
+look at it and read the values.
+
+11
+00:00:23,140 --> 00:00:28,310
+So sort of slice takes it a slice a slice as its first argument.
+
+12
+00:00:28,690 --> 00:00:34,360
+And the second argument it takes in is a function which obviously is an anonymous function to that function
+
+13
+00:00:34,360 --> 00:00:37,820
+it passes in to integers.
+
+14
+00:00:38,050 --> 00:00:39,210
+I and j.
+
+15
+00:00:39,340 --> 00:00:41,200
+It returns a boolean.
+
+16
+00:00:41,200 --> 00:00:43,200
+This function is a less boolean.
+
+17
+00:00:43,390 --> 00:00:54,460
+What you're trying to do here is you will return true if with I index i is less than with index J and
+
+18
+00:00:54,520 --> 00:01:04,250
+so and then whatever's less will become will be earlier in the slice when it's sorted so because we
+
+19
+00:01:04,250 --> 00:01:07,750
+want earlier things in the slice to be things with bigger accounts.
+
+20
+00:01:07,850 --> 00:01:10,850
+That means we want to say true if the count is higher
+
+21
+00:01:13,680 --> 00:01:14,430
+so.
+
+22
+00:01:14,460 --> 00:01:24,940
+So in this case so much return with i dot count is greater than with J dot count because we want the
+
+23
+00:01:24,950 --> 00:01:35,860
+higher value to be less and so be closer to the beginning of the sordid slice slice after this point
+
+24
+00:01:35,860 --> 00:01:44,160
+we can return with and that is now a sorted slice of word infos tossing and I look forward to seeing
+
+25
+00:01:44,160 --> 00:01:44,790
+the results.
+
+26
+00:01:45,420 --> 00:01:47,580
+So this function is actually getting complicated.
+
+27
+00:01:47,580 --> 00:01:52,320
+So if I had some time I would probably split this up into a couple of smaller functions like one to
+
+28
+00:01:52,320 --> 00:02:00,070
+do the counting one convert into this into a sorted slice but for now this kind of work says it is say
+
+29
+00:02:02,020 --> 00:02:06,450
+so now we can actually call this is called Word Count it takes all the tweets
+
+30
+00:02:11,940 --> 00:02:16,620
+and it returns back the sword to candidates
+
+31
+00:02:20,240 --> 00:02:26,420
+and does not return an error of anything it will always work no error returns so don't bother checking
+
+32
+00:02:26,420 --> 00:02:27,050
+that.
+
+33
+00:02:27,170 --> 00:02:28,500
+Now we just need to print that.
+
+34
+00:02:28,520 --> 00:02:41,840
+So I'm just going to range over assorted counts and just each time through I will print print f yeah
+
+35
+00:02:43,050 --> 00:02:56,790
+I was going to say the word colon the count New Line is the word and count it's now if I go back up
+
+36
+00:02:56,850 --> 00:03:00,600
+in run this
+
+37
+00:03:03,600 --> 00:03:05,390
+second Grace where I'm all saying
+
+38
+00:03:10,460 --> 00:03:19,820
+so lots of words that we should have once if you scroll way back to the top well a and to the four that's
+
+39
+00:03:19,820 --> 00:03:28,370
+to be expected nice there G.P.S. shrimp nine times here you see these big cloud cloud it's big project
+
+40
+00:03:29,240 --> 00:03:38,910
+you lots of you want to see you humanity's dog Daddy's big doctor like services graft graft well e-commerce
+
+41
+00:03:38,920 --> 00:03:44,960
+horrors rest yeah that's really interesting to look at.
+
+42
+00:03:44,990 --> 00:03:46,010
+Look at that.
+
+43
+00:03:46,010 --> 00:03:51,890
+See this is very basic just a word count is I mean there's lots of stuff there where you could merge
+
+44
+00:03:51,890 --> 00:04:01,430
+some words together like I know I saw near the very bottom there was a there was a there is a G.P.S.
+
+45
+00:04:01,930 --> 00:04:07,650
+lifeform gators yep the European gateways that could probably be merged with your PCI for the purposes
+
+46
+00:04:07,650 --> 00:04:15,930
+of what project to make but so it's it's very general of a count but I mean that gives us a nice idea
+
+47
+00:04:15,930 --> 00:04:18,630
+of what to aim for for what to build next.
+
+48
+00:04:18,630 --> 00:04:19,330
+That's really cool.
+
+49
+00:04:19,860 --> 00:04:21,150
+Well done.
+
+50
+00:04:21,150 --> 00:04:22,370
+Anything else you want to add.
+
+51
+00:04:23,940 --> 00:04:27,870
+I would go back to this and like I said split this work thing into two functions.
+
+52
+00:04:27,940 --> 00:04:33,650
+If I want to be more properly proper coding Yeah I'm going to add that I think you're awesome.
+
+53
+00:04:33,930 --> 00:04:38,350
+And that was a real pleasure to watch you code that.
+
+54
+00:04:38,370 --> 00:04:40,040
+Very nice.
+
+55
+00:04:40,050 --> 00:04:40,360
+All right.
+
+56
+00:04:40,410 --> 00:04:42,840
+We'll see you in the next section.
+
+57
+00:04:42,840 --> 00:04:45,420
+Next video next section we'll figure out what that's going to be.
+
+58
+00:04:45,420 --> 00:04:46,390
+We'll see you there.

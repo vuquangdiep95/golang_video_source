@@ -1,0 +1,551 @@
+1
+00:00:00,210 --> 00:00:06,000
+So one of the main takeaways from the last video was that we saw how by default it brings down the latest
+
+2
+00:00:06,000 --> 00:00:12,280
+version of a package and we're learning that the packages are named spaced by their major version.
+
+3
+00:00:12,280 --> 00:00:17,650
+So anything over Version 1 e.g. that is Version 2 version 3 version 4.
+
+4
+00:00:17,770 --> 00:00:19,890
+It's going to have its own name spacing.
+
+5
+00:00:20,070 --> 00:00:25,590
+And so when you say something like go get go laying that or forward slash export slash text that's equivalent
+
+6
+00:00:25,590 --> 00:00:28,010
+to saying go get that out latest.
+
+7
+00:00:28,020 --> 00:00:34,410
+And so adding this at tag lets you specify the version that's the default tag it gets the latest version
+
+8
+00:00:34,470 --> 00:00:36,370
+of the major release.
+
+9
+00:00:36,420 --> 00:00:42,420
+And in this video we're going to see how specify you could specify a dependency version using like app
+
+10
+00:00:42,600 --> 00:00:46,470
+and added and say version one point three dot one.
+
+11
+00:00:46,470 --> 00:00:48,410
+So we're gonna see how to do that here.
+
+12
+00:00:48,420 --> 00:00:53,040
+So the first thing I'm going to do is I'm going to go to my terminal and I'm going to do go list dash
+
+13
+00:00:53,510 --> 00:00:59,070
+all and it's going to list out all of my direct and indirect dependencies.
+
+14
+00:00:59,070 --> 00:01:06,030
+And when we started this out we we said look we want to bring in our AC Io quote and version one point
+
+15
+00:01:06,030 --> 00:01:09,110
+five point two was what was brought in.
+
+16
+00:01:09,240 --> 00:01:16,670
+And then as part of that we also brought in our seed out Io sampler version one point three point of
+
+17
+00:01:16,790 --> 00:01:18,690
+an indirect dependency.
+
+18
+00:01:19,020 --> 00:01:25,530
+So if we go look at this this dependency which we asked for this direct dependency if we go look at
+
+19
+00:01:25,530 --> 00:01:28,370
+this we could gain some insight and some interesting stuff.
+
+20
+00:01:28,380 --> 00:01:34,380
+So I'm going to go to go dark dawg go dark dawg and I'm going to search for our seed out Io forward
+
+21
+00:01:34,380 --> 00:01:40,470
+slash quote because that's the one I brought in and it brings up this package and here I could click
+
+22
+00:01:40,470 --> 00:01:46,890
+on right there and they'll take me to get hub and get hub I could go to releases and then it releases
+
+23
+00:01:46,890 --> 00:01:51,300
+I could see the different versions we brought in one point five point two so I could click on this little
+
+24
+00:01:51,300 --> 00:01:57,900
+hash right here and that takes me to that one comment where I could see those files by clicking browse
+
+25
+00:01:58,470 --> 00:02:04,170
+and so when I look at version one point five point two and I look at the MoD file the module file on
+
+26
+00:02:04,170 --> 00:02:09,310
+this it says it's requiring RSA seed Io sampler version one point 3.0.
+
+27
+00:02:09,390 --> 00:02:14,230
+So that becomes an indirect dependency since this is a direct dependency of mine.
+
+28
+00:02:14,370 --> 00:02:20,040
+And since this has that as a dependency this becomes an indirect dependency for me.
+
+29
+00:02:20,040 --> 00:02:26,430
+And in that one point three dot o maybe we want to try getting the latest version of that so we can
+
+30
+00:02:26,430 --> 00:02:29,410
+go see those different versions of that one right now.
+
+31
+00:02:29,520 --> 00:02:33,180
+And one of the ways we could see is we could just go to get hub and we could look it up.
+
+32
+00:02:33,250 --> 00:02:35,640
+We can start out at go dark actually.
+
+33
+00:02:35,640 --> 00:02:44,010
+And so we'll just work our way to their sampler and then go to get hub and at get hub we can look at
+
+34
+00:02:44,010 --> 00:02:45,810
+the different releases.
+
+35
+00:02:45,810 --> 00:02:49,490
+And so right now I'm on release version one point three point 0.
+
+36
+00:02:49,590 --> 00:02:51,840
+There's also one point nine nine point nine nine.
+
+37
+00:02:51,840 --> 00:02:54,740
+And also one point three point one.
+
+38
+00:02:54,840 --> 00:02:59,430
+And so we have a couple of other versions so if I ask it to go get the latest version we could see what
+
+39
+00:02:59,430 --> 00:03:01,530
+happens to our code base.
+
+40
+00:03:01,530 --> 00:03:09,450
+So right now I'm in the Girling project and I'm going to CDE into 0 3 and then in there I'm going to
+
+41
+00:03:09,450 --> 00:03:18,720
+see into 0 2 adding a dependency and if we look at that code in 0 2 adding dependency the code that
+
+42
+00:03:18,720 --> 00:03:26,330
+we have there is we're using quote Hello our seed Io quote and and when we run go test on that.
+
+43
+00:03:26,340 --> 00:03:30,450
+So make sure I'm in 0 2 I'm going to go test on 0 2.
+
+44
+00:03:30,450 --> 00:03:31,790
+Everything is working fine.
+
+45
+00:03:31,950 --> 00:03:38,090
+I just want to show you everything's working fine because now I'm going to use this code here go get
+
+46
+00:03:38,140 --> 00:03:42,690
+our seed audio sampler and it's going to go get by default.
+
+47
+00:03:42,810 --> 00:03:45,750
+The latest version just as if I had the latest here.
+
+48
+00:03:45,750 --> 00:03:46,480
+Right.
+
+49
+00:03:46,560 --> 00:03:52,590
+And so I could do it with latest or I could do it without I'm going to do it with just for fun.
+
+50
+00:03:52,590 --> 00:03:54,620
+See what happens just to prove the point.
+
+51
+00:03:55,010 --> 00:03:59,310
+And so it's going to get the latest version which means it's going to go and look at the releases the
+
+52
+00:03:59,310 --> 00:04:02,990
+latest version one is going to be one point nine nine nine nine.
+
+53
+00:04:03,030 --> 00:04:05,460
+So I'm going to hit do it.
+
+54
+00:04:05,460 --> 00:04:06,350
+It's going to do it.
+
+55
+00:04:06,420 --> 00:04:10,210
+And if I do a go list dash I'm Dashiell dash them all.
+
+56
+00:04:10,320 --> 00:04:13,440
+I now have version one point nine nine nine nine.
+
+57
+00:04:13,470 --> 00:04:23,880
+And now if I do my go test like I upgraded my dependency my indirect dependency and it broke the code.
+
+58
+00:04:24,180 --> 00:04:33,390
+So now I could specify an exact dependency and maybe if I roll it back from 1 9 9 2 1 3 1 it will work.
+
+59
+00:04:33,390 --> 00:04:36,150
+And so to do that I'm going to use this one right here.
+
+60
+00:04:36,150 --> 00:04:36,870
+Go get.
+
+61
+00:04:36,870 --> 00:04:40,170
+And then at version one point three point one.
+
+62
+00:04:40,230 --> 00:04:46,100
+So I'm going to run that and it brings down a different version.
+
+63
+00:04:46,110 --> 00:04:51,410
+And now if I go list my versions I've got version one point three point one.
+
+64
+00:04:51,540 --> 00:04:55,330
+And if I do my go test my test passes.
+
+65
+00:04:55,350 --> 00:05:00,600
+So originally I started out not with one point three point one I started out with one point three point
+
+66
+00:05:00,690 --> 00:05:03,370
+zero I went to the latest.
+
+67
+00:05:03,390 --> 00:05:07,020
+By doing that go get latest.
+
+68
+00:05:07,080 --> 00:05:07,350
+Right.
+
+69
+00:05:07,350 --> 00:05:13,320
+And by default I could have just its latest by default I could just put that in and it brought down
+
+70
+00:05:13,320 --> 00:05:18,850
+the latest version and then when that didn't work it failed right.
+
+71
+00:05:18,860 --> 00:05:22,830
+I said Hey go get version one point three point one.
+
+72
+00:05:22,830 --> 00:05:25,080
+Let's see if that works and I got that.
+
+73
+00:05:25,080 --> 00:05:26,280
+And then it passed my test.
+
+74
+00:05:26,280 --> 00:05:31,800
+So I ended up at one point three point one and I started at one point three point zero but the main
+
+75
+00:05:31,800 --> 00:05:36,930
+thing that you're taking away from this video is you could specify an exact version version one point
+
+76
+00:05:36,930 --> 00:05:44,490
+three point one and the other main thing you're taking away from this video is that I go to get or wherever
+
+77
+00:05:44,490 --> 00:05:49,260
+you're getting your modules your packages your code from and you can look at the different versions
+
+78
+00:05:49,290 --> 00:05:55,020
+if that module that package I'm using module package interchangeably.
+
+79
+00:05:55,050 --> 00:05:55,250
+Right.
+
+80
+00:05:55,260 --> 00:05:55,730
+I need it.
+
+81
+00:05:55,740 --> 00:06:00,870
+We need to load terminologies disintegration which we're going to do it in this video but you can go.
+
+82
+00:06:00,870 --> 00:06:05,060
+Let me just finish this point and go and if it's been well done you could see the different versions
+
+83
+00:06:05,090 --> 00:06:06,530
+you could see what you're getting.
+
+84
+00:06:06,570 --> 00:06:11,370
+I hope this is becoming clear it's definitely becoming more clear to me this is newer territory for
+
+85
+00:06:11,370 --> 00:06:19,350
+me modules is new and so it's great to be able to figure this out with another friend to help me learn
+
+86
+00:06:19,350 --> 00:06:26,730
+it also and in some of the main takeaways that stand out to me at this point is that the important thing
+
+87
+00:06:26,730 --> 00:06:34,490
+of like major version numbers are gonna be at their own your ell so you know V to v three v through
+
+88
+00:06:34,500 --> 00:06:35,810
+four it ends in those.
+
+89
+00:06:35,820 --> 00:06:37,730
+That's one of the main takeaways.
+
+90
+00:06:37,740 --> 00:06:43,680
+Another main takeaway is being able to see all of your direct and into direct dependencies with go list
+
+91
+00:06:43,710 --> 00:06:45,920
+dashing em all.
+
+92
+00:06:46,050 --> 00:06:53,190
+And another good takeaway is being able to specify with this dot with this app thing which version you're
+
+93
+00:06:53,190 --> 00:06:56,480
+bringing in and seeing what versions are available when you look at the repo.
+
+94
+00:06:56,890 --> 00:07:02,490
+So one more thing to note is the app that at you can do a version number you can also do the name of
+
+95
+00:07:02,490 --> 00:07:03,630
+a branch.
+
+96
+00:07:03,690 --> 00:07:09,000
+So if the person has more code they pushed but they haven't yet tagged it with a specific version number.
+
+97
+00:07:09,000 --> 00:07:15,150
+But you still want to get that latest stuff you can do at Master to get the absolute newest commit on
+
+98
+00:07:15,150 --> 00:07:18,250
+Master despite the fact that there's versions available.
+
+99
+00:07:18,250 --> 00:07:18,900
+Mm hmm.
+
+100
+00:07:18,910 --> 00:07:26,890
+Nice and now let's just do a moment of terminology disintegration between module and a package.
+
+101
+00:07:27,050 --> 00:07:35,500
+So a module is often aligned one to one with a get hub repo so one GitHub repo should have one module.
+
+102
+00:07:35,510 --> 00:07:41,240
+That's best practice and then a get have repo could have several packages and there we could have package
+
+103
+00:07:41,240 --> 00:07:46,420
+Hello package quote package string package print whatever packages.
+
+104
+00:07:46,670 --> 00:07:51,890
+And is it a best practice to have in one package for repo.
+
+105
+00:07:51,890 --> 00:07:56,560
+That seems kind of like if you're trying to get something for people use maybe a good idea.
+
+106
+00:07:56,570 --> 00:07:56,900
+Right.
+
+107
+00:07:56,900 --> 00:07:59,300
+Like if we look at this it depends.
+
+108
+00:07:59,300 --> 00:08:05,780
+You can almost consider packages within sub packages than repos to be more specific points of what you're
+
+109
+00:08:05,780 --> 00:08:06,170
+doing.
+
+110
+00:08:06,500 --> 00:08:12,560
+So for example the stripe repo to access stripes API.
+
+111
+00:08:12,680 --> 00:08:17,410
+They've got the top level package which is contains general code flight connecting those API.
+
+112
+00:08:17,630 --> 00:08:26,090
+But then they have sub packages for payment or saving credit cards or charging people think fees monthly.
+
+113
+00:08:26,090 --> 00:08:28,370
+So it's all related to connecting to the API.
+
+114
+00:08:28,400 --> 00:08:33,920
+But then more specific specifically you might need a sub package that has more stuff focused towards
+
+115
+00:08:33,970 --> 00:08:35,900
+this specific part of the API.
+
+116
+00:08:36,530 --> 00:08:36,940
+Okay.
+
+117
+00:08:36,980 --> 00:08:44,660
+So the terminology disambiguate given is a module could have many packages and and for a best practice
+
+118
+00:08:44,750 --> 00:08:49,930
+it doesn't necessarily mean that one module needs to have one package but just whatever makes sense.
+
+119
+00:08:50,420 --> 00:08:50,970
+Okay.
+
+120
+00:08:51,080 --> 00:08:51,680
+All right good.
+
+121
+00:08:51,680 --> 00:08:56,960
+So that's that's the next one is specifying a specific dependency version.
+
+122
+00:08:56,960 --> 00:08:58,520
+Any other thoughts.
+
+123
+00:08:58,940 --> 00:09:05,510
+Just at this 1 9 9 9 9 email the version number is rather ridiculous and most just there to kind of
+
+124
+00:09:05,510 --> 00:09:11,210
+prove that the version to have a high enough version number for this demonstration.
+
+125
+00:09:11,210 --> 00:09:18,380
+People do make mistakes the minor and patch versions are supposed to be backwards compatible but sometimes
+
+126
+00:09:18,380 --> 00:09:19,270
+they are not.
+
+127
+00:09:19,370 --> 00:09:20,030
+As you could see.
+
+128
+00:09:20,510 --> 00:09:23,460
+So this is user error.
+
+129
+00:09:23,960 --> 00:09:30,140
+If you find something like this go to their repo go to their issues tab and report it tell them about
+
+130
+00:09:30,140 --> 00:09:30,250
+it.
+
+131
+00:09:30,260 --> 00:09:32,330
+It's a problem.
+
+132
+00:09:32,540 --> 00:09:40,070
+And then go back use the stick version number or a specific or the app master if you need to and and
+
+133
+00:09:40,070 --> 00:09:42,920
+get your own code to good to a good spot.
+
+134
+00:09:43,160 --> 00:09:46,960
+Use your tests go tests are important because they want you quick.
+
+135
+00:09:47,000 --> 00:09:53,400
+They let us quickly and easily determine there was a problem with this version that was good stuff to
+
+136
+00:09:53,400 --> 00:09:53,660
+add.
+
+137
+00:09:53,670 --> 00:09:54,690
+Thank you.
+
+138
+00:09:54,750 --> 00:09:55,650
+Seeing the next video.

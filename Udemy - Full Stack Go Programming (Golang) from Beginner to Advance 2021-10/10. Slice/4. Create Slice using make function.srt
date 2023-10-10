@@ -1,0 +1,175 @@
+1
+00:00:18,540 --> 00:00:23,550
+Hello and welcome to the Golden Programming Languages course in the previous session.
+
+2
+00:00:23,820 --> 00:00:29,580
+We talked about creating slides using already existing slice and indecision.
+
+3
+00:00:29,760 --> 00:00:32,850
+We want to talk about the others as nice concepts.
+
+4
+00:00:38,560 --> 00:00:41,120
+Create this slice using main function.
+
+5
+00:00:41,710 --> 00:00:48,160
+You can also create this nice using the made function, which is provided by the Go library.
+
+6
+00:00:49,120 --> 00:00:56,160
+This function takes three parameters time, lengths and capacity here.
+
+7
+00:00:56,380 --> 00:01:04,300
+Capacity values Optionally, it assigns an underlying array with a size that is equal to the given capacity
+
+8
+00:01:04,300 --> 00:01:04,990
+and returns.
+
+9
+00:01:04,990 --> 00:01:08,170
+A slice which refers to the underlying array.
+
+10
+00:01:09,490 --> 00:01:18,280
+Generally, make function is used to create an entire slice here into slices on those slices that contain
+
+11
+00:01:18,350 --> 00:01:19,840
+a.re France.
+
+12
+00:01:21,250 --> 00:01:22,840
+You can see the syntax.
+
+13
+00:01:23,560 --> 00:01:25,330
+Then you use make function.
+
+14
+00:01:25,340 --> 00:01:29,410
+One option you have is to specify the length of this slice.
+
+15
+00:01:29,710 --> 00:01:31,570
+Then you just specify the length.
+
+16
+00:01:31,570 --> 00:01:33,850
+The capacity of the slice is the same.
+
+17
+00:01:34,810 --> 00:01:40,480
+Now go to this school to illustrate how to create a slice unique main function.
+
+18
+00:01:42,220 --> 00:01:50,920
+First, create PSNI's by Len four and capacity seven by make function for the example via the slice
+
+19
+00:01:51,610 --> 00:02:04,390
+one equals make function first, set the tight end and set the land full and set the capacity.
+
+20
+00:02:04,630 --> 00:02:05,260
+Seven.
+
+21
+00:02:06,880 --> 00:02:17,860
+Now, display this nice warm weather, this nice one equal.
+
+22
+00:02:19,460 --> 00:02:35,720
+First, and the lower case and legislative lengths include first and De Palma backslash T and capacity
+
+23
+00:02:38,000 --> 00:02:52,280
+include first and the lower case brackets that end and sets the radiator first, slice one and then
+
+24
+00:02:52,280 --> 00:03:03,500
+land of its lifespan by the learned function land slice, warm and then capacity of this nice by the
+
+25
+00:03:03,500 --> 00:03:07,760
+function chat and set this list long.
+
+26
+00:03:12,090 --> 00:03:15,600
+And create this list by just Lin seven.
+
+27
+00:03:16,410 --> 00:03:30,420
+Go to the next line and create another slice that just slice two equals make function and type is in
+
+28
+00:03:30,780 --> 00:03:32,190
+length is seven.
+
+29
+00:03:34,310 --> 00:03:48,130
+Go to the next line and display this very area if if it's nice to equal first and the lower case back
+
+30
+00:03:48,140 --> 00:03:55,130
+is less tea length equal two percent.
+
+31
+00:03:55,160 --> 00:04:09,050
+The lower case come back is and check a city equal two percent the back end and sets the very idea a
+
+32
+00:04:09,070 --> 00:04:11,330
+slice too.
+
+33
+00:04:12,890 --> 00:04:17,480
+And length of this nice to by the function land.
+
+34
+00:04:18,800 --> 00:04:29,540
+This nice, too, and capacity of this guys to buy the phones and chat and set the slice.
+
+35
+00:04:32,090 --> 00:04:36,740
+If automatic to save the project and execute, they could.
+
+36
+00:04:39,160 --> 00:04:46,510
+Now we can see the output for this, like swan length is full and capacity is seven.
+
+37
+00:04:46,780 --> 00:04:51,970
+And for the lies, two lengths is set in and the capacities sit in.
+
+38
+00:04:52,570 --> 00:04:55,480
+It's nice is an abstraction over array.
+
+39
+00:04:55,960 --> 00:04:59,710
+It actually uses arrays as an underlying structure.
+
+40
+00:05:00,280 --> 00:05:06,520
+The land function returns the element present in their size, their chat function returns.
+
+41
+00:05:06,520 --> 00:05:13,840
+The capacity of this slice means how many elements it can accommodate in order not to prolong the time
+
+42
+00:05:13,840 --> 00:05:14,630
+of decision.
+
+43
+00:05:14,800 --> 00:05:18,430
+We will finish it and we will continue the content in the next session.
+
+44
+00:05:18,610 --> 00:05:19,150
+Goodbye.

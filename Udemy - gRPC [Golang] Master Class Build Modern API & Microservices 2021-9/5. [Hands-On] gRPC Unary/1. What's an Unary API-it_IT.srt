@@ -1,0 +1,92 @@
+1
+00:00:00,270 --> 00:00:06,550
+Quindi in questa sezione impareremo e implementeremo la chiamata alle API urinarie RBC.
+
+2
+00:00:06,570 --> 00:00:09,090
+Quindi cos'è un'API unitaria.
+
+3
+00:00:09,090 --> 00:00:12,770
+L'abbiamo già visto, ma voglio solo riassumerle chiamate Noori RBC.
+
+4
+00:00:12,770 --> 00:00:16,620
+O sostanzialmente la risposta alla richiesta che tutti conoscono.
+
+5
+00:00:16,670 --> 00:00:22,200
+In modo tale diagramma abbiamo un server client e hanno scambiato un messaggio a ogni modo.
+
+6
+00:00:22,290 --> 00:00:22,630
+OK.
+
+7
+00:00:22,680 --> 00:00:27,690
+Questa è un'API uner che il client invierà un messaggio e il server eseguirà un messaggio.
+
+8
+00:00:27,690 --> 00:00:32,100
+Le chiamate ARA-E del decano saranno l'implementazione più comune per la tua API.
+
+9
+00:00:32,160 --> 00:00:39,310
+OK si potrebbe benissimo farla franca con un'intera applicazione o un intero sistema o database scritto in
+
+10
+00:00:39,310 --> 00:00:43,000
+GRB C era solo Gennari RBC chiamate RBC.
+
+11
+00:00:43,230 --> 00:00:43,520
+OK.
+
+12
+00:00:43,560 --> 00:00:46,090
+Sono molto adatti per quando i dati sono piccoli.
+
+13
+00:00:46,260 --> 00:00:51,210
+E quando inizi a scrivere API ti consiglio vivamente di iniziare con la tua Noori finché
+
+14
+00:00:51,210 --> 00:00:55,590
+non avrai un buon utilizzo e un miglioramento delle prestazioni usando l'API di streaming.
+
+15
+00:00:55,630 --> 00:01:02,130
+Ora le chiamate Noori sono definite utilizzando i buffer di protocollo e questo è il modo in cui appariranno i tuoi file
+
+16
+00:01:02,130 --> 00:01:03,030
+buffer pietosi.
+
+17
+00:01:03,240 --> 00:01:06,840
+Quindi definiremo una richiesta di benvenuto e un'ottima risposta.
+
+18
+00:01:06,900 --> 00:01:13,230
+E questi sono messaggi e poi salutiamo o salutiamo gli strumenti di RBC.
+
+19
+00:01:13,260 --> 00:01:18,440
+In questo modo O sai che il nome RBC è il suo nome Salutiamo una richiesta di saluto e restituisce un'ottima risposta.
+
+20
+00:01:18,450 --> 00:01:22,910
+Non ti preoccupare, lo scriveremo insieme nelle loro mani per ogni chiamata RBC.
+
+21
+00:01:22,920 --> 00:01:26,180
+Dovremo definire un messaggio di richiesta e un messaggio di risposta.
+
+22
+00:01:26,250 --> 00:01:29,290
+Quindi puoi vedere qui si ottiene una risposta arrabbiata.
+
+23
+00:01:29,340 --> 00:01:31,920
+Ora che abbiamo questo nella prossima lezione faremo l'Henzen.
+

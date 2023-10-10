@@ -1,0 +1,272 @@
+1
+00:00:01,070 --> 00:00:06,260
+So let's write another test using a slightly different approach, and this time let's test the session
+
+2
+00:00:06,260 --> 00:00:06,770
+as well.
+
+3
+00:00:06,980 --> 00:00:12,200
+OK, so back in the file handlers underscore Tesco, let's just create a new function and I'll just
+
+4
+00:00:12,200 --> 00:00:19,250
+call it test home to T pointer to testing tea, and it doesn't return anything.
+
+5
+00:00:20,430 --> 00:00:26,730
+Now, last time around, we actually got our roots, and then we use the HTP test new tell us server,
+
+6
+00:00:26,730 --> 00:00:28,530
+but this time let's do a little bit differently.
+
+7
+00:00:28,560 --> 00:00:30,280
+Let's build a request manually.
+
+8
+00:00:30,300 --> 00:00:37,860
+So a variable RFQ for request, and I'll ignore the error that comes from http dot new request.
+
+9
+00:00:38,070 --> 00:00:39,150
+We just created a request.
+
+10
+00:00:39,960 --> 00:00:42,870
+The method will be get the URL doesn't matter.
+
+11
+00:00:43,200 --> 00:00:45,750
+You can put anything in there and we're not going to pass.
+
+12
+00:00:45,750 --> 00:00:46,650
+Anything is the body.
+
+13
+00:00:47,700 --> 00:00:49,440
+OK, so we have a request.
+
+14
+00:00:50,100 --> 00:00:55,830
+Now let's get a context using that request so we can play with the session.
+
+15
+00:00:55,890 --> 00:00:58,110
+So this is my variable I'm creating.
+
+16
+00:00:58,260 --> 00:01:01,110
+I just comes by calling or comes from calling.
+
+17
+00:01:01,200 --> 00:01:03,960
+Get context and handing it the request we just made.
+
+18
+00:01:05,129 --> 00:01:13,370
+And now my request is going to be equal to request Dot with context, and the context is just KCTCS.
+
+19
+00:01:14,640 --> 00:01:17,340
+Now I have a request that is aware of the session.
+
+20
+00:01:18,480 --> 00:01:21,810
+And just like I built the request, I'm also going to build a response.
+
+21
+00:01:21,810 --> 00:01:22,680
+But I'm going to use.
+
+22
+00:01:22,750 --> 00:01:29,820
+I'll call the variable R for response recorder because I'm going to get it from calling HTP Test Dot
+
+23
+00:01:30,360 --> 00:01:31,140
+New Recorder.
+
+24
+00:01:31,950 --> 00:01:35,490
+And that's a response recorder, which takes the place of a response writer.
+
+25
+00:01:36,880 --> 00:01:42,040
+Now, let's put something in the session just so we can test to see if it's still there after we run
+
+26
+00:01:42,040 --> 00:01:47,530
+our test sold-out session Selby in the variable that we created, that's our sellers house darts alert
+
+27
+00:01:47,530 --> 00:01:53,440
+horse type and we'll put in that session using this context.
+
+28
+00:01:53,830 --> 00:01:59,590
+We'll use the key test underscore key and some value hello world.
+
+29
+00:02:01,570 --> 00:02:02,950
+And that should be in the session now.
+
+30
+00:02:04,330 --> 00:02:10,000
+Now, rather than spinning up a new a server like we did before, we use a different approach will declare
+
+31
+00:02:10,000 --> 00:02:16,270
+a variable called H, and that's assigned the value of casting it to an HTTP dot handler.
+
+32
+00:02:16,270 --> 00:02:23,270
+Func handler, func make sure you get the right one and we just call our variable test handlers dot
+
+33
+00:02:23,320 --> 00:02:23,570
+com.
+
+34
+00:02:25,150 --> 00:02:25,540
+OK.
+
+35
+00:02:26,800 --> 00:02:32,280
+And now we make a call to that by going to H Dot surveys.
+
+36
+00:02:33,130 --> 00:02:35,950
+And it requires a response writer of some sort.
+
+37
+00:02:36,100 --> 00:02:39,310
+We can use our and our request, which is our HQ.
+
+38
+00:02:40,900 --> 00:02:44,230
+Now I can test to see if we get the correct status code.
+
+39
+00:02:44,290 --> 00:02:50,950
+So I can just say if our code is not equal to two hundred and I have an error.
+
+40
+00:02:51,370 --> 00:02:54,340
+So I'll just error on error.
+
+41
+00:02:54,340 --> 00:02:56,980
+F error f
+
+42
+00:02:59,650 --> 00:03:12,640
+returned wrong response code got percent d but expected two hundred and my code would be our code.
+
+43
+00:03:14,170 --> 00:03:15,220
+So that's one test.
+
+44
+00:03:15,250 --> 00:03:19,930
+So this is a except for putting something in the session, it's functionally equivalent to the one we
+
+45
+00:03:19,930 --> 00:03:20,860
+wrote last time around.
+
+46
+00:03:20,860 --> 00:03:22,720
+But now we'll test to see if something's in the session.
+
+47
+00:03:23,890 --> 00:03:36,880
+If cell dont session the server session, don't get string using the context ATX looking for test key
+
+48
+00:03:38,320 --> 00:03:51,940
+if that's not equal to Hello World, then wrote T dot error, I'll just say did not get correct value
+
+49
+00:03:51,940 --> 00:03:52,990
+from session.
+
+50
+00:03:53,080 --> 00:03:54,790
+And of course, you can put whatever you want in there.
+
+51
+00:03:55,450 --> 00:04:01,030
+Now, obviously this is a highly contrived example, but hopefully it shows you how you'd work with
+
+52
+00:04:01,030 --> 00:04:01,570
+a session.
+
+53
+00:04:01,960 --> 00:04:06,370
+Normally, you would call some handler that would set some sessional variable.
+
+54
+00:04:06,370 --> 00:04:10,750
+And then after you've called that handler, you could look to make sure that the sessional variable
+
+55
+00:04:10,750 --> 00:04:14,080
+you expect to find is in their end of the correct value.
+
+56
+00:04:14,500 --> 00:04:18,120
+But the steps to make that happen are virtually identical to what we have here.
+
+57
+00:04:18,130 --> 00:04:21,070
+We just wouldn't put it in this session online.
+
+58
+00:04:21,070 --> 00:04:21,730
+32.
+
+59
+00:04:21,730 --> 00:04:30,040
+Instead, we just check to see what was in the session after we've made the call to serve HGTV or our
+
+60
+00:04:30,040 --> 00:04:30,610
+request.
+
+61
+00:04:31,180 --> 00:04:34,390
+OK, let's run this test and see if it worked the way that we expected.
+
+62
+00:04:34,390 --> 00:04:36,810
+So I'll put my terminal window.
+
+63
+00:04:36,820 --> 00:04:38,590
+Make sure I'm inside the handlers folder.
+
+64
+00:04:38,590 --> 00:04:40,510
+I am go test dot.
+
+65
+00:04:44,690 --> 00:04:46,700
+And everything passed perfect.
+
+66
+00:04:47,330 --> 00:04:54,230
+So in the next lecture, we'll get started on working on some Laravel dusk like functionality, specifically
+
+67
+00:04:54,620 --> 00:04:57,830
+taking a screenshot from the web browser.
+
+68
+00:04:58,700 --> 00:05:02,990
+When something doesn't go the way that it's expected to and we'll get started on that next time around.
+

@@ -1,0 +1,99 @@
+1
+00:00:00,570 --> 00:00:06,650
+Vì vậy, đây là một Leichter ngắn nhưng tôi muốn bạn hiểu rằng bạn là PCI-E ngoài
+
+2
+00:00:06,760 --> 00:00:13,220
+siêu hiệu suất cũng cực kỳ có thể mở rộng và điều này là do PC máy chủ của bạn sẽ không đồng bộ
+
+3
+00:00:13,320 --> 00:00:14,370
+theo mặc định.
+
+4
+00:00:14,640 --> 00:00:20,100
+Điều này có nghĩa là họ sẽ không chặn chuỗi theo yêu cầu và có thể xử lý nhiều yêu cầu cùng một lúc.
+
+5
+00:00:20,100 --> 00:00:24,520
+Vì vậy, chỉ để sử dụng một số con số và tất nhiên nó phụ thuộc vào loại xe mà
+
+6
+00:00:24,590 --> 00:00:30,810
+bạn có và bất cứ thứ gì ngoại trừ máy chủ europaeus của bạn, nó có thể phục vụ song song hàng triệu yêu cầu và các máy khách GOPAC có quyền lựa chọn.
+
+7
+00:00:30,810 --> 00:00:35,260
+Và chúng ta sẽ thấy rằng trong các triển khai có thể không đồng bộ hoặc đồng bộ
+
+8
+00:00:35,310 --> 00:00:36,660
+có nghĩa là khối.
+
+9
+00:00:36,660 --> 00:00:41,070
+Vì vậy, tùy thuộc vào bạn để quyết định mô hình nào phù hợp với bạn với hiệu suất mà bạn cần.
+
+10
+00:00:41,070 --> 00:00:47,490
+Và đối với loại ứng dụng khách, bạn cũng có các nhóm JPC có khả năng thực hiện một việc gọi là cân bằng
+
+11
+00:00:47,490 --> 00:00:48,900
+tải phía khách hàng.
+
+12
+00:00:48,930 --> 00:00:53,810
+Điều này có nghĩa là nếu bạn có nhiều máy chủ GAAP, bạn có thể thực hiện cân bằng tải trực tiếp từ máy khách.
+
+13
+00:00:53,820 --> 00:00:56,770
+Và điều này cho phép bạn mở rộng quy mô theo chiều ngang.
+
+14
+00:00:56,820 --> 00:01:01,970
+Vì vậy, chỉ để cung cấp cho bạn một con số và minh họa về khả năng mở rộng và bạn không giỏi Google đến mức
+
+15
+00:01:01,980 --> 00:01:03,180
+bạn sẽ không bao giờ đạt được nó.
+
+16
+00:01:03,240 --> 00:01:10,710
+Hoặc có thể bạn sẽ làm thế, nhưng về cơ bản, Google trong hệ thống của họ có 10 tỷ yêu cầu GOPAC được thực hiện
+
+17
+00:01:10,800 --> 00:01:13,600
+mỗi giây trong hệ thống của họ.
+
+18
+00:01:13,650 --> 00:01:19,610
+Vì vậy, khung này sử dụng đại trà và đã đạt đến quy mô khổng lồ của mạng 10
+
+19
+00:01:19,670 --> 00:01:22,020
+tỷ yêu cầu RBC mỗi giây.
+
+20
+00:01:22,180 --> 00:01:22,610
+Được rồi.
+
+21
+00:01:22,740 --> 00:01:28,230
+Vì vậy, sử dụng khung công tác JPC, bạn không nên lo lắng về quy mô và hiệu suất.
+
+22
+00:01:28,230 --> 00:01:30,010
+Đây là một khuôn khổ thử nghiệm trận chiến.
+
+23
+00:01:30,120 --> 00:01:34,630
+Và nếu Google phù hợp với họ, thì nó cũng sẽ phù hợp với bạn.
+
+24
+00:01:34,650 --> 00:01:36,410
+Được rồi, đó là một bài học ngắn.
+
+25
+00:01:36,570 --> 00:01:37,620
+Và ngay khi tiếp theo.

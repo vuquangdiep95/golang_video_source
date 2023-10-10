@@ -1,0 +1,176 @@
+1
+00:00:01,000 --> 00:00:06,970
+So we have Mineo configured, and now we need to configure SFP secure FTP, and again, I'm looking
+
+2
+00:00:06,970 --> 00:00:12,880
+at my Docker dash composed why EML file inside the My App folder of my workspace?
+
+3
+00:00:13,690 --> 00:00:18,550
+And here you can see I'm listening to three parts 80 80, and that's what we're going to in just a moment.
+
+4
+00:00:18,580 --> 00:00:25,660
+That's where we're going to configure a user to connect to our SFP Service 2022, which is actually
+
+5
+00:00:25,660 --> 00:00:33,160
+in production that would be Port 22, where that's what you connect to using FTP and one zero zero eight
+
+6
+00:00:33,160 --> 00:00:37,180
+zero and in production, that would be 80 or 443 if it was secure.
+
+7
+00:00:37,180 --> 00:00:39,010
+And we'll be using that port for Web Dev.
+
+8
+00:00:39,370 --> 00:00:40,990
+But let's switch over to our web browser.
+
+9
+00:00:42,340 --> 00:00:45,340
+And first of all, let me show you the home page for this.
+
+10
+00:00:45,760 --> 00:00:52,990
+This is a Docker hub, and this is the Docker image we're using to provide FTP services, SFB services.
+
+11
+00:00:53,290 --> 00:00:56,230
+And I'll put a link to this in the course resources for this lecture.
+
+12
+00:00:56,230 --> 00:00:59,980
+And of course, you can read about that at your leisure.
+
+13
+00:01:00,220 --> 00:01:07,810
+So let's open a new browser tab and go to HDD Collins localhost port 80.
+
+14
+00:01:09,100 --> 00:01:13,210
+And the first thing it's going to ask me to do is to create an admin user, so I'll create an admin
+
+15
+00:01:13,210 --> 00:01:16,660
+user called admin with the password of password.
+
+16
+00:01:16,930 --> 00:01:22,420
+Again, not something I'd ever do in production, but sufficient for our development purposes.
+
+17
+00:01:23,350 --> 00:01:26,830
+Now we've created that user, but that's the admin user.
+
+18
+00:01:26,840 --> 00:01:31,610
+The admin user actually can't connect to SFP, so we need to create a new user.
+
+19
+00:01:32,050 --> 00:01:38,200
+So by default, it takes me to the view and manage user screens while creating new user by clicking
+
+20
+00:01:38,200 --> 00:01:38,980
+the plus sign.
+
+21
+00:01:40,330 --> 00:01:44,680
+Then I'll call this user SFTP with no description.
+
+22
+00:01:44,860 --> 00:01:50,010
+It's an active user, no expiration date, and I'll give it the password of password.
+
+23
+00:01:50,380 --> 00:01:55,450
+So just remember what you use for username and password here, and we're not quite done.
+
+24
+00:01:55,450 --> 00:01:59,350
+We need to give this user some permissions, and I'm going to give the user right here in the permissions
+
+25
+00:01:59,350 --> 00:02:06,280
+section or select the asterisk the star and make sure that person has all privileges.
+
+26
+00:02:06,310 --> 00:02:08,919
+List, upload, download everything we need to do.
+
+27
+00:02:09,130 --> 00:02:09,550
+OK.
+
+28
+00:02:09,580 --> 00:02:11,250
+And I'm going to change the home dear.
+
+29
+00:02:11,260 --> 00:02:16,090
+By default, it would use the home folder that we created in the DB data FTP folder, but I'm going
+
+30
+00:02:16,090 --> 00:02:16,710
+to change that.
+
+31
+00:02:16,720 --> 00:02:20,860
+And if I go back to my Docker, why AML or Docker compose?
+
+32
+00:02:20,860 --> 00:02:21,910
+Why AML file?
+
+33
+00:02:22,930 --> 00:02:26,920
+This is the folder I'm going to use slash M.A. slash data.
+
+34
+00:02:27,310 --> 00:02:33,190
+Copy that you don't have to, but I'm going to and I'll paste that in here.
+
+35
+00:02:33,460 --> 00:02:33,850
+OK?
+
+36
+00:02:34,510 --> 00:02:40,720
+And then I school the very bottom and click Save, which is way down here in the lower right hand corner.
+
+37
+00:02:40,810 --> 00:02:41,230
+Submit.
+
+38
+00:02:42,550 --> 00:02:46,630
+So now I have a user I can connect to as well, and that user has no quota.
+
+39
+00:02:47,230 --> 00:02:52,750
+And again, just as was the case with Mineo, there's all kinds of permissions you can set here and
+
+40
+00:02:52,750 --> 00:02:53,710
+all kinds of things you can.
+
+41
+00:02:54,040 --> 00:02:55,690
+And there's actually a really good package.
+
+42
+00:02:55,690 --> 00:02:59,830
+If you ever need to set up an SFD server, you might want to use this one.
+
+43
+00:03:00,010 --> 00:03:05,590
+But in any case, we now have this configured, so it's time to move on to actually writing some code
+
+44
+00:03:05,590 --> 00:03:06,400
+for the first time.
+

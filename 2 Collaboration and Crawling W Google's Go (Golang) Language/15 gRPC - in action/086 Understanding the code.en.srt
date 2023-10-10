@@ -1,0 +1,343 @@
+1
+00:00:00,180 --> 00:00:05,190
+So just a couple of reflections that came up for me while you're writing your code.
+
+2
+00:00:05,190 --> 00:00:06,740
+The first one is Daniel's.
+
+3
+00:00:06,750 --> 00:00:10,470
+Ed does something special with not equals.
+
+4
+00:00:10,470 --> 00:00:15,360
+And so if you look at like line twenty two if error is not equal to nil you could see an equal sign
+
+5
+00:00:15,360 --> 00:00:16,830
+with a slash through it.
+
+6
+00:00:16,830 --> 00:00:23,850
+And so that is like whenever he has not equal just replaces the exclamation in the equal sign with a
+
+7
+00:00:23,850 --> 00:00:28,590
+different visual notation.
+
+8
+00:00:28,710 --> 00:00:35,590
+But he knows and I know that when I see that on his screen that means not equal.
+
+9
+00:00:35,670 --> 00:00:40,870
+But if you're watching this you like how do I get that symbol in my code.
+
+10
+00:00:40,920 --> 00:00:44,420
+It's good for you to know that that symbol is actually the not equal.
+
+11
+00:00:44,420 --> 00:00:47,240
+And so that which is the exclamation.
+
+12
+00:00:47,340 --> 00:00:51,460
+And then the equal silence you could see Daniel demonstrating there on his editor.
+
+13
+00:00:51,480 --> 00:00:53,810
+So it's the first thing I want to point out.
+
+14
+00:00:54,090 --> 00:00:56,870
+I don't think you have any of those other ones that we've come across right.
+
+15
+00:00:57,180 --> 00:00:57,830
+Yeah.
+
+16
+00:00:57,930 --> 00:01:01,540
+My my font also has like greater been equal and less.
+
+17
+00:01:01,570 --> 00:01:03,330
+You know which is a great around for you.
+
+18
+00:01:03,740 --> 00:01:03,920
+Yeah.
+
+19
+00:01:03,930 --> 00:01:04,240
+All right.
+
+20
+00:01:04,320 --> 00:01:10,410
+So just to know if you're seeing that and you can go google that if you want to try to figure out how
+
+21
+00:01:10,410 --> 00:01:13,560
+to set that up and sublime or something else.
+
+22
+00:01:13,560 --> 00:01:18,600
+And then the next thing which was an interesting point for me was the comment that you made that an
+
+23
+00:01:18,660 --> 00:01:22,320
+empty strike takes no memory.
+
+24
+00:01:22,320 --> 00:01:24,120
+Tell us a little bit about that.
+
+25
+00:01:24,180 --> 00:01:25,400
+That's just the design of go.
+
+26
+00:01:25,410 --> 00:01:31,560
+But you have any other thoughts or insight into just a struct is just a struct it takes up as much memory
+
+27
+00:01:31,560 --> 00:01:32,860
+as all its fields.
+
+28
+00:01:33,150 --> 00:01:37,680
+So an empty struct has no fields and no fields means no memory.
+
+29
+00:01:37,710 --> 00:01:46,860
+So this is so just overall it doesn't really matter in the long run but just if you do have if you need
+
+30
+00:01:46,890 --> 00:01:53,370
+a type just to the point to interface and you don't really have any anything else that you need that
+
+31
+00:01:53,370 --> 00:02:00,000
+type forward you're just doing it to input the interface empty struct is in theory at least more efficient
+
+32
+00:02:00,060 --> 00:02:01,950
+than any other underlying type.
+
+33
+00:02:01,950 --> 00:02:07,640
+So if I created a type echo server with the underlying type and so type echo server int right.
+
+34
+00:02:07,650 --> 00:02:16,800
+And then later down below online twenty eight I create a server as equal to an echo server.
+
+35
+00:02:17,100 --> 00:02:19,220
+And yeah.
+
+36
+00:02:19,230 --> 00:02:22,200
+And so there that's actually going to take memory right.
+
+37
+00:02:22,260 --> 00:02:23,530
+Yeah it's going to close now.
+
+38
+00:02:23,560 --> 00:02:27,610
+I mean it takes that service storing the value 0.
+
+39
+00:02:27,900 --> 00:02:38,350
+But if it's just echo server struct it that's not taking any memory or less memory because when I initialize.
+
+40
+00:02:38,520 --> 00:02:44,670
+So if I did line twenty eight there about the curly braces or just say serve as colon equal to pointer
+
+41
+00:02:44,670 --> 00:02:48,070
+to an echo server that doesn't work.
+
+42
+00:02:48,080 --> 00:02:55,100
+But I could do var serve pointer echo server and that would declare Savi we type that in.
+
+43
+00:02:55,160 --> 00:03:01,070
+Can you type that in var serve and pointer to an echo server.
+
+44
+00:03:01,080 --> 00:03:01,510
+All right.
+
+45
+00:03:02,080 --> 00:03:05,440
+And and then that is very similar.
+
+46
+00:03:05,630 --> 00:03:12,170
+And that declares it that the variable s Savi is of type pointer to an echo server.
+
+47
+00:03:12,170 --> 00:03:19,590
+But I haven't allocated any memory yet is that so it is declared the memory for S or V which is a pointer.
+
+48
+00:03:19,580 --> 00:03:20,090
+Yeah so.
+
+49
+00:03:20,250 --> 00:03:24,000
+So technically matter of memory for one pointer but that point to no.
+
+50
+00:03:24,020 --> 00:03:31,490
+Okay so this is same thing except the pointer is not normal but it's pointing to no memory anyway because
+
+51
+00:03:31,520 --> 00:03:36,350
+the underlying type takes no memory or what it's pointing to takes.
+
+52
+00:03:36,530 --> 00:03:42,980
+So if you go ahead I think this would work as it is because we're not actually using e here.
+
+53
+00:03:42,980 --> 00:03:52,640
+So the fact that he is no it would actually run still but it's not really a big deal or anything.
+
+54
+00:03:53,180 --> 00:03:53,350
+Yeah.
+
+55
+00:03:53,360 --> 00:03:58,010
+No I'm just exploring this concept of memory allocation and when does memory get allocated.
+
+56
+00:03:58,010 --> 00:03:59,520
+Not initializing.
+
+57
+00:03:59,810 --> 00:04:06,920
+And then you know having the curly braces at the end there actually initialize Is that right.
+
+58
+00:04:06,920 --> 00:04:10,740
+So you have memory allocated at that point.
+
+59
+00:04:10,780 --> 00:04:16,470
+So this also allocates the memory but it sets to zero value which for a pointer is null.
+
+60
+00:04:16,480 --> 00:04:17,240
+Okay.
+
+61
+00:04:17,350 --> 00:04:19,330
+Or or nil.
+
+62
+00:04:19,340 --> 00:04:24,270
+All right not totally clear on that you have anything more you want to say about it.
+
+63
+00:04:24,290 --> 00:04:26,360
+That's feels like a little bit of a bigger topic.
+
+64
+00:04:26,420 --> 00:04:27,340
+Yeah.
+
+65
+00:04:27,530 --> 00:04:34,160
+Maybe not drop into it right now and then the last thing that kind of stood out to me was everything
+
+66
+00:04:34,160 --> 00:04:36,100
+was making sense up to line 26.
+
+67
+00:04:36,100 --> 00:04:44,540
+So a line 21 you do TCB not listen and then line twenty six you create a new GOP server and then line
+
+68
+00:04:44,560 --> 00:04:45,520
+twenty eight.
+
+69
+00:04:45,590 --> 00:04:50,090
+It's like well you have this method that needs to be implemented.
+
+70
+00:04:50,120 --> 00:04:52,770
+How did you know to connect that method.
+
+71
+00:04:52,850 --> 00:04:57,410
+You know the echo method with the server that you have to tell the server about that.
+
+72
+00:04:57,410 --> 00:05:01,050
+That was looking in the generated code you knew you had to connect to those.
+
+73
+00:05:01,070 --> 00:05:01,600
+Yes.
+
+74
+00:05:01,670 --> 00:05:02,080
+Yes.
+
+75
+00:05:02,080 --> 00:05:09,470
+They either generate code has that register which kind of almost matches having to setup a mucks for
+
+76
+00:05:09,470 --> 00:05:10,130
+HDP.
+
+77
+00:05:10,130 --> 00:05:15,920
+You've got to tell them you had to use handle func to tell your server where your end points are and
+
+78
+00:05:15,920 --> 00:05:20,840
+then in the gypsy docs tutorials for a go.
+
+79
+00:05:20,840 --> 00:05:28,680
+There is an example for starting a server which includes that kind of thing to all right good.
+
+80
+00:05:28,690 --> 00:05:39,310
+So that's the the work procedure you going twenty eight create a variable value of type pointer to an
+
+81
+00:05:39,310 --> 00:05:47,710
+echo server you register that so that your server your GMP server now is aware of that value with that
+
+82
+00:05:47,740 --> 00:05:50,320
+echo method and it can use it.
+
+83
+00:05:50,320 --> 00:05:55,910
+And and then you serve and it's ready to serve on that listener.
+
+84
+00:05:56,290 --> 00:05:56,920
+Cool.
+
+85
+00:05:56,920 --> 00:05:57,220
+Great.
+
+86
+00:05:57,220 --> 00:06:01,360
+Those are my reflections and we got more for you coming in the next videos.

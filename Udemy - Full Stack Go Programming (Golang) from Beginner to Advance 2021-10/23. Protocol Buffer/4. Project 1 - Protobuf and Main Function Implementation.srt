@@ -1,0 +1,371 @@
+1
+00:00:16,560 --> 00:00:20,850
+Hello and welcome to the Go programming language course.
+
+2
+00:00:25,880 --> 00:00:35,600
+Implementation of client and server project by protocol buffer in this example, we want to create a
+
+3
+00:00:35,600 --> 00:00:41,420
+program that establishes communication between a client and a server to the port call buffer.
+
+4
+00:00:41,840 --> 00:00:47,780
+Therefore, our program has to pass a client port and a server part.
+
+5
+00:00:48,410 --> 00:00:55,040
+The client is supposed to send the information to the server in a serialized manner, and the server
+
+6
+00:00:55,040 --> 00:00:59,270
+will receive the data, then the serialized and display it.
+
+7
+00:01:00,520 --> 00:01:06,700
+Now it's time to go to this school program to create our project, client and server.
+
+8
+00:01:08,220 --> 00:01:13,770
+First, go to Explorer and create a project folder like named information.
+
+9
+00:01:18,010 --> 00:01:20,820
+And for a nation.
+
+10
+00:01:23,810 --> 00:01:26,960
+And create a folder inside it named Port Harcourt
+
+11
+00:01:30,410 --> 00:01:37,550
+Portal tool and create the fine con person with the Port Extension inside it.
+
+12
+00:01:44,180 --> 00:01:44,600
+Correct.
+
+13
+00:01:47,870 --> 00:01:53,870
+First, we define the syntax inside it and said it's value equal to proto three, which represent the
+
+14
+00:01:53,870 --> 00:01:55,880
+political bottom version three.
+
+15
+00:02:00,620 --> 00:02:02,350
+Three to three.
+
+16
+00:02:05,240 --> 00:02:09,680
+And now define option and set go on the score package value.
+
+17
+00:02:11,640 --> 00:02:20,430
+Option go on the Restore package is less cruel to cool.
+
+18
+00:02:23,600 --> 00:02:29,270
+They go under a school package option, defines the import parts of the package will be contain.
+
+19
+00:02:29,270 --> 00:02:36,530
+All the generated code for the gold package name will be the last pass component of the import pass.
+
+20
+00:02:37,660 --> 00:02:48,190
+Now, define political power, for example, you want to name me person message person and define two
+
+21
+00:02:48,190 --> 00:02:54,960
+variables first I.D. by end types, they can name by this string type, enter age by the end times.
+
+22
+00:02:54,960 --> 00:03:01,120
+So urine and terry to I.D. equals one.
+
+23
+00:03:03,390 --> 00:03:15,340
+A string name equals two and end three to four h equals three.
+
+24
+00:03:18,670 --> 00:03:25,570
+In order to be able to use our political class, we must first compile it when we compounded the fine
+
+25
+00:03:25,570 --> 00:03:32,050
+with the extension, the TV that was created inside the project, which is the equivalent of the political
+
+26
+00:03:32,050 --> 00:03:38,530
+party and go language and be relaxed the confidence in the political benefit through the creative distracted
+
+27
+00:03:38,530 --> 00:03:38,920
+by.
+
+28
+00:03:39,370 --> 00:03:45,070
+Now it's time to compile our political bomb for failing to create the equivalent goal and fight.
+
+29
+00:03:45,070 --> 00:03:58,350
+So go to the project path and try comp. Come and see the information and run the comment through to
+
+30
+00:03:58,630 --> 00:04:05,210
+take the test school on school out.
+
+31
+00:04:05,440 --> 00:04:12,760
+He calls for this nation we support thought that indicate current path and for source path.
+
+32
+00:04:12,760 --> 00:04:22,420
+Go to the political package and call person the product or political package and person pull it.
+
+33
+00:04:23,590 --> 00:04:24,850
+Now, Ron, the command.
+
+34
+00:04:26,150 --> 00:04:34,250
+Now we can see that the final con person thought PBE that go extension was created in the Project Pass,
+
+35
+00:04:34,460 --> 00:04:41,570
+which we can use to exchange our data, it's time go to the root of project and create the main fine.
+
+36
+00:04:41,810 --> 00:04:46,220
+So the package name and defined main function to use this protocol buffer.
+
+37
+00:04:49,190 --> 00:04:50,840
+May God go
+
+38
+00:04:53,360 --> 00:05:04,790
+package name and create main function from me in this case, first defined to function for communication
+
+39
+00:05:04,790 --> 00:05:06,380
+between client and server.
+
+40
+00:05:06,740 --> 00:05:10,070
+First, create a function for running client that name.
+
+41
+00:05:10,070 --> 00:05:10,880
+It's wrong.
+
+42
+00:05:10,940 --> 00:05:17,780
+Client saw your right phone wrong client.
+
+43
+00:05:22,020 --> 00:05:31,850
+And create another function for running server that named it from Server Farm from six.
+
+44
+00:05:36,140 --> 00:05:43,820
+We can send parameters to the program and time by the council like flag package has the ability to read
+
+45
+00:05:43,820 --> 00:05:48,530
+and receive be sent parameters and provides then to the program.
+
+46
+00:05:48,770 --> 00:05:51,320
+So in this part, we use the flag package.
+
+47
+00:05:51,860 --> 00:05:56,120
+Gore provides a flag package supporting base and command line flag passing.
+
+48
+00:05:56,420 --> 00:06:00,320
+We will use this package to implement our Example Command Line program.
+
+49
+00:06:01,250 --> 00:06:09,570
+The command line arguments are available in the that are to slice the flag package allows for more flexible
+
+50
+00:06:09,570 --> 00:06:10,130
+loved them.
+
+51
+00:06:10,160 --> 00:06:14,210
+In addition, there are third party packages with additional features.
+
+52
+00:06:15,140 --> 00:06:20,570
+The flag package contains multiple functions for passing different black types.
+
+53
+00:06:20,840 --> 00:06:23,750
+There are two alternatives for each flag type.
+
+54
+00:06:24,080 --> 00:06:29,990
+The difference is that the first one returns a pointer to a variable and the other one accepts a pointer
+
+55
+00:06:29,990 --> 00:06:30,890
+to the variable.
+
+56
+00:06:32,250 --> 00:06:40,740
+One is S3 and the other is extreme valor, which flagged the odds this weekend pass non flag arguments.
+
+57
+00:06:40,980 --> 00:06:43,440
+These must follow the flag arguments.
+
+58
+00:06:44,490 --> 00:06:47,490
+Using the flag package involves three steps.
+
+59
+00:06:47,820 --> 00:06:53,190
+First, define variables to capture flag values, then define the flags.
+
+60
+00:06:53,250 --> 00:07:00,570
+Your go application will use and finally pass the flag provided to the applications open execution.
+
+61
+00:07:01,200 --> 00:07:08,790
+Most of the functions within the flag package are concerned with defining flag and binding them to variables
+
+62
+00:07:09,030 --> 00:07:10,320
+that you have defined.
+
+63
+00:07:11,100 --> 00:07:13,560
+Now let's go to create the flag parameter.
+
+64
+00:07:13,800 --> 00:07:18,210
+First, define a variable and cunning if string function from a black package.
+
+65
+00:07:18,780 --> 00:07:25,800
+This thing function defines the district flag with a specified name, different value and use string.
+
+66
+00:07:26,040 --> 00:07:30,990
+The return value is the address of async variable that stored the value of the flag.
+
+67
+00:07:31,380 --> 00:07:40,410
+So first, define the variable light option call in equals cutting string function from the flag package.
+
+68
+00:07:40,620 --> 00:07:43,320
+Flag dart s string.
+
+69
+00:07:48,080 --> 00:07:51,620
+Set a name for the flag for the exemption, Adam.
+
+70
+00:07:55,080 --> 00:07:58,710
+Come on and set the value for the black, for the example.
+
+71
+00:07:58,800 --> 00:07:59,310
+Seven.
+
+72
+00:08:02,590 --> 00:08:10,030
+Come and sit a description of the flag for the example, if communication.
+
+73
+00:08:14,650 --> 00:08:19,720
+Between server and client.
+
+74
+00:08:21,050 --> 00:08:26,930
+So the register is in flag with a sing function now calling pass function from flag baggage.
+
+75
+00:08:27,290 --> 00:08:28,760
+Go to the next line.
+
+76
+00:08:29,180 --> 00:08:32,090
+Flag guard pass.
+
+77
+00:08:34,890 --> 00:08:42,900
+Pass function passes the command line, flags from Orthodox must be called after all flowers are defined
+
+78
+00:08:42,900 --> 00:08:45,480
+and before flags are accessed by the program.
+
+79
+00:08:46,290 --> 00:08:53,400
+Now, by inserting a search, we analyze the value of receive flags and decide what the program will
+
+80
+00:08:53,400 --> 00:08:53,760
+do.
+
+81
+00:08:54,060 --> 00:08:58,650
+For example, one function to car saw the light switch
+
+82
+00:09:01,230 --> 00:09:02,190
+on the option.
+
+83
+00:09:07,000 --> 00:09:13,210
+Now define chases for the switches between receive like value in this is that they want to call the
+
+84
+00:09:13,210 --> 00:09:19,710
+client function if the received value is client and con server function, if the received value said
+
+85
+00:09:19,720 --> 00:09:21,550
+a civil right case.
+
+86
+00:09:25,300 --> 00:09:26,140
+Client.
+
+87
+00:09:30,310 --> 00:09:34,720
+Calling Ron Klein function if case his client, Ron Klein.
+
+88
+00:09:39,160 --> 00:09:48,070
+Case server and calling center function if case is server.
+
+89
+00:09:49,500 --> 00:09:51,240
+From Sarah.
+
+90
+00:09:54,830 --> 00:10:01,490
+Now we could define the flag and switches between return values in order not to prolong the time of
+
+91
+00:10:01,490 --> 00:10:02,120
+decision.
+
+92
+00:10:02,270 --> 00:10:06,470
+We will finish it and we will continue the content in the next session.
+
+93
+00:10:06,680 --> 00:10:07,250
+Goodbye.

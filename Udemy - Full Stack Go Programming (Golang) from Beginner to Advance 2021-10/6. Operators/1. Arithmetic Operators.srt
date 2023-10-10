@@ -1,0 +1,447 @@
+1
+00:00:13,090 --> 00:00:17,920
+Hello and welcome to the golden programming language course in this session.
+
+2
+00:00:17,950 --> 00:00:20,560
+We want to talk about operators concept.
+
+3
+00:00:26,220 --> 00:00:34,890
+Go Lang, operators and operator is a symbol that tells the compiler to perform certain actions, does
+
+4
+00:00:35,040 --> 00:00:40,530
+the functionality of the gold language is incomplete without the use of operators?
+
+5
+00:00:41,100 --> 00:00:50,100
+Operators allow us to perform different kinds of operations on options in go language.
+
+6
+00:00:50,490 --> 00:01:01,080
+Operators can be categorized based upon their different functionality or its metric operators, assignment
+
+7
+00:01:01,080 --> 00:01:07,020
+operators, relational operators, logical operators.
+
+8
+00:01:08,210 --> 00:01:15,350
+And Bitwise operators, now we are going to talk about operators separated.
+
+9
+00:01:21,100 --> 00:01:28,570
+Artists, network operators, the artists, music operators are used to perform common arithmetic on
+
+10
+00:01:28,570 --> 00:01:37,120
+operations such as addition, subtraction, multiplication and etc. following table shows, all the
+
+11
+00:01:37,120 --> 00:01:47,500
+arithmetic operators supported by Go Language Addition adds to operations subtraction subtracts second
+
+12
+00:01:47,500 --> 00:01:51,700
+operations from the first multiplication multiply.
+
+13
+00:01:51,730 --> 00:01:57,700
+Both operations division divides the numerator by the denominator.
+
+14
+00:01:58,330 --> 00:02:06,310
+Modulus gives the remainder after an integer division increment, it increases the integer value one
+
+15
+00:02:06,310 --> 00:02:08,620
+by one and decrement.
+
+16
+00:02:08,860 --> 00:02:12,250
+It decreases the integer value one by one.
+
+17
+00:02:12,850 --> 00:02:17,830
+Now let's go to your school to get on to display the use of arithmetic operators.
+
+18
+00:02:19,420 --> 00:02:31,450
+First, go to the Project Explorer and define a folder named like operators and create a fine inside
+
+19
+00:02:31,450 --> 00:02:33,550
+it like name.
+
+20
+00:02:33,940 --> 00:02:42,880
+That could set a package name like Package Main and define the main function.
+
+21
+00:02:43,060 --> 00:02:55,480
+Following may first be defined to variable, such as a column equals 50 and bee colony equals 30.
+
+22
+00:02:57,430 --> 00:03:05,500
+We want to give an example of an addition, so define the variable life result and poor sum of two area,
+
+23
+00:03:05,500 --> 00:03:08,050
+both A and B into it.
+
+24
+00:03:08,470 --> 00:03:10,660
+So define a variable like resolved.
+
+25
+00:03:11,830 --> 00:03:25,990
+One column equals a plus b addition operator adds two operands in this case addition A and B now write
+
+26
+00:03:25,990 --> 00:03:28,420
+the following code to display an output.
+
+27
+00:03:28,450 --> 00:03:30,130
+So we write it if.
+
+28
+00:03:32,780 --> 00:03:33,680
+Edition
+
+29
+00:03:35,870 --> 00:03:56,600
+results of a plus B equals per cent D and sit back air and put resolve to reform at the court, save
+
+30
+00:03:56,600 --> 00:04:04,070
+the project and execute the program, go to a terminal first, go to a project folder, see the operator's
+
+31
+00:04:06,310 --> 00:04:10,520
+Clearstream and run the program by the comment go round.
+
+32
+00:04:10,550 --> 00:04:15,110
+Does this mean that go now?
+
+33
+00:04:15,110 --> 00:04:21,090
+We can see the output addition result of a plus B equals eight.
+
+34
+00:04:22,280 --> 00:04:30,290
+The sum of two values A and B was added to the result one variable and its value is equal to a T and
+
+35
+00:04:30,290 --> 00:04:36,800
+they could use from addition operant and other GS subtraction.
+
+36
+00:04:37,700 --> 00:04:45,500
+Now we want to give an example of a subtraction, so define a variable like resolve to insult like the
+
+37
+00:04:45,500 --> 00:04:48,320
+two values A and B into it.
+
+38
+00:04:48,590 --> 00:04:51,140
+So three years the last court.
+
+39
+00:04:53,390 --> 00:05:06,470
+So define the value of a light resolved to call them equals a minus B cell transaction operator or subtracts
+
+40
+00:05:06,470 --> 00:05:09,050
+second print from the first or print.
+
+41
+00:05:09,350 --> 00:05:15,290
+In this case, subtract A and B now write funny and call to display an output.
+
+42
+00:05:15,290 --> 00:05:16,760
+So we write F f.
+
+43
+00:05:20,410 --> 00:05:41,620
+Some traction result of a minus B equals person B and C, it resolved to reformat the code, save the
+
+44
+00:05:41,620 --> 00:05:50,890
+project and execute the program first clear screen and run the command to run dot spec as this may not
+
+45
+00:05:50,890 --> 00:05:51,190
+go.
+
+46
+00:05:53,100 --> 00:05:59,430
+Now we can see the outward subtraction, a result of a minus B equals 20.
+
+47
+00:05:59,760 --> 00:06:06,900
+Subtract the two values A and B into the horizontal variable and its value is equal to 20.
+
+48
+00:06:07,320 --> 00:06:13,380
+And we could use from subtraction operate another trace multiplication.
+
+49
+00:06:14,130 --> 00:06:16,950
+Now we want to give an example of a multiplication.
+
+50
+00:06:17,880 --> 00:06:21,230
+So define a variable like of three and multiplication.
+
+51
+00:06:21,300 --> 00:06:24,480
+The two one is A and B into it.
+
+52
+00:06:26,120 --> 00:06:38,180
+So two years the last quote defined a variable like result, three column equals a multiplication,
+
+53
+00:06:38,630 --> 00:06:48,440
+b multiplication operate or multiplication, two options in this case, multiplication A and B now write
+
+54
+00:06:48,440 --> 00:06:51,350
+following code to display an output at her.
+
+55
+00:06:52,780 --> 00:06:55,570
+Multi allegation.
+
+56
+00:06:57,430 --> 00:07:08,680
+Resolve of a multiple decades, B equals Person D, and is it resolved?
+
+57
+00:07:08,860 --> 00:07:09,370
+Three.
+
+58
+00:07:10,450 --> 00:07:13,980
+The format the court saved the project and execute the program.
+
+59
+00:07:16,950 --> 00:07:24,390
+Now we can see the output multiplication result of A and B equals 1500.
+
+60
+00:07:24,780 --> 00:07:29,070
+The product of two values A and B was poured into a result three.
+
+61
+00:07:29,280 --> 00:07:33,600
+And its value is equal to 1500.
+
+62
+00:07:33,960 --> 00:07:40,740
+And we could use from multiplication, operate another case division.
+
+63
+00:07:41,610 --> 00:07:47,360
+Now you want to give an example of a division first year the last.
+
+64
+00:07:52,140 --> 00:07:59,220
+Now define a variable like result for and divide the values A and B by each other and put the result
+
+65
+00:07:59,220 --> 00:08:00,180
+into it.
+
+66
+00:08:00,620 --> 00:08:08,820
+So the right result for column equals a Division B go to the next line.
+
+67
+00:08:09,510 --> 00:08:12,530
+Division D y is the numerator by the denominator.
+
+68
+00:08:12,540 --> 00:08:17,700
+In this case, Division A and B now write following code to display the output.
+
+69
+00:08:17,700 --> 00:08:32,100
+So we write that f the division resolved o a and B equals percent d.
+
+70
+00:08:32,610 --> 00:08:39,290
+And we said resolved for reform at the court, save the project and execute the program.
+
+71
+00:08:42,220 --> 00:08:48,190
+Now we can see the output division result A and B equals one.
+
+72
+00:08:49,570 --> 00:08:54,250
+The division of two values A and B was performed into resolve four.
+
+73
+00:08:54,580 --> 00:08:56,710
+And its value is equal to one.
+
+74
+00:08:56,980 --> 00:09:02,980
+And we could use from division print another, which is modulus.
+
+75
+00:09:04,000 --> 00:09:07,300
+Now we want to give an example of modulus.
+
+76
+00:09:08,330 --> 00:09:09,880
+First, clear, the last code
+
+77
+00:09:16,090 --> 00:09:24,010
+defined a variable like result fine and divide the values A and B by each other and put the result into
+
+78
+00:09:24,010 --> 00:09:24,340
+it.
+
+79
+00:09:25,300 --> 00:09:31,510
+For example, result five column equals a modulus.
+
+80
+00:09:31,900 --> 00:09:34,930
+B Go to the next line.
+
+81
+00:09:35,590 --> 00:09:42,790
+Modulus operands gives the reminder after an integer division civil rights following code to display
+
+82
+00:09:42,790 --> 00:09:47,590
+an output f f modulus
+
+83
+00:09:51,340 --> 00:10:10,300
+resolved of a person to person B equals person D and you said result func reformat the code, save the
+
+84
+00:10:10,300 --> 00:10:13,150
+project and execute the program.
+
+85
+00:10:15,910 --> 00:10:22,450
+Now we can see the output modulus result of A and B equals 20.
+
+86
+00:10:23,350 --> 00:10:31,330
+The number A was divided by the number B and the reminder was added to the reason five variable and
+
+87
+00:10:31,330 --> 00:10:37,540
+we could use from Division OFFRANT and other case increments.
+
+88
+00:10:38,290 --> 00:10:41,650
+Now we want to give an example of an increment.
+
+89
+00:10:41,800 --> 00:10:43,930
+So first year the last code.
+
+90
+00:10:47,470 --> 00:10:52,090
+First, define a variable like a calling equals 20
+
+91
+00:10:54,640 --> 00:11:02,950
+and increment the value of a variable bought before 48, we want to display the variable a FP.
+
+92
+00:11:04,300 --> 00:11:09,820
+To be four in climate
+
+93
+00:11:12,790 --> 00:11:22,040
+display and increment a variable increment or plans increases the integer value one by one.
+
+94
+00:11:22,060 --> 00:11:35,920
+So you write a plus plus and go to the next line and display a again FP after increments and you display
+
+95
+00:11:36,340 --> 00:11:41,650
+a deformity called Save the Project and execute the program.
+
+96
+00:11:44,570 --> 00:11:53,450
+Now we can see the output before Increment A is 20 and after Increment A is twenty one, so we could
+
+97
+00:11:53,450 --> 00:11:55,550
+use for an increment offrent.
+
+98
+00:11:56,900 --> 00:11:58,980
+Another case decrements.
+
+99
+00:11:59,960 --> 00:12:04,790
+Now we want to give an example of decree meant first to your last quote,
+
+100
+00:12:08,900 --> 00:12:15,680
+define a variable like a and initialize it by 20 and display before the agreement it.
+
+101
+00:12:16,250 --> 00:12:24,260
+And now we want to decrement to a variable decrement or print decreases the integer value one by one.
+
+102
+00:12:24,560 --> 00:12:31,520
+So we write a minus minus and go to the next line and display a variable again.
+
+103
+00:12:31,550 --> 00:12:32,300
+If the.
+
+104
+00:12:34,560 --> 00:12:35,220
+After.
+
+105
+00:12:38,080 --> 00:12:39,100
+The agreement.
+
+106
+00:12:41,910 --> 00:12:48,870
+And it is really a here we change it to be for the agreement.
+
+107
+00:12:52,280 --> 00:12:56,030
+Reformat the code, save the project and execute the program.
+
+108
+00:12:58,370 --> 00:13:05,720
+Now we can see the output before the climb in the value variable A is 20 and after decrement, the value
+
+109
+00:13:05,720 --> 00:13:07,550
+of a variable is 90.
+
+110
+00:13:08,090 --> 00:13:14,030
+And we could use from decrement operand in order not to prolong the time of decision.
+
+111
+00:13:14,030 --> 00:13:17,550
+We will finish it and we will continue the content in the next session.
+
+112
+00:13:17,570 --> 00:13:18,050
+Goodbye.

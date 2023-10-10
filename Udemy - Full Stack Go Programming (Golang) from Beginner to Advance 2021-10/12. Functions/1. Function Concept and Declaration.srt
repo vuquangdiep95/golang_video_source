@@ -1,0 +1,187 @@
+1
+00:00:14,450 --> 00:00:19,290
+Hello and welcome to the goal and programming language course in this session.
+
+2
+00:00:19,310 --> 00:00:22,310
+We want to talk about the fonctions concept.
+
+3
+00:00:26,180 --> 00:00:28,040
+Functions and go land.
+
+4
+00:00:30,110 --> 00:00:38,450
+A function is a group of statements that exist within the program for the purpose of performing a specific
+
+5
+00:00:38,450 --> 00:00:46,340
+task and return or reason to the caller, a function can also perform some specific tasks without returning
+
+6
+00:00:46,340 --> 00:00:46,900
+anything.
+
+7
+00:00:48,200 --> 00:00:57,530
+Every GO program has at least one function, which is mean you can divide your code into separate functions.
+
+8
+00:00:58,040 --> 00:01:02,390
+How you divide your code among different functions is up to you.
+
+9
+00:01:02,840 --> 00:01:09,560
+But logically, the division should be such that each function performs a specific task.
+
+10
+00:01:10,970 --> 00:01:14,690
+Functions can make your application modular.
+
+11
+00:01:15,380 --> 00:01:24,110
+Go Lang supports functions that goes beyond our library, provides no built in functions that your program
+
+12
+00:01:24,110 --> 00:01:24,950
+can con.
+
+13
+00:01:25,340 --> 00:01:32,420
+For example, the function LEN takes arguements of various types and returns the length of the time.
+
+14
+00:01:36,790 --> 00:01:38,380
+Function declaration.
+
+15
+00:01:39,900 --> 00:01:46,800
+A declaration begins with the foreign keyboard, followed by the name you want the function to have
+
+16
+00:01:47,100 --> 00:01:52,050
+it paid off parenthesis and then a block containing the functions code.
+
+17
+00:01:54,050 --> 00:01:59,480
+The declaration of the functions contains font function name.
+
+18
+00:02:01,080 --> 00:02:02,070
+Parameters.
+
+19
+00:02:04,200 --> 00:02:05,310
+Return tide.
+
+20
+00:02:06,670 --> 00:02:07,810
+Function by the.
+
+21
+00:02:10,550 --> 00:02:17,420
+Found that it is sourced the declaration of the function function name.
+
+22
+00:02:18,650 --> 00:02:25,130
+It's the actual name of the function, the function name and the time list released together constitute
+
+23
+00:02:25,130 --> 00:02:26,510
+the function signature.
+
+24
+00:02:28,300 --> 00:02:34,930
+Parameters, a parameter is like a placeholder, then the function is invoked.
+
+25
+00:02:35,140 --> 00:02:37,480
+You pass a value to the parameter.
+
+26
+00:02:37,810 --> 00:02:41,680
+This value is referred to as actual parameter or argument.
+
+27
+00:02:42,370 --> 00:02:48,490
+The parameter least refers to the time, order and number of the parameters of the function.
+
+28
+00:02:49,300 --> 00:02:51,070
+Parameters are optional.
+
+29
+00:02:51,370 --> 00:02:54,550
+That is, the function may contain no parameters.
+
+30
+00:02:54,790 --> 00:03:02,920
+Return type If function may return a list of values, the return times is the least of data times of
+
+31
+00:03:02,920 --> 00:03:05,020
+the values the function returns.
+
+32
+00:03:05,560 --> 00:03:12,280
+Some functions perform the desired operations without returning a value function body.
+
+33
+00:03:12,850 --> 00:03:17,850
+It contains a collection of statements that define what the function does.
+
+34
+00:03:22,820 --> 00:03:24,530
+Points to remember.
+
+35
+00:03:25,870 --> 00:03:32,440
+And they must begin with the letter and can have any number of additional letters and numbers.
+
+36
+00:03:33,630 --> 00:03:36,510
+A functioning cannot start with a no.
+
+37
+00:03:37,810 --> 00:03:46,180
+A function named cannot contain spaces if the functions with the names that are solved with an uppercase
+
+38
+00:03:46,180 --> 00:03:49,150
+letter will be exported to other packages.
+
+39
+00:03:49,570 --> 00:03:56,020
+If the function name is sourced with a lowercase letter, it won't be exported to other packages, but
+
+40
+00:03:56,050 --> 00:03:59,320
+you can call this function within the same package.
+
+41
+00:04:00,340 --> 00:04:08,260
+If a name consists of multiple wars, each war after the first should be capitalized like this display
+
+42
+00:04:08,260 --> 00:04:11,770
+name and print entries, and et cetera.
+
+43
+00:04:13,090 --> 00:04:15,700
+Function names are case sensitive.
+
+44
+00:04:16,120 --> 00:04:25,360
+For example, print pained by the first uppercase and print by the old letters of her case are three
+
+45
+00:04:25,360 --> 00:04:30,610
+different variables in order not to prolong the time of decision.
+
+46
+00:04:30,760 --> 00:04:34,870
+You will finish sheet and we will continue the content in the next session.
+
+47
+00:04:35,200 --> 00:04:35,800
+Goodbye.

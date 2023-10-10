@@ -1,0 +1,1083 @@
+1
+00:00:00,850 --> 00:00:06,760
+So let's get started with Sessions, and obviously we want to manage sessions as much as possible,
+
+2
+00:00:06,760 --> 00:00:12,580
+at least the creation of them and so forth in the Celebrity House package and not in the My App package,
+
+3
+00:00:12,910 --> 00:00:19,780
+the whole point here is to build celebrities such that someone can just say celebrities knew with some
+
+4
+00:00:19,780 --> 00:00:23,810
+command line utility, give their project a name and they're ready to start going.
+
+5
+00:00:23,830 --> 00:00:27,060
+They'll have access to the sessions to database, to all that sort of thing.
+
+6
+00:00:27,070 --> 00:00:28,840
+So of course, we're going to put it in celebrities.
+
+7
+00:00:29,710 --> 00:00:35,050
+Now there are lots of different ways to manage sessions and go, but I'm going to use and I go to my
+
+8
+00:00:35,050 --> 00:00:35,740
+web browser.
+
+9
+00:00:36,520 --> 00:00:40,740
+I'm going to use this package, which I've used in a couple of my courses, and I like it a lot.
+
+10
+00:00:40,810 --> 00:00:44,920
+It's Alex Edwards, SC SE session management for GO.
+
+11
+00:00:45,910 --> 00:00:49,540
+And if you scroll down, you can see that it's pretty easy to install it.
+
+12
+00:00:49,810 --> 00:00:55,360
+There's the command, so let's copy that and go back to celebrities, you know, in our visual studio
+
+13
+00:00:55,360 --> 00:00:55,720
+code.
+
+14
+00:00:57,850 --> 00:01:06,100
+Open terminal and paste that and go get GitHub dot com slash Alex Edwards slash x version two.
+
+15
+00:01:07,180 --> 00:01:11,560
+And if there's a later version, I encourage you to stick with version two for this course, and I've
+
+16
+00:01:11,560 --> 00:01:15,160
+created after the fact, it'll just make things much easier for you.
+
+17
+00:01:16,120 --> 00:01:18,570
+And somehow the dollar sign in there.
+
+18
+00:01:18,580 --> 00:01:19,930
+So let's get rid of that dollar sign.
+
+19
+00:01:23,690 --> 00:01:24,320
+Try that again.
+
+20
+00:01:27,070 --> 00:01:27,610
+There it goes.
+
+21
+00:01:27,790 --> 00:01:30,490
+Now it's been added to my gold moth file, and I can do things with it.
+
+22
+00:01:30,730 --> 00:01:32,920
+And let's go back and look at the page for it again.
+
+23
+00:01:33,880 --> 00:01:37,050
+So basic use here we are, package main.
+
+24
+00:01:37,060 --> 00:01:38,290
+We import that.
+
+25
+00:01:38,290 --> 00:01:44,320
+We initialize the new session manager and we set some parameters on it like manage our session manager.
+
+26
+00:01:44,560 --> 00:01:46,270
+Lifetime equals 24 hours.
+
+27
+00:01:46,930 --> 00:01:48,120
+Well, that's pretty straightforward.
+
+28
+00:01:48,130 --> 00:01:50,200
+We can probably do that without much difficulty.
+
+29
+00:01:50,980 --> 00:01:58,600
+Let's open up celebrities don't go and scroll to the top and figure out where we're going to implement
+
+30
+00:01:58,600 --> 00:01:59,170
+sessions.
+
+31
+00:02:00,100 --> 00:02:06,430
+Well, to start with, we want our front end to have access to sessions without doing a lot of programming,
+
+32
+00:02:06,430 --> 00:02:10,360
+so we probably should add that type right here.
+
+33
+00:02:10,360 --> 00:02:11,060
+Insularity.
+
+34
+00:02:11,860 --> 00:02:20,410
+So I'll call the method or the field session, and it will be a type pointer to us dot session manager.
+
+35
+00:02:20,470 --> 00:02:22,590
+And hopefully you'll find it right there.
+
+36
+00:02:22,630 --> 00:02:24,380
+Let's make sure it imports version two.
+
+37
+00:02:24,400 --> 00:02:25,150
+It does.
+
+38
+00:02:25,390 --> 00:02:31,720
+OK, so now whenever we have this set up, people will have access to the session right from the celebrities
+
+39
+00:02:31,720 --> 00:02:32,890
+type, and that's perfect.
+
+40
+00:02:33,430 --> 00:02:39,550
+Now the other thing is, if we go back here and look again at this documentation session, manager has
+
+41
+00:02:39,550 --> 00:02:44,110
+this field lifetime, but it turns out it has a lot more fields, things you might actually want to
+
+42
+00:02:44,110 --> 00:02:44,680
+set up.
+
+43
+00:02:45,010 --> 00:02:49,720
+So I'm going to come back in here and I'm going to add something to my config type.
+
+44
+00:02:49,900 --> 00:02:57,160
+OK, so this is our application config, which is not exporting and it's not available outside of celebrities,
+
+45
+00:02:57,220 --> 00:03:00,850
+so you can't access it directly from the other application, my app.
+
+46
+00:03:01,840 --> 00:03:05,950
+But this is the sort of thing that's going to be useful for us in this hilarious package.
+
+47
+00:03:06,550 --> 00:03:12,130
+So first of all, I'll put in a type called cookie or a member called Cookie, and I'll call the type
+
+48
+00:03:12,790 --> 00:03:16,390
+cookie config, which doesn't exist yet, but we'll make it in event in a moment.
+
+49
+00:03:16,780 --> 00:03:18,040
+Cookie config.
+
+50
+00:03:18,250 --> 00:03:19,240
+So that'll throw an error.
+
+51
+00:03:19,310 --> 00:03:20,200
+That's fine for now.
+
+52
+00:03:20,980 --> 00:03:25,240
+And I'm also going to put in session type, which will be a string.
+
+53
+00:03:25,720 --> 00:03:28,210
+OK, now what is cookie config?
+
+54
+00:03:29,290 --> 00:03:30,430
+Well, let's go create it.
+
+55
+00:03:30,640 --> 00:03:33,130
+So I'll go over to type, start and go, and I'll put it in there.
+
+56
+00:03:36,130 --> 00:03:36,910
+So I'll type.
+
+57
+00:03:38,980 --> 00:03:39,610
+Try it again.
+
+58
+00:03:40,090 --> 00:03:43,870
+Type cookie config right there.
+
+59
+00:03:44,080 --> 00:03:46,690
+It will be a struct, and it's only going to have a very few members.
+
+60
+00:03:47,260 --> 00:03:50,050
+So it's going to have the name, what do I want to call my cookie?
+
+61
+00:03:50,080 --> 00:03:50,860
+And that'll be a string.
+
+62
+00:03:52,030 --> 00:03:53,350
+It will have lifetime.
+
+63
+00:03:54,720 --> 00:03:56,210
+And that also will be a string.
+
+64
+00:03:57,300 --> 00:04:02,880
+And does it persist between browser closes, for example, string?
+
+65
+00:04:04,260 --> 00:04:05,610
+And is it secure?
+
+66
+00:04:05,640 --> 00:04:08,970
+Are we going to insist that cookies be encrypted and that'll be a string?
+
+67
+00:04:09,150 --> 00:04:11,490
+And there are all strings for reason that you'll see momentarily.
+
+68
+00:04:12,150 --> 00:04:14,700
+And finally, what domain is the cookie associated with?
+
+69
+00:04:14,790 --> 00:04:16,050
+And that also will be a string.
+
+70
+00:04:16,350 --> 00:04:18,930
+OK, so I'll save this file format it.
+
+71
+00:04:19,260 --> 00:04:25,470
+And now if I go back to celerity go, the error goes away, says I'm not using these two, but we'll
+
+72
+00:04:25,470 --> 00:04:26,580
+be doing that very shortly.
+
+73
+00:04:27,120 --> 00:04:31,390
+And let's go down to the part where we begin populating the values in celebrities.
+
+74
+00:04:31,770 --> 00:04:35,100
+So, for example, this config right here?
+
+75
+00:04:35,490 --> 00:04:37,650
+Well, let's populate our cookie config.
+
+76
+00:04:37,890 --> 00:04:46,740
+OK, so let's add a cookie and that's a type cookie config, and we'll just populate the things we want
+
+77
+00:04:46,740 --> 00:04:47,130
+in there.
+
+78
+00:04:47,880 --> 00:04:51,210
+So net, well, we're going to get that from our dot on file.
+
+79
+00:04:51,300 --> 00:04:53,400
+That will be OS get on.
+
+80
+00:04:53,430 --> 00:04:59,790
+And if you look in the data on file in the My App application or project, you'll see that there's one
+
+81
+00:04:59,790 --> 00:05:06,930
+called cookie name, the cookie name.
+
+82
+00:05:06,930 --> 00:05:07,620
+That's one thing.
+
+83
+00:05:08,640 --> 00:05:12,290
+And we also want the lifetime and that comes from OS.
+
+84
+00:05:12,300 --> 00:05:17,580
+Don't get on cookie lifetime.
+
+85
+00:05:21,060 --> 00:05:23,190
+And we also have persist
+
+86
+00:05:26,940 --> 00:05:28,230
+and that comes from OS.
+
+87
+00:05:28,230 --> 00:05:31,260
+Don't get on cookie.
+
+88
+00:05:33,890 --> 00:05:34,790
+Persists
+
+89
+00:05:37,730 --> 00:05:38,600
+with an s at the end.
+
+90
+00:05:40,190 --> 00:05:43,370
+OK, so that reads that information into my configuration.
+
+91
+00:05:44,180 --> 00:05:51,680
+And after that, we may as well, since we're at it right now, put in session type, which we just
+
+92
+00:05:51,680 --> 00:05:55,030
+added to the config type and that will be OS.
+
+93
+00:05:55,040 --> 00:05:55,940
+Don't get on.
+
+94
+00:05:57,170 --> 00:06:00,170
+And we're looking for session underscore type.
+
+95
+00:06:02,240 --> 00:06:06,200
+OK, so now we have that information read into our config, and that's great.
+
+96
+00:06:06,710 --> 00:06:08,210
+So let's go down here.
+
+97
+00:06:08,750 --> 00:06:13,220
+So what we want to do next is right here is we want to somehow create a session.
+
+98
+00:06:15,710 --> 00:06:21,560
+And just like I put render in its own package, I'm also going to put a session in its own package within
+
+99
+00:06:21,560 --> 00:06:22,320
+celebrities.
+
+100
+00:06:22,340 --> 00:06:28,970
+So I'll go to my explorer and create a new folder at the root level of this little project called session.
+
+101
+00:06:31,310 --> 00:06:35,960
+And inside of that, we'll have a new file called Session Go.
+
+102
+00:06:37,670 --> 00:06:38,000
+OK.
+
+103
+00:06:38,690 --> 00:06:44,270
+So I'll give it a package declaration, which is obviously session, and I'll create a type in here
+
+104
+00:06:44,330 --> 00:06:45,400
+called session.
+
+105
+00:06:45,410 --> 00:06:48,350
+And it's exported because it is a capital letter is the first letter.
+
+106
+00:06:48,830 --> 00:06:59,930
+It's just a struct and it has a few fields cookie lifetime that will be a strict cookie persist
+
+107
+00:07:02,720 --> 00:07:03,710
+and that will be a string
+
+108
+00:07:06,500 --> 00:07:07,160
+cookie name.
+
+109
+00:07:08,120 --> 00:07:09,110
+And that will be a string.
+
+110
+00:07:12,120 --> 00:07:14,910
+Cookie Domain, and that will be a string.
+
+111
+00:07:17,890 --> 00:07:18,780
+Session type.
+
+112
+00:07:19,420 --> 00:07:24,250
+And that will be a string, and that's enough for right now, so let's save that, OK?
+
+113
+00:07:25,960 --> 00:07:31,300
+And now I'm going to make a function within this and exported function funk, and we'll have the pointer
+
+114
+00:07:31,300 --> 00:07:34,150
+to see pointer to session the session.
+
+115
+00:07:34,150 --> 00:07:40,390
+We just the type we just defined and I'll call this in it session and this will initialize our session.
+
+116
+00:07:40,570 --> 00:07:47,800
+It takes no parameters, but it returns a pointer to export session manager right there.
+
+117
+00:07:48,280 --> 00:07:48,640
+OK.
+
+118
+00:07:50,310 --> 00:07:51,130
+So let's make this.
+
+119
+00:07:51,510 --> 00:07:59,010
+We'll create two variables verb, persist and secure, both will be bullet and I better spell persister
+
+120
+00:08:00,750 --> 00:08:02,250
+persist that much better.
+
+121
+00:08:05,190 --> 00:08:06,720
+So now we make a few determinations.
+
+122
+00:08:06,750 --> 00:08:11,310
+Number one, how long should sessions last?
+
+123
+00:08:11,340 --> 00:08:16,170
+And of course, that's from the configuration, and we're going to pass that to the session type when
+
+124
+00:08:16,170 --> 00:08:17,520
+we initialize this package.
+
+125
+00:08:18,270 --> 00:08:22,680
+But we need that to be in the form of an integer and we're getting it as a string because we're reading
+
+126
+00:08:22,680 --> 00:08:26,430
+it from the dart on file and everything from the dart on file comes in as a string.
+
+127
+00:08:26,850 --> 00:08:30,010
+So let's create a variable called minutes and potentially an error.
+
+128
+00:08:31,320 --> 00:08:38,160
+And that's a sign the value of stricken from the from the standard library dart is too high and we're
+
+129
+00:08:38,160 --> 00:08:42,090
+going to use C Dot Cookie Lifetime right there.
+
+130
+00:08:43,270 --> 00:08:44,200
+Now we'll check for an error.
+
+131
+00:08:44,220 --> 00:08:48,330
+We're not returning an error, but if we do have an error, we'll just set minutes to something that
+
+132
+00:08:48,330 --> 00:08:48,920
+makes sense.
+
+133
+00:08:48,930 --> 00:08:55,170
+So if error is not equal to nil, then minutes equals sixty one hour.
+
+134
+00:08:55,540 --> 00:09:00,540
+OK, so now we have minutes and now should cookies persist?
+
+135
+00:09:01,380 --> 00:09:02,820
+And of course, that's pretty straightforward.
+
+136
+00:09:03,660 --> 00:09:09,060
+If strings dart to lower because I don't care how they type it in the dart on file and they convert
+
+137
+00:09:09,060 --> 00:09:13,620
+it to lower C dot cookie persist, which I see I spelled wrong.
+
+138
+00:09:13,620 --> 00:09:15,630
+I'm going to go fix that right now.
+
+139
+00:09:16,380 --> 00:09:17,040
+So that's under.
+
+140
+00:09:19,110 --> 00:09:31,170
+Persist, that's better persist if strings to lower seeded cookies persist is equal to true, they will
+
+141
+00:09:31,170 --> 00:09:31,380
+make.
+
+142
+00:09:33,280 --> 00:09:44,410
+Persist equal to truth else, persist equal to false, and I keep misspelling persist.
+
+143
+00:09:45,550 --> 00:09:46,030
+That's better.
+
+144
+00:09:46,270 --> 00:09:49,240
+So now we have persists into next.
+
+145
+00:09:51,120 --> 00:09:55,140
+Must cookies be secure?
+
+146
+00:09:56,010 --> 00:09:57,360
+And again, that's pretty straightforward.
+
+147
+00:09:57,960 --> 00:10:02,700
+If strings start to lower, see Dot.
+
+148
+00:10:04,450 --> 00:10:13,090
+Cookie Persiste equals to true, then we can just say secure equals true.
+
+149
+00:10:13,150 --> 00:10:14,140
+How does that make any sense?
+
+150
+00:10:14,590 --> 00:10:15,790
+Strings to lower?
+
+151
+00:10:16,120 --> 00:10:18,580
+We actually should have this as secure.
+
+152
+00:10:18,610 --> 00:10:25,630
+So let's add a title to this cookie secure and that will be a string.
+
+153
+00:10:26,680 --> 00:10:33,820
+OK, so this should actually be cookie secure here.
+
+154
+00:10:34,390 --> 00:10:35,660
+And where are we going to get that from?
+
+155
+00:10:35,680 --> 00:10:41,920
+Let's go back to our own file in our other project and look for the word secure.
+
+156
+00:10:42,940 --> 00:10:47,770
+Should we use a secure equals false and cookie secure?
+
+157
+00:10:47,800 --> 00:10:48,250
+That's better.
+
+158
+00:10:48,250 --> 00:10:49,710
+Cookie secure equals false.
+
+159
+00:10:49,720 --> 00:10:51,220
+So we do have a cookie secure.
+
+160
+00:10:51,670 --> 00:10:57,710
+And let's go back to our other project and see how we get cookie secure in there.
+
+161
+00:10:57,730 --> 00:11:03,100
+So back to celebrities and we have cookie lifetime persist.
+
+162
+00:11:04,300 --> 00:11:06,220
+Let's try secure thus better.
+
+163
+00:11:06,250 --> 00:11:07,630
+OST don't get on
+
+164
+00:11:10,450 --> 00:11:12,220
+cookie secure.
+
+165
+00:11:12,730 --> 00:11:13,090
+All right.
+
+166
+00:11:13,130 --> 00:11:13,990
+I overlooked that one.
+
+167
+00:11:14,200 --> 00:11:14,740
+That's better.
+
+168
+00:11:16,900 --> 00:11:18,250
+Now let's go back to session.
+
+169
+00:11:19,330 --> 00:11:20,380
+That makes more sense.
+
+170
+00:11:20,590 --> 00:11:23,710
+So we have a means of populating that value.
+
+171
+00:11:23,780 --> 00:11:25,630
+OK, so does the cookie have to be secure?
+
+172
+00:11:25,660 --> 00:11:26,530
+What's next?
+
+173
+00:11:27,520 --> 00:11:33,520
+Well, now we can create the session, create session, and we'll just use the syntax straight out of
+
+174
+00:11:33,520 --> 00:11:35,590
+the X package from Alex Edwards.
+
+175
+00:11:36,160 --> 00:11:39,180
+Session is a sign the value of X new.
+
+176
+00:11:40,090 --> 00:11:42,280
+So that creates a new session variable.
+
+177
+00:11:42,370 --> 00:11:51,190
+Now we'll set its values and we want to set its lifetime, and that will be equal to time dot duration.
+
+178
+00:11:52,240 --> 00:11:54,060
+And we're going to take the into minutes.
+
+179
+00:11:54,400 --> 00:12:00,310
+So that takes it to a time trial duration times Typekit minute right there.
+
+180
+00:12:01,840 --> 00:12:06,670
+So that gives it its lifetime session, the cookie.
+
+181
+00:12:07,210 --> 00:12:13,390
+And this is why we spent all that time getting our cookie values that persist equals persist.
+
+182
+00:12:15,280 --> 00:12:20,140
+Session cookie name equals.
+
+183
+00:12:21,460 --> 00:12:27,640
+Seed cookie name that's already a string, so that works just fine, we didn't have to do any work for
+
+184
+00:12:27,640 --> 00:12:34,810
+that one session cookie that's secure equals secure.
+
+185
+00:12:38,300 --> 00:12:42,950
+Now I have secure here and there, secure up there, good, and it defaults to faults that should be
+
+186
+00:12:42,950 --> 00:12:43,280
+fine.
+
+187
+00:12:43,460 --> 00:12:45,860
+OK, which means I can probably get rid of this too.
+
+188
+00:12:46,130 --> 00:12:50,810
+That's redundant code because if you don't give persist a value, it will be false by default.
+
+189
+00:12:51,470 --> 00:12:51,950
+That's better.
+
+190
+00:12:53,420 --> 00:12:54,440
+So that's cookie secure.
+
+191
+00:12:54,470 --> 00:13:01,370
+Now, the domain session cookie domain equals C Dot.
+
+192
+00:13:03,650 --> 00:13:07,440
+Cookie, to me and here I am, cookie name.
+
+193
+00:13:07,520 --> 00:13:08,120
+I should be.
+
+194
+00:13:08,390 --> 00:13:12,020
+Cookie name sloppy today.
+
+195
+00:13:13,250 --> 00:13:14,150
+So there's that one.
+
+196
+00:13:14,450 --> 00:13:15,650
+And now this one is just one.
+
+197
+00:13:15,650 --> 00:13:19,010
+We're going to set a default value for and not let anyone play with it.
+
+198
+00:13:19,370 --> 00:13:25,340
+Session dot cookie cookie dough.
+
+199
+00:13:25,430 --> 00:13:26,240
+Same site.
+
+200
+00:13:26,750 --> 00:13:29,960
+And we'll make that one of the default from the HGTV package.
+
+201
+00:13:29,960 --> 00:13:33,590
+HGTV Dot same site LAX mode.
+
+202
+00:13:34,250 --> 00:13:34,580
+OK.
+
+203
+00:13:34,670 --> 00:13:36,110
+And that's sufficient for our purposes.
+
+204
+00:13:37,580 --> 00:13:43,250
+So now the next thing we have to do and this is just planning for the future.
+
+205
+00:13:43,730 --> 00:13:50,630
+By default, we can use just ex-new and have all sessions managed by cookies, and that's fine and it
+
+206
+00:13:50,630 --> 00:13:51,380
+works really well.
+
+207
+00:13:51,740 --> 00:13:57,500
+And if you're even if you're deploying it to a production server, if you're enforcing HTTP connections
+
+208
+00:13:57,500 --> 00:14:02,180
+to the site and you're encrypting all the cookies, then you'll have no problems whatsoever.
+
+209
+00:14:02,450 --> 00:14:05,750
+But there are multiple different stores available to us.
+
+210
+00:14:05,810 --> 00:14:11,300
+If we go back to the package, asks Alex Edwards and scroll on down, for example.
+
+211
+00:14:11,870 --> 00:14:13,520
+He supports storing and badger.
+
+212
+00:14:13,610 --> 00:14:19,250
+That one's a bit out of date, but it is there and we could have updated if we wanted to, but we could
+
+213
+00:14:19,250 --> 00:14:23,630
+store to store, to Mongo, to my school, Postgres, all of these things.
+
+214
+00:14:23,660 --> 00:14:28,820
+OK, so let's go back over to here and put a switch statement here.
+
+215
+00:14:29,150 --> 00:14:31,820
+And this is why we have that session type set.
+
+216
+00:14:32,990 --> 00:14:36,050
+So we'll say which session store.
+
+217
+00:14:36,950 --> 00:14:38,270
+So we'll say switch
+
+218
+00:14:40,760 --> 00:14:46,160
+strings to lower once again, so I can never trust people to type things correctly in their files.
+
+219
+00:14:46,940 --> 00:14:51,750
+See the session type and we'll just put the cases we want to handle.
+
+220
+00:14:51,770 --> 00:14:53,360
+So for right now, we'll put case.
+
+221
+00:14:54,830 --> 00:14:58,770
+We'll just put Redis in there because we're going to implement a register before too long.
+
+222
+00:14:58,790 --> 00:15:00,200
+But we're not going to do anything with it.
+
+223
+00:15:00,290 --> 00:15:05,270
+So we ignore that one and we'll have a default, which will be cookie.
+
+224
+00:15:06,320 --> 00:15:08,000
+So we'll have Redis later on.
+
+225
+00:15:08,000 --> 00:15:10,310
+We'll also have these ones case.
+
+226
+00:15:12,450 --> 00:15:13,410
+Minus que el.
+
+227
+00:15:14,520 --> 00:15:16,380
+Or Maria Deeb.
+
+228
+00:15:17,940 --> 00:15:25,260
+And we'll do something with the right with the MySchool store or case postgres, which is sometimes
+
+229
+00:15:25,270 --> 00:15:26,430
+Typekit post.
+
+230
+00:15:29,160 --> 00:15:29,880
+Que el.
+
+231
+00:15:30,750 --> 00:15:31,650
+We'll do something with that.
+
+232
+00:15:31,890 --> 00:15:34,600
+For right now, we're just going to worry about the default, which is cookies.
+
+233
+00:15:34,620 --> 00:15:41,250
+OK, so the last thing we have to do here is to return the session return session.
+
+234
+00:15:43,170 --> 00:15:44,790
+So there should be no errors at this point.
+
+235
+00:15:45,180 --> 00:15:45,690
+Looks good.
+
+236
+00:15:46,170 --> 00:15:47,520
+Let's go back to celerity.
+
+237
+00:15:47,630 --> 00:15:48,310
+Don't go.
+
+238
+00:15:48,870 --> 00:15:53,220
+And now let's actually create that session so we can do it simply.
+
+239
+00:15:53,220 --> 00:15:53,730
+Is this?
+
+240
+00:15:56,300 --> 00:16:01,100
+Says scc, which is just a variable I'm creating for locally.
+
+241
+00:16:01,820 --> 00:16:03,280
+Session Dot session.
+
+242
+00:16:04,130 --> 00:16:08,960
+And that should import it from my package, and it does, and we'll populate its values.
+
+243
+00:16:09,530 --> 00:16:17,270
+So we want cookie lifetime right there, and that will become c-can Fakt Cookie Lifetime.
+
+244
+00:16:19,070 --> 00:16:28,550
+We also want Cookie persiste Cookie Persist, which is C dot config dot cookie dot persist.
+
+245
+00:16:29,690 --> 00:16:30,760
+And I spelled it right there.
+
+246
+00:16:30,770 --> 00:16:31,070
+Good.
+
+247
+00:16:32,330 --> 00:16:38,570
+We want cookie name, which is C dot config dot cookie dot name
+
+248
+00:16:41,450 --> 00:16:43,040
+and we want session type.
+
+249
+00:16:44,930 --> 00:16:49,850
+And that's going to be seeked config dot session type, which we set up just a few minutes ago.
+
+250
+00:16:51,860 --> 00:16:52,640
+And that's enough for now.
+
+251
+00:16:52,970 --> 00:16:56,090
+So that creates our session a variable.
+
+252
+00:16:56,190 --> 00:16:57,440
+Now we need to do something with it.
+
+253
+00:16:57,590 --> 00:16:57,980
+OK.
+
+254
+00:16:58,610 --> 00:17:06,500
+So of course, what we're going to do is say, see the session right there, which we added at the start
+
+255
+00:17:06,500 --> 00:17:07,220
+of this lecture.
+
+256
+00:17:07,520 --> 00:17:12,260
+That's going to be equal to from the sess variable we just created in a session.
+
+257
+00:17:13,160 --> 00:17:14,880
+And that should give us a session.
+
+258
+00:17:16,130 --> 00:17:18,350
+Now we can actually work with that session.
+
+259
+00:17:18,350 --> 00:17:24,350
+Yet we have to add a little bit of middleware and you can see that right here on the web page for this.
+
+260
+00:17:24,830 --> 00:17:27,950
+So we need to have a session store.
+
+261
+00:17:29,510 --> 00:17:33,170
+We need to have a means of loading and working with this session data.
+
+262
+00:17:33,620 --> 00:17:35,430
+So it's pretty straightforward to do that.
+
+263
+00:17:35,450 --> 00:17:37,550
+Here's loading and saving sessions.
+
+264
+00:17:37,640 --> 00:17:42,470
+If I click on that, it takes me down to here and you can see most applications will use the load and
+
+265
+00:17:42,470 --> 00:17:43,350
+save middleware.
+
+266
+00:17:43,370 --> 00:17:45,050
+That's exactly what we're going to do.
+
+267
+00:17:46,010 --> 00:17:46,270
+OK.
+
+268
+00:17:46,310 --> 00:17:49,850
+This lecture is getting fairly long, so I'll stop it right now.
+
+269
+00:17:49,880 --> 00:17:55,250
+But in the next lecture, we'll add some middleware to celebrities, which will be added by default
+
+270
+00:17:55,670 --> 00:18:01,490
+to the routes that we hand to the application, and that will allow us to load and save sessions at
+
+271
+00:18:01,490 --> 00:18:01,760
+will.

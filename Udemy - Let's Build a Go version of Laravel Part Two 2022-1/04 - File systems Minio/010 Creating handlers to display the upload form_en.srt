@@ -1,0 +1,200 @@
+1
+00:00:00,950 --> 00:00:07,040
+So we have this bit listing the remote minnow Mineo file system working really well, and now we want
+
+2
+00:00:07,040 --> 00:00:08,060
+to work on this.
+
+3
+00:00:08,270 --> 00:00:11,180
+The ability to upload files to the remote file system.
+
+4
+00:00:11,270 --> 00:00:15,290
+And of course, that'll just give me a page not found error because we haven't written any of that code
+
+5
+00:00:15,290 --> 00:00:15,510
+yet.
+
+6
+00:00:15,530 --> 00:00:16,280
+So let's get started.
+
+7
+00:00:16,520 --> 00:00:25,260
+So back to our idea and I will start my application like stock and hide the terminal and let's get started.
+
+8
+00:00:25,280 --> 00:00:27,590
+So what I'll do, first of all, is create a handler.
+
+9
+00:00:28,460 --> 00:00:30,740
+So let me go over to handlers dot and go.
+
+10
+00:00:31,780 --> 00:00:39,010
+Which is right here, and let's right the handler to display the upload page, and as you recall, we
+
+11
+00:00:39,010 --> 00:00:43,960
+already have the upload georgette file here in The View's folder, and that's what we want to point
+
+12
+00:00:43,960 --> 00:00:44,230
+to.
+
+13
+00:00:44,980 --> 00:00:51,370
+So we'll create a function with a receiver of a pointer to handlers and we'll call it say, upload to
+
+14
+00:00:51,370 --> 00:00:51,640
+F.
+
+15
+00:00:51,640 --> 00:00:58,270
+S for file systems and give it the standard two parameters for every handler, a response writer and
+
+16
+00:00:58,270 --> 00:01:00,580
+a pointer to in CTP to a request.
+
+17
+00:01:02,320 --> 00:01:03,160
+And this is simple.
+
+18
+00:01:03,340 --> 00:01:08,710
+First of all, we are going to be getting a file system type query parameter.
+
+19
+00:01:08,950 --> 00:01:17,620
+So let's trap for that first type is assigned error, the URL query not get.
+
+20
+00:01:17,920 --> 00:01:24,460
+And if you look at the form on that upload jete file, the parameter is called type.
+
+21
+00:01:25,510 --> 00:01:31,740
+OK, and we'll create a variable because we need to pass some data to our our VAR map.
+
+22
+00:01:31,750 --> 00:01:34,480
+So we'll create a vase variable and that's of the type.
+
+23
+00:01:34,480 --> 00:01:41,740
+Make a jetport VAR map just like before, and we'll add the file type to that first set.
+
+24
+00:01:42,250 --> 00:01:48,130
+And we'll call it if underscore type and the variable is EFS type.
+
+25
+00:01:48,340 --> 00:01:51,220
+So now we've set our data and now we just render that page.
+
+26
+00:01:51,700 --> 00:01:57,910
+Error is assigned the value of each dot render and we're going to render W an hour and we're going to
+
+27
+00:01:57,910 --> 00:02:00,420
+give the template upload because it's called upload.
+
+28
+00:02:00,670 --> 00:02:03,400
+Chet will hand it the variables we just created.
+
+29
+00:02:03,410 --> 00:02:07,170
+And as usual, I don't use that final parameter and we check for an error.
+
+30
+00:02:07,840 --> 00:02:17,440
+If error is not equal to nil, then we'll render the error h to app error log print line and we'll just
+
+31
+00:02:17,440 --> 00:02:18,220
+print the error out.
+
+32
+00:02:18,790 --> 00:02:19,330
+And that's enough.
+
+33
+00:02:20,470 --> 00:02:22,450
+So we have this handler.
+
+34
+00:02:22,510 --> 00:02:25,210
+Let's go to our roots, file and add in that.
+
+35
+00:02:26,630 --> 00:02:30,180
+And we'll say, put it right here and yet.
+
+36
+00:02:31,100 --> 00:02:33,380
+And we're going to look for the path.
+
+37
+00:02:33,590 --> 00:02:34,340
+Let me go to my.
+
+38
+00:02:35,720 --> 00:02:37,850
+Layouts and find out what it's actually called.
+
+39
+00:02:38,570 --> 00:02:42,800
+So under layouts based on and yet what did I use for a URL there?
+
+40
+00:02:43,010 --> 00:02:49,400
+Upload a file is files, uploads or a copy that and switch back to roots.
+
+41
+00:02:50,710 --> 00:02:56,650
+And paste that in there and then pointed at that handler, a dog handlers dot upload to EFS.
+
+42
+00:02:57,710 --> 00:03:00,310
+Now if I start, my application may start.
+
+43
+00:03:01,660 --> 00:03:03,070
+I should be able to render that page.
+
+44
+00:03:04,800 --> 00:03:05,520
+So it started.
+
+45
+00:03:05,670 --> 00:03:08,940
+Let's go back to our Web browser and just refresh this.
+
+46
+00:03:09,840 --> 00:03:10,380
+And there it is.
+
+47
+00:03:10,680 --> 00:03:15,360
+So as you can see, we have a dropdown menu and this is the only one we're going to use right now.
+
+48
+00:03:15,390 --> 00:03:18,600
+Mineo will browse for a file and we'll upload it.
+
+49
+00:03:18,990 --> 00:03:24,540
+So the next step is to create the handler to handle that form post, and we'll take care of that in
+
+50
+00:03:24,540 --> 00:03:25,170
+the next election.
+

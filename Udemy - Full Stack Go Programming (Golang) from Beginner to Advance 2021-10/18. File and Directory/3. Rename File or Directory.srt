@@ -1,0 +1,267 @@
+1
+00:00:12,680 --> 00:00:16,190
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:16,520 --> 00:00:22,580
+In the previous session, we talked about creating a directory of folder and indecision.
+
+3
+00:00:22,610 --> 00:00:26,480
+We want to talk about the other files and directories concept.
+
+4
+00:00:30,730 --> 00:00:32,830
+Rename, file or folder.
+
+5
+00:00:34,060 --> 00:00:42,750
+Renamed function can be used to rename a file or folder renal function, renamed or moves all past to
+
+6
+00:00:42,750 --> 00:00:43,580
+new purpose.
+
+7
+00:00:44,130 --> 00:00:49,710
+If Neopets already exist and is not a directory, rename replaces it.
+
+8
+00:00:50,100 --> 00:00:53,480
+OS specific restrictions may apply.
+
+9
+00:00:53,490 --> 00:00:57,310
+Then old past and new paths are different directories.
+
+10
+00:00:57,990 --> 00:01:05,100
+Now you can see the syntax all past and new paths can be fully qualified as the.
+
+11
+00:01:05,520 --> 00:01:13,170
+If the old and new path doesn't lie in the same directory, then rename function behaves the same as
+
+12
+00:01:13,170 --> 00:01:14,880
+moving a file or folder.
+
+13
+00:01:16,110 --> 00:01:23,580
+Now let's go to this school program to illustrate how to rename, file or folder and go like.
+
+14
+00:01:25,910 --> 00:01:34,700
+First, create the fine name test in current directory, so we define two variables life by an error
+
+15
+00:01:35,090 --> 00:01:43,640
+call equals E will create function from always package s that create function and set a name for five
+
+16
+00:01:44,480 --> 00:01:45,130
+tiers.
+
+17
+00:01:45,530 --> 00:01:47,120
+The 60.
+
+18
+00:01:49,980 --> 00:01:57,300
+Now we could create a fine and current directory named Tess, and we assign returned values to two variables
+
+19
+00:01:57,510 --> 00:02:08,340
+like find and or so we check to print the message for us if the error is not empty row not equals need.
+
+20
+00:02:10,500 --> 00:02:17,960
+We use the federal function of the law kids love at FATTORE and set it all.
+
+21
+00:02:19,830 --> 00:02:30,930
+And then we display a like message for fun, large dance, print and set time.
+
+22
+00:02:34,530 --> 00:02:43,530
+And in the end of the code, we close the fun, find close, reformat the call, save the project and
+
+23
+00:02:43,530 --> 00:02:44,880
+execute the program.
+
+24
+00:02:49,890 --> 00:02:58,120
+Now you can see that the test that defined created in current directory and paint a large message.
+
+25
+00:02:58,140 --> 00:03:05,760
+You can go to current directory passed by the command, the air and we see the test, the the fine.
+
+26
+00:03:06,810 --> 00:03:12,290
+OK, now we want to use rename function for change name off fine.
+
+27
+00:03:12,570 --> 00:03:15,810
+In this case, we want to change fine them to 10th name.
+
+28
+00:03:16,290 --> 00:03:18,690
+So go to the code.
+
+29
+00:03:20,310 --> 00:03:26,700
+Define a variable like arrow equals endocrine function from always.
+
+30
+00:03:26,700 --> 00:03:31,650
+Packages will start rename first set.
+
+31
+00:03:31,650 --> 00:03:32,730
+Oh, fine.
+
+32
+00:03:33,000 --> 00:03:44,880
+In this case, this test dog takes the corner and sets a name for new fine, for the example turned
+
+33
+00:03:45,500 --> 00:03:46,200
+out to.
+
+34
+00:03:49,230 --> 00:03:58,290
+Now we check the print, a message for us, if the error is not into is the rule not equals need.
+
+35
+00:04:00,390 --> 00:04:08,520
+We use the fatal function of the large package, large dots that are set out or reformat the code,
+
+36
+00:04:08,520 --> 00:04:11,640
+save the project and execute the program.
+
+37
+00:04:16,690 --> 00:04:26,080
+Now we can see the name of text, the text changed to 10th and fine like message printed so we can go
+
+38
+00:04:26,080 --> 00:04:29,620
+to current directory passed by the Air Command.
+
+39
+00:04:30,070 --> 00:04:39,340
+And we can see the test that the file has changed to 10 dot so we could use from rename function to
+
+40
+00:04:39,340 --> 00:04:41,110
+change a file name.
+
+41
+00:04:41,710 --> 00:04:45,490
+Now let's rename a folder together first.
+
+42
+00:04:45,490 --> 00:04:46,890
+Clear the last code.
+
+43
+00:04:53,360 --> 00:05:01,070
+Say the project and it's ready to right first, create a folder or directory at the current pass by
+
+44
+00:05:01,070 --> 00:05:10,950
+the end Kar di R function define a variable like error calling equals invoke encode di R function from
+
+45
+00:05:10,970 --> 00:05:11,180
+all.
+
+46
+00:05:11,190 --> 00:05:20,300
+This package will start in K D, R R and set a folder name like 10
+
+47
+00:05:23,420 --> 00:05:26,780
+and set permission zero seven five.
+
+48
+00:05:27,800 --> 00:05:35,750
+By now, we could create a directory, a common past name temp, and we assign return value to a variable
+
+49
+00:05:35,750 --> 00:05:36,490
+like ETL.
+
+50
+00:05:37,130 --> 00:05:39,280
+Now we take the print a message for us.
+
+51
+00:05:39,290 --> 00:05:50,450
+If the error is not empty, e error not equals name be used from the federal function of long package
+
+52
+00:05:50,630 --> 00:05:59,960
+large docs, fatty acids or reformat the code, save the project and execute the program.
+
+53
+00:06:04,870 --> 00:06:11,430
+Now we can see the ten folder created, and we can go to the current directory passed by the comment,
+
+54
+00:06:11,440 --> 00:06:16,030
+the air and we see Tan folder created here.
+
+55
+00:06:16,510 --> 00:06:21,550
+OK, now we use rename function for change and name of directory.
+
+56
+00:06:21,880 --> 00:06:26,560
+In this case, we want to change tan name to new folder.
+
+57
+00:06:27,220 --> 00:06:35,560
+So first clear, the last code define a variable like error calling it equals invoke, rename function
+
+58
+00:06:35,890 --> 00:06:36,460
+or worse.
+
+59
+00:06:36,460 --> 00:06:43,510
+Package Voice got renamed and set all directory name.
+
+60
+00:06:43,510 --> 00:06:53,830
+In this case, it is tan and set a name for new folder like new folder.
+
+61
+00:06:55,630 --> 00:07:06,400
+OK, check to print a message for us if the error is not only if error not equals to mean we use the
+
+62
+00:07:06,400 --> 00:07:16,480
+federal function of like package, log the button and sit there or reformat the court, save the project
+
+63
+00:07:16,480 --> 00:07:18,210
+and execute the program.
+
+64
+00:07:23,700 --> 00:07:31,890
+Now we can see the Tan folder has changed to new folder me and we can go to the current directory passed
+
+65
+00:07:31,890 --> 00:07:40,800
+by the Air Command and we can see Tan Folder has changed to new folder in order not to prolong.
+
+66
+00:07:40,800 --> 00:07:45,900
+The time of this session will finished and we will continue the content in the next session.
+
+67
+00:07:46,140 --> 00:07:46,710
+Goodbye.

@@ -1,0 +1,499 @@
+1
+00:00:11,580 --> 00:00:17,760
+Hello and welcome to the Golang programming language course in the preview session, we could implement
+
+2
+00:00:17,760 --> 00:00:18,750
+the client there.
+
+3
+00:00:19,440 --> 00:00:26,430
+And in this session, we want to create a web client program so that we can run the client layer of
+
+4
+00:00:26,430 --> 00:00:30,120
+this project, both in the terminal end and event.
+
+5
+00:00:31,860 --> 00:00:40,350
+The LEP client program consists of two main parts and it's standard template and a JavaScript code.
+
+6
+00:00:41,190 --> 00:00:44,100
+Now it's time to implement the web client.
+
+7
+00:00:44,520 --> 00:00:54,450
+So first, go to Package Expeller and go to Bitso Get Folder right click on the client layer and create
+
+8
+00:00:54,450 --> 00:01:00,990
+a file name like index by Hitchin and extension.
+
+9
+00:01:04,110 --> 00:01:08,880
+Now let's start creating our template for this purpose.
+
+10
+00:01:09,030 --> 00:01:16,890
+First time estimate keyword and select handle current file and press enter.
+
+11
+00:01:17,850 --> 00:01:26,190
+Now we can see the program creates a basic template of the vet application that contains SDM and tag
+
+12
+00:01:26,220 --> 00:01:28,100
+hit tag body tag.
+
+13
+00:01:30,300 --> 00:01:38,280
+Our vet application is supposed to receive a message from the input and send a message to the server
+
+14
+00:01:38,460 --> 00:01:44,640
+with the push of a button and display it both on the web page and the other clients.
+
+15
+00:01:45,630 --> 00:01:52,440
+So we need a text filled component to receive the message from the user and the bottom component to
+
+16
+00:01:52,440 --> 00:01:55,350
+send it to the server for this purpose.
+
+17
+00:01:55,530 --> 00:01:58,550
+We use from input tag in a statement.
+
+18
+00:01:59,280 --> 00:02:14,640
+So go to the body tag and first define a form component for component and inform component.
+
+19
+00:02:14,880 --> 00:02:22,700
+We write our tax first, define a dive tag for set alignment drive.
+
+20
+00:02:26,640 --> 00:02:37,980
+Now, define this time for this time this time and set text line and said center value for these attribute
+
+21
+00:02:38,370 --> 00:02:50,490
+and set padding, top padding, top, for example, tawni pixels to many pieces and go to dive and write
+
+22
+00:02:50,490 --> 00:02:51,600
+our input.
+
+23
+00:02:51,600 --> 00:02:53,790
+Text input
+
+24
+00:02:57,300 --> 00:03:02,190
+first input is a text field, so type is text
+
+25
+00:03:05,160 --> 00:03:06,750
+and the
+
+26
+00:03:09,090 --> 00:03:10,790
+message, for example.
+
+27
+00:03:14,390 --> 00:03:19,490
+Go to the next line and find another tag improved.
+
+28
+00:03:22,520 --> 00:03:30,560
+This is a push button, so we said type of these input is a reset, for example, Typekit reset
+
+29
+00:03:33,830 --> 00:03:39,200
+and set a value, for example, to send data.
+
+30
+00:03:40,400 --> 00:03:45,410
+And so the idea for this, the idea, we said safe.
+
+31
+00:03:48,590 --> 00:03:56,690
+And set the background color for this button, so defined as tied attribute and select background color
+
+32
+00:03:58,070 --> 00:03:59,470
+and set, for example, line.
+
+33
+00:04:01,400 --> 00:04:05,930
+Or we could design our standard templates.
+
+34
+00:04:06,770 --> 00:04:12,560
+Now it's time to implement the JavaScript code for this purpose.
+
+35
+00:04:12,770 --> 00:04:16,580
+Go after closed form peg and define it.
+
+36
+00:04:16,740 --> 00:04:26,120
+Tag for implementing our code go after form defined as tag is create
+
+37
+00:04:28,790 --> 00:04:37,250
+and set out script in this OK in order to be able to execute our JavaScript code.
+
+38
+00:04:37,520 --> 00:04:43,430
+We need to enter the J Query CD and address into the program for this purpose.
+
+39
+00:04:43,640 --> 00:04:47,090
+Go to the Code J Query dot com site.
+
+40
+00:04:49,940 --> 00:04:53,000
+Time court got Jake weary.
+
+41
+00:04:55,020 --> 00:04:55,590
+That's Tom
+
+42
+00:04:58,350 --> 00:05:01,190
+Selleck last version, Jake Weary CBN.
+
+43
+00:05:01,230 --> 00:05:08,090
+Here is 3.3GHz and select minified version, OK?
+
+44
+00:05:08,460 --> 00:05:16,320
+In the pop up panel that opens, click on the comedy icon on the right side of the page to copy the
+
+45
+00:05:16,320 --> 00:05:18,840
+information the pop after the clipboard.
+
+46
+00:05:20,760 --> 00:05:25,590
+Now, go to a standard template and paste it in head touch.
+
+47
+00:05:26,970 --> 00:05:31,230
+Now go to her stack and paste here.
+
+48
+00:05:33,600 --> 00:05:38,370
+OK, now go to implement our JavaScript code.
+
+49
+00:05:43,810 --> 00:05:50,380
+Taconic Jones create two events server server, we need to create an object from the vet took that we
+
+50
+00:05:50,380 --> 00:05:58,650
+put inside a variable, so first define a variable name like Sujit by calling via keyword fat.
+
+51
+00:06:00,370 --> 00:06:10,360
+Some kids, he calls knew where Sujit.
+
+52
+00:06:13,960 --> 00:06:22,900
+Now said several of your allies argument for it, double quotation, mark and sit down with is just
+
+53
+00:06:23,200 --> 00:06:31,290
+127.0.0.1 as localhost column 885 passport numbers.
+
+54
+00:06:32,020 --> 00:06:39,580
+Now you have to say that when the user clicks on the send button, the information inside the text field
+
+55
+00:06:39,790 --> 00:06:42,850
+is sent as a message to the intricate web server.
+
+56
+00:06:43,060 --> 00:06:46,210
+Go to the next line, so be right.
+
+57
+00:06:46,630 --> 00:06:58,150
+The other sign calling button idea in this case is safe, sharp, safe or idea of the send button and
+
+58
+00:06:58,150 --> 00:07:02,350
+say when use it keeps the button, do something for you.
+
+59
+00:07:02,420 --> 00:07:06,040
+So calling click don't click.
+
+60
+00:07:08,450 --> 00:07:11,690
+And define a function for it function.
+
+61
+00:07:20,350 --> 00:07:22,810
+Now we need to implement this function.
+
+62
+00:07:23,460 --> 00:07:31,030
+First, we get the information inside the text field and place it inside a variable, such as a message
+
+63
+00:07:31,420 --> 00:07:36,100
+for do this calling VAL function on text field IED.
+
+64
+00:07:36,430 --> 00:07:38,530
+So we write that
+
+65
+00:07:40,960 --> 00:07:45,220
+message, for example, the equals diner sign.
+
+66
+00:07:50,480 --> 00:07:52,280
+Shocked, he said.
+
+67
+00:07:54,230 --> 00:07:58,010
+As I the art text field thought that.
+
+68
+00:08:00,180 --> 00:08:07,140
+Now we send the designer a message from the soldier to the soldier VVIP server before the Senate function.
+
+69
+00:08:08,070 --> 00:08:11,340
+So go to the next line socket.
+
+70
+00:08:12,660 --> 00:08:13,800
+Don't send.
+
+71
+00:08:15,330 --> 00:08:24,390
+Our message here is of extreme time why our server is ready to respond to JSON type requests, so we
+
+72
+00:08:24,390 --> 00:08:31,110
+have to convert our message to the message instruct format on the web to get server and then send it
+
+73
+00:08:31,530 --> 00:08:32,170
+to do this.
+
+74
+00:08:32,190 --> 00:08:43,080
+We use the extreme yify function of the JSON package, so we write JSON dot a string define
+
+75
+00:08:46,290 --> 00:08:52,470
+and cloning subject field of messages, selecting website server and initialize it.
+
+76
+00:08:52,470 --> 00:08:53,490
+But the message.
+
+77
+00:08:55,150 --> 00:08:57,880
+So calling subject
+
+78
+00:09:01,540 --> 00:09:10,450
+column mrJ now after each submit the button, the contents message inside the text with should be empty
+
+79
+00:09:10,870 --> 00:09:13,750
+and ready to receive the new message from the user.
+
+80
+00:09:14,140 --> 00:09:18,790
+To do this, we do this by calling get element by idea function.
+
+81
+00:09:18,790 --> 00:09:31,330
+From that, you saw the right document to get element by IED and that idea of text field.
+
+82
+00:09:31,690 --> 00:09:33,490
+Here is message.
+
+83
+00:09:36,350 --> 00:09:44,810
+Dot's value equals none, we were able to send our data to the vets to get server.
+
+84
+00:09:45,350 --> 00:09:52,270
+But if a message came from a server to the client, we should receive it and displayed to do this,
+
+85
+00:09:52,280 --> 00:09:53,300
+we do the following.
+
+86
+00:09:54,800 --> 00:10:01,760
+First, we con un message function of the circuit and initialize a method for its sole rights, which
+
+87
+00:10:01,760 --> 00:10:05,120
+adds that UN message
+
+88
+00:10:08,240 --> 00:10:10,430
+equals function
+
+89
+00:10:14,930 --> 00:10:16,210
+as input value.
+
+90
+00:10:16,220 --> 00:10:18,770
+You pass a variable, for example result.
+
+91
+00:10:25,930 --> 00:10:28,810
+Now we should implement the function body.
+
+92
+00:10:29,470 --> 00:10:33,760
+We need to receive the data sent from the server site here.
+
+93
+00:10:33,940 --> 00:10:39,310
+The data sent from the service site is an object of message, a structure in JSON format.
+
+94
+00:10:40,120 --> 00:10:46,020
+So we have to disagree as long as the sand data and set it into a variable.
+
+95
+00:10:46,150 --> 00:10:49,420
+So first, define a variable like message.
+
+96
+00:10:50,290 --> 00:10:58,060
+That message equals from Jason Pichai's putting parts function.
+
+97
+00:10:58,570 --> 00:10:59,380
+Jason.
+
+98
+00:11:01,090 --> 00:11:08,860
+Don't pass, and sin sends data and argument to it in this case, it is resolved.
+
+99
+00:11:08,950 --> 00:11:19,030
+Resolved dart daytime after the serialized data to messages throughout the fetch subject feel of it.
+
+100
+00:11:19,030 --> 00:11:27,220
+So we write Dot Subject Dot Subject, we need to display the receive message in the browser.
+
+101
+00:11:27,340 --> 00:11:32,620
+So to do this, we use the element and display each message in one line.
+
+102
+00:11:33,010 --> 00:11:42,310
+So do the following Go to the next line define the value that, for example, message element via message
+
+103
+00:11:43,030 --> 00:11:46,180
+element equals in culling.
+
+104
+00:11:46,360 --> 00:11:59,330
+Create element of document document, don't create elements and set DIFC.
+
+105
+00:12:01,570 --> 00:12:07,390
+OK, now we assign the content in the message variable to the created element.
+
+106
+00:12:07,960 --> 00:12:16,960
+So the right message element dot text content equals message.
+
+107
+00:12:19,330 --> 00:12:27,340
+Now we use the Puti print function to add the reserved message to the list of messages and display each
+
+108
+00:12:27,340 --> 00:12:30,100
+new message at the top of the list in the browser.
+
+109
+00:12:30,520 --> 00:12:38,580
+So before calling Prepend Function first, go to the original code and define a new divx tag for display
+
+110
+00:12:38,590 --> 00:12:40,060
+all messages.
+
+111
+00:12:40,210 --> 00:12:42,310
+So go to the four.
+
+112
+00:12:43,000 --> 00:12:46,900
+After this time, create a new guy.
+
+113
+00:12:49,300 --> 00:12:54,460
+Set a nice default, for example messages idea, he said.
+
+114
+00:12:54,730 --> 00:13:07,000
+Messages and set a style text alone attribute we said center and set a pattern for it.
+
+115
+00:13:07,000 --> 00:13:11,830
+For example, padding top 20 pixel.
+
+116
+00:13:15,460 --> 00:13:16,720
+And set a color.
+
+117
+00:13:19,990 --> 00:13:30,210
+And, for example, MedImmune, OK, reformat the call and save the project, go to the screen and continue
+
+118
+00:13:30,370 --> 00:13:34,150
+the calling prepend function, go to the next line.
+
+119
+00:13:36,040 --> 00:13:42,580
+So the right dollar sign cutting idea of the message is dire.
+
+120
+00:13:42,640 --> 00:13:56,440
+In this case, it is messages now Citi double quotation Shah or IED messages and invoking PD pin function,
+
+121
+00:13:56,860 --> 00:14:04,030
+PD Pen function and that message element as argument for it.
+
+122
+00:14:11,920 --> 00:14:12,290
+OK.
+
+123
+00:14:12,460 --> 00:14:19,630
+We also managed to create an implement of IT client in order not to prolong the time of decision.
+
+124
+00:14:19,780 --> 00:14:24,100
+We will finish it and we will continue the content in the next session.
+
+125
+00:14:24,280 --> 00:14:24,850
+Goodbye.

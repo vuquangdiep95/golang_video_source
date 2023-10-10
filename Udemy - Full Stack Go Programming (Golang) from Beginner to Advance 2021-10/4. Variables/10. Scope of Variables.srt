@@ -1,0 +1,423 @@
+1
+00:00:15,090 --> 00:00:18,570
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:18,990 --> 00:00:25,920
+In the previous session, we talked about shorthand variable declaration, and in this session we want
+
+3
+00:00:25,920 --> 00:00:28,410
+to talk about the other variable concept.
+
+4
+00:00:32,540 --> 00:00:41,480
+It's corp of golden variables, this core public variable can be defined as a part of the program where
+
+5
+00:00:41,480 --> 00:00:50,300
+a particular variable is accessible, a variable can be defined in the class method loop or etc..
+
+6
+00:00:51,050 --> 00:00:57,520
+Like C or C++ and Go Lang, all identifiers are lexical is scoped.
+
+7
+00:00:59,500 --> 00:01:07,670
+The scope of a variable can be determined at compile time or, you can say, a value that can only be
+
+8
+00:01:07,670 --> 00:01:11,480
+called from within the block of code in which it is defined.
+
+9
+00:01:13,550 --> 00:01:21,350
+Goal and scope rules of variables can be divided into two categories, which depend on where the variables
+
+10
+00:01:21,350 --> 00:01:22,280
+are declared.
+
+11
+00:01:23,300 --> 00:01:32,840
+First, local variables declared inside the block or a function, and second global variables declared
+
+12
+00:01:32,840 --> 00:01:36,710
+outside a block or a function go.
+
+13
+00:01:36,710 --> 00:01:42,950
+Lang uses Lexicon, a scoping based on CodeBlocks to determine the scope of variable.
+
+14
+00:01:44,250 --> 00:01:51,590
+Inner block can access its outer black defined variables, but outer cannot access even a black defined
+
+15
+00:01:51,660 --> 00:01:52,230
+area of us.
+
+16
+00:01:53,430 --> 00:01:58,080
+Now it's time to go to VSCO and create a sample project.
+
+17
+00:02:00,490 --> 00:02:08,680
+Local variables features first variables that are declared inside the function or a block are termed
+
+18
+00:02:08,680 --> 00:02:10,240
+as local variables.
+
+19
+00:02:11,110 --> 00:02:16,150
+These are not accessible outside the function or large second.
+
+20
+00:02:17,110 --> 00:02:23,380
+These variables can also be declared inside the food virus or inside the function.
+
+21
+00:02:24,170 --> 00:02:32,010
+Third, these variables can be accessed by the master code blocks inside the function force.
+
+22
+00:02:33,010 --> 00:02:36,790
+These variables are also termed as the blood variables.
+
+23
+00:02:38,530 --> 00:02:45,910
+Fifth, there will be a compile time error if these variables are declared twice with the same name
+
+24
+00:02:45,910 --> 00:02:47,020
+in the same scope.
+
+25
+00:02:48,190 --> 00:02:48,790
+Six.
+
+26
+00:02:49,390 --> 00:02:52,600
+These variables doesn't exist after the functions.
+
+27
+00:02:52,600 --> 00:02:55,990
+Execution is over seven.
+
+28
+00:02:56,770 --> 00:03:02,740
+The variable, which is declared outside the loop, is also accessible within the nested loops.
+
+29
+00:03:03,640 --> 00:03:09,040
+It means a global variable will be accessible to the methods in all loops.
+
+30
+00:03:09,580 --> 00:03:16,870
+The local variable will be accessible to look and function inside that function and AIDS.
+
+31
+00:03:17,380 --> 00:03:23,700
+A variable which is declared inside the loop body will not be visible to the outside of loop.
+
+32
+00:03:23,800 --> 00:03:26,710
+But now let's do an example.
+
+33
+00:03:28,270 --> 00:03:32,410
+First, define two variables like
+
+34
+00:03:35,050 --> 00:03:37,150
+that variable.
+
+35
+00:03:37,450 --> 00:03:47,680
+One common granny able to bind to tight end equals 100 and 200.
+
+36
+00:03:49,460 --> 00:04:05,340
+If if the value of value build one color person the variable one and go to the next line.
+
+37
+00:04:05,930 --> 00:04:16,880
+If the value of variability to person.
+
+38
+00:04:17,230 --> 00:04:17,770
+The
+
+39
+00:04:21,610 --> 00:04:25,480
+variable to set the back is less now
+
+40
+00:04:28,540 --> 00:04:29,610
+and by just this.
+
+41
+00:04:33,120 --> 00:04:40,650
+Now reformat the code, save the project and execute the program, go to Terminal, Go to Project Folder
+
+42
+00:04:40,650 --> 00:04:41,940
+City Valuables.
+
+43
+00:04:43,290 --> 00:04:53,750
+You're a screen and go round dot back listening, let me go now we can see the output, the value of
+
+44
+00:04:53,760 --> 00:04:57,600
+valuable one is 100 and the value of very able to use 200.
+
+45
+00:04:59,430 --> 00:05:05,580
+Now we could define local variables in the main function, their scope of access to this variable at
+
+46
+00:05:05,580 --> 00:05:09,570
+this task with open curly braces and ends with closing.
+
+47
+00:05:10,590 --> 00:05:15,630
+Now, if you want to define about global variables, features first.
+
+48
+00:05:16,110 --> 00:05:23,010
+The variables which are defined outside of a function or a block is termed as global variables.
+
+49
+00:05:23,940 --> 00:05:28,770
+Second, these are available throughout the lifetime of the program.
+
+50
+00:05:29,860 --> 00:05:38,010
+Third, these are declared at the top of the program outside all of the functions or blocks and force.
+
+51
+00:05:38,250 --> 00:05:41,760
+These can be accessed from any portion of the program.
+
+52
+00:05:43,470 --> 00:05:47,910
+Now, let's go to do an example about global variables.
+
+53
+00:05:48,750 --> 00:05:50,970
+So first, clear the last code.
+
+54
+00:05:59,080 --> 00:05:59,400
+OK.
+
+55
+00:05:59,440 --> 00:06:07,660
+After the package name and in top of all, function, first we defined a variable named global variable.
+
+56
+00:06:07,750 --> 00:06:17,170
+So we write that global variable by the Typekit and initialize it by 100 value.
+
+57
+00:06:18,610 --> 00:06:20,980
+This is a global variable declaration.
+
+58
+00:06:22,420 --> 00:06:32,200
+Now go to the main function and define a local variable, for example, the low code that you know,
+
+59
+00:06:34,240 --> 00:06:46,420
+maybe the Typekit and initialize it by 200 display the value of global variable at half the value.
+
+60
+00:06:47,240 --> 00:06:54,590
+Are they, Lubi, by value to the Colin person, the
+
+61
+00:06:57,440 --> 00:07:05,510
+newborn value and go to the next line and now display the value of below par value of Earth Earth?
+
+62
+00:07:07,310 --> 00:07:19,870
+The value of local valuable column first in the local variable.
+
+63
+00:07:22,540 --> 00:07:30,720
+Reformat the court and say the project in order to better understand the concept of low cost variables
+
+64
+00:07:30,730 --> 00:07:38,500
+and global variables, we define and order function like display, so we defined a function like display
+
+65
+00:07:38,500 --> 00:07:39,220
+find.
+
+66
+00:07:41,350 --> 00:07:42,070
+Display.
+
+67
+00:07:46,260 --> 00:07:53,820
+Here we can use strong global variable, but don't use of local variables of other functions, and we
+
+68
+00:07:53,820 --> 00:07:56,670
+do not access them for the example.
+
+69
+00:07:56,940 --> 00:08:00,290
+Come here and display the value of global variable.
+
+70
+00:08:00,330 --> 00:08:01,080
+So have you right?
+
+71
+00:08:01,080 --> 00:08:19,200
+If if the value of global variable Colin first and the bank end and set variable blue by
+
+72
+00:08:21,870 --> 00:08:24,930
+now calling display function in main function.
+
+73
+00:08:26,470 --> 00:08:35,740
+Display before Manticore, save the project and execute the program first clear screen and run the project
+
+74
+00:08:35,740 --> 00:08:40,180
+by the comment goal, one got back as Bush made that go.
+
+75
+00:08:41,920 --> 00:08:43,900
+Now we can see the output first.
+
+76
+00:08:43,940 --> 00:08:51,370
+He could display the local and global variable values in the main function and then calling the global
+
+77
+00:08:51,370 --> 00:08:58,180
+variable in disbelief function and calling display function the main function and execute it.
+
+78
+00:08:58,360 --> 00:09:02,380
+And he could display all the local and global variables value.
+
+79
+00:09:02,470 --> 00:09:04,960
+In this case, we want to define a challenge.
+
+80
+00:09:04,990 --> 00:09:07,390
+So first, ask a question.
+
+81
+00:09:07,660 --> 00:09:14,170
+What will happen during a local variable with the same name as the of the global variable inside the
+
+82
+00:09:14,170 --> 00:09:14,710
+function?
+
+83
+00:09:15,070 --> 00:09:22,570
+The answer is simple, i.e. compiler will give preference to the local variable usually went to variable
+
+84
+00:09:22,570 --> 00:09:24,670
+with the same name is defined.
+
+85
+00:09:24,970 --> 00:09:29,230
+Then the compiler produces a compile time or modify.
+
+86
+00:09:29,230 --> 00:09:32,290
+The variables are defined in different scopes.
+
+87
+00:09:32,560 --> 00:09:40,580
+Then the compiler allows it whenever there is a local variable defined with the same name as that of
+
+88
+00:09:40,580 --> 00:09:45,640
+the global variable, then the compiler will give precedence to the low code variable.
+
+89
+00:09:46,870 --> 00:09:53,290
+We defined another program, and you can clearly see the output so clear the last code.
+
+90
+00:10:07,220 --> 00:10:15,500
+First, define the global variable declarations, for example, that validate those won by the tight
+
+91
+00:10:15,500 --> 00:10:20,600
+end, initialize it by, for example, five hundred now go to main function.
+
+92
+00:10:21,470 --> 00:10:28,550
+And now we create a local variable inside the main function that it is same as global variable.
+
+93
+00:10:28,760 --> 00:10:38,690
+Like that variable won by the tried and initialize it by 200.
+
+94
+00:10:39,890 --> 00:10:46,370
+The names of both variables are the same, and it's variable one with the difference that one of them
+
+95
+00:10:46,370 --> 00:10:49,340
+is global variable and the other is local value.
+
+96
+00:10:50,060 --> 00:10:52,400
+Now display the value off value of it.
+
+97
+00:10:52,850 --> 00:10:53,720
+If if.
+
+98
+00:10:55,600 --> 00:11:08,950
+The value of Gladiator one Collins per cent de facto exclusion and said that he, the one before the
+
+99
+00:11:08,950 --> 00:11:12,070
+court, saved the project and executed the program.
+
+100
+00:11:12,460 --> 00:11:19,270
+Now go to Termina first floor the screen and run the project by go round like a Scotch man that go.
+
+101
+00:11:21,300 --> 00:11:26,550
+Now we can see the output, the value of variable bond is 200.
+
+102
+00:11:26,850 --> 00:11:32,260
+So we see that the local variable is pretty friends to the global variables.
+
+103
+00:11:32,820 --> 00:11:33,190
+OK.
+
+104
+00:11:33,540 --> 00:11:35,490
+We have reached the end of this session.
+
+105
+00:11:35,700 --> 00:11:39,370
+I hope you take full advantage of this decision until next session.
+
+106
+00:11:39,390 --> 00:11:39,930
+Goodbye.

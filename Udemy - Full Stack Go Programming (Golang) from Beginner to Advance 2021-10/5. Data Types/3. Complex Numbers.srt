@@ -1,0 +1,267 @@
+1
+00:00:14,040 --> 00:00:17,430
+Hello and welcome to Golang programming language course.
+
+2
+00:00:17,790 --> 00:00:23,760
+In the previous session, we talked about floating point numbers and in decision, we want to talk about
+
+3
+00:00:23,760 --> 00:00:25,740
+the others detail types concept.
+
+4
+00:00:29,850 --> 00:00:31,140
+Complex numbers.
+
+5
+00:00:32,860 --> 00:00:40,150
+Complex numbers are one of the basic types, and Go Link Go has two complex types of different sizes
+
+6
+00:00:41,830 --> 00:00:46,270
+Complex 64 and Complex 128.
+
+7
+00:00:48,910 --> 00:00:57,430
+Phil, 32, and Philip, 64, are also part of these complex numbers, the inbuilt function creates
+
+8
+00:00:57,430 --> 00:01:04,720
+the complex number from its imaginary and real part and inbuilt imaginary and real function extract
+
+9
+00:01:04,720 --> 00:01:05,740
+those parts.
+
+10
+00:01:07,030 --> 00:01:16,660
+Complex 64 complex numbers, which contains four lottery tool as a real and imaginary component, complex,
+
+11
+00:01:16,660 --> 00:01:18,160
+one hundred and twenty eight.
+
+12
+00:01:18,670 --> 00:01:24,250
+Complex numbers which contain slots 64 as the real and imaginary component.
+
+13
+00:01:24,580 --> 00:01:30,430
+The default type for a complex number and go lang is complex one hundred and twenty eight.
+
+14
+00:01:31,690 --> 00:01:37,690
+Now, let's go to this court get program and illustrate how to use of complex numbers.
+
+15
+00:01:38,770 --> 00:01:53,440
+First, define two variables like that a equals two point thirty five and life B equals three point
+
+16
+00:01:53,440 --> 00:01:54,490
+seventy six.
+
+17
+00:01:55,060 --> 00:02:01,630
+Go also provides a built in function named complex for creating complex numbers.
+
+18
+00:02:02,140 --> 00:02:07,810
+If you're creating a complex number with the variables instead of literals, then you will need to use
+
+19
+00:02:07,810 --> 00:02:09,100
+the complex function.
+
+20
+00:02:10,540 --> 00:02:14,350
+So we create a complex number by complex function.
+
+21
+00:02:15,310 --> 00:02:27,190
+Now we define the variable like Bash C and initialize it by complex function complex and set A and B
+
+22
+00:02:27,190 --> 00:02:29,170
+as arguments for dysfunction.
+
+23
+00:02:29,710 --> 00:02:49,870
+Now display value and type of C variable FP C and f f tied o c colin person t uppercase and set c variable
+
+24
+00:02:50,200 --> 00:02:50,770
+b format.
+
+25
+00:02:50,770 --> 00:02:53,680
+The court saved the project and execute the program.
+
+26
+00:02:54,670 --> 00:02:58,540
+Go run thought backslash mean that goal?
+
+27
+00:03:00,520 --> 00:03:08,830
+Now we can see the output, the value is two point thirty five plus three point seventy six I.
+
+28
+00:03:09,100 --> 00:03:11,760
+And Type of civil liberties complex.
+
+29
+00:03:11,770 --> 00:03:13,690
+One hundred and twenty eight.
+
+30
+00:03:13,960 --> 00:03:14,890
+Not death.
+
+31
+00:03:15,040 --> 00:03:21,700
+Both real and imaginary parts of the complex number must be of the same floating point type.
+
+32
+00:03:22,150 --> 00:03:28,060
+If you try to create a complex number with different real and animation types, then the compiler will
+
+33
+00:03:28,060 --> 00:03:28,870
+turn it off.
+
+34
+00:03:29,530 --> 00:03:32,150
+So we do another sample first.
+
+35
+00:03:32,150 --> 00:03:33,370
+Clear the last code.
+
+36
+00:03:38,430 --> 00:03:41,290
+And defined two variables by two types.
+
+37
+00:03:41,490 --> 00:03:52,740
+For example, via a float theory to initialize it by four point ninety two and define another variable
+
+38
+00:03:52,740 --> 00:04:02,670
+like that, be by the time floats 64 and initialize it by the value, for example, seven point thirty
+
+39
+00:04:02,670 --> 00:04:13,470
+eight and now go to the next line and define another variable like that C equals and create a complex
+
+40
+00:04:13,470 --> 00:04:22,590
+number bunkering complex function complex and set A and B as arguments for each day and B.
+
+41
+00:04:24,780 --> 00:04:25,210
+OK.
+
+42
+00:04:25,470 --> 00:04:32,700
+We have a rule the following his statement won't campaign, both real and imaginary paws must be of
+
+43
+00:04:32,700 --> 00:04:39,390
+the same floating point type here as fellow Terry Toole and BS followed 64.
+
+44
+00:04:39,690 --> 00:04:43,980
+And it won't comply, and it has compiled at all.
+
+45
+00:04:44,910 --> 00:04:51,510
+OK, you can perform arithmetic operations like addition, subtraction, multiplication and division
+
+46
+00:04:51,510 --> 00:04:52,560
+and complex number.
+
+47
+00:04:53,100 --> 00:04:55,290
+So first, clear the last code.
+
+48
+00:04:55,950 --> 00:04:57,870
+So define a variable like that.
+
+49
+00:04:58,380 --> 00:05:01,770
+A equals three plus five.
+
+50
+00:05:03,360 --> 00:05:05,790
+And define another variable like that.
+
+51
+00:05:06,420 --> 00:05:10,860
+E equals two plus three i.
+
+52
+00:05:14,290 --> 00:05:24,040
+Now define another variable life result, one for addition to variables A and B together, that result
+
+53
+00:05:25,330 --> 00:05:28,570
+one equals a plus B.
+
+54
+00:05:29,900 --> 00:05:38,720
+And go to the next line and define another variable like valve resolve to force contraction between
+
+55
+00:05:38,720 --> 00:05:42,680
+A and B B minus A.
+
+56
+00:05:45,420 --> 00:05:58,650
+And go to the next line, define another variable valve result three equals a multiplication B and another
+
+57
+00:05:58,650 --> 00:06:06,390
+variable like that result four equals a Division B.
+
+58
+00:06:09,000 --> 00:06:14,730
+Now go to next line and display the results value if P
+
+59
+00:06:17,460 --> 00:06:33,870
+resolved one, resolved two, resolved three and resolved for reformat the call, save the project and
+
+60
+00:06:33,870 --> 00:06:35,340
+execute the program.
+
+61
+00:06:36,060 --> 00:06:37,590
+Now run the comment.
+
+62
+00:06:37,590 --> 00:06:39,630
+Go from dot back.
+
+63
+00:06:39,780 --> 00:06:41,370
+This mean that go.
+
+64
+00:06:44,600 --> 00:06:53,720
+Now we can see the output and we could perform arithmetic operations on complex numbers in order not
+
+65
+00:06:53,720 --> 00:06:55,520
+to prolong the time of decision.
+
+66
+00:06:55,700 --> 00:06:59,450
+We will finish it and we will continue the content in the next session.
+
+67
+00:06:59,600 --> 00:07:00,140
+Goodbye.

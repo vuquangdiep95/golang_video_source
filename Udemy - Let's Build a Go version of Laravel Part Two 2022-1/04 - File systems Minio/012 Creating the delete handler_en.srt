@@ -1,0 +1,300 @@
+1
+00:00:00,860 --> 00:00:06,500
+So the last thing we have to actually implement for our Web pages to be functional is that delete button
+
+2
+00:00:06,500 --> 00:00:10,030
+when you're looking at the listed file system from Mineo.
+
+3
+00:00:10,820 --> 00:00:15,620
+There's a delete button next to it and I should actually have a handler and a route that makes that
+
+4
+00:00:15,620 --> 00:00:17,120
+functional, and that's pretty simple.
+
+5
+00:00:17,180 --> 00:00:20,570
+So back in our file handlers dot and go in my app.
+
+6
+00:00:21,050 --> 00:00:25,670
+Let's go to the very bottom of this file and add a new handler, and we'll set the root up after the
+
+7
+00:00:25,670 --> 00:00:26,060
+fact.
+
+8
+00:00:26,630 --> 00:00:32,810
+So func and this will be each pointer to handlers as usual, and we'll just call this one.
+
+9
+00:00:33,260 --> 00:00:37,730
+Delete from FS for file systems with a response writer
+
+10
+00:00:40,670 --> 00:00:42,260
+and a pointer to a request.
+
+11
+00:00:45,010 --> 00:00:52,840
+And what I'll do is create a variable force, which is a type filesystems force that interface we defined
+
+12
+00:00:53,260 --> 00:00:54,820
+and then we'll go to.
+
+13
+00:00:54,820 --> 00:01:01,810
+If you look at the actual list Fastjet over here and you go to the very bottom, we have some JavaScript
+
+14
+00:01:01,810 --> 00:01:02,980
+that actually deletes the item.
+
+15
+00:01:03,010 --> 00:01:08,560
+And what that does is fire up a little dialog box using that wonderful JavaScript library small.
+
+16
+00:01:09,280 --> 00:01:11,170
+And it says, Do you want to delete this file?
+
+17
+00:01:11,180 --> 00:01:11,790
+Yes or no?
+
+18
+00:01:11,800 --> 00:01:20,680
+And if you click yes, then it calls the URL slash delete dash from dash fs and then it passes a query
+
+19
+00:01:20,680 --> 00:01:21,280
+parameter.
+
+20
+00:01:21,670 --> 00:01:24,670
+And that's the file system type and the name of the file to delete.
+
+21
+00:01:24,850 --> 00:01:27,640
+OK, so we're getting our file system type.
+
+22
+00:01:27,640 --> 00:01:30,490
+So back then our handlers, we better make sure we actually get that.
+
+23
+00:01:31,770 --> 00:01:40,770
+So that's type, which is a very well, I'm just declaring that's a sign of value from RW R Okwiri get
+
+24
+00:01:41,160 --> 00:01:46,080
+and I'm looking for the name EF-S lowercase underscore type.
+
+25
+00:01:46,740 --> 00:01:48,570
+OK, so now I know what filesystem type.
+
+26
+00:01:48,570 --> 00:01:56,100
+To delete that, we need to know what file to delete item is assigned the value of a URL on query.
+
+27
+00:01:58,410 --> 00:01:59,010
+Not yet.
+
+28
+00:01:59,820 --> 00:02:05,400
+And I'm looking for file and I would just switch on if it's tight.
+
+29
+00:02:05,460 --> 00:02:06,210
+Same as always.
+
+30
+00:02:06,330 --> 00:02:09,169
+Switch on FS type.
+
+31
+00:02:12,750 --> 00:02:21,690
+And the only case we care about right now is, meanwhile, case, you know, and we get our file system,
+
+32
+00:02:21,690 --> 00:02:34,500
+so f is assigned the value of each AP file systems at the key, meanwhile, has to file systems.
+
+33
+00:02:36,240 --> 00:02:42,180
+And now that variable f's, which were declared on one line 132 that is equal to can't just be equal
+
+34
+00:02:42,180 --> 00:02:45,750
+to f because one's a point or one's not.
+
+35
+00:02:46,080 --> 00:02:47,970
+So we pass a reference to F instead.
+
+36
+00:02:48,600 --> 00:02:49,710
+Now we have our file system.
+
+37
+00:02:50,070 --> 00:02:55,650
+And of course, we'll add cases for all the other ones in a bit when we get to those file systems.
+
+38
+00:02:56,760 --> 00:03:01,990
+Now we will get the value deleted returned from.
+
+39
+00:03:02,580 --> 00:03:09,060
+And that's an assignment returned from the variable f's dot delete and that wants a slice of strings,
+
+40
+00:03:09,070 --> 00:03:11,370
+so we'll create a slice of string.
+
+41
+00:03:12,150 --> 00:03:13,800
+And inside of that, we'll just put item.
+
+42
+00:03:14,040 --> 00:03:16,260
+We're only deleting one thing and that will do the trick.
+
+43
+00:03:17,130 --> 00:03:20,850
+So delete it as a boolean if deleted, then.
+
+44
+00:03:22,340 --> 00:03:33,610
+H-2A app session put, and we use our context as always, and we're going to flash and we'll put format
+
+45
+00:03:33,950 --> 00:03:43,820
+Sprint F percent s was deleted and substitute item four percent, yes, OK.
+
+46
+00:03:44,480 --> 00:03:55,190
+And I will do a redirect HDP to redirect w her list fs same as before.
+
+47
+00:03:55,520 --> 00:04:05,750
+Question mark f s dash type equals plus f s type with the status http dot status c others.
+
+48
+00:04:07,370 --> 00:04:08,540
+And that should do it now.
+
+49
+00:04:08,540 --> 00:04:13,100
+Clearly, there's no error checking going in here because this isn't a production quality web page I'm
+
+50
+00:04:13,100 --> 00:04:13,560
+building.
+
+51
+00:04:13,580 --> 00:04:19,339
+This is just to demonstrate that a remote file systems work, and this is absolutely sufficient for
+
+52
+00:04:19,339 --> 00:04:20,300
+our purposes.
+
+53
+00:04:20,930 --> 00:04:24,680
+So let's switch over to rootstock, go and add a root into delete files.
+
+54
+00:04:24,890 --> 00:04:32,180
+And I'll just put it right here and you don't get and I want to get slash delete.
+
+55
+00:04:33,690 --> 00:04:42,600
+From that face, and that calls aid handlers from the office, and now when I restart my application,
+
+56
+00:04:42,810 --> 00:04:44,940
+make restart, this should all work.
+
+57
+00:04:49,110 --> 00:04:54,480
+So back we go over to our web browser, refresh this page to make sure it's current.
+
+58
+00:04:54,480 --> 00:04:58,380
+It is, and let's delete Whale Dash Big Dot Ping, so delete.
+
+59
+00:04:59,670 --> 00:05:01,380
+Am I sure I want to delete this file?
+
+60
+00:05:01,410 --> 00:05:02,340
+Yes, delete.
+
+61
+00:05:02,940 --> 00:05:04,020
+And we have an error.
+
+62
+00:05:04,050 --> 00:05:05,460
+So let's go back and see what we got wrong.
+
+63
+00:05:05,730 --> 00:05:06,750
+That happens sometimes.
+
+64
+00:05:08,480 --> 00:05:09,980
+And the air is.
+
+65
+00:05:11,110 --> 00:05:12,370
+Right up here.
+
+66
+00:05:13,360 --> 00:05:17,460
+Conversion interface is no, not minimal filesystems, I.
+
+67
+00:05:17,800 --> 00:05:24,640
+So I got something wrong, my handler must go to delete from file system, and if you misspell the key,
+
+68
+00:05:24,940 --> 00:05:25,810
+you're going to have a problem.
+
+69
+00:05:26,170 --> 00:05:27,160
+I'm sure you saw that.
+
+70
+00:05:27,280 --> 00:05:28,210
+So let's make restart.
+
+71
+00:05:35,780 --> 00:05:39,860
+And back to my Web browser, and I'll go back one page.
+
+72
+00:05:42,020 --> 00:05:49,320
+To hear refresh this and now let's try deleting the whale big that looks better.
+
+73
+00:05:49,340 --> 00:05:51,290
+It's gone perfect.
+
+74
+00:05:51,470 --> 00:05:57,920
+So that takes care of testing out and making the core functionality active for minute, and we'll move
+
+75
+00:05:57,920 --> 00:06:00,080
+on to the next file system in the next section.
+

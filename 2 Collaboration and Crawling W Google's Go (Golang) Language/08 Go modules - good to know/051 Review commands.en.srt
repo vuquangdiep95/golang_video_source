@@ -1,0 +1,231 @@
+1
+00:00:00,410 --> 00:00:05,700
+So now we're going to take a look at just sort of review some of the commands that we've seen through
+
+2
+00:00:05,700 --> 00:00:10,620
+this section and then we're going to move into some hands on exercises and I'm looking forward to those
+
+3
+00:00:10,620 --> 00:00:16,470
+hands on exercises because I love working the challenges and problems in myself but the commands that
+
+4
+00:00:16,470 --> 00:00:23,970
+we've gone through so far as go mod a net and so go modern that is how you create a go module and you
+
+5
+00:00:23,970 --> 00:00:29,430
+want to do that in your root directory your read directories if you're working on it or if you're using
+
+6
+00:00:29,430 --> 00:00:34,920
+get it's going to be where you're hit and get folder is empty the directory from which all the other
+
+7
+00:00:34,920 --> 00:00:42,930
+directories in your project merge or transcend or originate from or under the tree structure.
+
+8
+00:00:42,960 --> 00:00:46,320
+So go modern IT CREATES A go module.
+
+9
+00:00:46,320 --> 00:00:48,840
+Do you have anything more to say about go modern.
+
+10
+00:00:48,840 --> 00:00:51,020
+It also gives you your go mod file.
+
+11
+00:00:51,030 --> 00:00:51,340
+Yep.
+
+12
+00:00:51,380 --> 00:00:51,600
+Yeah.
+
+13
+00:00:51,600 --> 00:00:51,940
+Come on.
+
+14
+00:00:51,940 --> 00:00:53,620
+And it creates them on file.
+
+15
+00:00:53,790 --> 00:00:57,620
+You have to name the namespace yourself unless it can figure it out based.
+
+16
+00:00:57,630 --> 00:01:04,000
+Because if you're on your go to have that to figure it out so add your namespace to that by example
+
+17
+00:01:04,000 --> 00:01:11,860
+dot com forward slash hello or get hub dot com forward slash user name goes to Levin forward slash repo
+
+18
+00:01:11,860 --> 00:01:16,960
+name so whatever your namespace is if you're on your go path already it'll figure out the namespace
+
+19
+00:01:17,270 --> 00:01:17,720
+path.
+
+20
+00:01:17,790 --> 00:01:23,750
+So you it in that case but under most circumstances you'll need to put that there and then go build
+
+21
+00:01:23,750 --> 00:01:29,620
+and go test another package building commands add new dependencies to go mod as needed and and then
+
+22
+00:01:29,620 --> 00:01:35,380
+we can see what's in go mod by opening it up or carrying it or we can list all of the current modules
+
+23
+00:01:35,380 --> 00:01:36,400
+dependencies.
+
+24
+00:01:36,580 --> 00:01:39,830
+Those would be direct and indirect dependencies.
+
+25
+00:01:39,880 --> 00:01:41,460
+So we've learned what that is.
+
+26
+00:01:41,920 --> 00:01:47,920
+And we've really learned quite a bit going through all this about package management direct tendencies
+
+27
+00:01:47,950 --> 00:01:55,780
+and indirect dependencies and go modules and keeping track of which packages and specifying which packages
+
+28
+00:01:56,200 --> 00:02:05,390
+you could go get a package name and you can also add in an at you know with the version or latest.
+
+29
+00:02:05,530 --> 00:02:08,480
+So that's not being R but close.
+
+30
+00:02:08,480 --> 00:02:13,570
+So there's some examples down below where it says it so go get the package and they'll bring in the
+
+31
+00:02:13,570 --> 00:02:14,050
+latest.
+
+32
+00:02:14,050 --> 00:02:20,350
+You could add in ladies if you want or you could specify an exact version and then go mod tidy removes
+
+33
+00:02:20,350 --> 00:02:28,390
+any unused dependency dependencies and adds dependencies for other platforms as Daniel pointed out earlier
+
+34
+00:02:28,870 --> 00:02:34,060
+and then we have go doc package name where we can look at the documentation for package.
+
+35
+00:02:34,240 --> 00:02:38,720
+Anything you want to add to all those do we leave any thing out.
+
+36
+00:02:39,360 --> 00:02:46,450
+Only if you want to put in something about the the added the replace or the get tag yeah that's that's
+
+37
+00:02:46,560 --> 00:02:47,370
+so kind.
+
+38
+00:02:47,450 --> 00:02:48,530
+They're kind of fancy here.
+
+39
+00:02:48,680 --> 00:02:48,960
+Yeah.
+
+40
+00:02:49,020 --> 00:02:53,360
+That the added The get tag is import get tags important and it's fairly easy.
+
+41
+00:02:53,390 --> 00:02:59,290
+But yeah let's get into the replaces replace is is that advanced.
+
+42
+00:02:59,320 --> 00:03:03,910
+Yeah look it up when you need a good tag and then we have the tag name right.
+
+43
+00:03:03,920 --> 00:03:04,830
+Yeah.
+
+44
+00:03:05,100 --> 00:03:06,960
+And so those commands are all right there.
+
+45
+00:03:06,970 --> 00:03:12,250
+Create a tag Share list of tags I guess we'll just list each of those out right here.
+
+46
+00:03:12,360 --> 00:03:13,720
+That's good to happen down there.
+
+47
+00:03:13,780 --> 00:03:14,550
+So we have.
+
+48
+00:03:15,090 --> 00:03:19,240
+So we'll just put these under tag tags.
+
+49
+00:03:19,380 --> 00:03:20,010
+Let's do that.
+
+50
+00:03:20,030 --> 00:03:27,200
+Black tags and we'll have the commands right there because they're all related to the same deal and
+
+51
+00:03:27,200 --> 00:03:28,130
+we'll make those red.
+
+52
+00:03:28,160 --> 00:03:32,150
+I will make those red on my own time but that is.
+
+53
+00:03:32,330 --> 00:03:34,040
+Those are the commands we've learned through this.
+
+54
+00:03:34,040 --> 00:03:39,680
+I think it's for me handy to have all those commands there and just remind myself how everything we
+
+55
+00:03:39,680 --> 00:03:44,330
+learned it's really comes down to using these commands.
+
+56
+00:03:44,330 --> 00:03:45,910
+So all right.
+
+57
+00:03:45,920 --> 00:03:47,520
+Anything else.
+
+58
+00:03:48,390 --> 00:03:51,260
+We will see you in the next videos with hands on exercises.

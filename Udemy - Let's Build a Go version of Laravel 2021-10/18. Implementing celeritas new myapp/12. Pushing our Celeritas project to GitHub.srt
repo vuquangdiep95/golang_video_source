@@ -1,0 +1,123 @@
+1
+00:00:01,630 --> 00:00:07,270
+So in order to make the celebrity horse new, whatever your project name is functional, we of course,
+
+2
+00:00:07,270 --> 00:00:10,870
+have to push our celebrity project to a public git repository.
+
+3
+00:00:11,410 --> 00:00:15,520
+So I'm looking at the celebrities project right now, and the first thing I'll do is create a don't
+
+4
+00:00:15,580 --> 00:00:16,680
+get ignored file
+
+5
+00:00:19,960 --> 00:00:23,860
+just to make sure things I don't want committed to my repository are not committed.
+
+6
+00:00:24,430 --> 00:00:29,230
+So as I did last time, I put that idea, and of course, that's for jet brains projects.
+
+7
+00:00:29,230 --> 00:00:34,420
+If you ever worked with jet brain software, you'll know that it creates a idea folder.
+
+8
+00:00:34,990 --> 00:00:40,630
+And I don't want coverage dot out to go up there, and I don't want my guest directory to go in there
+
+9
+00:00:40,630 --> 00:00:41,230
+as either.
+
+10
+00:00:41,470 --> 00:00:42,230
+Not shabby enough.
+
+11
+00:00:42,850 --> 00:00:44,930
+And I'll also create a read me file.
+
+12
+00:00:45,310 --> 00:00:46,450
+I'll just leave it empty.
+
+13
+00:00:47,110 --> 00:00:48,000
+Just put a title in.
+
+14
+00:00:48,010 --> 00:00:52,290
+Read me to me and in here I'll put celebrities.
+
+15
+00:00:52,300 --> 00:00:56,190
+And of course, you put actual read me information there, but I'm just going to put it in there.
+
+16
+00:00:56,200 --> 00:00:58,480
+So we have a read me file on the repository.
+
+17
+00:00:59,500 --> 00:01:03,490
+Now I'll open my terminal window, make sure I'm in the right directory.
+
+18
+00:01:03,490 --> 00:01:06,490
+I'm in the root level of my celebrity celebrity house project.
+
+19
+00:01:06,490 --> 00:01:20,920
+So type, get in it and get ad dot and get commit m initial entry.
+
+20
+00:01:25,770 --> 00:01:27,790
+OK, so everything's been committed to get.
+
+21
+00:01:27,870 --> 00:01:36,060
+Now I'll switch over to my web browser and create a new repository, and I'll make the name match exactly
+
+22
+00:01:36,780 --> 00:01:38,010
+what I used everywhere.
+
+23
+00:01:38,010 --> 00:01:45,510
+My source code, which is just pea, solar slash, solara toss and I'll make sure it's public and create
+
+24
+00:01:45,510 --> 00:01:45,630
+it.
+
+25
+00:01:48,620 --> 00:01:53,990
+And then copy this code or these commands, push an existing repository from the command line, so I
+
+26
+00:01:53,990 --> 00:02:00,260
+copy those, switch back to my terminal, paste them in and hit return.
+
+27
+00:02:02,400 --> 00:02:03,150
+And that should do it.
+
+28
+00:02:03,810 --> 00:02:05,730
+So now we'll go back and make sure it's there.
+
+29
+00:02:08,030 --> 00:02:13,910
+Celebrities, it's all there, perfect, so now that I've committed this to a committed and pushed it
+
+30
+00:02:13,910 --> 00:02:19,430
+to a remote repository, I should be able to try it out and see if we got everything right and we'll
+
+31
+00:02:19,430 --> 00:02:21,230
+take care of that in the next election.

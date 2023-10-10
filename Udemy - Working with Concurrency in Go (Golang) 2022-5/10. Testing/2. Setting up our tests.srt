@@ -1,0 +1,559 @@
+1
+00:00:00,910 --> 00:00:06,760
+So before we start writing actual tests, let's make our lives easier and set up a testing environment.
+
+2
+00:00:06,970 --> 00:00:11,830
+Now, when we wrote tests much earlier in the course for the various classic computer science problems,
+
+3
+00:00:11,830 --> 00:00:12,760
+we didn't have to do that.
+
+4
+00:00:13,450 --> 00:00:14,950
+But this is a web application.
+
+5
+00:00:15,100 --> 00:00:21,070
+And when we're testing a web application, one of the things we have to do is to duplicate the environment
+
+6
+00:00:21,070 --> 00:00:23,260
+that the various parts of our application run in.
+
+7
+00:00:23,620 --> 00:00:27,580
+And that's particularly true for handlers, but it's true for most parts of our application.
+
+8
+00:00:28,270 --> 00:00:33,550
+So over in the CMD Web folder, I'm going to create a new file which must be named.
+
+9
+00:00:33,730 --> 00:00:35,770
+Set up, underscore test, dot, go.
+
+10
+00:00:37,060 --> 00:00:39,740
+And this will run before our actual tests run.
+
+11
+00:00:39,910 --> 00:00:41,240
+It sets up our environment.
+
+12
+00:00:41,260 --> 00:00:46,840
+So it's in package main and we'll create a variable test app.
+
+13
+00:00:47,440 --> 00:00:53,080
+And it's a type config will create a test config for our for our tests, obviously.
+
+14
+00:00:53,980 --> 00:00:56,620
+And now we'll write a function named Test Main.
+
+15
+00:00:56,620 --> 00:01:00,910
+And this is a special function used by go.
+
+16
+00:01:01,450 --> 00:01:02,680
+Messed up my import there.
+
+17
+00:01:02,950 --> 00:01:03,460
+That's better.
+
+18
+00:01:03,700 --> 00:01:04,030
+Okay.
+
+19
+00:01:04,970 --> 00:01:05,620
+Used by God.
+
+20
+00:01:05,690 --> 00:01:09,500
+This will actually run before our actual test run action.
+
+21
+00:01:09,500 --> 00:01:11,780
+In fact, this will run our tests for us.
+
+22
+00:01:12,200 --> 00:01:13,460
+So what do we have to do?
+
+23
+00:01:13,490 --> 00:01:15,410
+Well, let's open up our main doggo.
+
+24
+00:01:16,500 --> 00:01:16,940
+Okay.
+
+25
+00:01:18,530 --> 00:01:20,600
+And let's split the window here.
+
+26
+00:01:20,660 --> 00:01:23,870
+So we have in one window we'll have main dog go.
+
+27
+00:01:25,930 --> 00:01:27,880
+And in the other one, we'll have our tests.
+
+28
+00:01:28,000 --> 00:01:29,800
+Now, something didn't quite work here.
+
+29
+00:01:30,190 --> 00:01:30,610
+Testing.
+
+30
+00:01:30,610 --> 00:01:31,960
+Not him, not me.
+
+31
+00:01:32,200 --> 00:01:33,160
+I don't know where that came from.
+
+32
+00:01:34,310 --> 00:01:36,310
+Okay, so what do we need to do?
+
+33
+00:01:36,340 --> 00:01:40,180
+Well, one of the things we're going to have to do is we're going to be using the session in our tests.
+
+34
+00:01:40,300 --> 00:01:44,500
+So let's gob dot register, grabbed out register.
+
+35
+00:01:45,290 --> 00:01:50,920
+We'll register the same as we do at our actual main function actually in our init session function data
+
+36
+00:01:50,920 --> 00:01:55,840
+dot user because that's the one non primitive type we're putting in our sessions.
+
+37
+00:01:55,990 --> 00:02:00,290
+So that's registered or it will be when we run this, then let's create a session.
+
+38
+00:02:00,310 --> 00:02:06,490
+So over here in this window we'll find in this session and I'll copy all of this, okay?
+
+39
+00:02:06,550 --> 00:02:08,080
+And then delete one thing.
+
+40
+00:02:09,340 --> 00:02:14,350
+This is a unit test and we need to import X, so let's just do that this way.
+
+41
+00:02:15,280 --> 00:02:19,260
+X dot new and that does the import for me.
+
+42
+00:02:19,270 --> 00:02:19,600
+Okay.
+
+43
+00:02:20,110 --> 00:02:22,380
+I don't want to use redis for a unit test.
+
+44
+00:02:22,390 --> 00:02:22,660
+Okay.
+
+45
+00:02:22,870 --> 00:02:24,070
+No need to do that at all.
+
+46
+00:02:24,100 --> 00:02:27,310
+Redis has been fully tested and I don't have to worry about that at all.
+
+47
+00:02:28,120 --> 00:02:34,780
+And let's fix up our imports, find our okay and let's import HTP.
+
+48
+00:02:35,560 --> 00:02:37,300
+HTP the same site.
+
+49
+00:02:38,350 --> 00:02:38,700
+Mode.
+
+50
+00:02:40,450 --> 00:02:40,870
+That's better.
+
+51
+00:02:41,440 --> 00:02:42,940
+Okay, so now we have a session.
+
+52
+00:02:43,690 --> 00:02:48,310
+Now let's set up this test, that config variable that we declared on line 14.
+
+53
+00:02:48,520 --> 00:02:51,340
+And this is what we use as the app for our test.
+
+54
+00:02:51,640 --> 00:02:57,310
+So test app is equal to the type config and I'll fill out its fields.
+
+55
+00:02:57,790 --> 00:02:59,890
+So we have session, we can put session in there.
+
+56
+00:03:01,030 --> 00:03:03,880
+And remember, this is not the same session that we have in mind.
+
+57
+00:03:04,170 --> 00:03:04,420
+Go.
+
+58
+00:03:04,510 --> 00:03:08,020
+This one is specific to test me that function.
+
+59
+00:03:09,570 --> 00:03:10,200
+For DV.
+
+60
+00:03:10,290 --> 00:03:11,310
+I'm going to set that to nil.
+
+61
+00:03:11,340 --> 00:03:14,490
+We're not going to use the database at all for our tests, at least not for a while.
+
+62
+00:03:14,940 --> 00:03:16,110
+And for info log.
+
+63
+00:03:17,070 --> 00:03:20,700
+Well, I'll go over here and find info log wherever I create that this one.
+
+64
+00:03:21,600 --> 00:03:22,470
+So I'll copy that.
+
+65
+00:03:24,950 --> 00:03:29,730
+And paste that here and we'll have to import log, of course.
+
+66
+00:03:29,730 --> 00:03:30,980
+So I'll just put it in here.
+
+67
+00:03:32,030 --> 00:03:32,510
+Log.
+
+68
+00:03:37,070 --> 00:03:40,730
+And we need to import OS to do that import.
+
+69
+00:03:41,060 --> 00:03:41,570
+Whereas.
+
+70
+00:03:44,360 --> 00:03:44,690
+Okay.
+
+71
+00:03:44,870 --> 00:03:46,250
+And we also have an error log.
+
+72
+00:03:46,490 --> 00:03:50,150
+Error log, you know, populate that with the same thing.
+
+73
+00:03:50,180 --> 00:03:51,320
+I mean, don't go.
+
+74
+00:03:55,780 --> 00:03:56,110
+Okay.
+
+75
+00:03:56,350 --> 00:03:57,370
+So we have our info log.
+
+76
+00:03:57,370 --> 00:03:58,390
+We have our error log.
+
+77
+00:03:59,410 --> 00:04:00,340
+What's next?
+
+78
+00:04:00,880 --> 00:04:04,270
+Well, we're going to have to do models, but I'll leave that one alone for right now because we're
+
+79
+00:04:04,290 --> 00:04:05,470
+likely to use them for a little while.
+
+80
+00:04:05,470 --> 00:04:10,690
+And we need to make some changes to our data package to make it more testable, to make our handlers
+
+81
+00:04:10,690 --> 00:04:11,350
+more testable.
+
+82
+00:04:11,980 --> 00:04:21,520
+But I can put in weight and that will be a reference to sync dot linker and an error channel.
+
+83
+00:04:22,420 --> 00:04:26,320
+Well, I can just make the channel right here, just like I do with me, and I'll go make an error.
+
+84
+00:04:29,480 --> 00:04:34,820
+An error dungeon is just make chin look.
+
+85
+00:04:35,970 --> 00:04:40,280
+Okay, so now I have a test app all set up, mostly set up.
+
+86
+00:04:40,460 --> 00:04:42,230
+There's more things we need to do with it.
+
+87
+00:04:42,260 --> 00:04:46,130
+For example, when we get to testing our handlers, we'll be sending mail.
+
+88
+00:04:46,160 --> 00:04:48,890
+So let's create the dummy mailer.
+
+89
+00:04:49,280 --> 00:04:51,400
+Create a dummy mailer.
+
+90
+00:04:52,370 --> 00:04:54,470
+And that's as simple as setting out three channels.
+
+91
+00:04:54,590 --> 00:05:00,380
+Baratunde is assigned the value of make scan error.
+
+92
+00:05:02,600 --> 00:05:08,390
+Mailer Chan is assigned the value of make Chan message.
+
+93
+00:05:10,790 --> 00:05:13,940
+And again, I'll make that a 100 a buffer for 100.
+
+94
+00:05:15,700 --> 00:05:16,660
+And mailer done charm.
+
+95
+00:05:19,420 --> 00:05:21,840
+And that will be a sign the value of make a change.
+
+96
+00:05:23,830 --> 00:05:24,210
+Okay.
+
+97
+00:05:25,580 --> 00:05:26,690
+Now let's create the mailer.
+
+98
+00:05:26,780 --> 00:05:35,390
+So test app dot mailer is equal to mail that type.
+
+99
+00:05:36,630 --> 00:05:45,330
+And we'll put in weight, which is test app don't wait and we'll put in an error chain which is error
+
+100
+00:05:45,330 --> 00:05:46,500
+chain, the one I just made.
+
+101
+00:05:48,310 --> 00:05:53,890
+And we'll put it in a Mailer channel, which is the Mailer chan I just made, and we'll put it in the
+
+102
+00:05:53,890 --> 00:05:58,120
+mailer doesn't chan, which is the mailer done in China?
+
+103
+00:05:58,120 --> 00:05:59,830
+Just made it there.
+
+104
+00:06:01,120 --> 00:06:01,450
+Okay.
+
+105
+00:06:01,690 --> 00:06:02,740
+So I set up the mailer.
+
+106
+00:06:03,520 --> 00:06:04,480
+And what's wrong with that?
+
+107
+00:06:04,990 --> 00:06:05,770
+It's done, Chan.
+
+108
+00:06:08,500 --> 00:06:08,950
+That's better.
+
+109
+00:06:09,880 --> 00:06:12,430
+Sometimes autocomplete doesn't make my life easier.
+
+110
+00:06:12,910 --> 00:06:17,530
+Now, to make it really simple, we'll make our dummy mailer right here.
+
+111
+00:06:17,770 --> 00:06:19,070
+So go func.
+
+112
+00:06:19,090 --> 00:06:24,160
+We'll just create a function that runs in the background and we'll close it off with this closing parentheses.
+
+113
+00:06:25,150 --> 00:06:27,000
+So our dummy mailer is pretty simple.
+
+114
+00:06:27,010 --> 00:06:31,000
+Would you type of select statement and case?
+
+115
+00:06:31,000 --> 00:06:38,620
+We'll just consume whatever comes in from test app, dot mailer, dot mailer chan and we'll do anything
+
+116
+00:06:38,620 --> 00:06:38,860
+with it.
+
+117
+00:06:39,580 --> 00:06:44,800
+And the same thing for getting something from test out dot mailer.
+
+118
+00:06:47,230 --> 00:06:47,920
+Urchin.
+
+119
+00:06:49,960 --> 00:06:56,730
+And the final one is case gets something from test app again.
+
+120
+00:07:00,100 --> 00:07:03,490
+Test app dot mailer dot done.
+
+121
+00:07:04,150 --> 00:07:08,000
+In that case, we could actually just return, okay?
+
+122
+00:07:08,740 --> 00:07:11,290
+And we'll just make this a little more nicely formatted.
+
+123
+00:07:12,190 --> 00:07:13,270
+So there's our dummy mailer.
+
+124
+00:07:14,920 --> 00:07:16,450
+Next, we need to listen for errors.
+
+125
+00:07:16,450 --> 00:07:24,190
+And again, I can just single func and close that off of this parenthesis and have a for loop that runs
+
+126
+00:07:24,190 --> 00:07:27,400
+forever and inside have a select statement.
+
+127
+00:07:29,260 --> 00:07:36,910
+And our first case when we get an error which is populated by something coming in from test at error
+
+128
+00:07:36,910 --> 00:07:37,300
+chain.
+
+129
+00:07:38,960 --> 00:07:47,900
+Operators test app error, log error, log dot, print line and the error.
+
+130
+00:07:49,370 --> 00:07:55,670
+And our other case we need to worry about just this one gets something from test app, not error chain
+
+131
+00:07:56,030 --> 00:07:56,380
+done.
+
+132
+00:07:57,830 --> 00:07:59,530
+In that case, we return.
+
+133
+00:08:00,120 --> 00:08:00,440
+Okay.
+
+134
+00:08:01,160 --> 00:08:06,740
+So the last thing to do for now in test main is to run our tests.
+
+135
+00:08:06,890 --> 00:08:12,680
+And you do that by calling OST on exit and we call Ingram.
+
+136
+00:08:14,210 --> 00:08:14,390
+Okay.
+
+137
+00:08:14,570 --> 00:08:19,010
+And that will run all of our tests after it sets up the environment.
+
+138
+00:08:19,460 --> 00:08:19,820
+Okay.
+
+139
+00:08:20,450 --> 00:08:23,660
+So we have our environment set up in the next lecture.
+
+140
+00:08:23,690 --> 00:08:25,580
+Let's write our first test for this project.

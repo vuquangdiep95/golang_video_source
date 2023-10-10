@@ -1,0 +1,544 @@
+1
+00:00:00,510 --> 00:00:05,790
+OK, quindi siamo pronti per iniziare il nostro primo servizio, quindi creeremo blog perché in Crood
+
+2
+00:00:05,790 --> 00:00:07,450
+la prima cosa è creare.
+
+3
+00:00:07,560 --> 00:00:16,050
+Quindi avremo un RBC e questo è chiamato creare blog e la richiesta è creare una richiesta di blog e i gruppi
+
+4
+00:00:16,050 --> 00:00:20,840
+di risposta e la risposta è creare una risposta al blog.
+
+5
+00:00:20,850 --> 00:00:25,190
+Ora dobbiamo creare questi due messaggi per creare richieste e creare una risposta al blog.
+
+6
+00:00:25,530 --> 00:00:32,130
+E così per questo andremo a fare un messaggio e creeremo una richiesta credibile e andremo al messaggio e
+
+7
+00:00:32,130 --> 00:00:34,920
+creeremo una risposta al blog di creazione.
+
+8
+00:00:34,920 --> 00:00:37,130
+Quindi ecco la mia risposta.
+
+9
+00:00:37,380 --> 00:00:43,080
+Ora dobbiamo specificare cosa vogliamo creare in una richiesta di legge così bene, fondamentalmente,
+
+10
+00:00:43,170 --> 00:00:49,600
+una volta creato un blog, quindi lo inseriremo in un blog e come risposta restituiremo un blog.
+
+11
+00:00:49,770 --> 00:00:53,290
+Questo avrà un ID del blog.
+
+12
+00:00:53,430 --> 00:00:53,670
+Destra.
+
+13
+00:00:53,670 --> 00:00:56,910
+Mentre questo non conosciamo ancora il blog.
+
+14
+00:00:56,910 --> 00:00:57,710
+Ecco.
+
+15
+00:00:57,840 --> 00:00:58,280
+OK.
+
+16
+00:00:58,530 --> 00:00:59,570
+Quindi siamo andati.
+
+17
+00:00:59,670 --> 00:01:03,940
+Fatto con la politica per le cose che abbiamo bisogno di generare il nostro codice.
+
+18
+00:01:04,110 --> 00:01:11,600
+Quindi lasciami andare a generare la ricerca dei dati e copiare questo intero blob di codice per generare il nostro codice fatto.
+
+19
+00:01:11,640 --> 00:01:18,540
+Quindi ora se torniamo ad amare quel PBT di Protel e dobbiamo creare un blog, vedi che c'è un codice che
+
+20
+00:01:18,540 --> 00:01:21,570
+è stato generato per noi, quindi è perfetto.
+
+21
+00:01:21,630 --> 00:01:27,610
+Quindi è bene che il tuo server vada e dovremo implementare questa foresta per il nostro server.
+
+22
+00:01:27,930 --> 00:01:31,420
+Quindi quello che dobbiamo fare è fondamentalmente creare una funzione di creazione.
+
+23
+00:01:31,620 --> 00:01:38,920
+Quindi, se torniamo al servizio di blocco del registro, possiamo vedere qui nell'interfaccia del server del servizio blog
+
+24
+00:01:39,430 --> 00:01:42,810
+che dovremmo creare una funzione chiamata creare blog.
+
+25
+00:01:42,820 --> 00:01:44,820
+Quindi andiamo avanti e facciamo questo.
+
+26
+00:01:44,950 --> 00:01:53,840
+Quindi andrò nel mio server e creeremo una funzione sul nostro server e si chiamerà creare blog.
+
+27
+00:01:54,210 --> 00:01:59,460
+Devo nominare tutto in modo che il contesto sia CTX, la richiesta Create Blug è rec.
+
+28
+00:01:59,550 --> 00:02:06,450
+E qui dovrò aggiungere il prefisso Blug P. B. per assicurarti che le classi ottengano i tipi
+
+29
+00:02:06,450 --> 00:02:07,320
+per essere risolti.
+
+30
+00:02:07,330 --> 00:02:10,440
+OK, quindi ora siamo pronti per creare la funzione blog.
+
+31
+00:02:10,790 --> 00:02:16,860
+E così in questo dovremo fondamentalmente analizzare i contenuti della nostra richiesta e passarla a qualcuno.
+
+32
+00:02:17,220 --> 00:02:23,880
+Quindi la prima cosa che vuoi fare è assegnare il Blug da rec dot get Blug.
+
+33
+00:02:24,300 --> 00:02:25,760
+E questo viene direttamente dal protocollo.
+
+34
+00:02:25,760 --> 00:02:30,220
+Ma per ora dovremo fondamentalmente creare dati da esso.
+
+35
+00:02:30,270 --> 00:02:37,490
+E quindi quello che faremo è che creeremo un oggetto Blug da esso quindi inserirò l'elemento del blog proprio qui, in
+
+36
+00:02:37,520 --> 00:02:39,260
+modo da non perderlo.
+
+37
+00:02:39,260 --> 00:02:39,720
+OK.
+
+38
+00:02:40,040 --> 00:02:41,220
+Quindi un articolo del blog è attivo.
+
+39
+00:02:41,390 --> 00:02:47,510
+Quindi cosa crea un articolo del blog e dovremo mappare tutti i campi a ciò che sappiamo, quindi
+
+40
+00:02:47,510 --> 00:02:56,630
+andremo avanti e creeremo un articolo per il blog e questa struttura avrà un ID autore che è un blog di cultura che ottiene l'ID autore e
+
+41
+00:02:57,850 --> 00:03:02,320
+quindi avrà un titolo che è ciò che il tuo blog ottiene titolo.
+
+42
+00:03:02,450 --> 00:03:05,300
+E finalmente avrà una coscienza e.
+
+43
+00:03:05,390 --> 00:03:10,760
+L'amore acquisisce sicurezza e non dimentichiamo l'ultimo commento.
+
+44
+00:03:10,760 --> 00:03:16,390
+Quindi questo in pratica dice OK, creeremo un articolo per il blog che, tra l'altro, ricorda le mappe per essere Sun.
+
+45
+00:03:16,910 --> 00:03:21,060
+E analizzeremo solo i dati del blog in quei dati.
+
+46
+00:03:21,110 --> 00:03:27,510
+Quindi ora cosa facciamo con quel Deedat dove vogliamo inserirlo nel nostro database di mongoloids.
+
+47
+00:03:27,530 --> 00:03:31,790
+Quindi se prendi la collezione che abbiamo creato da prima che arriva fino
+
+48
+00:03:31,790 --> 00:03:34,490
+a qui dalla collezione, prendiamo la collezione.
+
+49
+00:03:34,490 --> 00:03:39,350
+Fondamentalmente abbiamo una funzione chiamata inserti 1.
+
+50
+00:03:39,710 --> 00:03:43,740
+Quindi ne inseriremo uno e inseriamo uno in una serie di argomenti.
+
+51
+00:03:43,760 --> 00:03:45,720
+Quindi procuriamo la tua documentazione in tempi brevissimi.
+
+52
+00:03:45,950 --> 00:03:52,250
+Quindi inserire uno inserisce un singolo documento nella raccolta e possiamo specificare un contesto personalizzato
+
+53
+00:03:52,250 --> 00:03:57,150
+per questo metodo o nil predefinito per il contesto che sfondi.
+
+54
+00:03:57,260 --> 00:04:01,430
+Quindi dovremmo semplicemente usare il concetto di sfondi e inserire documenti.
+
+55
+00:04:01,430 --> 00:04:02,840
+Quindi andiamo a provarlo.
+
+56
+00:04:02,840 --> 00:04:10,730
+Quindi il contesto che vogliamo usare si chiamerà contesto che è lo sfondo e quindi dobbiamo passare nei
+
+57
+00:04:10,730 --> 00:04:11,600
+documenti.
+
+58
+00:04:11,650 --> 00:04:13,920
+Ora il tipo di documenti è l'interfaccia.
+
+59
+00:04:14,120 --> 00:04:15,320
+Quindi questo è un generico.
+
+60
+00:04:15,320 --> 00:04:17,590
+E quindi in pratica quello che facciamo sono generici.
+
+61
+00:04:17,600 --> 00:04:22,300
+E quindi quello che facciamo è che passiamo i dati stessi così passiamo i dati.
+
+62
+00:04:22,820 --> 00:04:28,300
+E questo mapperà correttamente il tuo documento perché dobbiamo essere Sontag in alto, vedrai
+
+63
+00:04:28,300 --> 00:04:30,770
+cosa significa quando eseguiremo quella funzione.
+
+64
+00:04:30,770 --> 00:04:34,040
+Le opzioni per l'inserimento dei dati non ne metteranno nessuna.
+
+65
+00:04:34,570 --> 00:04:36,180
+E così abbiamo finito ora.
+
+66
+00:04:36,200 --> 00:04:41,180
+Inserire uno restituisce un inserto uno genera un errore.
+
+67
+00:04:41,180 --> 00:04:48,260
+Quindi, quello che dobbiamo fare è tornare al nostro server e dire OK il risultato sarà
+
+68
+00:04:48,260 --> 00:04:52,090
+chiamato "Rest" e quindi l'errore verrà chiamato "Air".
+
+69
+00:04:52,140 --> 00:04:53,700
+Ciò ha senso.
+
+70
+00:04:53,700 --> 00:04:56,040
+E OK, stiamo bene.
+
+71
+00:04:56,160 --> 00:04:58,490
+Quindi dobbiamo sapere se c'è stato un errore.
+
+72
+00:04:58,480 --> 00:05:03,440
+Quindi se c'è stato un errore quindi se l'errore è nessuno zero.
+
+73
+00:05:03,460 --> 00:05:05,440
+Quindi c'è stato un errore allora qui.
+
+74
+00:05:05,480 --> 00:05:12,030
+Ricorda quando abbiamo iniziato a fare un po 'di codice e stavamo facendo alcuni codici di errore, possiamo restituire il fatto che
+
+75
+00:05:12,030 --> 00:05:14,370
+non c'erano errori, quindi dirò lo stato.
+
+76
+00:05:14,400 --> 00:05:21,640
+Questo è il nostro So air f e questo è il modo in cui stiamo passando questi dati dal buffer
+
+77
+00:05:21,640 --> 00:05:29,780
+locale Quindi dobbiamo andare avanti e inserire questo stato di Jarkesy e aprirlo e dire OK restituiremo un errore di Jarkesy e il codice
+
+78
+00:05:30,500 --> 00:05:33,400
+per esso dovrà importare il pacchetto di decodifiche.
+
+79
+00:05:33,680 --> 00:05:37,650
+Ma il codice si chiamerà Internal perché questo è un errore interno giusto.
+
+80
+00:05:37,650 --> 00:05:42,230
+È come se non possiamo inserire dati in TB, questo è un errore interno.
+
+81
+00:05:42,530 --> 00:05:50,150
+E poi quando dobbiamo fare è passare un messaggio, quindi diremo che è Prince F e diremo interno e passeremo
+
+82
+00:05:50,420 --> 00:05:51,040
+e
+
+83
+00:05:54,130 --> 00:06:00,000
+l'errore stesso per cento G. V. e lo passeremo.
+
+84
+00:06:00,280 --> 00:06:03,850
+OK quindi fondamentalmente OK se tutto ciò che dovevamo venire alla fine.
+
+85
+00:06:04,090 --> 00:06:10,030
+Quindi, se tutto va a male, quindi se non possiamo inserire dati su Tramon, buona TV, è molto probabile
+
+86
+00:06:10,250 --> 00:06:11,500
+che sia interno.
+
+87
+00:06:11,500 --> 00:06:14,390
+Quindi quello che vogliamo fare è solo lanciare un errore al cliente.
+
+88
+00:06:14,560 --> 00:06:17,290
+Il codice è interno, quindi significa che non può affrontarlo davvero.
+
+89
+00:06:17,830 --> 00:06:23,630
+E poi diciamo OK, ecco il messaggio di errore che abbiamo ottenuto nel caso in cui possano affrontarlo successivamente.
+
+90
+00:06:23,740 --> 00:06:27,780
+Bene, vogliamo fare è estrarre l'id oggetto dai risultati.
+
+91
+00:06:27,880 --> 00:06:31,450
+Quindi se guardi inserisci uno dei risultati qui.
+
+92
+00:06:31,510 --> 00:06:37,720
+Se si guarda il tipo di un risultato contiene un ID inserito che è interfaccia di tipo in
+
+93
+00:06:37,720 --> 00:06:40,710
+alto, quindi dovremo inferire il tipo di interfaccia.
+
+94
+00:06:40,720 --> 00:06:43,800
+Per fortuna, dopo alcune ricerche, so come farlo.
+
+95
+00:06:43,870 --> 00:06:52,780
+Quindi in pratica passerà a ottenere l'id dell'oggetto in modo Id e OK per vedere che la conversione funziona e farà oh
+
+96
+00:06:53,280 --> 00:06:56,740
+Id citare i risultati che è stato inserito.
+
+97
+00:06:56,740 --> 00:07:02,470
+Id dots e qui possiamo trasmettere quell'interfaccia a qualcosa che vogliamo.
+
+98
+00:07:02,980 --> 00:07:07,200
+E il cast che sta per essere funzionante sarà chiamato oggetto.
+
+99
+00:07:07,510 --> 00:07:13,920
+Quindi in pratica stiamo dicendo che l'ID inserito che è un'interfaccia un'interfaccia vuota può essere testato
+
+100
+00:07:13,990 --> 00:07:20,400
+sull'id oggetto e l'OK sta fondamentalmente dicendo che il cast ha funzionato o non ha funzionato.
+
+101
+00:07:20,680 --> 00:07:22,270
+Quindi OK è un booleano.
+
+102
+00:07:22,390 --> 00:07:29,110
+Quindi, se non ok, di nuovo restituiremo un errore e anche questa volta l'errore sarà interno,
+
+103
+00:07:29,110 --> 00:07:31,220
+quindi dirò semplicemente questo.
+
+104
+00:07:31,540 --> 00:07:41,960
+Ma questa volta dirò che non posso analizzare la conversione in 0 ID per qualche motivo.
+
+105
+00:07:42,130 --> 00:07:43,650
+Forse è questo che succede.
+
+106
+00:07:44,080 --> 00:07:47,710
+OK, quindi ora abbiamo un'idea e questo è un oggetto appropriato.
+
+107
+00:07:47,710 --> 00:07:50,500
+Quindi abbiamo i metodi su di esso e possiamo iniziare ad affrontarlo.
+
+108
+00:07:50,860 --> 00:07:55,010
+E quindi quello che facciamo è che dobbiamo solo restituire la nostra risposta.
+
+109
+00:07:55,030 --> 00:08:03,100
+Quindi per questo userò e Blug P. B. e dovremo ovviamente passare una risposta al blog e
+
+110
+00:08:03,100 --> 00:08:05,530
+per questo dobbiamo passare dentro un Blug.
+
+111
+00:08:05,530 --> 00:08:09,620
+Quindi se guardi la risposta di Create Blug c'è un Blug al suo interno.
+
+112
+00:08:09,670 --> 00:08:15,310
+Quindi andiamo avanti e passiamo in un Blug, quindi diremo che il blog
+
+113
+00:08:16,410 --> 00:08:26,020
+in cui passeremo avrà tipo sguardo P. B. quello è Blug e ora stiamo solo passando l'ID
+
+114
+00:08:26,020 --> 00:08:32,380
+e l'ID verrà chiamato all'ID che abbiamo appena ottenuto qui l'id dell'oggetto che hecks e isk restituisce una stringa.
+
+115
+00:08:32,710 --> 00:08:37,350
+Ora l'altro ID sarà uguale a Blug che ottiene altri ID.
+
+116
+00:08:37,360 --> 00:08:43,500
+Il titolo sarà chiamato a Blug che ottiene il titolo.
+
+117
+00:08:43,900 --> 00:08:52,240
+E infine il contenuto sarà uguale a Blug che ottiene i contenuti e questo è probabilmente un modo migliore per
+
+118
+00:08:52,240 --> 00:08:52,800
+farlo.
+
+119
+00:08:52,810 --> 00:08:54,140
+Ma aggiungerò solo il colore mancante.
+
+120
+00:08:54,160 --> 00:08:55,320
+E qui andiamo.
+
+121
+00:08:55,480 --> 00:08:57,450
+Ora non è completamente felice.
+
+122
+00:08:57,550 --> 00:08:59,780
+Dice che non implica il metodo.
+
+123
+00:08:59,800 --> 00:09:05,130
+Sì, perché non torniamo sappiamo prima di tornare nil scorso, quindi aggiungerò nil alla fine.
+
+124
+00:09:05,590 --> 00:09:06,390
+E qui andiamo.
+
+125
+00:09:06,550 --> 00:09:09,220
+Quindi qui abbiamo trasformato la nostra funzione e questa è la creazione.
+
+126
+00:09:09,220 --> 00:09:16,990
+Quindi riprendiamo il riepilogo riassumendo i dati e li mappiamo a un articolo del blog negli oggetti dati e poi li
+
+127
+00:09:17,470 --> 00:09:22,970
+passeremo alla nostra raccolta e inseriremo tali dati nella nostra raccolta attraverso il buon
+
+128
+00:09:22,980 --> 00:09:29,560
+driver del mese in caso ci sia un errore restituire un errore ai client nel caso in
+
+129
+00:09:29,560 --> 00:09:34,870
+cui non possiamo analizzare l'ID inserito come ID oggetto, quindi restituiremo questo messaggio.
+
+130
+00:09:34,870 --> 00:09:40,030
+E infine se tutto va bene allora abbiamo un oggetto id e quindi possiamo creare un ritorno
+
+131
+00:09:40,060 --> 00:09:43,670
+di sangue P. B. crea la risposta di Blug che contiene un bug.
+
+132
+00:09:43,690 --> 00:09:44,520
+Quindi è un sacco di codice.
+
+133
+00:09:44,530 --> 00:09:48,780
+È un po 'più complicato ma vediamo se almeno il server può essere eseguito.
+
+134
+00:09:48,850 --> 00:09:50,750
+Quindi andiamo ed eseguiamo il nostro server.
+
+135
+00:09:51,190 --> 00:09:53,830
+E sì, il nostro server funziona così è perfetto.
+
+136
+00:09:53,830 --> 00:09:57,190
+Faremo la prossima lezione e implementeremo il client per chiamare quella funzione.
+

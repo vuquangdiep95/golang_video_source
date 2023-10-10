@@ -1,0 +1,267 @@
+1
+00:00:00,770 --> 00:00:01,160
+Okay.
+
+2
+00:00:01,160 --> 00:00:06,650
+So we have the user test type all set up and let's do exactly the same thing for a plan.
+
+3
+00:00:06,680 --> 00:00:08,210
+So I go over to plan.
+
+4
+00:00:08,210 --> 00:00:16,510
+Don't go and go to the very top and I'll copy it's type and then I'll go back to test dash models Tokyo
+
+5
+00:00:16,550 --> 00:00:18,040
+and go to the very bottom of this file.
+
+6
+00:00:18,050 --> 00:00:19,850
+You can put it in its own file if you want to.
+
+7
+00:00:19,850 --> 00:00:20,660
+It doesn't really matter.
+
+8
+00:00:21,530 --> 00:00:23,720
+Paste that in there and name it.
+
+9
+00:00:23,720 --> 00:00:24,620
+Plan, test.
+
+10
+00:00:24,860 --> 00:00:28,280
+And of course we need to do exactly the same thing we did last time.
+
+11
+00:00:28,280 --> 00:00:30,950
+But this time I'll do the searching, the replace properly.
+
+12
+00:00:31,580 --> 00:00:34,010
+We copy all of the functions associated with plan.
+
+13
+00:00:34,940 --> 00:00:40,650
+We go back to test models, we paste this in here, okay?
+
+14
+00:00:41,000 --> 00:00:52,910
+And then we go to the edit menu, choose five or choose replace and we're going to look for P plan and
+
+15
+00:00:52,910 --> 00:01:01,700
+replace that with p pointer to plan, test, make sure you spell it right and we click this little button
+
+16
+00:01:01,700 --> 00:01:02,630
+to replace all.
+
+17
+00:01:04,060 --> 00:01:04,750
+And that does it.
+
+18
+00:01:05,050 --> 00:01:05,440
+All right.
+
+19
+00:01:05,890 --> 00:01:08,110
+So now we do exactly the same thing we did before.
+
+20
+00:01:08,140 --> 00:01:11,770
+We'll get rid of all of everything and get all except for the return statement.
+
+21
+00:01:12,220 --> 00:01:12,580
+Okay.
+
+22
+00:01:14,320 --> 00:01:16,990
+Then we'll create a variable plans of type.
+
+23
+00:01:17,170 --> 00:01:21,430
+A slice of pointer to the type plan will create one plan
+
+24
+00:01:24,160 --> 00:01:27,130
+of type plan and populate some information.
+
+25
+00:01:27,130 --> 00:01:31,960
+So say ID will make one plan name.
+
+26
+00:01:32,500 --> 00:01:35,470
+We'll make, say, bronze plan.
+
+27
+00:01:40,490 --> 00:01:41,030
+Plan.
+
+28
+00:01:41,360 --> 00:01:41,960
+Amount.
+
+29
+00:01:44,750 --> 00:01:48,380
+We'll make, say, 1000.
+
+30
+00:01:48,950 --> 00:01:49,280
+I see.
+
+31
+00:01:49,280 --> 00:01:50,360
+I'm missing a colon here.
+
+32
+00:01:50,690 --> 00:01:53,360
+That's why my autocomplete not cooperating.
+
+33
+00:01:55,420 --> 00:02:00,220
+And created a will make time out now and updated.
+
+34
+00:02:00,220 --> 00:02:02,710
+I will make time on now.
+
+35
+00:02:05,020 --> 00:02:07,770
+Okay then we append this to our slice.
+
+36
+00:02:07,780 --> 00:02:13,120
+So plans equals append plans and plan.
+
+37
+00:02:14,980 --> 00:02:17,830
+And it has to be a reference because it's a pointer there.
+
+38
+00:02:18,220 --> 00:02:19,030
+So there's the first one.
+
+39
+00:02:19,270 --> 00:02:22,060
+The second one does almost the same thing.
+
+40
+00:02:22,060 --> 00:02:32,890
+So I'll copy this plan and I'll get rid of everything in here and paste in my plan and done the next
+
+41
+00:02:32,890 --> 00:02:33,160
+one.
+
+42
+00:02:33,160 --> 00:02:34,390
+Subscribe user to plan.
+
+43
+00:02:34,390 --> 00:02:35,980
+It just returns an error or nil.
+
+44
+00:02:35,980 --> 00:02:37,030
+So let's return nil.
+
+45
+00:02:37,030 --> 00:02:37,600
+That's easy.
+
+46
+00:02:39,970 --> 00:02:45,040
+And the last one we just need to import format and everything else should stay the same.
+
+47
+00:02:45,040 --> 00:02:49,330
+So if I wanted to print f six.
+
+48
+00:02:50,380 --> 00:02:51,810
+And it didn't do the import for me.
+
+49
+00:02:51,820 --> 00:02:54,490
+Why not go up to the top here and put it in myself?
+
+50
+00:02:59,080 --> 00:02:59,470
+Okay.
+
+51
+00:02:59,500 --> 00:03:00,820
+All the errors are gone.
+
+52
+00:03:01,180 --> 00:03:06,610
+So now the next step is to actually return something here instead of returning an empty models.
+
+53
+00:03:07,030 --> 00:03:19,120
+Now we can return user and we'll return a reference to user test and plan becomes, not surprisingly,
+
+54
+00:03:19,960 --> 00:03:21,490
+a reference to plan test.
+
+55
+00:03:24,940 --> 00:03:28,120
+And unless we missed something, this should now be functional.
+
+56
+00:03:28,540 --> 00:03:31,800
+So let's add this to our setup underscore test.
+
+57
+00:03:31,800 --> 00:03:39,310
+Don't go to all the trouble of creating this new function test new and all the the database models and
+
+58
+00:03:39,310 --> 00:03:41,320
+types that actually are database free.
+
+59
+00:03:41,320 --> 00:03:46,870
+So let's use them in our tests or we'll set it up so we can use them in our tests over to to set up,
+
+60
+00:03:46,870 --> 00:03:55,120
+underscore, test, go at the very top where we're creating this config in here anywhere I can put now
+
+61
+00:03:55,300 --> 00:04:03,070
+models and instead of calling data dot new, I call data dot test new and hand it nil for the database.
+
+62
+00:04:04,210 --> 00:04:09,700
+And that gives me a bunch of models that I can call when I'm running handler tests or running my handlers
+
+63
+00:04:09,700 --> 00:04:12,880
+as tests without requiring a database at all.
+
+64
+00:04:13,510 --> 00:04:13,900
+Okay.
+
+65
+00:04:13,930 --> 00:04:18,370
+In the next lecture, we'll get started testing our handlers and eventually we'll get to the point where
+
+66
+00:04:18,370 --> 00:04:23,320
+we're testing concurrency as well, which is, after all, the entire point of this course.
+
+67
+00:04:23,500 --> 00:04:24,970
+So let's move on.

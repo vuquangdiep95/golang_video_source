@@ -1,0 +1,320 @@
+1
+00:00:00,070 --> 00:00:04,150
+Kasing dan kuliah ini akan mengatur klien Jersey dan mereka akan terhubung ke server.
+
+2
+00:00:04,320 --> 00:00:06,140
+Kami akan melihat bagaimana memulai dan menghentikan klien.
+
+3
+00:00:06,150 --> 00:00:09,570
+Dan inti dari kuliah ini hanya dilakukan dengan kode boilerplate.
+
+4
+00:00:09,570 --> 00:00:12,030
+Baiklah, mari kita mulai, OK.
+
+5
+00:00:12,050 --> 00:00:18,430
+Jadi saya akan pergi ke depan dan membuat folder lain di sini dan ini akan disebut menyambut klien
+
+6
+00:00:18,970 --> 00:00:23,480
+dan di bawahnya saya akan membuat file dan menyebutnya klien yang pergi.
+
+7
+00:00:23,500 --> 00:00:29,020
+Jadi di sini sekali lagi kita dapat mempertahankan paket utama yang didefinisikan paket sehingga kita dapat memiliki fungsi utama di sana dan kita
+
+8
+00:00:29,110 --> 00:00:31,140
+katakan s. Sebuah. sebuah printer.
+
+9
+00:00:31,620 --> 00:00:33,880
+Halo klien.
+
+10
+00:00:33,920 --> 00:00:35,930
+Ok jadi kita mulai.
+
+11
+00:00:35,990 --> 00:00:36,950
+Siapa yang bekerja?
+
+12
+00:00:37,180 --> 00:00:41,180
+Dan sekarang kita perlu membaca hal-hal penting dan menarik yang sedang ditulis klien.
+
+13
+00:00:41,500 --> 00:00:45,870
+Jadi hal pertama yang harus kita lakukan adalah membuat koneksi ke server.
+
+14
+00:00:46,090 --> 00:00:53,350
+Dan untuk ini mengatakan koneksi atau kesalahan adalah variabel baru dan kami melakukan GAAP dial itu.
+
+15
+00:00:53,560 --> 00:00:57,250
+Maka fungsi dial ini membutuhkan dua argumen.
+
+16
+00:00:57,310 --> 00:00:59,380
+Yang pertama adalah alamat yang kita hubungkan.
+
+17
+00:00:59,380 --> 00:01:06,160
+Jadi kami terhubung ke localhost 5 0 0 5 1 dan yang kedua adalah dibutuhkan banyak opsi dan salah
+
+18
+00:01:06,160 --> 00:01:11,740
+satu dari opsi ini yang ingin kami gunakan akan disebut PC Anda dengan aman.
+
+19
+00:01:11,740 --> 00:01:16,960
+Jadi apa artinya secara default PC Anda memiliki SSL di dalamnya.
+
+20
+00:01:16,990 --> 00:01:18,960
+Dan kita akan melihat ini di kuliah lanjutan.
+
+21
+00:01:19,150 --> 00:01:23,170
+Tetapi untuk saat ini karena kami tidak memiliki sertifikat SSL dan itu akan terlalu rumit untuk ditangani.
+
+22
+00:01:23,200 --> 00:01:27,370
+Pertama kita harus menggunakan GAAP dengan opsi aman.
+
+23
+00:01:27,370 --> 00:01:31,830
+Ini jelas sesuatu yang ingin Anda hapus setelah Anda mulai produksi dan Anda pikir saya pikir itu
+
+24
+00:01:31,830 --> 00:01:32,650
+akan terjadi.
+
+25
+00:01:32,710 --> 00:01:39,160
+Tetapi untuk saat ini kami hanya membuka koneksi tidak aman ke impor 5 0 0 1.
+
+26
+00:01:39,300 --> 00:01:42,040
+Sekarang dengan go kita berurusan dengan kesalahan.
+
+27
+00:01:42,190 --> 00:01:49,650
+Jadi jika tidak ada maka kita katakan log fatal F dan kemudian kita akan mengatakan.
+
+28
+00:01:49,930 --> 00:01:51,820
+Tidak dapat tersambung.
+
+29
+00:01:51,910 --> 00:01:57,160
+Dan itu sebabnya kamu akan lewat di udara.
+
+30
+00:01:57,280 --> 00:02:01,160
+OK dan sekarang kita memiliki objek koneksi dan dia punya objek koneksi yang jelas.
+
+31
+00:02:01,240 --> 00:02:04,520
+Jadi yang bisa kita lakukan dengannya adalah menciptakan klien.
+
+32
+00:02:04,660 --> 00:02:16,000
+Jadi apa yang Anda lihat sama dengan keserakahan atau P. B. grippy itu klien layanan penyapa baru dan dibutuhkan koneksi klan
+
+33
+00:02:16,090 --> 00:02:18,960
+CCP hanya akan menyajikan koneksi di sini.
+
+34
+00:02:19,210 --> 00:02:21,960
+Sebenarnya lebih baik dihapus untuk mengganti nama CC.
+
+35
+00:02:22,030 --> 00:02:23,740
+Hanya untuk kejelasan.
+
+36
+00:02:24,010 --> 00:02:31,690
+OK jadi sebelum itu dengan cara koneksi klien ini di sini kami ingin menutupnya setiap kali program
+
+37
+00:02:31,690 --> 00:02:32,780
+kami tutup.
+
+38
+00:02:32,850 --> 00:02:36,950
+Dan untuk ini pada akhir program kami ingin mengatakan CC sedekat itu.
+
+39
+00:02:36,970 --> 00:02:37,550
+BAIK.
+
+40
+00:02:37,690 --> 00:02:38,890
+Di bagian paling akhir.
+
+41
+00:02:39,230 --> 00:02:44,110
+Tetapi karena kami ingin ini terjadi pada akhir program kami, ada istilah singkat yang disebut
+
+42
+00:02:44,590 --> 00:02:48,700
+Engo berbeda dan pada dasarnya menunda pernyataan ini untuk dieksekusi di akhir.
+
+43
+00:02:48,970 --> 00:02:55,060
+Jadi pada dasarnya ketika seluruh main dilakukan tanpa pernyataan yang ditangguhkan maka penangguhan akan ditutup dan
+
+44
+00:02:55,060 --> 00:02:57,160
+Anda tidak menutup akan dipanggil.
+
+45
+00:02:57,370 --> 00:03:01,340
+Jadi ini sedikit trik tapi ini campuran.
+
+46
+00:03:01,400 --> 00:03:02,470
+Bisa benar-benar bersih.
+
+47
+00:03:02,470 --> 00:03:06,730
+Karena di sini kita membuat koneksi dan kita katakan dengan cara ketika kita selesai
+
+48
+00:03:06,730 --> 00:03:07,930
+dengan koneksi menutupnya.
+
+49
+00:03:07,960 --> 00:03:10,480
+Tapi ini benar-benar dipanggil di bagian paling akhir.
+
+50
+00:03:10,480 --> 00:03:11,000
+BAIK.
+
+51
+00:03:11,110 --> 00:03:14,270
+Jadi ketika CC dipanggil di sini belum ditutup.
+
+52
+00:03:14,530 --> 00:03:20,250
+Hanya mengubah perjalanan Anda, ini cukup klasik untuk digunakan dalam delapan bulan pertama hanya terbiasa.
+
+53
+00:03:20,250 --> 00:03:24,310
+Saya akan mengatakan OK jadi sekarang kita memiliki klien layanan keserakahan kami.
+
+54
+00:03:24,730 --> 00:03:29,220
+Dan tidak banyak yang bisa kita lakukan dengan itu sekarang karena klien kami tidak memiliki fungsi
+
+55
+00:03:29,220 --> 00:03:32,440
+jika Anda melihat titik-titik tidak ada yang disarankan kepada kami.
+
+56
+00:03:32,740 --> 00:03:36,760
+Tetapi ketika kita mulai menerapkan hal-hal itu akan berhasil.
+
+57
+00:03:36,790 --> 00:03:48,160
+Jadi jika kita bisa mengatakan log Godard, kita bisa mengatakan F. SEBUAH. itu cetakan saya telah menciptakan klien dan kemudian
+
+58
+00:03:48,160 --> 00:03:50,260
+kami hanya melewati klien.
+
+59
+00:03:50,430 --> 00:03:51,840
+Dapatkan sesuatu yang sangat sederhana.
+
+60
+00:03:52,120 --> 00:03:58,000
+Jadi pada akhirnya apa yang dilakukan kode ini adalah membantu klien membuat koneksi. Klien
+
+61
+00:03:58,120 --> 00:04:00,760
+mencetak ini dan akhirnya menutup koneksi.
+
+62
+00:04:00,850 --> 00:04:02,460
+Jadi mari kita pergi ke depan dan melihat bagaimana segala sesuatunya bekerja.
+
+63
+00:04:02,530 --> 00:04:04,280
+Saya akan pergi ke depan dan membuka tab baru.
+
+64
+00:04:05,220 --> 00:04:12,480
+Dan apa yang menempatkan tab di bagian bawah sehingga di bagian atas kita memiliki server di bagian bawah tempat klien.
+
+65
+00:04:12,480 --> 00:04:20,530
+Jadi kami berkeliling server server yang pergi dan kami mendapatkan Helliwell sehingga server berjalan.
+
+66
+00:04:21,010 --> 00:04:28,360
+Dan Anda menjalankan sapa sapa klien dan klan yang pergi.
+
+67
+00:04:28,800 --> 00:04:33,420
+Dan seperti yang Anda lihat jenis terhubung itu dibuat dan kemudian ditutup karena kami tidak melakukan apa pun
+
+68
+00:04:33,420 --> 00:04:34,200
+dengan klien.
+
+69
+00:04:34,500 --> 00:04:40,530
+Tetapi semuanya berjalan dengan baik jika Anda ingin melihat apakah pesan kami berfungsi dengan baik, kami dapat menjalankan server dua
+
+70
+00:04:40,530 --> 00:04:46,200
+kali dan kami akan mendapatkan masalah karena kami tidak dapat mengikat dua kali ke port yang sama.
+
+71
+00:04:46,320 --> 00:04:50,220
+Jadi jika port sudah sibuk dikatakan alamat bind sudah digunakan.
+
+72
+00:04:50,250 --> 00:04:51,440
+Jadi itu yang diharapkan.
+
+73
+00:04:51,690 --> 00:04:55,620
+Dan jika Anda menjalankan banyak klien tanpa server berjalan saya cukup yakin akan ada kesalahan.
+
+74
+00:04:55,620 --> 00:05:00,800
+Jadi mari kita jalankan klien dan kita dapatkan yang berbeda.
+
+75
+00:05:01,020 --> 00:05:04,210
+Kami sebenarnya tidak mendapatkan kesalahan karena kami tidak meneruskan pesan apa pun.
+
+76
+00:05:04,320 --> 00:05:07,060
+Klien berfungsi dan server bekerja.
+
+77
+00:05:07,110 --> 00:05:12,160
+Jadi, kita sudah menyelesaikan pelat ketel dan kuliah berikutnya akan dilanjutkan dan benar-benar mengimplementasikan sesuatu.
+
+78
+00:05:12,180 --> 00:05:13,070
+Layanan pertama.
+
+79
+00:05:13,110 --> 00:05:13,800
+BAIK.
+
+80
+00:05:13,830 --> 00:05:15,060
+Lihat kuliah selanjutnya.
+

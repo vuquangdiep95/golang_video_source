@@ -1,0 +1,311 @@
+1
+00:00:01,130 --> 00:00:05,120
+So what we want to get started with this time around is registering the user.
+
+2
+00:00:05,150 --> 00:00:09,740
+So someone comes to this site, they click on the register button, they enter their email, choose
+
+3
+00:00:09,740 --> 00:00:11,330
+a password and give us their name.
+
+4
+00:00:11,450 --> 00:00:17,240
+And when they click register, what we want to have happen next is we get that information.
+
+5
+00:00:17,240 --> 00:00:21,500
+We generate a URL with a link in it that says Activate your account.
+
+6
+00:00:21,590 --> 00:00:26,420
+So we add the user after they fill out this form, but we leave that user inactive and then we send
+
+7
+00:00:26,420 --> 00:00:29,630
+them an email, they click on a link and that user becomes active.
+
+8
+00:00:30,320 --> 00:00:31,070
+So let's get started.
+
+9
+00:00:31,910 --> 00:00:35,780
+So back over in our I.D., we're going to be sending an email.
+
+10
+00:00:35,930 --> 00:00:38,180
+So let's just create an email template.
+
+11
+00:00:38,210 --> 00:00:44,900
+So in the templates folder inside cmd slash web, let's create a new file and I'll call the first one.
+
+12
+00:00:45,290 --> 00:00:55,460
+Confirmation dash, email, dot, HTML, dot and go HTML and then I'll create another one named confirmation
+
+13
+00:00:56,120 --> 00:01:06,110
+calling for nation dash email dot plain dot go each came out and just to speed things along, I'll copy
+
+14
+00:01:06,110 --> 00:01:14,240
+the existing male dot html go each HTML, copy that and I'll paste it in the appropriate new file.
+
+15
+00:01:14,240 --> 00:01:16,370
+The HTML version, I'll just change it.
+
+16
+00:01:17,810 --> 00:01:23,510
+So in here I'll put a paragraph at the beginning that says Thank you for registering.
+
+17
+00:01:25,130 --> 00:01:26,390
+Click the link below
+
+18
+00:01:30,050 --> 00:01:38,550
+to activate your account and close my paragraph tag and then I'll change this to the link.
+
+19
+00:01:38,680 --> 00:01:48,620
+A trip equals and then whatever data is passed to this template and then I'll just put activate your
+
+20
+00:01:48,620 --> 00:01:49,190
+account
+
+21
+00:01:52,640 --> 00:01:53,690
+and close the attack.
+
+22
+00:01:54,080 --> 00:01:56,090
+Okay, so that's that version.
+
+23
+00:01:56,930 --> 00:01:58,710
+And now the plain text version.
+
+24
+00:01:58,790 --> 00:01:59,360
+Same thing.
+
+25
+00:01:59,600 --> 00:02:04,220
+I shall just copy the text, copy this and modify it as necessary.
+
+26
+00:02:04,220 --> 00:02:05,930
+Remove the HTML tags.
+
+27
+00:02:06,980 --> 00:02:19,400
+So in here we'll put in a defined body and then paste in that stuff and then and we'll just remove the
+
+28
+00:02:19,400 --> 00:02:20,030
+tags here.
+
+29
+00:02:20,240 --> 00:02:20,650
+Okay.
+
+30
+00:02:23,330 --> 00:02:26,330
+Because this is plain text and HTML will not work.
+
+31
+00:02:29,320 --> 00:02:34,060
+So there and remove this and this.
+
+32
+00:02:35,890 --> 00:02:36,250
+Okay.
+
+33
+00:02:37,120 --> 00:02:38,740
+So now we have some email templates.
+
+34
+00:02:39,130 --> 00:02:45,760
+Now when we send this email, the link is going to be something like FTP, Collins, slash, slash,
+
+35
+00:02:45,770 --> 00:02:50,110
+whatever the site is, slash, activate and then question mark.
+
+36
+00:02:50,350 --> 00:02:54,520
+Email equals whatever the email is, we're going to pass the email as part of the URL.
+
+37
+00:02:55,240 --> 00:02:57,550
+But of course, that's a security loophole.
+
+38
+00:02:57,610 --> 00:03:00,550
+It means that anyone can just start guessing emails.
+
+39
+00:03:00,700 --> 00:03:02,360
+Not that they would, but you never know.
+
+40
+00:03:02,380 --> 00:03:04,750
+There are lots of people out there who want to cause you grief.
+
+41
+00:03:05,770 --> 00:03:10,030
+They can just start firing random emails and they're trying to activate as many as they want to.
+
+42
+00:03:10,060 --> 00:03:13,660
+So what we need to do is we need to make the URL tamper proof.
+
+43
+00:03:14,080 --> 00:03:19,360
+Now, if you go to the course resources for this lecture, you'll see a file called.
+
+44
+00:03:20,570 --> 00:03:23,120
+Signer dot go, dot zip.
+
+45
+00:03:23,570 --> 00:03:30,320
+Download that and extract it and then copy the contents into the cmd slash web folder.
+
+46
+00:03:30,470 --> 00:03:33,080
+And I have the contents of that currently on my clipboard.
+
+47
+00:03:33,080 --> 00:03:35,600
+So I'll create a new file called Signer.
+
+48
+00:03:36,230 --> 00:03:39,140
+Don Go and I'll just paste them in there.
+
+49
+00:03:39,380 --> 00:03:42,110
+Now, this is something I've used in in many of my courses.
+
+50
+00:03:42,950 --> 00:03:49,010
+It uses a package called GitHub dot com slash, BW Marin slash and go dash along, which I have to go
+
+51
+00:03:49,010 --> 00:03:49,310
+get.
+
+52
+00:03:49,490 --> 00:03:53,090
+So I'll copy this and open my terminal.
+
+53
+00:03:53,400 --> 00:03:55,100
+Clear the screen and type.
+
+54
+00:03:55,100 --> 00:03:56,720
+Go get and then paste that in.
+
+55
+00:03:56,850 --> 00:04:04,710
+This is a very simple package, although it allows you to do is to generate signed text of any sort.
+
+56
+00:04:04,730 --> 00:04:10,940
+So we're going to sign our URL that we put in the email that we send off with a link to activate the
+
+57
+00:04:10,940 --> 00:04:11,330
+account.
+
+58
+00:04:11,390 --> 00:04:11,720
+Okay.
+
+59
+00:04:11,840 --> 00:04:14,720
+Now, this is very simple.
+
+60
+00:04:14,900 --> 00:04:20,000
+The thing to pay attention to here is that I have a constant a secret right here, and I just chose
+
+61
+00:04:20,000 --> 00:04:22,010
+ABC one, two, three, three times.
+
+62
+00:04:22,010 --> 00:04:27,320
+And of course you'll have a much longer and more secure secret in your code, and you're probably not
+
+63
+00:04:27,320 --> 00:04:28,870
+going to store it in your code.
+
+64
+00:04:28,880 --> 00:04:31,610
+You'll read it from an environment variable or something like that.
+
+65
+00:04:32,240 --> 00:04:35,120
+Well, this has a couple of simple methods, actually.
+
+66
+00:04:35,120 --> 00:04:35,540
+Three.
+
+67
+00:04:35,870 --> 00:04:38,300
+One that will generate a token from a string.
+
+68
+00:04:38,300 --> 00:04:44,120
+So if I pass this a, u, r, l, for example, it will hand back a euro with a hash appended to the
+
+69
+00:04:44,120 --> 00:04:44,390
+end.
+
+70
+00:04:45,470 --> 00:04:51,710
+Verify allows me to pass some signed text, a signed link in our case, and verify that it actually
+
+71
+00:04:51,710 --> 00:04:55,400
+matches the signature that we would generate from our code.
+
+72
+00:04:55,970 --> 00:05:00,650
+And the last one is to check to see if something has expired so you can have links that expire after
+
+73
+00:05:00,650 --> 00:05:02,060
+60 Minutes or whatever you want.
+
+74
+00:05:02,450 --> 00:05:04,130
+So we have this available to us now.
+
+75
+00:05:04,790 --> 00:05:09,320
+And what we'll do in the next lecture is we'll go back to our handlers file right here.
+
+76
+00:05:10,850 --> 00:05:14,570
+And we'll start on this function post register page.
+
+77
+00:05:15,320 --> 00:05:16,400
+And it's very straightforward.
+
+78
+00:05:17,210 --> 00:05:18,410
+So let's move on.

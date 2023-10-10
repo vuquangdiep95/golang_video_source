@@ -1,0 +1,1123 @@
+1
+00:00:01,060 --> 00:00:03,440
+So we have this home page handler.
+
+2
+00:00:03,460 --> 00:00:07,690
+We have a route to this handler and we can compile and start our application.
+
+3
+00:00:07,780 --> 00:00:10,270
+But of course, we can't actually display pages yet.
+
+4
+00:00:10,750 --> 00:00:15,410
+So to make that happen, we need to write some code that will render go templates.
+
+5
+00:00:15,430 --> 00:00:19,960
+And we actually need some templates and a save some time because this is not a course on writing go
+
+6
+00:00:19,960 --> 00:00:20,530
+templates.
+
+7
+00:00:20,860 --> 00:00:26,020
+If you go to the course resources for this lecture, you'll see a file called Templates Dot Zip.
+
+8
+00:00:26,530 --> 00:00:33,610
+You can download that, unzip it and then put it right here in the cmd web folder and in it'll be in
+
+9
+00:00:33,610 --> 00:00:34,420
+a templates folder.
+
+10
+00:00:34,420 --> 00:00:38,500
+But make sure all of these HTML files are in a folder called templates.
+
+11
+00:00:39,220 --> 00:00:40,090
+And let's have a look at these.
+
+12
+00:00:40,180 --> 00:00:40,960
+These are pretty simple.
+
+13
+00:00:41,680 --> 00:00:45,400
+So of course, the base start layout don't go to HTML.
+
+14
+00:00:45,610 --> 00:00:48,100
+That's the base layout for every template.
+
+15
+00:00:48,220 --> 00:00:50,920
+And as you can see, we just define it with the name base.
+
+16
+00:00:51,160 --> 00:00:57,640
+We give it a dock type and an opening HTML tag, an opening body tag, a closing body tag and closing
+
+17
+00:00:57,640 --> 00:01:03,160
+a HTML tag and everything else is either another template, as is the case for the header.
+
+18
+00:01:03,520 --> 00:01:11,230
+The Napper, this thing called alerts, the footer and the ones that are left over are blocks where
+
+19
+00:01:11,230 --> 00:01:15,050
+we can specify the content where we want for our actual page.
+
+20
+00:01:15,070 --> 00:01:18,310
+So we have one for content and we have one for JavaScript.
+
+21
+00:01:18,380 --> 00:01:18,610
+Okay.
+
+22
+00:01:18,650 --> 00:01:20,500
+And that should be sufficient for our purposes.
+
+23
+00:01:21,190 --> 00:01:22,860
+And all of these included ones.
+
+24
+00:01:22,870 --> 00:01:26,070
+Well, they have the name dot partial dot go each HTML.
+
+25
+00:01:26,080 --> 00:01:30,700
+So the header for example, looks like this header dot partial HTML.
+
+26
+00:01:31,480 --> 00:01:32,100
+And there it is.
+
+27
+00:01:32,170 --> 00:01:39,160
+You have a head section that imports the bootstrap JavaScript or access that I'll be using and I just
+
+28
+00:01:39,160 --> 00:01:42,140
+override one of the things in the default bootstrap.
+
+29
+00:01:42,160 --> 00:01:44,290
+I like the labels on forms to be in bold.
+
+30
+00:01:45,400 --> 00:01:48,370
+The footer which is right here.
+
+31
+00:01:48,410 --> 00:01:48,970
+Footer up.
+
+32
+00:01:48,970 --> 00:01:50,350
+Partial duck html.
+
+33
+00:01:51,770 --> 00:01:56,990
+Not surprisingly, it displays a footer and you can see I'm going to be passing some data to this template.
+
+34
+00:01:57,770 --> 00:01:59,900
+DOT Now is the value of time.
+
+35
+00:01:59,900 --> 00:02:05,450
+DOT Now and then I just read the year from it and print that out and I import the boots bootstrap JavaScript.
+
+36
+00:02:05,450 --> 00:02:08,030
+Okay, so the templates are nothing special.
+
+37
+00:02:08,060 --> 00:02:12,590
+They're pretty easy to use and of course we'll be modifying some of these as time goes on.
+
+38
+00:02:12,980 --> 00:02:14,390
+This will give us something to start with.
+
+39
+00:02:15,170 --> 00:02:17,900
+So that's the template, those are the templates themselves.
+
+40
+00:02:18,410 --> 00:02:22,520
+Now I actually need to create something that will render those templates.
+
+41
+00:02:22,520 --> 00:02:29,360
+So in CMT, when let's close the templates folder and let's create a new file in there, which I'll
+
+42
+00:02:29,360 --> 00:02:33,380
+call render up.
+
+43
+00:02:34,070 --> 00:02:35,660
+And this is where we'll put our renderer.
+
+44
+00:02:35,660 --> 00:02:41,810
+And of course this is in Package Main and the first thing I'll do is declare a variable just called
+
+45
+00:02:41,810 --> 00:02:43,490
+path to templates.
+
+46
+00:02:43,490 --> 00:02:44,390
+I'm going to do this.
+
+47
+00:02:44,390 --> 00:02:50,270
+So when I write tests, I won't run into the problem of having having to somehow override a string that's
+
+48
+00:02:50,270 --> 00:02:50,870
+a constant.
+
+49
+00:02:50,870 --> 00:02:56,480
+So I'll just put the path, the templates which will be the root level of my application DOT, then
+
+50
+00:02:56,480 --> 00:02:58,730
+CMT, then web, then templates.
+
+51
+00:02:59,090 --> 00:03:00,830
+Okay, that's where the template is, your store.
+
+52
+00:03:01,580 --> 00:03:06,920
+And now I'm also going to need something to store data in that I'm going to pass to the templates.
+
+53
+00:03:07,130 --> 00:03:13,970
+So I'll just create a struct type, I'll call it template data and it will be a struct.
+
+54
+00:03:14,210 --> 00:03:17,390
+And this is the kind of things I'm going to be passing the templates.
+
+55
+00:03:17,610 --> 00:03:21,230
+I might not use all of these, but I'm going to put them in there anyway just in case I need them.
+
+56
+00:03:21,680 --> 00:03:27,950
+So I might need to pass a string map, a map of strings, and it's a map of string string.
+
+57
+00:03:28,790 --> 00:03:29,080
+Okay.
+
+58
+00:03:29,750 --> 00:03:35,090
+And I might need one for ints, one for floats, and then data that I can store anything in.
+
+59
+00:03:35,090 --> 00:03:36,680
+So the next one I'll call in math.
+
+60
+00:03:38,390 --> 00:03:45,290
+And it's a map of string, which is the key I'll use to look things up in integers and then say a float
+
+61
+00:03:45,290 --> 00:03:50,750
+map, which is a map of type string float 64.
+
+62
+00:03:53,090 --> 00:03:53,840
+And then data.
+
+63
+00:03:54,270 --> 00:03:56,190
+I can just put anything I want in there.
+
+64
+00:03:56,900 --> 00:04:03,020
+So a map of string and I can use any because I'm using go 1.8 or one point 18.2, I think.
+
+65
+00:04:03,680 --> 00:04:06,950
+But if you're not if you're using an earlier one, well, you should upgrade your go.
+
+66
+00:04:06,960 --> 00:04:12,590
+But if you can't for some reason just put interface like that, it's functionally equivalent to the
+
+67
+00:04:12,590 --> 00:04:16,490
+type or the new keyword any and that only came out and go 1.18.
+
+68
+00:04:17,480 --> 00:04:24,080
+I'm also going to want to pass messages so like alerts of some sort and I'll use one for flash, just
+
+69
+00:04:24,080 --> 00:04:24,830
+a catchall.
+
+70
+00:04:25,190 --> 00:04:26,270
+And I said type string.
+
+71
+00:04:27,140 --> 00:04:33,620
+I'll also be passing warnings possibly of type string and error of type string.
+
+72
+00:04:33,830 --> 00:04:36,530
+Okay, I'll format those depending on what they are.
+
+73
+00:04:36,590 --> 00:04:39,080
+If it's a success message, it'll be green.
+
+74
+00:04:39,080 --> 00:04:40,580
+If it's an error message will be read.
+
+75
+00:04:40,580 --> 00:04:41,270
+Something like that.
+
+76
+00:04:42,320 --> 00:04:46,700
+I'll also need to know if the users are authenticated, so I'll just make it an integer.
+
+77
+00:04:46,850 --> 00:04:48,470
+One You're authenticated.
+
+78
+00:04:49,130 --> 00:04:50,390
+Zero, you're not.
+
+79
+00:04:51,140 --> 00:04:56,090
+And I'm going to be passing a time value called now because I'm using that in the footer and I just
+
+80
+00:04:56,090 --> 00:04:56,930
+timed up time.
+
+81
+00:04:59,550 --> 00:04:59,880
+Okay.
+
+82
+00:05:00,720 --> 00:05:04,110
+And the last thing I might want to pass to a template is a user type.
+
+83
+00:05:04,440 --> 00:05:05,820
+Okay, now, that doesn't exist yet.
+
+84
+00:05:06,080 --> 00:05:10,950
+I'm going to put it here like this user and it will be a pointer to data dot user, which we haven't
+
+85
+00:05:10,950 --> 00:05:12,030
+actually implemented yet.
+
+86
+00:05:12,030 --> 00:05:12,810
+So I'll comment that.
+
+87
+00:05:14,190 --> 00:05:17,190
+So let me say this will be coming back to that later on.
+
+88
+00:05:17,250 --> 00:05:22,920
+Once we have the user's table and so forth set up in the database and have all the necessary data types
+
+89
+00:05:22,920 --> 00:05:24,440
+and models associated with that.
+
+90
+00:05:24,450 --> 00:05:27,180
+So that's just a placeholder just to remind me later on.
+
+91
+00:05:29,010 --> 00:05:35,010
+Now let's start with a simple render function func with the receiver app pointer to config and I'll
+
+92
+00:05:35,010 --> 00:05:35,790
+just call this render.
+
+93
+00:05:36,800 --> 00:05:40,320
+Then when I go to render a page, I'm going to pass it.
+
+94
+00:05:40,470 --> 00:05:41,870
+I'm going to need certain information.
+
+95
+00:05:41,880 --> 00:05:44,850
+I'm going to need the response writer because I have something I have to have something to write to.
+
+96
+00:05:45,040 --> 00:05:52,140
+WPC To be the response writer right there and the request pointer to HDP dot request.
+
+97
+00:05:53,770 --> 00:05:55,720
+I'm also going to need the name of the template.
+
+98
+00:05:55,720 --> 00:05:59,350
+I want to render some T for template that's just a string.
+
+99
+00:05:59,920 --> 00:06:01,750
+And the last thing is template data.
+
+100
+00:06:02,080 --> 00:06:04,360
+What data am I going to be passing to the template?
+
+101
+00:06:04,360 --> 00:06:10,670
+And every template will get some data and that will be a pointer to the type I just define template
+
+102
+00:06:10,670 --> 00:06:10,850
+to.
+
+103
+00:06:11,210 --> 00:06:11,530
+Okay.
+
+104
+00:06:12,580 --> 00:06:18,490
+So as I'm sure you're aware, the way the go templates work is pretty straightforward.
+
+105
+00:06:18,640 --> 00:06:25,000
+But if I have one template that depends on a partial or a layout or anything like that, then I need
+
+106
+00:06:25,000 --> 00:06:29,890
+to include all of those templates and direct the full path name to every one of them.
+
+107
+00:06:30,280 --> 00:06:35,470
+When I go to to pass the templates, so let's make it really easy on ourselves as to declare variable
+
+108
+00:06:35,470 --> 00:06:40,720
+partials and that is assigned the value of a slice of string.
+
+109
+00:06:41,260 --> 00:06:41,640
+Okay.
+
+110
+00:06:42,100 --> 00:06:46,570
+And then I'll put in every single partial that I have and I'll do it.
+
+111
+00:06:46,570 --> 00:06:54,760
+Of course, this way format is printouts and my format string will be percent SW slash and then the
+
+112
+00:06:54,760 --> 00:06:56,230
+name of the template I have to have.
+
+113
+00:06:56,590 --> 00:07:03,520
+But if you look at them, you'll see that you have to have based on layout go html layout not go HTML.
+
+114
+00:07:03,760 --> 00:07:04,090
+Okay.
+
+115
+00:07:04,570 --> 00:07:07,390
+And my substitution for that will be passed to templates.
+
+116
+00:07:08,170 --> 00:07:09,010
+That's my first one.
+
+117
+00:07:09,490 --> 00:07:11,260
+Now I'll duplicate this for more times.
+
+118
+00:07:11,500 --> 00:07:13,030
+One, two, three, four.
+
+119
+00:07:13,750 --> 00:07:15,640
+And then I'll just change the name over here.
+
+120
+00:07:16,300 --> 00:07:21,910
+So I had to have based on layout, and then I have to have header, not partial.
+
+121
+00:07:25,470 --> 00:07:29,610
+And then I have to have never partial.
+
+122
+00:07:32,100 --> 00:07:36,810
+That's just a standard bootstrap navigation bar that appears at the top of the screen.
+
+123
+00:07:37,380 --> 00:07:39,930
+Then I have to have footer partial.
+
+124
+00:07:42,570 --> 00:07:46,470
+And the last thing I have to have is called alerts dot partial.
+
+125
+00:07:48,750 --> 00:07:49,050
+Okay.
+
+126
+00:07:49,920 --> 00:07:54,720
+And that's where I'll display a flash message, success message or a warning message.
+
+127
+00:07:54,840 --> 00:07:55,680
+We'll look at that later on.
+
+128
+00:07:56,850 --> 00:07:58,530
+So right now, I have that slice of strings.
+
+129
+00:07:58,710 --> 00:08:03,360
+Now I need to declare a new variable template slice.
+
+130
+00:08:03,870 --> 00:08:06,870
+And that will be of the type a slice of string.
+
+131
+00:08:07,350 --> 00:08:07,710
+Okay.
+
+132
+00:08:09,070 --> 00:08:15,220
+And what I'm going to do is take all of these, the ones that are in this slice of strings called partial.
+
+133
+00:08:15,640 --> 00:08:18,810
+And the one I've received here and I'll put them together into this slice.
+
+134
+00:08:18,820 --> 00:08:22,050
+And this is a little lengthier than it has to be, but it's simple enough.
+
+135
+00:08:22,060 --> 00:08:30,820
+So I'll say template, slice, dot or equals append and I'm going to append to template slice.
+
+136
+00:08:33,970 --> 00:08:34,610
+Format.
+
+137
+00:08:34,880 --> 00:08:42,460
+S print f then my format string is percent s slash percent.
+
+138
+00:08:42,460 --> 00:08:51,580
+S And my two subset substitutions are path to templates and t, which I received as a parameter to this
+
+139
+00:08:51,580 --> 00:08:52,000
+function.
+
+140
+00:08:52,120 --> 00:08:53,260
+I see I missed an error.
+
+141
+00:08:53,860 --> 00:08:54,310
+That's better.
+
+142
+00:08:54,980 --> 00:08:55,260
+Okay.
+
+143
+00:08:55,360 --> 00:09:00,730
+So that's now in the slice template slice and then I'll put everything else in there.
+
+144
+00:09:00,790 --> 00:09:01,130
+Okay.
+
+145
+00:09:01,840 --> 00:09:04,690
+So I could have just appended this to that, but that's fine.
+
+146
+00:09:04,750 --> 00:09:06,730
+I'm just making it very, very readable.
+
+147
+00:09:06,730 --> 00:09:11,950
+This makes it clear that these have to be here for every template I want to render, and this is the
+
+148
+00:09:11,950 --> 00:09:13,420
+actual template I want to render.
+
+149
+00:09:14,110 --> 00:09:20,530
+So I'll go for ignoring the first parameter, but I'll pay attention to the current iteration and I'll
+
+150
+00:09:20,530 --> 00:09:22,030
+arrange through partials.
+
+151
+00:09:23,140 --> 00:09:30,940
+Okay then all I do now is say template slice equals append template slice x.
+
+152
+00:09:32,320 --> 00:09:35,770
+Okay, so now I have them in there and it's my IDs.
+
+153
+00:09:35,770 --> 00:09:40,960
+Ivey's already giving me warnings saying there's a more concise way to do this, but I don't care.
+
+154
+00:09:40,990 --> 00:09:48,010
+This is sufficient for my purposes now when this render function is called, because that last parameter,
+
+155
+00:09:48,010 --> 00:09:53,890
+the data I want to pass to the template that might or might not have a value, which is why I made it
+
+156
+00:09:53,890 --> 00:09:59,290
+made it a pointer, because at this point I can say if that's a nil, if there's nothing in that last
+
+157
+00:09:59,290 --> 00:10:08,650
+parameter, when I go to render a template, then I'll say, if t d is equal to nil, I'll say T is
+
+158
+00:10:08,650 --> 00:10:12,790
+equal to a reference to template data.
+
+159
+00:10:14,600 --> 00:10:19,030
+Again, template data if that's okay.
+
+160
+00:10:19,030 --> 00:10:24,010
+So now it's an empty item, which is at least not a nil because I can't do anything with nil.
+
+161
+00:10:24,670 --> 00:10:31,000
+Now I need to pass the templates and this is standard stuff you do with the template html, that package
+
+162
+00:10:31,000 --> 00:10:32,020
+from the standard library.
+
+163
+00:10:32,020 --> 00:10:39,970
+So I'll declare a variable tempo while checking for an error when I call template files right there
+
+164
+00:10:40,990 --> 00:10:46,570
+and I'm going to pass the files template slice, dot, dot, dot, everything in that slice.
+
+165
+00:10:46,570 --> 00:10:47,650
+So pass them all.
+
+166
+00:10:47,920 --> 00:10:48,550
+Check for an error.
+
+167
+00:10:48,670 --> 00:10:50,200
+If error is not equal to nil,
+
+168
+00:10:55,150 --> 00:10:57,430
+then I'll save that UDP error
+
+169
+00:11:00,760 --> 00:11:10,390
+and I'll give it w e r dot error and I'll just call it htp dot status internal server error.
+
+170
+00:11:11,140 --> 00:11:11,470
+Okay.
+
+171
+00:11:13,570 --> 00:11:17,980
+And I'll also return because I can't go any further now to make it more useful for myself.
+
+172
+00:11:17,980 --> 00:11:23,650
+Here's for I can use that apt error log and print out the error print line.
+
+173
+00:11:26,150 --> 00:11:27,560
+On the air.
+
+174
+00:11:27,920 --> 00:11:30,950
+And that will give me something I can look at to see what went wrong.
+
+175
+00:11:32,910 --> 00:11:33,030
+Don't.
+
+176
+00:11:33,030 --> 00:11:33,570
+I've done that.
+
+177
+00:11:33,870 --> 00:11:35,580
+The last step is to execute the template.
+
+178
+00:11:36,090 --> 00:11:44,020
+If there is a sign the value of tempo to execute and I'm going to pass it w and I'm also for it now
+
+179
+00:11:44,020 --> 00:11:44,820
+I'll say nil.
+
+180
+00:11:45,120 --> 00:11:45,480
+Okay.
+
+181
+00:11:45,720 --> 00:11:50,880
+But I'm going to pass some data in there and check for an error.
+
+182
+00:11:51,000 --> 00:11:52,410
+Error is not equal to nil.
+
+183
+00:11:54,510 --> 00:11:57,690
+Then again, I'll go with these lines right here.
+
+184
+00:11:58,350 --> 00:12:00,090
+Copy and paste.
+
+185
+00:12:01,600 --> 00:12:01,960
+Okay.
+
+186
+00:12:02,080 --> 00:12:07,540
+Now that, Neal, this is where I'm going to be passing template or data to a template and we're going
+
+187
+00:12:07,540 --> 00:12:08,710
+to be doing that all the time.
+
+188
+00:12:09,580 --> 00:12:13,900
+But there are certain kinds of data I want to pass to every single template.
+
+189
+00:12:14,380 --> 00:12:19,240
+So what could I do to make sure that every template get some data?
+
+190
+00:12:19,410 --> 00:12:25,750
+What I can do is write another function and I'll do it right below this one and I'll call this func
+
+191
+00:12:25,750 --> 00:12:34,060
+with the receiver app pointer to config again and I'll call this one and default data and it's going
+
+192
+00:12:34,060 --> 00:12:36,880
+to require TD, which is a pointer to template data.
+
+193
+00:12:38,050 --> 00:12:45,370
+It's going to require the hour, which is the request to pointer to HTTP a pointer to HTTP request,
+
+194
+00:12:46,870 --> 00:12:49,060
+and it's going to return a pointer to template it.
+
+195
+00:12:51,280 --> 00:12:54,640
+Now let's give ourselves some room here and start writing this pretty easy.
+
+196
+00:12:55,240 --> 00:12:57,580
+We already have the type defined at the top of this file.
+
+197
+00:12:58,390 --> 00:13:00,880
+We have flash data warning, so on and so forth.
+
+198
+00:13:01,450 --> 00:13:08,020
+So what we can do here is say TD Dot Flash, the very first one that's going to be equal to from the
+
+199
+00:13:08,020 --> 00:13:12,970
+app receiver on the session I'm going to call pop string.
+
+200
+00:13:13,210 --> 00:13:18,790
+And what that will do is make sure that as soon as this data is read, it's removed from the session,
+
+201
+00:13:18,790 --> 00:13:22,210
+which is really convenient for messages that you only want to display once.
+
+202
+00:13:23,140 --> 00:13:25,680
+Now the parameters for that, it requires the context.
+
+203
+00:13:25,690 --> 00:13:31,660
+Well, I get that from the request marked context, and it also requires the key to look up, which
+
+204
+00:13:31,660 --> 00:13:33,810
+I'll call flash, which seems to make the most sense.
+
+205
+00:13:33,820 --> 00:13:41,920
+Okay, now I'll duplicate that two more times and I'll change this one to warning this one to error.
+
+206
+00:13:42,880 --> 00:13:47,530
+And I'll assume that the key I'm going to use to get this information out of the session is warning
+
+207
+00:13:47,530 --> 00:13:52,090
+for warning and not surprisingly, error for error.
+
+208
+00:13:53,710 --> 00:13:54,070
+Okay.
+
+209
+00:13:55,600 --> 00:14:00,850
+Now, the next thing I want to find out, because this is this site, this subscription site we're building,
+
+210
+00:14:01,150 --> 00:14:04,650
+it's going to have a login screen and it's going to allow people to buy things.
+
+211
+00:14:04,660 --> 00:14:08,440
+I need to have some means of determining whether or not someone is authenticated.
+
+212
+00:14:08,920 --> 00:14:09,970
+Now, how am I going to do that?
+
+213
+00:14:10,300 --> 00:14:15,340
+Well, what I'm going to do is write another function to check to see if someone is authenticated and
+
+214
+00:14:15,340 --> 00:14:16,090
+call it from here.
+
+215
+00:14:16,180 --> 00:14:26,770
+So let's come down here below this and say func app pointer to config and we'll call this one is authenticated.
+
+216
+00:14:27,520 --> 00:14:27,770
+Okay.
+
+217
+00:14:28,240 --> 00:14:35,290
+And it's going to require require just a request a pointer to HDP dot request because from that I can
+
+218
+00:14:35,290 --> 00:14:37,990
+get session information and it's going to return a bullet.
+
+219
+00:14:38,020 --> 00:14:39,100
+True or false?
+
+220
+00:14:40,640 --> 00:14:44,030
+And all I have to do is to see when someone is logged in.
+
+221
+00:14:44,060 --> 00:14:48,260
+Is there some way I can tell whether or not that user's actually authenticated?
+
+222
+00:14:48,620 --> 00:14:53,120
+Well, what I'll do, just like here, I'm assuming there's going to be a flash or a warning or an error
+
+223
+00:14:53,120 --> 00:14:53,750
+in the session.
+
+224
+00:14:54,170 --> 00:14:58,700
+I'll assume that when someone logs into the site, I'll put a value in the session and I'll probably
+
+225
+00:14:58,700 --> 00:14:59,570
+call it user ID.
+
+226
+00:14:59,840 --> 00:15:01,040
+That seems to make the most sense.
+
+227
+00:15:01,490 --> 00:15:07,100
+So I'll say exists, which is a variable I'm checking or creating right now, and I'll just call from
+
+228
+00:15:07,100 --> 00:15:10,760
+app dot session dot exists.
+
+229
+00:15:11,060 --> 00:15:15,080
+And all that requires is the context, ah, dot context.
+
+230
+00:15:16,580 --> 00:15:19,640
+And what I'm looking for, and I'll call it user ID, which I usually do.
+
+231
+00:15:19,910 --> 00:15:20,220
+Okay.
+
+232
+00:15:20,720 --> 00:15:21,920
+So that will be true.
+
+233
+00:15:22,340 --> 00:15:23,570
+Exists will be true.
+
+234
+00:15:23,570 --> 00:15:29,000
+If I can find something in this user session with that key and it will be false otherwise.
+
+235
+00:15:29,720 --> 00:15:34,130
+So all I have to do now is say instead of assigning a variable, I can just say return.
+
+236
+00:15:35,480 --> 00:15:36,440
+That seems a little cleaner.
+
+237
+00:15:36,710 --> 00:15:37,070
+Okay.
+
+238
+00:15:37,910 --> 00:15:51,860
+And up here I can say TD dot is 15 dot authenticated equals app dot is authenticated right there and
+
+239
+00:15:51,860 --> 00:15:52,400
+hand that.
+
+240
+00:15:54,140 --> 00:15:54,500
+Okay.
+
+241
+00:15:55,220 --> 00:15:56,210
+So what do we have here?
+
+242
+00:15:57,610 --> 00:16:03,610
+That's not going to work because this is a tight end and this is a tight ball.
+
+243
+00:16:04,390 --> 00:16:05,920
+Maybe I should do it this way instead.
+
+244
+00:16:06,220 --> 00:16:13,060
+If app is authenticated or if that returns true, then do something.
+
+245
+00:16:13,300 --> 00:16:13,690
+Okay.
+
+246
+00:16:13,810 --> 00:16:17,920
+And I'll say TD dot authenticated equals.
+
+247
+00:16:19,050 --> 00:16:19,470
+True.
+
+248
+00:16:21,120 --> 00:16:22,200
+And then I come up here.
+
+249
+00:16:22,260 --> 00:16:24,510
+There's a reason I'm doing this and we're thinking this through.
+
+250
+00:16:24,960 --> 00:16:27,420
+Let me go up to the template data and see authenticated.
+
+251
+00:16:27,480 --> 00:16:28,500
+I'll make that a bool.
+
+252
+00:16:30,350 --> 00:16:30,920
+Like that.
+
+253
+00:16:31,850 --> 00:16:36,020
+When I come back down here, there are other things I want to do.
+
+254
+00:16:36,050 --> 00:16:38,150
+If this user is authenticated.
+
+255
+00:16:38,420 --> 00:16:38,810
+Okay.
+
+256
+00:16:39,230 --> 00:16:45,920
+And for now, I'm going to put a comment in here to do get more user information.
+
+257
+00:16:46,100 --> 00:16:46,520
+Okay.
+
+258
+00:16:46,550 --> 00:16:51,530
+So that information, we can't get it right now because we don't have an actual user's table in the
+
+259
+00:16:51,530 --> 00:16:52,010
+database.
+
+260
+00:16:52,010 --> 00:16:55,940
+But this is just a to do comment to remind me to put some information in there.
+
+261
+00:16:56,360 --> 00:16:59,870
+And the last thing I want to populate in this for right now is the current date and time.
+
+262
+00:16:59,880 --> 00:17:05,000
+So I'll say t now is equal to the time dot now.
+
+263
+00:17:06,200 --> 00:17:06,500
+Okay.
+
+264
+00:17:06,680 --> 00:17:10,370
+And then I just return to the.
+
+265
+00:17:12,450 --> 00:17:13,890
+So now let's go back up here.
+
+266
+00:17:14,130 --> 00:17:23,220
+And instead of passing nil, when I execute the template here in line 52, now I just call app dot and
+
+267
+00:17:23,220 --> 00:17:23,970
+default data.
+
+268
+00:17:25,450 --> 00:17:28,720
+When I hand that it's two required parameters to enter.
+
+269
+00:17:31,420 --> 00:17:37,240
+So this way we'll have whatever information was passed as data in the call to the render function.
+
+270
+00:17:37,480 --> 00:17:42,520
+Plus, we'll have all of this default data that we just added down here and we can add to this as time
+
+271
+00:17:42,520 --> 00:17:44,020
+goes on or as required.
+
+272
+00:17:44,320 --> 00:17:44,460
+Okay.
+
+273
+00:17:46,010 --> 00:17:53,540
+So with that now I can go over to my handlers and I can render this home page app dot render.
+
+274
+00:17:53,960 --> 00:18:03,310
+And it requires, if you recall, w are the name of the template which is home dot page dot and go each
+
+275
+00:18:03,350 --> 00:18:08,900
+html, go html and I'm not going to pass this any data.
+
+276
+00:18:08,900 --> 00:18:09,350
+So nil.
+
+277
+00:18:10,040 --> 00:18:13,370
+Okay, so we call that and that should be it.
+
+278
+00:18:13,460 --> 00:18:19,040
+Now, this still won't work because we're using session information and we need to somehow tell our
+
+279
+00:18:19,040 --> 00:18:22,130
+handlers and the rest of our application about this session.
+
+280
+00:18:22,280 --> 00:18:27,440
+We had the session stored in config, but there's one more step required before we can actually try
+
+281
+00:18:27,440 --> 00:18:31,280
+to render a template and we'll get started on that in the next lecture.

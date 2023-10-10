@@ -1,0 +1,175 @@
+1
+00:00:12,480 --> 00:00:17,070
+Hello and welcome to the golden programming language course in this session.
+
+2
+00:00:17,100 --> 00:00:20,340
+We want to talk about the others concurrency concepts.
+
+3
+00:00:23,550 --> 00:00:31,890
+Receive all values from a channel by full range, look full range, Lou can be used to receive data
+
+4
+00:00:31,890 --> 00:00:35,940
+from the channel until it is closed for days.
+
+5
+00:00:35,940 --> 00:00:38,690
+Lou will keep receiving from the channel.
+
+6
+00:00:39,210 --> 00:00:42,900
+The only way for range Lou to exit is to close the channel.
+
+7
+00:00:43,890 --> 00:00:47,550
+Now let's go to Villa School curriculum to talk about it.
+
+8
+00:00:49,710 --> 00:00:56,280
+First, create a function that accept a challenge as argument and iterate on channel value and support
+
+9
+00:00:56,280 --> 00:00:57,810
+on off channel values together.
+
+10
+00:00:59,010 --> 00:01:04,950
+So we write for each song and define the value of a life series.
+
+11
+00:01:04,950 --> 00:01:06,540
+By the time it
+
+12
+00:01:09,420 --> 00:01:19,890
+first define, a variable like sum equals zero and define the full range loop for value.
+
+13
+00:01:20,250 --> 00:01:25,110
+Calling equals branch in search.
+
+14
+00:01:28,020 --> 00:01:39,540
+And some the value of Channel Together, Song Plus equals value and end of the work of the follow up,
+
+15
+00:01:39,780 --> 00:01:53,320
+we displayed a total of somebody of a f f song total to Colin Firth and the brackets and and set value
+
+16
+00:01:53,340 --> 00:01:54,540
+the song.
+
+17
+00:01:58,980 --> 00:02:05,820
+Now go to main function and create a channel and send data to it, then call and go routine and pass
+
+18
+00:02:05,840 --> 00:02:08,160
+these generous argument of function.
+
+19
+00:02:14,380 --> 00:02:23,590
+Now, create a channel like search calling equals killing, make function and sit chan and and Triassic
+
+20
+00:02:23,590 --> 00:02:34,630
+in argument now set values to the channel search channel operate on our set to see its channel operator
+
+21
+00:02:34,630 --> 00:02:40,750
+answer to a game and see its channel operator and said two values to the channel.
+
+22
+00:02:41,380 --> 00:02:49,520
+Now, Carlos create a channel by the close function, close and set seizures or argument now calling
+
+23
+00:02:49,520 --> 00:02:57,520
+Go Routine and pause channel to eat, song and toss Sia's tweet as our unit.
+
+24
+00:02:58,240 --> 00:03:08,320
+And in the end of the work of function, we said at timeously time, Dot's lead time that millisecond
+
+25
+00:03:09,550 --> 00:03:18,010
+multiplication 200 OK, reformat the court, save the project and execute the program, go round the
+
+26
+00:03:18,040 --> 00:03:18,350
+clock.
+
+27
+00:03:18,460 --> 00:03:27,460
+This means that Google now we can see the output song total is six in above program.
+
+28
+00:03:27,580 --> 00:03:31,030
+First, we created a channel in the main function.
+
+29
+00:03:31,180 --> 00:03:36,010
+We sent three values to the channel and after death we closed the channel.
+
+30
+00:03:36,520 --> 00:03:42,250
+Then we called the song function and we passed the channel to that function in the song function.
+
+31
+00:03:42,340 --> 00:03:45,010
+We did the full range loop over the channel.
+
+32
+00:03:45,130 --> 00:03:51,070
+After iterating over all the values in the channel and the full range, no bill exists since the channel
+
+33
+00:03:51,070 --> 00:03:51,820
+is closed.
+
+34
+00:03:52,150 --> 00:03:57,670
+Now the question which comes to the mind is that what happens if you don't close the channel in the
+
+35
+00:03:57,670 --> 00:03:58,540
+main function?
+
+36
+00:03:59,020 --> 00:04:04,390
+Now go to main function and commenting the line in which they are closing the channel in and around
+
+37
+00:04:04,390 --> 00:04:05,620
+the program again.
+
+38
+00:04:08,410 --> 00:04:11,170
+Save the project and execute the program again.
+
+39
+00:04:14,080 --> 00:04:15,730
+Now we can see the output.
+
+40
+00:04:16,030 --> 00:04:16,870
+We have error.
+
+41
+00:04:17,170 --> 00:04:23,110
+It will answer output deadlock because full range loop will never finish in the song function.
+
+42
+00:04:23,830 --> 00:04:29,170
+In order not to prolong the time of decision, we will finish it and we will continue the content in
+
+43
+00:04:29,170 --> 00:04:30,010
+the next session.
+
+44
+00:04:30,280 --> 00:04:30,760
+Goodbye.

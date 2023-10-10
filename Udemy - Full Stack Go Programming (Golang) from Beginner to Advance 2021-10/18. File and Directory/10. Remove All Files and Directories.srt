@@ -1,0 +1,243 @@
+1
+00:00:13,560 --> 00:00:16,920
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:17,280 --> 00:00:23,700
+In the previous session, we talked about how to delete or remove the file and the folder go language.
+
+3
+00:00:24,180 --> 00:00:29,370
+And in this session, we want to talk about the other files and directories concept.
+
+4
+00:00:32,020 --> 00:00:39,580
+Remove all directories and files and go land in gold language, you are allowed to remove all the directory
+
+5
+00:00:39,580 --> 00:00:45,310
+that finds from a directory or folder with the help of remove all function.
+
+6
+00:00:46,090 --> 00:00:51,970
+This function removes all the directories and files from the path you will pass to this function.
+
+7
+00:00:52,450 --> 00:00:59,110
+It will remove everything from the specified path, but returns the first error it encounters.
+
+8
+00:01:00,040 --> 00:01:04,090
+If the specified path does not exist, then this method returns nil.
+
+9
+00:01:04,420 --> 00:01:08,630
+If this function throws an error, then it will be off time parser.
+
+10
+00:01:09,130 --> 00:01:11,410
+Now you can see the syntax.
+
+11
+00:01:12,460 --> 00:01:18,460
+It is defined under the OS package, so you have to import Always Package in your program for accessing
+
+12
+00:01:18,460 --> 00:01:19,750
+remove all function.
+
+13
+00:01:20,170 --> 00:01:27,550
+Let's go to this school program to illustrate how to remove all folders and files from the default directory.
+
+14
+00:01:29,650 --> 00:01:32,320
+First, we create a folder named Sample.
+
+15
+00:01:38,690 --> 00:01:44,640
+And Create who finds inside it named Test one test and test to that the.
+
+16
+00:01:48,080 --> 00:01:50,600
+Test one that takes the.
+
+17
+00:01:53,640 --> 00:01:55,980
+And test tube got.
+
+18
+00:01:58,560 --> 00:02:03,420
+And they create a folder named 10 one in sample directory.
+
+19
+00:02:04,360 --> 00:02:07,560
+Sample learning to through a folder and.
+
+20
+00:02:11,040 --> 00:02:18,660
+And then inside tent one, create another finds like Test 3.6, dentist 4.60.
+
+21
+00:02:21,940 --> 00:02:24,100
+Tist 3.60.
+
+22
+00:02:25,800 --> 00:02:31,010
+And in turn, will create another fine test for the.
+
+23
+00:02:34,440 --> 00:02:34,810
+OK.
+
+24
+00:02:35,010 --> 00:02:37,530
+The files and folders are created.
+
+25
+00:02:37,950 --> 00:02:43,620
+Now let's go to main function to remove the created all files and folders.
+
+26
+00:02:46,010 --> 00:02:51,980
+Remove all function, get the car and pass as argument and remove the files and folders.
+
+27
+00:02:52,280 --> 00:02:55,050
+If there is an error, it will be a time pass.
+
+28
+00:02:55,700 --> 00:03:02,660
+So first, define a variable like you are calling equals and can't remove all functions from oils.
+
+29
+00:03:02,660 --> 00:03:04,380
+Package or start streaming.
+
+30
+00:03:06,120 --> 00:03:14,520
+On Fawcett, the current pass, right click on the folder created named in the Explorer and select reveal
+
+31
+00:03:14,670 --> 00:03:21,420
+in the File Explorer and copy the current pass from address, bar and poutine here and append the folder
+
+32
+00:03:21,420 --> 00:03:22,890
+name end of this pass.
+
+33
+00:03:24,030 --> 00:03:25,560
+So right click.
+
+34
+00:03:26,850 --> 00:03:30,480
+Revenue in File Explorer and kupuna
+
+35
+00:03:32,790 --> 00:03:35,200
+and set as argument for gaming
+
+36
+00:03:39,600 --> 00:03:44,640
+sit dormant backslash, though, either make a splash.
+
+37
+00:03:46,530 --> 00:03:51,870
+Over breakfast, lunch and over breakfast, lunch and silver make a splash.
+
+38
+00:03:52,980 --> 00:03:53,300
+OK.
+
+39
+00:03:53,820 --> 00:03:56,520
+The project name is finds directories,
+
+40
+00:03:59,460 --> 00:04:02,880
+fonts, dash directories,
+
+41
+00:04:05,550 --> 00:04:10,080
+backslash, backslash and Santa folder.
+
+42
+00:04:10,230 --> 00:04:15,420
+OK, now we check the printed message if the error is not empty.
+
+43
+00:04:17,010 --> 00:04:20,790
+If you are not equal to me.
+
+44
+00:04:21,390 --> 00:04:24,000
+So print a message.
+
+45
+00:04:24,120 --> 00:04:26,280
+Large print and.
+
+46
+00:04:29,420 --> 00:04:30,740
+And said the error message.
+
+47
+00:04:33,420 --> 00:04:42,240
+OK, now go to the dash directories, pass and see files and folders, so we use on the air, come in
+
+48
+00:04:42,240 --> 00:04:53,100
+and see sample folder, go to the sample, see the sample and again during our week Test 1.60 test to
+
+49
+00:04:53,100 --> 00:04:56,700
+the test and 10 one folder, go to the tampon folder.
+
+50
+00:04:56,700 --> 00:04:59,730
+See 10 one folder.
+
+51
+00:05:00,210 --> 00:05:07,410
+And again, we are and we can see Test 3.6 and test for the next week.
+
+52
+00:05:09,180 --> 00:05:10,770
+We go to the car and pass.
+
+53
+00:05:10,770 --> 00:05:22,770
+We gave see the CD, its science and save the project and execute the program by the car and go wrong
+
+54
+00:05:23,400 --> 00:05:25,350
+the main that could.
+
+55
+00:05:27,880 --> 00:05:29,830
+Now we can see the output.
+
+56
+00:05:29,920 --> 00:05:36,640
+First, we created files and folders inside each other in content past and then using the removal function
+
+57
+00:05:36,640 --> 00:05:42,070
+from the OS package, and we were able to delete all the created files and folders.
+
+58
+00:05:42,370 --> 00:05:50,140
+Again, we go to find that directories passed by the comma in the air and we see it on files and folders
+
+59
+00:05:50,140 --> 00:05:53,810
+and deleted from here in order not to prolong the time of decision.
+
+60
+00:05:53,830 --> 00:05:57,700
+We will finish it and we will continue the content in the next session.
+
+61
+00:05:58,100 --> 00:05:58,620
+Goodbye.

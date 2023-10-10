@@ -1,0 +1,899 @@
+1
+00:00:01,200 --> 00:00:06,960
+So now that we seem to have our models completely divorced from the database, let's start writing some
+
+2
+00:00:06,960 --> 00:00:09,390
+test for handlers and see if we get everything right.
+
+3
+00:00:09,390 --> 00:00:11,010
+And I'll give you a warning right now.
+
+4
+00:00:11,010 --> 00:00:14,340
+We didn't get absolutely everything right, but it's an easy fix.
+
+5
+00:00:14,880 --> 00:00:23,400
+So let's get started in our CMT Web folder or create a new file, which I'll call handlers, underscore
+
+6
+00:00:23,400 --> 00:00:24,450
+test scope.
+
+7
+00:00:24,990 --> 00:00:25,320
+Okay.
+
+8
+00:00:25,800 --> 00:00:31,290
+And it's in package main and we'll write right now one test.
+
+9
+00:00:31,320 --> 00:00:33,510
+We'll just test the home page to Handler for that.
+
+10
+00:00:33,960 --> 00:00:37,290
+So write a function and I'll call it test config.
+
+11
+00:00:37,320 --> 00:00:38,400
+Underscore home.
+
+12
+00:00:39,960 --> 00:00:40,350
+Okay?
+
+13
+00:00:40,710 --> 00:00:44,250
+And it takes one parameter t a pointer to testing T.
+
+14
+00:00:45,990 --> 00:00:51,030
+So the very first thing we're going to have to take into account, if you go over to the handlers file
+
+15
+00:00:51,870 --> 00:00:59,010
+and we find that handler for home right here, okay, it's expecting to find home dot paged HTML.
+
+16
+00:00:59,010 --> 00:01:05,010
+And of course, that calls the render function and that one has this variable at the top, the path
+
+17
+00:01:05,010 --> 00:01:05,940
+to templates.
+
+18
+00:01:05,940 --> 00:01:08,280
+So we're going to have to override that variable.
+
+19
+00:01:08,280 --> 00:01:11,970
+Otherwise it won't find the template and it can't render it and that's easy.
+
+20
+00:01:11,970 --> 00:01:18,570
+So back in handlers underscore Tesco, we'll just say path to templates, which is a package label variable
+
+21
+00:01:18,600 --> 00:01:24,810
+that's now equal to DOT slash templates because the templates folder is right beside this test.
+
+22
+00:01:25,050 --> 00:01:25,410
+Okay.
+
+23
+00:01:26,100 --> 00:01:27,420
+So that's the first thing we have to do.
+
+24
+00:01:28,050 --> 00:01:34,890
+Then we create a response recorder and we know how to do that HDP test and we'll create a new recorder
+
+25
+00:01:35,280 --> 00:01:38,430
+and that's substitutes or takes the place of the response.
+
+26
+00:01:38,430 --> 00:01:41,280
+Writer So we have that now.
+
+27
+00:01:41,280 --> 00:01:48,690
+We'll create a request, same as usual request and I'll ignore the error is assigned the value of HTTP
+
+28
+00:01:49,200 --> 00:01:56,760
+new request and we'll give it a get because that's what the home handler expects and it's the home page
+
+29
+00:01:57,240 --> 00:01:59,520
+and we're not passing any data or anything else to it.
+
+30
+00:01:59,850 --> 00:02:00,150
+Okay.
+
+31
+00:02:01,200 --> 00:02:04,140
+And then of course, we need to get the request with the session data.
+
+32
+00:02:04,140 --> 00:02:08,910
+So KCTCS is assigned the value of that function gets ctcs.
+
+33
+00:02:08,910 --> 00:02:16,830
+We wrote a while ago and we handed the request and then request is now equal to request with context
+
+34
+00:02:17,010 --> 00:02:17,640
+syntax.
+
+35
+00:02:18,750 --> 00:02:20,730
+Okay, now we're ready to call the handler.
+
+36
+00:02:20,730 --> 00:02:24,450
+We want the test, so I'll declare a variable handler.
+
+37
+00:02:25,260 --> 00:02:34,770
+And that's a sign the value of each HTTP dot handler func right there and we hand it from our test app
+
+38
+00:02:34,770 --> 00:02:37,920
+variable we're calling homepage
+
+39
+00:02:41,760 --> 00:02:42,990
+and now we call that handler.
+
+40
+00:02:43,170 --> 00:02:53,100
+So handler don't serve HTP with our, which is our response recorder and the request we just built and
+
+41
+00:02:53,100 --> 00:02:54,240
+now we perform our test.
+
+42
+00:02:54,240 --> 00:02:55,890
+And what kind of tests should we look for.
+
+43
+00:02:55,890 --> 00:02:59,430
+Well, this should return htp dot status.
+
+44
+00:02:59,430 --> 00:02:59,940
+Okay.
+
+45
+00:02:59,970 --> 00:03:01,310
+Or status code 200.
+
+46
+00:03:01,830 --> 00:03:09,720
+So if our encode is not equal to htp dot status, okay, then we have an error.
+
+47
+00:03:10,140 --> 00:03:23,570
+So we'll say t dot error and we give it some error message failed expected 200 but got and we'll just
+
+48
+00:03:23,580 --> 00:03:24,780
+put our encode there.
+
+49
+00:03:25,590 --> 00:03:25,890
+Okay.
+
+50
+00:03:26,820 --> 00:03:29,010
+So let's see if that test works
+
+51
+00:03:31,710 --> 00:03:33,990
+inside the cmd slash web folder.
+
+52
+00:03:34,110 --> 00:03:36,870
+Go test dash reader.
+
+53
+00:03:39,860 --> 00:03:41,150
+And it passed.
+
+54
+00:03:41,210 --> 00:03:46,220
+Now, that's not surprising because the home page actually doesn't hit the database, but that's a pretty
+
+55
+00:03:46,220 --> 00:03:47,060
+easy test.
+
+56
+00:03:47,780 --> 00:03:49,760
+Now we have other functions.
+
+57
+00:03:49,760 --> 00:03:55,850
+If we look at our routes file, other handlers like log in and log out and register.
+
+58
+00:03:56,060 --> 00:04:01,580
+These just, you know, they're very simple pages and they're all going to follow exactly the same format
+
+59
+00:04:02,090 --> 00:04:04,250
+as the one we just wrote for our homepage.
+
+60
+00:04:04,820 --> 00:04:08,780
+So maybe it makes sense to go back to handlers or underscore test, don't go.
+
+61
+00:04:09,110 --> 00:04:13,220
+And instead of just doing one test per page, we'll just write a simple table test.
+
+62
+00:04:13,640 --> 00:04:19,310
+In other words, we'll set up some data like this will come up here and create a variable.
+
+63
+00:04:19,370 --> 00:04:24,440
+We'll call it page test, and that's equal to a slice of structs.
+
+64
+00:04:26,690 --> 00:04:31,910
+And we populate the fields for this simple have name, which is a string, that's a name for our test,
+
+65
+00:04:31,910 --> 00:04:38,450
+whatever we want to call it, what you are already calling and that's a string and we'll have an expected
+
+66
+00:04:39,050 --> 00:04:41,720
+status code which will be an integer.
+
+67
+00:04:43,520 --> 00:04:48,200
+Then we're going to have to specify which handler we want to call, and we can do that by making a field
+
+68
+00:04:48,200 --> 00:04:53,030
+called handler of type issue report handler func like that.
+
+69
+00:04:53,060 --> 00:04:57,290
+And then we can specify the actual handlers we want to call for that individual test.
+
+70
+00:04:58,250 --> 00:04:59,660
+There might be session data.
+
+71
+00:05:00,410 --> 00:05:01,970
+Some of them require session data.
+
+72
+00:05:01,970 --> 00:05:06,770
+So we'll just make a map of string any so we can put anything in that map and then pass it into the
+
+73
+00:05:06,770 --> 00:05:07,280
+session.
+
+74
+00:05:08,090 --> 00:05:11,790
+And we also might check for things like expected h html.
+
+75
+00:05:12,050 --> 00:05:17,060
+Once you render the page, we can actually look at the stimulus generated and search for a particular
+
+76
+00:05:17,060 --> 00:05:17,420
+string.
+
+77
+00:05:17,750 --> 00:05:18,590
+So we'll make that a string.
+
+78
+00:05:19,130 --> 00:05:21,770
+Okay, so that defines it.
+
+79
+00:05:22,160 --> 00:05:26,440
+Now we populate it and we'll put in to start with just the homepage, just to make sure it works.
+
+80
+00:05:26,450 --> 00:05:26,900
+So.
+
+81
+00:05:28,890 --> 00:05:31,440
+The first test will have the name of home.
+
+82
+00:05:31,950 --> 00:05:37,560
+We're testing the home page and we'll have a URL of slash, which we're not using, but it's nice to
+
+83
+00:05:37,560 --> 00:05:37,860
+have it.
+
+84
+00:05:37,860 --> 00:05:42,960
+It makes it easy to see which route this matches with, and we'll look for the expected status code.
+
+85
+00:05:43,050 --> 00:05:46,690
+And of course, that's going to be HTTP dot status.
+
+86
+00:05:46,710 --> 00:05:47,220
+Okay.
+
+87
+00:05:49,140 --> 00:05:51,060
+And what if we wanted to check for HTML?
+
+88
+00:05:51,090 --> 00:05:52,240
+Well, we won't do that right now.
+
+89
+00:05:52,260 --> 00:05:53,370
+We'll worry about it later on.
+
+90
+00:05:53,400 --> 00:05:53,760
+Okay.
+
+91
+00:05:53,770 --> 00:05:58,080
+So for the moment, this gives us one variable.
+
+92
+00:05:58,950 --> 00:05:59,730
+Let's just save that.
+
+93
+00:05:59,730 --> 00:06:01,080
+That should not be an error.
+
+94
+00:06:01,800 --> 00:06:02,250
+That's better.
+
+95
+00:06:02,400 --> 00:06:02,790
+Okay.
+
+96
+00:06:04,010 --> 00:06:07,240
+So at the moment this gives us a variable with one test to run.
+
+97
+00:06:07,250 --> 00:06:13,010
+So let's just make them make a simple table test here and it's going to follow the same format as this.
+
+98
+00:06:13,550 --> 00:06:18,710
+So let's just rename this test to test underscore pages like that.
+
+99
+00:06:19,010 --> 00:06:19,370
+Okay?
+
+100
+00:06:19,700 --> 00:06:22,610
+We're still going to have our path, the templates that'll be set this way.
+
+101
+00:06:23,030 --> 00:06:29,150
+But now we do a for loop four and we don't care about the index, but we do care about the current entry,
+
+102
+00:06:29,150 --> 00:06:33,920
+which I'll call E that comes from ranging through page tests.
+
+103
+00:06:39,040 --> 00:06:42,100
+And inside of this will create a response recorder.
+
+104
+00:06:42,250 --> 00:06:44,790
+Interception like this will make copy editor here.
+
+105
+00:06:45,310 --> 00:06:46,380
+Paste it into here.
+
+106
+00:06:49,130 --> 00:06:49,350
+The.
+
+107
+00:06:51,700 --> 00:06:55,540
+And then we'll make the path name instead of a slash like this.
+
+108
+00:06:56,110 --> 00:06:57,970
+We'll go to either the URL.
+
+109
+00:06:58,790 --> 00:06:59,170
+Okay.
+
+110
+00:07:00,800 --> 00:07:03,020
+And then we want to call our handler and perform a test.
+
+111
+00:07:03,020 --> 00:07:04,700
+So let's get all of this out of here.
+
+112
+00:07:05,150 --> 00:07:05,540
+Cut it.
+
+113
+00:07:06,710 --> 00:07:08,120
+Paste it up inside of here.
+
+114
+00:07:10,150 --> 00:07:13,240
+Save this to format it and we'll modify it as necessary.
+
+115
+00:07:13,900 --> 00:07:21,790
+So instead of calling handler this way, let's delete that and just change this to e dot handler dot
+
+116
+00:07:21,790 --> 00:07:23,140
+serve htp.
+
+117
+00:07:23,770 --> 00:07:24,130
+Okay.
+
+118
+00:07:24,550 --> 00:07:28,570
+So that takes care of everything except for the session data and we may as well write that logic right
+
+119
+00:07:28,570 --> 00:07:32,770
+now after we set up our context and get our request with the context.
+
+120
+00:07:33,160 --> 00:07:39,340
+We'll check to see if that map which is in page test called session data if that's empty.
+
+121
+00:07:39,460 --> 00:07:45,580
+So we'll say if len of e dot session data if that's greater than zero.
+
+122
+00:07:45,670 --> 00:07:50,530
+And there's at least one thing in that map and all we have to do is arrange through that map for key
+
+123
+00:07:50,530 --> 00:07:56,230
+and value our assigned values by calling range e dot session data.
+
+124
+00:07:57,250 --> 00:07:57,670
+Okay.
+
+125
+00:07:58,880 --> 00:08:08,240
+If they exist, then we just put that value in the session test at that session, not put using our
+
+126
+00:08:08,240 --> 00:08:11,540
+context ctcs we put in key and value.
+
+127
+00:08:12,590 --> 00:08:12,920
+Okay.
+
+128
+00:08:13,850 --> 00:08:17,030
+Now we only have one thing in our table test.
+
+129
+00:08:17,070 --> 00:08:18,500
+Well, let's run it to make sure it works.
+
+130
+00:08:18,770 --> 00:08:21,710
+So let's clear the screen and run.
+
+131
+00:08:21,710 --> 00:08:22,010
+Go.
+
+132
+00:08:22,010 --> 00:08:23,270
+Test dash v dot.
+
+133
+00:08:26,810 --> 00:08:27,740
+And we have a fail.
+
+134
+00:08:28,160 --> 00:08:29,630
+And he says we're failing.
+
+135
+00:08:31,290 --> 00:08:32,250
+Handlers are scored.
+
+136
+00:08:32,250 --> 00:08:32,560
+Test.
+
+137
+00:08:32,560 --> 00:08:33,650
+Don't go 40.
+
+138
+00:08:33,660 --> 00:08:34,920
+Let's see what's on line 40.
+
+139
+00:08:39,450 --> 00:08:42,840
+And of course, we actually have to put the handler in there naturally.
+
+140
+00:08:43,500 --> 00:08:44,460
+So handler.
+
+141
+00:08:46,110 --> 00:08:47,490
+That's equal to test out.
+
+142
+00:08:49,950 --> 00:08:50,790
+Our homepage.
+
+143
+00:08:51,910 --> 00:08:53,410
+First lecture of the day.
+
+144
+00:08:53,500 --> 00:08:54,520
+Let's run that test again.
+
+145
+00:08:57,410 --> 00:08:58,250
+Much better.
+
+146
+00:08:58,370 --> 00:09:02,090
+Okay, so now that we know that it works with one page, let's add a second page.
+
+147
+00:09:02,660 --> 00:09:03,000
+Okay.
+
+148
+00:09:03,740 --> 00:09:09,000
+But before we do that down here, we may as well put in that check for expected HTML.
+
+149
+00:09:09,020 --> 00:09:09,950
+And that's pretty simple.
+
+150
+00:09:10,400 --> 00:09:18,410
+So we'll say if len of e dot expected h html this is email expect to find in the rendered page.
+
+151
+00:09:18,650 --> 00:09:23,690
+If that's greater than zero, then we're looking for html and all we have to do is say HTML, which
+
+152
+00:09:23,690 --> 00:09:29,910
+is a variable I'm declaring right now that comes from our response recorder, dot body, dot, string.
+
+153
+00:09:30,470 --> 00:09:36,310
+We get the response body as a string and then we check to make sure that our expected HTML is in there
+
+154
+00:09:36,320 --> 00:09:38,120
+and we can do that using the strings package.
+
+155
+00:09:38,630 --> 00:09:48,260
+If not strings dot contains and we're checking in html and we're looking for e dot expected html.
+
+156
+00:09:48,890 --> 00:09:59,780
+Then we have an area keyboard area with a format string of percent s field expected to find percent
+
+157
+00:09:59,780 --> 00:10:02,330
+s but did not.
+
+158
+00:10:03,110 --> 00:10:10,130
+And my substitutions are the name of the test heat opening and the expected h html e dot h2.
+
+159
+00:10:10,160 --> 00:10:11,360
+You expect that each html.
+
+160
+00:10:13,490 --> 00:10:13,820
+Okay.
+
+161
+00:10:14,000 --> 00:10:19,600
+And here we may as well put this as an error f as well just to put the name of the test in there.
+
+162
+00:10:19,610 --> 00:10:30,110
+Percent s failed colon expected percent d but got percent d.
+
+163
+00:10:30,110 --> 00:10:35,030
+This makes it work for any test in the first substitution is the name of the test e not name.
+
+164
+00:10:35,870 --> 00:10:43,160
+Second substitution is e dot expected status code and the final one is the code we actually got.
+
+165
+00:10:44,060 --> 00:10:46,820
+Okay, let's run that test one more time to make sure there's no typos.
+
+166
+00:10:49,210 --> 00:10:49,630
+Perfect.
+
+167
+00:10:50,290 --> 00:10:52,270
+Now, let's add a test for a second page.
+
+168
+00:10:52,450 --> 00:10:55,390
+Well, what's another page that we can test pretty easily?
+
+169
+00:10:55,930 --> 00:10:57,250
+Probably a login page.
+
+170
+00:10:57,280 --> 00:10:57,970
+Let's try that one.
+
+171
+00:10:59,200 --> 00:11:04,570
+So I'll copy all of this just to save some typing or paste it.
+
+172
+00:11:04,570 --> 00:11:08,380
+Here is my second table test and I'll call this one log in page
+
+173
+00:11:13,030 --> 00:11:14,860
+and the URL will be slash log in.
+
+174
+00:11:17,780 --> 00:11:18,500
+Our status.
+
+175
+00:11:18,500 --> 00:11:19,580
+Okay is correct.
+
+176
+00:11:19,610 --> 00:11:21,200
+That's what we expect to see.
+
+177
+00:11:21,410 --> 00:11:25,040
+But the handler is actually test out that locked out login page.
+
+178
+00:11:25,290 --> 00:11:26,720
+And let's save this to format it.
+
+179
+00:11:27,680 --> 00:11:33,620
+Now, let's go look at that template for the login page and find some HTML that we we expect to see
+
+180
+00:11:33,620 --> 00:11:34,280
+in that page.
+
+181
+00:11:34,520 --> 00:11:38,730
+So login page type HTML, I expect to see this title.
+
+182
+00:11:38,750 --> 00:11:42,590
+So let's copy that and go back to our handlers test.
+
+183
+00:11:42,590 --> 00:11:46,100
+And this time we'll make sure that text actually exists.
+
+184
+00:11:46,760 --> 00:11:53,930
+Expected HTML and I'll use the back ticks so I can paste this in without those double quotes causing
+
+185
+00:11:53,930 --> 00:11:54,500
+me problem.
+
+186
+00:11:54,610 --> 00:11:54,970
+Okay.
+
+187
+00:11:54,980 --> 00:11:55,940
+So I'll say that.
+
+188
+00:11:57,410 --> 00:12:00,440
+Open the terminal, clear the screen and run the test again.
+
+189
+00:12:02,780 --> 00:12:04,250
+And it passed.
+
+190
+00:12:04,880 --> 00:12:05,240
+Okay.
+
+191
+00:12:05,270 --> 00:12:09,470
+Now, obviously, we can do this for every one of the pages we expect to find.
+
+192
+00:12:09,860 --> 00:12:11,600
+But let's do one that's a little bit different.
+
+193
+00:12:11,720 --> 00:12:17,930
+Let's copy this and paste it here and we'll do the log out.
+
+194
+00:12:19,760 --> 00:12:21,830
+Now, log out doesn't actually render a page.
+
+195
+00:12:22,160 --> 00:12:23,090
+It doesn't redirect.
+
+196
+00:12:23,420 --> 00:12:24,980
+But the URL is log out.
+
+197
+00:12:27,600 --> 00:12:31,050
+And we're expecting to find status see other.
+
+198
+00:12:32,970 --> 00:12:37,650
+If you look at the handlers and you find log outs all search for log out
+
+199
+00:12:41,100 --> 00:12:45,620
+it sets the status here to see other and then redirects us to the long log in page.
+
+200
+00:12:45,630 --> 00:12:50,220
+And the other thing we should have for log out of course is we should actually have some session data.
+
+201
+00:12:50,220 --> 00:12:54,450
+We should be able to log out only when we're logged in.
+
+202
+00:12:55,140 --> 00:12:57,380
+So let's just add a field here in the log out page.
+
+203
+00:12:57,390 --> 00:13:05,010
+We'll add some session data, and all I have to do is build a map, a map of type string that takes
+
+204
+00:13:05,010 --> 00:13:09,240
+any and then curly braces and I'll put some values in here.
+
+205
+00:13:09,240 --> 00:13:16,200
+So we'll put in, say, user ID, which has to be there if you're logged in and I'll just put one in,
+
+206
+00:13:16,200 --> 00:13:17,460
+you're supposed to have a user variable.
+
+207
+00:13:17,460 --> 00:13:19,770
+I'll just put an empty user in there user.
+
+208
+00:13:20,490 --> 00:13:27,450
+And that's a type data dot user, just an empty one and curly brackets and a comma and save this.
+
+209
+00:13:28,260 --> 00:13:31,920
+And now I should be able to run this test and get the correct response.
+
+210
+00:13:32,220 --> 00:13:35,910
+We're not expecting to see any HTML on a redirect so I can delete that.
+
+211
+00:13:37,470 --> 00:13:37,800
+Okay.
+
+212
+00:13:38,370 --> 00:13:40,260
+So let's run the test and this should pass.
+
+213
+00:13:40,980 --> 00:13:42,030
+So I'll clear the screen.
+
+214
+00:13:44,490 --> 00:13:45,120
+Go test.
+
+215
+00:13:45,120 --> 00:13:45,960
+Dash V dot.
+
+216
+00:13:48,340 --> 00:13:50,050
+So far so good.
+
+217
+00:13:50,080 --> 00:13:55,570
+Now, this is all really encouraging and obviously you can go and add any other page right here.
+
+218
+00:13:56,710 --> 00:14:02,740
+But the minute you add one or certain ones that actually interact with the database, there are certain
+
+219
+00:14:02,740 --> 00:14:05,230
+situations where you're going to run into problems.
+
+220
+00:14:05,380 --> 00:14:13,120
+Even though we set up that test dash models file and duplicated all the necessary functions or methods
+
+221
+00:14:13,120 --> 00:14:15,580
+tied to user and tied to plan.
+
+222
+00:14:15,910 --> 00:14:20,830
+There's still a couple of situations where we're going to run into problems when we try to execute a
+
+223
+00:14:20,830 --> 00:14:25,870
+certain test, and that has absolutely nothing to do with the test models we set up.
+
+224
+00:14:25,990 --> 00:14:31,510
+It has to do with the way we access those models in our handler, and we'll see an example of that and
+
+225
+00:14:31,510 --> 00:14:33,640
+how to address it in the next lecture.

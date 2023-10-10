@@ -1,0 +1,379 @@
+1
+00:00:00,260 --> 00:00:06,780
+In this video we'll go over the code for the client for chatting because the server code is gets rather
+
+2
+00:00:06,780 --> 00:00:09,600
+complicated for this particular design.
+
+3
+00:00:09,600 --> 00:00:14,170
+And so and the client is a little bit simpler so.
+
+4
+00:00:14,570 --> 00:00:21,710
+So for the client I'm expecting you to put into the command line arguments the euro to connect to as
+
+5
+00:00:21,710 --> 00:00:26,020
+a command line argument and then your username as a second command line argument.
+
+6
+00:00:26,150 --> 00:00:31,280
+And so whenever you have command line arguments a good very first thing to do in your main is to make
+
+7
+00:00:31,280 --> 00:00:34,160
+sure your command line arguments are kind of valid.
+
+8
+00:00:34,160 --> 00:00:38,390
+So in this case I'm just doing a very basic do I have the right number of command line arguments.
+
+9
+00:00:38,390 --> 00:00:42,400
+If not print out a message to remind myself what those arguments are supposed to be.
+
+10
+00:00:42,770 --> 00:00:52,540
+Or the user after I've got those I'm going to be contexts most because GBC uses context whenever you
+
+11
+00:00:52,540 --> 00:00:53,260
+make calls.
+
+12
+00:00:53,260 --> 00:00:54,640
+So I get the context.
+
+13
+00:00:54,640 --> 00:00:57,340
+I'm just making a generic background context with nothing in it.
+
+14
+00:00:58,580 --> 00:01:08,080
+And then I dial to our server OS args One is that first argue command line argument so the users vector
+
+15
+00:01:08,110 --> 00:01:11,980
+type in like localize ADHD or some IP address.
+
+16
+00:01:11,980 --> 00:01:19,570
+And I'm not securing my server so but the client know that's expected defer closing the connection.
+
+17
+00:01:19,570 --> 00:01:23,220
+Create the new chat client over the connections and I got to see.
+
+18
+00:01:23,230 --> 00:01:27,450
+And now I need to initiate that stream on that chat RBC.
+
+19
+00:01:27,460 --> 00:01:28,870
+Both directions.
+
+20
+00:01:28,870 --> 00:01:37,050
+So I do see that chat and I give it the context and it gives me back this stream which is of type chat
+
+21
+00:01:37,080 --> 00:01:42,610
+dot chat underscore chat client which is Daughtry.
+
+22
+00:01:42,710 --> 00:01:44,400
+Yes chit chat chat.
+
+23
+00:01:44,450 --> 00:01:48,530
+So luckily we don't have to worry about that since goes good at figuring it out with the call and equals.
+
+24
+00:01:49,430 --> 00:01:56,900
+So now I've got the stream checked my error and then the since the stream can both be sending and receiving
+
+25
+00:01:56,990 --> 00:02:04,220
+I use one go routine to loop to loop over and receive all messages from the stream and then the main
+
+26
+00:02:04,220 --> 00:02:11,240
+go routine will write all the messages to stream with stream that sent so.
+
+27
+00:02:12,200 --> 00:02:20,550
+So I create a channel of empty struct I'm expecting this channel to be closed before everything ends
+
+28
+00:02:20,550 --> 00:02:24,840
+that way I can make sure the main function waits for this go routine to exit before the main function
+
+29
+00:02:24,870 --> 00:02:28,560
+exits and so I spend a sort of a go routine.
+
+30
+00:02:28,580 --> 00:02:35,570
+So this go routine loops forever each time through the loop it receives one message from the stream.
+
+31
+00:02:35,570 --> 00:02:42,310
+This will be a chat chat message a pointer to a chat chat message once you've got the chat message I
+
+32
+00:02:42,310 --> 00:02:47,650
+print it out with the user name Cole in the message it just goes forever.
+
+33
+00:02:47,910 --> 00:02:56,080
+The one thing to note is if the error I receive back is an IO and a file that means the stream is closed
+
+34
+00:02:56,150 --> 00:02:57,960
+in a proper manner.
+
+35
+00:02:57,980 --> 00:03:00,150
+So I should just shut everything down normally.
+
+36
+00:03:00,170 --> 00:03:06,130
+So I closed this channel to indicate this go routine is finished has quote has finished and I'm returning.
+
+37
+00:03:06,130 --> 00:03:08,540
+Out of the go routines that security is done.
+
+38
+00:03:08,840 --> 00:03:09,560
+Any other area.
+
+39
+00:03:09,560 --> 00:03:12,540
+I'm just panicking.
+
+40
+00:03:13,430 --> 00:03:19,520
+So in a more proper program you'd probably put some actual proper error handling code but for demonstration
+
+41
+00:03:19,520 --> 00:03:21,720
+purposes panicking works here.
+
+42
+00:03:23,330 --> 00:03:28,970
+The other half of the program I'm going to print out a statement basically saying that I'm ready to
+
+43
+00:03:29,540 --> 00:03:35,930
+receive messages and explaining how to exit the program so you can either type and quit or you can use
+
+44
+00:03:35,930 --> 00:03:37,730
+control C to exit the program
+
+45
+00:03:40,920 --> 00:03:48,900
+and I'm gonna use the buffer a new scanner to scan because font scan does not scan whole lines of code
+
+46
+00:03:49,280 --> 00:03:56,430
+words but bio scanner will let you get whole lines of code it a standard in is your input on the command
+
+47
+00:03:56,550 --> 00:03:57,200
+line.
+
+48
+00:03:57,540 --> 00:04:03,090
+So I'm gonna get a scanner and then as long as there's lines to scan I get that I get the line that
+
+49
+00:04:03,090 --> 00:04:04,260
+just got scanned.
+
+50
+00:04:04,350 --> 00:04:11,400
+If the line I just scanned was quick then I called stream close Senate which just closed it which sends
+
+51
+00:04:11,400 --> 00:04:16,400
+out all messages that have not yet been sent over the stream and closes it
+
+52
+00:04:19,430 --> 00:04:22,660
+and that breaks out of the for loop.
+
+53
+00:04:23,270 --> 00:04:26,800
+Ultimately if it's not quit I create a chat message.
+
+54
+00:04:26,810 --> 00:04:31,880
+The username is that second command line argument and then the message is the message that got typed
+
+55
+00:04:31,880 --> 00:04:38,870
+in the command line and then it goes back to the top to loop so each time you loop it gets one line
+
+56
+00:04:38,870 --> 00:04:41,220
+of command line checks if it's quit.
+
+57
+00:04:41,240 --> 00:04:42,910
+If not it sends it.
+
+58
+00:04:43,070 --> 00:04:47,010
+Nice and then after that loop ends because of this break.
+
+59
+00:04:47,040 --> 00:04:53,820
+If you're typing quit it closes the connection and then breaks and it will wait for this the go routine
+
+60
+00:04:53,820 --> 00:04:58,560
+to finish up which should be fairly quickly since you close the connection so I know you should be soon
+
+61
+00:05:02,010 --> 00:05:02,310
+yeah.
+
+62
+00:05:02,400 --> 00:05:10,050
+The only thing I have to point out in that code is context and context is something that well you know
+
+63
+00:05:10,170 --> 00:05:15,750
+a couple of things in there but context is something those covered briefly in my web dev course.
+
+64
+00:05:15,900 --> 00:05:20,550
+And we're also planning to cover that in a future course that we're going to create after this one.
+
+65
+00:05:20,970 --> 00:05:28,980
+So if you're a little bit like what is context that's the common experience and we're gonna go into
+
+66
+00:05:28,980 --> 00:05:31,650
+that in a future course unless args.
+
+67
+00:05:31,650 --> 00:05:38,490
+We've also covered in a previous course of intro to go course I believe I cover args but that's easy
+
+68
+00:05:38,490 --> 00:05:45,360
+to look up at the standard library and then also you know if it's the first time that you're seeing
+
+69
+00:05:45,750 --> 00:05:52,260
+a scanner there but fire package by fire and scanners so backfires.
+
+70
+00:05:52,260 --> 00:05:53,820
+Buffer input and output.
+
+71
+00:05:53,820 --> 00:05:58,560
+And please join in on this conversation and let me know if I articulate any of this in a way that needs
+
+72
+00:05:58,560 --> 00:05:59,580
+some modification
+
+73
+00:06:02,070 --> 00:06:05,820
+but a buffer is a storage area in memory and input and output.
+
+74
+00:06:05,850 --> 00:06:09,960
+So you know a printer spool buffer printer buffer.
+
+75
+00:06:09,960 --> 00:06:14,730
+Well you know your computer will often generate all the code the printer needs and then hold it in a
+
+76
+00:06:14,730 --> 00:06:19,260
+buffer and then as the printer neat so it does all that work and just puts all the stuff there ready
+
+77
+00:06:19,260 --> 00:06:22,810
+for the printer and there's the printer needs the next piece of information.
+
+78
+00:06:22,890 --> 00:06:28,590
+The next piece of information is ready to go and be fed and so but Fido is just kind of like a name
+
+79
+00:06:28,590 --> 00:06:36,120
+for this buffer area for input and output and then this is just the standard pattern for how scanners
+
+80
+00:06:36,120 --> 00:06:36,740
+work.
+
+81
+00:06:36,860 --> 00:06:43,560
+And so you Ingo and so you could take a look at how this was done with that 4 scanner scan and then
+
+82
+00:06:43,560 --> 00:06:48,570
+getting the text from the scanner and so you could take a look about awesome the standard library but
+
+83
+00:06:48,570 --> 00:06:54,260
+that's also something that you know if you're relatively new if you haven't seen it before can be.
+
+84
+00:06:54,570 --> 00:06:56,070
+Hey what's going on there.
+
+85
+00:06:56,190 --> 00:06:56,520
+All right.
+
+86
+00:06:56,520 --> 00:06:59,680
+So those are just some of the thoughts that came up for me as you went through it.
+
+87
+00:06:59,700 --> 00:07:00,840
+Very nicely done.
+
+88
+00:07:00,840 --> 00:07:03,030
+I like your code.
+
+89
+00:07:03,030 --> 00:07:04,490
+Great job Daniel.
+
+90
+00:07:04,530 --> 00:07:06,590
+Anything more to add to this.
+
+91
+00:07:06,600 --> 00:07:07,760
+Creating a client.
+
+92
+00:07:07,760 --> 00:07:08,190
+No.
+
+93
+00:07:08,940 --> 00:07:09,560
+All right great.
+
+94
+00:07:09,570 --> 00:07:14,490
+So next we're going to start tackling the server and now probably a couple of videos but it's probably
+
+95
+00:07:14,490 --> 00:07:15,190
+larger.

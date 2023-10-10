@@ -1,0 +1,235 @@
+1
+00:00:00,240 --> 00:00:07,020
+So as I mentioned this course we're kind of figuring it out as we go we knew we wanted to give some
+
+2
+00:00:07,020 --> 00:00:14,610
+more real world hands on examples about creating go projects but we also wanted to hear like we weren't
+
+3
+00:00:14,610 --> 00:00:17,030
+even sure like OK we want to do another go course.
+
+4
+00:00:17,040 --> 00:00:19,090
+What should this go course to be about.
+
+5
+00:00:19,110 --> 00:00:22,450
+And because I wasn't quite sure what it should be about.
+
+6
+00:00:23,100 --> 00:00:31,050
+Increasingly my life I'm realizing the importance of market research and giving the market the economy
+
+7
+00:00:31,050 --> 00:00:34,170
+the marketplace giving the marketplace what it wants.
+
+8
+00:00:34,320 --> 00:00:42,550
+Because if you're going to do an endeavor which you're hoping will find traction in the marketplace
+
+9
+00:00:42,580 --> 00:00:48,910
+will be valuable and beneficial to others that others will not only be beneficial to them and improve
+
+10
+00:00:48,910 --> 00:00:55,060
+their lives whether you're making some sort of a product for people to consume like ice cream or something
+
+11
+00:00:55,060 --> 00:01:00,230
+like that or you're making some software project or you're making a course.
+
+12
+00:01:00,670 --> 00:01:01,010
+Right.
+
+13
+00:01:01,030 --> 00:01:06,600
+Like providing what people want it's going to be more successful in the marketplace.
+
+14
+00:01:06,610 --> 00:01:11,560
+If you're if you give people what is wanted by the marketplace as opposed to creating something and
+
+15
+00:01:11,560 --> 00:01:17,010
+then trying to push it on the marketplace and create the demand it's much better to meet the demand.
+
+16
+00:01:17,080 --> 00:01:20,820
+And so because of that I thought well let's just find out what people are looking for.
+
+17
+00:01:21,190 --> 00:01:27,310
+And I told you when we were thinking about creating this course I went to Twitter and I posted so if
+
+18
+00:01:27,310 --> 00:01:33,950
+I go to my profile I posted a question to all the people on a lot of go programmers follow me.
+
+19
+00:01:34,050 --> 00:01:37,120
+I posted a question What would you like to see in the course.
+
+20
+00:01:37,120 --> 00:01:42,920
+And so creating a project based web dev go lane course need a web dev project create any ideas.
+
+21
+00:01:42,920 --> 00:01:48,590
+And so there is one hundred and fourteen likes and many different responses.
+
+22
+00:01:48,730 --> 00:01:55,960
+And so we thought what would be interesting next step for us in our course here is we've looked at get
+
+23
+00:01:56,380 --> 00:02:02,980
+essentials and get branches and then we looked at go modules and we did a lot of good stuff and go modules
+
+24
+00:02:03,010 --> 00:02:05,390
+and we had a hands on exercises for each of those.
+
+25
+00:02:05,530 --> 00:02:11,260
+We thought the next thing which might be interesting to look at would be to crawl these responses and
+
+26
+00:02:11,260 --> 00:02:15,960
+just to show how a crawler works and go and to pull out.
+
+27
+00:02:16,000 --> 00:02:18,850
+There's my new puppy.
+
+28
+00:02:18,850 --> 00:02:23,650
+If you heard that bark pull out pull out those responses and then maybe do a little bit of analysis
+
+29
+00:02:23,650 --> 00:02:28,150
+on the text just word count or something like that see what some of the larger words are.
+
+30
+00:02:28,210 --> 00:02:30,970
+But the first step in that process is to crawl it.
+
+31
+00:02:31,120 --> 00:02:36,460
+And so that's what we're gonna do in this next section or these next sections is we're going to take
+
+32
+00:02:36,520 --> 00:02:37,870
+a look at these crawlers.
+
+33
+00:02:38,050 --> 00:02:45,010
+And Daniel has put together two solutions and I haven't had enough time to put together an entire solution
+
+34
+00:02:45,010 --> 00:02:45,510
+myself.
+
+35
+00:02:45,820 --> 00:02:53,080
+But between the two of us you're going to see our individual takes on crawlers and you're going to see
+
+36
+00:02:53,080 --> 00:02:56,040
+our solutions and so that's what's coming up.
+
+37
+00:02:56,080 --> 00:03:00,070
+Do you have anything you want to add to that intro.
+
+38
+00:03:00,960 --> 00:03:02,040
+No.
+
+39
+00:03:02,050 --> 00:03:02,280
+All right.
+
+40
+00:03:02,290 --> 00:03:04,980
+So pair programming and pair teaching here.
+
+41
+00:03:05,130 --> 00:03:09,790
+I am going to provide one personal anecdote here so if you're in a rush and you need to get gone you
+
+42
+00:03:09,790 --> 00:03:14,330
+could jump to the next video now or if you want to hear the personal anecdote.
+
+43
+00:03:14,380 --> 00:03:17,220
+So over the weekend Daniel already knows this.
+
+44
+00:03:17,560 --> 00:03:22,960
+Like over the last week my entire family has been hit with the stomach flu and it hit me on Saturday
+
+45
+00:03:22,960 --> 00:03:23,380
+night.
+
+46
+00:03:23,380 --> 00:03:28,150
+So Saturday night I was completely laid up in bed all day Sunday.
+
+47
+00:03:28,150 --> 00:03:34,150
+It's such a rare occasion like I can't remember the last time in my life where I just did not do anything
+
+48
+00:03:34,180 --> 00:03:34,810
+all day.
+
+49
+00:03:34,810 --> 00:03:38,070
+I just laid in bed all day.
+
+50
+00:03:38,080 --> 00:03:38,860
+That's not true.
+
+51
+00:03:38,860 --> 00:03:44,400
+I did a little bit of house pick up because that needed to happen.
+
+52
+00:03:44,430 --> 00:03:51,610
+So I was just walking slow and and they didn't eat it all Sunday and then Monday I was like I couldn't
+
+53
+00:03:51,940 --> 00:04:00,160
+function and now today just back up and I even had to take a nap today and you've known me a long time.
+
+54
+00:04:00,160 --> 00:04:04,550
+How many times have you known we've been at maybe two or three times over the years you've known me.
+
+55
+00:04:04,760 --> 00:04:06,630
+So I was like I guess I could take a half.
+
+56
+00:04:06,730 --> 00:04:08,320
+So yeah.
+
+57
+00:04:08,410 --> 00:04:14,680
+Anyhow that happens life happens and I'm not 100 percent but I'm game.
+
+58
+00:04:14,680 --> 00:04:19,620
+So here we go and we'll see in the next video where we're going to jump in.
+
+59
+00:04:19,640 --> 00:04:21,610
+Taking a look at Daniel's coat.

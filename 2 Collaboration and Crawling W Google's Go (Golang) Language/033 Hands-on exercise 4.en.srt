@@ -1,0 +1,535 @@
+1
+00:00:00,070 --> 00:00:02,210
+Đây là bài tập thực hành số 4.
+
+2
+00:00:02,210 --> 00:00:08,550
+Đây là bài tập tay cuối cùng trong bộ và là bài tập cuối cùng của chúng tôi cho bài tập tay này
+
+3
+00:00:08,550 --> 00:00:09,660
+trên bài tập.
+
+4
+00:00:09,660 --> 00:00:18,150
+Dọn dẹp kho lưu trữ của bạn trên máy cục bộ của bạn, xóa các nhánh của bạn và do đó, xóa các nhánh của bạn.
+
+5
+00:00:18,150 --> 00:00:19,680
+Và đây là mã để làm điều đó.
+
+6
+00:00:19,680 --> 00:00:26,460
+Cũng giống như một lời nhắc nhở để có được tên nhánh D và sau khi chúng tôi chấp nhận yêu cầu thăm dò ý kiến ​​​​của bạn, điều này có thể
+
+7
+00:00:26,460 --> 00:00:30,830
+ai biết được có thể mất vài tháng và thực sự hy vọng.
+
+8
+00:00:30,840 --> 00:00:37,350
+Thành thật mà nói, tôi hy vọng một số người trong lớp tình nguyện làm cộng tác viên để trên repo chúng tôi có thể thêm bạn
+
+9
+00:00:37,350 --> 00:00:44,220
+với tư cách là cộng tác viên và sau đó bạn biết rằng bạn có thể giúp hoàn thành những nhiệm vụ này nhưng một khi đó là
+
+10
+00:00:44,220 --> 00:00:50,700
+xong, bạn có thể xóa nhánh của mình trên ngã ba trên github, sau đó cắt bớt cục bộ và cho chúng tôi biết một chút
+
+11
+00:00:50,700 --> 00:00:50,850
+chút.
+
+12
+00:00:50,850 --> 00:00:51,560
+Daniel tại sao.
+
+13
+00:00:51,630 --> 00:00:59,350
+Tại sao họ không thể xóa chi nhánh của mình trên GitHub trước khi chúng tôi chấp nhận hoặc hợp nhất yêu cầu của họ.
+
+14
+00:00:59,430 --> 00:01:05,100
+Vì nếu bạn xóa nó trên github thì request không biết lấy từ đâu để thực hiện merge
+
+15
+00:01:05,550 --> 00:01:07,430
+vì vậy bạn cần đảm bảo rằng E.
+
+16
+00:01:08,460 --> 00:01:12,800
+Bạn cần đảm bảo rằng yêu cầu kém đã được thông qua hoặc bị từ chối trước khi xóa chi nhánh
+
+17
+00:01:12,930 --> 00:01:19,470
+bởi vì nếu không thì tôi không thực sự chắc chắn GitHub sẽ phản hồi chính xác như thế nào nhưng tôi khá chắc chắn
+
+18
+00:01:19,470 --> 00:01:24,990
+rằng nếu bạn chỉ xóa nhánh thì yêu cầu kéo cũng sẽ bị hủy vì nó không
+
+19
+00:01:24,990 --> 00:01:25,870
+biết kéo vào đâu.
+
+20
+00:01:26,130 --> 00:01:28,620
+Có lẽ đó là một thử nghiệm để chúng tôi chạy vào một lúc nào đó.
+
+21
+00:01:28,630 --> 00:01:29,940
+Bạn là loại tò mò.
+
+22
+00:01:30,090 --> 00:01:30,290
+Được rồi.
+
+23
+00:01:30,300 --> 00:01:31,320
+Vì vậy, đi làm điều này.
+
+24
+00:01:31,320 --> 00:01:32,520
+Tập thể dục tay.
+
+25
+00:01:32,520 --> 00:01:33,260
+Tạm dừng một video.
+
+26
+00:01:33,260 --> 00:01:34,620
+Hãy làm điều đó khi bạn đã hoàn thành.
+
+27
+00:01:34,620 --> 00:01:37,770
+Hãy quay lại và chúng tôi sẽ cho bạn thấy giải pháp của chúng tôi.
+
+28
+00:01:37,770 --> 00:01:40,380
+Bạn sẽ làm gì ngay bây giờ, vì vậy hãy đảm bảo rằng bạn đã tạm dừng video này.
+
+29
+00:01:40,380 --> 00:01:42,230
+Đã đi và làm tất cả các quyền.
+
+30
+00:01:42,820 --> 00:01:43,560
+OK bạn đã sẵn sàng.
+
+31
+00:01:43,560 --> 00:01:44,070
+Chúng ta đi đây.
+
+32
+00:01:44,070 --> 00:01:45,770
+Anh muốn đi trước cho tôi.
+
+33
+00:01:45,780 --> 00:01:49,710
+Chắc chắn tôi có ít việc phải làm hơn vì tôi có chi nhánh.
+
+34
+00:01:49,740 --> 00:01:52,290
+Tôi có thể thấy tôi đã có mặt nạ cho mục đích của mình.
+
+35
+00:01:52,290 --> 00:01:53,450
+Tôi không có.
+
+36
+00:01:54,090 --> 00:01:54,930
+Người khác.
+
+37
+00:01:54,960 --> 00:02:01,200
+Người khiêm tốn vì tôi đã phải ăn hết cái nĩa của mình, đọc và báo cáo nó, bao gồm cả việc chỉnh sửa địa phương của tôi
+
+38
+00:02:01,200 --> 00:02:05,080
+nhánh vì vậy tôi thực sự không có nhánh phụ.
+
+39
+00:02:05,160 --> 00:02:07,710
+Vì vậy, đối với tôi nó chỉ là một chúng ta.
+
+40
+00:02:07,740 --> 00:02:11,080
+Mục đích của tôi.
+
+41
+00:02:11,240 --> 00:02:15,030
+Tôi có thể thấy nhiều nhánh chỉ bằng một nửa.
+
+42
+00:02:15,200 --> 00:02:16,200
+Được rồi tuyệt vời.
+
+43
+00:02:16,280 --> 00:02:26,060
+Và đối với tôi, hãy lấy nhánh Tôi đã có chủ thứ hai của mình, mục đích của tôi là tôi sẽ lấy nhánh DST xem thứ hai và
+
+44
+00:02:26,210 --> 00:02:28,430
+lấy nhánh SD.
+
+45
+00:02:28,880 --> 00:02:32,260
+Mục đích của tôi trong việc xóa mục đích của tôi.
+
+46
+00:02:32,300 --> 00:02:39,620
+Và bây giờ nếu tôi có nhánh, tôi chỉ có nhánh chính và nếu tôi muốn xem tất cả các nhánh của mình, tôi có nguồn gốc chính
+
+47
+00:02:39,620 --> 00:02:47,390
+HEAD gốc gốc gốc gốc EMC gốc thứ hai ngược dòng gốc và vì các yêu cầu kéo của tôi đã có
+
+48
+00:02:47,390 --> 00:02:56,480
+đã được chấp nhận và hợp nhất trong giao diện để có được trạng thái ở đây và tôi đã cập nhật tất cả nhưng chỉ vì voodoo
+
+49
+00:02:56,480 --> 00:03:03,110
+máy tính Tôi sẽ thực hiện một thao tác kéo và đảm bảo nhưng bây giờ tôi sẽ quay lại dự án đang thực hiện của mình.
+
+50
+00:03:03,170 --> 00:03:03,770
+Đây là trên.
+
+51
+00:03:03,970 --> 00:03:04,490
+Ồ vâng.
+
+52
+00:03:04,670 --> 00:03:13,280
+Bây giờ là 11 giờ tôi cần các kho lưu trữ của mình và tôi muốn chuyển sang dự án going phân nhánh từ going
+
+53
+00:03:13,340 --> 00:03:19,730
+đến 11:00 vì vậy dự án tạm thời của Todd McCloud sẽ diễn ra và nếu tôi đi xem các chi nhánh của mình ở đây, tôi sẽ có MS thứ hai và
+
+54
+00:03:19,730 --> 00:03:28,010
+Tôi sẽ loại bỏ cái này vì tôi không cần nó và vì vậy một lần nữa nếu tôi nhận được dấu gạch ngang nhánh thì tôi vẫn có
+
+55
+00:03:28,190 --> 00:03:34,190
+MS thứ hai ở đây vì vậy đây là nơi tôi cần cắt tỉa nó và tôi có thể quay lại và lấy mã cắt tỉa này.
+
+56
+00:03:34,190 --> 00:03:42,270
+tôi không biết nó ở đâu và tôi đã viết nó ra đây ở đâu đó gimme Jimmy f prune.
+
+57
+00:03:42,500 --> 00:03:42,980
+Của bạn đi.
+
+58
+00:03:42,980 --> 00:03:51,170
+Nhận nguồn gốc cắt tỉa từ xa, chúng tôi sẽ sử dụng sức mạnh của công nghệ để tìm ra điều đó và bây giờ là lần cắt tỉa thứ hai của tôi
+
+59
+00:03:52,460 --> 00:03:56,740
+Tôi đã ngược dòng phù hợp với nguồn gốc của họ Origin HEAD AND MASTER vì vậy tôi hoàn toàn sạch sẽ.
+
+60
+00:03:56,960 --> 00:03:57,230
+Được rồi.
+
+61
+00:03:57,290 --> 00:04:03,860
+Vì vậy, đó là giải pháp của chúng tôi cho bài tập thực hành này và điều đó không mất nhiều thời gian.
+
+62
+00:04:03,920 --> 00:04:04,770
+KHÔNG.
+
+63
+00:04:04,820 --> 00:04:07,730
+Vì vậy, một khi bạn kéo yêu cầu đã được chấp nhận.
+
+64
+00:04:07,730 --> 00:04:14,430
+Nếu bạn hoàn toàn không cần nĩa nữa, bạn có thể an tâm ăn repo nĩa của mình.
+
+65
+00:04:14,570 --> 00:04:16,600
+Trong trường hợp này nếu bạn muốn giữ nó cũng tốt.
+
+66
+00:04:16,610 --> 00:04:20,230
+Nhưng có rất ít điểm trong việc giữ một nhánh của kho lưu trữ mã nguồn mở.
+
+67
+00:04:20,240 --> 00:04:26,340
+Sau khi tất cả những thay đổi bạn muốn thực hiện đã được thực hiện, vì vậy khi bạn đang làm việc trong suốt khóa học, bạn
+
+68
+00:04:26,340 --> 00:04:31,890
+có thể muốn giữ fork của bạn vì sau đó bạn sẽ có tất cả mã như lúc bạn
+
+69
+00:04:31,890 --> 00:04:39,210
+đã bắt đầu khóa học hoặc từ nơi bạn rebase lần cuối đến fork của mình và sau đó bạn có thể đẩy mã của mình
+
+70
+00:04:39,210 --> 00:04:40,230
+và giữ nó.
+
+71
+00:04:40,410 --> 00:04:47,280
+Và sau đó, bất kỳ chi nhánh nào mà bạn thích mà bạn muốn gửi đến sẽ được thêm vào mười một.
+
+72
+00:04:47,280 --> 00:04:53,880
+Vì vậy, chẳng hạn như bạn đang tham gia khóa học nếu tôi chỉ tìm kiếm cấu trúc thư mục và tôi
+
+73
+00:04:53,880 --> 00:04:56,660
+nghĩ rằng đây sẽ là nơi tốt nhất để hiển thị cấu trúc thư mục.
+
+74
+00:04:56,700 --> 00:05:05,340
+Vì vậy, đây là mục đích của dự án 0 2 và vì vậy có thể bạn giống như bạn biết bạn muốn thêm một số mã
+
+75
+00:05:05,340 --> 00:05:06,690
+để người khác chia sẻ.
+
+76
+00:05:06,810 --> 00:05:11,550
+Bạn có thể tạo một thư mục mới và nhập mã sinh viên, sau đó có thể tạo một thư mục mới.
+
+77
+00:05:11,640 --> 00:05:18,400
+Và đây sẽ là bạn biết nó sẽ đến năm mười một hoặc bất cứ năm nào, lấy tên là gì và tên của bạn là gì và
+
+78
+00:05:18,390 --> 00:05:23,130
+vì vậy những sinh viên khác muốn đăng một số mã có các biến thể khác nhau với các mô tả có thể
+
+79
+00:05:23,130 --> 00:05:27,870
+có lợi cho các sinh viên khác để đó có thể là điều mà sau đó bạn có thể nói này, tôi muốn gửi cái này
+
+80
+00:05:27,870 --> 00:05:33,030
+đối với thủ môn chuyển sang dự án 11 vạch đích để các học sinh khác có thể thấy rằng điều đó có ý nghĩa.
+
+81
+00:05:33,210 --> 00:05:34,340
+Vâng.
+
+82
+00:05:34,830 --> 00:05:40,950
+Tương tự không chắc chắn nhưng bạn biết nên bạn có thể sử dụng ngã ba để làm điều đó và rẽ nhánh khi bạn đi qua
+
+83
+00:05:40,950 --> 00:05:42,470
+lớp.
+
+84
+00:05:42,480 --> 00:05:48,930
+Bạn có muốn thử thứ mà chúng tôi giống như một thứ gây tò mò mà chúng tôi tạo ra không
+
+85
+00:05:48,930 --> 00:05:55,070
+một chi nhánh bạn thêm một tệp bạn gửi yêu cầu hợp nhất và sau đó bạn xóa tất cả những thứ đó bên bạn.
+
+86
+00:05:55,090 --> 00:06:00,500
+Chúng tôi xem yêu cầu hợp nhất trông như thế nào từ ngày 11 đến ngày 11 hoặc bạn muốn tôi thực hiện điều đó trên bảng hiệu của mình.
+
+87
+00:06:00,510 --> 00:06:01,040
+Tôi có thể làm điều đó.
+
+88
+00:06:01,410 --> 00:06:04,140
+Hãy thực hiện các dự án.
+
+89
+00:06:04,390 --> 00:06:13,430
+Chắc chắn tôi hẹn hò, tôi thiếu các thay đổi của bạn nên tôi chỉ muốn xem điều gì đã xảy ra với nó.
+
+90
+00:06:13,830 --> 00:06:17,570
+Nếu tôi tạo một chi nhánh để
+
+91
+00:06:22,950 --> 00:06:23,420
+tốt hơn nhiều.
+
+92
+00:06:23,940 --> 00:06:25,170
+Vì vậy, yeah tôi thích nó.
+
+93
+00:06:25,200 --> 00:06:27,300
+Kiểm tra Ashby.
+
+94
+00:06:27,540 --> 00:06:29,030
+Nhận của bạn
+
+95
+00:06:38,340 --> 00:06:39,080
+tiền bạc.
+
+96
+00:06:39,850 --> 00:06:40,180
+Vâng.
+
+97
+00:06:43,820 --> 00:06:44,590
+chỉ ở đâu
+
+98
+00:06:50,570 --> 00:06:53,510
+có thể đó là một sơ hở ở một vị trí khác, hãy đóng tất cả lại.
+
+99
+00:06:53,700 --> 00:06:54,770
+Vâng tôi nhớ bây giờ.
+
+100
+00:06:54,800 --> 00:07:01,310
+Đây là dự án đi đến tình yêu và dựa trên cơ sở và tôi muốn tất cả những gì leo lên chậm rãi.
+
+101
+00:07:02,000 --> 00:07:04,240
+Được rồi, đây là đây.
+
+102
+00:07:04,520 --> 00:07:06,910
+Nếu tôi chỉ tạo một tệp mới ở đây.
+
+103
+00:07:07,400 --> 00:07:11,470
+Đây là cho X ở đây và
+
+104
+00:07:15,140 --> 00:07:16,810
+X bia thay.
+
+105
+00:07:16,830 --> 00:07:17,400
+Chữ
+
+106
+00:07:35,460 --> 00:07:36,660
+đọc này
+
+107
+00:07:42,520 --> 00:07:42,980
+của nó
+
+108
+00:07:53,840 --> 00:07:55,280
+bây giờ nếu tôi quay trở lại năm
+
+109
+00:07:58,290 --> 00:08:00,750
+thử nghiệm, tôi muốn nhận một yêu cầu kéo với một
+
+110
+00:08:05,090 --> 00:08:07,590
+thử nghiệm đồng tính để có được đi.
+
+111
+00:08:07,600 --> 00:08:11,420
+Dự án hãy tạo trong quá khứ
+
+112
+00:08:14,300 --> 00:08:16,540
+yêu cầu nó được tạo ra.
+
+113
+00:08:16,560 --> 00:08:18,810
+Bây giờ nếu tôi quay trở lại với tôi
+
+114
+00:08:24,750 --> 00:08:28,240
+Tôi đến chi nhánh xóa chi nhánh này
+
+115
+00:08:30,720 --> 00:08:31,290
+xoá nó.
+
+116
+00:08:31,670 --> 00:08:41,780
+Nếu tôi đến với cái này với giá bằng 0 thì không có yêu cầu nhập khẩu nào mà người ủng hộ Clinton đặt cái này
+
+117
+00:08:42,740 --> 00:08:48,760
+bạn có thể thấy nó có hình vuông màu đỏ tức giận này nên nó sẽ tự động đóng nếu bạn xóa nó vì
+
+118
+00:08:48,760 --> 00:08:53,020
+mã đã có trên repo khác của bạn và vì vậy nó đã biến mất ngay bây giờ.
+
+119
+00:08:53,350 --> 00:08:54,990
+Được rồi ừm ngoại trừ đó là một thử nghiệm tốt.
+
+120
+00:08:55,000 --> 00:08:55,980
+Điều đó hợp lý.
+
+121
+00:08:56,050 --> 00:08:56,390
+Đúng.
+
+122
+00:08:56,410 --> 00:08:56,620
+Được rồi.
+
+123
+00:08:56,630 --> 00:08:58,170
+Hy vọng bạn thích điều này về get.
+
+124
+00:08:58,180 --> 00:08:59,690
+Hy vọng nó hữu ích cho bạn.
+
+125
+00:08:59,910 --> 00:09:01,360
+Vâng, tôi chắc chắn rất thích nó.
+
+126
+00:09:01,390 --> 00:09:08,440
+Và chúng tôi mong được gặp bạn trong phần tiếp theo, nơi hoặc tìm hiểu về các mô-đun go.
+
+127
+00:09:08,590 --> 00:09:13,210
+Chúng tôi có thể sẽ bật nó lên nếu chúng tôi nói chuyện và chúng tôi quyết định điều gì đó tốt hơn sẽ xảy ra tiếp theo nhưng tôi đang nghĩ
+
+128
+00:09:13,210 --> 00:09:14,930
+đi mô-đun là tốt Max tuần.
+
+129
+00:09:15,000 --> 00:09:15,380
+Vâng.
+
+130
+00:09:15,460 --> 00:09:16,080
+Được rồi.
+
+131
+00:09:16,090 --> 00:09:20,650
+Cuối cùng, bạn còn điều gì muốn nói về việc có được cuộc sống hay không.
+
+132
+00:09:20,650 --> 00:09:23,410
+Bốn mươi hai bốn mươi hai.
+
+133
+00:09:23,620 --> 00:09:23,930
+Được rồi.
+
+134
+00:09:23,930 --> 00:09:25,060
+Xem trong phần tiếp theo.

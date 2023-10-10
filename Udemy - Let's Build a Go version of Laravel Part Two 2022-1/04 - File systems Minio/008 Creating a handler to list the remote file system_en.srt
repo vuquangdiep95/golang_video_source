@@ -1,0 +1,572 @@
+1
+00:00:00,960 --> 00:00:06,000
+So now that we know we can connect to our immediate file system and at least get a listing of any files
+
+2
+00:00:06,000 --> 00:00:12,000
+that's in our test bucket, let's try building some web pages that allow us to test all of the functionality
+
+3
+00:00:12,000 --> 00:00:14,550
+associated with this particular file system.
+
+4
+00:00:15,420 --> 00:00:20,910
+Now, if you go to the course resources for this lecture, you'll see a file called VUes Dot Zip.
+
+5
+00:00:21,600 --> 00:00:27,790
+And if you download that file and unzip it inside, you'll find some jet files and a folder.
+
+6
+00:00:27,810 --> 00:00:34,650
+And I'd like you to replace the current contents of the Views folder in my app with the contents of
+
+7
+00:00:34,650 --> 00:00:35,370
+that zip file.
+
+8
+00:00:35,520 --> 00:00:41,270
+And what you wind up with, of course, is the standard layouts, and that layout file is based on a
+
+9
+00:00:41,280 --> 00:00:41,670
+jet.
+
+10
+00:00:41,820 --> 00:00:47,320
+And the only big change in this one is that I've added a nav bar with some drop down menu items.
+
+11
+00:00:47,340 --> 00:00:47,670
+OK.
+
+12
+00:00:47,820 --> 00:00:50,160
+And we'll be using these as the course goes on.
+
+13
+00:00:50,430 --> 00:00:51,270
+Some of them right away.
+
+14
+00:00:52,150 --> 00:00:58,260
+You'll also find an updated home jet file and the one we're going to work on right now or in this lecture
+
+15
+00:00:58,260 --> 00:01:02,790
+or the next one is this one will allow us to list our current file systems.
+
+16
+00:01:02,850 --> 00:01:03,240
+OK.
+
+17
+00:01:03,270 --> 00:01:07,170
+So do that now before we can actually use those views.
+
+18
+00:01:07,200 --> 00:01:11,820
+Of course, we need to write some code to populate the appropriate pages and add the roots to our root
+
+19
+00:01:11,820 --> 00:01:18,570
+file, and we'll get started with listing the contents of our mineral file system now to make that happen.
+
+20
+00:01:19,230 --> 00:01:24,690
+Let's go to our handlers folder, OK, and open up the file handlers go.
+
+21
+00:01:25,350 --> 00:01:30,510
+And right here after the home handler, I'm going to add a new function, which will be a handler so
+
+22
+00:01:30,510 --> 00:01:32,940
+func with a receiver of a pointer to handlers.
+
+23
+00:01:35,060 --> 00:01:40,430
+And I'll call this one list f's for list file systems, and it will take a response, right?
+
+24
+00:01:40,430 --> 00:01:46,090
+Or of course, a response writer and a pointer to a request, as all handlers do.
+
+25
+00:01:49,910 --> 00:01:57,150
+Now the very first thing I'm going to do is declare a variable fs of type file systems fs so ver the
+
+26
+00:01:57,170 --> 00:01:59,420
+fairness of type file systems.
+
+27
+00:02:01,920 --> 00:02:02,400
+F's.
+
+28
+00:02:03,640 --> 00:02:09,100
+And I'm also going to create a variable that will hold the contents of whatever files are on that remote
+
+29
+00:02:09,100 --> 00:02:16,360
+file system, and I'll call that list and it will be a slice of file systems listing.
+
+30
+00:02:17,350 --> 00:02:23,650
+So there's two variables we're going to have to use now, the actual web page that allows us to display
+
+31
+00:02:23,650 --> 00:02:25,180
+the contents of a file system.
+
+32
+00:02:25,180 --> 00:02:29,950
+We'll have a dropdown menu at the top, and we can look at that right now to go back to our Views folder
+
+33
+00:02:30,670 --> 00:02:32,140
+and open up a list for us.
+
+34
+00:02:32,980 --> 00:02:34,210
+You can see right here.
+
+35
+00:02:34,900 --> 00:02:37,540
+This is standard template logic.
+
+36
+00:02:37,630 --> 00:02:41,440
+I'm going to have an option that says Choose and you'll have to choose something and you can choose
+
+37
+00:02:41,460 --> 00:02:44,440
+S3 or Mineo or SFP or WebDAV.
+
+38
+00:02:44,710 --> 00:02:49,360
+This is the only one we care about right now, but we may as well take into account the fact that there
+
+39
+00:02:49,360 --> 00:02:51,790
+are going to be multiple file systems later on.
+
+40
+00:02:52,860 --> 00:02:56,370
+So back in listed jet, I shouldn't have gone away.
+
+41
+00:02:56,490 --> 00:03:01,170
+The name of this dropdown, this parameter will be named EF-S Dash Type.
+
+42
+00:03:01,620 --> 00:03:03,510
+OK, so that can handlers.
+
+43
+00:03:03,520 --> 00:03:09,180
+What I'll do is get that, so I'll declare a variable FS type like that and just make it an empty string.
+
+44
+00:03:09,570 --> 00:03:15,790
+And then I'll see if we have that query parameter passed to us because the form that submits that is
+
+45
+00:03:15,840 --> 00:03:18,390
+is a is a get request, not a post request.
+
+46
+00:03:18,810 --> 00:03:25,590
+And that's as simple as if from our our variable or request URL dot query.
+
+47
+00:03:26,820 --> 00:03:32,910
+And we want to get we're going to get first dash type the name of that field in the form.
+
+48
+00:03:33,930 --> 00:03:39,210
+If that's not equal to nothing and it won't be if it's supplied and it will be if it's not supplied,
+
+49
+00:03:39,600 --> 00:03:47,160
+then we'll set X Type EFS type is equal to our short URL dot query.
+
+50
+00:03:47,700 --> 00:03:48,360
+Don't get.
+
+51
+00:03:49,230 --> 00:03:50,790
+And we want this dash type.
+
+52
+00:03:52,380 --> 00:03:56,430
+So now I know what kind of file system on would be dealing with me to scroll up a bit here.
+
+53
+00:03:58,290 --> 00:04:02,890
+The next thing I'm going to do is when you're looking at a remote file system, particularly in S.F.
+
+54
+00:04:03,090 --> 00:04:07,710
+SFD, B file system or something like that, or WebDAV, you might be looking at different directories
+
+55
+00:04:07,710 --> 00:04:08,850
+in that file system.
+
+56
+00:04:09,240 --> 00:04:14,040
+So I'm going to declare a directory called her path or a variable called cur path, and I'll make that
+
+57
+00:04:14,040 --> 00:04:15,210
+default to slash.
+
+58
+00:04:15,240 --> 00:04:18,269
+In other words, you're at the root level of whatever file system you're looking at.
+
+59
+00:04:19,500 --> 00:04:23,700
+And now we'll check for a second query parameter that's passed as part of that get request.
+
+60
+00:04:23,910 --> 00:04:25,690
+And that is called purpose.
+
+61
+00:04:26,040 --> 00:04:34,770
+So if our dot query their URL, dot query dot get and we're going to be looking for her path and I'll
+
+62
+00:04:34,770 --> 00:04:37,500
+show you that in a moment on the actual web page.
+
+63
+00:04:38,220 --> 00:04:46,830
+If that's not equal to nothing, then we'll say her path is now equal to our own URL query.
+
+64
+00:04:47,220 --> 00:04:50,790
+Don't get her pass.
+
+65
+00:04:54,300 --> 00:05:01,200
+And just to make things are safe, we're going to escape that, so we're going to Earl Okwiri escape,
+
+66
+00:05:01,200 --> 00:05:05,760
+and when we receive that perimeter, we'll on escape just to make sure it's Earl safe.
+
+67
+00:05:06,600 --> 00:05:12,270
+So purpose, and I'm going to ignore the error in this case, just to save a little bit of time from
+
+68
+00:05:12,270 --> 00:05:14,910
+the Earl package as part of the standard library.
+
+69
+00:05:15,060 --> 00:05:22,530
+We want query on escape right there and we're going to escape her path, and that will make sure that
+
+70
+00:05:22,680 --> 00:05:25,620
+what we need has been properly on escaped.
+
+71
+00:05:26,040 --> 00:05:28,860
+So spaces aren't percent, 20 and all that sort of thing.
+
+72
+00:05:29,130 --> 00:05:33,000
+OK, so now I have that variable, which we're not going to use this time around, but we might or we
+
+73
+00:05:33,000 --> 00:05:34,560
+will definitely be using it later on.
+
+74
+00:05:35,790 --> 00:05:46,230
+So now I'll simply say, if f's type is not equal to nothing, then you've submitted the form and we
+
+75
+00:05:46,230 --> 00:05:50,800
+want to switch based upon the value of that variable offense type.
+
+76
+00:05:50,820 --> 00:05:57,680
+So we'll say switch and we'll switch on FS type, OK?
+
+77
+00:05:57,700 --> 00:06:05,310
+And the only one we care about right now is case scenario, which will be in all caps because that's
+
+78
+00:06:05,310 --> 00:06:06,510
+how it's passed by the form.
+
+79
+00:06:07,530 --> 00:06:13,860
+Then we'll declare a variable f just like we did in our inline function, and we'll go to H Dot App
+
+80
+00:06:13,860 --> 00:06:22,140
+Dot File Systems and we want to get, you know, and then we want to cast that to an Mineo file system.
+
+81
+00:06:25,110 --> 00:06:33,450
+Meanwhile, right there and then we'll take our variable EF-S that was declared right up on line 28
+
+82
+00:06:33,660 --> 00:06:38,550
+and that will be equal to and we can't just say F because there are different types, ones, a pointer
+
+83
+00:06:38,550 --> 00:06:38,820
+1s.
+
+84
+00:06:38,820 --> 00:06:40,110
+Not so we use Ampersand.
+
+85
+00:06:40,830 --> 00:06:41,130
+OK.
+
+86
+00:06:42,640 --> 00:06:47,560
+And I'm also going to say F-Type type is now equal to men.
+
+87
+00:06:47,880 --> 00:06:49,630
+Oh, OK.
+
+88
+00:06:49,930 --> 00:06:53,260
+And that's the only thing I care about at this point in terms of the Switch statement.
+
+89
+00:06:53,650 --> 00:06:57,070
+Of course, we're going to be doing more than that a little bit later on.
+
+90
+00:06:57,550 --> 00:07:04,270
+But right now, let's come down here after a case and let's say l an error.
+
+91
+00:07:04,510 --> 00:07:08,260
+L is just a variable, I'm declaring, and we're going to check for an error is equal to from our file
+
+92
+00:07:08,260 --> 00:07:08,770
+system.
+
+93
+00:07:08,770 --> 00:07:12,520
+We'll call list with a prefix that will be her path.
+
+94
+00:07:12,700 --> 00:07:14,290
+And of course, that's an empty string right now.
+
+95
+00:07:14,290 --> 00:07:18,550
+So we'll get the contents of the top level of that directory and we'll check for an error.
+
+96
+00:07:19,120 --> 00:07:20,500
+If error is not equal to nil,
+
+97
+00:07:27,520 --> 00:07:34,900
+then we'll love your H2 app error log dot print line here and I'll return.
+
+98
+00:07:36,880 --> 00:07:42,190
+I don't want to go any further, but if we get past that now, we'll take that variable with declared
+
+99
+00:07:42,190 --> 00:07:44,170
+right up on Line 29 list.
+
+100
+00:07:45,040 --> 00:07:45,790
+That's equal to L.
+
+101
+00:07:49,010 --> 00:07:53,010
+Now, outside of the if statement, now we want to render our template.
+
+102
+00:07:53,020 --> 00:07:57,040
+So we're going to be passing data to this template and it's a jet template.
+
+103
+00:07:57,040 --> 00:08:03,400
+So I'll declare variable hours vars and make that equal to an empty jetport bar map.
+
+104
+00:08:06,100 --> 00:08:14,260
+And I will set list versus dot set and I'll call it list for the template and hand it list the contents
+
+105
+00:08:14,260 --> 00:08:17,140
+of that directory, the listing of that remote file system directory.
+
+106
+00:08:17,890 --> 00:08:18,730
+I'll also set.
+
+107
+00:08:22,100 --> 00:08:26,510
+F's underscore type, and we'll see that in a minute when we go back to the template, and that will
+
+108
+00:08:26,510 --> 00:08:27,560
+be to first type.
+
+109
+00:08:31,940 --> 00:08:32,929
+And I'll set her path.
+
+110
+00:08:33,650 --> 00:08:38,570
+First off set, her path will be equal to her path.
+
+111
+00:08:41,030 --> 00:08:46,260
+No wonder the template, so error is a sign the value of each dot render.
+
+112
+00:08:47,480 --> 00:08:49,520
+And we're going to render with W an hour.
+
+113
+00:08:50,030 --> 00:08:54,830
+We're going to pass it the name of the template, which is the list of f's, because our file, our
+
+114
+00:08:54,830 --> 00:08:57,330
+actual file is called List Fast Jet.
+
+115
+00:08:58,190 --> 00:09:02,810
+Well, hand it the verse, which is populated and kneel for the final parameter, which I almost never
+
+116
+00:09:02,810 --> 00:09:03,200
+use.
+
+117
+00:09:03,230 --> 00:09:04,400
+You might, but I don't.
+
+118
+00:09:05,240 --> 00:09:09,080
+And I would check for the error if error is not equal to nil.
+
+119
+00:09:09,880 --> 00:09:15,100
+Then each dot app error dot print line here.
+
+120
+00:09:16,760 --> 00:09:19,880
+OK, so that is the beginning of her handler.
+
+121
+00:09:19,910 --> 00:09:24,650
+Now, obviously, when we implement additional file systems, we'll be adding more cases here.
+
+122
+00:09:25,100 --> 00:09:30,170
+But basically, the logic will be almost identical for every one of the file systems because they all
+
+123
+00:09:30,170 --> 00:09:34,100
+implement the same interface and therefore have the same methods.
+
+124
+00:09:34,850 --> 00:09:38,240
+All right, we have this template or we have this handwritten list.
+
+125
+00:09:38,240 --> 00:09:40,310
+So quick look at that template one more time.
+
+126
+00:09:41,630 --> 00:09:47,440
+So we start at the top and as you can see, nothing more than the standard browser title.
+
+127
+00:09:47,450 --> 00:09:53,540
+I did put a little standard style in there just to make things a little more obvious, particularly
+
+128
+00:09:53,540 --> 00:09:56,720
+for the alerts that will be showing up later on and down.
+
+129
+00:09:56,720 --> 00:10:03,980
+Here we have our page content and the variable I'm checking right here at this underscore type.
+
+130
+00:10:04,040 --> 00:10:06,620
+Remember, we're handing that over here.
+
+131
+00:10:07,250 --> 00:10:08,690
+F's underscore type.
+
+132
+00:10:09,140 --> 00:10:14,130
+It just ensures that the correct option is selected when you list a file system.
+
+133
+00:10:14,150 --> 00:10:20,720
+So when I submit this form and actually does, a browser round trip comes back with the listing past
+
+134
+00:10:20,720 --> 00:10:21,380
+as data.
+
+135
+00:10:21,800 --> 00:10:26,930
+The file listing and then make sure that the appropriate option in our dropdown is selected here.
+
+136
+00:10:27,050 --> 00:10:27,440
+OK.
+
+137
+00:10:28,010 --> 00:10:33,080
+And we have a hidden field cur path, which we're not using in this lecture or the next one will, but
+
+138
+00:10:33,080 --> 00:10:34,610
+we'll be using it a bit later on.
+
+139
+00:10:35,420 --> 00:10:41,990
+And finally, if we have values in that variable list, we just display a table that lists the contents
+
+140
+00:10:41,990 --> 00:10:44,270
+of that file system.
+
+141
+00:10:44,570 --> 00:10:44,870
+OK.
+
+142
+00:10:44,960 --> 00:10:45,770
+That's all there is to it.
+
+143
+00:10:45,860 --> 00:10:49,790
+So in the next lecture, we'll hook up a root and give things a try.
+

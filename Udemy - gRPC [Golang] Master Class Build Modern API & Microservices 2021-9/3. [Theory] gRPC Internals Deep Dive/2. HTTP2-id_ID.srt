@@ -1,0 +1,556 @@
+1
+00:00:00,090 --> 00:00:05,820
+Jadi, Anda tidak dapat mulai belajar geografi tanpa memahami bahwa itu bergantung pada harus
+
+2
+00:00:05,900 --> 00:00:12,880
+dua dan harus dua bukan hanya kata kunci baru itu adalah teknologi revolusioner yang benar-benar meningkatkan komunikasi internet.
+
+3
+00:00:12,900 --> 00:00:20,340
+Jadi sebelum kita masuk ke perbedaan ke HTP ke tepi menjadi 1. 1 Saya benar-benar ingin Anda mengetahui secara visual
+
+4
+00:00:20,580 --> 00:00:21,620
+apa bedanya.
+
+5
+00:00:21,660 --> 00:00:27,930
+Jadi kita akan pergi ke situs web ini dan kita akan membandingkan kinerjanya dengan memuat 100 gambar untuk HGP menjadi
+
+6
+00:00:28,020 --> 00:00:28,630
+satu.
+
+7
+00:00:28,740 --> 00:00:31,240
+Anda dapat masuk ke laptop Anda sendiri dan melakukan demo.
+
+8
+00:00:31,450 --> 00:00:36,410
+Jika Anda memiliki koneksi internet yang sangat baik bedanya dengan koneksi internet yang kurang tapi tidak sebagus.
+
+9
+00:00:36,450 --> 00:00:39,570
+Jadi kita akan melihat dengan sangat jelas bahwa perbedaannya mencolok.
+
+10
+00:00:39,960 --> 00:00:44,550
+OK jadi saya ada di situs Web ini dan ada banyak situs web yang memiliki implementasi kinerja yang sama
+
+11
+00:00:44,820 --> 00:00:50,540
+tetapi kami belum memuat gambar di sisi kiri dan SCDP 1. 1 dimuat di sisi kanan.
+
+12
+00:00:50,790 --> 00:00:55,920
+Sekarang saya akan klik untuk memuat lagi dan Anda akan melihat perbedaan seberapa cepat HTP untuk gambar akan memuat
+
+13
+00:00:55,920 --> 00:00:57,490
+versus 1. 1.
+
+14
+00:00:57,660 --> 00:00:59,970
+Sekali lagi saya koneksi internet yang sangat buruk.
+
+15
+00:00:59,970 --> 00:01:01,270
+Jadi perbedaannya akan bervariasi.
+
+16
+00:01:01,290 --> 00:01:03,330
+Ini akan sangat mengejutkan.
+
+17
+00:01:03,450 --> 00:01:04,580
+Tapi mari kita mulai.
+
+18
+00:01:04,770 --> 00:01:11,500
+Jadi saya mengklik Anda memuat lagi dan seperti yang Anda lihat gambar P2 benar-benar memuat sangat cepat, OK.
+
+19
+00:01:11,580 --> 00:01:16,370
+Sedangkan untuk menjadi satu titik satu gambar benar-benar membutuhkan waktu seperti yang Anda lihat di kanan bawah.
+
+20
+00:01:16,650 --> 00:01:22,460
+Jadi apa yang Anda benar-benar mengerti dari ini adalah memuat seratus kecil.
+
+21
+00:01:22,460 --> 00:01:24,510
+Jadi itu seratus panggilan API.
+
+22
+00:01:24,630 --> 00:01:30,470
+Dibutuhkan jauh lebih lama untuk melakukan ini di HGP 1. 1 versus HTP 2.
+
+23
+00:01:30,600 --> 00:01:32,710
+Jadi Anda bisa melakukan tes sebanyak yang Anda inginkan.
+
+24
+00:01:32,730 --> 00:01:37,980
+Anda bahkan dapat mengatur waktu tes jika Anda mau, tetapi benar-benar yang kami perhatikan adalah bahwa pada koneksi internet saya yang sangat
+
+25
+00:01:38,250 --> 00:01:42,930
+buruk pada SCDP juga jauh lebih cepat daripada 1. 1.
+
+26
+00:01:43,080 --> 00:01:49,020
+Jadi pikirkan koneksi yang lebih baik menggunakan perangkat seluler atau perangkat lambat atau apa pun.
+
+27
+00:01:49,180 --> 00:01:55,040
+Ini benar-benar meningkatkan latensi dan kecepatan untuk memuat pesan atau mereka yang menggunakan koneksi internet yang sama.
+
+28
+00:01:55,050 --> 00:01:55,470
+Baik.
+
+29
+00:01:55,710 --> 00:02:00,900
+Jadi, Anda harus sangat bersemangat menggunakan standar itu sekarang karena Anda telah melihat cara untuk benar-benar
+
+30
+00:02:00,900 --> 00:02:05,700
+meningkatkan kinerja astronom, maka kita akan memiliki apa itu dan bagaimana melakukannya dan mengapa.
+
+31
+00:02:05,730 --> 00:02:10,650
+Mengapa GRB melihat Levitas sehingga menjadi kenyataan akan menjadi standar baru untuk komunikasi internet
+
+32
+00:02:11,010 --> 00:02:15,380
+dan seiring waktu semakin banyak halaman akan menggunakan menjadi dua berbanding satu.
+
+33
+00:02:15,600 --> 00:02:16,180
+Baik.
+
+34
+00:02:16,350 --> 00:02:22,500
+Jadi sebelum kita melihat ke dalam SD B2. Mari kita mundur dan memahami bagaimana sebagian besar web bekerja hari
+
+35
+00:02:22,500 --> 00:02:24,520
+ini yang sebenarnya menjadi satu permintaan.
+
+36
+00:02:24,570 --> 00:02:28,110
+Jadi ini tidak dimaksudkan untuk menjadi diskusi super teknis.
+
+37
+00:02:28,110 --> 00:02:28,600
+BAIK.
+
+38
+00:02:28,770 --> 00:02:33,270
+Tetapi hanya untuk memberi Anda ide umum dan beberapa jalan pintas untuk memahami perbedaan.
+
+39
+00:02:33,390 --> 00:02:41,910
+Jadi HGP 1. 1 dirilis pada tahun 1997 yang sudah lama sekali dan sudah berfungsi bertahun-tahun
+
+40
+00:02:41,910 --> 00:02:46,120
+tetapi Internet telah berubah dan berkembang sementara standarnya benar-benar tidak pernah berubah.
+
+41
+00:02:46,140 --> 00:02:52,500
+Jadi bagaimana cara kerjanya dengan HTP apa yang membuka koneksi GCP baru ke server di setiap permintaan dan
+
+42
+00:02:52,500 --> 00:02:53,530
+itu mahal.
+
+43
+00:02:53,640 --> 00:02:58,890
+Itu juga tidak mengkompres header sehingga header dalam permintaan HTP Anda adalah teks biasa.
+
+44
+00:02:58,890 --> 00:03:00,950
+Mereka tidak dikompresi melalui jaringan.
+
+45
+00:03:01,050 --> 00:03:05,700
+Ini juga hanya bekerja dengan mekanisme respons permintaan sehingga tidak ada dorongan server.
+
+46
+00:03:05,700 --> 00:03:11,850
+Pada dasarnya Anda pergi ke server dan berkata Beri saya yang kecil 100 untuk gambar dan katakan Helge di sini
+
+47
+00:03:11,850 --> 00:03:13,410
+adalah ubin itu untuk Anda.
+
+48
+00:03:13,410 --> 00:03:21,690
+Jadi awalnya HGP terdiri dari dua komentar yang bisa ditanyakan untuk Canton, misalnya ambilkan saya halaman web ini atau buat saya
+
+49
+00:03:21,870 --> 00:03:25,030
+gambar ini dan kirim untuk mengirim Canton.
+
+50
+00:03:25,110 --> 00:03:26,250
+Ini beberapa isinya.
+
+51
+00:03:26,340 --> 00:03:26,950
+BAIK.
+
+52
+00:03:26,970 --> 00:03:31,890
+Seiring waktu beberapa kata kerja telah ditambahkan ke hanya tambalan menempatkan memimpin dan sebagainya.
+
+53
+00:03:31,950 --> 00:03:35,970
+Tapi awalnya dia mendapatkan dan memposting sekarang.
+
+54
+00:03:35,970 --> 00:03:42,810
+Saat ini ketika Anda pergi ke situs Web mana pun Anda akan memuat sekitar 80 aset rata-rata dan aset bisa apa
+
+55
+00:03:42,810 --> 00:03:43,350
+saja.
+
+56
+00:03:43,350 --> 00:03:47,210
+Bisa jadi HDMI elsea mengatakan gambar dan sebagainya.
+
+57
+00:03:47,250 --> 00:03:52,880
+Jadi header akan dikirim pada setiap permintaan dan seperti yang kami katakan header adalah ukuran yang berat.
+
+58
+00:03:53,040 --> 00:03:58,750
+Jadi 80 kali Anda harus mengirim header yang sama yang akan banyak bandwidth setiap permintaan meminta
+
+59
+00:03:58,830 --> 00:04:02,310
+masing-masing 80 permintaan ini akan membuka koneksi TZP baru.
+
+60
+00:04:02,370 --> 00:04:07,740
+Sekali lagi itu seperti latensi dan semua efisiensi ini benar-benar habis.
+
+61
+00:04:07,740 --> 00:04:08,550
+Dua hal.
+
+62
+00:04:08,550 --> 00:04:12,000
+Nomor satu latensi nomor dua ukuran paket jaringan.
+
+63
+00:04:12,060 --> 00:04:13,010
+Jadi mari kita melihatnya.
+
+64
+00:04:13,050 --> 00:04:18,540
+Kami memiliki klien kami di server AGP satu kami dan mengirimkan permintaan pertama misalnya.
+
+65
+00:04:18,540 --> 00:04:25,560
+Beri saya halaman AGM Alpha dan dikatakan OK saya akan memberi Anda halaman MFL dan itu satu koneksi TCAP di
+
+66
+00:04:25,830 --> 00:04:28,300
+atasnya beberapa header mungkin telah dipertukarkan.
+
+67
+00:04:28,320 --> 00:04:31,330
+Sekarang header yang sama akan ditukar pada permintaan keduanya misalnya.
+
+68
+00:04:31,440 --> 00:04:33,180
+Hei beri aku file USS ini.
+
+69
+00:04:33,300 --> 00:04:33,610
+BAIK.
+
+70
+00:04:33,610 --> 00:04:36,270
+Layanannya ok atas koneksi TZP baru ini.
+
+71
+00:04:36,300 --> 00:04:38,760
+Ini adalah file USS dan sebagainya.
+
+72
+00:04:38,910 --> 00:04:39,780
+Delapan puluh kali.
+
+73
+00:04:39,900 --> 00:04:41,170
+Jadi itu berhasil hari ini.
+
+74
+00:04:41,280 --> 00:04:46,770
+Itu berfungsi dengan baik tetapi lambat dan itulah yang kami lihat di sisi kanan dalam demo gambar.
+
+75
+00:04:47,200 --> 00:04:49,710
+Sekarang HGP bagaimana bedanya.
+
+76
+00:04:49,710 --> 00:04:50,880
+Bagaimana cara kerjanya.
+
+77
+00:04:51,240 --> 00:04:53,570
+HTP 2 cukup baru.
+
+78
+00:04:53,580 --> 00:04:59,910
+Ini dirilis pada tahun 2015 tetapi telah diuji selama bertahun-tahun karena sebelumnya Google
+
+79
+00:05:00,020 --> 00:05:06,920
+mengembangkan standar yang dinamai cepat mengapa itu adalah misi Google untuk meningkatkan cara kerja
+
+80
+00:05:07,040 --> 00:05:12,470
+Internet dan seberapa cepat HTB dapat mendukung multiplexing dan multiplexing.
+
+81
+00:05:12,530 --> 00:05:19,040
+Itu berarti bahwa server dan klien dapat mendorong pesan secara paralel semua koneksi TCAP yang sama dan
+
+82
+00:05:19,230 --> 00:05:20,470
+itu luar biasa.
+
+83
+00:05:20,480 --> 00:05:22,070
+Ini akan sangat mengurangi latensi.
+
+84
+00:05:22,070 --> 00:05:25,720
+Kami tidak perlu memiliki koneksi anti-bodoh di setiap panggilan API.
+
+85
+00:05:25,740 --> 00:05:32,660
+Juga harus pada dasarnya akan mendukung server mendorong mereka di server itu dapat mendorong beberapa pesan dari satu
+
+86
+00:05:33,020 --> 00:05:37,130
+permintaan dan klien klien tidak perlu meminta lebih banyak data.
+
+87
+00:05:37,310 --> 00:05:41,670
+Itu hanya bisa menunggu server untuk mendorong data secara langsung ke saat sudah siap.
+
+88
+00:05:41,930 --> 00:05:45,800
+Jadi itu luar biasa karena sekarang kita juga dapat menghindari beberapa permintaan.
+
+89
+00:05:45,830 --> 00:05:51,320
+Dan jika Anda berceloteh dan hanya mendapatkan data kapan tepatnya itu terjadi akan menghemat banyak perjalanan
+
+90
+00:05:51,320 --> 00:05:53,150
+pulang pergi dan meningkatkan latensi.
+
+91
+00:05:53,210 --> 00:06:00,310
+Sekarang SCDP juga mendukung kompresi Headrick sehingga semua 24 header yang dikirim dalam setiap permintaan yang Anda buka
+
+92
+00:06:00,310 --> 00:06:03,510
+ke beberapa situs web acak itu dapat dikompres.
+
+93
+00:06:03,560 --> 00:06:07,820
+Dan bagi mereka yang tertindas berarti Anda menghemat banyak bandwidth jaringan.
+
+94
+00:06:07,970 --> 00:06:12,450
+Dan paket-paket akan lebih kecil dan data Anda akan menyeberang dan bekerja lebih cepat.
+
+95
+00:06:13,130 --> 00:06:16,690
+Jadi HTP 2 juga biner.
+
+96
+00:06:16,820 --> 00:06:18,380
+OK itu perbedaan besar.
+
+97
+00:06:18,380 --> 00:06:22,900
+Itu berarti harus menggunakan teks dan membuatnya lebih mudah untuk debugging.
+
+98
+00:06:22,940 --> 00:06:28,900
+Itu tidak terlalu efisien untuk mengirimkan data melalui jaringan dan seharusnya keduanya biner.
+
+99
+00:06:28,910 --> 00:06:35,280
+Itu berarti bahwa buffer protokol yang merupakan protokol biner adalah pasangan yang sangat hebat bagi HTB untuk
+
+100
+00:06:35,420 --> 00:06:39,650
+memenuhi protokol biner apa pun juga sangat cocok untuk EPD HTP.
+
+101
+00:06:39,650 --> 00:06:48,230
+Jadi akhirnya HTP untuk mengamankan secara default SSL akan diminta setidaknya oleh browser.
+
+102
+00:06:48,470 --> 00:06:50,480
+Nah saudara seandainya Anda benar-benar bisa menjadi dua situs.
+
+103
+00:06:50,480 --> 00:06:50,960
+BAIK.
+
+104
+00:06:51,050 --> 00:06:54,680
+Jadi keamanan dan enkripsi saat ini sangat penting.
+
+105
+00:06:54,770 --> 00:06:57,510
+Dan dalam standar baru ini adalah warga negara kelas satu.
+
+106
+00:06:57,590 --> 00:07:00,220
+SSL akan direkomendasikan secara default.
+
+107
+00:07:01,200 --> 00:07:04,330
+Jadi bagaimana cara kerjanya dalam lembar sekarang Anda menggunakan diagram yang sama.
+
+108
+00:07:04,440 --> 00:07:11,750
+Klien kami mengatakan, hei, mari kita membuat koneksi dengan server dan ini akan tetap terbuka dan ini harus menjadi tindakan
+
+109
+00:07:11,850 --> 00:07:13,760
+yang tidak akan ditutup.
+
+110
+00:07:14,010 --> 00:07:20,200
+Ini akan mengirim satu permintaan dan berkata, hei beri saya semua gambar ini yang menyusun gambar lebih besar yang kami lihat di situs
+
+111
+00:07:20,200 --> 00:07:20,980
+Web ini.
+
+112
+00:07:21,000 --> 00:07:22,470
+Jadi katakanlah, beri aku sesuatu.
+
+113
+00:07:22,710 --> 00:07:25,150
+Dan server mengatakan OK di sini adalah ubin pertama.
+
+114
+00:07:25,230 --> 00:07:25,770
+BAIK.
+
+115
+00:07:25,850 --> 00:07:27,220
+Ini ubin kedua.
+
+116
+00:07:27,240 --> 00:07:27,730
+BAIK.
+
+117
+00:07:27,800 --> 00:07:29,180
+Ini ubin ketiga.
+
+118
+00:07:29,220 --> 00:07:32,820
+Dan seperti yang Anda lihat, klien tidak pernah meminta ubin kedua, ubin ketiga.
+
+119
+00:07:32,820 --> 00:07:38,510
+Itu hanya melakukan satu permintaan dan server mulai mendorong lebih langsung ke klien.
+
+120
+00:07:38,660 --> 00:07:40,260
+Dan itu luar biasa.
+
+121
+00:07:40,260 --> 00:07:45,170
+Itu karena kami memiliki satu koneksi dan kami telah mengurangi jumlah perjalanan pulang pergi.
+
+122
+00:07:45,300 --> 00:07:47,460
+Jadi ingat diagram itu di kepala Anda.
+
+123
+00:07:47,730 --> 00:07:51,950
+Jadi intinya mengapa kami bahkan khawatir tentang SCDP juga.
+
+124
+00:07:52,080 --> 00:07:53,790
+Yah, ada sedikit obrolan.
+
+125
+00:07:53,850 --> 00:07:55,150
+Ini protokol yang lebih efisien.
+
+126
+00:07:55,170 --> 00:07:57,280
+Akan ada lebih sedikit bandwidth yang digunakan.
+
+127
+00:07:57,360 --> 00:07:59,920
+Ini akan mengurangi latensi secara besar-besaran.
+
+128
+00:07:59,970 --> 00:08:02,790
+Jadi panggilan Anda akan supercepat melalui jaringan.
+
+129
+00:08:02,790 --> 00:08:09,390
+Ini memiliki peningkatan keamanan karena SSL secara default primitif pada jaringan dan Anda mendapatkan semua
+
+130
+00:08:09,390 --> 00:08:13,930
+perbaikan ini secara gratis dengan menggunakan kerangka kerja GRB.
+
+131
+00:08:13,950 --> 00:08:15,450
+Tidak ada jalan lain.
+
+132
+00:08:15,610 --> 00:08:19,720
+GOPAC menggunakan SGP untuk pasukan sebagai GGP juga.
+
+133
+00:08:19,860 --> 00:08:21,160
+Dan itu luar biasa bagi Anda.
+
+134
+00:08:21,160 --> 00:08:26,970
+Itu berarti segera setelah menggunakan kerangka kerja GEORGIS Anda untuk mengimplementasikan API Anda akan mendapatkan semua perbaikan ini di
+
+135
+00:08:27,140 --> 00:08:28,040
+luar kotak.
+
+136
+00:08:28,170 --> 00:08:31,590
+Jadi kami senang bahwa kerangka ini sangat revolusioner.
+
+137
+00:08:31,590 --> 00:08:37,500
+Itu membuat SGP terlalu mudah digunakan dan itulah mengapa saya ingin meluangkan waktu untuk mendefinisikan perbedaan antara MASALAH
+
+138
+00:08:37,530 --> 00:08:40,970
+1 poin 1 dan 2 dan menunjukkan peningkatan kinerja.
+
+139
+00:08:41,190 --> 00:08:46,050
+Jadi sekarang kita di sana, saya akan melihat Anda di kuliah berikutnya untuk berbicara sedikit lebih mendalam tentang GOPAC.
+

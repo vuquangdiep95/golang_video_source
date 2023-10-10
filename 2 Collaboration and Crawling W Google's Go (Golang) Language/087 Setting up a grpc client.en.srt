@@ -1,0 +1,243 @@
+1
+00:00:00,150 --> 00:00:03,370
+Vì vậy, bước tiếp theo là tạo một khách hàng cho việc này.
+
+2
+00:00:03,410 --> 00:00:10,920
+Và vì vậy tôi sẽ chỉ tạo một ứng dụng khách hoặc một chút nhanh chóng và dễ dàng và có lẽ sau này có lẽ sau này chúng ta sẽ
+
+3
+00:00:10,920 --> 00:00:13,650
+cho biết cách thiết lập để nó hoạt động với trình duyệt web.
+
+4
+00:00:14,850 --> 00:00:21,790
+Vì vậy, trong trường hợp này, mặc dù tôi đã tạo ứng dụng khách 8 và 0 3, đây là bản sao của 0 1 Proto.
+
+5
+00:00:21,900 --> 00:00:30,120
+Vì vậy, nó chỉ có thư mục echo với cấu hình và PDB mã được tạo và vì vậy tôi sẽ tạo
+
+6
+00:00:30,150 --> 00:00:36,770
+a Tôi có thể không đi 0 3 giữ những gì 0 2 giữ đúng.
+
+7
+00:00:36,820 --> 00:00:42,160
+0 1 0 0 2 có server nên mình không dùng serve còn client thì chưa có.
+
+8
+00:00:42,200 --> 00:00:45,160
+Vì vậy, chỉ sao chép nguyên mẫu.
+
+9
+00:00:45,290 --> 00:00:47,270
+Bộ đệm giao thức không có nguyên mẫu.
+
+10
+00:00:47,800 --> 00:00:53,280
+Vì vậy, đây là gói có nghĩa là nó có chức năng như vậy.
+
+11
+00:00:53,610 --> 00:00:55,470
+Vì vậy, đó là tất cả khá bình thường.
+
+12
+00:00:55,470 --> 00:00:56,870
+Vậy bạn cần phải làm gì.
+
+13
+00:00:56,970 --> 00:00:59,050
+Tôi phải ra khỏi đó.
+
+14
+00:01:00,300 --> 00:01:06,630
+Vì vậy, điều đầu tiên bạn cần làm là tạo kết nối với máy chủ.
+
+15
+00:01:06,710 --> 00:01:08,000
+Vì vậy, bạn sẽ cần một kết nối.
+
+16
+00:01:09,280 --> 00:01:15,960
+Và vì vậy bạn làm điều này với GRPC dot dial và bạn sẽ nhập GPS thật nhanh
+
+17
+00:01:25,130 --> 00:01:27,450
+vì vậy GOP quay số nhanh để tạo kết nối.
+
+18
+00:01:27,490 --> 00:01:31,630
+Vì vậy, quay số của người giang hồ sẽ tiếp nhận nơi bạn đang kết nối.
+
+19
+00:01:31,630 --> 00:01:40,840
+Vì vậy, trong trường hợp này, tôi đang kết nối với máy chủ lưu trữ cục bộ của mình tại Cổng 880 và cần thêm đối số.
+
+20
+00:01:40,900 --> 00:01:50,350
+Vì vậy, một trong những đối số bổ sung mà chúng ta sẽ cần là g hoặc PC dot không an toàn this this
+
+21
+00:01:50,350 --> 00:01:57,150
+nói với GOPAC rằng các kết nối của bạn không được bảo mật thông qua teal s hoặc bất kỳ giao thức bảo mật nào khác được mong đợi.
+
+22
+00:01:57,160 --> 00:01:58,740
+Đừng lo lắng về nó.
+
+23
+00:01:58,870 --> 00:02:03,050
+Và bây giờ khi bạn phát hiện ra rằng làm thế nào để đánh đổi nó mà không có nó.
+
+24
+00:02:03,070 --> 00:02:08,110
+Và GOPAC thực sự chỉ in ra một thông báo nói chính xác rằng không có bảo mật.
+
+25
+00:02:08,110 --> 00:02:12,580
+Nếu bạn có ý định này, hãy thêm chức năng này vào chức năng quay số của bạn.
+
+26
+00:02:13,240 --> 00:02:17,030
+Vì vậy, thông thường nếu lỗi không bằng nil.
+
+27
+00:02:17,230 --> 00:02:20,810
+Tôi chỉ lo lắng về các lỗi ở đây vì tôi không có bất kỳ phản hồi nào khác.
+
+28
+00:02:22,410 --> 00:02:29,950
+Thông thường, bạn sẽ đăng nhập với họ và làm điều gì đó nhưng với mục đích trình diễn, hoảng loạn hoạt động.
+
+29
+00:02:30,000 --> 00:02:33,820
+Vì vậy, bất cứ khi nào bạn có một kết nối, bạn sẽ cần nó để đóng kết nối đó.
+
+30
+00:02:34,860 --> 00:02:37,030
+Vì vậy, trì hoãn đóng kết nối.
+
+31
+00:02:37,050 --> 00:02:40,410
+Vì vậy, khi Maine kết thúc, chúng tôi sẽ đóng kết nối với máy chủ.
+
+32
+00:02:40,410 --> 00:02:41,910
+Sau đó, bạn cần phải.
+
+33
+00:02:42,630 --> 00:02:46,290
+Chúng tôi sẽ cần nhập mã tiếng vang được tạo bằng tiếng vang của chúng tôi.
+
+34
+00:02:46,350 --> 00:02:54,100
+Tôi sẽ quay lại máy chủ, sao chép dòng nhập đó và thay đổi nó từ 0 thành máy chủ thành 0 3.
+
+35
+00:02:54,190 --> 00:02:54,610
+Khách hàng
+
+36
+00:02:58,540 --> 00:03:06,610
+bây giờ ex để echo và tiếng vang của họ có một trong các chức năng tiếng vang được tạo ra là máy khách máy chủ Echo mới.
+
+37
+00:03:06,840 --> 00:03:08,830
+Điều này có trong một kết nối GPS.
+
+38
+00:03:08,920 --> 00:03:10,520
+Nó trả về một máy khách máy chủ echo.
+
+39
+00:03:10,660 --> 00:03:12,640
+Vì vậy, chúng tôi đã có kết nối đó.
+
+40
+00:03:12,640 --> 00:03:20,900
+Điều này mang lại cho chúng tôi ứng dụng khách tiếng vang và vì vậy ứng dụng khách tiếng vang của chúng tôi có chức năng tiếng vang.
+
+41
+00:03:20,900 --> 00:03:22,670
+Như chúng tôi đã xác định trong giao thức
+
+42
+00:03:25,590 --> 00:03:32,100
+vì vậy, với chức năng Echo, nó sẽ nhận một yêu cầu tiếng vang trong ngữ cảnh và tùy chọn một số tùy chọn cuộc gọi gypsy
+
+43
+00:03:32,160 --> 00:03:34,820
+mà hầu hết thời gian bạn không cần.
+
+44
+00:03:35,040 --> 00:03:37,900
+Và nó sẽ trả về phản hồi tiếng vang và lỗi.
+
+45
+00:03:37,920 --> 00:03:40,590
+Vì vậy, chúng ta cần phải vượt qua trong một bối cảnh.
+
+46
+00:03:40,980 --> 00:03:43,950
+Vì vậy, chúng tôi sẽ làm nếu chúng tôi cần một bối cảnh, chúng tôi sẽ cần tạo ra một bối cảnh.
+
+47
+00:03:43,950 --> 00:03:48,180
+Vì vậy, vì chúng tôi chưa có, chúng tôi có thể tạo một cái có nền chấm ngữ cảnh
+
+48
+00:03:50,860 --> 00:03:52,720
+Bối cảnh xung đột nhập khẩu Mitre
+
+49
+00:03:56,390 --> 00:04:04,650
+để có được ngữ cảnh và chúng tôi cần thực hiện các yêu cầu tiếng vang của Thượng nghị sĩ để tiếng vang tiếng vang yêu cầu tiếng vang yêu cầu có một
+
+50
+00:04:04,650 --> 00:04:06,020
+tin nhắn.
+
+51
+00:04:06,150 --> 00:04:10,960
+Vì vậy, chúng ta hãy nói xin chào thế giới.
+
+52
+00:04:11,060 --> 00:04:16,140
+Điều này sẽ gửi lại phản hồi và lỗi.
+
+53
+00:04:16,360 --> 00:04:17,050
+Kiểm tra lỗi của chúng tôi
+
+54
+00:04:20,090 --> 00:04:21,390
+và bây giờ chúng tôi đã có một phản ứng.
+
+55
+00:04:21,410 --> 00:04:29,320
+Vì vậy, phản hồi của chúng tôi có nhiều nội dung riêng tư từ bốn bộ đệm giao thức.
+
+56
+00:04:29,380 --> 00:04:36,370
+Nhưng quan trọng nhất là nó có phản hồi, như chúng tôi đã định nghĩa trong hồ sơ của mình, phản hồi tiếng vang là phản hồi
+
+57
+00:04:38,400 --> 00:04:48,400
+vì vậy, hãy in dòng in đó nhận được từ phản hồi của máy chủ mà phản hồi và quá trình nhập đã tăng lên vì
+
+58
+00:04:48,400 --> 00:04:53,010
+chúng tôi đang sử dụng nó.
+
+59
+00:04:53,070 --> 00:05:06,030
+Vì vậy, bây giờ tôi có máy chủ đang chạy ở cổng 80 80 vì vậy nếu tôi đến đây, tôi có 0 3 máy khách và tôi chạy có nghĩa là đi.
+
+60
+00:05:06,290 --> 00:05:14,290
+Điều này sẽ làm cho kết nối đó và được gọi là tiêu thụ đặc biệt để đi từ máy chủ có thể được thực hiện tốt.
+
+61
+00:05:14,750 --> 00:05:18,190
+Como xem trong video tiếp theo.

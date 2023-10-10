@@ -1,0 +1,151 @@
+1
+00:00:13,620 --> 00:00:19,860
+Hello and welcome to the golden programming language course in the previous session, we talked about
+
+2
+00:00:19,860 --> 00:00:24,210
+how to read and write a following and go line and indecision.
+
+3
+00:00:24,420 --> 00:00:28,230
+We want to talk about the other fines and directories concept.
+
+4
+00:00:31,590 --> 00:00:38,670
+How to delete or remove the file and the folder and go blank in the go language, you're allowed to
+
+5
+00:00:38,670 --> 00:00:43,890
+remove the existing file and folder with the help of the remove function.
+
+6
+00:00:44,730 --> 00:00:52,590
+This method removes the specified font from the director, or it also removes empty directories.
+
+7
+00:00:53,920 --> 00:01:00,910
+If the given pass is incorrect, then it will through and the roar of time pass through, it is defined
+
+8
+00:01:00,910 --> 00:01:02,270
+under the Otis package.
+
+9
+00:01:02,290 --> 00:01:08,050
+So you have to import or is packaging your program for accessing premium function.
+
+10
+00:01:08,740 --> 00:01:10,930
+Now you can see the syntax.
+
+11
+00:01:12,580 --> 00:01:18,910
+Let's go to this school program to illustrate how to remove, file and folder from the default directory.
+
+12
+00:01:20,990 --> 00:01:31,700
+First, firstly, create the file named test that takes the encoded directory, test the T60 and create
+
+13
+00:01:31,700 --> 00:01:34,550
+a folder named tent in common directory.
+
+14
+00:01:39,060 --> 00:01:39,400
+OK.
+
+15
+00:01:39,480 --> 00:01:46,050
+The file and folder are created now, go to main function to remove the created file and folder.
+
+16
+00:01:47,070 --> 00:01:52,890
+First, removing file from the current directory using renal function of oboist package.
+
+17
+00:01:53,430 --> 00:01:54,360
+Remove function.
+
+18
+00:01:54,360 --> 00:01:58,410
+Get defined name as arguement and remove the name fine.
+
+19
+00:01:58,800 --> 00:02:02,700
+If there is an error, it will be off time past or so.
+
+20
+00:02:02,700 --> 00:02:13,040
+First, define a variable like find a roll call and equals invoke remove function from OS package.
+
+21
+00:02:13,750 --> 00:02:22,770
+Go to remove and said Test the this argument test T60.
+
+22
+00:02:24,810 --> 00:02:33,240
+Now we take the printed message if the error is not, and so is file or not equal to need.
+
+23
+00:02:35,670 --> 00:02:42,960
+So the message log got cleaned and set fire at all.
+
+24
+00:02:46,050 --> 00:02:53,310
+OK, now removing folder from the current directory using remove function of OS package.
+
+25
+00:02:53,790 --> 00:03:02,120
+So define another variable like folder or call an equals and remove function from this package.
+
+26
+00:03:04,230 --> 00:03:07,060
+And said folder name 10.
+
+27
+00:03:09,150 --> 00:03:17,880
+Now we check to print a message if the arrow is not empty folder or not equal mean.
+
+28
+00:03:19,530 --> 00:03:24,660
+So set the error message call in from like high case
+
+29
+00:03:27,630 --> 00:03:34,440
+and set folder or reformat the code, save the project and execute the program.
+
+30
+00:03:39,330 --> 00:03:45,270
+Now we can see the output first, we created the fund named Test to expand the folder name tent in the
+
+31
+00:03:45,270 --> 00:03:50,950
+current pass and then using the remote function from the office package, and we were able to delete
+
+32
+00:03:50,950 --> 00:03:52,710
+the created finance folder.
+
+33
+00:03:52,830 --> 00:03:58,730
+Now we can go to the current directory and see the finance folders by the comment.
+
+34
+00:03:59,230 --> 00:04:00,180
+The IRR.
+
+35
+00:04:00,960 --> 00:04:06,690
+Now we can see by name, the text and folder team does not exist here.
+
+36
+00:04:06,750 --> 00:04:11,880
+In order not to pronounce the time of decision, we will finish it and we will continue the content
+
+37
+00:04:11,880 --> 00:04:12,960
+in the next session.
+
+38
+00:04:13,000 --> 00:04:13,490
+Goodbye.

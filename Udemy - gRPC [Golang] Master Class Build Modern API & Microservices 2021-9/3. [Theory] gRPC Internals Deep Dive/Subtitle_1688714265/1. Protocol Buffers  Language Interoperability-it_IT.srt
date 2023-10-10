@@ -1,0 +1,527 @@
+1
+00:00:00,150 --> 00:00:03,410
+Xin chào và chào mừng đến với phần lặn sâu GRB này.
+
+2
+00:00:03,420 --> 00:00:09,300
+Vì vậy, trước khi bắt đầu viết mã, tôi thực sự muốn dành một chút thời gian để giải thích cách thức hoạt động của GAAP.
+
+3
+00:00:09,300 --> 00:00:13,940
+căn cứ, v.v. vì tôi thực sự nghĩ rằng bạn hiểu cách mã hoạt động trong
+
+4
+00:00:13,950 --> 00:00:17,730
+những người truyền giáo và cách thức hoạt động của khuôn khổ và khái niệm xung quanh nó.
+
+5
+00:00:17,770 --> 00:00:22,450
+Vì vậy, bộ đệm hạt đầu tiên sẽ là nền tảng của ghế nhảy.
+
+6
+00:00:22,650 --> 00:00:26,560
+Đây là những gì hạt Bufford trông giống như Jarkesy.
+
+7
+00:00:26,610 --> 00:00:32,410
+Sau đó, chúng tôi xác định lại thông báo của mình và chúng tôi sẽ tìm dữ liệu cho yêu cầu và nhận phản hồi.
+
+8
+00:00:32,460 --> 00:00:37,240
+Như bạn đã biết, tôi muốn bạn có một số kiến ​​thức sơ bộ và GRB trong bộ đệm giao thức.
+
+9
+00:00:37,350 --> 00:00:42,180
+Vì vậy, hãy đảm bảo bạn tham gia khóa học đó trước, sau đó chúng tôi sẽ xác định dịch vụ để bạn có thể xem khóa học thứ hai
+
+10
+00:00:42,180 --> 00:00:42,900
+hộp màu đỏ.
+
+11
+00:00:43,050 --> 00:00:45,600
+Chà, họ tìm thấy dịch vụ bằng cách sử dụng bộ đệm giao thức.
+
+12
+00:00:45,600 --> 00:00:51,030
+Và vì vậy, dịch vụ của chúng ta, như chúng ta sẽ thấy tiếp theo, tìm hiểu cách viết những thứ này, về cơ bản xác định các điểm cuối API của chúng ta
+
+13
+00:00:51,360 --> 00:00:54,520
+và điều này sẽ cho phép US GAAP tạo mã cho chúng tôi.
+
+14
+00:00:54,620 --> 00:00:55,170
+ĐƯỢC RỒI.
+
+15
+00:00:55,320 --> 00:01:01,500
+Vì vậy, mọi thứ học được trong quá trình đệm giao thức sẽ được sử dụng để tạo dịch vụ và europaeus
+
+16
+00:01:02,280 --> 00:01:08,550
+đó không phải là một điều hay sao, đó là JBC, giống như bộ đệm, sẽ có thể tạo mã cho bạn.
+
+17
+00:01:08,550 --> 00:01:11,000
+Vậy tại sao bộ đệm hạt và tại sao không.
+
+18
+00:01:11,090 --> 00:01:13,950
+Có vẻ như chúng tôi có trong tất cả API giống như API còn lại.
+
+19
+00:01:14,400 --> 00:01:19,680
+Chà, GOPAC thực sự quan trọng để sử dụng bộ đệm Perkel để liên lạc.
+
+20
+00:01:19,770 --> 00:01:22,710
+Và lý do là do kích thước của trọng tải.
+
+21
+00:01:22,890 --> 00:01:29,650
+Vì vậy, nếu chúng ta xem ví dụ về Jason và chúng ta có các tài liệu liền kề với tên và họ của tuổi.
+
+22
+00:01:29,800 --> 00:01:33,880
+Ok, chúng tôi có trọng tải này và tôi đã đo nó trực tuyến.
+
+23
+00:01:33,930 --> 00:01:36,050
+Đây là khoảng 55 byte.
+
+24
+00:01:36,060 --> 00:01:36,670
+ĐƯỢC RỒI.
+
+25
+00:01:36,720 --> 00:01:37,750
+Vì vậy, thực sự nhỏ.
+
+26
+00:01:37,800 --> 00:01:39,000
+Nhưng hãy nhìn nó.
+
+27
+00:01:39,180 --> 00:01:45,320
+Bây giờ, nếu chúng ta xác định cùng một người trong bộ đệm thực nghiệm của nó, chúng ta có nhân vật thông điệp của mình và nó có tuổi tác
+
+28
+00:01:45,400 --> 00:01:50,310
+như anh ấy đã làm đối với chuỗi 32 người nhập họ cho Tất 2 và 3.
+
+29
+00:01:50,610 --> 00:01:55,950
+Nếu tôi viết mã, tôi đã tự viết mã nếu tôi đưa thứ này vào và sản xuất nó
+
+30
+00:01:55,970 --> 00:02:00,420
+chính xác cùng một thông báo nên họ hoặc tên của tôi ở độ tuổi của tôi, tôi sẽ nhận được 20 byte.
+
+31
+00:02:00,840 --> 00:02:02,670
+Và thế là bạn có thể thấy ngay.
+
+32
+00:02:02,680 --> 00:02:05,520
+Đó là từ bộ đệm giao thức cho Jason.
+
+33
+00:02:05,520 --> 00:02:09,700
+Chúng tôi tiết kiệm rất nhiều băng thông vì các tin nhắn nhỏ hơn.
+
+34
+00:02:09,810 --> 00:02:14,440
+OK, vậy là chúng ta đã bắt đầu sử dụng các bộ đệm quan trọng mà chúng ta sẽ lưu trong băng thông mạng.
+
+35
+00:02:14,640 --> 00:02:19,830
+Ngoài ra, việc phân tích cú pháp của Jason thực sự khá căng thẳng đối với Seabee và có nhiều thư viện
+
+36
+00:02:19,830 --> 00:02:20,900
+cố gắng tối ưu hóa chúng.
+
+37
+00:02:21,060 --> 00:02:23,820
+Nhưng nhìn chung nó vẫn còn khá chuyên sâu.
+
+38
+00:02:23,820 --> 00:02:26,840
+Và đó là vì định dạng này con người có thể đọc được.
+
+39
+00:02:26,850 --> 00:02:31,710
+Chúng ta có thể đọc điều này bằng mắt nhưng giao thức lưu trữ các byte mà bạn sẽ không hiểu gì cả.
+
+40
+00:02:32,100 --> 00:02:37,860
+Vì vậy, phân tích cú pháp bộ đệm quan trọng bởi vì nó là nhị phân và bởi vì nó rất gần với cách dữ liệu
+
+41
+00:02:37,860 --> 00:02:41,410
+thực sự được thể hiện trong bộ nhớ sẽ ít tốn CPQ hơn.
+
+42
+00:02:41,550 --> 00:02:42,270
+ĐƯỢC RỒI.
+
+43
+00:02:42,270 --> 00:02:47,310
+Và điều này rất quan trọng bởi vì ngoài những bộ đệm dọc này về cơ bản
+
+44
+00:02:47,310 --> 00:02:54,180
+chúng có nghĩa là liên lạc nhanh hơn và hiệu quả hơn và các thiết bị yếu hơn một chút, chẳng hạn như thiết bị di động có
+
+45
+00:02:54,360 --> 00:03:01,640
+các thiết bị chậm hơn hoặc thậm chí sẽ có thể có hiệu suất tốt hơn với bộ đệm Pirko như đã làm với Jason.
+
+46
+00:03:01,650 --> 00:03:05,150
+Vì vậy, nhìn chung, bộ đệm pro-than không phải là vấn đề đối với GOPAC.
+
+47
+00:03:05,550 --> 00:03:09,720
+Bây giờ tôi đã nói với bạn rằng chúng tôi có thể tạo một số mã bằng GAAP.
+
+48
+00:03:09,870 --> 00:03:16,230
+Vì vậy, hãy vào GAAP để xem các trang web và như chúng ta sẽ thấy, sẽ có 11 ngôn ngữ tại thời điểm đăng ký
+
+49
+00:03:16,540 --> 00:03:21,620
+được hỗ trợ chính thức bởi GOPAC và nhiều người khác thực sự được hỗ trợ không chính thức.
+
+50
+00:03:21,630 --> 00:03:23,290
+Họ không chỉ trên các trang web.
+
+51
+00:03:23,370 --> 00:03:25,850
+Vì vậy, ở đây chúng tôi đang ở trang web GOP Iowa.
+
+52
+00:03:26,010 --> 00:03:31,170
+Và như bạn có thể thấy, đây là nơi bạn sẽ xem các tài liệu nếu bạn gặp bất kỳ vấn đề nào, chẳng hạn như
+
+53
+00:03:31,170 --> 00:03:32,220
+nó có trong tài liệu.
+
+54
+00:03:32,430 --> 00:03:37,470
+Nhưng nếu về cơ bản bạn cuộn xuống, bạn có thể thấy danh sách các ngôn ngữ mà bạn có thể khởi động vào
+
+55
+00:03:37,470 --> 00:03:37,860
+Bắt đầu nhanh.
+
+56
+00:03:37,980 --> 00:03:42,810
+Vì vậy, tùy thuộc vào ngôn ngữ của bạn, ngôn ngữ ưa thích của bạn không cần thiết hoặc ngôn ngữ của khóa học này
+
+57
+00:03:42,810 --> 00:03:44,950
+mà bạn có thể có, cũng như QuickStart.
+
+58
+00:03:45,060 --> 00:03:49,890
+Tuy nhiên, tất cả những lời dạy trong khóa học của anh ấy đều có thể áp dụng cho các ngôn ngữ khác, điều này thật tuyệt.
+
+59
+00:03:49,890 --> 00:03:50,390
+ĐƯỢC RỒI.
+
+60
+00:03:50,640 --> 00:03:56,190
+Vì vậy, một trong những điều họ quảng cáo thông qua GRB là nó hoạt động trên các ngôn ngữ và nền tảng.
+
+61
+00:03:56,190 --> 00:04:00,960
+Và một lần nữa bởi vì chúng tôi sử dụng tệp giao thức đệm ngay từ đầu và sau đó chúng tôi sẽ tạo
+
+62
+00:04:00,960 --> 00:04:05,210
+mã cho bất kỳ ngôn ngữ nào sử dụng giao thức PC R để tạo.
+
+63
+00:04:05,400 --> 00:04:07,190
+Vì vậy, hãy quay trở lại các slide.
+
+64
+00:04:07,980 --> 00:04:15,610
+Vì vậy, ngay cả khi PC của bạn có rất nhiều ngôn ngữ, nó sẽ có rất ít triển khai chính, vì vậy có Java, nghĩa là
+
+65
+00:04:15,960 --> 00:04:18,800
+một triển khai Java Europaeus thuần túy.
+
+66
+00:04:18,830 --> 00:04:22,810
+Điều này có nghĩa là nó được xây dựng từ đầu bằng các thư viện Java.
+
+67
+00:04:22,830 --> 00:04:27,360
+Có europaeus, đây cũng là một triển khai GRB thuần túy trong ngôn ngữ.
+
+68
+00:04:27,360 --> 00:04:29,030
+Một lần nữa xây dựng từ đầu.
+
+69
+00:04:29,430 --> 00:04:35,160
+Và sau đó là GURPS, đây là mức siêu thấp, là cách triển khai ngôn ngữ C và C thuần túy và bạn đang tự hỏi
+
+70
+00:04:35,760 --> 00:04:37,370
+nếu cứ như thế này mãi.
+
+71
+00:04:37,410 --> 00:04:45,180
+Không có Jarkesy C++ gypsey Python Ruby Objective-C ph BC Sharp và nhiều hơn nữa.
+
+72
+00:04:45,180 --> 00:04:48,690
+Có lẽ họ thực sự dựa vào GOP.
+
+73
+00:04:48,700 --> 00:04:49,990
+triển khai C
+
+74
+00:04:50,010 --> 00:04:51,960
+Nó được gọi bằng cách sử dụng các ràng buộc C.
+
+75
+00:04:52,050 --> 00:04:58,920
+Vì vậy, gần như tất cả các thư viện C++ Python Ruby này, v.v. Chúng dựa trực tiếp vào thư viện GOP C và điều rất quan trọng là
+
+76
+00:04:58,920 --> 00:05:03,240
+chỉ cung cấp cho bạn một ý tưởng rằng phát triển phát triển hoạt động với một khuôn khổ
+
+77
+00:05:03,960 --> 00:05:08,060
+nó có nghĩa là, ví dụ, nếu ngày mai thư viện GOP được cập nhật.
+
+78
+00:05:08,070 --> 00:05:12,640
+Điều đó không có nghĩa là Java trong Goldberry sẽ được cập nhật cùng lúc, nhưng bạn có thể
+
+79
+00:05:12,640 --> 00:05:18,510
+mong đợi Python Ruby Objective-C đến C++, v.v. để tận dụng các cải tiến một cách nhanh chóng
+
+80
+00:05:18,510 --> 00:05:22,140
+trong thư viện CC GRB vì điều này phụ thuộc trực tiếp vào nó.
+
+81
+00:05:22,200 --> 00:05:27,570
+Một số ngôn ngữ có thể triển khai Djerba nguyên bản hoặc dựa vào việc triển khai.
+
+82
+00:05:27,570 --> 00:05:31,850
+OK, tôi biết có một thư viện Python JAROBI thuần túy chẳng hạn, vì vậy bạn sẽ không bao giờ biết.
+
+83
+00:05:31,860 --> 00:05:35,170
+Nhưng đây là dành cho các thư viện chính thức.
+
+84
+00:05:35,190 --> 00:05:36,540
+Bây giờ, tôi đang nói về cái gì?
+
+85
+00:05:36,550 --> 00:05:39,810
+Bằng cách nói đi nói lại nó có thể được sử dụng trong bất kỳ ngôn ngữ nào.
+
+86
+00:05:39,810 --> 00:05:46,110
+Như tôi đã nói, mã sẽ được tạo tự động và sau đó các dịch vụ vi mô của bạn bằng bất kỳ ngôn ngữ nào cũng có thể tương tác
+
+87
+00:05:46,110 --> 00:05:46,940
+giữa họ.
+
+88
+00:05:47,220 --> 00:05:52,770
+Vì vậy, giả sử chúng tôi có một trang web và trang web này có dịch vụ mua sắm mà bạn mua và người đó
+
+89
+00:05:52,770 --> 00:05:57,720
+hoặc nhóm công ty của bạn muốn làm điều đó và dịch vụ đó là một nhóm đi.
+
+90
+00:05:57,720 --> 00:06:03,160
+Vì vậy, họ thực hiện điều này là Ingo và chúng tôi cũng có một nhóm định giá và nhóm định giá ở đó.
+
+91
+00:06:03,260 --> 00:06:03,940
+Làm.
+
+92
+00:06:04,050 --> 00:06:10,140
+Vì vậy, những gì họ đã làm là họ đã triển khai giải pháp này bằng Python và bây giờ chúng tôi có một ứng dụng
+
+93
+00:06:10,140 --> 00:06:11,180
+ứng dụng di động.
+
+94
+00:06:11,180 --> 00:06:12,650
+Có lẽ đó là một ứng dụng Android phù hợp.
+
+95
+00:06:12,840 --> 00:06:15,080
+Và họ đã phát triển ứng dụng của mình bằng Java.
+
+96
+00:06:15,150 --> 00:06:18,370
+Vì vậy, bạn giống như chúa của tôi tất cả những điều này cần phải nói chuyện với nhau.
+
+97
+00:06:18,520 --> 00:06:23,250
+Nhưng nó thực sự khá đơn giản vì dịch vụ đã mua và dịch vụ định giá đã được viết
+
+98
+00:06:23,250 --> 00:06:24,700
+sử dụng GRPC.
+
+99
+00:06:24,720 --> 00:06:30,840
+Bạn có thể tạo cái được gọi là sơ khai hoặc sơ khai với tư cách là ứng dụng khách trên ứng dụng di động Chadha và tự động sơ khai đó sẽ có
+
+100
+00:06:30,840 --> 00:06:36,990
+triển khai cho bạn tất cả các cuộc gọi đến dịch vụ mua hàng và dịch vụ định giá bằng cách sử dụng bộ đệm
+
+101
+00:06:37,290 --> 00:06:41,790
+của giao thức và GR PC cho yêu cầu và phản hồi, vì vậy chúng ta sẽ thấy điều đó sau
+
+102
+00:06:41,790 --> 00:06:42,480
+xuất hiện trong mã.
+
+103
+00:06:42,630 --> 00:06:47,730
+Nhưng chỉ để cung cấp cho bạn một ý tưởng ngay bây giờ, bạn không phải lo lắng nếu đó là một ứng dụng
+
+104
+00:06:47,730 --> 00:06:53,730
+Java nói về việc chuyển sang hoặc ứng dụng python vì tất cả chúng đều được triển khai GRB PC tất cả mã
+
+105
+00:06:53,730 --> 00:06:57,210
+được tạo cho bạn và bạn Đừng lo lắng về chi tiết triển khai.
+
+106
+00:06:57,210 --> 00:07:03,920
+Ngoài khuôn khổ, dịch vụ đã mua cũng có thể có hỗ trợ cho dịch vụ Shipman
+
+107
+00:07:03,930 --> 00:07:05,770
+sẽ được retuned và C-sharp.
+
+108
+00:07:06,170 --> 00:07:11,150
+OK, vì vậy hãy thực sự nhớ rằng sơ đồ cũng sẽ có trên trang Jessops.
+
+109
+00:07:11,160 --> 00:07:13,180
+Điều rất quan trọng là bạn phải hiểu điều này.
+
+110
+00:07:13,200 --> 00:07:15,520
+Nó thực sự là chìa khóa của GRB C.
+
+111
+00:07:15,570 --> 00:07:20,730
+Cái hay là bất kỳ ngôn ngữ nào cũng có thể giao tiếp với bất kỳ ngôn ngữ nào khác bằng cách sử dụng cấu trúc chung đó và
+
+112
+00:07:20,730 --> 00:07:22,560
+mà làm cho mọi thứ siêu dễ dàng.
+
+113
+00:07:23,010 --> 00:07:25,650
+Vì vậy, tóm lại tại sao bộ đệm giao thức.
+
+114
+00:07:25,860 --> 00:07:29,810
+Vâng bởi vì nó rất dễ sử dụng và viết định nghĩa của tin nhắn.
+
+115
+00:07:29,820 --> 00:07:33,600
+Định nghĩa của API cũng sẽ độc lập với việc triển khai.
+
+116
+00:07:33,750 --> 00:07:38,150
+Điều này có nghĩa là bạn có thể bắt đầu viết ứng dụng khách và máy chủ của mình ngay khi quay lại
+
+117
+00:07:38,160 --> 00:07:39,120
+tôi đệm Oracle.
+
+118
+00:07:39,130 --> 00:07:45,060
+Định nghĩa Messers lý tưởng và rất nhiều mã rất nhiều mã soạn sẵn mà bạn không muốn viết
+
+119
+00:07:45,240 --> 00:07:50,880
+nó sẽ được viết cho bạn và xuất ra bằng bất kỳ ngôn ngữ nào chỉ từ một bộ đệm đơn giản gồm 10
+
+120
+00:07:50,880 --> 00:07:51,240
+dòng.
+
+121
+00:07:51,240 --> 00:07:52,860
+Và đó là điều tuyệt vời cho bạn.
+
+122
+00:07:52,890 --> 00:07:58,420
+Nó giúp bạn tiết kiệm rất nhiều thời gian và cho phép bạn thực sự tập trung vào việc viết ứng dụng của mình.
+
+123
+00:07:58,560 --> 00:08:03,860
+Bộ đệm giao thức cũng là nhị phân và do đó rất hiệu quả để gửi và nhận qua mạng.
+
+124
+00:08:03,870 --> 00:08:09,880
+Nó nhỏ hơn như chúng ta đã thấy và việc lập số sê-ri và lập số sê-ri trên tàu cũng sẽ được thực hiện với ít chu kỳ hơn.
+
+125
+00:08:09,990 --> 00:08:14,190
+Vì vậy, CP ít mạnh hơn, bạn sẽ có lợi thế hơn.
+
+126
+00:08:14,190 --> 00:08:18,100
+Nói chung, bộ đệm Perkel cũng sẽ cho phép bạn xác định API.
+
+127
+00:08:18,210 --> 00:08:22,680
+Và nếu bạn tham gia khóa học cuối cùng của tôi về bộ đệm giao thức, bạn sẽ thấy rằng bạn có thể phát triển
+
+128
+00:08:22,680 --> 00:08:27,280
+tin nhắn vào API mà không phá vỡ các ứng dụng khách hiện có, điều này cực kỳ hữu ích cho các dịch vụ vi mô.
+
+129
+00:08:27,290 --> 00:08:32,630
+Được rồi, bạn không thể phát triển thêm phiên bản API nào nữa miễn là bạn tuân theo các quy tắc mà bạn biết.
+
+130
+00:08:32,730 --> 00:08:33,160
+ĐƯỢC RỒI.
+
+131
+00:08:33,330 --> 00:08:35,370
+Vì vậy, tất cả trong tất cả đó là một bản tóm tắt.
+
+132
+00:08:35,460 --> 00:08:39,810
+Chúng ta sẽ sử dụng Koba IPC 4G đầu tiên trong khóa học này và tôi sẽ xem trong bài học tiếp theo.

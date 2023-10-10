@@ -1,0 +1,380 @@
+1
+00:00:02,440 --> 00:00:07,300
+So this time around, we want to implement the put function for our S3 bucket file system.
+
+2
+00:00:07,660 --> 00:00:13,150
+And obviously that's done here in the S3 go file in this stub function put.
+
+3
+00:00:13,660 --> 00:00:17,290
+Now what we're going to have to do, first of all, is the same thing we did in list and that is to
+
+4
+00:00:17,290 --> 00:00:19,450
+get some credentials and create a session.
+
+5
+00:00:19,450 --> 00:00:24,490
+So I'll copy this code to say some typing and paste it here before the return statement.
+
+6
+00:00:25,360 --> 00:00:27,510
+So at this point, I have some credentials.
+
+7
+00:00:27,520 --> 00:00:33,760
+I've created a session and now I need to create a new uploader, an Amazon S3 uploader, and I'll call
+
+8
+00:00:33,760 --> 00:00:36,190
+my variable uploader, which seems appropriate.
+
+9
+00:00:37,060 --> 00:00:42,640
+And that's a sign of the value of calling S3 manager, which should show up.
+
+10
+00:00:42,730 --> 00:00:48,460
+It did start new uploader, and I just handed my session.
+
+11
+00:00:49,720 --> 00:00:50,920
+OK, so there's my uploader.
+
+12
+00:00:52,060 --> 00:00:59,080
+Now I'll open the file system that I received or open the file that I received as a as the first parameter
+
+13
+00:00:59,080 --> 00:01:04,180
+to this function file name being a the full path name to the file that I want to upload as three.
+
+14
+00:01:04,900 --> 00:01:10,110
+So I'll open the file, which I'll call F and I'll check for an error when I call OAC.
+
+15
+00:01:10,130 --> 00:01:10,780
+Don't open.
+
+16
+00:01:12,680 --> 00:01:20,930
+Violent, and if I have an error, if error is not equal to nil, then I'll just return the error.
+
+17
+00:01:23,600 --> 00:01:26,120
+OK, so we have our file opened.
+
+18
+00:01:26,570 --> 00:01:27,380
+Scroll up a bit.
+
+19
+00:01:29,660 --> 00:01:36,350
+Next, I want to defer closing it, defer if close, just to say some resource leaks or avoid resource
+
+20
+00:01:36,350 --> 00:01:36,680
+leaks.
+
+21
+00:01:37,200 --> 00:01:41,420
+Now I'm going to get the size of this file, which is something that we're going to be using here in
+
+22
+00:01:41,420 --> 00:01:43,130
+a moment when we create a buffer.
+
+23
+00:01:43,610 --> 00:01:48,950
+So I'll call the variable file info and I'll check for an error.
+
+24
+00:01:50,510 --> 00:01:54,920
+Those come from folks that built right into it.
+
+25
+00:01:55,190 --> 00:01:55,480
+OK?
+
+26
+00:01:56,270 --> 00:01:57,380
+And again, checked for an error.
+
+27
+00:01:57,390 --> 00:01:58,490
+So I'll copy this code.
+
+28
+00:01:59,450 --> 00:02:01,370
+If we can't open the file, we can't upload it.
+
+29
+00:02:01,400 --> 00:02:02,750
+We may as well just return the error.
+
+30
+00:02:04,520 --> 00:02:12,170
+And I'll create a variable size versus and that's going to be equal to file info dot size.
+
+31
+00:02:13,280 --> 00:02:14,810
+And that gives me an N64.
+
+32
+00:02:15,530 --> 00:02:21,320
+OK, so now that we have the file open and I know how big it is, let's create a buffer because this
+
+33
+00:02:21,320 --> 00:02:22,790
+is what our uploader wants.
+
+34
+00:02:23,660 --> 00:02:32,180
+Buffer is a sign of the value of make, and I'm going to make a slice of bytes of size size.
+
+35
+00:02:33,410 --> 00:02:33,710
+OK.
+
+36
+00:02:34,850 --> 00:02:35,990
+And I will read that buffer.
+
+37
+00:02:36,440 --> 00:02:39,740
+So if don't read, which actually returns two things.
+
+38
+00:02:40,960 --> 00:02:46,030
+After Reid offered let's see what Reid returns.
+
+39
+00:02:47,020 --> 00:02:53,710
+Reid returns an inch, which I don't care about and an error which I do, so I'll ignore the first return
+
+40
+00:02:53,710 --> 00:02:55,990
+value but do check for an error.
+
+41
+00:02:56,710 --> 00:03:00,670
+And then after I do my read, I will check for the error.
+
+42
+00:03:01,510 --> 00:03:06,100
+OK, now two more variables file bytes.
+
+43
+00:03:07,710 --> 00:03:15,750
+Is a sign the value of bytes Typekit new reader right there, and I'm going to read Buffer.
+
+44
+00:03:18,760 --> 00:03:25,660
+And file type, which I also need to know, and from this, we can use the HGTV HTP package that's hard
+
+45
+00:03:25,660 --> 00:03:33,190
+to say, don't detect content type and I'm detecting the type of buffer and that should give me the
+
+46
+00:03:33,190 --> 00:03:33,790
+file type.
+
+47
+00:03:33,790 --> 00:03:39,700
+And if HDTV detect content type can't figure it out, it just uses octet stream, which is fine for
+
+48
+00:03:39,700 --> 00:03:40,300
+our purposes.
+
+49
+00:03:41,620 --> 00:03:41,950
+OK.
+
+50
+00:03:43,910 --> 00:03:48,080
+Now we actually do the upload, so I'm going to ignore the first return value, but I will check for
+
+51
+00:03:48,080 --> 00:03:54,440
+an error when I call from the variable uploader that we created right up there in Line 38 upload or
+
+52
+00:03:54,710 --> 00:03:55,160
+upload.
+
+53
+00:03:55,730 --> 00:04:02,180
+And that requires, as its first parameter is only parameter, the S3 manager.
+
+54
+00:04:03,170 --> 00:04:09,200
+So we use in reference to because it has to be a pointer S3 manager right there.
+
+55
+00:04:10,190 --> 00:04:11,810
+Dot upload input.
+
+56
+00:04:12,980 --> 00:04:15,380
+And that requires a bunch of information.
+
+57
+00:04:15,470 --> 00:04:21,320
+The first thing is a bucket bucket and that we get from our receiver, but we have to convert it to
+
+58
+00:04:21,320 --> 00:04:25,480
+a W.S. dart string and we hand it bucket.
+
+59
+00:04:27,920 --> 00:04:28,970
+So that's our first field.
+
+60
+00:04:29,360 --> 00:04:33,860
+The second field is the key, and this needs to be in a particular format.
+
+61
+00:04:33,890 --> 00:04:42,080
+OK, so eight of us string again, that's the format, and I need to write the full path of what I want,
+
+62
+00:04:42,080 --> 00:04:45,320
+where I want to put this on the remote file system on my S3 bucket.
+
+63
+00:04:45,530 --> 00:04:47,240
+So I use Format Desperados
+
+64
+00:04:49,820 --> 00:04:55,190
+and my format string will just be percent s slash percent s again percent s.
+
+65
+00:04:55,700 --> 00:05:00,530
+And the substitutions for those two placeholders are the folder which I received as a parameter in the
+
+66
+00:05:00,530 --> 00:05:01,550
+call to this function.
+
+67
+00:05:02,060 --> 00:05:08,960
+And then we need the file name, which we'll just use our standard path dot base and we'll use file
+
+68
+00:05:08,960 --> 00:05:12,170
+name and that gives me just the file name.
+
+69
+00:05:12,320 --> 00:05:13,880
+OK, so that's our second field.
+
+70
+00:05:14,750 --> 00:05:17,360
+Our third field is what's the body of this upload?
+
+71
+00:05:17,630 --> 00:05:19,340
+And in this case, it's just a file bytes.
+
+72
+00:05:22,220 --> 00:05:26,510
+Then what's the access control string ACL?
+
+73
+00:05:27,290 --> 00:05:35,270
+And for my purposes, I want to put this so it's publically readable A.W. Stream and I'll call it public.
+
+74
+00:05:35,510 --> 00:05:40,190
+Oops that are put it in a string public dash.
+
+75
+00:05:40,460 --> 00:05:43,070
+Read so people can read it, but they can't change it.
+
+76
+00:05:43,280 --> 00:05:44,900
+And that's perfect for my purposes.
+
+77
+00:05:45,770 --> 00:05:47,000
+What is the content type?
+
+78
+00:05:47,030 --> 00:05:51,230
+Well, we got that just a minute ago content type right there.
+
+79
+00:05:52,190 --> 00:05:53,480
+That is again.
+
+80
+00:05:53,480 --> 00:05:55,160
+And they tell us not string.
+
+81
+00:05:55,820 --> 00:06:01,640
+And the parameter for that is just file type, which we got what we called HTP detect content type.
+
+82
+00:06:04,220 --> 00:06:09,530
+And finally, what's the metadata which isn't actually critical, but I'm going to put it in there.
+
+83
+00:06:09,740 --> 00:06:10,130
+OK?
+
+84
+00:06:10,710 --> 00:06:16,040
+Map string pointer to string.
+
+85
+00:06:19,360 --> 00:06:22,480
+An unpopular one value in there, so I'll put it in key.
+
+86
+00:06:25,450 --> 00:06:31,180
+And that's just going to be A.W. escort string metadata value.
+
+87
+00:06:35,680 --> 00:06:40,060
+Now, the only reason I put that in there is if you will look at the sample code from Amazon's documentation.
+
+88
+00:06:40,570 --> 00:06:44,590
+You'll see that you can actually include extra mated metadata with your upload.
+
+89
+00:06:44,710 --> 00:06:49,300
+But I'll just put that in as an example as a placeholder, and it won't hurt a thing by being there.
+
+90
+00:06:50,440 --> 00:06:55,300
+So we check for an error if error is not equal to nil and we'll return the error.
+
+91
+00:06:59,400 --> 00:07:01,350
+Otherwise, we're actually done.
+
+92
+00:07:01,500 --> 00:07:05,700
+So that should be unless there's some typos in there, a functional put function.
+
+93
+00:07:06,180 --> 00:07:07,820
+So now we need to move on to the next one.
+
+94
+00:07:07,860 --> 00:07:13,500
+And if we scroll down, the next one will do is the delete function right here on Line 126 in my code.
+
+95
+00:07:13,710 --> 00:07:15,150
+All right, we'll do that in the next lecture.
+

@@ -1,0 +1,247 @@
+1
+00:00:13,130 --> 00:00:18,650
+Hello and welcome to the Golang programming language course in the previous session, we talked about
+
+2
+00:00:18,650 --> 00:00:23,990
+database concept, and in this session we want to talk about the other database concept.
+
+3
+00:00:27,600 --> 00:00:29,070
+Crud operations.
+
+4
+00:00:30,780 --> 00:00:35,820
+Corot is an acronym for Create, Read, Update and pilot.
+
+5
+00:00:36,390 --> 00:00:45,330
+Craft operations are basic data manipulation for database craft are the four basic function that models
+
+6
+00:00:45,330 --> 00:00:51,030
+should be able to do at most when we are building upon.
+
+7
+00:00:51,420 --> 00:00:55,830
+We want our models to provide for basic types of functionality.
+
+8
+00:00:56,490 --> 00:01:01,020
+The model must be able to create, read, update and delete resources.
+
+9
+00:01:01,530 --> 00:01:06,390
+Computer scientists often refer to this function by the acronym craft.
+
+10
+00:01:07,860 --> 00:01:14,040
+A model should have the ability to perform a these four functions in order to be complete.
+
+11
+00:01:14,370 --> 00:01:20,970
+If inaction cannot be described by one of these four operations, then it should be potentially be a
+
+12
+00:01:20,970 --> 00:01:22,110
+model of its own.
+
+13
+00:01:23,520 --> 00:01:30,840
+Create this would consist of a function which we would call when a new object is being added in a table
+
+14
+00:01:30,840 --> 00:01:33,180
+in the database read.
+
+15
+00:01:33,480 --> 00:01:40,140
+This would consist of a function which would be called to see all or a number of the objects currently
+
+16
+00:01:40,350 --> 00:01:44,060
+in a table in the database update.
+
+17
+00:01:44,670 --> 00:01:47,970
+There should be a function to call information about.
+
+18
+00:01:47,970 --> 00:01:52,690
+An object must be changed in a table in the database and delete.
+
+19
+00:01:53,250 --> 00:01:58,470
+There should be a function to call to remove an object in a table in the database.
+
+20
+00:02:03,700 --> 00:02:05,320
+My school database.
+
+21
+00:02:06,960 --> 00:02:13,740
+As we know that we can use Maya's school to use its strong circle language to store the data in the
+
+22
+00:02:13,740 --> 00:02:21,690
+form of our debate in this issue, it is the most popular language for adding, accessing and managing
+
+23
+00:02:21,690 --> 00:02:23,460
+content in a database.
+
+24
+00:02:23,850 --> 00:02:30,600
+It is most known for its quick processing province, reliability eases and flexibility of use.
+
+25
+00:02:32,040 --> 00:02:39,300
+The application is used for a wide range of purposes, including data warehousing, e-commerce and lodging
+
+26
+00:02:39,300 --> 00:02:40,140
+applications.
+
+27
+00:02:42,180 --> 00:02:47,220
+The most common use for my school, however, is for the purpose of a web database.
+
+28
+00:02:48,300 --> 00:02:55,680
+My Escott provides a set of some basic but most essential operations that will help you to easily interact
+
+29
+00:02:55,680 --> 00:03:01,380
+with the MySQL database, and these operations are known as crud operations.
+
+30
+00:03:06,140 --> 00:03:12,980
+Eschew a database, tables tables are used to store data within the database.
+
+31
+00:03:13,700 --> 00:03:19,700
+There are its main component and without them, the database would serve any other purpose.
+
+32
+00:03:20,210 --> 00:03:23,150
+Tables are uniquely named within a database.
+
+33
+00:03:24,110 --> 00:03:28,010
+Many of operations, such as queries, use these names.
+
+34
+00:03:28,940 --> 00:03:34,010
+Typically, a table is named to represent the type of data stored within.
+
+35
+00:03:34,670 --> 00:03:39,470
+For example, a table holding employee data may be called employees.
+
+36
+00:03:39,830 --> 00:03:42,560
+A table consists of rows and columns.
+
+37
+00:03:43,940 --> 00:03:53,090
+Columns columns are defined to hold a specific type of data, such as dates, numeric or textual data.
+
+38
+00:03:53,840 --> 00:03:58,880
+In the simplest of definitions, that column is defined by its name and data type.
+
+39
+00:03:59,300 --> 00:04:05,990
+The name is used in schools statements when selecting and ordering data, and the data type is used
+
+40
+00:04:05,990 --> 00:04:09,350
+to validate information is stored columns.
+
+41
+00:04:09,350 --> 00:04:15,860
+Names cannot be duplicated in a table, so having two names column is no rows.
+
+42
+00:04:16,950 --> 00:04:21,510
+In relational databases, Andrew is a digital record within table.
+
+43
+00:04:21,960 --> 00:04:28,650
+Each row, which represents a complete record of a specific item data holds different data within the
+
+44
+00:04:28,650 --> 00:04:29,790
+same structure.
+
+45
+00:04:30,300 --> 00:04:33,090
+A table can contain zero or more rolls.
+
+46
+00:04:33,930 --> 00:04:35,040
+Then there are zero.
+
+47
+00:04:35,070 --> 00:04:36,450
+It's said to be empty.
+
+48
+00:04:36,750 --> 00:04:40,740
+There is not a practical limit on the number of rows a table can hold.
+
+49
+00:04:40,830 --> 00:04:46,590
+However, remember the tables primary key may have some influence of this.
+
+50
+00:04:46,920 --> 00:04:53,250
+What I mean is that if your table holds the states and the primary keys is this taste abbreviation,
+
+51
+00:04:53,430 --> 00:04:59,730
+then by definition, since there are only 50 states in the union and you cannot have duplicates in the
+
+52
+00:04:59,730 --> 00:05:03,030
+primary key, your table is limited to 50 rows.
+
+53
+00:05:03,330 --> 00:05:08,100
+A single entry in a table is called a tuple or a record or row.
+
+54
+00:05:08,520 --> 00:05:12,030
+A tuple and a table represent a set of related data.
+
+55
+00:05:12,750 --> 00:05:19,470
+For the example, the above employee table has two Typekit or records or rows.
+
+56
+00:05:19,800 --> 00:05:21,900
+And what is an attribute?
+
+57
+00:05:22,170 --> 00:05:25,740
+A table consists of several records or rows.
+
+58
+00:05:26,130 --> 00:05:32,520
+Each record can be broken down into several smaller parts of data, known as attributes.
+
+59
+00:05:33,360 --> 00:05:40,170
+The above employee table consists of four attributes I.D. name, age and salary.
+
+60
+00:05:41,400 --> 00:05:44,570
+In order not to prolong the time of decision, we will finish.
+
+61
+00:05:44,730 --> 00:05:47,790
+Then we will continue the content in the next session.
+
+62
+00:05:48,060 --> 00:05:48,600
+Goodbye.

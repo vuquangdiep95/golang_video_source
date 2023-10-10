@@ -1,0 +1,248 @@
+1
+00:00:01,340 --> 00:00:07,400
+So we have our test main and the get roots and get KCTCS functions complete, so let's write a test
+
+2
+00:00:07,400 --> 00:00:08,360
+and see how it works.
+
+3
+00:00:08,960 --> 00:00:15,890
+So I'll do that by going over to the handlers folder in my app and creating a new Go file, which I'll
+
+4
+00:00:15,890 --> 00:00:20,210
+call handlers underscore.
+
+5
+00:00:20,210 --> 00:00:23,590
+Test don't go and it has to end and underscore test don't go.
+
+6
+00:00:23,600 --> 00:00:27,260
+Or as I'm sure you know, it won't actually be recognized as a test.
+
+7
+00:00:28,250 --> 00:00:30,350
+OK, so I have this file.
+
+8
+00:00:30,380 --> 00:00:33,800
+Let's write our first test and we're going to test the home page.
+
+9
+00:00:34,100 --> 00:00:41,270
+So --, test home seems like a logical name, and it takes one parameter, as most tests do te pointer
+
+10
+00:00:41,270 --> 00:00:45,560
+to testing dot t and it doesn't return anything.
+
+11
+00:00:46,460 --> 00:00:53,360
+Now, very first thing I need to do is to get my roots, so I have access to the necessary route to
+
+12
+00:00:53,360 --> 00:00:53,990
+test a handler.
+
+13
+00:00:54,080 --> 00:00:59,540
+And I think that by declaring a variable rates and saying that's assign the value of just call a function,
+
+14
+00:00:59,540 --> 00:01:00,050
+get roots.
+
+15
+00:01:01,820 --> 00:01:06,530
+Now I need to start up or define a testing server.
+
+16
+00:01:06,620 --> 00:01:10,510
+And we do that using Go's built in and rather robust testing functionality.
+
+17
+00:01:10,520 --> 00:01:22,220
+So tips for test server is a sign the value of each type test dog new test server right there and we
+
+18
+00:01:22,220 --> 00:01:29,300
+hand it roots to now has some roots to test and we'll defer closing this defer to start close.
+
+19
+00:01:30,470 --> 00:01:34,130
+So it'll close once we get out of the once this function exits.
+
+20
+00:01:34,910 --> 00:01:38,230
+And now let's get a response and check for an error.
+
+21
+00:01:38,240 --> 00:01:41,750
+When we call from the test variable, we just defined online.
+
+22
+00:01:41,750 --> 00:01:47,930
+Can we define a new clients, a Dot client dot account request?
+
+23
+00:01:48,260 --> 00:01:49,490
+And you were all I want.
+
+24
+00:01:49,880 --> 00:01:52,910
+It's not just the home route slash.
+
+25
+00:01:52,910 --> 00:02:00,410
+We have to put in T-s dot URL because that URL for the test server, it'll be a different port every
+
+26
+00:02:00,410 --> 00:02:01,230
+time you run it.
+
+27
+00:02:01,250 --> 00:02:08,300
+So yes, and then we just attend Append Plus Slash at that to test the homepage and we'll check for
+
+28
+00:02:08,300 --> 00:02:12,590
+an error if error is not equal to nil if something went wrong.
+
+29
+00:02:12,620 --> 00:02:13,840
+I'll just say long before.
+
+30
+00:02:14,000 --> 00:02:20,150
+So T dot log beer and T dot fatal error.
+
+31
+00:02:20,450 --> 00:02:22,400
+We'll do it twice once would be sufficient.
+
+32
+00:02:22,610 --> 00:02:24,770
+I actually don't need this long, but I'll leave it like that.
+
+33
+00:02:24,770 --> 00:02:28,790
+It's not going to hurt anything and now I'll just check all I'm got to check.
+
+34
+00:02:28,790 --> 00:02:33,350
+Here's to say is the response status code equal to status?
+
+35
+00:02:33,350 --> 00:02:34,760
+OK, which is 200.
+
+36
+00:02:34,910 --> 00:02:47,420
+So if DOT status code that is rest bright Respect Status Code is not equal to 200, then I'll write
+
+37
+00:02:47,420 --> 00:02:47,780
+an error.
+
+38
+00:02:47,930 --> 00:02:53,780
+So this test will fail keyed on error and I'll use error string.
+
+39
+00:02:55,430 --> 00:03:03,440
+Four for home page expected status.
+
+40
+00:03:04,370 --> 00:03:09,140
+Two hundred, but got actually I'll change that to an era of.
+
+41
+00:03:11,420 --> 00:03:12,200
+But got.
+
+42
+00:03:15,280 --> 00:03:22,770
+Present day, because it's an integer and the substitution is respect status code there.
+
+43
+00:03:24,160 --> 00:03:26,290
+So in theory, I should be able to run this test.
+
+44
+00:03:26,320 --> 00:03:28,780
+Let's give it a try of my terminal window.
+
+45
+00:03:29,260 --> 00:03:35,260
+Make sure I'm in the Maya folder and go to the Handlers folder and type go test dot.
+
+46
+00:03:41,470 --> 00:03:42,820
+And it passed perfect.
+
+47
+00:03:43,330 --> 00:03:45,700
+So there is how we write a simple test.
+
+48
+00:03:46,150 --> 00:03:48,760
+Now, obviously, I don't want to stop here.
+
+49
+00:03:48,820 --> 00:03:54,010
+This would be a great start for developers if we did nothing else, this would make development and
+
+50
+00:03:54,010 --> 00:03:57,030
+writing of tests for handlers ever so much easier.
+
+51
+00:03:57,040 --> 00:03:58,300
+But I don't want to stop here.
+
+52
+00:03:58,600 --> 00:04:02,910
+I want to add some additional functionality and we'll get to this in a little bit.
+
+53
+00:04:02,920 --> 00:04:08,890
+But for example, one of the things that Laravel offers is Laravel Dusk, and it has a nice feature
+
+54
+00:04:08,920 --> 00:04:10,600
+when you're writing tests for web pages.
+
+55
+00:04:11,440 --> 00:04:17,980
+If a test fails, you can actually take a snapshot of the page as it appears in the browser when that
+
+56
+00:04:17,980 --> 00:04:18,779
+test fails.
+
+57
+00:04:18,790 --> 00:04:23,770
+And that makes it much easier to look at the results of your tests when something is not behaving as
+
+58
+00:04:23,770 --> 00:04:24,250
+expected.
+
+59
+00:04:24,580 --> 00:04:26,020
+So we'll get to that before too long.
+
+60
+00:04:26,920 --> 00:04:32,590
+But before we do that, we'll just write a few more tests just so we can see how these things actually
+
+61
+00:04:32,590 --> 00:04:36,640
+work over time, because not everybody writes tests exactly the same way.
+
+62
+00:04:37,420 --> 00:04:41,050
+OK, we'll move on and write a couple of additional tests in the next lecture.
+

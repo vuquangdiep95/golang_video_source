@@ -1,0 +1,199 @@
+1
+00:00:13,250 --> 00:00:19,940
+Hello and welcome to the gold and programming language course in the previous session, we talked about
+
+2
+00:00:19,940 --> 00:00:27,230
+get fine information, and in this, we want to talk about the other files and directories concept.
+
+3
+00:00:30,650 --> 00:00:32,210
+How to read the fine.
+
+4
+00:00:34,050 --> 00:00:40,320
+When it comes to reading large fines, obviously we don't want loading to find in memory.
+
+5
+00:00:41,700 --> 00:00:48,750
+I or package in Go comes to the rescue when reading large files for these purpose.
+
+6
+00:00:48,780 --> 00:00:56,190
+We use the new scanner function, new scanner function, two returns and new a scanner to read from
+
+7
+00:00:56,190 --> 00:00:57,510
+Iowa to reader.
+
+8
+00:00:58,080 --> 00:01:00,300
+Now you can see the syntax.
+
+9
+00:01:00,990 --> 00:01:05,700
+Let's go to a school with program to illustrate how to redefine data.
+
+10
+00:01:07,450 --> 00:01:11,860
+First, create a term that defined in current directory.
+
+11
+00:01:12,490 --> 00:01:22,550
+So we create a fine name, tend to the and write some text in it, for the example.
+
+12
+00:01:22,660 --> 00:01:23,380
+Hello.
+
+13
+00:01:24,890 --> 00:01:26,630
+And welcome
+
+14
+00:01:29,030 --> 00:01:32,170
+to global programming.
+
+15
+00:01:33,590 --> 00:01:42,740
+Go to the next line language, of course, save the text file and close it.
+
+16
+00:01:42,920 --> 00:01:44,180
+Go to the quote.
+
+17
+00:01:45,290 --> 00:01:52,400
+Now the U.S from open function from all this Package two opens the main file or reading it.
+
+18
+00:01:52,410 --> 00:01:57,920
+Successful methods on the return file can be used for reading so first defined.
+
+19
+00:01:57,920 --> 00:02:09,530
+Two variables like fine comma error column equals inward open function from all start package and sets
+
+20
+00:02:09,920 --> 00:02:11,970
+name fine 10.
+
+21
+00:02:15,410 --> 00:02:19,340
+So we check the printed message for us if there is not A..
+
+22
+00:02:19,490 --> 00:02:21,230
+If at all.
+
+23
+00:02:22,620 --> 00:02:24,660
+Not equals to me.
+
+24
+00:02:25,760 --> 00:02:32,660
+Embody a statement of Eve, the rides launched the battle and said it will
+
+25
+00:02:36,530 --> 00:02:44,450
+hear views from the author for closing fine in good language, defeatist statements delayed the execution
+
+26
+00:02:44,450 --> 00:02:52,250
+of the function or a method or an anonymous function until the nerve a function returns so.
+
+27
+00:02:54,530 --> 00:03:02,720
+He writes, the FAA finds the pills after we create a fine.
+
+28
+00:03:02,760 --> 00:03:10,070
+The news from New Iskander function two returns in new scanner to read from eye 0.4 either.
+
+29
+00:03:10,400 --> 00:03:18,560
+So in this case, we pass 10 fine as I ordered reader arguement to function and get a scanner object.
+
+30
+00:03:19,010 --> 00:03:28,070
+So first, define a variable like this scanner column equals and invoke new scanner function from both
+
+31
+00:03:28,380 --> 00:03:41,660
+or package both I or don't invoke new scanner function and said fine as reader argument, so said fine.
+
+32
+00:03:43,160 --> 00:03:46,610
+Now we'll be go to scan their object from newest scanner function.
+
+33
+00:03:46,790 --> 00:03:50,270
+So use scan metal inside their scanner.
+
+34
+00:03:50,270 --> 00:03:56,990
+Object scan at once is the scanner to the next token, which will then be available throughout the box
+
+35
+00:03:56,990 --> 00:03:59,460
+or takes method if returns fonts.
+
+36
+00:03:59,480 --> 00:04:08,750
+Then this kind of stops either by reading the end of the input or in the own so right for scanner,
+
+37
+00:04:09,710 --> 00:04:12,440
+but card this can function.
+
+38
+00:04:15,040 --> 00:04:19,450
+And right by this statement, if he.
+
+39
+00:04:21,540 --> 00:04:26,310
+I text all the scans, Skinner, the text.
+
+40
+00:04:29,600 --> 00:04:37,570
+After scanner returns false, the air or metal will return any road that occured during a scanning exit
+
+41
+00:04:37,640 --> 00:04:45,920
+that if it was, I ordered it, or if you are you returning it so you check to print a message for us.
+
+42
+00:04:46,100 --> 00:05:00,560
+If the error is not empty, he's error calling equals scanner dot e r function, you know, not equals
+
+43
+00:05:00,560 --> 00:05:11,330
+need and right by a statement log dot photon at all reformat the code saved the project and execute
+
+44
+00:05:11,330 --> 00:05:11,960
+the program.
+
+45
+00:05:16,060 --> 00:05:17,880
+Now we can see the outcome.
+
+46
+00:05:17,950 --> 00:05:21,940
+Hello, and welcome to go programming language course.
+
+47
+00:05:22,180 --> 00:05:29,710
+So we were able to read the information inside the file and display it in order not to prolong the time
+
+48
+00:05:29,710 --> 00:05:30,490
+of decision.
+
+49
+00:05:30,670 --> 00:05:34,840
+We will finish it and we will continue the content in the next session.
+
+50
+00:05:35,020 --> 00:05:35,530
+Goodbye.

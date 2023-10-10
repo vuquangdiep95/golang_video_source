@@ -1,0 +1,280 @@
+1
+00:00:01,890 --> 00:00:07,530
+So in this section of the course, I want to separate API roots from web roots.
+
+2
+00:00:07,650 --> 00:00:12,510
+In other words, I want to have one file where I put all of the URLs for all.
+
+3
+00:00:12,510 --> 00:00:15,390
+You can see it right here in our roots file in my app.
+
+4
+00:00:15,750 --> 00:00:20,730
+All the ones that are just for standard web pages to display a page, to handle a post request, all
+
+5
+00:00:20,730 --> 00:00:21,690
+that sort of thing.
+
+6
+00:00:22,470 --> 00:00:25,500
+And then I want to have a separate file for API.
+
+7
+00:00:25,710 --> 00:00:28,050
+And there's a very specific reason I want to do this.
+
+8
+00:00:28,320 --> 00:00:30,300
+If you go back to this letter to this project.
+
+9
+00:00:31,160 --> 00:00:38,930
+And you open up the middleware file middleware doggo, we have this one right here called no serve.
+
+10
+00:00:39,170 --> 00:00:45,470
+And because we have the no serve middleware enabled by default, what happens is anytime someone makes
+
+11
+00:00:45,470 --> 00:00:51,290
+a request using post, we look for a cross-site request forgery token.
+
+12
+00:00:51,410 --> 00:00:52,070
+And that's fine.
+
+13
+00:00:52,190 --> 00:00:59,540
+Now we do have one line in here CSR of Handler Dot Exempt Glaube, and that will exempt everything from
+
+14
+00:00:59,540 --> 00:01:00,170
+the API.
+
+15
+00:01:01,040 --> 00:01:02,180
+And this will work really well.
+
+16
+00:01:02,840 --> 00:01:09,890
+It will allow us to make sure that anything we want to call and exclude the CSR of token check.
+
+17
+00:01:09,890 --> 00:01:14,510
+We just prepend slash API slash at the beginning of that route and we'll be fine.
+
+18
+00:01:15,020 --> 00:01:19,550
+But it might be really helpful just to keep things absolutely clear and separate things up.
+
+19
+00:01:19,640 --> 00:01:21,170
+Unfortunately, this is really easy to do.
+
+20
+00:01:22,370 --> 00:01:28,400
+So what I'm going to do is I'll close this letter to this project and I'll create a new file in my app,
+
+21
+00:01:28,520 --> 00:01:32,540
+a new go file, and I will call it Roots Dash API.
+
+22
+00:01:32,960 --> 00:01:33,560
+Don't go.
+
+23
+00:01:33,950 --> 00:01:34,250
+OK.
+
+24
+00:01:36,350 --> 00:01:41,750
+And in here, I'll put it in a function funk with the receiver of a partnered application, just like
+
+25
+00:01:41,750 --> 00:01:48,770
+Roots Don't Go has been, I'll call this function API roots and I'll put all of my roots for API in
+
+26
+00:01:48,770 --> 00:01:51,170
+here and it returns in a sheep dog handler.
+
+27
+00:01:52,850 --> 00:01:54,470
+And hopefully that'll find it on the import.
+
+28
+00:01:54,470 --> 00:01:55,340
+It did good.
+
+29
+00:01:56,090 --> 00:01:56,420
+OK.
+
+30
+00:01:57,500 --> 00:02:02,930
+And what I'll do is declare a brand new router, and this will be a subreddit that will mount in our
+
+31
+00:02:02,930 --> 00:02:03,560
+roots file.
+
+32
+00:02:03,560 --> 00:02:08,990
+So our forever is of Typekit dot new rhetoric and hopefully they'll find it here.
+
+33
+00:02:09,020 --> 00:02:11,210
+It did good so that imported that for me.
+
+34
+00:02:13,560 --> 00:02:23,490
+Now I'll create a root root, and I'll match everything that begins with API, and I'll have an inline
+
+35
+00:02:23,490 --> 00:02:29,970
+function with one parameter mux, which is a Typekit Auchterarder right there.
+
+36
+00:02:33,190 --> 00:02:39,760
+And in here, I'll put any ruse that I want, so I can just put a comment like this and any API roots
+
+37
+00:02:39,760 --> 00:02:40,270
+here.
+
+38
+00:02:40,300 --> 00:02:44,770
+But I want to test it, so I'll put one in our target and I'll just use it in one function.
+
+39
+00:02:45,610 --> 00:02:48,100
+So it'll be slashed Test Dash API.
+
+40
+00:02:48,730 --> 00:02:56,680
+So to call this, I would go to local host 4000 slash API slash test Dash API and we'll just do it inline
+
+41
+00:02:56,680 --> 00:02:57,220
+function here.
+
+42
+00:02:57,940 --> 00:03:06,280
+Thunk and it'll be Whv beat out response writer as usual and our pointer to HGTV request as usual.
+
+43
+00:03:07,250 --> 00:03:07,720
+I don't here.
+
+44
+00:03:07,720 --> 00:03:09,820
+I'll just create a variable VAR payload.
+
+45
+00:03:10,210 --> 00:03:11,350
+We'll send some JSON back.
+
+46
+00:03:11,710 --> 00:03:16,180
+It's a struct with one member or one field called content, which is a string.
+
+47
+00:03:17,050 --> 00:03:20,770
+And in JSON, I'll call that content.
+
+48
+00:03:21,970 --> 00:03:29,290
+OK, now we have that variable as populate its field payload content is equal to Hello World.
+
+49
+00:03:30,790 --> 00:03:33,010
+And now I'll just write some Jason to the end user.
+
+50
+00:03:33,130 --> 00:03:36,430
+I can use my built in function from celebrities to do that.
+
+51
+00:03:36,430 --> 00:03:40,390
+So the receiver a dot app dot right, Jason.
+
+52
+00:03:41,050 --> 00:03:45,630
+And that requires the response writer some status code issue status.
+
+53
+00:03:45,640 --> 00:03:46,300
+OK?
+
+54
+00:03:46,360 --> 00:03:49,390
+That'll be fine right there.
+
+55
+00:03:49,990 --> 00:03:51,850
+And the payload, which I call payload.
+
+56
+00:03:53,890 --> 00:03:59,500
+So now I have this API roots function, which is actually a sub router in order to use it.
+
+57
+00:03:59,710 --> 00:04:00,970
+I have an error here somewhere.
+
+58
+00:04:01,180 --> 00:04:06,100
+Oh yeah, I got to return or return or otherwise.
+
+59
+00:04:06,130 --> 00:04:07,630
+Nothing will happen only when compile.
+
+60
+00:04:08,440 --> 00:04:11,770
+Now let's get back to our roots file and we just need to mount that route.
+
+61
+00:04:12,550 --> 00:04:13,960
+So I'll mount it right here.
+
+62
+00:04:15,670 --> 00:04:28,270
+A Dot app, dot roots, dot mount and I'll Mount Slash API to a Dot API roots and I should do it.
+
+63
+00:04:28,570 --> 00:04:33,190
+So now if I start my application, make stop in case it's running, make start.
+
+64
+00:04:37,240 --> 00:04:42,610
+And we go back here to our web browser and we make sure it's working.
+
+65
+00:04:43,330 --> 00:04:43,900
+It is.
+
+66
+00:04:45,750 --> 00:04:52,380
+Now we'll go to slash API slash test Dash API, and I should get some JSON back and I do, and that
+
+67
+00:04:52,380 --> 00:04:59,400
+is dead simple, and it's just an easy way of separating web page routes from API routes, and that's
+
+68
+00:04:59,400 --> 00:05:01,800
+exactly the sort of thing they do in Laravel.
+
+69
+00:05:02,220 --> 00:05:03,490
+So that was simple.
+
+70
+00:05:03,510 --> 00:05:04,200
+Let's move on.
+

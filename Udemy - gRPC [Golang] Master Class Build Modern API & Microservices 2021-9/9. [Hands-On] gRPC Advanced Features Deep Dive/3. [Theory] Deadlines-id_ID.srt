@@ -1,0 +1,152 @@
+1
+00:00:00,210 --> 00:00:03,740
+OK jadi sekarang kita berbicara tentang konsep tenggat waktu yang sangat penting.
+
+2
+00:00:03,740 --> 00:00:08,730
+Jadi tenggat waktu pada dasarnya memungkinkan klien JPC Anda menentukan berapa lama mereka mau
+
+3
+00:00:08,730 --> 00:00:15,150
+menunggu, jadi berapa lama mereka bisa menunggu IPC untuk menyelesaikan sebelum masalah ini diakhiri dengan batas waktu udara terlampaui.
+
+4
+00:00:15,360 --> 00:00:20,610
+Jadi itu berarti bahwa setiap kali klien Anda mengatakan OK saya ingin informasi dalam satu detik dan jika saya
+
+5
+00:00:20,610 --> 00:00:23,430
+tidak memilikinya jangan repot-repot mengirimkan tanggapan Anda hanya itu.
+
+6
+00:00:23,430 --> 00:00:24,440
+Anda menetapkan tenggat waktu.
+
+7
+00:00:24,570 --> 00:00:30,830
+Jadi dokumentasi RBC benar-benar merekomendasikan agar Anda menetapkan batas waktu untuk setiap panggilan RBOC tunggal yang Anda buat
+
+8
+00:00:30,880 --> 00:00:31,980
+saat ini.
+
+9
+00:00:32,010 --> 00:00:36,140
+Ini benar-benar memberi Anda batas atas berapa lama setiap sel darah merah harus mengambil.
+
+10
+00:00:36,140 --> 00:00:36,410
+BAIK.
+
+11
+00:00:36,420 --> 00:00:42,110
+Jadi, sangat penting bagi Anda untuk menetapkan batas waktu untuk semua jenis panggilan sibuk Anda sehingga Anda akan baik-baik saja bagaimana cara
+
+12
+00:00:42,630 --> 00:00:45,600
+mengatur batas waktu seperti apa yang Anda ingin saya katakan.
+
+13
+00:00:45,810 --> 00:00:48,140
+Pengaturan tenggat waktu yang baik benar-benar terserah Anda.
+
+14
+00:00:48,300 --> 00:00:50,930
+Berapa lama Anda merasa bahwa API Anda harus selesai.
+
+15
+00:00:50,990 --> 00:00:56,190
+OK berapa jumlah M-L waktu yang tidak akan Anda miliki sebelum mencoba kembali atau sebelum gagal.
+
+16
+00:00:56,190 --> 00:00:56,760
+BAIK.
+
+17
+00:00:56,910 --> 00:01:02,870
+Biasanya jika itu adalah API kecil 100 milidetik, 500 detik kedua jika Anda benar-benar lambat.
+
+18
+00:01:03,020 --> 00:01:04,610
+OK, itu tenggat waktu yang baik.
+
+19
+00:01:04,830 --> 00:01:07,720
+Jika itu panggilan API yang panjang, mungkin lima menit.
+
+20
+00:01:07,860 --> 00:01:08,320
+BAIK.
+
+21
+00:01:08,430 --> 00:01:11,700
+Tetapi terserah Anda untuk memilih tenggat waktu apa pun yang Anda inginkan.
+
+22
+00:01:11,700 --> 00:01:17,700
+Jadi server kemudian harus memeriksa apakah tenggat waktu telah terlampaui dan membatalkan pekerjaan yang dilakukannya jika
+
+23
+00:01:17,700 --> 00:01:18,980
+tenggat waktu terlampaui.
+
+24
+00:01:18,990 --> 00:01:23,880
+Sebagai contoh jika saya mati server saya melakukan beberapa pekerjaan yang sangat mahal OK dan klien mengatakan Anda memiliki
+
+25
+00:01:23,880 --> 00:01:29,240
+1 menit jika setelah 1 menit pekerjaan saya yang sangat mahal tidak dilakukan di server saya harus membatalkan pekerjaan saya dan
+
+26
+00:01:29,250 --> 00:01:29,970
+klien lain.
+
+27
+00:01:29,970 --> 00:01:31,820
+Maaf saya tidak bisa melakukannya dalam 1 menit.
+
+28
+00:01:32,190 --> 00:01:37,490
+Jadi ada blog yang luar biasa yang saya sarankan Anda baca secara mendalam yang ada di blog GOPAC.
+
+29
+00:01:37,620 --> 00:01:43,770
+Jadi tautannya ada di ceramah dan blognya sledged dan tenggat waktu dan itu benar-benar memberi Anda pemahaman yang baik tentang tenggat
+
+30
+00:01:43,770 --> 00:01:44,860
+waktu secara keseluruhan.
+
+31
+00:01:45,120 --> 00:01:49,880
+Jadi harap dicatat bahwa tenggat waktu disebarkan di seluruh Eropa adalah dia menyerukan perubahan.
+
+32
+00:01:50,130 --> 00:01:58,230
+Jadi itu berarti bahwa jika klien Anda A memanggil GAAP server B yang memanggil GOPAC C maka batas waktu
+
+33
+00:01:58,260 --> 00:01:58,920
+terlewati.
+
+34
+00:01:59,070 --> 00:02:02,650
+Sepanjang rantai OK jadi dia akan menyadari tenggat waktu klien.
+
+35
+00:02:02,730 --> 00:02:08,010
+A Itu benar-benar penting karena PC Anda akan diubah benar-benar di semua layanan mikro Anda dan mereka semua
+
+36
+00:02:08,010 --> 00:02:12,480
+harus mengetahui tenggat waktu untuk memastikan bahwa mereka tidak melakukan pekerjaan yang tidak berguna.
+
+37
+00:02:12,600 --> 00:02:13,150
+BAIK.
+
+38
+00:02:13,380 --> 00:02:17,460
+Jadi jangan lupa untuk melihat Blug dan saya akan menggunakan kuliah berikutnya untuk beberapa tangan.
+

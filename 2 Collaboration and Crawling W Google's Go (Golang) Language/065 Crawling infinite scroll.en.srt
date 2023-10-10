@@ -1,0 +1,455 @@
+1
+00:00:00,300 --> 00:00:04,350
+Vì vậy, bây giờ chúng ta sẽ xem xét giải pháp thu thập thông tin thứ hai mà Daniel đã tổng hợp và Daniel tôi đã
+
+2
+00:00:04,350 --> 00:00:11,850
+siêu ấn tượng bởi mã học sinh đã trở thành bậc thầy và tôi thực sự thích khái niệm mà chúng tôi
+
+3
+00:00:11,850 --> 00:00:18,320
+tất cả đều có nhiều trí thông minh và cùng nhau, chúng ta mạnh hơn chúng ta.
+
+4
+00:00:18,330 --> 00:00:24,000
+Và tôi có thể viết thơ về điều này trong một thời gian dài như bạn có thể đã nghe tôi làm trong quá khứ nhưng tôi chỉ
+
+5
+00:00:24,000 --> 00:00:28,620
+thực sự yêu thích các giải pháp bạn tạo ra ở đây và vui mừng cho bạn.
+
+6
+00:00:28,710 --> 00:00:36,210
+Vui mừng cho bạn, đồng nghiệp thân yêu, bạn bè, đồng nghiệp phiêu lưu trong lập trình, vui mừng cho bạn xem giải pháp
+
+7
+00:00:36,240 --> 00:00:36,810
+vì vậy hãy mang nó đi.
+
+8
+00:00:36,810 --> 00:00:37,990
+Đa-ni-ên.
+
+9
+00:00:38,000 --> 00:00:38,760
+Vâng vậy.
+
+10
+00:00:38,790 --> 00:00:47,340
+Vì vậy, chúng tôi đã phát hiện ra trên loại đầu tiên sau khi chạy nó rằng nó chỉ tìm thấy 19 tweet giải pháp vì
+
+11
+00:00:47,730 --> 00:00:54,600
+màn hình là một cuộn vô hạn và vì vậy nó không thể thực sự thoát ra khỏi trang cùng một lúc.
+
+12
+00:00:54,600 --> 00:01:01,400
+Và vì vậy hãy gọi, chúng tôi không thực sự có quá nhiều thứ để thực sự giải quyết vấn đề đó.
+
+13
+00:01:01,410 --> 00:01:02,760
+Nó không đi.
+
+14
+00:01:03,000 --> 00:01:06,180
+Nó không thực sự chạy một máy chủ web nên không thể chạy javascript.
+
+15
+00:01:06,210 --> 00:01:09,320
+Khi bạn cuộn xuống đủ để thực sự thích tải thêm nội dung.
+
+16
+00:01:09,780 --> 00:01:12,290
+Vì vậy, đối với một số trang web, đây là kết thúc.
+
+17
+00:01:12,300 --> 00:01:18,140
+Bạn thực sự không thể làm gì nhiều với Twitter mặc dù cuối cùng đã có một giải pháp.
+
+18
+00:01:18,210 --> 00:01:21,270
+Tôi muốn phóng to.
+
+19
+00:01:21,420 --> 00:01:30,440
+Mở công cụ dành cho nhà phát triển và chuyển đến tab Mạng và tôi đã làm mới trang để bạn có thể tải lên và
+
+20
+00:01:30,450 --> 00:01:39,210
+Tôi lọc tab Mạng thành x HR, về cơ bản các yêu cầu đã xảy ra không phải là một phần của việc tạo
+
+21
+00:01:39,210 --> 00:01:46,470
+trang ban đầu nhưng của một tập lệnh đang thực hiện các yêu cầu này theo cách cuộn xuống cuộn vô hạn mà bạn
+
+22
+00:01:46,470 --> 00:01:53,620
+có thể thấy các yêu cầu mà trình duyệt Web đang thực hiện để lấy dữ liệu bổ sung và vì vậy nếu tôi nhấp vào một
+
+23
+00:01:53,620 --> 00:02:00,610
+trong số những yêu cầu này, tôi thực sự có thể kiểm tra URL của bạn rằng nó đang đưa ra yêu cầu có một số
+
+24
+00:02:00,610 --> 00:02:01,320
+thông số.
+
+25
+00:02:01,330 --> 00:02:09,670
+Sau dấu chấm hỏi này, bao gồm một dấu hỏi được gọi là Vị trí tối đa với mã dài lớn tính bằng giây, vì vậy
+
+26
+00:02:09,670 --> 00:02:16,570
+bạn bạn nhận được khi bạn cuộn vô hạn bạn đang xem tab mạng và bạn đã lọc nó cho
+
+27
+00:02:16,570 --> 00:02:22,480
+X HR và sau đó nó hiển thị cho bạn biết các lượt truy cập đang đến và sau đó bạn nhấp vào tệp đó là
+
+28
+00:02:22,480 --> 00:02:22,700
+Phải.
+
+29
+00:02:22,730 --> 00:02:23,010
+Vâng.
+
+30
+00:02:23,140 --> 00:02:25,840
+Và sau đó có bất kỳ bất cứ điều gì trên đường dây.
+
+31
+00:02:25,870 --> 00:02:26,130
+Được rồi.
+
+32
+00:02:26,130 --> 00:02:27,020
+Bất cứ điều gì trên đường dây.
+
+33
+00:02:27,040 --> 00:02:34,070
+Và sau đó ở đó nó hiển thị cho bạn tiêu đề và vì vậy hãy nhấp vào một trong các yêu cầu và kiểm tra bạn
+
+34
+00:02:34,080 --> 00:02:35,050
+cũng đang đi.
+
+35
+00:02:35,110 --> 00:02:42,500
+Vì vậy, hãy chuyển đến phần tiêu đề, chuyển đến khu vực tiêu đề. Tôi chỉ đang ghi chú ở đây và sau đó bạn kiểm tra xem mình đang ở đâu.
+
+36
+00:02:42,500 --> 00:02:48,790
+tất cả những con chuột hợp lý và bạn đang xem yêu cầu của mình bạn đã ở ngoài đây tôi có thể thấy được tạo ra có một truy vấn
+
+37
+00:02:48,790 --> 00:02:55,500
+tham số sau dấu chấm hỏi Vâng, có một số tham số truy vấn được phân tách bằng dấu và
+
+38
+00:02:56,860 --> 00:03:03,550
+nhưng cái dường như thay đổi khi tôi nhấp vào giữa nhiều cái trong số này, mỗi cái về cơ bản là
+
+39
+00:03:03,550 --> 00:03:10,210
+các thông số tương tự ngoại trừ Vị trí tối đa nghe có vẻ tốt và vì vậy Vị trí tối đa dường như đang thay đổi
+
+40
+00:03:10,210 --> 00:03:15,670
+mỗi lần đến một số giá trị mới nhưng đó là một số giá trị mà tôi không thể đoán được chỉ bằng cách nhìn vào nó.
+
+41
+00:03:15,820 --> 00:03:19,900
+Vì vậy, nó sẽ cần một số thử nghiệm để thực sự tìm ra.
+
+42
+00:03:20,740 --> 00:03:28,480
+Bên cạnh đó, tôi cũng xem xét nếu tôi chuyển sang Paramus, tôi thực sự có thể thấy thông số Firefox
+
+43
+00:03:28,480 --> 00:03:34,580
+ít nhất là có tab của thương hiệu hiển thị các tham số chuỗi truy vấn ở chế độ xem đẹp hơn.
+
+44
+00:03:35,070 --> 00:03:38,850
+Tôi nhận ra rằng chrome có lẽ cũng có thứ gì đó tương tự ở đâu đó.
+
+45
+00:03:38,890 --> 00:03:43,960
+Điều đó thật tuyệt vì khi bạn nhấp vào giữa chúng, bạn có thể thực sự thấy sự khác biệt mà Max
+
+46
+00:03:43,960 --> 00:03:45,780
+thay đổi vị trí.
+
+47
+00:03:46,000 --> 00:03:46,960
+Điều đó thật tuyệt.
+
+48
+00:03:47,210 --> 00:03:53,380
+Nếu vậy thì điều khác cần xem xét ngay ở đây là phản hồi sẽ mất một lúc để thực sự tải
+
+49
+00:03:53,380 --> 00:04:01,300
+phản hồi hãy xem phản hồi là dữ liệu của Jason và tôi có thể nhìn vào điều này. Tôi có thể thấy rằng phản hồi ở đây dành cho
+
+50
+00:04:01,300 --> 00:04:09,790
+giữa ba yêu cầu này, trình duyệt đã đặt nó ở vị trí tối thiểu mà vị trí tối thiểu này
+
+51
+00:04:09,790 --> 00:04:17,860
+chuỗi khớp với chuỗi phiên bản tối đa cho lần gọi tiếp theo if I if I if I take this.
+
+52
+00:04:17,950 --> 00:04:24,220
+Chuỗi vị trí chính này và tôi chuyển sang cuộc gọi tiếp theo mà nó thực hiện và tìm trong danh sách tham số này
+
+53
+00:04:24,220 --> 00:04:30,330
+Vị trí tối đa là khớp chính xác, vì vậy đối với mỗi cuộc gọi, nó sẽ cho bạn biết vị trí tối đa sẽ dành cho
+
+54
+00:04:30,330 --> 00:04:41,460
+cuộc gọi tiếp theo của bạn để nhận được nhiều dữ liệu hơn một giây, vì vậy nó cũng có nhiều mục hơn mà cô ấy có thể nói
+
+55
+00:04:41,520 --> 00:04:45,120
+mà tôi nghĩ có thể hữu ích để nói Ồ tôi xong rồi Tôi đã tải xong.
+
+56
+00:04:45,120 --> 00:04:49,230
+Vì vậy, cái này so với ở đây cái này không có thêm mục nào.
+
+57
+00:04:50,200 --> 00:04:57,340
+Được rồi, có vẻ như bạn đang nhìn đầy hứa hẹn bạn đang nhìn vào vị trí của đàn ông trông có vẻ đầy hứa hẹn trong
+
+58
+00:04:57,360 --> 00:05:00,630
+Max vị trí rồi cũng có thêm đồ đúng không nào.
+
+59
+00:05:00,660 --> 00:05:01,150
+Chuẩn rồi.
+
+60
+00:05:01,260 --> 00:05:01,760
+Và.
+
+61
+00:05:01,810 --> 00:05:09,350
+Và sau đó, vị trí tối đa trong Vị trí và tham số tối đa sẽ trở thành vị trí chính của bạn trong cuộc gọi tiếp theo.
+
+62
+00:05:09,360 --> 00:05:16,380
+Vì vậy, vâng, vị trí chính của bạn là những gì họ Twitter cung cấp cho tôi và tôi cung cấp cho Max cuộc gọi tiếp theo này để họ
+
+63
+00:05:16,380 --> 00:05:20,570
+cho tôi tôi đang ở vị trí và sau đó tôi cho họ như một cuộc thám hiểm.
+
+64
+00:05:20,580 --> 00:05:21,560
+ĐƯỢC RỒI.
+
+65
+00:05:21,810 --> 00:05:26,510
+Vì vậy, điều cuối cùng họ đưa ra có vẻ như họ đã có chi mới này một chút bối rối về điều đó
+
+66
+00:05:26,520 --> 00:05:32,200
+vì vậy, cuộc gọi 0 đến và trong cuộc gọi đầu tiên để chia tỷ lệ trong cuộc gọi đầu tiên.
+
+67
+00:05:32,370 --> 00:05:38,160
+Vì vậy, tôi không thực sự không thể nhìn thấy một cuộc gọi đầu tiên đầu tiên Tôi đã nhận được họ đã có xe đẩy của tôi
+
+68
+00:05:38,160 --> 00:05:40,050
+danh sách đã có tối đa cho ảnh này.
+
+69
+00:05:40,170 --> 00:05:47,140
+OK nhưng phản hồi của nó có vị trí tối thiểu và phải mất một lúc để chuyển sang tab phản hồi đối với một số
+
+70
+00:05:47,140 --> 00:05:51,020
+lý do nó có một vị trí chính và đó là DC.
+
+71
+00:05:51,040 --> 00:05:59,320
+Và để những người đàn ông ở vị trí đó, họ đi đến cuộc gọi tiếp theo và tôi đến gặp Paramus, đây là nó
+
+72
+00:05:59,310 --> 00:06:04,010
+đến vị trí chính của bạn bởi vì vị trí tối đa của bạn cho đến khi nó có ý nghĩa.
+
+73
+00:06:04,010 --> 00:06:09,530
+Có vẻ như vậy, tôi nghĩ rằng tối đa sẽ là kết thúc của cuộc gọi cuối cùng mà sau đó trở thành người đàn ông của
+
+74
+00:06:09,530 --> 00:06:10,480
+cuộc gọi tiếp theo.
+
+75
+00:06:10,490 --> 00:06:16,730
+Tôi nghĩ đúng hơn là tôi thực sự không chắc tại sao họ lại gọi nó như vậy, tình cờ đó là những gì Twitter đã kết thúc
+
+76
+00:06:16,730 --> 00:06:17,350
+lên gọi họ.
+
+77
+00:06:17,360 --> 00:06:20,490
+Vì vậy, có thể nó gây nhầm lẫn cho những người đang cố gắng làm điều này.
+
+78
+00:06:20,510 --> 00:06:21,300
+Có lẽ.
+
+79
+00:06:21,380 --> 00:06:25,880
+Có vẻ như theo trực giác hơn, mức tối đa của bạn trong cuộc gọi cuối cùng sẽ là người của bạn trong cuộc gọi tiếp theo.
+
+80
+00:06:26,450 --> 00:06:27,250
+Vâng phần nào.
+
+81
+00:06:27,350 --> 00:06:28,450
+Vâng.
+
+82
+00:06:28,680 --> 00:06:35,360
+Vì vậy, điều cuối cùng có vẻ thú vị là email H2 mục này được xem xét từ một cuộc kiểm tra nhanh
+
+83
+00:06:35,690 --> 00:06:43,520
+chỉ bằng mắt thường, nó trông giống như email h được đưa trực tiếp vào danh sách này, vì vậy nếu tôi có thể vượt qua
+
+84
+00:06:43,520 --> 00:06:47,300
+đây là một người chuyển giới có lẽ đã nhận được những dòng tweet mà tôi đang tìm kiếm.
+
+85
+00:06:48,750 --> 00:06:52,600
+Ồ đẹp.
+
+86
+00:06:52,670 --> 00:06:53,940
+Vì vậy, đây là tất cả.
+
+87
+00:06:53,960 --> 00:06:56,150
+Vì vậy, chỉ cần kiểm tra nhanh.
+
+88
+00:06:56,150 --> 00:07:04,280
+Vì vậy, một điều cuối cùng tôi muốn làm trước khi tôi làm điều này là nếu tôi quay lại với bạn hoặc L ở đây, tôi sẽ chỉ sao chép
+
+89
+00:07:04,280 --> 00:07:12,510
+toàn bộ đồng euro và tôi đi tìm giá trị tt của robot.
+
+90
+00:07:12,570 --> 00:07:13,840
+Lưu điều này cho video tiếp theo.
+
+91
+00:07:13,900 --> 00:07:17,330
+Tôi nghĩ đó là một video hay chỉ thu thập dữ liệu cuộn vô hạn.
+
+92
+00:07:17,570 --> 00:07:17,860
+Được rồi.
+
+93
+00:07:17,930 --> 00:07:20,320
+Hoặc bạn nghĩ robot anh ấy khá nhanh.
+
+94
+00:07:20,410 --> 00:07:26,420
+Tôi thích giữ mọi thứ theo khái niệm để đó là cuộn cuộn vô hạn và kiểm tra tất cả
+
+95
+00:07:26,420 --> 00:07:28,860
+thông tin sẽ quay lại khi bạn cuộn.
+
+96
+00:07:28,880 --> 00:07:30,290
+Sử dụng các công cụ dành cho nhà phát triển.
+
+97
+00:07:30,470 --> 00:07:33,930
+Bất cứ điều gì bạn muốn tóm tắt về điều đó hoặc nói thêm về điều đó.
+
+98
+00:07:34,250 --> 00:07:41,270
+Không phải mọi trang đều có phản hồi yêu cầu dễ hiểu vì một số trang web về cơ bản sẽ không có lãi
+
+99
+00:07:41,270 --> 00:07:43,730
+cho trình thu thập thông tin bình thường.
+
+100
+00:07:43,730 --> 00:07:44,690
+Luôn luôn có một cách.
+
+101
+00:07:44,690 --> 00:07:51,260
+Ý tôi là trang phải tự lấp đầy bằng cách nào đó nhưng một số trang sẽ hơi quá phức tạp để
+
+102
+00:07:51,260 --> 00:07:52,210
+có nó làm việc.
+
+103
+00:07:52,250 --> 00:07:54,180
+Vì vậy, trong trường hợp này, nó đã kết thúc hoạt động.
+
+104
+00:07:54,230 --> 00:07:59,900
+Nó có một số phản hồi yêu cầu khá hay và có vẻ đủ dễ hiểu để chúng ta có thể
+
+105
+00:07:59,900 --> 00:08:01,940
+tìm ra nó để chúng ta có thể tiếp tục đi.
+
+106
+00:08:02,860 --> 00:08:09,790
+Điều đó thực sự mang lại cho nó rất nhiều sự tôn trọng và đánh giá cao về những gì mà các công cụ tìm kiếm phải giải quyết.
+
+107
+00:08:09,820 --> 00:08:15,400
+AK đặc biệt là quyền của Google để có thể lập danh mục tất cả thông tin trên web.
+
+108
+00:08:15,400 --> 00:08:22,090
+Họ cần có khả năng tự động hóa để ngay cả khi các trang web đang thay đổi mã của họ vẫn có thể lấy thông tin
+
+109
+00:08:22,560 --> 00:08:27,410
+vì vậy có lẽ họ đang chạy các máy chủ để bạn biết rằng họ có thể chạy JavaScript đó
+
+110
+00:08:27,410 --> 00:08:27,950
+và lấy.
+
+111
+00:08:28,030 --> 00:08:30,130
+Họ có thể lăn lộn để làm tất cả những điều đó.
+
+112
+00:08:30,220 --> 00:08:37,720
+Vâng, có lẽ họ đang tương tác với một số trình duyệt web đầy đủ.
+
+113
+00:08:37,720 --> 00:08:38,590
+Hẹn gặp lại các bạn trong video tiếp theo.
+
+114
+00:08:38,800 --> 00:08:38,970
+Vâng.

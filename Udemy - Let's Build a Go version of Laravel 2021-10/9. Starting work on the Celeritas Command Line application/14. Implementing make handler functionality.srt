@@ -1,0 +1,495 @@
+1
+00:00:02,990 --> 00:00:09,950
+So let's improve our Seelye even more by implementing a make handler function that allows us to create
+
+2
+00:00:10,250 --> 00:00:15,050
+with one command a simple handler, just a stub handler for our end users.
+
+3
+00:00:15,170 --> 00:00:21,020
+So I'm looking at may not go in the celebrity project inside the CMD Seelye folder.
+
+4
+00:00:21,230 --> 00:00:27,740
+And if we scroll down here, we already have a function here that says make that calls to make.
+
+5
+00:00:27,860 --> 00:00:33,470
+So we have a switch statement with the case of make and provided they have an argument, all the appropriate
+
+6
+00:00:33,470 --> 00:00:35,180
+arguments it calls do make.
+
+7
+00:00:35,690 --> 00:00:36,740
+So let's open to make.
+
+8
+00:00:37,790 --> 00:00:39,890
+And right now we have migration and we have off.
+
+9
+00:00:40,010 --> 00:00:46,190
+So let's add a new case case, and I'll call this one obviously, handler.
+
+10
+00:00:49,300 --> 00:00:54,100
+In this case, we need to make sure that we haven't earned three, that's not an empty string because
+
+11
+00:00:54,100 --> 00:01:00,270
+we can't say celebrities make handler and stop because we wouldn't know what to call the handler.
+
+12
+00:01:00,280 --> 00:01:01,630
+So we'll do a simple check here.
+
+13
+00:01:01,810 --> 00:01:08,710
+If ERG three is equal to an empty string, then we'll exit gracefully, exit gracefully and we'll handed
+
+14
+00:01:08,710 --> 00:01:09,230
+errors.
+
+15
+00:01:09,530 --> 00:01:18,640
+New, you must give the handler a name, and that's simple enough.
+
+16
+00:01:18,820 --> 00:01:20,470
+And let's give ourselves some room here.
+
+17
+00:01:21,580 --> 00:01:26,260
+Now, assuming we have that, what we're going to do, of course, is build a file name for the new
+
+18
+00:01:26,260 --> 00:01:30,820
+handler, copy some template file into that file.
+
+19
+00:01:31,780 --> 00:01:33,700
+And right now, that's pretty straightforward.
+
+20
+00:01:33,790 --> 00:01:40,060
+So we'll just say filing or filing for the handler will be sold on route path because it needs to be
+
+21
+00:01:40,060 --> 00:01:47,080
+the full path named the file we're going to create plus and handlers go in the handlers directory plus
+
+22
+00:01:47,080 --> 00:01:52,300
+and I'll just take whatever name they gave me and convert it to lowercase using the strings package
+
+23
+00:01:52,300 --> 00:01:53,980
+strings dot to lower.
+
+24
+00:01:55,210 --> 00:01:59,510
+And it would be R3, and then we need to append don't go to the end.
+
+25
+00:01:59,530 --> 00:02:02,290
+So that will be the full path named to the file we're going to create.
+
+26
+00:02:02,860 --> 00:02:05,480
+And of course, we want to make sure the file doesn't already exist.
+
+27
+00:02:05,500 --> 00:02:07,210
+We don't want to overwrite an existing one.
+
+28
+00:02:07,450 --> 00:02:15,670
+So if file exists, that function, we wrote just a few lecturer ago file name, then exit gracefully
+
+29
+00:02:16,900 --> 00:02:26,560
+with errors dot new and we'll just say file name plus already exists.
+
+30
+00:02:27,040 --> 00:02:28,450
+And that stops at this point.
+
+31
+00:02:28,450 --> 00:02:30,490
+So we're not overwriting somebody else's data.
+
+32
+00:02:32,470 --> 00:02:41,560
+Now, one of the things we can't do is simply copy a template unchanged over to the My App directory
+
+33
+00:02:41,560 --> 00:02:47,290
+because no matter what we put in that template, it's going to have the wrong name for whatever handler
+
+34
+00:02:47,290 --> 00:02:48,280
+we're trying to create.
+
+35
+00:02:48,310 --> 00:02:55,780
+So instead, let's create a data variable and check for an error, and we'll read the contents of that
+
+36
+00:02:56,050 --> 00:03:00,040
+template, which we haven't made yet, but we'll make it shortly into data.
+
+37
+00:03:00,370 --> 00:03:06,880
+OK, so we'll go to template EFS and we want to read a file right there.
+
+38
+00:03:07,660 --> 00:03:13,900
+In the file we want to read is templates, and we have to create this directory handlers and we'll call
+
+39
+00:03:13,900 --> 00:03:16,810
+it handler dot dot and go dot text.
+
+40
+00:03:17,230 --> 00:03:17,560
+OK.
+
+41
+00:03:18,070 --> 00:03:23,020
+So that will read the contents of that file into data, and we check for an error.
+
+42
+00:03:23,350 --> 00:03:29,800
+If error is not equal to nil, then exit gracefully with error and we'll have to create that file in
+
+43
+00:03:29,800 --> 00:03:30,100
+a minute.
+
+44
+00:03:32,260 --> 00:03:37,300
+Now I'm going to create a new variable called Handler, and this will be the final version of that handler,
+
+45
+00:03:37,300 --> 00:03:41,330
+and it's assigned to the value of casting data to a string.
+
+46
+00:03:41,380 --> 00:03:43,540
+So now it's a string, so now I can do something with it.
+
+47
+00:03:43,960 --> 00:03:50,890
+And what I'm going to do is I'm going to put some text in that template file that I can replace with
+
+48
+00:03:50,890 --> 00:03:54,220
+whatever I want to call this particular handler.
+
+49
+00:03:54,370 --> 00:03:54,790
+OK?
+
+50
+00:03:55,630 --> 00:03:59,470
+So it's as simple as handler is now equal to strings.
+
+51
+00:03:59,470 --> 00:04:02,050
+Don't replace all replace.
+
+52
+00:04:02,060 --> 00:04:03,550
+All right there.
+
+53
+00:04:05,200 --> 00:04:08,260
+And we want to search in the string handler.
+
+54
+00:04:08,530 --> 00:04:14,590
+We want to look for and I'll call it, dollar sign handler name like that dollar sign because there's
+
+55
+00:04:14,590 --> 00:04:17,030
+no way that's going to exist anywhere else in the template.
+
+56
+00:04:17,860 --> 00:04:20,290
+And I want to replace it with using staircase.
+
+57
+00:04:21,820 --> 00:04:28,630
+Staircase right there, two camel like a camel case.
+
+58
+00:04:28,780 --> 00:04:34,240
+And what I'm changing, of course, is are three, so that will take whatever they type for a name for
+
+59
+00:04:34,240 --> 00:04:39,970
+their handler, convert it to camel case, which is the norm for naming handlers and replace every occurrence
+
+60
+00:04:39,970 --> 00:04:44,920
+of dollar sign handler name dollar sign with the correct name for this particular handler.
+
+61
+00:04:45,400 --> 00:04:45,700
+OK.
+
+62
+00:04:47,020 --> 00:04:48,670
+And at that point, I'm just going to write the file.
+
+63
+00:04:49,180 --> 00:04:52,910
+So error equals IOU tool dot right file.
+
+64
+00:04:54,670 --> 00:04:57,070
+And I want to write the contents.
+
+65
+00:04:57,460 --> 00:05:05,350
+I want to write to file name, which I have a capital in for and I want to cast to a slice of bytes.
+
+66
+00:05:06,700 --> 00:05:10,900
+The string variable handler, which has the contents that I want it to be and will give it sensible
+
+67
+00:05:10,900 --> 00:05:11,440
+permissions.
+
+68
+00:05:11,500 --> 00:05:16,180
+Zero six four four should do the trick and again will copy this.
+
+69
+00:05:18,550 --> 00:05:19,360
+Paste it in here.
+
+70
+00:05:22,400 --> 00:05:23,420
+And that should do it for that.
+
+71
+00:05:23,720 --> 00:05:33,410
+So let's go back to our templates directory and create a new directory called handlers, and inside
+
+72
+00:05:33,410 --> 00:05:37,790
+of that will create a new file called Handler and Coco Text.
+
+73
+00:05:40,210 --> 00:05:45,340
+So we'll just type it out is a regal photo package handlers, which would have to be and then we'll
+
+74
+00:05:45,340 --> 00:05:51,160
+import the one thing we'll need, but I'll put it like this in case they want to put more imports in
+
+75
+00:05:51,160 --> 00:05:51,700
+quickly.
+
+76
+00:05:52,330 --> 00:06:01,510
+We want net h GDP and down here, I'll say dollar sign put a space there handler name.
+
+77
+00:06:02,320 --> 00:06:06,220
+Dollar sign comment goes here.
+
+78
+00:06:08,380 --> 00:06:14,950
+Try it again here, and I'll create a funk with a receiver of h.
+
+79
+00:06:14,950 --> 00:06:19,780
+A pointer to the type of handlers with dollar sign.
+
+80
+00:06:20,590 --> 00:06:22,610
+And I'm a copy that I'm going to miss Typekit otherwise.
+
+81
+00:06:22,610 --> 00:06:23,890
+And I'm doing the autocomplete.
+
+82
+00:06:23,890 --> 00:06:24,760
+For me, that's nice.
+
+83
+00:06:26,560 --> 00:06:35,830
+And that takes as old handlers do the response, writer, HTP response writer and are is a pointer to
+
+84
+00:06:36,070 --> 00:06:38,830
+FTP Typekit request.
+
+85
+00:06:40,180 --> 00:06:41,500
+And we'll just leave it empty like that.
+
+86
+00:06:42,850 --> 00:06:44,330
+So that should do the trick.
+
+87
+00:06:44,380 --> 00:06:49,390
+Now let's go back to our main doco and update our helpful right there.
+
+88
+00:06:49,390 --> 00:06:50,270
+His show help.
+
+89
+00:06:50,330 --> 00:07:04,000
+So let's find that and we'll just add on another line make handler name and say creates a stub handler
+
+90
+00:07:04,450 --> 00:07:06,250
+in the handlers directory.
+
+91
+00:07:08,200 --> 00:07:14,650
+Now, that's not a whole lot of functionality, but it does make life easier for people that are working
+
+92
+00:07:14,650 --> 00:07:20,050
+with our product, and we may as well since we're here anyway, let's say make model name.
+
+93
+00:07:20,200 --> 00:07:28,990
+We're going to do that next creates a new model in the model's directory.
+
+94
+00:07:31,930 --> 00:07:39,100
+OK, so that's pretty straightforward, and we can try it out so we can say make build, underscore
+
+95
+00:07:39,100 --> 00:07:39,580
+Seelye.
+
+96
+00:07:41,140 --> 00:07:47,890
+And we have a problem here, staircase no required module provides this, where is that?
+
+97
+00:07:48,370 --> 00:07:49,570
+And that is my fault.
+
+98
+00:07:50,050 --> 00:07:55,240
+I never imported this module and this is something that I really should have noticed before I did it.
+
+99
+00:07:55,240 --> 00:08:01,080
+But to convert something to camel case, the easiest way in the world is to import this package.
+
+100
+00:08:01,090 --> 00:08:01,960
+So let's try that.
+
+101
+00:08:02,500 --> 00:08:04,360
+Go get and paste that in there.
+
+102
+00:08:07,020 --> 00:08:08,860
+And let's go back to make don't go.
+
+103
+00:08:09,360 --> 00:08:12,710
+And I did the auto import for me and fixed it, so let's try that again.
+
+104
+00:08:12,720 --> 00:08:13,500
+My apologies.
+
+105
+00:08:13,920 --> 00:08:15,540
+So let's just go have a look at this.
+
+106
+00:08:16,530 --> 00:08:19,020
+I'll open my web browser and we'll paste that.
+
+107
+00:08:19,020 --> 00:08:20,510
+You were all in the location bar.
+
+108
+00:08:20,520 --> 00:08:22,620
+And as you can see, this is a dead simple package.
+
+109
+00:08:22,620 --> 00:08:28,410
+We could implement this functionality ourself, but it just allows us to change things to snake a snake
+
+110
+00:08:28,410 --> 00:08:30,110
+with ignore, so on and so forth.
+
+111
+00:08:30,120 --> 00:08:31,620
+And the one we used was to cameras.
+
+112
+00:08:31,650 --> 00:08:32,640
+I apologize for that.
+
+113
+00:08:33,930 --> 00:08:35,430
+So now let's try building that again.
+
+114
+00:08:37,140 --> 00:08:38,160
+Make Build Seelye.
+
+115
+00:08:41,130 --> 00:08:43,740
+And let's go back to our other project, my app.
+
+116
+00:08:44,220 --> 00:08:47,220
+And from here, I should be able to go into the terminal.
+
+117
+00:08:47,250 --> 00:08:56,550
+Clear the screen and Typekit celebrities make handler and I'll just call it test handler.
+
+118
+00:08:58,640 --> 00:08:59,120
+There it is.
+
+119
+00:08:59,690 --> 00:09:02,000
+So enough, I look in my handler's directory.
+
+120
+00:09:02,180 --> 00:09:05,550
+I have one called test handler all lowercase as it should be.
+
+121
+00:09:05,600 --> 00:09:11,060
+And if they open it up, it's actually named test handler in camel case, as it should be.
+
+122
+00:09:11,150 --> 00:09:11,480
+OK.
+
+123
+00:09:11,540 --> 00:09:12,350
+Very straightforward.
+
+124
+00:09:13,040 --> 00:09:16,850
+Now, in the next lecture, we'll do a similar thing for models.

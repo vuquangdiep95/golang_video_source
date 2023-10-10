@@ -1,0 +1,207 @@
+1
+00:00:00,300 --> 00:00:03,700
+OK, đây là cấu trúc chính mà tôi thực sự thích.
+
+2
+00:00:03,720 --> 00:00:09,210
+Nếu bạn không biết tôi bắt đầu với một lý thuyết bởi vì tôi nghĩ bạn không thể bắt đầu rảnh tay mà không hiểu
+
+3
+00:00:09,210 --> 00:00:10,600
+làm thế nào một khuôn khổ hoạt động.
+
+4
+00:00:10,650 --> 00:00:14,030
+Sau đó, chúng ta sẽ có 30 phút về khái niệm GOPAC cho lý thuyết.
+
+5
+00:00:14,100 --> 00:00:18,840
+Bạn có thể không thích nó và bạn có thể bỏ qua phần đó nếu muốn, nhưng tôi khuyên bạn nên dùng nó
+
+6
+00:00:18,840 --> 00:00:20,700
+mạnh mẽ làm theo nó và treo nó.
+
+7
+00:00:20,910 --> 00:00:24,900
+Sau đó, chúng tôi có phần 2 đang được thực hiện và đây là chương trình thuần túy.
+
+8
+00:00:24,960 --> 00:00:30,870
+Hàng giờ lập trình, chúng tôi sẽ triển khai từng loại API dưới dạng API đơn nhất
+
+9
+00:00:30,900 --> 00:00:36,650
+ứng dụng khách phát trực tuyến chậm hơn phát trực tuyến API hai chiều phát trực tuyến hàng năm, vì vậy hãy thực hành.
+
+10
+00:00:36,660 --> 00:00:42,900
+Cuối cùng là phần thứ ba cũng là về các khái niệm nâng cao, vì vậy chúng ta sẽ xem các khái niệm
+
+11
+00:00:43,170 --> 00:00:46,750
+nâng cao như hết hạn mã lỗi.
+
+12
+00:00:47,310 --> 00:00:50,850
+Bảo mật SSL, v.v. và chúng tôi sẽ triển khai.
+
+13
+00:00:50,850 --> 00:00:52,440
+Vậy đây là nơi cấu trúc tòa án.
+
+14
+00:00:52,440 --> 00:00:56,090
+Đừng ngạc nhiên nếu lập trình không bắt đầu cho đến sau phần lý thuyết.
+
+15
+00:00:56,190 --> 00:00:57,000
+Được rồi.
+
+16
+00:00:57,360 --> 00:00:58,520
+Bây giờ các mục tiêu của khóa học.
+
+17
+00:00:58,680 --> 00:01:03,350
+Tôi muốn bạn tìm hiểu lý thuyết GOPAC và hiểu cách thức hoạt động của GOPAC.
+
+18
+00:01:03,390 --> 00:01:07,410
+Tôi muốn bạn có thể so sánh châu Âu mà bạn thấy trong phần còn lại của mô hình api.
+
+19
+00:01:07,410 --> 00:01:13,080
+Tôi muốn bạn viết các dịch vụ Yuji RPG trong giao thức, nhưng đối với những pha phạm lỗi, tôi muốn bạn có thể
+
+20
+00:01:13,080 --> 00:01:14,460
+tạo mã máy chủ và máy khách.
+
+21
+00:01:14,460 --> 00:01:19,320
+Bạn sẽ có thể triển khai máy chủ nước tiểu bằng cách loại bỏ ứng dụng khách phát trực tuyến và API phát trực tuyến
+
+22
+00:01:19,320 --> 00:01:19,880
+hai chiều.
+
+23
+00:01:20,430 --> 00:01:25,230
+Bạn sẽ thực hành mọi thứ với các bài tập và giải pháp của họ hàng năm triển khai các khái niệm sự kiện như tôi đã có
+
+24
+00:01:25,230 --> 00:01:27,560
+nói và cũng cho bạn gợi ý một lần nữa.
+
+25
+00:01:27,570 --> 00:01:34,170
+Khóa học này về cách lấy cảm hứng cho các dịch vụ JROTC thực sự và cách tiếp tục các dịch vụ của bạn
+
+26
+00:01:34,170 --> 00:01:35,430
+con đường học tập.
+
+27
+00:01:35,430 --> 00:01:40,620
+Tuy nhiên, điều kiện tiên quyết là bạn phải thực sự giỏi ngôn ngữ lập trình mà chúng tôi đang sử dụng cho việc này
+
+28
+00:01:40,620 --> 00:01:41,170
+corso.
+
+29
+00:01:41,180 --> 00:01:45,840
+Không sao nếu bạn không biết kiến ​​thức cơ bản về ngôn ngữ lập trình của mình, bạn sẽ hoàn toàn lạc lối.
+
+30
+00:01:45,840 --> 00:01:47,550
+Điều này khá tiên tiến.
+
+31
+00:01:47,550 --> 00:01:53,440
+Ngoài ra, nếu bạn biết bất cứ điều gì về lập trình không đồng bộ, thì đó là điểm cộng B và một điểm cộng lớn cho khóa học này.
+
+32
+00:01:53,440 --> 00:01:53,660
+Được rồi.
+
+33
+00:01:53,670 --> 00:01:54,990
+Nếu bạn không biết anh ấy, điều đó tốt.
+
+34
+00:01:54,990 --> 00:01:59,880
+Tôi sẽ cố gắng giải thích mọi thứ một cách chậm rãi, nhưng điều rất quan trọng là phải biết các kiểu mẫu của
+
+35
+00:01:59,910 --> 00:02:01,830
+phân luồng và biết một sự đồng bộ.
+
+36
+00:02:01,830 --> 00:02:04,940
+Tôi cũng muốn bạn hiểu rõ về bộ đệm giao thức.
+
+37
+00:02:05,010 --> 00:02:07,530
+Tôi sẽ không dành thời gian giải thích cho bạn hiểu giao thức Buffer là gì.
+
+38
+00:02:07,920 --> 00:02:12,600
+Nếu bạn cần tìm hiểu về bộ đệm giao thức, tôi thực sự khuyên bạn nên tham gia khóa học Bộ đệm giao thức của mình
+
+39
+00:02:12,600 --> 00:02:15,370
+hoặc tìm kiếm trực tuyến các tài liệu và nguồn miễn phí.
+
+40
+00:02:15,720 --> 00:02:21,330
+Nhìn chung, đối với khóa học này, bạn sẽ cần phải có một tâm trí rất cởi mở để học những điều mới mẻ và bản thân.
+
+41
+00:02:21,330 --> 00:02:22,610
+Tôi sẽ kể ngay.
+
+42
+00:02:22,650 --> 00:02:24,660
+Khóa học này sẽ đầy thử thách.
+
+43
+00:02:24,710 --> 00:02:25,010
+Được rồi.
+
+44
+00:02:25,020 --> 00:02:26,840
+Nó không phải là về việc lên lịch 1 hoặc 1.
+
+45
+00:02:26,850 --> 00:02:29,280
+Đây là cuộc thánh chiến 1 chọi 1 đúng nghĩa.
+
+46
+00:02:29,370 --> 00:02:31,230
+Vậy khóa học này dành cho ai?
+
+47
+00:02:31,290 --> 00:02:35,970
+Bạn có thể là nhà phát triển và muốn tìm hiểu cách viết dịch vụ GPS và khách hàng và bạn có thể
+
+48
+00:02:35,970 --> 00:02:40,410
+là một kiến ​​trúc sư và muốn hiểu cách GAAP hoạt động và khái niệm đằng sau tất cả những khác biệt
+
+49
+00:02:40,410 --> 00:02:41,340
+tipi trong API.
+
+50
+00:02:42,180 --> 00:02:43,990
+Nhìn chung, bạn đang ở trong tay tốt.
+
+51
+00:02:44,070 --> 00:02:45,810
+Đó là nó cho những thứ nhàm chán.
+
+52
+00:02:45,810 --> 00:02:46,890
+Hẹn gặp lại các bạn trong bài học tiếp theo.

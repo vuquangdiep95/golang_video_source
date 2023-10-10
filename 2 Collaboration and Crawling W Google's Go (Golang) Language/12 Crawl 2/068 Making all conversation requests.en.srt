@@ -1,0 +1,491 @@
+1
+00:00:00,240 --> 00:00:06,570
+So the next function is to get all the conversation parts because it needs to make multiple requests
+
+2
+00:00:06,570 --> 00:00:08,510
+to get the entire conversation.
+
+3
+00:00:08,580 --> 00:00:14,070
+So I've got a function to make a single request which will get however many responses.
+
+4
+00:00:14,370 --> 00:00:21,210
+I think trial and error determined it was about nine tweets each time but that it's not necessarily
+
+5
+00:00:21,210 --> 00:00:22,470
+guaranteed.
+
+6
+00:00:22,470 --> 00:00:29,090
+So I want to get all of them though so I've made this function get conversation to basically call the
+
+7
+00:00:29,100 --> 00:00:33,030
+make conversation request multiple times until I have all the information I need.
+
+8
+00:00:35,580 --> 00:00:42,750
+So that Max position mint position thing is create a variable called continue code to kind of manage
+
+9
+00:00:42,750 --> 00:00:45,780
+that because basically that's what it is.
+
+10
+00:00:45,780 --> 00:00:51,050
+It's a code that Twitter gives me to continue the request for more conversation parts.
+
+11
+00:00:51,150 --> 00:00:54,560
+So so I'm just calling it continue code.
+
+12
+00:00:54,590 --> 00:01:00,860
+This is basically the max position mint position thing and then what I'm looking to make is I just want
+
+13
+00:01:00,860 --> 00:01:05,750
+the items H2 email over all the other to do are kind of details for getting more information.
+
+14
+00:01:05,870 --> 00:01:09,920
+But the one I'm actually interested in is the items H2 email which is a string.
+
+15
+00:01:09,920 --> 00:01:15,450
+So I'm looking to actually return is just a slice of all the items H2 email that I get.
+
+16
+00:01:15,540 --> 00:01:16,100
+So.
+
+17
+00:01:16,310 --> 00:01:18,660
+So that's my response type and that's.
+
+18
+00:01:18,680 --> 00:01:23,180
+And so I create here messages which is a slice of string.
+
+19
+00:01:23,540 --> 00:01:27,340
+So the index zeroes can be the very first I make the request.
+
+20
+00:01:27,360 --> 00:01:31,940
+Next one will be the items they show off the second time and make the quest index to be the third time
+
+21
+00:01:31,940 --> 00:01:33,780
+make the request items each time out.
+
+22
+00:01:34,350 --> 00:01:38,990
+So that's what messages is going to be is the item that is the list of all the items H.G. knows.
+
+23
+00:01:39,190 --> 00:01:47,780
+Yeah and then I infinite for loop just forever until until broken in each time through the loop very
+
+24
+00:01:47,780 --> 00:01:53,330
+first thing I do is I call my conversation request with the continued code which starts off as empty
+
+25
+00:01:53,330 --> 00:01:55,160
+string.
+
+26
+00:01:55,160 --> 00:02:00,900
+And so that will make one request and that would give me back as a response this conversation response.
+
+27
+00:02:00,950 --> 00:02:01,370
+Struct
+
+28
+00:02:04,120 --> 00:02:09,070
+and if there is some sort of error I add additional information to the error and they return it which
+
+29
+00:02:09,070 --> 00:02:15,010
+bracing out the infinite for loop and out of the function backup to ever call this function once I've
+
+30
+00:02:15,010 --> 00:02:22,680
+got the response I can use response to H email was what was itemization email was up in the data structure.
+
+31
+00:02:23,530 --> 00:02:30,120
+H team l It's like items h t mail from the Jason so I can just add that to the messages.
+
+32
+00:02:30,120 --> 00:02:39,640
+Slice then if there are no there's not any more I can break out of the infinite loop and and go to just
+
+33
+00:02:39,640 --> 00:02:46,140
+returning all those messages that I found if there is more I update my continued code variable with
+
+34
+00:02:47,370 --> 00:02:52,770
+with what Twitter said the main position was and the robots that takes Steve said make waited a second
+
+35
+00:02:52,770 --> 00:02:53,710
+between each request.
+
+36
+00:02:53,730 --> 00:02:58,710
+So I just say time sleep time second to wait one second before it goes back to the top.
+
+37
+00:02:58,710 --> 00:02:59,280
+The for loop
+
+38
+00:03:02,500 --> 00:03:04,080
+that's awesome.
+
+39
+00:03:04,910 --> 00:03:06,330
+I was taking notes.
+
+40
+00:03:06,330 --> 00:03:11,420
+It didn't capture all that but basically continued code so I'm just going to do a little reiteration
+
+41
+00:03:11,420 --> 00:03:17,300
+here and read through it and you help me make sure I grabbed it you can t code obviously being set to
+
+42
+00:03:17,300 --> 00:03:20,230
+an empty string and get conversation.
+
+43
+00:03:20,270 --> 00:03:27,280
+Start at the top takes in takes in it returns a slice of string and an error in continued code.
+
+44
+00:03:27,350 --> 00:03:32,720
+Empty string and messages will be where you store all your e-mail and that's just gonna be a slice of
+
+45
+00:03:32,720 --> 00:03:33,800
+strings.
+
+46
+00:03:33,800 --> 00:03:37,330
+And then you make conversation requests and you're passing in continued code.
+
+47
+00:03:37,340 --> 00:03:43,580
+So if you look at the signature make conversation request up above it is wanting your max position and
+
+48
+00:03:43,580 --> 00:03:50,050
+what we are what we saw is that Max position when we are looking at the Twitter API the max it was the
+
+49
+00:03:50,050 --> 00:03:52,210
+men they gave back.
+
+50
+00:03:52,210 --> 00:03:59,160
+I'm in position and we call and we use that as Max position so he came back and then position and then
+
+51
+00:03:59,160 --> 00:04:00,890
+you called it Max position.
+
+52
+00:04:00,930 --> 00:04:02,280
+So in the MAX position was what.
+
+53
+00:04:02,380 --> 00:04:06,130
+And then Max position was what you get that you'd call it Max mission when you gave it back.
+
+54
+00:04:06,220 --> 00:04:12,940
+OK so maybe they think about that logically like Max position is the starting point.
+
+55
+00:04:12,940 --> 00:04:15,480
+That's that that's been ably the way they're thinking about it all right.
+
+56
+00:04:15,570 --> 00:04:23,760
+Possibly I'd probably add one hundred tweets and and they gave back men position and that becomes our
+
+57
+00:04:23,760 --> 00:04:24,270
+max.
+
+58
+00:04:24,330 --> 00:04:25,230
+Yeah.
+
+59
+00:04:25,380 --> 00:04:25,960
+Yeah.
+
+60
+00:04:26,190 --> 00:04:27,120
+That's just thrown.
+
+61
+00:04:27,120 --> 00:04:28,500
+That would've confused me.
+
+62
+00:04:28,690 --> 00:04:29,200
+Yes.
+
+63
+00:04:29,220 --> 00:04:30,620
+Still confused.
+
+64
+00:04:31,110 --> 00:04:36,750
+But so are you passing the continued code and the continued code that you're passing and roll back up
+
+65
+00:04:36,750 --> 00:04:44,340
+to the function the make conversation request is Max position which ends up being in the query unit
+
+66
+00:04:44,400 --> 00:04:48,840
+and that's in the parameter so that just says this is where we're starting from this point forward.
+
+67
+00:04:49,230 --> 00:04:49,680
+And you.
+
+68
+00:04:49,710 --> 00:04:51,170
+That's where you took the guess.
+
+69
+00:04:51,300 --> 00:04:52,640
+You hazard a guess.
+
+70
+00:04:52,650 --> 00:04:54,040
+I loved that phrase you use.
+
+71
+00:04:54,040 --> 00:05:01,080
+He hazard the gas of empty string band and then you get a response back from a conversation request
+
+72
+00:05:01,140 --> 00:05:06,570
+and that response make conversation request returns a response an error and the response is that entire
+
+73
+00:05:06,570 --> 00:05:14,740
+data structure that you had up above which was a conversation response and then more and and then h
+
+74
+00:05:14,740 --> 00:05:17,620
+t Mal and Co.
+
+75
+00:05:17,640 --> 00:05:18,270
+All right good.
+
+76
+00:05:18,300 --> 00:05:25,060
+Then more and each team out and and then that's your response back and then you pinned your message
+
+77
+00:05:25,060 --> 00:05:27,470
+you response each female straight forward.
+
+78
+00:05:27,690 --> 00:05:34,820
+And if there's nothing more you're done with this for loop and then continue code as response men position
+
+79
+00:05:34,830 --> 00:05:39,940
+and that becomes your max that you pass and this thing that Twitter uses.
+
+80
+00:05:40,500 --> 00:05:45,930
+And then just in just a second week because they requested that their robots just do it because that
+
+81
+00:05:45,930 --> 00:05:49,250
+was easy enough to implement and be respectful.
+
+82
+00:05:49,850 --> 00:05:55,710
+And so what I just did there too is something that I find myself often doing When people explain code
+
+83
+00:05:55,710 --> 00:06:03,180
+to me particularly if it's code where like okay I'm not just instantly grasping it like I kind of have
+
+84
+00:06:03,180 --> 00:06:03,340
+to.
+
+85
+00:06:03,360 --> 00:06:09,180
+Somebody will talk through it and then I got to talk through it back to them and and kind of like make
+
+86
+00:06:09,180 --> 00:06:15,840
+sure that I'm hearing it correctly and so I'm sharing that just inadvertently I did it because it's
+
+87
+00:06:15,840 --> 00:06:18,720
+like I want to make sure I understand this and then maybe add me going through it.
+
+88
+00:06:18,730 --> 00:06:24,480
+I'll help you understand it but not only might that be valuable to you but it might also be valuable
+
+89
+00:06:24,780 --> 00:06:31,470
+for you to see how I go about understanding code and so you can use that as a learning tool.
+
+90
+00:06:31,470 --> 00:06:38,520
+So part of what my job is as a teacher is to not only bring you information but also to help you learn
+
+91
+00:06:38,520 --> 00:06:42,080
+how to learn that information too often in academia.
+
+92
+00:06:42,090 --> 00:06:44,790
+They just give information right and expect you to learn it.
+
+93
+00:06:44,790 --> 00:06:46,800
+They don't ever show you how to learn.
+
+94
+00:06:46,950 --> 00:06:51,150
+And so I want you to also know how to learn effectively and so this is a technique that I use to help
+
+95
+00:06:51,150 --> 00:06:51,840
+me learn.
+
+96
+00:06:52,020 --> 00:06:53,610
+And so what you might do.
+
+97
+00:06:53,750 --> 00:06:57,900
+Here's the takeaway what you might do is you're going through this course when you hear things like
+
+98
+00:06:57,900 --> 00:06:59,880
+that after you watch it.
+
+99
+00:06:59,910 --> 00:07:01,800
+You could stop the video.
+
+100
+00:07:01,860 --> 00:07:06,810
+You can look at the code and then you can explain it to yourself to make sure you got it.
+
+101
+00:07:06,900 --> 00:07:09,290
+And in doing that like literally talk it out loud.
+
+102
+00:07:09,300 --> 00:07:12,110
+They call it rubber duck debugging right.
+
+103
+00:07:12,150 --> 00:07:18,240
+But you know you could talk to your water bottle your dog your computer screen but just say it out loud
+
+104
+00:07:18,720 --> 00:07:24,780
+and talk it through and then that engages different parts of the brain when you are verbalizing stuff
+
+105
+00:07:24,840 --> 00:07:28,470
+your brain's using different areas when you're hearing the words that you spoke.
+
+106
+00:07:28,470 --> 00:07:33,780
+Your brain is using different areas and then that help you know you're actually exercising it.
+
+107
+00:07:33,810 --> 00:07:40,110
+So that's going to help and bad that material help you understand this code more quickly so learn faster
+
+108
+00:07:40,120 --> 00:07:42,340
+you'll remember it longer.
+
+109
+00:07:42,570 --> 00:07:44,510
+So that's something to help you learn the code.
+
+110
+00:07:44,550 --> 00:07:45,480
+All right.
+
+111
+00:07:45,490 --> 00:07:49,950
+Because the our goal here isn't just to be like Hey look at the awesome code.
+
+112
+00:07:49,950 --> 00:07:51,260
+We're awesome.
+
+113
+00:07:51,270 --> 00:07:54,850
+Our goal here is for you to gain skills.
+
+114
+00:07:54,990 --> 00:07:56,590
+And that's what this is all about.
+
+115
+00:07:56,640 --> 00:07:57,230
+All right.
+
+116
+00:07:57,420 --> 00:08:03,760
+That's that's that's a good conversation and the next one we're going to this one is actually passing
+
+117
+00:08:03,760 --> 00:08:05,780
+that person over go back man.
+
+118
+00:08:05,880 --> 00:08:06,960
+This is beautiful.
+
+119
+00:08:06,960 --> 00:08:08,160
+I love what you created.
+
+120
+00:08:08,160 --> 00:08:09,350
+All right we'll see in the next meeting.
+
+121
+00:08:09,360 --> 00:08:10,250
+Anything you want to add.
+
+122
+00:08:10,290 --> 00:08:10,980
+No.
+
+123
+00:08:10,980 --> 00:08:11,790
+See in the next video.

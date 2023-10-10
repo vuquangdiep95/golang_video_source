@@ -1,0 +1,67 @@
+1
+00:00:01,560 --> 00:00:02,790
+In this section of the course.
+
+2
+00:00:02,790 --> 00:00:07,410
+We'll continue with the code that we worked on in the last section, but we'll take care of the handlers
+
+3
+00:00:07,410 --> 00:00:10,080
+that actually allow a user to subscribe to a plan.
+
+4
+00:00:10,620 --> 00:00:16,410
+And here's where we're going to add some actual concurrency, more sophisticated concurrency to our
+
+5
+00:00:16,410 --> 00:00:17,070
+code base.
+
+6
+00:00:17,460 --> 00:00:22,890
+So what we're going to do, we're going to write a handler that fires off a couple of go routines.
+
+7
+00:00:22,890 --> 00:00:28,230
+One will generate an invoice and we'll just write a simple stub handler that generates a dummy invoice
+
+8
+00:00:28,230 --> 00:00:30,690
+because that's not important for what we're doing in this course.
+
+9
+00:00:31,230 --> 00:00:36,210
+But that will run in the background and we'll also have another go routine fired off that will open
+
+10
+00:00:36,210 --> 00:00:39,360
+a PDF file, say a user manual.
+
+11
+00:00:39,360 --> 00:00:44,070
+We're going to assume that when you buy a plan from this service, you get a customized user manual
+
+12
+00:00:44,070 --> 00:00:45,240
+sent you as a PDF.
+
+13
+00:00:45,780 --> 00:00:52,230
+So we'll open an existing PDF and we'll modify it, save that PDF and then send it off to the user as
+
+14
+00:00:52,230 --> 00:00:52,950
+an attachment.
+
+15
+00:00:52,950 --> 00:00:54,720
+And these things will run concurrently.
+
+16
+00:00:54,990 --> 00:00:57,870
+And of course we will also subscribe a user to a plan.
+
+17
+00:00:58,290 --> 00:00:59,610
+So let's get started.

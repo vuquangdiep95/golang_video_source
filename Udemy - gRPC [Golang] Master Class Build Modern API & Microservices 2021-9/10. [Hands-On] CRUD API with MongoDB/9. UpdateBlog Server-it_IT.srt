@@ -1,0 +1,516 @@
+1
+00:00:00,760 --> 00:00:07,390
+OK ora che abbiamo fatto l'aggiornamento leggendo dovremmo andare e fare gli aggiornamenti per
+
+2
+00:00:07,390 --> 00:00:17,220
+questo andremo al blog di Prato e includeremo un nuovo aapc che BC si chiamerà update Blug e richiede una richiesta
+
+3
+00:00:17,230 --> 00:00:22,800
+Blug di aggiornamento e ritorna una risposta Blug di aggiornamento.
+
+4
+00:00:22,800 --> 00:00:26,930
+Quindi di nuovo questo è un tipo urinario di RBC.
+
+5
+00:00:27,040 --> 00:00:32,470
+Ora tornerà non trovato se non viene trovato perché non possiamo aggiornare qualcosa che non è stato
+
+6
+00:00:32,470 --> 00:00:38,150
+trovato quindi è solo qualcosa che è bello da includere, semplicemente duplicherò queste cose e vedremo come andremo.
+
+7
+00:00:38,170 --> 00:00:45,820
+Quindi in realtà la richiesta Blug di aggiornamenti prenderà un blog come input, quindi dobbiamo includere ciò che
+
+8
+00:00:45,820 --> 00:00:52,860
+vogliamo fare per gli aggiornamenti e l'aggiornamento della risposta di Blug restituirà il blog stesso.
+
+9
+00:00:52,870 --> 00:00:53,970
+È perfetto.
+
+10
+00:00:54,060 --> 00:00:54,300
+OK.
+
+11
+00:00:54,310 --> 00:00:55,170
+Quindi siamo pronti ora.
+
+12
+00:00:55,200 --> 00:00:57,460
+Vai avanti e genera del codice per questo.
+
+13
+00:00:57,460 --> 00:01:02,730
+Copio le proteste che tu comandi e io lo incollerò semplicemente sul lato destro.
+
+14
+00:01:02,810 --> 00:01:03,750
+Eccoci qui.
+
+15
+00:01:04,120 --> 00:01:04,650
+OK.
+
+16
+00:01:04,870 --> 00:01:08,560
+Quindi dobbiamo andare avanti e iniziare a implementare il server.
+
+17
+00:01:08,560 --> 00:01:10,140
+Ora ci stiamo abituando.
+
+18
+00:01:10,180 --> 00:01:13,600
+Quindi quello che farò è che troverò la giusta funzione da implementare.
+
+19
+00:01:13,600 --> 00:01:18,030
+Quindi per questo passerò dal codice sorgente alla funzione di aggiornamento di Blug.
+
+20
+00:01:18,060 --> 00:01:21,180
+Bene, lo servi e lo realizzi.
+
+21
+00:01:21,250 --> 00:01:29,210
+Quindi qui quello che vogliamo implementare è una funzione sul server chiamata log.
+
+22
+00:01:29,290 --> 00:01:37,870
+Prenderà un contesto come argomenti e quindi una richiesta da Blug P. B. della richiesta di blocco e restituire un
+
+23
+00:01:37,930 --> 00:01:41,530
+blog P. B. punto di come quella risposta del registro.
+
+24
+00:01:41,770 --> 00:01:41,980
+OK.
+
+25
+00:01:41,980 --> 00:01:44,150
+Ora dobbiamo solo implementarlo.
+
+26
+00:01:44,290 --> 00:01:47,530
+Quindi ho fatto un errore qui.
+
+27
+00:01:47,530 --> 00:01:48,300
+Eccoci qui.
+
+28
+00:01:48,650 --> 00:01:48,960
+OK.
+
+29
+00:01:49,000 --> 00:01:50,260
+Ora dobbiamo implementarlo.
+
+30
+00:01:50,530 --> 00:01:53,840
+Quindi, quando aggiorniamo un blog, avremo chiamato la raccolta che aggiorna.
+
+31
+00:01:54,130 --> 00:01:57,970
+Quindi la prima cosa che dobbiamo fare è ottenere il blog IGY da esso.
+
+32
+00:01:57,970 --> 00:02:04,890
+Quindi estrarremo il blog dalla richiesta, quindi faremo richiesta che ottenga il blog.
+
+33
+00:02:05,210 --> 00:02:05,510
+OK.
+
+34
+00:02:05,530 --> 00:02:06,690
+Ha senso.
+
+35
+00:02:06,790 --> 00:02:13,100
+Includeremo anche una linea di registrazione per dire che siamo in una ricerca di lusso e diciamo che lo vediamo.
+
+36
+00:02:13,450 --> 00:02:15,300
+Questa è la ricerca di lusso.
+
+37
+00:02:15,310 --> 00:02:16,830
+Eccellente quindi arriviamo al blog.
+
+38
+00:02:17,170 --> 00:02:21,120
+E ora estrarremo l'oggetto ID e l'aria.
+
+39
+00:02:21,310 --> 00:02:24,940
+E per questo faremo id oggetto da hack proprio come prima.
+
+40
+00:02:25,180 --> 00:02:27,750
+Blug non ottiene ID.
+
+41
+00:02:27,790 --> 00:02:33,370
+Quindi qui proviamo a ottenere l'id dell'oggetto da esso ovviamente se c'è un errore di analisi.
+
+42
+00:02:33,370 --> 00:02:38,470
+È come prima, quindi dovremmo semplicemente includere il codice prima che sia un argomento non valido,
+
+43
+00:02:38,470 --> 00:02:41,180
+non possiamo analizzare l'IGY e andiamo avanti.
+
+44
+00:02:41,580 --> 00:02:42,240
+OK.
+
+45
+00:02:42,820 --> 00:02:49,960
+Ora quello che dobbiamo fare è fondamentalmente creare un elemento di dati in modo da creare dati come prima.
+
+46
+00:02:49,960 --> 00:02:55,450
+E anche il Blug I am e creerà un filtro perché vogliamo fare un
+
+47
+00:02:55,600 --> 00:02:57,810
+aggiornamento quindi avremo l'eccellenza pronta.
+
+48
+00:02:57,850 --> 00:03:03,220
+OK, quindi non abbiamo queste cose in pratica se vogliamo fare bene vogliamo sostanzialmente aggiornare un documento.
+
+49
+00:03:03,220 --> 00:03:04,190
+Destra.
+
+50
+00:03:04,210 --> 00:03:10,510
+Quindi per questo dovremo vedere se riusciamo a trovare un documento come prima e se possiamo allora possiamo
+
+51
+00:03:10,900 --> 00:03:12,090
+mutare se stesso.
+
+52
+00:03:12,190 --> 00:03:15,940
+Quindi cerchiamo di trovare una funzione proprio qui.
+
+53
+00:03:15,970 --> 00:03:16,290
+OK.
+
+54
+00:03:16,330 --> 00:03:17,200
+Eccellente.
+
+55
+00:03:17,620 --> 00:03:19,850
+E proveremo a trovare lo stesso identico Blug.
+
+56
+00:03:20,200 --> 00:03:25,780
+Quindi, se non riusciamo a trovarlo, non possiamo trovare un blog con un ID specificato e tutti hanno senso.
+
+57
+00:03:25,780 --> 00:03:31,540
+E poi, una volta che siamo felici perché il Blug era nei dati, possiamo iniziare a mutare i dati stessi in
+
+58
+00:03:31,540 --> 00:03:33,230
+modo che possiamo fare i dati.
+
+59
+00:03:33,250 --> 00:03:34,180
+E ci risiamo.
+
+60
+00:03:34,240 --> 00:03:35,360
+Questo è tutto.
+
+61
+00:03:35,440 --> 00:03:41,140
+Quindi supponiamo di dover fare in modo che l'utente autorizzato esegua Blug che viene autorizzato e che
+
+62
+00:03:41,140 --> 00:03:42,290
+proviene dalla richiesta.
+
+63
+00:03:42,520 --> 00:03:44,010
+Quindi dovremo aggiornare i contenuti.
+
+64
+00:03:44,050 --> 00:03:46,420
+Quindi faremo Blug.
+
+65
+00:03:46,660 --> 00:03:51,820
+E finalmente quel titolo equivale all'amore che ottiene il titolo.
+
+66
+00:03:51,820 --> 00:04:00,640
+Quindi ecco il nostro aggiornamento in modo da aggiornare la nostra struttura interna e ora che abbiamo aggiornato i dati perché
+
+67
+00:04:00,640 --> 00:04:07,140
+abbiamo trovato e abbiamo decodificato ora dobbiamo solo andare avanti e utilizzare quella funzione.
+
+68
+00:04:07,150 --> 00:04:09,700
+Quindi per questa collezione è così.
+
+69
+00:04:10,360 --> 00:04:14,680
+Ne abbiamo uno grande e ne abbiamo sostituito uno e in realtà ne
+
+70
+00:04:14,680 --> 00:04:18,120
+sostituiamo uno perché sostituiamo completamente qui solo gli aggiornamenti incrementali.
+
+71
+00:04:18,430 --> 00:04:24,130
+Quindi il contesto sarà di sfondo e il filtro sarà esattamente come prima dello
+
+72
+00:04:24,130 --> 00:04:25,010
+stesso filtro.
+
+73
+00:04:25,270 --> 00:04:31,750
+E la sostituzione stessa diventerà dati perché abbiamo appena messo a posto i dati, quindi è logico
+
+74
+00:04:31,750 --> 00:04:33,480
+che li abbiamo sostituiti.
+
+75
+00:04:33,610 --> 00:04:36,730
+Ora quando ne usciamo è un risultato di aggiornamento o un errore.
+
+76
+00:04:36,910 --> 00:04:49,470
+Quindi iniziamo con questo risultato dei risultati della data e gli aggiornamenti sono che li otteniamo e quindi se riusciamo ad entrare in
+
+77
+00:04:49,560 --> 00:04:51,420
+quell'area cosa facciamo.
+
+78
+00:04:51,720 --> 00:04:53,930
+Bene, questo è probabilmente un tipo di errore interno.
+
+79
+00:04:54,150 --> 00:05:02,070
+Quindi lo restituiremo quindi se l'aria non è nuova, restituiremo un blocco arabo e il codice sarà
+
+80
+00:05:02,070 --> 00:05:14,790
+interno e diremo che non è possibile datare gli oggetti in Mongo D. B e diremo semplicemente perché quindi fondamentalmente diciamo OK.
+
+81
+00:05:14,800 --> 00:05:20,000
+Il motivo per cui non possiamo farlo è che gli aggiornamenti sono eccellenti.
+
+82
+00:05:20,230 --> 00:05:26,450
+Altrimenti otteniamo un risultato di aggiornamento e il risultato stesso dove otteniamo.
+
+83
+00:05:27,160 --> 00:05:30,600
+Beh, fondamentalmente otteniamo un conteggio delle partite e un conteggio del terreno fangoso e un aumento.
+
+84
+00:05:31,120 --> 00:05:34,770
+In realtà non abbiamo bisogno di queste cose perché sappiamo che sarà aggiornato.
+
+85
+00:05:34,780 --> 00:05:40,600
+Quindi quello che possiamo fare è sostanzialmente dire OK, restituiamo i risultati.
+
+86
+00:05:40,600 --> 00:05:41,530
+Quindi dirò
+
+87
+00:05:44,670 --> 00:05:48,680
+il ritorno e l'amore P. B ..
+
+88
+00:05:48,820 --> 00:05:54,350
+E qui dobbiamo creare una risposta di aggiornamento Rob risposta.
+
+89
+00:05:54,370 --> 00:06:02,170
+Questo richiede un blog come argomento e dobbiamo restituire esattamente ciò che abbiamo appena ricevuto come input o dati qualsiasi
+
+90
+00:06:02,560 --> 00:06:03,760
+cosa vogliamo.
+
+91
+00:06:03,760 --> 00:06:10,510
+Quindi la cosa interessante è che ora, perché l'abbiamo già fatto, abbiamo trasformato fondamentalmente i dati in un
+
+92
+00:06:10,510 --> 00:06:12,010
+blog proprio qui.
+
+93
+00:06:12,010 --> 00:06:15,090
+Potremmo effettivamente estrarlo come una funzione.
+
+94
+00:06:15,100 --> 00:06:23,870
+Quindi quello che farò qui è estrarre questo e raccoglierò i dati su Blug P. B. e stiamo passando i dati e dobbiamo
+
+95
+00:06:24,670 --> 00:06:35,610
+creare questa funzione in modo che la funzione denominata data a Blug PV acquisisca i dati di tipo blog item come input e restituirà
+
+96
+00:06:35,620 --> 00:06:43,330
+un Blug così blood P. B. quello Blug.
+
+97
+00:06:43,360 --> 00:06:45,760
+E questo è un puntatore ad esso.
+
+98
+00:06:45,790 --> 00:06:50,620
+Ora, se implementiamo solo quella funzione che è solo una piccola funzione di supporto,
+
+99
+00:06:50,680 --> 00:06:52,190
+restituiremo esattamente questa cosa.
+
+100
+00:06:52,240 --> 00:06:52,910
+Eccoci qui.
+
+101
+00:06:53,110 --> 00:06:59,740
+Quindi ora possiamo usare i dati per bloccare P. B. fare una sintassi abbreviata e come richiamato in fondo.
+
+102
+00:06:59,770 --> 00:07:00,910
+Lo riutilizzerò proprio qui.
+
+103
+00:07:00,910 --> 00:07:05,230
+Quindi abbiamo appena trasformato il nostro codice per riutilizzare un po 'di informazioni.
+
+104
+00:07:05,240 --> 00:07:07,890
+Ora ovviamente l'ago va in seguito.
+
+105
+00:07:08,440 --> 00:07:12,960
+E qui non è felice perché il blog non è del tipo giusto.
+
+106
+00:07:13,060 --> 00:07:18,640
+Quindi diamo un'occhiata non possiamo usare quell'id blogger. come tipo fortuna perché lo adoro.
+
+107
+00:07:18,940 --> 00:07:20,230
+Quindi ecco un puntatore.
+
+108
+00:07:20,230 --> 00:07:25,510
+Quindi qui possiamo solo dire che il blog stesso dovrebbe essere un puntatore.
+
+109
+00:07:25,510 --> 00:07:25,980
+Eccoci qui.
+
+110
+00:07:25,990 --> 00:07:27,540
+Questo ha più senso.
+
+111
+00:07:27,610 --> 00:07:30,230
+E ora la sostituzione di una funzione non funziona.
+
+112
+00:07:30,460 --> 00:07:32,430
+Quindi gli array di aggiornamento sono dichiarati non utilizzati.
+
+113
+00:07:32,470 --> 00:07:35,180
+Che ne dici di non usarlo al momento sul quadrato.
+
+114
+00:07:35,350 --> 00:07:37,330
+OK, quindi ora abbiamo implementato un server.
+
+115
+00:07:37,330 --> 00:07:38,590
+Tutto sembra a posto.
+
+116
+00:07:38,620 --> 00:07:44,120
+Abbiamo a che fare con i casi di errore e quindi per ricordarti che prima abbiamo analizzato l'oggetto che,
+
+117
+00:07:44,180 --> 00:07:47,680
+se è possibile analizzarlo, prova a trovare una corrispondenza nel database.
+
+118
+00:07:47,680 --> 00:07:52,930
+Altrimenti diciamo che non c'è corrispondenza e quindi usiamo la funzione Sostituisci una per sostituire i dati
+
+119
+00:07:52,960 --> 00:07:55,010
+e tornare all'errore se non funziona.
+
+120
+00:07:55,090 --> 00:07:59,080
+Ovviamente potremmo usare la sostituzione di una senza fare una ricerca.
+
+121
+00:07:59,380 --> 00:08:03,790
+E spetta a te scegliere se vuoi o meno effettuare due chiamate o una chiamata.
+
+122
+00:08:03,820 --> 00:08:04,760
+Non importa.
+
+123
+00:08:04,770 --> 00:08:06,850
+Dobbiamo solo gestire il risultato altrimenti dell'aggiornamento.
+
+124
+00:08:06,850 --> 00:08:11,440
+Forse è un po 'più breve, ma almeno mostra come riusare e concatenare le chiamate al database
+
+125
+00:08:11,440 --> 00:08:12,460
+se lo vogliamo.
+
+126
+00:08:12,460 --> 00:08:13,380
+Quindi è tutto per il server.
+
+127
+00:08:13,420 --> 00:08:14,740
+In realtà era abbastanza semplice.
+
+128
+00:08:14,740 --> 00:08:16,720
+E poi nella prossima lezione parleremo con il cliente.
+
+129
+00:08:16,730 --> 00:08:17,770
+Quindi nella prossima lezione.
+

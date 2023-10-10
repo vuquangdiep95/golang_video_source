@@ -1,0 +1,128 @@
+1
+00:00:00,980 --> 00:00:07,070
+Jadi selamat datang di GOP pemangkasan klien di bagian ini kita akan belajar lebih banyak tentang bagaimana melakukan streaming kali
+
+2
+00:00:07,080 --> 00:00:09,390
+ini datang langsung dari klien seperti namanya.
+
+3
+00:00:09,630 --> 00:00:11,690
+Jadi apa yang diklaim pemangkasan API.
+
+4
+00:00:12,000 --> 00:00:17,770
+Yah sekali lagi ini adalah jenis API baru yang memungkinkan untuk menggunakan SCDP standar juga.
+
+5
+00:00:18,120 --> 00:00:19,930
+Jadi begini tampilannya lagi.
+
+6
+00:00:20,190 --> 00:00:25,830
+Kami memiliki server klien dan klien akan mengirim banyak pesan ke server dan akan menerima satu
+
+7
+00:00:25,830 --> 00:00:27,180
+respons dari server.
+
+8
+00:00:27,420 --> 00:00:31,490
+Sehingga respons yang dikirim dari server dapat diterima kapan saja.
+
+9
+00:00:31,480 --> 00:00:36,400
+Tidak ada jaminan bahwa itu akan dikirim setelah menerima semua pesan dari klien.
+
+10
+00:00:36,480 --> 00:00:41,400
+Ini benar-benar tergantung pada server untuk memutuskan kapan ia ingin mengirim tanggapan kepada klien.
+
+11
+00:00:41,550 --> 00:00:42,990
+Jadi negara sadar akan hal itu.
+
+12
+00:00:43,080 --> 00:00:47,100
+Tentunya jika Anda mendesain server Anda hanya mengirim respons ke pembersih dan semua
+
+13
+00:00:47,100 --> 00:00:47,870
+yang sempurna.
+
+14
+00:00:48,120 --> 00:00:50,410
+Jadi kapan Anda menggunakan pemangkasan klien.
+
+15
+00:00:50,490 --> 00:00:53,470
+Yah itu sangat cocok untuk saat data besar.
+
+16
+00:00:53,520 --> 00:00:58,770
+Jadi ketika itu terus berlanjut dan banyak data dalam konteks data besar seperti mengatakan mengunggah sesuatu maka
+
+17
+00:00:58,830 --> 00:00:59,930
+ini luar biasa.
+
+18
+00:00:59,990 --> 00:01:05,490
+Anda juga harus menggunakannya ketika server memproses untuk setiap pesan cukup mahal dan harus terjadi
+
+19
+00:01:05,550 --> 00:01:07,040
+sebagai data penurunan rasa.
+
+20
+00:01:07,200 --> 00:01:12,690
+Jadi, jika Anda harus memproses 10.000 pesan, lebih baik mulai memprosesnya satu per
+
+21
+00:01:12,690 --> 00:01:17,290
+satu segera setelah kami dapat mengirimkannya 10.000 sekaligus memproses semuanya.
+
+22
+00:01:18,520 --> 00:01:23,020
+Akhirnya ada satu kasus penggunaan ketika klien perlu mendorong data ke server tanpa
+
+23
+00:01:23,020 --> 00:01:24,800
+benar-benar mengharapkan respons dari server.
+
+24
+00:01:25,360 --> 00:01:28,720
+Jadi seperti apa tampilannya di buffer tertentu.
+
+25
+00:01:28,720 --> 00:01:34,420
+Seperti halnya untuk setiap permintaan Darbyshire, kita perlu mendefinisikan pesan permintaan dan pesan respons dan
+
+26
+00:01:34,420 --> 00:01:40,180
+kemudian kita akan menambahkan kata dream di sisi klien di sisi kiri untuk mengatur jenis streaming.
+
+27
+00:01:40,240 --> 00:01:41,130
+Cukup mudah kan.
+
+28
+00:01:41,260 --> 00:01:44,280
+Jadi di kuliah berikutnya kita akan melanjutkan permintaan yang lebih panjang.
+
+29
+00:01:44,290 --> 00:01:49,540
+Dan seperti yang Anda lihat, kami harus menerapkan respons permintaan yang lebih lama dan kemudian harus mengalirkan kata
+
+30
+00:01:49,570 --> 00:01:50,870
+kunci untuk memulai semuanya.
+
+31
+00:01:50,890 --> 00:01:51,750
+Baiklah.
+
+32
+00:01:51,750 --> 00:01:52,780
+Jadi CNN berunding.
+

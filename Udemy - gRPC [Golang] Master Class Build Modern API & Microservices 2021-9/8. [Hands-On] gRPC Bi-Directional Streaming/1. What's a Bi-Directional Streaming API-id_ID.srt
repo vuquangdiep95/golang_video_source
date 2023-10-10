@@ -1,0 +1,116 @@
+1
+00:00:00,150 --> 00:00:05,380
+OK jadi sekarang mari kita belajar tentang hiasan directionals atau mati di GRB.
+
+2
+00:00:05,760 --> 00:00:08,110
+Jadi, apa itu streaming dua arah.
+
+3
+00:00:08,310 --> 00:00:13,200
+Sekali lagi ada beberapa jenis API baru untuk tetapi Anda sudah tahu ini benar.
+
+4
+00:00:13,260 --> 00:00:19,710
+Kami memiliki klien dan server dan mereka mengalirkan pesan dari satu ke yang lain, klien dapat mengirim banyak
+
+5
+00:00:19,710 --> 00:00:23,850
+pesan ke server dan server dan mengirimkan respons menu ke klien.
+
+6
+00:00:23,850 --> 00:00:25,250
+Angka-angka ini tidak harus cocok.
+
+7
+00:00:25,320 --> 00:00:25,880
+BAIK.
+
+8
+00:00:26,130 --> 00:00:30,810
+Anda dapat memiliki lima klien mengalirkan pesan dan dua tanggapan dari server.
+
+9
+00:00:30,810 --> 00:00:31,410
+Kamu tidak tahu.
+
+10
+00:00:31,620 --> 00:00:34,250
+Itu tergantung pada bagaimana implementasi Anda.
+
+11
+00:00:34,260 --> 00:00:36,460
+Jadi kapan Anda akan menggunakan streaming dua arah.
+
+12
+00:00:36,780 --> 00:00:41,810
+Yah Anda membutuhkannya ketika klien di server dan Anda mengirim banyak data satu sama lain secara tidak sinkron.
+
+13
+00:00:41,910 --> 00:00:42,480
+BAIK.
+
+14
+00:00:42,600 --> 00:00:44,990
+Anda tidak ingin mengirim tanggapan.
+
+15
+00:00:45,120 --> 00:00:48,360
+Anda tidak ingin menunggu respons klien mengirim pesan berikutnya.
+
+16
+00:00:48,510 --> 00:00:53,220
+Atau misalnya jika Anda menerapkan protokol Chatz di mana klien mengirim pesan yang ingin ia
+
+17
+00:00:53,220 --> 00:00:57,240
+ajak ngobrol dan layanan mengirim pesan kembali ke klien dari semua obrolan.
+
+18
+00:00:57,330 --> 00:00:57,930
+BAIK.
+
+19
+00:00:58,080 --> 00:01:00,590
+Jadi ini adalah beberapa kasus penggunaan yang sangat bagus.
+
+20
+00:01:00,600 --> 00:01:05,490
+Akhirnya jika Anda ingin memiliki koneksi yang berjalan lama di mana Anda dapat melakukan streaming informasi antara
+
+21
+00:01:05,490 --> 00:01:06,480
+klien dan server.
+
+22
+00:01:06,660 --> 00:01:07,990
+Itu kasus penggunaan yang bagus.
+
+23
+00:01:08,720 --> 00:01:15,150
+Sekarang ketika Anda memiliki streaming dua arah, Anda mungkin dapat menebaknya sekarang dengan menggunakan aliran kata dua kali.
+
+24
+00:01:15,170 --> 00:01:19,170
+Jadi kita masih harus mendefinisikan permintaan dan pesan respons.
+
+25
+00:01:19,400 --> 00:01:20,720
+Tapi begini tampilannya.
+
+26
+00:01:20,720 --> 00:01:27,530
+Kami akan memiliki permintaan streaming yang menyapa semua orang di mana kami memiliki aliran sebagai klien dan aliran sebagai server
+
+27
+00:01:27,530 --> 00:01:31,010
+atau tamu yang akan memiliki kata kunci aliran dua kali.
+
+28
+00:01:31,010 --> 00:01:34,800
+Jadi semuanya sama saja, semuanya datang dengan baik.
+
+29
+00:01:35,000 --> 00:01:38,600
+Dan kemudian kuliah berikutnya akan melanjutkan dan menulis ulang layanan itu dalam buffer tertentu.
+

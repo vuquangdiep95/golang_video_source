@@ -1,0 +1,483 @@
+1
+00:00:01,240 --> 00:00:06,340
+So right now, we can display a host on this page, so I'm looking at the one host in the database,
+
+2
+00:00:06,340 --> 00:00:13,210
+which is Itaewon, so I'm an admin host one, and it is showing the information is in the database.
+
+3
+00:00:13,210 --> 00:00:17,290
+And this is all accurate because this host is currently not active and I'm not sure that works.
+
+4
+00:00:17,290 --> 00:00:17,550
+Right.
+
+5
+00:00:18,190 --> 00:00:24,130
+So let's write the necessary code in our handler to update the hosts in the database and make sure this
+
+6
+00:00:24,130 --> 00:00:25,710
+active is doing what it's supposed to do.
+
+7
+00:00:26,350 --> 00:00:31,690
+So I'm back in my handlers, I'm in Handler Go and I'm in the Method Post host.
+
+8
+00:00:31,810 --> 00:00:36,730
+And right now we have some logic that says if the idea is greater than zero when somebody posts this,
+
+9
+00:00:37,840 --> 00:00:44,460
+get the host from the database, otherwise update all the values and inserted into the database.
+
+10
+00:00:44,500 --> 00:00:46,870
+So this is accurate and it works well.
+
+11
+00:00:46,870 --> 00:00:47,980
+We can simplify things.
+
+12
+00:00:47,980 --> 00:00:50,290
+We can take the information actually right now.
+
+13
+00:00:50,290 --> 00:00:51,030
+Let's get the host.
+
+14
+00:00:51,790 --> 00:01:02,020
+So we'll say host and potentially an error are assigned the value of repo DB, get hosted by ID and
+
+15
+00:01:02,020 --> 00:01:04,360
+we pass in the host ID, which is ID.
+
+16
+00:01:04,360 --> 00:01:08,050
+We get that from the URL up here and that gets me the host.
+
+17
+00:01:08,470 --> 00:01:14,830
+If there's an error, if error is not equal to nil, then I'm just going to log the error print line
+
+18
+00:01:14,860 --> 00:01:16,870
+error and I'll return.
+
+19
+00:01:17,140 --> 00:01:18,910
+I'll just display a blank screen.
+
+20
+00:01:19,000 --> 00:01:23,130
+And of course you don't want to do that in production, but for our purposes right now, this is sufficient.
+
+21
+00:01:23,890 --> 00:01:31,240
+Otherwise our value of of H which we declared up here on line 157, that's a sign the value of host.
+
+22
+00:01:31,930 --> 00:01:34,720
+So we now have the host from the database.
+
+23
+00:01:35,650 --> 00:01:37,440
+Do we really need this statement?
+
+24
+00:01:37,870 --> 00:01:38,650
+I don't think we do.
+
+25
+00:01:38,860 --> 00:01:39,760
+So let's get rid of that.
+
+26
+00:01:42,090 --> 00:01:48,720
+And come down here and get rid of that, I do, in fact, let me just reformat this.
+
+27
+00:01:49,170 --> 00:01:55,440
+No matter what happens, I want the value, the values that the user entered to be assigned to host
+
+28
+00:01:55,440 --> 00:01:55,860
+here.
+
+29
+00:01:55,870 --> 00:01:57,930
+I'm overriding the existing values.
+
+30
+00:01:58,710 --> 00:02:02,730
+And if the ID is not zero, I'm just entering the values into an empty house model.
+
+31
+00:02:02,730 --> 00:02:03,640
+So that works great.
+
+32
+00:02:03,900 --> 00:02:06,030
+Here's the part where we want our if statement.
+
+33
+00:02:06,030 --> 00:02:13,410
+If Ivy is greater than zero, then we'll update the host, otherwise we'll insert the host.
+
+34
+00:02:13,920 --> 00:02:17,190
+So this is the part we want to change right here.
+
+35
+00:02:18,100 --> 00:02:20,010
+All I want to do is call my update.
+
+36
+00:02:20,520 --> 00:02:28,400
+Error is assign the value of repo DB update host, which is right there, and I pass in my house model.
+
+37
+00:02:28,920 --> 00:02:32,100
+And again, if there's an error, I'll just log it and return.
+
+38
+00:02:35,270 --> 00:02:41,240
+So in theory, that should work, so let's try this and I'm going to always return back to where we're
+
+39
+00:02:41,240 --> 00:02:43,040
+going before I have an error in here somewhere.
+
+40
+00:02:43,070 --> 00:02:44,000
+Let me find this.
+
+41
+00:02:45,870 --> 00:02:46,440
+Right there.
+
+42
+00:02:48,190 --> 00:02:55,300
+Should be like that, and this new idea should be inside that statement right here.
+
+43
+00:02:58,470 --> 00:03:06,780
+Because I'm redirecting to host I.D., which is actually now that's going to be hosting the equals I.D..
+
+44
+00:03:10,720 --> 00:03:12,760
+And make sure I've got this returning properly.
+
+45
+00:03:14,810 --> 00:03:25,200
+Host was new I.D., which just changed that the host ID eight ID and make this redirect to a fourth
+
+46
+00:03:26,560 --> 00:03:29,780
+ID, OK, that should work properly now.
+
+47
+00:03:30,370 --> 00:03:37,120
+All I was doing was making sure that when I did the redirect I'm going back to A'Court ID after I do
+
+48
+00:03:37,120 --> 00:03:42,580
+by insert here, I just assign the value H or the Model H, which is our host.
+
+49
+00:03:42,700 --> 00:03:44,780
+I give it the returned ID for the insert statement.
+
+50
+00:03:45,040 --> 00:03:46,200
+So in theory this should work.
+
+51
+00:03:46,720 --> 00:03:51,130
+So let's start our application hostilely declared but not used.
+
+52
+00:03:51,820 --> 00:03:52,570
+Let's get rid of that.
+
+53
+00:03:57,670 --> 00:03:59,080
+All right, now it should work.
+
+54
+00:04:01,100 --> 00:04:05,390
+So I run I go back to my Web browser, I reload to make sure I'm looking at the right page, and let's
+
+55
+00:04:05,390 --> 00:04:08,450
+just give it an IP address of one two seven zero zero.
+
+56
+00:04:08,450 --> 00:04:13,790
+That one, the localhost IP address, save and close, which gives me an error.
+
+57
+00:04:13,820 --> 00:04:17,810
+And the error is syntax error at or near active.
+
+58
+00:04:17,960 --> 00:04:20,120
+OK, let's find our error in the update.
+
+59
+00:04:20,140 --> 00:04:24,670
+So that's in host up postgrads get hosted ID update.
+
+60
+00:04:24,870 --> 00:04:26,870
+So the act, the error is here.
+
+61
+00:04:26,870 --> 00:04:28,010
+I'm missing a comma.
+
+62
+00:04:28,040 --> 00:04:29,240
+I do that all the time.
+
+63
+00:04:29,270 --> 00:04:30,290
+So let's start our up.
+
+64
+00:04:30,290 --> 00:04:31,310
+Stop our application.
+
+65
+00:04:31,340 --> 00:04:32,390
+Start our application.
+
+66
+00:04:35,020 --> 00:04:41,520
+And reload this page by clicking the oil and pressing air, giving it an IP address and one two seven
+
+67
+00:04:41,680 --> 00:04:47,590
+zero zero one and save and it brings me back and I saved it.
+
+68
+00:04:47,950 --> 00:04:49,300
+Now, let's try this active button.
+
+69
+00:04:51,150 --> 00:04:51,800
+Safe.
+
+70
+00:04:52,320 --> 00:04:56,160
+And it's not displaying it properly, let's look in the database and see what's happened there.
+
+71
+00:04:56,880 --> 00:05:02,060
+So I'll go to the content and refresh this and active is still zero.
+
+72
+00:05:02,070 --> 00:05:03,460
+So there's a problem there somewhere.
+
+73
+00:05:03,770 --> 00:05:04,190
+OK.
+
+74
+00:05:06,550 --> 00:05:10,210
+Yeah, it's still zero, so let's figure out what we're doing wrong on that one.
+
+75
+00:05:10,480 --> 00:05:16,780
+It's got to be in the host's Jett page and it has to be in the part where I have the active right here.
+
+76
+00:05:17,590 --> 00:05:20,260
+So I have an input classes, form check input.
+
+77
+00:05:20,260 --> 00:05:20,920
+That's correct.
+
+78
+00:05:20,920 --> 00:05:23,560
+Value is hosted active.
+
+79
+00:05:24,070 --> 00:05:27,160
+OK, type is a check, but it is active.
+
+80
+00:05:27,160 --> 00:05:27,790
+Name is active.
+
+81
+00:05:27,820 --> 00:05:30,790
+Well, first of all, let's put it in this statement in there to check it if necessary.
+
+82
+00:05:32,850 --> 00:05:33,570
+If.
+
+83
+00:05:35,080 --> 00:05:43,210
+Are active, equals one, if it is active, then checked and.
+
+84
+00:05:45,020 --> 00:05:50,870
+OK, let's see if that actually renders properly reloaded good.
+
+85
+00:05:50,890 --> 00:05:57,110
+Now let's go into the database and manually change it to be active, so I'll change that to one and
+
+86
+00:05:57,110 --> 00:05:58,190
+save the changes.
+
+87
+00:05:58,610 --> 00:05:59,030
+Good.
+
+88
+00:05:59,840 --> 00:06:02,690
+And I want to load this page that should be checked.
+
+89
+00:06:02,690 --> 00:06:03,750
+It is OK.
+
+90
+00:06:03,920 --> 00:06:09,320
+So it is checking it when it's active, but what it's not doing is passing the necessary information.
+
+91
+00:06:09,380 --> 00:06:14,900
+So can I actually make this inactive and save?
+
+92
+00:06:16,010 --> 00:06:19,800
+OK, and now make it active and safe.
+
+93
+00:06:21,650 --> 00:06:23,300
+Now it's still not passing that information.
+
+94
+00:06:23,450 --> 00:06:28,940
+So this is a check and does it have a name I.D.?
+
+95
+00:06:28,940 --> 00:06:30,320
+Active name is active.
+
+96
+00:06:30,350 --> 00:06:33,410
+OK, and the value is most active.
+
+97
+00:06:33,440 --> 00:06:34,940
+Let's just change that to one.
+
+98
+00:06:37,130 --> 00:06:41,940
+So it doesn't really matter what it is, the way the checkboxes work, if it's checked, it sends the
+
+99
+00:06:41,940 --> 00:06:43,680
+value as part of the form post.
+
+100
+00:06:44,070 --> 00:06:46,180
+If it's not checked, it doesn't even include it.
+
+101
+00:06:46,650 --> 00:06:52,010
+So let's just save that and go back here and we're going to restart the application.
+
+102
+00:06:52,020 --> 00:06:56,370
+Now, we don't let's reload the page, make it active and save it.
+
+103
+00:06:56,550 --> 00:06:57,480
+Save and close.
+
+104
+00:06:57,630 --> 00:06:59,490
+OK, now let's make it inactive.
+
+105
+00:07:00,150 --> 00:07:02,060
+Save, save and close.
+
+106
+00:07:02,190 --> 00:07:02,760
+Perfect.
+
+107
+00:07:02,920 --> 00:07:03,960
+What's in the database?
+
+108
+00:07:05,100 --> 00:07:05,820
+Reload.
+
+109
+00:07:06,120 --> 00:07:07,000
+It's inactive.
+
+110
+00:07:07,260 --> 00:07:08,460
+Now let's make it active.
+
+111
+00:07:10,260 --> 00:07:16,920
+Save and reload, and now it's active, so that's all it was, we just need to make sure that we handle
+
+112
+00:07:16,920 --> 00:07:22,170
+checkboxes the way that checkboxes are actually handled, send disvalue when it's checked, otherwise
+
+113
+00:07:22,410 --> 00:07:23,910
+it doesn't even get included in the post.
+
+114
+00:07:23,940 --> 00:07:25,620
+So that should work just fine.
+
+115
+00:07:26,430 --> 00:07:31,950
+OK, so the next step now that we've got this part going and we still have to deal with these, Tab's
+
+116
+00:07:31,950 --> 00:07:33,590
+up here, but we'll get to those in a while.
+
+117
+00:07:34,470 --> 00:07:37,320
+The next step is when I click on the hosts page.
+
+118
+00:07:37,320 --> 00:07:42,200
+I actually want my one hosta that's in the database to be loaded here on this screen.
+
+119
+00:07:42,900 --> 00:07:44,550
+So in the next lecture will take care of that.
+
+120
+00:07:44,570 --> 00:07:48,390
+We'll have to read a database handler and pass the information to this template.
+
+121
+00:07:48,390 --> 00:07:50,190
+And that's pretty straightforward.

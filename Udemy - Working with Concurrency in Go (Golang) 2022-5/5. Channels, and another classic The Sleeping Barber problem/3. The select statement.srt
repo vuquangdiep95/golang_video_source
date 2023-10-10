@@ -1,0 +1,775 @@
+1
+00:00:00,790 --> 00:00:05,950
+So before we move on to our next problem or example, there's a couple of things I want to draw to your
+
+2
+00:00:05,950 --> 00:00:09,130
+attention, things I should have mentioned in the last lecture, but did not.
+
+3
+00:00:09,670 --> 00:00:13,810
+And the first one should be manifestly self-evident, but just to be safe.
+
+4
+00:00:14,050 --> 00:00:21,100
+So back here in our simple channels, example, in the main function, if I comment out this go shout
+
+5
+00:00:21,560 --> 00:00:22,300
+bit here.
+
+6
+00:00:22,390 --> 00:00:24,550
+So this go routine never get started.
+
+7
+00:00:24,620 --> 00:00:25,000
+Okay.
+
+8
+00:00:25,270 --> 00:00:28,210
+I got a warning from Visual Studio Code telling me I'm not using this.
+
+9
+00:00:28,210 --> 00:00:28,660
+I know that.
+
+10
+00:00:28,660 --> 00:00:29,740
+I just comment, commented the set.
+
+11
+00:00:30,550 --> 00:00:35,680
+So if I open my terminal now and try and run the program, everything will look good at the start.
+
+12
+00:00:35,830 --> 00:00:38,580
+Go run de no problem.
+
+13
+00:00:38,590 --> 00:00:40,880
+I get my prompt and I try to type something in.
+
+14
+00:00:40,900 --> 00:00:43,350
+So I type in Trevor and here return.
+
+15
+00:00:43,360 --> 00:00:44,550
+And what happens next?
+
+16
+00:00:44,560 --> 00:00:51,580
+If you look at the code, what happens next is it tries to send this to the ping channel.
+
+17
+00:00:51,580 --> 00:00:53,290
+Whatever I type goes to the ping channel.
+
+18
+00:00:53,290 --> 00:00:59,560
+But of course, even though I created it up here on line 25, there's nothing listening to it.
+
+19
+00:00:59,620 --> 00:01:03,130
+So when I press return, I get a fatal error.
+
+20
+00:01:03,130 --> 00:01:04,960
+All go routines are asleep.
+
+21
+00:01:05,080 --> 00:01:05,800
+Deadlock.
+
+22
+00:01:06,220 --> 00:01:10,960
+And that's go's rather helpful way of telling you you're sending something to a channel, but nothing
+
+23
+00:01:10,960 --> 00:01:12,400
+is ever going to receive it.
+
+24
+00:01:12,410 --> 00:01:13,840
+There's no good routines out there.
+
+25
+00:01:13,840 --> 00:01:15,190
+There's no listening to that channel.
+
+26
+00:01:15,330 --> 00:01:20,290
+Okay, so I can fix that, of course, just by uncomment this line.
+
+27
+00:01:20,770 --> 00:01:21,640
+So that's easy enough.
+
+28
+00:01:22,330 --> 00:01:27,490
+Now, the second thing I wanted to draw your attention is when I receive something from a channel like
+
+29
+00:01:27,490 --> 00:01:33,490
+this where I'm receiving into the variable se whatever is sent to channel ping, I actually have an
+
+30
+00:01:33,490 --> 00:01:37,920
+optional second parameter I can get from that channel and I'll just call it.
+
+31
+00:01:37,930 --> 00:01:39,190
+Okay like this.
+
+32
+00:01:39,400 --> 00:01:39,710
+Okay.
+
+33
+00:01:40,480 --> 00:01:41,800
+And what that does that.
+
+34
+00:01:41,800 --> 00:01:42,220
+Okay.
+
+35
+00:01:42,220 --> 00:01:46,030
+Doesn't actually say anything right now, but I can check to see if okay is false.
+
+36
+00:01:46,150 --> 00:01:47,410
+If not, okay.
+
+37
+00:01:47,410 --> 00:01:48,370
+Because it's a boolean.
+
+38
+00:01:48,460 --> 00:01:48,870
+Okay.
+
+39
+00:01:48,940 --> 00:01:54,310
+If not okay then I can do something here and that second return parameter.
+
+40
+00:01:55,000 --> 00:01:55,690
+Okay.
+
+41
+00:01:56,080 --> 00:02:00,250
+It just tells me whether the receive value was sent on the channel.
+
+42
+00:02:00,400 --> 00:02:00,940
+True.
+
+43
+00:02:01,390 --> 00:02:05,710
+Or it's a zero value return because the channel is closed and empty.
+
+44
+00:02:05,950 --> 00:02:06,430
+False.
+
+45
+00:02:06,550 --> 00:02:13,480
+This is an easy way to make sure that the channel is in fact not closed, and we'll be using that later
+
+46
+00:02:13,480 --> 00:02:14,560
+on in the course.
+
+47
+00:02:14,930 --> 00:02:19,060
+Just a couple of lectures actually when we start working on the Sleeping Barbara program.
+
+48
+00:02:19,060 --> 00:02:20,830
+So that's just to draw it to your attention.
+
+49
+00:02:21,070 --> 00:02:21,420
+Okay.
+
+50
+00:02:22,330 --> 00:02:28,370
+Now let's go on to our next challenge and this is using the Select Statement.
+
+51
+00:02:28,390 --> 00:02:34,690
+So I have a new window open in Visual Studio code and as usual, I'll do get a go modifiable taping,
+
+52
+00:02:34,690 --> 00:02:41,140
+go mod in it and I'll just call this channel Dash Select because we're going to be looking at the select
+
+53
+00:02:41,140 --> 00:02:45,400
+statement which we saw briefly a while ago, what we're going to look at in more detail right now.
+
+54
+00:02:45,640 --> 00:02:56,260
+Okay, so let's create a new empty file mango and put it in package main and create a main func.
+
+55
+00:02:59,520 --> 00:03:04,680
+Now what I want to do here is show you how the Select Statement works in the Select Statements.
+
+56
+00:03:04,680 --> 00:03:09,750
+As I said some time ago, they're only useful for channels and there are a lot like the switch statement
+
+57
+00:03:09,750 --> 00:03:13,890
+or what's called a case statement in other languages, but there are only four channels and you can
+
+58
+00:03:13,890 --> 00:03:15,800
+only use channels with the select statement.
+
+59
+00:03:15,810 --> 00:03:16,170
+Okay.
+
+60
+00:03:17,010 --> 00:03:21,030
+So to start things off, I'm going to create a couple of things that will become the routines.
+
+61
+00:03:21,180 --> 00:03:23,600
+I'll create a function here and I'll call it server one.
+
+62
+00:03:23,640 --> 00:03:25,800
+It doesn't matter what I call it, but I'm going to call it server one.
+
+63
+00:03:26,040 --> 00:03:31,710
+That will take one parameter which is called C-H, and it's a type channel string.
+
+64
+00:03:32,010 --> 00:03:33,810
+Okay, so that's what it's going to receive.
+
+65
+00:03:34,530 --> 00:03:41,010
+And then I'll create another one below that phone server to coach and string once again.
+
+66
+00:03:41,400 --> 00:03:41,700
+Okay.
+
+67
+00:03:41,700 --> 00:03:42,810
+So it also takes a channel.
+
+68
+00:03:44,280 --> 00:03:46,830
+Now up in this first one, this server one.
+
+69
+00:03:47,190 --> 00:03:53,010
+What I'm going to do is create a four loop that runs forever and I'll sleep for 6 seconds.
+
+70
+00:03:53,010 --> 00:03:57,720
+So the very first time it comes into this this for loop, it's going to pause for 6 seconds.
+
+71
+00:03:57,960 --> 00:04:03,390
+I'm not sleep and I'll put it six times time the second.
+
+72
+00:04:04,590 --> 00:04:04,920
+Okay.
+
+73
+00:04:05,790 --> 00:04:12,480
+And after that, after 6 seconds have gone by, I'll send to the Channel C H, which I received as a
+
+74
+00:04:12,480 --> 00:04:14,730
+parameter to this particular function.
+
+75
+00:04:15,450 --> 00:04:16,200
+Just some text.
+
+76
+00:04:16,380 --> 00:04:18,990
+This is from server one.
+
+77
+00:04:19,380 --> 00:04:25,110
+Okay, I'll do a similar thing down here in the other function server two.
+
+78
+00:04:25,350 --> 00:04:31,760
+But this time I'll sleep for 3 seconds inside of my for loop time does sleep a little less three times
+
+79
+00:04:31,790 --> 00:04:36,870
+time dot second and then again, not surprisingly, I'm going to send to the channel.
+
+80
+00:04:39,120 --> 00:04:41,490
+This is from server two.
+
+81
+00:04:42,210 --> 00:04:46,160
+Okay, so we're not doing anything with this function, so let's do something with that.
+
+82
+00:04:46,230 --> 00:04:52,380
+What I'm going to do down here is I'll printed a little, you know, introductory message, so format
+
+83
+00:04:52,380 --> 00:04:58,830
+or print line and we'll call this select with channels.
+
+84
+00:05:00,420 --> 00:05:04,980
+Just so we know, the program is starting out and then I'll do format or print line, underline it.
+
+85
+00:05:07,680 --> 00:05:12,480
+So I'll make it exactly the same length as the title just to get things started.
+
+86
+00:05:12,750 --> 00:05:13,080
+Okay.
+
+87
+00:05:13,110 --> 00:05:15,270
+So we've printed it our, our little welcome message.
+
+88
+00:05:16,350 --> 00:05:17,640
+Now we'll declare two channels.
+
+89
+00:05:17,760 --> 00:05:23,250
+So I'll call one channel one and we make a channel again with the main keyword and we're going to make
+
+90
+00:05:23,250 --> 00:05:29,520
+this a channel type stream, and then I'll duplicate this and I'll create a second channel channel to
+
+91
+00:05:30,510 --> 00:05:32,280
+same type channel string.
+
+92
+00:05:33,060 --> 00:05:39,930
+Then I'll start my go routines, go server one and that requires a channel and I'll get server one channel
+
+93
+00:05:41,520 --> 00:05:42,600
+and I'll duplicate that.
+
+94
+00:05:42,900 --> 00:05:47,100
+To make this server to make this channel to.
+
+95
+00:05:48,640 --> 00:05:48,930
+Okay.
+
+96
+00:05:50,320 --> 00:05:56,110
+So we've started our program, printed a message, created two channels, started to go routines.
+
+97
+00:05:56,110 --> 00:06:01,240
+And if I run right now, of course, it'll just exit instantly because there's nothing to keep the program
+
+98
+00:06:01,240 --> 00:06:01,540
+going.
+
+99
+00:06:01,840 --> 00:06:06,340
+So let's put in some code here that will keep the program going for a loop, will do it.
+
+100
+00:06:06,670 --> 00:06:11,500
+Now, if I run this right now, I'll get my welcome message and nothing will happen and nothing will
+
+101
+00:06:11,500 --> 00:06:13,240
+happen forever because I'm not doing anything.
+
+102
+00:06:13,990 --> 00:06:17,140
+So what I'm going to do in here is use the select statement.
+
+103
+00:06:17,620 --> 00:06:18,580
+So select.
+
+104
+00:06:19,150 --> 00:06:20,140
+That's how I define it.
+
+105
+00:06:20,710 --> 00:06:25,180
+And as I said before, the Select Statement is a lot like a switch statement, but we only use it with
+
+106
+00:06:25,180 --> 00:06:26,530
+channels, so we have cases.
+
+107
+00:06:27,280 --> 00:06:34,930
+So in the first case, I'll say S1, which is just a variable I'm declaring that is populated by getting
+
+108
+00:06:34,930 --> 00:06:37,030
+something from Channel one.
+
+109
+00:06:37,630 --> 00:06:39,340
+Okay, so that's my first case.
+
+110
+00:06:40,270 --> 00:06:41,690
+And what am I going to do if I get that?
+
+111
+00:06:41,740 --> 00:06:44,530
+I'll just say format the print line.
+
+112
+00:06:46,240 --> 00:06:49,270
+And so I know which case is being executed.
+
+113
+00:06:49,690 --> 00:06:54,550
+I'll say case one and I'll print it, whatever I get back as well.
+
+114
+00:06:55,330 --> 00:06:55,600
+Okay.
+
+115
+00:06:55,600 --> 00:06:56,590
+So there's my first case.
+
+116
+00:06:56,770 --> 00:06:58,180
+No surprises there.
+
+117
+00:06:58,790 --> 00:07:00,010
+Let's have a second case.
+
+118
+00:07:00,280 --> 00:07:00,670
+Okay.
+
+119
+00:07:02,170 --> 00:07:09,670
+Case as to and this is populated again by listening to a channel.
+
+120
+00:07:09,790 --> 00:07:16,480
+And in this case, I'll listen to, strangely enough, channel one again, which seems redundant.
+
+121
+00:07:16,960 --> 00:07:21,760
+But let's put it our format up, print one, print one.
+
+122
+00:07:22,780 --> 00:07:32,610
+We'll say case two and whatever we get from that channel, which is S one, that's TiVo or two, and
+
+123
+00:07:32,620 --> 00:07:35,230
+that's the value that we just got in this case statement.
+
+124
+00:07:36,070 --> 00:07:37,300
+Now let's put in a case three.
+
+125
+00:07:38,680 --> 00:07:43,540
+Case S three is populated by listening to.
+
+126
+00:07:45,310 --> 00:07:57,580
+Channel two this time, and not surprisingly, format or print one and will say case three and whatever
+
+127
+00:07:57,580 --> 00:08:01,000
+s three is, and you can probably guess what's coming next.
+
+128
+00:08:02,020 --> 00:08:12,280
+Chase s four which is populated by listening to Channel two again and format of print line.
+
+129
+00:08:15,400 --> 00:08:19,450
+Chase four and S four.
+
+130
+00:08:20,260 --> 00:08:20,650
+Okay.
+
+131
+00:08:22,960 --> 00:08:27,190
+Now, what do you think is going to happen when we actually start this?
+
+132
+00:08:27,220 --> 00:08:32,620
+So if you think about what's happening here, we execute a program, main gets executed, we print out
+
+133
+00:08:32,630 --> 00:08:33,430
+a little title.
+
+134
+00:08:33,520 --> 00:08:34,810
+We create two channels.
+
+135
+00:08:35,110 --> 00:08:40,450
+I start to go routines, one that's listening to Channel one and one that's listening to Channel two.
+
+136
+00:08:40,750 --> 00:08:46,510
+And these will not exit until the program terminates because there's absolutely no reason for them to
+
+137
+00:08:46,510 --> 00:08:46,930
+exit.
+
+138
+00:08:47,020 --> 00:08:50,980
+There's no condition where those will actually stop executing the four loops.
+
+139
+00:08:52,220 --> 00:08:57,500
+And then I have this endless for loop here where I listen to, you know, channel one, no problem.
+
+140
+00:08:57,510 --> 00:09:00,740
+But then I listen to Channel one again and I'm printing out different messages.
+
+141
+00:09:00,740 --> 00:09:03,170
+So I'll know if either of these gets executed.
+
+142
+00:09:03,440 --> 00:09:07,400
+And then I do the same thing listening to the same channel in two different cases.
+
+143
+00:09:08,750 --> 00:09:11,870
+Now you might say to yourself, how come he's not closing the channels?
+
+144
+00:09:11,900 --> 00:09:14,280
+Well, this is a highly contrived example.
+
+145
+00:09:14,330 --> 00:09:17,780
+There's no situation where we ever get inside of this for loop.
+
+146
+00:09:18,200 --> 00:09:25,910
+I could put a condition in here that says, after this select statement, after 30 seconds, you jump
+
+147
+00:09:25,910 --> 00:09:27,680
+out of the loop and then close the channels.
+
+148
+00:09:27,680 --> 00:09:30,780
+But this is just to demonstrate how the select statement works.
+
+149
+00:09:30,800 --> 00:09:32,390
+So let's not worry about that right now.
+
+150
+00:09:32,660 --> 00:09:35,840
+Instead, let's think about what's going to going to happen here.
+
+151
+00:09:35,900 --> 00:09:41,090
+Now, you would think, because this first check on line 34 one.
+
+152
+00:09:42,300 --> 00:09:45,780
+It actually matches the situation where we received something on Channel one.
+
+153
+00:09:46,050 --> 00:09:48,090
+So this one will never get executed.
+
+154
+00:09:48,180 --> 00:09:49,350
+That's what you might think.
+
+155
+00:09:49,420 --> 00:09:50,260
+Let's try this.
+
+156
+00:09:50,280 --> 00:09:53,400
+Let's open the channel and type.
+
+157
+00:09:54,030 --> 00:09:57,180
+Go run dot and hit return.
+
+158
+00:09:59,800 --> 00:10:04,950
+So there's a pause and then I get case three and let's throw these up so we can see them.
+
+159
+00:10:04,970 --> 00:10:05,710
+Well, that makes sense.
+
+160
+00:10:06,190 --> 00:10:06,940
+Case three.
+
+161
+00:10:08,010 --> 00:10:10,560
+And then I have a case for now.
+
+162
+00:10:10,560 --> 00:10:13,080
+Why would Case four ever get executed?
+
+163
+00:10:13,110 --> 00:10:20,940
+My whole point here, the whole purpose behind this highly contrived example, is to demonstrate that
+
+164
+00:10:20,940 --> 00:10:27,530
+when this select statement executes it, there are multiple cases that match the same condition.
+
+165
+00:10:27,540 --> 00:10:30,660
+For example, here we get responses back on.
+
+166
+00:10:32,050 --> 00:10:34,120
+Case three and case four.
+
+167
+00:10:34,480 --> 00:10:36,370
+Well, these are functionally identical.
+
+168
+00:10:36,400 --> 00:10:39,820
+The only difference is that I'm printing a slightly different message out here.
+
+169
+00:10:40,570 --> 00:10:46,290
+If there's more than one case that the select can match, it just chooses one at random.
+
+170
+00:10:46,300 --> 00:10:48,820
+And there are lots of situations where that's useful.
+
+171
+00:10:49,720 --> 00:10:53,050
+So that's the first thing I want to tell you about this selecting.
+
+172
+00:10:53,110 --> 00:10:54,420
+And this will run endlessly.
+
+173
+00:10:54,430 --> 00:10:55,180
+So let's stop it.
+
+174
+00:10:57,130 --> 00:11:03,580
+Control, see and close this and tell you the one other thing I want you to be aware of when it comes
+
+175
+00:11:03,580 --> 00:11:10,030
+to the Select Statement, it is also possible to have, just as you would in a switch statement, a
+
+176
+00:11:10,030 --> 00:11:11,020
+default case.
+
+177
+00:11:11,200 --> 00:11:11,590
+Okay.
+
+178
+00:11:11,980 --> 00:11:17,080
+And this default case is useful for avoiding deadlock.
+
+179
+00:11:18,640 --> 00:11:24,670
+If there's a situation where none of these channels are listening, then the default case will stop
+
+180
+00:11:24,670 --> 00:11:26,050
+your program from crashing.
+
+181
+00:11:26,170 --> 00:11:30,910
+And this is a great situation where you might want to say, well, there should be a go routine running,
+
+182
+00:11:30,910 --> 00:11:31,840
+but there's not any.
+
+183
+00:11:31,840 --> 00:11:33,180
+Print yourself a little message here.
+
+184
+00:11:33,190 --> 00:11:35,740
+There's lots of situations where the default is helpful.
+
+185
+00:11:35,740 --> 00:11:36,130
+Okay.
+
+186
+00:11:36,910 --> 00:11:41,290
+And I'm getting warning for my ITV telling me you shouldn't have an empty default case.
+
+187
+00:11:41,290 --> 00:11:46,390
+That's true, because the loop will spin forever, but the default case can be extremely useful.
+
+188
+00:11:46,520 --> 00:11:48,130
+Okay, now in this situation, it's not.
+
+189
+00:11:48,730 --> 00:11:52,840
+So I simply comment this line out and that will that will get rid of the warning.
+
+190
+00:11:53,770 --> 00:11:56,440
+But select statements are really useful.
+
+191
+00:11:56,740 --> 00:11:59,680
+They're very helpful and the relatively simple to use.
+
+192
+00:11:59,960 --> 00:12:03,520
+I will be using these later on in the course later on in this section actually.
+
+193
+00:12:03,940 --> 00:12:06,610
+But this is sufficient for our purposes at the moment.
+
+194
+00:12:06,940 --> 00:12:10,090
+So let's move on and look at buffered channels.

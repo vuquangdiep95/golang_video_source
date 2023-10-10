@@ -1,0 +1,219 @@
+1
+00:00:00,150 --> 00:00:01,220
+We've already talked about.
+
+2
+00:00:01,260 --> 00:00:06,300
+If you're using like if you're already working with go and you have an established project and you're
+
+3
+00:00:06,300 --> 00:00:15,220
+using some sort of versioning or dependency management like glide or dap dap that's its name right.
+
+4
+00:00:15,420 --> 00:00:26,620
+That you when use go modules will automatically attempt to convert that for you and maybe with success.
+
+5
+00:00:26,700 --> 00:00:29,320
+I haven't done all any of them.
+
+6
+00:00:29,610 --> 00:00:33,750
+Just read about it but now we have an example Daniel put together here where we're gonna see what happens.
+
+7
+00:00:33,750 --> 00:00:35,800
+So walk us through this example.
+
+8
+00:00:35,910 --> 00:00:43,160
+All right so I've got a package in my go path my go path is to see users in Daniel go.
+
+9
+00:00:43,180 --> 00:00:49,230
+And so inside here I've got a source folder inside the source folder I've got to get a dot com or does
+
+10
+00:00:49,380 --> 00:00:50,840
+DEP upgrade.
+
+11
+00:00:50,880 --> 00:00:53,640
+This is not an actual package on actual GitHub.
+
+12
+00:00:53,640 --> 00:00:55,560
+I just put it in my debt in my go path.
+
+13
+00:00:55,560 --> 00:00:59,540
+I haven't actually pushed this on to get hub and so inside this folder.
+
+14
+00:00:59,580 --> 00:01:07,560
+I have a valid DEP program I'm using the hello and hello test from the very beginning of our go modules
+
+15
+00:01:07,560 --> 00:01:11,800
+things where we're just using version one of quote with quote Hello.
+
+16
+00:01:12,620 --> 00:01:16,560
+And same test with just the Hello test Hello.
+
+17
+00:01:16,560 --> 00:01:25,140
+And I've got the DEP go packet shut Tomoe which says that we're using our CIO quote version 1 5 2 and
+
+18
+00:01:25,170 --> 00:01:32,340
+overwriting the indirect dependency sampler to force it to be one third one instead of one ninety nine
+
+19
+00:01:32,340 --> 00:01:34,300
+ninety nine.
+
+20
+00:01:34,980 --> 00:01:42,770
+So this all works if I go test it it's it's all valid it's using go path mechanisms because it's in
+
+21
+00:01:42,770 --> 00:01:50,960
+a go path and it does not have a go module go down modifiable so it passes the test there's a vendor
+
+22
+00:01:50,960 --> 00:01:58,550
+folder where DEP has put all the dependencies it's a standard DEP program so to upgrade this from DEP
+
+23
+00:01:58,580 --> 00:02:05,120
+to using modules you just use go mod in it and you do not need to give it the name of the name is facing
+
+24
+00:02:05,540 --> 00:02:09,740
+it can figure out the namespace it's already on the go path so it can figure out the name spacing from
+
+25
+00:02:09,740 --> 00:02:16,490
+that and it's able to automatically just import from the go package file what dependencies it needs
+
+26
+00:02:17,080 --> 00:02:22,100
+to see now it's got to no go mod it's got the module just figured that out from the go path and it's
+
+27
+00:02:22,100 --> 00:02:28,070
+copying requirements the go package shop walk which was created by debt and so now if you look in the
+
+28
+00:02:31,360 --> 00:02:40,720
+folder we now have a go mod file and so if I if I put that into my editor you can see it's got the requirements
+
+29
+00:02:41,200 --> 00:02:46,420
+it's got the module correctly it's got to go when 13 it's got the versions of different various packages
+
+30
+00:02:46,420 --> 00:02:54,520
+quote in sampler or correct it managed to pull them all over if I do go test in this case it actually
+
+31
+00:02:54,520 --> 00:03:03,570
+does pass and I can do go list dash em all to show it is using go modules systems for doing stuff because
+
+32
+00:03:03,630 --> 00:03:06,060
+the dash and only works if you've got good modules working
+
+33
+00:03:09,090 --> 00:03:12,370
+you have more now so that's it yeah.
+
+34
+00:03:12,750 --> 00:03:20,010
+So in this case it input in this case it imported automatically everything was correct to do note that
+
+35
+00:03:20,020 --> 00:03:25,410
+versions may be off like for example my go package Tom will never actually mentioned anything about
+
+36
+00:03:26,700 --> 00:03:32,330
+ex text and so it should not have been 0 3 2 it should have been if we'd gone through the go more interesting
+
+37
+00:03:32,340 --> 00:03:40,290
+from the beginning it would have just been the random commit that a sampler or quote required as an
+
+38
+00:03:40,290 --> 00:03:46,710
+indirect dependency it found a specific version because it was trying to import off DEP which DEP always
+
+39
+00:03:46,710 --> 00:03:54,870
+goes versions in left forced otherwise so it was trying to match DEP a little more closely as far as
+
+40
+00:03:54,870 --> 00:04:03,990
+the indirect dependency so do keep keep an eye on your versions they may be incorrect just use your
+
+41
+00:04:03,990 --> 00:04:09,780
+go list dash them all to see all your versions of everything make sure everything's working if you've
+
+42
+00:04:09,780 --> 00:04:15,520
+got your go tests which you should you can test run them make sure it all works still.
+
+43
+00:04:15,870 --> 00:04:21,400
+So this is automatic import it's a convenience it is not magic there is possibility of error.
+
+44
+00:04:21,570 --> 00:04:22,890
+So what.
+
+45
+00:04:22,890 --> 00:04:25,050
+No magic.
+
+46
+00:04:25,260 --> 00:04:25,580
+All right.
+
+47
+00:04:25,710 --> 00:04:27,360
+So check it over once you've done it.
+
+48
+00:04:27,480 --> 00:04:28,860
+Yes test everything.
+
+49
+00:04:28,860 --> 00:04:29,980
+Make sure it still works.
+
+50
+00:04:30,000 --> 00:04:33,040
+Yes it's pretty cool though that it will automatically do that.
+
+51
+00:04:33,210 --> 00:04:37,650
+Nice you off not about the upgrades.
+
+52
+00:04:37,670 --> 00:04:38,310
+All right.
+
+53
+00:04:38,410 --> 00:04:43,810
+The next video we're going to introduce you to what the module mirrors just so you have a little awareness
+
+54
+00:04:43,810 --> 00:04:44,110
+of it.
+
+55
+00:04:44,110 --> 00:04:45,010
+See you the next video.

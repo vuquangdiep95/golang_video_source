@@ -1,0 +1,208 @@
+1
+00:00:01,240 --> 00:00:05,170
+So now that we've made these changes to the make us command, let's give them a try.
+
+2
+00:00:05,320 --> 00:00:07,930
+And the first thing I'll do here is just clean up some of this code.
+
+3
+00:00:07,960 --> 00:00:10,180
+I don't need this comment out stuff anymore.
+
+4
+00:00:10,210 --> 00:00:13,620
+Inside of off, don't go in this folder.
+
+5
+00:00:14,770 --> 00:00:19,570
+And remember that when I run this command, it's actually going to die every time.
+
+6
+00:00:19,570 --> 00:00:23,860
+It can't execute one of these things where I'm copying files from a template.
+
+7
+00:00:23,890 --> 00:00:31,660
+So, for example, I'm going to copy from the template file system templates, data user go text to
+
+8
+00:00:31,900 --> 00:00:34,290
+data user go in my out project.
+
+9
+00:00:34,300 --> 00:00:38,140
+And that means I should make sure I don't have any of the things in there already.
+
+10
+00:00:38,920 --> 00:00:44,530
+And basically, that's any file that's associated with making the with running we make last minute.
+
+11
+00:00:44,560 --> 00:00:48,160
+So, for example, I don't have a user's dongo or a token.
+
+12
+00:00:48,160 --> 00:00:51,110
+Don't go or remember a token, don't go in here.
+
+13
+00:00:51,130 --> 00:00:51,700
+So that's good.
+
+14
+00:00:52,660 --> 00:00:55,480
+I should also check to see what else is copied middleware.
+
+15
+00:00:55,480 --> 00:00:59,350
+So do I have an off Doug go and middleware Moscow looking middleware?
+
+16
+00:01:00,250 --> 00:01:00,850
+No, I don't.
+
+17
+00:01:00,970 --> 00:01:01,630
+So that's good.
+
+18
+00:01:01,660 --> 00:01:07,960
+So make sure that you don't have pre-existing copies of these files anywhere in your app project or
+
+19
+00:01:07,960 --> 00:01:10,310
+you're just going to have to go delete them and start over from scratch.
+
+20
+00:01:10,330 --> 00:01:14,770
+And I've had to do that several times while I was testing things, and you probably don't want to go
+
+21
+00:01:14,770 --> 00:01:15,700
+through that exercise.
+
+22
+00:01:16,450 --> 00:01:21,040
+So once you've verified that, make sure your Docker images are running so your database is running,
+
+23
+00:01:21,040 --> 00:01:21,580
+in other words.
+
+24
+00:01:22,210 --> 00:01:27,970
+And then we'll open our terminal and we'll go over to the celebrities project and we'll run that command,
+
+25
+00:01:27,970 --> 00:01:29,320
+make, build, see.
+
+26
+00:01:30,190 --> 00:01:36,700
+And if everything goes according to plan that should create a new house executable over in the My App
+
+27
+00:01:36,700 --> 00:01:38,050
+folder, and it looks like it did.
+
+28
+00:01:39,320 --> 00:01:45,980
+So now we'll go to the My Apps folder, and I'm in the correct directory and I'll run dot slash celebrities,
+
+29
+00:01:46,160 --> 00:01:48,300
+make off and see if it works.
+
+30
+00:01:48,320 --> 00:01:49,710
+And hopefully we get everything right.
+
+31
+00:01:49,730 --> 00:01:50,840
+We almost never do.
+
+32
+00:01:50,890 --> 00:01:51,920
+But let's give it a try.
+
+33
+00:01:57,540 --> 00:02:03,240
+So it looks like it ran properly, it open up our favorite database client and lines right here post
+
+34
+00:02:03,240 --> 00:02:03,630
+to come.
+
+35
+00:02:05,610 --> 00:02:08,280
+And connect to my Docker image right here.
+
+36
+00:02:10,030 --> 00:02:12,640
+And it looks like I have a remember token's table.
+
+37
+00:02:13,630 --> 00:02:18,640
+Some table is leftover from the last time we tested our migrations and there's tokens and there's users,
+
+38
+00:02:18,940 --> 00:02:19,660
+and that's very good.
+
+39
+00:02:20,440 --> 00:02:21,160
+I'm shocked.
+
+40
+00:02:21,250 --> 00:02:22,510
+I go buy a lottery ticket.
+
+41
+00:02:22,630 --> 00:02:23,680
+Things never work right.
+
+42
+00:02:23,680 --> 00:02:24,280
+The first try.
+
+43
+00:02:24,310 --> 00:02:28,930
+Let's make sure we have everything in the correct folders, so we have our off off token.
+
+44
+00:02:29,710 --> 00:02:32,220
+And remember all inside the middleware.
+
+45
+00:02:32,230 --> 00:02:32,950
+So that's good.
+
+46
+00:02:33,580 --> 00:02:34,790
+Do we have anything in our mail?
+
+47
+00:02:34,810 --> 00:02:38,470
+We have our password reset HTML and plain.
+
+48
+00:02:38,470 --> 00:02:40,900
+It looks like everything worked the way that it should.
+
+49
+00:02:40,930 --> 00:02:44,320
+There's my handlers and they are my data models.
+
+50
+00:02:45,070 --> 00:02:48,910
+Well, that was a bit shocking, but we now have that working the way that it should.
+
+51
+00:02:49,660 --> 00:02:56,110
+So now that we have our make up command working, let's complicate matters by moving on to social authentication
+
+52
+00:02:56,110 --> 00:02:57,070
+in the next section.
+

@@ -1,0 +1,560 @@
+1
+00:00:00,360 --> 00:00:06,140
+Jadi mari kita bicara sekarang tentang refleksi GOPAC dan antarmuka baris perintah atau Seelye.
+
+2
+00:00:06,180 --> 00:00:12,900
+Jadi ketika kita melihat sebelumnya ketika menolak untuk mencoba terhubung ke server kami mereka harus memiliki profil pada kode mereka pada
+
+3
+00:00:13,560 --> 00:00:18,960
+dasarnya untuk menghasilkan kode dan menghasilkan kode dan kemudian yang akan menentukan layanan dan ini adalah
+
+4
+00:00:18,960 --> 00:00:20,670
+bagaimana Klan menghubungkan server Anda.
+
+5
+00:00:20,670 --> 00:00:24,860
+Kami telah melihat server dan klien memiliki jenis yang sama.
+
+6
+00:00:25,170 --> 00:00:29,340
+Dan ini sangat baik ketika Anda menerapkan aplikasi untuk produksi karena Anda pasti ingin
+
+7
+00:00:29,340 --> 00:00:31,750
+mengetahui API yang Anda ajak bicara sebelumnya.
+
+8
+00:00:32,040 --> 00:00:37,110
+Tapi bagaimana dengan perkembangan baik dalam pengembangan Anda memiliki server pekerjaan dan kadang-kadang Anda bahkan tidak tahu apa
+
+9
+00:00:37,110 --> 00:00:38,270
+yang mampu dilakukannya.
+
+10
+00:00:38,270 --> 00:00:43,950
+Anda hanya ingin melihat dan bertanya kepada server, hei, API apa yang Anda punya.
+
+11
+00:00:43,950 --> 00:00:45,600
+Dan saat ini kami tidak dapat mengajukan pertanyaan itu.
+
+12
+00:00:45,600 --> 00:00:49,820
+Satu-satunya cara untuk melakukannya adalah dengan mengekstrak profil itu.
+
+13
+00:00:50,250 --> 00:00:52,730
+Masukkan Jarkesy refl ..
+
+14
+00:00:53,010 --> 00:00:58,290
+Kami dapat menanyakan server apa yang dimiliki API dan Anda mungkin ingin refleksi karena dua alasan.
+
+15
+00:00:58,290 --> 00:01:03,030
+Nomor satu kita ingin server untuk mengekspos titik akhir mana yang tersedia yang merupakan
+
+16
+00:01:03,030 --> 00:01:08,490
+perbedaan besar untuk misalnya API penangkapan di mana kita tidak tahu sebelumnya mana titik akhir mana yang ada.
+
+17
+00:01:08,580 --> 00:01:13,570
+Dan yang kedua adalah bahwa hal itu akan memungkinkan kita untuk menggunakan antarmuka Seelye yang mendukung refleksi tetapi tidak
+
+18
+00:01:13,680 --> 00:01:15,500
+setiap sekolah saya kira refl ..
+
+19
+00:01:15,780 --> 00:01:21,890
+Tetapi pada dasarnya CIC akan berbicara ke server dan kami tidak akan memerlukan profil data awal.
+
+20
+00:01:21,960 --> 00:01:26,850
+Jadi apa yang akan kita lakukan adalah bahwa di Debro mengimplementasikan refleksi di server kami dan
+
+21
+00:01:26,850 --> 00:01:30,340
+langkah kedua akan menggunakan Evans Selye untuk berlatih di sisi klien.
+
+22
+00:01:30,360 --> 00:01:31,530
+Jadi mari kita mulai.
+
+23
+00:01:32,460 --> 00:01:36,330
+Jadi sekarang saya di Jarkesy pergi mendapatkan repositori.
+
+24
+00:01:36,360 --> 00:01:42,360
+Dan jika saya gulir ke bawah dan pergi ke refl. kita akan melihat bagaimana kita dapat menambahkan refleksi ke pekerjaan kita.
+
+25
+00:01:42,360 --> 00:01:44,390
+Proyek PC go.
+
+26
+00:01:44,490 --> 00:01:51,010
+Jadi, jika kita gulir ke bawah, kita dapat melihat bahwa pada dasarnya kita perlu mengimpor dependensi yang
+
+27
+00:01:51,030 --> 00:01:58,170
+satu ini yang disebut gulling bahwa Google menandai eksposur di luar negeri seperti refleksi dan kemudian kita akan
+
+28
+00:01:58,370 --> 00:02:02,200
+memiliki hal yang sama. titik-titik mendaftar dan kemudian S yang merupakan server kami.
+
+29
+00:02:02,650 --> 00:02:04,300
+Dan inilah yang harus kita lakukan.
+
+30
+00:02:04,320 --> 00:02:07,880
+Jadi mari kita lihat dan coba lakukan ini jadi saya akan menyalin ini.
+
+31
+00:02:07,890 --> 00:02:11,540
+Saya akan menyalin semuanya dan kami akan mengatasinya dalam beberapa detik.
+
+32
+00:02:11,550 --> 00:02:15,790
+Jadi mari kita pergi ke server kalkulator dan server kalkulator.
+
+33
+00:02:16,230 --> 00:02:22,410
+Jadi di sana saya akan menambahkan pernyataan impor. Saya hanya akan menambahkan yang ini di sini saya tidak akan membutuhkan
+
+34
+00:02:22,410 --> 00:02:26,230
+ini dan itu hanya akan memotong sedikit kotor tetapi ini akan berhasil.
+
+35
+00:02:26,370 --> 00:02:27,800
+Saya hanya akan memotong apa yang saya butuhkan.
+
+36
+00:02:28,020 --> 00:02:29,480
+Jadi di mana server saya.
+
+37
+00:02:29,520 --> 00:02:31,130
+Itu di bagian paling bawah.
+
+38
+00:02:31,290 --> 00:02:32,630
+Dan server saya ada di sini.
+
+39
+00:02:32,640 --> 00:02:35,390
+Dan di sinilah rata-rata menghargai layanan kalkulator saya.
+
+40
+00:02:35,430 --> 00:02:43,170
+Dan sekarang saya juga akan mendaftarkan refleksi refleksi yang mendaftar S dan itu benar-benar satu-satunya hal yang perlu saya lakukan untuk
+
+41
+00:02:43,440 --> 00:02:47,490
+mengaktifkan refleksi adalah Anda hanya menyalin garis itu dan memastikan kami
+
+42
+00:02:47,490 --> 00:02:48,920
+memiliki impor hak.
+
+43
+00:02:49,050 --> 00:02:50,370
+Jadi itu cukup bagus.
+
+44
+00:02:50,370 --> 00:02:55,200
+Sekarang mari kita lanjutkan dan simpan ini dan kemudian saya akan menjalankan server saya jadi saya akan lakukan.
+
+45
+00:02:55,200 --> 00:03:00,060
+Jalankan server kalkulator.
+
+46
+00:03:00,180 --> 00:03:00,950
+Pergilah.
+
+47
+00:03:01,010 --> 00:03:03,820
+Dan sekarang server kalkulator saya sedang berjalan.
+
+48
+00:03:03,820 --> 00:03:04,960
+Mari kita catat port-nya.
+
+49
+00:03:04,960 --> 00:03:07,200
+Ini berjalan pada portrayer 0 0 0 5 1.
+
+50
+00:03:07,420 --> 00:03:09,720
+Jadi langkah selanjutnya adalah menginstal Evans.
+
+51
+00:03:09,730 --> 00:03:15,390
+Jadi yang akan kita lakukan adalah kita akan pergi ke Evans Selye GOPAC.
+
+52
+00:03:15,620 --> 00:03:17,960
+Dan kemudian kami menyukai tautan pertama.
+
+53
+00:03:17,960 --> 00:03:21,910
+Jadi ini adalah antarmuka baris perintah atau CLIA yang sangat bagus yang sangat saya sukai.
+
+54
+00:03:21,920 --> 00:03:24,870
+Ini cukup populer dan mendukung refl ..
+
+55
+00:03:25,100 --> 00:03:27,910
+Jadi itu disebut Evans dan saya sangat menyukainya.
+
+56
+00:03:27,920 --> 00:03:31,520
+Jadi ada mode untuk menggunakan pemberontak sebagai mode.
+
+57
+00:03:31,790 --> 00:03:36,010
+Jadi jika Anda gulir ke bawah dan kami pergi ke instalasi ada beberapa cara untuk menginstalnya.
+
+58
+00:03:36,020 --> 00:03:42,140
+Yang pertama adalah pergi ke rilis rehabilitasi di mana Anda memiliki Mac Anda hanya dapat menggunakan Brou atau jika kita
+
+59
+00:03:42,140 --> 00:03:47,660
+menggunakan pergi kita bisa mengetik pergi dapatkan mendapatkan memiliki anak-anak koma slash 0 7 3 1 slash 7.
+
+60
+00:03:47,690 --> 00:03:50,030
+Jadi ada banyak cara untuk melakukannya.
+
+61
+00:03:50,030 --> 00:03:51,990
+Pilih cara apa pun yang Anda suka jujur.
+
+62
+00:03:52,010 --> 00:03:57,380
+Dan rilis yang bagus cukup bagus karena ini dapat dikompilasi yang dapat dieksekusi jadi ini untuk Mac ini untuk
+
+63
+00:03:57,380 --> 00:03:59,090
+linux dan ini untuk Windows.
+
+64
+00:03:59,210 --> 00:04:04,460
+Jadi pilih mode mana saja yang Anda inginkan, cukup lanjutkan dan instal.
+
+65
+00:04:04,460 --> 00:04:08,710
+Jadi server kalkulator saya berjalan dan saya akan ke Evans dan Alt-Tab Evans.
+
+66
+00:04:08,930 --> 00:04:10,990
+Dan bagi saya versi adalah 0 6 7.
+
+67
+00:04:11,060 --> 00:04:15,990
+Dan seperti yang dapat kita lihat, kita memiliki banyak opsi, tetapi kita akan mulai sebagai mode Selye.
+
+68
+00:04:16,010 --> 00:04:21,290
+Jadi kita hanya akan melakukan Evon secara seksual dan kemudian kita dapat menentukan port host tetapi kita akan menggunakan default
+
+69
+00:04:21,290 --> 00:04:22,720
+kita harus menimpa apa pun.
+
+70
+00:04:22,750 --> 00:04:28,800
+Kami hanya akan menentukan port untuk berjaga-jaga sehingga Evans minus P sebagai pengguna jika saya ingin menentukan
+
+71
+00:04:28,800 --> 00:04:36,620
+port kami untuk terhubung ke port 051 dan kemudian dalam hal refleksi karena kami ingin menggunakan refleksi Jarkesy yang kami lakukan dikurangi
+
+72
+00:04:36,690 --> 00:04:38,740
+milik kami dikurangi milik kami.
+
+73
+00:04:38,900 --> 00:04:39,560
+Dan di sini kita mulai.
+
+74
+00:04:39,590 --> 00:04:40,940
+Kami berada di Evans.
+
+75
+00:04:40,980 --> 00:04:42,840
+OK jadi bagaimana kita menggunakan bukti.
+
+76
+00:04:42,860 --> 00:04:46,560
+Nah cara terbaik adalah pergi ke dokumentasi juga dan melihat penggunaannya.
+
+77
+00:04:46,760 --> 00:04:48,360
+Jadi ada paket pertunjukan.
+
+78
+00:04:48,350 --> 00:04:52,310
+Ini adalah layanan pertunjukan dan perintah pesan acara akan bisa menjelajahinya.
+
+79
+00:04:52,670 --> 00:04:58,010
+Kemudian Anda bisa mendapatkan deskripsi lebih lanjut dan kami juga dapat menghubungi PC kami dan saya akan menunjukkan kepada Anda bagaimana melakukan ini
+
+80
+00:04:58,070 --> 00:04:58,920
+dalam satu detik.
+
+81
+00:04:59,120 --> 00:05:00,700
+Jadi mari kita lanjutkan dan berlatih.
+
+82
+00:05:00,860 --> 00:05:04,760
+Jadi jika kita menunjukkan paket, kita mendapatkan paket default.
+
+83
+00:05:04,790 --> 00:05:06,710
+Ini karena kami menggunakan refleksi.
+
+84
+00:05:06,710 --> 00:05:10,910
+Sekarang kita dapat melakukan layanan singkat dan kita dapat melihat layanan kalkulator di sini.
+
+85
+00:05:11,060 --> 00:05:15,260
+Dan yang paling keren adalah kita mendapatkan ini di tabel sehingga kita
+
+86
+00:05:15,260 --> 00:05:22,250
+mendapatkan layanan kalkulator nama IPC jenis permintaan dan jenis respons dan jika Anda bisa menampilkan pesan, kami mendapatkan daftar semua pesan
+
+87
+00:05:22,250 --> 00:05:24,160
+yang tersedia untuk kami. .
+
+88
+00:05:24,200 --> 00:05:31,170
+Kami juga dapat melakukan desk untuk deskripsi dan kami dapat menggambarkan pesan atau misalnya beberapa permintaan.
+
+89
+00:05:31,190 --> 00:05:35,870
+Dan di sini kita mengatakan bahwa beberapa permintaan adalah pesan yang berisi dua bidang tipe.
+
+90
+00:05:35,880 --> 00:05:37,040
+Int 32.
+
+91
+00:05:37,310 --> 00:05:39,730
+Jadi secara keseluruhan saya benar-benar keren bahwa kita dapat melakukan hal-hal ini.
+
+92
+00:05:39,740 --> 00:05:40,270
+BAIK.
+
+93
+00:05:40,550 --> 00:05:47,480
+Jadi mari kita kembali ke paket yakin awal dan kemudian ya Anda melakukan paket default untuk menentukan bahwa Anda
+
+94
+00:05:47,480 --> 00:05:48,960
+menggunakan paket default.
+
+95
+00:05:49,190 --> 00:05:53,670
+Tapi kami sudah default seperti yang Anda lihat sekarang apakah Anda menampilkan layanan.
+
+96
+00:05:54,020 --> 00:05:57,650
+Dan dia kita harus tentukan. Kita ingin menggunakan layanan kalkulator.
+
+97
+00:05:57,650 --> 00:06:00,710
+Jadi kami akan melakukan layanan kalkulator layanan.
+
+98
+00:06:00,710 --> 00:06:06,780
+Dan sekarang seperti yang Anda lihat di sisi kiri, kami berada dalam layanan kalkulator titik default.
+
+99
+00:06:06,810 --> 00:06:07,890
+Oke itu berhasil.
+
+100
+00:06:08,030 --> 00:06:10,270
+Dan sekarang kita dapat menyebut beberapa spesies kita.
+
+101
+00:06:10,420 --> 00:06:16,070
+Untuk memanggil misalnya beberapa dan mulai meminta kami untuk beberapa bidang sehingga kami akan nomor
+
+102
+00:06:16,070 --> 00:06:20,600
+pertama kita akan mengatakan 12 detik nomor 32 dan hasilnya adalah 44.
+
+103
+00:06:20,610 --> 00:06:21,710
+Betapa mengagumkan itu benar.
+
+104
+00:06:21,710 --> 00:06:28,390
+Kami baru saja memanggil pekerjaan kami karena Anda melihatnya bahkan tanpa menulis kode jenis tertentu kami hanya menggunakan CLIA.
+
+105
+00:06:28,760 --> 00:06:37,220
+Jadi kita dapat melakukan berbagai jenis panggilan jadi mari kita coba misalnya dekomposisi bilangan prima yang merupakan pemangkasan
+
+106
+00:06:37,580 --> 00:06:41,860
+layanan sehingga kami akan memanggil dekomposisi bilangan prima.
+
+107
+00:06:42,200 --> 00:06:45,820
+Jadi mari kita letakkan seperti beberapa angka besar
+
+108
+00:06:46,220 --> 00:06:46,890
+BAIK.
+
+109
+00:06:47,150 --> 00:06:48,100
+Dan booming di sini kita mulai.
+
+110
+00:06:48,100 --> 00:06:52,990
+Kami memiliki dekomposisi bilangan prima yang terjadi dalam sedetik sehingga kami melihat semua faktor
+
+111
+00:06:52,980 --> 00:06:56,890
+prima di sini yang mengalir melalui layar saya dengan sangat cepat.
+
+112
+00:06:57,290 --> 00:07:00,590
+OK, mari kita lakukan lagi, mari kita cari layanan lain untuk dihubungi.
+
+113
+00:07:00,720 --> 00:07:03,590
+Jadi hitung rata-rata adalah streaming Klien.
+
+114
+00:07:03,590 --> 00:07:07,240
+Jadi kami akan menyebutnya menghitung rata-rata hanya jenis streaming.
+
+115
+00:07:07,370 --> 00:07:10,690
+Jadi di sini kita bisa mengatakan oke saya akan memberi Anda beberapa nomor.
+
+116
+00:07:10,880 --> 00:07:15,950
+Dan seperti yang Anda lihat karena ini adalah semacam pemangkasan, tidak pernah berhenti meminta saya untuk beberapa
+
+117
+00:07:15,950 --> 00:07:17,510
+nomor sampai saya mengontrol D.
+
+118
+00:07:17,690 --> 00:07:23,920
+Dan kapan Anda mengontrol dasarnya mengirim sinyal mematikan dan mendapatkan kembali rata-rata sebagai hasilnya.
+
+119
+00:07:24,050 --> 00:07:33,830
+Jadi sangat luar biasa menemukan maksimum adalah jika saya ingat itu dengan dadu jadi saya akan memanggil maksimum.
+
+120
+00:07:34,250 --> 00:07:40,450
+Dan di sini kita bisa mendapatkannya dengan memotong dadu terjadi jadi mari kita ambil nomor tiga tiga.
+
+121
+00:07:40,470 --> 00:07:41,810
+Jadi maksimum adalah tiga.
+
+122
+00:07:41,810 --> 00:07:45,300
+Ya itu masuk akal maka nomor empat maksimal adalah empat.
+
+123
+00:07:45,300 --> 00:07:47,450
+Nomor satu kita tidak mendapat tanggapan lagi.
+
+124
+00:07:47,440 --> 00:07:49,160
+Nomor dua tidak ada tanggapan.
+
+125
+00:07:49,310 --> 00:07:50,770
+Tetapi jika kita pergi ke nomor 6 ya.
+
+126
+00:07:50,780 --> 00:07:52,260
+Dan pepatah Anda telah diperbarui.
+
+127
+00:07:52,460 --> 00:07:54,740
+Pembaruan nomor 10 masih.
+
+128
+00:07:54,740 --> 00:07:58,990
+Nomor tiga lagi tidak ada pembaruan dan Anda mengontrol keluar D2 ketika saya selesai.
+
+129
+00:07:59,300 --> 00:08:02,870
+Dan booming kita tahu bahwa maksimum terakhir adalah 10.
+
+130
+00:08:02,870 --> 00:08:04,480
+Sangat sangat mengagumkan.
+
+131
+00:08:04,940 --> 00:08:10,670
+Dan akhirnya jika kita menunjukkan layanan lagi dan yang terakhir kita bisa menyebutnya akar kuadrat
+
+132
+00:08:10,670 --> 00:08:18,080
+kita bisa memanggil akar kuadrat sehingga kita dapat memberikan angka positif misalnya 500 dan rutenya adalah 20 tetapi jika memanggil akar
+
+133
+00:08:18,080 --> 00:08:19,660
+kuadrat dengan minus 42.
+
+134
+00:08:19,730 --> 00:08:25,190
+Kami mendapatkan kesalahan RBC yang sebagai argumen tidak valid dan deskripsi pesan kesalahan diterima
+
+135
+00:08:25,190 --> 00:08:27,260
+angka negatif minus 42.
+
+136
+00:08:27,410 --> 00:08:31,940
+Jadi secara keseluruhan tahun ini saya benar-benar luar biasa karena Anda dapat melihat ada penyelesaian otomatis dan ada dukungan untuk semua jenis
+
+137
+00:08:31,940 --> 00:08:37,880
+hiasan dan itu memungkinkan kami untuk hanya berbicara dengan server GAAP untuk memiliki refl. mengaktifkan ini tidak mungkin
+
+138
+00:08:37,880 --> 00:08:40,960
+jika kami tidak mengaktifkan refleksi Scheppers.
+
+139
+00:08:41,000 --> 00:08:42,180
+Jadi saya harap itu masuk akal.
+
+140
+00:08:42,200 --> 00:08:44,820
+Oh itu sangat membantu dan saya akan melihat Anda di kuliah berikutnya.
+

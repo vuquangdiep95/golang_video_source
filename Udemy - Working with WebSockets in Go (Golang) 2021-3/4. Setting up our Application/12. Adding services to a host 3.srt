@@ -1,0 +1,735 @@
+1
+00:00:00,960 --> 00:00:04,920
+So we're at the point now where we want to do something with this toggle, I'm looking at a host, an
+
+2
+00:00:04,920 --> 00:00:06,750
+actual host with information in it.
+
+3
+00:00:06,760 --> 00:00:11,910
+So my one localhost mine happens to have the ID of six because I've been playing with the database and
+
+4
+00:00:11,910 --> 00:00:15,090
+yours might be one or two, but it doesn't matter as long as you're looking at a host.
+
+5
+00:00:16,260 --> 00:00:19,740
+And when I click this, I actually want something to happen.
+
+6
+00:00:19,740 --> 00:00:29,310
+I want to if somebody turns it on, I want to fire off a request in the background using Ajax and update
+
+7
+00:00:29,310 --> 00:00:33,910
+the service for this host for the one service I have http.
+
+8
+00:00:33,930 --> 00:00:38,010
+I want to make that active in the database, which means it's an active service that we're going to
+
+9
+00:00:38,010 --> 00:00:38,790
+want to monitor.
+
+10
+00:00:39,190 --> 00:00:41,750
+And if somebody turns it off, we want to do the reverse.
+
+11
+00:00:41,760 --> 00:00:44,600
+We no longer want to monitor this service on this host.
+
+12
+00:00:45,600 --> 00:00:49,170
+So to make that happen, first of all, let's work on the JavaScript.
+
+13
+00:00:49,170 --> 00:00:55,740
+So I'm going to go back to my idea and I'm going to find a hosted jet and I'm going to find this part
+
+14
+00:00:55,740 --> 00:00:57,480
+where the toggle is rendered.
+
+15
+00:00:57,480 --> 00:01:00,240
+And I'll just put this on another line so we have a little more room.
+
+16
+00:01:00,630 --> 00:01:03,720
+And what I'm going to do here is add some data attributes.
+
+17
+00:01:03,720 --> 00:01:06,480
+And the first one I'm going to add is data dash service.
+
+18
+00:01:06,480 --> 00:01:11,490
+And I'll make that equal to and if you recall, the one service we have in our services table in the
+
+19
+00:01:11,490 --> 00:01:12,900
+database is Idy one.
+
+20
+00:01:13,110 --> 00:01:14,130
+So I'll make that I.T. one.
+
+21
+00:01:14,910 --> 00:01:20,610
+And then I also want one other piece of information, data host ID, and that's going to be equal to
+
+22
+00:01:20,610 --> 00:01:24,570
+and I'll just grab that from the data pass to our template host ID.
+
+23
+00:01:27,080 --> 00:01:30,170
+And I've got to get the quote out of there and put it here.
+
+24
+00:01:31,130 --> 00:01:38,000
+OK, so now we have a data service and a data hosta ID and that's really information I want to use for
+
+25
+00:01:38,000 --> 00:01:38,660
+two purposes.
+
+26
+00:01:39,080 --> 00:01:44,540
+The first one is actually I'd better put a third one here is I need to selector, so I'll call this
+
+27
+00:01:44,780 --> 00:01:48,740
+data type and that's going to be toggle service.
+
+28
+00:01:49,490 --> 00:01:52,970
+So I'm going to use this data type as a selector.
+
+29
+00:01:53,240 --> 00:01:58,850
+So I'm going to use JavaScript to say finally all the elements on the current page that have the data
+
+30
+00:01:58,850 --> 00:02:03,620
+type of toggle service and that will get me a collection of all of the toggles and we just have one.
+
+31
+00:02:03,620 --> 00:02:04,940
+But we might have more in the future.
+
+32
+00:02:05,870 --> 00:02:11,060
+Data service will give me enough information that I can pull using JavaScript to find out what service
+
+33
+00:02:11,060 --> 00:02:11,390
+it is.
+
+34
+00:02:11,420 --> 00:02:18,680
+This happens to be ID one http and the last bit tells me what host this service is associated with and
+
+35
+00:02:18,680 --> 00:02:21,290
+that's the actual ID of our host in the database.
+
+36
+00:02:21,770 --> 00:02:24,640
+So I have this information added to my input.
+
+37
+00:02:25,040 --> 00:02:31,100
+Now we need to go down to my JavaScript section just after this opening script tag and I want to fire
+
+38
+00:02:31,100 --> 00:02:34,340
+something when the page is entirely loaded.
+
+39
+00:02:35,090 --> 00:02:39,290
+So we'll add an event listener document at event listener.
+
+40
+00:02:39,320 --> 00:02:44,300
+And the condition I want is dom content loaded spelled exactly like that.
+
+41
+00:02:44,300 --> 00:02:45,440
+And it's going to be a function.
+
+42
+00:02:46,850 --> 00:02:52,040
+And when it's loaded, the very first thing I want to do is get all of my toddles, all of my service
+
+43
+00:02:52,040 --> 00:02:53,570
+toggles, so I'll create a variable.
+
+44
+00:02:53,570 --> 00:02:56,300
+Let Turrell's equal document.
+
+45
+00:02:57,620 --> 00:03:04,250
+Weary selecter all and make sure you have the all of the end or this won't work and I'm going to look
+
+46
+00:03:04,250 --> 00:03:10,550
+for anything in quotes and then in square brackets, anything that has the data attribute data service.
+
+47
+00:03:11,000 --> 00:03:13,870
+OK, so don't need the quotes there.
+
+48
+00:03:14,480 --> 00:03:17,420
+So that gets me a reference to all of the services.
+
+49
+00:03:17,450 --> 00:03:23,820
+OK, so now that I've done this, let's see if we can actually find any services.
+
+50
+00:03:23,840 --> 00:03:27,980
+So what I'm going to do now that I have this collection, which might be zero elements, it might be
+
+51
+00:03:27,980 --> 00:03:29,060
+55 elements.
+
+52
+00:03:29,060 --> 00:03:33,850
+It's something let's loop through it for let I equal zero.
+
+53
+00:03:34,640 --> 00:03:40,160
+So we'll start counting at zero because this will be an array I is less than the length of toggles.
+
+54
+00:03:41,230 --> 00:03:44,900
+So I'm toggles that length and add one each time through.
+
+55
+00:03:45,920 --> 00:03:51,590
+So as long as, as long as there's at least one element on the page that has the data attribute data
+
+56
+00:03:51,590 --> 00:03:54,100
+service, then I should have found something.
+
+57
+00:03:54,110 --> 00:03:57,690
+So we'll just say console log found one.
+
+58
+00:03:59,300 --> 00:04:07,040
+OK, so let's save this and go back to our Web browser and open the JavaScript console and reload the
+
+59
+00:04:07,040 --> 00:04:07,580
+page.
+
+60
+00:04:08,150 --> 00:04:09,560
+And it found one perfect.
+
+61
+00:04:09,770 --> 00:04:12,110
+OK, so we know we found at least one.
+
+62
+00:04:12,140 --> 00:04:12,770
+Now, what else?
+
+63
+00:04:12,770 --> 00:04:13,850
+What else can we get from that?
+
+64
+00:04:13,880 --> 00:04:18,520
+Well, now that we found it, we can actually give some and see what information we can pull from it.
+
+65
+00:04:18,530 --> 00:04:27,980
+So we'll say console, dot, log service, and that will be toggles by the current index that we're
+
+66
+00:04:27,980 --> 00:04:28,870
+iterating through.
+
+67
+00:04:29,360 --> 00:04:35,150
+Get attribute and we'll get data service, which we better spell right.
+
+68
+00:04:35,150 --> 00:04:36,200
+Or it won't give us anything.
+
+69
+00:04:37,370 --> 00:04:38,950
+OK, so it found the service.
+
+70
+00:04:39,470 --> 00:04:43,880
+Let's see if it can find the service ID service one.
+
+71
+00:04:43,880 --> 00:04:44,420
+Perfect.
+
+72
+00:04:44,660 --> 00:04:52,790
+Let's get the home study so I'll duplicate that line, post data, post ID and let's reload the page
+
+73
+00:04:53,600 --> 00:04:55,360
+and it found everything we need to know.
+
+74
+00:04:55,400 --> 00:04:55,960
+Perfect.
+
+75
+00:04:56,390 --> 00:04:59,060
+So now that we've done that, this is a good start.
+
+76
+00:04:59,060 --> 00:05:03,560
+But when I actually go to the services tab and click on this button, nothing happens.
+
+77
+00:05:04,430 --> 00:05:08,570
+So what we're going to do is not log all this information, a comment, this edit or delete it in a
+
+78
+00:05:08,570 --> 00:05:08,840
+moment.
+
+79
+00:05:08,840 --> 00:05:13,100
+What we want to do instead is to add an event listener to the current button.
+
+80
+00:05:13,100 --> 00:05:17,870
+As every time we go through this and we find a toggle, we want to add an event listener that says when
+
+81
+00:05:17,870 --> 00:05:24,230
+these changes do something, so we'll just say toggles our current iteration, which is index.
+
+82
+00:05:24,230 --> 00:05:28,460
+I will add an event listener and we want the change listener.
+
+83
+00:05:28,470 --> 00:05:35,000
+So when this when this toggle changes state from on to off or off to on, we want to fire a function.
+
+84
+00:05:35,690 --> 00:05:39,020
+And all we'll do right now is to determine whether or not it's actually been clicked.
+
+85
+00:05:39,020 --> 00:05:41,240
+So we'll just say console.
+
+86
+00:05:45,110 --> 00:05:52,310
+Log toggle was changed, OK, and I'll just comment this stuff because we know that's working.
+
+87
+00:05:52,390 --> 00:05:53,180
+I shall just delete it.
+
+88
+00:05:55,020 --> 00:06:00,900
+So we'll save this, go back here, clear the JavaScript console, reload the page, make sure we're
+
+89
+00:06:00,900 --> 00:06:04,380
+looking at the services tab and toggle what's changed.
+
+90
+00:06:04,380 --> 00:06:06,540
+And every time I do it, it increments the counter here.
+
+91
+00:06:06,540 --> 00:06:07,290
+So I know what's working.
+
+92
+00:06:07,680 --> 00:06:12,330
+So now let's see if we can figure out whether it was clicked or not, whether it was clicked on or off.
+
+93
+00:06:13,020 --> 00:06:18,360
+So in this case, I'll say if and I can use the the keyword this because I'm referring to a specific
+
+94
+00:06:18,360 --> 00:06:18,750
+element.
+
+95
+00:06:19,080 --> 00:06:31,170
+If this DOT checked will just say console dot, log toggle is checked, otherwise it's not checked ELT's
+
+96
+00:06:32,040 --> 00:06:36,570
+console log toggle is unchecked.
+
+97
+00:06:41,190 --> 00:06:42,390
+OK, save that.
+
+98
+00:06:42,390 --> 00:06:49,830
+Reload the page, clear the JavaScript console, go to the services tab and toggle toggle is checked.
+
+99
+00:06:49,830 --> 00:06:54,540
+So when it was off and I turn it on at that point the target list checked.
+
+100
+00:06:54,870 --> 00:06:57,750
+If I turn it off toggle is unchecked.
+
+101
+00:06:57,990 --> 00:06:59,710
+So this is exactly what we need.
+
+102
+00:07:00,330 --> 00:07:05,850
+So what we want to do next is not just to console log this.
+
+103
+00:07:05,880 --> 00:07:10,110
+We actually want to fire off a JavaScript request in the background and AJAX requests.
+
+104
+00:07:10,110 --> 00:07:15,690
+So let's go back to our ID and let's think about how we're going to manage this.
+
+105
+00:07:15,870 --> 00:07:19,860
+So I know that I can finding all the toggles with the data service.
+
+106
+00:07:19,890 --> 00:07:21,750
+If it doesn't have a data service, it will be ignored.
+
+107
+00:07:22,350 --> 00:07:25,400
+And I know that I'm looping through them all and adding the event listener.
+
+108
+00:07:25,710 --> 00:07:31,230
+So what I want to do is actually fire off a JavaScript request in the background and Ajax request,
+
+109
+00:07:31,560 --> 00:07:33,650
+and we do that using fetch.
+
+110
+00:07:34,170 --> 00:07:36,450
+So I'll write some code here right now.
+
+111
+00:07:37,110 --> 00:07:39,360
+Fetch and it has to have a path name.
+
+112
+00:07:39,360 --> 00:07:42,180
+So let's look at our roots file and see what a good path name would be.
+
+113
+00:07:42,780 --> 00:07:49,440
+We're working right here, so maybe we should have something like Agosta Ajax so we know it's a background
+
+114
+00:07:49,440 --> 00:07:49,920
+request.
+
+115
+00:07:49,920 --> 00:07:54,570
+OK, so I'll make it long enough that I know it won't conflict with any other route.
+
+116
+00:07:54,990 --> 00:08:03,900
+So I'll put some admin slash host slash Ajax toggle service and that's probably long enough.
+
+117
+00:08:03,900 --> 00:08:05,780
+It's got one, two, three, four elements.
+
+118
+00:08:05,790 --> 00:08:07,590
+Is that going to match anything in my file.
+
+119
+00:08:09,130 --> 00:08:09,940
+Now we're good.
+
+120
+00:08:10,090 --> 00:08:16,930
+OK, so I can use that as a euro, so that's my my first part of my parameter and I want to give some
+
+121
+00:08:18,220 --> 00:08:20,020
+specifics to this request.
+
+122
+00:08:20,030 --> 00:08:26,140
+I want to make this a post request method, which will be post like that.
+
+123
+00:08:27,010 --> 00:08:28,990
+And I need to pass it a body.
+
+124
+00:08:28,990 --> 00:08:30,610
+I need to pass it some information.
+
+125
+00:08:30,910 --> 00:08:34,970
+So this I'll call form data, which doesn't exist yet, but I'll create it in a moment.
+
+126
+00:08:35,560 --> 00:08:40,470
+So up here, let's create a new form, a new form document.
+
+127
+00:08:40,480 --> 00:08:45,340
+So we'll say let the form data equal new.
+
+128
+00:08:46,570 --> 00:08:52,490
+Form data with caps, so that creates an empty form data object for us.
+
+129
+00:08:52,900 --> 00:08:56,950
+And what I want to put in there is all the information I want to post to this.
+
+130
+00:08:56,950 --> 00:08:57,440
+You are out.
+
+131
+00:08:57,790 --> 00:09:05,800
+So I'm going to need the whole study for sure so I can say form data, dot append and I'll append something
+
+132
+00:09:05,800 --> 00:09:12,280
+called Hoshide and that will be equal to this dot get attribute.
+
+133
+00:09:17,610 --> 00:09:25,560
+This got get attribute and it was data post ID, that's our host I.D. I also want to get the service
+
+134
+00:09:25,560 --> 00:09:30,940
+ID, so I call that service I.D. and that's called data.
+
+135
+00:09:31,050 --> 00:09:31,710
+What was it called?
+
+136
+00:09:33,390 --> 00:09:34,700
+Come up here, make sure I get it right.
+
+137
+00:09:36,730 --> 00:09:37,480
+Data service.
+
+138
+00:09:40,330 --> 00:09:46,920
+Data service, and the last thing I need to append is actually my CSF token or else this won't work
+
+139
+00:09:46,930 --> 00:09:48,930
+and that's a mistake I make all the time.
+
+140
+00:09:48,940 --> 00:09:57,820
+So let's add it right now while I'm thinking of it form data append and we'll call that to see SRF token,
+
+141
+00:09:57,820 --> 00:10:04,720
+which is what it has to be called, won't work and will put in simply the CSR RF token that we pass
+
+142
+00:10:04,720 --> 00:10:05,440
+right from.
+
+143
+00:10:05,440 --> 00:10:12,390
+And it's going to be in quotes, right from our data past all templates, CSS, RF token.
+
+144
+00:10:18,640 --> 00:10:20,890
+And this should be a lower o they're.
+
+145
+00:10:23,430 --> 00:10:28,070
+OK, so now we have all of this information that we need, we're going to post it, the host I.D.,
+
+146
+00:10:28,110 --> 00:10:31,580
+the server said to you, the CSF token, is there anything else that I need?
+
+147
+00:10:31,590 --> 00:10:32,220
+Well, yes.
+
+148
+00:10:32,370 --> 00:10:34,170
+Whether or not we're turning it on or off.
+
+149
+00:10:35,040 --> 00:10:38,370
+So we'll say let it turn on equal.
+
+150
+00:10:41,520 --> 00:10:48,870
+True, so I'm just defining it to be true, and we can say, if not this checked, then.
+
+151
+00:10:50,890 --> 00:10:58,120
+Turn on equals false, then I don't even need this statement, so this should actually be exactly what
+
+152
+00:10:58,120 --> 00:10:58,480
+I need.
+
+153
+00:10:59,020 --> 00:11:07,300
+I just need to append here, turn I'll call it turn service on.
+
+154
+00:11:08,760 --> 00:11:10,440
+And we'll make that a boolean.
+
+155
+00:11:12,120 --> 00:11:15,080
+We'll just say turn on, OK?
+
+156
+00:11:16,230 --> 00:11:18,570
+And, of course, it needs to be a string, so I can't do that.
+
+157
+00:11:18,570 --> 00:11:23,410
+Turn on as equal to one turn on is equal to zero.
+
+158
+00:11:23,820 --> 00:11:28,560
+There you can't pass anything but a string in a post like this unless you're passing binary data.
+
+159
+00:11:28,570 --> 00:11:29,430
+But we're not doing that.
+
+160
+00:11:30,390 --> 00:11:34,220
+So we're making our request here, but we haven't done anything with it yet.
+
+161
+00:11:34,230 --> 00:11:40,890
+So typically what you're going to do next is DOT then and we'll get our response, which we're going
+
+162
+00:11:40,890 --> 00:11:42,000
+to turn into, Jason.
+
+163
+00:11:48,160 --> 00:11:54,750
+And then we do something with it, then data, we can call that whatever we want and that's just a function.
+
+164
+00:11:54,970 --> 00:12:04,510
+So we'll just say console log called Ajax, which means we need to send back in Ajax's response from
+
+165
+00:12:04,510 --> 00:12:05,580
+this Eurail.
+
+166
+00:12:05,920 --> 00:12:08,460
+OK, so does this all look right?
+
+167
+00:12:08,470 --> 00:12:09,220
+It does for now.
+
+168
+00:12:09,820 --> 00:12:16,190
+So let's copy this URL, just this part, because the admin has added in our reads file, go to our
+
+169
+00:12:16,210 --> 00:12:20,350
+reads file and we'll create a new handler, Muxtape Post.
+
+170
+00:12:21,400 --> 00:12:28,360
+That's our URL and we're going to call handlers dot repo and we'll call a handler that doesn't exist
+
+171
+00:12:28,360 --> 00:12:30,940
+yet called Targo Service.
+
+172
+00:12:33,050 --> 00:12:34,280
+For host.
+
+173
+00:12:35,590 --> 00:12:40,530
+So let's go create this handler just so that there's no error in our code, so I'll just jump over here,
+
+174
+00:12:40,990 --> 00:12:46,210
+go to the very bottom and say funk and it will have a receiver of.
+
+175
+00:12:47,480 --> 00:12:54,830
+Repoll start DB repo and what did I call that handler toggle service for host?
+
+176
+00:12:55,650 --> 00:13:00,440
+So we'll go back to our handlers, give it a name, make it a handler by giving it a response writer,
+
+177
+00:13:01,460 --> 00:13:06,320
+HTP response writer and or is a pointer to a request.
+
+178
+00:13:06,320 --> 00:13:07,790
+A sheepdog request.
+
+179
+00:13:08,740 --> 00:13:13,710
+OK, so if we go back to our roots file, that error should be gone.
+
+180
+00:13:13,730 --> 00:13:20,090
+It is so in the next lecture we'll actually write some code in that handler that just sends back Jason.
+
+181
+00:13:20,120 --> 00:13:22,450
+It won't actually do the toggling on and off right away.
+
+182
+00:13:22,610 --> 00:13:27,740
+We just want to make sure everything's wired up and that our JavaScript is talking to our handler and
+
+183
+00:13:27,740 --> 00:13:28,540
+vice versa.
+
+184
+00:13:28,550 --> 00:13:30,590
+So we'll take care of that in the next lecture.

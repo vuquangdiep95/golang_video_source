@@ -1,0 +1,243 @@
+1
+00:00:12,790 --> 00:00:16,500
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:17,110 --> 00:00:24,100
+In the previous session, we talked about three imperfect in history and in this, we want to talk about
+
+3
+00:00:24,100 --> 00:00:25,840
+the other extreme concept.
+
+4
+00:00:29,170 --> 00:00:31,510
+Is split a string in go blank?
+
+5
+00:00:33,500 --> 00:00:41,240
+In GO districts, you are allowed to split a string into a slice with the help of following functions.
+
+6
+00:00:42,380 --> 00:00:48,830
+These functions are defined under a strings package, so you have to import the strings package in your
+
+7
+00:00:48,830 --> 00:00:51,290
+program for accessing these functions.
+
+8
+00:00:52,010 --> 00:00:53,630
+First, this split.
+
+9
+00:00:55,760 --> 00:01:03,560
+This function splits a string into all solid string separated by the Gibbons separator and returns a
+
+10
+00:01:03,560 --> 00:01:06,320
+slice which contains these substances.
+
+11
+00:01:07,190 --> 00:01:09,380
+Now you can see the scene techs.
+
+12
+00:01:11,720 --> 00:01:15,620
+Here, SDR is the extreme and SAP is the separator.
+
+13
+00:01:16,250 --> 00:01:24,320
+If SDR does not contain the given sit and sip is not empty, then it will return a slice of black swan,
+
+14
+00:01:24,320 --> 00:01:33,770
+which contain only SDR or if the SAP is A. Then it will split after each UTF eight sequence, or if
+
+15
+00:01:33,770 --> 00:01:39,620
+both SDR and SIP are empty, then it will return an entire slice.
+
+16
+00:01:40,250 --> 00:01:45,470
+Now let's go to the school for a grant to illustrate how to split a string.
+
+17
+00:01:47,920 --> 00:01:54,240
+First, creating an initializing the three extreme variables is still wrong.
+
+18
+00:01:55,150 --> 00:01:59,530
+Calling equals CET value very calm.
+
+19
+00:02:00,930 --> 00:02:17,850
+Comma to the comma, go programming, comma language, go to the next line and define another variable
+
+20
+00:02:17,850 --> 00:02:21,030
+like SDR to call an equal set value.
+
+21
+00:02:21,600 --> 00:02:35,940
+My name is Robert and go to the next line is two or three equals cet value.
+
+22
+00:02:36,450 --> 00:02:37,330
+I am.
+
+23
+00:02:38,640 --> 00:02:41,280
+A GO program is
+
+24
+00:02:45,030 --> 00:02:48,930
+now displaying Valley three is before using a split function.
+
+25
+00:02:50,760 --> 00:02:57,140
+AFP S.T.A.R. colour is still warm.
+
+26
+00:02:58,610 --> 00:03:04,080
+If this is your tool, colour sit still too.
+
+27
+00:03:05,040 --> 00:03:11,700
+And if P is to your tree colour and asset value, there is still a tree.
+
+28
+00:03:12,930 --> 00:03:17,510
+Okay, now is pleading to give you this string using split function.
+
+29
+00:03:18,180 --> 00:03:25,090
+For the example, S2 is first is turning into all substring separated by the comma separator and returns
+
+30
+00:03:25,090 --> 00:03:25,710
+this guide.
+
+31
+00:03:25,710 --> 00:03:36,720
+It contains some strings defining variable light result while calling equals the strings package and
+
+32
+00:03:36,720 --> 00:03:49,680
+call split function first set variable name in this case SDR one and set separator in this case, comma
+
+33
+00:03:50,130 --> 00:03:51,540
+for the other variables.
+
+34
+00:03:51,660 --> 00:03:53,370
+Do these resolved?
+
+35
+00:03:54,550 --> 00:04:00,760
+Oh, Colin decodes the strings package that is fleet.
+
+36
+00:04:02,990 --> 00:04:13,260
+And that SDR to variable and set a space for this case, go to the next line and define another variable
+
+37
+00:04:13,640 --> 00:04:14,510
+result.
+
+38
+00:04:15,290 --> 00:04:29,330
+Three Colin equals strength the split function there are three and for this case, said exclamation
+
+39
+00:04:29,330 --> 00:04:37,090
+mark as the creator now displaying the result variables for the example, for the resolved one, peacefully
+
+40
+00:04:37,100 --> 00:04:41,420
+value and type of value will go to the next line.
+
+41
+00:04:42,380 --> 00:05:04,010
+If Earth back has less and resolved one time per cent to offer case back T please on one per cent,
+
+42
+00:05:04,370 --> 00:05:13,460
+the bank is less and said resolved long and resolved one.
+
+43
+00:05:15,950 --> 00:05:22,130
+Now its rate result one is a slice and disbelief value of it by the range for a loop.
+
+44
+00:05:22,430 --> 00:05:36,260
+For the example, four underscore common set of areas ED like value column equals wrench in result won't
+
+45
+00:05:36,830 --> 00:05:43,100
+go to the body a statement and said if the value.
+
+46
+00:05:44,980 --> 00:05:57,160
+And go out of the follow up and display the other variables, for the example, FP result to color resolved
+
+47
+00:05:57,730 --> 00:06:03,190
+to be resolved.
+
+48
+00:06:04,730 --> 00:06:08,260
+Three, Colin and said result.
+
+49
+00:06:09,110 --> 00:06:09,470
+Three.
+
+50
+00:06:10,430 --> 00:06:10,830
+OK.
+
+51
+00:06:10,880 --> 00:06:14,900
+Defoliant, they quote, save the project and execute the program.
+
+52
+00:06:17,030 --> 00:06:25,340
+Now we can see that output for the first variable defined the common character as a separate or to use
+
+53
+00:06:25,340 --> 00:06:32,260
+the split function and drop is a slice of the string as the return value inside the reasons why and
+
+54
+00:06:32,780 --> 00:06:39,260
+then display the value and type of the result variable and use the range POLU to iterate.
+
+55
+00:06:39,260 --> 00:06:41,030
+The result is a nice value.
+
+56
+00:06:41,780 --> 00:06:46,470
+We also do this for the second and third variables in third variables.
+
+57
+00:06:46,490 --> 00:06:48,960
+It does not contain the given separator.
+
+58
+00:06:49,220 --> 00:06:55,220
+Then it returns lines of legs, one which contain only CIF variable value.
+
+59
+00:06:55,580 --> 00:07:00,830
+In order not to prolong the time of decision, we will finish sheet and we will continue the content
+
+60
+00:07:00,830 --> 00:07:02,030
+in the next session.
+
+61
+00:07:02,240 --> 00:07:02,780
+Goodbye.

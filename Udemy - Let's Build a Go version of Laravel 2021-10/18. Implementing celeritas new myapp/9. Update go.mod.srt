@@ -1,0 +1,247 @@
+1
+00:00:00,810 --> 00:00:05,820
+So the next step in this process is to create a go document file, and as I said last time around,
+
+2
+00:00:05,820 --> 00:00:10,260
+I'm going to delete the one we pulled down from the remote repository and just create one by hand.
+
+3
+00:00:10,770 --> 00:00:16,910
+So to make that happen, I'm going to switch over to the My App project and I'll open the goddamned
+
+4
+00:00:16,910 --> 00:00:23,610
+mod file and select all and copy and switch back to the celebrity's project and write inside the Templates
+
+5
+00:00:23,610 --> 00:00:25,800
+folder in the CMD Seelye folder.
+
+6
+00:00:26,040 --> 00:00:34,320
+I'll create a new file, which I'll call Go Dark Mode Text, and I'll paste in what I just copy and
+
+7
+00:00:34,320 --> 00:00:35,410
+then I'll scroll to the very top.
+
+8
+00:00:35,410 --> 00:00:36,810
+And there's really only two changes.
+
+9
+00:00:37,650 --> 00:00:42,240
+Obviously, we don't want to use this replace line anymore because the user won't have this letter to
+
+10
+00:00:42,240 --> 00:00:44,340
+this folder, so we'll delete that.
+
+11
+00:00:46,200 --> 00:00:52,140
+And the only other change is to replace the name of the module, my app with something I can search
+
+12
+00:00:52,140 --> 00:00:52,900
+and replace for.
+
+13
+00:00:52,920 --> 00:00:56,070
+So a dollar sign up underscore name.
+
+14
+00:01:00,200 --> 00:01:04,590
+And that should be the only changes we need to make to that file, so I'll close it and go back to new.
+
+15
+00:01:06,230 --> 00:01:11,300
+So down here in line 98 in new, don't go in my code, I'm going to, first of all, let the user know
+
+16
+00:01:11,300 --> 00:01:11,890
+what's happening.
+
+17
+00:01:11,900 --> 00:01:20,360
+So colored yellow and I'll prefix everything with a tab just to move it in and say creating go dot mod
+
+18
+00:01:20,360 --> 00:01:20,870
+file.
+
+19
+00:01:20,900 --> 00:01:21,620
+Dot dot dot.
+
+20
+00:01:23,060 --> 00:01:27,200
+And now I'll delete the existing file so I don't care about the return value.
+
+21
+00:01:27,200 --> 00:01:28,100
+It's equal to OAC.
+
+22
+00:01:28,100 --> 00:01:38,600
+Don't remove and I want to remove dot slash plus app name plus slash go model that gets rid of it.
+
+23
+00:01:39,770 --> 00:01:40,940
+And now I can create a new one.
+
+24
+00:01:41,630 --> 00:01:46,580
+But if you think it through, there are two possible situations we need to take care of here.
+
+25
+00:01:46,790 --> 00:01:53,030
+In the first case, if someone just types celebrities new my app, for example, that I can use app
+
+26
+00:01:53,030 --> 00:01:55,010
+name that variable I've been using right along.
+
+27
+00:01:55,910 --> 00:02:03,410
+But if they typed celebrity's new GitHub dot com slash, some user name slash some module name that
+
+28
+00:02:03,410 --> 00:02:07,010
+I need to use that instead at the very top of the Go Mod file.
+
+29
+00:02:08,360 --> 00:02:11,150
+So let's go to the very top of this file new dot go.
+
+30
+00:02:11,990 --> 00:02:18,110
+And right here in line 16, the very first thing I do in the do new function is get whatever they typed
+
+31
+00:02:18,530 --> 00:02:21,320
+and then online 18 through twenty two.
+
+32
+00:02:22,040 --> 00:02:23,470
+I actually exploded.
+
+33
+00:02:23,720 --> 00:02:24,950
+Look for a slash.
+
+34
+00:02:24,950 --> 00:02:30,590
+And if a slash exists, I take the last thing in that string after the final slash.
+
+35
+00:02:31,610 --> 00:02:33,140
+But I need what they typed here.
+
+36
+00:02:33,710 --> 00:02:40,250
+So what I'm going to do is create a package level variable, which I'll just call the app the URL of
+
+37
+00:02:40,250 --> 00:02:40,940
+type string.
+
+38
+00:02:41,810 --> 00:02:44,030
+I don't have to put its package level, but I'm going to.
+
+39
+00:02:44,750 --> 00:02:53,030
+And now before I sanitize it, I'll say after the URL is equal to app name and now I have whatever they
+
+40
+00:02:53,030 --> 00:02:55,760
+typed in lowercase exactly as I want it to be.
+
+41
+00:02:56,390 --> 00:03:00,290
+So I'll scrolled it back down to the do the bottom of the do new function.
+
+42
+00:03:00,770 --> 00:03:08,300
+And at this point I can read in the go to my text file that I just created, so I'll save data and error
+
+43
+00:03:08,330 --> 00:03:22,670
+are equal to template for file, and I want to read templates, slash go dark mode, support text and
+
+44
+00:03:22,670 --> 00:03:23,570
+I'll check for an error.
+
+45
+00:03:23,570 --> 00:03:27,170
+So I'll copy this code and paste it here.
+
+46
+00:03:29,930 --> 00:03:32,330
+And now I'll create a new variable called Mod.
+
+47
+00:03:32,480 --> 00:03:37,070
+And that's a sign the value of casting data to a string.
+
+48
+00:03:37,940 --> 00:03:41,330
+And I will search and replace Mod equals strings.
+
+49
+00:03:41,330 --> 00:03:51,530
+Don't replace all, and I'm looking for Mod looking inside of Mod and I want to search for dollar sign,
+
+50
+00:03:51,530 --> 00:03:59,990
+brace app, underscore name and close the curly brackets and replace it with after you URL, which might
+
+51
+00:03:59,990 --> 00:04:02,380
+be the same as apt name, but it might not run.
+
+52
+00:04:02,420 --> 00:04:06,050
+In any case, this will take care of whatever situation we happen to be in.
+
+53
+00:04:06,680 --> 00:04:10,160
+And now I just create my new Go Dot Mod file.
+
+54
+00:04:10,400 --> 00:04:20,330
+Error equals copy data to file, and I take mod and cast it to a slice of byte and I put it in dot slash
+
+55
+00:04:21,230 --> 00:04:25,070
+plus app name, not AP URL plus slash.
+
+56
+00:04:25,150 --> 00:04:28,820
+Go on and paste in my error check.
+
+57
+00:04:29,840 --> 00:04:32,750
+And at that point, I should be pretty much ready to go.
+
+58
+00:04:33,380 --> 00:04:40,670
+So the next step is to take care of the situation where the imports in some of the dark go files in
+
+59
+00:04:40,670 --> 00:04:42,260
+the repository that we cloned.
+
+60
+00:04:42,440 --> 00:04:46,310
+They don't have the correct name for whatever application the user is working with, and we need to
+
+61
+00:04:46,310 --> 00:04:53,420
+do a search and replace for every single dot go file check for the existence of, in our case, my app
+
+62
+00:04:53,420 --> 00:04:59,060
+all lowercase and replace it with the correct import, and we'll take care of that in the next lecture.

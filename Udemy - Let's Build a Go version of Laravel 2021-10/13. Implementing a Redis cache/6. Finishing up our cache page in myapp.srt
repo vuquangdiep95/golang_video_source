@@ -1,0 +1,551 @@
+1
+00:00:01,290 --> 00:00:07,590
+So let's keep working on these routes for these handlers, for routes, and I'm still in cash, dash
+
+2
+00:00:07,590 --> 00:00:11,340
+handlers talk about start work on get from cash.
+
+3
+00:00:12,360 --> 00:00:19,530
+So we're going to, first of all, get our user input ver user input, and that'll be exactly the same
+
+4
+00:00:19,530 --> 00:00:20,400
+as what we have up here.
+
+5
+00:00:20,400 --> 00:00:21,390
+So let's just copy that.
+
+6
+00:00:22,740 --> 00:00:25,180
+Actually copy all of this system time.
+
+7
+00:00:25,570 --> 00:00:32,970
+So I'm going to pay set in here and that determines what we're looking for.
+
+8
+00:00:33,010 --> 00:00:37,490
+And in this case, I really am only going to get name and CSR if I don't care about the value.
+
+9
+00:00:37,500 --> 00:00:44,610
+So I'll get rid of that, say one line and I'll read the JS, and now I'll check to see if that exists
+
+10
+00:00:44,610 --> 00:00:45,330
+in cash.
+
+11
+00:00:45,660 --> 00:00:46,020
+OK?
+
+12
+00:00:46,740 --> 00:00:48,900
+So we'll say from cash
+
+13
+00:00:53,190 --> 00:01:02,500
+and potentially an error or assign the value of each app dark cash don't get.
+
+14
+00:01:02,970 --> 00:01:05,280
+And I'm going to get user input type name
+
+15
+00:01:08,810 --> 00:01:10,050
+and we'll check for an error.
+
+16
+00:01:10,410 --> 00:01:15,960
+So we'll copy this same sort of error code we have here and paste it in.
+
+17
+00:01:17,670 --> 00:01:19,080
+And now let's build our response.
+
+18
+00:01:19,170 --> 00:01:24,330
+So I'll come up here and copy this one, which is a good start and paste this down.
+
+19
+00:01:25,500 --> 00:01:28,260
+Now we may actually have an error in this case.
+
+20
+00:01:28,410 --> 00:01:32,460
+OK, and the error could be something like it's not in the cache, for example.
+
+21
+00:01:32,850 --> 00:01:40,110
+So maybe we should build a variable up here or declare one ver say, mzgee of type string.
+
+22
+00:01:41,340 --> 00:01:45,930
+And then down here, when we have an error, we don't do an error 500.
+
+23
+00:01:46,320 --> 00:01:48,300
+OK from the from Kashmir.
+
+24
+00:01:48,810 --> 00:01:54,660
+Instead, we'll say MSG is now equal to.
+
+25
+00:01:57,090 --> 00:01:58,230
+Not found in cash.
+
+26
+00:02:02,220 --> 00:02:03,840
+That seems to make more sense, really.
+
+27
+00:02:05,080 --> 00:02:09,010
+Maybe we should also declare another variable just to make things absolutely clear.
+
+28
+00:02:09,780 --> 00:02:13,450
+Vir encash will make that true by default.
+
+29
+00:02:15,610 --> 00:02:26,440
+Lowercase a here and an equal sign there, which is a lot better now, we'll say in cash equals false.
+
+30
+00:02:28,150 --> 00:02:35,350
+And after all of this, and we'll add a third value here, so value which is a string.
+
+31
+00:02:35,890 --> 00:02:38,530
+And in Jason, they'll call that value.
+
+32
+00:02:42,160 --> 00:02:43,600
+OK, so let's settle this.
+
+33
+00:02:44,590 --> 00:02:48,160
+And now once we have all this set up, so we declare user input.
+
+34
+00:02:48,610 --> 00:02:50,320
+We read the value from that.
+
+35
+00:02:50,650 --> 00:02:52,330
+I'll just move this up above that.
+
+36
+00:02:52,330 --> 00:02:57,190
+So these are logically grouped together, which is always good practice.
+
+37
+00:02:59,470 --> 00:03:02,530
+So we declared two variables we initialize message to be an empty string.
+
+38
+00:03:02,530 --> 00:03:05,350
+We initialize in cash to be a Boolean set true.
+
+39
+00:03:06,040 --> 00:03:11,140
+Then we declare our user input struct, which describes the nature of the data we're going to be receiving
+
+40
+00:03:11,140 --> 00:03:12,730
+from Jason.
+
+41
+00:03:13,240 --> 00:03:14,920
+Then we read our Jason and we check for it.
+
+42
+00:03:15,160 --> 00:03:19,390
+If an error occurs here, when we're trying to read Jason, we just throw an error five hundred.
+
+43
+00:03:19,970 --> 00:03:21,640
+Then we get past that.
+
+44
+00:03:21,940 --> 00:03:26,240
+We try to populate from cash with the value from.
+
+45
+00:03:27,010 --> 00:03:29,050
+And if we don't get that, we get an error.
+
+46
+00:03:29,080 --> 00:03:31,150
+We say not found in cash and false.
+
+47
+00:03:32,200 --> 00:03:37,560
+Then we describe the nature of our response and now we populated based upon the value of InTouch.
+
+48
+00:03:38,020 --> 00:03:43,030
+If in cash, we do one thing else.
+
+49
+00:03:43,690 --> 00:03:44,650
+We do something else.
+
+50
+00:03:45,250 --> 00:03:48,370
+And what we're trying to do, of course, is set the values in our RESP.
+
+51
+00:03:48,760 --> 00:03:54,460
+So we'll say respect error is equal to false because there is no error if we found it, if it's in the
+
+52
+00:03:54,460 --> 00:03:58,030
+cash respect message is equal to.
+
+53
+00:03:59,140 --> 00:04:09,130
+Success and in this case, we're seeing ramped up value is equal to and we'll take from cash will cast
+
+54
+00:04:09,130 --> 00:04:12,400
+it to a strain that's otherwise.
+
+55
+00:04:12,820 --> 00:04:13,810
+Something went wrong.
+
+56
+00:04:13,840 --> 00:04:16,540
+So respect error is equal to true.
+
+57
+00:04:18,520 --> 00:04:22,420
+And respect message is equal to mzgee.
+
+58
+00:04:23,470 --> 00:04:27,490
+And now we write that, Jason, out and up here, we kind of grab this same line.
+
+59
+00:04:30,320 --> 00:04:31,970
+And paste it right here.
+
+60
+00:04:33,920 --> 00:04:36,500
+And that should take care of getting values from the cash.
+
+61
+00:04:37,010 --> 00:04:39,860
+So the next one, of course, is deleting something from the cash.
+
+62
+00:04:39,890 --> 00:04:41,930
+And again, we're going to get this kind of information.
+
+63
+00:04:41,930 --> 00:04:42,830
+So let's copy that.
+
+64
+00:04:43,760 --> 00:04:51,480
+Our JSON file, it will be nothing more than a very simple JSON that has the name of the Kiwi wanted
+
+65
+00:04:51,640 --> 00:04:55,790
+wanted to delete from the cache and then the CSR token, which we're not currently using.
+
+66
+00:04:56,240 --> 00:04:57,710
+And then, of course, we read the JSON.
+
+67
+00:04:57,920 --> 00:05:02,720
+So let's reduce and paste it right below this.
+
+68
+00:05:05,570 --> 00:05:11,720
+And now we'll delete the value from a cache error is a sign of value or is equal to because you already
+
+69
+00:05:11,720 --> 00:05:15,490
+have an error variable H2 app cache.
+
+70
+00:05:15,900 --> 00:05:24,020
+Don't forget and we want to forget user input name and we'll check for an error.
+
+71
+00:05:24,260 --> 00:05:27,140
+And again, I'll just do the standard for checking, which is simple enough
+
+72
+00:05:30,410 --> 00:05:31,670
+and we send a response back.
+
+73
+00:05:31,820 --> 00:05:33,710
+So again, we'll copy all of this,
+
+74
+00:05:37,550 --> 00:05:47,240
+paste it down here and copy this sort of thing and paste it right here, and we'll just fix it up in
+
+75
+00:05:47,240 --> 00:05:47,570
+a moment.
+
+76
+00:05:47,720 --> 00:05:55,460
+We also need to write Jason, so I'll copy that and paste this here, and then we'll save the to format.
+
+77
+00:05:55,460 --> 00:05:56,720
+Everything else picks us up.
+
+78
+00:05:56,870 --> 00:05:57,920
+We don't need a values.
+
+79
+00:05:57,920 --> 00:06:06,350
+We can delete that and we can just say simply to delete it from cache.
+
+80
+00:06:07,010 --> 00:06:12,860
+And in this case, will end if it existed, which is actually true because if it doesn't exist, nothing
+
+81
+00:06:12,860 --> 00:06:13,680
+bad happens.
+
+82
+00:06:13,700 --> 00:06:16,610
+It just doesn't delete something because it didn't exist in the first place.
+
+83
+00:06:18,140 --> 00:06:25,250
+And the last thing we want to do here is basically empty the cache so we can copy all of this and also
+
+84
+00:06:25,670 --> 00:06:28,670
+copy this and paste it here.
+
+85
+00:06:29,960 --> 00:06:31,730
+In this case, we're emptying the cache.
+
+86
+00:06:31,820 --> 00:06:34,550
+We're not going to have a token, her name or anything like that.
+
+87
+00:06:34,640 --> 00:06:37,460
+So just Lucas, we're only going to have a CSR token.
+
+88
+00:06:38,240 --> 00:06:39,320
+So we'll read the JSON.
+
+89
+00:06:39,740 --> 00:06:44,390
+OK, and then down here, we may have to comment that over in a minute because we're actually not going
+
+90
+00:06:44,390 --> 00:06:46,790
+to do anything with it, but we'll find out.
+
+91
+00:06:46,970 --> 00:06:47,390
+OK.
+
+92
+00:06:48,320 --> 00:06:55,280
+So we read the Jason, so we've passed our file and now we say here is a sign the value of H Dot app
+
+93
+00:06:55,720 --> 00:06:58,340
+go up cache got empty.
+
+94
+00:07:01,690 --> 00:07:06,850
+And we have to check for an error, so we didn't assign a new variable so as to lead that it's better
+
+95
+00:07:07,480 --> 00:07:13,600
+and we'll check or check for an error and handle it appropriately and build a response.
+
+96
+00:07:13,900 --> 00:07:20,890
+So I'll copy this, paste it here and say.
+
+97
+00:07:23,920 --> 00:07:24,490
+Empty
+
+98
+00:07:27,910 --> 00:07:36,130
+cash, unless work, all right, so the last thing to do is to go to our roots file and set up our appropriate
+
+99
+00:07:36,130 --> 00:07:48,330
+routes, so we'll put it right here and we'll set a target and we'll call it say, slash cash test.
+
+100
+00:07:48,340 --> 00:07:55,960
+And this will show the page and that becomes a dog handlers show cache page.
+
+101
+00:07:56,350 --> 00:07:57,790
+OK, so that one's a get request.
+
+102
+00:07:58,150 --> 00:08:03,430
+The next four are a post request initiated by calling fetch in JavaScript, so eight up post.
+
+103
+00:08:05,270 --> 00:08:17,890
+Well, first one is in the page slash API slash save in cash, and that calls a dog handlers dot save
+
+104
+00:08:17,890 --> 00:08:18,610
+in cash.
+
+105
+00:08:19,700 --> 00:08:20,920
+No duplicate that.
+
+106
+00:08:21,220 --> 00:08:26,440
+We're going to call yet in cash or get from cash in that path.
+
+107
+00:08:26,440 --> 00:08:36,910
+Or that route is actually slash API slash, get from cache, not duplicate that and say for deleting
+
+108
+00:08:36,910 --> 00:08:37,960
+something from the cache.
+
+109
+00:08:37,960 --> 00:08:39,670
+It's delete from cache.
+
+110
+00:08:40,800 --> 00:08:47,730
+And that calls delete from cash, and the final one is empty cash, I believe.
+
+111
+00:08:50,760 --> 00:08:57,600
+And that calls empty cash, and if all went well, I should be able to open this up and say make stop
+
+112
+00:08:57,600 --> 00:08:58,480
+and use, it's running.
+
+113
+00:08:58,530 --> 00:09:00,420
+And it was make start.
+
+114
+00:09:02,390 --> 00:09:06,350
+Well, to put the link on our homepage for right now, we can get there manually.
+
+115
+00:09:07,420 --> 00:09:14,050
+So we're going to go to slash cash dash test, so we'll open up our web browser and we'll go to local
+
+116
+00:09:14,050 --> 00:09:14,470
+host.
+
+117
+00:09:18,100 --> 00:09:18,850
+There it is.
+
+118
+00:09:19,130 --> 00:09:23,410
+And let's add Splash Cash Dash test.
+
+119
+00:09:24,340 --> 00:09:25,690
+OK, so there's our cash page.
+
+120
+00:09:26,620 --> 00:09:32,950
+So first of all, let's try this one saving something in the cash, so I'll click on this and I'll type
+
+121
+00:09:32,950 --> 00:09:37,450
+in alpha and my cash value will be one to three.
+
+122
+00:09:37,960 --> 00:09:40,450
+Save in cash saved in cash.
+
+123
+00:09:40,600 --> 00:09:41,050
+Perfect.
+
+124
+00:09:41,170 --> 00:09:44,920
+Now let's try getting it from the cash alpha.
+
+125
+00:09:45,160 --> 00:09:50,980
+Mostly get from cash and go for the cash value one to three, which is exactly what I put in up here.
+
+126
+00:09:50,980 --> 00:09:51,520
+And that's good.
+
+127
+00:09:51,970 --> 00:09:58,190
+Now let's try deleting it, so I'll delete alpha delete from cash, and it's gone.
+
+128
+00:09:58,210 --> 00:10:03,700
+So now if I come back up here and try to get alpha from the cash not found in cash.
+
+129
+00:10:04,210 --> 00:10:08,520
+And if we try emptying the entire cash, everything is gone.
+
+130
+00:10:08,530 --> 00:10:11,470
+So I should be able to come up here and say, get from cash anything.
+
+131
+00:10:11,470 --> 00:10:17,710
+It doesn't matter what it is, that's not going to exist, obviously, but it seems to work exactly
+
+132
+00:10:17,710 --> 00:10:19,480
+as we hoped it would.
+
+133
+00:10:20,200 --> 00:10:20,710
+Perfect.
+
+134
+00:10:20,890 --> 00:10:21,190
+All right.
+
+135
+00:10:21,190 --> 00:10:23,800
+That's it for our cash functionality for the moment.
+
+136
+00:10:23,980 --> 00:10:30,850
+We'll be coming back to this later on when we implement a similar cash, but this time using a database
+
+137
+00:10:30,850 --> 00:10:33,580
+built right into our application called Badger.
+
+138
+00:10:34,090 --> 00:10:36,310
+But we have one or two things to do before we get to that.

@@ -1,0 +1,407 @@
+1
+00:00:01,070 --> 00:00:06,320
+So this time around, we need to update our our Dongo files and make some changes, and I'll give you
+
+2
+00:00:06,320 --> 00:00:07,010
+an example.
+
+3
+00:00:07,040 --> 00:00:09,860
+Let's go over to the GitHub repository that we created.
+
+4
+00:00:09,980 --> 00:00:16,130
+And if we look at main, don't go, for example, the code that we're cloning has things like you see
+
+5
+00:00:16,130 --> 00:00:22,280
+here in the import statement, my app slash data, my app slash handlers, my app slash middleware.
+
+6
+00:00:22,280 --> 00:00:30,050
+And of course, this isn't correct if someone typed celebrity's new GitHub dot com John Smith slash
+
+7
+00:00:30,050 --> 00:00:31,490
+my cool application.
+
+8
+00:00:32,470 --> 00:00:37,410
+We need to change my app to the correct URL so we can do that pretty easily.
+
+9
+00:00:37,480 --> 00:00:38,350
+And let's get started.
+
+10
+00:00:38,500 --> 00:00:39,790
+Let's go back over to our code.
+
+11
+00:00:40,780 --> 00:00:46,390
+And what I'm going to do is create a couple of functions in the Helpers Dot Go file, and I'm going
+
+12
+00:00:46,390 --> 00:00:52,420
+to create them there because I might need to reuse this kind of search and replace of go code at some
+
+13
+00:00:52,420 --> 00:00:53,200
+point in the future.
+
+14
+00:00:53,380 --> 00:00:59,290
+So I'll go to the helper stock, go file and make sure you open the one that's inside the CMD Seelye
+
+15
+00:00:59,300 --> 00:01:02,320
+folder, not the one at the root level of the celebrities project.
+
+16
+00:01:02,380 --> 00:01:08,260
+Let's open that up, and let's scroll to the bottom of this file and let's create a couple of functions,
+
+17
+00:01:08,590 --> 00:01:10,540
+so I'll create a stub function first.
+
+18
+00:01:10,840 --> 00:01:18,880
+Func, I'm going to call this one update source files plural, and it will take a path which is of type
+
+19
+00:01:18,880 --> 00:01:26,200
+string, and it will take something called f.i, which is filing of type of sport file info right there.
+
+20
+00:01:27,130 --> 00:01:34,600
+And finally, it will take an E R of type error e r or and it will return potentially an error.
+
+21
+00:01:35,290 --> 00:01:35,620
+OK.
+
+22
+00:01:39,750 --> 00:01:44,400
+And at the very bottom, this I'm going to say return nil, and we'll fill in the source code for this
+
+23
+00:01:44,400 --> 00:01:44,910
+in a minute.
+
+24
+00:01:47,130 --> 00:01:53,760
+Now this function update source files will be called by another function called folk update source.
+
+25
+00:01:55,020 --> 00:01:56,790
+And it doesn't take any parameters right now.
+
+26
+00:01:58,920 --> 00:02:03,510
+And all it's going to do is say walk the entire project, including folders.
+
+27
+00:02:03,540 --> 00:02:05,820
+So let's put a comment in here in here walk.
+
+28
+00:02:05,850 --> 00:02:11,070
+Entire project folder, including some folders.
+
+29
+00:02:11,520 --> 00:02:15,170
+So a kind of recursive walk through the entire project structure.
+
+30
+00:02:15,210 --> 00:02:21,840
+And we do that by calling for setting a variable error and calling from the standard library file path
+
+31
+00:02:22,050 --> 00:02:22,710
+right there.
+
+32
+00:02:23,710 --> 00:02:32,790
+Don't walk and walk actually requires a directory which will be Dot just dot the current directory in
+
+33
+00:02:32,790 --> 00:02:37,260
+our case, and we're going to update source files.
+
+34
+00:02:37,490 --> 00:02:39,210
+We're just handing it that function name.
+
+35
+00:02:39,480 --> 00:02:39,840
+OK.
+
+36
+00:02:41,370 --> 00:02:42,810
+And of course, we have to check for an error.
+
+37
+00:02:43,890 --> 00:02:47,040
+If error is not equal to no.
+
+38
+00:02:48,300 --> 00:02:49,650
+Then we'll exit gracefully.
+
+39
+00:02:49,770 --> 00:02:51,720
+We just can't go any further with the error.
+
+40
+00:02:52,230 --> 00:02:52,590
+OK.
+
+41
+00:02:54,320 --> 00:02:57,440
+Now, all the magic obviously happens here, an update source, Fox.
+
+42
+00:02:58,130 --> 00:03:03,020
+So the first thing we're going to do is to check for an error
+
+43
+00:03:05,660 --> 00:03:07,700
+before doing anything else.
+
+44
+00:03:09,590 --> 00:03:14,840
+So we'll say if error is not equal to nil and we got error as a parameter passed at this function,
+
+45
+00:03:14,870 --> 00:03:15,980
+then we'll just return the error.
+
+46
+00:03:20,540 --> 00:03:24,170
+But if we get past that, then we need to say, Is this a directory?
+
+47
+00:03:24,410 --> 00:03:31,010
+Check if current file is directory because we're watching the entire directory structure.
+
+48
+00:03:31,700 --> 00:03:40,400
+So if if I, which were received as a call to this function, that is dear, if it is a directory,
+
+49
+00:03:40,400 --> 00:03:44,300
+then return null, OK, and it will just go on to the next pop.
+
+50
+00:03:45,890 --> 00:03:54,740
+Now we want to make sure that we only check go files so matched and error are assigned the value of
+
+51
+00:03:55,460 --> 00:04:03,120
+from the file Pathmark package file path dot match and we're matching Stardust Go.
+
+52
+00:04:03,590 --> 00:04:04,010
+OK.
+
+53
+00:04:04,820 --> 00:04:07,970
+And we're looking for fikeni file info name.
+
+54
+00:04:10,670 --> 00:04:17,180
+And if error is not equal to nil, then we'll just say return the error.
+
+55
+00:04:21,810 --> 00:04:26,250
+But if we get past that, we have a matching file.
+
+56
+00:04:31,020 --> 00:04:32,370
+So let's read its contents.
+
+57
+00:04:36,020 --> 00:04:37,520
+We'll just make sure it matched.
+
+58
+00:04:38,990 --> 00:04:46,400
+We'll read its contents, read file contents, and we'll say read, which is just a variable.
+
+59
+00:04:46,400 --> 00:04:52,340
+I'm creating an error are assign the value of I owe you still don't read file.
+
+60
+00:04:54,610 --> 00:04:55,060
+Right there.
+
+61
+00:04:57,740 --> 00:05:02,270
+And we're using path, which we received as a call to this function.
+
+62
+00:05:03,140 --> 00:05:09,740
+And again, we'll check for an error, so we'll see if error is not equal to nil at this point.
+
+63
+00:05:09,740 --> 00:05:14,270
+If I can't read a file that I found, I'm not going to just return the error, I'll exit gracefully
+
+64
+00:05:14,480 --> 00:05:14,970
+with the error.
+
+65
+00:05:15,480 --> 00:05:17,270
+It's something is really gone wrong here.
+
+66
+00:05:17,280 --> 00:05:18,590
+Your file system is full.
+
+67
+00:05:18,920 --> 00:05:20,090
+You've got a bad hard disk.
+
+68
+00:05:20,090 --> 00:05:20,980
+Whatever it may be.
+
+69
+00:05:20,990 --> 00:05:21,950
+I don't want to go any further.
+
+70
+00:05:22,730 --> 00:05:24,080
+Now we'll do the search and replace.
+
+71
+00:05:24,230 --> 00:05:33,800
+So I'll create a variable called new contents is assign the value of strings to replace, and I'm going
+
+72
+00:05:33,800 --> 00:05:37,550
+to replace string casting read to a string.
+
+73
+00:05:39,170 --> 00:05:40,630
+I'm looking for my app.
+
+74
+00:05:40,640 --> 00:05:41,690
+That's all I have to look for.
+
+75
+00:05:42,200 --> 00:05:47,540
+I'm going to replace it with app URL, which is why I made that a package local variable in the first
+
+76
+00:05:47,540 --> 00:05:49,850
+place and replace every occurrence.
+
+77
+00:05:50,720 --> 00:05:51,080
+OK.
+
+78
+00:05:52,280 --> 00:05:54,530
+And right, the changed file.
+
+79
+00:05:55,760 --> 00:06:00,380
+And that's as simple as saying error is equal to I.O.U. till
+
+80
+00:06:03,470 --> 00:06:09,470
+the right file path, and I cast new contents to a slice of bytes.
+
+81
+00:06:10,820 --> 00:06:11,720
+New contents.
+
+82
+00:06:15,460 --> 00:06:18,790
+And I'll just pass zero as the final parameter.
+
+83
+00:06:18,850 --> 00:06:19,190
+OK.
+
+84
+00:06:19,210 --> 00:06:19,960
+Don't change anything.
+
+85
+00:06:22,570 --> 00:06:24,220
+If error is not equal to nil.
+
+86
+00:06:28,300 --> 00:06:31,540
+Then again, I'm going to exit gracefully because you should be able to write a file.
+
+87
+00:06:31,630 --> 00:06:34,000
+Otherwise, your file system is full or whatever.
+
+88
+00:06:36,160 --> 00:06:40,930
+And at that point, this should be pretty much ready to go, so let's say this.
+
+89
+00:06:41,980 --> 00:06:45,920
+And you can read more about the walk function if you just roll over.
+
+90
+00:06:45,940 --> 00:06:48,310
+It gives you a nice summary of how the package works.
+
+91
+00:06:48,340 --> 00:06:49,530
+It's pretty straightforward.
+
+92
+00:06:49,540 --> 00:06:53,950
+And if you've ever searched and replace multiple files in GO, you've undoubtedly used this before.
+
+93
+00:06:54,670 --> 00:07:02,260
+But in any case, now I can go back to New Dot Go and down here where I'm saying update existing dgo
+
+94
+00:07:02,260 --> 00:07:02,740
+files.
+
+95
+00:07:03,280 --> 00:07:08,340
+I can just say color yellow just to let the users know what's going on and again and invent it with
+
+96
+00:07:08,350 --> 00:07:12,700
+a tab dating source files.
+
+97
+00:07:14,670 --> 00:07:15,490
+Make a call to that.
+
+98
+00:07:16,620 --> 00:07:19,440
+And all I do is say update source.
+
+99
+00:07:20,490 --> 00:07:21,990
+And that should be pretty much ready to go.
+
+100
+00:07:22,590 --> 00:07:27,750
+So the last step in this process before we try actually running celebrities, tossing new and making
+
+101
+00:07:27,750 --> 00:07:29,340
+sure everything works as expected.
+
+102
+00:07:30,240 --> 00:07:35,040
+The last thing we do is run go more tidy and we'll take care of that in the next lecture.

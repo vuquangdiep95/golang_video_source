@@ -1,0 +1,907 @@
+1
+00:00:00,090 --> 00:00:06,450
+Vì vậy, đây là giải pháp cho bài tập thực hành của tôi cho bài tập thực hành số hai, đây là tôi đưa ra một
+
+2
+00:00:06,450 --> 00:00:13,350
+giải pháp cho giải pháp thứ hai và chúng tôi gặp một chút phức tạp ở đây và chúng tôi sẽ giải thích
+
+3
+00:00:13,350 --> 00:00:17,090
+điều đó cho bạn và cung cấp cho bạn các nguồn lực để hiểu nó và cũng để làm điều đó.
+
+4
+00:00:17,100 --> 00:00:23,190
+Chúng ta sẽ làm và nhận được một thứ gì đó có chiều sâu và nó có thể trở nên phức tạp và khóa học này thì không
+
+5
+00:00:23,190 --> 00:00:26,950
+một khóa học về nhận được hoàn toàn.
+
+6
+00:00:27,150 --> 00:00:30,810
+Chỉ là muốn đưa mọi thứ đi xa hơn một chút để mọi người có kỹ năng để có thể
+
+7
+00:00:30,810 --> 00:00:33,300
+để đóng góp cho một dự án mã nguồn mở.
+
+8
+00:00:33,510 --> 00:00:35,580
+Và đó là một trong những điều học sinh yêu cầu.
+
+9
+00:00:35,580 --> 00:00:43,080
+Vì vậy, chúng tôi muốn đưa nó vào và chỉ cần tiến lên phía trước nếu bạn tham gia các lớp học của tôi bằng cách sử dụng get so all of
+
+10
+00:00:43,080 --> 00:00:45,000
+mà nói đây là tình hình.
+
+11
+00:00:45,060 --> 00:00:53,000
+Vì vậy, chúng tôi có Kho lưu trữ Hub ban đầu đang ở tuổi thứ mười một và đó là dự án go.
+
+12
+00:00:53,000 --> 00:00:58,740
+Và đây là kho lưu trữ đó và sau đó tôi có một tài khoản giả để chiến đấu với dự án đó nên tôi đã tạo
+
+13
+00:00:58,740 --> 00:01:03,120
+một ngã ba ở đây và ngoài ngã ba này, ngã ba này là một ảnh chụp nhanh.
+
+14
+00:01:03,150 --> 00:01:06,020
+Nó lấy mã từ repo gốc.
+
+15
+00:01:06,030 --> 00:01:11,750
+Khi tôi tách nó ra, tôi nhận được mã tại một thời điểm tại một thời điểm nhất định.
+
+16
+00:01:11,880 --> 00:01:15,600
+Và sau đó mã này ở đây tôi sao chép nó xuống máy tính của mình.
+
+17
+00:01:15,600 --> 00:01:19,700
+Vì vậy, đây là repo gốc dành cho dự án Levin going.
+
+18
+00:01:19,710 --> 00:01:22,200
+Tôi rẽ nhánh nó dưới một tài khoản github khác.
+
+19
+00:01:22,200 --> 00:01:27,020
+Đó có thể chỉ là một người khác. Tôi đang sử dụng một tài khoản giả để đại diện cho một người khác.
+
+20
+00:01:27,060 --> 00:01:30,970
+Vì vậy, tôi rẽ nhánh nó và sau đó tôi sao chép nó xuống máy cục bộ của mình.
+
+21
+00:01:30,970 --> 00:01:31,260
+Được rồi.
+
+22
+00:01:31,290 --> 00:01:33,750
+Vì vậy, chúng tôi có ba điều ở đây.
+
+23
+00:01:33,810 --> 00:01:37,650
+Chúng tôi có repo ban đầu theo dự án đi đến mười một.
+
+24
+00:01:37,710 --> 00:01:41,130
+Chúng tôi có một ngã ba dưới một số tài khoản người dùng trung tâm khác.
+
+25
+00:01:41,130 --> 00:01:41,710
+Phải.
+
+26
+00:01:41,730 --> 00:01:43,890
+Và sau đó chúng tôi có một bản sao trên máy cục bộ.
+
+27
+00:01:43,890 --> 00:01:45,750
+Chúng tôi có ba điều đang diễn ra.
+
+28
+00:01:45,750 --> 00:01:51,570
+Và sau đó là Daniel, một người dùng khác cũng đã chiến đấu với dự án này.
+
+29
+00:01:51,570 --> 00:01:57,330
+Anh ấy đã thực hiện một thay đổi, anh ấy đã thực hiện một yêu cầu hợp nhất với bản gốc chuyển sang 11 repo và mã đó đã được
+
+30
+00:01:57,330 --> 00:02:03,900
+được chấp nhận và điều đó chuyển sang 11 repo được chuyển tiếp từ thời điểm hiện tại nó đã được chuyển tiếp
+
+31
+00:02:04,230 --> 00:02:10,440
+ngã ba của tôi không di chuyển về phía trước Tôi đã rẽ nhánh từ thời điểm này trở lại đây nơi mã ở đúng thời điểm này.
+
+32
+00:02:10,470 --> 00:02:12,420
+Và sau đó tôi nhân bản nó vào máy của mình.
+
+33
+00:02:12,420 --> 00:02:19,650
+Vì vậy, tôi không có mã đã được hợp nhất vào kho lưu trữ ban đầu dưới 11.
+
+34
+00:02:19,650 --> 00:02:21,620
+Liệu rằng tất cả có ý nghĩa.
+
+35
+00:02:21,900 --> 00:02:29,850
+Và nếu bạn đi và bạn nhìn vào repo của tôi, vậy thì tôi đang ở trong dự án đường đi và điều này không được thực hiện
+
+36
+00:02:29,850 --> 00:02:33,710
+đến mười một bên phải, đó là cái mà mọi người đang rẽ nhánh.
+
+37
+00:02:33,840 --> 00:02:39,120
+Tài khoản này thuộc tài khoản người dùng khác nên một số cá nhân khác đã phân nhánh tài khoản này. Tôi đang sử dụng tài khoản giả kép
+
+38
+00:02:39,120 --> 00:02:40,320
+để đại diện cho các cá nhân đó.
+
+39
+00:02:40,320 --> 00:02:41,460
+Đó là dự án này.
+
+40
+00:02:41,550 --> 00:02:48,420
+Và nếu tôi nhìn vào đó, tôi có thể thấy những gì ở đây tại 0 0 1 học nhận 0 0 2 bài tập thực hành và
+
+41
+00:02:48,510 --> 00:02:57,150
+Tôi cần nhìn vào đó và sau đó nếu tôi nhìn vào đó, tôi không có gì phải khiêm tốn và nếu tôi nhìn vào quyền của họ
+
+42
+00:02:57,360 --> 00:03:03,410
+Tôi không có mã của Daniel nhưng nếu tôi đi đến mười một thì hãy xem đi đến mười một
+
+43
+00:03:03,440 --> 00:03:13,410
+Vì vậy, nó đi tới 11 get hub nếu tôi đi tới 11 và tôi xem các kho lưu trữ và tôi vào go Lang
+
+44
+00:03:13,890 --> 00:03:21,280
+project right and I look at hand onbài tập 0 2 and I go into humour is in here.
+
+45
+00:03:21,470 --> 00:03:27,150
+Của tôi của tôi không có cái của tôi không có cái của tôi chỉ có đến mười một khiêm tốn đi đến mười một
+
+46
+00:03:27,150 --> 00:03:32,880
+khiêm tốn nó không có chính quyền nên bạn có thể nghĩ ồ tuyệt vời để tôi kéo để tôi lấy trước
+
+47
+00:03:32,880 --> 00:03:38,460
+trạng thái nếu nó cho tôi biết điều gì đó mà chi nhánh của bạn được cập nhật với Origin Master, hãy để tôi kéo ngay
+
+48
+00:03:38,480 --> 00:03:43,030
+vì vậy tôi đã có được Paul và tôi đã phải hẹn hò vì hãy đoán xem.
+
+49
+00:03:43,380 --> 00:03:49,260
+Đây là 11 dự án đang thực hiện, tôi đã rẽ nhánh vào thời điểm đó, tôi đã sao chép nó và sau đó thực hiện
+
+50
+00:03:49,260 --> 00:03:55,530
+tới Levin Go line dự án tiến về phía trước ngay đây là ngã ba của tôi đây là bản sao của ngã ba của tôi trên máy của tôi
+
+51
+00:03:55,770 --> 00:03:59,060
+khi tôi lấy bản sao của mình ra khỏi máy, tôi nói này, chúng tôi đã cập nhật chưa.
+
+52
+00:03:59,070 --> 00:04:02,580
+Nó nhìn vào ngã ba của tôi và nói có, bạn đã cập nhật với ngã ba này.
+
+53
+00:04:02,670 --> 00:04:11,550
+Vì vậy, làm cách nào để lấy lại ngã ba của tôi để lấy lại mã trên bản gốc, giải pháp đơn giản nhất
+
+54
+00:04:11,550 --> 00:04:19,980
+tại thời điểm này là chuyển sang tràn ngăn xếp và nếu bạn truy cập Google và bạn chỉ Google như Google
+
+55
+00:04:20,290 --> 00:04:29,130
+Tôi và đang nhập Google Stack Overflow Cập nhật tràn ngăn xếp tràn lấy kho lưu trữ hub fork và nếu
+
+56
+00:04:29,130 --> 00:04:30,420
+bạn tìm kiếm điều đó.
+
+57
+00:04:30,420 --> 00:04:35,940
+Làm cách nào để cập nhật kho lưu trữ hub fork và bạn vào đây đây là tất cả các hướng dẫn mà bạn
+
+58
+00:04:35,940 --> 00:04:41,850
+cần phải làm theo và vì vậy một phần của điều này, điều đầu tiên họ đang làm việc tốt chỉ là hiểu những điều này
+
+59
+00:04:41,850 --> 00:04:48,180
+các khái niệm như mọi thứ có liên quan như thế nào bạn đã có dự án đi đến mười một bạn đã hoàn thành
+
+60
+00:04:48,180 --> 00:04:53,160
+ở đây bạn đã có một bản sao xuống máy cục bộ của mình cái này và tiến về phía trước ngã ba của bạn sẽ tiến về phía trước của bạn
+
+61
+00:04:53,160 --> 00:04:55,880
+bản sao đang nói chuyện với ngã ba của bạn ngay.
+
+62
+00:04:55,920 --> 00:05:02,550
+Vì vậy, bây giờ chúng tôi hiểu những khái niệm đó giống như bước quan trọng đầu tiên, điều tiếp theo là hiểu
+
+63
+00:05:02,550 --> 00:05:08,270
+mã này và bởi vì tôi đã nói rất nhiều vì Daniel giỏi hơn tôi nên chúng tôi
+
+64
+00:05:08,270 --> 00:05:13,110
+sẽ có Daniel giải thích mã này và sau đó chúng tôi sẽ làm điều đó và đây giống như phần thưởng
+
+65
+00:05:13,140 --> 00:05:18,040
+ngay khi bạn trải qua các bài tập thực hành này, bạn sẽ có thêm bước này.
+
+66
+00:05:18,450 --> 00:05:22,980
+Vì vậy, hãy đến với Daniel bạn và cho chúng tôi biết một chút về mã này hoặc có thể bạn nói và tôi sẽ
+
+67
+00:05:22,980 --> 00:05:25,170
+làm điều đó và chúng ta sẽ bước qua nó let's do that.
+
+68
+00:05:25,290 --> 00:05:25,830
+Tuyệt.
+
+69
+00:05:25,860 --> 00:05:26,610
+Vì vậy, vâng.
+
+70
+00:05:26,610 --> 00:05:29,900
+Mã này đại diện cho một điều khiển từ xa.
+
+71
+00:05:30,090 --> 00:05:37,500
+Vì vậy, khi bạn sao chép, bản sao của bạn có một điều khiển từ xa, nó gọi nó là nguồn gốc và đó là nơi bạn sao chép từ đó
+
+72
+00:05:37,650 --> 00:05:42,450
+trong trường hợp đó, trường hợp này là của bạn ngã ba, bạn lên ngã ba của tôi ở đây và sau đó tôi giống như bản sao ở đây.
+
+73
+00:05:42,480 --> 00:05:48,350
+Vì vậy, bất cứ khi nào bạn nói Nguồn gốc trong bất kỳ khi nào chúng tôi nhận được nói Nguồn gốc ở bất kỳ hình dạng hoặc hình thức nào chứng tỏ nó đại diện
+
+74
+00:05:48,420 --> 00:05:49,800
+ngã ba của bạn ngay tại đó.
+
+75
+00:05:49,800 --> 00:05:50,150
+Vì thế.
+
+76
+00:05:50,180 --> 00:05:55,450
+Vì vậy, đó là kết nối của bạn, bạn nhận được từ xa hoặc nhận nguồn gốc từ xa là ngã ba của bạn.
+
+77
+00:05:55,470 --> 00:06:02,460
+Vì vậy, nguồn gốc theo một cách khác đó là nguồn gốc, đó là nguồn gốc mà từ đó mọi người mà bạn biết từ đó
+
+78
+00:06:02,460 --> 00:06:06,290
+kế hoạch thay thế phù hợp này lấy trung tâm mà bất kỳ ai cũng có thể kết nối với Nguồn gốc đó và kéo nó xuống.
+
+79
+00:06:06,300 --> 00:06:11,730
+Nếu tôi cho phép bạn viết như vậy nguồn gốc nguồn gốc mà mọi thứ bắt nguồn từ đó nó vẫn là nguồn gốc
+
+80
+00:06:12,210 --> 00:06:12,590
+Phải.
+
+81
+00:06:12,660 --> 00:06:13,970
+Vâng, đó là khoảng cách thay thế.
+
+82
+00:06:14,430 --> 00:06:14,640
+Đúng.
+
+83
+00:06:14,670 --> 00:06:19,740
+Vì vậy, nếu bạn nhập và nhận điều khiển từ xa trên thiết bị đầu cuối của mình, nó sẽ thực sự cho bạn biết tất cả các điều khiển từ xa mà họ nhận được
+
+84
+00:06:19,740 --> 00:06:28,000
+biết về thiết bị của bạn, lấy điều khiển từ xa để liệt kê nguồn gốc, bạn chỉ có một nguồn gốc từ xa.
+
+85
+00:06:28,000 --> 00:06:35,170
+Bạn cũng có thể lấy nguồn gốc chương trình từ xa để biết thêm chi tiết về nguồn gốc, bao gồm cả việc kể
+
+86
+00:06:35,170 --> 00:06:38,540
+bạn biết URL ban đầu là từ đâu.
+
+87
+00:06:38,650 --> 00:06:41,830
+Và vì vậy ở đây chúng ta có được dot com tạm thời Todd McCloud.
+
+88
+00:06:41,830 --> 00:06:46,660
+Đó là tên người dùng, nó không phải dành cho Levin để lấy và đẩy dự án.
+
+89
+00:06:46,660 --> 00:06:48,730
+Vì vậy, đây là nơi nó tìm nạp từ.
+
+90
+00:06:48,730 --> 00:06:53,310
+Đây là chỗ nó push lên master nhánh K đi tiếp.
+
+91
+00:06:53,520 --> 00:06:53,840
+Vì thế.
+
+92
+00:06:53,890 --> 00:06:54,850
+Vậy chi tiết ở đó là gì.
+
+93
+00:06:54,850 --> 00:07:01,370
+Vì vậy, bao gồm cả bạn có thể thấy URL không phải là dự án giết người mười một mà chỉ là McLeod hàng đầu tạm thời
+
+94
+00:07:01,690 --> 00:07:03,130
+dự án đang đi.
+
+95
+00:07:03,130 --> 00:07:09,100
+Vì vậy, những gì bạn cần cập nhật fork get hub không tự động cập nhật fork.
+
+96
+00:07:09,100 --> 00:07:12,040
+Trong thực tế, nó không có bất kỳ cách nào để làm điều đó cả.
+
+97
+00:07:12,100 --> 00:07:15,160
+Những gì bạn phải làm là tự làm trên máy của chính mình.
+
+98
+00:07:15,260 --> 00:07:22,440
+Vì vậy, cách để làm điều đó là thêm một điều khiển từ xa mới vào bản gốc. Mười một repo cho bạn tới tòa án địa phương của bạn
+
+99
+00:07:22,760 --> 00:07:23,360
+dòng vô tính.
+
+100
+00:07:23,650 --> 00:07:24,980
+OK vì vậy chúng tôi đang xem xét điều khiển từ xa.
+
+101
+00:07:25,000 --> 00:07:29,240
+Cái duy nhất hiện tại là cái này khi chúng ta nhận được thông tin chi tiết của điều khiển từ xa.
+
+102
+00:07:29,250 --> 00:07:30,390
+Hiển thị nguồn gốc.
+
+103
+00:07:30,520 --> 00:07:33,110
+Nó nói Này, đây là loại giống như những gì tôi đang làm.
+
+104
+00:07:33,160 --> 00:07:40,200
+Tôi đang tìm nạp từ tài khoản tạm thời một tài khoản tạm thời và tôi cũng đang chuyển sang tài khoản tạm thời.
+
+105
+00:07:40,450 --> 00:07:47,210
+Vì vậy, ý tưởng của chúng tôi là chúng tôi sẽ thêm từ xa một nguồn gốc ngược dòng hoặc các luồng.
+
+106
+00:07:47,280 --> 00:07:53,470
+Xem bạn lấy điều khiển từ xa và đặt cho nó bất kỳ tên nào bạn muốn trong trường hợp này, ngược dòng là tốt là tốt
+
+107
+00:07:53,470 --> 00:07:58,870
+đặt tên cho nó bởi vì nó nằm xa hơn trên luồng của bạn từ nguồn gốc từ nguồn gốc của bạn.
+
+108
+00:07:58,870 --> 00:07:59,870
+Tên này có thể là bất kỳ.
+
+109
+00:07:59,870 --> 00:08:02,910
+Nó có thể là bất cứ thứ gì mà bạn muốn gọi là luồng.
+
+110
+00:08:03,050 --> 00:08:10,160
+Vì vậy, sau đó và sau đó bạn coi đây là đồng euro nhân bản cho bất cứ nơi nào bạn sẽ gọi nó.
+
+111
+00:08:10,180 --> 00:08:10,740
+Vì vậy, tôi sẽ đi.
+
+112
+00:08:10,750 --> 00:08:16,120
+Tới mười một giờ tôi sẽ vào kho cho anh chàng này Todd McCloud có vẻ như anh ta là một người đẹp
+
+113
+00:08:16,120 --> 00:08:24,880
+anh bạn tốt thích bức ảnh nó có vẻ yên bình và chúng tôi sẽ đi đến chú hề với từng chiếc GPS và sao chép nó
+
+114
+00:08:25,020 --> 00:08:25,300
+Phải.
+
+115
+00:08:25,360 --> 00:08:27,640
+Vâng, họ là HP s hoặc SSA.
+
+116
+00:08:27,670 --> 00:08:30,460
+Các bạn thiết lập trên một sân khấu để sử dụng nó.
+
+117
+00:08:30,460 --> 00:08:31,110
+Cảm ơn.
+
+118
+00:08:31,130 --> 00:08:34,440
+Và sau đó tôi sẽ tăng tốc độ đó để có thêm từ xa ngược dòng.
+
+119
+00:08:34,450 --> 00:08:35,790
+Vì vậy, bây giờ bạn bỏ n.
+
+120
+00:08:35,890 --> 00:08:36,420
+Chuẩn rồi.
+
+121
+00:08:36,420 --> 00:08:40,490
+Và bây giờ nếu bạn chạy get remote, nó sẽ hiển thị cho bạn biết bạn có hai điều khiển từ xa.
+
+122
+00:08:40,530 --> 00:08:47,360
+Nguồn gốc trong ASO đẹp ngược dòng, vì vậy nếu bạn hiển thị nguồn gốc thì nguồn gốc đó vẫn là tạm thời Todd McLeod và
+
+123
+00:08:47,380 --> 00:08:55,080
+nếu bạn hiển thị ngược dòng thì nó sẽ có thông tin chi tiết về ngược dòng là gì
+
+124
+00:08:55,080 --> 00:08:57,460
+dự án đi đến thiên đường như một món đồ chơi ngọt ngào.
+
+125
+00:08:58,780 --> 00:09:00,820
+Và sau đó bước tiếp theo trong quy trình là gì.
+
+126
+00:09:00,880 --> 00:09:06,010
+Bước tiếp theo là máy cục bộ của bạn hiện có điều khiển từ xa đó nhưng không biết gì về những gì
+
+127
+00:09:06,100 --> 00:09:09,790
+trong điều khiển từ xa đó, nó biết có sự tồn tại của thượng nguồn nhưng nó không biết gì về nó.
+
+128
+00:09:09,990 --> 00:09:16,690
+Vì vậy, bạn sử dụng tìm nạp ngược dòng để yêu cầu nó thực sự đi đến chỗ bạn là người thật và hãy xem
+
+129
+00:09:16,690 --> 00:09:17,940
+vào những gì thực sự tồn tại.
+
+130
+00:09:17,980 --> 00:09:22,420
+Những nhánh nào ở đó, sao chổi ở đó bạn cần biết về nó.
+
+131
+00:09:23,080 --> 00:09:30,700
+Vì vậy, chỉ để ghi lại điều này, chúng tôi đã đưa chúng ra ngoài và chúng tôi đã có nguồn gốc chương trình từ xa để lấy những chi tiết đó.
+
+132
+00:09:30,730 --> 00:09:37,600
+Và sau đó từ đây, chúng tôi lấy từ xa thêm ngược dòng với l của bạn và tôi sẽ làm điều này một chút
+
+133
+00:09:37,600 --> 00:09:39,490
+lừa ở đây để có được điều đó trên văn bản.
+
+134
+00:09:39,640 --> 00:09:40,510
+Và chúng tôi đã làm.
+
+135
+00:09:40,510 --> 00:09:42,610
+Điều đó có giống với việc tôi có thể lấy điều khiển từ xa ở đầu nguồn không.
+
+136
+00:09:42,680 --> 00:09:42,970
+Chuẩn rồi.
+
+137
+00:09:42,970 --> 00:09:45,370
+Với SS H, những người thay thế của bạn đã có cái đó ở đây.
+
+138
+00:09:45,640 --> 00:09:50,440
+Vì vậy, tôi chỉ muốn đảm bảo rằng chúng tôi ghi lại các bước chúng tôi đang thực hiện và sau đó bước tiếp theo là nhận hàng loạt
+
+139
+00:09:50,620 --> 00:09:51,400
+thượng lưu bên phải.
+
+140
+00:09:51,580 --> 00:09:51,820
+Vâng.
+
+141
+00:09:51,850 --> 00:09:52,440
+Vì vậy, tôi sẽ làm.
+
+142
+00:09:52,440 --> 00:09:54,940
+Nhận mà ngược dòng.
+
+143
+00:09:54,940 --> 00:10:00,610
+Vì vậy, tôi sẽ đi và tìm nguồn gốc từ xa khác này.
+
+144
+00:10:00,610 --> 00:10:01,820
+Đó là tên nó được gọi là ngược dòng.
+
+145
+00:10:01,820 --> 00:10:06,540
+Vì vậy, bây giờ bản sao của bạn biết rằng có một nhánh được gọi là chủ thượng nguồn.
+
+146
+00:10:06,570 --> 00:10:09,930
+Bạn có thể thấy điều đó nói rằng nhánh mới mới ngược dòng MASTER.
+
+147
+00:10:09,960 --> 00:10:11,550
+CẢM ƠN.
+
+148
+00:10:11,650 --> 00:10:14,620
+TÔI CÓ THỂ LÀM ĐƯỢC KHÔNG?
+
+149
+00:10:15,000 --> 00:10:15,420
+Đúng.
+
+150
+00:10:15,490 --> 00:10:15,700
+Vâng.
+
+151
+00:10:15,700 --> 00:10:16,220
+Đẹp.
+
+152
+00:10:16,240 --> 00:10:20,170
+Để bạn có thể thấy rằng bạn đã có chủ gốc của điều khiển từ xa, bạn có chủ tổng thể ngược dòng của điều khiển từ xa.
+
+153
+00:10:20,230 --> 00:10:27,040
+Các bạn chỉ chơi bậc thầy, họ là tất cả, tất cả đều ở đó, hãy gọi và sau đó là bước tiếp theo tại Stack
+
+154
+00:10:27,070 --> 00:10:28,510
+Tràn bảo chúng ta phải làm gì.
+
+155
+00:10:29,020 --> 00:10:34,840
+Vì vậy, hãy chắc chắn rằng bạn đang ở nhánh mà bạn muốn cập nhật trong trường hợp này hầu như luôn luôn thành thạo.
+
+156
+00:10:34,840 --> 00:10:36,710
+Vì vậy, hãy chắc chắn rằng bạn đang ở đúng nhánh.
+
+157
+00:10:36,750 --> 00:10:41,050
+Chúng tôi phải nhận tổng thanh toán chỉ để đảm bảo rằng bạn đang ở đúng chi nhánh.
+
+158
+00:10:41,770 --> 00:10:43,130
+Vì vậy, đó là bước tiếp theo.
+
+159
+00:10:43,340 --> 00:10:45,340
+Bạn đã có bạn có thể xác nhận điều đó.
+
+160
+00:10:45,340 --> 00:10:54,310
+Xác nhận với get branch shake vâng và cũng đảm bảo rằng bạn đang bị kéo để đảm bảo rằng
+
+161
+00:10:54,310 --> 00:10:56,220
+bạn được cập nhật với công việc của riêng bạn.
+
+162
+00:10:56,340 --> 00:11:00,200
+Nhận Paul trong trường hợp này nó đã được.
+
+163
+00:11:00,210 --> 00:11:05,090
+Vì vậy, bây giờ bạn đang sử dụng phiên bản chính mới nhất và bạn được tìm nạp ngược dòng để bạn biết về phiên bản mới nhất
+
+164
+00:11:05,100 --> 00:11:07,480
+thứ mà thượng nguồn dành cho Master.
+
+165
+00:11:07,530 --> 00:11:14,610
+Vì vậy, bây giờ bạn thực sự có thể kéo từ thượng nguồn vào bản sao của mình và có hai cách để thực hiện.
+
+166
+00:11:14,610 --> 00:11:19,260
+Bạn có thể sử dụng tổng thể nhận giảm giá ngược dòng hoặc nhận tổng thể ngược dòng hợp nhất
+
+167
+00:11:22,010 --> 00:11:24,430
+vì vậy đó là hai cách khác nhau để làm điều đó.
+
+168
+00:11:24,650 --> 00:11:29,450
+Nhận rebase là cách ưa thích hoặc về cơ bản.
+
+169
+00:11:29,720 --> 00:11:37,190
+Về cơ bản, nó lấy tất cả các cam kết cho toàn bộ repo của bạn cả ở bản sao cục bộ và ngược dòng và chỉ
+
+170
+00:11:37,190 --> 00:11:39,950
+áp dụng lại chúng theo thứ tự.
+
+171
+00:11:39,950 --> 00:11:42,340
+Đó là một cỗ máy thời gian.
+
+172
+00:11:42,350 --> 00:11:48,320
+Vấn đề là nếu bạn có những người chống lại bạn hoặc nhân bản bạn thì điều đó có thể gây ra một số vấn đề vì
+
+173
+00:11:48,320 --> 00:11:51,810
+bạn đang sửa đổi lịch sử.
+
+174
+00:11:52,020 --> 00:11:55,820
+Tùy chọn khác là hợp nhất tổng thể ngược dòng và những gì.
+
+175
+00:11:55,940 --> 00:11:57,780
+Và điều này không sửa đổi lịch sử.
+
+176
+00:11:57,780 --> 00:12:05,510
+Điều này chỉ tạo ra một sao chổi mới mà nó là một cam kết hợp nhất từ ​​chủ thượng nguồn.
+
+177
+00:12:05,550 --> 00:12:11,280
+Điểm nào có nghĩa là OK, tất cả các ủy ban ở đây đều có trong repo sau thời điểm này.
+
+178
+00:12:11,340 --> 00:12:16,770
+Vì vậy, vì có lẽ không ai đã rẽ nhánh tài khoản giả tạm thời của tôi, tôi sẽ thực hiện rebase upstream master
+
+179
+00:12:16,770 --> 00:12:18,450
+và tôi chỉ cần thêm một số ghi chú ở đây.
+
+180
+00:12:18,530 --> 00:12:23,220
+Vâng, có hai cách để lấy từ repo rẽ nhánh, vì vậy bạn có thể kiểm tra cách tôi đã mô tả điều này nếu
+
+181
+00:12:23,220 --> 00:12:24,450
+bạn muốn thêm bất cứ điều gì vào nó.
+
+182
+00:12:24,660 --> 00:12:33,060
+Nhận tổng thể ngược dòng rebase là một cách, cách khác là lấy tổng thể ngược dòng hợp nhất và cách này sửa đổi
+
+183
+00:12:33,060 --> 00:12:36,210
+lịch sử nhưng vì vấn đề mọi người đã chiến đấu ngã ba của tôi.
+
+184
+00:12:36,210 --> 00:12:36,600
+Phải.
+
+185
+00:12:37,140 --> 00:12:39,910
+Và điều này không sửa đổi lịch sử nên điều này sẽ an toàn hơn.
+
+186
+00:12:39,930 --> 00:12:42,530
+Mọi người đã chiến đấu để tiết kiệm cho.
+
+187
+00:12:42,660 --> 00:12:47,080
+Nếu mọi người đã chiến ngã ba của bạn Yeah.
+
+188
+00:12:47,100 --> 00:12:47,460
+Vì thế.
+
+189
+00:12:47,460 --> 00:12:54,930
+Vì vậy, về cơ bản nếu bạn rebase một mình thì tốt và nó làm cho lịch sử của bạn trông đẹp hơn
+
+190
+00:12:55,000 --> 00:12:59,780
+hợp nhất bạn muốn bạn muốn sử dụng hợp nhất nếu bạn cũng có bất kỳ ai khác trên repo của mình.
+
+191
+00:13:00,000 --> 00:13:05,390
+Vì vậy, nếu bạn đang làm việc với ai đó với tư cách là cộng tác viên hoặc họ bỏ qua lỗi của người khác cho bạn thì
+
+192
+00:13:05,400 --> 00:13:06,580
+hợp nhất an toàn hơn.
+
+193
+00:13:06,760 --> 00:13:11,000
+Nhưng trong trường hợp này, chỉ có một mình Tampa lên thiên đường.
+
+194
+00:13:11,010 --> 00:13:12,950
+Vì vậy, rebase là tốt.
+
+195
+00:13:12,960 --> 00:13:17,010
+Bây giờ tôi sẽ khởi động lại và đầu tiên tua lại đầu phát lại công việc của bạn trên đó.
+
+196
+00:13:17,010 --> 00:13:19,200
+Tua nhanh master ngược dòng master.
+
+197
+00:13:19,200 --> 00:13:21,840
+Bây giờ là nó hay chúng ta có bất cứ điều gì khác nên được.
+
+198
+00:13:21,890 --> 00:13:24,430
+Vì vậy, bây giờ tôi đã có một liều lượng khiêm tốn thấp hơn ở đó.
+
+199
+00:13:24,480 --> 00:13:25,140
+Chuẩn rồi.
+
+200
+00:13:25,440 --> 00:13:26,430
+Và điều đó thật tuyệt vời.
+
+201
+00:13:26,430 --> 00:13:27,570
+Vì vậy, điều đó đã mang lại tất cả những điều đó xuống.
+
+202
+00:13:28,130 --> 00:13:28,290
+Chuẩn rồi.
+
+203
+00:13:28,320 --> 00:13:33,660
+Vì vậy, bây giờ đây là bản sao của bạn nhưng bản fork của bạn trên GitHub vẫn chưa được cập nhật nên bạn phải đẩy tới
+
+204
+00:13:33,660 --> 00:13:34,640
+giải quyết điều đó.
+
+205
+00:13:34,860 --> 00:13:39,030
+Và đôi khi khi bạn thực hiện thao tác đẩy này, nó có thể bị cắt và có thể gặp sự cố.
+
+206
+00:13:39,060 --> 00:13:44,440
+Vì vậy, đôi khi bạn cần đặt dấu gạch ngang f Origin master, đó là những gì được liệt kê trên ngăn xếp
+
+207
+00:13:44,440 --> 00:13:45,420
+điều tràn.
+
+208
+00:13:45,420 --> 00:13:46,590
+Trong trường hợp này nó không cần thiết.
+
+209
+00:13:46,590 --> 00:13:52,040
+Cuộc nổi dậy đủ đơn giản để không có bất kỳ thay đổi lớn nào và vì vậy nó đã hoạt động.
+
+210
+00:13:52,230 --> 00:13:58,620
+Nhưng đôi khi, khi phát lại lịch sử, nó phải thay đổi một trong những nhận xét của bạn một chút.
+
+211
+00:13:58,620 --> 00:14:02,800
+Và vì vậy, bạn phải buộc nhấn để yêu cầu nó ghi đè lên nhận xét ban đầu trên
+
+212
+00:14:16,610 --> 00:14:22,800
+vì vậy bạn không cần phải sử dụng lực đẩy nhiều lần mặc dù đó chỉ là nếu bạn đã thay đổi
+
+213
+00:14:22,800 --> 00:14:25,680
+lịch sử với rebase, bạn có thể phải nói với nó trước khi làm việc.
+
+214
+00:14:25,700 --> 00:14:25,940
+Chào.
+
+215
+00:14:25,940 --> 00:14:28,840
+Lịch sử đã thay đổi trong nhiều năm do Bush ép buộc.
+
+216
+00:14:29,730 --> 00:14:30,120
+Vâng.
+
+217
+00:14:30,330 --> 00:14:34,730
+Vì vậy, đó là một quá trình phức tạp và mất một chút thời gian để giải thích.
+
+218
+00:14:34,770 --> 00:14:36,230
+Và tôi muốn giữ những video này ngắn gọn.
+
+219
+00:14:36,240 --> 00:14:42,570
+Vì vậy, trong video tiếp theo, tôi sẽ cho bạn thấy giải pháp của tôi bây giờ mà tôi đã cập nhật với Levin I've
+
+220
+00:14:42,570 --> 00:14:47,910
+có tất cả mã và đại loại là có mọi thứ hiện tại với fork và bản sao của tôi và của tôi trong video tiếp theo
+
+221
+00:14:47,910 --> 00:14:49,530
+Tôi sẽ chỉ cho bạn giải pháp của tôi cho vấn đề thứ hai.
+
+222
+00:14:49,530 --> 00:14:56,190
+Bài tập thực hành nên một lưu ý nếu bạn muốn làm lại bài này thì không cần thêm remote ngược dòng
+
+223
+00:14:56,190 --> 00:14:57,690
+điều khiển từ xa một lần nữa đã được lưu.
+
+224
+00:14:57,690 --> 00:15:00,750
+Bạn chỉ cần thực hiện tìm nạp và tiếp tục tìm nạp.
+
+225
+00:15:00,750 --> 00:15:03,700
+Tôi nghĩ có lẽ chúng ta sẽ thấy điều đó khi tôi thực hiện bài tập tay thứ 3.
+
+226
+00:15:03,710 --> 00:15:04,650
+Được rồi được rồi tốt.
+
+227
+00:15:04,650 --> 00:15:06,390
+Hẹn gặp lại bạn trong video tiếp theo, tôi sẽ thực hiện giải pháp của mình.

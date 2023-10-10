@@ -1,0 +1,224 @@
+1
+00:00:00,120 --> 00:00:06,130
+Kay selamat datang di bagian ini tentang Jarkesy kita akan melakukan rasa mentah API mentah untuk membuat membaca tempat
+
+2
+00:00:06,210 --> 00:00:08,460
+tidur untuk makan dan menyimpan data.
+
+3
+00:00:08,460 --> 00:00:12,420
+Kali ini kita tidak akan melakukannya hanya untuk palsu. Kita benar-benar akan menjadi nyata.
+
+4
+00:00:12,420 --> 00:00:14,780
+Jadi kita akan membuat database DB mongo.
+
+5
+00:00:14,790 --> 00:00:19,850
+Kami akan berjalan di laptop kami sendiri dan kemudian kami akan menjalankan aplikasi API di atasnya.
+
+6
+00:00:19,980 --> 00:00:27,360
+Jadi kita akan mendapatkan layanan blog dan blog seperti Anda tahu artikel Internet dan begitu juga membuat blog membaca
+
+7
+00:00:27,360 --> 00:00:31,440
+blog dan blog dan semua ini adalah singkatan dari crude.
+
+8
+00:00:31,440 --> 00:00:36,630
+Jadi kita hanya akan menerapkan semua hal ini satu per satu akan menggunakan Monga untuk menjadi ujung belakang
+
+9
+00:00:36,630 --> 00:00:40,690
+sehingga itu berarti semua data blog akan disimpan dalam dua TB yang dicetak.
+
+10
+00:00:40,710 --> 00:00:45,130
+Sekarang saya bisa menggunakan database apa pun yang Anda tidak perlu tahu TB Mongar untuk bagian ini.
+
+11
+00:00:45,180 --> 00:00:48,650
+Saya baru saja menemukan bahwa cukup mudah digunakan untuk memulai sebagai seorang pemula.
+
+12
+00:00:48,750 --> 00:00:50,050
+Dan inilah mengapa saya memilihnya.
+
+13
+00:00:50,160 --> 00:00:53,950
+Tetapi jika Anda ingin memiliki database Anda sendiri, Anda memiliki database favorit Anda sendiri.
+
+14
+00:00:53,970 --> 00:00:59,760
+Lakukan ini sebagai latihan jika Anda suka Dinon akan digunakan pada masalah MTBE seperti postgrads atau sekuel saya.
+
+15
+00:00:59,790 --> 00:01:01,550
+Silakan menggunakannya.
+
+16
+00:01:01,650 --> 00:01:03,200
+Untuk sekarang kita akan menggunakan Mongar untuk.
+
+17
+00:01:03,430 --> 00:01:08,730
+Ingat tidak ada pengetahuan yang baik yang diperlukan kami hanya akan menggunakan ini sebagai database sehingga data disimpan
+
+18
+00:01:08,820 --> 00:01:10,900
+dan disimpan di seluruh sesi kami.
+
+19
+00:01:10,950 --> 00:01:11,880
+Jadi mari kita mulai.
+
+20
+00:01:11,910 --> 00:01:16,950
+Angsuran pertama akan beres jadi saya di mongered menjadi situs Web yang disebut mongered untuk datang.
+
+21
+00:01:17,130 --> 00:01:21,630
+Jadi yang harus kita lakukan adalah pergi ke kanan dan klik pada dapatkan Magdi.
+
+22
+00:01:21,780 --> 00:01:26,550
+Sekarang Anda tidak menggunakan cloud sehingga harus berupa Atlas yang merupakan basis data sebagai layanan.
+
+23
+00:01:26,550 --> 00:01:29,220
+Untuk saat ini kita cukup klik pada server di tengah.
+
+24
+00:01:29,460 --> 00:01:32,050
+Dan di sini kita memiliki server komunitas mongered.
+
+25
+00:01:32,400 --> 00:01:35,380
+Dan pada dasarnya Anda dapat mengunduh Mongar untuk berada di sini.
+
+26
+00:01:35,550 --> 00:01:38,530
+Jadi klik pengalihan yang Anda butuhkan saya pikir untuk 0 3.
+
+27
+00:01:38,530 --> 00:01:39,890
+Rilis saat ini sangat bagus.
+
+28
+00:01:39,890 --> 00:01:41,880
+Jangan gunakan rilis pengembangan.
+
+29
+00:01:42,030 --> 00:01:46,490
+Dan jika Anda tidak ingin menggunakan xed dan menggunakan 4. 0 jadi saya menggunakan yang ini.
+
+30
+00:01:46,500 --> 00:01:48,730
+Berbagai hal dapat mengubah cara apa pun bagi kita.
+
+31
+00:01:48,720 --> 00:01:49,700
+Pilih OS Anda.
+
+32
+00:01:49,720 --> 00:01:51,470
+Bagi saya Mac OS-nya.
+
+33
+00:01:51,600 --> 00:01:55,240
+Ini didasarkan jika Anda menggunakan Ubuntu Linux Windows dll.
+
+34
+00:01:55,260 --> 00:01:56,920
+Cukup unduh yang benar.
+
+35
+00:01:56,950 --> 00:02:01,820
+T. G. itu berarti bahwa itu dikompresi dan kemudian Anda cukup klik dan unduh.
+
+36
+00:02:01,920 --> 00:02:03,740
+Sekarang demo akan segera dimulai.
+
+37
+00:02:03,960 --> 00:02:09,560
+OK jadi buat dia Hebei yang bagus dan bagiku direktori. Jadi jika kamu bisa dan kemudian kamu ketik
+
+38
+00:02:09,570 --> 00:02:10,130
+Mongo.
+
+39
+00:02:10,150 --> 00:02:12,150
+D Beginilah cara Anda memulai Mongar.
+
+40
+00:02:12,480 --> 00:02:16,550
+Jadi, jika Anda melakukannya, Anda akan mendapatkan kesalahan dan kesalahan itu akan mengatakan.
+
+41
+00:02:16,840 --> 00:02:18,140
+Itu direktori kami.
+
+42
+00:02:18,270 --> 00:02:20,680
+Slashdot tidak boleh ditemukan.
+
+43
+00:02:20,700 --> 00:02:25,560
+Jadi apa yang akan saya lakukan adalah membuat direktori data bukan di tempat yang mereka katakan tetapi di direktori
+
+44
+00:02:25,560 --> 00:02:27,360
+saya sendiri untuk menjaga hal-hal lokal.
+
+45
+00:02:27,660 --> 00:02:29,070
+Jadi saya akan menunjukkan kepada Anda apa yang saya maksud.
+
+46
+00:02:29,070 --> 00:02:35,150
+Jadi kita memiliki semua aktor ini di sini dan saya akan membuat data dan kredit data D-B.
+
+47
+00:02:35,340 --> 00:02:38,670
+Jadi sekarang di dalam direktori data ada pabrik DBI.
+
+48
+00:02:38,700 --> 00:02:41,230
+OK jadi sekarang saya harus meluncurkan.
+
+49
+00:02:41,700 --> 00:02:46,870
+Kita harus meluncurkan Heebee mongered dengan benar sehingga saya hanya akan membantu hanya untuk mendapatkan perintah yang tepat.
+
+50
+00:02:46,920 --> 00:02:52,500
+Dan jika Anda masuk ke sana ada argumen jalur D-B yang dapat Anda jalankan dan Anda bisa mengatakan Tunggu di
+
+51
+00:02:52,500 --> 00:02:54,560
+mana pun Anda ingin menyimpan para prajurit.
+
+52
+00:02:54,570 --> 00:03:00,590
+Ben membuat data jalur DP yang mewakili direktori yang baru saja saya buat.
+
+53
+00:03:00,750 --> 00:03:05,090
+Tekan enter dan sekarang mongered ke mulai dan kami siap untuk pergi.
+
+54
+00:03:05,310 --> 00:03:08,930
+Jadi akan dimulai gambar ini agar Anda tetap membuka terminal itu.
+
+55
+00:03:09,030 --> 00:03:13,440
+Jika Anda menggunakan Windows, instruksinya sedikit berbeda tetapi saya hanya akan menunjukkan Tauriel untuk Anda pada
+
+56
+00:03:13,440 --> 00:03:15,920
+kuliah berikutnya, jadi sampai jumpa di kuliah berikutnya.
+

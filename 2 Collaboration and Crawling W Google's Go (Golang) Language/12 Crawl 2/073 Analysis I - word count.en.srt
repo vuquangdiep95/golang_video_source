@@ -1,0 +1,503 @@
+1
+00:00:00,690 --> 00:00:06,360
+So now we're gonna do a little bit of analysis of all of the tweets and we're gonna just do a basic
+
+2
+00:00:06,360 --> 00:00:12,670
+word count and then count how many times each word has appeared in each of the tweets.
+
+3
+00:00:12,780 --> 00:00:18,990
+And so that will allow us to kind of look at all of those and see which ones you know appear the most
+
+4
+00:00:18,990 --> 00:00:23,160
+and give us a bit of an idea of what people are thinking in terms of what they'd like to see.
+
+5
+00:00:23,160 --> 00:00:24,380
+It's gonna be really rough.
+
+6
+00:00:24,420 --> 00:00:32,370
+And so obviously we're gonna have a whole lot of that but we'll also be able to kind of go through and
+
+7
+00:00:32,370 --> 00:00:36,160
+just kind of look at it visually pick out the ones which are making sense.
+
+8
+00:00:36,180 --> 00:00:37,410
+So take it away.
+
+9
+00:00:37,410 --> 00:00:43,410
+Daniel Oh and to do that by the way I think we've covered crawling and I'm actually going to show you
+
+10
+00:00:43,410 --> 00:00:45,230
+something on my screen here for a second.
+
+11
+00:00:45,270 --> 00:00:51,750
+We've covered crawling quite well enough and so I'm going to come into my project I'm going to launch
+
+12
+00:00:51,750 --> 00:01:00,090
+my terminal and I'm just gonna get rid of the setup that I had and so we had 0 3 here.
+
+13
+00:01:00,090 --> 00:01:00,670
+Todd Right.
+
+14
+00:01:00,690 --> 00:01:08,180
+I'll do this off screen and and then we're going to add analysis and I will switch over to Daniel's
+
+15
+00:01:08,180 --> 00:01:13,100
+error and the analysis is gonna be there under 0 4 scrape.
+
+16
+00:01:13,170 --> 00:01:18,330
+It'll be 0 3 analysis and so we'll just have a copy of all the files why you go ahead and you can get
+
+17
+00:01:18,330 --> 00:01:22,240
+rid of 0 3 Todd on years if you're gonna commit it on your end.
+
+18
+00:01:22,440 --> 00:01:23,510
+OK that's funny.
+
+19
+00:01:23,580 --> 00:01:25,100
+Yes that's good.
+
+20
+00:01:25,140 --> 00:01:31,740
+And you could just do 0 3 analysis and and and then take everything you did in 0 2 and drop the analysis
+
+21
+00:01:31,740 --> 00:01:32,280
+in there.
+
+22
+00:01:32,280 --> 00:01:33,330
+That's perfect
+
+23
+00:01:36,140 --> 00:01:41,540
+not people to just drag and drop through sublime It's a file thing it's not that great.
+
+24
+00:01:41,560 --> 00:01:42,650
+So I hear
+
+25
+00:01:51,880 --> 00:01:54,940
+so count the words I'm thinking map.
+
+26
+00:01:55,570 --> 00:01:57,310
+Yeah pretty much.
+
+27
+00:01:57,340 --> 00:01:58,950
+So plus plus.
+
+28
+00:01:58,960 --> 00:02:02,020
+So this is going to probably be more more stuff.
+
+29
+00:02:02,050 --> 00:02:12,590
+So one thing I would like to do is probably just say dumb tweets takes in tweets as a slice of tweet
+
+30
+00:02:14,700 --> 00:02:17,310
+that this maternal thing and I just think that this
+
+31
+00:02:20,140 --> 00:02:23,540
+so I got access to it later if I if I went back again.
+
+32
+00:02:23,610 --> 00:02:25,270
+It's just out of the way.
+
+33
+00:02:25,320 --> 00:02:30,330
+I like that and the next function maybe be a function word count.
+
+34
+00:02:30,580 --> 00:02:31,510
+So you're now.
+
+35
+00:02:35,490 --> 00:02:42,540
+And that's going to take and all the tweets and so this won't be more proper and potentially return
+
+36
+00:02:42,560 --> 00:02:42,890
+in it.
+
+37
+00:02:42,920 --> 00:02:52,310
+I don't think it actually needs to return an error yet but it will return that the word counts a map.
+
+38
+00:02:52,320 --> 00:02:58,110
+So I'm almost thinking the first we could make a data structure that can be sorted for that.
+
+39
+00:02:58,130 --> 00:03:01,520
+So we can have the word counts in descending order.
+
+40
+00:03:01,830 --> 00:03:03,650
+So I like that.
+
+41
+00:03:03,810 --> 00:03:12,150
+So need a strike for that word that info struct will have the word it's a string.
+
+42
+00:03:12,150 --> 00:03:12,280
+Yeah.
+
+43
+00:03:12,300 --> 00:03:13,830
+And how many times that shows up.
+
+44
+00:03:13,860 --> 00:03:17,610
+So count it.
+
+45
+00:03:17,630 --> 00:03:20,080
+And so this will return a slice of word info.
+
+46
+00:03:22,890 --> 00:03:29,840
+So in sorted order descending count order.
+
+47
+00:03:29,870 --> 00:03:31,000
+And so now I've got that.
+
+48
+00:03:31,010 --> 00:03:36,200
+And so I can start a actually doing counting the words.
+
+49
+00:03:36,310 --> 00:03:40,230
+So while counting them a map is useful.
+
+50
+00:03:40,510 --> 00:03:49,630
+Create a word map is a map from what the word is string to how many times it's shown up.
+
+51
+00:03:49,940 --> 00:03:51,020
+Yeah.
+
+52
+00:03:51,100 --> 00:03:55,460
+So maps are very useful here in this case while creating it.
+
+53
+00:03:55,480 --> 00:04:00,460
+And then we go back later and read restructure to the struct form slice it struct form which floor easily
+
+54
+00:04:00,460 --> 00:04:01,240
+sorted.
+
+55
+00:04:01,270 --> 00:04:02,080
+Yeah absolutely.
+
+56
+00:04:02,920 --> 00:04:08,440
+So weird map now I've got all these tweets so I need to loop through each tweet so
+
+57
+00:04:11,310 --> 00:04:13,090
+rage tweets.
+
+58
+00:04:13,610 --> 00:04:25,550
+So there t is an individual tweet and each tweet has a message teed up messages one message from the
+
+59
+00:04:25,550 --> 00:04:27,950
+tweets but we have no words.
+
+60
+00:04:27,980 --> 00:04:28,170
+Yeah.
+
+61
+00:04:28,190 --> 00:04:29,870
+So we're going to have to do this.
+
+62
+00:04:30,050 --> 00:04:36,920
+Strings package has that thing where you could split right that's fluid and it splits on whatever you
+
+63
+00:04:36,920 --> 00:04:39,480
+pass and I think what's the signature.
+
+64
+00:04:39,530 --> 00:04:40,340
+What are the parameters.
+
+65
+00:04:40,340 --> 00:04:48,350
+I think it's a you add a space called column space but if we look at strings package strings split I
+
+66
+00:04:48,350 --> 00:04:55,390
+remember that from Caleb dock C first first century what are we doing in the separator.
+
+67
+00:04:55,550 --> 00:04:58,420
+And gives you a slice of string that's what split islands.
+
+68
+00:04:58,630 --> 00:05:00,260
+It's.
+
+69
+00:05:00,390 --> 00:05:06,930
+So now I have a words nice and the C range everywhere I can move over words
+
+70
+00:05:10,990 --> 00:05:12,800
+and for each word I can do.
+
+71
+00:05:12,840 --> 00:05:24,410
+We're map and the word the word gets lost plus so one potential benefit can do also is you could do
+
+72
+00:05:24,410 --> 00:05:26,670
+strings start to lower.
+
+73
+00:05:26,690 --> 00:05:27,700
+Oh absolutely.
+
+74
+00:05:27,890 --> 00:05:30,300
+So that way it's case insensitive.
+
+75
+00:05:30,440 --> 00:05:32,870
+Good call.
+
+76
+00:05:32,920 --> 00:05:43,050
+And the reason we could just automatically start using an index a key on a map is because if no keys
+
+77
+00:05:43,060 --> 00:05:44,700
+there it's zero value right.
+
+78
+00:05:44,860 --> 00:05:47,860
+Yes and the zero value of an end to zero.
+
+79
+00:05:47,890 --> 00:05:50,380
+So everything starts out as zero.
+
+80
+00:05:50,380 --> 00:05:53,640
+And so you could just say hey you put this key in.
+
+81
+00:05:53,680 --> 00:05:55,110
+No keys there.
+
+82
+00:05:55,150 --> 00:05:58,200
+Then it creates that key and it goes from zero to one.
+
+83
+00:05:58,240 --> 00:06:03,670
+And if a key is there finds it and it takes whatever that is and it increments it up one.
+
+84
+00:06:03,700 --> 00:06:06,480
+So that's kind of what that little notation is.
+
+85
+00:06:06,490 --> 00:06:10,450
+I think it's totally nifty to explain that right.
+
+86
+00:06:10,560 --> 00:06:10,850
+Yeah.
+
+87
+00:06:11,050 --> 00:06:11,680
+OK.
+
+88
+00:06:11,790 --> 00:06:13,000
+So correct.
+
+89
+00:06:13,030 --> 00:06:17,380
+It's one of the more almost arcane parts of Go.
+
+90
+00:06:17,390 --> 00:06:23,480
+It's it's not that arcane but that kind of just tells you how simple the language go it is that that's
+
+91
+00:06:23,480 --> 00:06:23,710
+good.
+
+92
+00:06:23,710 --> 00:06:30,400
+That could be considered one of the harder to understand parts of it.
+
+93
+00:06:30,540 --> 00:06:35,790
+So now we've got the word math where each key is a word and the value is how many times that word shows
+
+94
+00:06:35,790 --> 00:06:36,120
+up.
+
+95
+00:06:36,120 --> 00:06:40,170
+So now we convert it and tell those lines 1 6 through 1 20.
+
+96
+00:06:40,170 --> 00:06:41,470
+Sorry I just cut you off.
+
+97
+00:06:41,820 --> 00:06:43,680
+1 16th through 120.
+
+98
+00:06:43,680 --> 00:06:48,810
+That just went through all the tweets and put all of the words from all the tweets into a map and counted
+
+99
+00:06:48,810 --> 00:06:50,790
+how many times each one is in there.
+
+100
+00:06:50,950 --> 00:06:51,260
+Yeah.
+
+101
+00:06:51,290 --> 00:06:52,990
+That's elegant and short.
+
+102
+00:06:53,150 --> 00:06:53,910
+Yes very sad.
+
+103
+00:06:53,910 --> 00:06:54,420
+Go on.
+
+104
+00:06:54,450 --> 00:06:54,960
+Sorry.
+
+105
+00:06:55,120 --> 00:06:55,510
+So.
+
+106
+00:06:55,540 --> 00:07:03,970
+So after that we now need to get it into this struct format so you can you can loop over a map too.
+
+107
+00:07:04,080 --> 00:07:10,670
+So each time through the map it'll give me the word and then the count so that's just key value.
+
+108
+00:07:10,670 --> 00:07:16,010
+So since Becky is the word and the values the count I can tell you can see to represent that this is
+
+109
+00:07:16,010 --> 00:07:18,770
+going off word map.
+
+110
+00:07:19,220 --> 00:07:22,170
+And so now each time through I'm going to need to make new wording.
+
+111
+00:07:22,210 --> 00:07:36,240
+Let's make that slice of return of word infos infos It's a slice of word info.
+
+112
+00:07:36,400 --> 00:07:48,720
+Now I can say for each time through this loop I can append a a new word info into that slice a word
+
+113
+00:07:48,920 --> 00:07:55,200
+of W and a C so now its own slice.
+
+114
+00:07:55,200 --> 00:07:57,490
+And now we can source the slice.
+
+115
+00:07:57,540 --> 00:08:11,160
+So sorting good like that word sort storage sort sort has a slice sort of a slice
+
+116
+00:08:14,430 --> 00:08:21,870
+which takes in a slice of anything here and then a function to compare two items in that slice and it
+
+117
+00:08:21,870 --> 00:08:23,130
+doesn't return anything.
+
+118
+00:08:23,340 --> 00:08:31,680
+It just does it place on this slice so sort that slice and I'm going to need to import sort
+
+119
+00:08:38,590 --> 00:08:45,310
+sought but slice my autocomplete and such you know not don't make my article the engine does not like
+
+120
+00:08:45,310 --> 00:08:47,040
+go modules so keeps crash needs.
+
+121
+00:08:47,050 --> 00:08:52,460
+That's why it's not working and we're coming up on two minutes I like to keep these videos short.
+
+122
+00:08:52,640 --> 00:08:53,130
+OK.
+
+123
+00:08:53,380 --> 00:08:54,710
+So to be continued.
+
+124
+00:08:54,770 --> 00:08:59,350
+Yeah we're going to see in the next video or we're going to look at sorting the slice.
+
+125
+00:08:59,350 --> 00:09:03,090
+I know we're pretty close but yeah I really like trying to keep this short.
+
+126
+00:09:03,100 --> 00:09:06,550
+So make a new entry and we'll see in the next video.

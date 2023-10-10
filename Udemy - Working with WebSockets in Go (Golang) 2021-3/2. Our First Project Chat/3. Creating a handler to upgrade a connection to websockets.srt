@@ -1,0 +1,423 @@
+1
+00:00:00,890 --> 00:00:07,100
+So far, our Web application just does one thing, it listens for requests to the home page and renders
+
+2
+00:00:07,100 --> 00:00:09,550
+an HTML page, which isn't terribly exciting.
+
+3
+00:00:10,070 --> 00:00:12,590
+So we need to actually create some more handlers.
+
+4
+00:00:12,740 --> 00:00:17,420
+And the handler I want to create right now is not one that renders a Web page.
+
+5
+00:00:17,540 --> 00:00:24,530
+Instead, it's one that actually takes a connection, a regular HTP or HTTPS connection and upgrades
+
+6
+00:00:24,530 --> 00:00:26,200
+it to a WebSocket connection.
+
+7
+00:00:26,780 --> 00:00:29,360
+And in order to make that happen, I need to create a new variable.
+
+8
+00:00:29,430 --> 00:00:35,990
+I'm going to create it right here, right after my views variable and I'll call it var upgrade connection,
+
+9
+00:00:36,140 --> 00:00:40,700
+which seems like a meaningful name and that will be equal to a type.
+
+10
+00:00:41,030 --> 00:00:47,210
+And the type is WebSocket upgrader and that actually requires a few parameters.
+
+11
+00:00:47,510 --> 00:00:52,370
+It requires a red buffer, a right buffer and whether or not to check the origin, which is a security
+
+12
+00:00:52,370 --> 00:00:52,640
+thing.
+
+13
+00:00:52,650 --> 00:00:54,860
+So we'll put it in these Nereid buffer size.
+
+14
+00:00:55,220 --> 00:00:57,620
+I'll make that ten, twenty four, which is a good size.
+
+15
+00:00:58,070 --> 00:00:58,430
+Right.
+
+16
+00:00:58,430 --> 00:01:04,120
+But for size I'll make ten, twenty four and finally check Origin.
+
+17
+00:01:04,130 --> 00:01:08,990
+And that is going to be equal to a function, a function that just takes the request.
+
+18
+00:01:14,510 --> 00:01:18,110
+And returns a bull and the bull is going to return, is return true,
+
+19
+00:01:20,930 --> 00:01:26,510
+so that's a variable I can use to upgrade connections and let's use that variable and come down here
+
+20
+00:01:26,510 --> 00:01:28,660
+just after the home handler and create a new handler.
+
+21
+00:01:29,420 --> 00:01:33,350
+And this one will be called We can point our WebSocket End Point.
+
+22
+00:01:33,350 --> 00:01:34,340
+And it is a handler.
+
+23
+00:01:34,350 --> 00:01:38,180
+So it still requires the response operator and the pointer to the request.
+
+24
+00:01:39,560 --> 00:01:40,540
+Let's put those in there.
+
+25
+00:01:44,000 --> 00:01:45,110
+And what does this do?
+
+26
+00:01:45,260 --> 00:01:49,580
+Well, the very first thing it's going to do is to upgrade the connection.
+
+27
+00:01:49,580 --> 00:01:56,300
+So I'll create a new variable W.S. for my WebSocket connection, potentially an error, and I'll get
+
+28
+00:01:56,300 --> 00:01:56,750
+a call.
+
+29
+00:01:56,750 --> 00:01:59,060
+That variable I just created upgrade connection.
+
+30
+00:01:59,420 --> 00:02:06,320
+And that actually has a method on it called upgrade and upgrade requires your response rate or your
+
+31
+00:02:06,320 --> 00:02:07,400
+pointer to your request.
+
+32
+00:02:07,760 --> 00:02:11,450
+And the third third argument, I'm going to leave as no, but you can actually look at it and see what
+
+33
+00:02:11,450 --> 00:02:11,960
+it does.
+
+34
+00:02:12,340 --> 00:02:13,670
+I don't need to do that.
+
+35
+00:02:14,150 --> 00:02:14,870
+Try that again.
+
+36
+00:02:15,740 --> 00:02:19,190
+If there is not equal to nil, then what do I want to do?
+
+37
+00:02:19,190 --> 00:02:22,220
+If the error is not equal to nil, I'll just log the error for now.
+
+38
+00:02:24,520 --> 00:02:27,950
+OK, so upgrade actually takes three parameters.
+
+39
+00:02:27,950 --> 00:02:31,180
+And the first one is your response writer.
+
+40
+00:02:31,520 --> 00:02:35,750
+The second one is your request and the third one is your response header.
+
+41
+00:02:35,750 --> 00:02:37,880
+And we're not going to worry about the response header right now.
+
+42
+00:02:37,880 --> 00:02:43,310
+It's unimportant for our purposes in figuring out how websites work, but you can read about it at your
+
+43
+00:02:43,310 --> 00:02:44,790
+leisure if you choose to do so.
+
+44
+00:02:45,770 --> 00:02:49,160
+So I've created that was that variable.
+
+45
+00:02:49,400 --> 00:02:50,570
+I've upgraded the connection.
+
+46
+00:02:50,570 --> 00:02:51,620
+Let's just log something.
+
+47
+00:02:51,620 --> 00:02:55,580
+Log, print line and I'll just log client.
+
+48
+00:02:57,260 --> 00:02:57,950
+Try that again.
+
+49
+00:02:59,090 --> 00:03:02,840
+Client connected to Endpoint.
+
+50
+00:03:04,130 --> 00:03:06,380
+OK, let's try spelling endpoint.
+
+51
+00:03:06,380 --> 00:03:06,650
+Right.
+
+52
+00:03:07,610 --> 00:03:09,740
+So client is connected and I've loved this.
+
+53
+00:03:10,190 --> 00:03:15,860
+And what I want to do at this point is send back a response and I can just send back text if I want
+
+54
+00:03:15,860 --> 00:03:20,240
+to, but I like to structure my responses in a way that makes them easy to pass.
+
+55
+00:03:20,250 --> 00:03:25,580
+I like to use Jason, so let's define a new type just in front of this W.S. Endpoint type.
+
+56
+00:03:25,580 --> 00:03:33,050
+And I will call it was JSON response and it's a struct and I'll give it a few fields that I can actually
+
+57
+00:03:33,050 --> 00:03:33,410
+use.
+
+58
+00:03:33,590 --> 00:03:39,380
+So I'm going to put some in right now that we'll be using in a few minutes or the next few lectures.
+
+59
+00:03:39,560 --> 00:03:40,520
+But let's just define them.
+
+60
+00:03:40,520 --> 00:03:40,970
+All right.
+
+61
+00:03:40,970 --> 00:03:43,220
+Now, the ones that I know I'm going to be sending back.
+
+62
+00:03:43,580 --> 00:03:48,140
+So I'm going to send back something called action, which will be a string, and we'll define the JSON
+
+63
+00:03:48,140 --> 00:03:50,060
+response to be action lowercase.
+
+64
+00:03:52,370 --> 00:03:56,030
+And then I'll define another one, which I will call message.
+
+65
+00:03:58,100 --> 00:04:05,660
+And we'll just call that message for Arcachon response and we'll define another one called message type,
+
+66
+00:04:07,550 --> 00:04:10,010
+which you don't need to worry about right now.
+
+67
+00:04:10,010 --> 00:04:11,600
+But we'll be using it in a little while.
+
+68
+00:04:12,800 --> 00:04:13,610
+And finally.
+
+69
+00:04:13,610 --> 00:04:14,690
+Well, that's enough right now.
+
+70
+00:04:14,690 --> 00:04:15,580
+We can go with those.
+
+71
+00:04:15,620 --> 00:04:18,710
+OK, so let's format this, give a few comments.
+
+72
+00:04:19,310 --> 00:04:22,040
+W.S. JSON response
+
+73
+00:04:24,740 --> 00:04:26,930
+defines the response
+
+74
+00:04:29,330 --> 00:04:42,530
+sent back from WebSocket and this endpoint needs a name upgrades connection to WebSocket.
+
+75
+00:04:43,250 --> 00:04:45,490
+OK, so that's done so far.
+
+76
+00:04:45,650 --> 00:04:50,660
+Now I want to actually give a response back because I've defined this variable WSC and I have to do
+
+77
+00:04:50,660 --> 00:04:53,000
+something with it or I can't even compile this program.
+
+78
+00:04:53,330 --> 00:04:54,860
+So let's just go with really simple one.
+
+79
+00:04:55,220 --> 00:05:06,170
+VAR response is of type WSJ JSON response and I'll put in here response message that spell response.
+
+80
+00:05:06,170 --> 00:05:06,440
+Right.
+
+81
+00:05:11,660 --> 00:05:18,680
+And I'll just put in a very simple HTML, which I'll do this way, I'll wrap it with the back text so
+
+82
+00:05:18,680 --> 00:05:22,040
+I can use quotations if I need to at some point.
+
+83
+00:05:22,040 --> 00:05:30,860
+M small connected to server small m.
+
+84
+00:05:31,370 --> 00:05:37,790
+OK, now I want to send that response back to the client so we can do that really, really easily with
+
+85
+00:05:37,790 --> 00:05:39,830
+the Gorilla WebSocket package.
+
+86
+00:05:40,220 --> 00:05:42,680
+Would you say error is equal to W.S..
+
+87
+00:05:42,770 --> 00:05:43,490
+Right Jason.
+
+88
+00:05:45,050 --> 00:05:45,770
+Try that again.
+
+89
+00:05:46,400 --> 00:05:47,150
+Right Jason.
+
+90
+00:05:47,150 --> 00:05:48,050
+Right message.
+
+91
+00:05:48,830 --> 00:05:49,100
+Right.
+
+92
+00:05:49,100 --> 00:05:51,740
+Message would actually send back just text.
+
+93
+00:05:51,740 --> 00:05:57,080
+I don't want to send back Jason so we'll read our response and it takes care of the martialing that
+
+94
+00:05:57,080 --> 00:05:58,940
+into Jason for us and sending it back.
+
+95
+00:05:59,180 --> 00:06:00,530
+And let's just check for an error.
+
+96
+00:06:01,490 --> 00:06:04,760
+If error is not equal to nil, we'll just log that for right now.
+
+97
+00:06:04,910 --> 00:06:10,130
+OK, so that is all I need to worry about right now.
+
+98
+00:06:10,130 --> 00:06:11,630
+That gives me an endpoint.
+
+99
+00:06:11,630 --> 00:06:13,850
+So I need to actually set up a route to that endpoint.
+
+100
+00:06:13,850 --> 00:06:18,620
+So let's go over to here and let's just duplicate this route and we'll instead of going to Handler's
+
+101
+00:06:18,620 --> 00:06:24,920
+home, we'll go to Handler's WC endpoint and instead of a slash, we'll listen to WC.
+
+102
+00:06:25,280 --> 00:06:26,750
+So this will be the euro.
+
+103
+00:06:26,750 --> 00:06:30,980
+We call from our our Web page that we're sending to the end user.
+
+104
+00:06:30,980 --> 00:06:37,820
+So we need to go into that Web page and add some JavaScript that allows us to connect to the WC endpoint
+
+105
+00:06:38,120 --> 00:06:39,410
+and see if we connect.
+
+106
+00:06:39,410 --> 00:06:41,690
+And we'll take care of that in the next lecture.

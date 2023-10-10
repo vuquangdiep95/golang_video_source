@@ -1,0 +1,219 @@
+1
+00:00:00,150 --> 00:00:01,220
+Chúng tôi đã nói về.
+
+2
+00:00:01,260 --> 00:00:06,300
+Nếu bạn đang sử dụng like nếu bạn đã làm việc với go và bạn có một dự án đã được thiết lập và bạn đang
+
+3
+00:00:06,300 --> 00:00:15,220
+sử dụng một số loại quản lý phiên bản hoặc phụ thuộc như lướt hoặc dap dap đúng như tên gọi của nó.
+
+4
+00:00:15,420 --> 00:00:26,620
+Rằng bạn khi sử dụng các mô-đun go sẽ tự động cố gắng chuyển đổi nó cho bạn và có thể thành công.
+
+5
+00:00:26,700 --> 00:00:29,320
+Tôi đã không làm tất cả trong số họ.
+
+6
+00:00:29,610 --> 00:00:33,750
+Chỉ cần đọc về nó nhưng bây giờ chúng ta có một ví dụ mà Daniel tập hợp lại ở đây, nơi chúng ta sẽ xem điều gì sẽ xảy ra.
+
+7
+00:00:33,750 --> 00:00:35,800
+Vì vậy, hãy hướng dẫn chúng tôi qua ví dụ này.
+
+8
+00:00:35,910 --> 00:00:43,160
+Được rồi, vì vậy tôi có một gói trong lộ trình của mình. Lộ trình của tôi là nhìn thấy những người dùng trong Daniel đi.
+
+9
+00:00:43,180 --> 00:00:49,230
+Và vì vậy, bên trong đây, tôi có một thư mục nguồn bên trong thư mục nguồn. Tôi phải lấy một dấu chấm com hoặc không
+
+10
+00:00:49,380 --> 00:00:50,840
+nâng cấp DEP.
+
+11
+00:00:50,880 --> 00:00:53,640
+Đây không phải là một gói thực tế trên GitHub thực tế.
+
+12
+00:00:53,640 --> 00:00:55,560
+Tôi chỉ đặt nó vào khoản nợ của tôi trong con đường đi của tôi.
+
+13
+00:00:55,560 --> 00:00:59,540
+Tôi đã không thực sự đẩy cái này lên để có được trung tâm và vì vậy bên trong thư mục này.
+
+14
+00:00:59,580 --> 00:01:07,560
+Tôi có một chương trình DEP hợp lệ Tôi đang sử dụng bài kiểm tra xin chào và xin chào ngay từ đầu các mô-đun go của chúng tôi
+
+15
+00:01:07,560 --> 00:01:11,800
+những thứ mà chúng tôi chỉ đang sử dụng phiên bản một của trích dẫn với trích dẫn Xin chào.
+
+16
+00:01:12,620 --> 00:01:16,560
+Và bài kiểm tra tương tự chỉ với bài kiểm tra Hello Xin chào.
+
+17
+00:01:16,560 --> 00:01:25,140
+Và tôi đã đóng gói DEP go Tomoe nói rằng chúng tôi đang sử dụng báo giá CIO phiên bản 1 5 2 và
+
+18
+00:01:25,170 --> 00:01:32,340
+ghi đè bộ lấy mẫu phụ thuộc gián tiếp để buộc nó là một phần ba thay vì một chín mươi chín
+
+19
+00:01:32,340 --> 00:01:34,300
+chín mươi chín.
+
+20
+00:01:34,980 --> 00:01:42,770
+Vì vậy, tất cả điều này hoạt động nếu tôi đi kiểm tra nó, tất cả đều hợp lệ, nó sử dụng cơ chế đường đi vì nó nằm trong
+
+21
+00:01:42,770 --> 00:01:50,960
+một đường dẫn đi và nó không có mô-đun đi xuống có thể sửa đổi để nó vượt qua bài kiểm tra có một nhà cung cấp
+
+22
+00:01:50,960 --> 00:01:58,550
+thư mục nơi DEP đã đặt tất cả các phụ thuộc, đó là chương trình DEP tiêu chuẩn để nâng cấp cái này từ DEP
+
+23
+00:01:58,580 --> 00:02:05,120
+để sử dụng các mô-đun, bạn chỉ cần sử dụng go mod trong đó và bạn không cần đặt cho nó tên của tên đang đối mặt
+
+24
+00:02:05,540 --> 00:02:09,740
+nó có thể tìm ra không gian tên mà nó đã có trên đường di chuyển để nó có thể tìm ra khoảng cách tên từ
+
+25
+00:02:09,740 --> 00:02:16,490
+điều đó và nó có thể tự động nhập từ tệp gói go những phụ thuộc cần thiết
+
+26
+00:02:17,080 --> 00:02:22,100
+để xem bây giờ nó không cần phải đi mod, nó có mô-đun vừa tìm ra điều đó từ đường đi và nó
+
+27
+00:02:22,100 --> 00:02:28,070
+sao chép các yêu cầu đi bộ cửa hàng trọn gói được tạo ra bởi nợ và vì vậy bây giờ nếu bạn nhìn vào
+
+28
+00:02:31,360 --> 00:02:40,720
+thư mục bây giờ chúng tôi có một tệp go mod và vì vậy nếu tôi đặt nó vào trình chỉnh sửa của mình, bạn có thể thấy nó đáp ứng các yêu cầu
+
+29
+00:02:41,200 --> 00:02:46,420
+nó có mô-đun chính xác, nó phải hoạt động khi 13 nó có các phiên bản của các gói khác nhau
+
+30
+00:02:46,420 --> 00:02:54,520
+trích dẫn trong bộ lấy mẫu hoặc sửa nó quản lý để kéo tất cả chúng lên nếu tôi đi kiểm tra trong trường hợp này thực sự là như vậy
+
+31
+00:02:54,520 --> 00:03:03,570
+vượt qua và tôi có thể thực hiện go list dash em all để cho thấy nó đang sử dụng hệ thống mô-đun go để thực hiện công việc vì
+
+32
+00:03:03,630 --> 00:03:06,060
+dấu gạch ngang và chỉ hoạt động nếu bạn có các mô-đun tốt đang hoạt động
+
+33
+00:03:09,090 --> 00:03:12,370
+bạn có nhiều hơn bây giờ vì vậy đó là nó yeah.
+
+34
+00:03:12,750 --> 00:03:20,010
+Vì vậy, trong trường hợp này, nó nhập vào trong trường hợp này, nó được nhập tự động, mọi thứ đều chính xác để lưu ý rằng
+
+35
+00:03:20,020 --> 00:03:25,410
+các phiên bản có thể bị tắt, chẳng hạn như gói đi của tôi, Tom sẽ không bao giờ thực sự đề cập đến bất cứ điều gì về
+
+36
+00:03:26,700 --> 00:03:32,330
+văn bản cũ và vì vậy lẽ ra nó không phải là 0 3 2 mà lẽ ra nó phải như vậy nếu chúng ta trải qua quá trình thú vị hơn
+
+37
+00:03:32,340 --> 00:03:40,290
+ngay từ đầu, nó sẽ chỉ là một cam kết ngẫu nhiên mà một trình lấy mẫu hoặc trích dẫn được yêu cầu như một
+
+38
+00:03:40,290 --> 00:03:46,710
+phụ thuộc gián tiếp nó tìm bản cụ thể vì nó đang cố import off DEP mà DEP luôn
+
+39
+00:03:46,710 --> 00:03:54,870
+đi các phiên bản ở bên trái bắt buộc nếu không, vì vậy nó đã cố gắng khớp DEP chặt chẽ hơn một chút
+
+40
+00:03:54,870 --> 00:04:03,990
+sự phụ thuộc gián tiếp, vì vậy hãy theo dõi các phiên bản của bạn, chúng có thể không chính xác, chỉ cần sử dụng của bạn
+
+41
+00:04:03,990 --> 00:04:09,780
+hãy liệt kê tất cả chúng để xem tất cả các phiên bản mọi thứ của bạn, hãy đảm bảo rằng mọi thứ đều hoạt động nếu bạn
+
+42
+00:04:09,780 --> 00:04:15,520
+đã có các bài kiểm tra go của bạn, bạn nên thử chạy chúng để đảm bảo rằng tất cả vẫn hoạt động.
+
+43
+00:04:15,870 --> 00:04:21,400
+Vì vậy, đây là quá trình nhập tự động, thật tiện lợi, nó không phải là phép thuật nên có khả năng xảy ra lỗi.
+
+44
+00:04:21,570 --> 00:04:22,890
+Vậy thì sao.
+
+45
+00:04:22,890 --> 00:04:25,050
+Không có phép thuật.
+
+46
+00:04:25,260 --> 00:04:25,580
+Được rồi.
+
+47
+00:04:25,710 --> 00:04:27,360
+Vì vậy, hãy kiểm tra lại sau khi bạn đã hoàn thành.
+
+48
+00:04:27,480 --> 00:04:28,860
+Có kiểm tra tất cả mọi thứ.
+
+49
+00:04:28,860 --> 00:04:29,980
+Hãy chắc chắn rằng nó vẫn hoạt động.
+
+50
+00:04:30,000 --> 00:04:33,040
+Vâng, nó khá tuyệt mặc dù nó sẽ tự động làm điều đó.
+
+51
+00:04:33,210 --> 00:04:37,650
+Nice you off không phải về việc nâng cấp.
+
+52
+00:04:37,670 --> 00:04:38,310
+Được rồi.
+
+53
+00:04:38,410 --> 00:04:43,810
+Video tiếp theo chúng tôi sẽ giới thiệu cho các bạn mô-đun phản chiếu cái gì để các bạn có một chút nhận biết
+
+54
+00:04:43,810 --> 00:04:44,110
+của nó.
+
+55
+00:04:44,110 --> 00:04:45,010
+Hẹn gặp lại các bạn trong video tiếp theo.

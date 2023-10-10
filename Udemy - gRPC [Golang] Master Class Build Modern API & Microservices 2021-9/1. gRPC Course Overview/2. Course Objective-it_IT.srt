@@ -1,0 +1,208 @@
+1
+00:00:00,300 --> 00:00:03,700
+OK, ecco la struttura principale che mi piace davvero.
+
+2
+00:00:03,720 --> 00:00:09,210
+Se non mi conosci per iniziare con una teoria perché penso che non puoi iniziare a mani libere senza capire
+
+3
+00:00:09,210 --> 00:00:10,600
+come funziona un framework.
+
+4
+00:00:10,650 --> 00:00:14,030
+Quindi avremo 30 minuti del concetto GOPAC per la teoria.
+
+5
+00:00:14,100 --> 00:00:18,840
+Potrebbe non piacerti e puoi semplicemente saltare quella sezione se vuoi, ma ti consiglio
+
+6
+00:00:18,840 --> 00:00:20,700
+vivamente di seguirla e appenderla.
+
+7
+00:00:20,910 --> 00:00:24,900
+Quindi abbiamo la parte 2 che è pratica e questa è pura programmazione.
+
+8
+00:00:24,960 --> 00:00:30,870
+Ore e ore di programmazione implementeremo ogni tipo di API come API unitaria di
+
+9
+00:00:30,900 --> 00:00:36,650
+streaming più lento client streaming API bidirezionale di streaming annuale, quindi esercitati.
+
+10
+00:00:36,660 --> 00:00:42,900
+Alla fine c'è una terza parte che riguarda anche i concetti avanzati, quindi vedremo concetti
+
+11
+00:00:43,170 --> 00:00:46,750
+avanzati come le scadenze dei codici di errore.
+
+12
+00:00:47,310 --> 00:00:50,850
+Sicurezza SSL e così via e avremo implementazioni.
+
+13
+00:00:50,850 --> 00:00:52,440
+Quindi questo è dove la struttura del tribunale.
+
+14
+00:00:52,440 --> 00:00:56,090
+Non essere sorpreso se la programmazione non inizia fino a dopo la teoria.
+
+15
+00:00:56,190 --> 00:00:57,000
+Va bene.
+
+16
+00:00:57,360 --> 00:00:58,520
+Ora gli obiettivi del corso.
+
+17
+00:00:58,680 --> 00:01:03,350
+Voglio che tu apprenda la teoria GOPAC e comprenda come funziona GOPAC.
+
+18
+00:01:03,390 --> 00:01:07,410
+Voglio che tu possa confrontare l'Europa che vedi nel resto del api paradigma.
+
+19
+00:01:07,410 --> 00:01:13,080
+Voglio che tu scriva i servizi di Yuji RPG nel protocollo, ma per i falli voglio che tu sia in grado di
+
+20
+00:01:13,080 --> 00:01:14,460
+generare codice server e client.
+
+21
+00:01:14,460 --> 00:01:19,320
+Dovresti essere in grado di implementare server urinari tagliando lo streaming client e l'API di streaming
+
+22
+00:01:19,320 --> 00:01:19,880
+bidirezionale.
+
+23
+00:01:20,430 --> 00:01:25,230
+Praticherai tutto con esercizi e le loro soluzioni implementando annualmente i concetti degli eventi come ho
+
+24
+00:01:25,230 --> 00:01:27,560
+detto e anche dandoti di nuovo suggerimenti.
+
+25
+00:01:27,570 --> 00:01:34,170
+Questo corso su come trarre ispirazione per i veri servizi JROTC e su come continuare il tuo
+
+26
+00:01:34,170 --> 00:01:35,430
+percorso di apprendimento.
+
+27
+00:01:35,430 --> 00:01:40,620
+Prerequisiti, tuttavia, devi essere davvero bravo nel linguaggio di programmazione che stiamo usando per questo
+
+28
+00:01:40,620 --> 00:01:41,170
+corso.
+
+29
+00:01:41,180 --> 00:01:45,840
+Va bene se non conosci le basi del tuo linguaggio di programmazione, ti perderai completamente.
+
+30
+00:01:45,840 --> 00:01:47,550
+Questo è abbastanza avanzato.
+
+31
+00:01:47,550 --> 00:01:53,440
+Inoltre, se conosci un po 'la programmazione asincrona, è una B plus e un grande vantaggio per questo corso.
+
+32
+00:01:53,440 --> 00:01:53,660
+Va bene.
+
+33
+00:01:53,670 --> 00:01:54,990
+Se non lo conosci va bene.
+
+34
+00:01:54,990 --> 00:01:59,880
+Proverò a spiegare le cose lentamente, ma è molto importante conoscere i modelli di
+
+35
+00:01:59,910 --> 00:02:01,830
+threading e conoscere una sincronicità.
+
+36
+00:02:01,830 --> 00:02:04,940
+Inoltre voglio che tu capisca davvero molto bene i buffer di protocollo.
+
+37
+00:02:05,010 --> 00:02:07,530
+Non passerò il tempo a spiegarti cos'è il protocollo Buffer.
+
+38
+00:02:07,920 --> 00:02:12,600
+Se hai bisogno di conoscere i buffer di protocollo, consiglio vivamente il mio corso Buffer di protocollo
+
+39
+00:02:12,600 --> 00:02:15,370
+o di cercare online la documentazione e le fonti gratuite.
+
+40
+00:02:15,720 --> 00:02:21,330
+Complessivamente per questo corso dovrai avere una mente molto aperta per imparare qualcosa di nuovo e te
+
+41
+00:02:21,330 --> 00:02:22,610
+lo dirò subito.
+
+42
+00:02:22,650 --> 00:02:24,660
+Questo corso sarà impegnativo.
+
+43
+00:02:24,710 --> 00:02:25,010
+Va bene.
+
+44
+00:02:25,020 --> 00:02:26,840
+Non si tratta di programmare 1 o 1.
+
+45
+00:02:26,850 --> 00:02:29,280
+Questo è il jihad 1 a 1 giusto.
+
+46
+00:02:29,370 --> 00:02:31,230
+Quindi per chi è questo corso.
+
+47
+00:02:31,290 --> 00:02:35,970
+Potresti essere uno sviluppatore e vuoi capire come scrivere G. P. S. servizi e clienti e potresti
+
+48
+00:02:35,970 --> 00:02:40,410
+essere un architetto e vuoi capire come funziona GAAP e il concetto alla base di tutti i diversi
+
+49
+00:02:40,410 --> 00:02:41,340
+tipi di API.
+
+50
+00:02:42,180 --> 00:02:43,990
+Nel complesso sei in buone mani.
+
+51
+00:02:44,070 --> 00:02:45,810
+Questo è tutto per le cose noiose.
+
+52
+00:02:45,810 --> 00:02:46,890
+Ci vediamo nella prossima lezione.
+

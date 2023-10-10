@@ -1,0 +1,155 @@
+1
+00:00:01,830 --> 00:00:06,060
+So welcome to my course, working with WebSocket, Zingo, and there's a number of things we're going
+
+2
+00:00:06,060 --> 00:00:08,190
+to be doing in this course and they're all pretty interesting.
+
+3
+00:00:08,190 --> 00:00:12,390
+But we have to start with the question, what our Web sockets and why should we use them?
+
+4
+00:00:13,080 --> 00:00:18,960
+Well, web sockets are a means of communicating between two programs, and sockets are actually something
+
+5
+00:00:18,960 --> 00:00:20,850
+that have been in use on computers forever.
+
+6
+00:00:21,390 --> 00:00:24,960
+And Web sockets aren't quite like sockets, but they behave like them.
+
+7
+00:00:25,080 --> 00:00:30,540
+And what they do is they allow us to make extremely interactive, extremely responsive and very fast
+
+8
+00:00:30,540 --> 00:00:31,740
+web applications.
+
+9
+00:00:32,880 --> 00:00:37,590
+So Web sockets actually support what's known as full duplex communication.
+
+10
+00:00:37,720 --> 00:00:45,180
+That means you can push information both ways from a Web client like a Web browser to a Web server and
+
+11
+00:00:45,180 --> 00:00:45,690
+back.
+
+12
+00:00:45,690 --> 00:00:47,400
+And you can do so very, very quickly.
+
+13
+00:00:47,610 --> 00:00:50,510
+And it doesn't actually require any user interaction.
+
+14
+00:00:51,000 --> 00:00:56,970
+So if something takes place and your server, your Web application actually detects that something interesting
+
+15
+00:00:56,970 --> 00:01:02,220
+has taken place and people should be notified, you can actually push information to the connected clients,
+
+16
+00:01:02,220 --> 00:01:07,290
+to the Web browsers and have something take place without the user having to click on a button or enter
+
+17
+00:01:07,290 --> 00:01:09,230
+a text in a forum or anything like that.
+
+18
+00:01:09,990 --> 00:01:15,030
+And WebSocket listen on standard parts, which is important because it doesn't require a lot of configuration
+
+19
+00:01:15,030 --> 00:01:16,730
+on the server to make them useful.
+
+20
+00:01:17,400 --> 00:01:23,750
+And when a connection is made to a WebSocket, it's actually upgraded to a WebSocket connection.
+
+21
+00:01:23,970 --> 00:01:25,650
+So we have to figure out how to do that.
+
+22
+00:01:26,310 --> 00:01:29,700
+And WebSocket actually have very, very wide browser support.
+
+23
+00:01:29,700 --> 00:01:33,800
+You have to go back more than 10 or 15 years to find browsers that don't support them.
+
+24
+00:01:34,020 --> 00:01:38,250
+So there's absolutely no reason not to use them in a modern Web application.
+
+25
+00:01:39,540 --> 00:01:42,990
+Now, we'll be doing this using go for the server, go langue.
+
+26
+00:01:42,990 --> 00:01:47,340
+It's often called an WebSocket are actually built into the standard library.
+
+27
+00:01:47,340 --> 00:01:49,230
+And we could just use those if we wanted to.
+
+28
+00:01:49,560 --> 00:01:53,840
+But there are a number of third party packages that make working with them ever so much easier.
+
+29
+00:01:54,240 --> 00:01:59,130
+We'll be starting with guerrilla web sockets because it's extremely easy to learn and very, very stable.
+
+30
+00:01:59,310 --> 00:02:02,250
+But there are others like the ones listed here and many more.
+
+31
+00:02:02,550 --> 00:02:05,940
+And I'll put links to these on the course resources for this election.
+
+32
+00:02:07,290 --> 00:02:08,880
+So we're going to start with Guerrilla.
+
+33
+00:02:09,420 --> 00:02:14,010
+And in the first major project in this course, we'll build a chat application that helps us to get
+
+34
+00:02:14,010 --> 00:02:16,260
+our feet wet and learn how websites work.
+
+35
+00:02:16,590 --> 00:02:21,990
+And then we'll move on to using the Pusher library and using again to go back end and we'll build a
+
+36
+00:02:21,990 --> 00:02:28,320
+fully functional, extremely robust Web monitoring application that allows us to monitor remote hosts
+
+37
+00:02:28,620 --> 00:02:34,680
+like Web servers and SSL certificates and things like that, and to notify users in real time when the
+
+38
+00:02:34,680 --> 00:02:36,950
+status of anything, we're monitoring changes.
+
+39
+00:02:37,560 --> 00:02:38,390
+So let's get started.

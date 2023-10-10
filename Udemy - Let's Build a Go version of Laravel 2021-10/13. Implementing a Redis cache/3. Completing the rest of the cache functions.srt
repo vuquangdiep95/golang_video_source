@@ -1,0 +1,1043 @@
+1
+00:00:01,660 --> 00:00:06,880
+So we probably have reddest connecting to celebrities appropriately, and now it's time to complete
+
+2
+00:00:06,880 --> 00:00:13,090
+the functions in the cash, don't go far inside the cash folder in the Celebrity House project.
+
+3
+00:00:14,080 --> 00:00:18,790
+And one of the things we're going to have to do before we can complete these functions is write to helper
+
+4
+00:00:18,790 --> 00:00:24,670
+functions that serialized an item and then unseriousness them because we need to do that before we can
+
+5
+00:00:24,670 --> 00:00:25,640
+throw them in the cache.
+
+6
+00:00:25,660 --> 00:00:27,190
+Unfortunately, that's pretty easy.
+
+7
+00:00:27,970 --> 00:00:33,220
+So right here after the has function and before the get function, I'm going to write one called Func
+
+8
+00:00:33,220 --> 00:00:38,580
+and it doesn't have a receiver because I'll be using this functionality for other cache types.
+
+9
+00:00:38,590 --> 00:00:40,990
+So I want to be able to call it from anywhere in this package.
+
+10
+00:00:41,980 --> 00:00:49,720
+It's called ENCODE, and it takes one parameter which I'm going to call item and that's up type entry.
+
+11
+00:00:50,530 --> 00:00:55,080
+And that's what we defined back up on Line 23 of this file.
+
+12
+00:00:55,090 --> 00:00:57,310
+It's a map of string interface.
+
+13
+00:00:58,180 --> 00:01:04,840
+So that's what we take for parameters, and we're going to return a slice of bytes and potentially an
+
+14
+00:01:04,840 --> 00:01:05,050
+error.
+
+15
+00:01:05,890 --> 00:01:06,220
+OK.
+
+16
+00:01:07,210 --> 00:01:13,630
+So we're going to create a variable called B, which is a bytes buffered bytes start buffer from the
+
+17
+00:01:13,630 --> 00:01:14,500
+standard library.
+
+18
+00:01:14,950 --> 00:01:21,640
+And we have to put the double curly braces after it and we'll create a variable called E, which is
+
+19
+00:01:21,640 --> 00:01:24,680
+going to be a gob dot new encoder.
+
+20
+00:01:24,700 --> 00:01:26,860
+And the God package is part of the standard library.
+
+21
+00:01:26,860 --> 00:01:33,220
+And you have to use that any time you want to store something in the session, for example, or a cache
+
+22
+00:01:33,220 --> 00:01:35,020
+like this, and it's pretty straightforward.
+
+23
+00:01:35,950 --> 00:01:41,110
+So that is going to take as its parameter, a reference to be the bytes buffer, and we're going to
+
+24
+00:01:41,110 --> 00:01:42,580
+populate that before too long.
+
+25
+00:01:43,390 --> 00:01:46,540
+So error is equal to it in code.
+
+26
+00:01:50,670 --> 00:01:57,120
+That should be a new encoder, not a decoder encode.
+
+27
+00:01:57,570 --> 00:02:03,240
+And we're going to encode it and we'll check for an error if error is not equal to nil.
+
+28
+00:02:03,570 --> 00:02:07,380
+Then we'll return nil and the error.
+
+29
+00:02:08,670 --> 00:02:13,830
+Otherwise we return v2 bytes and nil.
+
+30
+00:02:15,030 --> 00:02:15,300
+OK.
+
+31
+00:02:15,600 --> 00:02:16,480
+That's pretty straightforward.
+
+32
+00:02:16,560 --> 00:02:19,200
+That will encode things serialized in effect.
+
+33
+00:02:19,860 --> 00:02:26,670
+And of course, we need the corresponding func decode and that will take just a string as tier of type
+
+34
+00:02:26,670 --> 00:02:30,810
+string and it will return an entry and potentially an error.
+
+35
+00:02:31,710 --> 00:02:34,740
+And basically, we do the same thing we just did, but in reverse.
+
+36
+00:02:35,250 --> 00:02:40,410
+So we'll create an item of type entry and we won't populated fields.
+
+37
+00:02:42,210 --> 00:02:50,340
+And then we'll create a bias buffer be is assign the value of rights with the double quotes or double
+
+38
+00:02:50,370 --> 00:02:53,430
+curly braces and then be done right.
+
+39
+00:02:54,720 --> 00:02:57,720
+We're going to right to that a slice of bytes.
+
+40
+00:03:00,700 --> 00:03:06,910
+From here, the parameter, we pass to this function now we create a decoder.
+
+41
+00:03:07,210 --> 00:03:13,720
+The four decoder is assigned the value of Golborne, new decoder, new decoder and again a reference
+
+42
+00:03:13,720 --> 00:03:18,220
+to B and we try to decode the item.
+
+43
+00:03:18,430 --> 00:03:20,920
+Error is assigned the value of data decode.
+
+44
+00:03:22,820 --> 00:03:27,860
+A reference to item that we checked for an error if error is not equal to nil.
+
+45
+00:03:28,550 --> 00:03:29,540
+Then we return.
+
+46
+00:03:30,780 --> 00:03:32,470
+And chill in the air.
+
+47
+00:03:34,810 --> 00:03:38,740
+Otherwise, we return item in the air.
+
+48
+00:03:39,610 --> 00:03:42,490
+So there's our encoder and our decoder.
+
+49
+00:03:43,600 --> 00:03:45,310
+Now we'll be using those before too long.
+
+50
+00:03:45,490 --> 00:03:47,200
+But we may as well do these things in order.
+
+51
+00:03:47,500 --> 00:03:53,410
+So the first function we need to complete in order to make this functional is to get a function where
+
+52
+00:03:53,410 --> 00:03:55,660
+we get something from the cache.
+
+53
+00:03:55,960 --> 00:03:56,320
+OK.
+
+54
+00:03:57,790 --> 00:04:00,940
+So we want to get our key same as we did way up here.
+
+55
+00:04:02,460 --> 00:04:04,200
+This key is all just copy that.
+
+56
+00:04:06,630 --> 00:04:10,380
+And come down here and paste that in there.
+
+57
+00:04:10,500 --> 00:04:15,000
+And of course, what that does is put the prefix on the key that the user is looking for when they're
+
+58
+00:04:15,000 --> 00:04:20,670
+trying to pull something from the cache, they might be looking for an entry that has the name of some
+
+59
+00:04:20,670 --> 00:04:25,170
+value, but we're going to prepend the prefix and a colon to that string.
+
+60
+00:04:25,320 --> 00:04:26,550
+So that's the key we're going to look for.
+
+61
+00:04:27,940 --> 00:04:33,870
+Now we get a connection to Rita's Khan as a sign the value of from the Receiver C sitcom.
+
+62
+00:04:34,910 --> 00:04:35,540
+Don't get.
+
+63
+00:04:37,910 --> 00:04:41,240
+And I'm going to put two ends on that con just to be consistent.
+
+64
+00:04:42,290 --> 00:04:48,080
+So that's what I called it before, and we defer closing that connection conduct close to return it
+
+65
+00:04:48,080 --> 00:04:52,520
+to the pool, and now we'll create a variable called cash entry.
+
+66
+00:04:52,750 --> 00:04:56,000
+What we're trying to get out of the cash and we will check for an error.
+
+67
+00:04:56,300 --> 00:05:02,210
+And that's a sign the value of redskin bytes right there from the writers package.
+
+68
+00:05:02,750 --> 00:05:13,340
+And we call con and tell it to execute the following command get in all caps and a key, and we check
+
+69
+00:05:13,340 --> 00:05:13,790
+for an error.
+
+70
+00:05:16,040 --> 00:05:22,700
+The error is not equal to nil and something went wrong will return nil and the error.
+
+71
+00:05:24,170 --> 00:05:29,090
+But if we get it back, of course, it's of no value to us until we earn serialize.
+
+72
+00:05:29,270 --> 00:05:34,040
+So now we need to your lies and I'll call the result of that process decoded.
+
+73
+00:05:34,820 --> 00:05:35,690
+I'll check for an error.
+
+74
+00:05:36,020 --> 00:05:37,070
+And we just call that function.
+
+75
+00:05:37,070 --> 00:05:43,370
+We just wrote Decode and we handed as a string our cache entry,
+
+76
+00:05:46,830 --> 00:05:48,140
+and again, we check for an error.
+
+77
+00:05:48,410 --> 00:05:49,700
+Same idea as before.
+
+78
+00:05:50,180 --> 00:05:53,420
+We'll copy this and paste it here.
+
+79
+00:05:54,260 --> 00:05:58,770
+But if we get past that, then the item we want is actually in a map.
+
+80
+00:05:58,790 --> 00:06:09,980
+So item is assigned the value of decoded key decoded because an owner and we don't return an empty string.
+
+81
+00:06:10,460 --> 00:06:16,190
+We return item, which is now in the correct format and is usable by the end user.
+
+82
+00:06:16,790 --> 00:06:17,870
+So that's pretty straightforward.
+
+83
+00:06:18,290 --> 00:06:20,660
+So that's how you get something out of the cache.
+
+84
+00:06:20,840 --> 00:06:23,930
+And of course, the next step is to put something into the cache.
+
+85
+00:06:24,170 --> 00:06:31,580
+So we'll copy these lines began to exact the same for this function where we get our key.
+
+86
+00:06:32,030 --> 00:06:32,980
+We get our connection.
+
+87
+00:06:32,990 --> 00:06:34,640
+We defer closing the connection.
+
+88
+00:06:35,300 --> 00:06:40,850
+And what we want to get back, of course, is an entry so-called call value entry and it's a type entry
+
+89
+00:06:41,780 --> 00:06:43,400
+and we'll put the curly braces around it.
+
+90
+00:06:45,370 --> 00:06:48,220
+And we'll say entry key
+
+91
+00:06:51,160 --> 00:06:56,590
+equals value, not value lost now, value.
+
+92
+00:06:56,740 --> 00:06:59,470
+I'm going to change my parameters up here to something more useful.
+
+93
+00:06:59,620 --> 00:06:59,980
+OK?
+
+94
+00:07:00,130 --> 00:07:02,380
+This year will still still be the string.
+
+95
+00:07:02,590 --> 00:07:09,940
+I'm going to call this value because it's more useful or more intuitive, I think, than data, and
+
+96
+00:07:09,940 --> 00:07:11,260
+I'll change this one as well.
+
+97
+00:07:11,290 --> 00:07:16,240
+Two expires because when you put something in the cash, it might expire after a set number of seconds.
+
+98
+00:07:16,690 --> 00:07:24,100
+OK, so now this map, this entry, which is a type map, string interface, it's key is what we calculated
+
+99
+00:07:24,100 --> 00:07:24,490
+here.
+
+100
+00:07:24,640 --> 00:07:28,480
+The value of the user sent us with the pre-printed prefix in a column.
+
+101
+00:07:29,050 --> 00:07:31,270
+Its value is the data we want to store.
+
+102
+00:07:32,860 --> 00:07:34,360
+So we have that value now.
+
+103
+00:07:34,750 --> 00:07:35,680
+Now we need to encode it.
+
+104
+00:07:35,860 --> 00:07:43,540
+So encoded is assigned the value of and potentially an error in error is assigned the value of code
+
+105
+00:07:43,810 --> 00:07:44,200
+entry.
+
+106
+00:07:44,800 --> 00:07:46,900
+That serialize is checked for an error.
+
+107
+00:07:47,020 --> 00:07:50,470
+If error is not equal to nil, then we'll return nil.
+
+108
+00:07:50,770 --> 00:07:52,090
+Now we're hearing the error.
+
+109
+00:07:52,090 --> 00:07:53,550
+There's only one return type in this.
+
+110
+00:07:55,090 --> 00:07:59,560
+Now we have to we actually have to do the work to put it into the cash.
+
+111
+00:07:59,650 --> 00:08:02,590
+But of course, there's two ways we can put things into this cash.
+
+112
+00:08:02,770 --> 00:08:08,920
+It might not have that final parameter and integer, they say, expire after so many seconds or it might
+
+113
+00:08:08,920 --> 00:08:09,220
+have it.
+
+114
+00:08:09,640 --> 00:08:15,880
+So we just check to see if the length of our very adequate parameter expires.
+
+115
+00:08:16,570 --> 00:08:23,320
+If that's greater than zero than it has an expiry time else, it does not.
+
+116
+00:08:23,680 --> 00:08:24,070
+OK.
+
+117
+00:08:24,850 --> 00:08:30,490
+So let's do the first case here, and I'll scroll up a bit if it does have that value set and expiry
+
+118
+00:08:30,490 --> 00:08:30,850
+time.
+
+119
+00:08:31,220 --> 00:08:32,070
+And then I call.
+
+120
+00:08:32,090 --> 00:08:35,230
+I don't care about the first return value, but I do care about the error.
+
+121
+00:08:35,650 --> 00:08:39,550
+Those are assigned the value of from our con, our connection to race.
+
+122
+00:08:39,580 --> 00:08:45,880
+We're going to execute a command due and we're going to execute Set X set with an expiry.
+
+123
+00:08:47,080 --> 00:08:48,100
+And the key is key.
+
+124
+00:08:48,580 --> 00:08:52,930
+That's how you find it in cash and the value for expiry is expires.
+
+125
+00:08:52,960 --> 00:08:53,530
+Zero.
+
+126
+00:08:53,560 --> 00:08:55,630
+How many seconds until expiry?
+
+127
+00:08:56,080 --> 00:08:58,930
+And what we're going to put in there is string encoded.
+
+128
+00:08:59,440 --> 00:09:02,050
+So we take that slice of bytes that's encoded value.
+
+129
+00:09:02,110 --> 00:09:04,710
+Cast it to a string and we'll check for an error.
+
+130
+00:09:04,720 --> 00:09:05,890
+So a copy of this code
+
+131
+00:09:08,770 --> 00:09:09,850
+and paste it in here.
+
+132
+00:09:11,320 --> 00:09:17,920
+Now, if you don't have an expiry date and it's almost the same, so I'll copy this and paste it in
+
+133
+00:09:17,920 --> 00:09:23,740
+here and Set X becomes just plain old set and it just takes the key.
+
+134
+00:09:27,850 --> 00:09:32,930
+And the encoded or the encoded turned into a string, and that puts it in there with no expiry.
+
+135
+00:09:32,950 --> 00:09:39,040
+So basically, it'll stay in the cache until you physically or deliberately go and remove it.
+
+136
+00:09:39,430 --> 00:09:39,730
+OK.
+
+137
+00:09:40,360 --> 00:09:41,320
+And here we return.
+
+138
+00:09:41,320 --> 00:09:41,590
+Nil.
+
+139
+00:09:41,740 --> 00:09:46,450
+So now we can get something from the cache, we can set something in the cache.
+
+140
+00:09:46,720 --> 00:09:50,800
+And of course, you also have to be able to forget something in the cache, and here's where you remove
+
+141
+00:09:50,800 --> 00:09:52,990
+something when you don't need it anymore.
+
+142
+00:09:53,620 --> 00:09:56,860
+So once again, we'll get our key a con, and I'll just copy this.
+
+143
+00:10:00,650 --> 00:10:01,610
+And paste them here.
+
+144
+00:10:05,400 --> 00:10:07,080
+And forgetting something is pretty straightforward.
+
+145
+00:10:07,380 --> 00:10:09,060
+We don't care about the first returned value.
+
+146
+00:10:09,090 --> 00:10:12,350
+We do care about the error and it comes from corn.
+
+147
+00:10:12,690 --> 00:10:15,240
+Don't do once again.
+
+148
+00:10:15,240 --> 00:10:21,030
+And we handed the command deal for delete and delete the key and we checked for an error.
+
+149
+00:10:21,390 --> 00:10:25,760
+Same logic is up here, so I'll copy and paste and paste it in that.
+
+150
+00:10:26,850 --> 00:10:27,420
+And that's you.
+
+151
+00:10:27,420 --> 00:10:28,020
+Forget something.
+
+152
+00:10:29,040 --> 00:10:35,370
+So the next one is called empty by match, and there's a little bit more work here, but not too much.
+
+153
+00:10:35,550 --> 00:10:41,460
+So once again, I need these three lines, so I'll copy those and I'll paste this in here.
+
+154
+00:10:41,700 --> 00:10:46,140
+And here's what we want to remove things from the cache by matching some pattern.
+
+155
+00:10:46,320 --> 00:10:46,770
+OK.
+
+156
+00:10:47,670 --> 00:10:50,550
+So to make that happen, I'm going to create a variable called editor for iteration.
+
+157
+00:10:50,760 --> 00:10:52,740
+I'll initialize it to be zero
+
+158
+00:10:55,890 --> 00:10:58,470
+and then I'll define a variable called keys.
+
+159
+00:10:58,800 --> 00:10:59,780
+And it has the type.
+
+160
+00:10:59,790 --> 00:11:02,760
+It's going to be a slice of string.
+
+161
+00:11:03,450 --> 00:11:04,320
+And initially, it's empty.
+
+162
+00:11:04,470 --> 00:11:05,100
+There's nothing in there.
+
+163
+00:11:05,290 --> 00:11:05,650
+OK.
+
+164
+00:11:05,670 --> 00:11:09,930
+And we're going to populate that slice of strings with all the things we need to get rid of.
+
+165
+00:11:13,240 --> 00:11:16,720
+So here I'm going to create a for loop that just executes forever.
+
+166
+00:11:16,750 --> 00:11:22,390
+There's no condition in the actual force statement where exits will break out when necessary.
+
+167
+00:11:23,520 --> 00:11:30,630
+So I'm going to create a variable called air, and I'm going to check for an error and I'm going to
+
+168
+00:11:30,630 --> 00:11:42,360
+execute British values, and that requires this command con due and the command we want is scan.
+
+169
+00:11:42,510 --> 00:11:44,420
+So we're searching the red database.
+
+170
+00:11:45,330 --> 00:11:48,870
+We have the variable itor, which will be updated as time goes on.
+
+171
+00:11:50,040 --> 00:11:58,310
+We're trying to match something and the pattern we're trying to match is just our search pattern, which
+
+172
+00:11:58,320 --> 00:12:01,170
+we received as a parameter to this, followed by an asterisk.
+
+173
+00:12:01,290 --> 00:12:05,430
+So we'll just put format s print f, which returns a string.
+
+174
+00:12:05,820 --> 00:12:12,180
+Give it a format string, which is just percent, as is a placeholder lowercase s, followed by an asterisk
+
+175
+00:12:13,440 --> 00:12:19,260
+and the substitution for percent US is just key, which we defined right there on Line 124.
+
+176
+00:12:19,710 --> 00:12:20,040
+OK.
+
+177
+00:12:23,740 --> 00:12:26,710
+So a check for an error if error is not equal to nil.
+
+178
+00:12:27,930 --> 00:12:31,800
+And we'll just say return the error, OK?
+
+179
+00:12:31,830 --> 00:12:36,420
+Otherwise, we have a value in air, which is actually in.
+
+180
+00:12:37,530 --> 00:12:45,890
+So here's where we update Ed Ed and we don't care about the second returned value is equal to reddest
+
+181
+00:12:45,930 --> 00:12:46,470
+or it.
+
+182
+00:12:48,670 --> 00:12:55,330
+And the parameters we're putting in there for reticent are are the first entry in array, which is zero
+
+183
+00:12:57,130 --> 00:12:57,550
+and no.
+
+184
+00:13:00,190 --> 00:13:05,100
+And I put a Mr. Bracket there and put one here.
+
+185
+00:13:06,540 --> 00:13:06,990
+That's better.
+
+186
+00:13:08,610 --> 00:13:14,020
+And now I'll define a temporary variable, which can be called anything, so I'll just call it K, and
+
+187
+00:13:14,060 --> 00:13:15,840
+I don't care about second return value.
+
+188
+00:13:16,380 --> 00:13:19,860
+Those come from lettuce dog strings.
+
+189
+00:13:22,440 --> 00:13:25,220
+And its parameters are array one.
+
+190
+00:13:26,760 --> 00:13:33,870
+That's how red it gives us the information back and no, and now keys that slice it strings we define
+
+191
+00:13:33,880 --> 00:13:39,900
+right up there in line 129, that's equal to append keys and then K.
+
+192
+00:13:39,900 --> 00:13:43,530
+But all the values we get from Kerry and Keys is spelled wrong.
+
+193
+00:13:43,620 --> 00:13:45,300
+So that's why that's throwing error.
+
+194
+00:13:47,700 --> 00:13:48,120
+That's better.
+
+195
+00:13:49,770 --> 00:13:54,430
+So finally, we need some condition to get out of this endless infinite for loop.
+
+196
+00:13:54,450 --> 00:13:58,320
+And it's pretty simple if ED is equal to zero and there's nothing more to do.
+
+197
+00:13:58,440 --> 00:13:58,950
+So we're done.
+
+198
+00:13:59,280 --> 00:13:59,570
+Great.
+
+199
+00:14:00,300 --> 00:14:06,840
+OK, so at this point, I now have a slice of strings with all the keys I need to get rid of.
+
+200
+00:14:08,370 --> 00:14:15,030
+So all I do now is, say, four, and I don't care about the index, but I do care about an individual
+
+201
+00:14:15,030 --> 00:14:18,390
+entry, which I'll call X and we range through keys.
+
+202
+00:14:20,670 --> 00:14:24,540
+And in here, all I really have to do is forget the current entry.
+
+203
+00:14:24,750 --> 00:14:31,290
+So I will say error is assigned the value of C to forget, which we already wrote.
+
+204
+00:14:32,410 --> 00:14:39,280
+And in there, we put Kate and we check for an error if error is not equal to nil, then return the
+
+205
+00:14:39,280 --> 00:14:39,490
+error.
+
+206
+00:14:42,280 --> 00:14:45,300
+And I think that should take care of it, but it's not key here.
+
+207
+00:14:46,480 --> 00:14:47,080
+It's X.
+
+208
+00:14:49,370 --> 00:14:51,170
+And that should take care of empty by March.
+
+209
+00:14:51,440 --> 00:14:55,530
+So the last one we have to worry about is empty, which is very similar to the one we just finished.
+
+210
+00:14:55,550 --> 00:15:01,790
+And again, I need those first three lines, so I'll copy those and I'll paste them in here.
+
+211
+00:15:04,280 --> 00:15:10,910
+Now, in this case, key is a little different because key is basically, in this case, just the prefix.
+
+212
+00:15:10,910 --> 00:15:14,990
+We only want to delete things in the cache to begin with our prefix and Akola.
+
+213
+00:15:15,050 --> 00:15:21,200
+So in this case, we get rid of this because we don't have a variable called STR and we get rid of this.
+
+214
+00:15:25,560 --> 00:15:28,240
+And that gives us are appropriate keys to look for.
+
+215
+00:15:29,460 --> 00:15:33,480
+So at this point, what I can do is pretty much the same thing.
+
+216
+00:15:33,480 --> 00:15:35,250
+I did an empty bar match.
+
+217
+00:15:35,790 --> 00:15:42,900
+Now if you think about it up here in empty by match, I'm going through all of this logic to get the
+
+218
+00:15:42,900 --> 00:15:46,810
+necessary keys, including this, this this variable here.
+
+219
+00:15:46,830 --> 00:15:50,520
+So all of that I'm going through and we think it through.
+
+220
+00:15:51,000 --> 00:15:53,670
+I'm going to do exactly the same thing this time around.
+
+221
+00:15:54,600 --> 00:16:00,600
+So why not just take all of that and cut it out of error and come down here and create a new function
+
+222
+00:16:01,770 --> 00:16:05,850
+with the receiver of C British cash?
+
+223
+00:16:07,050 --> 00:16:08,580
+And I call this one get cheese.
+
+224
+00:16:08,940 --> 00:16:16,410
+And it's going to take some pattern, which is a string, and it will return a slice of strings
+
+225
+00:16:19,530 --> 00:16:20,430
+and potentially an error.
+
+226
+00:16:22,260 --> 00:16:25,740
+And now I can just really I'll just paste in what I just cut out.
+
+227
+00:16:26,740 --> 00:16:32,290
+I'll get my connection the way that I have been doing right along Khan is a sign the value of C dot
+
+228
+00:16:32,290 --> 00:16:32,830
+com.
+
+229
+00:16:33,340 --> 00:16:38,110
+Don't get and defer conduct close.
+
+230
+00:16:39,970 --> 00:16:46,150
+And at this point, I can actually just modify this code so it's usable in more than one place.
+
+231
+00:16:46,990 --> 00:16:52,980
+So in the for loop, I'll return keys, which will be empty or only partially populated.
+
+232
+00:16:52,990 --> 00:16:59,380
+So keys plural and down here after the for loop, I just return keys.
+
+233
+00:16:59,840 --> 00:17:00,190
+No.
+
+234
+00:17:01,600 --> 00:17:04,960
+So now I have a means of getting all of my keys very quickly.
+
+235
+00:17:04,960 --> 00:17:05,920
+So back up here.
+
+236
+00:17:06,250 --> 00:17:07,280
+This is broken now.
+
+237
+00:17:08,080 --> 00:17:13,780
+I can now change this to keys in error are assigned the value of C.
+
+238
+00:17:13,820 --> 00:17:17,850
+Don't get keys and hand it my keys.
+
+239
+00:17:18,460 --> 00:17:22,460
+I check for her if error is not equal to nil.
+
+240
+00:17:23,080 --> 00:17:32,770
+Then I return there and I can copy this code because I'm going to need it in my empty function and paste
+
+241
+00:17:32,770 --> 00:17:33,250
+it right there.
+
+242
+00:17:34,540 --> 00:17:41,860
+And now I should be able to just call for and again, I'll call it X is equal to range and I'm going
+
+243
+00:17:41,860 --> 00:17:43,120
+to range through keys.
+
+244
+00:17:44,050 --> 00:17:46,060
+And I'll say error is equal to C.
+
+245
+00:17:46,060 --> 00:17:50,020
+Don't forget X and check or an error.
+
+246
+00:17:50,350 --> 00:17:51,190
+Copy and paste.
+
+247
+00:17:53,540 --> 00:17:53,710
+It.
+
+248
+00:17:55,360 --> 00:17:59,630
+What if I get through that for a loop, then everything should be correct.
+
+249
+00:18:00,860 --> 00:18:06,380
+So unless we have a typographical error, which is entirely possible, it seems likely that we're almost
+
+250
+00:18:06,380 --> 00:18:09,860
+ready to go here and I do see I have an error showing up somewhere.
+
+251
+00:18:13,410 --> 00:18:14,340
+This should be pattern.
+
+252
+00:18:16,290 --> 00:18:19,500
+I'm sure you noticed that because it's named pattern up here.
+
+253
+00:18:19,860 --> 00:18:21,660
+Not whatever I had here a moment ago.
+
+254
+00:18:22,290 --> 00:18:24,930
+So at this point, we have an error up here now.
+
+255
+00:18:25,530 --> 00:18:26,100
+Oh yes.
+
+256
+00:18:26,400 --> 00:18:28,370
+Somehow, I accidentally imported that.
+
+257
+00:18:28,380 --> 00:18:30,990
+So just get rid of it and save it.
+
+258
+00:18:31,860 --> 00:18:35,940
+Now finally, it seems like we're almost ready to start testing this code.
+
+259
+00:18:36,660 --> 00:18:41,700
+So of course, in order to do that, we'll go back to my app and make sure we have the appropriate values
+
+260
+00:18:41,700 --> 00:18:47,400
+in the dart on file, and we'll start trying things out and see how it all works, and we'll get started
+
+261
+00:18:47,400 --> 00:18:48,660
+on that in the next election.

@@ -1,0 +1,235 @@
+1
+00:00:12,390 --> 00:00:18,510
+Hello and welcome to the Guoliang programming language course in the previous session, we were able
+
+2
+00:00:18,510 --> 00:00:26,790
+to make configuration for the rest later, and in this session, it's time to design the main method
+
+3
+00:00:26,970 --> 00:00:33,630
+and create the connection to the database and then run the server to be ready to respond to the created
+
+4
+00:00:33,630 --> 00:00:34,530
+endpoints.
+
+5
+00:00:35,220 --> 00:00:43,920
+So go to Project Folder and create a file name like main school name.
+
+6
+00:00:44,010 --> 00:00:51,330
+The School First set package name defined main function.
+
+7
+00:00:56,250 --> 00:01:03,330
+Before we can access details in the MySQL database, we need to create a connection to the database.
+
+8
+00:01:05,010 --> 00:01:12,210
+Previously, we designed a method called Connect in the Tools package, which contains a method called
+
+9
+00:01:12,210 --> 00:01:18,630
+open from this Google package, which by taking two values of driver name and data source name, creates
+
+10
+00:01:18,630 --> 00:01:20,850
+a connection to the MySQL database.
+
+11
+00:01:21,690 --> 00:01:28,260
+And we also previews the saved driver name and data source name information inside adjacent file in
+
+12
+00:01:28,260 --> 00:01:29,700
+the configuration package.
+
+13
+00:01:30,240 --> 00:01:37,950
+Now it's time to use the information our JASON find to connect to DB for using the JSON, find the calling
+
+14
+00:01:37,950 --> 00:01:44,040
+open function from OS package that opens the main file for reading it.
+
+15
+00:01:44,040 --> 00:01:52,110
+Successful methods are returned fire and can be used for reading open function, exit file pipe as input
+
+16
+00:01:52,110 --> 00:01:59,040
+parameter and returns to value first and object from five and the other an object from error.
+
+17
+00:01:59,580 --> 00:02:09,240
+So we defined two variables named fine, and it will find common error calling equals and calling open
+
+18
+00:02:09,240 --> 00:02:11,280
+function from this package.
+
+19
+00:02:13,830 --> 00:02:31,320
+Now set Jason five pattern input argument as a string type data base can be Grecian and config dot JSON
+
+20
+00:02:31,320 --> 00:02:31,710
+fine.
+
+21
+00:02:35,130 --> 00:02:45,150
+Now check error status if error not equals need large fatal error that.
+
+22
+00:02:47,920 --> 00:02:48,220
+Yeah.
+
+23
+00:02:50,450 --> 00:02:54,290
+We use Ether for closing the created file object, Ether.
+
+24
+00:02:58,330 --> 00:02:58,960
+Fine.
+
+25
+00:03:02,230 --> 00:03:04,210
+But close.
+
+26
+00:03:07,230 --> 00:03:15,150
+Now, create this rock on top of the main method that contains variables equivalent to the keys in the
+
+27
+00:03:15,150 --> 00:03:20,280
+Jason fine that are used to map those keys to their data types and.
+
+28
+00:03:21,030 --> 00:03:23,760
+So define a stroke like name configuration.
+
+29
+00:03:24,210 --> 00:03:28,400
+Go top of the main function time.
+
+30
+00:03:30,180 --> 00:03:35,030
+Can figuration extract?
+
+31
+00:03:38,630 --> 00:03:47,840
+Driver name derived very name type is strange using Jason Pack.
+
+32
+00:03:52,200 --> 00:03:57,600
+Ji Sung Colin and Sydney driver nee.
+
+33
+00:04:06,830 --> 00:04:07,790
+To either
+
+34
+00:04:11,150 --> 00:04:29,360
+me and again for data, source name, date, source name, type is a string and using Jason Tak, Jason
+
+35
+00:04:30,020 --> 00:04:32,810
+Cullen and sit name data.
+
+36
+00:04:32,810 --> 00:04:33,740
+Source name,
+
+37
+00:04:36,950 --> 00:04:40,790
+date, source name.
+
+38
+00:04:44,330 --> 00:04:54,330
+Now, create an object from configuration extract, so define a variable like cars go after ether columns
+
+39
+00:04:54,620 --> 00:04:57,320
+column equals new
+
+40
+00:04:59,600 --> 00:05:00,890
+configuration as struct.
+
+41
+00:05:05,270 --> 00:05:13,280
+Now, using the new decoder function of the JSON package, we sent the Jason fine to eat as a parameter
+
+42
+00:05:13,280 --> 00:05:23,000
+after opening it and through the decode method in the next JSON encoded value from its input and assaulted
+
+43
+00:05:23,000 --> 00:05:27,190
+in the value pointer to object created from the configuration S2.
+
+44
+00:05:27,680 --> 00:05:36,200
+So we write Jason, the new decoder said finance argument.
+
+45
+00:05:40,390 --> 00:05:48,190
+And calling Typekit function and sitcoms as argument for it.
+
+46
+00:05:49,390 --> 00:05:55,780
+This allowed us to assert the values inside the Jason fight in the very building the configuration is.
+
+47
+00:05:56,290 --> 00:06:02,140
+Now it's time to call the initialize method from the DB tools package to connect to the database.
+
+48
+00:06:03,190 --> 00:06:12,460
+DB tools, dot db initialize and set driver name from the conflict.
+
+49
+00:06:14,440 --> 00:06:21,100
+Convert driver name and set data source name of the data source name.
+
+50
+00:06:25,950 --> 00:06:33,540
+Each of the current methods uses a method called Connect to communicate with the database, which requires
+
+51
+00:06:33,540 --> 00:06:38,070
+two parameters that we were able to inject into the DB tools package.
+
+52
+00:06:39,210 --> 00:06:45,480
+OK, necessary conditions for communication with minuscule database are provided.
+
+53
+00:06:45,990 --> 00:06:55,110
+Now it's time to run our server by calling list a start function from the rest layer, so we write risk
+
+54
+00:06:55,380 --> 00:07:00,660
+layer at rest start function.
+
+55
+00:07:04,960 --> 00:07:08,710
+And sip localhost IPA argument for it.
+
+56
+00:07:10,480 --> 00:07:22,240
+A hundred and twenty seven dots, zero dots, zero got one colour and said 880 port.
+
+57
+00:07:24,370 --> 00:07:32,050
+OK, now the server is ready to listen to client requests in order not to prolong the time of decision.
+
+58
+00:07:32,200 --> 00:07:36,580
+We will finish it and we will continue the content in the next session.
+
+59
+00:07:36,850 --> 00:07:37,450
+Goodbye.

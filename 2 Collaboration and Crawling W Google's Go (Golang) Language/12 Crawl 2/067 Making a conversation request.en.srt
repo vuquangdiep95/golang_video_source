@@ -1,0 +1,479 @@
+1
+00:00:00,300 --> 00:00:00,540
+All right.
+
+2
+00:00:00,570 --> 00:00:02,200
+So solution number two.
+
+3
+00:00:02,220 --> 00:00:03,910
+Let's take a look at the code.
+
+4
+00:00:04,740 --> 00:00:09,160
+So solution number two actually starts very similar to solution number one.
+
+5
+00:00:09,180 --> 00:00:16,240
+I've got a a site you are all constant which is where I'm going to be crawling at.
+
+6
+00:00:16,440 --> 00:00:25,020
+In this case it's the crawl from this from the API calls from Twitter instead of the euro for the page
+
+7
+00:00:26,780 --> 00:00:31,760
+so the U URL from the API calls is is gone.
+
+8
+00:00:31,780 --> 00:00:37,080
+I hear in this conversation there are those that page is just status.
+
+9
+00:00:37,220 --> 00:00:38,570
+So we've got two files here.
+
+10
+00:00:38,570 --> 00:00:42,130
+We've got to go direct and scrape go eat.
+
+11
+00:00:42,170 --> 00:00:44,610
+I want to do this this is my go collie.
+
+12
+00:00:44,630 --> 00:00:44,880
+OK.
+
+13
+00:00:44,900 --> 00:00:45,780
+There's go calling God.
+
+14
+00:00:45,790 --> 00:00:46,100
+Yes.
+
+15
+00:00:46,120 --> 00:00:47,180
+It's the first solution.
+
+16
+00:00:47,180 --> 00:00:47,420
+All right.
+
+17
+00:00:47,970 --> 00:00:49,630
+So let's finish in second one.
+
+18
+00:00:49,650 --> 00:00:50,040
+Yes.
+
+19
+00:00:50,090 --> 00:00:52,730
+So starts off the same thing kind of just the general.
+
+20
+00:00:52,730 --> 00:00:54,310
+This is what site I'm going to be calling.
+
+21
+00:00:54,380 --> 00:00:59,120
+This makes it easy for me to change the URL if I decide I want to cross some other conversation at some
+
+22
+00:00:59,120 --> 00:01:05,550
+other point and then I got the tweet because my overall look what I'm looking to have at the end is
+
+23
+00:01:05,550 --> 00:01:06,600
+a slice of tweets.
+
+24
+00:01:06,600 --> 00:01:13,450
+So there's a tweet struct which is the exact same structure from up here.
+
+25
+00:01:13,580 --> 00:01:15,890
+So but then I actually start getting into the differences.
+
+26
+00:01:15,950 --> 00:01:21,200
+So this one goes straight in to go call and just scrapes this one.
+
+27
+00:01:21,200 --> 00:01:24,190
+I have to do a lot of stuff myself instead.
+
+28
+00:01:24,280 --> 00:01:31,630
+So what I put together is actually separated out into a bunch of functions that did stuff and in this
+
+29
+00:01:31,630 --> 00:01:33,930
+one you are not doing.
+
+30
+00:01:34,420 --> 00:01:35,900
+Go call you got go query.
+
+31
+00:01:35,920 --> 00:01:36,340
+Yes.
+
+32
+00:01:36,340 --> 00:01:41,290
+And this one I end up using a library called Go query to pass the.
+
+33
+00:01:42,030 --> 00:01:43,910
+The response from the.
+
+34
+00:01:43,990 --> 00:01:44,830
+From Twitter.
+
+35
+00:01:44,830 --> 00:01:51,240
+The responses had that items H2 e-mail items each e-mail.
+
+36
+00:01:51,540 --> 00:01:55,390
+And so I'm using the library called Go query to pass that.
+
+37
+00:01:55,530 --> 00:01:55,990
+OK.
+
+38
+00:01:56,100 --> 00:02:04,440
+So in go query is basically a search library built on top of an X HDMI out package from the extended
+
+39
+00:02:04,740 --> 00:02:05,690
+libraries.
+
+40
+00:02:05,700 --> 00:02:10,830
+All right I'm orientated now so I'm going to save my questions and let you drive through and then I'll
+
+41
+00:02:10,920 --> 00:02:12,650
+give you my questions in the next video.
+
+42
+00:02:13,880 --> 00:02:14,440
+So.
+
+43
+00:02:14,620 --> 00:02:15,720
+So go queries thing.
+
+44
+00:02:15,750 --> 00:02:22,720
+So I organized my code basically into there's three functions and the main function.
+
+45
+00:02:23,130 --> 00:02:33,700
+The first function makes a single request to this API the end takes in a single request.
+
+46
+00:02:33,780 --> 00:02:41,280
+The second function makes all the requests needed to get all of the items using the first function and
+
+47
+00:02:41,280 --> 00:02:48,610
+then this third function actually passes this items H2 email into tweets so the first one makes a single
+
+48
+00:02:48,610 --> 00:02:57,720
+request it takes in what the current Max parse it a position a parameter is and it will return a conversation
+
+49
+00:02:57,720 --> 00:03:05,700
+response which is this struct here which is got those three values from the response from the API that
+
+50
+00:03:05,700 --> 00:03:11,690
+I considered interesting and potentially useful.
+
+51
+00:03:11,930 --> 00:03:12,500
+So.
+
+52
+00:03:12,600 --> 00:03:15,160
+So I just say destruct here as a switch.
+
+53
+00:03:15,210 --> 00:03:21,340
+It's going to be I've got the Jason tags to match the name exactly to the Jason that they're responding
+
+54
+00:03:21,340 --> 00:03:22,040
+with.
+
+55
+00:03:22,480 --> 00:03:27,820
+And I'm using slightly shorter names for how they refer to them in my code doesn't really matter too
+
+56
+00:03:27,820 --> 00:03:28,380
+much.
+
+57
+00:03:28,390 --> 00:03:32,750
+You can name what you want to hear.
+
+58
+00:03:33,180 --> 00:03:42,330
+So I'm using your old values your ls one of the standard library things values is basically a map for
+
+59
+00:03:42,330 --> 00:03:47,970
+query parameters and we'll take care of everything related to the query parameters including encoding
+
+60
+00:03:47,970 --> 00:03:50,820
+it to fit you properly in such.
+
+61
+00:03:50,820 --> 00:03:57,930
+So make an empty programs map and then looking at this at the headers tab here for this request there
+
+62
+00:03:57,930 --> 00:04:05,670
+are or programs tab you can see there are four parameters in the query string these three are the same
+
+63
+00:04:06,030 --> 00:04:07,710
+every time I make the call.
+
+64
+00:04:07,710 --> 00:04:14,480
+So I just have those three they're there and they're just exactly as they are being used before.
+
+65
+00:04:14,760 --> 00:04:21,550
+And I've got Max expedition set to the input parameter because that can be changing every call and I
+
+66
+00:04:21,550 --> 00:04:26,710
+hazard a guess that probably the very first time this happened you make the call to this end point you
+
+67
+00:04:26,710 --> 00:04:32,080
+want a max position of empty string which ended up working out when I tried it out.
+
+68
+00:04:32,200 --> 00:04:40,990
+So it's trial and error they just ended up working first try so now they've got prams filled out.
+
+69
+00:04:40,990 --> 00:04:49,020
+I need to create I make the full euro the full euro is the sight euro for up here and then a question
+
+70
+00:04:49,020 --> 00:04:56,250
+mark to separate from the base to the create parameters and then the encoded parameters query query
+
+71
+00:04:56,250 --> 00:04:59,310
+parameter query include encoded parameters.
+
+72
+00:04:59,580 --> 00:05:06,210
+So I've got the full year output to make the request to this elegant.
+
+73
+00:05:06,340 --> 00:05:10,520
+Let's get the full Euro to make requests request to the ACP package from the standard library.
+
+74
+00:05:10,520 --> 00:05:15,810
+You can just make a request to that end point to get you'll get a response and an error.
+
+75
+00:05:15,820 --> 00:05:17,630
+Need to check the error.
+
+76
+00:05:18,440 --> 00:05:22,340
+And I'm adding in more detail to the error if there is one.
+
+77
+00:05:22,340 --> 00:05:28,380
+So I can have more detail on my error message if my error happened when I was trying to get conversation
+
+78
+00:05:28,380 --> 00:05:28,710
+data
+
+79
+00:05:31,950 --> 00:05:38,720
+defer closing the body of that response because you always need to whenever you get a response make
+
+80
+00:05:38,730 --> 00:05:39,610
+an HP request.
+
+81
+00:05:39,630 --> 00:05:40,790
+You need to close body.
+
+82
+00:05:40,870 --> 00:05:41,880
+The response is.
+
+83
+00:05:42,030 --> 00:05:46,900
+Straight up going starin library each we get in class.
+
+84
+00:05:46,920 --> 00:05:47,440
+Yeah.
+
+85
+00:05:47,670 --> 00:05:49,590
+Very standard.
+
+86
+00:05:49,590 --> 00:05:53,040
+The error from making requests in the going sphere library is just a network error.
+
+87
+00:05:53,060 --> 00:05:58,140
+So you also need to check the response the status code manually so all of these requests always respond
+
+88
+00:05:58,140 --> 00:05:59,000
+with the two hundred.
+
+89
+00:05:59,010 --> 00:06:00,100
+So I just do.
+
+90
+00:06:00,210 --> 00:06:02,170
+Check if it's not status OK.
+
+91
+00:06:02,210 --> 00:06:09,390
+Two hundred make an error throw back an error and I display what the error actual terrorist errors as
+
+92
+00:06:09,390 --> 00:06:16,470
+code what is the number form and I use the standard library HB status text to convert from the code
+
+93
+00:06:16,500 --> 00:06:18,120
+to the actual string.
+
+94
+00:06:18,120 --> 00:06:19,520
+That's equivalent to that code.
+
+95
+00:06:20,480 --> 00:06:23,580
+So two hundred OK over 400 beat that quest.
+
+96
+00:06:24,580 --> 00:06:28,810
+So that that way when I get the error message I can see what it actually ended up coming up with.
+
+97
+00:06:28,990 --> 00:06:35,290
+It's the response then after that the response I have the response at this point the source code was
+
+98
+00:06:35,290 --> 00:06:35,740
+correct.
+
+99
+00:06:35,740 --> 00:06:45,310
+After this point and the response is Jason encoded to back the response tab which takes a bit will sing
+
+100
+00:06:45,320 --> 00:06:47,380
+and song until it comes up.
+
+101
+00:06:47,520 --> 00:06:48,820
+Well it just came out.
+
+102
+00:06:49,610 --> 00:06:50,630
+So Jason.
+
+103
+00:06:50,660 --> 00:06:52,040
+So it's Jason response data.
+
+104
+00:06:52,070 --> 00:07:00,800
+So I create my response object and use the Jason decoder new decoder decode on it standard that again
+
+105
+00:07:00,980 --> 00:07:03,910
+add more detail to my error message that happens.
+
+106
+00:07:03,940 --> 00:07:07,390
+And then after this point I just return that conversation response.
+
+107
+00:07:07,430 --> 00:07:13,190
+So let's keep this video just kind of analyzing an introduction and then also analyzing make conversation
+
+108
+00:07:13,190 --> 00:07:17,220
+response and we'll pick up in the next video where we look at the next functions.
+
+109
+00:07:17,240 --> 00:07:21,300
+But the conversation response shows that data structure again that's right here.
+
+110
+00:07:21,410 --> 00:07:24,520
+It's got the moon position the more and the T.
+
+111
+00:07:24,580 --> 00:07:28,050
+We've got all that each team L in there and then we're gonna do something with that each team.
+
+112
+00:07:28,040 --> 00:07:28,720
+All right.
+
+113
+00:07:29,210 --> 00:07:34,510
+And we have them in position and more which we could pass in to future things we need to somewhere.
+
+114
+00:07:34,520 --> 00:07:34,870
+Yes.
+
+115
+00:07:34,880 --> 00:07:35,510
+Is that correct.
+
+116
+00:07:35,510 --> 00:07:36,030
+Yes.
+
+117
+00:07:36,080 --> 00:07:36,560
+Cool.
+
+118
+00:07:36,560 --> 00:07:36,830
+All right.
+
+119
+00:07:36,860 --> 00:07:42,890
+So this one was looking at a conversation response function that Daniel created to deal with this.
+
+120
+00:07:43,020 --> 00:07:49,020
+This makes one request that Twitter API Yeah and then we'll pick it up in the next video.

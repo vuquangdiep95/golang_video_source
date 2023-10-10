@@ -1,0 +1,251 @@
+1
+00:00:12,570 --> 00:00:17,520
+Hello and welcome to the go lines programming language course in this session.
+
+2
+00:00:17,550 --> 00:00:20,130
+We want to talk about VIPs who get the concept.
+
+3
+00:00:25,220 --> 00:00:26,700
+What is that, Sujit?
+
+4
+00:00:28,190 --> 00:00:36,530
+Let circuits provide a bi directional, full duplex communication channel that operates over HDTV through
+
+5
+00:00:36,590 --> 00:00:39,080
+single TCP IP circuit connection.
+
+6
+00:00:40,580 --> 00:00:48,860
+At its core, the Vets Get Protocol facilitates message passing between the client and server in contract
+
+7
+00:00:48,860 --> 00:00:56,750
+with FTP request and response connections that sockets can transport any number of protocols and provide
+
+8
+00:00:56,760 --> 00:00:59,720
+server to collide message delivery without poulenc.
+
+9
+00:01:01,070 --> 00:01:08,180
+We have two kits are exciting for developers because they allow for bi directional, real time communication
+
+10
+00:01:08,180 --> 00:01:09,740
+between servers and clients.
+
+11
+00:01:10,320 --> 00:01:16,790
+Website kits are available on many platforms, including the most common browsers and mobile devices.
+
+12
+00:01:17,780 --> 00:01:24,680
+They are often applied to solve problems of millisecond, accurate state synchronization and promptly
+
+13
+00:01:24,680 --> 00:01:32,480
+subscribe messaging, and that sucha is attracted by making the common HTC prerequisites to that server
+
+14
+00:01:32,660 --> 00:01:33,610
+been an upgrade.
+
+15
+00:01:33,620 --> 00:01:37,670
+Heather we used to server should confirm in its response.
+
+16
+00:01:38,780 --> 00:01:46,010
+After this, the connection remains established between that physical client's repair if at some point
+
+17
+00:01:46,010 --> 00:01:50,240
+the service needs to be redeployed or load redistributed.
+
+18
+00:01:50,420 --> 00:01:53,930
+It's better to get connection needs to be reestablished.
+
+19
+00:01:58,430 --> 00:01:59,600
+Why that, Sujit?
+
+20
+00:02:01,560 --> 00:02:09,870
+The idea of that suggests was born out of the limitations of today's technology with HDTV, a client
+
+21
+00:02:09,870 --> 00:02:14,490
+requests a resource and the server responds with the requested data.
+
+22
+00:02:14,910 --> 00:02:18,000
+HDTV is a uni directional protocol.
+
+23
+00:02:18,900 --> 00:02:23,940
+Any data sent from the server to the client must be first requested by the client.
+
+24
+00:02:24,530 --> 00:02:31,890
+Land pooling has traditionally act as a workaround for this limitation, with land pulling a client
+
+25
+00:02:31,890 --> 00:02:39,330
+makes its Typekit request with a longtime attorney, and the server uses that long time out to push
+
+26
+00:02:39,330 --> 00:02:40,620
+data to the client.
+
+27
+00:02:41,370 --> 00:02:44,550
+Land pooling works, but comes with a drawback.
+
+28
+00:02:45,000 --> 00:02:51,630
+Resources on the server are tied up throughout the length of the lined pool, even when no data is available
+
+29
+00:02:51,630 --> 00:02:52,170
+to send.
+
+30
+00:02:52,830 --> 00:02:57,510
+That suggests, on the other hand, allow for sending message based data.
+
+31
+00:02:57,660 --> 00:03:07,260
+Similar to UDP, but with the reliability of TCP that Sujit uses HTP as the initial transport mechanism,
+
+32
+00:03:07,380 --> 00:03:14,820
+but keeps the TCP connection alive after the initial response it received so that it can be used for
+
+33
+00:03:14,820 --> 00:03:17,400
+sending messages between client and service.
+
+34
+00:03:17,940 --> 00:03:24,390
+That suggests allow us to build real time applications without the use of long pooling.
+
+35
+00:03:28,220 --> 00:03:30,320
+When China lets at get used.
+
+36
+00:03:31,560 --> 00:03:33,540
+Realtime Web application.
+
+37
+00:03:36,140 --> 00:03:43,160
+Real time application uses a vets widget to show the data at the client end, which is continuously
+
+38
+00:03:43,160 --> 00:03:51,380
+being sent by the bank and server in wet Sujit data is continuously pushed or transmitted into the same
+
+39
+00:03:51,380 --> 00:03:53,540
+connection, which is already open.
+
+40
+00:03:53,840 --> 00:03:57,890
+That is why that's to get this faster and improved application performance.
+
+41
+00:03:59,150 --> 00:04:00,500
+Gaming application.
+
+42
+00:04:02,300 --> 00:04:09,080
+In a gaming application, you might focus on death data is continuously receiving by the server and
+
+43
+00:04:09,080 --> 00:04:17,840
+without refreshing the UI, it will take effect on the screen UI gets automatically refreshed without
+
+44
+00:04:17,840 --> 00:04:20,010
+even establishing the new connection.
+
+45
+00:04:20,450 --> 00:04:23,780
+So it is very helpful in a gaming application.
+
+46
+00:04:25,380 --> 00:04:26,490
+Chat application.
+
+47
+00:04:28,380 --> 00:04:35,970
+Chat application uses vets looking to establish the connection only once for exchange publishing and
+
+48
+00:04:35,970 --> 00:04:42,090
+broadcasting the message amount to subscriber in reuse the same.
+
+49
+00:04:42,090 --> 00:04:47,910
+That's a good connection for sending and receiving the message and one to one message transfer.
+
+50
+00:04:53,480 --> 00:04:57,710
+Creating events will get server events, we get connection.
+
+51
+00:04:57,740 --> 00:04:59,750
+It starts with a handshake.
+
+52
+00:05:00,290 --> 00:05:04,520
+This is the legal dance the client and server do to a soft connection.
+
+53
+00:05:05,540 --> 00:05:13,400
+The client to start out with the norm on the practice that contains two special headers upgrade calling
+
+54
+00:05:13,400 --> 00:05:20,810
+VIPs who get in connection, call an upgrade lounge with any other required request data like authentication.
+
+55
+00:05:21,110 --> 00:05:29,090
+The server then sends back an issue to be a 101 switching protocol, the status code indication to the
+
+56
+00:05:29,090 --> 00:05:35,300
+client, which basically says We used to talk an issue to be, but we will use something else in the
+
+57
+00:05:35,300 --> 00:05:39,440
+future along with this issue, be 100 inbound response.
+
+58
+00:05:39,620 --> 00:05:44,420
+It also sends the upgrade, calling VIPs care in connection upgrade.
+
+59
+00:05:44,570 --> 00:05:46,550
+Hey, there's a game after this.
+
+60
+00:05:46,760 --> 00:05:54,470
+The handshake is complete and the VIPs a get connection is in place in order not to prolong the time
+
+61
+00:05:54,470 --> 00:05:55,160
+of decision.
+
+62
+00:05:55,310 --> 00:05:58,910
+We will finish it and we will continue the content in the next session.
+
+63
+00:05:59,120 --> 00:05:59,570
+Goodbye.

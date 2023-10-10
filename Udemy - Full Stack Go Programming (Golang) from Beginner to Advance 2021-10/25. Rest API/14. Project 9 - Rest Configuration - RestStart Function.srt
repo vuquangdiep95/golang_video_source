@@ -1,0 +1,211 @@
+1
+00:00:12,240 --> 00:00:15,720
+Hello and welcome to the Golang programming language course.
+
+2
+00:00:16,320 --> 00:00:23,640
+In the previous session, we were able to implement the rest config function and could define foreign
+
+3
+00:00:23,640 --> 00:00:27,040
+opponents for calling rest API and indecision.
+
+4
+00:00:27,060 --> 00:00:29,190
+We want to continue the other concept.
+
+5
+00:00:30,360 --> 00:00:37,140
+For example, if you want to call the rest API related to calling all the students, we have do the
+
+6
+00:00:37,140 --> 00:00:40,440
+following we put this line inside the comment.
+
+7
+00:00:46,110 --> 00:00:54,450
+This end point is for calling all students first defined domain because we want to call the project
+
+8
+00:00:54,450 --> 00:00:55,590
+on our machine.
+
+9
+00:00:55,800 --> 00:01:04,860
+We used localhost as domain, so we write low column, fast column
+
+10
+00:01:07,350 --> 00:01:09,530
+support, A380
+
+11
+00:01:11,820 --> 00:01:13,790
+and CIT Pat Perfect's.
+
+12
+00:01:14,910 --> 00:01:17,840
+It's less rare.
+
+13
+00:01:18,510 --> 00:01:28,690
+This less API and CIT pat of calling all of Sudan's API in this case is established to students.
+
+14
+00:01:28,740 --> 00:01:41,280
+It's less the student, so we could create a rest API for calling all the students from database localhost.
+
+15
+00:01:41,790 --> 00:01:51,300
+Colin, 88, is less risk as much API as a student, and you also write these in phones for other apps,
+
+16
+00:01:51,300 --> 00:01:54,460
+for example, for select a student based name.
+
+17
+00:01:55,500 --> 00:02:11,570
+You can write local pass calling 880 is less packed or fix less API and pat for select.
+
+18
+00:02:11,580 --> 00:02:22,770
+The student based name is if a student is less name is less student slash name.
+
+19
+00:02:27,000 --> 00:02:39,850
+And for at AMU, the student to the database, we can write localhost column 880.
+
+20
+00:02:40,440 --> 00:02:47,000
+Just last rest is less API as part graphics and path for saving you.
+
+21
+00:02:47,000 --> 00:02:51,400
+The student ease as a student is last at this list.
+
+22
+00:02:51,780 --> 00:02:58,650
+The student is a class act and API for to update.
+
+23
+00:02:58,860 --> 00:03:11,640
+We can write localhost call and 880 Flash Paper Fixes, Rest API and path for after the student is as
+
+24
+00:03:11,640 --> 00:03:12,310
+good as student.
+
+25
+00:03:12,310 --> 00:03:17,580
+This last edit student, it's less.
+
+26
+00:03:18,070 --> 00:03:28,740
+It's OK now we should implement a method that is responsible for running the rest service on the server,
+
+27
+00:03:29,340 --> 00:03:32,580
+so create a method name like rest, start,
+
+28
+00:03:35,280 --> 00:03:38,330
+find rest.
+
+29
+00:03:38,910 --> 00:03:42,150
+Start this function.
+
+30
+00:03:42,360 --> 00:03:46,530
+Accept a string parameter as a main address, for example.
+
+31
+00:03:46,530 --> 00:03:53,640
+In this case, out addresses localhost, so set a parameter like endpoint
+
+32
+00:03:55,950 --> 00:03:57,660
+by the time stream
+
+33
+00:04:00,360 --> 00:04:04,380
+and return an error object as writer type of.
+
+34
+00:04:07,290 --> 00:04:13,920
+This function is supposed to calm the rest conflict method to calm the risk-benefit method.
+
+35
+00:04:14,070 --> 00:04:21,600
+You need the rotor as the input parameter, so we first create a new rotor defined a variable light
+
+36
+00:04:21,600 --> 00:04:31,410
+rotor calling equals calling new motor function from Mark's package marks the new rotor.
+
+37
+00:04:36,230 --> 00:04:43,910
+Now we could create a rotor, so calling this conflict function and set created water as argument for
+
+38
+00:04:43,910 --> 00:04:44,120
+it.
+
+39
+00:04:44,360 --> 00:04:56,230
+This config and set water as argument for it now, right return for the function so we can reason and
+
+40
+00:04:56,240 --> 00:04:59,420
+serve function from the TV package return.
+
+41
+00:05:00,320 --> 00:05:03,770
+They still don't listen and serve function.
+
+42
+00:05:05,570 --> 00:05:08,270
+This function accept two arguments.
+
+43
+00:05:08,390 --> 00:05:12,590
+First is important and second is the handler.
+
+44
+00:05:12,890 --> 00:05:17,270
+So we sit and point and rotor.
+
+45
+00:05:20,750 --> 00:05:21,170
+OK.
+
+46
+00:05:21,470 --> 00:05:29,930
+We were able to make configuration for the rest liar first create a rest config function that contains
+
+47
+00:05:30,620 --> 00:05:35,120
+forward and point, uh, first for select all the students.
+
+48
+00:05:35,900 --> 00:05:45,920
+OK, this parses API, especially students and API, a student for select a student based name, rest
+
+49
+00:05:45,920 --> 00:05:53,390
+API for added student and rest API for any student, and defined another function like resource that
+
+50
+00:05:53,390 --> 00:05:56,480
+is responsible for running the rest service on the server.
+
+51
+00:05:56,900 --> 00:05:59,960
+In order not to prolong the time of the session, we will finish you.
+
+52
+00:05:59,970 --> 00:06:03,050
+Then they will continue the content in the next session.
+
+53
+00:06:03,150 --> 00:06:03,710
+Goodbye.
